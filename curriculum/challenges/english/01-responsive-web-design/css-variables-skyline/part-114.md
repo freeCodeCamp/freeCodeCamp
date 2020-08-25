@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e9938
+id: 5d822fd413a79914d39e993a
 title: Part 114
 challengeType: 0
 isHidden: true
@@ -7,8 +7,15 @@ isHidden: true
 
 ## Description
 <section id='description'>
+A media query can be used to change styles based on certain conditions, and they look like this:
 
-Give the `sky` class a `radial-gradient`. Use `#ffcf33` from `0%` to `20%`, `#ffff66` at `21%`, and `#bbeeff` at `100%`. This will add circular gradient to the background that will be your sun.
+```css
+@media (condition) {
+
+}  
+```
+
+Add an empty media query at the bottom of your stylesheet with a condition of `max-width: 1000px`. Styles added in here will take effect when the document size is 1000px wide or less.
 </section>
 
 ## Instructions
@@ -21,7 +28,7 @@ Give the `sky` class a `radial-gradient`. Use `#ffcf33` from `0%` to `20%`, `#ff
 ```yml
 tests:
   - text: test-text
-    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*radial-gradient\(\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(sky));
+    testString: assert(/\@media\s*\(\s*max-width\s*:\s*1000px\s*\)\s*{\s*}/g.test(code));
 
 ```
 
@@ -78,6 +85,16 @@ tests:
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+      }
+
+      .sky {
+        background: radial-gradient(
+            closest-corner circle at 15% 15%,
+            #ffcf33,
+            #ffcf33 20%,
+            #ffff66 21%,
+            #bbeeff 100%
+          );
       }
 
       /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
@@ -463,6 +480,7 @@ tests:
 
       .sky {
         background: radial-gradient(
+            closest-corner circle at 15% 15%,
             #ffcf33,
             #ffcf33 20%,
             #ffff66 21%,
@@ -714,6 +732,10 @@ tests:
             var(--window-color3) 10%,
             var(--window-color3) 30%
           );
+      }
+
+      @media (max-width: 1000px) {
+        
       }
     </style>
   </head>

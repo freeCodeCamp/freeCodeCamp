@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e991c
-title: Part 84
+id: 5d822fd413a79914d39e9920
+title: Part 87
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest three `div` elements within `fb2b` and give them a class of `fb2-window`. These will be windows for this section of the building.
+For `fb2a`, add a `border-bottom` of `10vh solid var(--building-color3)` and a `border-left` and `border-right` of `1vw solid transparent`. This time the border trick will create a trapezoid shape.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Nest three `div` elements within `fb2b` and give them a class of `fb2-window`. T
 ```yml
 tests:
   - text: test-text
-    testString: assert($(".fb2b").children("div.fb2-window").length === 3);
+    testString: const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-bottom\s*:\s*10vh\s+solid\s+var\(\s*--building-color3\s*\)\s*(;|})/g.test(fb2a) && /border-left\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a) && /border-right\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a));
 
 ```
 
@@ -217,7 +217,6 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
-        background-color: var(--building-color3);
       }
 
       .fb2a {
@@ -227,6 +226,13 @@ tests:
       .fb2b {
         width: 100%;
         height: 75%;
+        background-color: var(--building-color3);
+      }
+
+      .fb2-window {
+        width: 22%;
+        height: 100%;
+        background-color: var(--window-color3);
       }
 
       .fb3 {
@@ -299,7 +305,11 @@ tests:
       </div>
       <div class="fb2">
         <div class="fb2a"></div>
-        <div class="fb2b"></div>
+        <div class="fb2b window-wrap">
+          <div class="fb2-window"></div>
+          <div class="fb2-window"></div>
+          <div class="fb2-window"></div>
+        </div>
       </div>
       <div></div>
       <div class="fb3"></div>
@@ -506,16 +516,25 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
-        background-color: var(--building-color3);
       }
 
       .fb2a {
         width: 100%;
+        border-bottom: 10vh solid var(--building-color3);
+        border-left: 1vw solid transparent;
+        border-right: 1vw solid transparent;
       }
 
       .fb2b {
         width: 100%;
         height: 75%;
+        background-color: var(--building-color3);
+      }
+
+      .fb2-window {
+        width: 22%;
+        height: 100%;
+        background-color: var(--window-color3);
       }
 
       .fb3 {
@@ -588,7 +607,7 @@ tests:
       </div>
       <div class="fb2">
         <div class="fb2a"></div>
-        <div class="fb2b">
+        <div class="fb2b window-wrap">
           <div class="fb2-window"></div>
           <div class="fb2-window"></div>
           <div class="fb2-window"></div>

@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e993e
-title: Part 120
+id: 5d822fd413a79914d39e9928
+title: Part 95
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Lastly, in the `:root` selector of the media query, redefine all four of the `--window-color` variables to use `#777`. When you're done, resize the window and watch it go from day to night.
-
-Variables are primarily used with colors, and that's how you used them here. But they can be given any value and used on any property. Your project looks great!
+I'm not thrilled about that black for the windows anymore. Change the `--window-color1` value to `#bb99ff`.
 </section>
 
 ## Instructions
@@ -23,7 +21,7 @@ Variables are primarily used with colors, and that's how you used them here. But
 ```yml
 tests:
   - text: test-text
-    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1]; assert(/--window-color1\s*:\s*#777\s*(;|})/g.test(root) && /--window-color2\s*:\s*#777\s*(;|})/g.test(root) && /--window-color3\s*:\s*#777\s*(;|})/g.test(root) && /--window-color4\s*:\s*#777\s*(;|})/g.test(root));
+    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--window-color1\s*:\s*#bb99ff\s*(;|})/g.test(root));
 
 ```
 
@@ -44,13 +42,14 @@ tests:
         --building-color2: #66cc99;
         --building-color3: #cc6699;
         --building-color4: #538cc6;
-        --window-color1: #bb99ff;
+        --window-color1: black;
         --window-color2: #8cd9b3;
         --window-color3: #d98cb3;
         --window-color4: #8cb3d9;
       }
 
       * {
+        border: 1px solid black;
         box-sizing: border-box;
       }
 
@@ -80,16 +79,6 @@ tests:
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-      }
-
-      .sky {
-        background: radial-gradient(
-            closest-corner circle at 15% 15%,
-            #ffcf33,
-            #ffcf33 20%,
-            #ffff66 21%,
-            #bbeeff 100%
-          );
       }
 
       /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
@@ -275,92 +264,29 @@ tests:
       .fb4 {
         width: 8%;
         height: 45%;
+        background-color: var(--building-color1);
         position: relative;
         left: 10%;
       }
-
-      .fb4a {
-        border-top: 5vh solid transparent;
-        border-left: 8vw solid var(--building-color1);
-      }
-
-      .fb4b {
-        width: 100%;
-        height: 89%;
-        background-color: var(--building-color1);
-        display: flex;
-        flex-wrap: wrap;
-      }
       
-      .fb4-window {
-        width: 30%;
-        height: 10%;
-        border-radius: 50%;
-        background-color: var(--window-color1);
-        margin: 10%;
-      }
-
       .fb5 {
         width: 10%;
         height: 33%;
+        background-color: var(--building-color2);
         position: relative;
         right: 10%;
-        background: repeating-linear-gradient(
-            var(--building-color2),
-            var(--building-color2) 5%,
-            transparent 5%,
-            transparent 10%
-          ),
-          repeating-linear-gradient(
-            90deg,
-            var(--building-color2),
-            var(--building-color2) 12%,
-            var(--window-color2) 12%,
-            var(--window-color2) 44%
-          );
       }
 
       .fb6 {
         width: 9%;
         height: 38%;
-        background: repeating-linear-gradient(
-            90deg,
-            var(--building-color3),
-            var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
-          ),
-          repeating-linear-gradient(
-            var(--building-color3),
-            var(--building-color3) 10%,
-            var(--window-color3) 10%,
-            var(--window-color3) 30%
-          );
-      }
-
-      @media (max-width: 1000px) {
-        :root {
-          --building-color1: #000;
-          --building-color2: #000;
-          --building-color3: #000;
-          --building-color4: #000;
-        }
-
-        .sky {
-          background: radial-gradient(
-              closest-corner circle at 15% 15%,
-              #ccc,
-              #ccc 20%,
-              #445 21%,
-              #223 100%
-            );
-        }
+        background-color: var(--building-color3);
       }
     </style>
   </head>
 
   <body>
-    <div class="background-buildings sky">
+    <div class="background-buildings">
       <div></div>
       <div></div>
       <div class="bb1 building-wrap">
@@ -416,17 +342,7 @@ tests:
         <div class="fb3a"></div>
         <div class="fb3b"></div>
       </div>
-      <div class="fb4">
-        <div class="fb4a"></div>
-        <div class="fb4b">
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-        </div>
-      </div>
+      <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>
       <div></div>
@@ -461,6 +377,7 @@ tests:
       }
 
       * {
+        border: 1px solid black;
         box-sizing: border-box;
       }
 
@@ -490,16 +407,6 @@ tests:
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-      }
-
-      .sky {
-        background: radial-gradient(
-            closest-corner circle at 15% 15%,
-            #ffcf33,
-            #ffcf33 20%,
-            #ffff66 21%,
-            #bbeeff 100%
-          );
       }
 
       /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
@@ -685,96 +592,29 @@ tests:
       .fb4 {
         width: 8%;
         height: 45%;
+        background-color: var(--building-color1);
         position: relative;
         left: 10%;
       }
-
-      .fb4a {
-        border-top: 5vh solid transparent;
-        border-left: 8vw solid var(--building-color1);
-      }
-
-      .fb4b {
-        width: 100%;
-        height: 89%;
-        background-color: var(--building-color1);
-        display: flex;
-        flex-wrap: wrap;
-      }
       
-      .fb4-window {
-        width: 30%;
-        height: 10%;
-        border-radius: 50%;
-        background-color: var(--window-color1);
-        margin: 10%;
-      }
-
       .fb5 {
         width: 10%;
         height: 33%;
+        background-color: var(--building-color2);
         position: relative;
         right: 10%;
-        background: repeating-linear-gradient(
-            var(--building-color2),
-            var(--building-color2) 5%,
-            transparent 5%,
-            transparent 10%
-          ),
-          repeating-linear-gradient(
-            90deg,
-            var(--building-color2),
-            var(--building-color2) 12%,
-            var(--window-color2) 12%,
-            var(--window-color2) 44%
-          );
       }
 
       .fb6 {
         width: 9%;
         height: 38%;
-        background: repeating-linear-gradient(
-            90deg,
-            var(--building-color3),
-            var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
-          ),
-          repeating-linear-gradient(
-            var(--building-color3),
-            var(--building-color3) 10%,
-            var(--window-color3) 10%,
-            var(--window-color3) 30%
-          );
-      }
-
-      @media (max-width: 1000px) {
-        :root {
-          --building-color1: #000;
-          --building-color2: #000;
-          --building-color3: #000;
-          --building-color4: #000;
-          --window-color1: #777;
-          --window-color2: #777;
-          --window-color3: #777;
-          --window-color4: #777;
-        }
-
-        .sky {
-          background: radial-gradient(
-              closest-corner circle at 15% 15%,
-              #ccc,
-              #ccc 20%,
-              #445 21%,
-              #223 100%
-            );
-        }
+        background-color: var(--building-color3);
       }
     </style>
   </head>
 
   <body>
-    <div class="background-buildings sky">
+    <div class="background-buildings">
       <div></div>
       <div></div>
       <div class="bb1 building-wrap">
@@ -830,17 +670,7 @@ tests:
         <div class="fb3a"></div>
         <div class="fb3b"></div>
       </div>
-      <div class="fb4">
-        <div class="fb4a"></div>
-        <div class="fb4b">
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-          <div class="fb4-window"></div>
-        </div>
-      </div>
+      <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>
       <div></div>

@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e9935
+id: 5d822fd413a79914d39e9936
 title: Part 110
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add another repeating gradient to this building; make it the same as the one you just added, except don't add the `90deg` direction and use your window color instead of the two `transparent` colors.
+Okay, the buildings are done. Go back to the `*` selector and remove the border you applied to everything at the beginning and the buildings will come together.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Add another repeating gradient to this building; make it the same as the one you
 ```yml
 tests:
   - text: test-text
-    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*30%\s*\)\s*(;|})/g.test(fb6));
+    testString: const all = code.match(/\*\s*{[\s\S]+?[^}]}/g)[0]; assert(!/border\s*:\s*1px\s+solid\s+black/g.test(all));
 
 ```
 
@@ -312,14 +312,19 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--building-color3);
         background: repeating-linear-gradient(
-          90deg,
-          var(--building-color3),
-          var(--building-color3) 10%,
-          transparent 10%,
-          transparent 30%
-        )
+            90deg,
+            var(--building-color3),
+            var(--building-color3) 10%,
+            transparent 10%,
+            transparent 30%
+          ),
+          repeating-linear-gradient(
+            var(--building-color3),
+            var(--building-color3) 10%,
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
+          );
       }
     </style>
   </head>
@@ -426,7 +431,6 @@ tests:
       }
 
       * {
-        border: 1px solid black;
         box-sizing: border-box;
       }
 
@@ -689,7 +693,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--building-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),

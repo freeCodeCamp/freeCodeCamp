@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e991a
-title: Part 82
+id: 5d822fd413a79914d39e991d
+title: Part 84
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-On to the next building! Nest two `div` elements within `fb2` and give them the classes of `fb2a` and `fb2b`, in that order.
+Add your `window-wrap` class to `fb2b` to position the new window elements.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ On to the next building! Nest two `div` elements within `fb2` and give them the 
 ```yml
 tests:
   - text: test-text
-    testString: const fb2 = $(".fb2").children("div"); assert(fb2.length === 2 && fb2[0] === $("div.fb2a")[0] && fb2[1] === $("div.fb2b")[0]);
+    testString: assert($(".fb2b.window-wrap").length === 1);
 
 ```
 
@@ -220,6 +220,15 @@ tests:
         background-color: var(--building-color3);
       }
 
+      .fb2a {
+        width: 100%;
+      }
+
+      .fb2b {
+        width: 100%;
+        height: 75%;
+      }
+
       .fb3 {
         width: 10%;
         height: 35%;
@@ -288,7 +297,14 @@ tests:
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
-      <div class="fb2"></div>
+      <div class="fb2">
+        <div class="fb2a"></div>
+        <div class="fb2b">
+          <div class="fb2-window"></div>
+          <div class="fb2-window"></div>
+          <div class="fb2-window"></div>
+        </div>
+      </div>
       <div></div>
       <div class="fb3"></div>
       <div class="fb4"></div>
@@ -497,6 +513,15 @@ tests:
         background-color: var(--building-color3);
       }
 
+      .fb2a {
+        width: 100%;
+      }
+
+      .fb2b {
+        width: 100%;
+        height: 75%;
+      }
+
       .fb3 {
         width: 10%;
         height: 35%;
@@ -567,7 +592,11 @@ tests:
       </div>
       <div class="fb2">
         <div class="fb2a"></div>
-        <div class="fb2b"></div>
+        <div class="fb2b window-wrap">
+          <div class="fb2-window"></div>
+          <div class="fb2-window"></div>
+          <div class="fb2-window"></div>
+        </div>
       </div>
       <div></div>
       <div class="fb3"></div>

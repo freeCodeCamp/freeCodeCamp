@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e993c
+id: 5d822fd413a79914d39e993e
 title: Part 118
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-In the `sky` class of the media query, change the two `#ffcf33` color values to `#ccc`, the `#ffff66` to `#445`, and the `#bbeeff` to `#223`. Then you can resize your window to see the background change colors.
+Lastly, in the `:root` selector of the media query, redefine all four of the `--window-color` variables to use `#777`. When you're done, resize the window and watch it go from day to night.
+
+Variables are primarily used with colors, and that's how you used them here. But they can be given any value and used on any property. Your project looks great!
 </section>
 
 ## Instructions
@@ -21,7 +23,7 @@ In the `sky` class of the media query, change the two `#ffcf33` color values to 
 ```yml
 tests:
   - text: test-text
-    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1]; assert(/background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ccc\s*(0%\s*,|,)\s*#ccc\s*20%\s*,\s*#445\s*21%\s*,\s*#223\s*100%\s*\)\s*(;|})/g.test(sky));
+    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1]; assert(/--window-color1\s*:\s*#777\s*(;|})/g.test(root) && /--window-color2\s*:\s*#777\s*(;|})/g.test(root) && /--window-color3\s*:\s*#777\s*(;|})/g.test(root) && /--window-color4\s*:\s*#777\s*(;|})/g.test(root));
 
 ```
 
@@ -337,13 +339,20 @@ tests:
       }
 
       @media (max-width: 1000px) {
+        :root {
+          --building-color1: #000;
+          --building-color2: #000;
+          --building-color3: #000;
+          --building-color4: #000;
+        }
+
         .sky {
           background: radial-gradient(
               closest-corner circle at 15% 15%,
-              #ffcf33,
-              #ffcf33 20%,
-              #ffff66 21%,
-              #bbeeff 100%
+              #ccc,
+              #ccc 20%,
+              #445 21%,
+              #223 100%
             );
         }
       }
@@ -740,6 +749,17 @@ tests:
       }
 
       @media (max-width: 1000px) {
+        :root {
+          --building-color1: #000;
+          --building-color2: #000;
+          --building-color3: #000;
+          --building-color4: #000;
+          --window-color1: #777;
+          --window-color2: #777;
+          --window-color3: #777;
+          --window-color4: #777;
+        }
+
         .sky {
           background: radial-gradient(
               closest-corner circle at 15% 15%,

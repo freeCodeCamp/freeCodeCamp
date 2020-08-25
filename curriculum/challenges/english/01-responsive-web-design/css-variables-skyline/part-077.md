@@ -1,14 +1,15 @@
 ---
-id: 5d822fd413a79914d39e9921
-title: Part 89
+id: 5d822fd413a79914d39e9916
+title: Part 77
 challengeType: 0
 isHidden: true
 ---
 
 ## Description
 <section id='description'>
+Don't worry about the space at the bottom, everything will get moved down later when you add some height to the element at the top of the building.
 
-For the next building, nest four `div` elements within `fb3` with classes of `fb3a`, `fb3b`, `fb3a` again, and `fb3b` again, in that order. This building will have four sections and the top two will be almost the same as the bottom two.
+Add a `repeating-linear-gradient` to `fb1c` with a `90deg` angle, your `--building-color4` from `0%` to `10%` and `transparent` from `10%` to `15%`.
 </section>
 
 ## Instructions
@@ -21,7 +22,7 @@ For the next building, nest four `div` elements within `fb3` with classes of `fb
 ```yml
 tests:
   - text: test-text
-    testString: const fb3 = $(".fb3").children("div"); console.log(fb3); assert(fb3.length === 4 && fb3[0] === $("div.fb3a")[0] && fb3[1] === $("div.fb3b")[0] && fb3[2] === $("div.fb3a")[1] && fb3[3] === $("div.fb3b")[1]);
+    testString: const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*15%\s*\)\s*(;|})/g.test(fb1c));
 
 ```
 
@@ -184,12 +185,6 @@ tests:
         height: 60%;
       }
 
-      .fb1a {
-        border-bottom: 7vh solid var(--building-color4);
-        border-left: 2vw solid transparent;
-        border-right: 2vw solid transparent;
-      }
-
       .fb1b {
         width: 60%;
         height: 10%;
@@ -199,43 +194,12 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background: repeating-linear-gradient(
-            90deg,
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 15%
-          ),
-          repeating-linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            var(--window-color4) 10%,
-            var(--window-color4) 90%
-          );
       }
 
       .fb2 {
         width: 10%;
         height: 40%;
-      }
-
-      .fb2a {
-        width: 100%;
-        border-bottom: 10vh solid var(--building-color3);
-        border-left: 1vw solid transparent;
-        border-right: 1vw solid transparent;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
         background-color: var(--building-color3);
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
@@ -306,14 +270,7 @@ tests:
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
-      <div class="fb2">
-        <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
-      </div>
+      <div class="fb2"></div>
       <div></div>
       <div class="fb3"></div>
       <div class="fb4"></div>
@@ -486,12 +443,6 @@ tests:
         height: 60%;
       }
 
-      .fb1a {
-        border-bottom: 7vh solid var(--building-color4);
-        border-left: 2vw solid transparent;
-        border-right: 2vw solid transparent;
-      }
-
       .fb1b {
         width: 60%;
         height: 10%;
@@ -507,37 +458,13 @@ tests:
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
-          ),
-          repeating-linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            var(--window-color4) 10%,
-            var(--window-color4) 90%
-          );
+          )
       }
 
       .fb2 {
         width: 10%;
         height: 40%;
-      }
-
-      .fb2a {
-        width: 100%;
-        border-bottom: 10vh solid var(--building-color3);
-        border-left: 1vw solid transparent;
-        border-right: 1vw solid transparent;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
         background-color: var(--building-color3);
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
@@ -608,21 +535,9 @@ tests:
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
-      <div class="fb2">
-        <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
-      </div>
+      <div class="fb2"></div>
       <div></div>
-      <div class="fb3">
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-      </div>
+      <div class="fb3"></div>
       <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>

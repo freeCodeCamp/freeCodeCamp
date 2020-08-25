@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e9928
-title: Part 96
+id: 5d822fd413a79914d39e9922
+title: Part 89
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-I'm not thrilled about that black for the windows anymore. Change the `--window-color1` value to `#bb99ff`.
+Give the `fb3a` element a `width` of `80%` and `height` of `15%`. Then give the `fb3b` element a `width` of `100%` and `height` of `35%`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ I'm not thrilled about that black for the windows anymore. Change the `--window-
 ```yml
 tests:
   - text: test-text
-    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--window-color1\s*:\s*#bb99ff\s*(;|})/g.test(root));
+    testString: const fb3a = code.match(/\.fb3a\s*{[\s\S]+?[^}]}/g)[0]; const fb3b = code.match(/\.fb3b\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*80%\s*(;|})/g.test(fb3a) && /height\s*:\s*15%\s*(;|})/g.test(fb3a) && /width\s*:\s*100%\s*(;|})/g.test(fb3b) && /height\s*:\s*35%\s*(;|})/g.test(fb3b));
 
 ```
 
@@ -241,26 +241,9 @@ tests:
       .fb3 {
         width: 10%;
         height: 35%;
-      }
-  
-      .fb3a {
-        width: 80%;
-        height: 15%;
         background-color: var(--building-color1);
       }
   
-      .fb3b {
-        width: 100%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-
-      .fb3-window {
-        width: 25%;
-        height: 80%;
-        background-color: var(--window-color1);
-      }
-
       .fb4 {
         width: 8%;
         height: 45%;
@@ -332,12 +315,8 @@ tests:
         </div>
       </div>
       <div></div>
-      <div class="fb3 building-wrap">
-        <div class="fb3a window-wrap">
-          <div class="fb3-window"></div>
-          <div class="fb3-window"></div>
-          <div class="fb3-window"></div>
-        </div>
+      <div class="fb3">
+        <div class="fb3a"></div>
         <div class="fb3b"></div>
         <div class="fb3a"></div>
         <div class="fb3b"></div>
@@ -370,7 +349,7 @@ tests:
         --building-color2: #66cc99;
         --building-color3: #cc6699;
         --building-color4: #538cc6;
-        --window-color1: #bb99ff;
+        --window-color1: black;
         --window-color2: #8cd9b3;
         --window-color3: #d98cb3;
         --window-color4: #8cb3d9;
@@ -569,26 +548,19 @@ tests:
       .fb3 {
         width: 10%;
         height: 35%;
+        background-color: var(--building-color1);
       }
-  
+
       .fb3a {
         width: 80%;
         height: 15%;
-        background-color: var(--building-color1);
       }
   
       .fb3b {
         width: 100%;
         height: 35%;
-        background-color: var(--building-color1);
       }
-
-      .fb3-window {
-        width: 25%;
-        height: 80%;
-        background-color: var(--window-color1);
-      }
-
+  
       .fb4 {
         width: 8%;
         height: 45%;
@@ -660,12 +632,8 @@ tests:
         </div>
       </div>
       <div></div>
-      <div class="fb3 building-wrap">
-        <div class="fb3a window-wrap">
-          <div class="fb3-window"></div>
-          <div class="fb3-window"></div>
-          <div class="fb3-window"></div>
-        </div>
+      <div class="fb3">
+        <div class="fb3a"></div>
         <div class="fb3b"></div>
         <div class="fb3a"></div>
         <div class="fb3b"></div>

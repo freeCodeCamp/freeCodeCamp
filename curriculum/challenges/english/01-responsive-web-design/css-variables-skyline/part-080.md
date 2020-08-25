@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e992b
-title: Part 99
+id: 5d822fd413a79914d39e9919
+title: Part 80
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add your `--building-color1` variable as value of the `background-color` property of `fb4b`. Then, remove the `background-color` from `fb4`.
+When you make the left and right borders bigger, the border on the bottom will expand to be the width of the combined left and right border widths. Add `2vw solid transparent;` as the value of the `border-left` and `border-right` properties of `fb1a`. They will be invisible, but it will make the border on the bottom `4vw` wide.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Add your `--building-color1` variable as value of the `background-color` propert
 ```yml
 tests:
   - text: test-text
-    testString: const fb4 = code.match(/\.fb4\s*{[\s\S]+?[^}]}/g)[0]; const fb4b = code.match(/\.fb4b\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb4) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb4b));
+    testString: const fb1a = code.match(/\.fb1a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-left\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a) && /border-right\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a));
 
 ```
 
@@ -42,7 +42,7 @@ tests:
         --building-color2: #66cc99;
         --building-color3: #cc6699;
         --building-color4: #538cc6;
-        --window-color1: #bb99ff;
+        --window-color1: black;
         --window-color2: #8cd9b3;
         --window-color3: #d98cb3;
         --window-color4: #8cb3d9;
@@ -186,8 +186,6 @@ tests:
 
       .fb1a {
         border-bottom: 7vh solid var(--building-color4);
-        border-left: 2vw solid transparent;
-        border-right: 2vw solid transparent;
       }
 
       .fb1b {
@@ -217,61 +215,21 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
-      }
-
-      .fb2a {
-        width: 100%;
-        border-bottom: 10vh solid var(--building-color3);
-        border-left: 1vw solid transparent;
-        border-right: 1vw solid transparent;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
         background-color: var(--building-color3);
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
         width: 10%;
         height: 35%;
-      }
-  
-      .fb3a {
-        width: 80%;
-        height: 15%;
         background-color: var(--building-color1);
       }
   
-      .fb3b {
-        width: 100%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-
-      .fb3-window {
-        width: 25%;
-        height: 80%;
-        background-color: var(--window-color1);
-      }
-
       .fb4 {
         width: 8%;
         height: 45%;
         background-color: var(--building-color1);
         position: relative;
         left: 10%;
-      }
-
-      .fb4b {
-        width: 100%;
-        height: 89%;
       }
       
       .fb5 {
@@ -328,29 +286,10 @@ tests:
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
-      <div class="fb2">
-        <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
-      </div>
+      <div class="fb2"></div>
       <div></div>
-      <div class="fb3 building-wrap">
-        <div class="fb3a window-wrap">
-          <div class="fb3-window"></div>
-          <div class="fb3-window"></div>
-          <div class="fb3-window"></div>
-        </div>
-        <div class="fb3b"></div>
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-      </div>
-      <div class="fb4">
-        <div class="fb4a"></div>
-        <div class="fb4b"></div>
-      </div>
+      <div class="fb3"></div>
+      <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>
       <div></div>
@@ -378,7 +317,7 @@ tests:
         --building-color2: #66cc99;
         --building-color3: #cc6699;
         --building-color4: #538cc6;
-        --window-color1: #bb99ff;
+        --window-color1: black;
         --window-color2: #8cd9b3;
         --window-color3: #d98cb3;
         --window-color4: #8cb3d9;
@@ -553,61 +492,21 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
-      }
-
-      .fb2a {
-        width: 100%;
-        border-bottom: 10vh solid var(--building-color3);
-        border-left: 1vw solid transparent;
-        border-right: 1vw solid transparent;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
         background-color: var(--building-color3);
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
         width: 10%;
         height: 35%;
-      }
-  
-      .fb3a {
-        width: 80%;
-        height: 15%;
         background-color: var(--building-color1);
       }
   
-      .fb3b {
-        width: 100%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-
-      .fb3-window {
-        width: 25%;
-        height: 80%;
-        background-color: var(--window-color1);
-      }
-
       .fb4 {
         width: 8%;
         height: 45%;
+        background-color: var(--building-color1);
         position: relative;
         left: 10%;
-      }
-
-      .fb4b {
-        width: 100%;
-        height: 89%;
-        background-color: var(--building-color1);
       }
       
       .fb5 {
@@ -664,29 +563,10 @@ tests:
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
-      <div class="fb2">
-        <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
-      </div>
+      <div class="fb2"></div>
       <div></div>
-      <div class="fb3 building-wrap">
-        <div class="fb3a window-wrap">
-          <div class="fb3-window"></div>
-          <div class="fb3-window"></div>
-          <div class="fb3-window"></div>
-        </div>
-        <div class="fb3b"></div>
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-      </div>
-      <div class="fb4">
-        <div class="fb4a"></div>
-        <div class="fb4b"></div>
-      </div>
+      <div class="fb3"></div>
+      <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>
       <div></div>

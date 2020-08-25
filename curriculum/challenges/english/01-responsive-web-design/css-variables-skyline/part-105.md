@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e9925
-title: Part 93
+id: 5d822fd413a79914d39e9933
+title: Part 105
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest three new `div` elements in the first `fb3a` element. Give them each a class of `fb3-window`. These will be windows for this section.
+Add another `repeating-linear-gradient` below the one you just added. Give it a `90deg` direction, use your building color from `0%` to `12%` and window color `12%` to `44%`. This will make a bunch of rectangle windows.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Nest three new `div` elements in the first `fb3a` element. Give them each a clas
 ```yml
 tests:
   - text: test-text
-    testString: assert($(".fb3 div.fb3a:first-child").children("div.fb3-window").length === 3);
+    testString: const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*5%\s*,\s*transparent\s*5%\s*,\s*transparent\s*10%\s*\)\s*,\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*12%\s*,\s*var\(\s*--window-color2\s*\)\s*12%\s*,\s*var\(\s*--window-color2\s*\)\s*44%\s*\)\s*(;|})/g.test(fb5));
 
 ```
 
@@ -42,7 +42,7 @@ tests:
         --building-color2: #66cc99;
         --building-color3: #cc6699;
         --building-color4: #538cc6;
-        --window-color1: black;
+        --window-color1: #bb99ff;
         --window-color2: #8cd9b3;
         --window-color3: #d98cb3;
         --window-color4: #8cb3d9;
@@ -255,20 +255,52 @@ tests:
         background-color: var(--building-color1);
       }
 
+      .fb3-window {
+        width: 25%;
+        height: 80%;
+        background-color: var(--window-color1);
+      }
+
       .fb4 {
         width: 8%;
         height: 45%;
-        background-color: var(--building-color1);
         position: relative;
         left: 10%;
       }
+
+      .fb4a {
+        border-top: 5vh solid transparent;
+        border-left: 8vw solid var(--building-color1);
+      }
+
+      .fb4b {
+        width: 100%;
+        height: 89%;
+        background-color: var(--building-color1);
+        display: flex;
+        flex-wrap: wrap;
+      }
       
+      .fb4-window {
+        width: 30%;
+        height: 10%;
+        border-radius: 50%;
+        background-color: var(--window-color1);
+        margin: 10%;
+      }
+
       .fb5 {
         width: 10%;
         height: 33%;
         background-color: var(--building-color2);
         position: relative;
         right: 10%;
+        background: repeating-linear-gradient(
+            var(--building-color2),
+            var(--building-color2) 5%,
+            transparent 5%,
+            transparent 10%
+          )
       }
 
       .fb6 {
@@ -327,12 +359,26 @@ tests:
       </div>
       <div></div>
       <div class="fb3 building-wrap">
-        <div class="fb3a"></div>
+        <div class="fb3a window-wrap">
+          <div class="fb3-window"></div>
+          <div class="fb3-window"></div>
+          <div class="fb3-window"></div>
+        </div>
         <div class="fb3b"></div>
         <div class="fb3a"></div>
         <div class="fb3b"></div>
       </div>
-      <div class="fb4"></div>
+      <div class="fb4">
+        <div class="fb4a"></div>
+        <div class="fb4b">
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+        </div>
+      </div>
       <div class="fb5"></div>
       <div class="fb6"></div>
       <div></div>
@@ -360,7 +406,7 @@ tests:
         --building-color2: #66cc99;
         --building-color3: #cc6699;
         --building-color4: #538cc6;
-        --window-color1: black;
+        --window-color1: #bb99ff;
         --window-color2: #8cd9b3;
         --window-color3: #d98cb3;
         --window-color4: #8cb3d9;
@@ -573,20 +619,59 @@ tests:
         background-color: var(--building-color1);
       }
 
+      .fb3-window {
+        width: 25%;
+        height: 80%;
+        background-color: var(--window-color1);
+      }
+
       .fb4 {
         width: 8%;
         height: 45%;
-        background-color: var(--building-color1);
         position: relative;
         left: 10%;
       }
+
+      .fb4a {
+        border-top: 5vh solid transparent;
+        border-left: 8vw solid var(--building-color1);
+      }
+
+      .fb4b {
+        width: 100%;
+        height: 89%;
+        background-color: var(--building-color1);
+        display: flex;
+        flex-wrap: wrap;
+      }
       
+      .fb4-window {
+        width: 30%;
+        height: 10%;
+        border-radius: 50%;
+        background-color: var(--window-color1);
+        margin: 10%;
+      }
+
       .fb5 {
         width: 10%;
         height: 33%;
         background-color: var(--building-color2);
         position: relative;
         right: 10%;
+        background: repeating-linear-gradient(
+            var(--building-color2),
+            var(--building-color2) 5%,
+            transparent 5%,
+            transparent 10%
+          ),
+          repeating-linear-gradient(
+            90deg,
+            var(--building-color2),
+            var(--building-color2) 12%,
+            var(--window-color2) 12%,
+            var(--window-color2) 44%
+          );
       }
 
       .fb6 {
@@ -645,7 +730,7 @@ tests:
       </div>
       <div></div>
       <div class="fb3 building-wrap">
-        <div class="fb3a">
+        <div class="fb3a window-wrap">
           <div class="fb3-window"></div>
           <div class="fb3-window"></div>
           <div class="fb3-window"></div>
@@ -654,7 +739,17 @@ tests:
         <div class="fb3a"></div>
         <div class="fb3b"></div>
       </div>
-      <div class="fb4"></div>
+      <div class="fb4">
+        <div class="fb4a"></div>
+        <div class="fb4b">
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+          <div class="fb4-window"></div>
+        </div>
+      </div>
       <div class="fb5"></div>
       <div class="fb6"></div>
       <div></div>

@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e991f
-title: Part 87
+id: 5d822fd413a79914d39e991b
+title: Part 82
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Move the `background-color` property and value from `fb2` to `fb2b` to just color the section and not the container.
+Give `fb2a` a `width` of `100%` and `fb2b` a `width` of `100%` and `height` of `75%`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Move the `background-color` property and value from `fb2` to `fb2b` to just colo
 ```yml
 tests:
   - text: test-text
-    testString: const fb2 = code.match(/\.fb2\s*{[\s\S]+?[^}]}/g)[0]; const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb2) && /background-color\s*:\s*var\(\s*--building-color3\s*\)\s*(;|})/g.test(fb2b));
+    testString: const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0]; const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*100%\s*(;|})/g.test(fb2a) && /width\s*:\s*100%\s*(;|})/g.test(fb2b) && /height\s*:\s*75%\s*(;|})/g.test(fb2b));
 
 ```
 
@@ -220,21 +220,6 @@ tests:
         background-color: var(--building-color3);
       }
 
-      .fb2a {
-        width: 100%;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
-      }
-
       .fb3 {
         width: 10%;
         height: 35%;
@@ -305,11 +290,7 @@ tests:
       </div>
       <div class="fb2">
         <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
+        <div class="fb2b"></div>
       </div>
       <div></div>
       <div class="fb3"></div>
@@ -516,6 +497,7 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
+        background-color: var(--building-color3);
       }
 
       .fb2a {
@@ -525,13 +507,6 @@ tests:
       .fb2b {
         width: 100%;
         height: 75%;
-        background-color: var(--building-color3);
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
@@ -604,11 +579,7 @@ tests:
       </div>
       <div class="fb2">
         <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
+        <div class="fb2b"></div>
       </div>
       <div></div>
       <div class="fb3"></div>

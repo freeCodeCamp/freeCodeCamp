@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e9923
-title: Part 91
+id: 5d822fd413a79914d39e991e
+title: Part 85
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Remove the `background-color` property and value from `fb3` and add them to `fb3a` and `fb3b`.
+Give the `fb2-window` elements a `width` of `22%`, `height` of `100%`, and a `background-color` of your `--window-color3` variable.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Remove the `background-color` property and value from `fb3` and add them to `fb3
 ```yml
 tests:
   - text: test-text
-    testString: const fb3 = code.match(/\.fb3\s*{[\s\S]+?[^}]}/g)[0]; const fb3a = code.match(/\.fb3a\s*{[\s\S]+?[^}]}/g)[0];const fb3b = code.match(/\.fb3b\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb3) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb3a) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb3b));
+    testString: const fb2w = code.match(/\.fb2-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*22%\s*(;|})/g.test(fb2w) && /height\s*:\s*100%\s*(;|})/g.test(fb2w) && /background-color\s*:\s*var\(\s*--window-color3\s*\)\s*(;|})/g.test(fb2w));
 
 ```
 
@@ -217,41 +217,22 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
+        background-color: var(--building-color3);
       }
 
       .fb2a {
         width: 100%;
-        border-bottom: 10vh solid var(--building-color3);
-        border-left: 1vw solid transparent;
-        border-right: 1vw solid transparent;
       }
 
       .fb2b {
         width: 100%;
         height: 75%;
-        background-color: var(--building-color3);
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
         width: 10%;
         height: 35%;
         background-color: var(--building-color1);
-      }
-
-      .fb3a {
-        width: 80%;
-        height: 15%;
-      }
-  
-      .fb3b {
-        width: 100%;
-        height: 35%;
       }
   
       .fb4 {
@@ -325,12 +306,7 @@ tests:
         </div>
       </div>
       <div></div>
-      <div class="fb3">
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-      </div>
+      <div class="fb3"></div>
       <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>
@@ -534,19 +510,16 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
+        background-color: var(--building-color3);
       }
 
       .fb2a {
         width: 100%;
-        border-bottom: 10vh solid var(--building-color3);
-        border-left: 1vw solid transparent;
-        border-right: 1vw solid transparent;
       }
 
       .fb2b {
         width: 100%;
         height: 75%;
-        background-color: var(--building-color3);
       }
 
       .fb2-window {
@@ -558,20 +531,9 @@ tests:
       .fb3 {
         width: 10%;
         height: 35%;
-      }
-  
-      .fb3a {
-        width: 80%;
-        height: 15%;
         background-color: var(--building-color1);
       }
   
-      .fb3b {
-        width: 100%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-
       .fb4 {
         width: 8%;
         height: 45%;
@@ -643,12 +605,7 @@ tests:
         </div>
       </div>
       <div></div>
-      <div class="fb3">
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-      </div>
+      <div class="fb3"></div>
       <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>

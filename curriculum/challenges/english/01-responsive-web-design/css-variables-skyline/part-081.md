@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e9924
-title: Part 92
+id: 5d822fd413a79914d39e991a
+title: Part 81
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add your `building-wrap` class to the `fb3` element to center the sections.
+On to the next building! Nest two `div` elements within `fb2` and give them the classes of `fb2a` and `fb2b`, in that order.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Add your `building-wrap` class to the `fb3` element to center the sections.
 ```yml
 tests:
   - text: test-text
-    testString: assert($(".fb3.building-wrap").length === 1);
+    testString: const fb2 = $(".fb2").children("div"); assert(fb2.length === 2 && fb2[0] === $("div.fb2a")[0] && fb2[1] === $("div.fb2b")[0]);
 
 ```
 
@@ -217,44 +217,15 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
-      }
-
-      .fb2a {
-        width: 100%;
-        border-bottom: 10vh solid var(--building-color3);
-        border-left: 1vw solid transparent;
-        border-right: 1vw solid transparent;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
         background-color: var(--building-color3);
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
         width: 10%;
         height: 35%;
-      }
-  
-      .fb3a {
-        width: 80%;
-        height: 15%;
         background-color: var(--building-color1);
       }
   
-      .fb3b {
-        width: 100%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-
       .fb4 {
         width: 8%;
         height: 45%;
@@ -317,21 +288,9 @@ tests:
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
-      <div class="fb2">
-        <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
-      </div>
+      <div class="fb2"></div>
       <div></div>
-      <div class="fb3">
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-      </div>
+      <div class="fb3"></div>
       <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>
@@ -535,44 +494,15 @@ tests:
       .fb2 {
         width: 10%;
         height: 40%;
-      }
-
-      .fb2a {
-        width: 100%;
-        border-bottom: 10vh solid var(--building-color3);
-        border-left: 1vw solid transparent;
-        border-right: 1vw solid transparent;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
         background-color: var(--building-color3);
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
         width: 10%;
         height: 35%;
-      }
-  
-      .fb3a {
-        width: 80%;
-        height: 15%;
         background-color: var(--building-color1);
       }
   
-      .fb3b {
-        width: 100%;
-        height: 35%;
-        background-color: var(--building-color1);
-      }
-
       .fb4 {
         width: 8%;
         height: 45%;
@@ -637,19 +567,10 @@ tests:
       </div>
       <div class="fb2">
         <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
+        <div class="fb2b"></div>
       </div>
       <div></div>
-      <div class="fb3 building-wrap">
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-        <div class="fb3a"></div>
-        <div class="fb3b"></div>
-      </div>
+      <div class="fb3"></div>
       <div class="fb4"></div>
       <div class="fb5"></div>
       <div class="fb6"></div>

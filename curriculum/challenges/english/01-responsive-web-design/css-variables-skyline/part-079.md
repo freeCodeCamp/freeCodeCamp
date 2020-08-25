@@ -1,6 +1,6 @@
 ---
-id: 5d822fd413a79914d39e991e
-title: Part 86
+id: 5d822fd413a79914d39e9918
+title: Part 79
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Give the `fb2-window` elements a `width` of `22%`, `height` of `100%`, and a `background-color` of your `--window-color3` variable.
+You're going to use some more border tricks for top section. Add a `border-bottom` with a value of `7vh solid var(--building-color4)` to `fb1a`. This will put a `7vh` height border on the bottom. But since the element has zero size, it only shows up as a 2px wide line from the 1px border that is on all the elements.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Give the `fb2-window` elements a `width` of `22%`, `height` of `100%`, and a `ba
 ```yml
 tests:
   - text: test-text
-    testString: const fb2w = code.match(/\.fb2-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*22%\s*(;|})/g.test(fb2w) && /height\s*:\s*100%\s*(;|})/g.test(fb2w) && /background-color\s*:\s*var\(\s*--window-color3\s*\)\s*(;|})/g.test(fb2w));
+    testString: const fb1a = code.match(/\.fb1a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-bottom\s*:\s*7vh\s+solid\s+var\(\s*--building-color4\s*\)\s*(;|})/g.test(fb1a));
 
 ```
 
@@ -184,12 +184,6 @@ tests:
         height: 60%;
       }
 
-      .fb1a {
-        border-bottom: 7vh solid var(--building-color4);
-        border-left: 2vw solid transparent;
-        border-right: 2vw solid transparent;
-      }
-
       .fb1b {
         width: 60%;
         height: 10%;
@@ -218,15 +212,6 @@ tests:
         width: 10%;
         height: 40%;
         background-color: var(--building-color3);
-      }
-
-      .fb2a {
-        width: 100%;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
       }
 
       .fb3 {
@@ -297,14 +282,7 @@ tests:
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
-      <div class="fb2">
-        <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
-      </div>
+      <div class="fb2"></div>
       <div></div>
       <div class="fb3"></div>
       <div class="fb4"></div>
@@ -479,8 +457,6 @@ tests:
 
       .fb1a {
         border-bottom: 7vh solid var(--building-color4);
-        border-left: 2vw solid transparent;
-        border-right: 2vw solid transparent;
       }
 
       .fb1b {
@@ -511,21 +487,6 @@ tests:
         width: 10%;
         height: 40%;
         background-color: var(--building-color3);
-      }
-
-      .fb2a {
-        width: 100%;
-      }
-
-      .fb2b {
-        width: 100%;
-        height: 75%;
-      }
-
-      .fb2-window {
-        width: 22%;
-        height: 100%;
-        background-color: var(--window-color3);
       }
 
       .fb3 {
@@ -596,14 +557,7 @@ tests:
         <div class="fb1b"></div>
         <div class="fb1c"></div>
       </div>
-      <div class="fb2">
-        <div class="fb2a"></div>
-        <div class="fb2b window-wrap">
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-          <div class="fb2-window"></div>
-        </div>
-      </div>
+      <div class="fb2"></div>
       <div></div>
       <div class="fb3"></div>
       <div class="fb4"></div>
