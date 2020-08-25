@@ -1,6 +1,6 @@
 ---
 id: 5d792537fef76b226b63b93b
-title: Part 096
+title: Part 96
 challengeType: 0
 isHidden: true
 ---

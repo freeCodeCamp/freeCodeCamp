@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e992d
+id: 5d822fd413a79914d39e992e
 title: Part 101
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Give the `fb4-window` elements a `width` of `30%`, `height` of `10%`, and `border-radius` of `50%`. These will make some circular windows for this building.
+Fill in the windows with your secondary color for this building. Also add a `margin` of `10%` to give the windows some space.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Give the `fb4-window` elements a `width` of `30%`, `height` of `10%`, and `borde
 ```yml
 tests:
   - text: test-text
-    testString: const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*30%\s*(;|})/g.test(fb4w) && /height\s*:\s*10%\s*(;|})/g.test(fb4w) && /border-radius\s*:\s*50%\s*(;|})/g.test(fb4w));
+    testString: const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--window-color1\s*\)\s*(;|})/g.test(fb4w) && /margin\s*:\s*10%\s*(;|})/g.test(fb4w));
 
 ```
 
@@ -274,6 +274,12 @@ tests:
         background-color: var(--building-color1);
       }
       
+      .fb4-window {
+        width: 30%;
+        height: 10%;
+        border-radius: 50%;
+      }
+
       .fb5 {
         width: 10%;
         height: 33%;
@@ -621,6 +627,8 @@ tests:
         width: 30%;
         height: 10%;
         border-radius: 50%;
+        background-color: var(--window-color1);
+        margin: 10%;
       }
 
       .fb5 {

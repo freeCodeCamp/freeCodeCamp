@@ -1,6 +1,6 @@
 ---
 id: 5d792536dd8a4daf255488ac
-title: Part 070
+title: Part 70
 challengeType: 0
 isHidden: true
 ---

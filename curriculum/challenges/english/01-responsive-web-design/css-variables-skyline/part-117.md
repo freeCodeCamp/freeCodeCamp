@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e993b
+id: 5d822fd413a79914d39e993d
 title: Part 117
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Copy and paste your whole `sky` class along with all of its properties and values into the media query. You are going to make another color scheme for the skyline that changes it from day to night.
+Add a `:root` selector to the top of your media query. Then redefine all four of the `--building-color` variables to use the value `#000` there.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Copy and paste your whole `sky` class along with all of its properties and value
 ```yml
 tests:
   - text: test-text
-    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1]; assert(/background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(sky));
+    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1]; assert(/--building-color1\s*:\s*#000\s*(;|})/g.test(root) && /--building-color2\s*:\s*#000\s*(;|})/g.test(root) && /--building-color3\s*:\s*#000\s*(;|})/g.test(root) && /--building-color4\s*:\s*#000\s*(;|})/g.test(root));
 
 ```
 
@@ -337,7 +337,15 @@ tests:
       }
 
       @media (max-width: 1000px) {
-        
+        .sky {
+          background: radial-gradient(
+              closest-corner circle at 15% 15%,
+              #ccc,
+              #ccc 20%,
+              #445 21%,
+              #223 100%
+            );
+        }
       }
     </style>
   </head>
@@ -732,13 +740,20 @@ tests:
       }
 
       @media (max-width: 1000px) {
+        :root {
+          --building-color1: #000;
+          --building-color2: #000;
+          --building-color3: #000;
+          --building-color4: #000;
+        }
+
         .sky {
           background: radial-gradient(
               closest-corner circle at 15% 15%,
-              #ffcf33,
-              #ffcf33 20%,
-              #ffff66 21%,
-              #bbeeff 100%
+              #ccc,
+              #ccc 20%,
+              #445 21%,
+              #223 100%
             );
         }
       }
