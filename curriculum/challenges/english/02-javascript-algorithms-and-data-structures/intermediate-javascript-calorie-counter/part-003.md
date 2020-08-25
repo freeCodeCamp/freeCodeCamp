@@ -1,6 +1,6 @@
 ---
-id: 5ddb965c65d27e1512d44d9d
-title: Part 04
+id: 5ddb965c65d27e1512d44d9c
+title: Part 3
 challengeType: 0
 isHidden: true
 ---
@@ -9,12 +9,15 @@ isHidden: true
 
 <section id='description'>
 
-Create the `calculate` function that will hold the code to sum up the user's calorie inputs. Leave the body blank for now.
-Here is an example of an empty function called `square`:
+Now we need to specify what should be done with the form when the user submits it by clicking the Calculate button.
 
-```js
-function square() {}
-```
+Forms have an `onsubmit` event that can execute a function when the form is submitted.
+
+For example, in `document.getElementById('my-form').onsubmit = processForm;`, the function `processForm` will run when the form is submitted.
+
+Assign a function named `calculate` to the `onsubmit` event of your form.
+
+You will create the `calculate` function later.
 
 </section>
 
@@ -30,7 +33,7 @@ function square() {}
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( typeof calculate === "function" );
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie\-form[\'\"\`]\)\.onsubmit\=calculate/) );
 ```
 
 </section>
@@ -43,7 +46,7 @@ tests:
 
 ```html
 <script>
-  document.getElementById('calorie-form').onsubmit = calculate;
+  document.getElementById('calorie-form');
 </script>
 ```
 
@@ -133,8 +136,6 @@ tests:
 ```html
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate() {}
 </script>
 ```
 

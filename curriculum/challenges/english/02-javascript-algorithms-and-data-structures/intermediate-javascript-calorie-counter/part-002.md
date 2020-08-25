@@ -1,6 +1,6 @@
 ---
-id: 5ddb965c65d27e1512d44d9e
-title: Part 05
+id: 5ddb965c65d27e1512d44d9b
+title: Part 2
 challengeType: 0
 isHidden: true
 ---
@@ -9,15 +9,11 @@ isHidden: true
 
 <section id='description'>
 
-By default, `onsubmit` will pass the event object as a parameter to the function it calls.
-People usually call it `e`, short for event.
-Update the `calculate()` function to accept `e` as parameter.
+In our HTML document, we have a form element with an `id` attribute: `<form id="calorie-form">`
 
-Here is an example of an empty function called `square` that takes a `number` as a parameter:
+To reference and access this particular form in JavaScript, we can use the getElementById() method on the document and provide the ID.
 
-```js
-function square(number) {}
-```
+The code `document.getElementById('my-form')` gets a reference to an HTML element with an `id` of `my-form`. Get a reference to the HTML element with the `id` of `calorie-form`.
 
 </section>
 
@@ -33,7 +29,7 @@ function square(number) {}
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(calculate.toString().match(/function calculate\(\s*e\)\s*\{\s*\}/));
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie\-form[\'\"\`]\)/) );
 ```
 
 </section>
@@ -46,9 +42,7 @@ tests:
 
 ```html
 <script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate() {}
+  //console.log(document);
 </script>
 ```
 
@@ -137,9 +131,8 @@ tests:
 
 ```html
 <script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {}
+  //console.log(document);
+  document.getElementById('calorie-form');
 </script>
 ```
 

@@ -1,6 +1,6 @@
 ---
-id: 5ddb965c65d27e1512d44da1
-title: Part 08
+id: 5ddb965c65d27e1512d44da2
+title: Part 9
 challengeType: 0
 isHidden: true
 ---
@@ -9,7 +9,8 @@ isHidden: true
 
 <section id='description'>
 
-Now assign the document object you just referenced to a variable named `total`. Since this variable will not change, use `const` to create it.
+To make the document objects easier to handle, let's turn them into an array.
+Wrap the `document.getElementsByClassName('cal-control')` portion of your code in an `Array.from()` method.
 
 </section>
 
@@ -25,7 +26,7 @@ Now assign the document object you just referenced to a variable named `total`. 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*total\s*=\s*document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)/.test(code));
+    testString: assert( code.replace(/\s/g, '').match(/Array\.from\(document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)\)/) );
 ```
 
 </section>
@@ -42,7 +43,7 @@ tests:
 
   function calculate(e) {
     e.preventDefault();
-    document.getElementsByClassName('cal-control');
+    const total = document.getElementsByClassName('cal-control');
   }
 </script>
 ```
@@ -136,7 +137,7 @@ tests:
 
   function calculate(e) {
     e.preventDefault();
-    const total = document.getElementsByClassName('cal-control');
+    const total = Array.from(document.getElementsByClassName('cal-control'));
   }
 </script>
 ```

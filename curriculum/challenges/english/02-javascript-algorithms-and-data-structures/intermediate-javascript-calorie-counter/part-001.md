@@ -1,57 +1,57 @@
 ---
-id: 5ddb965c65d27e1512d44da2
-title: Part 09
+id: 5ddb965c65d27e1512d44d9a
+title: Part 1
 challengeType: 0
 isHidden: true
 ---
 
 ## Description
-
 <section id='description'>
 
-To make the document objects easier to handle, let's turn them into an array.
-Wrap the `document.getElementsByClassName('cal-control')` portion of your code in an `Array.from()` method.
+ 
+When a browser loads a page, it creates a Document Object Model (DOM) representation of the page which includes all of the HTML elements in a tree structure.
+
+In JavaScript, you can access the DOM by referencing the global `document` object.
+
+To view the DOM, log it to the console with `console.log(document)`.
+
 
 </section>
 
-## Instructions
 
+## Instructions
 <section id='instructions'>
 </section>
 
-## Tests
 
+## Tests
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/Array\.from\(document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)\)/) );
+    testString: assert(code.replace(/\s/g, '').match(/console\.log\(document\)/));
+
 ```
 
 </section>
 
-## Challenge Seed
 
+## Challenge Seed
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <script>
-  document.getElementById('calorie-form').onsubmit = calculate;
 
-  function calculate(e) {
-    e.preventDefault();
-    const total = document.getElementsByClassName('cal-control');
-  }
 </script>
 ```
 
 </div>
 
-### Before Test
 
+### Before Test
 <div id='html-setup'>
 
 ```html
@@ -85,15 +85,8 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast
-          <input
-            type="number"
-            min="0"
-            class="cal-control"
-            id="breakfast"
-          /><br />
-          Lunch
-          <input type="number" min="0" class="cal-control" id="lunch" /><br />
+          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
+          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -108,14 +101,12 @@ tests:
       </form>
       <div id="output"></div>
     </div>
-  </body>
-</html>
 ```
 
 </div>
 
-### After Test
 
+### After Test
 <div id='html-teardown'>
 
 ```html
@@ -127,18 +118,13 @@ tests:
 
 </section>
 
-## Solution
 
+## Solution
 <section id='solution'>
 
 ```html
 <script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-    const total = Array.from(document.getElementsByClassName('cal-control'));
-  }
+console.log(document);
 </script>
 ```
 

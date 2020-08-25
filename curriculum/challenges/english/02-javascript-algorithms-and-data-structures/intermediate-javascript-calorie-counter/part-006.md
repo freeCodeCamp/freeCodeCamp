@@ -1,57 +1,55 @@
 ---
-id: 5ddb965c65d27e1512d44d9a
-title: Part 01
+id: 5ddb965c65d27e1512d44d9f
+title: Part 6
 challengeType: 0
 isHidden: true
 ---
 
 ## Description
+
 <section id='description'>
 
- 
-When a browser loads a page, it creates a Document Object Model (DOM) representation of the page which includes all of the HTML elements in a tree structure.
+When a form is submitted, the browser will try to submit it to a server and reload the page. We want to prevent this from happening and do our own processing on the client side.
 
-In JavaScript, you can access the DOM by referencing the global `document` object.
-
-To view the DOM, log it to the console with `console.log(document)`.
-
+Prevent the default behavior of the form submit event by calling `e.preventDefault()` inside of the `calculate` function.
 
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, '').match(/console\.log\(document\)/));
-
+    testString: assert(calculate.toString().match(/e\.preventDefault\(\s*\)/));
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
+  function calculate(e) {}
 </script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -85,8 +83,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -101,12 +106,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -118,13 +125,17 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
 <script>
-console.log(document);
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+  }
 </script>
 ```
 

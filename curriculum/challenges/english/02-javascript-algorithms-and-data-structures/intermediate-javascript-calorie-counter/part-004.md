@@ -1,6 +1,6 @@
 ---
-id: 5ddb965c65d27e1512d44d9b
-title: Part 02
+id: 5ddb965c65d27e1512d44d9d
+title: Part 4
 challengeType: 0
 isHidden: true
 ---
@@ -9,11 +9,12 @@ isHidden: true
 
 <section id='description'>
 
-In our HTML document, we have a form element with an `id` attribute: `<form id="calorie-form">`
+Create the `calculate` function that will hold the code to sum up the user's calorie inputs. Leave the body blank for now.
+Here is an example of an empty function called `square`:
 
-To reference and access this particular form in JavaScript, we can use the getElementById() method on the document and provide the ID.
-
-The code `document.getElementById('my-form')` gets a reference to an HTML element with an `id` of `my-form`. Get a reference to the HTML element with the `id` of `calorie-form`.
+```js
+function square() {}
+```
 
 </section>
 
@@ -29,7 +30,7 @@ The code `document.getElementById('my-form')` gets a reference to an HTML elemen
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie\-form[\'\"\`]\)/) );
+    testString: assert( typeof calculate === "function" );
 ```
 
 </section>
@@ -42,7 +43,7 @@ tests:
 
 ```html
 <script>
-  //console.log(document);
+  document.getElementById('calorie-form').onsubmit = calculate;
 </script>
 ```
 
@@ -131,8 +132,9 @@ tests:
 
 ```html
 <script>
-  //console.log(document);
-  document.getElementById('calorie-form');
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate() {}
 </script>
 ```
 

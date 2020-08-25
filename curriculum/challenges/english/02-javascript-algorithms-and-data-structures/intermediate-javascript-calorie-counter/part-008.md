@@ -1,6 +1,6 @@
 ---
-id: 5ddb965c65d27e1512d44d9c
-title: Part 03
+id: 5ddb965c65d27e1512d44da1
+title: Part 8
 challengeType: 0
 isHidden: true
 ---
@@ -9,15 +9,7 @@ isHidden: true
 
 <section id='description'>
 
-Now we need to specify what should be done with the form when the user submits it by clicking the Calculate button.
-
-Forms have an `onsubmit` event that can execute a function when the form is submitted.
-
-For example, in `document.getElementById('my-form').onsubmit = processForm;`, the function `processForm` will run when the form is submitted.
-
-Assign a function named `calculate` to the `onsubmit` event of your form.
-
-You will create the `calculate` function later.
+Now assign the document object you just referenced to a variable named `total`. Since this variable will not change, use `const` to create it.
 
 </section>
 
@@ -33,7 +25,7 @@ You will create the `calculate` function later.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie\-form[\'\"\`]\)\.onsubmit\=calculate/) );
+    testString: assert(/const\s*total\s*=\s*document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)/.test(code));
 ```
 
 </section>
@@ -46,7 +38,12 @@ tests:
 
 ```html
 <script>
-  document.getElementById('calorie-form');
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+    document.getElementsByClassName('cal-control');
+  }
 </script>
 ```
 
@@ -136,6 +133,11 @@ tests:
 ```html
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+    const total = document.getElementsByClassName('cal-control');
+  }
 </script>
 ```
 

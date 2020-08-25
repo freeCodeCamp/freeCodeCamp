@@ -1,6 +1,6 @@
 ---
-id: 5ddb965c65d27e1512d44d9f
-title: Part 06
+id: 5ddb965c65d27e1512d44d9e
+title: Part 5
 challengeType: 0
 isHidden: true
 ---
@@ -9,9 +9,15 @@ isHidden: true
 
 <section id='description'>
 
-When a form is submitted, the browser will try to submit it to a server and reload the page. We want to prevent this from happening and do our own processing on the client side.
+By default, `onsubmit` will pass the event object as a parameter to the function it calls.
+People usually call it `e`, short for event.
+Update the `calculate()` function to accept `e` as parameter.
 
-Prevent the default behavior of the form submit event by calling `e.preventDefault()` inside of the `calculate` function.
+Here is an example of an empty function called `square` that takes a `number` as a parameter:
+
+```js
+function square(number) {}
+```
 
 </section>
 
@@ -27,7 +33,7 @@ Prevent the default behavior of the form submit event by calling `e.preventDefau
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(calculate.toString().match(/e\.preventDefault\(\s*\)/));
+    testString: assert(calculate.toString().match(/function calculate\(\s*e\)\s*\{\s*\}/));
 ```
 
 </section>
@@ -42,7 +48,7 @@ tests:
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
-  function calculate(e) {}
+  function calculate() {}
 </script>
 ```
 
@@ -133,9 +139,7 @@ tests:
 <script>
   document.getElementById('calorie-form').onsubmit = calculate;
 
-  function calculate(e) {
-    e.preventDefault();
-  }
+  function calculate(e) {}
 </script>
 ```
 
