@@ -155,13 +155,10 @@ jobs:
       - name: Set Environment variables
         run: cp sample.env .env
 
-      - name: Install dependencies
-        run: npm ci
-
       - name: Start MongoDB
         run: |
           powershell
-          $wc.DownloadFile("https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi", "mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi")
+          (New-Object System.Net.WebClient).DownloadFile("https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi", "mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi")
           ls
           msiexec.exe /q /i mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi
 
