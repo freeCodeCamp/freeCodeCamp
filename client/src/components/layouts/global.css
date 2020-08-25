@@ -11,7 +11,7 @@ body {
 
 .btn-cta-big {
   max-height: 100%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   white-space: normal;
   width: 100%;
 }
@@ -64,25 +64,13 @@ p {
 }
 
 .big-heading {
-  font-size: 1.5rem !important;
+  font-size: 2.5rem !important;
   overflow-wrap: break-word;
-}
-
-.medium-heading {
-  font-size: 1.25rem !important;
-  font-weight: normal;
-}
-
-.medium-heading.text-center {
-  margin-bottom: 50px;
 }
 
 @media (max-width: 500px) {
   .big-heading {
-    font-size: 1.2rem !important;
-  }
-  .medium-heading {
-    font-size: 1.1rem !important;
+    font-size: 1.5rem !important;
   }
   h1 {
     font-size: 1.3rem;
@@ -96,6 +84,12 @@ p {
   .btn-cta,
   .btn-cta-big {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .btn-cta-big {
+    font-size: 1.3rem;
   }
 }
 
@@ -160,6 +154,7 @@ input[type='submit'],
   color: var(--secondary-color);
   border-radius: 0px;
   text-decoration: none;
+  white-space: pre-line;
 }
 
 button:hover,
@@ -255,6 +250,33 @@ fieldset[disabled] .btn-primary.focus {
   background: var(--tertiary-background);
   text-decoration: none;
   color: inherit;
+}
+
+.link-btn {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.link-btn.btn-lg svg {
+  height: 100%;
+  min-height: 20px;
+  min-width: 16px;
+  margin-left: 5px;
+}
+
+.link-btn:hover svg {
+  fill: var(--quaternary-background);
+}
+
+@media (min-width: 700px) {
+  .link-btn {
+    font-size: 1.1rem;
+  }
 }
 
 .button-group .btn:not(:last-child) {
@@ -493,28 +515,4 @@ blockquote .small {
 
 #search::placeholder {
   color: var(--secondary-color);
-}
-
-/* checkbox */
-
-.checkbox-inline input[type='checkbox'] {
-  margin-left: -30px;
-}
-
-.checkbox-inline {
-  padding-left: 30px;
-}
-
-input[type='checkbox'] {
-  height: 21px;
-  width: 21px;
-}
-
-/* general page styling */
-.default-page-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
 }
