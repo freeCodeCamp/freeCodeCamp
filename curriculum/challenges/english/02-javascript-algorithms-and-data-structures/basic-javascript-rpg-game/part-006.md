@@ -1,6 +1,6 @@
 ---
-id: 5d5a903507f328a948d398d0
-title: Part 04
+id: 5d5aab5d07f328a948d398d2
+title: Part 6
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-We've been declaring variables with the `var` keyword. However, in modern JavaScript, it's better to use `let` instead of `var` because it fixes a number of unusual behaviors with `var` that make it difficult to reason about.
-
-Change every `var` to `let`.
+Declare variables named `monsterHealth` and `inventory` without initializing them.
 
 </section>
 
@@ -25,7 +23,8 @@ Change every `var` to `let`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/let\s+xp\s*\=\s*0\;?/.test(code) && /let\s+health\s*\=\s*100\;?/.test(code) && /let\s+gold\s*\=\s*50\;?/.test(code) && /let\s+currentWeapon\s*\=\s*0\;?/.test(code));
+    # testString: assert(/let\s+monsterHealth\s*;?/.test(code) && /let\s+inventory\s*;?/.test(code));
+    testString: assert(monsterHealth === undefined && inventory === undefined);
 
 ```
 
@@ -38,10 +37,11 @@ tests:
 
 ```html
 <script>
-var xp = 0;
-var health = 100;
-var gold = 50;
-var currentWeapon = 0;
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
 
 </script>
 ```
@@ -143,6 +143,9 @@ let xp = 0;
 let health = 100;
 let gold = 50;
 let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory;
 </script>
 ```
 

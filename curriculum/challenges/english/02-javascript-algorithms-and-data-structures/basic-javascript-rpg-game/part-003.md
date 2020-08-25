@@ -1,6 +1,6 @@
 ---
-id: 5d5aac9c07f328a948d398d3
-title: Part 07
+id: 5d5a8f1c07f328a948d398cf
+title: Part 3
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now set the inventory to equal the string "stick".
+Create a variable called `currentWeapon` and set it to 0. When a name has two words, the convention is to use so-called "lowerCamelCase". The first word is all lowercase, and then the first letter of every preceding word is uppercased.
 
-Strings must be surrounded with double quotes `"`, single quotes `'`, or backticks <code>`</code>.
+When a name has two words, the convention is to use so-called "lowerCamelCase". The variable name should look like this: currentWeapon.
 
 </section>
 
@@ -25,7 +25,7 @@ Strings must be surrounded with double quotes `"`, single quotes `'`, or backtic
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(inventory === "stick");
+    testString: assert(currentWeapon === 0);
 
 ```
 
@@ -38,13 +38,9 @@ tests:
 
 ```html
 <script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory;
+var xp = 0;
+var health = 100;
+var gold = 50;
 
 </script>
 ```
@@ -142,13 +138,10 @@ let inventory;
 
 ```html
 <script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory = "stick";
+var xp = 0;
+var health = 100;
+var gold = 50;
+var currentWeapon = 0;
 </script>
 ```
 

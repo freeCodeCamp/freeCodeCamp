@@ -1,6 +1,6 @@
 ---
-id: 5d5a813321b9e3db6c106a46
-title: Part 01
+id: 5d5a8dd907f328a948d398ce
+title: Part 2
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To keep track of the player's experience points, we've declared a variable called `xp` and assigned it the starting value of 0.
-
-Create another variable to keep track of health and start it at 100.
+Create a variable called `gold` and set it to the value 50.
 
 </section>
 
@@ -25,7 +23,7 @@ Create another variable to keep track of health and start it at 100.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(health === 100);
+    testString: assert(gold === 50);
 
 ```
 
@@ -39,6 +37,7 @@ tests:
 ```html
 <script>
 var xp = 0;
+var health = 100;
 
 </script>
 ```
@@ -138,6 +137,7 @@ var xp = 0;
 <script>
 var xp = 0;
 var health = 100;
+var gold = 50;
 </script>
 ```
 

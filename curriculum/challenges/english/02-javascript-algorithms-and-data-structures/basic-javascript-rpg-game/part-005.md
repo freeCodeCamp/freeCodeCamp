@@ -1,6 +1,6 @@
 ---
-id: 5d5a8f1c07f328a948d398cf
-title: Part 03
+id: 5d5aaa5807f328a948d398d1
+title: Part 5
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Create a variable called `currentWeapon` and set it to 0. When a name has two words, the convention is to use so-called "lowerCamelCase". The first word is all lowercase, and then the first letter of every preceding word is uppercased.
+Now you will declare a variable without initializing it.
 
-When a name has two words, the convention is to use so-called "lowerCamelCase". The variable name should look like this: currentWeapon.
+Using the `let` keyword, declare a variable called `fighting` but don't set it equal to anything. Just end the line with a semicolon right after the variable name. 
 
 </section>
 
@@ -25,7 +25,7 @@ When a name has two words, the convention is to use so-called "lowerCamelCase". 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(currentWeapon === 0);
+    testString: assert(/let\s+fighting\s*;?/.test(code) && fighting === undefined);
 
 ```
 
@@ -38,9 +38,10 @@ tests:
 
 ```html
 <script>
-var xp = 0;
-var health = 100;
-var gold = 50;
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
 
 </script>
 ```
@@ -138,10 +139,11 @@ var gold = 50;
 
 ```html
 <script>
-var xp = 0;
-var health = 100;
-var gold = 50;
-var currentWeapon = 0;
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
 </script>
 ```
 

@@ -1,6 +1,6 @@
 ---
-id: 5d5aad2307f328a948d398d4
-title: Part 08
+id: 5d5a813321b9e3db6c106a46
+title: Part 1
 challengeType: 0
 isHidden: true
 ---
@@ -8,13 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Since the inventory can store multiple items, change the value of `inventory` to an array with the items stick, dagger, and sword.
+To keep track of the player's experience points, we've declared a variable called `xp` and assigned it the starting value of 0.
 
-Here is an example of a variable sandwich that equals a three-item array: 
-
-```js
-let sandwich = ["peanut butter", "jelly", "bread"];
-```
+Create another variable to keep track of health and start it at 100.
 
 </section>
 
@@ -29,7 +25,7 @@ let sandwich = ["peanut butter", "jelly", "bread"];
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(inventory.includes('stick') && inventory.includes('dagger') && inventory.includes('sword'));
+    testString: assert(health === 100);
 
 ```
 
@@ -42,13 +38,7 @@ tests:
 
 ```html
 <script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory = "stick";
+var xp = 0;
 
 </script>
 ```
@@ -146,13 +136,8 @@ let inventory = "stick";
 
 ```html
 <script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory = ["stick", "dagger", "sword"];
+var xp = 0;
+var health = 100;
 </script>
 ```
 

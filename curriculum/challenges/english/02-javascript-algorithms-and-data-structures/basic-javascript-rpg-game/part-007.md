@@ -1,6 +1,6 @@
 ---
-id: 5d5aaa5807f328a948d398d1
-title: Part 05
+id: 5d5aac9c07f328a948d398d3
+title: Part 7
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will declare a variable without initializing it.
+Now set the inventory to equal the string "stick".
 
-Using the `let` keyword, declare a variable called `fighting` but don't set it equal to anything. Just end the line with a semicolon right after the variable name. 
+Strings must be surrounded with double quotes `"`, single quotes `'`, or backticks <code>`</code>.
 
 </section>
 
@@ -25,7 +25,7 @@ Using the `let` keyword, declare a variable called `fighting` but don't set it e
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/let\s+fighting\s*;?/.test(code) && fighting === undefined);
+    testString: assert(inventory === "stick");
 
 ```
 
@@ -42,6 +42,9 @@ let xp = 0;
 let health = 100;
 let gold = 50;
 let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory;
 
 </script>
 ```
@@ -144,6 +147,8 @@ let health = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
+let monsterHealth;
+let inventory = "stick";
 </script>
 ```
 

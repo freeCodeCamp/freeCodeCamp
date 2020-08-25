@@ -1,6 +1,6 @@
 ---
-id: 5d5aab5d07f328a948d398d2
-title: Part 06
+id: 5d5aad2307f328a948d398d4
+title: Part 8
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,13 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Declare variables named `monsterHealth` and `inventory` without initializing them.
+Since the inventory can store multiple items, change the value of `inventory` to an array with the items stick, dagger, and sword.
+
+Here is an example of a variable sandwich that equals a three-item array: 
+
+```js
+let sandwich = ["peanut butter", "jelly", "bread"];
+```
 
 </section>
 
@@ -23,8 +29,7 @@ Declare variables named `monsterHealth` and `inventory` without initializing the
 ```yml
 tests:
   - text: See description above for instructions.
-    # testString: assert(/let\s+monsterHealth\s*;?/.test(code) && /let\s+inventory\s*;?/.test(code));
-    testString: assert(monsterHealth === undefined && inventory === undefined);
+    testString: assert(inventory.includes('stick') && inventory.includes('dagger') && inventory.includes('sword'));
 
 ```
 
@@ -42,6 +47,8 @@ let health = 100;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
+let monsterHealth;
+let inventory = "stick";
 
 </script>
 ```
@@ -145,7 +152,7 @@ let gold = 50;
 let currentWeapon = 0;
 let fighting;
 let monsterHealth;
-let inventory;
+let inventory = ["stick", "dagger", "sword"];
 </script>
 ```
 
