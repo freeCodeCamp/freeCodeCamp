@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e9931
+id: 5d822fd413a79914d39e9937
 title: Part 111
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can remove the `background-color` for this building now, since it isn't needed.
+Add `sky` as a second class to the `background-buildings` element. You are going to make a background for the skyline.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ You can remove the `background-color` for this building now, since it isn't need
 ```yml
 tests:
   - text: test-text
-    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb6));
+    testString: assert($(".background-buildings.sky").length === 1);
 
 ```
 
@@ -49,7 +49,6 @@ tests:
       }
 
       * {
-        border: 1px solid black;
         box-sizing: border-box;
       }
 
@@ -312,7 +311,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--building-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -432,7 +430,6 @@ tests:
       }
 
       * {
-        border: 1px solid black;
         box-sizing: border-box;
       }
 
@@ -713,7 +710,7 @@ tests:
   </head>
 
   <body>
-    <div class="background-buildings">
+    <div class="background-buildings sky">
       <div></div>
       <div></div>
       <div class="bb1 building-wrap">

@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e9915
+id: 5d822fd413a79914d39e9935
 title: Part 108
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You don't need the `background-color` for this building anymore so you can remove that property.
+Add another repeating gradient to this building; make it the same as the one you just added, except don't add the `90deg` direction and use your window color instead of the two `transparent` colors.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ You don't need the `background-color` for this building anymore so you can remov
 ```yml
 tests:
   - text: test-text
-    testString: const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb5));
+    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*30%\s*\)\s*(;|})/g.test(fb6));
 
 ```
 
@@ -292,7 +292,6 @@ tests:
       .fb5 {
         width: 10%;
         height: 33%;
-        background-color: var(--building-color2);
         position: relative;
         right: 10%;
         background: repeating-linear-gradient(
@@ -314,6 +313,13 @@ tests:
         width: 9%;
         height: 38%;
         background-color: var(--building-color3);
+        background: repeating-linear-gradient(
+          90deg,
+          var(--building-color3),
+          var(--building-color3) 10%,
+          transparent 10%,
+          transparent 30%
+        )
       }
     </style>
   </head>
@@ -684,6 +690,19 @@ tests:
         width: 9%;
         height: 38%;
         background-color: var(--building-color3);
+        background: repeating-linear-gradient(
+            90deg,
+            var(--building-color3),
+            var(--building-color3) 10%,
+            transparent 10%,
+            transparent 30%
+          ),
+          repeating-linear-gradient(
+            var(--building-color3),
+            var(--building-color3) 10%,
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
+          );
       }
     </style>
   </head>

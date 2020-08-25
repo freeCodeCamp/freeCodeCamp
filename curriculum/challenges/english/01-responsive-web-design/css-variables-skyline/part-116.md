@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e993a
+id: 5d822fd413a79914d39e993c
 title: Part 116
 challengeType: 0
 isHidden: true
@@ -7,15 +7,8 @@ isHidden: true
 
 ## Description
 <section id='description'>
-A media query can be used to change styles based on certain conditions, and they look like this:
 
-```css
-@media (condition) {
-
-}  
-```
-
-Add an empty media query at the bottom of your stylesheet with a condition of `max-width: 1000px`. Styles added in here will take effect when the document size is 1000px wide or less.
+In the `sky` class of the media query, change the two `#ffcf33` color values to `#ccc`, the `#ffff66` to `#445`, and the `#bbeeff` to `#223`. Then you can resize your window to see the background change colors.
 </section>
 
 ## Instructions
@@ -28,7 +21,7 @@ Add an empty media query at the bottom of your stylesheet with a condition of `m
 ```yml
 tests:
   - text: test-text
-    testString: assert(/\@media\s*\(\s*max-width\s*:\s*1000px\s*\)\s*{\s*}/g.test(code));
+    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1]; assert(/background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ccc\s*(0%\s*,|,)\s*#ccc\s*20%\s*,\s*#445\s*21%\s*,\s*#223\s*100%\s*\)\s*(;|})/g.test(sky));
 
 ```
 
@@ -341,6 +334,18 @@ tests:
             var(--window-color3) 10%,
             var(--window-color3) 30%
           );
+      }
+
+      @media (max-width: 1000px) {
+        .sky {
+          background: radial-gradient(
+              closest-corner circle at 15% 15%,
+              #ffcf33,
+              #ffcf33 20%,
+              #ffff66 21%,
+              #bbeeff 100%
+            );
+        }
       }
     </style>
   </head>
@@ -735,7 +740,15 @@ tests:
       }
 
       @media (max-width: 1000px) {
-        
+        .sky {
+          background: radial-gradient(
+              closest-corner circle at 15% 15%,
+              #ccc,
+              #ccc 20%,
+              #445 21%,
+              #223 100%
+            );
+        }
       }
     </style>
   </head>

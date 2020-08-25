@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e992e
+id: 5d822fd413a79914d39e992f
 title: Part 102
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Fill in the windows with your secondary color for this building. Also add a `margin` of `10%` to give the windows some space.
+Add `display: flex;` and `flex-wrap: wrap;` to the window container. This will put your windows side by side and then push them down to a new row when they don't fit.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Fill in the windows with your secondary color for this building. Also add a `mar
 ```yml
 tests:
   - text: test-text
-    testString: const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--window-color1\s*\)\s*(;|})/g.test(fb4w) && /margin\s*:\s*10%\s*(;|})/g.test(fb4w));
+    testString: assert($(".fb4b").css("display") === "flex" && $(".fb4b").css("flex-wrap") === "wrap");
 
 ```
 
@@ -278,6 +278,8 @@ tests:
         width: 30%;
         height: 10%;
         border-radius: 50%;
+        background-color: var(--window-color1);
+        margin: 10%;
       }
 
       .fb5 {
@@ -621,6 +623,8 @@ tests:
         width: 100%;
         height: 89%;
         background-color: var(--building-color1);
+        display: flex;
+        flex-wrap: wrap;
       }
       
       .fb4-window {

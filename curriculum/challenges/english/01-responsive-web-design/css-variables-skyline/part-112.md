@@ -1,5 +1,5 @@
 ---
-id: 5d822fd413a79914d39e9936
+id: 5d822fd413a79914d39e9938
 title: Part 112
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Okay, the buildings are done. Go back to the `*` selector and remove the border you applied to everything at the beginning and the buildings will come together.
+Give the `sky` class a `radial-gradient`. Use `#ffcf33` from `0%` to `20%`, `#ffff66` at `21%`, and `#bbeeff` at `100%`. This will add circular gradient to the background that will be your sun.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Okay, the buildings are done. Go back to the `*` selector and remove the border 
 ```yml
 tests:
   - text: test-text
-    testString: const all = code.match(/\*\s*{[\s\S]+?[^}]}/g)[0]; assert(!/border\s*:\s*1px\s+solid\s+black/g.test(all));
+    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*radial-gradient\(\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(sky));
 
 ```
 
@@ -49,7 +49,6 @@ tests:
       }
 
       * {
-        border: 1px solid black;
         box-sizing: border-box;
       }
 
@@ -330,7 +329,7 @@ tests:
   </head>
 
   <body>
-    <div class="background-buildings">
+    <div class="background-buildings sky">
       <div></div>
       <div></div>
       <div class="bb1 building-wrap">
@@ -462,6 +461,15 @@ tests:
         justify-content: space-evenly;
       }
 
+      .sky {
+        background: radial-gradient(
+            #ffcf33,
+            #ffcf33 20%,
+            #ffff66 21%,
+            #bbeeff 100%
+          );
+      }
+
       /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
       .bb1 {
         width: 10%;
@@ -711,7 +719,7 @@ tests:
   </head>
 
   <body>
-    <div class="background-buildings">
+    <div class="background-buildings sky">
       <div></div>
       <div></div>
       <div class="bb1 building-wrap">
