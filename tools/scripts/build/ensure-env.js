@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const debug = require('debug');
 
 const env = require('../../../config/env');
 
