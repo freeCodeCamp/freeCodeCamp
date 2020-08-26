@@ -31,9 +31,6 @@ const {
 
   STRIPE_PUBLIC_KEY,
   STRIPE_SECRET_KEY,
-  SERVICEBOT_ID,
-
-  SERVICEBOT_HMAC_SECRET_KEY,
 
   PAYPAL_CLIENT_ID,
   PAYPAL_SECRET,
@@ -109,10 +106,5 @@ module.exports = {
     verifyWebhookURL: PAYPAL_VERIFY_WEBHOOK_URL,
     tokenUrl: PAYPAL_API_TOKEN_URL,
     webhookId: PAYPAL_WEBHOOK_ID
-  },
-
-  servicebot: {
-    servicebotId: SERVICEBOT_ID,
-    hmacKey: SERVICEBOT_HMAC_SECRET_KEY
   }
 };
