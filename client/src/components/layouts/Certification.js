@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { fetchUser, isSignedInSelector, executeGA } from '../../redux';
 import { createSelector } from 'reselect';
+import Helmet from 'react-helmet';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -22,8 +23,22 @@ class CertificationLayout extends Component {
     }
     this.props.executeGA({ type: 'page', data: pathname });
   }
+
   render() {
-    return <Fragment>{this.props.children}</Fragment>;
+    const { children, theme = 'default', useTheme = true } = this.props;
+
+    return (
+      <Fragment>
+        <Helmet
+          bodyAttributes={{
+            class: useTheme
+              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+              : 'light-palette'
+          }}
+        ></Helmet>
+        {children}
+      </Fragment>
+    );
   }
 }
 
@@ -33,7 +48,9 @@ CertificationLayout.propTypes = {
   executeGA: PropTypes.func,
   fetchUser: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
-  pathname: PropTypes.string.isRequired
+  pathname: PropTypes.string.isRequired,
+  theme: PropTypes.string,
+  useTheme: PropTypes.bool
 };
 
 export default connect(

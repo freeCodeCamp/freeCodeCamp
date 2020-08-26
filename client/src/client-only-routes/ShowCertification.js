@@ -46,6 +46,9 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   isDonating: PropTypes.bool,
+  location: PropTypes.shape({
+    pathname: PropTypes.string
+  }),
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -158,8 +161,8 @@ class ShowCertification extends Component {
       fetchState,
       validCertName,
       createFlashMessage,
-      certName,
-      signedInUserName
+      signedInUserName,
+      location: { pathname }
     } = this.props;
 
     const {
@@ -196,6 +199,11 @@ class ShowCertification extends Component {
       certTitle,
       completionTime
     } = cert;
+
+    const certDate = new Date(issueDate);
+    const certYear = certDate.getFullYear();
+    const certMonth = certDate.getMonth();
+    const certURL = `https://freecodecamp.org${pathname}`;
 
     const donationCloseBtn = (
       <div>
@@ -237,22 +245,25 @@ class ShowCertification extends Component {
       </Grid>
     );
 
-    const linkedInBtn = (
-      <Row>
+    const shareCertBtns = (
+      <Row className='text-center'>
         <Spacer size={2} />
         <Button
           bsStyle='primary'
           className='btn-invert'
           target='_blank'
-          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${new Date(
-            issueDate
-          ).getFullYear()}&
-issueMonth=${new Date(
-            issueDate
-          ).getMonth()}&certUrl=https://freecodecamp.org/certification/
-                  {username}/{certName}`}
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth}&certUrl=${certURL}`}
         >
           Add this certification to my LinkedIn profile
+        </Button>
+        <Spacer />
+        <Button
+          bsStyle='primary'
+          className='btn-invert'
+          target='_blank'
+          href={`https://twitter.com/intent/tweet?text=I just earned the ${certTitle} certification @freeCodeCamp! Check it out here: ${certURL}`}
+        >
+          Share this certification with my friends on Twitter
         </Button>
       </Row>
     );
@@ -271,7 +282,7 @@ issueMonth=${new Date(
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{format(new Date(issueDate), 'MMMM D, YYYY')}</strong>
+                  <strong>{format(certDate, 'MMMM D, YYYY')}</strong>
                 </div>
               </Col>
             </header>
@@ -309,14 +320,13 @@ issueMonth=${new Date(
               <Row>
                 <p className='verify'>
                   Verify this certification at:
-                  https://www.freecodecamp.org/certification/
-                  {username}/{certName}
+                  {certURL}
                 </p>
               </Row>
             </footer>
           </Row>
         </Grid>
-        {signedInUserName === username ? linkedInBtn : ''}
+        {signedInUserName === username ? shareCertBtns : ''}
       </div>
     );
   }

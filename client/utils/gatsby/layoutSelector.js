@@ -16,7 +16,9 @@ export default function layoutSelector({ element, props }) {
   }
   if (/^\/certification(\/.*)*/.test(pathname)) {
     return (
-      <CertificationLayout pathname={pathname}>{element}</CertificationLayout>
+      <CertificationLayout pathname={pathname} useTheme={true}>
+        {element}
+      </CertificationLayout>
     );
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
