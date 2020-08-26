@@ -9,7 +9,7 @@ forumTopicId: 302363
 
 ## Description
 <section id='description'>
-<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a>.
+<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://watchstocks.herokuapp.com/' target='_blank'>https://watchstocks.herokuapp.com/</a>.
 Here are the specific user stories you should implement for this project:
 <strong>User Story:</strong> I can view a graph displaying the recent trend lines for each added stock.
 <strong>User Story:</strong> I can add new stocks by their symbol name.
