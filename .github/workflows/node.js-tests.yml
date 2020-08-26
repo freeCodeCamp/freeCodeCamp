@@ -167,7 +167,6 @@ jobs:
           ls
           cd ..
           powershell -Command "Start-Process cmd -Verb RunAs"
-          "D:\a\freeCodeCamp\freeCodeCamp\mongo\MongoDB\Server\4.4\bin\mongod.exe" --dbpath="D:\a\freeCodeCamp\freeCodeCamp\data\db"
 
       - name: Install dependencies
         run: npm ci
