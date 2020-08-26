@@ -168,4 +168,4 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run develop
+        run: npm run execute-with-timeout
