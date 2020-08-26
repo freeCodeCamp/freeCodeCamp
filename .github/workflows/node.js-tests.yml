@@ -163,7 +163,11 @@ jobs:
           md "D:\a\freeCodeCamp\freeCodeCamp\mongo"
           msiexec.exe /l*v mdbinstall.log  /qb /i mongodb-windows-x86_64-4.4.0-signed.msi SHOULD_INSTALL_COMPASS="0" INSTALLLOCATION="D:\a\freeCodeCamp\freeCodeCamp\mongo"
           md "D:\a\freeCodeCamp\freeCodeCamp\data\db"
+          cd mongo
           ls
+          cd ..
+          cmd
+          "D:\a\freeCodeCamp\freeCodeCamp\mongo\MongoDB\Server\4.4\bin\mongod.exe" --dbpath="D:\a\freeCodeCamp\freeCodeCamp\data\db"
 
       - name: Install dependencies
         run: npm ci
