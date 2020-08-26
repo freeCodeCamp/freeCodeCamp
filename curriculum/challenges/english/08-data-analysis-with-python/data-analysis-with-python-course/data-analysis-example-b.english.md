@@ -24,7 +24,7 @@ question:
 
   answers:
     - |
-      Retrieve a subset of rows and columns by supplying interger-location arguments.
+      Retrieve a subset of rows and columns by supplying integer-location arguments.
     - |
       Access a group of rows and columns by supplying label(s) arguments.
     - |
