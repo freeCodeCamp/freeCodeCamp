@@ -16,7 +16,6 @@ const {
   NEWS_LOCATION: news,
   LOCALE: locale,
   STRIPE_PUBLIC_KEY: stripePublicKey,
-  SERVICEBOT_ID: servicebotId,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey,
   PAYPAL_CLIENT_ID: paypalClientId,
@@ -38,10 +37,6 @@ module.exports = Object.assign(locations, {
     !stripePublicKey || stripePublicKey === 'pk_from_stripe_dashboard'
       ? null
       : stripePublicKey,
-  servicebotId:
-    !servicebotId || servicebotId === 'servicebot_id_from_servicebot_dashboard'
-      ? null
-      : servicebotId,
   algoliaAppId:
     !algoliaAppId || algoliaAppId === 'Algolia app id from dashboard'
       ? null
