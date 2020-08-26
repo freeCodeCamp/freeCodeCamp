@@ -160,10 +160,6 @@ jobs:
           powershell
           (New-Object System.Net.WebClient).DownloadFile("https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.0-signed.msi", "mongodb-windows-x86_64-4.4.0-signed.msi")
           ls
-          msiexec.exe /l*v mdbinstall.log  /qb /i mongodb-windows-x86_64-4.4.0-signed.msi SHOULD_INSTALL_COMPASS="0"
-          md "D:\freecodecamp\freecodecamp\data\db"
-          cmd
-          "C:\Program Files\MongoDB\Server\4.4\bin\mongod.exe" --dbpath="D:\freecodecamp\freecodecamp\data\db"
 
       - name: Install dependencies
         run: npm ci
