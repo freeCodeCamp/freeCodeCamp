@@ -90,16 +90,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.3.0
-        with:
-          mongodb-version: 3.6
-
       - name: Seed MongoDB
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run execute-with-timeout -- --build --25
+        run: npm run execute-with-timeout -- --build --60
 
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
@@ -173,7 +168,7 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run execute-with-timeout -- --build --25
+        run: npm run execute-with-timeout -- --build --60
 
   ensure-dev-server-on-mac:
     name: Run Dev Server on ${{ matrix.os }}
@@ -209,4 +204,4 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run execute-with-timeout -- --build --25
+        run: npm run execute-with-timeout -- --build --60
