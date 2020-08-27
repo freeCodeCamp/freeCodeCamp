@@ -61,14 +61,19 @@ jobs:
       - name: Run Tests
         run: npm test
 
-  ensure-dev-server:
+  ensure-dev-server-linux:
     name: Run Dev Server on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    services:
+      mongodb:
+        image: mongo:3.6.19
+        ports:
+          - 27017:27017
 
     strategy:
       matrix:
         node-version: [12.x]
-        os: [ubuntu-16.04, macos-latest]
+        os: [ubuntu-16.04]
 
     steps:
       - name: Checkout Source Files
@@ -94,7 +99,7 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run develop
+        run: npm run execute-with-timeout -- --build --25
 
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
@@ -168,4 +173,39 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run execute-with-timeout -- --build --15
+        run: npm run execute-with-timeout -- --build --25
+
+  ensure-dev-server-on-mac:
+    name: Run Dev Server on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+        os: [macos-latest]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Start MongoDB
+        run: |
+          brew update
+          brew install mongodb
+          mkdir -p /data/db
+          sudo chown -R `id -un` /data/db
+          mongod &
+
+      - name: Seed MongoDB
+        run: npm run seed
+
+      - name: Run Dev Server
+        run: npm run execute-with-timeout -- --build --25
