@@ -9,9 +9,7 @@ forumTopicId: 16163
 
 ## Description
 <section id='description'>
-The second way to access the properties of an object is bracket notation (<code>[]</code>). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
-However, you can still use bracket notation on object properties without spaces.
-Here is a sample of using bracket notation to read an object's property:
+The second way to access the properties of an object is bracket notation (<code>[]</code>). You can use bracket notation to access any property. And in two situations, you *must* use bracket notation (dot notation will not work): (1) when you are trying to access a property with a space in its name, or (2) when you are trying to access a property by using a variable name (discussed more in the next exercise). Here is a sample of using bracket notation to read an object's property:
 
 ```js
 var myObj = {
