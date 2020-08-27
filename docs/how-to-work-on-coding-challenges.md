@@ -27,7 +27,7 @@ Before you work on the curriculum, you would need to set up some tooling to help
 
 ## Challenge Template
 
-Below is a template of what the challenge markdown files look like.
+Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
 
 ````md
 ---
@@ -361,6 +361,118 @@ Once you have verified that each challenge you've worked on passes the tests, [p
 > 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
+## Upcoming Challenge Template
+
+The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
+
+````mdx
+
+---
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: 'Challenge Title'
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
+isHidden: Boolean, used to hide challenge in production
+videoUrl: 'url of video explanation'
+forumTopicId: 12345
+---
+
+import Script from './script.mdx';
+
+## --step-description--
+
+Description text, in markdown
+
+```html
+<div> 
+  example code
+</div>
+```
+
+## --step-hints--
+
+![test-id-1]
+
+There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.  
+
+```js
+Code for test one
+```
+
+![test-id-2]
+
+More instructions in markdown syntax
+
+```js
+More code
+```
+
+## --step-seed--
+
+### --before-user-code--
+
+```lang
+Code evaluated before the user’s
+```
+
+### --after-user-code--
+
+```lang
+Code evaluated after the user’s, and just before the tests
+```
+
+### --seed-content--
+
+![index-html]
+
+```html
+Some html
+```
+
+```css
+Some css
+```
+
+```js
+Some js
+```
+
+![index-js]
+
+<Script />
+
+
+# --solution-marker--
+
+Exactly the same as the seeds section
+
+## --next-solution-marker
+
+Same again
+
+# --question-marker--
+
+## --text-marker--
+
+The question would go here (only used for video challenges)
+
+## --answers-marker--
+
+Answer 1
+
+---
+
+Answer 2
+
+---
+
+More answers
+
+## --solution-marker--
+
+\<number of correct answer\>
+
+
+````
 
 ### Useful Links
 
