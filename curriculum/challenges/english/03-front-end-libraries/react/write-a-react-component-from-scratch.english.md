@@ -29,7 +29,8 @@ tests:
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })());
   - text: <code>MyComponent</code> should render to the DOM.
     testString: assert(document.getElementById('challenge-node').childNodes.length === 1);
-
+  - text: <code>MyComponent</code> should have a constructor calling <code>super</code> with <code>props</code>.
+    testString: assert(MyComponent.toString().includes('MyComponent(props)') && MyComponent.toString().includes('_super.call(this, props)'));
 ```
 
 </section>
