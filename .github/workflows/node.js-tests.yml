@@ -200,7 +200,10 @@ jobs:
         run: |
           brew update
           brew install mongodb-community@3.6
-          brew services start mongodb-community &
+          brew services start mongodb-community
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Seed MongoDB
         run: npm run seed
