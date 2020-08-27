@@ -27,9 +27,6 @@ const { flatten } = require('lodash');
 
 const jsdom = require('jsdom');
 
-const dom = new jsdom.JSDOM('');
-global.document = dom.window.document;
-
 const vm = require('vm');
 
 const puppeteer = require('puppeteer');
@@ -56,6 +53,18 @@ const {
 const { createPoly } = require('../../utils/polyvinyl');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
+
+// rethrow unhandled rejections to make sure the tests exit with -1
+process.on('unhandledRejection', err => {
+  cleanup();
+  // setting the error code because node does not (yet) exit with a non-zero
+  // code on unhandled exceptions.
+  process.exitCode = 1;
+  throw err;
+});
+
+const dom = new jsdom.JSDOM('');
+global.document = dom.window.document;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function(test, err) {
@@ -194,11 +203,6 @@ function cleanup() {
 }
 
 function runTests(challengeData) {
-  // rethrow unhandled rejections to make sure the tests exit with -1
-  process.on('unhandledRejection', err => {
-    throw err;
-  });
-
   describe('Check challenges', function() {
     after(function() {
       cleanup();
