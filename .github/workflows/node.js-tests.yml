@@ -200,9 +200,7 @@ jobs:
         run: |
           brew update
           brew install mongodb-community@3.6
-          mkdir -p /data/db
-          sudo chown -R `id -un` /data/db
-          mongod &
+          brew services start mongodb-community &
 
       - name: Seed MongoDB
         run: npm run seed
