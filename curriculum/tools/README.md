@@ -14,8 +14,8 @@ A one-off script that will automatically add the next step based on the last ste
   npm run create-next-step
   ```
 
-## [create-next-step.js](create-next-step.js)
-A one-off script that will automatically add a specified numbers of steps at a specific starting step number. The challenge seed code will be empty.
+## [create-empty-steps.js](create-empty-steps.js)
+A one-off script that automatically adds a specified number of steps at a specific starting step number. The challenge seed code for all steps created will be empty.
 
 **Note:** This script also runs [reorder-steps.js](reorder-steps.js).
 
@@ -25,6 +25,17 @@ A one-off script that will automatically add a specified numbers of steps at a s
   ```bash
   npm run create-empty-steps start=X num=Y # where X is the starting step number and Y is the number of steps to create.
   ```
+
+## [create-step-between.js](create-step-between.js)
+A one-off script that automatically adds a new step between two existing consecutive steps. The challenge seed code will use the existing starting step's challenge seed code with the editable region markers (ERMs) removed.
+
+**Note:** This script also runs [reorder-steps.js](reorder-steps.js).
+
+### How to run script:
+1. Change to the directory of the project.
+2. Run the following npm command:
+  ```bash
+  npm run create-step-between start=X end=Y # where X is the starting step number and Y is the following step number.
 
 ## [reorder-steps.js](reorder-steps.js)
 A one-off script that automatically reorders the step files in a project's markdown files based on the filename.  It also updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.

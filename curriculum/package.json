@@ -16,6 +16,7 @@
   "scripts": {
     "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD node ./tools/create-empty-steps",
     "create-next-step": "cross-env CALLING_DIR=$INIT_CWD node ./tools/create-next-step",
+    "create-step-between": "cross-env CALLING_DIR=$INIT_CWD node ./tools/create-step-between",
     "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD node ./tools/reorder-steps",
     "develop": "gulp",
     "lint": "gulp lint",

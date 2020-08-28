@@ -1,8 +1,14 @@
-const path = require('path');
+const {
+  reorderSteps,
+  createStepFile,
+  getExistingStepNums,
+  getProjectPath
+} = require('./utils');
 
-const { reorderSteps, createStepFile } = require('./utils');
+const anyStepExists = (steps, stepsToFind) =>
+  stepsToFind.some(num => steps.includes(num));
 
-const projectPath = (process.env.CALLING_DIR || process.cwd()) + path.sep;
+const projectPath = getProjectPath();
 const argValuePairs = process.argv.slice(2);
 
 const args = argValuePairs.reduce((argsObj, arg) => {
@@ -22,6 +28,12 @@ if (num > 20) {
 }
 
 const maxStepNum = stepStart + num - 1;
+
+const existingSteps = getExistingStepNums(projectPath);
+
+if (anyStepExists(existingSteps, [start, maxStepNum])) {
+  throw `Step not created. At least one of the steps specified between ${start} and ${maxStepNum} already exists.`;
+}
 
 for (let stepNum = stepStart; stepNum <= maxStepNum; stepNum++) {
   createStepFile({ stepNum, projectPath });
