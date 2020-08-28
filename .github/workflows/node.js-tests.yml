@@ -97,7 +97,7 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y coreutils
-          timeout 1200 npm run develop
+          timeout -k 15m --preserve-status 10m npm run develop
 
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
@@ -209,4 +209,4 @@ jobs:
       - name: Run Dev Server
         run: |
           brew install coreutils
-          gtimeout 1200 npm run develop
+          gtimeout -k 15m --preserve-status 10m npm run develop
