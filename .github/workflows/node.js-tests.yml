@@ -94,7 +94,7 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run execute-with-timeout -- --build --60
+        run: gtimeout 300 npm run build
 
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
@@ -206,4 +206,4 @@ jobs:
       - name: Run Dev Server
         run: |
           brew install coreutils
-          gtimeout 5 npm run build
+          gtimeout 300 npm run build
