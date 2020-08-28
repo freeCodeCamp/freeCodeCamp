@@ -23,7 +23,7 @@ testRegex.test(testStr);
 
 ## Instructions
 <section id='instructions'>
-Apply the regex <code>myRegex</code> on the string <code>myString</code> using the <code>.test()</code> method.
+Apply the regex <code>myRegex</code> on the string <code>myString</code> using the <code>.test()</code> method and assign the method's result (a Boolean value) to the variable <code>result</code>.
 </section>
 
 ## Tests
