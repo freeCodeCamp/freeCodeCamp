@@ -62,8 +62,7 @@
     "test:curriculum-js": "jest --rootDir ./curriculum",
     "test:server": "cd ./api-server && npm test && cd ../",
     "test:tools": "jest ./tools",
-    "test:utils": "jest --rootDir ./utils",
-    "execute-with-timeout": "node tools/scripts/execute-with-timeout"
+    "test:utils": "jest --rootDir ./utils"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "^2.0.2",
