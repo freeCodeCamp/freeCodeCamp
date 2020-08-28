@@ -5,7 +5,7 @@ gtimeout -k 8m 7m npm run develop
 case $? in
 
   124 | 137)
-    echo "`npm run development` runs successfully"
+    echo "npm run develop runs successfully"
     ;;
 
   *)
