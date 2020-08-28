@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To create a little more room around the menue, add `20px` of space on the inside of the `body` element by using the `padding` property.
+To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
 
 </section>
 
