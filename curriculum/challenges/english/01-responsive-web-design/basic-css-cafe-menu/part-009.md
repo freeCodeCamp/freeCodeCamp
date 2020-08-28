@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Since there will be two sections of items for sale, add a first `section` element within the `main` element.
+There will be two sections on the menu, one for coffees and one for desserts. Add a `section` element within the `main` element so you have a place to put all the coffees available.
 
 </section>
 
