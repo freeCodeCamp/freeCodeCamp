@@ -20,11 +20,20 @@ const removeErms = seedCode => {
     .join('\n');
 };
 
-const createStepFile = ({ projectPath, stepNum, challengeSeed = '' }) => {
+const createStepFile = ({
+  projectPath,
+  stepNum,
+  challengeSeed = '',
+  stepBetween = false
+}) => {
   if (challengeSeed) {
     challengeSeed = removeErms(challengeSeed);
   }
 
+  const descStepNum = stepBetween ? stepNum + 1 : stepNum;
+  const stepDescription = `${
+    stepBetween ? 'new' : ''
+  } step ${descStepNum} instructions`;
   const challengeSeedSection = `<section id='challengeSeed'>
 
 ${challengeSeed.trim()}
@@ -41,7 +50,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-step ${stepNum} instructions
+${stepDescription}
 
 </section>
 
@@ -61,14 +70,13 @@ tests:
 ${challengeSeedSection}
 `;
 
-  fs.writeFileSync(
-    `${projectPath}part-${padWithLeadingZeros(stepNum)}.md`,
-    template
-  );
+  let finalStepNum = padWithLeadingZeros(stepNum);
+  finalStepNum += stepBetween ? 'a' : '';
+  fs.writeFileSync(`${projectPath}part-${finalStepNum}.md`, template);
 };
 
 const reorderSteps = () => {
-  const projectPath = (process.env.CALLING_DIR || process.cwd()) + path.sep;
+  const projectPath = getProjectPath();
 
   const projectName = process.env.CALLING_DIR
     ? process.env.CALLING_DIR.split(path.sep)
@@ -110,6 +118,7 @@ const reorderSteps = () => {
       }
     }
   });
+
   if (foundFinal) {
     filesArr.push('final.md');
   }
@@ -161,8 +170,47 @@ const reorderSteps = () => {
   console.log('Reordered steps');
 };
 
+const getChallengeSeed = challengeFilePath => {
+  const fileContent = fs.readFileSync(challengeFilePath, 'utf8');
+  const matchedSection = fileContent
+    .toString()
+    .match(/<section id='challengeSeed'>(?<challengeSeed>[\s\S]+)<\/section>/);
+  let finalChallengeSeed = '';
+  if (matchedSection) {
+    let {
+      groups: { challengeSeed }
+    } = matchedSection;
+    finalChallengeSeed = challengeSeed ? challengeSeed : '';
+  }
+  return finalChallengeSeed;
+};
+
+const getExistingStepNums = projectPath => {
+  return fs.readdirSync(projectPath).reduce((stepNums, fileName) => {
+    if (
+      path.extname(fileName).toLowerCase() === '.md' &&
+      !fileName.endsWith('final.md')
+    ) {
+      let stepNum = fileName.split('.')[0].split('-')[1];
+      if (!/^\d{3}$/.test(stepNum)) {
+        throw `Step not created. File ${fileName} has a step number containing non-digits.` +
+          ' Please run reorder-steps script first.';
+      }
+      stepNum = parseInt(stepNum, 10);
+      stepNums.push(stepNum);
+    }
+    return stepNums;
+  }, []);
+};
+
+const getProjectPath = () =>
+  (process.env.CALLING_DIR || process.cwd()) + path.sep;
+
 module.exports = {
-  padWithLeadingZeros,
   createStepFile,
-  reorderSteps
+  getChallengeSeed,
+  padWithLeadingZeros,
+  reorderSteps,
+  getExistingStepNums,
+  getProjectPath
 };
