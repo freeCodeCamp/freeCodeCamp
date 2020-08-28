@@ -204,4 +204,6 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run execute-with-timeout -- --build --60
+        run: |
+          brew install coreutils
+          gtimeout 5 npm run build
