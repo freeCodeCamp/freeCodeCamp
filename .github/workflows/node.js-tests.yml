@@ -94,10 +94,7 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y coreutils
-          gtimeout 600 npm run build
+        run: gtimeout 300 npm run build
 
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
@@ -209,4 +206,4 @@ jobs:
       - name: Run Dev Server
         run: |
           brew install coreutils
-          gtimeout 600 npm run build
+          gtimeout 300 npm run build
