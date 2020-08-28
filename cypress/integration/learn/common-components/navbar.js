@@ -36,16 +36,19 @@ describe('Navbar', () => {
     cy.url().should('include', '/learn');
   });
 
-  it('Should take user to learn page when clicked on the fCC logo', () => {
-    cy.get('.universal-nav-middle').within(() => {
-      cy.get('svg').click();
-    });
-    cy.url().should('include', '/learn');
-  });
+  it(
+    'Should take user to learn page when clicked on ' + 'the freeCodeCamp logo',
+    () => {
+      cy.get('.universal-nav-middle').within(() => {
+        cy.get('svg').click();
+      });
+      cy.url().should('include', '/learn');
+    }
+  );
 
   it('Should be able to search on navbar search field', () => {
     cy.get('.ais-SearchBox').within(() => {
-      cy.get('input').type('Preact');
+      cy.get('input').type('Learn');
     });
 
     cy.get('.ais-Hits-list')
