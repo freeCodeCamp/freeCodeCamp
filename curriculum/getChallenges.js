@@ -142,6 +142,12 @@ function createChallengeCreator(basePath, lang) {
         metaDir,
         `./${getBlockNameFromPath(filePath)}/meta.json`
       );
+      // Using the current meta allows new challenges to be added and appear in
+      // the challenge order without client restart. However, since this only
+      // updates a single challenge, the order of challenges is likely to be
+      // incorrect (until the client is restarted). Adding to the end of
+      // meta.json should work perfectly.
+      delete require.cache[require.resolve(metaPath)];
       meta = require(metaPath);
     }
     const { name: superBlock } = superBlockInfoFromPath(filePath);
