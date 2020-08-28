@@ -97,14 +97,7 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y coreutils
-          if [ timeout --preserve-status 5m npm run develop -eq 143 ]
-          >then
-          >  echo "The script ran ok"
-          >  exit 0
-          >else
-          >  echo "The script failed" >&2
-          >  exit 1
-          >fi
+          bash timeout-exit-linux.sh
 
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
@@ -216,11 +209,4 @@ jobs:
       - name: Run Dev Server
         run: |
           brew install coreutils
-          if [ gtimeout --preserve-status 5m npm run develop -eq 143 ]
-          >then
-          >  echo "The script ran ok"
-          >  exit 0
-          >else
-          >  echo "The script failed" >&2
-          >  exit 1
-          >fi
+          bash timeout-exit-macos.sh
