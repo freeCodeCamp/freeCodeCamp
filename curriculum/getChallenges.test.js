@@ -1,68 +1,57 @@
-/* global expect */
+/* global expect beforeAll */
 const {
-  createChallenge,
-  getChallengeLang,
-  getEnglishPath,
-  isEnglishChallenge
+  challengesDir,
+  createChallengeCreator,
+  hasEnglishSourceCreator
 } = require('./getChallenges');
 
 /* eslint-disable max-len */
-const INVALID_PATH = 'not/challenge/path';
-const ENGLISH_PATH =
-  'curriculum/challenges/english/01-responsive-web-design/applied-accessibility/add-a-text-alternative-to-images-for-visually-impaired-accessibility.english.md';
-const CHINESE_PATH =
-  'curriculum/challenges/chinese/01-responsive-web-design/applied-accessibility/add-a-text-alternative-to-images-for-visually-impaired-accessibility.chinese.md';
-const NOT_LANGUAGE_PATH =
-  'curriculum/challenges/chinese/01-responsive-web-design/applied-accessibility/add-a-text-alternative-to-images-for-visually-impaired-accessibility.notlang.md';
-const MISSING_LANGUAGE_PATH =
-  'curriculum/challenges/chinese/01-responsive-web-design/applied-accessibility/add-a-text-alternative-to-images-for-visually-impaired-english.md';
+const REAL_PATH =
+  '01-responsive-web-design/applied-accessibility/add-a-text-alternative-to-images-for-visually-impaired-accessibility.english.md';
+const REAL_MISSING_PATH =
+  '01-responsive-web-design/applied-accessibility/add-a-text-alternative-to-images-for-visually-impaired.md';
 
+const EXISTING_CHALLENGE_PATH = 'challenge.md';
+const MISSING_CHALLENGE_PATH = 'no/challenge.md';
 /* eslint-enable max-len */
+
+let hasEnglishSource;
+let createChallenge;
+const basePath = '__fixtures__';
 
 describe('create non-English challenge', () => {
   describe('createChallenge', () => {
-    it('throws if the filename includes an invalid language', async () => {
-      await expect(createChallenge(NOT_LANGUAGE_PATH)).rejects.toThrow(
+    it('throws if lang is an invalid language', async () => {
+      createChallenge = createChallengeCreator(basePath, 'notlang');
+      await expect(createChallenge(REAL_PATH)).rejects.toThrow(
         'notlang is not a accepted language'
       );
     });
-    it('throws an error if the filename is missing a language', async () => {
-      await expect(createChallenge(MISSING_LANGUAGE_PATH)).rejects.toThrow(
-        `Missing language extension for
-${MISSING_LANGUAGE_PATH}`
+    it('throws an error if the source challenge is missing', async () => {
+      createChallenge = createChallengeCreator(challengesDir, 'chinese');
+      await expect(createChallenge(REAL_MISSING_PATH)).rejects.toThrow(
+        `Missing English challenge for
+${REAL_MISSING_PATH}
+It should be in
+`
       );
     });
   });
-  describe('getEnglishPath', () => {
-    it('returns the full path of the English version of the challenge', () => {
-      expect(getEnglishPath(CHINESE_PATH)).toBe(ENGLISH_PATH);
+  describe('hasEnglishSource', () => {
+    beforeAll(() => {
+      hasEnglishSource = hasEnglishSourceCreator(basePath);
     });
-    it('throws an error if the path has the wrong directory structure', () => {
-      expect(() => getEnglishPath(INVALID_PATH)).toThrow();
+    it('returns a boolean', async () => {
+      const sourceExists = await hasEnglishSource(EXISTING_CHALLENGE_PATH);
+      expect(typeof sourceExists).toBe('boolean');
     });
-    it('throws an error if the filename includes an invalid language', () => {
-      expect(() => getEnglishPath(NOT_LANGUAGE_PATH)).toThrow();
+    it('returns true if the English challenge exists', async () => {
+      const sourceExists = await hasEnglishSource(EXISTING_CHALLENGE_PATH);
+      expect(sourceExists).toBe(true);
     });
-    it('throws an error if the filename is missing a language', () => {
-      expect(() => getEnglishPath(MISSING_LANGUAGE_PATH)).toThrow();
-    });
-  });
-
-  describe('getChallengeLang', () => {
-    it("returns 'english' if the challenge is English", () => {
-      expect(getChallengeLang(ENGLISH_PATH)).toBe('english');
-    });
-    it("returns 'chinese' if the challenge is Chinese", () => {
-      expect(getChallengeLang(CHINESE_PATH)).toBe('chinese');
-    });
-  });
-
-  describe('isEnglishChallenge', () => {
-    it('returns true if the challenge is English', () => {
-      expect(isEnglishChallenge(ENGLISH_PATH)).toBe(true);
-    });
-    it('returns false if the challenge is not English', () => {
-      expect(isEnglishChallenge(CHINESE_PATH)).toBe(false);
+    it('returns false if the English challenge is missing', async () => {
+      const sourceExists = await hasEnglishSource(MISSING_CHALLENGE_PATH);
+      expect(sourceExists).toBe(false);
     });
   });
 });

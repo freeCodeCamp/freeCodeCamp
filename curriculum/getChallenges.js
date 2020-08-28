@@ -3,6 +3,7 @@ const { findIndex, reduce, toString } = require('lodash');
 const readDirP = require('readdirp-walk');
 const { parseMarkdown } = require('../tools/challenge-md-parser');
 const fs = require('fs');
+const util = require('util');
 /* eslint-disable max-len */
 const {
   mergeChallenges,
@@ -16,6 +17,8 @@ const { dasherize, nameify } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { blockNameify } = require('../utils/block-nameify');
 const { supportedLangs } = require('./utils');
+
+const access = util.promisify(fs.access);
 
 const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
@@ -47,14 +50,15 @@ exports.getChallengesForLang = function getChallengesForLang(lang) {
     readDirP({ root: getChallengesDirForLang(lang) })
       .on('data', file => {
         running++;
-        buildCurriculum(file, curriculum).then(done);
+        buildCurriculum(file, curriculum, lang).then(done);
       })
       .on('end', done);
   });
 };
 
-async function buildCurriculum(file, curriculum) {
-  const { name, depth, path: filePath, fullPath, stat } = file;
+async function buildCurriculum(file, curriculum, lang) {
+  const { name, depth, path: filePath, stat } = file;
+  const createChallenge = createChallengeCreator(challengesDir, lang);
   if (depth === 1 && stat.isDirectory()) {
     // extract the superBlock info
     const { order, name: superBlock } = superBlockInfo(name);
@@ -106,79 +110,85 @@ async function buildCurriculum(file, curriculum) {
   }
   const { meta } = challengeBlock;
 
-  const challenge = await createChallenge(fullPath, meta);
+  const challenge = await createChallenge(filePath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function parseTranslation(engPath, transPath, dict) {
+async function parseTranslation(engPath, transPath, dict, lang) {
   const engChal = await parseMarkdown(engPath);
   const translatedChal = await parseMarkdown(transPath);
 
   const engWithTranslatedComments = translateCommentsInChallenge(
     engChal,
-    getChallengeLang(transPath),
+    lang,
     dict
   );
+
   return mergeChallenges(engWithTranslatedComments, translatedChal);
 }
 
-exports.parseTranslation = parseTranslation;
-
-async function createChallenge(fullPath, maybeMeta) {
-  let meta;
-  if (maybeMeta) {
-    meta = maybeMeta;
-  } else {
-    const metaPath = path.resolve(
-      metaDir,
-      `./${getBlockNameFromFullPath(fullPath)}/meta.json`
+function createChallengeCreator(basePath, lang) {
+  const hasEnglishSource = hasEnglishSourceCreator(basePath);
+  return async function createChallenge(filePath, maybeMeta) {
+    let meta;
+    if (maybeMeta) {
+      meta = maybeMeta;
+    } else {
+      const metaPath = path.resolve(
+        metaDir,
+        `./${getBlockNameFromPath(filePath)}/meta.json`
+      );
+      meta = require(metaPath);
+    }
+    const { name: superBlock } = superBlockInfoFromPath(filePath);
+    if (!supportedLangs.includes(lang))
+      throw Error(`${lang} is not a accepted language.
+  Trying to parse ${filePath}`);
+    if (lang !== 'english' && !(await hasEnglishSource(filePath)))
+      throw Error(`Missing English challenge for
+${filePath}
+It should be in
+${path.resolve(basePath, 'english', filePath)}
+`);
+    // assumes superblock names are unique
+    // while the auditing is ongoing, we default to English for un-audited certs
+    // once that's complete, we can revert to using isEnglishChallenge(fullPath)
+    const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
+    const challenge = await (useEnglish
+      ? parseMarkdown(path.resolve(basePath, 'english', filePath))
+      : parseTranslation(
+          path.resolve(basePath, 'english', filePath),
+          path.resolve(basePath, lang, filePath),
+          COMMENT_TRANSLATIONS,
+          lang
+        ));
+    const challengeOrder = findIndex(
+      meta.challengeOrder,
+      ([id]) => id === challenge.id
     );
-    meta = require(metaPath);
-  }
-  const { name: superBlock } = superBlockInfoFromFullPath(fullPath);
-  const lang = getChallengeLang(fullPath);
-  if (!supportedLangs.includes(lang))
-    throw Error(`${lang} is not a accepted language.
-Trying to parse ${fullPath}`);
-  // assumes superblock names are unique
-  // while the auditing is ongoing, we default to English for un-audited certs
-  // once that's complete, we can revert to using isEnglishChallenge(fullPath)
-  const isEnglish =
-    isEnglishChallenge(fullPath) || !isAuditedCert(lang, superBlock);
-  if (isEnglish) fullPath = getEnglishPath(fullPath);
-  const challenge = await (isEnglish
-    ? parseMarkdown(fullPath)
-    : parseTranslation(
-        getEnglishPath(fullPath),
-        fullPath,
-        COMMENT_TRANSLATIONS
-      ));
-  const challengeOrder = findIndex(
-    meta.challengeOrder,
-    ([id]) => id === challenge.id
-  );
-  const {
-    name: blockName,
-    order,
-    superOrder,
-    isPrivate,
-    required = [],
-    template,
-    time
-  } = meta;
-  challenge.block = blockName;
-  challenge.dashedName = dasherize(challenge.title);
-  challenge.order = order;
-  challenge.superOrder = superOrder;
-  challenge.superBlock = superBlock;
-  challenge.challengeOrder = challengeOrder;
-  challenge.isPrivate = challenge.isPrivate || isPrivate;
-  challenge.required = required.concat(challenge.required || []);
-  challenge.template = template;
-  challenge.time = time;
+    const {
+      name: blockName,
+      order,
+      superOrder,
+      isPrivate,
+      required = [],
+      template,
+      time
+    } = meta;
+    challenge.block = blockName;
+    challenge.dashedName = dasherize(challenge.title);
+    challenge.order = order;
+    challenge.superOrder = superOrder;
+    challenge.superBlock = superBlock;
+    challenge.challengeOrder = challengeOrder;
+    challenge.isPrivate = challenge.isPrivate || isPrivate;
+    challenge.required = required.concat(challenge.required || []);
+    challenge.template = template;
+    challenge.time = time;
 
-  return prepareChallenge(challenge);
+    return prepareChallenge(challenge);
+  };
 }
 
 // TODO: tests and more descriptive name.
@@ -203,8 +213,6 @@ function prepareChallenge(challenge) {
   challenge.name = nameify(challenge.title);
   if (challenge.files) {
     challenge.files = filesToObject(challenge.files);
-    // TODO: This should be something that can be folded into the above reduce
-    // EDIT: maybe not, now that we're doing the same for solutionFiles.
     challenge.files = Object.keys(challenge.files)
       .filter(key => challenge.files[key])
       .map(key => challenge.files[key])
@@ -228,48 +236,20 @@ function prepareChallenge(challenge) {
   return challenge;
 }
 
-exports.createChallenge = createChallenge;
-
-function getEnglishPath(fullPath) {
-  const posix = path
-    .normalize(fullPath)
-    .split(path.sep)
-    .join(path.posix.sep);
-  const match = posix.match(/(.*curriculum\/challenges\/)([^/]*)(.*)(\2)(.*)/);
-  const lang = getChallengeLang(fullPath);
-  if (!supportedLangs.includes(lang))
-    throw Error(`${lang} is not a accepted language.
-Trying to parse ${fullPath}`);
-  if (match) {
-    return path.join(match[1], 'english', match[3] + 'english' + match[5]);
-  } else {
-    throw Error(`Malformed challenge path, ${fullPath} unable to parse.`);
-  }
+function hasEnglishSourceCreator(basePath) {
+  const englishRoot = path.resolve(__dirname, basePath, 'english');
+  return async function(translationPath) {
+    return await access(
+      path.join(englishRoot, translationPath),
+      fs.constants.F_OK
+    )
+      .then(() => true)
+      .catch(() => false);
+  };
 }
-
-function getChallengeLang(fullPath) {
-  const match = fullPath.match(/\.(\w+)\.md$/);
-  if (!match || match.length < 2)
-    throw Error(`Missing language extension for
-${fullPath}`);
-  return fullPath.match(/\.(\w+)\.md$/)[1];
-}
-
-function isEnglishChallenge(fullPath) {
-  return getChallengeLang(fullPath) === 'english';
-}
-
-exports.getChallengeLang = getChallengeLang;
-exports.getEnglishPath = getEnglishPath;
-exports.isEnglishChallenge = isEnglishChallenge;
 
 function superBlockInfoFromPath(filePath) {
   const [maybeSuper] = filePath.split(path.sep);
-  return superBlockInfo(maybeSuper);
-}
-
-function superBlockInfoFromFullPath(fullFilePath) {
-  const [, , maybeSuper] = fullFilePath.split(path.sep).reverse();
   return superBlockInfo(maybeSuper);
 }
 
@@ -291,11 +271,10 @@ function getBlockNameFromPath(filePath) {
   return block;
 }
 
-function getBlockNameFromFullPath(fullFilePath) {
-  const [, block] = fullFilePath.split(path.sep).reverse();
-  return block;
-}
-
 function arrToString(arr) {
   return Array.isArray(arr) ? arr.join('\n') : toString(arr);
 }
+
+exports.hasEnglishSourceCreator = hasEnglishSourceCreator;
+exports.parseTranslation = parseTranslation;
+exports.createChallengeCreator = createChallengeCreator;
