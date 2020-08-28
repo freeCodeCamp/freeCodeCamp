@@ -98,6 +98,7 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y coreutils
           bash timeout-exit-linux.sh
+          npm run build
 
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
@@ -210,3 +211,4 @@ jobs:
         run: |
           brew install coreutils
           bash timeout-exit-macos.sh
+          npm run build

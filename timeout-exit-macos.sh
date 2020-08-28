@@ -12,17 +12,3 @@ case $? in
     exit 1
     ;;
 esac
-
-gtimeout -k 11m 10m npm run build
-
-case $? in
-
-  124 | 137)
-    echo "`npm run build` runs successfully"
-    exit 0
-    ;;
-
-  *)
-    exit 1
-    ;;
-esac
