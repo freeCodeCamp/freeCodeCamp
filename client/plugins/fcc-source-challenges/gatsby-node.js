@@ -55,6 +55,22 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
       : null
   );
 
+  watcher.on('add', filePath =>
+    /\.md$/.test(filePath)
+      ? onSourceChange(filePath)
+          .then(challenge => {
+            createVisibleChallenge(challenge);
+          })
+          .catch(e =>
+            reporter.error(`fcc-add-challenge
+
+  ${e.message}
+
+  `)
+          )
+      : null
+  );
+
   function sourceAndCreateNodes() {
     return source()
       .then(challenges => Promise.all(challenges))
