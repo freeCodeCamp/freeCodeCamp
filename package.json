@@ -70,7 +70,7 @@
     "cross-env": "^7.0.2",
     "cypress": "^4.11.0",
     "debug": "^4.1.1",
-    "docsify-cli": "^4.4.0",
+    "docsify-cli": "^4.4.1",
     "dotenv": "^6.2.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
