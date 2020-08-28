@@ -15,6 +15,7 @@ const { isAuditedCert } = require('../utils/is-audited');
 const { dasherize, nameify } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { blockNameify } = require('../utils/block-nameify');
+const { supportedLangs } = require('./utils');
 
 const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
@@ -137,7 +138,7 @@ async function createChallenge(fullPath, maybeMeta) {
   }
   const { name: superBlock } = superBlockInfoFromFullPath(fullPath);
   const lang = getChallengeLang(fullPath);
-  if (!isAcceptedLanguage(lang))
+  if (!supportedLangs.includes(lang))
     throw Error(`${lang} is not a accepted language.
 Trying to parse ${fullPath}`);
   // assumes superblock names are unique
@@ -236,8 +237,8 @@ function getEnglishPath(fullPath) {
     .join(path.posix.sep);
   const match = posix.match(/(.*curriculum\/challenges\/)([^/]*)(.*)(\2)(.*)/);
   const lang = getChallengeLang(fullPath);
-  if (!isAcceptedLanguage(lang))
-    throw Error(`${getChallengeLang(fullPath)} is not a accepted language.
+  if (!supportedLangs.includes(lang))
+    throw Error(`${lang} is not a accepted language.
 Trying to parse ${fullPath}`);
   if (match) {
     return path.join(match[1], 'english', match[3] + 'english' + match[5]);
@@ -256,11 +257,6 @@ ${fullPath}`);
 
 function isEnglishChallenge(fullPath) {
   return getChallengeLang(fullPath) === 'english';
-}
-
-function isAcceptedLanguage(lang) {
-  const acceptedLanguages = ['english', 'chinese'];
-  return acceptedLanguages.includes(lang);
 }
 
 exports.getChallengeLang = getChallengeLang;
