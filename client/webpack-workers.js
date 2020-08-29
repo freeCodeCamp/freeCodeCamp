@@ -13,7 +13,9 @@ module.exports = (env = {}) => {
     entry: {
       'frame-runner': './src/client/frame-runner.ts',
       'sass-compile': './src/client/workers/sass-compile.ts',
-      'test-evaluator': './src/client/workers/test-evaluator.ts'
+      'test-evaluator': './src/client/workers/test-evaluator.ts',
+      // TODO: convert to TypeScript
+      'pyodide-runner': './src/client/workers/pyodide-runner.js'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {

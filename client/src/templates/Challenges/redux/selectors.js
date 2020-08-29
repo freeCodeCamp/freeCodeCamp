@@ -50,7 +50,8 @@ export const challengeDataSelector = state => {
   let challengeData = { challengeType };
   if (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.jsProject
+    challengeType === challengeTypes.jsProject ||
+    challengeType === challengeTypes.pyodide
   ) {
     challengeData = {
       ...challengeData,

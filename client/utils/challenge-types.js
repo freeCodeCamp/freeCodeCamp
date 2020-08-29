@@ -17,6 +17,7 @@ const multifileCertProject = 14;
 const theOdinProject = 15;
 const colab = 16;
 const exam = 17;
+const pyodide = 18;
 
 // individual exports
 exports.backend = backend;
@@ -46,7 +47,8 @@ exports.challengeTypes = {
   multifileCertProject,
   theOdinProject,
   colab,
-  exam
+  exam,
+  pyodide
 };
 
 exports.isFinalProject = challengeType => {
@@ -87,7 +89,8 @@ exports.viewTypes = {
   [multifileCertProject]: 'classic',
   [theOdinProject]: 'odin',
   [colab]: 'frontend',
-  [exam]: 'exam'
+  [exam]: 'exam',
+  [pyodide]: 'classic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -112,5 +115,6 @@ exports.submitTypes = {
   [multifileCertProject]: 'tests',
   [theOdinProject]: 'tests',
   [colab]: 'project.backEnd',
-  [exam]: 'exam'
+  [exam]: 'exam',
+  [pyodide]: 'tests'
 };
