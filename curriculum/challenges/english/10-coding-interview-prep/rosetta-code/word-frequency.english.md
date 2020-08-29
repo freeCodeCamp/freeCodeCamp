@@ -35,7 +35,7 @@ tests:
     testString: assert.deepEqual(wordFrequency(example_2, 4), example_2_solution)
   - text: <code>wordFrequency("Opensource opensource open-source open source", 1)</code> should return <code>[['opensource', 2]]</code>
     testString: assert.deepEqual(wordFrequency(example_3, 1), example_3_solution)
-  - text: <code>wordFrequency</code> should return the expected output for <code>("Apple application App apply applicative aPP aPPlE able", 3)</code>
+  - text: <code>wordFrequency("Apple application App apply applicative aPP aPPlE able", 3)</code> should return <code>[['app', 2], ['apple', 2], ['able', 1]]</code>
     testString: assert.deepEqual(wordFrequency(example_4, 3), example_4_solution)
   - text: <code>wordFrequency</code> should return the expected output for <code>("c d a d c a b d d c", 4)</code>
     testString: assert.deepEqual(wordFrequency(example_5, 4), example_5_solution)
