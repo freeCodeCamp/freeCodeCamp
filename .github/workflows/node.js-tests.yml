@@ -176,10 +176,12 @@ jobs:
           args: -h
 
       - name: Install GNU Coreutils
-        run: choco install gnuwin32-coreutils.install
+        run: choco install git.install
 
       - name: Check `develop` and `build` scripts
-        run: cmd.exe /c 'script-check-windows.bat'
+        run: |
+          "C:\Program Files\Git\bin\sh.exe" --login
+          bash script-check-linux.sh
 
   ensure-dev-server-on-mac:
     name: Run Dev Server on ${{ matrix.os }}
