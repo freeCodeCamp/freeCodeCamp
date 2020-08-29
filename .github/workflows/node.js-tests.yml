@@ -179,7 +179,9 @@ jobs:
         run: choco install gnuwin32-coreutils.install
 
       - name: Check `develop` and `build` scripts
-        run: script-check-windows.bat
+        run: |
+          cmd
+          script-check-windows.bat
 
   ensure-dev-server-on-mac:
     name: Run Dev Server on ${{ matrix.os }}
