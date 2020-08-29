@@ -11,6 +11,7 @@ const quiz = 8;
 const invalid = 9;
 const pythonProject = 10;
 const video = 11;
+const pyodide = 12;
 
 // individual exports
 exports.backend = backend;
@@ -31,14 +32,16 @@ exports.challengeTypes = {
   step,
   quiz,
   invalid,
-  video
+  video,
+  pyodide
 };
 
 // turn challengeType to file ext
 exports.pathsMap = {
   [html]: 'html',
   [js]: 'js',
-  [bonfire]: 'js'
+  [bonfire]: 'js',
+  [pyodide]: 'js'
 };
 // determine the component to view for each challenge
 exports.viewTypes = {
@@ -52,7 +55,8 @@ exports.viewTypes = {
   [step]: 'step',
   [quiz]: 'quiz',
   [backend]: 'backend',
-  [video]: 'video'
+  [video]: 'video',
+  [pyodide]: 'classic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -72,7 +76,8 @@ exports.submitTypes = {
   [quiz]: 'quiz',
   [backend]: 'backend',
   [modern]: 'tests',
-  [video]: 'tests'
+  [video]: 'tests',
+  [pyodide]: 'tests'
 };
 
 // determine which help forum questions should be posted to

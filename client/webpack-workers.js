@@ -11,7 +11,9 @@ module.exports = (env = {}) => {
     entry: {
       'frame-runner': './src/client/frame-runner.js',
       'sass-compile': './src/client/workers/sass-compile.js',
-      'test-evaluator': './src/client/workers/test-evaluator.js'
+      'test-evaluator': './src/client/workers/test-evaluator.js',
+      // Add the js worker file to evaluate python code and tests
+      'pyodide-runner': './src/client/workers/pyodide-runner.js'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
