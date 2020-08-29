@@ -29,7 +29,7 @@ tests:
     testString: assert(typeof wordFrequency == 'function');
   - text: <code>wordFrequency</code> should return an array.
     testString: assert(Array.isArray(wordFrequency("test")));
-  - text: <code>wordFrequency</code> should return the expected output for <code>("Hello hello world", 2)</code>
+  - text: <code>wordFrequency("Hello hello world", 2)</code> should return <code>[['hello', 2], ['world', 1]]</code>
     testString: assert.deepEqual(wordFrequency(example_1, 2), example_1_solution)
   - text: <code>wordFrequency</code> should return the expected output for <code>("The quick brown fox jumped over the lazy dog", 4)</code>
     testString: assert.deepEqual(wordFrequency(example_2, 4), example_2_solution)
