@@ -1,6 +1,6 @@
 #!/bin/bash
 
-timeout -k 8m 7m npm run develop
+gtimeout -k 8m 7m npm run develop
 
 case $? in
 
@@ -13,3 +13,4 @@ case $? in
     ;;
 esac
 
+npm run build
