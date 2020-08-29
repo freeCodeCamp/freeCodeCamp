@@ -180,7 +180,7 @@ jobs:
 
       - name: Check `develop` and `build` scripts
         run: |
-          cmd.exe /c 'script-check-windows.bat'
+          script-check-windows.bat
 
   ensure-dev-server-on-mac:
     name: Run Dev Server on ${{ matrix.os }}
