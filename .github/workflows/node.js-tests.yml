@@ -170,8 +170,13 @@ jobs:
       - name: Seed MongoDB
         run: npm run seed
 
-      - name: Run Dev Server
-        run: npm run execute-with-timeout -- --build --60
+      - name: Choco help
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: -h
+
+      - name: Install Chocolatey Dependencies
+        run: choco install gnuwin32-coreutils.install
 
   ensure-dev-server-on-mac:
     name: Run Dev Server on ${{ matrix.os }}
