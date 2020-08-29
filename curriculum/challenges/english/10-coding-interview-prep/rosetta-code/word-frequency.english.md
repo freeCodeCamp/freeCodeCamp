@@ -39,7 +39,7 @@ tests:
     testString: assert.deepEqual(wordFrequency(example_4, 3), example_4_solution)
   - text: <code>wordFrequency("c d a d c a b d d c", 4)</code> should return <code>[['d', 4], ['c', 3], ['a', 2], ['b', 1]]</code>
     testString: assert.deepEqual(wordFrequency(example_5, 4), example_5_solution)
-  - text: <code>wordFrequency</code> should return an empty array for <code>("", 5)</code>
+  - text: <code>wordFrequency("", 5)</code> should return <code>[]</code>
     testString: assert.deepEqual(wordFrequency(example_6, 5), example_6_solution)
 ```
 
