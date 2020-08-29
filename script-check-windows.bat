@@ -1,3 +1,3 @@
 @ECHO OFF
 
-timeout 7m npm run develop
+call timeout 7m npm run develop
