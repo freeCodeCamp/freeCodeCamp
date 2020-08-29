@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The flavor and price are now on the same line, but they are very close to each other and the price is not over to the right. This is because `inline-block` elements only take up the width of their content.
-
-To spread them out, you might try adding a `width` property to applicable `flavor` and `price` class selectors and give them a value to make them take up more space.  Try adding `50%` to the `flavor` class and `50%` to the `price` class.
+That's closer, but the price didn't stay over on the right. This is because `inline-block` elements only take up the width of their content. To spread them out, add a `width` property to the `flavor` and `price` class selectors that have a value of `50%` each.
 
 </section>
 
