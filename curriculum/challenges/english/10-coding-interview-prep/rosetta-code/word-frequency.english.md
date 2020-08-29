@@ -31,7 +31,7 @@ tests:
     testString: assert(Array.isArray(wordFrequency("test")));
   - text: <code>wordFrequency("Hello hello world", 2)</code> should return <code>[['hello', 2], ['world', 1]]</code>
     testString: assert.deepEqual(wordFrequency(example_1, 2), example_1_solution)
-  - text: <code>wordFrequency</code> should return the expected output for <code>("The quick brown fox jumped over the lazy dog", 4)</code>
+  - text: <code>wordFrequency("The quick brown fox jumped over the lazy dog", 4)</code> should return  <code>[['the', 2], ['brown', 1], ['dog', 1], ['fox', 1]]</code>
     testString: assert.deepEqual(wordFrequency(example_2, 4), example_2_solution)
   - text: <code>wordFrequency</code> should return the expected output for <code>("Opensource opensource open-source open source", 1)</code>
     testString: assert.deepEqual(wordFrequency(example_3, 1), example_3_solution)
