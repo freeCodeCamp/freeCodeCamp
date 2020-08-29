@@ -180,7 +180,8 @@ jobs:
 
       - name: Check `develop` and `build` scripts
         run: |
-          "C:\Program Files\Git\bin\sh.exe" --login
+          powershell
+          & 'C:\Program Files\Git\bin\sh.exe' --login
           bash script-check-linux.sh
 
   ensure-dev-server-on-mac:
