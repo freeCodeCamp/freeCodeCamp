@@ -179,24 +179,6 @@ const certText = {
   [certTypes.machineLearningPyV7]: 'Machine Learning with Python'
 };
 
-const completionHours = {
-  [certTypes.frontEnd]: 400,
-  [certTypes.backEnd]: 400,
-  [certTypes.dataVis]: 400,
-  [certTypes.infosecQa]: 300,
-  [certTypes.fullStack]: 1800,
-  [certTypes.respWebDesign]: 300,
-  [certTypes.frontEndLibs]: 300,
-  [certTypes.jsAlgoDataStruct]: 300,
-  [certTypes.dataVis2018]: 300,
-  [certTypes.apisMicroservices]: 300,
-  [certTypes.qaV7]: 300,
-  [certTypes.infosecV7]: 300,
-  [certTypes.sciCompPyV7]: 400,
-  [certTypes.dataAnalysisPyV7]: 400,
-  [certTypes.machineLearningPyV7]: 400
-};
-
 function getCertById(anId, allChallenges) {
   return allChallenges
     .filter(({ id }) => id === anId)
@@ -402,7 +384,6 @@ function createShowCert(app) {
     const certType = superBlockCertTypeMap[cert];
     const certId = certIds[certType];
     const certTitle = certText[certType];
-    const completionTime = completionHours[certType] || 300;
     return findUserByUsername$(username, {
       isCheater: true,
       isFrontEndCert: true,
@@ -542,8 +523,7 @@ function createShowCert(app) {
           certTitle,
           username,
           name,
-          date: format(new Date(completedDate), 'MMMM D, YYYY'),
-          completionTime
+          date: format(new Date(completedDate), 'MMMM D, YYYY')
         });
       }
       return res.json({

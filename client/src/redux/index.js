@@ -168,7 +168,6 @@ export const canRequestBlockDonationSelector = state =>
   state[ns].canRequestBlockDonation;
 export const isBlockDonationModalSelector = state =>
   state[ns].isBlockDonationModal;
-
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[ns].showCert;

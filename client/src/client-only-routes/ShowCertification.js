@@ -25,6 +25,7 @@ import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader } from '../components/helpers';
+import { completionTime } from '../../../config/completionHours-settings';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -32,7 +33,6 @@ const propTypes = {
     name: PropTypes.string,
     certName: PropTypes.string,
     certTitle: PropTypes.string,
-    completionTime: PropTypes.number,
     date: PropTypes.string
   }),
   certDashedName: PropTypes.string,
@@ -188,13 +188,7 @@ class ShowCertification extends Component {
       return <RedirectHome />;
     }
 
-    const {
-      date: issueDate,
-      name: userFullName,
-      username,
-      certTitle,
-      completionTime
-    } = cert;
+    const { date: issueDate, name: userFullName, username, certTitle } = cert;
 
     const donationCloseBtn = (
       <div>
@@ -267,7 +261,7 @@ class ShowCertification extends Component {
                 </h1>
                 <h4>
                   Developer Certification, representing approximately{' '}
-                  {completionTime} hours of coursework
+                  {completionTime(certTitle)} hours of coursework
                 </h4>
               </div>
             </main>
