@@ -9,7 +9,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) è una comunità amichevole dove puoi imparare a programmare gratuitamente. È gestito da una [non profit supportata da donazioni 501(c)(3)](https://donate.freecodecamp.org) con lo scopo di aiutare milioni di adulti pieni di impegni a a passare al campo della tecnologia. La nostra comunità ha già aiutato più di 10.000 persone a ottenere il loro primo lavoro da sviluppatore.
 
-Il nostro curriculum full-stack di sviluppo web è completamente gratuito e senza scadenze. Abbiamo migliaia di sfide di programmazione interattive per aiutarti ad espandere le tue capacità.
+Il nostro curriculum full-stack di sviluppo web e machine learning è completamente gratuito e senza scadenze. Abbiamo migliaia di sfide di programmazione interattive per aiutarti ad espandere le tue capacità.
 
 ## Sommario
 
@@ -25,7 +25,7 @@ Il nostro curriculum full-stack di sviluppo web è completamente gratuito e senz
 
 freeCodeCamp.org offre diverse certificazioni gratuite per gli sviluppatori. Ciascuna di queste certificazioni prevede 5 progetti: la realizzazione di web app di natura diversa, insieme a centinaia di sfide di programmazione opzionali per aiutarti a prepararti per tali progetti. Si stima che ogni certificazione richiede a un programmatore principiante circa 300 ore per ottenerla.
 
-Ognuno di questi 30 progetti nel curriculum di FreeCodeCamp.org ha i propri requisiti da rispettare mentre si realizza il progetto, e test automatizzati. Questi ti aiutano a sviluppare il tuo progetto in modo incrementale e assicurarti di aver soddisfatto tutti i requisiti prima di inviarlo.
+Ognuno di questi 50 progetti nel curriculum di FreeCodeCamp.org ha i propri requisiti da rispettare mentre si realizza il progetto, e test automatizzati. Questi ti aiutano a sviluppare il tuo progetto in modo incrementale e assicurarti di aver soddisfatto tutti i requisiti prima di inviarlo.
 
 È possibile inserire queste suite di test utilizzando il pacchetto [CDN di FreeCodeCamp](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Ciò significa che puoi creare questi progetti su siti Web come CodePen e Glitch o persino nell'ambiente di sviluppo del tuo computer locale.
 
@@ -33,7 +33,7 @@ Una volta ottenuto un certificato, lo avrai per sempre. Sarai sempre in grado di
 
 L'unica eccezione è nel caso in cui scopriamo violazioni della nostra [Politica sull'Onestà Accademica](https://www.freecodecamp.org/academic-honesty). Quando scopriamo le persone commento plagio in modo inequivocabile (sottomettendo il codice o i progetti di altre persone come loro senza citazione), facciamo ciò che dovrebbero fare tutte le rigorose istituzioni accademice - revochiamo le loro certificazioni e bandiamo quelle persone.
 
-Ecco le nostre sei certificazioni di base (il curriculum è completamente in inglese):
+Ecco le nostre dieci certificazioni di base (il curriculum è completamente in inglese):
 
 #### 1. Certificazione di Responsive Web Design
 
