@@ -61,11 +61,7 @@ export const onRenderBody = ({
       `
       }}
       key='gtag-dataLayer'
-    /> /* ,
-    <script
-      key='https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js'
-      src='https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js'
-    />*/
+    />
   ];
 
   if (

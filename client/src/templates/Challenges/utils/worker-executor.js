@@ -64,6 +64,7 @@ class WorkerExecutor {
   }
 
   execute(data, timeout = 1000) {
+    console.log(data);
     const task = eventify({});
     task._execute = function(getWorker) {
       getWorker().then(
@@ -88,7 +89,6 @@ class WorkerExecutor {
             clearTimeout(timeoutId);
             this.emit('error', { message: e.message });
           };
-
           worker.postMessage(data);
         },
         err => this.emit('error', err)

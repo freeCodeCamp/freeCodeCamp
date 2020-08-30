@@ -121,7 +121,6 @@ function getPyodideTestRunner({ build, sources }, proxyLogger) {
 
   const testWorker = createWorker(pyodideRunner, { terminateWorker: true });
   console.log('create pyodidie worker');
-
   return (testString, testTimeout, firstTest = true) => {
     return testWorker
       .execute({ build, testString, code, sources, firstTest }, testTimeout)
