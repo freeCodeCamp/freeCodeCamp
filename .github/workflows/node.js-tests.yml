@@ -178,11 +178,8 @@ jobs:
       - name: Install GNU Coreutils
         run: choco install git.install
 
-      - name: Check `develop` and `build` scripts
-        run: |
-          powershell
-          & 'C:\Program Files\Git\bin\sh.exe' --login
-          bash script-check-linux.sh
+      - name: Check `develop` script
+        run: npm run timeout -- --develop --7
 
   ensure-dev-server-on-mac:
     name: Run Dev Server on ${{ matrix.os }}
