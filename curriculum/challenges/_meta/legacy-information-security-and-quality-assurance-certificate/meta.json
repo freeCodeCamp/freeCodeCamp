@@ -1,6 +1,6 @@
 {
   "name": "Legacy Information Security and Quality Assurance Certificate",
-  "dashedName": "legacy-information-security-and-quality-assurance-certificate",
+  "dashedName": "information-security-and-quality-assurance-certificate",
   "order": 1,
   "time": "",
   "template": "",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "12-certificates/legacy-information-security-and-quality-assurance-certificate.json"
+  "fileName": "12-certificates/information-security-and-quality-assurance-certificate.json"
 }

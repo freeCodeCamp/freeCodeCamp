@@ -1,0 +1,50 @@
+{
+  "name": "@freecodecamp/search-indexing",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A repository to hold all of our search assets",
+  "main": "N/A",
+  "scripts": {
+    "dev": "nodemon server",
+    "init": "node init",
+    "build:server": "npx babel server --out-dir lib --ignore spec.js,test.js",
+    "format": "prettier --single-quote es5 --write './!(packages|www)/**/*.js'",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "keywords": [
+    "search",
+    "algolia",
+    "freeCodecamp"
+  ],
+  "author": "freeCodeCamp",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "dependencies": {
+    "algoliasearch": "^3.25.1",
+    "axios": "^0.19.0",
+    "chalk": "^2.3.2",
+    "debug": "^4.1.1",
+    "dotenv": "^6.2.0",
+    "file": "^0.2.2",
+    "fs-extra": "^7.0.1",
+    "googleapis": "^37.2.0",
+    "gray-matter": "^4.0.2",
+    "lodash": "^4.17.19",
+    "readdirp-walk": "^1.7.0",
+    "rxjs": "^6.4.0",
+    "secure-compare": "^3.0.1",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "html-entities": "^1.2.1",
+    "jest": "^24.9.0",
+    "striptags": "^3.1.1"
+  }
+}

@@ -47,7 +47,14 @@ tests:
   - text: The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(1).props.tasks.length >= 3; })());
   - text: The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('p').get(0).props.children === mockedComponent.find('List').get(0).props.tasks.join(', ') && mockedComponent.find('p').get(1).props.children === mockedComponent.find('List').get(1).props.tasks.join(', '); })());
+    testString: |
+      assert((function() {
+        const mockedComponent = Enzyme.mount(React.createElement(ToDo));
+        return (
+          mockedComponent.find('p').get(0).props.children.replace(/\s*,\s*/g,',') === mockedComponent.find('List').get(0).props.tasks.join(',').replace(/\s*,\s*/g,',') &&
+          mockedComponent.find('p').get(1).props.children.replace(/\s*,\s*/g,',') === mockedComponent.find('List').get(1).props.tasks.join(',').replace(/\s*,\s*/g,',')
+        );
+      })());
 
 ```
 

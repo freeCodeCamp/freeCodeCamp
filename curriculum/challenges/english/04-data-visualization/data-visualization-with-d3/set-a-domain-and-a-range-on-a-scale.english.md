@@ -9,8 +9,8 @@ forumTopicId: 301491
 ## Description
 <section id='description'>
 By default, scales use the identity relationship - the input value maps to the output value. But scales can be much more flexible and interesting.
-Say a data set has values ranging from 50 to 480. This is the input information for a scale, and is also known as the domain.
-You want to map those points along the <code>x</code> axis on the SVG canvas, between 10 units and 500 units. This is the output information, which is also known as the range.
+Say a data set has values ranging from 50 to 480. This is the input information for a scale, also known as the <dfn>domain</dfn>.
+You want to map those points along the <code>x</code> axis on the SVG canvas, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
 The <code>domain()</code> and <code>range()</code> methods set these values for the scale. Both methods take an array of at least two elements as an argument. Here's an example:
 
 ```js

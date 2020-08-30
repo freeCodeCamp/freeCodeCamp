@@ -60,13 +60,13 @@ const propTypes = {
     isFullStackCert: PropTypes.bool,
     isHonest: PropTypes.bool,
     isInfosecQaCert: PropTypes.bool,
-    isQaCert: PropTypes.bool,
-    isInfosecCert: PropTypes.bool,
+    isQaCertV7: PropTypes.bool,
+    isInfosecCertV7: PropTypes.bool,
     isJsAlgoDataStructCert: PropTypes.bool,
     isRespWebDesignCert: PropTypes.bool,
-    isSciCompPyCert: PropTypes.bool,
-    isDataAnalysisPyCert: PropTypes.bool,
-    isMachineLearningPyCert: PropTypes.bool,
+    isSciCompPyCertV7: PropTypes.bool,
+    isDataAnalysisPyCertV7: PropTypes.bool,
+    isMachineLearningPyCertV7: PropTypes.bool,
     linkedin: PropTypes.string,
     location: PropTypes.string,
     name: PropTypes.string,
@@ -113,11 +113,6 @@ const mapDispatchToProps = {
   verifyCert
 };
 
-const createHandleSignoutClick = navigate => e => {
-  e.preventDefault();
-  return navigate(`${apiLocation}/signout`);
-};
-
 export function ShowSettings(props) {
   const {
     createFlashMessage,
@@ -134,14 +129,14 @@ export function ShowSettings(props) {
       isDataVisCert,
       isFrontEndCert,
       isInfosecQaCert,
-      isQaCert,
-      isInfosecCert,
+      isQaCertV7,
+      isInfosecCertV7,
       isFrontEndLibsCert,
       isFullStackCert,
       isRespWebDesignCert,
-      isSciCompPyCert,
-      isDataAnalysisPyCert,
-      isMachineLearningPyCert,
+      isSciCompPyCertV7,
+      isDataAnalysisPyCertV7,
+      isMachineLearningPyCertV7,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -194,8 +189,7 @@ export function ShowSettings(props) {
               bsSize='lg'
               bsStyle='primary'
               className='btn-invert'
-              href={'/signout'}
-              onClick={createHandleSignoutClick(navigate)}
+              href={`${apiLocation}/signout`}
             >
               Sign me out of freeCodeCamp
             </Button>
@@ -243,19 +237,19 @@ export function ShowSettings(props) {
             is2018DataVisCert={is2018DataVisCert}
             isApisMicroservicesCert={isApisMicroservicesCert}
             isBackEndCert={isBackEndCert}
-            isDataAnalysisPyCert={isDataAnalysisPyCert}
+            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
             isHonest={isHonest}
-            isInfosecCert={isInfosecCert}
+            isInfosecCertV7={isInfosecCertV7}
             isInfosecQaCert={isInfosecQaCert}
             isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-            isMachineLearningPyCert={isMachineLearningPyCert}
-            isQaCert={isQaCert}
+            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+            isQaCertV7={isQaCertV7}
             isRespWebDesignCert={isRespWebDesignCert}
-            isSciCompPyCert={isSciCompPyCert}
+            isSciCompPyCertV7={isSciCompPyCertV7}
             username={username}
             verifyCert={verifyCert}
           />

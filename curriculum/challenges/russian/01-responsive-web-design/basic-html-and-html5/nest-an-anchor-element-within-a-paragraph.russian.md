@@ -22,16 +22,16 @@ localeTitle: Гнездо анкерного элемента в абзаце
 
 ```yml
 tests:
-  - text: You need an <code>a</code> element that links to "http://freecatphotoapp.com".
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0));
+  - text: You need an <code>a</code> element that links to "https://freecatphotoapp.com".
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0));
   - text: Your <code>a</code> element should have the anchor text of "cat photos"
     testString: assert($("a").text().match(/cat\sphotos/gi));
   - text: Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.
     testString: assert($("p") && $("p").length > 2);
   - text: Your <code>a</code> element should be nested within your new <code>p</code> element.
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")));
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")));
   - text: Your <code>p</code> element should have the text "View more " (with a space after it).
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)));
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)));
   - text: Your <code>a</code> element should <em>not</em> have the text "View more".
     testString: assert(!$("a").text().match(/View\smore/gi));
   - text: Make sure each of your <code>p</code> elements has a closing tag.
@@ -52,7 +52,7 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
 
-  <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
@@ -72,7 +72,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>View more <a target="_blank" href="http://freecatphotoapp.com">cat photos</a></p>
+  <p>View more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a></p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 

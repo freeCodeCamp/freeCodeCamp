@@ -39,7 +39,6 @@ function createReadSessionUser(app) {
 
   return function getSessionUser(req, res, next) {
     const queryUser = req.user;
-
     const source =
       queryUser &&
       Observable.forkJoin(
@@ -75,7 +74,8 @@ function createReadSessionUser(app) {
               isLinkedIn: !!user.linkedin,
               isTwitter: !!user.twitter,
               isWebsite: !!user.website,
-              ...normaliseUserFields(user)
+              ...normaliseUserFields(user),
+              joinDate: user.id.getTimestamp()
             }
           },
           sessionMeta,
@@ -162,16 +162,16 @@ function postResetProgress(req, res, next) {
       isJsAlgoDataStructCert: false,
       isApisMicroservicesCert: false,
       isInfosecQaCert: false,
-      isQaCert: false,
-      isInfosecCert: false,
+      isQaCertV7: false,
+      isInfosecCertV7: false,
       is2018FullStackCert: false,
       isFrontEndCert: false,
       isBackEndCert: false,
       isDataVisCert: false,
       isFullStackCert: false,
-      isSciCompPyCert: false,
-      isDataAnalysisPyCert: false,
-      isMachineLearningPyCert: false,
+      isSciCompPyCertV7: false,
+      isDataAnalysisPyCertV7: false,
+      isMachineLearningPyCertV7: false,
       completedChallenges: []
     },
     function(err) {
@@ -216,7 +216,7 @@ function createPostReportUserProfile(app) {
     return Email.send$(
       {
         type: 'email',
-        to: 'team@freecodecamp.org',
+        to: 'support@freecodecamp.org',
         cc: user.email,
         from: 'team@freecodecamp.org',
         subject: `Abuse Report : Reporting ${username}'s profile.`,

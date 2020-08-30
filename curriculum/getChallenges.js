@@ -1,12 +1,18 @@
 const path = require('path');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp-walk');
-const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
+const { parseMarkdown } = require('../tools/challenge-md-parser');
 const fs = require('fs');
+/* eslint-disable max-len */
+const {
+  mergeChallenges,
+  translateCommentsInChallenge
+} = require('../tools/challenge-md-parser/translation-parser/translation-parser');
+/* eslint-enable max-len*/
+const { COMMENT_TRANSLATIONS } = require('./comment-dictionary');
 
 const { dasherize } = require('../utils/slugs');
-
-const { challengeSchemaValidator } = require('./schema/challengeSchema');
+const { isAuditedCert } = require('../utils/is-audited');
 
 const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
@@ -28,7 +34,6 @@ exports.getMetaForBlock = getMetaForBlock;
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
   let curriculum = {};
-  const validate = challengeSchemaValidator(lang);
   return new Promise(resolve => {
     let running = 1;
     function done() {
@@ -39,13 +44,13 @@ exports.getChallengesForLang = function getChallengesForLang(lang) {
     readDirP({ root: getChallengesDirForLang(lang) })
       .on('data', file => {
         running++;
-        buildCurriculum(file, curriculum, validate).then(done);
+        buildCurriculum(file, curriculum).then(done);
       })
       .on('end', done);
   });
 };
 
-async function buildCurriculum(file, curriculum, validate) {
+async function buildCurriculum(file, curriculum) {
   const { name, depth, path: filePath, fullPath, stat } = file;
   if (depth === 1 && stat.isDirectory()) {
     // extract the superBlock info
@@ -81,12 +86,31 @@ async function buildCurriculum(file, curriculum, validate) {
   }
   const { meta } = challengeBlock;
 
-  const challenge = await createChallenge(fullPath, meta, validate);
+  const challenge = await createChallenge(fullPath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function createChallenge(fullPath, maybeMeta, validate) {
+async function parseTranslation(engPath, transPath, dict) {
+  const engChal = await parseMarkdown(engPath);
+  const translatedChal = await parseMarkdown(transPath);
+  const codeLang =
+    engChal.files && engChal.files[0] ? engChal.files[0].ext : null;
+
+  const engWithTranslatedComments = codeLang
+    ? translateCommentsInChallenge(
+        engChal,
+        getChallengeLang(transPath),
+        dict,
+        codeLang
+      )
+    : engChal;
+  return mergeChallenges(engWithTranslatedComments, translatedChal);
+}
+
+exports.parseTranslation = parseTranslation;
+
+async function createChallenge(fullPath, maybeMeta) {
   let meta;
   if (maybeMeta) {
     meta = maybeMeta;
@@ -98,12 +122,23 @@ async function createChallenge(fullPath, maybeMeta, validate) {
     meta = require(metaPath);
   }
   const { name: superBlock } = superBlockInfoFromFullPath(fullPath);
-  const challenge = await parseMarkdown(fullPath);
-  const result = validate(challenge);
-  if (result.error) {
-    console.log(result.value);
-    throw new Error(result.error);
-  }
+  const lang = getChallengeLang(fullPath);
+  if (!isAcceptedLanguage(lang))
+    throw Error(`${lang} is not a accepted language.
+Trying to parse ${fullPath}`);
+  // assumes superblock names are unique
+  // while the auditing is ongoing, we default to English for un-audited certs
+  // once that's complete, we can revert to using isEnglishChallenge(fullPath)
+  const isEnglish =
+    isEnglishChallenge(fullPath) || !isAuditedCert(lang, superBlock);
+  if (isEnglish) fullPath = getEnglishPath(fullPath);
+  const challenge = await (isEnglish
+    ? parseMarkdown(fullPath)
+    : parseTranslation(
+        getEnglishPath(fullPath),
+        fullPath,
+        COMMENT_TRANSLATIONS
+      ));
   const challengeOrder = findIndex(
     meta.challengeOrder,
     ([id]) => id === challenge.id
@@ -138,6 +173,44 @@ async function createChallenge(fullPath, maybeMeta, validate) {
 }
 
 exports.createChallenge = createChallenge;
+
+function getEnglishPath(fullPath) {
+  const posix = path
+    .normalize(fullPath)
+    .split(path.sep)
+    .join(path.posix.sep);
+  const match = posix.match(/(.*curriculum\/challenges\/)([^/]*)(.*)(\2)(.*)/);
+  const lang = getChallengeLang(fullPath);
+  if (!isAcceptedLanguage(lang))
+    throw Error(`${getChallengeLang(fullPath)} is not a accepted language.
+Trying to parse ${fullPath}`);
+  if (match) {
+    return path.join(match[1], 'english', match[3] + 'english' + match[5]);
+  } else {
+    throw Error(`Malformed challenge path, ${fullPath} unable to parse.`);
+  }
+}
+
+function getChallengeLang(fullPath) {
+  const match = fullPath.match(/\.(\w+)\.md$/);
+  if (!match || match.length < 2)
+    throw Error(`Missing language extension for
+${fullPath}`);
+  return fullPath.match(/\.(\w+)\.md$/)[1];
+}
+
+function isEnglishChallenge(fullPath) {
+  return getChallengeLang(fullPath) === 'english';
+}
+
+function isAcceptedLanguage(lang) {
+  const acceptedLanguages = ['english', 'chinese'];
+  return acceptedLanguages.includes(lang);
+}
+
+exports.getChallengeLang = getChallengeLang;
+exports.getEnglishPath = getEnglishPath;
+exports.isEnglishChallenge = isEnglishChallenge;
 
 function superBlockInfoFromPath(filePath) {
   const [maybeSuper] = filePath.split(path.sep);
