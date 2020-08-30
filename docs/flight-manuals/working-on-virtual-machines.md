@@ -28,7 +28,7 @@ brew install azure-cli
 az login
 ```
 
-> **Get the list of VM names and IP addresses:**
+> **Get the list of VM names and P addresses:**
 
 ```
 az vm list-ip-addresses --output table
@@ -61,6 +61,12 @@ doctl compute droplet list --format "ID,Name,PublicIPv4"
 ```
 
 # Spin a VM (or VM Scale Set)
+
+> Todo: Add instructions for spinning VM(s)
+
+<!--
+
+The below instructions are stale.
 
 ### 0. Prerequisites (workspace Setup) for Staff
 
@@ -149,6 +155,8 @@ az vmss create \
 >   retrived by executing something like
 >   `az vm list-sizes -l eastus --output table` or checking the Azure portal
 >   pricing.
+
+-->
 
 # Keep VMs updated
 
