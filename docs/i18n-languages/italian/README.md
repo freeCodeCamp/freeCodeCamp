@@ -73,7 +73,7 @@ Ecco le nostre dieci certificazioni di base (il curriculum è completamente in i
 - [React e Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **Progetti**: La Macchina di quote casuali, Il Visualizzatore di Markdown, La macchinetta Drum, La Calcolatrice JavaScript, L'orologio Pomodoro
+  **Progetti**: Il generatore di citazioni casuali, Il Visualizzatore di Markdown, Simulatore di percussioni, La Calcolatrice in JavaScript, L'orologio per la tecnica del Pomodoro
 
 #### 4. Certificazione visualizzazione dei dati
 
