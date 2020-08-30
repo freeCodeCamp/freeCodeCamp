@@ -61,7 +61,7 @@ Ecco le nostre dieci certificazioni di base (il curriculum è completamente in i
 - [Scripting di algoritmi intermedi](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
   <br />
   <br />
-  **Progetti**: il verificatore di palindromi, il convertitore di numeri romani, il cifrario di Cesare, il validatore di numeri telefonici, il registratore di cassa
+  **Progetti**: [il verificatore di palindromi](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker), [il convertitore di numeri romani](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter), [il cifrario di Cesare](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher), [il validatore di numeri telefonici](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator), [il registratore di cassa](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
 
 #### 3. Certificazione di Librerie Front End
 
