@@ -46,7 +46,7 @@ Ecco le nostre dieci certificazioni di base (il curriculum è completamente in i
 - [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
   <br />
   <br />
-  **Progetti**: [pagina tributo](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page), [modulo di sondaggio](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form), [Landing Page di un prodotto](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page), [Pagina di documentazione tecnica](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page), [sito di portfolio personale](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
+  **Progetti**:  [Il Generatore Casuale di Citazioni](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine), [Il Visuallizzatore di Markdown](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer), [Il Simulatore di Percussioni](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine), [La Calcolatrice in JavaScript](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator), [L'Orologio per la Tecnica del Pomodoro](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-pomodoro-clock)
 
 #### 2. Certificazione di algoritmi JavaScript e strutture di dati 
 
