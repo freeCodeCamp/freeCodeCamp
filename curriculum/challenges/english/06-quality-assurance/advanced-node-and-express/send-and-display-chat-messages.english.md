@@ -8,7 +8,7 @@ forumTopicId: 301562
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-socketio">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.
 It's time you start allowing clients to send a chat message to the server to emit to all the clients! Already in your client.js file you should see there is already a block of code handling when the message form is submitted. (<code>$('form').submit(function(){ /*logic*/ });</code>)
 <hr>Within the form submit code, you should emit an event after you define 'messageToSend' but before you clear the text box <code>#m</code>. The event should be named 'chat message' and the data should just be 'messageToSend'. <code>socket.emit('chat message', messageToSend);</code>
 Now on your server you should be listening to the socket for the event 'chat message' with the data being named 'message'. Once the event is received it should then emit the event 'chat message' to all sockets <code>io.emit</code> with the data being an object containing 'name' and 'message'.

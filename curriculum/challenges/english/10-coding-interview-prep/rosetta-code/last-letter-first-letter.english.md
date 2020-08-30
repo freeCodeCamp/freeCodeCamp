@@ -3,6 +3,7 @@ id: 5e4ce2b6ac708cc68c1df25e
 title: Last letter-first letter
 challengeType: 5
 isHidden: false
+forumTopicId: 385256
 ---
 
 ## Description
@@ -119,7 +120,7 @@ function findLongestChain(items) {
 
   var longest_path_len = longest_path_refs_len;
   var longest_path = new Array(longest_path_len);
-  
+
   for (var i = 0; i < longest_path_len; i++)
     longest_path[i] = items[longest_path_refs[i].index];
 

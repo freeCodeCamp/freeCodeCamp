@@ -32,7 +32,7 @@ describe('Learn Landing page', function() {
   it('Has the correct heading for an unauthenticated User', () => {
     cy.visit(locations.index);
 
-    cy.contains('h1', 'Welcome to freeCodeCamp.org');
+    cy.contains('h1', "Welcome to freeCodeCamp's curriculum.");
   });
 
   it('renders a curriuculum map', () => {

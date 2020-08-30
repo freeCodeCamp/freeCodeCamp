@@ -69,15 +69,15 @@ function LinkedList() {
   this.add = function(element){
     var node = new Node(element);
     if(head === null){
-        head = node;
+      head = node;
     } else {
-        var currentNode = head;
+      var currentNode = head;
 
-        while(currentNode.next){
-            currentNode  = currentNode.next;
-        }
+      while(currentNode.next){
+        currentNode  = currentNode.next;
+      }
 
-        currentNode.next = node;
+      currentNode.next = node;
     }
 
     length++;

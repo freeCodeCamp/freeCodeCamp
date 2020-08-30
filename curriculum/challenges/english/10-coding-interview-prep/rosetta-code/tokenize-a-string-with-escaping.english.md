@@ -65,7 +65,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function tokenize(str, esc, sep) {
+function tokenize(str, sep, esc) {
   return true;
 }
 ```

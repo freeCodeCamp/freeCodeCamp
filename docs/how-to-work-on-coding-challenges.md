@@ -27,7 +27,7 @@ Before you work on the curriculum, you would need to set up some tooling to help
 
 ## Challenge Template
 
-Below is a template of what the challenge markdown files look like.
+Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
 
 ````md
 ---
@@ -252,9 +252,9 @@ Here are specific formatting guidelines for the challenge seed code:
 
 ## Hints and Solutions
 
-Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://www.freecodecamp.org/forum/c/guide) under the `Guide` category.
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
 
-If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://www.freecodecamp.org/forum/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
 ### Adding new Challenge hints/solutions Topics
 
@@ -357,15 +357,127 @@ You are also able to test one challenge individually by performing the following
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
 > [!TIP]
-> You can set the environment variable `TEST_CHALLENGES_FOR_LANGS` in the `.env` to the language of the challenge(s) you need to test.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
+## Upcoming Challenge Template
+
+The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
+
+````mdx
+
+---
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: 'Challenge Title'
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
+isHidden: Boolean, used to hide challenge in production
+videoUrl: 'url of video explanation'
+forumTopicId: 12345
+---
+
+import Script from './script.mdx';
+
+## --step-description--
+
+Description text, in markdown
+
+```html
+<div> 
+  example code
+</div>
+```
+
+## --step-hints--
+
+![test-id-1]
+
+There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.  
+
+```js
+Code for test one
+```
+
+![test-id-2]
+
+More instructions in markdown syntax
+
+```js
+More code
+```
+
+## --step-seed--
+
+### --before-user-code--
+
+```lang
+Code evaluated before the user’s
+```
+
+### --after-user-code--
+
+```lang
+Code evaluated after the user’s, and just before the tests
+```
+
+### --seed-content--
+
+![index-html]
+
+```html
+Some html
+```
+
+```css
+Some css
+```
+
+```js
+Some js
+```
+
+![index-js]
+
+<Script />
+
+
+# --solution-marker--
+
+Exactly the same as the seeds section
+
+## --next-solution-marker
+
+Same again
+
+# --question-marker--
+
+## --text-marker--
+
+The question would go here (only used for video challenges)
+
+## --answers-marker--
+
+Answer 1
+
+---
+
+Answer 2
+
+---
+
+More answers
+
+## --solution-marker--
+
+\<number of correct answer\>
+
+
+````
 
 ### Useful Links
 
 Creating and Editing Challenges:
 
-1. [Challenge types](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - what the numeric challenge type values mean (enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - what the numeric challenge type values mean (enum).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.

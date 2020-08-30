@@ -9,14 +9,6 @@
   white-space: pre-line;
 }
 
-.logo-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
-}
-
 .logo-row h2 {
   height: 35px;
   padding: 0 10px 0 10px;
@@ -25,11 +17,6 @@
 .landing-page ul {
   list-style: none;
   padding-left: 0px;
-}
-
-#learn-app-wrapper h2.medium-heading {
-  margin-bottom: 50px;
-  text-align: center;
 }
 
 .quote-partial .blockquote {
@@ -45,4 +32,17 @@
 }
 .quote-author {
   font-style: normal;
+}
+
+.intro-description strong,
+.intro-description p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+}
+
+@media (min-width: 500px) {
+  .intro-description strong,
+  .intro-description p {
+    font-size: 1.22rem;
+  }
 }

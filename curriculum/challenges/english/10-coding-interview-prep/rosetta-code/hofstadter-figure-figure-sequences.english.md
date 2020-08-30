@@ -45,21 +45,21 @@ tests:
     testString: assert(Number.isInteger(ffr(1)));
   - text: <code>ffs</code> should return integer.
     testString: assert(Number.isInteger(ffs(1)));
-  - text: <code>ffr()</code> should return <code>69</code>
+  - text: <code>ffr(10)</code> should return <code>69</code>
     testString: assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1]);
-  - text: <code>ffr()</code> should return <code>1509</code>
+  - text: <code>ffr(50)</code> should return <code>1509</code>
     testString: assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1]);
-  - text: <code>ffr()</code> should return <code>5764</code>
+  - text: <code>ffr(100)</code> should return <code>5764</code>
     testString: assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1]);
-  - text: <code>ffr()</code> should return <code>526334</code>
+  - text: <code>ffr(1000)</code> should return <code>526334</code>
     testString: assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1]);
-  - text: <code>ffs()</code> should return <code>14</code>
+  - text: <code>ffs(10)</code> should return <code>14</code>
     testString: assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1]);
-  - text: <code>ffs()</code> should return <code>59</code>
+  - text: <code>ffs(50)</code> should return <code>59</code>
     testString: assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1]);
-  - text: <code>ffs()</code> should return <code>112</code>
+  - text: <code>ffs(100)</code> should return <code>112</code>
     testString: assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1]);
-  - text: <code>ffs()</code> should return <code>1041</code>
+  - text: <code>ffs(1000)</code> should return <code>1041</code>
     testString: assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1]);
 
 ```

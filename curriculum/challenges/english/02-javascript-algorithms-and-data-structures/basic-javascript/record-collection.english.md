@@ -18,7 +18,7 @@ If <code>prop</code> is <code>"tracks"</code> but the album doesn't have a <code
 If <code>prop</code> is <code>"tracks"</code> and <code>value</code> isn't empty (<code>""</code>), push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.
 If <code>value</code> is empty (<code>""</code>), delete the given <code>prop</code> property from the album.
 <strong>Hints</strong><br>Use <code>bracket notation</code> when <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank">accessing object properties with variables</a>.
-Push is an array method you can read about on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank">Mozilla Developer Network</a>.
+The `push` array method will be helpful here. Check out our <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/manipulate-arrays-with-push" target="_blank">Manipulate Arrays With push()</a> challenge to review how it works.
 You may refer back to <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank">Manipulating Complex Objects</a> Introducing JavaScript Object Notation (JSON) for a refresher.
 </section>
 

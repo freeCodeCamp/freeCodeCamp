@@ -10,7 +10,7 @@ localeTitle: جعل الروابط الميتة باستخدام رمز التج
 <section id="description"> أحيانا كنت ترغب في إضافة <code>a</code> عناصر لموقع الويب الخاص بك قبل ان تعرفه حيث سيربط. هذا مفيد أيضًا عند تغيير سلوك الارتباط باستخدام <code>JavaScript</code> ، والذي سنتعرف عليه لاحقًا. </section>
 
 ## Instructions
-<section id="instructions"> القيمة الحالية لسمة <code>href</code> عبارة عن رابط يشير إلى &quot;http://freecatphotoapp.com&quot;. استبدل قيمة السمة <code>href</code> بـ <code>#</code> ، والمعروف أيضًا باسم رمز التجزئة ، لإنشاء رابط ميت. على سبيل المثال: <code>href=&quot;#&quot;</code> </section>
+<section id="instructions"> القيمة الحالية لسمة <code>href</code> عبارة عن رابط يشير إلى &quot;https://freecatphotoapp.com&quot;. استبدل قيمة السمة <code>href</code> بـ <code>#</code> ، والمعروف أيضًا باسم رمز التجزئة ، لإنشاء رابط ميت. على سبيل المثال: <code>href=&quot;#&quot;</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -32,7 +32,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+  <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
@@ -54,4 +54,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -13,10 +13,9 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { apiLocation } from '../../config/env.json';
+import Login from '../components/Header/components/Login';
 
 import {
-  hardGoTo as navigate,
   isSignedInSelector,
   userFetchStateSelector,
   userSelector,
@@ -27,7 +26,6 @@ import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 const propTypes = {
   email: PropTypes.string,
   isSignedIn: PropTypes.bool,
-  navigate: PropTypes.func.isRequired,
   reportUser: PropTypes.func.isRequired,
   userFetchState: PropTypes.shape({
     pending: PropTypes.bool,
@@ -49,7 +47,6 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = {
-  navigate,
   reportUser
 };
 
@@ -57,19 +54,11 @@ class ShowUser extends Component {
   constructor(props) {
     super(props);
 
-    this.timer = null;
     this.state = {
-      textarea: '',
-      time: 5
+      textarea: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillUnmount() {
-    if (this.timer) {
-      clearInterval(this.timer);
-    }
   }
 
   handleChange(e) {
@@ -86,17 +75,6 @@ class ShowUser extends Component {
     return reportUser({ username, reportDescription });
   }
 
-  setNavigationTimer(navigate) {
-    if (!this.timer) {
-      this.timer = setInterval(() => {
-        if (this.state.time <= 0) {
-          navigate(`${apiLocation}/signin`);
-        }
-        this.setState({ time: this.state.time - 1 });
-      }, 1000);
-    }
-  }
-
   render() {
     const { username, isSignedIn, userFetchState, email } = this.props;
     const { pending, complete, errored } = userFetchState;
@@ -105,37 +83,22 @@ class ShowUser extends Component {
     }
 
     if ((complete || errored) && !isSignedIn) {
-      const { navigate } = this.props;
-      this.setNavigationTimer(navigate);
       return (
         <main>
           <FullWidthRow>
             <Spacer size={2} />
-            <Panel bsStyle='info'>
+            <Panel bsStyle='info' className='text-center'>
               <Panel.Heading>
                 <Panel.Title componentClass='h3'>
                   You need to be signed in to report a user
                 </Panel.Title>
               </Panel.Heading>
               <Panel.Body className='text-center'>
-                <Spacer />
-                <p>
-                  You will be redirected to sign in to freeCodeCamp.org
-                  automatically in {this.state.time} seconds
-                </p>
-                <p>
-                  <Button
-                    bsStyle='default'
-                    href='/signin'
-                    onClick={e => {
-                      e.preventDefault();
-                      return navigate(`${apiLocation}/signin`);
-                    }}
-                  >
-                    Or click here if you do not want to wait
-                  </Button>
-                </p>
-                <Spacer />
+                <Spacer size={2} />
+                <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
+                  <Login block={true}>Click here to sign in</Login>
+                </Col>
+                <Spacer size={3} />
               </Panel.Body>
             </Panel>
           </FullWidthRow>

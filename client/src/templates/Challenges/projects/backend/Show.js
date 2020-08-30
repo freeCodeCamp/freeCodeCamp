@@ -46,7 +46,7 @@ const propTypes = {
   initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
-  output: PropTypes.string,
+  output: PropTypes.arrayOf(PropTypes.string),
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
@@ -128,7 +128,7 @@ export class BackEnd extends Component {
       },
       pageContext: { challengeMeta }
     } = this.props;
-    initConsole('');
+    initConsole();
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
     challengeMounted(challengeMeta.id);

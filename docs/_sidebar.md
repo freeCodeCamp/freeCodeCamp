@@ -1,6 +1,6 @@
 - **<i class="fad fa-hourglass-start"></i> Getting Started**
   - [Introduction](/index.md 'Contribute to the freeCodeCamp.org Community')
-- **<i class="fad fa-code"></i> Code Contribution Guides**
+- **<i class="fad fa-code"></i> Code Contribution**
   - [Work on coding challenges](/how-to-work-on-coding-challenges.md)
   - [Help with video challenges](/how-to-help-with-video-challenges.md)
   - [Set up freeCodeCamp locally](/how-to-setup-freecodecamp-locally.md)
@@ -8,13 +8,22 @@
   - [Work on the news theme](/how-to-work-on-the-news-theme.md)
   - [Work on the docs theme](/how-to-work-on-the-docs-theme.md)
   - [Catch outgoing emails locally](/how-to-catch-outgoing-emails-locally.md)
-- **<i class="fad fa-language"></i> Chinese Community Contribution Guides** (中文社区贡献指南)
-  - [Translate news articles (文章翻译计划)](/chinese-guides/news-translations.md)
-  - [Translate videos (视频翻译计划)](/chinese-guides/video-translations.md)
+  - [Set up WSL](/how-to-setup-wsl.md)
+
+---
+
 - **<i class="fad fa-plane-alt"></i> Flight Manuals** (for Staff & Mods)
-  - [Our DevOps Guide](/devops.md)
-  - [Using Reply Templates](/flight-manuals/using-reply-templates.md)
-  - [Other flight manuals](/flight-manuals/)
+  - [Moderator Handbook](/flight-manuals/moderator-handbook.md)
+  - [Reply Templates](/flight-manuals/using-reply-templates.md)
+  - [DevOps Overview](/devops.md)
+  - [Working on Servers](/flight-manuals/working-on-virtual-machines.md)
+
+---
+
+- **<i class="fad fa-language"></i> 中文社区贡献指南**
+  - [成为专栏作者](/chinese-guides/news-author-application.md)
+  - [文章翻译计划](/chinese-guides/news-translations.md)
+  - [视频翻译计划](/chinese-guides/video-translations.md)
 
 ---
 

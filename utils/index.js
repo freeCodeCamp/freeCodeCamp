@@ -14,7 +14,7 @@ const idToTitle = new Map(
     '561add10cb82ac38a17513be': 'Legacy Front End',
     '561add10cb82ac38a17213bc':
       'Legacy Information Security and Quality Assurance',
-    '561add10cb82ac38a17213bd': 'Full Stack',
+    '561add10cb82ac38a17213bd': 'Legacy Full Stack',
     '5e44431b903586ffb414c951': 'Scientific Computing with Python',
     '5e46fc95ac417301a38fb934': 'Data Analysis with Python',
     '5e46fc95ac417301a38fb935': 'Machine Learning with Python'
@@ -23,8 +23,25 @@ const idToTitle = new Map(
 
 const idToPath = new Map();
 
+// Keep the timeline slugs the same so
+// we don't break existing links
+const specialPaths = {
+  'Legacy Full Stack': 'Full Stack',
+  'Legacy Information Security and Quality Assurance':
+    'Information Security and Quality Assurance',
+  'Scientific Computing with Python': 'Scientific Computing with Python V7',
+  'Data Analysis with Python': 'Data Analysis with Python V7',
+  'Machine Learning with Python': 'Machine Learning with Python V7',
+  'Quality Assurance': 'Quality Assurance V7',
+  'Information Security': 'Information Security V7'
+};
+
 for (const [id, title] of idToTitle) {
-  idToPath.set(id, dasherize(title));
+  if (specialPaths[title]) {
+    idToPath.set(id, dasherize(specialPaths[title]));
+  } else {
+    idToPath.set(id, dasherize(title));
+  }
 }
 
 export const getCertIds = () => idToPath.keys();
