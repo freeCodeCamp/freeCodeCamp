@@ -23,8 +23,9 @@ Instructions about what exactly needs to be done.
 ```yml
 tests:
   - text: <code>a</code> should have a value of 15.
-    testString: assert(pyodide.pyimport('a) === 15);
-
+    testString: assert(self.pyodide.pyimport('a') === 15);
+  - text: <code>b</code> should have a value of 16.
+    testString: assert(self.pyodide.pyimport('b') === 16);
 ```
 
 </section>
@@ -37,6 +38,7 @@ tests:
 ```js
 // Setup
 a = sum([1,2,3,4,5])
+b = 13
 
 // Only change code below this line
 
