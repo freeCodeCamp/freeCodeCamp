@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Form } from '../../../components/formHelpers';
 import {
+  backend,
   backEndProject,
   frontEndProject,
   pythonProject
@@ -16,7 +17,7 @@ const propTypes = {
   updateSolutionForm: PropTypes.func.isRequired
 };
 
-const frontEndProjectFields = ['solution'];
+const challengeAndFrontEndFields = ['solution'];
 const backEndProjectFields = ['solution', 'githubLink'];
 
 const options = {
@@ -45,15 +46,20 @@ export class SolutionForm extends Component {
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
 
-    let solutionFormFields = frontEndProjectFields;
+    let solutionFormFields = challengeAndFrontEndFields;
     let solutionLink = 'Link, ex: ';
     let solutionFormID = 'front-end-form';
 
     switch (challengeType) {
       case frontEndProject:
-        solutionFormFields = frontEndProjectFields;
+        solutionFormFields = challengeAndFrontEndFields;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
+        break;
+
+      case backend:
+        solutionFormFields = challengeAndFrontEndFields;
+        solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
         break;
 
       case backEndProject:
@@ -63,7 +69,7 @@ export class SolutionForm extends Component {
         break;
 
       case pythonProject:
-        solutionFormFields = frontEndProjectFields;
+        solutionFormFields = challengeAndFrontEndFields;
         solutionLink =
           solutionLink +
           (description.includes('Colaboratory')
@@ -72,7 +78,7 @@ export class SolutionForm extends Component {
         break;
 
       default:
-        solutionFormFields = frontEndProjectFields;
+        solutionFormFields = challengeAndFrontEndFields;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
     }
