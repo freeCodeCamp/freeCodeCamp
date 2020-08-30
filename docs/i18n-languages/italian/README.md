@@ -46,7 +46,7 @@ Ecco le nostre dieci certificazioni di base (il curriculum è completamente in i
 - [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
   <br />
   <br />
-  **Progetti**: pagina tributo, modulo di sondaggio, Landing Page di un prodotto, Pagina di documentazione tecnica, sito di portfolio personale
+  **Progetti**: [pagina tributo](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page), [modulo di sondaggio](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form), [Landing Page di un prodotto](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page), [Pagina di documentazione tecnica](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page), [sito di portfolio personale](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
 
 #### 2. Certificazione di algoritmi JavaScript e strutture di dati 
 
