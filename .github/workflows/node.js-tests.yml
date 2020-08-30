@@ -171,7 +171,8 @@ jobs:
       - name: Seed MongoDB
         run: npm run seed
 
-      - name: Run Dev Server
-        run: |
-          brew install coreutils
-          bash script-check-macos.sh
+      - name: Check `develop` script
+        run: npm run timeout -- --develop --7
+
+      - name: Check `build` script
+        run: npm run build
