@@ -572,13 +572,9 @@ self.onmessage = async e => {
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = eval(`${e.data.build}
-      __utils.flushLogs();
-      __userCodeWasExecuted = true;
-      __utils.toggleProxyLogger(true);
-      ${e.data.testString}`);
-      console.log(self.pyodide.runPython("print('python!!!!')"));
+      testResult = self.pyodide.runPython(e.data.code);
       console.log('pyodide runner');
+      console.log(testResult);
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.

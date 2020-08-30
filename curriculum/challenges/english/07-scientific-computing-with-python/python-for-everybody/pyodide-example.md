@@ -22,14 +22,8 @@ Instructions about what exactly needs to be done.
 
 ```yml
 tests:
-  - text: You should not change code above the specified comment.
-    testString: assert(/var a;/.test(code) && /var b = 2;/.test(code));
-  - text: <code>a</code> should have a value of 7.
-    testString: assert(typeof a === 'number' && a === 7);
-  - text: <code>b</code> should have a value of 7.
-    testString: assert(typeof b === 'number' && b === 7);
-  - text: <code>a</code> should be assigned to <code>b</code> with <code>=</code>.
-    testString: assert(/b\s*=\s*a\s*;/g.test(code));
+  - text: <code>a</code> should have a value of 15.
+    testString: assert(pyodide.pyimport('a) === 15);
 
 ```
 
@@ -42,8 +36,7 @@ tests:
 
 ```js
 // Setup
-var a;
-var b = 2;
+a = sum([1,2,3,4,5])
 
 // Only change code below this line
 
@@ -55,12 +48,7 @@ var b = 2;
 <div id='js-setup'>
 
 ```js
-if (typeof a != 'undefined') {
-  a = undefined;
-}
-if (typeof b != 'undefined') {
-  b = undefined;
-}
+
 ```
 
 </div>
@@ -69,7 +57,7 @@ if (typeof b != 'undefined') {
 <div id='js-teardown'>
 
 ```js
-(function(a,b){return "a = " + a + ", b = " + b;})(a,b);
+
 ```
 
 </div>
