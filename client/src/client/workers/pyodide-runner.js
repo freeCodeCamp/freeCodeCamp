@@ -574,7 +574,13 @@ self.onmessage = async e => {
       // generated during testing.
       testResult = self.pyodide.runPython(e.data.code);
       console.log('pyodide runner');
+      console.log(self.pyodide.pyimport('a'));
       console.log(testResult);
+      testResult = eval(`
+__utils.flushLogs();
+__userCodeWasExecuted = true;
+__utils.toggleProxyLogger(true);
+${e.data.testString}`);
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.
