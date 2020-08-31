@@ -1,36 +1,34 @@
 const fs = require('fs');
 const execa = require('execa');
+const argumentParser = require('./argument-parser');
 
-const cliArgs = process.argv;
-
-const scriptToRun = cliArgs[2].replace(/-/g, '');
-
-const timeoutArg = cliArgs[3].replace(/-/g, '');
-
-const timeout = Number(timeoutArg) * 60 * 1000;
+const { timeout, scriptToRun, searchStr } = argumentParser(process.argv);
 
 (async () => {
   try {
+    // Execute the npm script
     const subprocess = execa('npm', ['run', scriptToRun]);
+
+    // Log all output messages from script
     subprocess.stdout.pipe(process.stdout);
 
-    const writableStream = fs.createWriteStream(
-      `${scriptToRun}-script-log.txt`
-    );
+    const logFileName = `${scriptToRun}-script-log.txt`;
 
+    const writableStream = fs.createWriteStream(logFileName);
+
+    // Store all output messages in a file
     subprocess.stdout.pipe(writableStream);
 
+    // When timeout occurs, we check the all the logged messages (stored in
+    // the log file) for a regex match. If we find a match, then we exit
+    // with code 0 (success) otherwise we exit with code 1
     setTimeout(() => {
-      fs.readFile(`${scriptToRun}-script-log.txt`, 'utf8', (err, data) => {
-        if (err) throw new Error('failed to read data');
+      fs.readFile(logFileName, 'utf8', (err, data) => {
+        if (err) throw new Error(`Failed to read ${logFileName}`);
 
-        const regexChecheckFirst = RegExp(
-          'You can now view @freecodecamp/client in the browser.'
-        );
+        const regex = RegExp(searchStr);
 
-        const regexChecheckSecond = RegExp('http://localhost:8000/___graphql');
-
-        if (regexChecheckFirst.test(data) || regexChecheckSecond.test(data)) {
+        if (regex.test(data)) {
           // eslint-disable-next-line
           return process.exit(0);
         } else {
@@ -40,6 +38,7 @@ const timeout = Number(timeoutArg) * 60 * 1000;
       });
     }, timeout);
   } catch (error) {
+    // If the npm script errors out before timeout, exit with code 1
     process.exitCode(1);
   }
 })();

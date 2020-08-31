@@ -61,7 +61,7 @@ jobs:
       - name: Run Tests
         run: npm test
 
-  ensure-dev-server-linux:
+  script-check-linux:
     name: Run Dev Server on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     services:
@@ -94,12 +94,12 @@ jobs:
         run: npm run seed
 
       - name: Check `develop` script
-        run: npm run timeout -- --develop --7
+        run: npm run timeout -- --develop --7 --http://localhost:8000/___graphql
 
       - name: Check `build` script
         run: npm run build
 
-  ensure-dev-server-on-windows:
+  script-check-windows:
     name: Run Dev Server on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
@@ -133,12 +133,12 @@ jobs:
         run: npm run seed
 
       - name: Check `develop` script
-        run: npm run timeout -- --develop --7
+        run: npm run timeout -- --develop --7 --http://localhost:8000/___graphql
 
       - name: Check `build` script
         run: npm run build
 
-  ensure-dev-server-on-mac:
+  script-check-macos:
     name: Run Dev Server on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
@@ -172,7 +172,7 @@ jobs:
         run: npm run seed
 
       - name: Check `develop` script
-        run: npm run timeout -- --develop --7
+        run: npm run timeout -- --develop --7 --http://localhost:8000/___graphql
 
       - name: Check `build` script
         run: npm run build
