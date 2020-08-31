@@ -9,23 +9,22 @@ forumTopicId: 18310
 
 ## Description
 <section id='description'>
-In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator.
+In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator (<code>=</code>). 
 <code>myVariable = 5;</code>
 This assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.
-Assignment always goes from right to left. Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.
+If there are any calculations to the right of the <code>=</code> operator, those are performed before the value is assigned to the variable on the left of the operator.
 
 ```js
+var myVar;
 myVar = 5;
-myNum = myVar;
 ```
 
-This assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.
+First, this code creates a variable named <code>myVar</code>. Then, the code assigns <code>5</code> to <code>myVar</code>. Now, if <code>myVar</code> appears again in the code, the program will treat it as if it is <code>5</code>.
 </section>
 
 ## Instructions
 <section id='instructions'>
 Assign the value <code>7</code> to variable <code>a</code>.
-Assign the contents of <code>a</code> to variable <code>b</code>.
 </section>
 
 ## Tests
@@ -34,13 +33,9 @@ Assign the contents of <code>a</code> to variable <code>b</code>.
 ```yml
 tests:
   - text: You should not change code above the specified comment.
-    testString: assert(/var a;/.test(code) && /var b = 2;/.test(code));
+    testString: assert(/var a;/.test(code));
   - text: <code>a</code> should have a value of 7.
     testString: assert(typeof a === 'number' && a === 7);
-  - text: <code>b</code> should have a value of 7.
-    testString: assert(typeof b === 'number' && b === 7);
-  - text: <code>a</code> should be assigned to <code>b</code> with <code>=</code>.
-    testString: assert(/b\s*=\s*a\s*;/g.test(code));
 
 ```
 
@@ -54,7 +49,6 @@ tests:
 ```js
 // Setup
 var a;
-var b = 2;
 
 // Only change code below this line
 
@@ -69,9 +63,6 @@ var b = 2;
 if (typeof a != 'undefined') {
   a = undefined;
 }
-if (typeof b != 'undefined') {
-  b = undefined;
-}
 ```
 
 </div>
@@ -80,7 +71,7 @@ if (typeof b != 'undefined') {
 <div id='js-teardown'>
 
 ```js
-(function(a,b){return "a = " + a + ", b = " + b;})(a,b);
+(function(a){return "a = " + a;})(a);
 ```
 
 </div>
@@ -93,9 +84,7 @@ if (typeof b != 'undefined') {
 
 ```js
 var a;
-var b = 2;
 a = 7;
-b = a;
 ```
 
 </section>
