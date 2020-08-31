@@ -131,6 +131,9 @@ async function parseTranslation(engPath, transPath, dict, lang) {
 function createChallengeCreator(basePath, lang) {
   const hasEnglishSource = hasEnglishSourceCreator(basePath);
   return async function createChallenge(filePath, maybeMeta) {
+    function getFullPath(pathLang) {
+      return path.resolve(__dirname, basePath, pathLang, filePath);
+    }
     let meta;
     if (maybeMeta) {
       meta = maybeMeta;
@@ -149,17 +152,17 @@ function createChallengeCreator(basePath, lang) {
       throw Error(`Missing English challenge for
 ${filePath}
 It should be in
-${path.resolve(basePath, 'english', filePath)}
+${getFullPath('english')}
 `);
     // assumes superblock names are unique
     // while the auditing is ongoing, we default to English for un-audited certs
     // once that's complete, we can revert to using isEnglishChallenge(fullPath)
     const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
     const challenge = await (useEnglish
-      ? parseMarkdown(path.resolve(basePath, 'english', filePath))
+      ? parseMarkdown(getFullPath('english'))
       : parseTranslation(
-          path.resolve(basePath, 'english', filePath),
-          path.resolve(basePath, lang, filePath),
+          getFullPath('english'),
+          getFullPath(lang),
           COMMENT_TRANSLATIONS,
           lang
         ));
