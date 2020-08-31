@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The name of the cafe is `Camper Cafe`. Add an `h1` element with the capitalized text `CAMPER CAFE` to make it stand out on the page.
+The name of the cafe is `Camper Cafe`. Add an `h1` element with the name of the cafe in capitalized letters to make it stand out.
 
 </section>
 
