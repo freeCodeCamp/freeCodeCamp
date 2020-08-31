@@ -32,6 +32,8 @@ tests:
     testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()));
   - text: Your <code>h1</code> element should have the text "Hello World".
     testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()));
+  - text: Your <code>h1</code> element should be before your <code>h2</code> element.
+    testString: assert(code.match(/<h1>\s*?.*?\s*?<\/h1>\s*<h2>\s*?.*?\s*?<\/h2>/gi));
 
 ```
 
