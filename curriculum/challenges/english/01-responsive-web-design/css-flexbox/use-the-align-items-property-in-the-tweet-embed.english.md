@@ -14,7 +14,7 @@ The last challenge introduced the <code>align-items</code> property and gave an 
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element. Set the value to center.
+Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element. Set the value to <code>center</code>.
 </section>
 
 ## Tests

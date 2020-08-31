@@ -27,7 +27,7 @@ Create a <code>p</code> element below your <code>h2</code> element, and give it 
 tests:
   - text: Your code should have a valid <code>p</code> element.
     testString: assert(($("p").length > 0));
-  - text: Your <code>p</code> element should have the text "Hello Paragraph".
+  - text: Your <code>p</code> element should have the text <code>Hello Paragraph</code>.
     testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()));
   - text: Your <code>p</code> element should have a closing tag.
     testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
