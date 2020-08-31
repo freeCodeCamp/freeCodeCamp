@@ -2,6 +2,7 @@
 
 const selectors = {
   defaultOutput: '.output-text',
+  editor: '.monaco-editor',
   hotkeys: '.default-layout > div',
   runTestsButton: 'button:contains("Run the Tests")'
 };
@@ -38,6 +39,8 @@ describe('Classic challenge', function() {
 
   it('shows test output when the tests are run', () => {
     cy.visit(locations.index);
+    // first wait for the editor to load
+    cy.get(selectors.editor, { timeout: 10000 });
     cy.get(selectors.runTestsButton)
       .click()
       .then(() => {
@@ -49,6 +52,8 @@ describe('Classic challenge', function() {
 
   it('shows test output when the tests are triggered by the keyboard', () => {
     cy.visit(locations.index);
+    // first wait for the editor to load
+    cy.get(selectors.editor, { timeout: 10000 });
     cy.get(selectors.hotkeys)
       .focus()
       .type('{ctrl}{enter}')

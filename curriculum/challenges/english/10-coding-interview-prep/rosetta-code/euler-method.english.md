@@ -52,13 +52,13 @@ The analytical solution, which we will compare to the numerical approximation, i
 
 ## Instructions
 <section id='instructions'>
-Implement a routine of Euler's method and then to use it to solve the given example of Newton's cooling law with it for three different step sizes of:
+Implement a routine of Euler's method and then use it to solve the given example of Newton's cooling law for three different step sizes of:
 <ul>
   <li><code>2 s</code></li>
   <li><code>5 s</code> and</li>
   <li><code>10 s</code></li>
 </ul>
-and to compare with the analytical solution.
+and compare with the analytical solution.
 <strong>Initial values:</strong>
 <ul>
   <li>initial temperature <big>$T_0$</big> shall be <code>100 °C</code></li>
@@ -66,7 +66,10 @@ and to compare with the analytical solution.
   <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
   <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
 </ul> 
+First parameter to the function is initial time, second parameter is initial temperature, third parameter is elapsed time and fourth parameter is step size.
 </section>
+
+
 
 ## Tests
 <section id='tests'>
@@ -75,11 +78,11 @@ and to compare with the analytical solution.
 tests:
   - text: <code>eulersMethod</code> should be a function.
     testString: assert(typeof eulersMethod === 'function');
-  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return a number.
-    testString: assert(typeof eulersMethod(0, 100, 100, 10) === 'number');
-  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.0424631833732.
+  - text: <code>eulersMethod(0, 100, 100, 2)</code> should return a number.
+    testString: assert(typeof eulersMethod(0, 100, 100, 2) === 'number');
+  - text: <code>eulersMethod(0, 100, 100, 2)</code> should return 20.0424631833732.
     testString: assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732);
-  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.01449963666907.
+  - text: <code>eulersMethod(0, 100, 100, 5)</code> should return 20.01449963666907.
     testString: assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907);
   - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.000472392.
     testString: assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392);
