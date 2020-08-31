@@ -67,28 +67,28 @@ tests:
                     .then(data => {
                         assert.equal(data.returnNum, 0.453592); 
                         assert.equal(data.returnUnit, 'kg');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=10lbs')
                     .then(data => {
                         assert.equal(data.returnNum, 4.53592); 
                         assert.equal(data.returnUnit, 'kg');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=1kg')
                     .then(data => {
                         assert.equal(data.returnNum, 2.20462); 
                         assert.equal(data.returnUnit, 'lbs');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=10kg')
                     .then(data => {
                         assert.equal(data.returnNum, 22.04624); 
                         assert.equal(data.returnUnit, 'lbs');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                 }"
