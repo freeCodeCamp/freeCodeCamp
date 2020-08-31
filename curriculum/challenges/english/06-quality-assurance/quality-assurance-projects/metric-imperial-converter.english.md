@@ -36,28 +36,28 @@ tests:
                     .then(data => {
                         assert.equal(data.returnNum, 3.78541); 
                         assert.equal(data.returnUnit, 'l');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=10gal')
                     .then(data => {
                         assert.equal(data.returnNum, 37.8541); 
                         assert.equal(data.returnUnit, 'l');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=1l')
                     .then(data => {
                         assert.equal(data.returnNum, 0.26417); 
                         assert.equal(data.returnUnit, 'gal');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=10l')
                     .then(data => {
                         assert.equal(data.returnNum, 2.64172); 
                         assert.equal(data.returnUnit, 'gal');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                 }"
