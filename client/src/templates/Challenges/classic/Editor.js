@@ -120,7 +120,8 @@ class Editor extends Component {
       dragAndDrop: true,
       lightbulb: {
         enabled: false
-      }
+      },
+      quickSuggestions: false
     };
 
     this._editor = null;
@@ -220,16 +221,18 @@ class Editor extends Component {
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     return (
       <Suspense fallback={<Loader timeout={600} />}>
-        <MonacoEditor
-          editorDidMount={this.editorDidMount}
-          editorWillMount={this.editorWillMount}
-          key={`${editorTheme}-${fileKey}`}
-          language={modeMap[ext]}
-          onChange={this.onChange}
-          options={this.options}
-          theme={editorTheme}
-          value={contents}
-        />
+        <span className='notranslate'>
+          <MonacoEditor
+            editorDidMount={this.editorDidMount}
+            editorWillMount={this.editorWillMount}
+            key={`${editorTheme}-${fileKey}`}
+            language={modeMap[ext]}
+            onChange={this.onChange}
+            options={this.options}
+            theme={editorTheme}
+            value={contents}
+          />
+        </span>
       </Suspense>
     );
   }

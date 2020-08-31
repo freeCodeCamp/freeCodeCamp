@@ -1,96 +1,49 @@
 import React, { Fragment } from 'react';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import { uniq } from 'lodash';
-import { Spacer } from '../helpers';
-import Login from '../Header/components/Login';
+import { graphql, useStaticQuery } from 'gatsby';
+
+import Testimonials from './components/Testimonials';
+import LandingTop from './components/LandingTop';
+import Certifications from './components/Certifications';
+import AsSeenIn from './components/AsSeenIn';
 
 import './landing.css';
-import '../Map/map.css';
 
 const propTypes = {
-  edges: PropTypes.array
+  page: PropTypes.string
 };
 
-const BigCallToAction = () => (
-  <Row>
-    <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
-      <Login block={true} data-test-label='landing-big-cta'>
-        Sign in and get started (it's free)
-      </Login>
-    </Col>
-  </Row>
-);
+export const Landing = ({ page = 'landing' }) => {
+  const data = useStaticQuery(graphql`
+    query certifications {
+      challenges: allChallengeNode(
+        filter: { isHidden: { eq: false } }
+        sort: { fields: [superOrder, order, challengeOrder] }
+      ) {
+        nodes {
+          superBlock
+        }
+      }
+    }
+  `);
 
-export const Landing = ({ edges }) => {
-  const superBlocks = uniq(edges.map(element => element.node.superBlock));
-  const interviewPrep = superBlocks.splice(6, 1);
   return (
     <Fragment>
       <Helmet>
         <title>Learn to code at home | freeCodeCamp.org</title>
       </Helmet>
       <main className='landing-page'>
-        <Spacer />
         <Grid>
-          <Row>
-            <Col sm={10} smOffset={1} xs={12}>
-              <h1
-                className='big-heading text-center'
-                data-test-label='landing-header'
-              >
-                Welcome to freeCodeCamp.org
-              </h1>
-              <Spacer />
-              <h2 className='medium-heading text-center'>
-                Learn to code at home.
-              </h2>
-              <h2 className='medium-heading text-center'>Build projects.</h2>
-              <h2 className='medium-heading text-center'>
-                Earn certifications.
-              </h2>
-              <h2 className='medium-heading text-center'>
-                Since 2014, more than 40,000 freeCodeCamp.org graduates have
-                gotten jobs at tech companies including:
-              </h2>
-              <div className='logo-row'>
-                <h2 className='medium-heading'>Apple</h2>
-                <h2 className='medium-heading'>Google</h2>
-                <h2 className='medium-heading'>Amazon</h2>
-                <h2 className='medium-heading'>Microsoft</h2>
-                <h2 className='medium-heading'>Spotify</h2>
-              </div>
-            </Col>
-          </Row>
-          <Spacer />
-          <BigCallToAction />
-          <Spacer />
-          <Row>
-            <Col sm={10} smOffset={1} xs={12}>
-              <h2 className='medium-heading'>Certifications:</h2>
-              <ul>
-                {superBlocks.map((superBlock, i) => (
-                  <li className={'superblock'} key={i}>
-                    <Link state={{ superBlock: superBlock }} to={`/learn`}>
-                      <h2 className='medium-heading'>{superBlock}</h2>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <Spacer />
-              <h2 className='medium-heading'>Additional Learning:</h2>
-              <ul>
-                <li>
-                  <Link state={{ superBlock: interviewPrep }} to={`/learn`}>
-                    <h2 className='medium-heading'>{interviewPrep}</h2>
-                  </Link>
-                </li>
-              </ul>
-            </Col>
-          </Row>
-          <Spacer />
+          <LandingTop page={page} />
+        </Grid>
+        <Grid fluid={true}>
+          <AsSeenIn />
+        </Grid>
+        <Grid>
+          <Testimonials />
+          <Certifications nodes={data.challenges.nodes} page={page} />
         </Grid>
       </main>
     </Fragment>

@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf04756
 title: Override Styles in Subsequent CSS
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cGJDQug'
 forumTopicId: 18253
 ---

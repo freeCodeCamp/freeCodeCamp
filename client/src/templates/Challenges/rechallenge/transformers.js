@@ -12,7 +12,7 @@ import {
 
 import protect from '@freecodecamp/loop-protect';
 
-import * as vinyl from '../utils/polyvinyl.js';
+import * as vinyl from '../../../../../utils/polyvinyl.js';
 import createWorker from '../utils/worker-executor';
 
 // the config files are created during the build, but not before linting
@@ -59,11 +59,12 @@ async function loadBabel() {
 }
 
 async function loadPresetEnv() {
-  if (presetEnv) return;
+  if (babelOptionsJSBase && babelOptionsJSBase.presets) return;
   /* eslint-disable no-inline-comments */
-  presetEnv = await import(
-    /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-  );
+  if (!presetEnv)
+    presetEnv = await import(
+      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+    );
   /* eslint-enable no-inline-comments */
 
   babelOptionsJSBase = {
@@ -177,7 +178,9 @@ function getBabelOptions({ preview = false, protect = true }) {
 
 const sassWorker = createWorker(sassCompile);
 async function transformSASS(element) {
-  const styleTags = element.querySelectorAll('style[type="text/sass"]');
+  // we only teach scss syntax, not sass. Also the compiler does not seem to be
+  // able to deal with sass.
+  const styleTags = element.querySelectorAll('style[type~="text/scss"]');
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';

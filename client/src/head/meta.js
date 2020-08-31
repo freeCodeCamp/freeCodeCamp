@@ -27,7 +27,8 @@ const meta = [
       'companies including Google, Apple, Amazon, and Microsoft.'
     }
     name='twitter:description'
-  />
+  />,
+  <meta content='$ilp.uphold.com/LJmbPn7WD4JB' name='monetization' />
 ];
 
 export default meta;

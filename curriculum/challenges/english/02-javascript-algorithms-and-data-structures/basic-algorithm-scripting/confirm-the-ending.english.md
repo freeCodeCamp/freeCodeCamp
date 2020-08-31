@@ -3,6 +3,7 @@ id: acda2fb1324d9b0fa741e6b5
 title: Confirm the Ending
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16006
 ---
 
@@ -34,8 +35,8 @@ tests:
     testString: assert(confirmEnding("He has to give me a new name", "name") === true);
   - text: <code>confirmEnding("Open sesame", "same")</code> should return true.
     testString: assert(confirmEnding("Open sesame", "same") === true);
-  - text: <code>confirmEnding("Open sesame", "pen")</code> should return false.
-    testString: assert(confirmEnding("Open sesame", "pen") === false);
+  - text: <code>confirmEnding("Open sesame", "sage")</code> should return false.
+    testString: assert(confirmEnding("Open sesame", "sage") === false);
   - text: <code>confirmEnding("Open sesame", "game")</code> should return false.
     testString: assert(confirmEnding("Open sesame", "game") === false);
   - text: <code>confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")</code> should return false.

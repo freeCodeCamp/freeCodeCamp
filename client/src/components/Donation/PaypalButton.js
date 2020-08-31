@@ -35,10 +35,17 @@ export class PaypalButton extends Component {
     return { ...configurationObj };
   }
 
-  handleApproval = data => {
+  handleApproval = (data, isSubscription) => {
     const { amount, duration } = this.state;
     const { skipAddDonation = false } = this.props;
-    if (!skipAddDonation || duration === 'oneTime') {
+    // Skip the api if user is not signed in or if its a one-time donation
+    if (skipAddDonation || !isSubscription) {
+      this.props.onDonationStateChange(
+        true,
+        false,
+        data.error ? data.error : ''
+      );
+    } else {
       this.props.handleProcessing(
         duration,
         amount,
@@ -63,22 +70,21 @@ export class PaypalButton extends Component {
                 };
           this.props.onDonationStateChange(false, false, data.error);
         });
-    } else {
-      this.props.onDonationStateChange(
-        true,
-        false,
-        data.error ? data.error : ''
-      );
     }
   };
 
   render() {
     const { duration, planId, amount } = this.state;
     const isSubscription = duration !== 'onetime';
+
+    if (!paypalClientId) {
+      return null;
+    }
+
     return (
       <PayPalButtonScriptLoader
         amount={amount}
-        clinetId={paypalClientId}
+        clientId={paypalClientId}
         createOrder={(data, actions) => {
           return actions.order.create({
             purchase_units: [
@@ -97,10 +103,8 @@ export class PaypalButton extends Component {
           });
         }}
         isSubscription={isSubscription}
-        onApprove={(data, actions) => {
-          return actions.order.capture().then(function(data) {
-            this.handleApproval(data);
-          });
+        onApprove={data => {
+          this.handleApproval(data, isSubscription);
         }}
         onCancel={() => {
           this.props.onDonationStateChange(

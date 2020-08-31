@@ -11,4 +11,4 @@ Checklist:
 
 Closes #XXXXX
 
-<!-- Feel free to add any addtional description of changes below this line -->
+<!-- Feel free to add any additional description of changes below this line -->

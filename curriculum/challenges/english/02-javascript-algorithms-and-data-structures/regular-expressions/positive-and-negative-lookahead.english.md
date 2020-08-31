@@ -2,6 +2,7 @@
 id: 587d7dba367417b2b2512ba9
 title: Positive and Negative Lookahead
 challengeType: 1
+isHidden: false
 forumTopicId: 301360
 ---
 

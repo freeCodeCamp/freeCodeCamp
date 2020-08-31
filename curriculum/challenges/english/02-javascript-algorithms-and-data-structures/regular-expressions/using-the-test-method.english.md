@@ -2,6 +2,7 @@
 id: 587d7db3367417b2b2512b8e
 title: Using the Test Method
 challengeType: 1
+isHidden: false
 forumTopicId: 301369
 ---
 

@@ -34,7 +34,7 @@ export class PayPalButtonScriptLoader extends Component {
 
   loadScript(subscription, deleteScript) {
     if (deleteScript) scriptRemover('paypal-sdk');
-    let queries = `?client-id=${this.props.clinetId}&disable-funding=credit,card`;
+    let queries = `?client-id=${this.props.clientId}&disable-funding=credit,card`;
     if (subscription) queries += '&vault=true';
 
     scriptLoader(
@@ -42,13 +42,19 @@ export class PayPalButtonScriptLoader extends Component {
       'paypal-sdk',
       true,
       `https://www.paypal.com/sdk/js${queries}`,
-      this.OnScriptLoad
+      this.onScriptLoad
     );
   }
 
-  OnScriptLoad = () => {
+  onScriptLoad = () => {
     this.setState({ isSdkLoaded: true });
   };
+
+  captureOneTimePayment(data, actions) {
+    return actions.order.capture().then(details => {
+      return this.props.onApprove(details, data);
+    });
+  }
 
   render() {
     const { isSdkLoaded, isSubscription } = this.state;
@@ -72,7 +78,11 @@ export class PayPalButtonScriptLoader extends Component {
       <Button
         createOrder={isSubscription ? null : createOrder}
         createSubscription={isSubscription ? createSubscription : null}
-        onApprove={onApprove}
+        onApprove={
+          isSubscription
+            ? (data, actions) => onApprove(data, actions)
+            : (data, actions) => this.captureOneTimePayment(data, actions)
+        }
         onCancel={onCancel}
         onError={onError}
         style={style}
@@ -82,7 +92,7 @@ export class PayPalButtonScriptLoader extends Component {
 }
 
 const propTypes = {
-  clinetId: PropTypes.string,
+  clientId: PropTypes.string,
   createOrder: PropTypes.func,
   createSubscription: PropTypes.func,
   donationAmount: PropTypes.number,

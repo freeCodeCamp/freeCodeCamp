@@ -23,12 +23,17 @@ const superBlockIntro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/SuperBlockIntro.js'
 );
+const video = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/video/Show.js'
+);
 
 const views = {
   backend,
   classic,
   modern: classic,
-  frontend
+  frontend,
+  video
   // quiz: Quiz
 };
 
@@ -69,6 +74,8 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
     challengeType,
     id
   } = node;
+  // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
+  // should remove one of them.
   if (challengeType === 7) {
     return null;
   }

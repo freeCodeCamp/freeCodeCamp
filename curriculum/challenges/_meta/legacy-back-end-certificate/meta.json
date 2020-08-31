@@ -6,7 +6,7 @@
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 9,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "660add10cb82ac38a17513be",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "09-certificates/legacy-back-end-certificate.json"
+  "fileName": "12-certificates/legacy-back-end-certificate.json"
 }

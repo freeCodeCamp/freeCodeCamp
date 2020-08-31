@@ -8,7 +8,7 @@ localeTitle: Convertir entidades HTML
 ---
 
 ## Description
-<section id="description"> Convierta los caracteres <code>&amp;</code> , <code>&lt;</code> , <code>&gt;</code> , <code>&quot;</code> (comillas dobles) y <code>&#39;</code> (apóstrofe), en una cadena con sus correspondientes entidades en HTML. Recuerde usar la <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Lectura-Búsqueda-Preguntar</a> si tiene dificultades. Intente vincular el programa. Escriba su propio código. </section>
+<section id="description"> Convierta los caracteres <code>&amp;</code> , <code>&lt;</code> , <code>&gt;</code> , <code>&quot;</code> (comillas dobles) y <code>&#39;</code> (apóstrofe), en una cadena con sus correspondientes entidades en HTML. Recuerde usar la <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Lectura-Búsqueda-Preguntar</a> si tiene dificultades. Intente vincular el programa. Escriba su propio código. </section>
 
 ## Instructions
 <section id="instructions">
