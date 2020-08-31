@@ -98,28 +98,28 @@ tests:
                     .then(data => {
                         assert.equal(data.returnNum, 1.60934); 
                         assert.equal(data.returnUnit, 'km');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=10mi')
                     .then(data => {
                         assert.equal(data.returnNum, 16.0934); 
                         assert.equal(data.returnUnit, 'km');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=1km')
                     .then(data => {
                         assert.equal(data.returnNum, 0.62137); 
                         assert.equal(data.returnUnit, 'mi');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                     $.get(getUserInput('url') + '/api/convert?input=10km')
                     .then(data => {
                         assert.equal(data.returnNum, 6.21373); 
                         assert.equal(data.returnUnit, 'mi');
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                 }"
