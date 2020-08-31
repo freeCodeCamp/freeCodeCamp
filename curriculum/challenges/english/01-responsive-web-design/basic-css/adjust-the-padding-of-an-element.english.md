@@ -11,7 +11,7 @@ forumTopicId: 301083
 <section id='description'>
 Now let's put our Cat Photo App away for a little while and learn more about styling HTML.
 You may have already noticed this, but all HTML elements are essentially little rectangles.
-Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.
+Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>border</code>, and <code>margin</code>.
 An element's <code>padding</code> controls the amount of space between the element's content and its <code>border</code>.
 Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the blue box.
 When you increase the blue box's <code>padding</code>, it will increase the distance (<code>padding</code>) between the text and the border around it.
