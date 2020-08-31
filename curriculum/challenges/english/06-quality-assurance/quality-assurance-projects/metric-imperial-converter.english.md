@@ -128,7 +128,7 @@ tests:
                     $.get(getUserInput('url') + '/api/convert?input=1min')
                     .then(data => {
                         assert.equal(data.error, 'invalid unit'); 
-                    } xhr => {
+                    }).catch(xhr => {
                         throw new Error(xhr.responseText);
                     });
                 }"
