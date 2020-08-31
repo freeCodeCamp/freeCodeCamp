@@ -9,8 +9,13 @@ videoId: 0xACW-8cZU0
 ## Description
 
 <section id='description'>
+<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-pandas-902ae59b" target='_blank'>Notebook</a>
+
+- <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-pandas" target='_blank'>Notebooks on GitHub</a>
+- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target='_blank'>How to open Notebooks from GitHub using Google Colab.</a>
+
 </section>
 
 ## Tests
