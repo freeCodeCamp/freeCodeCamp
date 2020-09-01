@@ -16,8 +16,8 @@ forumTopicId: 302353
 <strong>User Story:</strong> The computer can control the other paddle.
 <strong>User Story:</strong> The computer's paddle is unbeatable. It should never miss the ball.
 <strong>User Story:</strong> The game keeps track of the player and computer's score.
-When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
-You can get feedback on your project by sharing it with your friends on Facebook.
+When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions
