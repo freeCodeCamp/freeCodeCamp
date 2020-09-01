@@ -36,21 +36,21 @@ tests:
   - text: You should use the wildcard character in your regex <code>unRegex</code>
     testString: assert(/\./.test(unRegex.source));
   - text: Your regex <code>unRegex</code> should match <code>"run"</code> in <code>"Let us go on a run."</code>
-    testString: assert(unRegex.test("Let us go on a run."));
+    testString: unRegex.lastIndex = 0; assert(unRegex.test("Let us go on a run."));
   - text: Your regex <code>unRegex</code> should match <code>"sun"</code> in <code>"The sun is out today."</code>
-    testString: assert(unRegex.test("The sun is out today."));
+    testString: unRegex.lastIndex = 0; assert(unRegex.test("The sun is out today."));
   - text: Your regex <code>unRegex</code> should match <code>"fun"</code> in <code>"Coding is a lot of fun."</code>
-    testString: assert(unRegex.test("Coding is a lot of fun."));
+    testString: unRegex.lastIndex = 0; assert(unRegex.test("Coding is a lot of fun."));
   - text: Your regex <code>unRegex</code> should match <code>"pun"</code> in <code>"Seven days without a pun makes one weak."</code>
-    testString: assert(unRegex.test("Seven days without a pun makes one weak."));
+    testString: unRegex.lastIndex = 0; assert(unRegex.test("Seven days without a pun makes one weak."));
   - text: Your regex <code>unRegex</code> should match <code>"nun"</code> in <code>"One takes a vow to be a nun."</code>
-    testString: assert(unRegex.test("One takes a vow to be a nun."));
+    testString: unRegex.lastIndex = 0; assert(unRegex.test("One takes a vow to be a nun."));
   - text: Your regex <code>unRegex</code> should match <code>"bun"</code> in <code>"She got fired from the hot dog stand for putting her hair in a bun."</code>
-    testString: assert(unRegex.test("She got fired from the hot dog stand for putting her hair in a bun."));
+    testString: unRegex.lastIndex = 0; assert(unRegex.test("She got fired from the hot dog stand for putting her hair in a bun."));
   - text: Your regex <code>unRegex</code> should not match <code>"There is a bug in my code."</code>
-    testString: assert(!unRegex.test("There is a bug in my code."));
+    testString: unRegex.lastIndex = 0; assert(!unRegex.test("There is a bug in my code."));
   - text: Your regex <code>unRegex</code> should not match <code>"Catch me if you can."</code>
-    testString: assert(!unRegex.test("Can me if you can."));
+    testString: unRegex.lastIndex = 0; assert(!unRegex.test("Catch me if you can."));
 
 ```
 

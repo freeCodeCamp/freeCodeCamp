@@ -31,7 +31,8 @@ tests:
   - text: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.
     testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()));
   - text: The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''TestName'' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === ''<div><h1>TestName</h1></div>'');};'
+    testString: |
+      async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: 'TestName' }); return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); const getValue = firstValue.replace(/\s/g, ''); assert(getValue === '<div><h1>TestName</h1></div>'); };
 
 ```
 
