@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aede08807
 title: Set the Font Family of an Element
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c3bvpCg'
 forumTopicId: 18278
 ---

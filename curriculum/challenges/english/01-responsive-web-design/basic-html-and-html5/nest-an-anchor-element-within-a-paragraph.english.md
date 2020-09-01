@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aede08817
 title: Nest an Anchor Element within a Paragraph
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 forumTopicId: 18244
 ---

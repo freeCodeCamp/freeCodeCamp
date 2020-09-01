@@ -2,7 +2,6 @@
 title: S-Expressions
 id: 59667989bf71cf555dd5d2ff
 challengeType: 5
-isHidden: false
 forumTopicId: 302303
 ---
 

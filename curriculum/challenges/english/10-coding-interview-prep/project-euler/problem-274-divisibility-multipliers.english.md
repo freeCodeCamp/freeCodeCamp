@@ -1,7 +1,6 @@
 ---
 id: 5900f47f1000cf542c50ff91
 challengeType: 5
-isHidden: false
 title: 'Problem 274: Divisibility Multipliers'
 forumTopicId: 301924
 ---

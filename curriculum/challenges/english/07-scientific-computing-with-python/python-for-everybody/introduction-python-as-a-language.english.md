@@ -2,7 +2,6 @@
 id: 5e6a54ba58d3af90110a60a2
 title: 'Introduction: Python as a Language'
 challengeType: 11
-isHidden: false
 isRequired: true
 videoId: 0QeGbZNS_bY
 ---

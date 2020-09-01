@@ -1,7 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3e
 challengeType: 5
-isHidden: false
 title: 'Problem 191: Prize Strings'
 forumTopicId: 301829
 ---

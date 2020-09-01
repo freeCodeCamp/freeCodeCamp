@@ -1,7 +1,6 @@
 ---
 id: 5900f4be1000cf542c50ffd1
 challengeType: 5
-isHidden: false
 title: 'Problem 338: Cutting Rectangular Grid Paper'
 forumTopicId: 301996
 ---

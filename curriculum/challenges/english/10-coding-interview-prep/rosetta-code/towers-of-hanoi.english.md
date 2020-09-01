@@ -2,7 +2,6 @@
 title: Towers of Hanoi
 id: 5951ed8945deab770972ae56
 challengeType: 5
-isHidden: false
 forumTopicId: 302341
 ---
 

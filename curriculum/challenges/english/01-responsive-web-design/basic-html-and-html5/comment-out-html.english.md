@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08804
 title: Comment out HTML
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cGyGbca'
 forumTopicId: 16782
 ---

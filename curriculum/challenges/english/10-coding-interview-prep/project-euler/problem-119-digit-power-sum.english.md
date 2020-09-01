@@ -1,7 +1,6 @@
 ---
 id: 5900f3e41000cf542c50fef6
 challengeType: 5
-isHidden: false
 title: 'Problem 119: Digit power sum'
 forumTopicId: 301745
 ---

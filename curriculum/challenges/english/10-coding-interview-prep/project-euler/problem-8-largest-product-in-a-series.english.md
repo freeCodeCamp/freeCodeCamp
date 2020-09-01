@@ -1,7 +1,6 @@
 ---
 id: 5900f3741000cf542c50fe87
 challengeType: 5
-isHidden: false
 title: 'Problem 8: Largest product in a series'
 forumTopicId: 302193
 ---

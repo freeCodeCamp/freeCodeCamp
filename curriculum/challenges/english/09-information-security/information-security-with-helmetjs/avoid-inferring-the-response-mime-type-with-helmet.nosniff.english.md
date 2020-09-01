@@ -2,7 +2,6 @@
 id: 587d8248367417b2b2512c3a
 title: Avoid Inferring the Response MIME Type with helmet.noSniff()
 challengeType: 2
-isHidden: false
 forumTopicId: 301574
 ---
 

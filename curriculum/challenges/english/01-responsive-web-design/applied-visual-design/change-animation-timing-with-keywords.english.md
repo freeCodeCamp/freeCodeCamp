@@ -2,7 +2,6 @@
 id: 587d78a8367417b2b2512ae7
 title: Change Animation Timing with Keywords
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cJKvwCM'
 forumTopicId: 301045
 ---

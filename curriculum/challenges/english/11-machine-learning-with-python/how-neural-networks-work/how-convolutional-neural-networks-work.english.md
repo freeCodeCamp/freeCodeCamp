@@ -2,7 +2,6 @@
 id: 5e9a0e9ef99a403d019610cd
 title: How Convolutional Neural Networks work
 challengeType: 11
-isHidden: false
 videoId: Y5M7KH4A4n4
 ---
 

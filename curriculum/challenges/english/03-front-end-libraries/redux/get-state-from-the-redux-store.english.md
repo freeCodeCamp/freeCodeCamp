@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403614c
 title: Get State from the Redux Store
 challengeType: 6
-isHidden: false
 isRequired: false
 forumTopicId: 301443
 ---

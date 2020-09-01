@@ -2,7 +2,6 @@
 id: 5a24bbe0dba28a8d3cbd4c5e
 title: Add Comments in JSX
 challengeType: 6
-isHidden: false
 isRequired: false
 forumTopicId: 301376
 ---

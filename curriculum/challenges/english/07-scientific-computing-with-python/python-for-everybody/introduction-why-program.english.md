@@ -2,7 +2,6 @@
 id: 5e6a54a558d3af90110a60a0
 title: 'Introduction: Why Program?'
 challengeType: 11
-isHidden: false
 isRequired: true
 videoId: 3muQV-Im3Z0
 ---

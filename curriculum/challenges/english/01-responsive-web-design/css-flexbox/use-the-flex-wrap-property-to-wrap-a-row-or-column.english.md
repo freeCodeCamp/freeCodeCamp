@@ -2,7 +2,6 @@
 id: 587d78ad367417b2b2512afa
 title: Use the flex-wrap Property to Wrap a Row or Column
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cQv9ZtG'
 forumTopicId: 301114
 ---

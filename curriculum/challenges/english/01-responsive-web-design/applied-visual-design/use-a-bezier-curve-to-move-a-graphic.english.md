@@ -2,7 +2,6 @@
 id: 587d78a9367417b2b2512ae9
 title: Use a Bezier Curve to Move a Graphic
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c6bnRCK'
 forumTopicId: 301071
 ---

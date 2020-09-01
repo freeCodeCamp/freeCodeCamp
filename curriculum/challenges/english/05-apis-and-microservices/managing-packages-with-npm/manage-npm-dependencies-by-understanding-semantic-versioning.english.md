@@ -2,7 +2,6 @@
 id: 587d7fb5367417b2b2512c01
 title: Manage npm Dependencies By Understanding Semantic Versioning
 challengeType: 2
-isHidden: false
 forumTopicId: 301529
 ---
 

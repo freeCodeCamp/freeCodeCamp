@@ -1,7 +1,6 @@
 ---
 id: 5900f52c1000cf542c51003e
 challengeType: 5
-isHidden: false
 title: 'Problem 447: Retractions C'
 forumTopicId: 302119
 ---

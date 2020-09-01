@@ -2,7 +2,6 @@
 id: 5e7b9f0d0b6c005b0e76f075
 title: 'Networking: Using urllib in Python'
 challengeType: 11
-isHidden: false
 isRequired: true
 videoId: 7lFM1T_CxBs
 ---

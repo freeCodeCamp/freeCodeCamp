@@ -2,7 +2,6 @@
 title: Factors of an integer
 id: 597f1e7fbc206f0e9ba95dc4
 challengeType: 5
-isHidden: false
 forumTopicId: 302265
 ---
 

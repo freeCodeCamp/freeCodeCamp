@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aec908855
 title: Give Each Element a Unique id
 challengeType: 0
-isHidden: false
 forumTopicId: 18191
 ---
 

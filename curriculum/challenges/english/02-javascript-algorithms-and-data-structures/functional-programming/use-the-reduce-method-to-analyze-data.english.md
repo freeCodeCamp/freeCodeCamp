@@ -2,7 +2,6 @@
 id: 587d7da9367417b2b2512b68
 title: Use the reduce Method to Analyze Data
 challengeType: 1
-isHidden: false
 forumTopicId: 301313
 ---
 

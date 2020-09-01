@@ -2,7 +2,6 @@
 id: 587d7fb7367417b2b2512c0b
 title: Use model.find() to Search Your Database
 challengeType: 2
-isHidden: false
 forumTopicId: 301543
 ---
 

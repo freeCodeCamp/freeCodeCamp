@@ -2,7 +2,6 @@
 id: 589690e6f9fc0f352b528e6e
 title: Clean Up Your Project with Modules
 challengeType: 2
-isHidden: false
 forumTopicId: 301549
 ---
 

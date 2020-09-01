@@ -1,7 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa4
 challengeType: 5
-isHidden: false
 title: 'Problem 293: Pseudo-Fortunate Numbers'
 forumTopicId: 301945
 ---

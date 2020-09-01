@@ -1,7 +1,6 @@
 ---
 id: 5900f53b1000cf542c51004d
 challengeType: 5
-isHidden: false
 title: 'Problem 462: Permutation of 3-smooth numbers'
 forumTopicId: 302137
 ---

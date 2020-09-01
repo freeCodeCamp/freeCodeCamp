@@ -2,7 +2,6 @@
 id: 5cdafbb0291309899753167f
 title: Create a JavaScript Promise
 challengeType: 1
-isHidden: false
 forumTopicId: 301197
 ---
 

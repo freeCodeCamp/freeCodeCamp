@@ -2,7 +2,6 @@
 id: 587d8250367417b2b2512c60
 title: Create a Queue Class
 challengeType: 1
-isHidden: false
 forumTopicId: 301631
 ---
 

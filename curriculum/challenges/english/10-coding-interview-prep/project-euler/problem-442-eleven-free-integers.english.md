@@ -1,7 +1,6 @@
 ---
 id: 5900f5271000cf542c510039
 challengeType: 5
-isHidden: false
 title: 'Problem 442: Eleven-free integers'
 forumTopicId: 302114
 ---

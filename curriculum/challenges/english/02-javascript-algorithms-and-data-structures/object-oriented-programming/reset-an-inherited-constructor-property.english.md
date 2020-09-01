@@ -2,7 +2,6 @@
 id: 587d7db1367417b2b2512b86
 title: Reset an Inherited Constructor Property
 challengeType: 1
-isHidden: false
 forumTopicId: 301324
 ---
 

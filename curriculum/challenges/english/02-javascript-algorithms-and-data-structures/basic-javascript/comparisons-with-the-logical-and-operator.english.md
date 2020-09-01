@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244d8
 title: Comparisons with the Logical And Operator
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cvbRVtr'
 forumTopicId: 16799
 ---

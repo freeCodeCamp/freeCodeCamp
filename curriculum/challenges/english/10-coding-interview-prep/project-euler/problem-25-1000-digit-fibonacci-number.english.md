@@ -1,7 +1,6 @@
 ---
 id: 5900f3851000cf542c50fe98
 challengeType: 5
-isHidden: false
 title: 'Problem 25: 1000-digit Fibonacci number'
 forumTopicId: 301897
 ---

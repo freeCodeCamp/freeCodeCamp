@@ -2,7 +2,6 @@
 id: 587d8256367417b2b2512c7a
 title: Find the Minimum and Maximum Value in a Binary Search Tree
 challengeType: 1
-isHidden: false
 forumTopicId: 301642
 ---
 

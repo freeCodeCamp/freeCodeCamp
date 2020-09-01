@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aede08830
 title: Create a Form Element
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cmQ3Kfa'
 forumTopicId: 16817
 ---

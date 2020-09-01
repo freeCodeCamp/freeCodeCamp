@@ -1,7 +1,6 @@
 ---
 id: 5900f4231000cf542c50ff36
 challengeType: 5
-isHidden: false
 title: 'Problem 183: Maximum product of parts'
 forumTopicId: 301819
 ---

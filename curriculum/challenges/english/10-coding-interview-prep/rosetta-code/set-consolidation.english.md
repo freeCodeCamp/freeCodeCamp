@@ -2,7 +2,6 @@
 id: 5eb3e4af7d0e7b760b46cedc
 title: Set consolidation
 challengeType: 5
-isHidden: false
 forumTopicId: 385319
 ---
 

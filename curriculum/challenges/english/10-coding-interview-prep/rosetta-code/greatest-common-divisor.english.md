@@ -2,7 +2,6 @@
 title: Greatest common divisor
 id: 5a23c84252665b21eecc7e82
 challengeType: 5
-isHidden: false
 forumTopicId: 302277
 ---
 

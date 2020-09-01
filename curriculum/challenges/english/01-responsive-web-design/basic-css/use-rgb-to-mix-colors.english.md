@@ -2,7 +2,6 @@
 id: bad82fee1348bd9aedf08721
 title: Use RGB to Mix Colors
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cm24JU6'
 forumTopicId: 18368
 ---

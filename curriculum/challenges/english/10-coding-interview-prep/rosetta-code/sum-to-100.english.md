@@ -2,7 +2,6 @@
 id: 5a23c84252665b21eecc8043
 title: Sum to 100
 challengeType: 5
-isHidden: false
 forumTopicId: 302335
 ---
 

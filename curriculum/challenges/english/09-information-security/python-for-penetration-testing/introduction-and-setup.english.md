@@ -2,7 +2,6 @@
 id: 5ea9997bbec2e9bc47e94dae
 title: Introduction and Setup
 challengeType: 11
-isHidden: false
 videoId: XeQ7ZKtb998
 ---
 

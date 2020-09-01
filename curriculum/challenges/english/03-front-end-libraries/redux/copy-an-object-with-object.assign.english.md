@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403615b
 title: Copy an Object with Object.assign
 challengeType: 6
-isHidden: false
 isRequired: false
 forumTopicId: 301437
 ---

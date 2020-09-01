@@ -2,7 +2,6 @@
 id: 587d824f367417b2b2512c59
 title: Run Functional Tests on API Endpoints using Chai-HTTP II
 challengeType: 2
-isHidden: false
 forumTopicId: 301592
 ---
 

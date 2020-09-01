@@ -1,7 +1,6 @@
 ---
 id: 5900f37a1000cf542c50fe8c
 challengeType: 5
-isHidden: false
 title: 'Problem 13: Large sum'
 forumTopicId: 301757
 ---

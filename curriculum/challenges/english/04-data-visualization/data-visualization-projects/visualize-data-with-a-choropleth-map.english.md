@@ -3,7 +3,6 @@ id: 587d7fa6367417b2b2512bbf
 title: Visualize Data with a Choropleth Map
 isRequired: true
 challengeType: 3
-isHidden: false
 forumTopicId: 301465
 ---
 

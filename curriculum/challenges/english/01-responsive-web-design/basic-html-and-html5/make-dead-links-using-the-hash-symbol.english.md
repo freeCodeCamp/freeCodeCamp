@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08817
 title: Make Dead Links Using the Hash Symbol
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMdkytL'
 forumTopicId: 18230
 ---

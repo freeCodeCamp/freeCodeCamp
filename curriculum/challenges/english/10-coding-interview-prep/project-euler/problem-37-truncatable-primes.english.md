@@ -1,7 +1,6 @@
 ---
 id: 5900f3911000cf542c50fea4
 challengeType: 5
-isHidden: false
 title: 'Problem 37: Truncatable primes'
 forumTopicId: 302031
 ---

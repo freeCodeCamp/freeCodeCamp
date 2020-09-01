@@ -2,7 +2,6 @@
 id: 587d78a6367417b2b2512ade
 title: Create a More Complex Shape Using CSS and HTML
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cPpz4fr'
 forumTopicId: 301050
 ---

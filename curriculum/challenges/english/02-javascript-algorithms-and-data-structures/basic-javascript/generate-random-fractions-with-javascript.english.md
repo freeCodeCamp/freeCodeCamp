@@ -2,7 +2,6 @@
 id: cf1111c1c11feddfaeb9bdef
 title: Generate Random Fractions with JavaScript
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cyWJJs3'
 forumTopicId: 18185
 ---

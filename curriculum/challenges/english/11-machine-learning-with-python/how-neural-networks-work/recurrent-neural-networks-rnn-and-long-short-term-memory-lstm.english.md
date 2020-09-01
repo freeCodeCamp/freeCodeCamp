@@ -2,7 +2,6 @@
 id: 5e9a0e9ef99a403d019610cb
 title: Recurrent Neural Networks RNN and Long Short Term Memory LSTM
 challengeType: 11
-isHidden: false
 videoId: UVimlsy9eW0
 ---
 

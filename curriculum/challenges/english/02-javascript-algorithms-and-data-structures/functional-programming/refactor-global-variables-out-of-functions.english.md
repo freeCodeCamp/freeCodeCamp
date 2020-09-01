@@ -2,7 +2,6 @@
 id: 587d7b8f367417b2b2512b60
 title: Refactor Global Variables Out of Functions
 challengeType: 1
-isHidden: false
 forumTopicId: 301235
 ---
 

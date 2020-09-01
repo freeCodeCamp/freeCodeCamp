@@ -2,7 +2,6 @@
 id: bd7150d8c442eddfafb5bd1c
 title: P2P Video Chat Application
 challengeType: 4
-isHidden: false
 isRequired: false
 forumTopicId: 302366
 ---

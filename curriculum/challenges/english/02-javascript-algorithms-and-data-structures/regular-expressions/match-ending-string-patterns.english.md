@@ -2,7 +2,6 @@
 id: 587d7db7367417b2b2512b9e
 title: Match Ending String Patterns
 challengeType: 1
-isHidden: false
 forumTopicId: 301352
 ---
 

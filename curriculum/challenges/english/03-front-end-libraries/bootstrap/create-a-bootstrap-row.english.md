@@ -2,7 +2,6 @@
 id: bad87fee1348bd9bec908846
 title: Create a Bootstrap Row
 challengeType: 0
-isHidden: false
 forumTopicId: 16813
 ---
 

@@ -2,7 +2,6 @@
 id: 587d78ab367417b2b2512af2
 title: Use the flex-direction Property to Make a Row
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cBEkbfJ'
 forumTopicId: 301110
 ---

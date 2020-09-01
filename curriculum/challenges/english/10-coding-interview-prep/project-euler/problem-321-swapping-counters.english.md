@@ -1,7 +1,6 @@
 ---
 id: 5900f4ae1000cf542c50ffc0
 challengeType: 5
-isHidden: false
 title: 'Problem 321: Swapping Counters'
 forumTopicId: 301978
 ---

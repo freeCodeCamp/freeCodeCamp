@@ -2,7 +2,6 @@
 id: 587d7dad367417b2b2512b78
 title: Use a Constructor to Create Objects
 challengeType: 1
-isHidden: false
 forumTopicId: 18233
 ---
 

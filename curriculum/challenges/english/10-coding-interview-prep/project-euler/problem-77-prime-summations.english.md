@@ -1,7 +1,6 @@
 ---
 id: 5900f3b91000cf542c50fecc
 challengeType: 5
-isHidden: false
 title: 'Problem 77: Prime summations'
 forumTopicId: 302190
 ---

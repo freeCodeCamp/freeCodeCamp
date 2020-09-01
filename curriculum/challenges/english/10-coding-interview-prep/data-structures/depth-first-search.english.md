@@ -2,7 +2,6 @@
 id: 587d825d367417b2b2512c96
 title: Depth-First Search
 challengeType: 1
-isHidden: false
 forumTopicId: 301640
 ---
 

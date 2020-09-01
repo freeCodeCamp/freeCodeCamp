@@ -1,7 +1,6 @@
 ---
 id: 5900f3c81000cf542c50fedb
 challengeType: 5
-isHidden: false
 title: 'Problem 92: Square digit chains'
 forumTopicId: 302209
 ---

@@ -2,7 +2,6 @@
 title: IBAN
 id: 5a23c84252665b21eecc7eaf
 challengeType: 5
-isHidden: false
 forumTopicId: 302289
 ---
 
