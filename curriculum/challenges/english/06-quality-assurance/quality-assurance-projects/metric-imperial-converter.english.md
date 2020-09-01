@@ -30,108 +30,76 @@ tests:
     testString: ''
   - text: 'I can GET /api/convert with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)'
     testString: ''
-  - text: I can convert 'gal' to 'L' and vice versa. (1 gal to 3.78541 L)
-    testString: "getUserInput => { 
-                    $.get(getUserInput('url') + '/api/convert?input=1gal')
-                    .then(data => {
-                        assert.equal(data.returnNum, 3.78541); 
-                        assert.equal(data.returnUnit, 'l');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=10gal')
-                    .then(data => {
-                        assert.equal(data.returnNum, 37.8541); 
-                        assert.equal(data.returnUnit, 'l');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=1l')
-                    .then(data => {
-                        assert.equal(data.returnNum, 0.26417); 
-                        assert.equal(data.returnUnit, 'gal');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=10l')
-                    .then(data => {
-                        assert.equal(data.returnNum, 2.64172); 
-                        assert.equal(data.returnUnit, 'gal');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                }"
-  - text: I can convert 'lbs' to 'kg' and vice versa. (1 lbs to 0.453592 kg)
-    testString: "getUserInput => { 
-                    $.get(getUserInput('url') + '/api/convert?input=1lbs')
-                    .then(data => {
-                        assert.equal(data.returnNum, 0.453592); 
-                        assert.equal(data.returnUnit, 'kg');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=10lbs')
-                    .then(data => {
-                        assert.equal(data.returnNum, 4.53592); 
-                        assert.equal(data.returnUnit, 'kg');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=1kg')
-                    .then(data => {
-                        assert.equal(data.returnNum, 2.20462); 
-                        assert.equal(data.returnUnit, 'lbs');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=10kg')
-                    .then(data => {
-                        assert.equal(data.returnNum, 22.04624); 
-                        assert.equal(data.returnUnit, 'lbs');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                }"
-  - text: I can convert 'mi' to 'km' and vice versa. (1 mi to 1.60934 km)
-    testString: "getUserInput => { 
-                    $.get(getUserInput('url') + '/api/convert?input=1mi')
-                    .then(data => {
-                        assert.equal(data.returnNum, 1.60934); 
-                        assert.equal(data.returnUnit, 'km');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=10mi')
-                    .then(data => {
-                        assert.equal(data.returnNum, 16.0934); 
-                        assert.equal(data.returnUnit, 'km');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=1km')
-                    .then(data => {
-                        assert.equal(data.returnNum, 0.62137); 
-                        assert.equal(data.returnUnit, 'mi');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                    $.get(getUserInput('url') + '/api/convert?input=10km')
-                    .then(data => {
-                        assert.equal(data.returnNum, 6.21373); 
-                        assert.equal(data.returnUnit, 'mi');
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                }"
-  - text: If my unit of measurement is invalid, returned will be 'invalid unit'.
-    testString: "getUserInput => { 
-                    $.get(getUserInput('url') + '/api/convert?input=1min')
-                    .then(data => {
-                        assert.equal(data.error, 'invalid unit'); 
-                    }).catch(xhr => {
-                        throw new Error(xhr.responseText);
-                    });
-                }"
+  - text: I can convert <code>'gal'</code> to <code>'L'</code> and vice versa. (1 gal to 3.78541 L)
+    testString: "async getUserInput => { 
+      try {
+        const data1 = await $.get(getUserInput('url') + '/api/convert?input=1gal');
+        assert.equal(data1.returnNum, 3.78541);
+        assert.equal(data1.returnUnit, 'l');
+        const data2 = await $.get(getUserInput('url') + '/api/convert?input=10gal');
+        assert.equal(data2.returnNum, 37.8541);
+        assert.equal(data2.returnUnit, 'l');
+        const data3 = await $.get(getUserInput('url') + '/api/convert?input=1l');
+        assert.equal(data3.returnNum, 0.26417);
+        assert.equal(data3.returnUnit, 'gal');
+        const data4 = await $.get(getUserInput('url') + '/api/convert?input=10l');
+        assert.equal(data4.returnNum, 2.64172);
+        assert.equal(data4.returnUnit, 'gal');
+      } catch(xhr) {
+        throw new Error(xhr.responseText);
+      }
+    }
+    "
+  - text: I can convert <code>'lbs'</code> to <code>'kg'</code> and vice versa. (1 lbs to 0.453592 kg)
+    testString: "async getUserInput => { 
+      try {
+        const data1 = await $.get(getUserInput('url') + '/api/convert?input=1lbs');
+        assert.equal(data1.returnNum, 0.45359);
+        assert.equal(data1.returnUnit, 'kg');
+        const data2 = await $.get(getUserInput('url') + '/api/convert?input=10lbs');
+        assert.equal(data2.returnNum, 4.53592);
+        assert.equal(data2.returnUnit, 'kg');
+        const data3 = await $.get(getUserInput('url') + '/api/convert?input=1kg');
+        assert.equal(data3.returnNum, 2.20462);
+        assert.equal(data3.returnUnit, 'lbs');
+        const data4 = await $.get(getUserInput('url') + '/api/convert?input=10kg');
+        assert.equal(data4.returnNum, 22.04624);
+        assert.equal(data4.returnUnit, 'lbs');
+      } catch(xhr) {
+        throw new Error(xhr.responseText);
+      }
+    }
+    "
+  - text: I can convert <code>'mi'</code> to <code>'km'</code> and vice versa. (1 mi to 1.60934 km)
+    testString: "async getUserInput => { 
+      try {
+        const data1 = await $.get(getUserInput('url') + '/api/convert?input=1mi');
+        assert.equal(data1.returnNum, 1.60934); 
+        assert.equal(data1.returnUnit, 'km');
+        const data2 = await $.get(getUserInput('url') + '/api/convert?input=10mi');
+        assert.equal(data2.returnNum, 16.0934); 
+        assert.equal(data2.returnUnit, 'km');
+        const data3 = await $.get(getUserInput('url') + '/api/convert?input=1km');
+        assert.equal(data3.returnNum, 0.62137); 
+        assert.equal(data3.returnUnit, 'mi');
+        const data4 = await $.get(getUserInput('url') + '/api/convert?input=10km');
+        assert.equal(data4.returnNum, 6.21373); 
+        assert.equal(data4.returnUnit, 'mi');
+      } catch(xhr) {
+        throw new Error(xhr.responseText);
+      }
+    }
+    "
+  - text: If my unit of measurement is invalid, returned will be <code>'invalid unit'</code>.
+    testString: "async getUserInput => { 
+      try {
+        const data = await $.get(getUserInput('url') + '/api/convert?input=1min');
+        assert.equal(data.initUnit, 'invalid unit'); 
+      } catch(xhr) {
+        throw new Error(xhr.responseText);
+      }
+    }
+    "
   - text: If my number is invalid, returned with will 'invalid number'.
     testString: ''
   - text: If both are invalid, return will be 'invalid number and unit'.
