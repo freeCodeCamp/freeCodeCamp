@@ -94,7 +94,7 @@ tests:
     testString: "async getUserInput => { 
       try {
         const data = await $.get(getUserInput('url') + '/api/convert?input=1min');
-        assert.equal(data.initUnit, 'invalid unit'); 
+        assert(data.initUnit === 'invalid unit' || data === 'invalid unit');
       } catch(xhr) {
         throw new Error(xhr.responseText);
       }
