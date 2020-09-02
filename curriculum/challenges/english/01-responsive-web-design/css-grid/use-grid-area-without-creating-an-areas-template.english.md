@@ -34,7 +34,7 @@ Using the <code>grid-area</code> property, place the element with <code>item5</c
 
 ```yml
 tests:
-  - text: <code>item5</code> class should have a <code>grid-area</code> that begins on the third horizontal line, ending on the fourth horizontal line and begins on the first vertical line, ending on the fourth vertical line.
+  - text: The <code>item5</code> class should have a <code>grid-area</code> to make it fill the whole area between the third and fourth horizontal lines, and first and fourth vertical lines.
     testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```
