@@ -40,7 +40,7 @@ Note that we do <em>not</em> use quotes around the variable name when using it t
 
 ## Instructions
 <section id='instructions'>
-Use the <code>playerNumber</code> variable to look up player <code>16</code> in <code>testObj</code> using bracket notation. Then assign that name to the <code>player</code> variable.
+Set the <code>playerNumber</code> variable to <code>16</code>. Then, use the variable to look up the player's name and assign it to <code>player</code>.
 </section>
 
 ## Tests
