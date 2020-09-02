@@ -19,12 +19,12 @@ describe('Navbar', () => {
 
   it('Should take user to forum page when clicked on `/forum`', () => {
     cy.get('.nav-forum').within(() => {
-      // Can't click on it in test due to the link not working on dev server
+      // Can't click on it in test due to CORS policy
       // So check the link instead
       cy.contains('/forum').should(
         'have.attr',
         'href',
-        'https://localhost/forum'
+        'https://forum.freecodecamp.org'
       );
     });
   });
