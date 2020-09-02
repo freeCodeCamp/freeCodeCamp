@@ -21,7 +21,7 @@ Family names are case-sensitive and need to be wrapped in quotes if there is a s
 
 ## Instructions
 <section id='instructions'>
-Import the Lobster font to your web page. Then use an <code>h2</code> element selector to create a <code>font-family</code> CSS rule that uses the Lobster font to ensure it will be applied to your <code>h2</code> element.
+Import the Lobster font to your web page. Then, use an element selector to set <code>Lobster</code> as the <code>font-family</code> for your <code>h2</code> element.
 </section>
 
 ## Tests
