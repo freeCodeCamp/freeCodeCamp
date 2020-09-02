@@ -74,7 +74,7 @@ var collection = {
     tracks: ['1999', 'Little Red Corvette']
   },
   1245: {
-    artist: "Robert Palmer",
+    artist: 'Robert Palmer',
     tracks: []
   },
   5439: {
@@ -139,7 +139,7 @@ var collection = {
     tracks: ['1999', 'Little Red Corvette']
   },
   1245: {
-    artist: "Robert Palmer",
+    artist: 'Robert Palmer',
     tracks: []
   },
   5439: {
