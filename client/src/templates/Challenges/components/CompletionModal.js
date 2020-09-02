@@ -217,14 +217,7 @@ export class CompletionModalInner extends Component {
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <Login
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-cta'
-            >
-              Sign in to save your progress
-            </Login>
+            <Login block={true}>Sign in to save your progress</Login>
           )}
           <Button
             block={true}
