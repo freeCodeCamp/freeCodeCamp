@@ -38,8 +38,8 @@ tests:
     testString: assert.deepEqual(wordFrequency(example_2, 1), example_2_solution)
   - text: <code>wordFrequency("Opensource opensource open-source open source", 1)</code> should return <code>[['opensource', 2]]</code>
     testString: assert.deepEqual(wordFrequency(example_3, 1), example_3_solution)
-  - text: <code>wordFrequency("Apple App apply aPP aPPlE APp", 3)</code> should return <code>[['app', 3], ['apple', 2], ['apply', 1]]</code>
-    testString: assert.deepEqual(wordFrequency(example_4, 3), example_4_solution)
+  - text: <code>wordFrequency("Apple App apply aPP aPPlE", 3)</code> should return <code>[['app', 2], ['apple', 2], ['apply', 1]]</code> or <code>[['apple', 2], ['app', 2], ['apply', 1]]</code>
+    testString: const arr = JSON.stringify(wordFrequency(example_4, 3)); assert(arr === example_4_solution_a || arr === example_4_solution_b)
   - text: <code>wordFrequency("c d a d c a b d d c", 4)</code> should return <code>[['d', 4], ['c', 3], ['a', 2], ['b', 1]]</code>
     testString: assert.deepEqual(wordFrequency(example_5, 4), example_5_solution)
   - text: <code>wordFrequency("", 5)</code> should return <code>[]</code>
@@ -72,8 +72,9 @@ var example_2 = 'The quick brown fox jumped over the lazy dog';
 var example_2_solution = [['the', 2]];
 var example_3 = 'Opensource opensource open-source open source';
 var example_3_solution = [['opensource', 2]];
-var example_4 = 'Apple App apply aPP aPPlE APp';
-var example_4_solution = [['app', 3], ['apple', 2], ['apply', 1]];
+var example_4 = 'Apple App apply aPP aPPlE';
+var example_4_solution_a = "[[\"app\",2],[\"apple\",2],[\"apply\",1]]";
+var example_4_solution_b = "[[\"apple\",2],[\"app\",2],[\"apply\",1]]";
 var example_5 = 'c d a d c a b d d c';
 var example_5_solution = [['d', 4], ['c', 3], ['a', 2], ['b', 1]];
 var example_6 = '';
