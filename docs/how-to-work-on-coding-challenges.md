@@ -458,7 +458,7 @@ forumTopicId: 12345
 
 import Script from './script.mdx';
 
-## --step-description--
+# --description--
 
 Description text, in markdown
 
@@ -468,7 +468,7 @@ Description text, in markdown
 </div>
 ```
 
-## --step-hints--
+# --hints--
 
 ![test-id-1]
 
@@ -486,21 +486,21 @@ More instructions in markdown syntax
 More code
 ```
 
-## --step-seed--
+# --seed--
 
-### --before-user-code--
+## --before-user-code--
 
 ```lang
 Code evaluated before the user’s
 ```
 
-### --after-user-code--
+## --after-user-code--
 
 ```lang
 Code evaluated after the user’s, and just before the tests
 ```
 
-### --seed-content--
+## --seed-contents--
 
 ![index-html]
 
@@ -521,21 +521,25 @@ Some js
 <Script />
 
 
-# --solution-marker--
+# --solutions--
 
 Exactly the same as the seeds section
 
-## --next-solution-marker
+---
 
-Same again
+second solution
 
-# --question-marker--
+---
 
-## --text-marker--
+third solution etc.
+
+# --question--
+
+## --text--
 
 The question would go here (only used for video challenges)
 
-## --answers-marker--
+## --answers--
 
 Answer 1
 
@@ -547,7 +551,7 @@ Answer 2
 
 More answers
 
-## --solution-marker--
+## --video-solution--
 
 \<number of correct answer\>
 
