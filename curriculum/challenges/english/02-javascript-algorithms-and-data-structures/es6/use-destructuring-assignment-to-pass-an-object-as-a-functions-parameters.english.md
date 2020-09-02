@@ -26,7 +26,7 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 }
 ```
 
-When <code>profileData</code> is passed to the above function, the values are destructed from the function parameter for use within the function.
+When <code>profileData</code> is passed to the above function, the values are destructured from the function parameter for use within the function.
 </section>
 
 ## Instructions
