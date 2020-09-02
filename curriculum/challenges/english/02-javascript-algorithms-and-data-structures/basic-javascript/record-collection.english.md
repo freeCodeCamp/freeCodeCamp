@@ -37,7 +37,6 @@ You may refer back to <a href="/learn/javascript-algorithms-and-data-structures/
 
 ```yml
 tests:
-<<<<<<< HEAD
   - text: After <code>updateRecords(collection, 5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>
     testString: assert(updateRecords(_recordCollection, 5439, "artist", "ABBA")[5439]["artist"] === "ABBA");
   - text: After <code>updateRecords(collection, 5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.
@@ -52,25 +51,6 @@ tests:
     testString: updateRecords(_recordCollection, 2548, "tracks", ""); assert(!_recordCollection[2548].hasOwnProperty("tracks"));
   - text: After <code>updateRecords(collection, 1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>
     testString: assert(updateRecords(_recordCollection, 1245, "album", "Riptide")[1245]["album"] === "Riptide");
-=======
-  - text: You should not change the <code>collection</code> object's initialization
-    testString: 'assert(code.match(/var collection = {\s*2548:\s*{\s*album:\s*"Slippery When Wet",\s*artist:\s*"Bon Jovi",\s*tracks:\s*\[\s*"Let It Rock",\s*"You Give Love a Bad Name"\s*\]\s*},\s*2468:\s*{\s*album:\s*"1999",\s*artist:\s*"Prince",\s*tracks:\s*\[\s*"1999",\s*"Little Red Corvette"\s*\]\s*},\s*1245:\s*{\s*artist:\s*"Robert Palmer",\s*tracks:\s*\[\s*\]\s*},\s*5439:\s*{\s*album:\s*"ABBA Gold"\s*}\s*};/g));'
-  - text: After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>
-    testString: assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA");
-  - text: After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.
-    testString: assert(updateRecords(5439, "tracks", "Take a Chance on Me")[5439]["tracks"].pop() === "Take a Chance on Me");
-  - text: After <code>updateRecords(2548, "artist", "")</code>, <code>artist</code> should not be set
-    testString: updateRecords(2548, "artist", ""); assert(!collection[2548].hasOwnProperty("artist"));
-  - text: After <code>updateRecords(1245, "tracks", "Addicted to Love")</code>, <code>tracks</code> should have <code>"Addicted to Love"</code> as the last element.
-    testString: assert(updateRecords(1245, "tracks", "Addicted to Love")[1245]["tracks"].pop() === "Addicted to Love");
-  - text: After <code>updateRecords(2468, "tracks", "Free")</code>, <code>tracks</code> should have <code>"1999"</code> as the first element.
-    testString: assert(updateRecords(2468, "tracks", "Free")[2468]["tracks"][0] === "1999");
-  - text: After <code>updateRecords(2548, "tracks", "")</code>, <code>tracks</code> should not be set
-    testString: updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"));
-  - text: After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>
-    testString: assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide");
-
->>>>>>> fix: formatting bug preventing tests to pass
 ```
 
 </section>
@@ -94,11 +74,7 @@ var collection = {
     tracks: ['1999', 'Little Red Corvette']
   },
   1245: {
-<<<<<<< HEAD
     artist: 'Robert Palmer',
-=======
-    artist: "Robert Palmer",
->>>>>>> fix: formatting bug preventing tests to pass
     tracks: []
   },
   5439: {
@@ -163,11 +139,7 @@ var collection = {
     tracks: ['1999', 'Little Red Corvette']
   },
   1245: {
-<<<<<<< HEAD
     artist: 'Robert Palmer',
-=======
-    artist: "Robert Palmer",
->>>>>>> fix: formatting bug preventing tests to pass
     tracks: []
   },
   5439: {
