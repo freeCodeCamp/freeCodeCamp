@@ -32,7 +32,7 @@ tests:
   - text: Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.
     testString: assert($('h5').css('font-size') == '21px');
   - text: Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.
-    testString: const regex = /h6\s*?\{(\n)?\s*?font-size:\s*?14px;(\n)?\s*?\}/; assert.strictEqual(true, regex.test(code));
+    testString: const regex = /h6\s*\{\s*font-size\s*:\s*14px\s*(;\s*\}|\})/i; assert.strictEqual(true, regex.test(code));
 
 ```
 
