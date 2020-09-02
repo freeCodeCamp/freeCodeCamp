@@ -10,19 +10,18 @@ forumTopicId: 18261
 ## Description
 
 <section id='description'>
-You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.
-Write a function which takes an album's <code>id</code> (like <code>2548</code>), a property <code>prop</code> (like <code>"artist"</code> or <code>"tracks"</code>), and a <code>value</code> (like <code>"Addicted to Love"</code>) to modify the data in this collection.
-If <code>prop</code> isn't <code>"tracks"</code> and <code>value</code> isn't empty (<code>""</code>), update or set the <code>value</code> for that record album's property.
-Your function must always return the entire collection object.
-There are several rules for handling incomplete data:
-If <code>prop</code> is <code>"tracks"</code> but the album doesn't have a <code>"tracks"</code> property, create an empty array before adding the new value to the album's corresponding property.
-If <code>prop</code> is <code>"tracks"</code> and <code>value</code> isn't empty (<code>""</code>), push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.
-If <code>value</code> is empty (<code>""</code>), delete the given <code>prop</code> property from the album.
-<strong>Notes/Hints:</strong><br>
-A copy of the original <code>collection</code> object is used for the tests.
-Use <code>bracket notation</code> when <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank">accessing object properties with variables</a>.
-Push is an array method you can read about on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank">Mozilla Developer Network</a>.
-You may refer back to <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank">Manipulating Complex Objects</a> Introducing JavaScript Object Notation (JSON) for a refresher.
+
+You are given a JSON object representing a part of your musical album collection. Each album has a unique id number as its key and several other properties. Not all albums have complete information.
+
+You start with an `updateRecords` function that takes an object like `collection`, an `id`, a `prop` (`artist` or `tracks`), and a `value`. Complete the function using the rules below to modify the object passed to the function.
+
+- Your function must always return the entire object.
+- If `prop` is `artist` and `value` isn't an empty string, update or set the `value` for that record album's property.
+- If `prop` is `tracks` but the album doesn't have a `tracks` property, create an empty array and add the `value` to it.
+- If `prop` is `tracks` and `value` isn't empty (`""`), push the `value` onto the end of the album's existing `tracks` array.
+- If `value` is empty (`""`), delete the given `prop` property from the album.
+
+**Note:** A copy of the `collection` object is used for the tests.
 </section>
 
 ## Instructions
@@ -61,7 +60,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Setup (for reference only)
+// Setup
 var collection = {
   2548: {
     album: 'Slippery When Wet',
