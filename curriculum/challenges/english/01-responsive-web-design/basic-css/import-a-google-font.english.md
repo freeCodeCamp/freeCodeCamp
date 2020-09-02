@@ -21,7 +21,7 @@ Family names are case-sensitive and need to be wrapped in quotes if there is a s
 
 ## Instructions
 <section id='instructions'>
-Create a <code>font-family</code> CSS rule that uses the <code>Lobster</code> font, and ensure that it will be applied to your <code>h2</code> element.
+Import the Lobster font to your web page. Then, use an element selector to set <code>Lobster</code> as the <code>font-family</code> for your <code>h2</code> element.
 </section>
 
 ## Tests
@@ -33,8 +33,8 @@ tests:
     testString: assert(new RegExp("googleapis", "gi").test(code));
   - text: Your <code>h2</code> element should use the font <code>Lobster</code>.
     testString: assert($("h2").css("font-family").match(/lobster/i));
-  - text: You should use an <code>h2</code> CSS selector to change the font.
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?(.{0,})\s*;\s*\}/gi.test(code));'
+  - text: You should only use an <code>h2</code> element selector to change the font.
+    testString: assert(/\s*[^\.]h2\s*\{\s*font-family\:\s*(['"]?)Lobster\1\s*(;\s*\}|\})/gi.test(code));
   - text: Your <code>p</code> element should still use the font <code>monospace</code>.
     testString: assert($("p").css("font-family").match(/monospace/i));
 
