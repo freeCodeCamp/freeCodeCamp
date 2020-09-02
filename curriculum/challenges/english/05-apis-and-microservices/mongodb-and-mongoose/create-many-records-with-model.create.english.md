@@ -13,7 +13,7 @@ Sometimes you need to create many instances of your models, e.g. when seeding a 
 ## Instructions
 <section id='instructions'>
 Modify the <code>createManyPeople</code> function to create many people using <code>Model.create()</code> with the argument <code>arrayOfPeople</code>.
-(You can reuse the model you instantiated in the previous exercise)
+<strong>Note: </strong> You can reuse the model you instantiated in the previous exercise.
 </section>
 
 ## Tests
