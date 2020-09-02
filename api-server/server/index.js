@@ -5,7 +5,6 @@ const _ = require('lodash');
 const Rx = require('rx');
 const loopback = require('loopback');
 const boot = require('loopback-boot');
-const expressState = require('express-state');
 const createDebugger = require('debug');
 const Sentry = require('@sentry/node');
 
@@ -30,7 +29,6 @@ if (sentry.dns === 'dsn_from_sentry_dashboard') {
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 const app = loopback();
 
-expressState.extend(app);
 app.set('state namespace', '__fcc__');
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));

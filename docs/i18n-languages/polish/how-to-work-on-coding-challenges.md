@@ -311,7 +311,7 @@ function myFunc() {
 
 Przed utworzeniem [prośby o wyciągnięcie](how-to-open-a-pull-request.md) dla Twoich zmian, musisz sprawdzić, czy wprowadzone zmiany nie powodują nieumyślnie problemów z wyzwaniem.  Aby przetestować wszystkie wyzwania, należy wykonać "test npm run test:curriculum". Aby zaoszczędzić czas możesz ograniczyć testy do jednego wyzwania wykonując następujące kroki:
 
-1. W pliku `.env` ustaw zmienną środowiskową `TEST_CHALLENGES_FOR_LANGS` na język wyzwania (wyzwań), które musisz przetestować.  Obecnie akceptowane wartości to `angielski`, `arabski`, `chiński`, `portugalski`, `rosyjski` i `hiszpański`.
+1. W pliku `.env` ustaw zmienną środowiskową `LOCALE` na język wyzwania (wyzwań), które musisz przetestować.  Obecnie akceptowane wartości to `angielski`, `arabski`, `chiński`, `portugalski`, `rosyjski` i `hiszpański`.
 
 2.  Przełączyć do katalogu `curriculum`:
 
@@ -331,7 +331,7 @@ Po sprawdzeniu, że każde wyzwanie, nad którym pracowałeś, przejdzie pomyśl
 
 Tworzenie i edycja wyzwań:
 
-1. Typy wyzwań](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - co oznaczają liczbowe wartości typu wyzwania (wyliczenie).
+1. Typy wyzwań](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - co oznaczają liczbowe wartości typu wyzwania (wyliczenie).
 
-2. [Przyczyniając się do FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - film video po [Ethan Arrowood](https://twitter.com/ArrowoodTech) jako wkład do starej wersji programu nauczania.
+2. [Przyczyniając się do FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - film video po [Ethan Arrowood](https://twitter.com/ArrowoodTech) jako wkład do starej wersji programu nauczania.
 

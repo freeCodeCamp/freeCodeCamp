@@ -25,7 +25,7 @@ Wrap the <code>u</code> tag only around the text "Ph.D. students".
 tests:
   - text: Your code should add a <code>u</code> tag to the markup.
     testString: assert($('u').length === 1);
-  - text: The <code>u</code> tag should wrap around the text "Ph.D. students".
+  - text: The <code>u</code> tag should wrap around the text <code>Ph.D. students</code>.
     testString: assert($('u').text() === 'Ph.D. students');
 
 ```

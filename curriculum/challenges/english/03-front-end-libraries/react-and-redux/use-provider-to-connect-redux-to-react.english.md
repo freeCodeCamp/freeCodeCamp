@@ -93,11 +93,13 @@ class DisplayMessages extends React.Component {
       input: event.target.value
     });
   }
-  submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+  submitMessage() {  
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
     });
   }
   render() {
@@ -191,10 +193,12 @@ class DisplayMessages extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };  
     });
   }
   render() {

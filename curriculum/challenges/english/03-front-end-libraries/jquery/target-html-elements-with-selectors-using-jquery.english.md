@@ -33,8 +33,7 @@ tests:
   - text: You should only use jQuery to add these classes to the element.
     testString: 'assert(!code.match(/class.*animated/g));'
   - text: Your jQuery code should be within the <code>$(document).ready();</code> function.
-    testString: assert(code.match(/\$\(document\)\.ready\(function.*(\s|\n)*.*button.*.addClass.*\);/g));
-
+    testString: 'assert(code.replace(/\s/g, '''').match(/\$\(document\)\.ready\(function\(\)\{\$/g));'
 ```
 
 </section>

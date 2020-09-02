@@ -18,8 +18,8 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> I can delete these recipes.
 <strong>User Story:</strong> All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.
 <strong>Hint: </strong> You should prefix your local storage keys on CodePen, i.e. <code>_username_recipes</code>
-When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
-You can get feedback on your project by sharing it with your friends on Facebook.
+When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

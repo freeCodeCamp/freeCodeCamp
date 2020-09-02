@@ -10,7 +10,7 @@ isRequired: true
 <section id='description'>
 In this challenge you must analyze demographic data using Pandas. You are given a dataset of demographic data that was extracted from the 1994 Census database.
 
-You can access <a href='https://repl.it/@freeCodeCamp/fcc-demographic-data-analyzer' target='_blank'>the full project description and starter code on repl.it</a>.
+You can access <a href='https://repl.it/@freeCodeCamp/fcc-demographic-data-analyzer' target='_blank'>the full project description and starter code on Repl.it</a>.
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

@@ -96,8 +96,9 @@ function getSchemaForLang(lang) {
   });
 
   if (lang !== 'english') {
+    // TODO: make this required again once all current challenges have it.
     schema = schema.append({
-      localeTitle: Joi.string().required()
+      localeTitle: Joi.string().allow('')
     });
   }
   return schema;

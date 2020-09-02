@@ -16,8 +16,8 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <span class='text-info'>Hint #1:</span> Here's a URL you can use to get a random Wikipedia article: <code>https://en.wikipedia.org/wiki/Special:Random</code>.
 <span class='text-info'>Hint #2:</span> Here's an entry on using Wikipedia's API: <code>https://www.mediawiki.org/wiki/API:Main_page</code>.
 <span class='text-info'>Hint #3:</span> Use this <a href='https://en.wikipedia.org/wiki/Special:ApiSandbox#action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm' target='_blank'>link</a> to experiment with Wikipedia's API.
-When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
-You can get feedback on your project by sharing it with your friends on Facebook.
+When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

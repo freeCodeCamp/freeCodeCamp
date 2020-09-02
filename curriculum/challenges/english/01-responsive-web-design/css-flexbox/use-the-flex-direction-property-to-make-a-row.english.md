@@ -10,7 +10,7 @@ forumTopicId: 301110
 ## Description
 <section id='description'>
 Adding <code>display: flex</code> to an element turns it into a flex container. This makes it possible to align any children of that element into rows or columns. You do this by adding the <code>flex-direction</code> property to the parent item and setting it to row or column. Creating a row will align the children horizontally, and creating a column will align the children vertically.
-Other options for <code>flex-direction</code> are row-reverse and column-reverse.
+Other options for <code>flex-direction</code> are <code>row-reverse</code> and <code>column-reverse</code>.
 <strong>Note:</strong> The default value for the <code>flex-direction</code> property is <code>row</code>.
 </section>
 

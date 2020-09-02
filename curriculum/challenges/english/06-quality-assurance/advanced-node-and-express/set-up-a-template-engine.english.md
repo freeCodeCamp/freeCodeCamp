@@ -9,7 +9,7 @@ forumTopicId: 301564
 ## Description
 
 <section id='description'>
-As a reminder, this project is built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or clone from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+As a reminder, this project is built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-advancednode">Repl.it</a>, or clone from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 A template engine enables you to use static template files (such as those written in <em>Pug</em>) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
 To set up <em>Pug</em> for use in your project, you will need to add it as a dependency in your package.json. Don't forget to add the name of the package and the version. Use the package.json for some examples of the correct syntax.
 

@@ -60,4 +60,5 @@ sumAll([1, 4]);
 ```js
 // solution required
 ```
-</section>
+
+/section>

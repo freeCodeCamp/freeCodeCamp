@@ -5,7 +5,7 @@
  *
  */
 import { Observable } from 'rx';
-import { isEmpty, pick, omit, find, uniqBy, last } from 'lodash';
+import { isEmpty, pick, omit, find, uniqBy } from 'lodash';
 import debug from 'debug';
 import dedent from 'dedent';
 import { ObjectID } from 'mongodb';
@@ -16,7 +16,6 @@ import { homeLocation } from '../../../config/env';
 
 import { ifNoUserSend } from '../utils/middleware';
 import { dasherize } from '../../../utils/slugs';
-import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 
@@ -26,7 +25,6 @@ export default async function bootChallenge(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
-  const redirectToLearn = createRedirectToLearn(_pathMigrations);
   const challengeUrlResolver = await createChallengeUrlResolver(
     await getChallenges()
   );
@@ -56,12 +54,6 @@ export default async function bootChallenge(app, done) {
   );
 
   router.get('/challenges/current-challenge', redirectToCurrentChallenge);
-
-  router.get('/challenges', redirectToLearn);
-
-  router.get('/challenges/*', redirectToLearn);
-
-  router.get('/map', redirectToLearn);
 
   app.use(api);
   app.use(router);
@@ -355,20 +347,5 @@ export function createRedirectToCurrentChallenge(
       `);
     }
     return res.redirect(`${_homeLocation}${challengeUrl}`);
-  };
-}
-
-export function createRedirectToLearn(
-  pathMigrations,
-  base = homeLocation,
-  learn = learnURL
-) {
-  return function redirectToLearn(req, res) {
-    const maybeChallenge = last(req.path.split('/'));
-    if (maybeChallenge in pathMigrations) {
-      const redirectPath = pathMigrations[maybeChallenge];
-      return res.status(302).redirect(`${base}${redirectPath}`);
-    }
-    return res.status(302).redirect(learn);
   };
 }

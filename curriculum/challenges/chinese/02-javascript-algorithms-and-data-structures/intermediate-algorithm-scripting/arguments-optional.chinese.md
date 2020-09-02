@@ -60,4 +60,5 @@ addTogether(2,3);
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -18,8 +18,8 @@ forumTopicId: 302350
 <strong>User Story:</strong> I should get a circle of different color on each click.
 <strong>User Story:</strong> I can click on the 'Reset' button to remove the recent color.
 <strong>User Story:</strong> I can click on the 'Reset All' button to remove all the colors from the circles.
-When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
-You can get feedback on your project by sharing it with your friends on Facebook.
+When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

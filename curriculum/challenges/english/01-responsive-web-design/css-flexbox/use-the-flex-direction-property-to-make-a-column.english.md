@@ -9,7 +9,7 @@ forumTopicId: 301109
 
 ## Description
 <section id='description'>
-The last two challenges used the <code>flex-direction</code> property set to row. This property can also create a column by vertically stacking the children of a flex container.
+The last two challenges used the <code>flex-direction</code> property set to <code>row</code>. This property can also create a column by vertically stacking the children of a flex container.
 </section>
 
 ## Instructions

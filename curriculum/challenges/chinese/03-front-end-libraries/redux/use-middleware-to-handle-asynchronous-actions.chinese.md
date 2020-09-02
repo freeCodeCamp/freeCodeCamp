@@ -100,4 +100,5 @@ const store = Redux.createStore(
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -33,7 +33,7 @@ const mapDispatchToProps = {
   tryToShowDonationModal
 };
 
-const RedirectAcceptPrivacyTerm = createRedirect('/accept-privacy-terms');
+const RedirectEmailSignUp = createRedirect('/email-sign-up');
 
 class LearnLayout extends Component {
   componentDidMount() {
@@ -60,7 +60,7 @@ class LearnLayout extends Component {
     }
 
     if (isSignedIn && !acceptedPrivacyTerms) {
-      return <RedirectAcceptPrivacyTerm />;
+      return <RedirectEmailSignUp />;
     }
 
     return (

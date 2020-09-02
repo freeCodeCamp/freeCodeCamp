@@ -71,4 +71,5 @@ console.log(store.getState());
 ```js
 // solution required
 ```
-</section>
+
+/section>
