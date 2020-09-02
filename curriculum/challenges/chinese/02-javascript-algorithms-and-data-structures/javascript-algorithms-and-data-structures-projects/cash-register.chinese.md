@@ -15,7 +15,6 @@ localeTitle: 收银机
 如果收银机內的金额少于应找回的零钱数，或者你无法返回确切的数目时，返回<code>{status: "INSUFFICIENT_FUNDS", change: []}</code>。
 如果收银机內的金额等于应找回的零钱数，返回<code>{status: "CLOSED", change: [...]}</code>，其中<code>change</code>键值是收银机內的金额。
 否则，返回<code>{status: "OPEN", change: [...]}</code>，其中<code>change</code>键值是应找回的零钱数，并且它的面值由高到低排序。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
 <table class='table table-striped'><tr><th>货币单位</th><th>面值</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.1 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1 (DOLLAR)</td></tr><tr><td>Five Dollars</td><td>$5 (FIVE)</td></tr><tr><td>Ten Dollars</td><td>$10 (TEN)</td></tr><tr><td>Twenty Dollars</td><td>$20 (TWENTY)</td></tr><tr><td>One-hundred Dollars</td><td>$100 (ONE HUNDRED)</td></tr></table>
 </section>
 

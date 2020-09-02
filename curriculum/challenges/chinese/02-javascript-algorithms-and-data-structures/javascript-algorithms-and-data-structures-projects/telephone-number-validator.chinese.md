@@ -13,7 +13,6 @@ localeTitle: 电话号码验证器
 只要是有效的美国电话号码的格式，用户可以按照他们的方式填写表单中的电话号码。以下是一些正确的例子（其他格式变形请参考以下例子）：
 <blockquote>555-555-5555<br>(555)555-5555<br>(555) 555-5555<br>555 555 5555<br>5555555555<br>1 555 555 5555</blockquote>
 在这个挑战中，你将会看到例如<code>800-692-7753</code>或者<code>8oo-six427676;laskdjf</code>的号码。你的任务是根据上面不同的格式组合，判断它是否美国号码。区号是必须的。如果提供国家代码，则必须确认国家代码为<code>1</code>。如果这是有效的美国电话就返回<code>true</code>，否则返回<code>false</code>。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
 </section>
 
 ## Instructions

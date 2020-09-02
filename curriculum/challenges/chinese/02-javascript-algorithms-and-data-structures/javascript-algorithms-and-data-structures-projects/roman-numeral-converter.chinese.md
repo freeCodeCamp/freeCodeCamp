@@ -11,7 +11,6 @@ localeTitle: 罗马数字转换器
 <section id='description'>
 把传入的数字转变为罗马数字。
 转换后的<a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">罗马数字</a>字母必须都是大写。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
 </section>
 
 ## Instructions
