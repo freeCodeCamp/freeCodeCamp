@@ -17,7 +17,8 @@ const propTypes = {
   updateSolutionForm: PropTypes.func.isRequired
 };
 
-const challengeAndFrontEndFields = ['solution'];
+// back end challenges and front end projects use a single form field
+const solutionField = ['solution'];
 const backEndProjectFields = ['solution', 'githubLink'];
 
 const options = {
@@ -46,30 +47,30 @@ export class SolutionForm extends Component {
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
 
-    let solutionFormFields = challengeAndFrontEndFields;
+    let formFields = solutionField;
     let solutionLink = 'Link, ex: ';
     let solutionFormID = 'front-end-form';
 
     switch (challengeType) {
       case frontEndProject:
-        solutionFormFields = challengeAndFrontEndFields;
+        formFields = solutionField;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
         break;
 
       case backend:
-        solutionFormFields = challengeAndFrontEndFields;
+        formFields = solutionField;
         solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
         break;
 
       case backEndProject:
-        solutionFormFields = backEndProjectFields;
+        formFields = backEndProjectFields;
         solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
         solutionFormID = 'back-end-form';
         break;
 
       case pythonProject:
-        solutionFormFields = challengeAndFrontEndFields;
+        formFields = solutionField;
         solutionLink =
           solutionLink +
           (description.includes('Colaboratory')
@@ -78,7 +79,7 @@ export class SolutionForm extends Component {
         break;
 
       default:
-        solutionFormFields = challengeAndFrontEndFields;
+        formFields = solutionField;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
     }
@@ -86,7 +87,7 @@ export class SolutionForm extends Component {
     return (
       <Form
         buttonText={`${buttonCopy}`}
-        formFields={solutionFormFields}
+        formFields={formFields}
         id={solutionFormID}
         options={{
           ...options,
