@@ -371,7 +371,6 @@ The challenge template in the process of being updated to a cleaner, less nested
 id: Unique identifier (alphanumerical, MongoDB_id)
 title: 'Challenge Title'
 challengeType: Integer, defined in `client/utils/challengeTypes.js`
-isHidden: Boolean, used to hide challenge in production
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
