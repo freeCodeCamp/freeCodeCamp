@@ -2,7 +2,6 @@
 id: 5a23c84252665b21eecc8012
 title: Sorting algorithms/Stooge sort
 challengeType: 5
-isHidden: false
 forumTopicId: 302318
 ---
 

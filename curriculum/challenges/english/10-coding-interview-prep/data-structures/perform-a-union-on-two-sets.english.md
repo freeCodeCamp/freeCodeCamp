@@ -2,7 +2,6 @@
 id: 587d8253367417b2b2512c6c
 title: Perform a Union on Two Sets
 challengeType: 1
-isHidden: false
 forumTopicId: 301708
 ---
 

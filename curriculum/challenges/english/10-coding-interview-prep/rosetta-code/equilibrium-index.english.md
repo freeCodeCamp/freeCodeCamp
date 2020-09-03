@@ -2,7 +2,6 @@
 title: Equilibrium index
 id: 5987fd532b954e0f21b5d3f6
 challengeType: 5
-isHidden: false
 forumTopicId: 302255
 ---
 

@@ -1,7 +1,6 @@
 ---
 id: 5900f3991000cf542c50feac
 challengeType: 5
-isHidden: false
 title: 'Problem 45: Triangular, pentagonal, and hexagonal'
 forumTopicId: 302122
 ---

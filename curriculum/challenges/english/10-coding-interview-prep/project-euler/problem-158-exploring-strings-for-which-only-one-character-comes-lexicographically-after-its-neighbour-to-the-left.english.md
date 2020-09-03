@@ -1,7 +1,6 @@
 ---
 id: 5900f40a1000cf542c50ff1d
 challengeType: 5
-isHidden: false
 title: 'Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left'
 forumTopicId: 301789
 ---

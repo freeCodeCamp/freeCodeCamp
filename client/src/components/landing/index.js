@@ -19,7 +19,6 @@ export const Landing = ({ page = 'landing' }) => {
   const data = useStaticQuery(graphql`
     query certifications {
       challenges: allChallengeNode(
-        filter: { isHidden: { eq: false } }
         sort: { fields: [superOrder, order, challengeOrder] }
       ) {
         nodes {

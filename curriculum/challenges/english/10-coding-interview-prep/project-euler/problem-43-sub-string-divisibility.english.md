@@ -1,7 +1,6 @@
 ---
 id: 5900f3971000cf542c50feaa
 challengeType: 5
-isHidden: false
 title: 'Problem 43: Sub-string divisibility'
 forumTopicId: 302100
 ---

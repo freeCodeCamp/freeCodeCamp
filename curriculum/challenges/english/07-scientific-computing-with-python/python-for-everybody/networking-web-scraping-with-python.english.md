@@ -2,7 +2,6 @@
 id: 5e7b9f0d0b6c005b0e76f076
 title: 'Networking: Web Scraping with Python'
 challengeType: 11
-isHidden: false
 isRequired: true
 videoId: Uyioq2q4cEg
 ---

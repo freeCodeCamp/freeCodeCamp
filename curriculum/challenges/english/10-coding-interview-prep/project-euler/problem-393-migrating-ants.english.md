@@ -1,7 +1,6 @@
 ---
 id: 5900f4f61000cf542c510008
 challengeType: 5
-isHidden: false
 title: 'Problem 393: Migrating ants'
 forumTopicId: 302058
 ---

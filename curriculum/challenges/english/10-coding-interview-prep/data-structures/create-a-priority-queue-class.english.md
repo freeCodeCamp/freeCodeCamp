@@ -2,7 +2,6 @@
 id: 587d8255367417b2b2512c74
 title: Create a Priority Queue Class
 challengeType: 1
-isHidden: false
 forumTopicId: 301630
 ---
 

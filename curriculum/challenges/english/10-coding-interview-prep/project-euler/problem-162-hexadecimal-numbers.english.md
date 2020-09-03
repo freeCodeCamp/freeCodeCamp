@@ -1,7 +1,6 @@
 ---
 id: 5900f40e1000cf542c50ff21
 challengeType: 5
-isHidden: false
 title: 'Problem 162: Hexadecimal numbers'
 forumTopicId: 301796
 ---

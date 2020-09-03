@@ -1,7 +1,6 @@
 ---
 id: 5900f40d1000cf542c50ff20
 challengeType: 5
-isHidden: false
 title: 'Problem 161: Triominoes'
 forumTopicId: 301795
 ---

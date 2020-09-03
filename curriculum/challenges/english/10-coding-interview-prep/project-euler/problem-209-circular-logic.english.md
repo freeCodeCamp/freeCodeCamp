@@ -1,7 +1,6 @@
 ---
 id: 5900f43e1000cf542c50ff4f
 challengeType: 5
-isHidden: false
 title: 'Problem 209: Circular Logic'
 forumTopicId: 301850
 ---

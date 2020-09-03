@@ -2,7 +2,6 @@
 id: 587d781e367417b2b2512acc
 title: Lock an Element to the Browser Window with Fixed Positioning
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061
 ---

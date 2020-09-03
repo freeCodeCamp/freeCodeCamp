@@ -1,7 +1,6 @@
 ---
 id: 5900f3881000cf542c50fe9b
 challengeType: 5
-isHidden: false
 title: 'Problem 28: Number spiral diagonals'
 forumTopicId: 301930
 ---

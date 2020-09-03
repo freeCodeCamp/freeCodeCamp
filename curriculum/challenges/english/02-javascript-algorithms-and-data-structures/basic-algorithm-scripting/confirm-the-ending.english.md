@@ -3,7 +3,6 @@ id: acda2fb1324d9b0fa741e6b5
 title: Confirm the Ending
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16006
 ---
 

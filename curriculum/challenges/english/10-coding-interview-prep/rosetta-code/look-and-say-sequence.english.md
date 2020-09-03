@@ -2,7 +2,6 @@
 id: 5e6dd14797f5ce267c2f19d0
 title: Look-and-say sequence
 challengeType: 5
-isHidden: false
 forumTopicId: 385277
 ---
 

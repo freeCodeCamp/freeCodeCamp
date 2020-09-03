@@ -2,7 +2,6 @@
 id: a56138aff60341a09ed6c480
 title: Inventory Update
 challengeType: 5
-isHidden: false
 forumTopicId: 16019
 ---
 

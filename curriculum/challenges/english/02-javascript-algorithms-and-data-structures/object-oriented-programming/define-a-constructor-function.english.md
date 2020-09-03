@@ -2,7 +2,6 @@
 id: 587d7dad367417b2b2512b77
 title: Define a Constructor Function
 challengeType: 1
-isHidden: false
 forumTopicId: 16804
 ---
 

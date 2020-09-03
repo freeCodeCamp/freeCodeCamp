@@ -1,7 +1,6 @@
 ---
 id: 5900f5061000cf542c510017
 challengeType: 5
-isHidden: false
 title: 'Problem 409: Nim Extreme'
 forumTopicId: 302077
 ---

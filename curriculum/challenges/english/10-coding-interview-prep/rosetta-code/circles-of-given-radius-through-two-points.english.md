@@ -2,7 +2,6 @@
 title: Circles of given radius through two points
 id: 5951815dd895584b06884620
 challengeType: 5
-isHidden: false
 forumTopicId: 302231
 ---
 

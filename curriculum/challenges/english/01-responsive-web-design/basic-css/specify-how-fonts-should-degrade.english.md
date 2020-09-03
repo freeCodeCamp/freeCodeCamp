@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08808
 title: Specify How Fonts Should Degrade
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
 ---

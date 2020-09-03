@@ -1,7 +1,6 @@
 ---
 id: 5900f5001000cf542c510013
 challengeType: 5
-isHidden: false
 title: 'Problem 403: Lattice points enclosed by parabola and line'
 forumTopicId: 302071
 ---

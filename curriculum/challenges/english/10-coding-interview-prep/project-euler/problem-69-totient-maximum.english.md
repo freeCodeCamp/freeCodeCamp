@@ -1,7 +1,6 @@
 ---
 id: 5900f3b11000cf542c50fec4
 challengeType: 5
-isHidden: false
 title: 'Problem 69: Totient maximum'
 forumTopicId: 302181
 ---

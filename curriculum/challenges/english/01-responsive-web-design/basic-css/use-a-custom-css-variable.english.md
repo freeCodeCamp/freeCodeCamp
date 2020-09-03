@@ -2,7 +2,6 @@
 id: 5a9d727a424fe3d0e10cad12
 title: Use a custom CSS Variable
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cM989ck'
 forumTopicId: 301090
 ---

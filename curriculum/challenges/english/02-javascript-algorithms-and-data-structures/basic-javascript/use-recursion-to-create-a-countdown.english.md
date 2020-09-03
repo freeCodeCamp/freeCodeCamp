@@ -2,7 +2,6 @@
 id: 5cd9a70215d3c4e65518328f
 title: Use Recursion to Create a Countdown
 challengeType: 1
-isHidden: false
 forumTopicId: 305925
 ---
 

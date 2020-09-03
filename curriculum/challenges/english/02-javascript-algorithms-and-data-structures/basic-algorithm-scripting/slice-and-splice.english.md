@@ -3,7 +3,6 @@ id: 579e2a2c335b9d72dd32e05c
 title: Slice and Splice
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 301148
 ---
 

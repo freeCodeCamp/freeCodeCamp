@@ -2,7 +2,6 @@
 id: 587d7fab367417b2b2512bd8
 title: Add Attributes to the Circle Elements
 challengeType: 6
-isHidden: false
 forumTopicId: 301471
 ---
 

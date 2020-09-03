@@ -2,7 +2,6 @@
 id: 9d7123c8c441eeafaeb5bdef
 title: Remove Elements from an Array Using slice Instead of splice
 challengeType: 1
-isHidden: false
 forumTopicId: 301236
 ---
 

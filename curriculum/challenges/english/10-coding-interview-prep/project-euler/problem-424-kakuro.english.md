@@ -1,7 +1,6 @@
 ---
 id: 5900f5141000cf542c510026
 challengeType: 5
-isHidden: false
 title: 'Problem 424: Kakuro'
 forumTopicId: 302094
 ---

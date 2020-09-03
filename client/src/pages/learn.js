@@ -94,7 +94,7 @@ export const LearnPage = ({
           isSignedIn={isSignedIn}
           nodes={edges
             .map(({ node }) => node)
-            .filter(({ isPrivate, isHidden }) => !isPrivate && !isHidden)}
+            .filter(({ isPrivate }) => !isPrivate)}
         />
       </Grid>
     </LearnLayout>
@@ -126,7 +126,6 @@ export const query = graphql`
           isRequired
           superBlock
           dashedName
-          isHidden
         }
       }
     }

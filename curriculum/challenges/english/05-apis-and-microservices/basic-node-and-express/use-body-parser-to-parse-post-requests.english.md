@@ -2,7 +2,6 @@
 id: 587d7fb2367417b2b2512bf7
 title: Use body-parser to Parse POST Requests
 challengeType: 2
-isHidden: false
 forumTopicId: 301520
 ---
 

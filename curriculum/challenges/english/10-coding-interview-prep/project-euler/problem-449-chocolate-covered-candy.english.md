@@ -1,7 +1,6 @@
 ---
 id: 5900f52d1000cf542c510040
 challengeType: 5
-isHidden: false
 title: 'Problem 449: Chocolate covered candy'
 forumTopicId: 302121
 ---

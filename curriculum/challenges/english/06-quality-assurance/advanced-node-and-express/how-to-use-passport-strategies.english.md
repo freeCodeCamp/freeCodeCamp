@@ -2,7 +2,6 @@
 id: 5895f70df9fc0f352b528e69
 title: How to Use Passport Strategies
 challengeType: 2
-isHidden: false
 forumTopicId: 301555
 ---
 

@@ -2,7 +2,6 @@
 title: Harshad or Niven series
 id: 595668ca4cfe1af2fb9818d4
 challengeType: 5
-isHidden: false
 forumTopicId: 302281
 ---
 

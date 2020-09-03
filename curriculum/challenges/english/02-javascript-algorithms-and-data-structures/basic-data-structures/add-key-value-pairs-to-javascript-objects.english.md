@@ -2,7 +2,6 @@
 id: 587d7b7c367417b2b2512b18
 title: Add Key-Value Pairs to JavaScript Objects
 challengeType: 1
-isHidden: false
 forumTopicId: 301153
 ---
 

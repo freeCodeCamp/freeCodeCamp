@@ -2,7 +2,6 @@
 title: Identity matrix
 id: 5a23c84252665b21eecc7eb1
 challengeType: 5
-isHidden: false
 forumTopicId: 302290
 ---
 

@@ -1,7 +1,6 @@
 ---
 id: 5900f5351000cf542c510047
 challengeType: 5
-isHidden: false
 title: 'Problem 456: Triangles containing the origin II'
 forumTopicId: 302130
 ---

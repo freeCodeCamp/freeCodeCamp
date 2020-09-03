@@ -1,5 +1,6 @@
 {
   "name": "Basic Node and Express",
+  "isUpcomingChange": false,
   "dashedName": "basic-node-and-express",
   "order": 2,
   "time": "5 hours",

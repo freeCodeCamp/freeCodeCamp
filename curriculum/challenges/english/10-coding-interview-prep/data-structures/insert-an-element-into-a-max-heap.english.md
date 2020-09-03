@@ -2,7 +2,6 @@
 id: 587d825a367417b2b2512c8a
 title: Insert an Element into a Max Heap
 challengeType: 1
-isHidden: false
 forumTopicId: 301703
 ---
 

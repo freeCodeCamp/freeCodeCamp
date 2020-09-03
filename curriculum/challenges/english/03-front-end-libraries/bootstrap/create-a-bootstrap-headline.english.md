@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aec908846
 title: Create a Bootstrap Headline
 challengeType: 0
-isHidden: false
 forumTopicId: 16812
 ---
 

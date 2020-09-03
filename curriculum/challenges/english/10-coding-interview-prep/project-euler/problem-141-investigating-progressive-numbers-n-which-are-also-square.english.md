@@ -1,7 +1,6 @@
 ---
 id: 5900f3f91000cf542c50ff0b
 challengeType: 5
-isHidden: false
 title: 'Problem 141: Investigating progressive numbers, n, which are also square'
 forumTopicId: 301770
 ---

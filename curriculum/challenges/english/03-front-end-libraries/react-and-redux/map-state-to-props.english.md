@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036145
 title: Map State to Props
 challengeType: 6
-isHidden: false
 isRequired: false
 forumTopicId: 301433
 ---

@@ -2,7 +2,6 @@
 id: 5895f70cf9fc0f352b528e67
 title: Implement the Serialization of a Passport User
 challengeType: 2
-isHidden: false
 forumTopicId: 301556
 ---
 

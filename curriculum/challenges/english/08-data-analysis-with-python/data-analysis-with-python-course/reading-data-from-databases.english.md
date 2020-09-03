@@ -2,7 +2,6 @@
 id: 5e9a093a74c4063ca6f7c163
 title: Reading Data from Databases
 challengeType: 11
-isHidden: false
 videoId: MtgXS1MofRw
 ---
 

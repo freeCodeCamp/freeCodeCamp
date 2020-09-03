@@ -1,7 +1,6 @@
 ---
 id: 5900f3d91000cf542c50feea
 challengeType: 5
-isHidden: false
 title: 'Problem 107: Minimal network'
 forumTopicId: 301731
 ---

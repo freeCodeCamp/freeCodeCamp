@@ -2,7 +2,6 @@
 id: 5e94a54cc7b022105bf0fd2c
 title: Word frequency
 challengeType: 5
-isHidden: false
 forumTopicId: 393913
 ---
 

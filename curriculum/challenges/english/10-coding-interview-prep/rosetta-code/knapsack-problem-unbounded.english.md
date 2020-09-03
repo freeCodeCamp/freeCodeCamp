@@ -2,7 +2,6 @@
 id: 5a23c84252665b21eecc7ed4
 title: Knapsack problem/Unbounded
 challengeType: 5
-isHidden: false
 forumTopicId: 323655
 ---
 

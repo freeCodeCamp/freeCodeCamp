@@ -2,7 +2,6 @@
 title: Farey sequence
 id: 59c3ec9f15068017c96eb8a3
 challengeType: 5
-isHidden: false
 forumTopicId: 302266
 ---
 

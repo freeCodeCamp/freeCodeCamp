@@ -1,7 +1,6 @@
 ---
 id: 5900f3931000cf542c50fea6
 challengeType: 5
-isHidden: false
 title: 'Problem 39: Integer right triangles'
 forumTopicId: 302054
 ---

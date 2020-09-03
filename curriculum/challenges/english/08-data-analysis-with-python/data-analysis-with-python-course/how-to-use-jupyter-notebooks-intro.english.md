@@ -2,7 +2,6 @@
 id: 5e9a093a74c4063ca6f7c14f
 title: How to use Jupyter Notebooks Intro
 challengeType: 11
-isHidden: false
 videoId: h8caJq2Bb9w
 ---
 

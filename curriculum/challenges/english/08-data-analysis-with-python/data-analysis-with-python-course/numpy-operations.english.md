@@ -2,7 +2,6 @@
 id: 5e9a093a74c4063ca6f7c155
 title: Numpy Operations
 challengeType: 11
-isHidden: false
 videoId: eqSVcJbaPdk
 ---
 

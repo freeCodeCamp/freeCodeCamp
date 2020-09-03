@@ -2,7 +2,6 @@
 id: 5e8f2f13c4cdbe86b5c72d8e
 title: 'Core Learning Algorithms: Building the Model'
 challengeType: 11
-isHidden: false
 videoId: 5wHw8BTd2ZQ
 ---
 

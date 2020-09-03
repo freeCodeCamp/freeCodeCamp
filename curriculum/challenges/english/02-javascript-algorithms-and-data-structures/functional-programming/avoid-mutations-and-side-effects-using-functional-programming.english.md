@@ -2,7 +2,6 @@
 id: 587d7b8e367417b2b2512b5e
 title: Avoid Mutations and Side Effects Using Functional Programming
 challengeType: 1
-isHidden: false
 forumTopicId: 301228
 ---
 

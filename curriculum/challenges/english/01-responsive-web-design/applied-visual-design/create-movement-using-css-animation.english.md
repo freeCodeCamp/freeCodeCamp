@@ -2,7 +2,6 @@
 id: 587d78a7367417b2b2512ae1
 title: Create Movement Using CSS Animation
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c7amZfW'
 forumTopicId: 301051
 ---

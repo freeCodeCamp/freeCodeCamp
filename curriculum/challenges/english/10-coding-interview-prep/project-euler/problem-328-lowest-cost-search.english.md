@@ -1,7 +1,6 @@
 ---
 id: 5900f4b41000cf542c50ffc7
 challengeType: 5
-isHidden: false
 title: 'Problem 328: Lowest-cost Search'
 forumTopicId: 301985
 ---

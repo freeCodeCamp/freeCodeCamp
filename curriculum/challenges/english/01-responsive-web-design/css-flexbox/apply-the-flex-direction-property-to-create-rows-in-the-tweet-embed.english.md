@@ -2,7 +2,6 @@
 id: 587d78ab367417b2b2512af3
 title: Apply the flex-direction Property to Create Rows in the Tweet Embed
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
 forumTopicId: 301104
 ---

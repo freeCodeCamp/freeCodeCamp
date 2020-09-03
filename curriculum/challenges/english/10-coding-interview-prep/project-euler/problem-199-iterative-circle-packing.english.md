@@ -1,7 +1,6 @@
 ---
 id: 5900f4341000cf542c50ff46
 challengeType: 5
-isHidden: false
 title: 'Problem 199: Iterative Circle Packing'
 forumTopicId: 301837
 ---

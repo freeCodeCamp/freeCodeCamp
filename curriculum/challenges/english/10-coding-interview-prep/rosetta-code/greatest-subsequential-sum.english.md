@@ -2,7 +2,6 @@
 title: Greatest subsequential sum
 id: 5a23c84252665b21eecc7e84
 challengeType: 5
-isHidden: false
 forumTopicId: 302278
 ---
 

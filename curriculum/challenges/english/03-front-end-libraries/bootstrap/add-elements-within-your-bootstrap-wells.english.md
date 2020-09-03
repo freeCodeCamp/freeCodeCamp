@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aec908849
 title: Add Elements within Your Bootstrap Wells
 challengeType: 0
-isHidden: false
 forumTopicId: 16636
 ---
 
