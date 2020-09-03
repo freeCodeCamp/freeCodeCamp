@@ -249,8 +249,9 @@ class ShowCertification extends Component {
       <Row className='text-center'>
         <Spacer size={2} />
         <Button
+          block={true}
+          bsSize='lg'
           bsStyle='primary'
-          className='btn-invert'
           target='_blank'
           href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth}&certUrl=${certURL}`}
         >
@@ -258,12 +259,13 @@ class ShowCertification extends Component {
         </Button>
         <Spacer />
         <Button
+          block={true}
+          bsSize='lg'
           bsStyle='primary'
-          className='btn-invert'
           target='_blank'
           href={`https://twitter.com/intent/tweet?text=I just earned the ${certTitle} certification @freeCodeCamp! Check it out here: ${certURL}`}
         >
-          Share this certification with my friends on Twitter
+          Share this certification on Twitter
         </Button>
       </Row>
     );
@@ -318,10 +320,7 @@ class ShowCertification extends Component {
                 <p>Executive Director, freeCodeCamp.org</p>
               </div>
               <Row>
-                <p className='verify'>
-                  Verify this certification at:
-                  {certURL}
-                </p>
+                <p className='verify'>Verify this certification at {certURL}</p>
               </Row>
             </footer>
           </Row>

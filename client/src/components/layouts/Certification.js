@@ -25,17 +25,11 @@ class CertificationLayout extends Component {
   }
 
   render() {
-    const { children, theme = 'default', useTheme = true } = this.props;
+    const { children } = this.props;
 
     return (
       <Fragment>
-        <Helmet
-          bodyAttributes={{
-            class: useTheme
-              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
-              : 'light-palette'
-          }}
-        ></Helmet>
+        <Helmet bodyAttributes={{ class: 'light-palette' }}></Helmet>
         {children}
       </Fragment>
     );
@@ -48,9 +42,7 @@ CertificationLayout.propTypes = {
   executeGA: PropTypes.func,
   fetchUser: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
-  pathname: PropTypes.string.isRequired,
-  theme: PropTypes.string,
-  useTheme: PropTypes.bool
+  pathname: PropTypes.string.isRequired
 };
 
 export default connect(
