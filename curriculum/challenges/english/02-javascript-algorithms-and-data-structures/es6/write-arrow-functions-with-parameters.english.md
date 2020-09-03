@@ -45,8 +45,8 @@ tests:
     testString: getUserInput => assert(!getUserInput('index').match(/var/g));
   - text: <code>myConcat</code> should be a constant variable (by using <code>const</code>).
     testString: getUserInput => assert(getUserInput('index').match(/const\s+myConcat/g));
-  - text: <code>myConcat</code> should be a function.
-    testString: assert(typeof myConcat === 'function');
+  - text: <code>myConcat</code> should be an arrow function with two parameters
+    testString: assert(/myConcat=\(\w+,\w+\)=>/.test(code.replace(/\s/g, '')) && typeof myConcat === 'function');
   - text: <code>myConcat()</code> should return <code>[1, 2, 3, 4, 5]</code>.
     testString: assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
   - text: <code>function</code> keyword should not be used.
