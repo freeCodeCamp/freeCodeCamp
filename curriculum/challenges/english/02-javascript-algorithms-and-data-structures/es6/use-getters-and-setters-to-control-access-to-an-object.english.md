@@ -27,10 +27,10 @@ class Book {
     this._author = updatedAuthor;
   }
 }
-const lol = new Book('anonymous');
-console.log(lol.writer);  // anonymous
-lol.writer = 'wut';
-console.log(lol.writer);  // wut
+const novel = new Book('anonymous');
+console.log(novel.writer);  // anonymous
+novel.writer = 'newAuthor';
+console.log(novel.writer);  // newAuthor
 ```
 
 Notice the syntax used to invoke the getter and setter. They do not even look like functions.
