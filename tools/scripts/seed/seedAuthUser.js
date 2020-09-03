@@ -7,6 +7,8 @@ const debug = require('debug');
 const log = debug('fcc:tools:seedLocalAuthUser');
 const { MONGOHQ_URL } = process.env;
 
+const defaulUserImage = require('../../../config/misc').defaulUserImage;
+
 function handleError(err, client) {
   if (err) {
     console.error('Oh noes!! Error seeding local auth user.');
@@ -48,7 +50,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
         about: '',
         name: 'Development User',
         location: '',
-        picture: 'https://github.com/identicons/camperbot.png',
+        picture: defaulUserImage,
         acceptedPrivacyTerms: true,
         sendQuincyEmail: false,
         currentChallengeId: '',

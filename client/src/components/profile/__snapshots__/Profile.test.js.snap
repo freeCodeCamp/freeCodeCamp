@@ -21,7 +21,7 @@ exports[`<Profile/> renders correctly 1`] = `
           class="avatar-container col-xs-12"
         >
           <div
-            class=""
+            class="avatar-container default-border"
           >
             <img
               alt="string's avatar"
