@@ -47,7 +47,19 @@ tests:
   - text: The <code>head</code> element should wrap around the <code>title</code> element.
     testString: assert($('head').children('title').length == 1);
   - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.
-    testString: assert($('body').children('h1').length == 1 && $('body').children('p').length == 1);		
+    testString: |
+      const bodyChildren = code.replace(/\s/g,'').match(/\<body>(?<children>.*)\<\/body>/);
+      let foundElems;
+      if(bodyChildren) {
+        const { children } = bodyChildren.groups;
+        const h1s = children.match(/\<h1>.*<\/h1>/g);
+        const ps = children.match(/\<p>.*\<\/p>/g);
+        const numH1s = h1s ? h1s.length : 0;
+        const numPs = ps ? ps.length : 0;
+        console.log(numH1s, numPs);
+        foundElems = numH1s === 1 && numPs === 1;
+      }
+      assert(foundElems);
 ```
 
 </section>
