@@ -8,12 +8,14 @@ forumTopicId: 301417
 ---
 
 ## Description
+
 <section id='description'>
 Conditional rendering is useful, but you may need your components to render an unknown number of elements. Often in reactive programming, a programmer has no way to know what the state of an application is until runtime, because so much depends on a user's interaction with that program. Programmers need to write their code to correctly handle that unknown state ahead of time. Using <code>Array.map()</code> in React illustrates this concept.
 For example, you create a simple "To Do List" app. As the programmer, you have no way of knowing how many items a user might have on their list. You need to set up your component to dynamically render the correct number of list elements long before someone using the program decides that today is laundry day.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 The code editor has most of the <code>MyToDoList</code> component set up. Some of this code should look familiar if you completed the controlled form challenge. You'll notice a <code>textarea</code> and a <code>button</code>, along with a couple of methods that track their states, but nothing is rendered to the page yet.
 Inside the <code>constructor</code>, create a <code>this.state</code> object and define two states: <code>userInput</code> should be initialized as an empty string, and <code>toDoList</code> should be initialized as an empty array. Next, delete the comment in the <code>render()</code> method next to the <code>items</code> variable. In its place, map over the <code>toDoList</code> array stored in the component's internal state and dynamically render a <code>li</code> for each item. Try entering the string <code>eat, code, sleep, repeat</code> into the <code>textarea</code>, then click the button and see what happens.
@@ -21,6 +23,7 @@ Inside the <code>constructor</code>, create a <code>this.state</code> object and
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,13 +41,62 @@ tests:
   - text: The state of <code>MyToDoList</code> should be initialized with <code>userInput</code> as an empty string.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return typeof initialState.userInput === 'string' && initialState.userInput.length === 0; })());
   - text: When the <code>Create List</code> button is clicked, the <code>MyToDoList</code> component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the <code>textarea</code> element.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const simulateChange = (el, value) => el.simulate(''change'', {target: {value}}); const state_1 = () => { return waitForIt(() => mockedComponent.find(''ul'').find(''li''))}; const setInput = () => { return waitForIt(() => simulateChange(mockedComponent.find(''textarea''), "testA, testB, testC"))}; const click = () => { return waitForIt(() => mockedComponent.find(''button'').simulate(''click''))}; const state_2 = () => { return waitForIt(() => { const nodes = mockedComponent.find(''ul'').find(''li''); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '''') }; })}; const setInput_2 = () => { return waitForIt(() => simulateChange(mockedComponent.find(''textarea''), "t1, t2, t3, t4, t5, t6"))}; const click_1 = () => { return waitForIt(() => mockedComponent.find(''button'').simulate(''click''))}; const state_3 = () => { return waitForIt(() => { const nodes = mockedComponent.find(''ul'').find(''li''); return { nodes, text: nodes.reduce((t, n) => t + n.text(), '''') }; })}; const awaited_state_1 = await state_1(); const awaited_setInput = await setInput(); const awaited_click = await click(); const awaited_state_2 = await state_2(); const awaited_setInput_2 = await setInput_2(); const awaited_click_1 = await click_1(); const awaited_state_3 = await state_3(); assert(awaited_state_1.length === 0 && awaited_state_2.nodes.length === 3 && awaited_state_3.nodes.length === 6 && awaited_state_2.text === ''testA testB testC'' && awaited_state_3.text === ''t1 t2 t3 t4 t5 t6''); }; '
+    testString: "(() => {
+      const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
+      const simulateChange = (el, value) =>
+        el.simulate('change', { target: { value } });
+      const state_1 = () => {
+        return mockedComponent.find('ul').find('li');
+      };
+      const setInput = () => {
+        return simulateChange(
+          mockedComponent.find('textarea'),
+          'testA, testB, testC'
+        );
+      };
+      const click = () => {
+        return mockedComponent.find('button').simulate('click');
+      };
+      const state_2 = () => {
+        const nodes = mockedComponent.find('ul').find('li');
+        return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') };
+      };
+      const setInput_2 = () => {
+        return simulateChange(
+          mockedComponent.find('textarea'),
+          't1, t2, t3, t4, t5, t6'
+        );
+      };
+      const click_1 = () => {
+        return mockedComponent.find('button').simulate('click');
+      };
+      const state_3 = () => {
+        const nodes = mockedComponent.find('ul').find('li');
+        return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') };
+      };
+      const awaited_state_1 = state_1();
+      const awaited_setInput = setInput();
+      const awaited_click = click();
+      const awaited_state_2 = state_2();
+      const awaited_setInput_2 = setInput_2();
+      const awaited_click_1 = click_1();
+      const awaited_state_3 = state_3();
+      assert(
+        awaited_state_1.length === 0 &&
+          awaited_state_2.nodes.length === 3 &&
+          awaited_state_3.nodes.length === 6 &&
+          awaited_state_2.text === 'testA testB testC' &&
+          awaited_state_3.text === 't1 t2 t3 t4 t5 t6'
+      );
+    })();
+    "
 
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -83,26 +135,26 @@ class MyToDoList extends React.Component {
           onChange={this.handleChange}
           value={this.state.userInput}
           style={textAreaStyles}
-          placeholder="Separate Items With Commas" />
+          placeholder='Separate Items With Commas'
+        />
         <br />
         <button onClick={this.handleSubmit}>Create List</button>
         <h1>My "To Do" List:</h1>
-        <ul>
-          {items}
-        </ul>
+        <ul>{items}</ul>
       </div>
     );
   }
-};
+}
 ```
 
 </div>
 
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```js
-ReactDOM.render(<MyToDoList />, document.getElementById('root'))
+ReactDOM.render(<MyToDoList />, document.getElementById('root'));
 ```
 
 </div>
@@ -110,8 +162,8 @@ ReactDOM.render(<MyToDoList />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const textAreaStyles = {
@@ -125,7 +177,7 @@ class MyToDoList extends React.Component {
     this.state = {
       toDoList: [],
       userInput: ''
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -141,8 +193,8 @@ class MyToDoList extends React.Component {
     });
   }
   render() {
-    const items = this.state.toDoList.map( (item, i) => {
-      return <li key={i}>{item}</li>
+    const items = this.state.toDoList.map((item, i) => {
+      return <li key={i}>{item}</li>;
     });
     return (
       <div>
@@ -150,16 +202,16 @@ class MyToDoList extends React.Component {
           onChange={this.handleChange}
           value={this.state.userInput}
           style={textAreaStyles}
-          placeholder="Separate Items With Commas" /><br />
+          placeholder='Separate Items With Commas'
+        />
+        <br />
         <button onClick={this.handleSubmit}>Create List</button>
         <h1>My "To Do" List:</h1>
-        <ul>
-          {items}
-        </ul>
+        <ul>{items}</ul>
       </div>
     );
   }
-};
+}
 ```
 
 </section>
