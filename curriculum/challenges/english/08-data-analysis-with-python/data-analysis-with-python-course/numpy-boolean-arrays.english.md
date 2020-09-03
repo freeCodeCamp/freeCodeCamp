@@ -13,8 +13,8 @@ videoId: N1ttsMmcVMM
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy" target='_blank'>Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target='_blank'>How to open Notebooks from GitHub using Google Colab.</a>
+- <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy" target='_blank' rel='noopener' rel='noreferrer'>Notebooks on GitHub</a>
+- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target='_blank' rel='noopener' rel='noreferrer'>How to open Notebooks from GitHub using Google Colab.</a>
 
 </section>
 
