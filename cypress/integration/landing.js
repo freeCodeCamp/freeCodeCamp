@@ -33,7 +33,7 @@ describe('Landing page', () => {
       .should('eq', 5);
   });
 
-  it('Has testimonial section', () => {
+  it('Has `as seens as` section', () => {
     cy.contains('Build projects.').should('be.visible');
     cy.get('.big-heading')
       .siblings()
