@@ -49,7 +49,7 @@ tests:
     }
     "
 
-  - text: When you visit <code>/api/shorturl/<short_url></code>, you will be redirected to the original URL.
+  - text: When you visit <code>/api/shorturl/&lt;short_url&gt;</code>, you will be redirected to the original URL.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const urlVariable = Date.now();
