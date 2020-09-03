@@ -13,8 +13,8 @@ videoId: 0kJz0q0pvgQ
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example" target='_blank' rel='noopener noreferrer'>Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target='_blank' rel='noopener noreferrer'>How to open Notebooks from GitHub using Google Colab.</a>
+- <a href="https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
+- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
 
 </section>
 
