@@ -17,7 +17,8 @@ Given a text string and an integer n, return the n most common words in the file
 <section id='instructions'>
 Write a function to count the occurrences of each word and return the n most commons words along with the number of their occurences in decreasing frequency.
 The function should return a 2D array with each of the elements in the following form: <code>[word, freq]</code>.  <code>word</code> should be the lowercase version of the word and <code>freq</code> the number denoting the count.
-Your function should be case insensitive, for example, the strings "Hello" and "hello" should be treated the same. 
+The function should return an empty array, if no string is provided.
+The function should be case insensitive, for example, the strings "Hello" and "hello" should be treated the same. 
 You can treat words that have special characters such as underscores, dashes, apostrophes, commas, etc., as distinct words. 
 For example, given the string "Hello hello goodbye", your function should return <code>[['hello', 2], ['goodbye', 1]]</code>.
 </section>
