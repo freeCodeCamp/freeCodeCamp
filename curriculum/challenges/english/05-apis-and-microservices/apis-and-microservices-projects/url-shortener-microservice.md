@@ -29,57 +29,59 @@ tests:
     }
     "
 
-  - text: You can pass a URL as a parameter to your app, and you will receive a shortened URL in the JSON response.
+  - text: 'You can POST a <code>url</code> to <code>/api/shorturl/new</code> and get a JSON response with <code>original_url</code> and <code>short_url</code> as keys.'
     testString: "async getUserInput => {
       const url = getUserInput('url');
-      const urlVariable = url.length; 
+      const urlVariable = Date.now();
       const res = await fetch(url + '/api/shorturl/new/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body:  `url=https://fcc-back-end-tester.glitch.me/url-shortener-helper/rand-${urlVariable}`
+        body: `url=https://url-shortener.freecodecamp.repl.co/rand-${urlVariable}`
       });
-      
+
       if (res.ok) {
         const { short_url, original_url } = await res.json();
         assert.isNotNull(short_url);
-        assert.match(original_url, new RegExp(`fcc-back-end-tester.glitch.me/url-shortener-helper/rand-${urlVariable}`)); 
+        assert.match(original_url, new RegExp(`url-shortener.freecodecamp.repl.co/rand-${urlVariable}`));
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
     }
     "
-  
-  - text: When you visit that shortened URL, it will redirect you to your original link.
+
+  - text: When you visit <code>/api/shorturl/<short_url></code>, you will be redirected to the original URL.
     testString: "async getUserInput => {
       const url = getUserInput('url');
-      const urlVariable = url.length;
+      const urlVariable = Date.now();
       let shortenedUrlVariable = '';
-      
+
       const postResponse = await fetch(url + '/api/shorturl/new/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body:  `url=https://fcc-back-end-tester.glitch.me/url-shortener-helper/rand-${urlVariable}`
+        body: `url=https://url-shortener.freecodecamp.repl.co/rand-${urlVariable}`
       });
-      
+
       if (postResponse.ok) {
         const { short_url } = await postResponse.json();
         shortenedUrlVariable = short_url
       } else {
         throw new Error(`${postResponse.status} ${postResponse.statusText}`);
       }
-    
-      const getResponse = await fetch(url + '/api/shorturl/' + shortenedUrlVariable)
-      
-      if (getResponse.ok) {
-        const data = await getResponse.json();
-        assert.equal(data.str, `rand-${urlVariable}`); 
+
+      const getResponse = await fetch(url + '/api/shorturl/' + shortenedUrlVariable);
+
+      if (getResponse) {
+        const { redirected, url } = getResponse;
+
+        assert.isTrue(redirected);
+        assert.strictEqual(url, `https://url-shortener.freecodecamp.repl.co/rand-${urlVariable}`); 
       } else {
         throw new Error(`${getResponse.status} ${getResponse.statusText}`);
       }
     }
     "
 
-  - text: If you pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+  - text: "If you pass an invalid URL that doesn't follow the valid <code>http://www.example.com</code> format, the JSON response will contain <code>{ 'error': 'invalid url' }</code>."
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/shorturl/new/', {
@@ -87,11 +89,11 @@ tests:
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body:  `url=ftp:/john-doe.org`
       });
-      
+
       if (res.ok) {
         const { error } = await res.json();
         assert.isNotNull(error);
-        assert.equal(error.toLowerCase(), 'invalid url'); 
+        assert.strictEqual(error.toLowerCase(), 'invalid url'); 
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
