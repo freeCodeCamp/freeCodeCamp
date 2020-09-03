@@ -14,7 +14,8 @@ Helmet helps you secure your Express apps by setting various HTTP headers.
 
 ## Instructions
 <section id='instructions'>
-Install the Helmet package, then require it.
+
+Install Helmet version `3.21.3`, then require it.
 </section>
 
 ## Tests
@@ -22,8 +23,8 @@ Install the Helmet package, then require it.
 
 ```yml
 tests:
-  - text: '"helmet" dependency should be in package.json'
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'helmet'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: '<code>helmet</code> version <code>3.21.3</code> should be in <code>package.json</code>'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.dependencies.helmet === '3.21.3' ); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
