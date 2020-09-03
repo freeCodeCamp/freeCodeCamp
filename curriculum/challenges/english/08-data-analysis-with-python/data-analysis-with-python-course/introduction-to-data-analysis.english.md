@@ -10,7 +10,7 @@ videoId: VJrP2FUzKP0
 
 <section id='description'>
 More resources:
-- <a href="https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk" target='_blank'>Slides</a>
+- <a href="https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk" target="_blank" rel="noopener noreferrer">Slides</a>
 </section>
 
 ## Tests

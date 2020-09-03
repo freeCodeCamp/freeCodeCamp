@@ -9,11 +9,13 @@ videoId: MtgXS1MofRw
 ## Description
 
 <section id='description'>
+<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46" target='_blank'>Reading CSVs Notebook</a>
-- <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-data-from-relational-databases-2a3a889b" target='_blank'>Reading SQL</a>
-- <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-html-tables-eb9cca73" target='_blank'>Reading HTML</a>
-- <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-excel-files-a6b99973" target='_blank'>Reading Excel files</a>
+
+- <a href="https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
+- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+
 </section>
 
 ## Tests

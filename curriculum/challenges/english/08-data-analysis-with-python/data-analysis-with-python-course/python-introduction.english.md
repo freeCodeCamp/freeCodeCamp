@@ -9,8 +9,13 @@ videoId: PrQV9JkLhb4
 ## Description
 
 <section id='description'>
+<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/python-under-10-minutes-15addcb2" target='_blank'>Notebook</a>
+
+- <a href="https://github.com/ine-rmotr-curriculum/ds-content-python-under-10-minutes" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
+- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+
 </section>
 
 ## Tests
