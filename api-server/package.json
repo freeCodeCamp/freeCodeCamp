@@ -53,7 +53,7 @@
     "helmet-csp": "^2.1.0",
     "jsonwebtoken": "^8.2.1",
     "lodash": "^4.17.5",
-    "loopback": "^3.16.2",
+    "loopback": "^3.25.1",
     "loopback-boot": "^2.27.1",
     "loopback-connector-mongodb": "3.8.0",
     "method-override": "^3.0.0",
