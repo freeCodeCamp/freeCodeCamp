@@ -2,7 +2,6 @@
 id: 587d7b84367417b2b2512b35
 title: Catch Misspelled Variable and Function Names
 challengeType: 1
-isHidden: false
 forumTopicId: 301186
 ---
 

@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedc08830
 title: Use HTML5 to Require a Field
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMd4EcQ'
 forumTopicId: 18360
 ---
@@ -55,7 +54,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
     <button type="submit">Submit</button>
   </form>
@@ -90,7 +89,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" required placeholder="cat photo URL">
     <button type="submit">Submit</button>
   </form>

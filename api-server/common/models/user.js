@@ -13,6 +13,7 @@ import debugFactory from 'debug';
 import { isEmail } from 'validator';
 import _ from 'lodash';
 import generate from 'nanoid/generate';
+import badwordFilter from 'bad-words';
 
 import { apiLocation } from '../../../config/env';
 
@@ -25,7 +26,7 @@ import {
   renderSignInEmail
 } from '../utils';
 
-import { blacklistedUsernames } from '../../server/utils/constants.js';
+import { blocklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { getEmailSender } from '../../server/utils/url-utils';
@@ -160,10 +161,10 @@ export default function(User) {
   // increase user accessToken ttl to 900 days
   User.settings.ttl = 900 * 24 * 60 * 60 * 1000;
 
-  // username should not be in blacklist
+  // username should not be in blocklist
   User.validatesExclusionOf('username', {
-    in: blacklistedUsernames,
-    message: 'is taken'
+    in: blocklistedUsernames,
+    message: 'is not available'
   });
 
   // username should be unique
@@ -347,10 +348,14 @@ export default function(User) {
     if (!username && (!email || !isEmail(email))) {
       return Promise.resolve(false);
     }
-    log('checking existence');
-
-    // check to see if username is on blacklist
-    if (username && blacklistedUsernames.indexOf(username) !== -1) {
+    log('check if username is available');
+    // check to see if username is on blocklist
+    const usernameFilter = new badwordFilter();
+    if (
+      username &&
+      (blocklistedUsernames.includes(username) ||
+        usernameFilter.isProfane(username))
+    ) {
       return Promise.resolve(true);
     }
 
@@ -764,6 +769,7 @@ export default function(User) {
       calendar,
       completedChallenges,
       isDonating,
+      joinDate,
       location,
       name,
       points,
@@ -808,6 +814,7 @@ export default function(User) {
         }
       })(),
       isDonating: showDonation ? isDonating : null,
+      joinDate: showAbout ? joinDate : '',
       location: showLocation ? location : '',
       name: showName ? name : '',
       points: showPoints ? points : null,
@@ -838,7 +845,8 @@ export default function(User) {
           points: progressTimestamps.length,
           completedChallenges,
           ...getProgress(progressTimestamps, timezone),
-          ...normaliseUserFields(user)
+          ...normaliseUserFields(user),
+          joinDate: user.id.getTimestamp()
         };
 
         const publicUser = prepUserForPublish(allUser, profileUI);

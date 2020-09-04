@@ -2,7 +2,6 @@
 id: bad88fee1348bd9aedf08816
 title: Link to Internal Sections of a Page with Anchor Elements
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098
 ---
@@ -60,7 +59,7 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
 
-  <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 

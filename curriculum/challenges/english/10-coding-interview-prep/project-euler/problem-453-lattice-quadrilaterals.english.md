@@ -1,7 +1,6 @@
 ---
 id: 5900f5311000cf542c510044
 challengeType: 5
-isHidden: false
 title: 'Problem 453: Lattice Quadrilaterals'
 forumTopicId: 302126
 ---

@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aec908854
 title: Label Bootstrap Wells
 challengeType: 0
-isHidden: false
 forumTopicId: 18223
 ---
 

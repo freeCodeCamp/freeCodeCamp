@@ -60,4 +60,5 @@ fearNotLetter("abce");
 ```js
 // solution required
 ```
-</section>
+
+/section>

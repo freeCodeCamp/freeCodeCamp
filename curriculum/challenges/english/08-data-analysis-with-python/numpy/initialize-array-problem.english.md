@@ -2,23 +2,24 @@
 id: 5e9a0a8e09c5df3cc3600ed6
 title: Initialize Array Problem
 challengeType: 11
-isHidden: false
 videoId: 0jGfH8BPfOk
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What is another way to produce the following array?:
+    What is another way to produce the following array?
 
-    ```
+    ```py
     [[1. 1. 1. 1. 1.]
     [1. 0. 0. 0. 1.]
     [1. 0. 9. 0. 1.]
@@ -55,7 +56,6 @@ question:
       output[4:1, 4:1] = z
       ```
   solution: 1
-```
+````
 
 </section>
-

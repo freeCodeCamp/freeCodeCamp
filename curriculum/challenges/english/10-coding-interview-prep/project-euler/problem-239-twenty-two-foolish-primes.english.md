@@ -1,7 +1,6 @@
 ---
 id: 5900f45c1000cf542c50ff6e
 challengeType: 5
-isHidden: false
 title: 'Problem 239: Twenty-two Foolish Primes'
 forumTopicId: 301884
 ---

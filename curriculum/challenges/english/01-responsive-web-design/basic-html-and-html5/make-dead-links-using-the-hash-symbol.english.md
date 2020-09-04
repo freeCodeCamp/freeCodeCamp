@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08817
 title: Make Dead Links Using the Hash Symbol
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMdkytL'
 forumTopicId: 18230
 ---
@@ -15,7 +14,7 @@ This is also handy when you're changing the behavior of a link using <code>JavaS
 
 ## Instructions
 <section id='instructions'>
-The current value of the <code>href</code> attribute is a link that points to "http://freecatphotoapp.com". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link.
+The current value of the <code>href</code> attribute is a link that points to "https://freecatphotoapp.com". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link.
 For example: <code>href="#"</code>
 </section>
 
@@ -39,7 +38,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+  <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 

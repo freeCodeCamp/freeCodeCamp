@@ -2,7 +2,6 @@
 id: 587d7fb7367417b2b2512c0a
 title: Create Many Records with model.create()
 challengeType: 2
-isHidden: false
 forumTopicId: 301537
 ---
 
@@ -13,7 +12,8 @@ Sometimes you need to create many instances of your models, e.g. when seeding a 
 
 ## Instructions
 <section id='instructions'>
-Create many people with <code>Model.create()</code>, using the function argument <code>arrayOfPeople</code>.
+Modify the <code>createManyPeople</code> function to create many people using <code>Model.create()</code> with the argument <code>arrayOfPeople</code>.
+<strong>Note: </strong> You can reuse the model you instantiated in the previous exercise.
 </section>
 
 ## Tests

@@ -2,7 +2,6 @@
 id: 5e4ce2bbac708cc68c1df25f
 title: Letter frequency
 challengeType: 5
-isHidden: false
 forumTopicId: 385263
 ---
 

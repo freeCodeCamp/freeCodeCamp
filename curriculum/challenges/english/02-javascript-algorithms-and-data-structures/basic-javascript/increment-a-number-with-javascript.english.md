@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244ac
 title: Increment a Number with JavaScript
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
 ---
@@ -19,7 +18,6 @@ is the equivalent of
 ## Instructions
 <section id='instructions'>
 Change the code to use the <code>++</code> operator on <code>myVar</code>.
-<strong>Hint</strong><br>Learn more about <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()" target="_blank">Arithmetic operators - Increment (++)</a>.
 </section>
 
 ## Tests

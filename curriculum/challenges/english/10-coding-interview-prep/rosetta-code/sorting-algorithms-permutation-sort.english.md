@@ -2,7 +2,6 @@
 id: 5a23c84252665b21eecc800c
 title: Sorting algorithms/Permutation sort
 challengeType: 5
-isHidden: false
 forumTopicId: 302316
 ---
 
@@ -91,8 +90,10 @@ function permutationSort(arr) {
     }
   }
 
-  function isSorted(a) {
-    for (var i = 1; i < a.length; i++) if (a[i - 1] > a[i]) return false;
+  function isSorted(a){
+    for(let i = 0; i < a.length - 1; i++)
+      if(a[i] > a[i + 1])
+        return false;
     return true;
   }
 

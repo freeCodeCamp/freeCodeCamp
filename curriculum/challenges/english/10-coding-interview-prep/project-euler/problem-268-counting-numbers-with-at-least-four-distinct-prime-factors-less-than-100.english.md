@@ -1,7 +1,6 @@
 ---
 id: 5900f4791000cf542c50ff8b
 challengeType: 5
-isHidden: false
 title: 'Problem 268: Counting numbers with at least four distinct prime factors less than 100'
 forumTopicId: 301917
 ---

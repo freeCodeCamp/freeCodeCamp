@@ -105,4 +105,5 @@ telephoneCheck("555-555-5555");
 ```js
 // solution required
 ```
-</section>
+
+/section>

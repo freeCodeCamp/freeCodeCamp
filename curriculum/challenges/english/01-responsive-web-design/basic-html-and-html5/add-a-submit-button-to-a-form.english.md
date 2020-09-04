@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedd08830
 title: Add a Submit Button to a Form
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
 forumTopicId: 16627
 ---
@@ -28,7 +27,7 @@ tests:
     testString: assert($("form").children("button").length > 0);
   - text: Your submit button should have the attribute <code>type</code> set to <code>submit</code>.
     testString: assert($("button").attr("type") === "submit");
-  - text: Your submit button should only have the text "Submit".
+  - text: Your submit button should only have the text <code>Submit</code>.
     testString: assert($("button").text().match(/^\s*submit\s*$/gi));
   - text: Your <code>button</code> element should have a closing tag.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
@@ -61,7 +60,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>
@@ -92,7 +91,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
     <button type="submit">Submit</button>
   </form>

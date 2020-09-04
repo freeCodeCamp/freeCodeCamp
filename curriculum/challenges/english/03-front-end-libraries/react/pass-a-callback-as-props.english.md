@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403617b
 title: Pass a Callback as Props
 challengeType: 6
-isHidden: false
 isRequired: false
 forumTopicId: 301400
 ---

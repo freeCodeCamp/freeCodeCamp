@@ -2,7 +2,6 @@
 id: 58c383d33e2e3259241f3076
 title: Use Attribute Selectors to Style Elements
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cnpymfJ'
 forumTopicId: 301092
 ---
@@ -32,7 +31,7 @@ Using the <code>type</code> attribute selector, try to give the checkboxes in Ca
 ```yml
 tests:
   - text: The <code>type</code> attribute selector should be used to select the checkboxes.
-    testString: assert(code.match(/<style>[\s\S]*?\[type=("|')checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi));
+    testString: assert(code.match(/<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi));
   - text: The top margins of the checkboxes should be 10px.
     testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()));
   - text: The bottom margins of the checkboxes should be 15px.
@@ -100,7 +99,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo" id="cat-photo-form">
+  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>
@@ -178,7 +177,7 @@ tests:
     </ol>
   </div>
   
-  <form action="/submit-cat-photo" id="cat-photo-form">
+  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

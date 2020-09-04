@@ -1,7 +1,6 @@
 ---
 id: 5900f5371000cf542c51004a
 challengeType: 5
-isHidden: false
 title: 'Problem 459: Flipping game'
 forumTopicId: 302133
 ---

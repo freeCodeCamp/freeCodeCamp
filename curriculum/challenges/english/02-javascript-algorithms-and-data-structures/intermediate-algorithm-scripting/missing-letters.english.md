@@ -3,7 +3,6 @@ id: af7588ade1100bde429baf20
 title: Missing letters
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16023
 ---
 

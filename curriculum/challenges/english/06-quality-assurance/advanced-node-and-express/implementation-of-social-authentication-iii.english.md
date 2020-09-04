@@ -2,13 +2,12 @@
 id: 589a8eb3f9fc0f352b528e72
 title: Implementation of Social Authentication III
 challengeType: 2
-isHidden: false
 forumTopicId: 301558
 ---
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-socialauth/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-socialauth">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a>.
 The final part of the strategy is handling the profile returned from GitHub. We need to load the user's database object if it exists, or create one if it doesn't, and populate the fields from the profile, then return the user's object. GitHub supplies us a unique <em>id</em> within each profile which we can use to search with to serialize the user with (already implemented). Below is an example implementation you can use in your project- it goes within the function that is the second argument for the new strategy, right below the <code>console.log(profile);</code> currently is:
 
 ```js

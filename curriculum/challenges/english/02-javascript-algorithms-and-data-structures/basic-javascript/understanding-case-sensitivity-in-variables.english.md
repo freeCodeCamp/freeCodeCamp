@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244ab
 title: Understanding Case Sensitivity in Variables
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
 ---

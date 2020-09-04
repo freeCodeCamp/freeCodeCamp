@@ -2,7 +2,6 @@
 id: 587d7b8f367417b2b2512b64
 title: Implement the filter Method on a Prototype
 challengeType: 1
-isHidden: false
 forumTopicId: 301231
 ---
 

@@ -2,14 +2,13 @@
 id: 587d824e367417b2b2512c55
 title: Test if an Object has a Property
 challengeType: 2
-isHidden: false
 forumTopicId: 301604
 ---
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-<code>#property</code> asserts that the actual object has a given property.
+As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+<code>property</code> asserts that the actual object has a given property.
 
 </section>
 

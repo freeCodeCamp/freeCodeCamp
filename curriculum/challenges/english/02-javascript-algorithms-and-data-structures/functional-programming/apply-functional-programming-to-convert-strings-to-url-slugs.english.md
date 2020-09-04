@@ -2,7 +2,6 @@
 id: 587d7dab367417b2b2512b6d
 title: Apply Functional Programming to Convert Strings to URL Slugs
 challengeType: 1
-isHidden: false
 forumTopicId: 301227
 ---
 
@@ -27,8 +26,6 @@ The output should not have any spaces
 
 ```yml
 tests:
-  - text: The <code>globalTitle</code> variable should not change.
-    testString: assert(globalTitle === "Winter Is Coming");
   - text: Your code should not use the <code>replace</code> method for this challenge.
     testString: assert(!code.match(/\.?[\s\S]*?replace/g));
   - text: <code>urlSlug("Winter Is Coming")</code> should return <code>"winter-is-coming"</code>.
@@ -50,9 +47,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// The global variable
-var globalTitle = "Winter Is Coming";
-
 // Only change code below this line
 function urlSlug(title) {
 
@@ -71,9 +65,6 @@ function urlSlug(title) {
 <section id='solution'>
 
 ```js
-// The global variable
-var globalTitle = "Winter Is Coming";
-
 // Only change code below this line
 function urlSlug(title) {
   return title.trim().split(/\s+/).join("-").toLowerCase();

@@ -2,7 +2,6 @@
 id: 587d7dad367417b2b2512b75
 title: Create a Method on an Object
 challengeType: 1
-isHidden: false
 forumTopicId: 301318
 ---
 

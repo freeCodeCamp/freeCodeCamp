@@ -2,7 +2,6 @@
 id: 587d7fa8367417b2b2512bcd
 title: Create a Bar for Each Data Point in the Set
 challengeType: 6
-isHidden: false
 forumTopicId: 301482
 ---
 
@@ -23,7 +22,7 @@ There are a few differences working with <code>rect</code> elements instead of <
 
 ## Instructions
 <section id='instructions'>
-Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to create and append a <code>rect</code> for each item in <code>dataset</code>. The bars should display all on top of each other, this will be fixed in the next challenge.
+Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to create and append a <code>rect</code> for each item in <code>dataset</code>. The bars should display all on top of each other; this will be fixed in the next challenge.
 </section>
 
 ## Tests

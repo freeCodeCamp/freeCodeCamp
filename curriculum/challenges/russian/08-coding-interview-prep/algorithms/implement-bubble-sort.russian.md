@@ -29,7 +29,7 @@ tests:
   - text: <code>bubbleSort</code> returns an array that is unchanged except for order.
     testString: assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
+    testString: assert(isBuiltInSortUsed());
 
 ```
 
@@ -57,11 +57,19 @@ bubbleSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92])
 <div id='js-teardown'>
 
 ```js
-function isSorted(arr) {
-  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
-  return check(0);
-};
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
 
+function isBuiltInSortUsed(){
+  let sortUsed = false;
+  Array.prototype.sort = () => sortUsed = true;
+  bubbleSort([0, 1]);
+  return !sortUsed;
+}
 ```
 
 </div>

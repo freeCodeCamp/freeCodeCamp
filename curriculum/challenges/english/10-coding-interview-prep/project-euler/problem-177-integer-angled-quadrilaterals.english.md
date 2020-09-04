@@ -1,7 +1,6 @@
 ---
 id: 5900f41e1000cf542c50ff30
 challengeType: 5
-isHidden: false
 title: 'Problem 177: Integer angled Quadrilaterals'
 forumTopicId: 301812
 ---

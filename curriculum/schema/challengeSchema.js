@@ -45,7 +45,6 @@ function getSchemaForLang(lang) {
     helpRoom: Joi.string(),
     id: Joi.objectId().required(),
     instructions: Joi.string().allow(''),
-    isHidden: Joi.bool().required(),
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
@@ -96,8 +95,9 @@ function getSchemaForLang(lang) {
   });
 
   if (lang !== 'english') {
+    // TODO: make this required again once all current challenges have it.
     schema = schema.append({
-      localeTitle: Joi.string().required()
+      localeTitle: Joi.string().allow('')
     });
   }
   return schema;

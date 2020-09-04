@@ -1,7 +1,6 @@
 ---
 id: 5900f3a91000cf542c50febc
 challengeType: 5
-isHidden: false
 title: 'Problem 61: Cyclical figurate numbers'
 forumTopicId: 302173
 ---

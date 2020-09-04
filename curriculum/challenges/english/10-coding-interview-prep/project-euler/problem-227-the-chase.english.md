@@ -1,7 +1,6 @@
 ---
 id: 5900f44f1000cf542c50ff61
 challengeType: 5
-isHidden: false
 title: 'Problem 227: The Chase'
 forumTopicId: 301870
 ---

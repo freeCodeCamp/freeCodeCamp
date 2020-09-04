@@ -1,7 +1,6 @@
 ---
 id: 5900f5261000cf542c510038
 challengeType: 5
-isHidden: false
 title: 'Problem 441: The inverse summation of coprime couples'
 forumTopicId: 302113
 ---

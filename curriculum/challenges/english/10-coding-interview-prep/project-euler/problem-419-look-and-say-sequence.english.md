@@ -1,7 +1,6 @@
 ---
 id: 5900f5101000cf542c510022
 challengeType: 5
-isHidden: false
 title: 'Problem 419: Look and say sequence'
 forumTopicId: 302088
 ---

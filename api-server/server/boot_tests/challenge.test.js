@@ -9,8 +9,7 @@ import {
   createChallengeUrlResolver,
   createRedirectToCurrentChallenge,
   getFirstChallenge,
-  isValidChallengeCompletion,
-  createRedirectToLearn
+  isValidChallengeCompletion
 } from '../boot/challenge';
 
 import {
@@ -21,8 +20,7 @@ import {
   mockUser,
   mockGetFirstChallenge,
   mockCompletedChallenge,
-  mockCompletedChallenges,
-  mockPathMigrationMap
+  mockCompletedChallenges
 } from './fixtures';
 
 describe('boot/challenge', () => {
@@ -392,35 +390,6 @@ describe('boot/challenge', () => {
       const expectedUrl = `${mockHomeLocation}${firstChallengeUrl}`;
       expect(res.redirect.calledWith(expectedUrl)).toBe(true);
       done();
-    });
-  });
-
-  describe('redirectToLearn', () => {
-    const mockHome = 'https://example.com';
-    const mockLearn = 'https://example.com/learn';
-    const redirectToLearn = createRedirectToLearn(
-      mockPathMigrationMap,
-      mockHome,
-      mockLearn
-    );
-
-    it('redirects to learn by default', () => {
-      const req = mockReq({ path: '/challenges' });
-      const res = mockRes();
-
-      redirectToLearn(req, res);
-
-      expect(res.redirect.calledWith(mockLearn)).toBe(true);
-    });
-
-    it('maps to the correct redirect if the path matches a challenge', () => {
-      const req = mockReq({ path: '/challenges/challenge-two' });
-      const res = mockRes();
-      const expectedRedirect =
-        'https://example.com/learn/superblock/block/challenge-two';
-      redirectToLearn(req, res);
-
-      expect(res.redirect.calledWith(expectedRedirect)).toBe(true);
     });
   });
 });

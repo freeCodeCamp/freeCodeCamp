@@ -2,7 +2,6 @@
 id: bad87eee1348bd9aede07836
 title: Set the id of an Element
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cN6MEc2'
 forumTopicId: 18279
 ---
@@ -91,7 +90,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>
@@ -165,7 +164,7 @@ tests:
     </ol>
   </div>
   
-  <form action="/submit-cat-photo" id="cat-photo-form">
+  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

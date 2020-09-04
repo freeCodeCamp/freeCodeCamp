@@ -2,7 +2,6 @@
 id: 5a23c84252665b21eecc803f
 title: Sum digits of an integer
 challengeType: 5
-isHidden: false
 forumTopicId: 302331
 ---
 

@@ -64,4 +64,5 @@ translatePigLatin("consonant");
 ```js
 // solution required
 ```
-</section>
+
+/section>

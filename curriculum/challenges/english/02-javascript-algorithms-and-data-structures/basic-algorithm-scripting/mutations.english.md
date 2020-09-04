@@ -3,7 +3,6 @@ id: af2170cad53daa0770fabdea
 title: Mutations
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16025
 ---
 

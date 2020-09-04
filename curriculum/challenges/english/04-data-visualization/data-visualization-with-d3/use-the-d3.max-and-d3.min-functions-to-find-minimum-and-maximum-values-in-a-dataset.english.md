@@ -2,7 +2,6 @@
 id: 587d7fac367417b2b2512bdc
 title: Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
 challengeType: 6
-isHidden: false
 forumTopicId: 301496
 ---
 

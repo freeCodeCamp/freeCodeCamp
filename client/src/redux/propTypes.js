@@ -36,7 +36,6 @@ export const ChallengeNode = PropTypes.shape({
   guideUrl: PropTypes.string,
   head: PropTypes.arrayOf(PropTypes.string),
   instructions: PropTypes.string,
-  isHidden: PropTypes.bool,
   isComingSoon: PropTypes.bool,
   isLocked: PropTypes.bool,
   isPrivate: PropTypes.bool,

@@ -2,7 +2,6 @@
 id: 587d7b8e367417b2b2512b5e
 title: Avoid Mutations and Side Effects Using Functional Programming
 challengeType: 1
-isHidden: false
 forumTopicId: 301228
 ---
 
@@ -27,9 +26,17 @@ Fill in the code for the function <code>incrementer</code> so it returns the val
 ```yml
 tests:
   - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code> (which is <code>4</code>).
-    testString: assert(fixedValue === 4);
+    testString: incrementer(); assert(fixedValue === 4);
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
-    testString: const newValue = incrementer(); assert(newValue === 5);
+    testString: const __newValue = incrementer(); assert(__newValue === 5);
+  - text: Your <code>incrementer</code> function should return a value based on the global `fixedValue` variable value.
+    testString: |
+      (function() {
+       fixedValue = 10;
+       const newValue = incrementer();
+       assert(fixedValue === 10 && newValue === 11);
+       fixedValue = 4;
+      })();
 
 ```
 

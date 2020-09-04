@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036142
 title: Manage State Locally First
 challengeType: 6
-isHidden: false
 isRequired: false
 forumTopicId: 301431
 ---
@@ -107,10 +106,12 @@ class DisplayMessages extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };  
     });
   }
   render() {

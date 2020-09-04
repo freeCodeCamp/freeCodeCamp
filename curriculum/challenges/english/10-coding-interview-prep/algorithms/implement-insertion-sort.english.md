@@ -2,7 +2,6 @@
 id: 587d8259367417b2b2512c86
 title: Implement Insertion Sort
 challengeType: 1
-isHidden: false
 forumTopicId: 301613
 ---
 
@@ -30,7 +29,7 @@ tests:
   - text: <code>insertionSort</code> should return an array that is unchanged except for order.
     testString: assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>insertionSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert(!code.match(/\.?[\s\S]*?sort/));
+    testString: assert(isBuiltInSortUsed());
 
 ```
 
@@ -58,10 +57,19 @@ insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 9
 <div id='js-teardown'>
 
 ```js
-function isSorted(arr) {
-  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
-  return check(0);
-};
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
+
+function isBuiltInSortUsed(){
+  let sortUsed = false;
+  Array.prototype.sort = () => sortUsed = true;
+  insertionSort([0, 1]);
+  return !sortUsed;
+}
 ```
 
 </div>

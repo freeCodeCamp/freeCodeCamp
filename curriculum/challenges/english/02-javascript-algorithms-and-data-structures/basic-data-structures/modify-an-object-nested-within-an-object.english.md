@@ -2,7 +2,6 @@
 id: 587d7b7c367417b2b2512b19
 title: Modify an Object Nested Within an Object
 challengeType: 1
-isHidden: false
 forumTopicId: 301164
 ---
 

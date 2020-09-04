@@ -2,7 +2,6 @@
 title: Greatest subsequential sum
 id: 5a23c84252665b21eecc7e84
 challengeType: 5
-isHidden: false
 forumTopicId: 302278
 ---
 
@@ -32,7 +31,7 @@ tests:
     testString: assert.deepEqual(maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3]), [ 0, 8, 10 ]);
   - text: <code>maximumSubsequence([ 9, 9, -10, 1 ])</code> should return <code>[ 9, 9 ]</code>.
     testString: assert.deepEqual(maximumSubsequence([ 9, 9, -10, 1 ]), [ 9, 9 ]);
-  - text: <code>maximumSubsequence([ 7, 1, -5, -3, -8, 1 ]</code> should return <code>[ 7, 1 ]</code>.
+  - text: <code>maximumSubsequence([ 7, 1, -5, -3, -8, 1 ])</code> should return <code>[ 7, 1 ]</code>.
     testString: assert.deepEqual(maximumSubsequence([ 7, 1, -5, -3, -8, 1 ]), [ 7, 1 ]);
   - text: <code>maximumSubsequence([ -3, 6, -1, 4, -4, -6 ])</code> should return <code>[ 6, -1, 4 ]</code>.
     testString: assert.deepEqual(maximumSubsequence([ -3, 6, -1, 4, -4, -6 ]), [ 6, -1, 4 ]);
@@ -73,7 +72,6 @@ function maximumSubsequence(population) {
   }
   var greatest;
   var maxValue = 0;
-  var subsequence = [];
 
   for (var i = 0, len = population.length; i < len; i++) {
       for (var j = i; j <= len; j++) {

@@ -2,20 +2,22 @@
 id: 5e8f2f13c4cdbe86b5c72d9d
 title: 'Natural Language Processing With RNNs: Recurring Neural Networks'
 challengeType: 11
-isHidden: false
 videoId: bX5681NPOcA
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: What is true about Recurrent Neural Networks?
+  text: |
+    What is true about Recurrent Neural Networks?
   answers:
     - |
       1: They are a type of feed-forward neural network.
@@ -29,4 +31,3 @@ question:
 ```
 
 </section>
-

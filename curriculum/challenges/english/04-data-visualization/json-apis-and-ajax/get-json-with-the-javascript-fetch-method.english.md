@@ -2,7 +2,6 @@
 id: 5ccfad82bb2dc6c965a848e5
 title: Get JSON with the JavaScript fetch method
 challengeType: 6
-isHidden: false
 forumTopicId: 301501
 ---
 

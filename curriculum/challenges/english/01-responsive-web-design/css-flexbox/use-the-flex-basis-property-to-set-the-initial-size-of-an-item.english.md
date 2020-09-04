@@ -2,7 +2,6 @@
 id: 587d78ae367417b2b2512afd
 title: Use the flex-basis Property to Set the Initial Size of an Item
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/c3d9nCa'
 forumTopicId: 301108
 ---

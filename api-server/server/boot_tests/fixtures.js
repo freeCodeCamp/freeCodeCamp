@@ -169,11 +169,6 @@ export const firstChallengeQuery = {
   where: { challengeOrder: 0, superOrder: 1, order: 0 }
 };
 
-export const mockPathMigrationMap = {
-  'challenge-one': '/learn/superblock/block/challenge-one',
-  'challenge-two': '/learn/superblock/block/challenge-two'
-};
-
 export const fullStackChallenges = [
   {
     completedDate: 1585210952511,

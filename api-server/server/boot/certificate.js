@@ -5,7 +5,6 @@ import dedent from 'dedent';
 import { Observable } from 'rx';
 import debug from 'debug';
 import { isEmail } from 'validator';
-import format from 'date-fns/format';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
 import { ifNoUser401 } from '../utils/middleware';
@@ -137,7 +136,7 @@ function createCertTypeIds(allChallenges) {
   };
 }
 
-function isCertified(ids, completedChallenges = []) {
+function canClaim(ids, completedChallenges = []) {
   return _.every(ids, ({ id }) =>
     _.find(completedChallenges, ({ id: completedId }) => completedId === id)
   );
@@ -197,7 +196,6 @@ const completionHours = {
   [certTypes.machineLearningPyV7]: 400
 };
 
-// returns an array with a single element, to be flatMap'd by createdVerifyCert
 function getCertById(anId, allChallenges) {
   return allChallenges
     .filter(({ id }) => id === anId)
@@ -206,7 +204,7 @@ function getCertById(anId, allChallenges) {
       tests,
       name,
       challengeType
-    }));
+    }))[0];
 }
 
 const superBlocks = Object.keys(superBlockCertTypeMap);
@@ -308,18 +306,12 @@ function createVerifyCert(certTypeIds, app) {
     log(superBlock);
     let certType = superBlockCertTypeMap[superBlock];
     log(certType);
-    return user
-      .getCompletedChallenges$()
-      .flatMap(() => certTypeIds[certType])
+    return Observable.of(certTypeIds[certType])
       .flatMap(challenge => {
         const certName = certText[certType];
         if (user[certType]) {
           return Observable.just(alreadyClaimedMessage(certName));
         }
-
-        let updateData = {
-          [certType]: true
-        };
 
         // certificate doesn't exist or
         // connection error
@@ -329,11 +321,12 @@ function createVerifyCert(certTypeIds, app) {
         }
 
         const { id, tests, challengeType } = challenge;
-        if (!user[certType] && !isCertified(tests, user.completedChallenges)) {
+        if (!canClaim(tests, user.completedChallenges)) {
           return Observable.just(notCertifiedMessage(certName));
         }
-        updateData = {
-          ...updateData,
+
+        const updateData = {
+          [certType]: true,
           completedChallenges: [
             ...user.completedChallenges,
             {
@@ -548,7 +541,7 @@ function createShowCert(app) {
           certTitle,
           username,
           name,
-          date: format(new Date(completedDate), 'MMMM D, YYYY'),
+          date: completedDate,
           completionTime
         });
       }

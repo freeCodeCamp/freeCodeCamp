@@ -3,7 +3,6 @@ id: a10d2431ad0c6a099a4b8b52
 title: Everything Be True
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16011
 ---
 

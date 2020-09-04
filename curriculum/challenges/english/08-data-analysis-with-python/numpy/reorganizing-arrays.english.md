@@ -2,23 +2,24 @@
 id: 5e9a0a8e09c5df3cc3600ed9
 title: Reorganizing Arrays
 challengeType: 11
-isHidden: false
 videoId: VNWAQbEM-C8
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What code would produce the following array?:
+    What code would produce the following array?
 
-    ```
+    ```py
     [[1. 1.]
     [1. 1.]
     [1. 1.]
@@ -44,7 +45,6 @@ question:
       print(b)
       ```
   solution: 1
-```
+````
 
 </section>
-

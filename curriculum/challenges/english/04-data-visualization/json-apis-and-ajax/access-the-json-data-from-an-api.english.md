@@ -2,7 +2,6 @@
 id: 587d7fae367417b2b2512be4
 title: Access the JSON Data from an API
 challengeType: 6
-isHidden: false
 forumTopicId: 301499
 ---
 

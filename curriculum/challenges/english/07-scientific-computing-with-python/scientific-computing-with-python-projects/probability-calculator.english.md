@@ -2,7 +2,6 @@
 id: 5e44414f903586ffb414c950
 title: Probability Calculator
 challengeType: 10
-isHidden: false
 isRequired: true
 ---
 
@@ -10,7 +9,7 @@ isRequired: true
 <section id='description'>
 Write a program to determine the approximate probability of drawing certain balls randomly from a hat.
 
-You can access <a href='https://repl.it/@freeCodeCamp/fcc-probability-calculator' target='_blank'>the full project description and starter code on repl.it</a>. After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+You can access <a href='https://repl.it/@freeCodeCamp/fcc-probability-calculator' target='_blank'>the full project description and starter code on Repl.it</a>. After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you everything you need to know to complete this project:
 <ul>

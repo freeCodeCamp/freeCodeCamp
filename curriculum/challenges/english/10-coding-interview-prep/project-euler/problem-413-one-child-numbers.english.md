@@ -1,7 +1,6 @@
 ---
 id: 5900f50a1000cf542c51001c
 challengeType: 5
-isHidden: false
 title: 'Problem 413: One-child Numbers'
 forumTopicId: 302082
 ---

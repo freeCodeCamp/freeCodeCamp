@@ -2,7 +2,6 @@
 id: 587d781b367417b2b2512aba
 title: Use the s Tag to Strikethrough Text
 challengeType: 0
-isHidden: false
 videoUrl: ''
 forumTopicId: 301079
 ---
@@ -14,7 +13,7 @@ To strikethrough text, which is when a horizontal line cuts across the character
 
 ## Instructions
 <section id='instructions'>
-Wrap the <code>s</code> tag around "Google" inside the <code>h4</code> tag and then add the word Alphabet beside it, which should not have the strikethrough formatting.
+Wrap the <code>s</code> tag around "Google" inside the <code>h4</code> tag and then add the word "Alphabet" beside it, which should not have the strikethrough formatting.
 </section>
 
 ## Tests

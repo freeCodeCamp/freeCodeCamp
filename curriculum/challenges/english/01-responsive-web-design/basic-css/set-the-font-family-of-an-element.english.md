@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aede08807
 title: Set the Font Family of an Element
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c3bvpCg'
 forumTopicId: 18278
 ---
@@ -74,7 +73,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>
@@ -128,7 +127,7 @@ tests:
     </ol>
   </div>
   
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

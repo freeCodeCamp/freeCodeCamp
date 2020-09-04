@@ -1,7 +1,6 @@
 ---
 id: 5900f4941000cf542c50ffa7
 challengeType: 5
-isHidden: false
 title: 'Problem 296: Angular Bisector and Tangent'
 forumTopicId: 301948
 ---

@@ -2,7 +2,6 @@
 id: 587d825a367417b2b2512c88
 title: Reverse a Doubly Linked List
 challengeType: 1
-isHidden: false
 forumTopicId: 301714
 ---
 
@@ -23,8 +22,6 @@ Let's create one more method for our doubly linked list called reverse which rev
 tests:
   - text: The DoublyLinkedList data structure should exist.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})());
-  - text: The DoublyLinkedList should have a method called add.
-    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == 'function')})());
   - text: The DoublyLinkedList should have a method called reverse.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.reverse == undefined) { return false; }; return (typeof test.reverse == 'function')})());
   - text: Reversing an empty list should return null.

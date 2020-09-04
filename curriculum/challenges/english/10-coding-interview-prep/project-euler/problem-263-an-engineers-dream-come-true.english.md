@@ -1,7 +1,6 @@
 ---
 id: 5900f4741000cf542c50ff86
 challengeType: 5
-isHidden: false
 title: 'Problem 263: An engineers'' dream come true'
 forumTopicId: 301912
 ---

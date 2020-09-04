@@ -3,7 +3,6 @@ id: adf08ec01beb4f99fc7a68f2
 title: Falsy Bouncer
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16014
 ---
 

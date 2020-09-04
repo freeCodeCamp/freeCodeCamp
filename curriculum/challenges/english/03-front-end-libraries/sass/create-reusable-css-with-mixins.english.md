@@ -2,7 +2,6 @@
 id: 587d7dbd367417b2b2512bb6
 title: Create Reusable CSS with Mixins
 challengeType: 0
-isHidden: false
 forumTopicId: 301455
 ---
 
@@ -55,11 +54,11 @@ Write a mixin for <code>border-radius</code> and give it a <code>$radius</code> 
 tests:
   - text: Your code should declare a mixin named <code>border-radius</code> which has a parameter named <code>$radius</code>.
     testString: assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
-  - text: Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.
+  - text: Your code should include the <code>-webkit-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
     testString: assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi));
-  - text: Your code should include the <code>-moz-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.
+  - text: Your code should include the <code>-moz-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
     testString: assert(code.match(/-moz-border-radius:\s*?\$radius;/gi));
-  - text: Your code should include the <code>-ms-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.
+  - text: Your code should include the <code>-ms-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
     testString: assert(code.match(/-ms-border-radius:\s*?\$radius;/gi));
   - text: Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.
     testString: assert(code.match(/border-radius:\s*?\$radius;/gi).length == 4);

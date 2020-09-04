@@ -1,7 +1,6 @@
 ---
 id: 5900f5331000cf542c510046
 challengeType: 5
-isHidden: false
 title: 'Problem 455: Powers With Trailing Digits'
 forumTopicId: 302129
 ---

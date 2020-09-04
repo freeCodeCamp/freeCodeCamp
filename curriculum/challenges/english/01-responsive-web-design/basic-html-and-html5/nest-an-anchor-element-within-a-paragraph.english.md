@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aede08817
 title: Nest an Anchor Element within a Paragraph
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 forumTopicId: 18244
 ---
@@ -30,7 +29,7 @@ The final output of the example will look like this:<br><p>Here's a <a target="_
 ## Instructions
 <section id='instructions'>
 
-Now nest the existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>main</code> element). The new paragraph should have text that says "View more cat photos", where "cat photos" is a link, and the rest of the text is plain text.
+Nest the existing <code>a</code> element within a new <code>p</code> element. The new paragraph should have text that says "View more cat photos", where "cat photos" is a link, and the rest is plain text.
 </section>
 
 ## Tests
@@ -38,16 +37,16 @@ Now nest the existing <code>a</code> element within a new <code>p</code> element
 
 ```yml
 tests:
-  - text: You should have an <code>a</code> element that links to "http://freecatphotoapp.com".
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0));
+  - text: You should have an <code>a</code> element that links to "https://freecatphotoapp.com".
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0));
   - text: Your <code>a</code> element should have the anchor text of "cat photos"
     testString: assert($("a").text().match(/cat\sphotos/gi));
   - text: You should create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.
     testString: assert($("p") && $("p").length > 2);
   - text: Your <code>a</code> element should be nested within your new <code>p</code> element.
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")));
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")));
   - text: Your <code>p</code> element should have the text "View more " (with a space after it).
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)));
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)));
   - text: Your <code>a</code> element should <em>not</em> have the text "View more".
     testString: assert(!$("a").text().match(/View\smore/gi));
   - text: Each of your <code>p</code> elements should have a closing tag.
@@ -68,7 +67,7 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
 
-  <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
@@ -89,7 +88,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>View more <a target="_blank" href="http://freecatphotoapp.com">cat photos</a></p>
+  <p>View more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a></p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 

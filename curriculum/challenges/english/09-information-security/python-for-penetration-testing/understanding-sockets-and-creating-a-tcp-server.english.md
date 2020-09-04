@@ -2,7 +2,6 @@
 id: 5ea9997bbec2e9bc47e94daf
 title: Understanding Sockets and Creating a TCP Server
 challengeType: 11
-isHidden: false
 videoId: F1QI9tNuDQg
 ---
 

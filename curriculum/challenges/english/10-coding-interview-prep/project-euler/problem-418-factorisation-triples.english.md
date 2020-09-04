@@ -1,7 +1,6 @@
 ---
 id: 5900f50f1000cf542c510021
 challengeType: 5
-isHidden: false
 title: 'Problem 418: Factorisation triples'
 forumTopicId: 302087
 ---

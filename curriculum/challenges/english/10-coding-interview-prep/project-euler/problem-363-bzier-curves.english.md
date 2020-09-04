@@ -1,7 +1,6 @@
 ---
 id: 5900f4d91000cf542c50ffeb
 challengeType: 5
-isHidden: false
 title: 'Problem 363: Bézier Curves'
 forumTopicId: 302024
 ---

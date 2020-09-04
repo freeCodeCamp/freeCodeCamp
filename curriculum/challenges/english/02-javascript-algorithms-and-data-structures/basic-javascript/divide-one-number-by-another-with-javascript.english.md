@@ -2,7 +2,6 @@
 id: cf1111c1c11feddfaeb6bdef
 title: Divide One Number by Another with JavaScript
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cqkbdAr'
 forumTopicId: 17566
 ---

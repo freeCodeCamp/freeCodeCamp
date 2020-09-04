@@ -63,4 +63,5 @@ smallestCommons([1,5]);
 ```js
 // solution required
 ```
-</section>
+
+/section>

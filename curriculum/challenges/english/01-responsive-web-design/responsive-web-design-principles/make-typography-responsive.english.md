@@ -2,7 +2,6 @@
 id: 587d78b1367417b2b2512b0c
 title: Make Typography Responsive
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pzrPu4/crzN7T8'
 forumTopicId: 301141
 ---

@@ -2,7 +2,6 @@
 id: 5e46f979ac417301a38fb932
 title: Port Scanner
 challengeType: 10
-isHidden: false
 isRequired: true
 ---
 
@@ -10,7 +9,7 @@ isRequired: true
 <section id='description'>
 Create a port scanner using Python.
 
-You can access <a href='https://repl.it/@freeCodeCamp/fcc-port-scanner' target='_blank'>the full project description and starter code on repl.it</a>.
+You can access <a href='https://repl.it/@freeCodeCamp/fcc-port-scanner' target='_blank'>the full project description and starter code on Repl.it</a>.
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

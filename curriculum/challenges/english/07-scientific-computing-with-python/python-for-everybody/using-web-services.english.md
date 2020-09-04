@@ -2,7 +2,6 @@
 id: 5e7b9f0e0b6c005b0e76f07a
 title: Using Web Services
 challengeType: 11
-isHidden: false
 isRequired: true
 videoId: oNl1OVDPGKE
 ---

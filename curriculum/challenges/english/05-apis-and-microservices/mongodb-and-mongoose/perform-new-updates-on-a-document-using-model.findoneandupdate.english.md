@@ -2,7 +2,6 @@
 id: 587d7fb8367417b2b2512c0f
 title: Perform New Updates on a Document Using model.findOneAndUpdate()
 challengeType: 2
-isHidden: false
 forumTopicId: 301542
 ---
 

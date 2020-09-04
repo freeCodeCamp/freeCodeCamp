@@ -1,7 +1,6 @@
 ---
 id: 5900f39a1000cf542c50fead
 challengeType: 5
-isHidden: false
 title: 'Problem 46: Goldbach''s other conjecture'
 forumTopicId: 302134
 ---

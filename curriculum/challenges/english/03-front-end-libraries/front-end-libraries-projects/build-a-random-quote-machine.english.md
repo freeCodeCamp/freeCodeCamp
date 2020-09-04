@@ -3,7 +3,6 @@ id: bd7158d8c442eddfaeb5bd13
 title: Build a Random Quote Machine
 isRequired: true
 challengeType: 3
-isHidden: false
 forumTopicId: 301374
 ---
 

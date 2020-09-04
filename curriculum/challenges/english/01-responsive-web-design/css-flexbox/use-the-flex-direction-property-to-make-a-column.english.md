@@ -2,14 +2,13 @@
 id: 587d78ac367417b2b2512af4
 title: Use the flex-direction Property to Make a Column
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
 ---
 
 ## Description
 <section id='description'>
-The last two challenges used the <code>flex-direction</code> property set to row. This property can also create a column by vertically stacking the children of a flex container.
+The last two challenges used the <code>flex-direction</code> property set to <code>row</code>. This property can also create a column by vertically stacking the children of a flex container.
 </section>
 
 ## Instructions

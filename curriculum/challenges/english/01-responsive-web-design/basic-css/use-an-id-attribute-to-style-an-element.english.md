@@ -2,7 +2,6 @@
 id: bad87dee1348bd9aede07836
 title: Use an id Attribute to Style an Element
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
 ---
@@ -103,7 +102,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo" id="cat-photo-form">
+  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>
@@ -181,7 +180,7 @@ tests:
     </ol>
   </div>
   
-  <form action="/submit-cat-photo" id="cat-photo-form">
+  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

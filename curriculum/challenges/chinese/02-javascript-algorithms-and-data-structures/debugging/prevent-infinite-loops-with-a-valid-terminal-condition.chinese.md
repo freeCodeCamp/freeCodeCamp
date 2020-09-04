@@ -52,4 +52,5 @@ function myFunc() {
 ```js
 // solution required
 ```
-</section>
+
+/section>

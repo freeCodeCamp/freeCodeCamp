@@ -2,7 +2,6 @@
 id: 587d7b7a367417b2b2512b12
 title: Copy Array Items Using slice()
 challengeType: 1
-isHidden: false
 forumTopicId: 301158
 ---
 
