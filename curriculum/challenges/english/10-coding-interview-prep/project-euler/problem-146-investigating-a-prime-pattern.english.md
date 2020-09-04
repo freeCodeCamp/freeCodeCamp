@@ -1,7 +1,6 @@
 ---
 id: 5900f3fe1000cf542c50ff11
 challengeType: 5
-isHidden: false
 title: 'Problem 146: Investigating a Prime Pattern'
 forumTopicId: 301775
 ---

@@ -2,7 +2,6 @@
 id: 5e4ce2a1ac708cc68c1df25d
 title: Long multiplication
 challengeType: 5
-isHidden: false
 forumTopicId: 385269
 ---
 

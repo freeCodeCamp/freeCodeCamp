@@ -1,7 +1,6 @@
 ---
 id: 5900f4d01000cf542c50ffe3
 challengeType: 5
-isHidden: false
 title: 'Problem 356: Largest roots of cubic polynomials'
 forumTopicId: 302016
 ---

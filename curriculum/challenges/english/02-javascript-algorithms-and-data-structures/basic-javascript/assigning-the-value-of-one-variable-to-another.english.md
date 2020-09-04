@@ -2,7 +2,6 @@
 id: 5ee127a03c3b35dd45426493
 title: Assigning the Value of One Variable to Another
 challengeType: 1
-isHidden: false
 videoUrl: ''
 forumTopicId: 418265
 ---

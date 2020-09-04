@@ -2,7 +2,6 @@
 id: 587d7db3367417b2b2512b8f
 title: Match Literal Strings
 challengeType: 1
-isHidden: false
 forumTopicId: 301355
 ---
 

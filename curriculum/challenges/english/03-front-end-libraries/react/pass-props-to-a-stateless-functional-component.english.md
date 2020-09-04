@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036169
 title: Pass Props to a Stateless Functional Component
 challengeType: 6
-isHidden: false
 isRequired: false
 forumTopicId: 301402
 ---

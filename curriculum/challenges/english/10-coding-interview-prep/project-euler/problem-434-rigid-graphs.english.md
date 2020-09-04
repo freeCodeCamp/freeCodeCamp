@@ -1,7 +1,6 @@
 ---
 id: 5900f51f1000cf542c510031
 challengeType: 5
-isHidden: false
 title: 'Problem 434: Rigid graphs'
 forumTopicId: 302105
 ---

@@ -2,7 +2,6 @@
 id: 5e9a0e9ef99a403d019610cc
 title: Deep Learning Demystified
 challengeType: 11
-isHidden: false
 videoId: bejQ-W9BGJg
 ---
 

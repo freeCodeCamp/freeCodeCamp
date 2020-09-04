@@ -2,7 +2,6 @@
 id: 587d7b88367417b2b2512b46
 title: Set Default Parameters for Your Functions
 challengeType: 1
-isHidden: false
 forumTopicId: 301209
 ---
 

@@ -2,7 +2,6 @@
 id: bd7158d8c443eddfaeb5bdff
 title: Build a Nightlife Coordination App
 challengeType: 4
-isHidden: false
 isRequired: true
 forumTopicId: 302351
 ---

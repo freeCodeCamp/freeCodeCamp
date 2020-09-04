@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244c9
 title: Accessing Object Properties with Variables
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cnQyKur'
 forumTopicId: 16165
 ---

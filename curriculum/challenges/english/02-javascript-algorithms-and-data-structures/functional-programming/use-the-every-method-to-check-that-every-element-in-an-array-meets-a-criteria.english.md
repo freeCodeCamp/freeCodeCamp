@@ -2,7 +2,6 @@
 id: 587d7dab367417b2b2512b6e
 title: Use the every Method to Check that Every Element in an Array Meets a Criteria
 challengeType: 1
-isHidden: false
 forumTopicId: 301312
 ---
 

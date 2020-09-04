@@ -2,7 +2,6 @@
 id: 587d7dbd367417b2b2512bb6
 title: Create Reusable CSS with Mixins
 challengeType: 0
-isHidden: false
 forumTopicId: 301455
 ---
 

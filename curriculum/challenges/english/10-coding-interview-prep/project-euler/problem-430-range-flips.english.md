@@ -1,7 +1,6 @@
 ---
 id: 5900f51a1000cf542c51002d
 challengeType: 5
-isHidden: false
 title: 'Problem 430: Range flips'
 forumTopicId: 302101
 ---

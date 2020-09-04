@@ -3,7 +3,6 @@ id: a6b0bb188d873cb2c8729495
 title: Convert HTML Entities
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16007
 ---
 

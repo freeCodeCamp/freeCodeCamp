@@ -1,7 +1,6 @@
 ---
 id: 5900f3941000cf542c50fea7
 challengeType: 5
-isHidden: false
 title: 'Problem 40: Champernowne''s constant'
 forumTopicId: 302066
 ---

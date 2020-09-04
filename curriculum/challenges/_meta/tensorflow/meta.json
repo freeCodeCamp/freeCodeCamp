@@ -1,5 +1,6 @@
 {
   "name": "TensorFlow",
+  "isUpcomingChange": false,
   "dashedName": "tensorflow",
   "order": 1,
   "time": "15 hours",

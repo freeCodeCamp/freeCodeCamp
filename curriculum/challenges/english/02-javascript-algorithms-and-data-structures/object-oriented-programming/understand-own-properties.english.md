@@ -2,7 +2,6 @@
 id: 587d7dae367417b2b2512b7b
 title: Understand Own Properties
 challengeType: 1
-isHidden: false
 forumTopicId: 301326
 ---
 

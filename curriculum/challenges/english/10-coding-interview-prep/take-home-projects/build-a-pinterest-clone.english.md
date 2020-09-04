@@ -2,7 +2,6 @@
 id: bd7158d8c443eddfaeb5bdee
 title: Build a Pinterest Clone
 challengeType: 4
-isHidden: false
 forumTopicId: 302352
 ---
 

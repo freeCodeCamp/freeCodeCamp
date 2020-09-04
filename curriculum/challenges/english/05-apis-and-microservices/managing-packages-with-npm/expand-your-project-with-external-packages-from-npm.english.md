@@ -2,7 +2,6 @@
 id: 587d7fb4367417b2b2512c00
 title: Expand Your Project with External Packages from npm
 challengeType: 2
-isHidden: false
 forumTopicId: 301527
 ---
 

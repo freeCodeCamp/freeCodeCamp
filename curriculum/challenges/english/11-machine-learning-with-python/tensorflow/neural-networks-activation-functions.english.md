@@ -2,7 +2,6 @@
 id: 5e8f2f13c4cdbe86b5c72d93
 title: 'Neural Networks: Activation Functions'
 challengeType: 11
-isHidden: false
 videoId: S45tqW6BqRs
 ---
 

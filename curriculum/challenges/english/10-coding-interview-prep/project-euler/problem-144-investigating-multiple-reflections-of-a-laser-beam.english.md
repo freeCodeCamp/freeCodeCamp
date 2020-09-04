@@ -1,7 +1,6 @@
 ---
 id: 5900f3fc1000cf542c50ff0f
 challengeType: 5
-isHidden: false
 title: 'Problem 144: Investigating multiple reflections of a laser beam'
 forumTopicId: 301773
 ---

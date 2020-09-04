@@ -2,7 +2,6 @@
 id: 587d7fb0367417b2b2512bef
 title: Serve an HTML File
 challengeType: 2
-isHidden: false
 forumTopicId: 301516
 ---
 

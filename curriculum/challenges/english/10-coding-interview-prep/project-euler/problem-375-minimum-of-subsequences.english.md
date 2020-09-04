@@ -1,7 +1,6 @@
 ---
 id: 5900f4e41000cf542c50fff5
 challengeType: 5
-isHidden: false
 title: 'Problem 375: Minimum of subsequences'
 forumTopicId: 302037
 ---

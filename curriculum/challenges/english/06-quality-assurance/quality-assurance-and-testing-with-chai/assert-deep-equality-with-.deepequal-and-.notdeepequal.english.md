@@ -2,7 +2,6 @@
 id: 587d824c367417b2b2512c4c
 title: Assert Deep Equality with .deepEqual and .notDeepEqual
 challengeType: 2
-isHidden: false
 forumTopicId: 301587
 ---
 

@@ -2,7 +2,6 @@
 id: 5d712346c441eddfaeb5bdef
 title: Match All Numbers
 challengeType: 1
-isHidden: false
 forumTopicId: 18181
 ---
 

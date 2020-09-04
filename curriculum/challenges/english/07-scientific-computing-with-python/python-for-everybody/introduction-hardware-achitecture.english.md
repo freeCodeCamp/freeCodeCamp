@@ -2,7 +2,6 @@
 id: 5e6a54af58d3af90110a60a1
 title: 'Introduction: Hardware Architecture'
 challengeType: 11
-isHidden: false
 isRequired: true
 videoId: H6qtjRTfSog
 ---

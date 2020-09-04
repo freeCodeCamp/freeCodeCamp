@@ -2,7 +2,6 @@
 id: 58a25bcff9fc0f352b528e7d
 title: Hash and Compare Passwords Asynchronously
 challengeType: 2
-isHidden: false
 forumTopicId: 301578
 ---
 

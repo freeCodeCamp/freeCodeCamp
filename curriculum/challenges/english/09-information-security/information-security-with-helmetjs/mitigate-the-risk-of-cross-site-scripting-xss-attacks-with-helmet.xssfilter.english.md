@@ -2,7 +2,6 @@
 id: 587d8247367417b2b2512c39
 title: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
 challengeType: 2
-isHidden: false
 forumTopicId: 301583
 ---
 

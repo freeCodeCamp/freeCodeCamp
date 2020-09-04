@@ -2,7 +2,6 @@
 id: 5a9d72ad424fe3d0e10cad16
 title: Use a media query to change a variable
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
 ---

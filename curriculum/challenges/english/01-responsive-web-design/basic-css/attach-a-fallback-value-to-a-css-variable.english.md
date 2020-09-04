@@ -2,7 +2,6 @@
 id: 5a9d7286424fe3d0e10cad13
 title: Attach a Fallback value to a CSS Variable
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
 ---

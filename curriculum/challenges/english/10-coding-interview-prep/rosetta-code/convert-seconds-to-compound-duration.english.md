@@ -2,7 +2,6 @@
 title: Convert seconds to compound duration
 id: 596fd036dc1ab896c5db98b1
 challengeType: 5
-isHidden: false
 forumTopicId: 302236
 ---
 

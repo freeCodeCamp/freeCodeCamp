@@ -2,7 +2,6 @@
 id: 5eb3e4a21f462f409d656c73
 title: Self-referential sequence
 challengeType: 5
-isHidden: false
 forumTopicId: 385317
 ---
 

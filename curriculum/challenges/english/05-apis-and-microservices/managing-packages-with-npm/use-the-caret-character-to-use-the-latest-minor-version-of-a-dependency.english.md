@@ -2,7 +2,6 @@
 id: 587d7fb5367417b2b2512c03
 title: Use the Caret-Character to Use the Latest Minor Version of a Dependency
 challengeType: 2
-isHidden: false
 forumTopicId: 301531
 ---
 

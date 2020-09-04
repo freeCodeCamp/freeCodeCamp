@@ -3,7 +3,6 @@ id: 587d7fa6367417b2b2512bc0
 title: Visualize Data with a Treemap Diagram
 isRequired: true
 challengeType: 3
-isHidden: false
 forumTopicId: 301468
 ---
 

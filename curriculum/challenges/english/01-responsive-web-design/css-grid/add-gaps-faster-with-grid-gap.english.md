@@ -2,7 +2,6 @@
 id: 5a9036ee38fddaf9a66b5d37
 title: Add Gaps Faster with grid-gap
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/ca2qVtv'
 forumTopicId: 301118
 ---

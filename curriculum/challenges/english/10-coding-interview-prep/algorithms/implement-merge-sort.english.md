@@ -2,7 +2,6 @@
 id: 587d825c367417b2b2512c8f
 title: Implement Merge Sort
 challengeType: 1
-isHidden: false
 forumTopicId: 301614
 ---
 

@@ -2,7 +2,6 @@
 id: 587d8251367417b2b2512c63
 title: Remove Elements from a Linked List
 challengeType: 1
-isHidden: false
 forumTopicId: 301712
 ---
 

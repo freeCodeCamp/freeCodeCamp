@@ -2,7 +2,6 @@
 id: 5cc0c1b32479e176caf3b422
 title: Check if Tree is Binary Search Tree
 challengeType: 1
-isHidden: false
 forumTopicId: 301624
 ---
 

@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08719
 title: Use Abbreviated Hex Code
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cRkpKAm'
 forumTopicId: 18338
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4531000cf542c50ff65
 challengeType: 5
-isHidden: false
 title: 'Problem 230: Fibonacci Words'
 forumTopicId: 301874
 ---

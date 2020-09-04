@@ -2,7 +2,6 @@
 id: 5a94fe8569fb03452672e464
 title: Create Grids within Grids
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
 forumTopicId: 301128
 ---

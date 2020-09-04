@@ -2,7 +2,6 @@
 id: 587d7fa9367417b2b2512bd0
 title: Invert SVG Elements
 challengeType: 6
-isHidden: false
 forumTopicId: 301488
 ---
 

@@ -2,7 +2,6 @@
 id: af4afb223120f7348cdfc9fd
 title: Map the Debris
 challengeType: 5
-isHidden: false
 forumTopicId: 16021
 ---
 

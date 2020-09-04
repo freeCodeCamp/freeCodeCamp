@@ -2,7 +2,6 @@
 id: 5cdafbd72913098997531681
 title: Handle a Fulfilled Promise with then
 challengeType: 1
-isHidden: false
 forumTopicId: 301203
 ---
 

@@ -1,7 +1,6 @@
 ---
 id: 5900f3b21000cf542c50fec5
 challengeType: 5
-isHidden: false
 title: 'Problem 70: Totient permutation'
 forumTopicId: 302183
 ---

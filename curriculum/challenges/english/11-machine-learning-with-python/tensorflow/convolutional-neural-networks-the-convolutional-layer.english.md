@@ -2,7 +2,6 @@
 id: 5e8f2f13c4cdbe86b5c72d97
 title: 'Convolutional Neural Networks: The Convolutional Layer'
 challengeType: 11
-isHidden: false
 videoId: LrdmcQpTyLw
 ---
 

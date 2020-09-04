@@ -2,7 +2,6 @@
 id: 587d7fa8367417b2b2512bcb
 title: Learn About SVG in D3
 challengeType: 6
-isHidden: false
 forumTopicId: 301489
 ---
 

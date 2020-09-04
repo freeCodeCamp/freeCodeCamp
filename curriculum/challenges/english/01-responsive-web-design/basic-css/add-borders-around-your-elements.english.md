@@ -2,7 +2,6 @@
 id: bad87fee1348bd9bedf08813
 title: Add Borders Around Your Elements
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 forumTopicId: 16630
 ---

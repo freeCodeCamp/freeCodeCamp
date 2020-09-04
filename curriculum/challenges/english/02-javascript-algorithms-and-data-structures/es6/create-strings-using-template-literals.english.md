@@ -2,7 +2,6 @@
 id: 587d7b8a367417b2b2512b4e
 title: Create Strings using Template Literals
 challengeType: 1
-isHidden: false
 forumTopicId: 301200
 ---
 

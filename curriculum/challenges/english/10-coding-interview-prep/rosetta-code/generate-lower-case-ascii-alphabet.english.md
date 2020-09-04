@@ -2,7 +2,6 @@
 title: Generate lower case ASCII alphabet
 id: 5a23c84252665b21eecc7e7a
 challengeType: 5
-isHidden: false
 forumTopicId: 302274
 ---
 

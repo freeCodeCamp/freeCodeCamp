@@ -2,7 +2,6 @@
 id: 587d7fb0367417b2b2512bf0
 title: Serve Static Assets
 challengeType: 2
-isHidden: false
 forumTopicId: 301518
 ---
 

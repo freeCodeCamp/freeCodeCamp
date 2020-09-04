@@ -2,7 +2,6 @@
 id: 587d7b88367417b2b2512b45
 title: Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem 
 challengeType: 1
-isHidden: false
 forumTopicId: 301311
 ---
 

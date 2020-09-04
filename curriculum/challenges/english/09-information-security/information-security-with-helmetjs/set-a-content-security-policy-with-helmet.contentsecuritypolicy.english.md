@@ -2,7 +2,6 @@
 id: 587d8249367417b2b2512c3f
 title: Set a Content Security Policy with helmet.contentSecurityPolicy()
 challengeType: 2
-isHidden: false
 forumTopicId: 301585
 ---
 

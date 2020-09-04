@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Form } from '../../../components/formHelpers';
 import {
+  backend,
   backEndProject,
   frontEndProject,
   pythonProject
@@ -16,15 +17,16 @@ const propTypes = {
   updateSolutionForm: PropTypes.func.isRequired
 };
 
-const frontEndProjectFields = ['solution'];
-const backEndProjectFields = ['solution', 'githubLink'];
+// back end challenges and front end projects use a single form field
+const solutionField = ['solutionLink'];
+const backEndProjectFields = ['solutionLink', 'githubLink'];
 
 const options = {
   types: {
-    solution: 'url',
+    solutionLink: 'url',
     githubLink: 'url'
   },
-  required: ['solution']
+  required: ['solutionLink']
 };
 
 export class SolutionForm extends Component {
@@ -45,25 +47,30 @@ export class SolutionForm extends Component {
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
 
-    let solutionFormFields = frontEndProjectFields;
-    let solutionLink = 'Link, ex: ';
+    let formFields = solutionField;
+    let solutionLink = 'ex: ';
     let solutionFormID = 'front-end-form';
 
     switch (challengeType) {
       case frontEndProject:
-        solutionFormFields = frontEndProjectFields;
+        formFields = solutionField;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
         break;
 
+      case backend:
+        formFields = solutionField;
+        solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
+        break;
+
       case backEndProject:
-        solutionFormFields = backEndProjectFields;
+        formFields = backEndProjectFields;
         solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
         solutionFormID = 'back-end-form';
         break;
 
       case pythonProject:
-        solutionFormFields = frontEndProjectFields;
+        formFields = solutionField;
         solutionLink =
           solutionLink +
           (description.includes('Colaboratory')
@@ -72,7 +79,7 @@ export class SolutionForm extends Component {
         break;
 
       default:
-        solutionFormFields = frontEndProjectFields;
+        formFields = solutionField;
         solutionLink =
           solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
     }
@@ -80,12 +87,12 @@ export class SolutionForm extends Component {
     return (
       <Form
         buttonText={`${buttonCopy}`}
-        formFields={solutionFormFields}
+        formFields={formFields}
         id={solutionFormID}
         options={{
           ...options,
           placeholders: {
-            solution: solutionLink,
+            solutionLink: solutionLink,
             githubLink: 'ex: https://github.com/camperbot/hello'
           }
         }}

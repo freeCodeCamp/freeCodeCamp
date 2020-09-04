@@ -45,7 +45,6 @@ function getSchemaForLang(lang) {
     helpRoom: Joi.string(),
     id: Joi.objectId().required(),
     instructions: Joi.string().allow(''),
-    isHidden: Joi.bool().required(),
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),

@@ -2,7 +2,6 @@
 id: 587d825a367417b2b2512c8a
 title: Insert an Element into a Max Heap
 challengeType: 1
-isHidden: false
 forumTopicId: 301703
 ---
 
@@ -70,12 +69,12 @@ var MaxHeap = function() {
 ```js
 var MaxHeap = function() {
 	// change code below this line
-	this.heap = [undefined];
+	this.heap = [null];
 	this.insert = (ele) => {
 		var index = this.heap.length;
 		var arr = [...this.heap];
 		arr.push(ele);
-		while (ele > arr[Math.floor(index / 2)]) {
+		while (ele > arr[Math.floor(index / 2)] && index > 1) {
 			arr[index] = arr[Math.floor(index / 2)];
 			arr[Math.floor(index / 2)] = ele;
 			index = arr[Math.floor(index / 2)];
@@ -83,7 +82,7 @@ var MaxHeap = function() {
 		this.heap = arr;
 	}
 	this.print = () => {
-		return this.heap
+		return this.heap.slice(1);
 	}
 	// change code above this line
 };

@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08801
 title: Inform with the Paragraph Element
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
 forumTopicId: 18202
 ---

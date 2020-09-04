@@ -2,7 +2,6 @@
 id: 5e6dee7749a0b85a3f1fc7d5
 title: Lucas-Lehmer test
 challengeType: 5
-isHidden: false
 forumTopicId: 385281
 ---
 

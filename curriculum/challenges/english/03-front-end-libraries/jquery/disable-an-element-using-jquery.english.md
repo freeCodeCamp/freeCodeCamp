@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aed808826
 title: Disable an Element Using jQuery
 challengeType: 6
-isHidden: false
 forumTopicId: 17563
 ---
 

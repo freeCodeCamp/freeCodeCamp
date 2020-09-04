@@ -2,7 +2,6 @@
 id: 587d7faf367417b2b2512be9
 title: Post Data with the JavaScript XMLHttpRequest Method
 challengeType: 6
-isHidden: false
 forumTopicId: 301504
 ---
 

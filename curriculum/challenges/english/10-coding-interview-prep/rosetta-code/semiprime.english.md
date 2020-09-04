@@ -2,7 +2,6 @@
 id: 5eb3e4aa847216613aa81983
 title: Semiprime
 challengeType: 5
-isHidden: false
 forumTopicId: 385318
 ---
 

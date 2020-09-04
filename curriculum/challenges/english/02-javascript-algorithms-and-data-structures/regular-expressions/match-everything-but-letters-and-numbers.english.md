@@ -2,7 +2,6 @@
 id: 587d7db8367417b2b2512ba0
 title: Match Everything But Letters and Numbers
 challengeType: 1
-isHidden: false
 forumTopicId: 301353
 ---
 

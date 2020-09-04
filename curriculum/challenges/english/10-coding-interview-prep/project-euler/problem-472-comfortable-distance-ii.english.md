@@ -1,7 +1,6 @@
 ---
 id: 5900f5451000cf542c510057
 challengeType: 5
-isHidden: false
 title: 'Problem 472: Comfortable Distance II'
 forumTopicId: 302149
 ---
