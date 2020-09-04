@@ -18,15 +18,15 @@ const propTypes = {
 };
 
 // back end challenges and front end projects use a single form field
-const solutionField = ['solution'];
-const backEndProjectFields = ['solution', 'githubLink'];
+const solutionField = ['solutionLink'];
+const backEndProjectFields = ['solutionLink', 'githubLink'];
 
 const options = {
   types: {
-    solution: 'url',
+    solutionLink: 'url',
     githubLink: 'url'
   },
-  required: ['solution']
+  required: ['solutionLink']
 };
 
 export class SolutionForm extends Component {
@@ -48,7 +48,7 @@ export class SolutionForm extends Component {
       : "I've completed this challenge";
 
     let formFields = solutionField;
-    let solutionLink = 'Link, ex: ';
+    let solutionLink = 'ex: ';
     let solutionFormID = 'front-end-form';
 
     switch (challengeType) {
@@ -92,7 +92,7 @@ export class SolutionForm extends Component {
         options={{
           ...options,
           placeholders: {
-            solution: solutionLink,
+            solutionLink: solutionLink,
             githubLink: 'ex: https://github.com/camperbot/hello'
           }
         }}
