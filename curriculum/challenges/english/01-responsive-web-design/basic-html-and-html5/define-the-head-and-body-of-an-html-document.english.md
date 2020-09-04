@@ -37,18 +37,54 @@ Edit the markup so there's a <code>head</code> and a <code>body</code>. The <cod
 ```yml
 tests:
   - text: There should be only one <code>head</code> element on the page.
-    testString: assert($('head').length == 1);
+    testString: |
+      const headElems = code.replace(/\n/g,'').match(/\<head\s*>.*?\<\/head\s*>/g);
+      assert(headElems && headElems.length === 1);
   - text: There should be only one <code>body</code> element on the page.
-    testString: assert($('body').length == 1);
+    testString: |
+      const bodyElems = code.replace(/\n/g,'').match(/<body\s*>.*?<\/body\s*>/g);
+      assert(bodyElems && bodyElems.length === 1);
   - text: The <code>head</code> element should be a child of the <code>html</code> element.
-    testString: assert($('html').children('head').length == 1);
-  - text: The <code>body</code> element should be a child of the <code>html</code> element.
-    testString: assert($('html').children('body').length == 1);
-  - text: The <code>head</code> element should wrap around the <code>title</code> element.
-    testString: assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi));
-  - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.
-    testString: assert(code.match(/<body>\s*?(((<h1>\s*?.*?\s*?<\/h1>\s*?)(<p>(.*\s*)*?<\/p>\s*?))|((<p>\s*?.*?\s*?<\/p>\s*?)(<h1>(.*\s*)*?<\/h1>\s*?)))<\/body>/gi));		
+    testString: |
+      const htmlChildren = code.replace(/\n/g,'').match(/<html\s*>(?<children>.*)<\/html\s*>/);
+      let foundHead;
+      if(htmlChildren) {
+        const { children } = htmlChildren.groups;
 
+        foundHead = children.match(/<head\s*>.*<\/head\s*>/);
+      }
+      assert(foundHead);
+  - text: The <code>body</code> element should be a child of the <code>html</code> element.
+    testString: |
+      const htmlChildren = code.replace(/\n/g,'').match(/<html\s*>(?<children>.*?)<\/html\s*>/);
+      let foundBody;
+      if(htmlChildren) {
+        const { children } = htmlChildren.groups;
+        foundBody = children.match(/<body\s*>.*<\/body\s*>/);
+      }
+      assert(foundBody);
+  - text: The <code>head</code> element should wrap around the <code>title</code> element.
+    testString: |
+      const headChildren = code.replace(/\n/g,'').match(/<head\s*>(?<children>.*?)<\/head\s*>/);
+      let foundTitle;
+      if(headChildren) {
+        const { children } = headChildren.groups;
+        foundTitle = children.match(/<title\s*>.*?<\/title\s*>/);
+      }
+      assert(foundTitle);
+  - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.
+    testString: |
+      const bodyChildren = code.replace(/\n/g,'').match(/<body\s*>(?<children>.*?)<\/body\s*>/);
+      let foundElems;
+      if(bodyChildren) {
+        const { children } = bodyChildren.groups;
+        const h1s = children.match(/<h1\s*>.*<\/h1\s*>/g);
+        const ps = children.match(/<p\s*>.*<\/p\s*>/g);
+        const numH1s = h1s ? h1s.length : 0;
+        const numPs = ps ? ps.length : 0;
+        foundElems = numH1s === 1 && numPs === 1;
+      }
+      assert(foundElems);
 ```
 
 </section>
