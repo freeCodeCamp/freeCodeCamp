@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { first } from 'lodash';
 import EditorTabs from './EditorTabs';
 import ActionRow from './ActionRow';
+import { showUpcomingChanges } from '../../../../config/env.json';
 
 const propTypes = {
   challengeFiles: PropTypes.object,
@@ -43,9 +44,10 @@ class DesktopLayout extends Component {
     } = this.props;
 
     const challengeFile = this.getChallengeFile();
+
     return (
       <Fragment>
-        {hasEditableBoundries && <ActionRow />}
+        {showUpcomingChanges && hasEditableBoundries && <ActionRow />}
         <ReflexContainer className='desktop-layout' orientation='vertical'>
           <ReflexElement flex={1} {...resizeProps}>
             {instructions}
@@ -57,7 +59,9 @@ class DesktopLayout extends Component {
                 <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
                   {
                     <Fragment>
-                      {!hasEditableBoundries && <EditorTabs />}
+                      {showUpcomingChanges && !hasEditableBoundries && (
+                        <EditorTabs />
+                      )}
                       {editor}
                     </Fragment>
                   }
