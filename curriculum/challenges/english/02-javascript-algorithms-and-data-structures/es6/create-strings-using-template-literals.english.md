@@ -107,7 +107,7 @@ function makeList(arr) {
   return arr.map(val => `<li class="text-warning">${val}</li>`);
 }
 
-const resultDisplayArray = makeList(result.failure);
+const failuresList = makeList(result.failure);
 ```
 
 </section>
