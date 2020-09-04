@@ -25,7 +25,7 @@ tests:
   - id: bd7158d8c442eddfaeb5bd13
     title: Build a Random Quote Machine
   - id: bd7158d8c442eddfaeb5bd0f
-    title: Build a Pomodoro Clock
+    title: Build a 25 + 5 Clock
   - id: bd7158d8c442eddfaeb5bd17
     title: Build a JavaScript Calculator
   - id: bd7158d8c442eddfaeb5bd10

@@ -74,7 +74,7 @@ freeCodeCamp.org пропонує декілька безкоштовних се
 - [React and Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
+  **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, 25 + 5 Clock
 
 #### 4. Data Visualization Certification
 
