@@ -16,4 +16,4 @@ In this section you get the chance to:
 
 By the end of this, you would have 5 responsive websites under your belt that you can show off to friends, family, employers, etc. Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514) method if you get stuck.
 
-**Note**: If you work locally on the projects you must use a server in order to get accurate results from the test. There are small development servers like, [Live Server](https://www.npmjs.com/package/live-server) (VS Code [extension](https://ritwickdey.github.io/vscode-live-server/)), [http-server](https://www.npmjs.com/package/http-server) and Python [http.server](https://docs.python.org/3/library/http.server.html) you can use for this.
+**Note**: If you work locally on the projects you must use a server in order to get accurate results from the test.
