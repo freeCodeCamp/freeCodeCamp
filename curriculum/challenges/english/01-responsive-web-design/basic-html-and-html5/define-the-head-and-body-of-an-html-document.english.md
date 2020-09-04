@@ -39,51 +39,48 @@ Edit the markup so there's a <code>head</code> and a <code>body</code>. The <cod
 tests:
   - text: There should be only one <code>head</code> element on the page.
     testString: |
-      const headElems = code.replace(/\s/g,'').match(/\<head>.*?\<\/head>/g);
-      console.log(headElems);
-      const numHeadElems = headElems ? headElems.length : 0;
-      console.log(numHeadElems);
-      assert(numHeadElems === 1);
+      const headElems = code.replace(/\n/g,'').match(/\<head\s*>.*?\<\/head\s*>/g);
+      assert(headElems && headElems.length === 1);
   - text: There should be only one <code>body</code> element on the page.
     testString: |
-      const bodyElems = code.replace(/\s/g,'').match(/\<body>.*?\<\/body>/g);
-      const numBodyElems = bodyElems ? bodyElems.length : 0;
-      assert(numBodyElems === 1);
+      const bodyElems = code.replace(/\n/g,'').match(/<body\s*>.*?<\/body\s*>/g);
+      assert(bodyElems && bodyElems.length === 1);
   - text: The <code>head</code> element should be a child of the <code>html</code> element.
     testString: |
-      const htmlChildren = code.replace(/\s/g,'').match(/\<html>(?<children>.*)\<\/html>/);
+      const htmlChildren = code.replace(/\n/g,'').match(/<html\s*>(?<children>.*)<\/html\s*>/);
       let foundHead;
       if(htmlChildren) {
         const { children } = htmlChildren.groups;
-        foundHead = children.match(/\<head>.*\<\/head>/);
+
+        foundHead = children.match(/<head\s*>.*<\/head\s*>/);
       }
       assert(foundHead);
   - text: The <code>body</code> element should be a child of the <code>html</code> element.
     testString: |
-      const htmlChildren = code.replace(/\s/g,'').match(/\<html>(?<children>.*?)\<\/html>/);
+      const htmlChildren = code.replace(/\n/g,'').match(/<html\s*>(?<children>.*?)<\/html\s*>/);
       let foundBody;
       if(htmlChildren) {
         const { children } = htmlChildren.groups;
-        foundBody = children.match(/\<body>.*\<\/body>/);
+        foundBody = children.match(/<body\s*>.*<\/body\s*>/);
       }
       assert(foundBody);
   - text: The <code>head</code> element should wrap around the <code>title</code> element.
     testString: |
-      const headChildren = code.replace(/\s/g,'').match(/\<head>(?<children>.*?)\<\/head>/);
+      const headChildren = code.replace(/\n/g,'').match(/<head\s*>(?<children>.*?)<\/head\s*>/);
       let foundTitle;
       if(headChildren) {
         const { children } = headChildren.groups;
-        foundTitle = children.match(/\<title>.*?\<\/title>/);
+        foundTitle = children.match(/<title\s*>.*?<\/title\s*>/);
       }
       assert(foundTitle);
   - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.
     testString: |
-      const bodyChildren = code.replace(/\s/g,'').match(/\<body>(?<children>.*?)\<\/body>/);
+      const bodyChildren = code.replace(/\n/g,'').match(/<body\s*>(?<children>.*?)<\/body\s*>/);
       let foundElems;
       if(bodyChildren) {
         const { children } = bodyChildren.groups;
-        const h1s = children.match(/\<h1>.*<\/h1>/g);
-        const ps = children.match(/\<p>.*\<\/p>/g);
+        const h1s = children.match(/<h1\s*>.*<\/h1\s*>/g);
+        const ps = children.match(/<p\s*>.*<\/p\s*>/g);
         const numH1s = h1s ? h1s.length : 0;
         const numPs = ps ? ps.length : 0;
         foundElems = numH1s === 1 && numPs === 1;
