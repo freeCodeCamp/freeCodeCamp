@@ -2,7 +2,6 @@
 id: 5e9a093a74c4063ca6f7c14c
 title: Introduction to Data Analysis
 challengeType: 11
-isHidden: false
 videoId: VJrP2FUzKP0
 ---
 
@@ -10,7 +9,7 @@ videoId: VJrP2FUzKP0
 
 <section id='description'>
 More resources:
-- <a href="https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk" target='_blank'>Slides</a>
+- <a href="https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk" target="_blank" rel="noopener noreferrer">Slides</a>
 </section>
 
 ## Tests

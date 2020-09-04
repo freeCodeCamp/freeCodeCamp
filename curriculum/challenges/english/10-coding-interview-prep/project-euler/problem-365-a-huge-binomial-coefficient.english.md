@@ -1,7 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffec
 challengeType: 5
-isHidden: false
 title: 'Problem 365: A huge binomial coefficient'
 forumTopicId: 302026
 ---

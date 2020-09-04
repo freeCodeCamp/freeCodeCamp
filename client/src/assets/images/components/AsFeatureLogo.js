@@ -1,17 +1,19 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const propTypes = {};
+const propTypes = { fill: PropTypes.string };
 
 function AsSeenLogo(props) {
+  const fill = props.fill === 'dark' ? 'var(--gray-75)' : 'var(--gray-15)';
   return (
     <svg
       id='featured-logos'
-      viewBox='0 0 1700 340'
+      viewBox='0 40 1700 200'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}
-      fill='var(--quaternary-color)'
+      fill={fill}
     >
       <defs>
         <path

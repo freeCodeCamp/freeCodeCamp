@@ -2,7 +2,6 @@
 id: 587d7b8e367417b2b2512b5d
 title: Understand the Hazards of Using Imperative Code
 challengeType: 1
-isHidden: false
 forumTopicId: 301241
 ---
 

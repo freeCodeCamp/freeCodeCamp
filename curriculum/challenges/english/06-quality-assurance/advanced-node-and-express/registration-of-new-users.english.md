@@ -2,7 +2,6 @@
 id: 58966a17f9fc0f352b528e6d
 title: Registration of New Users
 challengeType: 2
-isHidden: false
 forumTopicId: 301561
 ---
 

@@ -2,7 +2,6 @@
 id: 589fc830f9fc0f352b528e74
 title: Set up the Environment
 challengeType: 2
-isHidden: false
 forumTopicId: 301566
 ---
 

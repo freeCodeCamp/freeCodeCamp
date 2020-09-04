@@ -3,7 +3,6 @@ id: a6e40f1041b06c996f7b2406
 title: Finders Keepers
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16016
 ---
 

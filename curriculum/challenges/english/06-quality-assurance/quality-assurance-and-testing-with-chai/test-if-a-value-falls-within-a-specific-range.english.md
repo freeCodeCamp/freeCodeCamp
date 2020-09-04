@@ -2,7 +2,6 @@
 id: 587d824c367417b2b2512c4f
 title: Test if a Value Falls within a Specific Range
 challengeType: 2
-isHidden: false
 forumTopicId: 301598
 ---
 

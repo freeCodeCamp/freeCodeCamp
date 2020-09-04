@@ -1,7 +1,6 @@
 ---
 id: 5900f4b71000cf542c50ffc9
 challengeType: 5
-isHidden: false
 title: 'Problem 330: Euler''s Number'
 forumTopicId: 301988
 ---

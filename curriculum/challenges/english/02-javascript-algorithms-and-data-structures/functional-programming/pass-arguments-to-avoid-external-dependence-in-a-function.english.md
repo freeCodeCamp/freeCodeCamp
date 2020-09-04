@@ -2,7 +2,6 @@
 id: 587d7b8e367417b2b2512b5f
 title: Pass Arguments to Avoid External Dependence in a Function
 challengeType: 1
-isHidden: false
 forumTopicId: 301234
 ---
 
@@ -32,7 +31,8 @@ tests:
   - text: Your <code>incrementer</code> function should take an argument.
     testString: assert(incrementer.length === 1);
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
-    testString: const newValue = incrementer(fixedValue); assert(newValue === 5);
+    testString: const __newValue = incrementer(fixedValue); assert(__newValue === 5);
+
 
 ```
 

@@ -2,7 +2,6 @@
 id: 587d825a367417b2b2512c8a
 title: Insert an Element into a Max Heap
 challengeType: 1
-isHidden: false
 forumTopicId: 301703
 ---
 
@@ -26,7 +25,7 @@ Once you wrap your head around the math, using an array representation is very u
 Instructions: Here we will create a max heap. Start by just creating an <code>insert</code> method which adds elements to our heap. During insertion, it is important to always maintain the heap property. For a max heap this means the root element should always have the greatest value in the tree and all parent nodes should be greater than their children. For an array implementation of a heap, this is typically accomplished in three steps:
 <ol>
   <li>Add the new element to the end of the array.</li>
-  <li>If the element is larger than its parents, switch them.</li>
+  <li>If the element is larger than its parent, switch them.</li>
   <li>Continue switching until the new element is either smaller than its parent or you reach the root of the tree.</li>
 </ol>
 Finally, add a <code>print</code> method which returns an array of all the items that have been added to the heap.
@@ -70,12 +69,12 @@ var MaxHeap = function() {
 ```js
 var MaxHeap = function() {
 	// change code below this line
-	this.heap = [undefined];
+	this.heap = [null];
 	this.insert = (ele) => {
 		var index = this.heap.length;
 		var arr = [...this.heap];
 		arr.push(ele);
-		while (ele > arr[Math.floor(index / 2)]) {
+		while (ele > arr[Math.floor(index / 2)] && index > 1) {
 			arr[index] = arr[Math.floor(index / 2)];
 			arr[Math.floor(index / 2)] = ele;
 			index = arr[Math.floor(index / 2)];
@@ -83,7 +82,7 @@ var MaxHeap = function() {
 		this.heap = arr;
 	}
 	this.print = () => {
-		return this.heap
+		return this.heap.slice(1);
 	}
 	// change code above this line
 };

@@ -2,7 +2,6 @@
 title: Execute a Markov algorithm
 id: 59e09e6d412c5939baa02d16
 challengeType: 5
-isHidden: false
 forumTopicId: 302260
 ---
 

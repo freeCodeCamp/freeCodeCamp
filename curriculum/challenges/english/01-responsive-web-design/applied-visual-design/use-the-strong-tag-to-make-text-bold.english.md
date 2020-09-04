@@ -2,7 +2,6 @@
 id: 587d781a367417b2b2512ab7
 title: Use the strong Tag to Make Text Bold
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/ceJNBSb'
 forumTopicId: 301080
 ---
@@ -26,7 +25,7 @@ tests:
     testString: assert($('strong').length == 1);
   - text: The <code>strong</code> tag should be inside the <code>p</code> tag.
     testString: assert($('p').children('strong').length == 1);
-  - text: The <code>strong</code> tag should wrap around the words "Stanford University".
+  - text: The <code>strong</code> tag should wrap around the words <code>Stanford University</code>.
     testString: assert($('strong').text().match(/^Stanford University\.?$/gi));
 ```
 

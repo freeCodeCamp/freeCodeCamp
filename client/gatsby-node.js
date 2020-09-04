@@ -52,15 +52,12 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
     }
   }
 
-  if (!env.stripePublicKey || !env.servicebotId) {
+  if (!env.stripePublicKey) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
-      throw new Error(
-        'Stripe public key and Servicebot id are required to start the client!'
-      );
+      throw new Error('Stripe public key is required to start the client!');
     } else {
       reporter.info(
-        'Stripe public key or Servicebot id missing or invalid. Required for' +
-          ' donations.'
+        'Stripe public key missing or invalid. Required for donations.'
       );
     }
   }
@@ -73,7 +70,6 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         {
           allChallengeNode(
             sort: { fields: [superOrder, order, challengeOrder] }
-            filter: { isHidden: { eq: false } }
           ) {
             edges {
               node {
@@ -169,9 +165,6 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
         process.env.HOME_PATH || 'http://localhost:3000'
       ),
       STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
-      ENVIRONMENT: JSON.stringify(
-        process.env.FREECODECAMP_NODE_ENV || 'development'
-      ),
       PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
     })
   ];
@@ -209,6 +202,18 @@ exports.onCreateBabelConfig = ({ actions }) => {
       }
     }
   });
+};
+
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+  // Only update the `/challenges` page.
+  if (page.path.match(/^\/challenges/)) {
+    // page.matchPath is a special key that's used for matching pages
+    // with corresponding routes only on the client.
+    page.matchPath = '/challenges/*';
+    // Update the page.
+    createPage(page);
+  }
 };
 
 // TODO: this broke the React challenges, not sure why, but I'll investigate

@@ -2,7 +2,6 @@
 id: 587d78a3367417b2b2512ad1
 title: Learn about Complementary Colors
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c2MD3Tr'
 forumTopicId: 301056
 ---

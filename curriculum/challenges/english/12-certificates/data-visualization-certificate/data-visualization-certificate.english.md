@@ -2,7 +2,6 @@
 id: 5a553ca864b52e1d8bceea14
 title: Data Visualization Certificate
 challengeType: 7
-isHidden: false
 isPrivate: true
 ---
 

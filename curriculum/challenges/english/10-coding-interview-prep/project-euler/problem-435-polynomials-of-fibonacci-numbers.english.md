@@ -1,7 +1,6 @@
 ---
 id: 5900f5201000cf542c510032
 challengeType: 5
-isHidden: false
 title: 'Problem 435: Polynomials of Fibonacci numbers'
 forumTopicId: 302106
 ---

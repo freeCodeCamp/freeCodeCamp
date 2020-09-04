@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf06756
 title: Override Class Declarations with Inline Styles
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cGJDRha'
 forumTopicId: 18252
 ---

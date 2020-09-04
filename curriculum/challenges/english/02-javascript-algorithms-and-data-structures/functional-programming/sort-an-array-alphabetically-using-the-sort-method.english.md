@@ -2,7 +2,6 @@
 id: 587d7da9367417b2b2512b69
 title: Sort an Array Alphabetically using the sort Method
 challengeType: 1
-isHidden: false
 forumTopicId: 18303
 ---
 

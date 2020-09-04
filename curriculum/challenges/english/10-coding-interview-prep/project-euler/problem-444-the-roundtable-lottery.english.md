@@ -1,7 +1,6 @@
 ---
 id: 5900f52a1000cf542c51003b
 challengeType: 5
-isHidden: false
 title: 'Problem 444: The Roundtable Lottery'
 forumTopicId: 302116
 ---

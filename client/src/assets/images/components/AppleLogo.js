@@ -7,7 +7,7 @@ function AppleLogo(props) {
   return (
     <svg
       id='apple-logo'
-      viewBox='170 0 1000 572'
+      viewBox='450 0 500 650'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}

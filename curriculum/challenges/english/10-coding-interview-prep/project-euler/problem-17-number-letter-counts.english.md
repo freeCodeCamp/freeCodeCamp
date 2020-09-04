@@ -1,7 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe90
 challengeType: 5
-isHidden: false
 title: 'Problem 17: Number letter counts'
 forumTopicId: 301804
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f3c31000cf542c50fed5
 challengeType: 5
-isHidden: false
 title: 'Problem 86: Cuboid route'
 forumTopicId: 302200
 ---

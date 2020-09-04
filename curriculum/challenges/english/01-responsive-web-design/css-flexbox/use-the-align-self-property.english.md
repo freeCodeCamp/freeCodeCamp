@@ -2,7 +2,6 @@
 id: 587d78af367417b2b2512b00
 title: Use the align-self Property
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvzfv'
 forumTopicId: 301107
 ---

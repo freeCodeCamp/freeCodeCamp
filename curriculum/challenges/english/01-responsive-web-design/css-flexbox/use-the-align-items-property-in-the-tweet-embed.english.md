@@ -2,7 +2,6 @@
 id: 587d78ad367417b2b2512af9
 title: Use the align-items Property in the Tweet Embed
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
 forumTopicId: 301106
 ---
@@ -14,7 +13,7 @@ The last challenge introduced the <code>align-items</code> property and gave an 
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element. Set the value to center.
+Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element. Set the value to <code>center</code>.
 </section>
 
 ## Tests

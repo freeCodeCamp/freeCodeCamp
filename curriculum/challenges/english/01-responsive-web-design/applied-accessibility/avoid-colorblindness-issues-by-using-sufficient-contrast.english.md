@@ -2,7 +2,6 @@
 id: 587d778f367417b2b2512aac
 title: Avoid Colorblindness Issues by Using Sufficient Contrast
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cmzMEUw'
 forumTopicId: 301012
 ---

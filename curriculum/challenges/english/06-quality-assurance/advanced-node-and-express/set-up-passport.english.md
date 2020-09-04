@@ -2,7 +2,6 @@
 id: 5895f70cf9fc0f352b528e65
 title: Set up Passport
 challengeType: 2
-isHidden: false
 forumTopicId: 301565
 ---
 

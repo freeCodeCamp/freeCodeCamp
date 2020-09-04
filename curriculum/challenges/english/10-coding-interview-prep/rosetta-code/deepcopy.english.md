@@ -2,7 +2,6 @@
 title: Deepcopy
 id: 596a8888ab7c01048de257d5
 challengeType: 5
-isHidden: false
 forumTopicId: 302247
 ---
 

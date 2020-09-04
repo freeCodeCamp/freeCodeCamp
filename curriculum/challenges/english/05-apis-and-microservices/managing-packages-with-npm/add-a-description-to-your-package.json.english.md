@@ -2,7 +2,6 @@
 id: 587d7fb3367417b2b2512bfc
 title: Add a Description to Your package.json
 challengeType: 2
-isHidden: false
 forumTopicId: 301522
 ---
 

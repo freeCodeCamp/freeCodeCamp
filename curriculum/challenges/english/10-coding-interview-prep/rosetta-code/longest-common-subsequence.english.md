@@ -2,7 +2,6 @@
 id: 5e6dd1278e6ca105cde40ea9
 title: Longest common subsequence
 challengeType: 5
-isHidden: false
 forumTopicId: 385271
 ---
 

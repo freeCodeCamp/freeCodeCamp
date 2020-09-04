@@ -2,7 +2,6 @@
 id: 56bbb991ad1ed5201cd392ce
 title: Manipulate Arrays With unshift()
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
 ---

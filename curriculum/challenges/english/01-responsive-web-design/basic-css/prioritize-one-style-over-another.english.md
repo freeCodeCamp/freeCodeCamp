@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08756
 title: Prioritize One Style Over Another
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cZ8wnHv'
 forumTopicId: 18258
 ---

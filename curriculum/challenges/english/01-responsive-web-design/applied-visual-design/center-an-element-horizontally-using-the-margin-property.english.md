@@ -2,7 +2,6 @@
 id: 587d78a3367417b2b2512ad0
 title: Center an Element Horizontally Using the margin Property
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cyLJqU4'
 forumTopicId: 301043
 ---

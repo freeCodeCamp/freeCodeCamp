@@ -2,7 +2,6 @@
 id: 587d78b0367417b2b2512b08
 title: Create a Media Query
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pzrPu4/cqwKrtm'
 forumTopicId: 301139
 ---
@@ -20,7 +19,7 @@ Remember, the CSS inside the media query is applied only if the media type match
 
 ## Instructions
 <section id='instructions'>
-Add a media query, so that the <code>p</code> tag has a <code>font-size</code> of 10px when the device's height is less than or equal to 800px.
+Add a media query, so that the <code>p</code> tag has a <code>font-size</code> of <code>10px</code> when the device's height is less than or equal to <code>800px</code>.
 </section>
 
 ## Tests

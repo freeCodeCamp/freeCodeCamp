@@ -2,7 +2,6 @@
 id: 587d7b7b367417b2b2512b14
 title: Check For The Presence of an Element With indexOf()
 challengeType: 1
-isHidden: false
 forumTopicId: 301154
 ---
 

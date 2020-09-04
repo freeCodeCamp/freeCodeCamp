@@ -2,7 +2,6 @@
 id: 5eb3e4b20aa93c437f9e9717
 title: Set of real numbers
 challengeType: 5
-isHidden: false
 forumTopicId: 385322
 ---
 

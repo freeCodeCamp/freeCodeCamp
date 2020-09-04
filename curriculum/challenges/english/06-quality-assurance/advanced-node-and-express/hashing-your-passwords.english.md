@@ -2,7 +2,6 @@
 id: 58a25c98f9fc0f352b528e7f
 title: Hashing Your Passwords
 challengeType: 2
-isHidden: false
 forumTopicId: 301553
 ---
 

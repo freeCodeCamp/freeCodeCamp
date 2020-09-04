@@ -1,7 +1,6 @@
 ---
 id: 5900f4151000cf542c50ff27
 challengeType: 5
-isHidden: false
 title: 'Problem 168: Number Rotations'
 forumTopicId: 301802
 ---

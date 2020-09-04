@@ -2,7 +2,6 @@
 id: 587d8259367417b2b2512c84
 title: Create a Trie Search Tree
 challengeType: 1
-isHidden: false
 forumTopicId: 301634
 ---
 

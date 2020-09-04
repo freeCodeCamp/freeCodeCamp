@@ -2,7 +2,6 @@
 id: 5895f70df9fc0f352b528e6a
 title: Create New Middleware
 challengeType: 2
-isHidden: false
 forumTopicId: 301551
 ---
 

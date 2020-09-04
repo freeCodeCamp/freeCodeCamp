@@ -2,7 +2,6 @@
 id: 587d781c367417b2b2512ac2
 title: Set the font-size for Multiple Heading Elements
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cPpQNT3'
 forumTopicId: 301067
 ---
@@ -33,7 +32,7 @@ tests:
   - text: Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.
     testString: assert($('h5').css('font-size') == '21px');
   - text: Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.
-    testString: assert($('h6').css('font-size') == '14px');
+    testString: const regex = /h6\s*\{\s*font-size\s*:\s*14px\s*(;\s*\}|\})/i; assert.strictEqual(true, regex.test(code));
 
 ```
 

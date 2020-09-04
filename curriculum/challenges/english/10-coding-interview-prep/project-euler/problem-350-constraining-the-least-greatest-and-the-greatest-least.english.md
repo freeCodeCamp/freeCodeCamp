@@ -1,7 +1,6 @@
 ---
 id: 5900f4cb1000cf542c50ffdd
 challengeType: 5
-isHidden: false
 title: 'Problem 350: Constraining the least greatest and the greatest least'
 forumTopicId: 302010
 ---

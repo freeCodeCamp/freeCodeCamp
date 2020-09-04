@@ -2,7 +2,6 @@
 id: 5a23c84252665b21eecc7e03
 title: Cumulative standard deviation
 challengeType: 5
-isHidden: false
 forumTopicId: 302240
 ---
 

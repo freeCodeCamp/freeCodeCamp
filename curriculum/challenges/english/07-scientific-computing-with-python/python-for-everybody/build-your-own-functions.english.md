@@ -2,7 +2,6 @@
 id: 5e7b9f060b6c005b0e76f05b
 title: Build your own Functions
 challengeType: 11
-isHidden: false
 isRequired: true
 videoId: nLDychdBwUg
 ---

@@ -2,7 +2,6 @@
 id: 587d7791367417b2b2512ab3
 title: Create Visual Balance Using the text-align Property
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
 ---

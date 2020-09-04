@@ -1,7 +1,6 @@
 ---
 id: 5900f37b1000cf542c50fe8e
 challengeType: 5
-isHidden: false
 title: 'Problem 15: Lattice paths'
 forumTopicId: 301780
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4c51000cf542c50ffd7
 challengeType: 5
-isHidden: false
 title: 'Problem 344: Silver dollar game'
 forumTopicId: 302003
 ---

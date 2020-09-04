@@ -2,7 +2,6 @@
 id: 587d78b1367417b2b2512b0a
 title: Use a Retina Image for Higher Resolution Displays
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pzrPu4/cVZ4Rfp'
 forumTopicId: 301142
 ---
@@ -25,7 +24,7 @@ Here is an example of an image that is only using half of the original height an
 
 ## Instructions
 <section id='instructions'>
-Set the <code>width</code> and <code>height</code> of the <code>img</code> tag to half of their original values. In this case, both the original <code>height</code> and the original <code>width</code> are 200px.
+Set the <code>width</code> and <code>height</code> of the <code>img</code> tag to half of their original values. In this case, both the original <code>height</code> and the original <code>width</code> are <code>200px</code>.
 </section>
 
 ## Tests
@@ -34,9 +33,9 @@ Set the <code>width</code> and <code>height</code> of the <code>img</code> tag t
 ```yml
 tests:
   - text: Your <code>img</code> tag should have a <code>width</code> of 100 pixels.
-    testString: assert($('img').css('width') == '100px');
+    testString: assert(document.querySelector('img').width === 100);
   - text: Your <code>img</code> tag should have a <code>height</code> of 100 pixels.
-    testString: assert($('img').css('height') == '100px');
+    testString: assert(document.querySelector('img').height === 100);
 
 ```
 

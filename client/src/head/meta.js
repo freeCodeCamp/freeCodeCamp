@@ -11,12 +11,12 @@ const meta = [
     name='og:description'
   />,
   <meta
-    content='https://cdn.freecodecamp.org/platform/universal/fcc-og-1200-social-green.png'
+    content='https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png'
     property='og:image'
   />,
   <meta content='summary_large_image' key='twitter:card' name='twitter:card' />,
   <meta
-    content='https://cdn.freecodecamp.org/platform/universal/fcc-twitter-1120X600-social-green.png'
+    content='https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png'
     name='twitter:image:src'
   />,
   <meta content='freeCodeCamp.org' name='twitter:title' />,

@@ -2,7 +2,6 @@
 id: 587d7b85367417b2b2512b38
 title: Catch Use of Assignment Operator Instead of Equality Operator
 challengeType: 1
-isHidden: false
 forumTopicId: 301191
 ---
 

@@ -2,7 +2,6 @@
 id: 587d781d367417b2b2512ac8
 title: Adjust the Hover State of an Anchor Tag
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
 ---

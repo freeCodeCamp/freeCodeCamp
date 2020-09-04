@@ -2,7 +2,6 @@
 id: 587d7b7b367417b2b2512b13
 title: Copy an Array with the Spread Operator
 challengeType: 1
-isHidden: false
 forumTopicId: 301157
 ---
 

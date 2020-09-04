@@ -2,7 +2,6 @@
 id: 587d7dbe367417b2b2512bb9
 title: Use @for to Create a Sass Loop
 challengeType: 0
-isHidden: false
 forumTopicId: 301462
 ---
 

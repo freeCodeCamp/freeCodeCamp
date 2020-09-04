@@ -1,7 +1,6 @@
 ---
 id: 5900f3f71000cf542c50ff0a
 challengeType: 5
-isHidden: false
 title: 'Problem 139: Pythagorean tiles'
 forumTopicId: 301767
 ---

@@ -2,7 +2,6 @@
 id: 587d8253367417b2b2512c6d
 title: Perform an Intersection on Two Sets of Data
 challengeType: 1
-isHidden: false
 forumTopicId: 301709
 ---
 

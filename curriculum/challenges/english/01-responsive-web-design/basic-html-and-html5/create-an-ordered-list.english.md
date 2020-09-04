@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08828
 title: Create an Ordered List
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cQ3B8TM'
 forumTopicId: 16824
 ---
@@ -34,9 +33,9 @@ Create an ordered list of the top 3 things cats hate the most.
 
 ```yml
 tests:
-  - text: You should have an ordered list for "Top 3 things cats hate:"
+  - text: You should have an ordered list for <code>Top 3 things cats hate:</code>
     testString: assert((/Top 3 things cats hate:/i).test($("ol").prev().text()));
-  - text: You should have an unordered list for "Things cats love:"
+  - text: You should have an unordered list for <code>Things cats love:</code>
     testString: assert((/Things cats love:/i).test($("ul").prev().text()));
   - text: You should have only one <code>ul</code> element.
     testString: assert.equal($("ul").length, 1);

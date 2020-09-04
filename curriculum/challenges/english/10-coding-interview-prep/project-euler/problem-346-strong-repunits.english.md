@@ -1,7 +1,6 @@
 ---
 id: 5900f4c71000cf542c50ffd8
 challengeType: 5
-isHidden: false
 title: 'Problem 346: Strong Repunits'
 forumTopicId: 302005
 ---

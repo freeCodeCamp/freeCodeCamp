@@ -1,7 +1,6 @@
 ---
 id: 5900f3b81000cf542c50fecb
 challengeType: 5
-isHidden: false
 title: 'Problem 76: Counting summations'
 forumTopicId: 302189
 ---

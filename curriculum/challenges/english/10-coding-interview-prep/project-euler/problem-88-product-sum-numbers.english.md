@@ -1,7 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed6
 challengeType: 5
-isHidden: false
 title: 'Problem 88: Product-sum numbers'
 forumTopicId: 302203
 ---
