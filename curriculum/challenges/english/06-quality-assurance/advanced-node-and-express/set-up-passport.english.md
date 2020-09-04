@@ -7,11 +7,15 @@ forumTopicId: 301565
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-advancednode">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+
 It's time to set up <em>Passport</em> so we can finally start allowing a user to register or login to an account! In addition to Passport, we will use Express-session to handle sessions. Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the <em>key</em> to access the data stored on the server.
+
 To set up Passport for use in your project, you will need to add it as a dependency first in your package.json. <code>"passport": "^0.3.2"</code>
+
 In addition, add Express-session as a dependency now as well. Express-session has a ton of advanced features you can use but for now we're just going to use the basics! <code>"express-session": "^1.15.0"</code>
+
 You will need to set up the session settings now and initialize Passport. Be sure to first create the variables 'session' and 'passport' to require 'express-session' and 'passport' respectively.
+
 To set up your express app to use the session we'll define just a few basic options. Be sure to add 'SESSION_SECRET' to your .env file and give it a random value. This is used to compute the hash used to encrypt your cookie!
 
 ```js
@@ -19,11 +23,14 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: true,
+  cookie: { secure: false }
 }));
 ```
 
 As well you can go ahead and tell your express app to <b>use</b> 'passport.initialize()' and 'passport.session()'. (For example, <code>app.use(passport.initialize());</code>)
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/338a9c5a326923c3826a666d430e65c3'>here</a>.
+
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c' target='_blank'>here</a>.
+
 </section>
 
 ## Instructions
