@@ -1,7 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff44
 challengeType: 5
-isHidden: false
 title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
 forumTopicId: 301835
 ---

@@ -2,7 +2,6 @@
 id: 5a9036ee38fddaf9a66b5d36
 title: Create a Row Gap using grid-row-gap
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cPbJ2Cv'
 forumTopicId: 301125
 ---

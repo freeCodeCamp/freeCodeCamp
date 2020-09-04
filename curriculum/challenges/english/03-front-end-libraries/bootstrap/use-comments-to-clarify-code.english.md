@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aec908857
 title: Use Comments to Clarify Code
 challengeType: 0
-isHidden: false
 forumTopicId: 18347
 ---
 

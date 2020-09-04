@@ -2,7 +2,6 @@
 id: 587d7da9367417b2b2512b6a
 title: Return a Sorted Array Without Changing the Original Array
 challengeType: 1
-isHidden: false
 forumTopicId: 301237
 ---
 

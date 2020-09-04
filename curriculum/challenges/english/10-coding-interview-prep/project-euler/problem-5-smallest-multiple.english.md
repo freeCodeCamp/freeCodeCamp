@@ -1,7 +1,6 @@
 ---
 id: 5900f3711000cf542c50fe84
 challengeType: 5
-isHidden: false
 title: 'Problem 5: Smallest multiple'
 forumTopicId: 302160
 ---

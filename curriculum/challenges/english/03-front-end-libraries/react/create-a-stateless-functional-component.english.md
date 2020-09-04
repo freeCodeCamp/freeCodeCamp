@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036162
 title: Create a Stateless Functional Component
 challengeType: 6
-isHidden: false
 isRequired: false
 forumTopicId: 301392
 ---

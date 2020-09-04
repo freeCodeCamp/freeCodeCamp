@@ -2,7 +2,6 @@
 id: 587d7b8a367417b2b2512b4d
 title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
 challengeType: 1
-isHidden: false
 forumTopicId: 301217
 ---
 

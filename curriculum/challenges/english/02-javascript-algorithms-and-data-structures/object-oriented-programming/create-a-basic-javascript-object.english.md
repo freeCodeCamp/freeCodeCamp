@@ -2,7 +2,6 @@
 id: 587d7dac367417b2b2512b73
 title: Create a Basic JavaScript Object
 challengeType: 1
-isHidden: false
 forumTopicId: 301317
 ---
 

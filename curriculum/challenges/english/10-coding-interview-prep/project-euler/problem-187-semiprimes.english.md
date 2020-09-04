@@ -1,7 +1,6 @@
 ---
 id: 5900f4291000cf542c50ff3a
 challengeType: 5
-isHidden: false
 title: 'Problem 187: Semiprimes'
 forumTopicId: 301823
 ---

@@ -2,7 +2,6 @@
 id: 5a23c84252665b21eecc801d
 title: Split a character string based on change of character
 challengeType: 5
-isHidden: false
 forumTopicId: 302322
 ---
 

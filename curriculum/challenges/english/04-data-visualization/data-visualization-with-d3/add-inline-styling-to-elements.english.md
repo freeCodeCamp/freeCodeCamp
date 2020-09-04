@@ -2,7 +2,6 @@
 id: 587d7fa7367417b2b2512bc6
 title: Add Inline Styling to Elements
 challengeType: 6
-isHidden: false
 forumTopicId: 301475
 ---
 

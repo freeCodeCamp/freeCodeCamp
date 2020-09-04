@@ -1,7 +1,6 @@
 ---
 id: 5900f3a01000cf542c50feb3
 challengeType: 5
-isHidden: false
 title: 'Problem 52: Permuted multiples'
 forumTopicId: 302163
 ---

@@ -3,7 +3,6 @@ id: afcc8d540bea9ea2669306b6
 title: Repeat a String Repeat a String
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16041
 ---
 

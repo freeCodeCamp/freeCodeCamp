@@ -2,7 +2,6 @@
 title: FizzBuzz
 id: 5e9ddb06ec35240f39657419
 challengeType: 5
-isHidden: false
 forumTopicId: 385370
 ---
 

@@ -2,7 +2,6 @@
 title: Averages/Pythagorean means
 id: 594d966a1467eb84194f0086
 challengeType: 5
-isHidden: false
 forumTopicId: 302227
 ---
 

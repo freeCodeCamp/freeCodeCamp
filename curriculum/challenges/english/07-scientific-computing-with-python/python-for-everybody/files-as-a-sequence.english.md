@@ -2,7 +2,6 @@
 id: 5e7b9f080b6c005b0e76f063
 title: Files as a Sequence
 challengeType: 11
-isHidden: false
 isRequired: true
 videoId: cIA0EokbaHE
 ---

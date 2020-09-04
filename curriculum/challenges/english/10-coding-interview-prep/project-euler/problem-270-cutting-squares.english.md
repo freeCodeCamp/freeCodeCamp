@@ -1,7 +1,6 @@
 ---
 id: 5900f47c1000cf542c50ff8e
 challengeType: 5
-isHidden: false
 title: 'Problem 270: Cutting Squares'
 forumTopicId: 301920
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3d
 challengeType: 5
-isHidden: false
 title: 'Problem 190: Maximising a weighted product'
 forumTopicId: 301828
 ---

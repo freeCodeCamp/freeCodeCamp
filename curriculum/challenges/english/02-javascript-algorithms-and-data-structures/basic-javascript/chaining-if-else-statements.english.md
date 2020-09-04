@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244dc
 title: Chaining If Else Statements
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/caeJgsw'
 forumTopicId: 16772
 ---

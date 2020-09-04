@@ -177,9 +177,6 @@ li.disabled > a {
 [name='payment-method'] {
   font-family: 'Lato', sans-serif;
 }
-.servicebot-embed-panel .panel {
-  padding: 20px;
-}
 
 @media (max-width: 991px) {
   .donate-text {

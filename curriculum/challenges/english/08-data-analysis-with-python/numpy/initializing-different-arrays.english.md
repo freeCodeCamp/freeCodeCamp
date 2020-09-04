@@ -2,7 +2,6 @@
 id: 5e9a0a8e09c5df3cc3600ed5
 title: Initializing Different Arrays
 challengeType: 11
-isHidden: false
 videoId: CEykdsKT4U4
 ---
 

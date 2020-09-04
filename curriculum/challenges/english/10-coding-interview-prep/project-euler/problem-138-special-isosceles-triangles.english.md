@@ -1,7 +1,6 @@
 ---
 id: 5900f3f61000cf542c50ff09
 challengeType: 5
-isHidden: false
 title: 'Problem 138: Special isosceles triangles'
 forumTopicId: 301766
 ---

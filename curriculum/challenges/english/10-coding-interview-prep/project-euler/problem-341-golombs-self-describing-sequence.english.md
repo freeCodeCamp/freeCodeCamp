@@ -1,7 +1,6 @@
 ---
 id: 5900f4c11000cf542c50ffd3
 challengeType: 5
-isHidden: false
 title: 'Problem 341: Golomb''s self-describing sequence'
 forumTopicId: 302000
 ---

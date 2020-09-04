@@ -2,7 +2,6 @@
 id: 587d7fab367417b2b2512bda
 title: Create a Linear Scale with D3
 challengeType: 6
-isHidden: false
 forumTopicId: 301483
 ---
 

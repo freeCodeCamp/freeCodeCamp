@@ -1,5 +1,6 @@
 {
   "name": "Rosetta Code",
+  "isUpcomingChange": false,
   "dashedName": "rosetta-code",
   "order": 5,
   "time": "",
@@ -623,6 +624,10 @@
     [
       "594810f028c0303b75339ad3",
       "Vector dot product"
+    ],
+    [
+      "5e94a54cc7b022105bf0fd2c",
+      "Word frequency"
     ],
     [
       "594810f028c0303b75339ad4",

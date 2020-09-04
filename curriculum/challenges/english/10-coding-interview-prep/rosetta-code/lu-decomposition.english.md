@@ -2,7 +2,6 @@
 id: 5e6decd8ec8d7db960950d1c
 title: LU decomposition
 challengeType: 5
-isHidden: false
 forumTopicId: 385280
 ---
 

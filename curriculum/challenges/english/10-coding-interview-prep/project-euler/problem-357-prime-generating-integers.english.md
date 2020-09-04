@@ -1,7 +1,6 @@
 ---
 id: 5900f4d11000cf542c50ffe4
 challengeType: 5
-isHidden: false
 title: 'Problem 357: Prime generating integers'
 forumTopicId: 302017
 ---

@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf07756
 title: Override All Other Styles by using Important
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cm24rcp'
 forumTopicId: 18249
 ---

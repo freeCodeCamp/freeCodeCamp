@@ -2,7 +2,6 @@
 id: 5ea9997bbec2e9bc47e94db4
 title: Developing a Port Scanner
 challengeType: 11
-isHidden: false
 videoId: z_qkqZS7KZ4
 ---
 

@@ -2,7 +2,6 @@
 id: 587d7fb4367417b2b2512bfd
 title: Add Keywords to Your package.json
 challengeType: 2
-isHidden: false
 forumTopicId: 301526
 ---
 

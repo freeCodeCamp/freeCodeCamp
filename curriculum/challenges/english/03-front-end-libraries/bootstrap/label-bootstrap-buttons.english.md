@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aec908856
 title: Label Bootstrap Buttons
 challengeType: 0
-isHidden: false
 forumTopicId: 18222
 ---
 

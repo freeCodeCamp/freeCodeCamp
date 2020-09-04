@@ -65,9 +65,19 @@ async function buildCurriculum(file, curriculum) {
       `./challenges/_meta/${blockName}/meta.json`
     );
     const blockMeta = require(metaPath);
-    const { name: superBlock } = superBlockInfoFromPath(filePath);
-    const blockInfo = { meta: blockMeta, challenges: [] };
-    curriculum[superBlock].blocks[name] = blockInfo;
+    const { isUpcomingChange } = blockMeta;
+    if (typeof isUpcomingChange !== 'boolean') {
+      throw Error(
+        `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
+      );
+    }
+
+    if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
+      // add the block to the superBlock
+      const { name: superBlock } = superBlockInfoFromPath(filePath);
+      const blockInfo = { meta: blockMeta, challenges: [] };
+      curriculum[superBlock].blocks[name] = blockInfo;
+    }
     return;
   }
   if (name === 'meta.json' || name === '.DS_Store') {
@@ -77,12 +87,19 @@ async function buildCurriculum(file, curriculum) {
   const block = getBlockNameFromPath(filePath);
   const { name: superBlock } = superBlockInfoFromPath(filePath);
   let challengeBlock;
+
+  // TODO: this try block and process exit can all go once errors terminate the
+  // tests correctly.
   try {
     challengeBlock = curriculum[superBlock].blocks[block];
+    if (!challengeBlock) {
+      // this should only happen when a isUpcomingChange block is skipped
+      return;
+    }
   } catch (e) {
-    console.log(superBlock, block);
+    console.log(`failed to create superBlock ${superBlock}`);
     // eslint-disable-next-line no-process-exit
-    process.exit(0);
+    process.exit(1);
   }
   const { meta } = challengeBlock;
 
@@ -162,12 +179,6 @@ Trying to parse ${fullPath}`);
   challenge.required = required.concat(challenge.required || []);
   challenge.template = template;
   challenge.time = time;
-
-  // challenges can be hidden (so they do not appear in all environments e.g.
-  // production), SHOW_HIDDEN controls this.
-  if (process.env.SHOW_HIDDEN === 'true') {
-    challenge.isHidden = false;
-  }
 
   return challenge;
 }

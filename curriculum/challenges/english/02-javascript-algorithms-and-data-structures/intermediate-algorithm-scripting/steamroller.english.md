@@ -3,7 +3,6 @@ id: ab306dbdcc907c7ddfc30830
 title: Steamroller
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16079
 ---
 

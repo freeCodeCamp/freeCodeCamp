@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08827
 title: Create a Bulleted Unordered List
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cDKVPuv'
 forumTopicId: 16814
 ---

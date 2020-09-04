@@ -2,7 +2,6 @@
 id: 587d7fa8367417b2b2512bcc
 title: Display Shapes with SVG
 challengeType: 6
-isHidden: false
 forumTopicId: 301485
 ---
 

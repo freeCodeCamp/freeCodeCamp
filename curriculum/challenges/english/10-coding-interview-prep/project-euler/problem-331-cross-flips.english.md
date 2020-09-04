@@ -1,7 +1,6 @@
 ---
 id: 5900f4b71000cf542c50ffca
 challengeType: 5
-isHidden: false
 title: 'Problem 331: Cross flips'
 forumTopicId: 301989
 ---

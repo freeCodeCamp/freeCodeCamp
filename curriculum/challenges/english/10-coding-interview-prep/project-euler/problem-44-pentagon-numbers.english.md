@@ -1,7 +1,6 @@
 ---
 id: 5900f3981000cf542c50feab
 challengeType: 5
-isHidden: false
 title: 'Problem 44: Pentagon numbers'
 forumTopicId: 302111
 ---

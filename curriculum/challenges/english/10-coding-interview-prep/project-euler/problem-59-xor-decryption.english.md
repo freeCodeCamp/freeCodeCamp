@@ -1,7 +1,6 @@
 ---
 id: 5900f3a81000cf542c50feba
 challengeType: 5
-isHidden: false
 title: 'Problem 59: XOR decryption'
 forumTopicId: 302170
 ---

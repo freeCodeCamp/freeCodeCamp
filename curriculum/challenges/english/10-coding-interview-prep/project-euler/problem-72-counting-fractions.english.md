@@ -1,7 +1,6 @@
 ---
 id: 5900f3b41000cf542c50fec7
 challengeType: 5
-isHidden: false
 title: 'Problem 72: Counting fractions'
 forumTopicId: 302185
 ---

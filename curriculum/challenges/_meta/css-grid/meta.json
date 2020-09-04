@@ -1,5 +1,6 @@
 {
   "name": "CSS Grid",
+  "isUpcomingChange": false,
   "dashedName": "css-grid",
   "order": 6,
   "time": "5 hours",

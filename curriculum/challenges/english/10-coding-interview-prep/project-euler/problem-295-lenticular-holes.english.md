@@ -1,7 +1,6 @@
 ---
 id: 5900f4931000cf542c50ffa6
 challengeType: 5
-isHidden: false
 title: 'Problem 295: Lenticular holes'
 forumTopicId: 301947
 ---

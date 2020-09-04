@@ -2,7 +2,6 @@
 id: 587d7db6367417b2b2512b9b
 title: Find Characters with Lazy Matching
 challengeType: 1
-isHidden: false
 forumTopicId: 301341
 ---
 

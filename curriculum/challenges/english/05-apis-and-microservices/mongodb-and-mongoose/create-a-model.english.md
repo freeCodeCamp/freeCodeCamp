@@ -2,7 +2,6 @@
 id: 587d7fb6367417b2b2512c07
 title: Create a Model
 challengeType: 2
-isHidden: false
 forumTopicId: 301535
 ---
 

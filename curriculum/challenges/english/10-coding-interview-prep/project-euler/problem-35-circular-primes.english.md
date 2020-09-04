@@ -1,7 +1,6 @@
 ---
 id: 5900f38f1000cf542c50fea2
 challengeType: 5
-isHidden: false
 title: 'Problem 35: Circular primes'
 forumTopicId: 302009
 ---

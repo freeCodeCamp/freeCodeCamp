@@ -1,7 +1,6 @@
 ---
 id: 5900f4241000cf542c50ff37
 challengeType: 5
-isHidden: false
 title: 'Problem 184: Triangles containing the origin'
 forumTopicId: 301820
 ---

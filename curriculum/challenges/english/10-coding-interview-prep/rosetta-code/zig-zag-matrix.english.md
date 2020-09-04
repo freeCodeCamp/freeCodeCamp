@@ -2,7 +2,6 @@
 title: Zig-zag matrix
 id: 594810f028c0303b75339ad8
 challengeType: 5
-isHidden: false
 forumTopicId: 302348
 ---
 

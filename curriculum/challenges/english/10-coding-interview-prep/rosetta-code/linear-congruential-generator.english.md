@@ -2,7 +2,6 @@
 id: 5e4ce2f5ac708cc68c1df261
 title: Linear congruential generator
 challengeType: 5
-isHidden: false
 forumTopicId: 385266
 ---
 

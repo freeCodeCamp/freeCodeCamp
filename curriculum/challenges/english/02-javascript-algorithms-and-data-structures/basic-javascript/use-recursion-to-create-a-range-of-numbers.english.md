@@ -2,7 +2,6 @@
 id: 5cc0bd7a49b71cb96132e54c
 title: Use Recursion to Create a Range of Numbers
 challengeType: 1
-isHidden: false
 forumTopicId: 301180
 ---
 

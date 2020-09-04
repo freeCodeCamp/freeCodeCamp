@@ -1,7 +1,6 @@
 ---
 id: 5900f43f1000cf542c50ff51
 challengeType: 5
-isHidden: false
 title: 'Problem 208: Robot Walks'
 forumTopicId: 301849
 ---

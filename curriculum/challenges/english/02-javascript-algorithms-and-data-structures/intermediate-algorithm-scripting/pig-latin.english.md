@@ -3,7 +3,6 @@ id: aa7697ea2477d1316795783b
 title: Pig Latin
 isRequired: true
 challengeType: 5
-isHidden: false
 forumTopicId: 16039
 ---
 

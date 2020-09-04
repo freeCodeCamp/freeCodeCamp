@@ -2,7 +2,6 @@
 id: 5a94fe2669fb03452672e45e
 title: Use grid-area Without Creating an Areas Template
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
 forumTopicId: 301135
 ---
@@ -34,7 +33,7 @@ Using the <code>grid-area</code> property, place the element with <code>item5</c
 
 ```yml
 tests:
-  - text: <code>item5</code> class should have a <code>grid-area</code> property such that it is between the third and fourth horizontal lines and between the first and fourth vertical lines.
+  - text: The <code>item5</code> class should have a <code>grid-area</code> property to make it fill the whole area between the third and fourth horizontal lines, and first and fourth vertical lines.
     testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```

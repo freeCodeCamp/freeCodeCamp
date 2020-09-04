@@ -2,7 +2,6 @@
 id: 587d7790367417b2b2512ab0
 title: Use tabindex to Add Keyboard Focus to an Element
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cmzMDHW'
 forumTopicId: 301027
 ---

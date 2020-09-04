@@ -1,7 +1,6 @@
 ---
 id: 5900f4591000cf542c50ff6c
 challengeType: 5
-isHidden: false
 title: 'Problem 237: Tours on a 4 x n playing board'
 forumTopicId: 301882
 ---

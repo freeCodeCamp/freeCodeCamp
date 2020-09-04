@@ -2,7 +2,6 @@
 id: 587d78ac367417b2b2512af4
 title: Use the flex-direction Property to Make a Column
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
 ---

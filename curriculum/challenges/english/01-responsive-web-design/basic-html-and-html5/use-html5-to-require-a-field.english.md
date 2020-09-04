@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedc08830
 title: Use HTML5 to Require a Field
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMd4EcQ'
 forumTopicId: 18360
 ---

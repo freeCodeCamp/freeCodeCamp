@@ -2,7 +2,6 @@
 id: 587d8248367417b2b2512c3c
 title: Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
 challengeType: 2
-isHidden: false
 forumTopicId: 301573
 ---
 

@@ -1,7 +1,6 @@
 ---
 id: 5900f3d61000cf542c50fee7
 challengeType: 5
-isHidden: false
 title: 'Problem 103: Special subset sums: optimum'
 forumTopicId: 301727
 ---

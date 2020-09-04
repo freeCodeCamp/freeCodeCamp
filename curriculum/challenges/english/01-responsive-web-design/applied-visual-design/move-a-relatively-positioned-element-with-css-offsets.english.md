@@ -2,7 +2,6 @@
 id: 587d781e367417b2b2512aca
 title: Move a Relatively Positioned Element with CSS Offsets
 challengeType: 0
-isHidden: false
 videoUrl: 'https://scrimba.com/c/c9bQEA4'
 forumTopicId: 301065
 ---

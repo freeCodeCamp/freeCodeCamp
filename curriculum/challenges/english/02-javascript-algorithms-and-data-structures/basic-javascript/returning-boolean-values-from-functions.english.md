@@ -2,7 +2,6 @@
 id: 5679ceb97cbaa8c51670a16b
 title: Returning Boolean Values from Functions
 challengeType: 1
-isHidden: false
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
 ---

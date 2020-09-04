@@ -2,7 +2,6 @@
 id: 587d7fa8367417b2b2512bcd
 title: Create a Bar for Each Data Point in the Set
 challengeType: 6
-isHidden: false
 forumTopicId: 301482
 ---
 

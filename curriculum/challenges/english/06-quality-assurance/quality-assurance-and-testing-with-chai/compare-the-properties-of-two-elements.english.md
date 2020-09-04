@@ -2,7 +2,6 @@
 id: 587d824c367417b2b2512c4d
 title: Compare the Properties of Two Elements
 challengeType: 2
-isHidden: false
 forumTopicId: 301588
 ---
 

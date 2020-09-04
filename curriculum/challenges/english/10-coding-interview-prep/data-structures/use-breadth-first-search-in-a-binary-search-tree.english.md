@@ -2,7 +2,6 @@
 id: 587d8258367417b2b2512c7f
 title: Use Breadth First Search in a Binary Search Tree
 challengeType: 1
-isHidden: false
 forumTopicId: 301718
 ---
 
