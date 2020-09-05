@@ -3,7 +3,7 @@ id: bad87fee1348bd9aed608826
 title: Use appendTo to Move Elements with jQuery
 challengeType: 6
 forumTopicId: 18340
-localeTitle: 使用 jQuery 的 appendTo 方法可以移动元素
+localeTitle: 使用 jQuery 的 appendTo 方法移动元素
 ---
 
 ## Description
