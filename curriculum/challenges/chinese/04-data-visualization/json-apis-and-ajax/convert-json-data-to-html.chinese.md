@@ -32,7 +32,7 @@ json.forEach(function(val) {
 ## Instructions
 <section id='instructions'>
 添加一个<code>forEach</code>循环 JSON 数据的方法，并创建 HTML 元素以显示它。
-这些是一下 JSON 示例
+以下是一个 JSON 示例：
 
 ```json
 [

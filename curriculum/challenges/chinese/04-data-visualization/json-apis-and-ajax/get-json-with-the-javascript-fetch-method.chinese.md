@@ -8,7 +8,7 @@ localeTitle: 使用 JavaScript 的 fetch 方法获取 JSON
 
 ## Description
 <section id='description'>
-请求外部数据的另一个方法式使用 JavaScript 的 <code>fetch()</code> 方法。它的作用和 XMLHttpRequest 一致，但是语法更易理解。
+请求外部数据的另一个方法是使用 JavaScript 的 <code>fetch()</code> 方法。它的作用和 XMLHttpRequest 一致，但是语法更易理解。
 下面是使用 GET 请求 <code>/json/cats.json</code> 数据的例子。
 
 ```js

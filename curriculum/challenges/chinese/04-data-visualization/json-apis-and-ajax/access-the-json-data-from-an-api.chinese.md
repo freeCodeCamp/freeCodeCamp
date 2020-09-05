@@ -27,7 +27,7 @@ console.log(json[0].altText);
 
 ## Instructions
 <section id='instructions'>
-对于 "id" 是 2 的猫， 打印<code>codeNames</code>数组的第二个值到控制台，你应该在对象上使用括号或者点表示法（保存在变量<code>json</code>）中来访问该值。
+对于 "id" 是 2 的猫， 打印<code>codeNames</code>数组的第二个值到控制台，你应该在对象上使用括号或者点表示法（保存在变量<code>json</code>中）来访问该值。
 </section>
 
 ## Tests
