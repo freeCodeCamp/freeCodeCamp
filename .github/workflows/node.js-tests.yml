@@ -60,3 +60,7 @@ jobs:
 
       - name: Run Tests
         run: npm test
+        
+      - name: Codecov
+        uses: codecov/codecov-action@v1.0.13
+
