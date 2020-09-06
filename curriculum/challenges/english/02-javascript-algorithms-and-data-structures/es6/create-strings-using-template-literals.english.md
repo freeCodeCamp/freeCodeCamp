@@ -36,7 +36,7 @@ This new way of creating strings gives you more flexibility to create robust str
 
 ## Instructions
 <section id='instructions'>
-Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>. The <code>makeList</code> function should return an array.
+Use template literal syntax with backticks to create an array of list element (<code>li</code>) strings. Each list element's text should be one of the <code>result</code> object's <code>failure</code> array elements and have a <code>class</code> attribute with the value <code>text-warning</code>. The <code>makeList</code> function should return the array of list item strings.
 Use an iterator method (any kind of loop) to get the desired output (shown below).
 
 ```js
@@ -79,10 +79,10 @@ const result = {
 };
 function makeList(arr) {
   // Only change code below this line
-  const failures = [];
+  const failureItems = [];
   // Only change code above this line
 
-  return failures;
+  return failureItems;
 }
 
 const failuresList = makeList(result.failure);
