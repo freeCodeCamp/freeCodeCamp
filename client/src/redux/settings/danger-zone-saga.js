@@ -6,6 +6,9 @@ import { resetUserData, fetchUser, types as appTypes } from '../';
 import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
 import { createFlashMessage } from '../../components/Flash/redux';
 
+//delay redirection after account deletion
+const delay = (ms) => new Promise(res => setTimeout(res, ms))
+
 function* deleteAccountSaga() {
   try {
     yield call(postDeleteAccount);
@@ -15,6 +18,7 @@ function* deleteAccountSaga() {
         message: 'Your account has been successfully deleted'
       })
     );
+    yield delay(3000)
     // remove current user information from application state
     yield put(resetUserData());
     yield call(navigate, '/');
