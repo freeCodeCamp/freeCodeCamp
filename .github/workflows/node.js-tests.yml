@@ -60,3 +60,26 @@ jobs:
 
       - name: Run Tests
         run: npm test
+
+      - name: Code Climate Test Reporter
+        uses: aktions/codeclimate-test-reporter@v1.1.0
+        with:
+          codeclimate-test-reporter-id: 43c4f7307765ad7d9d570aab1dce5868eb7f6d2c8f630785957f93718f5109fa
+
+  coverage:
+    needs: [ test ]
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: '12'
+    - run: npm install -g yarn
+    - run: yarn install
+    - run: yarn build
+    - uses: paambaati/codeclimate-action@v2.2.4
+      env:
+        CC_TEST_REPORTER_ID: 43c4f7307765ad7d9d570aab1dce5868eb7f6d2c8f630785957f93718f5109fa
+      with:
+        coverageCommand: yarn coverage
