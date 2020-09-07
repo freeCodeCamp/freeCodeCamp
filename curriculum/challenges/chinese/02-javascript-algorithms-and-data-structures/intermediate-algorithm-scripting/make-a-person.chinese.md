@@ -2,15 +2,32 @@
 id: a2f1d72d9b908d0bd72bb9f6
 title: Make a Person
 challengeType: 5
-videoUrl: ''
-localeTitle: 做一个人
+forumTopicId: 16020
+localeTitle: 构造一个 Person 类
 ---
 
 ## Description
-<section id="description">使用以下方法填写对象构造函数： <blockquote> getFirstName（）getLastName（）getFullName（）setFirstName（first）setLastName（last）setFullName（firstAndLast） </blockquote>运行测试以查看每个方法的预期输出。采用参数的方法必须只接受一个参数，并且必须是一个字符串。这些方法必须是与对象交互的唯一可用方法。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+在这道题目中，我们需要写一个构造器（constructor）函数。它只接收一个字符串参数<code>firstAndLast</code>，这个参数代表一个英文名的全名（姓和名）。这个构造函数创建出的实例需要具有以下方法：
+
+```js
+getFirstName()
+getLastName()
+getFullName()
+setFirstName(first)
+setLastName(last)
+setFullName(firstAndLast)
+```
+
+你可以点击 “运行测试”，然后就可以在底下的控制台中看到每个测试用例执行的情况。
+方法接收一个字符串格式的参数。
+这些方法必须是与对象进行交互的唯一可用方法。
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,29 +35,29 @@ localeTitle: 做一个人
 
 ```yml
 tests:
-  - text: <code>Object.keys(bob).length</code>应该返回6。
+  - text: <code>Object.keys(bob).length</code>应该返回 6。
     testString: assert.deepEqual(Object.keys(bob).length, 6);
-  - text: <code>bob instanceof Person</code>应该返回true。
+  - text: <code>bob instanceof Person</code>应该返回<code>true</code>。
     testString: assert.deepEqual(bob instanceof Person, true);
-  - text: <code>bob.firstName</code>应返回undefined。
+  - text: <code>bob.firstName</code>应该返回<code>undefined</code>。
     testString: assert.deepEqual(bob.firstName, undefined);
-  - text: <code>bob.lastName</code>应返回undefined。
+  - text: <code>bob.lastName</code>应该返回<code>undefined</code>。
     testString: assert.deepEqual(bob.lastName, undefined);
-  - text: <code>bob.getFirstName()</code>应返回“Bob”。
+  - text: "<code>bob.getFirstName()</code>应该返回 'Bob'。"
     testString: assert.deepEqual(bob.getFirstName(), 'Bob');
-  - text: <code>bob.getLastName()</code>应返回“Ross”。
+  - text: "<code>bob.getLastName()</code>应该返回 'Ross'。"
     testString: assert.deepEqual(bob.getLastName(), 'Ross');
-  - text: <code>bob.getFullName()</code>应该返回“Bob Ross”。
+  - text: "<code>bob.getFullName()</code>应该返回 'Bob Ross'。"
     testString: assert.deepEqual(bob.getFullName(), 'Bob Ross');
-  - text: <code>bob.getFullName()</code>应该在<code>bob.setFirstName(&quot;Haskell&quot;)</code>之后返回“Haskell Ross”。
+  - text: "调用<code>bob.setFirstName('Haskell')</code>之后，<code>bob.getFullName()</code>应该返回 'Haskell Ross'。"
     testString: assert.strictEqual((function () { bob.setFirstName("Haskell"); return bob.getFullName(); })(), 'Haskell Ross');
-  - text: <code>bob.getFullName()</code>应该在<code>bob.setLastName(&quot;Curry&quot;)</code>之后返回“Haskell Curry”。
+  - text: "调用<code>bob.setLastName('Curry')</code>之后，<code>bob.getFullName()</code>应该返回 'Haskell Curry'。"
     testString: assert.strictEqual((function () { var _bob=new Person('Haskell Ross'); _bob.setLastName("Curry"); return _bob.getFullName(); })(), 'Haskell Curry');
-  - text: <code>bob.getFullName()</code>应该在<code>bob.setFullName(&quot;Haskell Curry&quot;)</code>之后返回“Haskell Curry”。
+  - text: "调用<code>bob.setFullName('Haskell Curry')</code>之后，<code>bob.getFullName()</code>应该返回 'Haskell Curry'。"
     testString: assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getFullName(); })(), 'Haskell Curry');
-  - text: <code>bob.getFirstName()</code>应该在<code>bob.setFullName(&quot;Haskell Curry&quot;)</code>之后返回“Haskell”。
+  - text: "调用<code>bob.setFullName('Haskell Curry')</code>之后，<code>bob.getFirstName()</code>应该返回 'Haskell'。"
     testString: assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getFirstName(); })(), 'Haskell');
-  - text: <code>bob.getLastName()</code>应该在<code>bob.setFullName(&quot;Haskell Curry&quot;)</code>之后返回“Curry”。
+  - text: "调用<code>bob.setFullName('Haskell Curry')</code>之后，<code>bob.getLastName()</code>应该返回 'Curry'。"
     testString: assert.strictEqual((function () { bob.setFullName("Haskell Curry"); return bob.getLastName(); })(), 'Curry');
 
 ```
@@ -63,7 +80,6 @@ var Person = function(firstAndLast) {
 
 var bob = new Person('Bob Ross');
 bob.getFullName();
-
 ```
 
 </div>
@@ -75,8 +91,47 @@ bob.getFullName();
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var Person = function(firstAndLast) {
+
+  var firstName, lastName;
+
+  function updateName(str) {
+    firstName = str.split(" ")[0];
+    lastName = str.split(" ")[1];
+  }
+
+  updateName(firstAndLast);
+
+  this.getFirstName = function(){
+    return firstName;
+  };
+
+  this.getLastName = function(){
+    return lastName;
+  };
+
+  this.getFullName = function(){
+    return firstName + " " + lastName;
+  };
+
+  this.setFirstName = function(str){
+    firstName = str;
+  };
+
+
+  this.setLastName = function(str){
+    lastName = str;
+  };
+
+  this.setFullName = function(str){
+    updateName(str);
+  };
+};
+
+var bob = new Person('Bob Ross');
+bob.getFullName();
 ```
 
-/section>
+</section>
