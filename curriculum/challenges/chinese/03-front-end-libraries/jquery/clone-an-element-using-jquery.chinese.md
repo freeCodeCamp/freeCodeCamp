@@ -2,15 +2,23 @@
 id: bad87fee1348bd9aed508826
 title: Clone an Element Using jQuery
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用jQuery克隆元素
+forumTopicId: 16780
+localeTitle: 使用 jQuery 克隆元素
 ---
 
 ## Description
-<section id="description">除了移动元素，您还可以将它们从一个地方复制到另一个地方。 jQuery有一个名为<code>clone()</code>的函数，它可以复制一个元素。例如，如果我们想将<code>target2</code>从我们的<code>left-well</code>复制到<code>right-well</code> ，我们将使用： <code>$(&quot;#target2&quot;).clone().appendTo(&quot;#right-well&quot;);</code>您是否注意到这涉及将两个jQuery函数粘在一起？这称为<code>function chaining</code> ，它是使用jQuery完成任务的便捷方式。克隆你的<code>target5</code>元素并将其附加到你的<code>left-well</code> 。 </section>
+<section id='description'>
+除了移动标签，也可以把元素从一个地方复制到另一地方。
+jQuery 有一个<code>clone()</code>方法，可以复制标签。
+例如，如果想把<code>target2</code>从<code>left-well</code>复制到<code>right-well</code>，可以设置如下：
+<code>$("#target2").clone().appendTo("#right-well");</code>
+你是否注意到这两个 jQuery 方法连在一起了吗？这被称为<code>链式调用（function chaining）</code>，是一种用 jQuery 实现效果的简便方法。
+克隆<code>target5</code>标签并附加到<code>left-well</code>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,11 +26,11 @@ localeTitle: 使用jQuery克隆元素
 
 ```yml
 tests:
-  - text: 你的<code>target5</code>元素应该在你的<code>right-well</code> 。
+  - text: <code>target5</code>标签应该在<code>right-well</code>内。
     testString: assert($("#right-well").children("#target5").length > 0);
-  - text: 您的<code>target5</code>元素的副本也应该在您的<code>left-well</code> 。
+  - text: 克隆<code>target5</code>标签并放在<code>left-well</code>内。
     testString: assert($("#left-well").children("#target5").length > 0);
-  - text: 只使用jQuery来移动这些元素。
+  - text: 仅用 jQuery 移动这些标签。
     testString: assert(!code.match(/class.*animated/g));
 
 ```
@@ -42,6 +50,51 @@ tests:
     $("#target4").remove();
     $("#target2").appendTo("#right-well");
 
+  });
+</script>
+
+<!-- 请修改本行以上的代码 -->
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+
+
+
+</section>
+
+## Solution
+<section id='solution'>
+
+```html
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
   });
 </script>
 
@@ -68,20 +121,6 @@ tests:
     </div>
   </div>
 </div>
-
 ```
-
-</div>
-
-
 
 </section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

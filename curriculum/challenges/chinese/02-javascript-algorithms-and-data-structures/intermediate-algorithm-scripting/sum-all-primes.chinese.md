@@ -3,15 +3,26 @@ id: a3bfc1673c0526e06d3ac698
 title: Sum All Primes
 isRequired: true
 challengeType: 5
-videoUrl: ''
-localeTitle: Sum All Primes
+forumTopicId: 16085
+localeTitle: 对所有素数求和
 ---
 
 ## Description
-<section id="description">将所有素数加起来并包括所提供的数字。素数被定义为大于1的数，并且只有两个除数，一个和一个除数。例如，2是素数，因为它只能被1和2整除。提供的号码可能不是主要的。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+
+质数是大于 1 且仅可以被 1 和自己整除的数。
+比如，2 就是一个质数，因为它只可以被 1 和 2（它本身）整除。
+相反，4 不是质数，因为它可以被 1, 2 和 4 整除。
+
+重写 `sumPrimes` 使其返回所有小于或等于该数字的质数
+的和。
+
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -21,9 +32,9 @@ localeTitle: Sum All Primes
 tests:
   - text: <code>sumPrimes(10)</code>应该返回一个数字。
     testString: assert.deepEqual(typeof sumPrimes(10), 'number');
-  - text: <code>sumPrimes(10)</code>应该返回17。
+  - text: <code>sumPrimes(10)</code>应该返回 17。
     testString: assert.deepEqual(sumPrimes(10), 17);
-  - text: <code>sumPrimes(977)</code>应该返回73156。
+  - text: <code>sumPrimes(977)</code>应该返回 73156。
     testString: assert.deepEqual(sumPrimes(977), 73156);
 
 ```
@@ -41,7 +52,6 @@ function sumPrimes(num) {
 }
 
 sumPrimes(10);
-
 ```
 
 </div>
@@ -53,8 +63,33 @@ sumPrimes(10);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function eratosthenesArray(n) {
+    var primes = [];
+    if (n > 2) {
+        var half = n>>1;
+        var sieve = Array(half);
+        for (var i = 1, limit = Math.sqrt(n)>>1; i <= limit; i++) {
+            if (!sieve[i]) {
+                for (var step = 2*i+1, j = (step*step)>>1; j < half; j+=step) {
+                    sieve[j] = true;
+                }
+            }
+        }
+        primes.push(2);
+        for (var p = 1; p < half; p++) {
+            if (!sieve[p]) primes.push(2*p+1);
+        }
+    }
+    return primes;
+}
+
+function sumPrimes(num) {
+  return eratosthenesArray(num+1).reduce(function(a,b) {return a+b;}, 0);
+}
+
+sumPrimes(10);
 ```
 
-/section>
+</section>

@@ -3,15 +3,21 @@ id: ae9defd7acaf69703ab432ea
 title: Smallest Common Multiple
 isRequired: true
 challengeType: 5
-videoUrl: ''
-localeTitle: 最小的共同多重
+forumTopicId: 16075
+localeTitle: 最小公倍数
 ---
 
 ## Description
-<section id="description">找到所提供参数的最小公倍数，可以均匀地除以这些参数，以及这些参数之间范围内的所有序号。范围将是两个数字的数组，不一定按数字顺序排列。例如，如果给定1和3，找到1和3的最小公倍数，它们也可以被1到3 <em>之间</em>的所有数字整除。这里的答案是6.记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a>如果你得到卡住。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+在这道题目中，我们需要写一个函数，它接收一个包含两个数字的数组参数<code>arr</code>，它的返回值为这两个数字范围内所有数字（包含这两个数字）的最小公倍数。
+注意，较小数不一定总是出现在数组的第一个元素。
+比如，传入<code>[1, 3]</code>，那么函数的返回结果应为 1、2、3 的最小公倍数，即为 6。
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,17 +25,17 @@ localeTitle: 最小的共同多重
 
 ```yml
 tests:
-  - text: '<code>smallestCommons([1, 5])</code>应返回一个数字。'
+  - text: <code>smallestCommons([1, 5])</code>应该返回一个数字。
     testString: assert.deepEqual(typeof smallestCommons([1, 5]), 'number');
-  - text: '<code>smallestCommons([1, 5])</code>应该返回60。'
+  - text: <code>smallestCommons([1, 5])</code>应该返回 60。
     testString: assert.deepEqual(smallestCommons([1, 5]), 60);
-  - text: '<code>smallestCommons([5, 1])</code>应该返回60。'
+  - text: <code>smallestCommons([5, 1])</code>应该返回 60。
     testString: assert.deepEqual(smallestCommons([5, 1]), 60);
-  - text: '<code>smallestCommons([2, 10])</code> 2,10 <code>smallestCommons([2, 10])</code>应返回2520。'
+  - text: <code>smallestCommons([2, 10])</code>应该返回 2520。.
     testString: assert.deepEqual(smallestCommons([2, 10]), 2520);
-  - text: '<code>smallestCommons([1, 13])</code> 1,13 <code>smallestCommons([1, 13])</code>应返回360360。'
+  - text: <code>smallestCommons([1, 13])</code>应该返回 360360。
     testString: assert.deepEqual(smallestCommons([1, 13]), 360360);
-  - text: '<code>smallestCommons([23, 18])</code> 23,18 <code>smallestCommons([23, 18])</code>应返回6056820。'
+  - text: <code>smallestCommons([23, 18])</code>应该返回 6056820。
     testString: assert.deepEqual(smallestCommons([23, 18]), 6056820);
 
 ```
@@ -48,7 +54,6 @@ function smallestCommons(arr) {
 
 
 smallestCommons([1,5]);
-
 ```
 
 </div>
@@ -60,8 +65,27 @@ smallestCommons([1,5]);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function gcd(a, b) {
+    while (b !== 0) {
+        a = [b, b = a % b][0];
+    }
+    return a;
+}
+
+function lcm(a, b) {
+    return (a * b) / gcd(a, b);
+}
+
+function smallestCommons(arr) {
+  arr.sort(function(a,b) {return a-b;});
+  var rng = [];
+  for (var i = arr[0]; i <= arr[1]; i++) {
+    rng.push(i);
+  }
+  return rng.reduce(lcm);
+}
 ```
 
-/section>
+</section>

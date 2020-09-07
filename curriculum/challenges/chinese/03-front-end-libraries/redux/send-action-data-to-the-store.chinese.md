@@ -3,24 +3,30 @@ id: 5a24c314108439a4d4036155
 title: Send Action Data to the Store
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 将操作数据发送到商店
+forumTopicId: 301448
+localeTitle: 发送 Action Data 给 Store
 ---
 
 ## Description
-<section id="description">到目前为止，您已经学会了如何将操作分派给Redux存储，但到目前为止，这些操作还没有包含除<code>type</code>之外的任何信息。您还可以发送特定数据以及您的操作。事实上，这是非常常见的，因为动作通常源于一些用户交互，并倾向于携带一些数据。 Redux商店经常需要了解这些数据。 </section>
+<section id='description'>
+到目前为止，你已经学会了如何将 action dispatch 给 Redux store，但到目前为止，这些 action 并未包含除 <code>type</code>之外的任何信息。你还可以发送特定数据和 action 一起。事实上，这是非常常见的，因为 action 通常源于一些用户交互，并且往往会携带一些数据，Redux store 经常需要知道这些数据。
+</section>
 
 ## Instructions
-<section id="instructions">在代码编辑器中定义了一个基本的<code>notesReducer()</code>和一个<code>addNoteText()</code>动作创建器。完成<code>addNoteText()</code>函数的主体，以便它返回一个<code>action</code>对象。该对象应包含值为<code>ADD_NOTE</code>的<code>type</code>属性，以及设置为传递给action creator的<code>note</code>数据的<code>text</code>属性。当您致电操作创建者时，您将传递可以访问该对象的特定注释信息。接下来，完成在<code>notesReducer()</code>编写<code>switch</code>语句。您需要添加一个处理<code>addNoteText()</code>操作的案例。只要存在类型为<code>ADD_NOTE</code>的操作，就应该触发此情况，并且应该将传入<code>action</code>的<code>text</code>属性作为新<code>state</code> 。该操作将在代码底部发送。完成后，运行代码并观察控制台。这就是将特定于操作的数据发送到商店并在更新存储<code>state</code>时使用它所需的全部内容。 </section>
+<section id='instructions'>
+在代码编辑器中定义了一个基础的<code>notesReducer()</code>和<code>addNoteText()</code> action creator。完成<code>addNoteText()</code>函数的主体，这样它就会返回一个<code>action</code>对象。该对象应该包含一个<code>type</code>属性，其值为<code>ADD_NOTE</code>，还有一个<code>text</code>属性通过 action creator 将值设置为<code>note</code>。当你调用 action creator 时，你需要传入可以访问该对象的特定注释信息。
+接下来，完成在<code>notesReducer()</code>中编写的<code>switch</code>语句。你需要添加一个处理<code>addNoteText()</code>操作的选项。只要存在<code>ADD_NOTE</code>类型的 action，就应该触发 case，并且它应该在传入的<code>action</code>上返回<code>text</code>属性作为新的<code>state</code>
+这个 action 将在代码底部发送。一旦完成后，运行代码并观察控制台。这就是将特定于 action 的数据发送到 store 并在更新 store <code>state</code>时使用它所需的全部内容。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 动作创建者<code>addNoteText</code>应返回具有键<code>type</code>和<code>text</code>的对象。
+  - text: action creator <code>addNoteText</code>应该返回一个包含<code>type</code>和<code>text</code>的对象。
     testString: assert((function() { const addNoteFn = addNoteText('__TEST__NOTE'); return addNoteFn.type === ADD_NOTE && addNoteFn.text === '__TEST__NOTE' })());
-  - text: 使用<code>addNoteText</code>操作创建程序调度<code>ADD_NOTE</code>类型的操作应将<code>state</code>更新为传递给操作创建者的字符串。
+  - text: dispatch 一个 action creator 是<code>addNoteText</code>的action<code>ADD_NOTE</code>，应将<code>state</code>更新为 action creator 传递的字符串。
     testString: assert((function() { const initialState = store.getState(); store.dispatch(addNoteText('__TEST__NOTE')); const newState = store.getState(); return initialState !== newState && newState === '__TEST__NOTE' })());
 
 ```
@@ -37,18 +43,18 @@ const ADD_NOTE = 'ADD_NOTE';
 
 const notesReducer = (state = 'Initial State', action) => {
   switch(action.type) {
-    // change code below this line
+    // 修改此行下方的代码
 
-    // change code above this line
+    // 修改此行上方的代码
     default:
       return state;
   }
 };
 
 const addNoteText = (note) => {
-  // change code below this line
+  // 修改此行下方的代码
 
-  // change code above this line
+  // 修改此行上方的代码
 };
 
 const store = Redux.createStore(notesReducer);
@@ -56,7 +62,6 @@ const store = Redux.createStore(notesReducer);
 console.log(store.getState());
 store.dispatch(addNoteText('Hello!'));
 console.log(store.getState());
-
 ```
 
 </div>
@@ -69,7 +74,33 @@ console.log(store.getState());
 <section id='solution'>
 
 ```js
-// solution required
+const ADD_NOTE = 'ADD_NOTE';
+
+const notesReducer = (state = 'Initial State', action) => {
+  switch(action.type) {
+    // change code below this line
+    case ADD_NOTE:
+      return action.text;
+    // change code above this line
+    default:
+      return state;
+  }
+};
+
+const addNoteText = (note) => {
+  // change code below this line
+  return {
+    type: ADD_NOTE,
+    text: note
+  }
+  // change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText('Hello Redux!'));
+console.log(store.getState());
 ```
 
-/section>
+</section>

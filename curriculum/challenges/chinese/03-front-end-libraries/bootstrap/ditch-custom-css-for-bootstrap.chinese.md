@@ -2,15 +2,22 @@
 id: bad87fee1347bd9aedf08845
 title: Ditch Custom CSS for Bootstrap
 challengeType: 0
-videoUrl: ''
-localeTitle: Ditch Custom CSS for Bootstrap
+forumTopicId: 17565
+localeTitle: 用 Bootstrap 来取代我们之前的自定义样式
 ---
 
 ## Description
-<section id="description">我们可以使用Bootstrap的内置样式代替我们之前创建的自定义样式来清理代码并使我们的Cat Photo App看起来更加传统。别担心 - 以后会有足够的时间来定制CSS。从<code>style</code>元素中删除<code>.smaller-image</code> <code>.red-text</code> ， <code>p</code>和<code>.smaller-image</code> CSS声明，以便<code>style</code>元素中剩下的唯一声明是<code>h2</code>和<code>thick-green-border</code> 。然后删除包含死链接的<code>p</code>元素。然后从<code>h2</code>元素中删除<code>red-text</code>类，并将其替换为<code>text-primary</code> Bootstrap类。最后，从第一个<code>img</code>元素中删除“small-image”类，并将其替换为<code>img-responsive</code>类。 </section>
+<section id='description'>
+现在我们可以清理一下之前代码，用 Bootstrap 的内置样式来替换我们之前定义的样式，这样会让我们的 Cat Photo App 看起来更简洁些。
+别担心————以后我们会有大把时间来自定义我们的 CSS 样式的。
+删除 <code>style</code> 元素里的 <code>.red-text</code>, <code>p</code>, 和 <code>.smaller-image</code> CSS 声明，使 <code>style</code> 元素留下的声明只有 <code>h2</code> 和 <code>thick-green-border</code>.
+删除包含死链接的 <code>p</code> 元素。 然后将 <code>h2</code> 的 <code>red-text</code> class 替换为 Bootstrap 的 <code>text-primary</code> class.
+最后, 将你第一个 <code>img</code> 元素的 "smaller-image" class 替换为 <code>img-responsive</code> class.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,15 +25,15 @@ localeTitle: Ditch Custom CSS for Bootstrap
 
 ```yml
 tests:
-  - text: 你的h2元素不应该有<code>red-text</code>类。
+  - text: h2 元素的 class 不应为 <code>red-text</code>。
     testString: assert(!$("h2").hasClass("red-text"));
-  - text: 您的h2元素现在应该具有<code>text-primary</code>类。
+  - text: h2 元素的 class 应为 <code>text-primary</code>。
     testString: assert($("h2").hasClass("text-primary"));
-  - text: 您的段落元素不应再使用<code>Monospace</code> 。
+  - text: 你的段落元素（p）应该不再使用 <code>Monospace</code> 字体。
     testString: assert(!$("p").css("font-family").match(/monospace/i));
-  - text: 从顶部图像中删除<code>smaller-image</code>类。
+  - text: 移除你第一张图片的 class 属性 <code>smaller-image</code>。
     testString: assert(!$("img").hasClass("smaller-image"));
-  - text: 将<code>img-responsive</code>类添加到您的顶部图像。
+  - text: 给你的第一张图片添加 class 属性 <code>img-responsive</code>。
     testString: assert($(".img-responsive").length > 1);
 
 ```
@@ -107,7 +114,6 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
-
 ```
 
 </div>
@@ -119,8 +125,60 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  h2 {
+    font-family: Lobster, Monospace;
+  }
+
+  .thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+  }
+</style>
+
+<div class="container-fluid">
+  <h2 class="text-primary text-center">CatPhotoApp</h2>
+
+  <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
+  <div class="row">
+    <div class="col-xs-4">
+      <button class="btn btn-block btn-primary">Like</button>
+    </div>
+    <div class="col-xs-4">
+      <button class="btn btn-block btn-info">Info</button>
+    </div>
+    <div class="col-xs-4">
+      <button class="btn btn-block btn-danger">Delete</button>
+    </div>
+  </div>
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+    <label><input type="checkbox" name="personality"> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Crazy</label>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</div>
 ```
 
-/section>
+</section>
