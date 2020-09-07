@@ -40,7 +40,7 @@ describe('isValidUsername', () => {
   });
 
   it('rejects all other ASCII characters', () => {
-    const whiteList = ['-', '_', '+'];
+    const allowedCharactersList = ['-', '_', '+'];
     const numbers = [48, 57];
     const upperCase = [65, 90];
     const lowerCase = [97, 122];
@@ -50,7 +50,7 @@ describe('isValidUsername', () => {
     for (let code = 0; code <= finalCode; code++) {
       let char = String.fromCharCode(code);
       let expected = invalidCharError;
-      if (whiteList.includes(char)) expected = validationSuccess;
+      if (allowedCharactersList.includes(char)) expected = validationSuccess;
       if (inRange(code, numbers)) expected = validationSuccess;
       if (inRange(code, upperCase)) expected = validationSuccess;
       if (inRange(code, lowerCase)) expected = validationSuccess;
