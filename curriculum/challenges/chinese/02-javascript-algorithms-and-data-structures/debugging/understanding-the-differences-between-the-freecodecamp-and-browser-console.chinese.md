@@ -2,27 +2,34 @@
 id: 587d7b83367417b2b2512b37
 title: Understanding the Differences between the freeCodeCamp and Browser Console
 challengeType: 1
-videoUrl: ''
-localeTitle: 了解freeCodeCamp和浏览器控制台之间的差异
+forumTopicId: 301193
+localeTitle: 了解 freeCodeCamp 和浏览器控制台之间的差异
 ---
 
 ## Description
-<section id="description">您可能已经注意到一些freeCodeCamp JavaScript挑战包括他们自己的控制台。此控制台的行为与您在上一次挑战中使用的浏览器控制台略有不同。以下挑战旨在强调freeCodeCamp控制台与浏览器控制台之间的一些差异。首先，浏览器控制台。当您在浏览器中加载并运行普通JavaScript文件时， <code>console.log()</code>语句将准确打印您告诉他们打印到浏览器控制台的确切次数。在浏览器中的文本编辑器中，过程略有不同，最初可能会让人感到困惑。传递给文本编辑器块中的<code>console.log()</code>值运行每组测试以及您在代码中进行的任何函数调用的一次。这有助于一些有趣的行为，并且可能会在开始时将您绊倒，因为您希望只看到一次的记录值可能会打印出更多次，具体取决于测试次数和传递给这些测试的值。如果您只想查看单个输出而不必担心运行测试周期，可以使用<code>console.clear()</code> 。 </section>
+<section id='description'>
+你可能已经注意到一些 freeCodeCamp JavaScript 的挑战有自己的控制台。这些控制台的行为与上一次挑战中使用的浏览器控制台略有不同。
+以下挑战旨在强调 freeCodeCamp 控制台与浏览器控制台之间的一些差异。
+对于浏览器控制台。当在浏览器中加载并运行 JavaScript 文件时，<code>console.log()</code>语句会在控制台中按照调用的次数准确地打印出要求的内容。然而，在 freeCodeCamp 的代码编辑器中使用<code>console.log()</code>会略有不同，一开始可能会让你感到困惑。
+在 freeCodeCamp 代码编辑器中，传给<code>console.log()</code>的值会在每组测试执行的时候输出。另外，如果在代码中还手动调用过挑战题目的函数，调用几次就会增加几次传入值的输出。
+这就产生了一些有趣的行为，并可能在一开始就让你感到困惑，因为你觉得只会输出一次的值可能会输出多次，具体次数取决于挑战题目本身测试的数量以及这些测试调用挑战函数的方式。
+如果你不打算执行挑战的测试，而只想查看自己调用<code>console.log()</code>的输出，可以使用<code>console.clear()</code>。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>console.log()</code>在指示的代码中打印变量。 </section>
+<section id='instructions'>
+首先，使用 <code>console.clear()</code> 清空浏览器控制台。然后使用<code>console.log()</code>在代码中指定的位置打印 <code>output</code> 变量。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 使用<code>console.log()</code>打印<code>outputTwo</code>变量。在浏览器控制台中，这应该打印出变量的值两次。
-    testString: 'assert(code.match(/console\.log\(outputTwo\)/g), "Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.");'
-  - text: 使用<code>console.log()</code>打印<code>outputOne</code>变量。
-    testString: 'assert(code.match(/console\.log\(outputOne\)/g), "Use <code>console.log()</code> to print the <code>outputOne</code> variable.");'
-  - text: 使用<code>console.clear()</code>修改输出，以便<code>outputOne</code>变量只输出一次。
-    testString: 'assert(code.match(/^(\s*console.clear\(\);?\s*)$/gm), "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.");'
+  - text: 应该使用 <code>console.clear()</code> 来清空浏览器控制台。
+    testString: const removeJSComments = code.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, ''); const noSpaces = removeJSComments.replace(/\s/g, ''); assert(noSpaces.match(/console.clear\(\)/));
+  - text: 使用<code>console.log()</code>输出变量<code>output</code>的值。
+    testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/console\.log\(output\)/));
 
 ```
 
@@ -34,17 +41,15 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Open your browser console
-let outputTwo = "This will print to the browser console 2 times";
-// Use console.log() to print the outputTwo variable
+// Open your browser console.
+let output = "Get this to log once in the browser console and twice in the freeCodeCamp console";
+// Use console.clear() on the next line to clear the browser console.
 
 
-let outputOne = "Try to get this to log only once to the browser console";
-// Use console.clear() in the next line to print the outputOne only once
+// Use console.log() to print the output variable.
 
 
-// Use console.log() to print the outputOne variable
-
+// Check the two consoles to see the difference. The freeCodeCamp console should have printed the variable twice, once for each test of this challenge. The browser console should only print the variable once because you cleared it first.
 ```
 
 </div>
@@ -56,8 +61,18 @@ let outputOne = "Try to get this to log only once to the browser console";
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+// Open your browser console.
+let output = "Get this to log once in the browser console and twice in the freeCodeCamp console";
+// Use console.clear() on the next line to clear the browser console.
+console.clear();
+
+// Use console.log() to print the output variable.
+console.log(output);
+
+// Check the two consoles to see the difference. The freeCodeCamp console should have printed the variable twice, one for each test of this challenge. The browser console should only print the variable once becuase you cleared it first.
 ```
 
-/section>
+</section>
+

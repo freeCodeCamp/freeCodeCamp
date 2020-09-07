@@ -2,28 +2,51 @@
 id: 587d7b86367417b2b2512b3b
 title: Catch Off By One Errors When Using Indexing
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用索引时捕获一个错误
+forumTopicId: 301189
+localeTitle: 捕获使用索引的时候出现的错误
 ---
 
 ## Description
-<section id="description">当您尝试定位字符串或数组的特定索引（切片或访问段）或循环索引时，会<code>Off by one errors</code> （有时称为OBOE）。 JavaScript索引从零开始，而不是一个，这意味着最后一个索引总是小于项目的长度。如果您尝试访问等于长度的索引，程序可能会抛出“索引超出范围”引用错误或打印<code>undefined</code> 。当您使用将索引范围作为参数的字符串或数组方法时，它有助于阅读文档并了解它们是否包含（指定索引处的项目是否是返回的一部分）。以下是一些错误的示例： <blockquote> let alphabet =“abcdefghijklmnopqrstuvwxyz”; <br>让len = alphabet.length; <br> for（let i = 0; i &lt;= len; i ++）{ <br> //最后循环一次太多次<br>的console.log（字母[I]）; <br> } <br> for（let j = 1; j &lt;len; j ++）{ <br> //循环一次太少次并错过索引0处的第一个字符<br>的console.log（字母[J]）; <br> } <br> for（let k = 0; k &lt;len; k ++）{ <br> // Goldilocks赞成 - 这是正确的<br>的console.log（字母表[K]）; <br> } </blockquote></section>
+<section id='description'>
+当试图访问字符串或数组的特定索引（分割或访问一个片段）或循环索引时，有时会出现<code>Off by one errors</code>错误（有时称为 OBOE）。JavaScript 索引从<code>0</code>开始，而不是<code>1</code>，这意味着最后一个索引总会比字符串或数组的长度少 1。如果尝试访问等于长度的索引，程序可能会抛出“索引超出范围”引用错误或打印出<code>undefined</code>。
+当使用将索引范围作为参数的字符串或数组方法时，阅读相关的文档并了解参数中的索引的包含性（即是否考虑进返回值中）很重要。以下是一些错误的示例：
+
+```js
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
+let len = alphabet.length;
+for (let i = 0; i <= len; i++) {
+  // 在最后多了一次循环
+  console.log(alphabet[i]);
+}
+for (let j = 1; j < len; j++) {
+  // 循环少了一次，漏掉了索引 0 处的字符
+  console.log(alphabet[j]);
+}
+for (let k = 0; k < len; k++) {
+  // 不多不少，这才是正确的
+  console.log(alphabet[k]);
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">修复以下函数中的两个索引错误，以便将所有数字1到5打印到控制台。 </section>
+<section id='instructions'>
+修复以下函数中的两个索引错误，以便将 1 到 5 之间（包含 1 和 5）的所有数字打印到控制台。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该设置循环的初始条件，以便从第一个索引开始。
+  - text: 你应该设置循环的初始条件，使循环从第一个索引开始。
     testString: assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
-  - text: 您的代码应该修复循环的初始条件，以便索引从0开始。
+  - text: 你应修复循环的初始条件，使循环从索引 0 开始。
     testString: assert(!code.match(/i\s?=\s*?1\s*?;/g));
-  - text: 您的代码应设置循环的终端条件，以便它停在最后一个索引处。
+  - text: 你应设置循环的终止条件，使循环在最后一个索引处停止。
     testString: assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
-  - text: 您的代码应该修复循环的终端条件，使其在长度之前停止在1。
+  - text: 你应修复循环的终止条件，使循环在索引为字符串长度减 1 时停止。
     testString: assert(!code.match(/i\s*?<=\s*?len;/g));
 
 ```
@@ -47,7 +70,6 @@ function countToFive() {
 }
 
 countToFive();
-
 ```
 
 </div>
@@ -60,7 +82,18 @@ countToFive();
 <section id='solution'>
 
 ```js
-// solution required
+function countToFive() {
+ let firstFive = "12345";
+ let len = firstFive.length;
+ // Fix the line below
+ for (let i = 0; i < len; i++) {
+ // Do not alter code below this line
+   console.log(firstFive[i]);
+ }
+}
+
+countToFive();
 ```
 
-/section>
+
+</section>
