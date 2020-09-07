@@ -2,15 +2,19 @@
 id: bad87fee1348bd9aec908847
 title: Split Your Bootstrap Row
 challengeType: 0
-videoUrl: ''
-localeTitle: 拆分你的Bootstrap行
+forumTopicId: 18306
+localeTitle: 分割你的 Bootstrap Row
 ---
 
 ## Description
-<section id="description">现在我们有了一个Bootstrap Row，让我们把它分成两列来容纳我们的元素。使用类<code>col-xs-6</code>在行中创建两个<code>div</code>元素。 </section>
+<section id='description'>
+现在我们已经有了一个 Bootstrap Row，让我们把它分成两列来放置我们的元素。
+在行内创建两个 class 属性为 <code>col-xs-6</code> 的 <code>div</code> 元素。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,9 +22,9 @@ localeTitle: 拆分你的Bootstrap行
 
 ```yml
 tests:
-  - text: 在<code>div class=&quot;row&quot;</code>元素中嵌套两个<code>div class=&quot;col-xs-6&quot;</code>元素。
+  - text: "将两个 <code>div class='col-xs-6'</code> 元素内嵌入你的 <code>div class='row'</code> 元素中。"
     testString: assert($("div.row > div.col-xs-6").length > 1);
-  - text: 确保所有<code>div</code>元素都有结束标记。
+  - text: 确保你的 <code>div</code> 元素都有一个闭合标签。
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
@@ -40,7 +44,6 @@ tests:
 
   </div>
 </div>
-
 ```
 
 </div>
@@ -52,8 +55,14 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6"></div>
+    <div class="col-xs-6"></div>
+  </div>
+</div>
 ```
 
-/section>
+</section>

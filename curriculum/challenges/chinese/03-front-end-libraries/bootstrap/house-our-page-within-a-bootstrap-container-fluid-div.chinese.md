@@ -2,15 +2,19 @@
 id: bad87fee1348bd9aec908746
 title: House our page within a Bootstrap container-fluid div
 challengeType: 0
-videoUrl: ''
-localeTitle: 将我们的页面放在Bootstrap容器 - 流体div中
+forumTopicId: 18198
+localeTitle: 将我们的页面放在 Fluid 容器中
 ---
 
 ## Description
-<section id="description">现在让我们确保您网页上的所有内容都是移动响应式的。让我们使用类<code>container-fluid</code>将<code>h3</code>元素嵌套在<code>div</code>元素<code>container-fluid</code> 。 </section>
+<section id='description'>
+现在让我们确保页面所有内容应该都是响应式的。
+将我们的 <code>h3</code> 元素内嵌进一个具有 <code>container-fluid</code> class 的<code>div</code> 元素中。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,11 +22,11 @@ localeTitle: 将我们的页面放在Bootstrap容器 - 流体div中
 
 ```yml
 tests:
-  - text: 你的<code>div</code>元素应该有class <code>container-fluid</code> 。
+  - text: <code>div</code> 元素 class 属性应该为 <code>container-fluid</code>。
     testString: assert($("div").hasClass("container-fluid"));
-  - text: 确保每个<code>div</code>元素都有一个结束标记。
+  - text: 确保每一个 <code>div</code> 元素都有一个闭合标签。
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
-  - text: 将<code>h3</code>元素<code>div</code>元素中。
+  - text: <code>h3</code> 元素应该内嵌于 <code>div</code> 元素。
     testString: assert($("div").children("h3").length >0);
 
 ```
@@ -48,8 +52,10 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+</div>
 ```
 
-/section>
+</section>
