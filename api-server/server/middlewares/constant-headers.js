@@ -1,12 +1,12 @@
 import { homeLocation } from '../../../config/env';
-import { whitelistOrigins } from '../../../config/cors-settings';
+import { allowedOrigins } from '../../../config/cors-settings';
 
 export default function constantHeaders() {
   return function(req, res, next) {
     if (
       req.headers &&
       req.headers.origin &&
-      whitelistOrigins.includes(req.headers.origin)
+      allowedOrigins.includes(req.headers.origin)
     ) {
       res.header('Access-Control-Allow-Origin', req.headers.origin);
     } else {

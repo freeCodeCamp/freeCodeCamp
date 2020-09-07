@@ -3,32 +3,36 @@ id: 5a24c314108439a4d4036157
 title: Write a Counter with Redux
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 用Redux写一个计数器
+forumTopicId: 301453
+localeTitle: 用 Redux 写一个计数器
 ---
 
 ## Description
-<section id="description">现在您已经了解了Redux的所有核心原则！您已经了解了如何创建操作和操作创建器，创建Redux存储，针对存储分派操作以及使用纯reducer设计状态更新。您甚至已经了解了如何使用reducer组合管理复杂状态并处理异步操作。这些示例过于简单，但这些概念是Redux的核心原则。如果您理解它们，那么您已准备好开始构建自己的Redux应用程序。接下来的挑战涵盖了有关<code>state</code>不变性的一些细节，但首先，这里是对迄今为止所学到的所有内容的回顾。 </section>
+<section id='description'>
+现在你已经了解了 Redux 的所有核心原则！你已经了解了如何创建 action 和 action creator，创建 Redux store，通过 store dispatch action，以及使用纯粹的 reducer 设计状态更新。你甚至已经看到过如何使用 reducer 组合管理复杂状态并处理异步操作。这些例子很简单，但这些概念是 Redux 的核心原则。如果你理解它们，你就可以开始构建自己的 Redux 应用了。接下来的挑战包括关于<code>state</code>不变性的一些细节，但是，这里是对你到目前为止学到的所有内容的回顾。
+</section>
 
 ## Instructions
-<section id="instructions">在本课程中，您将从头开始使用Redux实现一个简单的计数器。代码编辑器中提供了基础知识，但您必须填写详细信息！使用提供的名称并定义<code>incAction</code>和<code>decAction</code>操作创建者， <code>decAction</code> <code>counterReducer()</code> ， <code>INCREMENT</code>和<code>DECREMENT</code>操作类型，最后定义Redux <code>store</code> 。一旦完成，您应该能够发送<code>INCREMENT</code>或<code>DECREMENT</code>操作来增加或减少<code>store</code>保存的状态。祝你好运第一个Redux应用程序！ </section>
+<section id='instructions'>
+在本课程中，你将从头开始使用 Redux 实现一个简单的计数器。基本知识在代码编辑器中提供，但你必须完成详细的内容！使用提供给你的名称并定义<code>incAction</code>和<code>decActio</code> action creator <code>counterReducer()</code>，<code>INCREMENT</code>和<code>DECREMENT</code> action 类型，最后是 Redux <code>store</code>。一旦完成，你应该能够 dispatch <code>INCREMENT</code>或<code>DECREMENT</code>动作来增加或减少<code>store</code>中保存的状态。开始构建你的第一个 Redux 应用程序吧，祝你好运！
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 动作创建者<code>incAction</code>应返回<code>type</code>等于<code>INCREMENT</code>值的动作对象
+  - text: 'action creator <code>incAction</code>应返回一个 action 对象 {type:"INCREMENT"}。'
     testString: assert(incAction().type ===INCREMENT);
-  - text: 动作创建者<code>decAction</code>应与返回动作对象<code>type</code>等于的值<code>DECREMENT</code>
+  - text: 'action creator <code>decAction</code>应返回一个 action 对象 {type:"DECREMENT"}。'
     testString: assert(decAction().type === DECREMENT);
-  - text: Redux存储应该以0 <code>state</code>初始化。
+  - text: Redux store 应该将<code>state</code>初始化为 0。
     testString: assert(store.getState() === 0);
-  - text: 在Redux存储上调度<code>incAction</code>应该将<code>state</code>增加1。
+  - text: 在 Redux store 上 dispatch <code>incAction</code>应该将<code>state</code>增加 1。
     testString: assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })());
-  - text: 在Redux存储上调度<code>decAction</code>应该将<code>state</code>减1。
+  - text: 在 Redux store 上 dispatch <code>decAction</code>应该将<code>state</code>减少 1。
     testString: assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })());
-  - text: <code>counterReducer</code>应该是一个函数
+  - text: <code>counterReducer</code>必须是一个函数。
     testString: assert(typeof counterReducer === 'function');
 
 ```
@@ -41,17 +45,16 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-const INCREMENT = null; // define a constant for increment action types
-const DECREMENT = null; // define a constant for decrement action types
+const INCREMENT = null; // 为增量 action 类型定义一个常量
+const DECREMENT = null; // 为减量 action 类型定义一个常量
 
-const counterReducer = null; // define the counter reducer which will increment or decrement the state based on the action it receives
+const counterReducer = null; // 定义计数器，它将根据收到的action增加或减少状态
 
-const incAction = null; // define an action creator for incrementing
+const incAction = null; // 定义一个用于递增的 action creator
 
-const decAction = null; // define an action creator for decrementing
+const decAction = null; // 定义一个用于递减的 action creator
 
-const store = null; // define the Redux store here, passing in your reducers
-
+const store = null; // 在这里定义一个 Redux store，传递你的 reducer
 ```
 
 </div>
@@ -63,8 +66,35 @@ const store = null; // define the Redux store here, passing in your reducers
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const incAction = () => {
+  return {
+    type: INCREMENT
+  }
+};
+
+const decAction = () => {
+  return {
+    type: DECREMENT
+  }
+};
+
+const store = Redux.createStore(counterReducer);
 ```
 
-/section>
+</section>

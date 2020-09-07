@@ -3,15 +3,21 @@ id: 56533eb9ac21ba0edf2244e2
 title: Caesars Cipher
 challengeType: 5
 isRequired: true
-videoUrl: ''
+forumTopicId: 16003
 localeTitle: 凯撒密码
 ---
 
 ## Description
-<section id="description">最简单和最广为人知的<dfn>密码之一</dfn>是<code>Caesar cipher</code> ，也称为<code>shift cipher</code> 。在<code>shift cipher</code>中，字母的含义被移动一些设定量。一种常见的现代用途是<a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a>密码，其中字母的值移动了13个位置。因此&#39;A&#39;&#39;&#39;N&#39;，&#39;B&#39;&#39;&#39;O&#39;等等。编写一个函数，它将<a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a>编码的字符串作为输入并返回一个已解码的字符串。所有字母都是大写的。不要转换任何非字母字符（即空格，标点符号），但要传递它们。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+<code>凯撒密码</code>是最简单和最广为人知的<dfn>密码之一</dfn>，也被称为<code>移位密码</code>。在<code>移位密码</code>中，明文中的字母通过按照一个固定数目进行偏移后被替换成新的字母。
+<a href="https://en.wikipedia.org/wiki/ROT13" target='_blank'>ROT13</a> 是一个被广泛使用的编码技术，明文中的所有字母都被移动 13 位。因此，'A' &harr; 'N', 'B' &harr;  'O' 等等。
+请编写一个函数，用于解码一个被 <a href="https://en.wikipedia.org/wiki/ROT13" target='_blank'>ROT13</a> 编码的字符串，然后返回解码后的结果。
+所有解码后的字母都必须为字母大写。请不要解码非字母的字符（例如，空格、标点符号），但你需要在结果中保留它们。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,13 +25,13 @@ localeTitle: 凯撒密码
 
 ```yml
 tests:
-  - text: <code>rot13(&quot;SERR PBQR PNZC&quot;)</code>应解码为<code>FREE CODE CAMP</code>
+  - text: "<code>rot13('SERR PBQR PNZC')</code>应解码为<code>FREE CODE CAMP</code>。"
     testString: assert(rot13("SERR PBQR PNZC") === "FREE CODE CAMP");
-  - text: <code>rot13(&quot;SERR CVMMN!&quot;)</code>应该解码为<code>FREE PIZZA!</code> <code>rot13(&quot;SERR CVMMN!&quot;)</code> <code>FREE PIZZA!</code>
+  - text: "<code>rot13('SERR CVMMN!')</code>应解码为<code>FREE PIZZA!</code>。"
     testString: assert(rot13("SERR CVMMN!") === "FREE PIZZA!");
-  - text: <code>rot13(&quot;SERR YBIR?&quot;)</code>应解码为<code>FREE LOVE?</code>
+  - text: "<code>rot13('SERR YBIR?')</code>应解码为<code>FREE LOVE?</code>。"
     testString: assert(rot13("SERR YBIR?") === "FREE LOVE?");
-  - text: <code>rot13(&quot;GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.&quot;)</code>应该在<code>rot13(&quot;GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.&quot;)</code>解码到<code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>
+  - text: "<code>rot13('GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.')</code>应解码为<code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>。"
     testString: assert(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") === "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.");
 
 ```
@@ -45,7 +51,6 @@ function rot13(str) { // LBH QVQ VG!
 
 // Change the inputs below to test
 rot13("SERR PBQR PNZC");
-
 ```
 
 </div>
@@ -57,8 +62,33 @@ rot13("SERR PBQR PNZC");
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var lookup = {
+  'A': 'N','B': 'O','C': 'P','D': 'Q',
+  'E': 'R','F': 'S','G': 'T','H': 'U',
+  'I': 'V','J': 'W','K': 'X','L': 'Y',
+  'M': 'Z','N': 'A','O': 'B','P': 'C',
+  'Q': 'D','R': 'E','S': 'F','T': 'G',
+  'U': 'H','V': 'I','W': 'J','X': 'K',
+  'Y': 'L','Z': 'M'
+};
+
+function rot13(encodedStr) {
+  var codeArr = encodedStr.split("");  // String to Array
+  var decodedArr = []; // Your Result goes here
+  // Only change code below this line
+
+  decodedArr = codeArr.map(function(letter) {
+    if(lookup.hasOwnProperty(letter)) {
+      letter = lookup[letter];
+    }
+    return letter;
+  });
+
+  // Only change code above this line
+  return decodedArr.join(""); // Array to String
+}
 ```
 
-/section>
+</section>
