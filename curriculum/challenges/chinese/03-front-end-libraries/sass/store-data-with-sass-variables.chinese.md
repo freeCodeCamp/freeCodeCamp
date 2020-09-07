@@ -2,28 +2,47 @@
 id: 587d7dbd367417b2b2512bb4
 title: Store Data with Sass Variables
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用Sass变量存储数据
+forumTopicId: 301460
+localeTitle: 用 Sass 变量存储数据
 ---
 
 ## Description
-<section id="description"> Sass的一个与CSS不同的特性是它使用变量。它们被声明并设置为存储数据，类似于JavaScript。在JavaScript中，使用<code>let</code>和<code>const</code>关键字定义变量。在Sass中，变量以<code>$</code>开头，后跟变量名。以下是几个例子： <blockquote> $ main-fonts：Arial，sans-serif; <br> $ headings-color：green; <br><br> //使用变量： <br> h1 { <br> font-family：$ main-fonts; <br>颜色：$ headings-color; <br> } </blockquote>变量有用的一个例子是当许多元素需要是相同的颜色时。如果更改了该颜色，则编辑代码的唯一位置是变量值。 </section>
+<section id='description'>
+Sass 不同于 CSS 的一个特点是它允许使用变量。我们可以在 Sass 中声明变量，并为它赋值，就像我们在 JavaScript 中一样。
+在 JavaScript 中，变量是使用<code>let</code>和<code>const</code>关键字定义的。在 Sass 中，变量以<code>$</code>开头的，后跟变量名。
+这里有几个例子：
+
+```scss
+$main-fonts: Arial, sans-serif;
+$headings-color: green;
+
+//To use variables:
+h1 {
+  font-family: $main-fonts;
+  color: $headings-color;
+}
+```
+
+当需要把多个元素设置成相同颜色时，变量就会很有用。一旦我们需要更改颜色，只需要改变这个变量的值就好。
+</section>
 
 ## Instructions
-<section id="instructions">创建一个变量<code>$text-color</code>并将其设置为红色。然后将<code>.blog-post</code>和<code>h2</code>的<code>color</code>属性值更改为<code>$text-color</code>变量。 </section>
+<section id='instructions'>
+创建一个变量<code>$text-color</code>并将其设置为红色。然后更改<code>.blog-post</code>和<code>h2</code>的<code>color</code>属性的值为<code>$text-color</code>变量。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该具有为<code>$text-color</code>声明的Sass变量，其值为red。
+  - text: 你应该为<code>$text-color</code>声明一个值为红色的 Sass 变量。
     testString: assert(code.match(/\$text-color:\s*?red;/g));
-  - text: 您的代码应使用<code>$text-color</code>变量来更改<code>.blog-post</code>和<code>h2</code>项的<code>color</code> 。
+  - text: 你应使用<code>$text-color</code>变量来更改<code>.blog-post</code>和<code>h2</code>的<code>颜色</code>。
     testString: assert(code.match(/color:\s*?\$text-color;/g));
-  - text: 您的<code>.blog-post</code>元素应该是红色。
+  - text: <code>.blog-post</code>元素应为红色。
     testString: assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
-  - text: 你的<code>h2</code>元素应该是红色。
+  - text: <code>h2</code>元素应为红色。
     testString: assert($('h2').css('color') == 'rgb(255, 0, 0)');
 
 ```
@@ -60,7 +79,6 @@ tests:
   <h2>Here is another header</h2>
   <p>Even more random text within a paragraph</p>
 </div>
-
 ```
 
 </div>
@@ -72,8 +90,31 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style type='text/sass'>
+  $text-color: red;
+
+  .header{
+    text-align: center;
+  }
+  .blog-post, h2 {
+    color: $text-color;
+  }
+</style>
+
+<h1 class="header">Learn Sass</h1>
+<div class="blog-post">
+  <h2>Some random title</h2>
+  <p>This is a paragraph with some random text in it</p>
+</div>
+<div class="blog-post">
+  <h2>Header #2</h2>
+  <p>Here is some more random text.</p>
+</div>
+<div class="blog-post">
+  <h2>Here is another header</h2>
+  <p>Even more random text within a paragraph</p>
+</div>
 ```
 
-/section>
+</section>
