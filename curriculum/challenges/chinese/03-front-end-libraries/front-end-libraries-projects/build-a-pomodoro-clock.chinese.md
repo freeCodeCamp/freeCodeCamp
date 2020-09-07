@@ -3,15 +3,50 @@ id: bd7158d8c442eddfaeb5bd0f
 title: Build a Pomodoro Clock
 isRequired: true
 challengeType: 3
-videoUrl: ''
-localeTitle: 建立一个番茄钟
+forumTopicId: 301373
+localeTitle: 构建一个番茄时钟
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/freeCodeCamp/full/XpKrrW" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/XpKrrW</a> 。完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a>并通过所有测试。给它你自己的个人风格。您可以使用HTML，JavaScript，CSS，Bootstrap，SASS，React，Redux和jQuery的任意组合来完成此项目。您应该使用前端框架（例如React），因为本节是关于学习前端框架的。不建议使用上面未列出的其他技术，使用它们的风险由您自行承担。我们正在寻求支持其他前端框架，如Angular和Vue，但目前不支持它们。我们将接受并尝试修复所有使用建议的技术堆栈的问题报告。快乐的编码！ <strong>用户故事＃1：</strong>我可以看到一个<code>id=&quot;break-label&quot;</code>的元素，其中包含一个字符串（例如“Break Length”）。 <strong>用户故事＃2：</strong>我可以看到一个<code>id=&quot;session-label&quot;</code>的元素，其中包含一个字符串（例如“Session Length”）。 <strong>用户故事＃3：</strong>我可以看到两个具有相应ID的可点击元素： <code>id=&quot;break-decrement&quot;</code>和<code>id=&quot;session-decrement&quot;</code> 。 <strong>用户故事＃4：</strong>我可以看到两个具有相应ID的可点击元素： <code>id=&quot;break-increment&quot;</code>和<code>id=&quot;session-increment&quot;</code> 。 <strong>用户故事＃5：</strong>我可以看到一个具有相应<code>id=&quot;break-length&quot;</code>的元素，默认情况下（加载时）显示值5. <strong>用户故事＃6：</strong>我可以看到一个元素具有相应的<code>id=&quot;session-length&quot;</code> ，默认情况下显示值25. <strong>用户故事＃7：</strong>我可以看到一个具有相应<code>id=&quot;timer-label&quot;</code>的元素，其中包含一个表示会话已初始化的字符串（例如”Session“） 。 <strong>用户故事＃8：</strong>我可以看到一个对应<code>id=&quot;time-left&quot;</code>的元素。注意：暂停或运行时，此字段中的值应始终以<code>mm:ss</code>格式显示（即25:00）。 <strong>用户故事＃9：</strong>我可以看到一个具有相应<code>id=&quot;start_stop&quot;</code>的可点击元素。 <strong>用户故事＃10：</strong>我可以看到一个具有相应<code>id=&quot;reset&quot;</code>的可点击元素。 <strong>用户故事＃11：</strong>当我单击id为<code>reset</code>的元素时，应该停止任何正在运行的计时器， <code>id=&quot;break-length&quot;</code>的值应该返回<code>5</code> ， <code>id=&quot;session-length&quot;</code>应该返回到25，并且<code>id=&quot;time-left&quot;</code>的元素应该重置为它的默认状态。 <strong>用户故事＃12：</strong>当我单击id为<code>break-decrement</code>的元素时， <code>id=&quot;break-length&quot;</code>的值会减1，我可以看到更新后的值。 <strong>用户故事＃13：</strong>当我单击id为<code>break-increment</code>的元素时， <code>id=&quot;break-length&quot;</code>的值会增加1，我可以看到更新后的值。 <strong>用户故事＃14：</strong>当我单击<code>session-decrement</code> id的元素时， <code>id=&quot;session-length&quot;</code>的值减1，我可以看到更新后的值。 <strong>用户故事＃15：</strong>当我单击<code>session-increment</code>为id的元素时， <code>id=&quot;session-length&quot;</code>的值会增加1，我可以看到更新后的值。 <strong>用户故事＃16：</strong>我不能将会话或休息长度设置为&lt;= 0. <strong>用户故事＃17：</strong>我不能将会话或休息时间设置为&gt; 60. <strong>用户故事＃18：</strong>当我首先单击<code>id=&quot;start_stop&quot;</code>的元素，计时器应该从当前显示在<code>id=&quot;session-length&quot;</code>的值开始运行，即使该值已经从原始值25递增或递减。 <strong>用户故事＃19 ：</strong>如果计时器正在运行，则id为<code>time-left</code>的元素应以<code>mm:ss</code>格式显示剩余时间（递减值1并每1000ms更新一次显示）。 <strong>用户故事＃20：</strong>如果计时器正在运行并且我单击<code>id=&quot;start_stop&quot;</code>的元素，倒计时应该暂停。 <strong>用户故事＃21：</strong>如果计时器暂停，我点击<code>id=&quot;start_stop&quot;</code>的元素，倒计时应该从暂停时恢复运行。 <strong>用户故事＃22：</strong>当会话倒计时到达零（注意：计时器必须达到00:00），并开始新的倒计时时，id为<code>timer-label</code>的元素应该显示一个表示休息已开始的字符串。 <strong>用户故事＃23：</strong>当会话倒计时到达零时（注意：计时器必须达到00:00），应该开始新的中断倒计时，从当前显示在<code>id=&quot;break-length&quot;</code>元素中的值开始倒计时。 <strong>用户故事＃24：</strong>当休息倒计时到达零（注意：计时器必须达到00:00），并开始新的倒计时时，id为<code>timer-label</code>的元素应显示一个表示会话已开始的字符串。 <strong>用户故事＃25：</strong>当休息倒计时到达零时（注意：计时器必须达到00:00），应开始新的会话倒计时，从当前显示在<code>id=&quot;session-length&quot;</code>元素中的值开始倒计时。 <strong>用户故事＃26：</strong>当倒计时到零时（注意：计时器必须达到00:00），应播放表示时间到了的声音。这应该使用HTML5 <code>audio</code>标签并具有相应的<code>id=&quot;beep&quot;</code> 。 <strong>用户故事＃27：</strong> <code>id=&quot;beep&quot;</code>的音频元素必须为1秒或更长。 <strong>用户故事＃28：</strong> id为<code>beep</code>的音频元素必须停止播放，并在单击具有<code>reset</code> id的元素时重绕到开头。您可以通过分叉<a href="http://codepen.io/freeCodeCamp/pen/MJjpwO" target="_blank">此CodePen笔</a>来构建项目。或者您可以使用此CDN链接在您喜欢的任何环境中运行测试： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code> ： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>完成后，将URL提交给您的工作通过所有测试的项目。如果卡住，请记住使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a>方法。 </section>
+<section id='description'>
+<strong>目标：</strong>在 <a href='https://codepen.io' target='_blank'>CodePen.io</a> 上实现一个功能类似 <a href='https://codepen.io/freeCodeCamp/full/XpKrrW' target='_blank'>https://codepen.io/freeCodeCamp/full/XpKrrW</a> 的 App。
+在满足以下<a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>需求</a>并能通过所有测试的前提下，你可以根据自己的喜好来美化你的 app。
+你可以使用 HTML、JavaScript、CSS、Bootstrap、SASS、React、Redux、jQuery 来完成这个挑战。但鉴于这个章节的学习内容与前端框架相关，推荐使用一款前端框架（比如 React）来完成这个挑战；不推荐你使用前面没有提到的技术，否则风险自负。我们有计划新增其他前端框架课程，例如 Angular 和 Vue，不过目前还没有这些内容。我们会接受并尽力处理你在使用建议的技术栈过程中遇到的问题。编码愉快！
+<strong>需求 1：</strong>我应该能看到一个具有<code>id="break-label"</code>属性的元素，这个元素的内容应该是一个字符串(例如："Break Length")。
+<strong>需求 2：</strong>我应该能看到一个具有<code>id="session-label"</code>属性的元素，这个元素的内容应该是一个字符串(例如："Session Length")。
+<strong>需求 3：</strong>我应该能看到两个可以点击的元素，他们分别具有如下 id：<code>id="break-decrement"</code>和<code>id="session-decrement"</code>。
+<strong>需求 4：</strong>我应该能看到两个可以点击的元素，他们分别具有如下 id：<code>id="break-increment"</code>和<code>id="session-increment"</code>。
+<strong>需求 5：</strong>我应该能看到一个具有<code>id="break-length"</code>属性的元素，这个元素默认展示数值应该为 5（加载后）。
+<strong>需求 6：</strong>我应该能看到一个具有<code>id="session-length"</code>属性的元素，这个元素默认展示数值应该为 25（加载后）。
+<strong>需求 7：</strong>我应该能看到一个具有<code>id="timer-label"</code>属性的元素，这个元素包含一个表示当前状态的字符串（例如："Session"）。
+<strong>需求 8：</strong>我应该能看到一个具有<code>id="time-left"</code>属性的元素。注意：暂停或者运行时，该元素的内容应始终以<code>mm:ss</code>格式显示（如 25:00）。
+<strong>需求 9：</strong>我应该能看到一个具有<code>id="start_stop"</code>属性的可点击的元素。
+<strong>需求 10：</strong>我应该能看到一个具有<code>id="reset"</code>属性的可点击的元素。
+<strong>需求 11：</strong>当我点击 id 属性为<code>reset</code>的元素时，应该停止任何运行中的计时器，<code>id="break-length"</code>元素中的值应该重新回到<code>5</code>，<code>id="session-length"</code>元素中的值应该重新回到 25，且<code>id="time-left"</code>元素应该重置为默认状态。
+<strong>需求 12：</strong>当我点击 id 属性为<code>break-decrement</code>的元素时，<code>id="break-length"</code>元素的值应该减去 1，且我应该能看到更新后的值。
+<strong>需求 13：</strong>当我点击 id 属性为<code>break-increment</code> 的元素时，<code>id="break-length"</code>元素的值应该增加 1，且我应该能看到更新后的值。
+<strong>需求 14：</strong>当我点击 id 属性为<code>session-decrement</code> 的元素时，<code>id="session-length"</code>元素的值应该减去 1，且我应该能看到更新后的值。
+<strong>需求 15：</strong>当我点击 id 属性为<code>session-increment</code> 的元素时，<code>id="session-length"</code>元素的值应该增加 1，且我应该能看到更新后的值。
+<strong>需求 16：</strong>工作或者休息长度不应该可以设置为 <= 0 的值。
+<strong>需求 17：</strong>工作或者休息长度比应该可以设置为 > 60 的值。
+<strong>需求 18：</strong>当我首次点击具有<code>id="start_stop"</code>属性的元素时，计时器应该根据<code>id="session-length"</code>元素当前显示的值开始运行，即使该值已从原始值 25 递增过或递减过。
+<strong>需求 19：</strong>如果计时器正在运行，id 属性为<code>time-left</code>的元素应该以<code>mm:ss</code>的格式展示剩余的时间（按1递减并且每秒更新一次显示的值）。
+<strong>需求 20：</strong>如果计时器正在运行，当我点击<code>id="start_stop"</code>元素时，倒计时应该暂停。
+<strong>需求 21：</strong>如果计时器已经暂停，当我点击<code>id="start_stop"</code>元素时，倒计时应该从暂停的时间点恢复运行。
+<strong>需求 22：</strong>当一个工作倒计时结束（注意：计时器必须达到00:00），并且新的倒计时开始运行时，id 属性为<code>timer-label</code>的元素应该显示一个表示已经开始休息的字符串。
+<strong>需求 23：</strong>当一个工作倒计时结束（注意：计时器必须达到00:00），应该开始一个新的休息倒计时，时间应该从<code>id="break-length"</code>元素中当前显示的值开始计算。
+<strong>需求 24：</strong>当一个休息倒计时结束（注意：计时器必须达到00:00），并且新的倒计时开始运行时，id 属性为<code>timer-label</code>的元素应该显示一个表示已经开始工作的字符串。
+<strong>需求 25：</strong>当一个休息倒计时结束（注意：计时器必须达到00:00），应该开始一个新的工作倒计时，时间应该从<code>id="session-length"</code>元素中当前显示的值开始计算。
+<strong>需求 26：</strong>当一个倒计时结束（注意：计时器必须达到00:00），应该播放一个表示时间到了的声音提示。这个提示音应该使用 HTML5 的<code>audio</code>标签并有一个<code>id="beep"</code>属性。
+<strong>需求 27：</strong>具有<code>id="beep"</code>属性的音频元素时长应该至少有一秒。
+<strong>需求 28：</strong>当点击 id 属性为<code>reset</code>的元素时，id 属性为<code>beep</code>的音频元素必须停止播放并回到开头。
+你可以 fork <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>这个 CodePen pen 项目</a> 来构建你的项目。 或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试： <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>
+一旦你完成了本项目并且该项目所有测试运行通过， 请提交项目的 URL。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -36,4 +71,4 @@ tests: []
 // solution required
 ```
 
-/section>
+</section>
