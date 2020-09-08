@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -15,6 +15,7 @@ import {
   updateFile
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import { Loader } from '../../../components/helpers';
 
 import './editor.css';
 
@@ -949,15 +950,18 @@ class Editor extends Component {
   render() {
     const { theme } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
-
     return (
-      <MonacoEditor
-        editorDidMount={this.editorDidMount}
-        editorWillMount={this.editorWillMount}
-        onChange={this.onChange}
-        options={this.options}
-        theme={editorTheme}
-      />
+      <Suspense fallback={<Loader timeout={600} />}>
+        <span className='notranslate'>
+          <MonacoEditor
+            editorDidMount={this.editorDidMount}
+            editorWillMount={this.editorWillMount}
+            onChange={this.onChange}
+            options={this.options}
+            theme={editorTheme}
+          />
+        </span>
+      </Suspense>
     );
   }
 }

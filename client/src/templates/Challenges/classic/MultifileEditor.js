@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Component, Suspense } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
@@ -17,7 +17,6 @@ import {
   updateFile
 } from '../redux';
 import './editor.css';
-import { Loader } from '../../../components/helpers';
 import Editor from './Editor';
 
 const propTypes = {
@@ -201,68 +200,53 @@ class MultifileEditor extends Component {
         orientation='horizontal'
         {...reflexProps}
         {...resizeProps}
+        className='editor-container'
       >
         <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
           <ReflexContainer orientation='vertical'>
             {visibleEditors.indexhtml && (
               <ReflexElement {...reflexProps} {...resizeProps}>
-                <Suspense fallback={<Loader timeout={600} />}>
-                  <span className='notranslate'>
-                    <Editor
-                      challengeFiles={challengeFiles}
-                      containerRef={containerRef}
-                      description={
-                        targetEditor === 'indexhtml' ? description : null
-                      }
-                      fileKey='indexhtml'
-                      key='indexhtml'
-                      ref={editorRef}
-                      resizeProps={resizeProps}
-                      theme={editorTheme}
-                    />
-                  </span>
-                </Suspense>
+                <Editor
+                  challengeFiles={challengeFiles}
+                  containerRef={containerRef}
+                  description={
+                    targetEditor === 'indexhtml' ? description : null
+                  }
+                  fileKey='indexhtml'
+                  key='indexhtml'
+                  ref={editorRef}
+                  resizeProps={resizeProps}
+                  theme={editorTheme}
+                />
               </ReflexElement>
             )}
             {splitCSS && <ReflexSplitter propagate={true} {...resizeProps} />}
             {visibleEditors.indexcss && (
               <ReflexElement {...reflexProps} {...resizeProps}>
-                <Suspense fallback={<Loader timeout={600} />}>
-                  <span className='notranslate'>
-                    <Editor
-                      challengeFiles={challengeFiles}
-                      containerRef={containerRef}
-                      description={
-                        targetEditor === 'indexcss' ? description : null
-                      }
-                      fileKey='indexcss'
-                      key='indexcss'
-                      resizeProps={resizeProps}
-                      theme={editorTheme}
-                    />
-                  </span>
-                </Suspense>
+                <Editor
+                  challengeFiles={challengeFiles}
+                  containerRef={containerRef}
+                  description={targetEditor === 'indexcss' ? description : null}
+                  fileKey='indexcss'
+                  key='indexcss'
+                  resizeProps={resizeProps}
+                  theme={editorTheme}
+                />
               </ReflexElement>
             )}
             {splitJS && <ReflexSplitter propagate={true} {...resizeProps} />}
 
             {visibleEditors.indexjs && (
               <ReflexElement {...reflexProps} {...resizeProps}>
-                <Suspense fallback={<Loader timeout={600} />}>
-                  <span className='notranslate'>
-                    <Editor
-                      challengeFiles={challengeFiles}
-                      containerRef={containerRef}
-                      description={
-                        targetEditor === 'indexjs' ? description : null
-                      }
-                      fileKey='indexjs'
-                      key='indexjs'
-                      resizeProps={resizeProps}
-                      theme={editorTheme}
-                    />
-                  </span>
-                </Suspense>
+                <Editor
+                  challengeFiles={challengeFiles}
+                  containerRef={containerRef}
+                  description={targetEditor === 'indexjs' ? description : null}
+                  fileKey='indexjs'
+                  key='indexjs'
+                  resizeProps={resizeProps}
+                  theme={editorTheme}
+                />
               </ReflexElement>
             )}
           </ReflexContainer>
