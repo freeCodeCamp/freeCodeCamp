@@ -13,3 +13,7 @@
 .vs .monaco-scrollable-element > .scrollbar > .slider {
   z-index: 11;
 }
+
+.editor-container {
+  background: var(--editor-background);
+}
