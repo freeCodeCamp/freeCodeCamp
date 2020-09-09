@@ -415,6 +415,11 @@ export class CertificationSettings extends Component {
       { types: {} }
     );
 
+    const formFields = challengeTitles.map(title => ({
+      name: title,
+      label: title
+    }));
+
     const fullForm = filledforms === challengeTitles.length;
 
     const createClickHandler = certLocation => e => {
@@ -436,7 +441,7 @@ export class CertificationSettings extends Component {
         <Form
           buttonText={fullForm ? 'Claim Certification' : 'Save Progress'}
           enableSubmit={fullForm}
-          formFields={challengeTitles}
+          formFields={formFields}
           hideButton={isCertClaimed}
           id={superBlock}
           initialValues={{
