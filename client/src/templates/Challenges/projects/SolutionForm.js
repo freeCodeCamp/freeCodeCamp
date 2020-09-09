@@ -18,15 +18,15 @@ const propTypes = {
 };
 
 // back end challenges and front end projects use a single form field
-const solutionField = ['solutionLink'];
-const backEndProjectFields = ['solutionLink', 'githubLink'];
+const solutionField = ['solution'];
+const backEndProjectFields = ['solution', 'githubLink'];
 
 const options = {
   types: {
-    solutionLink: 'url',
+    solution: 'url',
     githubLink: 'url'
   },
-  required: ['solutionLink']
+  required: ['solution']
 };
 
 export class SolutionForm extends Component {
@@ -92,7 +92,7 @@ export class SolutionForm extends Component {
         options={{
           ...options,
           placeholders: {
-            solutionLink: solutionLink,
+            solution: solutionLink,
             githubLink: 'ex: https://github.com/camperbot/hello'
           }
         }}

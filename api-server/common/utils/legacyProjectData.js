@@ -4,7 +4,7 @@ const legacyFrontEndProjects = {
     'bd7158d8c242eddfaeb5bd13',
     // build-a-random-quote-machine
     'bd7158d8c442eddfaeb5bd13',
-    // build-a-pomodoro-clock
+    // build-a-25-5-clock
     'bd7158d8c442eddfaeb5bd0f',
     // build-a-javascript-calculator
     'bd7158d8c442eddfaeb5bd17',

@@ -18,7 +18,9 @@
     "lint": "gulp lint",
     "semantic-release": "semantic-release",
     "pretest": "cd ../client && npm run build:workers",
-    "test": "mocha --delay --reporter progress --bail"
+    "pretest:full-output": "npm run pretest",
+    "test": "mocha --delay --reporter progress --bail",
+    "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
   },
   "dependencies": {
     "invariant": "^2.2.4"
@@ -44,6 +46,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "babel-standalone": "^6.26.0",
     "chai": "4.2.0",
+    "cross-env": "^7.0.2",
     "fs-extra": "^6.0.1",
     "gulp": "^4.0.2",
     "joi": "^13.3.0",

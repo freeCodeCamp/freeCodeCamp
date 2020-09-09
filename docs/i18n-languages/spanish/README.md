@@ -72,7 +72,7 @@ La única excepción a esto es en caso en que descubramos una violación a nuest
 - [React and Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **Proyectos**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
+  **Proyectos**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, 25 + 5 Clock
 
 #### 4. Certificación de Visualización de Datos
 

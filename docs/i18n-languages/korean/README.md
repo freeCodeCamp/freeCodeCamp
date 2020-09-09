@@ -70,7 +70,7 @@ freeCodeCamp.org 커리큘럼의 30개의 프로젝트에는 각각 휼륭한 �
 - [React and Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **프로젝트** : 랜덤 명언 기계, Markdown Previewer, 드럼 기계, 자바스크립트 계산기, Pomodoro 시계
+  **프로젝트** : 랜덤 명언 기계, Markdown Previewer, 드럼 기계, 자바스크립트 계산기, 25 + 5 시계
 
 #### 4. 데이터 시각화 자격증
 
