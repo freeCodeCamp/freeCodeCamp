@@ -1,5 +1,5 @@
 import React from 'react';
-import { kebabCase, startCase } from 'lodash';
+import { kebabCase } from 'lodash';
 import PropTypes from 'prop-types';
 import {
   Alert,
@@ -12,7 +12,10 @@ import {
 import { Field } from 'react-final-form';
 
 const propTypes = {
-  fields: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  formFields: PropTypes.arrayOf(
+    PropTypes.shape({ name: PropTypes.string, label: PropTypes.string })
+      .isRequired
+  ).isRequired,
   options: PropTypes.shape({
     ignored: PropTypes.arrayOf(PropTypes.string),
     placeholders: PropTypes.objectOf(PropTypes.string),
@@ -22,19 +25,20 @@ const propTypes = {
 };
 
 function FormFields(props) {
-  const { fields, options = {} } = props;
+  const { formFields, options = {} } = props;
   const {
     ignored = [],
     placeholders = {},
     required = [],
     types = {}
   } = options;
+
   return (
     <div>
-      {fields
-        .filter(field => !ignored.includes(field))
-        .map(name => (
-          <Field key={`${name}-field`} name={name}>
+      {formFields
+        .filter(formField => !ignored.includes(formField.name))
+        .map(({ name, label }) => (
+          <Field key={`${kebabCase(name)}-field`} name={name}>
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
               const key = kebabCase(name);
               const type = name in types ? types[name] : 'text';
@@ -44,9 +48,7 @@ function FormFields(props) {
                 <Col key={key} xs={12}>
                   <FormGroup>
                     {type === 'hidden' ? null : (
-                      <ControlLabel htmlFor={key}>
-                        {startCase(name)}
-                      </ControlLabel>
+                      <ControlLabel htmlFor={key}>{label}</ControlLabel>
                     )}
                     <FormControl
                       componentClass={type === 'textarea' ? type : 'input'}
