@@ -249,6 +249,19 @@ class MultifileEditor extends Component {
                 />
               </ReflexElement>
             )}
+            {visibleEditors.indexjsx && (
+              <ReflexElement {...reflexProps} {...resizeProps}>
+                <Editor
+                  challengeFiles={challengeFiles}
+                  containerRef={containerRef}
+                  description={targetEditor === 'indexjsx' ? description : null}
+                  fileKey='indexjsx'
+                  key='indexjsx'
+                  resizeProps={resizeProps}
+                  theme={editorTheme}
+                />
+              </ReflexElement>
+            )}
           </ReflexContainer>
         </ReflexElement>
       </ReflexContainer>

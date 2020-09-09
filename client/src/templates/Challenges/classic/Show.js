@@ -390,6 +390,7 @@ export const query = graphql`
           contents
           head
           tail
+          editableRegionBoundaries
         }
       }
     }
