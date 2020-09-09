@@ -1,5 +1,6 @@
 {
   "name": "Basic JavaScript RPG Game",
+  "isUpcomingChange": true,
   "dashedName": "basic-javascript-rpg-game",
   "order": 11,
   "time": "2 hours",

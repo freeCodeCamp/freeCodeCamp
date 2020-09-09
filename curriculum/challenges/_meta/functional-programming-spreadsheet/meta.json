@@ -1,5 +1,6 @@
 {
   "name": "Functional Programming Spreadsheet",
+  "isUpcomingChange": true,
   "dashedName": "functional-programming-spreadsheet",
   "order": 13,
   "time": "2 hours",
