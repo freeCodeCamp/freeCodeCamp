@@ -216,8 +216,34 @@ exports.onCreatePage = async ({ page, actions }) => {
   }
 };
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type ChallengeNode implements Node {
+      files: ChallengeFile
+    }
+    type ChallengeFile {
+      indexcss: FileContents
+      indexhtml: FileContents
+      indexjs: FileContents
+      indexjsx: FileContents
+    }
+    type FileContents {
+      key: String
+      ext: String
+      name: String
+      contents: String
+      head: String
+      tail: String
+      editableRegionBoundaries: [Int]
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 // TODO: this broke the React challenges, not sure why, but I'll investigate
 // further and reimplement if it's possible and necessary (Oliver)
+// I'm still not sure why, but the above schema seems to work.
 // Typically the schema can be inferred, but not when some challenges are
 // skipped (at time of writing the Chinese only has responsive web design), so
 // this makes the missing fields explicit.
