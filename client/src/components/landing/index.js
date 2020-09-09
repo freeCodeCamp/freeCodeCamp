@@ -31,7 +31,7 @@ export const Landing = ({ page = 'landing' }) => {
   return (
     <Fragment>
       <Helmet>
-        <title>Learn to code at home | freeCodeCamp.org</title>
+        <title>Programmieren von zu Hause aus lernen | Programmieren.de</title>
       </Helmet>
       <main className='landing-page'>
         <Grid>

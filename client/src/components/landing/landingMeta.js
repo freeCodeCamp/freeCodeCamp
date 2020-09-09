@@ -3,45 +3,37 @@ import React from 'react';
 export default {
   Shawn: {
     name: 'Shawn Wang',
-    country: 'Singapore',
-    position: 'Software Engineer',
+    country: 'Singapur',
+    position: 'Software-Entwickler',
     company: 'Amazon',
     testimony: (
       <p>
-        "It's scary to change careers. I only gained confidence that I could
-        code by working through the hundreds of hours of free lessons on
-        freeCodeCamp. Within a year I had a six-figure job as a Software
-        Engineer.
-        <strong> freeCodeCamp changed my life.</strong>"
+        "Es macht einem Angst, wenn man den Job wechselt. Mein Selbstvertrauen dafür habe ich durch die hunderte Stunden von kostenfreien Übungen bei freeCodeCamp gewonnen. Nach einem Jahr habe ich einen Job mit einem sechstelligen Gehalt gefunden.
+        <strong> freeCodeCamp hat mein Leben verändert.</strong>"
       </p>
     )
   },
   Sarah: {
     name: 'Sarah Chima',
     country: 'Nigeria',
-    position: 'Software Engineer',
+    position: 'Software-Entwicklerin',
     company: 'ChatDesk',
     testimony: (
       <p>
-        “<strong>freeCodeCamp was the gateway to my career </strong>
-        as a software developer. The well-structured curriculum took my coding
-        knowledge from a total beginner level to a very confident level. It was
-        everything I needed to land my first dev job at an amazing company."
+        “<strong>freeCodeCamp war das Tor zu meiner neuen Karriere</strong>
+        als Software-Entwickler. Das wirklich gut strukturierte Curriculum hat meine Kenntnisse als kompletter Anfänger auf das Level einer erfahrenen Entwicklerin gebracht. Das war genau das, was es brauchte, um einen ersten Entwicklerjob bei einem großartigen Unternehmen zu bekommen."
       </p>
     )
   },
   Emma: {
     name: 'Emma Bostian',
-    country: 'Sweden',
-    position: 'Software Engineer',
+    country: 'Schweden',
+    position: 'Software-Entwicklerin',
     company: 'Spotify',
     testimony: (
       <p>
-        "I've always struggled with learning JavaScript. I've taken many courses
-        but freeCodeCamp's course was the one which stuck. Studying JavaScript
-        as well as data structures and algorithms on{' '}
-        <strong>freeCodeCamp gave me the skills</strong> and confidence I needed
-        to land my dream job as a software engineer at Spotify."
+        "Ich habe mich früher immer damit schwer getan, JavaScript zu lernen. Ich habe viele unterschiedliche Kurse ausprobiert. Aber freeCodeCamp ist das Einzige, was wirkt. Ich habe JavaScript, Datenstrukturen und Algorhitmen gelernt.{' '}
+        <strong>freeCodeCamp hat mir geholfen</strong> und mir das Selbstvertrauen gegeben, das ich brauchte, um einen Traumjob als Software-Entwicklerin bei Spotify zu bekommen."
       </p>
     )
   }

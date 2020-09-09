@@ -9,8 +9,8 @@ const propTypes = {
 const BigCallToAction = ({ page }) => (
   <Login block={true} data-test-label={`${page}-big-cta`}>
     {page === 'landing'
-      ? "Get started (it's free)"
-      : "Sign in to save your progress (it's free)"}
+      ? "Jetzt starten (100% kostenfrei)"
+      : "Registriere Dich, um Deinen Fortschritt zu sichern (komplett kostenlos)"}
   </Login>
 );
 

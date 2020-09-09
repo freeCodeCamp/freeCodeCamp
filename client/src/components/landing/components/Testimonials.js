@@ -14,7 +14,7 @@ const Testimonials = () => {
   return (
     <div className='testimonials'>
       <h1 className='big-heading text-center'>
-        Here is what our alumni say about freeCodeCamp:
+        Hier siehst Du, was Absolventen über freeCodeCamp (englische Plattform) sagen:
       </h1>
       <div className='testimonials-row' data-test-label='testimonial-cards'>
         {campers.map((camper, i) => {

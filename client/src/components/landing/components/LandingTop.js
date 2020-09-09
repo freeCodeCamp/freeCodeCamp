@@ -31,7 +31,7 @@ function landingTop({ page }) {
         width={750}
       />
       <p className='text-center caption'>
-        freeCodeCamp students at a local study group in South Korea.
+        freeCodeCamp-Studenten einer lokalen Nutzergruppe in Südkorea.
       </p>
     </Media>
   );
@@ -48,13 +48,12 @@ function landingTop({ page }) {
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <h1 className='big-heading' data-test-label={`${page}-header`}>
-            Learn to code at home.
+            Programmieren lernen - von zu Hause aus.
           </h1>
-          <h1 className='big-heading '>Build projects.</h1>
-          <h1 className='big-heading'>Earn certifications.</h1>
+          <h1 className='big-heading '>Erstelle Projekte.</h1>
+          <h1 className='big-heading'>Verdiene Zertifikate.</h1>
           <h2>
-            Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten
-            jobs at tech companies including:
+            Seit 2014 haben mehr als 40.000 Absolventen von freeCodeCamp.org (englische Plattform) Jobs beispielsweise in den folgenden Tech-Unternehmen erhalten:
           </h2>
           <div className='logo-row'>
             <AppleLogo />
