@@ -21,7 +21,7 @@ const BigCallToAction = () => (
   <Row>
     <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
       <Login block={true} data-test-label='landing-big-cta'>
-        Get started (it's free)
+        Jetzt starten (100% kostenfrei)
       </Login>
     </Col>
   </Row>
@@ -31,7 +31,7 @@ const AsFeaturedSection = () => (
   <Row>
     <Col sm={8} smOffset={2} xs={12}>
       <div className='text-center'>
-        <h2 className='medium-heading'>As Featured In:</h2>
+        <h2 className='medium-heading'>Bekannt aus:</h2>
         <AsFeatureLogo />
       </div>
     </Col>
@@ -44,7 +44,7 @@ export const Landing = ({ nodes }) => {
   return (
     <Fragment>
       <Helmet>
-        <title>Learn to code at home | freeCodeCamp.org</title>
+        <title>Programmieren lernen von zu Hause aus | freeCodeCamp.org (deutsch)</title>
       </Helmet>
       <main className='landing-page'>
         <Spacer />
@@ -55,19 +55,18 @@ export const Landing = ({ nodes }) => {
                 className='big-heading text-center'
                 data-test-label='landing-header'
               >
-                Welcome to freeCodeCamp.org
+                Willkommen bei freeCodeCamp.org (deutsch)
               </h1>
               <Spacer />
               <h2 className='medium-heading text-center'>
-                Learn to code at home.
+                Lerne Zuhause das Programmieren
               </h2>
-              <h2 className='medium-heading text-center'>Build projects.</h2>
+              <h2 className='medium-heading text-center'>Projekte erstellen.</h2>
               <h2 className='medium-heading text-center'>
-                Earn certifications.
+                Verdiene Zertifikate.
               </h2>
               <h2 className='medium-heading text-center'>
-                Since 2014, more than 40,000 freeCodeCamp.org graduates have
-                gotten jobs at tech companies including:
+                Seit 2014 haben mehr als 40.000 freeCodeCamp.org-Teilnehmende Jobs bei den folgenden Tech- und anderen Unternehmen bekommen:
               </h2>
               <CompanyLogos />
             </Col>
@@ -78,7 +77,7 @@ export const Landing = ({ nodes }) => {
           <AsFeaturedSection />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
-              <h2 className='medium-heading'>Certifications:</h2>
+              <h2 className='medium-heading'>Zertifizierung:</h2>
               <ul>
                 {superBlocks.map((superBlock, i) => (
                   <li className={'superblock'} key={i}>
@@ -89,7 +88,7 @@ export const Landing = ({ nodes }) => {
                 ))}
               </ul>
               <Spacer />
-              <h2 className='medium-heading'>Additional Learning:</h2>
+              <h2 className='medium-heading'>Zusätzliche Lernmöglichkeiten:</h2>
               <ul>
                 <li>
                   <Link state={{ superBlock: interviewPrep }} to={`/learn`}>
