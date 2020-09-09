@@ -27,9 +27,6 @@ const { flatten } = require('lodash');
 
 const jsdom = require('jsdom');
 
-const dom = new jsdom.JSDOM('');
-global.document = dom.window.document;
-
 const vm = require('vm');
 
 const puppeteer = require('puppeteer');
@@ -56,6 +53,26 @@ const {
 const { createPoly } = require('../../utils/polyvinyl');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
+
+// rethrow unhandled rejections to make sure the tests exit with -1
+process.on('unhandledRejection', err => handleRejection(err));
+
+const handleRejection = err => {
+  // setting the error code because node does not (yet) exit with a non-zero
+  // code on unhandled exceptions.
+  process.exitCode = 1;
+  cleanup();
+  if (process.env.FULL_OUTPUT === 'true') {
+    // some errors *may* not be reported, since cleanup is triggered by the
+    // first error and that starts shutting down the browser and the server.
+    console.error(err);
+  } else {
+    throw err;
+  }
+};
+
+const dom = new jsdom.JSDOM('');
+global.document = dom.window.document;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function(test, err) {
@@ -88,13 +105,7 @@ let page;
 
 setup()
   .then(runTests)
-  .catch(err => {
-    cleanup();
-    // setting the error code because node does not (yet) exit with a non-zero
-    // code on unhandled exceptions.
-    process.exitCode = 1;
-    throw err;
-  });
+  .catch(err => handleRejection(err));
 
 async function setup() {
   if (process.env.npm_config_superblock && process.env.npm_config_block) {
@@ -194,11 +205,6 @@ function cleanup() {
 }
 
 function runTests(challengeData) {
-  // rethrow unhandled rejections to make sure the tests exit with -1
-  process.on('unhandledRejection', err => {
-    throw err;
-  });
-
   describe('Check challenges', function() {
     after(function() {
       cleanup();

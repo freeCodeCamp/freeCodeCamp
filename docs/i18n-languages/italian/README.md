@@ -73,7 +73,7 @@ Ecco le nostre sei certificazioni di base:
 - [React e Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **Progetti**: La Macchina di quote casuali, Il Visualizzatore di Markdown, La macchinetta Drum, La Calcolatrice JavaScript, L'orologio Pomodoro
+  **Progetti**: La Macchina di quote casuali, Il Visualizzatore di Markdown, La macchinetta Drum, La Calcolatrice JavaScript, L'orologio 25 + 5
 
 #### 4. Certificazione visualizzazione dei dati
 

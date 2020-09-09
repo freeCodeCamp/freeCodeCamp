@@ -71,7 +71,7 @@ Voici nos six certifications principales :
 - [React et Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **Projets**: Générateur aléatoire de citations, Prévisualisation de documents Markdown, Boîte à rythmes, Calculatrice JavaScript, Horloge Pomodoro.
+  **Projets**: Générateur aléatoire de citations, Prévisualisation de documents Markdown, Boîte à rythmes, Calculatrice JavaScript, Horloge 25 + 5.
 
 #### 4. Certification de visualisation des données
 

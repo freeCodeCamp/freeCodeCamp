@@ -73,7 +73,7 @@
 - [React و Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **المشاريع**: مولد الاقتباسات العشوائية ، معاينة مستندات Markdown ، آلة الطبل ، آلة حاسبة JavaScript ، ساعة Pomodoro.
+  **المشاريع**: مولد الاقتباسات العشوائية ، معاينة مستندات Markdown ، آلة الطبل ، آلة حاسبة JavaScript ، ساعة 25 + 5.
 
 #### 4. شهادة تصور البيانات
 

@@ -44,8 +44,8 @@ const certMap = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd0f',
-        title: 'Build a Pomodoro Clock',
-        link: `${legacyFrontEndBase}/build-a-pomodoro-clock`,
+        title: 'Build a 25 + 5 Clock',
+        link: `${legacyFrontEndBase}/build-a-25--5-clock`,
         superBlock: 'legacy-front-end'
       },
       {
@@ -384,8 +384,8 @@ const certMap = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd0f',
-        title: 'Build a Pomodoro Clock',
-        link: `${feLibsBase}/build-a-pomodoro-clock`,
+        title: 'Build a 25 + 5 Clock',
+        link: `${feLibsBase}/build-a-25--5-clock`,
         superBlock: 'front-end-libraries'
       }
     ]
