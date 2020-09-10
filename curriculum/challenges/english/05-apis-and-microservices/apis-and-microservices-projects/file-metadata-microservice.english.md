@@ -25,9 +25,9 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 tests:
   - text: I can submit a form that includes a file upload.
     testString: ''
-  - text: The form file input field has the `name` attribute set to `upfile`.
+  - text: The form file input field has the <code>name</code> attribute set to <code>upfile</code>.
     testString: ''
-  - text: When I submit something, I will receive the file `name`, `type`, and `size` in bytes within the JSON response.
+  - text: When I submit something, I will receive the file <code>name</code>, <code>type</code>, and <code>size</code> in bytes within the JSON response.
     testString: ''
 
 ```
