@@ -36,7 +36,7 @@ This new way of creating strings gives you more flexibility to create robust str
 
 ## Instructions
 <section id='instructions'>
-Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>.
+Use template literal syntax with backticks to create an array of list element (<code>li</code>) strings. Each list element's text should be one of the array elements from the <code>failure</code> property on the <code>result</code> object and have a <code>class</code> attribute with the value <code>text-warning</code>. The <code>makeList</code> function should return the array of list item strings.
 Use an iterator method (any kind of loop) to get the desired output (shown below).
 
 ```js
@@ -54,9 +54,9 @@ Use an iterator method (any kind of loop) to get the desired output (shown below
 
 ```yml
 tests:
-  - text: <code>resultDisplayArray</code> should be an array containing <code>result failure</code> messages.
-    testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3);
-  - text: <code>resultDisplayArray</code> should be equal to the specified output.
+  - text: <code>failuresList</code> should be an array containing <code>result failure</code> messages.
+    testString: assert(typeof makeList(result.failure) === 'object' && failuresList.length === 3);
+  - text: <code>failuresList</code> should be equal to the specified output.
     testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`));
   - text: Template strings and expression interpolation should be used.
     testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
@@ -78,16 +78,14 @@ const result = {
   skipped: ["no-extra-semi", "no-dup-keys"]
 };
 function makeList(arr) {
-  "use strict";
-
   // Only change code below this line
-  const resultDisplayArray = null;
+  const failureItems = [];
   // Only change code above this line
 
-  return resultDisplayArray;
+  return failureItems;
 }
 
-const resultDisplayArray = makeList(result.failure);
+const failuresList = makeList(result.failure);
 ```
 
 </div>
@@ -106,14 +104,10 @@ const result = {
   skipped: ["no-extra-semi", "no-dup-keys"]
 };
 function makeList(arr) {
-  "use strict";
-  
-  const resultDisplayArray = arr.map(val => `<li class="text-warning">${val}</li>`);
-  
-  return resultDisplayArray;
+  return arr.map(val => `<li class="text-warning">${val}</li>`);
 }
 
-const resultDisplayArray = makeList(result.failure);
+const failuresList = makeList(result.failure);
 ```
 
 </section>
