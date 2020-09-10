@@ -9,7 +9,7 @@ import { Spacer } from '../helpers';
 import { blockNameify } from '../../../../utils/block-nameify';
 import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
-import MinimalDonateForm from './MinimalDonateForm';
+import DonateForm from './DonateForm';
 import { modalDefaultStateConfig } from '../../../../config/donation-settings';
 
 import {
@@ -141,7 +141,7 @@ function DonateModal({
       <Modal.Body>
         {isBlockDonation ? blockDonationText : progressDonationText}
         <Spacer />
-        <MinimalDonateForm handleProcessing={handleProcessing} />
+        <DonateForm handleProcessing={handleProcessing} isMinimalForm={true} />
         <Spacer />
         <Row>
           <Col sm={4} smOffset={4} xs={8} xsOffset={2}>

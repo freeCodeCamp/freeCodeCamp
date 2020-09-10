@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { StripeProvider, Elements } from 'react-stripe-elements';
 import {
   Button,
   Col,
@@ -20,13 +21,21 @@ import {
   defaultAmount,
   defaultStateConfig,
   onetimeSKUConfig,
-  donationUrls
+  donationUrls,
+  modalDefaultStateConfig
 } from '../../../../config/donation-settings';
+import { stripePublicKey } from '../../../../config/env.json';
+import { stripeScriptLoader } from '../../utils/scriptLoaders';
+import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
-import { isSignedInSelector, signInLoadingSelector } from '../../redux';
+import {
+  isSignedInSelector,
+  signInLoadingSelector,
+  hardGoTo as navigate
+} from '../../redux';
 
 import './Donation.css';
 
@@ -34,15 +43,13 @@ const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
+  defaultTheme: PropTypes.string,
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
+  isMinimalForm: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
-  showLoading: PropTypes.bool.isRequired,
-  stripe: PropTypes.shape({
-    createToken: PropTypes.func.isRequired,
-    redirectToCheckout: PropTypes.func.isRequired
-  })
+  showLoading: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = createSelector(
@@ -53,6 +60,10 @@ const mapStateToProps = createSelector(
     showLoading
   })
 );
+
+const mapDispatchToProps = {
+  navigate
+};
 
 const initialState = {
   donationState: {
@@ -69,12 +80,19 @@ class DonateForm extends Component {
     this.durations = durationsConfig;
     this.amounts = amountsConfig;
 
+    const initialAmountAndDuration = this.props.isMinimalForm
+      ? modalDefaultStateConfig
+      : defaultStateConfig;
+
     this.state = {
       ...initialState,
-      ...defaultStateConfig,
-      processing: false
+      ...initialAmountAndDuration,
+      processing: false,
+      isMinimalForm: this.props.isMinimalForm,
+      stripe: null
     };
 
+    this.handleStripeLoad = this.handleStripeLoad.bind(this);
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
     this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
@@ -87,6 +105,35 @@ class DonateForm extends Component {
     this.resetDonation = this.resetDonation.bind(this);
   }
 
+  componentDidMount() {
+    if (window.Stripe) {
+      this.handleStripeLoad();
+    } else if (document.querySelector('#stripe-js')) {
+      document
+        .querySelector('#stripe-js')
+        .addEventListener('load', this.handleStripeLoad);
+    } else {
+      stripeScriptLoader(this.handleStripeLoad);
+    }
+  }
+
+  componentWillUnmount() {
+    const stripeMountPoint = document.querySelector('#stripe-js');
+    if (stripeMountPoint) {
+      stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
+    }
+  }
+
+  handleStripeLoad() {
+    // Create Stripe instance once Stripe.js loads
+    if (stripePublicKey) {
+      this.setState(state => ({
+        ...state,
+        stripe: window.Stripe(stripePublicKey)
+      }));
+    }
+  }
+
   onDonationStateChange(success, processing, error) {
     this.setState(state => ({
       ...state,
@@ -97,7 +144,7 @@ class DonateForm extends Component {
         error: error
       }
     }));
-    if (success) {
+    if (success && !this.state.isMinimalForm) {
       this.props.navigate(donationUrls.successUrl);
     }
   }
@@ -141,7 +188,7 @@ class DonateForm extends Component {
   }
 
   async handleStripeCheckoutRedirect(e) {
-    const { stripe } = this.props;
+    const { stripe } = this.state;
     const { donationAmount, donationDuration } = this.state;
 
     const isOneTime = donationDuration === 'onetime';
@@ -312,18 +359,47 @@ class DonateForm extends Component {
     return <DonateCompletion {...props} />;
   }
 
-  render() {
-    const {
-      donationState: { processing, success, error }
-    } = this.state;
-    if (processing || success || error) {
-      return this.renderCompletion({
-        processing,
-        success,
-        error,
-        reset: this.resetDonation
-      });
-    }
+  renderModalForm() {
+    const { donationAmount, donationDuration, stripe } = this.state;
+    const { handleProcessing, defaultTheme } = this.props;
+    const donationPlan = `$${donationAmount / 100} / ${donationDuration}`;
+
+    return (
+      <Row>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <Spacer />
+          <b>Confirm your donation of {donationPlan} with PayPal:</b>
+          <Spacer />
+          <PaypalButton
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
+            handleProcessing={handleProcessing}
+            onDonationStateChange={this.onDonationStateChange}
+          />
+        </Col>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <Spacer />
+          <b>Or donate with a credit card:</b>
+          <Spacer />
+          <StripeProvider stripe={stripe}>
+            <Elements>
+              <DonateFormChildViewForHOC
+                defaultTheme={defaultTheme}
+                donationAmount={donationAmount}
+                donationDuration={donationDuration}
+                getDonationButtonLabel={() =>
+                  `Confirm your donation of ${donationPlan}`
+                }
+                handleProcessing={handleProcessing}
+              />
+            </Elements>
+          </StripeProvider>
+        </Col>
+      </Row>
+    );
+  }
+
+  renderPageForm() {
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
@@ -335,9 +411,29 @@ class DonateForm extends Component {
       </Row>
     );
   }
+
+  render() {
+    console.log(this.state.stripe);
+    const {
+      donationState: { processing, success, error },
+      isMinimalForm
+    } = this.state;
+    if (processing || success || error) {
+      return this.renderCompletion({
+        processing,
+        success,
+        error,
+        reset: this.resetDonation
+      });
+    }
+    return isMinimalForm ? this.renderModalForm() : this.renderPageForm();
+  }
 }
 
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default connect(mapStateToProps)(DonateForm);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonateForm);
