@@ -31,6 +31,12 @@ export const defaultFetchState = {
   error: null
 };
 
+export const defaultDonationFormState = {
+  processing: false,
+  success: false,
+  error: ''
+};
+
 const initialState = {
   appUsername: '',
   canRequestBlockDonation: false,
@@ -51,7 +57,10 @@ const initialState = {
   sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   isBlockDonationModal: false,
-  isOnline: true
+  isOnline: true,
+  donationFormState: {
+    ...defaultDonationFormState
+  }
 };
 
 export const types = createTypes(
@@ -71,6 +80,7 @@ export const types = createTypes(
     'updateComplete',
     'updateCurrentChallengeId',
     'updateFailed',
+    'updateDonationFormState',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('fetchProfileForUser'),
     ...createAsyncTypes('acceptTerms'),
@@ -111,6 +121,9 @@ export const preventBlockDonationRequests = createAction(
 );
 export const preventProgressDonationRequests = createAction(
   types.preventProgressDonationRequests
+);
+export const updateDonationFormState = createAction(
+  types.updateDonationFormState
 );
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
@@ -160,7 +173,6 @@ export const completedChallengesSelector = state =>
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
 export const isDonatingSelector = state => userSelector(state).isDonating;
-
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
 export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
@@ -168,12 +180,11 @@ export const canRequestBlockDonationSelector = state =>
   state[ns].canRequestBlockDonation;
 export const isBlockDonationModalSelector = state =>
   state[ns].isBlockDonationModal;
-
+export const donationFormStateSelector = state => state[ns].donationFormState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
-
 export const shouldRequestDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const completionCount = completionCountSelector(state);
@@ -388,6 +399,10 @@ export const reducer = handleActions(
     [types.allowBlockDonationRequests]: state => ({
       ...state,
       canRequestBlockDonation: true
+    }),
+    [types.updateDonationFormState]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...state.donationFormState, ...payload }
     }),
     [types.fetchUser]: state => ({
       ...state,

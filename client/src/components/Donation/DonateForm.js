@@ -34,7 +34,10 @@ import DonateCompletion from './DonateCompletion';
 import {
   isSignedInSelector,
   signInLoadingSelector,
-  hardGoTo as navigate
+  donationFormStateSelector,
+  hardGoTo as navigate,
+  updateDonationFormState,
+  defaultDonationFormState
 } from '../../redux';
 
 import './Donation.css';
@@ -44,33 +47,30 @@ const numToCommas = num =>
 
 const propTypes = {
   defaultTheme: PropTypes.string,
+  donationFormState: PropTypes.object,
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
   isMinimalForm: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
-  showLoading: PropTypes.bool.isRequired
+  showLoading: PropTypes.bool.isRequired,
+  updateDonationFormState: PropTypes.func
 };
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   isSignedInSelector,
-  (showLoading, isSignedIn) => ({
+  donationFormStateSelector,
+  (showLoading, isSignedIn, donationFormState) => ({
     isSignedIn,
-    showLoading
+    showLoading,
+    donationFormState
   })
 );
 
 const mapDispatchToProps = {
-  navigate
-};
-
-const initialState = {
-  donationState: {
-    processing: false,
-    success: false,
-    error: ''
-  }
+  navigate,
+  updateDonationFormState
 };
 
 class DonateForm extends Component {
@@ -85,10 +85,8 @@ class DonateForm extends Component {
       : defaultStateConfig;
 
     this.state = {
-      ...initialState,
       ...initialAmountAndDuration,
       processing: false,
-      isMinimalForm: this.props.isMinimalForm,
       stripe: null
     };
 
@@ -122,6 +120,7 @@ class DonateForm extends Component {
     if (stripeMountPoint) {
       stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
     }
+    this.resetDonation();
   }
 
   handleStripeLoad() {
@@ -135,16 +134,12 @@ class DonateForm extends Component {
   }
 
   onDonationStateChange(success, processing, error) {
-    this.setState(state => ({
-      ...state,
-      donationState: {
-        ...state.donationState,
-        processing: processing,
-        success: success,
-        error: error
-      }
-    }));
-    if (success && !this.state.isMinimalForm) {
+    this.props.updateDonationFormState({
+      success,
+      processing,
+      error
+    });
+    if (success && !this.props.isMinimalForm) {
       this.props.navigate(donationUrls.successUrl);
     }
   }
@@ -352,7 +347,7 @@ class DonateForm extends Component {
   }
 
   resetDonation() {
-    return this.setState({ ...initialState });
+    return this.props.updateDonationFormState({ ...defaultDonationFormState });
   }
 
   renderCompletion(props) {
@@ -413,11 +408,10 @@ class DonateForm extends Component {
   }
 
   render() {
-    console.log(this.state.stripe);
     const {
-      donationState: { processing, success, error },
+      donationFormState: { processing, success, error },
       isMinimalForm
-    } = this.state;
+    } = this.props;
     if (processing || success || error) {
       return this.renderCompletion({
         processing,
