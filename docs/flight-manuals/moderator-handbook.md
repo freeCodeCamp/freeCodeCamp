@@ -316,7 +316,8 @@ If this happens on Discord: Suspend the user. This is not to punish them! Suspen
 - Public chat is no longer disrupted
 - Other team members can pitch in, should you be uncomfortable dealing with the situation yourself
 
-Note: Suspending a user automatically gives them a message about reading our Code of Conduct. Make sure you inform the user that you Suspended them to give them some privacy and that they're not being punished. This is very important! We absolutely want to avoid giving users the idea that they're being punished for reaching out to get help!
+> [!NOTE]
+>Suspending a user automatically gives them a message about reading our Code of Conduct. Make sure you inform the user that you Suspended them to give them some privacy and that they're not being punished. This is very important! We absolutely want to avoid giving users the idea that they're being punished for reaching out to get help!
 
 If you believe the user is capable of rejoining the community, right click on the private channel and copy the ID. Put the following message in #mod-log:
 
