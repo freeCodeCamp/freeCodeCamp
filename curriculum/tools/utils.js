@@ -90,7 +90,7 @@ const reorderSteps = () => {
 
   const curriculumPath = process.env.CALLING_DIR
     ? ''
-    : '../../../../../curriculum';
+    : path.join(__dirname, '../');
 
   const projectMetaPath = path.resolve(
     curriculumPath,
