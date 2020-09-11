@@ -133,13 +133,14 @@ class DonateForm extends Component {
     }
   }
 
-  onDonationStateChange(success, processing, error) {
-    this.props.updateDonationFormState({
-      success,
-      processing,
-      error
-    });
-    if (success && !this.props.isMinimalForm) {
+  onDonationStateChange(donationState) {
+    this.props.updateDonationFormState(donationState);
+
+    // scroll to top
+    window.scrollTo(0, 0);
+
+    // send donation made on the donate page to related news article
+    if (donationState.success && !this.props.isMinimalForm) {
       this.props.navigate(donationUrls.successUrl);
     }
   }
@@ -386,6 +387,7 @@ class DonateForm extends Component {
                   `Confirm your donation of ${donationPlan}`
                 }
                 handleProcessing={handleProcessing}
+                onDonationStateChange={this.onDonationStateChange}
               />
             </Elements>
           </StripeProvider>
@@ -412,7 +414,7 @@ class DonateForm extends Component {
       donationFormState: { processing, success, error },
       isMinimalForm
     } = this.props;
-    if (processing || success || error) {
+    if (success || error) {
       return this.renderCompletion({
         processing,
         success,
@@ -420,7 +422,24 @@ class DonateForm extends Component {
         reset: this.resetDonation
       });
     }
-    return isMinimalForm ? this.renderModalForm() : this.renderPageForm();
+
+    // keep payment provider elements on DOM during processing to avoid errors.
+    return (
+      <>
+        {processing &&
+          this.renderCompletion({
+            processing,
+            success,
+            error,
+            reset: this.resetDonation
+          })}
+        <div className={processing && 'hide'}>
+          {isMinimalForm
+            ? this.renderModalForm(processing)
+            : this.renderPageForm(processing)}
+        </div>
+      </>
+    );
   }
 }
 

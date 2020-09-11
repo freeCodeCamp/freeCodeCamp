@@ -111,7 +111,6 @@ export class DonatePage extends Component {
                 <DonateForm
                   enableDonationSettingsPage={this.enableDonationSettingsPage}
                   handleProcessing={this.handleProcessing}
-                  isModal={true}
                 />
               </Col>
               <Col md={6}>

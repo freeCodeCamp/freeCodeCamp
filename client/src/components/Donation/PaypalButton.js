@@ -40,26 +40,30 @@ export class PaypalButton extends Component {
     const { skipAddDonation = false } = this.props;
     // Skip the api if user is not signed in or if its a one-time donation
     if (skipAddDonation || !isSubscription) {
-      this.props.onDonationStateChange(
-        true,
-        false,
-        data.error ? data.error : ''
-      );
+      this.props.onDonationStateChange({
+        processing: false,
+        success: true,
+        error: data.error ? data.error : null
+      });
     } else {
       this.props.handleProcessing(
         duration,
         amount,
         'Paypal payment submission'
       );
-      this.props.onDonationStateChange(false, true, '');
+      this.props.onDonationStateChange({
+        processing: true,
+        success: false,
+        error: ''
+      });
       verifySubscriptionPaypal(data)
         .then(response => {
           const data = response && response.data;
-          this.props.onDonationStateChange(
-            true,
-            false,
-            data.error ? data.error : ''
-          );
+          this.props.onDonationStateChange({
+            processing: false,
+            success: true,
+            error: data.error ? data.error : ''
+          });
         })
         .catch(error => {
           const data =
@@ -68,7 +72,11 @@ export class PaypalButton extends Component {
               : {
                   error: `Something is not right. Please contact team@freecodecamp.org`
                 };
-          this.props.onDonationStateChange(false, false, data.error);
+          this.props.onDonationStateChange({
+            processing: false,
+            success: false,
+            error: data.error
+          });
         });
     }
   };
@@ -107,14 +115,18 @@ export class PaypalButton extends Component {
           this.handleApproval(data, isSubscription);
         }}
         onCancel={() => {
-          this.props.onDonationStateChange(
-            false,
-            false,
-            `Uh - oh. It looks like your transaction didn't go through. Could you please try again?`
-          );
+          this.props.onDonationStateChange({
+            processing: false,
+            success: false,
+            error: `Uh - oh. It looks like your transaction didn't go through. Could you please try again?`
+          });
         }}
         onError={() =>
-          this.props.onDonationStateChange(false, false, 'Please try again.')
+          this.props.onDonationStateChange({
+            processing: false,
+            success: false,
+            error: 'Please try again.'
+          })
         }
         plantId={planId}
         style={{
