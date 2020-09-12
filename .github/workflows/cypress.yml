@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        browsers: [chrome, firefox, brave]
+        browsers: [chrome, firefox]
     services:
       mongodb:
         image: mongo:3.6.19
@@ -59,3 +59,49 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
+
+  cypress-run-brave:
+    name: Test
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # We use .npmrc to set the default version to 0, and prevents download during developement.
+      # This installs it specifically in the CI runs.
+      CYPRESS_INSTALL_BINARY: '4.11.0'
+    runs-on: ubuntu-18.04
+    services:
+      mongodb:
+        image: mongo:3.6.19
+        ports:
+          - 27017:27017
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npm run ensure-env
+
+      - name: Seed Database
+        run: npm run seed
+
+      - name: Install Brave
+        run: |
+          sudo apt install apt-transport-https curl
+          curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+          echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+          sudo apt update
+          sudo apt install brave-browser
+
+      - name: Cypress run
+        run: npm run cypress -- run --config baseUrl=http://localhost:8000 --browser Brave
