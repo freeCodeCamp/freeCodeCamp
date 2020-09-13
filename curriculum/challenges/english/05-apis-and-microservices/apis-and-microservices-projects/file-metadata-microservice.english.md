@@ -23,9 +23,11 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I can submit a FormData object that includes a file upload.
+  - text: I can submit a form that includes a file upload.
     testString: ''
-  - text: 'When I submit something, I will receive the file size in bytes within the JSON response.'
+  - text: The form file input field has the <code>name</code> attribute set to <code>upfile</code>.
+    testString: ''
+  - text: When I submit something, I will receive the file <code>name</code>, <code>type</code>, and <code>size</code> in bytes within the JSON response.
     testString: ''
 
 ```
