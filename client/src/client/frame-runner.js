@@ -98,7 +98,7 @@ async function initTestFrame(e = { code: {} }) {
         console.error(err);
       }
       // return the error so that the curriculum tests are more informative
-      return err;
+      return { err };
     }
   };
 }
