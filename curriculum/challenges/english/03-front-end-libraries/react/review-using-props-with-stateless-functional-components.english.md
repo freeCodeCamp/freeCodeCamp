@@ -56,7 +56,7 @@ class CampSite extends React.Component {
     );
   }
 };
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -101,7 +101,7 @@ class CampSite extends React.Component {
     );
   }
 };
-// change code below this line
+// Change code below this line
 
 const Camper = (props) => {
    return (

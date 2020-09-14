@@ -48,9 +48,9 @@ class MyComponent extends React.Component {
     this.state = {
       text: "Hello"
     };
-    // change code below this line
+    // Change code below this line
 
-    // change code above this line
+    // Change code above this line
   }
   handleClick() {
     this.setState({
@@ -60,9 +60,9 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <button>Click Me</button>
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
         <h1>{this.state.text}</h1>
       </div>
     );

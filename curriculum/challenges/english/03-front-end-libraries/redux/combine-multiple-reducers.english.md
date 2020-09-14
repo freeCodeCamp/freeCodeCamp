@@ -83,7 +83,7 @@ const authReducer = (state = {authenticated: false}, action) => {
   }
 };
 
-const rootReducer = // define the root reducer here
+const rootReducer = // Define the root reducer here
 
 const store = Redux.createStore(rootReducer);
 

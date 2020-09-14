@@ -43,7 +43,7 @@ const ShoppingCart = (props) => {
     </div>
   )
 };
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -74,7 +74,7 @@ const ShoppingCart = (props) => {
   )
 };
 
-// change code below this line
+// Change code below this line
 ShoppingCart.defaultProps = {
   items: 0
 }

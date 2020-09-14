@@ -40,7 +40,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -55,7 +55,7 @@ tests:
 
 
 ```js
-// change code below this line
+// Change code below this line
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);

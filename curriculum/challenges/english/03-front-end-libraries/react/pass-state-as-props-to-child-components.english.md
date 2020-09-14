@@ -15,7 +15,7 @@ This pattern illustrates some important paradigms in React. The first is <em>uni
 
 ## Instructions
 <section id='instructions'>
-The <code>MyApp</code> component is stateful and renders a <code>Navbar</code> component as a child. Pass the <code>name</code> property in its <code>state</code> down to the child component, then show the <code>name</code> in the <code>h1</code> tag that's part of the <code>Navbar</code> render method.
+The <code>MyApp</code> component is stateful and renders a <code>Navbar</code> component as a child. Pass the <code>name</code> property in its <code>state</code> down to the child component, then show the <code>name</code> in the <code>h1</code> tag that's part of the <code>Navbar</code> render method. <code>name</code> should appear after the text <code>Hello, my name is: </code>.
 </section>
 
 ## Tests
@@ -50,7 +50,9 @@ class MyApp extends React.Component {
   render() {
     return (
        <div>
-         <Navbar /* your code here */ />
+         {/* Change code below this line */}
+         <Navbar />
+         {/* Change code above this line */}
        </div>
     );
   }
@@ -63,7 +65,9 @@ class Navbar extends React.Component {
   render() {
     return (
     <div>
-      <h1>Hello, my name is: {/* your code here */} </h1>
+      {/* Change code below this line */}
+      <h1>Hello, my name is: </h1>
+      {/* Change code above this line */}
     </div>
     );
   }

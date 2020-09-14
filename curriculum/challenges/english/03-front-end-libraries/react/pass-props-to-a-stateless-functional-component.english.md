@@ -63,9 +63,9 @@ tests:
 const CurrentDate = (props) => {
   return (
     <div>
-      { /* change code below this line */ }
+      { /* Change code below this line */ }
       <p>The current date is: </p>
-      { /* change code above this line */ }
+      { /* Change code above this line */ }
     </div>
   );
 };
@@ -78,9 +78,9 @@ class Calendar extends React.Component {
     return (
       <div>
         <h3>What date is it?</h3>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <CurrentDate />
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }
@@ -109,9 +109,9 @@ ReactDOM.render(<Calendar />, document.getElementById('root'))
 const CurrentDate = (props) => {
   return (
     <div>
-      { /* change code below this line */ }
+      { /* Change code below this line */ }
       <p>The current date is: {props.date}</p>
-      { /* change code above this line */ }
+      { /* Change code above this line */ }
     </div>
   );
 };
@@ -124,9 +124,9 @@ class Calendar extends React.Component {
     return (
       <div>
         <h3>What date is it?</h3>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <CurrentDate date={Date()} />
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }

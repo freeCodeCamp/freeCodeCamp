@@ -44,7 +44,7 @@ tests:
 ```jsx
 const state = [];
 
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -61,7 +61,7 @@ const state = [];
 ```js
 const state = [];
 
-// change code below this line
+// Change code below this line
 
 const mapStateToProps = (state) => {
   return {

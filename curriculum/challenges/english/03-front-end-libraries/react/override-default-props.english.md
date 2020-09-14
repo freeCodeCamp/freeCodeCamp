@@ -52,9 +52,9 @@ class ShoppingCart extends React.Component {
     super(props);
   }
   render() {
-    { /* change code below this line */ }
+    { /* Change code below this line */ }
     return <Items />
-    { /* change code above this line */ }
+    { /* Change code above this line */ }
   }
 };
 ```
@@ -91,9 +91,9 @@ class ShoppingCart extends React.Component {
     super(props);
   }
   render() {
-    { /* change code below this line */ }
+    { /* Change code below this line */ }
     return <Items quantity = {10} />
-    { /* change code above this line */ }
+    { /* Change code above this line */ }
   }
 };
 ```

@@ -16,7 +16,7 @@ The best practice with React is to place API calls or any calls to your server i
 ## Instructions
 
 <section id='instructions'>
-There is a mock API call in <code>componentDidMount()</code>. It sets state after 2.5 seconds to simulate calling a server to retrieve data. This example requests the current total active users for a site. In the render method, render the value of <code>activeUsers</code> in the <code>h1</code>. Watch what happens in the preview, and feel free to change the timeout to see the different effects.
+There is a mock API call in <code>componentDidMount()</code>. It sets state after 2.5 seconds to simulate calling a server to retrieve data. This example requests the current total active users for a site. In the render method, render the value of <code>activeUsers</code> in the <code>h1</code> after the text <code>Active Users: </code>. Watch what happens in the preview, and feel free to change the timeout to see the different effects.
 </section>
 
 ## Tests
@@ -71,7 +71,9 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        <h1>Active Users: {/* change code here */}</h1>
+        {/* Change code below this line */}
+        <h1>Active Users: </h1>
+        {/* Change code below this line */}
       </div>
     );
   }

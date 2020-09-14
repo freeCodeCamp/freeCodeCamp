@@ -53,9 +53,9 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }
@@ -91,9 +91,9 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <h1>{this.state.name}</h1>
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }

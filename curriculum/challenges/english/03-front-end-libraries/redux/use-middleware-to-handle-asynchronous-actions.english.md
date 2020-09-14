@@ -53,13 +53,13 @@ const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users}
 
 const handleAsync = () => {
   return function(dispatch) {
-    // dispatch request action here
+    // Dispatch request action here
 
     setTimeout(function() {
       let data = {
         users: ['Jeff', 'William', 'Alice']
       }
-      // dispatch received data action here
+      // Dispatch received data action here
 
     }, 2500);
   }

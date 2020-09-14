@@ -84,9 +84,9 @@ class OnlyEvens extends React.Component {
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.log('Should I update?');
-    // change code below this line
+    // Change code below this line
     return true;
-    // change code above this line
+    // Change code above this line
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');
@@ -145,9 +145,9 @@ class OnlyEvens extends React.Component {
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.log('Should I update?');
-    // change code below this line
+    // Change code below this line
     return nextProps.value % 2 === 0;
-    // change code above this line
+    // Change code above this line
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');

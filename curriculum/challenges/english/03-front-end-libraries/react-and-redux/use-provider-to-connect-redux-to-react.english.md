@@ -49,7 +49,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-// Redux Code:
+// Redux:
 const ADD = 'ADD';
 
 const addMessage = (message) => {
@@ -75,7 +75,7 @@ const messageReducer = (state = [], action) => {
 
 const store = Redux.createStore(messageReducer);
 
-// React Code:
+// React:
 
 class DisplayMessages extends React.Component {
   constructor(props) {
@@ -125,9 +125,9 @@ class DisplayMessages extends React.Component {
 const Provider = ReactRedux.Provider;
 
 class AppWrapper extends React.Component {
-  // render the Provider here
+  // Render the Provider below this line
 
-  // change code above this line
+  // Change code above this line
 };
 ```
 
@@ -150,7 +150,7 @@ ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 
 
 ```js
-// Redux Code:
+// Redux:
 const ADD = 'ADD';
 
 const addMessage = (message) => {
@@ -174,7 +174,7 @@ const messageReducer = (state = [], action) => {
 
 const store = Redux.createStore(messageReducer);
 
-// React Code:
+// React:
 
 class DisplayMessages extends React.Component {
   constructor(props) {
@@ -224,7 +224,7 @@ class DisplayMessages extends React.Component {
 const Provider = ReactRedux.Provider;
 
 class AppWrapper extends React.Component {
-  // change code below this line
+  // Change code below this line
   render() {
     return (
       <Provider store = {store}>
@@ -232,7 +232,7 @@ class AppWrapper extends React.Component {
       </Provider>
     );
   }
-  // change code above this line
+  // Change code above this line
 };
 ```
 

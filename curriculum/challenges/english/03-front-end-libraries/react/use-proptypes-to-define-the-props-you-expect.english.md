@@ -49,9 +49,9 @@ const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
 };
 
-// change code below this line
+// Change code below this line
 
-// change code above this line
+// Change code above this line
 
 Items.defaultProps = {
   quantity: 0
@@ -101,11 +101,11 @@ const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
 };
 
-// change code below this line
+// Change code below this line
 Items.propTypes = {
   quantity: PropTypes.number.isRequired
 };
-// change code above this line
+// Change code above this line
 
 Items.defaultProps = {
   quantity: 0

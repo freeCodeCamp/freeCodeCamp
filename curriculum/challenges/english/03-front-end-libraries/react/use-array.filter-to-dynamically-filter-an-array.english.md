@@ -139,8 +139,8 @@ class MyComponent extends React.Component {
     };
   }
   render() {
-    const usersOnline = null; // change code here
-    const renderOnline = null; // change code here
+    const usersOnline = null; // Change this line
+    const renderOnline = null; // Change this line
     return (
       <div>
         <h1>Current Online Users:</h1>

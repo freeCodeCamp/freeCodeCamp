@@ -55,7 +55,7 @@ class MyComponent extends React.Component {
     }));
   }
   render() {
-    // change code below this line
+    // Change code below this line
 
     return (
        <div>
@@ -100,7 +100,7 @@ class MyComponent extends React.Component {
     }));
   }
   render() {
-    // change code below this line
+    // Change code below this line
     if (this.state.display) {
       return (
          <div>
