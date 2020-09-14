@@ -36,7 +36,7 @@ A one-off script that automatically adds a new step between two existing consecu
 2. Run the following npm command:
   ```bash
   npm run create-step-between start=X end=Y # where X is the starting step number and Y is the following step number.
-
+  ```
 ## [reorder-steps.js](reorder-steps.js)
 A one-off script that automatically reorders the step files in a project's markdown files based on the filename.  It also updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
 
