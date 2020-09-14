@@ -46,7 +46,7 @@ tests:
 
 ```js
 function dotProduct(...vectors) {
-    // Good luck!
+
 }
 ```
 

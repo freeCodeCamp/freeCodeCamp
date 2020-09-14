@@ -51,7 +51,7 @@ tests:
 
 ```js
 function solve(input) {
-  // Good luck!
+
 }
 ```
 

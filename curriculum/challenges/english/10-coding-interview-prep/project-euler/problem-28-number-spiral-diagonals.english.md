@@ -56,7 +56,7 @@ tests:
 
 ```js
 function spiralDiagonals(n) {
-  // Good luck!
+
   return n;
 }
 

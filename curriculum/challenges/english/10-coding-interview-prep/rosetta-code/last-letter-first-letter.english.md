@@ -53,7 +53,7 @@ tests:
 
 ```js
 function findLongestChain(items) {
-  // Good luck!
+
 }
 ```
 

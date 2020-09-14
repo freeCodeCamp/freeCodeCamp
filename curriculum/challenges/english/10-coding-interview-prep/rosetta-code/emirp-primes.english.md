@@ -49,7 +49,7 @@ tests:
 
 ```js
 function emirps(n) {
-  // Good luck!
+
 }
 ```
 

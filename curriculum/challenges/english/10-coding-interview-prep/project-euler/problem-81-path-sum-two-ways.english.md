@@ -52,7 +52,7 @@ tests:
 
 ```js
 function pathSumTwoWays(arr) {
-  // Good luck!
+
   return true;
 }
 

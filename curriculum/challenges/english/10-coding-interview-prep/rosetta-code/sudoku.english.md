@@ -48,7 +48,7 @@ tests:
 
 ```js
 function solveSudoku(puzzle) {
-  // Good luck!
+
 }
 ```
 

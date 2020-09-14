@@ -136,7 +136,7 @@ tests:
 
 ```js
 function suDoku(arr) {
-  // Good luck!
+
   return true;
 }
 

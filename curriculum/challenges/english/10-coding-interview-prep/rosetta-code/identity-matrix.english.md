@@ -47,7 +47,7 @@ tests:
 
 ```js
 function idMatrix(n) {
-  // Good luck!
+
 }
 ```
 

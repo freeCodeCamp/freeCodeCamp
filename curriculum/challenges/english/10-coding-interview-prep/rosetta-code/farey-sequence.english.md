@@ -56,7 +56,7 @@ tests:
 
 ```js
 function farey(n) {
-  // Good luck!
+
 }
 ```
 

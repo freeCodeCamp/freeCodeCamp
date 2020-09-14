@@ -42,7 +42,7 @@ tests:
 
 ```js
 function countingRectangles() {
-  // Good luck!
+
   return true;
 }
 

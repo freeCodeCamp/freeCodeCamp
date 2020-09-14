@@ -48,7 +48,7 @@ tests:
 
 ```js
 function truncatablePrimes(n) {
-  // Good luck!
+
   return n;
 }
 

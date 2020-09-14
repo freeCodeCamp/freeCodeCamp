@@ -56,7 +56,7 @@ tests:
 
 ```js
 function digitnPowers(n) {
-  // Good luck!
+
   return n;
 }
 

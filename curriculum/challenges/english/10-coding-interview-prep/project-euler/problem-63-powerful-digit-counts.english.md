@@ -40,7 +40,7 @@ tests:
 
 ```js
 function powerfulDigitCounts() {
-  // Good luck!
+
   return true;
 }
 

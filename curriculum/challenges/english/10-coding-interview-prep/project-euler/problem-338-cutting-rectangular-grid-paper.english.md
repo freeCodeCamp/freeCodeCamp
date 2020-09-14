@@ -51,7 +51,7 @@ tests:
 
 ```js
 function euler338() {
-  // Good luck!
+
   return true;
 }
 

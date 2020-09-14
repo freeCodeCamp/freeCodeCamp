@@ -50,7 +50,7 @@ tests:
 
 ```js
 function sumOfNonAbundantNumbers(n) {
-  // Good luck!
+
   return n;
 }
 

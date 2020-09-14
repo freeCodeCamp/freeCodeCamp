@@ -152,7 +152,7 @@ tests:
 
 ```js
 function monopolyOdds() {
-  // Good luck!
+
   return true;
 }
 

@@ -97,7 +97,7 @@ tests:
 
 ```js
 function eth_mult(a, b) {
-  // Good luck!
+
 }
 ```
 

@@ -42,7 +42,7 @@ tests:
 
 ```js
 function sortByKey(arr) {
-  // Good luck!
+
 }
 ```
 

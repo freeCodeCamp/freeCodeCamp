@@ -57,7 +57,7 @@ tests:
 
 ```js
 function brain(prog) {
-  // Good luck!
+
 }
 ```
 

@@ -54,7 +54,7 @@ tests:
 
 ```js
 function combinatoricSelections(limit) {
-  // Good luck!
+
   return 1;
 }
 

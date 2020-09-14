@@ -54,7 +54,7 @@ tests:
 
 ```js
 function permutationSort(arr) {
-  // Good luck!
+
 }
 ```
 

@@ -58,7 +58,7 @@ tests:
 
 ```js
 function totientMaximum() {
-  // Good luck!
+
   return true;
 }
 

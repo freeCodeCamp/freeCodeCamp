@@ -48,7 +48,7 @@ tests:
 
 ```js
 function consecutivePrimeSum(limit) {
-  // Good luck!
+
   return true;
 }
 

@@ -50,7 +50,7 @@ tests:
 
 ```js
 function champernownesConstant(n) {
-  // Good luck!
+
   return true;
 }
 

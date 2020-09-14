@@ -47,7 +47,7 @@ tests:
 
 ```js
 function mult(strNum1, strNum2) {
-  // Good luck!
+
 }
 ```
 

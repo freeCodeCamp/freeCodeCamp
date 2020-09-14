@@ -71,7 +71,7 @@ tests:
 
 ```js
 function sternBrocot(num) {
-  // Good luck!
+
 }
 ```
 

@@ -46,7 +46,7 @@ tests:
 
 ```js
 function triPentaHexa(n) {
-  // Good luck!
+
   return true;
 }
 

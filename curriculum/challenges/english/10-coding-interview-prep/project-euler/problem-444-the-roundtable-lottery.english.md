@@ -50,7 +50,7 @@ tests:
 
 ```js
 function euler444() {
-  // Good luck!
+
   return true;
 }
 

@@ -100,7 +100,7 @@ tests:
 
 ```js
 function dealFreeCell(seed) {
-  // Good luck!
+
   return true;
 }
 ```

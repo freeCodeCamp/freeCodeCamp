@@ -42,7 +42,7 @@ tests:
 
 ```js
 function lrgNonMersennePrime() {
-  // Good luck!
+
   return true;
 }
 

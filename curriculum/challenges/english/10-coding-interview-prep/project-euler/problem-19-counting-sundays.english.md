@@ -50,7 +50,7 @@ tests:
 
 ```js
 function countingSundays(firstYear, lastYear) {
-  // Good luck!
+
   return true;
 }
 

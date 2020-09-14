@@ -50,7 +50,7 @@ tests:
 
 ```js
 function reciprocalCycles(n) {
-  // Good luck!
+
   return n;
 }
 

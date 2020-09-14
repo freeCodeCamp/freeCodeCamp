@@ -78,7 +78,7 @@ tests:
 
 ```js
 function topRankPerGroup(n, data, groupName, rankName) {
-  // Good luck!
+
   return true;
 }
 ```
