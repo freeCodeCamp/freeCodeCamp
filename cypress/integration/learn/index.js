@@ -22,8 +22,8 @@ const superBlockNames = [
   'Coding Interview Prep'
 ];
 
-describe('Learn Landing page', function() {
-  it('renders', () => {
+describe('Learn Landing page (not logged in)', () => {
+  it('Should render', () => {
     cy.visit(locations.index);
 
     cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
@@ -35,7 +35,7 @@ describe('Learn Landing page', function() {
     cy.contains('h1', "Welcome to freeCodeCamp's curriculum.");
   });
 
-  it('renders a curriuculum map', () => {
+  it('Should render a curriuculum map', () => {
     cy.document().then(document => {
       const superBlocks = document.querySelectorAll(
         `${selectors.challengeMap} > ul > li`
@@ -45,6 +45,25 @@ describe('Learn Landing page', function() {
       superBlocks.forEach((superBlock, idx) => {
         expect(superBlock.innerText).to.have.string(superBlockNames[idx]);
       });
+    });
+  });
+});
+
+describe('Quotes', () => {
+  beforeEach(() => {
+    cy.visit('/');
+    cy.contains("Get started (it's free)").click({ force: true });
+  });
+
+  it('Should show a quote each time', () => {
+    cy.get('blockquote').within(() => {
+      cy.get('q').should('be.visible');
+    });
+  });
+
+  it('Should show quote author', () => {
+    cy.get('blockquote').within(() => {
+      cy.get('cite').should('be.visible');
     });
   });
 });
