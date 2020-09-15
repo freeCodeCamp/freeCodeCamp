@@ -10,7 +10,7 @@ const {
   translateCommentsInChallenge
 } = require('../tools/challenge-md-parser/translation-parser/translation-parser');
 /* eslint-enable max-len*/
-const { COMMENT_TRANSLATIONS } = require('./comment-dictionary');
+const { COMMENT_TRANSLATIONS } = require('./dictionaries/english/comments');
 
 const { isAuditedCert } = require('../utils/is-audited');
 const { dasherize, nameify } = require('../utils/slugs');
