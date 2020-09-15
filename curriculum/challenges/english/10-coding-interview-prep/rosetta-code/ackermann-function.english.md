@@ -45,7 +45,7 @@ tests:
 
 ```js
 function ack(m, n) {
-  // Good luck!
+
 }
 ```
 

@@ -52,7 +52,7 @@ tests:
 
 ```js
 function coinSums(n) {
-  // Good luck!
+
   return n;
 }
 

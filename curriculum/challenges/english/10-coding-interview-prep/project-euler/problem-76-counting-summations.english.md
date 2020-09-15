@@ -49,7 +49,7 @@ tests:
 
 ```js
 function countingSummations() {
-  // Good luck!
+
   return true;
 }
 

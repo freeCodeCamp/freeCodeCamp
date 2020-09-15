@@ -42,7 +42,7 @@ tests:
 
 ```js
 function passcodeDerivation(arr) {
-  // Good luck!
+
   return true;
 }
 

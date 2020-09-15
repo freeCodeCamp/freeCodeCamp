@@ -46,7 +46,7 @@ tests:
 
 ```js
 function rightTrianglesIntCoords() {
-  // Good luck!
+
   return true;
 }
 

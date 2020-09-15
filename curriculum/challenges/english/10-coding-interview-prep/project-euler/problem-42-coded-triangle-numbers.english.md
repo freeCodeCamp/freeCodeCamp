@@ -50,7 +50,7 @@ tests:
 
 ```js
 function codedTriangleNumbers(n) {
-  // Good luck!
+
   return 1;
 }
 // only change code above this line

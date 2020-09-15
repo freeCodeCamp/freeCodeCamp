@@ -48,7 +48,7 @@ tests:
 
 ```js
 function knightTour(w, h) {
-  // Good luck!
+
 }
 ```
 

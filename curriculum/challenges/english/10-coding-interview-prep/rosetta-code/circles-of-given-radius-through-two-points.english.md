@@ -66,7 +66,7 @@ tests:
 
 ```js
 function getCircles(...args) {
-  // Good luck!
+
   return true;
 }
 ```

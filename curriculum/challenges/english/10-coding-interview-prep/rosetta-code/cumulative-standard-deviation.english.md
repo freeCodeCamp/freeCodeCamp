@@ -51,7 +51,7 @@ tests:
 
 ```js
 function standardDeviation(arr) {
-  // Good luck!
+
 }
 ```
 

@@ -46,7 +46,7 @@ tests:
 
 ```js
 function orderedFractions() {
-  // Good luck!
+
   return true;
 }
 

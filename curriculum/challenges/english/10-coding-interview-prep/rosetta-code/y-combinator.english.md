@@ -52,7 +52,7 @@ tests:
 ```js
 function Y(f) {
   return function() {
-  // Good luck!
+
   };
 }
 

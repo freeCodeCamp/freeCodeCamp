@@ -46,7 +46,7 @@ tests:
 
 ```js
 function fibonacci(n) {
-  // Good luck!
+
 }
 ```
 

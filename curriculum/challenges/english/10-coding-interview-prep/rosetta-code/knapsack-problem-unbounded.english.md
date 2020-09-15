@@ -47,7 +47,7 @@ tests:
 
 ```js
 function knapsackUnbounded(items, maxweight, maxvolume) {
-  // Good luck!
+
 }
 ```
 

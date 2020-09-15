@@ -68,7 +68,7 @@ tests:
 
 ```js
 function check_mersenne(p) {
-  // Good luck!
+
 }
 ```
 

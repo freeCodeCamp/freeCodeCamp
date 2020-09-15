@@ -50,7 +50,7 @@ tests:
 
 ```js
 function primeGenerator(num, showPrimes) {
-  // Good luck!
+
 }
 ```
 

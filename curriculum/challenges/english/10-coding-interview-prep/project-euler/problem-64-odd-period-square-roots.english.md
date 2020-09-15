@@ -94,7 +94,7 @@ tests:
 
 ```js
 function oddPeriodSqrts() {
-  // Good luck!
+
   return true;
 }
 

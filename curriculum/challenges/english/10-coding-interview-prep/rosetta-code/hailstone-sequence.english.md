@@ -53,7 +53,7 @@ tests:
 // noprotect
 function hailstoneSequence() {
   const res = [];
-  // Good luck!
+
 
   return res;
 }

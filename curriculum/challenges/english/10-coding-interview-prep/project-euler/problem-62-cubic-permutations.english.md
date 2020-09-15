@@ -40,7 +40,7 @@ tests:
 
 ```js
 function cubicPermutations() {
-  // Good luck!
+
   return true;
 }
 

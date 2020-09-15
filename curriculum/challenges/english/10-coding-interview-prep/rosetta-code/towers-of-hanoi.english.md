@@ -45,7 +45,7 @@ tests:
 
 ```js
 function towerOfHanoi(n, a, b, c) {
-  // Good luck!
+
   return [[]];
 }
 ```

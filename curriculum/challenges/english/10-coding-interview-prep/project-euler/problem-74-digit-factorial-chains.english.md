@@ -59,7 +59,7 @@ tests:
 
 ```js
 function digitFactorialChains() {
-  // Good luck!
+
   return true;
 }
 

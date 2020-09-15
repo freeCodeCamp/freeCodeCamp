@@ -67,7 +67,7 @@ tests:
 
 ```js
 function equilibrium(a) {
-  // Good luck!
+
 }
 ```
 

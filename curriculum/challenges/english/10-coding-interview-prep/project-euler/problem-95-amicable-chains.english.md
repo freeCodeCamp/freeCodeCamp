@@ -50,7 +50,7 @@ tests:
 
 ```js
 function amicableChains() {
-  // Good luck!
+
   return true;
 }
 

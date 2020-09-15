@@ -44,7 +44,7 @@ tests:
 
 ```js
 function pandigitalProducts() {
-  // Good luck!
+
   return true;
 }
 

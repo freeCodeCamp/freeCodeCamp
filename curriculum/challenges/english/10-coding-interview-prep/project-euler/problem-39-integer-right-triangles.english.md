@@ -48,7 +48,7 @@ tests:
 
 ```js
 function intRightTriangles(n) {
-  // Good luck!
+
   return n;
 }
 

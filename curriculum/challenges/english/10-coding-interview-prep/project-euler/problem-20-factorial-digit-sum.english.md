@@ -50,7 +50,7 @@ tests:
 
 ```js
 function sumFactorialDigits(n) {
-  // Good luck!
+
   return n;
 }
 

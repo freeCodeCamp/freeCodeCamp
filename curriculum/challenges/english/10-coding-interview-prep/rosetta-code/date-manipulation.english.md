@@ -48,7 +48,7 @@ tests:
 
 ```js
 function add12Hours(dateString) {
-  // Good luck!
+
   return true;
 }
 ```

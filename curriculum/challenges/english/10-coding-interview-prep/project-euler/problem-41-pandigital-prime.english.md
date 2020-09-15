@@ -42,7 +42,7 @@ tests:
 
 ```js
 function pandigitalPrime(n) {
-  // Good luck!
+
   return n;
 }
 

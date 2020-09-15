@@ -62,7 +62,7 @@ tests:
 
 ```js
 function divisibleTriangleNumber(n) {
-  // Good luck!
+
   return true;
 }
 

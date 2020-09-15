@@ -40,7 +40,7 @@ tests:
 
 ```js
 function crossProduct(a, b) {
-    // Good luck!
+
 }
 ```
 

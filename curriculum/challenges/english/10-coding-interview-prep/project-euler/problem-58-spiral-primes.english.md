@@ -52,7 +52,7 @@ tests:
 
 ```js
 function spiralPrimes() {
-  // Good luck!
+
   return true;
 }
 

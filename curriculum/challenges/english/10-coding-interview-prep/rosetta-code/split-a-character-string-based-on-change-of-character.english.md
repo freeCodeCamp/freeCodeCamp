@@ -62,7 +62,7 @@ tests:
 
 ```js
 function split(str) {
-  // Good luck!
+
 }
 ```
 

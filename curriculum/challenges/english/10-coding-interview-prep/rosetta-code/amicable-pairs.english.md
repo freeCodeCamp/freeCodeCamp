@@ -46,7 +46,7 @@ tests:
 
 ```js
 function amicablePairsUpTo(maxNum) {
-  // Good luck!
+
   return true;
 }
 ```

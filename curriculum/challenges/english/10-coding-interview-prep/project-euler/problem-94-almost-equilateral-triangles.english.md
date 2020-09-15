@@ -42,7 +42,7 @@ tests:
 
 ```js
 function almostEquilateralTriangles() {
-  // Good luck!
+
   return true;
 }
 

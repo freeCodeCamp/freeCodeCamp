@@ -48,7 +48,7 @@ tests:
 
 ```js
 function smallestMult(n) {
-  // Good luck!
+
   return true;
 }
 

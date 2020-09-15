@@ -38,7 +38,7 @@ tests:
 
 ```js
 function getFinalOpenedDoors(numDoors) {
-  // Good luck!
+
 }
 ```
 

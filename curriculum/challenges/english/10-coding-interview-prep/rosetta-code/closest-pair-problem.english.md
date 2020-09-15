@@ -114,7 +114,7 @@ Point.prototype.getY = function() {
 };
 
 function getClosestPair(pointsArr) {
-  // Good luck!
+
   return true;
 }
 ```

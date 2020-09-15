@@ -52,7 +52,7 @@ tests:
 ```js
 // noprotect
 function heronianTriangle(n) {
-  // Good luck!
+
 
   return [];
 }

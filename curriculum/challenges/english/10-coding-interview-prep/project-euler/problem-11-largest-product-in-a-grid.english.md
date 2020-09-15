@@ -67,7 +67,7 @@ tests:
 
 ```js
 function largestGridProduct(arr) {
-  // Good luck!
+
   return true;
 }
 

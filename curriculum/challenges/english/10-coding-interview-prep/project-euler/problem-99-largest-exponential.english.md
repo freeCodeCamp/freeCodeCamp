@@ -44,7 +44,7 @@ tests:
 
 ```js
 function largestExponential() {
-  // Good luck!
+
   return true;
 }
 

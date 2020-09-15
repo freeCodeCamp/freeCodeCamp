@@ -49,7 +49,7 @@ tests:
 
 ```js
 function squareDigitChains() {
-  // Good luck!
+
   return true;
 }
 
