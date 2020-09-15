@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
 import { paypalClientId, deploymentEnv } from '../../../config/env.json';
-import { verifySubscriptionPaypal } from '../../utils/ajax';
 import {
   paypalConfigurator,
   paypalConfigTypes
@@ -51,33 +50,7 @@ export class PaypalButton extends Component {
         amount,
         'Paypal payment submission'
       );
-      this.props.onDonationStateChange({
-        processing: true,
-        success: false,
-        error: ''
-      });
-      verifySubscriptionPaypal(data)
-        .then(response => {
-          const data = response && response.data;
-          this.props.onDonationStateChange({
-            processing: false,
-            success: true,
-            error: data.error ? data.error : ''
-          });
-        })
-        .catch(error => {
-          const data =
-            error.response && error.response.data
-              ? error.response.data
-              : {
-                  error: `Something is not right. Please contact team@freecodecamp.org`
-                };
-          this.props.onDonationStateChange({
-            processing: false,
-            success: false,
-            error: data.error
-          });
-        });
+      this.props.addDonation(data);
     }
   };
 
@@ -139,6 +112,7 @@ export class PaypalButton extends Component {
 }
 
 const propTypes = {
+  addDonation: PropTypes.func,
   donationAmount: PropTypes.number,
   donationDuration: PropTypes.string,
   handleProcessing: PropTypes.func,

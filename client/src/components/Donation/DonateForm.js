@@ -36,6 +36,7 @@ import {
   signInLoadingSelector,
   donationFormStateSelector,
   hardGoTo as navigate,
+  addDonation,
   updateDonationFormState,
   defaultDonationFormState
 } from '../../redux';
@@ -46,6 +47,7 @@ const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
+  addDonation: PropTypes.func,
   defaultTheme: PropTypes.string,
   donationFormState: PropTypes.object,
   handleProcessing: PropTypes.func,
@@ -69,6 +71,7 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = {
+  addDonation,
   navigate,
   updateDonationFormState
 };
@@ -279,7 +282,7 @@ class DonateForm extends Component {
   }
 
   renderDonationOptions() {
-    const { handleProcessing, isSignedIn } = this.props;
+    const { handleProcessing, isSignedIn, addDonation } = this.props;
     const { donationAmount, donationDuration } = this.state;
 
     const isOneTime = donationDuration === 'onetime';
@@ -335,6 +338,7 @@ class DonateForm extends Component {
         </Button>
         <Spacer />
         <PaypalButton
+          addDonation={addDonation}
           donationAmount={donationAmount}
           donationDuration={donationDuration}
           handleProcessing={handleProcessing}
@@ -433,7 +437,7 @@ class DonateForm extends Component {
             error,
             reset: this.resetDonation
           })}
-        <div className={processing && 'hide'}>
+        <div className={processing ? 'hide' : ''}>
           {isMinimalForm
             ? this.renderModalForm(processing)
             : this.renderPageForm(processing)}

@@ -82,6 +82,7 @@ export const types = createTypes(
     'updateFailed',
     'updateDonationFormState',
     ...createAsyncTypes('fetchUser'),
+    ...createAsyncTypes('addDonation'),
     ...createAsyncTypes('fetchProfileForUser'),
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
@@ -145,6 +146,10 @@ export const acceptTermsError = createAction(types.acceptTermsError);
 export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(types.fetchUserComplete);
 export const fetchUserError = createAction(types.fetchUserError);
+
+export const addDonation = createAction(types.addDonation);
+export const addDonationComplete = createAction(types.addDonationComplete);
+export const addDonationError = createAction(types.addDonationError);
 
 export const fetchProfileForUser = createAction(types.fetchProfileForUser);
 export const fetchProfileForUserComplete = createAction(
@@ -403,6 +408,22 @@ export const reducer = handleActions(
     [types.updateDonationFormState]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...state.donationFormState, ...payload }
+    }),
+    [types.addDonation]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [types.addDonationComplete]: state => ({
+      ...state,
+      user: {
+        ...state.user,
+        isDonating: true
+      },
+      donationFormState: { ...defaultDonationFormState, success: true }
+    }),
+    [types.addDonationError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
     }),
     [types.fetchUser]: state => ({
       ...state,
