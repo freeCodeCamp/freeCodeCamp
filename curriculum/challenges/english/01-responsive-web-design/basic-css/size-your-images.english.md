@@ -34,7 +34,7 @@ tests:
   - text: Your <code>img</code> element should have the class <code>smaller-image</code>.
     testString: assert($("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') === "smaller-image");
   - text: Your image should be 100 pixels wide.
-    testString: assert($("img").width() < 200 && code.match(/(?<=<style>([\s\S])*)\.smaller-image\s*{([\s\S]*;)?\s*width\s*:\s*100px\s*(;|})[\s\S]*(?=<\/style>)/i));
+    testString: assert($("img").width() < 200 && code.match(/\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i));
 
 ```
 
