@@ -58,8 +58,9 @@ tests:
 ```js
 var Map = function() {
   this.collection = {};
-  // change code below this line
-  // change code above this line
+  // Only change code below this line
+  
+  // Only change code above this line
 };
 ```
 
@@ -72,7 +73,7 @@ var Map = function() {
 ```js
 var Map = function() {
     this.collection = {};
-    // change code below this line
+    // Only change code below this line
 
     this.add = function(key,value) {
       this.collection[key] = value;
@@ -103,7 +104,7 @@ var Map = function() {
         delete this.collection[item];
       }
     }
-    // change code above this line
+    // Only change code above this line
 };
 ```
 

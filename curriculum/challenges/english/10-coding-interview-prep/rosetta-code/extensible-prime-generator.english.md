@@ -65,7 +65,6 @@ function primeGenerator(num, showPrimes) {
 
 
 ```js
-// noprotect
 function primeGenerator(num, showPrimes) {
   let i,
     arr = [];
