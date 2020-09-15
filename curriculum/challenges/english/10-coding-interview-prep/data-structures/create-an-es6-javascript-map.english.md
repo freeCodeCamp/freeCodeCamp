@@ -43,7 +43,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Only change code below this line
+
 ```
 
 </div>
