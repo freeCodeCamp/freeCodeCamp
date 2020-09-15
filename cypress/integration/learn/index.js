@@ -75,132 +75,49 @@ describe('Superblocks and Blocks', () => {
   });
 
   it('Has first superblock and block collapsed by default', () => {
-    cy.contains(superBlockNames[0]).should('be.visible');
-    cy.contains(superBlockNames[0]).should(
-      'have.attr',
-      'aria-expanded',
-      'true'
-    );
+    cy.contains(superBlockNames[0])
+      .should('be.visible')
+      .and('have.attr', 'aria-expanded', 'true');
 
-    cy.contains('Basic HTML and HTML5').should('be.visible');
-    cy.contains('Basic HTML and HTML5').should(
-      'have.attr',
-      'aria-expanded',
-      'true'
-    );
+    cy.contains('Basic HTML and HTML5')
+      .should('be.visible')
+      .and('have.attr', 'aria-expanded', 'true');
   });
 
   it('Has all supeblocks visible but folded (excluding the first one)', () => {
-    cy.contains(superBlockNames[1]).should('be.visible');
-    cy.contains(superBlockNames[1]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[2]).should('be.visible');
-    cy.contains(superBlockNames[2]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[3]).should('be.visible');
-    cy.contains(superBlockNames[3]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[4]).should('be.visible');
-    cy.contains(superBlockNames[4]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[5]).should('be.visible');
-    cy.contains(superBlockNames[5]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[6]).should('be.visible');
-    cy.contains(superBlockNames[6]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[7]).should('be.visible');
-    cy.contains(superBlockNames[7]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[8]).should('be.visible');
-    cy.contains(superBlockNames[8]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[9]).should('be.visible');
-    cy.contains(superBlockNames[9]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-
-    cy.contains(superBlockNames[10]).should('be.visible');
-    cy.contains(superBlockNames[10]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
-  });
-
-  it('Superblocks should be collapsable and foldable', () => {
-    cy.contains(superBlockNames[0]).click({
-      force: true
+    cy.wrap(superBlockNames.slice(1)).each(name => {
+      cy.contains(name)
+        .should('be.visible')
+        .and('have.attr', 'aria-expanded', 'false');
     });
-    cy.contains(superBlockNames[0]).should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
+  });
+  it('Superblocks should be collapsable and foldable', () => {
+    cy.contains(superBlockNames[0])
+      .click({
+        force: true
+      })
+      .should('have.attr', 'aria-expanded', 'false');
     cy.contains('Basic HTML and HTML5').should('not.be.visible');
 
-    cy.contains(superBlockNames[0]).click({
-      force: true
-    });
-    cy.contains(superBlockNames[0]).should(
-      'have.attr',
-      'aria-expanded',
-      'true'
-    );
+    cy.contains(superBlockNames[0])
+      .click({
+        force: true
+      })
+      .should('have.attr', 'aria-expanded', 'true');
     cy.contains('Basic HTML and HTML5').should('be.visible');
   });
 
   it('Blocks should be collapsable and foldable', () => {
-    cy.contains('Basic HTML and HTML5').click({ force: true });
-    cy.contains('Basic HTML and HTML5').should(
-      'have.attr',
-      'aria-expanded',
-      'false'
-    );
+    cy.contains('Basic HTML and HTML5')
+      .click({ force: true })
+      .should('have.attr', 'aria-expanded', 'false');
     cy.contains('Introduction to Basic HTML and HTML5').should(
       'not.be.visible'
     );
 
-    cy.contains('Basic HTML and HTML5').click({ force: true });
-    cy.contains('Basic HTML and HTML5').should(
-      'have.attr',
-      'aria-expanded',
-      'true'
-    );
+    cy.contains('Basic HTML and HTML5')
+      .click({ force: true })
+      .should('have.attr', 'aria-expanded', 'true');
     cy.contains('Introduction to Basic HTML and HTML5').should('be.visible');
   });
 });
