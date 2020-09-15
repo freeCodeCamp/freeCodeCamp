@@ -56,7 +56,7 @@ const frontEndFrameworks = [
 ];
 
 function Frameworks() {
-  const renderFrameworks = null; // change code here
+  const renderFrameworks = null; // Change this line
   return (
     <div>
       <h1>Popular Front End JavaScript Frameworks</h1>

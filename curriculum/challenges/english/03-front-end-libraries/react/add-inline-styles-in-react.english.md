@@ -14,7 +14,7 @@ All property value length units (like <code>height</code>, <code>width</code>, a
 
 ## Instructions
 <section id='instructions'>
-If you have a large set of styles, you can assign a style <code>object</code> to a constant to keep your code organized. Uncomment the <code>styles</code> constant and declare an <code>object</code> with three style properties and their values. Give the <code>div</code> a color of <code>"purple"</code>, a font-size of <code>40</code>, and a border of <code>"2px solid purple"</code>. Then set the <code>style</code> attribute equal to the <code>styles</code> constant.
+If you have a large set of styles, you can assign a style <code>object</code> to a constant to keep your code organized. Initialize a <code>styles</code> constant and assign an <code>object</code> with three style properties and their values to it. Give the <code>div</code> a color of <code>"purple"</code>, a font-size of <code>40</code>, and a border of <code>"2px solid purple"</code>. Then set the <code>style</code> attribute equal to the <code>styles</code> constant.
 </section>
 
 ## Tests
@@ -46,15 +46,15 @@ tests:
 
 ```jsx
 
-// const styles =
-// change code above this line
+
+// Change code above this line
 class Colorful extends React.Component {
   render() {
-    // change code below this line
+    // Change code below this line
     return (
       <div style={{color: "yellow", fontSize: 24}}>Style Me!</div>
     );
-    // change code above this line
+    // Change code above this line
   }
 };
 
@@ -84,14 +84,14 @@ const styles = {
   fontSize: 40,
   border: "2px solid purple"
 };
-// change code above this line
+// Change code above this line
 class Colorful extends React.Component {
   render() {
-    // change code below this line
+    // Change code below this line
     return (
       <div style={styles}>Style Me!</div>
-  // change code above this line
     );
+    // Change code above this line
   }
 };
 

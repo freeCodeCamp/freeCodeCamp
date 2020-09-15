@@ -56,7 +56,7 @@ class MyComponent extends React.Component {
     }));
   }
   render() {
-    // change code below this line
+    // Change code below this line
     return (
        <div>
          <button onClick={this.toggleDisplay}>Toggle Display</button>
@@ -100,7 +100,7 @@ class MyComponent extends React.Component {
     }));
   }
   render() {
-    // change code below this line
+    // Change code below this line
     return (
        <div>
          <button onClick={this.toggleDisplay}>Toggle Display</button>

@@ -53,8 +53,9 @@ tests:
 class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
-    // initialize state here
+    // Only change code below this line
 
+    // Only change code above this line
   }
   render() {
     return (

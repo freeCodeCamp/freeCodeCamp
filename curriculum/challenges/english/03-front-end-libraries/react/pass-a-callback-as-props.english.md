@@ -59,9 +59,9 @@ class MyApp extends React.Component {
   render() {
     return (
        <div>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
        </div>
     );
   }

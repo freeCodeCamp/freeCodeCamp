@@ -53,11 +53,11 @@ tests:
 
 ```jsx
 const MyComponent = function() {
-  // change code below this line
+  // Change code below this line
 
 
 
-  // change code above this line
+  // Change code above this line
 }
 ```
 
@@ -81,13 +81,13 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 
 ```js
 const MyComponent = function() {
-  // change code below this line
+  // Change code below this line
   return (
     <div>
       Demo Solution
     </div>
   );
-  // change code above this line
+  // Change code above this line
 }
 ```
 

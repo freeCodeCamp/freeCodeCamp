@@ -68,10 +68,10 @@ class ParentComponent extends React.Component {
     return (
       <div>
         <h1>I am the parent</h1>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }
@@ -113,9 +113,9 @@ class ParentComponent extends React.Component {
     return (
       <div>
         <h1>I am the parent</h1>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <ChildComponent />
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }

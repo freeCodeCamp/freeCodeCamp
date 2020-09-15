@@ -66,7 +66,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-// write your code here
+
 
 ```
 

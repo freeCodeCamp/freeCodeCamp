@@ -46,9 +46,9 @@ const defaultState = {
 };
 
 const reducer = (state = defaultState, action) => {
-  // change code below this line
+  // Change code below this line
 
-  // change code above this line
+  // Change code above this line
 };
 
 const store = Redux.createStore(reducer);

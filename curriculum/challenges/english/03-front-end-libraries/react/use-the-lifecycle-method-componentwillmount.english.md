@@ -52,9 +52,9 @@ class MyComponent extends React.Component {
     super(props);
   }
   componentWillMount() {
-    // change code below this line
+    // Change code below this line
 
-    // change code above this line
+    // Change code above this line
   }
   render() {
     return <div />
@@ -86,9 +86,9 @@ class MyComponent extends React.Component {
     super(props);
   }
   componentWillMount() {
-    // change code below this line
+    // Change code below this line
     console.log('Component is mounting...');
-    // change code above this line
+    // Change code above this line
   }
   render() {
     return <div />

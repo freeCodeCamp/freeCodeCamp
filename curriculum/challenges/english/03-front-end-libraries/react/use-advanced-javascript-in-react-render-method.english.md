@@ -175,7 +175,7 @@ class MagicEightBall extends React.Component {
       'Outlook not so good',
       'Very doubtful'
     ];
-    const answer = 'change me!'; // << change code here
+    const answer = 'change me!'; // Change this line
     return (
       <div>
         <input
@@ -189,9 +189,9 @@ class MagicEightBall extends React.Component {
         <br />
         <h3>Answer:</h3>
         <p>
-          {/* change code below this line */}
+          {/* Change code below this line */}
 
-          {/* change code above this line */}
+          {/* Change code above this line */}
         </p>
       </div>
     );

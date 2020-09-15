@@ -45,7 +45,7 @@ class App extends React.Component {
   }
 };
 
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -85,7 +85,7 @@ class App extends React.Component {
   }
 };
 
-// change code below this line
+// Change code below this line
 ReactDOMServer.renderToString(<App/>);
 ```
 
