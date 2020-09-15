@@ -29,7 +29,7 @@ tests:
     }
     "
 
-  - text: 'You can POST a <code>url</code> to <code>/api/shorturl/new</code> and get a JSON response with <code>original_url</code> and <code>short_url</code> as keys.'
+  - text: 'You can POST a URL to <code>/api/shorturl/new</code> and get a JSON response with the property names <code>original_url</code> and <code>short_url</code> and the expected values for each.'
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const urlVariable = Date.now();
