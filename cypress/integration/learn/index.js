@@ -35,7 +35,7 @@ describe('Learn Landing page (not logged in)', () => {
     cy.contains('h1', "Welcome to freeCodeCamp's curriculum.");
   });
 
-  it('Should render a curriuculum map', () => {
+  it('Should render a curriculum map', () => {
     cy.document().then(document => {
       const superBlocks = document.querySelectorAll(
         `${selectors.challengeMap} > ul > li`
