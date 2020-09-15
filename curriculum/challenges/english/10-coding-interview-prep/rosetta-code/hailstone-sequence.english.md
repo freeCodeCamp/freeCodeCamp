@@ -50,7 +50,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// noprotect
 function hailstoneSequence() {
   const res = [];
 
@@ -78,7 +77,6 @@ const res = [[27, 82, 41, 124, 8, 4, 2, 1], [351, 77031]];
 
 
 ```js
-// noprotect
 function hailstoneSequence () {
   const res = [];
 

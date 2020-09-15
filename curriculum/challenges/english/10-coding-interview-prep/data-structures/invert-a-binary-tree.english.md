@@ -46,8 +46,9 @@ function Node(value) {
 }
 function BinarySearchTree() {
   this.root = null;
-  // change code below this line
-  // change code above this line
+  // Only change code below this line
+  
+  // Only change code above this line
 }
 ```
 
@@ -127,7 +128,7 @@ function Node(value) {
 }
 function BinarySearchTree() {
   this.root = null;
-  // change code below this line
+  // Only change code below this line
   this.invert = function(node = this.root) {
     if (node) {
       const temp = node.left;
@@ -138,7 +139,7 @@ function BinarySearchTree() {
     }
     return node;
   }
-    // change code above this line
+    // Only change code above this line
 }
 
 ```

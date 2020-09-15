@@ -51,7 +51,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// noprotect
 function splitCoconuts(intSailors) {
 
   return true;
@@ -69,7 +68,6 @@ function splitCoconuts(intSailors) {
 
 
 ```js
-// noprotect
 function splitCoconuts(intSailors) {
   let intNuts = intSailors;
   let result = splitCoconutsHelper(intNuts, intSailors);

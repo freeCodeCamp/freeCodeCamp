@@ -61,9 +61,9 @@ var MaxHeap = function() {
   this.print = () => {
     return this.heap.slice(1);
   }
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 };
 ```
 
