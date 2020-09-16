@@ -23,7 +23,7 @@ ourStr += anAdjective;
 
 ## Instructions
 <section id='instructions'>
-Set <code>someAdjective</code> and append it to <code>myStr</code> using the <code>+=</code> operator.
+Set <code>someAdjective</code> to a string at least 3 characters long and append it to <code>myStr</code> using the <code>+=</code> operator.
 </section>
 
 ## Tests
