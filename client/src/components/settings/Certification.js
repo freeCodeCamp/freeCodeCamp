@@ -508,7 +508,6 @@ export class CertificationSettings extends Component {
         ? verifyCert(superBlock)
         : createFlashMessage(honestyInfoMessage);
     };
-    // TODO: refactor to not have hardcoded certificates
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
