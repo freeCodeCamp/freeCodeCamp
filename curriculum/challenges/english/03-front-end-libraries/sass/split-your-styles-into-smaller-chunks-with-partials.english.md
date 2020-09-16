@@ -43,9 +43,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-// The main.scss file
-
-
+<!-- The main.scss file -->
 
 
 ```
@@ -60,7 +58,6 @@ tests:
 <section id='solution'>
 
 ```html
-// The main.scss file
 @import 'variables'
 ```
 
