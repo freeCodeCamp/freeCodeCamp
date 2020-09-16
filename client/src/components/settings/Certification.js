@@ -513,7 +513,6 @@ export class CertificationSettings extends Component {
         ? verifyCert(superBlock)
         : createFlashMessage(honestyInfoMessage);
     };
-
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
@@ -525,7 +524,7 @@ export class CertificationSettings extends Component {
           </p>
           <ul>
             <li>Responsive Web Design</li>
-            <li>Algorithms and Data Structures</li>
+            <li>JavaScript Algorithms and Data Structures</li>
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
             <li>APIs and Microservices</li>
