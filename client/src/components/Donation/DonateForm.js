@@ -37,6 +37,7 @@ import {
   donationFormStateSelector,
   hardGoTo as navigate,
   addDonation,
+  postChargeStripe,
   updateDonationFormState,
   defaultDonationFormState
 } from '../../redux';
@@ -55,6 +56,7 @@ const propTypes = {
   isMinimalForm: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
+  postChargeStripe: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
   updateDonationFormState: PropTypes.func
 };
@@ -73,6 +75,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   addDonation,
   navigate,
+  postChargeStripe,
   updateDonationFormState
 };
 
@@ -361,7 +364,12 @@ class DonateForm extends Component {
 
   renderModalForm() {
     const { donationAmount, donationDuration, stripe } = this.state;
-    const { handleProcessing, defaultTheme } = this.props;
+    const {
+      handleProcessing,
+      defaultTheme,
+      addDonation,
+      postChargeStripe
+    } = this.props;
     const donationPlan = `$${donationAmount / 100} / ${donationDuration}`;
 
     return (
@@ -371,6 +379,7 @@ class DonateForm extends Component {
           <b>Confirm your donation of {donationPlan} with PayPal:</b>
           <Spacer />
           <PaypalButton
+            addDonation={addDonation}
             donationAmount={donationAmount}
             donationDuration={donationDuration}
             handleProcessing={handleProcessing}
@@ -392,6 +401,7 @@ class DonateForm extends Component {
                 }
                 handleProcessing={handleProcessing}
                 onDonationStateChange={this.onDonationStateChange}
+                postChargeStripe={postChargeStripe}
               />
             </Elements>
           </StripeProvider>

@@ -15,7 +15,6 @@ import { injectStripe } from 'react-stripe-elements';
 
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
-import { postChargeStripe } from '../../utils/ajax';
 import { userSelector } from '../../redux';
 
 const propTypes = {
@@ -27,6 +26,7 @@ const propTypes = {
   handleProcessing: PropTypes.func,
   isSignedIn: PropTypes.bool,
   onDonationStateChange: PropTypes.func,
+  postChargeStripe: PropTypes.func,
   showCloseBtn: PropTypes.func,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
@@ -79,6 +79,11 @@ class DonateFormChildViewForHOC extends Component {
     });
   }
 
+  componentDidMount() {
+    console.log(this.postChargeStripe);
+    console.log('hello');
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
@@ -117,10 +122,6 @@ class DonateFormChildViewForHOC extends Component {
   postDonation(token) {
     const { donationAmount: amount, donationDuration: duration } = this.props;
 
-    this.props.onDonationStateChange({
-      processing: true
-    });
-
     // scroll to top
     window.scrollTo(0, 0);
 
@@ -133,34 +134,11 @@ class DonateFormChildViewForHOC extends Component {
       );
     }
 
-    return postChargeStripe({
+    return this.props.postChargeStripe({
       token,
       amount,
       duration
-    })
-      .then(response => {
-        const data = response && response.data;
-        this.props.onDonationStateChange({
-          processing: false,
-          success: true,
-          error: data.error ? data.error : ''
-        });
-      })
-      .catch(error => {
-        const data =
-          error.response && error.response.data
-            ? error.response.data
-            : {
-                error:
-                  'Something is not right. ' +
-                  'Please contact donors@freecodecamp.org.'
-              };
-        this.props.onDonationStateChange({
-          processing: false,
-          success: false,
-          error: data.error
-        });
-      });
+    });
   }
 
   renderCompletion(props) {

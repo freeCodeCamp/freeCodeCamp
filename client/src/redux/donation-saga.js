@@ -7,10 +7,12 @@ import {
   preventProgressDonationRequests,
   canRequestBlockDonationSelector,
   addDonationComplete,
-  addDonationError
+  addDonationError,
+  postChargeStripeComplete,
+  postChargeStripeError
 } from './';
 
-import { addDonation } from '../utils/ajax';
+import { addDonation, postChargeStripe } from '../utils/ajax';
 
 const defaultDonationError = `Something is not right. Please contact donors@freecodecamp.org`;
 
@@ -43,9 +45,25 @@ function* addDonationSaga({ payload }) {
   }
 }
 
+function* postChargeStripeSaga({ payload }) {
+  try {
+    yield call(postChargeStripe, payload);
+    yield put(postChargeStripeComplete());
+  } catch (error) {
+    const data =
+      error.response && error.response.data
+        ? error.response.data
+        : {
+            error: defaultDonationError
+          };
+    yield put(postChargeStripeError(data.error));
+  }
+}
+
 export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
-    takeEvery(types.addDonation, addDonationSaga)
+    takeEvery(types.addDonation, addDonationSaga),
+    takeEvery(types.postChargeStripe, postChargeStripeSaga)
   ];
 }
