@@ -14,7 +14,7 @@ To do this, add your database's connection string (for example: <code>mongodb+sr
 
 _You can set up a free database on <a href='https://www.mongodb.com/cloud/atlas' target='_blank'>MongoDB Atlas</a>._
 
-Now we want to the connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish you will want to encompass your serialization and your app routes in the following code:
+Now we want to connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish this, you will want to encompass your serialization and your app routes in the following code:
 
 ```js
 myDB(async client => {
