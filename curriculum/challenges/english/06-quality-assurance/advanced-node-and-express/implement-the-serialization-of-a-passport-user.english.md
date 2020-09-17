@@ -40,7 +40,7 @@ myDB(async client => {
 // app.listen out here...
 ```
 
-Be sure to uncomment the <code>myDataBase</code> code in <em>deserializeUser</em>, and edit your <code>done(null, null)</code> to include the <code>doc</code>.
+Be sure to uncomment the <code>myDataBase</code> code in <code>deserializeUser</code>, and edit your <code>done(null, null)</code> to include the <code>doc</code>.
 
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7' target='_blank'>here</a>.
 
