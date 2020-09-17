@@ -20,11 +20,17 @@ const args = argValuePairs.reduce((argsObj, arg) => {
 }, {});
 
 let { num, start } = args;
+if (!start) {
+  throw `No steps created. start arg val must be specified.`;
+}
+if (!num) {
+  throw `No steps created. num arg val must be specified.`;
+}
 num = parseInt(num, 10);
 const stepStart = parseInt(start, 10);
 
-if (num > 20) {
-  throw 'No steps created. num arg val must be less than or equal to 20.';
+if (num > 0 && num < 20) {
+  throw `No steps created. num arg val must be greater than 1 and less than or equal to 20.`;
 }
 
 const maxStepNum = stepStart + num - 1;
