@@ -2,48 +2,112 @@
 id: 589fc831f9fc0f352b528e77
 title: Authentication with Socket.IO
 challengeType: 2
-videoUrl: ''
+forumTopicId: 301548
 localeTitle: 使用Socket.IO进行身份验证
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socketio/">GitHub</a>克隆的。目前，您无法确定谁连接到您的Web套接字。虽然&#39;req.user&#39;对用户对象进行了容器处理，但只有当您的用户与Web服务器进行交互并且使用Web套接字时，您才没有req（请求），因此没有用户数据。解决知道谁连接到您的Web套接字的问题的一种方法是解析和解码包含护照会话的cookie，然后对其进行反序列化以获取用户对象。幸运的是，NPM上有一个包，只是为了将一次复杂的任务变成简单的事情！ <hr>将“passport.socketio”添加为依赖项，并将其命名为“passportSocketIo”。现在我们只需要告诉Socket.IO使用它并设置选项。确保在现有套接字代码之前添加它，而不是在现有连接侦听器中添加。对于您的服务器，它应如下所示： <pre> io.use（passportSocketIo.authorize（{
-  cookieParser：cookieParser，
-  key：&#39;express.sid&#39;，
-  secret：process.env.SESSION_SECRET，
-  store：sessionStore
-}））; </pre>您还可以选择将“成功”和“失败”与在客户端尝试连接时身份验证过程完成后调用的函数一起传递。现在可以在套接字对象上以<code>socket.request.user</code>访问用户对象。例如，现在您可以添加以下内容： <code>console.log(&#39;user &#39; + socket.request.user.name + &#39; connected&#39;);</code>它将登录已连接的服务器控制台！当您认为自己已经做对时，请提交您的页面。如果您遇到错误，可以<a href="https://gist.github.com/JosephLivengood/a9e69ff91337500d5171e29324e1ff35">在此处</a>查看项目。 </section>
+
+<section id='description'>
+
+目前，我们还无法确定连接到服务器的用户身份。虽然 <code>req.user</code> 包含用户信息，但这个只在用户直接与服务器交互（即不通过 web socket 访问服务器资源）时产生。当我们的用户通过 web socket 与服务器连接时，由于不存在 <code>req</code> 对象，因此我们无法获取用户数据。解决这个问题的方法之一是通过读取和解析请求中包含 passport session 的 cookie，然后反序列化，进而获取用户信息对象。幸运的是，npm 上有可以让这个复杂的流程简单化的库。
+
+添加 <code>passport.socketio</code>、<code>connect-mongo</code>、<code>cookie-parser</code> 作为依赖，把它们分别赋值给 <code>passportSocketIo</code>、<code>MongoStore</code>、<code>cookieParser</code>。同时，我们需要从之前引入的 <code>express-session</code> 中开辟新的内存空间，就像接下来这样：
+
+```js
+const MongoStore = require('connect-mongo')(session);
+const URI = process.env.MONGO_URI;
+const store = new MongoStore({ url: URI });
+```
+
+现在我们只需要让 Socket.IO 调用它并进行相应的配置即可。请注意，以上这些都必须放在现有的 socket 相关代码之前，而且不能放到连接的监听回调函数里。你的服务器代码应类似于这样：
+
+```js
+io.use(
+  passportSocketIo.authorize({
+    cookieParser: cookieParser,
+    key: 'express.sid',
+    secret: process.env.SESSION_SECRET,
+    store: store,
+    success: onAuthorizeSuccess,
+    fail: onAuthorizeFail
+  })
+);
+```
+
+记得要把 <code>key</code> 和 <code>store</code> 加到 app 的 <code>session</code> 中间件。这样，SocketIO 才知道该对哪个 session 执行此配置。
+
+<hr>
+
+接下来，我们可以定义 <code>success</code> 与 <code>fail</code> 的回调函数：
+
+```js
+function onAuthorizeSuccess(data, accept) {
+  console.log('successful connection to socket.io');
+
+  accept(null, true);
+}
+
+function onAuthorizeFail(data, message, error, accept) {
+  if (error) throw new Error(message);
+  console.log('failed connection to socket.io:', message);
+  accept(null, false);
+}
+```
+
+现在，我们可以通过 socket 对象通过 <code>socket.request.user</code> 访问 <code>user</code> 对象。为此，你可以这样做：
+
+```js
+console.log('user ' + socket.request.user.name + ' connected');
+```
+
+这样，我们可以在 console 里看到谁连接到了我们的服务器。
+
+完成上述要求后，你可以在下方提交你的页面链接。
+完成上述要求后，你可以在下方提交你的页面链接。如果你遇到了问题，可以参考 <a href='https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254' target='_blank'>这里</a> 的答案。
+
+</section>
 
 ## Instructions
-<section id="instructions">
+
+<section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
-  - text: passportSocketIo是一个依赖项
+  - text: 应添加 <code>passport.socketio</code> 作为依赖。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'passport.socketio', 'Your project should list "passport.socketio" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: passportSocketIo是正确需要的
+  - text: 应添加 <code>cookie-parser</code> 作为依赖。
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'cookie-parser', 'Your project should list "cookie-parser" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: 应正确引入 passportSocketIo。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => { assert.match(data, /require\((['"])passport\.socketio\1\)/gi, 'You should correctly require and instantiate "passport.socketio"');}, xhr => { throw new Error(xhr.statusText); })
-  - text: passportSocketIo已正确设置
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /io\.use\(.+\.authorize\(/gi, 'You should register "passport.socketio" as socket.io middleware and provide it correct options'); }, xhr => { throw new Error(xhr.statusText); })
-
+  - text: 应正确配置 passportSocketIo。
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /io\.use\(\s*\w+\.authorize\(/, 'You should register "passport.socketio" as socket.io middleware and provide it correct options'); }, xhr => { throw new Error(xhr.statusText); })
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>
