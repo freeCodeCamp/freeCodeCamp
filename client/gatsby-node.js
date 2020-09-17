@@ -1,6 +1,7 @@
 const env = require('../config/env');
 
 const { createFilePath } = require('gatsby-source-filesystem');
+const uniq = require('lodash/uniq');
 
 const { dasherize } = require('../utils/slugs');
 const { blockNameify } = require('../utils/block-nameify');
@@ -122,6 +123,16 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
           createChallengePages(createPage)
         );
 
+        const blocks = uniq(
+          result.data.allChallengeNode.edges.map(({ node: { block } }) => block)
+        ).map(block => blockNameify(block));
+
+        const superBlocks = uniq(
+          result.data.allChallengeNode.edges.map(
+            ({ node: { superBlock } }) => superBlock
+          )
+        ).map(superBlock => blockNameify(superBlock));
+
         // Create intro pages
         result.data.allMarkdownRemark.edges.forEach(edge => {
           const {
@@ -136,6 +147,17 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             return null;
           }
           try {
+            if (nodeIdentity === 'blockIntroMarkdown') {
+              if (!blocks.some(block => block === frontmatter.block)) {
+                return null;
+              }
+            } else if (
+              !superBlocks.some(
+                superBlock => superBlock === frontmatter.superBlock
+              )
+            ) {
+              return null;
+            }
             const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
             return pageBuilder(edge);
           } catch (e) {
@@ -216,8 +238,34 @@ exports.onCreatePage = async ({ page, actions }) => {
   }
 };
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type ChallengeNode implements Node {
+      files: ChallengeFile
+    }
+    type ChallengeFile {
+      indexcss: FileContents
+      indexhtml: FileContents
+      indexjs: FileContents
+      indexjsx: FileContents
+    }
+    type FileContents {
+      key: String
+      ext: String
+      name: String
+      contents: String
+      head: String
+      tail: String
+      editableRegionBoundaries: [Int]
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 // TODO: this broke the React challenges, not sure why, but I'll investigate
 // further and reimplement if it's possible and necessary (Oliver)
+// I'm still not sure why, but the above schema seems to work.
 // Typically the schema can be inferred, but not when some challenges are
 // skipped (at time of writing the Chinese only has responsive web design), so
 // this makes the missing fields explicit.

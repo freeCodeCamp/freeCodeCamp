@@ -64,7 +64,7 @@ tests:
 
 ```js
 function countLychrelNumbers(num) {
-  // Good luck!
+
   return true;
 }
 

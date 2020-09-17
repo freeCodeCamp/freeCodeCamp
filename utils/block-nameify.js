@@ -16,7 +16,15 @@ const preFormattedBlockNames = {
   'scientific-computing-with-python': 'Scientific Computing with Python',
   'data-analysis-with-python': 'Data Analysis with Python',
   'machine-learning-with-python': 'Machine Learning with Python',
-  tensorflow: 'TensorFlow'
+  tensorflow: 'TensorFlow',
+  'basic-javascript-rpg-game': 'Basic JavaScript RPG Game',
+  'basic-html-cat-photo-app': 'HTML Cat Photo App',
+  'basic-css-cafe-menu': 'CSS Cafe Menu',
+  'css-variables-skyline': 'CSS Variables Skyline',
+  'javascript-spreadsheet': 'JavaScript Spreadsheet',
+  'intermediate-javascript-calorie-counter':
+    'Intermediate JavaScript Calorie Counter',
+  'd3-dashboard': 'D3 Dashboard'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];

@@ -80,8 +80,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".item3 {align-self: end;}"
+```html
+<style>.item3 {align-self: end;}</style>
 ```
 
 </section>

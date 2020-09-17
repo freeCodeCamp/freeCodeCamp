@@ -46,7 +46,7 @@ tests:
 
 ```js
 function numberLetterCounts(limit) {
-  // Good luck!
+
   return true;
 }
 

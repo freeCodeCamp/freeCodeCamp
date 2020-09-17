@@ -8,7 +8,10 @@ import Form from './Form';
 
 const defaultTestProps = {
   buttonText: 'Submit',
-  formFields: ['name', 'website'],
+  formFields: [
+    { name: 'name', label: 'name Label' },
+    { name: 'website', label: 'WebSite label' }
+  ],
   id: 'my-test-form',
   options: {
     types: {
@@ -23,11 +26,11 @@ const defaultTestProps = {
 test('should render', () => {
   const { getByLabelText, getByText } = render(<Form {...defaultTestProps} />);
 
-  const nameInput = getByLabelText(/name/i);
+  const nameInput = getByLabelText(/name Label/);
   expect(nameInput).not.toBeRequired();
   expect(nameInput).toHaveAttribute('type', 'text');
 
-  const websiteInput = getByLabelText(/website/i);
+  const websiteInput = getByLabelText(/WebSite label/);
   expect(websiteInput).toBeRequired();
   expect(websiteInput).toHaveAttribute('type', 'url');
 
@@ -48,10 +51,10 @@ test('should render with default values', () => {
     />
   );
 
-  const nameInput = getByLabelText(/name/i);
+  const nameInput = getByLabelText(/name Label/);
   expect(nameInput).toHaveValue(nameValue);
 
-  const websiteInput = getByLabelText(/website/i);
+  const websiteInput = getByLabelText(/WebSite label/);
   expect(websiteInput).toHaveValue(websiteValue);
 
   const button = getByText(/submit/i);
@@ -68,7 +71,7 @@ test('should submit', () => {
 
   const { getByLabelText, getByText } = render(<Form {...props} />);
 
-  const websiteInput = getByLabelText(/website/i);
+  const websiteInput = getByLabelText(/WebSite label/);
   fireEvent.change(websiteInput, { target: { value: websiteValue } });
   expect(websiteInput).toHaveValue(websiteValue);
 

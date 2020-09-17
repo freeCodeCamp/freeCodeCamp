@@ -1,6 +1,7 @@
 /* global describe it expect beforeEach */
 const mockAST = require('./fixtures/challenge-html-ast.json');
 const solutionToData = require('./solution-to-data');
+const { isObject } = require('lodash');
 
 describe('challengeSeed-to-data plugin', () => {
   const plugin = solutionToData();
@@ -24,10 +25,10 @@ describe('challengeSeed-to-data plugin', () => {
     expect(Array.isArray(file.data.solutions)).toBe(true);
   });
 
-  it('each entry in the `solutions` array is a string', () => {
+  it('each entry in the `solutions` array is an object', () => {
     plugin(mockAST, file);
 
-    expect(file.data.solutions.every(el => typeof el === 'string')).toBe(true);
+    expect(file.data.solutions.every(el => isObject(el))).toBe(true);
   });
 
   it('should have an output to match the snapshot', () => {

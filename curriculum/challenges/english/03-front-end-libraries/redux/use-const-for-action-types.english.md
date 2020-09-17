@@ -46,12 +46,12 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
-// change code below this line
+```js
+// Change code below this line
 
-// change code above this line
+// Change code above this line
 
 const defaultState = {
   authenticated: false

@@ -59,11 +59,9 @@ tests:
 
 ```js
 function fiboEvenSum(n) {
-  // You can do it!
+
   return true;
 }
-
-fiboEvenSum(10);
 ```
 
 </div>

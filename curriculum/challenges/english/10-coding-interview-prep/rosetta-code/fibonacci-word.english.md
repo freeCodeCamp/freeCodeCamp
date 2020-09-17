@@ -44,7 +44,7 @@ tests:
 
 ```js
 function fibWord(n) {
-  // Good luck!
+
 }
 ```
 

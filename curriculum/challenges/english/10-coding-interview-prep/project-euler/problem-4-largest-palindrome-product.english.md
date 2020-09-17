@@ -42,7 +42,7 @@ tests:
 
 ```js
 function largestPalindromeProduct(n) {
-  // Good luck!
+
   return true;
 }
 

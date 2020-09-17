@@ -50,7 +50,7 @@ tests:
 
 ```js
 function letterFrequency(txt) {
-  // Good luck!
+
 }
 ```
 

@@ -54,7 +54,7 @@ tests:
 
 ```js
 function coinPartitions() {
-  // Good luck!
+
   return true;
 }
 

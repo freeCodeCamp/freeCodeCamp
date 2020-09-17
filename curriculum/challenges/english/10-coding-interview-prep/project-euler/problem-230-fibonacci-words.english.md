@@ -60,7 +60,7 @@ tests:
 
 ```js
 function euler230() {
-  // Good luck!
+
   return true;
 }
 

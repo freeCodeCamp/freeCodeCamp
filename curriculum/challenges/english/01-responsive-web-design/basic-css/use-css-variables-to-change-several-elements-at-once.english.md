@@ -251,8 +251,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".penguin {--penguin-skin: gray; --penguin-belly: white; --penguin-beak: orange;}"
+```html
+<style>.penguin {--penguin-skin: gray; --penguin-belly: white; --penguin-beak: orange;}</style>
 ```
 
 </section>

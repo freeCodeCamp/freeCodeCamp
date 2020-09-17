@@ -58,7 +58,7 @@ tests:
 
 ```js
 function bogosort(v) {
-  // Good luck!
+
 }
 ```
 

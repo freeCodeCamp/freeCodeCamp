@@ -60,12 +60,12 @@ tests:
 
 ```js
 function allEqual(arr) {
-  // Good luck!
+
   return true;
 }
 
 function azSorted(arr) {
-  // Good luck!
+
   return true;
 }
 ```

@@ -44,7 +44,7 @@ tests:
 
 ```js
 function anagramicSquares() {
-  // Good luck!
+
   return true;
 }
 

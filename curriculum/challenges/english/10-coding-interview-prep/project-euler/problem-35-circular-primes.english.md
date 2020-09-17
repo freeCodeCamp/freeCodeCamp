@@ -56,7 +56,7 @@ tests:
 
 ```js
 function circularPrimes(n) {
-  // Good luck!
+
   return n;
 }
 

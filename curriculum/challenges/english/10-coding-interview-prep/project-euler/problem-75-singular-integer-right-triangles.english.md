@@ -55,7 +55,7 @@ tests:
 
 ```js
 function singularIntRightTriangles() {
-  // Good luck!
+
   return true;
 }
 

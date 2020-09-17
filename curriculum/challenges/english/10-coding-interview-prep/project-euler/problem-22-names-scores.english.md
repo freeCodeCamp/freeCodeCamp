@@ -46,7 +46,7 @@ tests:
 
 ```js
 function namesScores(arr) {
-  // Good luck!
+
   return arr;
 }
 

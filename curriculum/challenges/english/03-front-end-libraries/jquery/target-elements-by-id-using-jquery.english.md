@@ -52,7 +52,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -95,7 +95,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>

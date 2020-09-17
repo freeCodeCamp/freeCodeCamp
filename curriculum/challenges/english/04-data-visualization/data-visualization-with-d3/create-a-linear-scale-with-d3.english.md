@@ -48,7 +48,7 @@ tests:
     // Add your code below this line
 
     const scale = undefined; // Create the scale here
-    const output = scale(); // Call the scale with an argument here
+    const output = scale(); // Call scale with an argument here
 
     // Add your code above this line
 

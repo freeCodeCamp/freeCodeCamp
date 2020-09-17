@@ -42,7 +42,7 @@ tests:
 
 ```js
 function sqrtDigitalExpansion() {
-  // Good luck!
+
   return true;
 }
 

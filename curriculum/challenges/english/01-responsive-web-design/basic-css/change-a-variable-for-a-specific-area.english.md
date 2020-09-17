@@ -249,8 +249,10 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".penguin {--penguin-belly: white;}"
+```html
+<style>
+.penguin {--penguin-belly: white;}
+</style>
 ```
 
 </section>

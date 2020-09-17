@@ -70,7 +70,7 @@ tests:
 
 ```js
 function pokerHands(arr) {
-  // Good luck!
+
   return true;
 }
 

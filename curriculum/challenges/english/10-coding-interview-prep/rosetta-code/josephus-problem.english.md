@@ -53,7 +53,7 @@ tests:
 
 ```js
 function josephus(init, kill) {
-  // Good luck!
+
 }
 ```
 

@@ -58,9 +58,9 @@ const TypesOfFruit = () => {
 const Fruits = () => {
   return (
     <div>
-      { /* change code below this line */ }
+      { /* Change code below this line */ }
 
-      { /* change code above this line */ }
+      { /* Change code above this line */ }
     </div>
   );
 };
@@ -74,9 +74,9 @@ class TypesOfFood extends React.Component {
     return (
       <div>
         <h1>Types of Food:</h1>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }
@@ -89,7 +89,7 @@ class TypesOfFood extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 ```
 
@@ -101,7 +101,7 @@ ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const TypesOfFruit = () => {
   return (
     <div>
@@ -119,9 +119,9 @@ const TypesOfFruit = () => {
 const Fruits = () => {
   return (
     <div>
-      { /* change code below this line */ }
+      { /* Change code below this line */ }
         <TypesOfFruit />
-      { /* change code above this line */ }
+      { /* Change code above this line */ }
     </div>
   );
 };
@@ -135,9 +135,9 @@ class TypesOfFood extends React.Component {
     return (
       <div>
         <h1>Types of Food:</h1>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <Fruits />
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }

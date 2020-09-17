@@ -49,7 +49,7 @@ tests:
 
 ```js
 function maximumSubsequence(population) {
-  // Good luck!
+
 }
 ```
 

@@ -65,7 +65,7 @@ tests:
 
 ```js
 function Num(n) {
-  // Good luck!
+
   return n;
 }
 ```

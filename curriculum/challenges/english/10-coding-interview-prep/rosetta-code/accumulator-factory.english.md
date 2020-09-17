@@ -44,7 +44,7 @@ tests:
 
 ```js
 function accumulator(sum) {
-  // Good luck!
+
 }
 ```
 

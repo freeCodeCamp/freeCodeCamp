@@ -46,7 +46,7 @@ tests:
 
 ```js
 function hofstadterQ(n) {
-  // Good luck!
+
   return n;
 }
 ```

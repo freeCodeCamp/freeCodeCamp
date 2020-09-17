@@ -52,7 +52,7 @@ tests:
 
 ```js
 function largestPrimeFactor(number) {
-  // Good luck!
+
   return true;
 }
 

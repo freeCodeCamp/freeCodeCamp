@@ -40,7 +40,7 @@ tests:
 
 ```js
 function primePairSets() {
-  // Good luck!
+
   return true;
 }
 

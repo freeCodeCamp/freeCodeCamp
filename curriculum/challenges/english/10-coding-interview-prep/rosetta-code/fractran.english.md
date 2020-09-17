@@ -59,7 +59,7 @@ tests:
 
 ```js
 function fractran(progStr) {
-  // Good luck!
+
 }
 ```
 

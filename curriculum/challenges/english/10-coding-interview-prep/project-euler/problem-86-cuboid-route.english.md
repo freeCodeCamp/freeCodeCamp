@@ -46,7 +46,7 @@ tests:
 
 ```js
 function cuboidRoute() {
-  // Good luck!
+
   return true;
 }
 

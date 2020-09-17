@@ -75,7 +75,7 @@ tests:
 
 ```js
 function convertSeconds(sec) {
-  // Good luck!
+
   return true;
 }
 ```

@@ -56,7 +56,7 @@ class MyComponent extends React.Component {
     }));
   }
   render() {
-    // change code below this line
+    // Change code below this line
     return (
        <div>
          <button onClick={this.toggleDisplay}>Toggle Display</button>
@@ -73,7 +73,7 @@ class MyComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
@@ -85,7 +85,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -100,7 +100,7 @@ class MyComponent extends React.Component {
     }));
   }
   render() {
-    // change code below this line
+    // Change code below this line
     return (
        <div>
          <button onClick={this.toggleDisplay}>Toggle Display</button>

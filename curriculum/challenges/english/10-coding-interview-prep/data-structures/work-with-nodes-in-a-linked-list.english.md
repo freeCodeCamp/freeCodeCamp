@@ -44,10 +44,9 @@ var Kitten = new Node('Kitten');
 var Puppy = new Node('Puppy');
 
 Kitten.next = Puppy;
-// only add code below this line
+// Only change code below this line
 
-// test your code
-console.log(Kitten.next);
+
 ```
 
 </div>

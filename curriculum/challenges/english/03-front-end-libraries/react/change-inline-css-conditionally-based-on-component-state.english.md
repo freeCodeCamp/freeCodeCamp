@@ -59,9 +59,9 @@ class GateKeeper extends React.Component {
     let inputStyle = {
       border: '1px solid black'
     };
-    // change code below this line
+    // Change code below this line
 
-    // change code above this line
+    // Change code above this line
     return (
       <div>
         <h3>Don't Type Too Much:</h3>
@@ -82,7 +82,7 @@ class GateKeeper extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<GateKeeper />, document.getElementById('root'))
 ```
 
@@ -94,7 +94,7 @@ ReactDOM.render(<GateKeeper />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class GateKeeper extends React.Component {
   constructor(props) {
     super(props);

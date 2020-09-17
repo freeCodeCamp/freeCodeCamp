@@ -58,7 +58,7 @@ tests:
 
 ```js
 function pythagoreanMeans(rangeArr) {
-  // Good luck!
+
 }
 ```
 

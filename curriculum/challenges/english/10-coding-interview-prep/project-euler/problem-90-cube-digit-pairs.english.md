@@ -59,7 +59,7 @@ tests:
 
 ```js
 function cubeDigitPairs() {
-  // Good luck!
+
   return true;
 }
 

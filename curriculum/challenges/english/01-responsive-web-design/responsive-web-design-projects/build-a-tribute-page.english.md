@@ -47,7 +47,7 @@ tests: []
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
 

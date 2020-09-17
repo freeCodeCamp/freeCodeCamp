@@ -55,7 +55,7 @@ tests:
 
 ```js
 function wordFrequency(txt, n) {
-  // Good luck!
+
 }
 ```
 

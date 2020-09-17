@@ -56,7 +56,7 @@ class CampSite extends React.Component {
     );
   }
 };
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -76,7 +76,7 @@ var PropTypes = {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<CampSite />, document.getElementById('root'))
 ```
 
@@ -88,7 +88,7 @@ ReactDOM.render(<CampSite />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class CampSite extends React.Component {
   constructor(props) {
     super(props);
@@ -101,7 +101,7 @@ class CampSite extends React.Component {
     );
   }
 };
-// change code below this line
+// Change code below this line
 
 const Camper = (props) => {
    return (

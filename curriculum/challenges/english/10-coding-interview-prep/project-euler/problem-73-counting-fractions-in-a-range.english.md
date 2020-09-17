@@ -46,7 +46,7 @@ tests:
 
 ```js
 function countingFractionsInARange() {
-  // Good luck!
+
   return true;
 }
 

@@ -56,7 +56,7 @@ tests:
 
 ```js
 function productSumNumbers() {
-  // Good luck!
+
   return true;
 }
 
