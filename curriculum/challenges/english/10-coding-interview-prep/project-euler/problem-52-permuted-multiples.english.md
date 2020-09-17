@@ -40,7 +40,7 @@ tests:
 
 ```js
 function permutedMultiples() {
-  // Good luck!
+
   return true;
 }
 

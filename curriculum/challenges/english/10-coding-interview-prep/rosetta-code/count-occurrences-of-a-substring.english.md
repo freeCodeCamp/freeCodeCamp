@@ -48,7 +48,7 @@ tests:
 
 ```js
 function countSubstring(str, subStr) {
-  // Good luck!
+
   return true;
 }
 ```

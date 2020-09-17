@@ -166,7 +166,7 @@ tests:
 
 ```js
 function markov(rules,test) {
-  // Good luck!
+
 }
 ```
 

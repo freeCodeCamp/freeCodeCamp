@@ -49,9 +49,9 @@ class Fruits extends React.Component {
     return (
       <div>
         <h2>Fruits:</h2>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }
@@ -65,9 +65,9 @@ class TypesOfFood extends React.Component {
     return (
       <div>
         <h1>Types of Food:</h1>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
         <Vegetables />
       </div>
     );
@@ -132,7 +132,7 @@ class Vegetables extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 ```
 
@@ -144,7 +144,7 @@ ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class Fruits extends React.Component {
   constructor(props) {
     super(props);
@@ -153,10 +153,10 @@ class Fruits extends React.Component {
     return (
       <div>
         <h2>Fruits:</h2>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <NonCitrus />
         <Citrus />
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     )
   }
@@ -170,9 +170,9 @@ class TypesOfFood extends React.Component {
       return (
         <div>
         <h1>Types of Food:</h1>
-          { /* change code below this line */ }
+          { /* Change code below this line */ }
           <Fruits />
-          { /* change code above this line */ }
+          { /* Change code above this line */ }
           <Vegetables />
         </div>
       );

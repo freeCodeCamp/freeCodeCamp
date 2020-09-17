@@ -56,7 +56,7 @@ tests:
 
 ```js
 function pancakeSort(arr) {
-  // Good luck!
+
 }
 ```
 

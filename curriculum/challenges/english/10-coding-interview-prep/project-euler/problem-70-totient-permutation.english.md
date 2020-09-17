@@ -42,7 +42,7 @@ tests:
 
 ```js
 function totientPermutation() {
-  // Good luck!
+
   return true;
 }
 

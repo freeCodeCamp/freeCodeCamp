@@ -51,7 +51,7 @@ tests:
 
 ```js
 function fizzBuzz() {
-  // Good luck!
+
 }
 ```
 

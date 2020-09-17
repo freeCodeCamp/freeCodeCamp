@@ -42,7 +42,7 @@ tests:
 
 ```js
 function primePermutations() {
-  // Good luck!
+
   return true;
 }
 

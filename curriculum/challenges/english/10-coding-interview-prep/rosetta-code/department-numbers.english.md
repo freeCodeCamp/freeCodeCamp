@@ -57,7 +57,7 @@ tests:
 
 ```js
 function combinations(possibleNumbers, total) {
-  // Good luck!
+
   return true;
 }
 ```

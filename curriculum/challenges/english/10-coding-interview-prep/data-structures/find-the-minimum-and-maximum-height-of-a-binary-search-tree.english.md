@@ -55,8 +55,9 @@ function Node(value) {
 }
 function BinarySearchTree() {
   this.root = null;
-  // change code below this line
-  // change code above this line
+  // Only change code below this line
+  
+  // Only change code above this line
 }
 ```
 
@@ -117,8 +118,9 @@ function Node(value) {
 }
 function BinarySearchTree() {
   this.root = null;
-  // change code below this line
-  // change code above this line
+  // Only change code below this line
+  
+  // Only change code above this line
   this.findMinHeight = function(root = this.root) {
     // empty tree.
     if (root === null) {

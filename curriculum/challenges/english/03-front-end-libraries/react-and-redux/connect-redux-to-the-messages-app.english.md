@@ -129,7 +129,7 @@ const mapDispatchToProps = (dispatch) => {
 const Provider = ReactRedux.Provider;
 const connect = ReactRedux.connect;
 
-// define the Container component here:
+// Define the Container component here:
 
 
 class AppWrapper extends React.Component {
@@ -137,7 +137,7 @@ class AppWrapper extends React.Component {
     super(props);
   }
   render() {
-    // complete the return statement:
+    // Complete the return statement:
     return (null);
   }
 };
@@ -149,7 +149,7 @@ class AppWrapper extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 ```
 
@@ -161,7 +161,7 @@ ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 // Redux:
 const ADD = 'ADD';
 
@@ -248,7 +248,6 @@ const mapDispatchToProps = (dispatch) => {
 const Provider = ReactRedux.Provider;
 const connect = ReactRedux.connect;
 
-// define the Container component here:
 const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
 
 class AppWrapper extends React.Component {
@@ -256,7 +255,6 @@ class AppWrapper extends React.Component {
     super(props);
   }
   render() {
-    // complete the return statement:
     return (
       <Provider store={store}>
         <Container/>

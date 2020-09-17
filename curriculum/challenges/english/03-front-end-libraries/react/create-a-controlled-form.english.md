@@ -124,22 +124,22 @@ class MyForm extends React.Component {
     });
   }
   handleSubmit(event) {
-    // change code below this line
+    // Change code below this line
     
-    // change code above this line
+    // Change code above this line
   }
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          {/* change code below this line */}
+          {/* Change code below this line */}
 
-          {/* change code above this line */}
+          {/* Change code above this line */}
           <button type='submit'>Submit!</button>
         </form>
-        {/* change code below this line */}
+        {/* Change code below this line */}
 
-        {/* change code above this line */}
+        {/* Change code above this line */}
       </div>
     );
   }
@@ -152,7 +152,7 @@ class MyForm extends React.Component {
 
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyForm />, document.getElementById('root'));
 ```
 
@@ -164,7 +164,7 @@ ReactDOM.render(<MyForm />, document.getElementById('root'));
 
 <section id='solution'>
 
-```js
+```jsx
 class MyForm extends React.Component {
   constructor(props) {
     super(props);

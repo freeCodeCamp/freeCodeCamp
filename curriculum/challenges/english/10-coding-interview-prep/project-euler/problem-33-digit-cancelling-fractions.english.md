@@ -44,7 +44,7 @@ tests:
 
 ```js
 function digitCancellingFractions() {
-  // Good luck!
+
   return true;
 }
 

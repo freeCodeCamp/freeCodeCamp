@@ -42,7 +42,7 @@ tests:
 
 ```js
 function arrangedProbability() {
-  // Good luck!
+
   return true;
 }
 

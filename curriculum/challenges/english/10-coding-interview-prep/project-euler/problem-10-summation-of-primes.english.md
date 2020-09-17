@@ -46,7 +46,7 @@ tests:
 
 ```js
 function primeSummation(n) {
-  // Good luck!
+
   return true;
 }
 
@@ -61,7 +61,6 @@ primeSummation(2000000);
 <section id='solution'>
 
 ```js
-//noprotect
 function primeSummation(n) {
   if (n < 3) { return 0 };
   let nums = [0, 0, 2];

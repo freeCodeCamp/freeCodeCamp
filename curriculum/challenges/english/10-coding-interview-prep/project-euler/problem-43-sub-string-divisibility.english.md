@@ -54,7 +54,7 @@ tests:
 
 ```js
 function substringDivisibility() {
-  // Good luck!
+
   return [];
 }
 

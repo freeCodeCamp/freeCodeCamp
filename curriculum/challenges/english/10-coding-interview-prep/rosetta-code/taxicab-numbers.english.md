@@ -59,7 +59,7 @@ tests:
 
 ```js
 function taxicabNumbers(n) {
-  // Good luck!
+
   return true;
 }
 ```

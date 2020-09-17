@@ -49,7 +49,7 @@ tests:
 
 ```js
 function jortsort(array) {
-  // Good luck!
+
 }
 ```
 

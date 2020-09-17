@@ -55,7 +55,7 @@ tests:
 
 ```js
 function symmetricDifference(A, B) {
-  // Good luck!
+
 }
 ```
 

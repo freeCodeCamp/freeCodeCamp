@@ -48,9 +48,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 
@@ -83,7 +83,7 @@ const authReducer = (state = {authenticated: false}, action) => {
   }
 };
 
-const rootReducer = // define the root reducer here
+const rootReducer = // Define the root reducer here
 
 const store = Redux.createStore(rootReducer);
 

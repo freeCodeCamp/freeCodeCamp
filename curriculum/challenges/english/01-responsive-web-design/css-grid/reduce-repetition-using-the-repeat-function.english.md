@@ -96,8 +96,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".container {grid-template-columns: repeat(3, 1fr);}"
+```html
+<style>.container {grid-template-columns: repeat(3, 1fr);}</style>
 ```
 
 </section>

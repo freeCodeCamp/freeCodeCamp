@@ -15,17 +15,19 @@ exports.translateComments = (text, lang, dict, codeLang) => {
   }
 };
 
-exports.translateCommentsInChallenge = (challenge, lang, dict, codeLang) => {
+exports.translateCommentsInChallenge = (challenge, lang, dict) => {
   const challClone = clone(challenge);
 
-  if (challClone.files[0] && challClone.files[0].contents) {
-    challClone.files[0].contents = this.translateComments(
-      challenge.files[0].contents,
-      lang,
-      dict,
-      codeLang
-    );
-  }
+  Object.keys(challClone.files).forEach(key => {
+    if (challClone.files[key].contents) {
+      challClone.files[key].contents = this.translateComments(
+        challenge.files[key].contents,
+        lang,
+        dict,
+        challClone.files[key].ext
+      );
+    }
+  });
 
   return challClone;
 };

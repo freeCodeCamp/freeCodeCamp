@@ -83,8 +83,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".item2 {justify-self: center;}"
+```html
+<style>.item2 {justify-self: center;}</style>
 ```
 
 </section>

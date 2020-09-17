@@ -60,7 +60,7 @@ tests:
 
 ```js
 function sum(a, b) {
-  // Good luck!
+
 }
 ```
 

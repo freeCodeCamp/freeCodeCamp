@@ -44,7 +44,7 @@ tests:
 
 ```js
 function pentagonNumbers() {
-  // Good luck!
+
   return true;
 }
 

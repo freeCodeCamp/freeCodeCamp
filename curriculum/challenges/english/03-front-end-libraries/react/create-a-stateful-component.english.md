@@ -53,8 +53,9 @@ tests:
 class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
-    // initialize state here
+    // Only change code below this line
 
+    // Only change code above this line
   }
   render() {
     return (
@@ -72,7 +73,7 @@ class StatefulComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<StatefulComponent />, document.getElementById('root'))
 ```
 
@@ -84,7 +85,7 @@ ReactDOM.render(<StatefulComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);

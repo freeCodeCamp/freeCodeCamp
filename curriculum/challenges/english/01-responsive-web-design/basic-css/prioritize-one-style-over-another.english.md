@@ -60,7 +60,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <style>
   body {
     background-color: black;

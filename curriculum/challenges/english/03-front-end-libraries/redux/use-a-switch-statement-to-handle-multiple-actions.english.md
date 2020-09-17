@@ -42,17 +42,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const defaultState = {
   authenticated: false
 };
 
 const authReducer = (state = defaultState, action) => {
-  // change code below this line
+  // Change code below this line
 
-  // change code above this line
+  // Change code above this line
 };
 
 const store = Redux.createStore(authReducer);

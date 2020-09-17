@@ -54,7 +54,7 @@ tests:
 
 ```js
 function squareRootConvergents() {
-  // Good luck!
+
   return true;
 }
 

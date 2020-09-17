@@ -60,7 +60,7 @@ tests:
 
 ```js
 function stoogeSort(arr) {
-  // Good luck!
+
 }
 ```
 

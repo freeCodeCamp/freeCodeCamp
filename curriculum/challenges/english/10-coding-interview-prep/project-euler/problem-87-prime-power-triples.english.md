@@ -47,7 +47,7 @@ tests:
 
 ```js
 function primePowerTriples() {
-  // Good luck!
+
   return true;
 }
 

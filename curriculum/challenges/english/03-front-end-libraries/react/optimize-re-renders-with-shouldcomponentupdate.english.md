@@ -84,9 +84,9 @@ class OnlyEvens extends React.Component {
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.log('Should I update?');
-    // change code below this line
+    // Change code below this line
     return true;
-    // change code above this line
+    // Change code above this line
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');
@@ -126,7 +126,7 @@ class Controller extends React.Component {
 
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<Controller />, document.getElementById('root'));
 ```
 
@@ -138,16 +138,16 @@ ReactDOM.render(<Controller />, document.getElementById('root'));
 
 <section id='solution'>
 
-```js
+```jsx
 class OnlyEvens extends React.Component {
   constructor(props) {
     super(props);
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.log('Should I update?');
-    // change code below this line
+    // Change code below this line
     return nextProps.value % 2 === 0;
-    // change code above this line
+    // Change code above this line
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');

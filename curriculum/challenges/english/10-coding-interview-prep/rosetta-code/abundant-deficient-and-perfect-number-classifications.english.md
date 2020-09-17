@@ -51,7 +51,7 @@ tests:
 
 ```js
 function getDPA(num) {
-  // Good luck!
+
 }
 ```
 

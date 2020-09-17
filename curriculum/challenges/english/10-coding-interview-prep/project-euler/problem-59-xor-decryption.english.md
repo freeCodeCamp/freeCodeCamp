@@ -46,7 +46,7 @@ tests:
 
 ```js
 function XORDecryption(arr) {
-  // Good luck!
+
   return true;
 }
 

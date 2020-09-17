@@ -58,7 +58,7 @@ tests:
 
 ```js
 function solve24 (numStr) {
-  // Good luck!
+
   return true;
 }
 ```
@@ -132,8 +132,6 @@ function replaceChar(origString, replaceChar, index) {
 
 
 ```js
-// noprotect
-
 function solve24(numStr) {
   const digitsArr = numStr.split('');
   const answers = [];

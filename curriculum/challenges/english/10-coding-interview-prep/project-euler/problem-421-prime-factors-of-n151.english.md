@@ -42,7 +42,7 @@ tests:
 
 ```js
 function euler421() {
-  // Good luck!
+
   return true;
 }
 

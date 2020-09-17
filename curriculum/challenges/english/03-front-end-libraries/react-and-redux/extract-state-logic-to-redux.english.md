@@ -45,7 +45,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-// define ADD, addMessage(), messageReducer(), and store here:
+// Define ADD, addMessage(), messageReducer(), and store here:
 
 ```
 
@@ -59,7 +59,7 @@ tests:
 <section id='solution'>
 
 
-```js
+```jsx
 const ADD = 'ADD';
 
 const addMessage = (message) => {

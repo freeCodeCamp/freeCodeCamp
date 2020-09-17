@@ -95,8 +95,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".container {grid-template-columns: repeat( auto-fill, minmax(60px, 1fr));} .container2 {grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));}"
+```html
+<style>.container {grid-template-columns: repeat( auto-fill, minmax(60px, 1fr));} .container2 {grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));}</style>
 ```
 
 </section>

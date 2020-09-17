@@ -55,8 +55,9 @@ tests:
 
 ```js
 var MaxHeap = function() {
-  // change code below this line
-  // change code above this line
+  // Only change code below this line
+	
+  // Only change code above this line
 };
 ```
 
@@ -68,7 +69,7 @@ var MaxHeap = function() {
 
 ```js
 var MaxHeap = function() {
-	// change code below this line
+	// Only change code below this line
 	this.heap = [null];
 	this.insert = (ele) => {
 		var index = this.heap.length;
@@ -84,7 +85,7 @@ var MaxHeap = function() {
 	this.print = () => {
 		return this.heap.slice(1);
 	}
-	// change code above this line
+	// Only change code above this line
 };
 ```
 

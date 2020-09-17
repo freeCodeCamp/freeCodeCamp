@@ -72,7 +72,7 @@ class Presentational extends React.Component {
 };
 
 const connect = ReactRedux.connect;
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -82,7 +82,7 @@ const connect = ReactRedux.connect;
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 
 const store = Redux.createStore(
   (state = '__INITIAL__STATE__', action) => state
@@ -107,7 +107,7 @@ ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const addMessage = (message) => {
   return {
     type: 'ADD',
@@ -139,7 +139,7 @@ class Presentational extends React.Component {
 };
 
 const connect = ReactRedux.connect;
-// change code below this line
+// Change code below this line
 
 const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational);
 

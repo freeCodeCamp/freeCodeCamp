@@ -99,7 +99,7 @@ tests:
 
 ```js
 function cutRectangle(w, h) {
-  // Good luck!
+
 }
 ```
 

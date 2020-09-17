@@ -42,7 +42,7 @@ tests:
 
 ```js
 function primeDigitReplacements() {
-  // Good luck!
+
   return true;
 }
 

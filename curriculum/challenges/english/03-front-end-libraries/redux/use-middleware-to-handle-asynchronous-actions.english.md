@@ -42,9 +42,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const REQUESTING_DATA = 'REQUESTING_DATA'
 const RECEIVED_DATA = 'RECEIVED_DATA'
 
@@ -53,13 +53,13 @@ const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users}
 
 const handleAsync = () => {
   return function(dispatch) {
-    // dispatch request action here
+    // Dispatch request action here
 
     setTimeout(function() {
       let data = {
         users: ['Jeff', 'William', 'Alice']
       }
-      // dispatch received data action here
+      // Dispatch received data action here
 
     }, 2500);
   }

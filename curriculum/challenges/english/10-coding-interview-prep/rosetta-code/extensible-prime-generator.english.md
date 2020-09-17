@@ -50,7 +50,7 @@ tests:
 
 ```js
 function primeGenerator(num, showPrimes) {
-  // Good luck!
+
 }
 ```
 
@@ -65,7 +65,6 @@ function primeGenerator(num, showPrimes) {
 
 
 ```js
-// noprotect
 function primeGenerator(num, showPrimes) {
   let i,
     arr = [];

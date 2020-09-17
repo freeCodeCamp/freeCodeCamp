@@ -306,6 +306,29 @@ Our assumption is that contributors will read anything in this room that directl
 
 You may be approached by organizations who want to partner or co-brand with freeCodeCamp in some way. Once you realize that this is what they're after, please stop talking to them and tell them to email quincy@freecodecamp.org. He gets proposals like this all the time and is in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
+# Dealing with (mental) health inquiries
+
+You may come across situations where users are seeking medical advice or are dealing with mental health issues and are looking for support. As a matter of policy, you should avoid talking privately about these matters. Should the situation at some point reflect back to fCC, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help. As difficult as it sometimes can be, avoid giving any tips or advice other than pointing the user in the direction of professional help!
+
+If this happens on Discord: Suspend the user. This is not to punish them! Suspending a user will create a private channel that's only accessible by the user and the team. This will benefit both the user and fCC in several ways:
+
+- The user is guaranteed some privacy
+- Public chat is no longer disrupted
+- Other team members can pitch in, should you be uncomfortable dealing with the situation yourself
+
+> [!NOTE]
+>Suspending a user automatically gives them a message about reading our Code of Conduct. Make sure you inform the user that you Suspended them to give them some privacy and that they're not being punished. This is very important! We absolutely want to avoid giving users the idea that they're being punished for reaching out to get help!
+
+If you believe the user is capable of rejoining the community, right click on the private channel and copy the ID. Put the following message in #mod-log:
+
+> Reference medical advice: <channel ID> <username>
+  
+After that, you can remove the Suspension from the user as you normally do.
+
+Helpful URLs:
+
+http://www.suicide.org/international-suicide-hotlines.html
+
 # A note on free speech
 
 Sometimes people will defend something offensive or incendiary that they said as "free speech."
