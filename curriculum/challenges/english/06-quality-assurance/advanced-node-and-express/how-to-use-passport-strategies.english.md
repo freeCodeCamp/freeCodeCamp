@@ -16,7 +16,7 @@ For this challenge you should add the route <em>/login</em> to accept a POST req
 
 If the authentication was successful, the user object will be saved in <em>req.user</em>.
 
-At this point if you enter a username and password in the form, it should redirect to the home page <code>/</code> and the console of your server should display 'User {USERNAME} attempted to log in.', since we currently cannot login a user who isn't registered.
+At this point, if you enter a username and password in the form, it should redirect to the home page <code>/</code>, and the console of your server should display <code>'User {USERNAME} attempted to log in.'</code>, since we currently cannot login a user who isn't registered.
 
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9' target='_blank'>here</a>.
 
