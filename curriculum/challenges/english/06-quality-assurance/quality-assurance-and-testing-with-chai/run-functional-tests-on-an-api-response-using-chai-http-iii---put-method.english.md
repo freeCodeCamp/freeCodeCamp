@@ -9,7 +9,7 @@ forumTopicId: 301590
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 In the next example we'll see how to send data in a request payload (body).
-We are going to test a PUT request. The <code>'/travellers'</code> endpoint accepts a JSON object taking the structure :
+We are going to test a PUT request. The <code>'/travellers'</code> endpoint accepts a JSON object taking the structure:
 
 ```json
 {
