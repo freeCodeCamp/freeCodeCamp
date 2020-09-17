@@ -31,11 +31,11 @@ Add the <code>catch</code> method to your promise. Use <code>error</code> as the
 ```yml
 tests:
   - text: You should call the <code>catch</code> method on the promise.
-    testString: assert(codeWithoutSpaces.match(/(makeServerRequest|\))\.catch\(/g));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.catch\(/g));
   - text: Your <code>catch</code> method should have a callback function with <code>error</code> as its parameter.
     testString: assert(errorIsParameter);
   - text: You should log <code>error</code> to the console.
-    testString: assert(errorIsParameter && codeWithoutSpaces.match(/\.catch\(.*?error.*?console.log\(error\).*?\)/));
+    testString: assert(errorIsParameter && __helpers.removeWhiteSpace(code).match(/\.catch\(.*?error.*?console.log\(error\).*?\)/));
 ```
 
 </section>
@@ -67,8 +67,7 @@ makeServerRequest.then(result => {
 <div id='js-teardown'>
 
 ```js
-const codeWithoutSpaces = code.replace(/\s/g, '');
-const errorIsParameter = /\.catch\((function\(error\){|error|\(error\)=>)/.test(codeWithoutSpaces);
+const errorIsParameter = /\.catch\((function\(error\){|error|\(error\)=>)/.test(__helpers.removeWhiteSpace(code));
 ```
 
 </div>

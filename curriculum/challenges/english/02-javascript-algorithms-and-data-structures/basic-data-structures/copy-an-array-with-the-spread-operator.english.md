@@ -38,7 +38,7 @@ tests:
   - text: <code>copyMachine(["it works"], 3)</code> should return <code>[["it works"], ["it works"], ["it works"]]</code>
     testString: assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']]);
   - text: The <code>copyMachine</code> function should utilize the <code>spread operator</code> with array <code>arr</code>
-    testString: assert(removeJSComments(code).match(/\.\.\.arr/));
+    testString: assert(__helpers.removeJSComments(code).match(/\.\.\.arr/));
 
 ```
 
@@ -62,15 +62,6 @@ function copyMachine(arr, num) {
 }
 
 console.log(copyMachine([true, false, true], 2));
-```
-
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 ```
 
 </div>

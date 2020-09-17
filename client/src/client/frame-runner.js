@@ -1,5 +1,6 @@
 import '@babel/polyfill';
 import jQuery from 'jquery';
+import curriculumHelpers from '../utils/curriculum-helpers';
 
 window.$ = jQuery;
 
@@ -48,6 +49,7 @@ async function initTestFrame(e = { code: {} }) {
   // eslint-disable-next-line no-inline-comments
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
+  const __helpers = curriculumHelpers;
   /* eslint-enable no-unused-vars */
 
   let Enzyme;

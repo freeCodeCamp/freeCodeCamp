@@ -43,7 +43,7 @@ tests:
       }
       assert.throws(declared, ReferenceError);
   - text: You should add a local <code>myVar</code> variable.
-    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar[\s\S]*}/.test(code.replace(/\s/g, '')));
+    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar[\s\S]*}/.test(__helpers.removeWhiteSpace(code)));
 
 
 ```

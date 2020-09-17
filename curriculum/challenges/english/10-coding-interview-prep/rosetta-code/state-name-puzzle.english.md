@@ -66,7 +66,7 @@ function solve(input) {
 function solve(input) {
   var orig = {};
   input.forEach(function(e) {
-    orig[e.replace(/\s/g, '').toLowerCase()] = e;
+    orig[__helpers.removeWhiteSpace(e).toLowerCase()] = e;
   });
 
   input = Object.keys(orig);
