@@ -5,12 +5,7 @@ const ObjectID = require('bson-objectid');
 
 const padWithLeadingZeros = originalNum => {
   /* always want file step numbers 3 digits */
-  const maxDigits = 3;
-  let paddedNum = '' + originalNum;
-  while (paddedNum.length < maxDigits) {
-    paddedNum = '0' + paddedNum;
-  }
-  return paddedNum;
+  return ('' + originalNum).padStart(3, '0');
 };
 
 const removeErms = seedCode => {
