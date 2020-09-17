@@ -18,7 +18,7 @@ assert.isTrue(1, 'this will NOT pass with the number value 1');
 ```
 
 
-<code>isFalse()</code> and <code>isNotFalse()</code> also exist and behave similary to their true counterparts except they look for the boolean value of <em>false</em>. 
+<code>isFalse()</code> and <code>isNotFalse()</code> also exist and behave similarly to their true counterparts except they look for the boolean value of <code>false</code>. 
 </section>
 
 ## Instructions
