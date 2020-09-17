@@ -16,7 +16,7 @@ Obtaining your <em>Client ID and Secret</em> from GitHub is done in your account
 
 In your <code>routes.js</code> file, add <code>showSocialAuth: true</code> to the homepage route, after <code>showRegistration: true</code>. Now, create 2 routes accepting GET requests: <code>/auth/github</code> and <code>/auth/github/callback</code>. The first should only call passport to authenticate <code>'github'</code>. The second should call passport to authenticate <code>'github'</code> with a failure redirect to <code>/</code>, and then if that is successful redirect to <code>/profile</code> (similar to our last project).
 
-An example of how <em>'/auth/github/callback'</em> should look is similar to how we handled a normal login:
+An example of how <code>/auth/github/callback</code> should look is similar to how we handled a normal login:
 
 ```js
 app.route('/login')
