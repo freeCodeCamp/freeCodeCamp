@@ -2,15 +2,20 @@
 id: 587d824e367417b2b2512c57
 title: Test if an Object is an Instance of a Constructor
 challengeType: 2
-videoUrl: ''
+forumTopicId: 301605
 localeTitle: 测试对象是否是构造函数的实例
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。 #instanceOf声明对象是构造函数的实例。在适当的地方使用#instanceOf或#notInstanceOf </section>
+<section id='description'>
+请注意，本项目在 <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">这个 Repl.it 项目</a> 的基础上进行开发。你也可以从 <a href='https://repl.it/github/freeCodeCamp/boilerplate-mochachai'>GitHub</a> 上克隆。
+<code>#instanceOf</code> 断言一个对象是一个构造器的实例。
+
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+使用 <code>assert.instanceOf()</code> 或 <code>assert.notInstanceOf()</code> 让测试通过。
 </section>
 
 ## Tests
@@ -18,15 +23,15 @@ localeTitle: 测试对象是否是构造函数的实例
 
 ```yml
 tests:
-  - text: 所有测试都应该通过
+  - text: 不应有未通过的测试
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 选择正确的断言 -  instanceOf与notInstanceOf
+  - text: 请选择正确的断言—instanceOf 或 notInstanceOf
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[0].method, 'notInstanceOf', 'myCar is not an instance of Plane'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 选择正确的断言 -  instanceOf与notInstanceOf
+  - text: 请选择正确的断言—instanceOf 或 notInstanceOf
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[1].method, 'instanceOf', 'airlinePlane is an instance of Plane'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 选择正确的断言 -  instanceOf与notInstanceOf
+  - text: 请选择正确的断言—instanceOf 或 notInstanceOf
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[2].method, 'instanceOf', 'everything is an Object in JavaScript...'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 选择正确的断言 -  instanceOf与notInstanceOf
+  - text: 请选择正确的断言—instanceOf 或 notInstanceOf
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[3].method, 'notInstanceOf', 'myCar.wheels is not an instance of String'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
@@ -42,7 +47,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>
