@@ -9,7 +9,7 @@ forumTopicId: 301596
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
-<code>isTrue()</code> will test for the boolean value <em>true</em> and <code>isNotTrue()</code> will pass when given anything but the boolean value of <em>true</em>.
+<code>isTrue()</code> will test for the boolean value <code>true</code> and <code>isNotTrue()</code> will pass when given anything but the boolean value of <code>true</code>.
 
 ```js
 assert.isTrue(true, 'this will pass with the boolean value true');
