@@ -2,15 +2,20 @@
 id: 587d8247367417b2b2512c36
 title: Install and Require Helmet
 challengeType: 2
-videoUrl: ''
-localeTitle: 安装并需要头盔
+forumTopicId: 301581
+localeTitle: 安装和引入 Helmet
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。 Helmet通过设置各种HTTP标头来帮助您保护Express应用程序。安装包，然后需要它。 </section>
+<section id='description'>
+请注意，本项目在 <a href="https://repl.it/github/freeCodeCamp/boilerplate-infosec">这个 Repl.it 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+Helmet 通过配置不同的 HTTP header 信息来使你的 Express 应用更加安全。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
+安装版本号为 `3.21.3` 的 Helmet，并引入它。
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 安装并需要头盔
 
 ```yml
 tests:
-  - text: “helmet”依赖应该在package.json中
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'helmet'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: '<code>package.json</code> 中应存在版本号为 <code>3.21.3</code> 的 <code>helmet</code> 依赖项'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert(packJson.dependencies.helmet === '3.21.3' ); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -34,7 +39,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>
