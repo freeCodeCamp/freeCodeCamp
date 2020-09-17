@@ -2,30 +2,38 @@
 id: 587d7fa8367417b2b2512bcc
 title: Display Shapes with SVG
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用SVG显示形状
+forumTopicId: 301485
+localeTitle: 用 SVG 显示形状
 ---
 
 ## Description
-<section id="description">最后一个挑战创建了一个具有给定宽度和高度的<code>svg</code>元素，这是可见的，因为它在<code>style</code>标记中应用了<code>background-color</code> 。代码为给定的宽度和高度创建了空间。下一步是创建一个放入<code>svg</code>区域的形状。 SVG中有许多支持的形状，例如矩形和圆形。它们用于显示数据。例如，矩形（ <code>&lt;rect&gt;</code> ）SVG形状可以在条形图中创建条形。将形状放入<code>svg</code>区域时，可以指定<code>x</code>和<code>y</code>坐标的位置。 （0,0）的原点位于左上角。 <code>x</code>正值将形状推向右侧， <code>y</code>正值将形状从原点向下推。要将形状放置在距离上次挑战的500（宽度）x 100（高度） <code>svg</code>的中间， <code>x</code>坐标将为250， <code>y</code>坐标将为50. SVG <code>rect</code>具有四个属性。它位于<code>svg</code>区域的位置有<code>x</code>和<code>y</code>坐标。它还有一个<code>height</code>和<code>width</code>来指定大小。 </section>
+<section id='description'>
+上个挑战用给定的宽和高创建了一个 <code>svg</code> 元素，因为在它的 <code>style</code> 标签中有 <code>background-color</code>，所以它是可见的。这一段代码为给定的宽和高腾出空间。
+下一步是在 <code>svg</code> 区域中创建图形。SVG 支持多种图形，比如矩形和圆形，并用它们来显示数据。例如，在条形图中一个矩形（<code>&lt;rect&gt;</code>）SVG 图形可以创建一个组。
+当把图形放入 <code>svg</code> 区域中时，你可以用 <code>x</code> 和 <code>y</code> 坐标来指定它的位置。起始点 (0,0) 是在左上角。<code>x</code> 正值将图形右移，<code>y</code> 正值将图形从原点下移
+若要把一个图形放在上个挑战的 500（宽）x 100（高）的 <code>svg</code> 中心，可将 <code>x</code> 坐标设置为 250，<code>y</code> 坐标设置为 50。
+SVG 的 <code>rect</code> 有四个属性。<code>x</code> 和 <code>y</code> 坐标指定图形放在 <code>svg</code> 区域的位置，<code>height</code> 和 <code>width</code> 指定图形大小。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>append()</code>为<code>svg</code>添加一个<code>rect</code>形状，并为其赋予<code>width</code>属性25和<code>height</code>属性100.此外，将每个设置的<code>rect</code> <code>x</code>和<code>y</code>属性设置为0。 </section>
+<section id='instructions'>
+用 <code>append()</code> 方法给 <code>svg</code> 添加一个 <code>rect</code> 图形。将它的 <code>width</code> 属性设置为 25，<code>height</code> 属性设置为 100，<code>x</code> 和 <code>y</code> 属性都设置为 0。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的文档应该有1个<code>rect</code>元素。
+  - text: 你的文档应该有 1 个 <code>rect</code> 元素。
     testString: assert($('rect').length == 1);
-  - text: <code>rect</code>元素的<code>width</code>属性应设置为25。
+  - text: <code>rect</code> 元素的 <code>width</code> 属性应该为 25。
     testString: assert($('rect').attr('width') == '25');
-  - text: <code>rect</code>元素的<code>height</code>属性应设置为100。
+  - text: <code>rect</code> 元素的 <code>height</code> 属性应该为 100。
     testString: assert($('rect').attr('height') == '100');
-  - text: <code>rect</code>元素的<code>x</code>属性应设置为0。
+  - text: <code>rect</code> 元素的 <code>x</code> 属性应该为 0。
     testString: assert($('rect').attr('x') == '0');
-  - text: <code>rect</code>元素的<code>y</code>属性应设置为0。
+  - text: <code>rect</code> 元素的 <code>y</code> 属性应该为 0。
     testString: assert($('rect').attr('y') == '0');
 
 ```
@@ -49,14 +57,13 @@ tests:
                   .append("svg")
                   .attr("width", w)
                   .attr("height", h)
-                  // Add your code below this line
+                  // 在下面添加你的代码
 
 
 
-                  // Add your code above this line
+                  // 在上面添加你的代码
   </script>
 </body>
-
 ```
 
 </div>
@@ -68,8 +75,26 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h)
+                  .append("rect")
+                  .attr("width", 25)
+                  .attr("height", 100)
+                  .attr("x", 0)
+                  .attr("y", 0);
+  </script>
+</body>
+
 ```
 
-/section>
+</section>

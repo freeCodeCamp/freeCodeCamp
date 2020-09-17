@@ -2,24 +2,30 @@
 id: 587d7fa7367417b2b2512bc6
 title: Add Inline Styling to Elements
 challengeType: 6
-videoUrl: ''
-localeTitle: 向元素添加内联样式
+forumTopicId: 301475
+localeTitle: 给元素添加内联样式
 ---
 
 ## Description
-<section id="description"> D3允许您使用<code>style()</code>方法在动态元素上添加内联CSS样式。 <code>style()</code>方法将逗号分隔的键值对作为参数。这是一个将选择的文本颜色设置为蓝色的示例： <code>selection.style(&quot;color&quot;,&quot;blue&quot;);</code> </section>
+<section id='description'>
+D3 可以使用 <code>style()</code> 方法为动态元素添加内联 CSS 样式表。
+<code>style()</code> 方法以用逗号分隔的键值对作为参数。这里是一个将选中文本的颜色设为蓝色的例子：
+<code>selection.style("color","blue");</code> 
+</section>
 
 ## Instructions
-<section id="instructions">将<code>style()</code>方法添加到编辑器中的代码中，使所有显示的文本都具有<code>verdana</code>的<code>font-family</code> 。 </section>
+<section id='instructions'>
+在编辑器中添加 <code>style()</code> 方法，使所有显示的文本的 <code>font-family</code> 为 <code>verdana</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>h2</code>元素应该有verdana的<code>font-family</code> 。
+  - text: 你的 <code>h2</code> 元素的 <code>font-family</code> 应该为 verdana。
     testString: assert($('h2').css('font-family') == 'verdana');
-  - text: 您的代码应使用<code>style()</code>方法。
+  - text: 你应该使用 <code>style()</code> 方法。
     testString: assert(code.match(/\.style/g));
 
 ```
@@ -41,14 +47,13 @@ tests:
       .enter()
       .append("h2")
       .text((d) => (d + " USD"))
-      // Add your code below this line
+      // 在下面添加你的代码
 
 
 
-      // Add your code above this line
+      // 在上面添加你的代码
   </script>
 </body>
-
 ```
 
 </div>
@@ -60,8 +65,21 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => (d + " USD"))
+      .style("font-family", "verdana")
+
+  </script>
+</body>
+
 ```
 
-/section>
+</section>
