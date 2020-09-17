@@ -108,3 +108,7 @@ button.monaco-editor-tab:hover {
 .action-row .monaco-editor-tabs .monaco-editor-tab {
   top: 0;
 }
+
+.monaco-editor .squiggly-hint {
+  background: none !important;
+}
