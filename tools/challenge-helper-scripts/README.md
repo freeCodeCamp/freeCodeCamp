@@ -1,6 +1,6 @@
-# Free Code Camp Project-based Curriculum Tools
+# freeCodeCamp Project-based Curriculum Tools
 
-This repo is for tools to help facilitate the creation and maintenance of the Free Code Camp project-based curriculum.
+This folder contains tools to help facilitate the creation and maintenance of the freeCodeCamp project-based curriculum.
 
 ## [create-next-step.js](create-next-step.js)
 A one-off script that will automatically add the next step based on the last step numbered as `part-xxx.md` where `xxx` represents the 3-digit step number of the last step. The challenge seed code will use the previous step's challenge seed code with the editable region markers (ERMs) removed.
