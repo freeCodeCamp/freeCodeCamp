@@ -54,12 +54,12 @@ export class DonatePage extends Component {
     });
   }
 
-  handleProcessing(duration, amount) {
+  handleProcessing(duration, amount, action = 'stripe button click') {
     this.props.executeGA({
       type: 'event',
       data: {
         category: 'donation',
-        action: 'donate page stripe form submission',
+        action: `donate page ${action}`,
         label: duration,
         value: amount
       }

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -77,19 +77,21 @@ function DonateModal({
     setCloseLabel(true);
   };
 
-  if (show) {
-    executeGA({ type: 'modal', data: '/donation-modal' });
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `Displayed ${
-          isBlockDonation ? 'block' : 'progress'
-        } donation modal`,
-        nonInteraction: true
-      }
-    });
-  }
+  useEffect(() => {
+    if (show) {
+      executeGA({ type: 'modal', data: '/donation-modal' });
+      executeGA({
+        type: 'event',
+        data: {
+          category: 'Donation',
+          action: `Displayed ${
+            isBlockDonation ? 'block' : 'progress'
+          } donation modal`,
+          nonInteraction: true
+        }
+      });
+    }
+  }, [show, isBlockDonation, executeGA]);
 
   const durationToText = donationDuration => {
     if (donationDuration === 'onetime') return 'a one-time';

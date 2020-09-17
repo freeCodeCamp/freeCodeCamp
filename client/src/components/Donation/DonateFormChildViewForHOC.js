@@ -79,11 +79,6 @@ class DonateFormChildViewForHOC extends Component {
     });
   }
 
-  componentDidMount() {
-    console.log(this.postChargeStripe);
-    console.log('hello');
-  }
-
   handleSubmit(e) {
     e.preventDefault();
 

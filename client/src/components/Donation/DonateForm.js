@@ -189,9 +189,15 @@ class DonateForm extends Component {
     this.setState({ donationAmount });
   }
 
-  async handleStripeCheckoutRedirect(e) {
+  async handleStripeCheckoutRedirect(e, paymentMethod) {
     const { stripe } = this.state;
     const { donationAmount, donationDuration } = this.state;
+
+    this.props.handleProcessing(
+      donationDuration,
+      donationAmount,
+      `stripe (${paymentMethod}) button click`
+    );
 
     const isOneTime = donationDuration === 'onetime';
     const getSKUId = () => {
@@ -306,7 +312,7 @@ class DonateForm extends Component {
           bsStyle='primary'
           className='btn-cta'
           id='confirm-donation-btn'
-          onClick={this.handleStripeCheckoutRedirect}
+          onClick={e => this.handleStripeCheckoutRedirect(e, 'apple pay')}
         >
           <span>Donate with Apple Pay</span>
 
@@ -318,7 +324,7 @@ class DonateForm extends Component {
           bsStyle='primary'
           className='btn-cta'
           id='confirm-donation-btn'
-          onClick={this.handleStripeCheckoutRedirect}
+          onClick={e => this.handleStripeCheckoutRedirect(e, 'google pay')}
         >
           <span>Donate with Google Pay</span>
           <GooglePay className='google-pay-logo' />
@@ -329,7 +335,7 @@ class DonateForm extends Component {
           bsStyle='primary'
           className='btn-cta'
           id='confirm-donation-btn'
-          onClick={this.handleStripeCheckoutRedirect}
+          onClick={e => this.handleStripeCheckoutRedirect(e, 'credit card')}
         >
           <span>Donate with Card</span>
 
