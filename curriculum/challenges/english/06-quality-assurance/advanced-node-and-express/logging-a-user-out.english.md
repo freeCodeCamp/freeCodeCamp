@@ -20,7 +20,7 @@ app.route('/logout')
 });
 ```
 
-You may have noticed that we're not handling missing pages (404), the common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
+You may have noticed that we're not handling missing pages (404). The common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
 
 ```js
 app.use((req, res, next) => {

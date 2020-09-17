@@ -9,9 +9,9 @@ forumTopicId: 301546
 
 <section id='description'>
 
-Many chat rooms are able to announce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such feature. The most logical way of doing so is sending 3 pieces of data with the event: name of the user connected/disconnected, the current user count, and if that name connected or disconnected.
+Many chat rooms are able to announce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such a feature. The most logical way of doing so is sending 3 pieces of data with the event: the name of the user who connected/disconnected, the current user count, and if that name connected or disconnected.
 
-Change the event name to <code>'user'</code>, and pass an object along containing fields 'name', 'currentUsers', and 'connected' (to be <code>true</code> if connection, or <code>false</code> for disconnection of the user sent). Be sure to change both 'user count' events and set the disconnect one to send <code>false</code> for field 'connected' instead of <code>true</code> like the event emitted on connect.
+Change the event name to <code>'user'</code>, and pass an object along containing the fields 'name', 'currentUsers', and 'connected' (to be <code>true</code> in case of connection, or <code>false</code> for disconnection of the user sent). Be sure to change both 'user count' events and set the disconnect one to send <code>false</code> for the field 'connected' instead of <code>true</code> like the event emitted on connect.
 
 ```js
 io.emit('user', {

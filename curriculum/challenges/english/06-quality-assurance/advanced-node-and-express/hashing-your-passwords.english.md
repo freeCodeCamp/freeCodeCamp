@@ -8,11 +8,11 @@ forumTopicId: 301553
 ## Description
 <section id='description'>
 
-Going back to the information security section you may remember that storing plaintext passwords is <em>never</em> okay. Now it is time to implement BCrypt to solve this issue.
+Going back to the information security section, you may remember that storing plaintext passwords is <em>never</em> okay. Now it is time to implement BCrypt to solve this issue.
 
 Add BCrypt as a dependency, and require it in your server. You will need to handle hashing in 2 key areas: where you handle registering/saving a new account, and when you check to see that a password is correct on login.
 
-Currently on our registration route, you insert a user's password into the database like the following: <code>password: req.body.password</code>. An easy way to implement saving a hash instead is to add the following before your database logic <code>const hash = bcrypt.hashSync(req.body.password, 12);</code>, and replacing the <code>req.body.password</code> in the database saving with just <code>password: hash</code>.
+Currently on our registration route, you insert a user's password into the database like so: <code>password: req.body.password</code>. An easy way to implement saving a hash instead is to add the following before your database logic <code>const hash = bcrypt.hashSync(req.body.password, 12);</code>, and replacing the <code>req.body.password</code> in the database saving with just <code>password: hash</code>.
 
 Finally, on our authentication strategy, we check for the following in our code before completing the process: <code>if (password !== user.password) { return done(null, false); }</code>. After making the previous changes, now <code>user.password</code> is a hash. Before making a change to the existing code, notice how the statement is checking if the password is **not** equal then return non-authenticated. With this in mind, your code could look as follows to properly check the password entered against the hash:
 
