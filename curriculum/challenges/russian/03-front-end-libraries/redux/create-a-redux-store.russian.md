@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403614b
 title: Create a Redux Store
 challengeType: 6
-isRequired: false
 forumTopicId: 301439
 localeTitle: Создание Redux хранилища
 ---
