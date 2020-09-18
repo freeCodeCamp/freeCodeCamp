@@ -3,7 +3,6 @@ id: 5e7b9f170b6c005b0e76f088
 title: 'Objects: Inheritance'
 challengeType: 11
 isHidden: false
-isRequired: true
 videoId: FBL3alYrxRM
 ---
 
