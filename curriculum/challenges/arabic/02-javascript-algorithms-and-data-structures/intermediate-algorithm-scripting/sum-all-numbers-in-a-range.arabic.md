@@ -1,7 +1,6 @@
 ---
 id: a3566b1109230028080c9345
 title: Sum All Numbers in a Range
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: ''

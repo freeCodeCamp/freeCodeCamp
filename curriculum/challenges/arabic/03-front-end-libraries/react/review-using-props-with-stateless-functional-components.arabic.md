@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403616f
 title: Review Using Props with Stateless Functional Components
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: ''
 ---
