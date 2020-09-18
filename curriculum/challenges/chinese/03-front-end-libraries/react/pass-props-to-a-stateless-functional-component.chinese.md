@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036169
 title: Pass Props to a Stateless Functional Component
 challengeType: 6
-isRequired: false
 forumTopicId: 301402
 localeTitle: 将 Props 传递给无状态函数组件
 ---

@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244b3
 title: Convert Celsius to Fahrenheit
 challengeType: 1
-isRequired: true
 videoUrl: ''
 localeTitle: 将摄氏温度转换为华氏温度
 ---
