@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403614a
 title: Moving Forward From Here
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Avanzando desde aquí
 ---

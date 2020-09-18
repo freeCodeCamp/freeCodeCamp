@@ -2,7 +2,6 @@
 id: bd7158d8c443eddfaeb5bd0e
 title: Chart the Stock Market
 challengeType: 4
-isRequired: true
 videoUrl: ''
 localeTitle: Trazar el mercado de valores
 ---

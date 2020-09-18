@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403617a
 title: Pass State as Props to Child Components
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Pasar estado como accesorios a componentes secundarios
 ---

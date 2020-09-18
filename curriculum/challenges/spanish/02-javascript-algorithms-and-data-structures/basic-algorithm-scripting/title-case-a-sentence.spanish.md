@@ -1,7 +1,6 @@
 ---
 id: ab6137d4e35944e21037b769
 title: Title Case a Sentence
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Título Caso una oración

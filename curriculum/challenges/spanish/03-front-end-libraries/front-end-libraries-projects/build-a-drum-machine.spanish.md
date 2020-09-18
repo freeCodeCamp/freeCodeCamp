@@ -1,7 +1,6 @@
 ---
 id: 587d7dbc367417b2b2512bae
 title: Build a Drum Machine
-isRequired: true
 challengeType: 3
 videoUrl: ''
 localeTitle: Construir una máquina de tambor
