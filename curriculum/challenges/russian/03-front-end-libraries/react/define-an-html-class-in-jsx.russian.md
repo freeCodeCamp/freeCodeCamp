@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036160
 title: Define an HTML Class in JSX
 challengeType: 6
-isRequired: false
 forumTopicId: 301393
 localeTitle: Определить класс HTML в JSX
 ---

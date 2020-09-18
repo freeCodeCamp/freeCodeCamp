@@ -2,7 +2,6 @@
 id: bd7158d8c443edefaeb5bd0e
 title: URL Shortener Microservice
 challengeType: 4
-isRequired: true
 forumTopicId: 301509
 localeTitle: URL Шортенер Микросервис
 ---

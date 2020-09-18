@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036155
 title: Send Action Data to the Store
 challengeType: 6
-isRequired: false
 forumTopicId: 301448
 localeTitle: Отправка данных о действиях в магазин
 ---
