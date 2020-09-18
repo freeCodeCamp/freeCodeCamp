@@ -45,7 +45,7 @@ tests:
         assert.equal(data4.returnNum, 2.64172);
         assert.equal(data4.returnUnit, 'gal');
       } catch(xhr) {
-        throw new Error(xhr.responseText);
+        throw new Error(xhr.responseText || xhr.message);
       }
     }
     "
@@ -65,7 +65,7 @@ tests:
         assert.equal(data4.returnNum, 22.04624);
         assert.equal(data4.returnUnit, 'lbs');
       } catch(xhr) {
-        throw new Error(xhr.responseText);
+        throw new Error(xhr.responseText || xhr.message);
       }
     }
     "
@@ -85,7 +85,7 @@ tests:
         assert.equal(data4.returnNum, 6.21373); 
         assert.equal(data4.returnUnit, 'mi');
       } catch(xhr) {
-        throw new Error(xhr.responseText);
+        throw new Error(xhr.responseText || xhr.message);
       }
     }
     "
@@ -93,20 +93,67 @@ tests:
     testString: "async getUserInput => { 
       try {
         const data = await $.get(getUserInput('url') + '/api/convert?input=1min');
-        assert(data.initUnit === 'invalid unit' || data === 'invalid unit');
+        assert(data.error === 'invalid unit' || data === 'invalid unit');
       } catch(xhr) {
-        throw new Error(xhr.responseText);
+        throw new Error(xhr.responseText || xhr.message);
       }
     }
     "
   - text: If my number is invalid, returned with will 'invalid number'.
-    testString: ''
+    testString: "async getUserInput => { 
+      try {
+        const data = await $.get(getUserInput('url') + '/api/convert?input=1//2gal');
+        assert(data.error === 'invalid number' || data === 'invalid number');
+      } catch(xhr) {
+        throw new Error(xhr.responseText || xhr.message);
+      }
+    }"
   - text: If both are invalid, return will be 'invalid number and unit'.
-    testString: ''
+    testString: "async getUserInput => { 
+      try {
+        const data = await $.get(getUserInput('url') + '/api/convert?input=1//2min');
+        assert(data.error === 'invalid number and unit' || data === 'invalid number and unit');
+      } catch(xhr) {
+        throw new Error(xhr.responseText || xhr.message);
+      }
+    }"
   - text: I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
-    testString: ''
+    testString: "async getUserInput => {
+      try {
+        const data1 = await $.get(getUserInput('url') + '/api/convert?input=1/2mi');
+        assert.approximately(data1.initNum, 1/2, 0.001);
+        assert.approximately(data1.returnNum, 0.80467, 0.001);
+        assert.equal(data1.returnUnit, 'km');
+        const data2 = await $.get(getUserInput('url') + '/api/convert?input=1/5mi');
+        assert.approximately(data2.initNum, 1/5, 0.1);
+        assert.approximately(data2.returnNum, 0.32187, 0.001);
+        assert.equal(data2.returnUnit, 'km');
+        const data3 = await $.get(getUserInput('url') + '/api/convert?input=1.5/7km');
+        assert.approximately(data3.initNum, 1.5/7, 0.001);
+        assert.approximately(data3.returnNum, 0.13315, 0.001);
+        assert.equal(data3.returnUnit, 'mi');
+        const data4 = await $.get(getUserInput('url') + '/api/convert?input=3/2.7km');
+        assert.approximately(data4.initNum, 3/2.7, 0.001);
+        assert.approximately(data4.returnNum, 0.69041, 0.001);
+        assert.equal(data4.returnUnit, 'mi');
+      } catch(err) {
+        throw new Error(err.responseText || err.message);
+      }
+    }
+    "
   - text: My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format '{initNum} {initial_Units} converts to {returnNum} {return_Units}' with the result rounded to 5 decimals in the string.
-    testString: ''
+    testString: "async getUserInput => { 
+      try {
+        const data = await $.get(getUserInput('url') + '/api/convert?input=2mi');
+        assert.equal(data.initNum, 2);
+        assert.equal(data.initUnit, 'mi');
+        assert.approximately(data.returnNum, 3.21868, 0.001);
+        assert.equal(data.returnUnit, 'km', 'returnUnit did not match');
+        assert.equal(data.string, '2 miles converts to 3.21868 kilometers')
+      } catch(xhr) {
+        throw new Error(xhr.responseText || xhr.message);
+      }
+    }"
   - text: All 16 unit tests are complete and passing.
     testString: ''
   - text: All 5 functional tests are complete and passing.
