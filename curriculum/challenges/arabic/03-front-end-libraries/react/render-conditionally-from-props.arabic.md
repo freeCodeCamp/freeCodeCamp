@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036188
 title: Render Conditionally from Props
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: تجعل مشروط من الدعائم
 ---
