@@ -123,7 +123,6 @@ export const query = graphql`
           id
           block
           title
-          isRequired
           superBlock
           dashedName
         }

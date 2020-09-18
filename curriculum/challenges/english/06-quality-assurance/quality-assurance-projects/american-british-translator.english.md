@@ -2,7 +2,6 @@
 id: 5e601c0d5ac9d0ecd8b94afe
 title: American British Translator
 challengeType: 4
-isRequired: true
 ---
 
 ## Description
