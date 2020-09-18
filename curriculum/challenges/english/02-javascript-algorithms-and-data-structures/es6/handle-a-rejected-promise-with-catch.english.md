@@ -16,8 +16,6 @@ myPromise.catch(error => {
 ```
 
 <code>error</code> is the argument passed in to the <code>reject</code> method.
-
-<strong>Note:</strong> the <code>then</code> and <code>catch</code> methods can be chained to the promise declaration if you choose.
 </section>
 
 ## Instructions
