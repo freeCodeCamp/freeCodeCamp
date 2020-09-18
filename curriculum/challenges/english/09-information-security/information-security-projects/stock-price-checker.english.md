@@ -2,7 +2,6 @@
 id: 587d824a367417b2b2512c44
 title: Stock Price Checker
 challengeType: 4
-isRequired: true
 forumTopicId: 301572
 ---
 
