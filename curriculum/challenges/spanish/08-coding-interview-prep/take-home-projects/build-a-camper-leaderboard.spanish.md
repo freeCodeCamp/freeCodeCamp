@@ -1,7 +1,6 @@
 ---
 id: bd7156d8c242eddfaeb5bd13
 title: Build a Camper Leaderboard
-isRequired: false
 challengeType: 3
 videoUrl: ''
 localeTitle: Construir una tabla de clasificación campista

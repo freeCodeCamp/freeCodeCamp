@@ -2,7 +2,6 @@
 id: 5a24bbe0dba28a8d3cbd4c5e
 title: Add Comments in JSX
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Añadir comentarios en JSX
 ---

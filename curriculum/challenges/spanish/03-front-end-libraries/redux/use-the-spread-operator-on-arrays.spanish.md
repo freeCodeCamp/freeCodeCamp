@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036159
 title: Use the Spread Operator on Arrays
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Utilice el operador de propagación en matrices
 ---

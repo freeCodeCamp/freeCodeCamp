@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036147
 title: Connect Redux to React
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Conecta Redux a Reaccionar
 ---
