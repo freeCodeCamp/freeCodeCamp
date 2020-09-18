@@ -1,7 +1,6 @@
 ---
 id: a105e963526e7de52b219be9
 title: Sorted Union
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: União ordenada

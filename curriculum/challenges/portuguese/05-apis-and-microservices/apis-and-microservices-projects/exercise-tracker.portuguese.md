@@ -3,7 +3,6 @@ id: 5a8b073d06fa14fcfde687aa
 title: Exercise Tracker
 localeTitle: Rastreador de Exercícios
 challengeType: 4
-isRequired: true
 ---
 
 ## Description

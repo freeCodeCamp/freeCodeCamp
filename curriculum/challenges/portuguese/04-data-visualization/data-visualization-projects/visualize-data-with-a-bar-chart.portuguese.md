@@ -1,7 +1,6 @@
 ---
 id: bd7168d8c242eddfaeb5bd13
 title: Visualize Data with a Bar Chart
-isRequired: true
 challengeType: 3
 videoUrl: ''
 localeTitle: Visualize dados com um gráfico de barras
