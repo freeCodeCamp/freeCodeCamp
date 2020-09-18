@@ -1,7 +1,6 @@
 ---
 id: af2170cad53daa0770fabdea
 title: Mutations
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Mutações

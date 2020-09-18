@@ -1,7 +1,6 @@
 ---
 id: a5de63ebea8dbee56860f4f2
 title: Diff Two Arrays
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Diff Two Arrays
