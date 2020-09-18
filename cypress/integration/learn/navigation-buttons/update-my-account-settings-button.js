@@ -4,7 +4,7 @@ describe('The `Update my account settings` button works properly', function() {
   beforeEach(() => {
     cy.visit('/');
 
-    cy.contains("Get started (it's free)").click({ force: true });
+    cy.contains("Get started (it's free)").click();
   });
 
   it('Should get rendered', function() {
@@ -17,7 +17,7 @@ describe('The `Update my account settings` button works properly', function() {
   });
 
   it('Should take user to their account settings when clicked', function() {
-    cy.contains('Update my account settings').click({ force: true });
+    cy.contains('Update my account settings').click();
     cy.url().should('include', '/settings');
   });
 });
