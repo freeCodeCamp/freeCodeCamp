@@ -50,7 +50,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with:
-          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          record: true
           parallel: true
           build: npm run build
           # this should mirror the production build, but for now we're just using the dev
@@ -63,3 +63,6 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
+          env:
+            # pass the Dashboard record key as an environment variable
+            CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
