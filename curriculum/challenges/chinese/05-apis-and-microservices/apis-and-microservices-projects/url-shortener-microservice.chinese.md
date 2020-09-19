@@ -1,17 +1,22 @@
 ---
 id: bd7158d8c443edefaeb5bd0e
 title: URL Shortener Microservice
-localeTitle: URL Shortener微服务
 challengeType: 4
+isHidden: false
 isRequired: true
+forumTopicId: 301509
+localeTitle: 短网址
 ---
 
 ## Description
-<section id='description'>构建一个功能类似于此的完整堆栈JavaScript应用程序： <a href='https://thread-paper.glitch.me/' target='_blank'>https://thread-paper.glitch.me/</a> 。在这个项目上工作将涉及您在我们的入门项目上的Glitch上编写代码。完成此项目后，您可以将公共故障网址（到应用程序的主页）复制到此屏幕进行测试！您可以选择在另一个平台上编写项目，但必须公开显示我们的测试。使用<a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-project-urlshortener/' target='_blank'>此链接</a>在Glitch上启动此项目或在GitHub上克隆<a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>此存储库</a> ！如果您使用Glitch，请记住将项目链接保存到安全的地方！ 
+<section id='description'>
+构建一个功能类似于 <a href='https://thread-paper.glitch.me/' target='_blank'>https://thread-paper.glitch.me/</a> 的 JavaScript 全栈应用。
+在开发这个项目时，我们推荐你在 <a href='https://glitch.com/'>Glitch</a> 上编码。编码完成之后，你可以把应用主页的链接复制到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。
+参考示例：你可以通过 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-urlshortener/'>这个链接</a> 访问在 Glitch 上的项目，或者从 GitHub 上 clone <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>这个仓库的代码</a>。如果你使用 Glitch，请记住将项目链接保存到妥当的地方。
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,11 +25,11 @@ isRequired: true
 
 ```yml
 tests:
-  - text: 我可以传递一个URL作为参数，我将在JSON响应中收到一个缩短的URL。
+  - text: 当我传入一个 url 作为参数时，我将在JSON响应中收到缩短的URL。
     testString: ''
-  - text: '如果我传递的网址无效，并且不遵循有效的http://www.example.com格式，则JSON响应将包含错误。'
+  - text: '如果我传入一个无效的链接，则会返回一个包含 “没有遵循如 http://www.example.com 的有效格式” 的错误信息的 JSON 响应。'
     testString: ''
-  - text: “当我访问缩短的网址时，它会将我重定向到我原来的链接。”
+  - text: 当我访问这个短 URL 时, 将重定向到我原来的链接。
     testString: ''
 
 ```
@@ -32,7 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
-<section id='challengeSeed'>
+<section id='challengeSeed'
 
 </section>
 
@@ -40,7 +45,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

@@ -3,34 +3,50 @@ id: 5a24c314108439a4d403616a
 title: Pass an Array as Props
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 将数组作为道具传递
+forumTopicId: 301401
+localeTitle: 传递一个数组作为 Props
 ---
 
 ## Description
-<section id="description">最后一项挑战演示了如何将信息从父组件传递到子组件作为<code>props</code>或属性。这个挑战着眼于如何将数组作为<code>props</code>传递。要将数组传递给JSX元素，必须将其视为JavaScript并用大括号括起来。 <blockquote> &lt;为父级&gt; <br> &lt;ChildComponent colors = {[“green”，“blue”，“red”]} /&gt; <br> &lt;/为父级&gt; </blockquote>然后子组件可以访问数组属性<code>colors</code> 。访问属性时可以使用诸如<code>join()</code>类的数组方法。 <code>const ChildComponent = (props) =&gt; &lt;p&gt;{props.colors.join(&#39;, &#39;)}&lt;/p&gt;</code>这会将所有<code>colors</code>数组项连接成逗号分隔的字符串并生成： <code>&lt;p&gt;green, blue, red&lt;/p&gt;</code>稍后，我们将了解在React中呈现数据数组的其他常用方法。 </section>
+<section id='description'>
+上一个挑战演示了如何将来自父组件的信息作为<code>props</code>传递给子组件。这个挑战着眼于如何将数组作为<code>props</code>传递。要将数组传递给 JSX 元素，必须将其视为 JavaScript 并用花括号括起来。
+
+```jsx
+<ParentComponent>
+  <ChildComponent colors={["green", "blue", "red"]} />
+</ParentComponent>
+```
+
+这样，子组件就可以访问数组属性<code>colors</code>。访问属性时可以使用<code>join()</code>等数组方法。
+<code>const ChildComponent = (props) => &lt;p&gt{props.colors.join(', ')}&lt;/p&gt</code>
+这将把所有<code>colors</code>数组项连接成一个逗号分隔的字符串并生成：
+ <code> &lt;p&gt;green, blue, red&lt;/p&gt;</code>
+稍后，我们将了解在 React 中渲染数组数据的其他常用方法。
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器中有<code>List</code>和<code>ToDo</code>组件。从<code>ToDo</code>组件渲染每个<code>List</code> ，传入分配给待办任务数组的<code>tasks</code>属性，例如<code>[&quot;walk dog&quot;, &quot;workout&quot;]</code> 。然后在<code>List</code>组件中访问此<code>tasks</code>数组，在<code>p</code>元素中显示其值。使用<code>join(&quot;, &quot;)</code>以逗号分隔列表的形式显示<code>p</code>元素中的<code>props.tasks</code>数组。今天的列表应该至少有2个任务，明天应该至少有3个任务。 </section>
+<section id='instructions'>
+代码编辑器中有<code>List</code>和<code>ToDo</code>组件。在<code>ToDo</code>组件中渲染每个<code>List</code>时，传入<code>tasks</code>属性并将其分配给待办任务数组，例如<code>["walk dog", "workout"]</code>。然后访问<code>List</code>组件中的<code>tasks</code>数组，在<code>p</code>元素中显示其值。使用<code>join(", ")</code>把<code>props.tasks</code>数组作为逗号分隔列表显示在<code>p</code>元素中。今天的列表应该至少有 2 个任务，明天应该至少有 3 个任务。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>ToDo</code>组件应返回单个外部<code>div</code> 。
+  - text: <code>ToDo</code>组件应该返回单个外部<code>div</code>。
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().type() === 'div'; })());
-  - text: <code>ToDo</code>组件的第三个子<code>ToDo</code>应该是<code>List</code>组件的实例。
+  - text: <code>ToDo</code>组件的第三个子元素应该是<code>List</code>组件的一个实例。
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(2).name() === 'List'; })());
-  - text: <code>ToDo</code>组件的第五个子<code>ToDo</code>应该是<code>List</code>组件的一个实例。
+  - text: <code>ToDo</code>组件的第五个子元素应该是<code>List</code>组件的一个实例。
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(4).name() === 'List'; })());
-  - text: <code>List</code>组件的两个实例都应该有一个名为<code>tasks</code>的属性，而<code>tasks</code>应该是array类型。
+  - text: <code>List</code>组件的两个实例都应该具有一个名为<code>tasks</code>的属性，并且<code>tasks</code>的类型应该是数组。
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return Array.isArray(mockedComponent.find('List').get(0).props.tasks) && Array.isArray(mockedComponent.find('List').get(1).props.tasks); })());
-  - text: 表示今天任务的第一个<code>List</code>组件应该有2个或更多项。
+  - text: 表示今天任务的第一个<code>List</code>组件应该有 2 个或更多项。
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(0).props.tasks.length >= 2; })());
-  - text: 表示明天任务的第二个<code>List</code>组件应该有3个或更多项。
+  - text: 表示明天任务的第二个<code>List</code>组件应该有 3 个或更多项。
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(1).props.tasks.length >= 3; })());
-  - text: '<code>List</code>组件应该将<code>p</code>标记中的<code>tasks</code> prop的值呈现为以逗号分隔的列表，例如<code>walk dog, workout</code> 。'
+  - text: <code>List</code>组件应在<code>p</code>标签中渲染<code>tasks</code>属性的值。
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('p').get(0).props.children === mockedComponent.find('List').get(0).props.tasks.join(', ') && mockedComponent.find('p').get(1).props.children === mockedComponent.find('List').get(1).props.tasks.join(', '); })());
 
 ```
@@ -43,7 +59,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-const List= (props) => {
+const List = (props) => {
   { /* change code below this line */ }
   return <p>{}</p>
   { /* change code above this line */ }
@@ -67,7 +83,6 @@ class ToDo extends React.Component {
     );
   }
 };
-
 ```
 
 </div>
@@ -77,7 +92,7 @@ class ToDo extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ToDo />, document.getElementById('root'))
 ```
 
 </div>
@@ -87,8 +102,28 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const List= (props) => {
+  return <p>{props.tasks.join(', ')}</p>
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        <List tasks={['study', 'exercise']} />
+        <h2>Tomorrow</h2>
+        <List tasks={['call Sam', 'grocery shopping', 'order tickets']} />
+      </div>
+    );
+  }
+};
 ```
 
-/section>
+</section>

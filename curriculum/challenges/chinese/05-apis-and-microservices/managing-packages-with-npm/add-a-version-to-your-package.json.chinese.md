@@ -1,18 +1,24 @@
 ---
 id: 587d7fb4367417b2b2512bff
 title: Add a Version to Your package.json
-localeTitle: 在package.json中添加一个版本
 challengeType: 2
+forumTopicId: 301525
+localeTitle: 给 package.json 添加版本号
 ---
 
 ## Description
-<section id='description'> <code>0</code>该版本与package.json中必填字段之一一起。该字段描述了项目的当前版本。 <code>0</code>示例
-<code>"version": "1.2",</code> <code>0</code>说明<code>0</code>在Glitch项目中向package.json添加版本。 
+<section id='description'>
+在 package.json 中 version 和 name 是所必填的字段之一。version 字段描述了当前项目的版本。
+
+```json
+"version": "1.2.0",
+```
+
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+在 Glitch 项目中的 package.json 中添加一个版本号。
 </section>
 
 ## Tests
@@ -20,7 +26,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“版本”密钥
+  - text: "package.json 应该包含一个有效的 'version' 键。"
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -36,7 +42,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

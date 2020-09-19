@@ -29,11 +29,11 @@ Add the <code>then</code> method to your promise. Use <code>result</code> as the
 ```yml
 tests:
   - text: You should call the <code>then</code> method on the promise.
-    testString: assert(codeWithoutSpaces.match(/(makeServerRequest|\))\.then\(/g));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.then\(/g));
   - text: Your <code>then</code> method should have a callback function with <code>result</code> as its parameter.
     testString: assert(resultIsParameter);
   - text: You should log <code>result</code> to the console.
-    testString: assert(resultIsParameter && codeWithoutSpaces.match(/\.then\(.*?result.*?console.log\(result\).*?\)/));
+    testString: assert(resultIsParameter && __helpers.removeWhiteSpace(code).match(/\.then\(.*?result.*?console.log\(result\).*?\)/));
 ```
 
 </section>
@@ -61,8 +61,7 @@ const makeServerRequest = new Promise((resolve, reject) => {
 <div id='js-teardown'>
 
 ```js
-const codeWithoutSpaces = code.replace(/\s/g, '');
-const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(codeWithoutSpaces);
+const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(code));
 ```
 
 </div>

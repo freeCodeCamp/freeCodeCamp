@@ -1,17 +1,22 @@
 ---
 id: bd7158d8c443edefaeb5bdff
 title: Request Header Parser Microservice
-localeTitle: 请求Header Parser Microservice
 challengeType: 4
+isHidden: false
 isRequired: true
+forumTopicId: 301507
+localeTitle: 请求头解析器
 ---
 
 ## Description
-<section id='description'> 构建一个功能类似于此的完整堆栈JavaScript应用程序： <a href='https://dandelion-roar.glitch.me/' target='_blank'>https://dandelion-roar.glitch.me/</a> 。 在这个项目上工作将涉及您在我们的入门项目上的Glitch上编写代码。完成此项目后，您可以将公共故障网址（到应用程序的主页）复制到此屏幕进行测试！您可以选择在另一个平台上编写项目，但必须公开显示我们的测试。 使用<a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-project-headerparser/' target='_blank'>此链接</a>在Glitch上启动此项目或在GitHub上克隆<a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>此存储库</a> ！如果您使用Glitch，请记住将项目链接保存到安全的地方！ 
+<section id='description'>
+构建一个功能类似于 <a href='https://dandelion-roar.glitch.me/' target='_blank'>https://dandelion-roar.glitch.me/</a> 的 JavaScript 全栈应用。
+在开发这个项目时，我们推荐你在 <a href='https://glitch.com/'>Glitch</a> 上编码。编码完成之后，你可以把应用主页的链接复制到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。
+参考示例：你可以通过 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-headerparser/'>这个链接</a> 访问在 Glitch 上的项目，或者从 GitHub 上 clone <a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>这个仓库的代码</a>。如果你使用 Glitch，请记住将项目链接保存到妥当的地方。
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,9 +25,13 @@ isRequired: true
 
 ```yml
 tests:
-  - text: “我可以为我的浏览器获取IP地址，语言和操作系统。”
-    testString: ''
-
+  - text: 我可以获得浏览器的IP地址、语言和操作系统信息。
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/whoami'').then(data => assert(data.ipaddress && data.ipaddress.length > 0), xhr => { throw new Error(xhr.responseText)})'
+  - text: '首选语言应该在 <code>language</code> 键里返回。'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/whoami'').then(data => assert(data.language && data.language.length > 0), xhr => { throw new Error(xhr.responseText)})'
+  - text: 'software 应该在 <code>software</code>  键里返回。'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/whoami'').then(data => assert(data.software && data.software.length > 0), xhr => { throw new Error(xhr.responseText)})'
+    
 ```
 
 </section>
@@ -36,7 +45,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

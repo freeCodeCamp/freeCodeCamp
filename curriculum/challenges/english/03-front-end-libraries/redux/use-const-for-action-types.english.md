@@ -35,9 +35,9 @@ tests:
   - text: The <code>authReducer</code> function should handle multiple action types with a switch statement.
     testString: getUserInput => assert((function() { return typeof authReducer === 'function' && getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default') })());
   - text: <code>LOGIN</code> and <code>LOGOUT</code> should be declared as <code>const</code> values and should be assigned strings of <code>LOGIN</code>and <code>LOGOUT</code>.
-    testString: const noWhiteSpace = code.replace(/\s/g, ''); assert(/constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) && /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace));
+    testString: const noWhiteSpace = __helpers.removeWhiteSpace(code); assert(/constLOGIN=(['"`])LOGIN\1/.test(noWhiteSpace) && /constLOGOUT=(['"`])LOGOUT\1/.test(noWhiteSpace));
   - text: The action creators and the reducer should reference the <code>LOGIN</code> and <code>LOGOUT</code> constants.
-    testString: getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').toString().replace(/\s/g,''); return noWhiteSpace.includes('caseLOGIN:') && noWhiteSpace.includes('caseLOGOUT:') && noWhiteSpace.includes('type:LOGIN') && noWhiteSpace.includes('type:LOGOUT') })());
+    testString: getUserInput => assert((function() { const noWhiteSpace = __helpers.removeWhiteSpace(getUserInput('index').toString()); return noWhiteSpace.includes('caseLOGIN:') && noWhiteSpace.includes('caseLOGOUT:') && noWhiteSpace.includes('type:LOGIN') && noWhiteSpace.includes('type:LOGOUT') })());
 
 ```
 
