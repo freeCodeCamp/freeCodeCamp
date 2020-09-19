@@ -42,13 +42,13 @@ We've initialized an array `arr`. Use `splice()` to remove elements from `arr`, 
 ```yml
 tests:
   - text: You should not change the original line of <code>const arr = [2, 4, 5, 1, 7, 5, 2, 1];</code>.
-    testString: assert(code.replace(/\s/g, '').match(/constarr=\[2,4,5,1,7,5,2,1\];?/));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/constarr=\[2,4,5,1,7,5,2,1\];?/));
   - text: <code>arr</code> should only contain elements that sum to <code>10</code>.
     testString: assert.strictEqual(arr.reduce((a, b) => a + b), 10);
   - text: Your code should utilize the <code>splice()</code> method on <code>arr</code>.
-    testString: assert(code.replace(/\s/g, '').match(/arr\.splice\(/));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/arr\.splice\(/));
   - text: The splice should only remove elements from <code>arr</code> and not add any additional elements to <code>arr</code>.
-    testString: assert(!code.replace(/\s/g, '').match(/arr\.splice\(\d+,\d+,\d+.*\)/g));
+    testString: assert(!__helpers.removeWhiteSpace(code).match(/arr\.splice\(\d+,\d+,\d+.*\)/g));
 ```
 
 </section>

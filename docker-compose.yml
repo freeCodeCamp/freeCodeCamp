@@ -27,14 +27,14 @@ services:
       - MAILHOG_HOST=mailhog
       - MONGOHQ_URL=mongodb://db:27017/freecodecamp
     volumes:
-      - .:/app
-      - node_modules:/app/node_modules
-      - client_node_modules:/app/client/node_modules
-      - server_node_modules:/app/api-server/node_modules
-      - curriculum_node_modules:/app/curriculum/node_modules
-      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
-      - seed_node_modules:/app/tools/scripts/seed/node_modules
-      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
+      - .:/app:delegated
+      - node_modules:/app/node_modules:delegated
+      - client_node_modules:/app/client/node_modules:delegated
+      - server_node_modules:/app/api-server/node_modules:delegated
+      - curriculum_node_modules:/app/curriculum/node_modules:delegated
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules:delegated
+      - seed_node_modules:/app/tools/scripts/seed/node_modules:delegated
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules:delegated
     working_dir: /app
   client:
     image: node:lts
@@ -45,14 +45,14 @@ services:
       - HOME_LOCATION=http://$DOCKER_HOST_LOCATION:8000
       - API_LOCATION=http://$DOCKER_HOST_LOCATION:3000
     volumes:
-      - .:/app
-      - node_modules:/app/node_modules
-      - client_node_modules:/app/client/node_modules
-      - server_node_modules:/app/api-server/node_modules
-      - curriculum_node_modules:/app/curriculum/node_modules
-      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
-      - seed_node_modules:/app/tools/scripts/seed/node_modules
-      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
+      - .:/app:delegated
+      - node_modules:/app/node_modules:delegated
+      - client_node_modules:/app/client/node_modules:delegated
+      - server_node_modules:/app/api-server/node_modules:delegated
+      - curriculum_node_modules:/app/curriculum/node_modules:delegated
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules:delegated
+      - seed_node_modules:/app/tools/scripts/seed/node_modules:delegated
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules:delegated
     working_dir: /app/client
     command: npm run develop -- -H '0.0.0.0'
     ports:
@@ -71,14 +71,14 @@ services:
       - HOME_LOCATION=http://$DOCKER_HOST_LOCATION:8000
       - API_LOCATION=http://$DOCKER_HOST_LOCATION:3000
     volumes:
-      - .:/app
-      - node_modules:/app/node_modules
-      - client_node_modules:/app/client/node_modules
-      - server_node_modules:/app/api-server/node_modules
-      - curriculum_node_modules:/app/curriculum/node_modules
-      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
-      - seed_node_modules:/app/tools/scripts/seed/node_modules
-      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
+      - .:/app:delegated
+      - node_modules:/app/node_modules:delegated
+      - client_node_modules:/app/client/node_modules:delegated
+      - server_node_modules:/app/api-server/node_modules:delegated
+      - curriculum_node_modules:/app/curriculum/node_modules:delegated
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules:delegated
+      - seed_node_modules:/app/tools/scripts/seed/node_modules:delegated
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules:delegated
     working_dir: /app/api-server
     command: npm run develop
     ports:

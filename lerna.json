@@ -7,7 +7,8 @@
     "tools/search-indexing",
     "tools/challenge-md-parser",
     "tools/scripts/seed",
-    "tools/scripts/build"
+    "tools/scripts/build",
+    "tools/challenge-helper-scripts"
   ],
   "version": "independent"
 }

@@ -25,9 +25,9 @@ tests:
   - text: Your function should return an array.
     testString: assert(Array.isArray(rangeOfNumbers(5, 10)));
   - text: Your code should not use any loop syntax (<code>for</code> or <code>while</code> or higher order functions such as <code>forEach</code>, <code>map</code>, <code>filter</code>, or <code>reduce</code>).
-    testString: assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
+    testString: assert(!__helpers.removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
   - text: <code>rangeOfNumbers</code> should use recursion (call itself) to solve this challenge.
-    testString: assert(removeJSComments(rangeOfNumbers.toString()).match(/rangeOfNumbers\s*\(.+\)/));
+    testString: assert(__helpers.removeJSComments(rangeOfNumbers.toString()).match(/rangeOfNumbers\s*\(.+\)/));
   - text: <code>rangeOfNumbers(1, 5)</code> should return <code>[1, 2, 3, 4, 5]</code>.
     testString: assert.deepStrictEqual(rangeOfNumbers(1, 5), [1, 2, 3, 4, 5]);
   - text: <code>rangeOfNumbers(6, 9)</code> should return <code>[6, 7, 8, 9]</code>.
@@ -47,15 +47,6 @@ tests:
 function rangeOfNumbers(startNum, endNum) {
   return [];
 };
-```
-
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 ```
 
 </div>

@@ -23,7 +23,7 @@ Render this component to the DOM using <code>ReactDOM.render()</code>. There is 
 ```yml
 tests:
   - text: There should be a React component called <code>MyComponent</code>.
-    testString: getUserInput => assert(getUserInput('index').replace(/\s/g, '').includes('classMyComponentextendsReact.Component{'));
+    testString: getUserInput => assert(__helpers.removeWhiteSpace(getUserInput('index')).includes('classMyComponentextendsReact.Component{'));
   - text: <code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })());
   - text: <code>MyComponent</code> should render to the DOM.

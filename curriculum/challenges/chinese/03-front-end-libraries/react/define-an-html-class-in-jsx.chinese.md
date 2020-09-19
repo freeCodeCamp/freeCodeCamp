@@ -3,15 +3,22 @@ id: 5a24c314108439a4d4036160
 title: Define an HTML Class in JSX
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 在JSX中定义HTML类
+forumTopicId: 301393
+localeTitle: 在 JSX 中定义一个 HTML Class
 ---
 
 ## Description
-<section id="description">现在您已经开始编写JSX了，您可能想知道它与HTML的区别。到目前为止，似乎HTML和JSX完全相同。 JSX的一个关键区别是你不能再使用单词<code>class</code>来定义HTML类。这是因为<code>class</code>是JavaScript中的保留字。相反，JSX使用<code>className</code> 。事实上，JSX中所有HTML属性和事件引用的命名约定都变成了camelCase。例如，JSX中的单击事件是<code>onClick</code> ，而不是<code>onclick</code> 。同样， <code>onchange</code>变为<code>onChange</code> 。虽然这是一个微妙的差异，但重要的是要记住前进。 </section>
+<section id='description'>
+现在你已经习惯了编写 JSX，你可能想知道它与 HTML 有什么不同。
+到目前为止，HTML 和 JSX 似乎完全相同。
+JSX 的一个关键区别是你不能再使用<code>class</code>这个单词来定义 HTML 的 class 名。这是因为<code>class</code>是 JavaScript 中的关键字。JSX 使用<code>className</code>代替。
+事实上，JSX 中所有 HTML 属性和事件引用的命名约定都变成了驼峰式。例如，JSX 中的单击事件是 <code>onClick</code>，而不是 <code>onclick</code>。同样，<code>onchange</code>变成了<code>onChange</code>。虽然这是一个微妙的差异，但请你一定要记住。
+</section>
 
 ## Instructions
-<section id="instructions">将一个<code>myDiv</code>类<code>myDiv</code> JSX代码中提供的<code>div</code> 。 </section>
+<section id='instructions'>
+将 class<code>myDiv</code> 应用于 JSX 提供的<code>div</code>上。
+</section>
 
 ## Tests
 <section id='tests'>
@@ -20,7 +27,7 @@ localeTitle: 在JSX中定义HTML类
 tests:
   - text: 常量<code>JSX</code>应该返回一个<code>div</code>元素。
     testString: assert.strictEqual(JSX.type, 'div');
-  - text: <code>div</code>有一类<code>myDiv</code> 。
+  - text: <code>div</code>有一个<code>myDiv</code>class。
     testString: assert.strictEqual(JSX.props.className, 'myDiv');
 
 ```
@@ -38,7 +45,6 @@ const JSX = (
     <h1>Add a class to this div</h1>
   </div>
 );
-
 ```
 
 </div>
@@ -48,7 +54,7 @@ const JSX = (
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
 </div>
@@ -58,8 +64,12 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const JSX = (
+<div className = 'myDiv'>
+  <h1>Add a class to this div</h1>
+</div>);
 ```
 
-/section>
+</section>

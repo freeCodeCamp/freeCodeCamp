@@ -2,26 +2,34 @@
 id: 587d7fa8367417b2b2512bcb
 title: Learn About SVG in D3
 challengeType: 6
-videoUrl: ''
-localeTitle: 在D3中了解SVG
+forumTopicId: 301489
+localeTitle: 了解 D3 中的 SVG
 ---
 
 ## Description
-<section id="description"> SVG代表<code>Scalable Vector Graphics</code> 。这里的“可缩放”意味着，如果放大或缩小对象，它就不会出现像素化。它可以与显示系统一起扩展，无论是在小型移动屏幕还是大型电视监视器上。 SVG用于制作常见的几何形状。由于D3将数据映射到可视化表示，因此它使用SVG为可视化创建形状。网页的SVG形状必须位于HTML <code>svg</code>标记内。当样式使用相对单位（例如<code>vh</code> ， <code>vw</code>或百分比）时，CSS可以是可伸缩的，但使用SVG可以更灵活地构建数据可视化。 </section>
+<section id='description'>
+SVG 是 <code>Scalable Vector Graphics</code> 的缩写。
+"scalable" 的意思是如果放大或缩小一个对象，它不会像素化。不管是在小的移动手机屏幕上还是在大的电视显示器上它都会随着显示系统缩放。
+SVG 用于制作常见的几何图形。由于 D3 将数据映射成可视化表达，它用 SVG 来创建可视化的图形。网页上的 SVG 图形必须在 HTML 的 <code>svg</code> 标签中。
+当使用相对单位（例如 <code>vh</code>、<code>vw</code> 或者百分比）时，CSS 是可伸缩的。但是在实现数据可视化的时候 SVG 更加的灵活。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>append()</code> <code>svg</code>节点添加到<code>body</code> 。给它一个<code>width</code>属性设置为所提供的<code>w</code>常数和<code>height</code>设置为所提供的属性<code>h</code>使用恒定<code>attr()</code>为每个方法。您将在输出中看到它，因为在<code>style</code>标记中应用了粉红色的<code>background-color</code> 。 <strong>注意</strong> <br>宽度和高度属性没有单位。这是缩放的构建块 - 无论缩放级别如何，元素的宽高比始终为5：1。 </section>
+<section id='instructions'>
+用 <code>append()</code> 给 <code>body</code> 加一个 <code>svg</code> 节点。分别使用 <code>attr()</code> 给这个 <code>svg</code> 一个 <code>width</code> 属性和一个 <code>height</code> 属性，并分别将它们设置为给定的常量 <code>w</code> 和给定的常量 <code>h</code>。你可以在输出中看见它，因为在 <code>style</code> 标签中它的 <code>background-color</code> 设置为 pink。
+<strong>提示</strong><br> <code>width</code> 和 <code>height</code> 属性没有单位，它们是来定义缩放的。但无论怎么缩放，这个 <code>svg</code> 元素的宽高比永远是 5:1 。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的文档应该有1个<code>svg</code>元素。
+  - text: 你的文档应该有 1 个 <code>svg</code> 元素。
     testString: assert($('svg').length == 1);
-  - text: <code>svg</code>元素的<code>width</code>属性应设置为500。
+  - text:  <code>svg</code> 元素的 <code>width</code> 属性应该为 500。
     testString: assert($('svg').attr('width') == '500'||$('svg').css('width') == '500px');
-  - text: <code>svg</code>元素的<code>height</code>属性应设置为100。
+  - text:  <code>svg</code> 元素的 <code>height</code> 属性应该为 100。
     testString: assert($('svg').attr('height') == '100'||$('svg').css('height') == '100px');
 
 ```
@@ -47,14 +55,13 @@ tests:
     const h = 100;
 
     const svg = d3.select("body")
-                  // Add your code below this line
+                  // 在下面添加你的代码
 
 
 
-                  // Add your code above this line
+                  // 在上面添加你的代码
   </script>
 </body>
-
 ```
 
 </div>
@@ -66,8 +73,26 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  svg {
+    background-color: pink;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h)
+  </script>
+</body>
+
 ```
 
-/section>
+</section>

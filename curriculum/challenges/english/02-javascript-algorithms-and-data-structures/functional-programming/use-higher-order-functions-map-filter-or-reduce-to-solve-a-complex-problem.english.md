@@ -24,9 +24,9 @@ tests:
   - text: <code>squareList</code> should be a <code>function</code>.
     testString: assert.typeOf(squareList, 'function'), '<code>squareList</code> should be a <code>function</code>';
   - text: for or while loops or forEach should not be used.
-    testString: assert(!removeJSComments(code).match(/for|while|forEach/g));
+    testString: assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
   - text: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used.
-    testString: assert(removeJSComments(code).match(/\.(map|filter|reduce)\s*\(/g));
+    testString: assert(__helpers.removeJSComments(code).match(/\.(map|filter|reduce)\s*\(/g));
   - text: The function should return an <code>array</code>.
     testString: assert(Array.isArray(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])));
   - text: <code>squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2])</code> should return <code>[16, 1764, 36]</code>.
@@ -51,14 +51,6 @@ const squareList = (arr) => {
 
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
-```
-
-</div>
-
-<div id='js-teardown'>
-
-```js
-const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 ```
 
 </div>

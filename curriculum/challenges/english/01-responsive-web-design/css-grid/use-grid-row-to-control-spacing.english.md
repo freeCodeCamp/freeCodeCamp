@@ -22,7 +22,7 @@ Make the element with the <code>item5</code> class consume the last two rows.
 ```yml
 tests:
   - text: <code>item5</code> class should have a <code>grid-row</code> property.
-    testString: assert($('style').text().replace(/\s/g, '').match(/\.item5{.*grid-row:.*}/g));
+    testString: assert(__helpers.removeWhiteSpace($('style').text()).match(/\.item5{.*grid-row:.*}/g));
   - text: <code>item5</code> class should have a <code>grid-row</code> property which results in it consuming the last two rows of the grid.
     testString: "
       const rowStart = getComputedStyle($('.item5')[0]).gridRowStart;

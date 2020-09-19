@@ -2,25 +2,49 @@
 id: 587d7fac367417b2b2512bdc
 title: Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用d3.max和d3.min函数查找数据集中的最小值和最大值
+forumTopicId: 301496
+localeTitle: 使用 d3.max 和 d3.min 函数在数据集中查找最小值和最大值
 ---
 
 ## Description
-<section id="description"> D3方法<code>domain()</code>和<code>range()</code>根据数据为您的比例设置该信息。有几种方法可以使这更容易。通常在设置域时，您需要使用数据集中的最小值和最大值。尝试手动查找这些值，尤其是在大型数据集中，可能会导致错误。 D3有两种方法<code>min()</code>和<code>max()</code>来返回这些信息。这是一个例子： <blockquote> const exampleData = [34,234,73,90,6,52]; <br> d3.min（exampleData）//返回6 <br> d3.max（exampleData）//返回234 </blockquote>数据集可能具有嵌套数组，例如散点图示例中的[x，y]坐标对。在这种情况下，您需要告诉D3如何计算最大值和最小值。幸运的是， <code>min()</code>和<code>max()</code>方法都采用了回调函数。在此示例中，回调函数的参数<code>d</code>用于当前内部数组。回调需要从内部数组（x或y值）返回要计算最大值或最小值的元素。这是一个如何使用数组数组查找最小值和最大值的示例： <blockquote> const locationData = [[1,7]，[6,3]，[8,3]]; <br> //返回第一个元素中的最小数字<br> const minX = d3.min（locationData，（d）=&gt; d [0]）; <br> // minX比较1,6和8并设置为1 </blockquote></section>
+<section id='description'>
+D3 的方法 <code>domain()</code> 和 <code>range()</code> 根据数据设置比例尺的信息。下面有几种更简单的方法。
+通常当你设置域的时候，你会想用数据集中的最小值和最大值。尤其是在很大的数据集中，尝试手动的找到这些值可能会出错。
+D3 有两个方法——<code>min()</code> 和 <code>max()</code> 来返回这些值。下面是一个例子：
+
+```js
+const exampleData = [34, 234, 73, 90, 6, 52];
+d3.min(exampleData) // 返回 6
+d3.max(exampleData) // 返回 234
+```
+
+像在散点图的例子中的 [x, y] 坐标对一样，数据集有可能嵌套数组。在这种情况下，你需要告诉 D3 怎么计算最大值和最小值。
+辛运的是，<code>min()</code> 和 <code>max()</code> 都可以使用回调函数。
+在下面这个例子中，回调函数的参数 <code>d</code> 是当前的内数组。回调函数需要从内数组中返回你想比较大小的元素（x 还是 y 值）。下面是一个如何找到二维数组的最大值和最小值的例子：
+
+```js
+const locationData = [[1, 7],[6, 3],[8, 3]];
+// 返回第一个元素中的最小值s
+const minX = d3.min(locationData, (d) => d[0]);
+// 在 1，6，8 中 minX 为 1
+```
+
+</section>
 
 ## Instructions
-<section id="instructions"> <code>positionData</code>变量包含一个三维（3D）数组。使用D3方法从数组中查找z坐标（第三个值）的最大值，并将其保存在<code>output</code>变量中。 <strong>注意</strong> <br>有趣的事实 -  D3可以绘制3D阵列。 </section>
+<section id='instructions'>
+在 <code>positionData</code> 变量中保存一个三维数组。用 D3 的方法去找到数组中 z 坐标（第三个值）的最大值并将它保存在 <code>output</code> 变量中。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>h2</code>的文本应为8。
+  - text: <code>h2</code> 的文本应该为 8。
     testString: assert(output == 8 && $('h2').text() == '8');
-  - text: 您的代码应使用<code>max()</code>方法。
-    testString: assert(code.match(/\.max/g), 'Your code should use the <code>max()</code> method.')
+  - text: 你应该使用 <code>max()</code> 方法。
+    testString: assert(code.match(/\.max/g), 'Your code should use the  <code>max()</code>  method.')
 
 ```
 
@@ -35,18 +59,17 @@ tests:
 <body>
   <script>
     const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]
-    // Add your code below this line
+    // 在下面添加你的代码
 
-    const output = undefined; // Change this line
+    const output = undefined; // 修改这一行
 
-    // Add your code above this line
+    // 在上面添加你的代码
 
     d3.select("body")
       .append("h2")
       .text(output)
   </script>
 </body>
-
 ```
 
 </div>
@@ -58,8 +81,19 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
+
+    const output = d3.max(positionData, (d) => d[2])
+
+    d3.select("body")
+      .append("h2")
+      .text(output)
+  </script>
+</body>
+
 ```
 
-/section>
+</section>

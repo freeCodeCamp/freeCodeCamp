@@ -1,17 +1,20 @@
 ---
 id: 587d7fb8367417b2b2512c0f
 title: Perform New Updates on a Document Using model.findOneAndUpdate()
-localeTitle: 使用model.findOneAndUpdate（）对文档执行新更新
 challengeType: 2
+forumTopicId: 301542
+localeTitle: 使用 model.findOneAndUpdate() 对更新 document
 ---
 
 ## Description
-<section id='description'> <code>0</code>最新版本的mongoose具有简化文档更新的方法。一些更高级的功能（即前/后挂钩，验证）与此方法的行为不同，因此Classic方法在许多情况下仍然有用。在按Id搜索时可以使用findByIdAndUpdate（）。 <code>0</code>按名称查找人员并将其年龄设置为20.使用函数参数personName作为搜索关键字。 <code>0</code>提示：我们希望您返回更新的文档。为此，您需要将选项文档{new：true}作为findOneAndUpdate（）的第三个参数传递。默认情况下，这些方法返回未修改的对象。 
+<section id='description'>
+最近发布的 mongoose 版本简化了 document 的更新方式，但同时，一些高级功能（如 pre/post hook, 验证）的使用方式也变得和以前不同。因此，在很多情景下，上一个挑战中提到的老方法其实更常用。新方法的加入，可以让我们使用 <code>findByIdAndUpdate()</code> 来进行基于 Id 的搜索。
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+用 <code>personName</code> 作为 <code>Name</code> 的查找条件，并将查到的 person 年龄设为 20 岁。
+<strong>提示：</strong>你需要返回更新后的 document。你可以把 <code>findOneAndUpdate()</code> 的第三个参数设置为 <code>{new: true}</code>。默认情况下，这个方法会返回修改前的数据。
 </section>
 
 ## Tests
@@ -19,7 +22,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: findOneAndUpdate项应该成功
+  - text: 应成功地使用 findOneAndUpdate 更新数据
     testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-update'', {name:''Dorian Gray'', age: 35, favoriteFoods:[''unknown'']}).then(data => { assert.equal(data.name, ''Dorian Gray'', ''item.name is not what expected''); assert.equal(data.age, 20, ''item.age is not what expected''); assert.deepEqual(data.favoriteFoods, [''unknown''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''findOneAndUpdate does not increment version by design !!!''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -35,7 +38,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>
