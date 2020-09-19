@@ -1,4 +1,11 @@
-import { put, select, takeEvery, delay, call } from 'redux-saga/effects';
+import {
+  put,
+  select,
+  takeEvery,
+  takeLeading,
+  delay,
+  call
+} from 'redux-saga/effects';
 
 import {
   openDonationModal,
@@ -64,6 +71,6 @@ export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeEvery(types.addDonation, addDonationSaga),
-    takeEvery(types.postChargeStripe, postChargeStripeSaga)
+    takeLeading(types.postChargeStripe, postChargeStripeSaga)
   ];
 }
