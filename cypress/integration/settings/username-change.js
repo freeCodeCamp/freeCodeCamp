@@ -1,0 +1,164 @@
+/* global cy */
+
+describe('Username input field', () => {
+  beforeEach(() => {
+    cy.visit('/');
+    cy.contains("Get started (it's free)").click({ force: true });
+    cy.visit('/settings');
+
+    // Setting aliases here
+    cy.get('input[name=username-settings]').as('usernameInput');
+    cy.get('form#usernameSettings').as('usernameForm');
+  });
+
+  it('Should be able to type', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('twaha', { force: true })
+      .should('have.attr', 'value', 'twaha');
+  });
+
+  it('Should show message when validating name', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('twaha', { force: true });
+
+    cy.contains('Validating username...')
+      .should('have.attr', 'role', 'alert')
+      .should('have.class', 'alert alert-info');
+  });
+
+  it('Should show username is avalable if it is avalable', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('camperbot', { force: true });
+
+    cy.contains('Username is available.')
+      .should('be.visible')
+      .should('have.attr', 'role', 'alert')
+      .should('have.class', 'alert alert-success');
+  });
+
+  it('Should info message if username is avalable', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('camperbot', { force: true });
+
+    cy.contains(
+      'Please note, changing your username will also change ' +
+        'the URL to your profile and your certifications.'
+    )
+      .should('be.visible')
+      .should('have.attr', 'role', 'alert')
+      .should('have.class', 'alert alert-info');
+  });
+
+  // eslint-disable-next-line
+  it('Should be able to click the `Save` button if username is avalable', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('camperbot', { force: true });
+
+    cy.get('@usernameForm').within(() => {
+      cy.contains('Save').should('not.be.disabled');
+    });
+  });
+
+  it('Should show username is unavalable if it is unavalable', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('twaha', { force: true });
+
+    cy.contains('Username not available.')
+      .should('be.visible')
+      .should('have.attr', 'role', 'alert')
+      .should('have.class', 'alert alert-warning');
+  });
+
+  // eslint-disable-next-line
+  it('Should not be able to click the `Save` button if username is unavalable', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('twaha', { force: true });
+
+    cy.get('@usernameForm').within(() => {
+      cy.contains('Save').should('be.disabled');
+    });
+  });
+
+  it('Should not show anything if user types their current name', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('developmentuser', { force: true });
+  });
+
+  // eslint-disable-next-line
+  it('Should not be able to click the `Save` button if user types their current name', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('developmentuser', { force: true });
+
+    cy.get('@usernameForm').within(() => {
+      cy.contains('Save').should('be.disabled');
+    });
+  });
+
+  it('Should show warning if username includes invalid character', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('Quincy Larson', { force: true });
+
+    cy.contains('Username contains invalid characters.')
+      .should('be.visible')
+      .should('have.attr', 'role', 'alert')
+      .should('have.class', 'alert alert-danger');
+  });
+
+  // eslint-disable-next-line
+  it('Should not be able to click the `Save` button if username includes invalid character', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('Quincy Larson', { force: true });
+
+    cy.get('@usernameForm').within(() => {
+      cy.contains('Save').should('be.disabled');
+    });
+  });
+
+  it('Should change username if `Save` button is clicked', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('quincy', { force: true });
+
+    cy.get('@usernameForm').within(() => {
+      cy.wait(2000);
+      cy.contains('Save').click({ force: true });
+    });
+    cy.contains('Account Settings for quincy').should('be.visible');
+  });
+
+  it('Should show flash message showing username has been updated', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('nhcarrigan', { force: true });
+    cy.wait(2000);
+    cy.get('@usernameInput').type('{enter}', { force: true, release: false });
+
+    cy.contains('We have updated your username to nhcarrigan')
+      .should('be.visible')
+      .should(
+        'have.class',
+        'flash-message alert alert-success alert-dismissable'
+      );
+  });
+
+  it('Should change username if enter is pressed', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('developmentuser', { force: true });
+    cy.wait(2000);
+    cy.get('@usernameInput').type('{enter}', { force: true, release: false });
+
+    cy.contains('Account Settings for developmentuser').should('be.visible');
+  });
+});
