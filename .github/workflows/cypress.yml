@@ -18,6 +18,9 @@ jobs:
     strategy:
       matrix:
         browsers: [chrome, firefox]
+        # This should spin up machines which Cypress can use
+        # to run tests in parallel
+        machines: [1, 2, 3]
     services:
       mongodb:
         image: mongo:3.6.19
@@ -48,6 +51,7 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          parallel: true
           build: npm run build
           # this should mirror the production build, but for now we're just using the dev
           # server and gatsby serve instead (the npm script serve:client needs updating!)
