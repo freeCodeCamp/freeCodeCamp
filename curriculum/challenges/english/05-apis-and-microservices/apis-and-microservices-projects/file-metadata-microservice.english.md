@@ -23,12 +23,38 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
+  - text: I can provide my own project, not the example URL.
+    testString: "getUserInput => {
+      const url = getUserInput('url');
+      assert(!(new RegExp('.*/file-metadata.freecodecamp.repl.co')).test(getUserInput('url')));
+    }"
   - text: I can submit a form that includes a file upload.
-    testString: ''
+    testString: "async getUserInput => {
+      const site = await fetch(getUserInput('url'));
+      const data = await site.text();
+      assert(/<form.*>/.test(data));
+      assert(/type=['|\"]file['|\"]/.test(data));
+    }"
   - text: The form file input field has the <code>name</code> attribute set to <code>upfile</code>.
-    testString: ''
+    testString: "async getUserInput => {
+      const site = await fetch(getUserInput('url'));
+      const data = await site.text();
+      assert(/name=['|\"]upfile['|\"]/.test(data));
+    }"
   - text: When I submit something, I will receive the file <code>name</code>, <code>type</code>, and <code>size</code> in bytes within the JSON response.
-    testString: ''
+    testString: "async getUserInput => {
+      const formData = new FormData();
+      const fileData = await fetch('../../../../../icons/icon-48x48.png');
+      const file = await fileData.blob();
+      formData.append('upfile', file, 'icon');
+      const data = await fetch(getUserInput('url') + '/api/fileanalyse', {
+        method: 'POST', body: formData
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'size');
+      assert.equal(parsed.name, 'icon');
+      assert.equal(parsed.type, 'image/png');
+    }"
 
 ```
 
