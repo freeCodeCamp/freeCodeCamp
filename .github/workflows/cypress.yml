@@ -21,6 +21,7 @@ jobs:
         # This should spin up machines which Cypress can use
         # to run tests in parallel
         machines: [1, 2, 3]
+        fail-fast: false
     services:
       mongodb:
         image: mongo:3.6.19
@@ -48,10 +49,11 @@ jobs:
         run: npm run seed
 
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           record: true
           parallel: true
+          group: 'Cypress Tests'
           build: npm run build
           # this should mirror the production build, but for now we're just using the dev
           # server and gatsby serve instead (the npm script serve:client needs updating!)
