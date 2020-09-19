@@ -98,7 +98,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
 
       user.insertOne({
         _id: ObjectId('5bd30e0f1caf6ac3ddddddb9'),
-        email: 'foo@bar.com',
+        email: 'bar@bar.com',
         emailVerified: true,
         progressTimestamps: [],
         isBanned: false,
