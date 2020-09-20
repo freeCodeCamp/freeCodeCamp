@@ -31,7 +31,7 @@ describe('Username input field', () => {
   it('Should show username is avalable if it is avalable', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
-      .type('camperbot', { force: true });
+      .type('brad', { force: true });
 
     cy.contains('Username is available.')
       .should('be.visible')
@@ -42,7 +42,7 @@ describe('Username input field', () => {
   it('Should info message if username is avalable', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
-      .type('camperbot', { force: true });
+      .type('mruggesh', { force: true });
 
     cy.contains(
       'Please note, changing your username will also change ' +
@@ -57,7 +57,7 @@ describe('Username input field', () => {
   it('Should be able to click the `Save` button if username is avalable', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
-      .type('camperbot', { force: true });
+      .type('ojeyton', { force: true });
 
     cy.get('@usernameForm').within(() => {
       cy.contains('Save').should('not.be.disabled');
@@ -150,6 +150,22 @@ describe('Username input field', () => {
         'have.class',
         'flash-message alert alert-success alert-dismissable'
       );
+  });
+
+  it('Should be able to close the shown flash message', () => {
+    cy.get('@usernameInput')
+      .clear({ force: true })
+      .type('bjorno', { force: true });
+    cy.wait(2000);
+    cy.get('@usernameInput').type('{enter}', { force: true, release: false });
+
+    cy.contains('We have updated your username to bjorno').within(() => {
+      cy.get('button').click();
+    });
+
+    cy.contains('We have updated your username to bjorno').should(
+      'not.be.visible'
+    );
   });
 
   it('Should change username if enter is pressed', () => {
