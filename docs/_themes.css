@@ -1,0 +1,90 @@
+:root {
+  --theme-color: #0a0a23;
+
+  --heading-font-family: Roboto Mono;
+  --heading-h1-font-size: 2.5rem;
+  --heading-h2-font-size: 1.25rem;
+  --base-font-family: Lato;
+
+  --cover-background-color: #ffffff;
+  --cover-background-image: initial;
+  --cover-max-width: 100vw;
+  --cover-button-background: #0a0a23;
+  --cover-button-background--hover: #1b1b32;
+  --cover-button-color: #ffffff;
+  --cover-button-color--hover: #dfdfe2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cover > * {
+  margin-top: 2em;
+}
+
+.cover h1,
+.cover h2 {
+  font-family: var(--heading-font-family);
+}
+
+.cover h1 {
+  font-size: var(--heading-h1-font-size);
+  margin-top: 2.5em !important;
+}
+
+@media only screen and (max-width: 800px) {
+  .cover h1 {
+    margin-top: 10em !important;
+  }
+}
+
+.cover h2 {
+  font-size: var(--heading-h2-font-size);
+}
+
+.cover-main {
+  padding: 4em 16px 0 !important;
+}
+
+.cover ul {
+  max-width: initial !important;
+}
+
+.cover li {
+  font-size: 1.5rem;
+}
+
+.cover li a {
+  text-decoration: var(--cover-link-text-decoration) !important;
+}
+
+.cover-main > p > a:hover {
+  color: #dfdfe2 !important;
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out forwards;
+}
+
+/* Navbar */
+
+.universal-nav {
+  margin: 0 !important;
+  width: 100vw;
+  height: 38px;
+  background-color: var(--theme-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.universal-nav img {
+  margin: 7px 0px;
+  height: 24px;
+}
+
+.app-nav > a {
+  margin: 0;
+  padding: 0;
+}

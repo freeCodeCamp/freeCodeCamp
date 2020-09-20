@@ -1,8 +1,8 @@
-> ## Contribute to freeCodeCamp.org
+# Contribute to freeCodeCamp.org
 
 ## This community is possible thanks to thousands of kind volunteers like you.
 
-## Here are some quick and fun ways you can help the community.
+## Here are some quick and fun ways you can help the community:
 
 - <span class='cover-icon' style="color: #002ead;"><i class="far fa-question-circle"></i></span> [Help by answering coding questions](https://forum.freecodecamp.org/c/help?max_posts=1) on our community forum.
 - <span class='cover-icon' style="color: #00471b;"><i class="far fa-comments"></i></span> [Give feedback on coding projects](https://forum.freecodecamp.org/c/project-feedback?max_posts=1) built by campers.
