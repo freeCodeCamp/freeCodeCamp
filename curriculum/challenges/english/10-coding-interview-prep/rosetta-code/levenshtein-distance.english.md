@@ -56,7 +56,7 @@ tests:
 
 ```js
 function levenshtein(a, b) {
-  // Good luck!
+
 }
 ```
 

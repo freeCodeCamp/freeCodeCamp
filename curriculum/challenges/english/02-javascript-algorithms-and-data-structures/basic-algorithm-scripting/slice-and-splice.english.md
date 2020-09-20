@@ -33,9 +33,9 @@ tests:
   - text: All elements from the first array should be added to the second array in their original order.
     testString: assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);
   - text: The first array should remain the same after the function runs.
-    testString: frankenSplice(testArr1, testArr2); assert.deepEqual(testArr1, [1, 2]);
+    testString: frankenSplice(testArr1, testArr2, 1); assert.deepEqual(testArr1, [1, 2]);
   - text: The second array should remain the same after the function runs.
-    testString: frankenSplice(testArr1, testArr2); assert.deepEqual(testArr2, ["a", "b"]);
+    testString: frankenSplice(testArr1, testArr2, 1); assert.deepEqual(testArr2, ["a", "b"]);
 
 ```
 

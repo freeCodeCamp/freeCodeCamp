@@ -62,7 +62,7 @@ tests:
 
 ```js
 function longestCollatzSequence(limit) {
-  // Good luck!
+
   return true;
 }
 

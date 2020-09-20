@@ -40,7 +40,7 @@ tests:
 
 ```js
 function powerfulDigitSum() {
-  // Good luck!
+
   return true;
 }
 

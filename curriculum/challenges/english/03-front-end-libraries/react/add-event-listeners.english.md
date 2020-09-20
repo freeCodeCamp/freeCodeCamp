@@ -51,14 +51,14 @@ class MyComponent extends React.Component {
     this.handleEnter = this.handleEnter.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
-  // change code below this line
+  // Change code below this line
   componentDidMount() {
 
   }
   componentWillUnmount() {
 
   }
-  // change code above this line
+  // Change code above this line
   handleEnter() {
     this.setState((state) => ({
       message: state.message + 'You pressed the enter key! '
@@ -85,7 +85,7 @@ class MyComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
@@ -97,7 +97,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -107,14 +107,14 @@ class MyComponent extends React.Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleEnter = this.handleEnter.bind(this);  }
   componentDidMount() {
-    // change code below this line
+    // Change code below this line
     document.addEventListener('keydown', this.handleKeyPress);
-    // change code above this line
+    // Change code above this line
   }
   componentWillUnmount() {
-    // change code below this line
+    // Change code below this line
     document.removeEventListener('keydown', this.handleKeyPress);
-    // change code above this line
+    // Change code above this line
   }
   handleEnter() {
     this.setState((state) => ({

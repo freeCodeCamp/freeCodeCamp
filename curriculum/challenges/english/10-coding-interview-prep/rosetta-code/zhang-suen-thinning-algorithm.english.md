@@ -141,7 +141,7 @@ const testImage = [
   '                                                          '];
 
 function thinImage(image) {
-  // Good luck!
+
 }
 ```
 

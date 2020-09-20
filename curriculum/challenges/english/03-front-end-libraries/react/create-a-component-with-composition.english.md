@@ -68,10 +68,10 @@ class ParentComponent extends React.Component {
     return (
       <div>
         <h1>I am the parent</h1>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }
@@ -84,7 +84,7 @@ class ParentComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ParentComponent />, document.getElementById('root'))
 ```
 
@@ -96,7 +96,7 @@ ReactDOM.render(<ParentComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const ChildComponent = () => {
   return (
     <div>
@@ -113,9 +113,9 @@ class ParentComponent extends React.Component {
     return (
       <div>
         <h1>I am the parent</h1>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <ChildComponent />
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }

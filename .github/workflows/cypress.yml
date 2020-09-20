@@ -15,6 +15,9 @@ jobs:
       # This installs it specifically in the CI runs.
       CYPRESS_INSTALL_BINARY: '4.11.0'
     runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        browsers: [chrome, firefox]
     services:
       mongodb:
         image: mongo:3.6.19
@@ -54,3 +57,5 @@ jobs:
           # left for testing.
           wait-on-timeout: 1200
           config: baseUrl=http://localhost:8000
+          browser: ${{ matrix.browsers }}
+          headless: true

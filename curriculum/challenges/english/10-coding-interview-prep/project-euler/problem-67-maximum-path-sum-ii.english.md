@@ -53,7 +53,7 @@ tests:
 
 ```js
 function maximumPathSumII(triangle) {
-  // Good luck!
+
   return true;
 }
 

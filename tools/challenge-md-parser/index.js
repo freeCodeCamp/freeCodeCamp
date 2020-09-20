@@ -9,7 +9,7 @@ const raw = require('rehype-raw');
 const frontmatterToData = require('./frontmatter-to-data');
 const textToData = require('./text-to-data');
 const testsToData = require('./tests-to-data');
-const challengeSeedToData = require('./challengeSeed-to-data');
+const { challengeSeedToData } = require('./challengeSeed-to-data');
 const solutionsToData = require('./solution-to-data');
 
 const processor = unified()

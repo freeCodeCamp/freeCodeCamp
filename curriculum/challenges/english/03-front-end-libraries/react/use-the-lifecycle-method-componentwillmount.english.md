@@ -52,9 +52,9 @@ class MyComponent extends React.Component {
     super(props);
   }
   componentWillMount() {
-    // change code below this line
+    // Change code below this line
 
-    // change code above this line
+    // Change code above this line
   }
   render() {
     return <div />
@@ -68,7 +68,7 @@ class MyComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
@@ -80,15 +80,15 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
   }
   componentWillMount() {
-    // change code below this line
+    // Change code below this line
     console.log('Component is mounting...');
-    // change code above this line
+    // Change code above this line
   }
   render() {
     return <div />

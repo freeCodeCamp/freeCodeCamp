@@ -51,7 +51,7 @@ tests:
 
 ```js
 function sumsq(array) {
-  // Good luck!
+
 }
 ```
 

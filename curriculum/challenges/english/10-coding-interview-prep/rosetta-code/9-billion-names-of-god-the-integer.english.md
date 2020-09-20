@@ -66,7 +66,7 @@ tests:
 
 ```js
 function numberOfNames(num) {
-  // Good luck!
+
   return true;
 }
 ```

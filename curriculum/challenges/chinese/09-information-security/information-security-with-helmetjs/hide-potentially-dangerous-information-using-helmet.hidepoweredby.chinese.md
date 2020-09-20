@@ -2,15 +2,19 @@
 id: 587d8247367417b2b2512c37
 title: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 challengeType: 2
-videoUrl: ''
-localeTitle: 使用helmet.hidePoweredBy（）隐藏潜在的危险信息
+forumTopicId: 301580
+localeTitle: 使用 helmet.hidePoweredBy() 隐藏潜在的危险信息
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。如果黑客看到您的网站由Express提供支持，他们可以利用Express / Node中的已知漏洞。 X-Powered-By：Express默认发送来自Express的每个请求。 helmet.hidePoweredBy（）中间件将删除X-Powered-By标头。您还可以将标头显式设置为其他内容，以便让人们离开。例如app.use（helmet.hidePoweredBy（{setTo：&#39;PHP 4.2.0&#39;}）） </section>
+<section id='description'>
+请注意，本项目在 <a href="https://repl.it/github/freeCodeCamp/boilerplate-infosec">这个 Repl.it 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+如果黑客发现你的网站是用 Express 搭建的，那么他们就可以利用 Express 或 Node 现存的漏洞来攻击你的网站。<code>X-Powered-By: Express</code> 默认情况下会添加到所有响应的 header。不过 <code>helmet.hidePoweredBy()</code> 中间件可以帮你把 header 中的 X-Powered-By 字段移除。你甚至可以把它设置成其它的值来骗过黑客，比如 <code>app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))</code>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,7 +22,7 @@ localeTitle: 使用helmet.hidePoweredBy（）隐藏潜在的危险信息
 
 ```yml
 tests:
-  - text: helmet.hidePoweredBy（）中间件应正确安装
+  - text: 应正确地加载 helmet.hidePoweredBy() 中间件
     testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'hidePoweredBy'); assert.notEqual(data.headers['x-powered-by'], 'Express')}, xhr => { throw new Error(xhr.responseText); })
 
 ```
@@ -34,7 +38,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

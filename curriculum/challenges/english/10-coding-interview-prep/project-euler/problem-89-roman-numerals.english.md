@@ -57,7 +57,7 @@ tests:
 
 ```js
 function romanNumerals(arr) {
-  // Good luck!
+
   return true;
 }
 

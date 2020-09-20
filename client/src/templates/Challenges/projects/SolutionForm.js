@@ -18,8 +18,11 @@ const propTypes = {
 };
 
 // back end challenges and front end projects use a single form field
-const solutionField = ['solution'];
-const backEndProjectFields = ['solution', 'githubLink'];
+const solutionField = [{ name: 'solution', label: 'Solution Link' }];
+const backEndProjectFields = [
+  { name: 'solution', label: 'Solution Link' },
+  { name: 'githubLink', label: 'GitHub Link' }
+];
 
 const options = {
   types: {

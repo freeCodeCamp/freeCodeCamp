@@ -56,7 +56,7 @@ tests:
 
 ```js
 function cyclicalFigurateNums() {
-  // Good luck!
+
   return true;
 }
 

@@ -54,7 +54,7 @@ tests:
 
 ```js
 function pathSumFourWays(arr) {
-  // Good luck!
+
   return true;
 }
 

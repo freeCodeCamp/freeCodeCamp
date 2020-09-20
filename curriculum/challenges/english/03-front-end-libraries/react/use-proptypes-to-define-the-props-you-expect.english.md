@@ -33,7 +33,7 @@ tests:
   - text: The <code>Items</code> component should render.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })());
   - text: The <code>Items</code> component should include a <code>propTypes</code> check that requires <code>quantity</code> to be a <code>number</code>.
-    testString: getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/ /g, ''); return noWhiteSpace.includes('quantity:PropTypes.number.isRequired') && noWhiteSpace.includes('Items.propTypes='); })());
+    testString: getUserInput => assert((function() { const noWhiteSpace = __helpers.removeWhiteSpace(getUserInput('index')); return noWhiteSpace.includes('quantity:PropTypes.number.isRequired') && noWhiteSpace.includes('Items.propTypes='); })());
 
 ```
 
@@ -49,9 +49,9 @@ const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
 };
 
-// change code below this line
+// Change code below this line
 
-// change code above this line
+// Change code above this line
 
 Items.defaultProps = {
   quantity: 0
@@ -84,7 +84,7 @@ var PropTypes = {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 ```
 
@@ -96,16 +96,16 @@ ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
 };
 
-// change code below this line
+// Change code below this line
 Items.propTypes = {
   quantity: PropTypes.number.isRequired
 };
-// change code above this line
+// Change code above this line
 
 Items.defaultProps = {
   quantity: 0

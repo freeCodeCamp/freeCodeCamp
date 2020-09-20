@@ -33,7 +33,7 @@ tests:
   - text: Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.
     testString: assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })());
   - text: Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.
-    testString: assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\s/g,''); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })());
+    testString: assert((function() { const noWhiteSpace = __helpers.removeWhiteSpace(handleAsync.toString()); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })());
 
 ```
 
@@ -42,9 +42,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const REQUESTING_DATA = 'REQUESTING_DATA'
 const RECEIVED_DATA = 'RECEIVED_DATA'
 
@@ -53,13 +53,13 @@ const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users}
 
 const handleAsync = () => {
   return function(dispatch) {
-    // dispatch request action here
+    // Dispatch request action here
 
     setTimeout(function() {
       let data = {
         users: ['Jeff', 'William', 'Alice']
       }
-      // dispatch received data action here
+      // Dispatch received data action here
 
     }, 2500);
   }

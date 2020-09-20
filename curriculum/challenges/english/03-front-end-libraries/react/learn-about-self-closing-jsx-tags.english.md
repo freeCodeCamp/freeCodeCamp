@@ -44,11 +44,9 @@ tests:
 ```jsx
 const JSX = (
   <div>
-    {/* remove comment and change code below this line
     <h2>Welcome to React!</h2> <br >
     <p>Be sure to close all tags!</p>
     <hr >
-    remove comment and change code above this line */}
   </div>
 );
 
@@ -60,7 +58,7 @@ const JSX = (
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
@@ -72,14 +70,12 @@ ReactDOM.render(JSX, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const JSX = (
 <div>
-  {/* change code below this line */}
   <h2>Welcome to React!</h2> <br />
   <p>Be sure to close all tags!</p>
   <hr />
-  {/* change code above this line */}
 </div>
 );
 ```

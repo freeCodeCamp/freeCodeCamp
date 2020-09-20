@@ -45,7 +45,7 @@ tests:
 
 ```js
 function iterativeCirclePacking(n) {
-  // Good luck!
+
   return true;
 }
 

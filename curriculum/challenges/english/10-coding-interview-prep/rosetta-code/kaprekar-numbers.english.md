@@ -62,7 +62,7 @@ tests:
 
 ```js
 function isKaprekar(n, bs) {
-  // Good luck!
+
 }
 ```
 

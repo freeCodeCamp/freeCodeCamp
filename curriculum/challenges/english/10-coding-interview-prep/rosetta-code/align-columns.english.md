@@ -76,7 +76,7 @@ const testArr = [
 ];
 
 function formatText(input, justification) {
-  // Good luck!
+
 }
 ```
 

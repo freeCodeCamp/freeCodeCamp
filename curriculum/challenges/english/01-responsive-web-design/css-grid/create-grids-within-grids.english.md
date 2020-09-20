@@ -2,7 +2,6 @@
 id: 5a94fe8569fb03452672e464
 title: Create Grids within Grids
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
 forumTopicId: 301128
 ---
 
@@ -107,8 +106,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".item3 {grid-template-columns: auto 1fr; display: grid;}"
+```html
+<style>.item3 {grid-template-columns: auto 1fr; display: grid;}</style>
 ```
 
 </section>

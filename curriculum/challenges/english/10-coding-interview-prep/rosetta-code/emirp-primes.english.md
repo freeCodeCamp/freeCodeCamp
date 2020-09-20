@@ -49,7 +49,7 @@ tests:
 
 ```js
 function emirps(n) {
-  // Good luck!
+
 }
 ```
 
@@ -64,7 +64,6 @@ function emirps(n) {
 
 
 ```js
-// noprotect
 function emirps(num, showEmirps)
 {
   const is_prime = function(n)

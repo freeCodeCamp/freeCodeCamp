@@ -58,7 +58,7 @@ tests:
       };
       const state_2 = () => {
         const nodes = mockedComponent.find('ul').find('li');
-        return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') };
+        return { nodes, text: nodes.reduce((t, n) => t + n.text().trim(), '') };
       };
       const setInput_2 = () => {
         return simulateChange(
@@ -71,7 +71,7 @@ tests:
       };
       const state_3 = () => {
         const nodes = mockedComponent.find('ul').find('li');
-        return { nodes, text: nodes.reduce((t, n) => t + n.text(), '') };
+        return { nodes, text: nodes.reduce((t, n) => t + n.text().trim(), '') };
       };
       const awaited_state_1 = state_1();
       const awaited_setInput = setInput();
@@ -84,8 +84,8 @@ tests:
         awaited_state_1.length === 0 &&
           awaited_state_2.nodes.length === 3 &&
           awaited_state_3.nodes.length === 6 &&
-          awaited_state_2.text === 'testA testB testC' &&
-          awaited_state_3.text === 't1 t2 t3 t4 t5 t6'
+          awaited_state_2.text === 'testAtestBtestC' &&
+          awaited_state_3.text === 't1t2t3t4t5t6'
       );
     })();
     "
@@ -109,9 +109,9 @@ const textAreaStyles = {
 class MyToDoList extends React.Component {
   constructor(props) {
     super(props);
-    // change code below this line
+    // Change code below this line
 
-    // change code above this line
+    // Change code above this line
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -127,7 +127,7 @@ class MyToDoList extends React.Component {
     });
   }
   render() {
-    const items = null; // change code here
+    const items = null; // Change this line
     return (
       <div>
         <textarea
@@ -152,7 +152,7 @@ class MyToDoList extends React.Component {
 
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyToDoList />, document.getElementById('root'));
 ```
 
@@ -164,7 +164,7 @@ ReactDOM.render(<MyToDoList />, document.getElementById('root'));
 
 <section id='solution'>
 
-```js
+```jsx
 const textAreaStyles = {
   width: 235,
   margin: 5

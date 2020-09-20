@@ -1,16 +1,22 @@
 ---
 id: 587d7fb6367417b2b2512c06
 title: Install and Set Up Mongoose
-localeTitle: 安装和设置Mongoose
 challengeType: 2
+forumTopicId: 301540
+localeTitle: 安装和设置 Mongoose
 ---
 
 ## Description
-<section id='description'> <code>0</code>将mongodb和mongoose添加到项目的package.json中。然后需要猫鼬。将mLab数据库URI作为MONGO_URI存储在私有.env文件中。使用mongoose.connect连接到数据库（ <Your URI> ） 
+<section id='description'>
+在 package.json 文件中添加 mongodb 和 mongoose 作为项目依赖，然后引入 Mongoose。之后，将 MongoDB Atlas 的 URI 作为 MONGO_URI 字段存储在私有的 <code>.env</code> 文件中。然后使用单引号或双引号包裹 URI，最后通过以下的代码片段来连接数据库：
+
+```js
+mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
+```
+
 </section>
 
-## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -19,11 +25,11 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: '"mongodb"依赖应该在package.json'
+  - text: '"mongodb" 应在 package.json 中作为依赖项定义'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/file/package.json'').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, ''mongodb''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '"mongoose"依赖应该在package.json'
+  - text: '"mongoose" 应在 package.json 中作为依赖项定义'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/file/package.json'').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, ''mongoose''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '"mongoose"应该连接到数据库'
+  - text: '应使用 "mongoose" 连接数据库'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/is-mongoose-ok'').then(data => {assert.isTrue(data.isMongooseOk, ''mongoose is not connected'')}, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -39,7 +45,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

@@ -55,7 +55,7 @@ tests:
 
 ```js
 function isSelfDescribing(n) {
-  // Good luck!
+
 }
 ```
 

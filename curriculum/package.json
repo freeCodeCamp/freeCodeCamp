@@ -14,6 +14,10 @@
   "version": "0.0.0-next.4",
   "main": "lib.js",
   "scripts": {
+    "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-empty-steps",
+    "create-next-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-next-step",
+    "create-step-between": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-step-between",
+    "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/reorder-steps",
     "develop": "gulp",
     "lint": "gulp lint",
     "semantic-release": "semantic-release",

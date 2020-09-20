@@ -55,7 +55,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <body>
   <div class="container-fluid">
@@ -103,7 +103,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Only change code above this line -->
 
 <body>
   <div class="container-fluid">

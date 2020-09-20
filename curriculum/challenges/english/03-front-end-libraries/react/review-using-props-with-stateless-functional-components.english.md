@@ -28,9 +28,9 @@ tests:
   - text: The <code>Camper</code> component should render.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('Camper').length === 1; })());
   - text: The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.
-    testString: assert(/Camper.defaultProps={name:(['"`])CamperBot\1,?}/.test(code.replace(/\s/g, '')));
+    testString: assert(/Camper.defaultProps={name:(['"`])CamperBot\1,?}/.test(__helpers.removeWhiteSpace(code)));
   - text: The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.
-    testString: assert(/Camper.propTypes={name:PropTypes.string.isRequired,?}/.test(code.replace(/\s/g, '')));
+    testString: assert(/Camper.propTypes={name:PropTypes.string.isRequired,?}/.test(__helpers.removeWhiteSpace(code)));
   - text: The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('p').text() === mockedComponent.find('Camper').props().name; })());
 
@@ -56,7 +56,7 @@ class CampSite extends React.Component {
     );
   }
 };
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -76,7 +76,7 @@ var PropTypes = {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<CampSite />, document.getElementById('root'))
 ```
 
@@ -88,7 +88,7 @@ ReactDOM.render(<CampSite />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class CampSite extends React.Component {
   constructor(props) {
     super(props);
@@ -101,7 +101,7 @@ class CampSite extends React.Component {
     );
   }
 };
-// change code below this line
+// Change code below this line
 
 const Camper = (props) => {
    return (

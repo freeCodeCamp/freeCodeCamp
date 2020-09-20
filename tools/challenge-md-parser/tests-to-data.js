@@ -34,6 +34,14 @@ function plugin() {
           );
           tests.question.text = mdToHTML(tests.question.text);
         }
+        // since tests are overloaded (they're both a list of projects and
+        // actual tests), it's necessary to check which they are:
+        if (tests.tests && tests.tests[0] && tests.tests[0].text) {
+          tests.tests = tests.tests.map(({ text, testString }) => ({
+            text: mdToHTML(text),
+            testString
+          }));
+        }
         file.data = {
           ...file.data,
           ...tests

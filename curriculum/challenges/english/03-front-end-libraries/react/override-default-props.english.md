@@ -52,9 +52,9 @@ class ShoppingCart extends React.Component {
     super(props);
   }
   render() {
-    { /* change code below this line */ }
+    { /* Change code below this line */ }
     return <Items />
-    { /* change code above this line */ }
+    { /* Change code above this line */ }
   }
 };
 ```
@@ -65,7 +65,7 @@ class ShoppingCart extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 ```
 
@@ -77,7 +77,7 @@ ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
 }
@@ -91,9 +91,9 @@ class ShoppingCart extends React.Component {
     super(props);
   }
   render() {
-    { /* change code below this line */ }
+    { /* Change code below this line */ }
     return <Items quantity = {10} />
-    { /* change code above this line */ }
+    { /* Change code above this line */ }
   }
 };
 ```

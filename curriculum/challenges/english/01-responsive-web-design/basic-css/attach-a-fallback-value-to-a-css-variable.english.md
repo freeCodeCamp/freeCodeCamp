@@ -7,6 +7,7 @@ forumTopicId: 301084
 ---
 
 ## Description
+
 <section id='description'>
 When using your variable as a CSS property value, you can attach a fallback value that your browser will revert to if the given variable is invalid.
 <strong>Note:</strong> This fallback is not used to increase browser compatibility, and it will not work on IE browsers. Rather, it is used so that the browser has a color to display if it cannot find your variable.
@@ -18,14 +19,17 @@ background: var(--penguin-skin, black);
 
 This will set background to black if your variable wasn't set.
 Note that this can be useful for debugging.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 It looks like there is a problem with the variables supplied to the <code>.penguin-top</code> and <code>.penguin-bottom</code> classes. Rather than fix the typo, add a fallback value of <code>black</code> to the <code>background</code> property of the <code>.penguin-top</code> and <code>.penguin-bottom</code> classes.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,12 +38,12 @@ tests:
     testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
   - text: The fallback value of <code>black</code> should be used in <code>background</code> property of the <code>penguin-bottom</code> class.
     testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -219,7 +223,7 @@ tests:
   }
 
   body {
-    background:#c6faf1;
+    background: #c6faf1;
   }
 
   .penguin * {
@@ -253,16 +257,21 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
-
-```js
-var code = ".penguin-top {background: var(--pengiun-skin, black);} .penguin-bottom {background: var(--pengiun-skin, black);}"
+```html
+<style>
+  .penguin-top {
+    background: var(--pengiun-skin, black);
+  }
+  .penguin-bottom {
+    background: var(--pengiun-skin, black);
+  }
+</style>
 ```
 
 </section>

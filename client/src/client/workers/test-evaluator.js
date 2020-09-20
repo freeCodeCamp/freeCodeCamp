@@ -2,6 +2,7 @@ import chai from 'chai';
 import '@babel/polyfill';
 import __toString from 'lodash/toString';
 import { format as __format } from '../../utils/format';
+import curriculumHelpers from '../../utils/curriculum-helpers';
 
 const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
@@ -55,8 +56,11 @@ const __utils = (() => {
 /* Run the test if there is one.  If not just evaluate the user code */
 self.onmessage = async e => {
   /* eslint-disable no-unused-vars */
-  const { code = '' } = e.data;
+  const code = (e.data?.code?.contents || '').slice();
+  const editableContents = (e.data?.code?.editableContents || '').slice();
+
   const assert = chai.assert;
+  const __helpers = curriculumHelpers;
   // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 

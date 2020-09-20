@@ -52,7 +52,7 @@ tests:
 
 ```js
 function sumSquareDifference(n) {
-  // Good luck!
+
   return true;
 }
 

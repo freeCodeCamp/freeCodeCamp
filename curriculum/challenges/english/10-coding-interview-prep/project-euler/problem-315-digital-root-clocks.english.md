@@ -80,7 +80,7 @@ tests:
 
 ```js
 function euler315() {
-  // Good luck!
+
   return true;
 }
 

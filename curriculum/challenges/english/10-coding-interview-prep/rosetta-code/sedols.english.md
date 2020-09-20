@@ -58,7 +58,7 @@ tests:
 
 ```js
 function sedol(input) {
-  // Good luck!
+
   return true;
 }
 ```

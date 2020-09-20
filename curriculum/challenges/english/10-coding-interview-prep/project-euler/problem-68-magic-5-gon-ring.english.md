@@ -65,7 +65,7 @@ tests:
 
 ```js
 function magic5GonRing() {
-  // Good luck!
+
   return true;
 }
 

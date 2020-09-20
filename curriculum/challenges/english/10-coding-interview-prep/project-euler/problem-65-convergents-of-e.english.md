@@ -61,7 +61,7 @@ tests:
 
 ```js
 function convergentsOfE() {
-  // Good luck!
+
   return true;
 }
 

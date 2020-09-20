@@ -53,7 +53,7 @@ tests:
 
 ```js
 function arithmeticExpressions() {
-  // Good luck!
+
   return true;
 }
 

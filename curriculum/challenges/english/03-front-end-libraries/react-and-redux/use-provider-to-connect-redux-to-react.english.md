@@ -33,7 +33,7 @@ tests:
   - text: The <code>AppWrapper</code> should render.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })());
   - text: The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.
-    testString: getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\s/g,'').includes('<Providerstore={store}>'); })());
+    testString: getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return __helpers.removeWhiteSpace(getUserInput('index')).includes('<Providerstore={store}>'); })());
   - text: <code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })());
   - text: The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.
@@ -49,7 +49,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-// Redux Code:
+// Redux:
 const ADD = 'ADD';
 
 const addMessage = (message) => {
@@ -75,7 +75,7 @@ const messageReducer = (state = [], action) => {
 
 const store = Redux.createStore(messageReducer);
 
-// React Code:
+// React:
 
 class DisplayMessages extends React.Component {
   constructor(props) {
@@ -125,9 +125,9 @@ class DisplayMessages extends React.Component {
 const Provider = ReactRedux.Provider;
 
 class AppWrapper extends React.Component {
-  // render the Provider here
+  // Render the Provider below this line
 
-  // change code above this line
+  // Change code above this line
 };
 ```
 
@@ -137,7 +137,7 @@ class AppWrapper extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 ```
 
@@ -149,8 +149,8 @@ ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
-// Redux Code:
+```jsx
+// Redux:
 const ADD = 'ADD';
 
 const addMessage = (message) => {
@@ -174,7 +174,7 @@ const messageReducer = (state = [], action) => {
 
 const store = Redux.createStore(messageReducer);
 
-// React Code:
+// React:
 
 class DisplayMessages extends React.Component {
   constructor(props) {
@@ -224,7 +224,7 @@ class DisplayMessages extends React.Component {
 const Provider = ReactRedux.Provider;
 
 class AppWrapper extends React.Component {
-  // change code below this line
+  // Change code below this line
   render() {
     return (
       <Provider store = {store}>
@@ -232,7 +232,7 @@ class AppWrapper extends React.Component {
       </Provider>
     );
   }
-  // change code above this line
+  // Change code above this line
 };
 ```
 

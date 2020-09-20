@@ -23,7 +23,8 @@ const {
 
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
-const { flatten } = require('lodash');
+const { flatten, isEmpty, cloneDeep } = require('lodash');
+const { getLines } = require('../../utils/get-lines');
 
 const jsdom = require('jsdom');
 
@@ -42,6 +43,7 @@ const {
 } = require('../../client/utils/challengeTypes');
 
 const { dasherize } = require('../../utils/slugs');
+const { toSortedArray } = require('../../utils/sort-files');
 
 const { testedLang } = require('../utils');
 
@@ -50,7 +52,7 @@ const {
   buildJSChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 
-const { createPoly } = require('../../utils/polyvinyl');
+const { sortChallenges } = require('./utils/sort-challenges');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
 
@@ -226,7 +228,9 @@ async function getChallenges(lang) {
         return [...challengeArray, ...flatten(challengesForBlock)];
       }, [])
   );
-  return challenges;
+  // This matches the order Gatsby uses (via a GraphQL query). Ideally both
+  // should be sourced and sorted using a single query, but we're not there yet.
+  return sortChallenges(challenges);
 }
 
 function validateBlock(challenge) {
@@ -245,7 +249,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
-    challenges.forEach(challenge => {
+    challenges.forEach((challenge, id) => {
       const dashedBlockName = dasherize(challenge.block);
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
@@ -283,9 +287,11 @@ function populateTestsForLang({ lang, challenges, meta }) {
             if (challenge.challengeType !== 7 && invalidBlock) {
               throw new Error(invalidBlock);
             }
-            const { id, title } = challenge;
+            const { id, title, block, dashedName } = challenge;
+            const dashedBlock = dasherize(block);
+            const pathAndTitle = `${dashedBlock}/${dashedName}`;
             mongoIds.check(id, title);
-            challengeTitles.check(title);
+            challengeTitles.check(title, pathAndTitle);
           });
 
           const { challengeType } = challenge;
@@ -314,16 +320,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
             });
           });
 
-          let { files = [] } = challenge;
           if (challengeType === challengeTypes.backend) {
             it('Check tests is not implemented.');
-            return;
-          }
-
-          if (files.length > 1) {
-            it('Check tests.', () => {
-              throw new Error('Seed file should be only the one.');
-            });
             return;
           }
 
@@ -333,7 +331,6 @@ function populateTestsForLang({ lang, challenges, meta }) {
               ? buildJSChallenge
               : buildDOMChallenge;
 
-          files = files.map(createPoly);
           it('Test suite must fail on the initial contents', async function() {
             this.timeout(5000 * tests.length + 1000);
             // suppress errors in the console.
@@ -343,7 +340,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
             let testRunner;
             try {
               testRunner = await createTestRunner(
-                { ...challenge, files },
+                challenge,
                 '',
                 buildChallenge
               );
@@ -365,12 +362,51 @@ function populateTestsForLang({ lang, challenges, meta }) {
           });
 
           let { solutions = [] } = challenge;
-          const noSolution = new RegExp('// solution required');
-          solutions = solutions.filter(
-            solution => !!solution && !noSolution.test(solution)
-          );
 
-          if (solutions.length === 0) {
+          // if there's an empty string as solution, this is likely a mistake
+          // TODO: what does this look like now? (this being detection of empty
+          // lines in solutions - rather than entirely missing solutions)
+
+          // We need to track where the solution came from to give better
+          // feedback if the solution is failing.
+          let solutionFromNext = false;
+
+          if (isEmpty(solutions)) {
+            // if there are no solutions in the challenge, it's assumed the next
+            // challenge's seed will be a solution to the current challenge.
+            // This is expected to happen in the project based curriculum.
+
+            const nextChallenge = challenges[id + 1];
+            // TODO: can this be dried out, ideally by removing the redux
+            // handler?
+            if (nextChallenge) {
+              const solutionFiles = cloneDeep(nextChallenge.files);
+              Object.keys(solutionFiles).forEach(key => {
+                const file = solutionFiles[key];
+                file.editableContents = getLines(
+                  file.contents,
+                  challenge.files[key].editableRegionBoundaries
+                );
+              });
+              solutions = [solutionFiles];
+              solutionFromNext = true;
+            } else {
+              throw Error('solution omitted');
+            }
+          }
+
+          // TODO: the no-solution filtering is a little convoluted:
+          const noSolution = new RegExp('// solution required');
+
+          const solutionsAsArrays = solutions.map(toSortedArray);
+
+          const filteredSolutions = solutionsAsArrays.filter(solution => {
+            return !isEmpty(
+              solution.filter(file => !noSolution.test(file.contents))
+            );
+          });
+
+          if (isEmpty(filteredSolutions)) {
             it('Check tests. No solutions');
             return;
           }
@@ -380,9 +416,10 @@ function populateTestsForLang({ lang, challenges, meta }) {
               it(`Solution ${index + 1} must pass the tests`, async function() {
                 this.timeout(5000 * tests.length + 1000);
                 const testRunner = await createTestRunner(
-                  { ...challenge, files },
+                  challenge,
                   solution,
-                  buildChallenge
+                  buildChallenge,
+                  solutionFromNext
                 );
                 for (const test of tests) {
                   await testRunner(test);
@@ -397,20 +434,29 @@ function populateTestsForLang({ lang, challenges, meta }) {
 }
 
 async function createTestRunner(
-  { required = [], template, files },
+  challenge,
   solution,
-  buildChallenge
+  buildChallenge,
+  solutionFromNext
 ) {
-  if (solution) {
-    files[0].contents = solution;
-  }
+  const { required = [], template } = challenge;
+  // we should avoid modifying challenge, as it gets reused:
+  const files = cloneDeep(challenge.files);
+
+  Object.keys(solution).forEach(key => {
+    files[key].contents = solution[key].contents;
+    files[key].editableContents = solution[key].editableContents;
+  });
 
   const { build, sources, loadEnzyme } = await buildChallenge({
     files,
     required,
     template
   });
-  const code = sources && 'index' in sources ? sources['index'] : '';
+  const code = {
+    contents: sources.index,
+    editableContents: sources.editableContents
+  };
 
   const evaluator = await (buildChallenge === buildDOMChallenge
     ? getContextEvaluator(build, sources, code, loadEnzyme)
@@ -423,7 +469,11 @@ async function createTestRunner(
         throw new AssertionError(err.message);
       }
     } catch (err) {
-      reThrow(err, text);
+      text = 'Test text: ' + text;
+      const message = solutionFromNext
+        ? 'Check next step for solution!\n' + text
+        : text;
+      reThrow(err, message);
     }
   };
 }
@@ -468,14 +518,11 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
 }
 
 function reThrow(err, text) {
-  if (typeof err === 'string') {
-    throw new AssertionError(
-      `${text}
-         ${err}`
-    );
+  const newMessage = `${text}
+  ${err.message}`;
+  if (err.name === 'AssertionError') {
+    throw new AssertionError(newMessage);
   } else {
-    err.message = `${text}
-       ${err.message}`;
-    throw err;
+    throw Error(newMessage);
   }
 }

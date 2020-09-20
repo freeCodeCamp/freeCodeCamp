@@ -52,7 +52,7 @@ tests:
 
 ```js
 function iteratedSquare(n) {
-  // Good luck!
+
 }
 ```
 

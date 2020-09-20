@@ -82,8 +82,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".container {grid-template-columns: 100px 100px 100px;}"
+```html
+<style>.container {grid-template-columns: 100px 100px 100px;}</style>
 ```
 
 </section>

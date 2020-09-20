@@ -47,7 +47,7 @@ tests:
 
 ```js
 function knapsack(items, maxweight) {
-  // Good luck!
+
 }
 ```
 

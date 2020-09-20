@@ -75,7 +75,7 @@ tests:
 
 ```js
 function canMakeWord(word) {
-  // Good luck!
+
 }
 ```
 

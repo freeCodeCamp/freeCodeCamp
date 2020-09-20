@@ -41,19 +41,19 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
-const INCREMENT = null; // define a constant for increment action types
-const DECREMENT = null; // define a constant for decrement action types
+```js
+const INCREMENT = null; // Define a constant for increment action types
+const DECREMENT = null; // Define a constant for decrement action types
 
-const counterReducer = null; // define the counter reducer which will increment or decrement the state based on the action it receives
+const counterReducer = null; // Define the counter reducer which will increment or decrement the state based on the action it receives
 
-const incAction = null; // define an action creator for incrementing
+const incAction = null; // Define an action creator for incrementing
 
-const decAction = null; // define an action creator for decrementing
+const decAction = null; // Define an action creator for decrementing
 
-const store = null; // define the Redux store here, passing in your reducers
+const store = null; // Define the Redux store here, passing in your reducers
 ```
 
 </div>

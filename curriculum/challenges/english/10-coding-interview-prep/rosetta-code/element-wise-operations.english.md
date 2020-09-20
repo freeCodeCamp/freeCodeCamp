@@ -57,7 +57,7 @@ tests:
 
 ```js
 function operation(op, arr1, arr2) {
-  // Good luck!
+
 }
 ```
 

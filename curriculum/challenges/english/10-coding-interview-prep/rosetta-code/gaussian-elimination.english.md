@@ -48,7 +48,7 @@ tests:
 
 ```js
 function gaussianElimination(A,b) {
-  // Good luck!
+
 }
 ```
 

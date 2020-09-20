@@ -57,7 +57,7 @@ const addMessage = (message) => {
   }
 };
 
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -71,7 +71,7 @@ const addMessage = (message) => {
 <section id='solution'>
 
 
-```js
+```jsx
 const addMessage = (message) => {
   return {
     type: 'ADD',
@@ -79,7 +79,7 @@ const addMessage = (message) => {
   }
 };
 
-// change code below this line
+// Change code below this line
 
 const mapDispatchToProps = (dispatch) => {
   return {

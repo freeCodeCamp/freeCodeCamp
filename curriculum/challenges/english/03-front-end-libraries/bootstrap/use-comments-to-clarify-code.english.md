@@ -10,7 +10,7 @@ forumTopicId: 18347
 When we start using jQuery, we will modify HTML elements without needing to actually change them in HTML.
 Let's make sure that everyone knows they shouldn't actually modify any of this code directly.
 Remember that you can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>
-Add a comment at the top of your HTML that says <code>Only change code above this line.</code>
+Add a comment at the top of your HTML that says <code>Code below this line should not be changed</code>
 </section>
 
 ## Instructions
@@ -25,7 +25,7 @@ Add a comment at the top of your HTML that says <code>Only change code above thi
 tests:
   - text: You should start a comment with <code>&#60;!--</code> at the top of your HTML.
     testString: assert(code.match(/^\s*<!--/));
-  - text: Your comment should have the text <code>Only change code above this line</code>.
+  - text: Your comment should have the text <code>Code below this line should not be changed</code>.
     testString: assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
   - text: You should close your comment with <code>--&#62;</code>.
     testString: assert(code.match(/-->.*\n+.+/g));
@@ -75,7 +75,7 @@ tests:
 <section id='solution'>
 
 ```html
-<!-- Only change code above this line. -->
+<!-- Code below this line should not be changed -->
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
   <div class="row">

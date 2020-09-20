@@ -37,7 +37,7 @@ tests:
   - text: You should use a <code>for</code> loop to iterate through <code>myArr</code>.
     testString: assert(/for\s*\(/g.test(code) && /myArr\s*\[/g.test(code));
   - text: You should not attempt to directly assign the value 20 to <code>total</code>.
-    testString: assert(!code.replace(/\s/g, '').match(/total[=+-]0*[1-9]+/gm));
+    testString: assert(!__helpers.removeWhiteSpace(code).match(/total[=+-]0*[1-9]+/gm));
 ```
 
 </section>

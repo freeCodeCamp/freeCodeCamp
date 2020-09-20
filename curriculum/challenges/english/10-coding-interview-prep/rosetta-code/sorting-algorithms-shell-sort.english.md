@@ -53,7 +53,7 @@ tests:
 
 ```js
 function shellSort(a) {
-  // Good luck!
+
 }
 ```
 

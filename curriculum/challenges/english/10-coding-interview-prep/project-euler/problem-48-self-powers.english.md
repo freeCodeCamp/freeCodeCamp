@@ -46,7 +46,7 @@ tests:
 
 ```js
 function selfPowers(power, lastDigits) {
-  // Good luck!
+
   return true;
 }
 

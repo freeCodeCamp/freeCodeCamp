@@ -48,7 +48,7 @@ tests:
 
 ```js
 function doubleBasePalindromes(n) {
-  // Good luck!
+
   return n;
 }
 

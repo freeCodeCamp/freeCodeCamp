@@ -59,9 +59,9 @@ class MyApp extends React.Component {
   render() {
     return (
        <div>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
        </div>
     );
   }
@@ -104,7 +104,7 @@ class RenderInput extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyApp />, document.getElementById('root'))
 ```
 
@@ -116,7 +116,7 @@ ReactDOM.render(<MyApp />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyApp extends React.Component {
   constructor(props) {
     super(props);

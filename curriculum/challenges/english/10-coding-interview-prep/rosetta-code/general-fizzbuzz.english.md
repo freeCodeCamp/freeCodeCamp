@@ -54,7 +54,7 @@ tests:
 
 ```js
 function genFizzBuzz(rules, num) {
-  // Good luck!
+
 }
 ```
 
