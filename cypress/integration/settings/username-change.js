@@ -141,7 +141,7 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('nhcarrigan', { force: true });
-    cy.wait(2000);
+    cy.contains('Username is available.');
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('We have updated your username to nhcarrigan')
