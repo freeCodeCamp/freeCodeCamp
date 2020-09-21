@@ -42,7 +42,7 @@ describe('Username input field', () => {
   it('Should info message if username is avalable', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
-      .type('mruggesh', { force: true });
+      .type('mrugesh', { force: true });
 
     cy.contains(
       'Please note, changing your username will also change ' +
