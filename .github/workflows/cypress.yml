@@ -16,12 +16,12 @@ jobs:
       CYPRESS_INSTALL_BINARY: '4.11.0'
     runs-on: ubuntu-18.04
     strategy:
+      fail-fast: false
       matrix:
         browsers: [chrome, firefox]
         # This should spin up machines which Cypress can use
         # to run tests in parallel
         machines: [1, 2, 3]
-        fail-fast: false
     services:
       mongodb:
         image: mongo:3.6.19
