@@ -39,7 +39,7 @@ describe('Username input field', () => {
       .should('have.class', 'alert alert-success');
   });
 
-  it('Should info message if username is avalable', () => {
+  it('Should info message if username is available', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('mrugesh', { force: true });
