@@ -60,15 +60,18 @@ async function loadBabel() {
 
 async function loadPresetEnv() {
   if (babelOptionsJSBase && babelOptionsJSBase.presets) return;
-  /* eslint-disable no-inline-comments */
-  if (!presetEnv)
-    presetEnv = await import(
-      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-    );
-  /* eslint-enable no-inline-comments */
+
+  Babel.registerPreset('env-plus', {
+    presets: [
+      [
+        Babel.availablePresets['env'],
+        { targets: { browsers: ['>1.5% and last 2 versions and not dead'] } }
+      ]
+    ]
+  });
 
   babelOptionsJSBase = {
-    presets: [presetEnv]
+    presets: ['env-plus']
   };
   babelOptionsJS = {
     ...babelOptionsJSBase,
