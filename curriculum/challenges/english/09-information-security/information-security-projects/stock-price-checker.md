@@ -23,16 +23,39 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
+  - text: I can provide my own project, not the example URL.
+    testString: "getUserInput => {
+      const url = getUserInput('url');
+      assert(!(new RegExp('.*/stock-price-checker--freecodecamp\\.repl\\.co')).test(getUserInput('url')));
+    }"
   - text: Set the content security policies to only allow loading of scripts and CSS from your server.
-    testString: ''
+    testString: ""
   - text: I can GET /api/stock-prices with form data containing a Nasdaq stock ticker and receive back an object stockData.
-    testString: ''
+    testString: "async getUserInput => {
+      const data = await fetch(getUserInput('url') + '/api/stock-prices?stock=GOOG');
+      const parsed = await data.json();
+      assert.property(parsed, 'stockData');
+    }"
   - text: In stockData, I can see the stock (the ticker as a string), price (decimal in string format), and likes (int).
-    testString: ''
+    testString: "async getUserInput => {
+      const data = await fetch(getUserInput('url') + '/api/stock-prices?stock=GOOG');
+      const parsed = await data.json();
+      const ticker = parsed.stockData;
+      assert.typeOf(ticker.price, 'number');
+      assert.typeOf(ticker.likes, 'number');
+      assert.typeOf(ticker.stock, 'string');
+    }"
   - text: I can also pass along field like as true (boolean) to have my like added to the stock(s). Only 1 like per IP should be accepted.
     testString: ''
   - text: If I pass along 2 stocks, the return object will be an array with information about both stocks. Instead of likes, it will display rel_likes (the difference between the likes on both stocks) on both.
-    testString: ''
+    testString: "async getUserInput => {
+      const data = await fetch(getUserInput('url') + '/api/stock-prices?stock=GOOG&stock=MSFT');
+      const parsed = await data.json();
+      const ticker = parsed.stockData;
+      assert.typeOf(ticker, 'array');
+      assert.property(ticker[0], 'rel_likes');
+      assert.property(ticker[1], 'rel_likes');
+    }"
   - text: 'A good way to receive current prices is through our stock price proxy (replacing ''GOOG'' with your stock symbol): https://stock-price-checker-proxy--freecodecamp.repl.co/v1/stock/GOOG/quote'
     testString: ''
   - text: All 5 functional tests are complete and passing.
