@@ -76,7 +76,7 @@ describe('Username input field', () => {
   });
 
   // eslint-disable-next-line
-  it('Should not be able to click the `Save` button if username is unavalable', () => {
+  it('Should not be possible to click the `Save` button if username is unavailable', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('twaha', { force: true });
