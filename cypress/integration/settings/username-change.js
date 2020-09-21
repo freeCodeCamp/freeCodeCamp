@@ -11,7 +11,7 @@ describe('Username input field', () => {
     cy.get('form#usernameSettings').as('usernameForm');
   });
 
-  it('Should be able to type', () => {
+  it('Should be possible to type', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('twaha', { force: true })
