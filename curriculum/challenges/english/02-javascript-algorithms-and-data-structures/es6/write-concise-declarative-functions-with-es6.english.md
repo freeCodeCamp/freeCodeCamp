@@ -46,7 +46,7 @@ tests:
   - text: <code>setGear</code> should be a declarative function.
     testString: assert(typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/));
   - text: <code>bicycle.setGear(48)</code> should change the <code>gear</code> value to 48.
-    testString: assert((new bicycle.setGear(48)).gear === 48);
+    testString: bicycle.gear = 3; bicycle.setGear(48); assert(bicycle.gear === 48);
 
 ```
 
