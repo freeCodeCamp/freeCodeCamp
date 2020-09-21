@@ -132,6 +132,6 @@ module.exports = {
         icon: 'src/assets/images/square_puck.png'
       }
     },
-    'gatsby-plugin-remove-serviceworker'
+    'gatsby-plugin-offline'
   ]
 };

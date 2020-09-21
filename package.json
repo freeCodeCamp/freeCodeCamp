@@ -121,5 +121,7 @@
       "pre-commit": "lint-staged"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "gatsby-plugin-offline": "^3.2.28"
+  }
 }
