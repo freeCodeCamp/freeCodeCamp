@@ -29,7 +29,13 @@ tests:
       assert(!(new RegExp('.*/stock-price-checker--freecodecamp\\.repl\\.co')).test(getUserInput('url')));
     }"
   - text: Set the content security policies to only allow loading of scripts and CSS from your server.
-    testString: ""
+    testString: "async getUserInput => {
+      const data = await fetch(getUserInput('url') + '/_api/app-info');
+      const parsed = await data.json();
+      assert.isTrue(parsed.headers['content-security-policy'].includes('script-src \\'self\\''));
+      assert.isTrue(parsed.headers['content-security-policy'].includes('style-src \\'self\\''));
+    }
+      "
   - text: I can GET /api/stock-prices with form data containing a Nasdaq stock ticker and receive back an object stockData.
     testString: "async getUserInput => {
       const data = await fetch(getUserInput('url') + '/api/stock-prices?stock=GOOG');
@@ -59,7 +65,14 @@ tests:
   - text: 'A good way to receive current prices is through our stock price proxy (replacing ''GOOG'' with your stock symbol): https://stock-price-checker-proxy--freecodecamp.repl.co/v1/stock/GOOG/quote'
     testString: ''
   - text: All 5 functional tests are complete and passing.
-    testString: ''
+    testString: "async getUserInput => {
+      const tests = await fetch(getUserInput('url') + '/_api/get-tests');
+      const parsed = await tests.json();
+      assert.isTrue(parsed.length >= 5);
+      parsed.forEach(test => {
+        assert.equal(test.state, 'passed');
+      });
+    }"
 
 ```
 
