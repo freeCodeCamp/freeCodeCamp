@@ -28,7 +28,7 @@ describe('Username input field', () => {
       .should('have.class', 'alert alert-info');
   });
 
-  it('Should show username is avalable if it is avalable', () => {
+  it('Should show username is available if it is', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('brad', { force: true });
