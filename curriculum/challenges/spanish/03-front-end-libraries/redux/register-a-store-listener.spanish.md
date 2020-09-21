@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036153
 title: Register a Store Listener
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Registrar un Oyente de Tienda
 ---

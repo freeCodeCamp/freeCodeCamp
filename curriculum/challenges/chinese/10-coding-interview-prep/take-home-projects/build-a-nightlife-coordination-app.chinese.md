@@ -2,7 +2,6 @@
 id: bd7158d8c443eddfaeb5bdff
 title: Build a Nightlife Coordination App
 challengeType: 4
-isRequired: true
 videoUrl: ''
 localeTitle: 建立夜生活协调应用程序
 ---

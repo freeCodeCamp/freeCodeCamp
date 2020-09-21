@@ -3,7 +3,6 @@ id: bd7158d8c443edefaeb5bdef
 title: Timestamp Microservice
 localeTitle: Microservice de registro de data e hora
 challengeType: 4
-isRequired: true
 ---
 
 ## Description

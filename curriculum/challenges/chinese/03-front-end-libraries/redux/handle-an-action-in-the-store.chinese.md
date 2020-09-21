@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036150
 title: Handle an Action in the Store
 challengeType: 6
-isRequired: false
 forumTopicId: 301444
 localeTitle: 在 Store 里处理 Action
 ---

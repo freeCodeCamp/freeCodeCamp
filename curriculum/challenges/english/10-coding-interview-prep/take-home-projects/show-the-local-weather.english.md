@@ -2,7 +2,6 @@
 id: bd7158d8c442eddfaeb5bd10
 title: Show the Local Weather
 challengeType: 3
-isRequired: false
 forumTopicId: 302368
 ---
 

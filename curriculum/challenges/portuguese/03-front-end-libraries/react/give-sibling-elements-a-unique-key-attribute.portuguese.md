@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403618b
 title: Give Sibling Elements a Unique Key Attribute
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Dê aos Irmãos Elementos um Atributo de Chave Única
 ---

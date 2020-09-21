@@ -1,7 +1,6 @@
 ---
 id: a0b5010f579e69b815e7c5d6
 title: Search and Replace
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Buscar y reemplazar

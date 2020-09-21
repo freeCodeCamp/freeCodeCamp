@@ -1,7 +1,6 @@
 ---
 id: a24c1a4622e3c05097f71d67
 title: Where do I Belong
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Dónde pertenezco

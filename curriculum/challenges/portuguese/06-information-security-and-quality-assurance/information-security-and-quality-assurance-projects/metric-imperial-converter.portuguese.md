@@ -2,7 +2,6 @@
 id: 587d8249367417b2b2512c41
 title: Metric-Imperial Converter
 challengeType: 4
-isRequired: true
 videoUrl: ''
 localeTitle: Conversor Metric-Imperial
 ---

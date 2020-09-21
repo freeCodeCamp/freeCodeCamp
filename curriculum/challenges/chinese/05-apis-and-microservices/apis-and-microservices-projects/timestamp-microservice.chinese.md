@@ -3,7 +3,6 @@ id: bd7158d8c443edefaeb5bdef
 title: Timestamp Microservice
 challengeType: 4
 isHidden: false
-isRequired: true
 forumTopicId: 301508
 localeTitle: 时间戳
 ---

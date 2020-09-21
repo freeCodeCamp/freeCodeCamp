@@ -3,7 +3,6 @@ id: bd7158d8c443edefaeb5bdff
 title: Request Header Parser Microservice
 localeTitle: Solicitar Microservice do Analisador de Cabeçalhos
 challengeType: 4
-isRequired: true
 ---
 
 ## Description

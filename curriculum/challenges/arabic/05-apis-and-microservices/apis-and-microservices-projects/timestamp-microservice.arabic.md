@@ -3,7 +3,6 @@ id: bd7158d8c443edefaeb5bdef
 title: Timestamp Microservice
 localeTitle: Timestamp Microservice
 challengeType: 4
-isRequired: true
 ---
 
 ## Description
