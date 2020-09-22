@@ -3,7 +3,6 @@ id: bd7158d8c443edefaeb5bd0f
 title: File Metadata Microservice
 localeTitle: Microservicio de metadatos de archivo
 challengeType: 4
-isRequired: true
 forumTopicId: 301506
 ---
 

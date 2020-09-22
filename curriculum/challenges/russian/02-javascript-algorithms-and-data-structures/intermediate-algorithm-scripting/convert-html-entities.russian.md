@@ -1,7 +1,6 @@
 ---
 id: a6b0bb188d873cb2c8729495
 title: Convert HTML Entities
-isRequired: true
 challengeType: 5
 forumTopicId: 16007
 localeTitle: Преобразование HTML-объектов

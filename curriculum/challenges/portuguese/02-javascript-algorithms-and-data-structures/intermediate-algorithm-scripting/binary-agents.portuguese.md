@@ -1,7 +1,6 @@
 ---
 id: a8d97bd4c764e91f9d2bda01
 title: Binary Agents
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Agentes Binários

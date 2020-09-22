@@ -1,7 +1,6 @@
 ---
 id: ab306dbdcc907c7ddfc30830
 title: Steamroller
-isRequired: true
 challengeType: 5
 forumTopicId: 16079
 localeTitle: пробиваться с боями

@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036161
 title: Learn About Self-Closing JSX Tags
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Aprenda sobre tags JSX de fecho automático
 ---

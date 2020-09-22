@@ -3,7 +3,6 @@ id: bd7158d8c443edefaeb5bd0e
 title: URL Shortener Microservice
 localeTitle: URL Shortener Microservice
 challengeType: 4
-isRequired: true
 ---
 
 ## Description

@@ -1,7 +1,6 @@
 ---
 id: aa2e6f85cab2ab736c9a9b24
 title: Cash Register
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: ''

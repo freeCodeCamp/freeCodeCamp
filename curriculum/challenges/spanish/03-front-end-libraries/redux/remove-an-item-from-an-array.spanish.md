@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403615a
 title: Remove an Item from an Array
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Eliminar un artículo de una matriz
 ---

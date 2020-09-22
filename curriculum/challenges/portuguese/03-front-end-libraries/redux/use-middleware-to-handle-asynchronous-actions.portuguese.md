@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036156
 title: Use Middleware to Handle Asynchronous Actions
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Use o middleware para manipular ações assíncronas
 ---

@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036160
 title: Define an HTML Class in JSX
 challengeType: 6
-isRequired: false
 forumTopicId: 301393
 localeTitle: 在 JSX 中定义一个 HTML Class
 ---

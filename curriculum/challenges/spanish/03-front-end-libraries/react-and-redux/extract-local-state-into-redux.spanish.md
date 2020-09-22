@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036149
 title: Extract Local State into Redux
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Extraer el estado local en Redux
 ---

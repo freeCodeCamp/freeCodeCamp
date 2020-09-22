@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036187
 title: Use a Ternary Expression for Conditional Rendering
 challengeType: 6
-isRequired: false
 forumTopicId: 301414
 localeTitle: 使用三元表达式进行条件渲染
 ---
