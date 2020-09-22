@@ -22,10 +22,6 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: Nothing from my website will be cached in my client.
-    testString: ''
-  - text: The headers will say that the site is powered by 'PHP 4.2.0' even though it isn't (as a security measure).
-    testString: ''
   - text: I can post a title to /api/books to add a book and returned will be the object with the title and a unique _id.
     testString: ''
   - text: I can get /api/books to retrieve an array of all books containing title, _id, and commentcount.
