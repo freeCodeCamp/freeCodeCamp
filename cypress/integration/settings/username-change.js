@@ -64,7 +64,7 @@ describe('Username input field', () => {
     });
   });
 
-  it('Should show username is unavalable if it is unavalable', () => {
+  it('Should show username is unavailable if it is', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('twaha', { force: true });
