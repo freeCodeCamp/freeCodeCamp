@@ -114,7 +114,7 @@ describe('Username input field', () => {
       .should('have.class', 'alert alert-danger');
   });
 
-  // eslint-disable-next-line
+  // eslint-disable-next-line max-len
   it('Should not be able to click the `Save` button if username includes invalid character', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
