@@ -22,10 +22,6 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I will prevent the client from trying to guess(sniff) the MIME type.
-    testString: ''
-  - text: I will prevent cross-site scripting (XSS) attacks.
-    testString: ''
   - text: 'I can GET /api/convert with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)'
     testString: ''
   - text: I can convert <code>'gal'</code> to <code>'L'</code> and vice versa. (1 gal to 3.78541 L)
