@@ -134,7 +134,7 @@ describe('Username input field', () => {
 
     cy.get('@usernameForm')
       .contains('Save')
-      .should('be.disabled');
+      .click({ force: true });
     cy.contains('Account Settings for quincy').should('be.visible');
   });
 
