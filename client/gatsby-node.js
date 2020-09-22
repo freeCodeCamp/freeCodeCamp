@@ -66,11 +66,14 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
 
   return new Promise((resolve, reject) => {
     // Query for all markdown 'nodes' and for the slug we previously created.
+    // Ignore those with challengeType == 7 because those are certificates and
+    // should not be converted into challenge pages.
     resolve(
       graphql(`
         {
           allChallengeNode(
             sort: { fields: [superOrder, order, challengeOrder] }
+            filter: { challengeType: { ne: 7 } }
           ) {
             edges {
               node {

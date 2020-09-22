@@ -1,9 +1,11 @@
 const crypto = require('crypto');
 
 function createChallengeNode(challenge, reporter) {
+  // challengeType 11 is for video challenges (they only have instructions)
+  // challengeType 7 is for certificates (they only have tests)
   if (
     typeof challenge.description[0] !== 'string' &&
-    challenge.challengeType !== 11
+    (challenge.challengeType !== 11 && challenge.challengeType !== 7)
   ) {
     reporter.warn(`
 

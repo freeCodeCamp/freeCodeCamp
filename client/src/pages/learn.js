@@ -106,6 +106,8 @@ LearnPage.propTypes = propTypes;
 
 export default connect(mapStateToProps)(LearnPage);
 
+// ignoring challengeType 7 since those are certificates and should not appear
+// in the map.
 export const query = graphql`
   query FirstChallenge {
     challengeNode(order: { eq: 0 }, challengeOrder: { eq: 0 }) {
@@ -113,7 +115,10 @@ export const query = graphql`
         slug
       }
     }
-    allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
+    allChallengeNode(
+      filter: { challengeType: { ne: 7 } }
+      sort: { fields: [superOrder, order, challengeOrder] }
+    ) {
       edges {
         node {
           fields {
