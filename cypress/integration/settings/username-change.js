@@ -81,9 +81,9 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('twaha', { force: true });
 
-    cy.get('@usernameForm').within(() => {
-      cy.contains('Save').should('be.disabled');
-    });
+    cy.get('@usernameForm')
+      .contains('Save')
+      .should('be.disabled');
   });
 
   it('Should not show anything if user types their current name', () => {
