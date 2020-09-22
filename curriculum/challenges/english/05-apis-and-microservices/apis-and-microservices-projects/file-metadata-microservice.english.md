@@ -44,7 +44,7 @@ tests:
   - text: When I submit something, I will receive the file <code>name</code>, <code>type</code>, and <code>size</code> in bytes within the JSON response.
     testString: "async getUserInput => {
       const formData = new FormData();
-      const fileData = await fetch('../../../../../icons/icon-48x48.png');
+      const fileData = await fetch('https://cdn.freecodecamp.org/weather-icons/01d.png');
       const file = await fileData.blob();
       formData.append('upfile', file, 'icon');
       const data = await fetch(getUserInput('url') + '/api/fileanalyse', {
