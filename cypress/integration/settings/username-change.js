@@ -92,7 +92,7 @@ describe('Username input field', () => {
       .type('developmentuser', { force: true });
   });
 
-  // eslint-disable-next-line
+  // eslint-disable-next-line max-len
   it('Should not be possible to click the `Save` button if user types their current name', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
