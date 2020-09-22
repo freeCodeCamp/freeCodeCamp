@@ -7,27 +7,33 @@ localeTitle: 实现社交账号登陆 (3)
 ---
 
 ## Description
+
 <section id='description'>
 
 验证策略的最后一部分是处理从 GitHub 返回的个人信息。如果用户存在，我们就需要从数据库中读取用户数据并在 profile 页面加载；否则，我们需要把用户信息添加到数据库。GitHub 在用户信息中为我们提供了独一无二的 <em>id</em>，我们可以通过序列化的 id 在数据库中搜索用户（已实现）。以下是这个逻辑的实现示例，我们应该把它传到新策略的第二个参数，就是目前 <code>console.log(profile);</code> 的下方：
 
 ```js
-myDataBase.findAndModify(
-  {id: profile.id},
-  {},
-  {$setOnInsert:{
-    id: profile.id,
-    name: profile.displayName || 'John Doe',
-    photo: profile.photos[0].value || '',
-    email: Array.isArray(profile.emails) ? profile.emails[0].value : 'No public email',
-    created_on: new Date(),
-    provider: profile.provider || ''
-  },$set:{
-    last_login: new Date()
-  },$inc:{
-    login_count: 1
-  }},
-  {upsert:true, new: true},
+myDataBase.findOneAndUpdate(
+  { id: profile.id },
+  {
+    $setOnInsert: {
+      id: profile.id,
+      name: profile.displayName || 'John Doe',
+      photo: profile.photos[0].value || '',
+      email: Array.isArray(profile.emails)
+        ? profile.emails[0].value
+        : 'No public email',
+      created_on: new Date(),
+      provider: profile.provider || ''
+    },
+    $set: {
+      last_login: new Date()
+    },
+    $inc: {
+      login_count: 1
+    }
+  },
+  { upsert: true, new: true },
   (err, doc) => {
     return cb(null, doc.value);
   }
@@ -43,28 +49,31 @@ myDataBase.findAndModify(
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: GitHub 策略应配置完成。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/auth.js') .then(data => { assert.match(data, /GitHubStrategy[^]*myDataBase/gi, 'Strategy should use now use the database to search for the user'); assert.match(data, /GitHubStrategy[^]*return cb/gi, 'Strategy should return the callback function "cb"'); }, xhr => { throw new Error(xhr.statusText); })
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
