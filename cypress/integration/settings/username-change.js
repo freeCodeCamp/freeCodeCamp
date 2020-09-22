@@ -130,10 +130,11 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('quincy', { force: true });
 
-    cy.get('@usernameForm').within(() => {
-      cy.wait(2000);
-      cy.contains('Save').click({ force: true });
-    });
+    cy.contains('Username is available.');
+
+    cy.get('@usernameForm')
+      .contains('Save')
+      .should('be.disabled');
     cy.contains('Account Settings for quincy').should('be.visible');
   });
 
