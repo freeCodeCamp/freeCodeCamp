@@ -1,7 +1,6 @@
 ---
 id: bd7198d8c242eddfaeb5bd13
 title: Show National Contiguity with a Force Directed Graph
-isRequired: false
 challengeType: 3
 forumTopicId: 302367
 localeTitle: Показать национальную смежность с диаграммой направленности силы

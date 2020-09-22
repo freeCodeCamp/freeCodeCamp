@@ -3,7 +3,6 @@ id: 5e7b9f6a0b6c005b0e76f097
 title: 'Data Visualization: Mailing Lists'
 challengeType: 11
 isHidden: false
-isRequired: true
 videoId: RYdW660KkaQ
 ---
 

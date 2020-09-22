@@ -1,7 +1,6 @@
 ---
 id: a26cbbe9ad8655a977e1ceb5
 title: Find the Longest Word in a String
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: ابحث عن أطول كلمة في سلسلة

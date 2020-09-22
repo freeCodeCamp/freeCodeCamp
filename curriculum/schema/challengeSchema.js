@@ -49,7 +49,6 @@ function getSchemaForLang(lang) {
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
-    isRequired: Joi.bool(),
     name: Joi.string(),
     order: Joi.number(),
     // video challenges only:

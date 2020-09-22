@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036143
 title: Extract State Logic to Redux
 challengeType: 6
-isRequired: false
 forumTopicId: 301429
 ---
 

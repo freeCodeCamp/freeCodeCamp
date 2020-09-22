@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036145
 title: Map State to Props
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Mapa do estado para adereços
 ---

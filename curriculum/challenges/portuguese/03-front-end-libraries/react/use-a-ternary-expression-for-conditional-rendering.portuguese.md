@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036187
 title: Use a Ternary Expression for Conditional Rendering
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Use uma expressão ternária para renderização condicional
 ---

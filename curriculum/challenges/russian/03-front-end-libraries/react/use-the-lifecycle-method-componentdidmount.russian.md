@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403617d
 title: Use the Lifecycle Method componentDidMount
 challengeType: 6
-isRequired: false
 forumTopicId: 301422
 localeTitle: Используйте метод Lifecycle MethodDidMount
 ---

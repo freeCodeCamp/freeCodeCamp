@@ -1,7 +1,6 @@
 ---
 id: 587d78b0367417b2b2512b05
 title: Build a Technical Documentation Page
-isRequired: true
 challengeType: 3
 videoUrl: ''
 localeTitle: بناء صفحة التوثيق الفني

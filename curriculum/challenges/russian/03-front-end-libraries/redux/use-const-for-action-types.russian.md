@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036152
 title: Use const for Action Types
 challengeType: 6
-isRequired: false
 forumTopicId: 301450
 localeTitle: Использование констант для типов действий
 ---

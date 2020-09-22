@@ -3,7 +3,6 @@ id: 5e444136903586ffb414c94d
 title: Time Calculator
 challengeType: 10
 isHidden: false
-isRequired: true
 ---
 
 ## Description

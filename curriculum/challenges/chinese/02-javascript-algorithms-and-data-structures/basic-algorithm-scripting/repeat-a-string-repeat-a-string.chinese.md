@@ -1,7 +1,6 @@
 ---
 id: afcc8d540bea9ea2669306b6
 title: Repeat a String Repeat a String
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: 重复一个字符串重复字符串

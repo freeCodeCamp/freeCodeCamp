@@ -1,7 +1,6 @@
 ---
 id: a9bd25c716030ec90084d8a1
 title: Chunky Monkey
-isRequired: true
 challengeType: 5
 forumTopicId: 16005
 ---
