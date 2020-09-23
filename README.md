@@ -171,7 +171,7 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 ### Contributing
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. \
+The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. 
 Any kind of contribution including proposals, doc improvements, enhancements, bug fixes are welcome and we are excited to welcome you aboard.\
 Please let us know if you encounter any issue by filing an [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues "FreeCodeCamp issue").
 We appreciate all the contributions. 
