@@ -25,7 +25,6 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 tests:
   - text: I can provide my own project, not the example URL.
     testString: "getUserInput => {
-      const url = getUserInput('url');
       assert(!(new RegExp('.*/file-metadata.freecodecamp.repl.co')).test(getUserInput('url')));
     }"
   - text: I can submit a form that includes a file upload.
