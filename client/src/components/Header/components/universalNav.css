@@ -9,7 +9,7 @@
   font-family: 'Lato', sans-serif;
   height: var(--header-height);
   background: var(--theme-color);
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   color: var(--gray-00);
   width: 100%;
