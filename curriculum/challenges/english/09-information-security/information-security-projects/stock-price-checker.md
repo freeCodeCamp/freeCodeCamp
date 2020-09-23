@@ -61,8 +61,6 @@ tests:
       assert.property(ticker[0], 'rel_likes');
       assert.property(ticker[1], 'rel_likes');
     }"
-  - text: 'A good way to receive current prices is through our stock price proxy (replacing ''GOOG'' with your stock symbol): https://stock-price-checker-proxy--freecodecamp.repl.co/v1/stock/GOOG/quote'
-    testString: ''
   - text: All 5 functional tests are complete and passing.
     testString: "async getUserInput => {
       const tests = await fetch(getUserInput('url') + '/_api/get-tests');
