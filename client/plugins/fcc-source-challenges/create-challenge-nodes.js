@@ -19,7 +19,7 @@ function createChallengeNode(challenge, reporter) {
     .digest('hex');
   const internal = {
     contentDigest,
-    type: 'ChallengeNode'
+    type: challenge.challengeType === 7 ? 'CertificateNode' : 'ChallengeNode'
   };
 
   /* eslint-disable prefer-object-spread/prefer-object-spread */
@@ -28,13 +28,13 @@ function createChallengeNode(challenge, reporter) {
       Object.assign(
         {},
         {
-          id: challenge.id + ' >>>> ChallengeNode',
           children: [],
           parent: null,
           internal,
           sourceInstanceName: 'challenge'
         },
-        challenge
+        challenge,
+        { id: challenge.id + internal }
       )
     )
   );
