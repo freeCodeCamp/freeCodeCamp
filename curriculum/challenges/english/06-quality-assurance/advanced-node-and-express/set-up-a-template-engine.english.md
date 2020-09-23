@@ -17,7 +17,7 @@ To set up <em>Pug</em> for use in your project, you will need to add it as a dep
 
 Express needs to know which template engine you are using. We will use the <code>set</code> method to assign <code>pug</code> as the <code>view engine</code> property's value: <code>app.set('view engine', 'pug')</code>
 
-Your page will not load until you correctly <code>render</code> the index file in the <code>views/pug</code> directory.
+Your page will not load until you correctly render the index file in the <code>views/pug</code> directory.
 
 You should change the response for the <code>/</code> route to use <code>res.render()</code>. This method takes a string of a file path as an argument. The path can be a relative path (relative to views), or an absolute path, and does not require a file extension.
 
