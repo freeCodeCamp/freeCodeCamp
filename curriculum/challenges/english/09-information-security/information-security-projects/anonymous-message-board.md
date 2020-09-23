@@ -24,7 +24,6 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 tests:
   - text: I can provide my own project, not the example URL.
     testString: "getUserInput => {
-      const url = getUserInput('url');
       assert(!(new RegExp('.*/anonymous-message-board--freecodecamp\\.repl\\.co')).test(getUserInput('url')));
     }"
   - text: Only allow your site to be loading in an iFrame on your own pages.
