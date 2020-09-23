@@ -25,7 +25,6 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 tests:
   - text: I can provide my own project, not the example URL.
     testString: "getUserInput => {
-      const url = getUserInput('url');
       assert(!(new RegExp('.*/stock-price-checker--freecodecamp\\.repl\\.co')).test(getUserInput('url')));
     }"
   - text: Set the content security policies to only allow loading of scripts and CSS from your server.
