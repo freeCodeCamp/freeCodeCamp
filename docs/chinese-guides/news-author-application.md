@@ -12,7 +12,7 @@ freeCodeCamp 技术专栏已上线，热爱写作的开发者可以申请成为�
 * 或是想要通过自己的职业成长故事（比如自学编程成为开发者）鼓励更多在路上的人们
 * 希望和 freeCodeCamp 一起帮助更多人学习，提升自己的影响力
 
-欢迎填写表单，申请成为 freeCodeCamp 专栏（中文版）作者。
+欢迎[填写表单](http://freecodecamp-chinese.mikecrm.com/IADsaCW)，申请成为 freeCodeCamp 专栏（中文版）作者。
 
 **如果审核通过**
 
