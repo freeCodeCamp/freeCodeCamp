@@ -15,7 +15,7 @@ A template engine enables you to use static template files (such as those writte
 
 To set up <em>Pug</em> for use in your project, you will need to add it as a dependency in your package.json. Don't forget to add the name of the package and the version. Use the package.json for some examples of the correct syntax.
 
-Express needs to know which template engine you are using. We will use the <code>set</code> method to assign <code>pug</code> as the <code>view engine</code>: <code>app.set('view engine', 'pug')</code>
+Express needs to know which template engine you are using. We will use the <code>set</code> method to assign <code>pug</code> as the <code>view engine</code> property's value: <code>app.set('view engine', 'pug')</code>
 
 Your page will not load until you correctly <code>render</code> the index file in the <code>views/pug</code> directory.
 
