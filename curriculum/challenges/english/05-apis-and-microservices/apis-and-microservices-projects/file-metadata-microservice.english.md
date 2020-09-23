@@ -7,6 +7,7 @@ forumTopicId: 301506
 ---
 
 ## Description
+
 <section id='description'>
 Build a full stack JavaScript app that is functionally similar to this: <a href='https://file-metadata.freecodecamp.repl.co/' target='_blank'>https://file-metadata.freecodecamp.repl.co/</a>.
 Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
@@ -14,11 +15,13 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,14 +34,15 @@ tests:
     testString: "async getUserInput => {
       const site = await fetch(getUserInput('url'));
       const data = await site.text();
-      assert(/<form.*>/.test(data));
-      assert(/type=['|\"]file['|\"]/.test(data));
+      const doc = new DOMParser().parseFromString(data, 'text/html');
+      assert(doc.querySelector('input[type=\"file\"]'));
     }"
   - text: The form file input field has the <code>name</code> attribute set to <code>upfile</code>.
     testString: "async getUserInput => {
       const site = await fetch(getUserInput('url'));
       const data = await site.text();
-      assert(/name=['|\"]upfile['|\"]/.test(data));
+      const doc = new DOMParser().parseFromString(data, 'text/html');
+      assert(doc.querySelector('input[name=\"upfile\"]'));
     }"
   - text: When I submit something, I will receive the file <code>name</code>, <code>type</code>, and <code>size</code> in bytes within the JSON response.
     testString: "async getUserInput => {
@@ -60,11 +64,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
