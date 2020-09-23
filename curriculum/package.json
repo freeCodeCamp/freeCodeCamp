@@ -20,25 +20,16 @@
     "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/reorder-steps",
     "develop": "gulp",
     "lint": "gulp lint",
-    "semantic-release": "semantic-release",
     "pretest": "cd ../client && npm run build:workers",
     "pretest:full-output": "npm run pretest",
     "test": "mocha --delay --reporter progress --bail",
     "test:full-output": "cross-env FULL_OUTPUT=true mocha --delay --reporter progress"
-  },
-  "dependencies": {
-    "invariant": "^2.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/polyfill": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/register": "^7.11.5",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^7.0.1",
-    "@commitlint/travis-cli": "^8.3.5",
-    "@semantic-release/changelog": "^2.0.2",
-    "@semantic-release/git": "^5.0.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-lodash": "^3.3.4",
@@ -53,44 +44,19 @@
     "cross-env": "^7.0.2",
     "fs-extra": "^6.0.1",
     "gulp": "^4.0.2",
+    "invariant": "^2.2.4",
     "joi": "^13.3.0",
     "joi-objectid": "^2.0.0",
     "jquery": "^3.5.1",
     "js-yaml": "^3.14.0",
     "jsdom": "^12.2.0",
-    "lint-staged": "^7.2.0",
     "live-server": "^1.2.1",
     "lodash": "^4.17.20",
     "mocha": "5.2.0",
-    "puppeteer": "^1.19.0",
+    "puppeteer": "^5.3.1",
     "readdirp-walk": "^1.7.0",
     "rx": "^4.1.0",
-    "semantic-release": "^15.13.24",
     "string-similarity": "^4.0.2",
     "validator": "^10.4.0"
-  },
-  "keywords": [
-    "challenges",
-    "curriculum",
-    "freecodecamp",
-    "interview",
-    "javascript",
-    "json"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "release": {
-    "branch": "master",
-    "verifyConditions": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ],
-    "prepare": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ]
   }
 }
