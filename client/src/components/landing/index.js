@@ -20,6 +20,7 @@ export const Landing = ({ page = 'landing' }) => {
     query certifications {
       challenges: allChallengeNode(
         sort: { fields: [superOrder, order, challengeOrder] }
+        filter: { challengeType: { ne: 7 } }
       ) {
         nodes {
           superBlock
