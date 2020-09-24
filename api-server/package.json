@@ -50,7 +50,7 @@
     "fetchr": "^0.5.37",
     "googleapis": "^16.1.0",
     "helmet": "^3.1.0",
-    "helmet-csp": "^2.1.0",
+    "helmet-csp": "^2.9.1",
     "jsonwebtoken": "^8.2.1",
     "lodash": "^4.17.5",
     "loopback": "^3.16.2",
