@@ -63,7 +63,7 @@ describe('Landing page', () => {
       .should('not.be.visible');
   });
 
-  it('Has 10 certifications', function() {
+  it('Has links to all the certifications', function() {
     // cy.get(selectors.certifications)
     //   .children()
     //   .its('length')
