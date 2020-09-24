@@ -33,8 +33,7 @@ function createChallengeNode(challenge, reporter) {
           internal,
           sourceInstanceName: 'challenge'
         },
-        challenge,
-        { id: challenge.id + internal.type }
+        challenge
       )
     )
   );
