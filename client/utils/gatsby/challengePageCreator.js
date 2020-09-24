@@ -76,9 +76,6 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
   } = node;
   // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
   // should remove one of them.
-  if (challengeType === 7) {
-    return null;
-  }
 
   return createPage({
     path: slug,

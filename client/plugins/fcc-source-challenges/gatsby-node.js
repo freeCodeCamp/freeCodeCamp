@@ -69,7 +69,6 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
   }
 
   function createVisibleChallenge(challenge) {
-    if (challenge.superBlock.toLowerCase() === 'certificates') return;
     createNode(createChallengeNode(challenge, reporter));
   }
 
