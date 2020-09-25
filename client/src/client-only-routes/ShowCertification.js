@@ -19,7 +19,6 @@ import {
   isDonatingSelector,
   executeGA
 } from '../redux';
-import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
@@ -56,13 +55,13 @@ const propTypes = {
   }),
   userFullName: PropTypes.string,
   username: PropTypes.string,
-  validCertName: PropTypes.bool
+  validCertNames: PropTypes.array
 };
 
-const validCertNames = certMap.map(cert => cert.slug);
+// const validCertNames = certMap.map(cert => cert.slug);
 
-const mapStateToProps = (state, { certName }) => {
-  const validCertName = validCertNames.some(name => name === certName);
+const mapStateToProps = state => {
+  // const validCertName = validCertNames.some(name => name === certName);
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
@@ -72,7 +71,6 @@ const mapStateToProps = (state, { certName }) => {
     (cert, fetchState, signedInUserName, userFetchState, isDonating) => ({
       cert,
       fetchState,
-      validCertName,
       signedInUserName,
       userFetchState,
       isDonating
@@ -98,8 +96,8 @@ class ShowCertification extends Component {
   }
 
   componentDidMount() {
-    const { username, certName, validCertName, showCert } = this.props;
-    if (validCertName) {
+    const { username, certName, validCertNames, showCert } = this.props;
+    if (validCertNames.some(name => name === certName)) {
       return showCert({ username, certName });
     }
     return null;
