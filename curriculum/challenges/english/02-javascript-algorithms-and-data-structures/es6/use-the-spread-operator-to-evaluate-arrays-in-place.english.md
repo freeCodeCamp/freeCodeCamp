@@ -43,7 +43,7 @@ Copy all contents of <code>arr1</code> into another array <code>arr2</code> usin
 ```yml
 tests:
   - text: <code>arr2</code> should be correct copy of <code>arr1</code>.
-    testString: assert(arr2.every((v, i) => v === arr1[i]));
+    testString: assert(arr2.every((v, i) => v === arr1[i]) && arr2.length);
   - text: <code>...</code> spread operator should be used to duplicate <code>arr1</code>.
     testString: assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
   - text: <code>arr2</code> should remain unchanged when <code>arr1</code> is changed.

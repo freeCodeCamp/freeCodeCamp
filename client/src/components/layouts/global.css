@@ -225,7 +225,7 @@ fieldset[disabled] .btn-primary.focus {
 .btn-cta:hover,
 .btn-cta:focus,
 .btn-cta:active:hover {
-  background-color: #fecc4c;
+  background-color: #fecc4c !important;
   border-width: 3px;
   border-color: #f1a02a;
   background-image: none;
