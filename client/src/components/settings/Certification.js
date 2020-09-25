@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { find, first, values, isString } from 'lodash';
+import { find, values, isString } from 'lodash';
 import {
   Table,
   Button,
@@ -12,11 +12,10 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
-
-import {
-  projectMap,
-  legacyProjectMap
-} from '../../resources/certAndProjectMap';
+// import {
+//   projectMap as certMap,
+//   legacyProjectMap
+// } from '../../resources/certAndProjectMap';
 
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
@@ -33,6 +32,20 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ updateLegacyCert }, dispatch);
 
 const propTypes = {
+  certMap: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      dashedName: PropTypes.string,
+      block: PropTypes.string,
+      tests: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          id: PropTypes.string
+        })
+      )
+    })
+  ),
   completedChallenges: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -65,8 +78,8 @@ const propTypes = {
   verifyCert: PropTypes.func.isRequired
 };
 
-const certifications = Object.keys(projectMap);
-const legacyCertifications = Object.keys(legacyProjectMap);
+// const certifications = Object.keys(projectMap);
+// const legacyCertifications = Object.keys(legacyProjectMap);
 const isCertSelector = ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -275,8 +288,17 @@ export class CertificationSettings extends Component {
   );
 
   renderProjectsFor = (certName, isCert) => {
-    const { username, isHonest, createFlashMessage, verifyCert } = this.props;
-    const { superBlock } = first(projectMap[certName]);
+    const {
+      username,
+      isHonest,
+      createFlashMessage,
+      verifyCert,
+      certMap
+    } = this.props;
+    console.log(certName, certMap.find(cert => cert.title === certName));
+    const { dashedName: superBlock } = certMap.find(
+      cert => cert.title === certName
+    );
     const certLocation = `/certification/${username}/${superBlock}`;
     const createClickHandler = superBlock => e => {
       e.preventDefault();
@@ -287,8 +309,9 @@ export class CertificationSettings extends Component {
         ? verifyCert(superBlock)
         : createFlashMessage(honestyInfoMessage);
     };
-    return projectMap[certName]
-      .map(({ link, title, id }) => (
+    return certMap
+      .find(cert => cert.title === certName)
+      .tests.map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8'>
             <Link to={link}>{title}</Link>
@@ -320,14 +343,20 @@ export class CertificationSettings extends Component {
       isHonest,
       createFlashMessage,
       verifyCert,
-      updateLegacyCert
+      updateLegacyCert,
+      certMap
     } = this.props;
     let legacyTitle;
     let superBlock;
-    let certs = Object.keys(legacyProjectMap);
+    let certs = Object.keys(
+      certMap.filter(
+        cert =>
+          cert.title !== 'Legacy Full Stack' && cert.title.startsWith('Legacy')
+      )
+    );
     let loopBreak = false;
     for (let certTitle of certs) {
-      for (let chalTitle of legacyProjectMap[certTitle]) {
+      for (let chalTitle of certMap[certTitle]) {
         if (chalTitle.title === Object.keys(formChalObj)[0]) {
           superBlock = chalTitle.superBlock;
           loopBreak = true;
@@ -343,7 +372,7 @@ export class CertificationSettings extends Component {
     // make an object with keys as challenge ids and values as solutions
     let idsToSolutions = {};
     for (let i of Object.keys(formChalObj)) {
-      for (let j of legacyProjectMap[legacyTitle]) {
+      for (let j of certMap[legacyTitle]) {
         if (i === j.title) {
           idsToSolutions[j.id] = formChalObj[i];
           break;
@@ -388,24 +417,35 @@ export class CertificationSettings extends Component {
   }
 
   renderLegacyCertifications = certName => {
-    const { username, createFlashMessage, completedChallenges } = this.props;
-    const { superBlock } = first(legacyProjectMap[certName]);
+    const {
+      username,
+      createFlashMessage,
+      completedChallenges,
+      certMap
+    } = this.props;
+    const { dashedName: superBlock } = certMap.find(
+      cert => cert.title === certName
+    );
     const certLocation = `/certification/${username}/${superBlock}`;
-    const challengeTitles = legacyProjectMap[certName].map(item => item.title);
+    const challengeTitles = certMap
+      .find(cert => cert.title === certName)
+      .tests.map(item => item.title);
     const isCertClaimed = this.getUserIsCertMap()[certName];
     const initialObject = {};
     let filledforms = 0;
-    legacyProjectMap[certName].forEach(project => {
-      let completedProject = find(completedChallenges, function(challenge) {
-        return challenge['id'] === project['id'];
+    certMap
+      .find(cert => cert.title === certName)
+      .tests.forEach(project => {
+        let completedProject = find(completedChallenges, function(challenge) {
+          return challenge['id'] === project['id'];
+        });
+        if (!completedProject) {
+          initialObject[project.title] = '';
+        } else {
+          initialObject[project.title] = completedProject.solution;
+          filledforms++;
+        }
       });
-      if (!completedProject) {
-        initialObject[project.title] = '';
-      } else {
-        initialObject[project.title] = completedProject.solution;
-        filledforms++;
-      }
-    });
 
     const options = challengeTitles.reduce(
       (options, current) => {
@@ -475,6 +515,7 @@ export class CertificationSettings extends Component {
       isFullStackCert,
       username,
       isHonest,
+      certMap,
       createFlashMessage,
       verifyCert,
       is2018DataVisCert,
@@ -523,12 +564,11 @@ export class CertificationSettings extends Component {
             be able to claim the Legacy Full Stack Developer Certification:
           </p>
           <ul>
-            <li>Responsive Web Design</li>
-            <li>JavaScript Algorithms and Data Structures</li>
-            <li>Front End Libraries</li>
-            <li>Data Visualization</li>
-            <li>APIs and Microservices</li>
-            <li>Legacy Information Security and Quality Assurance</li>
+            {certMap
+              .filter(cert => cert.title === 'Legacy Full Stack')
+              .map(cert => (
+                <li key={cert.id}>{cert.title}</li>
+              ))}
           </ul>
         </div>
 
@@ -572,10 +612,18 @@ export class CertificationSettings extends Component {
     return (
       <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
-        {certifications.map(this.renderCertifications)}
+        {Object.keys(
+          this.props.certMap.filter(cert => !cert.title.startsWith('Legacy'))
+        ).map(this.renderCertifications)}
         <SectionHeader>Legacy Certifications</SectionHeader>
         {this.renderLegacyFullStack()}
-        {legacyCertifications.map(this.renderLegacyCertifications)}
+        {Object.keys(
+          this.props.certMap.filter(
+            cert =>
+              cert.title !== 'Legacy Full Stack' &&
+              cert.title.startsWith('Legacy')
+          )
+        ).map(this.renderLegacyCertifications)}
         {isOpen ? (
           <Modal
             aria-labelledby='solution-viewer-modal-title'

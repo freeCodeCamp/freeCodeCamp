@@ -24,6 +24,7 @@ import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
@@ -113,7 +114,7 @@ const mapDispatchToProps = {
   verifyCert
 };
 
-export function ShowSettings(props) {
+export const ShowSettings = props => {
   const {
     createFlashMessage,
     isSignedIn,
@@ -161,6 +162,23 @@ export function ShowSettings(props) {
     updateIsHonest,
     verifyCert
   } = props;
+
+  const certMap = useStaticQuery(graphql`
+    query {
+      allCertificateNode {
+        nodes {
+          tests {
+            title
+            id
+          }
+          title
+          dashedName
+          id
+          block
+        }
+      }
+    }
+  `).allCertificateNode.nodes;
 
   if (showLoading) {
     return <Loader fullScreen={true} />;
@@ -226,6 +244,7 @@ export function ShowSettings(props) {
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer />
           <Certification
+            certMap={certMap}
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
             is2018DataVisCert={is2018DataVisCert}
@@ -253,7 +272,7 @@ export function ShowSettings(props) {
       </Grid>
     </Fragment>
   );
-}
+};
 
 ShowSettings.displayName = 'ShowSettings';
 ShowSettings.propTypes = propTypes;
