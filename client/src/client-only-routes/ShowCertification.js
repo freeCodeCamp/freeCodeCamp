@@ -60,7 +60,7 @@ const propTypes = {
 
 // const validCertNames = certMap.map(cert => cert.slug);
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, { certName }) => {
   // const validCertName = validCertNames.some(name => name === certName);
   return createSelector(
     showCertSelector,
@@ -70,6 +70,7 @@ const mapStateToProps = state => {
     isDonatingSelector,
     (cert, fetchState, signedInUserName, userFetchState, isDonating) => ({
       cert,
+      certName,
       fetchState,
       signedInUserName,
       userFetchState,
@@ -157,7 +158,7 @@ class ShowCertification extends Component {
     const {
       cert,
       fetchState,
-      validCertName,
+      validCertNames,
       createFlashMessage,
       signedInUserName,
       location: { pathname }
@@ -169,7 +170,7 @@ class ShowCertification extends Component {
       isDonationClosed
     } = this.state;
 
-    if (!validCertName) {
+    if (!validCertNames.some(name => name === cert.name)) {
       createFlashMessage(standardErrorMessage);
       return <RedirectHome />;
     }

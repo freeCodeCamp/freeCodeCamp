@@ -17,7 +17,7 @@ const Certification = () => {
         }
       }
     }
-  `).data.allCertificateNode.nodes;
+  `).allCertificateNode.nodes;
 
   console.log(certMap);
   const validCertNames = certMap.map(cert =>
