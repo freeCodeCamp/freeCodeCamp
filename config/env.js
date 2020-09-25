@@ -50,5 +50,5 @@ module.exports = Object.assign(locations, {
     !paypalClientId || paypalClientId === 'id_from_paypal_dashboard'
       ? null
       : paypalClientId,
-  showUpcomingChanges: showUpcomingChanges === 'true'
+  showUpcomingChanges: showUpcomingChanges && showUpcomingChanges === 'true'
 });

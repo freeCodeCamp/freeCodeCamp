@@ -8,7 +8,7 @@ export default `
 .sprite-svg {
   height: 100%;
   width: 100%;
-  background: #aaa;
+  background: var(--theme-color);
 
 }
 
@@ -18,8 +18,15 @@ export default `
     transform: translateX(0%);
     stroke-width: 2px;
   }
+  5%{
+   opacity:100%;
+  }
   35% {
     stroke-width: 30px;
+    opacity:100%;
+  }
+  65%{
+    opacity:100%;
   }
   100% {
     -webkit-transform: translateX(100%);
@@ -36,6 +43,10 @@ export default `
   }
   35% {
     stroke-width: 30px;
+    opacity:100%;
+  }
+  65%{
+    opacity:100%;
   }
   100% {
     -webkit-transform: translateX(100%);
@@ -45,8 +56,10 @@ export default `
 }
 
 .sprite {
+  opacity:0%;
   -webkit-animation-name: shimmer;
   animation-name: shimmer;
+  animation-delay: 1s;
   width: 2px;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;

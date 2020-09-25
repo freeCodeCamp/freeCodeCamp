@@ -13,8 +13,8 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-Use <code>assert.match()</code> to make the tests pass. 
-
+Use <code>assert.match()</code> or <code>assert.notMatch()</code> to make the tests pass.
+  
 </section>
 
 ## Tests

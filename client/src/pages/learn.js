@@ -65,7 +65,7 @@ export const LearnPage = ({
   location: { hash = '', state = '' },
   isSignedIn,
   fetchState: { pending, complete },
-  user: { name = '', username = '', completedChallengeCount = 0 },
+  user: { name = '', completedChallengeCount = 0 },
   data: {
     challengeNode: {
       fields: { slug }
@@ -86,7 +86,6 @@ export const LearnPage = ({
           name={name}
           pending={pending}
           slug={slug}
-          username={username}
         />
         <Map
           hash={hashValue}
