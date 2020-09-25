@@ -118,7 +118,7 @@ tests:
       }
     }
     "
-  - text: If my number is invalid, returned with will 'invalid number'.
+  - text: If my number is invalid, returned will be <code>'invalid number'</code>.
     testString: "async getUserInput => { 
       try {
         const data = await $.get(getUserInput('url') + '/api/convert?input=1//2gal');
@@ -127,7 +127,7 @@ tests:
         throw new Error(xhr.responseText || xhr.message);
       }
     }"
-  - text: If both are invalid, return will be 'invalid number and unit'.
+  - text: If both are invalid, return will be <code>'invalid number and unit'</code>.
     testString: "async getUserInput => { 
       try {
         const data = await $.get(getUserInput('url') + '/api/convert?input=1//2min');
@@ -160,7 +160,7 @@ tests:
       }
     }
     "
-  - text: My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format '{initNum} {initial_Units} converts to {returnNum} {return_Units}' with the result rounded to 5 decimals in the string.
+  - text: My return will consist of the <code>initNum</code>, <code>initUnit</code>, <code>returnNum</code>, <code>returnUnit</code>, and <code>string</code> spelling out units in format <code>'{initNum} {initial_Units} converts to {returnNum} {return_Units}'</code> with the result rounded to 5 decimals.
     testString: "async getUserInput => { 
       try {
         const data = await $.get(getUserInput('url') + '/api/convert?input=2mi');
