@@ -175,6 +175,7 @@ export const ShowSettings = props => {
           dashedName
           id
           block
+          order
         }
       }
     }

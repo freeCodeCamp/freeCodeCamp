@@ -12,10 +12,6 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
-// import {
-//   projectMap as certMap,
-//   legacyProjectMap
-// } from '../../resources/certAndProjectMap';
 
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
@@ -38,6 +34,7 @@ const propTypes = {
       title: PropTypes.string,
       dashedName: PropTypes.string,
       block: PropTypes.string,
+      order: PropTypes.number,
       tests: PropTypes.arrayOf(
         PropTypes.shape({
           title: PropTypes.string,
@@ -295,7 +292,7 @@ export class CertificationSettings extends Component {
       verifyCert,
       certMap
     } = this.props;
-    console.log(certName, certMap.find(cert => cert.title === certName));
+
     const { dashedName: superBlock } = certMap.find(
       cert => cert.title === certName
     );
@@ -351,7 +348,8 @@ export class CertificationSettings extends Component {
     let certs = Object.keys(
       certMap.filter(
         cert =>
-          cert.title !== 'Legacy Full Stack' && cert.title.startsWith('Legacy')
+          cert.title !== 'Legacy Full Stack Certificate' &&
+          cert.title.startsWith('Legacy')
       )
     );
     let loopBreak = false;
@@ -565,8 +563,8 @@ export class CertificationSettings extends Component {
           </p>
           <ul>
             {certMap
-              .filter(cert => cert.title === 'Legacy Full Stack')
-              .map(cert => (
+              .find(cert => cert.title === 'Legacy Full Stack Certificate')
+              .tests.map(cert => (
                 <li key={cert.id}>{cert.title}</li>
               ))}
           </ul>
@@ -612,18 +610,20 @@ export class CertificationSettings extends Component {
     return (
       <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
-        {Object.keys(
-          this.props.certMap.filter(cert => !cert.title.startsWith('Legacy'))
-        ).map(this.renderCertifications)}
+        {this.props.certMap
+          .filter(cert => !cert.title.startsWith('Legacy'))
+          .map(cert => this.renderCertifications(cert.title))
+          .sort((x, y) => x.order - y.order)}
         <SectionHeader>Legacy Certifications</SectionHeader>
         {this.renderLegacyFullStack()}
-        {Object.keys(
-          this.props.certMap.filter(
+        {this.props.certMap
+          .filter(
             cert =>
-              cert.title !== 'Legacy Full Stack' &&
+              cert.title !== 'Legacy Full Stack Certificate' &&
               cert.title.startsWith('Legacy')
           )
-        ).map(this.renderLegacyCertifications)}
+          .map(cert => this.renderLegacyCertifications(cert.title))
+          .sort((x, y) => x.order - y.order)}
         {isOpen ? (
           <Modal
             aria-labelledby='solution-viewer-modal-title'
