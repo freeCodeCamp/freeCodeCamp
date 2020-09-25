@@ -33,7 +33,7 @@ const propTypes = {
     certName: PropTypes.string,
     certTitle: PropTypes.string,
     completionTime: PropTypes.number,
-    date: PropTypes.string
+    date: PropTypes.number
   }),
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
@@ -58,10 +58,7 @@ const propTypes = {
   validCertNames: PropTypes.array
 };
 
-// const validCertNames = certMap.map(cert => cert.slug);
-
-const mapStateToProps = (state, { certName }) => {
-  // const validCertName = validCertNames.some(name => name === certName);
+const mapStateToProps = () => {
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
@@ -70,7 +67,6 @@ const mapStateToProps = (state, { certName }) => {
     isDonatingSelector,
     (cert, fetchState, signedInUserName, userFetchState, isDonating) => ({
       cert,
-      certName,
       fetchState,
       signedInUserName,
       userFetchState,
@@ -159,6 +155,7 @@ class ShowCertification extends Component {
       cert,
       fetchState,
       validCertNames,
+      certName,
       createFlashMessage,
       signedInUserName,
       location: { pathname }
@@ -170,7 +167,7 @@ class ShowCertification extends Component {
       isDonationClosed
     } = this.state;
 
-    if (!validCertNames.some(name => name === cert.name)) {
+    if (!validCertNames.some(name => name === certName)) {
       createFlashMessage(standardErrorMessage);
       return <RedirectHome />;
     }
