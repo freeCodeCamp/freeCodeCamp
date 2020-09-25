@@ -19,7 +19,6 @@ const Certification = () => {
     }
   `).allCertificateNode.nodes;
 
-  console.log(certMap);
   const validCertNames = certMap.map(cert =>
     cert.dashedName.replace(/-certificate/, '')
   );
