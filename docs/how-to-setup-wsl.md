@@ -45,7 +45,7 @@ git version 2.25.1
 
 ## Installing a Code Editor
 
-We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extentions on your WSL distro.
+We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
 
 Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
 
@@ -69,7 +69,7 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
 
 1. Launch a new Ubuntu-18.04 terminal
 
-2. Pull `MongoDB 3.6` from dokerhub
+2. Pull `MongoDB 3.6` from dockerhub
 
    ```console
    docker pull mongo:3
@@ -90,7 +90,7 @@ Once you have configured Docker Desktop to work with WSL2, follow these steps to
 
 ## Installing Node.js and npm
 
-We recommend you install LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 Once installed use these commands to install and use the Node.js version as needed
 

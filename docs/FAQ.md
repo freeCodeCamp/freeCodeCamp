@@ -20,7 +20,7 @@ We do not have any plans for i18n to any other languages other than the above fo
 
 We do not encourage you to work on i18n on the above languages. We may accept pull requests, without any expectation of any timelines on deployments.
 
-### How can I report a bug that is not on board?
+### How can I report a new bug?
 
 If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
@@ -36,13 +36,13 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 Yes, sure.
 
-While, we are open to all contributions, please note we are unable to commit to any timelines that may be a requirement at your college or university. All pull-requests and code contributions are reviewed by volunteer developers, and we respect their time and efforts. We will not be able to give any PR any special attention to be fair to all.
+While, we are open to all contributions, please note we are unable to commit to any timelines that may be a requirement at your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. We will not be able to give any PR any special attention to be fair to all.
 
 We request you to plan ahead and work on a feature with this in mind.
 
 ### What do these different labels that are tagged on issues mean?
 
-Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
 ### Where do I start if I want to work on an issue?
 
