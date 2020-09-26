@@ -173,7 +173,8 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('developmentuser', { force: true });
-    cy.wait(2000);
+    cy.contains('Username is available.');
+
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
     cy.contains('Account Settings for developmentuser').should('be.visible');
