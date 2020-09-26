@@ -45,6 +45,12 @@ if (FREECODECAMP_NODE_ENV === 'production') {
       throw Error(`Env. variable ${key} is missing, build cannot continue`);
     }
   }
+
+  if (env['environment'] !== 'production')
+    throw Error("Production environment should be 'production' ");
+
+  if (env['showUpcomingChanges'])
+    throw Error("SHOW_UPCOMING_CHANGES should never be 'true' in production");
 }
 
 fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));
