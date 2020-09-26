@@ -75,8 +75,6 @@ const propTypes = {
   verifyCert: PropTypes.func.isRequired
 };
 
-// const certifications = Object.keys(projectMap);
-// const legacyCertifications = Object.keys(legacyProjectMap);
 const isCertSelector = ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -293,9 +291,7 @@ export class CertificationSettings extends Component {
       certMap
     } = this.props;
 
-    const { dashedName: superBlock } = certMap.find(
-      cert => cert.title === certName
-    );
+    const { superBlock } = certMap.find(cert => cert.title === certName);
     const certLocation = `/certification/${username}/${superBlock}`;
     const createClickHandler = superBlock => e => {
       e.preventDefault();
@@ -345,20 +341,19 @@ export class CertificationSettings extends Component {
     } = this.props;
     let legacyTitle;
     let superBlock;
-    let certs = Object.keys(
-      certMap.filter(
-        cert =>
-          cert.title !== 'Legacy Full Stack Certificate' &&
-          cert.title.startsWith('Legacy')
-      )
+    let certs = certMap.filter(
+      cert =>
+        cert.title !== 'Legacy Full Stack' && cert.title.startsWith('Legacy')
     );
+    console.log('353certs: ', certs, formChalObj);
     let loopBreak = false;
-    for (let certTitle of certs) {
-      for (let chalTitle of certMap[certTitle]) {
-        if (chalTitle.title === Object.keys(formChalObj)[0]) {
-          superBlock = chalTitle.superBlock;
+    for (let cert of certs) {
+      for (let test of cert.tests) {
+        if (test.title === Object.keys(formChalObj)[0]) {
+          console.log('For loops running if');
+          superBlock = cert.superBlock;
           loopBreak = true;
-          legacyTitle = certTitle;
+          legacyTitle = cert.title;
           break;
         }
       }
@@ -370,8 +365,9 @@ export class CertificationSettings extends Component {
     // make an object with keys as challenge ids and values as solutions
     let idsToSolutions = {};
     for (let i of Object.keys(formChalObj)) {
-      for (let j of certMap[legacyTitle]) {
+      for (let j of certMap.find(cert => cert.title === legacyTitle).tests) {
         if (i === j.title) {
+          console.log(idsToSolutions, j.id, formChalObj, i);
           idsToSolutions[j.id] = formChalObj[i];
           break;
         }
@@ -407,6 +403,7 @@ export class CertificationSettings extends Component {
     const isProjectSectionComplete = valuesSaved.length === oldSubmissions;
 
     if (isProjectSectionComplete) {
+      console.log('superBlock: ', superBlock);
       return isHonest
         ? verifyCert(superBlock)
         : createFlashMessage(honestyInfoMessage);
@@ -421,13 +418,12 @@ export class CertificationSettings extends Component {
       completedChallenges,
       certMap
     } = this.props;
-    const { dashedName: superBlock } = certMap.find(
-      cert => cert.title === certName
-    );
+    const { superBlock } = certMap.find(cert => cert.title === certName);
     const certLocation = `/certification/${username}/${superBlock}`;
     const challengeTitles = certMap
       .find(cert => cert.title === certName)
       .tests.map(item => item.title);
+    console.log(this.getUserIsCertMap(), certName);
     const isCertClaimed = this.getUserIsCertMap()[certName];
     const initialObject = {};
     let filledforms = 0;
@@ -462,6 +458,7 @@ export class CertificationSettings extends Component {
 
     const createClickHandler = certLocation => e => {
       e.preventDefault();
+      console.log('461: ', certLocation, isCertClaimed);
       if (isCertClaimed) {
         return navigate(certLocation);
       }
@@ -548,6 +545,7 @@ export class CertificationSettings extends Component {
       if (isFullStackCert) {
         return navigate(certLocation);
       }
+      console.log('548: ', superBlock);
       return isHonest
         ? verifyCert(superBlock)
         : createFlashMessage(honestyInfoMessage);
@@ -563,7 +561,7 @@ export class CertificationSettings extends Component {
           </p>
           <ul>
             {certMap
-              .find(cert => cert.title === 'Legacy Full Stack Certificate')
+              .find(cert => cert.title === 'Legacy Full Stack')
               .tests.map(cert => (
                 <li key={cert.id}>{cert.title}</li>
               ))}
@@ -619,7 +617,7 @@ export class CertificationSettings extends Component {
         {this.props.certMap
           .filter(
             cert =>
-              cert.title !== 'Legacy Full Stack Certificate' &&
+              cert.title !== 'Legacy Full Stack' &&
               cert.title.startsWith('Legacy')
           )
           .map(cert => this.renderLegacyCertifications(cert.title))
