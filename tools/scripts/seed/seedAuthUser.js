@@ -73,7 +73,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
         isMachineLearningPyCertV7: false,
         completedChallenges: [],
         portfolio: [],
-        yearsTopContributor: [],
+        yearsTopContributor: ['2017', '2018', '2019'],
         rand: 0.6126749173148205,
         theme: 'default',
         profileUI: {
