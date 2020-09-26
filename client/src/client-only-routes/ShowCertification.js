@@ -117,10 +117,10 @@ const ShowCertification = props => {
   useEffect(() => {
     const { username, certName, validCertNames, showCert } = props;
     if (validCertNames.some(name => name === certName)) {
-      return showCert({ username, certName });
+      showCert({ username, certName });
     }
-    return null;
-  }, [props]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const {
@@ -149,7 +149,6 @@ const ShowCertification = props => {
         }
       });
     }
-    console.log('Rendered');
   }, [isDonationDisplayed, props]);
 
   const hideDonationSection = () => {
