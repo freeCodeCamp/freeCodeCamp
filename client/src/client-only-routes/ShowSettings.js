@@ -24,7 +24,9 @@ import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
+
 import { useStaticQuery, graphql } from 'gatsby';
+import { dasherize } from '../../../utils/slugs';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
@@ -180,6 +182,20 @@ export const ShowSettings = props => {
       }
     }
   `).allCertificateNode.nodes;
+
+  certMap.forEach(cert => {
+    cert.title = cert.title.replace(/ Certificate/, '');
+    cert.superBlock = cert.dashedName.replace(/(legacy-)|(-certificate)/g, '');
+    cert.tests.forEach(
+      test =>
+        (test.link = `/learn/${cert.dashedName.replace(
+          /-certificate/,
+          ''
+        )}/${cert.dashedName.replace(/-certificate/, '-projects')}/${dasherize(
+          test.title
+        )}`)
+    );
+  });
 
   if (showLoading) {
     return <Loader fullScreen={true} />;
