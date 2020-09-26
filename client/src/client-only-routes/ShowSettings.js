@@ -184,8 +184,10 @@ export const ShowSettings = props => {
   `).allCertificateNode.nodes;
 
   certMap.forEach(cert => {
-    cert.title = cert.title.replace(/ Certificate/, '');
-    cert.superBlock = cert.dashedName.replace(/(legacy-)|(-certificate)/g, '');
+    // TODO: superBlock needs to contain -v7 for some projects
+    // console.log(cert.dashedName);
+    cert.superBlock = cert.dashedName.replace(/-certificate/g, '');
+    cert.title = cert.title.replace(/ Certificate( v7)?/, '');
     cert.tests.forEach(
       test =>
         (test.link = `/learn/${cert.dashedName.replace(
@@ -196,6 +198,7 @@ export const ShowSettings = props => {
         )}`)
     );
   });
+  console.log(certMap);
 
   if (showLoading) {
     return <Loader fullScreen={true} />;
