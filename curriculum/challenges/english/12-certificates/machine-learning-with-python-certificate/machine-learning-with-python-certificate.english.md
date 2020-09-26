@@ -1,6 +1,6 @@
 ---
 id: 5e46fc95ac417301a38fb935
-title: Machine Learning with Python Certificate
+title: Machine Learning with Python Certificate v7
 challengeType: 7
 isPrivate: true
 ---

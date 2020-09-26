@@ -1,6 +1,6 @@
 ---
 id: 5e44431b903586ffb414c951
-title: Scientific Computing with Python Certificate
+title: Scientific Computing with Python Certificate v7
 challengeType: 7
 isPrivate: true
 ---
