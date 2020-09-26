@@ -34,10 +34,10 @@ tests:
       try {
         const data1 = await $.get(getUserInput('url') + '/api/convert?input=1gal');
         assert.equal(data1.returnNum, 3.78541);
-        assert.equal(data1.returnUnit, 'l');
+        assert.equal(data1.returnUnit, 'L');
         const data2 = await $.get(getUserInput('url') + '/api/convert?input=10gal');
         assert.equal(data2.returnNum, 37.8541);
-        assert.equal(data2.returnUnit, 'l');
+        assert.equal(data2.returnUnit, 'L');
         const data3 = await $.get(getUserInput('url') + '/api/convert?input=1l');
         assert.equal(data3.returnNum, 0.26417);
         assert.equal(data3.returnUnit, 'gal');
@@ -89,6 +89,25 @@ tests:
       }
     }
     "
+  - text: All incoming units should be accepted in both upper and lower case, but should be returned in both the <code>initUnit</code> and <code>returnUnit</code> in lower case, except for liter, which should be represented as an uppercase "L".
+    testString: "async getUserInput => { 
+      try {
+        const data1 = await $.get(getUserInput('url') + '/api/convert?input=1gal');
+        assert.equal(data1.initUnit, 'gal');
+        assert.equal(data1.returnUnit, 'L');
+        const data2 = await $.get(getUserInput('url') + '/api/convert?input=10L');
+        assert.equal(data2.initUnit, 'L');
+        assert.equal(data2.returnUnit, 'gal');
+        const data3 = await $.get(getUserInput('url') + '/api/convert?input=1l');
+        assert.equal(data3.initUnit, 'L');
+        assert.equal(data3.returnUnit, 'gal');
+        const data4 = await $.get(getUserInput('url') + '/api/convert?input=10KM');
+        assert.equal(data4.initUnit, 'km');
+        assert.equal(data4.returnUnit, 'mi');
+      } catch(xhr) {
+        throw new Error(xhr.responseText || xhr.message);
+      }
+    }"
   - text: If my unit of measurement is invalid, returned will be <code>'invalid unit'</code>.
     testString: "async getUserInput => { 
       try {
@@ -155,10 +174,39 @@ tests:
       }
     }"
   - text: All 16 unit tests are complete and passing.
-    testString: ''
+    testString: "async getUserInput => {
+      try {
+        const getTests = await $.get(getUserInput('url') + '/_api/get-tests' );
+        assert.isArray(getTests);
+        const unitTests = getTests.filter((test) => {
+          return !!test.context.match(/Unit Tests ->/ig);
+        });
+        assert.isAtLeast(unitTests.length, 16, 'At least 16 tests passed');
+        unitTests.forEach(test => {
+          assert.equal(test.state, 'passed', 'Tests in Passed State');
+          assert.isAtLeast(test.assertions.length, 1, 'At least one assertion per test');
+        });
+      } catch(err) {
+        throw new Error(err.responseText || err.message);
+      }
+    }"
   - text: All 5 functional tests are complete and passing.
-    testString: ''
-
+    testString: "async getUserInput => {
+      try {
+        const getTests = await $.get(getUserInput('url') + '/_api/get-tests' );
+        assert.isArray(getTests);
+        const functTests = getTests.filter((test) => {
+          return !!test.context.match(/Functional Tests ->/ig);
+        });
+        assert.isAtLeast(functTests.length, 5, 'At least 5 tests passed');
+        functTests.forEach(test => {
+          assert.equal(test.state, 'passed', 'Tests in Passed State');
+          assert.isAtLeast(test.assertions.length, 1, 'At least one assertion per test');
+        });
+      } catch(err) {
+        throw new Error(err.responseText || err.message);
+      }
+    }"
 ```
 
 </section>
