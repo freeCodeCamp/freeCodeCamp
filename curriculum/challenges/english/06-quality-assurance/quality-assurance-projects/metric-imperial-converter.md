@@ -89,7 +89,7 @@ tests:
       }
     }
     "
-  - text: All incoming units should be accepted in both upper and lower case, but should be returned in both the <code>initUnit</code> and <code>returnUnit</code> in lower case, except for liter, which should be represented as an uppercase "L".
+  - text: All incoming units should be accepted in both upper and lower case, but should be returned in both the <code>initUnit</code> and <code>returnUnit</code> in lower case, except for liter, which should be represented as an uppercase <code>'L'</code>.
     testString: "async getUserInput => { 
       try {
         const data1 = await $.get(getUserInput('url') + '/api/convert?input=1gal');
@@ -127,7 +127,7 @@ tests:
         throw new Error(xhr.responseText || xhr.message);
       }
     }"
-  - text: If both are invalid, return will be <code>'invalid number and unit'</code>.
+  - text: If both the unit and number are invalid, returned will be <code>'invalid number and unit'</code>.
     testString: "async getUserInput => { 
       try {
         const data = await $.get(getUserInput('url') + '/api/convert?input=1//2min');
