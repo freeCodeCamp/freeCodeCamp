@@ -44,7 +44,7 @@ tests:
     testString: assert.equal(quibble(testCases[1]), results[1]);
   - text: <code>quibble(["ABC", "DEF"])</code> should return "{ABC and DEF}".
     testString: assert.equal(quibble(testCases[2]), results[2]);
-  - text: <code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC,DEF,G and H}".
+  - text: <code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC, DEF, G and H}".
     testString: assert.equal(quibble(testCases[3]), results[3]);
 
 ```
@@ -71,7 +71,7 @@ function quibble(words) {
 
 ```js
 const testCases = [[], ["ABC"], ["ABC", "DEF"], ["ABC", "DEF", "G", "H"]];
-const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
+const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC, DEF, G and H}"];
 ```
 
 </div>
@@ -85,7 +85,7 @@ const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
 ```js
 function quibble(words) {
   return "{" +
-    words.slice(0, words.length - 1).join(",") +
+    words.slice(0, words.length - 1).join(", ") +
    (words.length > 1 ? " and " : "") +
    (words[words.length - 1] || '') +
   "}";
