@@ -140,7 +140,7 @@ const isCertMapSelector = createSelector(
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
-    'Legacy Information Security and Quality Assurance': isInfosecQaCert
+    'Information Security and Quality Assurance': isInfosecQaCert
   })
 );
 
@@ -424,8 +424,8 @@ export class CertificationSettings extends Component {
       .find(cert => cert.title === certName)
       .tests.map(item => item.title);
     console.log(this.getUserIsCertMap(), certName);
-    // TODO: remove hardcode for infoSec
-    const isCertClaimed = this.getUserIsCertMap()['Legacy ' + certName];
+    // TODO: ensure no hardcode for infoSec
+    const isCertClaimed = this.getUserIsCertMap()[certName];
     const initialObject = {};
     let filledforms = 0;
     certMap
