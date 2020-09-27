@@ -343,7 +343,7 @@ export class CertificationSettings extends Component {
     let superBlock;
     let certs = certMap.filter(
       cert =>
-        cert.title !== 'Legacy Full Stack' && cert.title.startsWith('Legacy')
+        cert.title !== 'Legacy Full Stack' && cert.block.startsWith('legacy')
     );
     console.log('353certs: ', certs, formChalObj);
     let loopBreak = false;
@@ -424,7 +424,8 @@ export class CertificationSettings extends Component {
       .find(cert => cert.title === certName)
       .tests.map(item => item.title);
     console.log(this.getUserIsCertMap(), certName);
-    const isCertClaimed = this.getUserIsCertMap()[certName];
+    // TODO: remove hardcode for infoSec
+    const isCertClaimed = this.getUserIsCertMap()['Legacy ' + certName];
     const initialObject = {};
     let filledforms = 0;
     certMap
@@ -610,7 +611,7 @@ export class CertificationSettings extends Component {
       <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {this.props.certMap
-          .filter(cert => !cert.title.startsWith('Legacy'))
+          .filter(cert => !cert.block.startsWith('legacy'))
           .map(cert => this.renderCertifications(cert.title))
           .sort((x, y) => x.order - y.order)}
         <SectionHeader>Legacy Certifications</SectionHeader>
@@ -619,7 +620,7 @@ export class CertificationSettings extends Component {
           .filter(
             cert =>
               cert.title !== 'Legacy Full Stack' &&
-              cert.title.startsWith('Legacy')
+              cert.block.startsWith('legacy')
           )
           .map(cert => this.renderLegacyCertifications(cert.title))
           .sort((x, y) => x.order - y.order)}
