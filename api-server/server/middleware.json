@@ -15,9 +15,6 @@
   },
   "initial": {
     "compression": {},
-    "morgan": {
-      "params": ":date[iso] :status :method :response-time ms - :url"
-    },
     "cors": {
       "params": {
         "origin": true,
