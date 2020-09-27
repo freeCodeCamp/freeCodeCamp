@@ -191,11 +191,12 @@ export const ShowSettings = props => {
     cert.tests.forEach(
       test =>
         (test.link = `/learn/${cert.dashedName.replace(
-          /-certificate/,
+          /-certificate-v7/,
           ''
-        )}/${cert.dashedName.replace(/-certificate/, '-projects')}/${dasherize(
-          test.title
-        )}`)
+        )}/${cert.dashedName.replace(
+          /-certificate-v7/,
+          '-projects'
+        )}/${dasherize(test.title)}`)
     );
   });
   console.log(certMap);

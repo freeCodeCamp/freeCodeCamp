@@ -459,6 +459,7 @@ export class CertificationSettings extends Component {
     const createClickHandler = certLocation => e => {
       e.preventDefault();
       console.log('461: ', certLocation, isCertClaimed);
+      // TODO: Update for superBlockCertTypeMap
       if (isCertClaimed) {
         return navigate(certLocation);
       }
