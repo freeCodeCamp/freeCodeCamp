@@ -61,7 +61,127 @@ describe('<certification />', () => {
   });
 });
 
+/* eslint-disable max-len */
 const defaultTestProps = {
+  certMap: [
+    {
+      block: 'legacy-data-visualization-certificate',
+      dashedName: 'legacy-data-visualization-certificate',
+      id: '561add10cb82ac39a17513bc',
+      order: 1,
+      superBlock: 'legacy-data-visualization',
+      tests: [
+        {
+          id: 'bd7157d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/build-a-markdown-previewer',
+          title: 'Build a Markdown Previewer'
+        },
+        {
+          id: 'bd7156d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/build-a-camper-leaderboard',
+          title: 'Build a Camper Leaderboard'
+        },
+        {
+          id: 'bd7155d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/build-a-recipe-box',
+          title: 'Build a Recipe Box'
+        },
+        {
+          id: 'bd7154d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/build-the-game-of-life',
+          title: 'Build the Game of Life'
+        },
+        {
+          id: 'bd7153d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/build-a-roguelike-dungeon-crawler-game',
+          title: 'Build a Roguelike Dungeon Crawler Game'
+        },
+        {
+          id: 'bd7168d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/visualize-data-with-a-bar-chart',
+          title: 'Visualize Data with a Bar Chart'
+        },
+        {
+          id: 'bd7178d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/visualize-data-with-a-scatterplot-graph',
+          title: 'Visualize Data with a Scatterplot Graph'
+        },
+        {
+          id: 'bd7188d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/visualize-data-with-a-heat-map',
+          title: 'Visualize Data with a Heat Map'
+        },
+        {
+          id: 'bd7198d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/show-national-contiguity-with-a-force-directed-graph',
+          title: 'Show National Contiguity with a Force Directed Graph'
+        },
+        {
+          id: 'bd7108d8c242eddfaeb5bd13',
+          link:
+            '/learn/legacy-data-visualization/legacy-data-visualization-projects/map-data-across-the-globe',
+          title: 'Map Data Across the Globe'
+        }
+      ],
+      title: 'Legacy Data Visualization'
+    },
+    {
+      block: 'legacy-full-stack-certificate',
+      dashedName: 'legacy-full-stack-certificate',
+      id: '561add10cb82ac38a17213bd',
+      order: 5,
+      superBlock: 'legacy-full-stack',
+      tests: [
+        {
+          title: 'Responsive Web Design Certificate',
+          id: '561add10cb82ac38a17513bc',
+          link:
+            '/learn/legacy-full-stack/legacy-full-stack-projects/responsive-web-design-certificate'
+        },
+        {
+          title: 'JavaScript Algorithms and Data Structures Certificate',
+          id: '561abd10cb81ac38a17513bc',
+          link:
+            '/learn/legacy-full-stack/legacy-full-stack-project…script-algorithms-and-data-structures-certificate'
+        },
+        {
+          title: 'Front End Libraries Certificate',
+          id: '561acd10cb82ac38a17513bc',
+          link:
+            '/learn/legacy-full-stack/legacy-full-stack-projects/front-end-libraries-certificate'
+        },
+        {
+          title: 'Data Visualization Certificate',
+          id: '5a553ca864b52e1d8bceea14',
+          link:
+            '/learn/legacy-full-stack/legacy-full-stack-projects/data-visualization-certificate'
+        },
+        {
+          title: "API's and Microservices Certificate",
+          id: '561add10cb82ac38a17523bc',
+          link:
+            '/learn/legacy-full-stack/legacy-full-stack-projects/apis-and-microservices-certificate'
+        },
+        {
+          title:
+            'Legacy Information Security and Quality Assurance Certificate',
+          id: '561add10cb82ac38a17213bc',
+          link:
+            '/learn/legacy-full-stack/legacy-full-stack-project…mation-security-and-quality-assurance-certificate'
+        }
+      ],
+      title: 'Legacy Full Stack'
+    }
+  ],
   completedChallenges: [
     {
       id: 'bd7156d8c242eddfaeb5bd13',
