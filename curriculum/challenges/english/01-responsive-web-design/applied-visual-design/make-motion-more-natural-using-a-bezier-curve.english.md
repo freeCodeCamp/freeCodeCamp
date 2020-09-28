@@ -3,6 +3,7 @@ id: 587d78a9367417b2b2512aea
 title: Make Motion More Natural Using a Bezier Curve
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7akWUv'
+forumTopicId: 301063
 ---
 
 ## Description
@@ -11,7 +12,7 @@ This challenge animates an element to replicate the movement of a ball being jug
 The <code>animation-timing-function</code> automatically loops at every keyframe when the <code>animation-iteration-count</code> is set to infinite. Since there is a keyframe rule set in the middle of the animation duration (at <code>50%</code>), it results in two identical animation progressions at the upward and downward movement of the ball.
 The following cubic Bezier curve simulates a juggling movement:
 <code>cubic-bezier(0.3, 0.4, 0.5, 1.6); </code>
-Notice that the value of y2 is larger than 1. Although the cubic Bezier curve is mapped on an 1 by 1 coordinate system, and it can only accept x values from 0 to 1, the y value can be set to numbers larger than one. This results in a bouncing movement that is ideal for simulating the juggling ball.
+Notice that the value of y2 is larger than 1. Although the cubic Bezier curve is mapped on a 1 by 1 coordinate system, and it can only accept x values from 0 to 1, the y value can be set to numbers larger than one. This results in a bouncing movement that is ideal for simulating the juggling ball.
 </section>
 
 ## Instructions
@@ -25,7 +26,7 @@ Change value of the <code>animation-timing-function</code> of the element with t
 ```yml
 tests:
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.
-    testString: assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.');
+    testString: assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)');
 
 ```
 
@@ -84,7 +85,43 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .balls {
+    border-radius: 50%;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 60%;
+    animation-name: jump;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #red {
+    background: red;
+    left: 25%;
+    animation-timing-function: linear;
+  }
+  #blue {
+    background: blue;
+    left: 50%;
+    animation-timing-function: ease-out;
+  }
+  #green {
+    background: green;
+    left: 75%;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+  }
+
+  @keyframes jump {
+    50% {
+      top: 10%;
+    }
+  }
+</style>
+<div class="balls" id="red"></div>
+<div class="balls" id="blue"></div>
+<div class="balls" id="green"></div>
 ```
+
 </section>

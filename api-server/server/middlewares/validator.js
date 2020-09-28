@@ -1,5 +1,5 @@
 import validator from 'express-validator';
-import { isPoly } from '../../common/utils/polyvinyl';
+import { isPoly } from '../../../utils/polyvinyl';
 
 const isObject = val => !!val && typeof val === 'object';
 
@@ -20,11 +20,13 @@ export default function() {
           return false;
         }
         const keys = Object.keys(value);
-        return !!keys.length &&
+        return (
+          !!keys.length &&
           // every key is a file
           keys.every(key => isObject(value[key])) &&
           // every file has contents
-          keys.map(key => value[key]).every(file => isPoly(file));
+          keys.map(key => value[key]).every(file => isPoly(file))
+        );
       }
     },
     customSanitizers: {
@@ -32,16 +34,20 @@ export default function() {
       trimTags(value) {
         const tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
         const tagOrComment = new RegExp(
-          '<(?:'
-          // Comment body.
-          + '!--(?:(?:-*[^->])*--+|-?)'
-          // Special "raw text" elements whose content should be elided.
-          + '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*'
-          + '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*'
-          // Regular name
-          + '|/?[a-z]'
-          + tagBody
-          + ')>',
+          '<(?:' +
+            // Comment body.
+            '!--(?:(?:-*[^->])*--+|-?)' +
+            // Special "raw text" elements whose content should be elided.
+            '|script\\b' +
+            tagBody +
+            '>[\\s\\S]*?</script\\s*' +
+            '|style\\b' +
+            tagBody +
+            '>[\\s\\S]*?</style\\s*' +
+            // Regular name
+            '|/?[a-z]' +
+            tagBody +
+            ')>',
           'gi'
         );
         let rawValue;

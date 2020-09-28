@@ -2,15 +2,24 @@
 id: 5900f4ed1000cf542c50ffff
 challengeType: 5
 title: 'Problem 383: Divisibility comparison between factorials'
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 302047
+localeTitle: 'Problem 383: Divisibility comparison between factorials'
 ---
 
 ## Description
-undefined
+<section id='description'>
+Let f5(n) be the largest integer x for which 5x divides n.
+For example, f5(625000) = 7.
+
+Let T5(n) be the number of integers i which satisfy f5((2·i-1)!) &lt; 2·f5(i!) and 1 ≤ i ≤ n.
+It can be verified that T5(103) = 68 and T5(109) = 2408210.
+
+Find T5(1018).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ undefined
 
 ```yml
 tests:
-  - text: <code>euler383()</code> должен вернуть 22173624649806.
-    testString: 'assert.strictEqual(euler383(), 22173624649806, "<code>euler383()</code> should return 22173624649806.");'
+  - text: <code>euler383()</code> should return 22173624649806.
+    testString: assert.strictEqual(euler383(), 22173624649806);
 
 ```
 
@@ -42,8 +51,6 @@ euler383();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +59,5 @@ euler383();
 ```js
 // solution required
 ```
+
 </section>

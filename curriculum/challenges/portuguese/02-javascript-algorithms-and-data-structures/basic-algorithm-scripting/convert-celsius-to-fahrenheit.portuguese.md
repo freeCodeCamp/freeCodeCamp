@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244b3
 title: Convert Celsius to Fahrenheit
 challengeType: 1
-isRequired: true
 videoUrl: ''
 localeTitle: Converter Celsius para Fahrenheit
 ---
@@ -61,6 +60,10 @@ convertToF(30);
 <section id='solution'>
 
 ```js
-// solution required
+function convertToF(celsius) {
+  return (celsius * (9 / 5)) + 32;
+}
+
+convertToF(30);
 ```
 </section>

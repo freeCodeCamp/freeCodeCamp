@@ -1,95 +1,77 @@
-/* global expect */
+/* global jest, expect */
 
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import sinon from 'sinon';
+import { render, fireEvent } from '@testing-library/react';
 
 import { Block } from './Block';
-import mockNodes from '../../../__mocks__/map-nodes';
+import mockChallengeNodes from '../../../__mocks__/challenge-nodes';
 import mockIntroNodes from '../../../__mocks__/intro-nodes';
 import mockCompleted from '../../../__mocks__/completedChallengesMock';
 
-Enzyme.configure({ adapter: new Adapter() });
-const renderer = new ShallowRenderer();
-
 test('<Block /> not expanded snapshot', () => {
-  const toggleSpy = sinon.spy();
-  const toggleMapSpy = sinon.spy();
-  const componentToRender = (
+  const { container } = render(
     <Block
       blockDashedName='block-a'
-      challenges={mockNodes.filter(node => node.block === 'block-a')}
+      challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
       completedChallenges={mockCompleted}
       intro={mockIntroNodes[0]}
       isExpanded={false}
-      toggleBlock={toggleSpy}
-      toggleMapModal={toggleMapSpy}
+      toggleBlock={() => {}}
+      toggleMapModal={() => {}}
     />
   );
-  const component = renderer.render(componentToRender);
 
-  expect(component).toMatchSnapshot('block-not-expanded');
+  expect(container).toMatchSnapshot('block-not-expanded');
 });
 
 test('<Block expanded snapshot', () => {
-  const toggleSpy = sinon.spy();
-  const toggleMapSpy = sinon.spy();
-  const componentToRender = (
+  const { container } = render(
     <Block
       blockDashedName='block-a'
-      challenges={mockNodes.filter(node => node.block === 'block-a')}
+      challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
       completedChallenges={mockCompleted}
       intro={mockIntroNodes[0]}
       isExpanded={true}
-      toggleBlock={toggleSpy}
-      toggleMapModal={toggleMapSpy}
+      toggleBlock={() => {}}
+      toggleMapModal={() => {}}
     />
   );
 
-  const component = renderer.render(componentToRender);
-
-  expect(component).toMatchSnapshot('block-expanded');
+  expect(container).toMatchSnapshot('block-expanded');
 });
 
-test('<Block />  should handle toggle clicks correctly', () => {
-  const toggleSpy = sinon.spy();
-  const toggleMapSpy = sinon.spy();
+test('<Block />  should handle toggle clicks correctly', async () => {
+  const toggleSpy = jest.fn();
+  const toggleMapSpy = jest.fn();
+  const executeGA = jest.fn();
+
   const props = {
     blockDashedName: 'block-a',
-    challenges: mockNodes.filter(node => node.block === 'block-a'),
+    challenges: mockChallengeNodes.filter(node => node.block === 'block-a'),
     completedChallenges: mockCompleted,
     intro: mockIntroNodes[0],
     isExpanded: false,
+    executeGA: executeGA,
     toggleBlock: toggleSpy,
     toggleMapModal: toggleMapSpy
   };
 
-  const componentToRender = <Block {...props} />;
+  const { container, rerender } = render(<Block {...props} />);
 
-  const enzymeWrapper = Enzyme.shallow(componentToRender);
+  expect(toggleSpy).not.toHaveBeenCalled();
+  expect(container.querySelector('.map-title h4')).toHaveTextContent('Block A');
+  expect(container.querySelector('ul').children.length).toBe(0);
 
-  expect(toggleSpy.called).toBe(false);
-  expect(
-    enzymeWrapper
-      .find('.map-title')
-      .find('h5')
-      .text()
-  ).toBe('Block A');
+  fireEvent.click(container.querySelector('.map-title'));
 
-  enzymeWrapper.find('.map-title').simulate('click');
+  expect(toggleSpy).toHaveBeenCalledTimes(1);
+  expect(toggleSpy).toHaveBeenCalledWith('block-a');
 
-  expect(toggleSpy.called).toBe(true);
-  expect(toggleSpy.calledWithExactly('block-a')).toBe(true);
+  rerender(<Block {...props} isExpanded={true} />);
 
-  enzymeWrapper.setProps({ ...props, isExpanded: true });
-
-  expect(
-    enzymeWrapper
-      .find('.map-title')
-      .find('h5')
-      .text()
-  ).toBe('Block A');
-  expect(enzymeWrapper.find('ul').length).toBe(1);
+  expect(container.querySelector('.map-title h4')).toHaveTextContent('Block A');
+  expect(container.querySelector('ul').children.length).toBe(
+    props.challenges.length + (props.intro ? 1 : 0)
+  );
 });

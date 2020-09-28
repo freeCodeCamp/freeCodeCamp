@@ -10,7 +10,7 @@ localeTitle: Añadir iconos impresionantes de fuente a nuestros botones
 ---
 
 ## Description
-<section id="description"> Font Awesome es una conveniente biblioteca de iconos. Estos iconos son gráficos vectoriales, almacenados en el formato de archivo <code>.svg</code> . Estos iconos son tratados como fuentes. Puede especificar su tamaño usando píxeles, y asumirán el tamaño de fuente de sus elementos HTML principales. Puedes incluir Font Awesome en cualquier aplicación agregando el siguiente código en la parte superior de tu HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> En este caso, hemos estado en esto. El elemento <code>i</code> se usó originalmente para hacer otros elementos en cursiva, pero ahora se usa comúnmente para los iconos. Puede agregar las clases de Font Awesome al elemento <code>i</code> para convertirlo en un icono, por ejemplo: <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> Tenga en cuenta que el elemento <code>span</code> también es aceptable para usar con iconos . Use Font Awesome para agregar un ícono con el <code>thumbs-up</code> al botón Me gusta dándole un elemento <code>i</code> con las clases <code>fa</code> y <code>fa-thumbs-up</code> ; Asegúrese de mantener el texto &quot;Me gusta&quot; junto al icono. </section>
+<section id="description"> Font Awesome es una conveniente biblioteca de íconos. Estos íconos son gráficos vectoriales, almacenados en el formato de archivo <code>.svg</code> . Estos íconos son tratados como fuentes. Puede especificar su tamaño usando píxeles, y asumirán el tamaño de fuente de sus elementos HTML principales. Puedes incluir Font Awesome en cualquier aplicación agregando el siguiente código en la parte superior de tu HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> En este caso, hemos estado en esto. El elemento <code>i</code> se usó originalmente para hacer otros elementos en cursiva, pero ahora se usa comúnmente para los íconos. Puede agregar las clases de Font Awesome al elemento <code>i</code> para convertirlo en un ícono, por ejemplo: <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> Tenga en cuenta que el elemento <code>span</code> también es aceptable para usar con íconos . Use Font Awesome para agregar un ícono con el <code>thumbs-up</code> al botón Me gusta dándole un elemento <code>i</code> con las clases <code>fa</code> y <code>fa-thumbs-up</code> ; Asegúrese de mantener el texto &quot;Me gusta&quot; junto al icono. </section>
 
 ## Instructions
 <section id="instructions">
@@ -87,7 +87,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>

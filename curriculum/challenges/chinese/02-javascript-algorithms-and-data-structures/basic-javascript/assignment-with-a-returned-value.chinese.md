@@ -2,26 +2,33 @@
 id: 56533eb9ac21ba0edf2244c3
 title: Assignment with a Returned Value
 challengeType: 1
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/assignment-with-a-returned-value'
-videoUrl: ''
-localeTitle: 具有返回值的分配
+videoUrl: 'https://scrimba.com/c/ce2pEtB'
+forumTopicId: 16658
+localeTitle: 用返回值来赋值
 ---
 
 ## Description
-<section id="description">如果您从我们对<a href="javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">使用赋值运算符存储值</a>的讨论中回忆起来<a href="javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">，则在分配</a>值之前，将解决等号右侧的所有内容。这意味着我们可以获取函数的返回值并将其赋值给变量。假设我们预先定义了一个函数<code>sum</code> ，它将两个数字相加，然后： <code>ourSum = sum(5, 12);</code>将调用<code>sum</code>函数，它返回值<code>17</code>并将其分配给<code>ourSum</code>变量。 </section>
+<section id='description'>
+如果你还记得我们在这一节<a href="/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">使用赋值运算符存储值</a>的讨论，赋值之前，先完成等号右边的操作。这意味着我们可把一个函数的返回值，赋值给一个变量。
+假设我们预先定义的函数<code>sum</code>其功能就是将两个数字相加，那么：
+<code>ourSum = sum(5, 12);</code>
+将调用<code>sum</code>函数，返回<code>return</code>了一个数值<code>17</code>，然后把它赋值给了<code>ourSum</code>变量。
+</section>
 
 ## Instructions
-<section id="instructions">使用参数<code>7</code>调用<code>processArg</code>函数，并将其返回值分配给已<code>processed</code>的变量。 </section>
+<section id='instructions'>
+调用<code>processArg</code>函数并给参数一个值<code>7</code>，然后把返回的值赋值给变量<code>processed</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>processed</code>的值应为<code>2</code>
-    testString: 'assert(processed === 2, "<code>processed</code> should have a value of <code>2</code>");'
-  - text: 您应该将<code>processArg</code>分配给已<code>processed</code>
-    testString: 'assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code), "You should assign <code>processArg</code> to <code>processed</code>");'
+  - text: <code>processed</code>的值应该是<code>2</code>。
+    testString: assert(processed === 2);
+  - text: 你应该把<code>processArg</code>的返回值赋给<code>processed</code>。
+    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code));
 
 ```
 
@@ -51,6 +58,7 @@ function processArg(num) {
 
 // Only change code below this line
 
+
 ```
 
 </div>
@@ -60,7 +68,7 @@ function processArg(num) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){return "processed = " + processed})();
 ```
 
 </div>
@@ -70,7 +78,15 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var processed = 0;
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+processed = processArg(7);
 ```
+
 </section>

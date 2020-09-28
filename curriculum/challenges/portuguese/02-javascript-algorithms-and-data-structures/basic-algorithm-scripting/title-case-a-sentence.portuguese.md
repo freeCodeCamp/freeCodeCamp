@@ -1,14 +1,13 @@
 ---
 id: ab6137d4e35944e21037b769
 title: Title Case a Sentence
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Title Case a Sentence
 ---
 
 ## Description
-<section id="description"> Retorna a string fornecida com a primeira letra de cada palavra em maiúscula. Certifique-se de que o restante da palavra esteja em letras minúsculas. Para o propósito deste exercício, você também deve capitalizar palavras de conexão como &quot;o&quot; e &quot;de&quot;. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Retorna a string fornecida com a primeira letra de cada palavra em maiúscula. Certifique-se de que o restante da palavra esteja em letras minúsculas. Para o propósito deste exercício, você também deve capitalizar palavras de conexão como &quot;o&quot; e &quot;de&quot;. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

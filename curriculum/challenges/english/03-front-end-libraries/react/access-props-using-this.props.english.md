@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403616e
 title: Access Props Using this.props
 challengeType: 6
-isRequired: false
+forumTopicId: 301375
 ---
 
 ## Description
@@ -22,15 +22,15 @@ Render an instance of the <code>ReturnTempPassword</code> component in the paren
 ```yml
 tests:
   - text: The <code>ResetPassword</code> component should return a single <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().type() === 'div'; })(), 'The <code>ResetPassword</code> component should return a single <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().type() === 'div'; })());
   - text: The fourth child of <code>ResetPassword</code> should be the <code>ReturnTempPassword</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().childAt(3).name() === 'ReturnTempPassword'; })(), 'The fourth child of <code>ResetPassword</code> should be the <code>ReturnTempPassword</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().childAt(3).name() === 'ReturnTempPassword'; })());
   - text: The <code>ReturnTempPassword</code> component should have a prop called <code>tempPassword</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('ReturnTempPassword').props().tempPassword; })(), 'The <code>ReturnTempPassword</code> component should have a prop called <code>tempPassword</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('ReturnTempPassword').props().tempPassword; })());
   - text: The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least <code>8</code> characters.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find('ReturnTempPassword').props().tempPassword; return typeof temp === 'string' && temp.length >= 8; })(), 'The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least <code>8</code> characters.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find('ReturnTempPassword').props().tempPassword; return typeof temp === 'string' && temp.length >= 8; })());
   - text: The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('strong').text() === mockedComponent.find('ReturnTempPassword').props().tempPassword; })(), 'The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('strong').text() === mockedComponent.find('ReturnTempPassword').props().tempPassword; })());
 
 ```
 
@@ -50,9 +50,9 @@ class ReturnTempPassword extends React.Component {
   render() {
     return (
         <div>
-            { /* change code below this line */ }
+            { /* Change code below this line */ }
             <p>Your temporary password is: <strong></strong></p>
-            { /* change code above this line */ }
+            { /* Change code above this line */ }
         </div>
     );
   }
@@ -69,9 +69,9 @@ class ResetPassword extends React.Component {
           <h2>Reset Password</h2>
           <h3>We've generated a new temporary password for you.</h3>
           <h3>Please reset this password from your account settings ASAP.</h3>
-          { /* change code below this line */ }
+          { /* Change code below this line */ }
 
-          { /* change code above this line */ }
+          { /* Change code above this line */ }
         </div>
     );
   }
@@ -84,7 +84,7 @@ class ResetPassword extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ResetPassword />, document.getElementById('root'))
 ```
 
@@ -96,7 +96,7 @@ ReactDOM.render(<ResetPassword />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class ReturnTempPassword extends React.Component {
   constructor(props) {
     super(props);
@@ -122,9 +122,9 @@ class ResetPassword extends React.Component {
           <h2>Reset Password</h2>
           <h3>We've generated a new temporary password for you.</h3>
           <h3>Please reset this password from your account settings ASAP.</h3>
-          { /* change code below this line */ }
+          { /* Change code below this line */ }
           <ReturnTempPassword tempPassword="serrPbqrPnzc" />
-          { /* change code above this line */ }
+          { /* Change code above this line */ }
         </div>
     );
   }

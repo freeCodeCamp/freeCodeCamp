@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403618c
 title: Use Array.filter() to Dynamically Filter an Array
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Use Array.filter () para filtrar dinamicamente uma matriz
 ---

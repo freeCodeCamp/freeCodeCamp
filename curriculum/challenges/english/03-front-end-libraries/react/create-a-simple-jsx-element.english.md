@@ -2,7 +2,7 @@
 id: 587d7dbc367417b2b2512bb1
 title: Create a Simple JSX Element
 challengeType: 6
-isRequired: false
+forumTopicId: 301390
 ---
 
 ## Description
@@ -25,9 +25,9 @@ It's worth noting that under the hood the challenges are calling <code>ReactDOM.
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return an <code>h1</code> element.
-    testString: assert(JSX.type === 'h1', 'The constant <code>JSX</code> should return an <code>h1</code> element.');
+    testString: assert(JSX.type === 'h1');
   - text: The <code>h1</code> tag should include the text <code>Hello JSX!</code>
-    testString: assert(Enzyme.shallow(JSX).contains('Hello JSX!'), 'The <code>h1</code> tag should include the text <code>Hello JSX!</code>');
+    testString: assert(Enzyme.shallow(JSX).contains('Hello JSX!'));
 
 ```
 
@@ -50,7 +50,7 @@ const JSX = <div></div>;
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
@@ -62,7 +62,7 @@ ReactDOM.render(JSX, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const JSX = <h1>Hello JSX!</h1>;
 ```
 

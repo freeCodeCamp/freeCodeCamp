@@ -7,7 +7,7 @@ localeTitle: Atualização de Inventário
 ---
 
 ## Description
-<section id="description"> Compare e atualize o inventário armazenado em uma matriz 2D em relação a uma segunda matriz 2D de uma entrega nova. Atualize as quantidades atuais de itens de estoque existentes (em <code>arr1</code> ). Se um item não puder ser encontrado, adicione o novo item e a quantidade à matriz de estoque. A matriz de inventário retornada deve estar em ordem alfabética por item. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Compare e atualize o inventário armazenado em uma matriz 2D em relação a uma segunda matriz 2D de uma entrega nova. Atualize as quantidades atuais de itens de estoque existentes (em <code>arr1</code> ). Se um item não puder ser encontrado, adicione o novo item e a quantidade à matriz de estoque. A matriz de inventário retornada deve estar em ordem alfabética por item. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

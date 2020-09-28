@@ -1,3 +1,53 @@
-.tool-panel-group button, .tool-panel-group a {
+.tool-panel-group button,
+.tool-panel-group a {
   font-size: 1.1rem;
+}
+
+.tool-panel-group-mobile button,
+.tool-panel-group-mobile a {
+  font-size: 0.8rem;
+}
+
+.tool-panel-group-mobile {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.tool-panel-group-mobile > .btn-block,
+.tool-panel-group-mobile > .dropdown > .btn-block {
+  margin: 0 2px 0 0;
+  padding: 5px 0px;
+}
+
+.tool-panel-group .btn-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tool-panel-group-mobile .btn-group {
+  display: block;
+  width: 100%;
+  margin: 0 2px 0 2px;
+}
+
+.tool-panel-group-mobile .btn {
+  margin-bottom: 0 !important;
+}
+
+.tool-panel-group .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  width: calc(100% + 2px);
+  text-align: center;
+  min-width: 240px;
+  left: -1px;
+}
+
+.tool-panel-group .dropdown-menu a {
+  padding: 0.5rem;
+}
+
+#get-help-dropdown > .caret {
+  transform: rotate(180deg);
 }

@@ -1,0 +1,19 @@
+{
+  "name": "Legacy Information Security and Quality Assurance Certificate",
+  "isUpcomingChange": false,
+  "dashedName": "information-security-and-quality-assurance-certificate",
+  "order": 1,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "certificates",
+  "superOrder": 12,
+  "challengeOrder": [
+    [
+      "561add10cb82ac38a17213bc",
+      "Legacy Information Security and Quality Assurance Certificate"
+    ]
+  ],
+  "isPrivate": true,
+  "fileName": "12-certificates/information-security-and-quality-assurance-certificate.json"
+}

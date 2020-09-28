@@ -1,141 +1,449 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
-<li
-  className="block "
->
-  <div
-    className="map-title"
-    onClick={[Function]}
+<div>
+  <li
+    class="block "
   >
-    <Caret />
-    <h5>
-      Block A
-    </h5>
-  </div>
-  <ul />
-</li>
+    <button
+      aria-expanded="false"
+      class="map-title"
+    >
+      <svg
+        viewBox="0 0 100 100"
+        width="25px"
+      >
+        <polygon
+          points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+          style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+          transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
+        />
+      </svg>
+      <h4>
+        Block A
+      </h4>
+      <div
+        class="map-title-completed"
+      >
+        <span>
+          <span
+            class="sr-only"
+          >
+            Not Passed
+          </span>
+          <svg
+            height="50"
+            style="height: 15px; margin-right: 10px; width: 15px;"
+            viewBox="0 0 200 200"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <title>
+                Not Passed
+              </title>
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-background)"
+                r="95"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                stroke-width="10"
+              />
+            </g>
+          </svg>
+        </span>
+        <span>
+          2/5
+        </span>
+      </div>
+    </button>
+    <ul />
+  </li>
+</div>
 `;
 
 exports[`<Block expanded snapshot: block-expanded 1`] = `
-<li
-  className="block open"
->
-  <div
-    className="map-title"
-    onClick={[Function]}
+<div>
+  <li
+    class="block open"
   >
-    <Caret />
-    <h5>
-      Block A
-    </h5>
-  </div>
-  <ul>
-    <li
-      className="map-challenge-title"
+    <button
+      aria-expanded="true"
+      class="map-title"
     >
-      <span
-        className="badge map-badge"
-      />
-      <Unknown
-        onClick={[Function]}
-        to="/super-block-one/block-a"
+      <svg
+        viewBox="0 0 100 100"
+        width="25px"
       >
-        Introduction to Block A
-      </Unknown>
-    </li>
-    <li
-      className="map-challenge-title map-challenge-title-completed"
-    >
-      <span
-        className="badge map-badge"
-      >
-        <GreenPass
-          style={
-            Object {
-              "height": "15px",
-              "marginRight": "10px",
-              "width": "15px",
-            }
-          }
+        <polygon
+          points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+          style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+          transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
         />
-      </span>
-      <Unknown
-        onClick={[Function]}
-        to="/super-block-one/block-a/challenge-one"
+      </svg>
+      <h4>
+        Block A
+      </h4>
+      <div
+        class="map-title-completed"
       >
-        Challenge One
-      </Unknown>
-    </li>
-    <li
-      className="map-challenge-title"
-    >
-      <span
-        className="badge map-badge"
+        <span>
+          <span
+            class="sr-only"
+          >
+            Not Passed
+          </span>
+          <svg
+            height="50"
+            style="height: 15px; margin-right: 10px; width: 15px;"
+            viewBox="0 0 200 200"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <title>
+                Not Passed
+              </title>
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-background)"
+                r="95"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                stroke-width="10"
+              />
+            </g>
+          </svg>
+        </span>
+        <span>
+          2/5
+        </span>
+      </div>
+    </button>
+    <ul>
+      <li
+        class="map-challenge-title"
+        id="introduction-to-block-a"
       >
-        <GreenNotCompleted
-          style={
-            Object {
-              "height": "15px",
-              "marginRight": "10px",
-              "width": "15px",
-            }
-          }
-        />
-      </span>
-      <Unknown
-        onClick={[Function]}
-        to="/super-block-one/block-a/challenge-two"
+        <span
+          class="badge map-badge"
+        >
+          <span
+            class="sr-only"
+          >
+            IntroInformation
+          </span>
+          <svg
+            height="50"
+            style="height: 15px; margin-right: 10px; width: 15px;"
+            viewBox="0 0 200 200"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <title>
+                IntroInformation
+              </title>
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-background)"
+                r="95"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                stroke-width="10"
+              />
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-color)"
+                r="45"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                stroke-width="10"
+              />
+            </g>
+          </svg>
+        </span>
+        <a
+          href="/super-block-one/block-a"
+        >
+          Introduction to Block A
+        </a>
+      </li>
+      <li
+        class="map-challenge-title map-challenge-title-completed"
+        id="challenge-one"
       >
-        Challenge Two
-      </Unknown>
-    </li>
-    <li
-      className="map-challenge-title"
-    >
-      <span
-        className="badge map-badge"
+        <span
+          class="badge map-badge"
+        >
+          <span
+            class="sr-only"
+          >
+            Passed
+          </span>
+          <svg
+            height="50"
+            style="height: 15px; margin-right: 10px; width: 15px;"
+            viewBox="0 0 200 200"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <title>
+                Passed
+              </title>
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-color)"
+                r="95"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+              />
+              <rect
+                fill="var(--primary-background)"
+                height="30"
+                stroke="var(--primary-background)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                transform="rotate(-45, 120, 106.321)"
+                width="128.85878"
+                x="55.57059"
+                y="91.32089"
+              />
+              <rect
+                fill="var(--primary-background)"
+                height="30"
+                stroke="var(--primary-background)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                transform="rotate(45, 66.75, 123.75)"
+                width="80.66548"
+                x="26.41726"
+                y="108.75"
+              />
+            </g>
+          </svg>
+        </span>
+        <a
+          href="/super-block-one/block-a/challenge-one"
+        >
+          Challenge One
+        </a>
+      </li>
+      <li
+        class="map-challenge-title"
+        id="challenge-two"
       >
-        <GreenNotCompleted
-          style={
-            Object {
-              "height": "15px",
-              "marginRight": "10px",
-              "width": "15px",
-            }
-          }
-        />
-      </span>
-      <Unknown
-        onClick={[Function]}
-        to="/super-block-one/block-a/challenge-one"
+        <span
+          class="badge map-badge"
+        >
+          <span
+            class="sr-only"
+          >
+            Not Passed
+          </span>
+          <svg
+            height="50"
+            style="height: 15px; margin-right: 10px; width: 15px;"
+            viewBox="0 0 200 200"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <title>
+                Not Passed
+              </title>
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-background)"
+                r="95"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                stroke-width="10"
+              />
+            </g>
+          </svg>
+        </span>
+        <a
+          href="/super-block-one/block-a/challenge-two"
+        >
+          Challenge Two
+        </a>
+      </li>
+      <li
+        class="map-challenge-title"
+        id="challenge-one"
       >
-        Challenge One
-      </Unknown>
-    </li>
-    <li
-      className="map-challenge-title map-challenge-title-completed"
-    >
-      <span
-        className="badge map-badge"
+        <span
+          class="badge map-badge"
+        >
+          <span
+            class="sr-only"
+          >
+            Not Passed
+          </span>
+          <svg
+            height="50"
+            style="height: 15px; margin-right: 10px; width: 15px;"
+            viewBox="0 0 200 200"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <title>
+                Not Passed
+              </title>
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-background)"
+                r="95"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                stroke-width="10"
+              />
+            </g>
+          </svg>
+        </span>
+        <a
+          href="/super-block-two/block-a/challenge-one"
+        >
+          Challenge One
+        </a>
+      </li>
+      <li
+        class="map-challenge-title map-challenge-title-completed"
+        id="challenge-two"
       >
-        <GreenPass
-          style={
-            Object {
-              "height": "15px",
-              "marginRight": "10px",
-              "width": "15px",
-            }
-          }
-        />
-      </span>
-      <Unknown
-        onClick={[Function]}
-        to="/super-block-one/block-a/challenge-two"
+        <span
+          class="badge map-badge"
+        >
+          <span
+            class="sr-only"
+          >
+            Passed
+          </span>
+          <svg
+            height="50"
+            style="height: 15px; margin-right: 10px; width: 15px;"
+            viewBox="0 0 200 200"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <title>
+                Passed
+              </title>
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-color)"
+                r="95"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+              />
+              <rect
+                fill="var(--primary-background)"
+                height="30"
+                stroke="var(--primary-background)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                transform="rotate(-45, 120, 106.321)"
+                width="128.85878"
+                x="55.57059"
+                y="91.32089"
+              />
+              <rect
+                fill="var(--primary-background)"
+                height="30"
+                stroke="var(--primary-background)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                transform="rotate(45, 66.75, 123.75)"
+                width="80.66548"
+                x="26.41726"
+                y="108.75"
+              />
+            </g>
+          </svg>
+        </span>
+        <a
+          href="/super-block-two/block-a/challenge-two"
+        >
+          Challenge Two
+        </a>
+      </li>
+      <li
+        class="map-challenge-title"
+        id="challenge-one"
       >
-        Challenge Two
-      </Unknown>
-    </li>
-  </ul>
-</li>
+        <span
+          class="badge map-badge"
+        >
+          <span
+            class="sr-only"
+          >
+            Not Passed
+          </span>
+          <svg
+            height="50"
+            style="height: 15px; margin-right: 10px; width: 15px;"
+            viewBox="0 0 200 200"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <title>
+                Not Passed
+              </title>
+              <circle
+                cx="100"
+                cy="99"
+                fill="var(--primary-background)"
+                r="95"
+                stroke="var(--primary-color)"
+                stroke-dasharray="null"
+                stroke-linecap="null"
+                stroke-linejoin="null"
+                stroke-width="10"
+              />
+            </g>
+          </svg>
+        </span>
+        <a
+          href="/super-block-three/block-a/challenge-one"
+        >
+          Challenge One
+        </a>
+      </li>
+    </ul>
+  </li>
+</div>
 `;

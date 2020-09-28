@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036161
 title: Learn About Self-Closing JSX Tags
 challengeType: 6
-isRequired: false
+forumTopicId: 301396
 ---
 
 ## Description
@@ -25,11 +25,11 @@ Fix the errors in the code editor so that it is valid JSX and successfully trans
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: assert.strictEqual(JSX.type, 'div', 'The constant <code>JSX</code> should return a <code>div</code> element.');
+    testString: assert.strictEqual(JSX.type, 'div');
   - text: The <code>div</code> should contain a <code>br</code> tag.
-    testString: assert(Enzyme.shallow(JSX).find('br').length === 1, 'The <code>div</code> should contain a <code>br</code> tag.');
+    testString: assert(Enzyme.shallow(JSX).find('br').length === 1);
   - text: The <code>div</code> should contain an <code>hr</code> tag.
-    testString: assert(Enzyme.shallow(JSX).find('hr').length === 1, 'The <code>div</code> should contain an <code>hr</code> tag.');
+    testString: assert(Enzyme.shallow(JSX).find('hr').length === 1);
 
 ```
 
@@ -43,11 +43,9 @@ tests:
 ```jsx
 const JSX = (
   <div>
-    {/* remove comment and change code below this line
     <h2>Welcome to React!</h2> <br >
     <p>Be sure to close all tags!</p>
     <hr >
-    remove comment and change code above this line */}
   </div>
 );
 
@@ -59,7 +57,7 @@ const JSX = (
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
@@ -71,14 +69,12 @@ ReactDOM.render(JSX, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const JSX = (
 <div>
-  {/* change code below this line */}
   <h2>Welcome to React!</h2> <br />
   <p>Be sure to close all tags!</p>
   <hr />
-  {/* change code above this line */}
 </div>
 );
 ```

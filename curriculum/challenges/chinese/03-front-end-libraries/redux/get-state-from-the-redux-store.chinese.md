@@ -2,26 +2,29 @@
 id: 5a24c314108439a4d403614c
 title: Get State from the Redux Store
 challengeType: 6
-isRequired: false
-videoUrl: ''
-localeTitle: 从Redux商店获取状态
+forumTopicId: 301443
+localeTitle: 从 Redux Store 获取状态
 ---
 
 ## Description
-<section id="description"> Redux存储对象提供了几种允许您与之交互的方法。例如，您可以使用<code>getState()</code>方法检索Redux存储对象中保存的当前<code>state</code> 。 </section>
+<section id='description'>
+Redux store 对象提供了几种允许你与之交互的方法，你可以使用<code>getState()</code>方法检索 Redux store 对象中保存的当前的<code>state</code>。
+</section>
 
 ## Instructions
-<section id="instructions">上一个挑战中的代码在代码编辑器中更简洁地重写。使用<code>store.getState()</code>从<code>store</code>检索<code>state</code> ，并将其分配给新变量<code>currentState</code> 。 </section>
+<section id='instructions'>
+在代码编辑器中可以将上一个挑战中的代码更简洁地重写，在<code>store</code>中使用<code>store.getState()</code>检索<code>state</code>，并将其分配给新变量<code>currentState</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 对于初始状态，redux存储的值应为5。
-    testString: 'assert(store.getState()===5, "The redux store should have a value of 5 for the initial state.");'
-  - text: 应该存在一个变量<code>currentState</code> ，并且应该为其分配Redux存储的当前状态。
-    testString: 'getUserInput => assert(currentState === 5 && getUserInput("index").includes("store.getState()"), "A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.");'
+  - text: redux store 的 state 应该有一个初始值 5。
+    testString: assert(store.getState()===5);
+  - text: 应该存在一个变量<code>currentState</code>，并为其分配 Redux store 的当前状态。
+    testString: getUserInput => assert(currentState === 5 && getUserInput('index').includes('store.getState()'));
 
 ```
 
@@ -37,7 +40,7 @@ const store = Redux.createStore(
   (state = 5) => state
 );
 
-// change code below this line
+// 更改此行下方的代码
 
 ```
 
@@ -50,7 +53,14 @@ const store = Redux.createStore(
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const store = Redux.createStore(
+  (state = 5) => state
+);
+
+// 更改此行下方的代码
+const currentState = store.getState();
 ```
+
 </section>

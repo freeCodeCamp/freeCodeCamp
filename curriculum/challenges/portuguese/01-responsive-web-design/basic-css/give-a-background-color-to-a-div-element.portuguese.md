@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Dê uma cor de fundo para um elemento div
 ---
 
-## Description
-<section id="description"> Você pode definir a cor de fundo de um elemento com a propriedade <code>background-color</code> . Por exemplo, se você quisesse que a cor de fundo de um elemento fosse <code>green</code> , você colocaria isso no seu elemento de <code>style</code> : <blockquote> .green-background { <br> cor de fundo: verde; <br> } </blockquote></section>
+## Descrição
+<section id="description"> Você pode definir a cor de fundo de um elemento com a propriedade <code>background-color</code> . Por exemplo, se você quisesse que a cor de fundo de um elemento fosse <code>green</code> (verde), você colocaria isso no seu elemento de <code>style</code> : <blockquote> .green-background { <br> cor de fundo: verde; <br> } </blockquote></section>
 
-## Instructions
-<section id="instructions"> Crie uma classe chamada <code>silver-background</code> com a <code>background-color</code> de <code>background-color</code> de prata. Atribua essa classe ao seu elemento <code>div</code> . </section>
+## Instruções
+<section id="instructions"> Crie uma classe com o nome de <code>silver-background</code> com a <code>background-color</code> de <code>background-color</code> de prata. Atribua essa classe ao seu elemento <code>div</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -82,7 +82,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>
@@ -101,7 +101,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

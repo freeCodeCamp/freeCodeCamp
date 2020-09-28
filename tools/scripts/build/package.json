@@ -1,0 +1,25 @@
+{
+  "name": "@freecodecamp/scripts-build",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Build Scripts",
+  "main": "NA",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "author": "freeCodeCamp.org",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "devDependencies": {
+    "debug": "^4.0.1",
+    "dotenv": "^6.0.0",
+    "jest": "^24.9.0"
+  }
+}

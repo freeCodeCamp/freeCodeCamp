@@ -2,25 +2,30 @@
 id: 5a94fe8569fb03452672e464
 title: Create Grids within Grids
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/p/pByETK/c6N78Ap
+forumTopicId: 301128
 localeTitle: Создание гридов в сетках
 ---
 
 ## Description
-<section id="description"> Включение элемента в сетку влияет только на поведение его прямых потомков. Поэтому, превратив прямого потомка в сетку, у вас есть сетка внутри сетки. Например, задав свойства <code>display</code> и <code>grid-template-columns</code> элемента с классом <code>item3</code> , вы создаете сетку в своей сетке. </section>
+<section id='description'>
+Включение элемента в сетку влияет только на поведение его прямых потомков. Поэтому, превратив прямого потомка в сетку, у вас есть сетка внутри сетки. Например, задав свойства <code>display</code> и <code>grid-template-columns</code> элемента с классом <code>item3</code> , вы создаете сетку в своей сетке.
+</section>
 
 ## Instructions
-<section id="instructions"> Поверните элемент с классом <code>item3</code> в сетку с двумя столбцами с шириной <code>auto</code> и <code>1fr</code> используя <code>1fr</code> <code>display</code> и <code>grid-template-columns</code> . </section>
+<section id='instructions'>
+Поверните элемент с классом <code>item3</code> в сетку с двумя столбцами с шириной <code>auto</code> и <code>1fr</code> используя <code>1fr</code> <code>display</code> и <code>grid-template-columns</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>item3</code> должен иметь свойство <code>grid-template-columns</code> с <code>auto</code> и <code>1fr</code> как значения.
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.");'
-  - text: класс <code>item3</code> должен иметь свойство <code>display</code> со значением <code>grid</code> .
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.");'
+  - text: <code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.
+    testString: assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi));
+  - text: <code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.
+    testString: assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -95,14 +100,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".item3 {grid-template-columns: auto 1fr; display: grid;}"
 ```
+
 </section>

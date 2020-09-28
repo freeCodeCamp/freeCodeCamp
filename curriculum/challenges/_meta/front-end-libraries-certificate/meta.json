@@ -1,12 +1,13 @@
 {
   "name": "Front End Libraries Certificate",
+  "isUpcomingChange": false,
   "dashedName": "front-end-libraries-certificate",
   "order": 3,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 9,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "561acd10cb82ac38a17513bc",
@@ -14,5 +15,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "09-certificates/front-end-libraries-certificate.json"
+  "fileName": "12-certificates/front-end-libraries-certificate.json"
 }

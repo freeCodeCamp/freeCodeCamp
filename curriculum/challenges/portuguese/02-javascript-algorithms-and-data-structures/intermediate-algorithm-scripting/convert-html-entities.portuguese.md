@@ -1,14 +1,13 @@
 ---
 id: a6b0bb188d873cb2c8729495
 title: Convert HTML Entities
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Converter entidades HTML
 ---
 
 ## Description
-<section id="description"> Converta os caracteres <code>&amp;</code> , <code>&lt;</code> , <code>&gt;</code> , <code>&quot;</code> (aspas duplas) e <code>&#39;</code> (apóstrofo), em uma string para as entidades HTML correspondentes. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se ficar preso. Tente emparelhar o programa. próprio código. </section>
+<section id="description"> Converta os caracteres <code>&amp;</code> , <code>&lt;</code> , <code>&gt;</code> , <code>&quot;</code> (aspas duplas) e <code>&#39;</code> (apóstrofo), em uma string para as entidades HTML correspondentes. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se ficar preso. Tente emparelhar o programa. próprio código. </section>
 
 ## Instructions
 <section id="instructions">

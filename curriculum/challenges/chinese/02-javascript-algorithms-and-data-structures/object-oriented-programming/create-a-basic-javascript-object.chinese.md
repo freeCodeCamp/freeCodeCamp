@@ -2,27 +2,43 @@
 id: 587d7dac367417b2b2512b73
 title: Create a Basic JavaScript Object
 challengeType: 1
-videoUrl: ''
-localeTitle: 创建一个基本的JavaScript对象
+forumTopicId: 301317
+localeTitle: 创建一个基本的 JavaScript 对象
 ---
 
 ## Description
-<section id="description">想想人们每天看到的东西，比如汽车，商店和鸟类。这些都是<code>objects</code> ：人们可以观察和互动的有形事物。这些<code>objects</code>一些特质是什么？一辆车有轮子。商店出售物品。鸟有翅膀。这些品质或<code>properties</code>定义了构成<code>object</code> 。请注意，类似<code>objects</code>共享相同的<code>properties</code> ，但这些<code>properties</code>可能具有不同的值。例如，所有汽车都有轮子，但并非所有汽车都有相同数量的轮子。 JavaScript中的<code>Objects</code>用于模拟现实世界的对象，为它们提供<code>properties</code>和行为，就像它们的真实对象一样。这是使用这些概念创建<code>duck</code> <code>object</code>的示例： <blockquote>让duck = { <br>名称：“Aflac”， <br> numLegs：2 <br> }; </blockquote>这个<code>duck</code> <code>object</code>有两个属性/值对： <code>name</code> “Aflac”和<code>numLegs</code>为2。 </section>
+<section id='description'>
+想想我们在生活中每天都可见到的事物：比如汽车、商店以及小鸟等。它们都是<code>物体</code>：即人们可以观察和与之互动的实体事物。
+那么这些<code>物体</code>都有哪些特征呢？比如汽车的特征是有轮子，商店是用来出售商品的，而小鸟的特征是有翅膀。
+这些特征，或者说是<code>属性</code>定义了一个<code>物体</code>由什么构成的。需要注意的是：那些相似的<code>物体</code>可以拥有相同的<code>属性</code>，但是这些<code>属性</code>可能会有不同的值。举个例子：所有的汽车都有轮子，但并不是所有汽车的轮子个数都是一样的。
+JavaScript 中的<code>对象</code>可以用来描述现实世界中的物体，并赋予他们<code>属性</code>和行为，就像它们在现实世界中的对应物一样。下面是使用这些概念来创建一个<code>duck 对象</code>的示例：
+
+```js
+let duck = {
+  name: "Aflac",
+  numLegs: 2
+};
+```
+
+这个<code>duck 对象</code> 有两组键值对：一个是<code>name</code>属性，它的值是 "Aflac"；另一个是<code>numLegs</code>属性，它的值是 2。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>name</code>和<code>numLegs</code>属性创建一个<code>dog</code> <code>object</code> ，并将它们分别设置为字符串和数字。 </section>
+<section id='instructions'>
+创建一个<code>dog 对象</code>，并给这个对象添加两个属性：<code>name</code>和<code>numLegs</code>，同时把这两个属性的值分别设为字符串和数字。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>dog</code>应该是一个<code>object</code> 。
-    testString: 'assert(typeof(dog) === "object", "<code>dog</code> should be an <code>object</code>.");'
-  - text: <code>dog</code>应该将<code>name</code>属性设置为<code>string</code> 。
-    testString: 'assert(typeof(dog.name) === "string", "<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.");'
-  - text: <code>dog</code>应该将<code>numLegs</code>属性设置为<code>number</code> 。
-    testString: 'assert(typeof(dog.numLegs) === "number", "<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.");'
+  - text: <code>dog</code>应该是一个<code>object</code>。
+    testString: assert(typeof(dog) === 'object');
+  - text: <code>dog</code>应该有一个<code>name</code>属性，且它的值是一个<code>字符串<code>。
+    testString: assert(typeof(dog.name) === 'string');
+  - text: <code>dog</code>应该有一个<code>numLegs</code>属性，且它的值是一个<code>数字</code>。
+    testString: assert(typeof(dog.numLegs) === 'number');
 
 ```
 
@@ -37,7 +53,6 @@ tests:
 let dog = {
 
 };
-
 ```
 
 </div>
@@ -49,7 +64,12 @@ let dog = {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+let dog = {
+  name: '',
+  numLegs: 4
+};
 ```
+
 </section>

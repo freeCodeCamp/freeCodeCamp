@@ -14,6 +14,6 @@ In this section you will create the following small JavaScript programs:
  * Telephone Number Validator
  * Cash Register
 
-Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
+Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514) method if you get stuck.
 
 Good Luck!

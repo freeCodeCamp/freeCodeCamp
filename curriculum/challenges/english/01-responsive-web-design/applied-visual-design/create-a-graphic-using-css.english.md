@@ -3,6 +3,7 @@ id: 587d78a6367417b2b2512add
 title: Create a Graphic Using CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDWPs6'
+forumTopicId: 301048
 ---
 
 ## Description
@@ -24,11 +25,11 @@ Manipulate the square element in the editor to create the moon shape. First, cha
 ```yml
 tests:
   - text: The value of the <code>background-color</code> property should be set to <code>transparent</code>.
-    testString: assert(code.match(/background-color:\s*?transparent;/gi), 'The value of the <code>background-color</code> property should be set to <code>transparent</code>.');
+    testString: assert(code.match(/background-color:\s*?transparent;/gi));
   - text: The value of the <code>border-radius</code> property should be set to <code>50%</code>.
-    testString: assert(code.match(/border-radius:\s*?50%;/gi), 'The value of the <code>border-radius</code> property should be set to <code>50%</code>.');
+    testString: assert(code.match(/border-radius:\s*?50%;/gi));
   - text: The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.
-    testString: assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi), 'The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.');
+    testString: assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi));
 
 ```
 
@@ -41,21 +42,19 @@ tests:
 
 ```html
 <style>
-.center
-{
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-
-  background-color: blue;
-  border-radius: 0px;
-  box-shadow: 25px 10px 10px 10px green;
-}
+  .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 0px;
+    box-shadow: 25px 10px 10px 10px green;
+  }
 
 </style>
 <div class="center"></div>
@@ -71,8 +70,24 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".center {background-color: transparent; border-radius: 50%; box-shadow: 25px 10px 0px 0 blue;}"
+```html
+<style>
+  .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0 0 blue;
+  }
+</style>
+<div class="center"></div>
+
 ```
 
 </section>

@@ -1,5 +1,6 @@
 {
   "name": "Basic HTML and HTML5",
+  "isUpcomingChange": false,
   "dashedName": "basic-html-and-html5",
   "order": 0,
   "time": "5 hours",
@@ -99,6 +100,10 @@
     [
       "bad87fee1348bd9aedf08835",
       "Create a Set of Checkboxes"
+    ],
+    [
+      "5c6c06847491271903d37cfd",
+      "Use the value attribute with Radio Buttons and Checkboxes"
     ],
     [
       "bad87fee1348bd9aedd08835",

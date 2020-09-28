@@ -7,7 +7,7 @@ localeTitle: Use a propriedade de escala Transform do CSS para dimensionar um el
 ---
 
 ## Description
-<section id="description"> A propriedade <code>transform</code> possui uma variedade de funções que permite dimensionar, mover, girar, inclinar, etc., seus elementos. Quando usada com pseudo-classes, como <code>:hover</code> que especifica um determinado estado de um elemento, a propriedade <code>transform</code> pode facilmente adicionar interatividade aos seus elementos. Veja um exemplo para dimensionar os elementos de parágrafo para 2,1 vezes o tamanho original quando um usuário passa por cima deles: <blockquote> p: hover { <br> transformar: escala (2.1); <br> } </blockquote></section>
+<section id="description"> A propriedade <code>transform</code> possui uma variedade de funções que permite dimensionar, mover, girar, inclinar, etc., seus elementos. Quando usada com pseudo-classes, como <code>:hover</code> que especifica um determinado estado de um elemento, a propriedade <code>transform</code> pode facilmente adicionar interatividade aos seus elementos. Veja um exemplo para dimensionar os elementos de parágrafo para 2,1 vezes o tamanho original quando um usuário passa por cima deles: <blockquote>p:hover {<br>&nbsp;&nbsp;transform: scale(2.1);<br>}</blockquote></section>
 
 ## Instructions
 <section id="instructions"> Adicione uma regra CSS para o estado de <code>hover</code> do <code>div</code> e use a propriedade <code>transform</code> para dimensionar o elemento <code>div</code> para 1,1 vezes seu tamanho original quando um usuário passar por cima dele. </section>

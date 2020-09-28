@@ -2,27 +2,94 @@
 id: 587d7b87367417b2b2512b40
 title: Compare Scopes of the var and let Keywords
 challengeType: 1
-videoUrl: ''
-localeTitle: 比较var的范围并让关键字
+forumTopicId: 301195
+localeTitle: 比较 var 和 let 关键字的作用域
 ---
 
 ## Description
-<section id="description">使用<code>var</code>关键字声明变量时，它将全局声明，如果在函数内声明，则声明为本地。 <code>let</code>关键字的行为类似，但具有一些额外的功能。在块，语句或表达式中使用<code>let</code>关键字声明变量时，其范围仅限于该块，语句或表达式。例如： <blockquote> var numArray = []; <br> for（var i = 0; i &lt;3; i ++）{ <br> numArray.push（ⅰ）; <br> } <br>的console.log（numArray）; <br> //返回[0,1,2] <br>的console.log（ⅰ）; <br> //返回3 </blockquote>使用<code>var</code>关键字， <code>i</code>被全局声明。因此，当执行<code>i++</code>时，它会更新全局变量。此代码类似于以下内容： <blockquote> var numArray = []; <br> var i; <br> for（i = 0; i &lt;3; i ++）{ <br> numArray.push（ⅰ）; <br> } <br>的console.log（numArray）; <br> //返回[0,1,2] <br>的console.log（ⅰ）; <br> //返回3 </blockquote>如果您要创建一个函数并将其存储以供以后在使用<code>i</code>变量的for循环中使用，则此行为将导致问题。这是因为存储的函数将始终引用更新的全局<code>i</code>变量的值。 <blockquote> var printNumTwo; <br> for（var i = 0; i &lt;3; i ++）{ <br> if（i === 2）{ <br> printNumTwo = function（）{ <br>回归我; <br> }; <br> } <br> } <br>的console.log（printNumTwo（））; <br> //返回3 </blockquote>正如你所看到的， <code>printNumTwo()</code>打印3，而不是2.这是因为分配给该值<code>i</code>进行了更新和<code>printNumTwo()</code>返回全球<code>i</code> ，而不是价值<code>i</code>的作用是在创建for循环的时候了。 <code>let</code>关键字不遵循此行为： <blockquote> &#39;使用严格&#39;; <br>让printNumTwo; <br> for（let i = 0; i &lt;3; i ++）{ <br> if（i === 2）{ <br> printNumTwo = function（）{ <br>回归我; <br> }; <br> } <br> } <br>的console.log（printNumTwo（））; <br> //返回2 <br>的console.log（ⅰ）; <br> //返回“我没有定义” </blockquote> <code>i</code>没有定义，因为它没有在全局范围内声明。它仅在for循环语句中声明。 <code>printNumTwo()</code>返回正确的值，因为循环语句中的<code>let</code>关键字创建了具有唯一值（0,1和2）的三个不同的<code>i</code>变量。 </section>
+<section id='description'>
+当你使用<code>var</code>关键字来声明一个变量的时候，这个变量会被声明成全局变量，或是函数内的局部变量。
+<code>let</code>关键字的作用类似，但会有一些额外的特性。如果你在代码块、语句或表达式中使用关键字<code>let</code>声明变量，这个变量的作用域就被限制在当前的代码块，语句或表达式之中。
+举个例子：
+
+```js
+var numArray = [];
+for (var i = 0; i < 3; i++) {
+  numArray.push(i);
+}
+console.log(numArray);
+// 返回 [0, 1, 2]
+console.log(i);
+// 返回 3
+```
+
+当使用<code>var</code>关键字的时候，<code>i</code>会被声明成全局变量。当<code>i++</code>执行的时候，它会改变全局变量的值。这段代码可以看做下面这样:
+
+```js
+var numArray = [];
+var i;
+for (i = 0; i < 3; i++) {
+  numArray.push(i);
+}
+console.log(numArray);
+// 返回 [0, 1, 2]
+console.log(i);
+// 返回 3
+```
+
+如果你在<code>for</code>循环中创建了使用<code>i</code>变量的函数，那么在后续调用函数的时候，上面提到的这种行为就会出现问题。这是因为函数存储的值会因为全局变量<code>i</code>的变化而不断的改变。
+
+```js
+var printNumTwo;
+for (var i = 0; i < 3; i++) {
+  if (i === 2) {
+    printNumTwo = function() {
+      return i;
+    };
+  }
+}
+console.log(printNumTwo());
+// 返回 3
+```
+
+可以看到，<code>printNumTwo()</code>打印了 3 而不是 2。这是因为<code>i</code>发生了改变，并且函数<code>printNumTwo()</code>返回的是全局变量<code>i</code>的值，而不是<code>for</code>循环中创建函数时<code>i</code>的值。<code>let</code>关键字就不会有这种现象：
+
+```js
+'use strict';
+let printNumTwo;
+for (let i = 0; i < 3; i++) {
+  if (i === 2) {
+    printNumTwo = function() {
+      return i;
+    };
+  }
+}
+console.log(printNumTwo());
+// 返回 2
+console.log(i);
+// 返回 "i 未定义"
+```
+
+<code>i</code>在全局作用域中没有声明，所以它没有被定义，它的声明只会发生在<code>for</code>循环内。在循环执行的时候，<code>let</code>关键字创建了三个不同的<code>i</code>变量，他们的值分别为 0、1 和 2，所以<code>printNumTwo()</code>返回了正确的值。
+</section>
 
 ## Instructions
-<section id="instructions">修复代码，以便<code>i</code>在if语句中声明的是一个单独的变量，而不是<code>i</code>在函数的第一行声明的变量。确保不要在代码中的任何位置使用<code>var</code>关键字。本练习旨在说明<code>var</code>和<code>let</code>关键字如何将范围分配给声明的变量之间的区别。在编写与本练习中使用的函数类似的函数时，通常最好使用不同的变量名来避免混淆。 </section>
+<section id='instructions'>
+修改这段代码，使得在<code>if</code>语句中声明的<code>i</code>变量与在函数的第一行声明的<code>i</code>变量是彼此独立的。请注意不要在你的代码的任何地方使用<code>var</code>关键字。
+这个练习说明了使用<code>var</code>与<code>let</code>关键字声明变量时，作用域之间的不同。当编写类似这个练习中的函数的时候，通常来说最好还是使用不同的变量名来避免误会。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>var</code>在代码中不存在。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
-  - text: 在if语句中声明的变量<code>i</code>应该等于“块范围”。
-    testString: 'getUserInput => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
-  - text: <code>checkScope()</code>应该返回“函数范围”
-    testString: 'assert(checkScope() === "function scope", "<code>checkScope()</code> should return "function scope"");'
+  - text: <code>var</code>不应该在代码中存在。
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
+  - text: "在<code>if</code>语句中声明的<code>i</code>变量的值是 'block scope'。"
+    testString: getUserInput => assert(getUserInput('index').match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g));
+  - text: "<code>checkScope()</code>应当返回 'function scope'"
+    testString: assert(checkScope() === "function scope");
 
 ```
 
@@ -35,16 +102,15 @@ tests:
 
 ```js
 function checkScope() {
-"use strict";
-  var i = "function scope";
+  'use strict';
+  var i = 'function scope';
   if (true) {
-    i = "block scope";
-    console.log("Block scope i is: ", i);
+    i = 'block scope';
+    console.log('Block scope i is: ', i);
   }
-  console.log("Function scope i is: ", i);
+  console.log('Function scope i is: ', i);
   return i;
 }
-
 ```
 
 </div>
@@ -57,6 +123,17 @@ function checkScope() {
 <section id='solution'>
 
 ```js
-// solution required
+function checkScope() {
+  'use strict';
+  let i = 'function scope';
+  if (true) {
+    let i = 'block scope';
+    console.log('Block scope i is: ', i);
+  }
+ 
+  console.log('Function scope i is: ', i);
+  return i;
+}
 ```
+
 </section>

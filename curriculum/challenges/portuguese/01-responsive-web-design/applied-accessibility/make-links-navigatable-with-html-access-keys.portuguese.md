@@ -10,7 +10,7 @@ localeTitle: Tornar Links Navegáveis ​​com Chaves de Acesso HTML
 <section id="description"> O HTML oferece o atributo <code>accesskey</code> para especificar uma tecla de atalho para ativar ou trazer foco para um elemento. Isso pode tornar a navegação mais eficiente para usuários somente de teclado. O HTML5 permite que esse atributo seja usado em qualquer elemento, mas é particularmente útil quando usado com os interativos. Isso inclui links, botões e controles de formulário. Aqui está um exemplo: <code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> O Camper Cat quer que os links em torno dos dois títulos de artigos de blog tenham atalhos de teclado para que os usuários de seu site possam navegar rapidamente para a história completa. Adicione um atributo <code>accesskey</code> aos dois links e defina o primeiro para &quot;g&quot; (para Garfield) e o segundo para &quot;c&quot; (para Chuck Norris). </section>
+<section id="instructions"> O Camper Cat quer que os links em torno dos dois títulos de artigos do blog tenham atalhos de teclado para que os usuários de seu site possam navegar rapidamente para a história completa. Adicione um atributo <code>accesskey</code> aos dois links e defina o primeiro para &quot;g&quot; (para Garfield) e o segundo para &quot;c&quot; (para Chuck Norris). </section>
 
 ## Tests
 <section id='tests'>

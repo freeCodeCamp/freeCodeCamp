@@ -2,24 +2,33 @@
 id: bad88fee1348bd9aedf08825
 title: Adjust the Padding of an Element
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/adjust-the-padding-of-an-element'
-videoUrl: ''
-localeTitle: 调整元素的填充
+videoUrl: 'https://scrimba.com/c/cED8ZC2'
+forumTopicId: 301083
+localeTitle: 调整元素的内边距
 ---
 
 ## Description
-<section id="description">现在让我们将我们的Cat Photo App放一段时间，了解更多关于样式HTML的信息。您可能已经注意到了这一点，但所有HTML元素基本上都是小矩形。三个重要属性控制每个HTML元素周围的空间： <code>padding</code> ， <code>margin</code>和<code>border</code> 。元素的<code>padding</code>控制元素内容与其<code>border</code>之间的空间量。在这里，我们可以看到蓝色框和红色框嵌套在黄色框中。请注意，红色框具有比蓝色框更多的<code>padding</code> 。当您增加蓝框的<code>padding</code> ，它将增加文本与其周围边框之间的距离（ <code>padding</code> ）。 </section>
+<section id='description'>
+我们先暂时把猫咪图片放在一边，让我们去学习更多 HTML 相关样式。
+你可能已经注意到了，所有的 HTML 元素基本都是以矩形为基础。
+每个 HTML 元素周围的矩形空间由三个重要的属性来控制：<code>padding（内边距）</code>，<code>margin（外边距）</code>和<code>border（边框）</code>。
+<code>padding</code>控制着元素内容与<code>border</code>之间的空隙大小。
+在这里，我们可以看到蓝色框和红色框都在黄色框里面。可以发现，红色框比蓝色框有着更多的<code>padding</code>填充空间。
+当你增加蓝色框的<code>padding</code>值，文本内容与边框的距离会逐渐拉大。
+</section>
 
 ## Instructions
-<section id="instructions">更改蓝色框的<code>padding</code>以匹配红色框的<code>padding</code> 。 </section>
+<section id='instructions'>
+蓝色的框<code>padding</code>的值要跟红色框的一样大小。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>blue-box</code>类应该给出<code>20px</code>的<code>padding</code>元素。
-    testString: 'assert($(".blue-box").css("padding-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.");'
+  - text: '<code>blue-box</code> class 的<code>padding</code>值应为<code>20px</code>。'
+    testString: assert($(".blue-box").css("padding-top") === "20px");
 
 ```
 
@@ -48,7 +57,7 @@ tests:
     background-color: yellow;
     padding: 10px;
   }
-
+  
   .red-box {
     background-color: crimson;
     color: #fff;
@@ -67,7 +76,6 @@ tests:
   <h5 class="box red-box">padding</h5>
   <h5 class="box blue-box">padding</h5>
 </div>
-
 ```
 
 </div>
@@ -79,7 +87,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

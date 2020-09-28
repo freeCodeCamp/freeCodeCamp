@@ -3,6 +3,7 @@ id: 587d78a3367417b2b2512ad1
 title: Learn about Complementary Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MD3Tr'
+forumTopicId: 301056
 ---
 
 ## Description
@@ -13,7 +14,7 @@ Some examples of complementary colors with their hex codes are:
 <blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)</blockquote>
 This is different than the outdated RYB color model that many of us were taught in school, which has different primary and complementary colors. Modern color theory uses the additive RGB model (like on a computer screen) and the subtractive CMY(K) model (like in printing). Read <a href='https://en.wikipedia.org/wiki/Color_model' target='_blank'>here</a> for more information on this complex subject.
 There are many color picking tools available online that have an option to find the complement of a color.
-<strong>Note</strong><br>For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.
+<strong>Note:</strong> For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.
 </section>
 
 ## Instructions
@@ -27,9 +28,9 @@ Change the <code>background-color</code> property of the <code>blue</code> and <
 ```yml
 tests:
   - text: The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.
-    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');
+    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
   - text: The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.
-    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.');
+    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
 
 ```
 
@@ -70,7 +71,25 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  .blue {
+    background-color: blue;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+<div class="blue"></div>
+<div class="yellow"></div>
 ```
+
 </section>

@@ -1,5 +1,6 @@
 {
   "name": "jQuery",
+  "isUpcomingChange": false,
   "dashedName": "jquery",
   "order": 3,
   "time": "3 hours",

@@ -1,14 +1,13 @@
 ---
 id: a789b3483989747d63b0e427
 title: Return Largest Numbers in Arrays
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Retornar os maiores números em matrizes
 ---
 
 ## Description
-<section id="description"> Devolve um array que consiste no maior número de cada sub-array fornecido. Para simplificar, a matriz fornecida conterá exatamente quatro sub-matrizes. Lembre-se, você pode percorrer uma matriz com um loop for simples e acessar cada membro com a sintaxe de array <code>arr[i]</code> . Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Devolve um array que consiste no maior número de cada sub-array fornecido. Para simplificar, a matriz fornecida conterá exatamente quatro sub-matrizes. Lembre-se, você pode percorrer uma matriz com um loop for simples e acessar cada membro com a sintaxe de array <code>arr[i]</code> . Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">
@@ -57,6 +56,10 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
 <section id='solution'>
 
 ```js
-// solution required
+function largestOfFour(arr) {
+  return arr.map(i => Math.max(...i));
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
 ```
 </section>

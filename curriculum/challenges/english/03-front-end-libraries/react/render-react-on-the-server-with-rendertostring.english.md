@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403618d
 title: Render React on the Server with renderToString
 challengeType: 6
-isRequired: false
+forumTopicId: 301407
 ---
 
 ## Description
@@ -22,7 +22,7 @@ The <code>renderToString()</code> method is provided on <code>ReactDOMServer</co
 ```yml
 tests:
   - text: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.
-    testString: getUserInput => assert(getUserInput('index').replace(/ /g,').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div', 'The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.');
+    testString: getUserInput => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div');
 
 ```
 
@@ -44,7 +44,7 @@ class App extends React.Component {
   }
 };
 
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -62,7 +62,7 @@ var ReactDOMServer = { renderToString(x) { return null; } };
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
@@ -74,7 +74,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -84,7 +84,7 @@ class App extends React.Component {
   }
 };
 
-// change code below this line
+// Change code below this line
 ReactDOMServer.renderToString(<App/>);
 ```
 

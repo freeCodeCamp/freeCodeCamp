@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Anular declaraciones de clase con estilos en línea
 ---
 
-## Description
+## Descripción
 <section id="description"> Así que hemos comprobado que las declaraciones de identificación anulan las declaraciones de clase, independientemente de dónde se declaren en su elemento de <code>style</code> CSS. Hay otras formas en que puedes anular CSS. ¿Recuerdas los estilos en línea? </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Use un <code>inline style</code> para tratar de hacer que nuestro elemento <code>h1</code> blanco. Recuerde, los estilos de línea se ven así: <code>&lt;h1 style=&quot;color: green;&quot;&gt;</code> Deje las clases de <code>pink-text</code> <code>blue-text</code> y <code>pink-text</code> en su elemento <code>h1</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -64,7 +64,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

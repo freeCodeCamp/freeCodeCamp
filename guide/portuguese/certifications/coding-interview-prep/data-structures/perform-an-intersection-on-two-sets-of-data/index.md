@@ -1,9 +1,0 @@
----
-title: Perform an Intersection on Two Sets of Data
-localeTitle: Realizar uma interseção em dois conjuntos de dados
----
-## Realizar uma interseção em dois conjuntos de dados
-
-Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/perform-an-intersection-on-two-sets-of-data/index.md) .
-
-[Este guia de estilo rápido ajudará a garantir que sua solicitação de recebimento seja aceita](https://github.com/freecodecamp/guides/blob/master/README.md) .

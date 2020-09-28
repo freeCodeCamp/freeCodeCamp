@@ -2,23 +2,40 @@
 id: 5a94fe2669fb03452672e45e
 title: Use grid-area Without Creating an Areas Template
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用网格区域而不创建区域模板
+videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
+forumTopicId: 301135
+localeTitle: 使用 grid-area 创建区域模板
 ---
 
 ## Description
-<section id="description">您在上一次挑战中学习的<code>grid-area</code>属性可以以其他方式使用。如果您的网格没有要引用的区域模板，您可以动态创建一个区域，以便放置项目，如下所示： <blockquote> item1 {grid-area：1/1/2/4; } </blockquote>这是使用您之前了解的行号来定义此项目的区域。上例中的数字代表以下值： <blockquote>网格区域：水平线开始于/垂直线开始于/水平线结束于/垂直线结束于; </blockquote>因此，示例中的项目将使用第1行和第2行之间的行以及第1行和第4行之间的行。 </section>
+<section id='description'>
+你在上一次挑战中学到的<code>grid-area</code>属性有另一种使用方式。如果网格中没有定义区域模板，你也可以像这样为它添加一个模板：
+
+```css
+item1 { grid-area: 1/1/2/4; }
+```
+
+这里使用了你之前学习的网格线编号来定义网格项的区域。上例中数字代表这些值：
+
+```css
+grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+```
+
+因此，示例中的网格项将占用第 1 条水平网格线（起始）和第 2 条水平网格线（终止）之间的行，及第 1 条垂直网格线（起始）和第 4 条垂直网格线（终止）之间的列。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>grid-area</code>属性，将<code>item5</code>类的元素<code>item5</code>第三和第四条水平线之间以及第一条和第四条垂直线之间。 </section>
+<section id='instructions'>
+请用<code>grid-area</code>属性将类为<code>item5</code>的元素放置在第 3 条和第 4 条水平网格线及第 1 条和第 4 条水平网格线之间的区域内。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>item5</code>类应该具有值为<code>3/1/4/4</code>的<code>grid-area</code>属性。
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.");'
+  - text: '<code>item5</code>类应该有<code>grid-area</code>属性且值为<code>3/1/4/4</code>。'
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -35,15 +52,15 @@ tests:
   .item2{background:LightSalmon;}
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
-
+  
   .item5 {
     background: PaleGreen;
-    /* add your code below this line */
-
-
-    /* add your code above this line */
+    /* 请在本行以下添加你的代码 */
+    
+    
+    /* 请在本行以上添加你的代码 */
   }
-
+  
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -55,7 +72,7 @@ tests:
     grid-gap: 10px;
   }
 </style>
-
+  
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>
@@ -63,7 +80,6 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
-
 ```
 
 </div>
@@ -75,7 +91,10 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
 // solution required
 ```
+
 </section>
+              

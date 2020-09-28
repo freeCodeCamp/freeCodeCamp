@@ -2,23 +2,28 @@
 id: 587d78ad367417b2b2512af9
 title: Use the align-items Property in the Tweet Embed
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用Tweet Embed中的align-items属性
+videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
+forumTopicId: 301106
+localeTitle: 在推文中使用 align-items 属性
 ---
 
 ## Description
-<section id="description">最后一个挑战引入了<code>align-items</code>属性并举了一个例子。此属性可应用于一些tweet嵌入元素，以对齐其中的flex项。 </section>
+<section id='description'>
+上一个挑战介绍了<code>align-items</code>属性并给出了例子。可以对嵌入推文的一些元素使用这个属性，以调整其中 flex 子元素的位置。
+</section>
 
 ## Instructions
-<section id="instructions">将CSS属性<code>align-items</code>添加到标题的<code>.follow-btn</code>元素中。将值设置为居中。 </section>
+<section id='instructions'>
+在 header 的<code>.follow-btn</code>添加 CSS 属性<code>align-items</code>，把值设为 center。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>.follow-btn</code>元素应将<code>align-items</code>属性设置为center的值。
-    testString: 'assert($(".follow-btn").css("align-items") == "center", "The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.");'
+  - text: <code>.follow-btn</code>应有<code>align-items</code>属性，其值应为 <code>center</code>.
+    testString: assert($('.follow-btn').css('align-items') == 'center');
 
 ```
 
@@ -51,7 +56,7 @@ tests:
   }
   header .follow-btn {
     display: flex;
-
+    
     margin: 0 0 0 auto;
   }
   header .follow-btn button {
@@ -60,8 +65,7 @@ tests:
     padding: 5px;
   }
   header h3, header h4 {
-    display: flex;
-
+    display: flex;   
     margin: 0;
   }
   #inner p {
@@ -92,7 +96,7 @@ tests:
   }
 </style>
 <header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -121,7 +125,6 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
-
 ```
 
 </div>
@@ -133,7 +136,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

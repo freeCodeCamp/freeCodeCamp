@@ -1,42 +1,44 @@
 ---
 id: 587d7fa9367417b2b2512bcf
 title: Dynamically Change the Height of Each Bar
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
-videoUrl: ''
+forumTopicId: 301486
 localeTitle: Динамическое изменение высоты каждой панели
 ---
 
 ## Description
-<section id="description"> Высота каждой панели может быть установлена ​​на значение точки данных в массиве, подобно тому, как значение <code>x</code> было задано динамически. <blockquote> selection.attr (&quot;свойство&quot;, (d, i) =&gt; { <br> / * <br> * d - значение точки данных <br> * i - индекс точки данных в массиве <br> * / <br> }) </blockquote></section>
+<section id='description'>
+Высота каждой панели может быть установлена ​​на значение точки данных в массиве, подобно тому, как значение <code>x</code> было задано динамически. <blockquote> selection.attr (&quot;свойство&quot;, (d, i) =&gt; { <br> / * <br> * d - значение точки данных <br> * i - индекс точки данных в массиве <br> * / <br> }) </blockquote>
+</section>
 
 ## Instructions
-<section id="instructions"> Измените функцию обратного вызова для атрибута <code>height</code> чтобы вернуть значение времени данных 3. <strong>Примечание.</strong> <br> Помните, что умножение всех точек данных на одну и ту же константу масштабирует данные (например, масштабирование). Это помогает увидеть различия между значениями бар в этом примере. </section>
+<section id='instructions'>
+Измените функцию обратного вызова для атрибута <code>height</code> чтобы вернуть значение времени данных 3. <strong>Примечание.</strong> <br> Помните, что умножение всех точек данных на одну и ту же константу масштабирует данные (например, масштабирование). Это помогает увидеть различия между значениями бар в этом примере.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Первый <code>rect</code> должен иметь <code>height</code> 36.
-    testString: 'assert($("rect").eq(0).attr("height") == "36", "The first <code>rect</code> should have a <code>height</code> of 36.");'
-  - text: Второй <code>rect</code> должен иметь <code>height</code> 93.
-    testString: 'assert($("rect").eq(1).attr("height") == "93", "The second <code>rect</code> should have a <code>height</code> of 93.");'
-  - text: Третий <code>rect</code> должен иметь <code>height</code> 66.
-    testString: 'assert($("rect").eq(2).attr("height") == "66", "The third <code>rect</code> should have a <code>height</code> of 66.");'
-  - text: Четвертый <code>rect</code> должен иметь <code>height</code> 51.
-    testString: 'assert($("rect").eq(3).attr("height") == "51", "The fourth <code>rect</code> should have a <code>height</code> of 51.");'
-  - text: Пятый <code>rect</code> должен иметь <code>height</code> 75.
-    testString: 'assert($("rect").eq(4).attr("height") == "75", "The fifth <code>rect</code> should have a <code>height</code> of 75.");'
-  - text: Шестой <code>rect</code> должен иметь <code>height</code> 54.
-    testString: 'assert($("rect").eq(5).attr("height") == "54", "The sixth <code>rect</code> should have a <code>height</code> of 54.");'
-  - text: Седьмой <code>rect</code> должен иметь <code>height</code> 87.
-    testString: 'assert($("rect").eq(6).attr("height") == "87", "The seventh <code>rect</code> should have a <code>height</code> of 87.");'
-  - text: Восьмой <code>rect</code> должен иметь <code>height</code> 42.
-    testString: 'assert($("rect").eq(7).attr("height") == "42", "The eighth <code>rect</code> should have a <code>height</code> of 42.");'
-  - text: Девятый <code>rect</code> должен иметь <code>height</code> 27.
-    testString: 'assert($("rect").eq(8).attr("height") == "27", "The ninth <code>rect</code> should have a <code>height</code> of 27.");'
+  - text: The first <code>rect</code> should have a <code>height</code> of 36.
+    testString: assert($('rect').eq(0).attr('height') == '36');
+  - text: The second <code>rect</code> should have a <code>height</code> of 93.
+    testString: assert($('rect').eq(1).attr('height') == '93');
+  - text: The third <code>rect</code> should have a <code>height</code> of 66.
+    testString: assert($('rect').eq(2).attr('height') == '66');
+  - text: The fourth <code>rect</code> should have a <code>height</code> of 51.
+    testString: assert($('rect').eq(3).attr('height') == '51');
+  - text: The fifth <code>rect</code> should have a <code>height</code> of 75.
+    testString: assert($('rect').eq(4).attr('height') == '75');
+  - text: The sixth <code>rect</code> should have a <code>height</code> of 54.
+    testString: assert($('rect').eq(5).attr('height') == '54');
+  - text: The seventh <code>rect</code> should have a <code>height</code> of 87.
+    testString: assert($('rect').eq(6).attr('height') == '87');
+  - text: The eighth <code>rect</code> should have a <code>height</code> of 42.
+    testString: assert($('rect').eq(7).attr('height') == '42');
+  - text: The ninth <code>rect</code> should have a <code>height</code> of 27.
+    testString: assert($('rect').eq(8).attr('height') == '27');
 
 ```
 
@@ -81,14 +83,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

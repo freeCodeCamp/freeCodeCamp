@@ -7,10 +7,10 @@ localeTitle: Enlace a páginas externas con elementos de anclaje
 ---
 
 ## Description
-<section id="description"> Puede usar elementos de <code>anchor</code> para vincular contenido fuera de su página web. <code>anchor</code> elementos de <code>anchor</code> necesitan una dirección web de destino denominada atributo <code>href</code> . También necesitan texto de anclaje. Aquí hay un ejemplo: <code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code> Luego, su navegador mostrará el texto <strong>&quot;este enlace a freecodecamp.org&quot;</strong> como un enlace en el que puede hacer clic. Y ese enlace lo llevará a la dirección web <strong>https://www.freecodecamp.org</strong> . </section>
+<section id="description"> Puede usar elementos de anclaje <code>anchor</code> para vincular contenido fuera de su página web.  los elementos de anclaje <code>anchor</code> necesitan una dirección web de destino denominada atributo <code>href</code> . También necesitara agregar texto al elemento de anclaje. Aquí hay un ejemplo: <code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code> Luego, su navegador mostrará el texto <strong>&quot;este enlace a freecodecamp.org&quot;</strong> como un enlace en el que puede hacer clic. Y ese enlace lo llevará a la dirección web <strong>https://www.freecodecamp.org</strong> . </section>
 
 ## Instructions
-<section id="instructions"> Crear una <code>a</code> elemento que une a <code>http://freecatphotoapp.com</code> y tiene &quot;fotos del gato&quot; como su <code>anchor text</code> . </section>
+<section id="instructions"> Crear un elemento de anclaje <code>a</code>  que une a <code>https://freecatphotoapp.com</code> y tiene &quot;fotos de gatos&quot; como su texto de anclaje <code>anchor text</code> . </section>
 
 ## Tests
 <section id='tests'>

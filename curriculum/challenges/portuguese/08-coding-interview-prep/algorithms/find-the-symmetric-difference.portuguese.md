@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Encontre a diferença simétrica
 ---
 
-## Description
-<section id="description"> Crie uma função que receba dois ou mais arrays e retorne um array da <dfn>diferença simétrica</dfn> ( <code>△</code> ou <code>⊕</code> ) dos arrays fornecidos. Dados dois conjuntos (por exemplo, conjunto <code>A = {1, 2, 3}</code> e conjunto <code>B = {2, 3, 4}</code> ), o termo matemático &quot;diferença simétrica&quot; ​​de dois conjuntos é o conjunto de elementos que estão em qualquer um dos dois conjuntos, mas não em ambos ( <code>A △ B = C = {1, 4}</code> ). Para cada diferença simétrica adicional que você tomar (digamos em um conjunto <code>D = {2, 3}</code> ), você deve obter o conjunto com elementos que estão em um dos dois conjuntos, mas não em ambos ( <code>C △ D = {1, 4} △ {2, 3} = {1, 2, 3, 4}</code> ). A matriz resultante deve conter apenas valores exclusivos ( <em>sem duplicatas</em> ). Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+## Descrição
+<section id="description"> Crie uma função que receba dois ou mais arrays e retorne um array da <dfn>diferença simétrica</dfn> ( <code>△</code> ou <code>⊕</code> ) dos arrays fornecidos. Dados dois conjuntos (por exemplo, conjunto <code>A = {1, 2, 3}</code> e conjunto <code>B = {2, 3, 4}</code> ), o termo matemático &quot;diferença simétrica&quot; ​​de dois conjuntos é o conjunto de elementos que estão em qualquer um dos dois conjuntos, mas não em ambos ( <code>A △ B = C = {1, 4}</code> ). Para cada diferença simétrica adicional que você tomar (digamos em um conjunto <code>D = {2, 3}</code> ), você deve obter o conjunto com elementos que estão em um dos dois conjuntos, mas não em ambos ( <code>C △ D = {1, 4} △ {2, 3} = {1, 2, 3, 4}</code> ). A matriz resultante deve conter apenas valores exclusivos ( <em>sem duplicatas</em> ). Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -71,10 +71,10 @@ sym([1, 2, 3], [5, 2, 1, 4]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
-// solution required
+// Solução obrigatória
 ```
 </section>

@@ -2,15 +2,18 @@
 id: 5900f42f1000cf542c50ff41
 challengeType: 5
 title: 'Problem 193: Squarefree Numbers'
-videoUrl: ''
+forumTopicId: 301831
 localeTitle: 'Задача 193: Квадратные числа'
 ---
 
 ## Description
-<section id="description"> Положительное целое число n называется квадратным, если квадрат простого числа n не делится, поэтому 1, 2, 3, 5, 6, 7, 10, 11 являются квадратными, но не 4, 8, 9, 12. <p> Сколько квадратных чисел там ниже 250? </p></section>
+<section id='description'>
+Положительное целое число n называется квадратным, если квадрат простого числа n не делится, поэтому 1, 2, 3, 5, 6, 7, 10, 11 являются квадратными, но не 4, 8, 9, 12. <p> Сколько квадратных чисел там ниже 250? </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 193: Квадратные числа'
 
 ```yml
 tests:
-  - text: <code>euler193()</code> должен вернуть 684465067343069.
-    testString: 'assert.strictEqual(euler193(), 684465067343069, "<code>euler193()</code> should return 684465067343069.");'
+  - text: <code>euler193()</code> should return 684465067343069.
+    testString: assert.strictEqual(euler193(), 684465067343069);
 
 ```
 
@@ -42,8 +45,6 @@ euler193();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler193();
 ```js
 // solution required
 ```
+
 </section>

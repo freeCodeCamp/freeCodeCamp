@@ -11,21 +11,18 @@ import { ofType } from 'redux-observable';
 import { navigate } from 'gatsby';
 
 import {
-  backendFormValuesSelector,
   projectFormValuesSelector,
-  submitComplete,
   types,
   challengeMetaSelector,
   challengeTestsSelector,
   closeModal,
   challengeFilesSelector,
-  updateProjectFormValues
+  updateSolutionFormValues
 } from './';
 import {
   userSelector,
   isSignedInSelector,
-  openDonationModal,
-  showDonationSelector,
+  submitComplete,
   updateComplete,
   updateFailed
 } from '../../../redux';
@@ -52,8 +49,12 @@ function postChallenge(update, username) {
 }
 
 function submitModern(type, state) {
+  const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
-  if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
+  if (
+    challengeType === 11 ||
+    (tests.length > 0 && tests.every(test => test.pass && !test.err))
+  ) {
     if (type === types.checkChallenge) {
       return of({ type: 'this was a check challenge' });
     }
@@ -94,7 +95,7 @@ function submitProject(type, state) {
     payload: challengeInfo
   };
   return postChallenge(update, username).pipe(
-    concat(of(updateProjectFormValues({})))
+    concat(of(updateSolutionFormValues({})))
   );
 }
 
@@ -104,9 +105,9 @@ function submitBackendChallenge(type, state) {
     if (type === types.submitChallenge) {
       const { id } = challengeMetaSelector(state);
       const { username } = userSelector(state);
-      const { solution: { value: solution } } = backendFormValuesSelector(
-        state
-      );
+      const {
+        solution: { value: solution }
+      } = projectFormValuesSelector(state);
       const challengeInfo = { id, solution };
 
       const update = {
@@ -126,20 +127,15 @@ const submitters = {
   'project.backEnd': submitProject
 };
 
-function shouldShowDonate(state) {
-  return showDonationSelector(state) ? of(openDonationModal()) : empty();
-}
-
 export default function completionEpic(action$, state$) {
   return action$.pipe(
     ofType(types.submitChallenge),
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
-      const { isDonating } = userSelector(state);
       const { nextChallengePath, introPath, challengeType } = meta;
-      const showDonate = isDonating ? empty() : shouldShowDonate(state);
       const closeChallengeModal = of(closeModal('completion'));
+
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
         !(challengeType in submitTypes) ||
@@ -157,7 +153,6 @@ export default function completionEpic(action$, state$) {
       return submitter(type, state).pipe(
         tap(() => navigate(introPath ? introPath : nextChallengePath)),
         concat(closeChallengeModal),
-        concat(showDonate),
         filter(Boolean)
       );
     })

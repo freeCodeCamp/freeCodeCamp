@@ -7,7 +7,7 @@ localeTitle: Criar um botão de bootstrap de elemento de bloco
 ---
 
 ## Description
-<section id="description"> Normalmente, seus elementos de <code>button</code> com as classes <code>btn</code> e <code>btn-default</code> são tão largos quanto o texto que eles contêm. Por exemplo: <code>&lt;button class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;</code> Esse botão seria tão largo quanto a palavra &quot;Enviar&quot;. <button class="btn btn-default">Enviar</button> Ao torná-los elementos de bloco com a classe adicional de <code>btn-block</code> , seu botão se estenderá para preencher todo o espaço horizontal de sua página e todos os elementos seguintes irão fluir para uma &quot;nova linha&quot; abaixo do bloco. <code>&lt;button class=&quot;btn btn-default btn-block&quot;&gt;Submit&lt;/button&gt;</code> Esse botão ocuparia 100% da largura disponível. <button class="btn btn-default btn-block">Enviar</button> Observe que esses botões ainda precisam da classe <code>btn</code> . Adicione a classe <code>btn-block</code> Bootstrap ao seu botão Bootstrap. </section>
+<section id="description"> Normalmente, seus elementos de <code>button</code> com as classes <code>btn</code> e <code>btn-default</code> são tão largos quanto o texto que eles contêm. Por exemplo: <code>&lt;button class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;</code> Esse botão seria tão largo quanto a palavra &quot;Submit&quot;. <button class="btn btn-default">Submit</button> Ao torná-los elementos de bloco com a classe adicional de <code>btn-block</code> , seu botão se estenderá para preencher todo o espaço horizontal de sua página e todos os elementos seguintes irão fluir para uma &quot;nova linha&quot; abaixo do bloco. <code>&lt;button class=&quot;btn btn-default btn-block&quot;&gt;Submit&lt;/button&gt;</code> Esse botão ocuparia 100% da largura disponível. <button class="btn btn-default btn-block">Submit</button> Observe que esses botões ainda precisam da classe <code>btn</code> . Adicione a classe <code>btn-block</code> Bootstrap ao seu botão Bootstrap. </section>
 
 ## Instructions
 <section id="instructions">
@@ -83,7 +83,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>

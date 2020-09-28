@@ -7,7 +7,7 @@ localeTitle: استخدم شبكة Bootstrap لوضع عناصر جنبًا إل
 ---
 
 ## Description
-<section id="description"> يستخدم Bootstrap نظام شبكة متجاوزة من 12 عمودًا ، مما يجعل من السهل وضع العناصر في صفوف وتحديد العرض النسبي لكل عنصر. يمكن تطبيق معظم طبقات Bootstrap على عنصر <code>div</code> . يحتوي Bootstrap على خصائص عرض العمود المختلفة التي يستخدمها بناءً على مدى اتساع شاشة المستخدم. على سبيل المثال ، تشتمل الهواتف على شاشات ضيقة ، كما تحتوي أجهزة الكمبيوتر المحمولة على شاشات أوسع. خذ على سبيل المثال الطبقة <code>col-md-*</code> في Bootstrap. هنا ، <code>md</code> تعني medium ، و <code>*</code> هو رقم يحدد عدد الأعمدة التي يجب أن يكون العنصر فيها. في هذه الحالة ، يتم تحديد عرض العمود لعنصر على شاشة متوسطة الحجم ، مثل الكمبيوتر المحمول. في تطبيق Cat Photo الذي نقوم ببنائه ، سنستخدم <code>col-xs-*</code> ، حيث <code>xs</code> تعني مساحة صغيرة جدًا (مثل شاشة الهاتف المحمول الصغيرة جدًا) ، و <code>*</code> هو عدد الأعمدة التي تحدد عدد الأعمدة على نطاق واسع يجب أن يكون العنصر. ضع زري &quot; <code>Like</code> و &quot; <code>Info</code> و &quot; <code>Delete</code> جنبًا إلى جنب من خلال تضمين كل ثلاثة منهم في عنصر واحد <code>&lt;div class=&quot;row&quot;&gt;</code> ، ثم كل واحد منهم داخل عنصر <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> . يتم تطبيق فئة <code>row</code> على <code>div</code> ، ويمكن أن تتداخل الأزرار نفسها داخلها. </section>
+<section id="description"> يستخدم Bootstrap نظام شبكة متجاوزة من 12 عمودًا ، مما يجعل من السهل وضع العناصر في صفوف وتحديد العرض النسبي لكل عنصر. يمكن تطبيق معظم طبقات Bootstrap على عنصر <code>div</code> . يحتوي Bootstrap على خصائص عرض العمود المختلفة التي يستخدمها بناءً على مدى اتساع شاشة المستخدم. على سبيل المثال ، تشتمل الهواتف على شاشات ضيقة ، كما تحتوي أجهزة الكمبيوتر المحمولة على شاشات أوسع. خذ على سبيل المثال الطبقة <code>col-md-*</code> في Bootstrap. هنا ، <code>md</code> تعني medium ، و <code>*</code> هو رقم يحدد عدد الأعمدة التي يجب أن يكون العنصر فيها. في هذه الحالة ، يتم تحديد عرض العمود لعنصر على شاشة متوسطة الحجم ، مثل الكمبيوتر المحمول. في تطبيق Cat Photo الذي نقوم ببنائه ، سنستخدم <code>col-xs-*</code> ، حيث <code>xs</code> تعني مساحة صغيرة جدًا (مثل شاشة الهاتف المحمول الصغيرة جدًا) ، و <code>*</code> هو عدد الأعمدة التي تحدد عدد الأعمدة على نطاق واسع يجب أن يكون العنصر. ضع زري <code>Like</code> و  <code>Info</code> و  <code>Delete</code> جنبًا إلى جنب من خلال تضمين كل ثلاثة منهم في عنصر واحد <code>&lt;div class=&quot;row&quot;&gt;</code> ، ثم كل واحد منهم داخل عنصر <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> . يتم تطبيق فئة <code>row</code> على <code>div</code> ، ويمكن أن تتداخل الأزرار نفسها داخلها. </section>
 
 ## Instructions
 undefined
@@ -86,7 +86,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>

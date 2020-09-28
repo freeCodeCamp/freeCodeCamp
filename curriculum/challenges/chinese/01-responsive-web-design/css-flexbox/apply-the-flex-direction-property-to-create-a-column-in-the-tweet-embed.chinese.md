@@ -2,23 +2,28 @@
 id: 587d78ac367417b2b2512af5
 title: Apply the flex-direction Property to Create a Column in the Tweet Embed
 challengeType: 0
-videoUrl: ''
-localeTitle: 应用flex-direction属性在Tweet Embed中创建一个列
+videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
+forumTopicId: 301103
+localeTitle: 使用 flex-direction 在嵌入推文中创建一列
 ---
 
 ## Description
-<section id="description"> tweet嵌入<code>header</code>和<code>footer</code>先前使用了<code>flex-direction</code>属性和行值。同样， <code>.profile-name</code>元素中的项目可以很好地堆叠为列。 </section>
+<section id='description'>
+在上一个挑战中，把嵌入推文的<code>header</code>和<code>footer</code>的<code>flex-direction</code>属性值设为 row（行）。相似地，把<code>.profile-name</code>选择器对应的元素竖着排列会好看一点。
+</section>
 
 ## Instructions
-<section id="instructions">将CSS属性<code>flex-direction</code>添加到标头的<code>.profile-name</code>元素，并将值设置为column。 </section>
+<section id='instructions'>
+在 header 的<code>.profile-name</code>元素添加 CSS 属性<code>flex-direction</code>，将其值设为 column。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>.profile-name</code>元素应将<code>flex-direction</code>属性设置为column。
-    testString: 'assert($(".profile-name").css("flex-direction") == "column", "The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.");'
+  - text: '<code>.profile-name</code>应有<code>flex-direction</code>属性，其值应为 column。'
+    testString: assert($('.profile-name').css('flex-direction') == 'column');
 
 ```
 
@@ -45,7 +50,7 @@ tests:
   }
   header .profile-name {
     display: flex;
-
+    
     margin-left: 10px;
   }
   header .follow-btn {
@@ -89,7 +94,7 @@ tests:
   }
 </style>
 <header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -118,7 +123,6 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
-
 ```
 
 </div>
@@ -130,7 +134,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

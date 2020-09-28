@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036178
 title: Create a Controlled Input
 challengeType: 6
-isRequired: false
+forumTopicId: 301385
 ---
 
 ## Description
@@ -25,11 +25,11 @@ Last but not least, don't forget to add the necessary bindings in the constructo
 ```yml
 tests:
   - text: <code>ControlledInput</code> should return a <code>div</code> element which contains an <code>input</code> and a <code>p</code> tag.
-    testString: assert(Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('input').length === 1 && Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('p').length === 1, '<code>ControlledInput</code> should return a <code>div</code> element which contains an <code>input</code> and a <code>p</code> tag.');
+    testString: assert(Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('input').length === 1 && Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('p').length === 1);
   - text: The state of <code>ControlledInput</code> should initialize with an <code>input</code> property set to an empty string.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(ControlledInput)).state('input'), '', 'The state of <code>ControlledInput</code> should initialize with an <code>input</code> property set to an empty string.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(ControlledInput)).state('input'), '');
   - text: Typing in the input element should update the state and the value of the input, and the <code>p</code> element should render this state as you type.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(ControlledInput)); const _1 = () => { mockedComponent.setState({ input: '''' }); return waitForIt(() => mockedComponent.state(''input''))}; const _2 = () => { mockedComponent.find(''input'').simulate(''change'', { target: { value: ''TestInput'' }}); return waitForIt(() => ({ state: mockedComponent.state(''input''), text: mockedComponent.find(''p'').text(), inputVal: mockedComponent.find(''input'').props().value }))}; const before = await _1(); const after = await _2(); assert(before === '''' && after.state === ''TestInput'' && after.text === ''TestInput'' && after.inputVal === ''TestInput'', ''Typing in the input element should update the state and the value of the input, and the <code>p</code> element should render this state as you type.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(ControlledInput)); const _1 = () => { mockedComponent.setState({ input: '''' }); return waitForIt(() => mockedComponent.state(''input''))}; const _2 = () => { mockedComponent.find(''input'').simulate(''change'', { target: { value: ''TestInput'' }}); return waitForIt(() => ({ state: mockedComponent.state(''input''), text: mockedComponent.find(''p'').text(), inputVal: mockedComponent.find(''input'').props().value }))}; const before = await _1(); const after = await _2(); assert(before === '''' && after.state === ''TestInput'' && after.text === ''TestInput'' && after.inputVal === ''TestInput''); }; '
 
 ```
 
@@ -47,19 +47,19 @@ class ControlledInput extends React.Component {
     this.state = {
       input: ''
     };
-    // change code below this line
+    // Change code below this line
 
-    // change code above this line
+    // Change code above this line
   }
-  // change code below this line
+  // Change code below this line
 
-  // change code above this line
+  // Change code above this line
   render() {
     return (
       <div>
-        { /* change code below this line */}
+        { /* Change code below this line */}
 
-        { /* change code above this line */}
+        { /* Change code above this line */}
         <h4>Controlled Input:</h4>
         <p>{this.state.input}</p>
       </div>
@@ -74,7 +74,7 @@ class ControlledInput extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ControlledInput />, document.getElementById('root'))
 ```
 
@@ -86,7 +86,7 @@ ReactDOM.render(<ControlledInput />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class ControlledInput extends React.Component {
   constructor(props) {
     super(props);

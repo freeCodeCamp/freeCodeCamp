@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Estilo de elementos múltiples con una clase CSS
 ---
 
-## Description
+## Descripción
 <section id="description"> Las clases le permiten usar los mismos estilos CSS en varios elementos HTML. Puedes ver esto aplicando tu clase de <code>red-text</code> al primer elemento <code>p</code> . </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -47,33 +47,33 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Haga clic aquí para ver más <a href="#">fotos de gatos</a>.</p>
 
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <div>
-    <p>Things cats love:</p>
+    <p>Cosas que los gatos aman:</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>pellizco de gato</li>
+      <li>punteros laser</li>
+      <li>lasaña</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>3 cosas que odian los gatos:</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>tratamiento de pulgas</li>
+      <li>trueno</li>
+      <li>otros gatos</li>
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Interior</label>
+    <label><input type="radio" name="indoor-outdoor"> Exterior</label><br>
+    <label><input type="checkbox" name="personality" checked> Amoroso</label>
+    <label><input type="checkbox" name="personality"> Perezoso</label>
+    <label><input type="checkbox" name="personality"> Energético</label><br>
     <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+    <button type="submit">Enviar</button>
   </form>
 </main>
 
@@ -85,7 +85,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

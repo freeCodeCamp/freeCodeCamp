@@ -1,81 +1,79 @@
-/* global expect */
+/* global jest, expect */
 
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import sinon from 'sinon';
+import { render, fireEvent } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { createStore } from '../../../redux/createStore';
 
 import { SuperBlock } from './SuperBlock';
-import mockNodes from '../../../__mocks__/map-nodes';
+import mockChallengeNodes from '../../../__mocks__/challenge-nodes';
 import mockIntroNodes from '../../../__mocks__/intro-nodes';
 
-Enzyme.configure({ adapter: new Adapter() });
-const renderer = new ShallowRenderer();
+function renderWithRedux(ui, store) {
+  return render(<Provider store={store || createStore()}>{ui}</Provider>);
+}
 
 test('<SuperBlock /> not expanded snapshot', () => {
-  const toggleSpy = sinon.spy();
   const props = {
     introNodes: mockIntroNodes,
     isExpanded: false,
-    nodes: mockNodes,
+    nodes: mockChallengeNodes,
     superBlock: 'Super Block One',
-    toggleSuperBlock: toggleSpy
+    toggleSuperBlock: () => {}
   };
-  const componentToRender = <SuperBlock {...props} />;
-  const component = renderer.render(componentToRender);
 
-  expect(component).toMatchSnapshot('superBlock-not-expanded');
+  const { container } = render(<SuperBlock {...props} />);
+
+  expect(container).toMatchSnapshot('superBlock-not-expanded');
 });
 
 test('<SuperBlock /> expanded snapshot', () => {
-  const toggleSpy = sinon.spy();
   const props = {
     introNodes: mockIntroNodes,
     isExpanded: true,
-    nodes: mockNodes,
+    nodes: mockChallengeNodes,
     superBlock: 'Super Block One',
-    toggleSuperBlock: toggleSpy
+    toggleSuperBlock: () => {}
   };
-  const componentToRender = <SuperBlock {...props} />;
-  const component = renderer.render(componentToRender);
 
-  expect(component).toMatchSnapshot('superBlock-expanded');
+  const { container } = renderWithRedux(<SuperBlock {...props} />);
+
+  expect(container).toMatchSnapshot('superBlock-expanded');
 });
 
 test('<SuperBlock should handle toggle clicks correctly', () => {
-  const toggleSpy = sinon.spy();
+  const toggleSpy = jest.fn();
   const props = {
     introNodes: mockIntroNodes,
     isExpanded: false,
-    nodes: mockNodes,
+    nodes: mockChallengeNodes,
     superBlock: 'Super Block One',
     toggleSuperBlock: toggleSpy
   };
-  const componentToRender = <SuperBlock {...props} />;
-  const enzymeWrapper = Enzyme.shallow(componentToRender);
 
-  expect(toggleSpy.called).toBe(false);
-  expect(
-    enzymeWrapper
-      .find('.map-title')
-      .find('h4')
-      .text()
-  ).toBe('Super Block One Certification (300 hours)');
-  expect(enzymeWrapper.find('ul').length).toBe(0);
+  const store = createStore();
+  const { container, rerender } = renderWithRedux(
+    <SuperBlock {...props} />,
+    store
+  );
 
-  enzymeWrapper.find('.map-title').simulate('click');
+  expect(toggleSpy).not.toHaveBeenCalled();
+  expect(container.querySelector('.map-title h4')).toHaveTextContent(
+    'Super Block One Certification (300 hours)'
+  );
+  expect(container.querySelector('ul')).not.toBeInTheDocument();
 
-  expect(toggleSpy.called).toBe(true);
-  expect(toggleSpy.calledWithExactly('Super Block One')).toBe(true);
+  fireEvent.click(container.querySelector('.map-title'));
 
-  enzymeWrapper.setProps({ ...props, isExpanded: true });
+  expect(toggleSpy).toHaveBeenCalledTimes(1);
+  expect(toggleSpy).toHaveBeenCalledWith('Super Block One');
 
-  expect(
-    enzymeWrapper
-      .find('.map-title')
-      .find('h4')
-      .text()
-  ).toBe('Super Block One Certification (300 hours)');
-  expect(enzymeWrapper.find('ul').length).toBe(1);
+  rerender(
+    <Provider store={store}>
+      <SuperBlock {...props} isExpanded={true} />
+    </Provider>
+  );
+
+  expect(container.querySelector('ul')).toBeInTheDocument();
 });

@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { Link, navigate } from 'gatsby';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -10,9 +8,12 @@ import {
   FormGroup,
   ControlLabel,
   Button,
-  Col
+  Col,
+  Row
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
+
+import Login from '../components/Header/components/Login';
 
 import {
   isSignedInSelector,
@@ -20,7 +21,6 @@ import {
   userSelector,
   reportUser
 } from '../redux';
-import Layout from '../components/layouts/Default';
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 
 const propTypes = {
@@ -29,7 +29,7 @@ const propTypes = {
   reportUser: PropTypes.func.isRequired,
   userFetchState: PropTypes.shape({
     pending: PropTypes.bool,
-    comnplete: PropTypes.bool,
+    complete: PropTypes.bool,
     errored: PropTypes.bool
   }),
   username: PropTypes.string
@@ -46,25 +46,19 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ reportUser }, dispatch);
+const mapDispatchToProps = {
+  reportUser
+};
 
 class ShowUser extends Component {
   constructor(props) {
     super(props);
 
-    this.timer = null;
     this.state = {
       textarea: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillUnmount() {
-    if (this.timer) {
-      clearTimeout(this.timer);
-    }
   }
 
   handleChange(e) {
@@ -80,97 +74,79 @@ class ShowUser extends Component {
     const { username, reportUser } = this.props;
     return reportUser({ username, reportDescription });
   }
-  setNavigationTimer() {
-    if (!this.timer) {
-      this.timer = setTimeout(() => navigate('/signin'), 5000);
-    }
-  }
 
   render() {
     const { username, isSignedIn, userFetchState, email } = this.props;
     const { pending, complete, errored } = userFetchState;
     if (pending && !complete) {
-      return (
-        <Layout>
-          <div className='loader-wrapper'>
-            <Loader />
-          </div>
-        </Layout>
-      );
+      return <Loader fullScreen={true} />;
     }
 
     if ((complete || errored) && !isSignedIn) {
-      this.setNavigationTimer();
       return (
-        <Layout>
-          <main>
-            <FullWidthRow>
-              <Spacer />
-              <Spacer />
-              <Panel bsStyle='info'>
-                <Panel.Heading>
-                  <Panel.Title componentClass='h3'>
-                    You need to be signed in to report a user
-                  </Panel.Title>
-                </Panel.Heading>
-                <Panel.Body className='text-center'>
-                  <Spacer />
-                  <p>
-                    You will be redirected to sign in to freeCodeCamp.org
-                    automatically in 5 seconds
-                  </p>
-                  <p>
-                    <Link to='/signin'>
-                      Or you can here if you do not want to wait
-                    </Link>
-                  </p>
-                  <Spacer />
-                </Panel.Body>
-              </Panel>
-            </FullWidthRow>
-          </main>
-        </Layout>
+        <main>
+          <FullWidthRow>
+            <Spacer size={2} />
+            <Panel bsStyle='info' className='text-center'>
+              <Panel.Heading>
+                <Panel.Title componentClass='h3'>
+                  You need to be signed in to report a user
+                </Panel.Title>
+              </Panel.Heading>
+              <Panel.Body className='text-center'>
+                <Spacer size={2} />
+                <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
+                  <Login block={true}>Click here to sign in</Login>
+                </Col>
+                <Spacer size={3} />
+              </Panel.Body>
+            </Panel>
+          </FullWidthRow>
+        </main>
       );
     }
 
     const { textarea } = this.state;
-
+    const placeholderText = `Please provide as much detail as possible about the account or behavior you are reporting.`;
     return (
-      <Layout>
+      <Fragment>
         <Helmet>
-          <title>Report a users profile | freeCodeCamp.org</title>
+          <title>Report a users portfolio | freeCodeCamp.org</title>
         </Helmet>
-        <FullWidthRow>
-          <Spacer />
-          <Spacer />
-          <Col md={8} mdOffset={2}>
+        <Spacer size={2} />
+        <Row className='text-center'>
+          <Col sm={8} smOffset={2} xs={12}>
             <h2>
               Do you want to report {username}
-              's profile for abuse?
+              's portfolio for abuse?
             </h2>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={6} smOffset={3} xs={12}>
             <p>
               We will notify the community moderators' team, and a send copy of
-              this report to your email:{' '}
-              <span className='green-text'>{email}</span>.
+              this report to your email: <strong>{email}</strong>
             </p>
             <p>We may get back to you for more information, if required.</p>
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId='report-user-textarea'>
-                <ControlLabel>Additional Information</ControlLabel>
+                <ControlLabel>What would you like to report?</ControlLabel>
                 <FormControl
                   componentClass='textarea'
                   onChange={this.handleChange}
-                  placeholder=''
+                  placeholder={placeholderText}
                   value={textarea}
                 />
               </FormGroup>
               <Button block={true} bsStyle='primary' type='submit'>
                 Submit the report
               </Button>
+              <Spacer />
             </form>
           </Col>
-        </FullWidthRow>
-      </Layout>
+        </Row>
+      </Fragment>
     );
   }
 }

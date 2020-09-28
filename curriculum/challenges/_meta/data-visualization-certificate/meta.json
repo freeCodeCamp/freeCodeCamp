@@ -1,12 +1,13 @@
 {
   "name": "Data Visualization Certificate",
+  "isUpcomingChange": false,
   "dashedName": "data-visualization-certificate",
   "order": 4,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 9,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "5a553ca864b52e1d8bceea14",
@@ -14,5 +15,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "09-certificates/data-visualization-certificate.json"
+  "fileName": "12-certificates/data-visualization-certificate.json"
 }

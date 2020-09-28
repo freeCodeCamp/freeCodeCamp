@@ -1,14 +1,13 @@
 ---
 id: ac6993d51946422351508a41
 title: Truncate a String
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: اقتطاع سلسلة
 ---
 
 ## Description
-<section id="description"> اقتطاع سلسلة (الوسيطة الأولى) إذا كانت أطول من طول السلسلة الأقصى المحدد (الوسيطة الثانية). إرجاع السلسلة المقتطعة مع <code>...</code> إنهاء. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> اقتطاع سلسلة (الوسيطة الأولى) إذا كانت أطول من طول السلسلة الأقصى المحدد (الوسيطة الثانية). إرجاع السلسلة المقتطعة مع <code>...</code> إنهاء. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

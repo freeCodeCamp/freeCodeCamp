@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403614a
 title: Moving Forward From Here
 challengeType: 6
-isRequired: false
+forumTopicId: 301434
 ---
 
 ## Description
@@ -24,7 +24,7 @@ Log the message <code>'Now I know React and Redux!'</code> to the console.
 ```yml
 tests:
   - text: The message <code>Now I know React and Redux!</code> should be logged to the console.
-    testString: assert(editor.getValue().includes('console.log("Now I know React and Redux!")') || editor.getValue().includes('console.log(\'Now I know React and Redux!\')'), 'The message <code>Now I know React and Redux!</code> should be logged to the console.');
+    testString: getUserInput => assert(/console\s*\.\s*log\s*\(\s*('|"|`)Now I know React and Redux!\1\s*\)/.test(getUserInput('index')));
 
 ```
 
@@ -36,28 +36,30 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import { Provider, connect } from 'react-redux'
-// import { createStore, combineReducers, applyMiddleware } from 'redux'
-// import thunk from 'redux-thunk'
+/*
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider, connect } from 'react-redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 
-// import rootReducer from './redux/reducers'
-// import App from './components/App'
+import rootReducer from './redux/reducers'
+import App from './components/App'
 
-// const store = createStore(
-//   rootReducer,
-//   applyMiddleware(thunk)
-// );
+const store = createStore(
+  rootReducer,
+  applyMiddleware(thunk)
+);
 
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <App/>
-//   </Provider>,
-//   document.getElementById('root')
-// );
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById('root')
+);
+*/
 
-// change code below this line
+// Only change code below this line
 
 ```
 
@@ -71,7 +73,7 @@ tests:
 <section id='solution'>
 
 
-```js
+```jsx
 console.log('Now I know React and Redux!');
 ```
 

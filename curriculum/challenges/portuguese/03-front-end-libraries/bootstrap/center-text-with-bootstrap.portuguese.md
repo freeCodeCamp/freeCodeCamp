@@ -18,7 +18,7 @@ localeTitle: Texto Central com Bootstrap
 
 ```yml
 tests:
-  - text: Seu elemento <code>h2</code> deve ser centrado aplicando o <code>text-center</code> da turma
+  - text: Seu elemento <code>h2</code> deve ser centrado aplicando a classe <code>text-center</code>
     testString: 'assert($("h2").hasClass("text-center"), "Your <code>h2</code> element should be centered by applying the class <code>text-center</code>");'
   - text: Seu elemento <code>h2</code> ainda deve ter a classe <code>red-text</code>
     testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should still have the class <code>red-text</code>");'
@@ -80,7 +80,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>

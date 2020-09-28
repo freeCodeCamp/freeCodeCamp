@@ -8,6 +8,12 @@ import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 
 // const log = debug('fcc:models:userIdent');
 
+export function ensureLowerCaseEmail(profile) {
+  return typeof profile?.emails?.[0]?.value === 'string'
+    ? profile.emails[0].value.toLowerCase()
+    : '';
+}
+
 export default function(UserIdent) {
   UserIdent.on('dataSourceAttached', () => {
     UserIdent.findOne$ = observeMethod(UserIdent, 'findOne');
@@ -41,18 +47,16 @@ export default function(UserIdent) {
       include: 'user'
     };
     // get the email from the auth0 (its expected from social providers)
-    const email =
-      profile && profile.emails && profile.emails[0]
-        ? profile.emails[0].value
-        : '';
+    const email = ensureLowerCaseEmail(profile);
+
     if (!isEmail('' + email)) {
       throw wrapHandledError(
-        new Error('invalid or empty email recieved from auth0'),
+        new Error('invalid or empty email received from auth0'),
         {
           message: dedent`
-    Oops... something is not right. We did not find a valid email from your
-    ${provider} account. Please try again with a different provider that has an
-    email available with it.
+    ${provider} did not return a valid email address.
+    Please try again with a different account that has an
+    email associated with it your update your settings on ${provider}, for us to be able to retrieve your email.
           `,
           type: 'info',
           redirectTo: '/'
@@ -73,8 +77,7 @@ export default function(UserIdent) {
               new Error('could not find or create a user'),
               {
                 message: dedent`
-    Oops... something is not right. We could not find or create a
-    user with that email.
+    We could not find or create a user with that email address.
                 `,
                 type: 'info',
                 redirectTo: '/'
@@ -126,16 +129,26 @@ export default function(UserIdent) {
             created: new Date(),
             ttl: user.constructor.settings.ttl
           });
-          const updateUser = user.update$({
-            email: email,
-            emailVerified: true,
-            emailAuthLinkTTL: null,
-            emailVerifyTTL: null
-          });
+          const updateUser = new Promise((resolve, reject) =>
+            user.updateAttributes(
+              {
+                email: email,
+                emailVerified: true,
+                emailAuthLinkTTL: null,
+                emailVerifyTTL: null
+              },
+              err => {
+                if (err) {
+                  return reject(err);
+                }
+                return resolve();
+              }
+            )
+          );
           return Observable.combineLatest(
             Observable.of(user),
             createToken,
-            updateUser,
+            Observable.fromPromise(updateUser),
             (user, token) => ({ user, token })
           );
         })

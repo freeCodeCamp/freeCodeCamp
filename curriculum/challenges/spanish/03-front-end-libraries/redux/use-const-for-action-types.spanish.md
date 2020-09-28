@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036152
 title: Use const for Action Types
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Utilice const para tipos de acción
 ---

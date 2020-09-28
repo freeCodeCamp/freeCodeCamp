@@ -2,6 +2,7 @@
 id: 587d7b8d367417b2b2512b5b
 title: Learn About Functional Programming
 challengeType: 1
+forumTopicId: 301233
 ---
 
 ## Description
@@ -26,9 +27,9 @@ In the code editor, the <code>prepareTea</code> and <code>getTea</code> function
 ```yml
 tests:
   - text: The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.
-    testString: assert(tea4TeamFCC.length === 40, 'The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.');
+    testString: assert(tea4TeamFCC.length === 40);
   - text: The <code>tea4TeamFCC</code> variable should hold cups of green tea.
-    testString: assert(tea4TeamFCC[0] === 'greenTea', 'The <code>tea4TeamFCC</code> variable should hold cups of green tea.');
+    testString: assert(tea4TeamFCC[0] === 'greenTea');
 
 ```
 
@@ -40,17 +41,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-/**
- * A long process to prepare tea.
- * @return {string} A cup of tea.
- **/
+// Function that returns a string representing a cup of green tea
 const prepareTea = () => 'greenTea';
 
-/**
- * Get given number of cups of tea.
- * @param {number} numOfCups Number of required cups of tea.
- * @return {Array<string>} Given amount of tea cups.
- **/
+/*
+Given a function (representing the tea type) and number of cups needed, the
+following function returns an array of strings (each representing a cup of
+a specific type of tea).
+*/
 const getTea = (numOfCups) => {
   const teaCups = [];
 
@@ -58,17 +56,12 @@ const getTea = (numOfCups) => {
     const teaCup = prepareTea();
     teaCups.push(teaCup);
   }
-
   return teaCups;
 };
 
-// Add your code below this line
-
-const tea4TeamFCC = null; // :(
-
-// Add your code above this line
-
-console.log(tea4TeamFCC);
+// Only change code below this line
+const tea4TeamFCC = null;
+// Only change code above this line
 ```
 
 </div>
@@ -81,6 +74,20 @@ console.log(tea4TeamFCC);
 <section id='solution'>
 
 ```js
-// solution required
+const prepareTea = () => 'greenTea';
+
+const getTea = (numOfCups) => {
+  const teaCups = [];
+  
+  for(let cups = 1; cups <= numOfCups; cups += 1) {
+    const teaCup = prepareTea();
+    teaCups.push(teaCup);
+  }
+
+  return teaCups;
+};
+
+const tea4TeamFCC = getTea(40); 
 ```
+
 </section>

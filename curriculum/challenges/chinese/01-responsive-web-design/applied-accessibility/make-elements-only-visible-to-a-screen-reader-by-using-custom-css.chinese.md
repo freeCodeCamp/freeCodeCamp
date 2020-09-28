@@ -2,29 +2,53 @@
 id: 587d778d367417b2b2512aaa
 title: Make Elements Only Visible to a Screen Reader by Using Custom CSS
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用自定义CSS使元素仅对屏幕阅读器可见
+videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
+forumTopicId: 301020
+localeTitle: 使用自定义 CSS 让元素仅对屏幕阅读器可见
 ---
 
 ## Description
-<section id="description">您是否注意到目前为止所有应用的可访问性问题都没有使用任何CSS？这是为了展示逻辑文档大纲的重要性，并在介绍视觉设计方面之前在您的内容周围使用具有语义意义的标记。但是，当您想要在视觉上隐藏仅供屏幕阅读器使用的内容时，CSS的魔力还可以改善页面的可访问性。当信息采用可视格式（如图表）时会发生这种情况，但屏幕阅读器用户需要使用替代演示（如表格）来访问数据。 CSS用于将屏幕阅读器元素定位在浏览器窗口的可视区域之外。这是完成此任务的CSS规则的示例： <blockquote> .sr-only { <br>位置：绝对; <br>左：-10000px; <br>宽度：1px; <br>身高：1px; <br>顶部：汽车; <br>溢出：隐藏; <br> } </blockquote> <strong>注意</strong> <br>以下CSS方法不会做同样的事情： <ul><li> <code>display: none;</code>或<code>visibility: hidden;</code>隐藏每个人的内容，包括屏幕阅读器用户</li><li>像素大小的零值，例如<code>width: 0px; height: 0px;</code>从文档流中删除该元素，这意味着屏幕阅读器将忽略它</li></ul></section>
+<section id='description'>
+到目前为止，所有关于可访问性的挑战都没有使用 CSS。这是为了让你在关注外观样式之前，先把页面的逻辑结构写清，以及明确语义化标签的重要性。
+然而，如果我们需要在页面中添加一些只对屏幕阅读器可见的内容时，CSS 可以提升页面的可访问性。当信息以可视化形式（如：图表）展示，而屏幕阅读器用户需要一种替代方式（如：表格）来获取信息时，就会出现这种情况。CSS 被用来将这些仅供屏幕阅读器使用的信息定位到浏览器可见区域之外。
+举个例子：
+
+```css
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+```
+
+<strong>注意：</strong><br>下面的 CSS 代码与上面的结果不同：
+<ul>
+<li><code>display: none;</code>或<code>visibility: hidden;</code>会把内容彻底隐藏起来，对于屏幕阅读器也不例外。</li>
+<li>如果把值设置为 0px，如<code>width: 0px; height: 0px;</code>，意味着让元素脱离文档流，这样做也会让元素被屏幕阅读器忽略。</li>
+</ul>
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat为他​​的培训页面创建了一个非常酷的堆积条形图，并将数据放入一个表格中，供视障用户使用。该表已经有一个<code>sr-only</code>类，但CSS规则尚未填写。给<code>position</code>一个绝对值， <code>left</code>是-10000px值， <code>width</code>和<code>height</code>都是1px值。 </section>
+<section id='instructions'>
+Camper Cat 为他的训练页面创建了一个十分酷炫的条形图，并将数据放入表格中，供屏幕阅读器用户使用。表格已经有了一个<code>sr-only</code>类，但是还没有添加 CSS 规则。请设置<code>position</code>的值为 absolute，<code>left</code> 的值为 -10000px，<code>width</code>与<code>height</code>的值为 1px。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该将<code>sr-only</code>类的<code>position</code>属性设置为absolute的值。
-    testString: 'assert($(".sr-only").css("position") == "absolute", "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.");'
-  - text: 您的代码应将<code>sr-only</code>类的<code>left</code>属性设置为-10000px的值。
-    testString: 'assert($(".sr-only").css("left") == "-10000px", "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.");'
-  - text: 您的代码应将<code>sr-only</code>类的<code>width</code>属性设置为1像素的值。
-    testString: 'assert(code.match(/width:\s*?1px/gi), "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
-  - text: 您的代码应将<code>sr-only</code>类的<code>height</code>属性设置为1像素的值。
-    testString: 'assert(code.match(/height:\s*?1px/gi), "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
+  - text: '<code>sr-only</code>类中的<code>position</code>属性的值应为 absolute。'
+    testString: assert($('.sr-only').css('position') == 'absolute');
+  - text: '<code>sr-only</code>类中的<code>left</code>属性的值应为 -10000px。'
+    testString: assert($('.sr-only').css('left') == '-10000px');
+  - text: '<code>sr-only</code>类中的<code>width</code>属性的值应为 1px。'
+    testString: assert(code.match(/width:\s*?1px/gi));
+  - text: '<code>sr-only</code>类中的<code>height</code>属性的值应为 1px。'
+    testString: assert(code.match(/height:\s*?1px/gi));
 
 ```
 
@@ -75,7 +99,7 @@ tests:
           <th scope="col">Stealth &amp; Agility</th>
           <th scope="col">Combat</th>
           <th scope="col">Weapons</th>
-          <th scope="col">Total</th>
+          <th scope="col">Total</th>                                        
         </tr>
       </thead>
       <tbody>
@@ -120,7 +144,6 @@ tests:
   </section>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
-
 ```
 
 </div>
@@ -132,7 +155,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

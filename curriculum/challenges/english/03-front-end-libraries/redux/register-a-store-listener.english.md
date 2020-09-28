@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036153
 title: Register a Store Listener
 challengeType: 6
-isRequired: false
+forumTopicId: 301446
 ---
 
 ## Description
@@ -21,11 +21,11 @@ Write a callback function that increments the global variable <code>count</code>
 ```yml
 tests:
   - text: Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: ''ADD'' }); const newState = store.getState(); return newState === (initialState + 1); })(), ''Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.'');'
+    testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: ''ADD'' }); const newState = store.getState(); return newState === (initialState + 1); })());'
   - text: There should be a listener function subscribed to the store using <code>store.subscribe</code>.
-    testString: getUserInput => assert(getUserInput('index').includes('store.subscribe('), 'There should be a listener function subscribed to the store using <code>store.subscribe</code>.');
+    testString: getUserInput => assert(getUserInput('index').includes('store.subscribe('));
   - text: The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.
-    testString: assert(store.getState() === count, 'The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.');
+    testString: assert(store.getState() === count);
 
 ```
 
@@ -34,9 +34,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const ADD = 'ADD';
 
 const reducer = (state = 0, action) => {
@@ -50,12 +50,12 @@ const reducer = (state = 0, action) => {
 
 const store = Redux.createStore(reducer);
 
-// global count variable:
+// Global count variable:
 let count = 0;
 
-// change code below this line
+// Change code below this line
 
-// change code above this line
+// Change code above this line
 
 store.dispatch({type: ADD});
 console.log(count);
@@ -68,9 +68,9 @@ console.log(count);
 </div>
 
 ### Before Test
-<div id='jsx-setup'>
+<div id='js-setup'>
 
-```jsx
+```js
 count = 0;
 ```
 
@@ -97,7 +97,7 @@ const reducer = (state = 0, action) => {
 
 const store = Redux.createStore(reducer);
  let count = 0;
-// change code below this line
+// Change code below this line
 
 store.subscribe( () =>
  {
@@ -105,7 +105,7 @@ store.subscribe( () =>
  }
 );
 
-// change code above this line
+// Change code above this line
 
 store.dispatch({type: ADD});
 store.dispatch({type: ADD});

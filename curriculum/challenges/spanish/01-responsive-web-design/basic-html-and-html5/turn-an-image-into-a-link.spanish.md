@@ -7,10 +7,10 @@ localeTitle: Convertir una imagen en un enlace
 ---
 
 ## Description
-<section id="description"> Puede hacer que los elementos en los enlaces por los nidos de ellos dentro de un <code>a</code> elemento. Nido de su imagen dentro de un <code>a</code> elemento. Aquí hay un ejemplo: <code>&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-running-cats&quot; alt=&quot;Three kittens running towards the camera.&quot;&gt;&lt;/a&gt;</code> Recuerda usar <code>#</code> como propiedad <code>href</code> <code>a</code> elemento para convertirlo en un enlace muerto. </section>
+<section id="description"> Puede convertir los elementos en enlaces anidandolos dentro de un elemento <code>a</code>. Anide su imagen dentro de un elemento <code>a</code>. Aquí hay un ejemplo: <code>&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-running-cats&quot; alt=&quot;Three kittens running towards the camera.&quot;&gt;&lt;/a&gt;</code> Recuerda usar <code>#</code> en la propiedad <code>href</code> de tu elemento <code>a</code> para convertirlo en un enlace muerto. </section>
 
 ## Instructions
-<section id="instructions"> Coloque el elemento de imagen existente dentro de un elemento de anclaje. Una vez que hayas hecho esto, desplázate sobre tu imagen con el cursor. El puntero normal de su cursor debe convertirse en el enlace que hace clic en el puntero. La foto es ahora un enlace. </section>
+<section id="instructions"> Coloque el elemento de imagen existente dentro de un elemento de anclaje. Una vez que hayas hecho esto, desplázate sobre tu imagen con el cursor. El puntero normal de su cursor debe convertirse en el puntero para hacer clic en el enlace. La foto es ahora un enlace. </section>
 
 ## Tests
 <section id='tests'>

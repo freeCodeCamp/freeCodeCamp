@@ -2,25 +2,31 @@
 id: 5a9d72ad424fe3d0e10cad16
 title: Use a media query to change a variable
 challengeType: 0
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/cWmL8UP'
+forumTopicId: 301091
 localeTitle: 使用媒体查询更改变量
 ---
 
 ## Description
-<section id="description"> CSS变量可以简化您使用媒体查询的方式。例如，当您的屏幕小于或大于媒体查询断点时，您可以更改变量的值，并且无论在何处使用它都将应用其样式。 </section>
+<section id='description'>
+CSS 变量可以简化媒体查询的方式。
+例如，当屏幕小于或大于媒体查询所设置的值，通过改变变量的值，那么应用了变量的元素样式都会得到响应修改。
+</section>
 
 ## Instructions
-<section id="instructions">在<code>media query</code>的<code>:root</code>选择器中，对其进行更改，以便重新定义<code>--penguin-size</code>并赋值为<code>200px</code> 。此外，重新定义<code>--penguin-skin</code>并赋予其<code>black</code>值。然后调整预览大小以查看此更改的操作。 </section>
+<section id='instructions'>
+在<code>media query（媒体查询）</code>声明的<code>:root</code>选择器里，重定义<code>--penguin-size</code>的值为 200px，且重定义<code>--penguin-skin</code>的值为<code>black</code>，然后通过缩放页面来查看是否生效。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>:root</code>应该将<code>--penguin-size</code>变量重新分配给<code>200px</code> 。'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.");'
-  - text: '<code>:root</code>应该将<code>--penguin-skin</code>变量重新分配给<code>black</code> 。'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.");'
+  - text: '<code>:root</code>中的<code>--penguin-size</code>值应为<code>200px</code>。'
+    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi));
+  - text: '<code>:root</code>中的<code>--penguin-skin</code>值应为<code>black</code>。'
+    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi));
 
 ```
 
@@ -39,17 +45,17 @@ tests:
     --penguin-belly: white;
     --penguin-beak: orange;
   }
-
+  
   @media (max-width: 350px) {
     :root {
-
+      
       /* add code below */
-
+      
       /* add code above */
-
+      
     }
   }
-
+  
   .penguin {
     position: relative;
     margin: auto;
@@ -58,7 +64,7 @@ tests:
     width: var(--penguin-size, 300px);
     height: var(--penguin-size, 300px);
   }
-
+  
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -67,7 +73,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -76,7 +82,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .belly {
     top: 60%;
     left: 2.5%;
@@ -85,7 +91,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-
+  
   .penguin-top {
     top: 10%;
     left: 25%;
@@ -94,7 +100,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
@@ -103,7 +109,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-
+  
   .right-hand {
     top: 5%;
     left: 25%;
@@ -119,7 +125,7 @@ tests:
     transform-origin:0% 0%;
     animation-timing-function: linear;
   }
-
+  
   @keyframes wave {
       10% {
         transform: rotate(110deg);
@@ -129,12 +135,12 @@ tests:
       }
       30% {
         transform: rotate(110deg);
-      }
+      } 
       40% {
         transform: rotate(130deg);
-      }
+      }  
     }
-
+  
   .left-hand {
     top: 0%;
     left: 75%;
@@ -145,7 +151,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-
+  
   .right-feet {
     top: 85%;
     left: 60%;
@@ -156,7 +162,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-
+  
   .left-feet {
     top: 85%;
     left: 25%;
@@ -167,7 +173,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-
+  
   .right-eye {
     top: 45%;
     left: 60%;
@@ -176,7 +182,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-
+  
   .left-eye {
     top: 45%;
     left: 25%;
@@ -185,7 +191,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-
+  
   .sparkle {
     top: 25%;
     left:-23%;
@@ -194,7 +200,7 @@ tests:
     height: 100%;
     border-radius: 50%;
   }
-
+  
   .blush-right {
     top: 65%;
     left: 15%;
@@ -203,7 +209,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .blush-left {
     top: 65%;
     left: 70%;
@@ -212,7 +218,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .beak-top {
     top: 60%;
     left: 40%;
@@ -221,7 +227,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -230,11 +236,11 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   body {
     background:#c6faf1;
   }
-
+  
   .penguin * {
     position: absolute;
   }
@@ -262,7 +268,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -274,7 +279,10 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
 // solution required
 ```
+
 </section>
+              

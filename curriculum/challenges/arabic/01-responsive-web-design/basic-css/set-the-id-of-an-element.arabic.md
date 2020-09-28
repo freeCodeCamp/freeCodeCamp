@@ -10,7 +10,7 @@ localeTitle: عيّن معرف عنصر
 <section id="description"> بالإضافة إلى الفصول الدراسية ، يمكن أن يحتوي كل عنصر HTML أيضًا على سمة <code>id</code> . هناك العديد من المزايا لاستخدام سمات <code>id</code> : يمكنك استخدام <code>id</code> لوضع نمط لعنصر واحد ، وبعد ذلك ستعرف أنه يمكنك استخدامها لتحديد عناصر محددة وتعديلها باستخدام جافا سكريبت. يجب أن تكون سمات <code>id</code> فريدة. لن تقوم المتصفحات بفرض هذا ، ولكنها أفضل الممارسات المتفق عليها على نطاق واسع. لذا يرجى عدم إعطاء أكثر من عنصر واحد نفس سمة <code>id</code> . في ما يلي مثال على كيفية إعطاء عنصر <code>h2</code> معرف تطبيق <code>cat-photo-app</code> : <code>&lt;h2 id=&quot;cat-photo-app&quot;&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> امنح <code>form</code> الخاص بك <code>form</code> &quot; <code>cat-photo-form</code> . </section>
+<section id="instructions"> امنح <code>form</code> الخاص بك <code>form</code>  <code>cat-photo-form</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -82,7 +82,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

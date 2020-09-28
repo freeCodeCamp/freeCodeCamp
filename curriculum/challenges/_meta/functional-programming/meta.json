@@ -1,5 +1,6 @@
 {
   "name": "Functional Programming",
+  "isUpcomingChange": false,
   "dashedName": "functional-programming",
   "order": 8,
   "time": "5 hours",
@@ -67,6 +68,10 @@
     [
       "587d7da9367417b2b2512b68",
       "Use the reduce Method to Analyze Data"
+    ],
+    [
+      "587d7b88367417b2b2512b45",
+      "Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem"
     ],
     [
       "587d7da9367417b2b2512b69",

@@ -7,7 +7,7 @@ localeTitle: أضف Flex Flexpowers إلى Tweet تضمين
 ---
 
 ## Description
-<section id="description"> إلى اليمين يتم تضمين التغريد الذي سيتم استخدامه كمثال عملي. بعض العناصر تبدو أفضل مع تخطيط مختلف. أظهر التحدي الأخير <code>display: flex</code> . هنا سوف تقوم بإضافته إلى العديد من المكونات في tweet embed لبدء ضبط موضعها. </section>
+<section id="description"> إلى اليمين يتم تضمين التغريدة الذي سيتم استخدامه كمثال عملي. بعض العناصر تبدو أفضل مع تخطيط مختلف. أظهر التحدي الأخير <code>display: flex</code> . هنا سوف تقوم بإضافته إلى العديد من المكونات في tweet embed لبدء ضبط موضعها. </section>
 
 ## Instructions
 <section id="instructions"> إضافة <code>display: flex</code> خاصية CSS <code>display: flex</code> لكل العناصر التالية - لاحظ أن المحددات قد تم إعدادها بالفعل في CSS: <code>header</code> ، رأس الملف <code>.profile-name</code> ، رأس الصفحة. <code>.follow-btn</code> ، <code>h3</code> و <code>h4</code> في الرأس ، <code>footer</code> ، <code>.stats</code> . </section>
@@ -102,7 +102,7 @@ tests:
   }
 </style>
 <header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>

@@ -2,15 +2,18 @@
 id: 5900f4671000cf542c50ff7a
 challengeType: 5
 title: 'Problem 251: Cardano Triplets'
-videoUrl: ''
+forumTopicId: 301899
 localeTitle: 'Проблема 251: Cardano Triplets'
 ---
 
 ## Description
-<section id="description"> Триплет положительных целых чисел (a, b, c) называется кардинальным триплетом, если он удовлетворяет условию: <p> Например, (2,1,5) является кардинальным триплетом. </p><p> Существует 149 Cardano Triplets, для которых a + b + c ≤ 1000. </p><p> Найдите, сколько существует Cardano Triplets, так что a + b + c ≤ 110 000 000. </p></section>
+<section id='description'>
+Триплет положительных целых чисел (a, b, c) называется кардинальным триплетом, если он удовлетворяет условию: <p> Например, (2,1,5) является кардинальным триплетом. </p><p> Существует 149 Cardano Triplets, для которых a + b + c ≤ 1000. </p><p> Найдите, сколько существует Cardano Triplets, так что a + b + c ≤ 110 000 000. </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Проблема 251: Cardano Triplets'
 
 ```yml
 tests:
-  - text: <code>euler251()</code> должен вернуть 18946051.
-    testString: 'assert.strictEqual(euler251(), 18946051, "<code>euler251()</code> should return 18946051.");'
+  - text: <code>euler251()</code> should return 18946051.
+    testString: assert.strictEqual(euler251(), 18946051);
 
 ```
 
@@ -42,8 +45,6 @@ euler251();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler251();
 ```js
 // solution required
 ```
+
 </section>

@@ -1,8 +1,8 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
 title: Build a Personal Portfolio Webpage
-isRequired: true
 challengeType: 3
+forumTopicId: 301143
 ---
 
 ## Description
@@ -21,9 +21,8 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 <strong>User Story #9:</strong> My portfolio should have at least one media query.
 <strong>User Story #10:</strong> The height of the welcome section should be equal to the height of the viewport.
 <strong>User Story #11:</strong> The navbar should always be at the top of the viewport.
-You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
-Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
 </section>
 
 ## Instructions
@@ -49,7 +48,8 @@ tests: []
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

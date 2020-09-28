@@ -17,8 +17,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.");'
+  - text: 'يجب أن تحتوي فئة <code>item5</code> على خاصية <code>grid-area</code> بحيث تكون بين الخطين الأفقيين الثالث والرابع وبين الخطين الرأسيين الأول والرابع.'
+    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "يجب أن تحتوي فئة <code>item5</code> على خاصية <code>grid-area</code> بحيث تكون بين الخطين الأفقيين الثالث والرابع وبين الخطين الرأسيين الأول والرابع.");'
 
 ```
 

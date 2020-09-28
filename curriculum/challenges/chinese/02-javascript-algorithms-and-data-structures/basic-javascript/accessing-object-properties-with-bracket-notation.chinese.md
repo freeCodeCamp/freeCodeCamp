@@ -2,32 +2,51 @@
 id: 56533eb9ac21ba0edf2244c8
 title: Accessing Object Properties with Bracket Notation
 challengeType: 1
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/accessing-objects-properties-with-bracket-notation'
-videoUrl: ''
-localeTitle: 使用括号表示法访问对象属性
+videoUrl: 'https://scrimba.com/c/cBvmEHP'
+forumTopicId: 16163
+localeTitle: 通过方括号访问对象属性
 ---
 
 ## Description
-<section id="description">访问对象属性的第二种方法是括号表示法（ <code>[]</code> ）。如果您尝试访问的对象的属性在其名称中有空格，则需要使用括号表示法。但是，您仍然可以在没有空格的对象属性上使用括号表示法。以下是使用括号表示法读取对象属性的示例： <blockquote> var myObj = { <br> “太空名称”：“柯克”， <br> “更多空间”：“Spock”​​， <br> “NoSpace”：“USS Enterprise” <br> }; <br> myObj [“空间名称”]; //柯克<br> myObj [&#39;更多空间&#39;]; // Spock <br> MyObj中[ “无空间”]; // USS Enterprise </blockquote>请注意，其中包含空格的属性名称必须使用引号（单引号或双引号）。 </section>
+<section id='description'>
+第二种访问对象的方式就是中括号操作符(<code>[]</code>)，如果你想访问的属性的名称有一个空格，这时你只能使用中括号操作符(<code>[]</code>)。
+当然，如果属性名不包含空格，也可以使用中括号操作符。
+这是一个使用中括号操作符(<code>[]</code>)读取对象属性的例子：
+
+```js
+var myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock",
+  "NoSpace": "USS Enterprise"
+};
+myObj["Space Name"]; // Kirk
+myObj['More Space']; // Spock
+myObj["NoSpace"];    // USS Enterprise
+```
+
+提示：属性名称中如果有空格，必须把属性名称用单引号或双引号包裹起来。
+</section>
 
 ## Instructions
-<section id="instructions">使用括号表示法<code>testObj</code>属性<code>&quot;an entree&quot;</code> <code>testObj</code> <code>&quot;an entree&quot;</code>和<code>&quot;the drink&quot;</code>的<code>testObj</code> ，并分别将它们分配给<code>entreeValue</code>和<code>drinkValue</code> 。 </section>
+<section id='instructions'>
+用中括号操作符读取对象<code>testObj</code>的<code>an entree</code>属性值和<code>the drink</code>属性值，并分别赋值给<code>entreeValue</code>和<code>drinkValue</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>entreeValue</code>应该是一个字符串
-    testString: 'assert(typeof entreeValue === "string" , "<code>entreeValue</code> should be a string");'
-  - text: <code>entreeValue</code>的值应该是<code>&quot;hamburger&quot;</code>
-    testString: 'assert(entreeValue === "hamburger" , "The value of <code>entreeValue</code> should be <code>"hamburger"</code>");'
-  - text: <code>drinkValue</code>应该是一个字符串
-    testString: 'assert(typeof drinkValue === "string" , "<code>drinkValue</code> should be a string");'
-  - text: <code>drinkValue</code>的值应该是<code>&quot;water&quot;</code>
-    testString: 'assert(drinkValue === "water" , "The value of <code>drinkValue</code> should be <code>"water"</code>");'
-  - text: 您应该使用括号表示法两次
-    testString: 'assert(code.match(/testObj\s*?\[("|")[^""]+\1\]/g).length > 1, "You should use bracket notation twice");'
+  - text: <code>entreeValue</code>应该是一个字符串。
+    testString: assert(typeof entreeValue === 'string' );
+  - text: <code>entreeValue</code>的值应该是<code>"hamburger"</code>。
+    testString: assert(entreeValue === 'hamburger' );
+  - text: <code>drinkValue</code>应该是一个字符串。
+    testString: assert(typeof drinkValue === 'string' );
+  - text: <code>drinkValue</code>的值应该是<code>"water"</code>。
+    testString: assert(drinkValue === 'water' );
+  - text: 你应该使用中括号两次。
+    testString: assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 
 ```
 
@@ -50,7 +69,6 @@ var testObj = {
 
 var entreeValue = testObj;   // Change this line
 var drinkValue = testObj;    // Change this line
-
 ```
 
 </div>
@@ -60,7 +78,7 @@ var drinkValue = testObj;    // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b) { return "entreeValue = '" + a + "', drinkValue = '" + b + "'"; })(entreeValue,drinkValue);
 ```
 
 </div>
@@ -70,7 +88,15 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+var entreeValue = testObj["an entree"];
+var drinkValue = testObj['the drink'];
 ```
+
 </section>

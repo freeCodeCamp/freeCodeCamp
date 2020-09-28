@@ -1,5 +1,5 @@
 {
   "name": "gatsby-remark-fcc-forum-emoji",
-  "description": "A plugin to help fix the styling of forum emoji in the Guide",
-  "main": "index.js"
+  "private": true,
+  "version": "0.0.1"
 }

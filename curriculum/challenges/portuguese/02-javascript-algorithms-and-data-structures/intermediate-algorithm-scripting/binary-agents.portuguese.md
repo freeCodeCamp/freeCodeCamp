@@ -1,14 +1,13 @@
 ---
 id: a8d97bd4c764e91f9d2bda01
 title: Binary Agents
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Agentes Binários
 ---
 
 ## Description
-<section id="description"> Retorna uma frase traduzida em inglês da string binária passada. A cadeia binária será separada por espaços. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Retorna uma frase traduzida em inglês da string binária passada. A cadeia binária será separada por espaços. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

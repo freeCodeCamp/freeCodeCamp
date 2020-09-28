@@ -1,14 +1,13 @@
 ---
 id: a7f4d8f2483413a6ce226cac
 title: Roman Numeral Converter
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Convertidor de números romanos
 ---
 
 ## Description
-<section id="description"> Convertir el número dado en un número romano. Todas las respuestas de los <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">números romanos</a> deben proporcionarse en mayúsculas. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
+<section id="description"> Convertir el número dado en un número romano. Todas las respuestas de los <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">números romanos</a> deben proporcionarse en mayúsculas. Recuerda usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

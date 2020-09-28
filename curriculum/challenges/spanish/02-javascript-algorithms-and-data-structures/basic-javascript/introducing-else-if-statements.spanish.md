@@ -7,7 +7,7 @@ localeTitle: Introduciendo Else If Sentencias
 ---
 
 ## Description
-<section id="description"> Si tiene múltiples condiciones que deben abordarse, puede encadenar <code>if</code> sentencias junto con <code>else if</code> sent. <blockquote> if (num&gt; 15) { <br> devuelve &quot;Más grande que 15&quot;; <br> } else if (num &lt;5) { <br> devuelve &quot;Menor de 5&quot;; <br> } else { <br> volver &quot;Entre 5 y 15&quot;; <br> } </blockquote></section>
+<section id="description"> Si tienes múltiples condiciones que deben abordarse, puedes encadenarlas usando una sentencia <code>if</code> junto con otra sentencia <code>else if</code>. <blockquote> if (num&gt; 15) { <br> devuelve &quot;Más grande que 15&quot;; <br> } else if (num &lt;5) { <br> devuelve &quot;Menor de 5&quot;; <br> } else { <br> volver &quot;Entre 5 y 15&quot;; <br> } </blockquote></section>
 
 ## Instructions
 <section id="instructions"> Convierte la lógica para usar <code>else if</code> . </section>

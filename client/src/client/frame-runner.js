@@ -1,31 +1,33 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const {
-    timeout,
-    catchError,
-    map,
-    toArray,
-    switchMap,
-    of,
-    from,
-    throwError
-  } = document.__deps__.rx;
-  const frameReady = document.__frameReady;
-  const chai = parent.chai;
-  const source = document.__source;
-  const __getUserInput = document.__getUserInput || (x => x);
-  const checkChallengePayload = document.__checkChallengePayload;
+import '@babel/polyfill';
+import jQuery from 'jquery';
+import curriculumHelpers from '../utils/curriculum-helpers';
 
-  const fiveSeconds = 5000;
+window.$ = jQuery;
 
-  function isPromise(value) {
-    return (
-      value &&
-      typeof value.subscribe !== 'function' &&
-      typeof value.then === 'function'
-    );
+document.__initTestFrame = initTestFrame;
+
+async function initTestFrame(e = { code: {} }) {
+  const code = (e.code.contents || '').slice();
+  const editableContents = (e.code.editableContents || '').slice();
+  // __testEditable allows test authors to run tests against a transitory dom
+  // element built using only the code in the editable region.
+  // eslint-disable-next-line no-unused-vars
+  const __testEditable = cb => {
+    const div = document.createElement('div');
+    div.id = 'editable-only';
+    div.innerHTML = editableContents;
+    document.body.appendChild(div);
+    const out = cb();
+    document.body.removeChild(div);
+    return out;
+  };
+
+  if (!e.getUserInput) {
+    e.getUserInput = () => code;
   }
-  // Fake Deep Equal dependency
+
   /* eslint-disable no-unused-vars */
+  // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
   // Hardcode Deep Freeze dependency
@@ -44,90 +46,61 @@ document.addEventListener('DOMContentLoaded', function() {
     return o;
   };
 
-  if (document.Enzyme) {
-    window.Enzyme = document.Enzyme;
+  // eslint-disable-next-line no-inline-comments
+  const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
+  const assert = chai.assert;
+  const __helpers = curriculumHelpers;
+  /* eslint-enable no-unused-vars */
+
+  let Enzyme;
+  if (e.loadEnzyme) {
+    let Adapter16;
+    /* eslint-disable no-inline-comments */
+
+    [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
+      import(/* webpackChunkName: "enzyme" */ 'enzyme'),
+      import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
+    ]);
+    /* eslint-enable no-inline-comments */
+
+    Enzyme.configure({ adapter: new Adapter16() });
   }
 
-  document.__runTests = function runTests(tests = []) {
-    /* eslint-disable no-unused-vars */
-    const code = source.slice(0);
-    const editor = {
-      getValue() {
-        return source;
+  document.__runTest = async function runTests(testString) {
+    // uncomment the following line to inspect
+    // the frame-runner as it runs tests
+    // make sure the dev tools console is open
+    // debugger;
+    try {
+      // eval test string to actual JavaScript
+      // This return can be a function
+      // i.e. function() { assert(true, 'happy coding'); }
+      const testPromise = new Promise((resolve, reject) =>
+        // To avoid race conditions, we have to run the test in a final
+        // document ready:
+        $(() => {
+          try {
+            // eslint-disable-next-line no-eval
+            const test = eval(testString);
+            resolve({ test });
+          } catch (err) {
+            reject({ err });
+          }
+        })
+      );
+      const { test, err } = await testPromise;
+      if (err) throw err;
+
+      if (typeof test === 'function') {
+        await test(e.getUserInput);
       }
-    };
-    const userCode = document.createElement('script');
-    userCode.type = 'text/javascript';
-    userCode.text = code;
-    document.body.appendChild(userCode);
-    const assert = chai.assert;
-    const getUserInput = __getUserInput;
-    // Iterate through the test one at a time
-    // on new stacks
-    const results = from(tests).pipe(
-      switchMap(function runOneTest({ text, testString }) {
-        const newTest = { text, testString };
-        let test;
-        let __result;
-        // uncomment the following line to inspect
-        // the framerunner as it runs tests
-        // make sure the dev tools console is open
-        // debugger;
-        try {
-          /* eslint-disable no-eval */
-          // eval test string to actual JavaScript
-          // This return can be a function
-          // i.e. function() { assert(true, 'happy coding'); }
-          test = eval(testString);
-          /* eslint-enable no-eval */
-          if (typeof test === 'function') {
-            // all async tests must return a promise or observable
-            // sync tests can return Any type
-            __result = test(getUserInput);
-            if (isPromise(__result)) {
-              // resolve the promise before continuing
-              __result = from(__result);
-            }
-          }
-
-          if (!__result || typeof __result.subscribe !== 'function') {
-            // make sure result is an observable
-            __result = of(null);
-          }
-        } catch (e) {
-          __result = throwError(e);
-        }
-        return __result.pipe(
-          timeout(fiveSeconds),
-          map(() => {
-            // if we are here, then the assert passed
-            // mark test as passing
-            newTest.pass = true;
-            return newTest;
-          }),
-          catchError(err => {
-            const { message, stack } = err;
-            // we catch the error here to prevent the error from bubbling up
-            // and collapsing the pipe
-            let errMessage = message.slice(0) || '';
-            const assertIndex = errMessage.indexOf(': expected');
-            if (assertIndex !== -1) {
-              errMessage = errMessage.slice(0, assertIndex);
-            }
-            errMessage = errMessage.replace(/<code>(.*?)<\/code>/g, '$1');
-            newTest.err = errMessage + '\n' + stack;
-            newTest.stack = stack;
-            newTest.message = errMessage;
-            // RxJS catch expects an observable as a return
-            return of(newTest);
-          })
-        );
-      }),
-      toArray()
-    );
-    return results;
+      return { pass: true };
+    } catch (err) {
+      if (!(err instanceof chai.AssertionError)) {
+        console.error(err);
+      }
+      // return the error so that the curriculum tests are more informative
+      return { err };
+    }
   };
-
-  // notify that the window methods are ready to run
-  frameReady.next({ checkChallengePayload });
-});
+}

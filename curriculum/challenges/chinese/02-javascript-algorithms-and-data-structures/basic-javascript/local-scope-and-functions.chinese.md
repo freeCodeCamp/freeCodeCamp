@@ -2,25 +2,44 @@
 id: 56533eb9ac21ba0edf2244bf
 title: Local Scope and Functions
 challengeType: 1
-videoUrl: ''
-localeTitle: 本地范围和功能
+videoUrl: 'https://scrimba.com/c/cd62NhM'
+forumTopicId: 18227
+localeTitle: 局部作用域和函数
 ---
 
 ## Description
-<section id="description">在函数内声明的变量，以及函数参数都具有<dfn>局部</dfn>范围。这意味着，它们仅在该功能中可见。这是一个函数<code>myTest</code>带有一个名为<code>loc</code>的局部变量。 <blockquote> function myTest（）{ <br> var loc =“foo”; <br>的console.log（LOC）; <br> } <br> MYTEST（）; //记录“foo” <br>的console.log（LOC）; // loc未定义</blockquote> <code>loc</code>未在函数外定义。 </section>
+<section id='description'>
+在一个函数内声明的变量，以及该函数的参数都是局部变量，意味着它们只在该函数内可见。
+这是在函数<code>myTest</code>内声明局部变量<code>loc</code>的例子：
+
+```js
+function myTest() {
+  var loc = "foo";
+  console.log(loc);
+}
+myTest(); // logs "foo"
+console.log(loc); // loc is not defined
+```
+
+在函数外，<code>loc</code>是未定义的。
+</section>
 
 ## Instructions
-<section id="instructions">在<code>myLocalScope</code>声明一个局部变量<code>myVar</code> 。运行测试，然后按照编辑器中注释的说明进行操作。 <strong>暗示</strong> <br>如果您遇到问题，刷新页面可能会有所帮助。 </section>
+<section id='instructions'>
+在函数<code>myFunction</code>内部声明一个局部变量<code>myVar</code>，并删除外部的 console.log。
+<strong>提示：</strong><br>如果你遇到了问题，可以先尝试刷新页面。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 没有全局<code>myVar</code>变量
-    testString: 'assert(typeof myVar === "undefined", "No global <code>myVar</code> variable");'
-  - text: 添加本地<code>myVar</code>变量
-    testString: 'assert(/var\s+myVar/.test(code), "Add a local <code>myVar</code> variable");'
+  - text: 未找到全局的<code>myVar</code>变量。
+    testString: assert(typeof myVar === 'undefined');
+  - text: 需要定义局部的<code>myVar</code>变量。
+    testString: assert(/var\s+myVar/.test(code));
+
 
 ```
 
@@ -80,7 +99,8 @@ function uncapture() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());
+(function() { return logOutput || "console.log never called"; })();
 ```
 
 </div>
@@ -90,7 +110,15 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function myLocalScope() {
+  'use strict';
+
+  var myVar;
+  console.log(myVar);
+}
+myLocalScope();
 ```
+
 </section>

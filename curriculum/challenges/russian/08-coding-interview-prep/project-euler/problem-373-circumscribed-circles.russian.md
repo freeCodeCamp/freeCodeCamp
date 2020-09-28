@@ -2,15 +2,25 @@
 id: 5900f4e11000cf542c50fff4
 challengeType: 5
 title: 'Problem 373: Circumscribed Circles'
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 302035
+localeTitle: 'Problem 373: Circumscribed Circles'
 ---
 
 ## Description
-undefined
+<section id='description'>
+Every triangle has a circumscribed circle that goes through the three vertices.
+Consider all integer sided triangles for which the radius of the circumscribed circle is integral as well.
+
+Let S(n) be the sum of the radii of the circumscribed circles of all such triangles for which the radius does not exceed n.
+
+S(100)=4950 and S(1200)=1653605.
+
+Find S(107).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ undefined
 
 ```yml
 tests:
-  - text: <code>euler373()</code> должен вернуть 727227472448913.
-    testString: 'assert.strictEqual(euler373(), 727227472448913, "<code>euler373()</code> should return 727227472448913.");'
+  - text: <code>euler373()</code> should return 727227472448913.
+    testString: assert.strictEqual(euler373(), 727227472448913);
 
 ```
 
@@ -42,8 +52,6 @@ euler373();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +60,5 @@ euler373();
 ```js
 // solution required
 ```
+
 </section>

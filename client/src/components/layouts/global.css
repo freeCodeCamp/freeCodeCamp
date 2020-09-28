@@ -1,19 +1,96 @@
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--secondary-color);
+  background: var(--secondary-background);
+}
+
 .btn-cta-big {
   max-height: 100%;
-  height: 70px;
-  font-size: 40px;
+  font-size: 1.5rem;
+  white-space: normal;
+  width: 100%;
+}
+
+.default-layout {
+  margin-top: var(--header-height, 0px);
+  background: var(--secondary-background);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-height, 0px));
+}
+
+h1 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0.6rem 0;
+}
+h2 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0.6rem 0;
+}
+h3 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0 0 0.6rem;
+}
+
+h4,
+h5,
+h6,
+p,
+td,
+th {
+  color: var(--secondary-color);
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: 'Roboto Mono', monospace;
+  margin: 0 0 1.2rem;
+}
+
+p {
+  line-height: 1.5rem;
 }
 
 .big-heading {
-  font-size: 50px !important;
+  font-size: 2.5rem !important;
+  overflow-wrap: break-word;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400;
+
+@media (max-width: 500px) {
+  .big-heading {
+    font-size: 1.5rem !important;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  .btn-cta,
+  .btn-cta-big {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .btn-cta-big {
+    font-size: 1.3rem;
+  }
 }
 
 .text-center {
@@ -21,10 +98,421 @@ h6 {
 }
 
 .green-text {
-  color: #006400;
+  color: var(--secondary-color);
 }
 
-.btn-invert {
-  background-color: #fff;
-  color: #006400;
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+/* modal */
+
+.fcc-modal {
+  background-color: var(--secondary-background);
+  color: var(--secondary-color);
+}
+
+button.close {
+  color: inherit;
+  background-color: transparent;
+  font-size: 28px;
+  opacity: 0.5;
+  text-shadow: none;
+}
+
+button.close:hover,
+button.close:focus {
+  color: inherit;
+  opacity: 1;
+  background-color: transparent;
+}
+
+.modal-content {
+  background-color: var(--secondary-background);
+  border-radius: 0px;
+  border: 1px solid var(--secondary-color);
+}
+
+.modal-footer,
+.modal-header {
+  border-color: var(--secondary-color);
+}
+
+button,
+input[type='submit'],
+.btn {
+  background-color: var(--quaternary-background);
+  border-width: 3px;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: 0px;
+  text-decoration: none;
+  white-space: pre-line;
+}
+
+button:hover,
+input[type='submit']:hover,
+.btn:hover,
+.btn-default.active:hover,
+.btn-default.active,
+.btn-primary:hover {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+  cursor: pointer;
+}
+
+.btn:active,
+.btn-primary:active {
+  background-color: var(--secondary-background);
+}
+
+.btn:focus,
+.btn-primary:focus,
+.btn-primary.focus {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn:active:hover,
+.btn-primary:hover,
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+  cursor: not-allowed;
+  background-color: var(--quaternary-background);
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+}
+
+.btn-cta {
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border-width: 3px;
+  border-color: #feac32;
+  color: #0a0a23 !important;
+}
+.btn-cta:hover,
+.btn-cta:focus,
+.btn-cta:active:hover {
+  background-color: #fecc4c !important;
+  border-width: 3px;
+  border-color: #f1a02a;
+  background-image: none;
+  color: #0a0a23 !important;
+}
+.btn-cta:active {
+  background-image: none;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.btn-link,
+.btn-link:focus,
+.btn-link:active {
+  color: inherit;
+  border: none;
+  text-decoration: underline;
+  background: transparent;
+  padding: 0;
+  outline: 0;
+}
+.btn-link:hover,
+.btn-link:focus:active {
+  background: var(--tertiary-background);
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-btn {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.link-btn.btn-lg svg {
+  height: 100%;
+  min-height: 20px;
+  min-width: 16px;
+  margin-left: 5px;
+}
+
+.link-btn:hover svg {
+  fill: var(--quaternary-background);
+}
+
+@media (min-width: 700px) {
+  .link-btn {
+    font-size: 1.1rem;
+  }
+}
+
+.button-group .btn:not(:last-child) {
+  margin-bottom: 10px;
+}
+strong {
+  color: var(--secondary-color);
+}
+
+.form-control {
+  color: var(--primary-color);
+  outline: none;
+  border-color: var(--quaternary-background);
+  background-color: var(--primary-background);
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0px;
+}
+
+input {
+  outline: none;
+  border-color: var(--quaternary-background);
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form {
+  margin-bottom: 5px;
+}
+.form-control:focus,
+input:focus {
+  border-color: var(--tertiary-color);
+}
+code {
+  background-color: var(--quaternary-background);
+  color: var(--tertiary-color);
+  border-radius: 0px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.panel {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.help-block em {
+  font-size: 0.8rem;
+}
+
+hr {
+  border-top: 1px solid var(--quaternary-background);
+}
+
+.panel-default {
+  background: var(--secondary-background);
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary,
+.open > .dropdown-toggle.btn-primary:hover {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+.open > .dropdown-menu {
+  border-radius: 0px;
+}
+
+.dropdown-menu {
+  background-color: var(--secondary-color);
+}
+
+.dropdown-menu > li > a {
+  color: var(--secondary-background);
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: var(--secondary-color);
+  background-color: var(--secondary-background);
+}
+
+.table-striped > tbody > tr:nth-child(2n + 1) > td,
+.table-striped > tbody > tr:nth-child(2n + 1) > th {
+  background-color: var(--tertiary-background);
+}
+
+.challenge-instructions table {
+  display: inline-block;
+  overflow: auto;
+}
+
+.challenge-instructions table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.challenge-instructions table th {
+  font-weight: 700;
+}
+
+.challenge-instructions table th,
+.challenge-instructions table td {
+  padding: 6px 13px;
+  border: 1px solid var(--secondary-color);
+  text-align: center;
+}
+
+.help-block {
+  color: var(--quaternary-color);
+}
+
+.panel-default > .panel-heading {
+  background-color: transparent;
+}
+
+.challenge-output span {
+  font-size: 1rem;
+}
+
+.breadcrumb {
+  background: var(--tertiary-background);
+  border-radius: 0px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  border-radius: 0px;
+}
+
+pre {
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  border-radius: 0;
+}
+
+.list-group-item {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.intro-toc .list-group-item:hover {
+  background-color: var(--tertiary-background) !important;
+  border-radius: 0;
+}
+
+.panel-primary > .panel-heading {
+  background-color: transparent;
+  border-color: var(--color-primary);
+}
+
+.has-success .help-block,
+.has-success .control-label,
+.has-success .radio,
+.has-success .checkbox,
+.has-success .radio-inline,
+.has-success .checkbox-inline,
+.has-success.radio label,
+.has-success.checkbox label,
+.has-success.radio-inline label,
+.has-success.checkbox-inline label {
+  color: var(--highlight-color);
+}
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: var(--danger-color);
+}
+
+.has-error .form-control,
+.has-warning .form-control,
+.has-success .form-control {
+  border-color: var(--quaternary-background);
+}
+
+.has-error .form-control:focus,
+.has-warning .form-control:focus,
+.has-success .form-control:focus {
+  border-color: var(--tertiary-color);
+}
+
+.panel-primary {
+  border-color: var(--primary-color);
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: var(--secondary-background);
+}
+
+.nav-tabs > li > a {
+  border-radius: 0;
+}
+
+blockquote footer,
+blockquote small,
+blockquote .small {
+  color: var(--gray-45);
+}
+
+.alert {
+  border-radius: 0px;
+  overflow-wrap: break-word;
+}
+
+/* gatsby 404 */
+#search {
+  background-color: var(--quaternary-background);
+  color: var(--primary-color);
+  border-color: var(--quaternary-color);
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+}
+
+#search::placeholder {
+  color: var(--secondary-color);
 }

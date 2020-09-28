@@ -17,20 +17,20 @@ localeTitle: العثور على واحد أو أكثر من المجرمين ف
 
 ```yml
 tests:
-  - text: يجب أن يتطابق تعبيرك العادي مع <code>one</code> المجرمين (&quot; <code>C</code> &quot;) في <code>&quot;C&quot;</code>
-    testString: 'assert("C".match(reCriminals) && "C".match(reCriminals)[0] == "C", "Your regex should match <code>one</code> criminal ("<code>C</code>") in <code>"C"</code>");'
-  - text: يجب أن يتطابق تعبيرك العادي مع <code>two</code> المجرمين (&quot; <code>CC</code> &quot;) في <code>&quot;CC&quot;</code>
-    testString: 'assert("CC".match(reCriminals) && "CC".match(reCriminals)[0] == "CC", "Your regex should match <code>two</code> criminals ("<code>CC</code>") in <code>"CC"</code>");'
-  - text: يجب أن يتطابق <code>&quot;P1P5P4CCCP2P6P3&quot;</code> العادي مع <code>three</code> مجرمين (&quot; <code>CCC</code> &quot;) في <code>&quot;P1P5P4CCCP2P6P3&quot;</code>
-    testString: 'assert("P1P5P4CCCP2P6P3".match(reCriminals) && "P1P5P4CCCP2P6P3".match(reCriminals)[0] == "CCC", "Your regex should match <code>three</code> criminals ("<code>CCC</code>") in <code>"P1P5P4CCCP2P6P3"</code>");'
-  - text: يجب أن يتطابق <code>&quot;P6P2P7P4P5CCCCCP3P1&quot;</code> العادي مع <code>five</code> مجرمين (&quot; <code>CCCCC</code> &quot;) في <code>&quot;P6P2P7P4P5CCCCCP3P1&quot;</code>
-    testString: 'assert("P6P2P7P4P5CCCCCP3P1".match(reCriminals) && "P6P2P7P4P5CCCCCP3P1".match(reCriminals)[0] == "CCCCC", "Your regex should match <code>five</code> criminals ("<code>CCCCC</code>") in <code>"P6P2P7P4P5CCCCCP3P1"</code>");'
+  - text: يجب أن يتطابق تعبيرك العادي مع <code>one</code> المجرمين ( <code>C</code>) في <code>&quot;C&quot;</code>
+    testString: 'assert("C".match(reCriminals) && "C".match(reCriminals)[0] == "C", "Your regex should match <code>one</code> criminal (<code>C</code>) in <code>"C"</code>");'
+  - text: يجب أن يتطابق تعبيرك العادي مع <code>two</code> المجرمين ( <code>CC</code> ) في <code>&quot;CC&quot;</code>
+    testString: 'assert("CC".match(reCriminals) && "CC".match(reCriminals)[0] == "CC", "Your regex should match <code>two</code> criminals (<code>CC</code>) in <code>"CC"</code>");'
+  - text: يجب أن يتطابق <code>&quot;P1P5P4CCCP2P6P3&quot;</code> العادي مع <code>three</code> مجرمين (<code>CCC</code>) في <code>&quot;P1P5P4CCCP2P6P3&quot;</code>
+    testString: 'assert("P1P5P4CCCP2P6P3".match(reCriminals) && "P1P5P4CCCP2P6P3".match(reCriminals)[0] == "CCC", "Your regex should match <code>three</code> criminals (<code>CCC</code>) in <code>"P1P5P4CCCP2P6P3"</code>");'
+  - text: يجب أن يتطابق <code>&quot;P6P2P7P4P5CCCCCP3P1&quot;</code> العادي مع <code>five</code> مجرمين ( <code>CCCCC</code> ) في <code>&quot;P6P2P7P4P5CCCCCP3P1&quot;</code>
+    testString: 'assert("P6P2P7P4P5CCCCCP3P1".match(reCriminals) && "P6P2P7P4P5CCCCCP3P1".match(reCriminals)[0] == "CCCCC", "Your regex should match <code>five</code> criminals (<code>CCCCC</code>) in <code>"P6P2P7P4P5CCCCCP3P1"</code>");'
   - text: يجب ألا يتطابق تعبيرك العادي مع أي مجرمين في <code>&quot;&quot;</code>
     testString: 'assert(!reCriminals.test(""), "Your regex should not match any criminals in <code>""</code>");'
   - text: يجب ألا يتطابق <code>&quot;P1P2P3&quot;</code> العادي مع أي مجرمين في <code>&quot;P1P2P3&quot;</code>
     testString: 'assert(!reCriminals.test("P1P2P3"), "Your regex should not match any criminals in <code>"P1P2P3"</code>");'
-  - text: يجب أن يتطابق <code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code> العادي مع <code>fifty</code> المجرمين (&quot; <code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code> &quot;) في <code>&quot;P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3&quot;</code> .
-    testString: 'assert("P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals) && "P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals)[0] == "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC", "Your regex should match <code>fifty</code> criminals ("<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>") in <code>"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"</code>.");'
+  - text: يجب أن يتطابق <code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code> العادي مع <code>fifty</code> المجرمين ( <code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code> ) في <code>&quot;P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3&quot;</code> .
+    testString: 'assert("P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals) && "P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals)[0] == "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC", "Your regex should match <code>fifty</code> criminals (<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>) in <code>"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"</code>.");'
 
 ```
 

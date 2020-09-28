@@ -9,6 +9,8 @@ localeTitle: Convertir datos JSON a HTML
 ## Description
 <section id="description"> Ahora que está obteniendo datos de una API JSON, puede mostrarlos en el HTML. Puede usar un método <code>forEach</code> para recorrer los datos, ya que los objetos de la foto del gato se mantienen en una matriz. A medida que llegas a cada elemento, puedes modificar los elementos HTML. Primero, declare una variable html con <code>var html = &quot;&quot;;</code> . Luego, recorra el JSON, agregando HTML a la variable que envuelve los nombres de las claves en etiquetas <code>strong</code> , seguido del valor. Cuando el bucle termina, lo renderizas. Aquí está el código que hace esto: <blockquote> json.forEach (función (val) { <br> var keys = Object.keys (val); <br> html + = &quot;&lt;div class = &#39;cat&#39;&gt;&quot;; <br> keys.forEach (function (key) { <br> html + = &quot;&lt;strong&gt;&quot; + clave + &quot;&lt;/strong&gt;:&quot; + val [clave] + &quot;&lt;br&gt;&quot;; <br> }); <br> html + = &quot;&lt;/div&gt; &lt;br&gt;&quot;; <br> }); </blockquote></section>
 
+<strong>Nota:</strong> Para completar este reto es necesario añadir nuevos elementos HTML, por lo que no podrá depender de `textContent`. Deberá utilizar el método `innerHTML` que podría hacer que su página web sea vulnerable a ataques de cross site scripting.
+
 ## Instructions
 <section id="instructions"> Agregue un método <code>forEach</code> para recorrer los datos JSON y crear los elementos HTML para mostrarlos. Aquí hay un ejemplo de JSON <blockquote> El <br> { <br> &quot;id&quot;: 0, <br> &quot;imageLink&quot;: &quot;https://s3.amazonaws.com/freecodecamp/funny-cat.jpg&quot;, <br> &quot;altText&quot;: &quot;Un gato blanco con un casco verde con forma de melón en la cabeza&quot;. <br> &quot;codeNames&quot;: [&quot;Juggernaut&quot;, &quot;Mrs. Wallace&quot;, &quot;Buttercup&quot; <br> ] <br> } <br> ] </blockquote></section>
 
@@ -80,7 +82,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>

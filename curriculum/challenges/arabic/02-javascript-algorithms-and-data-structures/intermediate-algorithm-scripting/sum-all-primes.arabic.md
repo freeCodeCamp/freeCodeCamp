@@ -1,14 +1,13 @@
 ---
 id: a3bfc1673c0526e06d3ac698
 title: Sum All Primes
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: مجموع كل الأعداد
 ---
 
 ## Description
-<section id="description"> اجمع جميع الأعداد الأولية حتى وتضم الرقم المقدم. يتم تعريف رقم أولي على أنه رقم أكبر من واحد ويكون له مقسومان فقط ، واحد و نفسه. على سبيل المثال ، الرقم 2 هو رقم أولي لأنه قابل للقسمة على واحد فقط والثاني. قد لا يكون الرقم المقدم رئيسًا. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
+<section id="description"> اجمع جميع الأعداد الأولية حتى وتضم الرقم المقدم. يتم تعريف رقم أولي على أنه رقم أكبر من واحد ويكون له مقسومان فقط ، واحد و نفسه. على سبيل المثال ، الرقم 2 هو رقم أولي لأنه قابل للقسمة على واحد فقط والثاني. قد لا يكون الرقم المقدم رئيسًا. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

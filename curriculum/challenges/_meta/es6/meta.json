@@ -1,5 +1,6 @@
 {
   "name": "ES6",
+  "isUpcomingChange": false,
   "dashedName": "es6",
   "order": 2,
   "time": "5 hours",
@@ -37,20 +38,20 @@
       "Write Arrow Functions with Parameters"
     ],
     [
-      "587d7b88367417b2b2512b45",
-      "Write Higher Order Arrow Functions"
-    ],
-    [
       "587d7b88367417b2b2512b46",
       "Set Default Parameters for Your Functions"
     ],
     [
       "587d7b88367417b2b2512b47",
-      "Use the Rest Operator with Function Parameters"
+      "Use the Rest Parameter with Function Parameters"
     ],
     [
       "587d7b89367417b2b2512b48",
       "Use the Spread Operator to Evaluate Arrays In-Place"
+    ],
+    [
+      "5cfa550e84205a357704ccb6",
+      "Use Destructuring Assignment to Extract Values from Objects"
     ],
     [
       "587d7b89367417b2b2512b49",
@@ -66,7 +67,7 @@
     ],
     [
       "587d7b8a367417b2b2512b4c",
-      "Use Destructuring Assignment with the Rest Operator to Reassign Array Elements"
+      "Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements"
     ],
     [
       "587d7b8a367417b2b2512b4d",
@@ -78,7 +79,7 @@
     ],
     [
       "587d7b8a367417b2b2512b4f",
-      "Write Concise Object Literal Declarations Using Simple Fields"
+      "Write Concise Object Literal Declarations Using Object Property Shorthand"
     ],
     [
       "587d7b8b367417b2b2512b50",
@@ -93,12 +94,16 @@
       "Use getters and setters to Control Access to an Object"
     ],
     [
-      "587d7b8c367417b2b2512b55",
-      "Understand the Differences Between import and require"
+      "5cddbfd622f1a59093ec611d",
+      "Create a Module Script"
     ],
     [
       "587d7b8c367417b2b2512b56",
-      "Use export to Reuse a Code Block"
+      "Use export to Share a Code Block"
+    ],
+    [
+      "587d7b8c367417b2b2512b55",
+      "Reuse JavaScript Code Using import"
     ],
     [
       "587d7b8c367417b2b2512b57",
@@ -111,6 +116,22 @@
     [
       "587d7b8d367417b2b2512b59",
       "Import a Default Export"
+    ],
+    [
+      "5cdafbb0291309899753167f",
+      "Create a JavaScript Promise"
+    ],
+    [
+      "5cdafbc32913098997531680",
+      "Complete a Promise with resolve and reject"
+    ],
+    [
+      "5cdafbd72913098997531681",
+      "Handle a Fulfilled Promise with then"
+    ],
+    [
+      "5cdafbe72913098997531682",
+      "Handle a Rejected Promise with catch"
     ]
   ],
   "helpRoom": "Help",

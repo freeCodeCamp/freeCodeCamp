@@ -2,29 +2,46 @@
 id: bad87fee1348bd9aedf08808
 title: Specify How Fonts Should Degrade
 challengeType: 0
-videoUrl: ''
-localeTitle: 指定字体应如何降级
+videoUrl: 'https://scrimba.com/c/cpVKBfQ'
+forumTopicId: 18304
+localeTitle: 字体如何优雅降级
 ---
 
 ## Description
-<section id="description">所有浏览器都有几种默认字体。这些通用字体系列包括<code>monospace</code> ， <code>serif</code>和<code>sans-serif</code>当一个字体不可用时，您可以告诉浏览器“降级”为另一种字体。例如，如果您希望元素使用<code>Helvetica</code>字体，但在<code>Helvetica</code>不可用时降级为<code>sans-serif</code>字体，则将按如下方式指定： <blockquote> p { <br> font-family：Helvetica，sans-serif; <br> } </blockquote>通用字体系列名称不区分大小写。此外，它们不需要引号，因为它们是CSS关键字。 </section>
+<section id='description'>
+所有浏览器都有几种默认字体。这些通用字体包括<code>monospace</code>，<code>serif</code>和<code>sans-serif</code>。
+当字体不可用，你可以告诉浏览器通过 “降级” 去使用其他字体。
+例如，如果你想将一个元素的字体设置成<code>Helvetica</code>，当<code>Helvetica</code>不可用时，降级使用<code>sans-serif</code>字体，那么可以这样写：
+
+```css
+p {
+  font-family: Helvetica, sans-serif;
+}
+```
+
+通用字体名字不区分大小写。同时，也不需要使用引号，因为它们是 CSS 关键字。
+</section>
 
 ## Instructions
-<section id="instructions">首先，将<code>monospace</code>字体应用于<code>h2</code>元素，以便它现在有两种字体 - <code>Lobster</code>和<code>monospace</code>字体。在上一个挑战中，您使用<code>link</code>标记导入了<code>Lobster</code>字体。现在注释掉谷歌字体导入的<code>Lobster</code>字体（使用之前学过的HTML评论），以便它不再可用。注意你的<code>h2</code>元素如何降级为<code>monospace</code>字体。 <strong>注意</strong> <br>如果您的计算机上安装了Lobster字体，您将看不到降级，因为您的浏览器能够找到该字体。 </section>
+<section id='instructions'>
+首先，添加<code>monospace</code>字体到<code>h2</code>元素里，它现在拥有着<code>Lobster</code>和<code>monospace</code>两种字体。
+在上一个挑战里，你已经通过<code>link</code>标签引入谷歌<code>Lobster</code>字体。现在让我们注释掉谷歌<code>Lobster</code>字体的引入（使用我们之前学过的<code>HTML</code>注释），使字体失效。你会发现<code>h2</code>元素降级到了<code>monospace</code>字体。
+<strong>注意：</strong><br>如果电脑已经安装了<code>Lobster</code>字体，你将看不到这个降级过程，因为浏览器会找到该字体。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的h2元素应该使用字体<code>Lobster</code> 。
-    testString: 'assert($("h2").css("font-family").match(/^"?lobster/i), "Your h2 element should use the font <code>Lobster</code>.");'
-  - text: 当<code>Lobster</code>不可用时，你的h2元素会降级为<code>monospace</code>字体。
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?,\s*monospace\s*;\s*\}/gi.test(code), "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.");'
-  - text: 通过在其前面放置<code>&lt;!--</code>来注释您对Google的<code>Lobster</code>字体的调用。
-    testString: 'assert(new RegExp("<!--[^fc]", "gi").test(code), "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.");'
-  - text: 请务必通过添加<code>--&gt;</code>来关闭您的评论。
-    testString: 'assert(new RegExp("[^fc]-->", "gi").test(code), "Be sure to close your comment by adding <code>--&#62;</code>.");'
+  - text: '<code>h2</code>元素应该含有<code>Lobster</code>字体。'
+    testString: assert($("h2").css("font-family").match(/^"?lobster/i));
+  - text: '当<code>Lobster</code>字体失效时，<code>h2</code>元素应该降级使用<code>monospace</code>字体。'
+    testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(code));
+  - text: '通过添加<code>&#60!--</code>，注释掉谷歌<code>Lobster</code>字体的引入。'
+    testString: assert(new RegExp("<!--[^fc]", "gi").test(code));
+  - text: '确保注释要以<code>--&#62;</code>结束。'
+    testString: assert(new RegExp("[^fc]-->", "gi").test(code));
 
 ```
 
@@ -54,36 +71,35 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
+  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  
   <div>
-    <p>Things cats love:</p>
+    <p>猫咪最喜欢的三件东西：</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>猫薄荷</li>
+      <li>激光笔</li>
+      <li>千层饼</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>猫咪最讨厌的三件东西：</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>跳蚤</li>
+      <li>打雷</li>
+      <li>同类</li>
     </ol>
   </div>
-
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+  
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor">室内</label>
+    <label><input type="radio" name="indoor-outdoor">室外</label><br>
+    <label><input type="checkbox" name="personality">忠诚</label>
+    <label><input type="checkbox" name="personality">懒惰</label>
+    <label><input type="checkbox" name="personality">积极</label><br>
+    <input type="text" placeholder="猫咪图片地址" required>
+    <button type="submit">提交</button>
   </form>
 </main>
-
 ```
 
 </div>
@@ -95,7 +111,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

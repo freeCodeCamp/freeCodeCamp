@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036182
 title: Add Inline Styles in React
 challengeType: 6
-isRequired: false
+forumTopicId: 301378
 ---
 
 ## Description
@@ -13,7 +13,7 @@ All property value length units (like <code>height</code>, <code>width</code>, a
 
 ## Instructions
 <section id='instructions'>
-If you have a large set of styles, you can assign a style <code>object</code> to a constant to keep your code organized. Uncomment the <code>styles</code> constant and declare an <code>object</code> with three style properties and their values. Give the <code>div</code> a color of <code>"purple"</code>, a font-size of <code>40</code>, and a border of <code>"2px solid purple"</code>. Then set the <code>style</code> attribute equal to the <code>styles</code> constant.
+If you have a large set of styles, you can assign a style <code>object</code> to a constant to keep your code organized. Initialize a <code>styles</code> constant and assign an <code>object</code> with three style properties and their values to it. Give the <code>div</code> a color of <code>"purple"</code>, a font-size of <code>40</code>, and a border of <code>"2px solid purple"</code>. Then set the <code>style</code> attribute equal to the <code>styles</code> constant.
 </section>
 
 ## Tests
@@ -22,17 +22,17 @@ If you have a large set of styles, you can assign a style <code>object</code> to
 ```yml
 tests:
   - text: The <code>styles</code> variable should be an <code>object</code> with three properties.
-    testString: assert(Object.keys(styles).length === 3, 'The <code>styles</code> variable should be an <code>object</code> with three properties.');
+    testString: assert(Object.keys(styles).length === 3);
   - text: The <code>styles</code> variable should have a <code>color</code> property set to a value of <code>purple</code>.
-    testString: assert(styles.color === 'purple', 'The <code>styles</code> variable should have a <code>color</code> property set to a value of <code>purple</code>.');
+    testString: assert(styles.color === 'purple');
   - text: The <code>styles</code> variable should have a <code>fontSize</code> property set to a value of <code>40</code>.
-    testString: assert(styles.fontSize === 40, 'The <code>styles</code> variable should have a <code>fontSize</code> property set to a value of <code>40</code>.');
+    testString: assert(styles.fontSize === 40);
   - text: The <code>styles</code> variable should have a <code>border</code> property set to a value of <code>2px solid purple</code>.
-    testString: assert(styles.border === "2px solid purple", 'The <code>styles</code> variable should have a <code>border</code> property set to a value of <code>2px solid purple</code>.');
+    testString: assert(styles.border === "2px solid purple");
   - text: The component should render a <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === 'div'; })(), 'The component should render a <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === 'div'; })());
   - text: The <code>div</code> element should have its styles defined by the <code>styles</code> object.
-    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === "purple" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === "2px solid purple"); })(), 'The <code>div</code> element should have its styles defined by the <code>styles</code> object.');
+    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === "purple" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === "2px solid purple"); })());
 
 ```
 
@@ -45,15 +45,15 @@ tests:
 
 ```jsx
 
-// const styles =
-// change code above this line
+
+// Change code above this line
 class Colorful extends React.Component {
   render() {
-    // change code below this line
+    // Change code below this line
     return (
       <div style={{color: "yellow", fontSize: 24}}>Style Me!</div>
     );
-    // change code above this line
+    // Change code above this line
   }
 };
 
@@ -65,7 +65,7 @@ class Colorful extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<Colorful />, document.getElementById('root'))
 ```
 
@@ -77,20 +77,20 @@ ReactDOM.render(<Colorful />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const styles = {
   color: "purple",
   fontSize: 40,
   border: "2px solid purple"
 };
-// change code above this line
+// Change code above this line
 class Colorful extends React.Component {
   render() {
-    // change code below this line
+    // Change code below this line
     return (
       <div style={styles}>Style Me!</div>
-  // change code above this line
     );
+    // Change code above this line
   }
 };
 

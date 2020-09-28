@@ -1,8 +1,8 @@
 ---
 id: a0b5010f579e69b815e7c5d6
 title: Search and Replace
-isRequired: true
 challengeType: 5
+forumTopicId: 16045
 ---
 
 ## Description
@@ -12,7 +12,6 @@ First argument is the sentence to perform the search and replace on.
 Second argument is the word that you will be replacing (before).
 Third argument is what you will be replacing the second argument with (after).
 <strong>Note</strong><br> Preserve the case of the first character in the original word when you are replacing it. For example if you mean to replace the word "Book" with the word "dog", it should be replaced as "Dog"
-Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions
@@ -26,15 +25,17 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>myReplace("Let us go to the store", "store", "mall")</code> should return "Let us go to the mall".
-    testString: assert.deepEqual(myReplace("Let us go to the store", "store", "mall"), "Let us go to the mall", '<code>myReplace("Let us go to the store", "store", "mall")</code> should return "Let us go to the mall".');
+    testString: assert.deepEqual(myReplace("Let us go to the store", "store", "mall"), "Let us go to the mall");
   - text: <code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code> should return "He is Sitting on the couch".
-    testString: assert.deepEqual(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"), "He is Sitting on the couch", '<code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code> should return "He is Sitting on the couch".');
+    testString: assert.deepEqual(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"), "He is Sitting on the couch");
+  - text: <code>myReplace("I think we should look up there", "up", "Down")</code> should return "I think we should look down there".
+    testString: assert.deepEqual(myReplace("I think we should look up there", "up", "Down"), "I think we should look down there");
   - text: <code>myReplace("This has a spellngi error", "spellngi", "spelling")</code> should return "This has a spelling error".
-    testString: assert.deepEqual(myReplace("This has a spellngi error", "spellngi", "spelling"), "This has a spelling error", '<code>myReplace("This has a spellngi error", "spellngi", "spelling")</code> should return "This has a spelling error".');
+    testString: assert.deepEqual(myReplace("This has a spellngi error", "spellngi", "spelling"), "This has a spelling error");
   - text: <code>myReplace("His name is Tom", "Tom", "john")</code> should return "His name is John".
-    testString: assert.deepEqual(myReplace("His name is Tom", "Tom", "john"), "His name is John", '<code>myReplace("His name is Tom", "Tom", "john")</code> should return "His name is John".');
+    testString: assert.deepEqual(myReplace("His name is Tom", "Tom", "john"), "His name is John");
   - text: <code>myReplace("Let us get back to more Coding", "Coding", "algorithms")</code> should return "Let us get back to more Algorithms".
-    testString: assert.deepEqual(myReplace("Let us get back to more Coding", "Coding", "algorithms"), "Let us get back to more Algorithms", '<code>myReplace("Let us get back to more Coding", "Coding", "algorithms")</code> should return "Let us get back to more Algorithms".');
+    testString: assert.deepEqual(myReplace("Let us get back to more Coding", "Coding", "algorithms"), "Let us get back to more Algorithms");
 
 ```
 

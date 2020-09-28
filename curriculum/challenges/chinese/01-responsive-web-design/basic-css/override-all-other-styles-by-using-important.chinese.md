@@ -2,33 +2,44 @@
 id: bad87fee1348bd9aedf07756
 title: Override All Other Styles by using Important
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用重要覆盖所有其他样式
+videoUrl: 'https://scrimba.com/c/cm24rcp'
+forumTopicId: 18249
+localeTitle: Important 的优先级最高
 ---
 
 ## Description
-<section id="description">好极了！我们刚刚证明了内联样式将覆盖<code>style</code>元素中的所有CSS声明。可是等等。有一种覆盖CSS的最后一种方法。这是所有人中最强大的方法。但在我们这样做之前，让我们谈谈为什么你想要覆盖CSS。在许多情况下，您将使用CSS库。这些可能会意外地覆盖您自己的CSS。所以当你绝对需要确定一个元素有特定的CSS时，你可以使用<code>!important</code>让我们一直回到我们的<code>pink-text</code>类声明。请记住，我们的<code>pink-text</code>类被后续的类声明，id声明和内联样式覆盖。 </section>
+<section id='description'>
+耶！我们刚刚又证明了行内样式会覆盖<code>style</code>标签里面所有的 CSS 声明。
+不过，还有一种方式可以覆盖重新 CSS 样式。这是所有方法里面最强大的一个。在此之前，我们要考虑清楚，为什么我们需要覆盖 CSS 样式。
+在很多时候，你使用 CSS 库，有时候它们声明的样式会意外的覆盖 CSS 样式。当你需要保证 CSS 样式不受影响，你可以使用<code>!important</code>。
+让我们回到<code>pink-text</code>class 声明之中，它已经被随其后的 class 声明，id 声明，以及行内样式所覆盖。
+</section>
 
 ## Instructions
-<section id="instructions">让我们在粉红色文本元素的颜色声明中添加关键字<code>!important</code> ，以100％确定你的<code>h1</code>元素是粉红色的。如何执行此操作的示例是： <code>color: red !important;</code> </section>
+<section id='instructions'>
+
+在<code>pink-text</code>class 的<code>color</code>声明里面使用<code>!important</code>关键字，去确保<code>h1</code>元素的字体颜色一定为粉色。
+操作的方法大概如下：
+<code>color: red !important;</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的<code>h1</code>元素应该具有<code>pink-text</code>类。
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: 你的<code>h1</code>元素应该有<code>blue-text</code> 。
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: 您的<code>h1</code>元素应具有<code>orange-text</code>的ID。
-    testString: 'assert($("h1").attr("id") === "orange-text", "Your <code>h1</code> element should have the id of <code>orange-text</code>.");'
-  - text: '您的<code>h1</code>元素应具有内联样式的<code>color: white</code> 。'
-    testString: 'assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi), "Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.");'
-  - text: 你的<code>pink-text</code>类声明应该有<code>!important</code>关键字来覆盖所有其他声明。
-    testString: 'assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g), "Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.");'
-  - text: 你的<code>h1</code>元素应该是粉红色的。
-    testString: 'assert($("h1").css("color") === "rgb(255, 192, 203)", "Your <code>h1</code> element should be pink.");'
+  - text: '<code>h1</code>元素应该包含<code>pink-text</code> class。'
+    testString: assert($("h1").hasClass("pink-text"));
+  - text: '<code>h1</code>元素应该包含<code>blue-text</code> class。'
+    testString: assert($("h1").hasClass("blue-text"));
+  - text: '<code>h1</code>元素应该包含一个名为<code>orange-text</code>的id。'
+    testString: assert($("h1").attr("id") === "orange-text");
+  - text: '<code>h1</code>元素应该包含<code>color&#58; white</code>的行内样式声明。'
+    testString: assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi));
+  - text: '<code>pink-text</code> class 声明应该含有<code>!important</code>关键字。'
+    testString: assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g));
+  - text: '<code>h1</code>元素的字体颜色应该为粉色。'
+    testString: assert($("h1").css("color") === "rgb(255, 192, 203)");
 
 ```
 
@@ -57,7 +68,6 @@ tests:
   }
 </style>
 <h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
-
 ```
 
 </div>
@@ -69,7 +79,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

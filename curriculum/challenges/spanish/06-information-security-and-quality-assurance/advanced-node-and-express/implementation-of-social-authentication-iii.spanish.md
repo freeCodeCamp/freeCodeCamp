@@ -7,7 +7,7 @@ localeTitle: Implementación de la autenticación social III
 ---
 
 ## Description
-<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-socialauth/">GitHub</a> . La parte final de la estrategia es manejar el perfil devuelto por Github. Necesitamos cargar el objeto de la base de datos de usuarios, si existe, o crear uno si no existe, y rellenar los campos del perfil, luego devolver el objeto del usuario. Github nos proporciona un <em>ID</em> único dentro de cada perfil que podemos usar para buscar con el usuario serializado (ya implementado). A continuación se muestra un ejemplo de implementación que puede usar en su proyecto: va dentro de la función que es el segundo argumento para la nueva estrategia, justo debajo de <code>console.log(profile);</code> actualmente es: <pre> db.collection (&#39;socialusers&#39;). findAndModify (
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-socialauth/">GitHub</a> . La parte final de la estrategia es manejar el perfil devuelto por GitHub. Necesitamos cargar el objeto de la base de datos de usuarios, si existe, o crear uno si no existe, y rellenar los campos del perfil, luego devolver el objeto del usuario. GitHub nos proporciona un <em>ID</em> único dentro de cada perfil que podemos usar para buscar con el usuario serializado (ya implementado). A continuación se muestra un ejemplo de implementación que puede usar en su proyecto: va dentro de la función que es el segundo argumento para la nueva estrategia, justo debajo de <code>console.log(profile);</code> actualmente es: <pre> db.collection (&#39;socialusers&#39;). findAndModify (
     {id: profile.id},
     {},
     {$ setOnInsert: {
@@ -37,7 +37,7 @@ localeTitle: Implementación de la autenticación social III
 
 ```yml
 tests:
-  - text: Configuración de la estrategia de Github completa
+  - text: Configuración de la estrategia de GitHub completa
     testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, "Strategy should use now use the database to search for the user"); assert.match(data, /GitHubStrategy[^]*socialusers/gi, "Strategy should use "socialusers" as db collection"); assert.match(data, /GitHubStrategy[^]*return cb/gi, "Strategy should return the callback function "cb""); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```

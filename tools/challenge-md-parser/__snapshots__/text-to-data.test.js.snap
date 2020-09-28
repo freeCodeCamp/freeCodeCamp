@@ -5,15 +5,13 @@ Object {
   "description": "<section id=\\"description\\">
 <p>Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.</p>
 <p>Lorem Ipsum with <code>some code</code></p>
-<blockquote>
+<p><blockquote>
 <p>Some text in a blockquote</p>
 <p>Some text in a blockquote, with <code>code</code></p>
-</blockquote>
-<pre><code class=\\"language-html\\">&#x3C;p>We aim to preserve this&#x3C;/p>
-</code></pre>
+</blockquote></p>
+<p><pre><code class=\\"language-html\\">&#x3C;p>We aim to preserve this&#x3C;/p>
+</code></pre></p>
 </section>",
-  "instructions": "<section id=\\"instructions\\">
-<p>To pass the test on this challenge, change your <code>h1</code> element's text to say \\"Hello World\\".</p>
-</section>",
+  "instructions": "",
 }
 `;

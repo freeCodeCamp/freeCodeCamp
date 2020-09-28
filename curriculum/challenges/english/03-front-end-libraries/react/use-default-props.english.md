@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403616b
 title: Use Default Props
 challengeType: 6
-isRequired: false
+forumTopicId: 301418
 ---
 
 ## Description
@@ -21,9 +21,9 @@ The code editor shows a <code>ShoppingCart</code> component. Define default prop
 ```yml
 tests:
   - text: The <code>ShoppingCart</code> component should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })(), 'The <code>ShoppingCart</code> component should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })());
   - text: 'The <code>ShoppingCart</code> component should have a default prop of <code>{ items: 0 }</code>.'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); mockedComponent.setProps({items: undefined}); return mockedComponent.find(''ShoppingCart'').props().items === 0; })(), ''The <code>ShoppingCart</code> component should have a default prop of <code>{ items: 0 }</code>.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); mockedComponent.setProps({items: undefined}); return mockedComponent.find(''ShoppingCart'').props().items === 0; })());'
 
 ```
 
@@ -42,7 +42,7 @@ const ShoppingCart = (props) => {
     </div>
   )
 };
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -52,7 +52,7 @@ const ShoppingCart = (props) => {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 ```
 
@@ -64,7 +64,7 @@ ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const ShoppingCart = (props) => {
   return (
     <div>
@@ -73,7 +73,7 @@ const ShoppingCart = (props) => {
   )
 };
 
-// change code below this line
+// Change code below this line
 ShoppingCart.defaultProps = {
   items: 0
 }

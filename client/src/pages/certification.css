@@ -1,20 +1,23 @@
 @font-face {
   font-family: 'Sax Mono';
   src: url('/fonts/saxmono.ttf') format('truetype');
+  font-display: fallback;
 }
 
 .certification-namespace * {
   margin: 0;
   padding: 0;
 }
+
 .certification-namespace h1 {
   margin: 12px 0;
 }
+
 .certification-namespace.container {
   max-width: 1500px;
   width: 100%;
   padding: 30px;
-  border: darkgreen 15px solid;
+  border: var(--theme-color) 15px solid;
   border-radius: 3px;
 }
 
@@ -27,15 +30,54 @@
 }
 
 .certification-namespace.certificate-wrapper {
-  top: calc(100vh / 20);
-  position: relative;
   font-family: 'Sax Mono', monospace;
+}
+
+/* center the certificate vertically */
+.certificate-outer-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.certificate-outer-wrapper .donation-section {
+  padding-bottom: 100px;
+}
+
+.certificate-outer-wrapper .donation-section hr {
+  border: 1px solid var(--gray-10);
+}
+
+.certificate-outer-wrapper .donation-completion .btn {
+  background-color: var(--gray-15);
+  border-color: var(--gray-85);
+  color: var(--gray-85);
+}
+
+.certificate-outer-wrapper .donation-completion .btn:hover {
+  border-color: var(--gray-85);
+  background-color: var(--gray-85);
+  color: var(--gray-05);
+}
+
+.certificate-outer-wrapper .donation-completion .btn[disabled],
+.certificate-outer-wrapper .donation-completion .btn[disabled]:hover {
+  background-color: var(--gray-15);
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+}
+
+.certificate-outer-wrapper .donation-section,
+.certificate-outer-wrapper .donation-section p {
+  font-family: 'Lato', sans-serif;
 }
 
 .certification-namespace header {
   width: 100%;
   height: 140px;
-  background-color: darkgreen;
+  background-color: var(--theme-color);
   position: relative;
 }
 
@@ -46,9 +88,10 @@
   margin-left: 100px;
 }
 
-.certification-namespace .logo img {
-  max-width: 500px;
+.certification-namespace .logo svg {
+  height: 100%;
   width: 100%;
+  max-width: 500px;
 }
 
 .certification-namespace .issue-date {
@@ -56,14 +99,17 @@
   font-size: 20px;
   text-align: right;
   margin-right: 100px;
-  color: #fff;
+  color: var(--gray-00);
+}
+
+.certification-namespace .issue-date strong {
+  color: var(--gray-00);
 }
 
 .certification-namespace .information {
-  margin-top: -20px;
   height: 380px;
   text-align: center;
-  background-color: #efefef;
+  background-color: var(--gray-05);
 }
 
 .certification-namespace .information-container {
@@ -78,7 +124,8 @@
 }
 
 .certification-namespace h3 {
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: normal;
 }
 
 .certification-namespace h4 {
@@ -88,13 +135,13 @@
 
 .certification-namespace h1 {
   font-size: 40px;
-  color: #006400;
+  color: var(--theme-color);
 }
 
 .certification-namespace .signatures {
   text-align: center;
   margin: 0 auto;
-  background-color: #efefef;
+  background-color: var(--gray-05);
 }
 
 .certification-namespace .signatures img {
@@ -113,20 +160,34 @@
   font-size: 15px;
   text-align: center;
   word-wrap: break-word;
-  background-color: #efefef;
-}
-
-/*adds vertical alignment when the height is bigger than required to display everything*/
-@media screen and (min-height: 700px) {
-  .certification-namespace body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-  }
+  background-color: var(--gray-05);
 }
 
 /*mobile media queries*/
+@media screen and (max-width: 675px) {
+  .certification-namespaces.issue-date {
+    padding: 0;
+    border: 0;
+  }
+
+  .certification-namespace header {
+    height: 190px;
+  }
+
+  .certification-namespace h3 {
+    font-size: 15px;
+  }
+
+  .certification-namespace h1 {
+    font-size: 17px;
+  }
+
+  .certification-namespace h4 {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .certification-namespace header {
     height: 160px;
@@ -139,7 +200,7 @@
     height: 80px;
   }
 
-  .certification-namespace .logo img {
+  .certification-namespace .logo svg {
     margin-top: 20px;
   }
 
@@ -198,4 +259,9 @@
     font-size: 15px;
     margin-top: 20px;
   }
+}
+
+.certificate-outer-wrapper {
+  margin-top: calc(-1 * var(--header-height));
+  background-color: #fff;
 }

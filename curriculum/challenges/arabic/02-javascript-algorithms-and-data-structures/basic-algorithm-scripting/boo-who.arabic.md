@@ -1,14 +1,13 @@
 ---
 id: a77dbc43c33f39daa4429b4f
 title: Boo who
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: بو من
 ---
 
 ## Description
-<section id="description"> تحقق مما إذا كانت القيمة مصنفة على أنها بدائية منطقية. إرجاع صح أو خطأ. الأجناس البولية هي صحيحة وكاذبة. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
+<section id="description"> تحقق مما إذا كانت القيمة مصنفة على أنها بدائية منطقية. إرجاع صح أو خطأ. الأجناس البولية هي صحيحة وكاذبة. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

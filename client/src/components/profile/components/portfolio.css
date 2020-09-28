@@ -1,0 +1,50 @@
+.portfolio-heading.media-heading {
+  border-bottom: 1px solid var(--quaternary-background);
+  padding-bottom: 10px;
+}
+.portfolio-screen-shot {
+  width: 150px;
+  min-width: 150px;
+}
+
+.media {
+  word-break: break-all;
+}
+
+/* Timeline pagination */
+.timeline-pagination_list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-pagination_list_item {
+  margin: 0 5px;
+}
+
+.timeline-pagination_list_item > button {
+  outline: none;
+}
+
+/* Timeline table styles */
+.timeline-row {
+  height: 60px;
+}
+
+.timeline-row > td {
+  vertical-align: middle !important;
+}
+
+.timeline-cert-link {
+  margin-right: 20px;
+}
+
+.timeline-cert-link > svg {
+  display: inline-block;
+  height: 25px;
+  width: auto;
+  margin-left: 10px;
+  position: absolute;
+}

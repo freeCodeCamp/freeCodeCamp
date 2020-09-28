@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08814
 title: Add Rounded Corners with border-radius
 challengeType: 0
-guideUrl: 'https://portuguese.freecodecamp.org/guide/certificates/add-rounded-corners-a-border-radius'
 videoUrl: ''
 localeTitle: Adicionar cantos arredondados com raio de borda
 ---
@@ -18,10 +17,10 @@ localeTitle: Adicionar cantos arredondados com raio de borda
 
 ```yml
 tests:
-  - text: Seu elemento de imagem deve ter a classe "borda verde espessa".
-    testString: 'assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");'
-  - text: Sua imagem deve ter um raio de 10 <code>10px</code>
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");'
+  - text: Seu elemento de imagem deve ter a classe "thick-green-border".
+    testString: assert($("img").hasClass("thick-green-border"));
+  - text: Sua imagem deve ter uma borda com raio de <code>10px</code>
+    testString: assert(parseInt($("img").css("border-top-left-radius")) > 8);
 
 ```
 
@@ -80,7 +79,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>
@@ -105,4 +104,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

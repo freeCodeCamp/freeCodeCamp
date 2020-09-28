@@ -2,26 +2,30 @@
 id: 56533eb9ac21ba0edf2244ed
 title: Appending Variables to Strings
 challengeType: 1
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/appending-variables-to-strings'
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/cbQmZfa'
+forumTopicId: 16656
 localeTitle: 将变量附加到字符串
 ---
 
 ## Description
-<section id="description">正如我们可以在字符串<dfn>文字中</dfn>构建多行的字符串一样，我们也可以使用加号等于（ <code>+=</code> ）运算符将变量附加到字符串。 </section>
+<section id='description'>
+我们不仅可以创建出多行的字符串，还可以使用加等号(<code>+=</code>)运算符来将变量追加到字符串。
+</section>
 
 ## Instructions
-<section id="instructions">设置<code>someAdjective</code>并使用<code>+=</code>运算符将其附加到<code>myStr</code> 。 </section>
+<section id='instructions'>
+设置变量<code>someAdjective</code>的值，并使用<code>+=</code>运算符把它追加到变量<code>myStr</code>上。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>someAdjective</code>应设置为至少3个字符长的字符串
-    testString: 'assert(typeof someAdjective !== "undefined" && someAdjective.length > 2, "<code>someAdjective</code> should be set to a string at least 3 characters long");'
-  - text: 使用<code>+=</code>运算符将<code>someAdjective</code>附加到<code>myStr</code>
-    testString: 'assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0, "Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator");'
+  - text: <code>someAdjective</code>应该是一个至少包含三个字符的字符串。
+    testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
+  - text: 使用<code>+=</code>操作符把<code>someAdjective</code>追加到<code>myStr</code>的后面。
+    testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 
 ```
 
@@ -52,7 +56,20 @@ var myStr = "Learning to code is ";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  var output = [];
+  if(typeof someAdjective === 'string') {
+    output.push('someAdjective = "' + someAdjective + '"');
+  } else {
+    output.push('someAdjective is not a string');
+  }
+  if(typeof myStr === 'string') {
+    output.push('myStr = "' + myStr + '"');
+  } else {
+    output.push('myStr is not a string');
+  }
+  return output.join('\n');
+})();
 ```
 
 </div>
@@ -62,7 +79,15 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var anAdjective = "awesome!";
+var ourStr = "freeCodeCamp is ";
+ourStr += anAdjective;
+
+var someAdjective = "neat";
+var myStr = "Learning to code is ";
+myStr += someAdjective;
 ```
+
 </section>

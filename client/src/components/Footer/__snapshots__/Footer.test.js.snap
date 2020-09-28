@@ -1,0 +1,377 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> matches snapshot 1`] = `
+<footer
+  className="site-footer"
+>
+  <div
+    className="footer-container"
+  >
+    <div
+      className="footer-top"
+    >
+      <div
+        className="footer-desc-col"
+      >
+        <p>
+          freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)
+        </p>
+        <p>
+          Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.
+        </p>
+        <p>
+          Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.
+        </p>
+        <p
+          className="footer-donation"
+        >
+          You can 
+          <a
+            className="inline"
+            href="/donate"
+          >
+            make a tax-deductible donation here
+          </a>
+          .
+        </p>
+      </div>
+      <div
+        className="trending-guides"
+      >
+        <div
+          className="col-header"
+        >
+          Trending Guides
+        </div>
+        <div
+          className="trending-guides-row"
+        >
+          <div
+            className="footer-col footer-col-1"
+          >
+            <a
+              href="https://www.freecodecamp.org/news/javascript-closure-tutorial-with-js-closure-example-code/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              JavaScript Closure
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/css-tutorial-drop-shadow/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              CSS Box Shadow
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/python-list-append-how-to-add-an-element-to-an-array-explained-with-examples/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Python List Append
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/javascript-array-sort-tutorial-how-to-use-js-sort-methods-with-code-examples/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              JavaScript Array Sort
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Symlink in Linux
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/grep-command-tutorial-how-to-search-for-a-file-in-linux-and-unix/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Linux Grep Command
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/what-is-dns/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              What is DNS?
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/primary-key-sql-tutorial-how-to-define-a-primary-key-in-a-database/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Primary Key SQL
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/sql-update-statement-example-queries-for-updating-table-values/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              SQL Update Statement
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/how-to-screenshot-on-windows/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Screenshot on PC
+            </a>
+          </div>
+          <div
+            className="footer-col footer-col-2"
+          >
+            <a
+              href="https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              JavaScript Promise
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/what-is-github-what-is-git-and-how-to-use-these-developer-tools/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              What is GitHub?
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/the-python-sort-list-array-method-ascending-and-descending-explained-with-examples/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Python Sort List
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/json-comment-example-how-to-comment-in-json-files/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Comments in JSON
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/what-is-kanban-the-agile-methodology-defined-and-how-to-use-it-for-your-software-development-team-2/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              What is Kanban?
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/python-write-to-file-open-read-append-and-other-file-handling-functions-explained/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Python Write to File
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              CSS Media Queries
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/html-entities-symbols-special-character-codes-list/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              HTML Entities
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/excel-vba-tutorial/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Excel VBA
+            </a>
+            <a
+              href="https://www.freecodecamp.org/news/vlookup-in-excel/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              LOOKUP in Excel
+            </a>
+          </div>
+          <div
+            className="footer-col footer-col-3"
+          >
+            <div
+              className="footer-left"
+            >
+              <a
+                href="https://www.freecodecamp.org/news/what-is-a-proxy-server-in-english-please/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                What is a Proxy Server?
+              </a>
+              <a
+                href="https://www.freecodecamp.org/news/the-cat-command-in-linux-concatenation-explained-with-bash-examples/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Cat Command in Linux
+              </a>
+              <a
+                href="https://www.freecodecamp.org/news/how-to-add-an-image-url-to-your-div/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                CSS Background Image
+              </a>
+              <a
+                href="https://www.freecodecamp.org/news/html-background-color-tutorial-how-to-change-a-div-background-color-explained-with-code-examples/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                HTML Background Color
+              </a>
+              <a
+                href="https://www.freecodecamp.org/news/comments-in-css/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                CSS Comment Example
+              </a>
+            </div>
+            <div
+              className="footer-right"
+            >
+              <a
+                href="https://www.freecodecamp.org/news/arrow-function-javascript-tutorial-how-to-declare-a-js-function-with-the-new-es6-syntax/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Arrow Function JavaScript
+              </a>
+              <a
+                href="https://www.freecodecamp.org/news/how-to-remove-duplicates-in-excel-delete-duplicate-rows-with-a-few-clicks/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Remove Duplicates in Excel
+              </a>
+              <a
+                href="https://www.freecodecamp.org/news/what-is-dllhost-exe-and-com-surrogate-in-windows-task-manager-solved/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                dllhost.exe COM Surrogate
+              </a>
+              <a
+                href="https://www.freecodecamp.org/news/boolean-algebra/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Boolean Algebra Truth Table
+              </a>
+              <a
+                href="https://www.freecodecamp.org/news/can-you-facetime-on-android-no-but-here-are-some-alternative-video-conferencing-apps/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Video Chat for Android
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="footer-buttom"
+    >
+      <div
+        className="col-header"
+      >
+        Our Nonprofit
+      </div>
+      <div
+        className="footer-divder"
+      />
+      <div
+        className="our-nonprofit"
+      >
+        <a
+          href="https://www.freecodecamp.org/news/about/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          About
+        </a>
+        <a
+          href="https://www.linkedin.com/school/free-code-camp/people/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Alumni Network
+        </a>
+        <a
+          href="https://github.com/freeCodeCamp/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Open Source
+        </a>
+        <a
+          href="https://www.freecodecamp.org/shop/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Shop
+        </a>
+        <a
+          href="https://www.freecodecamp.org/news/support/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Support
+        </a>
+        <a
+          href="https://www.freecodecamp.org/news/sponsors/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Sponsors
+        </a>
+        <a
+          href="https://www.freecodecamp.org/news/academic-honesty-policy/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Academic Honesty
+        </a>
+        <a
+          href="https://www.freecodecamp.org/news/code-of-conduct/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Code of Conduct
+        </a>
+        <a
+          href="https://www.freecodecamp.org/news/privacy-policy/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Privacy Policy
+        </a>
+        <a
+          href="https://www.freecodecamp.org/news/terms-of-service/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Terms of Service
+        </a>
+        <a
+          href="https://www.freecodecamp.org/news/copyright-policy/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Copyright Policy
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;

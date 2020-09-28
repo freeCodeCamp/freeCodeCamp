@@ -1,9 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb9
 title: Use @for to Create a Sass Loop
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: Use @for para criar um loop Sass

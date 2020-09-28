@@ -1,24 +1,35 @@
-import _ from 'lodash';
-import { Observable } from 'rx';
+import passport from 'passport';
 import dedent from 'dedent';
-// import debugFactory from 'debug';
-import { isEmail } from 'validator';
 import { check } from 'express-validator/check';
+import { isEmail } from 'validator';
 
 import { homeLocation } from '../../../config/env';
-
 import {
-  ifUserRedirectTo,
-  ifNoUserRedirectTo,
-  createValidatorErrorHandler
-} from '../utils/middleware';
+  createPassportCallbackAuthenticator,
+  saveResponseAuthCookies,
+  loginRedirect
+} from '../component-passport';
+import { ifUserRedirectTo, ifNoUserRedirectTo } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
+import { removeCookies } from '../utils/getSetAccessToken';
+import { decodeEmail } from '../../common/utils';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
-// const debug = debugFactory('fcc:boot:auth');
 if (isSignUpDisabled) {
   console.log('fcc:boot:auth - Sign up is disabled');
 }
+
+const passwordlessGetValidators = [
+  check('email')
+    .isBase64()
+    .withMessage('Email should be a base64 encoded string.'),
+  check('token')
+    .exists()
+    .withMessage('Token should exist.')
+    // based on strongloop/loopback/common/models/access-token.js#L15
+    .isLength({ min: 64, max: 64 })
+    .withMessage('Token is not the right length.')
+];
 
 module.exports = function enableAuthentication(app) {
   // enable loopback access control authentication. see:
@@ -26,10 +37,43 @@ module.exports = function enableAuthentication(app) {
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
   const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
+  const saveAuthCookies = saveResponseAuthCookies();
+  const loginSuccessRedirect = loginRedirect();
   const api = app.loopback.Router();
-  const { AuthToken, User } = app.models;
 
-  api.get('/signin', ifUserRedirect, (req, res) => res.redirect('/auth/auth0'));
+  // Use a local mock strategy for signing in if we are in dev mode.
+  // Otherwise we use auth0 login. We use a string for 'true' because values
+  // set in the env file will always be strings and never boolean.
+  if (process.env.LOCAL_MOCK_AUTH === 'true') {
+    api.get(
+      '/signin',
+      passport.authenticate('devlogin'),
+      saveAuthCookies,
+      loginSuccessRedirect
+    );
+  } else {
+    api.get(
+      '/signin',
+      (req, res, next) => {
+        if (req && req.query && req.query.returnTo) {
+          req.query.returnTo = `${homeLocation}/${req.query.returnTo}`;
+        }
+        return next();
+      },
+      ifUserRedirect,
+      (req, res, next) => {
+        const state = req.query.returnTo
+          ? Buffer.from(req.query.returnTo).toString('base64')
+          : null;
+        return passport.authenticate('auth0-login', { state })(req, res, next);
+      }
+    );
+
+    api.get(
+      '/auth/auth0/callback',
+      createPassportCallbackAuthenticator('auth0-login', { provider: 'auth0' })
+    );
+  }
 
   api.get('/signout', (req, res) => {
     req.logout();
@@ -37,45 +81,40 @@ module.exports = function enableAuthentication(app) {
       if (err) {
         throw wrapHandledError(new Error('could not destroy session'), {
           type: 'info',
-          message: 'Oops, something is not right.',
+          message: 'We could not log you out, please try again in a moment.',
           redirectTo: homeLocation
         });
       }
-      const config = {
-        signed: !!req.signedCookies,
-        domain: process.env.COOKIE_DOMAIN || 'localhost'
-      };
-      res.clearCookie('jwt_access_token', config);
-      res.clearCookie('access_token', config);
-      res.clearCookie('userId', config);
-      res.clearCookie('_csrf', config);
+      removeCookies(req, res);
       res.redirect(homeLocation);
     });
   });
 
-  const defaultErrorMsg = dedent`
+  api.get(
+    '/confirm-email',
+    ifNoUserRedirectHome,
+    passwordlessGetValidators,
+    createGetPasswordlessAuth(app)
+  );
+
+  app.use(api);
+};
+
+const defaultErrorMsg = dedent`
     Oops, something is not right,
     please request a fresh link to sign in / sign up.
   `;
 
-  const passwordlessGetValidators = [
-    check('email')
-      .isBase64()
-      .withMessage('Email should be a base64 encoded string.'),
-    check('token')
-      .exists()
-      .withMessage('Token should exist.')
-      // based on strongloop/loopback/common/models/access-token.js#L15
-      .isLength({ min: 64, max: 64 })
-      .withMessage('Token is not the right length.')
-  ];
-
-  function getPasswordlessAuth(req, res, next) {
+function createGetPasswordlessAuth(app) {
+  const {
+    models: { AuthToken, User }
+  } = app;
+  return function getPasswordlessAuth(req, res, next) {
     const {
       query: { email: encodedEmail, token: authTokenId, emailChange } = {}
     } = req;
 
-    const email = User.decodeEmail(encodedEmail);
+    const email = decodeEmail(encodedEmail);
     if (!isEmail(email)) {
       return next(
         wrapHandledError(new TypeError('decoded email is invalid'), {
@@ -152,69 +191,9 @@ module.exports = function enableAuthentication(app) {
             'success',
             'Success! You have signed in to your account. Happy Coding!'
           );
-          return res.redirectWithFlash(`${homeLocation}/welcome`);
+          return res.redirectWithFlash(`${homeLocation}/learn`);
         })
         .subscribe(() => {}, next)
     );
-  }
-
-  api.get(
-    '/passwordless-auth',
-    ifUserRedirect,
-    passwordlessGetValidators,
-    createValidatorErrorHandler('errors', `${homeLocation}/signin`),
-    getPasswordlessAuth
-  );
-
-  api.get('/passwordless-change', (req, res) =>
-    res.redirect(301, '/confirm-email')
-  );
-
-  api.get(
-    '/confirm-email',
-    ifNoUserRedirectHome,
-    passwordlessGetValidators,
-    getPasswordlessAuth
-  );
-
-  const passwordlessPostValidators = [
-    check('email')
-      .isEmail()
-      .withMessage('Email is not a valid email address.')
-  ];
-  function postPasswordlessAuth(req, res, next) {
-    const { body: { email } = {} } = req;
-
-    return User.findOne$({ where: { email } })
-      .flatMap(_user =>
-        Observable.if(
-          // if no user found create new user and save to db
-          _.constant(_user),
-          Observable.of(_user),
-          User.create$({ email })
-        ).flatMap(user => user.requestAuthEmail(!_user))
-      )
-      .do(msg => {
-        let redirectTo = homeLocation;
-
-        if (req.session && req.session.returnTo) {
-          redirectTo = req.session.returnTo;
-        }
-
-        req.flash('info', msg);
-        return res.redirect(redirectTo);
-      })
-      .subscribe(_.noop, next);
-  }
-
-  api.post(
-    '/passwordless-auth',
-    ifUserRedirect,
-    passwordlessPostValidators,
-    createValidatorErrorHandler('errors', `${homeLocation}/signin`),
-    postPasswordlessAuth
-  );
-
-  app.use(api);
-  app.use('/internal', api);
-};
+  };
+}

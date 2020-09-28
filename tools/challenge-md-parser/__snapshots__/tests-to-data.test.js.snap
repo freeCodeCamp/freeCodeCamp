@@ -5,8 +5,24 @@ Object {
   "tests": Array [
     Object {
       "testString": "assert.isTrue((/hello(\\\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \\"Hello World\\".');",
-      "text": "Your <code>h1</code> element should have the text \\"Hello World\\".",
+      "text": "<p>Your <code>h1</code> element should have the text \\"Hello World\\".</p>",
     },
   ],
+}
+`;
+
+exports[`tests-to-data plugin should match the video snapshot 1`] = `
+Object {
+  "question": Object {
+    "answers": Array [
+      "<p>inline <code>code</code></p>",
+      "<p>some <em>italics</em></p>",
+      "<p><code> code in </code> code tags</p>",
+    ],
+    "solution": 3,
+    "text": "<p>Question line one</p>
+<pre><code class=\\"language-js\\">  var x = 'y';
+</code></pre>",
+  },
 }
 `;

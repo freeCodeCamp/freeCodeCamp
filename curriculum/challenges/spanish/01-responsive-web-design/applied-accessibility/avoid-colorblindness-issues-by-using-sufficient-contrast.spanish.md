@@ -3,23 +3,29 @@ id: 587d778f367417b2b2512aac
 title: Avoid Colorblindness Issues by Using Sufficient Contrast
 challengeType: 0
 videoUrl: ''
-localeTitle: Evite los problemas de ceguera al color usando un contraste suficiente
+localeTitle: Evita Problemas de Daltonismo Usando Suficiente Contraste
 ---
 
-## Description
-<section id="description"> El color es una gran parte del diseño visual, pero su uso presenta dos problemas de accesibilidad. Primero, el color solo no debe usarse como la única forma de transmitir información importante porque los usuarios de lectores de pantalla no la verán. En segundo lugar, los colores de fondo y de fondo necesitan un contraste suficiente para que los usuarios con daltonismo los puedan distinguir. Los desafíos anteriores cubrían tener alternativas de texto para abordar el primer problema. El último desafío introdujo herramientas de comprobación de contraste para ayudar con el segundo. La relación de contraste recomendada por WCAG de 4.5: 1 se aplica al uso del color así como a las combinaciones de escala de grises. Los usuarios de color daltónicos tienen problemas para distinguir algunos colores de otros, generalmente en tonos, pero a veces también con ligereza. Puede recordar que la relación de contraste se calcula utilizando los valores de luminancia relativa (o luminosidad) de los colores de primer plano y de fondo. En la práctica, se puede alcanzar la proporción de 4.5: 1 oscureciendo el color más oscuro y aclarando el más claro con la ayuda de un comprobador de contraste de color. Los colores más oscuros en la rueda de colores se consideran azules, violetas, magentas y rojos, mientras que los colores más claros son naranjas, amarillos, verdes y verdes azules. </section>
+## Descripción
+<section id="description"> El color es una parte muy importante del diseño visual, pero su uso presenta dos problemas de accesibilidad. Primero, no debe usarse solo el color como la única forma de transmitir información importante porque los lectores de pantalla no pueden detectarlo. En segundo lugar, los colores de fondo y de primer plano necesitan el contraste suficiente para que los usuarios con daltonismo los puedan distinguir. 
+  
+Los desafíos anteriores cubren alternativas para el primer problema. El último desafío introdujo herramientas de comprobación de contraste para ayudar a resolver el segundo. La  proporción de contraste de 4.5:1 recomendada por la WCAG aplica tanto para su uso con colores como para su uso con escala de grises.
 
-## Instructions
-<section id="instructions"> Gato Camper está experimentando con el uso del color para su blog de texto y el fondo, pero su actual combinación de un color verdoso <code>background-color</code> con el texto marrón <code>color</code> tiene un 2.5: 1 relación de contraste. Puede ajustar fácilmente la luminosidad de los colores ya que los declaró utilizando la propiedad <code>hsl()</code> CSS (que significa matiz, saturación, luminosidad) cambiando el tercer argumento. Aumente el valor de luminosidad del <code>background-color</code> del 35% al ​​55% y disminuya el valor de luminosidad del <code>color</code> del 20% al 15%. Esto mejora el contraste a 5.9: 1. </section>
+Los usuarios con daltonismo tienen problemas para distinguir algunos colores de otros, usualmente en el matiz pero también puede suceder con el brillo. Tal vez recuerdes que el contraste se calcula usando los valores del brillo relativo del color de fondo y del color en el primer plano. 
+
+En la práctica la proporción de 4.5:1 puede obtenerse oscureciendo el color más oscuro y aclarando el más claro con la ayuda de una herramienta de comprobación de contraste. Los colores más oscuros en la rueda de colores son los azules, violetas, magentas y rojos, mientras que los colores más claros son los naranjas, amarillos, verdes y verde-azules. </section>
+
+## Instrucciones
+<section id="instructions"> Camper Cat está experimentando con el uso de color de fondo y color de texto de su blog, pero su combinación actual de un color de fondo verdoso <code>background-color</code> con un color de texto marrón <code>color</code> tiene una proporción de 2.5:1 de contraste. Puedes ajustar fácilmente el brillo de los colores ya que usó la propiedad CSS <code>hsl()</code> para declararlos modificando el valor del tercer argumento (hsl viene de: hue, saturation, lightness; en español, matiz, saturación y brillo). Aumenta el brillo del <code>background-color</code> de 35% a 55%, y reduce el brillo del <code>color</code> de 20% a 15%. Esto mejorará la proporción de contraste a 5.9:1. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Su código solo debe cambiar el valor de luminosidad de la propiedad de <code>color</code> del texto a un valor del 15%.
+  - text: Tu código solo debe cambiar el valor de luminosidad de la propiedad <code>color</code> del texto a un valor del 15%.
     testString: 'assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.");'
-  - text: Su código solo debe cambiar el valor de luminosidad de la propiedad de <code>background-color</code> a un valor del 55%.
+  - text: Tu código solo debe cambiar el valor de luminosidad de la propiedad <code>background-color</code> a un valor del 55%.
     testString: 'assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.");'
 
 ```
@@ -42,12 +48,12 @@ tests:
 </head>
 <body>
   <header>
-    <h1>Deep Thoughts with Master Camper Cat</h1>
+    <h1>Pensamientos profundos con el maestro Camper Cat</h1>
   </header>
   <article>
-    <h2>A Word on the Recent Catnip Doping Scandal</h2>
-    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
-    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
+    <h2>Unas Palabras sobre el Reciente Escándalo de Doping de Catnip</h2>
+    <p>La influencia que tiene el catnip sobre el comportamiento felino ha sido bien documentada, y su uso como suplemento herbario en círculos ninja de competición sigue siendo controvertido aún hoy en día. Una vez más, el debate sobre la prohibición de la sustancia se ha presentado en la opinión pública luego de la gran victoria de Kittytron, acérrimo defensor y consumidor de la sustancia verde, en el Torneo de la Garra de la Furia.</p>
+    <p>Como ya me he pronunciado en el pasado, creo firmemente que las habilidades de un verdades ninja deben venir de su interior, sin ninguna influencia externa. Mi consumo personal de catnip es y seguirá siendo puramente recreativo.</p>
   </article>
 </body>
 
@@ -59,10 +65,11 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

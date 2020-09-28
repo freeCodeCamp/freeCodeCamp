@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244de
 title: Adding a Default Option in Switch Statements
 challengeType: 1
-guideUrl: 'https://portuguese.freecodecamp.org/guide/certificates/adding-a-default-option-in-switch-statements'
 videoUrl: ''
 localeTitle: Adicionando uma opção padrão em instruções de troca
 ---

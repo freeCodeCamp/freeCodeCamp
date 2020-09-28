@@ -14,4 +14,6 @@ In this section you get the chance to:
  * Build a Technical Documentation Page
  * Build a Personal Portfolio Webpage
 
-By the end of this, you would have 5 responsive websites under your belt that you can show off to friends, family, employers, etc. Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
+By the end of this, you would have 5 responsive websites under your belt that you can show off to friends, family, employers, etc. Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514) method if you get stuck.
+
+**Note**: If you work locally on the projects you must use a server in order to get accurate results from the test.

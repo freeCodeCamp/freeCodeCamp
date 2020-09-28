@@ -5,24 +5,32 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
-import ga from '../../../analytics';
 import { isResetModalOpenSelector, closeModal, resetChallenge } from '../redux';
+import { executeGA } from '../../../redux';
 
 import './reset-modal.css';
 
 const propTypes = {
   close: PropTypes.func.isRequired,
+  executeGA: PropTypes.func,
   isOpen: PropTypes.bool.isRequired,
   reset: PropTypes.func.isRequired
 };
 
-const mapStateToProps = createSelector(isResetModalOpenSelector, isOpen => ({
-  isOpen
-}));
+const mapStateToProps = createSelector(
+  isResetModalOpenSelector,
+  isOpen => ({
+    isOpen
+  })
+);
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { close: () => closeModal('reset'), reset: () => resetChallenge() },
+    {
+      close: () => closeModal('reset'),
+      executeGA,
+      reset: () => resetChallenge()
+    },
     dispatch
   );
 
@@ -32,7 +40,7 @@ function withActions(...fns) {
 
 function ResetModal({ reset, close, isOpen }) {
   if (isOpen) {
-    ga.modalview('/reset-modal');
+    executeGA({ type: 'modal', data: '/reset-modal' });
   }
   return (
     <Modal
@@ -41,7 +49,7 @@ function ResetModal({ reset, close, isOpen }) {
       keyboard={true}
       onHide={close}
       show={isOpen}
-      >
+    >
       <Modal.Header className='reset-modal-header' closeButton={true}>
         <Modal.Title className='text-center'>Reset this lesson?</Modal.Title>
       </Modal.Header>
@@ -56,13 +64,13 @@ function ResetModal({ reset, close, isOpen }) {
           </p>
         </div>
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer className='reset-modal-footer'>
         <Button
           block={true}
           bsSize='large'
           bsStyle='danger'
           onClick={withActions(reset, close)}
-          >
+        >
           Reset this Lesson
         </Button>
       </Modal.Footer>
@@ -73,4 +81,7 @@ function ResetModal({ reset, close, isOpen }) {
 ResetModal.displayName = 'ResetModal';
 ResetModal.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ResetModal);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ResetModal);

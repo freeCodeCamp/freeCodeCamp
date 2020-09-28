@@ -2,23 +2,28 @@
 id: 5a94fe2669fb03452672e45e
 title: Use grid-area Without Creating an Areas Template
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/p/pByETK/c6N7VhK
+forumTopicId: 301135
 localeTitle: Использование сетки без создания шаблона областей
 ---
 
 ## Description
-<section id="description"> Свойство <code>grid-area</code> вы узнали в последней задаче, можно использовать по-другому. Если в вашей сетке нет шаблона областей для ссылки, вы можете создать область «на лету» для элемента, который будет размещен следующим образом: <blockquote> item1 {сетка: 1/1/2/4; } </blockquote> Это использует номера строк, которые вы узнали ранее, чтобы определить, где будет область для этого элемента. Цифры в приведенном выше примере представляют эти значения: <blockquote> grid-area: горизонтальная линия для начала / вертикальной линии для начала / горизонтальной линии до конца на / вертикальной линии до конца; </blockquote> Таким образом, элемент в примере будет потреблять строки между строками 1 и 2 и столбцы между строками 1 и 4. </section>
+<section id='description'>
+Свойство <code>grid-area</code> вы узнали в последней задаче, можно использовать по-другому. Если в вашей сетке нет шаблона областей для ссылки, вы можете создать область «на лету» для элемента, который будет размещен следующим образом: <blockquote> item1 {сетка: 1/1/2/4; } </blockquote> Это использует номера строк, которые вы узнали ранее, чтобы определить, где будет область для этого элемента. Цифры в приведенном выше примере представляют эти значения: <blockquote> grid-area: горизонтальная линия для начала / вертикальной линии для начала / горизонтальной линии до конца на / вертикальной линии до конца; </blockquote> Таким образом, элемент в примере будет потреблять строки между строками 1 и 2 и столбцы между строками 1 и 4.
+</section>
 
 ## Instructions
-<section id="instructions"> Используя свойство <code>grid-area</code> , поместите элемент с классом <code>item5</code> между третьей и четвертой горизонтальными линиями и между первой и четвертой вертикальными линиями. </section>
+<section id='instructions'>
+Используя свойство <code>grid-area</code> , поместите элемент с классом <code>item5</code> между третьей и четвертой горизонтальными линиями и между первой и четвертой вертикальными линиями.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Класс <code>item5</code> должен иметь свойство <code>grid-area</code> которое имеет значение <code>3/1/4/4</code> .
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.");'
+  - text: <code>item5</code> class should have a <code>grid-area</code> property such that it is between the third and fourth horizontal lines and between the first and fourth vertical lines.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -68,14 +73,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".item5 {grid-area: 3/1/4/4;}"
 ```
+
 </section>

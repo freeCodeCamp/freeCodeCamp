@@ -1,5 +1,6 @@
 {
   "name": "Applied Accessibility",
+  "isUpcomingChange": false,
   "dashedName": "applied-accessibility",
   "order": 3,
   "time": "5 hours",
@@ -86,7 +87,7 @@
     ],
     [
       "587d7790367417b2b2512aaf",
-      "Make Links Navigatable with HTML Access Keys"
+      "Make Links Navigable with HTML Access Keys"
     ],
     [
       "587d7790367417b2b2512ab0",

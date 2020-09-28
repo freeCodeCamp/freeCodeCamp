@@ -2,15 +2,18 @@
 id: 5900f42b1000cf542c50ff3d
 challengeType: 5
 title: 'Problem 190: Maximising a weighted product'
-videoUrl: ''
+forumTopicId: 301828
 localeTitle: 'Проблема 190: Максимизация взвешенного продукта'
 ---
 
 ## Description
-<section id="description"> Пусть Sm = (x1, x2, ..., xm) - m-набор положительных вещественных чисел с x1 + x2 + ... + xm = m, для которого Pm = x1 * x22 * ... * xmm максимизируется , <p> Например, можно проверить, что [P10] = 4112 ([] - функция целочисленной части). </p><p> Найти Σ [Pm] для 2 ≤ m ≤ 15. </p></section>
+<section id='description'>
+Пусть Sm = (x1, x2, ..., xm) - m-набор положительных вещественных чисел с x1 + x2 + ... + xm = m, для которого Pm = x1 * x22 * ... * xmm максимизируется , <p> Например, можно проверить, что [P10] = 4112 ([] - функция целочисленной части). </p><p> Найти Σ [Pm] для 2 ≤ m ≤ 15. </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Проблема 190: Максимизация взвешенно�
 
 ```yml
 tests:
-  - text: <code>euler190()</code> должен возвращать 371048281.
-    testString: 'assert.strictEqual(euler190(), 371048281, "<code>euler190()</code> should return 371048281.");'
+  - text: <code>euler190()</code> should return 371048281.
+    testString: assert.strictEqual(euler190(), 371048281);
 
 ```
 
@@ -42,8 +45,6 @@ euler190();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler190();
 ```js
 // solution required
 ```
+
 </section>

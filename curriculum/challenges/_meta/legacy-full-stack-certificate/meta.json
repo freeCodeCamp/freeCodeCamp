@@ -1,0 +1,19 @@
+{
+  "name": "Legacy Full Stack Certificate",
+  "isUpcomingChange": false,
+  "dashedName": "full-stack-certificate",
+  "order": 5,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "certificates",
+  "superOrder": 12,
+  "challengeOrder": [
+    [
+      "561add10cb82ac38a17213bd",
+      "Legacy Full Stack Certificate"
+    ]
+  ],
+  "isPrivate": true,
+  "fileName": "12-certificates/legacy-full-stack-certificate/full-stack-certificate.english.json"
+}

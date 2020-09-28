@@ -2,23 +2,28 @@
 id: 5a858944d96184f06fd60d61
 title: Create Your First CSS Grid
 challengeType: 0
-videoUrl: ''
-localeTitle: Создайте свою первую сетку CSS
+videoUrl: https://scrimba.com/p/pByETK/cqwREC4
+forumTopicId: 301129
+localeTitle: Создайте свой первый CSS Grid
 ---
 
 ## Description
-<section id="description"> Поверните любой элемент HTML в контейнер сетки, установив его свойство <code>display</code> в <code>grid</code> . Это дает вам возможность использовать все другие свойства, связанные с сеткой CSS. <strong>Заметка</strong> <br> В CSS Grid родительский элемент называется <dfn>контейнером,</dfn> а его дочерние элементы называются <dfn>элементами</dfn> . </section>
+<section id='description'>
+Чтобы превратить любой HTML элемент в грид контейнер установите свойство <code>display</code> в <code>grid</code> . Это даёт вам возможность использовать другие свойства, связанные с CSS Grid. <strong>Примечание</strong> <br> В CSS Grid родительский элемент называется <dfn>контейнером,</dfn> а его дочерние элементы называются <dfn>элементами</dfn> .
+</section>
 
 ## Instructions
-<section id="instructions"> Измените отображение div с классом <code>container</code> на <code>grid</code> . </section>
+<section id='instructions'>
+Измените свойство display у элемента div с классом <code>container</code> на <code>grid</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>display</code> со значением <code>grid</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.");'
+  - text: <code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -60,14 +65,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".container {display: grid;}"
 ```
+
 </section>

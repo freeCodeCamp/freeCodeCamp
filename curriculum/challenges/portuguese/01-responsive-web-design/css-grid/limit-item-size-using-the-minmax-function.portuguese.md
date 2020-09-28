@@ -7,7 +7,7 @@ localeTitle: Limitar o tamanho do item usando a função minmax
 ---
 
 ## Description
-<section id="description"> Há outra função interna para usar com <code>grid-template-columns</code> e <code>grid-template-rows</code> chamada <code>minmax</code> . É usado para limitar o tamanho dos itens quando o contêiner de grade muda de tamanho. Para fazer isso, você precisa especificar o intervalo de tamanho aceitável para o seu item. Aqui está um exemplo: <blockquote> colunas de modelo de grade: 100 px x minmax (50 px, 200 px); </blockquote> No código acima, as <code>grid-template-columns</code> são configuradas para criar duas colunas; o primeiro tem 100px de largura e o segundo tem a largura mínima de 50px e a largura máxima de 200px. </section>
+<section id="description"> Há outra função interna para usar com <code>grid-template-columns</code> e <code>grid-template-rows</code> chamada <code>minmax</code> . É usado para limitar o tamanho dos itens quando o container de grade muda de tamanho. Para fazer isso, você precisa especificar o intervalo de tamanho aceitável para o seu item. Aqui está um exemplo: <blockquote> colunas de modelo de grade: 100 px x minmax (50 px, 200 px); </blockquote> No código acima, as <code>grid-template-columns</code> são configuradas para criar duas colunas; o primeiro tem 100px de largura e o segundo tem a largura mínima de 50px e a largura máxima de 200px. </section>
 
 ## Instructions
 <section id="instructions"> Usando a função <code>minmax</code> , substitua o <code>1fr</code> na função de <code>repeat</code> por um tamanho de coluna que tenha a largura mínima de <code>90px</code> e a largura máxima de <code>1fr</code> e redimensione o painel de visualização para ver o efeito. </section>

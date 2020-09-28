@@ -55,23 +55,20 @@
       "type": "string"
     },
     "description": {
-      "type": "array"
-    },
-    "image": {
       "type": "string"
     },
     "tests": {
       "type": "array"
     },
     "head": {
-      "type": "array",
+      "type": "string",
       "description": "Appended to user code",
-      "default": []
+      "default": ""
     },
     "tail": {
-      "type": "array",
+      "type": "string",
       "description": "Prepended to user code",
-      "default": []
+      "default": ""
     },
     "helpRoom": {
       "type": "string",
@@ -110,7 +107,7 @@
             },
             "crossDomain": {
               "type": "boolean",
-              "description": "Files coming from FreeCodeCamp must mark this true"
+              "description": "Files coming from freeCodeCamp must mark this true"
             }
           }
         }

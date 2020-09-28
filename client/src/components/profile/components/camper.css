@@ -1,0 +1,37 @@
+.avatar-container .avatar {
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.username,
+.name,
+.bio,
+.location {
+  overflow-wrap: break-word;
+}
+
+.avatar-container div {
+  height: 200px;
+}
+
+.avatar-container .gold-border {
+  border: 10px solid var(--yellow-gold);
+}
+
+.avatar-container .green-border {
+  border: 10px solid var(--green-mid);
+}
+
+.avatar-container .purple-border {
+  border: 10px solid var(--purple-mid);
+}
+
+.avatar-container .default-border {
+  border: 10px solid transparent;
+}

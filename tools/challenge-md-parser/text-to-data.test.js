@@ -1,11 +1,12 @@
 /* global describe it expect */
 const mockAST = require('./fixtures/challenge-html-ast.json');
+const adjacentTagsAST = require('./fixtures/adjacent-tags-ast.json');
 const textToData = require('./text-to-data');
 
 describe('text-to-data', () => {
   const expectedField = 'description';
   const otherExpectedField = 'instructions';
-  const unexpectedField = 'does-not-exis';
+  const unexpectedField = 'does-not-exist';
   let file = { data: {} };
 
   beforeEach(() => {
@@ -54,6 +55,13 @@ describe('text-to-data', () => {
     expect(file.data[expectedField].includes(expectedText)).toBe(true);
   });
 
+  // eslint-disable-next-line max-len
+  it('should add an empty string relating to the section id without data to `file.data`', () => {
+    const plugin = textToData([otherExpectedField]);
+    plugin(mockAST, file);
+    expect(file.data[otherExpectedField]).toEqual('');
+  });
+
   it('should preserve nested html', () => {
     const plugin = textToData([expectedField]);
     plugin(mockAST, file);
@@ -62,6 +70,16 @@ describe('text-to-data', () => {
 <p>Some text in a blockquote, with <code>code</code></p>
 </blockquote>`;
     expect(file.data[expectedField].includes(expectedText)).toBe(true);
+  });
+
+  // eslint-disable-next-line max-len
+  it('should not add paragraphs when html elements are separated by whitespace', () => {
+    const plugin = textToData([expectedField]);
+    plugin(adjacentTagsAST, file);
+    const expectedText1 = `<code>code</code> <tag>with more after a space</tag>`;
+    const expectedText2 = `another pair of <strong>elements</strong> <em>with a space</em>`;
+    expect(file.data[expectedField].includes(expectedText1)).toBe(true);
+    expect(file.data[expectedField].includes(expectedText2)).toBe(true);
   });
 
   it('should have an output to match the snapshot', () => {

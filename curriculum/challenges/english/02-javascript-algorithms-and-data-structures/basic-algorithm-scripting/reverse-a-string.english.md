@@ -1,8 +1,8 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: Reverse a String
-isRequired: true
 challengeType: 5
+forumTopicId: 16043
 ---
 
 ## Description
@@ -10,7 +10,6 @@ challengeType: 5
 Reverse the provided string.
 You may need to turn the string into an array before you can reverse it.
 Your result must be a string.
-Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -24,13 +23,13 @@ Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>reverseString("hello")</code> should return a string.
-    testString: assert(typeof reverseString("hello") === "string", '<code>reverseString("hello")</code> should return a string.');
+    testString: assert(typeof reverseString("hello") === "string");
   - text: <code>reverseString("hello")</code> should become <code>"olleh"</code>.
-    testString: assert(reverseString("hello") === "olleh", '<code>reverseString("hello")</code> should become <code>"olleh"</code>.');
+    testString: assert(reverseString("hello") === "olleh");
   - text: <code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.
-    testString: assert(reverseString("Howdy") === "ydwoH", '<code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.');
+    testString: assert(reverseString("Howdy") === "ydwoH");
   - text: <code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.
-    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG", '<code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.');
+    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG");
 
 ```
 

@@ -1,12 +1,13 @@
 {
   "name": "Algorithms",
+  "isUpcomingChange": false,
   "dashedName": "algorithms",
   "order": 1,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "superOrder": 8,
+  "superOrder": 11,
   "challengeOrder": [
     [
       "a3f503de51cf954ede28891d",

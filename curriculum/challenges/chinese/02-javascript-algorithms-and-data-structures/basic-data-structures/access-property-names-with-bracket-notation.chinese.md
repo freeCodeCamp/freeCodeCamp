@@ -2,15 +2,26 @@
 id: 587d7b7c367417b2b2512b1a
 title: Access Property Names with Bracket Notation
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用括号表示法访问属性名称
+forumTopicId: 301150
+localeTitle: 使用方括号访问属性名称
 ---
 
 ## Description
-<section id="description">在第一个对象挑战中，我们提到使用括号表示法作为使用变量求值来访问属性值的方法。例如，假设我们的<code>foods</code>对象被用于超市收银机的程序中。我们有一些设置<code>selectedFood</code>功能，我们想检查我们的<code>foods</code>对象是否存在该食物。这可能看起来像： <blockquote> let selectedFood = getCurrentFood（scanningItem）; <br>让库存=食物[selectedFood]; </blockquote>此代码将评估存储在<code>selectedFood</code>变量中的值，并在<code>foods</code>对象中返回该键的值，如果不存在则返回<code>undefined</code> 。括号表示法非常有用，因为有时候对象属性在运行时之前是未知的，或者我们需要以更动态的方式访问它们。 </section>
+<section id='description'>
+在关于对象的第一个挑战中，我们提到可以在方括号符号中用一个变量作为属性名来访问属性值。假设一个超市的收银台的程序中使用了一个<code>foods</code>对象，并且有一些程序逻辑会设置<code>selectedFood</code>，我们需要查询<code>foods</code>对象来检查某种食物是否存在，我们可以这样写检查逻辑：
+
+```js
+let selectedFood = getCurrentFood(scannedItem);
+let inventory = foods[selectedFood];
+```
+
+上述代码会先计算<code>selectedFood</code>变量的值，并返回<code>foods</code>对象中以该值命名的属性对应的值，若没有以该值命名的属性则会返回<code>undefined</code>。有时候对象的属性名在运行之前是不确定的，或者我们需要动态地访问对象的属性，这时方括号符号就会很有用。
+</section>
 
 ## Instructions
-<section id="instructions">我们定义了一个函数<code>checkInventory</code> ，它接收一个扫描的项目作为参数。返回<code>foods</code>对象中的<code>scannedItem</code>键的当前值。您可以假设只有有效键将作为<code>checkInventory</code>的参数提供。 </section>
+<section id='instructions'>
+我们已经定义了一个<code>checkInventory</code>函数，它接受一个被扫描到的商品名作为输入参数。它要返回<code>foods</code>对象中以<code>scannedItem</code>的值命名的属性的值。只有有效的属性名会作为参数传入<code>checkInventory</code>，你在完成挑战时不需处理参数无效的情况。
+</section>
 
 ## Tests
 <section id='tests'>
@@ -18,15 +29,15 @@ localeTitle: 使用括号表示法访问属性名称
 ```yml
 tests:
   - text: <code>checkInventory</code>是一个函数
-    testString: 'assert.strictEqual(typeof checkInventory, "function", "<code>checkInventory</code> is a function");'
+    testString: assert.strictEqual(typeof checkInventory, 'function');
   - text: '<code>foods</code>对象应该只有以下键值对： <code>apples: 25</code> ， <code>oranges: 32</code> ， <code>plums: 28</code> ， <code>bananas: 13</code> ， <code>grapes: 35</code> ， <code>strawberries: 27</code>'
-    testString: 'assert.deepEqual(foods, {apples: 25, oranges: 32, plums: 28, bananas: 13, grapes: 35, strawberries: 27}, "The <code>foods</code> object should have only the following key-value pairs: <code>apples: 25</code>, <code>oranges: 32</code>, <code>plums: 28</code>, <code>bananas: 13</code>, <code>grapes: 35</code>, <code>strawberries: 27</code>");'
+    testString: 'assert.deepEqual(foods, {apples: 25, oranges: 32, plums: 28, bananas: 13, grapes: 35, strawberries: 27});'
   - text: <code>checkInventory(&quot;apples&quot;)</code>应该返回<code>25</code>
-    testString: 'assert.strictEqual(checkInventory("apples"), 25, "<code>checkInventory("apples")</code> should return <code>25</code>");'
+    testString: assert.strictEqual(checkInventory('apples'), 25);
   - text: <code>checkInventory(&quot;bananas&quot;)</code>应该返回<code>13</code>
-    testString: 'assert.strictEqual(checkInventory("bananas"), 13, "<code>checkInventory("bananas")</code> should return <code>13</code>");'
+    testString: assert.strictEqual(checkInventory('bananas'), 13);
   - text: <code>checkInventory(&quot;strawberries&quot;)</code>应该返回<code>27</code>
-    testString: 'assert.strictEqual(checkInventory("strawberries"), 27, "<code>checkInventory("strawberries")</code> should return <code>27</code>");'
+    testString: assert.strictEqual(checkInventory('strawberries'), 27);
 
 ```
 
@@ -55,7 +66,6 @@ function checkInventory(scannedItem) {
 
 // change code below this line to test different cases:
 console.log(checkInventory("apples"));
-
 ```
 
 </div>
@@ -69,5 +79,18 @@ console.log(checkInventory("apples"));
 
 ```js
 // solution required
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+  return foods[scannedItem];
+}
 ```
+
 </section>

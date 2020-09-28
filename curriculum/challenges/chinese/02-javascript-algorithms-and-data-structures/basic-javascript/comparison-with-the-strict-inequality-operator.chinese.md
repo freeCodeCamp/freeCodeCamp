@@ -2,31 +2,44 @@
 id: 56533eb9ac21ba0edf2244d3
 title: Comparison with the Strict Inequality Operator
 challengeType: 1
-videoUrl: ''
-localeTitle: 与严格不等式算子的比较
+videoUrl: 'https://scrimba.com/c/cKekkUy'
+forumTopicId: 16791
+localeTitle: 严格不等运算符
 ---
 
 ## Description
-<section id="description">严格不等式运算符（ <code>!==</code> ）与严格相等运算符的逻辑相反。它意味着“严格不等于”并返回<code>false</code> ，其中严格相等将返回<code>true</code> ， <em>反之亦然</em> 。严格的不等式不会转换数据类型。 <strong>例子</strong> <blockquote> 3！== 3 //假<br> 3！==&#39;3&#39;//是的<br> 4！== 3 //是的</blockquote></section>
+<section id='description'>
+严格不相等运算符（<code>!==</code>）与全等运算符是相反的。这意味着严格不相等并返回<code>false</code>的地方，用严格相等运算符会返回<code>true</code>，<em>反之亦然</em>。严格不相等运算符不会转换值的数据类型。
+<strong>示例</strong>
+
+```js
+3 !==  3   // false
+3 !== '3'  // true
+4 !==  3   // true
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">将<code>strict inequality operator</code>添加到<code>if</code>语句，以便当<code>val</code>不严格等于<code>17</code>时，函数将返回“Not Equal” </section>
+<section id='instructions'>
+在<code>if</code>语句中，添加严格不相等运算符<code>!==</code>，这样如果<code>val</code>与<code>17</code>严格不相等的时候，函数会返回 "Not Equal"。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>testStrictNotEqual(17)</code>应返回“Equal”
-    testString: 'assert(testStrictNotEqual(17) === "Equal", "<code>testStrictNotEqual(17)</code> should return "Equal"");'
-  - text: <code>testStrictNotEqual(&quot;17&quot;)</code>应返回“Not Equal”
-    testString: 'assert(testStrictNotEqual("17") === "Not Equal", "<code>testStrictNotEqual("17")</code> should return "Not Equal"");'
-  - text: <code>testStrictNotEqual(12)</code>应该返回“Not Equal”
-    testString: 'assert(testStrictNotEqual(12) === "Not Equal", "<code>testStrictNotEqual(12)</code> should return "Not Equal"");'
-  - text: <code>testStrictNotEqual(&quot;bob&quot;)</code>应返回“Not Equal”
-    testString: 'assert(testStrictNotEqual("bob") === "Not Equal", "<code>testStrictNotEqual("bob")</code> should return "Not Equal"");'
-  - text: 你应该使用<code>!==</code>运算符
-    testString: 'assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0, "You should use the <code>!==</code> operator");'
+  - text: <code>testStrictNotEqual(17)</code>应该返回 "Equal"。
+    testString: assert(testStrictNotEqual(17) === "Equal");
+  - text: <code>testStrictNotEqual("17")</code>应该返回 "Not Equal"。
+    testString: assert(testStrictNotEqual("17") === "Not Equal");
+  - text: <code>testStrictNotEqual(12)</code>应该返回 "Not Equal"。
+    testString: assert(testStrictNotEqual(12) === "Not Equal");
+  - text: <code>testStrictNotEqual("bob")</code>应该返回 "Not Equal"。
+    testString: assert(testStrictNotEqual("bob") === "Not Equal");
+  - text: 应该使用 <code>!==</code> 运算符。
+    testString: assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
 
 ```
 
@@ -40,12 +53,7 @@ tests:
 ```js
 // Setup
 function testStrictNotEqual(val) {
-  // Only Change Code Below this Line
-
-  if (val) {
-
-  // Only Change Code Above this Line
-
+  if (val) { // Change this line
     return "Not Equal";
   }
   return "Equal";
@@ -53,7 +61,6 @@ function testStrictNotEqual(val) {
 
 // Change this value to test
 testStrictNotEqual(10);
-
 ```
 
 </div>
@@ -65,7 +72,14 @@ testStrictNotEqual(10);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function testStrictNotEqual(val) {
+  if (val !== 17) {
+    return "Not Equal";
+  }
+  return "Equal";
+}
 ```
+
 </section>

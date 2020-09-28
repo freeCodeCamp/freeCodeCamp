@@ -2,27 +2,34 @@
 id: bad87fee1348bd9aedf08801
 title: Inform with the Paragraph Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 通知段落元素
+videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
+forumTopicId: 18202
+localeTitle: 用 p 元素代表段落
 ---
 
 ## Description
-<section id="description"> <code>p</code>元素是网站上段落文本的首选元素。 <code>p</code>是“段落”的缩写。你可以创建一个这样的段落元素： <code>&lt;p&gt;I&#39;m ap tag!&lt;/p&gt;</code> </section>
+<section id='description'>
+<code>p</code>是<code>paragraph</code>的缩写，通常用来创建一个段落，就和你写作文一样。
+你可以像这样创建一个段落：
+<code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>
+</section>
 
 ## Instructions
-<section id="instructions">在<code>h2</code>元素下面创建一个<code>p</code>元素，并为其指定文本“Hello Paragraph”。 </section>
+<section id='instructions'>
+在<code>h2</code>元素下面新增一个<code>p</code>元素，元素内容是：<code>Hello Paragraph</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 创建一个<code>p</code>元素。
-    testString: 'assert(($("p").length > 0), "Create a <code>p</code> element.");'
-  - text: 你的<code>p</code>元素应该有文本“Hello Paragraph”。
-    testString: 'assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()), "Your <code>p</code> element should have the text "Hello Paragraph".");'
-  - text: 确保您的<code>p</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure your <code>p</code> element has a closing tag.");'
+  - text: '创建一个<code>p</code>元素。'
+    testString: assert(($("p").length > 0));
+  - text: '<code>p</code>元素的内容应为：<code>Hello Paragraph</code>。'
+    testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()));
+  - text: '<code>p</code>元素应该有结束标记。'
+    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
 
 ```
 
@@ -36,7 +43,6 @@ tests:
 ```html
 <h1>Hello World</h1>
 <h2>CatPhotoApp</h2>
-
 ```
 
 </div>
@@ -47,8 +53,5 @@ tests:
 
 ## Solution
 <section id='solution'>
-
-```js
-// solution required
-```
 </section>
+              

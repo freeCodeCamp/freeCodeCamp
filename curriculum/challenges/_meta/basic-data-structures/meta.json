@@ -1,5 +1,6 @@
 {
   "name": "Basic Data Structures",
+  "isUpcomingChange": false,
   "dashedName": "basic-data-structures",
   "order": 5,
   "time": "1 hour",
@@ -78,7 +79,7 @@
     ],
     [
       "587d7b7d367417b2b2512b1d",
-      " Iterate Through the Keys of an Object with a for...in Statement"
+      "Iterate Through the Keys of an Object with a for...in Statement"
     ],
     [
       "587d7b7d367417b2b2512b1e",

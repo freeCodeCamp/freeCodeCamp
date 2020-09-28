@@ -6,49 +6,27 @@ import { homeLocation } from '../../../config/env';
 
 import { unwrapHandledError } from '../utils/create-handled-error.js';
 
-const isDev = process.env.NODE_ENV !== 'production';
+const errTemplate = (error, req) => {
+  const { message, stack } = error;
+  return `
+Error: ${message}
+Is authenticated user: ${!!req.user}
+Headers: ${JSON.stringify(req.headers, null, 2)}
+Original request: ${req.originalMethod} ${req.originalUrl}
+Stack: ${stack}
 
-// const toString = Object.prototype.toString;
-// is full error or just trace
-// _.toString(new Error('foo')) => "Error: foo
-// Object.prototype.toString.call(new Error('foo')) => "[object Error]"
-// const isInspect = val => !val.stack && _.toString(val) === toString.call(val);
-// const stringifyErr = val => {
-//   if (val.stack) {
-//     return String(val.stack);
-//   }
+// raw
+${JSON.stringify(error, null, 2)}
 
-//   const str = String(val);
+`;
+};
 
-//   return isInspect(val) ?
-//     inspect(val) :
-//     str;
-// };
-
-// const createStackHtml = _.flow(
-//   _.cond([
-//     [isInspect, err => [err]],
-//     // may be stack or just err.msg
-//     [_.stubTrue, _.flow(stringifyErr, _.split('\n'), _.tail) ]
-//   ]),
-//   _.map(_.escape),
-//   _.map(line => `<li>${line}</lin>`),
-//   _.join('')
-// );
-
-// const createErrorTitle = _.cond([
-//   [
-//     _.negate(isInspect),
-//     _.flow(stringifyErr, _.split('\n'), _.head, _.defaultTo('Error'))
-//   ],
-//   [_.stubTrue, _.constant('Error')]
-// ]);
+const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
 
 export default function prodErrorHandler() {
   // error handling in production.
-  // disabling eslint due to express parity rules for error handlers
+  // eslint-disable-next-line no-unused-vars
   return function(err, req, res, next) {
-    // eslint-disable-line
     const handled = unwrapHandledError(err);
     // respect handled error status
     let status = handled.status || err.status || res.statusCode;
@@ -63,10 +41,11 @@ export default function prodErrorHandler() {
 
     const redirectTo = handled.redirectTo || `${homeLocation}/`;
     const message =
-      handled.message || 'Oops! Something went wrong. Please try again later';
+      handled.message ||
+      'Oops! Something went wrong. Please try again in a moment.';
 
     if (isDev) {
-      console.error(err);
+      console.error(errTemplate(err, req));
     }
 
     if (type === 'html') {

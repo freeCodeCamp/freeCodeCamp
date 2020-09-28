@@ -3,6 +3,7 @@ id: 587d78a5367417b2b2512ad7
 title: Use a CSS Linear Gradient to Create a Striped Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bmQh2'
+forumTopicId: 301072
 ---
 
 ## Description
@@ -26,17 +27,17 @@ Make stripes by changing the <code>repeating-linear-gradient()</code> to use a g
 ```yml
 tests:
   - text: The angle of the <code>repeating-linear-gradient()</code> should be 45deg.
-    testString: assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi), 'The angle of the <code>repeating-linear-gradient()</code> should be 45deg.');
+    testString: assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi));
   - text: The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg
-    testString: assert(!code.match(/90deg/gi), 'The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg');
+    testString: assert(!code.match(/90deg/gi));
   - text: The color stop at 0 pixels should be <code>yellow</code>.
-    testString: assert(code.match(/yellow\s+?0(px)?/gi), 'The color stop at 0 pixels should be <code>yellow</code>.');
+    testString: assert(code.match(/yellow\s+?0(px)?/gi));
   - text: One color stop at 40 pixels should be <code>yellow</code>.
-    testString: assert(code.match(/yellow\s+?40px/gi), 'One color stop at 40 pixels should be <code>yellow</code>.');
+    testString: assert(code.match(/yellow\s+?40px/gi));
   - text: The second color stop at 40 pixels should be <code>black</code>.
-    testString: assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi), 'The second color stop at 40 pixels should be <code>black</code>.');
+    testString: assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi));
   - text: The last color stop at 80 pixels should be <code>black</code>.
-    testString: assert(code.match(/black\s+?80px/gi), 'The last color stop at 80 pixels should be <code>black</code>.');
+    testString: assert(code.match(/black\s+?80px/gi));
 
 ```
 
@@ -79,8 +80,23 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = "background: repeating-linear-gradient(45deg, yellow 0px, yellow 40px, black 40px, black 80px);"
+```html
+<style>
+  div{
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin:  50 auto;
+    background: repeating-linear-gradient(
+      45deg,
+      yellow 0px,
+      yellow 40px,
+      black 40px,
+      black 80px
+    );
+  }
+</style>
+<div></div>
 ```
 
 </section>

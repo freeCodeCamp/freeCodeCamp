@@ -2,31 +2,54 @@
 id: 587d778b367417b2b2512aa7
 title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
-videoUrl: ''
-localeTitle: 在字段集元素中包裹单选按钮以获得更好的可访问性
+videoUrl: 'https://scrimba.com/c/cVJVefw'
+forumTopicId: 301030
+localeTitle: 将单选按钮包裹在 fieldset 元素中以获得更好的可访问性
 ---
 
 ## Description
-<section id="description">下一个表单主题包括单选按钮的可访问性。每个选项都有一个<code>label</code>其中一个<code>for</code>属性与最后一个挑战中涵盖的相应项目的<code>id</code>相关联。由于单选按钮通常位于用户必须选择一个的组中，因此有一种方法可以在语义上显示选项是一组的一部分。 <code>fieldset</code>标记围绕整个单选按钮组以实现此目的。它通常使用<code>legend</code>标记来提供分组的描述，屏幕阅读器可以为<code>fieldset</code>元素中的每个选项读取该描述。当选项不言自明时，如性别选择，则不需要<code>fieldset</code>包装器和<code>legend</code>标签。使用带有每个单选按钮的<code>for</code>属性的<code>label</code>就足够了。这是一个例子： <blockquote> &lt;FORM&gt; <br> &lt;字段集&gt; <br> &lt;legend&gt;选择以下三个项目之一：&lt;/ legend&gt; <br> &lt;input id =“one”type =“radio”name =“items”value =“one”&gt; <br> &lt;label for =“one”&gt; Choice One &lt;/ label&gt; &lt;br&gt; <br> &lt;input id =“two”type =“radio”name =“items”value =“two”&gt; <br> &lt;label for =“two”&gt;选择二&lt;/ label&gt; &lt;br&gt; <br> &lt;input id =“three”type =“radio”name =“items”value =“three”&gt; <br> &lt;label for =“three”&gt;选择三&lt;/ label&gt; <br> &lt;/字段集&gt; <br> &lt;/ FORM&gt; <br></blockquote></section>
+<section id='description'>
+下一个表单主题与单选按钮的可访问性有关。在上一个挑战中，单选按钮含有一个拥有<code>for</code>属性的<code>label</code>标签，<code>for</code>属性指向相关选项的<code>id</code>。然而单选按钮通常成组出现，用户必须其中选择一项。本次挑战介绍一种可以语义化呈现单选按钮组的方法。
+使用<code>fieldset</code>标签将单选按钮组包含在里面就可以实现这个目的，通常还会使用<code>legend</code>标签来为单选按钮组提供文字说明。屏幕阅读器也可以朗读这些文字。
+当选项的含义很明确时，如：性别选择，<code>fieldset</code>标签与<code>legend</code>标签就可以省略。这时，使用含有<code>for</code>属性的<code>label</code>标签就足够了。
+举个例子：
+
+```html
+<form>
+  <fieldset>
+    <legend>Choose one of these three items:</legend>
+    <input id="one" type="radio" name="items" value="one">
+    <label for="one">Choice One</label><br>
+    <input id="two" type="radio" name="items" value="two">
+    <label for="two">Choice Two</label><br>
+    <input id="three" type="radio" name="items" value="three">
+    <label for="three">Choice Three</label>
+  </fieldset>
+</form>
+```
+
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat在注册其电子邮件列表时需要有关其用户的忍者级别的信息。他增加了一组单选按钮，并从我们过去的经验教训使用标签与标签<code>for</code>每个选择属性。去野营猫！但是，他的代码仍需要一些帮助。将单选按钮周围的<code>div</code>标签更改为<code>fieldset</code>标签，并将其中的<code>p</code>标签更改为<code>legend</code> 。 </section>
+<section id='instructions'>
+当用户使用邮件注册时，Camper Cat 想知道他们的忍者等级。通过上一个挑战的学习，Camper Cat 创建了一组单选按钮，并为每个选项的<code>label</code>标签添加了<code>for</code>属性，但是 Camper Cat 的代码依然需要你的帮助。请将包含单选按钮组的<code>div</code>标签替换为<code>fieldset</code>标签；将<code>p</code>标签替换为<code>legend</code>标签。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该在单选按钮集周围有一个<code>fieldset</code>标记。
-    testString: 'assert($("fieldset").length == 1, "Your code should have a <code>fieldset</code> tag around the radio button set.");'
-  - text: 确保您的<code>fieldset</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, "Make sure your <code>fieldset</code> element has a closing tag.");'
-  - text: 您的代码应该在文本周围有一个<code>legend</code>标记，询问用户的忍者级别。
-    testString: 'assert($("legend").length == 1, "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 你的代码不应该在文本周围有一个<code>p</code>标记，询问用户是什么级别的忍者。
-    testString: 'assert($("p").length == 4, "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.");'
+  - text: '你的代码应该使用 1 个<code>fieldset</code>标签包含单选按钮组。'
+    testString: assert($('fieldset').length == 1);
+  - text: '确保<code>fieldset</code>标签是闭合的。'
+    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length);
+  - text: '你的代码应该有 1 个包含询问用户忍者等级文字的<code>legend</code>标签。'
+    testString: assert($('legend').length == 1);
+  - text: '你的代码不应该含有<code>div</code>标签。'
+    testString: assert($('div').length == 0);
+  - text: '你的代码不应该有包含询问用户忍者等级文字的<code>p</code>标签。'
+    testString: assert($('p').length == 4);
 
 ```
 
@@ -47,8 +70,8 @@ tests:
       <p>Sign up to receive Camper Cat's blog posts by email here!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
-
-
+      
+      
       <!-- Add your code below this line -->
       <div>
         <p>What level ninja are you?</p>
@@ -60,8 +83,8 @@ tests:
         <label for="master">Master</label>
       </div>
       <!-- Add your code above this line -->
-
-
+      
+      
       <input type="submit" name="submit" value="Submit">
     </form>
   </section>
@@ -72,7 +95,7 @@ tests:
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>
@@ -81,7 +104,6 @@ tests:
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
-
 ```
 
 </div>
@@ -93,7 +115,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

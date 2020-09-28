@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403614b
 title: Create a Redux Store
 challengeType: 6
-isRequired: false
+forumTopicId: 301439
 ---
 
 ## Description
@@ -24,10 +24,10 @@ Declare a <code>store</code> variable and assign it to the <code>createStore()</
 
 ```yml
 tests:
-  - text: The redux store exists.
-    testString: assert(typeof store.getState === 'function', 'The redux store exists.');
-  - text: The redux store has a value of 5 for the state.
-    testString: assert(store.getState()=== 5, 'The redux store has a value of 5 for the state.');
+  - text: The redux store should exist.
+    testString: assert(typeof store.getState === 'function');
+  - text: The redux store should have a value of 5 for the state.
+    testString: assert(store.getState()=== 5);
 
 ```
 
@@ -36,9 +36,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const reducer = (state = 5) => {
   return state;
 }
@@ -46,7 +46,6 @@ const reducer = (state = 5) => {
 // Redux methods are available from a Redux object
 // For example: Redux.createStore()
 // Define the store here:
-
 
 ```
 
@@ -64,10 +63,6 @@ const reducer = (state = 5) => {
 const reducer = (state = 5) => {
   return state;
 }
-
-// Redux methods are available from a Redux object
-// For example: Redux.createStore()
-// Define the store here:
 
 const store = Redux.createStore(reducer);
 ```

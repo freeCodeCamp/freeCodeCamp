@@ -3,7 +3,7 @@ id: 587d778f367417b2b2512aad
 title: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 challengeType: 0
 videoUrl: ''
-localeTitle: تجنب مشاكل Colorblindness عن طريق اختيار الألوان التي نقل المعلومات بعناية
+localeTitle: تجنب مشاكل عمى الألوان عن طريق اختيار الألوان التي تنقل المعلومات بعناية
 ---
 
 ## Description

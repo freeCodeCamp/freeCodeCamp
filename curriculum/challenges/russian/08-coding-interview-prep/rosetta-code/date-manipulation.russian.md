@@ -2,15 +2,18 @@
 title: Date manipulation
 id: 5966c21cf732a95f1b67dd28
 challengeType: 5
-videoUrl: ''
+forumTopicId: 302244
 localeTitle: Обработка даты
 ---
 
 ## Description
-<section id="description"> Задача: <p> Учитывая строку даты в EST, выведите указанную дату в виде строки с добавлением 12 часов к времени. </p><p> Часовой пояс должен быть сохранен. </p><p> Пример ввода: </p><p> <code>&quot;March 7 2009 7:30pm EST&quot;</code> </p> <p> Пример вывода: </p><p> <code>&quot;March 8 2009 7:30am EST&quot;</code> </p> </section>
+<section id='description'>
+Задача: <p> Учитывая строку даты в EST, выведите указанную дату в виде строки с добавлением 12 часов к времени. </p><p> Часовой пояс должен быть сохранен. </p><p> Пример ввода: </p><p> <code>&quot;March 7 2009 7:30pm EST&quot;</code> </p> <p> Пример вывода: </p><p> <code>&quot;March 8 2009 7:30am EST&quot;</code> </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,20 +21,20 @@ localeTitle: Обработка даты
 
 ```yml
 tests:
-  - text: <code>add12Hours</code> - это функция.
-    testString: 'assert(typeof add12Hours === "function", "<code>add12Hours</code> is a function.");'
-  - text: <code>add12Hours(dateString)</code> должен возвращать строку.
-    testString: 'assert(typeof add12Hours(tests[0]) === "string", "<code>add12Hours(dateString)</code> should return a string.");'
-  - text: '<code>add12Hours(&quot;&quot; + tests[0] + &quot;&quot;)</code> должны возвращать <code>&quot;&quot; + answers[0] + &quot;&quot;</code>'
-    testString: 'assert(add12Hours(tests[0]) === answers[0], "<code>add12Hours("" + tests[0] + "")</code> should return <code>"" + answers[0] + ""</code>");'
-  - text: 'Должен ли день обмена менять. <code>add12Hours(&quot;&quot; + tests[1] + &quot;&quot;)</code> должны возвращать <code>&quot;&quot; + answers[1] + &quot;&quot;</code>'
-    testString: 'assert(add12Hours(tests[1]) === answers[1], "Should handel day change. <code>add12Hours("" + tests[1] + "")</code> should return <code>"" + answers[1] + ""</code>");'
-  - text: 'Должен ли перенос месяца в високосный год. <code>add12Hours(&quot;&quot; + tests[2] + &quot;&quot;)</code> должны возвращать <code>&quot;&quot; + answers[2] + &quot;&quot;</code>'
-    testString: 'assert(add12Hours(tests[2]) === answers[2], "Should handel month change in a leap years. <code>add12Hours("" + tests[2] + "")</code> should return <code>"" + answers[2] + ""</code>");'
-  - text: 'Должен ли перенос месяца в течение общих лет. <code>add12Hours(&quot;&quot; + tests[3] + &quot;&quot;)</code> должны возвращать <code>&quot;&quot; + answers[3] + &quot;&quot;</code>'
-    testString: 'assert(add12Hours(tests[3]) === answers[3], "Should handel month change in a common years. <code>add12Hours("" + tests[3] + "")</code> should return <code>"" + answers[3] + ""</code>");'
-  - text: 'Должен измениться год выпуска. <code>add12Hours(&quot;&quot; + tests[4] + &quot;&quot;)</code> должны возвращать <code>&quot;&quot; + answers[4] + &quot;&quot;</code>'
-    testString: 'assert(add12Hours(tests[4]) === answers[4], "Should handel year change. <code>add12Hours("" + tests[4] + "")</code> should return <code>"" + answers[4] + ""</code>");'
+  - text: <code>add12Hours</code> is a function.
+    testString: assert(typeof add12Hours === 'function');
+  - text: <code>add12Hours(dateString)</code> should return a string.
+    testString: assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');
+  - text: <code>add12Hours("January 17 2017 11:43am EST")</code> should return <code>"January 17 2017 11:43pm EST"</code>
+    testString: assert(add12Hours('January 17 2017 11:43am EST') === 'January 17 2017 11:43pm EST');
+  - text: Should handel day change. <code>add12Hours("March 7 2009 7:30pm EST")</code> should return <code>"March 8 2009 7:30am EST"</code>
+    testString: assert(add12Hours('March 7 2009 7:30pm EST') === 'March 8 2009 7:30am EST');
+  - text: Should handel month change in a leap years. <code>add12Hours("February 29 2004 9:15pm EST")</code> should return <code>"March 1 2004 9:15am EST"</code>
+    testString: assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST');
+  - text: Should handel month change in a common years. <code>add12Hours("February 28 1999 3:15pm EST")</code> should return <code>"March 1 1999 3:15am EST"</code>
+    testString: assert(add12Hours('February 28 1999 3:15pm EST') === 'March 1 1999 3:15am EST');
+  - text: Should handel year change. <code>add12Hours("December 31 2020 1:45pm EST")</code> should return <code>"January 1 2021 1:45am EST"</code>
+    testString: assert(add12Hours('December 31 2020 1:45pm EST') === 'January 1 2021 1:45am EST');
 
 ```
 
@@ -43,21 +46,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-function add12Hours (dateString) {
+function add12Hours(dateString) {
   // Good luck!
   return true;
 }
 
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
 ```
 
 </div>
@@ -68,6 +61,36 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+function add12Hours(dateString) {
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+  // Get the parts of the string
+  const parts = dateString.split(' ');
+  const month = months.indexOf(parts[0]);
+  const day = parseInt(parts[1], 10);
+  const year = parseInt(parts[2], 10);
+  const time = parts[3].split(':');
+  let hours = parseInt(time[0], 10);
+  if (time[1].slice(-2) === 'pm') {
+    hours += 12;
+  }
+  const minutes = parseInt(time[1].slice(0, -2), 10);
+
+  // Create a date with given parts, and updated hours
+  const date = new Date();
+  date.setFullYear(year, month, day);
+  date.setHours(hours + 12);  // Add 12 hours
+  date.setMinutes(minutes);
+
+  let hoursOutput = date.getHours();
+  let abbreviation = 'am';
+  if (hoursOutput > 12) {
+    hoursOutput -= 12;
+    abbreviation = 'pm';
+  }
+
+  return `${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()} ${hoursOutput}:${date.getMinutes()}${abbreviation} EST`;
+}
 ```
+
 </section>

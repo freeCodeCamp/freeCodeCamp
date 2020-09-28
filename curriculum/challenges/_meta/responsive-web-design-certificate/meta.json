@@ -1,12 +1,13 @@
 {
   "name": "Responsive Web Design Certificate",
+  "isUpcomingChange": false,
   "dashedName": "responsive-web-design-certificate",
   "order": 1,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 9,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "561add10cb82ac38a17513bc",
@@ -14,5 +15,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "09-certificates/responsive-web-design-certificate.json"
+  "fileName": "12-certificates/responsive-web-design-certificate.json"
 }

@@ -2,7 +2,6 @@
 id: bad87fee1348bd9bedf08813
 title: Add Borders Around Your Elements
 challengeType: 0
-guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/add-borders-around-your-elements'
 videoUrl: ''
 localeTitle: أضف حدود حول عناصرك
 ---
@@ -80,7 +79,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

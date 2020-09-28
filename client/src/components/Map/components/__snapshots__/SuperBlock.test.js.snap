@@ -1,154 +1,242 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
-<li
-  className="superblock open"
->
-  <div
-    className="map-title"
-    onClick={[Function]}
+<div>
+  <li
+    class="superblock open"
+    id="super-block-one"
   >
-    <Caret />
-    <h4>
-      Super Block One Certification (300 hours)
-    </h4>
-  </div>
-  <ul>
-    <Connect(Block)
-      blockDashedName="block-a"
-      challenges={
-        Array [
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-one",
-            },
-            "id": "a",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-two",
-            },
-            "id": "b",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge Two",
-          },
-        ]
-      }
-      intro={
-        Object {
-          "fields": Object {
-            "slug": "/super-block-one/block-a",
-          },
-          "frontmatter": Object {
-            "block": "Block A",
-            "title": "Introduction to Block A",
-          },
-        }
-      }
-    />
-    <Connect(Block)
-      blockDashedName="block-b"
-      challenges={
-        Array [
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-one",
-            },
-            "id": "c",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-two",
-            },
-            "id": "d",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge Two",
-          },
-        ]
-      }
-      intro={
-        Object {
-          "fields": Object {
-            "slug": "/super-block-one/block-b",
-          },
-          "frontmatter": Object {
-            "block": "Block B",
-            "title": "Introduction to Block B",
-          },
-        }
-      }
-    />
-    <Connect(Block)
-      blockDashedName="block-c"
-      challenges={
-        Array [
-          Object {
-            "block": "block-c",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block C",
-              "slug": "/super-block-one/block-c/challenge-one",
-            },
-            "id": "e",
-            "isPrivate": true,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-        ]
-      }
-      intro={
-        Object {
-          "fields": Object {
-            "slug": "/super-block-one/block-c",
-          },
-          "frontmatter": Object {
-            "block": "Block C",
-            "title": "Introduction to Block C",
-          },
-        }
-      }
-    />
-  </ul>
-</li>
+    <button
+      aria-expanded="true"
+      class="map-title"
+    >
+      <svg
+        viewBox="0 0 100 100"
+        width="25px"
+      >
+        <polygon
+          points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+          style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+          transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
+        />
+      </svg>
+      <h4>
+        Super Block One Certification (300 hours)
+      </h4>
+    </button>
+    <ul>
+      <li
+        class="block "
+      >
+        <button
+          aria-expanded="false"
+          class="map-title"
+        >
+          <svg
+            viewBox="0 0 100 100"
+            width="25px"
+          >
+            <polygon
+              points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+              style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+              transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
+            />
+          </svg>
+          <h4>
+            Block A
+          </h4>
+          <div
+            class="map-title-completed"
+          >
+            <span>
+              <span
+                class="sr-only"
+              >
+                Not Passed
+              </span>
+              <svg
+                height="50"
+                style="height: 15px; margin-right: 10px; width: 15px;"
+                viewBox="0 0 200 200"
+                width="50"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <title>
+                    Not Passed
+                  </title>
+                  <circle
+                    cx="100"
+                    cy="99"
+                    fill="var(--primary-background)"
+                    r="95"
+                    stroke="var(--primary-color)"
+                    stroke-dasharray="null"
+                    stroke-linecap="null"
+                    stroke-linejoin="null"
+                    stroke-width="10"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              0/2
+            </span>
+          </div>
+        </button>
+        <ul />
+      </li>
+      <li
+        class="block "
+      >
+        <button
+          aria-expanded="false"
+          class="map-title"
+        >
+          <svg
+            viewBox="0 0 100 100"
+            width="25px"
+          >
+            <polygon
+              points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+              style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+              transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
+            />
+          </svg>
+          <h4>
+            Block B
+          </h4>
+          <div
+            class="map-title-completed"
+          >
+            <span>
+              <span
+                class="sr-only"
+              >
+                Not Passed
+              </span>
+              <svg
+                height="50"
+                style="height: 15px; margin-right: 10px; width: 15px;"
+                viewBox="0 0 200 200"
+                width="50"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <title>
+                    Not Passed
+                  </title>
+                  <circle
+                    cx="100"
+                    cy="99"
+                    fill="var(--primary-background)"
+                    r="95"
+                    stroke="var(--primary-color)"
+                    stroke-dasharray="null"
+                    stroke-linecap="null"
+                    stroke-linejoin="null"
+                    stroke-width="10"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              0/2
+            </span>
+          </div>
+        </button>
+        <ul />
+      </li>
+      <li
+        class="block "
+      >
+        <button
+          aria-expanded="false"
+          class="map-title"
+        >
+          <svg
+            viewBox="0 0 100 100"
+            width="25px"
+          >
+            <polygon
+              points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+              style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+              transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
+            />
+          </svg>
+          <h4>
+            Block C
+          </h4>
+          <div
+            class="map-title-completed"
+          >
+            <span>
+              <span
+                class="sr-only"
+              >
+                Not Passed
+              </span>
+              <svg
+                height="50"
+                style="height: 15px; margin-right: 10px; width: 15px;"
+                viewBox="0 0 200 200"
+                width="50"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <title>
+                    Not Passed
+                  </title>
+                  <circle
+                    cx="100"
+                    cy="99"
+                    fill="var(--primary-background)"
+                    r="95"
+                    stroke="var(--primary-color)"
+                    stroke-dasharray="null"
+                    stroke-linecap="null"
+                    stroke-linejoin="null"
+                    stroke-width="10"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              0/1
+            </span>
+          </div>
+        </button>
+        <ul />
+      </li>
+    </ul>
+  </li>
+</div>
 `;
 
 exports[`<SuperBlock /> not expanded snapshot: superBlock-not-expanded 1`] = `
-<li
-  className="superblock "
->
-  <div
-    className="map-title"
-    onClick={[Function]}
+<div>
+  <li
+    class="superblock "
+    id="super-block-one"
   >
-    <Caret />
-    <h4>
-      Super Block One Certification (300 hours)
-    </h4>
-  </div>
-</li>
+    <button
+      aria-expanded="false"
+      class="map-title"
+    >
+      <svg
+        viewBox="0 0 100 100"
+        width="25px"
+      >
+        <polygon
+          points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+          style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+          transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
+        />
+      </svg>
+      <h4>
+        Super Block One Certification (300 hours)
+      </h4>
+    </button>
+  </li>
+</div>
 `;

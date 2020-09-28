@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comprender unidades absolutas versus unidades relativas
 ---
 
-## Description
+## Descripción
 <section id="description"> Los últimos varios desafíos establecen el margen o el relleno de un elemento con píxeles ( <code>px</code> ). Los píxeles son un tipo de unidad de longitud, que es lo que le dice al navegador cómo dimensionar o espaciar un elemento. Además de <code>px</code> , CSS tiene una serie de opciones de unidades de longitud diferentes que puede utilizar. Los dos tipos principales de unidades de longitud son absolutos y relativos. Unidades absolutas vinculadas a unidades físicas de longitud. Por ejemplo, <code>in</code> y <code>mm</code> refieren a pulgadas y milímetros, respectivamente. Las unidades de longitud absoluta se aproximan a la medida real en una pantalla, pero hay algunas diferencias según la resolución de la pantalla. Las unidades relativas, como <code>em</code> o <code>rem</code> , son relativas a otro valor de longitud. Por ejemplo, <code>em</code> se basa en el tamaño de la fuente de un elemento. Si lo usa para establecer la propiedad de <code>font-size</code> sí, es relativo al <code>font-size</code> de <code>font-size</code> . <strong>Nota</strong> <br> Hay varias opciones de unidades relativas que están vinculadas al tamaño de la ventana gráfica. Están cubiertos en la sección Principios de diseño web responsivo. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Agregue una propiedad de <code>padding</code> al elemento con la clase <code>red-box</code> y <code>1.5em</code> a <code>1.5em</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -76,7 +76,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

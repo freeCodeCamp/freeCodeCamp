@@ -2,15 +2,18 @@
 id: 5a51eabcad78bf416f316e2a
 challengeType: 5
 title: 'Problem 22: Names scores'
-videoUrl: ''
+forumTopicId: 301862
 localeTitle: 'Задача 22: Имена баллов'
 ---
 
 ## Description
-<section id="description"> Используя <code>names</code> , массив, содержащий более пяти тысяч первых имен, начинайте с сортировки в алфавитном порядке. Затем, выработав алфавитное значение для каждого имени, умножьте это значение на его алфавитную позицию в списке, чтобы получить оценку имени. Например, когда список сортируется в алфавитном порядке, COLIN, который стоит 3 + 15 + 12 + 9 + 14 = 53, является 938-м именем в списке. Итак, COLIN получит оценку 938 × 53 = 49714. Какова общая сумма всех имен в файле? </section>
+<section id='description'>
+Используя <code>names</code> , массив, содержащий более пяти тысяч первых имен, начинайте с сортировки в алфавитном порядке. Затем, выработав алфавитное значение для каждого имени, умножьте это значение на его алфавитную позицию в списке, чтобы получить оценку имени. Например, когда список сортируется в алфавитном порядке, COLIN, который стоит 3 + 15 + 12 + 9 + 14 = 53, является 938-м именем в списке. Итак, COLIN получит оценку 938 × 53 = 49714. Какова общая сумма всех имен в файле?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +21,12 @@ localeTitle: 'Задача 22: Имена баллов'
 
 ```yml
 tests:
-  - text: <code>namesScores(test1)</code> должен возвращать 791.
-    testString: 'assert.strictEqual(namesScores(test1), 791, "<code>namesScores(test1)</code> should return 791.");'
-  - text: <code>namesScores(test2)</code> должен возвращать 1468.
-    testString: 'assert.strictEqual(namesScores(test2), 1468, "<code>namesScores(test2)</code> should return 1468.");'
-  - text: <code>namesScores(names)</code> должны возвращать 871198282.
-    testString: 'assert.strictEqual(namesScores(names), 871198282, "<code>namesScores(names)</code> should return 871198282.");'
+  - text: <code>namesScores(test1)</code> should return 791.
+    testString: assert.strictEqual(namesScores(test1), 791);
+  - text: <code>namesScores(test2)</code> should return 1468.
+    testString: assert.strictEqual(namesScores(test2), 1468);
+  - text: <code>namesScores(names)</code> should return 871198282.
+    testString: assert.strictEqual(namesScores(names), 871198282);
 
 ```
 
@@ -50,7 +53,7 @@ namesScores(test1);
 
 </div>
 
-### Before Test
+### Before Tests
 <div id='js-setup'>
 
 ```js
@@ -60,7 +63,6 @@ const names = ['MARY','PATRICIA','LINDA','BARBARA','ELIZABETH','JENNIFER','MARIA
 
 </div>
 
-
 </section>
 
 ## Solution
@@ -69,4 +71,5 @@ const names = ['MARY','PATRICIA','LINDA','BARBARA','ELIZABETH','JENNIFER','MARIA
 ```js
 // solution required
 ```
+
 </section>

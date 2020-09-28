@@ -2,23 +2,28 @@
 id: 5a9036e138fddaf9a66b5d33
 title: Add Rows with grid-template-rows
 challengeType: 0
-videoUrl: ''
-localeTitle: Добавить строки с строками-сетками-строками
+videoUrl: https://scrimba.com/p/pByETK/cbp9Pua
+forumTopicId: 301119
+localeTitle: Добавление строк с grid-template-rows
 ---
 
 ## Description
-<section id="description"> Сетка, созданная в последней задаче, автоматически установит количество строк. Чтобы вручную отредактировать строки, используйте свойство <code>grid-template-rows</code> же, как в предыдущем вызове были использованы <code>grid-template-columns</code> . </section>
+<section id='description'>
+Грид, который вы создали в прошлом упражнении, автоматически устанавливает количество строк. Чтобы вручную задать строки, используйте свойство <code>grid-template-rows</code> точно также как вы использовали <code>grid-template-columns</code> в предыдущем упражнении.
+</section>
 
 ## Instructions
-<section id="instructions"> Добавьте две строки в сетку, каждая из которых имеет <code>50px</code> . </section>
+<section id='instructions'>
+Добавьте две строки в грид, каждая высотой <code>50px</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>grid-template-rows</code> с двумя единицами <code>50px</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.");'
+  - text: <code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -62,14 +67,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".container {grid-template-rows: 50px 50px;}"
 ```
+
 </section>

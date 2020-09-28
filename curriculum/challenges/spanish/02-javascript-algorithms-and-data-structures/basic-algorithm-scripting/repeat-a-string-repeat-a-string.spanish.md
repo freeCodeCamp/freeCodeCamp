@@ -1,14 +1,13 @@
 ---
 id: afcc8d540bea9ea2669306b6
 title: Repeat a String Repeat a String
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Repetir una cadena Repetir una cadena
 ---
 
 ## Description
-<section id="description"> Repetir una determinada cadena <code>str</code> (primer argumento) para <code>num</code> veces (segundo argumento). Devuelve una cadena vacía si <code>num</code> no es un número positivo. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
+<section id="description"> Repetir una determinada cadena <code>str</code> (primer argumento) para <code>num</code> veces (segundo argumento). Devuelve una cadena vacía si <code>num</code> no es un número positivo. Recuerda usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

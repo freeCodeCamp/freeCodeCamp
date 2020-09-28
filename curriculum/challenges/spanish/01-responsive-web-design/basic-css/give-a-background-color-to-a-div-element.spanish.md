@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Dar un color de fondo a un elemento div
 ---
 
-## Description
-<section id="description"> Puede establecer el color de fondo de un elemento con la propiedad de <code>background-color</code> . Por ejemplo, si quisiera que el color de fondo de un elemento fuera <code>green</code> , lo pondría dentro de su elemento de <code>style</code> : <blockquote> .green-background { <br> color de fondo: verde; <br> } </blockquote></section>
+## Descripción
+<section id="description"> Puede establecer el color de fondo de un elemento con la propiedad de <code>background-color</code> . Por ejemplo, si quisiera que el color de fondo de un elemento fuera <code>green</code> , lo pondría dentro de su elemento de <code>style</code> : <blockquote> .green-background { <br> background-color: green; <br> } </blockquote></section>
 
-## Instructions
-<section id="instructions"> Crea una clase llamada <code>silver-background</code> con el <code>background-color</code> de <code>background-color</code> de plata. Asigna esta clase a tu elemento <code>div</code> . </section>
+## Instrucciones
+<section id="instructions"> Crea una clase llamada <code>silver-background</code> con el <code>background-color</code> plateado. Asigna esta clase a tu elemento <code>div</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -63,33 +63,33 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Haga clic aquí para ver más <a href="#">fotos de gatos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
-  <div>
-    <p>Things cats love:</p>
+   <div>
+    <p>Cosas que los gatos aman:</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>pellizco de gato</li>
+      <li>punteros laser</li>
+      <li>lasaña</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>3 cosas que odian los gatos:</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>tratamiento de pulgas</li>
+      <li>trueno</li>
+      <li>otros gatos</li>
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Interior</label>
+    <label><input type="radio" name="indoor-outdoor"> Exterior</label><br>
+    <label><input type="checkbox" name="personality" checked> Amoroso</label>
+    <label><input type="checkbox" name="personality"> Perezoso</label>
+    <label><input type="checkbox" name="personality"> Energético</label><br>
     <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+    <button type="submit">Enviar</button>
   </form>
 </main>
 
@@ -101,7 +101,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

@@ -29,7 +29,7 @@ tests:
     testString: 'assert(chainToSwitch(42) === "The Answer", "<code>chainToSwitch(42)</code> should be "The Answer"");'
   - text: '<code>chainToSwitch(1)</code> deve ser &quot;Não existe # 1&quot;'
     testString: 'assert(chainToSwitch(1) === "There is no #1", "<code>chainToSwitch(1)</code> should be "There is no #1"");'
-  - text: <code>chainToSwitch(99)</code> deve ser &quot; <code>chainToSwitch(99)</code> !&quot;
+  - text: <code>chainToSwitch(99)</code> deve ser <code>chainToSwitch(99)</code> !
     testString: 'assert(chainToSwitch(99) === "Missed me by this much!", "<code>chainToSwitch(99)</code> should be "Missed me by this much!"");'
   - text: <code>chainToSwitch(7)</code> deve ser &quot;Ate Nine&quot;
     testString: 'assert(chainToSwitch(7) === "Ate Nine", "<code>chainToSwitch(7)</code> should be "Ate Nine"");'

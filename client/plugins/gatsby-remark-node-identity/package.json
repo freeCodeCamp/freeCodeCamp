@@ -1,1 +1,5 @@
-{"name": "gatsby-plugin-node-identity", "version": "0.1.0"}
+{
+  "name": "gatsby-plugin-node-identity",
+  "private": true,
+  "version": "0.0.1"
+}

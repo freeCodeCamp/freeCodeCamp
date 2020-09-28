@@ -1,38 +1,21 @@
 import passport from 'passport';
-import { PassportConfigurator } from
- '@freecodecamp/loopback-component-passport';
-import passportProviders from './passport-providers';
+// eslint-disable-next-line
+import {
+  // prettier ignore
+  PassportConfigurator
+} from '@freecodecamp/loopback-component-passport';
 import url from 'url';
-import jwt from 'jsonwebtoken';
 import dedent from 'dedent';
+
+import { getUserById } from './utils/user-stats';
+import { homeLocation } from '../../config/env';
+import passportProviders from './passport-providers';
+import { setAccessTokenToResponse } from './utils/getSetAccessToken';
 
 const passportOptions = {
   emailOptional: true,
   profileToUser: null
 };
-
-const fields = {
-  progressTimestamps: false
-};
-
-function getCompletedCertCount(user) {
-  return [
-    'isApisMicroservicesCert',
-    'is2018DataVisCert',
-    'isFrontEndLibsCert',
-    'isInfosecQaCert',
-    'isJsAlgoDataStructCert',
-    'isRespWebDesignCert'
-  ].reduce((sum, key) => user[key] ? sum + 1 : sum, 0);
-}
-
-function getLegacyCertCount(user) {
-  return [
-    'isFrontEndCert',
-    'isBackEndCert',
-    'isDataVisCert'
-  ].reduce((sum, key) => user[key] ? sum + 1 : sum, 0);
-}
 
 PassportConfigurator.prototype.init = function passportInit(noSession) {
   this.app.middleware('session:after', passport.initialize());
@@ -46,46 +29,11 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
   // Serialization and deserialization is only required if passport session is
   // enabled
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
-  });
+  passport.serializeUser((user, done) => done(null, user.id));
 
-  passport.deserializeUser((id, done) => {
-
-    this.userModel.findById(id, { fields }, (err, user) => {
-      if (err || !user) {
-        return done(err, user);
-      }
-
-      return this.app.dataSources.db.connector
-        .collection('user')
-        .aggregate([
-          { $match: { _id: user.id } },
-          { $project: { points: { $size: '$progressTimestamps' } } }
-        ]).get(function(err, [{ points = 1 } = {}]) {
-          if (err) { console.error(err); return done(err); }
-          user.points = points;
-          let completedChallengeCount = 0;
-          let completedProjectCount = 0;
-          if ('completedChallenges' in user) {
-            completedChallengeCount = user.completedChallenges.length;
-            user.completedChallenges.forEach(item => {
-              if (
-                'challengeType' in item &&
-                (item.challengeType === 3 || item.challengeType === 4)
-              ) {
-                completedProjectCount++;
-              }
-            });
-          }
-          user.completedChallengeCount = completedChallengeCount;
-          user.completedProjectCount = completedProjectCount;
-          user.completedCertCount = getCompletedCertCount(user);
-          user.completedLegacyCertCount = getLegacyCertCount(user);
-          user.completedChallenges = [];
-          return done(null, user);
-        });
-    });
+  passport.deserializeUser(async (id, done) => {
+    const user = await getUserById(id).catch(done);
+    return done(null, user);
   });
 };
 
@@ -104,78 +52,100 @@ export function setupPassport(app) {
     let config = passportProviders[strategy];
     config.session = config.session !== false;
 
-    // https://stackoverflow.com/q/37430452
-    let successRedirect = (req) => {
-      if (!!req && req.session && req.session.returnTo) {
-        delete req.session.returnTo;
-        return '/';
-      }
-      return config.successRedirect || '';
-    };
-
     config.customCallback = !config.useCustomCallback
       ? null
-      : (req, res, next) => {
+      : createPassportCallbackAuthenticator(strategy, config);
 
-        passport.authenticate(
-          strategy,
-          { session: false },
-          (err, user, userInfo) => {
-
-            if (err) {
-              return next(err);
-            }
-
-            if (!user || !userInfo) {
-              return res.redirect(config.failureRedirect);
-            }
-            let redirect = url.parse(successRedirect(req), true);
-
-            delete redirect.search;
-
-            const { accessToken } = userInfo;
-            const { provider } = config;
-            if (accessToken && accessToken.id) {
-              if (provider === 'auth0') {
-                req.flash(
-                  'success',
-                  dedent`
-                    Success! You have signed in to your account. Happy Coding!
-                  `
-                );
-              } else if (user.email) {
-                req.flash(
-                  'info',
-                  dedent`
-  We are moving away from social authentication for privacy reasons. Next time
-  we recommend using your email address: ${user.email} to sign in instead.
-                  `
-                );
-              }
-              const cookieConfig = {
-                signed: !!req.signedCookies,
-                maxAge: accessToken.ttl,
-                domain: process.env.COOKIE_DOMAIN || 'localhost'
-              };
-              const jwtAccess = jwt.sign({accessToken}, process.env.JWT_SECRET);
-              res.cookie('jwt_access_token', jwtAccess, cookieConfig);
-              res.cookie('access_token', accessToken.id, cookieConfig);
-              res.cookie('userId', accessToken.userId, cookieConfig);
-              req.login(user);
-            }
-
-            redirect = url.format(redirect);
-            return res.redirect(redirect);
-          }
-        )(req, res, next);
-    };
-
-    configurator.configureProvider(
-      strategy,
-      {
-        ...config,
-        ...passportOptions
-      }
-    );
+    configurator.configureProvider(strategy, {
+      ...config,
+      ...passportOptions
+    });
   });
 }
+
+export const saveResponseAuthCookies = () => {
+  return (req, res, next) => {
+    const user = req.user;
+
+    if (!user) {
+      return res.redirect('/signin');
+    }
+
+    const { accessToken } = user;
+
+    setAccessTokenToResponse({ accessToken }, req, res);
+    return next();
+  };
+};
+
+export const loginRedirect = () => {
+  return (req, res) => {
+    const successRedirect = req => {
+      if (!!req && req.session && req.session.returnTo) {
+        delete req.session.returnTo;
+        return `${homeLocation}/learn`;
+      }
+      return `${homeLocation}/learn`;
+    };
+
+    let redirect = url.parse(successRedirect(req), true);
+    delete redirect.search;
+
+    redirect = url.format(redirect);
+    return res.redirect(redirect);
+  };
+};
+
+export const createPassportCallbackAuthenticator = (strategy, config) => (
+  req,
+  res,
+  next
+) => {
+  const returnTo =
+    req && req.query && req.query.state
+      ? Buffer.from(req.query.state, 'base64').toString('utf-8')
+      : `${homeLocation}/learn`;
+  return passport.authenticate(
+    strategy,
+    { session: false },
+    (err, user, userInfo) => {
+      if (err) {
+        return next(err);
+      }
+
+      if (!user || !userInfo) {
+        return res.redirect('/signin');
+      }
+      const redirect = `${returnTo}`;
+
+      const { accessToken } = userInfo;
+      const { provider } = config;
+      if (accessToken && accessToken.id) {
+        if (provider === 'auth0') {
+          req.flash(
+            'success',
+            dedent`
+              Success! You have signed in to your account. Happy Coding!
+            `
+          );
+        } else if (user.email) {
+          req.flash(
+            'info',
+            dedent`
+We are moving away from social authentication for privacy reasons. Next time
+we recommend using your email address: ${user.email} to sign in instead.
+            `
+          );
+        }
+        setAccessTokenToResponse({ accessToken }, req, res);
+        req.login(user);
+      }
+      // TODO: enable 'returnTo' for sign-up
+      if (user.acceptedPrivacyTerms) {
+        return res.redirectWithFlash(redirect);
+      } else {
+        return res.redirectWithFlash(`${homeLocation}/email-sign-up`);
+      }
+    }
+  )(req, res, next);
+};

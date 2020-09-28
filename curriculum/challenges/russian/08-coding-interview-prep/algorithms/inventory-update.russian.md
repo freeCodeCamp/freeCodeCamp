@@ -2,15 +2,18 @@
 id: a56138aff60341a09ed6c480
 title: Inventory Update
 challengeType: 5
-videoUrl: ''
+forumTopicId: 16019
 localeTitle: Обновление инвентаря
 ---
 
 ## Description
-<section id="description"> Сравните и обновите инвентарь, хранящийся в 2D-массиве, против второго 2D-массива новой доставки. Обновите текущие объемы инвентарных количеств (в <code>arr1</code> ). Если элемент не найден, добавьте новый элемент и количество в массив инвентаря. Возвращаемый массив инвентаря должен быть в алфавитном порядке по позиции. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код. </section>
+<section id='description'>
+Сравните и обновите инвентарь, хранящийся в 2D-массиве, против второго 2D-массива новой доставки. Обновите текущие объемы инвентарных количеств (в <code>arr1</code> ). Если элемент не найден, добавьте новый элемент и количество в массив инвентаря. Возвращаемый массив инвентаря должен быть в алфавитном порядке по позиции. Не забудьте использовать <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,18 +21,18 @@ localeTitle: Обновление инвентаря
 
 ```yml
 tests:
-  - text: Функция <code>updateInventory</code> должна возвращать массив.
-    testString: 'assert.isArray(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]), "The function <code>updateInventory</code> should return an array.");'
-  - text: '<code>updateInventory([[21, &quot;Bowling Ball&quot;], [2, &quot;Dirty Sock&quot;], [1, &quot;Hair Pin&quot;], [5, &quot;Microphone&quot;]], [[2, &quot;Hair Pin&quot;], [3, &quot;Half-Eaten Apple&quot;], [67, &quot;Bowling Ball&quot;], [7, &quot;Toothpaste&quot;]])</code> должны возвращать массив длиной 6.'
-    testString: 'assert.equal(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]).length, 6, "<code>updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])</code> should return an array with a length of 6.");'
-  - text: '<code>updateInventory([[21, &quot;Bowling Ball&quot;], [2, &quot;Dirty Sock&quot;], [1, &quot;Hair Pin&quot;], [5, &quot;Microphone&quot;]], [[2, &quot;Hair Pin&quot;], [3, &quot;Half-Eaten Apple&quot;], [67, &quot;Bowling Ball&quot;], [7, &quot;Toothpaste&quot;]])</code> должны вернуться <code>[[88, &quot;Bowling Ball&quot;], [2, &quot;Dirty Sock&quot;], [3, &quot;Hair Pin&quot;], [3, &quot;Half-Eaten Apple&quot;], [5, &quot;Microphone&quot;], [7, &quot;Toothpaste&quot;]]</code> .'
-    testString: 'assert.deepEqual(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]), [[88, "Bowling Ball"], [2, "Dirty Sock"], [3, "Hair Pin"], [3, "Half-Eaten Apple"], [5, "Microphone"], [7, "Toothpaste"]], "<code>updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])</code> should return <code>[[88, "Bowling Ball"], [2, "Dirty Sock"], [3, "Hair Pin"], [3, "Half-Eaten Apple"], [5, "Microphone"], [7, "Toothpaste"]]</code>.");'
-  - text: '<code>updateInventory([[21, &quot;Bowling Ball&quot;], [2, &quot;Dirty Sock&quot;], [1, &quot;Hair Pin&quot;], [5, &quot;Microphone&quot;]], [])</code> должны возвращать <code>[[21, &quot;Bowling Ball&quot;], [2, &quot;Dirty Sock&quot;], [1, &quot;Hair Pin&quot;], [5, &quot;Microphone&quot;]]</code> .'
-    testString: 'assert.deepEqual(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], []), [[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], "<code>updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [])</code> should return <code>[[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]]</code>.");'
-  - text: '<code>updateInventory([], [[2, &quot;Hair Pin&quot;], [3, &quot;Half-Eaten Apple&quot;], [67, &quot;Bowling Ball&quot;], [7, &quot;Toothpaste&quot;]])</code> должны вернуться <code>[[67, &quot;Bowling Ball&quot;], [2, &quot;Hair Pin&quot;], [3, &quot;Half-Eaten Apple&quot;], [7, &quot;Toothpaste&quot;]]</code> .'
-    testString: 'assert.deepEqual(updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]), [[67, "Bowling Ball"], [2, "Hair Pin"], [3, "Half-Eaten Apple"], [7, "Toothpaste"]], "<code>updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])</code> should return <code>[[67, "Bowling Ball"], [2, "Hair Pin"], [3, "Half-Eaten Apple"], [7, "Toothpaste"]]</code>.");'
-  - text: '<code>updateInventory([[0, &quot;Bowling Ball&quot;], [0, &quot;Dirty Sock&quot;], [0, &quot;Hair Pin&quot;], [0, &quot;Microphone&quot;]], [[1, &quot;Hair Pin&quot;], [1, &quot;Half-Eaten Apple&quot;], [1, &quot;Bowling Ball&quot;], [1, &quot;Toothpaste&quot;]])</code> должны возвращать <code>[[1, &quot;Bowling Ball&quot;], [0, &quot;Dirty Sock&quot;], [1, &quot;Hair Pin&quot;], [1, &quot;Half-Eaten Apple&quot;], [0, &quot;Microphone&quot;], [1, &quot;Toothpaste&quot;]]</code> .'
-    testString: 'assert.deepEqual(updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]), [[1, "Bowling Ball"], [0, "Dirty Sock"], [1, "Hair Pin"], [1, "Half-Eaten Apple"], [0, "Microphone"], [1, "Toothpaste"]], "<code>updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]])</code> should return <code>[[1, "Bowling Ball"], [0, "Dirty Sock"], [1, "Hair Pin"], [1, "Half-Eaten Apple"], [0, "Microphone"], [1, "Toothpaste"]]</code>.");'
+  - text: The function <code>updateInventory</code> should return an array.
+    testString: assert.isArray(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]));
+  - text: <code>updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])</code> should return an array with a length of 6.
+    testString: assert.equal(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]).length, 6);
+  - text: <code>updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])</code> should return <code>[[88, "Bowling Ball"], [2, "Dirty Sock"], [3, "Hair Pin"], [3, "Half-Eaten Apple"], [5, "Microphone"], [7, "Toothpaste"]]</code>.
+    testString: assert.deepEqual(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]), [[88, "Bowling Ball"], [2, "Dirty Sock"], [3, "Hair Pin"], [3, "Half-Eaten Apple"], [5, "Microphone"], [7, "Toothpaste"]]);
+  - text: <code>updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], [])</code> should return <code>[[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]]</code>.
+    testString: assert.deepEqual(updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], []), [[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]]);
+  - text: <code>updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])</code> should return <code>[[67, "Bowling Ball"], [2, "Hair Pin"], [3, "Half-Eaten Apple"], [7, "Toothpaste"]]</code>.
+    testString: assert.deepEqual(updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]), [[67, "Bowling Ball"], [2, "Hair Pin"], [3, "Half-Eaten Apple"], [7, "Toothpaste"]]);
+  - text: <code>updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]])</code> should return <code>[[1, "Bowling Ball"], [0, "Dirty Sock"], [1, "Hair Pin"], [1, "Half-Eaten Apple"], [0, "Microphone"], [1, "Toothpaste"]]</code>.
+    testString: assert.deepEqual(updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]), [[1, "Bowling Ball"], [0, "Dirty Sock"], [1, "Hair Pin"], [1, "Half-Eaten Apple"], [0, "Microphone"], [1, "Toothpaste"]]);
 
 ```
 
@@ -67,14 +70,50 @@ updateInventory(curInv, newInv);
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+function updateInventory(arr1, arr2) {
+  arr2.forEach(function(item) {
+    createOrUpdate(arr1, item);
+  });
+  // All inventory must be accounted for or you're fired!
+  return arr1;
+}
+
+function createOrUpdate(arr1, item) {
+  var index = -1;
+  while (++index < arr1.length) {
+    if (arr1[index][1] === item[1]) {
+      arr1[index][0] += item[0];
+      return;
+    }
+    if (arr1[index][1] > item[1]) {
+      break;
+    }
+  }
+  arr1.splice(index, 0, item);
+}
+
+// Example inventory lists
+var curInv = [
+    [21, 'Bowling Ball'],
+    [2, 'Dirty Sock'],
+    [1, 'Hair Pin'],
+    [5, 'Microphone']
+];
+
+var newInv = [
+    [2, 'Hair Pin'],
+    [3, 'Half-Eaten Apple'],
+    [67, 'Bowling Ball'],
+    [7, 'Toothpaste']
+];
+
+updateInventory(curInv, newInv);
 ```
+
 </section>

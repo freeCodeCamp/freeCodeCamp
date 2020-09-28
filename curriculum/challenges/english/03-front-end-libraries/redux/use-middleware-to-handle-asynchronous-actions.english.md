@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036156
 title: Use Middleware to Handle Asynchronous Actions
 challengeType: 6
-isRequired: false
+forumTopicId: 301451
 ---
 
 ## Description
@@ -24,15 +24,15 @@ Write both dispatches in the <code>handleAsync()</code> action creator. Dispatch
 ```yml
 tests:
   - text: The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.
-    testString: assert(requestingData().type === REQUESTING_DATA, 'The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.');
+    testString: assert(requestingData().type === REQUESTING_DATA);
   - text: The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.
-    testString: assert(receivedData('data').type === RECEIVED_DATA, 'The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.');
+    testString: assert(receivedData('data').type === RECEIVED_DATA);
   - text: <code>asyncDataReducer</code> should be a function.
-    testString: assert(typeof asyncDataReducer === 'function', '<code>asyncDataReducer</code> should be a function.');
+    testString: assert(typeof asyncDataReducer === 'function');
   - text: Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.
-    testString: assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })(), 'Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.');
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })());
   - text: Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.
-    testString: assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\s/g,''); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })(), 'Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.');
+    testString: assert((function() { const noWhiteSpace = __helpers.removeWhiteSpace(handleAsync.toString()); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })());
 
 ```
 
@@ -41,9 +41,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const REQUESTING_DATA = 'REQUESTING_DATA'
 const RECEIVED_DATA = 'RECEIVED_DATA'
 
@@ -52,13 +52,13 @@ const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users}
 
 const handleAsync = () => {
   return function(dispatch) {
-    // dispatch request action here
+    // Dispatch request action here
 
     setTimeout(function() {
       let data = {
         users: ['Jeff', 'William', 'Alice']
       }
-      // dispatch received data action here
+      // Dispatch received data action here
 
     }, 2500);
   }

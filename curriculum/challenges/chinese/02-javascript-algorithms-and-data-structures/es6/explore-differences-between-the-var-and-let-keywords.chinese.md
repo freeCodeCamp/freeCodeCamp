@@ -2,27 +2,59 @@
 id: 587d7b87367417b2b2512b3f
 title: Explore Differences Between the var and let Keywords
 challengeType: 1
-videoUrl: ''
-localeTitle: 探索var和let关键字之间的差异
+forumTopicId: 301202
+localeTitle: 探索 var 和 let 关键字之间的差异
 ---
 
 ## Description
-<section id="description">使用<code>var</code>关键字声明变量的最大问题之一是您可以在没有错误的情况下覆盖变量声明。 <blockquote> var camper =&#39;詹姆斯&#39;; <br> var camper =&#39;大卫&#39;; <br>的console.log（野营车）; <br> //记录&#39;大卫&#39; </blockquote>正如您在上面的代码中看到的那样， <code>camper</code>变量最初被声明为<code>James</code> ，然后被重写为<code>David</code> 。在小型应用程序中，您可能不会遇到此类问题，但是当您的代码变大时，您可能会意外覆盖您不打算覆盖的变量。因为这种行为不会引发错误，所以搜索和修复错误变得更加困难。 <br>在ES6中引入了一个名为<code>let</code>的新关键字，用<code>var</code>关键字解决了这个潜在的问题。如果要在上面代码的变量声明中用<code>let</code>替换<code>var</code> ，结果将是一个错误。 <blockquote>让露营者=&#39;詹姆斯&#39;; <br>让露营者=&#39;大卫&#39;; //抛出错误</blockquote>您可以在浏览器的控制台中看到此错误。因此与<code>var</code>不同，使用<code>let</code> ，具有相同名称的变量只能声明一次。注意<code>&quot;use strict&quot;</code> 。这启用了严格模式，可以捕获常见的编码错误和“不安全”操作。例如： <blockquote> “严格使用”; <br> x = 3.14; //因为未声明x而抛出错误</blockquote></section>
+<section id='description'>
+使用<code>var</code>关键字来声明变量，会出现重复声明导致变量被覆盖却不会报错的问题：
+
+```js
+var camper = 'James';
+var camper = 'David';
+console.log(camper);
+// logs 'David'
+```
+
+在上面的代码中，<code>camper</code>的初始值为<code>'James'</code>，然后又被覆盖成了<code>'David'</code>。
+在小型的应用中，你可能不会遇到这样的问题，但是当你的代码规模变得更加庞大的时候，就可能会在不经意间覆盖了之前定义的变量。
+这样的行为不会报错，导致了 debug 非常困难。<br>
+在 ES6 中引入了新的关键字<code>let</code>来解决<code>var</code>关键字带来的潜在问题。
+如果你在上面的代码中，使用了<code>let</code>关键字来代替<code>var</code>关键字，结果会是一个报错。
+
+```js
+let camper = 'James';
+let camper = 'David'; // throws an error
+```
+
+你可以在浏览器的控制台里看见这个错误。
+与<code>var</code>不同的是，当使用<code>let</code>的时候，同一名字的变量只能被声明一次。
+请注意<code>"use strict"</code>。这代表着开启了严格模式，用于检测常见的代码错误以及"不安全"的行为，例如：
+
+```js
+"use strict";
+x = 3.14; // throws an error because x is not declared
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">更新代码，使其仅使用<code>let</code>关键字。 </section>
+<section id='instructions'>
+请更新这段代码，并且在其中只使用<code>let</code>关键字
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>var</code>在代码中不存在。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
-  - text: <code>catName</code>应该是<code>Oliver</code> 。
-    testString: 'assert(catName === "Oliver", "<code>catName</code> should be <code>Oliver</code>.");'
-  - text: <code>quote</code>应该是<code>&quot;Oliver says Meow!&quot;</code>
-    testString: 'assert(quote === "Oliver says Meow!", "<code>quote</code> should be <code>"Oliver says Meow!"</code>");'
+  - text: 在代码中不应存在<code>var</code>。
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
+  - text: "<code>catName</code>变量的值应该为<code>'Oliver'</code>。"
+    testString: assert(catName === "Oliver");
+  - text: "<code>quote</code>变量的值应该为<code>'Oliver says Meow!'</code>"
+    testString: assert(quote === "Oliver says Meow!");
 
 ```
 
@@ -44,7 +76,6 @@ function catTalk() {
 
 }
 catTalk();
-
 ```
 
 </div>
@@ -57,6 +88,15 @@ catTalk();
 <section id='solution'>
 
 ```js
-// solution required
+let catName;
+let quote;
+function catTalk() {
+  'use strict';
+
+  catName = 'Oliver';
+  quote = catName + ' says Meow!';
+}
+catTalk();
 ```
+
 </section>

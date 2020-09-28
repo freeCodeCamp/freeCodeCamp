@@ -7,7 +7,7 @@ localeTitle: 'Problema 1: Múltiplos de 3 y 5'
 ---
 
 ## Description
-<section id="description"> Si enumeramos todos los números naturales por debajo de 10 que son múltiplos de 3 o 5, obtenemos 3, 5, 6 y 9. La suma de estos múltiplos es 23. Encuentre la suma de todos los múltiplos de 3 o 5 debajo del parámetro provisto <code>number</code> valor. </section>
+<section id="description"> Si enumeramos todos los números naturales menores que 10 que son múltiplos de 3 ó 5, obtenemos 3, 5, 6 y 9. La suma de estos múltiplos es 23. Encuentre la suma de todos los múltiplos de 3 o 5 debajo del parámetro provisto <code>number</code> valor. </section>
 
 ## Instructions
 <section id="instructions">

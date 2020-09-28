@@ -2,23 +2,31 @@
 id: 5900f51e1000cf542c510030
 challengeType: 5
 title: 'Problem 432: Totient sum'
-videoUrl: ''
+forumTopicId: 302103
 localeTitle: Задача 432 в Totient
 ---
 
 ## Description
-undefined
+<section id='description'>
+Let S(n,m) = ∑φ(n × i) for 1 ≤ i ≤ m. (φ is Euler's totient function)
+You are given that S(510510,106 )= 45480596821125120.
+
+Find S(510510,1011).
+Give the last 9 digits of your answer.
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>euler432()</code> должен возвращать 754862080.
-    testString: 'assert.strictEqual(euler432(), 754862080, "<code>euler432()</code> should return 754862080.");'
+  - text: <code>euler432()</code> should return 754862080.
+    testString: assert.strictEqual(euler432(), 754862080);
 
 ```
 
@@ -41,8 +49,6 @@ euler432();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -51,4 +57,5 @@ euler432();
 ```js
 // solution required
 ```
+
 </section>

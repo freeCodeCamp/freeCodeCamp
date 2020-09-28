@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036166
 title: Compose React Components
 challengeType: 6
-isRequired: false
+forumTopicId: 301381
 ---
 
 ## Description
@@ -13,7 +13,7 @@ As the challenges continue to use more complex compositions with React component
 ## Instructions
 <section id='instructions'>
 In the code editor, the <code>TypesOfFood</code> component is already rendering a component called <code>Vegetables</code>. Also, there is the <code>Fruits</code> component from the last challenge.
-Nest two components inside of <code>Fruits</code> &mdash; first <code>NonCitrus</code>, and then <code>Citrus</code>. Both of these components are provided for you in the background. Next, nest the <code>Fruits</code> class component into the <code>TypesOfFood</code> component, below the <code>h1</code> header and above <code>Vegetables</code>. The result should be a series of nested components, which uses two different component types.
+Nest two components inside of <code>Fruits</code> &mdash; first <code>NonCitrus</code>, and then <code>Citrus</code>. Both of these components are provided for you behind the scenes. Next, nest the <code>Fruits</code> class component into the <code>TypesOfFood</code> component, below the <code>h1</code> header and above <code>Vegetables</code>. The result should be a series of nested components, which uses two different component types.
 </section>
 
 ## Tests
@@ -22,13 +22,13 @@ Nest two components inside of <code>Fruits</code> &mdash; first <code>NonCitrus<
 ```yml
 tests:
   - text: The <code>TypesOfFood</code> component should return a single <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().type() === 'div'; })(), 'The <code>TypesOfFood</code> component should return a single <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().type() === 'div'; })());
   - text: The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(1).name() === 'Fruits'; })(), 'The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(1).name() === 'Fruits'; })());
   - text: The <code>Fruits</code> component should return the <code>NonCitrus</code> component and the <code>Citrus</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return (mockedComponent.find('Fruits').children().find('NonCitrus').length === 1 && mockedComponent.find('Fruits').children().find('Citrus').length === 1); })(), 'The <code>Fruits</code> component should return the <code>NonCitrus</code> component and the <code>Citrus</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return (mockedComponent.find('Fruits').children().find('NonCitrus').length === 1 && mockedComponent.find('Fruits').children().find('Citrus').length === 1); })());
   - text: The <code>TypesOfFood</code> component should return the <code>Vegetables</code> component below the <code>Fruits</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(2).name() === 'Vegetables'; })(), 'The <code>TypesOfFood</code> component should return the <code>Vegetables</code> component below the <code>Fruits</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(2).name() === 'Vegetables'; })());
 
 ```
 
@@ -48,9 +48,9 @@ class Fruits extends React.Component {
     return (
       <div>
         <h2>Fruits:</h2>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-         { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }
@@ -64,9 +64,9 @@ class TypesOfFood extends React.Component {
     return (
       <div>
         <h1>Types of Food:</h1>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
         <Vegetables />
       </div>
     );
@@ -131,7 +131,7 @@ class Vegetables extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 ```
 
@@ -143,7 +143,7 @@ ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class Fruits extends React.Component {
   constructor(props) {
     super(props);
@@ -152,10 +152,10 @@ class Fruits extends React.Component {
     return (
       <div>
         <h2>Fruits:</h2>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <NonCitrus />
         <Citrus />
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     )
   }
@@ -169,9 +169,9 @@ class TypesOfFood extends React.Component {
       return (
         <div>
         <h1>Types of Food:</h1>
-          { /* change code below this line */ }
+          { /* Change code below this line */ }
           <Fruits />
-          { /* change code above this line */ }
+          { /* Change code above this line */ }
           <Vegetables />
         </div>
       );

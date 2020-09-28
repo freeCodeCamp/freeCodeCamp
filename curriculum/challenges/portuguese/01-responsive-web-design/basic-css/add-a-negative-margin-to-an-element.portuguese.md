@@ -2,12 +2,11 @@
 id: bad87fee1348bd9aedf08823
 title: Add a Negative Margin to an Element
 challengeType: 0
-guideUrl: 'https://portuguese.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: ''
 localeTitle: Adicione uma margem negativa a um elemento
 ---
 
-## Descricão
+## Descrição
 <section id="description"> A propriedade <code>margin</code> de um elemento controla a quantidade de espaço entre a borda(<code>border</code>) do elemento e os elementos adjacentes. Se você definir a propriedade <code>margin</code> de um elemento como um valor negativo, o elemento ficará maior. </section>
 
 ## Instruções
@@ -80,7 +79,44 @@ tests:
 ## Solução
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    margin: -15px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+    margin-top: -15px;
+  }
+</style>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
 ```
 </section>

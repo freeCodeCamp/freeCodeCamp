@@ -4,7 +4,7 @@ title: API's and Microservices Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: API y certificado de microservicios
+localeTitle: Certificado de Microservicios y API
 ---
 
 ## Description

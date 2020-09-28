@@ -1,4 +1,4 @@
-import {cond, identity, stubTrue, conforms} from 'lodash';
+import { cond, identity, stubTrue, conforms } from 'lodash';
 
 const HTML$JSReg = /html|js/;
 

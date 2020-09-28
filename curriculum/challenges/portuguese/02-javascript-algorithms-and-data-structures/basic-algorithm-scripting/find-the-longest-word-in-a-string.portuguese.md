@@ -1,14 +1,13 @@
 ---
 id: a26cbbe9ad8655a977e1ceb5
 title: Find the Longest Word in a String
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Encontre a palavra mais longa em uma string
 ---
 
 ## Description
-<section id="description"> Retorna o tamanho da palavra mais longa na frase fornecida. Sua resposta deve ser um número. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Retorna o tamanho da palavra mais longa na frase fornecida. Sua resposta deve ser um número. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

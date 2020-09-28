@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = `
+<section
+  className="honesty-policy"
+>
+  <SectionHeader>
+    Academic Honesty Policy
+  </SectionHeader>
+  <FullWidthRow>
+    <Uncontrolled(Panel)
+      className="honesty-panel"
+    >
+      <HonestyPolicy />
+    </Uncontrolled(Panel)>
+    <br />
+    <Button
+      active={false}
+      block={true}
+      bsClass="btn"
+      bsStyle="primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      Agree
+    </Button>
+  </FullWidthRow>
+</section>
+`;
+
+exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted 1`] = `
+<section
+  className="honesty-policy"
+>
+  <SectionHeader>
+    Academic Honesty Policy
+  </SectionHeader>
+  <FullWidthRow>
+    <Uncontrolled(Panel)
+      className="honesty-panel"
+    >
+      <HonestyPolicy />
+    </Uncontrolled(Panel)>
+    <br />
+    <Button
+      active={false}
+      block={true}
+      bsClass="btn"
+      bsStyle="primary"
+      className="disabled-agreed"
+      disabled={true}
+    >
+      <p>
+        You have accepted our Academic Honesty Policy.
+      </p>
+    </Button>
+  </FullWidthRow>
+</section>
+`;

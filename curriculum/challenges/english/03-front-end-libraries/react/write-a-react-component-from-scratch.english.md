@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036168
 title: Write a React Component from Scratch
 challengeType: 6
-isRequired: false
+forumTopicId: 301424
 ---
 
 ## Description
@@ -22,12 +22,13 @@ Render this component to the DOM using <code>ReactDOM.render()</code>. There is 
 ```yml
 tests:
   - text: There should be a React component called <code>MyComponent</code>.
-    testString: getUserInput => assert(getUserInput('index').replace(/\s/g, ').includes('classMyComponentextendsReact.Component{'), 'There should be a React component called <code>MyComponent</code>.');
+    testString: getUserInput => assert(__helpers.removeWhiteSpace(getUserInput('index')).includes('classMyComponentextendsReact.Component{'));
   - text: <code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })(), '<code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })());
   - text: <code>MyComponent</code> should render to the DOM.
-    testString: assert(document.getElementById('challenge-node').childNodes.length === 1, '<code>MyComponent</code> should render to the DOM.');
-
+    testString: assert(document.getElementById('challenge-node').childNodes.length === 1);
+  - text: <code>MyComponent</code> should have a constructor calling <code>super</code> with <code>props</code>.
+    testString: assert(MyComponent.toString().includes('MyComponent(props)') && MyComponent.toString().includes('_super.call(this, props)'));
 ```
 
 </section>
@@ -38,7 +39,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -52,8 +53,8 @@ tests:
 <section id='solution'>
 
 
-```js
-// change code below this line
+```jsx
+// Change code below this line
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);

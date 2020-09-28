@@ -1,5 +1,5 @@
 import { of } from 'rxjs';
-import { filter, switchMap, tap, ignoreElements } from 'rxjs/operators';
+import { filter, switchMap, map, tap, ignoreElements } from 'rxjs/operators';
 import { combineEpics, ofType } from 'redux-observable';
 import store from 'store';
 
@@ -12,7 +12,11 @@ import {
   challengeMetaSelector
 } from './';
 
-import { setContent, isPoly } from '../utils/polyvinyl';
+import { types as appTypes } from '../../../redux';
+
+import { setContent, isPoly } from '../../../../../utils/polyvinyl';
+
+import { createFlashMessage } from '../../../components/Flash/redux';
 
 const legacyPrefixes = [
   'Bonfire: ',
@@ -60,7 +64,7 @@ function isFilesAllPoly(files) {
 
 function clearCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(types.submitComplete, types.resetChallenge),
+    ofType(appTypes.submitComplete, types.resetChallenge),
     tap(() => {
       const { id } = challengeMetaSelector(state$.value);
       store.remove(id);
@@ -71,22 +75,48 @@ function clearCodeEpic(action$, state$) {
 
 function saveCodeEpic(action$, state$) {
   return action$.pipe(
-    ofType(types.executeChallenge),
+    ofType(types.executeChallenge, types.saveEditorContent),
     // do not save challenge if code is locked
     filter(() => !isCodeLockedSelector(state$.value)),
-    tap(() => {
+    map(action => {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);
       const files = challengeFilesSelector(state);
-      store.set(id, files);
+      try {
+        store.set(id, files);
+        // Possible fileType values: indexhtml indexjs indexjsx
+        // The files Object always has one of these as the first/only attribute
+        const fileType = Object.keys(files)[0];
+        if (store.get(id)[fileType].contents !== files[fileType].contents) {
+          throw Error('Failed to save to localStorage');
+        }
+        return action;
+      } catch (e) {
+        return { ...action, error: true };
+      }
     }),
-    ignoreElements()
+    ofType(types.saveEditorContent),
+    switchMap(({ error }) =>
+      of(
+        createFlashMessage({
+          type: error ? 'warning' : 'success',
+          message: error
+            ? // eslint-disable-next-line max-len
+              "Oops, your code did not save, your browser's local storage may be full."
+            : "Saved! Your code was saved to your browser's local storage."
+        })
+      )
+    )
   );
 }
 
 function loadCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(types.challengeMounted),
+    filter(() => {
+      const files = challengeFilesSelector(state$.value);
+      return Object.keys(files).length > 0;
+    }),
     switchMap(({ payload: id }) => {
       let finalFiles;
       const state = state$.value;
@@ -98,7 +128,28 @@ function loadCodeEpic(action$, state$) {
 
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
-        finalFiles = codeFound;
+        finalFiles = {
+          ...fileKeys
+            .map(key => files[key])
+            .reduce(
+              (files, file) => ({
+                ...files,
+                [file.key]: {
+                  ...file,
+                  contents: codeFound[file.key]
+                    ? codeFound[file.key].contents
+                    : file.contents,
+                  editableContents: codeFound[file.key]
+                    ? codeFound[file.key].editableContents
+                    : file.editableContents,
+                  editableRegionBoundaries: codeFound[file.key]
+                    ? codeFound[file.key].editableRegionBoundaries
+                    : file.editableRegionBoundaries
+                }
+              }),
+              {}
+            )
+        };
       } else {
         const legacyCode = getLegacyCode(legacyKey);
         if (legacyCode && !invalidForLegacy) {

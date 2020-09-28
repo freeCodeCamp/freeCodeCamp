@@ -4,7 +4,7 @@ title: Legacy Data Visualization Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Certificado de visualização de dados herdados
+localeTitle: Certificado de Visualização de Dados Legado
 ---
 
 ## Description

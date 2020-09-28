@@ -2,23 +2,28 @@
 id: 5a94fdf869fb03452672e45b
 title: Align All Items Vertically using align-items
 challengeType: 0
-videoUrl: ''
-localeTitle: 'Выровнять все элементы по вертикали, используя элементы выравнивания'
+videoUrl: https://scrimba.com/p/pByETK/ckzPeUv
+forumTopicId: 301121
+localeTitle: Выровнять все элементы по вертикали, используя элементы выравнивания
 ---
 
 ## Description
-<section id="description"> Использование свойства <code>align-items</code> в контейнере сетки будет устанавливать вертикальное выравнивание для всех элементов в нашей сетке. </section>
+<section id='description'>
+Использование свойства <code>align-items</code> в контейнере сетки будет устанавливать вертикальное выравнивание для всех элементов в нашей сетке.
+</section>
 
 ## Instructions
-<section id="instructions"> Используйте его сейчас, чтобы переместить все элементы в конец каждой ячейки. </section>
+<section id='instructions'>
+Используйте его сейчас, чтобы переместить все элементы в конец каждой ячейки.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>align-items</code> которое имеет значение <code>end</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.");'
+  - text: <code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -65,14 +70,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".container {align-items: end;}"
 ```
+
 </section>

@@ -2,13 +2,13 @@
 id: 5a24c314108439a4d403616f
 title: Review Using Props with Stateless Functional Components
 challengeType: 6
-isRequired: false
+forumTopicId: 301411
 ---
 
 ## Description
 <section id='description'>
 Except for the last challenge, you've been passing props to stateless functional components. These components act like pure functions. They accept props as input and return the same view every time they are passed the same props. You may be wondering what state is, and the next challenge will cover it in more detail. Before that, here's a review of the terminology for components.
-A <em>stateless functional component</em> is any function you write which accepts props and returns JSX. A <em>stateless component</em>, on the other hand, is a class that extends <code>React.Component</code>, but does not use internal state (covered in the next challenge). Finally, a <em>stateful component</em> is any component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.
+A <em>stateless functional component</em> is any function you write which accepts props and returns JSX. A <em>stateless component</em>, on the other hand, is a class that extends <code>React.Component</code>, but does not use internal state (covered in the next challenge). Finally, a <em>stateful component</em> is a class component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.
 A common pattern is to try to minimize statefulness and to create stateless functional components wherever possible. This helps contain your state management to a specific area of your application. In turn, this improves development and maintenance of your app by making it easier to follow how changes to state affect its behavior.
 </section>
 
@@ -23,15 +23,15 @@ The code editor has a <code>CampSite</code> component that renders a <code>Campe
 ```yml
 tests:
   - text: The <code>CampSite</code> component should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('CampSite').length === 1; })(), 'The <code>CampSite</code> component should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('CampSite').length === 1; })());
   - text: The <code>Camper</code> component should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('Camper').length === 1; })(), 'The <code>Camper</code> component should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('Camper').length === 1; })());
   - text: The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.
-    testString: getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\s/g, '); const verify1 = 'Camper.defaultProps={name:\'CamperBot\'}'; const verify2 = 'Camper.defaultProps={name:"CamperBot"}'; return (noWhiteSpace.includes(verify1) || noWhiteSpace.includes(verify2)); })(), 'The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.');
+    testString: assert(/Camper.defaultProps={name:(['"`])CamperBot\1,?}/.test(__helpers.removeWhiteSpace(code)));
   - text: The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.
-    testString: getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); const noWhiteSpace = getUserInput('index').replace(/\s/g, '); const verifyDefaultProps = 'Camper.propTypes={name:PropTypes.string.isRequired}'; return noWhiteSpace.includes(verifyDefaultProps); })(), 'The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.');
+    testString: assert(/Camper.propTypes={name:PropTypes.string.isRequired,?}/.test(__helpers.removeWhiteSpace(code)));
   - text: The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('p').text() === mockedComponent.find('Camper').props().name; })(), 'The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('p').text() === mockedComponent.find('Camper').props().name; })());
 
 ```
 
@@ -55,7 +55,7 @@ class CampSite extends React.Component {
     );
   }
 };
-// change code below this line
+// Change code below this line
 
 ```
 
@@ -75,7 +75,7 @@ var PropTypes = {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<CampSite />, document.getElementById('root'))
 ```
 
@@ -87,7 +87,7 @@ ReactDOM.render(<CampSite />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class CampSite extends React.Component {
   constructor(props) {
     super(props);
@@ -100,7 +100,7 @@ class CampSite extends React.Component {
     );
   }
 };
-// change code below this line
+// Change code below this line
 
 const Camper = (props) => {
    return (

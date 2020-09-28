@@ -1,14 +1,13 @@
 ---
 id: a39963a4c10bc8b4d4f06d7e
 title: Seek and Destroy
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Buscar y destruir
 ---
 
 ## Description
-<section id="description"> Se le proporcionará una matriz inicial (el primer argumento en la función del destructor), seguido de uno o más argumentos. Elimine todos los elementos de la matriz inicial que tengan el mismo valor que estos argumentos. <strong>Nota</strong> <br> Tienes que usar el objeto <code>arguments</code> . Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
+<section id="description"> Se le proporcionará una matriz inicial (el primer argumento en la función del destructor), seguido de uno o más argumentos. Elimine todos los elementos de la matriz inicial que tengan el mismo valor que estos argumentos. <strong>Nota</strong> <br> Tienes que usar el objeto <code>arguments</code> . Recuerda usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

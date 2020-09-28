@@ -1,9 +1,8 @@
 ---
 id: 587d7fa8367417b2b2512bcc
 title: Display Shapes with SVG
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+forumTopicId: 301485
 ---
 
 ## Description
@@ -26,15 +25,15 @@ Add a <code>rect</code> shape to the <code>svg</code> using <code>append()</code
 ```yml
 tests:
   - text: Your document should have 1 <code>rect</code> element.
-    testString: assert($('rect').length == 1, 'Your document should have 1 <code>rect</code> element.');
+    testString: assert($('rect').length == 1);
   - text: The <code>rect</code> element should have a <code>width</code> attribute set to 25.
-    testString: assert($('rect').attr('width') == '25', 'The <code>rect</code> element should have a <code>width</code> attribute set to 25.');
+    testString: assert($('rect').attr('width') == '25');
   - text: The <code>rect</code> element should have a <code>height</code> attribute set to 100.
-    testString: assert($('rect').attr('height') == '100', 'The <code>rect</code> element should have a <code>height</code> attribute set to 100.');
+    testString: assert($('rect').attr('height') == '100');
   - text: The <code>rect</code> element should have an <code>x</code> attribute set to 0.
-    testString: assert($('rect').attr('x') == '0', 'The <code>rect</code> element should have an <code>x</code> attribute set to 0.');
+    testString: assert($('rect').attr('x') == '0');
   - text: The <code>rect</code> element should have a <code>y</code> attribute set to 0.
-    testString: assert($('rect').attr('y') == '0', 'The <code>rect</code> element should have a <code>y</code> attribute set to 0.');
+    testString: assert($('rect').attr('y') == '0');
 
 ```
 
@@ -75,7 +74,26 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h)
+                  .append("rect")
+                  .attr("width", 25)
+                  .attr("height", 100)
+                  .attr("x", 0)
+                  .attr("y", 0);
+  </script>
+</body>
+
 ```
+
 </section>

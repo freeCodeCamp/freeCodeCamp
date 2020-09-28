@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a propriedade de itens de alinhamento no Tweet Incorporar
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio apresentou a propriedade <code>align-items</code> e deu um exemplo. Essa propriedade pode ser aplicada a alguns elementos de incorporação do tweet para alinhar os itens flexíveis dentro deles. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione a propriedade CSS <code>align-items</code> ao elemento <code>.follow-btn</code> do cabeçalho. Defina o valor para <code>center</code>. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio Seed
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -92,7 +92,7 @@ tests:
   }
 </style>
 <header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -130,7 +130,7 @@ tests:
 
 </section>
 
-## Solution
+## Soluções
 <section id='solution'>
 
 ```js

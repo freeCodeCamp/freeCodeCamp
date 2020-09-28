@@ -22,26 +22,27 @@ export function getLybsynFeed() {
         } catch (err) {
           return reject(err);
         }
-        const items = feed.map(
-          item => _.pick(item, [
-            'full_item_url',
-            'item_title',
-            'release_date',
-            'item_body_short'
-          ])
-        )
-        /* eslint-disable camelcase */
-        .map(({ full_item_url, item_title, release_date, item_body_short}) => ({
-          title: item_title,
-          extract: item_body_short,
-          isoDate: new Date(release_date).toISOString(),
-          link: full_item_url
-        }));
+        const items = feed
+          .map(item =>
+            _.pick(item, [
+              'full_item_url',
+              'item_title',
+              'release_date',
+              'item_body_short'
+            ])
+          )
+          /* eslint-disable camelcase */
+          .map(
+            ({ full_item_url, item_title, release_date, item_body_short }) => ({
+              title: item_title,
+              extract: item_body_short,
+              isoDate: new Date(release_date).toISOString(),
+              link: full_item_url
+            })
+          );
         /* eslint-enable camelcase */
         return resolve(items);
       });
-
     });
-
   });
 }

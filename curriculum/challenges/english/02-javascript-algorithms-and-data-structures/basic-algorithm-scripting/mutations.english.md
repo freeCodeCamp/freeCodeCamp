@@ -1,8 +1,8 @@
 ---
 id: af2170cad53daa0770fabdea
 title: Mutations
-isRequired: true
 challengeType: 5
+forumTopicId: 16025
 ---
 
 ## Description
@@ -11,7 +11,6 @@ Return true if the string in the first element of the array contains all of the 
 For example, <code>["hello", "Hello"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.
 The arguments <code>["hello", "hey"]</code> should return false because the string "hello" does not contain a "y".
 Lastly, <code>["Alien", "line"]</code>, should return true because all of the letters in "line" are present in "Alien".
-Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -25,23 +24,29 @@ Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>mutation(["hello", "hey"])</code> should return false.
-    testString: assert(mutation(["hello", "hey"]) === false, '<code>mutation(["hello", "hey"])</code> should return false.');
+    testString: assert(mutation(["hello", "hey"]) === false);
   - text: <code>mutation(["hello", "Hello"])</code> should return true.
-    testString: assert(mutation(["hello", "Hello"]) === true, '<code>mutation(["hello", "Hello"])</code> should return true.');
+    testString: assert(mutation(["hello", "Hello"]) === true);
   - text: <code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should return true.
-    testString: assert(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) === true, '<code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should return true.');
+    testString: assert(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) === true);
   - text: <code>mutation(["Mary", "Army"])</code> should return true.
-    testString: assert(mutation(["Mary", "Army"]) === true, '<code>mutation(["Mary", "Army"])</code> should return true.');
+    testString: assert(mutation(["Mary", "Army"]) === true);
   - text: <code>mutation(["Mary", "Aarmy"])</code> should return true.
-    testString: assert(mutation(["Mary", "Aarmy"]) === true, '<code>mutation(["Mary", "Aarmy"])</code> should return true.');
+    testString: assert(mutation(["Mary", "Aarmy"]) === true);
   - text: <code>mutation(["Alien", "line"])</code> should return true.
-    testString: assert(mutation(["Alien", "line"]) === true, '<code>mutation(["Alien", "line"])</code> should return true.');
+    testString: assert(mutation(["Alien", "line"]) === true);
   - text: <code>mutation(["floor", "for"])</code> should return true.
-    testString: assert(mutation(["floor", "for"]) === true, '<code>mutation(["floor", "for"])</code> should return true.');
+    testString: assert(mutation(["floor", "for"]) === true);
   - text: <code>mutation(["hello", "neo"])</code> should return false.
-    testString: assert(mutation(["hello", "neo"]) === false, '<code>mutation(["hello", "neo"])</code> should return false.');
+    testString: assert(mutation(["hello", "neo"]) === false);
   - text: <code>mutation(["voodoo", "no"])</code> should return false.
-    testString: assert(mutation(["voodoo", "no"]) === false, '<code>mutation(["voodoo", "no"])</code> should return false.');
+    testString: assert(mutation(["voodoo", "no"]) === false);
+  - text: <code>mutation(["ate", "date"]</code> should return false.
+    testString: assert(mutation(["ate", "date"]) === false);
+  - text: <code>mutation(["Tiger", "Zebra"])</code> should return false.
+    testString: assert(mutation(["Tiger", "Zebra"]) === false);
+  - text: <code>mutation(["Noel", "Ole"])</code> should return true.
+    testString: assert(mutation(["Noel", "Ole"]) === true);
 
 ```
 

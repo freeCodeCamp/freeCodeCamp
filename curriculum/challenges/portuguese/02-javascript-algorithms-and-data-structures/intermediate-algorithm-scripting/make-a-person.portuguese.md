@@ -7,7 +7,7 @@ localeTitle: Faça uma pessoa
 ---
 
 ## Description
-<section id="description"> Preencha o construtor de objeto com os seguintes métodos abaixo: <blockquote> getFirstName () getLastName () getFullName () setFirstName (primeiro) setLastName (last) setFullName (firstAndLast) </blockquote> Execute os testes para ver a saída esperada para cada método. Os métodos que aceitam um argumento devem aceitar apenas um argumento e ele deve ser uma string. Esses métodos devem ser os únicos meios disponíveis de interação com o objeto. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Preencha o construtor de objeto com os seguintes métodos abaixo: <blockquote> getFirstName () getLastName () getFullName () setFirstName (primeiro) setLastName (last) setFullName (firstAndLast) </blockquote> Execute os testes para ver a saída esperada para cada método. Os métodos que aceitam um argumento devem aceitar apenas um argumento e ele deve ser uma string. Esses métodos devem ser os únicos meios disponíveis de interação com o objeto. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

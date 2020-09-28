@@ -2,15 +2,18 @@
 id: 5900f48f1000cf542c50ffa1
 challengeType: 5
 title: 'Problem 290: Digital Signature'
-videoUrl: ''
+forumTopicId: 301942
 localeTitle: 'Проблема 290: Цифровая подпись'
 ---
 
 ## Description
-<section id="description"> Сколько целых чисел 0 ≤ n &lt;1018 обладает тем свойством, что сумма цифр n равна сумме цифр 137n? </section>
+<section id='description'>
+Сколько целых чисел 0 ≤ n &lt;1018 обладает тем свойством, что сумма цифр n равна сумме цифр 137n?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Проблема 290: Цифровая подпись'
 
 ```yml
 tests:
-  - text: <code>euler290()</code> должен вернуть 20444710234716470.
-    testString: 'assert.strictEqual(euler290(), 20444710234716470, "<code>euler290()</code> should return 20444710234716470.");'
+  - text: <code>euler290()</code> should return 20444710234716470.
+    testString: assert.strictEqual(euler290(), 20444710234716470);
 
 ```
 
@@ -42,8 +45,6 @@ euler290();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler290();
 ```js
 // solution required
 ```
+
 </section>

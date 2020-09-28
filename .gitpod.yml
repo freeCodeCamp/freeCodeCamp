@@ -1,0 +1,81 @@
+image: gitpod/workspace-mongodb
+ports:
+- port: 27017 # mongodb
+  onOpen: ignore
+- port: 8000 # client
+  onOpen: open-preview
+- port: 9228 # node debug
+  onOpen: ignore
+- port: 3000 # api
+  onOpen: ignore
+- port: 9229 # node debug
+  onOpen: ignore
+
+tasks:
+- before: |
+    echo '
+    export COOKIE_DOMAIN=gitpod.io
+    export HOME_LOCATION=$(gp url 8000)
+    export API_LOCATION=$(gp url 3000)
+    ' >> ~/.bashrc;
+    exit;
+
+- name: db
+  # starting mongo in background, so it doesn't block prebuilds
+  before: >
+    mkdir -p /workspace/data &&
+    (mongod --dbpath /workspace/data &)
+
+- name: server
+  before: export COOKIE_DOMAIN=gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
+  # init is not executed for prebuilt workspaces and restarts,
+  # so we should put all the heavy initialization here
+  init: >
+    cp sample.env .env &&
+    npm ci &&
+    gp sync-done npm-ci &&
+    gp await-port 27017 &&
+    npm run seed &&
+    mongo --eval "db.fsyncLock(); db.fsyncUnlock()"
+  command: >
+    npm run ensure-env &&
+    gp await-port 27017 &&
+    npm run develop:server
+
+- name: client
+  before: export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
+  init: >
+    cd ./client &&
+    gp sync-await npm-ci &&
+    npm run prebuild &&
+    npm run build:workers &&
+    cd ..
+  command: >
+    gp await-port 3000 &&
+    cd ./client &&
+    npm run develop -- -H '0.0.0.0'
+  openMode: split-right
+
+github:
+  prebuilds:
+    # enable for the master/default branch (defaults to true)
+    master: true
+    # enable for all branches in this repo (defaults to false)
+    branches: true
+    # enable for pull requests coming from this repo (defaults to true)
+    pullRequests: true
+    # enable for pull requests coming from forks (defaults to false)
+    pullRequestsFromForks: true
+    # add a check to pull requests (defaults to true)
+    addCheck: true
+    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
+    addComment: true
+    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
+    addBadge: false
+    # add a label once the prebuild is ready to pull requests (defaults to false)
+    addLabel: false
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint@2.1.5:9Wg0Glx/TwD8ElFBg+FKcQ==
+    - esbenp.prettier-vscode@4.7.0:kgoYSh1LwTixKtJtQWtodQ==

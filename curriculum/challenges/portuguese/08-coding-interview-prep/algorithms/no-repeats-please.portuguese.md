@@ -7,7 +7,7 @@ localeTitle: Não repete por favor
 ---
 
 ## Description
-<section id="description"> Retorna o número total de permutações da string fornecida que não tem letras consecutivas repetidas. Suponha que todos os caracteres na string fornecida sejam exclusivos. Por exemplo, <code>aab</code> deve retornar 2 porque tem 6 permutações totais ( <code>aab</code> , <code>aab</code> , <code>aba</code> , <code>aba</code> , <code>baa</code> , <code>baa</code> ), mas apenas 2 delas ( <code>aba</code> e <code>aba</code> ) não têm a mesma letra (neste caso <code>a</code> ) recorrente. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Retorne o número total de permutações da string fornecida que não possui letras consecutivas repetidas. Suponha que todos os caracteres na string fornecida sejam únicos. Por exemplo, <code>aab</code> deve retornar 2 porque tem 6 permutações totais ( <code>aab</code> , <code>aab</code> , <code>aba</code> , <code>aba</code> , <code>baa</code> , <code>baa</code> ), mas apenas 2 delas ( <code>aba</code> e <code>aba</code> ) não têm a mesma letra (neste caso <code>a</code> ) repetida. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente fazer pair programming. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

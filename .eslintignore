@@ -1,2 +1,7 @@
-public/**/*.js
-seed/unpacked/**/*.js
+**/node_modules/**
+client/.cache/**
+client/static/**
+client/public/**
+api-server/public/**
+api-server/lib/**
+tools/dashboard/**

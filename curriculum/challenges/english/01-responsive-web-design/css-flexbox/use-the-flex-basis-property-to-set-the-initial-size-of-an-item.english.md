@@ -3,6 +3,7 @@ id: 587d78ae367417b2b2512afd
 title: Use the flex-basis Property to Set the Initial Size of an Item
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c3d9nCa'
+forumTopicId: 301108
 ---
 
 ## Description
@@ -22,13 +23,13 @@ Set the initial size of the boxes using <code>flex-basis</code>. Add the CSS pro
 ```yml
 tests:
   - text: The <code>#box-1</code> element should have a <code>flex-basis</code> property.
-    testString: assert($('#box-1').css('flex-basis') != 'auto', 'The <code>#box-1</code> element should have a <code>flex-basis</code> property.');
+    testString: assert($('#box-1').css('flex-basis') != 'auto');
   - text: The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.
-    testString: assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g), 'The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.');
+    testString: assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g));
   - text: The <code>#box-2</code> element should have the <code>flex-basis</code> property.
-    testString: assert($('#box-2').css('flex-basis') != 'auto', 'The <code>#box-2</code> element should have the <code>flex-basis</code> property.');
+    testString: assert($('#box-2').css('flex-basis') != 'auto');
   - text: The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.
-    testString: assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g), 'The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.');
+    testString: assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));
 
 ```
 
@@ -74,7 +75,30 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+
+  #box-1 {
+    background-color: dodgerblue;
+    height: 200px;
+    flex-basis: 10em;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    height: 200px;
+    flex-basis: 20em;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

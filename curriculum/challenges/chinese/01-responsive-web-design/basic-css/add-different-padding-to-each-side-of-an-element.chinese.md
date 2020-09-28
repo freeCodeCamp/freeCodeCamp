@@ -2,30 +2,35 @@
 id: bad87fee1348bd9aedf08824
 title: Add Different Padding to Each Side of an Element
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/add-different-padding-to-each-side-of-an-element'
-videoUrl: ''
-localeTitle: 在元素的每一侧添加不同的填充
+videoUrl: 'https://scrimba.com/c/cB7mwUw'
+forumTopicId: 16634
+localeTitle: 给元素的每一侧添加不同的内边距
 ---
 
 ## Description
-<section id="description">有时您会想要自定义一个元素，使其每边都有不同数量的<code>padding</code> 。 CSS允许您控制的<code>padding</code>与元素的所有四个单项两侧<code>padding-top</code> ， <code>padding-right</code> ， <code>padding-bottom</code> ，并<code>padding-left</code>属性。 </section>
+<section id='description'>
+有时候，你会想给一个元素每个方向的<code>padding</code>都设置成一个特定的值
+CSS 允许你使用<code>padding-top</code>，<code>padding-right</code>， <code>padding-bottom</code>和<code>padding-left</code>属性来设置四个不同方向的<code>padding</code>值。
+</section>
 
 ## Instructions
-<section id="instructions">在蓝色框的顶部和左侧给出<code>40px</code>的<code>padding</code> ，但在其底部和右侧只有<code>20px</code> 。 </section>
+<section id='instructions'>
+蓝色框的顶部和左侧的<code>padding</code>值设置为<code>40px</code>，底部和右侧设置为<code>20px</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>blue-box</code>类应该给出<code>40px</code> <code>padding</code>元素的顶部。
-    testString: 'assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给出<code>20px</code> <code>padding</code>元素的权利。
-    testString: 'assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给出<code>20px</code> <code>padding</code>元素的底部。
-    testString: 'assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给元素左边<code>padding</code> <code>40px</code> 。
-    testString: 'assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.");'
+  - text: '<code>blue-box</code> class 的顶部<code>padding</code>（上内边距）值应为<code>40px</code>。'
+    testString: assert($(".blue-box").css("padding-top") === "40px");
+  - text: '<code>blue-box</code> class 的右侧<code>padding</code>（右内边距）值应为<code>20px</code>。'
+    testString: assert($(".blue-box").css("padding-right") === "20px");
+  - text: '<code>blue-box</code> class 的底部<code>padding</code>（下内边距）值应为<code>20px</code>。'
+    testString: assert($(".blue-box").css("padding-bottom") === "20px");
+  - text: '<code>blue-box</code> class 的左侧<code>padding</code>（左内边距）值应为<code>40px</code>。'
+    testString: assert($(".blue-box").css("padding-left") === "40px");
 
 ```
 
@@ -54,7 +59,7 @@ tests:
     background-color: yellow;
     padding: 10px;
   }
-
+  
   .red-box {
     background-color: crimson;
     color: #fff;
@@ -75,7 +80,6 @@ tests:
   <h5 class="box red-box">padding</h5>
   <h5 class="box blue-box">padding</h5>
 </div>
-
 ```
 
 </div>
@@ -87,7 +91,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

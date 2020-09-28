@@ -19,12 +19,8 @@ function markdownToHTML(node) {
   });
 }
 
-module.exports = ({ markdownAST }) => {
-  visit(markdownAST, 'image', imageNode => {
-    if (emojiRE.test(imageNode.title)) {
-      return markdownToHTML(imageNode);
-    }
-
-    return imageNode;
-  });
+module.exports = function forumEmojiPlugin({ markdownAST }) {
+  visit(markdownAST, 'image', imageNode =>
+    emojiRE.test(imageNode.title) ? markdownToHTML(imageNode) : imageNode
+  );
 };

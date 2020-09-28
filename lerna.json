@@ -2,9 +2,13 @@
   "packages": [
     "api-server",
     "client",
+    "client/plugins/*",
     "curriculum",
+    "tools/search-indexing",
     "tools/challenge-md-parser",
-    "tools/scripts/seed"
+    "tools/scripts/seed",
+    "tools/scripts/build",
+    "tools/challenge-helper-scripts"
   ],
   "version": "independent"
 }

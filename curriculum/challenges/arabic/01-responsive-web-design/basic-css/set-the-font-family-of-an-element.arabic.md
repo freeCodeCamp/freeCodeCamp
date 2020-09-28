@@ -7,7 +7,7 @@ localeTitle: ''
 ---
 
 ## Description
-<section id="description"> يمكنك تعيين الخط الذي يجب أن يستخدمه عنصر ما ، باستخدام خاصية <code>font-family</code> . على سبيل المثال ، إذا أردت تعيين خط عنصر <code>h2</code> على <code>sans-serif</code> ، <code>sans-serif</code> CSS التالي: <blockquote style=";text-align:right;direction:rtl"> h2 { <br> عائلة الخط: sans-serif؛ <br> } </blockquote></section>
+<section id="description"> يمكنك تعيين الخط الذي يجب أن يستخدمه عنصر ما ، باستخدام خاصية <code>font-family</code> . على سبيل المثال ، إذا أردت تعيين خط عنصر <code>h2</code> على <code>sans-serif</code> ، <code>sans-serif</code> CSS التالي: <blockquote> h2 { <br>font-family: sans-serif؛ <br> } </blockquote></section>
 
 ## Instructions
 <section id="instructions"> اجعل جميع عناصر <code>p</code> تستخدم خط <code>monospace</code> . </section>
@@ -61,7 +61,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

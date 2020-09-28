@@ -2,6 +2,7 @@
 id: 587d7db5367417b2b2512b97
 title: Match Numbers and Letters of the Alphabet
 challengeType: 1
+forumTopicId: 301356
 ---
 
 ## Description
@@ -9,7 +10,14 @@ challengeType: 1
 Using the hyphen (<code>-</code>) to match a range of characters is not limited to letters. It also works to match a range of numbers.
 For example, <code>/[0-5]/</code> matches any number between <code>0</code> and <code>5</code>, including the <code>0</code> and <code>5</code>.
 Also, it is possible to combine a range of letters and numbers in a single character set.
-<blockquote>let jennyStr = "Jenny8675309";<br>let myRegex = /[a-z0-9]/ig;<br>// matches all letters and numbers in jennyStr<br>jennyStr.match(myRegex);</blockquote>
+
+```js
+let jennyStr = "Jenny8675309";
+let myRegex = /[a-z0-9]/ig;
+// matches all letters and numbers in jennyStr
+jennyStr.match(myRegex);
+```
+
 </section>
 
 ## Instructions
@@ -23,11 +31,11 @@ Create a single regex that matches a range of letters between <code>h</code> and
 ```yml
 tests:
   - text: Your regex <code>myRegex</code> should match 17 items.
-    testString: assert(result.length == 17, 'Your regex <code>myRegex</code> should match 17 items.');
+    testString: assert(result.length == 17);
   - text: Your regex <code>myRegex</code> should use the global flag.
-    testString: assert(myRegex.flags.match(/g/).length == 1, 'Your regex <code>myRegex</code> should use the global flag.');
+    testString: assert(myRegex.flags.match(/g/).length == 1);
   - text: Your regex <code>myRegex</code> should use the case insensitive flag.
-    testString: assert(myRegex.flags.match(/i/).length == 1, 'Your regex <code>myRegex</code> should use the case insensitive flag.');
+    testString: assert(myRegex.flags.match(/i/).length == 1);
 
 ```
 
@@ -54,6 +62,10 @@ let result = myRegex; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+
 ```
+
 </section>

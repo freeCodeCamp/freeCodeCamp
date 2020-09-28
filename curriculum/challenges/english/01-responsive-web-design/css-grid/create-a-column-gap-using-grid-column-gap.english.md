@@ -3,12 +3,17 @@ id: 5a9036ee38fddaf9a66b5d35
 title: Create a Column Gap Using grid-column-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
+forumTopicId: 301124
 ---
 
 ## Description
 <section id='description'>
 So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the <code>grid-column-gap</code> property like this:
-<blockquote>grid-column-gap: 10px;</blockquote>
+
+```css
+grid-column-gap: 10px;
+```
+
 This creates 10px of empty space between all of our columns.
 </section>
 
@@ -23,7 +28,7 @@ Give the columns in the grid a <code>20px</code> gap.
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.');
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -50,10 +55,10 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+   
+    /* Only change code above this line */
   }
 </style>
 
@@ -76,8 +81,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".container {grid-column-gap: 20px;}"
+```html
+<style>.container {grid-column-gap: 20px;}</style>
 ```
 
 </section>

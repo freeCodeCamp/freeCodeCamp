@@ -2,15 +2,18 @@
 id: 5900f4841000cf542c50ff96
 challengeType: 5
 title: 'Problem 279: Triangles with integral sides and an integral angle'
-videoUrl: ''
+forumTopicId: 301929
 localeTitle: 'Задача 279: Треугольники с целыми сторонами и интегральный угол'
 ---
 
 ## Description
-<section id="description"> Сколько треугольников имеется с целыми сторонами, по крайней мере один интегральный угол (измеряется в градусах) и периметр, который не превышает 108? </section>
+<section id='description'>
+Сколько треугольников имеется с целыми сторонами, по крайней мере один интегральный угол (измеряется в градусах) и периметр, который не превышает 108?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 279: Треугольники с целыми сто�
 
 ```yml
 tests:
-  - text: <code>euler279()</code> должен вернуть 416577688.
-    testString: 'assert.strictEqual(euler279(), 416577688, "<code>euler279()</code> should return 416577688.");'
+  - text: <code>euler279()</code> should return 416577688.
+    testString: assert.strictEqual(euler279(), 416577688);
 
 ```
 
@@ -42,8 +45,6 @@ euler279();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler279();
 ```js
 // solution required
 ```
+
 </section>

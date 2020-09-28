@@ -38,32 +38,31 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Training with Camper Cat</h1>
-
+        <h1>Entrenamiento con Camper Cat</h1>
     <div>
       <ul>
-        <li><a href="#stealth">Stealth &amp; Agility</a></li>
-        <li><a href="#combat">Combat</a></li>
-        <li><a href="#weapons">Weapons</a></li>
+         <li><a href="#stealth">Sigilo &amp; Agilidad</a></li>
+        <li><a href="#combat">Combate</a></li>
+        <li><a href="#weapons">Armas</a></li>
       </ul>
     </div>
 
   </header>
   <main>
     <section id="stealth">
-      <h2>Stealth &amp; Agility Training</h2>
-      <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
-      <article><h3>No training is NP-complete without parkour</h3></article>
+      <h2>Entrenamiento de Agilidad y Sigilo</h2>
+      <article><h3>Escale el follaje rápidamente usando un enfoque de árbol de expansión mínimo</h3></article>
+      <article><h3>Ningún entrenamiento está completo sin parkour.</h3></article>
     </section>
     <section id="combat">
-      <h2>Combat Training</h2>
-      <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
-      <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>
+      <h2>Entrenamiento de Combate</h2>
+      <article><h3>Despacha enemigos múltiples con tácticas multiproceso</h3></article>
+      <article><h3>Adiós mundo: 5 maneras probadas de noquear a un oponente</h3></article>
     </section>
     <section id="weapons">
-      <h2>Weapons Training</h2>
-      <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
-      <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+      <h2>Entrenamiento de Armas</h2>
+      <article><h3>Espadas: la mejor herramienta para dividir y conquistar literalmente</h3></article>
+      <article><h3>¿Amplitud o profundidad primero en entrenamiento de armas múltiples?</h3></article>
     </section>
   </main>
 </body>
@@ -80,6 +79,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 587d7dab367417b2b2512b6d
 title: Apply Functional Programming to Convert Strings to URL Slugs
 challengeType: 1
+forumTopicId: 301227
 ---
 
 ## Description
@@ -25,18 +26,16 @@ The output should not have any spaces
 
 ```yml
 tests:
-  - text: The <code>globalTitle</code> variable should not change.
-    testString: assert(globalTitle === "Winter Is Coming", 'The <code>globalTitle</code> variable should not change.');
   - text: Your code should not use the <code>replace</code> method for this challenge.
-    testString: assert(!code.match(/\.replace/g), 'Your code should not use the <code>replace</code> method for this challenge.');
+    testString: assert(!code.match(/\.?[\s\S]*?replace/g));
   - text: <code>urlSlug("Winter Is Coming")</code> should return <code>"winter-is-coming"</code>.
-    testString: assert(urlSlug("Winter Is Coming") === "winter-is-coming", '<code>urlSlug("Winter Is Coming")</code> should return <code>"winter-is-coming"</code>.');
+    testString: assert(urlSlug("Winter Is Coming") === "winter-is-coming");
   - text: <code>urlSlug(" Winter Is  &nbsp;Coming")</code> should return <code>"winter-is-coming"</code>.
-    testString: assert(urlSlug(" Winter Is  Coming") === "winter-is-coming", '<code>urlSlug(" Winter Is  &nbsp;Coming")</code> should return <code>"winter-is-coming"</code>.');
+    testString: assert(urlSlug(" Winter Is  Coming") === "winter-is-coming");
   - text: <code>urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")</code> should return <code>"a-mind-needs-books-like-a-sword-needs-a-whetstone"</code>.
-    testString: assert(urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone") === "a-mind-needs-books-like-a-sword-needs-a-whetstone", '<code>urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")</code> should return <code>"a-mind-needs-books-like-a-sword-needs-a-whetstone"</code>.');
+    testString: assert(urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone") === "a-mind-needs-books-like-a-sword-needs-a-whetstone");
   - text: <code>urlSlug("Hold The Door")</code> should return <code>"hold-the-door"</code>.
-    testString: assert(urlSlug("Hold The Door") === "hold-the-door", '<code>urlSlug("Hold The Door")</code> should return <code>"hold-the-door"</code>.');
+    testString: assert(urlSlug("Hold The Door") === "hold-the-door");
 
 ```
 
@@ -48,17 +47,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
-var globalTitle = "Winter Is Coming";
-
-// Add your code below this line
+// Only change code below this line
 function urlSlug(title) {
 
 
 }
-// Add your code above this line
-
-var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+// Only change code above this line
 ```
 
 </div>
@@ -71,6 +65,10 @@ var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 <section id='solution'>
 
 ```js
-// solution required
+// Only change code below this line
+function urlSlug(title) {
+  return title.trim().split(/\s+/).join("-").toLowerCase();
+}
 ```
+
 </section>

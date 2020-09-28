@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403617a
 title: Pass State as Props to Child Components
 challengeType: 6
-isRequired: false
+forumTopicId: 301403
 ---
 
 ## Description
@@ -14,7 +14,7 @@ This pattern illustrates some important paradigms in React. The first is <em>uni
 
 ## Instructions
 <section id='instructions'>
-The <code>MyApp</code> component is stateful and renders a <code>Navbar</code> component as a child. Pass the <code>name</code> property in its <code>state</code> down to the child component, then show the <code>name</code> in the <code>h1</code> tag that's part of the <code>Navbar</code> render method.
+The <code>MyApp</code> component is stateful and renders a <code>Navbar</code> component as a child. Pass the <code>name</code> property in its <code>state</code> down to the child component, then show the <code>name</code> in the <code>h1</code> tag that's part of the <code>Navbar</code> render method. <code>name</code> should appear after the text <code>Hello, my name is: </code>.
 </section>
 
 ## Tests
@@ -23,11 +23,11 @@ The <code>MyApp</code> component is stateful and renders a <code>Navbar</code> c
 ```yml
 tests:
   - text: The <code>MyApp</code> component should render with a <code>Navbar</code> component inside.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1 && mockedComponent.find('Navbar').length === 1; })(), 'The <code>MyApp</code> component should render with a <code>Navbar</code> component inside.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1 && mockedComponent.find('Navbar').length === 1; })());
   - text: The <code>Navbar</code> component should receive the <code>MyApp</code> state property <code>name</code> as props.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const setState = () => { mockedComponent.setState({name: ''TestName''}); return waitForIt(() => mockedComponent.find(''Navbar'').props() )}; const navProps = await setState(); assert(navProps.name === ''TestName'', ''The <code>Navbar</code> component should receive the <code>MyApp</code> state property <code>name</code> as props.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const setState = () => { mockedComponent.setState({name: ''TestName''}); return waitForIt(() => mockedComponent.find(''Navbar'').props() )}; const navProps = await setState(); assert(navProps.name === ''TestName''); }; '
   - text: The <code>h1</code> element in <code>Navbar</code> should render the <code>name</code> prop.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const navH1Before = mockedComponent.find(''Navbar'').find(''h1'').text(); const setState = () => { mockedComponent.setState({name: ''TestName''}); return waitForIt(() => mockedComponent.find(''Navbar'').find(''h1'').text() )}; const navH1After = await setState(); assert(new RegExp(''TestName'').test(navH1After) && navH1After !== navH1Before, ''The <code>h1</code> element in <code>Navbar</code> should render the <code>name</code> prop.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const navH1Before = mockedComponent.find(''Navbar'').find(''h1'').text(); const setState = () => { mockedComponent.setState({name: ''TestName''}); return waitForIt(() => mockedComponent.find(''Navbar'').find(''h1'').text() )}; const navH1After = await setState(); assert(new RegExp(''TestName'').test(navH1After) && navH1After !== navH1Before); }; '
 
 ```
 
@@ -49,7 +49,9 @@ class MyApp extends React.Component {
   render() {
     return (
        <div>
-         <Navbar /* your code here */ />
+         {/* Change code below this line */}
+         <Navbar />
+         {/* Change code above this line */}
        </div>
     );
   }
@@ -62,7 +64,9 @@ class Navbar extends React.Component {
   render() {
     return (
     <div>
-      <h1>Hello, my name is: /* your code here */ </h1>
+      {/* Change code below this line */}
+      <h1>Hello, my name is: </h1>
+      {/* Change code above this line */}
     </div>
     );
   }
@@ -75,7 +79,7 @@ class Navbar extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyApp />, document.getElementById('root'))
 ```
 
@@ -87,7 +91,7 @@ ReactDOM.render(<MyApp />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyApp extends React.Component {
   constructor(props) {
     super(props);

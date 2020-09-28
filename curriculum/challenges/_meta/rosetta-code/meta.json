@@ -1,12 +1,13 @@
 {
   "name": "Rosetta Code",
+  "isUpcomingChange": false,
   "dashedName": "rosetta-code",
   "order": 5,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "superOrder": 8,
+  "superOrder": 11,
   "challengeOrder": [
     [
       "594810f028c0303b75339acb",
@@ -46,15 +47,15 @@
     ],
     [
       "594d8d0ab97724821379b1e6",
-      "Averages-Mode"
+      "Averages/Mode"
     ],
     [
       "594d966a1467eb84194f0086",
-      "Averages-Pythagorean means"
+      "Averages/Pythagorean means"
     ],
     [
       "594da033de4190850b893874",
-      "Averages-Root mean square"
+      "Averages/Root mean square"
     ],
     [
       "594db4d0dedb4c06a2a4cefd",
@@ -101,6 +102,18 @@
       "Cramer's rule"
     ],
     [
+      "5a23c84252665b21eecc7e03",
+      "Cumulative standard deviation"
+    ],
+    [
+      "5a23c84252665b21eecc7e05",
+      "CUSIP"
+    ],
+    [
+      "5a23c84252665b21eecc7e06",
+      "Cut a rectangle"
+    ],
+    [
       "59669d08d75b60482359409f",
       "Date format"
     ],
@@ -131,6 +144,10 @@
     [
       "59f4eafba0343628bb682785",
       "Discordian date"
+    ],
+    [
+      "5a23c84252665b21eecc7e1e",
+      "Dot product"
     ],
     [
       "599c333915e0ea32d04d4bec",
@@ -201,6 +218,10 @@
       "Fibonacci word"
     ],
     [
+      "5e9ddb06ec35240f39657419",
+      "FizzBuzz"
+    ],
+    [
       "5a7dad05be01840e1778a0d1",
       "Fractran"
     ],
@@ -222,7 +243,7 @@
     ],
     [
       "5a23c84252665b21eecc7e7b",
-      "GeneratorExponential"
+      "Generator/Exponential"
     ],
     [
       "5a23c84252665b21eecc7e80",
@@ -297,16 +318,284 @@
       "Josephus problem"
     ],
     [
+      "5a23c84252665b21eecc7ecb",
+      "K-d tree"
+    ],
+    [
+      "5a23c84252665b21eecc7eca",
+      "Kaprekar numbers"
+    ],
+    [
+      "5a23c84252665b21eecc7ed1",
+      "Knapsack problem/0-1"
+    ],
+    [
+      "5a23c84252665b21eecc7ed2",
+      "Knapsack problem/Bounded"
+    ],
+    [
+      "5a23c84252665b21eecc7ed3",
+      "Knapsack problem/Continuous"
+    ],
+    [
+      "5a23c84252665b21eecc7ed4",
+      "Knapsack problem/Unbounded"
+    ],
+    [
+      "5a23c84252665b21eecc7ed5",
+      "Knight's tour"
+    ],
+    [
+      "5a23c84252665b21eecc7edb",
+      "Largest int from concatenated ints"
+    ],
+    [
+      "5e4ce2b6ac708cc68c1df25e",
+      "Last letter-first letter"
+    ],
+    [
+      "5a23c84252665b21eecc7edc",
+      "Last Friday of each month"
+    ],
+    [
+      "5a23c84252665b21eecc7ede",
+      "Leap year"
+    ],
+    [
+      "5a23c84252665b21eecc7edf",
+      "Least common multiple"
+    ],
+    [
+      "5a23c84252665b21eecc7ee0",
+      "Left factorials"
+    ],
+    [
+      "5e4ce2bbac708cc68c1df25f",
+      "Letter frequency"
+    ],
+    [
+      "5e4ce2eaac708cc68c1df260",
+      "Levenshtein distance"
+    ],
+    [
+      "5e4ce2f5ac708cc68c1df261",
+      "Linear congruential generator"
+    ],
+    [
+      "5e4ce2a1ac708cc68c1df25d",
+      "Long multiplication"
+    ],
+    [
+      "5e6dd1278e6ca105cde40ea9",
+      "Longest common subsequence"
+    ],
+    [
+      "5e6dd139859c290b6ab80292",
+      "Longest increasing subsequence"
+    ],
+    [
+      "5e6dd14192286d95fc43046e",
+      "Longest string challenge"
+    ],
+    [
+      "5e6dd14797f5ce267c2f19d0",
+      "Look-and-say sequence"
+    ],
+    [
+      "5e6dd15004c88cf00d2a78b3",
+      "Loop over multiple arrays simultaneously"
+    ],
+    [
+      "5e6decd8ec8d7db960950d1c",
+      "LU decomposition"
+    ],
+    [
+      "5e6dee7749a0b85a3f1fc7d5",
+      "Lucas-Lehmer test"
+    ],
+    [
+      "5ea281203167d2b0bdefca00",
+      "Ludic numbers"
+    ],
+    [
+      "5ea28156e79528a9ab248f27",
+      "Luhn test of credit card numbers"
+    ],
+    [
+      "5ea2815a8640bcc6cb7dab3c",
+      "Lychrel numbers"
+    ],
+    [
+      "5ea2815e364d9a2222ea55f8",
+      "LZW compression"
+    ],
+    [
+      "59667989bf71cf555dd5d2ff",
+      "S-Expressions"
+    ],
+    [
       "59da22823d04c95919d46269",
       "Sailors, coconuts and a monkey problem"
+    ],
+    [
+      "5eb3e497b8d6d7f63c5517ea",
+      "Search a list of records"
     ],
     [
       "59d9c6bc214c613ba73ff012",
       "SEDOLs"
     ],
     [
-      "59667989bf71cf555dd5d2ff",
-      "S-Expressions"
+      "5eaf48389ee512d4d103684b",
+      "Self Describing Numbers"
+    ],
+    [
+      "5eb3e4a21f462f409d656c73",
+      "Self-referential sequence"
+    ],
+    [
+      "5eb3e4aa847216613aa81983",
+      "Semiprime"
+    ],
+    [
+      "5eb3e4af7d0e7b760b46cedc",
+      "Set consolidation"
+    ],
+    [
+      "5eb3e4b20aa93c437f9e9717",
+      "Set of real numbers"
+    ],
+    [
+      "5eb3e4b5f629b9a07429a5d2",
+      "SHA-1"
+    ],
+    [
+      "5eb3e4c3a894c333d2811a3f",
+      "SHA-256"
+    ],
+    [
+      "5a23c84252665b21eecc7ffe",
+      "Sort an array of composite structures"
+    ],
+    [
+      "5a23c84252665b21eecc8000",
+      "Sort disjoint sublist"
+    ],
+    [
+      "5a23c84252665b21eecc8014",
+      "Sort stability"
+    ],
+    [
+      "5a23c84252665b21eecc8016",
+      "Sort using a custom comparator"
+    ],
+    [
+      "5a23c84252665b21eecc8001",
+      "Sorting algorithms/Bead sort"
+    ],
+    [
+      "5a23c84252665b21eecc8002",
+      "Sorting algorithms/Bogosort"
+    ],
+    [
+      "5a23c84252665b21eecc8004",
+      "Sorting algorithms/Cocktail sort"
+    ],
+    [
+      "5a23c84252665b21eecc8005",
+      "Sorting algorithms/Comb sort"
+    ],
+    [
+      "5a23c84252665b21eecc8007",
+      "Sorting algorithms/Gnome sort"
+    ],
+    [
+      "5a23c84252665b21eecc800b",
+      "Sorting algorithms/Pancake sort"
+    ],
+    [
+      "5a23c84252665b21eecc800c",
+      "Sorting algorithms/Permutation sort"
+    ],
+    [
+      "5a23c84252665b21eecc8010",
+      "Sorting algorithms/Shell sort"
+    ],
+    [
+      "5a23c84252665b21eecc8012",
+      "Sorting algorithms/Stooge sort"
+    ],
+    [
+      "5a23c84252665b21eecc8013",
+      "Sorting algorithms/Strand sort"
+    ],
+    [
+      "5a23c84252665b21eecc8017",
+      "Soundex"
+    ],
+    [
+      "5a23c84252665b21eecc801c",
+      "Spiral matrix"
+    ],
+    [
+      "5a23c84252665b21eecc801d",
+      "Split a character string based on change of character"
+    ],
+    [
+      "5a23c84252665b21eecc8024",
+      "State name puzzle"
+    ],
+    [
+      "5a23c84252665b21eecc8028",
+      "Stern-Brocot sequence"
+    ],
+    [
+      "5a23c84252665b21eecc8029",
+      "Straddling checkerboard"
+    ],
+    [
+      "5a23c84252665b21eecc802a",
+      "Stream Merge"
+    ],
+    [
+      "5a23c84252665b21eecc8036",
+      "Strip control codes and extended characters from a string"
+    ],
+    [
+      "5a23c84252665b21eecc8038",
+      "Subleq"
+    ],
+    [
+      "5a23c84252665b21eecc803c",
+      "Sudoku"
+    ],
+    [
+      "5a23c84252665b21eecc803f",
+      "Sum digits of an integer"
+    ],
+    [
+      "5a23c84252665b21eecc8040",
+      "Sum multiples of 3 and 5"
+    ],
+    [
+      "5a23c84252665b21eecc8041",
+      "Sum of a series"
+    ],
+    [
+      "5a23c84252665b21eecc8042",
+      "Sum of squares"
+    ],
+    [
+      "5a23c84252665b21eecc8043",
+      "Sum to 100"
+    ],
+    [
+      "5a23c84252665b21eecc8045",
+      "Sutherland-Hodgman polygon clipping"
+    ],
+    [
+      "5a23c84252665b21eecc8046",
+      "Symmetric difference"
     ],
     [
       "594ecc0d9a8cf816e3340187",
@@ -335,6 +624,10 @@
     [
       "594810f028c0303b75339ad3",
       "Vector dot product"
+    ],
+    [
+      "5e94a54cc7b022105bf0fd2c",
+      "Word frequency"
     ],
     [
       "594810f028c0303b75339ad4",

@@ -2,41 +2,72 @@
 id: 56533eb9ac21ba0edf2244e0
 title: Replacing If Else Chains with Switch
 challengeType: 1
-videoUrl: ''
-localeTitle: 如果用交换机替换其他链条
+videoUrl: 'https://scrimba.com/c/c3JE8fy'
+forumTopicId: 18266
+localeTitle: 用一个 Switch 语句来替代多个 if else 语句
 ---
 
 ## Description
-<section id="description">如果您有许多选项可供选择，那么<code>switch</code>语句比许多链接的<code>if</code> / <code>else if</code>语句更容易编写。下列： <blockquote> if（val === 1）{ <br> answer =“a”; <br> } else if（val === 2）{ <br> answer =“b”; <br> } else { <br> answer =“c”; <br> } </blockquote>可以替换为： <blockquote> switch（val）{ <br>情况1： <br> answer =“a”; <br>打破; <br>案例2： <br> answer =“b”; <br>打破; <br>默认： <br> answer =“c”; <br> } </blockquote></section>
+<section id='description'>
+如果你有多个选项需要选择，<code>switch</code>语句写起来会比多个串联的<code>if</code>/<code>if else</code>语句容易些，譬如:
+
+```js
+if (val === 1) {
+  answer = "a";
+} else if (val === 2) {
+  answer = "b";
+} else {
+  answer = "c";
+}
+```
+
+可以被下面替代：
+
+```js
+switch(val) {
+  case 1:
+    answer = "a";
+    break;
+  case 2:
+    answer = "b";
+    break;
+  default:
+    answer = "c";
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">将链接的<code>if</code> / <code>else if</code>语句更改为<code>switch</code>语句。 </section>
+<section id='instructions'>
+把串联的<code>if</code>/<code>if else</code>语句改成<code>switch</code>语句。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您不应该在编辑器中的任何位置使用任何<code>else</code>语句
-    testString: 'assert(!/else/g.test(code), "You should not use any <code>else</code> statements anywhere in the editor");'
-  - text: 您不应在编辑器中的任何位置使用任何<code>if</code>语句
-    testString: 'assert(!/if/g.test(code), "You should not use any <code>if</code> statements anywhere in the editor");'
-  - text: 你应该至少有四个<code>break</code>语句
-    testString: 'assert(code.match(/break/g).length >= 4, "You should have at least four <code>break</code> statements");'
-  - text: <code>chainToSwitch(&quot;bob&quot;)</code>应该是“Marley”
-    testString: 'assert(chainToSwitch("bob") === "Marley", "<code>chainToSwitch("bob")</code> should be "Marley"");'
-  - text: <code>chainToSwitch(42)</code>应该是“答案”
-    testString: 'assert(chainToSwitch(42) === "The Answer", "<code>chainToSwitch(42)</code> should be "The Answer"");'
-  - text: <code>chainToSwitch(1)</code>应该是“没有＃1”
-    testString: 'assert(chainToSwitch(1) === "There is no #1", "<code>chainToSwitch(1)</code> should be "There is no #1"");'
-  - text: <code>chainToSwitch(99)</code>应该是“错过了我这么多！”
-    testString: 'assert(chainToSwitch(99) === "Missed me by this much!", "<code>chainToSwitch(99)</code> should be "Missed me by this much!"");'
-  - text: <code>chainToSwitch(7)</code>应该是“Ate Nine”
-    testString: 'assert(chainToSwitch(7) === "Ate Nine", "<code>chainToSwitch(7)</code> should be "Ate Nine"");'
-  - text: <code>chainToSwitch(&quot;John&quot;)</code>应为“”（空字符串）
-    testString: 'assert(chainToSwitch("John") === "", "<code>chainToSwitch("John")</code> should be "" (empty string)");'
-  - text: <code>chainToSwitch(156)</code>应为“”（空字符串）
-    testString: 'assert(chainToSwitch(156) === "", "<code>chainToSwitch(156)</code> should be "" (empty string)");'
+  - text: 不要使用<code>else</code>表达式。
+    testString: assert(!/else/g.test(code));
+  - text: 不要使用<code>if</code>表达式。
+    testString: assert(!/if/g.test(code));
+  - text: 你应该有至少 4 个<code>break</code>表达式。
+    testString: assert(code.match(/break/g).length >= 4);
+  - text: <code>chainToSwitch("bob")</code>应该为 "Marley"。
+    testString: assert(chainToSwitch("bob") === "Marley");
+  - text: <code>chainToSwitch(42)</code>应该为 "The Answer"。
+    testString: assert(chainToSwitch(42) === "The Answer");
+  - text: <code>chainToSwitch(1)</code>应该为 "There is no #1"。
+    testString: "assert(chainToSwitch(1) === \"There is no #1\");"
+  - text: <code>chainToSwitch(99)</code>应该为 "Missed me by this much!"。
+    testString: assert(chainToSwitch(99) === "Missed me by this much!");
+  - text: <code>chainToSwitch(7)</code>应该为 "Ate Nine"。
+    testString: assert(chainToSwitch(7) === "Ate Nine");
+  - text: <code>chainToSwitch("John")</code>应该为 "" (empty string)。
+    testString: assert(chainToSwitch("John") === "");
+  - text: <code>chainToSwitch(156)</code>应该为 "" (empty string)。
+    testString: assert(chainToSwitch(156) === "");
 
 ```
 
@@ -82,7 +113,29 @@ chainToSwitch(7);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function chainToSwitch(val) {
+  var answer = "";
+
+  switch(val) {
+    case "bob":
+      answer = "Marley";
+      break;
+    case 42:
+      answer = "The Answer";
+      break;
+    case 1:
+      answer = "There is no #1";
+      break;
+    case 99:
+      answer = "Missed me by this much!";
+      break;
+    case 7:
+      answer = "Ate Nine";
+  }
+  return answer;
+}
 ```
+
 </section>

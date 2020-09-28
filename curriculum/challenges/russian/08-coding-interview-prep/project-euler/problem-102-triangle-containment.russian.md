@@ -2,15 +2,24 @@
 id: 5900f3d21000cf542c50fee5
 challengeType: 5
 title: 'Problem 102: Triangle containment'
-videoUrl: ''
+forumTopicId: 301726
 localeTitle: 'Проблема 102: Сохранение треугольника'
 ---
 
 ## Description
-undefined
+<section id='description'>
+Three distinct points are plotted at random on a Cartesian plane, for which -1000 ≤ x, y ≤ 1000, such that a triangle is formed.
+Consider the following two triangles:
+A(-340,495), B(-153,-910), C(835,-947)
+X(-175,41), Y(-421,-714), Z(574,-645)
+It can be verified that triangle ABC contains the origin, whereas triangle XYZ does not.
+Using triangles.txt (right click and 'Save Link/Target As...'), a 27K text file containing the co-ordinates of one thousand "random" triangles, find the number of triangles for which the interior contains the origin.
+NOTE: The first two examples in the file represent the triangles in the example given above.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler102(), 228, "<code>euler102()</code> should return 228.");'
+  - text: <code>euler102()</code> should return 228.
+    testString: assert.strictEqual(euler102(), 228);
 
 ```
 
@@ -42,8 +51,6 @@ euler102();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +59,5 @@ euler102();
 ```js
 // solution required
 ```
+
 </section>

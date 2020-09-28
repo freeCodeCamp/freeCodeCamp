@@ -7,7 +7,7 @@ localeTitle: استخدام تصميم متجاوب مع حاويات السوا
 ---
 
 ## Description
-<section id="description"> في قسم HTML5 و CSS من برنامج FreeCodeCamp ، أنشأنا تطبيق صور Cat. الآن دعونا نعود إليها. في هذه المرة ، سنقوم بإعداده باستخدام إطار عمل Bootstrap المتجاوب لـ CSS. سيحدد Bootstrap مدى اتساع الشاشة ويستجيب عن طريق تغيير حجم عناصر HTML - ومن هنا يكون اسم &quot; <code>Responsive Design</code> . مع تصميم متجاوب ، ليست هناك حاجة لتصميم نسخة محمولة من موقع الويب الخاص بك. سوف تبدو جيدة على الأجهزة ذات الشاشات من أي عرض. يمكنك إضافة Bootstrap إلى أي تطبيق بإضافة التعليمة البرمجية التالية إلى أعلى HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;/&gt;</code> في هذه الحالة ، قمنا بالفعل بإضافته لك إلى هذه الصفحة من وراء الكواليس. لاحظ أن استخدام <code>&gt;</code> أو <code>/&gt;</code> لإغلاق علامة <code>link</code> أمر مقبول. للبدء ، يجب علينا تضمين جميع HTML (باستثناء علامة <code>link</code> وعنصر <code>style</code> ) في عنصر <code>div</code> باستخدام <code>container-fluid</code> للفئة. </section>
+<section id="description"> في قسم HTML5 و CSS من برنامج FreeCodeCamp ، أنشأنا تطبيق صور Cat. الآن دعونا نعود إليها. في هذه المرة ، سنقوم بإعداده باستخدام إطار عمل Bootstrap المتجاوب لـ CSS. سيحدد Bootstrap مدى اتساع الشاشة ويستجيب عن طريق تغيير حجم عناصر HTML - ومن هنا يكون اسم <code>Responsive Design</code> . مع تصميم متجاوب ، ليست هناك حاجة لتصميم نسخة محمولة من موقع الويب الخاص بك. سوف تبدو جيدة على الأجهزة ذات الشاشات من أي عرض. يمكنك إضافة Bootstrap إلى أي تطبيق بإضافة التعليمة البرمجية التالية إلى أعلى HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;/&gt;</code> في هذه الحالة ، قمنا بالفعل بإضافته لك إلى هذه الصفحة من وراء الكواليس. لاحظ أن استخدام <code>&gt;</code> أو <code>/&gt;</code> لإغلاق علامة <code>link</code> أمر مقبول. للبدء ، يجب علينا تضمين جميع HTML (باستثناء علامة <code>link</code> وعنصر <code>style</code> ) في عنصر <code>div</code> باستخدام <code>container-fluid</code> للفئة. </section>
 
 ## Instructions
 <section id="instructions">
@@ -80,7 +80,7 @@ tests:
   <li>thunder</li>
   <li>other cats</li>
 </ol>
-<form action="/submit-cat-photo">
+<form action="https://freecatphotoapp.com/submit-cat-photo">
   <label><input type="radio" name="indoor-outdoor"> Indoor</label>
   <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
   <label><input type="checkbox" name="personality"> Loving</label>

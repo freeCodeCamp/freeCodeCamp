@@ -7,7 +7,7 @@ localeTitle: Informar com o elemento Paragraph
 ---
 
 ## Description
-<section id="description"> <code>p</code> elementos <code>p</code> são o elemento preferido para o texto do parágrafo nos sites. <code>p</code> é a abreviatura de &quot;parágrafo&quot;. Você pode criar um elemento de parágrafo como este: <code>&lt;p&gt;I&#39;m ap tag!&lt;/p&gt;</code> </section>
+<section id="description"> Elemento <code>p</code> é o elemento preferido para o texto do parágrafo nos sites. <code>p</code> é a abreviatura de &quot;parágrafo&quot;. Você pode criar um elemento de parágrafo como este: <code>&lt;p&gt;I&#39;m ap tag!&lt;/p&gt;</code> </section>
 
 ## Instructions
 <section id="instructions"> Crie um elemento <code>p</code> abaixo do seu elemento <code>h2</code> e dê a ele o texto &quot;Hello Paragraph&quot;. </section>

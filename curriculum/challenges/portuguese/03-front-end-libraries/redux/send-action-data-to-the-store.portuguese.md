@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036155
 title: Send Action Data to the Store
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Enviar dados de ação para a loja
 ---

@@ -10,7 +10,7 @@ function* acceptTermsSaga({ payload: quincyEmails }) {
   try {
     const { data: response } = yield call(putUserAcceptsTerms, quincyEmails);
 
-    yield put(acceptTermsComplete());
+    yield put(acceptTermsComplete(quincyEmails));
     yield put(createFlashMessage(response));
   } catch (e) {
     yield put(acceptTermsError(e));
@@ -18,7 +18,7 @@ function* acceptTermsSaga({ payload: quincyEmails }) {
 }
 
 function* acceptCompleteSaga() {
-  yield call(navigate, '/welcome');
+  yield call(navigate, '/learn');
 }
 
 export function createAcceptTermsSaga(types) {

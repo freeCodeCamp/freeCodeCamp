@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036141
 title: Getting Started with React Redux
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: الابتداء مع React Redux
 ---

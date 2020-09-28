@@ -2,31 +2,36 @@
 id: 56533eb9ac21ba0edf2244d3
 title: Comparison with the Strict Inequality Operator
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cKekkUy
+forumTopicId: 16791
 localeTitle: Сравнение с оператором строгого неравенства
 ---
 
 ## Description
-<section id="description"> Оператор строгого неравенства ( <code>!==</code> ) является логической противоположностью оператора строгого равенства. Это означает «строго не равно» и возвращает <code>false</code> когда строгое равенство вернет <code>true</code> и <em>наоборот</em> . Строгое неравенство не будет преобразовывать типы данных. <strong>Примеры</strong> <blockquote> 3! == 3 // false <br> 3! == &#39;3&#39; // true <br> 4! == 3 // true </blockquote></section>
+<section id='description'>
+Оператор строгого неравенства ( <code>!==</code> ) является логической противоположностью оператора строгого равенства. Это означает «строго не равно» и возвращает <code>false</code> когда строгое равенство вернет <code>true</code> и <em>наоборот</em> . Строгое неравенство не будет преобразовывать типы данных. <strong>Примеры</strong> <blockquote> 3! == 3 // false <br> 3! == &#39;3&#39; // true <br> 4! == 3 // true </blockquote>
+</section>
 
 ## Instructions
-<section id="instructions"> Добавьте <code>strict inequality operator</code> <code>if</code> чтобы функция вернула «Не равно», когда <code>val</code> строго не равно <code>17</code> </section>
+<section id='instructions'>
+Добавьте <code>strict inequality operator</code> <code>if</code> чтобы функция вернула «Не равно», когда <code>val</code> строго не равно <code>17</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>testStrictNotEqual(17)</code> должен вернуть «Равный»,'
-    testString: 'assert(testStrictNotEqual(17) === "Equal", "<code>testStrictNotEqual(17)</code> should return "Equal"");'
-  - text: <code>testStrictNotEqual(&quot;17&quot;)</code> должен возвращать &quot;Не равно&quot;
-    testString: 'assert(testStrictNotEqual("17") === "Not Equal", "<code>testStrictNotEqual("17")</code> should return "Not Equal"");'
-  - text: <code>testStrictNotEqual(12)</code> должен вернуть «Не <code>testStrictNotEqual(12)</code> »
-    testString: 'assert(testStrictNotEqual(12) === "Not Equal", "<code>testStrictNotEqual(12)</code> should return "Not Equal"");'
-  - text: <code>testStrictNotEqual(&quot;bob&quot;)</code> должен возвращать &quot;Не равно&quot;
-    testString: 'assert(testStrictNotEqual("bob") === "Not Equal", "<code>testStrictNotEqual("bob")</code> should return "Not Equal"");'
-  - text: Вы должны использовать оператор <code>!==</code>
-    testString: 'assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0, "You should use the <code>!==</code> operator");'
+  - text: <code>testStrictNotEqual(17)</code> should return "Equal"
+    testString: assert(testStrictNotEqual(17) === "Equal");
+  - text: <code>testStrictNotEqual("17")</code> should return "Not Equal"
+    testString: assert(testStrictNotEqual("17") === "Not Equal");
+  - text: <code>testStrictNotEqual(12)</code> should return "Not Equal"
+    testString: assert(testStrictNotEqual(12) === "Not Equal");
+  - text: <code>testStrictNotEqual("bob")</code> should return "Not Equal"
+    testString: assert(testStrictNotEqual("bob") === "Not Equal");
+  - text: You should use the <code>!==</code> operator
+    testString: assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
 
 ```
 
@@ -40,12 +45,7 @@ tests:
 ```js
 // Setup
 function testStrictNotEqual(val) {
-  // Only Change Code Below this Line
-
-  if (val) {
-
-  // Only Change Code Above this Line
-
+  if (val) { // Change this line
     return "Not Equal";
   }
   return "Equal";
@@ -58,14 +58,18 @@ testStrictNotEqual(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+function testStrictNotEqual(val) {
+  if (val !== 17) {
+    return "Not Equal";
+  }
+  return "Equal";
+}
 ```
+
 </section>

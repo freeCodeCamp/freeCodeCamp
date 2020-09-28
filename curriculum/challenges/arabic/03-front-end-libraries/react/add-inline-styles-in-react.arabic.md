@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036182
 title: Add Inline Styles in React
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: إضافة أنماط مضمنة في React
 ---

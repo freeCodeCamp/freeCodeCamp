@@ -3,10 +3,10 @@ import nanoId from 'nanoid';
 
 import { createTypes } from '../../../utils/createTypes';
 
-const ns = 'flash';
+export const ns = 'flash';
 
 const initialState = {
-  messages: []
+  message: {}
 };
 
 const types = createTypes(['createFlashMessage', 'removeFlashMessage'], ns);
@@ -19,17 +19,17 @@ export const createFlashMessage = createAction(
 );
 export const removeFlashMessage = createAction(types.removeFlashMessage);
 
-export const flashMessagesSelector = state => state[ns].messages;
+export const flashMessageSelector = state => state[ns].message;
 
 export const reducer = handleActions(
   {
     [types.createFlashMessage]: (state, { payload }) => ({
       ...state,
-      messages: [...state.messages, payload]
+      message: payload
     }),
-    [types.removeFlashMessage]: (state, { payload }) => ({
+    [types.removeFlashMessage]: state => ({
       ...state,
-      messages: state.messages.filter(msg => msg.id !== payload)
+      message: {}
     })
   },
   initialState

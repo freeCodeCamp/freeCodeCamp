@@ -7,7 +7,7 @@ localeTitle: Gerar frações aleatórias com JavaScript
 ---
 
 ## Description
-<section id="description"> Números aleatórios são úteis para criar um comportamento aleatório. JavaScript tem uma função <code>Math.random()</code> que gera um número decimal aleatório entre <code>0</code> (inclusive) e não chega a <code>1</code> (exclusivo). Assim <code>Math.random()</code> pode retornar um <code>0</code> mas nunca retorna um <code>1</code> <strong>Nota</strong> <br> Assim como <a href="storing-values-with-the-assignment-operator" target="_blank">Armazenando Valores com o Operador Igual</a> , todas as chamadas de função serão resolvidas antes que o <code>return</code> executado, para que possamos <code>return</code> o valor da função <code>Math.random()</code> . </section>
+<section id="description"> Números aleatórios são úteis para criar um comportamento aleatório. JavaScript tem uma função <code>Math.random()</code> que gera um número decimal aleatório entre <code>0</code> (inclusive) e não chega a <code>1</code> (exclusivo). Assim <code>Math.random()</code> pode retornar um <code>0</code> mas nunca retorna um <code>1</code> <strong>Nota</strong> <br> Assim como <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Armazenando Valores com o Operador Igual</a> , todas as chamadas de função serão resolvidas antes que o <code>return</code> executado, para que possamos <code>return</code> o valor da função <code>Math.random()</code> . </section>
 
 ## Instructions
 <section id="instructions"> Altere <code>randomFraction</code> para retornar um número aleatório em vez de retornar <code>0</code> . </section>

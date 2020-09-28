@@ -1,0 +1,127 @@
+{
+  "name": "Data Analysis with Python Course",
+  "isUpcomingChange": false,
+  "dashedName": "data-analysis-with-python-course",
+  "order": 1,
+  "time": "15 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "data-analysis-with-python",
+  "superOrder": 8,
+  "challengeOrder": [
+    [
+      "5e9a093a74c4063ca6f7c14c",
+      "Introduction to Data Analysis"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c14d",
+      "Data Analysis Example A"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c14e",
+      "Data Analysis Example B"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c14f",
+      "How to use Jupyter Notebooks Intro"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c150",
+      "Jupyter Notebooks Cells"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c151",
+      "Jupyter Notebooks Importing and Exporting Data"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c152",
+      "Numpy Introduction A"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c153",
+      "Numpy Introduction B"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c154",
+      "Numpy Arrays"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c155",
+      "Numpy Operations"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c156",
+      "Numpy Boolean Arrays"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c157",
+      "Numpy Algebra and Size"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c158",
+      "Pandas Introduction"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c159",
+      "Pandas Indexing and Conditional Selection"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c15a",
+      "Pandas DataFrames"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c15b",
+      "Pandas Conditional Selection and Modifying DataFrames"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c15c",
+      "Pandas Creating Columns"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c15d",
+      "Data Cleaning Introduction"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c15e",
+      "Data Cleaning with DataFrames"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c15f",
+      "Data Cleaning Duplicates"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c160",
+      "Data Cleaning and Visualizations"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c161",
+      "Reading Data Introduction"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c162",
+      "Reading Data CSV and TXT"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c163",
+      "Reading Data from Databases"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c164",
+      "Parsing HTML and Saving Data"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c165",
+      "Python Introduction"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c166",
+      "Python Functions and Collections"
+    ],
+    [
+      "5e9a093a74c4063ca6f7c167",
+      "Python Iteration and Modules"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "11-data-analysis-with-python/lectures-data-analysis-with-python.json"
+}

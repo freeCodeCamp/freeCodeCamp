@@ -3,17 +3,32 @@ import PropTypes from 'prop-types';
 
 import './offline-warning.css';
 
+const delayInMilliSeconds = 5000;
+let id;
 const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool.isRequired
 };
-
 function OfflineWarning({ isOnline, isSignedIn }) {
-  return !isSignedIn || isOnline ? null : (
+  const [showWarning, setShowWarning] = React.useState(false);
+  if (!isSignedIn || isOnline) {
+    clearTimeout(id);
+    if (showWarning) setShowWarning(false);
+  } else {
+    timeout();
+  }
+
+  function timeout() {
+    id = setTimeout(function() {
+      setShowWarning(true);
+    }, delayInMilliSeconds);
+  }
+
+  return showWarning ? (
     <div className='offline-warning'>
-      We cannot reach the server to update your progress.
+      You appear to be offline, your progress may not be being saved.
     </div>
-  );
+  ) : null;
 }
 
 OfflineWarning.displayName = 'OfflineWarning';

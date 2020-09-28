@@ -2,30 +2,36 @@
 id: bad87fee1348bd9aedd08830
 title: Add a Submit Button to a Form
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/add-a-submit-button-to-a-form'
-videoUrl: ''
-localeTitle: 向表单添加提交按钮
+videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
+forumTopicId: 16627
+localeTitle: 给表单添加提交按钮
 ---
 
 ## Description
-<section id="description">我们在表单中添加一个<code>submit</code>按钮。单击此按钮会将表单中的数据发送到您使用表单的<code>action</code>属性指定的URL。这是一个示例提交按钮： <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
+<section id='description'>
+让我们来给表单添加一个<code>submit</code>提交按钮，当点击提交按钮时，表单中的数据将会被发送到<code>action</code>属性指定的 URL 上。
+例如：
+<code>&#60;button type="submit"&#62;this button submits the form&#60;/button&#62;</code>
+</section>
 
 ## Instructions
-<section id="instructions">添加一个按钮作为<code>form</code>元素的最后一个元素，其类型为<code>submit</code> ，并且“Submit”作为其文本。 </section>
+<section id='instructions'>
+在表单的底部创建一个<code>button</code>按钮，按钮的<code>type</code>属性值为<code>submit</code>，文本为<code>提交</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的表单里面应该有一个按钮。
-    testString: 'assert($("form").children("button").length > 0, "Your form should have a button inside it.");'
-  - text: 您的提交按钮应该具有要<code>submit</code>的属性<code>type</code> 。
-    testString: 'assert($("button").attr("type") === "submit", "Your submit button should have the attribute <code>type</code> set to <code>submit</code>.");'
-  - text: 您的提交按钮应该只有“提交”文本。
-    testString: 'assert($("button").text().match(/^\s*submit\s*$/gi), "Your submit button should only have the text "Submit".");'
-  - text: 确保您的<code>button</code>元素有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure your <code>button</code> element has a closing tag.");'
+  - text: '表单内部应该有一个按钮。'
+    testString: assert($("form").children("button").length > 0);
+  - text: '按钮的<code>type</code>属性值应该为<code>submit</code>。'
+    testString: assert($("button").attr("type") === "submit");
+  - text: '提交按钮的文本应该为<code>提交</code>。'
+    testString: assert($("button").text().match(/^\s*submit\s*$/gi));
+  - text: '确保按钮有结束标记。'
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 
@@ -39,39 +45,32 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <p>Things cats love:</p>
+  <p>点击查看更多<a href="#">猫咪图片</a>。</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的橘猫"></a>
+  
+  <p>猫咪最喜欢的三件东西：</p>
   <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
+    <li>猫薄荷</li>
+    <li>激光笔</li>
+    <li>千层面</li>
   </ul>
-  <p>Top 3 things cats hate:</p>
+  <p>猫咪最讨厌的三件东西：</p>
   <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
+    <li>祛跳蚤</li>
+    <li>打雷</li>
+    <li>同类</li>
   </ol>
-  <form action="/submit-cat-photo">
-    <input type="text" placeholder="cat photo URL">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <input type="text" placeholder="猫咪图片地址">
   </form>
 </main>
-
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
-
-```js
-// solution required
-```
 </section>
+              

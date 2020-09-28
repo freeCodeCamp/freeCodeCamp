@@ -3,6 +3,7 @@ id: 5a90374338fddaf9a66b5d3a
 title: Align an Item Horizontally using justify-self
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpKHq'
+forumTopicId: 301122
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Use the <code>justify-self</code> property to center the item with the class <co
 ```yml
 tests:
   - text: <code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.
-    testString: assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi), '<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.');
+    testString: assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -41,10 +42,10 @@ tests:
 
   .item2 {
     background: LightSalmon;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 
   .item3{background:PaleTurquoise;}
@@ -82,8 +83,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".item2 {justify-self: center;}"
+```html
+<style>.item2 {justify-self: center;}</style>
 ```
 
 </section>

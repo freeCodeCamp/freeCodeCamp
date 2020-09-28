@@ -1,5 +1,6 @@
 {
   "name": "React",
+  "isUpcomingChange": false,
   "dashedName": "react",
   "order": 5,
   "time": "5 hours",
@@ -150,10 +151,6 @@
     [
       "5a24c314108439a4d403617e",
       "Add Event Listeners"
-    ],
-    [
-      "5a24c314108439a4d403617f",
-      "Manage Updates with Lifecycle Methods"
     ],
     [
       "5a24c314108439a4d4036180",

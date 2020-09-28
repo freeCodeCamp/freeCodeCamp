@@ -18,7 +18,7 @@ localeTitle: Comprender Hashes de Egipto
 
 ```yml
 tests:
-  - text: BCyrpt es una dependencia
+  - text: BCrypt es una dependencia
     testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "bcrypt", "Your project should list "bcrypt" as a dependency"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: BCrypt ha sido correctamente requerido
     testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js").then(data => {assert.match(data, /bcrypt.*=.*require.*("|")bcrypt("|")/gi, "You should correctly require and instantiate socket.io as io.");}, xhr => { throw new Error(xhr.statusText); })'

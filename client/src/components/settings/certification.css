@@ -1,13 +1,26 @@
-#certifcation-settings .solutions-dropdown,
-#certifcation-settings .solutions-dropdown .dropdown-menu,
-#certifcation-settings .solutions-dropdown .dropdown {
+#certification-settings .solutions-dropdown,
+#certification-settings .solutions-dropdown .dropdown-menu,
+#certification-settings .solutions-dropdown .dropdown {
   width: 100%;
 }
 
-#certifcation-settings tr {
+#certification-settings tr {
   height: 57px;
 }
 
-#certifcation-settings .project-title > a {
+#certification-settings .project-title > a {
   line-height: 40px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border: none;
+}
+
+.modal {
+  overflow-y: auto;
 }

@@ -20,7 +20,7 @@ tests:
   - text: ''
     testString: 'assert(typeof brain(bye) === "string", "<code>brain(bye)</code> should return a string");'
   - text: ''
-    testString: 'assert.equal(brain("++++++[>++++++++++<-]>+++++."),"A", "<code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"");'
+    testString: 'assert.equal(brain("++++++[>++++++++++<-]>+++++."),"A", "<code>brain("++++++[>++++++++++<-]>+++++.")</code> should return "A"");'
   - text: ''
     testString: 'assert.equal(brain(bye), "Goodbye, World!\r\n", "<code>brain(bye)</code> should return <code>Goodbye, World!\\r\\n</code>");'
   - text: ''

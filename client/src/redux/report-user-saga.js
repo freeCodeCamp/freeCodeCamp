@@ -18,7 +18,7 @@ function* reportUserSaga({ payload }) {
 }
 
 function* acceptCompleteSaga() {
-  yield call(navigate, '/');
+  yield call(navigate, '/learn');
 }
 
 export function createReportUserSaga(types) {

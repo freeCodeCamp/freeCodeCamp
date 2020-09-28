@@ -1,9 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bbc
 title: Split Your Styles into Smaller Chunks with Partials
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: ''

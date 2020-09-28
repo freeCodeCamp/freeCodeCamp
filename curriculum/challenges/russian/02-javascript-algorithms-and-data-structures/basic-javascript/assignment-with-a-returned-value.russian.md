@@ -2,26 +2,30 @@
 id: 56533eb9ac21ba0edf2244c3
 title: Assignment with a Returned Value
 challengeType: 1
-guideUrl: 'https://russian.freecodecamp.org/guide/certificates/assignment-with-a-returned-value'
-videoUrl: ''
+videoUrl: https://scrimba.com/c/ce2pEtB
+forumTopicId: 16658
 localeTitle: Назначение с возвращенной стоимостью
 ---
 
 ## Description
-<section id="description"> Если вы вспомните из нашего обсуждения « <a href="javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Сохранение значений с помощью оператора назначения»</a> , все, что находится справа от знака равенства, будет разрешено до присвоения значения. Это означает, что мы можем взять возвращаемое значение функции и присвоить ее переменной. Предположим, что мы предварительно определили <code>sum</code> функций, которая объединяет два числа, а затем: <code>ourSum = sum(5, 12);</code> вызовет функцию <code>sum</code> , которая возвращает значение <code>17</code> и присваивает ее переменной <code>ourSum</code> . </section>
+<section id='description'>
+Если вы вспомните из нашего обсуждения « <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Сохранение значений с помощью оператора назначения»</a> , все, что находится справа от знака равенства, будет разрешено до присвоения значения. Это означает, что мы можем взять возвращаемое значение функции и присвоить ее переменной. Предположим, что мы предварительно определили <code>sum</code> функций, которая объединяет два числа, а затем: <code>ourSum = sum(5, 12);</code> вызовет функцию <code>sum</code> , которая возвращает значение <code>17</code> и присваивает ее переменной <code>ourSum</code> .
+</section>
 
 ## Instructions
-<section id="instructions"> Вызовите функцию <code>processArg</code> с аргументом <code>7</code> и назначьте его возвращаемое значение <code>processed</code> переменной. </section>
+<section id='instructions'>
+Вызовите функцию <code>processArg</code> с аргументом <code>7</code> и назначьте его возвращаемое значение <code>processed</code> переменной.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>processed</code> должна иметь значение <code>2</code>
-    testString: 'assert(processed === 2, "<code>processed</code> should have a value of <code>2</code>");'
-  - text: Вы должны назначить <code>processArg</code> для <code>processed</code>
-    testString: 'assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code), "You should assign <code>processArg</code> to <code>processed</code>");'
+  - text: <code>processed</code> should have a value of <code>2</code>
+    testString: assert(processed === 2);
+  - text: You should assign <code>processArg</code> to <code>processed</code>
+    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
 
 ```
 
@@ -55,12 +59,12 @@ function processArg(num) {
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){return "processed = " + processed})();
+
 ```
 
 </div>
@@ -71,6 +75,13 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var processed = 0;
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+processed = processArg(7);
 ```
+
 </section>

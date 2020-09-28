@@ -14,7 +14,9 @@ export default function flashCheaters() {
     if (
       ALLOWED_METHODS.indexOf(req.method) !== -1 &&
       EXCLUDED_PATHS.indexOf(req.path) === -1 &&
-      req.user && req.url !== '/' && req.user.isCheater
+      req.user &&
+      req.url !== '/' &&
+      req.user.isCheater
     ) {
       req.flash(
         'danger',

@@ -7,7 +7,14 @@ localeTitle: Use un lapso para apuntar elementos en línea
 ---
 
 ## Description
-<section id="description"> Puede utilizar intervalos para crear elementos en línea. ¿Recuerdas cuando usamos la clase <code>btn-block</code> para hacer que el botón llene toda la fila? <button class="btn" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">botón normal botón</button> <button class="btn btn-block" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">btn-block</button> Que ilustra la diferencia entre un elemento &quot;en línea&quot; y un elemento &quot;block&quot;. Al utilizar el elemento de <code>span</code> línea, puede colocar varios elementos en la misma línea, e incluso diseñar diferentes partes de la misma línea de manera diferente. Anida la palabra &quot;amor&quot; en el elemento &quot;Cosas que los gatos aman&quot; debajo de un elemento <code>span</code> . Luego, <code>span</code> la clase <code>text-danger</code> para hacer que el texto sea rojo. A continuación le indicamos cómo haría esto con el elemento &quot;Las 3 cosas que los gatos odian más&quot;: <code>&lt;p&gt;Top 3 things cats &lt;span class=&quot;text-danger&quot;&gt;hate:&lt;/span&gt;&lt;/p&gt;</code> </section>
+<section id="description"> Puede utilizar spans para crear elementos en línea. ¿Recuerdas cuando usamos la clase <code>btn-block</code> para hacer que el botón llene toda la fila? 
+  
+```html
+<button class="btn" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">botón normal</button> 
+<button class="btn btn-block" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">botón btn-block</button> 
+```
+
+Esto ilustra la diferencia entre un elemento &quot;inline&quot; y un elemento &quot;block&quot;. Al utilizar el elemento de <code>span</code> inline, puede colocar varios elementos en la misma línea, e incluso diseñar diferentes partes de la misma línea de manera diferente. Anida la palabra &quot;love&quot; en el elemento &quot;Things cats love&quot; dentro de un elemento <code>span</code>. Luego, asigna al <code>span</code> la clase <code>text-danger</code> para hacer que el texto sea rojo. A continuación le indicamos cómo haría esto con el elemento &quot;Top 3 things cats hate&quot;: <code>&lt;p&gt;Top 3 things cats &lt;span class=&quot;text-danger&quot;&gt;hate:&lt;/span&gt;&lt;/p&gt;</code> </section>
 
 ## Instructions
 <section id="instructions">
@@ -82,7 +89,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>

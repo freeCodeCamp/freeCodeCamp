@@ -3,6 +3,7 @@ id: 5a9d725e424fe3d0e10cad10
 title: Use CSS Variables to change several elements at once
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDECm'
+forumTopicId: 301093
 ---
 
 ## Description
@@ -22,11 +23,11 @@ In the <code>penguin</code> class, change the <code>black</code> value to <code>
 ```yml
 tests:
   - text: <code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
   - text: <code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.');
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
   - text: <code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.');
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -41,11 +42,11 @@ tests:
 <style>
   .penguin {
 
-    /* change code below */
+    /* Only change code below this line */
     --penguin-skin: black;
     --penguin-belly: gray;
     --penguin-beak: yellow;
-    /* change code above */
+    /* Only change code above this line */
 
     position: relative;
     margin: auto;
@@ -250,8 +251,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".penguin {--penguin-skin: gray; --penguin-belly: white; --penguin-beak: orange;}"
+```html
+<style>.penguin {--penguin-skin: gray; --penguin-belly: white; --penguin-beak: orange;}</style>
 ```
 
 </section>

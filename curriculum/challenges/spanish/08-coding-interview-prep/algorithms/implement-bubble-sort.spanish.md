@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Implementar Bubble Sort
 ---
 
-## Description
-<section id="description"> Este es el primero de varios desafíos en la clasificación de algoritmos. Dada una matriz de elementos sin clasificar, queremos poder devolver una matriz ordenada. Veremos varios métodos diferentes para hacer esto y aprenderemos algunas compensaciones entre estos diferentes enfoques. Si bien la mayoría de los lenguajes modernos tienen métodos de clasificación incorporados para operaciones como esta, todavía es importante entender algunos de los enfoques básicos comunes y aprender cómo pueden implementarse. Aquí veremos burbuja ordenada. El método de clasificación de burbujas comienza al principio de una matriz sin ordenar y &#39;burbujea&#39; valores sin ordenar hacia el final, iterando a través de la matriz hasta que esté completamente ordenada. Lo hace comparando elementos adyacentes e intercambiándolos si están fuera de orden. El método continúa en bucle a través de la matriz hasta que no se produzcan swaps en qué punto se clasifica la matriz. Este método requiere múltiples iteraciones a través de la matriz y, en promedio, en el peor de los casos tiene una complejidad de tiempo cuadrática. Aunque simple, generalmente es poco práctico en la mayoría de las situaciones. <strong>Instrucciones:</strong> Escriba una función <code>bubbleSort</code> que toma una matriz de enteros como entrada y devuelve una matriz de estos enteros en orden ordenado de menor a mayor. <strong>Nota:</strong> <br> Estamos llamando a esta función desde detrás de la escena; La matriz de prueba que estamos utilizando está comentada en el editor. ¡Intente registrar la <code>array</code> para ver su algoritmo de clasificación en acción! </section>
+## Descripción
+<section id="description"> Este es el primero de varios desafíos sobre algoritmos de ordenamiento. Dado un arreglo de elementos desordenados, queremos poder devolver un arreglo ordenado. Veremos varios métodos diferentes para hacer esto y aprenderemos acerca de las ventajas y desventajas de estos diferentes enfoques. Si bien la mayoría de los lenguajes modernos tienen métodos de ordenamiento incorporados para operaciones como esta, todavía es importante entender algunos de los enfoques básicos comunes y aprender cómo pueden implementarse. Aquí veremos el algoritmo llamado _Bubble sort_. Este método comienza con un arreglo sin ordenar y &#39;burbujea&#39; valores sin ordenar hacia el final, iterando a través del arreglo hasta que esté completamente ordenado. Lo hace comparando elementos adyacentes e intercambiándolos si están en desorden. El método continúa en bucle a través del arreglo hasta que no se produzcan intercambios de elementos. Es en este punto que el arreglo estará ordenado. Este método requiere múltiples iteraciones a través del arreglo y, en promedio, en el peor de los casos tiene una complejidad de tiempo cuadrática. Aunque simple, generalmente es poco práctico en la mayoría de las situaciones. <strong>Instrucciones:</strong> Escriba una función <code>bubbleSort</code> que toma un arreglo de enteros como entrada y devuelve un arreglo de estos enteros ordenado de menor a mayor. <strong>Nota:</strong> <br> Estamos llamando a esta función tras bambalinas; el arreglo de prueba que estamos utilizando está comentado en el editor. ¡Intente loggear el <code>array</code> para ver su algoritmo de ordenamiento en acción! </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semilla del desafío
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ function bubbleSort(array) {
 </div>
 
 
-### After Test
+### Después de las pruebas
 <div id='js-teardown'>
 
 ```js
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

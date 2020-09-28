@@ -17,14 +17,14 @@ localeTitle: Use uma classe CSS para estilizar um elemento
 
 ```yml
 tests:
-  - text: Seu elemento <code>h2</code> deve estar vermelho.
-    testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");'
-  - text: Seu elemento <code>h2</code> deve ter a classe <code>red-text</code> .
-    testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");'
-  - text: Sua folha de estilo deve declarar uma classe de <code>red-text</code> e ter sua cor definida como vermelha.
-    testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.");'
-  - text: 'Não use declarações de estilo inline como <code>style=&quot;color: red&quot;</code> em seu elemento <code>h2</code> .'
-    testString: 'assert($("h2").attr("style") === undefined, "Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.");'
+  - text: Seu elemento <code>h2</code> deve ser vermelho.
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
+  - text: Seu elemento <code>h2</code> deveria ter a classe <code>red-text</code>.
+    testString: assert($("h2").hasClass("red-text"));
+  - text: Sua folha de estilo deve declarar uma classe <code>red-text</code> e tenha a cor definida em vermelho.
+    testString: assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
+  - text: Não use declarações de estilo embutido como <code>style="color&#58; red"</code> em seu elemento <code>h2</code>.
+    testString: assert($("h2").attr("style") === undefined);
 
 ```
 
@@ -63,7 +63,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>
@@ -88,4 +88,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

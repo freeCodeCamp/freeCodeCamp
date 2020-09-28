@@ -2,23 +2,28 @@
 id: 587d78a5367417b2b2512ad8
 title: Create Texture by Adding a Subtle Pattern as a Background Image
 challengeType: 0
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/cQdwJC8'
+forumTopicId: 301052
 localeTitle: 通过添加细微图案作为背景图像来创建纹理
 ---
 
 ## Description
-<section id="description">为背景添加纹理和兴趣并让它更突出的一种方法是添加一种微妙的图案。关键是平衡，因为你不希望背景太突出，并从前景中拿走。 <code>background</code>属性支持<code>url()</code>函数，以便链接到所选纹理或图案的图像。链接地址用括号内的引号括起来。 </section>
+<section id='description'>
+添加一个精致的背景图，可以增加页面的质感，让页面更美观。关键是要找到一个平衡点，抢了内容的风头，喧宾夺主可就不妙了。<code>background</code> 属性支持使用 <code>url()</code> 函数通过链接的方式引入一个指定纹理或样式的图片。图片链接地址在括号内，一般会用引号包起来。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>https://i.imgur.com/MJAkxbh.png</code>的网址，使用<code>body</code>选择器设置整个页面的<code>background</code> 。 </section>
+<section id='instructions'>
+用 <code>body</code> 选择器设置整个页面的 <code>background</code> 为 url <code>https://i.imgur.com/MJAkxbh.png</code> 指定的图片。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的<code>body</code>元素应该将<code>background</code>属性设置为具有给定链接的<code>url()</code> 。
-    testString: 'assert(code.match(/background:\s*?url\(\s*("|"|)https:\/\/i\.imgur\.com\/MJAkxbh\.png\1\s*\)/gi), "Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.");'
+  - text: '<code>body</code> 元素选择器应包含 <code>background</code> 属性，且值为给定的 <code>url</code>。'
+    testString: assert(code.match(/background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi));
 
 ```
 
@@ -32,10 +37,9 @@ tests:
 ```html
 <style>
   body {
-
+    
   }
 </style>
-
 ```
 
 </div>
@@ -47,7 +51,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

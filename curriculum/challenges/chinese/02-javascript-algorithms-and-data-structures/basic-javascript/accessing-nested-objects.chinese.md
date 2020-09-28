@@ -2,26 +2,49 @@
 id: 56533eb9ac21ba0edf2244cc
 title: Accessing Nested Objects
 challengeType: 1
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/accessing-nested-objects-in-json'
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/cRnRnfa'
+forumTopicId: 16161
 localeTitle: 访问嵌套对象
 ---
 
 ## Description
-<section id="description">可以通过将点或括号表示法链接在一起来访问对象的子属性。这是一个嵌套对象： <blockquote> var ourStorage = { <br> “桌子”：{ <br> “抽屉”：“订书机” <br> }， <br> “内阁”：{ <br> “顶级抽屉”：{ <br> “folder1”：“一个文件”， <br> “folder2”：“秘密” <br> }， <br> “底部抽屉”：“苏打水” <br> } <br> }; <br> ourStorage.cabinet [“top drawer”]。folder2; //“秘密” <br> ourStorage.desk.drawer; //“订书机” </blockquote></section>
+<section id='description'>
+通过串联起来的点操作符或中括号操作符来访问对象的嵌套属性。
+下面是一个嵌套的对象：
+
+```js
+var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+ourStorage.desk.drawer; // "stapler"
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">访问<code>myStorage</code>对象并将<code>glove box</code>属性的内容分配给<code>gloveBoxContents</code>变量。对于名称中包含空格的属性，请使用括号表示法。 </section>
+<section id='instructions'>
+读取<code>myStorage</code>对象，将<code>glove box</code>属性的内容赋值给变量<code>gloveBoxContents</code>。在适用的地方使用点操作符来访问属性，否则使用中括号操作符。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>gloveBoxContents</code>应该等于“地图”
-    testString: 'assert(gloveBoxContents === "maps", "<code>gloveBoxContents</code> should equal "maps"");'
-  - text: 使用点和括号表示法访问<code>myStorage</code>
-    testString: 'assert(/=\s*myStorage\.car\.inside\[\s*("|")glove box\1\s*\]/g.test(code), "Use dot and bracket notation to access <code>myStorage</code>");'
+  - text: <code>gloveBoxContents</code>应该等于"maps"。
+    testString: assert(gloveBoxContents === "maps");
+  - text: 应使用点操作符和中括号操作符来访问<code>myStorage</code>。
+    testString: assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 
 ```
 
@@ -57,7 +80,12 @@ var gloveBoxContents = undefined; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(x) { 
+  if(typeof x != 'undefined') { 
+    return "gloveBoxContents = " + x;
+  }
+  return "gloveBoxContents is undefined";
+})(gloveBoxContents);
 ```
 
 </div>
@@ -67,7 +95,20 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myStorage = {
+  "car":{
+    "inside":{
+      "glove box":"maps",
+      "passenger seat":"crumbs"
+    },
+    "outside":{
+      "trunk":"jack"
+    }
+  }
+};
+var gloveBoxContents = myStorage.car.inside["glove box"];
 ```
+
 </section>

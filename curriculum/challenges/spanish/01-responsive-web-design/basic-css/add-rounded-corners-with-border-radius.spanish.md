@@ -2,26 +2,27 @@
 id: bad87fee1348bd9aedf08814
 title: Add Rounded Corners with border-radius
 challengeType: 0
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/add-rounded-corners-a-border-radius'
 videoUrl: ''
 localeTitle: Añadir esquinas redondeadas con radio de borde
 ---
 
-## Description
+## Descripción
 <section id="description"> Tu foto de gato tiene actualmente esquinas afiladas. Podemos redondear esas esquinas con una propiedad CSS llamada <code>border-radius</code> . </section>
 
-## Instructions
-<section id="instructions"> Puede especificar un <code>border-radius</code> con píxeles. Dale a tu foto de gato un <code>border-radius</code> de <code>10px</code> de <code>10px</code> . Nota: este desafío permite múltiples soluciones posibles. Por ejemplo, puede agregar <code>border-radius</code> <code>.thick-green-border</code> clase <code>.thick-green-border</code> o a la clase <code>.smaller-image</code> . </section>
 
-## Tests
+## Instructions
+<section id="instructions"> Puede especificar un <code>border-radius</code> con píxeles. Dale a tu foto de gato un <code>border-radius</code> de <code>10px</code>. Nota: este desafío permite múltiples soluciones posibles. Por ejemplo, puede agregar un <code>border-radius</code> a la clase <code>.thick-green-border</code> o a la clase <code>.smaller-image</code> . </section>
+
+
+## Pruebas
 <section id='tests'>
 
 ```yml
 tests:
-  - text: El elemento de su imagen debe tener la clase "borde verde grueso".
-    testString: 'assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");'
-  - text: Tu imagen debe tener un radio de <code>10px</code> de <code>10px</code>
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");'
+  - text: El elemento de su imagen debería tener la clase "thick-green-border".
+    testString: 'assert($("img").hasClass("thick-green-border"), "El elemento de su imagen debería tener la clase "thick-green-border".");'
+  - text: Su imagen debería tener un radio de borde de <code>10px</code>.
+    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Su imagen debería tener un radio de borde de <code>10px</code>");'
 
 ```
 
@@ -61,33 +62,33 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Haga clic aquí para ver más <a href="#">fotos de gatos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <div>
-    <p>Things cats love:</p>
+    <p>Cosas que los gatos aman:</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>pellizco de gato</li>
+      <li>punteros laser</li>
+      <li>lasaña</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>3 cosas que odian los gatos:</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>tratamiento de pulgas</li>
+      <li>trueno</li>
+      <li>otros gatos</li>
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Interior</label>
+    <label><input type="radio" name="indoor-outdoor"> Exterior</label><br>
+    <label><input type="checkbox" name="personality" checked> Amoroso</label>
+    <label><input type="checkbox" name="personality"> Perezoso</label>
+    <label><input type="checkbox" name="personality"> Energético</label><br>
     <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+    <button type="submit">Enviar</button>
   </form>
 </main>
 
@@ -99,7 +100,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

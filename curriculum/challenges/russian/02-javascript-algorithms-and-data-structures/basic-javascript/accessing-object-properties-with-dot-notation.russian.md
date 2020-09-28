@@ -2,31 +2,48 @@
 id: 56533eb9ac21ba0edf2244c7
 title: Accessing Object Properties with Dot Notation
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cGryJs8
+forumTopicId: 16164
 localeTitle: Доступ к объектным свойствам с нотами Dot
 ---
 
 ## Description
-undefined
+<section id='description'>
+There are two ways to access the properties of an object: dot notation (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.
+Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
+Here is a sample of using dot notation (<code>.</code>) to read an object's property:
+
+```js
+var myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+var prop1val = myObj.prop1; // val1
+var prop2val = myObj.prop2; // val2
+```
+
+</section>
 
 ## Instructions
-<section id="instructions"> Прочитайте значения свойств <code>testObj</code> с использованием точечной нотации. Установите переменную <code>hatValue</code> равное свойству объекта <code>hat</code> и установить переменную <code>shirtValue</code> равной свойству объекта <code>shirt</code> . </section>
+<section id='instructions'>
+Прочитайте значения свойств <code>testObj</code> с использованием точечной нотации. Установите переменную <code>hatValue</code> равное свойству объекта <code>hat</code> и установить переменную <code>shirtValue</code> равной свойству объекта <code>shirt</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(typeof hatValue === "string" , "<code>hatValue</code> should be a string");'
-  - text: Значение <code>hatValue</code> должно быть <code>&quot;ballcap&quot;</code>
-    testString: 'assert(hatValue === "ballcap" , "The value of <code>hatValue</code> should be <code>"ballcap"</code>");'
-  - text: <code>shirtValue</code> должна быть строкой
-    testString: 'assert(typeof shirtValue === "string" , "<code>shirtValue</code> should be a string");'
-  - text: Значение <code>shirtValue</code> должно быть <code>&quot;jersey&quot;</code>
-    testString: 'assert(shirtValue === "jersey" , "The value of <code>shirtValue</code> should be <code>"jersey"</code>");'
-  - text: Вы должны использовать точную нотацию дважды
-    testString: 'assert(code.match(/testObj\.\w+/g).length > 1, "You should use dot notation twice");'
+  - text: <code>hatValue</code> should be a string
+    testString: assert(typeof hatValue === 'string' );
+  - text: The value of <code>hatValue</code> should be <code>"ballcap"</code>
+    testString: assert(hatValue === 'ballcap' );
+  - text: <code>shirtValue</code> should be a string
+    testString: assert(typeof shirtValue === 'string' );
+  - text: The value of <code>shirtValue</code> should be <code>"jersey"</code>
+    testString: assert(shirtValue === 'jersey' );
+  - text: You should use dot notation twice
+    testString: assert(code.match(/testObj\.\w+/g).length > 1);
 
 ```
 
@@ -54,12 +71,12 @@ var shirtValue = testObj;    // Change this line
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b) { return "hatValue = '" + a + "', shirtValue = '" + b + "'"; })(hatValue,shirtValue);
+
 ```
 
 </div>
@@ -70,6 +87,14 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+var hatValue = testObj.hat;
+var shirtValue = testObj.shirt;
 ```
+
 </section>

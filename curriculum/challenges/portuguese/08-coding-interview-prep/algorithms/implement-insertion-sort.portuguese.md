@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Implemente a ordem de inserção
 ---
 
-## Description
+## Descrição
 <section id="description"> O próximo método de classificação que analisaremos será o tipo de inserção. Esse método funciona criando um array ordenado no início da lista. Começa o array ordenado com o primeiro elemento. Em seguida, ele inspeciona o próximo elemento e o troca de volta para a matriz classificada até que esteja na posição classificada. Ele continua percorrendo a lista e trocando novos itens para trás na porção classificada até atingir o final. Esse algoritmo possui complexidade de tempo quadrático na média e nos piores casos. <strong>Instruções:</strong> Escreva uma <code>insertionSort</code> que recebe uma matriz de números inteiros como entrada e retorna uma matriz desses inteiros na ordem classificada de menor para maior. <strong>Nota:</strong> <br> Estamos chamando essa função dos bastidores; a matriz de teste que estamos usando é comentada no editor. Tente registrar a <code>array</code> para ver seu algoritmo de classificação em ação! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ function insertionSort(array) {
 </div>
 
 
-### After Test
+### Depois do teste
 <div id='js-teardown'>
 
 ```js
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -2,16 +2,17 @@
 id: 56bbb991ad1ed5201cd392ca
 title: Access Array Data with Indexes
 challengeType: 1
-guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'الوصول إلى مجموعة البيانات مع الانديكس'
 ---
 
 ## Description
-undefined
+يمكننا الوصول إلى البيانات داخل المصفوفات باستخدام الفهارس.
+
+تتم كتابة فهرس المصفوفة في نفس تدرج القوس الذي تستخدمه السلاسل ، إلا أنه بدلاً من تحديد حرف ، يتم تحديد إدخال في الصفيف. مثل السلاسل ، تستخدم المصفوفات فهرسة مستندة إلى الصفر ، لذلك فإن العنصر الأول في المصفوفة هو العنصر 0.
 
 ## Instructions
-undefined
+قم بإنشاء variable يسمي myData وتعيينه ليساوي القيمة الأولى من myArray باستخدام bracket notation.
 
 ## Tests
 <section id='tests'>

@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403616c
 title: Override Default Props
 challengeType: 6
-isRequired: false
+forumTopicId: 301399
 ---
 
 ## Description
@@ -22,11 +22,11 @@ The <code>ShoppingCart</code> component now renders a child component <code>Item
 ```yml
 tests:
   - text: The component <code>ShoppingCart</code> should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })(), 'The component <code>ShoppingCart</code> should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })());
   - text: The component <code>Items</code> should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })(), 'The component <code>Items</code> should render.');
-  - text: 'The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component.'
-    testString: 'getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find(''Items'').props().quantity == 10 && getUserInput(''index'').replace(/ /g,'').includes(''<Itemsquantity={10}/>''); })(), ''The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component.'');'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').length === 1; })());
+  - text: "The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component."
+    testString: "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('Items').props().quantity == 10 && getUserInput('index').replace(/ /g,'').includes('<Itemsquantity={10}/>'); })());"
 
 ```
 
@@ -51,9 +51,9 @@ class ShoppingCart extends React.Component {
     super(props);
   }
   render() {
-    { /* change code below this line */ }
+    { /* Change code below this line */ }
     return <Items />
-    { /* change code above this line */ }
+    { /* Change code above this line */ }
   }
 };
 ```
@@ -64,7 +64,7 @@ class ShoppingCart extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 ```
 
@@ -76,7 +76,7 @@ ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
 }
@@ -90,9 +90,9 @@ class ShoppingCart extends React.Component {
     super(props);
   }
   render() {
-    { /* change code below this line */ }
+    { /* Change code below this line */ }
     return <Items quantity = {10} />
-    { /* change code above this line */ }
+    { /* Change code above this line */ }
   }
 };
 ```

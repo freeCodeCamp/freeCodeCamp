@@ -1,0 +1,31 @@
+{
+  "name": "Data Analysis with Python Projects",
+  "isUpcomingChange": false,
+  "dashedName": "data-analysis-with-python-projects",
+  "order": 3,
+  "time": "150 hours",
+  "superBlock": "data-analysis-with-python",
+  "superOrder": 8,
+  "challengeOrder": [
+    [
+      "5e46f7e5ac417301a38fb928",
+      "Mean-Variance-Standard Deviation Calculator"
+    ],
+    [
+      "5e46f7e5ac417301a38fb929",
+      "Demographic Data Analyzer"
+    ],
+    [
+      "5e46f7f8ac417301a38fb92a",
+      "Medical Data Visualizer"
+    ],
+    [
+      "5e46f802ac417301a38fb92b",
+      "Page View Time Series Visualizer"
+    ],
+    [
+      "5e4f5c4b570f7e3a4949899f",
+      "Sea Level Predictor"
+    ]
+  ]
+}

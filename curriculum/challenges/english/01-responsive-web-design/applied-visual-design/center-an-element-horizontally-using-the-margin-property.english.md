@@ -3,6 +3,7 @@ id: 587d78a3367417b2b2512ad0
 title: Center an Element Horizontally Using the margin Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJqU4'
+forumTopicId: 301043
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Center the <code>div</code> on the page by adding a <code>margin</code> property
 ```yml
 tests:
   - text: The <code>div</code> should have a <code>margin</code> set to auto.
-    testString: assert(code.match(/margin:\s*?auto;/g), 'The <code>div</code> should have a <code>margin</code> set to auto.');
+    testString: assert(code.match(/margin:\s*?auto;/g));
 
 ```
 
@@ -55,8 +56,16 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = "div {background-color: blue; height: 100px; width: 100px; margin: auto;}"
+```html
+<style>
+  div {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+  }
+</style>
+<div></div>
 ```
 
 </section>

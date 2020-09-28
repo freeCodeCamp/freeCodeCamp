@@ -17,7 +17,10 @@ function prototyper(str) {
       if (prototypeRE.test(str)) {
         if (str.length > 9) {
           return prototyper(
-            str.trim().split('prototype').join('-prototype-')
+            str
+              .trim()
+              .split('prototype')
+              .join('-prototype-')
           );
         }
         return str;
@@ -26,15 +29,13 @@ function prototyper(str) {
     })
     .join(' ')
     .split(' ');
-  const noProto = formatted
-    .filter(removeProto)
-    .filter(x => !!x);
+  const noProto = formatted.filter(removeProto).filter(x => !!x);
   if (noProto.length === 2) {
-    const [ first, second ] = noProto;
+    const [first, second] = noProto;
     const secondLC = second.toLowerCase();
-    const finalSecond = preFormatted[secondLC] ?
-      preFormatted[secondLC] :
-      secondLC;
+    const finalSecond = preFormatted[secondLC]
+      ? preFormatted[secondLC]
+      : secondLC;
     return `${titleify(first)}.prototype.${finalSecond}`;
   }
   if (noProto.length === 1) {
@@ -43,7 +44,7 @@ function prototyper(str) {
         .toLowerCase()
         .split('.')
         .join('-')
-      );
+    );
   }
   return titleify(str, true);
 }
@@ -62,9 +63,7 @@ function titleify(str, triedPrototyper) {
       if (stopWords.some(x => x === word) && i !== 0) {
         return word;
       }
-      return preFormatted[word] ?
-        preFormatted[word] :
-        titleCase(word);
+      return preFormatted[word] ? preFormatted[word] : titleCase(word);
     })
     .join(' ');
 }

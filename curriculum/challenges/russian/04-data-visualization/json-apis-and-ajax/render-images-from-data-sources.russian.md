@@ -2,23 +2,27 @@
 id: 587d7fae367417b2b2512be6
 title: Render Images from Data Sources
 challengeType: 6
-videoUrl: ''
+forumTopicId: 18265
 localeTitle: Отображение изображений из источников данных
 ---
 
 ## Description
-<section id="description"> Последние несколько проблем показали, что каждый объект в массиве JSON содержит ключ <code>imageLink</code> со значением, которое является URL-адресом изображения кошки. Когда вы перебираете эти объекты, вы можете использовать это свойство <code>imageLink</code> для отображения этого изображения в элементе <code>img</code> . Вот код, который делает это: <code>html += &quot;&lt;img src = &#39;&quot; + val.imageLink + &quot;&#39; &quot; + &quot;alt=&#39;&quot; + val.altText + &quot;&#39;&gt;&quot;;</code> </section>
+<section id='description'>
+Последние несколько проблем показали, что каждый объект в массиве JSON содержит ключ <code>imageLink</code> со значением, которое является URL-адресом изображения кошки. Когда вы перебираете эти объекты, вы можете использовать это свойство <code>imageLink</code> для отображения этого изображения в элементе <code>img</code> . Вот код, который делает это: <code>html += &quot;&lt;img src = &#39;&quot; + val.imageLink + &quot;&#39; &quot; + &quot;alt=&#39;&quot; + val.altText + &quot;&#39;&gt;&quot;;</code>
+</section>
 
 ## Instructions
-<section id="instructions"> Добавьте код, чтобы использовать свойства <code>imageLink</code> и <code>altText</code> в теге <code>img</code> . </section>
+<section id='instructions'>
+Добавьте код, чтобы использовать свойства <code>imageLink</code> и <code>altText</code> в теге <code>img</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Вы должны использовать свойство <code>imageLink</code> для отображения изображений.
-    testString: 'assert(code.match(/val\.imageLink/g), "You should use the <code>imageLink</code> property to display the images.");'
+  - text: You should use the <code>imageLink</code> property to display the images.
+    testString: assert(code.match(/val\.imageLink/g));
 
 ```
 
@@ -79,7 +83,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>
@@ -92,14 +96,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

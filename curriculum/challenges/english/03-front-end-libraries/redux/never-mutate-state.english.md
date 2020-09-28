@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036158
 title: Never Mutate State
 challengeType: 6
-isRequired: false
+forumTopicId: 301445
 ---
 
 ## Description
@@ -23,11 +23,11 @@ There is a <code>store</code> and <code>reducer</code> in the code editor for ma
 ```yml
 tests:
   - text: The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.
-    testString: assert((function() { const todos = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code' ]; const initialState = store.getState(); return Array.isArray(initialState) && initialState.join(',') === todos.join(','); })(), 'The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.');
+    testString: assert((function() { const todos = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code' ]; const initialState = store.getState(); return Array.isArray(initialState) && initialState.join(',') === todos.join(','); })());
   - text: <code>addToDo</code> and <code>immutableReducer</code> both should be functions.
-    testString: assert(typeof addToDo === 'function' && typeof immutableReducer === 'function', '<code>addToDo</code> and <code>immutableReducer</code> both should be functions.');
+    testString: assert(typeof addToDo === 'function' && typeof immutableReducer === 'function');
   - text: Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.
-    testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo('__TEST__TO__DO__')); const finalState = store.getState(); const expectedState = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code', '__TEST__TO__DO__' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), 'Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.');
+    testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo('__TEST__TO__DO__')); const finalState = store.getState(); const expectedState = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code', '__TEST__TO__DO__' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })());
 
 ```
 
@@ -36,9 +36,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const ADD_TO_DO = 'ADD_TO_DO';
 
 // A list of strings representing tasks to do:
@@ -52,14 +52,13 @@ const todos = [
 const immutableReducer = (state = todos, action) => {
   switch(action.type) {
     case ADD_TO_DO:
-      // don't mutate state here or the tests will fail
+      // Don't mutate state here or the tests will fail
       return
     default:
       return state;
   }
 };
 
-// an example todo argument would be 'Learn React',
 const addToDo = (todo) => {
   return {
     type: ADD_TO_DO,
@@ -83,7 +82,6 @@ const store = Redux.createStore(immutableReducer);
 ```js
 const ADD_TO_DO = 'ADD_TO_DO';
 
-// A list of strings representing tasks to do:
 const todos = [
   'Go to the store',
   'Clean the house',
@@ -100,7 +98,6 @@ const immutableReducer = (state = todos, action) => {
   }
 };
 
-// an example todo argument would be 'Learn React',
 const addToDo = (todo) => {
   return {
     type: ADD_TO_DO,

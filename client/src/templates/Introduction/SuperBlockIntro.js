@@ -13,11 +13,14 @@ const propTypes = {
 };
 
 function SuperBlockIntroductionPage({ data: { markdownRemark } }) {
-  const { html, frontmatter: { superBlock } } = markdownRemark;
+  const {
+    html,
+    frontmatter: { superBlock }
+  } = markdownRemark;
   return (
     <Fragment>
       <Helmet>
-        <title>{superBlock} | freeCodeCamp</title>
+        <title>{superBlock} | freeCodeCamp.org</title>
       </Helmet>
       <FullWidthRow>
         <div

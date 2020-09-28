@@ -23,8 +23,13 @@ export const publicUserProps = [
   'isFrontEndLibsCert',
   'isHonest',
   'isInfosecQaCert',
+  'isQaCertV7',
+  'isInfosecCertV7',
   'isJsAlgoDataStructCert',
   'isRespWebDesignCert',
+  'isSciCompPyCertV7',
+  'isDataAnalysisPyCertV7',
+  'isMachineLearningPyCertV7',
   'linkedin',
   'location',
   'name',
@@ -51,15 +56,18 @@ export const userPropsForSession = [
   'completedProjectCount',
   'completedCertCount',
   'completedLegacyCertCount',
-  'acceptedPrivacyTerms'
+  'acceptedPrivacyTerms',
+  'donationEmails'
 ];
 
 export function normaliseUserFields(user) {
   const about = user.bio && !user.about ? user.bio : user.about;
   const picture = user.picture || addPlaceholderImage(user.username);
-  const twitter = user.twitter && isURL(user.twitter) ?
-    user.twitter :
-    user.twitter && `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
+  const twitter =
+    user.twitter && isURL(user.twitter)
+      ? user.twitter
+      : user.twitter &&
+        `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
   return { about, picture, twitter };
 }
 
@@ -69,7 +77,7 @@ export function getProgress(progressTimestamps, timezone = 'EST') {
     .reduce((data, timestamp) => {
       data[Math.floor(timestamp / 1000)] = 1;
       return data;
-  }, {});
+    }, {});
   const uniqueHours = prepUniqueDaysByHours(progressTimestamps, timezone);
   const streak = {
     longest: calcLongestStreak(uniqueHours, timezone),

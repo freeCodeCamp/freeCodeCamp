@@ -38,7 +38,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2 style="color: red">CatPhotoApp</h2>
+<h2 style="color: red;">CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
@@ -59,7 +59,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

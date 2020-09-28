@@ -6,6 +6,7 @@
         "loose": true,
         "modules": false,
         "useBuiltIns": "usage",
+        "corejs": 2,
         "shippedProposals": true,
         "targets": {
           "browsers": [">0.25%", "not dead"]
@@ -36,16 +37,37 @@
         "regenerator": true
       }
     ],
-    ["babel-plugin-transform-imports", {
+    [
+      "babel-plugin-transform-imports",
+      {
         "react-bootstrap": {
-            "transform": "react-bootstrap/lib/${member}",
-            "preventFullImport": true
+          "transform": "react-bootstrap/lib/${member}",
+          "preventFullImport": true
         },
         "lodash": {
-            "transform": "lodash/${member}",
-            "preventFullImport": true
+          "transform": "lodash/${member}",
+          "preventFullImport": true
         }
-    }
+      }
+    ],
+    [
+      "prismjs",
+      {
+        "languages": [
+          "clike",
+          "css",
+          "html",
+          "javascript",
+          "markup",
+          "mathml",
+          "python",
+          "svg",
+          "xml"
+        ],
+        "theme": "default",
+        "css": true,
+        "plugins": ["line-numbers"]
+      }
     ]
   ]
 }

@@ -1,0 +1,64 @@
+name: Lighthouse CI
+on:
+  push:
+    branches:
+      # Treat the below branches as special case for working on workflows
+      - actions-**
+  schedule:
+    # run this Action every 14 days
+    - cron: '0 * */14 * *'
+  workflow_dispatch:
+
+jobs:
+  lighthouseci:
+    name: Lighthouse CI
+    runs-on: ubuntu-18.04
+    services:
+      mongodb:
+        image: mongo:3.6.19
+        ports:
+          - 27017:27017
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Install Dependencies
+        run: |
+          npm install -g @lhci/cli@0.4
+          npm ci
+          npm run ensure-env
+
+      - name: Seed Database
+        run: npm run seed
+
+      - name: Build Packages
+        run: npm run build
+
+      - name: Run Lighthouse CI
+        run: lhci autorun

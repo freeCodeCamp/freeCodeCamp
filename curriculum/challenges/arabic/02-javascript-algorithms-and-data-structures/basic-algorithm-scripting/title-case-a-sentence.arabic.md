@@ -1,14 +1,13 @@
 ---
 id: ab6137d4e35944e21037b769
 title: Title Case a Sentence
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: العنوان حالة الجملة
 ---
 
 ## Description
-<section id="description"> قم بإرجاع السلسلة المتوفرة بالحرف الأول من كل كلمة بالأحرف الكبيرة. تأكد من أن بقية الكلمة في حالة الأحرف الصغيرة. لأغراض هذا التمرين ، يجب أيضًا تكبير الحروف الموصولة مثل &quot;the&quot; و &quot;of&quot;. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> قم بإرجاع السلسلة المتوفرة بالحرف الأول من كل كلمة بالأحرف الكبيرة. تأكد من أن بقية الكلمة في حالة الأحرف الصغيرة. لأغراض هذا التمرين ، يجب أيضًا تكبير الحروف الموصولة مثل &quot;the&quot; و &quot;of&quot;. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

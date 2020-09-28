@@ -2,23 +2,28 @@
 id: 5a90375238fddaf9a66b5d3b
 title: Align an Item Vertically using align-self
 challengeType: 0
-videoUrl: ''
-localeTitle: 'Выровнять элемент по вертикали, используя выравнивание'
+videoUrl: https://scrimba.com/p/pByETK/cmzd4fz
+forumTopicId: 301123
+localeTitle: Выровнять элемент по вертикали, используя выравнивание
 ---
 
 ## Description
-<section id="description"> Так же, как вы можете выровнять элемент по горизонтали, есть способ выровнять элемент по вертикали. Для этого вы используете свойство <code>align-self</code> для элемента. Это свойство принимает все те же значения, что и <code>justify-self</code> из последнего вызова. </section>
+<section id='description'>
+Так же, как вы можете выровнять элемент по горизонтали, есть способ выровнять элемент по вертикали. Для этого вы используете свойство <code>align-self</code> для элемента. Это свойство принимает все те же значения, что и <code>justify-self</code> из последнего вызова.
+</section>
 
 ## Instructions
-<section id="instructions"> Выровняйте элемент с элементом <code>item3</code> вертикально в <code>end</code> . </section>
+<section id='instructions'>
+Выровняйте элемент с элементом <code>item3</code> вертикально в <code>end</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>item3</code> должен иметь свойство <code>align-self</code> которое имеет значение <code>end</code> .
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.");'
+  - text: <code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.
+    testString: assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -69,14 +74,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".item3 {align-self: end;}"
 ```
+
 </section>

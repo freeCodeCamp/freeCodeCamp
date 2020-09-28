@@ -2,27 +2,34 @@
 id: bad87fee1348bd9aede08830
 title: Create a Form Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 创建表单元素
+videoUrl: 'https://scrimba.com/p/pVMPUv/cmQ3Kfa'
+forumTopicId: 16817
+localeTitle: 创建一个表单
 ---
 
 ## Description
-<section id="description">您可以使用纯HTML来构建实际将数据提交到服务器的Web表单。您可以通过在<code>form</code>元素上指定操作来执行此操作。例如： <code>&lt;form action=&quot;/url-where-you-want-to-submit-form-data&quot;&gt;&lt;/form&gt;</code> </section>
+<section id='description'>
+如果想使用 HTML 向服务器提交数据，可以给<code>form</code>添加<code>action</code>属性。
+例如:
+<code>&#60;form action="/url-where-you-want-to-submit-form-data"&#62;&#60;/form&#62;</code>
+</section>
 
 ## Instructions
-<section id="instructions">将文本字段嵌套在<code>form</code>元素中，并将<code>action=&quot;/submit-cat-photo&quot;</code>属性添加到表单元素中。 </section>
+<section id='instructions'>
+在<code>input</code>输入框外层创建一个<code>form</code>表单，然后设置表单的<code>action</code>属性为<code>"https://freecatphotoapp.com/submit-cat-photo"</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 将文本输入元素嵌套在<code>form</code>元素中。
-    testString: 'assert($("form") && $("form").children("input") && $("form").children("input").length > 0, "Nest your text input element within a <code>form</code> element.");'
-  - text: 确保您的<code>form</code>具有设置为<code>/submit-cat-photo</code>的<code>action</code>属性
-    testString: 'assert($("form").attr("action") === "/submit-cat-photo", "Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>");'
-  - text: 确保您的<code>form</code>元素具有格式良好的打开和关闭标记。
-    testString: 'assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length, "Make sure your <code>form</code> element has well-formed open and close tags.");'
+  - text: '在<code>input</code>输入框外层创建一个<code>form</code>表单。'
+    testString: assert($("form") && $("form").children("input") && $("form").children("input").length > 0);
+  - text: '确保表单的<code>action</code>属性为<code>"https://freecatphotoapp.com/submit-cat-photo"</code>。'
+    testString: assert($("form").attr("action") === "https://freecatphotoapp.com/submit-cat-photo");
+  - text: '确保表单有开始标记和结束标记。'
+    testString: assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length);
 
 ```
 
@@ -36,25 +43,24 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <p>Things cats love:</p>
+<p>点击查看更多<a href="#">猫咪图片</a>。</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  
+  <p>猫咪最喜欢的三件东西：</p>
   <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
+    <li>猫薄荷</li>
+    <li>激光笔</li>
+    <li>千层饼</li>
   </ul>
-  <p>Top 3 things cats hate:</p>
+  <p>猫咪最讨厌的三件东西：</p>
   <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
+    <li>跳蚤</li>
+    <li>打雷</li>
+    <li>同类</li>
   </ol>
-  <input type="text" placeholder="cat photo URL">
+  <input type="text" placeholder="猫咪图片地址">
 </main>
-
 ```
 
 </div>
@@ -65,8 +71,5 @@ tests:
 
 ## Solution
 <section id='solution'>
-
-```js
-// solution required
-```
 </section>
+              

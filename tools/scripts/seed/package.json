@@ -1,8 +1,9 @@
 {
-  "name": "@freecodecamp/database-seeding",
+  "name": "@freecodecamp/scripts-seed",
+  "private": true,
   "version": "0.0.1",
-  "description": "A script to seed challenges in to the database",
-  "main": "seedChallenges.js",
+  "description": "Database seed scripts",
+  "main": "NA",
   "scripts": {
     "test": "jest"
   },
@@ -17,11 +18,10 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "devDependencies": {
-    "@freecodecamp/curriculum": "0.0.0-next.4",
     "debug": "^4.0.1",
     "dotenv": "^6.0.0",
-    "jest": "^23.6.0",
-    "lodash": "^4.17.11",
-    "mongodb": "^3.1.6"
+    "jest": "^24.9.0",
+    "lodash": "^4.17.19",
+    "mongodb": "^3.5.5"
   }
 }

@@ -2,25 +2,34 @@
 id: 587d774c367417b2b2512a9d
 title: Know When Alt Text Should be Left Blank
 challengeType: 0
-videoUrl: ''
-localeTitle: 知道Alt文本应该留空
+videoUrl: 'https://scrimba.com/c/cM9P4t2'
+forumTopicId: 301019
+localeTitle: 知道 Alt 文本何时应该留空
 ---
 
 ## Description
-<section id="description">在上一个挑战中，您了解到在img标记上包含<code>alt</code>属性是必需的。但是，有时图像与已经描述它们的标题分组，或仅用于装饰。在这些情况下， <code>alt</code>文本可能看似多余或不必要。在已经使用文本内容解释图像或者没有为页面添加含义的情况下， <code>img</code>仍然需要<code>alt</code>属性，但可以将其设置为空字符串。这是一个例子： <code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>背景图片通常也属于“装饰”标签。但是，它们通常应用CSS规则，因此不是标记屏幕阅读器进程的一部分。 <strong>注意</strong> <br>对于带有标题的图像，您可能仍希望包含<code>alt</code>文本，因为它有助于搜索引擎对图像内容进行编目。 </section>
+<section id='description'>
+在上一个挑战中，我们了解到<code>img</code>标签必须有一个<code>alt</code>属性。在图片已经有了文字说明，或者仅仅为了美化页面的情况下，<code>alt</code>属性似乎有些多余。
+即便如此，我们仍然需要为<code>img</code>标签添加<code>alt</code>属性，这时可以把它设为空，例如：
+<code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>
+背景图片通常起装饰作用，而且含有 CSS 类，所以屏幕阅读器无法读取。
+<strong>注意：</strong><br>对于有标题的图片，我们依然需要添加<code>alt</code>属性，因为这样有助于搜索引擎记录图片内容。
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat已为其网站的博客部分编写了一个骨架页面。他计划在他的两篇文章之间用武士刀的装饰图像添加一个视觉中断。将<code>alt</code>属性添加到<code>img</code>标记并将其设置为空字符串。 （请注意，图像<code>src</code>不会链接到实际文件 - 不要担心显示屏中没有显示剑。） </section>
+<section id='instructions'>
+Camper Cat 已经大体写好了博客页面。他打算使用忍者刀图片作为两篇文章之间的分割线，并为图片添加一个空的<code>alt</code>属性（注意：这里<code>img</code>标签的<code>src</code>属性提供的链接是无效的，因此页面上可能不会显示图片，不用担心）。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>img</code>标签应该有一个<code>alt</code>属性。
-    testString: 'assert(!($("img").attr("alt") == undefined), "Your <code>img</code> tag should have an <code>alt</code> attribute.");'
-  - text: <code>alt</code>属性应设置为空字符串。
-    testString: 'assert($("img").attr("alt") == "", "The <code>alt</code> attribute should be set to an empty string.");'
+  - text: '你的<code>img</code>标签应该包含<code>alt</code>属性。'
+    testString: assert(!($('img').attr('alt') == undefined));
+  - text: '<code>alt</code>属性对应的值应该为空。'
+    testString: assert($('img').attr('alt') == '');
 
 ```
 
@@ -44,7 +53,6 @@ tests:
   <h2>Is Chuck Norris a Cat Person?</h2>
   <p>To Come...</p>
 </article>
-
 ```
 
 </div>
@@ -56,7 +64,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

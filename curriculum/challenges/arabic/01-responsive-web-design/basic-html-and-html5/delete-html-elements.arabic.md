@@ -6,22 +6,22 @@ videoUrl: ''
 localeTitle: احذف عناصر HTML
 ---
 
-## Description
+## الوصف
 <section id="description"> لا يمتلك هاتفنا مساحة عمودية كبيرة. دعونا نزيل العناصر غير الضرورية حتى نتمكن من البدء في بناء CatPhotoApp. </section>
 
-## Instructions
-<section id="instructions"> احذف عنصر <code>h1</code> حتى نتمكن من تبسيط طريقة العرض الخاصة بنا. </section>
+## الخطوات
+<section id="instructions"> احذف العنصر <code>h1</code> حتى نتمكن من تبسيط طريقة العرض. </section>
 
-## Tests
+## الاختبارات
 <section id='tests'>
 
 ```yml
 tests:
-  - text: احذف عنصر <code>h1</code> .
+  - text: احذف العنصر <code>h1</code> .
     testString: 'assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi), "Delete your <code>h1</code> element.");'
-  - text: اترك عنصر <code>h2</code> على الصفحة.
+  - text: اترك العنصر <code>h2</code> على الصفحة.
     testString: 'assert(code.match(/<h2>[\w\W]*<\/h2>/gi), "Leave your <code>h2</code> element on the page.");'
-  - text: اترك عنصر <code>p</code> الخاص بك على الصفحة.
+  - text: اترك العنصر <code>p</code> على الصفحة.
     testString: 'assert(code.match(/<p>[\w\W]*<\/p>/gi), "Leave your <code>p</code> element on the page.");'
 
 ```

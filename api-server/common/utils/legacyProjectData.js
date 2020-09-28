@@ -4,7 +4,7 @@ const legacyFrontEndProjects = {
     'bd7158d8c242eddfaeb5bd13',
     // build-a-random-quote-machine
     'bd7158d8c442eddfaeb5bd13',
-    // build-a-pomodoro-clock
+    // build-a-25-5-clock
     'bd7158d8c442eddfaeb5bd0f',
     // build-a-javascript-calculator
     'bd7158d8c442eddfaeb5bd17',
@@ -79,10 +79,30 @@ const legacyDataVisProjects = {
   superBlock: 'legacy-data-visualization'
 };
 
+const legacyInfosecQaProjects = {
+  challenges: [
+    // metric-imperial-converter
+    '587d8249367417b2b2512c41',
+    // issue-tracker
+    '587d8249367417b2b2512c42',
+    // personal-library
+    '587d824a367417b2b2512c43',
+    // stock-price-checker
+    '587d824a367417b2b2512c44',
+    // anonymous-message-board
+    '587d824a367417b2b2512c45'
+  ],
+  title: 'Legacy Information Security and Quality Assurance Projects',
+  // Keep the settings page "Show Certification" button
+  // pointing to information-security-and-quality-assurance
+  superBlock: 'information-security-and-quality-assurance'
+};
+
 const legacyProjects = [
   legacyFrontEndProjects,
   legacyBackEndProjects,
-  legacyDataVisProjects
+  legacyDataVisProjects,
+  legacyInfosecQaProjects
 ];
 
 export default legacyProjects;

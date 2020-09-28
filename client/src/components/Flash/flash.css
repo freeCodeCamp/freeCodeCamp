@@ -1,7 +1,31 @@
 .flash-message {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   flex-direction: row-reverse;
   margin-bottom: 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.flash-message div {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.flash-message-enter {
+  opacity: 0;
+}
+.flash-message-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.flash-message-exit {
+  opacity: 1;
+}
+.flash-message-exit-active {
+  opacity: 0;
+  transition: opacity 100ms;
 }

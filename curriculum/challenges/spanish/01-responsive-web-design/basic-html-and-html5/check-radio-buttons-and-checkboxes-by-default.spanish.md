@@ -7,19 +7,19 @@ localeTitle: Comprobar botones de radio y casillas de verificación por defecto
 ---
 
 ## Description
-<section id="description"> Puede configurar una casilla de verificación o un botón de opción para que se marque de forma predeterminada utilizando el atributo <code>checked</code> . Para hacer esto, simplemente agregue la palabra &quot;marcado&quot; al interior de un elemento de entrada. Por ejemplo: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
+<section id="description"> Puede configurar una casilla de verificación (<code>checkbox</code>) o un botón de opción (<code>radio button</code>) para que se marque de forma predeterminada utilizando el atributo <code>checked</code>. Para hacer esto, simplemente agregue la palabra &quot;checked&quot; al interior de un elemento <code>input</code>. Por ejemplo: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Configure el primero de sus <code>radio buttons</code> y el primero de sus <code>checkboxes</code> de <code>checkboxes</code> para que ambos estén marcados de forma predeterminada. </section>
+<section id="instructions"> Configure el primero de sus <code>radio buttons</code> y el primero de sus <code>checkboxes</code> para que ambos estén marcados de forma predeterminada. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Su primer botón de radio en su formulario debe ser verificado por defecto.
+  - text: El primer <code>radio button</code> en su formulario debe estar marcado por defecto.
     testString: 'assert($("input[type="radio"]").prop("checked"), "Your first radio button on your form should be checked by default.");'
-  - text: Su primera casilla de verificación en su formulario debe estar marcada por defecto.
+  - text: El primer <code>checkbox</code> en su formulario debe estar marcado por defecto.
     testString: 'assert($("input[type="checkbox"]").prop("checked"), "Your first checkbox on your form should be checked by default.");'
 
 ```
@@ -50,7 +50,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality"> Loving</label>

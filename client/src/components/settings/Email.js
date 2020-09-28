@@ -100,7 +100,7 @@ class EmailSettings extends Component {
       return { state: 'success', message: '' };
     } else {
       return {
-        state: 'warning',
+        state: 'error',
         message:
           'We could not validate your email correctly, ' +
           'please ensure it is correct'
@@ -189,7 +189,7 @@ class EmailSettings extends Component {
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
-              >
+            >
               <ControlLabel>New Email</ControlLabel>
               <FormControl
                 onChange={this.createHandleEmailFormChange('newEmail')}
@@ -203,7 +203,7 @@ class EmailSettings extends Component {
             <FormGroup
               controlId='confirm-email'
               validationState={confirmEmailValidation}
-              >
+            >
               <ControlLabel>Confirm New Email</ControlLabel>
               <FormControl
                 onChange={this.createHandleEmailFormChange('confirmNewEmail')}

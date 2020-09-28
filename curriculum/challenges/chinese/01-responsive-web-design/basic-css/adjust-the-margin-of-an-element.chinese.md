@@ -2,24 +2,30 @@
 id: bad87fee1348bd9aedf08822
 title: Adjust the Margin of an Element
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/adjust-the-margin-of-an-element'
-videoUrl: ''
-localeTitle: 调整元素的边距
+videoUrl: 'https://scrimba.com/c/cVJarHW'
+forumTopicId: 16654
+localeTitle: 调整元素的外边距
 ---
 
 ## Description
-<section id="description">元素的<code>margin</code>控制元素<code>border</code>与周围元素之间的空间量。在这里，我们可以看到蓝色框和红色框嵌套在黄色框中。请注意，红色框的<code>margin</code>大于蓝色框，使其看起来更小。当您增加蓝框的<code>margin</code> ，它将增加其边框与周围元素之间的距离。 </section>
+<section id='description'>
+<code>margin（外边距）</code>控制元素的边框与其他元素之间的距离。
+在这里，我们可以看到蓝色框和红色框都在黄色框里。请注意，红色框的<code>margin</code>值要比蓝色框的大，让它看起来比蓝色框要小。
+当你增加蓝色的<code>margin</code>值，它会增加元素边框到其他周围元素的距离。
+</section>
 
 ## Instructions
-<section id="instructions">更改蓝色框的<code>margin</code>以匹配红色框的<code>margin</code> 。 </section>
+<section id='instructions'>
+蓝色的框<code>margin</code>的值要跟红色框的一样大小。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>blue-box</code>类应该给出<code>20px</code>的<code>margin</code>元素。
-    testString: 'assert($(".blue-box").css("margin-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.");'
+  - text: '<code>blue-box</code> class 的<code>margin</code>值应为<code>20px</code>。'
+    testString: assert($(".blue-box").css("margin-top") === "20px");
 
 ```
 
@@ -48,7 +54,7 @@ tests:
     background-color: yellow;
     padding: 10px;
   }
-
+  
   .red-box {
     background-color: crimson;
     color: #fff;
@@ -69,7 +75,6 @@ tests:
   <h5 class="box red-box">padding</h5>
   <h5 class="box blue-box">padding</h5>
 </div>
-
 ```
 
 </div>
@@ -81,7 +86,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
-</section>
+
+/section>
+              

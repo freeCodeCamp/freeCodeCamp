@@ -33,15 +33,15 @@ tests:
 
 ```js
 /**
- * A long process to prepare tea.
- * @return {string} A cup of tea.
+ * Un largo proceso para preparar té.
+ * @return {string} Una taza de té.
  **/
 const prepareTea = () => 'greenTea';
 
 /**
- * Get given number of cups of tea.
- * @param {number} numOfCups Number of required cups of tea.
- * @return {Array<string>} Given amount of tea cups.
+ * Obtener número dado de tazas de té.
+ * @param {number} numOfCups Número de tazas de té requeridas.Number of required cups of tea.
+ * @return {Array<string>} Cantidad dada de tazas de té.
  **/
 const getTea = (numOfCups) => {
   const teaCups = [];

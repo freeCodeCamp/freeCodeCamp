@@ -7,7 +7,7 @@ localeTitle: توليد الكسور العشوائية مع جافا سكريب
 ---
 
 ## Description
-<section id="description"> الأرقام العشوائية مفيدة لإنشاء سلوك عشوائي. يحتوي JavaScript على دالة <code>Math.random()</code> التي تنشئ رقمًا عشريًا عشوائيًا بين <code>0</code> (شامل) وليس تمامًا <code>1</code> (خاص). وبالتالي ، يمكن أن يقوم <code>Math.random()</code> بإرجاع <code>0</code> ولكن لا يُرجع أبدًا <strong>ملاحظة</strong> <code>1</code> <br> مثل <a href="storing-values-with-the-assignment-operator" target="_blank">تخزين القيم مع عامل التشغيل المتساوي</a> ، سيتم حل جميع استدعاءات الدوال قبل تنفيذ عملية <code>return</code> ، حتى نتمكن من <code>return</code> قيمة الدالة <code>Math.random()</code> . </section>
+<section id="description"> الأرقام العشوائية مفيدة لإنشاء سلوك عشوائي. يحتوي JavaScript على دالة <code>Math.random()</code> التي تنشئ رقمًا عشريًا عشوائيًا بين <code>0</code> (شامل) وليس تمامًا <code>1</code> (خاص). وبالتالي ، يمكن أن يقوم <code>Math.random()</code> بإرجاع <code>0</code> ولكن لا يُرجع أبدًا <strong>ملاحظة</strong> <code>1</code> <br> مثل <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">تخزين القيم مع عامل التشغيل المتساوي</a> ، سيتم حل جميع استدعاءات الدوال قبل تنفيذ عملية <code>return</code> ، حتى نتمكن من <code>return</code> قيمة الدالة <code>Math.random()</code> . </section>
 
 ## Instructions
 <section id="instructions"> قم بتغيير <code>randomFraction</code> لإرجاع رقم عشوائي بدلاً من إرجاع <code>0</code> . </section>

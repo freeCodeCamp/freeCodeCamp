@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403616a
 title: Pass an Array as Props
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Passar uma matriz como adereços
 ---

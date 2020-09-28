@@ -34,11 +34,11 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Deep Thoughts with Master Camper Cat</h1>
+    <h1>Pensamientos Profundos con el Maestro Camper Cat</h1>
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>¡Suscríbete aquí para recibir los posts del blog de Camper Cat por email!</p>
 
 
       <label>Email:</label>
@@ -49,18 +49,18 @@ tests:
     </form>
   </section>
   <article>
-    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>
-    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+    <h2>Los Archivos Garfield: ¿Lasagna como Combustible de Entrenamiento?</h2>
+    <p>Internet está repleto de diversas opiniones sobre los paradigmas nutricionales, desde catnip paleo hasta limpieza de bolas de pelos. Pero pongamos ahora nuestra atención en un combustible del bienestar físico muchas veces olvidado, y examinemos la trifecta proteína-carbohidrato-NOM que es la lasagna... </p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>
-    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <h2>Venciendo a tu Rival: el Punto Rojo es Nuestro!</h2>
+    <p>Felinos de todo el mundo vienen dándole batalla a uno de los rivales más persistentes. Este némesis colorado combina un sigilo ingenioso con la velocidad del rayo. Pero anímense, compañeros luchadores, nuestra victoria está cerca...</p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>
-    <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <h2>Es Chuck Norris un Hombre Gato?</h2>
+    <p>Chuck Norris es ampliamente reconocido como el primer artista marcial del planeta, y es una completa coincidencia que todo aquel que no opina lo mismo desaparece misteriosamente poco tiempo después. Pero la verdadera pregunta es: es un hombre gato?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -77,6 +77,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

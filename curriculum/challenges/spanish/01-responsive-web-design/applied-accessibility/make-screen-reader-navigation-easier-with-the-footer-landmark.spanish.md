@@ -7,7 +7,7 @@ localeTitle: Facilita la navegación por el lector de pantalla con el pie de pá
 ---
 
 ## Description
-<section id="description"> Al igual que el <code>header</code> y la <code>nav</code> , el elemento de <code>footer</code> tiene una característica de hito incorporada que permite que los dispositivos de asistencia naveguen rápidamente hacia él. Se utiliza principalmente para contener información de derechos de autor o enlaces a documentos relacionados que generalmente se encuentran en la parte inferior de una página. </section>
+<section id="description"> Al igual que el <code>header</code> y el <code>nav</code> , el elemento de <code>footer</code> tiene incorporado un punto de referencia que permite que los dispositivos de asistencia naveguen rápidamente hacia él. Se utiliza principalmente para contener información de derechos de autor o enlaces a documentos relacionados que generalmente se encuentran en la parte inferior de una página. </section>
 
 ## Instructions
 <section id="instructions"> La página de entrenamiento de Camper Cat está progresando bien. Cambie el <code>div</code> que usó para ajustar su información de copyright en la parte inferior de la página a un elemento de <code>footer</code> . </section>
@@ -36,35 +36,35 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Training</h1>
+    <h1>Entrenamiento</h1>
     <nav>
       <ul>
-        <li><a href="#stealth">Stealth &amp; Agility</a></li>
-        <li><a href="#combat">Combat</a></li>
-        <li><a href="#weapons">Weapons</a></li>
+        <li><a href="#stealth">Sigilo & Agilidad</a></li>
+        <li><a href="#combat">Combate</a></li>
+        <li><a href="#weapons">Armas</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section id="stealth">
-      <h2>Stealth &amp; Agility Training</h2>
-      <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
-      <article><h3>No training is NP-complete without parkour</h3></article>
+      <h2>Entrenamiento de Agilidad y Sigilo</h2>
+      <article><h3>Escale el follaje rápidamente usando un enfoque de árbol de expansión mínimo</h3></article>
+      <article><h3>Ningún entrenamiento está completo sin parkour.</h3></article>
     </section>
     <section id="combat">
-      <h2>Combat Training</h2>
-      <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
-      <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>
+      <h2>Entrenamiento de Combate</h2>
+      <article><h3>Despacha enemigos múltiples con tácticas multiproceso</h3></article>
+      <article><h3>Adiós mundo: 5 maneras probadas de noquear a un oponente</h3></article>
     </section>
     <section id="weapons">
-      <h2>Weapons Training</h2>
-      <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
-      <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+      <h2>Entrenamiento de Armas</h2>
+      <article><h3>Espadas: la mejor herramienta para dividir y conquistar literalmente</h3></article>
+      <article><h3>¿Amplitud o profundidad en entrenamiento de armas múltiples?</h3></article>
     </section>
   </main>
 
 
-  <div>&copy; 2018 Camper Cat</div>
+  <div>© 2018 Camper Cat</div>
 
 
 </body>
@@ -81,6 +81,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

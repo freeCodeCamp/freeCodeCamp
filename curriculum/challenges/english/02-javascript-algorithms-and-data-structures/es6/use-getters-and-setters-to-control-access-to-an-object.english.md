@@ -2,28 +2,49 @@
 id: 587d7b8c367417b2b2512b54
 title: Use getters and setters to Control Access to an Object
 challengeType: 1
+forumTopicId: 301220
 ---
 
 ## Description
 <section id='description'>
-You can obtain values from an object, and set a value of a property within an object.
+You can obtain values from an object and set the value of a property within an object.
 These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.
 Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
-Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.
-<blockquote>class Book {<br>&nbsp;&nbsp;constructor(author) {<br>&nbsp;&nbsp;&nbsp;&nbsp;this._author = author;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;// getter<br>&nbsp;&nbsp;get writer(){<br>&nbsp;&nbsp;&nbsp;&nbsp;return this._author;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;// setter<br>&nbsp;&nbsp;set writer(updatedAuthor){<br>&nbsp;&nbsp;&nbsp;&nbsp;this._author = updatedAuthor;<br>&nbsp;&nbsp;}<br>}<br>const lol = new Book('anonymous');<br>console.log(lol.writer);&nbsp;&nbsp;// anonymous<br>lol.writer = 'wut';<br>console.log(lol.writer);&nbsp;&nbsp;// wut</blockquote>
-Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.
-Getters and setters are important, because they hide internal implementation details.
+Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.<br><br>
+
+```js
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('anonymous');
+console.log(novel.writer);  // anonymous
+novel.writer = 'newAuthor';
+console.log(novel.writer);  // newAuthor
+```
+
+Notice the syntax used to invoke the getter and setter. They do not even look like functions.
+Getters and setters are important because they hide internal implementation details.
+<strong>Note:</strong> It is convention to precede the name of a private variable with an underscore (<code>_</code>). However, the practice itself does not make a variable private.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Fahrenheit temperature.
-Now create <code>getter</code> and <code>setter</code> in the class, to obtain the temperature in Celsius scale.
-Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale
-Note
-When you implement this, you would be tracking the temperature inside the class in one scale - either Fahrenheit or Celsius.
-This is the power of getter or setter - you are creating an API for another user, who would get the correct result, no matter which one you track.
-In other words, you are abstracting implementation details from the consumer.
+Use the <code>class</code> keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+Now create a <code>getter</code> and a <code>setter</code> in the class, to obtain the temperature in Celsius.
+Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where <code>F</code> is the value of temperature in Fahrenheit, and <code>C</code> is the value of the same temperature in Celsius.
+<strong>Note:</strong> When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+This is the power of a getter and a setter. You are creating an API for another user, who can get the correct result regardless of which one you track.
+In other words, you are abstracting implementation details from the user.
 </section>
 
 ## Tests
@@ -32,11 +53,17 @@ In other words, you are abstracting implementation details from the consumer.
 ```yml
 tests:
   - text: <code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.
-    testString: assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.');
-  - text: <code>class</code> keyword was used.
-    testString: getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');
-  - text: <code>Thermostat</code> can be instantiated.
-    testString: assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, '<code>Thermostat</code> can be instantiated.');
+    testString: assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function');
+  - text: <code>class</code> keyword should be used.
+    testString: assert(code.match(/class/g));
+  - text: <code>Thermostat</code> should be able to be instantiated.
+    testString: assert((() => {const t = new Thermostat(32);return typeof t === 'object' && t.temperature === 0;})());
+  - text: A <code>getter</code> should be defined.
+    testString: assert((() => {const desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');return !!desc && typeof desc.get === 'function';})());
+  - text: A <code>setter</code> should  be defined.
+    testString: assert((() => {const desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');return !!desc && typeof desc.set === 'function';})());
+  - text: Calling the <code>setter</code> should set the temperature.
+    testString: assert((() => {const t = new Thermostat(32); t.temperature = 26;return t.temperature !== 0;})());
 
 ```
 
@@ -48,18 +75,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
+// Only change code below this line
 
-  /* Alter code above this line */
-  return Thermostat;
-}
-const Thermostat = makeClass();
-const thermos = new Thermostat(76); // setting in Fahrenheit scale
-let temp = thermos.temperature; // 24.44 in C
+// Only change code above this line
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
 thermos.temperature = 26;
-temp = thermos.temperature; // 26 in C
+temp = thermos.temperature; // 26 in Celsius
 ```
 
 </div>
@@ -72,6 +95,22 @@ temp = thermos.temperature; // 26 in C
 <section id='solution'>
 
 ```js
-// solution required
+class Thermostat {
+  constructor(fahrenheit) {
+    this._tempInCelsius = 5/9 * (fahrenheit - 32);
+  }
+  get temperature(){
+    return this._tempInCelsius;
+  }
+  set temperature(newTemp){
+    this._tempInCelsius = newTemp;
+  }
+}
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius
 ```
+
 </section>

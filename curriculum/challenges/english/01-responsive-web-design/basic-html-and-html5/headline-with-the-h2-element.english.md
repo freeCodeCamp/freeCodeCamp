@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf0887a
 title: Headline with the h2 Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
+forumTopicId: 18196
 ---
 
 ## Description
@@ -14,7 +15,7 @@ This element tells the browser about the structure of your website. <code>h1</co
 
 ## Instructions
 <section id='instructions'>
-Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML <code>element</code> below your "Hello World" <code>h1</code> element.
+Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML element below your "Hello World" <code>h1</code> element.
 </section>
 
 ## Tests
@@ -22,14 +23,16 @@ Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML <code
 
 ```yml
 tests:
-  - text: Create an <code>h2</code> element.
-    testString: assert(($("h2").length > 0), 'Create an <code>h2</code> element.');
-  - text: Make sure your <code>h2</code> element has a closing tag.
-    testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, 'Make sure your <code>h2</code> element has a closing tag.');
-  - text: Your <code>h2</code> element should have the text "CatPhotoApp".
-    testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), 'Your <code>h2</code> element should have the text "CatPhotoApp".');
-  - text: Your <code>h1</code> element should have the text "Hello World".
-    testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), 'Your <code>h1</code> element should have the text "Hello World".');
+  - text: You should create an <code>h2</code> element.
+    testString: assert(($("h2").length > 0));
+  - text: Your <code>h2</code> element should have a closing tag.
+    testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length);
+  - text: Your <code>h2</code> element should have the text <code>CatPhotoApp</code>.
+    testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()));
+  - text: Your <code>h1</code> element should have the text <code>Hello World</code>.
+    testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()));
+  - text: Your <code>h1</code> element should be before your <code>h2</code> element.
+    testString: assert(code.match(/<h1>\s*?.*?\s*?<\/h1>\s*<h2>\s*?.*?\s*?<\/h2>/gi));
 
 ```
 
@@ -51,9 +54,14 @@ tests:
 </section>
 
 ## Solution
+
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
 ```
-</section>
+
+</section>  
+
+

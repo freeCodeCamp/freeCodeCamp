@@ -7,7 +7,7 @@ localeTitle: Utilice consultas de medios para crear diseños receptivos
 ---
 
 ## Description
-<section id="description"> CSS Grid puede ser una manera fácil de hacer que su sitio sea más receptivo al usar consultas de medios para reorganizar las áreas de la cuadrícula, cambiar las dimensiones de una cuadrícula y reorganizar la ubicación de los elementos. En la vista previa, cuando el ancho de la ventana gráfica es de 300 px o más, el número de columnas cambia de 1 a 2. El área de publicidad ocupa la columna izquierda por completo. </section>
+<section id="description"> CSS Grid puede ser una manera fácil de hacer que su sitio sea más responsivo al usar 'media queries' para reorganizar las áreas de la cuadrícula, cambiar las dimensiones de una cuadrícula y reorganizar la ubicación de los elementos. En la vista previa, cuando el ancho de la ventana gráfica es de 300 px o más, el número de columnas cambia de 1 a 2. El área de publicidad ocupa la columna izquierda por completo. </section>
 
 ## Instructions
 <section id="instructions"> Cuando el ancho de la ventana <code>400px</code> sea ​​de <code>400px</code> o más, haga que el área del encabezado ocupe la fila superior completamente y el área del pie de página ocupe la fila inferior completamente. </section>
@@ -110,7 +110,74 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .item1 {
+    background: LightSkyBlue;
+    grid-area: header;
+  }
+
+  .item2 {
+    background: LightSalmon;
+    grid-area: advert;
+  }
+
+  .item3 {
+    background: PaleTurquoise;
+    grid-area: content;
+  }
+
+  .item4 {
+    background: lightpink;
+    grid-area: footer;
+  }
+
+  .container {
+    font-size: 1.5em;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas:
+      "header"
+      "advert"
+      "content"
+      "footer";
+  }
+
+  @media (min-width: 300px){
+    .container{
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "advert header"
+        "advert content"
+        "advert footer";
+    }
+  }
+
+  @media (min-width: 400px){
+    .container{
+      /* change the code below this line */
+
+      grid-template-areas:
+        "header header"
+        "advert content"
+        "footer footer";
+
+    /* change the code above this line */
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="item1">header</div>
+  <div class="item2">advert</div>
+  <div class="item3">content</div>
+  <div class="item4">footer</div>
+</div>
 ```
 </section>

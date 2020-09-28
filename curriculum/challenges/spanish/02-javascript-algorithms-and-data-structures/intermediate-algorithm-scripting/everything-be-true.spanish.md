@@ -1,14 +1,13 @@
 ---
 id: a10d2431ad0c6a099a4b8b52
 title: Everything Be True
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Todo sea verdad
 ---
 
 ## Description
-<section id="description"> Compruebe si el predicado (segundo argumento) es <dfn>verdadero</dfn> en todos los elementos de una colección (primer argumento). En otras palabras, se le da una colección de objetos de matriz. El predicado <code>pre</code> será una propiedad de objeto y debe devolver <code>true</code> si su valor es <code>truthy</code> . De lo contrario, devuelve <code>false</code> . En JavaScript, los valores de <code>truthy</code> son valores que se convierten en <code>true</code> cuando se evalúan en un contexto booleano. Recuerde, puede acceder a las propiedades del objeto a través de la notación de puntos o la notación <code>[]</code> . Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
+<section id="description"> Compruebe si el predicado (segundo argumento) es <dfn>verdadero</dfn> en todos los elementos de una colección (primer argumento). En otras palabras, se le da una colección de objetos de matriz. El predicado <code>pre</code> será una propiedad de objeto y debe devolver <code>true</code> si su valor es <code>truthy</code> . De lo contrario, devuelve <code>false</code> . En JavaScript, los valores de <code>truthy</code> son valores que se convierten en <code>true</code> cuando se evalúan en un contexto booleano. Recuerde, puede acceder a las propiedades del objeto a través de la notación de puntos o la notación <code>[]</code> . Recuerda usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

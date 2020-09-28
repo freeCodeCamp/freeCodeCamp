@@ -11,61 +11,78 @@ import {
 } from '../utils/publicUserProps';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
+import { removeCookies } from '../utils/getSetAccessToken';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectTo(homeLocation);
 
-module.exports = function bootUser(app) {
+function bootUser(app) {
   const api = app.loopback.Router();
+
+  const getSessionUser = createReadSessionUser(app);
+  const postReportUserProfile = createPostReportUserProfile(app);
+  const postDeleteAccount = createPostDeleteAccount(app);
 
   api.get('/account', sendNonUserToHome, getAccount);
   api.get('/account/unlink/:social', sendNonUserToHome, getUnlinkSocial);
-  api.get('/user/get-session-user', readSessionUser);
+  api.get('/user/get-session-user', getSessionUser);
 
-  api.post('/account/delete', ifNoUser401, createPostDeleteAccount(app));
+  api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
-  api.post('/user/report-user/', ifNoUser401, createPostReportUserProfile(app));
+  api.post('/user/report-user/', ifNoUser401, postReportUserProfile);
 
-  app.use('/internal', api);
-};
+  app.use(api);
+}
 
-function readSessionUser(req, res, next) {
-  const queryUser = req.user;
+function createReadSessionUser(app) {
+  const { Donation } = app.models;
 
-  const source =
-    queryUser &&
-    Observable.forkJoin(
-      queryUser.getCompletedChallenges$(),
-      queryUser.getPoints$(),
-      (completedChallenges, progressTimestamps) => ({
-        completedChallenges,
-        progress: getProgress(progressTimestamps, queryUser.timezone)
-      })
-    );
-  Observable.if(
-    () => !queryUser,
-    Observable.of({ user: {}, result: '' }),
-    Observable.defer(() => source)
-      .map(({ completedChallenges, progress }) => ({
-        ...queryUser.toJSON(),
-        ...progress,
-        completedChallenges: completedChallenges.map(fixCompletedChallengeItem)
-      }))
-      .map(user => ({
-        user: {
-          [user.username]: {
-            ...pick(user, userPropsForSession),
-            isEmailVerified: !!user.emailVerified,
-            isGithub: !!user.githubProfile,
-            isLinkedIn: !!user.linkedin,
-            isTwitter: !!user.twitter,
-            isWebsite: !!user.website,
-            ...normaliseUserFields(user)
-          }
-        },
-        result: user.username
-      }))
-  ).subscribe(user => res.json(user), next);
+  return function getSessionUser(req, res, next) {
+    const queryUser = req.user;
+    const source =
+      queryUser &&
+      Observable.forkJoin(
+        queryUser.getCompletedChallenges$(),
+        queryUser.getPoints$(),
+        Donation.getCurrentActiveDonationCount$(),
+        (completedChallenges, progressTimestamps, activeDonations) => ({
+          activeDonations,
+          completedChallenges,
+          progress: getProgress(progressTimestamps, queryUser.timezone)
+        })
+      );
+    Observable.if(
+      () => !queryUser,
+      Observable.of({ user: {}, result: '' }),
+      Observable.defer(() => source)
+        .map(({ activeDonations, completedChallenges, progress }) => ({
+          user: {
+            ...queryUser.toJSON(),
+            ...progress,
+            completedChallenges: completedChallenges.map(
+              fixCompletedChallengeItem
+            )
+          },
+          sessionMeta: { activeDonations }
+        }))
+        .map(({ user, sessionMeta }) => ({
+          user: {
+            [user.username]: {
+              ...pick(user, userPropsForSession),
+              isEmailVerified: !!user.emailVerified,
+              isGithub: !!user.githubProfile,
+              isLinkedIn: !!user.linkedin,
+              isTwitter: !!user.twitter,
+              isWebsite: !!user.website,
+              ...normaliseUserFields(user),
+              joinDate: user.id.getTimestamp()
+            }
+          },
+          sessionMeta,
+          result: user.username
+        }))
+    ).subscribe(user => res.json(user), next);
+  };
 }
 
 function getAccount(req, res) {
@@ -120,25 +137,24 @@ function getUnlinkSocial(req, res, next) {
 
       const updateData = { [social]: null };
 
-      return user.update$(updateData).subscribe(() => {
+      return user.updateAttributes(updateData, err => {
+        if (err) {
+          return next(err);
+        }
         log(`${social} has been unlinked successfully`);
 
         req.flash('info', `You've successfully unlinked your ${social}.`);
-        return res.redirect('/' + username);
-      }, next);
+        return res.redirectWithFlash(`${homeLocation}/${username}`);
+      });
     });
   });
 }
 
 function postResetProgress(req, res, next) {
   const { user } = req;
-  user.updateAttributes(
+  return user.updateAttributes(
     {
-      progressTimestamps: [
-        {
-          timestamp: Date.now()
-        }
-      ],
+      progressTimestamps: [Date.now()],
       currentChallengeId: '',
       isRespWebDesignCert: false,
       is2018DataVisCert: false,
@@ -146,21 +162,23 @@ function postResetProgress(req, res, next) {
       isJsAlgoDataStructCert: false,
       isApisMicroservicesCert: false,
       isInfosecQaCert: false,
+      isQaCertV7: false,
+      isInfosecCertV7: false,
       is2018FullStackCert: false,
       isFrontEndCert: false,
       isBackEndCert: false,
       isDataVisCert: false,
       isFullStackCert: false,
+      isSciCompPyCertV7: false,
+      isDataAnalysisPyCertV7: false,
+      isMachineLearningPyCertV7: false,
       completedChallenges: []
     },
     function(err) {
       if (err) {
         return next(err);
       }
-      return res.status(200).json({
-        messageType: 'success',
-        message: 'You have successfully reset your progress'
-      });
+      return res.sendStatus(200);
     }
   );
 }
@@ -168,21 +186,13 @@ function postResetProgress(req, res, next) {
 function createPostDeleteAccount(app) {
   const { User } = app.models;
   return function postDeleteAccount(req, res, next) {
-    User.destroyById(req.user.id, function(err) {
+    return User.destroyById(req.user.id, function(err) {
       if (err) {
         return next(err);
       }
       req.logout();
-      req.flash('success', 'You have successfully deleted your account.');
-      const config = {
-        signed: !!req.signedCookies,
-        domain: process.env.COOKIE_DOMAIN || 'localhost'
-      };
-      res.clearCookie('jwt_access_token', config);
-      res.clearCookie('access_token', config);
-      res.clearCookie('userId', config);
-      res.clearCookie('_csrf', config);
-      return res.status(200).end();
+      removeCookies(req, res);
+      return res.sendStatus(200);
     });
   };
 }
@@ -200,17 +210,16 @@ function createPostReportUserProfile(app) {
     if (!username || !report || report === '') {
       return res.json({
         type: 'danger',
-        message:
-          'Oops, something is not right please re-check your submission.'
+        message: 'Check if you have provided a username and a report'
       });
     }
     return Email.send$(
       {
         type: 'email',
-        to: 'team@freecodecamp.org',
+        to: 'support@freecodecamp.org',
         cc: user.email,
         from: 'team@freecodecamp.org',
-        subject: 'Abuse Report : Reporting ' + username + "'s profile.",
+        subject: `Abuse Report : Reporting ${username}'s profile.`,
         text: dedent(`
         Hello Team,\n
         This is to report the profile of ${username}.\n
@@ -238,3 +247,4 @@ function createPostReportUserProfile(app) {
     );
   };
 }
+export default bootUser;

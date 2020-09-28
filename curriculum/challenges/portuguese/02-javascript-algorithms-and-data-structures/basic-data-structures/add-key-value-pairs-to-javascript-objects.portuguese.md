@@ -62,6 +62,8 @@ console.log(foods);
 <section id='solution'>
 
 ```js
-// solution required
+foods.bananas = 13;
+foods.grapes = 35;
+foods.strawberries = 27;
 ```
 </section>

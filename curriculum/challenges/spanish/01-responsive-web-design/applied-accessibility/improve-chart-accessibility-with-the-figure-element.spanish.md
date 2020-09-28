@@ -42,41 +42,41 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Training</h1>
+    <h1>Entrenamiento</h1>
     <nav>
       <ul>
-        <li><a href="#stealth">Stealth &amp; Agility</a></li>
-        <li><a href="#combat">Combat</a></li>
-        <li><a href="#weapons">Weapons</a></li>
+        <li><a href="#stealth">Sigilo &amp; Agilidad</a></li>
+        <li><a href="#combat">Combate</a></li>
+        <li><a href="#weapons">Armas</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section>
 
-      <!-- Add your code below this line -->
+      <!-- Agrega tu código debajo de esta línea -->
       <div>
-        <!-- Stacked bar chart will go here -->
+        <!-- El gráfico de barras irá aquí -->
         <br>
-        <p>Breakdown per week of time to spend training in stealth, combat, and weapons.</p>
+        <p>Desglose por semana del tiempo destinado a entrenar sigilo, combate y armas.</p>
       </div>
-      <!-- Add your code above this line -->
+      <!-- Agrega tu código por encima de esta línea -->
 
     </section>
     <section id="stealth">
-      <h2>Stealth &amp; Agility Training</h2>
-      <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
-      <article><h3>No training is NP-complete without parkour</h3></article>
+      <h2>Entrenamiento Sigilo &amp; Agilidad</h2>
+      <article><h3>Trepa el follaje rápidamente usando la técnica del árbol recubridor mínimo (Minimum Spanning Tree)</h3></article>
+      <article><h3>Ningún entrenamiento es NP-completo sin parkour</h3></article>
     </section>
     <section id="combat">
-      <h2>Combat Training</h2>
-      <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
-      <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>
+      <h2>Entrenamiento de Combate</h2>
+      <article><h3>Despacha múltiples enemigos con tácticas multi-hilo</h3></article>
+      <article><h3>Adiós, mundo: 5 maneras comprobadas de aniquilar a tu oponente</h3></article>
     </section>
     <section id="weapons">
-      <h2>Weapons Training</h2>
-      <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
-      <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+      <h2>Entrenamiento de Armas</h2>
+      <article><h3>Espadas: la mejor herramienta para literalmente dividir y triunfar</h3></article>
+      <article><h3>Breadth-first (amplitud) o depth-first (profundidad) en entrenamiento multi-arma?</h3></article>
     </section>
   </main>
   <footer>&copy; 2018 Camper Cat</footer>
@@ -94,6 +94,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

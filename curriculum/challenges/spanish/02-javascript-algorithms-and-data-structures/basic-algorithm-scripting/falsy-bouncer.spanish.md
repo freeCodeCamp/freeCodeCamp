@@ -1,14 +1,13 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
 title: Falsy Bouncer
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Falsy Bouncer
 ---
 
 ## Description
-<section id="description"> Eliminar todos los valores falsos de una matriz. Los valores de <code>false</code> en JavaScript son <code>false</code> , <code>null</code> , <code>0</code> , <code>&quot;&quot;</code> , <code>undefined</code> y <code>NaN</code> . Sugerencia: intente convertir cada valor a un booleano. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
+<section id="description"> Eliminar todos los valores falsos de una matriz. Los valores de <code>false</code> en JavaScript son <code>false</code> , <code>null</code> , <code>0</code> , <code>&quot;&quot;</code> , <code>undefined</code> y <code>NaN</code> . Sugerencia: intente convertir cada valor a un booleano. Recuerda usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

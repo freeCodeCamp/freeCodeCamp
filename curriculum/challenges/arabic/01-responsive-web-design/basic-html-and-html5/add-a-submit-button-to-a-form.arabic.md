@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedd08830
 title: Add a Submit Button to a Form
 challengeType: 0
-guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/add-a-submit-button-to-a-form'
 videoUrl: ''
 localeTitle: إضافة زر إرسال إلى نموذج
 ---
@@ -55,7 +54,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>

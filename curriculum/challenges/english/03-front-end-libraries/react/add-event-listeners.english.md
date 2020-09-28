@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403617e
 title: Add Event Listeners
 challengeType: 6
-isRequired: false
+forumTopicId: 301377
 ---
 
 ## Description
@@ -23,13 +23,13 @@ Then, in <code>componentWillUnmount()</code>, remove this same event listener. Y
 ```yml
 tests:
   - text: <code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').children().find('h1').length === 1; })(), '<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.');
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').children().find('h1').length === 1; })());
   - text: A keydown listener should be attached to the document in <code>componentDidMount</code>.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp('document\.addEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress').test(didMountString); })(), 'A keydown listener should be attached to the document in <code>componentDidMount</code>.');
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp('document\.addEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress').test(didMountString); })());
   - text: The keydown listener should be removed from the document in <code>componentWillUnmount</code>.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp('document\.removeEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress').test(willUnmountString); })(), 'The keydown listener should be removed from the document in <code>componentWillUnmount</code>.');
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp('document\.removeEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress').test(willUnmountString); })());
   - text: Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state(''message''); const beforeText = mockedComponent.find(''h1'').text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state(''message''), text: mockedComponent.find(''h1'').text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text, ''Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state(''message''); const beforeText = mockedComponent.find(''h1'').text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state(''message''), text: mockedComponent.find(''h1'').text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text); }; '
 
 ```
 
@@ -50,18 +50,18 @@ class MyComponent extends React.Component {
     this.handleEnter = this.handleEnter.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
-  // change code below this line
+  // Change code below this line
   componentDidMount() {
 
   }
   componentWillUnmount() {
 
   }
-  // change code above this line
+  // Change code above this line
   handleEnter() {
-    this.setState({
-      message: this.state.message + 'You pressed the enter key! '
-    });
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
   }
   handleKeyPress(event) {
     if (event.keyCode === 13) {
@@ -84,7 +84,7 @@ class MyComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
@@ -96,7 +96,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -106,19 +106,19 @@ class MyComponent extends React.Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleEnter = this.handleEnter.bind(this);  }
   componentDidMount() {
-    // change code below this line
+    // Change code below this line
     document.addEventListener('keydown', this.handleKeyPress);
-    // change code above this line
+    // Change code above this line
   }
   componentWillUnmount() {
-    // change code below this line
+    // Change code below this line
     document.removeEventListener('keydown', this.handleKeyPress);
-    // change code above this line
+    // Change code above this line
   }
   handleEnter() {
-    this.setState({
-      message: this.state.message + 'You pressed the enter key! '
-    });
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
   }
   handleKeyPress(event) {
     if (event.keyCode === 13) {

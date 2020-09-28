@@ -1,0 +1,163 @@
+.fcc_searchBar {
+  flex-grow: 1;
+  padding: 0 10px;
+  max-height: 33px;
+  font-family: 'Lato', sans-serif;
+}
+
+.fcc_searchBar strong,
+.fcc_searchBar a:hover {
+  color: var(--gray-00);
+}
+
+.ais-SearchBox-reset {
+  display: none;
+}
+
+.ais-SearchBox-input {
+  padding: 0 10px 0 30px;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 6px;
+  height: 26px;
+}
+
+.ais-SearchBox-submit {
+  left: 0.3rem;
+  top: 59.5%;
+}
+
+.fcc_searchBar .ais-SearchBox-input,
+.fcc_searchBar .ais-Hits {
+  z-index: 100;
+  background-color: var(--gray-75);
+  color: var(--gray-00);
+}
+
+.fcc_searchBar .ais-Hits {
+  top: 70px;
+  width: calc(100vw - 30px);
+  left: 15px;
+}
+
+.fcc_searchBar .ais-SearchBox-form {
+  margin-bottom: 0;
+  display: flex;
+  position: absolute;
+  top: var(--header-height);
+  right: 5px;
+}
+
+/* hits */
+.fcc_searchBar .ais-Highlight-highlighted {
+  background-color: transparent;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.ais-Highlight-nonHighlighted {
+  font-weight: 300;
+}
+
+.fcc_hits_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.fcc_suggestion_item {
+  display: block;
+  padding: 5px;
+  color: var(--gray-00) !important;
+  text-decoration: none;
+}
+
+.fcc_suggestion_item [class^='ais-'] {
+  font-size: 17px;
+}
+
+.fcc_suggestion_item:hover {
+  cursor: pointer;
+}
+
+.no-hits-footer.fcc_suggestion_item:hover {
+  cursor: default;
+}
+
+.fcc_sr_only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.ais-Hits-item {
+  background-color: var(--gray-75);
+}
+
+/* Hit selected with arrow keys or mouse */
+.selected {
+  background-color: var(--blue-dark);
+}
+
+/* Override for rule in global.css to prevent
+multiple highlighted hits with the mouse
+and arrow keys */
+.fcc_suggestion_item:focus,
+.fcc_suggestion_item:hover {
+  background-color: transparent;
+}
+
+/* Dropdown footer */
+.fcc_suggestion_footer {
+  padding: 6.5px 8px 8px;
+}
+
+.fcc_suggestion_footer .hit-name .ais-Highlight {
+  font-weight: bold;
+}
+
+.no-hits-footer {
+  border-top: 0px;
+  font-weight: 300;
+}
+
+.ais-SearchBox-input {
+  width: calc(100vw - 30px);
+}
+
+.fcc_searchBar .ais-SearchBox-form {
+  display: flex;
+  position: absolute;
+  top: var(--header-height);
+  right: 15px;
+}
+
+@media (min-width: 1000px) {
+  .ais-SearchBox-input {
+    width: 100%;
+    max-width: 500px;
+  }
+  .fcc_searchBar {
+    position: relative;
+    max-width: 520px;
+  }
+  .fcc_searchBar .ais-Hits {
+    top: auto;
+    width: calc(100% - 20px);
+    max-width: 500px;
+    left: 10px;
+  }
+  .fcc_searchBar .ais-SearchBox-form {
+    display: flex;
+    position: static;
+    top: auto;
+    right: 15px;
+  }
+  .ais-SearchBox-submit {
+    left: 0.85rem;
+  }
+}

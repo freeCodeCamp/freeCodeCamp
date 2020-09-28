@@ -2,13 +2,12 @@
 id: 587d824a367417b2b2512c43
 title: Personal Library
 challengeType: 4
-isRequired: true
 videoUrl: ''
 localeTitle: مكتبة شخصية
 ---
 
 ## Description
-<section id="description"> إنشاء تطبيق جافا سكريبت كامل المكدس يشبه وظيفيًا هذا: <a href="https://spark-cathedral.glitch.me/" target="_blank">https://spark-cathedral.glitch.me/</a> . سيشركك العمل في هذا المشروع في كتابة شفرتك على Glitch في مشروعنا المبدئي. بعد الانتهاء من هذا المشروع ، يمكنك نسخ عنوان URL الخاص بالشبكة العامة (إلى الصفحة الرئيسية لتطبيقك) في هذه الشاشة لاختباره! اختياريًا ، يمكنك اختيار كتابة مشروعك على نظام أساسي آخر ولكن يجب أن يكون مرئيًا بشكل عام لاختبارنا. بدء هذا المشروع على خلل باستخدام <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-library/">هذا الرابط</a> أو استنساخ <a href="https://github.com/freeCodeCamp/boilerplate-project-library/">هذا المستودع</a> على GitHub! إذا كنت تستخدم Glitch ، فتذكر حفظ الرابط إلى مشروعك في مكان آمن! </section>
+<section id="description"> إنشاء تطبيق جافا سكريبت كامل المكدس يشبه وظيفيًا هذا: <a href="https://fuzzy-mink.glitch.me/" target="_blank">https://fuzzy-mink.glitch.me/</a> . سيشركك العمل في هذا المشروع في كتابة شفرتك على Glitch في مشروعنا المبدئي. بعد الانتهاء من هذا المشروع ، يمكنك نسخ عنوان URL الخاص بالشبكة العامة (إلى الصفحة الرئيسية لتطبيقك) في هذه الشاشة لاختباره! اختياريًا ، يمكنك اختيار كتابة مشروعك على نظام أساسي آخر ولكن يجب أن يكون مرئيًا بشكل عام لاختبارنا. بدء هذا المشروع على خلل باستخدام <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-library/">هذا الرابط</a> أو استنساخ <a href="https://github.com/freeCodeCamp/boilerplate-project-library/">هذا المستودع</a> على GitHub! إذا كنت تستخدم Glitch ، فتذكر حفظ الرابط إلى مشروعك في مكان آمن! </section>
 
 ## Instructions
 <section id="instructions">

@@ -1,16 +1,20 @@
 ---
 id: a3bfc1673c0526e06d3ac698
 title: Sum All Primes
-isRequired: true
 challengeType: 5
+forumTopicId: 16085
 ---
 
 ## Description
 <section id='description'>
-Sum all the prime numbers up to and including the provided number.
-A prime number is defined as a number greater than one and having only two divisors, one and itself. For example, 2 is a prime number because it's only divisible by one and two.
-The provided number may not be a prime.
-Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
+
+A <dfn>prime number</dfn> is a whole number greater than 1 with exactly two divisors: 1 and
+itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In
+contrast, 4 is not prime since it is divisible by 1, 2 and 4.
+
+Rewrite `sumPrimes` so it returns the sum of all prime numbers that are less than or
+equal to num.
+
 </section>
 
 ## Instructions
@@ -24,11 +28,11 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>sumPrimes(10)</code> should return a number.
-    testString: assert.deepEqual(typeof sumPrimes(10), 'number', '<code>sumPrimes(10)</code> should return a number.');
+    testString: assert.deepEqual(typeof sumPrimes(10), 'number');
   - text: <code>sumPrimes(10)</code> should return 17.
-    testString: assert.deepEqual(sumPrimes(10), 17, '<code>sumPrimes(10)</code> should return 17.');
+    testString: assert.deepEqual(sumPrimes(10), 17);
   - text: <code>sumPrimes(977)</code> should return 73156.
-    testString: assert.deepEqual(sumPrimes(977), 73156, '<code>sumPrimes(977)</code> should return 73156.');
+    testString: assert.deepEqual(sumPrimes(977), 73156);
 
 ```
 

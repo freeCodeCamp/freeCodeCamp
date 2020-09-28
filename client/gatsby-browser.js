@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 
 import { createStore } from './src/redux/createStore';
 import AppMountNotifier from './src/components/AppMountNotifier';
-import GuideNavigationContextProvider from './src/contexts/GuideNavigationContext';
+import layoutSelector from './utils/gatsby/layoutSelector';
 
 const store = createStore();
 
 export const wrapRootElement = ({ element }) => {
   return (
     <Provider store={store}>
-      <GuideNavigationContextProvider>
-        <AppMountNotifier render={() => element} />
-      </GuideNavigationContextProvider>
+      <AppMountNotifier render={() => element} />
     </Provider>
   );
 };
@@ -21,3 +19,7 @@ export const wrapRootElement = ({ element }) => {
 wrapRootElement.propTypes = {
   element: PropTypes.any
 };
+
+export const wrapPageElement = layoutSelector;
+
+export const disableCorePrefetching = () => true;

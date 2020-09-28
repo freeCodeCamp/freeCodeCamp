@@ -7,7 +7,7 @@ localeTitle: Ajustar o estado de foco de uma marca de âncora
 ---
 
 ## Description
-<section id="description"> Este desafio vai tocar no uso de pseudo-classes. Uma pseudo-classe é uma palavra-chave que pode ser adicionada aos seletores para selecionar um estado específico do elemento. Por exemplo, o estilo de uma marca de âncora pode ser alterado para seu estado de foco usando o seletor de <code>:hover</code> . Aqui está o CSS para mudar a <code>color</code> da tag âncora para vermelho durante o estado de foco: <blockquote> a: hover { <br> cor vermelha; <br> } </blockquote></section>
+<section id="description"> Este desafio vai tocar no uso de pseudo-classes. Uma pseudo-classe é uma palavra-chave que pode ser adicionada aos seletores para selecionar um estado específico do elemento. Por exemplo, o estilo de uma marca de âncora pode ser alterado para seu estado de foco usando o seletor de <code>:hover</code> . Aqui está o CSS para mudar a <code>color</code> da tag âncora para vermelho durante o estado de foco: <blockquote> a: hover { <br> color: red; <br> } </blockquote></section>
 
 ## Instructions
 <section id="instructions"> O editor de código tem uma regra CSS para estilizar todos <code>a</code> preto tags. Adicionar uma regra para que quando o usuário passa sobre a <code>a</code> tag, a <code>color</code> é azul. </section>
@@ -40,7 +40,7 @@ tests:
 
 
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 
 ```
 

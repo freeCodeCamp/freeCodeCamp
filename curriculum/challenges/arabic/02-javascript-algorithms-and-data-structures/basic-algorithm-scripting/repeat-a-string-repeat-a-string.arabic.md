@@ -1,14 +1,13 @@
 ---
 id: afcc8d540bea9ea2669306b6
 title: Repeat a String Repeat a String
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: كرر سلسلة يكرر سلسلة
 ---
 
 ## Description
-<section id="description"> كرر <code>str</code> سلسلة معينة (الوسيطة الأولى) لـ <code>num</code> times (الوسيطة الثانية). إرجاع سلسلة فارغة إذا لم تكن <code>num</code> رقم موجب. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> كرر <code>str</code> سلسلة معينة (الوسيطة الأولى) لـ <code>num</code> times (الوسيطة الثانية). إرجاع سلسلة فارغة إذا لم تكن <code>num</code> رقم موجب. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

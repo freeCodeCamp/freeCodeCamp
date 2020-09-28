@@ -2,29 +2,36 @@
 id: bad87fee1348bd9aedf08830
 title: Add Placeholder Text to a Text Field
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/add-placeholder-text-to-a-text-field'
-videoUrl: ''
-localeTitle: 将占位符文本添加到文本字段
+videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
+forumTopicId: 16647
+localeTitle: 给输入框添加占位符文本
 ---
 
 ## Description
-<section id="description">占位符文本是在用户输入任何内容之前在<code>input</code>元素中显示的内容。您可以像这样创建占位符文本： <code>&lt;input type=&quot;text&quot; placeholder=&quot;this is placeholder text&quot;&gt;</code> </section>
+<section id='description'>
+<code>Placeholder</code>占位符是用户在<code>input</code>输入框中输入任何东西前的预定义文本。
+你可以像这样创建一个占位符：
+<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code>
+</section>
 
 ## Instructions
-<section id="instructions">将文本<code>input</code>的<code>placeholder</code>值设置为“cat photo URL”。 </section>
+<section id='instructions'>
+把<code>input</code>输入框的<code>placeholder</code>占位符文本设置为 “猫咪图片地址”。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 将<code>placeholder</code>属性添加到现有文本<code>input</code>元素。
-    testString: 'assert($("input[placeholder]").length > 0, "Add a <code>placeholder</code> attribute to the existing text <code>input</code> element.");'
-  - text: 将占位符属性的值设置为“cat photo URL”。
-    testString: 'assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/cat\s+photo\s+URL/gi), "Set the value of your placeholder attribute to "cat photo URL".");'
-  - text: 完成的<code>input</code>元素应该具有有效的语法。
-    testString: 'assert($("input[type=text]").length > 0 && code.match(/<input((\s+\w+(\s*=\s*(?:".*?"|".*?"|[\^"">\s]+))?)+\s*|\s*)\/?>/gi), "The finished <code>input</code> element should have valid syntax.");'
-
+  - text: 给现有的<code>input</code>输入框添加一个<code>placeholder</code>属性。
+    testString: assert($("input[placeholder]").length > 0);
+  - text: 设置<code>placeholder</code>属性的值为 ”猫咪图片地址“。
+    testString: assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/猫咪图片地址/gi));
+  - text: 完整的<code>input</code>元素应有一个结束标签
+    testString: assert(!code.match(/<input.*\/?>.*<\/input>/gi));
+  - text: <code>input</code>输入框的语法必须正确。
+    testString: assert($("input[type=text]").length > 0);
 ```
 
 </section>
@@ -37,25 +44,24 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <p>Things cats love:</p>
+<p>点击查看更多<a href="#">猫咪图片</a>。</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  
+  <p>猫咪最喜欢的三件东西：</p>
   <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
+    <li>猫薄荷</li>
+    <li>激光笔</li>
+    <li>千层饼</li>
   </ul>
-  <p>Top 3 things cats hate:</p>
+  <p>猫咪最讨厌的三件东西：</p>
   <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
+    <li>跳蚤</li>
+    <li>打雷</li>
+    <li>同类</li>
   </ol>
   <input type="text">
 </main>
-
 ```
 
 </div>
@@ -66,8 +72,5 @@ tests:
 
 ## Solution
 <section id='solution'>
-
-```js
-// solution required
-```
 </section>
+              

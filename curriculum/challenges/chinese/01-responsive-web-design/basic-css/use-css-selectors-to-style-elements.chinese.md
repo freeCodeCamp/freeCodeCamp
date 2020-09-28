@@ -2,31 +2,56 @@
 id: bad87fee1348bd9aedf08805
 title: Use CSS Selectors to Style Elements
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用CSS选择器设置样式元素
+videoUrl: 'https://scrimba.com/c/cJKMBT2'
+forumTopicId: 18349
+localeTitle: 使用元素选择器来设置元素的样式
 ---
 
 ## Description
-<section id="description">使用CSS，您可以使用数百种CSS <code>properties</code>来更改元素在页面上的显示方式。当您输入<code>&lt;h2 style=&quot;color: red&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> ，您使用<code>inline CSS</code> （代表<code>Cascading Style Sheets</code>对单个<code>h2</code>元素进行<code>Cascading Style Sheets</code> 。这是指定元素样式的一种方法，但有一种更好的方法来应用<code>CSS</code> 。在代码的顶部，创建一个<code>style</code>块，如下所示： <blockquote> &lt;风格&gt; <br> &lt;/样式&gt; </blockquote>在该样式块中，您可以为所有<code>h2</code>元素创建<code>CSS selector</code> 。例如，如果您希望所有<code>h2</code>元素都是红色，则可以添加如下所示的样式规则： <blockquote> &lt;风格&gt; <br> h2 {color：red;} <br> &lt;/样式&gt; </blockquote>请注意，在每个元素的样式规则周围同时打开和关闭花括号（ <code>{</code>和<code>}</code> ）非常重要。您还需要确保元素的样式定义位于开始和结束样式标记之间。最后，请务必在每个元素的样式规则的末尾添加分号。 </section>
+<section id='description'>
+在 CSS 中，页面样式的属性有几百个，但常用的不过几十个。
+通过行内样式<code>&#60;h2 style="color: red;"&#62;CatPhotoApp&#60;/h2&#62;</code>，就可以修改<code>h2</code>元素的颜色为红色。
+当我们只需要改变元素的某个样式时，行内样式最简单直观。当我们需要同时改变元素的很多样式时，<code>层叠样式表</code>往往是一个更好的选择。
+在代码的顶部，创建一个<code>style</code>声明区域，如下方所示：
+
+```html
+<style>
+</style>
+```
+
+在<code>style</code>样式声明区域内，可以创建一个<code>元素选择器</code>，应用于所有的<code>h2</code>元素。例如，如果你想所有<code>h2</code>元素变成红色，可以添加下方的样式规则：
+
+```html
+<style>
+  h2 {
+    color: red;
+  }
+</style>
+```
+
+注意，在每个元素的样式声明区域里，左右花括号（<code>{</code> 和 <code>}</code>）一定要写全。你需要确保所有样式规则位于花括号之间，并且每条样式规则都以分号结束。
+</section>
 
 ## Instructions
-<section id="instructions">删除<code>h2</code>元素的样式属性，而不是创建CSS <code>style</code>块。添加必要的CSS以将所有<code>h2</code>元素变为蓝色。 </section>
+<section id='instructions'>
+删除<code>h2</code>元素的行内样式，然后创建<code>style</code>样式声明区域，最后添加 CSS 样式规则使<code>h2</code>元素变为蓝色。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 从<code>h2</code>元素中删除style属性。
-    testString: 'assert(!$("h2").attr("style"), "Remove the style attribute from your <code>h2</code> element.");'
-  - text: 创建<code>style</code>元素。
-    testString: 'assert($("style") && $("style").length > 1, "Create a <code>style</code> element.");'
-  - text: 你的<code>h2</code>元素应该是蓝色的。
-    testString: 'assert($("h2").css("color") === "rgb(0, 0, 255)", "Your <code>h2</code> element should be blue.");'
-  - text: 确保样式表<code>h2</code>声明对分号和右括号有效。
-    testString: 'assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g), "Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.");'
-  - text: 确保所有<code>style</code>元素都有效并具有结束标记。
-    testString: 'assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length, "Make sure all your <code>style</code> elements are valid and have a closing tag.");'
+  - text: 删除<code>h2</code>元素的行内样式。
+    testString: assert(!$("h2").attr("style"));
+  - text: 创建一个<code>style</code>样式声明区域。
+    testString: assert($("style") && $("style").length >= 1);
+  - text: <code>h2</code>元素颜色应为蓝色。
+    testString: assert($("h2").css("color") === "rgb(0, 0, 255)");
+  - text: 确保<code>h2</code>选择器的内容被花括号所围绕，并且样式规则以分号结束。
+    testString: assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g));
+  - text: 所有<code>style</code>应该是有效的且有一个结束标签。
+    testString: assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length);
 
 ```
 
@@ -38,38 +63,37 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2 style="color: red">CatPhotoApp</h2>
+<h2 style="color: red;">CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
+  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  
   <div>
-    <p>Things cats love:</p>
+    <p>猫咪最喜欢的三件东西：</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>猫薄荷</li>
+      <li>激光笔</li>
+      <li>千层饼</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>猫咪最讨厌的三件东西：</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>跳蚤</li>
+      <li>打雷</li>
+      <li>同类</li>
     </ol>
   </div>
-
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+  
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor">室内</label>
+    <label><input type="radio" name="indoor-outdoor">室外</label><br>
+    <label><input type="checkbox" name="personality">忠诚</label>
+    <label><input type="checkbox" name="personality">懒惰</label>
+    <label><input type="checkbox" name="personality">积极</label><br>
+    <input type="text" placeholder="猫咪图片地址" required>
+    <button type="submit">提交</button>
   </form>
 </main>
-
 ```
 
 </div>
@@ -81,7 +105,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

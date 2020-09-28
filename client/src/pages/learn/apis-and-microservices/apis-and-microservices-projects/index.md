@@ -14,4 +14,4 @@ In this section you get the chance to:
  * Build a Exercise Tracker
  * Build a File Metadata Microservice
 
-By the end of this, you would have 5 microservices under your belt that you can show off to friends, family, employers, etc. Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
+By the end of this, you would have 5 microservices under your belt that you can show off to friends, family, employers, etc. Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514) method if you get stuck.

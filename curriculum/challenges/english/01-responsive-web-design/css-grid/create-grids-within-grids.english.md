@@ -2,7 +2,7 @@
 id: 5a94fe8569fb03452672e464
 title: Create Grids within Grids
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
+forumTopicId: 301128
 ---
 
 ## Description
@@ -22,9 +22,9 @@ Turn the element with the <code>item3</code> class into a grid with two columns 
 ```yml
 tests:
   - text: <code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.
-    testString: assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi), '<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.');
+    testString: assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi));
   - text: <code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.
-    testString: assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), '<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.');
+    testString: assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -64,10 +64,10 @@ tests:
   .item3 {
     background: PaleTurquoise;
     grid-area: content;
-    /* enter your code below this line */
+    /* Only change code below this line */
 
 
-    /* enter your code above this line */
+    /* Only change code above this line */
   }
 
   .item4 {
@@ -106,8 +106,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".item3 {grid-template-columns: auto 1fr; display: grid;}"
+```html
+<style>.item3 {grid-template-columns: auto 1fr; display: grid;}</style>
 ```
 
 </section>

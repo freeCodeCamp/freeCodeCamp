@@ -1,10 +1,32 @@
 .video-modal {
+  height: calc(100vh - 20px);
+}
+
+@media (min-width: 768px) {
+  .video-modal {
     width: 90%;
+    height: calc(100vh - 60px);
+  }
+}
+
+.video-modal .modal-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-modal-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .video-modal iframe {
-    width: 100%;
-    height: 70vh;
-    margin-bottom: 0px;
+  width: 100%;
+  margin-bottom: 0;
+  flex-grow: 1;
 }
 
+.video-modal p {
+  margin-bottom: 0;
+}

@@ -2,19 +2,32 @@
 id: cf1111c1c11feddfaeb1bdef
 title: Iterate with JavaScript While Loops
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c8QbnCM'
+forumTopicId: 18220
 ---
 
 ## Description
 <section id='description'>
 You can run the same code multiple times by using a loop.
-The first type of loop we will learn is called a "<code>while</code>" loop because it runs "while" a specified condition is true and stops once that condition is no longer true.
-<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>}</blockquote>
+The first type of loop we will learn is called a <code>while</code> loop because it runs "while" a specified condition is true and stops once that condition is no longer true.
+
+```js
+var ourArray = [];
+var i = 0;
+while(i < 5) {
+  ourArray.push(i);
+  i++;
+}
+```
+
+In the code example above, the <code>while</code> loop will execute 5 times and append the numbers 0 through 4 to <code>ourArray</code>.
+
 Let's try getting a while loop to work by pushing values to an array.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop.
+Add the numbers 5 through 0 (inclusive) in descending order to <code>myArray</code> using a <code>while</code> loop.
 </section>
 
 ## Tests
@@ -23,9 +36,9 @@ Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> 
 ```yml
 tests:
   - text: You should be using a <code>while</code> loop for this.
-    testString: assert(code.match(/while/g), 'You should be using a <code>while</code> loop for this.');
-  - text: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.
-    testString: assert.deepEqual(myArray, [0,1,2,3,4], '<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');
+    testString: assert(code.match(/while/g));
+  - text: <code>myArray</code> should equal <code>[5,4,3,2,1,0]</code>.
+    testString: assert.deepEqual(myArray, [5,4,3,2,1,0]);
 
 ```
 
@@ -40,7 +53,7 @@ tests:
 // Setup
 var myArray = [];
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```
@@ -65,10 +78,10 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 var myArray = [];
-var i = 0;
-while(i < 5) {
+var i = 5;
+while(i >= 0) {
   myArray.push(i);
-  i++;
+  i--;
 }
 ```
 

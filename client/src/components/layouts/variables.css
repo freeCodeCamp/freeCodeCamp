@@ -1,0 +1,67 @@
+:root {
+  --theme-color: #0a0a23;
+  --yellow-gold: #ffbf00;
+  --gray-00: #ffffff;
+  --gray-05: #f5f6f7;
+  --gray-10: #dfdfe2;
+  --gray-15: #d0d0d5;
+  --gray-45: #858591;
+  --gray-75: #3b3b4f;
+  --gray-80: #2a2a40;
+  --gray-85: #1b1b32;
+  --gray-90: #0a0a23;
+  --purple-light: #dbb8ff;
+  --purple-dark: #5a01a7;
+  --yellow-light: #f1be32;
+  --yellow-dark: #4d3800;
+  --blue-light: #99c9ff;
+  --blue-dark: #002ead;
+  --green-light: #acd157;
+  --green-mid: green;
+  --purple-mid: darkviolet;
+  --green-dark: #00471b;
+  --red-light: #ffadad;
+  --red-dark: #850000;
+  --love-light: #f8577c;
+  --love-dark: #f82153;
+  --editor-background-light: #fffffe;
+  --editor-background-dark: #2a2b40;
+}
+
+.dark-palette {
+  --primary-color: var(--gray-00);
+  --secondary-color: var(--gray-05);
+  --tertiary-color: var(--gray-10);
+  --quaternary-color: var(--gray-15);
+  --quaternary-background: var(--gray-75);
+  --tertiary-background: var(--gray-80);
+  --secondary-background: var(--gray-85);
+  --primary-background: var(--gray-90);
+  --highlight-color: var(--blue-light);
+  --highlight-background: var(--blue-dark);
+  --success-color: var(--green-light);
+  --success-background: var(--green-dark);
+  --danger-color: var(--red-light);
+  --danger-background: var(--red-dark);
+  --love-color: var(--love-light);
+  --editor-background: var(--editor-background-dark);
+}
+
+.light-palette {
+  --primary-color: var(--gray-90);
+  --secondary-color: var(--gray-85);
+  --tertiary-color: var(--gray-80);
+  --quaternary-color: var(--gray-75);
+  --quaternary-background: var(--gray-15);
+  --tertiary-background: var(--gray-10);
+  --secondary-background: var(--gray-05);
+  --primary-background: var(--gray-00);
+  --highlight-color: var(--blue-dark);
+  --highlight-background: var(--blue-light);
+  --success-color: var(--green-dark);
+  --success-background: var(--green-light);
+  --danger-color: var(--red-dark);
+  --danger-background: var(--red-light);
+  --love-color: var(--love-dark);
+  --editor-background: var(--editor-background-light);
+}

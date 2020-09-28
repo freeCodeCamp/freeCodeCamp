@@ -20,6 +20,7 @@ export const MarkdownRemark = PropTypes.shape({
 
 export const ChallengeNode = PropTypes.shape({
   block: PropTypes.string,
+  challengeOrder: PropTypes.number,
   challengeType: PropTypes.number,
   dashedName: PropTypes.string,
   description: PropTypes.string,
@@ -31,15 +32,13 @@ export const ChallengeNode = PropTypes.shape({
     slug: PropTypes.string,
     blockName: PropTypes.string
   }),
+  forumTopicId: PropTypes.number,
   guideUrl: PropTypes.string,
   head: PropTypes.arrayOf(PropTypes.string),
-  challengeOrder: PropTypes.number,
   instructions: PropTypes.string,
-  isBeta: PropTypes.bool,
   isComingSoon: PropTypes.bool,
   isLocked: PropTypes.bool,
   isPrivate: PropTypes.bool,
-  isRequired: PropTypes.bool,
   name: PropTypes.string,
   order: PropTypes.number,
   required: PropTypes.arrayOf(

@@ -3,14 +3,14 @@ id: bad87fee1348bd9aedf08817
 title: Make Dead Links Using the Hash Symbol
 challengeType: 0
 videoUrl: ''
-localeTitle: Haz enlaces muertos usando el símbolo de hash
+localeTitle: Realizar enlaces muertos usando el símbolo de hash
 ---
 
 ## Description
-<section id="description"> A veces desea agregar <code>a</code> elementos a su sitio web antes de saber donde van a unir. Esto también es útil cuando está cambiando el comportamiento de un enlace usando <code>JavaScript</code> , que conoceremos más adelante. </section>
+<section id="description"> A veces desea agregar elementos<code>a</code> a su sitio web antes de saber a donde lo va a llevar. Esto también es útil cuando está cambiando el comportamiento de un enlace usando <code>JavaScript</code> , que aprenderemos más adelante. </section>
 
 ## Instructions
-<section id="instructions"> El valor actual del atributo <code>href</code> es un enlace que apunta a &quot;http://freecatphotoapp.com&quot;. Reemplace el valor del atributo <code>href</code> con un <code>#</code> , también conocido como símbolo de hash, para crear un enlace muerto. Por ejemplo: <code>href=&quot;#&quot;</code> </section>
+<section id="instructions"> El valor actual del atributo <code>href</code> es un enlace que apunta a &quot;https://freecatphotoapp.com&quot;. Reemplace el valor del atributo <code>href</code> con un <code>#</code> , también conocido como símbolo de hash, para crear un enlace muerto. Por ejemplo: <code>href=&quot;#&quot;</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -32,7 +32,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+  <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 

@@ -1,8 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd8
 title: Add Attributes to the Circle Elements
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: ''

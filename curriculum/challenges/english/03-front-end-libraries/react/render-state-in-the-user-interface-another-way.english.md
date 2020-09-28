@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036172
 title: Render State in the User Interface Another Way
 challengeType: 6
-isRequired: false
+forumTopicId: 301408
 ---
 
 ## Description
@@ -22,13 +22,13 @@ Next, in the return statement, render this value in an <code>h1</code> tag using
 ```yml
 tests:
   - text: <code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.
-    testString: assert(Enzyme.mount(React.createElement(MyComponent)).state('name') === 'freeCodeCamp', '<code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.');
+    testString: assert(Enzyme.mount(React.createElement(MyComponent)).state('name') === 'freeCodeCamp');
   - text: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.
-    testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), '<code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.');
+    testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()));
   - text: The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.
-    testString: getUserInput => assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput('index')), 'The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.');
+    testString: getUserInput => assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput('index')));
   - text: The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''TestName'' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === ''<div><h1>TestName</h1></div>'', ''The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.''); };'
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''TestName'' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === ''<div><h1>TestName</h1></div>''); };'
 
 ```
 
@@ -48,14 +48,14 @@ class MyComponent extends React.Component {
     }
   }
   render() {
-    // change code below this line
+    // Change code below this line
 
-    // change code above this line
+    // Change code above this line
     return (
       <div>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }
@@ -68,7 +68,7 @@ class MyComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
@@ -80,7 +80,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -89,14 +89,14 @@ class MyComponent extends React.Component {
     }
   }
   render() {
-    // change code below this line
+    // Change code below this line
     const name = this.state.name;
-    // change code above this line
+    // Change code above this line
     return (
       <div>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
         <h1>{name}</h1>
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
       </div>
     );
   }

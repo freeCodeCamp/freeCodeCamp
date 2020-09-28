@@ -1,5 +1,6 @@
 {
   "name": "Front End Libraries Projects",
+  "isUpcomingChange": false,
   "dashedName": "front-end-libraries-projects",
   "order": 8,
   "time": "150 hours",
@@ -26,7 +27,7 @@
     ],
     [
       "bd7158d8c442eddfaeb5bd0f",
-      "Build a Pomodoro Clock"
+      "Build a 25 + 5 Clock"
     ]
   ],
   "helpRoom": "Help",

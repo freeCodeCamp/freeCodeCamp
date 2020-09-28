@@ -7,6 +7,8 @@ const seedRE = /(.+)-seed$/;
 const headRE = /(.+)-setup$/;
 const tailRE = /(.+)-teardown$/;
 
+const editableRegionMarker = '--fcc-editable-region--';
+
 function defaultFile(lang) {
   return {
     key: `index${lang}`,
@@ -17,25 +19,52 @@ function defaultFile(lang) {
     tail: ''
   };
 }
-function createCodeGetter(key, regEx, seeds) {
+function createCodeGetter(codeKey, regEx, seeds) {
   return container => {
     const {
       properties: { id }
     } = container;
     const lang = id.match(regEx)[1];
+    const key = `index${lang}`;
     const code = select('code', container).children[0].value;
-    if (lang in seeds) {
-      seeds[lang] = {
-        ...seeds[lang],
-        [key]: code
+    if (key in seeds) {
+      seeds[key] = {
+        ...seeds[key],
+        [codeKey]: code
       };
     } else {
-      seeds[lang] = {
+      seeds[key] = {
         ...defaultFile(lang),
-        [key]: code
+        [codeKey]: code
       };
     }
   };
+}
+
+// TODO: any reason to worry about CRLF?
+
+function findRegionMarkers(file) {
+  const lines = file.contents.split('\n');
+  const editableLines = lines
+    .map((line, id) => (line.trim() === editableRegionMarker ? id : -1))
+    .filter(id => id >= 0);
+
+  if (editableLines.length > 2) {
+    throw Error('Editable region has too many markers' + editableLines);
+  }
+
+  if (editableLines.length === 0) {
+    return null;
+  } else if (editableLines.length === 1) {
+    throw Error(`Editable region not closed`);
+  } else {
+    return editableLines;
+  }
+}
+
+function removeLines(contents, toRemove) {
+  const lines = contents.split('\n');
+  return lines.filter((_, id) => !toRemove.includes(id)).join('\n');
 }
 
 function createPlugin() {
@@ -44,29 +73,52 @@ function createPlugin() {
       if (sectionFilter(node, 'challengeSeed')) {
         let seeds = {};
         const codeDivs = selectAll('div', node);
-        const seedConatiners = codeDivs.filter(({ properties: { id } }) =>
+        const seedContainers = codeDivs.filter(({ properties: { id } }) =>
           seedRE.test(id)
         );
-        seedConatiners.forEach(createCodeGetter('contents', seedRE, seeds));
+        seedContainers.forEach(createCodeGetter('contents', seedRE, seeds));
 
-        const headConatiners = codeDivs.filter(({ properties: { id } }) =>
+        const headContainers = codeDivs.filter(({ properties: { id } }) =>
           headRE.test(id)
         );
-        headConatiners.forEach(createCodeGetter('head', headRE, seeds));
+        headContainers.forEach(createCodeGetter('head', headRE, seeds));
 
-        const tailConatiners = codeDivs.filter(({ properties: { id } }) =>
+        const tailContainers = codeDivs.filter(({ properties: { id } }) =>
           tailRE.test(id)
         );
-        tailConatiners.forEach(createCodeGetter('tail', tailRE, seeds));
+        tailContainers.forEach(createCodeGetter('tail', tailRE, seeds));
 
         file.data = {
           ...file.data,
-          files: Object.keys(seeds).map(lang => seeds[lang])
+          files: seeds
         };
+
+        // TODO: make this readable.
+
+        Object.keys(seeds).forEach(key => {
+          const fileData = seeds[key];
+          const editRegionMarkers = findRegionMarkers(fileData);
+          if (editRegionMarkers) {
+            fileData.contents = removeLines(
+              fileData.contents,
+              editRegionMarkers
+            );
+
+            if (editRegionMarkers[1] <= editRegionMarkers[0]) {
+              throw Error('Editable region must be non zero');
+            }
+            fileData.editableRegionBoundaries = editRegionMarkers;
+          } else {
+            fileData.editableRegionBoundaries = [];
+          }
+        });
+        // TODO: TESTS!
       }
     }
     visit(tree, 'element', visitor);
   };
 }
 
-module.exports = createPlugin;
+exports.challengeSeedToData = createPlugin;
+exports.createCodeGetter = createCodeGetter;
+exports.defaultFile = defaultFile;

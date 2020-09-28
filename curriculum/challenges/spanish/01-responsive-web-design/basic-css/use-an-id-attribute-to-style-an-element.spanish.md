@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use un atributo de ID para diseñar un elemento
 ---
 
-## Description
-<section id="description"> Una cosa interesante acerca de los atributos de <code>id</code> es que, al igual que las clases, puedes aplicarles un estilo usando CSS. Sin embargo, una <code>id</code> no es reutilizable y solo debe aplicarse a un elemento. Una <code>id</code> también tiene una mayor especificidad (importancia) que una clase, por lo que si ambas se aplican al mismo elemento y tienen estilos en conflicto, se aplicarán los estilos de la <code>id</code> . Este es un ejemplo de cómo puede tomar su elemento con el atributo <code>id</code> de <code>cat-photo-element</code> y darle el color de fondo de verde. En su elemento de <code>style</code> : <blockquote> # cat-photo-element { <br> color de fondo: verde; <br> } </blockquote> Tenga en cuenta que dentro de su elemento de <code>style</code> , siempre hace referencia a las clases poniendo un <code>.</code> delante de sus nombres. Siempre hace referencia a los identificadores colocando un <code>#</code> delante de sus nombres. </section>
+## Descripción
+<section id="description"> Una cosa interesante acerca de los atributos de <code>id</code> es que, al igual que las clases, puedes aplicarles un estilo usando CSS. Sin embargo, una <code>id</code> no es reutilizable y solo debe aplicarse a un elemento. Una <code>id</code> también tiene una mayor especificidad (importancia) que una clase, por lo que si ambas se aplican al mismo elemento y tienen estilos en conflicto, se aplicarán los estilos de la <code>id</code> . Este es un ejemplo de cómo puede tomar su elemento con el atributo <code>id</code> de <code>cat-photo-element</code> y darle el color de fondo de verde. En su elemento de <code>style</code> : <blockquote> # cat-photo-element { <br> background-color: verde; <br> } </blockquote> Tenga en cuenta que dentro de su elemento de <code>style</code> , siempre hace referencia a las clases poniendo un <code>.</code> delante de sus nombres. Siempre hace referencia a los identificadores colocando un <code>#</code> delante de sus nombres. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Intente darle a su formulario, que ahora tiene el atributo <code>id</code> de <code>cat-photo-form</code> , un fondo verde. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -69,31 +69,31 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Haga clic aquí para ver más <a href="#">fotos de gatos</a>.</p>
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <div class="silver-background">
-    <p>Things cats love:</p>
+    <p>Cosas que los gatos aman:</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>pellizco de gato</li>
+      <li>punteros laser</li>
+      <li>lasaña</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>3 cosas que odian los gatos:</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+    <li>tratamiento de pulgas</li>
+      <li>trueno</li>
+      <li>otros gatos</li>
     </ol>
   </div>
-
-  <form action="/submit-cat-photo" id="cat-photo-form">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
+ 
+  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
+    <label><input type="radio" name="indoor-outdoor" checked> Interior</label>
+    <label><input type="radio" name="indoor-outdoor"> Exterior</label><br>
+    <label><input type="checkbox" name="personality" checked> Amoroso</label>
+    <label><input type="checkbox" name="personality"> Perezoso</label>
+    <label><input type="checkbox" name="personality"> Energético</label><br>
     <input type="text" placeholder="cat photo URL" required>
     <button type="submit">Submit</button>
   </form>
@@ -107,7 +107,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

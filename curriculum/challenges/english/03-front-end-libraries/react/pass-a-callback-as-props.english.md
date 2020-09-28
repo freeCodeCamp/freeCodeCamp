@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403617b
 title: Pass a Callback as Props
 challengeType: 6
-isRequired: false
+forumTopicId: 301400
 ---
 
 ## Description
@@ -22,15 +22,15 @@ Next, add <code>RenderInput</code> to the render method in <code>MyApp</code>, t
 ```yml
 tests:
   - text: The <code>MyApp</code> component should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1; })(), 'The <code>MyApp</code> component should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1; })());
   - text: The <code>GetInput</code> component should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('GetInput').length === 1; })(), 'The <code>GetInput</code> component should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('GetInput').length === 1; })());
   - text: The <code>RenderInput</code> component should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('RenderInput').length === 1; })(), 'The <code>RenderInput</code> component should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('RenderInput').length === 1; })());
   - text: The <code>GetInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props and contain an <code>input</code> element which modifies <code>MyApp</code> state.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''''}); return waitForIt(() => mockedComponent.state() )}; const state_2 = () => { mockedComponent.find(''input'').simulate(''change'', {target: {value: ''TestInput''}}); return waitForIt(() => mockedComponent.state() )}; const updated_1 = await state_1(); const updated_2 = await state_2(); assert(updated_1.inputValue === '''' && updated_2.inputValue === ''TestInput'', ''The <code>GetInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props and contain an <code>input</code> element which modifies <code>MyApp</code> state.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''''}); return waitForIt(() => mockedComponent.state() )}; const state_2 = () => { mockedComponent.find(''input'').simulate(''change'', {target: {value: ''TestInput''}}); return waitForIt(() => mockedComponent.state() )}; const updated_1 = await state_1(); const updated_2 = await state_2(); assert(updated_1.inputValue === '''' && updated_2.inputValue === ''TestInput''); }; '
   - text: The <code>RenderInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''TestName''}); return waitForIt(() => mockedComponent )}; const updated_1 = await state_1(); assert(updated_1.find(''p'').text().includes(''TestName''), ''The <code>RenderInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''TestName''}); return waitForIt(() => mockedComponent )}; const updated_1 = await state_1(); assert(updated_1.find(''p'').text().includes(''TestName'')); }; '
 
 ```
 
@@ -58,9 +58,9 @@ class MyApp extends React.Component {
   render() {
     return (
        <div>
-        { /* change code below this line */ }
+        { /* Change code below this line */ }
 
-        { /* change code above this line */ }
+        { /* Change code above this line */ }
        </div>
     );
   }
@@ -103,7 +103,7 @@ class RenderInput extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyApp />, document.getElementById('root'))
 ```
 
@@ -115,7 +115,7 @@ ReactDOM.render(<MyApp />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyApp extends React.Component {
   constructor(props) {
     super(props);

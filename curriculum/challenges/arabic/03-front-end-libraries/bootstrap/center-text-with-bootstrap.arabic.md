@@ -3,7 +3,7 @@ id: bad87fee1348bd8acde08812
 title: Center Text with Bootstrap
 challengeType: 0
 videoUrl: ''
-localeTitle: مركز النص مع Bootstrap
+localeTitle: توسيط النص مع Bootstrap
 ---
 
 ## Description
@@ -80,7 +80,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>

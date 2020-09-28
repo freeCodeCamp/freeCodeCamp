@@ -1,14 +1,13 @@
 ---
 id: a6e40f1041b06c996f7b2406
 title: Finders Keepers
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: من يجد شيئا يحتفظ به
 ---
 
 ## Description
-<section id="description"> إنشاء دالة تبحث خلال صفيف (الوسيطة الأولى) وإرجاع العنصر الأول في الصفيف الذي يمرر اختبار الحقيقة (الوسيطة الثانية). إذا لم يجتاز أي عنصر الاختبار ، فارجع غير معروف. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
+<section id="description"> إنشاء دالة تبحث خلال صفيف (الوسيطة الأولى) وإرجاع العنصر الأول في الصفيف الذي يمرر اختبار الحقيقة (الوسيطة الثانية). إذا لم يجتاز أي عنصر الاختبار ، فارجع غير معروف. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

@@ -1,8 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc3
 title: Select a Group of Elements with D3
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: Seleccione un grupo de elementos con D3

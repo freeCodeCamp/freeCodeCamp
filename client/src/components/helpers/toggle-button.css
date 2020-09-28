@@ -1,16 +1,72 @@
 .toggle-active.btn[disabled] {
-  background-color: #006400;
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
   opacity: 1;
 }
 
-.toggle-not-active.btn-primary.active {
-  background-color: #006400;
+.toggle-not-active {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+}
+.toggle-not-active:hover {
+  color: var(--secondary-background);
 }
 
-.toggle-not-active {
-  background-color: #dedede;
-  color: rgb(0, 49, 0);
+.toggle-not-active:hover,
+.toggle-not-active:focus {
+  background-color: var(--secondary-color);
 }
-.toggle-not-active:hover, .toggle-not-active:focus {
-  background-color: #006400;
+
+.btn-group .btn.toggle-not-active,
+.btn-group .btn.toggle-active {
+  border-color: var(--tertiary-color);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btn-group .btn-primary,
+.btn-group .btn-primary:focus,
+.btn-group .btn-primary:hover {
+  border-color: var(--secondary-color);
+}
+
+.btn.toggle-active > .tick,
+.btn.toggle-not-active > .tick {
+  position: absolute;
+}
+
+.btn:first-child > .tick {
+  left: 9px;
+  top: calc(50% - 8pt);
+}
+
+.btn:last-child > .tick {
+  right: 6px;
+  top: calc(50% - 8pt);
+}
+
+.btn-group .btn + .btn {
+  margin-left: -2px;
+}
+
+label.toggle-label {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 550px) {
+  .btn:first-child > .tick {
+    left: 6px;
+  }
+
+  .btn:last-child > .tick {
+    right: 5px;
+  }
+}
+
+@media (max-width: 440px) {
+  .btn:first-child > .tick {
+    left: auto;
+    right: 5px;
+  }
 }

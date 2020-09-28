@@ -2,15 +2,26 @@
 id: 5900f4d41000cf542c50ffe7
 challengeType: 5
 title: 'Problem 360: Scary Sphere'
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 302021
+localeTitle: 'Problem 360: Scary Sphere'
 ---
 
 ## Description
-undefined
+<section id='description'>
+Given two points (x1,y1,z1) and (x2,y2,z2) in three dimensional space, the Manhattan distance  between those points is defined as  |x1-x2|+|y1-y2|+|z1-z2|.
+
+Let C(r) be a sphere with radius r and center in the origin O(0,0,0).
+Let I(r) be the set of all points with integer coordinates on the surface of C(r).
+Let S(r) be the sum of the Manhattan distances of all elements of I(r) to the origin O.
+
+E.g. S(45)=34518.
+
+Find S(1010).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +29,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler360(), 878825614395267100, "<code>euler360()</code> should return 878825614395267100.");'
+  - text: <code>euler360()</code> should return 878825614395267100.
+    testString: assert.strictEqual(euler360(), 878825614395267100);
 
 ```
 
@@ -42,8 +53,6 @@ euler360();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +61,5 @@ euler360();
 ```js
 // solution required
 ```
+
 </section>

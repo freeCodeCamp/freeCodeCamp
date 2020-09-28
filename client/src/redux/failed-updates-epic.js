@@ -11,15 +11,25 @@ import { ofType } from 'redux-observable';
 import store from 'store';
 import uuid from 'uuid/v4';
 
-import { types, onlineStatusChange, isOnlineSelector } from './';
+import {
+  types,
+  onlineStatusChange,
+  isOnlineSelector,
+  isSignedInSelector
+} from './';
 import postUpdate$ from '../templates/Challenges/utils/postUpdate$';
 import { isGoodXHRStatus } from '../templates/Challenges/utils';
+import { backEndProject } from '../../utils/challengeTypes';
 
 const key = 'fcc-failed-updates';
 
 function delay(time = 0, fn) {
   return setTimeout(fn, time);
 }
+
+// check if backendEndProjects have a solution
+const isSubmitable = failure =>
+  failure.payload.challengeType !== backEndProject || failure.payload.solution;
 
 function failedUpdateEpic(action$, state$) {
   const storeUpdates = action$.pipe(
@@ -36,15 +46,25 @@ function failedUpdateEpic(action$, state$) {
 
   const flushUpdates = action$.pipe(
     ofType(types.fetchUserComplete, types.updateComplete),
+    filter(() => isSignedInSelector(state$.value)),
     filter(() => store.get(key)),
     filter(() => isOnlineSelector(state$.value)),
     tap(() => {
-      const failures = store.get(key) || [];
+      let failures = store.get(key) || [];
+
+      let submitableFailures = failures.filter(isSubmitable);
+
+      // delete unsubmitable failed challenges
+      if (submitableFailures.length !== failures.length) {
+        store.set(key, submitableFailures);
+        failures = submitableFailures;
+      }
+
       let delayTime = 100;
       const batch = failures.map((update, i) => {
         // we stagger the updates here so we don't hammer the server
         // *********************************************************
-        // progressivly increase additional delay by the amount of updates
+        // progressively increase additional delay by the amount of updates
         // 1st: 100ms delay
         // 2nd: 200ms delay
         // 3rd: 400ms delay

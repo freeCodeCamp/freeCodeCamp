@@ -1,46 +1,92 @@
 .map-ui {
   height: 100%;
-  margin-left: 35px;
-}
-
-@media screen, (max-width: 630px) {
-  .map-ui {
-    margin: 0 auto;
-  }
 }
 
 .map-ui ul {
   list-style: none;
-  color: #006400;
+  color: var(--secondary-color);
 }
 
-.map-title {
+.map-ui > ul {
+  padding: 0;
+}
+
+button.map-title {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e2e2e2;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
 }
 
-.map-title > svg {
+button.map-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.map-title > h4 {
+  margin-bottom: 0;
+}
+
+.map-title-completed {
+  margin-left: auto;
+  min-width: 100px;
+  padding-left: 20px;
+}
+
+.superblock .map-title svg {
   width: 14px;
   margin-right: 5px;
   flex-shrink: 0;
+  fill: var(--color-quaternary) !important;
+  stroke: var(--color-quaternary);
 }
 
-li.open > .map-title svg {
+li.open > .map-title svg:first-child {
   transform: rotate(90deg);
 }
 
 .map-challenge-title {
+  display: flex;
   margin-bottom: 0.25rem;
 }
 
-.night .map-challenge-title a {
-  color: #f8f8f8;
+.map-challenge-title a {
+  width: 100%;
 }
 
-.map-challenge-title-completed {
-  opacity: 0.5;
+@media (max-width: 640px) {
+  .map-ui .block ul {
+    padding-inline-start: 6px;
+    font-size: 0.9rem;
+  }
+  button.map-title {
+    width: 100%;
+  }
+  .map-ui ul {
+    padding-inline-start: 15px;
+  }
+  .map-ui > ul {
+    padding-inline-start: 0;
+  }
+  .map-challenge-title {
+    max-width: 100%;
+  }
+  .map-title-completed {
+    flex-shrink: 0;
+    padding-left: 15px;
+  }
+}
+
+.block a {
+  text-decoration: none;
+}
+
+/* 14px is the width of the expansion arrow */
+.superblock {
+  max-width: calc(100% - 14px);
 }

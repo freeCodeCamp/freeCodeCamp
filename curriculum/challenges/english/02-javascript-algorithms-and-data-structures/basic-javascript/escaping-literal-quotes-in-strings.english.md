@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244b5
 title: Escaping Literal Quotes in Strings
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c2QvgSr'
+forumTopicId: 17568
 ---
 
 ## Description
@@ -25,9 +27,9 @@ Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable
 ```yml
 tests:
   - text: You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).
-    testString: assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2, 'You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).');
+    testString: assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
   - text: 'Variable myStr should contain the string: <code>I am a "double quoted" string inside "double quotes".</code>'
-    testString: 'assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".", ''Variable myStr should contain the string: <code>I am a "double quoted" string inside "double quotes".</code>'');'
+    testString: 'assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".");'
 
 ```
 

@@ -2,15 +2,18 @@
 id: 5900f3c11000cf542c50fed4
 challengeType: 5
 title: 'Problem 85: Counting rectangles'
-videoUrl: ''
+forumTopicId: 302199
 localeTitle: 'Задача 85: подсчет прямоугольников'
 ---
 
 ## Description
-<section id="description"> Считая внимательно, можно видеть, что прямоугольная сетка размером 3 на 2 содержит восемнадцать прямоугольников: <p> Хотя нет прямоугольной сетки, содержащей ровно два миллиона прямоугольников, найдите область сетки с ближайшим решением. </p></section>
+<section id='description'>
+Считая внимательно, можно видеть, что прямоугольная сетка размером 3 на 2 содержит восемнадцать прямоугольников: <p> Хотя нет прямоугольной сетки, содержащей ровно два миллиона прямоугольников, найдите область сетки с ближайшим решением. </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 85: подсчет прямоугольников'
 
 ```yml
 tests:
-  - text: <code>euler85()</code> должен вернуть 2772.
-    testString: 'assert.strictEqual(euler85(), 2772, "<code>euler85()</code> should return 2772.");'
+  - text: <code>euler85()</code> should return 2772.
+    testString: assert.strictEqual(euler85(), 2772);
 
 ```
 
@@ -42,8 +45,6 @@ euler85();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler85();
 ```js
 // solution required
 ```
+
 </section>

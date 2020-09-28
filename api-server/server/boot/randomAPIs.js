@@ -9,12 +9,11 @@ const githubSecret = process.env.GITHUB_SECRET;
 
 module.exports = function(app) {
   const router = app.loopback.Router();
-  const api = app.loopback.Router();
   const User = app.models.User;
 
   router.get('/api/github', githubCalls);
-  router.get('/u/:email', unsubscribeDepricated);
-  router.get('/unsubscribe/:email', unsubscribeDepricated);
+  router.get('/u/:email', unsubscribeDeprecated);
+  router.get('/unsubscribe/:email', unsubscribeDeprecated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
   router.get(
     '/the-fastest-web-page-on-the-internet',
@@ -22,13 +21,11 @@ module.exports = function(app) {
   );
   router.get('/unsubscribed/:unsubscribeId', unsubscribedWithId);
   router.get('/unsubscribed', unsubscribed);
-  api.get('/resubscribe/:unsubscribeId', resubscribe);
+  router.get('/resubscribe/:unsubscribeId', resubscribe);
   router.get('/nonprofits', nonprofits);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
 
   app.use(router);
-
-  app.use('/internal', api);
 
   function theFastestWebPageOnTheInternet(req, res) {
     res.render('resources/the-fastest-web-page-on-the-internet', {
@@ -48,7 +45,7 @@ module.exports = function(app) {
     });
   }
 
-  function unsubscribeDepricated(req, res) {
+  function unsubscribeDeprecated(req, res) {
     req.flash(
       'info',
       'We are no longer able to process this unsubscription request. ' +

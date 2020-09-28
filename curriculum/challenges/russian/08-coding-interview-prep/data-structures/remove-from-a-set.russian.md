@@ -7,10 +7,13 @@ localeTitle: Удалить из набора
 ---
 
 ## Description
-<section id="description"> В этих упражнениях мы собираемся создать функцию удаления для нашего набора. Функция должна быть названа <code>this.remove</code> . Эта функция должна принимать значение и проверять, существует ли он в наборе. Если это так, удалите это значение из набора и верните true. В противном случае верните false. </section>
+<section id='description'>
+В этих упражнениях мы собираемся создать функцию удаления для нашего набора. Функция должна быть названа <code>this.remove</code> . Эта функция должна принимать значение и проверять, существует ли он в наборе. Если это так, удалите это значение из набора и верните true. В противном случае верните false.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -24,7 +27,6 @@ tests:
     testString: 'assert.deepEqual((function(){var test = new Set(); test.add("a");test.add("b");test.remove("c"); return test.values(); })(), ["a", "b"], "Your <code>remove</code> method should only remove items that are present in the set.");'
   - text: Ваш метод <code>remove</code> должен удалить данный элемент из набора.
     testString: 'assert((function(){var test = new Set(); test.add("a");test.add("b");test.remove("a"); var vals = test.values(); return (vals[0] === "b" && vals.length === 1)}()), "Your <code>remove</code> method should remove the given item from the set.");'
-
 ```
 
 </section>
@@ -62,8 +64,6 @@ function Set() {
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -72,4 +72,5 @@ function Set() {
 ```js
 // solution required
 ```
+
 </section>

@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403614d
 title: Define a Redux Action
 challengeType: 6
-isRequired: false
+forumTopicId: 301440
 ---
 
 ## Description
@@ -22,9 +22,9 @@ Writing a Redux action is as simple as declaring an object with a type property.
 ```yml
 tests:
   - text: An action object should exist.
-    testString: assert((function() { return typeof action === 'object' })(), 'An action object should exist.');
+    testString: assert((function() { return typeof action === 'object' })());
   - text: The action should have a key property type with value <code>LOGIN</code>.
-    testString: assert((function() { return action.type === 'LOGIN' })(), 'The action should have a key property type with value <code>LOGIN</code>.');
+    testString: assert((function() { return action.type === 'LOGIN' })());
 
 ```
 
@@ -33,9 +33,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 // Define an action here:
 
 ```

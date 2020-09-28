@@ -3,6 +3,7 @@ id: 587d781d367417b2b2512ac5
 title: Set the line-height of Paragraphs
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVWdcv'
+forumTopicId: 301070
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Add a <code>line-height</code> property to the <code>p</code> tag and set it to 
 ```yml
 tests:
   - text: Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.
-    testString: assert($('p').css('line-height') == '25px', 'Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.');
+    testString: assert($('p').css('line-height') == '25px');
 
 ```
 
@@ -53,7 +54,16 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+</style>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
 ```
+
 </section>

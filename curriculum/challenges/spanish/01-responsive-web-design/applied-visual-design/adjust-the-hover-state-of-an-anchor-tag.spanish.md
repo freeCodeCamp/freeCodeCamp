@@ -7,10 +7,10 @@ localeTitle: Ajustar el estado de desplazamiento de una etiqueta de anclaje
 ---
 
 ## Description
-<section id="description"> Este desafío tocará el uso de pseudo-clases. Una pseudo-clase es una palabra clave que se puede agregar a los selectores para seleccionar un estado específico del elemento. Por ejemplo, el estilo de una etiqueta de anclaje se puede cambiar para su estado de desplazamiento mediante el selector de pseudo-clase <code>:hover</code> . Aquí está el CSS para cambiar el <code>color</code> de la etiqueta de anclaje a rojo durante su estado de desplazamiento: <blockquote> a: flotar { <br> color rojo; <br> } </blockquote></section>
+<section id="description"> Este desafío tocará el uso de las pseudo-clases. Una pseudo-clase es una palabra clave que se puede agregar a los selectores para seleccionar un estado específico de dicho elemento. Por ejemplo, el estilo de una etiqueta de enlace (anchor tag) se puede cambiar cuando el elemento interactúa con un cursor (hover) mediante el selector de pseudo-clase <code>:hover</code> . Aquí está el CSS para cambiar el <code>color</code> de la etiqueta de enlace (anchor tag) a rojo cada vez que pase el cursor por encima: <blockquote> a:hover { <br> color: red; <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> El editor de código tiene una regla CSS para el estilo de todo <code>a</code> negro etiquetas. Añadir una regla de modo que cuando el usuario se desplaza sobre la <code>a</code> etiqueta, el <code>color</code> es de color azul. </section>
+<section id="instructions"> El editor de código tiene una regla CSS para dar color nego a todas las etiquetas <code>a</code>. Añade una regla de modo que cuando el usuario desplace el cursor sobre la etiqueta <code>a</code> , el <code>color</code> sea azul. </section>
 
 ## Tests
 <section id='tests'>
@@ -40,7 +40,7 @@ tests:
 
 
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 
 ```
 

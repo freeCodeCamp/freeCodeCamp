@@ -2,13 +2,12 @@
 id: 56533eb9ac21ba0edf2244c3
 title: Assignment with a Returned Value
 challengeType: 1
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/assignment-with-a-returned-value'
 videoUrl: ''
 localeTitle: Asignación con un valor devuelto
 ---
 
 ## Description
-<section id="description"> Si recuerda de nuestra discusión sobre el <a href="javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">almacenamiento de valores con el operador de asignación</a> , todo a la derecha del signo igual se resuelve antes de que se asigne el valor. Esto significa que podemos tomar el valor de retorno de una función y asignarlo a una variable. Supongamos que hemos predefinido una <code>sum</code> función que suma dos números, entonces: <code>ourSum = sum(5, 12);</code> <code>ourSum</code> a la función <code>sum</code> , que devuelve un valor de <code>17</code> y lo asigna a <code>ourSum</code> variable <code>ourSum</code> </section>
+<section id="description"> Si recuerda de nuestra discusión sobre el <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">almacenamiento de valores con el operador de asignación</a> , todo a la derecha del signo igual se resuelve antes de que se asigne el valor. Esto significa que podemos tomar el valor de retorno de una función y asignarlo a una variable. Supongamos que hemos predefinido una <code>sum</code> función que suma dos números, entonces: <code>ourSum = sum(5, 12);</code> <code>ourSum</code> a la función <code>sum</code> , que devuelve un valor de <code>17</code> y lo asigna a <code>ourSum</code> variable <code>ourSum</code> </section>
 
 ## Instructions
 <section id="instructions"> Llame a la función <code>processArg</code> con un argumento de <code>7</code> y asigne su valor de retorno a la variable <code>processed</code> . </section>

@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244de
 title: Adding a Default Option in Switch Statements
 challengeType: 1
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/adding-a-default-option-in-switch-statements'
 videoUrl: ''
 localeTitle: Adición de una opción predeterminada en los estados de cambio
 ---

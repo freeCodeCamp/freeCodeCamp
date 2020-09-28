@@ -2,18 +2,30 @@
 id: bad87fee1348bd9bedf08813
 title: Add Borders Around Your Elements
 challengeType: 0
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/add-borders-around-your-elements'
 videoUrl: ''
-localeTitle: Añadir bordes alrededor de sus elementos
+localeTitle: Añadir bordes alrededor de tus elementos
 ---
 
-## Description
-<section id="description"> Los bordes CSS tienen propiedades como <code>style</code> , <code>color</code> y <code>width</code> Por ejemplo, si quisiéramos crear un borde rojo de 5 píxeles alrededor de un elemento HTML, podríamos usar esta clase: <blockquote> &lt;estilo&gt; <br> .thin-red-border { <br> color del borde: rojo; <br> ancho del borde: 5px; <br> estilo de borde: sólido; <br> } <br> &lt;/style&gt; </blockquote></section>
+## Descripción
+<section id="description"> Los bordes CSS tienen propiedades como <code>style</code> , <code>color</code> y <code>width</code>. Por ejemplo, si quisiéramos crear un borde rojo de 5 píxeles alrededor de un elemento HTML, podríamos usar esta clase: 
+  
+<blockquote> 
+ <style>
+  .thin-red-border {
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
+  }
+ </style> 
+</blockquote>
+</section>
 
-## Instructions
-<section id="instructions"> Crea una clase llamada <code>thick-green-border</code> . Esta clase debe agregar un borde verde sólido de 10 px alrededor de un elemento HTML. Aplica la clase a tu foto de gato. Recuerde que puede aplicar varias clases a un elemento utilizando su atributo de <code>class</code> , separando cada nombre de clase con un espacio. Por ejemplo: <code>&lt;img class=&quot;class1 class2&quot;&gt;</code> </section>
+## Instrucciones
+<section id="instructions"> Crea una clase llamada <code>thick-green-border</code>. Esta clase debe agregar un borde verde sólido de 10 px alrededor de un elemento HTML. Aplica la clase a tu foto de un gato. Recuerda que puedes aplicar varias clases a un elemento utilizando su atributo <code>class</code>, separando cada nombre de clase con un espacio. Por ejemplo: 
+  <code>&lt;img class=&quot;class1 class2&quot;&gt;</code> 
+</section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -61,33 +73,34 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">Haga clic aquí para ver más <a href="#">fotos de gatos</a>.</p>
+   
 
   <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <div>
-    <p>Things cats love:</p>
+    <p>Cosas que los gatos aman:</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>pellizco de gato</li>
+      <li>punteros laser</li>
+      <li>lasaña</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>3 cosas que odian los gatos:</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>tratamiento de pulgas</li>
+      <li>trueno</li>
+      <li>otros gatos</li>
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Interior</label>
+    <label><input type="radio" name="indoor-outdoor"> Exterior</label><br>
+    <label><input type="checkbox" name="personality" checked> Amoroso</label>
+    <label><input type="checkbox" name="personality"> Perezoso</label>
+    <label><input type="checkbox" name="personality"> Energético</label><br>
     <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+    <button type="submit">Enviar</button>
   </form>
 </main>
 
@@ -99,7 +112,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

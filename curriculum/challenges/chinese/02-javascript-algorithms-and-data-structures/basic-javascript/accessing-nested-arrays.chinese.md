@@ -2,26 +2,55 @@
 id: 56533eb9ac21ba0edf2244cd
 title: Accessing Nested Arrays
 challengeType: 1
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/cLeGDtZ'
+forumTopicId: 16160
 localeTitle: 访问嵌套数组
 ---
 
 ## Description
-<section id="description">正如我们在前面的示例中所看到的，对象可以包含嵌套对象和嵌套数组。与访问嵌套对象类似，可以链接数组括号表示法来访问嵌套数组。以下是如何访问嵌套数组的示例： <blockquote> var ourPets = [ <br> { <br> animalType：“猫”， <br>名称：[ <br> “Meowzer” <br> “蓬松”， <br> “洁猫” <br> ] <br> }， <br> { <br>动物类型：“狗”， <br>名称：[ <br> “点”， <br> “库巴” <br> “羊羊” <br> ] <br> } <br> ]。 <br> ourPets [0] .names [1]; //“蓬松” <br> ourPets [1] .names [0]; //“Spot” </blockquote></section>
+<section id='description'>
+正如我们在前面的例子所见，对象可以嵌套对象和数组。与访问嵌套对象一样，用中括号操作符同样可以访问嵌套数组。
+下面是如何访问嵌套数组的例子：
+
+```js
+var ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+];
+ourPets[0].names[1]; // "Fluffy"
+ourPets[1].names[0]; // "Spot"
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用对象点和数组括号表示法从变量<code>myPlants</code>检索第二个树。 </section>
+<section id='instructions'>
+使用点操作符和中括号操作符来检索变量<code>myPlants</code>的第二棵树。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>secondTree</code>应该等于“松树”
-    testString: 'assert(secondTree === "pine", "<code>secondTree</code> should equal "pine"");'
-  - text: 使用点和括号表示法访问<code>myPlants</code>
-    testString: 'assert(/=\s*myPlants\[1\].list\[1\]/.test(code), "Use dot and bracket notation to access <code>myPlants</code>");'
+  - text: <code>secondTree</code>应该等于 "pine"。
+    testString: assert(secondTree === "pine");
+  - text: 使用点操作符和中括号操作符来检索变量<code>myPlants</code>。
+    testString: assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 
 ```
 
@@ -66,7 +95,12 @@ var secondTree = ""; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(x) {
+  if(typeof x != 'undefined') {
+    return "secondTree = " + x;
+  }
+  return "secondTree is undefined";
+})(secondTree);
 ```
 
 </div>
@@ -76,7 +110,30 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+// Only change code below this line
+
+var secondTree = myPlants[1].list[1];
 ```
+
 </section>

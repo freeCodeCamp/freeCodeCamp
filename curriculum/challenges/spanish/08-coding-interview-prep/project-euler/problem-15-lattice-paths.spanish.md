@@ -7,7 +7,7 @@ localeTitle: 'Problema 15: caminos de celosía'
 ---
 
 ## Description
-<section id="description"> Comenzando en la esquina superior izquierda de una cuadrícula de 2 × 2, y solo pudiendo moverse hacia la derecha y hacia abajo, hay exactamente 6 rutas hacia la esquina inferior derecha. <img class="img-responsive center-block" alt="un diagrama de 6 cuadrículas de 2 por 2 que muestra todas las rutas hacia la esquina inferior derecha" src="https://i.imgur.com/1Atixoj.gif"><p> ¿Cuántas de estas rutas hay a través de un <code>gridSize</code> dado? </p></section>
+<section id="description"> Comenzando en la esquina superior izquierda de una cuadrícula de 2 × 2, y solo pudiendo moverse hacia la derecha y hacia abajo, hay exactamente 6 rutas hacia la esquina inferior derecha. <img class="img-responsive center-block" alt="un diagrama de 6 cuadrículas de 2 por 2 que muestra todas las rutas hacia la esquina inferior derecha" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif"><p> ¿Cuántas de estas rutas hay a través de un <code>gridSize</code> dado? </p></section>
 
 ## Instructions
 <section id="instructions">

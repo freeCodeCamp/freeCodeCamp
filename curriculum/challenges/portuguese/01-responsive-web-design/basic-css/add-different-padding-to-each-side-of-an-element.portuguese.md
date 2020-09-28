@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08824
 title: Add Different Padding to Each Side of an Element
 challengeType: 0
-guideUrl: 'https://portuguese.freecodecamp.org/guide/certificates/add-different-padding-to-each-side-of-an-element'
 videoUrl: ''
 localeTitle: Adicionar preenchimento diferente a cada lado de um elemento
 ---

@@ -9,9 +9,15 @@ import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
 import { isBrowser } from '../../utils';
 
+import { environment } from '../../../config/env.json';
+
 const clientSide = isBrowser();
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware({
+  context: {
+    document: clientSide ? document : {}
+  }
+});
 const epicMiddleware = createEpicMiddleware({
   dependencies: {
     window: clientSide ? window : {},
@@ -25,10 +31,18 @@ const composeEnhancers = composeWithDevTools({
 });
 
 export const createStore = () => {
-  const store = reduxCreateStore(
-    rootReducer,
-    composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
-  );
+  let store;
+  if (environment === 'production') {
+    store = reduxCreateStore(
+      rootReducer,
+      applyMiddleware(sagaMiddleware, epicMiddleware)
+    );
+  } else {
+    store = reduxCreateStore(
+      rootReducer,
+      composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
+    );
+  }
   sagaMiddleware.run(rootSaga);
   epicMiddleware.run(rootEpic);
   if (module.hot) {

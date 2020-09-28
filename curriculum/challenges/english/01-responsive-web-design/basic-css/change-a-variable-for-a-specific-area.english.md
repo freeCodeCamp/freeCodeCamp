@@ -3,6 +3,7 @@ id: 5a9d72a1424fe3d0e10cad15
 title: Change a variable for a specific area
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRwbuW'
+forumTopicId: 301085
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Change the value of <code>--penguin-belly</code> to <code>white</code> in the <c
 ```yml
 tests:
   - text: The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), 'The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.');
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -46,11 +47,9 @@ tests:
   }
 
   .penguin {
+    /* Only change code below this line */
 
-    /* add code below */
-
-    /* add code above */
-
+    /* Only change code above this line */
     position: relative;
     margin: auto;
     display: block;
@@ -250,8 +249,10 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".penguin {--penguin-belly: white;}"
+```html
+<style>
+.penguin {--penguin-belly: white;}
+</style>
 ```
 
 </section>

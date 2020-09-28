@@ -1,22 +1,39 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+import { previewMounted } from '../redux';
 
 import './preview.css';
 
 const mainId = 'fcc-main-frame';
 
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      previewMounted
+    },
+    dispatch
+  );
+
 const propTypes = {
   className: PropTypes.string,
-  disableIframe: PropTypes.bool
+  disableIframe: PropTypes.bool,
+  previewMounted: PropTypes.func.isRequired
 };
 
-class Preview extends PureComponent {
+class Preview extends Component {
   constructor(...props) {
     super(...props);
 
     this.state = {
       iframeStatus: props.disableIframe
     };
+  }
+
+  componentDidMount() {
+    this.props.previewMounted();
   }
 
   componentDidUpdate(prevProps) {
@@ -29,8 +46,12 @@ class Preview extends PureComponent {
   render() {
     const iframeToggle = this.state.iframeStatus ? 'disable' : 'enable';
     return (
-      <div className={`challenge-preview ${iframeToggle}-iframe`}>
-        <iframe className={'challenge-preview-frame'} id={mainId} title='Challenge Preview'/>
+      <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
+        <iframe
+          className={'challenge-preview-frame'}
+          id={mainId}
+          title='Challenge Preview'
+        />
       </div>
     );
   }
@@ -39,4 +60,7 @@ class Preview extends PureComponent {
 Preview.displayName = 'Preview';
 Preview.propTypes = propTypes;
 
-export default Preview;
+export default connect(
+  null,
+  mapDispatchToProps
+)(Preview);

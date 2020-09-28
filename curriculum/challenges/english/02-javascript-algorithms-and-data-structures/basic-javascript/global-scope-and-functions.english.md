@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244be
 title: Global Scope and Functions
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cQM7mCN'
+forumTopicId: 18193
 ---
 
 ## Description
@@ -12,7 +14,7 @@ Variables which are used without the <code>var</code> keyword are automatically 
 
 ## Instructions
 <section id='instructions'>
-Using <code>var</code>, declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.
+Using <code>var</code>, declare a global variable named <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.
 Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword.
 </section>
 
@@ -22,13 +24,13 @@ Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</co
 ```yml
 tests:
   - text: <code>myGlobal</code> should be defined
-    testString: assert(typeof myGlobal != "undefined", '<code>myGlobal</code> should be defined');
+    testString: assert(typeof myGlobal != "undefined");
   - text: <code>myGlobal</code> should have a value of <code>10</code>
-    testString: assert(myGlobal === 10, '<code>myGlobal</code> should have a value of <code>10</code>');
+    testString: assert(myGlobal === 10);
   - text: <code>myGlobal</code> should be declared using the <code>var</code> keyword
-    testString: assert(/var\s+myGlobal/.test(code), '<code>myGlobal</code> should be declared using the <code>var</code> keyword');
+    testString: assert(/var\s+myGlobal/.test(code));
   - text: <code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>
-    testString: assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5, '<code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>');
+    testString: assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5);
 
 ```
 
@@ -40,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Declare your variable here
+// Declare the myGlobal variable below this line
 
 
 function fun1() {
@@ -49,6 +51,7 @@ function fun1() {
 }
 
 // Only change code above this line
+
 function fun2() {
   var output = "";
   if (typeof myGlobal != "undefined") {
@@ -110,15 +113,12 @@ uncapture();
 
 
 ```js
-// Declare your variable here
 var myGlobal = 10;
 
 function fun1() {
-  // Assign 5 to oopsGlobal Here
   oopsGlobal = 5;
 }
 
-// Only change code above this line
 function fun2() {
   var output = "";
   if(typeof myGlobal != "undefined") {

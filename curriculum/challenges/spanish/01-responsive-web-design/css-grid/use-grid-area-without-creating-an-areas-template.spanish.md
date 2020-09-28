@@ -17,8 +17,8 @@ localeTitle: Usar área de cuadrícula sin crear una plantilla de áreas
 
 ```yml
 tests:
-  - text: <code>item5</code> clase <code>item5</code> debe tener una propiedad de <code>grid-area</code> que tenga el valor de <code>3/1/4/4</code> .
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.");'
+  - text: La clase <code>item5</code> debe tener una propiedad de <code>grid-area</code> de modo que esté entre las líneas horizontales tercera y cuarta y entre las líneas verticales primera y cuarta.
+    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "La clase <code>item5</code> debe tener una propiedad de <code>grid-area</code> de modo que esté entre las líneas horizontales tercera y cuarta y entre las líneas verticales primera y cuarta.");'
 
 ```
 

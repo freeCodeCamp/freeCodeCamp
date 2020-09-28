@@ -1,0 +1,134 @@
+/**
+ * Adapted from:
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+.night code[class*='language-'],
+.night pre[class*='language-'] {
+  color: var(--secondary-color);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  text-shadow: none;
+}
+
+.night pre[class*='language-'] code[class*='language-'] {
+  color: var(--quaternary-color);
+}
+
+/* Code blocks */
+.night pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+/* Without this, the above selector takes precedence and messes up the answer
+padding in night mode */
+.night .video-quiz-option > pre {
+  padding: 0;
+  margin: 0;
+}
+
+.night :not(pre) > code[class*='language-'],
+.night pre[class*='language-'] {
+  background: var(--primary-background);
+}
+
+/* Inline code */
+.night :not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.night .token.comment,
+.night .token.block-comment,
+.night .token.prolog,
+.night .token.doctype,
+.night .token.cdata {
+  color: #608b4e;
+}
+
+.night .token.punctuation {
+  color: #ffff00;
+}
+
+.night .token.tag,
+.night .token.attr-name,
+.night .token.namespace,
+.night .token.deleted {
+  color: #e2777a;
+}
+
+.night .token.function-name {
+  color: #d4d4d4;
+}
+
+.night .token.boolean,
+.night .token.number,
+.night .token.function {
+  color: #569cd6;
+}
+
+.night .token.property,
+.night .token.class-name,
+.night .token.constant,
+.night .token.symbol {
+  color: #f8c555;
+}
+
+.night .token.selector,
+.night .token.important,
+.night .token.atrule,
+.night .token.keyword,
+.night .token.builtin {
+  color: #569cd6;
+}
+
+.night .token.string,
+.night .token.char,
+.night .token.attr-value,
+.night .token.regex,
+.night .token.variable {
+  color: #7ec699;
+}
+
+.night .token.operator,
+.night .token.entity,
+.night .token.url {
+  color: #67cdcc;
+  background: none;
+}
+
+.night .token.important,
+.night .token.bold {
+  font-weight: bold;
+}
+.night .token.italic {
+  font-style: italic;
+}
+
+.night .token.entity {
+  cursor: help;
+}
+
+.night .token.inserted {
+  color: green;
+}
