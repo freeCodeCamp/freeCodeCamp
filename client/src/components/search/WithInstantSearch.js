@@ -24,7 +24,7 @@ const DEBOUNCE_TIME = 100;
 const searchClient =
   algoliaAppId && algoliaAPIKey
     ? algoliasearch(algoliaAppId, algoliaAPIKey)
-    : {};
+    : { search: () => {} };
 
 const propTypes = {
   children: PropTypes.any,

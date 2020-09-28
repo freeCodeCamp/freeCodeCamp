@@ -59,7 +59,11 @@ const CustomHits = connectHits(
               key={hit.objectID}
             >
               {noHits ? (
-                <NoHitsSuggestion title={noHitsTitle} />
+                <NoHitsSuggestion
+                  handleMouseEnter={handleMouseEnter}
+                  handleMouseLeave={handleMouseLeave}
+                  title={noHitsTitle}
+                />
               ) : (
                 <Suggestion
                   handleMouseEnter={handleMouseEnter}
