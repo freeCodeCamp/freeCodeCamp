@@ -36,7 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
-<section id='challengeSeed'
+<section id='challengeSeed'>
 
 </section>
 
