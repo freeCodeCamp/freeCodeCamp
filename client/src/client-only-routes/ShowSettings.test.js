@@ -32,8 +32,27 @@ describe('<ShowSettings />', () => {
   });
 });
 
+/* eslint-disable max-len */
 const navigate = jest.fn();
 const loggedInProps = {
+  certMap: [
+    {
+      block: 'responsive-web-design-certificate',
+      dashedName: 'responsive-web-design-certificate',
+      id: '561add10cb82ac38a17513bc',
+      order: 1,
+      superBlock: 'responsive-web-design',
+      tests: [
+        {
+          id: 'bd7158d8c442eddfaeb5bd18',
+          link:
+            '/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page',
+          title: 'Build a Tribute Page'
+        }
+      ],
+      title: 'Responsive Web Design'
+    }
+  ],
   createFlashMessage: jest.fn(),
   hardGoTo: jest.fn(),
   isSignedIn: true,
