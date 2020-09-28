@@ -201,12 +201,12 @@ async function parseTranslation(engPath, transPath, dict, lang) {
   const engChal = await parseMarkdown(engPath);
   const translatedChal = await parseMarkdown(transPath);
 
-  const engWithTranslatedComments = translateCommentsInChallenge(
-    engChal,
-    lang,
-    dict
-  );
-
+  // challengeType 11 is for video challenges, which have no seeds, so we skip
+  // them.
+  const engWithTranslatedComments =
+    engChal.challengeType !== 11
+      ? translateCommentsInChallenge(engChal, lang, dict)
+      : engChal;
   return mergeChallenges(engWithTranslatedComments, translatedChal);
 }
 
