@@ -109,7 +109,7 @@ class InstantSearchRoot extends Component {
     this.updateBrowserHistory(query);
   };
 
-  updateBrowserHistory = (query) => {
+  updateBrowserHistory = query => {
     if (this.isSearchPage()) {
       clearTimeout(this.debouncedSetState);
 
