@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-That brown background makes it hard to read the text on the page. 
-
-Change the `body` element's background color to be `burlywood` to have some color but still be able to read the text.
+That brown background makes it hard to read the text. Change the `body` element's background color to be `burlywood` so it has some color but you are still be able to read the text.
 
 </section>
 

@@ -14,7 +14,7 @@ Within each of the four `article` elements, add the following desserts and price
 Donut 1.50
 Cherry Pie 2.75
 Cheesecake 3.00
-Cinammon Roll
+Cinammon Roll 2.50
 ```
 
 </section>

@@ -8,13 +8,13 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `p` elements are nested in `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` by defining a selector as:
+The `p` elements are nested in `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
 ```css
 .item p { }
 ```
 
-Define a new style using the above selector.  Add a `display` property with the value `inline-block` so the `p` elements behave more like `inline` elements instead of `block-line` elements.
+Using the above selector, add a `display` property with value `inline-block` so the `p` elements behave more like `inline` elements.
 
 </section>
 
