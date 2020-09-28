@@ -24,7 +24,7 @@ const DEBOUNCE_TIME = 100;
 const searchClient =
   algoliaAppId && algoliaAPIKey
     ? algoliasearch(algoliaAppId, algoliaAPIKey)
-    : {};
+    : { search: () => {} };
 
 const propTypes = {
   children: PropTypes.any,
@@ -109,7 +109,7 @@ class InstantSearchRoot extends Component {
     this.updateBrowserHistory(query);
   };
 
-  updateBrowserHistory = query => {
+  updateBrowserHistory = (query) => {
     if (this.isSearchPage()) {
       clearTimeout(this.debouncedSetState);
 
