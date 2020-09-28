@@ -612,8 +612,8 @@ export class CertificationSettings extends Component {
         <SectionHeader>Certifications</SectionHeader>
         {this.props.certMap
           .filter(cert => !cert.block.startsWith('legacy'))
-          .map(cert => this.renderCertifications(cert.title))
-          .sort((x, y) => x.order - y.order)}
+          ?.map(cert => this.renderCertifications(cert.title))
+          ?.sort((x, y) => x.order - y.order)}
         <SectionHeader>Legacy Certifications</SectionHeader>
         {this.renderLegacyFullStack()}
         {this.props.certMap
@@ -622,8 +622,8 @@ export class CertificationSettings extends Component {
               cert.title !== 'Legacy Full Stack' &&
               cert.block.startsWith('legacy')
           )
-          .map(cert => this.renderLegacyCertifications(cert.title))
-          .sort((x, y) => x.order - y.order)}
+          ?.map(cert => this.renderLegacyCertifications(cert.title))
+          ?.sort((x, y) => x.order - y.order)}
         {isOpen ? (
           <Modal
             aria-labelledby='solution-viewer-modal-title'
