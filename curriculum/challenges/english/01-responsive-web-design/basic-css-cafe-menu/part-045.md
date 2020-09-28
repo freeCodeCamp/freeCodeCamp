@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you need to add four `article` elements below the `h2`. Each should have a `class` attribute with the value `item`. 
+Add an empty `article` element under the `Desserts` heading. Give it a `class` attribute with the value `item`.
 
 </section>
 
