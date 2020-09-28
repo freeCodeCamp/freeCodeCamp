@@ -25,10 +25,22 @@ import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
 
-import { useStaticQuery, graphql } from 'gatsby';
-import { dasherize } from '../../../utils/slugs';
-
 const propTypes = {
+  certMap: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      dashedName: PropTypes.string,
+      block: PropTypes.string,
+      order: PropTypes.number,
+      tests: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          id: PropTypes.string
+        })
+      )
+    })
+  ),
   createFlashMessage: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool.isRequired,
   navigate: PropTypes.func.isRequired,
@@ -118,6 +130,7 @@ const mapDispatchToProps = {
 
 export const ShowSettings = props => {
   const {
+    certMap,
     createFlashMessage,
     isSignedIn,
     submitNewAbout,
@@ -164,42 +177,6 @@ export const ShowSettings = props => {
     updateIsHonest,
     verifyCert
   } = props;
-
-  const certMap = useStaticQuery(graphql`
-    query {
-      allCertificateNode {
-        nodes {
-          tests {
-            title
-            id
-          }
-          title
-          dashedName
-          id
-          block
-          order
-        }
-      }
-    }
-  `).allCertificateNode.nodes;
-
-  certMap.forEach(cert => {
-    // TODO: superBlock needs to contain -v7 for some projects
-    // console.log(cert.dashedName);
-    cert.superBlock = cert.dashedName.replace(/-certificate/g, '');
-    cert.title = cert.title.replace(/ Certificate( v7)?/, '');
-    cert.tests.forEach(
-      test =>
-        (test.link = `/learn/${cert.dashedName.replace(
-          /-certificate(-v7)?/,
-          ''
-        )}/${cert.dashedName.replace(
-          /-certificate(-v7)?/,
-          '-projects'
-        )}/${dasherize(test.title)}`)
-    );
-  });
-  console.log(certMap);
 
   if (showLoading) {
     return <Loader fullScreen={true} />;
