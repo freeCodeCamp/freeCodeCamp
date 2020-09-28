@@ -10,10 +10,6 @@ const {
   translateCommentsInChallenge
 } = require('../tools/challenge-md-parser/translation-parser/translation-parser');
 /* eslint-enable max-len*/
-const {
-  COMMENTS_TO_TRANSLATE,
-  COMMENTS_TO_NOT_TRANSLATE
-} = require('./dictionaries/english/comments');
 
 const { isAuditedCert } = require('../utils/is-audited');
 const { dasherize, nameify } = require('../utils/slugs');
@@ -27,6 +23,78 @@ const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
 exports.challengesDir = challengesDir;
 exports.metaDir = metaDir;
+
+const COMMENT_TRANSLATIONS = createCommentMap(
+  path.resolve(__dirname, './dictionaries')
+);
+
+function createCommentMap(dictionariesDir) {
+  // get all the languages for which there are dictionaries.
+  const languages = fs
+    .readdirSync(dictionariesDir)
+    .filter(x => x !== 'english');
+
+  // get all their dictionaries
+  const dictionaries = languages.reduce(
+    (acc, lang) => ({
+      ...acc,
+      [lang]: require(path.resolve(dictionariesDir, lang, 'comments'))
+    }),
+    {}
+  );
+
+  // get the english dicts
+  const {
+    COMMENTS_TO_TRANSLATE,
+    COMMENTS_TO_NOT_TRANSLATE
+  } = require(path.resolve(dictionariesDir, 'english', 'comments'));
+
+  // map from english comment text to translations
+  const translatedCommentMap = COMMENTS_TO_TRANSLATE.reduce(
+    (acc, { id, text }) => {
+      return {
+        ...acc,
+        [text]: getTranslationEntry(dictionaries, { engId: id, text })
+      };
+    },
+    {}
+  );
+
+  // map from english comment text to itself
+  const untranslatableCommentMap = COMMENTS_TO_NOT_TRANSLATE.reduce(
+    (acc, { text }) => {
+      const englishEntry = languages.reduce(
+        (acc, lang) => ({
+          ...acc,
+          [lang]: text
+        }),
+        {}
+      );
+      return {
+        ...acc,
+        [text]: englishEntry
+      };
+    },
+    {}
+  );
+
+  return { ...translatedCommentMap, ...untranslatableCommentMap };
+}
+
+exports.createCommentMap = createCommentMap;
+
+function getTranslationEntry(dicts, { engId, text }) {
+  return Object.keys(dicts).reduce((acc, lang) => {
+    const entry = dicts[lang].find(({ id }) => engId === id);
+    if (entry) {
+      return { ...acc, [lang]: entry.text };
+    } else {
+      throw Error(`Missing translation for comment
+'${text}'
+        with id of ${engId}`);
+    }
+  }, {});
+}
 
 function getChallengesDirForLang(lang) {
   return path.resolve(challengesDir, `./${lang}`);
