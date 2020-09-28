@@ -1,5 +1,5 @@
 ---
-id: 5f46e270702a8456a664f0df
+id: 5f45b4c81cea7763550e40df
 title: Part 80
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`;
+To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked. 
 
 </section>
 
@@ -103,12 +103,9 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
-  margin-top: 0;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -172,8 +169,9 @@ a {
   color: black;
 }
 
+--fcc-editable-region--
 a:visited {
-  color: black;
+  color: grey;
 }
 
 a:hover {
@@ -181,8 +179,9 @@ a:hover {
 }
 
 a:active {
-  color: brown;
+  color: white;
 }
+--fcc-editable-region--
 ```
 
 </div>

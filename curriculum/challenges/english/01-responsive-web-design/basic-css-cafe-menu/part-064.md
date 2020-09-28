@@ -1,5 +1,5 @@
 ---
-id: 5f459a7ceb8b5c446656d88b
+id: 5f3f26fa39591db45e5cd7a0
 title: Part 64
 challengeType: 0
 isHidden: true
@@ -8,9 +8,10 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+The default properties of an `hr` element will make it appear as a thin light grey line. You can change the heighth of the line by specifying a value for the `height` property.
 
-Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
+Change the height the `hr` element to be `3px`.
+
 
 </section>
 
@@ -129,10 +130,7 @@ h1, h2, p {
 }
 
 --fcc-editable-region--
-hr {
-  height: 3px;
-  background-color: brown;
-}
+
 --fcc-editable-region--
 
 h1, h2 {

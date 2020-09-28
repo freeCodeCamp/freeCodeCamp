@@ -1,5 +1,5 @@
 ---
-id: 5f45a05977e2fa49d9119437
+id: 5f459cf202c2a3472fae6a9f
 title: Part 67
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
+Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
+
+Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
 
 </section>
 
@@ -80,7 +82,6 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -97,12 +98,10 @@ tests:
 <div id='css-seed'>
 
 ```css
---fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
 }
---fcc-editable-region--
 
 h1 {
   font-size: 40px;
@@ -129,11 +128,13 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
+  height: 3px;
   background-color: brown;
   border-color: brown;
 }
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

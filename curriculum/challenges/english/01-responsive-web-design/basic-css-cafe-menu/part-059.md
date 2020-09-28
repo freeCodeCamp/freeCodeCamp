@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0a81099d9a697b550
+id: 5f3ef6e0f8c230bdd2349716
 title: Part 59
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
+The `h1` and `h2` elements' text are set by default values of the user's browser.
+
+Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.  
 
 </section>
 
@@ -26,7 +28,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 
 <div id='html-seed'>
 
@@ -80,10 +81,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
-      <footer>
-      </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -99,13 +96,9 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 40px;
-}
+--fcc-editable-region--
 
-h2 {
-  font-size: 30px;
-}
+--fcc-editable-region--
 
 .established {
   font-style: italic;

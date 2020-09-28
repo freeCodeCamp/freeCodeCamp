@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0e9629bad967cd71e
+id: 5f3ef6e05473f91f948724ab
 title: Part 54
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
+You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
 
-Add the fallback font `serif` after the `Impact` font. 
+Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`.  This is a fairly common font that is very readable.
 
 </section>
 
@@ -91,10 +91,11 @@ tests:
 <div id='css-seed'>
 
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
+--fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
@@ -108,12 +109,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-h1, h2 {
-  font-family: Impact;
-}
---fcc-editable-region--
 
 .item p {
   display: inline-block;

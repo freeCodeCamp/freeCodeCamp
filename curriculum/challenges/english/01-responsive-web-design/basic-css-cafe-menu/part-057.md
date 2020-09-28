@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0f8c230bdd2349716
+id: 5f3ef6e06d34faac0447fc44
 title: Part 57
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `h1` and `h2` elements' text are set by default values of the user's browser.
-
-Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.  
+Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
 
 </section>
 
@@ -44,7 +42,7 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
       <main>
         <section>
@@ -99,10 +97,6 @@ body {
 --fcc-editable-region--
 
 --fcc-editable-region--
-
-.established {
-  font-style: italic;
-}
 
 h1, h2, p {
   text-align: center;

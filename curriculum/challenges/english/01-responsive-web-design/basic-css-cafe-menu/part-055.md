@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e06d34faac0447fc44
+id: 5f3ef6e056bdde6ae6892ba2
 title: Part 55
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
+It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
+
+Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
 
 </section>
 
@@ -94,10 +96,6 @@ body {
   font-family: sans-serif;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 h1, h2, p {
   text-align: center;
 }
@@ -111,9 +109,9 @@ h1, h2, p {
   max-width: 500px;
 }
 
-h1, h2 {
-  font-family: Impact, serif;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

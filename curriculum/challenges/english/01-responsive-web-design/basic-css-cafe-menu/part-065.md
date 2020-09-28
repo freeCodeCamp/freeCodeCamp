@@ -1,5 +1,5 @@
 ---
-id: 5f459cf202c2a3472fae6a9f
+id: 5f459225127805351a6ad057
 title: Part 65
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
-
-Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
+Change the background color of the `hr` elemnent to be `brown` to make it match the color of the coffee beans.
 
 </section>
 
@@ -131,8 +129,6 @@ h1, h2, p {
 --fcc-editable-region--
 hr {
   height: 3px;
-  background-color: brown;
-  border-color: brown;
 }
 --fcc-editable-region--
 

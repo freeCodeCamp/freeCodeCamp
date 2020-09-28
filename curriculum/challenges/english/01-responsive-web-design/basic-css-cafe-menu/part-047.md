@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0086dc80481f8cb03
+id: 5f716bee5838c354c728a7c5
 title: Part 47
 challengeType: 0
 isHidden: true
@@ -8,9 +8,13 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Something does not look right. You added the correct `class` attribute to the `p` elements with dessert names, but you have not defined a selector for it.
+Bbelow the existing dessert/price pair, add the following desserts and prices using an `article` elemnt with `class="item"` containing two nested `p` elements inside each. The first `p` element's text should contain the dessert and the second `p` element's text should contain the price.
 
-Since the `flavor` class selector already has the properties you want, just add the `dessert` class to it.
+```bash
+Cherry Pie 2.75
+Cheesecake 3.00
+Cinammon Roll 2.50
+```
 
 </section>
 
@@ -67,18 +71,11 @@ tests:
         </section>
         <section>
           <h2>Desserts</h2>
+          --fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
-          </article>
+          --fcc-editable-region--
         </section>
       </main>
     </div>
@@ -110,12 +107,10 @@ h1, h2, p {
   display: inline-block;
 }
 
---fcc-editable-region--
 .flavor {
   text-align: left;
   width: 75%;
 }
---fcc-editable-region--
 
 .price {
   text-align: right;

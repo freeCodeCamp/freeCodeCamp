@@ -1,5 +1,5 @@
 ---
-id: 5f45b4c81cea7763550e40df
+id: 5f45b3c93c027860d9298dbd
 title: Part 78
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked. 
+You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue }`
+
+Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
 
 </section>
 
@@ -169,18 +171,12 @@ a {
   color: black;
 }
 
---fcc-editable-region--
 a:visited {
   color: grey;
 }
 
-a:hover {
-  color: brown;
-}
+--fcc-editable-region--
 
-a:active {
-  color: white;
-}
 --fcc-editable-region--
 ```
 

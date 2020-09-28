@@ -1,5 +1,5 @@
 ---
-id: 5f475bb508746c16c9431d42
+id: 5f46e7a4750dd05b5a673920
 title: Part 84
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The image you added is not centered horizontally like the `Coffees` heading above it.  `img` elements are "like" inline elements.
-
-To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
+Now apply the `address` class to the `p` element containing the address.
 
 </section>
 
@@ -50,7 +48,6 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -84,12 +81,14 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
+      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p class="address">123 Free Code Camp Drive</p>
+        <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -132,10 +131,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 hr {
   height: 2px;

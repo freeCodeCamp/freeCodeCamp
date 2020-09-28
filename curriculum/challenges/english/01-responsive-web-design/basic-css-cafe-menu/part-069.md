@@ -1,5 +1,5 @@
 ---
-id: 5f45a5a7c49a8251f0bdb527
+id: 5f45a05977e2fa49d9119437
 title: Part 69
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Using the same style selector in the previous step, make the font size of the items and prices by using a value of `18px`.
+To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
 
 </section>
 
@@ -97,11 +97,12 @@ tests:
 <div id='css-seed'>
 
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
+--fcc-editable-region--
 
 h1 {
   font-size: 40px;
@@ -138,13 +139,9 @@ h1, h2 {
   font-family: Impact, serif;
 }
 
---fcc-editable-region--
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
---fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;

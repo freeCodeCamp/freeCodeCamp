@@ -1,6 +1,6 @@
 ---
-id: 5f3ef6e0a81099d9a697b550
-title: Part 61
+id: 5f475e1c7f71a61d913836c6
+title: Part 87
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
+Add one last image under the `Desserts` heading using the url `https://tinyurl.com/cafe-pie-fcc`. Give the image an `alt` value of `pie icon`.
 
 </section>
 
@@ -27,7 +27,6 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-
 <div id='html-seed'>
 
 ```html
@@ -45,9 +44,11 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
+      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
+          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -65,7 +66,9 @@ tests:
           </article>
         </section>
         <section>
+          --fcc-editable-region--
           <h2>Desserts</h2>
+          --fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
@@ -80,10 +83,13 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
+      <hr class="bottom-line">
       <footer>
+        <p>
+          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
+        </p>
+        <p class="address">123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -97,10 +103,13 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
+  padding: 20px;
 }
 
 h1 {
   font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -124,12 +133,31 @@ h1, h2, p {
   max-width: 500px;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  height: 2px;
+  background-color: brown;
+  border-color: brown;
+}
+
+.bottom-line {
+  margin-top: 25px;
+}
+
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -139,7 +167,33 @@ h1, h2 {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 14px;
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: brown;
+}
+
+a:active {
+  color: brown;
 }
 ```
 

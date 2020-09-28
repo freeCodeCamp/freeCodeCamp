@@ -1,5 +1,5 @@
 ---
-id: 5f45b25e7ec2405f166b9de1
+id: 5f45a66d4a2b0453301e5a26
 title: Part 75
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue }`
-
-Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
+Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
 
 </section>
 
@@ -162,14 +160,6 @@ h1, h2 {
 }
 
 /* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
 
 --fcc-editable-region--
 

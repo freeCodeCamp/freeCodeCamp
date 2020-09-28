@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0835da6ccc3ee9958
+id: 5f716ad029ee4053c7027a7a
 title: Part 46
 challengeType: 0
 isHidden: true
@@ -8,14 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Within each of the four `article` elements, add the following desserts and prices using an `article` element with two nested `p` elements inside each. Similar to what you did with the coffees, the first `p` element's text should contain the dessert name and the second `p` element's text should contain the price.
-
-```bash
-Donut 1.50
-Cherry Pie 2.75
-Cheesecake 3.00
-Cinammon Roll 2.50
-```
+Nest two `p` elements inside your `article` element. The first one's text should be `Donut`, and the second's text `1.50`.
 
 </section>
 
@@ -73,12 +66,6 @@ tests:
         <section>
           <h2>Desserts</h2>
           --fcc-editable-region--
-          <article class="item">
-          </article>
-          <article class="item">
-          </article>
-          <article class="item">
-          </article>
           <article class="item">
           </article>
           --fcc-editable-region--
