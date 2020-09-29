@@ -7,16 +7,19 @@ localeTitle: Бу, кто
 ---
 
 ## Description
+
 <section id='description'>
-Проверьте, классифицировано ли значение как булевский примитив. Вернуть true или false. Булевы примитивы являются истинными и ложными. Не забудьте использовать <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код.
+Проверьте, классифицировано ли значение как булевый примитив. Вернет true или false. Булевые примитивы являются истинными или ложными. Не забудьте использовать <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте запустить программу. Напишите свой собственный код. <!--Fix this line to view correct russian translate-->
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,12 +44,12 @@ tests:
     testString: assert.strictEqual(booWho("true"), false);
   - text: <code>booWho("false")</code> should return false.
     testString: assert.strictEqual(booWho("false"), false);
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +61,6 @@ function booWho(bool) {
 }
 
 booWho(null);
-
 ```
 
 </div>
@@ -66,11 +68,12 @@ booWho(null);
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
 function booWho(bool) {
-  return typeof bool === "boolean";
+  return typeof bool === 'boolean';
 }
 
 booWho(null);
