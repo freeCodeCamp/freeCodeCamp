@@ -9,7 +9,7 @@ forumTopicId: 301562
 
 <section id='description'>
 
-It's time you start allowing clients to send a chat message to the server to emit to all the clients! In your client.js file, you should see there is already a block of code handling when the message form is submitted.
+It's time you start allowing clients to send a chat message to the server to emit to all the clients! In your <code>client.js</code> file, you should see there is already a block of code handling when the message form is submitted.
 
 ```js
 $('form').submit(function() {
