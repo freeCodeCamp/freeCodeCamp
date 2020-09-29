@@ -181,9 +181,12 @@ class UsernameSettings extends Component {
               />
             </FormGroup>
           </FullWidthRow>
-          <Alert bsStyle='info'>
-            Please note, all characters in username must be lowercase.
-          </Alert>
+          <FullWidthRow>
+            <Alert bsStyle='info'>
+              Please note, all characters in username must be lowercase.
+            </Alert>
+          </FullWidthRow>
+
           {!isFormPristine &&
             this.renderAlerts(validating, error, isValidUsername)}
           <FullWidthRow>
