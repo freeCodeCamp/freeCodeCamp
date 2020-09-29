@@ -12,7 +12,7 @@ In the <code>index.pug</code> file supplied, there is actually a login form. It 
 
 For this challenge you should add the route <code>/login</code> to accept a POST request. To authenticate on this route, you need to add a middleware to do so before then sending a response. This is done by just passing another argument with the middleware before your <code>function(req,res)</code> with your response! The middleware to use is <code>passport.authenticate('local')</code>.
 
-<em>passport.authenticate</em> can also take some options as an argument such as: <code>{ failureRedirect: '/' }</code> which is incredibly useful, so be sure to add that in as well. The response after using the middleware (which will only be called if the authentication middleware passes) should be to redirect the user to <em>/profile</em> and that route should render the view 'profile.pug'.
+<code>passport.authenticate</code> can also take some options as an argument such as: <code>{ failureRedirect: '/' }</code> which is incredibly useful, so be sure to add that in as well. The response after using the middleware (which will only be called if the authentication middleware passes) should be to redirect the user to <code>/profile</code> and that route should render the view <code>profile.pug</code>.
 
 If the authentication was successful, the user object will be saved in <em>req.user</em>.
 
