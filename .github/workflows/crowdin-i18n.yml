@@ -1,0 +1,92 @@
+name: Crowdin Sync
+on:
+  workflow_dispatch:
+  # schedule:
+  # (TODO?) run this Action every 14 days
+  # - cron: '0 * */14 * *'
+  push:
+    branches:
+      - i18n-dev
+      # Treat the below branches as special case for working on workflows
+      - actions-**
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Lint Source Files
+        run: |
+          npm ci
+          npm run ensure-env --if-present
+          npm run lint --if-present
+
+  i18n-sync-docs:
+    name: Docs
+    needs: lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Crowdin Synchronize
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_translations: true
+          auto_approve_imported: true
+          import_eq_suggestions: true
+
+          # downloads
+          download_translations: true
+          commit_message: 'chore(docs,i8n): processed translations from crowdin'
+
+          # pull-request
+          localization_branch_name: i18n-sync-docs
+          create_pull_request: true
+          pull_request_title: 'chore(docs,i8n): processed translations from crowdin'
+          pull_request_body: ''
+          pull_request_labels: 'scope: i18n, scope: docs, crowdin-sync'
+
+          # global options
+          config: './docs/crowdin.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          dryrun_action: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
