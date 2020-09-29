@@ -8,7 +8,7 @@ forumTopicId: 301549
 ## Description
 <section id='description'>
 
-Right now, everything you have is in your server.js file. This can lead to hard to manage code that isn't very expandable.
+Right now, everything you have is in your <code>server.js</code> file. This can lead to hard to manage code that isn't very expandable.
 Create 2 new files: <code>routes.js</code> and <code>auth.js</code>
 
 Both should start with the following code:
