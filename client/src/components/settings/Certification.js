@@ -140,7 +140,7 @@ const isCertMapSelector = createSelector(
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
-    'Information Security and Quality Assurance': isInfosecQaCert
+    'Legacy Information Security and Quality Assurance': isInfosecQaCert
   })
 );
 
@@ -343,7 +343,8 @@ export class CertificationSettings extends Component {
     let superBlock;
     let certs = certMap.filter(
       cert =>
-        cert.title !== 'Legacy Full Stack' && cert.block.startsWith('legacy')
+        cert.title !== 'Legacy Full Stack' &&
+        cert.dashedName.startsWith('legacy')
     );
     console.log('353certs: ', certs, formChalObj);
     let loopBreak = false;
@@ -418,6 +419,7 @@ export class CertificationSettings extends Component {
       completedChallenges,
       certMap
     } = this.props;
+    console.log('422: ', certMap);
     const { superBlock } = certMap.find(cert => cert.title === certName);
     const certLocation = `/certification/${username}/${superBlock}`;
     const challengeTitles = certMap
@@ -611,7 +613,7 @@ export class CertificationSettings extends Component {
       <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {this.props.certMap
-          .filter(cert => !cert.block.startsWith('legacy'))
+          .filter(cert => !cert.dashedName.startsWith('legacy'))
           ?.map(cert => this.renderCertifications(cert.title))
           ?.sort((x, y) => x.order - y.order)}
         <SectionHeader>Legacy Certifications</SectionHeader>
@@ -620,7 +622,7 @@ export class CertificationSettings extends Component {
           .filter(
             cert =>
               cert.title !== 'Legacy Full Stack' &&
-              cert.block.startsWith('legacy')
+              cert.dashedName.startsWith('legacy')
           )
           ?.map(cert => this.renderLegacyCertifications(cert.title))
           ?.sort((x, y) => x.order - y.order)}

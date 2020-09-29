@@ -18,9 +18,9 @@ const Certification = () => {
       }
     }
   `).allCertificateNode.nodes;
-
+  // TODO: current - hardcoded for infosecQa cert
   const validCertNames = certMap.map(cert =>
-    cert.dashedName.replace(/-certificate/, '')
+    cert.dashedName.replace(/-certificate/, '').replace(/legacy-/, '')
   );
 
   return (

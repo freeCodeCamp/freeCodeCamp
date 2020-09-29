@@ -28,7 +28,9 @@ function Settings() {
 
   certMap.forEach(cert => {
     // superBlock needs to contain -v7 for some projects
-    cert.superBlock = cert.dashedName.replace(/-certificate/g, '');
+    cert.superBlock = cert.dashedName.startsWith('legacy')
+      ? cert.block.replace(/-certificate/g, '')
+      : cert.dashedName.replace(/-certificate/, '');
     cert.title = cert.title.replace(/ Certificate( v7)?/, '');
     cert.tests.forEach(
       test =>
