@@ -14,7 +14,7 @@ For this challenge you should add the route <code>/login</code> to accept a POST
 
 <code>passport.authenticate</code> can also take some options as an argument such as: <code>{ failureRedirect: '/' }</code> which is incredibly useful, so be sure to add that in as well. The response after using the middleware (which will only be called if the authentication middleware passes) should be to redirect the user to <code>/profile</code> and that route should render the view <code>profile.pug</code>.
 
-If the authentication was successful, the user object will be saved in <em>req.user</em>.
+If the authentication was successful, the user object will be saved in <code>req.user</code>.
 
 At this point, if you enter a username and password in the form, it should redirect to the home page <code>/</code>, and the console of your server should display <code>'User {USERNAME} attempted to log in.'</code>, since we currently cannot login a user who isn't registered.
 
