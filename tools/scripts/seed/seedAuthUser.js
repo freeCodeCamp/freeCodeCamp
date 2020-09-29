@@ -32,7 +32,16 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
   const db = client.db('freecodecamp');
   const user = db.collection('user');
 
-  user.deleteMany(err => {
+  user.deleteMany(
+    {
+      _id: {
+        $in: [
+          ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+          ObjectId('5bd30e0f1caf6ac3ddddddb9')
+        ]
+      }
+    },
+    err => {
     handleError(err, client);
 
     try {
