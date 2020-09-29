@@ -1,19 +1,26 @@
 ---
 id: 587d7fb4367417b2b2512bfd
 title: Add Keywords to Your package.json
-localeTitle: 将关键字添加到package.json
 challengeType: 2
+forumTopicId: 301526
+localeTitle: 给 package.json 添加关键词
 ---
 
 ## Description
-<section id='description'> 
-keywords-field是您可以使用相关关键字描述项目的地方。 <code>0</code>示例
-<code>"keywords": [ "descriptive", "related", "words" ],</code> <code>0</code>如您所见，此字段的结构为双引号字符串数组。 <code>0</code>说明<code>0</code>将一组合适的字符串添加到Glitch项目的package.json中的keywords-field。 <code>0</code>其中一个关键字应该是freecodecamp。 
+<section id='description'>
+你可以在 keywords 字段中使用相关的关键字描述项目。
+
+```json
+"keywords": [ "descriptive", "related", "words" ],
+```
+
+正如你所见，这个字段的结构是一个由双引号字符串组成的数组。
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+在 Glitch 项目的 package.json 中，给 keywords 添加适当的字符串数组。
+关键词之一应该是 freecodecamp。
 </section>
 
 ## Tests
@@ -21,11 +28,11 @@ keywords-field是您可以使用相关关键字描述项目的地方。 <code>0<
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“关键字”键
+  - text: "package.json 应该有一个有效的 'keywords' 键。"
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, ''"keywords" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“keywords”字段应为Array'
+  - text: "'keywords' 应该是一个数组。"
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, ''"keywords" is not an array''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“关键字”应包含“freecodecamp”'
+  - text: "'keywords' 中应该包含关键词 'freecodecamp'。"
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, ''freecodecamp'', ''"keywords" does not include "freecodecamp"''); },  xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -41,7 +48,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

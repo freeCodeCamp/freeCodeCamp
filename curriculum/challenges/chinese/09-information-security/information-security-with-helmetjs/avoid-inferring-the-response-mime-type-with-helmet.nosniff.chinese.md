@@ -2,15 +2,19 @@
 id: 587d8248367417b2b2512c3a
 title: Avoid Inferring the Response MIME Type with helmet.noSniff()
 challengeType: 2
-videoUrl: ''
-localeTitle: 避免使用helmet.noSniff（）推断响应MIME类型
+forumTopicId: 301574
+localeTitle: 使用 helment.noSniff() 来避免推断响应的 MIME 类型
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。浏览器可以使用内容或MIME嗅探来适应来自响应的不同数据类型。它们覆盖Content-Type标头以猜测和处理数据。虽然这在某些情况下可能很方便，但它也可能导致一些危险的攻击。此中间件将X-Content-Type-Options标头设置为nosniff。这指示浏览器不绕过提供的Content-Type。 </section>
+<section id='description'>
+请注意，本项目在 <a href="https://repl.it/github/freeCodeCamp/boilerplate-infosec">这个 Repl.it 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+浏览器可以通过 content 或者 MIME 嗅探来判断不同的响应内容。这两个的优先级比 header 中的 Content-Type 高。这在一些情况下非常方便，但也会造成一定的安全风险。我们可以通过中间件来把 header 中的 X-Content-Type-Options 字段设置为 nosniff，这样浏览器就不会绕过 header 中的 Content-Type 了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,7 +22,7 @@ localeTitle: 避免使用helmet.noSniff（）推断响应MIME类型
 
 ```yml
 tests:
-  - text: helmet.noSniff（）中间件应该正确安装
+  - text: 应正确加载 helmet.noSniff() 中间件
     testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'nosniff'); assert.equal(data.headers['x-content-type-options'], 'nosniff'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
@@ -34,7 +38,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

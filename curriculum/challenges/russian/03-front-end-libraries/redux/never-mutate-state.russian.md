@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036158
 title: Never Mutate State
 challengeType: 6
-isRequired: false
 forumTopicId: 301445
 localeTitle: Никогда не мутируйте государство
 ---

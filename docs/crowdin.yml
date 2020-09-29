@@ -1,0 +1,16 @@
+#
+# This config is used with the Crowdin CLI or GitHub Actions
+#
+# CLI Usage: crowdin upload sources --identity ~/.crowdin.yaml
+#
+"preserve_hierarchy": true
+files: [
+ {
+  "source" : "/*.md",
+  "translation" : "/i18n/%language%/%original_file_name%",
+ },
+ {
+  "source" : "/flight-manuals/*.md",
+  "translation" : "/i18n/%language%/flight-manuals/%original_file_name%",
+ }
+]

@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036154
 title: Combine Multiple Reducers
 challengeType: 6
-isRequired: false
 forumTopicId: 301436
 ---
 
@@ -39,7 +38,7 @@ tests:
   - text: 'The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.'
     testString: "assert((function() { const state = store.getState(); return typeof state.auth === 'object' && typeof state.auth.authenticated === 'boolean' && typeof state.count === 'number' })());"
   - text: The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.
-    testString: getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').replace(/\s/g,''); return typeof rootReducer === 'function' && noWhiteSpace.includes('Redux.combineReducers')  })());
+    testString: getUserInput => assert((function() {  const noWhiteSpace = __helpers.removeWhiteSpace(getUserInput('index')); return typeof rootReducer === 'function' && noWhiteSpace.includes('Redux.combineReducers')  })());
 
 ```
 

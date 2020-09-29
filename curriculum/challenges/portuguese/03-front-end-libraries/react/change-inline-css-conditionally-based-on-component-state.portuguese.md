@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036189
 title: Change Inline CSS Conditionally Based on Component State
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Alterar Inline CSS Condicionalmente Baseado no Estado do Componente
 ---

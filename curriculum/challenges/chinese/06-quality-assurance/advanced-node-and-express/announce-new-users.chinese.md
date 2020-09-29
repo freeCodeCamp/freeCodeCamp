@@ -2,50 +2,78 @@
 id: 589fc832f9fc0f352b528e78
 title: Announce New Users
 challengeType: 2
-videoUrl: ''
+forumTopicId: 301546
 localeTitle: 宣布新用户
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socketio/">GitHub</a>克隆的。许多聊天室能够在用户连接或断开连接时进行通知，然后将其显示给聊天中的所有连接用户。看起来您已经在连接和断开连接上发出事件，您只需修改此事件即可支持此功能。最合乎逻辑的方法是使用事件发送3个数据：连接/断开用户的名称，当前用户计数以及连接或断开连接的名称。 <hr>将事件名称更改为“user”，并且数据传递一个对象，包含字段&#39;name&#39;，&#39;currentUsers&#39;和boolean&#39;connected&#39;（如果是连接则为true，对于断开发送的用户，则为false）。确保对我们有&#39;用户计数&#39;事件的两个点进行更改，并将断开连接设置为对&#39;field&#39;字段发送false，而不是像在connect上发出的事件那样为true。 <code>io.emit(&#39;user&#39;, {name: socket.request.user.name, currentUsers, connected: true});</code>现在，您的客户端将拥有所有必要信息，以便在用户连接或断开连接时正确显示当前用户数和通知！要在客户端处理此事件，我们应该监听“用户”，然后使用jQuery将<code>#num-users</code>的文本更改为“{NUMBER}在线用户”，并附加<code>&lt;li&gt;</code> ，以更新当前用户数<code>&lt;li&gt;</code>使用ID为&#39;messages&#39;的无序列表，其中&#39;{NAME}已{加/左}聊天。&#39;。此实现可能如下所示： <pre> socket.on（&#39;user&#39;，function（data）{
-  $（&#39;＃num-users&#39;）。text（data.currentUsers +&#39;users online&#39;）;
-  var message = data.name;
-  if（data.connected）{
-    消息+ =&#39;已加入聊天。&#39;;
-  } else {
-    消息+ =&#39;离开了聊天。&#39;;
-  }
-  $（&#39;＃messages&#39;）。append（$（&#39;&lt;li&gt;&#39;）。html（&#39;&lt;b&gt;&#39;+ message +&#39;&lt;\ / b&gt;&#39;））;
-}）; </pre>当您认为自己已经做对时，请提交您的页面。 </section>
+
+<section id='description'>
+
+许多聊天室都有这个功能：所有已连接到服务器的在线用户都会看到有人加入或退出的提醒。我们已经写好了处理连接和断开事件的代码，只要对这个方法稍作修改就可以实现这个功能。在事件中，我们需要发送这三条信息：连接或断开的用户名、当前用户数量、事件类型（即需要知道用户究竟是连接还是断开）。
+请将事件名称更改为 <code>'user'</code>，其中应包含如下字段：'name'、'currentUsers'、'connected'（布尔值，连接上即为 <code>true</code>，断开则是 <code>false</code>）。记得要修改之前我们写好的处理 'user count' 的那部分代码，现在我们应在用户连接时传入布尔值 <code>true</code>；在用户断开连接是传入布尔值 <code>false</code>。
+
+```js
+io.emit('user', {
+  name: socket.request.user.name,
+  currentUsers,
+  connected: true
+});
+```
+
+现在，我们的客户端已经有足够的信息显示现有用户数量和发送用户上下线通知。接下来我们需要在客户端监听 'user' 事件，然后使用 jQuery 把 <code>#num-users</code> 节点的文本内容更新为 '{NUMBER} users online'。同时，我们需要为 <code>&#60;ul&#62;</code> 添加一个 id 为 'messages' 且带有 '{NAME} has {joined/left} the chat.' 文本的<code>&#60;li&#62;</code>。
+一种实现方式如下：
+
+```js
+socket.on('user', data => {
+  $('#num-users').text(data.currentUsers + ' users online');
+  let message =
+    data.name +
+    (data.connected ? ' has joined the chat.' : ' has left the chat.');
+  $('#messages').append($('<li>').html('<b>' + message + '</b>'));
+});
+```
+
+完成上述要求后，你可以在下方提交你的页面链接。如果你遇到了问题，可以参考 <a href='https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286' target='_blank'>这里</a> 的答案。
+
+</section>
 
 ## Instructions
-<section id="instructions">
+
+<section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 使用name，currentUsers和connected发出事件“user”
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /io.emit.*('|")user('|").*name.*currentUsers.*connected/gi, 'You should have an event emitted named user sending name, currentUsers, and connected'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: 客户正确处理和显示事件'用户'中的新数据
-    testString: "getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|\")user('|\")[^]*num-users/gi, 'You should change the text of #num-users within on your client within the \"user\" even listener to show the current users connected'); assert.match(data, /socket.on.*('|\")user('|\")[^]*messages.*li/gi, 'You should append a list item to #messages on your client within the \"user\" event listener to announce a user came or went'); }, xhr => { throw new Error(xhr.statusText); })"
-
+  - text: <code>'user'</code> 事件应发送包含 name、currentUsers、connected 字段的对象。
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => { assert.match(data, /io.emit.*('|")user\1.*name.*currentUsers.*connected/gis, 'You should have an event emitted named user sending name, currentUsers, and connected'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: 客户端应处理和显示 <code>'user'</code> 对象中的信息
+    testString: getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|")user\1[^]*num-users/gi, 'You should change the text of "#num-users" within on your client within the "user" event listener to show the current users connected'); assert.match(data, /socket.on.*('|")user\1[^]*messages.*li/gi, 'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'); }, xhr => { throw new Error(xhr.statusText); })
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

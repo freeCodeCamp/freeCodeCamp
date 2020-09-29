@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036156
 title: Use Middleware to Handle Asynchronous Actions
 challengeType: 6
-isRequired: false
 forumTopicId: 301451
 ---
 
@@ -33,7 +32,7 @@ tests:
   - text: Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.
     testString: assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })());
   - text: Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.
-    testString: assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\s/g,''); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })());
+    testString: assert((function() { const noWhiteSpace = __helpers.removeWhiteSpace(handleAsync.toString()); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })());
 
 ```
 

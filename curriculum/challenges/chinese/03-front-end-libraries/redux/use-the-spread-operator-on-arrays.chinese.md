@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036159
 title: Use the Spread Operator on Arrays
 challengeType: 6
-isRequired: false
 forumTopicId: 301452
 localeTitle: 在数组中使用扩展运算符
 ---

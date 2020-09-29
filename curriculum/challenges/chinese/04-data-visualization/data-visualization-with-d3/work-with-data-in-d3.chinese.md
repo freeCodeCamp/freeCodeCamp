@@ -2,28 +2,52 @@
 id: 587d7fa7367417b2b2512bc4
 title: Work with Data in D3
 challengeType: 6
-videoUrl: ''
-localeTitle: 在D3中使用数据
+forumTopicId: 301497
+localeTitle: 使用 D3 中的数据
 ---
 
 ## Description
-<section id="description"> D3库专注于数据驱动的方法。当您拥有一组数据时，可以应用D3方法在页面上显示它。数据有多种格式，但这一挑战使用了一组简单的数字。第一步是让D3知道数据。 <code>data()</code>方法用于选择DOM元素以将数据附加到这些元素。数据集作为参数传递给方法。常见的工作流模式是在文档中为集合中的每个数据创建一个新元素。 D3为此目的使用了<code>enter()</code>方法。当<code>enter()</code>与<code>data()</code>方法结合使用时，它会查看页面中的选定元素，并将它们与集合中的数据项数量进行比较。如果元素少于数据项，则会创建缺少的元素。下面是一个示例，它选择一个<code>ul</code>元素并根据数组中的条目数创建一个新的列表项： <blockquote> &lt;BODY&gt; <br> &lt;UL&gt; &lt;/ UL&gt; <br> &lt;SCRIPT&gt; <br> const dataset = [“a”，“b”，“c”]; <br> d3.select（ “UL”）。全选（ “礼”） <br> 。数据（数据集） <br> 。输入（） <br> .append（ “里”） <br> .text（“新项目”）; <br> &lt;/ SCRIPT&gt; <br> &lt;/ BODY&gt; </blockquote>选择尚不存在的元素似乎令人困惑。此代码告诉D3首先选择页面上的<code>ul</code> 。接下来，选择所有列表项，返回空选择。然后<code>data()</code>方法检查数据集并运行以下代码三次，对于数组中的每个项目运行一次。 <code>enter()</code>方法看到页面上没有<code>li</code>元素，但它需要3（数据<code>dataset</code>每个数据对应一个）。新的<code>li</code>元素被附加到<code>ul</code>并具有文本“New item”。 </section>
+<section id='description'>
+D3 是数据驱动的库,可以使用 D3 的方法将数组形式的数据显示在页面上。
+第一步是让 D3 知道数据。<code>data</code> 方法选择连接着数据的 DOM 元素,数据集作为参数传递给该方法。
+常见的方法是在文档中为数据集中的每一个数据创建一个元素，为此，你可以使用 D3 的 <code>enter()</code> 方法
+当 <code>enter()</code> 和 <code>data()</code> 方法一起使用时，它把从页面中选择的元素和数据集中的元素作比较。如果页面中选择的元素较少则创建缺少的元素。
+以下是一个选择 <code>ul</code> 元素并根据添加的数组创建新的列表项的例子。
+
+```html
+<body>
+  <ul></ul>
+  <script>
+    const dataset = ["a", "b", "c"];
+    d3.select("ul").selectAll("li")
+      .data(dataset)
+      .enter()
+      .append("li")
+      .text("New item");
+  </script>
+</body>
+```
+
+选择不存在的 li 元素似乎有些难以理解。事实上，这段代码先选择页面上的 ul 元素，再选择所有的列表项——li，它将返回空。然后data()方法接收数组作为参数，并运行三次后面的代码，每次对应数组中的一个对象。enter()方法发现页面中没有 li 元素，但是需要 3 个（每个对应dataset中的一个对象）。它将在 ul 中添加带有文本 "New item" 的 li 元素。
+</section>
 
 ## Instructions
-<section id="instructions">选择<code>body</code>节点，然后选择所有<code>h2</code>元素。让D3为<code>dataset</code>数组中的每个项创建并附加<code>h2</code>标记。 <code>h2</code>的文字应该说“新标题”。您的代码应使用<code>data()</code>和<code>enter()</code>方法。 </section>
+<section id='instructions'>
+选择 <code>body</code> 节点，然后选择所有的 <code>h2</code> 元素。让 D3 为 <code>dataset</code> 数组中的每一个对象创建并添加文本为 "New Title" 的 <code>h2</code> 标签。你应该使用 <code>data()</code> 和 <code>enter()</code> 方法。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的文档应该有9个<code>h2</code>元素。
+  - text: 你的文档应该有 9 个 <code>h2</code> 元素。
     testString: assert($('h2').length == 9);
-  - text: <code>h2</code>元素中的文本应该是“New Title”。大写和间距应完全匹配。
+  - text: "<code>h2</code> 元素中的文本应为 'New Title'。大小写和空格必须一致。"
     testString: assert($('h2').text().match(/New Title/g).length == 9);
-  - text: 您的代码应该使用<code>data()</code>方法。
+  - text: 你应该使用 <code>data()</code> 方法。
     testString: assert(code.match(/\.data/g));
-  - text: 您的代码应使用<code>enter()</code>方法。
+  - text: 你应该使用 <code>enter()</code> 方法。
     testString: assert(code.match(/\.enter/g));
 
 ```
@@ -40,14 +64,13 @@ tests:
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
 
-    // Add your code below this line
+    // 在下面添加你的代码
 
 
 
-    // Add your code above this line
+    // 在上面添加你的代码
   </script>
 </body>
-
 ```
 
 </div>
@@ -59,8 +82,21 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body")
+      .selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text("New Title")
+
+  </script>
+</body>
+
 ```
 
-/section>
+</section>

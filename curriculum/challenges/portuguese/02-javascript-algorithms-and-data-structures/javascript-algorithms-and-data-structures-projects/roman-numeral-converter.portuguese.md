@@ -1,7 +1,6 @@
 ---
 id: a7f4d8f2483413a6ce226cac
 title: Roman Numeral Converter
-isRequired: true
 challengeType: 5
 videoUrl: ''
 localeTitle: Conversor Numeral Romano

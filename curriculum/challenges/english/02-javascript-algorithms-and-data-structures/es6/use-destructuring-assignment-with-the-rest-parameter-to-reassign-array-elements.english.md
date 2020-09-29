@@ -37,7 +37,7 @@ tests:
   - text: <code>Array.slice()</code> should not be used.
     testString: getUserInput => assert(!getUserInput('index').match(/slice/g));
   - text: Destructuring on <code>list</code> should be used.
-    testString: assert(code.replace(/\s/g, '').match(/\[(([_$a-z]\w*)?,){1,}\.\.\.arr\]=list/i));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/\[(([_$a-z]\w*)?,){1,}\.\.\.arr\]=list/i));
 
 ```
 

@@ -2,7 +2,6 @@
 id: 5a24bbe0dba28a8d3cbd4c5d
 title: Create a Complex JSX Element
 challengeType: 6
-isRequired: false
 forumTopicId: 301382
 ---
 

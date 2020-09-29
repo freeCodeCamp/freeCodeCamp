@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036180
 title: Optimize Re-Renders with shouldComponentUpdate
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Otimizar Re-Renders com shouldComponentUpdate
 ---

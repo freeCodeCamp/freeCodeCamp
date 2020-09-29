@@ -77,7 +77,7 @@ function isValid(iban) {
   	MC:27, MR:27, SM:27, AL:28, AZ:28, CY:28, DO:28, GT:28,
   	HU:28, LB:28, PL:28, BR:29, PS:29, KW:30, MU:30, MT:31
   }
-	iban = iban.replace(/\s/g, '')
+	iban = __helpers.removeWhiteSpace(iban)
 	if (!iban.match(/^[\dA-Z]+$/)) return false
 	var len = iban.length
 	if (len != ibanLen[iban.substr(0,2)]) return false

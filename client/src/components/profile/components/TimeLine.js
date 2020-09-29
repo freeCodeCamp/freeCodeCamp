@@ -103,7 +103,6 @@ class TimelineInner extends Component {
             {format(completedDate, 'MMMM D, YYYY')}
           </time>
         </td>
-        <td />
       </tr>
     );
   }
@@ -170,7 +169,6 @@ class TimelineInner extends Component {
               <tr>
                 <th>Challenge</th>
                 <th className='text-center'>Completed</th>
-                <th />
               </tr>
             </thead>
             <tbody>

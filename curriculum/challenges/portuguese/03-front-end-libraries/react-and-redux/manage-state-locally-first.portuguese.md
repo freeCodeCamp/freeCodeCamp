@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036142
 title: Manage State Locally First
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Gerenciar Estado Localmente Primeiro
 ---

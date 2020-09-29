@@ -2,15 +2,19 @@
 id: 587d8248367417b2b2512c3d
 title: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 challengeType: 2
-videoUrl: ''
-localeTitle: 使用helmet.dnsPrefetchControl（）禁用DNS预取
+forumTopicId: 301577
+localeTitle: 使用 helmet.dnsPrefetchControl() 禁用 DNS 预获取
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。为了提高性能，大多数浏览器都会为页面中的链接预取DNS记录。以这种方式，当用户点击链接时，目标IP已知。这可能导致过度使用DNS服务（如果您拥有一个大网站，数百万人访问......），隐私问题（一个窃听者可能会推断您在某个页面上），或者页面统计信息更改（某些链接可能会即使他们不是，也会出现。）如果您有高安全性需求，则可以以性能损失为代价禁用DNS预取。 </section>
+<section id='description'>
+请注意，本项目在 <a href="https://repl.it/github/freeCodeCamp/boilerplate-infosec">这个 Repl.it 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+为了提高性能，大部分浏览器都会为页面上的链接预先加载 DNS 记录。这样当用户点击一个链接的时候浏览器已经知道其 IP 地址了。但这也会造成 DNS 服务的过度使用（如果你有一个百万用户数量级的大型网站）、隐私问题（窃听者可以借此推测出你在访问哪个页面）、页面统计数据准确性（有些没访问过的链接会被标记成已访问）。如果你对安全性要求比较高，你应该禁用 DNS 预加载。当然，这样做会让你损失一些性能。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,7 +22,7 @@ localeTitle: 使用helmet.dnsPrefetchControl（）禁用DNS预取
 
 ```yml
 tests:
-  - text: 应该正确安装helmet.dnsPrefetchControl（）中间件
+  - text: 应正确加载 helmet.dnsPrefetchControl() 中间件
     testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'dnsPrefetchControl'); assert.equal(data.headers['x-dns-prefetch-control'], 'off'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
@@ -34,7 +38,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
-/section>
+</section>

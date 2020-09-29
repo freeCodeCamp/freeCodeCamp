@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036176
 title: Use State to Toggle an Element
 challengeType: 6
-isRequired: false
 forumTopicId: 301421
 ---
 
@@ -77,7 +76,7 @@ tests:
       assert(!firstValue && secondValue && !thirdValue);
       })();"
   - text: An anonymous function should be passed to <code>setState</code>.
-    testString: const paramRegex = '[a-zA-Z$_]\\w*(,[a-zA-Z$_]\\w*)?'; const noSpaces = code.replace(/\s/g, ''); assert(new RegExp('this\\.setState\\((function\\(' + paramRegex + '\\){|([a-zA-Z$_]\\w*|\\(' + paramRegex + '\\))=>)').test(noSpaces));
+    testString: const paramRegex = '[a-zA-Z$_]\\w*(,[a-zA-Z$_]\\w*)?'; assert(new RegExp('this\\.setState\\((function\\(' + paramRegex + '\\){|([a-zA-Z$_]\\w*|\\(' + paramRegex + '\\))=>)').test(__helpers.removeWhiteSpace(code)));
   - text: <code>this</code> should not be used inside <code>setState</code>
     testString: assert(!/this\.setState\([^}]*this/.test(code));
 ```

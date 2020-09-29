@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403616d
 title: Use PropTypes to Define the Props You Expect
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Use PropTypes para definir los beneficios que espera
 ---
