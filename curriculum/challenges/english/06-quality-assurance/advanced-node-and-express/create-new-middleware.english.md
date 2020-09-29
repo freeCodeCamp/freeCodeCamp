@@ -8,7 +8,7 @@ forumTopicId: 301551
 ## Description
 <section id='description'>
 
-As is, any user can just go to <em>/profile</em> whether they have authenticated or not, by typing in the url. We want to prevent this, by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.
+As is, any user can just go to <code>/profile</code> whether they have authenticated or not, by typing in the url. We want to prevent this, by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.
 
 The challenge here is creating the middleware function <code>ensureAuthenticated(req, res, next)</code>, which will check if a user is authenticated by calling passport's <code>isAuthenticated</code> method on the <code>request</code> which, in turn, checks if <code>req.user</code> is defined. If it is, then <code>next()</code> should be called, otherwise, we can just respond to the request with a redirect to our homepage to login. An implementation of this middleware is:
 
