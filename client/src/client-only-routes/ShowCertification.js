@@ -25,7 +25,7 @@ import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
-import { Loader } from '../components/helpers';
+import { Loader, Spacer } from '../components/helpers';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -46,6 +46,9 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   isDonating: PropTypes.bool,
+  location: PropTypes.shape({
+    pathname: PropTypes.string
+  }),
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -158,7 +161,8 @@ class ShowCertification extends Component {
       fetchState,
       validCertName,
       createFlashMessage,
-      certName
+      signedInUserName,
+      location: { pathname }
     } = this.props;
 
     const {
@@ -195,6 +199,11 @@ class ShowCertification extends Component {
       certTitle,
       completionTime
     } = cert;
+
+    const certDate = new Date(issueDate);
+    const certYear = certDate.getFullYear();
+    const certMonth = certDate.getMonth();
+    const certURL = `https://freecodecamp.org${pathname}`;
 
     const donationCloseBtn = (
       <div>
@@ -236,6 +245,31 @@ class ShowCertification extends Component {
       </Grid>
     );
 
+    const shareCertBtns = (
+      <Row className='text-center'>
+        <Spacer size={2} />
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          target='_blank'
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth}&certUrl=${certURL}`}
+        >
+          Add this certification to my LinkedIn profile
+        </Button>
+        <Spacer />
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          target='_blank'
+          href={`https://twitter.com/intent/tweet?text=I just earned the ${certTitle} certification @freeCodeCamp! Check it out here: ${certURL}`}
+        >
+          Share this certification on Twitter
+        </Button>
+      </Row>
+    );
+
     return (
       <div className='certificate-outer-wrapper'>
         {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
@@ -250,7 +284,7 @@ class ShowCertification extends Component {
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{format(new Date(issueDate), 'MMMM D, YYYY')}</strong>
+                  <strong>{format(certDate, 'MMMM D, YYYY')}</strong>
                 </div>
               </Col>
             </header>
@@ -286,15 +320,12 @@ class ShowCertification extends Component {
                 <p>Executive Director, freeCodeCamp.org</p>
               </div>
               <Row>
-                <p className='verify'>
-                  Verify this certification at:
-                  https://www.freecodecamp.org/certification/
-                  {username}/{certName}
-                </p>
+                <p className='verify'>Verify this certification at {certURL}</p>
               </Row>
             </footer>
           </Row>
         </Grid>
+        {signedInUserName === username ? shareCertBtns : ''}
       </div>
     );
   }

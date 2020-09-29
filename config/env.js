@@ -39,11 +39,11 @@ module.exports = Object.assign(locations, {
       ? null
       : stripePublicKey,
   algoliaAppId:
-    !algoliaAppId || algoliaAppId === 'Algolia app id from dashboard'
+    !algoliaAppId || algoliaAppId === 'app_id_from_algolia_dashboard'
       ? null
       : algoliaAppId,
   algoliaAPIKey:
-    !algoliaAPIKey || algoliaAPIKey === 'Algolia api key from dashboard'
+    !algoliaAPIKey || algoliaAPIKey === 'api_key_from_algolia_dashboard'
       ? null
       : algoliaAPIKey,
   paypalClientId:

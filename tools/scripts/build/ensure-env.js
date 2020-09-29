@@ -15,7 +15,12 @@ if (FREECODECAMP_NODE_ENV === 'production') {
     'forumLocation',
     'newsLocation'
   ];
-  const deploymentKeys = ['locale', 'deploymentEnv', 'environment'];
+  const deploymentKeys = [
+    'locale',
+    'deploymentEnv',
+    'environment',
+    'showUpcomingChanges'
+  ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId'];
 
@@ -29,16 +34,23 @@ if (FREECODECAMP_NODE_ENV === 'production') {
   variables.sort();
   if (expectedVariables.length !== variables.length) {
     throw Error(`Env. variable validation failed. Expected
-    ${variables} to match
     ${expectedVariables}
+    but recieved
+    ${variables}
     `);
   }
 
   for (const key of expectedVariables) {
-    if (!env[key]) {
+    if (typeof env[key] === 'undefined' || env[key] === null) {
       throw Error(`Env. variable ${key} is missing, build cannot continue`);
     }
   }
+
+  if (env['environment'] !== 'production')
+    throw Error("Production environment should be 'production' ");
+
+  if (env['showUpcomingChanges'])
+    throw Error("SHOW_UPCOMING_CHANGES should never be 'true' in production");
 }
 
 fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));

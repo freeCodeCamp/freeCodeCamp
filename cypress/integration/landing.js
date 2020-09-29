@@ -7,6 +7,19 @@ const selectors = {
   landingPageImage: '.landing-page-image'
 };
 
+const certifications = [
+  'Responsive Web Design',
+  'JavaScript Algorithms and Data Structures',
+  'Front End Libraries',
+  'Data Visualization',
+  'APIs and Microservices',
+  'Quality Assurance',
+  'Scientific Computing with Python',
+  'Data Analysis with Python',
+  'Information Security',
+  'Machine Learning with Python'
+];
+
 describe('Landing page', () => {
   it('Should render', () => {
     cy.visit('/');
@@ -50,11 +63,14 @@ describe('Landing page', () => {
       .should('not.be.visible');
   });
 
-  it('Has 10 certifications', function() {
+  it('Has links to all the certifications', function() {
     cy.get(selectors.certifications)
       .children()
       .its('length')
       .should('eq', 10);
+    cy.wrap(certifications).each(cert => {
+      cy.get(selectors.certifications).contains(cert);
+    });
   });
 
   it('Has 3 testimonial cards', function() {

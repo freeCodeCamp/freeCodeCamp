@@ -201,9 +201,9 @@ class Editor extends Component {
       );
     this.data.model = model;
 
-    const editableRegion = [
-      ...challengeFiles[fileKey].editableRegionBoundaries
-    ];
+    const editableRegion = challengeFiles[fileKey].editableRegionBoundaries
+      ? [...challengeFiles[fileKey].editableRegionBoundaries]
+      : [];
 
     if (editableRegion.length === 2)
       this.decorateForbiddenRanges(editableRegion);
@@ -286,9 +286,9 @@ class Editor extends Component {
       }
     });
 
-    const editableBoundaries = [
-      ...challengeFiles[fileKey].editableRegionBoundaries
-    ];
+    const editableBoundaries = challengeFiles[fileKey].editableRegionBoundaries
+      ? [...challengeFiles[fileKey].editableRegionBoundaries]
+      : [];
 
     if (editableBoundaries.length === 2) {
       // TODO: is there a nicer approach/way of organising everything that

@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036184
 title: Render with an If-Else Condition
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Render con una condición de si-else
 ---

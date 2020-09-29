@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036178
 title: Create a Controlled Input
 challengeType: 6
-isRequired: false
 forumTopicId: 301385
 localeTitle: 创建一个可以控制的输入框
 ---

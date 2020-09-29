@@ -3,7 +3,6 @@ id: bd7158d8c443edefaeb5bd0f
 title: File Metadata Microservice
 localeTitle: Metadados de Arquivo Microservice
 challengeType: 4
-isRequired: true
 ---
 
 ## Description

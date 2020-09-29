@@ -2,7 +2,6 @@
 id: bd7158d8c443eddfaeb5bdff
 title: Build a Nightlife Coordination App
 challengeType: 4
-isRequired: true
 forumTopicId: 302351
 localeTitle: Создайте приложение для координации ночной жизни
 ---

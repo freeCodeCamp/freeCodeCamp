@@ -1,7 +1,6 @@
 ---
 id: 587d78af367417b2b2512b04
 title: Build a Product Landing Page
-isRequired: true
 challengeType: 3
 forumTopicId: 301144
 localeTitle: 制作一个产品登录页

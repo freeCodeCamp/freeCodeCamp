@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403614f
 title: Dispatch an Action Event
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Enviar un evento de acción
 ---

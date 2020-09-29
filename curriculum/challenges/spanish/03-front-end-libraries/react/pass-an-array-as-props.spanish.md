@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403616a
 title: Pass an Array as Props
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Pasar una matriz como apoyos
 ---

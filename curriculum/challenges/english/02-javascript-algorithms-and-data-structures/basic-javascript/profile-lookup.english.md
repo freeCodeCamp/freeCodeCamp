@@ -26,17 +26,17 @@ If <code>prop</code> does not correspond to any valid properties of a contact fo
 
 ```yml
 tests:
-  - text: <code>"Kristian", "lastName"</code> should return <code>"Vos"</code>
+  - text: <code>lookUpProfile("Kristian", "lastName")</code> should return <code>"Vos"</code>
     testString: assert(lookUpProfile('Kristian','lastName') === "Vos");
-  - text: <code>"Sherlock", "likes"</code> should return <code>["Intriguing Cases", "Violin"]</code>
+  - text: <code>lookUpProfile("Sherlock", "likes")</code> should return <code>["Intriguing Cases", "Violin"]</code>
     testString: assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"]);
-  - text: <code>"Harry","likes"</code> should return an array
+  - text: <code>lookUpProfile("Harry", "likes")</code> should return an array
     testString: assert(typeof lookUpProfile("Harry", "likes") === "object");
-  - text: <code>"Bob", "number"</code> should return "No such contact"
+  - text: <code>lookUpProfile("Bob", "number")</code> should return "No such contact"
     testString: assert(lookUpProfile("Bob", "number") === "No such contact");
-  - text: <code>"Bob", "potato"</code> should return "No such contact"
+  - text: <code>lookUpProfile("Bob", "potato")</code> should return "No such contact"
     testString: assert(lookUpProfile("Bob", "potato") === "No such contact");
-  - text: <code>"Akira", "address"</code> should return "No such property"
+  - text: <code>lookUpProfile("Akira", "address")</code> should return "No such property"
     testString: assert(lookUpProfile("Akira", "address") === "No such property");
 
 ```

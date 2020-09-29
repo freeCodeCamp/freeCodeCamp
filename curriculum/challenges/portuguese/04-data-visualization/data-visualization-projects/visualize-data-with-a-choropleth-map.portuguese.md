@@ -1,7 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bbf
 title: Visualize Data with a Choropleth Map
-isRequired: true
 challengeType: 3
 videoUrl: ''
 localeTitle: Visualize dados com um mapa coroplético

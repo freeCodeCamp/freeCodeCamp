@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403617e
 title: Add Event Listeners
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Añadir escuchas de eventos
 ---

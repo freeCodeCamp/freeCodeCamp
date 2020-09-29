@@ -1,7 +1,6 @@
 ---
 id: bd7158d8c442eddfaeb5bd13
 title: Build a Random Quote Machine
-isRequired: true
 challengeType: 3
 localeTitle: 构建一个随机引语生成器
 ---

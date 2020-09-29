@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403614e
 title: Define an Action Creator
 challengeType: 6
-isRequired: false
 forumTopicId: 301441
 localeTitle: Определить создателя действия
 ---

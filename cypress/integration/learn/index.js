@@ -52,7 +52,7 @@ describe('Learn Landing page (not logged in)', () => {
 describe('Quotes', () => {
   beforeEach(() => {
     cy.visit('/');
-    cy.contains("Get started (it's free)").click({ force: true });
+    cy.contains("Get started (it's free)").click();
   });
 
   it('Should show a quote', () => {
@@ -71,7 +71,7 @@ describe('Quotes', () => {
 describe('Superblocks and Blocks', () => {
   beforeEach(() => {
     cy.visit('/');
-    cy.contains("Get started (it's free)").click({ force: true });
+    cy.contains("Get started (it's free)").click();
   });
 
   it('Has first superblock and block collapsed by default', () => {
@@ -93,30 +93,26 @@ describe('Superblocks and Blocks', () => {
   });
   it('Superblocks should be collapsable and foldable', () => {
     cy.contains(superBlockNames[0])
-      .click({
-        force: true
-      })
+      .click()
       .should('have.attr', 'aria-expanded', 'false');
     cy.contains('Basic HTML and HTML5').should('not.be.visible');
 
     cy.contains(superBlockNames[0])
-      .click({
-        force: true
-      })
+      .click()
       .should('have.attr', 'aria-expanded', 'true');
     cy.contains('Basic HTML and HTML5').should('be.visible');
   });
 
   it('Blocks should be collapsable and foldable', () => {
     cy.contains('Basic HTML and HTML5')
-      .click({ force: true })
+      .click()
       .should('have.attr', 'aria-expanded', 'false');
     cy.contains('Introduction to Basic HTML and HTML5').should(
       'not.be.visible'
     );
 
     cy.contains('Basic HTML and HTML5')
-      .click({ force: true })
+      .click()
       .should('have.attr', 'aria-expanded', 'true');
     cy.contains('Introduction to Basic HTML and HTML5').should('be.visible');
   });

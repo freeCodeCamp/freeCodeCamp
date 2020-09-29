@@ -1,7 +1,6 @@
 ---
 id: aaa48de84e1ecc7c742e1124
 title: Palindrome Checker
-isRequired: true
 challengeType: 5
 forumTopicId: 16004
 localeTitle: 回文检查器

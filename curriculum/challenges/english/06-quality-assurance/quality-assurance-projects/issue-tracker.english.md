@@ -2,7 +2,6 @@
 id: 587d8249367417b2b2512c42
 title: Issue Tracker
 challengeType: 4
-isRequired: true
 forumTopicId: 301569
 ---
 
@@ -23,8 +22,6 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: Prevent cross site scripting (XSS) attacks.
-    testString: ''
   - text: I can POST /api/issues/{projectname} with form data containing required issue_title, issue_text, created_by, and optional assigned_to and status_text.
     testString: ''
   - text: The object saved (and returned) will include all of those fields (blank for optional no input) and also include created_on(date/time), updated_on(date/time), open(boolean, true for open, false for closed), and _id.

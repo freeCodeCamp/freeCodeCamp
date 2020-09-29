@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d403618a
 title: Use Array.map() to Dynamically Render Elements
 challengeType: 6
-isRequired: false
 forumTopicId: 301417
 localeTitle: 使用 Array.map() 动态渲染元素
 ---

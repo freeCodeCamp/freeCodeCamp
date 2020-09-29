@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036179
 title: Create a Controlled Form
 challengeType: 6
-isRequired: false
 videoUrl: ''
 localeTitle: Crie um formulário controlado
 ---

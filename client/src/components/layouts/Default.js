@@ -11,7 +11,9 @@ import {
   isSignedInSelector,
   onlineStatusChange,
   isOnlineSelector,
+  userFetchStateSelector,
   userSelector,
+  usernameSelector,
   executeGA
 } from '../../redux';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
@@ -69,6 +71,7 @@ const metaKeywords = [
 const propTypes = {
   children: PropTypes.node.isRequired,
   executeGA: PropTypes.func,
+  fetchState: PropTypes.shape({ pending: PropTypes.bool }),
   fetchUser: PropTypes.func.isRequired,
   flashMessage: PropTypes.shape({
     id: PropTypes.string,
@@ -82,21 +85,27 @@ const propTypes = {
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool,
+  signedInUserName: PropTypes.string,
   theme: PropTypes.string,
-  useTheme: PropTypes.bool
+  useTheme: PropTypes.bool,
+  user: PropTypes.object
 };
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
   flashMessageSelector,
   isOnlineSelector,
+  userFetchStateSelector,
   userSelector,
-  (isSignedIn, flashMessage, isOnline, user) => ({
+  usernameSelector,
+  (isSignedIn, flashMessage, isOnline, fetchState, user) => ({
     isSignedIn,
     flashMessage,
     hasMessage: !!flashMessage.message,
     isOnline,
-    theme: user.theme
+    fetchState,
+    theme: user.theme,
+    user
   })
 );
 
@@ -142,14 +151,18 @@ class DefaultLayout extends Component {
     const {
       children,
       hasMessage,
+      fetchState,
       flashMessage,
       isOnline,
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
       theme = 'default',
-      useTheme = true
+      user,
+      useTheme = true,
+      pathname
     } = this.props;
+
     return (
       <Fragment>
         <Helmet
@@ -213,7 +226,7 @@ class DefaultLayout extends Component {
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
-          <Header />
+          <Header fetchState={fetchState} pathName={pathname} user={user} />
           <div className={`default-layout`}>
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
             {hasMessage && flashMessage ? (

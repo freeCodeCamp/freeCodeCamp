@@ -2,7 +2,6 @@
 id: 5a24c314108439a4d4036148
 title: Connect Redux to the Messages App
 challengeType: 6
-isRequired: false
 forumTopicId: 301427
 ---
 

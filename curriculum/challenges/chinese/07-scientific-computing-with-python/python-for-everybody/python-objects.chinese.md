@@ -3,7 +3,6 @@ id: 5e7b9f160b6c005b0e76f085
 title: Python Objects
 challengeType: 11
 isHidden: false
-isRequired: true
 videoId: uJxGeTYy0us
 ---
 
