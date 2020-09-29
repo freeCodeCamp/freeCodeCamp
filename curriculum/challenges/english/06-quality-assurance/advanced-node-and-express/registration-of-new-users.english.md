@@ -8,7 +8,7 @@ forumTopicId: 301561
 ## Description
 <section id='description'>
 
-Now we need to allow a new user on our site to register an account. On the res.render for the home page add a new variable to the object passed along- <code>showRegistration: true</code>. When you refresh your page, you should then see the registration form that was already created in your index.pug file! This form is set up to <b>POST</b> on <em>/register</em> so this is where we should set up to accept the POST and create the user object in the database.
+Now we need to allow a new user on our site to register an account. On the <code>res.render</code> for the home page add a new variable to the object passed along--<code>showRegistration: true</code>. When you refresh your page, you should then see the registration form that was already created in your <code>index.pug</code> file! This form is set up to <b>POST</b> on <code>/register</code>, so this is where we should set up to accept the <b>POST</b> and create the user object in the database.
 
 The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
 

@@ -13,8 +13,8 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-This exercise is similar to the preceding.
-Look at the code for directions. Follow the assertions order, We rely on it.
+This exercise is similar to the preceding one.
+Look at the code for directions. Follow the assertions order: we rely on it.
 </section>
 
 ## Tests

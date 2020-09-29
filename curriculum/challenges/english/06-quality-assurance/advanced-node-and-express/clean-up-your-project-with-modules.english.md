@@ -8,7 +8,7 @@ forumTopicId: 301549
 ## Description
 <section id='description'>
 
-Right now everything you have is in your server.js file. This can lead to hard to manage code that isn't very expandable.
+Right now, everything you have is in your <code>server.js</code> file. This can lead to hard to manage code that isn't very expandable.
 Create 2 new files: <code>routes.js</code> and <code>auth.js</code>
 
 Both should start with the following code:
@@ -19,10 +19,10 @@ module.exports = function (app, myDataBase) {
 }
 ```
 
-Now in the top of your server file, require these files like such: <code>const routes = require('./routes.js');</code>
-Right after you establish a successful connect with the database instantiate each of them like such: <code>routes(app, myDataBase)</code>
+Now, in the top of your server file, require these files like so: <code>const routes = require('./routes.js');</code>
+Right after you establish a successful connection with the database, instantiate each of them like so: <code>routes(app, myDataBase)</code>
 
-Finally, take all of the routes in your server and paste them into your new files and remove them from your server file. Also take the ensureAuthenticated since we created that middleware function for routing specifically. You will have to now correctly add the dependencies in that are used, such as <code>const passport = require('passport');</code>, at the very top above the export line in your routes.js file.
+Finally, take all of the routes in your server and paste them into your new files, and remove them from your server file. Also take the <code>ensureAuthenticated</code> function, since it was specifically created for routing. Now, you will have to correctly add the dependencies in which are used, such as <code>const passport = require('passport');</code>, at the very top, above the export line in your <code>routes.js</code> file.
 
 Keep adding them until no more errors exist, and your server file no longer has any routing (**except for the route in the catch block**)!
 
