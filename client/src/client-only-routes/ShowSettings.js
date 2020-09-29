@@ -25,22 +25,10 @@ import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
 
+import { StaticQuery, graphql } from 'gatsby';
+import { dasherize } from '../../../utils/slugs';
+
 const propTypes = {
-  certMap: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      title: PropTypes.string,
-      dashedName: PropTypes.string,
-      block: PropTypes.string,
-      order: PropTypes.number,
-      tests: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string,
-          id: PropTypes.string
-        })
-      )
-    })
-  ),
   createFlashMessage: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool.isRequired,
   navigate: PropTypes.func.isRequired,
@@ -130,7 +118,6 @@ const mapDispatchToProps = {
 
 export const ShowSettings = props => {
   const {
-    certMap,
     createFlashMessage,
     isSignedIn,
     submitNewAbout,
@@ -241,28 +228,69 @@ export const ShowSettings = props => {
           <Spacer />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer />
-          <Certification
-            certMap={certMap}
-            completedChallenges={completedChallenges}
-            createFlashMessage={createFlashMessage}
-            is2018DataVisCert={is2018DataVisCert}
-            isApisMicroservicesCert={isApisMicroservicesCert}
-            isBackEndCert={isBackEndCert}
-            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
-            isDataVisCert={isDataVisCert}
-            isFrontEndCert={isFrontEndCert}
-            isFrontEndLibsCert={isFrontEndLibsCert}
-            isFullStackCert={isFullStackCert}
-            isHonest={isHonest}
-            isInfosecCertV7={isInfosecCertV7}
-            isInfosecQaCert={isInfosecQaCert}
-            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
-            isQaCertV7={isQaCertV7}
-            isRespWebDesignCert={isRespWebDesignCert}
-            isSciCompPyCertV7={isSciCompPyCertV7}
-            username={username}
-            verifyCert={verifyCert}
+          <StaticQuery
+            query={graphql`
+              query {
+                allCertificateNode {
+                  nodes {
+                    tests {
+                      title
+                      id
+                    }
+                    title
+                    dashedName
+                    id
+                    block
+                    order
+                  }
+                }
+              }
+            `}
+            render={data => {
+              const certMap = data.allCertificateNode.nodes;
+              certMap.forEach(cert => {
+                // superBlock needs to contain -v7 for some projects
+                cert.superBlock = cert.dashedName.startsWith('legacy')
+                  ? cert.block.replace(/-certificate/g, '')
+                  : cert.dashedName.replace(/-certificate/, '');
+                cert.title = cert.title.replace(/ Certificate( v7)?/, '');
+                cert.tests.forEach(
+                  test =>
+                    (test.link = `/learn/${cert.dashedName.replace(
+                      /-certificate(-v7)?/,
+                      ''
+                    )}/${cert.dashedName.replace(
+                      /-certificate(-v7)?/,
+                      '-projects'
+                    )}/${dasherize(test.title)}`)
+                );
+              });
+              return (
+                <Certification
+                  certMap={certMap}
+                  completedChallenges={completedChallenges}
+                  createFlashMessage={createFlashMessage}
+                  is2018DataVisCert={is2018DataVisCert}
+                  isApisMicroservicesCert={isApisMicroservicesCert}
+                  isBackEndCert={isBackEndCert}
+                  isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
+                  isDataVisCert={isDataVisCert}
+                  isFrontEndCert={isFrontEndCert}
+                  isFrontEndLibsCert={isFrontEndLibsCert}
+                  isFullStackCert={isFullStackCert}
+                  isHonest={isHonest}
+                  isInfosecCertV7={isInfosecCertV7}
+                  isInfosecQaCert={isInfosecQaCert}
+                  isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+                  isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+                  isQaCertV7={isQaCertV7}
+                  isRespWebDesignCert={isRespWebDesignCert}
+                  isSciCompPyCertV7={isSciCompPyCertV7}
+                  username={username}
+                  verifyCert={verifyCert}
+                />
+              );
+            }}
           />
           <Spacer />
           <DangerZone />
