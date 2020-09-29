@@ -10,7 +10,6 @@ import './honesty.css';
 
 const propTypes = {
   isHonest: PropTypes.bool,
-  policy: PropTypes.arrayOf(PropTypes.string),
   updateIsHonest: PropTypes.func.isRequired
 };
 
