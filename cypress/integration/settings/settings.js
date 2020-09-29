@@ -7,21 +7,6 @@ describe('Settings', () => {
     cy.visit('/settings');
   });
 
-  describe('The `Show me my public portfolio` button works properly', () => {
-    it('Should get rendered properly', () => {
-      cy.contains('Show me my public portfolio')
-        .should('be.visible')
-        // We are checking for classes here to check for proper styling
-        // This will be replaces with Percy in the future
-        .should('have.class', 'btn-invert btn btn-lg btn-primary btn-block');
-    });
-
-    it('Should take user to their public portfolio when clicked', () => {
-      cy.contains('Show me my public portfolio').click({ force: true });
-      cy.url().should('include', '/developmentuser');
-    });
-  });
-
   describe('The `Sign me out of freeCodeCamp` button works properly', () => {
     it('Should get rendered properly', () => {
       cy.contains('Sign me out of freeCodeCamp')
