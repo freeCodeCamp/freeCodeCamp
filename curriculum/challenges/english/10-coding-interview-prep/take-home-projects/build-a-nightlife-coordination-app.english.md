@@ -7,7 +7,7 @@ forumTopicId: 302351
 
 ## Description
 <section id='description'>
-<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://whatsgoinontonight.herokuapp.com/' target='_blank'>https://whatsgoinontonight.herokuapp.com/</a>.
+<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://yoyo44.herokuapp.com/' target='_blank'>https://yoyo44.herokuapp.com/</a>.
 Here are the specific user stories you should implement for this project:
 <strong>User Story:</strong> As an unauthenticated user, I can view all bars in my area.
 <strong>User Story:</strong> As an authenticated user, I can add myself to a bar to indicate I am going there tonight.
