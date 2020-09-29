@@ -39,8 +39,7 @@ tests:
   - text: <code>functionWithArgs(7,9)</code> should output <code>16</code>.
     testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16);
   - text: You should call <code>functionWithArgs</code> with two numbers after you define it.
-    testString: assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*/m.test(code));
-
+    testString: assert(/functionWithArgs\([-+]?\d*\.?\d*,[-+]?\d*\.?\d*\)/.test(code.replace(/\s/g, '')));
 ```
 
 </section>
