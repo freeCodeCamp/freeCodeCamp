@@ -25,6 +25,8 @@ describe('Username input field', () => {
 
     cy.contains('Validating username...')
       .should('have.attr', 'role', 'alert')
+      // We are checking for classes here to check for proper styling
+      // This will be replaces with Percy in the future
       .should('have.class', 'alert alert-info');
   });
 
@@ -36,6 +38,8 @@ describe('Username input field', () => {
     cy.contains('Username is available.')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
+      // We are checking for classes here to check for proper styling
+      // This will be replaces with Percy in the future
       .should('have.class', 'alert alert-success');
   });
 
@@ -50,6 +54,8 @@ describe('Username input field', () => {
     )
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
+      // We are checking for classes here to check for proper styling
+      // This will be replaces with Percy in the future
       .should('have.class', 'alert alert-info');
   });
 
@@ -72,6 +78,8 @@ describe('Username input field', () => {
     cy.contains('Username not available.')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
+      // We are checking for classes here to check for proper styling
+      // This will be replaces with Percy in the future
       .should('have.class', 'alert alert-warning');
   });
 
@@ -111,6 +119,8 @@ describe('Username input field', () => {
     cy.contains('Username contains invalid characters.')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
+      // We are checking for classes here to check for proper styling
+      // This will be replaces with Percy in the future
       .should('have.class', 'alert alert-danger');
   });
 
@@ -147,6 +157,8 @@ describe('Username input field', () => {
 
     cy.contains('We have updated your username to nhcarrigan')
       .should('be.visible')
+      // We are checking for classes here to check for proper styling
+      // This will be replaces with Percy in the future
       .should(
         'have.class',
         'flash-message alert alert-success alert-dismissable'

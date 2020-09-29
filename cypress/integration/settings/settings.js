@@ -11,6 +11,8 @@ describe('Settings', () => {
     it('Should get rendered properly', () => {
       cy.contains('Show me my public portfolio')
         .should('be.visible')
+        // We are checking for classes here to check for proper styling
+        // This will be replaces with Percy in the future
         .should('have.class', 'btn-invert btn btn-lg btn-primary btn-block');
     });
 
@@ -24,6 +26,8 @@ describe('Settings', () => {
     it('Should get rendered properly', () => {
       cy.contains('Sign me out of freeCodeCamp')
         .should('be.visible')
+        // We are checking for classes here to check for proper styling
+        // This will be replaces with Percy in the future
         .should('have.class', 'btn-invert btn btn-lg btn-primary btn-block');
     });
 
