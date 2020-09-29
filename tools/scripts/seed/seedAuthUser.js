@@ -24,10 +24,7 @@ function handleError(err, client) {
   }
 }
 
-MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
-  err,
-  client
-) {
+MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
   handleError(err, client);
 
   log('Connected successfully to mongo');
@@ -35,7 +32,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
   const db = client.db('freecodecamp');
   const user = db.collection('user');
 
-  user.deleteOne({ _id: ObjectId('5bd30e0f1caf6ac3ddddddb5') }, err => {
+  user.deleteMany(err => {
     handleError(err, client);
 
     try {
