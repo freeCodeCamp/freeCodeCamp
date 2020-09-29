@@ -311,6 +311,7 @@ export const certificatesByNameSelector = username => state => {
         show: isInfosecQaCert,
         title:
           'Legacy Information Security and Quality Assurance Certification',
+        /* eslint-disable-next-line max-len */
         // Keep the current public profile cert slug. TODO: Unsure if above is necessary
         showURL: 'information-security-and-quality-assurance'
       },

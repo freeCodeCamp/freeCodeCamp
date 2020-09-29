@@ -14,13 +14,15 @@ const Certification = () => {
       allCertificateNode {
         nodes {
           dashedName
+          block
         }
       }
     }
   `).allCertificateNode.nodes;
-  // TODO: current - hardcoded for infosecQa cert
   const validCertNames = certMap.map(cert =>
-    cert.dashedName.replace(/-certificate/, '').replace(/legacy-/, '')
+    cert.dashedName.startsWith('legacy')
+      ? cert.block.replace(/-certificate/g, '')
+      : cert.dashedName.replace(/-certificate/, '')
   );
 
   return (
