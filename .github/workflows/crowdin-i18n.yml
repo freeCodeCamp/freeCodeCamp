@@ -7,9 +7,7 @@ on:
   push:
     branches:
       - i18n-dev
-      # Treat the below branches as special case for working on workflows
-      - actions-**
-
+      
 jobs:
 
   i18n-sync-docs:
@@ -36,6 +34,7 @@ jobs:
           # pull-request
           localization_branch_name: i18n-sync-docs
           create_pull_request: true
+          pull_request_base_branch_name: i18n-dev
           pull_request_title: 'chore(docs,i8n): processed translations from crowdin'
           pull_request_body: ''
           pull_request_labels: 'scope: i18n, scope: docs, crowdin-sync'
@@ -45,7 +44,7 @@ jobs:
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug
-          dryrun_action: true
+          # dryrun_action: true
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
