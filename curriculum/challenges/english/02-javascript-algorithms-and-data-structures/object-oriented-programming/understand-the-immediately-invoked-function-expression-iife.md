@@ -16,7 +16,7 @@ A common pattern in JavaScript is to execute a function as soon as it is declare
 // Outputs "Chirp, chirp!" immediately
 ```
 
-Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an <dfn>immediately invoked function expression</dfn> or <dfn>IIFE</dfn>.
+Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an <dfn>immediately invoked function expression</dfn> or <dfn>IIFE</dfn> (pronounced "iffy").
 </section>
 
 ## Instructions
