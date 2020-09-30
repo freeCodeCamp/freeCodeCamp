@@ -1,0 +1,53 @@
+name: Crowdin Sync
+on:
+  workflow_dispatch:
+  # schedule:
+  # (TODO?) run this Action every 14 days
+  # - cron: '0 * */14 * *'
+  push:
+    branches:
+      - i18n-dev
+      # Treat the below branches as special case for working on workflows
+      - actions-**
+
+jobs:
+
+  i18n-sync-docs:
+    name: Docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Crowdin Synchronize
+        uses: crowdin/github-action@master
+        # options: https://github.com/crowdin/github-action/blob/master/action.yml
+        with:
+          # uploads
+          upload_translations: true
+          auto_approve_imported: true
+          import_eq_suggestions: true
+
+          # downloads
+          download_translations: true
+          commit_message: 'chore(docs,i8n): processed translations from crowdin'
+
+          # pull-request
+          localization_branch_name: i18n-sync-docs
+          create_pull_request: true
+          pull_request_title: 'chore(docs,i8n): processed translations from crowdin'
+          pull_request_body: ''
+          pull_request_labels: 'scope: i18n, scope: docs, crowdin-sync'
+
+          # global options
+          config: './docs/crowdin.yml'
+          base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
+
+          # Uncomment below to debug
+          dryrun_action: true
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_DOCS }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_SERVICE_TOKEN }}
