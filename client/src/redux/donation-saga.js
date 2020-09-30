@@ -60,7 +60,7 @@ function* postChargeStripeSaga({ payload }) {
     const err =
       error.response && error.response.data
         ? error.response.data.error
-        : defaultDonationError
+        : defaultDonationError;
     yield put(postChargeStripeError(err));
   }
 }
