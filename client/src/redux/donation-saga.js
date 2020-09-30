@@ -57,13 +57,11 @@ function* postChargeStripeSaga({ payload }) {
     yield call(postChargeStripe, payload);
     yield put(postChargeStripeComplete());
   } catch (error) {
-    const data =
+    const err =
       error.response && error.response.data
-        ? error.response.data
-        : {
-            error: defaultDonationError
-          };
-    yield put(postChargeStripeError(data.error));
+        ? error.response.data.error
+        : defaultDonationError
+    yield put(postChargeStripeError(err));
   }
 }
 
