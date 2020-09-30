@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Image } from '@freecodecamp/react-bootstrap';
 import DefaultAvatar from '../../assets/icons/DefaultAvatar';
 import { defaultUserImage } from '../../../../config/misc';
+import { borderColorPicker } from '../helpers';
 
 const propTypes = {
   isDonating: PropTypes.bool,
@@ -10,13 +11,6 @@ const propTypes = {
   picture: PropTypes.any.isRequired,
   userName: PropTypes.string.isRequired
 };
-
-function borderColorPicker(isDonating, isTopContributor) {
-  if (isDonating && isTopContributor) return 'purple-border';
-  else if (isTopContributor) return 'green-border';
-  else if (isDonating) return 'gold-border';
-  else return 'default-border';
-}
 
 function AvatarRenderer({ picture, userName, isDonating, isTopContributor }) {
   let borderColor = borderColorPicker(isDonating, isTopContributor);
