@@ -29,7 +29,8 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   const watcher = chokidar.watch(curriculumPath, {
     ignored: /(^|[\/\\])\../,
     persistent: true,
-    usePolling: true
+    usePolling: true,
+    cwd: curriculumPath
   });
 
   watcher.on('change', filePath =>
@@ -45,6 +46,7 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
           })
           .catch(e =>
             reporter.error(`fcc-replace-challenge
+  attempting to replace ${filePath}
 
   ${e.message}
 

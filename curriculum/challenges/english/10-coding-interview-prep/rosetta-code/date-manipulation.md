@@ -8,8 +8,8 @@ forumTopicId: 302244
 ## Description
 <section id='description'>
 Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
-Example input: <code>"March 7 2009 7:30pm EST"</code>
-Example output: <code>"March 8 2009 7:30am EST"</code>
+Example input: <code>"March 6 2009 7:30pm EST"</code>
+Example output: <code>"March 7 2009 7:30am EST"</code>
 </section>
 
 ## Instructions
@@ -28,8 +28,8 @@ tests:
     testString: assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');
   - text: <code>add12Hours("January 17 2017 11:43am EST")</code> should return <code>"January 17 2017 11:43pm EST"</code>
     testString: assert(add12Hours('January 17 2017 11:43am EST') === 'January 17 2017 11:43pm EST');
-  - text: Should handle day change. <code>add12Hours("March 7 2009 7:30pm EST")</code> should return <code>"March 8 2009 7:30am EST"</code>
-    testString: assert(add12Hours('March 7 2009 7:30pm EST') === 'March 8 2009 7:30am EST');
+  - text: Should handle day change. <code>add12Hours("March 6 2009 7:30pm EST")</code> should return <code>"March 7 2009 7:30am EST"</code>
+    testString: assert(add12Hours('March 6 2009 7:30pm EST') === 'March 7 2009 7:30am EST');
   - text: Should handle month change in a leap years. <code>add12Hours("February 29 2004 9:15pm EST")</code> should return <code>"March 1 2004 9:15am EST"</code>
     testString: assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST');
   - text: Should handle month change in a common years. <code>add12Hours("February 28 1999 3:15pm EST")</code> should return <code>"March 1 1999 3:15am EST"</code>

@@ -9,7 +9,7 @@ forumTopicId: 301558
 
 <section id='description'>
 
-The final part of the strategy is handling the profile returned from GitHub. We need to load the user's database object if it exists, or create one if it doesn't, and populate the fields from the profile, then return the user's object. GitHub supplies us a unique <em>id</em> within each profile which we can use to search with to serialize the user with (already implemented). Below is an example implementation you can use in your project- it goes within the function that is the second argument for the new strategy, right below the <code>console.log(profile);</code> currently is:
+The final part of the strategy is handling the profile returned from GitHub. We need to load the user's database object if it exists, or create one if it doesn't, and populate the fields from the profile, then return the user's object. GitHub supplies us a unique <em>id</em> within each profile which we can use to search with to serialize the user with (already implemented). Below is an example implementation you can use in your project--it goes within the function that is the second argument for the new strategy, right below where <code>console.log(profile);</code> currently is:
 
 ```js
 myDataBase.findOneAndUpdate(
@@ -41,7 +41,7 @@ myDataBase.findOneAndUpdate(
 
 `findOneAndUpdate` allows you to search for an object and update it. If the object doesn't exist, it will be inserted and made available to the callback function. In this example, we always set `last_login`, increment the `login_count` by `1`, and only populate the majority of the fields when a new object (new user) is inserted. Notice the use of default values. Sometimes a profile returned won't have all the information filled out or the user will keep it private.  In this case, you handle it to prevent an error.
 
-You should be able to login to your app now- try it!
+You should be able to login to your app now--try it!
 
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/183e968f0e01d81dde015d45ba9d2745' target='_blank'>here</a>.
 

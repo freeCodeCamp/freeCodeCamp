@@ -9,7 +9,7 @@ forumTopicId: 301562
 
 <section id='description'>
 
-It's time you start allowing clients to send a chat message to the server to emit to all the clients! Already in your client.js file you should see there is already a block of code handling when the message form is submitted.
+It's time you start allowing clients to send a chat message to the server to emit to all the clients! In your <code>client.js</code> file, you should see there is already a block of code handling when the message form is submitted.
 
 ```js
 $('form').submit(function() {
@@ -23,11 +23,11 @@ Within the form submit code, you should emit an event after you define <code>mes
 socket.emit('chat message', messageToSend);
 ```
 
-Now on your server you should be listening to the socket for the event <code>'chat message'</code> with the data being named <code>message</code>. Once the event is received it should then emit the event <code>'chat message'</code> to all sockets <code>io.emit</code> with the data being an object containing <code>name</code> and <code>message</code>.
+Now, on your server, you should be listening to the socket for the event <code>'chat message'</code> with the data being named <code>message</code>. Once the event is received, it should emit the event <code>'chat message'</code> to all sockets <code>io.emit</code> with the data being an object containing <code>name</code> and <code>message</code>.
 
-In <code>client.js</code>, you should now listen for event <code>'chat message'</code> and, when received, append a list item to <code>#messages</code> with the name a colon and the message!
+In <code>client.js</code>, you should now listen for event <code>'chat message'</code> and, when received, append a list item to <code>#messages</code> with the name, a colon, and the message!
 
-At this point the chat should be fully functional and sending messages across all clients!
+At this point, the chat should be fully functional and sending messages across all clients!
 
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016' target='_blank'>here</a>.
 

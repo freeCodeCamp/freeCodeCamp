@@ -8,7 +8,7 @@ forumTopicId: 301591
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-This exercise is similar to the preceding. Look at it for the details.
+This exercise is similar to the preceding one. Look at it for the details.
 
 </section>
 
@@ -24,7 +24,7 @@ Send
 
 Replace <code>assert.fail()</code> and make the test pass.
 Check for 1) <code>status</code>, 2) <code>type</code>, 3) <code>body.name</code>, 4) <code>body.surname</code>.
-Follow the assertion order above, We rely on it.
+Follow the assertion order above: we rely on it.
 </section>
 
 ## Tests

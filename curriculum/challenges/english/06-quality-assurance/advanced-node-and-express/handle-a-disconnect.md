@@ -9,7 +9,7 @@ forumTopicId: 301552
 
 <section id='description'>
 
-You may notice that up to now you have only been increasing the user count. Handling a user disconnecting is just as easy as handling the initial connect except the difference is you have to listen for it on each socket versus on the whole server.
+You may notice that up to now you have only been increasing the user count. Handling a user disconnecting is just as easy as handling the initial connect, except you have to listen for it on each socket instead of on the whole server.
 
 To do this, add another listener inside the existing <code>'connect'</code> listener that listens for <code>'disconnect'</code> on the socket with no data passed through. You can test this functionality by just logging that a user has disconnected to the console.
 

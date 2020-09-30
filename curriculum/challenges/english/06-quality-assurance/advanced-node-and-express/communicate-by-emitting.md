@@ -29,7 +29,7 @@ Finally, after incrementing the count, you should emit the event (still within t
 io.emit('user count', currentUsers);
 ```
 
-Now, you can implement a way for your client to listen for this event! Similarly to listening for a connection on the server, you will use the <em>on</em> keyword.
+Now, you can implement a way for your client to listen for this event! Similar to listening for a connection on the server, you will use the <code>on</code> keyword.
 
 ```js
 socket.on('user count', function(data) {
