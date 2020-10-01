@@ -19,3 +19,9 @@
 # -------------------------------------------------
 
 /* @freecodecamp/dev-team
+
+# -------------------------------------------------
+# Critical files that need attention from Staff
+# -------------------------------------------------
+/README.md @freeCodeCamp/Staff
+/config/motivational-quotes.json @freeCodeCamp/Staff
