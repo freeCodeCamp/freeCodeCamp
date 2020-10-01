@@ -1,5 +1,4 @@
 ---
-title: Compare a list of strings
 id: 596e457071c35c882915b3e4
 challengeType: 5
 videoUrl: ''

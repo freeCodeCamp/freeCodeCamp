@@ -1,7 +1,6 @@
 ---
 id: 5900f4671000cf542c50ff7a
 challengeType: 5
-title: 'Problem 251: Cardano Triplets'
 videoUrl: ''
 localeTitle: 问题251：卡尔达诺三胞胎
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d7fb7367417b2b2512c0a
-title: Create Many Records with model.create()
 forumTopicId: 301537
 challengeType: 2
 localeTitle: 使用model.create（）创建许多记录

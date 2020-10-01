@@ -1,6 +1,5 @@
 ---
 id: 587d7b89367417b2b2512b48
-title: Use the Spread Operator to Evaluate Arrays In-Place
 challengeType: 1
 forumTopicId: 301222
 localeTitle: 使用 spread 运算符展开数组项

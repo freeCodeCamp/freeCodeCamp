@@ -1,6 +1,5 @@
 ---
 id: 587d78a7367417b2b2512ae2
-title: Create Visual Direction by Fading an Element from Left to Right
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJqqAE'
 forumTopicId: 301054

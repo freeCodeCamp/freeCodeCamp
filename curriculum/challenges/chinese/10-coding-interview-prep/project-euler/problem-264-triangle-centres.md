@@ -1,7 +1,6 @@
 ---
 id: 5900f4751000cf542c50ff87
 challengeType: 5
-title: 'Problem 264: Triangle Centres'
 videoUrl: ''
 localeTitle: 问题264：三角中心
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4281000cf542c50ff39
 challengeType: 5
-title: 'Problem 186: Connectedness of a network'
 videoUrl: ''
 localeTitle: 问题186：网络的连通性
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d78b0367417b2b2512b05
-title: Build a Technical Documentation Page
 challengeType: 3
 forumTopicId: 301146
 localeTitle: 制作一个技术文档页面

@@ -1,7 +1,6 @@
 ---
 id: 5900f48d1000cf542c50ffa0
 challengeType: 5
-title: 'Problem 289: Eulerian Cycles'
 videoUrl: ''
 localeTitle: 问题289：欧拉循环
 ---

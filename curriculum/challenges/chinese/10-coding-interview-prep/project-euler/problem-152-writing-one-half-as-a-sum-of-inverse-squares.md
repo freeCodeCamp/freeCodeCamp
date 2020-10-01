@@ -1,7 +1,6 @@
 ---
 id: 5900f4041000cf542c50ff17
 challengeType: 5
-title: 'Problem 152: Writing one half as a sum of inverse squares'
 videoUrl: ''
 localeTitle: 问题152：将一半写为倒数平方和
 ---

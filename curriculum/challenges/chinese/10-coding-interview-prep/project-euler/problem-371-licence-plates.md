@@ -1,7 +1,6 @@
 ---
 id: 5900f4e01000cf542c50fff2
 challengeType: 5
-title: 'Problem 371: Licence plates'
 videoUrl: ''
 localeTitle: 问题371：车牌
 ---

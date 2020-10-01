@@ -1,7 +1,6 @@
 ---
 id: 5900f45d1000cf542c50ff70
 challengeType: 5
-title: 'Problem 241: Perfection Quotients'
 videoUrl: ''
 localeTitle: 问题241：完美商数
 ---

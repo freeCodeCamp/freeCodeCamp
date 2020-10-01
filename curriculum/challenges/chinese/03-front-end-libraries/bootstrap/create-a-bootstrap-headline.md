@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aec908846
-title: Create a Bootstrap Headline
 challengeType: 0
 forumTopicId: 16812
 localeTitle: 创建一个 Bootstrap 标题

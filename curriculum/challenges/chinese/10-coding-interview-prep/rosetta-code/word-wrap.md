@@ -1,5 +1,4 @@
 ---
-title: Word wrap
 id: 594810f028c0303b75339ad4
 challengeType: 5
 videoUrl: ''

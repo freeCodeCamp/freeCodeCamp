@@ -1,7 +1,6 @@
 ---
 id: 5900f54a1000cf542c51005c
 challengeType: 5
-title: 'Problem 477: Number Sequence Game'
 videoUrl: ''
 localeTitle: 问题477：数字序列游戏
 ---

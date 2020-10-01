@@ -1,6 +1,5 @@
 ---
 id: 587d7dab367417b2b2512b6e
-title: Use the every Method to Check that Every Element in an Array Meets a Criteria
 challengeType: 1
 forumTopicId: 301312
 localeTitle: 使用 every 方法检查数组中的每个元素是否符合条件

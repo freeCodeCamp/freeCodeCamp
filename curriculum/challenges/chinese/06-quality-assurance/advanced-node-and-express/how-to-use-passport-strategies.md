@@ -1,6 +1,5 @@
 ---
 id: 5895f70df9fc0f352b528e69
-title: How to Use Passport Strategies
 challengeType: 2
 forumTopicId: 301555
 localeTitle: 如何使用 Passport 策略

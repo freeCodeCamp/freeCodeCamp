@@ -1,7 +1,6 @@
 ---
 id: 5900f4d11000cf542c50ffe4
 challengeType: 5
-title: 'Problem 357: Prime generating integers'
 videoUrl: ''
 localeTitle: 问题357：Prime生成整数
 ---

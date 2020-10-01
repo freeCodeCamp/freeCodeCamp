@@ -1,7 +1,6 @@
 ---
 id: 5900f5271000cf542c51003a
 challengeType: 5
-title: 'Problem 443: GCD sequence'
 videoUrl: ''
 localeTitle: 问题443：GCD序列
 ---

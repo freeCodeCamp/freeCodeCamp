@@ -1,7 +1,6 @@
 ---
 id: 5900f54b1000cf542c51005d
 challengeType: 5
-title: 'Problem 479: Roots on the Rise'
 videoUrl: ''
 localeTitle: 问题479：崛起的根源
 ---

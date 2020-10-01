@@ -1,7 +1,6 @@
 ---
 id: 5900f5141000cf542c510026
 challengeType: 5
-title: 'Problem 424: Kakuro'
 videoUrl: ''
 localeTitle: 问题424：九郎
 ---

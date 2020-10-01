@@ -1,6 +1,5 @@
 ---
 id: 587d78a6367417b2b2512add
-title: Create a Graphic Using CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDWPs6'
 forumTopicId: 301048

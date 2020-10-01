@@ -1,7 +1,6 @@
 ---
 id: 5900f3841000cf542c50fe97
 challengeType: 5
-title: 'Problem 24: Lexicographic permutations'
 videoUrl: ''
 localeTitle: 问题24：字典排列
 ---

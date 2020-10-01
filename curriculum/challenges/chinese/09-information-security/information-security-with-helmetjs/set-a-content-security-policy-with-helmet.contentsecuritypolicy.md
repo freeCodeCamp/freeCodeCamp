@@ -1,6 +1,5 @@
 ---
 id: 587d8249367417b2b2512c3f
-title: Set a Content Security Policy with helmet.contentSecurityPolicy()
 challengeType: 2
 forumTopicId: 301585
 localeTitle: 使用 helment.contentSecurityPolicy() 设置内容安全策略

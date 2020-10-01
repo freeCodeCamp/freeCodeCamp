@@ -1,7 +1,6 @@
 ---
 id: 5900f3ae1000cf542c50fec1
 challengeType: 5
-title: 'Problem 66: Diophantine equation'
 videoUrl: ''
 localeTitle: 问题66：丢番图方程
 ---

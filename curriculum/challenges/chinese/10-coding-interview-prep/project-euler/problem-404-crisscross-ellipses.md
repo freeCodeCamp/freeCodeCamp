@@ -1,7 +1,6 @@
 ---
 id: 5900f5001000cf542c510012
 challengeType: 5
-title: 'Problem 404: Crisscross Ellipses'
 videoUrl: ''
 localeTitle: 问题404：交叉椭圆
 ---

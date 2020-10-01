@@ -1,6 +1,5 @@
 ---
 id: 58965611f9fc0f352b528e6c
-title: Logging a User Out
 challengeType: 2
 forumTopicId: 301560
 localeTitle: 用户退出登录

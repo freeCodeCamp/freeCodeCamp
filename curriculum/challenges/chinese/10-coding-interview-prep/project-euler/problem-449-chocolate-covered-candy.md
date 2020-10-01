@@ -1,7 +1,6 @@
 ---
 id: 5900f52d1000cf542c510040
 challengeType: 5
-title: 'Problem 449: Chocolate covered candy'
 videoUrl: ''
 localeTitle: 问题449：巧克力糖果
 ---

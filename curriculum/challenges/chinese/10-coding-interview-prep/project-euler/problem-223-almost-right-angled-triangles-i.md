@@ -1,7 +1,6 @@
 ---
 id: 5900f44b1000cf542c50ff5e
 challengeType: 5
-title: 'Problem 223: Almost right-angled triangles I'
 videoUrl: ''
 localeTitle: 问题223：几乎是直角三角形I.
 ---

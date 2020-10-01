@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aec908852
-title: Create a Class to Target with jQuery Selectors
 challengeType: 0
 forumTopicId: 16815
 localeTitle: 分别给每个目标元素的 class 属性添加一个 target 值

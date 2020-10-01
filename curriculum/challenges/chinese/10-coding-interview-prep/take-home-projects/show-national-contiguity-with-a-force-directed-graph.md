@@ -1,6 +1,5 @@
 ---
 id: bd7198d8c242eddfaeb5bd13
-title: Show National Contiguity with a Force Directed Graph
 challengeType: 3
 videoUrl: ''
 localeTitle: 用力导向图显示全国连续性

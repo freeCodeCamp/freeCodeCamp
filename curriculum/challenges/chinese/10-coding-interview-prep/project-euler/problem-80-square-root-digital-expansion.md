@@ -1,7 +1,6 @@
 ---
 id: 5900f3bc1000cf542c50fecf
 challengeType: 5
-title: 'Problem 80: Square root digital expansion'
 videoUrl: ''
 localeTitle: 问题80：平方根数字扩展
 ---

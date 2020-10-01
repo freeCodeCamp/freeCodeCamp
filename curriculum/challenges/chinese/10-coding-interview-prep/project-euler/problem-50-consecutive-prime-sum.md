@@ -1,7 +1,6 @@
 ---
 id: 5900f39e1000cf542c50feb1
 challengeType: 5
-title: 'Problem 50: Consecutive prime sum'
 videoUrl: ''
 localeTitle: 问题50：连续的总和
 ---

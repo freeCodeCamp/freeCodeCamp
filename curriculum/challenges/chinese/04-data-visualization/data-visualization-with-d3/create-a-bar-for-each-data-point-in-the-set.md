@@ -1,6 +1,5 @@
 ---
 id: 587d7fa8367417b2b2512bcd
-title: Create a Bar for Each Data Point in the Set
 challengeType: 6
 forumTopicId: 301482
 localeTitle: 为集合中的每个数据点创建一个 Bar

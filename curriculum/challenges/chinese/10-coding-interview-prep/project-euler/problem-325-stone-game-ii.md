@@ -1,7 +1,6 @@
 ---
 id: 5900f4b11000cf542c50ffc4
 challengeType: 5
-title: 'Problem 325: Stone Game II'
 videoUrl: ''
 localeTitle: 问题325：石头游戏II
 ---

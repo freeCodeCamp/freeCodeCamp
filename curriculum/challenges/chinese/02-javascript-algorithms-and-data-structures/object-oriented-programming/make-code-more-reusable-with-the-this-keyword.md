@@ -1,6 +1,5 @@
 ---
 id: 587d7dad367417b2b2512b76
-title: Make Code More Reusable with the this Keyword
 challengeType: 1
 forumTopicId: 301321
 localeTitle: 使用 this 关键字使代码更加可重用

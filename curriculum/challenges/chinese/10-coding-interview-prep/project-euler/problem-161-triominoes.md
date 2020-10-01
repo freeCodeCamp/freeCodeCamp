@@ -1,7 +1,6 @@
 ---
 id: 5900f40d1000cf542c50ff20
 challengeType: 5
-title: 'Problem 161: Triominoes'
 videoUrl: ''
 localeTitle: 问题161：Triominoes
 ---

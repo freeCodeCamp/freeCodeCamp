@@ -1,7 +1,6 @@
 ---
 id: 5900f4cb1000cf542c50ffde
 challengeType: 5
-title: 'Problem 351: Hexagonal orchards'
 videoUrl: ''
 localeTitle: 问题351：六角形果园
 ---

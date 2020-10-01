@@ -1,7 +1,6 @@
 ---
 id: 5900f53a1000cf542c51004c
 challengeType: 5
-title: 'Problem 461: Almost Pi'
 videoUrl: ''
 localeTitle: 问题461：几乎是Pi
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f3a81000cf542c50febb
 challengeType: 5
-title: 'Problem 60: Prime pair sets'
 videoUrl: ''
 localeTitle: 问题60：素数对设置
 ---

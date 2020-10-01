@@ -1,6 +1,5 @@
 ---
 id: 587d7db6367417b2b2512b99
-title: Match Characters that Occur One or More Times
 challengeType: 1
 forumTopicId: 301350
 localeTitle: 匹配出现一次或多次的字符

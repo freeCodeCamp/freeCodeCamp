@@ -1,6 +1,5 @@
 ---
 id: 587d78b0367417b2b2512b08
-title: Create a Media Query
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1

@@ -1,7 +1,6 @@
 ---
 id: 5900f38e1000cf542c50fea1
 challengeType: 5
-title: 'Problem 34: Digit factorials'
 videoUrl: ''
 localeTitle: 问题34：数字阶乘
 ---

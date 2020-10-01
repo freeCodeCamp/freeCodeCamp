@@ -1,6 +1,5 @@
 ---
 id: 587d7da9367417b2b2512b67
-title: Add Elements to the End of an Array Using concat Instead of push
 challengeType: 1
 forumTopicId: 301226
 localeTitle: 使用 concat 而不是 push 将元素添加到数组的末尾

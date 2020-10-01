@@ -1,5 +1,4 @@
 ---
-title: Cramer's rule
 id: 59713da0a428c1a62d7db430
 challengeType: 5
 videoUrl: ''

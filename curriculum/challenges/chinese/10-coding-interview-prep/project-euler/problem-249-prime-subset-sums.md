@@ -1,7 +1,6 @@
 ---
 id: 5900f4671000cf542c50ff79
 challengeType: 5
-title: 'Problem 249: Prime Subset Sums'
 videoUrl: ''
 localeTitle: 问题249：Prime子集总和
 ---

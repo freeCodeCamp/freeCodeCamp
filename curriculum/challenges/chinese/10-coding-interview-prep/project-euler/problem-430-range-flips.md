@@ -1,7 +1,6 @@
 ---
 id: 5900f51a1000cf542c51002d
 challengeType: 5
-title: 'Problem 430: Range flips'
 videoUrl: ''
 localeTitle: 问题430：范围翻转
 ---

@@ -1,6 +1,5 @@
 ---
 id: a6b0bb188d873cb2c8729495
-title: Convert HTML Entities
 challengeType: 5
 localeTitle: 转换HTML实体
 ---

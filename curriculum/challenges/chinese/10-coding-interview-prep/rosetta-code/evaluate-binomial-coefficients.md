@@ -1,5 +1,4 @@
 ---
-title: Evaluate binomial coefficients
 id: 598de241872ef8353c58a7a2
 challengeType: 5
 videoUrl: ''

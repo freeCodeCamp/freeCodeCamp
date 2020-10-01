@@ -1,6 +1,5 @@
 ---
 id: 587d8248367417b2b2512c3d
-title: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 challengeType: 2
 forumTopicId: 301577
 localeTitle: 使用 helmet.dnsPrefetchControl() 禁用 DNS 预获取

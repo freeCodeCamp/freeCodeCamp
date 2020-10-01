@@ -1,7 +1,6 @@
 ---
 id: 5900f5261000cf542c510038
 challengeType: 5
-title: 'Problem 441: The inverse summation of coprime couples'
 videoUrl: ''
 localeTitle: 问题441：互质夫妇的反向总和
 ---

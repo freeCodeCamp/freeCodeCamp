@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Responsively Style Radio Buttons
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true

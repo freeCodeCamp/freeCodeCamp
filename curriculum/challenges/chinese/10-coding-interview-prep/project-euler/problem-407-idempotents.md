@@ -1,7 +1,6 @@
 ---
 id: 5900f5041000cf542c510016
 challengeType: 5
-title: 'Problem 407: Idempotents'
 videoUrl: ''
 localeTitle: 问题407：幂等元素
 ---

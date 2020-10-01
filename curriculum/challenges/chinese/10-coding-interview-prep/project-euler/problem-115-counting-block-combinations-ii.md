@@ -1,7 +1,6 @@
 ---
 id: 5900f3df1000cf542c50fef1
 challengeType: 5
-title: 'Problem 115: Counting block combinations II'
 videoUrl: ''
 localeTitle: 问题115：计数块组合II
 ---

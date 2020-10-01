@@ -1,7 +1,6 @@
 ---
 id: 5900f5021000cf542c510014
 challengeType: 5
-title: 'Problem 405: A rectangular tiling'
 videoUrl: ''
 localeTitle: 问题405：矩形平铺
 ---

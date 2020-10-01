@@ -1,7 +1,6 @@
 ---
 id: 5900f39d1000cf542c50feb0
 challengeType: 5
-title: 'Problem 49: Prime permutations'
 videoUrl: ''
 localeTitle: 问题49：主要排列
 ---

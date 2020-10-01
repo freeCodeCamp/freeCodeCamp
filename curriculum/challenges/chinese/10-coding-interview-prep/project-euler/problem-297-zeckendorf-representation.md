@@ -1,7 +1,6 @@
 ---
 id: 5900f4951000cf542c50ffa8
 challengeType: 5
-title: 'Problem 297: Zeckendorf Representation'
 videoUrl: ''
 localeTitle: 问题297：Zeckendorf表示
 ---

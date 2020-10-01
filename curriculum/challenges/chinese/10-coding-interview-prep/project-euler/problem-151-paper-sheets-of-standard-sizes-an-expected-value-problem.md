@@ -1,7 +1,6 @@
 ---
 id: 5900f4031000cf542c50ff16
 challengeType: 5
-title: 'Problem 151: Paper sheets of standard sizes: an expected-value problem'
 videoUrl: ''
 localeTitle: 问题151：标准尺寸的纸张：期望值问题
 ---

@@ -1,6 +1,5 @@
 ---
 id: a2f1d72d9b908d0bd72bb9f6
-title: Make a Person
 challengeType: 5
 forumTopicId: 16020
 localeTitle: 构造一个 Person 类

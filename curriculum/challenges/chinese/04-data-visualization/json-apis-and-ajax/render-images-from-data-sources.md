@@ -1,6 +1,5 @@
 ---
 id: 587d7fae367417b2b2512be6
-title: Render Images from Data Sources
 challengeType: 6
 forumTopicId: 18265
 localeTitle: 渲染数据源的图像

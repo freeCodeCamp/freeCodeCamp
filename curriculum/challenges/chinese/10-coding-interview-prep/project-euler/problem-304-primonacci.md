@@ -1,7 +1,6 @@
 ---
 id: 5900f49d1000cf542c50ffaf
 challengeType: 5
-title: 'Problem 304: Primonacci'
 videoUrl: ''
 localeTitle: 问题304：Primonacci
 ---

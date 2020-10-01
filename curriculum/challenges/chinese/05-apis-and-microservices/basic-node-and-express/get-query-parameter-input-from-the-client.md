@@ -1,6 +1,5 @@
 ---
 id: 587d7fb2367417b2b2512bf6
-title: Get Query Parameter Input from the Client
 challengeType: 2
 forumTopicId: 301512
 localeTitle: 从客户端获取查询参数输入

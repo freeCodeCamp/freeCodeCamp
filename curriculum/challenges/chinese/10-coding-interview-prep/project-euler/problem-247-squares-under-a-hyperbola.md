@@ -1,7 +1,6 @@
 ---
 id: 5900f4641000cf542c50ff76
 challengeType: 5
-title: 'Problem 247: Squares under a hyperbola'
 videoUrl: ''
 localeTitle: 问题247：双曲线下的正方形
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d8249367417b2b2512c40
-title: Configure Helmet Using the ‘parent’ helmet() Middleware
 challengeType: 2
 forumTopicId: 301575
 localeTitle: 使用 helmet() 中间件来配置 Helmet

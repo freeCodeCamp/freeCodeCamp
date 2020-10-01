@@ -1,6 +1,5 @@
 ---
 id: 587d7b8f367417b2b2512b62
-title: Implement map on a Prototype
 challengeType: 1
 forumTopicId: 301230
 localeTitle: 在原型上实现 map 方法

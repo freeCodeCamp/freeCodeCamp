@@ -1,6 +1,5 @@
 ---
 id: 587d7fa6367417b2b2512bc2
-title: Add Document Elements with D3
 challengeType: 6
 forumTopicId: 301474
 localeTitle: 用 D3 给文档添加元素

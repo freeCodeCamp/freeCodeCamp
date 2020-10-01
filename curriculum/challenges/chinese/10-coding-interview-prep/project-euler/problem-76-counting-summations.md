@@ -1,7 +1,6 @@
 ---
 id: 5900f3b81000cf542c50fecb
 challengeType: 5
-title: 'Problem 76: Counting summations'
 videoUrl: ''
 localeTitle: 问题76：计算总结
 ---

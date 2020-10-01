@@ -1,7 +1,6 @@
 ---
 id: 5900f4c81000cf542c50ffd9
 challengeType: 5
-title: 'Problem 347: Largest integer divisible by two primes'
 videoUrl: ''
 localeTitle: 问题347：最大整数可被两个素数整除
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d7fa7367417b2b2512bc8
-title: Add Classes with D3
 challengeType: 6
 forumTopicId: 301473
 localeTitle: 用 D3 添加 Class

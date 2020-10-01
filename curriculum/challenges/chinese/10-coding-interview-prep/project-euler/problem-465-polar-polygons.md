@@ -1,7 +1,6 @@
 ---
 id: 5900f53d1000cf542c510050
 challengeType: 5
-title: 'Problem 465: Polar polygons'
 videoUrl: ''
 localeTitle: 问题465：极地多边形
 ---

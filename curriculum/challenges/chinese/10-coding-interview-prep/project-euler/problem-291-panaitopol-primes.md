@@ -1,7 +1,6 @@
 ---
 id: 5900f48f1000cf542c50ffa2
 challengeType: 5
-title: 'Problem 291: Panaitopol Primes'
 videoUrl: ''
 localeTitle: 问题291：Panaitopol素数
 ---

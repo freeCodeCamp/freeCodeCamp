@@ -1,5 +1,4 @@
 ---
-title: ABC Problem
 id: 594810f028c0303b75339acc
 challengeType: 5
 videoUrl: ''

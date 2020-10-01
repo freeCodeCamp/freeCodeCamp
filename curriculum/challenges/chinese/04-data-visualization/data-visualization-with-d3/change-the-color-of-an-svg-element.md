@@ -1,6 +1,5 @@
 ---
 id: 587d7fa9367417b2b2512bd1
-title: Change the Color of an SVG Element
 challengeType: 6
 forumTopicId: 301480
 localeTitle: 更改 SVG 元素的颜色

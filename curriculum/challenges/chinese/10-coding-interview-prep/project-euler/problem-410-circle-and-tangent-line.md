@@ -1,7 +1,6 @@
 ---
 id: 5900f5071000cf542c510018
 challengeType: 5
-title: 'Problem 410: Circle and tangent line'
 videoUrl: ''
 localeTitle: 问题410：圆和切线
 ---

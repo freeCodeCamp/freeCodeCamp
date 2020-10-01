@@ -1,7 +1,6 @@
 ---
 id: 5900f44b1000cf542c50ff5d
 challengeType: 5
-title: 'Problem 222: Sphere Packing'
 videoUrl: ''
 localeTitle: 问题222：球体包装
 ---

@@ -1,6 +1,5 @@
 ---
 id: 5e46f8d6ac417301a38fb92d
-title: Rock Paper Scissors
 challengeType: 10
 isHidden: false
 ---

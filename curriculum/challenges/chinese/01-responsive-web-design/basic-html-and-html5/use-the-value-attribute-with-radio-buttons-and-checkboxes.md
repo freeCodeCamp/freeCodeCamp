@@ -1,6 +1,5 @@
 ---
 id: 5c6c06847491271903d37cfd
-title: Use the value attribute with Radio Buttons and Checkboxes
 challengeType: 0
 forumTopicId: 301099
 localeTitle: 使用单选框和复选框的 value 属性

@@ -1,6 +1,5 @@
 ---
 id: 58a25bcef9fc0f352b528e7c
-title: Understand BCrypt Hashes
 challengeType: 2
 forumTopicId: 301586
 localeTitle: 了解 BCrypt 的哈希加密

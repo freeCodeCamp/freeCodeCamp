@@ -1,7 +1,6 @@
 ---
 id: 5900f3d21000cf542c50fee5
 challengeType: 5
-title: 'Problem 102: Triangle containment'
 videoUrl: ''
 localeTitle: 问题102：三角形遏制
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f37b1000cf542c50fe8e
 challengeType: 5
-title: 'Problem 15: Lattice paths'
 videoUrl: ''
 localeTitle: 问题15：格子路径
 ---

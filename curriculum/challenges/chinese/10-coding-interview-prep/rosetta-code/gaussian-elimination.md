@@ -1,5 +1,4 @@
 ---
-title: Gaussian elimination
 id: 5a23c84252665b21eecc7e77
 challengeType: 5
 videoUrl: ''

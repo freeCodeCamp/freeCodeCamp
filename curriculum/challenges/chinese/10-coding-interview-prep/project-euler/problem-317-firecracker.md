@@ -1,7 +1,6 @@
 ---
 id: 5900f4aa1000cf542c50ffbc
 challengeType: 5
-title: 'Problem 317: Firecracker'
 videoUrl: ''
 localeTitle: 问题317：鞭炮
 ---

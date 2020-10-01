@@ -1,6 +1,5 @@
 ---
 id: bd7158d8c443eddfaeb5bd0f
-title: Manage a Book Trading Club
 challengeType: 4
 videoUrl: ''
 localeTitle: 管理图书交易俱乐部

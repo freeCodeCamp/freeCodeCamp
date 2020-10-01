@@ -1,7 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff82
 challengeType: 5
-title: 'Problem 259: Reachable Numbers'
 videoUrl: ''
 localeTitle: 问题259：可达号码
 ---

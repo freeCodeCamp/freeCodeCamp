@@ -1,7 +1,6 @@
 ---
 id: 5900f5271000cf542c510039
 challengeType: 5
-title: 'Problem 442: Eleven-free integers'
 videoUrl: ''
 localeTitle: 问题442：十一个整数
 ---

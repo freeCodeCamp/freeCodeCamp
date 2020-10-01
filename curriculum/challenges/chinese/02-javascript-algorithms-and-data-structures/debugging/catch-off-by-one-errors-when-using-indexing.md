@@ -1,6 +1,5 @@
 ---
 id: 587d7b86367417b2b2512b3b
-title: Catch Off By One Errors When Using Indexing
 challengeType: 1
 forumTopicId: 301189
 localeTitle: 捕获使用索引的时候出现的错误

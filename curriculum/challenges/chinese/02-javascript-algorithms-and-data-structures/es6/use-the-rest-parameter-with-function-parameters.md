@@ -1,6 +1,5 @@
 ---
 id: 587d7b88367417b2b2512b47
-title: Use the Rest Parameter with Function Parameters
 challengeType: 1
 forumTopicId: 301221
 localeTitle: 将 rest 操作符与函数参数一起使用

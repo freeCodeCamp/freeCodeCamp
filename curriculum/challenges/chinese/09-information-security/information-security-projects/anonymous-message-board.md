@@ -1,6 +1,5 @@
 ---
 id: 587d824a367417b2b2512c45
-title: Anonymous Message Board
 challengeType: 4
 videoUrl: ''
 localeTitle: 匿名留言板

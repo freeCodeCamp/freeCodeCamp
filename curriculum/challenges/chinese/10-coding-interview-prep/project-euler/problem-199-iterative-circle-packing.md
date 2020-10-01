@@ -1,7 +1,6 @@
 ---
 id: 5900f4341000cf542c50ff46
 challengeType: 5
-title: 'Problem 199: Iterative Circle Packing'
 videoUrl: ''
 localeTitle: 问题199：迭代圆包装
 ---

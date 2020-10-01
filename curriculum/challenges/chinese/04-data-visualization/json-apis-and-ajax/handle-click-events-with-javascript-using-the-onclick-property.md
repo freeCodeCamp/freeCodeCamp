@@ -1,6 +1,5 @@
 ---
 id: 587d7fad367417b2b2512be1
-title: Handle Click Events with JavaScript using the onclick property
 challengeType: 6
 forumTopicId: 301503
 localeTitle: 使用 onclick 属性处理点击事件

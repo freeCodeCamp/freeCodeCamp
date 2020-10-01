@@ -1,6 +1,5 @@
 ---
 id: a8e512fbe388ac2f9198f0fa
-title: Wherefore art thou
 challengeType: 5
 forumTopicId: 16092
 localeTitle: 罗密欧与朱丽叶

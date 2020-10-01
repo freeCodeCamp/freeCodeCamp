@@ -1,7 +1,6 @@
 ---
 id: 5900f3811000cf542c50fe94
 challengeType: 5
-title: 'Problem 21: Amicable numbers'
 videoUrl: ''
 localeTitle: 问题21：友好的数字
 ---

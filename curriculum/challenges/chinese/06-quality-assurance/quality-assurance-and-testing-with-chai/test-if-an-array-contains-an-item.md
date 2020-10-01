@@ -1,6 +1,5 @@
 ---
 id: 587d824d367417b2b2512c51
-title: Test if an Array Contains an Item
 challengeType: 2
 forumTopicId: 301603
 localeTitle: 测试数组是否包含项目

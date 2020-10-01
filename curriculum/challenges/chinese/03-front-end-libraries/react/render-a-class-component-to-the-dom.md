@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036167
-title: Render a Class Component to the DOM
 challengeType: 6
 forumTopicId: 301404
 localeTitle: 渲染 class 组件为 Dom 树

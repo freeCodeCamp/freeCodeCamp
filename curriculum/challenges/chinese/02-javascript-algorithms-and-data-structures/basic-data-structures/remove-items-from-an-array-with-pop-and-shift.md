@@ -1,6 +1,5 @@
 ---
 id: 587d78b2367417b2b2512b0f
-title: Remove Items from an Array with pop() and shift()
 challengeType: 1
 forumTopicId: 301165
 localeTitle: 使用 pop() 和 shift() 从数组中删除项目

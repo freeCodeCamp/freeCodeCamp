@@ -1,7 +1,6 @@
 ---
 id: 5900f5361000cf542c510048
 challengeType: 5
-title: 'Problem 457: A polynomial modulo the square of a prime'
 videoUrl: ''
 localeTitle: 问题457：多项式以素数的平方为模
 ---

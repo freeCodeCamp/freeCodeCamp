@@ -1,7 +1,6 @@
 ---
 id: 5900f4f21000cf542c510004
 challengeType: 5
-title: 'Problem 389: Platonic Dice'
 videoUrl: ''
 localeTitle: 问题389：柏拉图式骰子
 ---

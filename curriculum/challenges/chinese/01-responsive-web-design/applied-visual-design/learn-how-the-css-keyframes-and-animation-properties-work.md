@@ -1,6 +1,5 @@
 ---
 id: 587d78a7367417b2b2512adf
-title: Learn How the CSS @keyframes and animation Properties Work
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakprhv'
 forumTopicId: 301059

@@ -1,6 +1,5 @@
 ---
 id: 587d8251367417b2b2512c65
-title: Remove Elements from a Linked List by Index
 challengeType: 1
 videoUrl: ''
 localeTitle: 按索引从链接列表中删除元素

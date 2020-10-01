@@ -1,7 +1,6 @@
 ---
 id: 5900f38d1000cf542c50fea0
 challengeType: 5
-title: 'Problem 33: Digit cancelling fractions'
 videoUrl: ''
 localeTitle: 问题33：数字取消分数
 ---

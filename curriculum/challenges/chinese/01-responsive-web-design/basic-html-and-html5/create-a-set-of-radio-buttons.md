@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aedf08834
-title: Create a Set of Radio Buttons
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNWKvuR'
 forumTopicId: 16822

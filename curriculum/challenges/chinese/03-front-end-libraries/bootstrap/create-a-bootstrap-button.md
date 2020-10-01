@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348cd8acdf08812
-title: Create a Bootstrap Button
 challengeType: 0
 forumTopicId: 16811
 localeTitle: 创建一个 Bootstrap 按钮

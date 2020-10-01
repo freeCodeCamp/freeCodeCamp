@@ -1,6 +1,5 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: Accessing Object Properties with Bracket Notation
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163

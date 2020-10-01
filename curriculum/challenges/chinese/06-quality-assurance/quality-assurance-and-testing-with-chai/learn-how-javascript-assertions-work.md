@@ -1,6 +1,5 @@
 ---
 id: 587d824a367417b2b2512c46
-title: Learn How JavaScript Assertions Work
 challengeType: 2
 forumTopicId: 301589
 localeTitle: 了解 JavaScript 断言是如何使用的

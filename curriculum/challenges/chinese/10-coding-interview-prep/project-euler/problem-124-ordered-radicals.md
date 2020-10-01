@@ -1,7 +1,6 @@
 ---
 id: 5900f3e81000cf542c50fefb
 challengeType: 5
-title: 'Problem 124: Ordered radicals'
 videoUrl: ''
 localeTitle: 问题124：有序的激进分子
 ---

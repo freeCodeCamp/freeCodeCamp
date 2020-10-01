@@ -1,6 +1,5 @@
 ---
 id: 587d7fb1367417b2b2512bf2
-title: Use the .env File
 challengeType: 2
 forumTopicId: 301521
 localeTitle: 使用 .env 文件

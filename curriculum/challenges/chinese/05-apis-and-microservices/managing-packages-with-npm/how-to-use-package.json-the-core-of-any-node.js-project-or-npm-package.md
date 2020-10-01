@@ -1,6 +1,5 @@
 ---
 id: 587d7fb3367417b2b2512bfb
-title: 'How to Use package.json, the Core of Any Node.js Project or npm Package'
 challengeType: 2
 forumTopicId: 301528
 localeTitle: 如何使用 package.json —— 任何 Node.js 项目或 npm 包的核心

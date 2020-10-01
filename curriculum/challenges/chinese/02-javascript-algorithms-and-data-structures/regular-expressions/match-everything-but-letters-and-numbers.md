@@ -1,6 +1,5 @@
 ---
 id: 587d7db8367417b2b2512ba0
-title: Match Everything But Letters and Numbers
 challengeType: 1
 forumTopicId: 301353
 localeTitle: 匹配除了字母和数字的所有符号

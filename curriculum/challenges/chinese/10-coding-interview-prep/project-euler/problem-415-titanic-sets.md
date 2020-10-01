@@ -1,7 +1,6 @@
 ---
 id: 5900f50c1000cf542c51001e
 challengeType: 5
-title: 'Problem 415: Titanic sets'
 videoUrl: ''
 localeTitle: 问题415：泰坦尼克号集
 ---

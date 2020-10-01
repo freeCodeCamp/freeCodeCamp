@@ -1,6 +1,5 @@
 ---
 id: 587d824b367417b2b2512c48
-title: Use Assert.isOK and Assert.isNotOK
 challengeType: 2
 forumTopicId: 301607
 localeTitle: 使用 Assert.isOk() 和 Assert.isNotOK()

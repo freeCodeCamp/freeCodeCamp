@@ -1,7 +1,6 @@
 ---
 id: 5900f45d1000cf542c50ff6f
 challengeType: 5
-title: 'Problem 240: Top Dice'
 videoUrl: ''
 localeTitle: 问题240：顶部骰子
 ---

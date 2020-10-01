@@ -1,5 +1,4 @@
 ---
-title: Taxicab numbers
 id: 594ecc0d9a8cf816e3340187
 challengeType: 5
 videoUrl: ''

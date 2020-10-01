@@ -1,7 +1,6 @@
 ---
 id: 5900f5191000cf542c51002c
 challengeType: 5
-title: 'Problem 429: Sum of squares of unitary divisors'
 videoUrl: ''
 localeTitle: 问题429：单一除数的平方和
 ---

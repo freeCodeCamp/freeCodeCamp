@@ -1,7 +1,6 @@
 ---
 id: 5900f4b41000cf542c50ffc7
 challengeType: 5
-title: 'Problem 328: Lowest-cost Search'
 videoUrl: ''
 localeTitle: 问题328：成本最低的搜索
 ---

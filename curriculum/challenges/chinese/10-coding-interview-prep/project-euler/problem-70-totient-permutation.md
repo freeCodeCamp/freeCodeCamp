@@ -1,7 +1,6 @@
 ---
 id: 5900f3b21000cf542c50fec5
 challengeType: 5
-title: 'Problem 70: Totient permutation'
 videoUrl: ''
 localeTitle: 问题70欧拉置换
 ---

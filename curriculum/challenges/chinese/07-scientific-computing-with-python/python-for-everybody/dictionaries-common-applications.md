@@ -1,6 +1,5 @@
 ---
 id: 5e7b9f090b6c005b0e76f068
-title: "Dictionaries: Common Applications"
 challengeType: 11
 isHidden: false
 videoId: f17xPfIXct0

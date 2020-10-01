@@ -1,7 +1,6 @@
 ---
 id: 5900f3861000cf542c50fe99
 challengeType: 5
-title: 'Problem 26: Reciprocal cycles'
 videoUrl: ''
 localeTitle: 问题26：互惠周期
 ---

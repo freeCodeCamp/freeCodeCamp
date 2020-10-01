@@ -1,7 +1,6 @@
 ---
 id: 5900f4411000cf542c50ff54
 challengeType: 5
-title: 'Problem 213: Flea Circus'
 videoUrl: ''
 localeTitle: 问题213：跳蚤马戏团
 ---

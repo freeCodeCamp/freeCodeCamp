@@ -1,7 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcb
 challengeType: 5
-title: 'Problem 332: Spherical triangles'
 videoUrl: ''
 localeTitle: 问题332：球形三角形
 ---

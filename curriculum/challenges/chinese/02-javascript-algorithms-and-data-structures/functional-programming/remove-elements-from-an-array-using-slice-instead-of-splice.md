@@ -1,6 +1,5 @@
 ---
 id: 9d7123c8c441eeafaeb5bdef
-title: Remove Elements from an Array Using slice Instead of splice
 challengeType: 1
 forumTopicId: 301236
 localeTitle: 使用 slice 而不是 splice 从数组中移除元素

@@ -1,6 +1,5 @@
 ---
 id: 5e46f7f8ac417301a38fb92a
-title: Medical Data Visualizer
 challengeType: 10
 isHidden: false
 ---

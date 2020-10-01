@@ -1,6 +1,5 @@
 ---
 id: ac6993d51946422351508a41
-title: Truncate a String
 challengeType: 5
 videoUrl: ''
 localeTitle: 截断字符串

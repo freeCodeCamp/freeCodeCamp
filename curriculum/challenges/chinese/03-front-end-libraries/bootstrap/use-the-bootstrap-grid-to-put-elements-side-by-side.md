@@ -1,6 +1,5 @@
 ---
 id: bad88fee1348ce8acef08815
-title: Use the Bootstrap Grid to Put Elements Side By Side
 challengeType: 0
 forumTopicId: 18371
 localeTitle: 使用 Bootstrap 网格并排放置元素

@@ -1,7 +1,6 @@
 ---
 id: 5900f4bd1000cf542c50ffcf
 challengeType: 5
-title: 'Problem 336: Maximix Arrangements'
 videoUrl: ''
 localeTitle: 问题336：Maximix安排
 ---

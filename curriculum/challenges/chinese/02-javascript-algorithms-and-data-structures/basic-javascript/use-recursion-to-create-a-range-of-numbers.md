@@ -1,6 +1,5 @@
 ---
 id: 5cc0bd7a49b71cb96132e54c
-title: Use Recursion to Create a Range of Numbers
 challengeType: 1
 forumTopicId: 301180
 localeTitle: 使用递归来创建一个数字序列

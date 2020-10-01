@@ -1,6 +1,5 @@
 ---
 id: 587d7b8c367417b2b2512b55
-title: Reuse Javascript Code Using import
 challengeType: 1
 forumTopicId: 301208
 localeTitle: 通过 import 复用 JavaScript 代码

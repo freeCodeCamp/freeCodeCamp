@@ -1,5 +1,4 @@
 ---
-title: Babbage problem
 id: 594db4d0dedb4c06a2a4cefd
 challengeType: 5
 videoUrl: ''

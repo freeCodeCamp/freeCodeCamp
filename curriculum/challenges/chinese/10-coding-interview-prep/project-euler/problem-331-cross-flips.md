@@ -1,7 +1,6 @@
 ---
 id: 5900f4b71000cf542c50ffca
 challengeType: 5
-title: 'Problem 331: Cross flips'
 videoUrl: ''
 localeTitle: 问题331：交叉翻转
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d8249367417b2b2512c42
-title: Issue Tracker
 challengeType: 4
 videoUrl: ''
 localeTitle: 问题跟踪器

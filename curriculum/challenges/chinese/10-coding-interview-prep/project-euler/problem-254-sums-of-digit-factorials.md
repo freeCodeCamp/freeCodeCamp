@@ -1,7 +1,6 @@
 ---
 id: 5900f46b1000cf542c50ff7d
 challengeType: 5
-title: 'Problem 254: Sums of Digit Factorials'
 videoUrl: ''
 localeTitle: 问题254：数字因子的总和
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4c71000cf542c50ffd8
 challengeType: 5
-title: 'Problem 346: Strong Repunits'
 videoUrl: ''
 localeTitle: 问题346：强大的Repunits
 ---

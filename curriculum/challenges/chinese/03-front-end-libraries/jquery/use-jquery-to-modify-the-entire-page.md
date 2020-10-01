@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aecb08826
-title: Use jQuery to Modify the Entire Page
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6

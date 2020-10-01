@@ -1,5 +1,4 @@
 ---
-title: Vector dot product
 id: 594810f028c0303b75339ad3
 challengeType: 5
 videoUrl: ''

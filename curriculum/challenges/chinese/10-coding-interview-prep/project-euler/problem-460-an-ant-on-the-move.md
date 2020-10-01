@@ -1,7 +1,6 @@
 ---
 id: 5900f5381000cf542c51004b
 challengeType: 5
-title: 'Problem 460: An ant on the move'
 videoUrl: ''
 localeTitle: 问题460：移动中的蚂蚁
 ---

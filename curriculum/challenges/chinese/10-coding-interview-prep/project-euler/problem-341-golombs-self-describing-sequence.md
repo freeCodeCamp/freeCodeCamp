@@ -1,7 +1,6 @@
 ---
 id: 5900f4c11000cf542c50ffd3
 challengeType: 5
-title: 'Problem 341: Golomb"s self-describing sequence'
 videoUrl: ''
 localeTitle: 问题341：Golomb的自我描述序列
 ---

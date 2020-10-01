@@ -1,6 +1,5 @@
 ---
 id: bd7155d8c242eddfaeb5bd13
-title: Build a Recipe Box
 challengeType: 3
 videoUrl: ''
 localeTitle: 建立配方盒

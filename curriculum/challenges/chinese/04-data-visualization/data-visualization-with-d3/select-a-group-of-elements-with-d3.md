@@ -1,6 +1,5 @@
 ---
 id: 587d7fa6367417b2b2512bc3
-title: Select a Group of Elements with D3
 challengeType: 6
 forumTopicId: 301490
 localeTitle: 用 D3 选择一组元素

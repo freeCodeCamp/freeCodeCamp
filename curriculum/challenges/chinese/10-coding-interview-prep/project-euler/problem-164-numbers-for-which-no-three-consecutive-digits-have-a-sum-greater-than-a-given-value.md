@@ -1,7 +1,6 @@
 ---
 id: 5900f4111000cf542c50ff23
 challengeType: 5
-title: 'Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value'
 videoUrl: ''
 localeTitle: 问题164：没有三个连续数字的总和大于给定值的数字
 ---

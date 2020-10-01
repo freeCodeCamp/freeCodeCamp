@@ -1,7 +1,6 @@
 ---
 id: 5900f4621000cf542c50ff75
 challengeType: 5
-title: 'Problem 246: Tangents to an ellipse'
 videoUrl: ''
 localeTitle: 问题246：切线到椭圆
 ---

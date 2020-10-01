@@ -1,6 +1,5 @@
 ---
 id: 587d78ac367417b2b2512af5
-title: Apply the flex-direction Property to Create a Column in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103

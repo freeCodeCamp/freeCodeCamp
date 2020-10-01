@@ -1,7 +1,6 @@
 ---
 id: 5900f5181000cf542c51002a
 challengeType: 5
-title: 'Problem 427: n-sequences'
 videoUrl: ''
 localeTitle: 问题427：n序列
 ---

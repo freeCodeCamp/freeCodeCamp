@@ -1,6 +1,5 @@
 ---
 id: 587d7b88367417b2b2512b46
-title: Set Default Parameters for Your Functions
 challengeType: 1
 forumTopicId: 301209
 localeTitle: 设置函数的默认参数

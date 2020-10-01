@@ -1,6 +1,5 @@
 ---
 id: 587d7b7e367417b2b2512b20
-title: Use an Array to Store a Collection of Data
 challengeType: 1
 forumTopicId: 301167
 localeTitle: 使用数组存储数据集合

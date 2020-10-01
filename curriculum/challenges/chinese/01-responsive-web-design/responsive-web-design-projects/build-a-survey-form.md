@@ -1,6 +1,5 @@
 ---
 id: 587d78af367417b2b2512b03
-title: Build a Survey Form
 challengeType: 3
 forumTopicId: 301145
 localeTitle: 制作一个调查表格

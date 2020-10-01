@@ -1,6 +1,5 @@
 ---
 id: 5a2efd662fb457916e1fe604
-title: Iterate with JavaScript Do...While Loops
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqWGcp'
 forumTopicId: 301172

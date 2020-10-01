@@ -1,6 +1,5 @@
 ---
 id: 587d8250367417b2b2512c5f
-title: Create a Stack Class
 challengeType: 1
 videoUrl: ''
 localeTitle: 创建一个堆栈类

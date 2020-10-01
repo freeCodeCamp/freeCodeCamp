@@ -1,6 +1,5 @@
 ---
 id: 587d8258367417b2b2512c7f
-title: Use Breadth First Search in a Binary Search Tree
 challengeType: 1
 videoUrl: ''
 localeTitle: 在二叉搜索树中使用广度优先搜索

@@ -1,7 +1,6 @@
 ---
 id: 5900f4651000cf542c50ff77
 challengeType: 5
-title: 'Problem 248: Numbers for which Euler’s totient function equals 13!'
 videoUrl: ''
 localeTitle: 问题248：Euler的totient函数等于13的数字！
 ---

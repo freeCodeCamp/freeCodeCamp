@@ -1,5 +1,4 @@
 ---
-title: Count occurrences of a substring
 id: 596fda99c69f779975a1b67d
 challengeType: 5
 videoUrl: ''

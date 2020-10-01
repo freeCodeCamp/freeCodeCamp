@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d403614a
-title: Moving Forward From Here
 challengeType: 6
 forumTopicId: 301434
 localeTitle: 从这里前进

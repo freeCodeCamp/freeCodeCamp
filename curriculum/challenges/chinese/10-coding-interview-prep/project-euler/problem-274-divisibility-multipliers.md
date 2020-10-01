@@ -1,7 +1,6 @@
 ---
 id: 5900f47f1000cf542c50ff91
 challengeType: 5
-title: 'Problem 274: Divisibility Multipliers'
 videoUrl: ''
 localeTitle: 问题274：可分性乘数
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f3b91000cf542c50fecc
 challengeType: 5
-title: 'Problem 77: Prime summations'
 videoUrl: ''
 localeTitle: 问题77：总结
 ---

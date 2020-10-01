@@ -1,6 +1,5 @@
 ---
 id: 587d7fab367417b2b2512bd8
-title: Add Attributes to the Circle Elements
 challengeType: 6
 forumTopicId: 301471
 localeTitle: 给 Circle 元素添加属性

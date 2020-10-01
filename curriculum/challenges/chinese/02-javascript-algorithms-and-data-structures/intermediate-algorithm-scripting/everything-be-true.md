@@ -1,6 +1,5 @@
 ---
 id: a10d2431ad0c6a099a4b8b52
-title: Everything Be True
 challengeType: 5
 forumTopicId: 16011
 localeTitle: 真假值判断

@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aedc08845
-title: Add Font Awesome Icons to all of our Buttons
 required:
   - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true

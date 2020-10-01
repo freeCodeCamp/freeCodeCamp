@@ -1,7 +1,6 @@
 ---
 id: 5900f4c41000cf542c50ffd6
 challengeType: 5
-title: 'Problem 343: Fractional Sequences'
 videoUrl: ''
 localeTitle: 问题343：分数序列
 ---

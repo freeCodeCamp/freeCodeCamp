@@ -1,6 +1,5 @@
 ---
 id: 589a69f5f9fc0f352b528e70
-title: Implementation of Social Authentication
 challengeType: 2
 forumTopicId: 301559
 localeTitle: 实现社交账号登陆 (1)

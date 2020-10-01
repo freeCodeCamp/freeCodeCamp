@@ -1,6 +1,5 @@
 ---
 id: bd7993c9c69feddfaeb7bdef
-title: Multiply Two Decimals with JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2GeHq'
 forumTopicId: 301173

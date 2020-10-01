@@ -1,6 +1,5 @@
 ---
 id: 587d7dac367417b2b2512b73
-title: Create a Basic JavaScript Object
 challengeType: 1
 forumTopicId: 301317
 localeTitle: 创建一个基本的 JavaScript 对象

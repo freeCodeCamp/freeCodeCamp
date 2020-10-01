@@ -1,7 +1,6 @@
 ---
 id: 5900f3c11000cf542c50fed4
 challengeType: 5
-title: 'Problem 85: Counting rectangles'
 videoUrl: ''
 localeTitle: 问题85：计算矩形
 ---

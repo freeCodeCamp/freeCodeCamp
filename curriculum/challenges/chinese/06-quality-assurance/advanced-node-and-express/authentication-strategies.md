@@ -1,6 +1,5 @@
 ---
 id: 5895f70df9fc0f352b528e68
-title: Authentication Strategies
 challengeType: 2
 forumTopicId: 301547
 localeTitle: 身份验证策略

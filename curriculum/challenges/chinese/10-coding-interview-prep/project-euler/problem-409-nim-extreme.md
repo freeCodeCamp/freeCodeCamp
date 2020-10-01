@@ -1,7 +1,6 @@
 ---
 id: 5900f5061000cf542c510017
 challengeType: 5
-title: 'Problem 409: Nim Extreme'
 videoUrl: ''
 localeTitle: 问题409：Nim Extreme
 ---

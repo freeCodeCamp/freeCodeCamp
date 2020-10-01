@@ -1,7 +1,6 @@
 ---
 id: 5900f3d71000cf542c50fee9
 challengeType: 5
-title: 'Problem 106: Special subset sums: meta-testing'
 videoUrl: ''
 localeTitle: 问题106：特殊子集和：元测试
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4d41000cf542c50ffe7
 challengeType: 5
-title: 'Problem 360: Scary Sphere'
 videoUrl: ''
 localeTitle: 问题360：可怕的球体
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f3b61000cf542c50fec8
 challengeType: 5
-title: 'Problem 73: Counting fractions in a range'
 videoUrl: ''
 localeTitle: 问题73：计算范围内的分数
 ---

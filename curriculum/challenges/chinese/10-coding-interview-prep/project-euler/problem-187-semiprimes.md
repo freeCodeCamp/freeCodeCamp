@@ -1,7 +1,6 @@
 ---
 id: 5900f4291000cf542c50ff3a
 challengeType: 5
-title: 'Problem 187: Semiprimes'
 videoUrl: ''
 localeTitle: 问题187：半致
 ---

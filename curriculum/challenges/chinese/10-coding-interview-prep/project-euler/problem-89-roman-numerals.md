@@ -1,7 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed7
 challengeType: 5
-title: 'Problem 89: Roman numerals'
 videoUrl: ''
 localeTitle: 问题89：罗马数字
 ---

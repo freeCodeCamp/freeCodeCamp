@@ -1,6 +1,5 @@
 ---
 id: 587d824c367417b2b2512c4d
-title: Compare the Properties of Two Elements
 challengeType: 2
 forumTopicId: 301588
 localeTitle: 比较两个元素的属性

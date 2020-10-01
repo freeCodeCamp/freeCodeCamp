@@ -1,6 +1,5 @@
 ---
 id: ab6137d4e35944e21037b769
-title: Title Case a Sentence
 challengeType: 5
 videoUrl: ''
 localeTitle: 标题案例句子

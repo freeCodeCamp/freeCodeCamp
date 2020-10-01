@@ -1,7 +1,6 @@
 ---
 id: 5900f52a1000cf542c51003c
 challengeType: 5
-title: 'Problem 445: Retractions A'
 videoUrl: ''
 localeTitle: 问题445：撤回A.
 ---

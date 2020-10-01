@@ -1,7 +1,6 @@
 ---
 id: 5900f3d21000cf542c50fee4
 challengeType: 5
-title: 'Problem 101: Optimum polynomial'
 videoUrl: ''
 localeTitle: 问题101：最佳多项式
 ---

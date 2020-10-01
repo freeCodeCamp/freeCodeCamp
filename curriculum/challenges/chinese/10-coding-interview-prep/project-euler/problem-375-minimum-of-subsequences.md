@@ -1,7 +1,6 @@
 ---
 id: 5900f4e41000cf542c50fff5
 challengeType: 5
-title: 'Problem 375: Minimum of subsequences'
 videoUrl: ''
 localeTitle: 问题375：最小子序列
 ---

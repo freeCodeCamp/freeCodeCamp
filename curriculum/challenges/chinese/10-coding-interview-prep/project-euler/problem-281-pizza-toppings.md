@@ -1,7 +1,6 @@
 ---
 id: 5900f4861000cf542c50ff98
 challengeType: 5
-title: 'Problem 281: Pizza Toppings'
 videoUrl: ''
 localeTitle: 问题281：比萨馅料
 ---

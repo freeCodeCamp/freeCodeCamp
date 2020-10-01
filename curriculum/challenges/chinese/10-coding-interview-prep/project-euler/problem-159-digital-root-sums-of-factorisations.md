@@ -1,7 +1,6 @@
 ---
 id: 5900f40c1000cf542c50ff1e
 challengeType: 5
-title: 'Problem 159: Digital root sums of factorisations'
 videoUrl: ''
 localeTitle: 问题159：因子的数字根和
 ---

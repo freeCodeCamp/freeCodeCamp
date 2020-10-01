@@ -1,7 +1,6 @@
 ---
 id: 5900f3dd1000cf542c50fef0
 challengeType: 5
-title: 'Problem 113: Non-bouncy numbers'
 videoUrl: ''
 localeTitle: 问题113：非弹性数字
 ---

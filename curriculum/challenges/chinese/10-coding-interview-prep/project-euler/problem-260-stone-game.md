@@ -1,7 +1,6 @@
 ---
 id: 5900f4701000cf542c50ff83
 challengeType: 5
-title: 'Problem 260: Stone Game'
 videoUrl: ''
 localeTitle: 问题260：石头游戏
 ---

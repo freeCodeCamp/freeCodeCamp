@@ -1,6 +1,5 @@
 ---
 id: 587d7db7367417b2b2512b9c
-title: Find One or More Criminals in a Hunt
 challengeType: 1
 forumTopicId: 301343
 localeTitle: 在狩猎中找到一个或多个罪犯

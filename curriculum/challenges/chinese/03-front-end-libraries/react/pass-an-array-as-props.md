@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d403616a
-title: Pass an Array as Props
 challengeType: 6
 forumTopicId: 301401
 localeTitle: 传递一个数组作为 Props

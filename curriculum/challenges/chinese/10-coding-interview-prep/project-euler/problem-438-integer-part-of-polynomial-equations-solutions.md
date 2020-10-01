@@ -1,7 +1,6 @@
 ---
 id: 5900f5231000cf542c510034
 challengeType: 5
-title: 'Problem 438: Integer part of polynomial equation"s solutions'
 videoUrl: ''
 localeTitle: 问题438：多项式方程解的整数部分
 ---

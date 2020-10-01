@@ -1,5 +1,4 @@
 ---
-title: Day of the week
 id: 5966f99c45e8976909a85575
 challengeType: 5
 videoUrl: ''

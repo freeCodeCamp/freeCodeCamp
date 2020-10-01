@@ -1,7 +1,6 @@
 ---
 id: 5900f44f1000cf542c50ff61
 challengeType: 5
-title: 'Problem 227: The Chase'
 videoUrl: ''
 localeTitle: 问题227：大通
 ---

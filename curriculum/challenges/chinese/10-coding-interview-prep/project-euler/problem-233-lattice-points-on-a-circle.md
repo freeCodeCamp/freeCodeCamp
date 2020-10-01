@@ -1,7 +1,6 @@
 ---
 id: 5900f4551000cf542c50ff68
 challengeType: 5
-title: 'Problem 233: Lattice points on a circle'
 videoUrl: ''
 localeTitle: 问题233：圆上的格点
 ---

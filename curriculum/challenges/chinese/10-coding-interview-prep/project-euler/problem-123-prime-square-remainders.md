@@ -1,7 +1,6 @@
 ---
 id: 5900f3e71000cf542c50fefa
 challengeType: 5
-title: 'Problem 123: Prime square remainders'
 videoUrl: ''
 localeTitle: 问题123：素数正方形余数
 ---

@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036170
-title: Create a Stateful Component
 challengeType: 6
 forumTopicId: 301391
 localeTitle: 创建一个有状态的组件

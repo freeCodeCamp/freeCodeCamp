@@ -1,7 +1,6 @@
 ---
 id: 5900f3761000cf542c50fe88
 challengeType: 5
-title: 'Problem 9: Special Pythagorean triplet'
 videoUrl: ''
 localeTitle: 问题9：特殊的毕达哥拉斯三重奏
 ---

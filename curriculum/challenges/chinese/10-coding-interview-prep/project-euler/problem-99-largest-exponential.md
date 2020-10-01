@@ -1,7 +1,6 @@
 ---
 id: 5900f3d01000cf542c50fee2
 challengeType: 5
-title: 'Problem 99: Largest exponential'
 videoUrl: ''
 localeTitle: 问题99：最大的指数
 ---

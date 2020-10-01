@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aec908853
-title: Add id Attributes to Bootstrap Elements
 challengeType: 0
 forumTopicId: 16639
 localeTitle: 给 Bootstrap 元素添加id属性

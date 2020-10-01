@@ -1,7 +1,6 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
 challengeType: 5
-title: 'Problem 349: Langton"s ant'
 videoUrl: ''
 localeTitle: 问题349：兰顿的蚂蚁
 ---

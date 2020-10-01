@@ -1,6 +1,5 @@
 ---
 id: 587d825b367417b2b2512c8d
-title: Create an ES6 JavaScript Map
 challengeType: 1
 videoUrl: ''
 localeTitle: 创建ES6 JavaScript地图

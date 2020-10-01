@@ -1,6 +1,5 @@
 ---
 id: 587d7b7d367417b2b2512b1d
-title: 'Iterate Through the Keys of an Object with a for...in Statement'
 challengeType: 1
 forumTopicId: 301162
 localeTitle: '使用 for...in 语句迭代对象'

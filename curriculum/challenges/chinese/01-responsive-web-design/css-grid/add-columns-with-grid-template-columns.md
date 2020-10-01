@@ -1,6 +1,5 @@
 ---
 id: 5a9036d038fddaf9a66b5d32
-title: Add Columns with grid-template-columns
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c7NzDHv'
 forumTopicId: 301117

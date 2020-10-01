@@ -1,6 +1,5 @@
 ---
 id: 587d781b367417b2b2512abb
-title: Create a Horizontal Line Using the hr Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bR8t7'
 forumTopicId: 301049

@@ -1,7 +1,6 @@
 ---
 id: 5900f4201000cf542c50ff33
 challengeType: 5
-title: 'Problem 180: Rational zeros of a function of three variables'
 videoUrl: ''
 localeTitle: 问题180：三个变量函数的有理零点
 ---

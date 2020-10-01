@@ -1,7 +1,6 @@
 ---
 id: 5900f4bd1000cf542c50ffce
 challengeType: 5
-title: 'Problem 335: Gathering the beans'
 videoUrl: ''
 localeTitle: 问题335：收集豆子
 ---

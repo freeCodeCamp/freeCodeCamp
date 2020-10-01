@@ -1,7 +1,6 @@
 ---
 id: 5900f48b1000cf542c50ff9e
 challengeType: 5
-title: 'Problem 287: Quadtree encoding (a simple compression algorithm)'
 videoUrl: ''
 localeTitle: 问题287：四叉树编码（一种简单的压缩算法）
 ---

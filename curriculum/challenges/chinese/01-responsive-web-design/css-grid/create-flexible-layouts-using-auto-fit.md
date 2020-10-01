@@ -1,6 +1,5 @@
 ---
 id: 5a94fe6269fb03452672e462
-title: Create Flexible Layouts Using auto-fit
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 forumTopicId: 301127

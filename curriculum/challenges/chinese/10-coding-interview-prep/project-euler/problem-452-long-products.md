@@ -1,7 +1,6 @@
 ---
 id: 5900f5311000cf542c510043
 challengeType: 5
-title: 'Problem 452: Long Products'
 videoUrl: ''
 localeTitle: 问题452：长期产品
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d774d367417b2b2512a9e
-title: Use Headings to Show Hierarchical Relationships of Content
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cqVEktm'
 forumTopicId: 301026

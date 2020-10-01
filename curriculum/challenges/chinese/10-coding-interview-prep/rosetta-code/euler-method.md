@@ -1,5 +1,4 @@
 ---
-title: Euler method
 id: 59880443fb36441083c6c20e
 challengeType: 5
 videoUrl: ''

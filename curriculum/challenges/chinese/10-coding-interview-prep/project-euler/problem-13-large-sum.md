@@ -1,7 +1,6 @@
 ---
 id: 5900f37a1000cf542c50fe8c
 challengeType: 5
-title: 'Problem 13: Large sum'
 videoUrl: ''
 localeTitle: 问题13：大笔金额
 ---

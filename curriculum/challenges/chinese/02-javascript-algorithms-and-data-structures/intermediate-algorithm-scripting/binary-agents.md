@@ -1,6 +1,5 @@
 ---
 id: a8d97bd4c764e91f9d2bda01
-title: Binary Agents
 challengeType: 5
 forumTopicId: 14273
 localeTitle: 二进制转化

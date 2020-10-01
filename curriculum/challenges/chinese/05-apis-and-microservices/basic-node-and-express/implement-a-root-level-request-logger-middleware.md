@@ -1,6 +1,5 @@
 ---
 id: 587d7fb1367417b2b2512bf3
-title: Implement a Root-Level Request Logger Middleware
 challengeType: 2
 forumTopicId: 301514
 localeTitle: 实现一个根层的请求记录器中间件

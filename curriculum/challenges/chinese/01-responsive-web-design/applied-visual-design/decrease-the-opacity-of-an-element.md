@@ -1,6 +1,5 @@
 ---
 id: 587d781c367417b2b2512abf
-title: Decrease the Opacity of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7aKqu4'
 forumTopicId: 301055

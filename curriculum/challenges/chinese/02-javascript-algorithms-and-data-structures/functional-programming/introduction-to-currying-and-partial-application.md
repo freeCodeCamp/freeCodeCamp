@@ -1,6 +1,5 @@
 ---
 id: 587d7dab367417b2b2512b70
-title: Introduction to Currying and Partial Application
 challengeType: 1
 forumTopicId: 301232
 localeTitle: 函数柯里化

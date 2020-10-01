@@ -1,6 +1,5 @@
 ---
 id: 587d8253367417b2b2512c6a
-title: Typed Arrays
 challengeType: 1
 videoUrl: ''
 localeTitle: 键入的数组

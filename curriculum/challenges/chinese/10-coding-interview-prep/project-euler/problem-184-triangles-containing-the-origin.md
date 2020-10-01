@@ -1,7 +1,6 @@
 ---
 id: 5900f4241000cf542c50ff37
 challengeType: 5
-title: 'Problem 184: Triangles containing the origin'
 videoUrl: ''
 localeTitle: 问题184：包含原点的三角形
 ---

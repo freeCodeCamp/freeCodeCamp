@@ -1,6 +1,5 @@
 ---
 id: 8d5823c8c441eddfaeb5bdef
-title: Create a Map Data Structure
 challengeType: 1
 videoUrl: ''
 localeTitle: 创建地图数据结构

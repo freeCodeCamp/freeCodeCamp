@@ -1,7 +1,6 @@
 ---
 id: 5900f3851000cf542c50fe98
 challengeType: 5
-title: 'Problem 25: 1000-digit Fibonacci number'
 videoUrl: ''
 localeTitle: 问题25：1000位斐波纳契数
 ---

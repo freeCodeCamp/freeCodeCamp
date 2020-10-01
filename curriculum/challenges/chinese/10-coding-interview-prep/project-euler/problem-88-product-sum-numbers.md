@@ -1,7 +1,6 @@
 ---
 id: 5900f3c51000cf542c50fed6
 challengeType: 5
-title: 'Problem 88: Product-sum numbers'
 videoUrl: ''
 localeTitle: 问题88：产品总和数
 ---

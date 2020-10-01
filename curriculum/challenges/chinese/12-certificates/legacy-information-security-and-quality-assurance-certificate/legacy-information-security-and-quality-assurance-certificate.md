@@ -1,6 +1,5 @@
 ---
 id: 561add10cb82ac38a17213bc
-title: Legacy Information Security and Quality Assurance Certificate
 challengeType: 7
 isHidden: false
 isPrivate: true

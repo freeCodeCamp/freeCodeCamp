@@ -1,6 +1,5 @@
 ---
 id: 587d781b367417b2b2512aba
-title: Use the s Tag to Strikethrough Text
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301079

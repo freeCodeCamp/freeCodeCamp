@@ -1,7 +1,6 @@
 ---
 id: 5900f4f11000cf542c510002
 challengeType: 5
-title: 'Problem 388: Distinct Lines'
 videoUrl: ''
 localeTitle: 问题388：不同的线条
 ---

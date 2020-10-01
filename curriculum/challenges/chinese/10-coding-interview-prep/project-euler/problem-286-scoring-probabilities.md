@@ -1,7 +1,6 @@
 ---
 id: 5900f48a1000cf542c50ff9d
 challengeType: 5
-title: 'Problem 286: Scoring probabilities'
 videoUrl: ''
 localeTitle: 问题286：计分概率
 ---

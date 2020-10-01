@@ -1,6 +1,5 @@
 ---
 id: 587d8251367417b2b2512c64
-title: Search within a Linked List
 challengeType: 1
 videoUrl: ''
 localeTitle: 在链接列表中搜索

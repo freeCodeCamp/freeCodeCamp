@@ -1,7 +1,6 @@
 ---
 id: 5900f3891000cf542c50fe9c
 challengeType: 5
-title: 'Problem 29: Distinct powers'
 videoUrl: ''
 localeTitle: 问题29：不同的权力
 ---

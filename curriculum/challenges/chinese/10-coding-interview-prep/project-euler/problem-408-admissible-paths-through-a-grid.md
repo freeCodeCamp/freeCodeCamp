@@ -1,7 +1,6 @@
 ---
 id: 5900f5091000cf542c51001b
 challengeType: 5
-title: 'Problem 408: Admissible paths through a grid'
 videoUrl: ''
 localeTitle: 问题408：通过网格的可允许路径
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f53c1000cf542c51004e
 challengeType: 5
-title: 'Problem 463: A weird recurrence relation'
 videoUrl: ''
 localeTitle: 问题463：一种奇怪的复发关系
 ---

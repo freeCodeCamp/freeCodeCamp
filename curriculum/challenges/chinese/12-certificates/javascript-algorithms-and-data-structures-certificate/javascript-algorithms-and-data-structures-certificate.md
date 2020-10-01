@@ -1,6 +1,5 @@
 ---
 id: 561abd10cb81ac38a17513bc
-title: JavaScript Algorithms and Data Structures Certificate
 challengeType: 7
 isHidden: false
 isPrivate: true

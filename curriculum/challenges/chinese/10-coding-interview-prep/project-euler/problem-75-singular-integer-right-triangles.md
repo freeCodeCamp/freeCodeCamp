@@ -1,7 +1,6 @@
 ---
 id: 5900f3b71000cf542c50feca
 challengeType: 5
-title: 'Problem 75: Singular integer right triangles'
 videoUrl: ''
 localeTitle: 问题75：奇异整数直角三角形
 ---

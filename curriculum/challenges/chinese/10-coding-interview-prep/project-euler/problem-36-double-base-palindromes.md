@@ -1,7 +1,6 @@
 ---
 id: 5900f3901000cf542c50fea3
 challengeType: 5
-title: 'Problem 36: Double-base palindromes'
 videoUrl: ''
 localeTitle: 问题36：双基回文
 ---

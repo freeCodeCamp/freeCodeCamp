@@ -1,6 +1,5 @@
 ---
 id: 587d7fa9367417b2b2512bcf
-title: Dynamically Change the Height of Each Bar
 challengeType: 6
 forumTopicId: 301486
 localeTitle: 动态更改每个条的高度

@@ -1,6 +1,5 @@
 ---
 id: 5cdafbe72913098997531682
-title: Handle a Rejected Promise with catch
 challengeType: 1
 forumTopicId: 301204
 localeTitle: 在 catch 中处理 Promise 失败的情况

@@ -1,7 +1,6 @@
 ---
 id: 5900f5081000cf542c510019
 challengeType: 5
-title: 'Problem 411: Uphill paths'
 videoUrl: ''
 localeTitle: 问题411：上坡路径
 ---

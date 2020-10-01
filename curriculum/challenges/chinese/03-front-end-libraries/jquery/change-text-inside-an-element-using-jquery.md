@@ -1,6 +1,5 @@
 ---
 id: 564944c91be2204b269d51e3
-title: Change Text Inside an Element Using jQuery
 challengeType: 6
 forumTopicId: 16773
 localeTitle: 使用 jQuery 更改元素内部的文本

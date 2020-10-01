@@ -1,6 +1,5 @@
 ---
 id: 5e9a093a74c4063ca6f7c15d
-title: Data Cleaning Introduction
 challengeType: 11
 isHidden: false
 videoId: ovYNhnltVxY

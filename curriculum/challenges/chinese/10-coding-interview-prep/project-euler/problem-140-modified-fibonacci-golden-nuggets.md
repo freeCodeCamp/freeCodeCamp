@@ -1,7 +1,6 @@
 ---
 id: 5900f3fa1000cf542c50ff0c
 challengeType: 5
-title: 'Problem 140: Modified Fibonacci golden nuggets'
 videoUrl: ''
 localeTitle: 问题140：改进的斐波那契金块
 ---

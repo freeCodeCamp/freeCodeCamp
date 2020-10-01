@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aed808826
-title: Disable an Element Using jQuery
 challengeType: 6
 forumTopicId: 17563
 localeTitle: 使用 jQuery 禁用元素
