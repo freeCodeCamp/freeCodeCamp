@@ -248,6 +248,11 @@ body.close .github-corner {
 
 /****** Markdown General ******/
 
+.markdown-section h1,
+.markdown-section h2 {
+  margin: 1em 0;
+}
+
 .markdown-section p {
   font-size: 18px;
   line-height: 28px;
@@ -318,13 +323,4 @@ body.close .github-corner {
 /****** COPY TO CLIPBOARD ******/
 .docsify-copy-code-button {
   font-size: 0.7em !important;
-}
-
-/****** Anchor Headings ******/
-a.anchor {
-  padding-top: 48px;
-}
-
-.markdown-section h2 {
-  margin: 0 0 0.8em;
 }
