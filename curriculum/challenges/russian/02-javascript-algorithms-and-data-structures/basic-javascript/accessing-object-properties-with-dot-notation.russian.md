@@ -9,9 +9,9 @@ localeTitle: Доступ к объектным свойствам с нотам
 
 ## Description
 <section id='description'>
-There are two ways to access the properties of an object: dot notation (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.
-Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
-Here is a sample of using dot notation (<code>.</code>) to read an object's property:
+Существует два вида доступа к свойствам объекта: через точку (<code>.</code>) и используя скобки (<code>[]</code>), подобно как и в масиве.
+Доступ через точку это то что вы должны использовать когда вы знаете имя свойства которое будете спользовать.  
+Ниже приведен пример использования (<code>.</code>) доступа к свойству через точку:
 
 ```js
 var myObj = {
