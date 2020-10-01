@@ -19,10 +19,10 @@ const createByIdentityMap = {
 exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
   if (node.internal.type === 'ChallengeNode') {
-    const { tests = [], block, title, superBlock } = node;
+    const { tests = [], block, dashedName, superBlock } = node;
     const slug = `/learn/${dasherize(superBlock)}/${dasherize(
       block
-    )}/${dasherize(title)}`;
+    )}/${dashedName}`;
     createNodeField({ node, name: 'slug', value: slug });
     createNodeField({ node, name: 'blockName', value: blockNameify(block) });
     createNodeField({ node, name: 'tests', value: tests });
