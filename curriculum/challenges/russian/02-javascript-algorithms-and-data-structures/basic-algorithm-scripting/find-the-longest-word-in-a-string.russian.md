@@ -8,7 +8,7 @@ localeTitle: Найти самое длинное слово в строке
 
 ## Description
 <section id='description'>
-Верните длину самого длинного слова в предоставленное предложение. Ваш ответ должен быть числом. Не забудьте использовать <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
+Верните длину самого длинного слова в предоставленном предложении. Ваш ответ должен быть числом. Не забудьте использовать <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.<--Change this line to correct view russian words-->
 </section>
 
 ## Instructions
