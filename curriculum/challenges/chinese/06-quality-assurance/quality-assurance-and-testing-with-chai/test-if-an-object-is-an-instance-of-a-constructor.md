@@ -2,7 +2,7 @@
 id: 587d824e367417b2b2512c57
 challengeType: 2
 forumTopicId: 301605
-localeTitle: 测试对象是否是构造函数的实例
+title: 测试对象是否是构造函数的实例
 ---
 
 ## Description

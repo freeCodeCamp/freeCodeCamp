@@ -2,7 +2,7 @@
 id: 5900f4b51000cf542c50ffc8
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题329：Prime Frog
+title: 问题329：Prime Frog
 ---
 
 ## Description

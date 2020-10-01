@@ -2,7 +2,7 @@
 id: 5900f5351000cf542c510047
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题456：包含原点II的三角形
+title: 问题456：包含原点II的三角形
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3ae1000cf542c50fec1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题66：丢番图方程
+title: 问题66：丢番图方程
 ---
 
 ## Description

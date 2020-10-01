@@ -2,7 +2,7 @@
 id: 587d7fb7367417b2b2512c0c
 challengeType: 2
 forumTopicId: 301545
-localeTitle: 使用 model.findOne() 从数据库中返回一个匹配的 document
+title: 使用 model.findOne() 从数据库中返回一个匹配的 document
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: cf1111c1c12feddfaeb1bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6bfr'
 forumTopicId: 18186
-localeTitle: 使用 JavaScript 生成随机整数
+title: 使用 JavaScript 生成随机整数
 ---
 
 ## Description

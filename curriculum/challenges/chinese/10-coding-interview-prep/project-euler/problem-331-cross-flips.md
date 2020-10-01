@@ -2,7 +2,7 @@
 id: 5900f4b71000cf542c50ffca
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题331：交叉翻转
+title: 问题331：交叉翻转
 ---
 
 ## Description

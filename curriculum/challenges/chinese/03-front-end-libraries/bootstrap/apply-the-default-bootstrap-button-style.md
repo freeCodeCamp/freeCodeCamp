@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aec908850
 challengeType: 0
 forumTopicId: 16657
-localeTitle: 给 Bootstrap 按钮添加默认样式
+title: 给 Bootstrap 按钮添加默认样式
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3aa1000cf542c50febd
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题62：立方排列
+title: 问题62：立方排列
 ---
 
 ## Description

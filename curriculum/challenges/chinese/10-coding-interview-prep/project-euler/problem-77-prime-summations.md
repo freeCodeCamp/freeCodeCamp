@@ -2,7 +2,7 @@
 id: 5900f3b91000cf542c50fecc
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题77：总结
+title: 问题77：总结
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f5181000cf542c51002a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题427：n序列
+title: 问题427：n序列
 ---
 
 ## Description

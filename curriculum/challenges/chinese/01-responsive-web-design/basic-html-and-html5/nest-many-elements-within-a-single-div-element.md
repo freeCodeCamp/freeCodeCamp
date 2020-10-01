@@ -3,7 +3,7 @@ id: bad87fee1348bd9aede08835
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNW4kC3'
 forumTopicId: 18246
-localeTitle: 元素嵌套
+title: 元素嵌套
 ---
 
 ## Description

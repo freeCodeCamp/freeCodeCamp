@@ -2,7 +2,7 @@
 id: 587d7b7c367417b2b2512b1a
 challengeType: 1
 forumTopicId: 301150
-localeTitle: 使用方括号访问属性名称
+title: 使用方括号访问属性名称
 ---
 
 ## Description

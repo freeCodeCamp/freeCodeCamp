@@ -3,7 +3,7 @@ id: 587d7790367417b2b2512aaf
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQvmaTp'
 forumTopicId: 1
-localeTitle: 通过给元素添加 accesskey 属性来让用户可以在链接之间快速导航
+title: 通过给元素添加 accesskey 属性来让用户可以在链接之间快速导航
 ---
 
 ## Description

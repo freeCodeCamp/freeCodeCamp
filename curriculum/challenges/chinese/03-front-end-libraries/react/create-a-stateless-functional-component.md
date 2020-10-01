@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036162
 challengeType: 6
 forumTopicId: 301392
-localeTitle: 创建一个无状态的函数组件
+title: 创建一个无状态的函数组件
 ---
 
 ## Description

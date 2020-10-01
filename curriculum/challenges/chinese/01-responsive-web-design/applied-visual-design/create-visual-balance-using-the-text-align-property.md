@@ -3,7 +3,7 @@ id: 587d7791367417b2b2512ab3
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
-localeTitle: 使用 text-align 属性创建视觉平衡
+title: 使用 text-align 属性创建视觉平衡
 ---
 
 ## Description

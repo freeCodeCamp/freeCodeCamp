@@ -2,7 +2,7 @@
 id: 587d7dad367417b2b2512b77
 challengeType: 1
 forumTopicId: 16804
-localeTitle: 定义构造函数
+title: 定义构造函数
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7dbb367417b2b2512baa
 challengeType: 1
 forumTopicId: 301364
-localeTitle: 使用捕获组重用模式
+title: 使用捕获组重用模式
 ---
 
 ## Description

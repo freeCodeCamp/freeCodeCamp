@@ -2,7 +2,7 @@
 id: 5900f48b1000cf542c50ff9e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题287：四叉树编码（一种简单的压缩算法）
+title: 问题287：四叉树编码（一种简单的压缩算法）
 ---
 
 ## Description

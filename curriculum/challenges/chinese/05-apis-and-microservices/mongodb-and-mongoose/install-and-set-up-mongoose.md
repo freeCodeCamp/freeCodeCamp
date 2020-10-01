@@ -2,7 +2,7 @@
 id: 587d7fb6367417b2b2512c06
 challengeType: 2
 forumTopicId: 301540
-localeTitle: 安装和设置 Mongoose
+title: 安装和设置 Mongoose
 ---
 
 ## Description

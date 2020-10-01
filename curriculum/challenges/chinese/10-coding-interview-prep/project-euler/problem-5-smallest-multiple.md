@@ -2,7 +2,7 @@
 id: 5900f3711000cf542c50fe84
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题5：最小的倍数
+title: 问题5：最小的倍数
 ---
 
 ## Description

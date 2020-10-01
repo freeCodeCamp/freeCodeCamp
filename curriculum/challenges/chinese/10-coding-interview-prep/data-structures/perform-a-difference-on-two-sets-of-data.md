@@ -2,7 +2,7 @@
 id: 587d8254367417b2b2512c6e
 challengeType: 1
 videoUrl: ''
-localeTitle: 对两组数据执行差异
+title: 对两组数据执行差异
 ---
 
 ## Description

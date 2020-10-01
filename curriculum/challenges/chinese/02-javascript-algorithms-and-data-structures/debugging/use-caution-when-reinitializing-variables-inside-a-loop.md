@@ -2,7 +2,7 @@
 id: 587d7b86367417b2b2512b3c
 challengeType: 1
 forumTopicId: 301194
-localeTitle: 重新初始化循环中的变量时要小心
+title: 重新初始化循环中的变量时要小心
 ---
 
 ## Description

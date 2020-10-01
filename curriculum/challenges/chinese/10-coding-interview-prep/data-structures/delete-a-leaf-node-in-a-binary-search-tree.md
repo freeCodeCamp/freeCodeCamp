@@ -2,7 +2,7 @@
 id: 587d8258367417b2b2512c80
 challengeType: 1
 videoUrl: ''
-localeTitle: 删除二进制搜索树中的叶节点
+title: 删除二进制搜索树中的叶节点
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3c61000cf542c50fed9
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题90：立方体数字对
+title: 问题90：立方体数字对
 ---
 
 ## Description

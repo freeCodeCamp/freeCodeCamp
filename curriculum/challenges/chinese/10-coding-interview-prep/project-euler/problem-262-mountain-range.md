@@ -2,7 +2,7 @@
 id: 5900f4731000cf542c50ff85
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题262：山脉
+title: 问题262：山脉
 ---
 
 ## Description

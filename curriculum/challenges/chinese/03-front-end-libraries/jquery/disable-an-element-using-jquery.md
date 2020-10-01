@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aed808826
 challengeType: 6
 forumTopicId: 17563
-localeTitle: 使用 jQuery 禁用元素
+title: 使用 jQuery 禁用元素
 ---
 
 ## Description

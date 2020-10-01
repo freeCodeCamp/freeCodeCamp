@@ -2,7 +2,7 @@
 id: 587d7fb3367417b2b2512bfb
 challengeType: 2
 forumTopicId: 301528
-localeTitle: 如何使用 package.json —— 任何 Node.js 项目或 npm 包的核心
+title: 如何使用 package.json —— 任何 Node.js 项目或 npm 包的核心
 ---
 
 ## Description

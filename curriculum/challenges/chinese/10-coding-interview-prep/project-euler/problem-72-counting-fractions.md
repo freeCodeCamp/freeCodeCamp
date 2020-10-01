@@ -2,7 +2,7 @@
 id: 5900f3b41000cf542c50fec7
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题72：计算分数
+title: 问题72：计算分数
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d8259367417b2b2512c84
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建Trie搜索树
+title: 创建Trie搜索树
 ---
 
 ## Description

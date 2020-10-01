@@ -2,7 +2,7 @@
 id: 5900f3871000cf542c50fe9a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题27：二次素数
+title: 问题27：二次素数
 ---
 
 ## Description

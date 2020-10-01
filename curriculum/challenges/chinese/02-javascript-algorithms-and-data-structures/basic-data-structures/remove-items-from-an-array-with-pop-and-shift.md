@@ -2,7 +2,7 @@
 id: 587d78b2367417b2b2512b0f
 challengeType: 1
 forumTopicId: 301165
-localeTitle: 使用 pop() 和 shift() 从数组中删除项目
+title: 使用 pop() 和 shift() 从数组中删除项目
 ---
 
 ## Description

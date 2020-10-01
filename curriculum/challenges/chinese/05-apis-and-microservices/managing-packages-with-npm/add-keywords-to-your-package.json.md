@@ -2,7 +2,7 @@
 id: 587d7fb4367417b2b2512bfd
 challengeType: 2
 forumTopicId: 301526
-localeTitle: 给 package.json 添加关键词
+title: 给 package.json 添加关键词
 ---
 
 ## Description

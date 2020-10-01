@@ -2,7 +2,7 @@
 id: 5900f4791000cf542c50ff8b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题268：计算至少有四个不同素因子小于100的数字
+title: 问题268：计算至少有四个不同素因子小于100的数字
 ---
 
 ## Description

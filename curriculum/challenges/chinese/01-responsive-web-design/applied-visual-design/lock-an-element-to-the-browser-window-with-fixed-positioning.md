@@ -3,7 +3,7 @@ id: 587d781e367417b2b2512acc
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061
-localeTitle: 固定定位的参照物是浏览器的窗口
+title: 固定定位的参照物是浏览器的窗口
 ---
 
 ## Description

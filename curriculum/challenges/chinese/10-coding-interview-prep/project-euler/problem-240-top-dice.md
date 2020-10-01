@@ -2,7 +2,7 @@
 id: 5900f45d1000cf542c50ff6f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题240：顶部骰子
+title: 问题240：顶部骰子
 ---
 
 ## Description

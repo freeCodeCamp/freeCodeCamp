@@ -2,7 +2,7 @@
 id: aff0395860f5d3034dc0bfc9
 challengeType: 5
 forumTopicId: 16090
-localeTitle: 电话号码验证器
+title: 电话号码验证器
 ---
 
 ## Description

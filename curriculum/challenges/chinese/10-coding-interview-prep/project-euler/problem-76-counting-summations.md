@@ -2,7 +2,7 @@
 id: 5900f3b81000cf542c50fecb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题76：计算总结
+title: 问题76：计算总结
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 587d7b7e367417b2b2512b24
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JRmSg'
 forumTopicId: 301181
-localeTitle: 使用三元运算符
+title: 使用三元运算符
 ---
 
 ## Description

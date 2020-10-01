@@ -3,7 +3,7 @@ id: 587d78a3367417b2b2512ad1
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MD3Tr'
 forumTopicId: 301056
-localeTitle: 了解互补色
+title: 了解互补色
 ---
 
 ## Description

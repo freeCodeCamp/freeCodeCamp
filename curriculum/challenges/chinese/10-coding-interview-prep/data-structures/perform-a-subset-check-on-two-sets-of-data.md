@@ -2,7 +2,7 @@
 id: 587d8254367417b2b2512c6f
 challengeType: 1
 videoUrl: ''
-localeTitle: 对两组数据执行子集检查
+title: 对两组数据执行子集检查
 ---
 
 ## Description

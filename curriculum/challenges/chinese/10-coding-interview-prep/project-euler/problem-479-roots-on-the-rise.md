@@ -2,7 +2,7 @@
 id: 5900f54b1000cf542c51005d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题479：崛起的根源
+title: 问题479：崛起的根源
 ---
 
 ## Description

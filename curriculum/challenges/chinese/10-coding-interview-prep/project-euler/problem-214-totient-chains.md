@@ -2,7 +2,7 @@
 id: 5900f4421000cf542c50ff55
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题214个欧拉链
+title: 问题214个欧拉链
 ---
 
 ## Description

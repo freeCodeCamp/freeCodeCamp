@@ -2,7 +2,7 @@
 id: 587d7dab367417b2b2512b6d
 challengeType: 1
 forumTopicId: 301227
-localeTitle: 应用函数式编程将字符串转换为URL片段
+title: 应用函数式编程将字符串转换为URL片段
 ---
 
 ## Description

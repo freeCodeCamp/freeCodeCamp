@@ -2,7 +2,7 @@
 id: 599c333915e0ea32d04d4bec
 challengeType: 5
 videoUrl: ''
-localeTitle: 元素操作
+title: 元素操作
 ---
 
 ## Description

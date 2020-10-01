@@ -2,7 +2,7 @@
 id: 5900f4621000cf542c50ff74
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题245：Coresilience
+title: 问题245：Coresilience
 ---
 
 ## Description

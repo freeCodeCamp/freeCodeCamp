@@ -3,7 +3,7 @@ id: 587d78a4367417b2b2512ad4
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp38TZ'
 forumTopicId: 301036
-localeTitle: 调整颜色的色相
+title: 调整颜色的色相
 ---
 
 ## Description

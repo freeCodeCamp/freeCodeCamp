@@ -2,7 +2,7 @@
 id: 587d824b367417b2b2512c4b
 challengeType: 2
 forumTopicId: 301610
-localeTitle: 用三个等号断言严格相等
+title: 用三个等号断言严格相等
 ---
 
 ## Description

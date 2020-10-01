@@ -2,7 +2,7 @@
 id: 587d7dae367417b2b2512b7c
 challengeType: 1
 forumTopicId: 301336
-localeTitle: 使用原型属性来减少重复代码
+title: 使用原型属性来减少重复代码
 ---
 
 ## Description

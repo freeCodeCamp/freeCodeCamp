@@ -3,7 +3,7 @@ id: 587d78a4367417b2b2512ad2
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRDAb'
 forumTopicId: 301057
-localeTitle: 了解三原色
+title: 了解三原色
 ---
 
 ## Description

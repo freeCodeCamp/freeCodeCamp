@@ -2,7 +2,7 @@
 id: 5900f3bf1000cf542c50fed2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题83：路径总和：四种方式
+title: 问题83：路径总和：四种方式
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08824
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mwUw'
 forumTopicId: 16634
-localeTitle: 给元素的每一侧添加不同的内边距
+title: 给元素的每一侧添加不同的内边距
 ---
 
 ## Description

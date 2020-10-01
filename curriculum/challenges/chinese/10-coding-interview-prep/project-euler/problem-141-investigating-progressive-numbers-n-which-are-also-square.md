@@ -2,7 +2,7 @@
 id: 5900f3f91000cf542c50ff0b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题141：调查渐进数n，它们也是正方形
+title: 问题141：调查渐进数n，它们也是正方形
 ---
 
 ## Description

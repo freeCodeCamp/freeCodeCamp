@@ -2,7 +2,7 @@
 id: 587d7fb9367417b2b2512c12
 challengeType: 2
 forumTopicId: 301533
-localeTitle: 通过链式调用搜索查询辅助函数来缩小搜索结果
+title: 通过链式调用搜索查询辅助函数来缩小搜索结果
 ---
 
 ## Description

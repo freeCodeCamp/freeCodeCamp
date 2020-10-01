@@ -2,7 +2,7 @@
 id: 587d7dbc367417b2b2512bae
 challengeType: 3
 forumTopicId: 301370
-localeTitle: 构建一台鼓式机器
+title: 构建一台鼓式机器
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d824d367417b2b2512c52
 challengeType: 2
 forumTopicId: 301599
-localeTitle: 测试某个值是否为字符串
+title: 测试某个值是否为字符串
 ---
 
 ## Description

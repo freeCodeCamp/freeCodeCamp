@@ -2,7 +2,7 @@
 id: 5900f4691000cf542c50ff7c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题253：整理
+title: 问题253：整理
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: bd7123c9c452eddfaeb5bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cw4vkh9'
 forumTopicId: 18344
-localeTitle: 使用方括号查找字符串中的第N个字符到最后一个字符
+title: 使用方括号查找字符串中的第N个字符到最后一个字符
 ---
 
 ## Description

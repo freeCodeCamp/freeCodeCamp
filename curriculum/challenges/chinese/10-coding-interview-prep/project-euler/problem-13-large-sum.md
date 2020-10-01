@@ -2,7 +2,7 @@
 id: 5900f37a1000cf542c50fe8c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题13：大笔金额
+title: 问题13：大笔金额
 ---
 
 ## Description

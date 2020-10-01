@@ -3,7 +3,7 @@ id: 598e8944f009e646fc236146
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2p7cL'
 forumTopicId: 301177
-localeTitle: 函数也可以返回 undefined
+title: 函数也可以返回 undefined
 ---
 
 ## Description

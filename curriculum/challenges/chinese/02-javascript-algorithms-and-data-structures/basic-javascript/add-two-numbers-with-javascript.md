@@ -3,7 +3,7 @@ id: cf1111c1c11feddfaeb3bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
-localeTitle: 加法运算
+title: 加法运算
 ---
 
 ## Description

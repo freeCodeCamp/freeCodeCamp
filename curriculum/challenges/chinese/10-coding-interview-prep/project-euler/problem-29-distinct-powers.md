@@ -2,7 +2,7 @@
 id: 5900f3891000cf542c50fe9c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题29：不同的权力
+title: 问题29：不同的权力
 ---
 
 ## Description

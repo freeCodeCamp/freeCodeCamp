@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036174
 challengeType: 6
 forumTopicId: 301379
-localeTitle: 将 this 绑定到 Class 方法
+title: 将 this 绑定到 Class 方法
 ---
 
 ## Description

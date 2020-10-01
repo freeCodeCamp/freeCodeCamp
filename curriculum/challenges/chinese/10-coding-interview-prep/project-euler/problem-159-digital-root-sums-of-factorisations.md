@@ -2,7 +2,7 @@
 id: 5900f40c1000cf542c50ff1e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题159：因子的数字根和
+title: 问题159：因子的数字根和
 ---
 
 ## Description

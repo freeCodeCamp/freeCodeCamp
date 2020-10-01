@@ -2,7 +2,7 @@
 id: bd7158d8c443eddfaeb5bd0e
 challengeType: 4
 videoUrl: ''
-localeTitle: 图表股市
+title: 图表股市
 ---
 
 ## Description

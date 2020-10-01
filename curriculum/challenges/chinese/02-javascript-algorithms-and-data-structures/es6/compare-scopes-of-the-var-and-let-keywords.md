@@ -2,7 +2,7 @@
 id: 587d7b87367417b2b2512b40
 challengeType: 1
 forumTopicId: 301195
-localeTitle: 比较 var 和 let 关键字的作用域
+title: 比较 var 和 let 关键字的作用域
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4eb1000cf542c50fffd
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题382：生成多边形
+title: 问题382：生成多边形
 ---
 
 ## Description

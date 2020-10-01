@@ -2,7 +2,7 @@
 id: 5900f4291000cf542c50ff3a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题187：半致
+title: 问题187：半致
 ---
 
 ## Description

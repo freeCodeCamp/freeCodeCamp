@@ -2,7 +2,7 @@
 id: 5900f3fd1000cf542c50ff10
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题145：有多少可逆数字低于十亿？
+title: 问题145：有多少可逆数字低于十亿？
 ---
 
 ## Description

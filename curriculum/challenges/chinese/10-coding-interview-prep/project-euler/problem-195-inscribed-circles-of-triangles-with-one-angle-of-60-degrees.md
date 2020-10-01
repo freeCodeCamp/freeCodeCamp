@@ -2,7 +2,7 @@
 id: 5900f4311000cf542c50ff43
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题195：内切三角形的圆形，一个角度为60度
+title: 问题195：内切三角形的圆形，一个角度为60度
 ---
 
 ## Description

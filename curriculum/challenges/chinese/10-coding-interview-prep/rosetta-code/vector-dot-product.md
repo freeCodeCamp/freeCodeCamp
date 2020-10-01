@@ -2,7 +2,7 @@
 id: 594810f028c0303b75339ad3
 challengeType: 5
 videoUrl: ''
-localeTitle: 矢量点积
+title: 矢量点积
 ---
 
 ## Description

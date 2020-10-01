@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08829
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c2EVnf6'
 forumTopicId: 16823
-localeTitle: 创建一个输入框
+title: 创建一个输入框
 ---
 
 ## Description

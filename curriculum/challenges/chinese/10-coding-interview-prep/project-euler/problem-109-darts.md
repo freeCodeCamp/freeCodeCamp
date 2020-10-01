@@ -2,7 +2,7 @@
 id: 5900f3db1000cf542c50feec
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题109：飞镖
+title: 问题109：飞镖
 ---
 
 ## Description

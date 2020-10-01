@@ -2,7 +2,7 @@
 id: 5900f4131000cf542c50ff25
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题166：克里斯十字架
+title: 问题166：克里斯十字架
 ---
 
 ## Description

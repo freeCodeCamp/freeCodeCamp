@@ -2,7 +2,7 @@
 id: 5900f46b1000cf542c50ff7d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题254：数字因子的总和
+title: 问题254：数字因子的总和
 ---
 
 ## Description

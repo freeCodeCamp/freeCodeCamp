@@ -2,7 +2,7 @@
 id: 5900f4881000cf542c50ff9a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题283：面积*周长比为整数的整数边三角形
+title: 问题283：面积*周长比为整数的整数边三角形
 ---
 
 ## Description

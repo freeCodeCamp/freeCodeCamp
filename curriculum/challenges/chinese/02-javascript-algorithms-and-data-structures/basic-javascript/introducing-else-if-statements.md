@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244db
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJ2hm'
 forumTopicId: 18206
-localeTitle: 介绍 else if 语句
+title: 介绍 else if 语句
 ---
 
 ## Description

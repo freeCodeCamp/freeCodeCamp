@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403618c
 challengeType: 6
 forumTopicId: 301416
-localeTitle: 使用 Array.Filter() 动态过滤数组
+title: 使用 Array.Filter() 动态过滤数组
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4cb1000cf542c50ffdd
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题350：约束最小和最小
+title: 问题350：约束最小和最小
 ---
 
 ## Description

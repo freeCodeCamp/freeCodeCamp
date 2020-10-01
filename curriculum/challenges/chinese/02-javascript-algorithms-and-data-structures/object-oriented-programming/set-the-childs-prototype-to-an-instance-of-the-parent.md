@@ -2,7 +2,7 @@
 id: 587d7db1367417b2b2512b85
 challengeType: 1
 forumTopicId: 301325
-localeTitle: 将子辈的原型设置为父辈的实例
+title: 将子辈的原型设置为父辈的实例
 ---
 
 ## Description

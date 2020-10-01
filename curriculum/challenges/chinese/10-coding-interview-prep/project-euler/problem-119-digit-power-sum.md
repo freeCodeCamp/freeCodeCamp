@@ -2,7 +2,7 @@
 id: 5900f3e41000cf542c50fef6
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题119：数字功率总和
+title: 问题119：数字功率总和
 ---
 
 ## Description

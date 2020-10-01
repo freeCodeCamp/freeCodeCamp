@@ -2,7 +2,7 @@
 id: 5a24bbe0dba28a8d3cbd4c5f
 challengeType: 6
 forumTopicId: 301406
-localeTitle: 渲染 HTML 元素为 DOM 树
+title: 渲染 HTML 元素为 DOM 树
 ---
 
 ## Description

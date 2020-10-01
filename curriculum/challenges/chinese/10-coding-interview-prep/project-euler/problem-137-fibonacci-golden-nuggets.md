@@ -2,7 +2,7 @@
 id: 5900f3f51000cf542c50ff08
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题137：斐波那契金块
+title: 问题137：斐波那契金块
 ---
 
 ## Description

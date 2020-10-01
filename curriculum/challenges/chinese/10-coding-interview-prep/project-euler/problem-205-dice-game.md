@@ -2,7 +2,7 @@
 id: 5900f4391000cf542c50ff4c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题205：骰子游戏
+title: 问题205：骰子游戏
 ---
 
 ## Description

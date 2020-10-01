@@ -2,7 +2,7 @@
 id: 5900f3bc1000cf542c50fecf
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题80：平方根数字扩展
+title: 问题80：平方根数字扩展
 ---
 
 ## Description

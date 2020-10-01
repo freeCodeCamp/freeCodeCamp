@@ -2,7 +2,7 @@
 id: 5900f5471000cf542c510059
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题474：除数的最后数字
+title: 问题474：除数的最后数字
 ---
 
 ## Description

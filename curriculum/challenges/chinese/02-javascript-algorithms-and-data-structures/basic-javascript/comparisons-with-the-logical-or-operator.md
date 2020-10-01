@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244d9
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEPrGTN'
 forumTopicId: 16800
-localeTitle: 逻辑或运算符
+title: 逻辑或运算符
 ---
 
 ## Description

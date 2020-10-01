@@ -2,7 +2,7 @@
 id: bd7158d8c442eddfaeb5bd1f
 challengeType: 3
 videoUrl: ''
-localeTitle: 使用Twitch JSON API
+title: 使用Twitch JSON API
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403614a
 challengeType: 6
 forumTopicId: 301434
-localeTitle: 从这里前进
+title: 从这里前进
 ---
 
 ## Description

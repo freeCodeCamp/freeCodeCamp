@@ -2,7 +2,7 @@
 id: bd7158d8c443eddfaeb5bdee
 challengeType: 4
 videoUrl: ''
-localeTitle: 建立一个Pinterest克隆
+title: 建立一个Pinterest克隆
 ---
 
 ## Description

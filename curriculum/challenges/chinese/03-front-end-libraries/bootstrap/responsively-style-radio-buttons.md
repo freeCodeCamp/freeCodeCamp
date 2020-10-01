@@ -5,7 +5,7 @@ required:
     raw: true
 challengeType: 0
 forumTopicId: 18270
-localeTitle: 响应式风格的单选按钮
+title: 响应式风格的单选按钮
 ---
 
 ## Description

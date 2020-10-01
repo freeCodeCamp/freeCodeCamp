@@ -3,7 +3,7 @@ id: 587d78a7367417b2b2512adf
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakprhv'
 forumTopicId: 301059
-localeTitle: 了解 CSS 的关键帧和动画是如何工作的
+title: 了解 CSS 的关键帧和动画是如何工作的
 ---
 
 ## Description

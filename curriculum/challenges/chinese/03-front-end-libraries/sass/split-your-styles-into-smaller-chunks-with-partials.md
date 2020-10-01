@@ -2,7 +2,7 @@
 id: 587d7dbf367417b2b2512bbc
 challengeType: 0
 forumTopicId: 301459
-localeTitle: 用 Partials 将你的样式分成小块
+title: 用 Partials 将你的样式分成小块
 ---
 
 ## Description

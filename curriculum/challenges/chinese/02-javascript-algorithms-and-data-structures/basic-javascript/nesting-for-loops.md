@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244e1
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
-localeTitle: 循环嵌套
+title: 循环嵌套
 ---
 
 ## Description

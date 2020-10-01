@@ -2,7 +2,7 @@
 id: 58965611f9fc0f352b528e6c
 challengeType: 2
 forumTopicId: 301560
-localeTitle: 用户退出登录
+title: 用户退出登录
 ---
 
 ## Description

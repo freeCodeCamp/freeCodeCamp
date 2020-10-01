@@ -2,7 +2,7 @@
 id: 5900f4231000cf542c50ff34
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题181：调查两种不同颜色的对象可以分组的方式
+title: 问题181：调查两种不同颜色的对象可以分组的方式
 ---
 
 ## Description

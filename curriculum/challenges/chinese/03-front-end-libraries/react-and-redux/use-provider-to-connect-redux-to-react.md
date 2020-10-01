@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036144
 challengeType: 6
 forumTopicId: 301435
-localeTitle: 使用 Provider 连接 Redux 和 React
+title: 使用 Provider 连接 Redux 和 React
 ---
 
 ## Description

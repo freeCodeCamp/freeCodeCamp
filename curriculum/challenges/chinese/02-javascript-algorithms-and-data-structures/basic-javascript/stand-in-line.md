@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244c6
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8Q8tP'
 forumTopicId: 18307
-localeTitle: 排队
+title: 排队
 ---
 
 ## Description

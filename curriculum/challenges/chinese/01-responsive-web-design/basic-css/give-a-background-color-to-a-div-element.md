@@ -3,7 +3,7 @@ id: bad87fed1348bd9aede07836
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRKMCk'
 forumTopicId: 18190
-localeTitle: 给 div 元素添加背景色
+title: 给 div 元素添加背景色
 ---
 
 ## Description

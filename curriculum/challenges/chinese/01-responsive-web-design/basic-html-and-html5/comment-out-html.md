@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08804
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cGyGbca'
 forumTopicId: 16782
-localeTitle: 给 HTML 添加注释
+title: 给 HTML 添加注释
 ---
 
 ## Description

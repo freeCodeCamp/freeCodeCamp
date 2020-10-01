@@ -2,7 +2,7 @@
 id: 5900f4701000cf542c50ff82
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题259：可达号码
+title: 问题259：可达号码
 ---
 
 ## Description

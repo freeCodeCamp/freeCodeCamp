@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244ed
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
-localeTitle: 将变量附加到字符串
+title: 将变量附加到字符串
 ---
 
 ## Description

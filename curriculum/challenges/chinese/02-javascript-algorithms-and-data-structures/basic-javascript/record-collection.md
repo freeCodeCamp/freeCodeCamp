@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244cf
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c4mpysg'
 forumTopicId: 18261
-localeTitle: 记录集合
+title: 记录集合
 ---
 
 ## Description

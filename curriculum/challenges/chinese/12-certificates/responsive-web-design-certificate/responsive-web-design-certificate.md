@@ -3,7 +3,7 @@ id: 561add10cb82ac38a17513bc
 challengeType: 7
 isHidden: false
 isPrivate: true
-localeTitle: 响应式网页设计证书
+title: 响应式网页设计证书
 ---
 
 ## Description

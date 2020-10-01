@@ -2,7 +2,7 @@
 id: 595671d4d2cdc305f0d5b36f
 challengeType: 5
 videoUrl: ''
-localeTitle: 来自两个数组的哈希
+title: 来自两个数组的哈希
 ---
 
 ## Description

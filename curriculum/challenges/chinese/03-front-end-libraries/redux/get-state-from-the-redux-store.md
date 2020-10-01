@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403614c
 challengeType: 6
 forumTopicId: 301443
-localeTitle: 从 Redux Store 获取状态
+title: 从 Redux Store 获取状态
 ---
 
 ## Description

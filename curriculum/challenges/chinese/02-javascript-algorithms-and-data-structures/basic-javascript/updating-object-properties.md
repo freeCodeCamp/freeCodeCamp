@@ -3,7 +3,7 @@ id: 56bbb991ad1ed5201cd392d1
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
-localeTitle: 更新对象属性
+title: 更新对象属性
 ---
 
 ## Description

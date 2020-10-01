@@ -2,7 +2,7 @@
 id: 56533eb9ac21ba0edf2244e2
 challengeType: 5
 forumTopicId: 16003
-localeTitle: 凯撒密码
+title: 凯撒密码
 ---
 
 ## Description

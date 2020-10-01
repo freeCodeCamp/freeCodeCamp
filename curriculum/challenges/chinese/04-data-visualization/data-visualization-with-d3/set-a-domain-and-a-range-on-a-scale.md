@@ -2,7 +2,7 @@
 id: 587d7fac367417b2b2512bdb
 challengeType: 6
 forumTopicId: 301491
-localeTitle: 按比例设置域和范围
+title: 按比例设置域和范围
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f36e1000cf542c50fe80
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题1：3和5的倍数
+title: 问题1：3和5的倍数
 ---
 
 ## Description

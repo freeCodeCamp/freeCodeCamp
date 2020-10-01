@@ -2,7 +2,7 @@
 id: 587d825a367417b2b2512c88
 challengeType: 1
 videoUrl: ''
-localeTitle: 反转双重链接列表
+title: 反转双重链接列表
 ---
 
 ## Description

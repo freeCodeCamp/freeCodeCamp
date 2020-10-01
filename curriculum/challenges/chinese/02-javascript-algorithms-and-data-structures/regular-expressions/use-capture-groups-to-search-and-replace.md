@@ -2,7 +2,7 @@
 id: 587d7dbb367417b2b2512bab
 challengeType: 1
 forumTopicId: 301368
-localeTitle: 使用捕获组搜索和替换
+title: 使用捕获组搜索和替换
 ---
 
 ## Description

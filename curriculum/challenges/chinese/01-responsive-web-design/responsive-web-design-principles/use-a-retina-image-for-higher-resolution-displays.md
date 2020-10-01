@@ -3,7 +3,7 @@ id: 587d78b1367417b2b2512b0a
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-localeTitle: 针对高分辨率屏幕应使用视网膜图片
+title: 针对高分辨率屏幕应使用视网膜图片
 ---
 
 ## Description

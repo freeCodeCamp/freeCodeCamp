@@ -2,7 +2,7 @@
 id: 5966f99c45e8976909a85575
 challengeType: 5
 videoUrl: ''
-localeTitle: 一周中的天
+title: 一周中的天
 ---
 
 ## Description

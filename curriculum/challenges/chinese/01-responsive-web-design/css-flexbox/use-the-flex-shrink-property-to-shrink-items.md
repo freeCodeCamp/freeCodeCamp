@@ -3,7 +3,7 @@ id: 587d78ad367417b2b2512afb
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PBfr'
 forumTopicId: 301113
-localeTitle: 使用 flex-shrink 属性收缩项目
+title: 使用 flex-shrink 属性收缩项目
 ---
 
 ## Description

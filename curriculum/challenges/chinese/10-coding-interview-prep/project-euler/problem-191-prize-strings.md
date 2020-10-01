@@ -2,7 +2,7 @@
 id: 5900f42b1000cf542c50ff3e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题191：奖品串
+title: 问题191：奖品串
 ---
 
 ## Description

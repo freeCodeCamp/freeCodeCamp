@@ -2,7 +2,7 @@
 id: 5900f3ac1000cf542c50febf
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题64：奇数期平方根
+title: 问题64：奇数期平方根
 ---
 
 ## Description

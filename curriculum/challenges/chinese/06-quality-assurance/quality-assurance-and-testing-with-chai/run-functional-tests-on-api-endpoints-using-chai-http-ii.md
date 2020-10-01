@@ -2,7 +2,7 @@
 id: 587d824f367417b2b2512c59
 challengeType: 2
 forumTopicId: 301592
-localeTitle: 使用 Chai-HTTP 进行 API 功能测试 (2)
+title: 使用 Chai-HTTP 进行 API 功能测试 (2)
 ---
 
 ## Description

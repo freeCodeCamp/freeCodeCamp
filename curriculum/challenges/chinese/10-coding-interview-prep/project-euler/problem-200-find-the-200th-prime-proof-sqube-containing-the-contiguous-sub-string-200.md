@@ -2,7 +2,7 @@
 id: 5900f4351000cf542c50ff47
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题200：找到包含连续子串“200”的第200个防爆大概
+title: 问题200：找到包含连续子串“200”的第200个防爆大概
 ---
 
 ## Description

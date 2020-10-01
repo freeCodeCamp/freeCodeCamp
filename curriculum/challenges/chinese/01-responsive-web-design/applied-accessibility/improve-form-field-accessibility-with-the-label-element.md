@@ -3,7 +3,7 @@ id: 587d778a367417b2b2512aa6
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
 forumTopicId: 301016
-localeTitle: 使用 label 元素提高表单的可访问性
+title: 使用 label 元素提高表单的可访问性
 ---
 
 ## Description

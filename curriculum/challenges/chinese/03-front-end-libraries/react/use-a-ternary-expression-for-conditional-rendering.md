@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036187
 challengeType: 6
 forumTopicId: 301414
-localeTitle: 使用三元表达式进行条件渲染
+title: 使用三元表达式进行条件渲染
 ---
 
 ## Description

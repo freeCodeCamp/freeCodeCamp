@@ -2,7 +2,7 @@
 id: 59880443fb36441083c6c20e
 challengeType: 5
 videoUrl: ''
-localeTitle: 欧拉方法
+title: 欧拉方法
 ---
 
 ## Description

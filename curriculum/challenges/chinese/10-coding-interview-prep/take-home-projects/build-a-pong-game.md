@@ -2,7 +2,7 @@
 id: 5a4b7fcdb66f799f199e11db
 challengeType: 3
 videoUrl: ''
-localeTitle: 建立乒乓球比赛
+title: 建立乒乓球比赛
 ---
 
 ## Description

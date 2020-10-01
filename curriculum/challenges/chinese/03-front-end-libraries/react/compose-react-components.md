@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036166
 challengeType: 6
 forumTopicId: 301381
-localeTitle: 组合 React 组件
+title: 组合 React 组件
 ---
 
 ## Description

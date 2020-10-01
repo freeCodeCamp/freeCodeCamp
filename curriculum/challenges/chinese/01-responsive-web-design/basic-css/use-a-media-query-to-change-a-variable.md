@@ -3,7 +3,7 @@ id: 5a9d72ad424fe3d0e10cad16
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
-localeTitle: 使用媒体查询更改变量
+title: 使用媒体查询更改变量
 ---
 
 ## Description

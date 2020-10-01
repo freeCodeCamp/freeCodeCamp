@@ -3,7 +3,7 @@ id: 587d7791367417b2b2512ab4
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVLPtN'
 forumTopicId: 301039
-localeTitle: 使用 width 属性调整元素的宽度
+title: 使用 width 属性调整元素的宽度
 ---
 
 ## Description

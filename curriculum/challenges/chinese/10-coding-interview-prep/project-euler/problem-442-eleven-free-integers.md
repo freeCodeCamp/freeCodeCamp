@@ -2,7 +2,7 @@
 id: 5900f5271000cf542c510039
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题442：十一个整数
+title: 问题442：十一个整数
 ---
 
 ## Description

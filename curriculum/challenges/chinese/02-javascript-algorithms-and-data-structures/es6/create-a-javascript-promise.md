@@ -2,7 +2,7 @@
 id: 5cdafbb0291309899753167f
 challengeType: 1
 forumTopicId: 301197
-localeTitle: 创建一个 JavaScript Promise
+title: 创建一个 JavaScript Promise
 ---
 
 ## Description

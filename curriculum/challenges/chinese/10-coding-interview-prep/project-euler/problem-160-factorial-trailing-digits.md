@@ -2,7 +2,7 @@
 id: 5900f40d1000cf542c50ff1f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题160：因子尾随数字
+title: 问题160：因子尾随数字
 ---
 
 ## Description

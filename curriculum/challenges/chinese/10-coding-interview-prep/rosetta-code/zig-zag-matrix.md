@@ -2,7 +2,7 @@
 id: 594810f028c0303b75339ad8
 challengeType: 5
 videoUrl: ''
-localeTitle: 之字形矩阵
+title: 之字形矩阵
 ---
 
 ## Description

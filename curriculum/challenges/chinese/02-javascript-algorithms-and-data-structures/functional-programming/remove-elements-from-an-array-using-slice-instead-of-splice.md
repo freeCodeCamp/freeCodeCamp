@@ -2,7 +2,7 @@
 id: 9d7123c8c441eeafaeb5bdef
 challengeType: 1
 forumTopicId: 301236
-localeTitle: 使用 slice 而不是 splice 从数组中移除元素
+title: 使用 slice 而不是 splice 从数组中移除元素
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4931000cf542c50ffa6
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题295：透镜孔
+title: 问题295：透镜孔
 ---
 
 ## Description

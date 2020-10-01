@@ -2,7 +2,7 @@
 id: bd7157d8c242eddfaeb5bd13
 challengeType: 3
 forumTopicId: 301372
-localeTitle: 构建一个 Markdown 文件预览器
+title: 构建一个 Markdown 文件预览器
 ---
 
 ## Description

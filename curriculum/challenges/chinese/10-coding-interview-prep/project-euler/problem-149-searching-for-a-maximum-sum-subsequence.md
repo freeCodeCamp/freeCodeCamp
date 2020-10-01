@@ -2,7 +2,7 @@
 id: 5900f4021000cf542c50ff13
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题149：搜索最大和子序列
+title: 问题149：搜索最大和子序列
 ---
 
 ## Description

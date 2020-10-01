@@ -2,7 +2,7 @@
 id: 5900f4571000cf542c50ff69
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题234：半透明数字
+title: 问题234：半透明数字
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d8247367417b2b2512c38
 challengeType: 2
 forumTopicId: 301582
-localeTitle: 使用 helmet.frameguard() 降低点击劫持的风险
+title: 使用 helmet.frameguard() 降低点击劫持的风险
 ---
 
 ## Description

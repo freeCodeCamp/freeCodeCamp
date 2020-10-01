@@ -2,7 +2,7 @@
 id: 5900f3ce1000cf542c50fee0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题97：大的非梅森素数
+title: 问题97：大的非梅森素数
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403614e
 challengeType: 6
 forumTopicId: 301441
-localeTitle: 定义一个 Action Creator
+title: 定义一个 Action Creator
 ---
 
 ## Description

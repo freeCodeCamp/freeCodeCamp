@@ -2,7 +2,7 @@
 id: bd7158d8c443eddfaeb5bdff
 challengeType: 4
 videoUrl: ''
-localeTitle: 建立夜生活协调应用程序
+title: 建立夜生活协调应用程序
 ---
 
 ## Description

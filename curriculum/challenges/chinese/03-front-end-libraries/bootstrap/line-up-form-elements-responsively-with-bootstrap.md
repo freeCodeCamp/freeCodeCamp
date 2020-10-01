@@ -5,7 +5,7 @@ required:
     raw: true
 challengeType: 0
 forumTopicId: 18225
-localeTitle: 使用 Bootstrap 响应式排列表单元素
+title: 使用 Bootstrap 响应式排列表单元素
 ---
 
 ## Description

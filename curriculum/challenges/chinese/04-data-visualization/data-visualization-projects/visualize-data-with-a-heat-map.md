@@ -2,7 +2,7 @@
 id: bd7188d8c242eddfaeb5bd13
 challengeType: 3
 forumTopicId: 301466
-localeTitle: 用热图可视化数据
+title: 用热图可视化数据
 ---
 
 ## Description

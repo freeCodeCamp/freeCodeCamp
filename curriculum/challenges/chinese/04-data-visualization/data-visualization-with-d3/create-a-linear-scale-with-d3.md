@@ -2,7 +2,7 @@
 id: 587d7fab367417b2b2512bda
 challengeType: 6
 forumTopicId: 301483
-localeTitle: 用 D3 创建线性比例
+title: 用 D3 创建线性比例
 ---
 
 ## Description

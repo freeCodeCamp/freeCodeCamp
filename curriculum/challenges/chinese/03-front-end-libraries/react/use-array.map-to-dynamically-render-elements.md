@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403618a
 challengeType: 6
 forumTopicId: 301417
-localeTitle: 使用 Array.map() 动态渲染元素
+title: 使用 Array.map() 动态渲染元素
 ---
 
 ## Description

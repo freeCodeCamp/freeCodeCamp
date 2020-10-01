@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244c3
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
-localeTitle: 用返回值来赋值
+title: 用返回值来赋值
 ---
 
 ## Description

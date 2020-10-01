@@ -2,7 +2,7 @@
 id: 5900f39d1000cf542c50feb0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题49：主要排列
+title: 问题49：主要排列
 ---
 
 ## Description

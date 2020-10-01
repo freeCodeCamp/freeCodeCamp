@@ -2,7 +2,7 @@
 id: 5900f4a81000cf542c50ffbb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题316：十进制扩展中的数字
+title: 问题316：十进制扩展中的数字
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7b85367417b2b2512b38
 challengeType: 1
 forumTopicId: 301191
-localeTitle: 捕获使用赋值运算符而不是相等运算符
+title: 捕获使用赋值运算符而不是相等运算符
 ---
 
 ## Description

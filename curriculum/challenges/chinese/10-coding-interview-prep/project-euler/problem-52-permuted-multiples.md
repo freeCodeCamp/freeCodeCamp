@@ -2,7 +2,7 @@
 id: 5900f3a01000cf542c50feb3
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题52：置换倍数
+title: 问题52：置换倍数
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7b89367417b2b2512b49
 challengeType: 1
 forumTopicId: 301215
-localeTitle: 使用解构赋值从对象中分配变量
+title: 使用解构赋值从对象中分配变量
 ---
 
 ## Description

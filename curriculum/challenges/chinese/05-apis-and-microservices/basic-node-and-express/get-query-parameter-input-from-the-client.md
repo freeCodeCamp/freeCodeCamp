@@ -2,7 +2,7 @@
 id: 587d7fb2367417b2b2512bf6
 challengeType: 2
 forumTopicId: 301512
-localeTitle: 从客户端获取查询参数输入
+title: 从客户端获取查询参数输入
 ---
 
 ## Description

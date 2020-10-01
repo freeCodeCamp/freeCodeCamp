@@ -2,7 +2,7 @@
 id: 587d7b8f367417b2b2512b61
 challengeType: 1
 forumTopicId: 18214
-localeTitle: 使用 map 方法从数组中提取数据
+title: 使用 map 方法从数组中提取数据
 ---
 
 ## Description

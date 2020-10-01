@@ -2,7 +2,7 @@
 id: 598eea87e5cf4b116c3ff81a
 challengeType: 5
 videoUrl: ''
-localeTitle: 梅森数的因素
+title: 梅森数的因素
 ---
 
 ## Description

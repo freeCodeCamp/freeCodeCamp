@@ -2,7 +2,7 @@
 id: 5900f37e1000cf542c50fe91
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题18：最大路径总和I.
+title: 问题18：最大路径总和I.
 ---
 
 ## Description

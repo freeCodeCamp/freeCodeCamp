@@ -2,7 +2,7 @@
 id: 5900f4fe1000cf542c510010
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题400：斐波纳契树游戏
+title: 问题400：斐波纳契树游戏
 ---
 
 ## Description

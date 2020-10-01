@@ -3,7 +3,7 @@ id: 587d778e367417b2b2512aab
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cKb3nCq'
 forumTopicId: 301017
-localeTitle: 使用高对比度文本提高可读性
+title: 使用高对比度文本提高可读性
 ---
 
 ## Description

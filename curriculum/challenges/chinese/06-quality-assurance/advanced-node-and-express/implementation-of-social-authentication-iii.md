@@ -2,7 +2,7 @@
 id: 589a8eb3f9fc0f352b528e72
 challengeType: 2
 forumTopicId: 301558
-localeTitle: 实现社交账号登陆 (3)
+title: 实现社交账号登陆 (3)
 ---
 
 ## Description

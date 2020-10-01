@@ -3,7 +3,7 @@ id: 587d781c367417b2b2512ac4
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJ36Cr'
 forumTopicId: 301068
-localeTitle: 设置段落文本的 font-size
+title: 设置段落文本的 font-size
 ---
 
 ## Description

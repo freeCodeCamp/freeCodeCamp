@@ -2,7 +2,7 @@
 id: 5900f4b91000cf542c50ffcb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题332：球形三角形
+title: 问题332：球形三角形
 ---
 
 ## Description

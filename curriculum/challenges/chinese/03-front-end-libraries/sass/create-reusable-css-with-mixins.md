@@ -2,7 +2,7 @@
 id: 587d7dbd367417b2b2512bb6
 challengeType: 0
 forumTopicId: 301455
-localeTitle: 用 Mixins 创建可重用 CSS
+title: 用 Mixins 创建可重用 CSS
 ---
 
 ## Description

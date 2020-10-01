@@ -2,7 +2,7 @@
 id: 59694356a6e7011f7f1c5f4e
 challengeType: 5
 videoUrl: ''
-localeTitle: FreeCell的交易卡
+title: FreeCell的交易卡
 ---
 
 ## Description

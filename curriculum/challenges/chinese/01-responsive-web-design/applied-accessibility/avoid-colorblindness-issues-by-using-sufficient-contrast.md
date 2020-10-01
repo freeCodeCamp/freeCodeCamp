@@ -3,7 +3,7 @@ id: 587d778f367417b2b2512aac
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMEUw'
 forumTopicId: 301012
-localeTitle: 考虑色盲用户的需求设置合适的对比度
+title: 考虑色盲用户的需求设置合适的对比度
 ---
 
 ## Description

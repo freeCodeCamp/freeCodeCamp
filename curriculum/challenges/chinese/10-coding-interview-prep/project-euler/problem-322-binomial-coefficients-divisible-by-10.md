@@ -2,7 +2,7 @@
 id: 5900f4af1000cf542c50ffc1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题322：二项式系数可被10整除
+title: 问题322：二项式系数可被10整除
 ---
 
 ## Description

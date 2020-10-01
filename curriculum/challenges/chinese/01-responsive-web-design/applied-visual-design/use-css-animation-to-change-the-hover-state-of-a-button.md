@@ -3,7 +3,7 @@ id: 587d78a7367417b2b2512ae0
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4vZAa'
 forumTopicId: 301073
-localeTitle: 使用CSS动画更改按钮的悬停状态
+title: 使用CSS动画更改按钮的悬停状态
 ---
 
 ## Description

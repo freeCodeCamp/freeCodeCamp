@@ -2,7 +2,7 @@
 id: 5900f5461000cf542c510058
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题473：数字基数
+title: 问题473：数字基数
 ---
 
 ## Description

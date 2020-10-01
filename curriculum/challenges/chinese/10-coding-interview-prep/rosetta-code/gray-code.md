@@ -2,7 +2,7 @@
 id: 5a23c84252665b21eecc7e80
 challengeType: 5
 videoUrl: ''
-localeTitle: 格雷码
+title: 格雷码
 ---
 
 ## Description

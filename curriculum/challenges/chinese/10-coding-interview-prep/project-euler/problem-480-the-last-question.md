@@ -2,7 +2,7 @@
 id: 5900f54c1000cf542c51005f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题480：最后一个问题
+title: 问题480：最后一个问题
 ---
 
 ## Description

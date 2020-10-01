@@ -3,7 +3,7 @@ id: 587d781a367417b2b2512ab9
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJRBtp'
 forumTopicId: 301078
-localeTitle: 使用 em 标签强调文本
+title: 使用 em 标签强调文本
 ---
 
 ## Description

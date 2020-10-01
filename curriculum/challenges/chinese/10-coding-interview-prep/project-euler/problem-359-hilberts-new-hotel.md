@@ -2,7 +2,7 @@
 id: 5900f4d31000cf542c50ffe6
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题359：希尔伯特的新酒店
+title: 问题359：希尔伯特的新酒店
 ---
 
 ## Description

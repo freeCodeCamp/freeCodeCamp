@@ -2,7 +2,7 @@
 id: 587d7fb6367417b2b2512c07
 challengeType: 2
 forumTopicId: 301535
-localeTitle: 创建一个模型
+title: 创建一个模型
 ---
 
 ## Description

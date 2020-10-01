@@ -3,7 +3,7 @@ id: 599a789b454f2bbd91a3ff4d
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm8PqCa'
 forumTopicId: 301174
-localeTitle: 比较不同值
+title: 比较不同值
 ---
 
 ## Description

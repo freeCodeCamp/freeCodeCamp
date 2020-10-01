@@ -2,7 +2,7 @@
 id: 5ccfad82bb2dc6c965a848e5
 challengeType: 6
 forumTopicId: 301501
-localeTitle: 使用 JavaScript 的 fetch 方法获取 JSON
+title: 使用 JavaScript 的 fetch 方法获取 JSON
 ---
 
 ## Description

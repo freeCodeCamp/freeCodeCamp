@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244a9
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
-localeTitle: 使用赋值运算符初始化变量
+title: 使用赋值运算符初始化变量
 ---
 
 ## Description

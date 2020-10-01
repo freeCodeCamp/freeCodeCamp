@@ -3,7 +3,7 @@ id: bad87fee1348bd9aede08830
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cmQ3Kfa'
 forumTopicId: 16817
-localeTitle: 创建一个表单
+title: 创建一个表单
 ---
 
 ## Description

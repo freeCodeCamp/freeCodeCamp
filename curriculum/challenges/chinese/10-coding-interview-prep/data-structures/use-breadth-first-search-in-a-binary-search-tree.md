@@ -2,7 +2,7 @@
 id: 587d8258367417b2b2512c7f
 challengeType: 1
 videoUrl: ''
-localeTitle: 在二叉搜索树中使用广度优先搜索
+title: 在二叉搜索树中使用广度优先搜索
 ---
 
 ## Description

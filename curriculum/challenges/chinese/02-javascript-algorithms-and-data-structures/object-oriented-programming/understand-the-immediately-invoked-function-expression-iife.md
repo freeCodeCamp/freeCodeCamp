@@ -2,7 +2,7 @@
 id: 587d7db2367417b2b2512b8b
 challengeType: 1
 forumTopicId: 301328
-localeTitle: 了解立即调用函数表达（IIFE）
+title: 了解立即调用函数表达（IIFE）
 ---
 
 ## Description

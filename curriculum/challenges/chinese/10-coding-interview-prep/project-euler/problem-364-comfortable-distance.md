@@ -2,7 +2,7 @@
 id: 5900f4d91000cf542c50ffea
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题364：舒适的距离
+title: 问题364：舒适的距离
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4971000cf542c50ffa9
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题298：选择性健忘症
+title: 问题298：选择性健忘症
 ---
 
 ## Description

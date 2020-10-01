@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036182
 challengeType: 6
 forumTopicId: 301378
-localeTitle: 在 React 中添加内联样式
+title: 在 React 中添加内联样式
 ---
 
 ## Description

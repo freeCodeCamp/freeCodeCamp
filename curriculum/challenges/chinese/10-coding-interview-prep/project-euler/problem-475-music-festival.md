@@ -2,7 +2,7 @@
 id: 5900f5481000cf542c51005a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题475：音乐节
+title: 问题475：音乐节
 ---
 
 ## Description

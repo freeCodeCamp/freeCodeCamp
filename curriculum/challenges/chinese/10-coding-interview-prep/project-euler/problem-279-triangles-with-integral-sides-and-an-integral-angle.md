@@ -2,7 +2,7 @@
 id: 5900f4841000cf542c50ff96
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题279：具有整体边和整体角的三角形
+title: 问题279：具有整体边和整体角的三角形
 ---
 
 ## Description

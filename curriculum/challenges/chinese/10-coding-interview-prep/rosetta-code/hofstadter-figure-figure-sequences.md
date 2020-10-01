@@ -2,7 +2,7 @@
 id: 59622f89e4e137560018a40e
 challengeType: 5
 videoUrl: ''
-localeTitle: Hofstadter图 - 图序列
+title: Hofstadter图 - 图序列
 ---
 
 ## Description

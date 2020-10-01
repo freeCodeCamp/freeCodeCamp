@@ -2,7 +2,7 @@
 id: 5900f42f1000cf542c50ff40
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题194：彩色配置
+title: 问题194：彩色配置
 ---
 
 ## Description

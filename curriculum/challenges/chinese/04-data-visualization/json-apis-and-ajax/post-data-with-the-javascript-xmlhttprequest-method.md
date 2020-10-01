@@ -2,7 +2,7 @@
 id: 587d7faf367417b2b2512be9
 challengeType: 6
 forumTopicId: 301504
-localeTitle: 使用 XMLHttpRequest 方法发送数据
+title: 使用 XMLHttpRequest 方法发送数据
 ---
 
 ## Description

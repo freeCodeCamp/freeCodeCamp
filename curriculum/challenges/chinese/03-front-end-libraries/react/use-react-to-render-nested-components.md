@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036165
 challengeType: 6
 forumTopicId: 301420
-localeTitle: 使用 React 渲染嵌套组件
+title: 使用 React 渲染嵌套组件
 ---
 
 ## Description

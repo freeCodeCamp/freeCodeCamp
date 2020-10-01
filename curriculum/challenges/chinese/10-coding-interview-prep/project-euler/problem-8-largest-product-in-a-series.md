@@ -2,7 +2,7 @@
 id: 5900f3741000cf542c50fe87
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题8：系列中最大的产品
+title: 问题8：系列中最大的产品
 ---
 
 ## Description

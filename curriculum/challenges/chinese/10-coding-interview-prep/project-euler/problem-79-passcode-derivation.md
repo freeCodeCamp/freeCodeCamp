@@ -2,7 +2,7 @@
 id: 5900f3bb1000cf542c50fece
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题79：密码派生
+title: 问题79：密码派生
 ---
 
 ## Description

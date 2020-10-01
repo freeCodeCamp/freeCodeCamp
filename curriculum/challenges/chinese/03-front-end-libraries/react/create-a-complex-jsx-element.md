@@ -2,7 +2,7 @@
 id: 5a24bbe0dba28a8d3cbd4c5d
 challengeType: 6
 forumTopicId: 301382
-localeTitle: 创建一个复杂的 JSX 元素
+title: 创建一个复杂的 JSX 元素
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7db6367417b2b2512b9a
 challengeType: 1
 forumTopicId: 301351
-localeTitle: 匹配出现零次或多次的字符
+title: 匹配出现零次或多次的字符
 ---
 
 ## Description

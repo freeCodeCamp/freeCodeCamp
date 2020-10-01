@@ -2,7 +2,7 @@
 id: 5900f4c31000cf542c50ffd5
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题342：正方形的总数是一个立方体
+title: 问题342：正方形的总数是一个立方体
 ---
 
 ## Description

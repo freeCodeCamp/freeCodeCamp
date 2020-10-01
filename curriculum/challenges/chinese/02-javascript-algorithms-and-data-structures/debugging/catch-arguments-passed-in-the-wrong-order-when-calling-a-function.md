@@ -2,7 +2,7 @@
 id: 587d7b85367417b2b2512b3a
 challengeType: 1
 forumTopicId: 301184
-localeTitle: 调用函数时，捕获以错误顺序传递的参数
+title: 调用函数时，捕获以错误顺序传递的参数
 ---
 
 ## Description

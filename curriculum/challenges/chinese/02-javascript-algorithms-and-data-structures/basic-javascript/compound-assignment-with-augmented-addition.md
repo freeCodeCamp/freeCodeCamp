@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244af
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDR6LCb'
 forumTopicId: 16661
-localeTitle: 复合赋值之 +=
+title: 复合赋值之 +=
 ---
 
 ## Description

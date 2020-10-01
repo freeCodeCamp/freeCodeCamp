@@ -2,7 +2,7 @@
 id: a5229172f011153519423690
 challengeType: 5
 forumTopicId: 16084
-localeTitle: 求斐波那契数组中的奇数之和
+title: 求斐波那契数组中的奇数之和
 ---
 
 ## Description

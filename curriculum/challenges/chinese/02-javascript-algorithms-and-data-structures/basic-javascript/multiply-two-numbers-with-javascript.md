@@ -3,7 +3,7 @@ id: cf1231c1c11feddfaeb5bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3y3Aq'
 forumTopicId: 18243
-localeTitle: 乘法运算
+title: 乘法运算
 ---
 
 ## Description

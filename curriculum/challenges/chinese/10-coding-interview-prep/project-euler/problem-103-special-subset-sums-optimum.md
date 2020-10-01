@@ -2,7 +2,7 @@
 id: 5900f3d61000cf542c50fee7
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题103：特殊子集和：最佳
+title: 问题103：特殊子集和：最佳
 ---
 
 ## Description

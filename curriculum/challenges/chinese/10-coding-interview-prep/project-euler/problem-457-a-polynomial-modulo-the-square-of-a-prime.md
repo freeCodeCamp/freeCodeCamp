@@ -2,7 +2,7 @@
 id: 5900f5361000cf542c510048
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题457：多项式以素数的平方为模
+title: 问题457：多项式以素数的平方为模
 ---
 
 ## Description

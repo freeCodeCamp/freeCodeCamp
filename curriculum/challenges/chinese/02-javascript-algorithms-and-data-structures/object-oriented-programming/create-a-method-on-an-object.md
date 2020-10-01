@@ -2,7 +2,7 @@
 id: 587d7dad367417b2b2512b75
 challengeType: 1
 forumTopicId: 301318
-localeTitle: 在对象上创建方法
+title: 在对象上创建方法
 ---
 
 ## Description

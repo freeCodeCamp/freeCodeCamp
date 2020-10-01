@@ -2,7 +2,7 @@
 id: 587d7b7c367417b2b2512b1b
 challengeType: 1
 forumTopicId: 301168
-localeTitle: 使用 delete 关键字删除对象属性
+title: 使用 delete 关键字删除对象属性
 ---
 
 ## Description

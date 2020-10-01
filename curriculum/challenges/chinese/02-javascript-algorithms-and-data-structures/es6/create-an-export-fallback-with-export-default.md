@@ -2,7 +2,7 @@
 id: 587d7b8c367417b2b2512b58
 challengeType: 1
 forumTopicId: 301199
-localeTitle: 用 export default 创建一个默认导出
+title: 用 export default 创建一个默认导出
 ---
 
 ## Description

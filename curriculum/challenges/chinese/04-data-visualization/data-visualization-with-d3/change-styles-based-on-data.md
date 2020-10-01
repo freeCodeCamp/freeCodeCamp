@@ -2,7 +2,7 @@
 id: 587d7fa7367417b2b2512bc7
 challengeType: 6
 forumTopicId: 301479
-localeTitle: 根据数据更改样式
+title: 根据数据更改样式
 ---
 
 ## Description

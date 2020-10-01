@@ -2,7 +2,7 @@
 id: 587d7dab367417b2b2512b6e
 challengeType: 1
 forumTopicId: 301312
-localeTitle: 使用 every 方法检查数组中的每个元素是否符合条件
+title: 使用 every 方法检查数组中的每个元素是否符合条件
 ---
 
 ## Description

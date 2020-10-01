@@ -2,7 +2,7 @@
 id: 587d7b88367417b2b2512b45
 challengeType: 1
 forumTopicId: 301311
-localeTitle: 使用高阶函数 map、filter 或者 reduce 来解决复杂问题
+title: 使用高阶函数 map、filter 或者 reduce 来解决复杂问题
 ---
 
 ## Description

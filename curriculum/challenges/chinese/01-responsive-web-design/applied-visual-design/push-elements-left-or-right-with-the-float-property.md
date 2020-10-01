@@ -3,7 +3,7 @@ id: 587d78a3367417b2b2512ace
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDqu2'
 forumTopicId: 301066
-localeTitle: 使用 float 属性将元素左浮动或右浮动
+title: 使用 float 属性将元素左浮动或右浮动
 ---
 
 ## Description

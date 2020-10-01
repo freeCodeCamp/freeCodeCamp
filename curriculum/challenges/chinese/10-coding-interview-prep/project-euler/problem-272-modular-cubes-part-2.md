@@ -2,7 +2,7 @@
 id: 5900f47d1000cf542c50ff8f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题272：模块化立方体，第2部分
+title: 问题272：模块化立方体，第2部分
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7dae367417b2b2512b7b
 challengeType: 1
 forumTopicId: 301326
-localeTitle: 了解自己的属性
+title: 了解自己的属性
 ---
 
 ## Description

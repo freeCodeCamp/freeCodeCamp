@@ -2,7 +2,7 @@
 id: 5900f53b1000cf542c51004d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题462：3个平滑数的排列
+title: 问题462：3个平滑数的排列
 ---
 
 ## Description

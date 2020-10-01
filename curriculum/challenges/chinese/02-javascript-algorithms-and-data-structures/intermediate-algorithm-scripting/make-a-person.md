@@ -2,7 +2,7 @@
 id: a2f1d72d9b908d0bd72bb9f6
 challengeType: 5
 forumTopicId: 16020
-localeTitle: 构造一个 Person 类
+title: 构造一个 Person 类
 ---
 
 ## Description

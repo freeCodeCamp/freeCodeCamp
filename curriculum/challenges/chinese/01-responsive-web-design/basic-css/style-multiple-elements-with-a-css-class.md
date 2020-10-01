@@ -3,7 +3,7 @@ id: bad87fee1348bd9aefe08806
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkVbsQ'
 forumTopicId: 18311
-localeTitle: 使用 class 选择器设置多个元素的样式
+title: 使用 class 选择器设置多个元素的样式
 ---
 
 ## Description

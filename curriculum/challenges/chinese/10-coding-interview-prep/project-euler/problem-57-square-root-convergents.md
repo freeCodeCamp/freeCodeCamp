@@ -2,7 +2,7 @@
 id: 5900f3a51000cf542c50feb8
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题57：平方根收敛
+title: 问题57：平方根收敛
 ---
 
 ## Description

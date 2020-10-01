@@ -2,7 +2,7 @@
 id: 594faaab4e2a8626833e9c3d
 challengeType: 5
 videoUrl: ''
-localeTitle: 使用转义标记字符串
+title: 使用转义标记字符串
 ---
 
 ## Description

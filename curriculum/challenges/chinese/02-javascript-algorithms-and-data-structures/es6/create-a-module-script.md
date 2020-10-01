@@ -2,7 +2,7 @@
 id: 5cddbfd622f1a59093ec611d
 challengeType: 6
 forumTopicId: 301198
-localeTitle: 创建一个模块脚本
+title: 创建一个模块脚本
 ---
 
 ## Description

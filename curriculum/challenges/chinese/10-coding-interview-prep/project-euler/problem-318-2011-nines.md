@@ -2,7 +2,7 @@
 id: 5900f4ab1000cf542c50ffbd
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题318：2011个九
+title: 问题318：2011个九
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4651000cf542c50ff77
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题248：Euler的totient函数等于13的数字！
+title: 问题248：Euler的totient函数等于13的数字！
 ---
 
 ## Description

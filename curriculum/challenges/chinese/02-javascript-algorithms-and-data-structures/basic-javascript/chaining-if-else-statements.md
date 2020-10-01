@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244dc
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJgsw'
 forumTopicId: 16772
-localeTitle: 多个 if else 语句
+title: 多个 if else 语句
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3cc1000cf542c50fedf
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题96：苏杜库
+title: 问题96：苏杜库
 ---
 
 ## Description

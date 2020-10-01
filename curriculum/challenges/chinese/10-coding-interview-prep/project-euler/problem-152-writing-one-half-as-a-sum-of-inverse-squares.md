@@ -2,7 +2,7 @@
 id: 5900f4041000cf542c50ff17
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题152：将一半写为倒数平方和
+title: 问题152：将一半写为倒数平方和
 ---
 
 ## Description

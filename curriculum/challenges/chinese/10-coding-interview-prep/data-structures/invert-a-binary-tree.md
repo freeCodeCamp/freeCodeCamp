@@ -2,7 +2,7 @@
 id: 587d8259367417b2b2512c83
 challengeType: 1
 videoUrl: ''
-localeTitle: 反转二叉树
+title: 反转二叉树
 ---
 
 ## Description

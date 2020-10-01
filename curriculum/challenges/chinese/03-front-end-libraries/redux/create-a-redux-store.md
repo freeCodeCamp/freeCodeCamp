@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403614b
 challengeType: 6
 forumTopicId: 301439
-localeTitle: 创建一个 Redux Store
+title: 创建一个 Redux Store
 ---
 
 ## Description

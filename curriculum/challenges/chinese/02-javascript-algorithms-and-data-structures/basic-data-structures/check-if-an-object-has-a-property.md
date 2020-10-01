@@ -2,7 +2,7 @@
 id: 587d7b7d367417b2b2512b1c
 challengeType: 1
 forumTopicId: 301155
-localeTitle: 检查对象是否具有某个属性
+title: 检查对象是否具有某个属性
 ---
 
 ## Description

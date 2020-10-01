@@ -3,7 +3,7 @@ id: bd7158d8c443edefaeb5bd0e
 challengeType: 4
 isHidden: false
 forumTopicId: 301509
-localeTitle: 短网址
+title: 短网址
 ---
 
 ## Description

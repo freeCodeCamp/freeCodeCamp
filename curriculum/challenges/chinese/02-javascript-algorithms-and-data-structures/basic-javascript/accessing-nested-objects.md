@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244cc
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
 forumTopicId: 16161
-localeTitle: 访问嵌套对象
+title: 访问嵌套对象
 ---
 
 ## Description

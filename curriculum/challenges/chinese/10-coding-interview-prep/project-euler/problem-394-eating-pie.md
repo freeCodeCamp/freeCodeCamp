@@ -2,7 +2,7 @@
 id: 5900f4f71000cf542c510009
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题394：吃馅饼
+title: 问题394：吃馅饼
 ---
 
 ## Description

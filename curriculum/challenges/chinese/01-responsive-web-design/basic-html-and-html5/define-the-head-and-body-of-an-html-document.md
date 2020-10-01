@@ -3,7 +3,7 @@ id: 587d78aa367417b2b2512aec
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra9bfP'
 forumTopicId: 301096
-localeTitle: 定义 HTML 文档的 head 和 body
+title: 定义 HTML 文档的 head 和 body
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7db4367417b2b2512b93
 challengeType: 1
 forumTopicId: 301342
-localeTitle: 全局匹配
+title: 全局匹配
 ---
 
 ## Description

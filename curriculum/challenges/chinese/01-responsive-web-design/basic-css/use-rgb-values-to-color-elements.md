@@ -3,7 +3,7 @@ id: bad87fee1348bd9aede08718
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkp2fr'
 forumTopicId: 18369
-localeTitle: 使用 RGB 值为元素上色
+title: 使用 RGB 值为元素上色
 ---
 
 ## Description

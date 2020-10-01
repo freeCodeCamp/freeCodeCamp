@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403617b
 challengeType: 6
 forumTopicId: 301400
-localeTitle: 传递回调作为 Props
+title: 传递回调作为 Props
 ---
 
 ## Description

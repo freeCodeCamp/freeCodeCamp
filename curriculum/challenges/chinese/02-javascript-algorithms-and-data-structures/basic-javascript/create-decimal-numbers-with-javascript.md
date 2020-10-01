@@ -3,7 +3,7 @@ id: cf1391c1c11feddfaeb4bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GEuW'
 forumTopicId: 16826
-localeTitle: 创建一个小数
+title: 创建一个小数
 ---
 
 ## Description

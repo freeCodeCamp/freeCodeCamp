@@ -2,7 +2,7 @@
 id: 595011cba5a81735713873bd
 challengeType: 5
 videoUrl: ''
-localeTitle: 每组排名最高
+title: 每组排名最高
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 5a94fe2669fb03452672e45e
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
 forumTopicId: 301135
-localeTitle: 使用 grid-area 创建区域模板
+title: 使用 grid-area 创建区域模板
 ---
 
 ## Description

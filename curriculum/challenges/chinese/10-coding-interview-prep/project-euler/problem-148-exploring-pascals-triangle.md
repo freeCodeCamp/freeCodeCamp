@@ -2,7 +2,7 @@
 id: 5900f4021000cf542c50ff14
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题148：探索帕斯卡的三角形
+title: 问题148：探索帕斯卡的三角形
 ---
 
 ## Description

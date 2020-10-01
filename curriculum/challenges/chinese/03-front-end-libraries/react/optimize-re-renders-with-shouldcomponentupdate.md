@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036180
 challengeType: 6
 forumTopicId: 301398
-localeTitle: 使用 shouldComponentUpdate 优化重新渲染
+title: 使用 shouldComponentUpdate 优化重新渲染
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244cb
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNMfR'
 forumTopicId: 18208
-localeTitle: 操作复杂对象
+title: 操作复杂对象
 ---
 
 ## Description

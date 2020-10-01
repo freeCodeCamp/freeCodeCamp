@@ -2,7 +2,7 @@
 id: 587d7db9367417b2b2512ba6
 challengeType: 1
 forumTopicId: 301366
-localeTitle: 只指定匹配的下限
+title: 只指定匹配的下限
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4cf1000cf542c50ffe1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题354：蜜蜂蜂窝中的距离
+title: 问题354：蜜蜂蜂窝中的距离
 ---
 
 ## Description

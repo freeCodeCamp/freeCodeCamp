@@ -2,7 +2,7 @@
 id: 5900f3dd1000cf542c50feef
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题112：有弹性的数字
+title: 问题112：有弹性的数字
 ---
 
 ## Description

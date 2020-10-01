@@ -2,7 +2,7 @@
 id: 5900f3d21000cf542c50fee5
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题102：三角形遏制
+title: 问题102：三角形遏制
 ---
 
 ## Description

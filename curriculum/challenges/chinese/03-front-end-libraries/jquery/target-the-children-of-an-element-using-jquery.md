@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aed208826
 challengeType: 6
 forumTopicId: 18320
-localeTitle: 使用 jQuery 选择元素的子元素
+title: 使用 jQuery 选择元素的子元素
 ---
 
 ## Description

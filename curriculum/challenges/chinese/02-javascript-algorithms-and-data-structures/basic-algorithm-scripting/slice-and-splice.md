@@ -3,7 +3,7 @@ id: 579e2a2c335b9d72dd32e05c
 isBeta: true
 challengeType: 5
 videoUrl: ''
-localeTitle: 切片和拼接
+title: 切片和拼接
 ---
 
 ## Description

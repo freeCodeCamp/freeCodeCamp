@@ -2,7 +2,7 @@
 id: ae9defd7acaf69703ab432ea
 challengeType: 5
 forumTopicId: 16075
-localeTitle: 最小公倍数
+title: 最小公倍数
 ---
 
 ## Description

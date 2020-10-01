@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08816
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EkncB'
 forumTopicId: 18226
-localeTitle: 用 a 实现网页间的跳转
+title: 用 a 实现网页间的跳转
 ---
 
 ## Description

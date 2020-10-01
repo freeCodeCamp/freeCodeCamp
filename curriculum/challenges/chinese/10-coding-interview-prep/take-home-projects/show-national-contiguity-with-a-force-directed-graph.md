@@ -2,7 +2,7 @@
 id: bd7198d8c242eddfaeb5bd13
 challengeType: 3
 videoUrl: ''
-localeTitle: 用力导向图显示全国连续性
+title: 用力导向图显示全国连续性
 ---
 
 ## Description

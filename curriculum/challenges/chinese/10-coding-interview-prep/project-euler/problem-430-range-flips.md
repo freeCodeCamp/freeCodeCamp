@@ -2,7 +2,7 @@
 id: 5900f51a1000cf542c51002d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题430：范围翻转
+title: 问题430：范围翻转
 ---
 
 ## Description

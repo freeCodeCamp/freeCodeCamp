@@ -2,7 +2,7 @@
 id: 5900f4a11000cf542c50ffb4
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题309：整数阶梯
+title: 问题309：整数阶梯
 ---
 
 ## Description

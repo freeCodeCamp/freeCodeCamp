@@ -2,7 +2,7 @@
 id: 5900f4aa1000cf542c50ffbc
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题317：鞭炮
+title: 问题317：鞭炮
 ---
 
 ## Description

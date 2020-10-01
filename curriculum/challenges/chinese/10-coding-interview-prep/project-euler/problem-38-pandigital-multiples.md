@@ -2,7 +2,7 @@
 id: 5900f3931000cf542c50fea5
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题38：Pandigital倍数
+title: 问题38：Pandigital倍数
 ---
 
 ## Description

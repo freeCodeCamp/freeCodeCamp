@@ -2,7 +2,7 @@
 id: 5900f3a91000cf542c50febc
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题61：循环图号
+title: 问题61：循环图号
 ---
 
 ## Description

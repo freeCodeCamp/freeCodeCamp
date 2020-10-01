@@ -2,7 +2,7 @@
 id: 59f40b17e79dbf1ab720ed7a
 challengeType: 5
 videoUrl: ''
-localeTitle: 部门编号
+title: 部门编号
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7fb1367417b2b2512bf1
 challengeType: 2
 forumTopicId: 301517
-localeTitle: 服务指定路由上的 JSON
+title: 服务指定路由上的 JSON
 ---
 
 ## Description

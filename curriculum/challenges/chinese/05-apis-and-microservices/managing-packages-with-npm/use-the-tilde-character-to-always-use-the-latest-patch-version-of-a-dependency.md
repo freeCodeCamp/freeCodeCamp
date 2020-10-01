@@ -2,7 +2,7 @@
 id: 587d7fb5367417b2b2512c02
 challengeType: 2
 forumTopicId: 301532
-localeTitle: 用波浪字符始终使用依赖项的最新补丁版本
+title: 用波浪字符始终使用依赖项的最新补丁版本
 ---
 
 ## Description

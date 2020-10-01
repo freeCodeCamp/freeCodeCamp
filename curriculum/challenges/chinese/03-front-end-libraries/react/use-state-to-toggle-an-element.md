@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036176
 challengeType: 6
 forumTopicId: 301421
-localeTitle: 使用 State 切换元素
+title: 使用 State 切换元素
 ---
 
 ## Description

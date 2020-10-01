@@ -2,7 +2,7 @@
 id: 587d8259367417b2b2512c85
 challengeType: 1
 videoUrl: ''
-localeTitle: 实施选择排序
+title: 实施选择排序
 ---
 
 ## Description

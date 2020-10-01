@@ -2,7 +2,7 @@
 id: 5900f4f31000cf542c510006
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题391：跳跃游戏
+title: 问题391：跳跃游戏
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3fa1000cf542c50ff0c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题140：改进的斐波那契金块
+title: 问题140：改进的斐波那契金块
 ---
 
 ## Description

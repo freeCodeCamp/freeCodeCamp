@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aede08845
 challengeType: 0
 forumTopicId: 16816
-localeTitle: 创建自定义标题
+title: 创建自定义标题
 ---
 
 ## Description

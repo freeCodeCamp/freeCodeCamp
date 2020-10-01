@@ -2,7 +2,7 @@
 id: 5900f4c11000cf542c50ffd3
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题341：Golomb的自我描述序列
+title: 问题341：Golomb的自我描述序列
 ---
 
 ## Description

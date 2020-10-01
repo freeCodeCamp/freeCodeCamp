@@ -2,7 +2,7 @@
 id: 596fd036dc1ab896c5db98b1
 challengeType: 5
 videoUrl: ''
-localeTitle: 将秒转换为复合持续时间
+title: 将秒转换为复合持续时间
 ---
 
 ## Description

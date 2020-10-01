@@ -2,7 +2,7 @@
 id: 5900f47f1000cf542c50ff91
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题274：可分性乘数
+title: 问题274：可分性乘数
 ---
 
 ## Description

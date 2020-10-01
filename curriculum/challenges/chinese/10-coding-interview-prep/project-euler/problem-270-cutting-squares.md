@@ -2,7 +2,7 @@
 id: 5900f47c1000cf542c50ff8e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题270：切割方块
+title: 问题270：切割方块
 ---
 
 ## Description

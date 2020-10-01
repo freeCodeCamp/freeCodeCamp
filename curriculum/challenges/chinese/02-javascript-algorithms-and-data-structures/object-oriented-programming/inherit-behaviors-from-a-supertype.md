@@ -2,7 +2,7 @@
 id: 587d7db0367417b2b2512b84
 challengeType: 1
 forumTopicId: 301319
-localeTitle: 从超类继承行为
+title: 从超类继承行为
 ---
 
 ## Description

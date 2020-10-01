@@ -3,7 +3,7 @@ id: bad87fed1348bd9aedf08833
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ckK73C9'
 forumTopicId: 17559
-localeTitle: 删除 HTML 元素
+title: 删除 HTML 元素
 ---
 
 ## Description

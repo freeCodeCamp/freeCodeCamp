@@ -2,7 +2,7 @@
 id: 5900f5311000cf542c510044
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题453：格子四边形
+title: 问题453：格子四边形
 ---
 
 ## Description

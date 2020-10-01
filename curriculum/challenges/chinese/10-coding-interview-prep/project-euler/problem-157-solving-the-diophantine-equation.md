@@ -2,7 +2,7 @@
 id: 5900f4091000cf542c50ff1c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题157：解决丢番图方程
+title: 问题157：解决丢番图方程
 ---
 
 ## Description

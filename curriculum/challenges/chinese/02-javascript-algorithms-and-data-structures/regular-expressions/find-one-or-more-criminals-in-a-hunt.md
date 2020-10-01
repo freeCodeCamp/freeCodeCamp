@@ -2,7 +2,7 @@
 id: 587d7db7367417b2b2512b9c
 challengeType: 1
 forumTopicId: 301343
-localeTitle: 在狩猎中找到一个或多个罪犯
+title: 在狩猎中找到一个或多个罪犯
 ---
 
 ## Description

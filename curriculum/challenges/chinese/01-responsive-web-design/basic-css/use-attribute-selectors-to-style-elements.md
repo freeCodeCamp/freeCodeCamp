@@ -3,7 +3,7 @@ id: 58c383d33e2e3259241f3076
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpymfJ'
 forumTopicId: 301092
-localeTitle: 使用属性选择器来设置元素的样式
+title: 使用属性选择器来设置元素的样式
 ---
 
 ## Description

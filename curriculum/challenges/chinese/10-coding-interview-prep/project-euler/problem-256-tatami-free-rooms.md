@@ -2,7 +2,7 @@
 id: 5900f46c1000cf542c50ff7e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题256：无榻榻米房间
+title: 问题256：无榻榻米房间
 ---
 
 ## Description

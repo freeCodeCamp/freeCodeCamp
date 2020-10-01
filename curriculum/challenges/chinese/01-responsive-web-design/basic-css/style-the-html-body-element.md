@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08736
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB77PHW'
 forumTopicId: 18313
-localeTitle: 给 HTML 的 Body 元素添加样式
+title: 给 HTML 的 Body 元素添加样式
 ---
 
 ## Description

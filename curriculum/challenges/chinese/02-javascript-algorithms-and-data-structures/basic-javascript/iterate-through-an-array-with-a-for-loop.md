@@ -3,7 +3,7 @@ id: 5675e877dbd60be8ad28edc6
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeR3HB'
 forumTopicId: 18216
-localeTitle: 使用 For 循环遍历数组
+title: 使用 For 循环遍历数组
 ---
 
 ## Description

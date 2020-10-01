@@ -2,7 +2,7 @@
 id: bd7158d8c443eddfaeb5bdef
 challengeType: 4
 videoUrl: ''
-localeTitle: 建立一个投票应用程序
+title: 建立一个投票应用程序
 ---
 
 ## Description

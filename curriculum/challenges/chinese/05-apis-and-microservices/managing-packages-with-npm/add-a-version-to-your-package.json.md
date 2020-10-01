@@ -2,7 +2,7 @@
 id: 587d7fb4367417b2b2512bff
 challengeType: 2
 forumTopicId: 301525
-localeTitle: 给 package.json 添加版本号
+title: 给 package.json 添加版本号
 ---
 
 ## Description

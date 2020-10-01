@@ -2,7 +2,7 @@
 id: 5900f3ba1000cf542c50fecd
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题78：硬币分区
+title: 问题78：硬币分区
 ---
 
 ## Description

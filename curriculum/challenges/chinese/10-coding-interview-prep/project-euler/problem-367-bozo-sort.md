@@ -2,7 +2,7 @@
 id: 5900f4db1000cf542c50ffee
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题367：Bozo排序
+title: 问题367：Bozo排序
 ---
 
 ## Description

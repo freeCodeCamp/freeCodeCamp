@@ -2,7 +2,7 @@
 id: 5900f4f71000cf542c51000a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题395：毕达哥拉斯树
+title: 问题395：毕达哥拉斯树
 ---
 
 ## Description

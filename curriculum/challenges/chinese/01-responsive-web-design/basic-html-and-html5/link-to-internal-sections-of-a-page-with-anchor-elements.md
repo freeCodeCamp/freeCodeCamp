@@ -3,7 +3,7 @@ id: bad88fee1348bd9aedf08816
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098
-localeTitle: 用 a 实现网页内部跳转
+title: 用 a 实现网页内部跳转
 ---
 
 ## Description

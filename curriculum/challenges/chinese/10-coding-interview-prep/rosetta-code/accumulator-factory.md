@@ -2,7 +2,7 @@
 id: 594810f028c0303b75339ace
 challengeType: 5
 videoUrl: ''
-localeTitle: 蓄能器工厂
+title: 蓄能器工厂
 ---
 
 ## Description

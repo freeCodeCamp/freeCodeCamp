@@ -2,7 +2,7 @@
 id: 59713da0a428c1a62d7db430
 challengeType: 5
 videoUrl: ''
-localeTitle: 克莱默的统治
+title: 克莱默的统治
 ---
 
 ## Description

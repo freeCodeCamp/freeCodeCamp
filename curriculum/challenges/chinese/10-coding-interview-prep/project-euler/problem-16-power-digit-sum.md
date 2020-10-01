@@ -2,7 +2,7 @@
 id: 5900f37d1000cf542c50fe8f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题16：电源数字总和
+title: 问题16：电源数字总和
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7fac367417b2b2512bdc
 challengeType: 6
 forumTopicId: 301496
-localeTitle: 使用 d3.max 和 d3.min 函数在数据集中查找最小值和最大值
+title: 使用 d3.max 和 d3.min 函数在数据集中查找最小值和最大值
 ---
 
 ## Description

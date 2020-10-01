@@ -2,7 +2,7 @@
 id: 587d7fa6367417b2b2512bbf
 challengeType: 3
 forumTopicId: 301465
-localeTitle: 用地区分布图可视化数据
+title: 用地区分布图可视化数据
 ---
 
 ## Description

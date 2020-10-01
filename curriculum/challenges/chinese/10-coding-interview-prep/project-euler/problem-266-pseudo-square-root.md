@@ -2,7 +2,7 @@
 id: 5900f4771000cf542c50ff89
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题266：伪平方根
+title: 问题266：伪平方根
 ---
 
 ## Description

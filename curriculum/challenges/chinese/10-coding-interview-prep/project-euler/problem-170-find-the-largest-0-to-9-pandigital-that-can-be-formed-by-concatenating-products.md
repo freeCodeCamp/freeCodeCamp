@@ -2,7 +2,7 @@
 id: 5900f4161000cf542c50ff29
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题170：找到可以通过连接产品形成的最大的0到9个pandigital
+title: 问题170：找到可以通过连接产品形成的最大的0到9个pandigital
 ---
 
 ## Description

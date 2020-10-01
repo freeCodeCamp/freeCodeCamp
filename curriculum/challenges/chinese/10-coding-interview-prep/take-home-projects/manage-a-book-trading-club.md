@@ -2,7 +2,7 @@
 id: bd7158d8c443eddfaeb5bd0f
 challengeType: 4
 videoUrl: ''
-localeTitle: 管理图书交易俱乐部
+title: 管理图书交易俱乐部
 ---
 
 ## Description

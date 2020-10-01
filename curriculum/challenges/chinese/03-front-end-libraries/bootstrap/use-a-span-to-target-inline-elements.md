@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aedf08845
 challengeType: 0
 forumTopicId: 18370
-localeTitle: 使用 span 创建行内元素
+title: 使用 span 创建行内元素
 ---
 
 ## Description

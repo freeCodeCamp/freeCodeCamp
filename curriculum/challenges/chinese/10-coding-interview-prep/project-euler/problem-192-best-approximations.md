@@ -2,7 +2,7 @@
 id: 5900f42c1000cf542c50ff3f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题192：最佳近似值
+title: 问题192：最佳近似值
 ---
 
 ## Description

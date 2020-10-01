@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aec908746
 challengeType: 0
 forumTopicId: 18198
-localeTitle: 将我们的页面放在 Fluid 容器中
+title: 将我们的页面放在 Fluid 容器中
 ---
 
 ## Description

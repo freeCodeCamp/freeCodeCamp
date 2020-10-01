@@ -2,7 +2,7 @@
 id: 5900f49b1000cf542c50ffad
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题302：强阿喀琉斯数
+title: 问题302：强阿喀琉斯数
 ---
 
 ## Description

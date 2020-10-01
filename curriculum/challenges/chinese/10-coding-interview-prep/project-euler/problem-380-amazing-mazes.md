@@ -2,7 +2,7 @@
 id: 5900f4e81000cf542c50fffb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题380：惊人的迷宫！
+title: 问题380：惊人的迷宫！
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f48f1000cf542c50ffa2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题291：Panaitopol素数
+title: 问题291：Panaitopol素数
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3901000cf542c50fea3
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题36：双基回文
+title: 问题36：双基回文
 ---
 
 ## Description

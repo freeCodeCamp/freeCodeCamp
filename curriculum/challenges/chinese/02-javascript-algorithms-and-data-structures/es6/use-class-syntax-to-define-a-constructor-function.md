@@ -2,7 +2,7 @@
 id: 587d7b8b367417b2b2512b53
 challengeType: 1
 forumTopicId: 301212
-localeTitle: 使用 class 语法定义构造函数
+title: 使用 class 语法定义构造函数
 ---
 
 ## Description

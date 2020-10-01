@@ -2,7 +2,7 @@
 id: a10d2431ad0c6a099a4b8b52
 challengeType: 5
 forumTopicId: 16011
-localeTitle: 真假值判断
+title: 真假值判断
 ---
 
 ## Description

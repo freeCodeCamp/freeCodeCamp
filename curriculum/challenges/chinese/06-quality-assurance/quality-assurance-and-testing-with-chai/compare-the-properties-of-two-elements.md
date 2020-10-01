@@ -2,7 +2,7 @@
 id: 587d824c367417b2b2512c4d
 challengeType: 2
 forumTopicId: 301588
-localeTitle: 比较两个元素的属性
+title: 比较两个元素的属性
 ---
 
 ## Description

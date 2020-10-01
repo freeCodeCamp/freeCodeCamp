@@ -2,7 +2,7 @@
 id: afcc8d540bea9ea2669306b6
 challengeType: 5
 videoUrl: ''
-localeTitle: 重复一个字符串重复字符串
+title: 重复一个字符串重复字符串
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3d01000cf542c50fee2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题99：最大的指数
+title: 问题99：最大的指数
 ---
 
 ## Description

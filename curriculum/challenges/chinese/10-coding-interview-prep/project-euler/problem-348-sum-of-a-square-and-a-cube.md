@@ -2,7 +2,7 @@
 id: 5900f4c81000cf542c50ffdb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题348：正方形和立方体的总和
+title: 问题348：正方形和立方体的总和
 ---
 
 ## Description

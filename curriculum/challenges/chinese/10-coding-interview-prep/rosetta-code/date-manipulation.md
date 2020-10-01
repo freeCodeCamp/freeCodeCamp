@@ -2,7 +2,7 @@
 id: 5966c21cf732a95f1b67dd28
 challengeType: 5
 videoUrl: ''
-localeTitle: 日期操纵
+title: 日期操纵
 ---
 
 ## Description

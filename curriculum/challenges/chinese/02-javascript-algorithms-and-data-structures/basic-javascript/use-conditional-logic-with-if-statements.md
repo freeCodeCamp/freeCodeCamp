@@ -3,7 +3,7 @@ id: cf1111c1c12feddfaeb3bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87mf3'
 forumTopicId: 18348
-localeTitle: 用 if 语句来表达条件逻辑
+title: 用 if 语句来表达条件逻辑
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 8d1323c8c441eddfaeb5bdef
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建一个Set类
+title: 创建一个Set类
 ---
 
 ## Description

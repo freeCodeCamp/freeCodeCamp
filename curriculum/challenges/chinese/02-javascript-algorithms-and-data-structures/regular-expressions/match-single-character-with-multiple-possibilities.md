@@ -2,7 +2,7 @@
 id: 587d7db5367417b2b2512b95
 challengeType: 1
 forumTopicId: 301357
-localeTitle: 将单个字符与多种可能性匹配
+title: 将单个字符与多种可能性匹配
 ---
 
 ## Description

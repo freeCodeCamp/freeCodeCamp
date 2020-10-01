@@ -2,7 +2,7 @@
 id: 5900f3ca1000cf542c50fedc
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题93：算术表达式
+title: 问题93：算术表达式
 ---
 
 ## Description

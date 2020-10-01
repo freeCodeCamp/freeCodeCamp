@@ -2,7 +2,7 @@
 id: 595668ca4cfe1af2fb9818d4
 challengeType: 5
 videoUrl: ''
-localeTitle: Harshad或Niven系列
+title: Harshad或Niven系列
 ---
 
 ## Description

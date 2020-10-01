@@ -2,7 +2,7 @@
 id: 5900f48f1000cf542c50ffa1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题290：数字签名
+title: 问题290：数字签名
 ---
 
 ## Description

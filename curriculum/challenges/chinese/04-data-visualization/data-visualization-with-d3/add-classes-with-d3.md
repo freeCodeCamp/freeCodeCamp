@@ -2,7 +2,7 @@
 id: 587d7fa7367417b2b2512bc8
 challengeType: 6
 forumTopicId: 301473
-localeTitle: 用 D3 添加 Class
+title: 用 D3 添加 Class
 ---
 
 ## Description

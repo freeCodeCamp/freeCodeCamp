@@ -2,7 +2,7 @@
 id: 5a23c84252665b21eecc7eaf
 challengeType: 5
 videoUrl: ''
-localeTitle: 他们
+title: 他们
 ---
 
 ## Description

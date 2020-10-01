@@ -3,7 +3,7 @@ id: 5a9d72a1424fe3d0e10cad15
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRwbuW'
 forumTopicId: 301085
-localeTitle: 更改特定区域的变量
+title: 更改特定区域的变量
 ---
 
 ## Description

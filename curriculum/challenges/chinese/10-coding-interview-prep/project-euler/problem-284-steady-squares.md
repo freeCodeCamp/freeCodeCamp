@@ -2,7 +2,7 @@
 id: 5900f4891000cf542c50ff9b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题284：平稳正方形
+title: 问题284：平稳正方形
 ---
 
 ## Description

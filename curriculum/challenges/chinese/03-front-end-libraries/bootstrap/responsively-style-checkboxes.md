@@ -5,7 +5,7 @@ required:
     raw: true
 challengeType: 0
 forumTopicId: 18269
-localeTitle: 响应式风格的复选框
+title: 响应式风格的复选框
 ---
 
 ## Description

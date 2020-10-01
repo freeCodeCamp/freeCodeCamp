@@ -1,7 +1,7 @@
 ---
 id: a6b0bb188d873cb2c8729495
 challengeType: 5
-localeTitle: 转换HTML实体
+title: 转换HTML实体
 ---
 
 ## Description

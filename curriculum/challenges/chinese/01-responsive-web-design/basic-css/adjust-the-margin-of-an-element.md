@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08822
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJarHW'
 forumTopicId: 16654
-localeTitle: 调整元素的外边距
+title: 调整元素的外边距
 ---
 
 ## Description

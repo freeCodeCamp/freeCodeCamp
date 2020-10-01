@@ -2,7 +2,7 @@
 id: 5900f3ee1000cf542c50ff00
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题130：具有主要repunit属性的复合材料
+title: 问题130：具有主要repunit属性的复合材料
 ---
 
 ## Description

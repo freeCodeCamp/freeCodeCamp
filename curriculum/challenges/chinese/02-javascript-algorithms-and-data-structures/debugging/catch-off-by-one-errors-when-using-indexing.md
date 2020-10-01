@@ -2,7 +2,7 @@
 id: 587d7b86367417b2b2512b3b
 challengeType: 1
 forumTopicId: 301189
-localeTitle: 捕获使用索引的时候出现的错误
+title: 捕获使用索引的时候出现的错误
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7b7a367417b2b2512b12
 challengeType: 1
 forumTopicId: 301158
-localeTitle: 使用 slice() 拷贝数组项目
+title: 使用 slice() 拷贝数组项目
 ---
 
 ## Description

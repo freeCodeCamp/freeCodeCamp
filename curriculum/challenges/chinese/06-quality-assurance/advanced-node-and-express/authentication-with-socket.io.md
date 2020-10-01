@@ -2,7 +2,7 @@
 id: 589fc831f9fc0f352b528e77
 challengeType: 2
 forumTopicId: 301548
-localeTitle: 使用Socket.IO进行身份验证
+title: 使用Socket.IO进行身份验证
 ---
 
 ## Description

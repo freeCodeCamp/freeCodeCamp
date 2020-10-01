@@ -2,7 +2,7 @@
 id: 5900f54a1000cf542c51005c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题477：数字序列游戏
+title: 问题477：数字序列游戏
 ---
 
 ## Description

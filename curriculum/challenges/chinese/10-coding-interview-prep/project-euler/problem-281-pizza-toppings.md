@@ -2,7 +2,7 @@
 id: 5900f4861000cf542c50ff98
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题281：比萨馅料
+title: 问题281：比萨馅料
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244c7
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cGryJs8'
 forumTopicId: 16164
-localeTitle: 通过点符号访问对象属性
+title: 通过点符号访问对象属性
 ---
 
 ## Description

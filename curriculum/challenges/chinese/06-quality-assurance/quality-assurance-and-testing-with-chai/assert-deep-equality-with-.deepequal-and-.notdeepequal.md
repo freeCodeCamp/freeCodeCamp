@@ -2,7 +2,7 @@
 id: 587d824c367417b2b2512c4c
 challengeType: 2
 forumTopicId: 301587
-localeTitle: 用 Assert.deepEqual() 和 Assert.notDeepEqual() 断言深度相等
+title: 用 Assert.deepEqual() 和 Assert.notDeepEqual() 断言深度相等
 ---
 
 ## Description

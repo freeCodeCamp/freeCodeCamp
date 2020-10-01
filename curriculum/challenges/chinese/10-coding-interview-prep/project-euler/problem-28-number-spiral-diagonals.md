@@ -2,7 +2,7 @@
 id: 5900f3881000cf542c50fe9b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题28：对角螺旋数
+title: 问题28：对角螺旋数
 ---
 
 ## Description

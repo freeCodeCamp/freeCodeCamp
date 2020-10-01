@@ -2,7 +2,7 @@
 id: 5900f51e1000cf542c510030
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题432欧拉
+title: 问题432欧拉
 ---
 
 ## Description

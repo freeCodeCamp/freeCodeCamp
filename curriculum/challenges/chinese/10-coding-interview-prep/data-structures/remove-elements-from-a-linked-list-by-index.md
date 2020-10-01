@@ -2,7 +2,7 @@
 id: 587d8251367417b2b2512c65
 challengeType: 1
 videoUrl: ''
-localeTitle: 按索引从链接列表中删除元素
+title: 按索引从链接列表中删除元素
 ---
 
 ## Description

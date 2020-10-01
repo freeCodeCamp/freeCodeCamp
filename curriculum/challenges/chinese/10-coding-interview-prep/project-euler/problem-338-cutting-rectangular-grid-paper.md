@@ -2,7 +2,7 @@
 id: 5900f4be1000cf542c50ffd1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题338：切割矩形网格纸
+title: 问题338：切割矩形网格纸
 ---
 
 ## Description

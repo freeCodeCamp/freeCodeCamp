@@ -2,7 +2,7 @@
 id: 587d7db5367417b2b2512b94
 challengeType: 1
 forumTopicId: 301348
-localeTitle: 用通配符.匹配任何内容
+title: 用通配符.匹配任何内容
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 598eef80ba501f1268170e1e
 challengeType: 5
 videoUrl: ''
-localeTitle: 斐波那契n步数序列
+title: 斐波那契n步数序列
 ---
 
 ## Description

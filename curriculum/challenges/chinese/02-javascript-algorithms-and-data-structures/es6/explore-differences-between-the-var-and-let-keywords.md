@@ -2,7 +2,7 @@
 id: 587d7b87367417b2b2512b3f
 challengeType: 1
 forumTopicId: 301202
-localeTitle: 探索 var 和 let 关键字之间的差异
+title: 探索 var 和 let 关键字之间的差异
 ---
 
 ## Description

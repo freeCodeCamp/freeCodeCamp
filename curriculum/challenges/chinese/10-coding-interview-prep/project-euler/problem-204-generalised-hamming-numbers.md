@@ -2,7 +2,7 @@
 id: 5900f4381000cf542c50ff4b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题204：广义汉明数
+title: 问题204：广义汉明数
 ---
 
 ## Description

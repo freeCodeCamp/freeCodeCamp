@@ -2,7 +2,7 @@
 id: 5900f5411000cf542c510052
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题467：超级整数
+title: 问题467：超级整数
 ---
 
 ## Description

@@ -4,7 +4,7 @@ required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18322
-localeTitle: 用多个 jQuery 选择器选择同一个元素
+title: 用多个 jQuery 选择器选择同一个元素
 ---
 
 ## Description

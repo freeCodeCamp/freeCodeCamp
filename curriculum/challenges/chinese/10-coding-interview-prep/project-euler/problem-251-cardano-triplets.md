@@ -2,7 +2,7 @@
 id: 5900f4671000cf542c50ff7a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题251：卡尔达诺三胞胎
+title: 问题251：卡尔达诺三胞胎
 ---
 
 ## Description

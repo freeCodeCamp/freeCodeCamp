@@ -2,7 +2,7 @@
 id: 587d7faa367417b2b2512bd4
 challengeType: 6
 forumTopicId: 301469
-localeTitle: 给 D3 元素添加悬停效果
+title: 给 D3 元素添加悬停效果
 ---
 
 ## Description

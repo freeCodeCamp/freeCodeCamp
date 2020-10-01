@@ -2,7 +2,7 @@
 id: bad87fee1348bd9acde08812
 challengeType: 0
 forumTopicId: 18232
-localeTitle: 使图片自适应移动端
+title: 使图片自适应移动端
 ---
 
 ## Description

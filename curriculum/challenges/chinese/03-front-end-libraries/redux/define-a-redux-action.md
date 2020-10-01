@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403614d
 challengeType: 6
 forumTopicId: 301440
-localeTitle: 定义一个 Redux Action
+title: 定义一个 Redux Action
 ---
 
 ## Description

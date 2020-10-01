@@ -2,7 +2,7 @@
 id: 5951815dd895584b06884620
 challengeType: 5
 videoUrl: ''
-localeTitle: 给定半径的圆圈通过两个点
+title: 给定半径的圆圈通过两个点
 ---
 
 ## Description

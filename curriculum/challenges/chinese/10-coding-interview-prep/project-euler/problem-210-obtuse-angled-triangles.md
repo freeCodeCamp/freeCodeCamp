@@ -2,7 +2,7 @@
 id: 5900f43e1000cf542c50ff50
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题210：钝角三角形
+title: 问题210：钝角三角形
 ---
 
 ## Description

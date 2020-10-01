@@ -3,7 +3,7 @@ id: 5a9036ee38fddaf9a66b5d34
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
 forumTopicId: 301134
-localeTitle: 使用 CSS 网格单位来更改列和行的大小
+title: 使用 CSS 网格单位来更改列和行的大小
 ---
 
 ## Description

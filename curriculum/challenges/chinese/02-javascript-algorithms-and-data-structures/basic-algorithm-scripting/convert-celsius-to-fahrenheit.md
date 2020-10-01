@@ -2,7 +2,7 @@
 id: 56533eb9ac21ba0edf2244b3
 challengeType: 1
 videoUrl: ''
-localeTitle: 将摄氏温度转换为华氏温度
+title: 将摄氏温度转换为华氏温度
 ---
 
 ## Description

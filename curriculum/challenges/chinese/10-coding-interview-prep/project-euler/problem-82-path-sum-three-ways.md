@@ -2,7 +2,7 @@
 id: 5900f3be1000cf542c50fed1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题82：路径总和：三种方式
+title: 问题82：路径总和：三种方式
 ---
 
 ## Description

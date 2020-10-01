@@ -3,7 +3,7 @@ id: cf1111c1c11feddfaeb7bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQZf8'
 forumTopicId: 18247
-localeTitle: 将一个数组嵌套在另一个数组中
+title: 将一个数组嵌套在另一个数组中
 ---
 
 ## Description

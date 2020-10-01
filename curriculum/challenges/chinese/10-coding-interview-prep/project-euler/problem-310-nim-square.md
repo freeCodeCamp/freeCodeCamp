@@ -2,7 +2,7 @@
 id: 5900f4a21000cf542c50ffb5
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题310：尼姆广场
+title: 问题310：尼姆广场
 ---
 
 ## Description

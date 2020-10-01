@@ -4,7 +4,7 @@ required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18361
-localeTitle: 使用 jQuery 修改整个页面
+title: 使用 jQuery 修改整个页面
 ---
 
 ## Description

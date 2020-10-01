@@ -2,7 +2,7 @@
 id: 587d7fb0367417b2b2512bef
 challengeType: 2
 forumTopicId: 301516
-localeTitle: 服务 HTML 文件
+title: 服务 HTML 文件
 ---
 
 ## Description

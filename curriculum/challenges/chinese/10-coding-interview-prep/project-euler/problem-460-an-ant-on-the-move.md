@@ -2,7 +2,7 @@
 id: 5900f5381000cf542c51004b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题460：移动中的蚂蚁
+title: 问题460：移动中的蚂蚁
 ---
 
 ## Description

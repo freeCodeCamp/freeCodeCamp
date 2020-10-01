@@ -2,7 +2,7 @@
 id: 5900f4a01000cf542c50ffb2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题307：芯片缺陷
+title: 问题307：芯片缺陷
 ---
 
 ## Description

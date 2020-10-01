@@ -5,7 +5,7 @@ required:
     raw: true
 challengeType: 0
 forumTopicId: 18312
-localeTitle: 给表单控件的输入框添加样式
+title: 给表单控件的输入框添加样式
 ---
 
 ## Description

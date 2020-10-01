@@ -2,7 +2,7 @@
 id: 587d7fa6367417b2b2512bc0
 challengeType: 3
 forumTopicId: 301468
-localeTitle: 用树形图可视化数据
+title: 用树形图可视化数据
 ---
 
 ## Description

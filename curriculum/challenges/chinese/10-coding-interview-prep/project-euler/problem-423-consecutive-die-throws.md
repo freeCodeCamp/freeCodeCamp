@@ -2,7 +2,7 @@
 id: 5900f5141000cf542c510027
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题423：连续死球
+title: 问题423：连续死球
 ---
 
 ## Description

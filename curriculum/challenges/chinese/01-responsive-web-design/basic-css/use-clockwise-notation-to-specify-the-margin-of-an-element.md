@@ -3,7 +3,7 @@ id: bad87fee1348bd9afdf08726
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpybAd'
 forumTopicId: 18345
-localeTitle: 使用顺时针方向指定元素的外边距
+title: 使用顺时针方向指定元素的外边距
 ---
 
 ## Description

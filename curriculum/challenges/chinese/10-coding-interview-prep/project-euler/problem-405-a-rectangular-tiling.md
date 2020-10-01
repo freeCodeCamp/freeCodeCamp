@@ -2,7 +2,7 @@
 id: 5900f5021000cf542c510014
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题405：矩形平铺
+title: 问题405：矩形平铺
 ---
 
 ## Description

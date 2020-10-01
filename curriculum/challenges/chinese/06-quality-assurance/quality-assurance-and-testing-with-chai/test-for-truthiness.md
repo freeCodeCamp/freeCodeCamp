@@ -2,7 +2,7 @@
 id: 587d824b367417b2b2512c49
 challengeType: 2
 videoUrl: ''
-localeTitle: 测试真实性
+title: 测试真实性
 ---
 
 ## Description

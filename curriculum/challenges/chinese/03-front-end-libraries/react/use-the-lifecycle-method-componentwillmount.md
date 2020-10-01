@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403617c
 challengeType: 6
 forumTopicId: 301423
-localeTitle: 使用生命周期方法：componentWillMount
+title: 使用生命周期方法：componentWillMount
 ---
 
 ## Description

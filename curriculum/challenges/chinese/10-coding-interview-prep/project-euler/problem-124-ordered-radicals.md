@@ -2,7 +2,7 @@
 id: 5900f3e81000cf542c50fefb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题124：有序的激进分子
+title: 问题124：有序的激进分子
 ---
 
 ## Description

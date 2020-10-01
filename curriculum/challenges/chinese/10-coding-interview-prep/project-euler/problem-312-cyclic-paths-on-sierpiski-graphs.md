@@ -2,7 +2,7 @@
 id: 5900f4a51000cf542c50ffb7
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题312：Sierpiński图上的循环路径
+title: 问题312：Sierpiński图上的循环路径
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: bad87fee1348bd9acdf08812
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MmCP'
 forumTopicId: 18282
-localeTitle: 调整图片的大小
+title: 调整图片的大小
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7dbb367417b2b2512bac
 challengeType: 1
 forumTopicId: 301362
-localeTitle: 删除开头和结尾的空白
+title: 删除开头和结尾的空白
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244aa
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
-localeTitle: 理解未初始化的变量
+title: 理解未初始化的变量
 ---
 
 ## Description

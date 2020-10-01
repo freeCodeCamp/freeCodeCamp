@@ -2,7 +2,7 @@
 id: 5900f3ec1000cf542c50feff
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题128：六边形瓷砖差异
+title: 问题128：六边形瓷砖差异
 ---
 
 ## Description

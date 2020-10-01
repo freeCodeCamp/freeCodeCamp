@@ -2,7 +2,7 @@
 id: 5900f3b31000cf542c50fec6
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题71：有序分数
+title: 问题71：有序分数
 ---
 
 ## Description

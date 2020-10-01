@@ -2,7 +2,7 @@
 id: 587d7fad367417b2b2512be1
 challengeType: 6
 forumTopicId: 301503
-localeTitle: 使用 onclick 属性处理点击事件
+title: 使用 onclick 属性处理点击事件
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4cd1000cf542c50ffe0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题353：危险的月亮
+title: 问题353：危险的月亮
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f45b1000cf542c50ff6d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题238：无限的字符串游览
+title: 问题238：无限的字符串游览
 ---
 
 ## Description

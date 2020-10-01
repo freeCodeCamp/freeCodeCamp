@@ -2,7 +2,7 @@
 id: 5900f3fc1000cf542c50ff0e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题143：研究三角形的Torricelli点
+title: 问题143：研究三角形的Torricelli点
 ---
 
 ## Description

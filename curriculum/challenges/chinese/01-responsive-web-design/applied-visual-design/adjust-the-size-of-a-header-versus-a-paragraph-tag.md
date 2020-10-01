@@ -3,7 +3,7 @@ id: 587d781b367417b2b2512abd
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-localeTitle: 调整标题与段落的大小
+title: 调整标题与段落的大小
 ---
 
 ## Description

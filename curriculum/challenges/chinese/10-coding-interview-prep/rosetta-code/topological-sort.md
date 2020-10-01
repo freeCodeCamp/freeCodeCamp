@@ -2,7 +2,7 @@
 id: 594fa2746886f41f7d8bf225
 challengeType: 5
 videoUrl: ''
-localeTitle: 拓扑排序
+title: 拓扑排序
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3f71000cf542c50ff0a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题139：毕达哥拉斯瓷砖
+title: 问题139：毕达哥拉斯瓷砖
 ---
 
 ## Description

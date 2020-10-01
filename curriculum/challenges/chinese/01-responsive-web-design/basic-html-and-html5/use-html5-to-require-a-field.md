@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedc08830
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMd4EcQ'
 forumTopicId: 18360
-localeTitle: 给表单添加一个必填字段
+title: 给表单添加一个必填字段
 ---
 
 ## Description

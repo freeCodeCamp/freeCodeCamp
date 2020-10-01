@@ -2,7 +2,7 @@
 id: 587d7fb6367417b2b2512c09
 challengeType: 2
 forumTopicId: 301536
-localeTitle: 创建并保存模型记录
+title: 创建并保存模型记录
 ---
 
 ## Description

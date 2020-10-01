@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244d0
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
-localeTitle: 相等运算符
+title: 相等运算符
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 56bbb991ad1ed5201cd392d2
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
-localeTitle: 给对象添加新属性
+title: 给对象添加新属性
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4951000cf542c50ffa8
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题297：Zeckendorf表示
+title: 问题297：Zeckendorf表示
 ---
 
 ## Description

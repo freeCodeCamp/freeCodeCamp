@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08756
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ8wnHv'
 forumTopicId: 18258
-localeTitle: 样式中的优先级
+title: 样式中的优先级
 ---
 
 ## Description

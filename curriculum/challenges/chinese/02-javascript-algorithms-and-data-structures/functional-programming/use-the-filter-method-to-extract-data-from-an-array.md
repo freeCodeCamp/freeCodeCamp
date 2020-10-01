@@ -2,7 +2,7 @@
 id: 587d7b8f367417b2b2512b63
 challengeType: 1
 forumTopicId: 18179
-localeTitle: 使用 filter 方法从数组中提取数据
+title: 使用 filter 方法从数组中提取数据
 ---
 
 ## Description

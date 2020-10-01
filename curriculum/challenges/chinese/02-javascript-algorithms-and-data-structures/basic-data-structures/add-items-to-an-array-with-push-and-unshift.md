@@ -2,7 +2,7 @@
 id: 587d78b2367417b2b2512b0e
 challengeType: 1
 forumTopicId: 301151
-localeTitle: 使用 push() 和 unshift() 添加项目到数组中
+title: 使用 push() 和 unshift() 添加项目到数组中
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4931000cf542c50ffa5
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题294：数字总和-经验＃23
+title: 问题294：数字总和-经验＃23
 ---
 
 ## Description
