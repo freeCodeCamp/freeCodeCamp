@@ -17,7 +17,7 @@ body {
   text-decoration: none !important;
 }
 
-/****** Universal Nav ****/
+/****** Nav ****/
 
 .universal-nav {
   margin: 0px;
@@ -31,23 +31,28 @@ body {
   z-index: 100;
 }
 
+.universal-nav a.translations-link {
+  color: #ffffff;
+  position: fixed;
+  right: 50px;
+  line-height: 24px;
+  font-size: 16px;
+  margin: 6px 0;
+  padding: 0 0;
+}
+
 .universal-nav img {
   margin: 7px 0px;
   height: 24px;
 }
 
-/****** Translations Nav ****/
-/* The app nav is used only when loadNavBar is set to true */
-.app-nav.no-badge {
-  margin-top: 50px;
-  margin-right: calc(100px + 1.5rem);
-  font-size: 1.25rem;
+.app-nav {
+  visibility: hidden;
 }
 
 @media screen and (max-width: 768px) {
-  body .app-nav.no-badge {
-    margin-top: 50px;
-    margin-right: calc(1.5rem);
+  .universal-nav a.translations-link {
+    visibility: hidden;
   }
 }
 
