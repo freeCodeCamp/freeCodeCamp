@@ -1,10 +1,9 @@
 ---
 id: bd7123c8c441eddfaeb5bdef
-title: Say Hello to HTML Elements
+title: 向HTML Elements说你好
 challengeType: 0
 videoUrl: ''
 forumTopicId: 18276
-localeTitle: 向HTML Elements说你好
 ---
 
 ## Description
