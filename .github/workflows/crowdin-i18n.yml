@@ -4,9 +4,6 @@ on:
   # schedule:
   # (TODO?) run this Action every 14 days
   # - cron: '0 * */14 * *'
-  push:
-    branches:
-      - i18n-dev
 
 jobs:
   i18n-sync-docs:
@@ -33,7 +30,6 @@ jobs:
           # pull-request
           localization_branch_name: i18n-sync-docs
           create_pull_request: true
-          pull_request_base_branch_name: i18n-dev
           pull_request_title: 'chore(docs,i8n): processed translations from crowdin'
           pull_request_body: ''
           pull_request_labels: 'scope: i18n, scope: docs, crowdin-sync'
