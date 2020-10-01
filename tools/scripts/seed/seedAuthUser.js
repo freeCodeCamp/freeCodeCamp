@@ -42,127 +42,128 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
       }
     },
     err => {
-    handleError(err, client);
+      handleError(err, client);
 
-    try {
-      user.insertOne({
-        _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-        email: 'foo@bar.com',
-        emailVerified: true,
-        progressTimestamps: [],
-        isBanned: false,
-        isCheater: false,
-        username: 'developmentuser',
-        about: '',
-        name: 'Development User',
-        location: '',
-        picture: defaulUserImage,
-        acceptedPrivacyTerms: true,
-        sendQuincyEmail: false,
-        currentChallengeId: '',
-        isHonest: false,
-        isFrontEndCert: false,
-        isDataVisCert: false,
-        isBackEndCert: false,
-        isFullStackCert: false,
-        isRespWebDesignCert: false,
-        is2018DataVisCert: false,
-        isFrontEndLibsCert: false,
-        isJsAlgoDataStructCert: false,
-        isApisMicroservicesCert: false,
-        isInfosecQaCert: false,
-        isQaCertV7: false,
-        isInfosecCertV7: false,
-        is2018FullStackCert: false,
-        isSciCompPyCertV7: false,
-        isDataAnalysisPyCertV7: false,
-        isMachineLearningPyCertV7: false,
-        completedChallenges: [],
-        portfolio: [],
-        yearsTopContributor: [],
-        rand: 0.6126749173148205,
-        theme: 'default',
-        profileUI: {
-          isLocked: true,
-          showAbout: false,
-          showCerts: false,
-          showDonation: false,
-          showHeatMap: false,
-          showLocation: false,
-          showName: false,
-          showPoints: false,
-          showPortfolio: false,
-          showTimeLine: false
-        },
-        badges: {
-          coreTeam: []
-        },
-        isDonating: false,
-        emailAuthLinkTTL: null,
-        emailVerifyTTL: null
-      });
+      try {
+        user.insertOne({
+          _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+          email: 'foo@bar.com',
+          emailVerified: true,
+          progressTimestamps: [],
+          isBanned: false,
+          isCheater: false,
+          username: 'developmentuser',
+          about: '',
+          name: 'Development User',
+          location: '',
+          picture: 'https://github.com/identicons/camperbot.png',
+          acceptedPrivacyTerms: true,
+          sendQuincyEmail: false,
+          currentChallengeId: '',
+          isHonest: false,
+          isFrontEndCert: false,
+          isDataVisCert: false,
+          isBackEndCert: false,
+          isFullStackCert: false,
+          isRespWebDesignCert: false,
+          is2018DataVisCert: false,
+          isFrontEndLibsCert: false,
+          isJsAlgoDataStructCert: false,
+          isApisMicroservicesCert: false,
+          isInfosecQaCert: false,
+          isQaCertV7: false,
+          isInfosecCertV7: false,
+          is2018FullStackCert: false,
+          isSciCompPyCertV7: false,
+          isDataAnalysisPyCertV7: false,
+          isMachineLearningPyCertV7: false,
+          completedChallenges: [],
+          portfolio: [],
+          yearsTopContributor: [],
+          rand: 0.6126749173148205,
+          theme: 'default',
+          profileUI: {
+            isLocked: true,
+            showAbout: false,
+            showCerts: false,
+            showDonation: false,
+            showHeatMap: false,
+            showLocation: false,
+            showName: false,
+            showPoints: false,
+            showPortfolio: false,
+            showTimeLine: false
+          },
+          badges: {
+            coreTeam: []
+          },
+          isDonating: false,
+          emailAuthLinkTTL: null,
+          emailVerifyTTL: null
+        });
 
-      user.insertOne({
-        _id: ObjectId('5bd30e0f1caf6ac3ddddddb9'),
-        email: 'bar@bar.com',
-        emailVerified: true,
-        progressTimestamps: [],
-        isBanned: false,
-        isCheater: false,
-        username: 'twaha',
-        about: '',
-        name: 'Development User',
-        location: '',
-        picture: 'https://github.com/identicons/camperbot.png',
-        acceptedPrivacyTerms: true,
-        sendQuincyEmail: false,
-        currentChallengeId: '',
-        isHonest: false,
-        isFrontEndCert: false,
-        isDataVisCert: false,
-        isBackEndCert: false,
-        isFullStackCert: false,
-        isRespWebDesignCert: false,
-        is2018DataVisCert: false,
-        isFrontEndLibsCert: false,
-        isJsAlgoDataStructCert: false,
-        isApisMicroservicesCert: false,
-        isInfosecQaCert: false,
-        isQaCertV7: false,
-        isInfosecCertV7: false,
-        is2018FullStackCert: false,
-        isSciCompPyCertV7: false,
-        isDataAnalysisPyCertV7: false,
-        isMachineLearningPyCertV7: false,
-        completedChallenges: [],
-        portfolio: [],
-        yearsTopContributor: [],
-        rand: 0.6126749173148205,
-        theme: 'default',
-        profileUI: {
-          isLocked: true,
-          showAbout: false,
-          showCerts: false,
-          showDonation: false,
-          showHeatMap: false,
-          showLocation: false,
-          showName: false,
-          showPoints: false,
-          showPortfolio: false,
-          showTimeLine: false
-        },
-        badges: {
-          coreTeam: []
-        },
-        isDonating: false,
-        emailAuthLinkTTL: null,
-        emailVerifyTTL: null
-      });
-    } catch (e) {
-      handleError(e, client);
-    } finally {
-      log('local auth user seed complete');
-      client.close();
+        user.insertOne({
+          _id: ObjectId('5bd30e0f1caf6ac3ddddddb9'),
+          email: 'bar@bar.com',
+          emailVerified: true,
+          progressTimestamps: [],
+          isBanned: false,
+          isCheater: false,
+          username: 'twaha',
+          about: '',
+          name: 'Development User',
+          location: '',
+          picture: 'https://github.com/identicons/camperbot.png',
+          acceptedPrivacyTerms: true,
+          sendQuincyEmail: false,
+          currentChallengeId: '',
+          isHonest: false,
+          isFrontEndCert: false,
+          isDataVisCert: false,
+          isBackEndCert: false,
+          isFullStackCert: false,
+          isRespWebDesignCert: false,
+          is2018DataVisCert: false,
+          isFrontEndLibsCert: false,
+          isJsAlgoDataStructCert: false,
+          isApisMicroservicesCert: false,
+          isInfosecQaCert: false,
+          isQaCertV7: false,
+          isInfosecCertV7: false,
+          is2018FullStackCert: false,
+          isSciCompPyCertV7: false,
+          isDataAnalysisPyCertV7: false,
+          isMachineLearningPyCertV7: false,
+          completedChallenges: [],
+          portfolio: [],
+          yearsTopContributor: [],
+          rand: 0.6126749173148205,
+          theme: 'default',
+          profileUI: {
+            isLocked: true,
+            showAbout: false,
+            showCerts: false,
+            showDonation: false,
+            showHeatMap: false,
+            showLocation: false,
+            showName: false,
+            showPoints: false,
+            showPortfolio: false,
+            showTimeLine: false
+          },
+          badges: {
+            coreTeam: []
+          },
+          isDonating: false,
+          emailAuthLinkTTL: null,
+          emailVerifyTTL: null
+        });
+      } catch (e) {
+        handleError(e, client);
+      } finally {
+        log('local auth user seed complete');
+        client.close();
+      }
     }
-  });
+  );
 });
