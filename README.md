@@ -62,6 +62,8 @@ Here are our ten core certifications:
   <br />
   <br />
   **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker),[ Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter), [Caesar's Cipher](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
+ TELEPHONE NUMBER VALIDATOR PROJECT :
+ For this challenge you will be presented with a string such as 800-692-7753 or 8oo-six427676;laskdjf . Your job is to validate or reject the US phone number based on any combination of the formats provided above. ... Return true if the string is a valid US phone number; otherwise return false .
 
 #### 3. Front End Libraries Certification
 
