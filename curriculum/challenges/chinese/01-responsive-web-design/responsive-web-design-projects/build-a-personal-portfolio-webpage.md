@@ -2,7 +2,7 @@
 id: bd7158d8c242eddfaeb5bd13
 challengeType: 3
 forumTopicId: 301143
-localeTitle: 制作一个个人作品集网页
+title: 制作一个个人作品集网页
 ---
 
 ## Description

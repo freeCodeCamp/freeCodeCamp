@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244c4
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
-localeTitle: 函数执行到 return 语句就结束
+title: 函数执行到 return 语句就结束
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 59f4eafba0343628bb682785
 challengeType: 5
 videoUrl: ''
-localeTitle: Discordian日期
+title: Discordian日期
 ---
 
 ## Description

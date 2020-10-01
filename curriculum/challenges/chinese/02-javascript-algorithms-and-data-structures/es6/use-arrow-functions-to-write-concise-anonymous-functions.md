@@ -2,7 +2,7 @@
 id: 587d7b87367417b2b2512b43
 challengeType: 1
 forumTopicId: 301211
-localeTitle: 使用箭头函数编写简洁的匿名函数
+title: 使用箭头函数编写简洁的匿名函数
 ---
 
 ## Description

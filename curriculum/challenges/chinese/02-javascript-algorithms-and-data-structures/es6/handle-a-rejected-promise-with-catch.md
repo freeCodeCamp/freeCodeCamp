@@ -2,7 +2,7 @@
 id: 5cdafbe72913098997531682
 challengeType: 1
 forumTopicId: 301204
-localeTitle: 在 catch 中处理 Promise 失败的情况
+title: 在 catch 中处理 Promise 失败的情况
 ---
 
 ## Description

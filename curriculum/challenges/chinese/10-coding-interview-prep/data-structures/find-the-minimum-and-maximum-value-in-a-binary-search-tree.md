@@ -2,7 +2,7 @@
 id: 587d8256367417b2b2512c7a
 challengeType: 1
 videoUrl: ''
-localeTitle: 在二叉搜索树中查找最小值和最大值
+title: 在二叉搜索树中查找最小值和最大值
 ---
 
 ## Description

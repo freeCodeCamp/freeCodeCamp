@@ -2,7 +2,7 @@
 id: 5900f4151000cf542c50ff27
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题168：数字轮换
+title: 问题168：数字轮换
 ---
 
 ## Description

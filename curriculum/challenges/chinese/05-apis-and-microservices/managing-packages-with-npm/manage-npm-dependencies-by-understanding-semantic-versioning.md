@@ -2,7 +2,7 @@
 id: 587d7fb5367417b2b2512c01
 challengeType: 2
 forumTopicId: 301529
-localeTitle: 通过理解语义版本化来管理 npm 依赖关系
+title: 通过理解语义版本化来管理 npm 依赖关系
 ---
 
 ## Description

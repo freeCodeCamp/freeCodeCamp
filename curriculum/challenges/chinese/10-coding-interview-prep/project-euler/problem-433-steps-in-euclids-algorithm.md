@@ -2,7 +2,7 @@
 id: 5900f51d1000cf542c51002f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题433：欧几里得算法的步骤
+title: 问题433：欧几里得算法的步骤
 ---
 
 ## Description

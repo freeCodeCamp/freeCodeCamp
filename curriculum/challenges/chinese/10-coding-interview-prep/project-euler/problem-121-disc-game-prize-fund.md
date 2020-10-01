@@ -2,7 +2,7 @@
 id: 5900f3e51000cf542c50fef8
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题121：光盘游戏奖金
+title: 问题121：光盘游戏奖金
 ---
 
 ## Description

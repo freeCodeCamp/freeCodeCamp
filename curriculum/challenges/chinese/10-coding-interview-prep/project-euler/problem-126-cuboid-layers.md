@@ -2,7 +2,7 @@
 id: 5900f3ea1000cf542c50fefd
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题126：长方体层
+title: 问题126：长方体层
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4b91000cf542c50ffcc
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题333：特殊分区
+title: 问题333：特殊分区
 ---
 
 ## Description

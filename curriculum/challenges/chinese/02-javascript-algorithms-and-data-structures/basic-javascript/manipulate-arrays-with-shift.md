@@ -3,7 +3,7 @@ id: 56bbb991ad1ed5201cd392cd
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVETW'
 forumTopicId: 18238
-localeTitle: 使用 shift() 操作数组
+title: 使用 shift() 操作数组
 ---
 
 ## Description

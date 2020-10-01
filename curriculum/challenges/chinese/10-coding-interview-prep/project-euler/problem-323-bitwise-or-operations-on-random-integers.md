@@ -2,7 +2,7 @@
 id: 5900f4b01000cf542c50ffc2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题323：对随机整数进行按位或运算
+title: 问题323：对随机整数进行按位或运算
 ---
 
 ## Description

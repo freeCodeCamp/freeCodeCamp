@@ -2,7 +2,7 @@
 id: 5900f48a1000cf542c50ff9c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题285：毕达哥拉斯赔率
+title: 问题285：毕达哥拉斯赔率
 ---
 
 ## Description

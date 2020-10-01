@@ -2,7 +2,7 @@
 id: 5951ed8945deab770972ae56
 challengeType: 5
 videoUrl: ''
-localeTitle: 河内的塔
+title: 河内的塔
 ---
 
 ## Description

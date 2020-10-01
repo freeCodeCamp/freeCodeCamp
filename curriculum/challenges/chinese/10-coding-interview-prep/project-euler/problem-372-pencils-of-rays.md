@@ -2,7 +2,7 @@
 id: 5900f4e11000cf542c50fff3
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题372：光线笔
+title: 问题372：光线笔
 ---
 
 ## Description

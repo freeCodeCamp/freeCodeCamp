@@ -2,7 +2,7 @@
 id: 587d8252367417b2b2512c67
 challengeType: 1
 videoUrl: ''
-localeTitle: 在链接列表中的特定索引处添加元素
+title: 在链接列表中的特定索引处添加元素
 ---
 
 ## Description

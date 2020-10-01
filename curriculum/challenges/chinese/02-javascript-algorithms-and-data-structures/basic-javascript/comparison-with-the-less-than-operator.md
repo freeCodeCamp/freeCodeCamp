@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244d6
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNVRWtB'
 forumTopicId: 16789
-localeTitle: 小于运算符
+title: 小于运算符
 ---
 
 ## Description

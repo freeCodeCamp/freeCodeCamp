@@ -2,7 +2,7 @@
 id: 5900f45d1000cf542c50ff70
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题241：完美商数
+title: 问题241：完美商数
 ---
 
 ## Description

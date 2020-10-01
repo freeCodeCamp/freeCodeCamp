@@ -3,7 +3,7 @@ id: 587d778f367417b2b2512aae
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437DcV'
 forumTopicId: 301013
-localeTitle: 使用描述性链接文本赋予链接含义
+title: 使用描述性链接文本赋予链接含义
 ---
 
 ## Description

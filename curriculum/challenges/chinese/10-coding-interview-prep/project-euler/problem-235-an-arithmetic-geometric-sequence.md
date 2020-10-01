@@ -2,7 +2,7 @@
 id: 5900f4571000cf542c50ff6a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题235：算术几何序列
+title: 问题235：算术几何序列
 ---
 
 ## Description

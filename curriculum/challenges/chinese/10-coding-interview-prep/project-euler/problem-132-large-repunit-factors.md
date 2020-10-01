@@ -2,7 +2,7 @@
 id: 5900f3f11000cf542c50ff03
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题132：大的重新安置因素
+title: 问题132：大的重新安置因素
 ---
 
 ## Description

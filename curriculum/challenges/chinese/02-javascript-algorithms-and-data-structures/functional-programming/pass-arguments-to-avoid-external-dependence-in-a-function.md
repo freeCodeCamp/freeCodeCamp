@@ -2,7 +2,7 @@
 id: 587d7b8e367417b2b2512b5f
 challengeType: 1
 forumTopicId: 301234
-localeTitle: 传递参数以避免函数中的外部依赖
+title: 传递参数以避免函数中的外部依赖
 ---
 
 ## Description

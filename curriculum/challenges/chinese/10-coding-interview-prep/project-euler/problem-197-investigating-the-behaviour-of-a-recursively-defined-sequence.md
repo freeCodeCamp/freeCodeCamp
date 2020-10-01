@@ -2,7 +2,7 @@
 id: 5900f4311000cf542c50ff44
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题197：研究递归定义的序列的行为
+title: 问题197：研究递归定义的序列的行为
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f3841000cf542c50fe97
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题24：字典排列
+title: 问题24：字典排列
 ---
 
 ## Description

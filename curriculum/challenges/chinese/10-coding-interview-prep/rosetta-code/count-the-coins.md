@@ -2,7 +2,7 @@
 id: 59713bd26bdeb8a594fb9413
 challengeType: 5
 videoUrl: ''
-localeTitle: 计算硬币
+title: 计算硬币
 ---
 
 ## Description

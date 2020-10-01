@@ -2,7 +2,7 @@
 id: 587d7b7d367417b2b2512b1e
 challengeType: 1
 forumTopicId: 301160
-localeTitle: 使用 Object.Keys() 生成对象所有键组成的数组
+title: 使用 Object.Keys() 生成对象所有键组成的数组
 ---
 
 ## Description

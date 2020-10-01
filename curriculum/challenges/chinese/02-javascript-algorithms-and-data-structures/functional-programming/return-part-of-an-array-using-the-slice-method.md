@@ -2,7 +2,7 @@
 id: 587d7b90367417b2b2512b65
 challengeType: 1
 forumTopicId: 301239
-localeTitle: 使用 slice 方法返回数组的一部分
+title: 使用 slice 方法返回数组的一部分
 ---
 
 ## Description

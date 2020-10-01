@@ -3,7 +3,7 @@ id: 587d78ac367417b2b2512af7
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43GgTa'
 forumTopicId: 301115
-localeTitle: 在推文中使用 justify-content 属性
+title: 在推文中使用 justify-content 属性
 ---
 
 ## Description

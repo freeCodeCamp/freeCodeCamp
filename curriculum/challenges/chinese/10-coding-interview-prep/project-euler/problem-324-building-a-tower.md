@@ -2,7 +2,7 @@
 id: 5900f4b11000cf542c50ffc3
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题324：建造一座塔楼
+title: 问题324：建造一座塔楼
 ---
 
 ## Description

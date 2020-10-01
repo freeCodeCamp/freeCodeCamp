@@ -3,7 +3,7 @@ id: 587d78a8367417b2b2512ae5
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ89WA4'
 forumTopicId: 301040
-localeTitle: 以可变速率来给元素添加动画
+title: 以可变速率来给元素添加动画
 ---
 
 ## Description

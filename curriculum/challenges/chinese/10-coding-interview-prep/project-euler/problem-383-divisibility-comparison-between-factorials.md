@@ -2,7 +2,7 @@
 id: 5900f4ed1000cf542c50ffff
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题383：阶乘之间的可比性比较
+title: 问题383：阶乘之间的可比性比较
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d8256367417b2b2512c79
 challengeType: 1
 videoUrl: ''
-localeTitle: 发生率矩阵
+title: 发生率矩阵
 ---
 
 ## Description

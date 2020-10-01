@@ -2,7 +2,7 @@
 id: bad87fee1348bd9acdd08826
 challengeType: 6
 forumTopicId: 18224
-localeTitle: 了解 script 和 document.ready 是如何工作的
+title: 了解 script 和 document.ready 是如何工作的
 ---
 
 ## Description

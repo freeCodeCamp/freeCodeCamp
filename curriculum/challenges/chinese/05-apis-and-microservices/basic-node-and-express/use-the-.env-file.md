@@ -2,7 +2,7 @@
 id: 587d7fb1367417b2b2512bf2
 challengeType: 2
 forumTopicId: 301521
-localeTitle: 使用 .env 文件
+title: 使用 .env 文件
 ---
 
 ## Description

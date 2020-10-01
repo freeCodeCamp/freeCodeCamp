@@ -3,7 +3,7 @@ id: 587d78a4367417b2b2512ad3
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmPpud'
 forumTopicId: 301033
-localeTitle: 将各种元素的颜色调整为互补色
+title: 将各种元素的颜色调整为互补色
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f38d1000cf542c50fea0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题33：数字取消分数
+title: 问题33：数字取消分数
 ---
 
 ## Description

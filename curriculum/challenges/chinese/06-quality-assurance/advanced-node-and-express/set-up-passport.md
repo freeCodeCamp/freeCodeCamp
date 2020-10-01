@@ -2,7 +2,7 @@
 id: 5895f70cf9fc0f352b528e65
 challengeType: 2
 forumTopicId: 301565
-localeTitle: 设置 Passport
+title: 设置 Passport
 ---
 
 ## Description

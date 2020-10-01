@@ -2,7 +2,7 @@
 id: 5900f3721000cf542c50fe85
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题6：求和方差
+title: 问题6：求和方差
 ---
 
 ## Description

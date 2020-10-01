@@ -2,7 +2,7 @@
 id: 5900f5331000cf542c510045
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题454：丢番图倒数III
+title: 问题454：丢番图倒数III
 ---
 
 ## Description

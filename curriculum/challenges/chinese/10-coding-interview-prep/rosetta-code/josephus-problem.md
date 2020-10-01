@@ -2,7 +2,7 @@
 id: 5a23c84252665b21eecc7ec5
 challengeType: 5
 videoUrl: ''
-localeTitle: 约瑟夫斯问题
+title: 约瑟夫斯问题
 ---
 
 ## Description

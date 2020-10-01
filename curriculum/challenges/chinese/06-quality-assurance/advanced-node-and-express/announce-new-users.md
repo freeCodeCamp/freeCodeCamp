@@ -2,7 +2,7 @@
 id: 589fc832f9fc0f352b528e78
 challengeType: 2
 forumTopicId: 301546
-localeTitle: 宣布新用户
+title: 宣布新用户
 ---
 
 ## Description

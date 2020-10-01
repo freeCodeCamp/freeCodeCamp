@@ -2,7 +2,7 @@
 id: 5900f4551000cf542c50ff68
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题233：圆上的格点
+title: 问题233：圆上的格点
 ---
 
 ## Description

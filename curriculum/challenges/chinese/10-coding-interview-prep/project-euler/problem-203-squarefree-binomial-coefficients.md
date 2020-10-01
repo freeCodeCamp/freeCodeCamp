@@ -2,7 +2,7 @@
 id: 5900f4381000cf542c50ff4a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题203：无平方二项系数
+title: 问题203：无平方二项系数
 ---
 
 ## Description

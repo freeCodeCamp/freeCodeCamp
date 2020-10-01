@@ -2,7 +2,7 @@
 id: 5900f5261000cf542c510038
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题441：互质夫妇的反向总和
+title: 问题441：互质夫妇的反向总和
 ---
 
 ## Description

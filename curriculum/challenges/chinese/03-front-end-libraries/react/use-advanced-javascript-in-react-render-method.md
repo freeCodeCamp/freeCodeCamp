@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036183
 challengeType: 6
 forumTopicId: 301415
-localeTitle: 在 React Render 方法中使用 JavaScript
+title: 在 React Render 方法中使用 JavaScript
 ---
 
 ## Description

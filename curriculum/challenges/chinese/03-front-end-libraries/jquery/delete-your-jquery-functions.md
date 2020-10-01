@@ -4,7 +4,7 @@ required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 17561
-localeTitle: 删除 jQuery 函数
+title: 删除 jQuery 函数
 ---
 
 ## Description

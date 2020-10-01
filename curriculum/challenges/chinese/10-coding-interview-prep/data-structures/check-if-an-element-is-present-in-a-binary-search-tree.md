@@ -2,7 +2,7 @@
 id: 587d8257367417b2b2512c7c
 challengeType: 1
 videoUrl: ''
-localeTitle: 检查二进制搜索树中是否存在元素
+title: 检查二进制搜索树中是否存在元素
 ---
 
 ## Description

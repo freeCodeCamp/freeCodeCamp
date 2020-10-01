@@ -2,7 +2,7 @@
 id: 5900f53e1000cf542c510051
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题466：乘法表中的不同术语
+title: 问题466：乘法表中的不同术语
 ---
 
 ## Description

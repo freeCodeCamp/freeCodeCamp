@@ -1,7 +1,7 @@
 ---
 id: bd7158d8c442eddfaeb5bd13
 challengeType: 3
-localeTitle: 构建一个随机引语生成器
+title: 构建一个随机引语生成器
 ---
 
 ## Description

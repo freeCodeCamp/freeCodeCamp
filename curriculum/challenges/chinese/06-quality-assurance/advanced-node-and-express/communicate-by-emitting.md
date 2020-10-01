@@ -2,7 +2,7 @@
 id: 589fc831f9fc0f352b528e75
 challengeType: 2
 forumTopicId: 301550
-localeTitle: 通过 Emitting 通信
+title: 通过 Emitting 通信
 ---
 
 ## Description

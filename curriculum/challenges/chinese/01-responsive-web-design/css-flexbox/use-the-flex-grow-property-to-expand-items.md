@@ -3,7 +3,7 @@ id: 587d78ae367417b2b2512afc
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c2p78cg'
 forumTopicId: 1301111
-localeTitle: 使用 flex-grow 属性扩展项目
+title: 使用 flex-grow 属性扩展项目
 ---
 
 ## Description

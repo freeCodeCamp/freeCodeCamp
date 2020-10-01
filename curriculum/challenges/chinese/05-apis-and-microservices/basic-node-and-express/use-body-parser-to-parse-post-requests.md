@@ -2,7 +2,7 @@
 id: 587d7fb2367417b2b2512bf7
 challengeType: 2
 forumTopicId: 301520
-localeTitle: 使用 body-parser 来解析POST请求
+title: 使用 body-parser 来解析POST请求
 ---
 
 ## Description

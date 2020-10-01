@@ -2,7 +2,7 @@
 id: 5c6c06847491271903d37cfd
 challengeType: 0
 forumTopicId: 301099
-localeTitle: 使用单选框和复选框的 value 属性
+title: 使用单选框和复选框的 value 属性
 ---
 
 ## Description

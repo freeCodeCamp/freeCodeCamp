@@ -2,7 +2,7 @@
 id: 5900f3a81000cf542c50febb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题60：素数对设置
+title: 问题60：素数对设置
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7fa8367417b2b2512bca
 challengeType: 6
 forumTopicId: 301481
-localeTitle: 更改条形图的显示方式
+title: 更改条形图的显示方式
 ---
 
 ## Description

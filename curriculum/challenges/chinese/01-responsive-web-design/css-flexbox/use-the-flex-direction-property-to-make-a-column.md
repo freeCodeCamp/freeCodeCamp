@@ -3,7 +3,7 @@ id: 587d78ac367417b2b2512af4
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
-localeTitle: 使用 flex-direction 属性创建一列
+title: 使用 flex-direction 属性创建一列
 ---
 
 ## Description

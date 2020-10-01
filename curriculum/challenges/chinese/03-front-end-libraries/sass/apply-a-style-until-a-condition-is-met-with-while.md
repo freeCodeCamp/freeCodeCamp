@@ -2,7 +2,7 @@
 id: 587d7dbf367417b2b2512bbb
 challengeType: 0
 forumTopicId: 301454
-localeTitle: 使用 @while 当条件满足时样式生效
+title: 使用 @while 当条件满足时样式生效
 ---
 
 ## Description

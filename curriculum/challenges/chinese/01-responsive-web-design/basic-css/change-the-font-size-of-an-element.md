@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08806
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-localeTitle: 更改元素的字体大小
+title: 更改元素的字体大小
 ---
 
 ## Description

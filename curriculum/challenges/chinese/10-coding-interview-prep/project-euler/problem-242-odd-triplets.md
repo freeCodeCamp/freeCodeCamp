@@ -2,7 +2,7 @@
 id: 5900f45f1000cf542c50ff71
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题242：奇数三胞胎
+title: 问题242：奇数三胞胎
 ---
 
 ## Description

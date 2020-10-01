@@ -2,7 +2,7 @@
 id: 587d8248367417b2b2512c3d
 challengeType: 2
 forumTopicId: 301577
-localeTitle: 使用 helmet.dnsPrefetchControl() 禁用 DNS 预获取
+title: 使用 helmet.dnsPrefetchControl() 禁用 DNS 预获取
 ---
 
 ## Description

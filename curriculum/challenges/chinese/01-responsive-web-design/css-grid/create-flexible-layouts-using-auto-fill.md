@@ -3,7 +3,7 @@ id: 5a94fe5469fb03452672e461
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cmzdycW'
 forumTopicId: 301126
-localeTitle: 使用 auto-fill 创建弹性布局
+title: 使用 auto-fill 创建弹性布局
 ---
 
 ## Description

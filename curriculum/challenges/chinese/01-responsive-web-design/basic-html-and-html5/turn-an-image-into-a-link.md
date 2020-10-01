@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08820
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cRdBnUr'
 forumTopicId: 18327
-localeTitle: 给图片添加链接
+title: 给图片添加链接
 ---
 
 ## Description

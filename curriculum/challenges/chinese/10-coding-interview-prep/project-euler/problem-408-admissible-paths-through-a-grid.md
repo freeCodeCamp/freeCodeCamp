@@ -2,7 +2,7 @@
 id: 5900f5091000cf542c51001b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题408：通过网格的可允许路径
+title: 问题408：通过网格的可允许路径
 ---
 
 ## Description

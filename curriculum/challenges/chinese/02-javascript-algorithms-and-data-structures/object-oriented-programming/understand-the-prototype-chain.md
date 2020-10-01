@@ -2,7 +2,7 @@
 id: 587d7db0367417b2b2512b82
 challengeType: 1
 forumTopicId: 301329
-localeTitle: 了解原型链
+title: 了解原型链
 ---
 
 ## Description

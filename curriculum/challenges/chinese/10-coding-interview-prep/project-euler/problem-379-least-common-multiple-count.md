@@ -2,7 +2,7 @@
 id: 5900f4e81000cf542c50fffa
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题379：最少共同的多重计数
+title: 问题379：最少共同的多重计数
 ---
 
 ## Description

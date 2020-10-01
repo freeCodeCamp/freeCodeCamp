@@ -3,7 +3,7 @@ id: 5a553ca864b52e1d8bceea14
 challengeType: 7
 isHidden: false
 isPrivate: true
-localeTitle: 数据可视化证书
+title: 数据可视化证书
 ---
 
 ## Description

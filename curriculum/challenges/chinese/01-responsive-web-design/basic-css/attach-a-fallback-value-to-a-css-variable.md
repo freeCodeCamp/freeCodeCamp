@@ -3,7 +3,7 @@ id: 5a9d7286424fe3d0e10cad13
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
-localeTitle: 给 CSS 变量附加回退值
+title: 给 CSS 变量附加回退值
 ---
 
 ## Description

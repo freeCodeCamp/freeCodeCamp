@@ -3,7 +3,7 @@ id: 660add10cb82ac38a17513be
 challengeType: 7
 isHidden: false
 isPrivate: true
-localeTitle: 旧版后端证书
+title: 旧版后端证书
 ---
 
 ## Description

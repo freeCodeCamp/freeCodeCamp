@@ -2,7 +2,7 @@
 id: 5900f3911000cf542c50fea4
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题37：可截断的素数
+title: 问题37：可截断的素数
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4d91000cf542c50ffeb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题363：Bézier曲线
+title: 问题363：Bézier曲线
 ---
 
 ## Description

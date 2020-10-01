@@ -2,7 +2,7 @@
 id: 587d824a367417b2b2512c43
 challengeType: 4
 videoUrl: ''
-localeTitle: 个人图书馆
+title: 个人图书馆
 ---
 
 ## Description

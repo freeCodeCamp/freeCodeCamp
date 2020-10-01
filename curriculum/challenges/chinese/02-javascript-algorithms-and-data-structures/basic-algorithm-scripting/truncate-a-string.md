@@ -2,7 +2,7 @@
 id: ac6993d51946422351508a41
 challengeType: 5
 videoUrl: ''
-localeTitle: 截断字符串
+title: 截断字符串
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7fb3367417b2b2512bfc
 challengeType: 2
 forumTopicId: 301522
-localeTitle: 给 package.json 添加一个描述
+title: 给 package.json 添加一个描述
 ---
 
 ## Description

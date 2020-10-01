@@ -2,7 +2,7 @@
 id: 587d78af367417b2b2512b04
 challengeType: 3
 forumTopicId: 301144
-localeTitle: 制作一个产品登录页
+title: 制作一个产品登录页
 ---
 
 ## Description

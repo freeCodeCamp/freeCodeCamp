@@ -2,7 +2,7 @@
 id: 5900f39a1000cf542c50fead
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题46：哥德巴赫的另一个猜想
+title: 问题46：哥德巴赫的另一个猜想
 ---
 
 ## Description

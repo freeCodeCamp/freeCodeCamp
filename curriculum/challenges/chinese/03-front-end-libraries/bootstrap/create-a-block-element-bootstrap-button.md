@@ -2,7 +2,7 @@
 id: bad87fee1348cd8acef08812
 challengeType: 0
 forumTopicId: 16810
-localeTitle: 创建一个 Bootstrap 块级元素
+title: 创建一个 Bootstrap 块级元素
 ---
 
 ## Description

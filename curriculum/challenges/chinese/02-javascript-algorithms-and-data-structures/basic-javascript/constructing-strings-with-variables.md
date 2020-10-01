@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244b9
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqk8rf4'
 forumTopicId: 16805
-localeTitle: 用变量构造字符串
+title: 用变量构造字符串
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7b8c367417b2b2512b54
 challengeType: 1
 forumTopicId: 301220
-localeTitle: 使用 getter 和 setter 来控制对象的访问
+title: 使用 getter 和 setter 来控制对象的访问
 ---
 
 ## Description

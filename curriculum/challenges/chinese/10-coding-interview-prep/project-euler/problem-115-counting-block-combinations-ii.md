@@ -2,7 +2,7 @@
 id: 5900f3df1000cf542c50fef1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题115：计数块组合II
+title: 问题115：计数块组合II
 ---
 
 ## Description

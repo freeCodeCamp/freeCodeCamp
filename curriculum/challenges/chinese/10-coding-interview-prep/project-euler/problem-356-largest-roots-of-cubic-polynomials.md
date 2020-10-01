@@ -2,7 +2,7 @@
 id: 5900f4d01000cf542c50ffe3
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题356：三次多项式的最大根
+title: 问题356：三次多项式的最大根
 ---
 
 ## Description

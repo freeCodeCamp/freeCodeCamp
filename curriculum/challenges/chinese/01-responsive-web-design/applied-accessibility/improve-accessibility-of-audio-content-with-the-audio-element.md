@@ -3,7 +3,7 @@ id: 587d7789367417b2b2512aa4
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVkcZ'
 forumTopicId: 301014
-localeTitle: 使用 audio 元素提高音频内容的可访问性
+title: 使用 audio 元素提高音频内容的可访问性
 ---
 
 ## Description

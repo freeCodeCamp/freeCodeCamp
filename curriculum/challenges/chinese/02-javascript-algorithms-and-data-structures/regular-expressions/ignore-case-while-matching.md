@@ -2,7 +2,7 @@
 id: 587d7db4367417b2b2512b91
 challengeType: 1
 forumTopicId: 301344
-localeTitle: 匹配时忽略大小写
+title: 匹配时忽略大小写
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5a7dad05be01840e1778a0d1
 challengeType: 3
 videoUrl: ''
-localeTitle: Fractran
+title: Fractran
 ---
 
 ## Description

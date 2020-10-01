@@ -3,7 +3,7 @@ id: 587d78b1367417b2b2512b0c
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-localeTitle: 使排版根据设备尺寸自如响应
+title: 使排版根据设备尺寸自如响应
 ---
 
 ## Description

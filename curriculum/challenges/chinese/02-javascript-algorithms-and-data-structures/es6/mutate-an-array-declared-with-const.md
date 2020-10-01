@@ -2,7 +2,7 @@
 id: 587d7b87367417b2b2512b42
 challengeType: 1
 forumTopicId: 301206
-localeTitle: 改变一个用 const 声明的数组
+title: 改变一个用 const 声明的数组
 ---
 
 ## Description

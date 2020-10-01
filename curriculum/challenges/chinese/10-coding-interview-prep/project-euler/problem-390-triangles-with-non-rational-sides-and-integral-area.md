@@ -2,7 +2,7 @@
 id: 5900f4f21000cf542c510005
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题390：具有非理性边和积分面积的三角形
+title: 问题390：具有非理性边和积分面积的三角形
 ---
 
 ## Description

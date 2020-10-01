@@ -2,7 +2,7 @@
 id: 5900f3c51000cf542c50fed6
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题88：产品总和数
+title: 问题88：产品总和数
 ---
 
 ## Description

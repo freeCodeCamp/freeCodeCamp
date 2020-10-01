@@ -2,7 +2,7 @@
 id: 5900f3931000cf542c50fea6
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题39：整数直角三角形
+title: 问题39：整数直角三角形
 ---
 
 ## Description

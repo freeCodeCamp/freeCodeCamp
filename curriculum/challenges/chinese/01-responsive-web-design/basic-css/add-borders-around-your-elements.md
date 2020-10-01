@@ -3,7 +3,7 @@ id: bad87fee1348bd9bedf08813
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 forumTopicId: 16630
-localeTitle: 在元素周围添加边框
+title: 在元素周围添加边框
 ---
 
 ## Description

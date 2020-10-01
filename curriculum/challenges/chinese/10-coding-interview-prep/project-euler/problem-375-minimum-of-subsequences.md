@@ -2,7 +2,7 @@
 id: 5900f4e41000cf542c50fff5
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题375：最小子序列
+title: 问题375：最小子序列
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4531000cf542c50ff65
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题230：斐波纳契语
+title: 问题230：斐波纳契语
 ---
 
 ## Description

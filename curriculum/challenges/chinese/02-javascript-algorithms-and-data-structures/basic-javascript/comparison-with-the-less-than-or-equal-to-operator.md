@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244d7
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNVR7Am'
 forumTopicId: 16788
-localeTitle: 小于或等于运算符
+title: 小于或等于运算符
 ---
 
 ## Description

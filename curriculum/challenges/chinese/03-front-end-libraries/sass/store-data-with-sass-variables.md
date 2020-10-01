@@ -2,7 +2,7 @@
 id: 587d7dbd367417b2b2512bb4
 challengeType: 0
 forumTopicId: 301460
-localeTitle: 用 Sass 变量存储数据
+title: 用 Sass 变量存储数据
 ---
 
 ## Description

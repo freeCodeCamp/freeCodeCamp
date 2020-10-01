@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244a8
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEanysE'
 forumTopicId: 18310
-localeTitle: 使用赋值运算符存储值
+title: 使用赋值运算符存储值
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 587d781c367417b2b2512ac0
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081
-localeTitle: 使用 text-transform 属性给文本添加大写效果
+title: 使用 text-transform 属性给文本添加大写效果
 ---
 
 ## Description

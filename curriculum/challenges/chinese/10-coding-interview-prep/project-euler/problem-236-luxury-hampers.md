@@ -2,7 +2,7 @@
 id: 5900f4591000cf542c50ff6b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题236：豪华礼篮
+title: 问题236：豪华礼篮
 ---
 
 ## Description

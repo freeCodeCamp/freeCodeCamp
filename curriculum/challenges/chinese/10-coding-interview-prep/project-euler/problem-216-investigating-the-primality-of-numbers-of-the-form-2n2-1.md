@@ -2,7 +2,7 @@
 id: 5900f4451000cf542c50ff57
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题216：调查2n2-1形式的数字的素数
+title: 问题216：调查2n2-1形式的数字的素数
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7dae367417b2b2512b7a
 challengeType: 1
 forumTopicId: 301337
-localeTitle: 使用 instance of 验证对象的构造函数
+title: 使用 instance of 验证对象的构造函数
 ---
 
 ## Description

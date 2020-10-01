@@ -2,7 +2,7 @@
 id: a202eed8fc186c8434cb6d61
 challengeType: 5
 videoUrl: ''
-localeTitle: 反转字符串
+title: 反转字符串
 ---
 
 ## Description

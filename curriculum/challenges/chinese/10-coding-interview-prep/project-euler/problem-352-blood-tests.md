@@ -2,7 +2,7 @@
 id: 5900f4cd1000cf542c50ffdf
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题352：验血
+title: 问题352：验血
 ---
 
 ## Description

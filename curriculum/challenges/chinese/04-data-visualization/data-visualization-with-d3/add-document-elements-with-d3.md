@@ -2,7 +2,7 @@
 id: 587d7fa6367417b2b2512bc2
 challengeType: 6
 forumTopicId: 301474
-localeTitle: 用 D3 给文档添加元素
+title: 用 D3 给文档添加元素
 ---
 
 ## Description

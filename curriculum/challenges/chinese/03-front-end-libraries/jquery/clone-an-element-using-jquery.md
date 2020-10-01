@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aed508826
 challengeType: 6
 forumTopicId: 16780
-localeTitle: 使用 jQuery 克隆元素
+title: 使用 jQuery 克隆元素
 ---
 
 ## Description

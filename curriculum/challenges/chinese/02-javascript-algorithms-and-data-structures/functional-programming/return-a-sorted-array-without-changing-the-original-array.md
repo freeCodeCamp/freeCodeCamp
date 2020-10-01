@@ -2,7 +2,7 @@
 id: 587d7da9367417b2b2512b6a
 challengeType: 1
 forumTopicId: 301237
-localeTitle: 在不更改原始数组的前提下返回排序后的数组
+title: 在不更改原始数组的前提下返回排序后的数组
 ---
 
 ## Description

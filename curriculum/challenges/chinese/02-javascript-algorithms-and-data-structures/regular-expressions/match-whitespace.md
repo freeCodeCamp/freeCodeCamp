@@ -2,7 +2,7 @@
 id: 587d7db8367417b2b2512ba3
 challengeType: 1
 forumTopicId: 301359
-localeTitle: 匹配空白字符
+title: 匹配空白字符
 ---
 
 ## Description

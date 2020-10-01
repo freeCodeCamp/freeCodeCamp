@@ -2,7 +2,7 @@
 id: 5900f4f91000cf542c51000c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题397：抛物线上的三角形
+title: 问题397：抛物线上的三角形
 ---
 
 ## Description

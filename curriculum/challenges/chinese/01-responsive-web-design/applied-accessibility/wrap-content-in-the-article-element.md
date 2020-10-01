@@ -3,7 +3,7 @@ id: 587d774e367417b2b2512aa0
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp79S3'
 forumTopicId: 301029
-localeTitle: 使用 article 元素包裹文章内容
+title: 使用 article 元素包裹文章内容
 ---
 
 ## Description

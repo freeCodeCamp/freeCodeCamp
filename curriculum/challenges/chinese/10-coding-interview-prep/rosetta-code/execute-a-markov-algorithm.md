@@ -2,7 +2,7 @@
 id: 59e09e6d412c5939baa02d16
 challengeType: 5
 videoUrl: ''
-localeTitle: 执行马尔可夫算法
+title: 执行马尔可夫算法
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7daf367417b2b2512b80
 challengeType: 1
 forumTopicId: 301323
-localeTitle: 更改原型时，记得设置构造函数属性
+title: 更改原型时，记得设置构造函数属性
 ---
 
 ## Description

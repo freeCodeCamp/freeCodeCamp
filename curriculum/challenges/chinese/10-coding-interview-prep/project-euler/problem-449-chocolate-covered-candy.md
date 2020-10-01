@@ -2,7 +2,7 @@
 id: 5900f52d1000cf542c510040
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题449：巧克力糖果
+title: 问题449：巧克力糖果
 ---
 
 ## Description

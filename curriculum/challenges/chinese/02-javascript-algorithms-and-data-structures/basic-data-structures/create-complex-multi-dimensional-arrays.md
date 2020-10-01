@@ -2,7 +2,7 @@
 id: 587d7b7b367417b2b2512b16
 challengeType: 1
 forumTopicId: 301159
-localeTitle: 创建复杂的多维数组
+title: 创建复杂的多维数组
 ---
 
 ## Description

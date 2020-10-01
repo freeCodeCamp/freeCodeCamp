@@ -3,7 +3,7 @@ id: bd7123c9c448eddfaeb5bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqEAd'
 forumTopicId: 18182
-localeTitle: 查找字符串的长度
+title: 查找字符串的长度
 ---
 
 ## Description

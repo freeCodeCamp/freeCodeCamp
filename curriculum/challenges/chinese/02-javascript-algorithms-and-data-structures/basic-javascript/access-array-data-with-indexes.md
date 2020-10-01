@@ -3,7 +3,7 @@ id: 56bbb991ad1ed5201cd392ca
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
 forumTopicId: 16158
-localeTitle: 通过索引访问数组中的数据
+title: 通过索引访问数组中的数据
 ---
 
 ## Description

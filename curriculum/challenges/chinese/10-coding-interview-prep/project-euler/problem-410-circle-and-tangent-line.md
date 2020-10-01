@@ -2,7 +2,7 @@
 id: 5900f5071000cf542c510018
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题410：圆和切线
+title: 问题410：圆和切线
 ---
 
 ## Description

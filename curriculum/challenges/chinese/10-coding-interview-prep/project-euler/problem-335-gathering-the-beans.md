@@ -2,7 +2,7 @@
 id: 5900f4bd1000cf542c50ffce
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题335：收集豆子
+title: 问题335：收集豆子
 ---
 
 ## Description

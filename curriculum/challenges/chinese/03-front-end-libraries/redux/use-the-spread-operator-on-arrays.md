@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036159
 challengeType: 6
 forumTopicId: 301452
-localeTitle: 在数组中使用扩展运算符
+title: 在数组中使用扩展运算符
 ---
 
 ## Description

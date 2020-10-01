@@ -2,7 +2,7 @@
 id: 5900f5001000cf542c510013
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题403：由抛物线和直线包围的格点
+title: 问题403：由抛物线和直线包围的格点
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 587d7787367417b2b2512aa1
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
 forumTopicId: 301023
-localeTitle: 使用 header 元素使屏幕阅读器更容易导航
+title: 使用 header 元素使屏幕阅读器更容易导航
 ---
 
 ## Description

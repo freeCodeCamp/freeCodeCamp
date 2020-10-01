@@ -2,7 +2,7 @@
 id: 587d7fb5367417b2b2512c04
 challengeType: 2
 forumTopicId: 301530
-localeTitle: 从依赖项中删除包
+title: 从依赖项中删除包
 ---
 
 ## Description

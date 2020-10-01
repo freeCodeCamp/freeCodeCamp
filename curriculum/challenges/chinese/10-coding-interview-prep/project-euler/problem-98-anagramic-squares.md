@@ -2,7 +2,7 @@
 id: 5900f3cf1000cf542c50fee1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题98：Anagramic正方形
+title: 问题98：Anagramic正方形
 ---
 
 ## Description

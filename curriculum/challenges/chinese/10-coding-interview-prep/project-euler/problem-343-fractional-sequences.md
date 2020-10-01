@@ -2,7 +2,7 @@
 id: 5900f4c41000cf542c50ffd6
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题343：分数序列
+title: 问题343：分数序列
 ---
 
 ## Description

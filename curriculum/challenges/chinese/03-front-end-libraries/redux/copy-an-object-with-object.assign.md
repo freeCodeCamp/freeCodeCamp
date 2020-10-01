@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403615b
 challengeType: 6
 forumTopicId: 301437
-localeTitle: 使用 Object.assign 拷贝对象
+title: 使用 Object.assign 拷贝对象
 ---
 
 ## Description

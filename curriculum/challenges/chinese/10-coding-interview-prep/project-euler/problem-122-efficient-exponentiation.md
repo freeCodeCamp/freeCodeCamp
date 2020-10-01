@@ -2,7 +2,7 @@
 id: 5900f3e61000cf542c50fef9
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题122：有效取幂
+title: 问题122：有效取幂
 ---
 
 ## Description

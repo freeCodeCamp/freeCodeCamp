@@ -2,7 +2,7 @@
 id: 587d7daa367417b2b2512b6b
 challengeType: 1
 forumTopicId: 18305
-localeTitle: 使用 split 方法将字符串拆分成数组
+title: 使用 split 方法将字符串拆分成数组
 ---
 
 ## Description

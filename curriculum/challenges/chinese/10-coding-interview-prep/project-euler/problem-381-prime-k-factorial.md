@@ -2,7 +2,7 @@
 id: 5900f4ea1000cf542c50fffc
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题381：（prime-k）阶乘
+title: 问题381：（prime-k）阶乘
 ---
 
 ## Description

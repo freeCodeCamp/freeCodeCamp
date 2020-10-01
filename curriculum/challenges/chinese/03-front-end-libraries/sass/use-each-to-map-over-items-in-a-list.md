@@ -2,7 +2,7 @@
 id: 587d7dbf367417b2b2512bba
 challengeType: 0
 forumTopicId: 301461
-localeTitle: 使用 @each 遍历列表中的项目
+title: 使用 @each 遍历列表中的项目
 ---
 
 ## Description

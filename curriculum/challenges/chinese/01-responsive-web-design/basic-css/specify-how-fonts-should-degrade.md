@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08808
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
-localeTitle: 字体如何优雅降级
+title: 字体如何优雅降级
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f5411000cf542c510054
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题468：二项式系数的平滑除数
+title: 问题468：二项式系数的平滑除数
 ---
 
 ## Description

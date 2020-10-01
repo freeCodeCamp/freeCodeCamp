@@ -2,7 +2,7 @@
 id: 587d824f367417b2b2512c5c
 challengeType: 2
 forumTopicId: 301595
-localeTitle: 使用 headless 浏览器运行功能测试 (1)
+title: 使用 headless 浏览器运行功能测试 (1)
 ---
 
 ## Description

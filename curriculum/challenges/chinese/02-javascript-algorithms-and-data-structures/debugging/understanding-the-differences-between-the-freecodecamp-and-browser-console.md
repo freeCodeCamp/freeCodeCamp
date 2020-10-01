@@ -2,7 +2,7 @@
 id: 587d7b83367417b2b2512b37
 challengeType: 1
 forumTopicId: 301193
-localeTitle: 了解 freeCodeCamp 和浏览器控制台之间的差异
+title: 了解 freeCodeCamp 和浏览器控制台之间的差异
 ---
 
 ## Description

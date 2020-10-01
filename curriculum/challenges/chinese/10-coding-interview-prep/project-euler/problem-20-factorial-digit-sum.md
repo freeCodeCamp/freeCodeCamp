@@ -2,7 +2,7 @@
 id: 5900f3801000cf542c50fe93
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题20：因子数字和
+title: 问题20：因子数字和
 ---
 
 ## Description

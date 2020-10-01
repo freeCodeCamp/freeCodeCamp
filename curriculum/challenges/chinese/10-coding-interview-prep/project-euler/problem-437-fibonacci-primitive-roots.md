@@ -2,7 +2,7 @@
 id: 5900f5241000cf542c510036
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题437：斐波那契原始根
+title: 问题437：斐波那契原始根
 ---
 
 ## Description

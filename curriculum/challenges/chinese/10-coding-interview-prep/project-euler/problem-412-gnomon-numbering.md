@@ -2,7 +2,7 @@
 id: 5900f5081000cf542c51001a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题412：Gnomon编号
+title: 问题412：Gnomon编号
 ---
 
 ## Description

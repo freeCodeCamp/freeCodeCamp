@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036161
 challengeType: 6
 forumTopicId: 301396
-localeTitle: 了解自动闭合的 JSX 标记
+title: 了解自动闭合的 JSX 标记
 ---
 
 ## Description

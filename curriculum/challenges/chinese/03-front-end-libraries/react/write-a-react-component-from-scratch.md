@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036168
 challengeType: 6
 forumTopicId: 301424
-localeTitle: 从零开始写一个 React 组件
+title: 从零开始写一个 React 组件
 ---
 
 ## Description

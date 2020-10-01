@@ -2,7 +2,7 @@
 id: 5900f4c81000cf542c50ffda
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题345：矩阵求和
+title: 问题345：矩阵求和
 ---
 
 ## Description

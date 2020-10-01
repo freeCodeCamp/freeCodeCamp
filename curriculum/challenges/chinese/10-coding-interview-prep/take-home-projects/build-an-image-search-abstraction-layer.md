@@ -2,7 +2,7 @@
 id: bd7158d8c443edefaeb5bdee
 challengeType: 4
 videoUrl: ''
-localeTitle: 构建图像搜索抽象层
+title: 构建图像搜索抽象层
 ---
 
 ## Description

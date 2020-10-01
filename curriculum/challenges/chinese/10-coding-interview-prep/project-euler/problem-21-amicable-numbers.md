@@ -2,7 +2,7 @@
 id: 5900f3811000cf542c50fe94
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题21：友好的数字
+title: 问题21：友好的数字
 ---
 
 ## Description

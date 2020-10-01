@@ -2,7 +2,7 @@
 id: 587d7b7b367417b2b2512b17
 challengeType: 1
 forumTopicId: 301156
-localeTitle: 组合使用数组和扩展运算符
+title: 组合使用数组和扩展运算符
 ---
 
 ## Description

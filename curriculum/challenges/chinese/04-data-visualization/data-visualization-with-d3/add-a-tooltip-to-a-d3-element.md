@@ -2,7 +2,7 @@
 id: 587d7faa367417b2b2512bd6
 challengeType: 6
 forumTopicId: 301470
-localeTitle: 给 D3 元素添加工具提示
+title: 给 D3 元素添加工具提示
 ---
 
 ## Description

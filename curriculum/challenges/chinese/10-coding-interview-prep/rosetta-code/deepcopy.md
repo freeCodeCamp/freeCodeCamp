@@ -2,7 +2,7 @@
 id: 596a8888ab7c01048de257d5
 challengeType: 5
 videoUrl: ''
-localeTitle: deepcopy的
+title: deepcopy的
 ---
 
 ## Description

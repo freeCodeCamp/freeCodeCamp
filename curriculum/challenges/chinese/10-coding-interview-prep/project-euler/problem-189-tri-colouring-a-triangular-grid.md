@@ -2,7 +2,7 @@
 id: 5900f4291000cf542c50ff3c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题189：三角网格三色
+title: 问题189：三角网格三色
 ---
 
 ## Description

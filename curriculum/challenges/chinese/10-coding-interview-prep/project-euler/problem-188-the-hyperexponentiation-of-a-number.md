@@ -2,7 +2,7 @@
 id: 5900f4291000cf542c50ff3b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题188：数字的过度扩展
+title: 问题188：数字的过度扩展
 ---
 
 ## Description

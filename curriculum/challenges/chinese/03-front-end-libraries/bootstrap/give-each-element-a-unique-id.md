@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aec908855
 challengeType: 0
 forumTopicId: 18191
-localeTitle: 给每个元素一个唯一的 id
+title: 给每个元素一个唯一的 id
 ---
 
 ## Description

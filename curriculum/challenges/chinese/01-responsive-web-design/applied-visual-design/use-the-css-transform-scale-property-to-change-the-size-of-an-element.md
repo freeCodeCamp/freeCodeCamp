@@ -3,7 +3,7 @@ id: 587d78a5367417b2b2512ad9
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZVSg'
 forumTopicId: 301076
-localeTitle: 使用 CSS Transform scale 属性可以更改元素的大小
+title: 使用 CSS Transform scale 属性可以更改元素的大小
 ---
 
 ## Description

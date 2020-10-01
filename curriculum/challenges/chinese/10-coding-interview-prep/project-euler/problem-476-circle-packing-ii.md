@@ -2,7 +2,7 @@
 id: 5900f5481000cf542c51005b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题476：圆形包装II
+title: 问题476：圆形包装II
 ---
 
 ## Description

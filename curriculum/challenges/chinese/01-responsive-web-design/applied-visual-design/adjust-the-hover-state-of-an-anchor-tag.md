@@ -3,7 +3,7 @@ id: 587d781d367417b2b2512ac8
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
-localeTitle: 调整锚点的悬停状态
+title: 调整锚点的悬停状态
 ---
 
 ## Description

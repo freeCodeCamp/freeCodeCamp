@@ -2,7 +2,7 @@
 id: 5a23c84252665b21eecc7e82
 challengeType: 5
 videoUrl: ''
-localeTitle: 最大公约数
+title: 最大公约数
 ---
 
 ## Description

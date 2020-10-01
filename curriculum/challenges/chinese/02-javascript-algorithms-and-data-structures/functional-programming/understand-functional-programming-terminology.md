@@ -2,7 +2,7 @@
 id: 587d7b8e367417b2b2512b5c
 challengeType: 1
 forumTopicId: 301240
-localeTitle: 了解函数式编程术语
+title: 了解函数式编程术语
 ---
 
 ## Description

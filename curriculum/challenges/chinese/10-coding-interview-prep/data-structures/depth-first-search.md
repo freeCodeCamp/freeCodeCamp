@@ -2,7 +2,7 @@
 id: 587d825d367417b2b2512c96
 challengeType: 1
 videoUrl: ''
-localeTitle: 深度优先搜索
+title: 深度优先搜索
 ---
 
 ## Description

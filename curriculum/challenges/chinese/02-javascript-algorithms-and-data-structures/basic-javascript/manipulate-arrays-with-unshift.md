@@ -3,7 +3,7 @@ id: 56bbb991ad1ed5201cd392ce
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
-localeTitle: 使用 unshift() 操作数组
+title: 使用 unshift() 操作数组
 ---
 
 ## Description

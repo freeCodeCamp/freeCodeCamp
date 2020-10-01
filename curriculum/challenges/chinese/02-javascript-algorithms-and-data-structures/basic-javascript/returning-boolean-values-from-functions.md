@@ -3,7 +3,7 @@ id: 5679ceb97cbaa8c51670a16b
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
-localeTitle: 从函数返回布尔值
+title: 从函数返回布尔值
 ---
 
 ## Description

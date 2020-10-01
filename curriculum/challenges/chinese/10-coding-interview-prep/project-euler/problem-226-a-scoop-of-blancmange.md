@@ -2,7 +2,7 @@
 id: 5900f4511000cf542c50ff62
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题226：Blancmange的一个独家新闻
+title: 问题226：Blancmange的一个独家新闻
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f46e1000cf542c50ff80
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题257：角度平分器
+title: 问题257：角度平分器
 ---
 
 ## Description

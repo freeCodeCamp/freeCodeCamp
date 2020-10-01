@@ -2,7 +2,7 @@
 id: 587d7fa5367417b2b2512bbd
 challengeType: 0
 forumTopicId: 301456
-localeTitle: 将一组CSS样式扩展到另一个元素
+title: 将一组CSS样式扩展到另一个元素
 ---
 
 ## Description

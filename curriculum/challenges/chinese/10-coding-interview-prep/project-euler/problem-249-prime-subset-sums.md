@@ -2,7 +2,7 @@
 id: 5900f4671000cf542c50ff79
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题249：Prime子集总和
+title: 问题249：Prime子集总和
 ---
 
 ## Description

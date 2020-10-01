@@ -2,7 +2,7 @@
 id: 594810f028c0303b75339acc
 challengeType: 5
 videoUrl: ''
-localeTitle: ABC问题
+title: ABC问题
 ---
 
 ## Description

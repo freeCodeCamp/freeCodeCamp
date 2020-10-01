@@ -2,7 +2,7 @@
 id: bd7158d8c442eddfaeb5bd17
 challengeType: 3
 forumTopicId: 301371
-localeTitle: 构建一个 JavaScript 计算器
+title: 构建一个 JavaScript 计算器
 ---
 
 ## Description

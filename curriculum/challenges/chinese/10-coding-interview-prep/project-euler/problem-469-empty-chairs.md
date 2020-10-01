@@ -2,7 +2,7 @@
 id: 5900f5411000cf542c510053
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题469：空椅子
+title: 问题469：空椅子
 ---
 
 ## Description

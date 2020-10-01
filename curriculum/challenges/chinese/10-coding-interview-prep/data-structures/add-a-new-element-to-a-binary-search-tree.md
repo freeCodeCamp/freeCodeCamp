@@ -2,7 +2,7 @@
 id: 587d8257367417b2b2512c7b
 challengeType: 1
 videoUrl: ''
-localeTitle: 将新元素添加到二叉搜索树
+title: 将新元素添加到二叉搜索树
 ---
 
 ## Description

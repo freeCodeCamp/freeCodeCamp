@@ -3,7 +3,7 @@ id: 587d78a5367417b2b2512ad6
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4dpt9'
 forumTopicId: 301047
-localeTitle: 创建一个 CSS 线性渐变
+title: 创建一个 CSS 线性渐变
 ---
 
 ## Description

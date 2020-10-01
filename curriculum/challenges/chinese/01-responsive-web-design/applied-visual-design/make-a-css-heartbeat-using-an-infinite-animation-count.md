@@ -3,7 +3,7 @@ id: 587d78a8367417b2b2512ae4
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cDZpDUr'
 forumTopicId: 301062
-localeTitle: 使用无限的动画计数制作 CSS 心跳
+title: 使用无限的动画计数制作 CSS 心跳
 ---
 
 ## Description

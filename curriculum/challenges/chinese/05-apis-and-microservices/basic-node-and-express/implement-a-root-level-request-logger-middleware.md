@@ -2,7 +2,7 @@
 id: 587d7fb1367417b2b2512bf3
 challengeType: 2
 forumTopicId: 301514
-localeTitle: 实现一个根层的请求记录器中间件
+title: 实现一个根层的请求记录器中间件
 ---
 
 ## Description

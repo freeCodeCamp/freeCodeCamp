@@ -2,7 +2,7 @@
 id: 5900f5081000cf542c510019
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题411：上坡路径
+title: 问题411：上坡路径
 ---
 
 ## Description

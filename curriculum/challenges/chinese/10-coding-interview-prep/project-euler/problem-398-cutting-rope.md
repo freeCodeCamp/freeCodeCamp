@@ -2,7 +2,7 @@
 id: 5900f4fa1000cf542c51000d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题398：切割绳索
+title: 问题398：切割绳索
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f5041000cf542c510016
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题407：幂等元素
+title: 问题407：幂等元素
 ---
 
 ## Description

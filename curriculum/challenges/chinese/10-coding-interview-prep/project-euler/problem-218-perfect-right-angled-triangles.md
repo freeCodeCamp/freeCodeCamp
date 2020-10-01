@@ -2,7 +2,7 @@
 id: 5900f4461000cf542c50ff59
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题218：完美的直角三角形
+title: 问题218：完美的直角三角形
 ---
 
 ## Description

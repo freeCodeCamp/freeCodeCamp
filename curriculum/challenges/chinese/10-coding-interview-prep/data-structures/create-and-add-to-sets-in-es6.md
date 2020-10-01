@@ -2,7 +2,7 @@
 id: 587d8254367417b2b2512c70
 challengeType: 1
 videoUrl: ''
-localeTitle: 在ES6中创建和添加集
+title: 在ES6中创建和添加集
 ---
 
 ## Description

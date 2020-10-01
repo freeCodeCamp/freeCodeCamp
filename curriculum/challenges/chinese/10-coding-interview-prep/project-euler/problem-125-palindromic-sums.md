@@ -2,7 +2,7 @@
 id: 5900f3e91000cf542c50fefc
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题125：回文总和
+title: 问题125：回文总和
 ---
 
 ## Description

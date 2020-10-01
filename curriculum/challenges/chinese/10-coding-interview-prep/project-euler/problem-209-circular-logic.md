@@ -2,7 +2,7 @@
 id: 5900f43e1000cf542c50ff4f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题209：循环逻辑
+title: 问题209：循环逻辑
 ---
 
 ## Description

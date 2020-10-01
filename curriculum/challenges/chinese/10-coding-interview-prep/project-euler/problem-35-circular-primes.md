@@ -2,7 +2,7 @@
 id: 5900f38f1000cf542c50fea2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题35：循环素数
+title: 问题35：循环素数
 ---
 
 ## Description

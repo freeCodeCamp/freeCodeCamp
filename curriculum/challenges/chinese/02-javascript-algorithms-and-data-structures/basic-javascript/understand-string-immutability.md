@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244ba
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVaUR'
 forumTopicId: 18331
-localeTitle: 了解字符串的不变性
+title: 了解字符串的不变性
 ---
 
 ## Description

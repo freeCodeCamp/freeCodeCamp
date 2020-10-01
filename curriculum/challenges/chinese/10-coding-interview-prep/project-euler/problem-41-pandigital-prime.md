@@ -2,7 +2,7 @@
 id: 5900f3951000cf542c50fea8
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题41：Pandigital prime
+title: 问题41：Pandigital prime
 ---
 
 ## Description

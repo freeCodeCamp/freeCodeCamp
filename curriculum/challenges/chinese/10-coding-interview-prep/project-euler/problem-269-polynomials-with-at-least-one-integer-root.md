@@ -2,7 +2,7 @@
 id: 5900f4791000cf542c50ff8c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题269：具有至少一个整数根的多项式
+title: 问题269：具有至少一个整数根的多项式
 ---
 
 ## Description

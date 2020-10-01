@@ -2,7 +2,7 @@
 id: 5900f47e1000cf542c50ff90
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题273：正方形的总和
+title: 问题273：正方形的总和
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 5a2efd662fb457916e1fe604
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqWGcp'
 forumTopicId: 301172
-localeTitle: do...while 循环
+title: do...while 循环
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d8248367417b2b2512c3c
 challengeType: 2
 forumTopicId: 301573
-localeTitle: 要求浏览器通过HTTPS访问您的站点仅限于使用helmet.hsts（）
+title: 要求浏览器通过HTTPS访问您的站点仅限于使用helmet.hsts（）
 ---
 
 ## Description

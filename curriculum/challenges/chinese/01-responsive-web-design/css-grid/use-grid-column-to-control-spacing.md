@@ -3,7 +3,7 @@ id: 5a90372638fddaf9a66b5d38
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cnzkDSr'
 forumTopicId: 301136
-localeTitle: 使用 grid-column 来控制空间大小
+title: 使用 grid-column 来控制空间大小
 ---
 
 ## Description

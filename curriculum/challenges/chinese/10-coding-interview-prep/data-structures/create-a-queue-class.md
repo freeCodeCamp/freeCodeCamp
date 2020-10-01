@@ -2,7 +2,7 @@
 id: 587d8250367417b2b2512c60
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建队列类
+title: 创建队列类
 ---
 
 ## Description

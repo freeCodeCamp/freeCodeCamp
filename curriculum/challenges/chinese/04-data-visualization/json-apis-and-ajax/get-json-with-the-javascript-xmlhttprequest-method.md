@@ -2,7 +2,7 @@
 id: 587d7fae367417b2b2512be3
 challengeType: 6
 forumTopicId: 301502
-localeTitle: 使用 XMLHttpRequest 方法获取 JSON
+title: 使用 XMLHttpRequest 方法获取 JSON
 ---
 
 ## Description

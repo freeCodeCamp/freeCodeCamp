@@ -2,7 +2,7 @@
 id: 587d8247367417b2b2512c36
 challengeType: 2
 forumTopicId: 301581
-localeTitle: 安装和引入 Helmet
+title: 安装和引入 Helmet
 ---
 
 ## Description

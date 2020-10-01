@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08828
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cQ3B8TM'
 forumTopicId: 16824
-localeTitle: 创建一个有序列表
+title: 创建一个有序列表
 ---
 
 ## Description

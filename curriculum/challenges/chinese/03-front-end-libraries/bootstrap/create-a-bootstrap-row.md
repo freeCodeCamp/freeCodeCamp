@@ -2,7 +2,7 @@
 id: bad87fee1348bd9bec908846
 challengeType: 0
 forumTopicId: 16813
-localeTitle: 创建一个 Bootstrap Row
+title: 创建一个 Bootstrap Row
 ---
 
 ## Description

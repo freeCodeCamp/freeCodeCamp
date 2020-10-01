@@ -2,7 +2,7 @@
 id: 5900f43f1000cf542c50ff52
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题211：除数平方和
+title: 问题211：除数平方和
 ---
 
 ## Description

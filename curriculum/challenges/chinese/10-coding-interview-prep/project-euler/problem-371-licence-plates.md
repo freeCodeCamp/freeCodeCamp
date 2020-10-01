@@ -2,7 +2,7 @@
 id: 5900f4e01000cf542c50fff2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题371：车牌
+title: 问题371：车牌
 ---
 
 ## Description

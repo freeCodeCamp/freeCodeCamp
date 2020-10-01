@@ -3,7 +3,7 @@ id: 587d78ac367417b2b2512af5
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103
-localeTitle: 使用 flex-direction 在嵌入推文中创建一列
+title: 使用 flex-direction 在嵌入推文中创建一列
 ---
 
 ## Description

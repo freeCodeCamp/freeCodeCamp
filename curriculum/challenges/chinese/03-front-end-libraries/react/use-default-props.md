@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403616b
 challengeType: 6
 forumTopicId: 301418
-localeTitle: 使用默认的 Props
+title: 使用默认的 Props
 ---
 
 ## Description

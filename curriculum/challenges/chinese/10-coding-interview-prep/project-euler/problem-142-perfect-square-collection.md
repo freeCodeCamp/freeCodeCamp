@@ -2,7 +2,7 @@
 id: 5900f3fa1000cf542c50ff0d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题142：完美的方形集合
+title: 问题142：完美的方形集合
 ---
 
 ## Description

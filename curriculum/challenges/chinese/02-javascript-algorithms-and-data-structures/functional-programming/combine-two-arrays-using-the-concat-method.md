@@ -2,7 +2,7 @@
 id: 587d7da9367417b2b2512b66
 challengeType: 1
 forumTopicId: 301229
-localeTitle: 使用 concat 方法组合两个数组
+title: 使用 concat 方法组合两个数组
 ---
 
 ## Description

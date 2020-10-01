@@ -2,7 +2,7 @@
 id: 5900f38a1000cf542c50fe9d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题30：数字n次方
+title: 问题30：数字n次方
 ---
 
 ## Description

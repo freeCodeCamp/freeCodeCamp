@@ -2,7 +2,7 @@
 id: 5900f5001000cf542c510012
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题404：交叉椭圆
+title: 问题404：交叉椭圆
 ---
 
 ## Description

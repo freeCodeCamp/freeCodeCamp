@@ -2,7 +2,7 @@
 id: 5900f41f1000cf542c50ff32
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题179：连续的正向除数
+title: 问题179：连续的正向除数
 ---
 
 ## Description

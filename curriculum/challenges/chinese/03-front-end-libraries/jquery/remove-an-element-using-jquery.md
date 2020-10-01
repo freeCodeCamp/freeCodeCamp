@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aed708826
 challengeType: 6
 forumTopicId: 18262
-localeTitle: 使用 jQuery 删除元素
+title: 使用 jQuery 删除元素
 ---
 
 ## Description

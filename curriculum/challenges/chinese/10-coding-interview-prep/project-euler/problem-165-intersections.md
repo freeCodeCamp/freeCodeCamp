@@ -2,7 +2,7 @@
 id: 5900f4111000cf542c50ff24
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题165：交叉口
+title: 问题165：交叉口
 ---
 
 ## Description

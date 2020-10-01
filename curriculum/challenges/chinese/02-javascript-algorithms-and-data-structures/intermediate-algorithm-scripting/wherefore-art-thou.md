@@ -2,7 +2,7 @@
 id: a8e512fbe388ac2f9198f0fa
 challengeType: 5
 forumTopicId: 16092
-localeTitle: 罗密欧与朱丽叶
+title: 罗密欧与朱丽叶
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 561acd10cb82ac38a17513bc
 challengeType: 7
 isHidden: false
 isPrivate: true
-localeTitle: 前端库证书
+title: 前端库证书
 ---
 
 ## Description

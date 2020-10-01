@@ -2,7 +2,7 @@
 id: 587d7b85367417b2b2512b39
 challengeType: 1
 forumTopicId: 301185
-localeTitle: 捕捉函数调用后缺少的左括号和右括号
+title: 捕捉函数调用后缺少的左括号和右括号
 ---
 
 ## Description

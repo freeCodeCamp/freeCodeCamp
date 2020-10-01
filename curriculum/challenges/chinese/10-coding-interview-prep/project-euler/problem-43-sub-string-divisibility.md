@@ -2,7 +2,7 @@
 id: 5900f3971000cf542c50feaa
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题43：子串可分性
+title: 问题43：子串可分性
 ---
 
 ## Description

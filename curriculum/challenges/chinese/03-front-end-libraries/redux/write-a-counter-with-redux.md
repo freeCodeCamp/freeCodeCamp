@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036157
 challengeType: 6
 forumTopicId: 301453
-localeTitle: 用 Redux 写一个计数器
+title: 用 Redux 写一个计数器
 ---
 
 ## Description

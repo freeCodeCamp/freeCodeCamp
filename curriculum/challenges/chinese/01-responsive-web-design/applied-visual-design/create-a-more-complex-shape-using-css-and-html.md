@@ -3,7 +3,7 @@ id: 587d78a6367417b2b2512ade
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPpz4fr'
 forumTopicId: 301050
-localeTitle: 使用 CSS 和 HTML 创建更复杂的形状
+title: 使用 CSS 和 HTML 创建更复杂的形状
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 594810f028c0303b75339ad0
 challengeType: 5
 videoUrl: ''
-localeTitle: 对齐列
+title: 对齐列
 ---
 
 ## Description

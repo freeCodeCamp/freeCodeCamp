@@ -2,7 +2,7 @@
 id: 5900f44e1000cf542c50ff60
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题225：Tribonacci非除数
+title: 问题225：Tribonacci非除数
 ---
 
 ## Description

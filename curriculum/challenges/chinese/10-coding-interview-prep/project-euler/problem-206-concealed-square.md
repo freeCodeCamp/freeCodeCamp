@@ -2,7 +2,7 @@
 id: 5900f43a1000cf542c50ff4d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题206：隐藏的广场
+title: 问题206：隐藏的广场
 ---
 
 ## Description

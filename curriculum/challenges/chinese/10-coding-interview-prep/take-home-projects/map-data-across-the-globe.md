@@ -2,7 +2,7 @@
 id: bd7108d8c242eddfaeb5bd13
 challengeType: 3
 videoUrl: ''
-localeTitle: 全球地图数据
+title: 全球地图数据
 ---
 
 ## Description

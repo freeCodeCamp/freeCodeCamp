@@ -3,7 +3,7 @@ id: bd7993c9ca9feddfaeb7bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZe9AW'
 forumTopicId: 18255
-localeTitle: 两个小数相除
+title: 两个小数相除
 ---
 
 ## Description

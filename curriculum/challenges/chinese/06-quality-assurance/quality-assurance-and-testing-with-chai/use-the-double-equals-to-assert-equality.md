@@ -2,7 +2,7 @@
 id: 587d824b367417b2b2512c4a
 challengeType: 2
 forumTopicId: 301609
-localeTitle: 用两个等号断言相等
+title: 用两个等号断言相等
 ---
 
 ## Description

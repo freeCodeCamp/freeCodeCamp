@@ -3,7 +3,7 @@ id: 56592a60ddddeae28f7aa8e1
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckND4Cq'
 forumTopicId: 16159
-localeTitle: 使用索引访问多维数组
+title: 使用索引访问多维数组
 ---
 
 ## Description

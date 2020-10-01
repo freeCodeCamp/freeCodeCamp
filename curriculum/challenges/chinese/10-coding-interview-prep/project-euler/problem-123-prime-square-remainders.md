@@ -2,7 +2,7 @@
 id: 5900f3e71000cf542c50fefa
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题123：素数正方形余数
+title: 问题123：素数正方形余数
 ---
 
 ## Description

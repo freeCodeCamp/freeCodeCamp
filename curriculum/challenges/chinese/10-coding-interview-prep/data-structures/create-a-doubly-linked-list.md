@@ -2,7 +2,7 @@
 id: 587d825a367417b2b2512c87
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建双向链接列表
+title: 创建双向链接列表
 ---
 
 ## Description

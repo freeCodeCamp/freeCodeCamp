@@ -2,7 +2,7 @@
 id: 5900f3861000cf542c50fe99
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题26：互惠周期
+title: 问题26：互惠周期
 ---
 
 ## Description

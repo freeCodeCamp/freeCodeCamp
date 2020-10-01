@@ -3,7 +3,7 @@ id: 587d781b367417b2b2512abc
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDqwA6'
 forumTopicId: 301032
-localeTitle: 调整文本的背景色
+title: 调整文本的背景色
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7b8b367417b2b2512b50
 challengeType: 1
 forumTopicId: 301224
-localeTitle: 用 ES6 编写简洁的函数声明
+title: 用 ES6 编写简洁的函数声明
 ---
 
 ## Description

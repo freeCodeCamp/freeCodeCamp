@@ -2,7 +2,7 @@
 id: 5900f5191000cf542c51002b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题428：圆圈项链
+title: 问题428：圆圈项链
 ---
 
 ## Description

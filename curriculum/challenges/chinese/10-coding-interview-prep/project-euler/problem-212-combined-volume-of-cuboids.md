@@ -2,7 +2,7 @@
 id: 5900f4411000cf542c50ff53
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题212：长方体的组合体积
+title: 问题212：长方体的组合体积
 ---
 
 ## Description

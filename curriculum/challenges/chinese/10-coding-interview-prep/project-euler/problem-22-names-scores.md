@@ -2,7 +2,7 @@
 id: 5a51eabcad78bf416f316e2a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题22：命名分数
+title: 问题22：命名分数
 ---
 
 ## Description

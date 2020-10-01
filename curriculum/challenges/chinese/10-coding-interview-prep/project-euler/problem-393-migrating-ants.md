@@ -2,7 +2,7 @@
 id: 5900f4f61000cf542c510008
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题393：迁移蚂蚁
+title: 问题393：迁移蚂蚁
 ---
 
 ## Description

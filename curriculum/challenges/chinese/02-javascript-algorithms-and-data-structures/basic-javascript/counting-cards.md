@@ -3,7 +3,7 @@ id: 565bbe00e9cc8ac0725390f4
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KE7ty'
 forumTopicId: 16809
-localeTitle: 21点游戏
+title: 21点游戏
 ---
 
 ## Description

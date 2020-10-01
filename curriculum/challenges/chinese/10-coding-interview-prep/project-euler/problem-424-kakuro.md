@@ -2,7 +2,7 @@
 id: 5900f5141000cf542c510026
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题424：九郎
+title: 问题424：九郎
 ---
 
 ## Description

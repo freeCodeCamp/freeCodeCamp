@@ -2,7 +2,7 @@
 id: bad87fee1348cd8acef08813
 challengeType: 0
 forumTopicId: 16770
-localeTitle: 使用 btn-info 调出可选操作
+title: 使用 btn-info 调出可选操作
 ---
 
 ## Description

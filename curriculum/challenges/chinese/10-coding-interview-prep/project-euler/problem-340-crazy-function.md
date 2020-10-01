@@ -2,7 +2,7 @@
 id: 5900f4c21000cf542c50ffd4
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题340：疯狂的功能
+title: 问题340：疯狂的功能
 ---
 
 ## Description

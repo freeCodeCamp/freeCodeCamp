@@ -2,7 +2,7 @@
 id: 5900f3fc1000cf542c50ff0f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题144：研究激光束的多次反射
+title: 问题144：研究激光束的多次反射
 ---
 
 ## Description

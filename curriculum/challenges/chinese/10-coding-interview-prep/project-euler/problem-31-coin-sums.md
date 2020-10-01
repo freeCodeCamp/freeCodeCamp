@@ -2,7 +2,7 @@
 id: 5900f38b1000cf542c50fe9e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题31：硬币总和
+title: 问题31：硬币总和
 ---
 
 ## Description

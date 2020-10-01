@@ -3,7 +3,7 @@ id: 5664820f61c48e80c9fa476c
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9ykNUR'
 forumTopicId: 18195
-localeTitle: 高尔夫代码
+title: 高尔夫代码
 ---
 
 ## Description

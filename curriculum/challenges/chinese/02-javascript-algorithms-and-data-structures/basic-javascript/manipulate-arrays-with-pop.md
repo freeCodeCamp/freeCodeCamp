@@ -3,7 +3,7 @@ id: 56bbb991ad1ed5201cd392cc
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
-localeTitle: 使用 pop() 操作数组
+title: 使用 pop() 操作数组
 ---
 
 ## Description

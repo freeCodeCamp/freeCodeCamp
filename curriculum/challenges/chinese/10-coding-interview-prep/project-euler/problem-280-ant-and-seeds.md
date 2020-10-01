@@ -2,7 +2,7 @@
 id: 5900f4841000cf542c50ff97
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题280：蚂蚁和种子
+title: 问题280：蚂蚁和种子
 ---
 
 ## Description

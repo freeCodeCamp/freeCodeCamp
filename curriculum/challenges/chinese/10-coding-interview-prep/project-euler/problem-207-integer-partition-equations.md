@@ -2,7 +2,7 @@
 id: 5900f43c1000cf542c50ff4e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题207：整数分区方程
+title: 问题207：整数分区方程
 ---
 
 ## Description

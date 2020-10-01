@@ -2,7 +2,7 @@
 id: 5900f39c1000cf542c50feaf
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题48：自我权力
+title: 问题48：自我权力
 ---
 
 ## Description

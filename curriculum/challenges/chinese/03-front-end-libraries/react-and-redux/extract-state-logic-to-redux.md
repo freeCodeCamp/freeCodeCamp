@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036143
 challengeType: 6
 forumTopicId: 301429
-localeTitle: 提取状态逻辑给 Redux
+title: 提取状态逻辑给 Redux
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: 587d78a5367417b2b2512ad7
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bmQh2'
 forumTopicId: 301072
-localeTitle: 使用 CSS 线性渐变创建条纹元素
+title: 使用 CSS 线性渐变创建条纹元素
 ---
 
 ## Description

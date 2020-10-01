@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244de
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
-localeTitle: 在 Switch 语句中添加默认选项
+title: 在 Switch 语句中添加默认选项
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f5231000cf542c510035
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题439：除数之和
+title: 问题439：除数之和
 ---
 
 ## Description

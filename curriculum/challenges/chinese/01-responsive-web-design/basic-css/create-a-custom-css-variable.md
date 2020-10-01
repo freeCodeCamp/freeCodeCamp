@@ -3,7 +3,7 @@ id: 5a9d726c424fe3d0e10cad11
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQd27Hr'
 forumTopicId: 301086
-localeTitle: 创建一个自定义的 CSS 变量
+title: 创建一个自定义的 CSS 变量
 ---
 
 ## Description

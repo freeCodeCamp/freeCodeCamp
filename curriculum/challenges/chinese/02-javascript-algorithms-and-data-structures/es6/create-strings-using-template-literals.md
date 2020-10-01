@@ -2,7 +2,7 @@
 id: 587d7b8a367417b2b2512b4e
 challengeType: 1
 forumTopicId: 301200
-localeTitle: 使用模板字面量创建字符串
+title: 使用模板字面量创建字符串
 ---
 
 ## Description

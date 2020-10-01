@@ -2,7 +2,7 @@
 id: 5900f3b01000cf542c50fec3
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题68：魔法5-gon戒指
+title: 问题68：魔法5-gon戒指
 ---
 
 ## Description

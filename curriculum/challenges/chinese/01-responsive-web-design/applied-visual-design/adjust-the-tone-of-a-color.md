@@ -3,7 +3,7 @@ id: 587d78a4367417b2b2512ad5
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDJvT7'
 forumTopicId: 301038
-localeTitle: 调整颜色的色调
+title: 调整颜色的色调
 ---
 
 ## Description

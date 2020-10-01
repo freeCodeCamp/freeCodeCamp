@@ -2,7 +2,7 @@
 id: 5900f4ed1000cf542c50fffe
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题384：Rudin-Shapiro序列
+title: 问题384：Rudin-Shapiro序列
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d7fb0367417b2b2512bee
 challengeType: 2
 forumTopicId: 301519
-localeTitle: 启动一个 Express 服务器
+title: 启动一个 Express 服务器
 ---
 
 ## Description

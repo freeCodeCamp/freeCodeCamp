@@ -2,7 +2,7 @@
 id: 5900f3b61000cf542c50fec9
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题74：数字因子链
+title: 问题74：数字因子链
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: bd7993c9c69feddfaeb8bdef
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQWAm'
 forumTopicId: 18309
-localeTitle: 使用 JavaScript 数组将多个值存储在一个变量中
+title: 使用 JavaScript 数组将多个值存储在一个变量中
 ---
 
 ## Description

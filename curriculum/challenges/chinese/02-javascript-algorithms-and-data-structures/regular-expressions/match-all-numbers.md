@@ -2,7 +2,7 @@
 id: 5d712346c441eddfaeb5bdef
 challengeType: 1
 forumTopicId: 18181
-localeTitle: 匹配所有数字
+title: 匹配所有数字
 ---
 
 ## Description

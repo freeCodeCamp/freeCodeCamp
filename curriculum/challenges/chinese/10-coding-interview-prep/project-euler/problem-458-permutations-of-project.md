@@ -2,7 +2,7 @@
 id: 5900f5361000cf542c510049
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题458：项目的排列
+title: 问题458：项目的排列
 ---
 
 ## Description

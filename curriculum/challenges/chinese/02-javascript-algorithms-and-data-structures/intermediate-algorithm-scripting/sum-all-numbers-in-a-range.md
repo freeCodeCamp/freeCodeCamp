@@ -2,7 +2,7 @@
 id: a3566b1109230028080c9345
 challengeType: 5
 forumTopicId: 16083
-localeTitle: 范围内的数字求和
+title: 范围内的数字求和
 ---
 
 ## Description

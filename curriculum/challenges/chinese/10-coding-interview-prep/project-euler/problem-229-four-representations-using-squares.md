@@ -2,7 +2,7 @@
 id: 5900f4521000cf542c50ff64
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题229：使用正方形的四个表示
+title: 问题229：使用正方形的四个表示
 ---
 
 ## Description

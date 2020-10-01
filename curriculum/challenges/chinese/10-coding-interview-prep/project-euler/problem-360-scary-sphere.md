@@ -2,7 +2,7 @@
 id: 5900f4d41000cf542c50ffe7
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题360：可怕的球体
+title: 问题360：可怕的球体
 ---
 
 ## Description

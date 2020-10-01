@@ -2,7 +2,7 @@
 id: 5900f4181000cf542c50ff2a
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题171：找到数字的平方和为正方形的数字
+title: 问题171：找到数字的平方和为正方形的数字
 ---
 
 ## Description

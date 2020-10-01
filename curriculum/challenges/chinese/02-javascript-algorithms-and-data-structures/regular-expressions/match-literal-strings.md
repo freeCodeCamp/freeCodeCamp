@@ -2,7 +2,7 @@
 id: 587d7db3367417b2b2512b8f
 challengeType: 1
 forumTopicId: 301355
-localeTitle: 匹配文字字符串
+title: 匹配文字字符串
 ---
 
 ## Description

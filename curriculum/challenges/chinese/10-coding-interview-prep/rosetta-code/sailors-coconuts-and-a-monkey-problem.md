@@ -2,7 +2,7 @@
 id: 59da22823d04c95919d46269
 challengeType: 5
 videoUrl: ''
-localeTitle: 水手，椰子和猴子问题
+title: 水手，椰子和猴子问题
 ---
 
 ## Description

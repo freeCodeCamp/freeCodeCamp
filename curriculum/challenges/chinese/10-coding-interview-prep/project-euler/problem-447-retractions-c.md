@@ -2,7 +2,7 @@
 id: 5900f52c1000cf542c51003e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题447：撤回C.
+title: 问题447：撤回C.
 ---
 
 ## Description

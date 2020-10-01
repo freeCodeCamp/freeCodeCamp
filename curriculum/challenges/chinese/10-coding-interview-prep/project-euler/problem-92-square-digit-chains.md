@@ -2,7 +2,7 @@
 id: 5900f3c81000cf542c50fedb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题92：方形数字链
+title: 问题92：方形数字链
 ---
 
 ## Description

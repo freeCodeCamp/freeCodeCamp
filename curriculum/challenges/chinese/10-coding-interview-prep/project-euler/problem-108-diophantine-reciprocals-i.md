@@ -2,7 +2,7 @@
 id: 5900f3d91000cf542c50feeb
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题108：丢番图互惠I
+title: 问题108：丢番图互惠I
 ---
 
 ## Description

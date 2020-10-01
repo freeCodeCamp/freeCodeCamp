@@ -2,7 +2,7 @@
 id: 587d7fa7367417b2b2512bc5
 challengeType: 6
 forumTopicId: 301498
-localeTitle: 使用 D3 中的动态数据
+title: 使用 D3 中的动态数据
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 59637c4d89f6786115efd814
 challengeType: 5
 videoUrl: ''
-localeTitle: Hofstadter Q序列
+title: Hofstadter Q序列
 ---
 
 ## Description

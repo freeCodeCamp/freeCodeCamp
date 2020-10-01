@@ -3,7 +3,7 @@ id: 587d7790367417b2b2512ab1
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzRRcb'
 forumTopicId: 301028
-localeTitle: 使用 tabindex 指定多个元素的键盘焦点顺序
+title: 使用 tabindex 指定多个元素的键盘焦点顺序
 ---
 
 ## Description

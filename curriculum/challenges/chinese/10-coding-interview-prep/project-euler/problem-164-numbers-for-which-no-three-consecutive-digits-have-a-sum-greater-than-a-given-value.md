@@ -2,7 +2,7 @@
 id: 5900f4111000cf542c50ff23
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题164：没有三个连续数字的总和大于给定值的数字
+title: 问题164：没有三个连续数字的总和大于给定值的数字
 ---
 
 ## Description

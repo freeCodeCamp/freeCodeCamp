@@ -2,7 +2,7 @@
 id: 5900f4461000cf542c50ff58
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题217：平衡数字
+title: 问题217：平衡数字
 ---
 
 ## Description

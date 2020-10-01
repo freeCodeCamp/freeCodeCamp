@@ -2,7 +2,7 @@
 id: 5900f5131000cf542c510024
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题421：n15 +1的素因子
+title: 问题421：n15 +1的素因子
 ---
 
 ## Description

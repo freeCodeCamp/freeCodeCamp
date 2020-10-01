@@ -2,7 +2,7 @@
 id: 5900f4861000cf542c50ff99
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题282：阿克曼函数
+title: 问题282：阿克曼函数
 ---
 
 ## Description

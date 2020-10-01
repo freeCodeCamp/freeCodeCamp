@@ -2,7 +2,7 @@
 id: 5a23c84252665b21eecc7e76
 challengeType: 5
 videoUrl: ''
-localeTitle: 伽玛功能
+title: 伽玛功能
 ---
 
 ## Description

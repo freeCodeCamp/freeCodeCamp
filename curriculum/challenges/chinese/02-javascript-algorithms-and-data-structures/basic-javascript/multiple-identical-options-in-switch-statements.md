@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244df
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBKWCV'
 forumTopicId: 18242
-localeTitle: 在 Switch 语句添加多个相同选项
+title: 在 Switch 语句添加多个相同选项
 ---
 
 ## Description

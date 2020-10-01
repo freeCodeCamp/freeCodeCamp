@@ -2,7 +2,7 @@
 id: 5900f48d1000cf542c50ffa0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题289：欧拉循环
+title: 问题289：欧拉循环
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d8258367417b2b2512c82
 challengeType: 1
 videoUrl: ''
-localeTitle: 在二叉搜索树中删除具有两个子节点的节点
+title: 在二叉搜索树中删除具有两个子节点的节点
 ---
 
 ## Description

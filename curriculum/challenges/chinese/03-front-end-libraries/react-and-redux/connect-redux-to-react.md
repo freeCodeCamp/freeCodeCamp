@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036147
 challengeType: 6
 forumTopicId: 301426
-localeTitle: 连接 Redux 和 React
+title: 连接 Redux 和 React
 ---
 
 ## Description

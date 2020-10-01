@@ -2,7 +2,7 @@
 id: 587d7fac367417b2b2512bdd
 challengeType: 6
 forumTopicId: 301495
-localeTitle: 使用动态比例
+title: 使用动态比例
 ---
 
 ## Description

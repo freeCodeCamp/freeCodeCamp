@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036177
 challengeType: 6
 forumTopicId: 301425
-localeTitle: 写一个简单的计数器
+title: 写一个简单的计数器
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f5241000cf542c510037
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题440：GCD和平铺
+title: 问题440：GCD和平铺
 ---
 
 ## Description

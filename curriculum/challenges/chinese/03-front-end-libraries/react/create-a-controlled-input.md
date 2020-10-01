@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036178
 challengeType: 6
 forumTopicId: 301385
-localeTitle: 创建一个可以控制的输入框
+title: 创建一个可以控制的输入框
 ---
 
 ## Description

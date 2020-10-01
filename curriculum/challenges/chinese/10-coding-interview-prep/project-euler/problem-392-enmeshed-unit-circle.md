@@ -2,7 +2,7 @@
 id: 5900f4f41000cf542c510007
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题392：陷入困境的单位圆
+title: 问题392：陷入困境的单位圆
 ---
 
 ## Description

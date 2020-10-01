@@ -2,7 +2,7 @@
 id: 587d824c367417b2b2512c4f
 challengeType: 2
 forumTopicId: 301598
-localeTitle: 测试某个值是否在特定范围内
+title: 测试某个值是否在特定范围内
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d4036145
 challengeType: 6
 forumTopicId: 301433
-localeTitle: 映射 State 到 Props
+title: 映射 State 到 Props
 ---
 
 ## Description

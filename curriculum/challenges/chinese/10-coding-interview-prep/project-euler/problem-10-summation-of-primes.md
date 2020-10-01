@@ -2,7 +2,7 @@
 id: 5900f3761000cf542c50fe89
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题10：素数的总和
+title: 问题10：素数的总和
 ---
 
 ## Description

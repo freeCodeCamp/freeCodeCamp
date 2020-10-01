@@ -2,7 +2,7 @@
 id: 597f24c1dda4e70f53c79c81
 challengeType: 5
 videoUrl: ''
-localeTitle: 斐波那契序列
+title: 斐波那契序列
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d824f367417b2b2512c5b
 challengeType: 2
 forumTopicId: 301591
-localeTitle: 使用 Chai-HTTP 测试 API 响应结果 (4)—PUT 方法
+title: 使用 Chai-HTTP 测试 API 响应结果 (4)—PUT 方法
 ---
 
 ## Description

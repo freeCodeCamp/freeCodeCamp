@@ -2,7 +2,7 @@
 id: 5900f41c1000cf542c50ff2e
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题175：涉及不同方式的数量的分数数字可以表示为2的幂的总和
+title: 问题175：涉及不同方式的数量的分数数字可以表示为2的幂的总和
 ---
 
 ## Description

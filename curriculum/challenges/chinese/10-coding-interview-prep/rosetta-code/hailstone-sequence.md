@@ -2,7 +2,7 @@
 id: 595608ff8bcd7a50bd490181
 challengeType: 5
 videoUrl: ''
-localeTitle: 冰雹序列
+title: 冰雹序列
 ---
 
 ## Description

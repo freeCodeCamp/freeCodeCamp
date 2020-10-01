@@ -5,7 +5,7 @@ required:
     raw: true
 challengeType: 0
 forumTopicId: 16638
-localeTitle: 将字体图标添加到我们的按钮中
+title: 将字体图标添加到我们的按钮中
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f4151000cf542c50ff28
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题169：探索数字可以表示为2的幂之和的不同方式的数量
+title: 问题169：探索数字可以表示为2的幂之和的不同方式的数量
 ---
 
 ## Description

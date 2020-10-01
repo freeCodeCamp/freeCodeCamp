@@ -2,7 +2,7 @@
 id: 5900f41a1000cf542c50ff2d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题174：计算可以形成一个，两个，三个......不同排列的“空心”方形薄片的数量
+title: 问题174：计算可以形成一个，两个，三个......不同排列的“空心”方形薄片的数量
 ---
 
 ## Description

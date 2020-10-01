@@ -3,7 +3,7 @@ id: 5a94fe0569fb03452672e45c
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
-localeTitle: 将网格划分为区域模板
+title: 将网格划分为区域模板
 ---
 
 ## Description

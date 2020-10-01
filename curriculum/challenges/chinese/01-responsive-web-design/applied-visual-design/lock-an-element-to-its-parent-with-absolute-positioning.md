@@ -3,7 +3,7 @@ id: 587d781e367417b2b2512acb
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJ7c3'
 forumTopicId: 301060
-localeTitle: 绝对定位的参照物是元素的父元素
+title: 绝对定位的参照物是元素的父元素
 ---
 
 ## Description

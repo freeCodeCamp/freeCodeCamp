@@ -2,7 +2,7 @@
 id: 5cdafbd72913098997531681
 challengeType: 1
 forumTopicId: 301203
-localeTitle: 在 then 中处理 Promise 完成的情况
+title: 在 then 中处理 Promise 完成的情况
 ---
 
 ## Description

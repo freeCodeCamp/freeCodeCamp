@@ -2,7 +2,7 @@
 id: 5900f36f1000cf542c50fe82
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题3：最大素数
+title: 问题3：最大素数
 ---
 
 ## Description

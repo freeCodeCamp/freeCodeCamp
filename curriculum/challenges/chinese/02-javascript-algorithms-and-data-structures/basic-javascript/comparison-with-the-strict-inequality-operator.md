@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244d3
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKekkUy'
 forumTopicId: 16791
-localeTitle: 严格不等运算符
+title: 严格不等运算符
 ---
 
 ## Description

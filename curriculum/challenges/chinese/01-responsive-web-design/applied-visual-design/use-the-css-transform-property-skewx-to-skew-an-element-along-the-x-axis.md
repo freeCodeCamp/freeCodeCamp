@@ -3,7 +3,7 @@ id: 587d78a6367417b2b2512adb
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLP8Sr'
 forumTopicId: 301074
-localeTitle: 使用 CSS Transform skex 属性沿X轴倾斜元素
+title: 使用 CSS Transform skex 属性沿X轴倾斜元素
 ---
 
 ## Description

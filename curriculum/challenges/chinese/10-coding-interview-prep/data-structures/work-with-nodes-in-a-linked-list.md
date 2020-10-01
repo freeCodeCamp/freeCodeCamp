@@ -2,7 +2,7 @@
 id: 587d8251367417b2b2512c61
 challengeType: 1
 videoUrl: ''
-localeTitle: 使用链接列表中的节点
+title: 使用链接列表中的节点
 ---
 
 ## Description

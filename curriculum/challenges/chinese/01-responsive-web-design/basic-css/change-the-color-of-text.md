@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08803
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-localeTitle: 更改文本的颜色
+title: 更改文本的颜色
 ---
 
 ## Description

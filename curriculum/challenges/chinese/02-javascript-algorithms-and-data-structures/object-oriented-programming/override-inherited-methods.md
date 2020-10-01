@@ -2,7 +2,7 @@
 id: 587d7db1367417b2b2512b88
 challengeType: 1
 forumTopicId: 301322
-localeTitle: 重写继承的方法
+title: 重写继承的方法
 ---
 
 ## Description

@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08833
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cgR7Dc7'
 forumTopicId: 18178
-localeTitle: 用占位符文本填充空白
+title: 用占位符文本填充空白
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f41e1000cf542c50ff30
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题177：整数角四边形
+title: 问题177：整数角四边形
 ---
 
 ## Description

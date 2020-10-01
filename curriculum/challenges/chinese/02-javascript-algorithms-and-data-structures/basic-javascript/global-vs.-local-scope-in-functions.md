@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244c0
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
-localeTitle: 函数中的全局作用域和局部作用域
+title: 函数中的全局作用域和局部作用域
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 596fda99c69f779975a1b67d
 challengeType: 5
 videoUrl: ''
-localeTitle: 计算子字符串的出现次数
+title: 计算子字符串的出现次数
 ---
 
 ## Description

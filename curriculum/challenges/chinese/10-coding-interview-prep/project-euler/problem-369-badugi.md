@@ -2,7 +2,7 @@
 id: 5900f4de1000cf542c50fff0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题369：Badugi
+title: 问题369：Badugi
 ---
 
 ## Description

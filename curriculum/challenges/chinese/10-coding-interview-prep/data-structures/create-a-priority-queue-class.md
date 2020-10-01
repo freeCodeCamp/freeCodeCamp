@@ -2,7 +2,7 @@
 id: 587d8255367417b2b2512c74
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建优先级队列类
+title: 创建优先级队列类
 ---
 
 ## Description

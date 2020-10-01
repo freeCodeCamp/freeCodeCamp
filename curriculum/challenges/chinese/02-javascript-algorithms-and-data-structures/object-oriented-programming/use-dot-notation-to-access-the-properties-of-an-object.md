@@ -2,7 +2,7 @@
 id: 587d7dac367417b2b2512b74
 challengeType: 1
 forumTopicId: 301333
-localeTitle: 使用点符号来访问对象的属性
+title: 使用点符号来访问对象的属性
 ---
 
 ## Description

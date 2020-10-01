@@ -2,7 +2,7 @@
 id: 587d7db8367417b2b2512ba1
 challengeType: 1
 forumTopicId: 301347
-localeTitle: 匹配所有非数字
+title: 匹配所有非数字
 ---
 
 ## Description

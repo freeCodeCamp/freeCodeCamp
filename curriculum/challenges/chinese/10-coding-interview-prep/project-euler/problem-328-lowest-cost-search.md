@@ -2,7 +2,7 @@
 id: 5900f4b41000cf542c50ffc7
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题328：成本最低的搜索
+title: 问题328：成本最低的搜索
 ---
 
 ## Description

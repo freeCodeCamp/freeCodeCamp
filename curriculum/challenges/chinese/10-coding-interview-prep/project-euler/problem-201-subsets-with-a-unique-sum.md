@@ -2,7 +2,7 @@
 id: 5900f4361000cf542c50ff48
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题201：具有唯一总和的子集
+title: 问题201：具有唯一总和的子集
 ---
 
 ## Description

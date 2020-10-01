@@ -3,7 +3,7 @@ id: 5e611829481575a52dc59c0e
 challengeType: 7
 isHidden: false
 isPrivate: true
-localeTitle: ''
+title: ''
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5895f70cf9fc0f352b528e66
 challengeType: 2
 forumTopicId: 301563
-localeTitle: 用户对象的序列化
+title: 用户对象的序列化
 ---
 
 ## Description

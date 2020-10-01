@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08721
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cK89PhP'
 forumTopicId: 18359
-localeTitle: 使用十六进制编码混合颜色
+title: 使用十六进制编码混合颜色
 ---
 
 ## Description

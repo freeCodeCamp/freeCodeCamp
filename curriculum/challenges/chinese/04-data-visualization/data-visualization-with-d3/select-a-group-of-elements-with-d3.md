@@ -2,7 +2,7 @@
 id: 587d7fa6367417b2b2512bc3
 challengeType: 6
 forumTopicId: 301490
-localeTitle: 用 D3 选择一组元素
+title: 用 D3 选择一组元素
 ---
 
 ## Description

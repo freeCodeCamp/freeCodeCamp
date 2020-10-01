@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08830
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 forumTopicId: 16647
-localeTitle: 给输入框添加占位符文本
+title: 给输入框添加占位符文本
 ---
 
 ## Description

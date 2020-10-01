@@ -2,7 +2,7 @@
 id: 594810f028c0303b75339acf
 challengeType: 5
 videoUrl: ''
-localeTitle: 阿克曼功能
+title: 阿克曼功能
 ---
 
 ## Description

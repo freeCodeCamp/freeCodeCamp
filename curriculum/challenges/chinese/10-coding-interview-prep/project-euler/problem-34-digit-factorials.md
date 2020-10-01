@@ -2,7 +2,7 @@
 id: 5900f38e1000cf542c50fea1
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题34：数字阶乘
+title: 问题34：数字阶乘
 ---
 
 ## Description

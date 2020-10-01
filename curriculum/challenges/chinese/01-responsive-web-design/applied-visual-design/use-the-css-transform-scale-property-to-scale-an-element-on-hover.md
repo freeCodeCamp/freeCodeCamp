@@ -3,7 +3,7 @@ id: 587d78a5367417b2b2512ada
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLPJuM'
 forumTopicId: 301077
-localeTitle: 使用CSS Transform scale 属性在悬停时缩放元素
+title: 使用CSS Transform scale 属性在悬停时缩放元素
 ---
 
 ## Description

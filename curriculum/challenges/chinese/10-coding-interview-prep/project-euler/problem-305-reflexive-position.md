@@ -2,7 +2,7 @@
 id: 5900f49d1000cf542c50ffb0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题305：反身姿势
+title: 问题305：反身姿势
 ---
 
 ## Description

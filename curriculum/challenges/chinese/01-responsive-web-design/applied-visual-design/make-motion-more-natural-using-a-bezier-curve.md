@@ -3,7 +3,7 @@ id: 587d78a9367417b2b2512aea
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7akWUv'
 forumTopicId: 301063
-localeTitle: 使用贝塞尔曲线让运动更加自然
+title: 使用贝塞尔曲线让运动更加自然
 ---
 
 ## Description

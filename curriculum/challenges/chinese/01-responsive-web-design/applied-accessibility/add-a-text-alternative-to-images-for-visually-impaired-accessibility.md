@@ -3,7 +3,7 @@ id: 587d774c367417b2b2512a9c
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 16628
-localeTitle: 为视觉障碍用户添加替代图像的文本
+title: 为视觉障碍用户添加替代图像的文本
 ---
 
 ## Description

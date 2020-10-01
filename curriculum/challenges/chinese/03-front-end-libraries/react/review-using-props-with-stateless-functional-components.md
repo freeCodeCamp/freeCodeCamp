@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403616f
 challengeType: 6
 forumTopicId: 301411
-localeTitle: 复习如何使用 Props 和无状态函数组件
+title: 复习如何使用 Props 和无状态函数组件
 ---
 
 ## Description

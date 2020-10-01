@@ -2,7 +2,7 @@
 id: 587d7fb2367417b2b2512bf8
 challengeType: 2
 forumTopicId: 301511
-localeTitle: 从 POST 请求中获取数据
+title: 从 POST 请求中获取数据
 ---
 
 ## Description

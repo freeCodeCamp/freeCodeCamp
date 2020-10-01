@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aec908849
 challengeType: 0
 forumTopicId: 16636
-localeTitle: 在 Bootstrap Wells 中添加元素
+title: 在 Bootstrap Wells 中添加元素
 ---
 
 ## Description

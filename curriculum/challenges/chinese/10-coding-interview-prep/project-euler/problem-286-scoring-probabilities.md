@@ -2,7 +2,7 @@
 id: 5900f48a1000cf542c50ff9d
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题286：计分概率
+title: 问题286：计分概率
 ---
 
 ## Description

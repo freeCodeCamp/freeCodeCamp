@@ -2,7 +2,7 @@
 id: 587d7fb7367417b2b2512c0a
 forumTopicId: 301537
 challengeType: 2
-localeTitle: 使用model.create（）创建许多记录
+title: 使用model.create（）创建许多记录
 ---
 
 ## Description

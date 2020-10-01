@@ -3,7 +3,7 @@ id: 587d78ae367417b2b2512afe
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cbpW2tE'
 forumTopicId: 301112
-localeTitle: 使用 flex 短方法属性
+title: 使用 flex 短方法属性
 ---
 
 ## Description

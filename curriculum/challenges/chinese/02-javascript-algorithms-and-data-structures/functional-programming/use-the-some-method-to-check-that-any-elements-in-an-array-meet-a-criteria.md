@@ -2,7 +2,7 @@
 id: 587d7dab367417b2b2512b6f
 challengeType: 1
 forumTopicId: 301314
-localeTitle: 使用 some 方法检查数组中是否有元素是否符合条件
+title: 使用 some 方法检查数组中是否有元素是否符合条件
 ---
 
 ## Description

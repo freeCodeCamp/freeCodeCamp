@@ -2,7 +2,7 @@
 id: 5900f4f21000cf542c510004
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题389：柏拉图式骰子
+title: 问题389：柏拉图式骰子
 ---
 
 ## Description

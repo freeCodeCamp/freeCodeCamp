@@ -2,7 +2,7 @@
 id: 5900f4491000cf542c50ff5c
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题221：亚历山大整数
+title: 问题221：亚历山大整数
 ---
 
 ## Description

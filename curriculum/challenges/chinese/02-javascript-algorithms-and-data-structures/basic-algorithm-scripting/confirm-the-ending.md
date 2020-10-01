@@ -2,7 +2,7 @@
 id: acda2fb1324d9b0fa741e6b5
 challengeType: 5
 videoUrl: ''
-localeTitle: 确认结束
+title: 确认结束
 ---
 
 ## Description

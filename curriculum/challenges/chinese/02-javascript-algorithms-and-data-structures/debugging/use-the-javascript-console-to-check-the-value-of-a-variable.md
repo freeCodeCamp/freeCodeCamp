@@ -2,7 +2,7 @@
 id: 587d7b83367417b2b2512b33
 challengeType: 1
 forumTopicId: 18372
-localeTitle: 使用控制台检查变量值
+title: 使用控制台检查变量值
 ---
 
 ## Description

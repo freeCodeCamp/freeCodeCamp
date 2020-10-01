@@ -2,7 +2,7 @@
 id: 5900f4f81000cf542c51000b
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题396：弱Goodstein序列
+title: 问题396：弱Goodstein序列
 ---
 
 ## Description

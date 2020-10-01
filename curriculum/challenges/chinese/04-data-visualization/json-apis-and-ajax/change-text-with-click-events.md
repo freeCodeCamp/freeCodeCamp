@@ -2,7 +2,7 @@
 id: 587d7fad367417b2b2512be2
 challengeType: 6
 forumTopicId: 301500
-localeTitle: 通过单击事件更改文本
+title: 通过单击事件更改文本
 ---
 
 ## Description

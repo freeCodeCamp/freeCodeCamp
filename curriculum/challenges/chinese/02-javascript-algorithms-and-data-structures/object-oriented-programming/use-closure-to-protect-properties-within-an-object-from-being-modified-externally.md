@@ -2,7 +2,7 @@
 id: 587d7db2367417b2b2512b8a
 challengeType: 1
 forumTopicId: 18234
-localeTitle: 使用闭包保护对象内的属性不被外部修改
+title: 使用闭包保护对象内的属性不被外部修改
 ---
 
 ## Description

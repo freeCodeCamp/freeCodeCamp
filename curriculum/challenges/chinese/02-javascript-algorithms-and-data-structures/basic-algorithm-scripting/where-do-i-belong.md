@@ -2,7 +2,7 @@
 id: a24c1a4622e3c05097f71d67
 challengeType: 5
 videoUrl: ''
-localeTitle: 我属于哪里？
+title: 我属于哪里？
 ---
 
 ## Description

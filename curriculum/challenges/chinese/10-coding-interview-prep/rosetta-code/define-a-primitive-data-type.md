@@ -2,7 +2,7 @@
 id: 597089c87eec450c68aa1643
 challengeType: 5
 videoUrl: ''
-localeTitle: 定义原始数据类型
+title: 定义原始数据类型
 ---
 
 ## Description

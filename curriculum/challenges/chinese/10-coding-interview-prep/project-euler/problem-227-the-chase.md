@@ -2,7 +2,7 @@
 id: 5900f44f1000cf542c50ff61
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题227：大通
+title: 问题227：大通
 ---
 
 ## Description

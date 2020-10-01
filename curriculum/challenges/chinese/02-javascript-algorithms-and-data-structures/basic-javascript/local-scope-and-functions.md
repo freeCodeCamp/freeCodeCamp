@@ -3,7 +3,7 @@ id: 56533eb9ac21ba0edf2244bf
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd62NhM'
 forumTopicId: 18227
-localeTitle: 局部作用域和函数
+title: 局部作用域和函数
 ---
 
 ## Description

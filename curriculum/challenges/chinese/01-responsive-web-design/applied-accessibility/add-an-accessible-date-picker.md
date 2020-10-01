@@ -3,7 +3,7 @@ id: 587d778b367417b2b2512aa8
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 forumTopicId: 301008
-localeTitle: 添加可访问的日期选择器
+title: 添加可访问的日期选择器
 ---
 
 ## Description

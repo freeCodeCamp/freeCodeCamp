@@ -3,7 +3,7 @@ id: 587d774c367417b2b2512a9d
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9P4t2'
 forumTopicId: 301019
-localeTitle: 知道 Alt 文本何时应该留空
+title: 知道 Alt 文本何时应该留空
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d824b367417b2b2512c47
 challengeType: 2
 forumTopicId: 301602
-localeTitle: 测试变量或函数是否已定义
+title: 测试变量或函数是否已定义
 ---
 
 ## Description

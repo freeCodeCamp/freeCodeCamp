@@ -2,7 +2,7 @@
 id: 587d7db5367417b2b2512b97
 challengeType: 1
 forumTopicId: 301356
-localeTitle: 匹配字母表中的数字和字母
+title: 匹配字母表中的数字和字母
 ---
 
 ## Description

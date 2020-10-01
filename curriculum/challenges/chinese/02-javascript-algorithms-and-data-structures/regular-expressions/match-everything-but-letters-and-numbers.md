@@ -2,7 +2,7 @@
 id: 587d7db8367417b2b2512ba0
 challengeType: 1
 forumTopicId: 301353
-localeTitle: 匹配除了字母和数字的所有符号
+title: 匹配除了字母和数字的所有符号
 ---
 
 ## Description

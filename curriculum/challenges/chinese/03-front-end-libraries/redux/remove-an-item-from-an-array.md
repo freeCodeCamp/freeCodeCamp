@@ -2,7 +2,7 @@
 id: 5a24c314108439a4d403615a
 challengeType: 6
 forumTopicId: 301447
-localeTitle: 从数组中删除项目
+title: 从数组中删除项目
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5900f39f1000cf542c50feb2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题51：主要数字替换
+title: 问题51：主要数字替换
 ---
 
 ## Description

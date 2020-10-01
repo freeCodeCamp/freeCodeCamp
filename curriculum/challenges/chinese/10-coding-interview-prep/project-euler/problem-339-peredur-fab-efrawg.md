@@ -2,7 +2,7 @@
 id: 5900f4c01000cf542c50ffd2
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题339：Peredur fab Efrawg
+title: 问题339：Peredur fab Efrawg
 ---
 
 ## Description

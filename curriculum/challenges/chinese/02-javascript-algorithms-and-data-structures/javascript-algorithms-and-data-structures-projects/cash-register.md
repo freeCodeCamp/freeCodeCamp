@@ -2,7 +2,7 @@
 id: aa2e6f85cab2ab736c9a9b24
 challengeType: 5
 forumTopicId: 16012
-localeTitle: 收银机
+title: 收银机
 ---
 
 ## Description

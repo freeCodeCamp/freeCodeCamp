@@ -2,7 +2,7 @@
 id: 5900f4ae1000cf542c50ffc0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题321：交换计数器
+title: 问题321：交换计数器
 ---
 
 ## Description

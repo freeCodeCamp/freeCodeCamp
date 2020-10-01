@@ -2,7 +2,7 @@
 id: 5900f4fd1000cf542c51000f
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题401：除数的平方和
+title: 问题401：除数的平方和
 ---
 
 ## Description

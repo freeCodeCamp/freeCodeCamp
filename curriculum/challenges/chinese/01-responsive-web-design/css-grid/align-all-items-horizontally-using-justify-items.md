@@ -3,7 +3,7 @@ id: 5a90376038fddaf9a66b5d3c
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpECn'
 forumTopicId: 301120
-localeTitle: 使用 justify-items 水平对齐所有项目
+title: 使用 justify-items 水平对齐所有项目
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 587d8253367417b2b2512c6d
 challengeType: 1
 videoUrl: ''
-localeTitle: 在两组数据上执行交集
+title: 在两组数据上执行交集
 ---
 
 ## Description

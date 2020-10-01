@@ -2,7 +2,7 @@
 id: 5a24bbe0dba28a8d3cbd4c5e
 challengeType: 6
 forumTopicId: 301376
-localeTitle: 在 JSX 中添加注释
+title: 在 JSX 中添加注释
 ---
 
 ## Description

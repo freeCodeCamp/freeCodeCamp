@@ -2,7 +2,7 @@
 id: 5900f3761000cf542c50fe88
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题9：特殊的毕达哥拉斯三重奏
+title: 问题9：特殊的毕达哥拉斯三重奏
 ---
 
 ## Description

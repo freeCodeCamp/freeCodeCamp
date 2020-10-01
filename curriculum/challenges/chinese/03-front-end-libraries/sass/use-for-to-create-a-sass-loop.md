@@ -2,7 +2,7 @@
 id: 587d7dbe367417b2b2512bb9
 challengeType: 0
 forumTopicId: 301462
-localeTitle: 使用 @for 创建一个 Sass 循环
+title: 使用 @for 创建一个 Sass 循环
 ---
 
 ## Description

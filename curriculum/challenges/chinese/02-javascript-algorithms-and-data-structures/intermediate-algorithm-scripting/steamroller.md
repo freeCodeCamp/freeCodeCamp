@@ -2,7 +2,7 @@
 id: ab306dbdcc907c7ddfc30830
 challengeType: 5
 forumTopicId: 16079
-localeTitle: 扁平化
+title: 扁平化
 ---
 
 ## Description

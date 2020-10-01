@@ -2,7 +2,7 @@
 id: 5900f3ad1000cf542c50fec0
 challengeType: 5
 videoUrl: ''
-localeTitle: 问题65：e的收敛
+title: 问题65：e的收敛
 ---
 
 ## Description

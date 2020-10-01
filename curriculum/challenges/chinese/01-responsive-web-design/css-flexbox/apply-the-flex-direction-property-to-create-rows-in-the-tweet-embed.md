@@ -3,7 +3,7 @@ id: 587d78ab367417b2b2512af3
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
 forumTopicId: 301104
-localeTitle: 使用 flex-direction 在嵌入推文中创建多行
+title: 使用 flex-direction 在嵌入推文中创建多行
 ---
 
 ## Description
