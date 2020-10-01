@@ -1,7 +1,6 @@
 ---
 id: 5900f38c1000cf542c50fe9f
 challengeType: 5
-title: 'Problem 32: Pandigital products'
 videoUrl: ''
 localeTitle: 问题32：Pandigital产品
 ---

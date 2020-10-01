@@ -1,6 +1,5 @@
 ---
 id: 587d824d367417b2b2512c54
-title: Use Regular Expressions to Test a String
 challengeType: 2
 forumTopicId: 301608
 localeTitle: 使用正则表达式测试字符串

@@ -1,6 +1,5 @@
 ---
 id: 5a94fe0569fb03452672e45c
-title: Divide the Grid Into an Area Template
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130

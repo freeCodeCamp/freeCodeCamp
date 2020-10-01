@@ -1,7 +1,6 @@
 ---
 id: 5900f5451000cf542c510057
 challengeType: 5
-title: 'Problem 472: Comfortable Distance II'
 videoUrl: ''
 localeTitle: 问题472：舒适的距离II
 ---

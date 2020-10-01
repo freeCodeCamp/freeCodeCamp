@@ -1,7 +1,6 @@
 ---
 id: 5900f4a11000cf542c50ffb4
 challengeType: 5
-title: 'Problem 309: Integer Ladders'
 videoUrl: ''
 localeTitle: 问题309：整数阶梯
 ---

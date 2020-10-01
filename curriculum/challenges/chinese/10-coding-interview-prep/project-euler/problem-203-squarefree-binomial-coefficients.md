@@ -1,7 +1,6 @@
 ---
 id: 5900f4381000cf542c50ff4a
 challengeType: 5
-title: 'Problem 203: Squarefree Binomial Coefficients'
 videoUrl: ''
 localeTitle: 问题203：无平方二项系数
 ---

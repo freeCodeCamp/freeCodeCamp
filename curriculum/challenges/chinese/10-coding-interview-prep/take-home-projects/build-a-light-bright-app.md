@@ -1,6 +1,5 @@
 ---
 id: 5a5d02bd919fcf9ca8cf46cb
-title: Build a Light-Bright App
 challengeType: 3
 videoUrl: ''
 localeTitle: 构建一个明亮的应用程序

@@ -1,7 +1,6 @@
 ---
 id: 5900f5241000cf542c510037
 challengeType: 5
-title: 'Problem 440: GCD and Tiling'
 videoUrl: ''
 localeTitle: 问题440：GCD和平铺
 ---

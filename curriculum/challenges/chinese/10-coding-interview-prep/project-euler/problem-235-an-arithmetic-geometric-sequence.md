@@ -1,7 +1,6 @@
 ---
 id: 5900f4571000cf542c50ff6a
 challengeType: 5
-title: 'Problem 235: An Arithmetic Geometric sequence'
 videoUrl: ''
 localeTitle: 问题235：算术几何序列
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d7b8f367417b2b2512b60
-title: Refactor Global Variables Out of Functions
 challengeType: 1
 forumTopicId: 301235
 localeTitle: 在函数中重构全局变量

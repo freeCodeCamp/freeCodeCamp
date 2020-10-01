@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d403617b
-title: Pass a Callback as Props
 challengeType: 6
 forumTopicId: 301400
 localeTitle: 传递回调作为 Props

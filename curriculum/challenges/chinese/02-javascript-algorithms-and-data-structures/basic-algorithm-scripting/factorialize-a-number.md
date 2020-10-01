@@ -1,6 +1,5 @@
 ---
 id: a302f7aae1aa3152a5b413bc
-title: Factorialize a Number
 challengeType: 5
 videoUrl: ''
 localeTitle: 对一个数字进行推理

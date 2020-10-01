@@ -1,6 +1,5 @@
 ---
 id: 5c3dda8b4d8df89bea71600f
-title: Check For Mixed Grouping of Characters
 challengeType: 1
 forumTopicId: 301339
 localeTitle: 检查混合字符组

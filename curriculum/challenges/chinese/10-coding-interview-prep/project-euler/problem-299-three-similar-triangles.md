@@ -1,7 +1,6 @@
 ---
 id: 5900f4971000cf542c50ffaa
 challengeType: 5
-title: 'Problem 299: Three similar triangles'
 videoUrl: ''
 localeTitle: 问题299：三个相似的三角形
 ---

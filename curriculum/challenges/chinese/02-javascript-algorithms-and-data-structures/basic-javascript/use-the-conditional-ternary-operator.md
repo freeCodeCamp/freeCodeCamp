@@ -1,6 +1,5 @@
 ---
 id: 587d7b7e367417b2b2512b24
-title: Use the Conditional (Ternary) Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JRmSg'
 forumTopicId: 301181

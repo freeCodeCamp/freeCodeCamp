@@ -1,7 +1,6 @@
 ---
 id: 5900f4da1000cf542c50ffec
 challengeType: 5
-title: 'Problem 365: A huge binomial coefficient'
 videoUrl: ''
 localeTitle: 问题365：巨大的二项式系数
 ---

@@ -1,5 +1,4 @@
 ---
-title: Deal cards for FreeCell
 id: 59694356a6e7011f7f1c5f4e
 challengeType: 5
 videoUrl: ''

@@ -1,6 +1,5 @@
 ---
 id: 587d7dbd367417b2b2512bb6
-title: Create Reusable CSS with Mixins
 challengeType: 0
 forumTopicId: 301455
 localeTitle: 用 Mixins 创建可重用 CSS

@@ -1,6 +1,5 @@
 ---
 id: 587d7fb0367417b2b2512bef
-title: Serve an HTML File
 challengeType: 2
 forumTopicId: 301516
 localeTitle: 服务 HTML 文件

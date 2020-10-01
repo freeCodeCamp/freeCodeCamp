@@ -1,7 +1,6 @@
 ---
 id: 5900f4f21000cf542c510005
 challengeType: 5
-title: 'Problem 390: Triangles with non rational sides and integral area'
 videoUrl: ''
 localeTitle: 问题390：具有非理性边和积分面积的三角形
 ---

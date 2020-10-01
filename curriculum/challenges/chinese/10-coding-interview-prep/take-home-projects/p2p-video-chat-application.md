@@ -1,6 +1,5 @@
 ---
 id: bd7150d8c442eddfafb5bd1c
-title: P2P Video Chat Application
 challengeType: 3
 videoUrl: ''
 localeTitle: P2P视频聊天应用

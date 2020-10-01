@@ -1,6 +1,5 @@
 ---
 id: 5895f70df9fc0f352b528e6a
-title: Create New Middleware
 challengeType: 2
 forumTopicId: 301551
 localeTitle: 创建新的中间件

@@ -1,6 +1,5 @@
 ---
 id: 587d7fa9367417b2b2512bce
-title: Dynamically Set the Coordinates for Each Bar
 challengeType: 6
 forumTopicId: 301487
 localeTitle: 动态设置每个 Bar 的坐标

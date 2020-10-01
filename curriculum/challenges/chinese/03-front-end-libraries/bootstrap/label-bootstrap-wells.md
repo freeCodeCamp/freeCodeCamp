@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aec908854
-title: Label Bootstrap Wells
 challengeType: 0
 forumTopicId: 18223
 localeTitle: 给 Bootstrap Wells 贴标签

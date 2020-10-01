@@ -1,6 +1,5 @@
 ---
 id: a5deed1811a43193f9f1c841
-title: Drop it
 challengeType: 5
 forumTopicId: 16010
 localeTitle: 筛选出数组中满足条件的元素

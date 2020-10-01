@@ -1,6 +1,5 @@
 ---
 id: 660add10cb82ac38a17513be
-title: Legacy Back End Certificate
 challengeType: 7
 isHidden: false
 isPrivate: true

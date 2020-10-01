@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036162
-title: Create a Stateless Functional Component
 challengeType: 6
 forumTopicId: 301392
 localeTitle: 创建一个无状态的函数组件

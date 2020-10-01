@@ -1,7 +1,6 @@
 ---
 id: 5900f4491000cf542c50ff5c
 challengeType: 5
-title: 'Problem 221: Alexandrian Integers'
 videoUrl: ''
 localeTitle: 问题221：亚历山大整数
 ---

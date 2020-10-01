@@ -1,7 +1,6 @@
 ---
 id: 5900f4b91000cf542c50ffcc
 challengeType: 5
-title: 'Problem 333: Special partitions'
 videoUrl: ''
 localeTitle: 问题333：特殊分区
 ---

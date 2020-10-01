@@ -1,6 +1,5 @@
 ---
 id: 587d7fa8367417b2b2512bcb
-title: Learn About SVG in D3
 challengeType: 6
 forumTopicId: 301489
 localeTitle: 了解 D3 中的 SVG

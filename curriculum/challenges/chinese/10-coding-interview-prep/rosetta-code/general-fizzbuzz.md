@@ -1,5 +1,4 @@
 ---
-title: General FizzBuzz
 id: 5a23c84252665b21eecc7e78
 challengeType: 5
 videoUrl: ''

@@ -1,6 +1,5 @@
 ---
 id: bd7158d8c442eddfaeb5bd19
-title: Build a Wikipedia Viewer
 challengeType: 3
 videoUrl: ''
 localeTitle: 构建Wikipedia查看器

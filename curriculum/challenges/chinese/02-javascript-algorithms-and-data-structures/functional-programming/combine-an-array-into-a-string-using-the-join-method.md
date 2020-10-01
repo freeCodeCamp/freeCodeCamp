@@ -1,6 +1,5 @@
 ---
 id: 587d7daa367417b2b2512b6c
-title: Combine an Array into a String Using the join Method
 challengeType: 1
 forumTopicId: 18221
 localeTitle: 使用 join 方法将数组组合成字符串

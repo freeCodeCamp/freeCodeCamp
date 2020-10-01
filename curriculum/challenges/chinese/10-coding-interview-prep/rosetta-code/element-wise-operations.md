@@ -1,5 +1,4 @@
 ---
-title: Element-wise operations
 id: 599c333915e0ea32d04d4bec
 challengeType: 5
 videoUrl: ''

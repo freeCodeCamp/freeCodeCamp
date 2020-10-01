@@ -1,7 +1,6 @@
 ---
 id: 5900f4811000cf542c50ff94
 challengeType: 5
-title: 'Problem 277: A Modified Collatz sequence'
 videoUrl: ''
 localeTitle: 问题277：修改的Collat​​z序列
 ---

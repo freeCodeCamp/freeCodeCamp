@@ -1,6 +1,5 @@
 ---
 id: 587d7fb4367417b2b2512c00
-title: Expand Your Project with External Packages from npm
 challengeType: 2
 forumTopicId: 301527
 localeTitle: 使用 npm 的外部软件包扩展您的项目

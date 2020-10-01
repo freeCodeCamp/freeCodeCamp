@@ -1,6 +1,5 @@
 ---
 id: 587d7788367417b2b2512aa2
-title: Make Screen Reader Navigation Easier with the nav Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVwWSv'
 forumTopicId: 301024

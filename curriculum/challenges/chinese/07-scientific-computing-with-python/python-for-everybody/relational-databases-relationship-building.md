@@ -1,6 +1,5 @@
 ---
 id: 5e7b9f180b6c005b0e76f08e
-title: 'Relational Databases: Relationship Building'
 challengeType: 11
 isHidden: false
 videoId: CSbqczsHVnc

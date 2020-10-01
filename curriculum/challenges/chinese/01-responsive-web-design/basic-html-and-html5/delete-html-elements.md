@@ -1,6 +1,5 @@
 ---
 id: bad87fed1348bd9aedf08833
-title: Delete HTML Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ckK73C9'
 forumTopicId: 17559

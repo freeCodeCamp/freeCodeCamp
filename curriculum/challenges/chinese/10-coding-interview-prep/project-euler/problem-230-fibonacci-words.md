@@ -1,7 +1,6 @@
 ---
 id: 5900f4531000cf542c50ff65
 challengeType: 5
-title: 'Problem 230: Fibonacci Words'
 videoUrl: ''
 localeTitle: 问题230：斐波纳契语
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d7b8c367417b2b2512b56
-title: Use export to Share a Code Block
 challengeType: 1
 forumTopicId: 301219
 localeTitle: 用 export 来重用代码块

@@ -1,6 +1,5 @@
 ---
 id: 587d7b87367417b2b2512b40
-title: Compare Scopes of the var and let Keywords
 challengeType: 1
 forumTopicId: 301195
 localeTitle: 比较 var 和 let 关键字的作用域

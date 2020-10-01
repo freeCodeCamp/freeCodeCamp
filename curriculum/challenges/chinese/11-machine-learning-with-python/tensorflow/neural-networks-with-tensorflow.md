@@ -1,6 +1,5 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d92
-title: Neural Networks with TensorFlow
 challengeType: 11
 isHidden: false
 videoId: uisdfrNrZW4

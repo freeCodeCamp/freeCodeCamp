@@ -1,7 +1,6 @@
 ---
 id: 5900f4791000cf542c50ff8b
 challengeType: 5
-title: 'Problem 268: Counting numbers with at least four distinct prime factors less than 100'
 videoUrl: ''
 localeTitle: 问题268：计算至少有四个不同素因子小于100的数字
 ---

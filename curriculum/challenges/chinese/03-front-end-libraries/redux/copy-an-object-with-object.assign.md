@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d403615b
-title: Copy an Object with Object.assign
 challengeType: 6
 forumTopicId: 301437
 localeTitle: 使用 Object.assign 拷贝对象

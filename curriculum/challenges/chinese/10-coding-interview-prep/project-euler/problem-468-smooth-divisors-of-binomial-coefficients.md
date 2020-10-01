@@ -1,7 +1,6 @@
 ---
 id: 5900f5411000cf542c510054
 challengeType: 5
-title: 'Problem 468: Smooth divisors of binomial coefficients'
 videoUrl: ''
 localeTitle: 问题468：二项式系数的平滑除数
 ---

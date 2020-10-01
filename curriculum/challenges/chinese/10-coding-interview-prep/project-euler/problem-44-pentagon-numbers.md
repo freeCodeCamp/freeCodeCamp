@@ -1,7 +1,6 @@
 ---
 id: 5900f3981000cf542c50feab
 challengeType: 5
-title: 'Problem 44: Pentagon numbers'
 videoUrl: ''
 localeTitle: 问题44：五角大楼数字
 ---

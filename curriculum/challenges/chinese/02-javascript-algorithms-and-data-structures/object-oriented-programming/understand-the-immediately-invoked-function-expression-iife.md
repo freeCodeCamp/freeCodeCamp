@@ -1,6 +1,5 @@
 ---
 id: 587d7db2367417b2b2512b8b
-title: Understand the Immediately Invoked Function Expression (IIFE)
 challengeType: 1
 forumTopicId: 301328
 localeTitle: 了解立即调用函数表达（IIFE）

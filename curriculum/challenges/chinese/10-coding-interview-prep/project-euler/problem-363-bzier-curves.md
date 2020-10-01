@@ -1,7 +1,6 @@
 ---
 id: 5900f4d91000cf542c50ffeb
 challengeType: 5
-title: 'Problem 363: Bézier Curves'
 videoUrl: ''
 localeTitle: 问题363：Bézier曲线
 ---

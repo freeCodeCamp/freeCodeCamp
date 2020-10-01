@@ -1,5 +1,4 @@
 ---
-title: Fibonacci sequence
 id: 597f24c1dda4e70f53c79c81
 challengeType: 5
 videoUrl: ''

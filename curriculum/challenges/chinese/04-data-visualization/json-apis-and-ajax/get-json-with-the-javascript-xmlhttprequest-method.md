@@ -1,6 +1,5 @@
 ---
 id: 587d7fae367417b2b2512be3
-title: Get JSON with the JavaScript XMLHttpRequest Method
 challengeType: 6
 forumTopicId: 301502
 localeTitle: 使用 XMLHttpRequest 方法获取 JSON

@@ -1,6 +1,5 @@
 ---
 id: bd7157d8c242eddfaeb5bd13
-title: Build a Markdown Previewer
 challengeType: 3
 forumTopicId: 301372
 localeTitle: 构建一个 Markdown 文件预览器

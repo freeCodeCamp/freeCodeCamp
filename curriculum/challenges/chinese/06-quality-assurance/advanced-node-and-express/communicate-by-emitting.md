@@ -1,6 +1,5 @@
 ---
 id: 589fc831f9fc0f352b528e75
-title: Communicate by Emitting
 challengeType: 2
 forumTopicId: 301550
 localeTitle: 通过 Emitting 通信

@@ -1,6 +1,5 @@
 ---
 id: 589a8eb3f9fc0f352b528e72
-title: Implementation of Social Authentication III
 challengeType: 2
 forumTopicId: 301558
 localeTitle: 实现社交账号登陆 (3)

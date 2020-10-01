@@ -1,7 +1,6 @@
 ---
 id: 5900f49b1000cf542c50ffae
 challengeType: 5
-title: 'Problem 303: Multiples with small digits'
 videoUrl: ''
 localeTitle: 问题303：小数的倍数
 ---

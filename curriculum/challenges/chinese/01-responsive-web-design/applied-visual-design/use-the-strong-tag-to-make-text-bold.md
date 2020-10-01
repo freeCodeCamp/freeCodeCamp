@@ -1,6 +1,5 @@
 ---
 id: 587d781a367417b2b2512ab7
-title: Use the strong Tag to Make Text Bold
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/ceJNBSb'
 forumTopicId: 1

@@ -1,7 +1,6 @@
 ---
 id: 5900f4511000cf542c50ff62
 challengeType: 5
-title: 'Problem 226: A Scoop of Blancmange'
 videoUrl: ''
 localeTitle: 问题226：Blancmange的一个独家新闻
 ---

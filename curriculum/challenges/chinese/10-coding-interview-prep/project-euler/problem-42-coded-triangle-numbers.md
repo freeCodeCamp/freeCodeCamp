@@ -1,7 +1,6 @@
 ---
 id: 5900f3961000cf542c50fea9
 challengeType: 5
-title: 'Problem 42: Coded triangle numbers'
 videoUrl: ''
 localeTitle: 问题42：编码的三角形数字
 ---

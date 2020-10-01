@@ -1,7 +1,6 @@
 ---
 id: 5900f5131000cf542c510024
 challengeType: 5
-title: 'Problem 421: Prime factors of n15+1'
 videoUrl: ''
 localeTitle: 问题421：n15 +1的素因子
 ---

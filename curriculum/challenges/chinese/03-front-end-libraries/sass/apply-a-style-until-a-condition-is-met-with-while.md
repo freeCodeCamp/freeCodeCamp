@@ -1,6 +1,5 @@
 ---
 id: 587d7dbf367417b2b2512bbb
-title: Apply a Style Until a Condition is Met with @while
 challengeType: 0
 forumTopicId: 301454
 localeTitle: 使用 @while 当条件满足时样式生效

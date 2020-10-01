@@ -1,7 +1,6 @@
 ---
 id: 5900f4ff1000cf542c510011
 challengeType: 5
-title: 'Problem 402: Integer-valued polynomials'
 videoUrl: ''
 localeTitle: 问题402：整数值多项式
 ---

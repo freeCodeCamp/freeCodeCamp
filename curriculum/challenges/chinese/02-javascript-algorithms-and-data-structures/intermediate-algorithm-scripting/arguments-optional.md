@@ -1,6 +1,5 @@
 ---
 id: a97fd23d9b809dac9921074f
-title: Arguments Optional
 challengeType: 5
 forumTopicId: 14271
 localeTitle: 可选参数

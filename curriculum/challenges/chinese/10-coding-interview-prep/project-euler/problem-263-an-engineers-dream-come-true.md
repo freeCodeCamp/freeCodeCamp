@@ -1,7 +1,6 @@
 ---
 id: 5900f4741000cf542c50ff86
 challengeType: 5
-title: 'Problem 263: An engineers" dream come true'
 videoUrl: ''
 localeTitle: 问题263：工程师“梦想成真
 ---

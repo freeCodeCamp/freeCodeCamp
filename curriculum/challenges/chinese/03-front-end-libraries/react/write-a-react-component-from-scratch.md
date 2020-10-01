@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036168
-title: Write a React Component from Scratch
 challengeType: 6
 forumTopicId: 301424
 localeTitle: 从零开始写一个 React 组件

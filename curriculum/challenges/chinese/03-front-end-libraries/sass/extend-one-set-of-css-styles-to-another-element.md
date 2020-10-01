@@ -1,6 +1,5 @@
 ---
 id: 587d7fa5367417b2b2512bbd
-title: Extend One Set of CSS Styles to Another Element
 challengeType: 0
 forumTopicId: 301456
 localeTitle: 将一组CSS样式扩展到另一个元素

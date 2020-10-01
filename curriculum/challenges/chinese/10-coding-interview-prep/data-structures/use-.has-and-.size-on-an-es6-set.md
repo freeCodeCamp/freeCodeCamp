@@ -1,6 +1,5 @@
 ---
 id: 587d8255367417b2b2512c72
-title: Use .has and .size on an ES6 Set
 challengeType: 1
 videoUrl: ''
 localeTitle: 在ES6集上使用.has和.size

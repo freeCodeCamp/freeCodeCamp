@@ -1,7 +1,6 @@
 ---
 id: 5900f4b31000cf542c50ffc6
 challengeType: 5
-title: 'Problem 327: Rooms of Doom'
 videoUrl: ''
 localeTitle: 问题327：末日的房间
 ---

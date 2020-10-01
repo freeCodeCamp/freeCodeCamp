@@ -1,7 +1,6 @@
 ---
 id: 5900f3ec1000cf542c50feff
 challengeType: 5
-title: 'Problem 128: Hexagonal tile differences'
 videoUrl: ''
 localeTitle: 问题128：六边形瓷砖差异
 ---

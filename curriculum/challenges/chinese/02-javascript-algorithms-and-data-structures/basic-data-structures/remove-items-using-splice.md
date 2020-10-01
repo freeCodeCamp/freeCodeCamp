@@ -1,6 +1,5 @@
 ---
 id: 587d78b2367417b2b2512b10
-title: Remove Items Using splice()
 challengeType: 1
 forumTopicId: 301166
 localeTitle: 使用 splice() 删除项目

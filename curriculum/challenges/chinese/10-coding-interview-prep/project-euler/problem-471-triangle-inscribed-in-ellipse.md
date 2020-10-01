@@ -1,7 +1,6 @@
 ---
 id: 5900f5431000cf542c510056
 challengeType: 5
-title: 'Problem 471: Triangle inscribed in ellipse'
 videoUrl: ''
 localeTitle: 问题471：以椭圆形刻的三角形
 ---

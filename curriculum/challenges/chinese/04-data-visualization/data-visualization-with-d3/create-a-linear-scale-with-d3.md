@@ -1,6 +1,5 @@
 ---
 id: 587d7fab367417b2b2512bda
-title: Create a Linear Scale with D3
 challengeType: 6
 forumTopicId: 301483
 localeTitle: 用 D3 创建线性比例

@@ -1,6 +1,5 @@
 ---
 id: 587d78a8367417b2b2512ae6
-title: Animate Multiple Elements at Variable Rates
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpWZc9'
 forumTopicId: 301042

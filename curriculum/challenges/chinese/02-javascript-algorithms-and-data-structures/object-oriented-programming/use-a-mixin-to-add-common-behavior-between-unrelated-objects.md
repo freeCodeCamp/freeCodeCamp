@@ -1,6 +1,5 @@
 ---
 id: 587d7db2367417b2b2512b89
-title: Use a Mixin to Add Common Behavior Between Unrelated Objects
 challengeType: 1
 forumTopicId: 301331
 localeTitle: 使用 Mixin 在不相关对象之间添加共同行为

@@ -1,6 +1,5 @@
 ---
 id: 587d8248367417b2b2512c3b
-title: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
 challengeType: 2
 forumTopicId: 301584
 localeTitle: 使用 helment.ieNoOpen() 防止 IE 打开不受信任的 HTML

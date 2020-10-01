@@ -1,6 +1,5 @@
 ---
 id: 587d8250367417b2b2512c5e
-title: Learn how a Stack Works
 challengeType: 1
 videoUrl: ''
 localeTitle: 了解堆栈的工作原理

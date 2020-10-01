@@ -1,7 +1,6 @@
 ---
 id: 5900f45f1000cf542c50ff71
 challengeType: 5
-title: 'Problem 242: Odd Triplets'
 videoUrl: ''
 localeTitle: 问题242：奇数三胞胎
 ---

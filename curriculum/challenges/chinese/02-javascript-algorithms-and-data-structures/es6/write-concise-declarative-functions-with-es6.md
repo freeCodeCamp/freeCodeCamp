@@ -1,6 +1,5 @@
 ---
 id: 587d7b8b367417b2b2512b50
-title: Write Concise Declarative Functions with ES6
 challengeType: 1
 forumTopicId: 301224
 localeTitle: 用 ES6 编写简洁的函数声明

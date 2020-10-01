@@ -1,6 +1,5 @@
 ---
 id: 58c383d33e2e3259241f3076
-title: Use Attribute Selectors to Style Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpymfJ'
 forumTopicId: 301092

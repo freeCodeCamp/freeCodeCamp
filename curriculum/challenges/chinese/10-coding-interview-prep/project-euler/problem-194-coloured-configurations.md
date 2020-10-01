@@ -1,7 +1,6 @@
 ---
 id: 5900f42f1000cf542c50ff40
 challengeType: 5
-title: 'Problem 194: Coloured Configurations'
 videoUrl: ''
 localeTitle: 问题194：彩色配置
 ---

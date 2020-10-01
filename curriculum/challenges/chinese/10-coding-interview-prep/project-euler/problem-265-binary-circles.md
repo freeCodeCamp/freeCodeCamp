@@ -1,7 +1,6 @@
 ---
 id: 5900f4761000cf542c50ff88
 challengeType: 5
-title: 'Problem 265: Binary Circles'
 videoUrl: ''
 localeTitle: 问题265：二进制圆圈
 ---

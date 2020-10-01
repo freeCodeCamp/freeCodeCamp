@@ -1,7 +1,6 @@
 ---
 id: 5900f4351000cf542c50ff47
 challengeType: 5
-title: 'Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string "200"'
 videoUrl: ''
 localeTitle: 问题200：找到包含连续子串“200”的第200个防爆大概
 ---

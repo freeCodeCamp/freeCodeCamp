@@ -1,7 +1,6 @@
 ---
 id: 5900f4161000cf542c50ff29
 challengeType: 5
-title: 'Problem 170: Find the largest 0 to 9 pandigital that can be formed by concatenating products'
 videoUrl: ''
 localeTitle: 问题170：找到可以通过连接产品形成的最大的0到9个pandigital
 ---

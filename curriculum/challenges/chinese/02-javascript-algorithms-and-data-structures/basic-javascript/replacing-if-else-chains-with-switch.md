@@ -1,6 +1,5 @@
 ---
 id: 56533eb9ac21ba0edf2244e0
-title: Replacing If Else Chains with Switch
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JE8fy'
 forumTopicId: 18266

@@ -1,6 +1,5 @@
 ---
 id: 587d78a3367417b2b2512acf
-title: Change the Position of Overlapping Elements with the z-index Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM94aHk'
 forumTopicId: 301046

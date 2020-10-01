@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036171
-title: Render State in the User Interface
 challengeType: 6
 forumTopicId: 301409
 localeTitle: 在用户界面中渲染状态

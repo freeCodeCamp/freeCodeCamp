@@ -1,6 +1,5 @@
 ---
 id: 587d8249367417b2b2512c3e
-title: Disable Client-Side Caching with helmet.noCache()
 challengeType: 2
 forumTopicId: 301576
 localeTitle: 使用 helment.noCache() 禁用客户端缓存

@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036142
-title: Manage State Locally First
 challengeType: 6
 forumTopicId: 301431
 localeTitle: 首先在本地管理状态

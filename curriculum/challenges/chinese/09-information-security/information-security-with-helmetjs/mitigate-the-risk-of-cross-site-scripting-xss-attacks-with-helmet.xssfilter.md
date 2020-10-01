@@ -1,6 +1,5 @@
 ---
 id: 587d8247367417b2b2512c39
-title: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
 challengeType: 2
 forumTopicId: 301583
 localeTitle: 使用 helmet.xssFilter() 降低跨站点脚本（XSS）攻击的风险

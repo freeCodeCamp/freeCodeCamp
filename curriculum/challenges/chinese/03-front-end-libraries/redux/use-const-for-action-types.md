@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036152
-title: Use const for Action Types
 challengeType: 6
 forumTopicId: 301450
 localeTitle: 使用 const 声明 Action Types

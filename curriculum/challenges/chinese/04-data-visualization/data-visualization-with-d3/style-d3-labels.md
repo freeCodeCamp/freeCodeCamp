@@ -1,6 +1,5 @@
 ---
 id: 587d7faa367417b2b2512bd3
-title: Style D3 Labels
 challengeType: 6
 forumTopicId: 301492
 localeTitle: 给 D3 标签添加样式

@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348cd8acef08811
-title: Taste the Bootstrap Button Color Rainbow
 challengeType: 0
 forumTopicId: 18323
 localeTitle: 体验 Bootstrap 彩虹色的按钮

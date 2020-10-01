@@ -1,6 +1,5 @@
 ---
 id: 587d8259367417b2b2512c83
-title: Invert a Binary Tree
 challengeType: 1
 videoUrl: ''
 localeTitle: 反转二叉树

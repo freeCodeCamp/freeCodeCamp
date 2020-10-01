@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036174
-title: Bind 'this' to a Class Method
 challengeType: 6
 forumTopicId: 301379
 localeTitle: 将 this 绑定到 Class 方法

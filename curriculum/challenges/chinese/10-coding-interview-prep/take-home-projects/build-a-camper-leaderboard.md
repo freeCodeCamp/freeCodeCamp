@@ -1,6 +1,5 @@
 ---
 id: bd7156d8c242eddfaeb5bd13
-title: Build a Camper Leaderboard
 challengeType: 3
 videoUrl: ''
 localeTitle: 建立一个露营者排行榜

@@ -1,7 +1,6 @@
 ---
 id: 5900f5221000cf542c510033
 challengeType: 5
-title: 'Problem 436: Unfair wager'
 videoUrl: ''
 localeTitle: 问题436：不公平的赌注
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4521000cf542c50ff64
 challengeType: 5
-title: 'Problem 229: Four Representations using Squares'
 videoUrl: ''
 localeTitle: 问题229：使用正方形的四个表示
 ---

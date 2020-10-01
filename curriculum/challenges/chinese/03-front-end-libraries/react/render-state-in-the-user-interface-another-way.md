@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036172
-title: Render State in the User Interface Another Way
 challengeType: 6
 forumTopicId: 301408
 localeTitle: 以另一种方式在用户界面中渲染状态

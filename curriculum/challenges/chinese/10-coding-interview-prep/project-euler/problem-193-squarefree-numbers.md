@@ -1,7 +1,6 @@
 ---
 id: 5900f42f1000cf542c50ff41
 challengeType: 5
-title: 'Problem 193: Squarefree Numbers'
 videoUrl: ''
 localeTitle: 问题193：无广场数字
 ---

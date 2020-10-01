@@ -1,6 +1,5 @@
 ---
 id: 587d7daf367417b2b2512b7f
-title: Change the Prototype to a New Object
 challengeType: 1
 forumTopicId: 301316
 localeTitle: 将原型更改为新对象

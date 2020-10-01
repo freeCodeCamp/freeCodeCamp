@@ -1,7 +1,6 @@
 ---
 id: 5900f3ca1000cf542c50fedd
 challengeType: 5
-title: 'Problem 94: Almost equilateral triangles'
 videoUrl: ''
 localeTitle: 问题94：几乎等边三角形
 ---

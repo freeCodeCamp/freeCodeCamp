@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d403616d
-title: Use PropTypes to Define the Props You Expect
 challengeType: 6
 forumTopicId: 301419
 localeTitle: 使用 PropTypes 来定义你期望的 Props

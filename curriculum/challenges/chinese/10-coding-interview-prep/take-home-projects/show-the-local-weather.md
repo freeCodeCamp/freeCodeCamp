@@ -1,6 +1,5 @@
 ---
 id: bd7158d8c442eddfaeb5bd10
-title: Show the Local Weather
 challengeType: 3
 videoUrl: ''
 localeTitle: 显示当地天气

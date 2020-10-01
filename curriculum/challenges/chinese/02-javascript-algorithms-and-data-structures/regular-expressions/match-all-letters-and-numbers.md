@@ -1,6 +1,5 @@
 ---
 id: 587d7db7367417b2b2512b9f
-title: Match All Letters and Numbers
 challengeType: 1
 forumTopicId: 301346
 localeTitle: 匹配所有的字母和数字

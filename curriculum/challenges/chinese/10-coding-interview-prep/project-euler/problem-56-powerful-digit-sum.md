@@ -1,7 +1,6 @@
 ---
 id: 5900f3a41000cf542c50feb7
 challengeType: 5
-title: 'Problem 56: Powerful digit sum'
 videoUrl: ''
 localeTitle: 问题56：强大的数字总和
 ---

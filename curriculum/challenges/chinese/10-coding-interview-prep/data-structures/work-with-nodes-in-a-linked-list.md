@@ -1,6 +1,5 @@
 ---
 id: 587d8251367417b2b2512c61
-title: Work with Nodes in a Linked List
 challengeType: 1
 videoUrl: ''
 localeTitle: 使用链接列表中的节点

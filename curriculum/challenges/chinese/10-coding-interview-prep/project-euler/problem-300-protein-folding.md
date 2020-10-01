@@ -1,7 +1,6 @@
 ---
 id: 5900f49a1000cf542c50ffac
 challengeType: 5
-title: 'Problem 300: Protein folding'
 videoUrl: ''
 localeTitle: 问题300：蛋白质折叠
 ---

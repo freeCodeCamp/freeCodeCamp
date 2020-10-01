@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d403614d
-title: Define a Redux Action
 challengeType: 6
 forumTopicId: 301440
 localeTitle: 定义一个 Redux Action

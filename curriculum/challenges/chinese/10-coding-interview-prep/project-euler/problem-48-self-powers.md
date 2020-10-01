@@ -1,7 +1,6 @@
 ---
 id: 5900f39c1000cf542c50feaf
 challengeType: 5
-title: 'Problem 48: Self powers'
 videoUrl: ''
 localeTitle: 问题48：自我权力
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4c81000cf542c50ffda
 challengeType: 5
-title: 'Problem 345: Matrix Sum'
 videoUrl: ''
 localeTitle: 问题345：矩阵求和
 ---

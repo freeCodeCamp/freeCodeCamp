@@ -1,6 +1,5 @@
 ---
 id: 587d7b89367417b2b2512b4b
-title: Use Destructuring Assignment to Assign Variables from Arrays
 challengeType: 1
 forumTopicId: 301213
 localeTitle: 使用解构赋值从数组中分配变量

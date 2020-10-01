@@ -1,7 +1,6 @@
 ---
 id: 5900f4e11000cf542c50fff4
 challengeType: 5
-title: 'Problem 373: Circumscribed Circles'
 videoUrl: ''
 localeTitle: 问题373：外接圆圈
 ---

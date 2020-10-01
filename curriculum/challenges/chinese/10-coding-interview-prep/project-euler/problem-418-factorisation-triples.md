@@ -1,7 +1,6 @@
 ---
 id: 5900f50f1000cf542c510021
 challengeType: 5
-title: 'Problem 418: Factorisation triples'
 videoUrl: ''
 localeTitle: 问题418：三重分解
 ---

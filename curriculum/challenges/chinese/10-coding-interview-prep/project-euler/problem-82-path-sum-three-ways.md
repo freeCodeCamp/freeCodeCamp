@@ -1,7 +1,6 @@
 ---
 id: 5900f3be1000cf542c50fed1
 challengeType: 5
-title: 'Problem 82: Path sum: three ways'
 videoUrl: ''
 localeTitle: 问题82：路径总和：三种方式
 ---

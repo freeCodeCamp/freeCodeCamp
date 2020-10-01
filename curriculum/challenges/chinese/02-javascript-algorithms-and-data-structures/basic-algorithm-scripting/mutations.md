@@ -1,6 +1,5 @@
 ---
 id: af2170cad53daa0770fabdea
-title: Mutations
 challengeType: 5
 videoUrl: ''
 localeTitle: 突变

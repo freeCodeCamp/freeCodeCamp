@@ -1,7 +1,6 @@
 ---
 id: 5900f3f61000cf542c50ff09
 challengeType: 5
-title: 'Problem 138: Special isosceles triangles'
 videoUrl: ''
 localeTitle: 问题138：特殊的等腰三角形
 ---

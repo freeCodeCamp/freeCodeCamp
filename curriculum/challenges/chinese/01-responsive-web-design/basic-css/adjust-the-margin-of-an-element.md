@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aedf08822
-title: Adjust the Margin of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJarHW'
 forumTopicId: 16654

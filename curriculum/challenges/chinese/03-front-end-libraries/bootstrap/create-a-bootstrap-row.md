@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9bec908846
-title: Create a Bootstrap Row
 challengeType: 0
 forumTopicId: 16813
 localeTitle: 创建一个 Bootstrap Row

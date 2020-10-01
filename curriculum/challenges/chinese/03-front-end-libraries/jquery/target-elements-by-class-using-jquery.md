@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aedc08826
-title: Target Elements by Class Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6

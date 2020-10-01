@@ -1,7 +1,6 @@
 ---
 id: 5900f4021000cf542c50ff14
 challengeType: 5
-title: 'Problem 148: Exploring Pascal"s triangle'
 videoUrl: ''
 localeTitle: 问题148：探索帕斯卡的三角形
 ---

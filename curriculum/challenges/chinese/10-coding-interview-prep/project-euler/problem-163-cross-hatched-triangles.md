@@ -1,7 +1,6 @@
 ---
 id: 5900f40f1000cf542c50ff22
 challengeType: 5
-title: 'Problem 163: Cross-hatched triangles'
 videoUrl: ''
 localeTitle: 问题163：阴影线三角形
 ---

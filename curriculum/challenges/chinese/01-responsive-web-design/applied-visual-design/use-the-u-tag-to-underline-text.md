@@ -1,6 +1,5 @@
 ---
 id: 587d781a367417b2b2512ab8
-title: Use the u Tag to Underline Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6aQCL'
 forumTopicId: 301082

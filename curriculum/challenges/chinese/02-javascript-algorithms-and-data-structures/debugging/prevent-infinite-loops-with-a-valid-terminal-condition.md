@@ -1,6 +1,5 @@
 ---
 id: 587d7b86367417b2b2512b3d
-title: Prevent Infinite Loops with a Valid Terminal Condition
 challengeType: 1
 forumTopicId: 301192
 localeTitle: 使用有效的终止条件防止无限循环

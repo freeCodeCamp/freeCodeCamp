@@ -1,5 +1,4 @@
 ---
-title: Factorial
 id: 597b2b2a2702b44414742771
 challengeType: 5
 videoUrl: ''

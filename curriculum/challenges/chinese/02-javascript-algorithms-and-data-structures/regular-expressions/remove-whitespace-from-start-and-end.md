@@ -1,6 +1,5 @@
 ---
 id: 587d7dbb367417b2b2512bac
-title: Remove Whitespace from Start and End
 challengeType: 1
 forumTopicId: 301362
 localeTitle: 删除开头和结尾的空白

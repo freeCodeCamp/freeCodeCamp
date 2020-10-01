@@ -1,7 +1,6 @@
 ---
 id: 5900f3f71000cf542c50ff0a
 challengeType: 5
-title: 'Problem 139: Pythagorean tiles'
 videoUrl: ''
 localeTitle: 问题139：毕达哥拉斯瓷砖
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d78a6367417b2b2512adc
-title: Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZ2uB'
 forumTopicId: 301075

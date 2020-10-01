@@ -1,7 +1,6 @@
 ---
 id: 5900f3fa1000cf542c50ff0d
 challengeType: 5
-title: 'Problem 142: Perfect Square Collection'
 videoUrl: ''
 localeTitle: 问题142：完美的方形集合
 ---

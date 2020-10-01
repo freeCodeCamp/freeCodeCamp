@@ -1,6 +1,5 @@
 ---
 id: 587d7b87367417b2b2512b3f
-title: Explore Differences Between the var and let Keywords
 challengeType: 1
 forumTopicId: 301202
 localeTitle: 探索 var 和 let 关键字之间的差异

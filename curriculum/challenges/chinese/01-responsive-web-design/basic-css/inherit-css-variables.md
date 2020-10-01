@@ -1,6 +1,5 @@
 ---
 id: 5a9d7295424fe3d0e10cad14
-title: Inherit CSS Variables
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLZZhZ'
 forumTopicId: 301088

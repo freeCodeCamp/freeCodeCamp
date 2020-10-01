@@ -1,7 +1,6 @@
 ---
 id: 5900f3ea1000cf542c50fefd
 challengeType: 5
-title: 'Problem 126: Cuboid layers'
 videoUrl: ''
 localeTitle: 问题126：长方体层
 ---

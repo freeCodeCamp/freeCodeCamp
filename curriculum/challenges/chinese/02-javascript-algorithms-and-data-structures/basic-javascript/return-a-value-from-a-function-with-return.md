@@ -1,6 +1,5 @@
 ---
 id: 56533eb9ac21ba0edf2244c2
-title: Return a Value from a Function with Return
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87wue'
 forumTopicId: 18271

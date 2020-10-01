@@ -1,6 +1,5 @@
 ---
 id: 587d7da9367417b2b2512b69
-title: Sort an Array Alphabetically using the sort Method
 challengeType: 1
 forumTopicId: 18303
 localeTitle: 使用 sort 方法按字母顺序给数组排序

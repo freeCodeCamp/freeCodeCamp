@@ -1,7 +1,6 @@
 ---
 id: 5900f5021000cf542c510015
 challengeType: 5
-title: 'Problem 406: Guessing Game'
 videoUrl: ''
 localeTitle: 问题406：猜猜游戏
 ---

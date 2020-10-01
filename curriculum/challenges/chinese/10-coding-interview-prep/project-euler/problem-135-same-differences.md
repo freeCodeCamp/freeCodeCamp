@@ -1,7 +1,6 @@
 ---
 id: 5900f3f31000cf542c50ff06
 challengeType: 5
-title: 'Problem 135: Same differences'
 videoUrl: ''
 localeTitle: 问题135：同样的差异
 ---

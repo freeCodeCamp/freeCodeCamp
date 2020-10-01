@@ -1,6 +1,5 @@
 ---
 id: bd7168d8c242eddfaeb5bd13
-title: Visualize Data with a Bar Chart
 challengeType: 3
 forumTopicId: 301464
 localeTitle: 用条形图可视化数据

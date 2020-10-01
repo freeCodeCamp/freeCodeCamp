@@ -1,7 +1,6 @@
 ---
 id: 5900f4e61000cf542c50fff9
 challengeType: 5
-title: 'Problem 378: Triangle Triples'
 videoUrl: ''
 localeTitle: 问题378：三角形三元组
 ---

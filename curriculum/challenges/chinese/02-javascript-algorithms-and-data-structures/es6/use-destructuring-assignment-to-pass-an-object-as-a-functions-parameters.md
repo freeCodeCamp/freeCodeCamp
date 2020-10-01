@@ -1,6 +1,5 @@
 ---
 id: 587d7b8a367417b2b2512b4d
-title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
 challengeType: 1
 forumTopicId: 301217
 localeTitle: 使用解构赋值将对象作为函数的参数传递

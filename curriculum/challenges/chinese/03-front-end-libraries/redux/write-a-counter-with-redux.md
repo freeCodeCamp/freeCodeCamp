@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036157
-title: Write a Counter with Redux
 challengeType: 6
 forumTopicId: 301453
 localeTitle: 用 Redux 写一个计数器

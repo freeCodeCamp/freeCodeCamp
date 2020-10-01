@@ -1,7 +1,6 @@
 ---
 id: 5900f46e1000cf542c50ff80
 challengeType: 5
-title: 'Problem 257: Angular Bisectors'
 videoUrl: ''
 localeTitle: 问题257：角度平分器
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f3fd1000cf542c50ff10
 challengeType: 5
-title: 'Problem 145: How many reversible numbers are there below one-billion?'
 videoUrl: ''
 localeTitle: 问题145：有多少可逆数字低于十亿？
 ---

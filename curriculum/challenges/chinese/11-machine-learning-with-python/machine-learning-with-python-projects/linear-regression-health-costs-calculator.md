@@ -1,6 +1,5 @@
 ---
 id: 5e46f8edac417301a38fb930
-title: Linear Regression Health Costs Calculator
 challengeType: 10
 isHidden: false
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4861000cf542c50ff99
 challengeType: 5
-title: 'Problem 282: The Ackermann function'
 videoUrl: ''
 localeTitle: 问题282：阿克曼函数
 ---

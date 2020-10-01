@@ -1,7 +1,6 @@
 ---
 id: 5900f4731000cf542c50ff85
 challengeType: 5
-title: 'Problem 262: Mountain Range'
 videoUrl: ''
 localeTitle: 问题262：山脉
 ---

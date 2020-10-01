@@ -1,6 +1,5 @@
 ---
 id: bad82fee1322bd9aedf08721
-title: Understand Absolute versus Relative Units
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
 forumTopicId: 301089

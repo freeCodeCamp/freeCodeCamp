@@ -1,7 +1,6 @@
 ---
 id: 5900f47d1000cf542c50ff8f
 challengeType: 5
-title: 'Problem 272: Modular Cubes, part 2'
 videoUrl: ''
 localeTitle: 问题272：模块化立方体，第2部分
 ---

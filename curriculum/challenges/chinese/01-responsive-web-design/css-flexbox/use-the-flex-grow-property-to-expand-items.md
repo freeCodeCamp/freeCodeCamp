@@ -1,6 +1,5 @@
 ---
 id: 587d78ae367417b2b2512afc
-title: Use the flex-grow Property to Expand Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c2p78cg'
 forumTopicId: 1301111

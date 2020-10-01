@@ -1,6 +1,5 @@
 ---
 id: 587d825a367417b2b2512c8a
-title: Insert an Element into a Max Heap
 challengeType: 1
 videoUrl: ''
 localeTitle: 将元素插入最大堆

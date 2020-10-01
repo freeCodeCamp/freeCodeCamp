@@ -1,6 +1,5 @@
 ---
 id: a56138aff60341a09ed6c480
-title: Inventory Update
 challengeType: 5
 videoUrl: ''
 localeTitle: 库存更新

@@ -1,7 +1,6 @@
 ---
 id: 5900f4d01000cf542c50ffe3
 challengeType: 5
-title: 'Problem 356: Largest roots of cubic polynomials'
 videoUrl: ''
 localeTitle: 问题356：三次多项式的最大根
 ---

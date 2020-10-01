@@ -1,7 +1,6 @@
 ---
 id: 5900f4ef1000cf542c510001
 challengeType: 5
-title: 'Problem 386: Maximum length of an antichain'
 videoUrl: ''
 localeTitle: 问题386：反链的最大长度
 ---

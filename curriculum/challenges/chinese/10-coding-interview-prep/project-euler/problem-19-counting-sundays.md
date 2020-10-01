@@ -1,7 +1,6 @@
 ---
 id: 5900f37f1000cf542c50fe92
 challengeType: 5
-title: 'Problem 19: Counting Sundays'
 videoUrl: ''
 localeTitle: 问题19：计算星期日
 ---

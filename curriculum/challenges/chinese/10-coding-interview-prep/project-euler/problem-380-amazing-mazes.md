@@ -1,7 +1,6 @@
 ---
 id: 5900f4e81000cf542c50fffb
 challengeType: 5
-title: 'Problem 380: Amazing Mazes!'
 videoUrl: ''
 localeTitle: 问题380：惊人的迷宫！
 ---

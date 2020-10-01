@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aec908856
-title: Label Bootstrap Buttons
 challengeType: 0
 forumTopicId: 18222
 localeTitle: 给 Bootstrap 按钮贴标签

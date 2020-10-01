@@ -1,6 +1,5 @@
 ---
 id: a24c1a4622e3c05097f71d67
-title: Where do I Belong
 challengeType: 5
 videoUrl: ''
 localeTitle: 我属于哪里？

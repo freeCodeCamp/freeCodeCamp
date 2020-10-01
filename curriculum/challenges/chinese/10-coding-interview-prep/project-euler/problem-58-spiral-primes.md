@@ -1,7 +1,6 @@
 ---
 id: 5900f3a61000cf542c50feb9
 challengeType: 5
-title: 'Problem 58: Spiral primes'
 videoUrl: ''
 localeTitle: 问题58：螺旋素数
 ---

@@ -1,6 +1,5 @@
 ---
 id: 587d7b89367417b2b2512b4a
-title: Use Destructuring Assignment to Assign Variables from Nested Objects
 challengeType: 1
 forumTopicId: 301214
 localeTitle: 使用解构赋值从嵌套对象中分配变量

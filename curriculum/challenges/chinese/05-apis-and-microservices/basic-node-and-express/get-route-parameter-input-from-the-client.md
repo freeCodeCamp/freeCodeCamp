@@ -1,6 +1,5 @@
 ---
 id: 587d7fb2367417b2b2512bf5
-title: Get Route Parameter Input from the Client
 challengeType: 2
 forumTopicId: 301513
 localeTitle: 从客户端获取路由参数输入

@@ -1,6 +1,5 @@
 ---
 id: a26cbbe9ad8655a977e1ceb5
-title: Find the Longest Word in a String
 challengeType: 5
 videoUrl: ''
 localeTitle: 找到字符串中最长的单词

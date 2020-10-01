@@ -1,7 +1,6 @@
 ---
 id: 5900f4391000cf542c50ff4c
 challengeType: 5
-title: 'Problem 205: Dice Game'
 videoUrl: ''
 localeTitle: 问题205：骰子游戏
 ---

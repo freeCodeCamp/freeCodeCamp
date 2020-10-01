@@ -1,6 +1,5 @@
 ---
 id: 587d7daf367417b2b2512b80
-title: Remember to Set the Constructor Property when Changing the Prototype
 challengeType: 1
 forumTopicId: 301323
 localeTitle: 更改原型时，记得设置构造函数属性

@@ -1,7 +1,6 @@
 ---
 id: 5900f4e51000cf542c50fff8
 challengeType: 5
-title: 'Problem 377: Sum of digits, experience 13'
 videoUrl: ''
 localeTitle: 问题377：数字之和，经验13
 ---

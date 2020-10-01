@@ -1,7 +1,6 @@
 ---
 id: 5900f4451000cf542c50ff57
 challengeType: 5
-title: 'Problem 216: Investigating the primality of numbers of the form 2n2-1'
 videoUrl: ''
 localeTitle: 问题216：调查2n2-1形式的数字的素数
 ---

@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036166
-title: Compose React Components
 challengeType: 6
 forumTopicId: 301381
 localeTitle: 组合 React 组件

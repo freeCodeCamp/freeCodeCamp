@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aecf08806
-title: Use a CSS Class to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvDtV'
 forumTopicId: 18337

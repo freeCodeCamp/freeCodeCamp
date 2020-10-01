@@ -1,6 +1,5 @@
 ---
 id: 587d7fa6367417b2b2512bbf
-title: Visualize Data with a Choropleth Map
 challengeType: 3
 forumTopicId: 301465
 localeTitle: 用地区分布图可视化数据

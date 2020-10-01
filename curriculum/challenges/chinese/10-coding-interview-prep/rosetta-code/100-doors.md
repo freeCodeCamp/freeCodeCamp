@@ -1,5 +1,4 @@
 ---
-title: 100 doors
 id: 594810f028c0303b75339acb
 challengeType: 5
 videoUrl: ''

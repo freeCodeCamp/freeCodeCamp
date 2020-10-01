@@ -1,6 +1,5 @@
 ---
 id: 587d78a5367417b2b2512ad8
-title: Create Texture by Adding a Subtle Pattern as a Background Image
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQdwJC8'
 forumTopicId: 301052

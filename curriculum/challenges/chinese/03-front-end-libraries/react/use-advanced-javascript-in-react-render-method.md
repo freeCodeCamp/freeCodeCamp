@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036183
-title: Use Advanced JavaScript in React Render Method
 challengeType: 6
 forumTopicId: 301415
 localeTitle: 在 React Render 方法中使用 JavaScript

@@ -1,6 +1,5 @@
 ---
 id: 587d7fa6367417b2b2512bc0
-title: Visualize Data with a Treemap Diagram
 challengeType: 3
 forumTopicId: 301468
 localeTitle: 用树形图可视化数据

@@ -1,7 +1,6 @@
 ---
 id: 5900f5471000cf542c510059
 challengeType: 5
-title: 'Problem 474: Last digits of divisors'
 videoUrl: ''
 localeTitle: 问题474：除数的最后数字
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f46e1000cf542c50ff81
 challengeType: 5
-title: 'Problem 258: A lagged Fibonacci sequence'
 videoUrl: ''
 localeTitle: 问题258：滞后的斐波那契序列
 ---

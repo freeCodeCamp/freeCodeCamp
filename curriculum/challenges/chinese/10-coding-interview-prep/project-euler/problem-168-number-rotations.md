@@ -1,7 +1,6 @@
 ---
 id: 5900f4151000cf542c50ff27
 challengeType: 5
-title: 'Problem 168: Number Rotations'
 videoUrl: ''
 localeTitle: 问题168：数字轮换
 ---

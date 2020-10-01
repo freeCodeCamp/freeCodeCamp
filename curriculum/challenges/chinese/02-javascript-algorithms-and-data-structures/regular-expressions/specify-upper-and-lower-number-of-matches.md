@@ -1,6 +1,5 @@
 ---
 id: 587d7db9367417b2b2512ba5
-title: Specify Upper and Lower Number of Matches
 challengeType: 1
 forumTopicId: 301367
 localeTitle: 指定匹配的上限和下限

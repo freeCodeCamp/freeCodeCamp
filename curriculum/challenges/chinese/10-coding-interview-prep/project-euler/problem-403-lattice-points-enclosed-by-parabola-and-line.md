@@ -1,7 +1,6 @@
 ---
 id: 5900f5001000cf542c510013
 challengeType: 5
-title: 'Problem 403: Lattice points enclosed by parabola and line'
 videoUrl: ''
 localeTitle: 问题403：由抛物线和直线包围的格点
 ---

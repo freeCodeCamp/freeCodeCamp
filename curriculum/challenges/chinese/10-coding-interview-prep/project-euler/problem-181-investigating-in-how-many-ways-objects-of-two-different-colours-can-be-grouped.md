@@ -1,7 +1,6 @@
 ---
 id: 5900f4231000cf542c50ff34
 challengeType: 5
-title: 'Problem 181: Investigating in how many ways objects of two different colours can be grouped'
 videoUrl: ''
 localeTitle: 问题181：调查两种不同颜色的对象可以分组的方式
 ---

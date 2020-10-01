@@ -1,6 +1,5 @@
 ---
 id: 587d7db0367417b2b2512b81
-title: Understand Where an Object’s Prototype Comes From
 challengeType: 1
 forumTopicId: 301330
 localeTitle: 了解对象的原型来自哪里

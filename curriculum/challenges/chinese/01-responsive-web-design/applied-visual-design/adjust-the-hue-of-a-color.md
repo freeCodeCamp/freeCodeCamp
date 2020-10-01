@@ -1,6 +1,5 @@
 ---
 id: 587d78a4367417b2b2512ad4
-title: Adjust the Hue of a Color
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp38TZ'
 forumTopicId: 301036

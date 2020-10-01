@@ -1,6 +1,5 @@
 ---
 id: 587d7fb0367417b2b2512bee
-title: Start a Working Express Server
 challengeType: 2
 forumTopicId: 301519
 localeTitle: 启动一个 Express 服务器

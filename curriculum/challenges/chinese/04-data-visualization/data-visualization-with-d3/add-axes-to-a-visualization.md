@@ -1,6 +1,5 @@
 ---
 id: 587d7fad367417b2b2512bdf
-title: Add Axes to a Visualization
 challengeType: 6
 forumTopicId: 301472
 localeTitle: 添加坐标轴到可视化中

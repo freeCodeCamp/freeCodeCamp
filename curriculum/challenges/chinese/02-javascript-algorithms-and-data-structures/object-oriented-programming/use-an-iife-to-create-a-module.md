@@ -1,6 +1,5 @@
 ---
 id: 587d7db2367417b2b2512b8c
-title: Use an IIFE to Create a Module
 challengeType: 1
 forumTopicId: 301332
 localeTitle:  使用 IIFE 创建一个模块

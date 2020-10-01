@@ -1,7 +1,6 @@
 ---
 id: 5900f42b1000cf542c50ff3d
 challengeType: 5
-title: 'Problem 190: Maximising a weighted product'
 videoUrl: ''
 localeTitle: 问题190：最大化加权产品
 ---

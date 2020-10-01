@@ -1,6 +1,5 @@
 ---
 id: bd7178d8c242eddfaeb5bd13
-title: Visualize Data with a Scatterplot Graph
 challengeType: 3
 forumTopicId: 301467
 localeTitle: 用散点图可视化数据

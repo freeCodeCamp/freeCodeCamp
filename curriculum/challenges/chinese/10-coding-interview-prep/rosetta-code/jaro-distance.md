@@ -1,5 +1,4 @@
 ---
-title: Jaro distance
 id: 5a23c84252665b21eecc7ec2
 challengeType: 5
 videoUrl: ''

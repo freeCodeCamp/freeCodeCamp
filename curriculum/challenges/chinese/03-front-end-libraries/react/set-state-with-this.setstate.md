@@ -1,6 +1,5 @@
 ---
 id: 5a24c314108439a4d4036173
-title: Set State with this.setState
 challengeType: 6
 forumTopicId: 301412
 localeTitle: 用 this.setState 设置状态

@@ -1,7 +1,6 @@
 ---
 id: 5900f4cd1000cf542c50ffe0
 challengeType: 5
-title: 'Problem 353: Risky moon'
 videoUrl: ''
 localeTitle: 问题353：危险的月亮
 ---

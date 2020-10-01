@@ -1,6 +1,5 @@
 ---
 id: 587d7b7c367417b2b2512b18
-title: Add Key-Value Pairs to JavaScript Objects
 challengeType: 1
 forumTopicId: 301153
 localeTitle: 将键值对添加到对象中

@@ -1,6 +1,5 @@
 ---
 id: 587d7db6367417b2b2512b9a
-title: Match Characters that Occur Zero or More Times
 challengeType: 1
 forumTopicId: 301351
 localeTitle: 匹配出现零次或多次的字符

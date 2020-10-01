@@ -1,7 +1,6 @@
 ---
 id: 5900f4771000cf542c50ff89
 challengeType: 5
-title: 'Problem 266: Pseudo Square Root'
 videoUrl: ''
 localeTitle: 问题266：伪平方根
 ---

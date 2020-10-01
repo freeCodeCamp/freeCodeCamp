@@ -1,6 +1,5 @@
 ---
 id: 587d8254367417b2b2512c70
-title: Create and Add to Sets in ES6
 challengeType: 1
 videoUrl: ''
 localeTitle: 在ES6中创建和添加集

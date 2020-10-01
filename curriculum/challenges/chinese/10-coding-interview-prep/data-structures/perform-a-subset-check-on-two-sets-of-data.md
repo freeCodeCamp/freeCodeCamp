@@ -1,6 +1,5 @@
 ---
 id: 587d8254367417b2b2512c6f
-title: Perform a Subset Check on Two Sets of Data
 challengeType: 1
 videoUrl: ''
 localeTitle: 对两组数据执行子集检查

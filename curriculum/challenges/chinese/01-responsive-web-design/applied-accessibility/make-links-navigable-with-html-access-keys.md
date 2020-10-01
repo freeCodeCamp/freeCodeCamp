@@ -1,6 +1,5 @@
 ---
 id: 587d7790367417b2b2512aaf
-title: Make Links Navigable with HTML Access Keys
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQvmaTp'
 forumTopicId: 1

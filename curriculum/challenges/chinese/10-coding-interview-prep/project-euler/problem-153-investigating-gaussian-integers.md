@@ -1,7 +1,6 @@
 ---
 id: 5900f4051000cf542c50ff18
 challengeType: 5
-title: 'Problem 153: Investigating Gaussian Integers'
 videoUrl: ''
 localeTitle: 问题153：调查高斯整数
 ---

@@ -1,7 +1,6 @@
 ---
 id: 5900f4881000cf542c50ff9a
 challengeType: 5
-title: 'Problem 283: Integer sided triangles for which the area * perimeter ratio is integral'
 videoUrl: ''
 localeTitle: 问题283：面积*周长比为整数的整数边三角形
 ---

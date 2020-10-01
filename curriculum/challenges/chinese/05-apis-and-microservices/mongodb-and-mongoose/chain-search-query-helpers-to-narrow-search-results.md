@@ -1,6 +1,5 @@
 ---
 id: 587d7fb9367417b2b2512c12
-title: Chain Search Query Helpers to Narrow Search Results
 challengeType: 2
 forumTopicId: 301533
 localeTitle: 通过链式调用搜索查询辅助函数来缩小搜索结果

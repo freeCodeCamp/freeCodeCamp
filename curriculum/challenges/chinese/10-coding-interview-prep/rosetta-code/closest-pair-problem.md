@@ -1,5 +1,4 @@
 ---
-title: Closest-pair problem
 id: 5951a53863c8a34f02bf1bdc
 challengeType: 5
 videoUrl: ''

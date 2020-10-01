@@ -1,6 +1,5 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: Build a Personal Portfolio Webpage
 challengeType: 3
 forumTopicId: 301143
 localeTitle: 制作一个个人作品集网页

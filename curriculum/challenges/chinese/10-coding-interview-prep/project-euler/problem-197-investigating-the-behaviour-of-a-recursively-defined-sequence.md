@@ -1,7 +1,6 @@
 ---
 id: 5900f4311000cf542c50ff44
 challengeType: 5
-title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
 videoUrl: ''
 localeTitle: 问题197：研究递归定义的序列的行为
 ---

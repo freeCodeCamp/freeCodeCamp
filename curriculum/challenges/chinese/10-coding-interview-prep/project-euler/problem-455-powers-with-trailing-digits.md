@@ -1,7 +1,6 @@
 ---
 id: 5900f5331000cf542c510046
 challengeType: 5
-title: 'Problem 455: Powers With Trailing Digits'
 videoUrl: ''
 localeTitle: 问题455：使用尾随数字的权力
 ---

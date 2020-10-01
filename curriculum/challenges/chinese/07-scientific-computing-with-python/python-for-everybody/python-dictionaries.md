@@ -1,6 +1,5 @@
 ---
 id: 5e7b9f090b6c005b0e76f067
-title: Python Dictionaries
 challengeType: 11
 isHidden: false
 videoId: dnzvfimrRMg

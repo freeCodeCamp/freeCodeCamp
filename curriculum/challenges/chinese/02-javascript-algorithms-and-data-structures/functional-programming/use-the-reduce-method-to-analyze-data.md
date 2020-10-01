@@ -1,6 +1,5 @@
 ---
 id: 587d7da9367417b2b2512b68
-title: Use the reduce Method to Analyze Data
 challengeType: 1
 forumTopicId: 301313
 localeTitle: 使用 reduce 方法分析数据

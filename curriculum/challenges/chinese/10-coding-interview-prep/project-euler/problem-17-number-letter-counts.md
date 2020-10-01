@@ -1,7 +1,6 @@
 ---
 id: 5900f37d1000cf542c50fe90
 challengeType: 5
-title: 'Problem 17: Number letter counts'
 videoUrl: ''
 localeTitle: 问题17：数字字母计数
 ---

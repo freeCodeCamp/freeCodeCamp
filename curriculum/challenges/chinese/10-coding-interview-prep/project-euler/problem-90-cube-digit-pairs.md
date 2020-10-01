@@ -1,7 +1,6 @@
 ---
 id: 5900f3c61000cf542c50fed9
 challengeType: 5
-title: 'Problem 90: Cube digit pairs'
 videoUrl: ''
 localeTitle: 问题90：立方体数字对
 ---

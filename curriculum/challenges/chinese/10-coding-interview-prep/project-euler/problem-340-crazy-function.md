@@ -1,7 +1,6 @@
 ---
 id: 5900f4c21000cf542c50ffd4
 challengeType: 5
-title: 'Problem 340: Crazy Function'
 videoUrl: ''
 localeTitle: 问题340：疯狂的功能
 ---

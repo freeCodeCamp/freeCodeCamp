@@ -1,7 +1,6 @@
 ---
 id: 5900f38f1000cf542c50fea2
 challengeType: 5
-title: 'Problem 35: Circular primes'
 videoUrl: ''
 localeTitle: 问题35：循环素数
 ---

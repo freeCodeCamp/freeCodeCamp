@@ -1,6 +1,5 @@
 ---
 id: 587d7b7a367417b2b2512b12
-title: Copy Array Items Using slice()
 challengeType: 1
 forumTopicId: 301158
 localeTitle: 使用 slice() 拷贝数组项目

@@ -1,6 +1,5 @@
 ---
 id: bad87fee1348bd9aed308826
-title: Target the Parent of an Element Using jQuery
 challengeType: 6
 forumTopicId: 18321
 localeTitle: 使用 jQuery 选择元素的父元素

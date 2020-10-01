@@ -1,6 +1,5 @@
 ---
 id: 587d7fb7367417b2b2512c0d
-title: Use model.findById() to Search Your Database By _id
 challengeType: 2
 forumTopicId: 301544
 localeTitle: 使用 model.findById() 方法，根据 _id 来搜索数据
