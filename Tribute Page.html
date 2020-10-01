@@ -1,0 +1,178 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<!-- Tribute page is the first project that is introduced as a Basic Front End project, where you need to fulfill two User Stories: User Story: I can view a tribute page with an image and text. ...
+It's time to dig dipper in responsive images, add few details and new functionality to transformed your basic project -->
+<!-- 
+Hello Camper!
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+- The freeCodeCamp Team 
+-->
+
+<body id='main'>
+  
+  <header>
+    <section id="title">
+      <h1>Dr. Norman Borlaug</h1>
+      <h2 id="tribute-info">The man who saved a billion lives</h2>
+      <div id="img-div">
+        <img src="https://c2.staticflickr.com/4/3689/10613180113_fdf7bcd316_b.jpg" id="image"/ alt="Dr. Norman Borlaug training biologists in Mexico">
+        <p for="image" id="image-label"><em>
+        Dr. Norman Borlaug, second from left, trains biologists in Mexico on how to increase wheat yields - part of his life-long war on hunger.</em></p>
+      </div>
+    </section>
+  </header>
+  
+  <main>
+    <div id="main-content">
+      <article id="time-line">
+        <h2>Here's a time line of Dr. Borlaug's life:</h2>
+        <ul id="time-line-list" class="text-content">
+          <li><time datetime="1914">1914</time> - Born in Cresco, Iowa</li>
+          <li><time datetime="1933">1933</time> - Leaves his family's farm to attend the University of Minnesota, thanks to a Depression era program known as the "National Youth Administration"</li>
+          <li><time datetime="1935">1935</time> - Has to stop school and save up more money. Works in the Civilian Conservation Corps, helping starving Americans. "I saw how food changed them", he said. "All of this left scars on me."</li>
+          <li><time datetime="1937">1937</time> - Finishes university and takes a job in the US Forestry Service</li>
+          <li><time datetime="1938">1938</time> - Marries wife of 69 years Margret Gibson. Gets laid off due to budget cuts. Inspired by Elvin Charles Stakman, he returns to school study under Stakman, who teaches him about breeding pest-resistent plants.</li>
+          <li><time datetime="1941">1941</time> - Tries to enroll in the military after the Pearl Harbor attack, but is rejected. Instead, the military asked his lab to work on waterproof glue, DDT to control malaria, disenfectants, and other applied science.</li>
+          <li><time datetime="1942">1942</time> - Receives a Ph.D. in Genetics and Plant Pathology</li>
+          <li><time datetime="1944">1944</time> - Rejects a 100% salary increase from Dupont, leaves behind his pregnant wife, and flies to Mexico to head a new plant pathology program. Over the next 16 years, his team breeds 6,000 different strains of disease resistent wheat - including different varieties for each major climate on Earth.</li>
+          <li><time datetime="1945">1945</time> - Discovers a way to grown wheat twice each season, doubling wheat yields</li>
+          <li><time datetime="1953">1953</time> - crosses a short, sturdy dwarf breed of wheat with a high-yeidling American breed, creating a strain that responds well to fertalizer. It goes on to provide 95% of Mexico's wheat.</li>
+          <li><time datetime="1962">1962</time> - Visits Delhi and brings his high-yielding strains of wheat to the Indian subcontinent in time to help mitigate mass starvation due to a rapidly expanding population</li>
+          <li><time datetime="1970">1970</time> - receives the Nobel Peace Prize</li>
+          <li><time datetime="1983">1983</time> - helps seven African countries dramatically increase their maize and sorghum yields</li>
+          <li><time datetime="1984">1984</time> - becomes a distinguished professor at Texas A&M University</li>
+          <li><time datetime="2005">2005</time> - states "we will have to double the world food supply by 2050." Argues that genetically modified crops are the only way we can meet the demand, as we run out of arable land. Says that GM crops are not inherently dangerous because "we've been genetically modifying plants and animals for a long time. Long before we called it science, people were selecting the best breeds."</li>
+          <li><time datetime="2009">2009</time> - dies at the age of 95.</li>
+        </ul> 
+      </article>
+      <hr/>
+      <article id="tribute" class="text-content">
+        <p><em>"Borlaug's life and achievement are testimony to the far-reaching contribution that one man's towering intellect, persistence and scientific vision can make to human peace and progress."</em></p>
+        <p>-- Indian Prime Minister Manmohan Singh</p>
+      </article>
+      <hr/>
+    </div>
+  </main>
+  
+  <footer>
+    <div id="footer-content">
+      <secion>If you have time, you should read more about this incredible human being on his <a href="https://en.wikipedia.org/wiki/Norman_Borlaug" id="tribute-link" target="_blank">Wikipedia entry</a>.
+      </section>
+    </div>
+  </footer>
+</body>
+responsive-web-design-projects-build-a-tribute-page.markdown
+Responsive Web Design Projects - Build a Tribute Page
+Responsive Web Design Projects - Build a Tribute Page - freecodecamp
+
+A Pen by Loïc Peron on CodePen.
+
+License.
+
+script.babel
+// !! IMPORTANT README:
+
+// You may add additional external JS and CSS as needed to complete the project, however the current external resource MUST remain in place for the tests to work. BABEL must also be left in place. 
+
+/***********
+INSTRUCTIONS:
+  - Select the project you would 
+    like to complete from the dropdown 
+    menu.
+  - Click the "RUN TESTS" button to
+    run the tests against the blank 
+    pen.
+  - Click the "TESTS" button to see 
+    the individual test cases. 
+    (should all be failing at first)
+  - Start coding! As you fulfill each
+    test case, you will see them go   
+    from red to green.
+  - As you start to build out your 
+    project, when tests are failing, 
+    you should get helpful errors 
+    along the way!
+    ************/
+
+// PLEASE NOTE: Adding global style rules using the * selector, or by adding rules to body {..} or html {..}, or to all elements within body or html, i.e. h1 {..}, has the potential to pollute the test suite's CSS. Try adding: * { color: red }, for a quick example!
+
+// Once you have read the above messages, you can delete all comments. 
+style.css
+#main {
+  /* variables */
+  --content-background: hsl(51, 40%, 96%);
+  --contrast-background: hsl(51, 40%, 87%);
+  
+  margin: 10px;
+  background-color: var(--content-background, gray);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--contrast-background, gray);
+  border-radius: 10px;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
+#title {
+  text-align: center;
+  padding: 10px;
+}
+
+main {
+  background-color: var(--content-background, gray);
+}
+
+#main-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: var(--contrast-background, gray);
+  border-radius: 10px;
+}
+
+#footer-content {
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.text-content {
+  text-align: justify;
+}
+
+li {
+  margin-top: 10px;
+}
+
+#image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+time {
+  font-weight: bold;
+}
+
+#image-label {
+  text-align: center;
+  font-size: 15px;
+}
+
+#tribute-link:hover {
+  color: hsl(220, 88%, 60%);
+}
+
+#tribute-link {
+  color: hsl(220, 57%, 42%);
+}
