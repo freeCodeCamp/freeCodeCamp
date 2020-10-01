@@ -62,7 +62,7 @@ Here are our ten core certifications:
   <br />
   <br />
   **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker),[ Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/roman-numeral-converter), [Caesar's Cipher](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/caesars-cipher), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
-
+<H3>freecodecamp javascript is the best course.JavaScript is the most widely used scripting language on Earth. And it has the largest library ecosystem of any programming language. JavaScript is the core language of the web, and the only programming language that can run in all major web browsers. Notably, JavaScript has no relation to Java.</H3>
 #### 3. Front End Libraries Certification
 
 - [Bootstrap](https://learn.freecodecamp.org/front-end-libraries/bootstrap)
