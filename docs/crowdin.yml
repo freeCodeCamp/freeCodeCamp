@@ -1,16 +1,20 @@
-#
-# This config is used with the Crowdin CLI or GitHub Actions
-#
-# CLI Usage: crowdin upload sources --identity ~/.crowdin.yaml
-#
-"preserve_hierarchy": true
-files: [
- {
-  "source" : "/*.md",
-  "translation" : "/i18n/%language%/%original_file_name%",
- },
- {
-  "source" : "/flight-manuals/*.md",
-  "translation" : "/i18n/%language%/flight-manuals/%original_file_name%",
- }
-]
+# Used with the Crowdin CLI or GitHub Actions
+
+# CLI Usage (use --dryrun for preview):
+#  crowdin download --config ./docs/crowdin.yml --identity ~/.crowdin.yaml
+#  crowdin upload sources --config ./docs/crowdin.yml --identity ~/.crowdin.yaml
+#  crowdin upload translations --config ./docs/crowdin.yml --identity ~/.crowdin.yaml
+
+# These tokens are overriden when using cli with project_id and api_token
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+
+# https://support.crowdin.com/configuration-file-v3/#saving-directory-structure-on-server
+preserve_hierarchy: true
+base_path: docs
+
+files:
+  - source: /*.md
+    translation: /i18n/%language%/%original_file_name%
+  - source: /flight-manuals/*.md
+    translation: /i18n/%language%/flight-manuals/%original_file_name%
