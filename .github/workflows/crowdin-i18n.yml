@@ -7,9 +7,8 @@ on:
   push:
     branches:
       - i18n-dev
-      
-jobs:
 
+jobs:
   i18n-sync-docs:
     name: Docs
     runs-on: ubuntu-latest
@@ -23,9 +22,9 @@ jobs:
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
-          upload_translations: true
-          auto_approve_imported: true
-          import_eq_suggestions: true
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
 
           # downloads
           download_translations: true
