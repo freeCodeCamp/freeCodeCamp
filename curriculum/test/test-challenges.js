@@ -2,6 +2,7 @@
 const path = require('path');
 const liveServer = require('live-server');
 const stringSimilarity = require('string-similarity');
+const { isAuditedCert } = require('../../utils/is-audited');
 
 const spinner = require('ora')();
 
@@ -314,7 +315,13 @@ function populateTestsForLang({ lang, challenges, meta }) {
               '5a24c314108439a4d4036148'
             ];
             if (specialCases.includes(challenge.id)) return;
-            if (lang === 'english') return;
+            if (
+              lang === 'english' ||
+              !isAuditedCert(lang, challenge.superBlock)
+            ) {
+              return;
+            }
+
             // If no .files, then no seed:
             if (!challenge.files) return;
 
