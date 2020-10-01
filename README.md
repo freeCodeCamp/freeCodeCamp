@@ -9,7 +9,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development and machine learning curriculum are completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
@@ -137,7 +137,7 @@ Once you have earned the Responsive Web Design, Algorithms and Data Structures, 
 
 #### Legacy Certifications
 
-We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+We also have 4 legacy certifications dating back to our 2015 curriculum, which is still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
@@ -175,7 +175,7 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
-### Platform, Build and Deployment Status
+### Platform, Build, and Deployment Status
 
 The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
 
