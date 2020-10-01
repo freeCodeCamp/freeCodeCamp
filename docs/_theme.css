@@ -28,6 +28,7 @@ body {
   top: 0px;
   display: flex;
   justify-content: center;
+  z-index: 100;
 }
 
 .universal-nav img {
@@ -35,13 +36,19 @@ body {
   height: 24px;
 }
 
-.app-nav > a {
-  margin: 0;
-  padding: 0;
+/****** Translations Nav ****/
+/* The app nav is used only when loadNavBar is set to true */
+.app-nav.no-badge {
+  margin-top: 50px;
+  margin-right: calc(100px + 1.5rem);
+  font-size: 1.25rem;
 }
 
-.app-nav.no-badge {
-  margin-right: 0px;
+@media screen and (max-width: 768px) {
+  body .app-nav.no-badge {
+    margin-top: 50px;
+    margin-right: calc(1.5rem);
+  }
 }
 
 /****** Cover Page ******/
@@ -228,7 +235,6 @@ body .sidebar-toggle span:nth-child(3) {
   body .sidebar-toggle {
     left: 1rem;
   }
-
   body.close .sidebar-toggle {
     left: calc(300px + 1.5rem);
   }
