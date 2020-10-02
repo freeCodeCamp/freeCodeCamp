@@ -1,5 +1,5 @@
 ---
-id: 5f46e270702a8456a664f0df
+id: 5f45b715301bbf667badc04a
 title: Part 82
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`;
+The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu.  This is due to the browser having some default top margin for the `h1` element.
+
+Change the top margin of the `h1` element to `0` to remove all the top margin.
 
 </section>
 
@@ -106,7 +108,6 @@ body {
 --fcc-editable-region--
 h1 {
   font-size: 40px;
-  margin-top: 0;
 }
 --fcc-editable-region--
 

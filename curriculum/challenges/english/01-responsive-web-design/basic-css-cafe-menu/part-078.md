@@ -1,5 +1,5 @@
 ---
-id: 5f45b3c93c027860d9298dbd
+id: 5f45b25e7ec2405f166b9de1
 title: Part 78
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue }`
+You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue }`
 
-Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
+Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
 
 </section>
 
@@ -169,10 +169,6 @@ footer {
 
 a {
   color: black;
-}
-
-a:visited {
-  color: grey;
 }
 
 --fcc-editable-region--

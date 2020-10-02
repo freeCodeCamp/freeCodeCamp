@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e01f288a026d709587
+id: 5f3ef6e0b431cc215bb16f55
 title: Part 63
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can use an `hr` element to display a divider between sections of different content.
-
-First, add an `hr` element between the first `header` element and the `main` element.
+Add a second `p` element below the one with the link and give it the text `123 Free Code Camp Drive`.
 
 </section>
 
@@ -82,10 +80,11 @@ tests:
         </section>
       </main>
       <footer>
+        --fcc-editable-region--
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p>123 Free Code Camp Drive</p>
+        --fcc-editable-region--
       </footer>
     </div>
   </body>

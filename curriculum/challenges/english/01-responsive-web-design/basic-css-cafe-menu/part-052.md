@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e04559b939080db057
+id: 5f3ef6e050279c7a4a7101d3
 title: Part 52
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Since all 4 sides of the menu have the same internal spacing, go ahread and delete the four properites and use a single `padding` property with the value `20px`.
+That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
 
 </section>
 
@@ -105,8 +105,6 @@ h1, h2, p {
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 --fcc-editable-region--
 

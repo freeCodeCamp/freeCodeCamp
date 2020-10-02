@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0e9629bad967cd71e
+id: 5f3ef6e056bdde6ae6892ba2
 title: Part 56
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
+It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
 
-Add the fallback font `serif` after the `Impact` font. 
+Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
 
 </section>
 
@@ -110,9 +110,7 @@ h1, h2, p {
 }
 
 --fcc-editable-region--
-h1, h2 {
-  font-family: Impact;
-}
+
 --fcc-editable-region--
 
 .item p {
