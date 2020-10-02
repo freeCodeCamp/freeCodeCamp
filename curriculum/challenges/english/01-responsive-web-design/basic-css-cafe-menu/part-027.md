@@ -16,7 +16,7 @@ So far you have been using type selectors to style elements.  A <dfn>class selec
 }
 ```
 
-Turn the existing `div` selector into a class selector by replacing `div` with a class named `menu`.
+Change the existing `div` selector into a class selector by replacing `div` with a class named `menu`.
 
 </section>
 

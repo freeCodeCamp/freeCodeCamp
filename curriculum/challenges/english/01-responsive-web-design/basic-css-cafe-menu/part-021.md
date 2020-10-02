@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The menu takes up the full width of the page. You can use a `div` element to hold all the elements located in the `body` element and then apply some special styling to it. The `div` element is used mainly for design layout purposes unlike the other content elements you have used so far.
-
-Add a `div` element inside the `body` element and then move all the other elements inside the new `div`. 
+The `div` element is used mainly for design layout purposes unlike the other content elements you have used so far. Add a `div` element inside the `body` element and then move all the other elements inside the new `div`. 
 
 </section>
 
