@@ -4,12 +4,8 @@ on:
   # schedule:
   # (TODO?) run this Action every 14 days
   # - cron: '0 * */14 * *'
-  push:
-    branches:
-      - i18n-dev
-      
-jobs:
 
+jobs:
   i18n-sync-docs:
     name: Docs
     runs-on: ubuntu-latest
@@ -23,9 +19,9 @@ jobs:
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
-          upload_translations: true
-          auto_approve_imported: true
-          import_eq_suggestions: true
+          upload_translations: false
+          auto_approve_imported: false
+          import_eq_suggestions: false
 
           # downloads
           download_translations: true
@@ -34,7 +30,6 @@ jobs:
           # pull-request
           localization_branch_name: i18n-sync-docs
           create_pull_request: true
-          pull_request_base_branch_name: i18n-dev
           pull_request_title: 'chore(docs,i8n): processed translations from crowdin'
           pull_request_body: ''
           pull_request_labels: 'scope: i18n, scope: docs, crowdin-sync'
