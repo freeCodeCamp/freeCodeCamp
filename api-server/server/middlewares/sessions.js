@@ -8,7 +8,7 @@ const url = process.env.MONGODB || process.env.MONGOHQ_URL;
 export default function sessionsMiddleware() {
   return session({
     // 900 day session cookie
-    cookie: { 
+    cookie: {
       maxAge: 900 * 24 * 60 * 60 * 1000,
       secure: true
     },
