@@ -50,19 +50,19 @@ tests:
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>

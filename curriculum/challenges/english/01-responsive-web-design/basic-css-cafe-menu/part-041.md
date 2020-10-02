@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now that you know it works, change the other `article` elements so that the `p` elements are on the same line with no space between them.  You also need to apply the applicable styles `flavor` and `price` to the corresponding `p` elements.
+Now that you know it works, you can chamge the remaining `article` and `p` elements to match the first set.  Start by adding the class `item` to the other `article` elements.
 
 </section>
 
@@ -51,19 +51,19 @@ tests:
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           --fcc-editable-region--
-          <article class="item">
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>

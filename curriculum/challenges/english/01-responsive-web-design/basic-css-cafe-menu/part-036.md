@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `p` elements are nested in `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
+The `p` elements are nested in an `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
 ```css
 .item p { }
@@ -57,19 +57,19 @@ tests:
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>
