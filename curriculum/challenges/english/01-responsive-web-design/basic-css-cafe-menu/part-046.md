@@ -59,8 +59,8 @@ tests:
           </article>
           <article class="item">
             <p>Hazelnut</p><p>4.00</p>
-          </article class="item">
-          <article>
+          </article>
+          <article class="item">
             <p>Mocha</p><p>4.50</p>
           </article>
           --fcc-editable-region--
