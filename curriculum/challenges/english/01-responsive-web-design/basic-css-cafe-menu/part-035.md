@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-That is kind of what you want, but now it would be nice if the flavor and price were on the same line.  Remember that `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of the parent element.
+That is kind of what you want, but now it would be nice if the flavor and price were on the same line.  `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
 
-To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements.  Start by adding a `class` attribute with the value `item` to each `article` element.
+To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements.  Add a `class` attribute with the value `item` to first `article` element under the `Coffees` heading.
 
 </section>
 
@@ -48,12 +48,13 @@ tests:
       </header>
       <main>
         <section>
-          <h2>Coffees</h2>
           --fcc-editable-region--
+          <h2>Coffees</h2>
           <article>
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
+          --fcc-editable-region--
           <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
@@ -70,7 +71,6 @@ tests:
             <p>Mocha</p>
             <p>4.50</p>
           </article>
-          --fcc-editable-region--
         </section>
       </main>
     </div>
