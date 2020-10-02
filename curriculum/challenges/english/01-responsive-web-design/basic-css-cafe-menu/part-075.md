@@ -1,5 +1,5 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
+id: 5f4701b942c824109626c3d8
 title: Part 75
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Now add the `bottom-line` class to the second `hr` element so the styling is applied.
 
 </section>
 
@@ -80,7 +80,10 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      --fcc-editable-region--
+      <hr>
+      --fcc-editable-region--
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -145,7 +148,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -157,10 +160,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
 </div>

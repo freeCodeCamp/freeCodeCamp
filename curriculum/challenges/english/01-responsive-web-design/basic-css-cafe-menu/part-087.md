@@ -1,5 +1,5 @@
 ---
-id: 5f475bb508746c16c9431d42
+id: 5f46e8284aae155c83015dee
 title: Part 87
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The image you added is not centered horizontally like the `Coffees` heading above it.  `img` elements are "like" inline elements.
+The menu looks good, but other than the coffee beans background image, it is mainly just text.
 
-To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
+Under the `Coffees` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
 
 </section>
 
@@ -49,8 +49,9 @@ tests:
       <hr>
       <main>
         <section>
+          --fcc-editable-region--
           <h2>Coffees</h2>
-          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
+          --fcc-editable-region--
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -132,10 +133,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 hr {
   height: 2px;

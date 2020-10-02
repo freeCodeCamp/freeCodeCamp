@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0b431cc215bb16f55
+id: 5f3ef6e0a81099d9a697b550
 title: Part 63
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a second `p` element below the one with the link and give it the text `123 Free Code Camp Drive`.
+Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
 
 </section>
 
@@ -26,6 +26,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 
 <div id='html-seed'>
 
@@ -79,13 +80,10 @@ tests:
           </article>
         </section>
       </main>
+      --fcc-editable-region--
       <footer>
-        --fcc-editable-region--
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        --fcc-editable-region--
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>

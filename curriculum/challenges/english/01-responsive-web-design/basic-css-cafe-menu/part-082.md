@@ -1,5 +1,5 @@
 ---
-id: 5f45b715301bbf667badc04a
+id: 5f45b4c81cea7763550e40df
 title: Part 82
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu.  This is due to the browser having some default top margin for the `h1` element.
-
-Change the top margin of the `h1` element to `0` to remove all the top margin.
+To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked. 
 
 </section>
 
@@ -105,11 +103,9 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -173,8 +169,9 @@ a {
   color: black;
 }
 
+--fcc-editable-region--
 a:visited {
-  color: black;
+  color: grey;
 }
 
 a:hover {
@@ -182,8 +179,9 @@ a:hover {
 }
 
 a:active {
-  color: brown;
+  color: white;
 }
+--fcc-editable-region--
 ```
 
 </div>

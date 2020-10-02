@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e07276f782bb46b93d
+id: 5f3ef6e0f8c230bdd2349716
 title: Part 61
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `footer` element below the `main` element, where you can some additional information.
+The `h1` and `h2` elements' text are set by default values of the user's browser.
+
+Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.  
 
 </section>
 
@@ -44,7 +46,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,7 +81,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -96,13 +96,9 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 40px;
-}
+--fcc-editable-region--
 
-h2 {
-  font-size: 30px;
-}
+--fcc-editable-region--
 
 .established {
   font-style: italic;
