@@ -29,6 +29,8 @@ Inside that style block, you can create a <dfn>CSS selector</dfn> for all <code>
 ```
 
 Note that it's important to have both opening and closing curly braces (<code>{</code> and <code>}</code>) around each element's style rule(s). You also need to make sure that your element's style definition is between the opening and closing style tags. Finally, be sure to add a semicolon to the end of each of your element's style rules.
+
+Please disable any browser extensions that change the CSS of your browser (ex. a dark mode extension) as this interferes with the test suite!
 </section>
 
 ## Instructions
