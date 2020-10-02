@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0a81099d9a697b550
+id: 5f3ef6e087d56ed3ffdc36be
 title: Part 63
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
+Now apply the `established` class to the `Est. 2020` text.
 
 </section>
 
@@ -27,7 +27,6 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-
 <div id='html-seed'>
 
 ```html
@@ -41,10 +40,12 @@ tests:
   </head>
   <body>
     <div class="menu">
+      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
+      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,10 +81,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
-      <footer>
-      </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -97,14 +94,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
 }
 
 .established {

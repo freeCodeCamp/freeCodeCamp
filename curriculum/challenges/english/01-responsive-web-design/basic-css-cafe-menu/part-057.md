@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e056bdde6ae6892ba2
+id: 5f3ef6e04559b939080db057
 title: Part 57
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
-
-Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
+Since all 4 sides of the menu have the same internal spacing, go ahread and delete the four properites and use a single `padding` property with the value `20px`.
 
 </section>
 
@@ -93,24 +91,23 @@ tests:
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  max-width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 .item p {

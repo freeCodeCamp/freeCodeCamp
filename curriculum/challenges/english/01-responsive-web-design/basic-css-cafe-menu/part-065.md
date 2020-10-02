@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e01f288a026d709587
+id: 5f3ef6e07276f782bb46b93d
 title: Part 65
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can use an `hr` element to display a divider between sections of different content.
-
-First, add an `hr` element between the first `header` element and the `main` element.
+Add a `footer` element below the `main` element, where you can some additional information.
 
 </section>
 
@@ -46,6 +44,7 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
+      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -81,12 +80,7 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>

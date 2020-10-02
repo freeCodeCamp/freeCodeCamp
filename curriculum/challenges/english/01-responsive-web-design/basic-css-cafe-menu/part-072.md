@@ -1,5 +1,5 @@
 ---
-id: 5f45a276c093334f0f6e9df4
+id: 5f459cf202c2a3472fae6a9f
 title: Part 72
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Focusing on the menu items and prices, there is a fairly large gap between each line.
+Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
 
-Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
+Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
 
 </section>
 
@@ -82,7 +82,6 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -102,7 +101,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -130,13 +128,14 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
+  height: 3px;
   background-color: brown;
   border-color: brown;
 }
-
 --fcc-editable-region--
+
 h1, h2 {
   font-family: Impact, serif;
 }
@@ -154,7 +153,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
---fcc-editable-region--
 ```
 
 </div>

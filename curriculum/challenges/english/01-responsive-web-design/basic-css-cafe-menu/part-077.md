@@ -1,5 +1,5 @@
 ---
-id: 5f45a66d4a2b0453301e5a26
+id: 5f46fc57528aa1c4b5ea7c2e
 title: Part 77
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
+Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinaommon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
+
+Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
 
 </section>
 
@@ -80,7 +82,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -134,9 +136,9 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -158,12 +160,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
 </div>

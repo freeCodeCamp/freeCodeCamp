@@ -1,6 +1,6 @@
 ---
-id: 5f46e270702a8456a664f0df
-title: Part 87
+id: 5f475bb508746c16c9431d42
+title: Part 91
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`;
+The image you added is not centered horizontally like the `Coffees` heading above it.  `img` elements are "like" inline elements.
+
+To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
 
 </section>
 
@@ -48,6 +50,7 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
+          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -85,7 +88,7 @@ tests:
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p>123 Free Code Camp Drive</p>
+        <p class="address">123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
@@ -103,12 +106,11 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
   margin-top: 0;
+  margin-bottom: 15px;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -130,6 +132,10 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 hr {
   height: 2px;
@@ -166,6 +172,10 @@ h1, h2 {
 
 footer {
   font-size: 14px;
+}
+
+.address {
+  margin-bottom: 5px;
 }
 
 a {

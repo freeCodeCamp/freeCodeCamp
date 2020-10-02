@@ -1,5 +1,5 @@
 ---
-id: 5f4701b942c824109626c3d8
+id: 5f45a276c093334f0f6e9df4
 title: Part 75
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now add the `bottom-line` class to the second `hr` element so the styling is applied.
+Focusing on the menu items and prices, there is a fairly large gap between each line.
+
+Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
 
 </section>
 
@@ -80,9 +82,7 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
       <hr>
-      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -136,19 +136,13 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
+--fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -160,6 +154,7 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
+--fcc-editable-region--
 ```
 
 </div>

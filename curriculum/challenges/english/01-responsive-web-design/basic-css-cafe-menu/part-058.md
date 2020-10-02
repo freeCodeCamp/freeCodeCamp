@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0e9629bad967cd71e
+id: 5f3ef6e03d719d5ac4738993
 title: Part 58
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
+The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
 
-Add the fallback font `serif` after the `Impact` font. 
+Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
 
 </section>
 
@@ -93,25 +93,19 @@ tests:
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
-  max-width: 500px;
-}
-
---fcc-editable-region--
-h1, h2 {
-  font-family: Impact;
 }
 --fcc-editable-region--
 

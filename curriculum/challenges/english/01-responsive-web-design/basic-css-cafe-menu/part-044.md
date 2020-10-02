@@ -1,5 +1,5 @@
 ---
-id: 5f47633757ae3469f2d33d2e
+id: 5f3cade9993019e26313fa8e
 title: Part 44
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.  This is because the width of the `p` elements on the left side can only take up `50%` of the space.
-
-Since you know the prices on the right have significantly less numbe of characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
+Now that you know it works, you can chamge the remaining `article` and `p` elements to match the first set.  Start by adding the class `item` to the other `article` elements.
 
 </section>
 
@@ -52,18 +50,24 @@ tests:
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
-          <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+          --fcc-editable-region--
+          <article>
+            <p>Carmel Macchiato</p>
+            <p>3.75</p>
           </article>
-          <article class="item">
-            <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
+          <article>
+            <p>Pumpkin Spice</p>
+            <p>3.50</p>
           </article>
-          <article class="item">
-            <p class="flavor">Hazelnut</p><p class="price">4.00</p>
+          <article>
+            <p>Hazelnut</p>
+            <p>4.00</p>
           </article>
-          <article class="item">
-            <p class="flavor">Mocha</p><p class="price">4.50</p>
+          <article>
+            <p>Mocha</p>
+            <p>4.50</p>
           </article>
+          --fcc-editable-region--
         </section>
       </main>
     </div>
@@ -95,7 +99,6 @@ h1, h2, p {
   display: inline-block;
 }
 
---fcc-editable-region--
 .flavor {
   text-align: left;
   width: 50%;
@@ -105,7 +108,6 @@ h1, h2, p {
   text-align: right;
   width: 50%;
 }
---fcc-editable-region--
 ```
 
 </div>

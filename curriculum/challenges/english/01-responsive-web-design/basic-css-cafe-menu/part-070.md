@@ -1,5 +1,5 @@
 ---
-id: 5f459fd48bdc98491ca6d1a3
+id: 5f459225127805351a6ad057
 title: Part 70
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Go ahead and add another `hr` element between the `main` element and the `footer` element.
+Change the background color of the `hr` elemnent to be `brown` to make it match the color of the coffee beans.
 
 </section>
 
@@ -45,7 +45,6 @@ tests:
         <p class="established">Est. 2020</p>
       </header>
       <hr>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -87,7 +86,6 @@ tests:
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -128,11 +126,11 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
+  height: 3px;
 }
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e087d56ed3ffdc36be
+id: 5f3ef6e056bdde6ae6892ba2
 title: Part 60
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now apply the `established` class to the `Est. 2020` text.
+It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
+
+Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
 
 </section>
 
@@ -40,12 +42,10 @@ tests:
   </head>
   <body>
     <div class="menu">
-      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
       </header>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -96,10 +96,6 @@ body {
   font-family: sans-serif;
 }
 
-.established {
-  font-style: italic;
-}
-
 h1, h2, p {
   text-align: center;
 }
@@ -113,9 +109,9 @@ h1, h2, p {
   max-width: 500px;
 }
 
-h1, h2 {
-  font-family: Impact, serif;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

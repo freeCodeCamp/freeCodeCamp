@@ -1,5 +1,5 @@
 ---
-id: 5f3cade9fa77275d9f4efe62
+id: 5f3c866dbf362f99b9a0c6d0
 title: Part 39
 challengeType: 0
 isHidden: true
@@ -8,9 +8,13 @@ isHidden: true
 ## Description
 <section id='description'>
 
-That worked, but there is still a little space on the right of the price. 
+The `p` elements are nested in an `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
-You could keep trying various percentages for the widths.  Instead,  simply move the price `p` element to be on the same line and make sure there is no space between them.
+```css
+.item p { }
+```
+
+Using the above selector, add a `display` property with value `inline-block` so the `p` elements behave more like `inline` elements.
 
 </section>
 
@@ -50,10 +54,8 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article class="item">
-            --fcc-editable-region--
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
-            --fcc-editable-region--
           </article>
           <article>
             <p>Carmel Macchiato</p>
@@ -98,19 +100,18 @@ h1, h2, p {
   margin-right: auto;
 }
 
-.item p {
-  display: inline-block;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .flavor {
   text-align: left;
-  width: 49%;
 }
 
 .price {
   text-align: right;
-  width: 49%;
 }
+
 ```
 
 </div>

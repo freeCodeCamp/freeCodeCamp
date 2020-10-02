@@ -1,6 +1,6 @@
 ---
-id: 5f46e270702a8456a664f0df
-title: Part 87
+id: 5f475e1c7f71a61d913836c6
+title: Part 92
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`;
+Add one last image under the `Desserts` heading using the url `https://tinyurl.com/cafe-pie-fcc`. Give the image an `alt` value of `pie icon`.
 
 </section>
 
@@ -48,6 +48,7 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
+          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -65,7 +66,9 @@ tests:
           </article>
         </section>
         <section>
+          --fcc-editable-region--
           <h2>Desserts</h2>
+          --fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
@@ -85,7 +88,7 @@ tests:
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p>123 Free Code Camp Drive</p>
+        <p class="address">123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
@@ -103,12 +106,11 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
   margin-top: 0;
+  margin-bottom: 15px;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -129,6 +131,12 @@ h1, h2, p {
   margin-right: auto;
   padding: 20px;
   max-width: 500px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr {
@@ -159,13 +167,17 @@ h1, h2 {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 
 /* FOOTER */
 
 footer {
   font-size: 14px;
+}
+
+.address {
+  margin-bottom: 5px;
 }
 
 a {

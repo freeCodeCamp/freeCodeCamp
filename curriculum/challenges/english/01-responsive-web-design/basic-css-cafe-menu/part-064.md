@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0b431cc215bb16f55
+id: 5f3ef6e0f8c230bdd2349716
 title: Part 64
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a second `p` element below the one with the link and give it the text `123 Free Code Camp Drive`.
+The `h1` and `h2` elements' text are set by default values of the user's browser.
+
+Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.  
 
 </section>
 
@@ -79,13 +81,6 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        --fcc-editable-region--
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        --fcc-editable-region--
-      </footer>
     </div>
   </body>
 <html>
@@ -101,13 +96,9 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 40px;
-}
+--fcc-editable-region--
 
-h2 {
-  font-size: 30px;
-}
+--fcc-editable-region--
 
 .established {
   font-style: italic;

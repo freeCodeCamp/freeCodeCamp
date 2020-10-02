@@ -1,5 +1,5 @@
 ---
-id: 5f46fc57528aa1c4b5ea7c2e
+id: 5f45a05977e2fa49d9119437
 title: Part 74
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinaommon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
-
-Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
+To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
 
 </section>
 
@@ -99,11 +97,12 @@ tests:
 <div id='css-seed'>
 
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
+--fcc-editable-region--
 
 h1 {
   font-size: 40px;
@@ -136,19 +135,12 @@ hr {
   border-color: brown;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {

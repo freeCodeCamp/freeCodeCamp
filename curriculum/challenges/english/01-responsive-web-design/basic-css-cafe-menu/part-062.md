@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e07276f782bb46b93d
+id: 5f3ef6e06d34faac0447fc44
 title: Part 62
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `footer` element below the `main` element, where you can some additional information.
+Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
 
 </section>
 
@@ -42,9 +42,8 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,7 +79,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -96,17 +94,9 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 40px;
-}
+--fcc-editable-region--
 
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
-}
+--fcc-editable-region--
 
 h1, h2, p {
   text-align: center;

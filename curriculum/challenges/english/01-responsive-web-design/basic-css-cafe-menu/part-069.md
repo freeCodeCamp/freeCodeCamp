@@ -1,5 +1,5 @@
 ---
-id: 5f459cf202c2a3472fae6a9f
+id: 5f3f26fa39591db45e5cd7a0
 title: Part 69
 challengeType: 0
 isHidden: true
@@ -8,9 +8,10 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
+The default properties of an `hr` element will make it appear as a thin light grey line. You can change the heighth of the line by specifying a value for the `height` property.
 
-Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
+Change the height the `hr` element to be `3px`.
+
 
 </section>
 
@@ -129,11 +130,7 @@ h1, h2, p {
 }
 
 --fcc-editable-region--
-hr {
-  height: 3px;
-  background-color: brown;
-  border-color: brown;
-}
+
 --fcc-editable-region--
 
 h1, h2 {

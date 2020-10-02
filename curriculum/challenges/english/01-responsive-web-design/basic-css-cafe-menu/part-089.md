@@ -1,5 +1,5 @@
 ---
-id: 5f475e1c7f71a61d913836c6
+id: 5f46e7a4750dd05b5a673920
 title: Part 89
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add one last image under the `Desserts` heading using the url `https://tinyurl.com/cafe-pie-fcc`. Give the image an `alt` value of `pie icon`.
+Now apply the `address` class to the `p` element containing the address.
 
 </section>
 
@@ -48,7 +48,6 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -66,9 +65,7 @@ tests:
           </article>
         </section>
         <section>
-          --fcc-editable-region--
           <h2>Desserts</h2>
-          --fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
@@ -84,12 +81,14 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
+      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p class="address">123 Free Code Camp Drive</p>
+        <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -133,12 +132,6 @@ h1, h2, p {
   max-width: 500px;
 }
 
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 hr {
   height: 2px;
   background-color: brown;
@@ -167,7 +160,7 @@ h1, h2 {
 
 .price {
   text-align: right;
-  width: 25%;
+  width: 25%
 }
 
 /* FOOTER */

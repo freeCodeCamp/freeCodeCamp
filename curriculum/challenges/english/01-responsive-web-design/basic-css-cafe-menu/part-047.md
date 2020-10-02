@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0819d4f23ca7285e6
+id: 5f47633757ae3469f2d33d2e
 title: Part 47
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add an empty `article` element under the `Desserts` heading. Give it a `class` attribute with the value `item`.
+If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.  This is because the width of the `p` elements on the left side can only take up `50%` of the space.
+
+Since you know the prices on the right have significantly less numbe of characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
 
 </section>
 
@@ -63,11 +65,6 @@ tests:
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
-        <section>
-          --fcc-editable-region--
-          <h2>Desserts</h2>
-          --fcc-editable-region--
-        </section>
       </main>
     </div>
   </body>
@@ -98,15 +95,17 @@ h1, h2, p {
   display: inline-block;
 }
 
+--fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 75%;
+  width: 50%;
 }
 
 .price {
   text-align: right;
-  width: 25%
+  width: 50%;
 }
+--fcc-editable-region--
 ```
 
 </div>

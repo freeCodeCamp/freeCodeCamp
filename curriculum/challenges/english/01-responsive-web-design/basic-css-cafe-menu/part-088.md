@@ -1,5 +1,5 @@
 ---
-id: 5f475bb508746c16c9431d42
+id: 5f46e36e745ead58487aabf2
 title: Part 88
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The image you added is not centered horizontally like the `Coffees` heading above it.  `img` elements are "like" inline elements.
+Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
 
-To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
+To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
 
 </section>
 
@@ -50,7 +50,6 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -88,7 +87,7 @@ tests:
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p class="address">123 Free Code Camp Drive</p>
+        <p>123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
@@ -133,10 +132,6 @@ h1, h2, p {
   max-width: 500px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 hr {
   height: 2px;
   background-color: brown;
@@ -174,9 +169,9 @@ footer {
   font-size: 14px;
 }
 
-.address {
-  margin-bottom: 5px;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 a {
   color: black;

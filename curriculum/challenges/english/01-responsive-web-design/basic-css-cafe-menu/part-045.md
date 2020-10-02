@@ -1,5 +1,5 @@
 ---
-id: 5f3cade99dda4e6071a85dfd
+id: 5f7691dafd882520797cd2f0
 title: Part 45
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You will come back to the styling the menu in a few steps, but for now, go ahead add a second `section` element below the first for displaying the desserts offered by the cafe.
+Next, position the other `p` elements to be on the same line with no space between them.
 
 </section>
 
@@ -45,26 +45,30 @@ tests:
         <p>Est. 2020</p>
       </header>
       <main>
-        --fcc-editable-region--
         <section>
           <h2>Coffees</h2>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
+          --fcc-editable-region--
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p>Carmel Macchiato</p>
+            <p>3.75</p>
           </article>
           <article class="item">
-            <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
+            <p>Pumpkin Spice</p>
+            <p>3.50</p>
           </article>
           <article class="item">
-            <p class="flavor">Hazelnut</p><p class="price">4.00</p>
+            <p>Hazelnut</p>
+            <p>4.00</p>
+          </article class="item">
+          <article>
+            <p>Mocha</p>
+            <p>4.50</p>
           </article>
-          <article class="item">
-            <p class="flavor">Mocha</p><p class="price">4.50</p>
-          </article>
+          --fcc-editable-region--
         </section>
-        --fcc-editable-region--
       </main>
     </div>
   </body>
@@ -97,12 +101,12 @@ h1, h2, p {
 
 .flavor {
   text-align: left;
-  width: 75%;
+  width: 50%;
 }
 
 .price {
   text-align: right;
-  width: 25%
+  width: 50%;
 }
 ```
 

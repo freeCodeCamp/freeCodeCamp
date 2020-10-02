@@ -1,5 +1,5 @@
 ---
-id: 5f3cade9993019e26313fa8e
+id: 5f3c866dd0d0275f01d4d847
 title: Part 41
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now that you know it works, you can chamge the remaining `article` and `p` elements to match the first set.  Start by adding the class `item` to the other `article` elements.
+Well that did not work. Styling the `p` elements as `inline-block` and placing them on a separate lines in the code, creates an extra space to the right of the first `p` element, causing the second one to shift to the next line. One way to fix this is to make each `p`'s width a little less than `50%`.
+
+Change the `width` value to `49%` for each class to see what happens.
 
 </section>
 
@@ -48,9 +50,9 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article class="item">
-            <p class="flavor">French Vanilla</p><p class="price">3.00</p>
+            <p class="flavor">French Vanilla</p>
+            <p class="price">3.00</p>
           </article>
-          --fcc-editable-region--
           <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
@@ -67,7 +69,6 @@ tests:
             <p>Mocha</p>
             <p>4.50</p>
           </article>
-          --fcc-editable-region--
         </section>
       </main>
     </div>
@@ -99,6 +100,7 @@ h1, h2, p {
   display: inline-block;
 }
 
+--fcc-editable-region--
 .flavor {
   text-align: left;
   width: 50%;
@@ -108,6 +110,7 @@ h1, h2, p {
   text-align: right;
   width: 50%;
 }
+--fcc-editable-region--
 ```
 
 </div>

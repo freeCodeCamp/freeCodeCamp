@@ -1,5 +1,5 @@
 ---
-id: 5f45b3c93c027860d9298dbd
+id: 5f45a66d4a2b0453301e5a26
 title: Part 80
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue }`
-
-Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
+Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
 
 </section>
 
@@ -162,18 +160,6 @@ h1, h2 {
 }
 
 /* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: grey;
-}
 
 --fcc-editable-region--
 

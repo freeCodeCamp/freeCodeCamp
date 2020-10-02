@@ -1,5 +1,5 @@
 ---
-id: 5f3c866dbf362f99b9a0c6d0
+id: 5f769702e6e33127d14aa120
 title: Part 36
 challengeType: 0
 isHidden: true
@@ -8,13 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `p` elements are nested in an `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
-
-```css
-.item p { }
-```
-
-Using the above selector, add a `display` property with value `inline-block` so the `p` elements behave more like `inline` elements.
+Now align the text to the `right` for the elements with the `price` class.
 
 </section>
 
@@ -53,7 +47,7 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          <article class="item">
+          <article>
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
@@ -100,18 +94,13 @@ h1, h2, p {
   margin-right: auto;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 .flavor {
   text-align: left;
 }
 
-.price {
-  text-align: right;
-}
+--fcc-editable-region--
 
+--fcc-editable-region
 ```
 
 </div>

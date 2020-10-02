@@ -1,5 +1,5 @@
 ---
-id: 5f459a7ceb8b5c446656d88b
+id: 5f3ef6e01f288a026d709587
 title: Part 68
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+You can use an `hr` element to display a divider between sections of different content.
 
-Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
+First, add an `hr` element between the first `header` element and the `main` element.
 
 </section>
 
@@ -46,7 +46,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -127,13 +126,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-hr {
-  height: 3px;
-  background-color: brown;
-}
---fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

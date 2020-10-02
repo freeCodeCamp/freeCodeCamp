@@ -1,5 +1,5 @@
 ---
-id: 5f46e36e745ead58487aabf2
+id: 5f45b4c81cea7763550e40df
 title: Part 85
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
-
-To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
+To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked. 
 
 </section>
 
@@ -107,8 +105,6 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
 
 h2 {
@@ -169,16 +165,13 @@ footer {
   font-size: 14px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 a {
   color: black;
 }
 
+--fcc-editable-region--
 a:visited {
-  color: black;
+  color: grey;
 }
 
 a:hover {
@@ -186,8 +179,9 @@ a:hover {
 }
 
 a:active {
-  color: brown;
+  color: white;
 }
+--fcc-editable-region--
 ```
 
 </div>

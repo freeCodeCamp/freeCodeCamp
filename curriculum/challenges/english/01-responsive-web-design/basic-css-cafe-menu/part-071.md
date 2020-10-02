@@ -1,5 +1,5 @@
 ---
-id: 5f45a05977e2fa49d9119437
+id: 5f459a7ceb8b5c446656d88b
 title: Part 71
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
+Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+
+Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
 
 </section>
 
@@ -80,7 +82,6 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -97,12 +98,10 @@ tests:
 <div id='css-seed'>
 
 ```css
---fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
 }
---fcc-editable-region--
 
 h1 {
   font-size: 40px;
@@ -129,11 +128,12 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
+  height: 3px;
   background-color: brown;
-  border-color: brown;
 }
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

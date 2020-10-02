@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0f8c230bdd2349716
+id: 5f3ef6e0e9629bad967cd71e
 title: Part 61
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `h1` and `h2` elements' text are set by default values of the user's browser.
+You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
 
-Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.  
+Add the fallback font `serif` after the `Impact` font. 
 
 </section>
 
@@ -44,7 +44,7 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
       <main>
         <section>
@@ -96,14 +96,6 @@ body {
   font-family: sans-serif;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
-.established {
-  font-style: italic;
-}
-
 h1, h2, p {
   text-align: center;
 }
@@ -117,9 +109,11 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 h1, h2 {
-  font-family: Impact, serif;
+  font-family: Impact;
 }
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

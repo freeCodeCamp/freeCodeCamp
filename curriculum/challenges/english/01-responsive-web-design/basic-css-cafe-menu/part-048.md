@@ -1,5 +1,5 @@
 ---
-id: 5f716ad029ee4053c7027a7a
+id: 5f3cade99dda4e6071a85dfd
 title: Part 48
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest two `p` elements inside your `article` element. The first one's text should be `Donut`, and the second's text `1.50`.
+You will come back to the styling the menu in a few steps, but for now, go ahead add a second `section` element below the first for displaying the desserts offered by the cafe.
 
 </section>
 
@@ -45,6 +45,7 @@ tests:
         <p>Est. 2020</p>
       </header>
       <main>
+        --fcc-editable-region--
         <section>
           <h2>Coffees</h2>
           <article class="item">
@@ -63,13 +64,7 @@ tests:
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
-        <section>
-          <h2>Desserts</h2>
-          --fcc-editable-region--
-          <article class="item">
-          </article>
-          --fcc-editable-region--
-        </section>
+        --fcc-editable-region--
       </main>
     </div>
   </body>

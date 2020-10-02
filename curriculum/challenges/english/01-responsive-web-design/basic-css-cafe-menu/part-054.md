@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e04559b939080db057
+id: 5f3ef6e0086dc80481f8cb03
 title: Part 54
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Since all 4 sides of the menu have the same internal spacing, go ahread and delete the four properites and use a single `padding` property with the value `20px`.
+Something does not look right. You added the correct `class` attribute to the `p` elements with dessert names, but you have not defined a selector for it.
+
+Since the `flavor` class selector already has the properties you want, just add the `dessert` class to it.
 
 </section>
 
@@ -97,27 +99,23 @@ h1, h2, p {
   text-align: center;
 }
 
---fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
-.flavor, .dessert {
+--fcc-editable-region--
+.flavor {
   text-align: left;
   width: 75%;
 }
+--fcc-editable-region--
 
 .price {
   text-align: right;

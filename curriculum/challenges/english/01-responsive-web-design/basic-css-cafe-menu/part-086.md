@@ -1,5 +1,5 @@
 ---
-id: 5f46e7a4750dd05b5a673920
+id: 5f45b715301bbf667badc04a
 title: Part 86
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now apply the `address` class to the `p` element containing the address.
+The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu.  This is due to the browser having some default top margin for the `h1` element.
+
+Change the top margin of the `h1` element to `0` to remove all the top margin.
 
 </section>
 
@@ -81,14 +83,12 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
-      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -105,11 +105,11 @@ body {
   padding: 20px;
 }
 
+--fcc-editable-region--
 h1 {
   font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
+--fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -167,10 +167,6 @@ h1, h2 {
 
 footer {
   font-size: 14px;
-}
-
-.address {
-  margin-bottom: 5px;
 }
 
 a {

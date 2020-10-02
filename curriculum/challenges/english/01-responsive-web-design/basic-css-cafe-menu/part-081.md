@@ -1,5 +1,5 @@
 ---
-id: 5f45b45d099f3e621fbbb256
+id: 5f45b0731d39e15d54df4dfc
 title: Part 81
 challengeType: 0
 isHidden: true
@@ -8,10 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue }`
+The default color of link that has not yet been clicked on a page is typically blue.  The default color of a link that has already been visited from a page is typically purple.
 
-Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
-
+To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
 
 </section>
 
@@ -167,19 +166,6 @@ h1, h2 {
 footer {
   font-size: 14px;
 }
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: grey;
-}
-
-a:hover {
-  color: brown;
-}
-
 --fcc-editable-region--
 
 --fcc-editable-region--

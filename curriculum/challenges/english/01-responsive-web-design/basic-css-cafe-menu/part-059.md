@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e06d34faac0447fc44
+id: 5f3ef6e05473f91f948724ab
 title: Part 59
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
+You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
+
+Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`.  This is a fairly common font that is very readable.
 
 </section>
 
@@ -89,13 +91,10 @@ tests:
 <div id='css-seed'>
 
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 h1, h2, p {
@@ -109,10 +108,6 @@ h1, h2, p {
   margin-right: auto;
   padding: 20px;
   max-width: 500px;
-}
-
-h1, h2 {
-  font-family: Impact, serif;
 }
 
 .item p {

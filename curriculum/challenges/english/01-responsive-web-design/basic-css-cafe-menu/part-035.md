@@ -1,5 +1,5 @@
 ---
-id: 5f3c866de7a5b784048f94b1
+id: 5f76967fad478126d6552b0d
 title: Part 35
 challengeType: 0
 isHidden: true
@@ -8,9 +8,8 @@ isHidden: true
 ## Description
 <section id='description'>
 
-That is kind of what you want, but now it would be nice if the flavor and price were on the same line.  `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
-
-To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements.  Add a `class` attribute with the value `item` to first `article` element under the `Coffees` heading.
+Next, you want to align the price to the right. Add a class named `price` to your 
+paragraph element that has `3.00` as its text.
 
 </section>
 
@@ -48,13 +47,13 @@ tests:
       </header>
       <main>
         <section>
-          --fcc-editable-region--
           <h2>Coffees</h2>
           <article>
             <p class="flavor">French Vanilla</p>
-            <p class="price">3.00</p>
+            --fcc-editable-region--
+            <p>3.00</p>
+            --fcc-editable-region--
           </article>
-          --fcc-editable-region--
           <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
@@ -101,11 +100,6 @@ h1, h2, p {
 .flavor {
   text-align: left;
 }
-
-.price {
-  text-align: right;
-}
-
 ```
 
 </div>

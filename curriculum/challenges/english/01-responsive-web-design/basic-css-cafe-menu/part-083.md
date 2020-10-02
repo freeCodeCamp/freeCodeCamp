@@ -1,5 +1,5 @@
 ---
-id: 5f45b715301bbf667badc04a
+id: 5f45b3c93c027860d9298dbd
 title: Part 83
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu.  This is due to the browser having some default top margin for the `h1` element.
+You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue }`
 
-Change the top margin of the `h1` element to `0` to remove all the top margin.
+Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
 
 </section>
 
@@ -105,11 +105,9 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -174,16 +172,12 @@ a {
 }
 
 a:visited {
-  color: black;
+  color: grey;
 }
 
-a:hover {
-  color: brown;
-}
+--fcc-editable-region--
 
-a:active {
-  color: brown;
-}
+--fcc-editable-region--
 ```
 
 </div>

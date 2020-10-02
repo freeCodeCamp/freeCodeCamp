@@ -1,5 +1,5 @@
 ---
-id: 5f3cade94c6576e7f7b7953f
+id: 5f3c866d0fc037f7311b4ac8
 title: Part 40
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now go ahead and change both the `flavor` and `price` class' widths to be `50%` again.
+That's closer, but the price didn't stay over on the right. This is because `inline-block` elements only take up the width of their content. To spread them out, add a `width` property to the `flavor` and `price` class selectors that have a value of `50%` each.
 
 </section>
 
@@ -48,7 +48,8 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article class="item">
-            <p class="flavor">French Vanilla</p><p class="price">3.00</p>
+            <p class="flavor">French Vanilla</p>
+            <p class="price">3.00</p>
           </article>
           <article>
             <p>Carmel Macchiato</p>
@@ -100,12 +101,10 @@ h1, h2, p {
 --fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 49%;
 }
 
 .price {
   text-align: right;
-  width: 49%;
 }
 --fcc-editable-region--
 ```

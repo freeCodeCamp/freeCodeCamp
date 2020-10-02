@@ -1,5 +1,5 @@
 ---
-id: 5f45a5a7c49a8251f0bdb527
+id: 5f459fd48bdc98491ca6d1a3
 title: Part 73
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Using the same style selector in the previous step, make the font size of the items and prices by using a value of `18px`.
+Go ahead and add another `hr` element between the `main` element and the `footer` element.
 
 </section>
 
@@ -45,6 +45,7 @@ tests:
         <p class="established">Est. 2020</p>
       </header>
       <hr>
+      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,13 +81,13 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -100,7 +101,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -138,13 +138,9 @@ h1, h2 {
   font-family: Impact, serif;
 }
 
---fcc-editable-region--
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
---fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;

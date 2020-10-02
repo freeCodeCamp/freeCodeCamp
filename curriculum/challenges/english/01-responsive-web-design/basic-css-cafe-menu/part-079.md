@@ -1,5 +1,5 @@
 ---
-id: 5f45b25e7ec2405f166b9de1
+id: 5f46ede1ff8fec5ba656b44c
 title: Part 79
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue }`
-
-Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
+Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
 
 </section>
 
@@ -83,7 +81,6 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
-      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -148,7 +145,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 18px;  
 }
 
 .flavor, .dessert {
@@ -159,16 +156,6 @@ h1, h2 {
 .price {
   text-align: right;
   width: 25%
-}
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
 }
 
 --fcc-editable-region--

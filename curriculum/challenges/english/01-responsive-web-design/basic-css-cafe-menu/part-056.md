@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e05473f91f948724ab
+id: 5f3ef6e050279c7a4a7101d3
 title: Part 56
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
-
-Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`.  This is a fairly common font that is very readable.
+That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
 
 </section>
 
@@ -91,24 +89,24 @@ tests:
 <div id='css-seed'>
 
 ```css
---fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
 }
---fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  max-width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

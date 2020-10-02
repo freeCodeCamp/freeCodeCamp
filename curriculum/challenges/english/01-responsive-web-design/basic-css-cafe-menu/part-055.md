@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e03d719d5ac4738993
+id: 5f3ef6e0eaa7da26e3d34d78
 title: Part 55
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
+You can give your menu some space between the content and the sides with various `padding` properties.
 
-Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
+Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
 
 </section>
 
@@ -105,7 +105,6 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
 }
 --fcc-editable-region--
 
