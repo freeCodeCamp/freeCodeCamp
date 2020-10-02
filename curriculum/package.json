@@ -17,6 +17,7 @@
     "create-empty-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-next-step",
     "create-step-between": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/create-step-between",
+    "delete-step": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/delete-step",
     "reorder-steps": "cross-env CALLING_DIR=$INIT_CWD node ../tools/challenge-helper-scripts/reorder-steps",
     "develop": "gulp",
     "lint": "gulp lint",
