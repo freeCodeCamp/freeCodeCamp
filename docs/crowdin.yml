@@ -19,6 +19,7 @@ files:
     ignore:
       - _coverpage.md
       - _navbar.md
+      - _translations.md
       - README.md
   - source: /flight-manuals/*.md
     translation: /i18n/%language%/flight-manuals/%original_file_name%
