@@ -37,6 +37,17 @@ A one-off script that automatically adds a new step between two existing consecu
   ```bash
   npm run create-step-between start=X end=Y # where X is the starting step number and Y is the following step number.
   ```
+
+## [delete-step.js](delete-step.js)
+A one-off script that deletes an existing step and then reorders the remaining step files in the project's folder as well as updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
+
+### How to run script
+1. Change to the directory of the project.
+2. Run the following npm command:
+  ```bash
+  npm run delete-step num=x # where x is the step number to be deleted.
+  ```
+
 ## [reorder-steps.js](reorder-steps.js)
 A one-off script that automatically reorders the step files in a project's markdown files based on the filename.  It also updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
 
@@ -77,7 +88,7 @@ part-006.md renames to part-007.md and title changes to "Part 7"
 ```
 Along with the above changes, the `challengeOrder` key in the project's `meta.json` file needs to reflect the new step order.  This is needed because each step below a step deletion and/or step addtion changes the `title` assoiciated with each of the affected step's challenge `id`.
 
-### Solution Steps
+### How to run script
 1. Change to the directory of the project.
 2. Run the following npm command:
   ```bash
