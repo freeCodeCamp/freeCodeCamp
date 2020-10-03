@@ -83,7 +83,7 @@ Step 5 :
 ```
 ![[ 1 2 3 4 5 8 ]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/6.png?raw=true)
 
-The below algorithm is slightly optimized version to avoid swapping `key` element in every iteration. Here, the `key` element will be swapped at the end of the iteration (step).
+The below algorithm is slightly optimized version to avoid swapping `key` element in every iteration as shown above example. Here, the `key` element will be swapped at the end of the iteration (step).
 
 ```Algorithm
     InsertionSort(arr[])
