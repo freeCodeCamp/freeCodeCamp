@@ -177,7 +177,7 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 ### Platform, Build and Deployment Status
 
-The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
+The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md). the coding playground is also available on our official site, please do check
 
 ### License
 
