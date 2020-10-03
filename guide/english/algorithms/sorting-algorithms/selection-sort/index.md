@@ -11,7 +11,7 @@ Selection Sort is one of the most simple sorting algorithms. It works in the fol
 3. Find the third smallest element. Swap it with the third element.
 4. Repeat finding the next smallest element and swapping it into the corresponding correct position till the array is sorted.
 
-As you can guess, this algorithm is called Selection Sort because it repeatedly selects the next smallest element and set it at its sortimg order place.
+As you can guess, this algorithm is called Selection Sort because it repeatedly selects the next smallest element and set it at its sorting order place.
 
 But, how would you write the code for finding the index of the second smallest value in an array? 
 
