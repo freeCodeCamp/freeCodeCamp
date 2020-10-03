@@ -13,7 +13,7 @@ Now that we can ensure the user accessing the `/profile` is authenticated, we ca
 
 Pass the object containing the variable `username` equaling `req.user.username` into the render method of the profile view. Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
 
-```
+```pug
 h2.center#welcome Welcome, #{username}!
 ```
 
@@ -21,7 +21,7 @@ This creates an `h2` element with the class '`center`' and id '`welcome`' contai
 
 Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user.
 
-```
+```pug
 a(href='/logout') Logout
 ```
 
