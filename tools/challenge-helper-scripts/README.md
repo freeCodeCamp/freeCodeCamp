@@ -39,7 +39,7 @@ A one-off script that automatically adds a new step between two existing consecu
   ```
 
 ## [delete-step.js](delete-step.js)
-A one-off script that deletes an existing step and then reorders the remaining step filess in the project's folder as well as updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
+A one-off script that deletes an existing step and then reorders the remaining step files in the project's folder as well as updates the `challengeOrder` property array in the project's `meta.json` with the new order of the steps.
 
 ### How to run script
 1. Change to the directory of the project.
