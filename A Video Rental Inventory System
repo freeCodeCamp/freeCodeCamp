@@ -1,0 +1,179 @@
+package anmol;
+importjava.util.Scanner;
+class Video {
+static String videoname;
+booleancheckout = true;
+staticintrating[] = newint[10];
+    String getname(String name)
+    {
+booleanflag=false;
+VideoStoreobj2 = newVideoStore();
+for( intj = 0 ; j<obj2.i;j++)
+        {
+if((obj2.store[j].videoname.equals(name)))
+            {
+                System.out.println("Yes the movie is in the inventory");
+flag = true;
+            }
+        }    
+if(!flag)
+        {
+            System.out.println("The movie is not in the inventory");
+        }
+returnvideoname;
+    }
+voiddoCheckout()
+    {
+        System.out.println("The movie has been checked out sucessfully");
+checkout=false;
+    }
+voiddoReturn()
+    {
+        System.out.println("The movie has been returned and added back to the inventory");
+checkout= true;
+    }
+voidreceiveRating(intrating)
+    {
+
+    }
+voidgetRating()
+    {
+VideoStoreobj2= newVideoStore();
+        System.out.println("Movie name"+"     "+"Rating");
+for( intj = 0; j<obj2.i ; j++)
+        {
+            System.out.println(obj2.store[j].videoname+"        "+rating[j] );    
+        }
+    }
+booleangetCheckout()
+    {
+returncheckout;
+    }}
+classVideoStoreextends Video
+{
+staticVideo[] store = new Video[10];
+staticinti=0;
+staticvoidaddVideo(String name)
+    {
+store[i]= newVideo();
+store[i].videoname = name;    
+i++;
+    }
+voiddoCheckout(String name)
+    {
+booleanflag= false;
+for( intj = 0 ; j<i ; j++)
+        {
+if((store[j].videoname).equals(name) &&store[j].getCheckout()==true)
+            {
+store[j].doCheckout();
+flag = true;
+            }
+if(!flag )
+            {
+                System.out.println("");
+            }
+        }
+    }
+voiddoReturn(String name)
+    {
+for( intj = 0 ; j<i ; j++)
+        {
+if((store[j].videoname).equals(name))
+            {
+store[j].doReturn();}}}
+voidreceiveRating(String name,intrate)
+    {
+booleanflag = false;
+this.videoname = name;
+for( intj = 0 ;j<i ; j++)
+        {
+if(store[j].videoname.equals(name))
+            {
+rating[j]=rate;
+flag = true;
+            }}
+if(!flag)
+        {
+            System.out.println("There is no such movie present in the catalog");
+        }
+    }
+staticvoidlistInventory()
+    {
+for( intj =0 ; j<i ; j++)
+        {
+            System.out.println(store[j].videoname);
+        }
+if(store == null)
+        {
+            System.out.println("The movie catalog seems to be empty ( try to add some movies");
+        }}}
+publicclassVideoRentalextendsVideoStore {
+
+	publicstaticvoid main(String[] args) 
+    {
+        Video vid = newVideo();
+VideoStoreobj1= newVideoStore();
+        String movname;
+intrate;
+intchoice;
+        Scanner sc = new Scanner(System.in);
+while(true)
+        {
+	System.out.println("MAIN MENU");
+	System.out.println("=========");
+            System.out.println("1 Add Video");
+            System.out.println("2 List Inventory ");
+            System.out.println("3 Receive Rating");
+            System.out.println("4 Check the Rating");
+            System.out.println("5 Checkout video");
+            System.out.print("Please enter your choice: ");
+choice = sc.nextInt();
+
+switch(choice) {
+case 1:
+	System.out.println("Enter the name of the movie you want to add");
+movname = sc.next();
+addVideo(movname);
+break;
+
+case 2:
+	 System.out.println("The  movies available in the inventory are");
+listInventory();
+break;
+
+case 3:
+                System.out.println("Enter the name of the movie");
+movname = sc.next();
+                System.out.println("Enter the rating of the movie");
+rate = sc.nextInt();
+obj1.receiveRating(movname,rate);
+break;
+case 4:
+vid.getRating();
+break;
+case 5:
+	System.out.println("Enter the name of the movie you want to Checkout");
+movname = sc.next();
+obj1.doCheckout(movname);
+break;
+default:
+                System.out.println("Please enter a valid option from the menu given above");
+            }
+            System.out.println("Do you want to continue[Y/N]");
+            String conti=null;
+conti = sc.next();
+if((conti.equals("N")) || (conti.equals("n")))
+            {
+                System.out.println("Thank you for using the program");
+System.exit(0);
+            }
+elseif ((conti.equals("Y")) || (conti.equals("y")))
+            {
+continue;
+            }
+else
+            {
+                System.out.println("Please enter a valid option [Either Y or N]");
+continue;
+            }}}}
