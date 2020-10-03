@@ -36,11 +36,14 @@
 
 </head>
 
-<body class='close'>
+<body class="close">
   <!-- Navigation (we are using a div, instead of nav to avoid conflict with docsify's nav) -->
   <div class='universal-nav'>
     <a class="app-name-link" data-nosearch="" href="/">
       <img alt="freeCodeCamp.org" src="images/branding/primary_logo.svg">
+    </a>
+    <a class="translations-link" data-nosearch="" href="/#/_translations">
+      Translations
     </a>
   </div>
 
@@ -51,10 +54,10 @@
 
       homepage: 'index.md',
 
-
+      relativePath: true,
       // common aliases
       alias: {
-
+        '.*/_navbar.md': '/_navbar.md'
       },
 
 
@@ -76,9 +79,11 @@
       maxLevel: 2,
       subMaxLevel: 2,
 
-      loadNavbar: false, //disabled for the sidebar introduced by activating i18n
       topMargin: 90,
 
+      // we do not use the built in navbar other then in mobile view
+      loadNavbar: true,
+      mergeNavbar: true,
 
       // Plugins
       search: {
@@ -92,7 +97,7 @@
       },
 
       pagination: {
-        crossChapter: false
+        crossChapter: true
       },
 
       remoteMarkdown: {
@@ -102,14 +107,19 @@
       plugins: [
         function (hook, vm) {
           hook.beforeEach(function (html) {
+
+            if (vm.route.file === '_translations.md') return html;
+
             var url =
               'https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/' +
               vm.route.file;
-            var editHtml = '[<i class="far fa-edit"></i> Edit this guide on GitHub](' + url + ')';
+
+            var editLink = '[<i class="far fa-edit"></i> Edit this guide on GitHub](' + url + ')';
+
             return (
               html +
               '\n----\n' +
-              editHtml
+              editLink
             );
           });
         }
