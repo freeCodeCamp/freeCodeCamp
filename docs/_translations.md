@@ -33,4 +33,12 @@
 
 </div>
 
+<br />
+<br />
+<br />
+
+<div style='text-align: center'>
+
 Interested in updating the translations? Visit: <https://translate.freecodecamp.org>
+
+</div>
