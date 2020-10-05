@@ -1,0 +1,2089 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`replace-jsx-with-html should have an output to match the snapshot 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 18,
+              "line": 1,
+              "offset": 17,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 3,
+              "line": 1,
+              "offset": 2,
+            },
+          },
+          "type": "text",
+          "value": "--description--",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 18,
+          "line": 1,
+          "offset": 17,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 107,
+              "line": 3,
+              "offset": 125,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 3,
+              "offset": 19,
+            },
+          },
+          "type": "text",
+          "value": "When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 107,
+          "line": 3,
+          "offset": 125,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 3,
+          "offset": 19,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 16,
+              "line": 5,
+              "offset": 142,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 5,
+              "offset": 127,
+            },
+          },
+          "type": "text",
+          "value": "After the last ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 22,
+              "line": 5,
+              "offset": 148,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 16,
+              "line": 5,
+              "offset": 142,
+            },
+          },
+          "type": "jsx",
+          "value": "<code>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 24,
+              "line": 5,
+              "offset": 150,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 22,
+              "line": 5,
+              "offset": 148,
+            },
+          },
+          "type": "text",
+          "value": "h2",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 31,
+              "line": 5,
+              "offset": 157,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 24,
+              "line": 5,
+              "offset": 150,
+            },
+          },
+          "type": "jsx",
+          "value": "</code>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 54,
+              "line": 5,
+              "offset": 180,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 31,
+              "line": 5,
+              "offset": 157,
+            },
+          },
+          "type": "text",
+          "value": " element of the second ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 63,
+              "line": 5,
+              "offset": 189,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 54,
+              "line": 5,
+              "offset": 180,
+            },
+          },
+          "type": "inlineCode",
+          "value": "section",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 80,
+              "line": 5,
+              "offset": 206,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 63,
+              "line": 5,
+              "offset": 189,
+            },
+          },
+          "type": "text",
+          "value": " element, add an ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 84,
+              "line": 5,
+              "offset": 210,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 80,
+              "line": 5,
+              "offset": 206,
+            },
+          },
+          "type": "inlineCode",
+          "value": "h3",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 107,
+              "line": 5,
+              "offset": 233,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 84,
+              "line": 5,
+              "offset": 210,
+            },
+          },
+          "type": "text",
+          "value": " element with the text ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 126,
+              "line": 5,
+              "offset": 252,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 107,
+              "line": 5,
+              "offset": 233,
+            },
+          },
+          "type": "inlineCode",
+          "value": "Things cats love:",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 127,
+              "line": 5,
+              "offset": 253,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 126,
+              "line": 5,
+              "offset": 252,
+            },
+          },
+          "type": "text",
+          "value": ".",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 127,
+          "line": 5,
+          "offset": 253,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 5,
+          "offset": 127,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "position": Object {
+        "end": Object {
+          "column": 14,
+          "line": 12,
+          "offset": 383,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 7,
+          "offset": 255,
+        },
+      },
+      "type": "jsx",
+      "value": "<blockquote>
+  <p>Some text in a blockquote</p>
+  <p>
+    Some text in a blockquote, with <code>code</code>
+  </p>
+</blockquote>",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 19,
+              "line": 14,
+              "offset": 403,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 3,
+              "line": 14,
+              "offset": 387,
+            },
+          },
+          "type": "text",
+          "value": "--instructions--",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 19,
+          "line": 14,
+          "offset": 403,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 14,
+          "offset": 385,
+        },
+      },
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 23,
+              "line": 16,
+              "offset": 427,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 16,
+              "offset": 405,
+            },
+          },
+          "type": "text",
+          "value": "Do something with the ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 29,
+              "line": 16,
+              "offset": 433,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 23,
+              "line": 16,
+              "offset": 427,
+            },
+          },
+          "type": "inlineCode",
+          "value": "code",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 30,
+              "line": 16,
+              "offset": 434,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 29,
+              "line": 16,
+              "offset": 433,
+            },
+          },
+          "type": "text",
+          "value": ".",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 30,
+          "line": 16,
+          "offset": 434,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 16,
+          "offset": 405,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 50,
+              "line": 18,
+              "offset": 485,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 18,
+              "offset": 436,
+            },
+          },
+          "type": "text",
+          "value": "To test that adjacent tags are handled correctly:",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 50,
+          "line": 18,
+          "offset": 485,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 18,
+          "offset": 436,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 10,
+              "line": 20,
+              "offset": 496,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 20,
+              "offset": 487,
+            },
+          },
+          "type": "text",
+          "value": "a bit of ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 16,
+              "line": 20,
+              "offset": 502,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 10,
+              "line": 20,
+              "offset": 496,
+            },
+          },
+          "type": "html",
+          "value": "<code>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 20,
+              "line": 20,
+              "offset": 506,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 16,
+              "line": 20,
+              "offset": 502,
+            },
+          },
+          "type": "text",
+          "value": "code",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 27,
+              "line": 20,
+              "offset": 513,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 20,
+              "line": 20,
+              "offset": 506,
+            },
+          },
+          "type": "html",
+          "value": "</code>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 28,
+              "line": 20,
+              "offset": 514,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 27,
+              "line": 20,
+              "offset": 513,
+            },
+          },
+          "type": "text",
+          "value": " ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 33,
+              "line": 20,
+              "offset": 519,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 28,
+              "line": 20,
+              "offset": 514,
+            },
+          },
+          "type": "html",
+          "value": "<tag>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 56,
+              "line": 20,
+              "offset": 542,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 33,
+              "line": 20,
+              "offset": 519,
+            },
+          },
+          "type": "text",
+          "value": "with more after a space",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 62,
+              "line": 20,
+              "offset": 548,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 56,
+              "line": 20,
+              "offset": 542,
+            },
+          },
+          "type": "html",
+          "value": "</tag>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 83,
+              "line": 20,
+              "offset": 569,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 62,
+              "line": 20,
+              "offset": 548,
+            },
+          },
+          "type": "text",
+          "value": " and another pair of ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 91,
+              "line": 20,
+              "offset": 577,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 83,
+              "line": 20,
+              "offset": 569,
+            },
+          },
+          "type": "html",
+          "value": "<strong>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 99,
+              "line": 20,
+              "offset": 585,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 91,
+              "line": 20,
+              "offset": 577,
+            },
+          },
+          "type": "text",
+          "value": "elements",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 108,
+              "line": 20,
+              "offset": 594,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 99,
+              "line": 20,
+              "offset": 585,
+            },
+          },
+          "type": "html",
+          "value": "</strong>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 109,
+              "line": 20,
+              "offset": 595,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 108,
+              "line": 20,
+              "offset": 594,
+            },
+          },
+          "type": "text",
+          "value": " ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 113,
+              "line": 20,
+              "offset": 599,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 109,
+              "line": 20,
+              "offset": 595,
+            },
+          },
+          "type": "html",
+          "value": "<em>",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 125,
+              "line": 20,
+              "offset": 611,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 113,
+              "line": 20,
+              "offset": 599,
+            },
+          },
+          "type": "text",
+          "value": "with a space",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 130,
+              "line": 20,
+              "offset": 616,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 125,
+              "line": 20,
+              "offset": 611,
+            },
+          },
+          "type": "html",
+          "value": "</em>",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 130,
+          "line": 20,
+          "offset": 616,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 20,
+          "offset": 487,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 12,
+              "line": 22,
+              "offset": 629,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 3,
+              "line": 22,
+              "offset": 620,
+            },
+          },
+          "type": "text",
+          "value": "--hints--",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 12,
+          "line": 22,
+          "offset": 629,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 22,
+          "offset": 618,
+        },
+      },
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "alt": "test-id-1",
+          "identifier": "test-id-1",
+          "label": "test-id-1",
+          "position": Object {
+            "end": Object {
+              "column": 13,
+              "line": 24,
+              "offset": 643,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 24,
+              "offset": 631,
+            },
+          },
+          "referenceType": "shortcut",
+          "type": "imageReference",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 13,
+          "line": 24,
+          "offset": 643,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 24,
+          "offset": 631,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 12,
+              "line": 26,
+              "offset": 656,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 26,
+              "offset": 645,
+            },
+          },
+          "type": "text",
+          "value": "The second ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 21,
+              "line": 26,
+              "offset": 665,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 12,
+              "line": 26,
+              "offset": 656,
+            },
+          },
+          "type": "inlineCode",
+          "value": "section",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 101,
+              "line": 26,
+              "offset": 745,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 21,
+              "line": 26,
+              "offset": 665,
+            },
+          },
+          "type": "text",
+          "value": " element appears to be missing or does not have both an opening and closing tag.",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 101,
+          "line": 26,
+          "offset": 745,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 26,
+          "offset": 645,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "lang": "js",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 33,
+          "offset": 863,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 28,
+          "offset": 747,
+        },
+      },
+      "type": "code",
+      "value": "assert(
+  document.querySelectorAll('main > section')[1] &&
+    code.match(/\\\\<\\\\/section>/g).length == 2
+);",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "alt": "test-id-2",
+          "identifier": "test-id-2",
+          "label": "test-id-2",
+          "position": Object {
+            "end": Object {
+              "column": 13,
+              "line": 35,
+              "offset": 877,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 35,
+              "offset": 865,
+            },
+          },
+          "referenceType": "shortcut",
+          "type": "imageReference",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 13,
+          "line": 35,
+          "offset": 877,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 35,
+          "offset": 865,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 20,
+              "line": 37,
+              "offset": 898,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 37,
+              "offset": 879,
+            },
+          },
+          "type": "text",
+          "value": "There should be an ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 24,
+              "line": 37,
+              "offset": 902,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 20,
+              "line": 37,
+              "offset": 898,
+            },
+          },
+          "type": "inlineCode",
+          "value": "h3",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 56,
+              "line": 37,
+              "offset": 934,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 24,
+              "line": 37,
+              "offset": 902,
+            },
+          },
+          "type": "text",
+          "value": " element right above the second ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 65,
+              "line": 37,
+              "offset": 943,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 56,
+              "line": 37,
+              "offset": 934,
+            },
+          },
+          "type": "inlineCode",
+          "value": "section",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 88,
+              "line": 37,
+              "offset": 966,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 65,
+              "line": 37,
+              "offset": 943,
+            },
+          },
+          "type": "text",
+          "value": " element's closing tag.",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 88,
+          "line": 37,
+          "offset": 966,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 37,
+          "offset": 879,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "lang": "js",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 44,
+          "offset": 1076,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 39,
+          "offset": 968,
+        },
+      },
+      "type": "code",
+      "value": "assert(
+  document.querySelectorAll('main > section')[1].lastElementChild.nodeName ===
+    'H3'
+);",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "alt": "test-id-3",
+          "identifier": "test-id-3",
+          "label": "test-id-3",
+          "position": Object {
+            "end": Object {
+              "column": 13,
+              "line": 46,
+              "offset": 1090,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 46,
+              "offset": 1078,
+            },
+          },
+          "referenceType": "shortcut",
+          "type": "imageReference",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 13,
+          "line": 46,
+          "offset": 1090,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 46,
+          "offset": 1078,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 5,
+              "line": 48,
+              "offset": 1096,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 48,
+              "offset": 1092,
+            },
+          },
+          "type": "text",
+          "value": "The ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 9,
+              "line": 48,
+              "offset": 1100,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 5,
+              "line": 48,
+              "offset": 1096,
+            },
+          },
+          "type": "inlineCode",
+          "value": "h3",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 41,
+              "line": 48,
+              "offset": 1132,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 9,
+              "line": 48,
+              "offset": 1100,
+            },
+          },
+          "type": "text",
+          "value": " element right above the second ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 50,
+              "line": 48,
+              "offset": 1141,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 41,
+              "line": 48,
+              "offset": 1132,
+            },
+          },
+          "type": "inlineCode",
+          "value": "section",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 94,
+              "line": 48,
+              "offset": 1185,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 50,
+              "line": 48,
+              "offset": 1141,
+            },
+          },
+          "type": "text",
+          "value": " element's closing tag should have the text ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 113,
+              "line": 48,
+              "offset": 1204,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 94,
+              "line": 48,
+              "offset": 1185,
+            },
+          },
+          "type": "inlineCode",
+          "value": "Things cats love:",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 169,
+              "line": 48,
+              "offset": 1260,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 113,
+              "line": 48,
+              "offset": 1204,
+            },
+          },
+          "type": "text",
+          "value": ". Make sure to include the colon at the end of the text.",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 169,
+          "line": 48,
+          "offset": 1260,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 48,
+          "offset": 1092,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "lang": "js",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 57,
+          "offset": 1432,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 50,
+          "offset": 1262,
+        },
+      },
+      "type": "code",
+      "value": "assert(
+  document
+    .querySelectorAll('main > section')[1]
+    .lastElementChild.innerText.toLowerCase()
+    .replace(/\\\\s+/g, ' ') === 'things cats love:'
+);",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "alt": "test-id-4",
+          "identifier": "test-id-4",
+          "label": "test-id-4",
+          "position": Object {
+            "end": Object {
+              "column": 13,
+              "line": 59,
+              "offset": 1446,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 59,
+              "offset": 1434,
+            },
+          },
+          "referenceType": "shortcut",
+          "type": "imageReference",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 13,
+          "line": 59,
+          "offset": 1446,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 59,
+          "offset": 1434,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 20,
+              "line": 61,
+              "offset": 1467,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 61,
+              "offset": 1448,
+            },
+          },
+          "type": "text",
+          "value": "There should be an ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 24,
+              "line": 61,
+              "offset": 1471,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 20,
+              "line": 61,
+              "offset": 1467,
+            },
+          },
+          "type": "inlineCode",
+          "value": "h2",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 47,
+              "line": 61,
+              "offset": 1494,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 24,
+              "line": 61,
+              "offset": 1471,
+            },
+          },
+          "type": "text",
+          "value": " element with the text ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 58,
+              "line": 61,
+              "offset": 1505,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 47,
+              "line": 61,
+              "offset": 1494,
+            },
+          },
+          "type": "inlineCode",
+          "value": "Cat Lists",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 74,
+              "line": 61,
+              "offset": 1521,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 58,
+              "line": 61,
+              "offset": 1505,
+            },
+          },
+          "type": "text",
+          "value": " above the last ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 78,
+              "line": 61,
+              "offset": 1525,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 74,
+              "line": 61,
+              "offset": 1521,
+            },
+          },
+          "type": "inlineCode",
+          "value": "h3",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 114,
+              "line": 61,
+              "offset": 1561,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 78,
+              "line": 61,
+              "offset": 1525,
+            },
+          },
+          "type": "text",
+          "value": " element that is nested in the last ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 123,
+              "line": 61,
+              "offset": 1570,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 114,
+              "line": 61,
+              "offset": 1561,
+            },
+          },
+          "type": "inlineCode",
+          "value": "section",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 172,
+              "line": 61,
+              "offset": 1619,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 123,
+              "line": 61,
+              "offset": 1570,
+            },
+          },
+          "type": "text",
+          "value": " element'. You may have accidentally deleted the ",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 176,
+              "line": 61,
+              "offset": 1623,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 172,
+              "line": 61,
+              "offset": 1619,
+            },
+          },
+          "type": "inlineCode",
+          "value": "h2",
+        },
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 185,
+              "line": 61,
+              "offset": 1632,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 176,
+              "line": 61,
+              "offset": 1623,
+            },
+          },
+          "type": "text",
+          "value": " element.",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 185,
+          "line": 61,
+          "offset": 1632,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 61,
+          "offset": 1448,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "lang": "js",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 72,
+          "offset": 1933,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 63,
+          "offset": 1634,
+        },
+      },
+      "type": "code",
+      "value": "const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
+  .lastElementChild;
+assert(
+  secondSectionLastElemNode.nodeName === 'H3' &&
+    secondSectionLastElemNode.previousElementSibling.innerText
+      .toLowerCase()
+      .replace(/\\\\s+/g, ' ') === 'cat lists'
+);",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 11,
+              "line": 74,
+              "offset": 1945,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 3,
+              "line": 74,
+              "offset": 1937,
+            },
+          },
+          "type": "text",
+          "value": "--seed--",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 11,
+          "line": 74,
+          "offset": 1945,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 74,
+          "offset": 1935,
+        },
+      },
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "alt": "html-key",
+          "identifier": "html-key",
+          "label": "html-key",
+          "position": Object {
+            "end": Object {
+              "column": 12,
+              "line": 76,
+              "offset": 1958,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 76,
+              "offset": 1947,
+            },
+          },
+          "referenceType": "shortcut",
+          "type": "imageReference",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 12,
+          "line": 76,
+          "offset": 1958,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 76,
+          "offset": 1947,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "lang": "html",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 106,
+          "offset": 2649,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 78,
+          "offset": 1960,
+        },
+      },
+      "type": "code",
+      "value": "<html>
+  <body>
+    <h1>CatPhotoApp</h1>
+    <main>
+      <section>
+        <h2>Cat Photos</h2>
+        <!-- TODO: Add link to cat photos -->
+        <p>
+          Click here to view more
+          <a target=\\"_blank\\" href=\\"https://www.freecodecamp.org/cat-photos\\"
+            >cat photos</a
+          >.
+        </p>
+        <a href=\\"https://www.freecodecamp.org/cat-photos\\"
+          ><img
+            src=\\"https://bit.ly/fcc-relaxing-cat\\"
+            alt=\\"A cute orange cat lying on its back.\\"
+        /></a>
+      </section>
+      --fcc-editable-region--
+      <section>
+        <h2>Cat Lists</h2>
+      </section>
+      --fcc-editable-region--
+    </main>
+  </body>
+</html>",
+    },
+    Object {
+      "lang": "css",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 123,
+          "offset": 2790,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 108,
+          "offset": 2651,
+        },
+      },
+      "type": "code",
+      "value": "body {
+  background: white;
+}
+
+h1 {
+  font-size: 20px;
+}
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+a {
+  color: green;
+}",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "alt": "final-key",
+          "identifier": "final-key",
+          "label": "final-key",
+          "position": Object {
+            "end": Object {
+              "column": 13,
+              "line": 125,
+              "offset": 2804,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 125,
+              "offset": 2792,
+            },
+          },
+          "referenceType": "shortcut",
+          "type": "imageReference",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 13,
+          "line": 125,
+          "offset": 2804,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 125,
+          "offset": 2792,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "lang": "js",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 129,
+          "offset": 2828,
+        },
+        "indent": Array [
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 127,
+          "offset": 2806,
+        },
+      },
+      "type": "code",
+      "value": "var x = 'y';",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Object {
+            "end": Object {
+              "column": 15,
+              "line": 131,
+              "offset": 2844,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 3,
+              "line": 131,
+              "offset": 2832,
+            },
+          },
+          "type": "text",
+          "value": "--solutions--",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 15,
+          "line": 131,
+          "offset": 2844,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 131,
+          "offset": 2830,
+        },
+      },
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "alt": "html-key",
+          "identifier": "html-key",
+          "label": "html-key",
+          "position": Object {
+            "end": Object {
+              "column": 12,
+              "line": 133,
+              "offset": 2857,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 133,
+              "offset": 2846,
+            },
+          },
+          "referenceType": "shortcut",
+          "type": "imageReference",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 12,
+          "line": 133,
+          "offset": 2857,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 133,
+          "offset": 2846,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "lang": "html",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 161,
+          "offset": 3488,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 135,
+          "offset": 2859,
+        },
+      },
+      "type": "code",
+      "value": "<html>
+  <body>
+    <h1>CatPhotoApp</h1>
+    <main>
+      <section>
+        <h2>Cat Photos</h2>
+        <!-- TODO: Add link to cat photos -->
+        <p>
+          Click here to view more
+          <a target=\\"_blank\\" href=\\"https://www.freecodecamp.org/cat-photos\\"
+            >cat photos</a
+          >.
+        </p>
+        <a href=\\"https://www.freecodecamp.org/cat-photos\\"
+          ><img
+            src=\\"https://bit.ly/fcc-relaxing-cat\\"
+            alt=\\"A cute orange cat lying on its back.\\"
+        /></a>
+      </section>
+      <section>
+        <h2>Cat Lists</h2>
+      </section>
+    </main>
+  </body>
+</html>",
+    },
+    Object {
+      "lang": "css",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 178,
+          "offset": 3629,
+        },
+        "indent": Array [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 163,
+          "offset": 3490,
+        },
+      },
+      "type": "code",
+      "value": "body {
+  background: white;
+}
+
+h1 {
+  font-size: 20px;
+}
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+a {
+  color: green;
+}",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "alt": "final-key",
+          "identifier": "final-key",
+          "label": "final-key",
+          "position": Object {
+            "end": Object {
+              "column": 13,
+              "line": 180,
+              "offset": 3643,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 180,
+              "offset": 3631,
+            },
+          },
+          "referenceType": "shortcut",
+          "type": "imageReference",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 13,
+          "line": 180,
+          "offset": 3643,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 180,
+          "offset": 3631,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "lang": "js",
+      "meta": null,
+      "position": Object {
+        "end": Object {
+          "column": 4,
+          "line": 184,
+          "offset": 3667,
+        },
+        "indent": Array [
+          1,
+          1,
+        ],
+        "start": Object {
+          "column": 1,
+          "line": 182,
+          "offset": 3645,
+        },
+      },
+      "type": "code",
+      "value": "var x = 'y';",
+    },
+  ],
+  "position": Object {
+    "end": Object {
+      "column": 1,
+      "line": 185,
+      "offset": 3668,
+    },
+    "start": Object {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "root",
+}
+`;

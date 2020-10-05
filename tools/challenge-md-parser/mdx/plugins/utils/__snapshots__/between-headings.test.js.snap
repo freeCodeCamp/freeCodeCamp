@@ -1,0 +1,547 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`between-headings should match the hints snapshot 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "alt": "test-id-1",
+        "identifier": "test-id-1",
+        "label": "test-id-1",
+        "position": Object {
+          "end": Object {
+            "column": 13,
+            "line": 19,
+            "offset": 144,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 1,
+            "line": 19,
+            "offset": 132,
+          },
+        },
+        "referenceType": "shortcut",
+        "type": "imageReference",
+      },
+    ],
+    "position": Object {
+      "end": Object {
+        "column": 13,
+        "line": 19,
+        "offset": 144,
+      },
+      "indent": Array [],
+      "start": Object {
+        "column": 1,
+        "line": 19,
+        "offset": 132,
+      },
+    },
+    "type": "paragraph",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 11,
+            "line": 21,
+            "offset": 156,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 1,
+            "line": 21,
+            "offset": 146,
+          },
+        },
+        "type": "text",
+        "value": "First hint",
+      },
+    ],
+    "position": Object {
+      "end": Object {
+        "column": 11,
+        "line": 21,
+        "offset": 156,
+      },
+      "indent": Array [],
+      "start": Object {
+        "column": 1,
+        "line": 21,
+        "offset": 146,
+      },
+    },
+    "type": "paragraph",
+  },
+  Object {
+    "lang": "js",
+    "meta": null,
+    "position": Object {
+      "end": Object {
+        "column": 4,
+        "line": 25,
+        "offset": 180,
+      },
+      "indent": Array [
+        1,
+        1,
+      ],
+      "start": Object {
+        "column": 1,
+        "line": 23,
+        "offset": 158,
+      },
+    },
+    "type": "code",
+    "value": "// test code",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "alt": "test-id-2",
+        "identifier": "test-id-2",
+        "label": "test-id-2",
+        "position": Object {
+          "end": Object {
+            "column": 13,
+            "line": 27,
+            "offset": 194,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 1,
+            "line": 27,
+            "offset": 182,
+          },
+        },
+        "referenceType": "shortcut",
+        "type": "imageReference",
+      },
+    ],
+    "position": Object {
+      "end": Object {
+        "column": 13,
+        "line": 27,
+        "offset": 194,
+      },
+      "indent": Array [],
+      "start": Object {
+        "column": 1,
+        "line": 27,
+        "offset": 182,
+      },
+    },
+    "type": "paragraph",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 18,
+            "line": 29,
+            "offset": 213,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 1,
+            "line": 29,
+            "offset": 196,
+          },
+        },
+        "type": "text",
+        "value": "Second hint with ",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 24,
+            "line": 29,
+            "offset": 219,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 18,
+            "line": 29,
+            "offset": 213,
+          },
+        },
+        "type": "html",
+        "value": "<code>",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 28,
+            "line": 29,
+            "offset": 223,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 24,
+            "line": 29,
+            "offset": 219,
+          },
+        },
+        "type": "text",
+        "value": "code",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 35,
+            "line": 29,
+            "offset": 230,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 28,
+            "line": 29,
+            "offset": 223,
+          },
+        },
+        "type": "html",
+        "value": "</code>",
+      },
+    ],
+    "position": Object {
+      "end": Object {
+        "column": 35,
+        "line": 29,
+        "offset": 230,
+      },
+      "indent": Array [],
+      "start": Object {
+        "column": 1,
+        "line": 29,
+        "offset": 196,
+      },
+    },
+    "type": "paragraph",
+  },
+  Object {
+    "lang": "js",
+    "meta": null,
+    "position": Object {
+      "end": Object {
+        "column": 4,
+        "line": 33,
+        "offset": 259,
+      },
+      "indent": Array [
+        1,
+        1,
+      ],
+      "start": Object {
+        "column": 1,
+        "line": 31,
+        "offset": 232,
+      },
+    },
+    "type": "code",
+    "value": "// more test code",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "alt": "test-id-3",
+        "identifier": "test-id-3",
+        "label": "test-id-3",
+        "position": Object {
+          "end": Object {
+            "column": 13,
+            "line": 35,
+            "offset": 273,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 1,
+            "line": 35,
+            "offset": 261,
+          },
+        },
+        "referenceType": "shortcut",
+        "type": "imageReference",
+      },
+    ],
+    "position": Object {
+      "end": Object {
+        "column": 13,
+        "line": 35,
+        "offset": 273,
+      },
+      "indent": Array [],
+      "start": Object {
+        "column": 1,
+        "line": 35,
+        "offset": 261,
+      },
+    },
+    "type": "paragraph",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 7,
+            "line": 37,
+            "offset": 281,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 1,
+            "line": 37,
+            "offset": 275,
+          },
+        },
+        "type": "text",
+        "value": "Third ",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "position": Object {
+              "end": Object {
+                "column": 12,
+                "line": 37,
+                "offset": 286,
+              },
+              "indent": Array [],
+              "start": Object {
+                "column": 8,
+                "line": 37,
+                "offset": 282,
+              },
+            },
+            "type": "text",
+            "value": "hint",
+          },
+        ],
+        "position": Object {
+          "end": Object {
+            "column": 13,
+            "line": 37,
+            "offset": 287,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 7,
+            "line": 37,
+            "offset": 281,
+          },
+        },
+        "type": "emphasis",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 19,
+            "line": 37,
+            "offset": 293,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 13,
+            "line": 37,
+            "offset": 287,
+          },
+        },
+        "type": "text",
+        "value": " with ",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 25,
+            "line": 37,
+            "offset": 299,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 19,
+            "line": 37,
+            "offset": 293,
+          },
+        },
+        "type": "html",
+        "value": "<code>",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 29,
+            "line": 37,
+            "offset": 303,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 25,
+            "line": 37,
+            "offset": 299,
+          },
+        },
+        "type": "text",
+        "value": "code",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 36,
+            "line": 37,
+            "offset": 310,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 29,
+            "line": 37,
+            "offset": 303,
+          },
+        },
+        "type": "html",
+        "value": "</code>",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 41,
+            "line": 37,
+            "offset": 315,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 36,
+            "line": 37,
+            "offset": 310,
+          },
+        },
+        "type": "text",
+        "value": " and ",
+      },
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 54,
+            "line": 37,
+            "offset": 328,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 41,
+            "line": 37,
+            "offset": 315,
+          },
+        },
+        "type": "inlineCode",
+        "value": "inline code",
+      },
+    ],
+    "position": Object {
+      "end": Object {
+        "column": 54,
+        "line": 37,
+        "offset": 328,
+      },
+      "indent": Array [],
+      "start": Object {
+        "column": 1,
+        "line": 37,
+        "offset": 275,
+      },
+    },
+    "type": "paragraph",
+  },
+  Object {
+    "lang": "js",
+    "meta": null,
+    "position": Object {
+      "end": Object {
+        "column": 4,
+        "line": 44,
+        "offset": 395,
+      },
+      "indent": Array [
+        1,
+        1,
+        1,
+        1,
+        1,
+      ],
+      "start": Object {
+        "column": 1,
+        "line": 39,
+        "offset": 330,
+      },
+    },
+    "type": "code",
+    "value": "// more test code
+if(let x of xs) {
+  console.log(x);
+}",
+  },
+]
+`;
+
+exports[`between-headings should match the instructions snapshot 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "position": Object {
+          "end": Object {
+            "column": 12,
+            "line": 11,
+            "offset": 89,
+          },
+          "indent": Array [],
+          "start": Object {
+            "column": 1,
+            "line": 11,
+            "offset": 78,
+          },
+        },
+        "type": "text",
+        "value": "Paragraph 0",
+      },
+    ],
+    "position": Object {
+      "end": Object {
+        "column": 12,
+        "line": 11,
+        "offset": 89,
+      },
+      "indent": Array [],
+      "start": Object {
+        "column": 1,
+        "line": 11,
+        "offset": 78,
+      },
+    },
+    "type": "paragraph",
+  },
+  Object {
+    "lang": "html",
+    "meta": null,
+    "position": Object {
+      "end": Object {
+        "column": 4,
+        "line": 15,
+        "offset": 117,
+      },
+      "indent": Array [
+        1,
+        1,
+      ],
+      "start": Object {
+        "column": 1,
+        "line": 13,
+        "offset": 91,
+      },
+    },
+    "type": "code",
+    "value": "code example 0",
+  },
+]
+`;
