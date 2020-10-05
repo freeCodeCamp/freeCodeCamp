@@ -1,6 +1,6 @@
 ---
-id: 5f7692f7c5b3ce22a57788b6
-title: Part 45
+id: 5f3c866de7a5b784048f94b1
+title: Part 37
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To complete the styling, add the applicable class names `flavor` and `price` to all the remaining `p` elements.
+That is kind of what you want, but now it would be nice if the flavor and price were on the same line.  `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
+
+To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements.  Add a `class` attribute with the value `item` to first `article` element under the `Coffees` heading.
 
 </section>
 
@@ -46,24 +48,29 @@ tests:
       </header>
       <main>
         <section>
+          --fcc-editable-region--
           <h2>Coffees</h2>
-          <article class="item">
-            <p class="flavor">French Vanilla</p><p class="price">3.00</p>
+          <article>
+            <p class="flavor">French Vanilla</p>
+            <p class="price">3.00</p>
           </article>
           --fcc-editable-region--
-          <article class="item">
-            <p>Carmel Macchiato</p><p>3.75</p>
+          <article>
+            <p>Carmel Macchiato</p>
+            <p>3.75</p>
           </article>
-          <article class="item">
-            <p>Pumpkin Spice</p><p>3.50</p>
+          <article>
+            <p>Pumpkin Spice</p>
+            <p>3.50</p>
           </article>
-          <article class="item">
-            <p>Hazelnut</p><p>4.00</p>
+          <article>
+            <p>Hazelnut</p>
+            <p>4.00</p>
           </article>
-          <article class="item">
-            <p>Mocha</p><p>4.50</p>
+          <article>
+            <p>Mocha</p>
+            <p>4.50</p>
           </article>
-          --fcc-editable-region--
         </section>
       </main>
     </div>
@@ -91,19 +98,14 @@ h1, h2, p {
   margin-right: auto;
 }
 
-.item p {
-  display: inline-block;
-}
-
 .flavor {
   text-align: left;
-  width: 50%;
 }
 
 .price {
   text-align: right;
-  width: 50%;
 }
+
 ```
 
 </div>

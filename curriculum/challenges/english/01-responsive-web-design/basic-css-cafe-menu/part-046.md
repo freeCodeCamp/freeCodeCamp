@@ -1,5 +1,5 @@
 ---
-id: 5f7692f7c5b3ce22a57788b6
+id: 5f47633757ae3469f2d33d2e
 title: Part 46
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To complete the styling, add the applicable class names `flavor` and `price` to all the remaining `p` elements.
+If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.  This is because the width of the `p` elements on the left side can only take up `50%` of the space.
+
+Since you know the prices on the right have significantly fewer characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
 
 </section>
 
@@ -50,20 +52,18 @@ tests:
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
-          --fcc-editable-region--
           <article class="item">
-            <p>Carmel Macchiato</p><p>3.75</p>
+            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
           </article>
           <article class="item">
-            <p>Pumpkin Spice</p><p>3.50</p>
+            <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
           </article>
           <article class="item">
-            <p>Hazelnut</p><p>4.00</p>
+            <p class="flavor">Hazelnut</p><p class="price">4.00</p>
           </article>
           <article class="item">
-            <p>Mocha</p><p>4.50</p>
+            <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
-          --fcc-editable-region--
         </section>
       </main>
     </div>
@@ -95,6 +95,7 @@ h1, h2, p {
   display: inline-block;
 }
 
+--fcc-editable-region--
 .flavor {
   text-align: left;
   width: 50%;
@@ -104,6 +105,7 @@ h1, h2, p {
   text-align: right;
   width: 50%;
 }
+--fcc-editable-region--
 ```
 
 </div>

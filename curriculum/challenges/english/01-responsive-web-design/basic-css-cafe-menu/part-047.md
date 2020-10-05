@@ -1,5 +1,5 @@
 ---
-id: 5f47633757ae3469f2d33d2e
+id: 5f3cade99dda4e6071a85dfd
 title: Part 47
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.  This is because the width of the `p` elements on the left side can only take up `50%` of the space.
-
-Since you know the prices on the right have significantly fewer characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
+You will come back to the styling the menu in a few steps, but for now, go ahead add a second `section` element below the first for displaying the desserts offered by the cafe.
 
 </section>
 
@@ -47,6 +45,7 @@ tests:
         <p>Est. 2020</p>
       </header>
       <main>
+        --fcc-editable-region--
         <section>
           <h2>Coffees</h2>
           <article class="item">
@@ -65,6 +64,7 @@ tests:
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
+        --fcc-editable-region--
       </main>
     </div>
   </body>
@@ -95,17 +95,15 @@ h1, h2, p {
   display: inline-block;
 }
 
---fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 50%;
+  width: 75%;
 }
 
 .price {
   text-align: right;
-  width: 50%;
+  width: 25%
 }
---fcc-editable-region--
 ```
 
 </div>

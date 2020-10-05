@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0819d4f23ca7285e6
+id: 5f716ad029ee4053c7027a7a
 title: Part 50
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add an empty `article` element under the `Desserts` heading. Give it a `class` attribute with the value `item`.
+Nest two `p` elements inside your `article` element. The first one's text should be `Donut`, and the second's text `1.50`.
 
 </section>
 
@@ -64,8 +64,10 @@ tests:
           </article>
         </section>
         <section>
-          --fcc-editable-region--
           <h2>Desserts</h2>
+          --fcc-editable-region--
+          <article class="item">
+          </article>
           --fcc-editable-region--
         </section>
       </main>

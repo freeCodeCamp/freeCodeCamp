@@ -1,5 +1,5 @@
 ---
-id: 5f3c866d0fc037f7311b4ac8
+id: 5f3c866dd0d0275f01d4d847
 title: Part 40
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-That's closer, but the price didn't stay over on the right. This is because `inline-block` elements only take up the width of their content. To spread them out, add a `width` property to the `flavor` and `price` class selectors that have a value of `50%` each.
+Well that did not work. Styling the `p` elements as `inline-block` and placing them on a separate lines in the code, creates an extra space to the right of the first `p` element, causing the second one to shift to the next line. One way to fix this is to make each `p`'s width a little less than `50%`.
+
+Change the `width` value to `49%` for each class to see what happens.
 
 </section>
 
@@ -101,10 +103,12 @@ h1, h2, p {
 --fcc-editable-region--
 .flavor {
   text-align: left;
+  width: 50%;
 }
 
 .price {
   text-align: right;
+  width: 50%;
 }
 --fcc-editable-region--
 ```

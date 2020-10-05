@@ -1,5 +1,5 @@
 ---
-id: 5f3c866de7a5b784048f94b1
+id: 5f3c866dbf362f99b9a0c6d0
 title: Part 38
 challengeType: 0
 isHidden: true
@@ -8,9 +8,13 @@ isHidden: true
 ## Description
 <section id='description'>
 
-That is kind of what you want, but now it would be nice if the flavor and price were on the same line.  `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
+The `p` elements are nested in an `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
-To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements.  Add a `class` attribute with the value `item` to first `article` element under the `Coffees` heading.
+```css
+.item p { }
+```
+
+Using the above selector, add a `display` property with value `inline-block` so the `p` elements behave more like `inline` elements.
 
 </section>
 
@@ -48,13 +52,11 @@ tests:
       </header>
       <main>
         <section>
-          --fcc-editable-region--
           <h2>Coffees</h2>
-          <article>
+          <article class="item">
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
-          --fcc-editable-region--
           <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
@@ -97,6 +99,10 @@ h1, h2, p {
   margin-left: auto;
   margin-right: auto;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .flavor {
   text-align: left;

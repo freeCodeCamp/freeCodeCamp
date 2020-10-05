@@ -1,5 +1,5 @@
 ---
-id: 5f3cade99dda4e6071a85dfd
+id: 5f3ef6e0e0c3feaebcf647ad
 title: Part 48
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You will come back to the styling the menu in a few steps, but for now, go ahead add a second `section` element below the first for displaying the desserts offered by the cafe.
+Add an `h2` element in the new section add give it the text `Desserts`.
 
 </section>
 
@@ -45,7 +45,6 @@ tests:
         <p>Est. 2020</p>
       </header>
       <main>
-        --fcc-editable-region--
         <section>
           <h2>Coffees</h2>
           <article class="item">
@@ -63,6 +62,9 @@ tests:
           <article class="item">
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
+        </section>
+        --fcc-editable-region--
+        <section>
         </section>
         --fcc-editable-region--
       </main>

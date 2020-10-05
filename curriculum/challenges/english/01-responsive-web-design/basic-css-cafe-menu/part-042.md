@@ -1,5 +1,5 @@
 ---
-id: 5f3cade9fa77275d9f4efe62
+id: 5f3cade94c6576e7f7b7953f
 title: Part 42
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-That worked, but there is still a little space on the right of the price. 
-
-You could keep trying various percentages for the widths.  Instead,  simply move the price `p` element to be on the same line and make sure there is no space between them.
+Now go ahead and change both the `flavor` and `price` class' widths to be `50%` again.
 
 </section>
 
@@ -50,10 +48,7 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article class="item">
-            --fcc-editable-region--
-            <p class="flavor">French Vanilla</p>
-            <p class="price">3.00</p>
-            --fcc-editable-region--
+            <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
           <article>
             <p>Carmel Macchiato</p>
@@ -102,6 +97,7 @@ h1, h2, p {
   display: inline-block;
 }
 
+--fcc-editable-region--
 .flavor {
   text-align: left;
   width: 49%;
@@ -111,6 +107,7 @@ h1, h2, p {
   text-align: right;
   width: 49%;
 }
+--fcc-editable-region--
 ```
 
 </div>

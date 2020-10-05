@@ -1,5 +1,5 @@
 ---
-id: 5f716ad029ee4053c7027a7a
+id: 5f716bee5838c354c728a7c5
 title: Part 51
 challengeType: 0
 isHidden: true
@@ -8,7 +8,13 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest two `p` elements inside your `article` element. The first one's text should be `Donut`, and the second's text `1.50`.
+Bbelow the existing dessert/price pair, add the following desserts and prices using an `article` elemnt with `class="item"` containing two nested `p` elements inside each. The first `p` element's text should contain the dessert and the second `p` element's text should contain the price.
+
+```bash
+Cherry Pie 2.75
+Cheesecake 3.00
+Cinammon Roll 2.50
+```
 
 </section>
 
@@ -67,6 +73,7 @@ tests:
           <h2>Desserts</h2>
           --fcc-editable-region--
           <article class="item">
+            <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
           --fcc-editable-region--
         </section>

@@ -1,5 +1,5 @@
 ---
-id: 5f716bee5838c354c728a7c5
+id: 5f3ef6e0eaa7da26e3d34d78
 title: Part 52
 challengeType: 0
 isHidden: true
@@ -8,13 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Bbelow the existing dessert/price pair, add the following desserts and prices using an `article` elemnt with `class="item"` containing two nested `p` elements inside each. The first `p` element's text should contain the dessert and the second `p` element's text should contain the price.
+You can give your menu some space between the content and the sides with various `padding` properties.
 
-```bash
-Cherry Pie 2.75
-Cheesecake 3.00
-Cinammon Roll 2.50
-```
+Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
 
 </section>
 
@@ -71,11 +67,18 @@ tests:
         </section>
         <section>
           <h2>Desserts</h2>
-          --fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
-          --fcc-editable-region--
+          <article class="item">
+            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
+          </article>
+          <article class="item">
+            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
+          </article>
+          <article class="item">
+            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
+          </article>
         </section>
       </main>
     </div>
@@ -96,18 +99,20 @@ h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
 }
+--fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
-.flavor {
+.flavor, .dessert {
   text-align: left;
   width: 75%;
 }

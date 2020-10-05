@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e07276f782bb46b93d
+id: 5f3ef6e0a81099d9a697b550
 title: Part 65
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `footer` element below the `main` element, where you can some additional information.
+Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
 
 </section>
 
@@ -27,6 +27,7 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
 <div id='html-seed'>
 
 ```html
@@ -44,7 +45,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,6 +80,9 @@ tests:
           </article>
         </section>
       </main>
+      --fcc-editable-region--
+      <footer>
+      </footer>
       --fcc-editable-region--
     </div>
   </body>
