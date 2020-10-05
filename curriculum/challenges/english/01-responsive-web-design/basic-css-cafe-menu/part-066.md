@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0b431cc215bb16f55
+id: 5f3ef6e07276f782bb46b93d
 title: Part 66
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a second `p` element below the one with the link and give it the text `123 freeCodeCamp Drive`.
+Add a `footer` element below the `main` element, where you can some additional information.
 
 </section>
 
@@ -44,6 +44,7 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
+      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -79,13 +80,7 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        --fcc-editable-region--
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        --fcc-editable-region--
-      </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>

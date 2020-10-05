@@ -1,5 +1,5 @@
 ---
-id: 5f4701b942c824109626c3d8
+id: 5f45a5a7c49a8251f0bdb527
 title: Part 77
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now add the `bottom-line` class to the second `hr` element so the styling is applied.
+Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
 
 </section>
 
@@ -80,9 +80,7 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
       <hr>
-      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -136,20 +134,17 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
+--fcc-editable-region--
 .item p {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;
 }
+--fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;

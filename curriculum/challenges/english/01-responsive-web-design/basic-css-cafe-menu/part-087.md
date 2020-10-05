@@ -1,5 +1,5 @@
 ---
-id: 5f46e36e745ead58487aabf2
+id: 5f45b715301bbf667badc04a
 title: Part 87
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
+The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu.  This is due to the browser having some default top margin for the `h1` element.
 
-To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
+Change the top margin of the `h1` element to `0` to remove all the top margin.
 
 </section>
 
@@ -105,11 +105,11 @@ body {
   padding: 20px;
 }
 
+--fcc-editable-region--
 h1 {
   font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
+--fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -168,10 +168,6 @@ h1, h2 {
 footer {
   font-size: 14px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 a {
   color: black;

@@ -1,5 +1,5 @@
 ---
-id: 5f459fd48bdc98491ca6d1a3
+id: 5f459a7ceb8b5c446656d88b
 title: Part 72
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Go ahead and add another `hr` element between the `main` element and the `footer` element.
+Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+
+Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
 
 </section>
 
@@ -45,7 +47,6 @@ tests:
         <p class="established">Est. 2020</p>
       </header>
       <hr>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -87,7 +88,6 @@ tests:
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -128,11 +128,12 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
+  height: 3px;
   background-color: brown;
-  border-color: brown;
 }
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

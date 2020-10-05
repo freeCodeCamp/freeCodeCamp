@@ -1,5 +1,5 @@
 ---
-id: 5f46fc57528aa1c4b5ea7c2e
+id: 5f45a276c093334f0f6e9df4
 title: Part 76
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
+Focusing on the menu items and prices, there is a fairly large gap between each line.
 
-Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
+Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
 
 </section>
 
@@ -137,18 +137,12 @@ hr {
 }
 
 --fcc-editable-region--
-
---fcc-editable-region--
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -160,6 +154,7 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
+--fcc-editable-region--
 ```
 
 </div>

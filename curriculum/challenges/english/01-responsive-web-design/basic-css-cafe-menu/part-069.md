@@ -1,5 +1,5 @@
 ---
-id: 5f459225127805351a6ad057
+id: 5f3ef6e01f288a026d709587
 title: Part 69
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
+You can use an `hr` element to display a divider between sections of different content.
+
+First, add an `hr` element between the first `header` element and the `main` element.
 
 </section>
 
@@ -44,7 +46,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -125,12 +126,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-hr {
-  height: 3px;
-}
---fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

@@ -1,5 +1,5 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
+id: 5f46fc57528aa1c4b5ea7c2e
 title: Part 78
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
+
+Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
 
 </section>
 
@@ -80,7 +82,8 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -133,9 +136,9 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -145,7 +148,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -157,10 +160,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
 </div>

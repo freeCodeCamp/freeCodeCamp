@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e04559b939080db057
+id: 5f3ef6e0eaa7da26e3d34d78
 title: Part 56
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Since all 4 sides of the menu have the same internal spacing, go ahead and delete the four properties and use a single `padding` property with the value `20px`.
+You can give your menu some space between the content and the sides with various `padding` properties.
+
+Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
 
 </section>
 
@@ -103,10 +105,6 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 --fcc-editable-region--
 

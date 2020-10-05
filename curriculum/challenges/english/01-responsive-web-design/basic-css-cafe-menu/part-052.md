@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0eaa7da26e3d34d78
+id: 5f7b88d37b1f98386f04edc0
 title: Part 52
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can give your menu some space between the content and the sides with various `padding` properties.
+Something does not look right. You added the correct `class` attribute value to the `p` element with `Donunt` as its text, but you have not defined a selector for it.
 
-Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
+Since the `flavor` class selector already has the properties you want, just add the `dessert` class name to it.
 
 </section>
 
@@ -70,15 +70,6 @@ tests:
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
-          </article>
         </section>
       </main>
     </div>
@@ -99,23 +90,23 @@ h1, h2, p {
   text-align: center;
 }
 
---fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
-.flavor, .dessert {
+--fcc-editable-region--
+.flavor {
   text-align: left;
   width: 75%;
 }
+--fcc-editable-region--
 
 .price {
   text-align: right;

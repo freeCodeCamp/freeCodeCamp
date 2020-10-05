@@ -1,5 +1,5 @@
 ---
-id: 5f45b0731d39e15d54df4dfc
+id: 5f46ede1ff8fec5ba656b44c
 title: Part 80
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The default color of link that has not yet been clicked on a page is typically blue.  The default color of a link that has already been visited from a page is typically purple.
-
-To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
+Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
 
 </section>
 
@@ -83,7 +81,6 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
-      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -148,7 +145,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 18px;  
 }
 
 .flavor, .dessert {
@@ -161,11 +158,6 @@ h1, h2 {
   width: 25%
 }
 
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
 --fcc-editable-region--
 
 --fcc-editable-region--

@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e07276f782bb46b93d
+id: 5f3ef6e087d56ed3ffdc36be
 title: Part 64
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `footer` element below the `main` element, where you can some additional information.
+Now apply the `established` class to the `Est. 2020` text.
 
 </section>
 
@@ -40,9 +40,10 @@ tests:
   </head>
   <body>
     <div class="menu">
+      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
       --fcc-editable-region--
       <main>
@@ -80,7 +81,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -94,14 +94,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
 }
 
 .established {

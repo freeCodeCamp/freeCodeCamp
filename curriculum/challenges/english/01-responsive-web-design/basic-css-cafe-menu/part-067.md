@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e01f288a026d709587
+id: 5f3ef6e0a81099d9a697b550
 title: Part 67
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can use an `hr` element to display a divider between sections of different content.
-
-First, add an `hr` element between the first `header` element and the `main` element.
+Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
 
 </section>
 
@@ -28,6 +26,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 
 <div id='html-seed'>
 
@@ -81,12 +80,10 @@ tests:
           </article>
         </section>
       </main>
+      --fcc-editable-region--
       <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>

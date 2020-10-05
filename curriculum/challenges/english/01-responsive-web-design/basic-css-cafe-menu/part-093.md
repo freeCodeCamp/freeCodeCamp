@@ -1,6 +1,6 @@
 ---
-id: 5f45b4c81cea7763550e40df
-title: Part 86
+id: 5f475e1c7f71a61d913836c6
+title: Part 93
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked. 
+Add one last image under the `Desserts` heading using the url `https://tinyurl.com/cafe-pie-fcc`. Give the image an `alt` value of `pie icon`.
 
 </section>
 
@@ -48,6 +48,7 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
+          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -65,7 +66,9 @@ tests:
           </article>
         </section>
         <section>
+          --fcc-editable-region--
           <h2>Desserts</h2>
+          --fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
@@ -85,7 +88,7 @@ tests:
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p>123 Free Code Camp Drive</p>
+        <p class="address">123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
@@ -105,6 +108,8 @@ body {
 
 h1 {
   font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -126,6 +131,12 @@ h1, h2, p {
   margin-right: auto;
   padding: 20px;
   max-width: 500px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr {
@@ -156,7 +167,7 @@ h1, h2 {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 
 /* FOOTER */
@@ -165,13 +176,16 @@ footer {
   font-size: 14px;
 }
 
+.address {
+  margin-bottom: 5px;
+}
+
 a {
   color: black;
 }
 
---fcc-editable-region--
 a:visited {
-  color: grey;
+  color: black;
 }
 
 a:hover {
@@ -179,9 +193,8 @@ a:hover {
 }
 
 a:active {
-  color: white;
+  color: brown;
 }
---fcc-editable-region--
 ```
 
 </div>

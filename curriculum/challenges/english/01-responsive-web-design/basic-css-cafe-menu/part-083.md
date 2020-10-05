@@ -1,5 +1,5 @@
 ---
-id: 5f45b45d099f3e621fbbb256
+id: 5f45b25e7ec2405f166b9de1
 title: Part 83
 challengeType: 0
 isHidden: true
@@ -8,10 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
+You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue; }`.
 
-Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
-
+Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
 
 </section>
 
@@ -170,14 +169,6 @@ footer {
 
 a {
   color: black;
-}
-
-a:visited {
-  color: grey;
-}
-
-a:hover {
-  color: brown;
 }
 
 --fcc-editable-region--

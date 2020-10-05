@@ -1,5 +1,5 @@
 ---
-id: 5f46e8284aae155c83015dee
+id: 5f46e36e745ead58487aabf2
 title: Part 89
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The menu looks good, but other than the coffee beans background image, it is mainly just text.
+Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
 
-Under the `Coffees` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
+To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
 
 </section>
 
@@ -49,9 +49,7 @@ tests:
       <hr>
       <main>
         <section>
-          --fcc-editable-region--
           <h2>Coffees</h2>
-          --fcc-editable-region--
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -89,7 +87,7 @@ tests:
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p class="address">123 Free Code Camp Drive</p>
+        <p>123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
@@ -171,9 +169,9 @@ footer {
   font-size: 14px;
 }
 
-.address {
-  margin-bottom: 5px;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 a {
   color: black;

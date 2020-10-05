@@ -1,5 +1,5 @@
 ---
-id: 5f45a66d4a2b0453301e5a26
+id: 5f4701b942c824109626c3d8
 title: Part 79
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
+Now add the `bottom-line` class to the second `hr` element so the styling is applied.
 
 </section>
 
@@ -80,7 +80,9 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      --fcc-editable-region--
+      <hr>
+      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -158,12 +160,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
 </div>

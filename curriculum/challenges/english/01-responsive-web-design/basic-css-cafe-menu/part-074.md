@@ -1,5 +1,5 @@
 ---
-id: 5f45a276c093334f0f6e9df4
+id: 5f459fd48bdc98491ca6d1a3
 title: Part 74
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Focusing on the menu items and prices, there is a fairly large gap between each line.
-
-Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
+Go ahead and add another `hr` element between the `main` element and the `footer` element.
 
 </section>
 
@@ -47,6 +45,7 @@ tests:
         <p class="established">Est. 2020</p>
       </header>
       <hr>
+      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -82,13 +81,13 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -102,7 +101,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -136,7 +134,6 @@ hr {
   border-color: brown;
 }
 
---fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
@@ -154,7 +151,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
---fcc-editable-region--
 ```
 
 </div>
