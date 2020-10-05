@@ -1,5 +1,5 @@
 - **Getting Started**
-  - [Introduction](/index.md 'Contribute to the freeCodeCamp.org Community')
+  - [Introduction](index 'Contribute to the freeCodeCamp.org Community')
   - [Frequently Asked Questions](/FAQ.md)
 - **Code Contribution**
 - - [Set up freeCodeCamp locally](/how-to-setup-freecodecamp-locally.md)
@@ -33,3 +33,4 @@
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
   - [**Discourse Forum**](https://freecodecamp.org/forum/c/contributors)
   - [**Gitter Chat**](https://gitter.im/FreeCodeCamp/Contributors)
+  - [**Discord Server**](https://discord.gg/pFspAhS)

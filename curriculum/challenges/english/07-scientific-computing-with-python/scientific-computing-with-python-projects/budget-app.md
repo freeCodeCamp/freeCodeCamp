@@ -8,7 +8,7 @@ challengeType: 10
 <section id='description'>
 Create a "Category" class that can be used to create different budget categories.
 
-You can access <a href='https://repl.it/@freeCodeCamp/fcc-budget-app' target='_blank'>the full project description and starter code on Repl.it</a>.
+You can access <a href='https://repl.it/github/freeCodeCamp/boilerplate-budget-app' target='_blank'>the full project description and starter code on Repl.it</a>.
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

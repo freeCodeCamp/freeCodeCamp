@@ -8,7 +8,7 @@ challengeType: 10
 <section id='description'>
 In this project you will use object oriented programming to create a Rectangle class and a Square class. The Square class should be a subclass of Rectangle and inherit methods and attributes.
 
-You can access <a href='https://repl.it/@freeCodeCamp/fcc-shape-calculator' target='_blank'>the full project description and starter code on Repl.it</a>.
+You can access <a href='https://repl.it/github/freeCodeCamp/boilerplate-polygon-area-calculator' target='_blank'>the full project description and starter code on Repl.it</a>.
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 
