@@ -41,17 +41,6 @@ describe('add-text', () => {
     }).toThrow(expectedError);
   });
 
-  // TODO: do we care if it can pick up sections other than
-  // description or instructions?  Probably not, but let's consider this later.
-  // it('should only add a value for expected sections', () => {
-  //   const pluginExpected = addText(expectedField);
-  //   const pluginUnexpected = addText(unexpectedField);
-  //   pluginExpected(mockAST, file);
-  //   pluginUnexpected(mockAST, file);
-  //   expect(expectedField in file.data).toBe(true);
-  //   expect(unexpectedField in file.data).toBe(false);
-  // });
-
   it('should add a string relating to the section id to `file.data`', () => {
     const plugin = addText([descriptionId]);
     plugin(mockAST, file);
@@ -72,7 +61,8 @@ describe('add-text', () => {
     );
   });
 
-  // TODO: do we need the ids? Why not just have <section>?
+  // TODO: do we need to add the ids to the section tags? Why not just have
+  // <section>?
   it('should embed the text in sections with appropriate ids', () => {
     const plugin = addText([descriptionId, instructionsId]);
     plugin(mockAST, file);

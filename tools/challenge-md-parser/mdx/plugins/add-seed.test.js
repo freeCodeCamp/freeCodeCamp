@@ -76,8 +76,6 @@ describe('add-seed plugin', () => {
     } = file;
     const { indexjs, indexhtml, indexcss } = files;
 
-    // TODO: add the rest of the default values?
-    // probably not just yet since they might change.
     expect(indexjs.contents).toBe(`var x = 'y';`);
     expect(indexjs.key).toBe(`indexjs`);
     expect(indexhtml.contents).toBe(`<html>
