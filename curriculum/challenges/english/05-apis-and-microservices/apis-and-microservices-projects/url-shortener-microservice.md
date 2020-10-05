@@ -29,41 +29,41 @@ tests:
     }
     "
 
-  - text: 'You can POST a URL to <code>/api/shorturl/new</code> and get a JSON response with the property names <code>original_url</code> and <code>short_url</code> and the expected values for each.'
+  - text: "You can POST a URL to `/api/shorturl/new` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`"
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const urlVariable = Date.now();
       const res = await fetch(url + '/api/shorturl/new/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `url=https://url-shortener.freecodecamp.repl.co/rand-${urlVariable}`
+        body: `url=https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`
       });
 
       if (res.ok) {
         const { short_url, original_url } = await res.json();
         assert.isNotNull(short_url);
-        assert.match(original_url, new RegExp(`url-shortener.freecodecamp.repl.co/rand-${urlVariable}`));
+        assert.match(original_url, new RegExp(`https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`));
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
     }
     "
 
-  - text: When you visit <code>/api/shorturl/&lt;short_url&gt;</code>, you will be redirected to the original URL.
+  - text: When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const urlVariable = Date.now();
-      let shortenedUrlVariable = '';
+      let shortenedUrlVariable;
 
       const postResponse = await fetch(url + '/api/shorturl/new/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `url=https://url-shortener.freecodecamp.repl.co/rand-${urlVariable}`
+        body: `url=https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`
       });
 
       if (postResponse.ok) {
         const { short_url } = await postResponse.json();
-        shortenedUrlVariable = short_url
+        shortenedUrlVariable = short_url;
       } else {
         throw new Error(`${postResponse.status} ${postResponse.statusText}`);
       }
@@ -74,14 +74,14 @@ tests:
         const { redirected, url } = getResponse;
 
         assert.isTrue(redirected);
-        assert.strictEqual(url, `https://url-shortener.freecodecamp.repl.co/rand-${urlVariable}`); 
+        assert.strictEqual(url, `https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`);
       } else {
         throw new Error(`${getResponse.status} ${getResponse.statusText}`);
       }
     }
     "
 
-  - text: "If you pass an invalid URL that doesn't follow the valid <code>http://www.example.com</code> format, the JSON response will contain <code>{ 'error': 'invalid url' }</code>."
+  - text: "If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`"
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/shorturl/new/', {
