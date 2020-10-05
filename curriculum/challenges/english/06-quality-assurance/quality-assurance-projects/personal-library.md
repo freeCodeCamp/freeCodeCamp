@@ -7,7 +7,7 @@ forumTopicId: 301571
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://personal-library--freecodecamp.repl.co/" target="_blank">https://personal-library--freecodecamp.repl.co/</a>.
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://personal-library.freecodecamp.rocks/" target="_blank">https://personal-library.freecodecamp.rocks/</a>.
 Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but must be publicly visible for our testing.
 Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp/boilerplate-project-library/">this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-library/'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
 </section>
@@ -22,6 +22,11 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
+  - text: I can provide my own project, not the example URL.
+    testString: |
+      getUserInput => {
+        assert(!/.*\/personal-library\.freecodecamp\.rocks/.test(getUserInput('url')));
+      }
   - text: I can post a title to /api/books to add a book and returned will be the object with the title and a unique _id.
     testString: ''
   - text: I can get /api/books to retrieve an array of all books containing title, _id, and commentcount.

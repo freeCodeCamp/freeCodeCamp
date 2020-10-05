@@ -7,7 +7,7 @@ forumTopicId: 302352
 
 ## Description
 <section id='description'>
-<strong>Objective:</strong> Build a <a href='https://repl.it/' target='_blank'>Repl.it</a> app that is functionally similar to this: <a href='https://pinterest-clone.freecodecamp.repl.co/' target='_blank'>https://pinterest-clone.freecodecamp.repl.co/</a>.
+<strong>Objective:</strong> Build a <a href='https://repl.it/' target='_blank'>Repl.it</a> app that is functionally similar to this: <a href='https://build-a-pinterest-clone.freecodecamp.rocks/' target='_blank'>https://build-a-pinterest-clone.freecodecamp.rocks/</a>.
 Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.
 <strong>User Story:</strong> As an unauthenticated user, I can login with GitHub.
 <strong>User Story:</strong> As an authenticated user, I can link to images.
