@@ -10,7 +10,7 @@ isHidden: true
 
 If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.  This is because the width of the `p` elements on the left side can only take up `50%` of the space.
 
-Since you know the prices on the right have significantly less numbe of characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
+Since you know the prices on the right have significantly fewer characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
 
 </section>
 
