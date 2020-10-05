@@ -4,22 +4,15 @@ const {
   getChallengeSeed,
   padWithLeadingZeros,
   getExistingStepNums,
-  getProjectPath
+  getProjectPath,
+  getArgValues
 } = require('./utils');
 
 const allStepsExist = (steps, stepsToFind) =>
   stepsToFind.every(num => steps.includes(num));
 
 const projectPath = getProjectPath();
-const argValuePairs = process.argv.slice(2);
-
-const args = argValuePairs.reduce((argsObj, arg) => {
-  const [argument, value] = arg.replace(/\s/g, '').split('=');
-  if (!argument || !value) {
-    throw `Invalid argument/value specified: ${arg}`;
-  }
-  return { ...argsObj, [argument]: value };
-}, {});
+const args = getArgValues(process.argv);
 
 let { start, end } = args;
 start = parseInt(start, 10);

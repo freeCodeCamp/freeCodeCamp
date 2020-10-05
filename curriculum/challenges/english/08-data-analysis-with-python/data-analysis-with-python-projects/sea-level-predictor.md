@@ -8,7 +8,7 @@ challengeType: 10
 <section id='description'>
 In this project, you will analyze a dataset of the global average sea level change since 1880. You will use the data to predict the sea level change through year 2050.
 
-You can access <a href='https://repl.it/@freeCodeCamp/fcc-sea-level-predictor' target='_blank'>the full project description and starter code on Repl.it</a>.
+You can access <a href='https://repl.it/github/freeCodeCamp/boilerplate-sea-level-predictor' target='_blank'>the full project description and starter code on Repl.it</a>.
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 

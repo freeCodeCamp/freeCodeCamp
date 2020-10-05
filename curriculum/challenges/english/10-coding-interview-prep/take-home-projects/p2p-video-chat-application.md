@@ -7,7 +7,7 @@ forumTopicId: 302366
 
 ## Description
 <section id='description'>
-<strong>Objective:</strong> Build a <a href='https://repl.it/' target='_blank'>Repl.it</a> app that is functionally similar to this: <a href='https://p2p-video-chat.freecodecamp.repl.co/' target='_blank'>https://p2p-video-chat.freecodecamp.repl.co/</a>.
+<strong>Objective:</strong> Build a <a href='https://repl.it/' target='_blank'>Repl.it</a> app that is functionally similar to this: <a href='https://p2p-video-chat-application.freecodecamp.rocks/' target='_blank'>https://p2p-video-chat-application.freecodecamp.rocks/</a>.
 Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.
 <strong>User Story:</strong> Upon arriving, the browser will prompt me to access my camera and microphone.
 <strong>User Story:</strong> After I give it permission, I am prompted to type in a room name.

@@ -77,8 +77,9 @@ Follow the guidelines carefully and open a pull request.
 
 **Feel free to ask for help in:**
 
-- The "Contributors" category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- Our public contributors [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
+- The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
+- The public `Contributors` [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
+- The `#Contributors` channel on [our Discord community server](https://discord.gg/pFspAhS).
 
 We are excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one.
 
