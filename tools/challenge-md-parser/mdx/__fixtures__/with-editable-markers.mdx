@@ -6,12 +6,6 @@ Paragraph 1
 code example
 ```
 
-```yaml
-key:
-  - subkey: value
-    anothersubkey: another value
-```
-
 # --instructions--
 
 Paragraph 0
@@ -38,7 +32,20 @@ Second hint with <code>code</code>
 // more test code
 ```
 
+![test-id-3]
+
+Third *hint* with <code>code</code> and `inline code`
+
+```js
+// more test code
+if(let x of xs) {
+  console.log(x);
+}
+```
+
 # --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -49,7 +56,32 @@ Second hint with <code>code</code>
 
 ```css
 body {
+--fcc-editable-region--
   background: green;
+
+--fcc-editable-region--
+}
+```
+
+```js
+var x = 'y';
+```
+
+
+# --solutions--
+
+![html-key]
+
+```html
+<html>
+  <body>
+  </body>
+</html>
+```
+
+```css
+body {
+  background: white;
 }
 ```
 

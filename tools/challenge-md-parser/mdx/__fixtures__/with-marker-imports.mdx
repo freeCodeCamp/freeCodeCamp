@@ -1,15 +1,11 @@
+import Script from './script-with-markers.mdx';
+
 # --description--
 
 Paragraph 1
 
 ```html
 code example
-```
-
-```yaml
-key:
-  - subkey: value
-    anothersubkey: another value
 ```
 
 # --instructions--
@@ -38,7 +34,10 @@ Second hint with <code>code</code>
 // more test code
 ```
 
+
 # --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -53,6 +52,10 @@ body {
 }
 ```
 
+![custom-name]
+
 ```js
 var x = 'y';
 ```
+
+<Script />

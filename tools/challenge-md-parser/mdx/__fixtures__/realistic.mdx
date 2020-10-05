@@ -1,16 +1,25 @@
-# --step-description--
+# --description--
 
 When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.
 
-After the last `h2` element of the second `section` element, add an `h3` element with the text `Things cats love:`.
+After the last <code>h2</code> element of the second `section` element, add an `h3` element with the text `Things cats love:`.
 
-# --step-instructions--
+<blockquote>
+  <p>Some text in a blockquote</p>
+  <p>
+    Some text in a blockquote, with <code>code</code>
+  </p>
+</blockquote>
+
+# --instructions--
 
 Do something with the `code`.
 
-Possibly something complicated.
+To test that adjacent tags are handled correctly:
 
-# --step-hints--
+a bit of <code>code</code> <tag>with more after a space</tag> and another pair of <strong>elements</strong> <em>with a space</em>
+
+# --hints--
 
 ![test-id-1]
 
@@ -18,7 +27,7 @@ The second `section` element appears to be missing or does not have both an open
 
 ```js
 assert(
-  document.querySelectorAll("main > section")[1] &&
+  document.querySelectorAll('main > section')[1] &&
     code.match(/\<\/section>/g).length == 2
 );
 ```
@@ -29,8 +38,8 @@ There should be an `h3` element right above the second `section` element's closi
 
 ```js
 assert(
-  document.querySelectorAll("main > section")[1].lastElementChild.nodeName ===
-    "H3"
+  document.querySelectorAll('main > section')[1].lastElementChild.nodeName ===
+    'H3'
 );
 ```
 
@@ -41,9 +50,9 @@ The `h3` element right above the second `section` element's closing tag should h
 ```js
 assert(
   document
-    .querySelectorAll("main > section")[1]
+    .querySelectorAll('main > section')[1]
     .lastElementChild.innerText.toLowerCase()
-    .replace(/\s+/g, " ") === "things cats love:"
+    .replace(/\s+/g, ' ') === 'things cats love:'
 );
 ```
 
@@ -52,17 +61,25 @@ assert(
 There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the last `section` element'. You may have accidentally deleted the `h2` element.
 
 ```js
-const secondSectionLastElemNode = document.querySelectorAll("main > section")[1]
+const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
   .lastElementChild;
 assert(
-  secondSectionLastElemNode.nodeName === "H3" &&
+  secondSectionLastElemNode.nodeName === 'H3' &&
     secondSectionLastElemNode.previousElementSibling.innerText
       .toLowerCase()
-      .replace(/\s+/g, " ") === "cat lists"
+      .replace(/\s+/g, ' ') === 'cat lists'
 );
 ```
 
-# --step-seed--
+# --seed--
+
+## --before-user-code--
+
+```js
+  // this runs before the user's code is evaluated.
+```
+
+## --seed-contents--
 
 ![html-key]
 
@@ -119,7 +136,7 @@ a {
 var x = 'y';
 ```
 
-# --solution-marker--
+# --solutions--
 
 ![html-key]
 
@@ -159,9 +176,7 @@ body {
 h1 {
   font-size: 20px;
 }
---fcc-editable-region--
 
---fcc-editable-region--
 
 a {
   color: green;
@@ -172,4 +187,4 @@ a {
 
 ```js
 var x = 'y';
-``
+```

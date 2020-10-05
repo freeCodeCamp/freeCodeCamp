@@ -1,0 +1,84 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--solutions--",
+          "position": {
+            "start": { "line": 3, "column": 3, "offset": 4 },
+            "end": { "line": 3, "column": 15, "offset": 16 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 3, "column": 1, "offset": 2 },
+        "end": { "line": 3, "column": 15, "offset": 16 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "imageReference",
+          "identifier": "html-key",
+          "label": "html-key",
+          "referenceType": "shortcut",
+          "alt": "html-key",
+          "position": {
+            "start": { "line": 5, "column": 1, "offset": 18 },
+            "end": { "line": 5, "column": 12, "offset": 29 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 5, "column": 1, "offset": 18 },
+        "end": { "line": 5, "column": 12, "offset": 29 },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "html",
+      "meta": null,
+      "value": "<html>\n  <body>\n  --fcc-editable-region--\n\n  --fcc-editable-region--\n  </body>\n</html>",
+      "position": {
+        "start": { "line": 7, "column": 1, "offset": 31 },
+        "end": { "line": 15, "column": 4, "offset": 129 },
+        "indent": [1, 1, 1, 1, 1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "code",
+      "lang": "css",
+      "meta": null,
+      "value": "body {\n  background: white;\n}",
+      "position": {
+        "start": { "line": 17, "column": 1, "offset": 131 },
+        "end": { "line": 21, "column": 4, "offset": 171 },
+        "indent": [1, 1, 1, 1]
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "var x = 'y';\n``\n",
+      "position": {
+        "start": { "line": 23, "column": 1, "offset": 173 },
+        "end": { "line": 26, "column": 1, "offset": 195 },
+        "indent": [1, 1, 1]
+      }
+    }
+  ],
+  "position": {
+    "start": { "line": 1, "column": 1, "offset": 0 },
+    "end": { "line": 26, "column": 1, "offset": 195 }
+  }
+}
