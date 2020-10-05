@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinaommon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
+Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
 
 Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
 
