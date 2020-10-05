@@ -8,8 +8,8 @@ forumTopicId: 301572
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://stock-price-checker--freecodecamp.repl.co/" target="_blank">https://stock-price-checker--freecodecamp.repl.co/</a>.
-Since all reliable stock price APIs require an API key, we've built a workaround. Use <a href="https://stock-price-checker-proxy--freecodecamp.repl.co" target="_blank">https://stock-price-checker-proxy--freecodecamp.repl.co</a> to get up-to-date stock price information without needing to sign up for your own key.
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank">https://stock-price-checker.freecodecamp.rocks/</a>.
+Since all reliable stock price APIs require an API key, we've built a workaround. Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank">https://stock-price-checker-proxy.freecodecamp.rocks/</a> to get up-to-date stock price information without needing to sign up for your own key.
 Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but must be publicly visible for our testing.
 Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp/boilerplate-project-stockchecker">this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-stockchecker/'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
 </section>

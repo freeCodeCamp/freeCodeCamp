@@ -7,7 +7,7 @@ isRequired: true
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://americanbritish-english-translator--freecodecamp.repl.co/" target="_blank">https://americanbritish-english-translator--freecodecamp.repl.co/</a>.
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank">https://american-british-translator.freecodecamp.rocks/</a>.
 
 Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 
