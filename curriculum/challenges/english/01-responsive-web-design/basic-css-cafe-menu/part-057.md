@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Since all 4 sides of the menu have the same internal spacing, go ahread and delete the four properites and use a single `padding` property with the value `20px`.
+Since all 4 sides of the menu have the same internal spacing, go ahead and delete the four properties and use a single `padding` property with the value `20px`.
 
 </section>
 
