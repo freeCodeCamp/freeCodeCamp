@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Using the same style selector in the previous step, make the font size of the items and prices by using a value of `18px`.
+Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
 
 </section>
 
