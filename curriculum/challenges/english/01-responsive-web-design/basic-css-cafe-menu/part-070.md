@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Change the background color of the `hr` elemnent to be `brown` to make it match the color of the coffee beans.
+Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
 
 </section>
 
