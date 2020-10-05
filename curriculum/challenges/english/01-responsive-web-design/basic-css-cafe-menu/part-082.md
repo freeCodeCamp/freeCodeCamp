@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue }`
+You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue; }`.
 
 Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
 
