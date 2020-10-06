@@ -83,10 +83,11 @@ jobs:
             ${{ runner.os }}-
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: | 
+          cp sample.env .env
+          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
 
       - name: Install Dependencies
-        env: SHOW_UPCOMING_CHANGES=true
         run: |
           npm ci
           npm run ensure-env --if-present
