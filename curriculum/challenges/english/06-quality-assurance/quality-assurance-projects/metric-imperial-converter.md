@@ -139,9 +139,9 @@ tests:
   - text: I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
     testString: "async getUserInput => {
       try {
-        const data1 = await $.get(getUserInput('url') + '/api/convert?input=1/2mi');
-        assert.approximately(data1.initNum, 1/2, 0.001);
-        assert.approximately(data1.returnNum, 0.80467, 0.001);
+        const data1 = await $.get(getUserInput('url') + '/api/convert?input=mi');
+        assert.approximately(data1.initNum, 1, 0.001);
+        assert.approximately(data1.returnNum, 1.60934, 0.001);
         assert.equal(data1.returnUnit, 'km');
         const data2 = await $.get(getUserInput('url') + '/api/convert?input=1/5mi');
         assert.approximately(data2.initNum, 1/5, 0.1);
@@ -160,7 +160,7 @@ tests:
       }
     }
     "
-  - text: My return will consist of the <code>initNum</code>, <code>initUnit</code>, <code>returnNum</code>, <code>returnUnit</code>, and <code>string</code> spelling out units in format <code>'{initNum} {initial_Units} converts to {returnNum} {return_Units}'</code> with the result rounded to 5 decimals.
+  - text: My return will consist of the <code>initNum</code>, <code>initUnit</code>, <code>returnNum</code>, <code>returnUnit</code>, and <code>string</code> spelling out units in the format <code>'{initNum} {initial_Units} converts to {returnNum} {return_Units}'</code> with the result rounded to 5 decimals.
     testString: "async getUserInput => { 
       try {
         const data = await $.get(getUserInput('url') + '/api/convert?input=2mi');
