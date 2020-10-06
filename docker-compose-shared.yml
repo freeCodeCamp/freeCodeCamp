@@ -1,4 +1,4 @@
-# Docker Compose override file for FreeCodeCamp
+# Docker Compose override file for freeCodeCamp
 #
 # Run with:
 #   docker-compose -f docker-compose.yml -f docker-compose-shared.yml up
@@ -15,6 +15,6 @@ services:
         networks:
             - shared
 
-networks: # Used by by other projects like open-api
+networks: # Used by other projects like open-api
     shared:
         driver: bridge
