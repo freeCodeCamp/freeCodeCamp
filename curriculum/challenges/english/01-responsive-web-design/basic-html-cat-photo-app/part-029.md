@@ -2,7 +2,6 @@
 id: 5efae0543cbd2bbdab94e333
 title: Part 29
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -2,7 +2,6 @@
 id: 5f356ed60785e1f3e9850b6e
 title: Part 25
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -2,7 +2,6 @@
 id: 5dbff2d07736e5ee7d23554b
 title: Part 150
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

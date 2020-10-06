@@ -2,7 +2,6 @@
 id: 5d822fd413a79914d39e98fd
 title: Part 53
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

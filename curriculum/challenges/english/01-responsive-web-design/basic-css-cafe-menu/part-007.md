@@ -2,7 +2,6 @@
 id: 5f332b23c2045fb843337579
 title: Part 7
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

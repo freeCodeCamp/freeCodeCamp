@@ -2,7 +2,6 @@
 id: 5d79253358e8f646cbeb2bb0
 title: Part 15
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

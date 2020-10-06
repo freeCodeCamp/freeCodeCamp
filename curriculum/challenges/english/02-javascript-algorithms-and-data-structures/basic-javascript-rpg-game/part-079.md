@@ -2,7 +2,6 @@
 id: 5d709bbc066dac7142a6d7a2
 title: Part 79
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

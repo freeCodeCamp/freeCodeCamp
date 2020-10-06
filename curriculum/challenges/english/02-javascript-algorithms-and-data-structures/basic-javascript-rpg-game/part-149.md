@@ -2,7 +2,6 @@
 id: 5dbff18d7736e5ee7d23554a
 title: Part 149
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

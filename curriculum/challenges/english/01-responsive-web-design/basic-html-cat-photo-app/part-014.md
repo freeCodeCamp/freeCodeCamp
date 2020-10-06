@@ -2,7 +2,6 @@
 id: 5dfa30b9eacea3f48c6300ad
 title: Part 14
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

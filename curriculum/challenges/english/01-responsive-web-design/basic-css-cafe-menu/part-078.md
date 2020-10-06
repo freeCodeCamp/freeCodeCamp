@@ -2,7 +2,6 @@
 id: 5f45b4c81cea7763550e40df
 title: Part 78
 challengeType: 0
-isHidden: true
 ---
 
 ## Description
