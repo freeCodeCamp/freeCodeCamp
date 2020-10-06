@@ -4,6 +4,7 @@ on:
     branches:
       # Treat the below branches as special case for working on workflows
       - actions-**
+      - upcoming-**
   schedule:
     # run this Action every 14 days
     - cron: '0 * */14 * *'
