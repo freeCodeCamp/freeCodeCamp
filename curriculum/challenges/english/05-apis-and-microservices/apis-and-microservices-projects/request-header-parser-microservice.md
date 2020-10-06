@@ -7,7 +7,7 @@ forumTopicId: 301507
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href='https://head-parser--freecodecamp.repl.co/' target='_blank'>https://head-parser--freecodecamp.repl.co/</a>.
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://request-header-parser-microservice.freecodecamp.rocks/' target='_blank'>https://request-header-parser-microservice.freecodecamp.rocks/</a>.
 Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-headerparser' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
 </section>
@@ -22,6 +22,11 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
+  - text: I can provide my own project, not the example URL.
+    testString: |
+      getUserInput => {
+        assert(!/.*\/request-header-parser-microservice\.freecodecamp\.rocks/.test(getUserInput('url')));
+      }
   - text: 'Your IP address should be returned in the <code>ipaddress</code> key.'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/whoami'').then(data => assert(data.ipaddress && data.ipaddress.length > 0), xhr => { throw new Error(xhr.responseText)})'
   - text: 'Your preferred language should be returned in the <code>language</code> key.'
