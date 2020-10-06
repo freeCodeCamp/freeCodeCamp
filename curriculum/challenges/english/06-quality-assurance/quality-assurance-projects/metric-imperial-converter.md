@@ -7,7 +7,7 @@ forumTopicId: 301570
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://metric-imperial-converter--freecodecamp.repl.co/" target="_blank">https://metric-imperial-converter--freecodecamp.repl.co/</a>.
+Build a full stack JavaScript app that is functionally similar to this: <a href="https://metric-imperial-converter.freecodecamp.rocks/" target="_blank">https://metric-imperial-converter.freecodecamp.rocks/</a>.
 Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp/boilerplate-project-metricimpconverter">this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
 </section>
@@ -22,6 +22,11 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
+  - text: I can provide my own project, not the example URL.
+    testString: |
+      getUserInput => {
+        assert(!/.*\/metric-imperial-converter\.freecodecamp\.rocks/.test(getUserInput('url')));
+      }
   - text: 'I can GET /api/convert with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)'
     testString: ''
   - text: I can convert <code>'gal'</code> to <code>'L'</code> and vice versa. (1 gal to 3.78541 L)
