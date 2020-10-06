@@ -10,7 +10,7 @@ import { blockNameify } from '../../../../utils/block-nameify';
 import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
 import DonateForm from './DonateForm';
-import { modalDefaultStateConfig } from '../../../../config/donation-settings';
+import { modalDefaultDonation } from '../../../../config/donation-settings';
 
 import {
   closeDonationModal,
@@ -102,8 +102,8 @@ function DonateModal({
 
   const donationText = (
     <b>
-      Become {durationToText(modalDefaultStateConfig.donationDuration)}{' '}
-      supporter of our nonprofit.
+      Become {durationToText(modalDefaultDonation.donationDuration)} supporter
+      of our nonprofit.
     </b>
   );
   const blockDonationText = (

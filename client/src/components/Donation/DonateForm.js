@@ -19,10 +19,10 @@ import {
   amountsConfig,
   durationsConfig,
   defaultAmount,
-  defaultStateConfig,
+  defaultDonation,
   onetimeSKUConfig,
   donationUrls,
-  modalDefaultStateConfig
+  modalDefaultDonation
 } from '../../../../config/donation-settings';
 import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
@@ -87,8 +87,8 @@ class DonateForm extends Component {
     this.amounts = amountsConfig;
 
     const initialAmountAndDuration = this.props.isMinimalForm
-      ? modalDefaultStateConfig
-      : defaultStateConfig;
+      ? modalDefaultDonation
+      : defaultDonation;
 
     this.state = {
       ...initialAmountAndDuration,
