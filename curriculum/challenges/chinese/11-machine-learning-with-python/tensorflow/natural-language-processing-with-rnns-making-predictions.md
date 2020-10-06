@@ -1,7 +1,6 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72d9f
 challengeType: 11
-isHidden: false
 videoId: WO1hINnBj20
 ---
 

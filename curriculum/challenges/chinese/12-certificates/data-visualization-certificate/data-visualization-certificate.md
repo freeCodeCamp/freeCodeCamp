@@ -1,7 +1,6 @@
 ---
 id: 5a553ca864b52e1d8bceea14
 challengeType: 7
-isHidden: false
 isPrivate: true
 title: 数据可视化证书
 ---

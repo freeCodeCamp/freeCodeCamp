@@ -1,7 +1,6 @@
 ---
 id: 5e46f8dcac417301a38fb92e
 challengeType: 10
-isHidden: false
 ---
 
 ## Description
