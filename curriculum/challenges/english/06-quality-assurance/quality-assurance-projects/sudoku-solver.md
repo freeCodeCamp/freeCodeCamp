@@ -29,31 +29,231 @@ tests:
         const url = getUserInput('url');
         assert(!/.*\/sudoku-solver\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
-  - text: I can enter a sudoku puzzle by filling in the text area with either a number or period (.) to represent an empty cell.
-    testString: ''
-  - text: When a valid number is entered in the text area, the same number is applied to the correct cell of the sudoku grid.
-    testString: ''
-  - text: I can enter a sudoku puzzle by adding numbers directly to the sudoku grid.
-    testString: ''
-  - text: When a valid number is entered in the sudoku grid, the same number appears in the correct position in the text area.
-    testString: ''
-  - text: The text area should only update the corresponding sudoku grid cell when a whole number between 1 and 9 is entered.
-    testString: ''
-  - text: The sudoku grid should only update the puzzle string in the text area when a whole number between 1 and 9 is entered into a cell.
-    testString: ''
-  - text: I can solve an incomplete puzzle by clicking the "Solve" button. When a solution is found, the sudoku grid and text area are automatically populated with the correct numbers for each cell in the grid or position in the text area.
-    testString: ''
-  - text: This sudoku solver is not expected to be able to solve every incomplete puzzle. See <code>/public/puzzle-strings.js</code> for a list of puzzle strings it should be able to solve along with their solutions.
-    testString: ''
-  - text: |
-      If the puzzle is not 81 numbers or periods long, append the message "Error: Expected puzzle to be 81 characters long." to the <code>error-msg</code> <code>div</code> so the text appears in red.
-    testString: ''
-  - text: I can clear the text area and sudoku grid by clicking the "Clear" button.
-    testString: ''
-  - text: All 6 unit tests are complete and passing. See <code>/tests/1_unit-tests.js</code> for the expected behavior you should write tests for.
-    testString: ''
-  - text: All 4 functional tests are complete and passing. See <code>/tests/2_functional-tests.js</code> for the functionality you should write tests for.
-    testString: ''
+  - text: I can <code>POST</code> <code>/api/solve</code> with form data containing <code>puzzle</code> which will be a string containing a combination of numbers (1-9) and periods <code>.</code> to represent empty spaces. The returned object will contain <code>solution</code> with the solved puzzle.
+    testString: "async getUserInput => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = '769235418851496372432178956174569283395842761628713549283657194516924837947381625';
+      const data = await fetch(getUserInput('url') + '/api/solve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'solution');
+      assert.equal(parsed.solution, output);
+      }"
+  - text: If the object submitted to <code>/api/solve</code> is missing <code>puzzle</code>, the returned value will be <code>{ error&#58; 'Required field missing' }</code>
+    testString: "async getUserInput => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = 'Required field missing';
+      const data = await fetch(getUserInput('url') + '/api/solve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({notpuzzle: input})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: If the puzzle submitted to <code>/api/solve</code> contains values which are not numbers or periods, the returned value will be <code>{ error&#58; 'Invalid characters in puzzle' }</code>
+    testString: "async getUserInput => {
+      const input = 'AA9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = 'Invalid characters in puzzle';
+      const data = await fetch(getUserInput('url') + '/api/solve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: If the puzzle submitted to <code>/api/solve</code> is greater or less than 81 characters, the returned value will be <code>{ error&#58; 'Expected puzzle to be 81 characters long' }</code>
+    testString: "async getUserInput => {
+      const input = '9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = 'Expected puzzle to be 81 characters long';
+      const data = await fetch(getUserInput('url') + '/api/solve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: If the puzzle submitted to <code>/api/solve</code> is invalid or cannot be solved, the returned value will be <code>{ error&#58; 'Puzzle cannot be solved' }</code>
+    testString: "async getUserInput => {
+      const input = '9.9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = 'Puzzle cannot be solved';
+      const data = await fetch(getUserInput('url') + '/api/solve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: I can <code>POST</code> to <code>/api/check</code> an object containing <code>puzzle</code>, <code>coordinate</code>, and <code>value</code> where the <code>coordinate</code> is the letter A-I indicating the row, followed by a number 1-9 indicating the column, and <code>value</code> is a number from 1-9.
+    testString: "async getUserInput => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const coordinate = 'A1';
+      const value = '7';
+      const data = await fetch(getUserInput('url') + '/api/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input, coordinate, value})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'valid');
+      assert.isTrue(parsed.valid);
+      }"
+  - text: The return value will be an object containing <code>valid</code>, which is <code>true</code> if the number may be placed at the provided coordinate and <code>false</code> if the number may not. If false, the returned object will also contain <code>conflict</code> which is an array containing the strings <code>"row"</code>, <code>"column"</code>, and/or <code>"region"</code> depending on which makes the placement invalid.
+    testString: "async getUserInput => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const coordinate = 'A1';
+      const value = '1';
+      const conflict = ['row', 'column'];
+      const data = await fetch(getUserInput('url') + '/api/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input, coordinate, value})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'valid');
+      assert.isFalse(parsed.valid);
+      assert.property(parsed, 'conflict');
+      assert.include(parsed.conflict, 'row');
+      assert.include(parsed.conflict, 'column');
+      }"
+  - text: If the submitted puzzle contains values which are not numbers or periods, the returned value will be <code>{ error&#58; 'Invalid characters in puzzle' }</code>
+    testString: "async getUserInput => {
+      const input = 'AA9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const coordinate = 'A1';
+      const value = '1';
+      const output = 'Invalid characters in puzzle';
+      const data = await fetch(getUserInput('url') + '/api/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input, coordinate, value})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: If the puzzle submitted to <code>/api/check</code> is greater or less than 81 characters, the returned value will be <code>{ error&#58; 'Expected puzzle to be 81 characters long' }</code>
+    testString: "async getUserInput => {
+      const input = '9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const coordinate = 'A1';
+      const value = '1';
+      const output = 'Expected puzzle to be 81 characters long';
+      const data = await fetch(getUserInput('url') + '/api/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input, coordinate, value})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: If the object submitted to <code>/api/check</code> is missing <code>puzzle</code>, <code>coordinate</code> or <code>value</code>, the returned value will be <code>{ error&#58; 'Required field(s) missing' }</code>
+    testString: "async getUserInput => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = 'Required field(s) missing';
+      const data = await fetch(getUserInput('url') + '/api/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: If the coordinate does not point to an existing grid cell, the returned value will be <code>{ error&#58; 'Invalid coordinate'}</code>
+    testString: "async getUserInput => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = 'Invalid coordinate';
+      const coordinate = 'XZ18';
+      const value = '7';
+      const data = await fetch(getUserInput('url') + '/api/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input, coordinate, value})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: If the <code>value</code> is not a number between 1 and 9, the returned values will be <code>{ error&#58; 'Invalid value' }</code>
+    testString: "async getUserInput => {
+      const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
+      const output = 'Invalid value';
+      const coordinate = 'A1';
+      const value = 'X';
+      const data = await fetch(getUserInput('url') + '/api/check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({puzzle: input, coordinate, value})
+      });
+      const parsed = await data.json();
+      assert.property(parsed, 'error');
+      assert.equal(parsed.error, output);
+      }"
+  - text: All 12 unit tests are complete and passing. See <code>/tests/1_unit-tests.js</code> for the expected behavior you should write tests for.
+    testString: "async getUserInput => {
+       try {
+          const getTests = await $.get(getUserInput('url') + '/_api/get-tests' );
+          assert.isArray(getTests);
+          const units = getTests.filter(el => el.context.includes('UnitTests'));
+          assert.isAtLeast(units.length, 12, 'At least 12 tests passed');
+          units.forEach(test => {
+            assert.equal(test.state, 'passed', 'Test in Passed State');
+            assert.isAtLeast(test.assertions.length, 1, 'At least one assertion per test');
+          });
+       } catch(err) {
+        throw new Error(err.responseText || err.message);
+      }
+    }"
+  - text: All 14 functional tests are complete and passing. See <code>/tests/2_functional-tests.js</code> for the functionality you should write tests for.
+    testString: "async getUserInput => {
+       try {
+          const getTests = await $.get(getUserInput('url') + '/_api/get-tests' );
+          assert.isArray(getTests);
+          const funcs = getTests.filter(el => el.context.includes('Functional Tests'));
+          assert.isAtLeast(funcs.length, 14, 'At least 14 tests passed');
+          funcs.forEach(test => {
+            assert.equal(test.state, 'passed', 'Test in Passed State');
+            assert.isAtLeast(test.assertions.length, 1, 'At least one assertion per test');
+          });
+       } catch(err) {
+        throw new Error(err.responseText || err.message);
+      }
+    }"
+
 
 ```
 
