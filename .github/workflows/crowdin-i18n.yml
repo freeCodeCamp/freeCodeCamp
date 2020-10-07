@@ -8,7 +8,7 @@ on:
 jobs:
   i18n-sync-docs:
     name: Docs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - name: Checkout Source Files
@@ -25,17 +25,17 @@ jobs:
 
           # downloads
           download_translations: true
-          commit_message: 'chore(docs,i8n): processed translations from crowdin'
+          commit_message: "chore(docs,i8n): processed translations from crowdin"
 
           # pull-request
           localization_branch_name: i18n-sync-docs
           create_pull_request: true
-          pull_request_title: 'chore(docs,i8n): processed translations from crowdin'
-          pull_request_body: ''
-          pull_request_labels: 'scope: i18n, scope: docs, crowdin-sync'
+          pull_request_title: "chore(docs,i8n): processed translations from crowdin"
+          pull_request_body: ""
+          pull_request_labels: "scope: i18n, scope: docs, crowdin-sync"
 
           # global options
-          config: './docs/crowdin.yml'
+          config: "./docs/crowdin.yml"
           base_url: ${{ secrets.CROWDIN_BASE_URL_FCC }}
 
           # Uncomment below to debug
