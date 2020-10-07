@@ -11,7 +11,7 @@ forumTopicId: 301554
 
 Now that we can ensure the user accessing the `/profile` is authenticated, we can use the information contained in `req.user` on our page!
 
-Pass the object containing the variable `username` equaling `req.user.username` into the render method of the profile view. Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
+Pass an object containing the property `username` and value of `req.user.username` as the second argument for the render method of the profile view. Then, go to your `profile.pug` view, and add the following line below the existing `h1` element, and at the same level of indentation:
 
 ```pug
 h2.center#welcome Welcome, #{username}!
