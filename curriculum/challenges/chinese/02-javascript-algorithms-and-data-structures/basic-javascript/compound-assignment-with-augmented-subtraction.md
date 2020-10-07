@@ -1,10 +1,9 @@
 ---
 id: 56533eb9ac21ba0edf2244b0
-title: Compound Assignment With Augmented Subtraction
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2Qv7AV'
 forumTopicId: 16660
-localeTitle: 复合赋值之 -=
+title: 复合赋值之 -=
 ---
 
 ## Description

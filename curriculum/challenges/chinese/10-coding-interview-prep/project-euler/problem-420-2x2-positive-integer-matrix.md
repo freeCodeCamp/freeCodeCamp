@@ -1,9 +1,8 @@
 ---
 id: 5900f5111000cf542c510023
 challengeType: 5
-title: 'Problem 420: 2x2 positive integer matrix'
 videoUrl: ''
-localeTitle: 问题420：2x2正整数矩阵
+title: 问题420：2x2正整数矩阵
 ---
 
 ## Description

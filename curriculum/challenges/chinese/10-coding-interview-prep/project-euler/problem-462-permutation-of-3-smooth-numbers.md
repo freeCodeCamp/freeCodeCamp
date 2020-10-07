@@ -1,9 +1,8 @@
 ---
 id: 5900f53b1000cf542c51004d
 challengeType: 5
-title: 'Problem 462: Permutation of 3-smooth numbers'
 videoUrl: ''
-localeTitle: 问题462：3个平滑数的排列
+title: 问题462：3个平滑数的排列
 ---
 
 ## Description

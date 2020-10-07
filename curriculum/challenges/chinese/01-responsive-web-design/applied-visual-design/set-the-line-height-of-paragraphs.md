@@ -1,10 +1,9 @@
 ---
 id: 587d781d367417b2b2512ac5
-title: Set the line-height of Paragraphs
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVWdcv'
 forumTopicId: 301070
-localeTitle: 设置段落的 line-height
+title: 设置段落的 line-height
 ---
 
 ## Description

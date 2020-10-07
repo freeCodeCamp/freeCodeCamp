@@ -1,9 +1,8 @@
 ---
 id: 587d824e367417b2b2512c55
-title: Test if an Object has a Property
 challengeType: 2
 forumTopicId: 301604
-localeTitle: 测试对象是否具有某个属性
+title: 测试对象是否具有某个属性
 ---
 
 ## Description

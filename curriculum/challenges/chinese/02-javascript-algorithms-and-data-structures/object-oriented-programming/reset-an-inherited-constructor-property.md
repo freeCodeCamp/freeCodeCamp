@@ -1,9 +1,8 @@
 ---
 id: 587d7db1367417b2b2512b86
-title: Reset an Inherited Constructor Property
 challengeType: 1
 forumTopicId: 301324
-localeTitle: 重置一个继承的构造函数属性
+title: 重置一个继承的构造函数属性
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f5081000cf542c51001a
 challengeType: 5
-title: 'Problem 412: Gnomon numbering'
 videoUrl: ''
-localeTitle: 问题412：Gnomon编号
+title: 问题412：Gnomon编号
 ---
 
 ## Description

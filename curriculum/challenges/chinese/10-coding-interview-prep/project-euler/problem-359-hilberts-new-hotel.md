@@ -1,9 +1,8 @@
 ---
 id: 5900f4d31000cf542c50ffe6
 challengeType: 5
-title: 'Problem 359: Hilbert"s New Hotel'
 videoUrl: ''
-localeTitle: 问题359：希尔伯特的新酒店
+title: 问题359：希尔伯特的新酒店
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4021000cf542c50ff13
 challengeType: 5
-title: 'Problem 149: Searching for a maximum-sum subsequence'
 videoUrl: ''
-localeTitle: 问题149：搜索最大和子序列
+title: 问题149：搜索最大和子序列
 ---
 
 ## Description

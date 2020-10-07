@@ -1,9 +1,8 @@
 ---
 id: 587d8259367417b2b2512c85
-title: Implement Selection Sort
 challengeType: 1
 videoUrl: ''
-localeTitle: 实施选择排序
+title: 实施选择排序
 ---
 
 ## Description

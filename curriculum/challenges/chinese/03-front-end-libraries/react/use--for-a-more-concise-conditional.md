@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036185
-title: Use && for a More Concise Conditional
 challengeType: 6
 forumTopicId: 301413
-localeTitle: 使用 && 获得更简洁的条件
+title: 使用 && 获得更简洁的条件
 ---
 
 ## Description

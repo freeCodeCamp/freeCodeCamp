@@ -1,9 +1,8 @@
 ---
 id: bd7158d8c442eddfaeb5bd1c
-title: Build a Simon Game
 challengeType: 3
 videoUrl: ''
-localeTitle: 建立一个西蒙游戏
+title: 建立一个西蒙游戏
 ---
 
 ## Description

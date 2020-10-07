@@ -1,9 +1,8 @@
 ---
 id: 5900f5141000cf542c510027
 challengeType: 5
-title: 'Problem 423: Consecutive die throws'
 videoUrl: ''
-localeTitle: 问题423：连续死球
+title: 问题423：连续死球
 ---
 
 ## Description

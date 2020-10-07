@@ -1,10 +1,9 @@
 ---
 id: 5a94fe3669fb03452672e45f
-title: Reduce Repetition Using the repeat Function
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cQvqyHR'
 forumTopicId: 301133
-localeTitle: 使用 repeat 函数减少重复
+title: 使用 repeat 函数减少重复
 ---
 
 ## Description

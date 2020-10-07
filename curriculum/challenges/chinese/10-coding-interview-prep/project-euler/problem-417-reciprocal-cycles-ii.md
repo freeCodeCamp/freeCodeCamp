@@ -1,9 +1,8 @@
 ---
 id: 5900f50d1000cf542c51001f
 challengeType: 5
-title: 'Problem 417: Reciprocal cycles II'
 videoUrl: ''
-localeTitle: 问题417：倒数周期II
+title: 问题417：倒数周期II
 ---
 
 ## Description

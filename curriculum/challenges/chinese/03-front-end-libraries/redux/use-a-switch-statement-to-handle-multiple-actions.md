@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036151
-title: Use a Switch Statement to Handle Multiple Actions
 challengeType: 6
 forumTopicId: 301449
-localeTitle: 使用 Switch 语句处理多个 Actions
+title: 使用 Switch 语句处理多个 Actions
 ---
 
 ## Description

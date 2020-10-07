@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d403616c
-title: Override Default Props
 challengeType: 6
 forumTopicId: 301399
-localeTitle: 覆盖默认的 Props
+title: 覆盖默认的 Props
 ---
 
 ## Description

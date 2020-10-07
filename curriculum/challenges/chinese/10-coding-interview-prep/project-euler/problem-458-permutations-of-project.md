@@ -1,9 +1,8 @@
 ---
 id: 5900f5361000cf542c510049
 challengeType: 5
-title: 'Problem 458: Permutations of Project'
 videoUrl: ''
-localeTitle: 问题458：项目的排列
+title: 问题458：项目的排列
 ---
 
 ## Description

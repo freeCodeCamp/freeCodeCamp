@@ -1,9 +1,8 @@
 ---
-title: General FizzBuzz
 id: 5a23c84252665b21eecc7e78
 challengeType: 5
 videoUrl: ''
-localeTitle: 一般的FizzBu​​zz
+title: 一般的FizzBu​​zz
 ---
 
 ## Description

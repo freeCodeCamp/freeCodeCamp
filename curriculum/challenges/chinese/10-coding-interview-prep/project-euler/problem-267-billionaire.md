@@ -1,9 +1,8 @@
 ---
 id: 5900f4771000cf542c50ff8a
 challengeType: 5
-title: 'Problem 267: Billionaire'
 videoUrl: ''
-localeTitle: 问题267：亿万富翁
+title: 问题267：亿万富翁
 ---
 
 ## Description

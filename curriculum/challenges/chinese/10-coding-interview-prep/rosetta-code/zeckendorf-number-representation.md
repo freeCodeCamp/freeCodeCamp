@@ -1,9 +1,8 @@
 ---
-title: Zeckendorf number representation
 id: 594810f028c0303b75339ad6
 challengeType: 5
 videoUrl: ''
-localeTitle: 勾选村号码表示
+title: 勾选村号码表示
 ---
 
 ## Description

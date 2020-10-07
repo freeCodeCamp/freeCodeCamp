@@ -1,9 +1,8 @@
 ---
 id: 5cd9a70215d3c4e65518328f
-title: Use Recursion to Create a Countdown
 challengeType: 1
 forumTopicId: 305925
-localeTitle: 使用递归创建一个倒计时
+title: 使用递归创建一个倒计时
 ---
 
 ## Description

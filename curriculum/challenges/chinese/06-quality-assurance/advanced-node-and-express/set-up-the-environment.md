@@ -1,9 +1,8 @@
 ---
 id: 589fc830f9fc0f352b528e74
-title: Set up the Environment
 challengeType: 2
 forumTopicId: 301566
-localeTitle: 设置环境
+title: 设置环境
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4ed1000cf542c50ffff
 challengeType: 5
-title: 'Problem 383: Divisibility comparison between factorials'
 videoUrl: ''
-localeTitle: 问题383：阶乘之间的可比性比较
+title: 问题383：阶乘之间的可比性比较
 ---
 
 ## Description

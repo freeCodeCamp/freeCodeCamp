@@ -1,9 +1,8 @@
 ---
 id: 587d7daf367417b2b2512b7e
-title: Understand the Constructor Property
 challengeType: 1
 forumTopicId: 301327
-localeTitle: 了解构造函数属性
+title: 了解构造函数属性
 ---
 
 ## Description

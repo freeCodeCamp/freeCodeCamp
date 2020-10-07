@@ -1,9 +1,8 @@
 ---
 id: 587d8254367417b2b2512c71
-title: Remove items from a set in ES6
 challengeType: 1
 videoUrl: ''
-localeTitle: 从ES6中的集中删除项目
+title: 从ES6中的集中删除项目
 ---
 
 ## Description

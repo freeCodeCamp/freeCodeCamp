@@ -1,9 +1,8 @@
 ---
 id: 5900f5101000cf542c510022
 challengeType: 5
-title: 'Problem 419: Look and say sequence'
 videoUrl: ''
-localeTitle: 问题419：先说顺序
+title: 问题419：先说顺序
 ---
 
 ## Description

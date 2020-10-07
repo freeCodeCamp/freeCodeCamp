@@ -1,9 +1,8 @@
 ---
-title: Ethiopian multiplication
 id: 599d1566a02b571412643b84
 challengeType: 5
 videoUrl: ''
-localeTitle: 埃塞俄比亚的乘法
+title: 埃塞俄比亚的乘法
 ---
 
 ## Description

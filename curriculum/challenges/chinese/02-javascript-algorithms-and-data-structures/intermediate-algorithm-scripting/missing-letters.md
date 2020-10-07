@@ -1,8 +1,7 @@
 ---
 id: af7588ade1100bde429baf20
-title: Missing letters
 challengeType: 5
-localeTitle: 丢失的字母
+title: 丢失的字母
 ---
 
 ## Description

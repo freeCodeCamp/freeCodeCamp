@@ -1,9 +1,8 @@
 ---
 id: 5900f3c31000cf542c50fed5
 challengeType: 5
-title: 'Problem 86: Cuboid route'
 videoUrl: ''
-localeTitle: 问题86：长方体路线
+title: 问题86：长方体路线
 ---
 
 ## Description

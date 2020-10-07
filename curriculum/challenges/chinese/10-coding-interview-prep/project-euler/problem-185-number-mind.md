@@ -1,9 +1,8 @@
 ---
 id: 5900f4251000cf542c50ff38
 challengeType: 5
-title: 'Problem 185: Number Mind'
 videoUrl: ''
-localeTitle: 问题185：数字思维
+title: 问题185：数字思维
 ---
 
 ## Description

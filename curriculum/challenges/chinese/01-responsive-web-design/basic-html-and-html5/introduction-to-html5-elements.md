@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aecf08801
-title: Introduction to HTML5 Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBkZGpt7'
 forumTopicId: 301097
-localeTitle: HTML5 元素介绍
+title: HTML5 元素介绍
 ---
 
 ## Description

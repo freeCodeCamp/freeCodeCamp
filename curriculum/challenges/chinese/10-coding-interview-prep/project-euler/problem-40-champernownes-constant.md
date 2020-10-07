@@ -1,9 +1,8 @@
 ---
 id: 5900f3941000cf542c50fea7
 challengeType: 5
-title: 'Problem 40: Champernowne"s constant'
 videoUrl: ''
-localeTitle: 问题40：Champernowne的常数
+title: 问题40：Champernowne的常数
 ---
 
 ## Description

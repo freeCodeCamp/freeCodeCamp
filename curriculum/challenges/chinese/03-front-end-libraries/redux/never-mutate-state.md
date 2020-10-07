@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036158
-title: Never Mutate State
 challengeType: 6
 forumTopicId: 301445
-localeTitle: 永不改变状态
+title: 永不改变状态
 ---
 
 ## Description

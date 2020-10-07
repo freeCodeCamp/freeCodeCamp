@@ -1,9 +1,8 @@
 ---
 id: 5900f4181000cf542c50ff2b
 challengeType: 5
-title: 'Problem 172: Investigating numbers with few repeated digits'
 videoUrl: ''
-localeTitle: 问题172：调查重复数字很少的数字
+title: 问题172：调查重复数字很少的数字
 ---
 
 ## Description

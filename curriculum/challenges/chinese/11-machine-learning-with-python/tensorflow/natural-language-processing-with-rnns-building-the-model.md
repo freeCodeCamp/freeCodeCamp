@@ -1,6 +1,5 @@
 ---
 id: 5e8f2f13c4cdbe86b5c72da1
-title: 'Natural Language Processing With RNNs: Building the Model'
 challengeType: 11
 isHidden: false
 videoId: 32WBFS7lfsw

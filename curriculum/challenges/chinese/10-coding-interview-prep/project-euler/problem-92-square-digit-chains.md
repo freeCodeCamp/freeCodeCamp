@@ -1,9 +1,8 @@
 ---
 id: 5900f3c81000cf542c50fedb
 challengeType: 5
-title: 'Problem 92: Square digit chains'
 videoUrl: ''
-localeTitle: 问题92：方形数字链
+title: 问题92：方形数字链
 ---
 
 ## Description

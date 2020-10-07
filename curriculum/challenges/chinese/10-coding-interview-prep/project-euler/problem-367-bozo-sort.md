@@ -1,9 +1,8 @@
 ---
 id: 5900f4db1000cf542c50ffee
 challengeType: 5
-title: 'Problem 367: Bozo sort'
 videoUrl: ''
-localeTitle: 问题367：Bozo排序
+title: 问题367：Bozo排序
 ---
 
 ## Description

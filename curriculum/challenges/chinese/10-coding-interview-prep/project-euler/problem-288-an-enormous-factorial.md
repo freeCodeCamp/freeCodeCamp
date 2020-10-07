@@ -1,9 +1,8 @@
 ---
 id: 5900f48d1000cf542c50ff9f
 challengeType: 5
-title: 'Problem 288: An enormous factorial'
 videoUrl: ''
-localeTitle: 问题288：一个巨大的阶乘
+title: 问题288：一个巨大的阶乘
 ---
 
 ## Description

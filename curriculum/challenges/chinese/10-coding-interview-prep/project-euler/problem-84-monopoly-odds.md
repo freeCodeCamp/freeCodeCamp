@@ -1,9 +1,8 @@
 ---
 id: 5900f3c11000cf542c50fed3
 challengeType: 5
-title: 'Problem 84: Monopoly odds'
 videoUrl: ''
-localeTitle: 问题84：垄断赔率
+title: 问题84：垄断赔率
 ---
 
 ## Description

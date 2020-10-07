@@ -1,9 +1,8 @@
 ---
 id: 5900f5311000cf542c510042
 challengeType: 5
-title: 'Problem 451: Modular inverses'
 videoUrl: ''
-localeTitle: 问题451：模逆
+title: 问题451：模逆
 ---
 
 ## Description

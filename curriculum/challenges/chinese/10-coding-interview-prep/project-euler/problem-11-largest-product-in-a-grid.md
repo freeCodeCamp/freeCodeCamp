@@ -1,9 +1,8 @@
 ---
 id: 5900f3781000cf542c50fe8a
 challengeType: 5
-title: 'Problem 11: Largest product in a grid'
 videoUrl: ''
-localeTitle: 问题11：网格中最大的产品
+title: 问题11：网格中最大的产品
 ---
 
 ## Description

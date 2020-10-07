@@ -245,7 +245,7 @@ function validateBlock(challenge) {
 function populateTestsForLang({ lang, challenges, meta }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
-  const validateChallenge = challengeSchemaValidator(lang);
+  const validateChallenge = challengeSchemaValidator();
 
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
@@ -253,18 +253,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
       const dashedBlockName = dasherize(challenge.block);
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
-          it('Matches a title in meta.json', function() {
-            const index = meta[dashedBlockName].findIndex(
-              arr => arr[1] === challenge.title
-            );
-
-            if (index < 0) {
-              throw new AssertionError(
-                `Cannot find title "${challenge.title}" in meta.json file`
-              );
-            }
-          });
-
+          // Note: the title in meta.json are purely for human readability and
+          // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function() {
             const index = meta[dashedBlockName].findIndex(
               arr => arr[0] === challenge.id

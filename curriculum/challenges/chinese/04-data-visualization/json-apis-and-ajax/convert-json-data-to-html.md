@@ -1,9 +1,8 @@
 ---
 id: 587d7fae367417b2b2512be5
-title: Convert JSON Data to HTML
 challengeType: 6
 forumTopicId: 16807
-localeTitle: 将 JSON 数据转换为 HTML
+title: 将 JSON 数据转换为 HTML
 ---
 
 ## Description

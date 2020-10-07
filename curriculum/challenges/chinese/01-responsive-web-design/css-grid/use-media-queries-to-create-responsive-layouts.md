@@ -1,10 +1,9 @@
 ---
 id: 5a94fe7769fb03452672e463
-title: Use Media Queries to Create Responsive Layouts
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cMbqeHk'
 forumTopicId: 301138
-localeTitle: 使用媒体查询创建响应式布局
+title: 使用媒体查询创建响应式布局
 ---
 
 ## Description

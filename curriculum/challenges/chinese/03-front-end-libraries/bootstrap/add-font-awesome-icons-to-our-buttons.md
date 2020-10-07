@@ -1,12 +1,11 @@
 ---
 id: bad87fee1348bd9aedd08845
-title: Add Font Awesome Icons to our Buttons
 required:
   - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
 challengeType: 0
 forumTopicId: 16638
-localeTitle: 将字体图标添加到我们的按钮中
+title: 将字体图标添加到我们的按钮中
 ---
 
 ## Description

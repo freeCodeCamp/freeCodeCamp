@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf06756
-title: Override Class Declarations with Inline Styles
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDRha'
 forumTopicId: 18252
-localeTitle: 内联样式的优先级高于 ID 选择器
+title: 内联样式的优先级高于 ID 选择器
 ---
 
 ## Description

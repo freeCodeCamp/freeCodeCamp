@@ -1,9 +1,8 @@
 ---
 id: 587d824a367417b2b2512c44
-title: Stock Price Checker
 challengeType: 4
 videoUrl: ''
-localeTitle: 股票价格检查
+title: 股票价格检查
 ---
 
 ## Description

@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08835
-title: Create a Set of Checkboxes
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cqrkJsp'
 forumTopicId: 16821
-localeTitle: 创建一组复选框
+title: 创建一组复选框
 ---
 
 ## Description

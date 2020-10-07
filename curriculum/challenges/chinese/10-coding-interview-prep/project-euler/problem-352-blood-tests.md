@@ -1,9 +1,8 @@
 ---
 id: 5900f4cd1000cf542c50ffdf
 challengeType: 5
-title: 'Problem 352: Blood tests'
 videoUrl: ''
-localeTitle: 问题352：验血
+title: 问题352：验血
 ---
 
 ## Description

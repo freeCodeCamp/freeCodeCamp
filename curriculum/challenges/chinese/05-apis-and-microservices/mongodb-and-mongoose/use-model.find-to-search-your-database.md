@@ -1,9 +1,8 @@
 ---
 id: 587d7fb7367417b2b2512c0b
-title: Use model.find() to Search Your Database
 challengeType: 2
 forumTopicId: 301543
-localeTitle: 使用model.find（）搜索数据库
+title: 使用model.find（）搜索数据库
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4ab1000cf542c50ffbe
 challengeType: 5
-title: 'Problem 319: Bounded Sequences'
 videoUrl: ''
-localeTitle: 问题319：有界序列
+title: 问题319：有界序列
 ---
 
 ## Description

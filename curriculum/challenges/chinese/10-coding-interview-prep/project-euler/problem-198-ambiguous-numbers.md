@@ -1,9 +1,8 @@
 ---
 id: 5900f4331000cf542c50ff45
 challengeType: 5
-title: 'Problem 198: Ambiguous Numbers'
 videoUrl: ''
-localeTitle: 问题198：模糊数字
+title: 问题198：模糊数字
 ---
 
 ## Description

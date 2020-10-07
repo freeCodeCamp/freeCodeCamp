@@ -1,10 +1,9 @@
 ---
 id: 587d78ae367417b2b2512afd
-title: Use the flex-basis Property to Set the Initial Size of an Item
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c3d9nCa'
 forumTopicId: 301108
-localeTitle: 使用 flex-basis 属性设置项目的初始大小
+title: 使用 flex-basis 属性设置项目的初始大小
 ---
 
 ## Description

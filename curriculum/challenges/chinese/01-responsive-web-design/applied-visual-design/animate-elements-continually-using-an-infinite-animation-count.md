@@ -1,10 +1,9 @@
 ---
 id: 587d78a8367417b2b2512ae3
-title: Animate Elements Continually Using an Infinite Animation Count
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJDVfq'
 forumTopicId: 301041
-localeTitle: 使用无限的动画计数制作永不停止的动画
+title: 使用无限的动画计数制作永不停止的动画
 ---
 
 ## Description

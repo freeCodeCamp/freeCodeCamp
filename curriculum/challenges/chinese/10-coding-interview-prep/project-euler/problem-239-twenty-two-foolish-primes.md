@@ -1,9 +1,8 @@
 ---
 id: 5900f45c1000cf542c50ff6e
 challengeType: 5
-title: 'Problem 239: Twenty-two Foolish Primes'
 videoUrl: ''
-localeTitle: 问题239：二十二个愚蠢的素数
+title: 问题239：二十二个愚蠢的素数
 ---
 
 ## Description

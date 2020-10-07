@@ -1,9 +1,8 @@
 ---
 id: 5900f36e1000cf542c50fe80
 challengeType: 5
-title: 'Problem 1: Multiples of 3 and 5'
 videoUrl: ''
-localeTitle: 问题1：3和5的倍数
+title: 问题1：3和5的倍数
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036163
-title: Create a React Component
 challengeType: 6
 forumTopicId: 301386
-localeTitle: 创建一个 React 组件
+title: 创建一个 React 组件
 ---
 
 ## Description

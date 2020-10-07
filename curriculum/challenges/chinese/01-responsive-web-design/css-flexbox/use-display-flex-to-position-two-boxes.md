@@ -1,10 +1,9 @@
 ---
 id: 587d78ab367417b2b2512af0
-title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cgz3QS7'
 forumTopicId: 301105
-localeTitle: '使用 display: flex 定位两个盒子'
+title: '使用 display: flex 定位两个盒子'
 ---
 
 ## Description

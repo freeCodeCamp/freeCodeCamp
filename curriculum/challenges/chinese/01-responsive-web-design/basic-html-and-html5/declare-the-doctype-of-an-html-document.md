@@ -1,10 +1,9 @@
 ---
 id: 587d78aa367417b2b2512aed
-title: Declare the Doctype of an HTML Document
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra98AJ'
 forumTopicId: 301095
-localeTitle: 声明 HTML 的文档类型
+title: 声明 HTML 的文档类型
 ---
 
 ## Description

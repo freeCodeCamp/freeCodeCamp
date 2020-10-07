@@ -1,9 +1,8 @@
 ---
-title: Heronian triangles
 id: 595b98f8b5a2245e243aa831
 challengeType: 5
 videoUrl: ''
-localeTitle: 苍鹭三角形
+title: 苍鹭三角形
 ---
 
 ## Description

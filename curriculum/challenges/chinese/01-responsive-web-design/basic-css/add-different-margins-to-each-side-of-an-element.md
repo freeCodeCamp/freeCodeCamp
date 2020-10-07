@@ -1,10 +1,9 @@
 ---
 id: bad87fee1248bd9aedf08824
-title: Add Different Margins to Each Side of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4RWh4'
 forumTopicId: 16633
-localeTitle: 给元素的每一侧添加不同的外边距
+title: 给元素的每一侧添加不同的外边距
 ---
 
 ## Description

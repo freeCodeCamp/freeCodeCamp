@@ -1,9 +1,8 @@
 ---
 id: a6e40f1041b06c996f7b2406
-title: Finders Keepers
 challengeType: 5
 videoUrl: ''
-localeTitle: Finders Keepers
+title: Finders Keepers
 ---
 
 ## Description

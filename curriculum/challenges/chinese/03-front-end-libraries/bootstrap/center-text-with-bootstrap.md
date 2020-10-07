@@ -1,9 +1,8 @@
 ---
 id: bad87fee1348bd8acde08812
-title: Center Text with Bootstrap
 challengeType: 0
 forumTopicId: 16771
-localeTitle: 用 Bootstrap 居中文本
+title: 用 Bootstrap 居中文本
 ---
 
 ## Description

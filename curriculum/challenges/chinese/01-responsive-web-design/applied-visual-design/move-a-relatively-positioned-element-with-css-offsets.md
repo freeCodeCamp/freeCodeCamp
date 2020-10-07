@@ -1,10 +1,9 @@
 ---
 id: 587d781e367417b2b2512aca
-title: Move a Relatively Positioned Element with CSS Offsets
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bQEA4'
 forumTopicId: 301065
-localeTitle: 使用 CSS 偏移移动相对定位的元素
+title: 使用 CSS 偏移移动相对定位的元素
 ---
 
 ## Description

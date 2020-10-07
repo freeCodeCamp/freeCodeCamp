@@ -1,9 +1,8 @@
 ---
 id: 5900f54c1000cf542c51005e
 challengeType: 5
-title: 'Problem 478: Mixtures'
 videoUrl: ''
-localeTitle: 问题478：混合物
+title: 问题478：混合物
 ---
 
 ## Description

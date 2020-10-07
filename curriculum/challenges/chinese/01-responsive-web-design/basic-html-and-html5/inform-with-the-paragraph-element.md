@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08801
-title: Inform with the Paragraph Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
 forumTopicId: 18202
-localeTitle: 用 p 元素代表段落
+title: 用 p 元素代表段落
 ---
 
 ## Description

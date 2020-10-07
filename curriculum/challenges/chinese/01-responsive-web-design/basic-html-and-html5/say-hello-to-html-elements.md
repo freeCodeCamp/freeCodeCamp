@@ -1,10 +1,9 @@
 ---
 id: bd7123c8c441eddfaeb5bdef
-title: Say Hello to HTML Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gpt2'
 forumTopicId: 18276
-localeTitle: 向 HTML 元素问好
+title: 向 HTML 元素问好
 ---
 
 ## Description

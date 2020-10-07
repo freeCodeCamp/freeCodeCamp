@@ -1,9 +1,8 @@
 ---
 id: 5900f3ef1000cf542c50ff02
 challengeType: 5
-title: 'Problem 131: Prime cube partnership'
 videoUrl: ''
-localeTitle: 问题131：Prime立方体伙伴关系
+title: 问题131：Prime立方体伙伴关系
 ---
 
 ## Description

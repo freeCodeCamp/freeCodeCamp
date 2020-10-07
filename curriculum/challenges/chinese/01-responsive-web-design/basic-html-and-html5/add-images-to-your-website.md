@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08812
-title: Add Images to Your Website
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
 forumTopicId: 16640
-localeTitle: 给网站添加图片
+title: 给网站添加图片
 ---
 
 ## Description

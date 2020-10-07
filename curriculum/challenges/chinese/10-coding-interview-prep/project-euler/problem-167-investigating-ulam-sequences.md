@@ -1,9 +1,8 @@
 ---
 id: 5900f4141000cf542c50ff26
 challengeType: 5
-title: 'Problem 167: Investigating Ulam sequences'
 videoUrl: ''
-localeTitle: 问题167：研究Ulam序列
+title: 问题167：研究Ulam序列
 ---
 
 ## Description

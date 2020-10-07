@@ -1,9 +1,8 @@
 ---
 id: 5900f4d61000cf542c50ffe9
 challengeType: 5
-title: 'Problem 362: Squarefree factors'
 videoUrl: ''
-localeTitle: 问题362：无广义因子
+title: 问题362：无广义因子
 ---
 
 ## Description

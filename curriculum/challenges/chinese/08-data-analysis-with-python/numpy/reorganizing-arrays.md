@@ -1,6 +1,5 @@
 ---
 id: 5e9a0a8e09c5df3cc3600ed9
-title: Reorganizing Arrays
 challengeType: 11
 isHidden: false
 videoId: VNWAQbEM-C8

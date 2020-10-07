@@ -1,9 +1,8 @@
 ---
 id: 5900f37a1000cf542c50fe8d
 challengeType: 5
-title: 'Problem 14: Longest Collatz sequence'
 videoUrl: ''
-localeTitle: 问题14：最长的Collat​​z序列
+title: 问题14：最长的Collat​​z序列
 ---
 
 ## Description

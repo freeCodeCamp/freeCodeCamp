@@ -1,10 +1,9 @@
 ---
 id: 5688e62ea601b2482ff8422b
-title: Profile Lookup
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cDqW2Cg'
 forumTopicId: 18259
-localeTitle: 资料查找
+title: 资料查找
 ---
 
 ## Description

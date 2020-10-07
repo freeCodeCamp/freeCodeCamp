@@ -1,10 +1,9 @@
 ---
 id: 587d78ad367417b2b2512af9
-title: Use the align-items Property in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
 forumTopicId: 301106
-localeTitle: 在推文中使用 align-items 属性
+title: 在推文中使用 align-items 属性
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f3d01000cf542c50fee3
 challengeType: 5
-title: 'Problem 100: Arranged probability'
 videoUrl: ''
-localeTitle: 问题100：安排概率
+title: 问题100：安排概率
 ---
 
 ## Description

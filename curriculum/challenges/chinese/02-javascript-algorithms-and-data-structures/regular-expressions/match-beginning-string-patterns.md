@@ -1,9 +1,8 @@
 ---
 id: 587d7db7367417b2b2512b9d
-title: Match Beginning String Patterns
 challengeType: 1
 forumTopicId: 301349
-localeTitle: 匹配字符串的开头
+title: 匹配字符串的开头
 ---
 
 ## Description

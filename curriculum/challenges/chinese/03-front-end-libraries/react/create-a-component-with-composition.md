@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036164
-title: Create a Component with Composition
 challengeType: 6
 forumTopicId: 301383
-localeTitle: 用组合的方式创建一个 React 组件 
+title: 用组合的方式创建一个 React 组件 
 ---
 
 ## Description

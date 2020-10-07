@@ -1,9 +1,8 @@
 ---
 id: bad87fee1348ce8acef08814
-title: Warn Your Users of a Dangerous Action with btn-danger
 challengeType: 0
 forumTopicId: 18375
-localeTitle: 使用 btn-danger 提示危险操作
+title: 使用 btn-danger 提示危险操作
 ---
 
 ## Description

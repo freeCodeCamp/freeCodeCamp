@@ -1,9 +1,8 @@
 ---
 id: 5900f5171000cf542c510029
 challengeType: 5
-title: 'Problem 426: Box-ball system'
 videoUrl: ''
-localeTitle: 问题426：箱式球系统
+title: 问题426：箱式球系统
 ---
 
 ## Description

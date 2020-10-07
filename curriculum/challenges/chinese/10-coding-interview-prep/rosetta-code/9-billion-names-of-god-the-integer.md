@@ -1,9 +1,8 @@
 ---
-title: 9 billion names of God the integer
 id: 5949b579404977fbaefcd736
 challengeType: 5
 videoUrl: ''
-localeTitle: 90亿上帝的名字整数
+title: 90亿上帝的名字整数
 ---
 
 ## Description

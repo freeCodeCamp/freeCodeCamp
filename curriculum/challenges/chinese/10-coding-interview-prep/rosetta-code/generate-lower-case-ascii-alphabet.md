@@ -1,9 +1,8 @@
 ---
-title: Generate lower case ASCII alphabet
 id: 5a23c84252665b21eecc7e7a
 challengeType: 5
 videoUrl: ''
-localeTitle: 生成小写ASCII字母表
+title: 生成小写ASCII字母表
 ---
 
 ## Description

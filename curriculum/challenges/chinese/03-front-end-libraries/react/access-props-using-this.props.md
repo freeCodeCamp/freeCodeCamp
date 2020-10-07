@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d403616e
-title: Access Props Using this.props
 challengeType: 6
 forumTopicId: 301375
-localeTitle: 使用 this.props 访问 Props
+title: 使用 this.props 访问 Props
 ---
 
 ## Description

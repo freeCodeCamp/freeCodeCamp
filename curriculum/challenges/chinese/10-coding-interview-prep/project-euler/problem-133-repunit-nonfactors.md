@@ -1,9 +1,8 @@
 ---
 id: 5900f3f21000cf542c50ff04
 challengeType: 5
-title: 'Problem 133: Repunit nonfactors'
 videoUrl: ''
-localeTitle: 问题133：重新计算非因素
+title: 问题133：重新计算非因素
 ---
 
 ## Description

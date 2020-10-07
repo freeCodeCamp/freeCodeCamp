@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036189
-title: Change Inline CSS Conditionally Based on Component State
 challengeType: 6
 forumTopicId: 301380
-localeTitle: 根据组件状态有条件地更改内联 CSS
+title: 根据组件状态有条件地更改内联 CSS
 ---
 
 ## Description

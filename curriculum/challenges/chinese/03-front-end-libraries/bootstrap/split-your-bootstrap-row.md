@@ -1,9 +1,8 @@
 ---
 id: bad87fee1348bd9aec908847
-title: Split Your Bootstrap Row
 challengeType: 0
 forumTopicId: 18306
-localeTitle: 分割你的 Bootstrap Row
+title: 分割你的 Bootstrap Row
 ---
 
 ## Description

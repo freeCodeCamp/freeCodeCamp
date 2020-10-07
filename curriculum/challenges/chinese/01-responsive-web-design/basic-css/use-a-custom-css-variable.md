@@ -1,10 +1,9 @@
 ---
 id: 5a9d727a424fe3d0e10cad12
-title: Use a custom CSS Variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM989ck'
 forumTopicId: 301090
-localeTitle: 使用一个自定义的 CSS 变量
+title: 使用一个自定义的 CSS 变量
 ---
 
 ## Description

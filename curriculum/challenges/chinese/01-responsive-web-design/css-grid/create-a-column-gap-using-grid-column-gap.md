@@ -1,10 +1,9 @@
 ---
 id: 5a9036ee38fddaf9a66b5d35
-title: Create a Column Gap Using grid-column-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
-localeTitle: 使用 grid-column-gap 创建多列之间的间距
+title: 使用 grid-column-gap 创建多列之间的间距
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4be1000cf542c50ffd0
 challengeType: 5
-title: 'Problem 337: Totient Stairstep Sequences'
 videoUrl: ''
-localeTitle: 问题337欧拉序列阶梯
+title: 问题337欧拉序列阶梯
 ---
 
 ## Description

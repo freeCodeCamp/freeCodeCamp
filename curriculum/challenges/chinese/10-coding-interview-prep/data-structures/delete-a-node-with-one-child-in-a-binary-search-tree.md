@@ -1,9 +1,8 @@
 ---
 id: 587d8258367417b2b2512c81
-title: Delete a Node with One Child in a Binary Search Tree
 challengeType: 1
 videoUrl: ''
-localeTitle: 在二叉搜索树中删除具有一个子节点的节点
+title: 在二叉搜索树中删除具有一个子节点的节点
 ---
 
 ## Description

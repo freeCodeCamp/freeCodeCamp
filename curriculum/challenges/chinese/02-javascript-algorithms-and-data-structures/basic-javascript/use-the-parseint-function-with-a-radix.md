@@ -1,10 +1,9 @@
 ---
 id: 587d7b7e367417b2b2512b22
-title: Use the parseInt Function with a Radix
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6K4Kh3'
 forumTopicId: 301182
-localeTitle: 使用 parseInt 函数并传入一个基数
+title: 使用 parseInt 函数并传入一个基数
 ---
 
 ## Description

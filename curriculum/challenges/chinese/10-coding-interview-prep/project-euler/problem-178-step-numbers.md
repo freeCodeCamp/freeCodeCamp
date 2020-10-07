@@ -1,9 +1,8 @@
 ---
 id: 5900f41e1000cf542c50ff31
 challengeType: 5
-title: 'Problem 178: Step Numbers'
 videoUrl: ''
-localeTitle: 问题178：步骤编号
+title: 问题178：步骤编号
 ---
 
 ## Description

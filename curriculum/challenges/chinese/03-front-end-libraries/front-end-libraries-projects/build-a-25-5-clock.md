@@ -1,9 +1,8 @@
 ---
 id: bd7158d8c442eddfaeb5bd0f
-title: Build a 25 + 5 Clock
 challengeType: 3
 forumTopicId: 301373
-localeTitle: 构建一个番茄时钟
+title: 构建一个番茄时钟
 ---
 
 ## Description

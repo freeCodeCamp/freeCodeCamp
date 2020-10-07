@@ -1,9 +1,8 @@
 ---
 id: 5900f3e41000cf542c50fef7
 challengeType: 5
-title: 'Problem 120: Square remainders'
 videoUrl: ''
-localeTitle: 问题120：方形剩余部分
+title: 问题120：方形剩余部分
 ---
 
 ## Description

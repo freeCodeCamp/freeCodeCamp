@@ -1,9 +1,8 @@
 ---
 id: 5a661e0f1068aca922b3ef17
-title: Access an Array's Contents Using Bracket Notation
 challengeType: 1
 forumTopicId: 301149
-localeTitle: 使用方括号访问数组的内容
+title: 使用方括号访问数组的内容
 ---
 
 ## Description

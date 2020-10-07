@@ -1,10 +1,9 @@
 ---
 id: 5a9d725e424fe3d0e10cad10
-title: Use CSS Variables to change several elements at once
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDECm'
 forumTopicId: 301093
-localeTitle: 使用 CSS 变量一次更改多个元素
+title: 使用 CSS 变量一次更改多个元素
 ---
 
 ## Description

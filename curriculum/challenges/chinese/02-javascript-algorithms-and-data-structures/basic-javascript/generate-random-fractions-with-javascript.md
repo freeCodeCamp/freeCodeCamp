@@ -1,10 +1,9 @@
 ---
 id: cf1111c1c11feddfaeb9bdef
-title: Generate Random Fractions with JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cyWJJs3'
 forumTopicId: 18185
-localeTitle: 使用 JavaScript 生成随机分数
+title: 使用 JavaScript 生成随机分数
 ---
 
 ## Description

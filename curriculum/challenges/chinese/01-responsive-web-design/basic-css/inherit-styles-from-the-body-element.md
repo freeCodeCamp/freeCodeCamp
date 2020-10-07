@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08746
-title: Inherit Styles from the Body Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bmdtR'
 forumTopicId: 18204
-localeTitle: 从 Body 元素继承样式
+title: 从 Body 元素继承样式
 ---
 
 ## Description

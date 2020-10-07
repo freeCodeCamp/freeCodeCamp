@@ -1,9 +1,8 @@
 ---
 id: 587d7b7b367417b2b2512b14
-title: Check For The Presence of an Element With indexOf()
 challengeType: 1
 forumTopicId: 301154
-localeTitle: 使用 indexOf() 检查元素是否存在
+title: 使用 indexOf() 检查元素是否存在
 ---
 
 ## Description

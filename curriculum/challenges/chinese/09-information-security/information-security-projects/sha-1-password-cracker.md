@@ -1,6 +1,5 @@
 ---
 id: 5e46f983ac417301a38fb933
-title: SHA-1 Password Cracker
 challengeType: 10
 isHidden: false
 ---

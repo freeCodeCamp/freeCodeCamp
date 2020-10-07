@@ -1,9 +1,8 @@
 ---
 id: a3f503de51cf954ede28891d
-title: Find the Symmetric Difference
 challengeType: 5
 videoUrl: ''
-localeTitle: 找到对称差异
+title: 找到对称差异
 ---
 
 ## Description

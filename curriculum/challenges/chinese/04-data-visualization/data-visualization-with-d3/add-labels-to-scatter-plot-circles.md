@@ -1,9 +1,8 @@
 ---
 id: 587d7fab367417b2b2512bd9
-title: Add Labels to Scatter Plot Circles
 challengeType: 6
 forumTopicId: 301477
-localeTitle: 向散点图的 Circles 添加标签
+title: 向散点图的 Circles 添加标签
 ---
 
 ## Description

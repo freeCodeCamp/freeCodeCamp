@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08826
-title: Use Clockwise Notation to Specify the Padding of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mBS9'
 forumTopicId: 18346
-localeTitle: 使用顺时针方向指定元素的内边距
+title: 使用顺时针方向指定元素的内边距
 ---
 
 ## Description

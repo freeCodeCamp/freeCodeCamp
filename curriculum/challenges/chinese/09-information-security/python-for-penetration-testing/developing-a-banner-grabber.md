@@ -1,6 +1,5 @@
 ---
 id: 5ea9997bbec2e9bc47e94db3
-title: Developing a Banner Grabber
 challengeType: 11
 isHidden: false
 videoId: CeGW761BIsA

@@ -1,9 +1,8 @@
 ---
 id: a7bf700cd123b9a54eef01d5
-title: No Repeats Please
 challengeType: 5
 videoUrl: ''
-localeTitle: 请不要重复
+title: 请不要重复
 ---
 
 ## Description

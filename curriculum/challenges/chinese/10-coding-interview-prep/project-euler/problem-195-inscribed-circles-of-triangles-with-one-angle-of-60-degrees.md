@@ -1,9 +1,8 @@
 ---
 id: 5900f4311000cf542c50ff43
 challengeType: 5
-title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
 videoUrl: ''
-localeTitle: 问题195：内切三角形的圆形，一个角度为60度
+title: 问题195：内切三角形的圆形，一个角度为60度
 ---
 
 ## Description

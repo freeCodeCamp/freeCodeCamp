@@ -1,9 +1,8 @@
 ---
 id: 5900f3e01000cf542c50fef3
 challengeType: 5
-title: 'Problem 116: Red, green or blue tiles'
 videoUrl: ''
-localeTitle: 问题116：红色，绿色或蓝色瓷砖
+title: 问题116：红色，绿色或蓝色瓷砖
 ---
 
 ## Description

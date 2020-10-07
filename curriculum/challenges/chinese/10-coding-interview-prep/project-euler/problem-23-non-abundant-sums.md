@@ -1,9 +1,8 @@
 ---
 id: 5900f3831000cf542c50fe96
 challengeType: 5
-title: 'Problem 23: Non-abundant sums'
 videoUrl: ''
-localeTitle: 问题23：非丰富的总和
+title: 问题23：非丰富的总和
 ---
 
 ## Description

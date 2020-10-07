@@ -1,9 +1,8 @@
 ---
 id: 5900f4d21000cf542c50ffe5
 challengeType: 5
-title: 'Problem 358: Cyclic numbers'
 videoUrl: ''
-localeTitle: 问题358：循环数
+title: 问题358：循环数
 ---
 
 ## Description

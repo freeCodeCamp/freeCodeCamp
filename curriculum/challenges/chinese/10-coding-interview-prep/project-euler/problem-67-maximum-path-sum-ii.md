@@ -1,9 +1,8 @@
 ---
 id: 5900f3b01000cf542c50fec2
 challengeType: 5
-title: 'Problem 67: Maximum path sum II'
 videoUrl: ''
-localeTitle: 问题67：最大路径总和II
+title: 问题67：最大路径总和II
 ---
 
 ## Description

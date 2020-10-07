@@ -1,10 +1,9 @@
 ---
 id: 5b7d72c338cd7e35b63f3e14
-title: Improve Compatibility with Browser Fallbacks
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301087
-localeTitle: 通过浏览器降级提高兼容性
+title: 通过浏览器降级提高兼容性
 ---
 
 ## Description

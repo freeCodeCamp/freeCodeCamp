@@ -1,10 +1,9 @@
 ---
 id: 56533eb9ac21ba0edf2244ab
-title: Understanding Case Sensitivity in Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
-localeTitle: 了解变量名区分大小写
+title: 了解变量名区分大小写
 ---
 
 ## Description

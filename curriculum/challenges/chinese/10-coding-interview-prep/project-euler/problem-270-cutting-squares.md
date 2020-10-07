@@ -1,9 +1,8 @@
 ---
 id: 5900f47c1000cf542c50ff8e
 challengeType: 5
-title: 'Problem 270: Cutting Squares'
 videoUrl: ''
-localeTitle: 问题270：切割方块
+title: 问题270：切割方块
 ---
 
 ## Description

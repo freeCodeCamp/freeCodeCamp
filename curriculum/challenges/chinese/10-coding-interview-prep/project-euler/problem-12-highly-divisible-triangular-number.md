@@ -1,9 +1,8 @@
 ---
 id: 5900f3781000cf542c50fe8b
 challengeType: 5
-title: 'Problem 12: Highly divisible triangular number'
 videoUrl: ''
-localeTitle: 问题12：高度可分的三角数
+title: 问题12：高度可分的三角数
 ---
 
 ## Description

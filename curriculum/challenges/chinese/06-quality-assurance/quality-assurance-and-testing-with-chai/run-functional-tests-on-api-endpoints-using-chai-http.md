@@ -1,9 +1,8 @@
 ---
 id: 587d824e367417b2b2512c58
-title: Run Functional Tests on API Endpoints using Chai-HTTP
 challengeType: 2
 forumTopicId: 301593
-localeTitle: 使用 Chai-HTTP 进行 API 功能测试 (1)
+title: 使用 Chai-HTTP 进行 API 功能测试 (1)
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 587d7db5367417b2b2512b94
-title: Match Anything with Wildcard Period
 challengeType: 1
 forumTopicId: 301348
-localeTitle: 用通配符.匹配任何内容
+title: 用通配符.匹配任何内容
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4571000cf542c50ff69
 challengeType: 5
-title: 'Problem 234: Semidivisible numbers'
 videoUrl: ''
-localeTitle: 问题234：半透明数字
+title: 问题234：半透明数字
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4b01000cf542c50ffc2
 challengeType: 5
-title: 'Problem 323: Bitwise-OR operations on random integers'
 videoUrl: ''
-localeTitle: 问题323：对随机整数进行按位或运算
+title: 问题323：对随机整数进行按位或运算
 ---
 
 ## Description
