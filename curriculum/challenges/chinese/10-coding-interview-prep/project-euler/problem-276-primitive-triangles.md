@@ -1,9 +1,8 @@
 ---
 id: 5900f4801000cf542c50ff93
 challengeType: 5
-title: 'Problem 276: Primitive Triangles'
 videoUrl: ''
-localeTitle: 问题276：原始三角形
+title: 问题276：原始三角形
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
-title: Hash join
 id: 5956795bc9e2c415eb244de1
 challengeType: 5
 videoUrl: ''
-localeTitle: 哈希加入
+title: 哈希加入
 ---
 
 ## Description

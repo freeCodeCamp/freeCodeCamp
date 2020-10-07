@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08807
-title: Import a Google Font
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MRsJ'
 forumTopicId: 18200
-localeTitle: 引入谷歌字体
+title: 引入谷歌字体
 ---
 
 ## Description

@@ -1,3 +1,4 @@
+const { isEmpty } = require('lodash');
 const clone = require('lodash/cloneDeep');
 
 exports.translateComments = (text, lang, dict, codeLang) => {
@@ -40,14 +41,16 @@ exports.mergeChallenges = (engChal, transChal) => {
     ...engChal,
     description: transChal.description,
     instructions: transChal.instructions,
-    localeTitle: transChal.localeTitle,
+    originalTitle: engChal.title,
+    // TODO: throw in production?
+    title: isEmpty(transChal.title) ? engChal.title : transChal.title,
     forumTopicId: transChal.forumTopicId
   };
   if (!hasTests)
     throw Error(
       `Both challenges must have tests or questions.
       title: ${engChal.title}
-      localeTitle: ${transChal.localeTitle}`
+      translated title: ${transChal.title}`
     );
   // TODO: this should break the build when we go to production, but
   // not for testing.
@@ -55,7 +58,7 @@ exports.mergeChallenges = (engChal, transChal) => {
     console.error(
       `Challenges in both languages must have the same number of tests.
     title: ${engChal.title}
-    localeTitle: ${transChal.localeTitle}`
+    translated title: ${transChal.title}`
     );
     return challenge;
   }
@@ -63,7 +66,7 @@ exports.mergeChallenges = (engChal, transChal) => {
   // throw Error(
   //   `Challenges in both languages must have the same number of tests.
   // title: ${engChal.title}
-  // localeTitle: ${transChal.localeTitle}`
+  // translated title: ${transChal.title}`
   // );
 
   if (transChal.tests) {

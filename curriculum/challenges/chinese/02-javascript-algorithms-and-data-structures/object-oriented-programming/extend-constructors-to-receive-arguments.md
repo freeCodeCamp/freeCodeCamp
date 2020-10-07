@@ -1,9 +1,8 @@
 ---
 id: 587d7dae367417b2b2512b79
-title: Extend Constructors to Receive Arguments
 challengeType: 1
 forumTopicId: 18235
-localeTitle: 扩展构造函数以接收参数
+title: 扩展构造函数以接收参数
 ---
 
 ## Description

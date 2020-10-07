@@ -1,9 +1,8 @@
 ---
 id: 8d5123c8c441eddfaeb5bdef
-title: Implement Bubble Sort
 challengeType: 1
 videoUrl: ''
-localeTitle: 实施冒泡排序
+title: 实施冒泡排序
 ---
 
 ## Description

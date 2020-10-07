@@ -12,6 +12,7 @@ const {
   ENGLISH_VIDEO_CHALLENGE,
   TRANSLATED_CERTIFICATE,
   TRANSLATED_CHALLENGE,
+  TRANSLATED_CHALLENGE_NO_TITLE,
   TRANSLATED_VIDEO_CHALLENGE
   // WRONG_NUM_TESTS_CHALLENGE
 } = require('./__fixtures__/challenge-objects');
@@ -20,6 +21,11 @@ const { SIMPLE_TRANSLATION } = require('./__mocks__/mock-comments');
 const COMBINED_CHALLENGE = mergeChallenges(
   ENGLISH_CHALLENGE,
   TRANSLATED_CHALLENGE
+);
+
+const COMBINED_CHALLENGE_NO_TITLE = mergeChallenges(
+  ENGLISH_CHALLENGE,
+  TRANSLATED_CHALLENGE_NO_TITLE
 );
 
 const COMBINED_CHALLENGE_TWO_SOLUTIONS = mergeChallenges(
@@ -100,10 +106,19 @@ describe('translation parser', () => {
         expect(actualStrings[i]).toBe(expectedStrings[i]);
       }
     });
-    it('takes the localTitle from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.localeTitle).toBe(
-        TRANSLATED_CHALLENGE.localeTitle
-      );
+    it('takes the title from the second challenge', () => {
+      expect(COMBINED_CHALLENGE.title).toBe(TRANSLATED_CHALLENGE.title);
+    });
+
+    // TODO: throw in production?
+    it("takes the first challenge's title if the second is missing", () => {
+      expect(COMBINED_CHALLENGE_NO_TITLE.title).toBe(ENGLISH_CHALLENGE.title);
+    });
+
+    // 'originalTitle' is just used to create the dashedName (which must be
+    // the same in both challenges, but only gets added after parsing)
+    it('creates originalTitle from the first challenge', () => {
+      expect(COMBINED_CHALLENGE.originalTitle).toBe(ENGLISH_CHALLENGE.title);
     });
     // TODO: reinstate this after alpha testing.
     // it('throws an error if the numbers of tests do not match', () => {

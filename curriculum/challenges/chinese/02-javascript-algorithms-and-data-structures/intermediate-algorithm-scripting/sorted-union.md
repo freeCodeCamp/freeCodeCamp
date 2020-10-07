@@ -1,9 +1,8 @@
 ---
 id: a105e963526e7de52b219be9
-title: Sorted Union
 challengeType: 5
 forumTopicId: 16077
-localeTitle: 集合排序
+title: 集合排序
 ---
 
 ## Description

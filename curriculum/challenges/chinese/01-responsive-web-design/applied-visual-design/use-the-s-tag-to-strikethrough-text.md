@@ -1,10 +1,9 @@
 ---
 id: 587d781b367417b2b2512aba
-title: Use the s Tag to Strikethrough Text
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301079
-localeTitle: 使用 s 标签给文本添加删除线
+title: 使用 s 标签给文本添加删除线
 ---
 
 ## Description

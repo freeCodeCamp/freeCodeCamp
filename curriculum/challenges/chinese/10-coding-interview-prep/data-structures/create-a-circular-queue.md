@@ -1,9 +1,8 @@
 ---
 id: 587d8255367417b2b2512c75
-title: Create a Circular Queue
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建循环队列
+title: 创建循环队列
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 587d825c367417b2b2512c8f
-title: Implement Merge Sort
 challengeType: 1
 videoUrl: ''
-localeTitle: 实现合并排序
+title: 实现合并排序
 ---
 
 ## Description

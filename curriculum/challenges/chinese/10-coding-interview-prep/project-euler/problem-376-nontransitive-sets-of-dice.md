@@ -1,9 +1,8 @@
 ---
 id: 5900f4e51000cf542c50fff7
 challengeType: 5
-title: 'Problem 376: Nontransitive sets of dice'
 videoUrl: ''
-localeTitle: 问题376：不可传递的骰子集
+title: 问题376：不可传递的骰子集
 ---
 
 ## Description

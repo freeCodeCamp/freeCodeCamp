@@ -1,9 +1,8 @@
 ---
 id: 5900f39f1000cf542c50feb2
 challengeType: 5
-title: 'Problem 51: Prime digit replacements'
 videoUrl: ''
-localeTitle: 问题51：主要数字替换
+title: 问题51：主要数字替换
 ---
 
 ## Description

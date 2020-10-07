@@ -1,9 +1,8 @@
 ---
 id: 587d7dbc367417b2b2512bb1
-title: Create a Simple JSX Element
 challengeType: 6
 forumTopicId: 301390
-localeTitle: 创建一个简单的 JSX 元素
+title: 创建一个简单的 JSX 元素
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
-title: Vector cross product
 id: 594810f028c0303b75339ad2
 challengeType: 5
 videoUrl: ''
-localeTitle: 矢量交叉产品
+title: 矢量交叉产品
 ---
 
 ## Description

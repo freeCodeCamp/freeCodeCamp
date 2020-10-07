@@ -1,10 +1,9 @@
 ---
 id: 5690307fddb111c6084545d7
-title: Logical Order in If Else Statements
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cwNvMUV'
 forumTopicId: 18228
-localeTitle: if else 语句中的逻辑顺序
+title: if else 语句中的逻辑顺序
 ---
 
 ## Description

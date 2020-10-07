@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036184
-title: Render with an If-Else Condition
 challengeType: 6
 forumTopicId: 301410
-localeTitle: 使用 If-Else 条件进行渲染
+title: 使用 If-Else 条件进行渲染
 ---
 
 ## Description

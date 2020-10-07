@@ -1,10 +1,9 @@
 ---
 id: 567af2437cbaa8c51670a16c
-title: Testing Objects for Properties
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm8Q7Ua'
 forumTopicId: 18324
-localeTitle: 测试对象的属性
+title: 测试对象的属性
 ---
 
 ## Description

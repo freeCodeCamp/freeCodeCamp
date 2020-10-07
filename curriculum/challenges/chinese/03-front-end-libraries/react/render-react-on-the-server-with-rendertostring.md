@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d403618d
-title: Render React on the Server with renderToString
 challengeType: 6
 forumTopicId: 301407
-localeTitle: 用 renderToString 在服务器上渲染 React
+title: 用 renderToString 在服务器上渲染 React
 ---
 
 ## Description

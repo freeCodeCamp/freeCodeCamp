@@ -1,9 +1,8 @@
 ---
 id: 587d7db7367417b2b2512b9e
-title: Match Ending String Patterns
 challengeType: 1
 forumTopicId: 301352
-localeTitle: 匹配字符串的末尾
+title: 匹配字符串的末尾
 ---
 
 ## Description

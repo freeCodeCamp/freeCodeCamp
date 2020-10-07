@@ -1,12 +1,11 @@
 ---
 id: bad87fee1348bd9aedb08845
-title: Responsively Style Radio Buttons
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
 forumTopicId: 18270
-localeTitle: 响应式风格的单选按钮
+title: 响应式风格的单选按钮
 ---
 
 ## Description

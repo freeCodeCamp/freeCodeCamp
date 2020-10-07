@@ -1,9 +1,8 @@
 ---
 id: 5900f3d91000cf542c50feea
 challengeType: 5
-title: 'Problem 107: Minimal network'
 videoUrl: ''
-localeTitle: 问题107：最小网络
+title: 问题107：最小网络
 ---
 
 ## Description

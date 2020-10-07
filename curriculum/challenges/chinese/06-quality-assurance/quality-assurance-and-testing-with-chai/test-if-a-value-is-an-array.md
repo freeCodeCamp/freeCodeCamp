@@ -1,9 +1,8 @@
 ---
 id: 587d824d367417b2b2512c50
-title: Test if a Value is an Array
 challengeType: 2
 forumTopicId: 301600
-localeTitle: 测试某个值是否为数组
+title: 测试某个值是否为数组
 ---
 
 ## Description

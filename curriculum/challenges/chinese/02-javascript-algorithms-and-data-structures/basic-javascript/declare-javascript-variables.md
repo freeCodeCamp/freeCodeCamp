@@ -1,10 +1,9 @@
 ---
 id: bd7123c9c443eddfaeb5bdef
-title: Declare JavaScript Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNanrHq'
 forumTopicId: 17556
-localeTitle: 声明变量
+title: 声明变量
 ---
 
 ## Description

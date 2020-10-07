@@ -1,9 +1,8 @@
 ---
 id: 587d7b7b367417b2b2512b13
-title: Copy an Array with the Spread Operator
 challengeType: 1
 forumTopicId: 301157
-localeTitle: 使用扩展运算符复制数组
+title: 使用扩展运算符复制数组
 ---
 
 ## Description

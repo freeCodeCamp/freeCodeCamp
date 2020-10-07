@@ -1,12 +1,11 @@
 ---
 id: bad87fee1348bd9aeda08845
-title: Responsively Style Checkboxes
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
 forumTopicId: 18269
-localeTitle: 响应式风格的复选框
+title: 响应式风格的复选框
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 8d1323c8c441eddfaeb5bdef
-title: Create a Set Class
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建一个Set类
+title: 创建一个Set类
 ---
 
 ## Description

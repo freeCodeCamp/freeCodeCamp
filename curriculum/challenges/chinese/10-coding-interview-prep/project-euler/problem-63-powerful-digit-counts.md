@@ -1,9 +1,8 @@
 ---
 id: 5900f3ab1000cf542c50febe
 challengeType: 5
-title: 'Problem 63: Powerful digit counts'
 videoUrl: ''
-localeTitle: 问题63：强大的数字计数
+title: 问题63：强大的数字计数
 ---
 
 ## Description

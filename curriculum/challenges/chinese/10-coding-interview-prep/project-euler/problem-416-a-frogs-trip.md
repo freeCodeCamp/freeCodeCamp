@@ -1,9 +1,8 @@
 ---
 id: 5900f50e1000cf542c510020
 challengeType: 5
-title: 'Problem 416: A frog"s trip'
 videoUrl: ''
-localeTitle: 问题416：青蛙的旅行
+title: 问题416：青蛙的旅行
 ---
 
 ## Description

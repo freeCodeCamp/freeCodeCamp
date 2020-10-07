@@ -1,9 +1,8 @@
 ---
 id: 5900f4931000cf542c50ffa4
 challengeType: 5
-title: 'Problem 293: Pseudo-Fortunate Numbers'
 videoUrl: ''
-localeTitle: 问题293：伪幸运数
+title: 问题293：伪幸运数
 ---
 
 ## Description

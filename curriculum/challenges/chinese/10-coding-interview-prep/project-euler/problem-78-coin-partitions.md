@@ -1,9 +1,8 @@
 ---
 id: 5900f3ba1000cf542c50fecd
 challengeType: 5
-title: 'Problem 78: Coin partitions'
 videoUrl: ''
-localeTitle: 问题78：硬币分区
+title: 问题78：硬币分区
 ---
 
 ## Description

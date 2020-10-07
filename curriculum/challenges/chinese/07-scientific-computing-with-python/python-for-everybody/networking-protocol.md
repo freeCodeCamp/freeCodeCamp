@@ -1,6 +1,5 @@
 ---
 id: 5e7b9f0c0b6c005b0e76f072
-title: Networking Protocol
 challengeType: 11
 isHidden: false
 videoId: c6vZGescaSc

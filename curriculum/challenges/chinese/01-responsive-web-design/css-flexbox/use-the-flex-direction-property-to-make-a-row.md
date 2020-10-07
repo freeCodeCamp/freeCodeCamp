@@ -1,10 +1,9 @@
 ---
 id: 587d78ab367417b2b2512af2
-title: Use the flex-direction Property to Make a Row
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cBEkbfJ'
 forumTopicId: 301110
-localeTitle: 使用 flex-direction 属性创建一行
+title: 使用 flex-direction 属性创建一行
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 587d7fab367417b2b2512bd7
-title: Create a Scatterplot with SVG Circles
 challengeType: 6
 forumTopicId: 301484
-localeTitle: 使用 SVG Circles 创建散点图
+title: 使用 SVG Circles 创建散点图
 ---
 
 ## Description

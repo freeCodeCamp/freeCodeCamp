@@ -1,9 +1,8 @@
 ---
 id: 587d824c367417b2b2512c4e
-title: Test if One Value is Below or At Least as Large as Another
 challengeType: 2
 forumTopicId: 301606
-localeTitle: 测试一个值是否小于或等于另一个值
+title: 测试一个值是否小于或等于另一个值
 ---
 
 ## Description

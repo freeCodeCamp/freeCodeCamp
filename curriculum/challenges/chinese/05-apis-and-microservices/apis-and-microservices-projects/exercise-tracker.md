@@ -1,10 +1,9 @@
 ---
 id: 5a8b073d06fa14fcfde687aa
-title: Exercise Tracker
 challengeType: 4
 isHidden: false
 forumTopicId: 301505
-localeTitle: 运动跟踪器
+title: 运动跟踪器
 ---
 
 ## Description

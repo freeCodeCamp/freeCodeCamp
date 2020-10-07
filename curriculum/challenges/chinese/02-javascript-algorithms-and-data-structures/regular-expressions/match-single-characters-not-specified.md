@@ -1,9 +1,8 @@
 ---
 id: 587d7db6367417b2b2512b98
-title: Match Single Characters Not Specified
 challengeType: 1
 forumTopicId: 301358
-localeTitle: 匹配单个未指定的字符
+title: 匹配单个未指定的字符
 ---
 
 ## Description

@@ -1,10 +1,9 @@
 ---
 id: bad87eee1348bd9aede07836
-title: Set the id of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6MEc2'
 forumTopicId: 18279
-localeTitle: 设置元素的 id
+title: 设置元素的 id
 ---
 
 ## Description

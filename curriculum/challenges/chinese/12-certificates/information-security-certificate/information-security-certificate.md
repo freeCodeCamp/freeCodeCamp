@@ -1,10 +1,9 @@
 ---
 id: 5e6021435ac9d0ecd8b94b00
-title: Information Security Certificate
 challengeType: 7
 isHidden: false
 isPrivate: true
-localeTitle: ''
+title: ''
 ---
 
 ## Description

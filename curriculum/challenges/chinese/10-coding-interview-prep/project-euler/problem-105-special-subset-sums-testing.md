@@ -1,9 +1,8 @@
 ---
 id: 5900f3d61000cf542c50fee8
 challengeType: 5
-title: 'Problem 105: Special subset sums: testing'
 videoUrl: ''
-localeTitle: 问题105：特殊子集总和：测试
+title: 问题105：特殊子集总和：测试
 ---
 
 ## Description

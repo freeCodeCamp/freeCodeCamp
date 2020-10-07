@@ -1,9 +1,8 @@
 ---
 id: 587d7fb8367417b2b2512c11
-title: Delete Many Documents with model.remove()
 challengeType: 2
 forumTopicId: 301538
-localeTitle: 使用 model.remove() 删除多个 document
+title: 使用 model.remove() 删除多个 document
 ---
 
 ## Description

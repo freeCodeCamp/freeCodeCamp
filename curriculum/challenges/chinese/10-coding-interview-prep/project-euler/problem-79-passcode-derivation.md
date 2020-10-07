@@ -1,9 +1,8 @@
 ---
 id: 5900f3bb1000cf542c50fece
 challengeType: 5
-title: 'Problem 79: Passcode derivation'
 videoUrl: ''
-localeTitle: 问题79：密码派生
+title: 问题79：密码派生
 ---
 
 ## Description

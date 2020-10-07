@@ -1,10 +1,9 @@
 ---
 id: 587d778b367417b2b2512aa7
-title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030
-localeTitle: 将单选按钮包裹在 fieldset 元素中以获得更好的可访问性
+title: 将单选按钮包裹在 fieldset 元素中以获得更好的可访问性
 ---
 
 ## Description

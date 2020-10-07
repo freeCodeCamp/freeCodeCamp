@@ -1,11 +1,10 @@
 ---
 id: bad87fee1348bd9aed908826
-title: Change the CSS of an Element Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 16776
-localeTitle: 使用 jQuery 更改元素的 CSS
+title: 使用 jQuery 更改元素的 CSS
 ---
 
 ## Description

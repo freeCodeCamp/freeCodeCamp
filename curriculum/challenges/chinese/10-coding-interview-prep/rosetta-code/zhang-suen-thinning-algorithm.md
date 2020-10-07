@@ -1,9 +1,8 @@
 ---
-title: Zhang-Suen thinning algorithm
 id: 594810f028c0303b75339ad7
 challengeType: 5
 videoUrl: ''
-localeTitle: 张素细化算法
+title: 张素细化算法
 ---
 
 ## Description

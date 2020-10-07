@@ -1,9 +1,8 @@
 ---
-title: Compare a list of strings
 id: 596e457071c35c882915b3e4
 challengeType: 5
 videoUrl: ''
-localeTitle: 比较字符串列表
+title: 比较字符串列表
 ---
 
 ## Description

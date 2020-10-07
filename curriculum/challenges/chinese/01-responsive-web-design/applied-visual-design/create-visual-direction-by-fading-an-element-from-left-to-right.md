@@ -1,10 +1,9 @@
 ---
 id: 587d78a7367417b2b2512ae2
-title: Create Visual Direction by Fading an Element from Left to Right
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJqqAE'
 forumTopicId: 301054
-localeTitle: 通过从左到右淡化元素来创建视觉方向
+title: 通过从左到右淡化元素来创建视觉方向
 ---
 
 ## Description

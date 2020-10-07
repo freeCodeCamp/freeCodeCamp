@@ -1,9 +1,8 @@
 ---
 id: 5900f4421000cf542c50ff55
 challengeType: 5
-title: 'Problem 214: Totient Chains'
 videoUrl: ''
-localeTitle: 问题214个欧拉链
+title: 问题214个欧拉链
 ---
 
 ## Description

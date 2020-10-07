@@ -1,9 +1,8 @@
 ---
 id: af4afb223120f7348cdfc9fd
-title: Map the Debris
 challengeType: 5
 forumTopicId: 16021
-localeTitle: 绘制碎片图
+title: 绘制碎片图
 ---
 
 ## Description

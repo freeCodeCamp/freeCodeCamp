@@ -1,9 +1,8 @@
 ---
 id: 5900f3ce1000cf542c50fee0
 challengeType: 5
-title: 'Problem 97: Large non-Mersenne prime'
 videoUrl: ''
-localeTitle: 问题97：大的非梅森素数
+title: 问题97：大的非梅森素数
 ---
 
 ## Description

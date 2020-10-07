@@ -1,9 +1,8 @@
 ---
 id: 5900f4fc1000cf542c51000e
 challengeType: 5
-title: 'Problem 399: Squarefree Fibonacci Numbers'
 videoUrl: ''
-localeTitle: 问题399：无自由斐波纳契数
+title: 问题399：无自由斐波纳契数
 ---
 
 ## Description

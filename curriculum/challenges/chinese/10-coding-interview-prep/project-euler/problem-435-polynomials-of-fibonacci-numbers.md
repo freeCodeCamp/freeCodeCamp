@@ -1,9 +1,8 @@
 ---
 id: 5900f5201000cf542c510032
 challengeType: 5
-title: 'Problem 435: Polynomials of Fibonacci numbers'
 videoUrl: ''
-localeTitle: 问题435：斐波那契数的多项式
+title: 问题435：斐波那契数的多项式
 ---
 
 ## Description

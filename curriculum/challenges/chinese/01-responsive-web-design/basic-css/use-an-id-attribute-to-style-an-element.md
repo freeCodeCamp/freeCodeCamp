@@ -1,10 +1,9 @@
 ---
 id: bad87dee1348bd9aede07836
-title: Use an id Attribute to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
-localeTitle: 使用 id 属性来设定元素的样式
+title: 使用 id 属性来设定元素的样式
 ---
 
 ## Description

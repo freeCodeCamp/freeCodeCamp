@@ -1,9 +1,8 @@
 ---
 id: 5900f3971000cf542c50feaa
 challengeType: 5
-title: 'Problem 43: Sub-string divisibility'
 videoUrl: ''
-localeTitle: 问题43：子串可分性
+title: 问题43：子串可分性
 ---
 
 ## Description

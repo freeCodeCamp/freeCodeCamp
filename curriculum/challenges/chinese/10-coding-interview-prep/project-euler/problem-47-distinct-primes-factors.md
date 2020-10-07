@@ -1,9 +1,8 @@
 ---
 id: 5900f39c1000cf542c50feae
 challengeType: 5
-title: 'Problem 47: Distinct primes factors'
 videoUrl: ''
-localeTitle: 问题47：不同的素数因素
+title: 问题47：不同的素数因素
 ---
 
 ## Description

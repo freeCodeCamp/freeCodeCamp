@@ -1,9 +1,8 @@
 ---
-title: Emirp primes
 id: 599d0ba974141b0f508b37d5
 challengeType: 5
 videoUrl: ''
-localeTitle: Emirp奖金
+title: Emirp奖金
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 587d824d367417b2b2512c53
-title: Test if a String Contains a Substring
 challengeType: 2
 forumTopicId: 301597
-localeTitle: 测试字符串是否包含子字符串
+title: 测试字符串是否包含子字符串
 ---
 
 ## Description

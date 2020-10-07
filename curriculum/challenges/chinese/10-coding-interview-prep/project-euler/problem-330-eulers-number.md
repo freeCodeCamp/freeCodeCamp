@@ -1,9 +1,8 @@
 ---
 id: 5900f4b71000cf542c50ffc9
 challengeType: 5
-title: 'Problem 330: Euler"s Number'
 videoUrl: ''
-localeTitle: 问题330：欧拉数
+title: 问题330：欧拉数
 ---
 
 ## Description

@@ -1,10 +1,9 @@
 ---
 id: 5a94fe6269fb03452672e462
-title: Create Flexible Layouts Using auto-fit
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 forumTopicId: 301127
-localeTitle: 使用 auto-fit 创建弹性布局
+title: 使用 auto-fit 创建弹性布局
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4dd1000cf542c50ffef
 challengeType: 5
-title: 'Problem 368: A Kempner-like series'
 videoUrl: ''
-localeTitle: 问题368：类似肯珀纳的系列
+title: 问题368：类似肯珀纳的系列
 ---
 
 ## Description

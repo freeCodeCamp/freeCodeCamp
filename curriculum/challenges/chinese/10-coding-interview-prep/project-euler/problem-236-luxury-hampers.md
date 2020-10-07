@@ -1,9 +1,8 @@
 ---
 id: 5900f4591000cf542c50ff6b
 challengeType: 5
-title: 'Problem 236: Luxury Hampers'
 videoUrl: ''
-localeTitle: 问题236：豪华礼篮
+title: 问题236：豪华礼篮
 ---
 
 ## Description

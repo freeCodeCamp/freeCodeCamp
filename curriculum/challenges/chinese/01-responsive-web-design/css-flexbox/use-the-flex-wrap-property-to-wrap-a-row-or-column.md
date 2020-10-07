@@ -1,10 +1,9 @@
 ---
 id: 587d78ad367417b2b2512afa
-title: Use the flex-wrap Property to Wrap a Row or Column
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cQv9ZtG'
 forumTopicId: 301114
-localeTitle: 使用 flex-wrap 属性包裹一行或一列
+title: 使用 flex-wrap 属性包裹一行或一列
 ---
 
 ## Description

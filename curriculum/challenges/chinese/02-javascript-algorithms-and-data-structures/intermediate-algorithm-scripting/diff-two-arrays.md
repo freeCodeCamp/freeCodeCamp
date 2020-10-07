@@ -1,9 +1,8 @@
 ---
 id: a5de63ebea8dbee56860f4f2
-title: Diff Two Arrays
 challengeType: 5
 forumTopicId: 16008
-localeTitle: 区分两个数组
+title: 区分两个数组
 ---
 
 ## Description

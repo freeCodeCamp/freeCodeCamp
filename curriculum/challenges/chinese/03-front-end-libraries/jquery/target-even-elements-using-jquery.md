@@ -1,11 +1,10 @@
 ---
 id: bad87fee1348bd9aed008826
-title: Target Even Elements Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18318
-localeTitle: 使用 jQuery 选择偶数元素
+title: 使用 jQuery 选择偶数元素
 ---
 
 ## Description

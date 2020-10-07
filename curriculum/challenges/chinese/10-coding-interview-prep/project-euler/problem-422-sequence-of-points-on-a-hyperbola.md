@@ -1,9 +1,8 @@
 ---
 id: 5900f5131000cf542c510025
 challengeType: 5
-title: 'Problem 422: Sequence of points on a hyperbola'
 videoUrl: ''
-localeTitle: 问题422：双曲线上的点序列
+title: 问题422：双曲线上的点序列
 ---
 
 ## Description

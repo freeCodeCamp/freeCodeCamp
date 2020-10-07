@@ -1,9 +1,8 @@
 ---
-title: Happy numbers
 id: 594810f028c0303b75339ad1
 challengeType: 5
 videoUrl: ''
-localeTitle: 快乐的数字
+title: 快乐的数字
 ---
 
 ## Description

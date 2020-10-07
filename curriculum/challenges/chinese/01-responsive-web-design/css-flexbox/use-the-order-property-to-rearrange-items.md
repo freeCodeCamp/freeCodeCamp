@@ -1,10 +1,9 @@
 ---
 id: 587d78ae367417b2b2512aff
-title: Use the order Property to Rearrange Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
 forumTopicId: 301116
-localeTitle: 使用 order 属性重新排列项目
+title: 使用 order 属性重新排列项目
 ---
 
 ## Description

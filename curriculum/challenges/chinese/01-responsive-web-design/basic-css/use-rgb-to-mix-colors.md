@@ -1,10 +1,9 @@
 ---
 id: bad82fee1348bd9aedf08721
-title: Use RGB to Mix Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24JU6'
 forumTopicId: 18368
-localeTitle: 使用 RGB 混合颜色
+title: 使用 RGB 混合颜色
 ---
 
 ## Description

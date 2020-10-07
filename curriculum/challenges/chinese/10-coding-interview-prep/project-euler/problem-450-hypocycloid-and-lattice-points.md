@@ -1,9 +1,8 @@
 ---
 id: 5900f52e1000cf542c510041
 challengeType: 5
-title: 'Problem 450: Hypocycloid and Lattice points'
 videoUrl: ''
-localeTitle: 问题450：Hypocycloid和Lattice点
+title: 问题450：Hypocycloid和Lattice点
 ---
 
 ## Description

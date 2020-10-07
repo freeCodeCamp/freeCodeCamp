@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08805
-title: Use CSS Selectors to Style Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKMBT2'
 forumTopicId: 18349
-localeTitle: 使用元素选择器来设置元素的样式
+title: 使用元素选择器来设置元素的样式
 ---
 
 ## Description

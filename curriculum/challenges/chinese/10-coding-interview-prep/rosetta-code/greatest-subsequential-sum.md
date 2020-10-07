@@ -1,9 +1,8 @@
 ---
-title: Greatest subsequential sum
 id: 5a23c84252665b21eecc7e84
 challengeType: 5
 videoUrl: ''
-localeTitle: 最重要的后续总和
+title: 最重要的后续总和
 ---
 
 ## Description

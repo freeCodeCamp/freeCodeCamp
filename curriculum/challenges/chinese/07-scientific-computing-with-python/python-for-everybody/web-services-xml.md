@@ -1,6 +1,5 @@
 ---
 id: 5e7b9f0e0b6c005b0e76f07b
-title: 'Web Services: XML'
 challengeType: 11
 isHidden: false
 videoId: _pZ0srbg7So

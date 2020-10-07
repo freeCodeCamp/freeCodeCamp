@@ -1,9 +1,8 @@
 ---
 id: 587d7fa7367417b2b2512bc6
-title: Add Inline Styling to Elements
 challengeType: 6
 forumTopicId: 301475
-localeTitle: 给元素添加内联样式
+title: 给元素添加内联样式
 ---
 
 ## Description

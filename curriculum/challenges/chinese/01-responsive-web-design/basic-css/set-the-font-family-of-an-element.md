@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aede08807
-title: Set the Font Family of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvpCg'
 forumTopicId: 18278
-localeTitle: 设置元素的字体家族
+title: 设置元素的字体家族
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4481000cf542c50ff5b
 challengeType: 5
-title: 'Problem 220: Heighway Dragon'
 videoUrl: ''
-localeTitle: 问题220：高速公路龙
+title: 问题220：高速公路龙
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f40e1000cf542c50ff21
 challengeType: 5
-title: 'Problem 162: Hexadecimal numbers'
 videoUrl: ''
-localeTitle: 问题162：十六进制数
+title: 问题162：十六进制数
 ---
 
 ## Description

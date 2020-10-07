@@ -1,10 +1,9 @@
 ---
 id: 561add10cb82ac38a17213bd
-title: Legacy Full Stack Certificate
 challengeType: 7
 isHidden: false
 isPrivate: true
-localeTitle: ''
+title: ''
 ---
 
 ## Description

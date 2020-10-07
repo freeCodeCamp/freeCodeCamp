@@ -1,9 +1,8 @@
 ---
 id: 587d8256367417b2b2512c78
-title: Adjacency Matrix
 challengeType: 1
 videoUrl: ''
-localeTitle: 邻接矩阵
+title: 邻接矩阵
 ---
 
 ## Description

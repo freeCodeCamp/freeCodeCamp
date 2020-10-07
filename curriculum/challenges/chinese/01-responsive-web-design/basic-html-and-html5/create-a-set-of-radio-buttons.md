@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08834
-title: Create a Set of Radio Buttons
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNWKvuR'
 forumTopicId: 16822
-localeTitle: 创建一组单选按钮
+title: 创建一组单选按钮
 ---
 
 ## Description

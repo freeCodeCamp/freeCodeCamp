@@ -1,6 +1,5 @@
 ---
 id: 5e9a093a74c4063ca6f7c152
-title: Numpy Introduction A
 challengeType: 11
 isHidden: false
 videoId: P-JjV6GBCmk

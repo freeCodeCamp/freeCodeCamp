@@ -1,9 +1,8 @@
 ---
 id: afd15382cdfb22c9efe8b7de
-title: DNA Pairing
 challengeType: 5
 forumTopicId: 16009
-localeTitle: DNA 配对
+title: DNA 配对
 ---
 
 ## Description

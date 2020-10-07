@@ -1,6 +1,5 @@
 ---
 id: 5e9a093a74c4063ca6f7c14d
-title: Data Analysis Example A
 challengeType: 11
 isHidden: false
 videoId: nVAaxZ34khk

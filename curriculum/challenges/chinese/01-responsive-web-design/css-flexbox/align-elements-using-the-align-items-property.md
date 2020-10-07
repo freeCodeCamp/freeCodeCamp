@@ -1,10 +1,9 @@
 ---
 id: 587d78ad367417b2b2512af8
-title: Align Elements Using the align-items Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c8aggtk'
 forumTopicId: 301101
-localeTitle: 使用 align-items 属性对齐元素
+title: 使用 align-items 属性对齐元素
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
-title: Equilibrium index
 id: 5987fd532b954e0f21b5d3f6
 challengeType: 5
 videoUrl: ''
-localeTitle: 均衡指数
+title: 均衡指数
 ---
 
 ## Description

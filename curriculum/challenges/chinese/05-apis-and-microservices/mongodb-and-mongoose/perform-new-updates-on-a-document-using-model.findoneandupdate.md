@@ -1,9 +1,8 @@
 ---
 id: 587d7fb8367417b2b2512c0f
-title: Perform New Updates on a Document Using model.findOneAndUpdate()
 challengeType: 2
 forumTopicId: 301542
-localeTitle: 使用 model.findOneAndUpdate() 对更新 document
+title: 使用 model.findOneAndUpdate() 对更新 document
 ---
 
 ## Description

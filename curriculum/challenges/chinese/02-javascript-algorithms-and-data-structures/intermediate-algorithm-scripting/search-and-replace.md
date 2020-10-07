@@ -1,9 +1,8 @@
 ---
 id: a0b5010f579e69b815e7c5d6
-title: Search and Replace
 challengeType: 5
 forumTopicId: 16045
-localeTitle: 搜索和替换
+title: 搜索和替换
 ---
 
 ## Description

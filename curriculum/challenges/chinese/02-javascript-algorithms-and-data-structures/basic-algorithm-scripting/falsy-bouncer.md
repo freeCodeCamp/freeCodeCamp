@@ -1,9 +1,8 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
-title: Falsy Bouncer
 challengeType: 5
 videoUrl: ''
-localeTitle: Falsy Bouncer
+title: Falsy Bouncer
 ---
 
 ## Description

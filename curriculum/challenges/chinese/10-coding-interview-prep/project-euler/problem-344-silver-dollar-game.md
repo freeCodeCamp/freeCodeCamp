@@ -1,9 +1,8 @@
 ---
 id: 5900f4c51000cf542c50ffd7
 challengeType: 5
-title: 'Problem 344: Silver dollar game'
 videoUrl: ''
-localeTitle: 问题344：银元游戏
+title: 问题344：银元游戏
 ---
 
 ## Description

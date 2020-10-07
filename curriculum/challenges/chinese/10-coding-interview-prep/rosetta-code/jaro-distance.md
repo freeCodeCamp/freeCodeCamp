@@ -1,9 +1,8 @@
 ---
-title: Jaro distance
 id: 5a23c84252665b21eecc7ec2
 challengeType: 5
 videoUrl: ''
-localeTitle: Jaro距离
+title: Jaro距离
 ---
 
 ## Description

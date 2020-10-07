@@ -1,9 +1,8 @@
 ---
 id: 5900f4de1000cf542c50fff1
 challengeType: 5
-title: 'Problem 370: Geometric triangles'
 videoUrl: ''
-localeTitle: 问题370：几何三角形
+title: 问题370：几何三角形
 ---
 
 ## Description

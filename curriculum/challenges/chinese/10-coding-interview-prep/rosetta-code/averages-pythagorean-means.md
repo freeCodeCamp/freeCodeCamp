@@ -1,9 +1,8 @@
 ---
-title: Averages-Pythagorean means
 id: 594d966a1467eb84194f0086
 challengeType: 5
 videoUrl: ''
-localeTitle: 平均值 - 毕达哥拉斯指的是
+title: 平均值 - 毕达哥拉斯指的是
 ---
 
 ## Description

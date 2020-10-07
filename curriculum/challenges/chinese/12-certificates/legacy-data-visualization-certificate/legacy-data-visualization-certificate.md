@@ -1,10 +1,9 @@
 ---
 id: 561add10cb82ac39a17513bc
-title: Legacy Data Visualization Certificate
 challengeType: 7
 isHidden: false
 isPrivate: true
-localeTitle: 旧数据可视化证书
+title: 旧数据可视化证书
 ---
 
 ## Description

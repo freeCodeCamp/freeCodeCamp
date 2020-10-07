@@ -1,10 +1,9 @@
 ---
 id: 587d78b1367417b2b2512b09
-title: Make an Image Responsive
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-localeTitle: 使图片根据设备尺寸自如响应
+title: 使图片根据设备尺寸自如响应
 ---
 
 ## Description

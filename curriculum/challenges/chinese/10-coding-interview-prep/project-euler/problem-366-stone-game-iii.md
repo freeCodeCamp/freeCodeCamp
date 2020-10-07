@@ -1,9 +1,8 @@
 ---
 id: 5900f4da1000cf542c50ffed
 challengeType: 5
-title: 'Problem 366: Stone Game III'
 videoUrl: ''
-localeTitle: 问题366：石头游戏III
+title: 问题366：石头游戏III
 ---
 
 ## Description

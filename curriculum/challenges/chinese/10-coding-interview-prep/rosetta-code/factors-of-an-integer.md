@@ -1,9 +1,8 @@
 ---
-title: Factors of an integer
 id: 597f1e7fbc206f0e9ba95dc4
 challengeType: 5
 videoUrl: ''
-localeTitle: 整数因子
+title: 整数因子
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
-title: 24 game
 id: 5951e88f64ebf159166a1176
 challengeType: 5
 videoUrl: ''
-localeTitle: 24场比赛
+title: 24场比赛
 ---
 
 ## Description

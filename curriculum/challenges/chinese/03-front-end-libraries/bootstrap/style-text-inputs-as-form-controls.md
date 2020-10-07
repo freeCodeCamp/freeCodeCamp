@@ -1,12 +1,11 @@
 ---
 id: bad87fee1348bd9aed908845
-title: Style Text Inputs as Form Controls
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
 forumTopicId: 18312
-localeTitle: 给表单控件的输入框添加样式
+title: 给表单控件的输入框添加样式
 ---
 
 ## Description

@@ -1,11 +1,10 @@
 ---
 id: bad87fee1348bd9aed918626
-title: Remove Classes from an Element with jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18264
-localeTitle: 使用 jQuery 从元素中移除 class
+title: 使用 jQuery 从元素中移除 class
 ---
 
 ## Description

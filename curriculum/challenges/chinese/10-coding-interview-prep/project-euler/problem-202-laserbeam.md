@@ -1,9 +1,8 @@
 ---
 id: 5900f4371000cf542c50ff49
 challengeType: 5
-title: 'Problem 202: Laserbeam'
 videoUrl: ''
-localeTitle: 问题202：Laserbeam
+title: 问题202：Laserbeam
 ---
 
 ## Description

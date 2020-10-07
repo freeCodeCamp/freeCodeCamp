@@ -1,10 +1,9 @@
 ---
 id: 5a90375238fddaf9a66b5d3b
-title: Align an Item Vertically using align-self
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cmzd4fz'
 forumTopicId: 301123
-localeTitle: 使用 align-self 垂直对齐项目
+title: 使用 align-self 垂直对齐项目
 ---
 
 ## Description

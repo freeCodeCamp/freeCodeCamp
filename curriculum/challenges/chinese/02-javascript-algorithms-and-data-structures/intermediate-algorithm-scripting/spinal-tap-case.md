@@ -1,9 +1,8 @@
 ---
 id: a103376db3ba46b2d50db289
-title: Spinal Tap Case
 challengeType: 5
 forumTopicId: 16078
-localeTitle: 短线连接格式
+title: 短线连接格式
 ---
 
 ## Description

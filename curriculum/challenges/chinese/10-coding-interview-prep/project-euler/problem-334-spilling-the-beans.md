@@ -1,9 +1,8 @@
 ---
 id: 5900f4ba1000cf542c50ffcd
 challengeType: 5
-title: 'Problem 334: Spilling the beans'
 videoUrl: ''
-localeTitle: 问题334：溢出豆子
+title: 问题334：溢出豆子
 ---
 
 ## Description

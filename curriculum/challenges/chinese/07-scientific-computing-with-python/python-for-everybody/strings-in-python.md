@@ -1,6 +1,5 @@
 ---
 id: 5e7b9f070b6c005b0e76f060
-title: Strings in Python
 challengeType: 11
 isHidden: false
 videoId: LYZj207fKpQ

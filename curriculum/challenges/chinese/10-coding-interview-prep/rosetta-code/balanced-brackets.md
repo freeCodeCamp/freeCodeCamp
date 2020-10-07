@@ -1,9 +1,8 @@
 ---
-title: Balanced brackets
 id: 594dc6c729e5700999302b45
 challengeType: 5
 videoUrl: ''
-localeTitle: 平衡括号
+title: 平衡括号
 ---
 
 ## Description

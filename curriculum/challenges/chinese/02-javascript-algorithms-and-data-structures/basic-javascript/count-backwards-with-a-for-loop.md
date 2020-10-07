@@ -1,10 +1,9 @@
 ---
 id: 56105e7b514f539506016a5e
-title: Count Backwards With a For Loop
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
 forumTopicId: 16808
-localeTitle: 使用 For 循环反向遍历数组
+title: 使用 For 循环反向遍历数组
 ---
 
 ## Description

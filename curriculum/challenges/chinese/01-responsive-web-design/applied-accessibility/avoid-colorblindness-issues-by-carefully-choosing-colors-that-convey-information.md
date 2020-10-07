@@ -1,10 +1,9 @@
 ---
 id: 587d778f367417b2b2512aad
-title: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437as3'
 forumTopicId: 301011
-localeTitle: 考虑色盲用户的需求仔细选择传达信息的颜色
+title: 考虑色盲用户的需求仔细选择传达信息的颜色
 ---
 
 ## Description

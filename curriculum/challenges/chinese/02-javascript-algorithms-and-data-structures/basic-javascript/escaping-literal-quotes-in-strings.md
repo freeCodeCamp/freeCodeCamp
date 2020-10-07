@@ -1,10 +1,9 @@
 ---
 id: 56533eb9ac21ba0edf2244b5
-title: Escaping Literal Quotes in Strings
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvgSr'
 forumTopicId: 17568
-localeTitle: 转义字符串中的引号
+title: 转义字符串中的引号
 ---
 
 ## Description

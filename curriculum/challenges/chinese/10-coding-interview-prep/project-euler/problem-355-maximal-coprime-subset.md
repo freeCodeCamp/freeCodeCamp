@@ -1,9 +1,8 @@
 ---
 id: 5900f4d01000cf542c50ffe2
 challengeType: 5
-title: 'Problem 355: Maximal coprime subset'
 videoUrl: ''
-localeTitle: 问题355：最大互质子集
+title: 问题355：最大互质子集
 ---
 
 ## Description

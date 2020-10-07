@@ -1,9 +1,8 @@
 ---
-title: Date format
 id: 59669d08d75b60482359409f
 challengeType: 5
 videoUrl: ''
-localeTitle: 日期格式
+title: 日期格式
 ---
 
 ## Description

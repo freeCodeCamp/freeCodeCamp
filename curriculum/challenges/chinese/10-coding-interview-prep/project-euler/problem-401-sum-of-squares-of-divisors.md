@@ -1,9 +1,8 @@
 ---
 id: 5900f4fd1000cf542c51000f
 challengeType: 5
-title: 'Problem 401: Sum of squares of divisors'
 videoUrl: ''
-localeTitle: 问题401：除数的平方和
+title: 问题401：除数的平方和
 ---
 
 ## Description
