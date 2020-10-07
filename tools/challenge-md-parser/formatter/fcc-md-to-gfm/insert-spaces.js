@@ -253,4 +253,5 @@ exports.insertSpaces = plugin;
 exports.escapeMd = escapeMd;
 exports.getParagraphs = getParagraphs;
 exports.wrapBareUrls = wrapBareUrls;
+exports.correctUrl = correctUrl;
 exports.htmlVisitor = htmlVisitor;

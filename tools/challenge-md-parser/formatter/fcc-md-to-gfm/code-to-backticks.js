@@ -27,11 +27,15 @@ function rawHtml(h, node) {
   };
 }
 
-function plugin() {
+function plugin({ pre = false }) {
   return transformer;
 
   function transformer(tree) {
-    visit(tree, 'paragraph', visitor);
+    if (pre) {
+      visit(tree, 'html', preVisitor);
+    } else {
+      visit(tree, 'paragraph', visitor);
+    }
 
     function visitor(node, id, parent) {
       const hast = toHast(node, { allowDangerousHtml: true });
@@ -52,6 +56,19 @@ function plugin() {
       parent.children[id] = toMdast(paragraph, {
         handlers: {
           code: codeToInline,
+          dfn: rawHtml,
+          sup: rawHtml,
+          sub: rawHtml,
+          button: rawHtml
+        }
+      });
+    }
+
+    function preVisitor(node, id, parent) {
+      const paragraph = raw(toHast(node, { allowDangerousHtml: true }));
+      parent.children[id] = toMdast(paragraph, {
+        handlers: {
+          pre: codeToInline,
           dfn: rawHtml,
           sup: rawHtml,
           sub: rawHtml,

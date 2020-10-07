@@ -14,11 +14,12 @@ const insertSpacesProcessor = unified()
   .use(frontmatter, ['yaml']);
 // ^ Prevents the frontmatter being modified
 
-const codeToBackticksProcessor = unified()
-  .use(markdown)
-  .use(codeToBackticks)
-  .use(stringify, { fences: true, emphasis: '*' })
-  .use(frontmatter, ['yaml']);
+const getCodeToBackticksProcessor = pre =>
+  unified()
+    .use(markdown)
+    .use(codeToBackticks, { pre })
+    .use(stringify, { fences: true, emphasis: '*' })
+    .use(frontmatter, ['yaml']);
 
 // Despite entities defaulting to false, some will still remain, including
 // &lt;
@@ -29,9 +30,13 @@ const prettifyProcessor = unified()
 
 exports.insertSpaces = createProcessor(insertSpacesProcessor);
 
-exports.codeToBackticks = createProcessor(codeToBackticksProcessor);
+exports.codeToBackticks = createProcessor(getCodeToBackticksProcessor());
+
+exports.getCodeToBackticksSync = () => text =>
+  getCodeToBackticksProcessor(true).processSync(text);
 
 exports.prettify = createProcessor(prettifyProcessor);
+exports.prettifySync = prettifyProcessor.processSync;
 
 function createProcessor(processor) {
   return (msg, isFile = false) => {

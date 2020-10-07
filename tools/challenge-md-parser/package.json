@@ -14,7 +14,11 @@
     "hast-util-to-mdast": "^6.0.0",
     "mdast-builder": "^1.1.1",
     "parse-entities": "^1.2.2",
-    "unist-util-find": "^1.0.1"
+    "unist-util-find": "^1.0.1",
+    "unist-util-find-all-after": "^3.0.1",
+    "unist-util-find-all-between": "^2.1.0",
+    "unist-util-is": "^4.0.2",
+    "unist-util-remove": "^2.0.0"
   },
   "dependencies": {
     "hast-util-select": "^2.1.0",
