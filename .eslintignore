@@ -5,3 +5,4 @@ client/public/**
 api-server/public/**
 api-server/lib/**
 tools/dashboard/**
+**/
