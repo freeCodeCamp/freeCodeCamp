@@ -15,9 +15,9 @@
 ---
 
 - **中文社区贡献指南**
-  - [成为专栏作者](i18n/chinese/news-author-application.md)
-  - [文章翻译计划](i18n/chinese/news-translations.md)
-  - [视频翻译计划](i18n/chinese/video-translations.md)
+  - [成为专栏作者](/i18n/chinese/news-author-application.md)
+  - [文章翻译计划](/i18n/chinese/news-translations.md)
+  - [视频翻译计划](/i18n/chinese/video-translations.md)
 
 ---
 
