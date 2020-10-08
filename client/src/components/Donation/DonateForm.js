@@ -174,7 +174,7 @@ class DonateForm extends Component {
     } else {
       donationBtnLabel = `Confirm your donation of ${this.getFormatedAmountLabel(
         donationAmount
-      )} ${donationDuration === 'month' ? 'per month' : 'per year'}`;
+      )} ${donationDuration === 'month' ? ' / month' : ' / year'}`;
     }
     return donationBtnLabel;
   }
@@ -375,13 +375,12 @@ class DonateForm extends Component {
       addDonation,
       postChargeStripe
     } = this.props;
-    const donationPlan = `$${donationAmount / 100} / ${donationDuration}`;
 
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>Confirm your donation of {donationPlan} with PayPal:</b>
+          <b>{this.getDonationButtonLabel()} with PayPal:</b>
           <Spacer />
           <PaypalButton
             addDonation={addDonation}
@@ -401,9 +400,7 @@ class DonateForm extends Component {
                 defaultTheme={defaultTheme}
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
-                getDonationButtonLabel={() =>
-                  `Confirm your donation of ${donationPlan}`
-                }
+                getDonationButtonLabel={this.getDonationButtonLabel}
                 handleProcessing={handleProcessing}
                 onDonationStateChange={this.onDonationStateChange}
                 postChargeStripe={postChargeStripe}
