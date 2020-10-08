@@ -37,21 +37,20 @@ export class PaypalButton extends Component {
   handleApproval = (data, isSubscription) => {
     const { amount, duration } = this.state;
     const { skipAddDonation = false } = this.props;
+
     // Skip the api if user is not signed in or if its a one-time donation
-    if (skipAddDonation || !isSubscription) {
-      this.props.onDonationStateChange({
-        processing: false,
-        success: true,
-        error: data.error ? data.error : null
-      });
-    } else {
-      this.props.handleProcessing(
-        duration,
-        amount,
-        'Paypal payment submission'
-      );
+    if (!skipAddDonation || isSubscription) {
       this.props.addDonation(data);
     }
+
+    this.props.handleProcessing(duration, amount, 'Paypal payment submission');
+
+    // Show success anytime because the payment has gone through paypal
+    this.props.onDonationStateChange({
+      processing: false,
+      success: true,
+      error: data.error ? data.error : null
+    });
   };
 
   render() {

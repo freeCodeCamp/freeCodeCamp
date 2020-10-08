@@ -140,11 +140,10 @@ class DonateForm extends Component {
   }
 
   onDonationStateChange(donationState) {
-    this.props.updateDonationFormState(donationState);
-
     // scroll to top
     window.scrollTo(0, 0);
 
+    this.props.updateDonationFormState(donationState);
     // send donation made on the donate page to related news article
     if (donationState.success && !this.props.isMinimalForm) {
       this.props.navigate(donationUrls.successUrl);
