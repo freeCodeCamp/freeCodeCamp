@@ -2,7 +2,6 @@
 id: 5d792537cb3a5cd6baca5e1a
 title: Part 85
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

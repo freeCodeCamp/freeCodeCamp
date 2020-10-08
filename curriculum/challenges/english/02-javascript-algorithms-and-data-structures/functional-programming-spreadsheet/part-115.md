@@ -2,7 +2,6 @@
 id: 5d792538e2a8d20cc580d481
 title: Part 115
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

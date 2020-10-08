@@ -2,7 +2,6 @@
 id: 5d5ab57f07f328a948d398d6
 title: Part 10
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

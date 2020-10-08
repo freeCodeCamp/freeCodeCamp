@@ -2,7 +2,6 @@
 id: 5f344fad8bf01691e71a30eb
 title: Part 11
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

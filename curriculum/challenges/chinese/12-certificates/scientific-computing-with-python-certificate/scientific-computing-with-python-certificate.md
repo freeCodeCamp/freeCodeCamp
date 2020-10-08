@@ -1,7 +1,6 @@
 ---
 id: 5e44431b903586ffb414c951
 challengeType: 7
-isHidden: false
 isPrivate: true
 title: ''
 ---

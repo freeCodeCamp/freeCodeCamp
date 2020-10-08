@@ -2,7 +2,6 @@
 id: 5d792534c3d26890ac1484d4
 title: Part 31
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

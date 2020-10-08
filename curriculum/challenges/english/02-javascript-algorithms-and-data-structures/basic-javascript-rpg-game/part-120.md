@@ -2,7 +2,6 @@
 id: 5dbac08e6ef5fe3a704f848f
 title: Part 120
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

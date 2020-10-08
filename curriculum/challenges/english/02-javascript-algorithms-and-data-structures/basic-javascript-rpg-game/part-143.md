@@ -2,7 +2,6 @@
 id: 5dbfced07736e5ee7d235544
 title: Part 143
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

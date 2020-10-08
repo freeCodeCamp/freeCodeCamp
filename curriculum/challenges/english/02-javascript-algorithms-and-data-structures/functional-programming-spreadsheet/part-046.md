@@ -2,7 +2,6 @@
 id: 5d792535f1f7adf77de5831d
 title: Part 46
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -2,7 +2,6 @@
 id: 5dbfdb737736e5ee7d235546
 title: Part 145
 challengeType: 0
-isHidden: true
 ---
 
 ## Description
