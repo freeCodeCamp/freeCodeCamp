@@ -37,7 +37,7 @@
     "gatsby-link": "^2.4.14",
     "gatsby-plugin-advanced-sitemap": "^1.5.6",
     "gatsby-plugin-create-client-paths": "^2.3.11",
-    "gatsby-plugin-manifest": "^2.4.29",
+    "gatsby-plugin-manifest": "^2.4.34",
     "gatsby-plugin-postcss": "^2.3.12",
     "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
