@@ -74,7 +74,7 @@
     "redux-saga": "^1.1.1",
     "reselect": "^3.0.1",
     "rxjs": "^6.6.3",
-    "sanitize-html": "^1.27.4",
+    "sanitize-html": "^2.1.0",
     "sass.js": "^0.11.0",
     "store": "^2.0.12",
     "typescript": "^3.8.3",
