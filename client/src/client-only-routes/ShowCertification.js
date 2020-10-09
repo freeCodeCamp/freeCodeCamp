@@ -127,7 +127,7 @@ const ShowCertification = props => {
 
   const hideDonationSection = () => {
     setIsDonationDisplayed(false);
-    setIsDonationClosed(false);
+    setIsDonationClosed(true);
   };
 
   const handleProcessing = (
