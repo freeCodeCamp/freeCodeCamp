@@ -2,7 +2,6 @@
 id: 5ef9b03c81a63668521804db
 title: Part 40
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

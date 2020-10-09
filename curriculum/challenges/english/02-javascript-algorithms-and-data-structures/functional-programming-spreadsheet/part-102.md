@@ -2,7 +2,6 @@
 id: 5d7925385b74f69642e1fea5
 title: Part 102
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

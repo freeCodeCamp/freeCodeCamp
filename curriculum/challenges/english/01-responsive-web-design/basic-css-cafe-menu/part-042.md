@@ -2,7 +2,6 @@
 id: 5f47633757ae3469f2d33d2e
 title: Part 42
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

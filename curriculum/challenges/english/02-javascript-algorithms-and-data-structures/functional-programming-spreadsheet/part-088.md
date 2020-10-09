@@ -2,7 +2,6 @@
 id: 5d792537c80984dfa5501b96
 title: Part 88
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

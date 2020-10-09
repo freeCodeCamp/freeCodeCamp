@@ -1,7 +1,6 @@
 ---
 id: 561acd10cb82ac38a17513bc
 challengeType: 7
-isHidden: false
 isPrivate: true
 title: 前端库证书
 ---

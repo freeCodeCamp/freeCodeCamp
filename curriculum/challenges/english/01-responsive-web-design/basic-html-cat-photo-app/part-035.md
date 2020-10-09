@@ -2,7 +2,6 @@
 id: 5ef9b03c81a63668521804d7
 title: Part 35
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

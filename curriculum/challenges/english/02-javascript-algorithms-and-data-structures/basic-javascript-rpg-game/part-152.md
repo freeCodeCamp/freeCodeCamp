@@ -2,7 +2,6 @@
 id: 5dbffe887736e5ee7d23554d
 title: Part 152
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

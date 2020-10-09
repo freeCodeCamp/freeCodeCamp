@@ -1,7 +1,6 @@
 ---
 id: 561add10cb82ac38a17523bc
 challengeType: 7
-isHidden: false
 isPrivate: true
 title: API和微服务证书
 ---

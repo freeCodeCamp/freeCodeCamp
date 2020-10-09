@@ -2,7 +2,6 @@
 id: 5f3ef6e0eaa7da26e3d34d78
 title: Part 48
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

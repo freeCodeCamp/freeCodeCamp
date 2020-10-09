@@ -2,7 +2,6 @@
 id: 5f46fc57528aa1c4b5ea7c2e
 title: Part 70
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -1,7 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bdff
 challengeType: 4
-isHidden: false
 forumTopicId: 301507
 title: 请求头解析器
 ---

@@ -2,7 +2,6 @@
 id: 5d822fd413a79914d39e98d9
 title: Part 17
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -1,7 +1,6 @@
 ---
 id: bd7158d8c443edefaeb5bd0f
 challengeType: 4
-isHidden: false
 forumTopicId: 301506
 title: 文件元数据
 ---

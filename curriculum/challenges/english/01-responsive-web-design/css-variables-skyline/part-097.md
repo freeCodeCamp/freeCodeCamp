@@ -2,7 +2,6 @@
 id: 5d822fd413a79914d39e992a
 title: Part 97
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

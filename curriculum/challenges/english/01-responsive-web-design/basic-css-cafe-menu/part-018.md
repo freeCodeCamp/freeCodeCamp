@@ -2,7 +2,6 @@
 id: 5f3477cbcb6ba47918c1da92
 title: Part 18
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -2,7 +2,6 @@
 id: 5d7925380ea76d55b2c97d7b
 title: Part 103
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -2,7 +2,6 @@
 id: 5d7925353d2c505eafd50cd9
 title: Part 47
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

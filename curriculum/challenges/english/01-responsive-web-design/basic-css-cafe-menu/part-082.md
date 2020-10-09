@@ -2,7 +2,6 @@
 id: 5f46e7a4750dd05b5a673920
 title: Part 82
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

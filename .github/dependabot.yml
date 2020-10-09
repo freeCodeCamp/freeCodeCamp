@@ -1,0 +1,39 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 20
+    labels:
+      - 'bot: dependencies'
+      - 'platform: root'
+
+  - package-ecosystem: npm
+    directory: '/client'
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 20
+    labels:
+      - 'bot: dependencies'
+      - 'platform: client'
+
+  - package-ecosystem: npm
+    directory: '/api-server'
+    schedule:
+      interval: 'weekly'
+      day: 'sunday'
+    open-pull-requests-limit: 20
+    labels:
+      - 'bot: dependencies'
+      - 'platform: api'
+
+  - package-ecosystem: npm
+    directory: '/curriculum'
+    schedule:
+      interval: 'weekly'
+      day: 'sunday'
+    open-pull-requests-limit: 20
+    labels:
+      - 'bot: dependencies'
+      - 'scope: learn'

@@ -1,0 +1,15 @@
+name: Housekeeping
+
+on:
+  pull_request
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: 'Merge Minor SemVer Updates'
+        uses: ahmadnassri/action-dependabot-auto-merge@master
+        with:
+          target: minor
+          github-token: ${{ secrets.AUTO_MERGE_TOKEN }}

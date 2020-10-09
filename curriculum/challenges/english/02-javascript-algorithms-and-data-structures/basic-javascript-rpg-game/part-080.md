@@ -2,7 +2,6 @@
 id: 5d71b58b848f6914ab89897d
 title: Part 80
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

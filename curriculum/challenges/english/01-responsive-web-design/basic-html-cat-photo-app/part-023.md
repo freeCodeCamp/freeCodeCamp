@@ -2,7 +2,6 @@
 id: 5dfb6a35eacea3f48c6300b4
 title: Part 23
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

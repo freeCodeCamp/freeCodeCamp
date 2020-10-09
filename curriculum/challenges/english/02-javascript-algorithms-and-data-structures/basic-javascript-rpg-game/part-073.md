@@ -2,7 +2,6 @@
 id: 5d708ab5066dac7142a6d79b
 title: Part 73
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

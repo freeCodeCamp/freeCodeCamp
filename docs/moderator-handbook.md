@@ -23,7 +23,7 @@ freeCodeCamp is an inclusive community, and we need to keep it that way.
 
 We have a single code of conduct that governs our entire community. The fewer the rules, the easier they are to remember. You can read those rules and commit them to memory [here](https://code-of-conduct.freecodecamp.org).
 
-# Moderating GitHub
+## Moderating GitHub
 
 Moderators have the ability to close issues and accept or close pull requests.
 
@@ -32,11 +32,11 @@ Moderators have two primary responsibilities regarding GitHub:
 1. QA'ing and merging pull requests
 2. Evaluating and responding to issues
 
-## Moderating Pull Requests
+### Moderating Pull Requests
 
 Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's repository. It's important that we perform Quality Assurance (QA) on pull requests before we decide whether to merge them or close them.
 
-### Types of Pull Requests
+#### Types of Pull Requests
 
 1. **Challenge Instruction Edits** These are changes to the text of challenges - the Description, Instructions, or Test Text. You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these, because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Also, contributors may try to add links to resources to the challenges. You can close these pull requests and reply to them with this:
 
@@ -50,7 +50,7 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
 3. **Codebase Changes** These code edits change the functionality of the freeCodeCamp platform itself. Sometimes contributors try to make changes without much explanation, but for code changes we need to make sure there's a genuine need for the change. So these pull requests should reference an existing GitHub issue where the reasons for the change are discussed. Then you can open the pull request on your computer and test them out locally. After you've done so, if the changes look good, don't merge them quite yet. You can comment on the pull request saying "LGTM", then mention @raisedadead so he can take a final look.
 
-### How to merge or close pull requests
+#### How to merge or close pull requests
 
 First of all, when you choose a pull request to QA, you should assign yourself to it. You can do this by clicking the "assign yourself" link below the "assignees" part on the right hand column of GitHub's interface.
 
@@ -64,7 +64,7 @@ If the pull request looks ready to merge (and doesn't require approval from @rai
 
 You should then comment on the pull request, thanking the contributor in your own personal way.
 
-If the author of the pull request is a "first time contributor" you should also congratulate them on their first merged pull request to the repository. You can look at the upper right-hand corner of the PR's body to determine a first-time contributor.  It will show `First-time contributor` as shown below:
+If the author of the pull request is a "first time contributor" you should also congratulate them on their first merged pull request to the repository. You can look at the upper right-hand corner of the PR's body to determine a first-time contributor. It will show `First-time contributor` as shown below:
 
 ![Copy_edits_for_Java_arrays_article_by_karentobo_%C2%B7_Pull_Request__20615_%C2%B7_freeCodeCamp_freeCodeCamp|690x281](https://i.imgur.com/dTQMjGM.png)
 
@@ -84,11 +84,11 @@ In both of these situations, you should go ahead and close their pull request an
 
 If you need a second opinion on a pull request, go ahead and leave your comments on the pull request, then add the "discussing" label to the pull request.
 
-## Moderating GitHub Issues
+### Moderating GitHub Issues
 
 freeCodeCamp is an active open source project. We get new issues every day, all of which need to be triaged and labeled.
 
-### Types of GitHub Issues
+#### Types of GitHub Issues
 
 1. **Code Help Requests**, which people have mistakenly created GitHub issues for. If someone is asking for help, paste the following message, then close the issue.
 
@@ -96,10 +96,10 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
    >
    > This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the \*\*"Help"\*\* button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
    >
-   > If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened. 
-   > 
+   > If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
+   >
    > Thank you and happy coding.
-   
+
 2. **Bug or Clarification issues** Try to reproduce the bug yourself if you can. If not, ask them for the steps to reproduce the bug, and whether they have any screenshots, videos, or additional details that can help you reproduce the issue. Once you can reproduce the issue - or at least confirm it's a legit issue - label it `confirmed`. Then:
 
 - If it's a simple change to an existing challenge, label as `first timers only`, otherwise label as `help wanted`. Use other labels as appropriate.
@@ -122,15 +122,15 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
    >
    > If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
 
-### Closing Stale, Outdated, Inactive Issues and Pull Requests
+#### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
-- Stale Issues or PRs are those that have not seen any activity from the OP for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes.  These can be closed in an automated/bot script or by the moderators themselves.
+- Stale Issues or PRs are those that have not seen any activity from the OP for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes. These can be closed in an automated/bot script or by the moderators themselves.
 
 - Activity is defined as: Comments requesting an update on the PR and triages like `status: update needed` label etc.
 
 - If the OP asks for additional assistance or even time, the above can be relaxed and revisited after a response is given. In any case the mods should use their best judgement to resolve the outstanding PR's status.
 
-### Other guidelines for Moderators on GitHub
+#### Other guidelines for Moderators on GitHub
 
 Though you will have write access to freeCodeCamp's repository, **you should never push code directly to freeCodeCamp repositories**. All code should enter freeCodeCamp's codebase in the form of a pull request from a fork of the repository.
 
@@ -138,7 +138,7 @@ Also, you should never accept your own PRs. They must be QA'd by another moderat
 
 If you notice anyone breaking the [code of conduct](https://code-of-conduct.freecodecamp.org) on GitHub issues, or opening pull requests with malicious content or code, email dev@freecodecamp.org with a link to the offending pull request and we can consider banning them from freeCodeCamp's GitHub organization entirely.
 
-# Moderating the Forum
+## Moderating the Forum
 
 As a Moderator, you help keep our community an enjoyable place for anyone to learn and get help. You will deal with flagged posts and handle spam, off-topic, and other inappropriate conversations.
 
@@ -184,7 +184,7 @@ Please rejoin once you have reached at least 13 years of age.
 Thank you for understanding.
 ```
 
-# Moderating Facebook
+## Moderating Facebook
 
 If you see anything that seems to break our [Code of Conduct](https://code-of-conduct.freecodecamp.org/), you should delete it immediately.
 
@@ -192,7 +192,7 @@ Sometimes people will post things that they think are funny. They don't realize 
 
 But if it is an egregious offense that can't reasonably be attributed to a cultural difference or a misunderstanding of the English language, then you should strongly consider blocking the member from the Facebook group.
 
-# Moderating Discord
+## Moderating Discord
 
 Here's how moderators deal with violations of our [Code of Conduct](https://code-of-conduct.freecodecamp.org/) on Discord:
 
@@ -280,7 +280,7 @@ In all other situations - even situations where the code of conduct is violated 
 10. **Temporarily inactive**
     If you're not going to be active as a Moderator for a while due to vacation, illness or any other reason, make sure to let the others know in the #mod-chat channel. This is so we know if we can count on you to be regularly active in the server or not.
 
-# How to become a moderator
+## How to become a moderator
 
 If you are helping people in the community consistently over time, our Moderator Team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
 
@@ -288,7 +288,7 @@ If you are approved, we will add you to our Moderator Teams on [GitHub](https://
 
 > [!NOTE] > **For GitHub:** After you've been accepted as a moderator, you will receive a Github repository invitation. You'll need to head over towards [freeCodeCamp GitHub Organisation Invitation](https://github.com/orgs/freeCodeCamp/invitation) to be able to accept the invitation. This is required for us to be able to give you write access on some of our repositories.
 
-# How we retire inactive moderators
+## How we retire inactive moderators
 
 Please note that we will frequently remove mods whom we think are inactive. When we do this we will send the following message:
 
@@ -296,17 +296,17 @@ Please note that we will frequently remove mods whom we think are inactive. When
 
 > If you think we did this in error, or once you're ready to come back and contribute more, just reply to this message letting me know.
 
-# How our Contributors room works
+## How our Contributors room works
 
 Anyone is welcome in the [Contributors room on our Discord](https://discord.gg/KVUmVXA). It is the designated chat room for moderators and other campers who are contributing to our community in any number of ways, including through study groups.
 
 Our assumption is that contributors will read anything in this room that directly mentions them with an `@username`. Everything else is optional. But feel free to read anything anyone posts in there and interact.
 
-# Dealing with solicitors
+## Dealing with solicitors
 
 You may be approached by organizations who want to partner or co-brand with freeCodeCamp in some way. Once you realize that this is what they're after, please stop talking to them and tell them to email quincy@freecodecamp.org. He gets proposals like this all the time and is in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
-# Dealing with (mental) health inquiries
+## Dealing with (mental) health inquiries
 
 You may come across situations where users are seeking medical advice or are dealing with mental health issues and are looking for support. As a matter of policy, you should avoid talking privately about these matters. Should the situation at some point reflect back to fCC, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help. As difficult as it sometimes can be, avoid giving any tips or advice other than pointing the user in the direction of professional help!
 
@@ -317,19 +317,19 @@ If this happens on Discord: Suspend the user. This is not to punish them! Suspen
 - Other team members can pitch in, should you be uncomfortable dealing with the situation yourself
 
 > [!NOTE]
->Suspending a user automatically gives them a message about reading our Code of Conduct. Make sure you inform the user that you Suspended them to give them some privacy and that they're not being punished. This is very important! We absolutely want to avoid giving users the idea that they're being punished for reaching out to get help!
+> Suspending a user automatically gives them a message about reading our Code of Conduct. Make sure you inform the user that you Suspended them to give them some privacy and that they're not being punished. This is very important! We absolutely want to avoid giving users the idea that they're being punished for reaching out to get help!
 
 If you believe the user is capable of rejoining the community, right click on the private channel and copy the ID. Put the following message in #mod-log:
 
 > Reference medical advice: <channel ID> <username>
-  
+
 After that, you can remove the Suspension from the user as you normally do.
 
 Helpful URLs:
 
 http://www.suicide.org/international-suicide-hotlines.html
 
-# A note on free speech
+## A note on free speech
 
 Sometimes people will defend something offensive or incendiary that they said as "free speech."
 
@@ -338,3 +338,131 @@ This XKCD comic perfectly summarizes most communities' thoughts on free speech. 
 <div align="center"><img src='https://aws1.discourse-cdn.com/freecodecamp/original/3X/4/3/43a8b2eafe4c8622e02838f66f1dc6227de32c70.png' width="400" height="400" /></div>
 
 Thanks for reading this, and thanks for helping the developer community!
+
+## Using Reply Templates
+
+These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues.
+
+> You can make your own with GitHub's built-in [**Saved replies**](https://github.com/settings/replies/) feature or use the ones below.
+
+### Thank you
+
+```markdown
+Thank you for your contribution to the page! 👍
+We are happy to accept these changes and look forward to future contributions. 🎉
+```
+
+### Thank you and congrats
+
+> For thanking and encouraging first-time contributors.
+
+```markdown
+Hi @username. Congrats on your first pull request (PR)! 🎉
+
+Thank you for your contribution to the page! 👍
+We are happy to accept these changes and look forward to future contributions. 📝
+```
+
+### Build Error
+
+```markdown
+Hey @username
+
+We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
+
+Once you resolve these issues, We will be able to review your PR and merge it. 😊
+
+---
+
+> Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
+>
+> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+```
+
+### Syncing Fork
+
+> When PR is not up to date with the `master` branch.
+
+````markdown
+Hey @username
+
+We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
+
+```bash
+Error: ENOTDIR: not a directory, open 'src/pages/java/data-abstraction/index.md'
+```
+
+This particular error was not caused by your file but was an old error caused by merging faulty code to the `master` branch. It has since been resolved.
+
+To pass the build, you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
+
+Using the command line, you can do this in three easy steps:
+
+```bash
+git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
+
+git fetch upstream
+
+git pull upstream master
+```
+
+If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
+
+Once you sync your fork and pass the build, We will be able to review your PR and merge it. 😊
+
+---
+
+> Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
+>
+> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+````
+
+### Merge Conflicts
+
+> When PR has merge conflicts that need to be resolved.¹
+
+```markdown
+Hey @username
+
+We would love to be able to merge your changes but it looks like you have some merge conflicts. ⚠️
+
+Once you resolve these conflicts, We will be able to review your PR and merge it. 😊
+
+---
+
+> If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
+>
+> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+```
+
+¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
+
+### Duplicate
+
+> When PR is repetitive or a duplicate.
+
+```markdown
+Hey @username
+
+It seems that similar changes have already been accepted earlier for this article you are editing, sorry about that. 😓
+
+If you feel you have more to add, please feel free to open up a new PR.
+
+Thanks again! 😊
+
+---
+
+> If you have any questions, feel free to reach out through [Gitter](https://gitter.im/FreeCodeCamp/Contributors) or by commenting below. 💬
+```
+
+### Closing invalid pull requests
+
+> When PR is invalid.
+
+```markdown
+Hey @username
+
+You have not added any content, We will be closing this PR and marking it as `invalid`. 😓️
+
+Feel free to open another PR though! 👍
+```

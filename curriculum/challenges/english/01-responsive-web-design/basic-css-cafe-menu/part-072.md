@@ -2,7 +2,6 @@
 id: 5f46ede1ff8fec5ba656b44c
 title: Part 72
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

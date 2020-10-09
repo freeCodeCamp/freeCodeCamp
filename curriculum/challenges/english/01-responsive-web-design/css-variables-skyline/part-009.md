@@ -2,7 +2,6 @@
 id: 5d822fd413a79914d39e98d1
 title: Part 9
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

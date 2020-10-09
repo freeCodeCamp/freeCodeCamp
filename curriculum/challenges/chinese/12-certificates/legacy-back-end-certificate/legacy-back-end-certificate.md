@@ -1,7 +1,6 @@
 ---
 id: 660add10cb82ac38a17513be
 challengeType: 7
-isHidden: false
 isPrivate: true
 title: 旧版后端证书
 ---
