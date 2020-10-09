@@ -232,7 +232,7 @@ The following is an example of code:
 
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
-- Use double quotes where applicable
+- Use single-quotes where applicable
 
 **Note:** The equivalent _MarkDown_ should be used, where applicable, in place of _HTML_ tags.
 
