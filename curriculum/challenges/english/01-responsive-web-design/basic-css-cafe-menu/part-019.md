@@ -2,7 +2,6 @@
 id: 5f3477cb303c5cb61b43aa9b
 title: Part 19
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

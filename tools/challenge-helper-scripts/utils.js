@@ -39,7 +39,6 @@ ${challengeSeed.trim()}
 id: ${ObjectID.generate()}
 title: Part ${stepNum}
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

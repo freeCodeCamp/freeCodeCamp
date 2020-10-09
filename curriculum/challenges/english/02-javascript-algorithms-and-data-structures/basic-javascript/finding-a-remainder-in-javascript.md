@@ -31,7 +31,7 @@ tests:
   - text: The value of <code>remainder</code> should be <code>2</code>
     testString: assert(remainder === 2);
   - text: You should use the <code>%</code> operator
-    testString: assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code));
+    testString: assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
 
 ```
 

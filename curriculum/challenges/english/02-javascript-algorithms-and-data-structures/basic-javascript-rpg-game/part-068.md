@@ -2,7 +2,6 @@
 id: 5d6f9a4c7c812010bf3327dd
 title: Part 68
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

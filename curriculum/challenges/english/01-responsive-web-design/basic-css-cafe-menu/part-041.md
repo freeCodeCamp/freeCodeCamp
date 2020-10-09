@@ -2,7 +2,6 @@
 id: 5f3cade9993019e26313fa8e
 title: Part 41
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

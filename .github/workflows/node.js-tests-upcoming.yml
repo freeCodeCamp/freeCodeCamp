@@ -1,4 +1,4 @@
-name: Node.js CI (Next)
+name: Node.js CI - Test Upcoming
 on:
   push:
     branches:
@@ -7,9 +7,8 @@ on:
       - upcoming-**
   schedule:
     # run this Action every 14 days
-    - cron: '0 * */14 * *'
+    - cron: "0 * */14 * *"
   workflow_dispatch:
-
 
 jobs:
   lint:
@@ -43,7 +42,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
+          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          cat .env
 
       - name: Lint Source Files
         run: |
@@ -54,7 +56,7 @@ jobs:
   test:
     name: Test
     needs: lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     strategy:
       matrix:
@@ -83,9 +85,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: Set Environment variables
-        run: | 
+        run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
+          cat .env
 
       - name: Install Dependencies
         run: |

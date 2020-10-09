@@ -2,7 +2,6 @@
 id: 5dbbaeb56ef5fe3a704f849a
 title: Part 132
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

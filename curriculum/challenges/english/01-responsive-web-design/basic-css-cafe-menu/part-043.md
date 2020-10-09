@@ -2,7 +2,6 @@
 id: 5f3cade99dda4e6071a85dfd
 title: Part 43
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -2,7 +2,6 @@
 id: 5f3ef6e0e9629bad967cd71e
 title: Part 54
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

@@ -2,7 +2,6 @@
 id: 5d822fd413a79914d39e98dd
 title: Part 21
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

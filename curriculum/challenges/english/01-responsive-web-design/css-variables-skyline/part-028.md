@@ -2,7 +2,6 @@
 id: 5d822fd413a79914d39e98e4
 title: Part 28
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

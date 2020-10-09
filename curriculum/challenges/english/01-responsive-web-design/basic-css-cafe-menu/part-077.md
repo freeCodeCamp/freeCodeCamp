@@ -2,7 +2,6 @@
 id: 5f45b45d099f3e621fbbb256
 title: Part 77
 challengeType: 0
-isHidden: true
 ---
 
 ## Description
