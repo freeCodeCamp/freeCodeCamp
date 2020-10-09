@@ -30,7 +30,7 @@
     "date-fns": "^1.30.1",
     "entities": "^1.1.2",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-adapter-react-16": "^1.15.5",
     "final-form": "^4.20.1",
     "gatsby": "^2.24.60",
     "gatsby-cli": "^2.12.97",
