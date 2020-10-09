@@ -6,8 +6,7 @@ updates:
       interval: daily
     open-pull-requests-limit: 20
     labels:
-      - 'bot: dependencies'
-      - 'platform: root'
+      - 'dependabot'
 
   - package-ecosystem: npm
     directory: '/client'
@@ -15,7 +14,7 @@ updates:
       interval: daily
     open-pull-requests-limit: 20
     labels:
-      - 'bot: dependencies'
+      - 'dependabot'
       - 'platform: client'
 
   - package-ecosystem: npm
@@ -25,7 +24,7 @@ updates:
       day: 'sunday'
     open-pull-requests-limit: 20
     labels:
-      - 'bot: dependencies'
+      - 'dependabot'
       - 'platform: api'
 
   - package-ecosystem: npm
@@ -35,5 +34,5 @@ updates:
       day: 'sunday'
     open-pull-requests-limit: 20
     labels:
-      - 'bot: dependencies'
+      - 'dependabot'
       - 'scope: learn'
