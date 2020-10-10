@@ -51,7 +51,7 @@
     "nodemailer-ses-transport": "^1.5.1",
     "normalize-url": "^1.3.1",
     "normalizr": "^2.2.1",
-    "passport": "^0.4.0",
+    "passport": "^0.4.1",
     "passport-auth0": "^1.3.3",
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
