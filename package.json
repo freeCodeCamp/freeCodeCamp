@@ -74,7 +74,7 @@
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^2.0.1",
     "execa": "^4.0.3",
-    "faker": "^4.1.0",
+    "faker": "^5.1.0",
     "gray-matter": "^4.0.2",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
