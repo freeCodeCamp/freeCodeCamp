@@ -108,7 +108,7 @@
     "babel-plugin-transform-imports": "^1.5.1",
     "chokidar": "^2.1.5",
     "copy-webpack-plugin": "^5.1.1",
-    "jest": "^24.9.0",
+    "jest": "^26.5.2",
     "jest-dom": "^3.5.0",
     "monaco-editor-webpack-plugin": "^1.9.0",
     "react-test-renderer": "^16.10.2",
