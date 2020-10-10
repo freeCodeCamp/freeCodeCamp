@@ -60,7 +60,7 @@
     "@freecodecamp/eslint-config": "^2.0.2",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
-    "cypress": "^4.11.0",
+    "cypress": "^5.3.0",
     "debug": "^4.2.0",
     "docsify-cli": "^4.4.1",
     "dotenv": "^6.2.0",
