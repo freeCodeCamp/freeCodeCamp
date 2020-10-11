@@ -74,7 +74,6 @@
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^2.0.1",
     "execa": "^4.0.3",
-    "faker": "^4.1.0",
     "gray-matter": "^4.0.2",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
@@ -88,11 +87,9 @@
     "prettier": "^1.18.2",
     "prismjs": "^1.21.0",
     "readdirp-walk": "^1.7.0",
-    "shortid": "^2.2.15",
     "shx": "^0.3.2",
     "sinon": "^7.4.1",
     "sinon-express-mock": "^2.2.1",
-    "slugg": "^1.2.1",
     "start-server-and-test": "^1.11.5"
   },
   "lint-staged": {
