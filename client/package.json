@@ -53,7 +53,7 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-final-form": "^6.5.1",
-    "react-ga": "^2.7.0",
+    "react-ga": "^3.1.2",
     "react-helmet": "^6.1.0",
     "react-hotkeys": "^2.0.0",
     "react-instantsearch-dom": "^6.7.0",
