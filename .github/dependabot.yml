@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: npm
     directory: '/client'
     schedule:
-      interval: daily
+      interval: 'weekly'
     open-pull-requests-limit: 20
     labels:
       - 'dependabot'
