@@ -61,17 +61,17 @@
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
     "cypress": "^4.11.0",
-    "debug": "^4.1.1",
+    "debug": "^4.2.0",
     "docsify-cli": "^4.4.1",
     "dotenv": "^6.2.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^2.0.1",
     "execa": "^4.0.3",
     "faker": "^4.1.0",
@@ -93,7 +93,7 @@
     "sinon": "^7.4.1",
     "sinon-express-mock": "^2.2.1",
     "slugg": "^1.2.1",
-    "start-server-and-test": "^1.11.3"
+    "start-server-and-test": "^1.11.5"
   },
   "lint-staged": {
     "linters": {
