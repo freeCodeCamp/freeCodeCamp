@@ -48,7 +48,7 @@
     "lodash": "^4.17.20",
     "monaco-editor": "^0.20.0",
     "nanoid": "^1.2.2",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.22.0",
     "query-string": "^6.13.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
