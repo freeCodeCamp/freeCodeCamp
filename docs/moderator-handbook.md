@@ -462,7 +462,9 @@ Thanks again! 😊
 ```markdown
 Hey @username
 
-You have not added any content, We will be closing this PR and marking it as `invalid`. 😓️
+Thank you for opening this pull request.
 
-Feel free to open another PR though! 👍
+This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
+
+Thank you and happy coding.
 ```
