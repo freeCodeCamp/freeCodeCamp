@@ -59,7 +59,7 @@
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",
     "redux-saga": "^0.16.2",
-    "reselect": "^3.0.1",
+    "reselect": "^4.0.0",
     "rss-parser": "^3.9.0",
     "rx": "^4.1.0",
     "shortid": "^2.2.15",
