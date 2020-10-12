@@ -23,8 +23,8 @@ will serve the string 'Response String'.
 
 ## Instructions
 <section id='instructions'>
-Use the <code>app.get()</code> method to serve the string "Hello Express" to GET requests matching the <code>/</code> (root) path.
-<strong>Note:</strong> Be sure that your code works by looking at the logs, then see the results in the preview if you are using Repl.it.
+Use the <code>app.get()</code> method to serve the string "Hello Express" to GET requests matching the <code>/</code> (root) path. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Repl.it.
+<strong>Note:</strong> All the code for these lessons should be added in between the few lines of code we have started you off with.
 </section>
 
 ## Tests
