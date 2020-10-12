@@ -58,6 +58,6 @@
     "readdirp-walk": "^1.7.0",
     "rx": "^4.1.0",
     "string-similarity": "^4.0.2",
-    "validator": "^10.4.0"
+    "validator": "^13.1.17"
   }
 }
