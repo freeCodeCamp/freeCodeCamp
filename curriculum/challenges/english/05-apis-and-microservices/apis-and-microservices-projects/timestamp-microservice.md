@@ -22,22 +22,22 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I can provide my own project, not the example URL.
+  - text: You should provide your own project, not the example URL.
     testString: |
       getUserInput => {
         assert(!/.*\/timestamp-microservice\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
-  - text: 'It should handle a valid date, and return the correct unix timestamp'
+  - text: 'A request to `/api/timestamp/<valid_date>` should return a JSON object with a `unix` key that is a Unix timestamp of the input date'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp/2016-12-25'').then(data => { assert.equal(data.unix, 1482624000000, ''Should be a valid unix timestamp''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 'It should handle a valid date, and return the correct UTC string'
+  - text: 'A request to `/api/timestamp/<valid_date>` should return a JSON object with a `utc` key that is a string of the input date in the format: `Thu, 01 Jan 1970 00:00:00 GMT`'
     testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/api/timestamp/2016-12-25'').then(data => { assert.equal(data.utc, ''Sun, 25 Dec 2016 00:00:00 GMT'', ''Should be a valid UTC date string''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 'It should handle a valid unix date, and return the correct unix timestamp'
+  - text: 'Your project should handle a valid Unix date, and return the correct Unix timestamp'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp/1482624000000'').then(data => { assert.equal(data.unix, 1482624000000) ;  }, xhr => { throw new Error(xhr.responseText); })'
-  - text: It should return the expected error message for an invalid date
+  - text: "Your project should return the JSON object, `{ error: 'Invalid Date' }`, if an invalid date is input"
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp/this-is-not-a-date'').then(data => { assert.equal(data.error.toLowerCase(), ''invalid date'');}, xhr => { throw new Error(xhr.responseText); })'
-  - text: 'It should handle an empty date parameter, and return the current time in unix format'
+  - text: 'An empty date parameter should return the current time in a JSON object with a `unix` key'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp'').then(data => { var now = Date.now(); assert.approximately(data.unix, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })'
-  - text: 'It should handle an empty date parameter, and return the current time in UTC format'
+  - text: 'An empty date parameter should return the current time in a JSON object with a `utc` key'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp'').then(data => { var now = Date.now(); var serverTime = (new Date(data.utc)).getTime(); assert.approximately(serverTime, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })'
 
 ```
