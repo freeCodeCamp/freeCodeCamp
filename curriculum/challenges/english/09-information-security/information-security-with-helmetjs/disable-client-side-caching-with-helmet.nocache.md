@@ -14,6 +14,7 @@ If you are releasing an update for your website, and you want the users to alway
 ## Instructions
 <section id='instructions'>
 
+Use the `helmet.noCache()` method on your server.
 </section>
 
 ## Tests

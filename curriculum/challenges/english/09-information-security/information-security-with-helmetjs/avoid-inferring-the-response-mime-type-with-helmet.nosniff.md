@@ -14,6 +14,7 @@ Browsers can use content or MIME sniffing to adapt to different datatypes coming
 ## Instructions
 <section id='instructions'>
 
+Use the `helmet.noSniff()` method on your server.
 </section>
 
 ## Tests
