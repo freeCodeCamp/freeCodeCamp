@@ -6,15 +6,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
-  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "jest": "^24.9.0"
-  },
   "dependencies": {
     "hast-util-select": "^2.1.0",
     "hast-util-to-html": "^4.0.1",
