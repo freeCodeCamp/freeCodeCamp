@@ -107,7 +107,7 @@
     "autoprefixer": "^9.8.6",
     "babel-plugin-transform-imports": "^1.5.1",
     "chokidar": "^2.1.5",
-    "copy-webpack-plugin": "^5.1.1",
+    "copy-webpack-plugin": "^5.1.2",
     "jest": "^24.9.0",
     "jest-dom": "^3.5.0",
     "monaco-editor-webpack-plugin": "^1.9.0",
