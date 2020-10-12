@@ -8,12 +8,20 @@ forumTopicId: 301571
 ## Description
 <section id='description'>
 Build a full stack JavaScript app that is functionally similar to this: <a href="https://personal-library--freecodecamp.repl.co/" target="_blank">https://personal-library--freecodecamp.repl.co/</a>.
-Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but must be publicly visible for our testing.
+Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but must be publicly visible for our testing.  
+<br><br>
 Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp/boilerplate-project-library/">this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-library/'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
 </section>
 
 ## Instructions
 <section id='instructions'>
+
+1. ADD YOUR MongoDB connection string to `.env` without quotes as db<br>
+    Example: `DB=mongodb://admin:pass@1234.mlab.com:1234/fccpersonallib`
+2. SET NODE_ENV to `test` without quotes
+3. You need to create all routes within `routes/api.js`
+4. You will create all unit tests in `tests/1_unit-tests.js`
+5. You will create all functional tests in `tests/2_functional-tests.js`
 
 </section>
 
