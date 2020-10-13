@@ -220,7 +220,8 @@ Use <code>parseInt</code> to convert the variable <code>realNumber</code> into a
 ```
 - References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
 - Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
-  
+- Whitespace matters in Markdown, so we recommend that you make it visible in your editor.  
+
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
