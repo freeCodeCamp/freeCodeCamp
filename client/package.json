@@ -106,7 +106,7 @@
     "@testing-library/react": "^11.0.4",
     "autoprefixer": "^9.8.6",
     "babel-plugin-transform-imports": "^1.5.1",
-    "chokidar": "^2.1.5",
+    "chokidar": "^3.4.2",
     "copy-webpack-plugin": "^5.1.2",
     "jest": "^24.9.0",
     "monaco-editor-webpack-plugin": "^1.9.0",
