@@ -1,5 +1,5 @@
 ---
-id: 5f46e8284aae155c83015dee
+id: 5f45b25e7ec2405f166b9de1
 title: Part 83
 challengeType: 0
 ---
@@ -7,9 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-The menu looks good, but other than the coffee beans background image, it is mainly just text.
+You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue; }`.
 
-Under the `Coffees` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
+Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
 
 </section>
 
@@ -48,9 +48,7 @@ tests:
       <hr>
       <main>
         <section>
-          --fcc-editable-region--
           <h2>Coffees</h2>
-          --fcc-editable-region--
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -88,7 +86,7 @@ tests:
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p class="address">123 Free Code Camp Drive</p>
+        <p>123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
@@ -108,8 +106,6 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
 
 h2 {
@@ -170,25 +166,13 @@ footer {
   font-size: 14px;
 }
 
-.address {
-  margin-bottom: 5px;
-}
-
 a {
   color: black;
 }
 
-a:visited {
-  color: black;
-}
+--fcc-editable-region--
 
-a:hover {
-  color: brown;
-}
-
-a:active {
-  color: brown;
-}
+--fcc-editable-region--
 ```
 
 </div>

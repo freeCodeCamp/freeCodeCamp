@@ -1,5 +1,5 @@
 ---
-id: 5f45a66d4a2b0453301e5a26
+id: 5f459cf202c2a3472fae6a9f
 title: Part 73
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
+Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
+
+Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
 
 </section>
 
@@ -79,7 +81,6 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -99,7 +100,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -127,15 +127,13 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
+  height: 3px;
   background-color: brown;
   border-color: brown;
 }
-
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -143,9 +141,6 @@ h1, h2 {
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -157,12 +152,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
 </div>

@@ -1,5 +1,5 @@
 ---
-id: 5f45a5a7c49a8251f0bdb527
+id: 5f3ef6e01f288a026d709587
 title: Part 69
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Using the same style selector in the previous step, make the font size of the items and prices by using a value of `18px`.
+You can use an `hr` element to display a divider between sections of different content.
+
+First, add an `hr` element between the first `header` element and the `main` element.
 
 </section>
 
@@ -39,11 +41,11 @@ tests:
   </head>
   <body>
     <div class="menu">
+      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -79,7 +81,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
+      --editable-region-marker--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -99,7 +101,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -127,23 +128,13 @@ h1, h2, p {
   max-width: 500px;
 }
 
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
-}
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
---fcc-editable-region--
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
---fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;

@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-By now it is easy to see all the text is centered inside the `div` element. The white space on the top and left sides of the `div` element will be dealt with in a later step.
-
-Currently, the width of the `div` element is specified in pixels (`px`). Change the `width` property's value to be `80%`, so that the element's width is 80% of the `body` element's width.
+Now it's easy to see that the text is centered inside the `div` element. Currently, the width of the `div` element is specified in pixels (`px`). Change the `width` property's value to be `80%`, to make it is 80% the width of its parent element (`body`).
 
 </section>
 

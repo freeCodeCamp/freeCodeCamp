@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e050279c7a4a7101d3
+id: 5f3ef6e0819d4f23ca7285e6
 title: Part 49
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
+Add an empty `article` element under the `Desserts` heading. Give it a `class` attribute with the value `item`.
 
 </section>
 
@@ -63,19 +63,9 @@ tests:
           </article>
         </section>
         <section>
+          --fcc-editable-region--
           <h2>Desserts</h2>
-          <article class="item">
-            <p class="dessert">Donut</p><p class="price">1.50</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
-          </article>
+          --fcc-editable-region--
         </section>
       </main>
     </div>
@@ -96,22 +86,18 @@ h1, h2, p {
   text-align: center;
 }
 
---fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
-.flavor, .dessert {
+.flavor {
   text-align: left;
   width: 75%;
 }

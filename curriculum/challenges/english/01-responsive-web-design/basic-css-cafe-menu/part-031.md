@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-The `article` element you added is commonly found inside `section` elements when you plan on having other informational elements that are grouped.
-
-Go ahead nested two `p` elements inside your `article` element. The text for the first `p` element should be `French Vanilla` and the text for the second `p` element should be `3.00`.
+`article` elements commonly contain multiple elements that have related information. In this case, it will contain a coffee flavor and a price for that flavor. Nest two `p` elements inside your `article` element. The first one's text should be `French Vanilla`, and the second's text `3.00`.
 
 </section>
 

@@ -1,13 +1,16 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
-title: Part 80
+id: 5f475bb508746c16c9431d42
+title: Part 92
 challengeType: 0
+isHidden: true
 ---
 
 ## Description
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+The image you added is not centered horizontally like the `Coffees` heading above it.  `img` elements are "like" inline elements.
+
+To make the image behave like heading elements (which are block-level), create an `img` type selector and use the value `block` for the `display` property and use the applicable `margin-left` and `margin-right` values to center it horizontally.
 
 </section>
 
@@ -47,6 +50,7 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
+          <img src="https://tinyurl.com/cafe-coffee-fcc" alt="coffee icon"/>
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -80,10 +84,11 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p>123 Free Code Camp Drive</p>
+        <p class="address">123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
@@ -103,6 +108,8 @@ body {
 
 h1 {
   font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -126,6 +133,10 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 hr {
   height: 2px;
   background-color: brown;
@@ -144,7 +155,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -157,9 +168,31 @@ h1, h2 {
   width: 25%
 }
 
---fcc-editable-region--
+/* FOOTER */
 
---fcc-editable-region--
+footer {
+  font-size: 14px;
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: brown;
+}
+
+a:active {
+  color: brown;
+}
 ```
 
 </div>

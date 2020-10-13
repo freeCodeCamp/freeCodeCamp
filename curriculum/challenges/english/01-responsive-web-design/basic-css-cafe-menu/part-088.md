@@ -1,13 +1,14 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
-title: Part 80
+id: 5f46e270702a8456a664f0df
+title: Part 88
 challengeType: 0
+isHidden: true
 ---
 
 ## Description
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`.
 
 </section>
 
@@ -80,6 +81,7 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -101,9 +103,12 @@ body {
   padding: 20px;
 }
 
+--fcc-editable-region--
 h1 {
   font-size: 40px;
+  margin-top: 0;
 }
+--fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -144,7 +149,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -157,9 +162,27 @@ h1, h2 {
   width: 25%
 }
 
---fcc-editable-region--
+/* FOOTER */
 
---fcc-editable-region--
+footer {
+  font-size: 14px;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: brown;
+}
+
+a:active {
+  color: brown;
+}
 ```
 
 </div>

@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0b431cc215bb16f55
+id: 5f3ef6e05473f91f948724ab
 title: Part 60
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Add a second `p` element below the one with the link and give it the text `123 Free Code Camp Drive`.
+You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
+
+Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`.  This is a fairly common font that is very readable.
 
 </section>
 
@@ -41,7 +43,7 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
       <main>
         <section>
@@ -78,13 +80,6 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        --fcc-editable-region--
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        --fcc-editable-region--
-      </footer>
     </div>
   </body>
 <html>
@@ -95,22 +90,11 @@ tests:
 <div id='css-seed'>
 
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
-}
+--fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
@@ -123,10 +107,6 @@ h1, h2, p {
   margin-right: auto;
   padding: 20px;
   max-width: 500px;
-}
-
-h1, h2 {
-  font-family: Impact, serif;
 }
 
 .item p {

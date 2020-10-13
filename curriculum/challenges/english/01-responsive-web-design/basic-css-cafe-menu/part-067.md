@@ -1,5 +1,5 @@
 ---
-id: 5f45a05977e2fa49d9119437
+id: 5f3ef6e0a81099d9a697b550
 title: Part 67
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
+Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
 
 </section>
 
@@ -26,6 +26,7 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
 <div id='html-seed'>
 
 ```html
@@ -43,7 +44,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -79,13 +79,10 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
+      --fcc-editable-region--
       <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -96,12 +93,10 @@ tests:
 <div id='css-seed'>
 
 ```css
---fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
 }
---fcc-editable-region--
 
 h1 {
   font-size: 40px;
@@ -126,12 +121,6 @@ h1, h2, p {
   margin-right: auto;
   padding: 20px;
   max-width: 500px;
-}
-
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
 }
 
 h1, h2 {

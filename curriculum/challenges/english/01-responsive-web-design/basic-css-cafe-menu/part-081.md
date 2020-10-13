@@ -1,5 +1,5 @@
 ---
-id: 5f46e36e745ead58487aabf2
+id: 5f45a66d4a2b0453301e5a26
 title: Part 81
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
-
-To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
+Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
 
 </section>
 
@@ -106,8 +104,6 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
 
 h2 {
@@ -164,29 +160,9 @@ h1, h2 {
 
 /* FOOTER */
 
-footer {
-  font-size: 14px;
-}
-
 --fcc-editable-region--
 
 --fcc-editable-region--
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  color: brown;
-}
-
-a:active {
-  color: brown;
-}
 ```
 
 </div>

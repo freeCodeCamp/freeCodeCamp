@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e07276f782bb46b93d
+id: 5f3ef6e04559b939080db057
 title: Part 58
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Add a `footer` element below the `main` element, where you can some additional information.
+Since all 4 sides of the menu have the same internal spacing, go ahead and delete the four properties and use a single `padding` property with the value `20px`.
 
 </section>
 
@@ -41,9 +41,8 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -79,7 +78,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -92,37 +90,24 @@ tests:
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
 }
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  max-width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-
-h1, h2 {
-  font-family: Impact, serif;
-}
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

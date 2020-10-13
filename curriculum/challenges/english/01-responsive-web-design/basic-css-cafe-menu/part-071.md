@@ -1,5 +1,5 @@
 ---
-id: 5f4701b942c824109626c3d8
+id: 5f459225127805351a6ad057
 title: Part 71
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Now add the `bottom-line` class to the second `hr` element so the styling is applied.
+Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
 
 </section>
 
@@ -79,9 +79,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
-      <hr>
-      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -101,7 +98,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -129,15 +125,11 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
+  height: 3px;
 }
-
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -145,9 +137,6 @@ h1, h2 {
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
