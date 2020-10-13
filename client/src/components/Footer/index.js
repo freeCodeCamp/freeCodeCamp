@@ -294,7 +294,7 @@ function Footer() {
         </div>
         <div className='footer-buttom'>
           <div className='col-header'>Our Nonprofit</div>
-          <div className='footer-divder'></div>
+          <div className='footer-divder' />
           <div className='our-nonprofit'>
             <Link
               external={false}

@@ -29,7 +29,7 @@ class CertificationLayout extends Component {
 
     return (
       <Fragment>
-        <Helmet bodyAttributes={{ class: 'light-palette' }}></Helmet>
+        <Helmet bodyAttributes={{ class: 'light-palette' }} />
         {children}
       </Fragment>
     );
