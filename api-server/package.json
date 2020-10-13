@@ -58,7 +58,7 @@
     "query-string": "^6.13.5",
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",
-    "redux-saga": "^0.16.2",
+    "redux-saga": "^1.1.3",
     "reselect": "^3.0.1",
     "rss-parser": "^3.9.0",
     "rx": "^4.1.0",
