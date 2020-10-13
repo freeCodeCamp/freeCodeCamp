@@ -35,7 +35,7 @@ tests:
         assert.isTrue(!!data.ok, 'The mongo stats are not what expected');
         assert.equal(data.n, 2, 'The number of items affected is not what expected');
         assert.equal(data.count, 0, 'the db items count is not what expected');
-        }, xhr => { throw new Error(xhr.responseText); })'
+        }, xhr => { throw new Error(xhr.responseText); })
 ```
 
 </section>
