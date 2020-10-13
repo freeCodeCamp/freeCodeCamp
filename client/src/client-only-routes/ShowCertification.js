@@ -34,7 +34,7 @@ const propTypes = {
     certName: PropTypes.string,
     certTitle: PropTypes.string,
     completionTime: PropTypes.number,
-    date: PropTypes.string
+    date: PropTypes.number
   }),
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
@@ -193,14 +193,14 @@ class ShowCertification extends Component {
     }
 
     const {
-      date: issueDate,
+      date,
       name: userFullName,
       username,
       certTitle,
       completionTime
     } = cert;
 
-    const certDate = new Date(issueDate);
+    const certDate = new Date(date);
     const certYear = certDate.getFullYear();
     const certMonth = certDate.getMonth();
     const certURL = `https://freecodecamp.org${pathname}`;
@@ -282,9 +282,9 @@ class ShowCertification extends Component {
                 </div>
               </Col>
               <Col md={7} sm={12}>
-                <div className='issue-date'>
+                <div data-cy='issue-date' className='issue-date'>
                   Issued&nbsp;
-                  <strong>{format(certDate, 'MMMM D, YYYY')}</strong>
+                  <strong>{format(certDate, 'MMMM d, y')}</strong>
                 </div>
               </Col>
             </header>
