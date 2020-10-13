@@ -14,3 +14,6 @@ indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.mdx]
+trim_trailing_whitespace = false
