@@ -42,6 +42,7 @@ tests:
   </head>
   <body>
     <div class="menu">
+      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
@@ -81,6 +82,7 @@ tests:
           </article>
         </section>
       </main>
+      --editable-region-marker--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
