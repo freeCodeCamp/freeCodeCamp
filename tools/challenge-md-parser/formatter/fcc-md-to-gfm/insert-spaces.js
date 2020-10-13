@@ -230,6 +230,15 @@ function htmlVisitor(node) {
 
     node.value = sectionFromTemplate(section, sectionContent, closingTag);
   }
+
+  // If there is still a closing tag here, it should be seperated from the rest
+  // of the html, so that it will be parsed as a distinct html element. This
+  // will be important when we convert to mdx.
+  const hasClosingTag = /<\/section>\s*$/.test(node.value);
+
+  if (hasClosingTag) {
+    node.value = node.value.replace(/<\/section>\s*$/, '\n\n</section>\n');
+  }
 }
 
 function plugin() {

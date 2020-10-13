@@ -21,12 +21,13 @@ Sequence <big>$S$</big> starts:
 Create two functions named <code>ffr</code> and <code>ffs</code>  that when given <code>n</code> return <code>R(n)</code> or <code>S(n)</code> respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
 No maximum value for <code>n</code> should be assumed.
 <strong>References</strong>
+
 <ul>
   <li>
-    Sloane's <a href="https://oeis.org/A005228" target="_blank">A005228</a> and <a href="https://oeis.org/A030124" target="_blank">A030124</a>.
+    Sloane's <a href='https://oeis.org/A005228' target='_blank'>A005228</a> and <a href='https://oeis.org/A030124' target='_blank'>A030124</a>.
   </li>
   <li>
-    Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" target="_blank">Hofstadter Figure-Figure sequences</a>.
+    Wikipedia: <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' title='wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a>.
   </li>
 </ul>
 </section>
