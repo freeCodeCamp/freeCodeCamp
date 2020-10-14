@@ -23,8 +23,8 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 - All logic can go into `/components/translator.js`
 - Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`
 - See the JavaScript files in `/components` for the different spelling and terms your application should translate
-- To run the tests on Repl.it, set NODE_ENV to test without quotes in the .env file
-- To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- To run the tests on Repl.it, set `NODE_ENV` to `test` without quotes in the `.env` file
+- To run the tests in the console, use the command `npm run test`. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
 </section>
 
@@ -39,7 +39,7 @@ tests:
         assert(!/.*\/american-british-translator\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
 
-  - text: I can <code>POST</code> to <code>/api/translate</code> with a body containing <code>text</code> with the text to translate and <code>locale</code> with either <code>american-to-british</code> or <code>british-to-american</code>, The returned object should contain the submitted <code>text</code> and <code>translation</code> with the translated text.  
+  - text: You can <code>POST</code> to <code>/api/translate</code> with a body containing <code>text</code> with the text to translate and <code>locale</code> with either <code>american-to-british</code> or <code>british-to-american</code>. The returned object should contain the submitted <code>text</code> and <code>translation</code> with the translated text.  
     testString: "async getUserInput => {
         try {
           const text = 'Mangoes are my favorite fruit.';
