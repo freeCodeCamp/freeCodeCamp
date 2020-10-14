@@ -22,18 +22,82 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I can provide my own project, not the example URL.
+  - text: You should provide your own project, not the example URL.
     testString: |
       getUserInput => {
         assert(!/.*\/url-shortener-microservice\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
-  - text: I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
-    testString: ''
-  - text: 'If I pass an invalid URL that doesn''t follow the valid http://www.example.com format, the JSON response will contain an error instead.'
-    testString: ''
-  - text: 'When I visit that shortened URL, it will redirect me to my original link.'
-    testString: ''
 
+  - text: "You can POST a URL to `/api/shorturl/new` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`"
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const urlVariable = Date.now();
+      const res = await fetch(url + '/api/shorturl/new/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `url=https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`
+      });
+
+      if (res.ok) {
+        const { short_url, original_url } = await res.json();
+        assert.isNotNull(short_url);
+        assert.match(original_url, new RegExp(`https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`));
+      } else {
+        throw new Error(`${res.status} ${res.statusText}`);
+      }
+    }
+    "
+
+  - text: When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const urlVariable = Date.now();
+      let shortenedUrlVariable;
+
+      const postResponse = await fetch(url + '/api/shorturl/new/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `url=https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`
+      });
+
+      if (postResponse.ok) {
+        const { short_url } = await postResponse.json();
+        shortenedUrlVariable = short_url;
+      } else {
+        throw new Error(`${postResponse.status} ${postResponse.statusText}`);
+      }
+
+      const getResponse = await fetch(url + '/api/shorturl/' + shortenedUrlVariable);
+
+      if (getResponse) {
+        const { redirected, url } = getResponse;
+
+        assert.isTrue(redirected);
+        assert.strictEqual(url, `https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`);
+      } else {
+        throw new Error(`${getResponse.status} ${getResponse.statusText}`);
+      }
+    }
+    "
+
+  - text: "If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`"
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const res = await fetch(url + '/api/shorturl/new/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body:  `url=ftp:/john-doe.org`
+      });
+
+      if (res.ok) {
+        const { error } = await res.json();
+        assert.isNotNull(error);
+        assert.strictEqual(error.toLowerCase(), 'invalid url'); 
+      } else {
+        throw new Error(`${res.status} ${res.statusText}`);
+      }
+    }
+    "
 ```
 
 </section>

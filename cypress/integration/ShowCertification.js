@@ -68,6 +68,14 @@ describe('A certification,', function() {
         'https://twitter.com/intent/tweet?text=I just earned the Legacy Front End certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/developmentuser/legacy-front-end'
       );
     });
+
+    it("should be issued with today's date", () => {
+      const date = new Date();
+      const issued = `Issued\xa0${new Intl.DateTimeFormat('en-US', {
+        month: 'long'
+      }).format(date)} ${date.getDate()}, ${date.getFullYear()}`;
+      cy.get('[data-cy=issue-date]').should('have.text', issued);
+    });
   });
 
   describe("while viewing someone else's,", function() {

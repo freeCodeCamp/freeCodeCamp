@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-So far you have styled three elements by writing CSS inside the `style` element of the `index.html` file. Since there will many more styles, you can write CSS in a separte file (`styles.css`) and then link to it.
-
-Get started by taking the content of the `index.html` file's `style` element (exclude the opening and closing tags) and rewrite it in the `styles.css`.
+You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it. Start by rewriting the styles you have created into the `styles.css` file.  Make sure to exclude the opening and closing `style` tags.
 
 </section>
 

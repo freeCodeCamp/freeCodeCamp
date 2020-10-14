@@ -1,5 +1,5 @@
 ---
-id: 5f3f26fa39591db45e5cd7a0
+id: 5f3ef6e0e9629bad967cd71e
 title: Part 62
 challengeType: 0
 ---
@@ -7,10 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-The default properties of an `hr` element will make it appear as a thin light grey line. You can change the heighth of the line by specifying a value for the `height` property.
+You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
 
-Change the height the `hr` element to be `3px`.
-
+Add the fallback font `serif` after the `Impact` font. 
 
 </section>
 
@@ -44,9 +43,8 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -82,12 +80,6 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
     </div>
   </body>
 <html>
@@ -101,18 +93,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
 }
 
 h1, h2, p {
@@ -129,12 +109,10 @@ h1, h2, p {
 }
 
 --fcc-editable-region--
-
---fcc-editable-region--
-
 h1, h2 {
-  font-family: Impact, serif;
+  font-family: Impact;
 }
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

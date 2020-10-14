@@ -1,5 +1,5 @@
 ---
-id: 5f3cade9fa77275d9f4efe62
+id: 5f3c866d0fc037f7311b4ac8
 title: Part 39
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-That worked, but there is still a little space on the right of the price. 
-
-You could keep trying various percentages for the widths.  Instead,  simply move the price `p` element to be on the same line and make sure there is no space between them.
+That's closer, but the price didn't stay over on the right. This is because `inline-block` elements only take up the width of their content. To spread them out, add a `width` property to the `flavor` and `price` class selectors that have a value of `50%` each.
 
 </section>
 
@@ -49,24 +47,22 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article class="item">
-            --fcc-editable-region--
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
-            --fcc-editable-region--
           </article>
-          <article class="item">
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>
@@ -101,15 +97,15 @@ h1, h2, p {
   display: inline-block;
 }
 
+--fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 49%;
 }
 
 .price {
   text-align: right;
-  width: 49%;
 }
+--fcc-editable-region--
 ```
 
 </div>

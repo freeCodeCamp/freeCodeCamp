@@ -80,7 +80,8 @@ class TimelineInner extends Component {
 
   renderCompletion(completed) {
     const { idToNameMap, username } = this.props;
-    const { id, completedDate } = completed;
+    const { id } = completed;
+    const completedDate = new Date(completed.completedDate);
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
@@ -99,8 +100,8 @@ class TimelineInner extends Component {
           )}
         </td>
         <td className='text-center'>
-          <time dateTime={format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ')}>
-            {format(completedDate, 'MMMM D, YYYY')}
+          <time dateTime={completedDate.toISOString()}>
+            {format(completedDate, 'MMMM d, y')}
           </time>
         </td>
       </tr>

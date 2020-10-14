@@ -1,5 +1,5 @@
 ---
-id: 5f459cf202c2a3472fae6a9f
+id: 5f3ef6e0f8c230bdd2349716
 title: Part 65
 challengeType: 0
 ---
@@ -7,9 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
+The `h1` and `h2` elements' text are set by default values of the user's browser.
 
-Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
+Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.  
 
 </section>
 
@@ -45,7 +45,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -81,12 +80,6 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
     </div>
   </body>
 <html>
@@ -102,13 +95,9 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 40px;
-}
+--fcc-editable-region--
 
-h2 {
-  font-size: 30px;
-}
+--fcc-editable-region--
 
 .established {
   font-style: italic;
@@ -126,14 +115,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-hr {
-  height: 3px;
-  background-color: brown;
-  border-color: brown;
-}
---fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

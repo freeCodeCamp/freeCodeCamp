@@ -7,7 +7,13 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You currently have three type selectors with the exact same styling. To reduce the amount of CSS, you can create a single type selector by specifying all the element names by commas.
+You now have three type selectors with the exact same styling. You can add the same group of styles to many elements by separating the selectors with commas like this:
+
+```css
+selector1, selector2 {
+  property: value;
+}
+```
 
 Use a single type selector to center the `h1`, `h2` and `p` elements at the same time.
 

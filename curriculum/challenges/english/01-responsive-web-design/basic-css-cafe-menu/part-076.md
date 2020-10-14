@@ -1,5 +1,5 @@
 ---
-id: 5f45b3c93c027860d9298dbd
+id: 5f45a276c093334f0f6e9df4
 title: Part 76
 challengeType: 0
 ---
@@ -7,9 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue }`
+Focusing on the menu items and prices, there is a fairly large gap between each line.
 
-Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
+Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
 
 </section>
 
@@ -81,7 +81,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -135,19 +135,13 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
+--fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -159,23 +153,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: grey;
-}
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```
 

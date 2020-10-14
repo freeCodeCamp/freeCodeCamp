@@ -1,5 +1,5 @@
 ---
-id: 5f3c866d697fb245bc801648
+id: 5f769541be494f25449b292f
 title: Part 34
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Now that you have defined the classes, apply them to the first `article` element's `p` elements (representing `French Vanilla`). 
+Using your new `flavor` class as a selector, set the `text-align` property's value to `left`.
 
 </section>
 
@@ -46,12 +46,10 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          --fcc-editable-region--
           <article>
-            <p>French Vanilla</p>
+            <p class="flavor">French Vanilla</p>
             <p>3.00</p>
           </article>
-          --fcc-editable-region--
           <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
@@ -95,14 +93,9 @@ h1, h2, p {
   margin-right: auto;
 }
 
-.flavor {
-  text-align: left;
-}
+--fcc-editable-region--
 
-.price {
-  text-align: right;
-}
-
+--fcc-editable-region--
 ```
 
 </div>

@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e056bdde6ae6892ba2
+id: 5f716bee5838c354c728a7c5
 title: Part 53
 challengeType: 0
 ---
@@ -7,9 +7,13 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
+Below the dessert you just added, add the rest of the desserts and prices using three more `article` elements, each with two nested `p` elements. Each element should have the correct dessert and price text, and all of them should have the correct classes.
 
-Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
+```bash
+Cherry Pie 2.75
+Cheesecake 3.00
+Cinammon Roll 2.50
+```
 
 </section>
 
@@ -66,18 +70,11 @@ tests:
         </section>
         <section>
           <h2>Desserts</h2>
+          --fcc-editable-region--
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
-          </article>
+          --fcc-editable-region--
         </section>
       </main>
     </div>
@@ -92,7 +89,6 @@ tests:
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
 
 h1, h2, p {
@@ -104,13 +100,7 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  max-width: 500px;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 .item p {
   display: inline-block;

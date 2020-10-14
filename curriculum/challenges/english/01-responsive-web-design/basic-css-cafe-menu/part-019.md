@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You can change the entire background color of the page to brown by using a `body` type selector and specifying the value `brown` for the `background-color` property. As you have already seen, selector properties and their values have a colon (`:`) between them.
-
-Add a new selector to the `styles.css` file to change the color of the entire page to `brown`.
+The text is centered again so the link to the CSS file is working. Add another style to the file that changes the `background-color` property to `brown` for the `body` element.
 
 </section>
 

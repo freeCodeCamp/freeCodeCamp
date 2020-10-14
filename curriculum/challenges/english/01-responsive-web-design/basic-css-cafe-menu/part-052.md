@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e05473f91f948724ab
+id: 5f7b88d37b1f98386f04edc0
 title: Part 52
 challengeType: 0
 ---
@@ -7,9 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
+Something does not look right. You added the correct `class` attribute value to the `p` element with `Donunt` as its text, but you have not defined a selector for it.
 
-Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`.  This is a fairly common font that is very readable.
+Since the `flavor` class selector already has the properties you want, just add the `dessert` class name to it.
 
 </section>
 
@@ -69,15 +69,6 @@ tests:
           <article class="item">
             <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
-          </article>
         </section>
       </main>
     </div>
@@ -90,11 +81,9 @@ tests:
 <div id='css-seed'>
 
 ```css
---fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
 }
---fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
@@ -105,18 +94,18 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  max-width: 500px;
 }
 
 .item p {
   display: inline-block;
 }
 
-.flavor, .dessert {
+--fcc-editable-region--
+.flavor {
   text-align: left;
   width: 75%;
 }
+--fcc-editable-region--
 
 .price {
   text-align: right;

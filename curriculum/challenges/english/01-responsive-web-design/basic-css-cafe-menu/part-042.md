@@ -1,5 +1,5 @@
 ---
-id: 5f47633757ae3469f2d33d2e
+id: 5f3cade94c6576e7f7b7953f
 title: Part 42
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line.  This is because the width of the `p` elements on the left side can only take up `50%` of the space.
-
-Since you know the prices on the right have significantly less numbe of characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
+Now go ahead and change both the `flavor` and `price` class' widths to be `50%` again.
 
 </section>
 
@@ -51,17 +49,21 @@ tests:
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
-          <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+          <article>
+            <p>Carmel Macchiato</p>
+            <p>3.75</p>
           </article>
-          <article class="item">
-            <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
+          <article>
+            <p>Pumpkin Spice</p>
+            <p>3.50</p>
           </article>
-          <article class="item">
-            <p class="flavor">Hazelnut</p><p class="price">4.00</p>
+          <article>
+            <p>Hazelnut</p>
+            <p>4.00</p>
           </article>
-          <article class="item">
-            <p class="flavor">Mocha</p><p class="price">4.50</p>
+          <article>
+            <p>Mocha</p>
+            <p>4.50</p>
           </article>
         </section>
       </main>
@@ -97,12 +99,12 @@ h1, h2, p {
 --fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 50%;
+  width: 49%;
 }
 
 .price {
   text-align: right;
-  width: 50%;
+  width: 49%;
 }
 --fcc-editable-region--
 ```

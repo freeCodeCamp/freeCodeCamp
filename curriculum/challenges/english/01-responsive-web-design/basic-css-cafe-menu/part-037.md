@@ -1,5 +1,5 @@
 ---
-id: 5f3c866d0fc037f7311b4ac8
+id: 5f3c866de7a5b784048f94b1
 title: Part 37
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-That's closer, but the price didn't stay over on the right. This is because `inline-block` elements only take up the width of their content. To spread them out, add a `width` property to the `flavor` and `price` class selectors that have a value of `50%` each.
+That is kind of what you want, but now it would be nice if the flavor and price were on the same line.  `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of their parent element.
+
+To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements.  Add a `class` attribute with the value `item` to first `article` element under the `Coffees` heading.
 
 </section>
 
@@ -45,24 +47,26 @@ tests:
       </header>
       <main>
         <section>
+          --fcc-editable-region--
           <h2>Coffees</h2>
-          <article class="item">
+          <article>
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
-          <article class="item">
+          --fcc-editable-region--
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>
@@ -93,11 +97,6 @@ h1, h2, p {
   margin-right: auto;
 }
 
-.item p {
-  display: inline-block;
-}
-
---fcc-editable-region--
 .flavor {
   text-align: left;
 }
@@ -105,7 +104,7 @@ h1, h2, p {
 .price {
   text-align: right;
 }
---fcc-editable-region--
+
 ```
 
 </div>

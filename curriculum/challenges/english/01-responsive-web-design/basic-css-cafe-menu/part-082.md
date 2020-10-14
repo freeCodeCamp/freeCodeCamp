@@ -1,5 +1,5 @@
 ---
-id: 5f46e7a4750dd05b5a673920
+id: 5f45b0731d39e15d54df4dfc
 title: Part 82
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Now apply the `address` class to the `p` element containing the address.
+The default color of link that has not yet been clicked on a page is typically blue.  The default color of a link that has already been visited from a page is typically purple.
+
+To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
 
 </section>
 
@@ -80,14 +82,12 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
-      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -106,8 +106,6 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
 
 h2 {
@@ -167,26 +165,9 @@ h1, h2 {
 footer {
   font-size: 14px;
 }
+--fcc-editable-region--
 
-.address {
-  margin-bottom: 5px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  color: brown;
-}
-
-a:active {
-  color: brown;
-}
+--fcc-editable-region--
 ```
 
 </div>

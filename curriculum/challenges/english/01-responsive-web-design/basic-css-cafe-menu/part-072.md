@@ -1,5 +1,5 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
+id: 5f459a7ceb8b5c446656d88b
 title: Part 72
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+
+Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
 
 </section>
 
@@ -79,7 +81,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -98,7 +100,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -126,15 +127,12 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
+  height: 3px;
   background-color: brown;
-  border-color: brown;
 }
-
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -142,9 +140,6 @@ h1, h2 {
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;  
 }
 
 .flavor, .dessert {
@@ -156,10 +151,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
 </div>

@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-The goal now is to make the `div` element not take the entire width of the page. The CSS `width` property is perfect for this.
-
-Create a `div` type selector in `styles.css` and give it a `width` property with value of `300px`.
+The goal now is to make the `div` not take up the entire width of the page. The CSS `width` property is perfect for this. Create a new type selector in the style sheet that gives your `div` element a width of `300px`.
 
 </section>
 

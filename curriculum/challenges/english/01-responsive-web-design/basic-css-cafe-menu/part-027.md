@@ -7,15 +7,15 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-So far you have been using type selectors to style elements.  A <dfn>class selector</dfn> is defined by a name with a dot directly in front it. For example, if you wanted to create a class selector named `container` that makes the width of a `div` element `700px`, you would write:
+So far you have been using type selectors to style elements.  A <dfn>class selector</dfn> is defined by a name with a dot directly in front it, like this:
 
 ```css
-.container {
-  width: 700px;
+.class-name {
+  styles
 }
 ```
 
-Turn the existing `div` selector into a class selector by replacing `div` with a class named `menu`.
+Change the existing `div` selector into a class selector by replacing `div` with a class named `menu`.
 
 </section>
 

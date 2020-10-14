@@ -8,11 +8,13 @@
 # -------------------------------------------------
 
 # -------------------------------------------------
-# All files except markdown are owned by dev team
+# All files except a few here are owned by dev team
 # -------------------------------------------------
 
 * @freecodecamp/dev-team
 *.md
+package.json
+package-lock.json
 
 # -------------------------------------------------
 # All files in the root are owned by dev team

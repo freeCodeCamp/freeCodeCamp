@@ -4,12 +4,6 @@ on: [push, pull_request]
 jobs:
   cypress-run:
     name: Test
-    env:
-      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # We use .npmrc to set the default version to 0, and prevents download during developement.
-      # This installs it specifically in the CI runs.
-      CYPRESS_INSTALL_BINARY: '4.11.0'
     runs-on: ubuntu-18.04
     strategy:
       matrix:
@@ -21,6 +15,14 @@ jobs:
           - 27017:27017
 
     steps:
+      # We use .npmrc to set the default version to 0, and prevents download during developement.
+      # This installs it specifically in the CI runs.
+      - name: Set Action Environment Variables
+        run: |
+          echo "CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}" >> $GITHUB_ENV
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+          echo "CYPRESS_INSTALL_BINARY=5.3.0" >> $GITHUB_ENV
+
       - name: Checkout Source Files
         uses: actions/checkout@v2
 
@@ -42,7 +44,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Set Environment variables
+      - name: Set freeCodeCamp Environment Variables
         run: cp sample.env .env
 
       - name: Install Dependencies

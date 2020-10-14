@@ -24,7 +24,7 @@ As you can see, you can mutate the object <code>[5, 6, 7]</code> itself and the 
 
 ## Instructions
 <section id='instructions'>
-An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignment.
+An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignments.
 </section>
 
 ## Tests

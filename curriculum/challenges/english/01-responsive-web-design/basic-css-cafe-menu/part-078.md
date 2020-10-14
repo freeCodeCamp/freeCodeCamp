@@ -1,5 +1,5 @@
 ---
-id: 5f45b4c81cea7763550e40df
+id: 5f46fc57528aa1c4b5ea7c2e
 title: Part 78
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-To keep with the same color theme you have already been using (black and brown), change the color for when the link is visited to `black` and use `brown` for when the link is actually clicked. 
+Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
+
+Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
 
 </section>
 
@@ -79,7 +81,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -133,9 +135,9 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -157,30 +159,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
---fcc-editable-region--
-a:visited {
-  color: grey;
-}
-
-a:hover {
-  color: brown;
-}
-
-a:active {
-  color: white;
-}
---fcc-editable-region--
 ```
 
 </div>

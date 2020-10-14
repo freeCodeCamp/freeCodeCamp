@@ -4,8 +4,6 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { createStore } from '../../redux/createStore';
 
-import 'jest-dom/extend-expect';
-
 import Intro from './';
 
 function rendererCreateWithRedux(ui) {

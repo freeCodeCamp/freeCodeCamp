@@ -1,5 +1,5 @@
 ---
-id: 5f3c866dd0d0275f01d4d847
+id: 5f3c866dbf362f99b9a0c6d0
 title: Part 38
 challengeType: 0
 ---
@@ -7,9 +7,13 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Well that did not work. The reason is, by styling the `p` elements as `inline-block`, placing them on a separate lines in the code, there is an extra space that adds to the right of the first `p` element, so the second one shifts to the next line. There are a couple of ways to handle this. One way is to make each's width a little less than `50%`.
+The `p` elements are nested in an `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
-Change the `width` value to `49%` for each class to see what happens.
+```css
+.item p { }
+```
+
+Using the above selector, add a `display` property with value `inline-block` so the `p` elements behave more like `inline` elements.
 
 </section>
 
@@ -52,19 +56,19 @@ tests:
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>
@@ -95,21 +99,18 @@ h1, h2, p {
   margin-right: auto;
 }
 
-.item p {
-  display: inline-block;
-}
+--fcc-editable-region--
 
 --fcc-editable-region--
+
 .flavor {
   text-align: left;
-  width: 50%;
 }
 
 .price {
   text-align: right;
-  width: 50%;
 }
---fcc-editable-region--
+
 ```
 
 </div>

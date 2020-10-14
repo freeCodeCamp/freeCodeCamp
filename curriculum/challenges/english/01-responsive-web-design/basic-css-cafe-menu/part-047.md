@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0086dc80481f8cb03
+id: 5f3cade99dda4e6071a85dfd
 title: Part 47
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Something does not look right. You added the correct `class` attribute to the `p` elements with dessert names, but you have not defined a selector for it.
-
-Since the `flavor` class selector already has the properties you want, just add the `dessert` class to it.
+You will come back to the styling the menu in a few steps, but for now, go ahead add a second `section` element below the first for displaying the desserts offered by the cafe.
 
 </section>
 
@@ -46,6 +44,7 @@ tests:
         <p>Est. 2020</p>
       </header>
       <main>
+        --fcc-editable-region--
         <section>
           <h2>Coffees</h2>
           <article class="item">
@@ -64,21 +63,7 @@ tests:
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
-        <section>
-          <h2>Desserts</h2>
-          <article class="item">
-            <p class="dessert">Donut</p><p class="price">1.50</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
-          </article>
-        </section>
+        --fcc-editable-region--
       </main>
     </div>
   </body>
@@ -109,12 +94,10 @@ h1, h2, p {
   display: inline-block;
 }
 
---fcc-editable-region--
 .flavor {
   text-align: left;
   width: 75%;
 }
---fcc-editable-region--
 
 .price {
   text-align: right;

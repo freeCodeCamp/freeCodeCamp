@@ -243,7 +243,7 @@ export class Project extends Component {
                         />{' '}
                         <span className='video-quiz-input-visible'>
                           {this.state.selectedOption === index ? (
-                            <span className='video-quiz-selected-input'></span>
+                            <span className='video-quiz-selected-input' />
                           ) : null}
                         </span>
                         <PrismFormatted

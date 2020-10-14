@@ -16,5 +16,6 @@ module.exports = {
   transform: {
     '^.+\\.js$': '<rootDir>/jest.transform.js'
   },
-  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)']
+  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  setupFilesAfterEnv: ['./jest.setup.js']
 };

@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0a81099d9a697b550
+id: 5f3ef6e03d719d5ac4738993
 title: Part 59
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
+The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
+
+Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
 
 </section>
 
@@ -26,7 +28,6 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-
 <div id='html-seed'>
 
 ```html
@@ -42,7 +43,7 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
       <main>
         <section>
@@ -79,10 +80,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
-      <footer>
-      </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -95,37 +92,21 @@ tests:
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
 }
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
-  max-width: 500px;
 }
-
-h1, h2 {
-  font-family: Impact, serif;
-}
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

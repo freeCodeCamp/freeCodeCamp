@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0e0c3feaebcf647ad
+id: 5f7691dafd882520797cd2f0
 title: Part 44
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Add an `h2` element in the new section add give it the text `Desserts`.
+Next, position the other `p` elements to be on the same line with no space between them.
 
 </section>
 
@@ -49,23 +49,25 @@ tests:
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
+          --fcc-editable-region--
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p>Carmel Macchiato</p>
+            <p>3.75</p>
           </article>
           <article class="item">
-            <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
+            <p>Pumpkin Spice</p>
+            <p>3.50</p>
           </article>
           <article class="item">
-            <p class="flavor">Hazelnut</p><p class="price">4.00</p>
+            <p>Hazelnut</p>
+            <p>4.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Mocha</p><p class="price">4.50</p>
+            <p>Mocha</p>
+            <p>4.50</p>
           </article>
+          --fcc-editable-region--
         </section>
-        --fcc-editable-region--
-        <section>
-        </section>
-        --fcc-editable-region--
       </main>
     </div>
   </body>
@@ -98,12 +100,12 @@ h1, h2, p {
 
 .flavor {
   text-align: left;
-  width: 75%;
+  width: 50%;
 }
 
 .price {
   text-align: right;
-  width: 25%
+  width: 50%;
 }
 ```
 

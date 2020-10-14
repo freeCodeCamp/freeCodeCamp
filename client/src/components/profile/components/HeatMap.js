@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
 import { Row } from '@freecodecamp/react-bootstrap';
 import ReactTooltip from 'react-tooltip';
-import addDays from 'date-fns/add_days';
-import addMonths from 'date-fns/add_months';
-import startOfDay from 'date-fns/start_of_day';
-import isEqual from 'date-fns/is_equal';
+import addDays from 'date-fns/addDays';
+import addMonths from 'date-fns/addMonths';
+import startOfDay from 'date-fns/startOfDay';
+import isEqual from 'date-fns/isEqual';
 
 import FullWidthRow from '../../helpers/FullWidthRow';
 import Spacer from '../../helpers/Spacer';

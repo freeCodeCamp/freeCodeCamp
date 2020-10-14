@@ -9,7 +9,7 @@ challengeType: 0
 
 The flavors and prices are currently stacked on top of each other and centered with their respectable `p` elements. It would be nice if the flavor was on the left and the price was on the right.
 
-To style the flavor `p` element different from the price `p` element, first create two separate class selectors named `flavor` and `price` in `styles.css`. Then, align the text for the `flavor` class to the left and the `price` class to the right.
+Add the class name `flavor` to the `French Vanilla` `p` element.
 
 </section>
 
@@ -49,8 +49,10 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article>
+            --fcc-editable-region--
             <p>French Vanilla</p>
             <p>3.00</p>
+            --fcc-editable-region--
           </article>
           <article>
             <p>Carmel Macchiato</p>
@@ -94,11 +96,6 @@ h1, h2, p {
   margin-left: auto;
   margin-right: auto;
 }
-
---fcc-editable-region--
-
-
---fcc-editable-region--
 ```
 
 </div>
