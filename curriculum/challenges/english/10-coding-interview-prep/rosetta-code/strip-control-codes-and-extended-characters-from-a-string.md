@@ -40,7 +40,7 @@ tests:
     testString: assert.equal(strip("a\n\tb\u2102d\u2147f"), "abdf");
   - text: <code>strip("Français.")</code> should return <code>"Franais."</code>.
     testString: assert.equal(strip("Français."), "Franais.");
-  - text: <code>strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")</code> should return <code>"123abcDEF+-*/"</code>.
+  - text: '`strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")` should return `"123abcDEF+-*/"`.'
     testString: assert.equal(strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ"), "123abcDEF+-*/");
 ```
 
