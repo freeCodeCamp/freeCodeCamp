@@ -81,7 +81,7 @@ tests:
           </article>
         </section>
       </main>
-      --editable-region-marker--
+      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
