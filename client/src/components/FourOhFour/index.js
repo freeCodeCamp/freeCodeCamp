@@ -8,7 +8,7 @@ import { randomQuote } from '../../utils/get-words';
 
 import './404.css';
 
-class NotFoundPage extends Component {
+class FourOhFour extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61,4 +61,4 @@ class NotFoundPage extends Component {
   }
 }
 
-export default NotFoundPage;
+export default FourOhFour;
