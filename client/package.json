@@ -72,7 +72,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-observable": "^1.2.0",
     "redux-saga": "^1.1.1",
-    "reselect": "^3.0.1",
+    "reselect": "^4.0.0",
     "rxjs": "^6.6.3",
     "sanitize-html": "^2.1.0",
     "sass.js": "^0.11.0",
