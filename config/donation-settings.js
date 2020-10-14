@@ -14,11 +14,11 @@ const defaultAmount = {
   month: 500,
   onetime: 25000
 };
-const defaultStateConfig = {
+const defaultDonation = {
   donationAmount: defaultAmount['month'],
   donationDuration: 'month'
 };
-const modalDefaultStateConfig = {
+const modalDefaultDonation = {
   donationAmount: 500,
   donationDuration: 'month'
 };
@@ -123,11 +123,11 @@ module.exports = {
   durationsConfig,
   amountsConfig,
   defaultAmount,
-  defaultStateConfig,
+  defaultDonation,
   durationKeysConfig,
   donationOneTimeConfig,
   donationSubscriptionConfig,
-  modalDefaultStateConfig,
+  modalDefaultDonation,
   onetimeSKUConfig,
   paypalConfigTypes,
   paypalConfigurator,
