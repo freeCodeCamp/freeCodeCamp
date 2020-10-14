@@ -2,7 +2,6 @@
 id: 5f46e36e745ead58487aabf2
 title: Part 89
 challengeType: 0
-isHidden: true
 ---
 
 ## Description
