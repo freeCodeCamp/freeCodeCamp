@@ -69,13 +69,13 @@ export function* executeChallengeSaga() {
     yield put(initLogs());
     yield put(initConsole('// running tests'));
     // reset tests to initial state
-    const tests = (yield select(challengeTestsSelector)).map(
-      ({ text, testString }) => ({ text, testString })
-    );
+    const tests = (yield select(
+      challengeTestsSelector
+    )).map(({ text, testString }) => ({ text, testString }));
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
-    const proxyLogger = args => consoleProxy.put(args);
+    const proxyLogger = (args) => consoleProxy.put(args);
 
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
@@ -106,7 +106,7 @@ export function* executeChallengeSaga() {
 function* takeEveryLog(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the logs.
-  yield takeEvery(channel, function*(args) {
+  yield takeEvery(channel, function* (args) {
     yield put(updateLogs(escape(args)));
   });
 }
@@ -114,7 +114,7 @@ function* takeEveryLog(channel) {
 function* takeEveryConsole(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the console output.
-  yield takeEvery(channel, function*(args) {
+  yield takeEvery(channel, function* (args) {
     yield put(updateConsole(escape(args)));
   });
 }
@@ -175,7 +175,7 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
   }
 
   const logProxy = yield channel();
-  const proxyLogger = args => logProxy.put(args);
+  const proxyLogger = (args) => logProxy.put(args);
 
   try {
     if (flushLogs) {
@@ -208,7 +208,6 @@ function* previewChallengeSaga({ flushLogs = true } = {}) {
       // eslint-disable-next-line no-ex-assign
       err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
-    console.log(err);
     yield put(updateConsole(escape(err)));
   }
 }
