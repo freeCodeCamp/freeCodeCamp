@@ -7,9 +7,13 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Currently the entire background color of the page is `burlywood`. So you can see the effect of only styling `div` element, you will need to first temporarily comment out the line that defines the `background-color` for the `body` element.
+Comments in CSS look like this:
 
-Add `/*` before the line and `*/` after the line to make the line a comment instead of CSS code which will make the background color of the page white again.
+```css
+/* comment here */
+```
+
+In your style sheet, comment out the the line containing the `background-color` property and value, so you can see the effect of only styling `div` element. This will make the background white again.
 
 </section>
 

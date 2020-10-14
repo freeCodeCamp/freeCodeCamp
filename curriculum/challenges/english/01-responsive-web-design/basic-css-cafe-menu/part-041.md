@@ -1,5 +1,5 @@
 ---
-id: 5f3cade9993019e26313fa8e
+id: 5f3cade9fa77275d9f4efe62
 title: Part 41
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Now that you know it works, change the other `article` elements so that the `p` elements are on the same line with no space between them.  You also need to apply the applicable styles `flavor` and `price` to the corresponding `p` elements.
+That worked, but there is still a little space on the right of the price. 
+
+You could keep trying various percentages for the widths.  Instead,  simply move the price `p` element to be on the same line and make sure there is no space between them.
 
 </section>
 
@@ -47,26 +49,27 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article class="item">
-            <p class="flavor">French Vanilla</p><p class="price">3.00</p>
+            --fcc-editable-region--
+            <p class="flavor">French Vanilla</p>
+            <p class="price">3.00</p>
+            --fcc-editable-region--
           </article>
-          --fcc-editable-region--
-          <article class="item">
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>
-          --fcc-editable-region--
         </section>
       </main>
     </div>
@@ -100,12 +103,12 @@ h1, h2, p {
 
 .flavor {
   text-align: left;
-  width: 50%;
+  width: 49%;
 }
 
 .price {
   text-align: right;
-  width: 50%;
+  width: 49%;
 }
 ```
 

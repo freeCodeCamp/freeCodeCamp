@@ -7,16 +7,15 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Without specifying any CSS (Cascasing Style Sheets) styling, an element's content is positioned to the left. To center content of block-level elements (i.e. `h1`, `section`, `p`, etc.) you would put the following between the `style` element's opening and closing tags, where `elementName` is an element name like  `h3`.
+You can add style to an element by specifying it in the `style` element and setting a property for it like this:
 
 ```css
-elementName {
- text-align: center;
+element {
+ property: value;
 }
-
 ```
 
-Center the menu's `h1` element by using the syntax shown above.
+Center your `h1` element by setting its `text-align` property to the value `center`.
 
 </section>
 

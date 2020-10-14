@@ -1,5 +1,5 @@
 ---
-id: 5f459225127805351a6ad057
+id: 5f3ef6e06d34faac0447fc44
 title: Part 63
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Change the background color of the `hr` elemnent to be `brown` to make it match the color of the coffee beans.
+Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
 
 </section>
 
@@ -41,9 +41,8 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -79,12 +78,6 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
     </div>
   </body>
 <html>
@@ -100,17 +93,9 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 40px;
-}
+--fcc-editable-region--
 
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
-}
+--fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
@@ -124,12 +109,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-hr {
-  height: 3px;
-}
---fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

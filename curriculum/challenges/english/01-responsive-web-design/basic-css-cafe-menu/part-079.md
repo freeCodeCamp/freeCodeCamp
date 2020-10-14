@@ -1,5 +1,5 @@
 ---
-id: 5f45b715301bbf667badc04a
+id: 5f4701b942c824109626c3d8
 title: Part 79
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu.  This is due to the browser having some default top margin for the `h1` element.
-
-Change the top margin of the `h1` element to `0` to remove all the top margin.
+Now add the `bottom-line` class to the second `hr` element so the styling is applied.
 
 </section>
 
@@ -81,7 +79,9 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      --fcc-editable-region--
+      <hr>
+      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -104,11 +104,9 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -160,28 +158,6 @@ h1, h2 {
 .price {
   text-align: right;
   width: 25%
-}
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  color: brown;
-}
-
-a:active {
-  color: brown;
 }
 ```
 

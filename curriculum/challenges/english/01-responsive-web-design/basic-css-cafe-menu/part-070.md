@@ -1,5 +1,5 @@
 ---
-id: 5f46fc57528aa1c4b5ea7c2e
+id: 5f3f26fa39591db45e5cd7a0
 title: Part 70
 challengeType: 0
 ---
@@ -7,9 +7,10 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinaommon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
+The default properties of an `hr` element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the `height` property.
 
-Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
+Change the height the `hr` element to be `3px`.
+
 
 </section>
 
@@ -81,7 +82,6 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -101,7 +101,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -129,12 +128,6 @@ h1, h2, p {
   max-width: 500px;
 }
 
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
-}
-
 --fcc-editable-region--
 
 --fcc-editable-region--
@@ -145,9 +138,6 @@ h1, h2 {
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {

@@ -1,5 +1,5 @@
 ---
-id: 5f3c866dbf362f99b9a0c6d0
+id: 5f769702e6e33127d14aa120
 title: Part 36
 challengeType: 0
 ---
@@ -7,13 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-The `p` elements are nested in `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` by defining a selector as:
-
-```css
-.item p { }
-```
-
-Define a new style using the above selector.  Add a `display` property with the value `inline-block` so the `p` elements behave more like `inline` elements instead of `block-line` elements.
+Now align the text to the `right` for the elements with the `price` class.
 
 </section>
 
@@ -52,23 +46,23 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          <article class="item">
+          <article>
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>
@@ -99,18 +93,13 @@ h1, h2, p {
   margin-right: auto;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
-
 .flavor {
   text-align: left;
 }
 
-.price {
-  text-align: right;
-}
+--fcc-editable-region--
 
+--fcc-editable-region--
 ```
 
 </div>

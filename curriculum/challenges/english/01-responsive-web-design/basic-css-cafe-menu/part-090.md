@@ -1,13 +1,14 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
-title: Part 80
+id: 5f46e7a4750dd05b5a673920
+title: Part 90
 challengeType: 0
+isHidden: true
 ---
 
 ## Description
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Now apply the `address` class to the `p` element containing the address.
 
 </section>
 
@@ -80,11 +81,14 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
+      --fcc-editable-region--
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -103,6 +107,8 @@ body {
 
 h1 {
   font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -144,7 +150,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -157,9 +163,31 @@ h1, h2 {
   width: 25%
 }
 
---fcc-editable-region--
+/* FOOTER */
 
---fcc-editable-region--
+footer {
+  font-size: 14px;
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: brown;
+}
+
+a:active {
+  color: brown;
+}
 ```
 
 </div>

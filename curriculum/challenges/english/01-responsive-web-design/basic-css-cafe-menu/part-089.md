@@ -1,13 +1,16 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
-title: Part 80
+id: 5f46e36e745ead58487aabf2
+title: Part 89
 challengeType: 0
+isHidden: true
 ---
 
 ## Description
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
+
+To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
 
 </section>
 
@@ -80,6 +83,7 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -103,6 +107,8 @@ body {
 
 h1 {
   font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -144,7 +150,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -157,9 +163,31 @@ h1, h2 {
   width: 25%
 }
 
+/* FOOTER */
+
+footer {
+  font-size: 14px;
+}
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: brown;
+}
+
+a:active {
+  color: brown;
+}
 ```
 
 </div>

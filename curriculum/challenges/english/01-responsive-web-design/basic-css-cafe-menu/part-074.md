@@ -1,5 +1,5 @@
 ---
-id: 5f45b0731d39e15d54df4dfc
+id: 5f459fd48bdc98491ca6d1a3
 title: Part 74
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-The default color of link that has not yet been clicked on a page is typically blue.  The default color of a link that has already been visited from a page is typically purple.
-
-To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
+Go ahead and add another `hr` element between the `main` element and the `footer` element.
 
 </section>
 
@@ -46,6 +44,7 @@ tests:
         <p class="established">Est. 2020</p>
       </header>
       <hr>
+      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -81,13 +80,13 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -101,7 +100,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -135,19 +133,12 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -159,15 +150,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
 </div>

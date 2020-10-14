@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0eaa7da26e3d34d78
+id: 5f3ef6e0e0c3feaebcf647ad
 title: Part 48
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You can give your menu some space between the content and the sides with various `padding` properties.
-
-Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
+Add an `h2` element in the new section add give it the text `Desserts`.
 
 </section>
 
@@ -64,21 +62,10 @@ tests:
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
+        --fcc-editable-region--
         <section>
-          <h2>Desserts</h2>
-          <article class="item">
-            <p class="dessert">Donut</p><p class="price">1.50</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
-          </article>
         </section>
+        --fcc-editable-region--
       </main>
     </div>
   </body>
@@ -98,20 +85,18 @@ h1, h2, p {
   text-align: center;
 }
 
---fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
-.flavor, .dessert {
+.flavor {
   text-align: left;
   width: 75%;
 }

@@ -1,5 +1,5 @@
 ---
-id: 5f45b45d099f3e621fbbb256
+id: 5f45a5a7c49a8251f0bdb527
 title: Part 77
 challengeType: 0
 ---
@@ -7,10 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue }`
-
-Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
-
+Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
 
 </section>
 
@@ -82,7 +79,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -136,20 +133,17 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
+--fcc-editable-region--
 .item p {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;
 }
+--fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;
@@ -160,28 +154,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: grey;
-}
-
-a:hover {
-  color: brown;
-}
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
 </div>

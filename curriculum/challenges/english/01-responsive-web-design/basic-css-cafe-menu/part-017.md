@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Now you need to link the `styles.css` file content, so your page will reflect the CSS styles defined in it.
-
-Nest a `link` element within the `style` element. `link` elements are used for other purposes besides CSS, so you will also need to add an `rel` attribute with the value `stylesheet` and a `type` attribute with the value `text/css`.
+Now you need to link the `styles.css` file so the styles will be applied again. Next a self-closing `link` element in the `head` element. Give it a `rel` attribute value `stylesheet`, a `type` attribute value of `text/css`, and an `href` attribute value of `styles.css`.
 
 </section>
 

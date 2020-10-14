@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Next, you need to center the `div` element horizontally. This is accomplised by adding both a `margin-left` and `margin-right` property to the it and setting the value of both `auto`. You can think of a margin as invsible space around an element.
-
-Using these margin properties, center the `div` element within the `body` element.
+Next, you want to center the `div` horizontally. You can do this by setting its `margin-left` and `margin-right` properties to `auto`. Think of the margin as invisible space around an element. Using these two margin properties, center the `div` element within the `body` element.
 
 </section>
 

@@ -1,5 +1,5 @@
 ---
-id: 5f459fd48bdc98491ca6d1a3
+id: 5f3ef6e07276f782bb46b93d
 title: Part 66
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Go ahead and add another `hr` element between the `main` element and the `footer` element.
+Add a `footer` element below the `main` element, where you can some additional information.
 
 </section>
 
@@ -43,7 +43,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
       --fcc-editable-region--
       <main>
         <section>
@@ -80,12 +79,6 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
       --fcc-editable-region--
     </div>
   </body>
@@ -125,12 +118,6 @@ h1, h2, p {
   margin-right: auto;
   padding: 20px;
   max-width: 500px;
-}
-
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
 }
 
 h1, h2 {
