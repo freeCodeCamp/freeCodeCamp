@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0e9629bad967cd71e
+id: 5f3ef6e06d34faac0447fc44
 title: Part 62
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
-
-Add the fallback font `serif` after the `Impact` font. 
+Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
 
 </section>
 
@@ -95,6 +93,10 @@ body {
   font-family: sans-serif;
 }
 
+--fcc-editable-region--
+
+--fcc-editable-region--
+
 h1, h2, p {
   text-align: center;
 }
@@ -108,11 +110,9 @@ h1, h2, p {
   max-width: 500px;
 }
 
---fcc-editable-region--
 h1, h2 {
-  font-family: Impact;
+  font-family: Impact, serif;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;

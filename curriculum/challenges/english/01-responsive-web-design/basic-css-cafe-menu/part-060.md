@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e05473f91f948724ab
+id: 5f3ef6e056bdde6ae6892ba2
 title: Part 60
 challengeType: 0
 ---
@@ -7,9 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
+It is a bit boring for all the text to have the same `font-family`. You can still have the majority of the text `sans-serif` and make just the `h1` and `h2` elements different using a different selector.
 
-Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`.  This is a fairly common font that is very readable.
+Style both the `h1` and the `h2` elements so that only these elements' text use `Impact` font.
 
 </section>
 
@@ -90,11 +90,10 @@ tests:
 <div id='css-seed'>
 
 ```css
---fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
+  font-family: sans-serif;
 }
---fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
@@ -108,6 +107,10 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .item p {
   display: inline-block;

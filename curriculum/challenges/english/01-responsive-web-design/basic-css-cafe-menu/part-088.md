@@ -1,5 +1,5 @@
 ---
-id: 5f46e270702a8456a664f0df
+id: 5f46e36e745ead58487aabf2
 title: Part 88
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`.
+Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
+
+To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
 
 </section>
 
@@ -102,12 +104,11 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
   margin-top: 0;
+  margin-bottom: 15px;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -166,6 +167,10 @@ h1, h2 {
 footer {
   font-size: 14px;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 a {
   color: black;

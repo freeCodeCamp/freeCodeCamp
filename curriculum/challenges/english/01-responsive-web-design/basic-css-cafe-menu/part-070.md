@@ -1,5 +1,5 @@
 ---
-id: 5f3f26fa39591db45e5cd7a0
+id: 5f459225127805351a6ad057
 title: Part 70
 challengeType: 0
 ---
@@ -7,10 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-The default properties of an `hr` element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the `height` property.
-
-Change the height the `hr` element to be `3px`.
-
+Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
 
 </section>
 
@@ -129,7 +126,9 @@ h1, h2, p {
 }
 
 --fcc-editable-region--
-
+hr {
+  height: 3px;
+}
 --fcc-editable-region--
 
 h1, h2 {
