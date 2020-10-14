@@ -5,15 +5,20 @@ const toMdast = require('hast-util-to-mdast');
 const toHtml = require('hast-util-to-html');
 const inlineCode = require('hast-util-to-mdast/lib/handlers/inline-code');
 
-function codeToInline(h, node) {
-  if (node.children.length > 1) {
-    // console.log('Leaving code block as it does not just contain text');
-    // console.log(node);
-    // throw Error('Too many children');
-    return rawHtml(h, node);
-  } else {
-    return inlineCode(h, node);
-  }
+function getCodeToInline(shouldThrow) {
+  return (h, node) => {
+    if (node.children.length > 1) {
+      if (shouldThrow) {
+        console.log('Leaving code block as it does not just contain text');
+        console.log(node);
+        throw Error('Too many children');
+      } else {
+        return rawHtml(h, node);
+      }
+    } else {
+      return inlineCode(h, node);
+    }
+  };
 }
 
 function rawHtml(h, node) {
@@ -27,7 +32,8 @@ function rawHtml(h, node) {
   };
 }
 
-function plugin({ pre = false }) {
+function plugin({ shouldThrow = false, pre = false }) {
+  const codeToInline = getCodeToInline(shouldThrow);
   return transformer;
 
   function transformer(tree) {

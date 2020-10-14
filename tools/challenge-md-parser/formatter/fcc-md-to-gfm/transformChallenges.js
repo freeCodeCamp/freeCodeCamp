@@ -14,10 +14,10 @@ const insertSpacesProcessor = unified()
   .use(frontmatter, ['yaml']);
 // ^ Prevents the frontmatter being modified
 
-const getCodeToBackticksProcessor = pre =>
+const getCodeToBackticksProcessor = (shouldThrow, pre) =>
   unified()
     .use(markdown)
-    .use(codeToBackticks, { pre })
+    .use(codeToBackticks, { shouldThrow, pre })
     .use(stringify, { fences: true, emphasis: '*' })
     .use(frontmatter, ['yaml']);
 
@@ -31,9 +31,12 @@ const prettifyProcessor = unified()
 exports.insertSpaces = createProcessor(insertSpacesProcessor);
 
 exports.codeToBackticks = createProcessor(getCodeToBackticksProcessor());
+exports.checkCodeToBackticks = createProcessor(
+  getCodeToBackticksProcessor(true)
+);
 
-exports.getCodeToBackticksSync = () => text =>
-  getCodeToBackticksProcessor(true).processSync(text);
+exports.getCodeToBackticksSync = shouldThrow => text =>
+  getCodeToBackticksProcessor(shouldThrow, true).processSync(text);
 
 exports.prettify = createProcessor(prettifyProcessor);
 exports.prettifySync = prettifyProcessor.processSync;
