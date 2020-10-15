@@ -32,7 +32,7 @@ tests:
         const url = getUserInput('url');
         assert(!/.*\/exercise-tracker\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
-  - text: You can `POST` to `/api/exercise/new-user` with form data `username` to create a new user. Returned will be an object with `username` and `_id`.
+  - text: You can `POST` to `/api/exercise/new-user` with form data `username` to create a new user. The returned response will be an object with `username` and `_id` properties.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/new-user', {
