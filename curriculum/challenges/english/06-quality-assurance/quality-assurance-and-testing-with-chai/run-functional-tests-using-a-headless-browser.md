@@ -39,6 +39,20 @@ If you are testing on a local environment replace the line above with
 Browser.localhost('example.com', process.env.PORT || 3000);
 ```
 
+Within `tests/2_functional-tests.js`, at the root level of the `'e2e Testing with Zombie.js'` suite, instantiate a new instance of the `Browser` object with the following code:
+
+```js
+const browser = new Browser();
+```
+
+Then, use the `suiteSetup` hook to direct the `browser` to the `/` route with the following code:
+
+```js
+suiteSetup(function(done) {
+  return browser.visit('/', done);
+});
+```
+
 </section>
 
 ## Tests

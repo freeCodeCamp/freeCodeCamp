@@ -1,16 +1,14 @@
 ---
-id: 587d8250367417b2b2512c5d
-title: Run Functional Tests using a Headless Browser II
+id: 5f8884f4c46685731aabfc41
+title: Run Functional Tests using a Headless Browser III
 challengeType: 2
-forumTopicId: 301594
 ---
 
 ## Description
 
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
-In the HTML main view we provided a input form. It sends data to the `PUT /travellers` endpoint that we used above with an Ajax request. When the request successfully completes, the client code appends a `<div>` containing the infos returned by the call to the DOM.
+As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
 </section>
 
@@ -18,11 +16,19 @@ In the HTML main view we provided a input form. It sends data to the `PUT /trave
 
 <section id='instructions'>
 
-Within `tests/2_functional-tests.js`, at the root level of the `'e2e Testing with Zombie.js'` suite, instantiate a new instance of the `Browser` object with the following code:
+Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Vespucci" - write your e2e test...'` test, automate filling-in and submitting the form from scratch:
 
-As a starter, try the input form manually! Send the name 'Polo' ! You'll get infos about the famous explorer 'Marco Polo' (not required to pass the tests)
-  
-Did it ? Ok. Let's see how to automate the process...
+1. Fill in the form with the `surname` of `Vespucci`
+2. Submit it pressing `'submit'` button
+
+Within the callback:
+
+3. assert that status is `200`
+4. assert that the text inside the element `span#name` is `'Amerigo'`
+5. assert that the text inside the element `span#surname` is `'Vespucci'`
+6. assert that the element(s) `span#dates` exist and their count is `1`
+
+Do not forget to to remove the `assert.fail()` call.
 
 </section>
 
