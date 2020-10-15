@@ -219,10 +219,10 @@ const ShowCertification = props => {
         </Row>
       )}
       <DonateForm
-        handleProcessing={this.handleProcessing}
+        handleProcessing={handleProcessing}
         defaultTheme='light'
         isMinimalForm={true}
-       />
+      />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
