@@ -1,10 +1,9 @@
 ---
 id: 587d781e367417b2b2512ac9
-title: Change an Element's Relative Position
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVmMtZ'
 forumTopicId: 301044
-localeTitle: 更改元素的相对位置
+title: 更改元素的相对位置
 ---
 
 ## Description

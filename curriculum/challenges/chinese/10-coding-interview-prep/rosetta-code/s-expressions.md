@@ -1,9 +1,8 @@
 ---
-title: S-Expressions
 id: 59667989bf71cf555dd5d2ff
 challengeType: 5
 videoUrl: ''
-localeTitle: S-表达式
+title: S-表达式
 ---
 
 ## Description

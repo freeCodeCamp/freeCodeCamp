@@ -1,9 +1,8 @@
 ---
 id: 587d7db4367417b2b2512b90
-title: Match a Literal String with Different Possibilities
 challengeType: 1
 forumTopicId: 301345
-localeTitle: 同时用多种模式匹配文字字符串
+title: 同时用多种模式匹配文字字符串
 ---
 
 ## Description

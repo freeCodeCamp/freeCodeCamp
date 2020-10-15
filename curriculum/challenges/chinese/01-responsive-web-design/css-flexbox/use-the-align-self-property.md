@@ -1,10 +1,9 @@
 ---
 id: 587d78af367417b2b2512b00
-title: Use the align-self Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvzfv'
 forumTopicId: 301107
-localeTitle: 使用 align-self 属性
+title: 使用 align-self 属性
 ---
 
 ## Description

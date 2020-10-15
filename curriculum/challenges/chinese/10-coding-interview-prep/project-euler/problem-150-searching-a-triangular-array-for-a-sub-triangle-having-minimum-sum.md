@@ -1,9 +1,8 @@
 ---
 id: 5900f4031000cf542c50ff15
 challengeType: 5
-title: 'Problem 150: Searching a triangular array for a sub-triangle having minimum-sum'
 videoUrl: ''
-localeTitle: 问题150：在三角形阵列中搜索具有最小和的子三角形
+title: 问题150：在三角形阵列中搜索具有最小和的子三角形
 ---
 
 ## Description

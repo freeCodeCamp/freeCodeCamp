@@ -1,9 +1,8 @@
 ---
 id: 5900f4691000cf542c50ff7b
 challengeType: 5
-title: 'Problem 252: Convex Holes'
 videoUrl: ''
-localeTitle: 问题252：凸孔
+title: 问题252：凸孔
 ---
 
 ## Description

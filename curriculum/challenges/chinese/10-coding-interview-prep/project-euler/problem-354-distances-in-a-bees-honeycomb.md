@@ -1,9 +1,8 @@
 ---
 id: 5900f4cf1000cf542c50ffe1
 challengeType: 5
-title: 'Problem 354: Distances in a bee"s honeycomb'
 videoUrl: ''
-localeTitle: 问题354：蜜蜂蜂窝中的距离
+title: 问题354：蜜蜂蜂窝中的距离
 ---
 
 ## Description

@@ -2,7 +2,6 @@
 id: 5d5a813321b9e3db6c106a46
 title: Part 1
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

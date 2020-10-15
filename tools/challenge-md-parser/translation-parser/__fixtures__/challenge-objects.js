@@ -122,11 +122,10 @@ const ENGLISH_VIDEO_CHALLENGE = {
 
 const TRANSLATED_CERTIFICATE = {
   id: '561add10cb82ac38a17513bc',
-  title: 'Responsive Web Design Certificate',
+  title: '响应式网页设计证书',
   challengeType: 7,
   isPrivate: true,
   videoUrl: '',
-  localeTitle: '响应式网页设计证书',
   tests: [
     { id: 'bd7158d8c442eddfaeb5bd18', title: 'Build a Tribute Page' },
     { id: '587d78af367417b2b2512b03', title: 'Build a Survey Form' },
@@ -151,11 +150,40 @@ const TRANSLATED_CERTIFICATE = {
 
 const TRANSLATED_CHALLENGE = {
   id: 'id',
-  title: 'Title',
+  title: 'Translated title',
   challengeType: 0,
   videoUrl: 'https://scrimba.com/',
   forumTopicId: 9876,
-  localeTitle: 'Translated title',
+  tests: [
+    {
+      text: 'Translated test text',
+      testString: 'Translated assertions, should be ignored'
+    },
+    {
+      text: 'Translated test text2',
+      testString: 'Translated assertions, should be ignored2'
+    }
+  ],
+  solutions: ['Translated solution html string, should be ignored'],
+  description: 'Translated description html string',
+  instructions: 'Translated instructions html string',
+  files: [
+    {
+      key: 'indexhtml',
+      ext: 'html',
+      name: 'index',
+      contents: 'Translated seed html string, should be ignored',
+      head: 'Translated head string, should be ignored',
+      tail: 'Translated tail string, should be ignored'
+    }
+  ]
+};
+
+const TRANSLATED_CHALLENGE_NO_TITLE = {
+  id: 'id',
+  challengeType: 0,
+  videoUrl: 'https://scrimba.com/',
+  forumTopicId: 9876,
   tests: [
     {
       text: 'Translated test text',
@@ -194,11 +222,10 @@ const TRANSLATED_VIDEO_CHALLENGE = {
 
 const WRONG_NUM_TESTS_CHALLENGE = {
   id: 'id',
-  title: 'Title',
+  title: 'Translated title',
   challengeType: 0,
   videoUrl: 'https://scrimba.com/',
   forumTopicId: 12345,
-  localeTitle: 'Translated title',
   tests: [
     {
       text: 'Translated test text',
@@ -227,5 +254,6 @@ exports.ENGLISH_CHALLENGE_NO_FILES = ENGLISH_CHALLENGE_NO_FILES;
 exports.ENGLISH_VIDEO_CHALLENGE = ENGLISH_VIDEO_CHALLENGE;
 exports.TRANSLATED_CERTIFICATE = TRANSLATED_CERTIFICATE;
 exports.TRANSLATED_CHALLENGE = TRANSLATED_CHALLENGE;
+exports.TRANSLATED_CHALLENGE_NO_TITLE = TRANSLATED_CHALLENGE_NO_TITLE;
 exports.TRANSLATED_VIDEO_CHALLENGE = TRANSLATED_VIDEO_CHALLENGE;
 exports.WRONG_NUM_TESTS_CHALLENGE = WRONG_NUM_TESTS_CHALLENGE;

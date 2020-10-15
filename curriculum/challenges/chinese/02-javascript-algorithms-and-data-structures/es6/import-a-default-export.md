@@ -1,9 +1,8 @@
 ---
 id: 587d7b8d367417b2b2512b59
-title: Import a Default Export
 challengeType: 1
 forumTopicId: 301205
-localeTitle: 导入一个默认的导出
+title: 导入一个默认的导出
 ---
 
 ## Description

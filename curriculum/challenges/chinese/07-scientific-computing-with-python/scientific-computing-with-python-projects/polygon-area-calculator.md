@@ -1,8 +1,6 @@
 ---
 id: 5e444147903586ffb414c94f
-title: Polygon Area Calculator
 challengeType: 10
-isHidden: false
 ---
 
 ## Description

@@ -1,8 +1,6 @@
 ---
 id: 5e7b9f080b6c005b0e76f062
-title: Reading Files
 challengeType: 11
-isHidden: false
 videoId: Fo1tW09KIwo
 ---
 

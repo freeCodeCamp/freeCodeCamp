@@ -1,9 +1,8 @@
 ---
 id: 5900f3c51000cf542c50fed8
 challengeType: 5
-title: 'Problem 87: Prime power triples'
 videoUrl: ''
-localeTitle: 问题87：Prime power三倍
+title: 问题87：Prime power三倍
 ---
 
 ## Description

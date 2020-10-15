@@ -1,9 +1,8 @@
 ---
 id: 5900f4ed1000cf542c50fffe
 challengeType: 5
-title: 'Problem 384: Rudin-Shapiro sequence'
 videoUrl: ''
-localeTitle: 问题384：Rudin-Shapiro序列
+title: 问题384：Rudin-Shapiro序列
 ---
 
 ## Description

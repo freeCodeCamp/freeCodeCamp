@@ -1,9 +1,8 @@
 ---
-title: Identity matrix
 id: 5a23c84252665b21eecc7eb1
 challengeType: 5
 videoUrl: ''
-localeTitle: 身份矩阵
+title: 身份矩阵
 ---
 
 ## Description

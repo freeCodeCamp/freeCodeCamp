@@ -1,9 +1,8 @@
 ---
 id: 5900f4231000cf542c50ff35
 challengeType: 5
-title: 'Problem 182: RSA encryption'
 videoUrl: ''
-localeTitle: 问题182：RSA加密
+title: 问题182：RSA加密
 ---
 
 ## Description

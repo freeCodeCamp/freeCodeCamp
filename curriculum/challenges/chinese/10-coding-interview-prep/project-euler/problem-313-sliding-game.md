@@ -1,9 +1,8 @@
 ---
 id: 5900f4a61000cf542c50ffb8
 challengeType: 5
-title: 'Problem 313: Sliding game'
 videoUrl: ''
-localeTitle: 问题313：滑行游戏
+title: 问题313：滑行游戏
 ---
 
 ## Description

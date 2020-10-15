@@ -1,9 +1,8 @@
 ---
 id: 5900f4481000cf542c50ff5a
 challengeType: 5
-title: 'Problem 219: Skew-cost coding'
 videoUrl: ''
-localeTitle: 问题219：偏差成本编码
+title: 问题219：偏差成本编码
 ---
 
 ## Description

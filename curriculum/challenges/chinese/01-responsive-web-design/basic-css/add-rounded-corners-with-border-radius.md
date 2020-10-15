@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aedf08814
-title: Add Rounded Corners with border-radius
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
-localeTitle: 用 border-radius 添加圆角边框
+title: 用 border-radius 添加圆角边框
 ---
 
 ## Description

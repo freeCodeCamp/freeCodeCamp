@@ -1,9 +1,8 @@
 ---
 id: 5900f3b11000cf542c50fec4
 challengeType: 5
-title: 'Problem 69: Totient maximum'
 videoUrl: ''
-localeTitle: 问题69大欧拉
+title: 问题69大欧拉
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
-title: Iterated digits squaring
 id: 5a23c84252665b21eecc7ec1
 challengeType: 5
 videoUrl: ''
-localeTitle: 迭代的数字平方
+title: 迭代的数字平方
 ---
 
 ## Description

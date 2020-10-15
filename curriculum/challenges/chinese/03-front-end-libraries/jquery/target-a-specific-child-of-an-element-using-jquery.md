@@ -1,11 +1,10 @@
 ---
 id: bad87fee1348bd9aed108826
-title: Target a Specific Child of an Element Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18315
-localeTitle: 使用 jQuery 选择元素的特定子元素
+title: 使用 jQuery 选择元素的特定子元素
 ---
 
 ## Description

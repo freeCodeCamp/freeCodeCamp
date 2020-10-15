@@ -1,9 +1,8 @@
 ---
 id: 5900f51e1000cf542c510030
 challengeType: 5
-title: 'Problem 432: Totient sum'
 videoUrl: ''
-localeTitle: 问题432欧拉
+title: 问题432欧拉
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4831000cf542c50ff95
 challengeType: 5
-title: 'Problem 278: Linear Combinations of Semiprimes'
 videoUrl: ''
-localeTitle: 问题278：半正定的线性组合
+title: 问题278：半正定的线性组合
 ---
 
 ## Description

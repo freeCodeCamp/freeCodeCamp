@@ -1,9 +1,8 @@
 ---
 id: 5900f46d1000cf542c50ff7f
 challengeType: 5
-title: 'Problem 255: Rounded Square Roots'
 videoUrl: ''
-localeTitle: 问题255：圆角平方根
+title: 问题255：圆角平方根
 ---
 
 ## Description

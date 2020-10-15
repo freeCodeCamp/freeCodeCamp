@@ -1,9 +1,8 @@
 ---
-title: Closest-pair problem
 id: 5951a53863c8a34f02bf1bdc
 challengeType: 5
 videoUrl: ''
-localeTitle: 最近对的问题
+title: 最近对的问题
 ---
 
 ## Description

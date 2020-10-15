@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9aecf08806
-title: Use a CSS Class to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvDtV'
 forumTopicId: 18337
-localeTitle: 使用 class 选择器设置单个元素的样式
+title: 使用 class 选择器设置单个元素的样式
 ---
 
 ## Description

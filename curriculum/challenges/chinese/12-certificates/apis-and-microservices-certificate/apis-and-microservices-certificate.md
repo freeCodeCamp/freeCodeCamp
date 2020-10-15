@@ -1,10 +1,8 @@
 ---
 id: 561add10cb82ac38a17523bc
-title: APIs and Microservices Certificate
 challengeType: 7
-isHidden: false
 isPrivate: true
-localeTitle: API和微服务证书
+title: API和微服务证书
 ---
 
 ## Description

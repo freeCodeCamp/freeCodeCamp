@@ -1,9 +1,8 @@
 ---
-title: Averages-Mode
 id: 594d8d0ab97724821379b1e6
 challengeType: 5
 videoUrl: ''
-localeTitle: 平均值模式
+title: 平均值模式
 ---
 
 ## Description

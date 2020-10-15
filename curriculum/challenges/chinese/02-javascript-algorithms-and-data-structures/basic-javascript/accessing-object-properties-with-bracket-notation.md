@@ -1,10 +1,9 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
-title: Accessing Object Properties with Bracket Notation
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBvmEHP'
 forumTopicId: 16163
-localeTitle: 通过方括号访问对象属性
+title: 通过方括号访问对象属性
 ---
 
 ## Description

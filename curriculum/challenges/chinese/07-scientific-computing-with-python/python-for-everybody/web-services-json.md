@@ -1,8 +1,6 @@
 ---
 id: 5e7b9f140b6c005b0e76f07d
-title: 'Web Services: JSON'
 challengeType: 11
-isHidden: false
 videoId: ZJE-U56BppM
 ---
 

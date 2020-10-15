@@ -1,8 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c15c
-title: Pandas Creating Columns
 challengeType: 11
-isHidden: false
 videoId: _sSo2XZoB3E
 ---
 

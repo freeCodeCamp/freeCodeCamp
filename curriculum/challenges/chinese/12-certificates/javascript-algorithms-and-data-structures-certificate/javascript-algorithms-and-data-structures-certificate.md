@@ -1,10 +1,8 @@
 ---
 id: 561abd10cb81ac38a17513bc
-title: JavaScript Algorithms and Data Structures Certificate
 challengeType: 7
-isHidden: false
 isPrivate: true
-localeTitle: JavaScript算法和数据结构证书
+title: JavaScript算法和数据结构证书
 ---
 
 ## Description

@@ -1,10 +1,9 @@
 ---
 id: bd7123c9c441eddfaeb4bdef
-title: Comment Your JavaScript Code
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c7ynnTp'
 forumTopicId: 16783
-localeTitle: 给代码添加注释
+title: 给代码添加注释
 ---
 
 ## Description

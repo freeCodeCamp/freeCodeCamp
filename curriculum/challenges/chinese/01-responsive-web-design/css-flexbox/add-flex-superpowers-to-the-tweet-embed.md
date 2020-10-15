@@ -1,10 +1,9 @@
 ---
 id: 587d78ab367417b2b2512af1
-title: Add Flex Superpowers to the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c9W7MhM'
 forumTopicId: 301100
-localeTitle: 在推文中添加弹性盒子布局
+title: 在推文中添加弹性盒子布局
 ---
 
 ## Description

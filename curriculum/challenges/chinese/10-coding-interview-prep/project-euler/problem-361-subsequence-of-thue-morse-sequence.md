@@ -1,9 +1,8 @@
 ---
 id: 5900f4d51000cf542c50ffe8
 challengeType: 5
-title: 'Problem 361: Subsequence of Thue-Morse sequence'
 videoUrl: ''
-localeTitle: 问题361：Thue-Morse序列的子序列
+title: 问题361：Thue-Morse序列的子序列
 ---
 
 ## Description

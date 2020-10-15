@@ -1,12 +1,11 @@
 ---
 id: bad87fee1348bd9aec908845
-title: Line up Form Elements Responsively with Bootstrap
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
 forumTopicId: 18225
-localeTitle: 使用 Bootstrap 响应式排列表单元素
+title: 使用 Bootstrap 响应式排列表单元素
 ---
 
 ## Description

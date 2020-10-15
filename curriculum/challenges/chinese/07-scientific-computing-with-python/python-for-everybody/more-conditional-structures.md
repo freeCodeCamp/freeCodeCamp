@@ -1,8 +1,6 @@
 ---
 id: 5e7b9f060b6c005b0e76f059
-title: More Conditional Structures
 challengeType: 11
-isHidden: false
 videoId: HdL82tAZR20
 ---
 

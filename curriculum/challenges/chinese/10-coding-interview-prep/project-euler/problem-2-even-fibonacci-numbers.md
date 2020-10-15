@@ -1,9 +1,8 @@
 ---
 id: 5900f36e1000cf542c50fe81
 challengeType: 5
-title: 'Problem 2: Even Fibonacci Numbers'
 videoUrl: ''
-localeTitle: 问题2：斐波那契数列中的偶数
+title: 问题2：斐波那契数列中的偶数
 ---
 
 ## Description

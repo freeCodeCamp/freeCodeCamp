@@ -1,9 +1,8 @@
 ---
 id: 5900f3701000cf542c50fe83
 challengeType: 5
-title: 'Problem 4: Largest palindrome product'
 videoUrl: ''
-localeTitle: 问题4：最大的回文产品
+title: 问题4：最大的回文产品
 ---
 
 ## Description

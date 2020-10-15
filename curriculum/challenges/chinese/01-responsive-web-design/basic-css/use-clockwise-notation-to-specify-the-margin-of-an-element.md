@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd9afdf08726
-title: Use Clockwise Notation to Specify the Margin of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpybAd'
 forumTopicId: 18345
-localeTitle: 使用顺时针方向指定元素的外边距
+title: 使用顺时针方向指定元素的外边距
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f5431000cf542c510055
 challengeType: 5
-title: 'Problem 470: Super Ramvok'
 videoUrl: ''
-localeTitle: 问题470：超级拉姆沃克
+title: 问题470：超级拉姆沃克
 ---
 
 ## Description

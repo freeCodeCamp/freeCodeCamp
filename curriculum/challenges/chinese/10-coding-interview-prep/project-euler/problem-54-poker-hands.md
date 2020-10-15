@@ -1,9 +1,8 @@
 ---
 id: 5900f3a21000cf542c50feb5
 challengeType: 5
-title: 'Problem 54: Poker hands'
 videoUrl: ''
-localeTitle: 问题54：扑克手
+title: 问题54：扑克手
 ---
 
 ## Description

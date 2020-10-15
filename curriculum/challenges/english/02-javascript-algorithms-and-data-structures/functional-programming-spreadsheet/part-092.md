@@ -2,7 +2,6 @@
 id: 5d792537533b1c7843bfd029
 title: Part 92
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

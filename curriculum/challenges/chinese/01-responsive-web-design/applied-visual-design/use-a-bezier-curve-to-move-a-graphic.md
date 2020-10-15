@@ -1,10 +1,9 @@
 ---
 id: 587d78a9367417b2b2512ae9
-title: Use a Bezier Curve to Move a Graphic
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bnRCK'
 forumTopicId: 301071
-localeTitle: 使用贝塞尔曲线移动图形
+title: 使用贝塞尔曲线移动图形
 ---
 
 ## Description

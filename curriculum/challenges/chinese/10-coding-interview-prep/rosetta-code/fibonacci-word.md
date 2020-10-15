@@ -1,9 +1,8 @@
 ---
-title: Fibonacci word
 id: 5992e222d397f00d21122931
 challengeType: 5
 videoUrl: ''
-localeTitle: 斐波那契字
+title: 斐波那契字
 ---
 
 ## Description

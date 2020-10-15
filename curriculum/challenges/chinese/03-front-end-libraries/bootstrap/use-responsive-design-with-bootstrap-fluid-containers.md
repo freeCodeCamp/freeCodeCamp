@@ -1,9 +1,8 @@
 ---
 id: bad87fee1348bd9acde08712
-title: Use Responsive Design with Bootstrap Fluid Containers
 challengeType: 0
 forumTopicId: 18362
-localeTitle: 使用 Fluid 容器实现响应式设计
+title: 使用 Fluid 容器实现响应式设计
 ---
 
 ## Description

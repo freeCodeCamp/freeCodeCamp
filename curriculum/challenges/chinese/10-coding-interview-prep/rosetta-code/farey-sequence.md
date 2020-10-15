@@ -1,9 +1,8 @@
 ---
-title: Farey sequence
 id: 59c3ec9f15068017c96eb8a3
 challengeType: 5
 videoUrl: ''
-localeTitle: Farey序列
+title: Farey序列
 ---
 
 ## Description

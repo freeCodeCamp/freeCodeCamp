@@ -1,9 +1,8 @@
 ---
-title: I before E except after C
 id: 5a23c84252665b21eecc7eb0
 challengeType: 5
 videoUrl: ''
-localeTitle: 我在E之前除了C之后
+title: 我在E之前除了C之后
 ---
 
 ## Description

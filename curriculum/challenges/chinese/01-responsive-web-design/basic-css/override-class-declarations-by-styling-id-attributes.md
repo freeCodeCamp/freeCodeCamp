@@ -1,10 +1,9 @@
 ---
 id: bad87fee1348bd8aedf06756
-title: Override Class Declarations by Styling ID Attributes
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
-localeTitle: ID 选择器优先级高于 Class 选择器
+title: ID 选择器优先级高于 Class 选择器
 ---
 
 ## Description

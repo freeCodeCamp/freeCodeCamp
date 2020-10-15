@@ -1,9 +1,8 @@
 ---
 id: 587d7db4367417b2b2512b92
-title: Extract Matches
 challengeType: 1
 forumTopicId: 301340
-localeTitle: 提取匹配项
+title: 提取匹配项
 ---
 
 ## Description

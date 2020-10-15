@@ -1,9 +1,8 @@
 ---
 id: 587d825c367417b2b2512c90
-title: Breadth-First Search
 challengeType: 1
 videoUrl: ''
-localeTitle: 广度优先搜索
+title: 广度优先搜索
 ---
 
 ## Description

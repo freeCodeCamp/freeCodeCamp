@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036156
-title: Use Middleware to Handle Asynchronous Actions
 challengeType: 6
 forumTopicId: 301451
-localeTitle: 使用中间件处理异步操作
+title: 使用中间件处理异步操作
 ---
 
 ## Description

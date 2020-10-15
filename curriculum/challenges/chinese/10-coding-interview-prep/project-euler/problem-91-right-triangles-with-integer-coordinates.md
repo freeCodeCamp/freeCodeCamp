@@ -1,9 +1,8 @@
 ---
 id: 5900f3c71000cf542c50feda
 challengeType: 5
-title: 'Problem 91: Right triangles with integer coordinates'
 videoUrl: ''
-localeTitle: 问题91：带有整数坐标的直角三角形
+title: 问题91：带有整数坐标的直角三角形
 ---
 
 ## Description

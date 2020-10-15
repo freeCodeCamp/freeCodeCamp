@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036141
-title: Getting Started with React Redux
 challengeType: 6
 forumTopicId: 301430
-localeTitle: React 和 Redux 入门
+title: React 和 Redux 入门
 ---
 
 ## Description

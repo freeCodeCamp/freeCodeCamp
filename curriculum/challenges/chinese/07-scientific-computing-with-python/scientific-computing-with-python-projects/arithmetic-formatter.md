@@ -1,8 +1,6 @@
 ---
 id: 5e44412c903586ffb414c94c
-title: Arithmetic Formatter
 challengeType: 10
-isHidden: false
 ---
 
 ## Description

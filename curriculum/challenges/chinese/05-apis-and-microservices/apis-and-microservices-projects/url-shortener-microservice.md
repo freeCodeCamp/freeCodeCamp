@@ -1,10 +1,8 @@
 ---
 id: bd7158d8c443edefaeb5bd0e
-title: URL Shortener Microservice
 challengeType: 4
-isHidden: false
 forumTopicId: 301509
-localeTitle: 短网址
+title: 短网址
 ---
 
 ## Description
@@ -36,7 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
-<section id='challengeSeed'
+<section id='challengeSeed'>
 
 </section>
 

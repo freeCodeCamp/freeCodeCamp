@@ -1,10 +1,9 @@
 ---
 id: 56533eb9ac21ba0edf2244ca
-title: Using Objects for Lookups
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
-localeTitle: 使用对象进行查找
+title: 使用对象进行查找
 ---
 
 ## Description

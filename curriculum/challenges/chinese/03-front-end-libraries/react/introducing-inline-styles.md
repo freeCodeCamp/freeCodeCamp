@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036181
-title: Introducing Inline Styles
 challengeType: 6
 forumTopicId: 301395
-localeTitle: 介绍内联样式
+title: 介绍内联样式
 ---
 
 ## Description

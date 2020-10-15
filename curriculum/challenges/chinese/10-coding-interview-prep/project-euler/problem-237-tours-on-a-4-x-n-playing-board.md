@@ -1,9 +1,8 @@
 ---
 id: 5900f4591000cf542c50ff6c
 challengeType: 5
-title: 'Problem 237: Tours on a 4 x n playing board'
 videoUrl: ''
-localeTitle: 问题237：在4 x n游戏板上游览
+title: 问题237：在4 x n游戏板上游览
 ---
 
 ## Description

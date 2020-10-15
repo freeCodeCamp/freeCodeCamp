@@ -1,10 +1,8 @@
 ---
 id: bd7158d8c443edefaeb5bdef
-title: Timestamp Microservice
 challengeType: 4
-isHidden: false
 forumTopicId: 301508
-localeTitle: 时间戳
+title: 时间戳
 ---
 
 ## Description

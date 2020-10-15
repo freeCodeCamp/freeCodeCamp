@@ -1,9 +1,8 @@
 ---
 id: 587d8250367417b2b2512c5d
-title: Run Functional Tests using a Headless Browser II
 challengeType: 2
 forumTopicId: 301594
-localeTitle: 使用 headless 浏览器运行功能测试 (2)
+title: 使用 headless 浏览器运行功能测试 (2)
 ---
 
 ## Description

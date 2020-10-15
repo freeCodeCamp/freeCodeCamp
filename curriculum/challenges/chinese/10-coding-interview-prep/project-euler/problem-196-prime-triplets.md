@@ -1,9 +1,8 @@
 ---
 id: 5900f4301000cf542c50ff42
 challengeType: 5
-title: 'Problem 196: Prime triplets'
 videoUrl: ''
-localeTitle: 问题196：Prime三胞胎
+title: 问题196：Prime三胞胎
 ---
 
 ## Description

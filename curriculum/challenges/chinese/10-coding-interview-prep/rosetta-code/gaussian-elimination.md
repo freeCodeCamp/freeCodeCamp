@@ -1,9 +1,8 @@
 ---
-title: Gaussian elimination
 id: 5a23c84252665b21eecc7e77
 challengeType: 5
 videoUrl: ''
-localeTitle: 高斯消除
+title: 高斯消除
 ---
 
 ## Description

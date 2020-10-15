@@ -1,9 +1,8 @@
 ---
 id: 5900f4081000cf542c50ff1a
 challengeType: 5
-title: 'Problem 155: Counting Capacitor Circuits'
 videoUrl: ''
-localeTitle: 问题155：计算电容器电路
+title: 问题155：计算电容器电路
 ---
 
 ## Description

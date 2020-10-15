@@ -1,9 +1,8 @@
 ---
 id: bd7158d8c442eedfaeb5bd1c
-title: Build a Tic Tac Toe Game
 challengeType: 3
 videoUrl: ''
-localeTitle: 建立一个Tic Tac Toe游戏
+title: 建立一个Tic Tac Toe游戏
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 587d7fb0367417b2b2512bf0
-title: Serve Static Assets
 challengeType: 2
 forumTopicId: 301518
-localeTitle: 服务静态资源
+title: 服务静态资源
 ---
 
 ## Description

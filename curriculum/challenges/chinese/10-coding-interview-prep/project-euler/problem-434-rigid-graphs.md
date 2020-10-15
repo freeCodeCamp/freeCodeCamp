@@ -1,9 +1,8 @@
 ---
 id: 5900f51f1000cf542c510031
 challengeType: 5
-title: 'Problem 434: Rigid graphs'
 videoUrl: ''
-localeTitle: 问题434：刚性图
+title: 问题434：刚性图
 ---
 
 ## Description

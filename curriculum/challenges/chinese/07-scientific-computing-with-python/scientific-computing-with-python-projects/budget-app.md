@@ -1,8 +1,6 @@
 ---
 id: 5e44413e903586ffb414c94e
-title: Budget App
 challengeType: 10
-isHidden: false
 ---
 
 ## Description

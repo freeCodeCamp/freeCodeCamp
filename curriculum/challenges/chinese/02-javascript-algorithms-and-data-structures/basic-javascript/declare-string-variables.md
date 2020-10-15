@@ -1,10 +1,9 @@
 ---
 id: bd7123c9c444eddfaeb5bdef
-title: Declare String Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
-localeTitle: 声明字符串变量
+title: 声明字符串变量
 ---
 
 ## Description

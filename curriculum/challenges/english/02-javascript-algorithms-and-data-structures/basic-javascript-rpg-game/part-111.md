@@ -2,7 +2,6 @@
 id: 5d7f459421b11cdaa3f6b15f
 title: Part 111
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

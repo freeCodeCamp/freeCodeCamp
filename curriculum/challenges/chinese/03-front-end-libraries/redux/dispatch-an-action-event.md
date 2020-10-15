@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d403614f
-title: Dispatch an Action Event
 challengeType: 6
 forumTopicId: 301442
-localeTitle: 分发 Action Event
+title: 分发 Action Event
 ---
 
 ## Description

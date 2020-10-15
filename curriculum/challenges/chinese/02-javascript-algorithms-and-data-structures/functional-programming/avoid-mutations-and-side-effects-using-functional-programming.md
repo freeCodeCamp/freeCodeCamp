@@ -1,9 +1,8 @@
 ---
 id: 587d7b8e367417b2b2512b5e
-title: Avoid Mutations and Side Effects Using Functional Programming
 challengeType: 1
 forumTopicId: 301228
-localeTitle: 使用函数式编程避免变化和副作用
+title: 使用函数式编程避免变化和副作用
 ---
 
 ## Description

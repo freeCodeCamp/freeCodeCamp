@@ -1,9 +1,8 @@
 ---
 id: 5900f3db1000cf542c50feee
 challengeType: 5
-title: 'Problem 111: Primes with runs'
 videoUrl: ''
-localeTitle: 问题111：运行的Primes
+title: 问题111：运行的Primes
 ---
 
 ## Description

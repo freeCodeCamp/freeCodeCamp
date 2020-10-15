@@ -1,9 +1,8 @@
 ---
 id: 587d7fb5367417b2b2512c03
-title: Use the Caret-Character to Use the Latest Minor Version of a Dependency
 challengeType: 2
 forumTopicId: 301531
-localeTitle: 用插入字符可以使用依赖项的最新次要版本
+title: 用插入字符可以使用依赖项的最新次要版本
 ---
 
 ## Description

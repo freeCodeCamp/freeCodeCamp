@@ -1,9 +1,8 @@
 ---
 id: 587d7db6367417b2b2512b9b
-title: Find Characters with Lazy Matching
 challengeType: 1
 forumTopicId: 301341
-localeTitle: 用惰性匹配来查找字符
+title: 用惰性匹配来查找字符
 ---
 
 ## Description

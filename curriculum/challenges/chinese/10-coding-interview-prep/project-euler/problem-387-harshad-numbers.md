@@ -1,9 +1,8 @@
 ---
 id: 5900f4f11000cf542c510003
 challengeType: 5
-title: 'Problem 387: Harshad Numbers'
 videoUrl: ''
-localeTitle: 问题387：Harshad数字
+title: 问题387：Harshad数字
 ---
 
 ## Description

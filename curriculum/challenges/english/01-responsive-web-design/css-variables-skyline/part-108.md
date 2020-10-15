@@ -2,7 +2,6 @@
 id: 5d822fd413a79914d39e9935
 title: Part 108
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

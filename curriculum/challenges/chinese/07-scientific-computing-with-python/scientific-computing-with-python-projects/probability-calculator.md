@@ -1,8 +1,6 @@
 ---
 id: 5e44414f903586ffb414c950
-title: Probability Calculator
 challengeType: 10
-isHidden: false
 ---
 
 ## Description

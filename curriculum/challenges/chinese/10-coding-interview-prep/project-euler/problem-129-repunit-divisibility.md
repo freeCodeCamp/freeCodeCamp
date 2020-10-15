@@ -1,9 +1,8 @@
 ---
 id: 5900f3ef1000cf542c50ff01
 challengeType: 5
-title: 'Problem 129: Repunit divisibility'
 videoUrl: ''
-localeTitle: 问题129：重新划分可分性
+title: 问题129：重新划分可分性
 ---
 
 ## Description

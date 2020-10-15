@@ -1,10 +1,9 @@
 ---
 id: 5a90373638fddaf9a66b5d39
-title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
 forumTopicId: 301137
-localeTitle: 使用 grid-row 来控制空间大小
+title: 使用 grid-row 来控制空间大小
 ---
 
 ## Description

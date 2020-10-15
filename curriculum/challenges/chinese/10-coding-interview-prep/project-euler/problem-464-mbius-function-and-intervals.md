@@ -1,9 +1,8 @@
 ---
 id: 5900f53d1000cf542c51004f
 challengeType: 5
-title: 'Problem 464: Möbius function and intervals'
 videoUrl: ''
-localeTitle: 问题464：莫比乌斯函数和区间
+title: 问题464：莫比乌斯函数和区间
 ---
 
 ## Description

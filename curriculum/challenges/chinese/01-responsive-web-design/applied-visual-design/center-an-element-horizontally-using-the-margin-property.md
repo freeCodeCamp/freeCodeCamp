@@ -1,10 +1,9 @@
 ---
 id: 587d78a3367417b2b2512ad0
-title: Center an Element Horizontally Using the margin Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJqU4'
 forumTopicId: 301043
-localeTitle: 使用 margin 属性将元素水平居中
+title: 使用 margin 属性将元素水平居中
 ---
 
 ## Description

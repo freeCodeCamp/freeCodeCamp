@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -9,8 +9,8 @@ import { Spacer } from '../helpers';
 import { blockNameify } from '../../../../utils/block-nameify';
 import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
-import MinimalDonateForm from './MinimalDonateForm';
-import { modalDefaultStateConfig } from '../../../../config/donation-settings';
+import DonateForm from './DonateForm';
+import { modalDefaultDonation } from '../../../../config/donation-settings';
 
 import {
   closeDonationModal,
@@ -77,19 +77,21 @@ function DonateModal({
     setCloseLabel(true);
   };
 
-  if (show) {
-    executeGA({ type: 'modal', data: '/donation-modal' });
-    executeGA({
-      type: 'event',
-      data: {
-        category: 'Donation',
-        action: `Displayed ${
-          isBlockDonation ? 'block' : 'progress'
-        } donation modal`,
-        nonInteraction: true
-      }
-    });
-  }
+  useEffect(() => {
+    if (show) {
+      executeGA({ type: 'modal', data: '/donation-modal' });
+      executeGA({
+        type: 'event',
+        data: {
+          category: 'Donation',
+          action: `Displayed ${
+            isBlockDonation ? 'block' : 'progress'
+          } donation modal`,
+          nonInteraction: true
+        }
+      });
+    }
+  }, [show, isBlockDonation, executeGA]);
 
   const durationToText = donationDuration => {
     if (donationDuration === 'onetime') return 'a one-time';
@@ -100,8 +102,8 @@ function DonateModal({
 
   const donationText = (
     <b>
-      Become {durationToText(modalDefaultStateConfig.donationDuration)}{' '}
-      supporter of our nonprofit.
+      Become {durationToText(modalDefaultDonation.donationDuration)} supporter
+      of our nonprofit.
     </b>
   );
   const blockDonationText = (
@@ -141,7 +143,7 @@ function DonateModal({
       <Modal.Body>
         {isBlockDonation ? blockDonationText : progressDonationText}
         <Spacer />
-        <MinimalDonateForm handleProcessing={handleProcessing} />
+        <DonateForm handleProcessing={handleProcessing} isMinimalForm={true} />
         <Spacer />
         <Row>
           <Col sm={4} smOffset={4} xs={8} xsOffset={2}>

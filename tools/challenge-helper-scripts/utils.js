@@ -39,7 +39,6 @@ ${challengeSeed.trim()}
 id: ${ObjectID.generate()}
 title: Part ${stepNum}
 challengeType: 0
-isHidden: true
 ---
 
 ## Description
@@ -201,11 +200,22 @@ const getExistingStepNums = projectPath => {
 const getProjectPath = () =>
   (process.env.CALLING_DIR || process.cwd()) + path.sep;
 
+const getArgValues = argv => {
+  return argv.slice(2).reduce((argsObj, arg) => {
+    const [argument, value] = arg.replace(/\s/g, '').split('=');
+    if (!argument || !value) {
+      throw `Invalid argument/value specified: ${arg}`;
+    }
+    return { ...argsObj, [argument]: value };
+  }, {});
+};
+
 module.exports = {
   createStepFile,
   getChallengeSeed,
   padWithLeadingZeros,
   reorderSteps,
   getExistingStepNums,
-  getProjectPath
+  getProjectPath,
+  getArgValues
 };

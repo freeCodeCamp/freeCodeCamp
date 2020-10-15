@@ -1,10 +1,9 @@
 ---
 id: 587d781b367417b2b2512abe
-title: Add a box-shadow to a Card-like Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZdUd'
 forumTopicId: 301031
-localeTitle: 给卡片元素添加 box-shadow
+title: 给卡片元素添加 box-shadow
 ---
 
 ## Description

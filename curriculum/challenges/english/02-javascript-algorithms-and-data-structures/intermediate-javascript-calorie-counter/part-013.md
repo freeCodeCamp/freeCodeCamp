@@ -2,7 +2,6 @@
 id: 5ddb965c65d27e1512d44da6
 title: Part 13
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

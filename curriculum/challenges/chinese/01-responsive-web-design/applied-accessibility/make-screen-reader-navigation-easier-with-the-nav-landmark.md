@@ -1,10 +1,9 @@
 ---
 id: 587d7788367417b2b2512aa2
-title: Make Screen Reader Navigation Easier with the nav Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVwWSv'
 forumTopicId: 301024
-localeTitle: 使用 nav 元素使屏幕阅读器更容易导航
+title: 使用 nav 元素使屏幕阅读器更容易导航
 ---
 
 ## Description

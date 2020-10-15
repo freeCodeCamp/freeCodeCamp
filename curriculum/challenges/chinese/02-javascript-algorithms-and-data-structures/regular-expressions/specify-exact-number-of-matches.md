@@ -1,9 +1,8 @@
 ---
 id: 587d7db9367417b2b2512ba7
-title: Specify Exact Number of Matches
 challengeType: 1
 forumTopicId: 301365
-localeTitle: 指定匹配的确切数量
+title: 指定匹配的确切数量
 ---
 
 ## Description

@@ -1,16 +1,13 @@
 ---
-id: 5f459a7ceb8b5c446656d88b
+id: 5f3ef6e087d56ed3ffdc36be
 title: Part 64
 challengeType: 0
-isHidden: true
 ---
 
 ## Description
 <section id='description'>
 
-Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
-
-Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
+Now apply the `established` class to the `Est. 2020` text.
 
 </section>
 
@@ -42,11 +39,12 @@ tests:
   </head>
   <body>
     <div class="menu">
+      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
-      <hr>
+      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -82,12 +80,6 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
     </div>
   </body>
 <html>
@@ -101,14 +93,6 @@ tests:
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
 }
 
 .established {
@@ -127,13 +111,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-hr {
-  height: 3px;
-  background-color: brown;
-}
---fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;

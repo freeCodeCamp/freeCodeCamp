@@ -1,10 +1,9 @@
 ---
 id: 56bbb991ad1ed5201cd392cf
-title: Write Reusable JavaScript with Functions
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
-localeTitle: 用函数编写可重用代码
+title: 用函数编写可重用代码
 ---
 
 ## Description

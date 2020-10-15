@@ -1,9 +1,8 @@
 ---
 id: 5900f4b21000cf542c50ffc5
 challengeType: 5
-title: 'Problem 326: Modulo Summations'
 videoUrl: ''
-localeTitle: 问题326：模数汇总
+title: 问题326：模数汇总
 ---
 
 ## Description

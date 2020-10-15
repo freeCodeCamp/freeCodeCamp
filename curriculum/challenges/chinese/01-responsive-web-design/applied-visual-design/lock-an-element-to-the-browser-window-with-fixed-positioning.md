@@ -1,10 +1,9 @@
 ---
 id: 587d781e367417b2b2512acc
-title: Lock an Element to the Browser Window with Fixed Positioning
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061
-localeTitle: 固定定位的参照物是浏览器的窗口
+title: 固定定位的参照物是浏览器的窗口
 ---
 
 ## Description

@@ -1,11 +1,10 @@
 ---
 id: bad87fee1348bd9bedc08826
-title: Target HTML Elements with Selectors Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18319
-localeTitle: 使用 jQuery 配合元素选择器选择元素
+title: 使用 jQuery 配合元素选择器选择元素
 ---
 
 ## Description

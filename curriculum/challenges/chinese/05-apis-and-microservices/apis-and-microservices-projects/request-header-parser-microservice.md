@@ -1,10 +1,8 @@
 ---
 id: bd7158d8c443edefaeb5bdff
-title: Request Header Parser Microservice
 challengeType: 4
-isHidden: false
 forumTopicId: 301507
-localeTitle: 请求头解析器
+title: 请求头解析器
 ---
 
 ## Description

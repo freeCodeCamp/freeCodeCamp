@@ -1,9 +1,8 @@
 ---
 id: 587d8251367417b2b2512c62
-title: Create a Linked List Class
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建链接列表类
+title: 创建链接列表类
 ---
 
 ## Description

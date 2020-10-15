@@ -1,9 +1,8 @@
 ---
 id: 5900f4ae1000cf542c50ffbf
 challengeType: 5
-title: 'Problem 320: Factorials divisible by a huge integer'
 videoUrl: ''
-localeTitle: 问题320：阶乘被整数整除
+title: 问题320：阶乘被整数整除
 ---
 
 ## Description

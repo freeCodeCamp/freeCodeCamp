@@ -1,9 +1,8 @@
 ---
 id: 5900f4601000cf542c50ff72
 challengeType: 5
-title: 'Problem 244: Sliders'
 videoUrl: ''
-localeTitle: 问题244：滑块
+title: 问题244：滑块
 ---
 
 ## Description

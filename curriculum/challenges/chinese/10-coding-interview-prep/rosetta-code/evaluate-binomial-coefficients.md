@@ -1,9 +1,8 @@
 ---
-title: Evaluate binomial coefficients
 id: 598de241872ef8353c58a7a2
 challengeType: 5
 videoUrl: ''
-localeTitle: 评估二项式系数
+title: 评估二项式系数
 ---
 
 ## Description

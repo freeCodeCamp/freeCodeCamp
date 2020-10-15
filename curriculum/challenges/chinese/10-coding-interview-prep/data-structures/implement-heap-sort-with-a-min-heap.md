@@ -1,9 +1,8 @@
 ---
 id: 587d825b367417b2b2512c8c
-title: Implement Heap Sort with a Min Heap
 challengeType: 1
 videoUrl: ''
-localeTitle: 用最小堆实现堆排序
+title: 用最小堆实现堆排序
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
-title: Execute Brain****
 id: 59e0a8df964e4540d5abe599
 challengeType: 5
 videoUrl: ''
-localeTitle: 执行大脑****
+title: 执行大脑****
 ---
 
 ## Description

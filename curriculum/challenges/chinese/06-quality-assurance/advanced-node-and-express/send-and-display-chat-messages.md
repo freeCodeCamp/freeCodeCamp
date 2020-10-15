@@ -1,9 +1,8 @@
 ---
 id: 589fc832f9fc0f352b528e79
-title: Send and Display Chat Messages
 challengeType: 2
 forumTopicId: 301562
-localeTitle: 发送和显示聊天消息
+title: 发送和显示聊天消息
 ---
 
 ## Description
@@ -48,7 +47,7 @@ socket.emit('chat message', messageToSend);
 tests:
   - text: 服务端应监听 <code>'chat message'</code>，且应在监听到后 emit。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*name.*message/gis, 'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: '客户端应正确处理和展示从 <code>'chat message'</code> 事件发来的新数据。
+  - text: 客户端应正确处理和展示从 <code>'chat message'</code> 事件发来的新数据。
     testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/public/client.js'') .then(data => { assert.match(data, /socket.on.*(''|")chat message(''|")[^]*messages.*li/gis, ''You should append a list item to #messages on your client within the "chat message" event listener to display the new message''); }, xhr => { throw new Error(xhr.statusText); })'
 ```
 

@@ -1,9 +1,8 @@
 ---
 id: a77dbc43c33f39daa4429b4f
-title: Boo who
 challengeType: 5
 videoUrl: ''
-localeTitle: 嘘谁
+title: 嘘谁
 ---
 
 ## Description

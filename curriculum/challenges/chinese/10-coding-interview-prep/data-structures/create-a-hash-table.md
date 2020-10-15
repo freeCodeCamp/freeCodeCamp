@@ -1,9 +1,8 @@
 ---
 id: 587d825b367417b2b2512c8e
-title: Create a Hash Table
 challengeType: 1
 videoUrl: ''
-localeTitle: 创建一个哈希表
+title: 创建一个哈希表
 ---
 
 ## Description

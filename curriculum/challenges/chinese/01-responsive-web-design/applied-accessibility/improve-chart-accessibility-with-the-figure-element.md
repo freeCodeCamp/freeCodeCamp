@@ -1,10 +1,9 @@
 ---
 id: 587d778a367417b2b2512aa5
-title: Improve Chart Accessibility with the figure Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMqtE'
 forumTopicId: 301015
-localeTitle: 使用 figure 元素提高图表的可访问性
+title: 使用 figure 元素提高图表的可访问性
 ---
 
 ## Description

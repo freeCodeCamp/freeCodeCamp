@@ -1,9 +1,8 @@
 ---
 id: 587d7b8e367417b2b2512b5d
-title: Understand the Hazards of Using Imperative Code
 challengeType: 1
 forumTopicId: 301241
-localeTitle: 了解使用命令式编程的危害
+title: 了解使用命令式编程的危害
 ---
 
 ## Description

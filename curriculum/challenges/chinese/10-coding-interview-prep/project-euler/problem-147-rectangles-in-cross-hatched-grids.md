@@ -1,9 +1,8 @@
 ---
 id: 5900f3ff1000cf542c50ff12
 challengeType: 5
-title: 'Problem 147: Rectangles in cross-hatched grids'
 videoUrl: ''
-localeTitle: 问题147：交叉阴影网格中的矩形
+title: 问题147：交叉阴影网格中的矩形
 ---
 
 ## Description

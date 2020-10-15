@@ -1,10 +1,9 @@
 ---
 id: 5a90374338fddaf9a66b5d3a
-title: Align an Item Horizontally using justify-self
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpKHq'
 forumTopicId: 301122
-localeTitle: 使用 justify-self 水平对齐项目
+title: 使用 justify-self 水平对齐项目
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 5900f4931000cf542c50ffa5
 challengeType: 5
-title: 'Problem 294: Sum of digits - experience #23'
 videoUrl: ''
-localeTitle: 问题294：数字总和-经验＃23
+title: 问题294：数字总和-经验＃23
 ---
 
 ## Description

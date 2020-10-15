@@ -1,9 +1,8 @@
 ---
 id: 5900f3a81000cf542c50feba
 challengeType: 5
-title: 'Problem 59: XOR decryption'
 videoUrl: ''
-localeTitle: 问题59：XOR解密
+title: 问题59：XOR解密
 ---
 
 ## Description

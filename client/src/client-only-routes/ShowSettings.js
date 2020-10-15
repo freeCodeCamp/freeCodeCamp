@@ -173,7 +173,7 @@ export function ShowSettings(props) {
 
   return (
     <Fragment>
-      <Helmet title='Settings | freeCodeCamp.org'></Helmet>
+      <Helmet title='Settings | freeCodeCamp.org' />
       <Grid>
         <main>
           <Spacer size={2} />

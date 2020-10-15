@@ -348,3 +348,7 @@ li.disabled > a {
   justify-content: center;
   align-content: center;
 }
+
+.hide {
+  display: none;
+}

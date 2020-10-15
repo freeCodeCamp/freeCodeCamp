@@ -1,9 +1,8 @@
 ---
 id: 5900f4511000cf542c50ff63
 challengeType: 5
-title: 'Problem 228: Minkowski Sums'
 videoUrl: ''
-localeTitle: 问题228：Minkowski Sums
+title: 问题228：Minkowski Sums
 ---
 
 ## Description

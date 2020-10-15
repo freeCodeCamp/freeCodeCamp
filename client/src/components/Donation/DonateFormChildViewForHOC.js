@@ -15,7 +15,6 @@ import { injectStripe } from 'react-stripe-elements';
 
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
-import { postChargeStripe } from '../../utils/ajax';
 import { userSelector } from '../../redux';
 
 const propTypes = {
@@ -26,18 +25,13 @@ const propTypes = {
   getDonationButtonLabel: PropTypes.func.isRequired,
   handleProcessing: PropTypes.func,
   isSignedIn: PropTypes.bool,
+  onDonationStateChange: PropTypes.func,
+  postChargeStripe: PropTypes.func,
   showCloseBtn: PropTypes.func,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   }),
   theme: PropTypes.string
-};
-const initialState = {
-  donationState: {
-    processing: false,
-    success: false,
-    error: ''
-  }
 };
 
 const mapStateToProps = createSelector(
@@ -50,9 +44,6 @@ class DonateFormChildViewForHOC extends Component {
     super(...args);
 
     this.state = {
-      ...initialState,
-      donationAmount: this.props.donationAmount,
-      donationDuration: this.props.donationDuration,
       isSubmissionValid: null,
       email: null,
       isEmailValid: true,
@@ -63,7 +54,6 @@ class DonateFormChildViewForHOC extends Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postDonation = this.postDonation.bind(this);
-    this.resetDonation = this.resetDonation.bind(this);
     this.handleEmailBlur = this.handleEmailBlur.bind(this);
   }
 
@@ -106,41 +96,26 @@ class DonateFormChildViewForHOC extends Component {
 
     const email = this.getUserEmail();
     if (!email || !isEmail(email)) {
-      return this.setState(state => ({
-        ...state,
-        donationState: {
-          ...state.donationState,
-          error:
-            'We need a valid email address to which we can send your' +
-            ' donation tax receipt.'
-        }
-      }));
+      return this.props.onDonationStateChange({
+        error:
+          'We need a valid email address to which we can send your' +
+          ' donation tax receipt.'
+      });
     }
     return this.props.stripe.createToken({ email }).then(({ error, token }) => {
       if (error) {
-        return this.setState(state => ({
-          ...state,
-          donationState: {
-            ...state.donationState,
-            error:
-              'Something went wrong processing your donation. Your card' +
-              ' has not been charged.'
-          }
-        }));
+        return this.props.onDonationStateChange({
+          error:
+            'Something went wrong processing your donation. Your card' +
+            ' has not been charged.'
+        });
       }
       return this.postDonation(token);
     });
   }
 
   postDonation(token) {
-    const { donationAmount: amount, donationDuration: duration } = this.state;
-    this.setState(state => ({
-      ...state,
-      donationState: {
-        ...state.donationState,
-        processing: true
-      }
-    }));
+    const { donationAmount: amount, donationDuration: duration } = this.props;
 
     // scroll to top
     window.scrollTo(0, 0);
@@ -150,50 +125,15 @@ class DonateFormChildViewForHOC extends Component {
     if (this.props.handleProcessing) {
       this.props.handleProcessing(
         this.state.donationDuration,
-        Math.round(this.state.donationAmount / 100)
+        Math.round(amount / 100)
       );
     }
 
-    return postChargeStripe({
+    return this.props.postChargeStripe({
       token,
       amount,
       duration
-    })
-      .then(response => {
-        const data = response && response.data;
-        this.setState(state => ({
-          ...state,
-          donationState: {
-            ...state.donationState,
-            processing: false,
-            success: true,
-            error: data.error ? data.error : null
-          }
-        }));
-      })
-      .catch(error => {
-        const data =
-          error.response && error.response.data
-            ? error.response.data
-            : {
-                error:
-                  'Something is not right. ' +
-                  'Please contact donors@freecodecamp.org.'
-              };
-        this.setState(state => ({
-          ...state,
-          donationState: {
-            ...state.donationState,
-            processing: false,
-            success: false,
-            error: data.error
-          }
-        }));
-      });
-  }
-
-  resetDonation() {
-    return this.setState({ ...initialState });
+    });
   }
 
   renderCompletion(props) {
@@ -267,25 +207,13 @@ class DonateFormChildViewForHOC extends Component {
     );
   }
 
-  componentWillReceiveProps({ donationAmount, donationDuration, email }) {
-    this.setState({ donationAmount, donationDuration });
+  componentWillReceiveProps({ email }) {
     if (this.state.email === null && email) {
       this.setState({ email });
     }
   }
 
   render() {
-    const {
-      donationState: { processing, success, error }
-    } = this.state;
-    if (processing || success || error) {
-      return this.renderCompletion({
-        processing,
-        success,
-        error,
-        reset: this.resetDonation
-      });
-    }
     return this.renderDonateForm();
   }
 }

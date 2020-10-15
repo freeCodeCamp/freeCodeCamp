@@ -1,8 +1,6 @@
 ---
 id: 5e9a093a74c4063ca6f7c150
-title: Jupyter Notebooks Cells
 challengeType: 11
-isHidden: false
 videoId: 5PPegAs9aLA
 ---
 

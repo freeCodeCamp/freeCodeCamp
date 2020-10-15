@@ -1,9 +1,8 @@
 ---
 id: 5900f4a31000cf542c50ffb6
 challengeType: 5
-title: 'Problem 311: Biclinic Integral Quadrilaterals'
 videoUrl: ''
-localeTitle: 问题311：双斜积分四边形
+title: 问题311：双斜积分四边形
 ---
 
 ## Description

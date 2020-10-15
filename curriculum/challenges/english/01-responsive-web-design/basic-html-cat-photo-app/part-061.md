@@ -2,7 +2,6 @@
 id: 5ef9b03c81a63668521804e7
 title: Part 61
 challengeType: 0
-isHidden: true
 ---
 
 ## Description

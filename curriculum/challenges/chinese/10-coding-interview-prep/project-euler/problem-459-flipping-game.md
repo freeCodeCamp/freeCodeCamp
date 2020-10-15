@@ -1,9 +1,8 @@
 ---
 id: 5900f5371000cf542c51004a
 challengeType: 5
-title: 'Problem 459: Flipping game'
 videoUrl: ''
-localeTitle: 问题459：翻转游戏
+title: 问题459：翻转游戏
 ---
 
 ## Description

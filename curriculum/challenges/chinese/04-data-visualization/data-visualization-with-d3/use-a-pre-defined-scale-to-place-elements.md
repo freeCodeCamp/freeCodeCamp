@@ -1,9 +1,8 @@
 ---
 id: 587d7fac367417b2b2512bde
-title: Use a Pre-Defined Scale to Place Elements
 challengeType: 6
 forumTopicId: 301494
-localeTitle: 使用预定义的比例放置元素
+title: 使用预定义的比例放置元素
 ---
 
 ## Description

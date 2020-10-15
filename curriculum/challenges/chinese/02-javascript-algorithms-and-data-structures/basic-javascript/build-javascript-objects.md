@@ -1,10 +1,9 @@
 ---
 id: 56bbb991ad1ed5201cd392d0
-title: Build JavaScript Objects
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWGkbtd'
 forumTopicId: 16769
-localeTitle: 新建 JavaScript 对象
+title: 新建 JavaScript 对象
 ---
 
 ## Description

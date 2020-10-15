@@ -1,9 +1,8 @@
 ---
-title: Extensible prime generator
 id: 598ee8b91b410510ae82efef
 challengeType: 5
 videoUrl: ''
-localeTitle: 可扩展的素发生器
+title: 可扩展的素发生器
 ---
 
 ## Description

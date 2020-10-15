@@ -1,9 +1,8 @@
 ---
 id: 5900f3cc1000cf542c50fede
 challengeType: 5
-title: 'Problem 95: Amicable chains'
 videoUrl: ''
-localeTitle: 问题95：友好的链条
+title: 问题95：友好的链条
 ---
 
 ## Description

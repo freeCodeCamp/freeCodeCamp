@@ -1,10 +1,9 @@
 ---
 id: 56533eb9ac21ba0edf2244d8
-title: Comparisons with the Logical And Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvbRVtr'
 forumTopicId: 16799
-localeTitle: 逻辑与运算符
+title: 逻辑与运算符
 ---
 
 ## Description

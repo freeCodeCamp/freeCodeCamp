@@ -1,9 +1,8 @@
 ---
 id: 5a24c314108439a4d4036153
-title: Register a Store Listener
 challengeType: 6
 forumTopicId: 301446
-localeTitle: 注册 Store 监听器
+title: 注册 Store 监听器
 ---
 
 ## Description

@@ -1,9 +1,8 @@
 ---
 id: 587d7db3367417b2b2512b8e
-title: Using the Test Method
 challengeType: 1
 forumTopicId: 301369
-localeTitle: 使用测试方法
+title: 使用测试方法
 ---
 
 ## Description

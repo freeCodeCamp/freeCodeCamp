@@ -8,7 +8,7 @@ import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
-import MinimalDonateForm from '../components/Donation/MinimalDonateForm';
+import DonateForm from '../components/Donation/DonateForm';
 
 import {
   showCertSelector,
@@ -178,14 +178,14 @@ const ShowCertification = props => {
   }
 
   const {
-    date: issueDate,
+    date,
     name: userFullName,
     username,
     certTitle,
     completionTime
   } = cert;
 
-  const certDate = new Date(issueDate);
+  const certDate = new Date(date);
   const certYear = certDate.getFullYear();
   const certMonth = certDate.getMonth();
   const certURL = `https://freecodecamp.org${pathname}`;
@@ -218,10 +218,11 @@ const ShowCertification = props => {
           </Col>
         </Row>
       )}
-      <MinimalDonateForm
-        handleProcessing={handleProcessing}
+      <DonateForm
+        handleProcessing={this.handleProcessing}
         defaultTheme='light'
-      />
+        isMinimalForm={true}
+       />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
@@ -267,9 +268,9 @@ const ShowCertification = props => {
               </div>
             </Col>
             <Col md={7} sm={12}>
-              <div className='issue-date'>
+              <div data-cy='issue-date' className='issue-date'>
                 Issued&nbsp;
-                <strong>{format(certDate, 'MMMM D, YYYY')}</strong>
+                <strong>{format(certDate, 'MMMM d, y')}</strong>
               </div>
             </Col>
           </header>

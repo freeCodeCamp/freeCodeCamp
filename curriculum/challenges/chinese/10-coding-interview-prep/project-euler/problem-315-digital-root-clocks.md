@@ -1,9 +1,8 @@
 ---
 id: 5900f4a71000cf542c50ffba
 challengeType: 5
-title: 'Problem 315: Digital root clocks'
 videoUrl: ''
-localeTitle: 问题315：数字根时钟
+title: 问题315：数字根时钟
 ---
 
 ## Description
