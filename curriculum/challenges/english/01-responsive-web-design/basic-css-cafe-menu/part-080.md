@@ -1,5 +1,5 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
+id: 5f45a66d4a2b0453301e5a26
 title: Part 80
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
 
 </section>
 
@@ -80,6 +80,7 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -144,7 +145,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;  
+  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -156,6 +157,8 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
+
+/* FOOTER */
 
 --fcc-editable-region--
 
