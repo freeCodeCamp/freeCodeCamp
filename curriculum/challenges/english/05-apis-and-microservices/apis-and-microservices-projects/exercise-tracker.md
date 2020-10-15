@@ -50,7 +50,7 @@ tests:
       }
     }
     "
-  - text: You can make a `GET` request to `api/exercise/users` to get an array of all users. Each item in the array is an object containing a users `username` and `_id`.
+  - text: You can make a `GET` request to `api/exercise/users` to get an array of all users. Each element in the array is an object containing a user's `username` and `_id`.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/users');
