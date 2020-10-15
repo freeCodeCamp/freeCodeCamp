@@ -23,14 +23,9 @@ describe('<UniversalNav />', () => {
 });
 
 describe('<NavLinks />', () => {
-  it('shows Curriculum and Sign In buttons on landing page', () => {
+  it('shows Curriculum and Sign In buttons when not signed in', () => {
     const landingPageProps = {
-      user: {
-        username: 'test-user',
-        picture: 'https://freecodecamp.org/image.png'
-      },
-      pending: false,
-      pathName: '/'
+      pending: false
     };
     const shallow = new ShallowRenderer();
     shallow.render(<AuthOrProfile {...landingPageProps} />);
@@ -48,11 +43,9 @@ describe('<NavLinks />', () => {
     const defaultUserProps = {
       user: {
         username: 'test-user',
-        picture: 'https://freecodecamp.org/image.png',
-        isDonating: true
+        picture: 'https://freecodecamp.org/image.png'
       },
-      pending: false,
-      pathName: '/learn'
+      pending: false
     };
     const shallow = new ShallowRenderer();
     shallow.render(<AuthOrProfile {...defaultUserProps} />);
@@ -68,8 +61,7 @@ describe('<NavLinks />', () => {
         username: 'test-user',
         picture: 'https://freecodecamp.org/image.png'
       },
-      pending: false,
-      pathName: '/learn'
+      pending: false
     };
 
     const componentTree = renderer
@@ -86,8 +78,7 @@ describe('<NavLinks />', () => {
         picture: 'https://freecodecamp.org/image.png',
         isDonating: true
       },
-      pending: false,
-      pathName: '/learn'
+      pending: false
     };
     const componentTree = renderer
       .create(<AuthOrProfile {...donatingUserProps} />)
@@ -103,8 +94,7 @@ describe('<NavLinks />', () => {
         picture: 'https://freecodecamp.org/image.png',
         yearsTopContributor: [2020]
       },
-      pending: false,
-      pathName: '/learn'
+      pending: false
     };
 
     const componentTree = renderer
@@ -121,8 +111,7 @@ describe('<NavLinks />', () => {
         isDonating: true,
         yearsTopContributor: [2020]
       },
-      pending: false,
-      pathName: '/learn'
+      pending: false
     };
     const componentTree = renderer
       .create(<AuthOrProfile {...topDonatingContributorUserProps} />)
