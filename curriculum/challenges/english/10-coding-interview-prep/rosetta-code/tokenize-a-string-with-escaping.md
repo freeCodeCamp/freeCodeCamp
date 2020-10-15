@@ -49,7 +49,7 @@ tests:
     testString: assert(typeof tokenize === 'function');
   - text: <code>tokenize</code> should return an array.
     testString: assert(typeof tokenize('a', 'b', 'c') === 'object');
-  - text: <code>tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^') </code> should return <code>['one|uno', '', 'three^^', 'four^|cuatro', '']</code>
+  - text: <code>tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^')</code> should return <code>['one|uno', '', 'three^^', 'four^|cuatro', '']</code>
     testString: assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
   - text: <code>tokenize('a@&bcd&ef&&@@hi', '&', '@')</code> should return <code>['a&bcd', 'ef', '', '@hi']</code>
     testString: assert.deepEqual(tokenize(testStr2, '&', '@'), res2);

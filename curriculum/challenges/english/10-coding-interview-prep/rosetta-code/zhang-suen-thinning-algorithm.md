@@ -51,6 +51,7 @@ It produces the thinned output:
 </pre>
 
 <h2>Algorithm</h2>
+
 Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes.
 The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
 
@@ -67,7 +68,9 @@ Obviously the boundary pixels of the image cannot have the full eight neighbours
 </ul>
 
 <h3>Step 1:</h3>
+
 All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+
   <ol>
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
@@ -75,10 +78,13 @@ All pixels are tested and pixels satisfying all the following conditions (simult
     <li>At least one of <strong>P2, P4 and P6</strong> is white</li>
     <li>At least one of <strong>P4, P6 and P8</strong> is white</li>
   </ol>
+
 After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
 
 <h3>Step 2:</h3>
+
 All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+
   <ol>
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
@@ -86,8 +92,11 @@ All pixels are again tested and pixels satisfying all the following conditions a
     <li>At least one of <strong>P2, P4 and P8</strong> is white</li>
     <li>At least one of <strong>P2, P6 and P8</strong> is white</li>
   </ol>
+  
 After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+
 <h3>Iteration:</h3>
+
 If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
 </section>
 

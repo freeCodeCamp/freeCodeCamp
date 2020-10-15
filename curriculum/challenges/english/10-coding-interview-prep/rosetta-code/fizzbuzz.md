@@ -16,7 +16,9 @@ Write a program that generates an array of integers from 1 to 100 (inclusive). B
 </ul>
 
 </section>
+
 ## Instructions
+
 <section id='instructions'>
 
 Your program should return an array containing the results based on the rules above.
