@@ -104,8 +104,8 @@
  .token.url,
  .language-css .token.string,
  .style .token.string {
-   color: #9a6e3a;
-   background: hsla(0, 0%, 100%, .5);
+   color: #ec9126;
+   background: hsla(0,0%,100%,.12);
  }
 
  .token.atrule,
