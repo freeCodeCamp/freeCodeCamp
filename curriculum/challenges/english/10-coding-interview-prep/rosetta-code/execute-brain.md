@@ -37,7 +37,7 @@ Any cell size is allowed, EOF (<u>E</u>nd-<u>O</u>-<u>F</u>ile) support is optio
 tests:
   - text: <code>brain(bye)</code> should return a string
     testString: assert(typeof brain(bye) === 'string');
-  - text: <code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"
+  - text: <code>brain("++++++[>++++++++++<-]>+++++.")</code> should return "A"
     testString: assert.equal(brain("++++++[>++++++++++<-]>+++++."),"A");
   - text: <code>brain(bye)</code> should return <code>Goodbye, World!\\r\\n</code>
     testString: assert.equal(brain(bye), 'Goodbye, World!\r\n');

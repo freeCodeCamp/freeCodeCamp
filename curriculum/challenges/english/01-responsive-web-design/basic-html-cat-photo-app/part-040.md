@@ -20,9 +20,9 @@ tests:
     testString: assert( $('input').length );
   - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
-  - text: Your `input` element should have a `required` attribute`. Remember, you just add the word `required` inside the `input` element's tag.
+  - text: Your `input` element should have a `required` attribute. Remember, you just add the word `required` inside the `input` element's tag.
     testString: assert( $('input')[0].hasAttribute('required') );
-  - text: A value should not be given to the `required` attribute`.
+  - text: A value should not be given to the `required` attribute.
     testString: assert( $('input')[0].getAttribute('required') === '' );
 
 ```
