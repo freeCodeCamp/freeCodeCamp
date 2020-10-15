@@ -7,7 +7,8 @@ forumTopicId: 301519
 
 ## Description
 <section id='description'>
-In the first two lines of the file <code>myApp.js</code>, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is <code>app.listen(port)</code>. It tells your server to listen on a given port, putting it in running state. You can see it at the bottom of the file. It is inside comments because, for testing reasons, we need the app to be running in the background. All the code that you may want to add goes between these two fundamental parts. Repl.it stores the port number in the environment variable <code>process.env.PORT</code>. Its value is <code>3000</code>.
+In the first two lines of the file <code>myApp.js</code>, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is <code>app.listen(port)</code>. It tells your server to listen on a given port, putting it in running state. For testing reasons, we need the app to be running in the background so we added this method in the `server.js` file for you.
+
 Let’s serve our first string! In Express, routes takes the following structure: <code>app.METHOD(PATH, HANDLER)</code>. METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched.
 Handlers take the form <code>function(req, res) {...}</code>, where req is the request object, and res is the response object. For example, the handler
 
@@ -22,8 +23,8 @@ will serve the string 'Response String'.
 
 ## Instructions
 <section id='instructions'>
-Use the <code>app.get()</code> method to serve the string "Hello Express" to GET requests matching the <code>/</code> (root) path.
-<strong>Note:</strong> Be sure that your code works by looking at the logs, then see the results in the preview if you are using Repl.it.
+Use the <code>app.get()</code> method to serve the string "Hello Express" to GET requests matching the <code>/</code> (root) path. Be sure that your code works by looking at the logs, then see the results in the preview if you are using Repl.it.
+<strong>Note:</strong> All the code for these lessons should be added in between the few lines of code we have started you off with.
 </section>
 
 ## Tests
