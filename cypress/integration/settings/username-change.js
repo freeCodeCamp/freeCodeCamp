@@ -63,7 +63,7 @@ describe('Username input field', () => {
   it('Should be able to click the `Save` button if username is avalable', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
-      .type('ojeyton', { force: true });
+      .type('oliver', { force: true });
 
     cy.get('@usernameForm').within(() => {
       cy.contains('Save').should('not.be.disabled');
@@ -157,6 +157,8 @@ describe('Username input field', () => {
       .contains('Save')
       .click({ force: true });
     cy.contains('Account Settings for quincy').should('be.visible');
+
+    cy.resetUsername();
   });
 
   it('Should show flash message showing username has been updated', () => {
@@ -174,6 +176,8 @@ describe('Username input field', () => {
         'have.class',
         'flash-message alert alert-success alert-dismissable'
       );
+
+    cy.resetUsername();
   });
 
   it('Should be able to close the shown flash message', () => {
@@ -190,16 +194,20 @@ describe('Username input field', () => {
     cy.contains('We have updated your username to bjorno').should(
       'not.be.visible'
     );
+
+    cy.resetUsername();
   });
 
   it('Should change username if enter is pressed', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
-      .type('developmentuser', { force: true });
+      .type('symbol', { force: true });
     cy.contains('Username is available.');
 
     cy.get('@usernameInput').type('{enter}', { force: true, release: false });
 
-    cy.contains('Account Settings for developmentuser').should('be.visible');
+    cy.contains('Account Settings for symbol').should('be.visible');
+
+    cy.resetUsername();
   });
 });
