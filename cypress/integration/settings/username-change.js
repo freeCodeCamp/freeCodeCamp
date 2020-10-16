@@ -89,6 +89,13 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('twaha', { force: true });
 
+    cy.contains('Username is available.').should('not.be.visible');
+    cy.contains('Username not available.').should('not.be.visible');
+    cy.contains(
+      'Please note, changing your username will also change ' +
+        'the URL to your profile and your certifications.'
+    ).should('not.be.visible');
+
     cy.get('@usernameForm')
       .contains('Save')
       .should('be.disabled');
@@ -98,6 +105,10 @@ describe('Username input field', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
       .type('developmentuser', { force: true });
+
+    cy.get('@usernameForm')
+      .contains('Save')
+      .should('be.disabled');
   });
 
   // eslint-disable-next-line max-len
