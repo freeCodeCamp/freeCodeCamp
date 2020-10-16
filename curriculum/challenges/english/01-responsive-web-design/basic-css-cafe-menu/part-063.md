@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e06d34faac0447fc44
+id: 5f3ef6e087d56ed3ffdc36be
 title: Part 63
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
+Now apply the `established` class to the `Est. 2020` text.
 
 </section>
 
@@ -39,10 +39,12 @@ tests:
   </head>
   <body>
     <div class="menu">
+      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
       </header>
+      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -93,9 +95,9 @@ body {
   font-family: sans-serif;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.established {
+  font-style: italic;
+}
 
 h1, h2, p {
   text-align: center;

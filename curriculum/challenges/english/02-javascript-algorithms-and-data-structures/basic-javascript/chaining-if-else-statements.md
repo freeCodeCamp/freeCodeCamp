@@ -28,7 +28,7 @@ if (condition1) {
 ## Instructions
 <section id='instructions'>
 Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:
-<code>num &lt;   5</code> - return "Tiny"<br><code>num &lt;  10</code> - return "Small"<br><code>num &lt; 15</code> - return "Medium"<br><code>num &lt; 20</code> - return "Large"<br><code>num >= 20</code>  - return "Huge"
+<code>num &lt; 5</code> - return "Tiny"<br><code>num &lt; 10</code> - return "Small"<br><code>num &lt; 15</code> - return "Medium"<br><code>num &lt; 20</code> - return "Large"<br><code>num >= 20</code>  - return "Huge"
 </section>
 
 ## Tests

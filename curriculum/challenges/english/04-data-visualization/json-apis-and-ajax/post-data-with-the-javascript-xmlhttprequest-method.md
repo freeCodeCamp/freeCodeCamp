@@ -32,7 +32,7 @@ Finally, the <code>send</code> method sends the request with the <code>body</cod
 
 ## Instructions
 <section id='instructions'>
-Update the code to create and send a "POST" request. Then enter your name in input box and click "Send Message". Your AJAX function will replace "Reply from Server will be here." with the reply of the server. In this case, it is your name appended with " loves cats".
+Update the code so it makes a "POST" request to the API endpoint. Then type your name in the input field and click "Send Message". Your AJAX function should replace "Reply from Server will be here." with data from the server. Format the response to display your name appended with " loves cats".
 </section>
 
 ## Tests

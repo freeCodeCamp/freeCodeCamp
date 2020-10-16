@@ -1,5 +1,5 @@
 ---
-id: 5f459a7ceb8b5c446656d88b
+id: 5f459cf202c2a3472fae6a9f
 title: Part 72
 challengeType: 0
 ---
@@ -7,9 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
 
-Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
+Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
 
 </section>
 
@@ -131,6 +131,7 @@ h1, h2, p {
 hr {
   height: 3px;
   background-color: brown;
+  border-color: brown;
 }
 --fcc-editable-region--
 

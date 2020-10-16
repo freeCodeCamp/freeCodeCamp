@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e087d56ed3ffdc36be
+id: 5f3ef6e0f8c230bdd2349716
 title: Part 64
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Now apply the `established` class to the `Est. 2020` text.
+The `h1` and `h2` elements' text are set by default values of the user's browser.
+
+Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.  
 
 </section>
 
@@ -39,12 +41,10 @@ tests:
   </head>
   <body>
     <div class="menu">
-      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
-        <p>Est. 2020</p>
+        <p class="established">Est. 2020</p>
       </header>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -94,6 +94,10 @@ body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 .established {
   font-style: italic;

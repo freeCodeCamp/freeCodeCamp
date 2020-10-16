@@ -1,5 +1,5 @@
 ---
-id: 5f45a66d4a2b0453301e5a26
+id: 5f45b0731d39e15d54df4dfc
 title: Part 81
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
+The default color of link that has not yet been clicked on a page is typically blue.  The default color of a link that has already been visited from a page is typically purple.
+
+To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
 
 </section>
 
@@ -160,6 +162,9 @@ h1, h2 {
 
 /* FOOTER */
 
+footer {
+  font-size: 14px;
+}
 --fcc-editable-region--
 
 --fcc-editable-region--

@@ -39,9 +39,9 @@ tests:
     testString: assert(code.match(/\$text-color:\s*?red;/g));
   - text: Your code should use the <code>$text-color</code> variable to change the <code>color</code> for the <code>.blog-post</code> and <code>h2</code> items.
     testString: assert(code.match(/color:\s*?\$text-color;/g));
-  - text: Your <code>.blog-post</code> element should have a </code>color</code> of red.
+  - text: Your <code>.blog-post</code> element should have a <code>color</code> of red.
     testString: assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
-  - text: Your <code>h2</code> elements should have a </code>color</code> of red.
+  - text: Your <code>h2</code> elements should have a <code>color</code> of red.
     testString: assert($('h2').css('color') == 'rgb(255, 0, 0)');
 
 ```

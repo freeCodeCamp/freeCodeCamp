@@ -5,6 +5,11 @@
   margin: 15px 0;
 }
 
+.challenge-test-suite code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .test-result {
   display: flex;
   width: 100%;

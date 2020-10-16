@@ -29,7 +29,7 @@ tests:
   - text: Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()));
   - text: Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.size() === 1})());
+    testString: assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("hamster"); test.remove("cat"); test.remove("fish"); return test.size() === 2})());
   - text: Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'})());
   - text: Your <code>remove</code> method should not change the linked list if the element does not exist in the linked list.

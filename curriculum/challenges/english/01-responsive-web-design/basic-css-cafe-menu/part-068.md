@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0b431cc215bb16f55
+id: 5f3ef6e01f288a026d709587
 title: Part 68
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Add a second `p` element below the one with the link and give it the text `123 freeCodeCamp Drive`.
+You can use an `hr` element to display a divider between sections of different content.
+
+First, add an `hr` element between the first `header` element and the `main` element.
 
 </section>
 
@@ -39,6 +41,7 @@ tests:
   </head>
   <body>
     <div class="menu">
+      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
@@ -78,12 +81,12 @@ tests:
           </article>
         </section>
       </main>
+      --fcc-editable-region--
       <footer>
-        --fcc-editable-region--
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        --fcc-editable-region--
+        <p>123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>

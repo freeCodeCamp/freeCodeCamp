@@ -1,5 +1,5 @@
 ---
-id: 5f459225127805351a6ad057
+id: 5f459a7ceb8b5c446656d88b
 title: Part 71
 challengeType: 0
 ---
@@ -7,7 +7,9 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
+Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+
+Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
 
 </section>
 
@@ -128,6 +130,7 @@ h1, h2, p {
 --fcc-editable-region--
 hr {
   height: 3px;
+  background-color: brown;
 }
 --fcc-editable-region--
 
