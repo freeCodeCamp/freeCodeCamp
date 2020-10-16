@@ -209,13 +209,15 @@ Our goal is to have thousands of 2-minute challenges. These can flow together an
 Here are specific formatting guidelines for challenge text and examples:
 
 - Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
-- The first instance of a keyword when it's being defined, or general keywords (i.e. "object" or "immutable") go in `<dfn>` tags
+- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
 - References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
-- Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**.
-  **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
-
-See example below:
+```md
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+```
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
+  
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
 The following is an example of code:
@@ -229,7 +231,9 @@ The following is an example of code:
 
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
-- Use double quotes where applicable
+- Use single-quotes where applicable
+
+**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
 
 ## Writing tests
 

@@ -30,7 +30,7 @@ tests:
     testString: assert(!code.match(/\.?[\s\S]*?replace/g));
   - text: <code>urlSlug("Winter Is Coming")</code> should return <code>"winter-is-coming"</code>.
     testString: assert(urlSlug("Winter Is Coming") === "winter-is-coming");
-  - text: <code>urlSlug(" Winter Is  &nbsp;Coming")</code> should return <code>"winter-is-coming"</code>.
+  - text: <code>urlSlug(" Winter Is  Coming")</code> should return <code>"winter-is-coming"</code>.
     testString: assert(urlSlug(" Winter Is  Coming") === "winter-is-coming");
   - text: <code>urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")</code> should return <code>"a-mind-needs-books-like-a-sword-needs-a-whetstone"</code>.
     testString: assert(urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone") === "a-mind-needs-books-like-a-sword-needs-a-whetstone");

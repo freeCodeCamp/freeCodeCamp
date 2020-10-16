@@ -31,6 +31,12 @@ export const defaultFetchState = {
   error: null
 };
 
+export const defaultDonationFormState = {
+  processing: false,
+  success: false,
+  error: ''
+};
+
 const initialState = {
   appUsername: '',
   canRequestBlockDonation: false,
@@ -51,7 +57,10 @@ const initialState = {
   sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   isBlockDonationModal: false,
-  isOnline: true
+  isOnline: true,
+  donationFormState: {
+    ...defaultDonationFormState
+  }
 };
 
 export const types = createTypes(
@@ -71,7 +80,10 @@ export const types = createTypes(
     'updateComplete',
     'updateCurrentChallengeId',
     'updateFailed',
+    'updateDonationFormState',
     ...createAsyncTypes('fetchUser'),
+    ...createAsyncTypes('addDonation'),
+    ...createAsyncTypes('postChargeStripe'),
     ...createAsyncTypes('fetchProfileForUser'),
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
@@ -112,6 +124,9 @@ export const preventBlockDonationRequests = createAction(
 export const preventProgressDonationRequests = createAction(
   types.preventProgressDonationRequests
 );
+export const updateDonationFormState = createAction(
+  types.updateDonationFormState
+);
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
 
@@ -132,6 +147,16 @@ export const acceptTermsError = createAction(types.acceptTermsError);
 export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(types.fetchUserComplete);
 export const fetchUserError = createAction(types.fetchUserError);
+
+export const addDonation = createAction(types.addDonation);
+export const addDonationComplete = createAction(types.addDonationComplete);
+export const addDonationError = createAction(types.addDonationError);
+
+export const postChargeStripe = createAction(types.postChargeStripe);
+export const postChargeStripeComplete = createAction(
+  types.postChargeStripeComplete
+);
+export const postChargeStripeError = createAction(types.postChargeStripeError);
 
 export const fetchProfileForUser = createAction(types.fetchProfileForUser);
 export const fetchProfileForUserComplete = createAction(
@@ -160,7 +185,6 @@ export const completedChallengesSelector = state =>
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
 export const isDonatingSelector = state => userSelector(state).isDonating;
-
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
 export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
@@ -168,12 +192,11 @@ export const canRequestBlockDonationSelector = state =>
   state[ns].canRequestBlockDonation;
 export const isBlockDonationModalSelector = state =>
   state[ns].isBlockDonationModal;
-
+export const donationFormStateSelector = state => state[ns].donationFormState;
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
-
 export const shouldRequestDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const completionCount = completionCountSelector(state);
@@ -388,6 +411,56 @@ export const reducer = handleActions(
     [types.allowBlockDonationRequests]: state => ({
       ...state,
       canRequestBlockDonation: true
+    }),
+    [types.updateDonationFormState]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...state.donationFormState, ...payload }
+    }),
+    [types.addDonation]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [types.addDonationComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            isDonating: true
+          }
+        },
+
+        donationFormState: { ...defaultDonationFormState, success: true }
+      };
+    },
+    [types.addDonationError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
+    }),
+    [types.postChargeStripe]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    [types.postChargeStripeComplete]: state => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            isDonating: true
+          }
+        },
+
+        donationFormState: { ...defaultDonationFormState, success: true }
+      };
+    },
+    [types.postChargeStripeError]: (state, { payload }) => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, error: payload }
     }),
     [types.fetchUser]: state => ({
       ...state,

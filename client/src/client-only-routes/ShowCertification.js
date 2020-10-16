@@ -8,7 +8,7 @@ import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
-import MinimalDonateForm from '../components/Donation/MinimalDonateForm';
+import DonateForm from '../components/Donation/DonateForm';
 
 import {
   showCertSelector,
@@ -233,9 +233,10 @@ class ShowCertification extends Component {
             </Col>
           </Row>
         )}
-        <MinimalDonateForm
+        <DonateForm
           handleProcessing={this.handleProcessing}
           defaultTheme='light'
+          isMinimalForm={true}
         />
         <Row>
           <Col sm={4} smOffset={4} xs={6} xsOffset={3}>

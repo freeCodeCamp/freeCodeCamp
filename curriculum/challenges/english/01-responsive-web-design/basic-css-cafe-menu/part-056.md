@@ -1,5 +1,5 @@
 ---
-id: 5f3ef6e0eaa7da26e3d34d78
+id: 5f3ef6e050279c7a4a7101d3
 title: Part 56
 challengeType: 0
 ---
@@ -7,9 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-You can give your menu some space between the content and the sides with various `padding` properties.
-
-Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
+That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
 
 </section>
 
@@ -104,6 +102,8 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 --fcc-editable-region--
 

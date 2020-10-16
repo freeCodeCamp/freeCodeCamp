@@ -28,7 +28,7 @@ tests:
     testString: assert(result[0] == '<h1>');
   - text: <code>myRegex</code> should use lazy matching
     testString: assert(/\?/g.test(myRegex));
-  - text: <code>myRegex</code></code> should not include the string 'h1'
+  - text: <code>myRegex</code> should not include the string 'h1'
     testString: assert(!myRegex.source.match('h1'));
 
 ```

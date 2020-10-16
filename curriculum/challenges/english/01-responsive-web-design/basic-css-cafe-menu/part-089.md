@@ -1,16 +1,13 @@
 ---
-id: 5f46e36e745ead58487aabf2
+id: 5f46e7a4750dd05b5a673920
 title: Part 89
 challengeType: 0
-isHidden: true
 ---
 
 ## Description
 <section id='description'>
 
-Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
-
-To decrease the default margin space below the address `p` element, create a class selector named `address` and use the value `5px` for the `margin-bottom` property.
+Now apply the `address` class to the `p` element containing the address.
 
 </section>
 
@@ -83,12 +80,14 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
+      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
+      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -169,9 +168,9 @@ footer {
   font-size: 14px;
 }
 
---fcc-editable-region--
-
---fcc-editable-region--
+.address {
+  margin-bottom: 5px;
+}
 
 a {
   color: black;

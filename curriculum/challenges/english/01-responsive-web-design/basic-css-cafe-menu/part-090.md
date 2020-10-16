@@ -1,14 +1,15 @@
 ---
-id: 5f46e7a4750dd05b5a673920
+id: 5f46e8284aae155c83015dee
 title: Part 90
 challengeType: 0
-isHidden: true
 ---
 
 ## Description
 <section id='description'>
 
-Now apply the `address` class to the `p` element containing the address.
+The menu looks good, but other than the coffee beans background image, it is mainly just text.
+
+Under the `Coffees` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
 
 </section>
 
@@ -47,7 +48,9 @@ tests:
       <hr>
       <main>
         <section>
+          --fcc-editable-region--
           <h2>Coffees</h2>
+          --fcc-editable-region--
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -81,14 +84,12 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
-      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p>123 Free Code Camp Drive</p>
+        <p class="address">123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>

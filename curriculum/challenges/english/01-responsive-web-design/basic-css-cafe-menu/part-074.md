@@ -1,5 +1,5 @@
 ---
-id: 5f459fd48bdc98491ca6d1a3
+id: 5f45a05977e2fa49d9119437
 title: Part 74
 challengeType: 0
 ---
@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Go ahead and add another `hr` element between the `main` element and the `footer` element.
+To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
 
 </section>
 
@@ -44,7 +44,6 @@ tests:
         <p class="established">Est. 2020</p>
       </header>
       <hr>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,13 +79,13 @@ tests:
           </article>
         </section>
       </main>
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
@@ -97,10 +96,12 @@ tests:
 <div id='css-seed'>
 
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
 }
+--fcc-editable-region--
 
 h1 {
   font-size: 40px;
