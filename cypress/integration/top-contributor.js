@@ -1,6 +1,15 @@
 /* global cy */
 
 describe('Top contributor in user profile', () => {
+  before(() => {
+    cy.clearCookies();
+    cy.exec('npm run seed:auth-user -- --top-contributor');
+  });
+
+  after(() => {
+    cy.exec('npm run seed');
+  });
+
   beforeEach(() => {
     cy.login();
     cy.contains('Profile').click();

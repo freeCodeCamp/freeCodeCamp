@@ -87,7 +87,7 @@ describe('Navbar', () => {
   it('Should have a profile image with class `default-border`', () => {
     cy.login()
       .get(selectors.avatarContainer)
-      .should('have.class', 'blue-border');
+      .should('have.class', 'default-border');
     cy.get(selectors.defaultAvatar).should('exist');
   });
 });
