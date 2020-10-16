@@ -212,6 +212,8 @@ describe('Username input field', () => {
     cy.contains('We have updated your username to bjorno').should(
       'not.be.visible'
     );
+
+    cy.resetUsername();
   });
 
   it('Should change username if enter is pressed', () => {
