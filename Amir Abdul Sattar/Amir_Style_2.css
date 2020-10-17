@@ -1,0 +1,201 @@
+        /* Adding Background Image To Browser */
+body
+{
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(125,164,156,1) 44%, rgba(198,90,197,1) 100%);
+  background-size: cover;
+  filter: drop-shadow(50%);
+
+}
+h1.main_head
+{
+  color: #3f53b5;
+  background-color: rgba(169, 102, 142, 0.33);
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 3px 3px orange;
+  margin: 0px 0px;
+  padding: 10px 10px;
+}
+      /* Adding Effects to sub heading */
+.subheading
+{
+  text-align: center;
+  outline: double;
+  font-size: 30px;
+  text-shadow: 1px 1px purple;
+  margin-bottom: 30px;
+}
+.main_set
+{
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: arial;
+  color: blue;
+  background-color: #fff;
+}
+.desktop-hide{
+  width: 50%;
+}
+
+/* Media Query */
+
+@media(max-width:1200px){
+
+  .main_set{
+    width: 90%;
+    color:black;
+  }
+
+}
+
+@media(max-width: 900px){
+  .main_set{
+    color: red;
+    background: #000;
+  }
+  .desktop-hide{
+      width: 70%;
+  }
+}
+
+@media(max-width: 768px){
+  .main_set{
+    color: orange;
+    width: 80%;
+  }
+  .desktop-hide{
+    width: 90%;
+  }
+}
+
+@media(max-width: 560px){
+}
+.main_set{
+  border: 1px solid #000;
+  background-color: #333;
+}
+.desktop-hide{
+  width: 100%;
+}
+
+@media(max-width: 250px)
+{
+  .main_set{
+    border: 1px solid #000;
+    background-color: #333;
+  }
+  .desktop-hide{
+    width: 100%;
+  }
+}
+
+@media(max-width: 768px)
+{
+  .bloc_ele .box:hover
+  {
+    border: 5px dotted #e47c0c;
+    background-color: #0ce43b;
+
+  }
+}
+
+/* Image Setting */
+div.image
+{
+  color:  #b30077;
+  font-weight: bold;
+  text-align: center;
+  filter: invert(100%);
+}
+
+.main_set
+{
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+
+        /* Text Formating of paragraph_1 */
+.paragraph_1
+{
+  margin-top: 20px;
+  color: #117A65;
+  font-family: Times, sans-serif;
+  font-style: italic;
+  text-align: justify;
+  margin-right: 0px;
+}
+      /* Text Formating of paragraph_2 */
+.paragraph_2
+{
+  color: #EC7063;
+  font-family: Impact, sans-serif;
+  font-style: oblique;
+  text-align: justify;
+}
+
+      /* Text Formating of paragraph_3 */
+.paragraph_3
+{
+  text-align: justify;
+  text-transform: uppercase;
+}
+      /* Text Formating of paragraph_4 */
+.paragraph_4
+{
+  text-align: justify;
+  text-transform: lowercase;
+}
+    /* List Setting */
+ul
+{
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+li a
+{
+  display: block;
+  padding: 8px;
+}
+.button ul li a
+{
+  font-weight: bolder;
+  font-size: 15px;
+  font-family: cursive;
+  color: red;
+  text-decoration: none;
+}
+.button ul li:first-child
+{
+  background-color:#3add96;
+
+}
+.button ul li:nth-child(3)
+{
+  background-color:#c6a65a;
+
+}
+.button ul li:last-child
+{
+  background-color:#72b2bf;
+
+}
+
+.box:hover
+{
+background-color: #c65ac5;
+}
+.box
+{
+  float:left;
+  box-sizing: border-box;
+  background-color: #bac3c1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-family: Times;
+  width:25%
+}

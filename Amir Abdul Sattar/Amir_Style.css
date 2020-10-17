@@ -1,0 +1,226 @@
+        /* Adding Background Image To Browser */
+body
+{
+  background-color: white;
+  background-image: url("blue.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(50%);
+/*  opacity: 0.5; */
+}
+        /* Adding Effects to main heading */
+h1.main_head
+{
+  color: #3f53b5;
+  background-color: rgba(169, 102, 142, 0.33);
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 3px 3px orange;
+  margin: 0px 0px;
+  padding: 10px 10px;
+}
+      /* Adding Effects to sub heading */
+.subheading
+{
+  text-align: center;
+  outline: double;
+  font-size: 25px;
+  text-shadow: 1px 1px purple;
+  margin-bottom: 30px;
+}
+
+/* Image Setting */
+div.image
+{
+  color:  #b30077;
+  font-weight: bold;
+  text-align: center;
+  filter: invert(100%);
+}
+
+.main_set
+{
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+
+        /* Text Formating of paragraph_1 */
+.paragraph_1
+{
+  margin-top: 20px;
+  color: #117A65;
+  font-family: Times, sans-serif;
+  font-style: italic;
+  text-align: justify;
+  margin-right: 0px;
+}
+      /* Text Formating of paragraph_2 */
+.paragraph_2
+{
+  color: #EC7063;
+  font-family: Impact, sans-serif;
+  font-style: oblique;
+  text-align: justify;
+}
+
+      /* Text Formating of paragraph_3 */
+.paragraph_3
+{
+  text-align: justify;
+  text-transform: uppercase;
+}
+      /* Text Formating of paragraph_4 */
+.paragraph_4
+{
+  text-align: justify;
+  text-transform: lowercase;
+}
+      /* Graph */
+.Graph
+{
+  font-family: Times, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  background-color: #ddd;
+  border: 3px solid black;
+  border-style: ridge;
+}
+      /* Graph Bar of first student */
+.Graph.First
+{
+  text-align: center;
+  width: 90%;
+  background-color: #2196F3;
+}
+    /* Graph Bar of first student */
+.Graph.Second
+{
+  text-align: center;
+  width: 80%;
+  background-color: #7FFF00;
+}
+  /* Graph Bar of first student */
+.Graph.Third
+{
+  text-align: center;
+  width: 70%;
+  background-color: #FFA500;
+}
+label
+{
+  color: #101217;
+}
+h5
+{
+  color: rgb(250, 128, 114);
+}
+    /* List Setting */
+ul
+{
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+li
+{
+  float: left;
+}
+li a
+{
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+.button ul li a
+{
+  font-weight: bolder;
+  font-size: 15px;
+  font-family: cursive;
+  color: yellow;
+  text-decoration: none;
+}
+li
+{
+  clear: both;
+}
+
+ /* Border of form */
+.inform
+{
+  background-image: url(wall.jpg);
+  width: 30%;
+  border: 3px solid black;
+  border-style: dotted;
+  margin-bottom: 30px;
+}
+
+/* Border of form */
+.form_submission
+{
+
+ border-radius: 10px;
+ font-weight: bold;
+ font-family: Times;
+ background-image:url("axe.png");
+ background-repeat: no-repeat;
+ background-position: left center;
+ background-size: 7%;
+ padding-left: 30px;
+ border-style: dotted;
+ width: 20%;
+ margin-bottom: 10px;
+ padding-left: 20px;
+ padding-bottom: 5px;
+
+}
+
+.form_submission
+{
+clear: both;
+}
+
+
+      /* Form Input Bar Setting */
+{
+
+.form_submission .form_filling input[type=text]
+{
+  margin-top: 10px;
+  width: 50%;
+  padding: 5px;
+  height: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  float: left;
+}
+.form_submission .form_filling
+{
+clear: both;
+}
+
+
+ /* Image Gallery Or Block of Images
+div.galler
+{
+  margin-top:10px;
+  border: 10px solid #ccc;
+  float: right;
+  width: 180px;
+  position: relative;
+}
+
+div.galler img
+{
+  width: 100%;
+  height: auto;
+}
+*/
+.bloc_ele
+{
+  border: 1px solid #ccc;
+
+}
