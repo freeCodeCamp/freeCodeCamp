@@ -10,9 +10,9 @@ forumTopicId: 302243
 Return an array with the current date in the formats:
 <ul>
   <li>2007-11-23</li>
-  <li>Sunday, November 23, 2007</li>
+  <li>Friday, November 23, 2007</li>
 </ul>
-Example output: <code>['2007-11-23', 'Sunday, November 23, 2007']</code>
+Example output: <code>['2007-11-23', 'Friday, November 23, 2007']</code>
 </section>
 
 ## Instructions
