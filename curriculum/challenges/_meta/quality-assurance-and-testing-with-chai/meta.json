@@ -69,10 +69,7 @@
       "587d8250367417b2b2512c5d",
       "Run Functional Tests using a Headless Browser II"
     ],
-    [
-      "5f8884f4c46685731aabfc41",
-      "Run Functional Tests using a Headless Browser III"
-    ]
+    ["5f8884f4c46685731aabfc41", "Simulate Actions Using a Headless Browser"]
   ],
   "helpRoom": "Help",
   "fileName": "06-quality-assurance/quality-assurance-and-testing-with-chai.json"

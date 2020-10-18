@@ -26,10 +26,10 @@ Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Colombo" - wr
 
 Within the callback:
 
-3. assert that status is OK `200`
-4. assert that the text inside the element `span#name` is `'Cristoforo'`
-5. assert that the text inside the element `span#surname` is `'Colombo'`
-6. assert that the element(s) `span#dates` exist and their count is `1`
+1. assert that status is OK `200`
+2. assert that the text inside the element `span#name` is `'Cristoforo'`
+3. assert that the text inside the element `span#surname` is `'Colombo'`
+4. assert that the element(s) `span#dates` exist and their count is `1`
 
 Do not forget to to remove the `assert.fail()` call.
 
@@ -46,9 +46,9 @@ tests:
   - text: You should assert that the headless browser request succeeded.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[0].method, 'browser.success'); }, xhr => { throw new Error(xhr.responseText); })
   - text: You should assert that the text inside the element 'span#name' is 'Amerigo'.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.match(data.assertions[1].args[0], /('|")span#name\1/); assert.match(data.assertions[1].args[1], /('|")Amerigo\1/);}, xhr => { throw new Error(xhr.responseText); })
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[1].method, 'browser.text'); assert.match(data.assertions[1].args[0], /('|")span#name\1/); assert.match(data.assertions[1].args[1], /('|")Cristoforo\1/);}, xhr => { throw new Error(xhr.responseText); })
   - text: You should assert that the text inside the element 'span#surname' is 'Vespucci'.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.match(data.assertions[2].args[0], /('|")span#surname\1/); assert.match(data.assertions[2].args[1], /('|")Vespucci\1/);}, xhr => { throw new Error(xhr.responseText); })
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[2].method, 'browser.text'); assert.match(data.assertions[2].args[0], /('|")span#surname\1/); assert.match(data.assertions[2].args[1], /('|")Colombo\1/);}, xhr => { throw new Error(xhr.responseText); })
   - text: You should assert that the element 'span#dates' exist and its count is 1.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(data => { assert.equal(data.assertions[3].method, 'browser.element'); assert.match(data.assertions[3].args[0], /('|")span#dates\1/); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.responseText); })
 ```
