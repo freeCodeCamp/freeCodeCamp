@@ -50,12 +50,10 @@ Object {
   ],
   "tests": Array [
     Object {
-      "id": "test-id-1",
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
     Object {
-      "id": "test-id-2",
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },
@@ -85,12 +83,10 @@ Object {
   ],
   "tests": Array [
     Object {
-      "id": "test-id-1",
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
     Object {
-      "id": "test-id-2",
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },
@@ -256,7 +252,6 @@ a {
   ],
   "tests": Array [
     Object {
-      "id": "test-id-1",
       "testString": "assert(
   document.querySelectorAll('main > section')[1] &&
     code.match(/\\\\<\\\\/section>/g).length == 2
@@ -264,7 +259,6 @@ a {
       "text": "<p>The second <code>section</code> element appears to be missing or does not have both an opening and closing tag.</p>",
     },
     Object {
-      "id": "test-id-2",
       "testString": "assert(
   document.querySelectorAll('main > section')[1].lastElementChild.nodeName ===
     'H3'
@@ -272,7 +266,6 @@ a {
       "text": "<p>There should be an <code>h3</code> element right above the second <code>section</code> element's closing tag.</p>",
     },
     Object {
-      "id": "test-id-3",
       "testString": "assert(
   document
     .querySelectorAll('main > section')[1]
@@ -282,7 +275,6 @@ a {
       "text": "<p>The <code>h3</code> element right above the second <code>section</code> element's closing tag should have the text <code>Things cats love:</code>. Make sure to include the colon at the end of the text.</p>",
     },
     Object {
-      "id": "test-id-4",
       "testString": "const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
   .lastElementChild;
 assert(
@@ -386,17 +378,14 @@ Object {
   ],
   "tests": Array [
     Object {
-      "id": "test-id-1",
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
     Object {
-      "id": "test-id-2",
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },
     Object {
-      "id": "test-id-3",
       "testString": "// more test code
 if(let x of xs) {
   console.log(x);
@@ -424,12 +413,10 @@ Object {
   ],
   "tests": Array [
     Object {
-      "id": "test-id-1",
       "testString": "// test code",
       "text": "<p>First hint</p>",
     },
     Object {
-      "id": "test-id-2",
       "testString": "// more test code",
       "text": "<p>Second hint with <code>code</code></p>",
     },

@@ -126,18 +126,29 @@
       "children": [
         {
           "type": "text",
-          "value": "The question would go here",
+          "value": "Question line 1",
           "position": {
             "start": { "line": 19, "column": 1, "offset": 132 },
-            "end": { "line": 19, "column": 27, "offset": 158 },
+            "end": { "line": 19, "column": 16, "offset": 147 },
             "indent": []
           }
         }
       ],
       "position": {
         "start": { "line": 19, "column": 1, "offset": 132 },
-        "end": { "line": 19, "column": 27, "offset": 158 },
+        "end": { "line": 19, "column": 16, "offset": 147 },
         "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "  var x = 'y';",
+      "position": {
+        "start": { "line": 21, "column": 1, "offset": 149 },
+        "end": { "line": 23, "column": 4, "offset": 173 },
+        "indent": [1, 1]
       }
     },
     {
@@ -148,15 +159,15 @@
           "type": "text",
           "value": "--question--",
           "position": {
-            "start": { "line": 21, "column": 3, "offset": 162 },
-            "end": { "line": 21, "column": 15, "offset": 174 },
+            "start": { "line": 25, "column": 3, "offset": 177 },
+            "end": { "line": 25, "column": 15, "offset": 189 },
             "indent": []
           }
         }
       ],
       "position": {
-        "start": { "line": 21, "column": 1, "offset": 160 },
-        "end": { "line": 21, "column": 15, "offset": 174 },
+        "start": { "line": 25, "column": 1, "offset": 175 },
+        "end": { "line": 25, "column": 15, "offset": 189 },
         "indent": []
       }
     },
@@ -168,15 +179,15 @@
           "type": "text",
           "value": "--answers--",
           "position": {
-            "start": { "line": 23, "column": 4, "offset": 179 },
-            "end": { "line": 23, "column": 15, "offset": 190 },
+            "start": { "line": 27, "column": 4, "offset": 194 },
+            "end": { "line": 27, "column": 15, "offset": 205 },
             "indent": []
           }
         }
       ],
       "position": {
-        "start": { "line": 23, "column": 1, "offset": 176 },
-        "end": { "line": 23, "column": 15, "offset": 190 },
+        "start": { "line": 27, "column": 1, "offset": 191 },
+        "end": { "line": 27, "column": 15, "offset": 205 },
         "indent": []
       }
     },
@@ -185,52 +196,34 @@
       "children": [
         {
           "type": "text",
-          "value": "Answer 1",
-          "position": {
-            "start": { "line": 25, "column": 1, "offset": 192 },
-            "end": { "line": 25, "column": 9, "offset": 200 },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": { "line": 25, "column": 1, "offset": 192 },
-        "end": { "line": 25, "column": 9, "offset": 200 },
-        "indent": []
-      }
-    },
-    {
-      "type": "thematicBreak",
-      "position": {
-        "start": { "line": 27, "column": 1, "offset": 202 },
-        "end": { "line": 27, "column": 4, "offset": 205 },
-        "indent": []
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Answer 2",
+          "value": "Some inline ",
           "position": {
             "start": { "line": 29, "column": 1, "offset": 207 },
-            "end": { "line": 29, "column": 9, "offset": 215 },
+            "end": { "line": 29, "column": 13, "offset": 219 },
+            "indent": []
+          }
+        },
+        {
+          "type": "inlineCode",
+          "value": "code",
+          "position": {
+            "start": { "line": 29, "column": 13, "offset": 219 },
+            "end": { "line": 29, "column": 19, "offset": 225 },
             "indent": []
           }
         }
       ],
       "position": {
         "start": { "line": 29, "column": 1, "offset": 207 },
-        "end": { "line": 29, "column": 9, "offset": 215 },
+        "end": { "line": 29, "column": 19, "offset": 225 },
         "indent": []
       }
     },
     {
       "type": "thematicBreak",
       "position": {
-        "start": { "line": 31, "column": 1, "offset": 217 },
-        "end": { "line": 31, "column": 4, "offset": 220 },
+        "start": { "line": 31, "column": 1, "offset": 227 },
+        "end": { "line": 31, "column": 4, "offset": 230 },
         "indent": []
       }
     },
@@ -239,19 +232,111 @@
       "children": [
         {
           "type": "text",
-          "value": "More answers",
+          "value": "Some ",
           "position": {
-            "start": { "line": 33, "column": 1, "offset": 222 },
-            "end": { "line": 33, "column": 13, "offset": 234 },
+            "start": { "line": 33, "column": 1, "offset": 232 },
+            "end": { "line": 33, "column": 6, "offset": 237 },
+            "indent": []
+          }
+        },
+        {
+          "type": "emphasis",
+          "children": [
+            {
+              "type": "text",
+              "value": "italics",
+              "position": {
+                "start": { "line": 33, "column": 7, "offset": 238 },
+                "end": { "line": 33, "column": 14, "offset": 245 },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": { "line": 33, "column": 6, "offset": 237 },
+            "end": { "line": 33, "column": 15, "offset": 246 },
             "indent": []
           }
         }
       ],
       "position": {
-        "start": { "line": 33, "column": 1, "offset": 222 },
-        "end": { "line": 33, "column": 13, "offset": 234 },
+        "start": { "line": 33, "column": 1, "offset": 232 },
+        "end": { "line": 33, "column": 15, "offset": 246 },
         "indent": []
       }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "A second answer paragraph.",
+          "position": {
+            "start": { "line": 35, "column": 1, "offset": 248 },
+            "end": { "line": 35, "column": 27, "offset": 274 },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 35, "column": 1, "offset": 248 },
+        "end": { "line": 35, "column": 27, "offset": 274 },
+        "indent": []
+      }
+    },
+    {
+      "type": "thematicBreak",
+      "position": {
+        "start": { "line": 37, "column": 1, "offset": 276 },
+        "end": { "line": 37, "column": 4, "offset": 279 },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "position": {
+        "start": { "line": 39, "column": 1, "offset": 281 },
+        "end": { "line": 39, "column": 33, "offset": 313 },
+        "indent": []
+      },
+      "children": [
+        {
+          "type": "html",
+          "value": "<code>",
+          "position": {
+            "start": { "line": 1, "column": 1, "offset": 0 },
+            "end": { "line": 1, "column": 7, "offset": 6 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " code in ",
+          "position": {
+            "start": { "line": 1, "column": 7, "offset": 6 },
+            "end": { "line": 1, "column": 16, "offset": 15 },
+            "indent": []
+          }
+        },
+        {
+          "type": "html",
+          "value": "</code>",
+          "position": {
+            "start": { "line": 1, "column": 16, "offset": 15 },
+            "end": { "line": 1, "column": 23, "offset": 22 },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": " code tags",
+          "position": {
+            "start": { "line": 1, "column": 23, "offset": 22 },
+            "end": { "line": 1, "column": 33, "offset": 32 },
+            "indent": []
+          }
+        }
+      ]
     },
     {
       "type": "heading",
@@ -261,15 +346,15 @@
           "type": "text",
           "value": "--video-solution--",
           "position": {
-            "start": { "line": 35, "column": 4, "offset": 239 },
-            "end": { "line": 35, "column": 22, "offset": 257 },
+            "start": { "line": 41, "column": 4, "offset": 318 },
+            "end": { "line": 41, "column": 22, "offset": 336 },
             "indent": []
           }
         }
       ],
       "position": {
-        "start": { "line": 35, "column": 1, "offset": 236 },
-        "end": { "line": 35, "column": 22, "offset": 257 },
+        "start": { "line": 41, "column": 1, "offset": 315 },
+        "end": { "line": 41, "column": 22, "offset": 336 },
         "indent": []
       }
     },
@@ -278,23 +363,23 @@
       "children": [
         {
           "type": "text",
-          "value": "2",
+          "value": "3",
           "position": {
-            "start": { "line": 37, "column": 1, "offset": 259 },
-            "end": { "line": 37, "column": 2, "offset": 260 },
+            "start": { "line": 43, "column": 1, "offset": 338 },
+            "end": { "line": 43, "column": 2, "offset": 339 },
             "indent": []
           }
         }
       ],
       "position": {
-        "start": { "line": 37, "column": 1, "offset": 259 },
-        "end": { "line": 37, "column": 2, "offset": 260 },
+        "start": { "line": 43, "column": 1, "offset": 338 },
+        "end": { "line": 43, "column": 2, "offset": 339 },
         "indent": []
       }
     }
   ],
   "position": {
     "start": { "line": 1, "column": 1, "offset": 0 },
-    "end": { "line": 38, "column": 1, "offset": 261 }
+    "end": { "line": 44, "column": 1, "offset": 340 }
   }
 }

@@ -21,8 +21,6 @@ a bit of <code>code</code> <tag>with more after a space</tag> and another pair o
 
 # --hints--
 
-![test-id-1]
-
 The second `section` element appears to be missing or does not have both an opening and closing tag.
 
 ```js
@@ -32,8 +30,6 @@ assert(
 );
 ```
 
-![test-id-2]
-
 There should be an `h3` element right above the second `section` element's closing tag.
 
 ```js
@@ -42,8 +38,6 @@ assert(
     'H3'
 );
 ```
-
-![test-id-3]
 
 The `h3` element right above the second `section` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
 
@@ -55,8 +49,6 @@ assert(
     .replace(/\s+/g, ' ') === 'things cats love:'
 );
 ```
-
-![test-id-4]
 
 There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the last `section` element'. You may have accidentally deleted the `h2` element.
 
