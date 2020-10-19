@@ -471,7 +471,7 @@ Description text, in markdown
 
 # --hints--
 
-![test-id-1]
+![test-id-1]()
 
 There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.  
 
@@ -479,7 +479,7 @@ There will be an arbitrary number of triples of ids, instructions (in markdown) 
 Code for test one
 ```
 
-![test-id-2]
+![test-id-2]()
 
 More instructions in markdown syntax
 
@@ -503,7 +503,7 @@ Code evaluated after the user’s, and just before the tests
 
 ## --seed-contents--
 
-![index-html]
+![index-html]()
 
 ```html
 Some html
@@ -517,7 +517,7 @@ Some css
 Some js
 ```
 
-![index-js]
+![index-js]()
 
 <Script />
 
