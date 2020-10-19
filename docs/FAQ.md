@@ -1,12 +1,12 @@
 ### I am new to GitHub and Open Source. Where should I start?
 
-Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a compresensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
 ### Can I translate freeCodeCamp's curriculum?
 
 Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon. 
 
-We intend eventually localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
+Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
 
 ### How can I report a new bug?
 

@@ -1,6 +1,6 @@
 Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-Some of these contribution workflows – like fixing bugs in the codebase or curriculum – you'll need to run freeCodeCamp locally on your computer.
+Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
 > [!TIP]
 > If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
