@@ -52,158 +52,164 @@ function Footer() {
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/javascript-closure-tutorial-with-js-closure-example-code/'
+                    'https://www.freecodecamp.org/news/git-clone-branch-how-to-clone-a-specific-branch/'
                   }
                 >
-                  JavaScript Closure
+                  Git Clone
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/css-tutorial-drop-shadow/'
+                    'https://www.freecodecamp.org/news/agile-methods-and-methodology-for-beginners/'
                   }
                 >
-                  CSS Box Shadow
+                  Agile Methods
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/python-list-append-how-to-add-an-element-to-an-array-explained-with-examples/'
+                    'https://www.freecodecamp.org/news/if-name-main-python-example/'
                   }
                 >
-                  Python List Append
+                  Python Main
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/javascript-array-sort-tutorial-how-to-use-js-sort-methods-with-code-examples/'
+                    'https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/'
                   }
                 >
-                  JavaScript Array Sort
+                  Callback
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/'
+                    'https://www.freecodecamp.org/news/debounce-javascript-tutorial-how-to-make-your-js-wait-up/'
                   }
                 >
-                  Symlink in Linux
+                  Debounce
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/grep-command-tutorial-how-to-search-for-a-file-in-linux-and-unix/'
+                    'https://www.freecodecamp.org/news/javascript-url-encode-example-how-to-use-encodeuricomponent-and-encodeuri/'
                   }
                 >
-                  Linux Grep Command
-                </Link>
-                <Link
-                  external={false}
-                  to={'https://www.freecodecamp.org/news/what-is-dns/'}
-                >
-                  What is DNS?
+                  URL Encode
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/primary-key-sql-tutorial-how-to-define-a-primary-key-in-a-database/'
+                    'https://www.freecodecamp.org/news/make-it-blink-html-tutorial-how-to-use-the-blink-tag-with-code-examples/'
                   }
                 >
-                  Primary Key SQL
+                  Blink HTML
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/sql-update-statement-example-queries-for-updating-table-values/'
+                    'https://www.freecodecamp.org/news/python-returns-multiple-values-how-to-return-a-tuple-list-dictionary/'
                   }
                 >
-                  SQL Update Statement
+                  Python Tuple
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/how-to-screenshot-on-windows/'
+                    'https://www.freecodecamp.org/news/javascript-array-insert-how-to-add-to-an-array-with-the-push-unshift-and-concat-functions/'
                   }
                 >
-                  Screenshot on PC
+                  JavaScript Push
+                </Link>
+                <Link
+                  external={false}
+                  to={
+                    'https://www.freecodecamp.org/news/java-list-tutorial-util-list-api-example/'
+                  }
+                >
+                  Java List
                 </Link>
               </div>
               <div className='footer-col footer-col-2'>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/'
+                    'https://www.freecodecamp.org/news/learn-ux-design-self-taught-user-experience-designer/'
                   }
                 >
-                  JavaScript Promise
+                  UX
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/what-is-github-what-is-git-and-how-to-use-these-developer-tools/'
+                    'https://www.freecodecamp.org/news/what-is-design-thinking-an-introduction-to-the-design-process-for-entrepreneurs-and-developers/'
                   }
                 >
-                  What is GitHub?
+                  Design Thinking
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/the-python-sort-list-array-method-ascending-and-descending-explained-with-examples/'
+                    'https://www.freecodecamp.org/news/prime-numbers-list-chart-of-primes/'
                   }
                 >
-                  Python Sort List
+                  Prime Number List
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/json-comment-example-how-to-comment-in-json-files/'
+                    'https://www.freecodecamp.org/news/product-design-explained-in-plain-english/'
                   }
                 >
-                  Comments in JSON
+                  Product Design
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/what-is-kanban-the-agile-methodology-defined-and-how-to-use-it-for-your-software-development-team-2/'
+                    'https://www.freecodecamp.org/news/what-is-digital-design-and-why-does-it-matter/'
                   }
                 >
-                  What is Kanban?
+                  Digital Design
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/python-write-to-file-open-read-append-and-other-file-handling-functions-explained/'
+                    'https://www.freecodecamp.org/news/best-coding-games-online-adults-learn-to-code/'
                   }
                 >
-                  Python Write to File
+                  Coding Games
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/'
+                    'https://www.freecodecamp.org/news/svm-machine-learning-tutorial-what-is-the-support-vector-machine-algorithm-explained-with-code-examples/'
                   }
                 >
-                  CSS Media Queries
+                  SVM
                 </Link>
                 <Link
                   external={false}
                   to={
-                    'https://www.freecodecamp.org/news/html-entities-symbols-special-character-codes-list/'
+                    'https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/'
                   }
                 >
-                  HTML Entities
+                  JavaScript forEach
                 </Link>
                 <Link
                   external={false}
-                  to={'https://www.freecodecamp.org/news/excel-vba-tutorial/'}
+                  to={
+                    'https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/'
+                  }
                 >
-                  Excel VBA
+                  Google BERT
                 </Link>
                 <Link
                   external={false}
-                  to={'https://www.freecodecamp.org/news/vlookup-in-excel/'}
+                  to={
+                    'https://www.freecodecamp.org/news/sql-create-table-statement-with-example-syntax/'
+                  }
                 >
-                  LOOKUP in Excel
+                  Create Table SQL
                 </Link>
               </div>
               <div className='footer-col footer-col-3'>
@@ -211,40 +217,42 @@ function Footer() {
                   <Link
                     external={false}
                     to={
-                      'https://www.freecodecamp.org/news/what-is-a-proxy-server-in-english-please/'
+                      'https://www.freecodecamp.org/news/responsive-web-design-how-to-make-a-website-look-good-on-phones-and-tablets/'
                     }
                   >
-                    What is a Proxy Server?
+                    Responsive Web Design
                   </Link>
                   <Link
                     external={false}
                     to={
-                      'https://www.freecodecamp.org/news/the-cat-command-in-linux-concatenation-explained-with-bash-examples/'
+                      'https://www.freecodecamp.org/news/svg-basics-what-are-scalable-vector-graphics-and-how-do-you-use-them/'
                     }
                   >
-                    Cat Command in Linux
+                    What Is an SVG File?
                   </Link>
                   <Link
                     external={false}
                     to={
-                      'https://www.freecodecamp.org/news/how-to-add-an-image-url-to-your-div/'
+                      'https://www.freecodecamp.org/news/pdf-password-remover-guide-how-to-remove-password-protection-from-a-pdf/'
                     }
                   >
-                    CSS Background Image
+                    PDF Password Remover
                   </Link>
                   <Link
                     external={false}
                     to={
-                      'https://www.freecodecamp.org/news/html-background-color-tutorial-how-to-change-a-div-background-color-explained-with-code-examples/'
+                      'https://www.freecodecamp.org/news/what-is-a-pdf-file-and-how-do-you-open-it-solved/'
                     }
                   >
-                    HTML Background Color
+                    What Is a PDF?
                   </Link>
                   <Link
                     external={false}
-                    to={'https://www.freecodecamp.org/news/comments-in-css/'}
+                    to={
+                      'https://www.freecodecamp.org/news/what-is-python-used-for-10-coding-uses-for-the-python-programming-language/'
+                    }
                   >
-                    CSS Comment Example
+                    What Is Python?
                   </Link>
                 </div>
 
@@ -252,40 +260,42 @@ function Footer() {
                   <Link
                     external={false}
                     to={
-                      'https://www.freecodecamp.org/news/arrow-function-javascript-tutorial-how-to-declare-a-js-function-with-the-new-es6-syntax/'
+                      'https://www.freecodecamp.org/news/what-is-tls-transport-layer-security-encryption-explained-in-plain-english/'
                     }
                   >
-                    Arrow Function JavaScript
+                    What Is TLS?
                   </Link>
                   <Link
                     external={false}
                     to={
-                      'https://www.freecodecamp.org/news/how-to-remove-duplicates-in-excel-delete-duplicate-rows-with-a-few-clicks/'
+                      'https://www.freecodecamp.org/news/what-is-a-lan-local-area-network-explained-in-plain-english/'
                     }
                   >
-                    Remove Duplicates in Excel
+                    What Is a LAN?
                   </Link>
                   <Link
                     external={false}
                     to={
-                      'https://www.freecodecamp.org/news/what-is-dllhost-exe-and-com-surrogate-in-windows-task-manager-solved/'
+                      'https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/'
                     }
                   >
-                    dllhost.exe COM Surrogate
-                  </Link>
-                  <Link
-                    external={false}
-                    to={'https://www.freecodecamp.org/news/boolean-algebra/'}
-                  >
-                    Boolean Algebra Truth Table
+                    What Is npm?
                   </Link>
                   <Link
                     external={false}
                     to={
-                      'https://www.freecodecamp.org/news/can-you-facetime-on-android-no-but-here-are-some-alternative-video-conferencing-apps/'
+                      'https://www.freecodecamp.org/news/rsync-examples-rsync-options-and-how-to-copy-files-over-ssh/'
                     }
                   >
-                    Video Chat for Android
+                    RSync Examples
+                  </Link>
+                  <Link
+                    external={false}
+                    to={
+                      'https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/'
+                    }
+                  >
+                    Random Forest
                   </Link>
                 </div>
               </div>
