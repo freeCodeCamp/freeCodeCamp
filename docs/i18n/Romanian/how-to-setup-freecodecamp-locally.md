@@ -147,7 +147,7 @@ Acum că ai o copie locală de freeCodeCamp, poți urma aceste instrucțiuni pen
 
 Dacă chiar întâmpini probleme, mai întâi efectuează o căutare web pentru problema ta și vezi dacă ai primit deja un răspuns. Dacă nu puteţi găsi o soluţie, vă rugăm să căutați pagina noastră de probleme [GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues) pentru o soluție și să raportați problema dacă nu a fost încă raportată.
 
-Și ca întotdeauna, nu ezita să participi la [Camera noastră de chat pentru colaboratori pe Gitter](https://gitter.im/FreeCodeCamp/Contributors) sau [serverul nostru Discord](https://discord.gg/6vJYm9V), pentru întrebări rapide.
+Și ca întotdeauna, nu ezita să participi la [Camera noastră de chat pentru colaboratori pe Gitter](https://gitter.im/FreeCodeCamp/Contributors) sau [serverul nostru Discord](https://discord.gg/pFspAhS), pentru întrebări rapide.
 
 > [!TIP] Puteţi sări peste rularea taberei freeCodep local dacă pur şi simplu editaţi fişiere. De exemplu, efectuând o `rebase`, sau rezolvând `conflicte de îmbinare`.
 > 
