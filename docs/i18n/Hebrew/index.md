@@ -1,4 +1,4 @@
-The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. We welcome any and all contributions to the community and are excited to welcome you aboard.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to the thousands of kind volunteers like yourself. We welcome any and all contributions to the community and are excited to welcome you aboard.
 
 > [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We enforce it strictly across our community. We want contributing to freeCodeCamp.org to be a safe and inclusive experience for everyone.
 
@@ -18,13 +18,13 @@ All our coding challenges are curated by the community, bringing in expert knowl
 
 You can help expand them and make their wording better. You can also update the user stories to explain the concept better or remove redundant ones and improve the challenge tests to make them more accurately test people's code.
 
-**If you're interested in improving these coding challenges, here's [how to work on coding challenges](how-to-work-on-coding-challenges.md).**
+**If you are interested in improving these coding challenges, here is [how to work on coding challenges](how-to-work-on-coding-challenges.md).**
 
 ## Learning Platform
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Broadly,
+Broadly:
 
 - We have a Node.js based API server.
 - A set of React-based client applications.
