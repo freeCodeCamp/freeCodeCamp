@@ -1,19 +1,19 @@
 Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-For some of the contribution workflows, you need to have freeCodeCamp running locally. For example, previewing coding challenges or debugging and fixing bugs in the codebase.
+Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
 > [!TIP]
-> If you are not interested in setting up freeCodeCamp locally consider using Gitpod, a free online dev environment.
+> If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
 >
 > [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 >
 > (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
-## Prepare your local machine
+### How to prepare your local machine
 
 Start by installing the prerequisite software for your operating system.
 
-We primarily support development on **\*nix** systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
 We also support Windows 10 via WSL2, which you can prepare by [reading this guide](/how-to-setup-wsl).
 
@@ -151,7 +151,7 @@ Now that you have a local copy of freeCodeCamp, you can follow these instruction
 
 If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-And as always, feel free to hop on to our [Contributors Chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors) or [our Discord server](https://discord.gg/6vJYm9V), for quick queries.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/6vJYm9V).
 
 > [!TIP]
 > You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
@@ -550,6 +550,6 @@ The first time setup can take a while depending on your network bandwidth. Be pa
 
 ## Getting Help
 
-If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/6vJYm9V).
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
