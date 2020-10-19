@@ -25,7 +25,7 @@ You can help expand and improve the curriculum. You can also update project user
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Broadly, we use 
+Broadly, we use: 
 
 - a Node.js based API server
 - a set of React-based client applications
