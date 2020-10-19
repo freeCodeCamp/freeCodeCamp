@@ -50,7 +50,7 @@
     "nanoid": "^3.1.12",
     "prismjs": "^1.22.0",
     "query-string": "^6.13.5",
-    "react": "^16.10.2",
+    "react": "^16.14.0",
     "react-dom": "^16.10.2",
     "react-final-form": "^6.5.1",
     "react-ga": "^2.7.0",
