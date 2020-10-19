@@ -119,14 +119,14 @@ describe('add-seed plugin', () => {
   it('throws if an id is anywhere except directly before a code node', () => {
     expect.assertions(2);
     expect(() => plugin(adjacentKeysAST, file)).toThrow(
-      '![id]s must come before code blocks'
+      '![id]()s must come before code blocks'
     );
     expect(() => plugin(orphanKeyAST, file)).toThrow(
-      '![id]s must come before code blocks'
+      '![id]()s must come before code blocks'
     );
   });
 
-  it('ignores empty lines between ![id]s and code blocks', () => {
+  it('ignores empty lines between ![id]()s and code blocks', () => {
     expect.assertions(1);
     plugin(withSeedKeysAST, file);
     const fileTwo = { data: {} };

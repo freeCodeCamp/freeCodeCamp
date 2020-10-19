@@ -365,8 +365,7 @@ Object {
       },
       "indexjs": Object {
         "contents": "var x = 'y';
-\`\`
-",
+\`\`",
         "ext": "js",
         "head": "",
         "id": "",
@@ -423,5 +422,125 @@ Object {
   ],
   "title": "Say Hello to HTML Elements",
   "videoUrl": "https://scrimba.com/p/pVMPUv/cE8Gpt2",
+}
+`;
+
+exports[`mdx parser should parse gfm strikethrough and frontmatter 1`] = `
+Object {
+  "description": "<section id=\\"description\\">
+<p>Paragraph 1 <del>Strikethrough text</del>. https://should.not.be.autolinked</p>
+<pre><code class=\\"language-html\\">code example
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>example</th>
+<th>of a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gfm</td>
+<td>table</td>
+</tr>
+</tbody>
+</table>
+</section>",
+  "files": Object {
+    "indexcss": Object {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": Array [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "key": "indexcss",
+      "name": "index",
+      "tail": "",
+    },
+    "indexhtml": Object {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": Array [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "key": "indexhtml",
+      "name": "index",
+      "tail": "",
+    },
+    "indexjs": Object {
+      "contents": "var x = 'y';",
+      "editableRegionBoundaries": Array [],
+      "ext": "js",
+      "head": "",
+      "id": "",
+      "key": "indexjs",
+      "name": "index",
+      "tail": "",
+    },
+  },
+  "instructions": "<section id=\\"instructions\\">
+<p>Paragraph 0</p>
+<pre><code class=\\"language-html\\">code example 0
+</code></pre>
+</section>",
+  "solutions": Array [
+    Object {
+      "indexcss": Object {
+        "contents": "body {
+  background: white;
+}",
+        "ext": "css",
+        "head": "",
+        "id": "",
+        "key": "indexcss",
+        "name": "index",
+        "tail": "",
+      },
+      "indexhtml": Object {
+        "contents": "<html>
+  <body>
+  </body>
+</html>",
+        "ext": "html",
+        "head": "",
+        "id": "html-key",
+        "key": "indexhtml",
+        "name": "index",
+        "tail": "",
+      },
+      "indexjs": Object {
+        "contents": "var x = 'y';
+\`\`",
+        "ext": "js",
+        "head": "",
+        "id": "",
+        "key": "indexjs",
+        "name": "index",
+        "tail": "",
+      },
+    },
+  ],
+  "tests": Array [
+    Object {
+      "testString": "// test code",
+      "text": "<p>First hint</p>",
+    },
+    Object {
+      "testString": "// more test code",
+      "text": "<p>Second hint with <code>code</code></p>",
+    },
+    Object {
+      "testString": "// more test code
+if(let x of xs) {
+  console.log(x);
+}",
+      "text": "<p>Third <em>hint</em> with <code>code</code> and <code>inline code</code></p>",
+    },
+  ],
 }
 `;

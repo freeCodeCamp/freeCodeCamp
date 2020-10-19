@@ -10,15 +10,13 @@
           "value": "--seed--",
           "position": {
             "start": { "line": 1, "column": 3, "offset": 2 },
-            "end": { "line": 1, "column": 11, "offset": 10 },
-            "indent": []
+            "end": { "line": 1, "column": 11, "offset": 10 }
           }
         }
       ],
       "position": {
         "start": { "line": 1, "column": 1, "offset": 0 },
-        "end": { "line": 1, "column": 11, "offset": 10 },
-        "indent": []
+        "end": { "line": 1, "column": 11, "offset": 10 }
       }
     },
     {
@@ -30,15 +28,13 @@
           "value": "--seed-contents--",
           "position": {
             "start": { "line": 3, "column": 4, "offset": 15 },
-            "end": { "line": 3, "column": 21, "offset": 32 },
-            "indent": []
+            "end": { "line": 3, "column": 21, "offset": 32 }
           }
         }
       ],
       "position": {
         "start": { "line": 3, "column": 1, "offset": 12 },
-        "end": { "line": 3, "column": 21, "offset": 32 },
-        "indent": []
+        "end": { "line": 3, "column": 21, "offset": 32 }
       }
     },
     {
@@ -48,52 +44,7 @@
       "value": "<html>\n  <body>\n  </body>\n</html>",
       "position": {
         "start": { "line": 5, "column": 1, "offset": 34 },
-        "end": { "line": 10, "column": 4, "offset": 79 },
-        "indent": [1, 1, 1, 1, 1]
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "imageReference",
-          "identifier": "key-for-html",
-          "label": "key-for-html",
-          "referenceType": "shortcut",
-          "alt": "key-for-html",
-          "position": {
-            "start": { "line": 12, "column": 1, "offset": 81 },
-            "end": { "line": 12, "column": 16, "offset": 96 },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": { "line": 12, "column": 1, "offset": 81 },
-        "end": { "line": 12, "column": 16, "offset": 96 },
-        "indent": []
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "imageReference",
-          "identifier": "key-for-css",
-          "label": "key-for-css",
-          "referenceType": "shortcut",
-          "alt": "key-for-css",
-          "position": {
-            "start": { "line": 14, "column": 1, "offset": 98 },
-            "end": { "line": 14, "column": 15, "offset": 112 },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": { "line": 14, "column": 1, "offset": 98 },
-        "end": { "line": 14, "column": 15, "offset": 112 },
-        "indent": []
+        "end": { "line": 10, "column": 4, "offset": 79 }
       }
     },
     {
@@ -102,31 +53,46 @@
       "meta": null,
       "value": "body {\n  background: green;\n}",
       "position": {
-        "start": { "line": 16, "column": 1, "offset": 114 },
-        "end": { "line": 20, "column": 4, "offset": 154 },
-        "indent": [1, 1, 1, 1]
+        "start": { "line": 12, "column": 1, "offset": 81 },
+        "end": { "line": 16, "column": 4, "offset": 121 }
       }
     },
     {
       "type": "paragraph",
       "children": [
         {
-          "type": "imageReference",
-          "identifier": "key-for-js",
-          "label": "key-for-js",
-          "referenceType": "shortcut",
-          "alt": "key-for-js",
+          "type": "image",
+          "title": null,
+          "url": "",
+          "alt": "key-for-css",
           "position": {
-            "start": { "line": 22, "column": 1, "offset": 156 },
-            "end": { "line": 22, "column": 14, "offset": 169 },
-            "indent": []
+            "start": { "line": 18, "column": 1, "offset": 123 },
+            "end": { "line": 18, "column": 17, "offset": 139 }
           }
         }
       ],
       "position": {
-        "start": { "line": 22, "column": 1, "offset": 156 },
-        "end": { "line": 22, "column": 14, "offset": 169 },
-        "indent": []
+        "start": { "line": 18, "column": 1, "offset": 123 },
+        "end": { "line": 18, "column": 17, "offset": 139 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "image",
+          "title": null,
+          "url": "",
+          "alt": "key-for-js",
+          "position": {
+            "start": { "line": 20, "column": 1, "offset": 141 },
+            "end": { "line": 20, "column": 16, "offset": 156 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 20, "column": 1, "offset": 141 },
+        "end": { "line": 20, "column": 16, "offset": 156 }
       }
     },
     {
@@ -135,14 +101,80 @@
       "meta": null,
       "value": "var x = 'y';",
       "position": {
-        "start": { "line": 24, "column": 1, "offset": 171 },
-        "end": { "line": 26, "column": 4, "offset": 193 },
-        "indent": [1, 1]
+        "start": { "line": 22, "column": 1, "offset": 158 },
+        "end": { "line": 24, "column": 4, "offset": 180 }
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 1,
+      "children": [
+        {
+          "type": "text",
+          "value": "--solutions--",
+          "position": {
+            "start": { "line": 26, "column": 3, "offset": 184 },
+            "end": { "line": 26, "column": 16, "offset": 197 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 26, "column": 1, "offset": 182 },
+        "end": { "line": 26, "column": 16, "offset": 197 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "image",
+          "title": null,
+          "url": "",
+          "alt": "html-key",
+          "position": {
+            "start": { "line": 28, "column": 1, "offset": 199 },
+            "end": { "line": 28, "column": 14, "offset": 212 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 28, "column": 1, "offset": 199 },
+        "end": { "line": 28, "column": 14, "offset": 212 }
+      }
+    },
+    {
+      "type": "code",
+      "lang": "html",
+      "meta": null,
+      "value": "<html>\n  <body>\n  </body>\n</html>",
+      "position": {
+        "start": { "line": 30, "column": 1, "offset": 214 },
+        "end": { "line": 35, "column": 4, "offset": 259 }
+      }
+    },
+    {
+      "type": "code",
+      "lang": "css",
+      "meta": null,
+      "value": "body {\n  background: white;\n}",
+      "position": {
+        "start": { "line": 37, "column": 1, "offset": 261 },
+        "end": { "line": 41, "column": 4, "offset": 301 }
+      }
+    },
+    {
+      "type": "code",
+      "lang": "js",
+      "meta": null,
+      "value": "var x = 'y';",
+      "position": {
+        "start": { "line": 43, "column": 1, "offset": 303 },
+        "end": { "line": 45, "column": 4, "offset": 325 }
       }
     }
   ],
   "position": {
     "start": { "line": 1, "column": 1, "offset": 0 },
-    "end": { "line": 27, "column": 1, "offset": 194 }
+    "end": { "line": 46, "column": 1, "offset": 326 }
   }
 }

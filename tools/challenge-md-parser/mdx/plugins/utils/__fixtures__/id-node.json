@@ -2,21 +2,18 @@
   "type": "paragraph",
   "children": [
     {
-      "type": "imageReference",
-      "identifier": "html-key",
-      "label": "html-key",
-      "referenceType": "shortcut",
+      "type": "image",
+      "title": null,
+      "url": "",
       "alt": "html-key",
       "position": {
-        "start": { "line": 65, "column": 1, "offset": 481 },
-        "end": { "line": 65, "column": 12, "offset": 492 },
-        "indent": []
+        "start": { "line": 64, "column": 1, "offset": 520 },
+        "end": { "line": 64, "column": 14, "offset": 533 }
       }
     }
   ],
   "position": {
-    "start": { "line": 65, "column": 1, "offset": 481 },
-    "end": { "line": 65, "column": 12, "offset": 492 },
-    "indent": []
+    "start": { "line": 64, "column": 1, "offset": 520 },
+    "end": { "line": 64, "column": 14, "offset": 533 }
   }
 }

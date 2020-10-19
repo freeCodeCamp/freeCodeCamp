@@ -1,5 +1,5 @@
 const { readSync } = require('to-vfile');
-const remark = require('remark');
+const remark = require('remark-parse');
 const mdx = require('remark-mdx');
 const frontmatter = require('remark-frontmatter');
 const addTests = require('./plugins/add-tests');
@@ -10,8 +10,12 @@ const addVideoQuestion = require('./plugins/add-video-question');
 const addSeed = require('./plugins/add-seed');
 const addSolution = require('./plugins/add-solution');
 const jsxToHtml = require('./plugins/replace-jsx-with-html');
+const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
+const unified = require('unified');
 
-const processor = remark()
+const processor = unified()
+  .use(remark)
+  .use(tableAndStrikeThrough)
   // TODO: consider checking for syntax errors and providing a message that
   // explains how to work around them. i.e. import -> <p>import</p>
   .use(mdx)
@@ -31,17 +35,15 @@ const processor = remark()
 
 exports.parseMDX = function parseMDX(filename) {
   return new Promise((resolve, reject) => {
-    if (!path.isAbsolute(filename)) {
-      reject(`Expected absolute filename, received ${filename}`);
-    } else {
-      processor.process(readSync(filename), function(err, file) {
-        if (err) {
-          err.message += ' in file ' + filename;
-          reject(err);
-        }
-        delete file.contents;
-        return resolve(file.data);
-      });
-    }
+    const file = readSync(filename);
+    const tree = processor.parse(file);
+    processor.run(tree, file, function(err, node, file) {
+      if (err) {
+        err.message += ' in file ' + filename;
+        reject(err);
+      }
+      delete file.contents;
+      return resolve(file.data);
+    });
   });
 };

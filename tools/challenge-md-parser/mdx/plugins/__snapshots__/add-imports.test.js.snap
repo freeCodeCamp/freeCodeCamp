@@ -619,19 +619,12 @@ Object {
     Object {
       "lang": "js",
       "meta": null,
-      "position": Position {
+      "position": Object {
         "end": Object {
           "column": 4,
           "line": 6,
           "offset": 126,
         },
-        "indent": Array [
-          1,
-          1,
-          1,
-          1,
-          1,
-        ],
         "start": Object {
           "column": 1,
           "line": 1,

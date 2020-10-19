@@ -11,7 +11,6 @@ Array [
             "line": 19,
             "offset": 142,
           },
-          "indent": Array [],
           "start": Object {
             "column": 1,
             "line": 19,
@@ -28,7 +27,6 @@ Array [
         "line": 19,
         "offset": 142,
       },
-      "indent": Array [],
       "start": Object {
         "column": 1,
         "line": 19,
@@ -46,10 +44,6 @@ Array [
         "line": 23,
         "offset": 166,
       },
-      "indent": Array [
-        1,
-        1,
-      ],
       "start": Object {
         "column": 1,
         "line": 21,
@@ -68,7 +62,6 @@ Array [
             "line": 25,
             "offset": 185,
           },
-          "indent": Array [],
           "start": Object {
             "column": 1,
             "line": 25,
@@ -85,7 +78,6 @@ Array [
             "line": 25,
             "offset": 191,
           },
-          "indent": Array [],
           "start": Object {
             "column": 18,
             "line": 25,
@@ -102,7 +94,6 @@ Array [
             "line": 25,
             "offset": 195,
           },
-          "indent": Array [],
           "start": Object {
             "column": 24,
             "line": 25,
@@ -119,7 +110,6 @@ Array [
             "line": 25,
             "offset": 202,
           },
-          "indent": Array [],
           "start": Object {
             "column": 28,
             "line": 25,
@@ -136,7 +126,6 @@ Array [
         "line": 25,
         "offset": 202,
       },
-      "indent": Array [],
       "start": Object {
         "column": 1,
         "line": 25,
@@ -154,10 +143,6 @@ Array [
         "line": 29,
         "offset": 231,
       },
-      "indent": Array [
-        1,
-        1,
-      ],
       "start": Object {
         "column": 1,
         "line": 27,
@@ -176,7 +161,6 @@ Array [
             "line": 31,
             "offset": 239,
           },
-          "indent": Array [],
           "start": Object {
             "column": 1,
             "line": 31,
@@ -195,7 +179,6 @@ Array [
                 "line": 31,
                 "offset": 244,
               },
-              "indent": Array [],
               "start": Object {
                 "column": 8,
                 "line": 31,
@@ -212,7 +195,6 @@ Array [
             "line": 31,
             "offset": 245,
           },
-          "indent": Array [],
           "start": Object {
             "column": 7,
             "line": 31,
@@ -228,7 +210,6 @@ Array [
             "line": 31,
             "offset": 251,
           },
-          "indent": Array [],
           "start": Object {
             "column": 13,
             "line": 31,
@@ -245,7 +226,6 @@ Array [
             "line": 31,
             "offset": 257,
           },
-          "indent": Array [],
           "start": Object {
             "column": 19,
             "line": 31,
@@ -262,7 +242,6 @@ Array [
             "line": 31,
             "offset": 261,
           },
-          "indent": Array [],
           "start": Object {
             "column": 25,
             "line": 31,
@@ -279,7 +258,6 @@ Array [
             "line": 31,
             "offset": 268,
           },
-          "indent": Array [],
           "start": Object {
             "column": 29,
             "line": 31,
@@ -296,7 +274,6 @@ Array [
             "line": 31,
             "offset": 273,
           },
-          "indent": Array [],
           "start": Object {
             "column": 36,
             "line": 31,
@@ -313,7 +290,6 @@ Array [
             "line": 31,
             "offset": 286,
           },
-          "indent": Array [],
           "start": Object {
             "column": 41,
             "line": 31,
@@ -330,7 +306,6 @@ Array [
         "line": 31,
         "offset": 286,
       },
-      "indent": Array [],
       "start": Object {
         "column": 1,
         "line": 31,
@@ -348,13 +323,6 @@ Array [
         "line": 38,
         "offset": 353,
       },
-      "indent": Array [
-        1,
-        1,
-        1,
-        1,
-        1,
-      ],
       "start": Object {
         "column": 1,
         "line": 33,
@@ -381,7 +349,6 @@ Array [
             "line": 11,
             "offset": 89,
           },
-          "indent": Array [],
           "start": Object {
             "column": 1,
             "line": 11,
@@ -398,7 +365,6 @@ Array [
         "line": 11,
         "offset": 89,
       },
-      "indent": Array [],
       "start": Object {
         "column": 1,
         "line": 11,
@@ -416,10 +382,6 @@ Array [
         "line": 15,
         "offset": 117,
       },
-      "indent": Array [
-        1,
-        1,
-      ],
       "start": Object {
         "column": 1,
         "line": 13,

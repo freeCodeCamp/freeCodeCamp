@@ -62,18 +62,15 @@ function idToData(node, index, parent, seeds) {
   const id = getId(node);
 
   if (!id) {
-    throw Error(
-      'Unexpected syntax in --seed-contents--,\n' +
-        'must be ``` fenced code or ![id]\n'
-    );
+    throw Error('Unexpected id syntax must be ![id]()\n');
   }
   const codeNode = parent.children[index + 1];
   if (codeNode && is(codeNode, 'code')) {
     const key = `index${codeNode.lang}`;
-    if (seeds[key]) throw Error('![id]s must come before code blocks');
+    if (seeds[key]) throw Error('![id]()s must come before code blocks');
     seeds[key] = defaultFile(codeNode.lang, id);
   } else {
-    throw Error('![id]s must come before code blocks');
+    throw Error('![id]()s must come before code blocks');
   }
 }
 

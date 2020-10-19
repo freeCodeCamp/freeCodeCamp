@@ -24,16 +24,16 @@
       "children": [
         {
           "type": "text",
-          "value": "Paragraph 1",
+          "value": "Paragraph 1 ~~Strikethrough text~~.",
           "position": {
             "start": { "line": 3, "column": 1, "offset": 19 },
-            "end": { "line": 3, "column": 12, "offset": 30 }
+            "end": { "line": 3, "column": 36, "offset": 54 }
           }
         }
       ],
       "position": {
         "start": { "line": 3, "column": 1, "offset": 19 },
-        "end": { "line": 3, "column": 12, "offset": 30 }
+        "end": { "line": 3, "column": 36, "offset": 54 }
       }
     },
     {
@@ -42,8 +42,25 @@
       "meta": null,
       "value": "code example",
       "position": {
-        "start": { "line": 5, "column": 1, "offset": 32 },
-        "end": { "line": 7, "column": 4, "offset": 56 }
+        "start": { "line": 5, "column": 1, "offset": 56 },
+        "end": { "line": 7, "column": 4, "offset": 80 }
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "| example | of a |\n| --- | --- |\n| gfm | table |",
+          "position": {
+            "start": { "line": 9, "column": 1, "offset": 82 },
+            "end": { "line": 11, "column": 16, "offset": 130 }
+          }
+        }
+      ],
+      "position": {
+        "start": { "line": 9, "column": 1, "offset": 82 },
+        "end": { "line": 11, "column": 16, "offset": 130 }
       }
     },
     {
@@ -54,14 +71,14 @@
           "type": "text",
           "value": "--instructions--",
           "position": {
-            "start": { "line": 9, "column": 3, "offset": 60 },
-            "end": { "line": 9, "column": 19, "offset": 76 }
+            "start": { "line": 14, "column": 3, "offset": 135 },
+            "end": { "line": 14, "column": 19, "offset": 151 }
           }
         }
       ],
       "position": {
-        "start": { "line": 9, "column": 1, "offset": 58 },
-        "end": { "line": 9, "column": 19, "offset": 76 }
+        "start": { "line": 14, "column": 1, "offset": 133 },
+        "end": { "line": 14, "column": 19, "offset": 151 }
       }
     },
     {
@@ -71,14 +88,14 @@
           "type": "text",
           "value": "Paragraph 0",
           "position": {
-            "start": { "line": 11, "column": 1, "offset": 78 },
-            "end": { "line": 11, "column": 12, "offset": 89 }
+            "start": { "line": 16, "column": 1, "offset": 153 },
+            "end": { "line": 16, "column": 12, "offset": 164 }
           }
         }
       ],
       "position": {
-        "start": { "line": 11, "column": 1, "offset": 78 },
-        "end": { "line": 11, "column": 12, "offset": 89 }
+        "start": { "line": 16, "column": 1, "offset": 153 },
+        "end": { "line": 16, "column": 12, "offset": 164 }
       }
     },
     {
@@ -87,8 +104,8 @@
       "meta": null,
       "value": "code example 0",
       "position": {
-        "start": { "line": 13, "column": 1, "offset": 91 },
-        "end": { "line": 15, "column": 4, "offset": 117 }
+        "start": { "line": 18, "column": 1, "offset": 166 },
+        "end": { "line": 20, "column": 4, "offset": 192 }
       }
     },
     {
@@ -99,14 +116,14 @@
           "type": "text",
           "value": "--hints--",
           "position": {
-            "start": { "line": 17, "column": 3, "offset": 121 },
-            "end": { "line": 17, "column": 12, "offset": 130 }
+            "start": { "line": 22, "column": 3, "offset": 196 },
+            "end": { "line": 22, "column": 12, "offset": 205 }
           }
         }
       ],
       "position": {
-        "start": { "line": 17, "column": 1, "offset": 119 },
-        "end": { "line": 17, "column": 12, "offset": 130 }
+        "start": { "line": 22, "column": 1, "offset": 194 },
+        "end": { "line": 22, "column": 12, "offset": 205 }
       }
     },
     {
@@ -116,14 +133,14 @@
           "type": "text",
           "value": "First hint",
           "position": {
-            "start": { "line": 19, "column": 1, "offset": 132 },
-            "end": { "line": 19, "column": 11, "offset": 142 }
+            "start": { "line": 24, "column": 1, "offset": 207 },
+            "end": { "line": 24, "column": 11, "offset": 217 }
           }
         }
       ],
       "position": {
-        "start": { "line": 19, "column": 1, "offset": 132 },
-        "end": { "line": 19, "column": 11, "offset": 142 }
+        "start": { "line": 24, "column": 1, "offset": 207 },
+        "end": { "line": 24, "column": 11, "offset": 217 }
       }
     },
     {
@@ -132,8 +149,8 @@
       "meta": null,
       "value": "// test code",
       "position": {
-        "start": { "line": 21, "column": 1, "offset": 144 },
-        "end": { "line": 23, "column": 4, "offset": 166 }
+        "start": { "line": 26, "column": 1, "offset": 219 },
+        "end": { "line": 28, "column": 4, "offset": 241 }
       }
     },
     {
@@ -143,38 +160,38 @@
           "type": "text",
           "value": "Second hint with ",
           "position": {
-            "start": { "line": 25, "column": 1, "offset": 168 },
-            "end": { "line": 25, "column": 18, "offset": 185 }
+            "start": { "line": 30, "column": 1, "offset": 243 },
+            "end": { "line": 30, "column": 18, "offset": 260 }
           }
         },
         {
           "type": "html",
           "value": "<code>",
           "position": {
-            "start": { "line": 25, "column": 18, "offset": 185 },
-            "end": { "line": 25, "column": 24, "offset": 191 }
+            "start": { "line": 30, "column": 18, "offset": 260 },
+            "end": { "line": 30, "column": 24, "offset": 266 }
           }
         },
         {
           "type": "text",
           "value": "code",
           "position": {
-            "start": { "line": 25, "column": 24, "offset": 191 },
-            "end": { "line": 25, "column": 28, "offset": 195 }
+            "start": { "line": 30, "column": 24, "offset": 266 },
+            "end": { "line": 30, "column": 28, "offset": 270 }
           }
         },
         {
           "type": "html",
           "value": "</code>",
           "position": {
-            "start": { "line": 25, "column": 28, "offset": 195 },
-            "end": { "line": 25, "column": 35, "offset": 202 }
+            "start": { "line": 30, "column": 28, "offset": 270 },
+            "end": { "line": 30, "column": 35, "offset": 277 }
           }
         }
       ],
       "position": {
-        "start": { "line": 25, "column": 1, "offset": 168 },
-        "end": { "line": 25, "column": 35, "offset": 202 }
+        "start": { "line": 30, "column": 1, "offset": 243 },
+        "end": { "line": 30, "column": 35, "offset": 277 }
       }
     },
     {
@@ -183,8 +200,8 @@
       "meta": null,
       "value": "// more test code",
       "position": {
-        "start": { "line": 27, "column": 1, "offset": 204 },
-        "end": { "line": 29, "column": 4, "offset": 231 }
+        "start": { "line": 32, "column": 1, "offset": 279 },
+        "end": { "line": 34, "column": 4, "offset": 306 }
       }
     },
     {
@@ -194,8 +211,8 @@
           "type": "text",
           "value": "Third ",
           "position": {
-            "start": { "line": 31, "column": 1, "offset": 233 },
-            "end": { "line": 31, "column": 7, "offset": 239 }
+            "start": { "line": 36, "column": 1, "offset": 308 },
+            "end": { "line": 36, "column": 7, "offset": 314 }
           }
         },
         {
@@ -205,68 +222,68 @@
               "type": "text",
               "value": "hint",
               "position": {
-                "start": { "line": 31, "column": 8, "offset": 240 },
-                "end": { "line": 31, "column": 12, "offset": 244 }
+                "start": { "line": 36, "column": 8, "offset": 315 },
+                "end": { "line": 36, "column": 12, "offset": 319 }
               }
             }
           ],
           "position": {
-            "start": { "line": 31, "column": 7, "offset": 239 },
-            "end": { "line": 31, "column": 13, "offset": 245 }
+            "start": { "line": 36, "column": 7, "offset": 314 },
+            "end": { "line": 36, "column": 13, "offset": 320 }
           }
         },
         {
           "type": "text",
           "value": " with ",
           "position": {
-            "start": { "line": 31, "column": 13, "offset": 245 },
-            "end": { "line": 31, "column": 19, "offset": 251 }
+            "start": { "line": 36, "column": 13, "offset": 320 },
+            "end": { "line": 36, "column": 19, "offset": 326 }
           }
         },
         {
           "type": "html",
           "value": "<code>",
           "position": {
-            "start": { "line": 31, "column": 19, "offset": 251 },
-            "end": { "line": 31, "column": 25, "offset": 257 }
+            "start": { "line": 36, "column": 19, "offset": 326 },
+            "end": { "line": 36, "column": 25, "offset": 332 }
           }
         },
         {
           "type": "text",
           "value": "code",
           "position": {
-            "start": { "line": 31, "column": 25, "offset": 257 },
-            "end": { "line": 31, "column": 29, "offset": 261 }
+            "start": { "line": 36, "column": 25, "offset": 332 },
+            "end": { "line": 36, "column": 29, "offset": 336 }
           }
         },
         {
           "type": "html",
           "value": "</code>",
           "position": {
-            "start": { "line": 31, "column": 29, "offset": 261 },
-            "end": { "line": 31, "column": 36, "offset": 268 }
+            "start": { "line": 36, "column": 29, "offset": 336 },
+            "end": { "line": 36, "column": 36, "offset": 343 }
           }
         },
         {
           "type": "text",
           "value": " and ",
           "position": {
-            "start": { "line": 31, "column": 36, "offset": 268 },
-            "end": { "line": 31, "column": 41, "offset": 273 }
+            "start": { "line": 36, "column": 36, "offset": 343 },
+            "end": { "line": 36, "column": 41, "offset": 348 }
           }
         },
         {
           "type": "inlineCode",
           "value": "inline code",
           "position": {
-            "start": { "line": 31, "column": 41, "offset": 273 },
-            "end": { "line": 31, "column": 54, "offset": 286 }
+            "start": { "line": 36, "column": 41, "offset": 348 },
+            "end": { "line": 36, "column": 54, "offset": 361 }
           }
         }
       ],
       "position": {
-        "start": { "line": 31, "column": 1, "offset": 233 },
-        "end": { "line": 31, "column": 54, "offset": 286 }
+        "start": { "line": 36, "column": 1, "offset": 308 },
+        "end": { "line": 36, "column": 54, "offset": 361 }
       }
     },
     {
@@ -275,8 +292,8 @@
       "meta": null,
       "value": "// more test code\nif(let x of xs) {\n  console.log(x);\n}",
       "position": {
-        "start": { "line": 33, "column": 1, "offset": 288 },
-        "end": { "line": 38, "column": 4, "offset": 353 }
+        "start": { "line": 38, "column": 1, "offset": 363 },
+        "end": { "line": 43, "column": 4, "offset": 428 }
       }
     },
     {
@@ -287,14 +304,14 @@
           "type": "text",
           "value": "--seed--",
           "position": {
-            "start": { "line": 40, "column": 3, "offset": 357 },
-            "end": { "line": 40, "column": 11, "offset": 365 }
+            "start": { "line": 45, "column": 3, "offset": 432 },
+            "end": { "line": 45, "column": 11, "offset": 440 }
           }
         }
       ],
       "position": {
-        "start": { "line": 40, "column": 1, "offset": 355 },
-        "end": { "line": 40, "column": 11, "offset": 365 }
+        "start": { "line": 45, "column": 1, "offset": 430 },
+        "end": { "line": 45, "column": 11, "offset": 440 }
       }
     },
     {
@@ -305,14 +322,14 @@
           "type": "text",
           "value": "--seed-contents--",
           "position": {
-            "start": { "line": 42, "column": 4, "offset": 370 },
-            "end": { "line": 42, "column": 21, "offset": 387 }
+            "start": { "line": 47, "column": 4, "offset": 445 },
+            "end": { "line": 47, "column": 21, "offset": 462 }
           }
         }
       ],
       "position": {
-        "start": { "line": 42, "column": 1, "offset": 367 },
-        "end": { "line": 42, "column": 21, "offset": 387 }
+        "start": { "line": 47, "column": 1, "offset": 442 },
+        "end": { "line": 47, "column": 21, "offset": 462 }
       }
     },
     {
@@ -321,8 +338,8 @@
       "meta": null,
       "value": "<html>\n  <body>\n  </body>\n</html>",
       "position": {
-        "start": { "line": 44, "column": 1, "offset": 389 },
-        "end": { "line": 49, "column": 4, "offset": 434 }
+        "start": { "line": 49, "column": 1, "offset": 464 },
+        "end": { "line": 54, "column": 4, "offset": 509 }
       }
     },
     {
@@ -331,8 +348,8 @@
       "meta": null,
       "value": "body {\n  background: green;\n}",
       "position": {
-        "start": { "line": 51, "column": 1, "offset": 436 },
-        "end": { "line": 55, "column": 4, "offset": 476 }
+        "start": { "line": 56, "column": 1, "offset": 511 },
+        "end": { "line": 60, "column": 4, "offset": 551 }
       }
     },
     {
@@ -341,8 +358,8 @@
       "meta": null,
       "value": "var x = 'y';",
       "position": {
-        "start": { "line": 57, "column": 1, "offset": 478 },
-        "end": { "line": 59, "column": 4, "offset": 500 }
+        "start": { "line": 62, "column": 1, "offset": 553 },
+        "end": { "line": 64, "column": 4, "offset": 575 }
       }
     },
     {
@@ -353,14 +370,14 @@
           "type": "text",
           "value": "--solutions--",
           "position": {
-            "start": { "line": 62, "column": 3, "offset": 505 },
-            "end": { "line": 62, "column": 16, "offset": 518 }
+            "start": { "line": 67, "column": 3, "offset": 580 },
+            "end": { "line": 67, "column": 16, "offset": 593 }
           }
         }
       ],
       "position": {
-        "start": { "line": 62, "column": 1, "offset": 503 },
-        "end": { "line": 62, "column": 16, "offset": 518 }
+        "start": { "line": 67, "column": 1, "offset": 578 },
+        "end": { "line": 67, "column": 16, "offset": 593 }
       }
     },
     {
@@ -372,14 +389,14 @@
           "url": "",
           "alt": "html-key",
           "position": {
-            "start": { "line": 64, "column": 1, "offset": 520 },
-            "end": { "line": 64, "column": 14, "offset": 533 }
+            "start": { "line": 69, "column": 1, "offset": 595 },
+            "end": { "line": 69, "column": 14, "offset": 608 }
           }
         }
       ],
       "position": {
-        "start": { "line": 64, "column": 1, "offset": 520 },
-        "end": { "line": 64, "column": 14, "offset": 533 }
+        "start": { "line": 69, "column": 1, "offset": 595 },
+        "end": { "line": 69, "column": 14, "offset": 608 }
       }
     },
     {
@@ -388,8 +405,8 @@
       "meta": null,
       "value": "<html>\n  <body>\n  </body>\n</html>",
       "position": {
-        "start": { "line": 66, "column": 1, "offset": 535 },
-        "end": { "line": 71, "column": 4, "offset": 580 }
+        "start": { "line": 71, "column": 1, "offset": 610 },
+        "end": { "line": 76, "column": 4, "offset": 655 }
       }
     },
     {
@@ -398,8 +415,8 @@
       "meta": null,
       "value": "body {\n  background: white;\n}",
       "position": {
-        "start": { "line": 73, "column": 1, "offset": 582 },
-        "end": { "line": 77, "column": 4, "offset": 622 }
+        "start": { "line": 78, "column": 1, "offset": 657 },
+        "end": { "line": 82, "column": 4, "offset": 697 }
       }
     },
     {
@@ -408,13 +425,13 @@
       "meta": null,
       "value": "var x = 'y';\n``",
       "position": {
-        "start": { "line": 79, "column": 1, "offset": 624 },
-        "end": { "line": 82, "column": 1, "offset": 646 }
+        "start": { "line": 84, "column": 1, "offset": 699 },
+        "end": { "line": 87, "column": 1, "offset": 721 }
       }
     }
   ],
   "position": {
     "start": { "line": 1, "column": 1, "offset": 0 },
-    "end": { "line": 82, "column": 1, "offset": 646 }
+    "end": { "line": 87, "column": 1, "offset": 721 }
   }
 }

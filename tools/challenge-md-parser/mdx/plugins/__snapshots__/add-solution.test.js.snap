@@ -29,8 +29,7 @@ Object {
       },
       "indexjs": Object {
         "contents": "var x = 'y';
-\`\`
-",
+\`\`",
         "ext": "js",
         "head": "",
         "id": "",

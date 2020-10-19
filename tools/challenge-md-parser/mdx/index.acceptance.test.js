@@ -33,6 +33,13 @@ describe('mdx parser', () => {
     expect(parsed).toMatchSnapshot();
   });
 
+  it('should parse gfm strikethrough and frontmatter', async () => {
+    const parsed = await parseMDX(
+      path.resolve(__dirname, '__fixtures__/with-gfm.mdx')
+    );
+    expect(parsed).toMatchSnapshot();
+  });
+
   it('should not mix other YAML with the frontmatter', async () => {
     const parsed = await parseMDX(
       path.resolve(__dirname, '__fixtures__/with-yaml.mdx')
