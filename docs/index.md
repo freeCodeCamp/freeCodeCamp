@@ -19,7 +19,7 @@ Our curriculum is curated by the global freeCodeCamp community. This way, we are
 
 You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
+**If you are interested in improving our curriculum, here is [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
 ## Learning Platform
 
