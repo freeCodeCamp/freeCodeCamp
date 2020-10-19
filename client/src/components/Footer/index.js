@@ -87,7 +87,7 @@ function Footer() {
                     'https://www.freecodecamp.org/news/debounce-javascript-tutorial-how-to-make-your-js-wait-up/'
                   }
                 >
-                  Debounnce
+                  Debounce
                 </Link>
                 <Link
                   external={false}
@@ -197,7 +197,9 @@ function Footer() {
                 </Link>
                 <Link
                   external={false}
-                  to={'https://www.freecodecamp.org/news/vlookup-in-excel/'}
+                  to={
+                    'https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/'
+                  }
                 >
                   Google BERT
                 </Link>
@@ -261,7 +263,7 @@ function Footer() {
                       'https://www.freecodecamp.org/news/what-is-tls-transport-layer-security-encryption-explained-in-plain-english/'
                     }
                   >
-                    Arrow Function JavaScript
+                    What Is TLS?
                   </Link>
                   <Link
                     external={false}
@@ -269,7 +271,7 @@ function Footer() {
                       'https://www.freecodecamp.org/news/what-is-a-lan-local-area-network-explained-in-plain-english/'
                     }
                   >
-                    Remove Duplicates in Excel
+                    What Is a LAN?
                   </Link>
                   <Link
                     external={false}
@@ -277,7 +279,7 @@ function Footer() {
                       'https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/'
                     }
                   >
-                    dllhost.exe COM Surrogate
+                    What Is npm?
                   </Link>
                   <Link
                     external={false}

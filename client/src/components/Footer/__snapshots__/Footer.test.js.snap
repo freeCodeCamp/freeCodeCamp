@@ -82,7 +82,7 @@ exports[`<Footer /> matches snapshot 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Debounnce
+              Debounce
             </a>
             <a
               href="https://www.freecodecamp.org/news/javascript-url-encode-example-how-to-use-encodeuricomponent-and-encodeuri/"
@@ -180,7 +180,7 @@ exports[`<Footer /> matches snapshot 1`] = `
               JavaScript forEach
             </a>
             <a
-              href="https://www.freecodecamp.org/news/vlookup-in-excel/"
+              href="https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -244,21 +244,21 @@ exports[`<Footer /> matches snapshot 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Arrow Function JavaScript
+                What Is TLS?
               </a>
               <a
                 href="https://www.freecodecamp.org/news/what-is-a-lan-local-area-network-explained-in-plain-english/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Remove Duplicates in Excel
+                What Is a LAN?
               </a>
               <a
                 href="https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                dllhost.exe COM Surrogate
+                What Is npm?
               </a>
               <a
                 href="https://www.freecodecamp.org/news/rsync-examples-rsync-options-and-how-to-copy-files-over-ssh/"
