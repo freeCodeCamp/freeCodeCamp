@@ -59,7 +59,7 @@
     "react-instantsearch-dom": "^6.8.1",
     "react-lazy-load": "^3.1.13",
     "react-monaco-editor": "^0.36.0",
-    "react-redux": "^5.0.7",
+    "react-redux": "^7.2.1",
     "react-reflex": "^3.1.0",
     "react-responsive": "^6.1.1",
     "react-spinkit": "^3.0.0",
