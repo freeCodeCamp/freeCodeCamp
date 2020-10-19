@@ -147,7 +147,7 @@ Now that you have a local copy of freeCodeCamp, you can follow these instruction
 
 If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-And as always, feel free to hop on to our [Contributors Chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors) or [our Discord server](https://discord.gg/6vJYm9V), for quick queries.
+And as always, feel free to hop on to our [Contributors Chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors) or [our Discord server](https://discord.gg/pFspAhS), for quick queries.
 
 > [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
 > 

@@ -452,7 +452,7 @@ Thanks again! 😊
 
 ---
 
-> If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/6vJYm9V).
+> If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 ```
 
 ### Closing invalid pull requests

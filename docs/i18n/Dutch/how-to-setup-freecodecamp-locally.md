@@ -147,7 +147,7 @@ Nu u een lokale kopie van freeCodeCamp heeft, kunt u deze instructies volgen om 
 
 Als u problemen ondervindt, voer dan eerst een webzoekopdracht uit voor uw probleem en kijk of er al een antwoord op is. Als je geen oplossing kunt vinden, Zoek op onze [GitHub problemen](https://github.com/freeCodeCamp/freeCodeCamp/issues) pagina voor een oplossing en rapporteer het probleem als het nog niet is gerapporteerd.
 
-En zoals altijd Voel je vrij om op te gaan in onze [Bijdragers Chat room van Gitter](https://gitter.im/FreeCodeCamp/Contributors) of [onze Discord server](https://discord.gg/6vJYm9V), voor snelle vragen.
+En zoals altijd Voel je vrij om op te gaan in onze [Bijdragers Chat room van Gitter](https://gitter.im/FreeCodeCamp/Contributors) of [onze Discord server](https://discord.gg/pFspAhS), voor snelle vragen.
 
 > [!TIP] U kunt freeCodeCamp niet lokaal uitvoeren als u gewoon bestanden bewerkt. Bijvoorbeeld, het uitvoeren van een `rebase`, of het oplossen van `samenvoegen` conflicten.
 > 
