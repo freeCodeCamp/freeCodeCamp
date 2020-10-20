@@ -147,7 +147,7 @@ Nu när du har en lokal kopia av freeCodeCamp, kan du följa dessa instruktioner
 
 Om du stöter på problem, först utföra en webbsökning för ditt problem och se om det redan har besvarats. Om du inte hittar en lösning, sök på vår [GitHub issues-sida](https://github.com/freeCodeCamp/freeCodeCamp/issues) för en lösning och rapportera problemet om det ännu inte har rapporterats.
 
-Och som alltid, välkommen att hoppa på till vår [bidragsgivare Chattrum på Gitter](https://gitter.im/FreeCodeCamp/Contributors) eller [vår Discord-server](https://discord.gg/6vJYm9V), för snabba frågor.
+Och som alltid, välkommen att hoppa på till vår [bidragsgivare Chattrum på Gitter](https://gitter.im/FreeCodeCamp/Contributors) eller [vår Discord-server](https://discord.gg/pFspAhS), för snabba frågor.
 
 > [!TIP] Du kan hoppa över att köra freeCodeCamp lokalt om du helt enkelt redigerar filer. Till exempel, utföra en `rebase`, eller lösa `sammanfoga` konflikter.
 > 

@@ -147,7 +147,7 @@ Ora che si dispone di una copia locale di freeCodeCamp, è possibile seguire que
 
 Se si esegue un problema, prima di eseguire una ricerca web per il tuo problema e vedere se è già stato risposto. Se non riesce a trovare una soluzione, si prega di cercare la nostra [GitHub problemi](https://github.com/freeCodeCamp/freeCodeCamp/issues) pagina per una soluzione e segnalare il problema se non è ancora stato segnalato.
 
-E come sempre, sentiti libero di salire sul nostro [Contributori Chat room su Gitter](https://gitter.im/FreeCodeCamp/Contributors) o [il nostro server Discord](https://discord.gg/6vJYm9V), per domande rapide.
+E come sempre, sentiti libero di salire sul nostro [Contributori Chat room su Gitter](https://gitter.im/FreeCodeCamp/Contributors) o [il nostro server Discord](https://discord.gg/pFspAhS), per domande rapide.
 
 > [!SUGGERIMENTO] Puoi saltare l'esecuzione di freeCodeCamp localmente se stai semplicemente modificando i file. Ad esempio, eseguendo un `rebase`o risolvendo `unioni` conflitti.
 > 

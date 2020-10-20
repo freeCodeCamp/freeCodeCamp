@@ -147,7 +147,7 @@ Nyt kun sinulla on paikallinen kopio freeCodeCampista, voit seurata näitä ohje
 
 Jos et joudu ongelmiin, suorita ensin web-haku ongelmastasi ja katso onko siihen jo vastattu. Jos et löydä ratkaisua, etsi [GitHub ongelmia](https://github.com/freeCodeCamp/freeCodeCamp/issues) sivu ratkaisuun ja ilmoita ongelmasta, jos sitä ei ole vielä raportoitu.
 
-Ja kuten aina, voit vapaasti hypätä meidän [Kehittäjien Keskusteluhuone Gitter](https://gitter.im/FreeCodeCamp/Contributors) tai [meidän Discord-palvelin](https://discord.gg/6vJYm9V), nopeita kyselyjä.
+Ja kuten aina, voit vapaasti hypätä meidän [Kehittäjien Keskusteluhuone Gitter](https://gitter.im/FreeCodeCamp/Contributors) tai [meidän Discord-palvelin](https://discord.gg/pFspAhS), nopeita kyselyjä.
 
 > [!TIP] Voit ohittaa käynnissä freeCodeCamp paikallisesti jos olet muokkaamassa tiedostoja. Esimerkiksi `perusteen`suorittaminen tai `yhdistäminen` ristiriitojen ratkaiseminen.
 > 
