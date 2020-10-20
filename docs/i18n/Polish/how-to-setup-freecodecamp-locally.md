@@ -147,7 +147,7 @@ Teraz, gdy masz lokalną kopię darmowego CodeCamp, możesz postępować zgodnie
 
 Jeśli napotkasz problemy, najpierw wykonaj wyszukiwanie internetowe dla swojego problemu i sprawdź, czy odpowiedź już została udzielona. Jeśli nie można znaleźć rozwiązania, przeszukaj naszą stronę [GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues) w poszukiwaniu rozwiązania i zgłoś problem, jeśli jeszcze nie został zgłoszony.
 
-I jak zawsze, możesz przejść do naszego [pokoju na czacie współautorów na Gitterze](https://gitter.im/FreeCodeCamp/Contributors) lub [naszego serwera Discord](https://discord.gg/6vJYm9V), dla szybkich zapytań.
+I jak zawsze, możesz przejść do naszego [pokoju na czacie współautorów na Gitterze](https://gitter.im/FreeCodeCamp/Contributors) lub [naszego serwera Discord](https://discord.gg/pFspAhS), dla szybkich zapytań.
 
 > [!Wskazówka] Możesz pominąć uruchomienie darmowego CodeCamp lokalnie, jeśli po prostu edytujesz pliki. Na przykład, wykonanie `rebase`lub rozwiązanie `scalania` konfliktów.
 > 

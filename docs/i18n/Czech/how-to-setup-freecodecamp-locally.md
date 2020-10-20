@@ -147,7 +147,7 @@ Nyní, když máte lokální kopii freeCodeCamp, můžete sledovat tyto instrukc
 
 Pokud se narazíte na problémy, nejprve proveďte vyhledání vašeho problému a zjistěte, zda byl již zodpovězen. Pokud nemůžete najít řešení, prosím prohledejte naše [GitHub problémy](https://github.com/freeCodeCamp/freeCodeCamp/issues) pro řešení a nahlaste problém, pokud ještě nebyl nahlášen.
 
-A jako vždy, neváhejte skočit na naši [Chatovací místnost na Gitteru](https://gitter.im/FreeCodeCamp/Contributors) nebo [náš Discord server](https://discord.gg/6vJYm9V), pro rychlé dotazy.
+A jako vždy, neváhejte skočit na naši [Chatovací místnost na Gitteru](https://gitter.im/FreeCodeCamp/Contributors) nebo [náš Discord server](https://discord.gg/pFspAhS), pro rychlé dotazy.
 
 > [!TIP] Pokud jednoduše upravujete soubory, můžete ho přeskočit lokálně. Například provedení `rebase`nebo řešení `sloučení` konfliktů.
 > 

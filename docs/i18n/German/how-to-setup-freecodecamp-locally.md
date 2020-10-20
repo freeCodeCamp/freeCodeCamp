@@ -147,7 +147,7 @@ Nun, da Sie eine lokale Kopie von freeCodeCamp haben, können Sie diese Anweisun
 
 Wenn Sie Probleme haben, führen Sie zuerst eine Websuche nach Ihrem Problem durch und sehen Sie, ob es bereits beantwortet wurde. Wenn Sie keine Lösung finden bitte durchsuchen Sie unsere [GitHub-Seite](https://github.com/freeCodeCamp/freeCodeCamp/issues) nach einer Lösung und melden Sie das Problem, wenn es noch nicht gemeldet wurde.
 
-Und wie immer fühle dich frei zu unserem [Mitwirkenden Chatraum auf Gitter](https://gitter.im/FreeCodeCamp/Contributors) oder [unserem Discord Server](https://discord.gg/6vJYm9V)zu springen für schnelle Abfragen.
+Und wie immer fühle dich frei zu unserem [Mitwirkenden Chatraum auf Gitter](https://gitter.im/FreeCodeCamp/Contributors) oder [unserem Discord Server](https://discord.gg/pFspAhS)zu springen für schnelle Abfragen.
 
 > [!TIPP] Du kannst FreeCodeCamp lokal überspringen, wenn du einfach Dateien bearbeitest. Zum Beispiel eine `Rebase`oder das Lösen von `Zusammenführen von` Konflikten.
 > 

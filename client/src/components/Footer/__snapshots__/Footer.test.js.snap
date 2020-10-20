@@ -50,148 +50,148 @@ exports[`<Footer /> matches snapshot 1`] = `
             className="footer-col footer-col-1"
           >
             <a
-              href="https://www.freecodecamp.org/news/javascript-closure-tutorial-with-js-closure-example-code/"
+              href="https://www.freecodecamp.org/news/git-clone-branch-how-to-clone-a-specific-branch/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              JavaScript Closure
+              Git Clone
             </a>
             <a
-              href="https://www.freecodecamp.org/news/css-tutorial-drop-shadow/"
+              href="https://www.freecodecamp.org/news/agile-methods-and-methodology-for-beginners/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              CSS Box Shadow
+              Agile Methods
             </a>
             <a
-              href="https://www.freecodecamp.org/news/python-list-append-how-to-add-an-element-to-an-array-explained-with-examples/"
+              href="https://www.freecodecamp.org/news/if-name-main-python-example/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Python List Append
+              Python Main
             </a>
             <a
-              href="https://www.freecodecamp.org/news/javascript-array-sort-tutorial-how-to-use-js-sort-methods-with-code-examples/"
+              href="https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              JavaScript Array Sort
+              Callback
             </a>
             <a
-              href="https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/"
+              href="https://www.freecodecamp.org/news/debounce-javascript-tutorial-how-to-make-your-js-wait-up/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Symlink in Linux
+              Debounce
             </a>
             <a
-              href="https://www.freecodecamp.org/news/grep-command-tutorial-how-to-search-for-a-file-in-linux-and-unix/"
+              href="https://www.freecodecamp.org/news/javascript-url-encode-example-how-to-use-encodeuricomponent-and-encodeuri/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Linux Grep Command
+              URL Encode
             </a>
             <a
-              href="https://www.freecodecamp.org/news/what-is-dns/"
+              href="https://www.freecodecamp.org/news/make-it-blink-html-tutorial-how-to-use-the-blink-tag-with-code-examples/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              What is DNS?
+              Blink HTML
             </a>
             <a
-              href="https://www.freecodecamp.org/news/primary-key-sql-tutorial-how-to-define-a-primary-key-in-a-database/"
+              href="https://www.freecodecamp.org/news/python-returns-multiple-values-how-to-return-a-tuple-list-dictionary/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Primary Key SQL
+              Python Tuple
             </a>
             <a
-              href="https://www.freecodecamp.org/news/sql-update-statement-example-queries-for-updating-table-values/"
+              href="https://www.freecodecamp.org/news/javascript-array-insert-how-to-add-to-an-array-with-the-push-unshift-and-concat-functions/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              SQL Update Statement
+              JavaScript Push
             </a>
             <a
-              href="https://www.freecodecamp.org/news/how-to-screenshot-on-windows/"
+              href="https://www.freecodecamp.org/news/java-list-tutorial-util-list-api-example/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Screenshot on PC
+              Java List
             </a>
           </div>
           <div
             className="footer-col footer-col-2"
           >
             <a
-              href="https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/"
+              href="https://www.freecodecamp.org/news/learn-ux-design-self-taught-user-experience-designer/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              JavaScript Promise
+              UX
             </a>
             <a
-              href="https://www.freecodecamp.org/news/what-is-github-what-is-git-and-how-to-use-these-developer-tools/"
+              href="https://www.freecodecamp.org/news/what-is-design-thinking-an-introduction-to-the-design-process-for-entrepreneurs-and-developers/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              What is GitHub?
+              Design Thinking
             </a>
             <a
-              href="https://www.freecodecamp.org/news/the-python-sort-list-array-method-ascending-and-descending-explained-with-examples/"
+              href="https://www.freecodecamp.org/news/prime-numbers-list-chart-of-primes/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Python Sort List
+              Prime Number List
             </a>
             <a
-              href="https://www.freecodecamp.org/news/json-comment-example-how-to-comment-in-json-files/"
+              href="https://www.freecodecamp.org/news/product-design-explained-in-plain-english/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Comments in JSON
+              Product Design
             </a>
             <a
-              href="https://www.freecodecamp.org/news/what-is-kanban-the-agile-methodology-defined-and-how-to-use-it-for-your-software-development-team-2/"
+              href="https://www.freecodecamp.org/news/what-is-digital-design-and-why-does-it-matter/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              What is Kanban?
+              Digital Design
             </a>
             <a
-              href="https://www.freecodecamp.org/news/python-write-to-file-open-read-append-and-other-file-handling-functions-explained/"
+              href="https://www.freecodecamp.org/news/best-coding-games-online-adults-learn-to-code/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Python Write to File
+              Coding Games
             </a>
             <a
-              href="https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/"
+              href="https://www.freecodecamp.org/news/svm-machine-learning-tutorial-what-is-the-support-vector-machine-algorithm-explained-with-code-examples/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              CSS Media Queries
+              SVM
             </a>
             <a
-              href="https://www.freecodecamp.org/news/html-entities-symbols-special-character-codes-list/"
+              href="https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              HTML Entities
+              JavaScript forEach
             </a>
             <a
-              href="https://www.freecodecamp.org/news/excel-vba-tutorial/"
+              href="https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Excel VBA
+              Google BERT
             </a>
             <a
-              href="https://www.freecodecamp.org/news/vlookup-in-excel/"
+              href="https://www.freecodecamp.org/news/sql-create-table-statement-with-example-syntax/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              LOOKUP in Excel
+              Create Table SQL
             </a>
           </div>
           <div
@@ -201,78 +201,78 @@ exports[`<Footer /> matches snapshot 1`] = `
               className="footer-left"
             >
               <a
-                href="https://www.freecodecamp.org/news/what-is-a-proxy-server-in-english-please/"
+                href="https://www.freecodecamp.org/news/responsive-web-design-how-to-make-a-website-look-good-on-phones-and-tablets/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                What is a Proxy Server?
+                Responsive Web Design
               </a>
               <a
-                href="https://www.freecodecamp.org/news/the-cat-command-in-linux-concatenation-explained-with-bash-examples/"
+                href="https://www.freecodecamp.org/news/svg-basics-what-are-scalable-vector-graphics-and-how-do-you-use-them/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Cat Command in Linux
+                What Is an SVG File?
               </a>
               <a
-                href="https://www.freecodecamp.org/news/how-to-add-an-image-url-to-your-div/"
+                href="https://www.freecodecamp.org/news/pdf-password-remover-guide-how-to-remove-password-protection-from-a-pdf/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                CSS Background Image
+                PDF Password Remover
               </a>
               <a
-                href="https://www.freecodecamp.org/news/html-background-color-tutorial-how-to-change-a-div-background-color-explained-with-code-examples/"
+                href="https://www.freecodecamp.org/news/what-is-a-pdf-file-and-how-do-you-open-it-solved/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                HTML Background Color
+                What Is a PDF?
               </a>
               <a
-                href="https://www.freecodecamp.org/news/comments-in-css/"
+                href="https://www.freecodecamp.org/news/what-is-python-used-for-10-coding-uses-for-the-python-programming-language/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                CSS Comment Example
+                What Is Python?
               </a>
             </div>
             <div
               className="footer-right"
             >
               <a
-                href="https://www.freecodecamp.org/news/arrow-function-javascript-tutorial-how-to-declare-a-js-function-with-the-new-es6-syntax/"
+                href="https://www.freecodecamp.org/news/what-is-tls-transport-layer-security-encryption-explained-in-plain-english/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Arrow Function JavaScript
+                What Is TLS?
               </a>
               <a
-                href="https://www.freecodecamp.org/news/how-to-remove-duplicates-in-excel-delete-duplicate-rows-with-a-few-clicks/"
+                href="https://www.freecodecamp.org/news/what-is-a-lan-local-area-network-explained-in-plain-english/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Remove Duplicates in Excel
+                What Is a LAN?
               </a>
               <a
-                href="https://www.freecodecamp.org/news/what-is-dllhost-exe-and-com-surrogate-in-windows-task-manager-solved/"
+                href="https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                dllhost.exe COM Surrogate
+                What Is npm?
               </a>
               <a
-                href="https://www.freecodecamp.org/news/boolean-algebra/"
+                href="https://www.freecodecamp.org/news/rsync-examples-rsync-options-and-how-to-copy-files-over-ssh/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Boolean Algebra Truth Table
+                RSync Examples
               </a>
               <a
-                href="https://www.freecodecamp.org/news/can-you-facetime-on-android-no-but-here-are-some-alternative-video-conferencing-apps/"
+                href="https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Video Chat for Android
+                Random Forest
               </a>
             </div>
           </div>

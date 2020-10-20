@@ -147,7 +147,7 @@ npm -v
 
 如果您确实遇到了问题，请先对您的问题进行网页搜索，并查看是否已经回答过了。 如果您找不到解决方案， 如果尚未报告，请搜索我们的 [GitHub 问题](https://github.com/freeCodeCamp/freeCodeCamp/issues) 页面并报告问题。
 
-一如既往， 觉得可以随时连接到我们的 [贡献者聊天室在 Gitter](https://gitter.im/FreeCodeCamp/Contributors) 或 [我们的 Discord 服务器](https://discord.gg/6vJYm9V), 快速查询。
+一如既往， 觉得可以随时连接到我们的 [贡献者聊天室在 Gitter](https://gitter.im/FreeCodeCamp/Contributors) 或 [我们的 Discord 服务器](https://discord.gg/pFspAhS), 快速查询。
 
 > [!提示] 如果你只是编辑文件，你可能会跳过本地免费运行CodeCamp。 例如，执行 `rebase`, 或解决 `合并` 冲突。
 > 
