@@ -159,8 +159,7 @@ class DefaultLayout extends Component {
       showFooter = true,
       theme = 'default',
       user,
-      useTheme = true,
-      pathname
+      useTheme = true
     } = this.props;
 
     return (
@@ -226,7 +225,7 @@ class DefaultLayout extends Component {
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
-          <Header fetchState={fetchState} pathName={pathname} user={user} />
+          <Header fetchState={fetchState} user={user} />
           <div className={`default-layout`}>
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
             {hasMessage && flashMessage ? (
