@@ -1,0 +1,33 @@
+"project_id_env": "CROWDIN_PROJECT_ID_CURRICULUM"
+"api_token_env": "CROWDIN_PERSONAL_TOKEN"
+"base_path_env": "CROWDIN_BASE_PATH"
+"base_url_env": "CROWDIN_BASE_URL"
+
+"preserve_hierarchy": true
+
+files: [
+ {
+  "source" : "/curriculum/challenges/english/**/*.md",
+  "translation" : "/curriculum/challenges/%language%/**/%original_file_name%",
+
+  # "languages_mapping" : {
+  #     "language" : {
+
+  #     }
+  #   },
+
+  "update_option": "update_as_unapproved"
+ },
+ {
+    "source": "/curriculum/dictionaries/english/**/*.js",
+    "translation": "/curriculum/dictionaries/%language%/**/%original_file_name%",
+
+  # "languages_mapping" : {
+  #     "language" : {
+
+  #     }
+  #   },
+
+  "update_option": "update_as_unapproved"
+ }
+]
