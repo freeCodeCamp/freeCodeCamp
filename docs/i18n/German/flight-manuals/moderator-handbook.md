@@ -6,30 +6,30 @@ Dies wird dir helfen, verschiedene Orte in unserer Community zu moderieren, eins
 - Das Forum, Chat-Räume, Facebook-Gruppen und andere Online-Treffpunkte
 - Persönliche Veranstaltungen wie Lerngruppen, Hackathonen und Konferenzen
 
-**Alle FreeCodeCamp Moderatoren sind Community-Moderatoren. Das bedeutet, dass wir darauf vertrauen, dass Sie diese Orte beaufsichtigen.**
+**Alle FreeCodeCamp Moderatoren sind Community-Moderatoren. Das bedeutet, dass wir darauf vertrauen, dass Du diese Orte beaufsichtigst.**
 
-Dies bedeutet, dass Sie als Moderator an jedem Ort fungieren können, der für Sie am meisten interessant ist. Einige Moderatoren helfen gerade auf GitHub weiter. Andere helfen nur im Forum. Einige Moderatoren sind überall aktiv.
+Dies bedeutet, dass Du als Moderator an jedem Ort fungieren kannst, der für dich am interessantesten ist. Einige Moderatoren helfen gerade auf GitHub weiter. Andere helfen nur im Forum. Einige Moderatoren sind überall aktiv.
 
-Unterm Strich möchten wir, dass du ein Moderator bist und investieren Sie Ihre knappe Zeit an Orten, die für Sie von Interesse sind.
+Unterm Strich möchten wir, dass du ein Moderator bist und dass Du deine knappe Zeit an Orten, die für dich von Interesse sind verbringst.
 
 > [!HINWEIS] "Mit großer Macht kommt große Verantwortung." - Onkel Ben
 
 Als Moderator ist Temperament wichtiger als technische Fähigkeiten.
 
-Hören Sie zu. Sei Helpful. Beschützen Sie nicht Ihre Macht.
+Höre zu. Sei Hilfsbereit. Beschütze dein Wissen nicht, sondern teile es.
 
-freeCodeCamp ist eine integrative Community und wir müssen es so halten.
+freeCodeCamp ist eine integrative Community und wir möchten, dass es so bleibt.
 
-Wir haben einen einzigen Verhaltenskodex, der unsere gesamte Gemeinschaft regelt. Je weniger Regeln gelten, desto leichter können sie sich daran erinnern. Sie können diese Regeln lesen und sie in den Speicher [hier eintragen](https://code-of-conduct.freecodecamp.org).
+Wir haben einen einzigen Verhaltenskodex, der unsere gesamte Gemeinschaft regelt. Je weniger Regeln gelten, desto leichter kannst du daran erinnern. Du kannst diese Regeln lesen und dich in den Speicher [eintragen](https://code-of-conduct.freecodecamp.org).
 
-# Moderating GitHub
+# Moderation auf GitHub
 
 Moderatoren haben die Möglichkeit, Probleme zu schließen und Pull-Requests anzunehmen oder zu schließen.
 
 Moderatoren haben zwei Hauptverantwortungen in Bezug auf GitHub:
 
 1. Pull-Requests vereinen und zusammenführen
-2. Auswerten und Antworten auf Probleme
+2. Das Auswerten und Antworten bei Issues
 
 ## Pull-Requests moderieren
 
@@ -37,74 +37,74 @@ Pull Requests (PRs) sind die Art, wie Beitragende Änderungen an FreeCodeCamps R
 
 ### Pull-Requests Typen
 
-1. **Challenge Instruction Bearbeitungen** Dies sind Änderungen am Text der Herausforderungen - die Beschreibung, Anleitung oder Testtext. Du kannst diese Rechte auch auf GitHub überprüfen und entscheiden, ob du sie zusammenführen möchtest. Wir müssen etwas vorsichtiger damit umgehen, denn Millionen von Menschen werden auf diesen Text stoßen, wenn sie durch den kostenlosen CodeCamp Lehrplan arbeiten. Macht der Pull-Request den Text klarer, ohne ihn noch länger zu machen? Sind die Änderungen relevant und nicht zu pedantisch? Denken Sie daran, dass unser Ziel ist, die Herausforderungen so klar und so kurz wie möglich zu gestalten. Sie sind nicht der Ort für obskure Details. Außerdem können Mitwirkende versuchen, Links zu Ressourcen zu den Herausforderungen hinzuzufügen. Sie können diese Pull-Requests schließen und darauf antworten:
+1. **Challenge Instruction Bearbeitungen** sind Änderungen am Text der Herausforderungen - die Beschreibung, Anleitung oder Testtext. Du kannst diese Rechte auch auf GitHub überprüfen und entscheiden, ob du sie zusammenführen möchtest. Wir müssen etwas vorsichtiger damit umgehen, denn Millionen von Menschen werden auf diesen Text stoßen, wenn sie durch den kostenlosen CodeCamp Lehrplan arbeiten. Macht die Pull-Request den Text klarer, ohne ihn noch länger zu machen? Sind die Änderungen relevant und nicht zu pedantisch? Denke daran, dass unser Ziel ist, die Herausforderungen so klar und so kurz wie möglich zu gestalten. Sie sind nicht der Ort für obskure Details. Außerdem können Mitwirkende versuchen, Links zu Ressourcen zu den Herausforderungen hinzuzufügen. Sie können diese Pull-Requests schließen und darauf antworten:
 
    > Vielen Dank für Ihre Pull-Anfrage.
    > 
-   > Ich schließe diesen Pull-Antrag ab. Bitte fügen Sie stattdessen Links und andere Details zum entsprechenden Anleitungsartikel der Challenge hinzu.
+   > Ich schließe diesen Pull-Antrag ab. Bitte füge stattdessen Links und andere Details zum entsprechenden Anleitungsartikel der Challenge hinzu.
    > 
-   > Wenn du denkst, dass ich bei der Schließung dieses Themas falsch bin, öffne es bitte erneut und füge weitere Erläuterungen hinzu. Vielen Dank und glückliche Kodierung.
+   > Wenn du denkst, dass ich bei der Schließung dieses Themas falsch liege, öffne es bitte erneut und füge weitere Erläuterungen hinzu. Vielen Dank und glückliches Programmieren.
 
-2. **Challenge Code Bearbeitung** Dies sind Änderungen an dem Code in einer Challenge Seed, Challenge Lösung und Test Strings. Diese Pull-Requests müssen von GitHub nach unten gezogen und auf Ihrem lokalen Computer getestet werden, um sicherzustellen, dass die Challenge-Tests mit der aktuellen Lösung weiterhin bestehen können und der neue Code führt zu keinen Fehlern. Einige Mitwirkende können versuchen, zusätzliche Tests hinzuzufügen, um pedantische Eckfälle abzudecken. Wir müssen aufpassen, dass die Herausforderung nicht zu kompliziert wird. Diese Herausforderungen und ihre Tests sollten so einfach und intuitiv wie möglich sein. Neben den Algorithmus-Herausforderungen und der Vorab-Sektion sollten die Lernenden in der Lage sein, jede Herausforderung innerhalb von etwa 2 Minuten zu lösen.
+2. **Challenge Code Bearbeitung** sind Änderungen an dem Code in einem Challenge Seed, einer Challenge Lösung und einem Test Strings. Diese Pull-Requests müssen von GitHub gedownloaded und auf Deinem lokalen Computer getestet werden, um sicherzustellen, dass die Challenge-Tests mit der aktuellen Lösung weiterhin funktionieren können und der neue Code zu keinen Fehlern führt. Einige Mitwirkende können versuchen, zusätzliche Tests hinzuzufügen, um pedantische Eckfälle abzudecken. Wir müssen aufpassen, dass die Herausforderung nicht zu kompliziert wird. Diese Herausforderungen und ihre Tests sollten so einfach und intuitiv wie möglich sein. Neben den Algorithmus-Herausforderungen und der Vorab-Sektion sollten die Lernenden in der Lage sein, jede Herausforderung innerhalb von etwa 2 Minuten zu lösen.
 
-3. **Codebase ändert** Diese Code-Änderungen ändern die Funktionalität der FreeCodeCamp-Plattform selbst. Manchmal versuchen die Mitwirkenden ohne viel Erklärung Änderungen vorzunehmen, aber für Änderungen des Codes müssen wir sicherstellen, dass die Änderungen wirklich notwendig sind. Diese Pull Requests sollten also auf ein bestehendes GitHub Problem verweisen, bei dem die Gründe für die Änderung diskutiert werden. Dann können Sie die Pull-Requests auf Ihrem Computer öffnen und sie lokal testen. Wenn die Änderungen gut aussehen, werden sie noch nicht zusammengeführt. Du kannst den Pull-Request kommentieren und dann @raisedadead erwähnen, damit er einen letzten Blick werfen kann.
+3. **Codebase Änderungen** ändern die Funktionalität der FreeCodeCamp-Plattform selbst. Manchmal versuchen die Mitwirkenden ohne viel Erklärung Änderungen vorzunehmen, aber für Änderungen des Codes müssen wir sicherstellen, dass die Änderungen wirklich notwendig sind. Diese Pull Requests sollten also auf ein bestehendes GitHub Problem verweisen, bei dem die Gründe für die Änderung diskutiert werden. Dann kannst Du die Pull-Requests auf deinem Computer öffnen und sie lokal testen. Wenn die Änderungen gut aussehen, werden sie noch nicht zusammengeführt. Du kannst den Pull-Request kommentieren und dann @raisedadead erwähnen, damit er einen letzten Blick werfen kann.
 
 ### Pull-Requests zusammenführen oder schließen
 
-Zunächst einmal sollten Sie sich, wenn Sie einen Pull-Request für die QA wählen, dieser zuordnen. Sie können dies tun, indem Sie auf den Link "sich selbst zuweisen" unten auf der rechten Spalte des GitHub Interfaces klicken.
+Zunächst einmal solltest Du, wenn Du eine Pull-Request für die QA wählst, diese zuordnen. Du kannst dies tun, indem Du auf den Link "sich selbst zuweisen" unten auf der rechten Spalte des GitHub Interfaces klicken.
 
-Je nach Art der Pull-Request-Anforderung folgen Sie den oben aufgeführten Regeln.
+Je nach Art der Pull-Request-Anforderung folge den oben aufgeführten Regeln.
 
-Bevor Sie einen Pull-Request zusammenführen, stellen Sie sicher, dass GitHub grüne Prüfzeichen für alles hat. Wenn es X gibt, erkundigen Sie diese zuerst und finden Sie heraus, wie Sie diese zuerst in grüne Markierungen umwandeln können.
+Bevor Du eine Pull-Request zusammenführst, stelle sicher, dass GitHub grüne Prüfzeichen für alles hat. Wenn es X gibt, erkundige dich zuerst und finde heraus, wie du diese zuerst in grüne Markierungen umwandeln kannst.
 
-Manchmal wird es einen Fusionskonflikt geben. Dies bedeutet, dass ein anderer Pull-Request eine Änderung an diesem exakten Teil derselben Datei vorgenommen hat. GitHub hat ein Werkzeug, um diese Fusionskonflikte direkt auf GitHub anzugehen. Sie können versuchen, diese Konflikte anzugehen. Nutzen Sie einfach Ihr bestes Urteil. Die Änderungen der Pull-Requests sind oben und die Änderungen des Master-Zweiges werden unten angezeigt. Manchmal wird es dort überflüssige Informationen geben, die gelöscht werden können. Bevor Sie fertig sind, löschen Sie bitte `<<<<<<`, `======`, und `>>>>>>>` , die Git zu Konfliktzonen hinzufügt.
+Manchmal wird es einen Fusionskonflikt geben. Dies bedeutet, dass eine anderere Pull-Request eine Änderung an diesem exakten Teil derselben Datei vorgenommen hat. GitHub hat ein Werkzeug, um diese Fusionskonflikte direkt auf GitHub anzugehen. Du kannst, so versuchen diese Konflikte zu umgehen. Die Änderungen der Pull-Requests sind oben und die Änderungen des Master-Zweiges werden unten angezeigt. Manchmal wird es dort überflüssige Informationen geben, die gelöscht werden können. Bevor Du fertig bist, lösche bitte `<<<<<<`, `======`, und `>>>>>>>` , da diese Git zu Konflikten bringt.
 
-Wenn der Pull-Request zum Zusammenführen bereit aussieht (und keine Genehmigung von @raisedadead benötigt), können Sie ihn zusammenführen. Bitte verwenden Sie die Standardfunktionalität "Squash and Merge" auf GitHub. Dies wird alle Pull Requests in einen einzigen Commit einbinden, was die Git Historie viel einfacher zu lesen macht.
+Wenn die Pull-Request zum Zusammenführen bereit aussieht (und keine Genehmigung von @raisedadead benötigt), kannst Du diese zusammenführen. Bitte verwende die Standardfunktion "Squash and Merge" auf GitHub. Dies wird alle Pull Requests in einen einzigen Commit einbinden, was die Git Historie viel einfacher zu lesen macht.
 
-Sie sollten dann den Pull Request kommentieren, dem Beitragenden auf Ihre persönliche Art und Weise danken.
+Du solltest dann die Pull Request kommentieren, dem Contributer auf Ihre persönliche Art und Weise danken.
 
-Wenn der Autor des Pull-Requests ein "Erstmaliger Beitrag" ist, sollten Sie ihn auch zu ihrem ersten verschmelzten Pull-Request in das Repository beglückwünschen. Sie können sich die obere rechte Ecke des PR ansehen, um einen erstmaligen Beitragenden zu ermitteln.  Es wird `erste Beitragszahler` wie unten angezeigt:
+Wenn der Autor des Pull-Requests ein "first-time Contributer" ist, sollten Sie ihn auch zu ihrem ersten verschmelzten Pull-Request in das Repository beglückwünschen. Sie können sich die obere rechte Ecke des PR ansehen, um einen erstmaligen Beitragenden zu ermitteln.  Es wird das Label `first-Time Contributer` wie unten angezeigt:
 
 ![Copy_edits_for_Java_arrays_article_by_karentobo_%C2%B7_Pull_Request__20615_%C2%B7_freeCodeCamp_freeCodeCamp|690x281](https://i.imgur.com/dTQMjGM.png)
 
-Wenn der Pull-Request nicht bereit zur Zusammenführung ist, kannst du höflich antworten und dem Autor sagen, was er tun sollte, um es fertig zu bekommen. Hoffentlich werden sie antworten und ihre Pull-Anfrage näher an sie heranbringen.
+Wenn der Pull-Request nicht bereit zur Zusammenführung ist, kannst du höflich antworten und dem Autor sagen, was er tun sollte, um es fertig zu bekommen. Hoffentlich wird er dann antworten und ihre Pull-Anfrage näher an dich  heranbringen.
 
-Oft wird ein Pull-Request offensichtlich wenig Aufwand sein. Sie können dies oft sofort sagen, wenn der Beitragende sich nicht die Mühe gemacht hat, die Kontrollkästchen im Pull-Request Template anzukreuzen, oder verwendet einen generischen Pull-Request-Titel wie "Änderungen gemacht" oder "Aktualisierungsindex.
+Oft wird ein Pull-Request offensichtlich wenig Aufwand sein. Dies kannst Du oft sofort sagen, wenn der Beitragende sich nicht die Mühe gemacht hat, die Kontrollkästchen in dem Pull-Request Template anzukreuzen, oder wenn er einen generischen Pull-Request-Titel wie "Änderungen gemacht" oder "Aktualisierungsindex" verwendet.
 
 Es gibt auch Situationen, in denen der Beitragende versucht, einen Link zu seiner eigenen Website hinzuzufügen oder eine Bibliothek, die sie selbst erstellt haben, einbinden oder eine leichtsinnige Bearbeitung haben, die niemandem außer sich selbst hilft.
 
-In beiden dieser Situationen sollten Sie ihre Pull-Request schließen und mit dieser Standardnachricht antworten:
+In beiden dieser Situationen solltest Du ihre Pull-Request schließen und mit dieser Standardnachricht antworten:
 
 > Vielen Dank für das Öffnen dieser Pull-Anfrage.
 > 
-> Dies ist eine Standardnachricht, die dich darüber informiert, dass wir deine Pull-Requests überprüft haben und beschlossen haben, sie nicht zusammenzuführen. Wir würden uns freuen, wenn Sie sich bei uns melden.
+> Dies ist eine Standardnachricht, die dich darüber informiert, dass wir deine Pull-Requests überprüft haben und beschlossen haben, sie nicht zusammenzuführen. Wir würden uns freuen, wenn Du dich bei uns meldest.
 > 
 > Vielen Dank und glückliche Kodierung.
 
-Wenn Sie eine zweite Meinung zu einem Pull-Request benötigen, gehen Sie voran und hinterlassen Sie Ihre Kommentare zum Pull-Request dann fügen Sie das "Diskussion"-Label dem Pull-Request hinzu.
+Wenn Du eine zweite Meinung zu einer Pull-Request benötigst, hinterlasse deine Kommentare zur Pull-Request, dann fügen wir das "Diskussion"-Label der Pull-Request hinzu.
 
-## Probleme mit GitHub moderieren
+## Probleme mit der Moderation von GitHub
 
 freeCodeCamp ist ein aktives Open Source Projekt. Wir bekommen jeden Tag neue Themen, die alle verdreifacht und gekennzeichnet werden müssen.
 
 ### Typen von GitHub Problemen
 
-1. **Code-Hilfe-Anfragen**, für die Leute fälschlicherweise GitHub Probleme erstellt haben. Wenn jemand um Hilfe bittet, fügen Sie die folgende Nachricht ein, dann schließen Sie das Problem.
+1. **Code-Hilfe-Anfragen**, für die Leute, die fälschlicherweise GitHub Probleme erstellt haben. Wenn jemand zum Beispiel um Hilfe bittet, füge die folgende Nachricht ein, dann schließe das Problem.
 
-   > Vielen Dank, dass Sie dieses Problem gemeldet haben.
+   > Vielen Dank, dass Du dieses Problem gemeldet hast.
    > 
-   > Dies ist eine Standardnachricht, die Sie darüber informiert, dass dieses Problem eine Bitte um Hilfe zu sein scheint. Anstatt hier um Hilfe zu bitten, klicken Sie bitte auf den \*"Hilfe"\*\* Button auf der Challenge auf FreeCodeCamp, die Ihnen helfen wird, eine Frage im richtigen Teil des Forums zu erstellen. Freiwillige im Forum antworten in der Regel innerhalb weniger Stunden auf Fragen und können dabei helfen, herauszufinden, ob es ein Problem mit deinem Code oder den Tests der Challenge gibt.
+   > Dies ist eine Standardnachricht, die Dich darüber informiert, dass dieses Problem eine Bitte um Hilfe zu sein scheint. Anstatt hier um Hilfe zu bitten, klicke bitte auf den \*"Hilfe"\*\* Button auf der Challenge auf FreeCodeCamp, die Ihnen helfen wird, eine Frage im richtigen Teil des Forums zu erstellen. Freiwillige im Forum antworten in der Regel innerhalb weniger Stunden auf Fragen und können dabei helfen, herauszufinden, ob es ein Problem mit deinem Code oder den Tests der Challenge gibt.
    > 
-   > Wenn die Forumsmitglieder feststellen, dass nichts mit Ihrem Code zu tun hat, können Sie die Wiedereröffnung dieses Problems beantragen. 
+   > Wenn die Forumsmitglieder feststellen, dass es nichts mit Ihrem Code zu tun hat, können Sie die Wiedereröffnung dieses Problems beantragen. 
    > 
    > Vielen Dank und glückliche Kodierung.
 
-2. **Fehler oder Klärungsprobleme** Versuchen Sie, den Fehler selbst zu reproduzieren, wenn Sie können. Falls nicht, bitte sie um die Schritte, um den Fehler zu reproduzieren und ob sie Screenshots haben, Videos oder zusätzliche Details, die Ihnen helfen können, das Problem zu reproduzieren. Sobald Sie das Problem reproduzieren können - oder zumindest bestätigen, dass es ein legales Problem ist - bezeichnen Sie es `bestätigt`. Dann:
+2. **Fehler oder Klärungsprobleme** Versuche, den Fehler wenn möglich selbst zu reproduzieren. Falls nicht, bitte um die Schritte, die es brauch um den Fehler zu reproduzieren und ob er Screenshots hat, Videos oder zusätzliche Details, die dir helfen könnten, das Problem zu reproduzieren. Sobald Du das Problem reproduzieren kannst - oder zumindest bestätigen, dass es ein echtes Problem ist - bezeichne es als `bestätigt`. Dann:
 
-- Wenn es eine einfache Änderung an einer bestehenden Herausforderung ist, benennen Sie nur `erste Timer`, sonst wird eine Bezeichnung als `hilfe gesucht`. Andere Labels verwenden, wie es zutrifft.
-- Wenn das Problem wichtiger ist, Flagge als `Bug`. &nbsp; Wenn es irgendwelche Unklarheiten bezüglich der richtigen Vorgehensweise bei einem Thema gibt Sie können @raisedadead zu diesem Thema markieren und dann den `Discussing` Label hinzufügen.
+- Wenn es eine einfache Änderung an einer bestehenden Herausforderung ist, benenne es nur als `erste Timer`, sonst wird es als `hilfe gesucht` benannt. Außerdem kannst du andere Labels verwenden, falls diese  zutreffen.
+- Wenn das Problem wichtiger ist, Flagge es als `Bug`. &nbsp; Wenn es irgendwelche Unklarheiten bezüglich der richtigen Vorgehensweise bei einem Thema gibt, kannst dz @raisedadead zu diesem Thema markieren und dann das `Discussing` Label hinzufügen.
 
-3. **Probleme duplizieren** Wenn ein Problem mit einem anderen gemeldeten Problem identisch ist, sollte das zuvor gemeldete Problem Vorrang haben. Als `duplizieren`markieren, fügen Sie die folgende Nachricht ein und ersetzen Sie `#XXXXX` mit der Ticketnummer, dann schließen Sie das Problem.
+3. **Probleme replizieren** Wenn ein Problem mit einem anderen gemeldeten Problem identisch ist, sollte das zuvor gemeldete Problem Vorrang haben. Als `replizieren`markieren, fügen Sie die folgende Nachricht ein und ersetzen Sie `#XXXXX` mit der Ticketnummer, dann schließen Sie das Problem.
 
    > Vielen Dank, dass Sie dieses Problem gemeldet haben.
    > 
