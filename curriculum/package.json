@@ -33,7 +33,7 @@
     "@babel/register": "^7.11.5",
     "acorn": "^8.0.1",
     "acorn-jsx": "^5.3.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-add-module-exports": "^1.0.4",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-transform-imports": "^1.4.1",
