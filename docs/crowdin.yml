@@ -1,27 +1,28 @@
-# Used with the Crowdin CLI or GitHub Actions
+"project_id_env": "CROWDIN_PROJECT_ID_DOCS"
+"api_token_env": "CROWDIN_PERSONAL_TOKEN"
+"base_path_env": "CROWDIN_BASE_PATH"
+"base_url_env": "CROWDIN_BASE_URL"
 
-# CLI Usage (use --dryrun for preview):
-#  crowdin download --identity ~/.crowdin.yaml
-#  crowdin upload sources --identity ~/.crowdin.yaml
-#  crowdin upload translations --identity ~/.crowdin.yaml
+"preserve_hierarchy": true
 
-# These tokens are overriden when using cli with project_id and api_token
-project_id_env: CROWDIN_PROJECT_ID
-api_token_env: CROWDIN_PERSONAL_TOKEN
+files: [
+ {
+  "source" : "/*.md",
+  "translation" : "/i18n/%language%/%original_file_name%",
 
-# https://support.crowdin.com/configuration-file-v3/#saving-directory-structure-on-server
-preserve_hierarchy: true
-base_path: docs
+  "ignore" : [
+    "_coverpage.md",
+    "_navbar.md",
+    "_translations.md",
+    "README.md",
+  ],
 
-files:
-  - source: /*.md
-    translation: /i18n/%language%/%original_file_name%
-    ignore:
-      - _coverpage.md
-      - _navbar.md
-      - _translations.md
-      - README.md
-  - source: /flight-manuals/*.md
-    translation: /i18n/%language%/flight-manuals/%original_file_name%
-    ignore:
-      - working-on-virtual-machines.md
+  # "languages_mapping" : {
+  #     "language" : {
+
+  #     }
+  #   },
+
+  "update_option": "update_as_unapproved"
+ }
+]
