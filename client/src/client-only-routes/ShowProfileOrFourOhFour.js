@@ -10,7 +10,7 @@ import {
   fetchProfileForUser,
   usernameSelector
 } from '../redux';
-import FourOhFourPage from '../components/FourOhFour';
+import FourOhFour from '../components/FourOhFour';
 import Profile from '../components/profile/Profile';
 import { isBrowser } from '../../utils/index';
 
@@ -69,7 +69,7 @@ class ShowProfileOrFourOhFour extends Component {
       // We have a response from the API, but there is nothing in the store
       // for /:maybeUser. We can derive from this state the /:maybeUser is not
       // a user the API recognises, so we 404
-      return <FourOhFourPage />;
+      return <FourOhFour />;
     }
 
     // We have a response from the API, and we have some state in the
