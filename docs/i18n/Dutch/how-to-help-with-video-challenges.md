@@ -1,44 +1,44 @@
-# Hoe te helpen met video-uitdagingen
+# How to help with video challenges
 
-Video-uitdagingen zijn een nieuw soort uitdaging in het freeCodeCamp curriculum.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-Een video-uitdaging is een klein deel van een volledige video-cursus over een bepaald onderwerp. Een video-uitdagingspagina bevat een YouTube-video. Elke uitdagingspagina heeft een enkele meerkeuze met betrekking tot de video. Een gebruiker moet de vraag correct beantwoorden voordat hij op de volgende video-uitdaging in de cursus.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-De video-uitdagingspagina's worden gemaakt door leden van het freeCodeCamp team. YouTube video's worden ook geüpload door leden van het freeCodeCamp team. Veel van de videouitdagingen hebben daar nog geen vragen over.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-Je kunt helpen door meerdere keuzevragen te maken met betrekking tot videosecties en de vragen toe te voegen aan de markdown bestanden voor de video-uitdagingen.
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Uitdaging sjabloon
+## Challenge Template
 
-Hieronder is een sjabloon van de challenge markdown bestanden.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
-id: Unieke identificatie (alfanumeriek), MongoDB_id)
-titel: Challenge titel
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
 challengeType: 11
-videoId: 'YouTube videoId voor video challenge'
+videoId: 'YouTube videoId for video challenge'
 ---
 
-## Beschrijving
+## Description
 
 <section id='description'>
-Een optionele beschrijving met handige informatie over de video.
+An optional description with helpful information related to the video.
 </section>
 
-## Testen
+## Tests
 
 <section id='tests'>
 
 ```yml
-vraag:
-  tekst: 'Vraag'
-  antwoorden:
-    - 'Antwoord één'
-    - 'Antwoord twe'
-    - 'Antwoord drie'
-  oplossing: 3
+question:
+  text: 'Question'
+  answers:
+    - 'Answer One'
+    - 'Answer Two'
+    - 'Answer Three'
+  solution: 3
 ````
 
 </section>
@@ -57,116 +57,116 @@ You can find the markdown files for video challenges at the following locations 
 
 Pick a challenge markdown file from the options above.
 
-### Skim via de video die gekoppeld is aan de uitdaging en maak een mutiple choice vraag
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-Vind eerst de videoId.
+First, find the videoId.
 
-In de volgende code van de header van een video challenge markdown bestand is de videoId bijvoorbeeld "nVAaxZ34khk". Op GitHub moet de informatie in een tabelformaat worden geladen.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
-id: 5e9a093a74c4063ca6f7c14d titel: Data analyse Voorbeeld A challengeType: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
 
-Ga vervolgens naar de YouTube-video met die videoId. De url voor de video zal zijn:
-https://www.youtube. om/watch?v=[videoId]    (voeg videoId toe aan de URL zonder vierkante hakens)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-In het bovenstaande voorbeeld is de URL https://www. outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim de YouTube-video met die videoId en denk aan een meerkeuze op basis van de inhoud van de video.
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### Voeg de vraag toe aan het markdown bestand
+### Add the question to the markdown file
 
-Je kunt de vraag lokaal of rechtstreeks toevoegen via de GitHub interface. Om de vraag lokaal toe te voegen, moet je [freeCodeCamp lokaal instellen](how-to-setup-freecodecamp-locally.md). Je kunt het bestand ook vinden op GitHub en op de knop bewerken om de vraag rechts in je browser toe te voegen.
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-Als een vraag nog niet is toegevoegd aan een bepaalde video uitdaging, het zal de volgende standaardvraag bevatten:
-
-```yml
-vraag:
-  tekst 
- text: ²
-    Vraag
-  antwoord:
-    -
-      één
-    - ľ
-      twee
-    - gha
-      3
-  oplossing: 3
-```
-
-Werk het woord "Vraag" bij met uw vraag. Werk de "één", "twee", en "drie" bij met de mogelijke antwoorden. Zorg ervoor dat het oplossingsnummer wordt bijgewerkt waarmee het antwoord correct is. U kunt meer mogelijke antwoorden toevoegen volgens dezelfde indeling De vraag en antwoorden kunnen worden omringd met aanhalingstekens. De vraag en antwoorden kunnen worden omringd met aanhalingstekens.
-
-#### Gebruik markdown om je vraag te formatteren
-
-De tekst in de vraag wordt als markdown geïnterpreteerd. De eenvoudigste manier om ervoor te zorgen dat het correct is opgemaakt is om de vraag te beginnen met `tekst: Dail`, zoals dit:
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-vraag:
-  text: ²
-    Vraag
+question:
+  text: |
+    Question
+  answers:
+    - |
+      one
+    - |
+      two
+    - |
+      three
+  solution: 3
 ```
 
-Vervolgens moet je ervoor zorgen dat je vraag zich op een nieuwe lijn bevindt en één niveau meer heeft ingesprongen dan `tekst : 000000`.
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-Dezelfde benadering kan worden gebruikt voor de antwoorden, dus de hele vraag wordt
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-vraag:
-  tekst: ²
-    Vraag
-  antwoordt op:
-  -
-    Eerste antwoord
-  - 2 - 2
-    Tweede
-  - ²
-    Derde
-  oplossing: 2
+question:
+  text: |
+    Question
 ```
 
-Zorg ervoor dat elk antwoord plausibel is, maar er is maar één juist antwoord.
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-#### Gebruik van HTML
+The same approach can be used for the answers, so the entire question becomes
 
-Vragen en antwoorden kunnen bepaalde HTML-tags bevatten, zoals `<br>` voor een nieuwe regel. HTML-tags moeten spaarzaam worden gebruikt wanneer vragen niet zonder ze kunnen worden uitgedrukt.
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
+    Second
+  - |
+    Third
+  solution: 2
+```
 
-### Vraag voorbeelden
+Make sure each answer is plausible but there is only one correct answer.
 
-#### Voorbeelden zonder HTML
+#### Use of HTML
+
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+
+### Question examples
+
+#### Examples without HTML
 
 ````yml
-vraag:
-  tekst: ×
-    Wat logt deze JavaScript-code in de console?
+question:
+  text: |
+    What does this JavaScript code log to the console?
     ```js
-    console.log('hallo wereld');
+    console.log('hello world');
     ````
 
 
-    Selecteer een antwoord!
-  antwoorden:
-    - Februari hallo *wereld*
-    - Februari **hallo** wereld
-    - ・ hallo wereld oplossing: 3
+    Select an answer!
+  answers:
+    - | hello *world*
+    - | **hello** world
+    - | hello world solution: 3
 ````
 
-``````yml
-vraag:
-  text: ×
-    Wat zal worden afgedrukt na het uitvoeren van deze code:
+````yml
+question:
+  text: |
+    What will print out after running this code:
     ```py
-    breedte = 15
-    hoogte = 12. print(hoogte/3)
+    width = 15
+    height = 12.0
+    print(height/3)
     ````
-  antwoorden:
+  answers:
     - | 39
     - | 4
-    - ¦ 4.0
-    - ¦ 5.0
-    - ® 5 oplossing: 3
+    - | 4.0
+    - | 5.0
+    - | 5 solution: 3
 ````
 
 #### Example with HTML
@@ -190,10 +190,10 @@ question:
   solution: 3
 ````
 
-Het laatste voorbeeld laat zien dat HTML kan worden gebruikt, maar dat het niet zo leesbaar is als de versie zonder HTML-versie.
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-Voor meer voorbeelden, kunt u de markdown bestanden bekijken voor de volgende video cursus. Alle uitdagingen hebben al vragen: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Open een pull-aanvraag
+## Open a pull request
 
-Na het aanmaken van een of meer vragen, kunt u de wijzigingen doorvoeren in een nieuwe branch en [open een pull-aanvraag](how-to-open-a-pull-request.md).
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

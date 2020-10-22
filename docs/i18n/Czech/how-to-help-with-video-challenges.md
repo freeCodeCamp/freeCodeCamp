@@ -1,199 +1,199 @@
-# Jak pomoci s výzvami videa
+# How to help with video challenges
 
-Video výzvy jsou novým typem výzvy v osnovách freeCodeCamp.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-Video výzva je malá část videohovoru s plnou délkou na konkrétní téma. Stránka s výzvou pro video vloží YouTube video. Každá stránka s výzvou má jednu otázku s možností výběru z více možností, která se týká videa. Uživatel musí odpovědět na otázku správně, než v kurzu přejde na další videohovor.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-Stránky video challenge jsou vytvořeny členy týmu freeCodeCamp. YouTube videa jsou také nahrávána členy FreeCodeCamp týmu. Mnohé z videohovorů s nimi ještě nejsou spojeny.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-Můžete pomoci vytvořením otázek s více možnostmi souvisejících s kapitolami video a přidáním otázek do souborů markdown pro videohovory.
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Šablona výzvy
+## Challenge Template
 
-Níže je šablona toho, jak vypadají soubory challenge markdown.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
-id: jedinečný identifikátor (alfanumerický, MongoDB_id)
-název: Challenge Title
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
 challengeType: 11
-videoId: 'YouTube videoId pro video challenge'
+videoId: 'YouTube videoId for video challenge'
 ---
 
-## Popis
+## Description
 
 <section id='description'>
-Volitelný popis s užitečnými informacemi o videu.
+An optional description with helpful information related to the video.
 </section>
 
-## Testy
+## Tests
 
 <section id='tests'>
 
 ```yml
-otázka:
-  text: 'Otázka'
-  odpovědi:
-    - 'Odpovězte na jedno'
-    - 'Odpověď'
-    - 'Odpověď'
-  řešení: 3
+question:
+  text: 'Question'
+  answers:
+    - 'Answer One'
+    - 'Answer Two'
+    - 'Answer Three'
+  solution: 3
 ````
 
 </section>
 ````
 
-## Vytváření otázek pro videohovory challenge markdown
+## Creating questions for video challenges
 
-### Přístup k souborům pro video challenge markdown
+### Access the video challenge markdown files
 
-Najdete soubory markdown pro videohovory na následujících místech ve učebních osnovách:
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Datová analýza s Pythonovým kurzem](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [TensorFlow 2.0 Course](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
 - [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
 - [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Pick a challenge markdown soubor z možností výše.
+Pick a challenge markdown file from the options above.
 
-### Skim přes video spojené s výzvou a vytvořte otázku "mutiple select"
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-Nejprve najděte videoId.
+First, find the videoId.
 
-Například, v následujícím kódu z záhlaví video challenge markdown souboru, videoId je "nVAaxZ34khk". Na GitHubu by informace měly být rozvrženy ve formátu tabulky.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
-id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Příklad A challengeType: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
 
-Dále získejte přístup k YouTube video s tímto videem. Adresa url videa bude:
-https://www.youtube. om/watch?v=[videoId]    (přidat videoID k URL bez hranatých závorek)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-V příkladu výše je url https://www. outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim YouTube video s tímto videoID a přemýšlejte o otázce s vícenásobným výběrem na základě obsahu videa.
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### Přidejte otázku do souboru markdown
+### Add the question to the markdown file
 
-Otázku můžete přidat lokálně nebo přímo přes rozhraní GitHub. Chceš-li tuto otázku lokálně přidat, musíš [nastavit freeCodeCamp lokálně](how-to-setup-freecodecamp-locally.md). Na GitHub můžete také najít soubor a kliknout na tlačítko upravit pro přidání otázky přímo ve vašem prohlížeči.
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-Pokud otázka ještě nebyla přidána do konkrétní video výzvy, bude mít následující výchozí otázku:
-
-```yml
-otázka:
-  text: |
-    Odpovědi
-  :
-    - |
-      jeden
-    - |
-      dva
-    - |
-      tři
-  řešení: 3
-```
-
-Aktualizujte slovo „otázka“ na vaši otázku. Aktualizujte „jeden“, „dva“ a „tři“ s možnými odpověďmi. Ujistěte se, že aktualizujete číslo řešení, se kterým je odpověď správná. Můžete přidat více možných odpovědí pomocí stejného formátu. Otázka a odpovědi mohou být obklopeny uvozovkami.
-
-#### Použijte markdown pro formátování otázky
-
-Text v této otázce je uveden jako markdown. Nejjednodušším způsobem, jak se ujistit, že je správně naformátovaný, je začít s `textem: |`, jako je toto:
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-otázka:
+question:
   text: |
-    Otázka
+    Question
+  answers:
+    - |
+      one
+    - |
+      two
+    - |
+      three
+  solution: 3
 ```
 
-Potom se musíte ujistit, že vaše otázka je na nové řádce a odsazená o jednu úroveň je více než `text: |`.
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-Stejný přístup lze použít i pro odpovědi, takže se celá otázka stane
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-Otázka:
+question:
   text: |
-    Odpovědi
-
-  - |
-    První odpověď
-  - |
-    Druhý
-  - |
-    Třetí
-  řešení: 2
+    Question
 ```
 
-Ujistěte se, že je každá odpověď věrohodná, ale existuje pouze jedna správná odpověď.
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-#### Použití HTML
+The same approach can be used for the answers, so the entire question becomes
 
-Otázky a odpovědi mohou obsahovat určité HTML tagy jako `<br>` pro nový řádek. HTML tagy by měly být používány opatrně, když bez nich nemohou být vyjádřeny otázky.
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
+    Second
+  - |
+    Third
+  solution: 2
+```
 
-### Příklady otázek
+Make sure each answer is plausible but there is only one correct answer.
 
-#### Příklady bez HTML
+#### Use of HTML
+
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+
+### Question examples
+
+#### Examples without HTML
 
 ````yml
-Otázka:
+question:
   text: |
-    Co dělá tento JavaScript kód log?
+    What does this JavaScript code log to the console?
     ```js
     console.log('hello world');
     ````
 
 
-    Vyberte odpověď!
-  odpovědi:
-    - | ahoj *svět*
-    - | **ahoj** svět
-    - | Ahoj svět řešení: 3
+    Select an answer!
+  answers:
+    - | hello *world*
+    - | **hello** world
+    - | hello world solution: 3
 ````
 
 ````yml
-otázka:
+question:
   text: |
-    Co se vytiskne po spuštění tohoto kódu:
+    What will print out after running this code:
     ```py
-    šířka = 15
-    výška = 12.
-    vytisknout (výška/3)
+    width = 15
+    height = 12.0
+    print(height/3)
     ````
-  odpovědi:
+  answers:
     - | 39
     - | 4
     - | 4.0
     - | 5.0
-    - | 5 roztok: 3
+    - | 5 solution: 3
 ````
 
-#### Příklad s HTML
+#### Example with HTML
 
 ```yml
-otázka:
+question:
   text: |
-    Co se vytiskne po spuštění tohoto kódu:
-    <pre><code>šířka = 15<br>výška = 12.<br>tiskárny (výška/3)<code></pre>
-  odpovědí:
+    What will print out after running this code:
+    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
+  answers:
     - |
       39
     - |
       4
     - |
-      4.
+      4.0
     - |
-      5.
+      5.0
     - |
       5
-  roztok: 3
+  solution: 3
 ````
 
-Konečný příklad ukazuje, že HTML lze použít, ale není tak čitelná jako verze bez ní.
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-Více příkladů se můžete podívat na soubory markdown pro následující video kurz. Všechny challenge keše již mají otázky: [Python pro každý kurz](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Otevřít požadavek na natažení
+## Open a pull request
 
-Po vytvoření jedné nebo více otázek můžete provést změny do nové větve a [otevřít požadavek na natažení](how-to-open-a-pull-request.md).
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

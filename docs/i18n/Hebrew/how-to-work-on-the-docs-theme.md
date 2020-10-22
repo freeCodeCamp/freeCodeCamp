@@ -20,21 +20,35 @@ Typically you would not need to change any configuration or build the site local
 
 Clone freeCodeCamp:
 
-```sh
+```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 docsify serve docs
 ```
 
 Install `docsify`:
 
-```sh
+```console
 npm install -g docsify
 ```
 
 and serve the `/docs` directory
 
-```sh
+```console
 docsify serve docs
 ```
 
-Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run `npm run docs:serve` from the root of the repo.
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+
+### Serve and launch the documentation site only
+
+```console
+npm run docs:serve
+```
+
+### Serve the documentation site alongside freeCodeCamp locally:
+
+```console
+npm run develop
+```
+
+> The documentation site should be available at <http://localhost:3200>

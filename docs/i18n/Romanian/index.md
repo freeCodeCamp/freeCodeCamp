@@ -1,45 +1,43 @@
-Comunitatea [freeCodeCamp.org](https://freecodecamp.org) este posibilă datorită miilor de voluntari ca tine. Salutăm orice contribuție adusă comunității și suntem încântați să vă întâmpinăm la bord.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!NOTĂ] Înainte de a continua, vă rugăm să citiţi [Codul nostru de conduită](https://www.freecodecamp.org/code-of-conduct). Îl aplicăm cu strictețe în comunitatea noastră. Dorim să contribuim la freeCodeCamp.org pentru a fi o experiență sigură și cuprinzătoare pentru toată lumea.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Contribuţia fericită.
+Happy contributing.
 
-Sunteți bineveniți:
+You are welcome to:
 
-- Creează, actualizează și repară erori în [provocările noastre de codificare](#coding-challenges).
-- Ajutați-ne să reparăm erorile pe platforma [de învățare freeCodeCamp.org](#learning-platform).
-- _(Vin în curând)_ Ajută-ne să traducem freeCodeCamp.org în limbile lumii.
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-Ai întrebări? Mergeți la [aceste întrebări frecvente](/FAQ.md) unde răspundem la câteva întrebări comune despre contribuții.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## Provocări de codificare
+## Curriculum
 
-Toate provocările noastre de programare sunt tratate de comunitate, aducând cunoștințe de specialitate de la voluntari ca tine.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-Le puteți ajuta să le extindeți și să le îmbunătățiți. De asemenea, poți actualiza povestirile utilizatorilor pentru a explica mai bine conceptul sau pentru a le elimina pe cele redundante și pentru a le îmbunătăți testele de provocare pentru a le face să testeze mai precis codul oamenilor.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**Dacă ești interesat să îmbunătățești aceste provocări de codificare, iată [cum să lucrezi la provocările de codificare](how-to-work-on-coding-challenges.md).**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Platforma de învățare
+## Learning Platform
 
-Platforma noastră de învățare rulează pe o stivă JavaScript modernă. Are diferite componente, unelte și biblioteci, inclusiv, dar nu numai, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack și multe altele.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-În general,
+Broadly, we use
 
-- Avem un server de API bazat pe Node.js.
-- Un set de aplicații ale clienților bazate pe React.
-- Un script pe care îl folosim pentru a evalua proiectele noastre front-end.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-Pentru a contribui la aceasta este nevoie de o înţelegere a API-urilor, a Sintaxei ES6 şi a curiozităţii.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-În esenţă, ne aşteptăm la o cunoaştere de bază a unora dintre tehnologiile, instrumentele şi bibliotecile menţionate anterior. Acestea fiind spuse, nu trebuie să fii expert în a contribui la ele.
+If you want to help us improve our codebase...
 
-**Dacă doriți să ne ajutați să îmbunătățim codul nostru, puteți utiliza Gitpod, un mediu gratuit pentru dezvoltatori online**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Deschide în Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Începe un mediu de dezvoltatori gata de cod pentru tabăra freeCodep în browser-ul tău.)
+Or you can...
 
-SAU
-
-**poți [configura tabăra freeCodep local](how-to-setup-freecodecamp-locally.md) pe mașina ta.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

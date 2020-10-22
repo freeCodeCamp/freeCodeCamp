@@ -1,15 +1,15 @@
-# 如何在 Windows Home 上使用 Docker
+# How to use Docker on Windows Home
 
-在WindowsHome上设置停靠台时要避免一些陷阱。 首先，您必须使用 [Docker 工具箱](https://docs.docker.com/toolbox/toolbox_install_windows/) 作为管理员。 很抱歉，Windows Home 不支持 Docker for Windows Desktop，所以必须使用工具箱。 它必须作为管理员运行，因为安装使用符号链接，否则无法创建。
+There are a few pitfalls to be avoided when setting up docker on Windows Home. First of all you have to use [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) as Administrator. Unfortunately Windows Home does not support Docker for Windows Desktop, so Toolbox must be used instead. It has to be run as Administrator as the installation uses symlinks, which cannot be created otherwise.
 
-安装工具箱后，作为管理员运行Docker Quickstart 终端。 如果它不存在，它将创建 `默认` 虚拟机. 一旦发生这种情况，关闭终端和打开 VirtualBox (再次作为管理员)。 您应该能看到 `默认` 机。 站点资源非常密集，所以停止虚拟机并尽可能提高设置 - 尤其是内存。 它已被证实与4GB ram合作。
+Once you've installed the toolbox, run Docker Quickstart Terminal as Administrator. This will create a `default` virtual machine, if it does not already exist. Once that has happened, close the terminal and open VirtualBox (again as Administrator). You should be able to see the `default` machine. The site is quite resource intensive, so stop the virtual machine and raise the settings as much as you can - memory in particular. It has been confirmed to work with 4GB of ram.
 
-一旦你很高兴Docker正在运行，请克隆免费CodeCamp仓库到 `C:\User` 内的目录。 这些目录是共享的 Docker 访问它在安装期间需要的本地目录的权限。
+Once you're happy that Docker is working, clone the freeCodeCamp repository to a directory inside `C:\Users`. These directories are shared giving Docker access to the local directories, which it needs during installation.
 
-如果您看到的消息就像这样了
+If you see messages like
 
 ```shell
-bash: change_volumes_owners.sh: 没有这样的文件或目录
+bash: change_volumes_owner.sh: No such file or directory
 ```
 
-当你 `npm 运行docker:init` 这可能是罪魁祸首。
+when you `npm run docker:init` this is likely the culprit.

@@ -1,40 +1,54 @@
-# Jak pracovat na tématu dokumentace
+# How to work on the docs theme
 
-> [!POZNÁMKA] Rychlé upozornění, že nemusíte nic nastavovat pro práci na obsahu stránky dokumentace.
+> [!NOTE] A quick reminder that you do not need to setup anything for working on the content for the documentation site.
 > 
-> Chcete-li pracovat na pokynech pro přispívání, můžete upravit nebo přidat soubory do adresáře `dokumentace` [k dispozici zde](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). Jakmile budou vaše změny sloučeny, budou automaticky zpřístupněny na stránce dokumentace.
+> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). When your changes are merged, it will be made available automatically at the documentation site.
 
-## Struktura internetových stránek dokumentace
+## Structure of the docs website
 
-Stránka je generována pomocí [`docsify`](https://docsify.js.org)a servírována pomocí stránek GitHub.
+The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
 
-Obvykle byste nemuseli měnit žádnou konfiguraci nebo stavět web lokálně. V případě, že máte zájem, zde je to, jak funguje:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
-- Zdroj domovské stránky je k dispozici v [`docs/index.html`](index.html).
-- Tento soubor slouží jako SPA pomocí `docsify` a GitHub stránek.
-- Skript `docsify` na vyžádání generuje obsah souborů `markdown` v `dokumentech`.
-- Domovská stránka je generována z [`_coverpage.md`](_coverpage.md).
-- postranní navigace je generována z [`_sidebar.md`](_sidebar.md).
+- The homepage's source for this site is available in [`docs/index.html`](index.html).
+- We serve this file as a SPA using `docsify` and GitHub Pages.
+- The `docsify` script generates the content of `markdown` files in `docs` directory on demand.
+- The homepage is generated from the [`_coverpage.md`](_coverpage.md).
+- the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
-## Místní obsluha stránky dokumentace
+## Serving the documentation site locally
 
-Klonovat volný CodeCamp:
+Clone freeCodeCamp:
 
-```sh
-git klonovat https://github.com/freeCodeCamp/freeCodeCamp.git
+```console
+git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 docsify serve docs
 ```
 
-Nainstalovat `docsify`:
+Install `docsify`:
 
-```sh
+```console
 npm install -g docsify
 ```
 
-a obsluhovat adresář `/docs`
+and serve the `/docs` directory
 
-```sh
-docsify servisní dokumenty
+```console
+docsify serve docs
 ```
 
-Případně pokud jste nainstalovali freeCodeCamp lokálně (viz příručka lokálního nastavení), spojujeme CLI s vývojovými nástroji, takže můžete spustit `npm run docs:serve` od kořene repo.
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+
+### Serve and launch the documentation site only
+
+```console
+npm run docs:serve
+```
+
+### Serve the documentation site alongside freeCodeCamp locally:
+
+```console
+npm run develop
+```
+
+> The documentation site should be available at <http://localhost:3200>

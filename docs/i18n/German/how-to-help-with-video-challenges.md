@@ -1,17 +1,17 @@
-# Wie man bei Videoherausforderungen hilft
+# How to help with video challenges
 
-Video-Herausforderungen sind eine neue Art von Herausforderung im FreeCodeCamp Lehrplan.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-Eine Videoherausforderung ist ein kleiner Abschnitt eines Videokurses zu einem bestimmten Thema. Eine Video-Challenge-Seite fügt ein YouTube-Video ein. Jede Challenge-Seite hat eine einzige Multiple-Choice-Frage im Zusammenhang mit dem Video. Ein Benutzer muss die Frage richtig beantworten, bevor er die nächste Videoherausforderung im Kurs fortsetzt.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-Die Seiten zur Videoherausforderung werden von Mitgliedern des FreeCodeCamp-Teams erstellt. YouTube-Videos werden auch von Mitgliedern des FreeCodeCamp-Teams hochgeladen. Viele der Video-Herausforderungen haben noch keine Fragen damit verbunden.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-Sie können helfen, indem Sie Fragen zu verschiedenen Optionen im Zusammenhang mit Video-Abschnitten erstellen und die Fragen zu den Markdown-Dateien für die Video-Challenge hinzufügen.
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Herausforderungsvorlage
+## Challenge Template
 
-Unten ist eine Vorlage dafür, wie die Challenge-Markdown-Dateien aussehen.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
@@ -56,11 +56,11 @@ Wählen Sie eine Datei aus den obigen Optionen. ### Skim durch das Video, das mi
 
 Zuerst finden Sie die videoID.
 
-### Skim durch das Video, das mit der Challenge verbunden ist, und erstellen Sie eine mehrfache Frage
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-Zuerst finden Sie die videoID.
+First, find the videoId.
 
-Zum Beispiel, im folgenden Code aus dem Header einer Video-Challenge-Markdown-Datei, die videoId ist "nVAaxZ34khk". Auf GitHub sollten die Informationen in einem Tabellenformat angelegt werden.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d Titel: Datenanalyse Beispiel A ChallgeType: 11
@@ -68,84 +68,84 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Als nächstes greifen Sie mit dieser VideoID auf das YouTube-Video zu. Die URL für das Video lautet:
-https://www.youtube. om/watch?v=[videoId]    (videoId zur URL ohne eckige Klammern hinzufügen)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-Im obigen Beispiel ist die URL https://www. outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
 Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### Fügen Sie die Frage zur Markierungsdatei
+### Add the question to the markdown file
 
-hinzu. Sie können die Frage lokal oder direkt über das GitHub-Interface hinzufügen. Um die Frage lokal hinzuzufügen, musst du [FreeCodeCamp lokal einrichten](how-to-setup-freecodecamp-locally.md). Sie können auch die Datei auf GitHub finden und klicken Sie auf die Schaltfläche Bearbeiten, um die Frage direkt in Ihrem Browser hinzuzufügen.
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-Wenn eine Frage noch nicht zu einer bestimmten Videoherausforderung hinzugefügt wurde, es wird die folgende Standardfrage:
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
 question:
   text: |
-    Frage
-  Antworten:
+    Question
+  answers:
     - |
-      ein
+      one
     - |
-      zwei
+      two
     - |
-      drei
-  Lösung: 3
+      three
+  solution: 3
 ```
 
-Aktualisieren Sie das Wort „Frage“ mit Ihrer Frage. Aktualisieren Sie das „ein“, „zwei“ und „drei“ mit den möglichen Antworten. Achten Sie darauf, die Lösungsnummer zu aktualisieren, mit der die Antwort korrekt ist. Sie können mehr mögliche Antworten im gleichen Format hinzufügen. Die Frage und die Antworten können mit Anführungszeichen umgeben.
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-#### Verwenden Sie Markdown um Ihre Frage zu formatieren
+#### Use markdown to format your question
 
-Der Text in der Frage wird als Markdown geparst. Der einfachste Weg, um sicherzustellen, dass die Frage korrekt formatiert ist, ist die Frage mit dem `Text zu starten: |`, wie folgt:
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-Frage:
-  Text: |
-    Frage
+question:
+  text: |
+    Question
 ```
 
-Dann müssen Sie sicherstellen, dass Ihre Frage in einer neuen Zeile ist und eine Ebene mehr als `Text eingerückt hat: |`.
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-Der gleiche Ansatz kann für die Antworten verwendet werden, so dass die gesamte Frage wird
+The same approach can be used for the answers, so the entire question becomes
 
 ```yml
-Frage:
-  Text: |
-    Frage
-  beantwortet:
+question:
+  text: |
+    Question
+  answers:
   - |
-    Erste Antwort
+    First answer
   - |
-    Zweite
+    Second
   - |
-    Dritte
-  Lösung: 2
+    Third
+  solution: 2
 ```
 
-Vergewissern Sie sich, dass jede Antwort plausibel ist, aber es gibt nur eine richtige Antwort.
+Make sure each answer is plausible but there is only one correct answer.
 
-#### Verwendung von HTML
+#### Use of HTML
 
-Fragen und Antworten können bestimmte HTML-Tags wie `<br>` für eine neue Zeile enthalten. HTML-Tags sollten sparsam verwendet werden, wenn Fragen ohne sie nicht ausgedrückt werden können.
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
 
-### Fragebeispiele
+### Question examples
 
-#### Beispiele ohne HTML
+#### Examples without HTML
 
 ````yml
-Frage:
-  Text: |
-    Was protokolliert dieser JavaScript-Code zur Konsole?
+question:
+  text: |
+    What does this JavaScript code log to the console?
     ```js
-    console.log('Hallo Welt');
+    console.log('hello world');
     ````
 
 
-    Wähle eine Antwort!
-  antworten:
+    Select an answer!
+  answers:
     - | Hallo *Welt*
     - | **Hallo** Welt
     - | Hallo Welt Lösung: 3
@@ -159,7 +159,7 @@ Frage:
     Breite = 15
     Höhe = 12. Drucken (Höhe/3)
     ````
-  antworten:
+  answers:
     - | 39
     - | 4
     - | 4.0
@@ -186,10 +186,10 @@ Frage:
   Lösung: 3
 ````
 
-Das letzte Beispiel zeigt, dass HTML verwendet werden kann, dass es aber nicht so lesbar ist wie die Version ohne es.
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-Für weitere Beispiele können Sie sich die Markdown Dateien für den folgenden Video-Kurs ansehen. Alle Herausforderungen haben bereits Fragen: [Python für jeden Kurs](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Pull-Request öffnen
+## Open a pull request
 
-Nach dem Erstellen einer oder mehrerer Fragen können Sie die Änderungen zu einem neuen Zweig übertragen und [öffnen Sie einen Pull-Request](how-to-open-a-pull-request.md).
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

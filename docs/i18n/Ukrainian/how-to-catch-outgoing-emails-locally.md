@@ -1,67 +1,67 @@
-> **Примітка:** Це **необов’язковий** крок і потрібно тільки при роботі з електронними робочими процесами
+> **Note:** This is an **optional** step and is required only when working with email workflows
 
-## Вступ
+## Introduction
 
-Деякі робочі процеси, як-от оновлення повідомлення користувача, потребують сервера, що відправляє вихідні листи. Альтернатива використанню провайдера електронної пошти для відправки фактичних повідомлень, Mailhog - це інструмент розробника для тестування електронної пошти, який буде приймати повідомлення електронною поштою, що надіслані вашим екземпляром freeCodeCamp.
+Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. An alternative to using an email service provider to send actual email messages, Mailhog is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
-## Встановлення MailHog
+## Installing MailHog
 
-MailHog може бути встановлений на macOS, Windows і Linux.
+MailHog can be installed on macOS, Windows and Linux.
 
-- [Вступ](#introduction)
-- [Встановлення MailHog](#installing-mailhog)
-  - [Встановлення MailHog на macOS](#installing-mailhog-on-macos)
-  - [Встановлення MailHog на Windows](#installing-mailhog-on-windows)
-  - [Встановлення MailHog на Linux](#installing-mailhog-on-linux)
-- [Використання MailHog](#using-mailhog)
-- [Корисні посилання](#useful-links)
+- [Introduction](#introduction)
+- [Installing MailHog](#installing-mailhog)
+  - [Installing MailHog on macOS](#installing-mailhog-on-macos)
+  - [Installing MailHog on Windows](#installing-mailhog-on-windows)
+  - [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Using MailHog](#using-mailhog)
+- [Useful Links](#useful-links)
 
-### Встановлення MailHog на macOS
+### Installing MailHog on macOS
 
-Встановити MailHog на macOS з [Homebrew](https://brew.sh/):
+Install MailHog on macOS with [Homebrew](https://brew.sh/):
 
 ```bash
-brew встановити mailhog
-служби запуску mailhog
+brew install mailhog
+brew services start mailhog
 ```
 
-Наведені вище команди почнуть працювати із поштовою скринькою у фоновому режимі.
+The above commands will start a mailhog service in the background.
 
-Коли інсталяція завершиться, ви можете почати [використовуючи MailHog](#using-mailhog).
+When the installation completes, you can start [using MailHog](#using-mailhog).
 
-### Встановлення MailHog на Windows
+### Installing MailHog on Windows
 
-Завантажте останню версію MailHog з [офіційного репозиторію MailHog](https://github.com/mailhog/MailHog/releases). Знайдіть та натисніть на посилання для вашої версії Windows (32 або 64 біти) і файл .exe буде завантажений на ваш комп'ютер.
+Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
 
-Коли завантаження завершиться, натисніть, щоб відкрити файл. Повідомлення від брандмауера Windows може з'явитися в запиті дозволу на доступ до MailHog. Стандартний командний рядок Windows відкриється, де MailHog буде запущений коли доступ до брандмауера надано.
+When the download completes, click to open the file. A Windows firewall notification may appear, requesting access permission for MailHog. A standard Windows command line prompt will open where MailHog will be running once firewall access is granted.
 
-Закрити MailHog закривши вікно командного рядка. Щоб запустити MailHog знову, натисніть на виконання MailHog (. xe) файл, який було завантажено спочатку - не потрібно завантажувати новий файл встановлення поштової скриньки.
+Close MailHog by closing the command prompt window. To start MailHog again, click on the MailHog executable (.exe) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
-Почати [використовуючи MailHog](#using-mailhog).
+Start [using MailHog](#using-mailhog).
 
-### Встановлення MailHog на Linux
+### Installing MailHog on Linux
 
-Спочатку встановити [Йти до](https://golang.org).
+First, install [Go](https://golang.org).
 
-Запустіть наступні команди, щоб встановити GO на такі системи як Ubuntu та Linux Mint.
+Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
 
 ```bash
 sudo apt-get install golang
 ```
 
-Запустіть такі команди, щоб встановити GO на системи RPM, такі як CentOS, Fedora, Red Hat Linux, і т.д.
+Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
 
 ```bash
 sudo dnf install golang
 ```
 
-Крім того, запустіть наступні команди для встановлення GO.
+Alternatively, run the following commands to install GO.
 
 ```bash
 sudo yum install golang
 ```
 
-Тепер встановіть шлях для виконання наступних команд.
+Now set the path for Go with the following commands.
 
 ```bash
 echo "export GOPATH=$HOME/go" >> ~/.profile
@@ -69,7 +69,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-Нарешті, введіть наведені нижче команди для встановлення і запустіть MailHog.
+Finally, enter the commands below to install and run MailHog.
 
 ```bash
 go get github.com/mailhog/MailHog
@@ -77,24 +77,24 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-Почати [використовуючи MailHog](#using-mailhog).
+Start [using MailHog](#using-mailhog).
 
-## Використання MailHog
+## Using MailHog
 
-Відкрийте нову вкладку або вікно браузера в браузері та перейдіть до [http://localhost:8025](http://localhost:8025) щоб відкрити поштову скриньку, коли воно буде завершене і запущено MailHog. Поштова скринька буде схожа на екран, що знизу.
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running. The inbox will appear similar to the screen shot below.
 
-![MailHog Знімок екрану 1](images/mailhog/1.jpg)
+![MailHog Screenshot 1](images/mailhog/1.jpg)
 
-Листи, надіслані вашим безкоштовним кодувальником будуть показані нижче
+Emails sent by your freeCodeCamp installation will appear as below
 
-![MailHog Знімок екрану 2](images/mailhog/2.jpg)
+![MailHog Screenshot 2](images/mailhog/2.jpg)
 
-Дві вкладки, які дозволяють переглядати або простий текст або вихідний вміст, будуть доступні при відкритті електронної пошти. Переконайтеся, що у звичайному тексті вибрана як нижче.
+Two tabs that allow you to view either plain text or source content will be available when you open a given email. Ensure that the plain text tab is selected as below.
 
-![MailHog Знімок екрану 3](images/mailhog/3.jpg)
+![MailHog Screenshot 3](images/mailhog/3.jpg)
 
-Всі посилання в email повинні бути активними і вирішені за їх посиланнями.
+All links in the email should be clickable and resolve to their URL.
 
-## Корисні посилання
+## Useful Links
 
-- Перегляньте репозиторій [MailHog](https://github.com/mailhog/MailHog) для подальшої інформації, що відноситься до MailHog. Додаткова інформація є також доступною для користувацьких налаштувань MailHog.
+- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog. Additional information is also available regarding custom MailHog configurations.

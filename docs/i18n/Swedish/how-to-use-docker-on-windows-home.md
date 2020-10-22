@@ -1,15 +1,15 @@
-# Hur man använder Docker på Windows Home
+# How to use Docker on Windows Home
 
-Det finns några fallgropar som ska undvikas när du ställer in docker på Windows Home. Först av allt måste du använda [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) som administratör. Tyvärr stöder Windows Home inte Docker för Windows Desktop, så Verktygslådan måste användas istället. Det måste köras som Administratör eftersom installationen använder symlänkar, vilket inte kan skapas på annat sätt.
+There are a few pitfalls to be avoided when setting up docker on Windows Home. First of all you have to use [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) as Administrator. Unfortunately Windows Home does not support Docker for Windows Desktop, so Toolbox must be used instead. It has to be run as Administrator as the installation uses symlinks, which cannot be created otherwise.
 
-När du har installerat verktygslådan, kör Docker Quickstart Terminal som administratör. Detta kommer att skapa en `standard` virtuell maskin, om den inte redan finns. När det har hänt, stäng terminalen och öppna VirtualBox (igen som administratör). Du bör kunna se `standard` maskin. Webbplatsen är ganska resurs intensiv, så stoppa den virtuella maskinen och höja inställningarna så mycket du kan - minne i synnerhet. Det har bekräftats att arbeta med 4 GB bagge.
+Once you've installed the toolbox, run Docker Quickstart Terminal as Administrator. This will create a `default` virtual machine, if it does not already exist. Once that has happened, close the terminal and open VirtualBox (again as Administrator). You should be able to see the `default` machine. The site is quite resource intensive, so stop the virtual machine and raise the settings as much as you can - memory in particular. It has been confirmed to work with 4GB of ram.
 
-När du är glad att Docker fungerar, klona freeCodeCamp repository till en katalog inuti `C:\Users`. Dessa kataloger delas och ger Docker åtkomst till de lokala katalogerna, som de behöver under installationen.
+Once you're happy that Docker is working, clone the freeCodeCamp repository to a directory inside `C:\Users`. These directories are shared giving Docker access to the local directories, which it needs during installation.
 
-Om du ser meddelanden som
+If you see messages like
 
 ```shell
-bash: change_volumes_owner.sh: Ingen sådan fil eller katalog
+bash: change_volumes_owner.sh: No such file or directory
 ```
 
-när du `npm kör docker:init` detta är sannolikt den skyldige.
+when you `npm run docker:init` this is likely the culprit.

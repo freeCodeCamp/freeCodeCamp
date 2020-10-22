@@ -1,286 +1,367 @@
-# Jak pracovat na programování úkolů
+# How to work on coding challenges
 
-Naším cílem je rozvíjet zábavné a jasné interaktivní učení.
+Our goal is to develop a fun and clear interactive learning experience.
 
-Navrhování interaktivních úkolů kódování je obtížné. Bylo by mnohem snazší napsat dlouhé vysvětlení nebo vytvořit video tutoriál, a je zde místo pro lidi na středním a YouTube. Nicméně pro naše základní osnovy se držíme toho, co funguje nejlépe pro většinu lidí - plně interaktivní zážitek z videoher.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-Chceme kamery, aby se dosáhlo stavu toku. Chceme, aby prostřednictvím našich osnov vytvořili hybnou sílu a s co nejmenším počtem hlemýžďů. Chceme, aby se zapojili do projektů s důvěrou a získali velké vystavení koncepcím programování.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
-Vytváření těchto výzev vyžaduje obrovskou tvořivost a pozornost k detailům. K dispozici je spousta pomoci. Budete mít podporu od celého týmu přispěvatelů, kterým se můžete odvracet nápady a demo své výzvy. Zůstaňte aktivní v [přispěvatelském sále](https://gitter.im/freecodecamp/contributors) a položte mnoho otázek.
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-S Vaší pomocí můžeme navrhnout interaktivní programovací osnovy, které pomohou milionům lidí naučit se programovat v následujících letech.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
-Obsah každé výzvy je uložen v jeho vlastním markdown souboru. Tento soubor markdown je později převeden na HTML pomocí našich nástrojů pro vytváření interaktivních webových stránek.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-Veškerý obsah měn freeCodeCamp.org naleznete v adresáři [`/curriculum/challenge`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges).
+With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-## Nastavit nástroj pro učební plány
+The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
 
-Než budete pracovat na učebních plánech, musíte nastavit nějaké nástroje, které vám pomohou vyzkoušet vaše změny. Můžete použít libovolnou možnost z níže:
+You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges) directory.
 
-- Můžete [nastavit volný CodeCamp lokálně](how-to-setup-freecodecamp-locally.md). To je **vysoce doporučeno** pro pravidelné/opakované příspěvky. Toto nastavení vám umožní pracovat a otestovat vaše změny.
-- Použijte Gitpod, bezplatné online prostředí pro vývojáře. Kliknutím na tlačítko níže spustíte prostředí pro vývojáře freeCodeCamp ve vašem prohlížeči. Trvá to jen několik minut.
+## Set up the tooling for the curriculum
 
-  [![Otevřít v Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
 
-- Upravte soubory na rozhraní GitHubu kliknutím na ikonu tužky pro odpovídající soubor. I když je to nejrychlejší způsob, není doporučeno ****, protože nejste schopni otestovat změny na GitHubu. Pokud naši správci dospějí k závěru, že změny, které jste provedli, musí být vyzkoušeny lokálně, musíte místo toho znovu použít výše uvedené metody.
+- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
+- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
 
-## Šablona výzvy
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-Níže je šablona toho, jak vypadají soubory challenge markdown v současné době.  Chcete-li zobrazit zjednodušenou šablonu, uvidíme [níže](#upcoming-challenge-template).
+- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead again.
+
+## Challenge Template
+
+Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
 
 ````md
 ---
-id: jedinečný identifikátor (alfanumerický, MongoDB_id)
-název: Challenge Title
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
 challengeType: 0
 videoUrl: 'url of video explanation'
 ---
 
-## Popis
+## Description
 
 <section id='description'>
-Popis challenge a co je nutné předat
+A Description of the challenge and what is required to pass
 </section>
 
-## Instrukce
+## Instructions
 
 <section id='instructions'>
-Instrukce o tom, co přesně je třeba udělat.
+Instructions about what exactly needs to be done.
 </section>
 
-## Testy
+## Tests
 
 <section id='tests'>
 
 ```yml
-testy:
-  - text: Měl by vrátit "foo"
-    testString: 'Stringified funkce možná pomocí Chai asserts'
+tests:
+  - text: Should return "foo"
+    testString: 'A stringified function possibly using Chai asserts'
 ````
 
 </section>
 
-## Seed výzvy
+## Challenge Seed
 
 <section id='challengeSeed'>
 
 <div id='{ext}-seed'>
 
 ```{ext}
-Kód zobrazený ve výchozím nastavení v editoru.
+Code displayed in the editor by default.
 
-Toto je požadovaná sekce pro výzvu.
+This is a required section for the challenge.
 ```
 
 </div>
 
-### Před zkouškou
+### Before Test
 
 <div id='{ext}-setup'>
 
 ```{ext}
-Volitelný kód pro testovací nastavení.
+Optional Test setup code.
 ```
 
 </div>
 
-### Po zkoušce
+### After Test
 
 <div id='{ext}-teardown'>
 
 ```{ext}
-Volitelný kód testu dolů.
+Optional Test tear down code.
 ```
 
 </div>
 
 </section>
 
-## Roztok
+## Solution
 
 <section id='solution'>
 
 ```{ext}
-// řešení vyžadováno
+// solution required
 ```
 
 </section>
 
 ````
 
-> [!POZNÁMKA]
+> [!NOTE]
 >
-> 1. Ve výše uvedených oddílech příklady `{ext}` jsou:
+> 1. In the above sections, examples of `{ext}` are:
 >
 >   - `html` - HTML/CSS
 >   - `js` - JavaScript
 >   - `jsx` - JSX
 >
-> 2. Pro část `Tests` výše, `text` a `testString` by měly být platné YAML řetězce. `testString` může být stringified funkce nebo výraz, který může používat Chai tvrzení.
+> 2. For the `Tests` section above, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression using which could use Chai asserts.
 
-## Číslování výzev
+## Numbering Challenges
 
-Každá výzva potřebuje `id`. Pokud jej nespecifikujete, MongoDB vytvoří náhodně nový při ukládání dat; nechceme to však udělat, protože chceme, aby byly děti spojené s výzvou napříč různými prostředími (stagnace, výroba, spousta různých vývojářů atd.).
+Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
 
-Možnost generovat nový ve skořápce (za předpokladu, že MongoDB běží samostatně):
+To generate a new one in a shell (assuming MongoDB is running separately):
 
-1. Spustit příkaz `mongo`.
-2. Spustit příkaz `ObjectId()`.
+1. Run `mongo` command.
+2. Run `ObjectId()` command.
 
-Například:
+For example:
 
 ```bash
 $ mongo
-MongoDB shell verze v3.6.1
-připojující se k: mongodb://127.0.0.1:27017
-MongoDB verze serveru: 3.4.10
+MongoDB shell version v3.6.1
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
 ...
 $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-Výsledkem je nový id, například `5a474d78df58bafeb35d34`.
+The result is a new id, for example `5a474d78df58bafeb3535d34` above.
 
-Jakmile budete mít své id , vložte jej do souboru markdown jako pole `id` nahoře, např.
+Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
 ```yml
 ---
-id: 5a474d78df58bafeb35d34
-název: Challenge Title
+id: 5a474d78df58bafeb3535d34
+title: Challenge Title
 ```
 
-## Pojmenovávání úkolů
+## Naming challenges
 
-Pojmenování věcí je těžké. Usnadnili jsme to zavedením určitých omezení.
+Naming things is hard. We've made it easier by imposing some constraints.
 
-Všechny názvy výzev by měly být explicitní a měly by odpovídat tomuto vzoru:
+All challenge titles should be explicit and should follow this pattern:
 
-\[verb\]\[klauzule objektu\]
+\[verb\]\[object clause\]
 
-Zde je několik příkladů názvů výzev:
+Here are some example challenge names:
 
-- Použít upozornění ve směru hodinových ručiček pro zadání Padding prvku
-- Kondenzovaná pole s .redukcí
-- Použijte poznámku závorek k nalezení první postavy v řetězci
+- Use Clockwise Notation to Specify the Padding of an Element
+- Condense arrays with .reduce
+- Use Bracket Notation to Find the First Character in a String
 
-## Popisy/pokyny k výzvě
+## Challenge descriptions/instructions
 
-Věty by měly být jasné a stručné s minimálním žargonem. V případě použití by měl být žargon okamžitě definován v jednoduché angličtině.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-Zachovejte odstavce krátké (kolem 1-4 vět). Pravděpodobně si lidé přečtou několik krátkých odstavců než zeď textu.
+Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Text výzvy by měl použít druhou osobu („vy“), aby jí pomohl dát konverzační tón. Tímto způsobem text a instrukce vypadají, že mluví přímo s kamerem, který pracuje výzvou. Zkuste se vyhnout používání první osoby ("I", "my", "let's" a "ná").
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Nepoužívat odchozí odkazy. To přerušilo tok. Kameraři by nikdy neměli v těchto výzvách nic vygoognovat. Pokud existují zdroje, které by podle vás mohly mít užitek, přidejte je do článku příručky pro výzvu.
+Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-V případě potřeby můžete přidat diagramy.
+You can add diagrams if absolutely necessary.
 
-Nepoužívat emoji ani emotikony v výzvách. freeCodeCamp má globální komunitu a kulturní význam emoji nebo emotikonu se může po celém světě lišit. Na různých systémech se mohou zobrazovat emoji odlišně.
+Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
-Řádné nouny by měly používat správnou kapitalizaci, pokud je to možné. Níže je seznam slov, která by se měla objevit v výzvách.
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
-- JavaScript (velká písmena v "J" a "S" a bez zkratek)
+- JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
-- Vývoj front-end (přídavný formulář s pomlčkou) je při práci na předním konci (jmenný formulář bez pomlčky). Totéž platí pro "back end", "full stack" a mnoho dalších složených termínů.
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-### Dvouminutové pravidlo
+### The 2-minute rule
 
-Každá výzva by měla být vyřešena do 120 sekund rodilým anglickým mluvčím, který dokončil výzvy, které jí přináší. To zahrnuje dobu potřebnou k přečtení směrů/instrukcí rozumí kódu seedu, napište svůj vlastní kód a získejte všechny testy.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their own code and get all the tests to pass.
 
-Pokud to trvá déle než dvě minuty, máte dvě možnosti:
+If it takes longer than two minutes to complete the challenge, you have two options:
 
-- Zjednodušit výzvu, nebo
-- Rozdělte výzvu na dvě výzvy.
+- Simplify the challenge, or
+- Split the challenge into two challenges.
 
-Dvouminutové pravidlo tlačí tvůj návrhář, aby tvé pokyny byly stručné, aby tvůj zdrojový kód byl jasný a tvé testy byly jednoduché.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
-Sledujeme, jak dlouho trvá kamera, aby vyřešili změny a použili tyto informace k identifikaci výzev, které je třeba zjednodušit nebo rozdělit.
+We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
 
-### Modularita
+### Modularity
 
-Každá výzva by měla naučit přesně jeden koncept a tento koncept by měl být zřejmý z názvu výzvy.
+Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
-Dříve zakryté koncepty můžeme posílit opakováním a odlišnostmi - například zavedení prvků h1 do jedné výzvy, poté h3 bude mít později několik výzev.
+We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 
-Naším cílem je mít tisíce dvouminutových výzev. Ty mohou společně proudit a zopakovat dříve zakryté koncepce.
+Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
-### Formátování textu výzvy
+### Formatting challenge text
 
-Zde jsou konkrétní směry formátování pro text výzvy a příklady:
+Here are specific formatting guidelines for challenge text and examples:
 
-- Klíčová slova jazyka jdou do značek `<code>`. Například, názvy HTML značek nebo názvy CSS vlastností
-- První instance klíčového slova, když je definováno, nebo obecná klíčová slova (např. "objekt" nebo "neměnitelná") jdou na `<dfn>` tagy
-- Odkazy na části kódu (tj. funkce, metoda nebo názvy proměnných) by měly být baleny do značek `<code>`. Viz příklad níže:
-- Použijte <code>parseInt</code> k převodu proměnné <code>realNumber</code> na celé číslo.
-- Bloky víceřádkových kódů **musí předcházet prázdný řádek**. Další řádek musí začínat třemi zadními vrátky, po nichž bezprostředně následuje jeden z [podporovaných jazyků](https://prismjs.com/#supported-languages). Chcete-li dokončit blok kódu, musíte spustit novou řádek, který má pouze tři zadky a **další prázdný řádek**. **Poznámka:** Pokud chcete použít příklad kódu v YAML, použít `yaml` místo `yml` pro jazyk vpravo od backtiků.
+- Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
+- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
+- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+```md
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+```
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
 
-Viz příklad níže:
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
-Příklad kódu:
+The following is an example of code:
 
 ```{language}
 
-[VAŠE KÓD ŠERE]
+[YOUR CODE HERE]
 
 ````
 ````
 
-- Další informace ve formě poznámky by měly být formátovány `<strong>Poznámka:</strong> Zbytek textu poznámky...
-- Pokud je zapotřebí více poznámek, pak uveďte všechny poznámky v samostatných větách ve formátu `<strong>Poznámky:</strong> Text první poznámky. Text druhé poznámky.`.
-- Použijte v případě potřeby dvojí uvozovky
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
+- Use single-quotes where applicable
 
-## Testy psaní
+**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
 
-Výzvy by měly mít minimální počet zkoušek nutný k ověření, že kampery rozumí koncepci.
+## Writing tests
 
-Naším cílem je komunikovat o jediném bodu, který se výzva snaží vyučovat, a otestovat, zda tento bod pochopili.
+Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
 
-Testy výzev mohou využít výpočetní knihovny Node.js a Chai.js. V případě potřeby je k dispozici uživatelsky generovaný kód v proměnné `code`.
+Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
 
-## Formátování kódu seedu
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
 
-Zde jsou specifické pokyny pro formátování kódu challenge seedu:
+## Formatting seed code
 
-- Používejte dvě mezery k odsazení
-- příkazy JavaScriptu končí středníkem
-- Použijte dvojité uvozovky, kde je to na místě,
-- Komentáře by měly mít mezeru mezi znaky komentáře a komentářem samotným
+Here are specific formatting guidelines for the challenge seed code:
 
-  `// Opravit tuto řádek`
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
+
+### Seed code comments
+
+We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
+
+Comments used should have a space between the comment characters and the comment themselves.  In general comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
+
+Example of valid single line JavaScript comment:
+
+```js
+// Only change code below this line
+````
+
+Example of a valid CSS comment:
+
+```js
+/* Only change code above this line */
+```
+
+If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
+
+```js
+var a = 3;
+var b = 17;
+var c = 12;
+
+// Only change code below this line
+a = a + 12;
+b = 9 + b;
+c = c + 7;
+```
+
+If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
+### Translation of seed code comments
+
+There are separate comment dictionaries for each language. The [English vesion of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
+
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated.
+
+```text
+Declare the myGlobal variable below this line
+```
+> [!NOTE]
+> 
+> We are working on an integration to make it possible to work on i18n for the comment dictionary.
 
 ## Hints and Solutions
 
-Každá výzva má tlačítko `Získat nápovědu`, aby uživatel měl přístup k jakýmkoli nápovědám/řešením, která byla vytvořena pro výzvu. Témata kuriculum hints/solutions jsou umístěna na [našem fórum](https://forum.freecodecamp.org/c/guide) v kategorii `Guide`.
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
 
-Pokud najdeš problém s tématem nápovědy/řešení existující výzvy, můžeš předložit návrhy v kategorii [přispěvatelů](https://forum.freecodecamp.org/c/contributors) na fóru. Moderátoři a uživatelé s úrovní důvěry 3 prověří připomínky a rozhodnou, zda zahrnou změny do příslušného tématu h/řešení.
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
-### Přidání nových nápověd/řešení výzev
+### Adding new Challenge hints/solutions Topics
 
-Proveďte následující kroky při přidání nových nápověd/řešení souvisejících otázek.
+Take the following steps when adding a new challenge hints/solutions related topic.
 
-1. Začněte sledováním stejných kroků pro vytvoření nového tématu, ale podívejte se na další pro vytvoření titulku.
-2. Titulek tématu by měl začínat `freeCodeCamp Challenge Guide: ` spojen se skutečným názvem výzvy učebních plánů. Například, pokud je výzva pojmenována ""Chunky Monkey", titulek tématu bude ""freeCodeCamp Challenge Guide: Chunky Monkey".
-3. `camperbot` by měl být vlastníkem těchto témat/příspěvků, takže budete muset požádat správce, aby změnil vlastnictví hlavního příspěvku na `camperbot`.
-4. Jakmile je nové téma vytvořeno, je vytvořeno ID tématu fóra. Je umístěn na konci URL tématu fóra. Toto ID musí být přidáno do fronty souboru výzev učebních plánů pomocí normálního procesu požadavku na natažení pro tlačítko `Získat nápovědu` pro propojení s tématem.
+1. Start by following the same steps for creating a new topic but review the next for creating the title.
+2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
+4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
 
-### Pokyny pro obsah témat tipů a řešení
+### Guidelines for content of hints and solutions topics
 
-Při navrhování řešení pro téma průvodce učebních osnov, musí být přidán celý kód. To zahrnuje všechny původní kódy osiva a veškeré změny potřebné k provedení všech provokačních testů. Následující šablona by měla být použita při vytváření nových témat nápověd/řešení:
+When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
 ````md
 # Challenge Name Goes Here
 
 ---
 
-## Vysvětlení problémů
+## Problem Explanation
 
-Toto shrnuje, co je třeba udělat, aniž by jen opakovalo popis challenge a/nebo pokyny. Toto je volitelná sekce
+This summarizes what need to be done without just restating the challenge description and/or instructions. This is an optional section
 
 #### Relevant Links
 
-- [Link Text](link_url_goes_here e)
+- [Link Text](link_url_goes_here)
 - [Link Text](link_url_goes_here)
 
 ---
@@ -289,101 +370,101 @@ Toto shrnuje, co je třeba udělat, aniž by jen opakovalo popis challenge a/neb
 
 ### Hint 1
 
-Hint zde
+Hint goes here
 
 ### Hint 2
 
-Hint zde
+Hint goes here
 
 ---
 
 ## Solutions
 
-<details><summary>Řešení 1 (Click to Show/Hide)</summary>
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```js
-funkce myFunc() {
-  konzola. og('Hello World!');
+function myFunc() {
+  console.log('Hello World!');
 }
 ````
 
-#### Vysvětlení kódu
+#### Code Explanation
 
-- Vysvětlení kódu je zde
-- Vysvětlení kódu je zde
+- Code explanation goes here
+- Code explanation goes here
 
-#### Relevantní odkazy
+#### Relevant Links
 
-- [Text odkazu](link_url_goes_here)
-- [Text odkazu](link_url_goes_here)
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
 
 </details>
 ````
 
-## Testování výzev
+## Testing Challenges
 
-Předtím, než [vytvoříš požadavek na natažení](how-to-open-a-pull-request. d) pro vaše změny, musíte potvrdit, že změny, které jste provedli, nezpůsobují neúmyslně problémy s výzvou. 
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
-1. Pro otestování všech challenge spusťte příkaz níže z kořenového adresáře
+1. To test all challenges run the below command from the root directory
 
 ````
 npm run test:curriculum
 ``` 
 
-2. Můžeš také otestovat blok nebo superblok výzev pomocí těchto příkazů
+2. You can also test a block or a superblock of challenges with these commands
 
 ```
-npm run test:curriculum --block='Základní HTML a HTML5'
+npm run test:curriculum --block='Basic HTML and HTML5'
 ```
 
 ```
 npm run test:curriculum --superblock=responsive-web-design
 ```
 
-Můžete také vyzkoušet jednu výzvu individuálně provedením následujících kroků:
+You are also able to test one challenge individually by performing the following steps:
 
-1. Přepněte do adresáře `curriculum`:
-
-   ```
-   cd osnovy
-   ```
-
-2. Spusťte následující pro každý soubor s výzvou, pro který jste změnili:
+1. Switch to the `curriculum` directory:
 
    ```
-   npm run test -- -g 'The full Czech title of the challenge'
+   cd curriculum
    ```
 
-Jakmile jste ověřili, že každá výzva prošla testy, [prosím vytvořte požadavek na natažení](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
+2. Run the following for each challenge file for which you have changed:
+
+   ```
+   npm run test -- -g 'the full English title of the challenge'
+   ```
+
+Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
 > [!TIP]
-> Můžete nastavit proměnnou prostředí `LOCALE` v jazyce `.env` na jazyk výzev, které musíte testovat.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
-> Aktuálně přijaté hodnoty jsou `english` a `chinese`, přičemž `english` je ve výchozím nastavení nastaveno.
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-## Nadcházející šablona výzvy
+## Upcoming Challenge Template
 
-Šablona výzvy v procesu aktualizace na čistší, méně vnořenou strukturu.  Toto nebylo úplně dokončeno, ale následující by měly být blízko konečné struktury:
+The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
 
-``mdx
+````mdx
 
 ---
-id: jedinečný identifikátor (alfanumerický, Název MongoDB_id)
-: 'Název výzvy'
-challengeType: Integer, definovaný v `client/utils/challengeTypes. s`
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: 'Challenge Title'
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
 
-import skriptu z './script. dx';
+import Script from './script.mdx';
 
 ## --step-description--
 
-Popis textu v markdown
+Description text, in markdown
 
 ```html
 <div> 
-  příklad kódu
+  example code
 </div>
 ```
 
@@ -391,18 +472,18 @@ Popis textu v markdown
 
 ![test-id-1]
 
-Bude existovat libovolný počet trojic idů, instrukcí (v markdown) a kódových bloků.
+There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.
 
 ```js
-Kód pro zkoušku č. 1
+Code for test one
 ```
 
 ![test-id-2]
 
-Další pokyny v markdown syntaxi
+More instructions in markdown syntax
 
 ```js
-Další kód
+More code
 ```
 
 ## --step-seed--
@@ -410,13 +491,13 @@ Další kód
 ### --before-user-code--
 
 ```lang
-Kód vyhodnocen před uživatelem.
+Code evaluated before the user’s
 ```
 
 ### --after-user-code--
 
 ```lang
-Kód vyhodnocen po provedení testu uživatele a těsně před testy.
+Code evaluated after the user’s, and just before the tests
 ```
 
 ### --seed-content--
@@ -424,15 +505,15 @@ Kód vyhodnocen po provedení testu uživatele a těsně před testy.
 ![index-html]
 
 ```html
-Některé html
+Some html
 ```
 
 ```css
-Nějaký css
+Some css
 ```
 
 ```js
-Několik js
+Some js
 ```
 
 ![index-js]
@@ -447,7 +528,7 @@ Několik js
 
 
 <p spaces-before="0">
-  Přesně stejná jako sekce osiva
+  Exactly the same as the seeds section
 </p>
 
 <h2 spaces-before="0">
@@ -457,7 +538,7 @@ Několik js
 
 
 <p spaces-before="0">
-  Znovu stejné
+  Same again
 </p>
 
 <h1 spaces-before="0">
@@ -471,7 +552,7 @@ Několik js
 
 
 <p spaces-before="0">
-  Otázka by šla sem (pouze pro videohovory)
+  The question would go here (only used for video challenges)
 </p>
 
 <h2 spaces-before="0">
@@ -481,19 +562,19 @@ Několik js
 
 
 <p spaces-before="0">
-  Odpověď 1
+  Answer 1
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  Odpověď 2
+  Answer 2
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  Odpověď 2
+  More answers
 </p>
 
 <h2 spaces-before="0">
@@ -513,13 +594,13 @@ Několik js
 </p>
 
 <h3 spaces-before="0">
-  Užitečné odkazy
+  Useful Links
 </h3>
 
 
 
 <p spaces-before="0">
-  Vytváření a editace výzev:
+  Creating and Editing Challenges:
 </p>
 
 
@@ -527,14 +608,14 @@ Několik js
 <ol start="1">
   <li>
     <p spaces-before="0">
-      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">Typy výzev</a> - co znamenají numerické hodnoty typu výzvy (enum).
+      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">Challenge types</a> - what the numeric challenge type values mean (enum).
     </p>
   </li>
 
   
   <li>
     <p spaces-before="0">
-      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Přispění k FreeCodeCamp - psaní testů výzev ES6</a> - video po <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> , protože přispívá ke staré verzi učebních plánů.
+      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Contributing to FreeCodeCamp - Writing ES6 Challenge Tests</a> - a video following <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> as he contributes to the old version of the curriculum.
     </p>
   </li>
 

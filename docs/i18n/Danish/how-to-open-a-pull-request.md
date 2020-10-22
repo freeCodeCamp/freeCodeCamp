@@ -1,103 +1,103 @@
-# Sådan åbnes en Pull Request (PR)
+# How to open a Pull Request (PR)
 
-En pull-anmodning gør det muligt at sende ændringer fra din gaffel på GitHub til freeCodeCamp.org's hovedarkiv. Når du er færdig med at foretage ændringer i koden, eller kodning udfordringer, bør du følge disse retningslinjer for at sende en PR.
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-## Forbered en god PR titel
+## Prepare a good PR title
 
-Vi anbefaler at bruge [konventionel titel og beskeder](https://www.conventionalcommits.org/) til commits og pull request. Konventionen har følgende format:
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<type>([valgfrit område(r)]): <description>`
+> `<type>([optional scope(s)]): <description>`
 > 
-> For eksempel:
+> For example:
 > 
-> `fix(learn): tests for do...while loop challenge`
+> `fix(learn): tests for the do...while loop challenge`
 
-Når du åbner en Pull Request(PR), kan du bruge nedenstående til at afgøre typen, scope (valgfri) og beskrivelse.
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
 
 **Type:**
 
-| Type | Hvornår skal du vælge                                                                  |
-|:---- |:-------------------------------------------------------------------------------------- |
-| fix  | Ændret eller opdateret / forbedret funktionalitet, tests, verbiage af en lektion, etc. |
-| feat | Kun hvis du tilføjer ny funktionalitet, test osv.                                      |
-| øm   | Ændringer, der ikke er relateret til kode, tests eller verbiage af en lektion.         |
-| docs | Ændringer til `/docs` mappe eller de bidragende retningslinjer osv.                    |
+| Type  | When to select                                                               |
+|:----- |:---------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                        |
+| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
 
-**Anvendelsesområde:**
+**Scope:**
 
-Du kan vælge et anvendelsesområde fra [denne liste af etiketter](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Beskrivelse:**
+**Description:**
 
-Behold den kort (mindre end 30 tegn) og enkel, kan du tilføje flere oplysninger i PR beskrivelse boksen og kommentarer.
+Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-Nogle eksempler på gode PRs titler ville være:
+Some examples of good PRs titles would be:
 
-- `fix(a11y): forbedret søgebjælke kontrast`
-- `feat: tilføj flere test til html og css udfordringer`
-- `fix(api,client): forhindre CORS fejl ved formularindsendelse`
-- `docs(i18n): Kinesisk oversættelse af lokal opsætning`
+- `fix(a11y): improved search bar contrast`
+- `feat: add more tests to html and css challenges`
+- `fix(api,client): prevent CORS errors on form submission`
+- `docs(i18n): Chinese translation of local setup`
 
-## Foreslår en pull-anmodning
+## Proposing a Pull Request
 
-1. Når redigeringerne er blevet begået, vil du blive bedt om at oprette en pull-anmodning på din gaffels GitHub side.
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Billede - Sammenlign pull request prompt på GitHub](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. Som standard skal alle pull anmodninger være imod freeCodeCamp hovedrepo, `master` filial.
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-   Sørg for, at din grundgaffel er indstillet til freeCodeCamp/freeCodeCamp når du rejser en Pull-anmodning.
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![Image - Sammenligning af gafler når du laver en pull request](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. Indsend pull anmodning fra din filial til freeCodeCamp's `master` filial.
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
 
-4. I kroppen af din PR indeholde en mere detaljeret oversigt over de ændringer, du har foretaget, og hvorfor.
+4. In the body of your PR include a more detailed summary of the changes you made and why.
 
-   - Du vil blive præsenteret for en pull request skabelon. Dette er en tjekliste, som du skal have fulgt før du åbner pull anmodningen.
+   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-   - Udfyld detaljerne, som du finder passende. Disse oplysninger vil blive gennemgået, og anmelderne vil afgøre, om din pull-anmodning er accepteret eller ej.
+   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-   - Hvis PR er beregnet til at behandle en eksisterende GitHub Issue så ved udgangen af din PR's beskrivelse organ, brug søgeordet _Lukker_ med issue nummer til [automatisk lukke dette problem, hvis PR er accepteret og fusioneret](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > Eksempel: `Lukker #123` lukker problemet 123
+     > Example: `Closes #123` will close issue 123
 
-5. Angiv, om du har testet på en lokal kopi af webstedet eller ej.
+5. Indicate if you have tested on a local copy of the site or not.
 
-   Dette er meget vigtigt, når du foretager ændringer, der ikke bare redigerer tekstindhold som dokumentation eller en challenge beskrivelse. Eksempler på ændringer, der har brug for lokal test omfatter JavaScript, CSS, eller HTML, der kan ændre funktionalitet eller layout af en side.
+   This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-## Tilbagemelding ved pull anmodninger
+## Feedback on pull requests
 
-> Tillykke! :tada: når du laver en PR og takker meget for at have brugt tid på at bidrage.
+> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
 
-Vores moderatorer vil nu tage et kig og efterlade dig feedback. Vær tålmodig med de andre moderatorer og respektere deres tid. Alle pull anmodninger gennemgås når tiden er inde.
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-Hvis du har brug for hjælp, så diskuter i [bidragsyderes chatrum](https://gitter.im/FreeCodeCamp/Contributors), er vi mere end glade for at hjælpe dig.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Hvis du skal bidrage med flere pull requests, Vi anbefaler, at du læser [foretage ændringer og synkroniserer](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) retningslinjer for at undgå at skulle slette din gaffel.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
-## Konflikter på en pull-anmodning
+## Conflicts on a pull request
 
-Konflikter kan opstå, fordi mange bidragsydere arbejder på lageret, og ændringer kan ødelægge din PR, som afventer en gennemgang og sammenfletning.
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-Oftere end ikke kan du ikke kræve en rebase, fordi vi squash alle forpligtelser, men hvis der anmodes om en rebase her er, hvad du skal gøre.
+More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
 
-### For sædvanlige fejlrettelser og funktioner
+### For usual bug fixes and features
 
-Når du arbejder på almindelige fejl og funktioner på vores udviklingsgren `master`, er du i stand til at foretage en simpel rebase:
+When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
 
-1. Rebase din lokale kopi:
+1. Rebase your local copy:
 
    ```console
    git checkout <pr-branch>
    git pull --rebase upstream master
    ```
 
-2. Løs eventuelle konflikter og tilføj / rediger commits
+2. Resolve any conflicts and add / edit commits
 
    ```console
-   # Enten
-   git tilføj .
+   # Either
+   git add .
    git commit -m "chore: resolve conflicts"
 
    # Or
@@ -105,60 +105,60 @@ Når du arbejder på almindelige fejl og funktioner på vores udviklingsgren `ma
    git commit --amend --no-edit
    ```
 
-3. Skub dine ændringer tilbage til PR
+3. Push back your changes to the PR
 
    ```console
-   git push --force oprindelse <pr-branch>
+   git push --force origin <pr-branch>
    ```
 
-### For kommende pensum og funktioner
+### For upcoming curriculum and features
 
-Når du arbejder på funktioner til vores kommende curriculum `next-*` grene, har du gjort en kirsebær pluk:
+When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
 
-1. Sørg for, at din opstrøm synkroniseres med din lokale:
+1. Make sure your upstream comes in sync with your local:
 
    ```console
    git checkout master
-   git henter --all --prune
+   git fetch --all --prune
    git checkout next-python-projects
    git reset --hard upstream/next-python-projects
    ```
 
-2. Tag backup
+2. Take backup
 
-   a. Slet enten din lokale filial efter at have taget en sikkerhedskopi (hvis du stadig har den lokalt):
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
       ```console
       git checkout <pr-branch-name>
 
-      # eksempel:
-      # git checkout feat/add-numpy-video-spørgsmål
+      # example:
+      # git checkout feat/add-numpy-video-question
 
       git checkout -b <backup-branch-name>
 
-      # eksempel:
-      # git checkout -b backup-feat/add-numpy-video-spørgsmål
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
 
-   b. Eller bare en sikkerhedskopi af din pr- gren (hvis du ikke har den lokalt):
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
       ```console
       git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # eksempel:
-      # git checkout -b backup-feat/add-numpy-video-spørgsmål origin/feat/add-numpy-video-spørgsmål
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
-4. Start med en ren skive:
+4. Start off with a clean slate:
 
    ```console
-   git checkout -b <pr-branch-name> next-python-projekter
+   git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Løs eventuelle konflikter og oprydning, installer kør tests
+5. Resolve any conflicts, and cleanup, install run tests
 
    ```console
    npm run clean
@@ -166,14 +166,14 @@ Når du arbejder på funktioner til vores kommende curriculum `next-*` grene, ha
    npm ci
    npm run test:curriculum --superblock=<superblock-name>
 
-   # eksempel:
+   # example:
 
-   # npm run test:curriculum --superblock=python-for-all
+   # npm run test:curriculum --superblock=python-for-everybody
 
    ```
 
-6. Hvis alt ser godt ud til at skubbe tilbage til PR
+6. If everything looks good push back to the PR
 
    ```console
-   git push --force oprindelse <pr-branch-name>
+   git push --force origin <pr-branch-name>
    ```

@@ -1,15 +1,15 @@
-# Miten Dockeria käytetään Windows Home -käyttöjärjestelmässä
+# How to use Docker on Windows Home
 
-On olemassa muutamia sudenkuoppia on vältettävä, kun perustetaan telakka Windows Home. Ensinnäkin sinun täytyy käyttää [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) järjestelmänvalvojana. Valitettavasti Windows Home ei tue Dockeria Windows-työpöydälle, joten sen sijaan on käytettävä työkalupakkia. Se on ajettava järjestelmänvalvojana, koska asennus käyttää symlinkkejä, joita ei voi luoda toisin.
+There are a few pitfalls to be avoided when setting up docker on Windows Home. First of all you have to use [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) as Administrator. Unfortunately Windows Home does not support Docker for Windows Desktop, so Toolbox must be used instead. It has to be run as Administrator as the installation uses symlinks, which cannot be created otherwise.
 
-Kun olet asentanut työkalulaatikon, suorita Docker Quickstart Terminal järjestelmänvalvojaksi. Tämä luo `oletuksen` virtuaalisen koneen, jos sitä ei ole jo olemassa. Kun se on tapahtunut, sulje terminaali ja avaa VirtualBox (jälleen järjestelmänvalvoja). Sinun pitäisi pystyä näkemään `oletus` kone. Sivusto on varsin resurssiintensiivinen, joten lopeta virtuaalinen kone ja nostaa asetuksia niin paljon kuin voit - muistia erityisesti. Se on vahvistettu, että työskentely 4 Gt ram.
+Once you've installed the toolbox, run Docker Quickstart Terminal as Administrator. This will create a `default` virtual machine, if it does not already exist. Once that has happened, close the terminal and open VirtualBox (again as Administrator). You should be able to see the `default` machine. The site is quite resource intensive, so stop the virtual machine and raise the settings as much as you can - memory in particular. It has been confirmed to work with 4GB of ram.
 
-Kun olet iloinen, että Docker toimii, kloonaa freeCodeCamp repo kansioon sisällä `C:\Käyttäjät`. Nämä hakemistot jaetaan, jolloin Docker pääsee paikallisiin hakemistoihin, joita se tarvitsee asennuksen aikana.
+Once you're happy that Docker is working, clone the freeCodeCamp repository to a directory inside `C:\Users`. These directories are shared giving Docker access to the local directories, which it needs during installation.
 
-Jos näet tällaisia viestejä
+If you see messages like
 
 ```shell
-bash: change_volumes_owner.sh: Ei tällaista tiedostoa tai kansiota
+bash: change_volumes_owner.sh: No such file or directory
 ```
 
-kun olet `npm ajaa telakka:init` tämä on todennäköisesti syyllinen.
+when you `npm run docker:init` this is likely the culprit.

@@ -1,101 +1,82 @@
-### Sunt nou în GitHub și Open Source, unde ar trebui să încep?
+### I am new to GitHub and Open Source. Where should I start?
 
-Citiți ["Cum să contribuiți la Ghidul Open Source"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). Este o resursă compresivă de proiecte şi ghiduri prietenoase pentru primul timp.
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
-### Pot traduce curriculum-ul freeCodeCamp?
+### Can I translate freeCodeCamp's curriculum?
 
-Vom începe eforturile de localizare pe tabăra freeCodep începând cu **chineza** prima.
+Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon.
 
-Intenţionăm să punem programa la dispoziţie în mai multe limbi, dar nu ne putem angaja la termene limită încă. Mai multe limite operaționale, cum ar fi personalul, contribuitorii activi și costurile serverelor, joacă un rol în stimularea eforturilor de internaționalizare (i18n).
+Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
 
-Intenționăm să începem eforturile i18n în aceste limbi: arabă, portugheză, Rusă și spaniolă (într-o anumită regulă) după ce am eliberat programa școlară în limba chineză.
+### How can I report a new bug?
 
-**De ce te concentrezi mai întâi pe curriculumul chinez?**
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-China este cea mai mare regiune demografică din audienţa noastră non-nativă vorbitoare de engleză. În prezent, avem sute de mii de utilizatori care folosesc o versiune veche a platformei. Concentrarea pe programa de învăţământ chineză ne va oferi o estimare a logisticii implicate în i18 n.
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-Ne vom concentra asupra Americii Latine ca regiune demografică pentru portugheză şi spaniolă.
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-În viitorul previzibil nu avem niciun plan pentru i18n cu privire la alte limbi decât cele de mai sus.
+### How can I report a security issue?
 
-Nu vă încurajăm să lucraţi la i18n la limbile de mai sus. Putem accepta cereri atractive, fără nicio aşteptare de la un calendar la implementări.
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### Cum pot raporta o eroare nouă?
+### I am a student. Can I work on a feature for academic credits?
 
-Dacă crezi că ai găsit un bug, mai întâi citește articolul ["Ajută-mă să găsesc o eroare"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) și urmează instrucțiunile sale.
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-Dacă sunteți încrezător că este un nou bug, mergeți înainte și creați o nouă problemă GitHub. Asigurați-vă că includeți cât mai multe informații posibil, astfel încât să putem reproduce eroarea. Avem un model de emisiune predefinit pentru a vă ajuta în acest sens.
+We request you to plan ahead and work on code contributions with this in mind.
 
-Vă rugăm să rețineți că orice problemă care necesită ajutor pentru codificare cu privire la o provocare va fi închisă. Monitorizatorul problemei este strict pentru chestiuni şi discuţii legate de codebis. Ori de câte ori aveți dubii, ar trebui [să solicitați asistență pe forumul](https://forum.freecodecamp.org) înainte de a face un raport.
+### What do these different labels that are tagged on issues mean?
 
-### Cum pot raporta o problemă de securitate?
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-Vă rugăm să nu creați probleme GitHub pentru probleme de securitate. În schimb, vă rugăm să trimiteți un e-mail la `security@freecodecamp.org` și îl vom examina imediat.
+### Where do I start if I want to work on an issue?
 
-### Sunt student, pot eu sau echipa noastră să lucrez la o caracteristică a creditelor academice?
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-Da, sigur.
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are special issues that are designed for people who have not contributed to the freeCodeCamp codebase before.
 
-În timp ce suntem deschişi tuturor contribuţiilor, vă rugăm să rețineți că nu putem să ne angajăm la un calendar care ar putea fi o cerință la colegiul sau universitatea dvs. Primim multe cereri de tras și contribuții de cod din partea dezvoltatorilor de voluntari și le respectăm timpul și eforturile. Nu vom putea acorda nicio propunere de regulament o atenţie specială pentru ca aceasta să fie echitabilă pentru toţi.
+### I found a typo. Should I report an issue before I can make a pull request?
 
-Vă cerem să planificaţi şi să lucraţi la o caracteristică având în vedere acest lucru.
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-### Ce înseamnă aceste etichete diferite care sunt etichetate pe probleme?
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-Menținătorii de cod [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) probleme și trage cereri pe baza priorității, severității și altor factori. Poți [găsi un glosar complet al semnificațiilor lor aici](https://github.com/freecodecamp/freecodecamp/labels).
+### How can I get an issue assigned to me?
 
-### De unde încep dacă vreau să lucrez la o problemă?
+We typically do not assign issues to anyone other than long-time contributors.  Instead, we follow the below policy to be fair to everyone:
 
-Ar trebui să treceți prin [**`ajutați`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) sau [**`prim cronometre doar`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) pentru o prezentare rapidă a ceea ce este disponibil pentru a lucra.
+1. We are most likely to merge the first pull request that addresses the issue.
+2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
+   - Did you include tests?
+   - Did you catch all usecases?
+   - Did you ensure all tests pass, and confirm everything works locally?
+3. Finally, we give priority to pull requests which follow our recommended guidelines.
+   - Did you follow the pull request checklist?
+   - Did you give your pull request a meaningful title?
 
-> [!TIP] **`a dorit`problemele** sunt întâmpinate și nu trebuie să cauți permisiunea înainte de a lucra la ele. Cu toate acestea, problemele cu eticheta **`doar pentru primele cronometre`** sunt rezervate persoanelor care nu au contribuit la codul de tabăra liberă înainte. Dacă aceste probleme nu sunt clare cu privire la ceea ce trebuie făcut, nu ezitaţi să adresaţi întrebări în comentarii.
+### I am stuck on something that is not included in this documentation.
 
-### Am găsit o tipografie, ar trebui să raportez o problemă înainte de a putea face o cerere de tragere?
-
-Pentru caractere și alte modificări de formulare, puteți deschide direct cererile de tragere fără a crea o problemă mai întâi. Aspectele sunt mai degrabă destinate discutării unor probleme mai ample asociate cu codul sau cu aspectele structurale ale programei școlare.
-
-Cu toate acestea, vă rugăm să menționați detaliile, contextul etc. în zona de descriere a cererii de tragere pentru a ne ajuta să înțelegem și să revizuim contribuția dvs. chiar și pentru modificări minore.
-
-### Cum pot obține o problemă care mi-a fost atribuită?
-
-De obicei, noi nu atribuim probleme nimănui, în afară de contribuitorii care au contribuit mult timp, pentru a evita neprezentarea ambiguă. În schimb, respectăm politica de mai jos pentru a fi corecți față de toată lumea:
-
-1. Prima cerere de tragere pentru orice problemă este preferabilă fuzionării.
-2. În cazul unor cereri multiple pentru aceeași problemă, acordăm prioritate calității codului în cererile de tragere.
-   - Ai inclus teste?
-   - Ai prins toate uzinele?
-   - Te-ai asigurat că toate testele au trecut și ai confirmat că totul funcționează la nivel local?
-3. În cele din urmă, favorizăm cererile care respectă orientările recomandate.
-   - Ai urmărit lista de verificare pentru pull request?
-   - Ai numit în mod util titlul cererii de tragere?
-
-Nu aveți nevoie de permisiune pentru probleme care sunt marcate cu `ajutor dorit` sau `primele cronometre doar` ca explicații mai devreme.
-
-Urmaţi cu atenţie instrucţiunile şi deschideţi o cerere de tragere.
-
-### Sunt blocat pe ceva care nu este inclus în această documentaţie.
-
-**Nu ezita să cereți ajutor în:**
+**Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The public `Contributors` [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 - The `#Contributors` channel on [our Discord community server](https://discord.gg/pFspAhS).
 
-Suntem încântaţi să vă ajutăm să contribuiţi la oricare dintre subiectele la care doriţi să lucraţi. Vă rugăm să ne adresaţi întrebări cu privire la subiectele aferente şi vom fi bucuroşi să clarificăm. Asigură-te că ai căutat interogarea înainte de a posta una nouă.
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-Fii politicos şi răbdător. Comunitatea noastră de voluntari şi moderatori este mereu în jur pentru a te ghida prin întrebările tale.
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-**Asistență suplimentară:**
+**Additional Assistance:**
 
-Dacă aveți întrebări despre stivă, arhitectura codebazului, nu ezitați să contactați echipa noastră de dezvoltatori:
+If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| Personal              | Trimite mesaj pe Forum                                                       |
+| Staff                 | Send message on Forum                                                        |
 |:--------------------- |:---------------------------------------------------------------------------- |
 | Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
 | Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
 | Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
 | Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
-| dl Randell Dawson     | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
+| Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 
-**Poți trimite un e-mail personalului nostru de dezvoltator la: `dev[at]freecodecamp.org`**
+**You can email our developer staff at: `dev[at]freecodecamp.org`**

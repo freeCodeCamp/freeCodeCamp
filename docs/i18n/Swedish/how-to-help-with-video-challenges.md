@@ -1,199 +1,199 @@
-# Hur man kan hjälpa till med videoutmaningar
+# How to help with video challenges
 
-Video utmaningar är en ny typ av utmaning i freeCodeCamps läroplan.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-En video utmaning är en liten del av en fullängds video kurs om ett visst ämne. En video utmaningssida inbäddar en YouTube-video. Varje utmaningssida har en enda flervalsfråga relaterad till videon. En användare måste svara rätt på frågan innan han går vidare till nästa videoutmaning på kursen.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-Videoutmaningssidorna skapas av medlemmar i freeCodeCamp-teamet. YouTube-videor laddas också upp av medlemmar i freeCodeCamp-teamet. Många av videoutmaningarna har ännu inte frågor som är förknippade med dem.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-Du kan hjälpa till genom att skapa flervalsfrågor relaterade till videosektioner och lägga till frågor till markdown filer för videoutmaningar.
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Utmaningsmall
+## Challenge Template
 
-Nedan följer en mall för hur utmaningens markdown-filer ser ut.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
-id: Unik identifierare (alfanumeriska, MongoDB_id)
-titel: Utmaningstitel
-challengeTyp: 11
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
+challengeType: 11
 videoId: 'YouTube videoId for video challenge'
 ---
 
-## Beskrivning
+## Description
 
 <section id='description'>
-En valfri beskrivning med hjälpsam information om videon.
+An optional description with helpful information related to the video.
 </section>
 
-## Tester
+## Tests
 
 <section id='tests'>
 
 ```yml
-fråga:
-  text: 'Fråga'
-  svar:
-    - 'Svar ett'
-    - 'Svar två'
-    - 'Svar tre'
-  lösning: 3
+question:
+  text: 'Question'
+  answers:
+    - 'Answer One'
+    - 'Answer Two'
+    - 'Answer Three'
+  solution: 3
 ````
 
 </section>
 ````
 
-## Skapa frågor för videoutmaningar
+## Creating questions for video challenges
 
-### Få tillgång till markdown videofiler
+### Access the video challenge markdown files
 
-Du kan hitta markdown filerna för videoutmaningar på följande platser i läroplanen:
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Dataanalys med Pythonkursen](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/läroplan/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [TensorFlow 2.0 Course](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
-- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
 - [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Välj en utmaningsfil från alternativen ovan.
+Pick a challenge markdown file from the options above.
 
-### Skim igenom videon som är associerad med utmaningen och skapa en mutiple choice question
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-Bestäm först videoId.
+First, find the videoId.
 
-Till exempel, i följande kod från huvudet på en video utmaning markdown fil, videoId är "nVAaxZ34khk". På GitHub ska informationen läggas ut i tabellformat.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
-id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Exempel A challengeTyp: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
 
-Kom sedan åt YouTube-videon med det videoId. Url för videon kommer att vara:
-https://www.youtube. om/watch?v=[videoId]    (lägg till videoId till URL utan hakparenteser)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-I exemplet ovan är webbadressen https://www. outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim YouTube-videon med det videoId och tänk på en fråga om flera val baserat på innehållet i videon.
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### Lägg till frågan i markdown-filen
+### Add the question to the markdown file
 
-Du kan lägga till frågan lokalt eller direkt genom GitHub-gränssnittet. För att lägga till frågan lokalt, måste du [ställa in freeCodeCamp lokal](how -to-setup-freecodecamp-locally.md). Du kan också hitta filen på GitHub och klicka på redigeringsknappen för att lägga till frågan direkt i din webbläsare.
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-Om en fråga ännu inte har lagts till en viss video utmaning, den kommer att ha följande standardfråga:
-
-```yml
-fråga:
-  text: <unk>
-    Fråga
-  svar:
-    - <unk>
-      en
-    - <unk>
-      två
-    - <unk>
-      tre
-  lösning: 3
-```
-
-Uppdatera ordet “Fråga” med din fråga. Uppdatera “en”, “två” och “tre” med möjliga svar. Se till att uppdatera lösningsnumret med vilket svar som är rätt. Du kan lägga till fler möjliga svar med samma format. Frågan och svaren kan omges med citationstecken.
-
-#### Använd markdown för att formatera din fråga
-
-Texten i frågan tolkas som markdown. Det enklaste sättet att se till att den formateras korrekt är att starta frågan med `text: <unk>`, så här:
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-fråga:
-  text: <unk>
-    Fråga
+question:
+  text: |
+    Question
+  answers:
+    - |
+      one
+    - |
+      two
+    - |
+      three
+  solution: 3
 ```
 
-Då måste du se till att din fråga är på en ny linje och indragen en nivå mer än `text: <unk>`.
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-Samma tillvägagångssätt kan användas för svaren, så hela frågan blir
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-fråga:
-  text: <unk>
-    Fråga
-  svar:
-  - <unk>
-    Första svaret
-  - <unk>
-    Andra
-  - <unk>
-    Tredje
-  lösning: 2
+question:
+  text: |
+    Question
 ```
 
-Se till att varje svar är rimligt, men det finns bara ett korrekt svar.
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-#### Användning av HTML
+The same approach can be used for the answers, so the entire question becomes
 
-Frågor och svar kan innehålla vissa HTML-taggar som `<br>` för en ny rad. HTML-taggar bör användas sparsamt när frågor inte kan uttryckas utan dem.
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
+    Second
+  - |
+    Third
+  solution: 2
+```
 
-### Exempel på frågor
+Make sure each answer is plausible but there is only one correct answer.
 
-#### Exempel utan HTML
+#### Use of HTML
+
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+
+### Question examples
+
+#### Examples without HTML
 
 ````yml
-fråga:
-  text: <unk>
-    Vad loggar denna JavaScript-kod till konsolen?
+question:
+  text: |
+    What does this JavaScript code log to the console?
     ```js
     console.log('hello world');
     ````
 
 
-    Välj ett svar!
-  Svar:
-    - <unk> hej *värld*
-    - <unk> **hej** världen
-    - <unk> hej världen lösning: 3
+    Select an answer!
+  answers:
+    - | hello *world*
+    - | **hello** world
+    - | hello world solution: 3
 ````
 
 ````yml
-fråga:
-  text: <unk>
-    Vad kommer att skrivas ut efter att ha kört den här koden:
+question:
+  text: |
+    What will print out after running this code:
     ```py
-    bredd = 15
-    höjd = 12.
-    utskrift (höjd/3)
+    width = 15
+    height = 12.0
+    print(height/3)
     ````
-  Svar:
+  answers:
     - | 39
     - | 4
-    - <unk> 4.0
-    - <unk> 5.0
-    - <unk> 5 lösning: 3
+    - | 4.0
+    - | 5.0
+    - | 5 solution: 3
 ````
 
-#### Exempel med HTML
+#### Example with HTML
 
 ```yml
-fråga:
-  text: <unk>
-    Vad kommer att skrivas ut efter att ha kört denna kod:
-    <pre><code>bredd = 15<br>höjd = 12.<br>print(höjd/3)<code></pre>
-  svar:
-    - <unk>
+question:
+  text: |
+    What will print out after running this code:
+    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
+  answers:
+    - |
       39
-    - <unk>
+    - |
       4
-    - <unk>
-      4.
-    - <unk>
-      5.
-    - <unk>
+    - |
+      4.0
+    - |
+      5.0
+    - |
       5
-  lösning: 3
+  solution: 3
 ````
 
-Det sista exemplet visar att HTML kan användas, men att den inte är lika läsbar som versionen utan den.
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-För fler exempel kan du titta på markdown-filerna för följande videokurs. Alla utmaningar har redan frågor: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Öppna en pull-förfrågan
+## Open a pull request
 
-Efter att du skapat en eller flera frågor kan du binda in ändringarna i en ny gren och [öppna en pull-förfrågan](how-to-open-a-pull-request.md).
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

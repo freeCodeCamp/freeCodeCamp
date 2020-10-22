@@ -1,45 +1,43 @@
-La comunità [freeCodeCamp.org](https://freecodecamp.org) è possibile grazie a migliaia di volontari come te. Accogliamo con favore tutti i contributi alla comunità e siamo entusiasti di darvi il benvenuto a bordo.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!NOTA] Prima di procedere, si prega di prendere un rapido 2 minuti per leggere il nostro [Codice di condotta](https://www.freecodecamp.org/code-of-conduct). Lo applichiamo rigorosamente in tutta la nostra comunità. Vogliamo contribuire a freeCodeCamp.org per essere un'esperienza sicura e inclusiva per tutti.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Buon contributo.
+Happy contributing.
 
-Siete invitati a:
+You are welcome to:
 
-- Crea, aggiorna e correggi i bug nelle nostre [sfide di codifica](#coding-challenges).
-- Aiutaci a correggere i bug nella piattaforma di apprendimento [di freeCodeCamp.org](#learning-platform).
-- _(Presto in arrivo)_ Aiutaci a tradurre freeCodeCamp.org nelle lingue del mondo.
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-Hai domande? Vai a [queste FAQ](/FAQ.md) dove rispondiamo ad alcune domande comuni sul contributo.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## Sfide Di Codifica
+## Curriculum
 
-Tutte le nostre sfide di programmazione sono curate dalla comunità, portando in conoscenza esperta da volontari come te.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-Puoi aiutarli ad espanderli e migliorare la loro formulazione. È inoltre possibile aggiornare le storie degli utenti per spiegare meglio il concetto o rimuovere quelli ridondanti e migliorare i test di sfida per renderli più accurati testare il codice delle persone.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**Se sei interessato a migliorare queste sfide di codifica, ecco [come lavorare sulle sfide di codifica](how-to-work-on-coding-challenges.md).**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Piattaforma Di Apprendimento
+## Learning Platform
 
-La nostra piattaforma di apprendimento funziona su uno stack JavaScript moderno. Ha vari componenti, strumenti e librerie, tra cui, ma non solo, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, e altro ancora.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-In generale,
+Broadly, we use
 
-- Abbiamo un server API basato su Node.js.
-- Un insieme di applicazioni client basate su React.
-- Uno script che usiamo per valutare i nostri progetti di front-end.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-Contribuire a questo richiede una certa comprensione di API, Sintassi ES6 e molta curiosità.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-In sostanza, ci aspettiamo una familiarità di base con alcune delle suddette tecnologie, strumenti e biblioteche. Detto questo, non è richiesto di essere un esperto su di loro per contribuire.
+If you want to help us improve our codebase...
 
-**Se vuoi aiutarci a migliorare il nostro codebase, puoi usare Gitpod, un ambiente dev online gratuito**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Apri in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Avvia un ambiente dev ready-to-code per freeCodeCamp nel tuo browser.)
+Or you can...
 
-O
-
-**puoi [impostare freeCodeCamp localmente](how-to-setup-freecodecamp-locally.md) sulla tua macchina.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

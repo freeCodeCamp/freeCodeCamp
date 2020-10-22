@@ -1,45 +1,43 @@
-Komunita [freeCodeCamp.org](https://freecodecamp.org) je možná díky tisícům milých dobrovolníků, jako jste Vy. Vítáme všechny příspěvky do komunity a rádi vás přivítáme na palubě.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!POZNÁMKA] Než budete pokračovat, přečtěte si prosím rychle 2 minuty našeho [Kodexu chování](https://www.freecodecamp.org/code-of-conduct). Striktně ji prosazujeme napříč naší komunitou. Chceme, aby přispěl k bezplatnému CodeCamp.org aby byl bezpečný a inkluzivní zážitek pro všechny.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Šťastný příspěvek.
+Happy contributing.
 
-Jste vítáni:
+You are welcome to:
 
-- Vytvořit, aktualizovat a opravit chyby v našich [programovacích výzvách](#coding-challenges).
-- Pomozte nám opravit chyby ve [vzdělávací platformě freeCamp.org](#learning-platform).
-- _(již brzy)_ Pomozte nám přeložit zdarma CodeCamp.org do světových jazyků.
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-Máte otázky? Přejděte na [tyto FAQ](/FAQ.md) , kde odpovídáme na některé běžné dotazy o příspěvku.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## Výzvy programování
+## Curriculum
 
-Všechny naše programovací výzvy jsou zredukovány komunitou a přinášejí odborné znalosti od dobrovolníků, jako je Vy.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-Můžete jim pomoci rozšířit a zlepšit jejich znění. Můžete také aktualizovat uživatelské příběhy, abyste lépe vysvětlili koncept nebo odstranili ty nadbytečné a vylepšili challenge testy, aby byli přesněji testováni lidským kódem.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**Pokud máte zájem o vylepšení těchto úkolů v kódování, je zde [jak pracovat na programování úkolů](how-to-work-on-coding-challenges.md).**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Platforma pro učení
+## Learning Platform
 
-Naše vzdělávací platforma běží na moderním JavaScriptovém zásobníku. Má různé komponenty, nástroje a knihovny, včetně Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, a další.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Celkově
+Broadly, we use
 
-- Máme API server založený na Node.js.
-- Soubor klientských aplikací založených na reakci.
-- Skript, který používáme k hodnocení našich front-end projektů.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-Přispívání k tomu vyžaduje pochopení API, syntaxe ES6 a mnoho zvědavosti.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-V zásadě očekáváme základní znalost některých výše uvedených technologií, nástrojů a knihoven. S tím se od vás nevyžaduje, abyste na ně přispíval odborníkem.
+If you want to help us improve our codebase...
 
-**Pokud nám chcete pomoci zlepšit naši základnu kódu, můžete použít buď Gitpod, bezplatné prostředí online vývojáře**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Otevřít v Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Spustí prostředí vývojáře připraveného ke kódu pro freeCodeCamp ve vašem prohlížeči.)
+Or you can...
 
-NEBO
-
-**můžete [nastavit volný CodeCamp lokálně](how-to-setup-freecodecamp-locally.md) na vašem počítači.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

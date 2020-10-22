@@ -1,326 +1,326 @@
-Følg disse retningslinjer for opsætning af freeCodeCamp lokalt på dit system. Dette anbefales på det kraftigste, hvis du ønsker at bidrage regelmæssigt.
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-For nogle af de bidrag arbejdsgange, du har brug for at have freeCodeCamp kører lokalt. For eksempel, forhåndsvisning kodning udfordringer eller fejlfinding og fastsættelse af fejl i kodebasen.
+Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
-> [!TIP] Hvis du ikke er interesseret i at oprette freeCodeCamp lokalt, overveje at bruge Gitpod, et gratis online dev miljø.
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
 > 
-> [![Åbn i Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 > 
-> (Starter et klar-til-kode dev miljø til freeCodeCamp i din browser.)
+> (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
-## Forbered din lokale maskine
+### How to prepare your local machine
 
-Start med at installere forudsætningssoftware til dit operativsystem.
+Start by installing the prerequisite software for your operating system.
 
-Vi støtter primært udvikling på **\*nix** systemer. Vores medarbejdere og community bidragsydere arbejder regelmæssigt med kodebase ved hjælp af værktøjer, der er installeret på Ubuntu og macOS.
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
-Vi understøtter også Windows 10 via WSL2, som du kan forberede ved at [læse denne guide](/how-to-setup-wsl).
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](/how-to-setup-wsl).
 
-Nogle medlemmer af fællesskabet udvikler også på Windows 10 indbygget med Git til Windows (Git Bash), og andre værktøjer installeret på Windows. Vi har ikke officiel støtte til en sådan opsætning på dette tidspunkt, vi anbefaler at bruge WSL2 i stedet.
+Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-**Forudsætninger:**
+**Prerequisites:**
 
-| Forudsætning                                                                                  | Version | Noter                                                                                                                                                                                   |
-| --------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `12. x` | [LTS Skema](https://github.com/nodejs/Release#release-schedule)                                                                                                                         |
-| npm (kommer sammen med Node)                                                                  | `6. x`  | Har ikke LTS-udgivelser, vi bruger versionen bundtet med Node LTS                                                                                                                       |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Udgivelsesnoter](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
+| Prerequisite                                                                                  | Version | Notes                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                    |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS                                                                                                                  |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
 
-> [!DANGER] Hvis du har en anden version, skal du installere den anbefalede version. Vi kan kun støtte installationsproblemer for anbefalede versioner. Se [fejlfinding](#troubleshooting) for detaljer.
+> [!DANGER] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
-Hvis Node.js allerede er installeret på din maskine, skal du køre følgende kommandoer for at validere versionerne:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
 node -v
 npm -v
 ```
 
-> [!TIP] Vi anbefaler stærkt opdatering til de seneste stabile udgivelser af ovennævnte software, også kendt som Langsigtet Support (LTS) udgivelser.
+> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-Når du har installeret forudsætningerne, skal du forberede dit udviklingsmiljø. Dette er almindeligt for mange udviklingsarbejdsgange, og det behøver I kun at gøre én gang.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-**Følg disse trin for at få dit udviklingsmiljø klar:**
+**Follow these steps to get your development environment ready:**
 
-1. Installer [Git](https://git-scm.com/) eller din favorit Git klient, hvis du ikke allerede har. Opdater til den nyeste version; den version, der kom bundtet med dit operativsystem, kan være forældet.
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (Valgfri, men anbefales) [Opsæt en SSH-nøgle](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. Installer en kodeeditor efter eget valg.
+3. Install a code editor of your choice.
 
-   Vi anbefaler stærkt at bruge [Visual Studio Code](https://code.visualstudio.com/) eller [Atom](https://atom.io/). Disse er store, gratis og open source kode editorer.
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. Konfigurer linting til din kodeeditor.
+4. Set up linting for your code editor.
 
-   Du skal have [ESLint kørende i din editor](http://eslint.org/docs/user-guide/integrations.html), og det vil fremhæve noget, der ikke overholder [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP] Ignorér venligst ikke nogen lining-fejl. De er beregnet til at **hjælpe** dig og sikre en ren og enkel kodebase.
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## Gaffel af depotet på GitHub
+## Fork the repository on GitHub
 
-[Forking](https://help.github.com/articles/about-forks/) er et skridt, hvor du får din egen kopi af freeCodeCamp's hovedlager (alias _repo_) på GitHub.
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-Dette er vigtigt, da det giver dig mulighed for at arbejde på din egen kopi af freeCodeCamp på GitHub, eller for at downloade (klon) dit repository til at arbejde på lokalt. Senere, vil du være i stand til at anmode om ændringer til at blive trukket ind i hoveddepotet fra din gaffel via en pull request (PR).
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository. (Automatic Copy)
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
 > 
-> Din gaffel på `https://github.com/YOUR_USER_NAME/freeCodeCamp` er ofte omtalt som `oprindelse` -lageret.
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
 
-**Følg disse trin for at gaffel `https://github.com/freeCodeCamp/freeCodeCamp` -lageret:**
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
 
-1. Gå til freeCodeCamp på GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 
-2. Klik på "Fork"-knappen i øverste højre hjørne af grænsefladen ([Flere detaljer Her](https://help.github.com/articles/fork-a-repo/))
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 
-3. Efter at depotet er blevet forked, vil du blive ført til din kopi af freeCodeCamp repository på `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 <details>
    <summary>
-      Sådan gaffel freeCodeCamp på GitHub (skærmbillede)
+      How to fork freeCodeCamp on GitHub (screenshot)
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Sådan gaffel freeCodeCamp på GitHub" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
-## Klon din gaffel fra GitHub
+## Clone your fork from GitHub
 
-[Kloning](https://help.github.com/articles/cloning-a-repository/) er hvor du **downloade** en kopi af et depot fra en `fjern-` -placering, der enten ejes af dig eller af en anden. I dit tilfælde er denne fjernplacering din `gaffel` af freeCodeCamp's repository som skal være tilgængelig på `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
 
-Kør disse kommandoer på din lokale maskine:
+Run these commands on your local machine:
 
-1. Åbn en terminal / Kommandoprompt / Shell i din projektmappe
+1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-   _dvs.: `/yourprojectsdirectory/`_
+   _i.e.: `/yourprojectsdirectory/`_
 
-2. Klon din gaffel af freeCodeCamp, erstatter `YOUR_USER_NAME` med dit GitHub brugernavn
+2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
    ```console
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-Dette vil downloade hele freeCodeCamp repository til din projektmappe.
+This will download the entire freeCodeCamp repository to your projects directory.
 
-Bemærk: `--depth=1` skaber en overfladisk klon af din gaffel, med kun den seneste historie/commit.
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Konfigurer synkronisering fra overordnet
+## Set up syncing from parent
 
-Nu hvor du har downloadet en kopi af din gaffel, skal du oprette en `upstream` fjernbetjening til det overordnede arkiv.
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[Som nævnt tidligere](#fork-the-repository-on-github)er hovedlageret henvist til `upstream` -lageret. Din gaffel refereret til som `oprindelse` -lageret.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
 
-Du skal have en reference fra din lokale klon til `upstream` -depotet ud over `oprindelse` -depotet. Dette er så du kan synkronisere ændringer fra hoveddepotet uden krav om gaffel og kloning gentagne gange.
+You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Skift mappe til den nye freeCodeCamp mappe:
+1. Change directory to the new freeCodeCamp directory:
 
    ```console
    cd freeCodeCamp
    ```
 
-2. Tilføj en fjernreference til det vigtigste freeCodeCamp repository:
+2. Add a remote reference to the main freeCodeCamp repository:
 
    ```console
-   git fjernbetjening tilføj opstream https://github.com/freeCodeCamp/freeCodeCamp.git
+   git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-3. Sørg for, at konfigurationen ser korrekt ud:
+3. Ensure the configuration looks correct:
 
    ```console
    git remote -v
    ```
 
-   Outputtet skal se ud som nedenfor:
+   The output should look something like below:
 
    ```console
-   oprindelse https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-   oprindelse https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-   upstream https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-   upstream https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Kører freeCodeCamp lokalt
+## Running freeCodeCamp locally
 
-Nu hvor du har en lokal kopi af freeCodeCamp, kan du følge disse instruktioner for at køre det lokalt. Dette vil give dig mulighed for at:
+Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
-- Forhåndsvisning redigerer til sider, som de vises på læringsplatformen.
-- Arbejdet med UI-relaterede spørgsmål og forbedringer.
-- Fejlsøg og løse problemer med applikationsservere og klient apps.
+- Preview edits to pages as they would appear on the learning platform.
+- Work on UI related issues and enhancements.
+- Debug and fix issues with the application servers and client apps.
 
-Hvis du løber ind i problemer, skal du først udføre en websøgning efter dit problem og se, om det allerede er blevet besvaret. Hvis du ikke kan finde en løsning, søg venligst vores [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) side for en løsning og rapporter problemet, hvis det endnu ikke er blevet rapporteret.
+If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-Og som altid, er velkommen til at hoppe videre til vores [Contributors Chat room på Gitter](https://gitter.im/FreeCodeCamp/Contributors) eller [vores Discord server](https://discord.gg/pFspAhS), for hurtige forespørgsler.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Du kan springe kører freeCodeCamp lokalt, hvis du blot redigerer filer. For eksempel, udføre en `rebase`eller løse `fusionere` konflikter.
+> [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
 > 
-> Du kan altid vende tilbage til denne del af vejledningen senere. Du bør **kun** springe dette trin, hvis du ikke behøver at køre apps på din maskine.
+> You can always return to this part of the instructions later. You should **only** skip this step if you do not need to run the apps on your machine.
 > 
-> [Spring over for at foretage ændringer](#making-changes-locally).
+> [Skip to making changes](#making-changes-locally).
 
-### Indstil afhængigheder
+### Configuring dependencies
 
-#### Trin 1: Opsæt miljøvariablen fil
+#### Step 1: Set up the environment variable file
 
-Standard API-nøgler og miljøvariabler gemmes i filen `sample.env`. Denne fil skal kopieres til en ny fil med navnet `.env` , der er tilgået dynamisk under installationstrinnet.
+The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
 ```console
-# Opret en kopi af "sample.env" og navngiv den ".env".
-# Udfyld den med de nødvendige API-nøgler og hemmeligheder:
+# Create a copy of the "sample.env" and name it ".env".
+# Populate it with the necessary API keys and secrets:
 
 # macOS / Linux
-cp sample. nv .env
+cp sample.env .env
 
 # Windows
-kopier sample.env .env
+copy sample.env .env
 ```
 
-Nøglerne i filen `.env` er _ikke_ forpligtet til at blive ændret for at køre appen lokalt. Du kan efterlade standardværdierne kopieret over fra `sample.env` som-is.
+The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
-> [!TIP] Husk på, hvis du vil bruge tjenester som Forfatter eller Algolia, du skal købe dine egne API-nøgler til disse tjenester og redigere poster i overensstemmelse hermed i `. nv` fil.
+> [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Trin 2: Installer afhængigheder
+#### Step 2: Install dependencies
 
-Dette trin vil installere de afhængigheder, der kræves for at programmet skal køre:
+This step will install the dependencies required for the application to run:
 
 ```console
 npm ci
 ```
 
-#### Trin 3: Start MongoDB og seed databasen
+#### Step 3: Start MongoDB and seed the database
 
-Før du kan køre programmet lokalt, skal du starte MongoDB-tjenesten.
+Before you can run the application locally, you will need to start the MongoDB service.
 
-> [!BEMÆRK] Medmindre du har MongoDB kørende i en anden opsætning end standarden, den URL , der er gemt som værdien `MONGOHQ_URL` i `. nv` filen skal virke fint. Hvis du bruger en brugerdefineret konfiguration, skal du ændre denne værdi efter behov.
+> [!NOTE] Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
 
-Start MongoDB-serveren i en separat terminal:
+Start the MongoDB server in a separate terminal:
 
-- På macOS & Ubuntu:
+- On macOS & Ubuntu:
 
   ```console
   mongod
   ```
 
-- I Windows skal du angive den fulde sti til `mongod` binær
+- On Windows, you must specify the full path to the `mongod` binary
 
   ```console
   "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
   ```
 
-  Sørg for at erstatte `3.6` med den version, du har installeret
+  Make sure to replace `3.6` with the version you have installed
 
-> [!TIP] Du kan undgå at skulle starte MongoDB hver gang ved at installere det som en baggrundstjeneste. Du kan [lære mere om det i deres dokumentation for dit operativsystem](https://docs.mongodb.com/manual/administration/install-community/)
+> [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-Dernæst lad os se databasen. I dette trin kører vi nedenstående kommando, der udfylder MongoDB-serveren med nogle oprindelige datasæt, der kræves af tjenester. Disse omfatter bl.a. et par ordninger.
-
-```console
-npm løberfrø
-```
-
-#### Trin 4: Start freeCodeCamp klient ansøgning og API server
-
-Du kan nu starte API-serveren og klientprogrammerne.
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```console
-npm kør udvikling
+npm run seed
 ```
 
-Denne enkelt kommando vil affyre alle de tjenester, herunder API-serveren og klientapplikationer, der er tilgængelige for dig at arbejde på.
+#### Step 4: Start the freeCodeCamp client application and API server
 
-> [!BEMÆRK] Når du er klar, skal du åbne en webbrowser og **besøge <http://localhost:8000>**. Hvis app'en indlæser, tillykke – du er alle indstillet! Du har nu en kopi af freeCodeCamp's hele læringsplatform, der kører på din lokale maskine.
+You can now start up the API server and the client applications.
 
-> [!TIP] API-serveren serverer API'er på `http://localhost:3000`. Gatsby-appen betjener klientprogrammet på `http://localhost:8000`
+```console
+npm run develop
+```
 
-> Hvis du besøger <http://localhost:3000/explorer> bør du se de tilgængelige API'er.
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-## Log ind med en lokal bruger
+> [!NOTE] Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-Din lokale opsætning udfylder automatisk en lokal bruger i databasen. Klik på knappen `Log ind` vil automatisk godkende dig i den lokale applikation.
+> [!TIP] The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
-Men adgang til brugerporteføljen side er lidt vanskelig. Under udvikling Gatsby overtager betjeningen af klientsiden sider og dermed vil du få en `404` side for brugerporteføljen, når du arbejder lokalt.
+> If you visit <http://localhost:3000/explorer> you should see the available APIs.
 
-Du skal blot klikke på **"Preview Custom 404 Page"** knappen vil videresende dig til den korrekte side.
+## Sign in with a local user
+
+Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
+
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+
+Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
    <summary>
-      Sådan logger du på, når du arbejder lokalt (skærmbillede)
+      How to sign in when working locally (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Sådan logger du på, når du arbejder lokalt" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
 </details>
 
-## Foretager ændringer lokalt
+## Making changes locally
 
-Du kan nu foretage ændringer i filer og forpligte dine ændringer til din lokale klon af din gaffel.
+You can now make changes to files and commit your changes to your local clone of your fork.
 
-Følg disse trin:
+Follow these steps:
 
-1. Validér at du er på `master` grenen:
+1. Validate that you are on the `master` branch:
 
    ```console
    git status
    ```
 
-   Du bør få et output som dette:
+   You should get an output like this:
 
    ```console
-   På grenmaster
-   Din gren er opdateret med 'oprindelse/master'.
+   On branch master
+   Your branch is up-to-date with 'origin/master'.
 
-   intet at begå, arbejdsmappe ren
+   nothing to commit, working directory clean
    ```
 
-   Hvis du ikke er på master eller din arbejdsmappe ikke er ren, skal du løse udestående filer/commits og checkout `master`:
+   If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
 
    ```console
    git checkout master
    ```
 
-2. Synkroniser de seneste ændringer fra freeCodeCamp upstream `master` -grenen til din lokale hovedgren:
+2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
 
-   > [!ADVARSEL] Hvis du har en udestående pull-anmodning fra `master-` gren af din gaffel, vil du miste dem i slutningen af dette trin.
+   > [!WARNING] If you have any outstanding pull request that you made from the `master` branch of your fork, you will lose them at the end of this step.
    > 
-   > Du bør sikre, at din pull-anmodning bliver flettet af en moderator, før du udfører dette trin. For at undgå dette scenarie, bør du **altid** arbejde på en anden gren end `master`.
+   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `master`.
 
-   Dette trin **vil synkronisere de seneste ændringer** fra freeCodeCamps hovedlager. Det er vigtigt, at du genbaserer din gren på toppen af den seneste `upstream/master` så ofte som muligt for at undgå konflikter senere.
+   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
 
-   Opdater din lokale kopi af freeCodeCamp upstream-depotet:
+   Update your local copy of the freeCodeCamp upstream repository:
 
    ```console
-   git hente opstrøms
+   git fetch upstream
    ```
 
-   Hårdt nulstille din hovedfilial med freeCodeCamp master:
+   Hard reset your master branch with the freeCodeCamp master:
 
    ```console
    git reset --hard upstream/master
    ```
 
-   Skub din hovedgren til din oprindelse for at få en ren historik på din gaffel på GitHub:
+   Push your master branch to your origin to have a clean history on your fork on GitHub:
 
    ```console
    git push origin master --force
    ```
 
-   Du kan validere din nuværende master matcher upstream/master ved at udføre en diff:
+   You can validate your current master matches the upstream/master by performing a diff:
 
    ```console
-   git diff opstrøm/master
+   git diff upstream/master
    ```
 
-   Den resulterende output skal være tom.
+   The resulting output should be empty.
 
-3. Opret en ny ny filial:
+3. Create a fresh new branch:
 
-   At arbejde på en separat gren for hvert problem hjælper dig med at holde din lokale arbejdskopi ren. Du bør aldrig arbejde på `master`. Dette vil jage din kopi af freeCodeCamp og du kan være nødt til at starte forfra med en frisk klon eller gaffel.
+   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
-   Kontroller, at du er på `master` som forklaret tidligere, og filial derfra:
+   Check that you are on `master` as explained previously, and branch off from there:
 
    ```console
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Dit filialnavn skal starte med en `fix/`, `feat/`, `docs/`, osv. Undgå at bruge issue numre i filialer. Hold dem korte, meningsfulde og unikke.
+   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
-   Nogle eksempler på gode filialnavne er:
+   Some examples of good branch names are:
 
    ```md
    fix/update-challenges-for-react
@@ -330,50 +330,50 @@ Følg disse trin:
    translate/add-spanish-basic-html
    ```
 
-4. Rediger sider og arbejde med kode i din foretrukne teksteditor.
+4. Edit pages and work on code in your favorite text editor.
 
-5. Når du er tilfreds med de ændringer, bør du eventuelt køre freeCodeCamp lokalt for at få vist ændringerne.
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Sørg for at rette eventuelle fejl og kontrollere formateringen af dine ændringer.
+6. Make sure you fix any errors and check the formatting of your changes.
 
-7. Tjek og bekræft de filer, du opdaterer:
+7. Check and confirm the files you are updating:
 
    ```console
    git status
    ```
 
-   Dette bør vise en liste over `unstaged` filer, som du har redigeret.
+   This should show a list of `unstaged` files that you have edited.
 
    ```console
-   På grenfunktion/dokumentation
-   Din gren er opdateret med 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Ændringer ikke iscenesat for commit:
-   (brug "git add/rm <file>... for at opdatere hvad der vil blive indgået)
-   (brug "git checkout -- <file>. ." at kassere ændringer i arbejdsmappen)
+   Changes not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
 
-       ændret: KONTROLLING. d
-       ændret: docs/README.md
-       ændret: docs/how-to-setup-freecodecamp-locally. d
-       ændret: docs/how-to-work-on-guide-articles.md
-...
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
+   ...
    ```
 
-8. Trin ændringerne og lav en forpligtelse:
+8. Stage the changes and make a commit:
 
-   I dette trin bør du kun markere filer, som du har redigeret eller tilføjet dig selv. Du kan udføre en nulstilling og løse filer, som du ikke har til hensigt at ændre, hvis det er nødvendigt.
+   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
    ```console
-   git tilføj sti/til/min/ændret/file.ext
+   git add path/to/my/changed/file.ext
    ```
 
-   Eller du kan tilføje alle de `unstaged` filer til iscenesættelse:
+   Or you can add all the `unstaged` files to the staging area:
 
    ```console
-   git tilføj .
+   git add .
    ```
 
-   Kun de filer, der blev flyttet til iscenesættelsesområdet vil blive tilføjet, når du laver en forpligtelse.
+   Only the files that were moved to the staging area will be added when you make a commit.
 
    ```console
    git status
@@ -382,36 +382,36 @@ Følg disse trin:
    Output:
 
    ```console
-   På grenfunktion/dokumentation
-   Din gren er opdateret med 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Ændringer, der skal foretages:
-   (brug "git reset HEAD <file>..." til unstage)
+   Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
 
-       ændret: CONTRIBUTING.md
-       ændret: docs/README.md
-       ændret: docs/how-to-setup-freecodecamp-locally.md
-       ændret: docs/how-to-work-on-guide-articles.md
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
    ```
 
-   Nu kan du begå dine ændringer med en kort besked som så:
+   Now, you can commit your changes with a short message like so:
 
    ```console
-   git commit -m "fix: min korte commit besked"
+   git commit -m "fix: my short commit message"
    ```
 
-   Nogle eksempler:
+   Some examples:
 
    ```md
-   fix: opdatering guide artikel til Java - for loop
-   feat: Tilføj guide artikel for alexa færdigheder
+   fix: update guide article for Java - for loop
+   feat: add guide article for alexa skills
    ```
 
-   Valgfri:
+   Optional:
 
-   Vi anbefaler stærkt at lave en konventionel begå besked. Dette er en god praksis, som du vil se på nogle af de populære Open Source repositories. Som udvikler opfordrer dette dig til at følge standard praksis.
+   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
 
-   Nogle eksempler på konventionelle begå meddelelser er:
+   Some examples of conventional commit messages are:
 
    ```md
    fix: update HTML guide article
@@ -420,66 +420,66 @@ Følg disse trin:
    docs: update contributing guidelines
    ```
 
-   Behold disse kort, ikke mere end 50 tegn. Du kan altid tilføje yderligere oplysninger i beskrivelsen af commit beskeden.
+   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-   Dette tager ikke længere tid end en ukonventionel meddelelse som 'opdateringsfil' eller 'tilføj index.md'
+   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-   Du kan lære mere om, hvorfor du skal bruge konventionelle commits [her](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. Hvis du indser, at du har brug for at redigere en fil eller opdatere commit beskeden efter at have lavet en commit kan du gøre det efter redigering af filerne med:
+9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
    ```console
-   git commit -- amend
+   git commit --amend
    ```
 
-   Dette vil åbne en standard teksteditor som `nano` eller `vi` , hvor du kan redigere commit besked titel og tilføj/redigere beskrivelsen.
+   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
-10. Dernæst kan du skubbe dine ændringer til din gaffel:
+10. Next, you can push your changes to your fork:
 
     ```console
-    git push-oprindelse filial/navn-her
+    git push origin branch/name-here
     ```
 
-## Foreslå en Pull Request (PR)
+## Proposing a Pull Request (PR)
 
-Når du har foretaget dine ændringer, så tjek her for [hvordan du åbner en Pull Request](how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## Hurtige kommandoer reference
+## Quick commands reference
 
-En hurtig reference til de kommandoer, som du får brug for, når du arbejder lokalt.
+A quick reference to the commands that you will need when working locally.
 
-| kommando                                                       | beskrivelse                                                                           |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `npm ci`                                                       | Installerer / geninstaller alle afhængigheder og bootstraps de forskellige tjenester. |
-| `npm løberfrø`                                                 | Fortolker alle de challenge markdown filer og indsætter dem i MongoDB.                |
-| `npm kør udvikling`                                            | Starter freeCodeCamp API Server og klient applikationer.                              |
-| `npm test`                                                     | Kør alle JS-test i systemet, herunder klient, server, lint og challenge tests.        |
-| `npm run test:client`                                          | Kør klient test suite.                                                                |
-| `npm kørselstest:curriculum`                                   | Kør curriculum test suite.                                                            |
-| `npm run test: curriculum --block='Basic HTML og HTML5'`       | Test en specifik blok.                                                                |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Test en specifik SuperBlock.                                                          |
-| `npm kørsel test-curriculum-fuld-output`                       | Kør curriculum test suite, uden at gemme efter den første fejl                        |
-| `Npm kør test:server`                                          | Kør serverens testsuite.                                                              |
-| `npm run e2e`                                                  | Kør Cypressen slutter med at afslutte tests.                                          |
-| `npm kør ren`                                                  | Afinstallerer alle afhængigheder og rydder op caches.                                 |
+| command                                                        | description                                                                         |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
+| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
+| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
-## Fejlfinding
+## Troubleshooting
 
-### Problemer med installation af de anbefalede forudsætninger
+### Issues with installing the recommended prerequisites
 
-Vi udvikler jævnligt på de nyeste eller mest populære operativsystemer som macOS 10.15 eller senere, Ubuntu 18.04 eller senere og Windows 10 (med WSL2).
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later and Windows 10 (with WSL2).
 
-Det anbefales at forske i dit specifikke spørgsmål om ressourcer såsom Google, Stack Overflow og Stack Exchange. Der er en god chance for, at nogen har stået over for det samme problem, og der er allerede et svar på din specifikke forespørgsel.
+It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-Hvis du er på et andet operativsystem og/eller stadig er ved at løbe ind i problemer, se [få hjælp](#getting-help).
+If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
 > [!WARNING]
 > 
-> Undgå at oprette GitHub problemer for forudsætningsproblemer. De er uden for dette projekts anvendelsesområde.
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### Problemer med brugergrænseflade, skrifttyper, opbyg fejl mv.
+### Issues with the UI, Fonts, build errors etc.
 
-Hvis du står over for problemer med UI, Skrifttyper eller se bygger fejl en oprydning kan være nyttig:
+If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
 ```console
 npm run clean
@@ -488,17 +488,17 @@ npm run seed
 npm run develop
 ```
 
-ELLER
+OR
 
-Brug genvejen
+Use the shortcut
 
 ```
 npm run clean-and-develop
 ```
 
-Hvis du fortsat står over for problemer med bygningen, anbefales det at rense arbejdsområdet.
+If you continue to face issues with the build, cleaning up the workspace is recommend.
 
-Brug `git clean` i interativ tilstand:
+Use `git clean` in interative mode:
 
 ```
 git clean -ifdX
@@ -506,41 +506,41 @@ git clean -ifdX
 
 <details>
    <summary>
-      Hvordan man renser git usporet filer (skærmbillede)
+      How to clean git untracked files (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Hvordan man renser git usporet filer" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
-### Problemer med API, Login, Challenge Indsendelser, osv.
+### Issues with API, Login, Challenge Submissions, etc.
 
-Hvis du ikke kan logge på, og i stedet ser du et banner med en fejlmeddelelse om, at det vil blive rapporteret til freeCodeCamp, dobbelttjek venligst at din lokale port `3000` ikke er i brug af et andet program.
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-**På Linux / MacOS / WSL på Windows - Fra Terminal:**
+**On Linux / macOS / WSL on Windows - From Terminal:**
 
 ```console
-netstat -ab ¤ grep "3000"
+netstat -ab | grep "3000"
 
-tcp4 0 0 0.0.0.0:3000 DESKTOP LISTEN
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**På Windows - Fra Forhøjet PowerShell:**
+**On Windows - From Elevated PowerShell:**
 
 ```powershell
-netstat -ab ¤ Select-String "3000"
+netstat -ab | Select-String "3000"
 
-TCP 0.0.0.0.0: 3000 DESKTOP LISTENING
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
-### Problemer med installation af afhængigheder
+### Issues installing dependencies
 
-Hvis du får fejl under installation af afhængigheder, sørg for, at du ikke befinder dig i et begrænset netværk, eller at dine firewall-indstillinger ikke forhindrer dig i at få adgang til ressourcer.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-Første gang opsætningen kan tage et stykke tid afhængigt af din netværks båndbredde. Vær tålmodig, og hvis du stadig sidder fast, vi komprimeret ved hjælp af GitPod i stedet for en offline opsætning.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommed using GitPod instead of an offline setup.
 
-## Få Hjælp
+## Getting Help
 
-Hvis du sidder fast og har brug for hjælp, Lad os vide ved at spørge i kategorien ['Bidragydere' på vores forum](https://forum.freecodecamp.org/c/contributors) eller [Bidragyderne chatrum](https://gitter.im/FreeCodeCamp/Contributors) på Gitter.
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-Der kan være en fejl i konsollen i din browser eller i Bash / Terminal / Kommandolinje, der vil hjælpe med at identificere problemet. Giv denne fejlmeddelelse i din problembeskrivelse, så andre lettere kan identificere problemet og hjælpe dig med at finde en løsning.
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

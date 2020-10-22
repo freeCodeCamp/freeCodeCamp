@@ -1,36 +1,39 @@
-- **Erste Schritte**
-  - [Einführung](index 'Zur FreeCodeCamp.org Community beitragen')
-  - [Häufig gestellte Fragen](FAQ.md)
-- **Code-Beitrag**
-- - [FreeCodeCamp lokal einrichten](how-to-setup-freecodecamp-locally.md)
-  - [Pull-Request öffnen](how-to-open-a-pull-request.md)
-  - [Arbeit an Codierungsaufgaben](how-to-work-on-coding-challenges.md)
-  - [Arbeiten an Videoherausforderungen](how-to-help-with-video-challenges.md)
-  - [Arbeiten Sie am News-Thema](how-to-work-on-the-news-theme.md)
-  - [Arbeiten Sie mit dem Thema Dokumentation](how-to-work-on-the-docs-theme.md)
-- **Optionale Anleitungen**
-  - [Abgehende E-Mails lokal auffangen](how-to-catch-outgoing-emails-locally.md)
-  - [FreeCodeCamp auf WSL einrichten](how-to-setup-wsl.md)
+- **Getting Started**
+  - [Introduction](index.md "Contribute to the freeCodeCamp.org Community")
+  - [Frequently Asked Questions](FAQ.md)
+- **Code Contribution**
+  - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on video challenges](how-to-help-with-video-challenges.md)
+  - [Work on the news theme](how-to-work-on-the-news-theme.md)
+  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+- **Optional Guides**
+  - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
+  - [Set up freeCodeCamp on WSL](how-to-setup-wsl.md)
 
 ---
+
+<!-- The section below should not use relative linking -->
 
 - **中文社区贡献指南**
-  - [成为专栏作者](/i18n/chinese/news-author-application.md)
-  - [文章翻译计划](/i18n/chinese/news-translations.md)
-  - [视频翻译计划](/i18n/chinese/video-translations.md)
+  - [成为专栏作者](/i18n/Chinese/news-author-application.md)
+  - [文章翻译计划](/i18n/Chinese/news-translations.md)
+  - [视频翻译计划](/i18n/Chinese/video-translations.md)
+
+<!-- The section above should not use relative linking -->
 
 ---
 
-- **Flughandbücher** (für Personal & Mods)
-  - [Moderatorhandbuch](flight-manuals/moderator-handbook.md)
-  - [Antwortvorlagen](flight-manuals/using-reply-templates.md)
-  - [DevOps Übersicht](devops.md)
-  - [Arbeiten auf Servern](flight-manuals/working-on-virtual-machines.md)
+- **Flight Manuals** (for Staff & Mods)
+  - [Moderator Handbook](moderator-handbook.md)
+  - [Reply Templates](moderator-handbook?id=using-reply-templates)
+  - [DevOps Handbook](devops.md)
 
 ---
 
-- **Unsere Community**
+- **Our Community**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
-  - [**Diskursforum**](https://freecodecamp.org/forum/c/contributors)
-  - [**Gitter-Chat**](https://gitter.im/FreeCodeCamp/Contributors)
+  - [**Discourse Forum**](https://freecodecamp.org/forum/c/contributors)
+  - [**Gitter Chat**](https://gitter.im/FreeCodeCamp/Contributors)
   - [**Discord Server**](https://discord.gg/pFspAhS)

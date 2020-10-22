@@ -1,100 +1,100 @@
-# freeCodeCamp.orgの開発者操作
+# DevOps Handbook
 
-このガイドは、私たちのインフラストラクチャスタックと私たちのプラットフォームをどのように維持するかを理解するのに役立ちます。 このガイドでは、すべての操作について詳しく説明されているわけではありませんが、システムを理解するための参考として使用することができます。
+This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
 
-ご意見やご質問があれば、お知らせください。
+Let us know, if you have feedback or queries, and we will be happy to clarify.
 
-## コードベースを構築、テスト、デプロイするにはどうすればよいでしょうか?
+# Flight Manual - Code deployments
 
-このリポジトリは、継続的に構築され、テストされ、インフラストラクチャの **個別のセット(サーバー、データベース、CDNなど)**にデプロイされます。
+This repository is continuously built, tested and deployed to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
 
-これには3つのステップが含まれます。
+This involves three steps to be followed in sequence:
 
-1. 新しい変更(修正と機能の両方)は、プルリクエストによりプライマリ開発ブランチ(`master`)にマージされます。
-2. これらの変更は、一連の自動テストで実行されます。
-3. テストが合格すると、インフラストラクチャ上でのデプロイメントに変更をリリース(または必要に応じて更新)します。
+1. New changes (both fixes and features) are merged into our primary development branch (`master`) via pull requests.
+2. These changes are run through a series of automated tests.
+3. Once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
-#### コードベースのビルド - Git ブランチのデプロイメントへのマッピング
+#### Building the codebase - Mapping Git Branches to Deployments.
 
-通常 [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (デフォルトの開発ブランチ) が [`プロダクションステージングにマージされます`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) 1日1回分岐し、孤立したインフラストラクチャに解放されます。
+Typically, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
-これは開発者とボランティアの方の中間リリースです。 私たちの「ステージング」または「ベータ」リリースとも呼ばれます。
+This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
-それは `freeCodeCamp.org`のライブプロダクション環境と同じで、データベース、サーバー、ウェブプロキシなどの別々のセットを使用しています。 この分離により、freeCodeCamp.orgのメインプラットフォームの正規ユーザーに影響を与えることなく、シナリオのような「本番」で継続的な開発と機能をテストすることができます。
+It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
 Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch.
 
-こちらはfreeCodeCamp.orgで本番プラットフォームに変更を加えた最終リリースです。
+This is the final release that moves changes to our production platforms on freeCodeCamp.org.
 
-#### テストの変更 - 統合とユーザー承認テスト。
+#### Testing changes - Integration and User Acceptance Testing.
 
-私たちは、コードの品質を確認するために、さまざまなレベルの統合と受け入れテストを採用しています。 すべてのテストは、 [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) や [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp) のようなソフトウェアを介して行われます。
+We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
-当社では、チャレンジソリューション、Server API、クライアントユーザーインターフェイスをテストするための単体テストを行っています。 これらは、異なるコンポーネント間の統合をテストするのに役立ちます。
+We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
-> [!NOTE] また、メールの更新やAPIやサードパーティサービスへの呼び出しなど、現実世界のシナリオを再現するのに役立つエンドユーザーテストを作成しています。
+> [!NOTE] We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
 
-これらのテストを組み合わせることで、問題が繰り返されるのを防ぎ、他のバグや機能の作業中にバグを導入しないようにします。
+Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
 
-#### 変更をデプロイする - 変更をサーバーにプッシュします。
+#### Deploying Changes - Pushing changes to servers.
 
-当社では、開発サーバーと本番サーバーに変更をプッシュする継続的なデリバリーソフトウェアを設定しています。
+We have configured continuous delivery software to push changes to our development and production servers.
 
-変更が保護されたリリースブランチにプッシュされると、そのブランチに対してビルドパイプラインが自動的にトリガーされます。 ビルドパイプラインは、アーティファクトを構築し、後で使用するために冷蔵庫に保管する責任があります。
+Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
 
-ビルドパイプラインは、成功した実行が完了した場合、対応するリリースパイプラインをトリガーします。 リリースパイプラインは、ビルドアーティファクトを収集し、それらをサーバーに移動してライブ配信する責任があります。
+The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers and going live.
 
-ビルドとリリースのステータスは [こちら](#build-test-and-deployment-status)からご確認いただけます。
+Status of builds and releases are [available here](#build-test-and-deployment-status).
 
-## ビルド、テスト、デプロイをトリガーします。
+## Trigger a build, test and deploy
 
-現時点では、開発チームのメンバーのみが本番ブランチにプッシュできます。 `production-*` ブランチへの変更は、 [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp) への早送りマージによってのみ着陸できます。
+Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> [!NOTE] 今後、アクセス管理と透明性を向上させるために、プルリクエストを介してこのフローを改善します。
+> [!NOTE] In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
 
-### ステージングアプリケーションに変更をプッシュしています。
+### Pushing changes to Staging Applications.
 
-1. リモートを正しく構成します。
+1. Configure your remotes correctly.
 
    ```sh
    git remote -v
    ```
 
-   **結果:**
+   **Results:**
 
    ```
-   origin git@github.com:raisedadead/freeCodeCamp.git (fetch)
-   origin git@github.com:raisedad/freeCodeCamp.git (push)
-   upstream git@git.com:freeCodeCamp/freeCodeCamp.git (fetch)
-   upstream git@git@git@github.com:freeCodeCamp/freeCodeCamp.git (push)
+   origin   git@github.com:raisedadead/freeCodeCamp.git (fetch)
+   origin   git@github.com:raisedadead/freeCodeCamp.git (push)
+   upstream git@github.com:freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. `master` ブランチが手つかずで、上流に同期していることを確認してください。
+2. Make sure your `master` branch is pristine and in sync with the upstream.
 
    ```sh
    git checkout master
-   git fetch --all -prune
+   git fetch --all --prune
    git reset --hard upstream/master
    ```
 
-3. TravisのCIが `マスター` ブランチを上流に渡していることを確認してください。
+3. Check that the Travis CI is passing on the `master` branch for upstream.
 
-   [継続的インテグレーション](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) テストは緑色で、 `マスター` ブランチのPASSINGでなければなりません。
+   The [continuous integration](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) tests should be green and PASSING for the `master` branch.
 
-    <details> <summary> Travis CI (スクリーンショット) でステータスを確認中 </summary>
+    <details> <summary> Checking status on Travis CI (screenshot) </summary>
       <br>
-      ![Travis CIでビルド状況を確認する](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png)
+      ![Check build status on Travis CI](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png)
     </details>
 
-   これが失敗した場合は、停止してエラーを調査する必要があります。
+   If this is failing you should stop and investigate the errors.
 
-4. リポジトリをローカルにビルドできることを確認します。
+4. Confirm that you are able to build the repository locally.
 
    ```
    npm run clean-and-develop
    ```
 
-5. 早送りマージで `マスター` から `プロダクションステージ` へ変更を移動
+5. Move changes from `master` to `production-staging` via a fast-forward merge
 
    ```
    git checkout production-staging
@@ -102,34 +102,34 @@ Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeC
    git push upstream
    ```
 
-   > [!NOTE] 強制的にプッシュすることはできず、とにかく履歴を書き直した場合、これらのコマンドはエラーになります。
+   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
    > 
-   > 彼らがそうした場合、あなたは間違って何かをしたかもしれませんし、あなたはちょうどやり直す必要があります。
+   > If they do, you may have done something incorrectly and you should just start over.
 
-上記の手順は、 `production-staging` ブランチのビルド パイプラインで自動的に実行をトリガーします。 ビルドが完了すると、アーティファクトは `.zip` ファイルとして保存され、後で取得して使用されます。
+The above steps will automatically trigger a run on the build pipeline for the `production-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
 
-接続されたビルドパイプラインから新たなアーティファクトが利用可能になると、リリースパイプラインが自動的にトリガーされます。 ステージングプラットフォームでは、このプロセスには手動での承認は含まれず、アーティファクトはクライアントCDNおよびAPIサーバーにプッシュされます。
+The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
 
-> [!TIP|label:見積もり] リリースの実行には、通常、クライアントインスタンスごとに約15~20分、APIインスタンスごとに約5~10分かかります。 コードプッシュから本番プラットフォーム上でのライブまで、全体のプロセスは合計で **~90~120分** かかります(スタッフの承認待ち時間はカウントされません)。
+> [!TIP|label:Estimates] Typically the build run takes ~20-25 minutes to complete followed by the release run which takes ~15-20 mins for the client, and ~5-10 mins for the API to be available live. From code push to being live on the staging platforms the whole process takes **~35-45 mins** in total.
 
-### 本番アプリケーションへの変更のプッシュ。
+### Pushing changes to Production Applications.
 
-プロセスはほとんどステージングプラットフォームと同じで、いくつかの追加のチェックが行われます。 これは、freeCodeCamp.orgでは何も壊さず、何百人ものユーザーがいつでも使用しているのを見ることができます。
+The process is mostly the same as the staging platforms, with a few extra checks in place. This is just to make sure, we do not break anything on freeCodeCamp.org which can see hundreds of users using it at any moment.
 
-| すべてがステージングプラットフォームで動作していることを確認しない限り、これらのコマンドを実行しないでください。 さらに進む前に、ステージング上のテストをバイパスまたはスキップしないでください。 |
-|:------------------------------------------------------------------------------------------------- |
-|                                                                                                   |
+| Do NOT execute these commands unless you have verified that everything is working on the staging platform. You should not bypass or skip any testing on staging before proceeding further. |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                                            |
 
 
-1. `production-staging` ブランチが手つかずで、上流に同期していることを確認してください。
+1. Make sure your `production-staging` branch is pristine and in sync with the upstream.
 
    ```sh
    git checkout production-staging
-   git fetch -all --prune
+   git fetch --all --prune
    git reset --hard upstream/production-staging
    ```
 
-2. 早送りマージで `プロダクションステージング` から `プロダクションカレント` へ変更を移動
+2. Move changes from `production-staging` to `production-current` via a fast-forward merge
 
    ```
    git checkout production-current
@@ -137,91 +137,572 @@ Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeC
    git push upstream
    ```
 
-   > [!NOTE] 強制的にプッシュすることはできず、とにかく履歴を書き直した場合、これらのコマンドはエラーになります。
+   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
    > 
-   > 彼らがそうした場合、あなたは間違って何かをしたかもしれませんし、あなたはちょうどやり直す必要があります。
+   > If they do, you may have done something incorrectly and you should just start over.
 
-上記のステップは、 `production-current` ブランチのビルドパイプラインで自動的に実行をトリガーします。 ビルドアーティファクトの準備が完了すると、リリースパイプラインで実行がトリガーされます。
+The above steps will automatically trigger a run on the build pipeline for the `production-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
 
-> [!TIP|label:見積もり] 通常、ビルド実行には約20~25分かかります。
+> [!TIP|label:Estimates] Typically the build run takes ~20-25 minutes to complete.
 
-**スタッフアクションの追加手順**
+**Additional Steps for Staff Action**
 
-リリースの実行がトリガーされると、開発者スタッフチームのメンバーは自動的に手動介入メールを受け取ります。 彼らは __ を承認するか、 _リリースの実行を_ 拒否することができます。
+One a release run is triggered, members of the developer staff team will receive an automated manual intervention email. They can either _approve_ or _reject_ the release run.
 
-変更がうまく動作し、ステージングプラットフォームでテストされている場合は、それを承認することができます。 承認は、自動的に拒否される前に、リリースがトリガーされてから4時間以内に行われる必要があります。 スタッフは、拒否された実行のために手動でリリース実行を再トリガーするか、リリースの次のサイクルを待つことができます。
+If the changes are working nicely and have been tested on the staging platform, then it can be approved. The approval must be given within 4 hours of the release being triggered before getting rejected automatically. A staff can re-trigger the release run manually for rejected runs, or wait for the next cycle of release.
 
-スタッフ用:
+For staff use:
 
-| メールアドレスに直接リンクがないか、 [ビルドの実行が完了したら](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) リリースダッシュボードに移動してください。 |
-|:--------------------------------------------------------------------------------------------------------------------- |
-|                                                                                                                       |
+| Check your email for a direct link or [go to the release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) after the build run is complete. |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                    |
 
 
-スタッフメンバーがリリースを承認すると、パイプラインはfreeCodeCamp.orgのプロダクションCDNおよびAPIサーバーに変更を反映させます。 クライアントには通常15~20分、APIサーバーには5分ほどかかります。
+Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
-> [!TIP|label:見積もり] 通常、ビルドの実行には20~25分ほどかかり、その後はクライアントにとって15~20分ほどかかるリリースランが続きます。 APIがライブ配信されるまで5~10分ほどかかります。 コードプッシュから本番プラットフォーム上でのライブまで、全体のプロセスは合計で **~90~120分** かかります(スタッフの承認待ち時間はカウントされません)。
+> [!TIP|label:Estimates] The release run typically takes ~15-20 mins for each client instance, and ~5-10 mins for each API instance to be available live. From code push to being live on the production platforms the whole process takes **~90-120 mins** in total (not counting the wait time for the staff approval).
 
-## ビルド、テスト、デプロイステータス
+## Build, Test and Deployment Status
 
-ここでは、コードベースの現在のテスト、ビルド、およびデプロイの状況を示します。
+Here is the current test, build and deployment status of the codebase.
 
-| タイプ         | ブランチ                                                                                         | ステータス                                                                                                                                                                                                                                        | ダッシュボード                                                                            |
-|:----------- |:-------------------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:---------------------------------------------------------------------------------- |
-| CI テスト      | [`マスター`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                           | ![Travis CI ビルド状況](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                        | [ステータスダッシュボードに移動](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| CI テスト      | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Travis CI ビルド状況](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                            | [ステータスダッシュボードに移動](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| パイプラインを構築する | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![ビルド状態](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [ステータスダッシュボードに移動](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| パイプラインをリリース | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                              | [ステータスダッシュボードに移動](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
-| CI テスト      | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI ビルド状況](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [ステータスダッシュボードに移動](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| パイプラインを構築する | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![ビルド状態](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [ステータスダッシュボードに移動](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| パイプラインをリリース | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                              | [ステータスダッシュボードに移動](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| Type             | Branch                                                                                       | Status                                                                                                                                                                                                                                              | Dashboard                                                                                 |
+|:---------------- |:-------------------------------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------- |
+| CI Tests         | [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                         | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                        | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| CI Tests         | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| Build Pipeline   | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
 
-## 早期アクセスとベータテスト
+## Early access and beta testing
 
-これらのリリースを **"パブリックベータテスト"** モードでテストし、プラットフォームへの今後の機能への早期アクセスをお届けすることを歓迎します。 場合によっては、これらの機能/変更は **、次のベータ、ステージング、** などと呼ばれます。
+We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
 
-フィードバックやレポートの発行を通じたあなたの貢献は、 `freeCodeCampでのプロダクションプラットフォームの構築に役立ちます。 rg <code> more` **resilient**, **consistent** and **stable** for everyone.
+Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent** and **stable** for everyone.
 
-freeCodeCamp.orgをより良くするために出会ったバグを報告してくれてありがとうございます。 ロックしました！
+We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
 
-### プラットフォームの今後のバージョンを特定する
+### Identifying the upcoming version of the platforms
 
-現在、パブリックベータテストバージョンは次の場所で利用できます:
+Currently a public beta testing version is available at:
 
 <h1 align="center"><a href='https://www.freecodecamp.dev' _target='blank'>freecodecamp.dev</a></h1>
 
-> [!NOTE] ドメイン名は **`freeCodeCamp.org`** とは異なります。 これは、検索エンジンのインデックス作成を防止し、プラットフォームの正規ユーザーにとって混乱を避けるために意図的です。
+> [!NOTE] The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
 
-### プラットフォームの現在のバージョンを特定する
+### Identifying the current version of the platforms
 
-**プラットフォームの現在のバージョンは [`freeCodeCamp.org`](https://www.freecodecamp.org) で常に利用できます。**
+**The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
 
-開発チームは、 `production-staging` ブランチから `production-current` への変更をリリースするときにマージします。 トップコミットは、サイト上でライブで見るものでなければなりません。
+The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site.
 
-状況セクションで使用可能なビルドおよびデプロイのログにアクセスして、デプロイされた正確なバージョンを確認できます。 あるいは、 [投稿者のチャットルーム](https://gitter.im/FreeCodeCamp/Contributors) で確認を行うこともできます。
+You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) for a confirmation.
 
-### 既知の制限
+### Known Limitations
 
-プラットフォームのベータ版を使用する場合、いくつかの既知の制限とトレードオフがあります。
+There are some known limitations and tradeoffs when using the beta version of the platform.
 
-- #### これらのベータプラットフォーム上のすべてのデータ / 個人的な進捗状況は `保存されたり本番環境に` 渡されたりすることはありません。
+- #### All data / personal progress on these beta platforms `will NOT be saved or carried over` to production.
 
-  **ベータ版のユーザーは本番と別のアカウントを持つことになります。 ** ベータ版は本番と物理的に分離されたデータベースを使用します。 これにより、偶発的なデータの損失や変更を防ぐことができます。 開発チームは、必要に応じてこのベータ版のデータベースを削除する可能性があります。
+  **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev team may purge the database on this beta version as needed.
 
-- #### ベータ版プラットフォームの稼働時間と信頼性については保証はありません。
+- #### There are no guarantees on the uptime and reliability of the beta platforms.
 
-  展開は頻繁で、迅速な反復では、時には1日に複数回行われることが期待されます。 その結果、ベータ版で予期しないダウンタイムや機能が壊れることがあります。
+  Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### 修正を確認する手段として、このサイトに正規ユーザーを送信しないでください
+- #### Do not send regular users to this site as a measure of confirming a fix
 
-  ベータサイトは、常にローカルの開発とテストを拡張することであり、他のものではありません。 それは何が来るかの約束ではありませんが、何が取り組まれているかを垣間見ることができます。
+  The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### サインページがプロダクションと異なる場合があります
+- #### Sign page may look different than production
 
-   Auth0のfreecodecamp.dev用のテストテナントを使用しているため、カスタムドメインを設定することはできません。 これにより、すべてのリダイレクトコールバックとログインページが以下のようなデフォルトドメインに表示されるようになります: `https://freecodecamp-dev.auth0.com/`. これは、私たちが得ることができるように生産に近い機能に影響を与えません。
+  We use a test tenant for freecodecamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
 
-## 問題の報告とフィードバックの残す
+## Reporting issues and leaving feedback
 
-ディスカッションやバグの報告のために、新たな課題を開いてください。 **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** というラベルを付けることができます。
+Please open fresh issues for discussions and reporting bugs. You can label them as **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** for triage.
 
-質問があれば、 `dev[at]freecodecamp.org` にメールを送信できます。 すべてのセキュリティ脆弱性は、公開トラッカーやフォーラムではなく、 `security[at]freecodecamp.org` に報告する必要があります。
+You may send an email to `dev[at]freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security[at]freecodecamp.org` instead of the public tracker and forum.
+
+# Flight Manual - Server Maintenance
+
+> [!WARNING]
+> 
+> 1. The guide applies to the **freeCodeCamp Staff members only**.
+> 2. These instructions should not be considered exhaustive, please use caution.
+
+As a member of the staff, you may have been given access to our cloud service providers like Azure, Digital Ocean, etc.
+
+Here are some handy commands that you can use to work on the Virtual Machines (VM), for instance performing maintenance updates or doing general houeskeeping.
+
+## Get a list of the VMs
+
+> [!NOTE] While you may already have SSH access to the VMs, that alone will not let you list VMs unless you been granted access to the cloud portals as well.
+
+### Azure
+
+Install Azure CLI `az`: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
+
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
+
+```
+brew install azure-cli
+```
+
+> **(One-time) Login:**
+
+```
+az login
+```
+
+> **Get the list of VM names and P addresses:**
+
+```
+az vm list-ip-addresses --output table
+```
+
+### Digital Ocean
+
+Install Digital Ocean CLI `doctl`: https://github.com/digitalocean/doctl#installing-doctl
+
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
+
+```
+brew install doctl
+```
+
+> **(One-time) Login:**
+
+Authentication and context switching: https://github.com/digitalocean/doctl#authenticating-with-digitalocean
+
+```
+doctl auth init
+```
+
+> **Get the list of VM names and IP addresses:**
+
+```
+doctl compute droplet list --format "ID,Name,PublicIPv4"
+```
+
+## Spin a VM (or VM Scale Set)
+
+> Todo: Add instructions for spinning VM(s)
+
+
+<!--
+
+The below instructions are stale.
+
+### 0. Prerequisites (workspace Setup) for Staff
+
+Get a login session on `azure cli`, and clone the
+[`infra`](https://github.com/freeCodeCamp/infra) for setting up template
+workspace.
+
+```console
+az login
+git clone https://github.com/freeCodeCamp/infra
+cd infra
+```
+
+Use the Scratchpad subdirectory for temporary files, and making one-off edits.
+The contents in this subdirectory are intentionally ignored from source control.
+
+### 1. Provision VMs on Azure.
+
+List all Resource Groups
+
+```console
+az group list --output table
+```
+
+```console
+Name                               Location       Status
+---------------------------------  -------------  ---------
+tools-rg                           eastus         Succeeded
+```
+
+Create a Resource Group
+
+```
+az group create --location eastus --name stg-rg
+```
+
+```console
+az group list --output table
+```
+
+```console
+Name                               Location       Status
+---------------------------------  -------------  ---------
+tools-rg                           eastus         Succeeded
+stg-rg                             eastus         Succeeded
+```
+
+Next per the need, provision a single VM or a scaleset.
+
+#### A. provision single instances
+
+```console
+az vm create \
+  --resource-group stg-rg-eastus \
+  --name <VIRTUAL_MACHINE_NAME> \
+  --image UbuntuLTS \
+  --size <VIRTUAL_MACHINE_SKU>
+  --custom-data cloud-init/nginx-cloud-init.yaml \
+  --admin-username <USERNAME> \
+  --ssh-key-values <SSH_KEYS>.pub
+```
+
+#### B. provision scaleset instance
+
+```console
+az vmss create \
+  --resource-group stg-rg-eastus \
+  --name <VIRTUAL_MACHINE_SCALESET_NAME> \
+  --image UbuntuLTS \
+  --size <VIRTUAL_MACHINE_SKU>
+  --upgrade-policy-mode automatic \
+  --custom-data cloud-init/nginx-cloud-init.yaml \
+  --admin-username <USERNAME> \
+  --ssh-key-values <SSH_KEYS>.pub
+```
+
+> [!NOTE]
+>
+> - The custom-data config should allow you to configure and add SSH keys,
+>   install packages etc. via the `cloud-init` templates in your local
+>   workspace. Tweak the files in your local workspace as needed. The cloud-init
+>   config is optional and you can omit it completely to do setups manually as
+>   well.
+>
+> - The virtual machine SKU is something like: **Standard_B2s** which can be
+>   retrived by executing something like
+>   `az vm list-sizes -l eastus --output table` or checking the Azure portal
+>   pricing.
+
+-->
+
+## Keep VMs updated
+
+You should keep the VMs up to date by performing updates and upgrades. This will ensure that the virtual machine is patched with latest security fixes.
+
+> [!WARNING] Before you run these commands:
+> 
+> - Make sure that the VM has been provisioned completely and there is no post-install steps running.
+> - If you are updating packages on a VM that is already serving an application, make sure the app has been stopped / saved. Package updates will cause network bandwidth, memory and/or CPU usage spikes leading to outages on running applications.
+
+Update package information
+
+```console
+sudo apt update
+```
+
+Upgrade installed packages
+
+```console
+sudo apt upgrade -y
+```
+
+Cleanup unused packages
+
+```console
+sudo apt autoremove -y
+```
+
+## Work on Web Servers (Proxy)
+
+We are running load balanced (Azure Load Balancer) instances for our web servers. These servers are running NGINX which reverse proxy all of the traffic to freeCodeCamp.org from various applications running on their own infrastructures.
+
+The NGINX config is available on [this repository](https://github.com/freeCodeCamp/nginx-config).
+
+### First Install
+
+Provisioning VMs with the Code
+
+#### 1. (Optional) Install NGINX and configure from repository.
+
+The basic setup should be ready OOTB, via the cloud-init configuration. SSH and make changes as necessary for the particular instance(s).
+
+If you did not use the cloud-init config previously use the below for manual setup of NGINX and error pages:
+
+```console
+sudo su
+
+cd /var/www/html
+git clone https://github.com/freeCodeCamp/error-pages
+
+cd /etc/
+rm -rf nginx
+git clone https://github.com/freeCodeCamp/nginx-config nginx
+
+cd /etc/nginx
+```
+
+#### 2. Install Cloudflare origin certificates and upstream application config.
+
+Get the Cloudflare origin certificates from the secure storage and install at required locations.
+
+**OR**
+
+Move over existing certificates:
+
+```console
+# Local
+scp -r username@source-server-public-ip:/etc/nginx/ssl ./
+scp -pr ./ssl username@target-server-public-ip:/tmp/
+
+# Remote
+rm -rf ./ssl
+mv /tmp/ssl ./
+```
+
+Update Upstream Configurations:
+
+```console
+vi configs/upstreams.conf
+```
+
+Add/update the source/origin application IP addresses.
+
+#### 3. Setup networking and firewalls.
+
+Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
+
+#### 4. Add the VM to the load balancer backend pool.
+
+Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
+
+### Logging and Monitoring
+
+1. Check status for NGINX service using the below command:
+
+```console
+sudo systemctl status nginx
+```
+
+2. Logging and monitoring for the servers are available at:
+
+> <h3 align="center"><a href='https://amplify.nginx.com' _target='blank'>https://amplify.nginx.com</a></h3>
+### Updating Instances (Maintenance)
+
+Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
+
+1. SSH into the instance and enter sudo
+
+```console
+sudo su
+```
+
+2. Get the latest config code.
+
+```console
+cd /etc/nginx
+git fetch --all --prune
+git reset --hard origin/master
+```
+
+3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+
+```console
+nginx -t
+nginx -s reload
+```
+
+## Work on API Instances
+
+1. Install build tools for node binaries (`node-gyp`) etc.
+
+```console
+sudo apt install build-essential
+```
+
+### First Install
+
+Provisioning VMs with the Code
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot
+
+   ```console
+   npm i -g npm
+   npm i -g pm2
+   pm2 install pm2-logrotate
+   pm2 startup
+   ```
+
+3. Clone freeCodeCamp, setup env and keys.
+
+   ```console
+   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+   cd freeCodeCamp
+   git checkout production-current # or any other branch to be deployed
+   ```
+
+4. Create the `.env` from the secure credentials storage.
+
+5. Create the `google-credentials.json` from the secure credentials storage.
+
+6. Install dependencies
+
+   ```console
+   npm ci
+   ```
+
+7. Build the server
+
+   ```console
+   npm run ensure-env && npm run build:server
+   ```
+
+8. Start Instances
+
+   ```console
+   cd api-server
+   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   ```
+
+### Logging and Monitoring
+
+```console
+pm2 logs
+```
+
+```console
+pm2 monit
+```
+
+### Updating Instances (Maintenance)
+
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding enviroment variables.
+
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+
+#### 1. Manual Updates - Used for updating dependencies, env variables.
+
+1. Stop all instances
+
+```console
+pm2 stop all
+```
+
+2. Install dependencies
+
+```console
+npm ci
+```
+
+3. Build the server
+
+```console
+npm run ensure-env && npm run build:server
+```
+
+4. Start Instances
+
+```console
+pm2 start all --update-env && pm2 logs
+```
+
+#### 2. Rolling updates - Used for logical changes to code.
+
+```console
+pm2 reload all --update-env && pm2 logs
+```
+
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+
+## Work on Client Instances
+
+1. Install build tools for node binaries (`node-gyp`) etc.
+
+```console
+sudo apt install build-essential
+```
+
+### First Install
+
+Provisioning VMs with the Code
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot
+
+   ```console
+   npm i -g npm
+   npm i -g pm2
+   npm install -g serve
+   pm2 install pm2-logrotate
+   pm2 startup
+   ```
+
+3. Clone client config, setup env and keys.
+
+   ```console
+   git clone https://github.com/freeCodeCamp/client-config.git client
+   cd client
+   ```
+
+   ```console
+   git clone https://github.com/freeCodeCamp/client-config.git client
+   cd client
+   ```
+
+   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipline.
+
+   > Todo: This setup needs to move to S3 or Azure Blob storage 
+   > 
+   > ```console
+   echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   chmod +x client-start-primary.sh
+   pm2 delete client-primary
+   pm2 start  ./client-start-primary.sh --name client-primary
+   echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   chmod +x client-start-secondary.sh
+   pm2 delete client-secondary
+   pm2 start  ./client-start-secondary.sh --name client-secondary
+```
+
+### Logging and Monitoring
+
+```console
+pm2 logs
+```
+
+```console
+pm2 monit
+```
+
+### Updating Instances (Maintenance)
+
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding enviroment variables.
+
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+
+#### 1. Manual Updates - Used for updating dependencies, env variables.
+
+1. Stop all instances
+
+   ```console
+   pm2 stop all
+   ```
+
+2. Install or update dependencies
+
+3. Start Instances
+
+   ```console
+   pm2 start all --update-env && pm2 logs
+   ```
+
+#### 2. Rolling updates - Used for logical changes to code.
+
+```console
+pm2 reload all --update-env && pm2 logs
+```
+
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.

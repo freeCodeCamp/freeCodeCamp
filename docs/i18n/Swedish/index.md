@@ -1,45 +1,43 @@
-Gemenskapen [freeCodeCamp.org](https://freecodecamp.org) är möjlig tack vare tusentals volontärer som du. Vi välkomnar alla bidrag till samhället och är glada att välkomna dig ombord.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!NOTE] Innan du fortsätter, vänligen ta en snabb 2 minuter att läsa vår [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). Vi genomdriver det strikt över hela vår gemenskap. Vi vill bidra till freeCodeCamp.org för att vara en säker och inkluderande upplevelse för alla.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Glad att bidra.
+Happy contributing.
 
-Du är välkommen till:
+You are welcome to:
 
-- Skapa, uppdatera och åtgärda buggar i våra [kodningsutmaningar](#coding-challenges).
-- Hjälp oss att åtgärda buggar i freeCodeCamp.orgs [lärplattform](#learning-platform).
-- _(Kommer snart)_ Hjälp oss att översätta freeCodeCamp.org till världens språk.
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-Har du frågor? Gå till [dessa FAQs](/FAQ.md) där vi svarar på några vanliga frågor om bidrag.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## Kodning Utmaningar
+## Curriculum
 
-Alla våra kodningsutmaningar är kurerade av gemenskapen, vilket ger expertkunskaper från volontärer som du.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-Du kan hjälpa till att utöka dem och göra deras formuleringar bättre. Du kan också uppdatera användarberättelser för att förklara begreppet bättre eller ta bort överflödiga och förbättra utmaningstesterna för att göra dem mer exakt testa människors kod.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**Om du är intresserad av att förbättra dessa kodningsutmaningar, här är [hur man arbetar med kodningsutmaningar](how-to-work-on-coding-challenges.md).**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Plattform för lärande
+## Learning Platform
 
-Vår lärplattform körs på en modern JavaScript-stack. Den har olika komponenter, verktyg, och bibliotek, inklusive men inte begränsat till, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, och mer.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-brett,
+Broadly, we use
 
-- Vi har en Node.js-baserad API-server.
-- En uppsättning React-baserade klientprogram.
-- Ett skript som vi använder för att utvärdera våra front-end-projekt.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-Att bidra till detta kräver viss förståelse för API:er, ES6 Syntax, och en hel del nyfikenhet.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-I grund och botten förväntar vi oss grundläggande förtrogenhet med några av de ovannämnda teknikerna, verktygen och biblioteken. Med detta sagt behöver ni inte vara en expert på dem för att bidra.
+If you want to help us improve our codebase...
 
-**Om du vill hjälpa oss att förbättra vår kodbas, kan du antingen använda Gitpod, en gratis online dev-miljö**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Öppna i Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Startar en kodfärdig utvecklingsmiljö för freeCodeCamp i din webbläsare.)
+Or you can...
 
-ELLER
-
-**du kan [ställa in freeCodeCamp lokalt](how-to-setup-freecodecamp-locally.md) på din maskin.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

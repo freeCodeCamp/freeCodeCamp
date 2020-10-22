@@ -1,67 +1,67 @@
-> **Huomautus:** Tämä on **valinnainen** vaihe ja vaaditaan vain, kun työskennellään sähköpostin työnkulun kanssa
+> **Note:** This is an **optional** step and is required only when working with email workflows
 
-## Johdanto
+## Introduction
 
-Jotkut sähköpostin työnkulku kuten päivittäminen käyttäjän sähköpostia, vaatii back-end api-palvelimen lähettää lähtevät sähköpostit. Vaihtoehtona sille, että sähköpostipalvelun tarjoajaa käytetään varsinaisten sähköpostiviestien lähettämiseen, Mailhog on kehittäjän työkalu sähköpostin testaus, joka saalis sähköpostiviestit lähetetään freeCodeCamp instance.
+Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. An alternative to using an email service provider to send actual email messages, Mailhog is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
-## Asennetaan MailHogia
+## Installing MailHog
 
-MailHog voidaan asentaa macOS, Windows ja Linux.
+MailHog can be installed on macOS, Windows and Linux.
 
-- [Johdanto](#introduction)
-- [Asennetaan MailHogia](#installing-mailhog)
-  - [Asennetaan MailHogia macOS:ään](#installing-mailhog-on-macos)
-  - [Asennetaan MailHogia Windowsiin](#installing-mailhog-on-windows)
-  - [Asennetaan MailHogia Linuxiin](#installing-mailhog-on-linux)
-- [Käyttäen MailHogia](#using-mailhog)
-- [Hyödyllisiä Linkkejä](#useful-links)
+- [Introduction](#introduction)
+- [Installing MailHog](#installing-mailhog)
+  - [Installing MailHog on macOS](#installing-mailhog-on-macos)
+  - [Installing MailHog on Windows](#installing-mailhog-on-windows)
+  - [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Using MailHog](#using-mailhog)
+- [Useful Links](#useful-links)
 
-### Asennetaan MailHogia macOS:ään
+### Installing MailHog on macOS
 
-Asenna MailHog macOS:ään [Homebrew](https://brew.sh/):
+Install MailHog on macOS with [Homebrew](https://brew.sh/):
 
 ```bash
 brew install mailhog
-brew palvelut aloittaa mailhog
+brew services start mailhog
 ```
 
-Yllä olevat komennot aloittavat poshogipalvelun taustalla.
+The above commands will start a mailhog service in the background.
 
-Kun asennus on valmis, voit aloittaa [käyttämällä MailHog](#using-mailhog).
+When the installation completes, you can start [using MailHog](#using-mailhog).
 
-### Asennetaan MailHogia Windowsiin
+### Installing MailHog on Windows
 
-Lataa uusin versio MailHog osoitteesta [MailHogin virallinen arkisto](https://github.com/mailhog/MailHog/releases). Etsi ja klikkaa linkkiä Windows version (32 tai 64 bit) ja .exe tiedosto ladataan tietokoneellesi.
+Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
 
-Kun lataus valmistuu, napsauta avataksesi tiedoston. Windows palomuuri ilmoitus voi ilmestyä, pyytää pääsyä MailHog. Standardi Windows komentorivikehote aukeaa, jossa MailHog on käynnissä, kun palomuuri pääsy on myönnetty.
+When the download completes, click to open the file. A Windows firewall notification may appear, requesting access permission for MailHog. A standard Windows command line prompt will open where MailHog will be running once firewall access is granted.
 
-Sulje MailHog sulkemalla komennon kehysikkuna. Aloita MailHog uudelleen, napsauta MailHog suoritettavaa (. xe) tiedosto, joka on ladattu aluksi - se ei ole tarpeen ladata uusi MailHog asennustiedosto.
+Close MailHog by closing the command prompt window. To start MailHog again, click on the MailHog executable (.exe) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
-Aloita [käyttämällä MailHog](#using-mailhog).
+Start [using MailHog](#using-mailhog).
 
-### Asennetaan MailHogia Linuxiin
+### Installing MailHog on Linux
 
-Asenna [Go](https://golang.org).
+First, install [Go](https://golang.org).
 
-Suorita seuraavat komennot asennettaessa GO Debianiin perustuviin järjestelmiin, kuten Ubuntu ja Linux Mint.
+Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
 
 ```bash
 sudo apt-get install golang
 ```
 
-Suorita seuraavat komennot asennettaessa GO RPM- pohjaisiin järjestelmiin, kuten CentOS, Fedora, Red Hat Linux, jne.
+Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
 
 ```bash
 sudo dnf install golang
 ```
 
-Vaihtoehtoisesti suorita seuraavat komennot asennettavaksi GO:ksi.
+Alternatively, run the following commands to install GO.
 
 ```bash
 sudo yum install golang
 ```
 
-Aseta nyt polku Go kanssa seuraavat komennot.
+Now set the path for Go with the following commands.
 
 ```bash
 echo "export GOPATH=$HOME/go" >> ~/.profile
@@ -69,7 +69,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-Lopuksi kirjoita alla olevat komennot asentaaksesi ja suorittaaksesi MailHogin.
+Finally, enter the commands below to install and run MailHog.
 
 ```bash
 go get github.com/mailhog/MailHog
@@ -77,24 +77,24 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-Aloita [käyttämällä MailHog](#using-mailhog).
+Start [using MailHog](#using-mailhog).
 
-## Käyttäen MailHogia
+## Using MailHog
 
-Avaa selaimen uusi välilehti tai ikkuna ja siirry osoitteeseen [http://localhost:8025](http://localhost:8025) avataksesi MailHog postilaatikon, kun MailHog on valmis ja MailHog on käynnissä. Saapuneet-kansio näyttää samanlaiselta kuin alla oleva näyttö.
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running. The inbox will appear similar to the screen shot below.
 
-![MailHog Kuvakaappaus 1](images/mailhog/1.jpg)
+![MailHog Screenshot 1](images/mailhog/1.jpg)
 
-FreeCodeCamp -asennuksen lähettämät sähköpostit näkyvät kuten alla
+Emails sent by your freeCodeCamp installation will appear as below
 
-![MailHog Kuvakaappaus 2](images/mailhog/2.jpg)
+![MailHog Screenshot 2](images/mailhog/2.jpg)
 
-Kaksi välilehteä, joiden avulla voit tarkastella joko tekstiä tai lähdekoodia on käytettävissä, kun avaat tietyn sähköpostiosoitteen. Varmista, että tekstivälilehti on valittu kuten alla.
+Two tabs that allow you to view either plain text or source content will be available when you open a given email. Ensure that the plain text tab is selected as below.
 
-![MailHog Kuvakaappaus 3](images/mailhog/3.jpg)
+![MailHog Screenshot 3](images/mailhog/3.jpg)
 
-Kaikkien sähköpostin linkkien tulisi olla klikattavissa ja ne tulisi ratkaista URL-osoitteeseen.
+All links in the email should be clickable and resolve to their URL.
 
-## Hyödyllisiä Linkkejä
+## Useful Links
 
-- Tutustu [MailHog](https://github.com/mailhog/MailHog) -arkistoon saadaksesi lisätietoja MailHogista. LisÃ¤tietoja on myÃ¶s kÃ¤yttÃ¤vÃ¤t mukautetun MailHog kokoonpanot.
+- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog. Additional information is also available regarding custom MailHog configurations.

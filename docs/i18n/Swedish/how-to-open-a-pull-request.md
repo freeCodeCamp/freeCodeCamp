@@ -1,164 +1,164 @@
-# Hur man öppnar en Pull Request (PR)
+# How to open a Pull Request (PR)
 
-En pull-förfrågan gör att du kan skicka ändringar från din fork på GitHub till freeCodeCamp.orgs huvudförråd. När du är klar med att göra ändringar i koden, eller kodning utmaningar bör du följa dessa riktlinjer för att skicka en PR.
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-## Förbered en bra PR-titel
+## Prepare a good PR title
 
-Vi rekommenderar att du använder [konventionell titel och meddelanden](https://www.conventionalcommits.org/) för incheckningar och pull-begäran. Konventionen har följande format:
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<type>([valfri omfattning]): <description>`
+> `<type>([optional scope(s)]): <description>`
 > 
-> Till exempel:
+> For example:
 > 
-> `fix(learn): tester för gör...while loop utmaning`
+> `fix(learn): tests for the do...while loop challenge`
 
-När du öppnar en Pull Request(PR) kan du använda nedanstående för att bestämma typ, omfattning (valfritt) och beskrivning.
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
 
-**Typ:**
+**Type:**
 
-| Typ      | När du ska välja                                                                        |
-|:-------- |:--------------------------------------------------------------------------------------- |
-| åtgärda  | Ändrad eller uppdaterad/förbättrad funktionalitet, tester, verbiage av en lektion, etc. |
-| Bedrift  | Endast om du lägger till ny funktionalitet, tester, etc.                                |
-| syssla   | Ändringar som inte är relaterade till kod, tester eller verbage av en lektion.          |
-| dokument | Ändringar i `/docs` -katalogen eller de bidragande riktlinjerna, etc.                   |
+| Type  | When to select                                                               |
+|:----- |:---------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                        |
+| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
 
-**Omfattning:**
+**Scope:**
 
-Du kan välja ett område från [denna lista över etiketter](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Beskrivning:**
+**Description:**
 
-Håll det kort (mindre än 30 tecken) och enkelt, du kan lägga till mer information i PR-beskrivningsrutan och kommentarer.
+Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-Några exempel på bra PRs titlar skulle vara:
+Some examples of good PRs titles would be:
 
-- `fix(a11y): förbättrad kontrast i sökfältet`
-- `funktion: lägga till fler tester till html och CSS utmaningar`
-- `fix(api,client): förhindra CORS-fel på formulärinlämning`
-- `docs(i18n): Kinesisk översättning av lokala inställningar`
+- `fix(a11y): improved search bar contrast`
+- `feat: add more tests to html and css challenges`
+- `fix(api,client): prevent CORS errors on form submission`
+- `docs(i18n): Chinese translation of local setup`
 
-## Föreslå en Pull-förfrågan
+## Proposing a Pull Request
 
-1. När redigeringarna har gjorts kommer du att bli ombedd att skapa en pull-förfrågan på din gaffels GitHub-sida.
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Bild - Jämför pull-förfrågan på GitHub](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. Som standard bör alla pull-förfrågningar vara emot freeCodeCamp-huvudrepo, `master` branch.
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-   Se till att din Base Fork är inställd på freeCodeCamp/freeCodeCamp när du höjer en Pull Request.
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![Image - Jämföra gafflar när du gör en pull-förfrågan](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. Skicka in pull-förfrågan från din filial till freeCodeCamps `master` branch.
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
 
-4. I din PR ingår en mer detaljerad sammanfattning av de ändringar du gjort och varför.
+4. In the body of your PR include a more detailed summary of the changes you made and why.
 
-   - Du kommer att presenteras med en pull-request-mall. Detta är en checklista som du borde ha följt innan du öppnar pull-förfrågan.
+   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-   - Fyll i detaljerna som du tycker passar. Denna information kommer att granskas och granskarna kommer att avgöra om din pull-förfrågan godtas.
+   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-   - Om PR är tänkt att ta itu med en befintlig GitHub-fråga då, i slutet av din PR: s beskrivande kropp, använd nyckelordet _Stänger_ med ärendenumret till [stänger automatiskt det problemet om PR accepteras och slås ihop](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > Exempel: `Stänger #123` stänger ärendet 123
+     > Example: `Closes #123` will close issue 123
 
-5. Ange om du har testat på en lokal kopia av webbplatsen eller inte.
+5. Indicate if you have tested on a local copy of the site or not.
 
-   Detta är mycket viktigt när du gör ändringar som inte bara redigerar textinnehåll som dokumentation eller en utmaningsbeskrivning. Exempel på ändringar som behöver lokala tester inkluderar JavaScript, CSS, eller HTML som kan ändra funktionalitet eller layout på en sida.
+   This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-## Feedback på pull-förfrågningar
+## Feedback on pull requests
 
-> Grattis! :tada: på att göra en PR och tack så mycket för att du har tagit dig tid att bidra.
+> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
 
-Våra moderatorer kommer nu att ta en titt och lämna dig feedback. Ha tålamod med medmoderatorerna och respektera deras tid. Alla pull-förfrågningar granskas i sinom tid.
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-Om du behöver hjälp med att diskutera i [bidragsgivarens chattrum](https://gitter.im/FreeCodeCamp/Contributors), hjälper vi dig mer än gärna.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Om du ska bidra med fler pull-förfrågningar, vi rekommenderar att du läser [gör ändringar och synkroniserar](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) riktlinjer för att undvika att behöva ta bort din gaffel.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
-## Konflikter på en pull-förfrågan
+## Conflicts on a pull request
 
-Konflikter kan uppstå eftersom många bidragsgivare arbetar på arkivet, och förändringar kan bryta din PR som väntar på en granskning och sammanfogning.
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-Oftare än inte du kanske inte behöver en rebas, eftersom vi squash alla åtaganden, Men om en rebase begärs här är vad du bör göra.
+More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
 
-### För vanliga buggfixar och funktioner
+### For usual bug fixes and features
 
-När du arbetar med vanliga buggar och funktioner på vår utvecklingsenhet `master`kan du göra en enkel rebase:
+When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
 
-1. Bygg om din lokala kopia:
+1. Rebase your local copy:
 
    ```console
-   git kassan <pr-branch>
+   git checkout <pr-branch>
    git pull --rebase upstream master
    ```
 
-2. Lös eventuella konflikter och lägg till/redigera incheckningar
+2. Resolve any conflicts and add / edit commits
 
    ```console
-   # Antingen
+   # Either
    git add .
-   git commit -m "syssla: lösa konflikter"
+   git commit -m "chore: resolve conflicts"
 
-   # Eller
+   # Or
    git add .
-   git commit --ändra --no-edit
+   git commit --amend --no-edit
    ```
 
-3. Tryck tillbaka dina ändringar till PR
+3. Push back your changes to the PR
 
    ```console
-   git push --force ursprung <pr-branch>
+   git push --force origin <pr-branch>
    ```
 
-### För kommande läroplan och funktioner
+### For upcoming curriculum and features
 
-När du arbetar med funktioner för vår kommande läroplan `nästa *` grenar, har du göra ett körsbärsplock:
+When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
 
-1. Se till att din uppströms kommer i synk med din lokal:
+1. Make sure your upstream comes in sync with your local:
 
    ```console
-   git kassan master
+   git checkout master
    git fetch --all --prune
-   git kassan next-python-projekt
-   git reset --hard upstream/next-python-projekt
+   git checkout next-python-projects
+   git reset --hard upstream/next-python-projects
    ```
 
-2. Ta backup
+2. Take backup
 
-   a. Ta antingen bort din lokala filial efter att ha tagit en säkerhetskopia (om du fortfarande har den lokalt):
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
       ```console
       git checkout <pr-branch-name>
 
-      # exempel:
+      # example:
       # git checkout feat/add-numpy-video-question
 
       git checkout -b <backup-branch-name>
 
-      # exempel:
-      # git checkout -b backup-feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
 
-   b. Eller bara en säkerhetskopia av din pr gren (om du inte har det lokalt):
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
       ```console
-      git kassan -b <backup-branch-name> origin/<pr-branch-name>
+      git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # exempel:
-      # git kassan -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
-4. Börja med en ren skiffer:
+4. Start off with a clean slate:
 
    ```console
-   git kassan -b <pr-branch-name> nästa python-projekt
+   git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Lös eventuella konflikter, och rensa, installera köra tester
+5. Resolve any conflicts, and cleanup, install run tests
 
    ```console
    npm run clean
@@ -166,14 +166,14 @@ När du arbetar med funktioner för vår kommande läroplan `nästa *` grenar, h
    npm ci
    npm run test:curriculum --superblock=<superblock-name>
 
-   # exempel:
+   # example:
 
-   # npm run test:curriculum --superblock=python-for-everyone
+   # npm run test:curriculum --superblock=python-for-everybody
 
    ```
 
-6. Om allt ser bra ut tillbaka till PR
+6. If everything looks good push back to the PR
 
    ```console
-   git push --force ursprung <pr-branch-name>
+   git push --force origin <pr-branch-name>
    ```

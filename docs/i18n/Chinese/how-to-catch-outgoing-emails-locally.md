@@ -1,84 +1,67 @@
-> **注意：** 这是一个 **可选的** 步骤，并且仅在处理电子邮件工作流时需要
+> **Note:** This is an **optional** step and is required only when working with email workflows
 
-## 一. 导言
+## Introduction
 
-一些电子邮件工作流，如更新用户的电子邮件，需要后端api-server发送发送电子邮件。 一个替代使用电子邮件服务提供商发送实际邮件信息的替代办法 Mailhog 是电子邮件测试的开发者工具，它将捕获您的FreeCodeCamp实例发送的邮件。
+Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. An alternative to using an email service provider to send actual email messages, Mailhog is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
-## 正在安装 MailHog
+## Installing MailHog
 
-MailHog可以在 macOS, Windows 和 Linux 上安装。
+MailHog can be installed on macOS, Windows and Linux.
 
-- [一. 导言](#introduction)
-- [正在安装 MailHog](#installing-mailhog)
-  - [在 macOS 上安装 MailHog。](#installing-mailhog-on-macos)
-  - [在 Windows 上安装 MailHog](#installing-mailhog-on-windows)
-  - [在 Linux 上安装 MailHog。](#installing-mailhog-on-linux)
-- [使用 MailHog](#using-mailhog)
-- [有用的链接](#useful-links)
+- [Introduction](#introduction)
+- [Installing MailHog](#installing-mailhog)
+  - [Installing MailHog on macOS](#installing-mailhog-on-macos)
+  - [Installing MailHog on Windows](#installing-mailhog-on-windows)
+  - [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Using MailHog](#using-mailhog)
+- [Useful Links](#useful-links)
 
-### 在 macOS 上安装 MailHog。
+### Installing MailHog on macOS
 
-使用 [自制程序](https://brew.sh/) 在 macOS 上安装 MailHog：
+Install MailHog on macOS with [Homebrew](https://brew.sh/):
 
 ```bash
-酿造安装mailhog
-酿造服务开始邮件hog。
+brew install mailhog
+brew services start mailhog
 ```
 
-上述命令将在后台启动邮件钩子服务。
+The above commands will start a mailhog service in the background.
 
-安装完成后，您可以使用 MailHog</a> 启动
+When the installation completes, you can start [using MailHog](#using-mailhog).
 
-。</p> 
+### Installing MailHog on Windows
 
+Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
 
+When the download completes, click to open the file. A Windows firewall notification may appear, requesting access permission for MailHog. A standard Windows command line prompt will open where MailHog will be running once firewall access is granted.
 
-### 在 Windows 上安装 MailHog
+Close MailHog by closing the command prompt window. To start MailHog again, click on the MailHog executable (.exe) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
-从 [MailHog的官方存储库](https://github.com/mailhog/MailHog/releases) 下载最新版本的 MailHog。 定位并点击您的 Windows 版本 (32 或64 位) 的链接，一个 .exe 文件将下载到您的计算机。
+Start [using MailHog](#using-mailhog).
 
-下载完成后，点击打开文件。 可能出现了 Windows 防火墙通知，请求访问 MailHog的权限。 标准的 Windows 命令行提示将打开，一旦获得防火墙访问许可，MailHog将在那里运行。
+### Installing MailHog on Linux
 
-关闭命令提示窗口以关闭 MailHog。 若要再次启动 MailHog，请点击MailHog可执行文件 (。)。 (xe) 最初下载的文件 - 无需下载新的 MailHog安装文件。
+First, install [Go](https://golang.org).
 
-使用 MailHog</a> 启动 。</p> 
-
-
-
-### 在 Linux 上安装 MailHog。
-
-首先，安装 [升级](https://golang.org)。
-
-运行以下命令，在基于 Debian的系统上安装 GO，如Ubuntu 和 Linux Mint 。
-
-
+Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
 
 ```bash
 sudo apt-get install golang
 ```
 
-
-运行以下命令，在基于 RPM 的系统上安装GO，如CentOS、Fedora、Red Hat Linux 等。
-
-
+Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
 
 ```bash
 sudo dnf install golang
 ```
 
-
-或者，运行下面的命令来安装GO。
-
-
+Alternatively, run the following commands to install GO.
 
 ```bash
 sudo yum install golang
 ```
 
-
-现在设置下面命令的路径。
-
-
+Now set the path for Go with the following commands.
 
 ```bash
 echo "export GOPATH=$HOME/go" >> ~/.profile
@@ -86,10 +69,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-
-最后，输入下面的命令来安装和运行 MailHog。
-
-
+Finally, enter the commands below to install and run MailHog.
 
 ```bash
 go get github.com/mailhog/MailHog
@@ -97,29 +77,24 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
+Start [using MailHog](#using-mailhog).
 
-使用 MailHog</a> 启动 。</p> 
+## Using MailHog
 
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running. The inbox will appear similar to the screen shot below.
 
+![MailHog Screenshot 1](images/mailhog/1.jpg)
 
-## 使用 MailHog
+Emails sent by your freeCodeCamp installation will appear as below
 
-打开一个新的浏览器标签页或窗口，并导航到 [http://localhost:8025](http://localhost:8025) 来打开您的 MailHog收件箱，当MailHog安装完成并且正在运行 MailHog。 收件箱将显示类似于下面的屏幕截图。
+![MailHog Screenshot 2](images/mailhog/2.jpg)
 
-![MailHog屏幕截图 1](images/mailhog/1.jpg)
+Two tabs that allow you to view either plain text or source content will be available when you open a given email. Ensure that the plain text tab is selected as below.
 
-您的免费CodeCamp安装发送的电子邮件将显示在下方：
+![MailHog Screenshot 3](images/mailhog/3.jpg)
 
-![MailHog屏幕截图 2](images/mailhog/2.jpg)
+All links in the email should be clickable and resolve to their URL.
 
-当您打开指定的电子邮件时，允许您查看纯文本或源内容的两个选项卡。 确保下面选择纯文本标签。
+## Useful Links
 
-![MailHog屏幕截图 3](images/mailhog/3.jpg)
-
-电子邮件中的所有链接都应该可以点击并解决到他们的URL。
-
-
-
-## 有用的链接
-
-- 查看 [MailHog](https://github.com/mailhog/MailHog) 存储库以获取更多与 MailHog相关的信息。 关于自定义MailHog配置的额外信息也可用。
+- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog. Additional information is also available regarding custom MailHog configurations.

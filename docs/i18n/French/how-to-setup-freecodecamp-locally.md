@@ -1,326 +1,326 @@
-Suivez ces directives pour configurer freeCodeCamp localement sur votre système. Ceci est fortement recommandé si vous voulez contribuer régulièrement.
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-Pour certains des flux de travail de contributions, vous devez faire fonctionner freeCodeCamp localement. Par exemple, la prévisualisation des défis de codage ou le débogage et la correction des bogues dans le codebase.
+Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
-> [!TIP] Si vous n'êtes pas intéressé par la configuration locale de freeCodeCamp envisagez d'utiliser Gitpod, un environnement de développement gratuit en ligne.
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
 > 
-> [![Ouvrir dans Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 > 
-> (Démarre un environnement de développement prêt à être codé pour freeCodeCamp dans votre navigateur.)
+> (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
-## Préparez votre machine locale
+### How to prepare your local machine
 
-Commencez par installer le logiciel requis pour votre système d'exploitation.
+Start by installing the prerequisite software for your operating system.
 
-Nous supportons principalement le développement sur les systèmes **\*nix**. Notre personnel et nos contributeurs communautaires travaillent régulièrement avec la base de code en utilisant des outils installés sur Ubuntu et macOS.
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
-Nous prenons également en charge Windows 10 via WSL2, que vous pouvez préparer en [lisant ce guide](/how-to-setup-wsl).
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](/how-to-setup-wsl).
 
-Certains membres de la communauté développent également sous Windows 10 nativement avec Git for Windows (Git Bash), et d'autres outils installés sous Windows. Nous n'avons pas de support officiel pour une telle configuration pour le moment, nous vous recommandons d'utiliser WSL2 à la place.
+Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-**Pré-requis :**
+**Prerequisites:**
 
-| Pré-requis                                                                                         | Version | Notes                                                                                                                                                                                                       |
-| -------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                       | `12.x`  | [Planification LTS](https://github.com/nodejs/Release#release-schedule)                                                                                                                                     |
-| npm (livré avec un nœud)                                                                           | `6.x`   | N'a pas de versions LTS, nous utilisons la version fournie avec Node LTS                                                                                                                                    |
-| [Serveur Communautaire MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Notes de publication](https://docs.mongodb.com/manual/release-notes/), Note : Nous sommes actuellement sur `3.6`, une mise à jour [est prévue](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
+| Prerequisite                                                                                  | Version | Notes                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                    |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS                                                                                                                  |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
 
-> [!DANGER] Si vous avez une version différente, veuillez installer la version recommandée. Nous ne pouvons supporter les problèmes d'installation que pour les versions recommandées. Voir [dépannage](#troubleshooting) pour plus de détails.
+> [!DANGER] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
-Si Node.js est déjà installé sur votre machine, exécutez les commandes suivantes pour valider les versions:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
-noeud -v
+node -v
 npm -v
 ```
 
-> [!TIP] Nous vous recommandons fortement de mettre à jour vers les dernières versions stables des logiciels énumérés ci-dessus, également connues sous le nom de versions de support à long terme (LTS).
+> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-Une fois les conditions préalables installées, vous devez préparer votre environnement de développement. Ceci est courant pour de nombreux flux de développement, et vous n'aurez besoin de le faire qu'une seule fois.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-**Suivez ces étapes pour préparer votre environnement de développement :**
+**Follow these steps to get your development environment ready:**
 
-1. Installez [Git](https://git-scm.com/) ou votre client Git favori, si vous ne l'avez pas déjà fait. Mise à jour vers la dernière version ; la version qui est livrée avec votre OS peut être obsolète.
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (Optionnel mais recommandé) [Configurer une clé SSH](https://help.github.com/articles/generating-an-ssh-key/) pour GitHub.
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. Installez un éditeur de code de votre choix.
+3. Install a code editor of your choice.
 
-   Nous vous recommandons fortement d'utiliser [Visual Studio Code](https://code.visualstudio.com/) ou [Atom](https://atom.io/). Ce sont de grands éditeurs de code gratuit et open source.
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. Configurez le linting pour votre éditeur de code.
+4. Set up linting for your code editor.
 
-   Vous devriez avoir [ESLint en cours d'exécution dans votre éditeur](http://eslint.org/docs/user-guide/integrations.html), et il mettra en évidence tout ce qui n'est pas conforme au [Guide de style JavaScript de freeCodeCamp](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP] Veuillez ne pas ignorer les erreurs de linting. Ils sont destinés à **vous aider** et à assurer une base de code simple et propre.
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## Fork le dépôt sur GitHub
+## Fork the repository on GitHub
 
-[Forking](https://help.github.com/articles/about-forks/) est une étape où vous obtenez votre propre copie du dépôt principal de freeCodeCamp (a.k.a _repo_) sur GitHub.
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-C'est essentiel, car cela vous permet de travailler sur votre propre copie de freeCodeCamp sur GitHub, ou pour télécharger (cloner) votre référentiel pour travailler localement. Plus tard, vous serez en mesure de demander que des modifications soient introduites dans le dépôt principal à partir de votre fork via une pull request (PR).
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-> [!TIP] Le dépôt principal sur `https://github.com/freeCodeCamp/freeCodeCamp` est souvent appelé le dépôt `amont`.
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
 > 
-> Votre fork sur `https://github.com/YOUR_USER_NAME/freeCodeCamp` est souvent appelé le dépôt `origine`.
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
 
-**Suivez ces étapes pour fork le dépôt `https://github.com/freeCodeCamp/freeCodeCamp`:**
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
 
-1. Allez dans le dépôt freeCodeCamp sur GitHub : <https://github.com/freeCodeCamp/freeCodeCamp>
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 
-2. Cliquez sur le bouton "Fork" dans le coin supérieur droit de l'interface ([Plus de détails ici](https://help.github.com/articles/fork-a-repo/))
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 
-3. Une fois que le dépôt a été créé, vous serez redirigé vers votre copie du dépôt freeCodeCamp à `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 <details>
    <summary>
-      Comment fork freeCodeCamp sur GitHub (capture d'écran)
+      How to fork freeCodeCamp on GitHub (screenshot)
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Comment fork freeCodeCamp sur GitHub" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
-## Cloner votre fork depuis GitHub
+## Clone your fork from GitHub
 
-[Cloner](https://help.github.com/articles/cloning-a-repository/) est l'endroit où vous **téléchargez** une copie d'un dépôt à partir d'un emplacement `distant` qui est soit la propriété de vous soit de quelqu'un d'autre. Dans votre cas, cet emplacement distant est votre `fork` du dépôt de freeCodeCamp qui devrait être disponible sur `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
 
-Exécutez ces commandes sur votre machine locale:
+Run these commands on your local machine:
 
-1. Ouvrir un Terminal / Invite de Commandes / Shell dans le répertoire de vos projets
+1. Open a Terminal / Command Prompt / Shell in your projects directory
 
    _i.e.: `/yourprojectsdirectory/`_
 
-2. Clonez votre fork de freeCodeCamp, remplaçant `VOTRE_USER_NOM` par votre nom d'utilisateur GitHub
+2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
    ```console
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-Ceci va télécharger l'intégralité du dépôt freeCodeCamp dans votre répertoire de projets.
+This will download the entire freeCodeCamp repository to your projects directory.
 
-Remarque : `--depth=1` crée un clone peu profond de votre fork, avec seulement l'historique/livraison la plus récente.
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Configurer la synchronisation à partir du parent
+## Set up syncing from parent
 
-Maintenant que vous avez téléchargé une copie de votre fork, vous devrez configurer une télécommande `amont` dans le dépôt parent.
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[Comme mentionné précédemment](#fork-the-repository-on-github), le dépôt principal est référé `au dépôt amont`. Votre fork est le dépôt `origine`.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
 
-Vous avez besoin d'une référence de votre clone local vers le dépôt `amont` en plus du dépôt `origine`. C'est pour que vous puissiez synchroniser les changements depuis le référentiel principal sans avoir besoin de forking et de clonage à plusieurs reprises.
+You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Changer de répertoire vers le nouveau répertoire de freeCodeCamp :
+1. Change directory to the new freeCodeCamp directory:
 
    ```console
    cd freeCodeCamp
    ```
 
-2. Ajouter une référence distante au dépôt principal de freeCodeCamp :
+2. Add a remote reference to the main freeCodeCamp repository:
 
    ```console
-   git remote add amont https://github.com/freeCodeCamp/freeCodeCamp.git
+   git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-3. Assurez-vous que la configuration semble correcte :
+3. Ensure the configuration looks correct:
 
    ```console
    git remote -v
    ```
 
-   La sortie devrait ressembler à quelque chose comme ci-dessous:
+   The output should look something like below:
 
    ```console
-   origine https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-   origine https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-   amont https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-   amont https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Exécution locale de freeCodeCamp
+## Running freeCodeCamp locally
 
-Maintenant que vous avez une copie locale de freeCodeCamp, vous pouvez suivre ces instructions pour l'exécuter localement. Cela vous permettra de :
+Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
-- Aperçu des modifications des pages telles qu'elles apparaîtraient sur la plateforme d'apprentissage.
-- Travailler sur les problèmes et améliorations liés à l'interface utilisateur.
-- Déboguer et corriger les problèmes avec les serveurs d'application et les applications clients.
+- Preview edits to pages as they would appear on the learning platform.
+- Work on UI related issues and enhancements.
+- Debug and fix issues with the application servers and client apps.
 
-Si vous rencontrez des problèmes, effectuez d'abord une recherche sur le Web pour trouver votre problème et vérifiez s'il a déjà été répondu. Si vous ne trouvez pas de solution, veuillez rechercher une solution dans notre page des [problèmes GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues) et signaler le problème s'il n'a pas encore été signalé.
+If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-Et comme toujours, n'hésitez pas à vous rendre sur notre salon de discussion [Contributeurs sur Gitter](https://gitter.im/FreeCodeCamp/Contributors) ou [notre serveur Discord](https://discord.gg/pFspAhS), pour des requêtes rapides.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Vous pouvez ignorer l'exécution de freeCodeCamp localement si vous éditez simplement des fichiers. Par exemple, effectuer un `rebase`, ou résoudre `fusion` conflits.
+> [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
 > 
-> Vous pouvez toujours revenir à cette partie des instructions plus tard. Vous devriez **seulement** sauter cette étape si vous n'avez pas besoin d'exécuter les applications sur votre machine.
+> You can always return to this part of the instructions later. You should **only** skip this step if you do not need to run the apps on your machine.
 > 
-> [Passez à apporter des modifications](#making-changes-locally).
+> [Skip to making changes](#making-changes-locally).
 
-### Configuration des dépendances
+### Configuring dependencies
 
-#### Étape 1 : Configurez le fichier de variable d'environnement
+#### Step 1: Set up the environment variable file
 
-Les clés API par défaut et les variables d'environnement sont stockées dans le fichier `sample.env`. Ce fichier doit être copié dans un nouveau fichier nommé `.env` qui est accédé dynamiquement à l'étape d'installation.
+The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
 ```console
-# Créez une copie du fichier "sample.env" et nommez-le ".env".
-# Remplissez-le avec les clés API nécessaires et les secrets :
+# Create a copy of the "sample.env" and name it ".env".
+# Populate it with the necessary API keys and secrets:
 
 # macOS / Linux
-cp échantillon. nv .env
+cp sample.env .env
 
 # Windows
-copier sample.env .env .env
+copy sample.env .env
 ```
 
-Les clés du fichier `.env` sont _pas_ nécessaires pour exécuter l'application localement. Vous pouvez laisser les valeurs par défaut copiées depuis `sample.env` tel quel.
+The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
-> [!TIP] Gardez à l'esprit si vous voulez utiliser des services comme Auth0 ou Algolia, vous devrez acquérir vos propres clés API pour ces services et modifier les entrées en conséquence dans le `. fichier nv`.
+> [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Étape 2 : Installer les dépendances
+#### Step 2: Install dependencies
 
-Cette étape va installer les dépendances nécessaires à l'exécution de l'application :
+This step will install the dependencies required for the application to run:
 
 ```console
 npm ci
 ```
 
-#### Étape 3: Démarrer MongoDB et semer la base de données
+#### Step 3: Start MongoDB and seed the database
 
-Avant de pouvoir exécuter l'application localement, vous devrez démarrer le service MongoDB.
+Before you can run the application locally, you will need to start the MongoDB service.
 
-> [!NOTE] Sauf si vous avez MongoDB en cours d'exécution dans une configuration différente de celle par défaut, l'URL stockée comme la valeur `MONGOHQ_URL` dans le `. le fichier nv` devrait fonctionner correctement. Si vous utilisez une configuration personnalisée, modifiez cette valeur si nécessaire.
+> [!NOTE] Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
 
-Lancer le serveur MongoDB dans un terminal séparé :
+Start the MongoDB server in a separate terminal:
 
-- Sur macOS & Ubuntu:
+- On macOS & Ubuntu:
 
   ```console
   mongod
   ```
 
-- Sous Windows, vous devez spécifier le chemin complet vers le binaire `mondieu`
+- On Windows, you must specify the full path to the `mongod` binary
 
   ```console
   "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
   ```
 
-  Assurez-vous de remplacer `3.6` par la version que vous avez installée
+  Make sure to replace `3.6` with the version you have installed
 
-> [!TIP] Vous pouvez éviter d'avoir à démarrer MongoDB à chaque fois en l'installant en tant que service d'arrière-plan. Vous pouvez [en apprendre plus à ce sujet dans leur documentation pour votre OS](https://docs.mongodb.com/manual/administration/install-community/)
+> [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-Ensuite, nous allons semer la base de données. Dans cette étape, nous exécutons la commande ci-dessous qui remplit le serveur MongoDB avec des jeux de données initiaux qui sont requis par les services. Il s'agit notamment de quelques schémas.
-
-```console
-graine npm run
-```
-
-#### Étape 4 : Démarrez l'application client et le serveur API de FreeCodeCamp
-
-Vous pouvez maintenant démarrer le serveur API et les applications client.
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```console
-Développement de npm run
+npm run seed
 ```
 
-Cette commande unique lancera tous les services, y compris le serveur API et les applications client sur lesquelles vous pouvez travailler.
+#### Step 4: Start the freeCodeCamp client application and API server
 
-> [!NOTE] Une fois prêt, ouvrez un navigateur web et **visitez <http://localhost:8000>**. Si l'application se charge, félicitations, vous êtes prêt ! Vous avez maintenant une copie de la totalité de la plate-forme d'apprentissage de FreeCodeCamp fonctionnant sur votre machine locale.
+You can now start up the API server and the client applications.
 
-> [!TIP] Le serveur API sert les API à `http://localhost:3000`. L'application Gatsby sert l'application client à `http://localhost:8000`
+```console
+npm run develop
+```
 
-> Si vous visitez <http://localhost:3000/explorer> vous devriez voir les API disponibles.
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-## Se connecter avec un utilisateur local
+> [!NOTE] Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-Votre configuration locale remplit automatiquement un utilisateur local dans la base de données. En cliquant sur le bouton `Se connecter` vous authentifiera automatiquement dans l'application locale.
+> [!TIP] The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
-Cependant, accéder à la page du portfolio de l'utilisateur est un peu délicat. En cours de développement, Gatsby prend en charge les pages côté client et vous obtiendrez donc une page `404` pour le portefeuille utilisateur lorsque vous travaillez localement.
+> If you visit <http://localhost:3000/explorer> you should see the available APIs.
 
-Cliquez simplement sur le bouton **"Aperçu de la page personnalisée 404 page"** vous dirigera vers la bonne page.
+## Sign in with a local user
+
+Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
+
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+
+Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
    <summary>
-      Comment se connecter lorsque vous travaillez localement (capture d'écran)
+      How to sign in when working locally (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Comment se connecter lorsque vous travaillez localement" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
 </details>
 
-## Effectuer des modifications localement
+## Making changes locally
 
-Vous pouvez maintenant apporter des modifications aux fichiers et valider vos modifications à votre clone local de votre fork.
+You can now make changes to files and commit your changes to your local clone of your fork.
 
-Suivez ces étapes:
+Follow these steps:
 
-1. Validez que vous êtes sur la branche `master`:
+1. Validate that you are on the `master` branch:
 
    ```console
    git status
    ```
 
-   Vous devriez obtenir une sortie comme ceci :
+   You should get an output like this:
 
    ```console
-   Sur le maître de la branche
-   Votre branche est à jour avec 'origin/master'.
+   On branch master
+   Your branch is up-to-date with 'origin/master'.
 
-   rien à valider, le dossier de travail est nettoyé
+   nothing to commit, working directory clean
    ```
 
-   Si vous n'êtes pas sur master ou que votre répertoire de travail n'est pas propre, résolvez tous les fichiers/commits en suspens et vérifiez `master`:
+   If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
 
    ```console
-   Git checkout master
+   git checkout master
    ```
 
-2. Synchronisez les derniers changements depuis la branche principale `master` de freeCodeCamp vers votre branche locale principale :
+2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
 
-   > [!AVERTISSEMENT] Si vous avez une demande de pull en suspens que vous avez faite à partir de la branche `master` de votre fork, vous les perdrez à la fin de cette étape.
+   > [!WARNING] If you have any outstanding pull request that you made from the `master` branch of your fork, you will lose them at the end of this step.
    > 
-   > Vous devez vous assurer que votre pull request est fusionné par un modérateur avant d'effectuer cette étape. Pour éviter ce scénario, vous devriez **toujours** travailler sur une branche autre que le `maître`.
+   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `master`.
 
-   Cette étape **synchronisera les derniers changements** depuis le dépôt principal de freeCodeCamp. Il est important que vous refondiez votre branche au dessus de la dernière `amont / maître` aussi souvent que possible pour éviter les conflits plus tard.
+   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
 
-   Mettez à jour votre copie locale du dépôt amont de freeCodeCamp :
+   Update your local copy of the freeCodeCamp upstream repository:
 
    ```console
-   git récupère en amont
+   git fetch upstream
    ```
 
-   Réinitialisation dure de votre branche principale avec le maître de freeCodeCamp :
+   Hard reset your master branch with the freeCodeCamp master:
 
    ```console
    git reset --hard upstream/master
    ```
 
-   Poussez votre branche principale vers votre origine pour avoir un historique propre sur votre fork sur GitHub :
+   Push your master branch to your origin to have a clean history on your fork on GitHub:
 
    ```console
    git push origin master --force
    ```
 
-   Vous pouvez valider votre maître actuel correspond à l'amont / maître en effectuant un diff :
+   You can validate your current master matches the upstream/master by performing a diff:
 
    ```console
-   Git diff amont / maître
+   git diff upstream/master
    ```
 
-   La sortie résultante doit être vide.
+   The resulting output should be empty.
 
-3. Créer une nouvelle branche:
+3. Create a fresh new branch:
 
-   Travailler sur une branche distincte pour chaque problème vous aide à garder votre copie de travail locale propre. Vous ne devriez jamais travailler sur le `maître`. Cela permettra de salir votre copie de freeCodeCamp et vous devrez peut-être recommencer avec un nouveau clone ou une nouvelle fourchette.
+   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
-   Vérifiez que vous êtes sur `master` comme expliqué précédemment, et la branche à partir de là :
+   Check that you are on `master` as explained previously, and branch off from there:
 
    ```console
-   git checkout -b fixe/update-guide-for-xyz
+   git checkout -b fix/update-guide-for-xyz
    ```
 
-   Le nom de votre branche doit commencer par un `fix/`, `feat/`, `docs/`, etc. Évitez d'utiliser les numéros de fiches dans les branches. Gardez-les courtes, significatives et uniques.
+   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
-   Quelques exemples de bons noms de branches sont :
+   Some examples of good branch names are:
 
    ```md
    fix/update-challenges-for-react
@@ -330,156 +330,156 @@ Suivez ces étapes:
    translate/add-spanish-basic-html
    ```
 
-4. Modifiez les pages et travaillez sur le code dans votre éditeur de texte favori.
+4. Edit pages and work on code in your favorite text editor.
 
-5. Une fois que vous êtes satisfait des modifications, vous devriez éventuellement exécuter freeCodeCamp localement pour prévisualiser les modifications.
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Assurez-vous de corriger toutes les erreurs et vérifiez le formatage de vos modifications.
+6. Make sure you fix any errors and check the formatting of your changes.
 
-7. Vérifiez et confirmez les fichiers que vous mettez à jour :
+7. Check and confirm the files you are updating:
 
    ```console
    git status
    ```
 
-   Ceci devrait afficher une liste de `fichiers non staged` que vous avez modifiés.
+   This should show a list of `unstaged` files that you have edited.
 
    ```console
-   Sur le feat/documentation de la branche
-   Votre branche est à jour avec 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Changements non staged pour commit:
-   (utilisez "git add/rm <file>... pour mettre à jour ce qui sera livré)
-   (utilisez "git checkout -- <file>. ." pour ignorer les changements dans le répertoire de travail)
+   Changes not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
 
-       modifié : CONTRIBUTING. d
-       modifié : docs/README.md
-       modifié : docs/how-to-setup-freecodecamp-locally. d
-       modifié: docs/how-to-work-on-guide-articles.md
-...
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
+   ...
    ```
 
-8. Étapez les modifications et validez:
+8. Stage the changes and make a commit:
 
-   Dans cette étape, vous ne devriez marquer que les fichiers que vous avez modifiés ou ajoutés vous-même. Vous pouvez effectuer une réinitialisation et résoudre les fichiers que vous n'aviez pas l'intention de modifier si nécessaire.
+   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
    ```console
    git add path/to/my/changed/file.ext
    ```
 
-   Ou vous pouvez ajouter tous les fichiers `non staged` à la zone de staging :
+   Or you can add all the `unstaged` files to the staging area:
 
    ```console
    git add .
    ```
 
-   Seuls les fichiers qui ont été déplacés dans la zone de pré-production seront ajoutés lorsque vous effectuerez une livraison.
+   Only the files that were moved to the staging area will be added when you make a commit.
 
    ```console
    git status
    ```
 
-   Sortie :
+   Output:
 
    ```console
-   Sur le feat/documentation de la branche
-   Votre branche est à jour avec 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Changements à valider :
-   (utiliser "git reset HEAD <file>..." pour unstage)
+   Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
 
-       modifié : CONTRIBUTING.md
-       modifié : docs/README.md
-       modifié : docs/how-to-setup-freecodecamp-locally.md
-       modifié : docs/how-to-work-on-guide-articles.md
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
    ```
 
-   Maintenant, vous pouvez valider vos changements avec un message court comme ceci:
+   Now, you can commit your changes with a short message like so:
 
    ```console
-   git commit -m "fix: mon message de commit court"
+   git commit -m "fix: my short commit message"
    ```
 
-   Quelques exemples:
+   Some examples:
 
    ```md
-   Correction : mise à jour de l'article de guide pour Java - don pour la boucle
-   : ajout d'un article de guide pour les compétences alexa
+   fix: update guide article for Java - for loop
+   feat: add guide article for alexa skills
    ```
 
-   Optionnel:
+   Optional:
 
-   Nous vous recommandons vivement de faire un message d'engagement conventionnel. C'est une bonne pratique que vous verrez sur certains des dépôts populaires Open Source. En tant que développeur, cela vous encourage à suivre les pratiques standard.
+   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
 
-   Quelques exemples de messages de commit conventionnels sont :
+   Some examples of conventional commit messages are:
 
    ```md
-   Correction : mise à jour de l'article du guide HTML
-   : mise à jour des scripts de construction pour Travis-CI
-   feat: ajout d'un article pour le hachage JavaScript
-   docs : mise à jour des lignes directrices de contribution
+   fix: update HTML guide article
+   fix: update build scripts for Travis-CI
+   feat: add article for JavaScript hoisting
+   docs: update contributing guidelines
    ```
 
-   Conservez ces caractères courts, pas plus de 50 caractères. Vous pouvez toujours ajouter des informations supplémentaires dans la description du message de livraison.
+   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-   Cela ne prend pas de temps supplémentaire qu'un message non conventionnel comme 'fichier de mise à jour' ou 'ajouter index.md'
+   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-   Vous pouvez en savoir plus sur pourquoi vous devriez utiliser des commits conventionnels [ici](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. Si vous vous rendez compte que vous devez éditer un fichier ou mettre à jour le message de commit après avoir fait une livraison, vous pouvez le faire après avoir édité les fichiers avec:
+9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
    ```console
-   Git commit --amender
+   git commit --amend
    ```
 
-   Cela ouvrira un éditeur de texte par défaut comme `nano` ou `vi` où vous pourrez modifier le titre du message de commit et ajouter/modifier la description.
+   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
-10. Ensuite, vous pouvez envoyer vos modifications à votre fork:
+10. Next, you can push your changes to your fork:
 
     ```console
-    Git pousser la branche/le nom de l'origine ici
+    git push origin branch/name-here
     ```
 
-## Proposer une Pull Request (PR)
+## Proposing a Pull Request (PR)
 
-Après avoir validé vos modifications, vérifiez ici : [comment ouvrir une Pull Request](how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## Référence des commandes rapides
+## Quick commands reference
 
-Une référence rapide aux commandes dont vous aurez besoin lorsque vous travaillerez localement.
+A quick reference to the commands that you will need when working locally.
 
-| commande                                                            | Libellé                                                                                            |
-| ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `npm ci`                                                            | Installe / réinstalle toutes les dépendances et amorce les différents services.                    |
-| `graine npm run`                                                    | Analyse tous les fichiers markdown du challenge et les insère dans MongoDB.                        |
-| `Développement de npm run`                                          | Démarre le serveur API et les applications client de freeCodeCamp.                                 |
-| `Test npm`                                                          | Exécutez tous les tests JS du système, y compris le client, le serveur, lint et les tests de défi. |
-| `npm exécuter test:client`                                          | Exécutez la suite de tests client.                                                                 |
-| `npm exécuter test:curriculum`                                      | Exécutez la suite de tests du programme.                                                           |
-| `npm exécuter test:curriculum --block='HTML de base et HTML5'`      | Teste un bloc spécifique.                                                                          |
-| `npm exécuter test:curriculum --superblock='responsive-web-design'` | Teste un SuperBlock spécifique.                                                                    |
-| `npm run testest-curriculum-full-output`                            | Exécuter la suite de test du curriculum vitae sans se détourner après la première erreur           |
-| `npm exécuter test:server`                                          | Exécutez la suite de tests du serveur.                                                             |
-| `npm run e2e`                                                       | Exécutez la fin de Cypress pour terminer les tests.                                                |
-| `npm run clean`                                                     | Désinstalle toutes les dépendances et nettoie les caches.                                          |
+| command                                                        | description                                                                         |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
+| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
+| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
-## Dépannage
+## Troubleshooting
 
-### Problèmes avec l'installation des conditions préalables recommandées
+### Issues with installing the recommended prerequisites
 
-Nous développons régulièrement sur les systèmes d'exploitation les plus récents ou les plus populaires comme macOS 10.15 ou supérieurs, Ubuntu 18.04 ou plus récent et Windows 10 (avec WSL2).
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later and Windows 10 (with WSL2).
 
-Il est recommandé d'étudier votre problème spécifique sur des ressources telles que Google, Stack Overflow et Stack Exchange. Il y a de bonnes chances que quelqu'un ait été confronté au même problème et il y a déjà une réponse à votre question spécifique.
+It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-Si vous êtes sur un système d'exploitation différent et/ou que vous rencontrez toujours des problèmes, consultez [obtenir de l'aide](#getting-help).
+If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
-> [!ATTENTION]
+> [!WARNING]
 > 
-> Veuillez éviter de créer des tickets GitHub pour les problèmes préalables. Ils sont hors du champ d'application de ce projet.
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### Problèmes avec l'interface utilisateur, les polices, les erreurs de construction, etc.
+### Issues with the UI, Fonts, build errors etc.
 
-Si vous rencontrez des problèmes avec l'interface utilisateur, les polices ou les erreurs de compilation, un nettoyage peut être utile :
+If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
 ```console
 npm run clean
@@ -488,17 +488,17 @@ npm run seed
 npm run develop
 ```
 
-OU
+OR
 
-Utiliser le raccourci
+Use the shortcut
 
 ```
-npm run cleanan-and-develop
+npm run clean-and-develop
 ```
 
-Si vous continuez à rencontrer des problèmes avec la compilation, le nettoyage de l'espace de travail est recommandé.
+If you continue to face issues with the build, cleaning up the workspace is recommend.
 
-Utilisez `git clean` en mode interatif:
+Use `git clean` in interative mode:
 
 ```
 git clean -ifdX
@@ -506,41 +506,41 @@ git clean -ifdX
 
 <details>
    <summary>
-      Comment nettoyer les fichiers non suivis git (capture d'écran)
+      How to clean git untracked files (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Comment nettoyer les fichiers git non suivis" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
-### Problèmes avec API, Login, Soumissions de défi, etc.
+### Issues with API, Login, Challenge Submissions, etc.
 
-Si vous ne pouvez pas vous connecter, et à la place vous voyez une bannière avec un message d'erreur qu'il sera signalé à freeCodeCamp, veuillez vérifier que votre port local `3000` n'est pas utilisé par un autre programme.
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-**Sous Linux / macOS / WSL sous Windows - Depuis le Terminal :**
+**On Linux / macOS / WSL on Windows - From Terminal:**
 
 ```console
 netstat -ab | grep "3000"
 
-tcp4 0 0 0.0.0.0:3000 DESKTOP LISTEN
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**Sous Windows - À partir de PowerShell élevé :**
+**On Windows - From Elevated PowerShell:**
 
 ```powershell
-netstat -ab | Chaîne de sélection "3000"
+netstat -ab | Select-String "3000"
 
-TCP 0.0.0.0:3000 DESKTOP LISTENING
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
-### Problèmes d'installation des dépendances
+### Issues installing dependencies
 
-Si vous obtenez des erreurs lors de l'installation des dépendances, assurez-vous que vous n'êtes pas dans un réseau restreint ou que vos paramètres de pare-feu ne vous empêchent pas d'accéder aux ressources.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-La première configuration peut prendre un certain temps selon la bande passante de votre réseau. Soyez patient, et si vous êtes toujours coincés, nous vous recommandons d'utiliser GitPod au lieu d'une installation hors ligne.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommed using GitPod instead of an offline setup.
 
-## Obtenir de l'aide
+## Getting Help
 
-Si vous êtes coincé et avez besoin d'aide, faites-le nous savoir en demandant dans la catégorie ['Contributeurs' sur notre forum](https://forum.freecodecamp.org/c/contributors) ou dans la salle de discussion [Contributeurs](https://gitter.im/FreeCodeCamp/Contributors) sur Gitter.
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-Il peut y avoir une erreur dans la console de votre navigateur ou dans Bash / Terminal / Ligne de commande qui aidera à identifier le problème. Fournissez ce message d'erreur dans votre description de problème afin que les autres puissent plus facilement identifier le problème et vous aider à trouver une solution.
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
