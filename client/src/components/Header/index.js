@@ -9,7 +9,6 @@ import './header.css';
 
 const propTypes = {
   fetchState: PropTypes.shape({ pending: PropTypes.bool }),
-  pathName: PropTypes.string.isRequired,
   user: PropTypes.object
 };
 
@@ -54,7 +53,7 @@ export class Header extends React.Component {
   }
   render() {
     const { displayMenu } = this.state;
-    const { fetchState, pathName, user } = this.props;
+    const { fetchState, user } = this.props;
     return (
       <>
         <Helmet>
@@ -65,7 +64,6 @@ export class Header extends React.Component {
             displayMenu={displayMenu}
             fetchState={fetchState}
             menuButtonRef={this.menuButtonRef}
-            pathName={pathName}
             searchBarRef={this.searchBarRef}
             toggleDisplayMenu={this.toggleDisplayMenu}
             user={user}

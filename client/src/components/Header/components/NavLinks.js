@@ -6,23 +6,22 @@ import Login from '../components/Login';
 const propTypes = {
   displayMenu: PropTypes.bool,
   fetchState: PropTypes.shape({ pending: PropTypes.bool }),
-  pathName: PropTypes.string.isRequired,
   user: PropTypes.object
 };
 
-export function AuthOrProfile({ user, pathName, pending }) {
+export function AuthOrProfile({ user, pending }) {
   const isUserDonating = user && user.isDonating;
   const isUserSignedIn = user && user.username;
   const isTopContributor =
     user && user.yearsTopContributor && user.yearsTopContributor.length > 0;
 
-  if (pending && pathName !== '/') {
+  if (pending) {
     return (
       <div className='nav-skeleton'>
         <SkeletonSprite />
       </div>
     );
-  } else if (pathName === '/' || !isUserSignedIn) {
+  } else if (!isUserSignedIn) {
     return (
       <>
         <li>
@@ -57,12 +56,12 @@ export function AuthOrProfile({ user, pathName, pending }) {
   }
 }
 
-export function NavLinks({ displayMenu, pathName, user, fetchState }) {
+export function NavLinks({ displayMenu, user, fetchState }) {
   const { pending } = fetchState;
   return (
     <div className='main-nav-group'>
       <ul className={'nav-list' + (displayMenu ? ' display-flex' : '')}>
-        <AuthOrProfile pathName={pathName} pending={pending} user={user} />
+        <AuthOrProfile pending={pending} user={user} />
       </ul>
     </div>
   );
