@@ -38,7 +38,7 @@ question:
     - |
         chuck 1
     - |
-        [Error]
+        \[Error]
   solution: 1
 ```
 

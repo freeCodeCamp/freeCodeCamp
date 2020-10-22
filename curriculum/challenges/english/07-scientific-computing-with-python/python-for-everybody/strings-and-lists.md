@@ -32,7 +32,7 @@ question:
     - |
         lar
     - |
-        lar@freecodecamp.org
+        `lar@freecodecamp.org`
   solution: 4
 ```
 
