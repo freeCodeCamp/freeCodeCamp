@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
 import PropTypes from 'prop-types';
 import Login from '../components/Login';
+import { forumLocation } from '../../../../../config/env.json';
 
 const propTypes = {
   displayMenu: PropTypes.bool,
@@ -15,6 +16,26 @@ export function AuthOrProfile({ user, pending }) {
   const isTopContributor =
     user && user.yearsTopContributor && user.yearsTopContributor.length > 0;
 
+  const CurriculumAndForumLinks = (
+    <>
+      <li>
+        <Link
+          className='nav-link'
+          external={true}
+          sameTab={true}
+          to={forumLocation}
+        >
+          Forum
+        </Link>
+      </li>
+      <li>
+        <Link className='nav-link' to='/learn'>
+          Curriculum
+        </Link>
+      </li>
+    </>
+  );
+
   if (pending) {
     return (
       <div className='nav-skeleton'>
@@ -24,22 +45,14 @@ export function AuthOrProfile({ user, pending }) {
   } else if (!isUserSignedIn) {
     return (
       <>
-        <li>
-          <Link className='nav-link' to='/learn'>
-            Curriculum
-          </Link>
-        </li>
+        {CurriculumAndForumLinks}
         <Login data-test-label='landing-small-cta'>Sign In</Login>
       </>
     );
   } else {
     return (
       <>
-        <li>
-          <Link className='nav-link' to='/learn'>
-            Curriculum
-          </Link>
-        </li>
+        {CurriculumAndForumLinks}
         <li>
           <Link className='nav-link' to={`/${user.username}`}>
             Profile
