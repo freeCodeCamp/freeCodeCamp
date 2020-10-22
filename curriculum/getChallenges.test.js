@@ -1,7 +1,10 @@
 /* global expect beforeAll */
+const path = require('path');
+
 const {
   createChallengeCreator,
-  hasEnglishSourceCreator
+  hasEnglishSourceCreator,
+  createCommentMap
 } = require('./getChallenges');
 
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
@@ -44,6 +47,69 @@ It should be in
     it('returns false if the English challenge is missing', async () => {
       const sourceExists = await hasEnglishSource(MISSING_CHALLENGE_PATH);
       expect(sourceExists).toBe(false);
+    });
+  });
+
+  describe('createCommentMap', () => {
+    const dictionaryDir = path.resolve(
+      __dirname,
+      '__fixtures__',
+      'dictionaries'
+    );
+    it('returns an object', () => {
+      expect(typeof createCommentMap(dictionaryDir)).toBe('object');
+    });
+
+    it('returns an object with an expected form', () => {
+      expect.assertions(4);
+      const expectedIds = [
+        'To be translated one',
+        'To be translated two',
+        'Not translated one',
+        'Not translated two'
+      ];
+      const map = createCommentMap(dictionaryDir);
+      expect(Object.keys(map)).toEqual(expect.arrayContaining(expectedIds));
+
+      const mapValue = map['To be translated one'];
+
+      expect(Object.keys(mapValue)).toEqual(
+        expect.arrayContaining(['chinese', 'spanish'])
+      );
+      expect(typeof mapValue.chinese).toBe('string');
+      expect(typeof mapValue.spanish).toBe('string');
+    });
+
+    it('returns an object with expected values', () => {
+      expect.assertions(9);
+      const expectedIds = [
+        'To be translated one',
+        'To be translated two',
+        'Not translated one',
+        'Not translated two'
+      ];
+      const map = createCommentMap(dictionaryDir);
+      expect(Object.keys(map)).toEqual(expect.arrayContaining(expectedIds));
+
+      const translatedOne = map['To be translated one'];
+
+      expect(translatedOne.chinese).toBe('Chinese translation one');
+      expect(translatedOne.spanish).toBe('Spanish translation one');
+
+      const translatedTwo = map['To be translated two'];
+
+      expect(translatedTwo.chinese).toBe('Chinese translation two');
+      expect(translatedTwo.spanish).toBe('Spanish translation two');
+
+      const untranslatedOne = map['Not translated one'];
+
+      expect(untranslatedOne.chinese).toBe('Not translated one');
+      expect(untranslatedOne.spanish).toBe('Not translated one');
+
+      const untranslatedTwo = map['Not translated two'];
+
+      expect(untranslatedTwo.chinese).toBe('Not translated two');
+      expect(untranslatedTwo.spanish).toBe('Not translated two');
     });
   });
 });

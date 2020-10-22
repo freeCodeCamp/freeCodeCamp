@@ -31,6 +31,8 @@
     "@babel/polyfill": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/register": "^7.11.5",
+    "acorn": "^8.0.1",
+    "acorn-jsx": "^5.3.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-lodash": "^3.3.4",
@@ -43,6 +45,7 @@
     "babel-standalone": "^6.26.0",
     "chai": "4.2.0",
     "cross-env": "^7.0.2",
+    "css": "^3.0.0",
     "fs-extra": "^6.0.1",
     "gulp": "^4.0.2",
     "invariant": "^2.2.4",
@@ -56,7 +59,13 @@
     "mocha": "8.2.0",
     "puppeteer": "^5.3.1",
     "readdirp-walk": "^1.7.0",
+    "rehype": "^11.0.0",
+    "rework-visit": "^1.0.0",
     "rx": "^4.1.0",
-    "string-similarity": "^4.0.2"
+    "string-similarity": "^4.0.2",
+    "unified": "^9.2.0",
+    "unist-util-visit": "^2.0.3",
+    "validator": "^10.4.0",
+    "vfile": "^4.2.0"
   }
 }
