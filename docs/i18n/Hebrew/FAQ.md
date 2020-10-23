@@ -1,24 +1,12 @@
-### I am new to GitHub and Open Source, where should I start?
+### I am new to GitHub and Open Source. Where should I start?
 
-Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a compresensive resource of first timer friendly projects and guidelines.
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
 ### Can I translate freeCodeCamp's curriculum?
 
-We will be kicking-off the localization efforts on freeCodeCamp starting with the **Chinese** first.
+Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon.
 
-We intend to make the curriculum available in more languages, but can't commit to any deadlines yet. Several operational limits like staff, active contributors and server costs play a role in driving the internationalisation (i18n) efforts.
-
-We intend to start i18n efforts in these languages: Arabic, Portuguese, Russian and Spanish (in no particular order) after we have released the curriculum in Chinese.
-
-**Why are you focusing on Chinese curriculum first?**
-
-China is the largest demographic regions, in our non-native English speaking audience. Currently, we have hundreds of thousands of users using an old version of the platform. Focusing on the Chinese curriculum will give us an estimate of logistics involved in the i18n.
-
-We will focus on Latin America as the demographic region for Portuguese and Spanish.
-
-We do not have any plans for i18n to any other languages other than the above for the foreseeable future.
-
-We do not encourage you to work on i18n on the above languages. We may accept pull requests, without any expectation of any timelines on deployments.
+Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
 
 ### How can I report a new bug?
 
@@ -26,19 +14,17 @@ If you think you've found a bug, first read the ["Help I've Found a Bug"](https:
 
 If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before making a report.
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
 ### How can I report a security issue?
 
 Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### I am a student, can I or our team work on a feature for academic credits?
+### I am a student. Can I work on a feature for academic credits?
 
-Yes, sure.
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-While, we are open to all contributions, please note we are unable to commit to any timelines that may be a requirement at your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. We will not be able to give any PR any special attention to be fair to all.
-
-We request you to plan ahead and work on a feature with this in mind.
+We request you to plan ahead and work on code contributions with this in mind.
 
 ### What do these different labels that are tagged on issues mean?
 
@@ -48,42 +34,37 @@ The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_man
 
 You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are reserved for people that have not contributed to the freeCodeCamp codebase before. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are special issues that are designed for people who have not contributed to the freeCodeCamp codebase before.
 
-### I found a typo, should I report an issue before I can make a pull request?
+### I found a typo. Should I report an issue before I can make a pull request?
 
-For typos and other wording changes, you can directly open pull requests without creating an issue first. Issues are more for discussing larger problems associated with code or structural aspects of the curriculum.
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-However, please mention details, context etc. in the pull request's description area to help us understand and review your contribution even for minor changes.
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-### How do I get an issue assigned to me?
+### How can I get an issue assigned to me?
 
-We typically do not assign issues to anyone other than long-time contributors to avoid ambiguous no-shows. Instead, we follow the below policy to be fair to everyone:
+We typically do not assign issues to anyone other than long-time contributors.  Instead, we follow the below policy to be fair to everyone:
 
-1. The first pull request for any issue is preferred to be merged.
-2. In the case of multiple pull requests for the same issue, we give priority to the quality of the code in the pull requests.
+1. We are most likely to merge the first pull request that addresses the issue.
+2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
    - Did you include tests?
    - Did you catch all usecases?
-   - Did you ensure all tests pass, and you confirmed everything works locally?
-3. Finally, we favor pull requests which follow our recommended guidelines.
+   - Did you ensure all tests pass, and confirm everything works locally?
+3. Finally, we give priority to pull requests which follow our recommended guidelines.
    - Did you follow the pull request checklist?
-   - Did you name your pull request title meaningfully?
-
-You do not need any permission for issues that are marked `help wanted` or `first timers only` as explained earlier.
-
-Follow the guidelines carefully and open a pull request.
+   - Did you give your pull request a meaningful title?
 
 ### I am stuck on something that is not included in this documentation.
 
 **Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The public `Contributors` [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 - The `#Contributors` channel on [our Discord community server](https://discord.gg/pFspAhS).
 
-We are excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one.
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
 **Additional Assistance:**
 

@@ -1,40 +1,54 @@
-# Hvordan man arbejder på docs tema
+# How to work on the docs theme
 
-> [!BEMÆRK] En hurtig påmindelse om, at du ikke behøver at opsætte noget for at arbejde på indholdet til dokumentationswebstedet.
+> [!NOTE] A quick reminder that you do not need to setup anything for working on the content for the documentation site.
 > 
-> For at arbejde på de bidragende retningslinjer, kan du redigere eller tilføje filer i `docs` mappen [tilgængelig her](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). Når dine ændringer er flettet, vil det blive gjort tilgængelige automatisk på dokumentationssiden.
+> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). When your changes are merged, it will be made available automatically at the documentation site.
 
-## Struktur af docs hjemmeside
+## Structure of the docs website
 
-Webstedet er genereret ved hjælp af [`docsify`](https://docsify.js.org)og tjente ved hjælp af GitHub sider.
+The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
 
-Typisk behøver du ikke at ændre nogen konfiguration eller bygge webstedet lokalt. Hvis du er interesseret, her er hvordan det virker:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
-- Hjemmesidens kilde til dette websted er tilgængelig i [`docs/index.html`](index.html).
-- Vi tjener denne fil som en SPA ved hjælp af `docsify` og GitHub Sider.
-- Scriptet `docsify` genererer indholdet af `markdown` filer i `docs` mappe efter behov.
-- Hjemmesiden er genereret fra [`_coverpage.md`](_coverpage.md).
-- sidepanelets navigation er genereret fra [`_sidebar.md`](_sidebar.md).
+- The homepage's source for this site is available in [`docs/index.html`](index.html).
+- We serve this file as a SPA using `docsify` and GitHub Pages.
+- The `docsify` script generates the content of `markdown` files in `docs` directory on demand.
+- The homepage is generated from the [`_coverpage.md`](_coverpage.md).
+- the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
-## Servering af dokumentationsstedet lokalt
+## Serving the documentation site locally
 
-Klon freeCodeCamp:
+Clone freeCodeCamp:
 
-```sh
+```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
 docsify serve docs
 ```
 
-Installer `docsify`:
+Install `docsify`:
 
-```sh
+```console
 npm install -g docsify
 ```
 
-og servere mappen `/docs`
+and serve the `/docs` directory
 
-```sh
-docsify tjene docs
+```console
+docsify serve docs
 ```
 
-Alternativt, hvis du har installeret freeCodeCamp lokalt (se den lokale opsætningsguide), vi samler CLI med udviklingsværktøjerne, så du kan køre `npm run docs:serve` from the root of the repo.
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+
+### Serve and launch the documentation site only
+
+```console
+npm run docs:serve
+```
+
+### Serve the documentation site alongside freeCodeCamp locally:
+
+```console
+npm run develop
+```
+
+> The documentation site should be available at <http://localhost:3200>

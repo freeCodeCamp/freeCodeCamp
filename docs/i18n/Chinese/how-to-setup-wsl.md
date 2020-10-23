@@ -1,129 +1,129 @@
-# 在 Windows 子系统上为 Linux (WSL) 设置 FreeCodeCamp
+# Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
 
-> [!注意] 在您遵循这些说明之前，请确保您的系统符合要求
+> [!NOTE] Before you follow these instructions make sure your system meets the requirements
 > 
-> **WSL 2**: Windows 10 64-bit (2004版本，构建19041 或更高) - 适用于包括Windows 10 Home在内的所有分发。
+> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
 > 
 > **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-本指南涵盖一些通用步骤，并设置了WSL2。 一旦解决了WSL2的一些共同问题。 您应该能够遵循我们的本地设置指南，在运行WSL 磁盘的Windows上使用 FreeCodeCodeCamp，比如Ubuntu。
+This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow the our local setup guide to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
 
-## 启用 WSL
+## Enable WSL
 
-按照 [官方文档](https://docs.microsoft.com/en-us/windows/wsl/install-win10) 上的说明安装 WSL1，然后升级到 WSL2。
+Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL1 and followed by upgrading to WSL2.
 
 ## Install Ubuntu
 
-1. 我们建议使用 Ubuntu-18.04 或更高版本的 WSL2。
+1. We recommended using Ubuntu-18.04 or above with WSL2.
 
-   > [!注意]
+   > [!NOTE]
    > 
-   > 虽然你可以使用其他非德语的碎片，但他们都有自己的东西，超出了本指南的范围。
+   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
 
-2. 更新操作系统的依赖关系
+2. Update the dependencies for the OS
 
    ```console
-   sudo apt update 更新
-   sudo apt 升级 -y
+   sudo apt update
+   sudo apt upgrade -y
 
-   # 清理
+   # cleanup
    sudo apt autoremove -y
    ```
 
-## 设置 Git
+## Set up Git
 
-Git 是通过 Ubuntu 18.04 预先安装的，请确认您的 Git 版本是 `git --version`。
+Git comes pre-installed with Ubuntu 18.04, verify that your Git version with `git --version`.
 
 ```output
 ~
-变量--version
-git 版本 2.25.1
+❯ git --version
+git version 2.25.1
 ```
 
 (Optional but recommended) You can now proceed to [setting up your ssh keys](https://help.github.com/articles/generating-an-ssh-key) with GitHub.
 
-## 安装代码编辑器
+## Installing a Code Editor
 
-我们强烈建议在 Windows 10 上安装 [Visual Studio 代码](https://code.visualstudio.com)。 它非常支持WSL 并自动在您的 WSL 磁盘上安装所有必要的扩展。
+We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
 
-基本上，您将编辑和存储在 Ubuntu-18.04 上的 VS 代码安装在 Windows上。
+Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
 
-## 安装 Docker 桌面
+## Installing Docker Desktop
 
-**Windows停靠桌面** 允许您安装和运行数据库和服务，如MongoDB、NGINX等。 这有助于避免在Windows或WSL2上直接安装MongoDB或其他服务的常见陷阱。
+**Docker Desktop for Windows** allows you to install and run database and services like MongoDB, NGINX, etc. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
 
-在 [官方文档](https://docs.docker.com/docker-for-windows/install) 上跟随指令并安装 Docker 桌面以进行Windows分发。
+Follow the instructuction on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
-最佳经验有一些最起码的硬件要求。
+There are some minimum hardware requirements for the best experience.
 
-## 配置 WSL 的 Docker 桌面
+## Configure Docker Desktop for WSL
 
-安装Docker 桌面后， [按照这些说明](https://docs.docker.com/docker-for-windows/wsl) 进行配置以使用 Ubuntu-18.04 安装作为后端。
+Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
 
-这样容器就可以在WSL一边运行，而不是在Windows上运行。 您可以在 Windows 和 Ubuntu 上访问 `http://localhost` 服务。
+This makes it so that the containers run on WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
 
-## 从 Docker Hub 安装 MongoDB
+## Install MongoDB from Docker Hub
 
-一旦您配置Docker 桌面与 WSL 2 合作，按照这些步骤启动 MongoDB 服务：
+Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
 
-1. 启动一个新的 Ubuntu-18.04 终端
+1. Launch a new Ubuntu-18.04 terminal
 
-2. 从Docker枢纽拉取 `MongoDB 3.6`
+2. Pull `MongoDB 3.6` from dockerhub
 
    ```console
    docker pull mongo:3
    ```
 
-3. 在端口 `27017`启动MongoDB 服务，并配置它在系统重启时自动运行
+3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
 
    ```console
-   docker 运行 -it \
+   docker run -it \
      -v mongodata:/data/db \
      -p 27017:27017 \
-     --name mongodb
-     --rehread unless-standarded \
+     --name mongodb \
+     --restart unless-stopped \
      -d mongo:3
    ```
 
-4. 您现在可以在 `mongodb://localhost:27017` 访问Windows或Ubuntu 的服务。
+4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
 
-## 安装 Node.js 和 npm
+## Installing Node.js and npm
 
-我们建议您用节点版本管理器安装 Node.js LTS 版本号 - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)。
+We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-安装后使用这些命令来安装和使用Node.js版本所需的
+Once installed use these commands to install and use the Node.js version as needed
 
 ```console
 nvm install --lts
 
-# 或
+# OR
 # nvm install <version>
 
 nvm install 14
 
-# 用法
-# nvm 使用 <version>
+# Usage
+# nvm use <version>
 
-nvm 使用 12
+nvm use 12
 ```
 
-Node.js 与 `npm`捆绑在一起，您可以更新到 `npm` 的最新版本：
+Node.js comes bundled with `npm`, you can update to the latest versions of `npm` with:
 
 ```console
-npm 安装-g npm@最新版本
+npm install -g npm@latest
 ```
 
-## 本地设置免费CodeCamp
+## Set up freeCodeCamp locally
 
-既然您已经安装了前提条件，按照 [我们的本地设置指南](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) 克隆、在您的机器上安装和安装免费CodeCamp。
+Now that you have installed the pre-requisites, follow [our local setup guide](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) to clone, install and setup freeCodeCamp locally on your machine.
 
-> [!警告]
+> [!WARNING]
 > 
-> 请注意目前为Cypress测试(以及相关的GUI需要)设置的工作正在进行之中。 您仍然应该能够在大部分代码片段上工作。
+> Please note, at this time the set up for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
 
-## 有用的链接
+## Useful Links
 
-- [一个 WSL2 开发与Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - 一篇由Mrugesh Mohamapatra 编写的文章 (免费CodeCamp.org员工开发者)
-- 经常提出的问题有：
-  - [Linux Windows子系统](https://docs.microsoft.com/en-us/windows/wsl/faq)
-  - [Windows停靠桌面](https://docs.docker.com/docker-for-windows/faqs)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- Frequently asked questions on:
+  - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
+  - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

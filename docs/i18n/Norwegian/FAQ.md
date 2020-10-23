@@ -1,101 +1,82 @@
-### Jeg er ny på GitHub og åpen kildekode, hvor skal jeg starte?
+### I am new to GitHub and Open Source. Where should I start?
 
-Les vår ["Hvordan å bidra til åpen kildekode"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). Det er en kompressiv ressurs av førtidsvennlige prosjekter og retningslinjer.
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
-### Kan jeg oversette freeCodeCamp's pensum?
+### Can I translate freeCodeCamp's curriculum?
 
-Vi vil nå spenne på lokaliseringen av lokaliseringen som starter med **Kinesisk** først.
+Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon.
 
-Vi har til hensikt å gjøre læreplanverket tilgjengelig på flere språk, men kan ikke begå noen tidsfrister enda. Flere driftsgrenser som personale, aktive bidragsytere og tjeneren koster det å spille en rolle i driften av internasjonaliseringen (i18ne).
+Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
 
-Vi skal begynne med i18n innsats på disse språkene: Arabisk, portugisisk, Russisk og spansk (ikke noe bestemt rekkefølge) etter at vi har gitt ut læreplanverket i Kina.
+### How can I report a new bug?
 
-**Hvorfor satser du på læreplanen fra kinesisk først?**
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-Kina er den største demografiske regionen, i et ikke-folkelig engelsk publikum. Vi har nå hundretusener av brukere ved å bruke en gammel versjon av plattformen. Med fokus på den kinesiske læreplanen vil vi få et estimat på logistikk i i18n.
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-Vi vil fokusere på Latin-Amerika som den demografiske regionen for portugisisk og spansk.
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-Vi har ingen planer for i18n andre språk enn de som er nevnt ovenfor i forutsigbar framtid.
+### How can I report a security issue?
 
-Vi oppfordrer deg ikke til å jobbe med i18n på de ovennevnte språkene. Vi kan godta trekkforespørsler, uten noen forventninger om tidslinjer ved distribusjon.
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### Hvordan kan jeg rapportere en ny feil?
+### I am a student. Can I work on a feature for academic credits?
 
-Hvis du tror du har funnet en feil, først lese ["Hjelp jeg har funnet en feil"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) artikkelen og følg dens instruksjoner.
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-Hvis du er sikker på at det er en ny feil, gå videre og lage et nytt GitHub problem. Pass på å inkludere så mye informasjon som mulig slik at vi kan reprodusere feilen. Vi har en forhåndsdefinert mal som skal hjelpe deg gjennom dette.
+We request you to plan ahead and work on code contributions with this in mind.
 
-Vær oppmerksom på at eventuelle problemer med å søke kodehjelp på en utfordring blir stengt. Sammenliknet med spørsmål og diskusjoner finnes kun i forbindelse med problemstillinger. Når du er i tvil, bør du [be om assistanse på forumet](https://forum.freecodecamp.org) før du skriver en rapport.
+### What do these different labels that are tagged on issues mean?
 
-### Hvordan rapporterer jeg et sikkerhetsproblem?
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-Vennligst ikke lag GitHub problemer for sikkerhetsproblemer. I stedet send en e-post til `security@freecodecamp.org` så ser vi på det umiddelbart.
+### Where do I start if I want to work on an issue?
 
-### Jeg er student, kan jeg eller teamet vårt jobbe med en funksjon for faglige studiepoeng?
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-Ja, sikker.
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are special issues that are designed for people who have not contributed to the freeCodeCamp codebase before.
 
-Vi er åpne for alle bidrag, Vær oppmerksom på at vi ikke har forpliktet oss til tidslinjer som kan være krav på ditt universitet eller ditt universitet. Vi får mange trekkforespørsler og kodebidrag fra frivillige utviklere, og vi respekterer tid og innsats. Vi vil ikke kunne gi noen PR noen spesiell oppmerksomhet for å være rettferdig for alle.
+### I found a typo. Should I report an issue before I can make a pull request?
 
-Vi ber deg om å planlegge fremover og arbeide med en funksjon med dette i tanket.
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-### Hva betyr disse ulike merkelappene som er merket på problemer?
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-Retningslinjene [turtall](https://en.wikipedia.org/wiki/Software_bug#Bug_management) og trekk forespørsler basert på deres prioritet, alvorlighetsgrad, og andre faktorer. Du kan [finne en komplett ordliste med betydningen her](https://github.com/freecodecamp/freecodecamp/labels).
+### How can I get an issue assigned to me?
 
-### Hvor starter jeg om jeg vil jobbe med et problem?
+We typically do not assign issues to anyone other than long-time contributors.  Instead, we follow the below policy to be fair to everyone:
 
-Du bør gå gjennom [**`hjelp ønsket`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) eller [**`første ganger`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) problemer for en rask oversikt over hva du kan jobbe med.
+1. We are most likely to merge the first pull request that addresses the issue.
+2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
+   - Did you include tests?
+   - Did you catch all usecases?
+   - Did you ensure all tests pass, and confirm everything works locally?
+3. Finally, we give priority to pull requests which follow our recommended guidelines.
+   - Did you follow the pull request checklist?
+   - Did you give your pull request a meaningful title?
 
-> **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. Problemer med de **`første timene`** etiketten er reservert for personer som ikke har bidratt til de freeCodeCamp codebase tidligere. Dersom problemstillingene mangler klarhet om hva som må gjøres, må du gjerne stille spørsmål i kommentarene.
+### I am stuck on something that is not included in this documentation.
 
-### Jeg fant en skrivebord, burde jeg rapportere et problem før jeg kan ta en pull-forespørsel?
-
-For typoer og andre formuleringsendringer, kan du åpne trekkforespørsler direkte uten å opprette et problem først. Problemstillingene er i større grad til å diskutere større problemer i forbindelse med kode eller strukturmessige aspekter ved læreplanen.
-
-Imidlertid nevner du detaljer, kontekst osv. på henteforespørselens beskrivelse for å hjelpe oss å forstå og gjennomgå bidraget selv for mindre endringer.
-
-### Hvordan får jeg tildelt meg et problem?
-
-Vi gir vanligvis ikke problemer til andre enn lenge bidragsytere for å unngå tvetydige no-serier. I stedet følger vi retningslinjene nedenfor for å være rettferdige for alle:
-
-1. Den første trekkforespørsel for noen problemer foretrekkes sammenslåing.
-2. Når det gjelder flere trekk i samme sak, prioriterer vi kvaliteten på koden i trekkforespørslene.
-   - Inkluderte du tester?
-   - Fikk du alle bruksøkaser?
-   - Sikret du at alle prøvene er gjort, og at du har bekreftet at alt fungerer lokalt?
-3. Til slutt favoriserer vi forespørsler som følger våre anbefalte retningslinjer.
-   - Følte du sjekklisten for trekkforespørselen?
-   - Hadde du navnet din trekkforespørsel ment?
-
-Du trenger ikke noen rettigheter for problemer som er merket `hjelp ønsket` eller `første takster` som forklart tidligere.
-
-Følg retningslinjene nøye og åpne en pull-forespørsel.
-
-### Jeg sitter fast på noe som ikke inngår i denne dokumentasjonen.
-
-**Du kan gjerne be om hjelp om:**
+**Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The public `Contributors` [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 - The `#Contributors` channel on [our Discord community server](https://discord.gg/pFspAhS).
 
-Vi er spente på å bidra til noen av temaene du ønsker å arbeide med. Vi er glade for å kunne stille oss spørsmål om de tilhørende sakstrådene og vil være klare her. Vær sikker på at du søker etter forespørselen din før du skriver en ny.
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-Vær høflig og tålmodig. Vårt fellesskap av frivillige og moderatorer er alltid rundt for å veilede deg gjennom dine spørringer.
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-**Ytterligere bistand:**
+**Additional Assistance:**
 
-Hvis du har spørsmål om stack, arkitektur av kodebasen, kan du gjerne nå ut til personalets utviklerteam:
+If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| Ansatte               | Send melding på forumet                                                      |
+| Staff                 | Send message on Forum                                                        |
 |:--------------------- |:---------------------------------------------------------------------------- |
-| Mrugesh Mohapatra     | [@opphevedadead](https://forum.freecodecamp.org/u/raisedadead)               |
+| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
 | Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
 | Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
 | Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
-| Tilfeldig Dawson      | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
+| Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 
-**Du kan sende epost til utviklerne her: `dev[at]freecodecamp.org`**
+**You can email our developer staff at: `dev[at]freecodecamp.org`**

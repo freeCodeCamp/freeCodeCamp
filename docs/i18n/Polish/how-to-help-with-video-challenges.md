@@ -1,67 +1,67 @@
-# Jak pomóc w wyzwaniach wideo
+# How to help with video challenges
 
-Wyzwania wideo są nowym wyzwaniem w programie nauczania darmowego CodeCamp.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-Wyzwanie wideo to mała część pełnego kursu wideo na dany temat. Strona wyzwania wideo zawiera film z YouTube. Każda strona wyzwania ma jedno pytanie wielokrotnego wyboru związane z filmem. Użytkownik musi odpowiedzieć na pytanie poprawnie, zanim przejdzie do następnego wyzwania wideo w kursie.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-Strony wyzwania wideo są tworzone przez członków zespołu FreeCamp. Filmy YouTube są również przesyłane przez członków zespołu FreeCamp. Wiele wyzwań związanych z filmami wideo nie ma z nimi jeszcze pytań.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-Możesz pomóc tworząc pytania wielokrotnego wyboru związane z sekcjami wideo i dodając pytania do plików markdown dla wyzwań wideo.
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Szablon wyzwania
+## Challenge Template
 
-Poniżej znajduje się szablon jak wyglądają pliki markdown wyzwań.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
-id: Unikalny identyfikator (alfanumeryczny, MongoDB_id)
-title: Wyzwanie Tytuł
-Typ: 11
-wideo Id: 'Id wideo YouTube dla wyzwania wideo'
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
+challengeType: 11
+videoId: 'YouTube videoId for video challenge'
 ---
 
-## Opis
+## Description
 
 <section id='description'>
-Opcjonalny opis z pomocnymi informacjami związanymi z wideo.
+An optional description with helpful information related to the video.
 </section>
 
-## Testy
+## Tests
 
 <section id='tests'>
 
 ```yml
-pytanie:
-  tekst: 'Pytanie'
-  odpowiedzi:
-    - 'Odpowiedz jedną'
-    - 'Odpowiedz druga'
-    - 'Odpowiedz ty'
-  rozwiązanie: 3
+question:
+  text: 'Question'
+  answers:
+    - 'Answer One'
+    - 'Answer Two'
+    - 'Answer Three'
+  solution: 3
 ````
 
 </section>
 ````
 
-## Tworzenie pytań dla wyzwań wideo
+## Creating questions for video challenges
 
-### Uzyskaj dostęp do plików markdown wyzwania wideo
+### Access the video challenge markdown files
 
-Pliki markdown dla wyzwań wideo można znaleźć w następujących lokalizacjach w programie nauczania:
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Analiza danych z kursem Pythona](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [Kurs TensorFlow 2.0](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
-- [Kurs liczbowy](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpython/numpypy)
-- [How Neural Networks WorkCourse](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Wybierz plik z powyższych opcji.
+Pick a challenge markdown file from the options above.
 
-### Przeskocz przez film związany z wyzwaniem i utwórz pytanie wyboru wyboru wyboru
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-Najpierw znajdź identyfikator wideo.
+First, find the videoId.
 
-Na przykład, w poniższym kodzie z nagłówka pliku markdown wyzwania wideo, wideo Id to "nVAaxZ34khk". Na GitHubie informacje powinny być wyświetlane w formacie tabeli.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
 id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
@@ -69,128 +69,131 @@ videoId: nVAaxZ34khk
 ---
 ```
 
-Następnie uzyskaj dostęp do filmu YouTube za pomocą tego identyfikatora wideo. Adres URL dla filmu to:
-https://www.youtube. om/watch?v=[videoId]    (dodaj identyfikator wideo do adresu URL bez nawiasów kwadratowych)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-W powyższym przykładzie url to https://www. outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim wideo z YouTube za pomocą tego wideo Id i pomyśl o pytaniu wielokrotnego wyboru w oparciu o zawartość filmu.
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### Dodaj pytanie do pliku markdown
+### Add the question to the markdown file
 
-Możesz dodać pytanie lokalnie lub bezpośrednio do interfejsu GitHub. Aby dodać pytanie lokalnie, musisz [skonfigurować darmowy CodeCamp lokalnie](how-to-setup-freecodecamp-lokcally.md). Możesz również znaleźć plik na GitHub i kliknąć przycisk edycji, aby dodać pytanie bezpośrednio w przeglądarce.
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-Jeśli pytanie nie zostało jeszcze dodane do konkretnego wyzwania wideo, będzie miało następujące domyślne pytanie:
-
-```yml
-:
-  tekst: |
-    Pytanie
-  odpowiedzi:
-    - |
-      jedno
-    - |
-      dwa
-    - |
-      trzy
-  rozwiązanie: 3
-```
-
-Uaktualnić słowo "Pytanie" swoim pytaniem. Zaktualizować „jedną”, „dwa” i „trze” wraz z ewentualnymi odpowiedziami. Upewnij się, że zaktualizowano numer rozwiązania, który jest poprawny. Możesz dodać więcej możliwych odpowiedzi w tym samym formacie. Pytanie i odpowiedzi można załączyć znakiem cytowania.
-
-#### Użyj markdown aby sformatować swoje pytanie
-
-Tekst w pytaniu jest oceniany jako markdown. Najprostszym sposobem zapewnienia prawidłowego sformatowania pytania jest rozpoczęcie pytania od `tekstu: |`, tak jak to:
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-pytanie:
-  tekst: |
-    Pytanie
+question:
+  text: |
+    Question
+  answers:
+    - |
+      one
+    - |
+      two
+    - |
+      three
+  solution: 3
 ```
 
-Następnie musisz się upewnić, że Twoje pytanie jest w nowej linii i wcięto o jeden poziom więcej niż `tekstu: |`.
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-To samo podejście można zastosować do odpowiedzi, tak więc całe pytanie staje się
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-pytanie:
-  tekst: |
-    Pytanie
-  odpowiedzi:
-  - |
-    Pierwsza odpowiedź
-  - |
-    Druga
-  - |
-    Trzecie
-  : 2
+question:
+  text: |
+    Question
 ```
 
-Upewnij się, że każda odpowiedź jest wiarygodna, ale jest tylko jedna poprawna odpowiedź.
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-#### Korzystanie z HTML
+The same approach can be used for the answers, so the entire question becomes
 
-Pytania i odpowiedzi mogą zawierać niektóre tagi HTML, takie jak `<br>` dla nowej linii. Znaczniki HTML powinny być używane źle, gdy pytania nie mogą być wyrażane bez nich.
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
+    Second
+  - |
+    Third
+  solution: 2
+```
 
-### Przykłady pytań
+Make sure each answer is plausible but there is only one correct answer.
 
-#### Przykłady bez HTML
+#### Use of HTML
+
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+
+### Question examples
+
+#### Examples without HTML
 
 ````yml
-pytanie:
-  tekst: |
-    Co to jest dziennik kodu JavaScript do konsoli?
+question:
+  text: |
+    What does this JavaScript code log to the console?
     ```js
     console.log('hello world');
     ````
 
 
-    Wybierz odpowiedź!
-  odpowiedzi:
-    - | Witaj *świat*
-    - | **Witaj** świat
-    - | Witaj świat : 3
+    Select an answer!
+  answers:
+    - | hello *world*
+    - | **hello** world
+    - | hello world solution: 3
 ````
 
 ````yml
-pytanie:
-  tekst: |
-    Co wydrukuje po uruchomieniu tego kodu:
+question:
+  text: |
+    What will print out after running this code:
     ```py
-    szerokość = 15
-    wysokość = 12. druk (wysokość/3)
+    width = 15
+    height = 12.0
+    print(height/3)
     ````
-  odpowiedzi:
+  answers:
     - | 39
     - | 4
     - | 4.0
     - | 5.0
-    - | 5 rozwiązanie: 3
+    - | 5 solution: 3
 ````
 
-#### Przykład z pytaniem HTML
+#### Example with HTML
 
 ```yml
-:
-  tekst: |
-    Co wydrukuje po uruchomieniu tego kodu:
-    <pre><code>szerokość = 15<br>wysokość = 12.<br>print(wysokość/3)<code></pre>
-  odpowiedzi:
+question:
+  text: |
+    What will print out after running this code:
+    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
+  answers:
     - |
       39
     - |
       4
     - |
-      4. - |
-      5. - |
+      4.0
+    - |
+      5.0
+    - |
       5
-  rozwiązanie: 3
+  solution: 3
 ````
 
-Ostatni przykład pokazuje, że HTML może być użyty, ale nie jest tak czytelny jak wersja bez niego.
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-Na więcej przykładów możesz zapoznać się z plikami markdown dla następującego kursu wideo. Wszystkie wyzwania mają już pytania: [Python na kurs dla wszystkich](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Otwórz Pull Request
+## Open a pull request
 
-Po utworzeniu jednego lub więcej pytań, możesz zatwierdzić zmiany do nowej gałęzi i [otworzyć Pull Request](how-to-open-a-pull-request.md).
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

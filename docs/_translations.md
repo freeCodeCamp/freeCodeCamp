@@ -1,6 +1,12 @@
+<div style='text-align: center'>
+
 ## Read these guides in other languages
 
-<div style='columns: 3; -webkit-columns: 3; -moz-columns: 3;' >
+</div>
+
+<br />
+
+<div class='i18n-lang-list'>
 
 - [English](/index.md)
 - [Afrikaans](/i18n/Afrikaans/index.md)

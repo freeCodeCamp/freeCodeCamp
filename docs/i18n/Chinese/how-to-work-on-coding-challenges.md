@@ -1,62 +1,66 @@
-# 如何处理编码挑战
+# How to work on coding challenges
 
-我们的目标是发展一个有趣和明确的互动学习体验。
+Our goal is to develop a fun and clear interactive learning experience.
 
-设计互动式编码挑战是困难的。 编写长篇解释或创建视频教程要容易得多， 还有中型和YouTube上的人。 然而，就我们的核心课程而言，我们坚持的是对大多数人来说最有效的东西――一种完全交互式的视频游戏经验。
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-我们想要骆驼达到流量状态。 我们希望他们尽可能少地利用我们的课程来建立势头和爆炸。 我们希望他们充满信心地参加这些项目，并广泛接触到方案拟订概念。
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
-创造这些挑战需要极大的创造性和对细节的关注。 有大量的帮助。 你将得到整个贡献者团队的支持，你可以反弹和展示你的挑战。 保持在 [贡献者房间](https://gitter.im/freecodecamp/contributors) 中活动并提问大量问题。
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-在你的帮助下，我们可以设计一个交互式编码课程，帮助数以百万计的人学习如何编程。
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
-每个挑战的内容都存储在自己的Markdown文件中。 这个Markdown 文件后来被转换为 HTML ，使用我们的工具来创建交互式的网页。
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-您可以在 [`/courum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges) 目录中找到所有免费CodeCodeCodeCamp.org的课程内容。
+With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-## 设置课程的配刀工具
+The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
 
-在您完成课程之前，您需要设置一些工具来帮助您测试您的更改。 您可以使用下面的任何选项：
+You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges) directory.
 
-- 您可以 [在本地建立免费CodeCamp](how-to-setup-freecodecamp-locally.md)。 对于经常/重复捐款来说，这是 **个强烈推荐的** 个。 此设置允许您工作并测试您的更改。
-- 使用 Gitpod，免费在线开发环境。 点击下面的按钮将在您的浏览器中为免费CodeCodeCamp启动一个现成的开发环境。 这只需要几分钟。
+## Set up the tooling for the curriculum
 
-  [![在 Gitpod 中打开](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
 
-- 点击相应文件的铅笔图标编辑GitHub 界面上的文件。 虽然这是最快的方式，但不推荐 ****，因为您无法测试您在 GitHub 上的更改。 如果我们的维护者认为您所做的更改需要在本地测试，您将需要再次遵循以上方法。
+- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
+- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
 
-## 挑战模板
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-下面是挑战Markdown 文件当前看起来的模板。  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
+- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead again.
+
+## Challenge Template
+
+Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
 
 ````md
 ---
-id: 唯一标识符 (字母数字, MongoDB_id
+id: Unique identifier (alphanumerical, MongoDB_id)
 title: Challenge Title
 challengeType: 0
 videoUrl: 'url of video explanation'
--
+---
 
-#description
+## Description
 
 <section id='description'>
-The description of the challenge and what is required to passe
+A Description of the challenge and what is required to pass
 </section>
 
 ## Instructions
 
 <section id='instructions'>
-instructions on the corresponding what is needs.
+Instructions about what exactly needs to be done.
 </section>
 
-## 测试
+## Tests
 
 <section id='tests'>
 
 ```yml
-测试：
-  - 文本：应该返回 "foo"
-    测试字符串：'一个严格的函数可能使用Chai断言'
+tests:
+  - text: Should return "foo"
+    testString: 'A stringified function possibly using Chai asserts'
 ````
 
 </section>
@@ -67,20 +71,20 @@ instructions on the corresponding what is needs.
 
 <div id='{ext}-seed'>
 
-默认情况下在编辑器中显示的 ```{ext}
-代码。
+```{ext}
+Code displayed in the editor by default.
 
-这是应对这一挑战的一个必要部分。
+This is a required section for the challenge.
 ```
 
 </div>
 
 ### Before Test
 
-<div id='{ext}-setup' mark="crwd-mark">
+<div id='{ext}-setup'>
 
 ```{ext}
-可选的测试设置代码。
+Optional Test setup code.
 ```
 
 </div>
@@ -90,7 +94,7 @@ instructions on the corresponding what is needs.
 <div id='{ext}-teardown'>
 
 ```{ext}
-可选的测试拆解代码。
+Optional Test tear down code.
 ```
 
 </div>
@@ -102,123 +106,126 @@ instructions on the corresponding what is needs.
 <section id='solution'>
 
 ```{ext}
-// solution 需要
+// solution required
 ```
 
 </section>
 
 ````
 
-> [!注意]
+> [!NOTE]
 >
-> 1。 在以上各节中，{ext}的例子是：
+> 1. In the above sections, examples of `{ext}` are:
 >
 >   - `html` - HTML/CSS
 >   - `js` - JavaScript
 >   - `jsx` - JSX
 >
-> 2。 对于上面的 `Tests` 部分，`text` 和 `testString` 应该是有效的 YAML 字符串。 `testString`可以是一个严格的函数或表达式，可以使用 Chai断言。
+> 2. For the `Tests` section above, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression using which could use Chai asserts.
 
-## 挑战数量
+## Numbering Challenges
 
-每个挑战都需要一个 'id'。 如果您没有指定一个，则MongoDB将创建一个新的随机数据保存过程； 然而，我们不想这样做，因为我们希望挑战的标本在不同的环境中保持连贯一致(阶段性工作)， 生产，许多不同的开发者等。
+Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
 
-若要在 shell 中生成一个新的 shell (假设MongoDB 是分开运行)：
+To generate a new one in a shell (assuming MongoDB is running separately):
 
-1。 运行 `mongo` 命令。
-2. 运行 `ObjectId()` 命令。
+1. Run `mongo` command.
+2. Run `ObjectId()` command.
 
-例如：
+For example:
 
 ```bash
 $ mongo
-MongoDB shell 版本 v3.6.1
-连接到: mongodb:127.0.1:27017
+MongoDB shell version v3.6.1
+connecting to: mongodb://127.0.0.1:27017
 MongoDB server version: 3.4.10
 ...
 $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-结果是一个新的 id，例如上面 `a474d78df58bafeb3535d34`。
+The result is a new id, for example `5a474d78df58bafeb3535d34` above.
 
-一旦你有您的 id，将它放入Markdown 文件作为顶部的 `id` 字段，例如：
+Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
 ```yml
 ---
-id：5a474d78df58bafeb3535d34
-标题：挑战标题
+id: 5a474d78df58bafeb3535d34
+title: Challenge Title
 ```
 
-## 命名挑战
+## Naming challenges
 
-命名东西是很难的。 我们通过施加一些限制使它变得更加容易。
+Naming things is hard. We've made it easier by imposing some constraints.
 
-所有挑战标题都应该是明确的，应该遵循这种模式：
+All challenge titles should be explicit and should follow this pattern:
 
-\[verb\]\[对象条款\]
+\[verb\]\[object clause\]
 
-这里有一些示例挑战名称：
+Here are some example challenge names:
 
 - Use Clockwise Notation to Specify the Padding of an Element
-- 带.reduce压缩数组
+- Condense arrays with .reduce
 - Use Bracket Notation to Find the First Character in a String
 
-## 挑战描述/说明
+## Challenge descriptions/instructions
 
-刑期应当简明扼要，只要使用最起码的术语。 如果使用这些术语，应立即用英文对术语加以界定。
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-保持段落简短(约1-4句)。 人们更可能阅读几个简短的段落，而不是一堵墙的文本。
+Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-挑战文本应该使用第二个人("你")来帮助给它一个话音。 这样，案文和指示似乎直接与面临挑战的骆驼骑手说话。 尝试避免使用第一个人("I", "we", "let", and "us").
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-不要使用出站链接。 这些会中断流程。 在这些挑战中，耕种者绝不应需要做任何事情。 如果有资源，你认为收藏家会从中受益，将它们添加到挑战相关的文章中。
+Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-如果绝对必要，您可以添加图表。
+You can add diagrams if absolutely necessary.
 
-挑战中不使用表情或表情符号。 免费CodeCamp有一个全球社区，世界各地表情或表情的文化含义可能不同。 另外，Emoji可能会在不同的系统中以不同的方式呈现。
+Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
-适当的封口在可能时应使用正确的大写。 下面是挑战中应该出现的一系列词语。
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
-- JavaScript (大写字母"J" 和 "S" 且无缩略语)
+- JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
-- 前端开发(带有破折号的形状)是当您在前端工作时(无破折号的窗体)。 “后端”、“完整堆栈”和许多其他复合条款也是如此。
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-### 2分钟规则
+### The 2-minute rule
 
-每项挑战都应在120秒内由一位母语英语发言者来解决，他已经完成了迎接挑战的任务。 这包括阅读方向/说明理解种子代码所需的时间。 写他们自己的代码并获得所有测试通过。
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their own code and get all the tests to pass.
 
-如果完成挑战需要超过两分钟，您有两个选项：
+If it takes longer than two minutes to complete the challenge, you have two options:
 
-- 简化挑战，或
-- 将挑战分为两项挑战。
+- Simplify the challenge, or
+- Split the challenge into two challenges.
 
-2分钟规则迫使你这个挑战设计师简洁、你的种子代码清晰、你的测试向前进行。
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
-我们跟踪玩家需要多长时间来解决变化，并使用这种信息来确定需要简化或分割的挑战。
+We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
 
-### 模块化
+### Modularity
 
-每一项挑战都应传授一种概念，这一概念应从挑战的名称中看出。
+Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
-我们可以通过重复和变异来加强先前涵盖的概念――例如： 在一个挑战中提出h1元素，然后再提出3元素，然后提出几个挑战。
+We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 
-我们的目标是面临数千分钟的挑战。 这些问题可以一起出现，重申先前涵盖的概念。
+Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
-### 格式化挑战文本
+### Formatting challenge text
 
-以下是质疑性案文和实例的具体格式准则：
+Here are specific formatting guidelines for challenge text and examples:
 
-- 语言关键字在 `<code>` 标签中。 例如，HTML 标签名称或 CSS 属性名称
-- 定义关键字的第一个实例，或是一般关键词(例如"对象"或 "不可变") 在 `<dfn>` 标签
-- 代码部件的引用(例如函数、方法或变量名称)应该用 `<code>` 标签包裹。 见下面的示例：
-- 使用 <code>parseint</code> 将变量 <code>实数</code> 转换为整数。
-- 多行代码块 **之前必须是空行**。 下一行必须以三个背杆开头，紧接着是 [支持的语言之一](https://prismjs.com/#supported-languages)。 要完成代码块，您必须开始一个仅有三个背面和 **另一个空行** 的换行符。 **注意：** 如果您要在 YAML 中使用示例代码 使用 `yaml` 而不是 `yml` 来查看右侧的语言。
+- Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
+- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
+- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+```md
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+```
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
 
-见下面的示例：
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
-以下是代码的示例：
+The following is an example of code:
 
 ```{language}
 
@@ -227,163 +234,237 @@ id：5a474d78df58bafeb3535d34
 ````
 ````
 
-- 应格式化笔记形式的附加信息<strong>注意：</strong> 笔记文本...
-- 如果需要多个笔记 然后使用格式`<strong>注：</strong> 首注文本，单独列出所有注释。 第二个注文。
-- 在适用的情况下使用双引文
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
+- Use single-quotes where applicable
 
-## 写作测试
+**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
 
-挑战应该有最低数量的必要测试来验证骆驼是否理解一个概念。
+## Writing tests
 
-我们的目标是传达挑战试图传授的唯一观点，并检验他们对这一点的理解。
+Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
 
-挑战测试可以使用 Node.js 和 Chai.js 断言库。 此外，如有必要，用户生成的代码可以在 `code` 变量中访问。
+Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
 
-## 格式化种子代码
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
 
-这里是挑战种子代码的特定格式准则：
+## Formatting seed code
 
-- 使用两个空格缩进
-- JavaScript 语句结尾有分号
-- 在适用的地方使用双引号
-- 评论字符和评论本身之间应该有空格
+Here are specific formatting guidelines for the challenge seed code:
 
-  `// 修复此行`
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-## 提示和解决方案
+### Seed code comments
 
-每个挑战都有一个“获取提示” 按钮， 这样用户可以访问为挑战创建的任何提示/解决方案。 课程提示/解决方案主题位于`Guide`类别下[我们的论坛](https://forum.freecodecamp.org/c/guide)。
+We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
-如果你发现一个现有挑战的提示/解决方案主题有问题，你可以在论坛上[贡献者类别](https://forum.freecodecamp.org/c/contributors) 提出建议。 信任等级3的版主和用户将审查评论意见，并决定是否列入相应的提示/解决办法专题。
+Comments used should have a space between the comment characters and the comment themselves.  In general comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
-### 添加新的挑战提示/解决方案主题
+Example of valid single line JavaScript comment:
 
-在添加新的挑战提示/解决方案主题时采取以下步骤。
+```js
+// Only change code below this line
+````
 
-1. 首先按照相同步骤创建一个新主题，但审查下一个步骤以创建标题。
-2. 主题的标题应该从`freeCodeCamp挑战指南：`中包含课程挑战的实际标题开始。 例如，如果挑战被命名为“`Chunky Mankey`”，主题标题将是“`freeCodeCamp挑战指南：Chunky Mokey`”。
-3. `camperbot`应该是这些主题/帖子的所有者。 所以你需要请求一个管理员来将主帖子的所有权更改为“camperbot”。
-4. 一旦创建了新主题，论坛主题ID将被创建。 它位于论坛主题URL末尾。 必须通过通常的拉请求过程将此ID添加到课程挑战文件的前台，让“获取提示”按钮链接到主题中。
+Example of a valid CSS comment:
 
-### 提示和解决方案主题内容指南
+```js
+/* Only change code above this line */
+```
 
-为课程挑战相关指南主题提出解决方案时 必须添加完整的代码。 这包括所有原始种子代码以及通过所有挑战测试所需的任何更改。 创建新的提示/解决方案主题时应使用以下模板：
+If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
 
-``md
-# 挑战名称进入这里
+```js
+var a = 3;
+var b = 17;
+var c = 12;
 
--
+// Only change code below this line
+a = a + 12;
+b = 9 + b;
+c = c + 7;
+```
 
-## 问题解释
+If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
 
-这概述了需要做些什么，而不只是重置挑战说明和/或说明。 这是一个可选的章节
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
 
-#### 相关链接
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
+### Translation of seed code comments
+
+There are separate comment dictionaries for each language. The [English vesion of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
+
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated.
+
+```text
+Declare the myGlobal variable below this line
+```
+> [!NOTE]
+> 
+> We are working on an integration to make it possible to work on i18n for the comment dictionary.
+
+## Hints and Solutions
+
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
+
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+
+### Adding new Challenge hints/solutions Topics
+
+Take the following steps when adding a new challenge hints/solutions related topic.
+
+1. Start by following the same steps for creating a new topic but review the next for creating the title.
+2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
+4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
+
+### Guidelines for content of hints and solutions topics
+
+When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
+
+````md
+# Challenge Name Goes Here
+
+---
+
+## Problem Explanation
+
+This summarizes what need to be done without just restating the challenge description and/or instructions. This is an optional section
+
+#### Relevant Links
 
 - [Link Text](link_url_goes_here)
 - [Link Text](link_url_goes_here)
 
 ---
 
-## 提示
+## Hints
 
-### # 提示1
+### Hint 1
 
-提示在此处
+Hint goes here
 
 ### Hint 2
 
-提示在这里
+Hint goes here
 
--
+---
 
-## 解决方案
+## Solutions
 
-<details><summary>Svolution 1 (click to Show/Hide)</summary>
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```js
-function my(
-  console. og('Hello World!');
+function myFunc() {
+  console.log('Hello World!');
 }
 ````
 
-#### 代码解释
+#### Code Explanation
 
-- 代码解释在此处
-- 代码解释在此处
+- Code explanation goes here
+- Code explanation goes here
 
-#### 相关链接
+#### Relevant Links
 
-- [链接文本](link_url_goes_here)
-- [链接文本](link_url_goes_here)
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
 
 </details>
 ````
 
-## 测试挑战
+## Testing Challenges
 
-在您之前[创建拉取请求](how-open-a pull-request)。 d) 对于您的更改，您需要确认您所做的更改不会无意中造成挑战问题。 
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
-1. 要测试所有挑战，请从根目录运行下面的命令
+1. To test all challenges run the below command from the root directory
 
 ````
-npm 运行测试：课程
+npm run test:curriculum
 ``` 
 
-2. 您也可以通过这些命令测试一个块或一个超级挑战块
+2. You can also test a block or a superblock of challenges with these commands
 
 ```
-npm 运行测试:course --block='Basic HTML 和 HTML5'
+npm run test:curriculum --block='Basic HTML and HTML5'
 ```
 
 ```
-npm 运行 test:course --superblock=responsible web-design
+npm run test:curriculum --superblock=responsive-web-design
 ```
 
-您也可以通过执行以下步骤来测试一个挑战：
+You are also able to test one challenge individually by performing the following steps:
 
-1。 切换到“课程”目录：
-
-   ```
-   cd 课程
-   ```
-
-2. 对您更改过的每个挑战文件运行以下：
+1. Switch to the `curriculum` directory:
 
    ```
-   npm 运行测试-- -g '挑战的完整英文标题'
+   cd curriculum
    ```
 
-一旦您验证了每一个挑战通过测试，[请创建一个拉取请求](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/howto opena-pull-request.md)。
+2. Run the following for each challenge file for which you have changed:
 
-> [!提示]
-> 你可以将 `.env` 中的环境变量`LOCALE` 设置为你需要测试的挑战语言。
+   ```
+   npm run test -- -g 'the full English title of the challenge'
+   ```
+
+Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
+
+> [!TIP]
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
-> 当前接受的值是 'english' 和 '中文, 默认设置为 'english' 。
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-## 即将到来的挑战模板
+## Upcoming Challenge Template
 
-正在更新到更清洁、更少嵌套结构的挑战模板。  这还没有完全完成，但以下内容应该接近最终结构：
+The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
 
-``mdx
+````mdx
 
 ---
-id：唯一的标识符(字母和数字, MongoDB_id
-标题: '挑战标题'
-challengeType: Integer, defined in "client/utils/challengeType s`
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: 'Challenge Title'
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
--
+---
 
-import Script from './script dx';
+import Script from './script.mdx';
 
 ## --step-description--
 
-文字描述，Markdown
+Description text, in markdown
 
 ```html
 <div> 
-  示例代码
+  example code
 </div>
 ```
 
@@ -391,18 +472,18 @@ import Script from './script dx';
 
 ![test-id-1]
 
-将会有任意数量的 id、 说明 (Markdown) 和代码块。
+There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.
 
 ```js
-测试代码
+Code for test one
 ```
 
 ![test-id-2]
 
-Markdown 语法中的更多说明
+More instructions in markdown syntax
 
 ```js
-更多代码
+More code
 ```
 
 ## --step-seed--
@@ -410,13 +491,13 @@ Markdown 语法中的更多说明
 ### --before-user-code--
 
 ```lang
-在用户之前评价过的代码
+Code evaluated before the user’s
 ```
 
-### --后用户代码--
+### --after-user-code--
 
 ```lang
-在用户完成后和测试前评估的代码
+Code evaluated after the user’s, and just before the tests
 ```
 
 ### --seed-content--
@@ -424,15 +505,15 @@ Markdown 语法中的更多说明
 ![index-html]
 
 ```html
-部分html
+Some html
 ```
 
 ```css
-一些css
+Some css
 ```
 
 ```js
-一些js
+Some js
 ```
 
 ![index-js]
@@ -447,17 +528,17 @@ Markdown 语法中的更多说明
 
 
 <p spaces-before="0">
-  与种子部分完全相同
+  Exactly the same as the seeds section
 </p>
 
 <h2 spaces-before="0">
-  --next 解决-标记
+  --next-solution-marker
 </h2>
 
 
 
 <p spaces-before="0">
-  再次相同
+  Same again
 </p>
 
 <h1 spaces-before="0">
@@ -471,29 +552,29 @@ Markdown 语法中的更多说明
 
 
 <p spaces-before="0">
-  问题在此处(仅用于视频挑战)
+  The question would go here (only used for video challenges)
 </p>
 
 <h2 spaces-before="0">
-  --ansters-marker--
+  --answers-marker--
 </h2>
 
 
 
 <p spaces-before="0">
-  答案 1
+  Answer 1
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  答案 2
+  Answer 2
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  更多答案
+  More answers
 </p>
 
 <h2 spaces-before="0">
@@ -513,13 +594,13 @@ Markdown 语法中的更多说明
 </p>
 
 <h3 spaces-before="0">
-  有用的链接
+  Useful Links
 </h3>
 
 
 
 <p spaces-before="0">
-  创建和编辑挑战：
+  Creating and Editing Challenges:
 </p>
 
 
@@ -527,14 +608,14 @@ Markdown 语法中的更多说明
 <ol start="1">
   <li>
     <p spaces-before="0">
-      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">挑战类型</a> - 数字挑战类型值是什么(枚举)。
+      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">Challenge types</a> - what the numeric challenge type values mean (enum).
     </p>
   </li>
 
   
   <li>
     <p spaces-before="0">
-      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">为FreeCodeCamp - 写入 ES6 挑战测试</a> - 一个视频跟随 <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> ，因为他为旧版课程做出了贡献。
+      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Contributing to FreeCodeCamp - Writing ES6 Challenge Tests</a> - a video following <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> as he contributes to the old version of the curriculum.
     </p>
   </li>
 

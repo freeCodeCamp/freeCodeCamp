@@ -1,200 +1,199 @@
-# Cum să ajuti la provocările din domeniul video
+# How to help with video challenges
 
-Provocările video sunt un nou tip de provocare în programa freeCodecamp.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-O provocare video este o mică parte a unui curs video de lungime completă pe un subiect anume. O pagină cu provocarea video încorporează un videoclip YouTube. Fiecare pagină de provocare are o singură întrebare cu variantă multiplă legată de video. Un utilizator trebuie să răspundă corect la întrebare înainte de a trece la următoarea provocare video.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-Paginile provocării video sunt create de membrii echipei freeCodeCampp. Videoclipurile YouTube sunt, de asemenea, încărcate de către membrii echipei freeCodeCamp. Multe dintre provocările din domeniul video nu au încă întrebări legate de acestea.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-Poți ajuta prin crearea mai multor întrebări de alegere legate de secțiunile video și adăugarea întrebărilor la fișierele markdown pentru provocările video.
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Șablon provocare
+## Challenge Template
 
-Mai jos este un şablon pentru cum arată fişierele markdown provocări.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
-id: Identificator unic (alfanumeric, MongoDB_id)
-titlu: Challenge Title
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
 challengeType: 11
 videoId: 'YouTube videoId for video challenge'
 ---
 
-## Descrierea
+## Description
 
 <section id='description'>
-O descriere opțională cu informații utile legate de video.
+An optional description with helpful information related to the video.
 </section>
 
-## Testele
+## Tests
 
 <section id='tests'>
 
-``yml
-întrebare:
-  text: 'Întrebare'
-  răspunsuri:
-    - 'Răspuns unu'
-    - 'Răspuns Two'
-    - soluția 'Răspuns trei'
-  : 3
+```yml
+question:
+  text: 'Question'
+  answers:
+    - 'Answer One'
+    - 'Answer Two'
+    - 'Answer Three'
+  solution: 3
 ````
 
 </section>
 ````
 
-## Creând întrebări pentru provocările video
+## Creating questions for video challenges
 
-### Accesează fișierele de marcare ale provocării video
+### Access the video challenge markdown files
 
-Poți găsi fișierele markdown pentru provocări video în următoarele locații din curriculum:
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Analiza datelor cu Cursul Python](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [Curs TensorFlow 2.0](https://github. om/freeCodeCamp/freeCodeCamp/tree/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
-- [Curs Numpy](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
-- [Cum Neural Networks Course](https://github.com/freeCodeCamp/freeCodeCamp/Codetre/master/curriculum/challenges/english/11-machlearnine-with-python/how-neural-networkal-work)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-opțiunile de mai sus pentru un fișier de lucru.
+Pick a challenge markdown file from the options above.
 
-### Skim prin clipul video asociat provocării și creați o întrebare mutiplă cu alegere
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-Mai întâi, găsiți ID-ul video.
+First, find the videoId.
 
-De exemplu, în următorul cod din antetul unui fișier cu provocare video, ID-ul video este "nVAaxZ34khk". Pe GitHub, informațiile ar trebui să fie prezentate într-un format de tabel.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
-id: 5e9a093a74c4063ca6f7c14d titlul: Analiza datelor Exemplul A challenge engeType: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
 
-Apoi, accesează videoclipul YouTube cu acel videoId. URL-ul pentru video va fi:
-https://www.youtube. om/watch?v=[videoId]    (adaugă videoId la adresa URL fără paranteze pătrate)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-În exemplul de mai sus, url-ul este https://www. outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video cu acel videoId și gândiți-vă la o întrebare cu variante multiple bazată pe conținutul video.
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### Adăugați întrebarea la fișierul markdown
+### Add the question to the markdown file
 
-Puteți adăuga întrebarea la nivel local sau direct interfața GitHub. Pentru a adăuga întrebarea la nivel local, trebuie să [setați tabăra freeCodep local](how-to-setup-freecodecamp-locally.md). De asemenea, puteți găsi fișierul pe GitHub și faceți clic pe butonul de editare pentru a adăuga întrebarea la dreapta în browser-ul dvs.
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-dacă nu s-a adăugat încă o întrebare la o anumită provocare video, va avea următoarea întrebare implicită:
-
-``yml
-întrebare:
-  textul: •
-    Întrebare
-  răspunsuri:
-    - <unk>
-      una
-    - <unk>
-      2
-    - <unk>
-      3
-  : 3
-```
-
-Actualizaţi cuvântul "Întrebare" cu întrebarea dumneavoastră. Actualizați „unul”, „două” și „trei” cu posibile răspunsuri. Asigurați-vă că actualizați numărul soluției cu care răspunsul este corect. Puteţi adăuga mai multe răspunsuri posibile folosind acelaşi format. Întrebarea și răspunsurile pot fi înconjurate de ghilimele.
-
-#### Folosește markdown pentru a formata întrebarea ta
-
-Textul în cauză este analizat ca marcaj. Cel mai simplu mod de a se asigura că este formatat corect este de a începe întrebarea cu `textul: <unk>`, astfel:
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-întrebare:
-  text: <unk>
-    Întrebare
+question:
+  text: |
+    Question
+  answers:
+    - |
+      one
+    - |
+      two
+    - |
+      three
+  solution: 3
 ```
 
-Apoi trebuie să vă asiguraţi că întrebarea dvs. este pe o linie nouă şi să indentaţi un nivel mai mult de `textul: <unk>`.
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-Aceeași abordare poate fi utilizată și pentru răspunsuri, astfel încât întreaga întrebare să devină
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-Întrebare:
-  text: 
-text:
-    Întrebare
-  răspunsuri:
-  - <unk>
-    Primul răspuns
-  - <unk>
+question:
+  text: |
+    Question
+```
+
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
+
+The same approach can be used for the answers, so the entire question becomes
+
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
     Second
-  - <unk>
-    A treia soluție
-  : 2
+  - |
+    Third
+  solution: 2
 ```
 
-Asiguraţi-vă că fiecare răspuns este plauzibil, dar există un singur răspuns corect.
+Make sure each answer is plausible but there is only one correct answer.
 
-#### Utilizarea HTML
+#### Use of HTML
 
-Întrebările și răspunsurile pot conține anumite etichete HTML ca `<br>` pentru o linie nouă. Tag-urile HTML ar trebui folosite în mod rar, când întrebările nu pot fi exprimate fără ele.
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
 
-### Exemple de întrebări
+### Question examples
 
-#### Exemple fără HTML
+#### Examples without HTML
 
 ````yml
-întrebare:
-  text:
-    Ce face acest jurnal de cod JavaScript în consolă?
+question:
+  text: |
+    What does this JavaScript code log to the console?
     ```js
     console.log('hello world');
     ````
 
 
-    Selectează un răspuns!
-  răspunsuri:
-    - Salut *lume*
-    - <unk> **salut** lume
-    - Salutare soluție: 3
+    Select an answer!
+  answers:
+    - | hello *world*
+    - | **hello** world
+    - | hello world solution: 3
 ````
 
 ````yml
-întrebare:
-  text:
-    Ce va tipări după rularea acestui cod:
-    ``py
+question:
+  text: |
+    What will print out after running this code:
+    ```py
     width = 15
-    height = 12.
-    print(înălţime/3)
+    height = 12.0
+    print(height/3)
     ````
-  răspunsuri:
+  answers:
     - | 39
     - | 4
-    - 4.0
-    - 5.0
-    - 5 soluție: 3
+    - | 4.0
+    - | 5.0
+    - | 5 solution: 3
 ````
 
-#### Exemplu cu HTML
+#### Example with HTML
 
 ```yml
-întrebare:
-  text:
-    Ce se va afișa după rularea acestui cod:
-    <pre><code>lățime = 15<br>înălțime = 12.<br>print(eight/3)<code></pre>
-  răspunsuri:
-    - <unk>
+question:
+  text: |
+    What will print out after running this code:
+    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
+  answers:
+    - |
       39
-    - <unk>
+    - |
       4
-    - <unk>
-      4.
-    - <unk>
-      5.
-    - <unk>
+    - |
+      4.0
+    - |
+      5.0
+    - |
       5
-  soluție: 3
+  solution: 3
 ````
 
-Exemplul final demonstrează că HTML poate fi folosit, dar că nu este la fel de lizibil ca versiunea fără el.
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-Pentru mai multe exemple, vă puteţi uita la fişierele markdown pentru următorul curs video. Toate provocările au deja întrebări: [Python pentru cursul tuturor](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Deschide o cerere de tragere
+## Open a pull request
 
-După crearea uneia sau mai multor întrebări, poți angaja modificările la o sucursală nouă și [deschide o pull request](how-to-open-a-pull-request.md).
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

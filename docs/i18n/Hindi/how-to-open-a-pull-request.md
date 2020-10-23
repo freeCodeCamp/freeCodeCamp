@@ -1,6 +1,6 @@
 # How to open a Pull Request (PR)
 
-A pull request enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, or coding challenges you should follow these guidelines to send a PR.
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
 ## Prepare a good PR title
 
@@ -72,7 +72,7 @@ Some examples of good PRs titles would be:
 
 Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-If you need any assistance please discuss in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors), we are more than happy to help you.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
 > [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 

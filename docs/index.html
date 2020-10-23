@@ -42,7 +42,7 @@
     <a class="app-name-link" data-nosearch="" href="/">
       <img alt="freeCodeCamp.org" src="images/branding/primary_logo.svg">
     </a>
-    <a class="translations-link" data-nosearch="" href="/#/_translations">
+    <a class="translations-link" data-nosearch="" href="/#/i18n">
       Translations
     </a>
   </div>
@@ -52,12 +52,13 @@
   <script>
     window.$docsify = {
 
-      homepage: 'index.md',
+      homepage: 'index',
 
       relativePath: true,
       // common aliases
       alias: {
-        '.*/_navbar.md': '/_navbar.md'
+        '.*/_navbar.md': '/_navbar.md',
+        '/i18n/?': '/_translations.md'
       },
 
 
@@ -172,5 +173,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
     integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
     crossorigin="anonymous"></script>
+
+</body>
 
 </html>

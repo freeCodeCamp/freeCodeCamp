@@ -1,199 +1,199 @@
-# 如何帮助应对视频挑战
+# How to help with video challenges
 
-视频挑战是免费CodeCamp课程中一种新型挑战。
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-视频挑战是关于某一特定主题的长篇视频课程的一小部分。 视频挑战页面包含YouTube视频。 每个挑战页面都有一个与视频相关的多项选择问题。 在课程中继续下一个视频挑战之前，用户必须正确回答这个问题。
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-视频挑战页面是由免费CodeCamp团队成员创建的。 YouTube视频也由免费CodeCamp团队成员上传。 许多视频挑战还没有与此相关的问题。
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-您可以通过创建与视频部分相关的多个选择问题以及为视频挑战将问题添加到Markdown文件中来提供帮助。
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## 挑战模板
+## Challenge Template
 
-下面是挑战Markdown 文件的模板。
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
-id: 唯一标识符 (字母数字, MongoDB_id
+id: Unique identifier (alphanumerical, MongoDB_id)
 title: Challenge Title
 challengeType: 11
-video Id: 'YouTube video Id for video challenge'
---
+videoId: 'YouTube videoId for video challenge'
+---
 
-## 描述
+## Description
 
 <section id='description'>
-可选描述，带有与视频有关的有用信息。
+An optional description with helpful information related to the video.
 </section>
 
-## 测试
+## Tests
 
 <section id='tests'>
 
 ```yml
-问题:
+question:
   text: 'Question'
-  答案:
-    - '答案 On'
-    - '答案两'
-    - '答案三'
-  解决方法: 3
+  answers:
+    - 'Answer One'
+    - 'Answer Two'
+    - 'Answer Three'
+  solution: 3
 ````
 
 </section>
 ````
 
-## 为视频挑战创建问题
+## Creating questions for video challenges
 
-### 访问视频挑战Markdown 文件
+### Access the video challenge markdown files
 
-您可以在以下课程中找到视频挑战的 markdown 文件：
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [与Python Course的数据分析](https://github)。 om/freeCodeCamp/freeCodeCamp/tree/master/courum/challenges/english/08/data-analysis-with-Python/data-analysis-with-python-course)
-- [TensorFlow 2.0 Course](https://github)。 om/freeCodeCamp/freeCodeCamp/tree/master/curcourum/challenges/english/11-mechanise-learning-with-python/tensorflow)
-- [数字课程](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/courum/challenges/english/08-data-analysis-with-python/numpy)
-- [如何神经网络工作课程](https://github.com/freeCodeCamp/tree/master/courum/challenges/english/ 111-mechande-learning-with-python/how -neural-networks-work)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-从上述选项
+Pick a challenge markdown file from the options above.
 
-### Skim through the video associated with the challenge and create a mutiple option question
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-First, seek the video Id.
+First, find the videoId.
 
-例如，在视频挑战标记文件页眉的下面代码中，视频Id 是“nVAaxZ34khk”。 关于GitHub，信息应以表格格式排列。
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
-id: 5e9a093a74c4063ca6f7c14d title: Data Analysis 示例A challengeType: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
 
-接下来，使用该视频ID访问YouTube视频。 视频的 url 将是：
-https://www.youtube om/watch?v=[videoId]    (将视频Id 添加到没有方括号的URL)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-在上面的例子中，网址是 https://www。 outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-用该视频Id Skim YouTube视频，并想到一个基于视频内容的多个选择问题。
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### 添加问题到Markdown文件
+### Add the question to the markdown file
 
-您可以在本地或直接通过 GitHub 接口添加问题。 要在本地添加问题，您需要[本地设置免费CodeCamp](howto setup-freecodecamp-locally.md)。 您也可以在 GitHub 上找到文件，然后点击编辑按钮在您的浏览器中添加问题。
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-如果一个问题尚未添加到某个视频挑战中， 它将有以下默认问题:
-
-```yml
-问题:
-  文本: |
-    问题
-  答案:
-    - |
-      一个
-    - |
-      两个
-    - |
-      三个
-  解决方法: 3
-```
-
-用你的问题更新“问题”一词。 用可能的答案更新“一个”、“两个”和“三个”。 请务必更新答案正确的解决方案号。 您可以使用相同的格式添加更多可能的答案。 问题和答案可以用引号包围。
-
-#### 使用 Markdown 格式化您的问题
-
-问题中的文本被解析为Markdown。 确保正确格式化的最简单方式是用 `文本开始提问：|`如这样：
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-问题:
-  文本: |
-    问题
+question:
+  text: |
+    Question
+  answers:
+    - |
+      one
+    - |
+      two
+    - |
+      three
+  solution: 3
 ```
 
-然后您需要确保您的问题在新的行上，并且缩进了一个级别超过 `文本：|`。
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-同样的方法可以用来回答整个问题。
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-问题:
-  文本: |
-    问题
-  答案:
-  - |
-    第一个答案
-  - |
-    第二个
-  - |
-    第三个
-  解决方案: 2
+question:
+  text: |
+    Question
 ```
 
-请确保每个答案都是合理的，但只有一个正确的答案。
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-#### 使用 HTML
+The same approach can be used for the answers, so the entire question becomes
 
-问题和答案可以包含某些HTML标签，如 `<br>` 作为新行。 当问题无法在没有它们的情况下表达时，应该少量使用HTML标记。
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
+    Second
+  - |
+    Third
+  solution: 2
+```
 
-### 提问示例
+Make sure each answer is plausible but there is only one correct answer.
 
-#### 没有HTML的示例
+#### Use of HTML
+
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+
+### Question examples
+
+#### Examples without HTML
 
 ````yml
-问题:
-  文本: |
-    此 JavaScript 代码日志到控制台是什么？
+question:
+  text: |
+    What does this JavaScript code log to the console?
     ```js
     console.log('hello world');
     ````
 
 
-    选择答案！
-  回答：
-    - | 你好 *世界*
-    - | **你好** 世界
-    - | 你好世界 解决方案: 3
+    Select an answer!
+  answers:
+    - | hello *world*
+    - | **hello** world
+    - | hello world solution: 3
 ````
 
-``yml
-问题:
+````yml
+question:
   text: |
-    运行此代码后打印出来的内容:
+    What will print out after running this code:
     ```py
-    宽度 = 15
-    高度 = 12。
-    打印(height/3)
+    width = 15
+    height = 12.0
+    print(height/3)
     ````
-  回答：
+  answers:
     - | 39
     - | 4
     - | 4.0
     - | 5.0
-    - | 5 解决方案: 3
+    - | 5 solution: 3
 ````
 
-#### HTML
+#### Example with HTML
 
 ```yml
-问题的示例：
-  text：|
-    运行此代码后会打印什么：
-    <pre><code>宽度= 15<br>高度 = 12。<br>打印(height/3)<code></pre>
-  答案：
+question:
+  text: |
+    What will print out after running this code:
+    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
+  answers:
     - |
       39
     - |
-      4 - |
-    - |
       4
     - |
-      5.
+      4.0
+    - |
+      5.0
     - |
       5
-  解决方法: 3
+  solution: 3
 ````
 
-最后一个例子表明，HTML可以使用，但它不能像没有它的版本那样可读。
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-更多的示例，您可以查看下一个视频课程的 markdown 文件。 所有挑战都已经有问题： [Python适用于每个人课程](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## 打开拉取请求
+## Open a pull request
 
-在创建一个或多个问题后，您可以将更改提交给一个新分支并 [打开一个拉取请求](how-to-open-a-pull-request.md)。
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

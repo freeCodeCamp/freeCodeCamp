@@ -1,17 +1,17 @@
-# ビデオチャレンジを支援する方法
+# How to help with video challenges
 
-ビデオの課題は、freeCodeCampカリキュラムの新しいタイプの課題です。
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-ビデオのチャレンジは、特定のトピックに関する全長ビデオコースの小さなセクションです。 動画チャレンジページには、YouTube 動画が埋め込まれています。 各チャレンジページには、動画に関連する複数選択の質問があります。 コース内の次のビデオチャレンジに進む前に、ユーザーが質問に正しく答える必要があります。
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-ビデオチャレンジのページは、freeCodeCampチームのメンバーによって作成されます。 YouTube動画は、FreeCodeCampチームのメンバーによってもアップロードされます。 ビデオの課題の多くは、まだそれらに関連する質問がありません。
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-ビデオセクションに関連する複数の選択肢の質問を作成し、ビデオ課題のマークダウンファイルに質問を追加することで助けることができます。
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## チャレンジテンプレート
+## Challenge Template
 
-以下はチャレンジマークダウンファイルのテンプレートです。
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
@@ -57,32 +57,28 @@ You can find the markdown files for video challenges at the following locations 
 
 Pick a challenge markdown file from the options above.
 
-### チャレンジに関連するビデオをスキムし、複数選択の質問を作成する
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-まず、ビデオIDを見つける。
+First, find the videoId.
 
-例えば、ビデオチャレンジマークダウンファイルのヘッダから以下のコードでは、videoIdは「nVAAxZ34khk」です。
-
-例えば、ビデオチャレンジマークダウンファイルのヘッダから以下のコードでは、videoIdは「nVAAxZ34khk」です。 GitHub では、情報をテーブル形式でレイアウトする必要があります。
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
-id: 5e9a093a74c4063ca6f7c14d title: データ分析例 A challengeType: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
 
-次に、そのビデオIDでYouTubeのビデオにアクセスします。 The url for the video will be:
+Next, access the YouTube video with that videoId. The url for the video will be:
 https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
 In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
 Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### マークダウンファイルに質問を追加する
+### Add the question to the markdown file
 
-GitHubインターフェースを介して、ローカルまたは直接質問を追加することができます。 ローカルで質問を追加するには、format@@0(how-to-setup-freecodecamp-locally.md) が必要です。 GitHubでファイルを見つけて、編集ボタンをクリックして、ブラウザで質問を追加することもできます。
-
-GitHubでファイルを見つけて、編集ボタンをクリックして、ブラウザで質問を追加することもできます。
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
@@ -100,21 +96,21 @@ question:
   solution: 3
 ```
 
-質問で「質問」という単語を更新します。 答えのある「one」、「two」、「three」を更新します。 答えが正しいソリューション番号を更新してください。 同じ形式でより多くの可能性のある回答を追加できます。 質問と回答は引用符で囲むことができます。
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-#### マークダウンを使用して質問をフォーマットする
+#### Use markdown to format your question
 
-問題のテキストはマークダウンとして解析されます。 正しくフォーマットされていることを確認する最も簡単な方法は、質問を `text: |`で開始することです。
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-質問:
-  テキスト: |
-    質問
+question:
+  text: |
+    Question
 ```
 
-次に、質問が新しい行にあり、 `テキスト:|`よりも1つのレベルにインデントされていることを確認する必要があります。
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-同じアプローチを回答に使用することができますので、質問全体が
+The same approach can be used for the answers, so the entire question becomes
 
 ```yml
 question:
@@ -126,33 +122,33 @@ question:
   - |
     Second
   - |
-    third
+    Third
   solution: 2
 ```
 
-それぞれの答えが妥当であることを確認してくださいが、正しい答えは1つだけです。
+Make sure each answer is plausible but there is only one correct answer.
 
-#### HTML の使用
+#### Use of HTML
 
-質問と回答には、新しい行の `<br>` のような特定の HTML タグを含めることができます。 HTML タグは、質問がなければ表現できない場合には控えめに使用する必要があります。
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
 
-### 質問の例
+### Question examples
 
-#### HTML のない例
+#### Examples without HTML
 
 ````yml
 question:
   text: |
-    この JavaScript コードはコンソールに何を記録しますか?
+    What does this JavaScript code log to the console?
     ```js
     console.log('hello world');
     ````
 
 
-    回答を選択してください！
-  回答:
+    Select an answer!
+  answers:
     - | hello *world*
-    - | **hello** ワールド
+    - | **hello** world
     - | hello world solution: 3
 ````
 
@@ -165,7 +161,7 @@ question:
     height = 12.0
     print(height/3)
     ````
-  回答:
+  answers:
     - | 39
     - | 4
     - | 4.0
@@ -194,10 +190,10 @@ question:
   solution: 3
 ````
 
-最後の例は、HTML が使えることを示していますが、それがないバージョンほど読みやすくないことを示しています。
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-より多くの例については、次のビデオコースのマークダウンファイルを参照できます。 すべてのチャレンジにはすでに質問があります: [Python for everyone course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## プルリクエストを開く
+## Open a pull request
 
-1つ以上の質問を作成した後、新しいブランチに変更をコミットし、 [プルリクエスト](how-to-open-a-pull-request.md) を開くことができます。
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

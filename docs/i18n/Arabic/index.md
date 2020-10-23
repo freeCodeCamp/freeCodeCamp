@@ -1,45 +1,43 @@
-مجتمع [freeCodeCamp.org](https://freecodecamp.org) ممكن بفضل آلاف المتطوعين الطيبين مثلك. ونحن نرحب بكل الإسهامات المقدمة إلى المجتمع وتحمسون للترحيب بكم على متن سفينة واحدة.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!ملاحظة] قبل المتابعة، يرجى أخذ دقيقتين سريعتين لقراءة [مدونة قواعد السلوك لدينا](https://www.freecodecamp.org/code-of-conduct). ونحن ننفذها بشكل صارم عبر مجتمعنا. نريد أن نسهم في FreCodeCamp.org لتكون تجربة آمنة وشاملة للجميع.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-مساهمة سعيدة.
+Happy contributing.
 
-أنتم نرحب بما يلي:
+You are welcome to:
 
-- إنشاء وتحديث وإصلاح الأخطاء في [تحديات البرمجة](#coding-challenges) الخاصة بنا.
+- Create, update and fix bugs in our [curriculum](#curriculum).
 - Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
-- _(سيأتي قريبا)_ ساعدنا في ترجمة freeCodeCamp.org إلى اللغات العالمية.
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-لديك أسئلة؟ انتقل إلى [هذه الأسئلة الشائعة](/FAQ.md) حيث نجيب على بعض الاستفسارات الشائعة حول المساهمة.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## تحديات البرمجة
+## Curriculum
 
-كل التحديات التي نواجهها في البرمجة يتصدى لها المجتمع، يجلب المعرفة المتخصصة من المتطوعين مثلكم.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-يمكنك المساعدة في توسيعها وجعل صياغتها أفضل. يمكنك أيضًا تحديث قصص المستخدم لشرح المفهوم بشكل أفضل أو إزالة قصص زائدة عن الحاجة وتحسين اختبارات التحدي لجعلها أكثر دقة في اختبار رمز الناس.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**إذا كنت مهتما بتحسين تحديات البرمجة هذه، إليك [كيفية العمل على تحديات البرمجة](how-to-work-on-coding-challenges.md).**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## منصة التعلم
+## Learning Platform
 
-منصة التعلم لدينا تعمل على مجموعة جافا سكريبت حديثة. وهي تحتوي على مكونات وأدوات ومكتبات مختلفة، بما في ذلك على سبيل المثال لا الحصر Node.js, MongoDB, LoopBack, OAuth 2.0, React. Gatsby, Webpack, وأكثر من ذلك.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-وعموما،
+Broadly, we use
 
-- لدينا خادم API القائم على Node.js.
-- مجموعة من تطبيقات العملاء القائمة على التفاعل.
-- برنامج نصي نستخدمه لتقييم مشاريعنا الأمامية.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-والإسهام في هذا يتطلب بعض الفهم لواجهات API، وبناء الإيس-6، والكثير من الفضول.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-وبشكل أساسي، نتوقع معرفة أساسية ببعض التكنولوجيات والأدوات والمكتبات المذكورة أعلاه. ومع ذلك، ليس مطلوبا منكم أن تكونوا خبيراً في هذه البلدان ليساهموا فيها.
+If you want to help us improve our codebase...
 
-**إذا كنت ترغب في مساعدتنا على تحسين الكود لدينا، يمكنك إما استخدام Gitpod، بيئة ديف مجانية على الإنترنت**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![فتح في Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(يبدأ بيئة dev جاهزة للبرمجة ل freeCodeCamp في المتصفح الخاص بك.)
+Or you can...
 
-أو
-
-**يمكنك [إعداد FreCodeCamp محليا](how-to-setup-freecodecamp-locally.md) على جهازك.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

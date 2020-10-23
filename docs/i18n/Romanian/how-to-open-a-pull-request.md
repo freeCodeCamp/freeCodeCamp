@@ -1,121 +1,121 @@
-# Cum să deschizi o cerere de tragere (PR)
+# How to open a Pull Request (PR)
 
-O cerere de tragere vă permite să trimiteți modificări de pe furculița dvs. pe GitHub în depozitul principal freeCodeCamp.org. Odată ce ați terminat, efectuați modificări ale codului, sau provocări de codificare ar trebui să urmați aceste recomandări pentru a trimite un PR.
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-## Pregătiţi un titlu PR bun
+## Prepare a good PR title
 
-Recomandăm utilizarea [titlului și mesajelor convenționale](https://www.conventionalcommits.org/) pentru comitete și tragere de cereri. Convenţia are următorul format:
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<type>([Domeniu opțional(e)]): <description>`
+> `<type>([optional scope(s)]): <description>`
 > 
-> De exemplu:
+> For example:
 > 
-> `fix(învăță): teste pentru do...în timp ce provocarea buclei`
+> `fix(learn): tests for the do...while loop challenge`
 
-La deschiderea unei Cereri Pull (PR), puteți utiliza mai jos pentru a determina tipul, domeniul de aplicare (opțional) și descrierea.
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
 
-**Tip:**
+**Type:**
 
-| Tip       | Când se selectează                                                                        |
-|:--------- |:----------------------------------------------------------------------------------------- |
-| repară    | Modificat sau actualizat/îmbunătățit funcționalitate, teste, verbiage a unei lecții, etc. |
-| fetiță    | Numai dacă adaugi funcţionalităţi noi, teste, etc.                                        |
-| nucleu    | Modificări care nu sunt legate de cod, teste sau verbale ale unei lecții.                 |
-| documente | Modificări la directorul `/docs` sau la ghidurile de contribuție, etc.                    |
+| Type  | When to select                                                               |
+|:----- |:---------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                        |
+| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
 
-**Domeniu de aplicare:**
+**Scope:**
 
-Puteți selecta un domeniu din [această listă de etichete](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Descriere:**
+**Description:**
 
-Păstraţi-l scurt (mai puţin de 30 de caractere) şi simplu, puteţi adăuga mai multe informaţii în caseta de descriere PR şi comentarii.
+Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-Câteva exemple de titluri de bune PR-uri ar fi:
+Some examples of good PRs titles would be:
 
-- `fix(a11y): contrast îmbunătățit al barei de căutare`
-- `vezi: adaugă mai multe teste la provocările cu html și css`
-- `fix(api,client): prevenirea erorilor CORS la trimiterea formularului`
-- `docs(i18n): Traducerea în limba chineză a configurației locale`
+- `fix(a11y): improved search bar contrast`
+- `feat: add more tests to html and css challenges`
+- `fix(api,client): prevent CORS errors on form submission`
+- `docs(i18n): Chinese translation of local setup`
 
-## Se propune o cerere pull
+## Proposing a Pull Request
 
-1. Odată ce editările au fost dedicate, vi se va solicita să creați o cerere de tragere pe pagina GitHub a furculii dvs.
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Imagine - Compară solicitarea pull request pe GitHub](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. În mod implicit, toate cererile pull ar trebui să fie împotriva repozitorului principal freeCodep, `master` ramură.
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-   Asigură-te că Fork-ul tău de bază este setat pe freeCodeCamp/freeCodeCamp atunci când dai o Cerere Pull
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![Imagine - Compararea furculițelor când se face o cerere de tragere](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. Trimite cererea pull din sucursala ta către sucursala `principală` a freeCodeCamp.
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
 
-4. În corpul PR, veţi include un rezumat mai detaliat al modificărilor pe care le-aţi făcut şi de ce.
+4. In the body of your PR include a more detailed summary of the changes you made and why.
 
-   - Vi se va prezenta un șablon de cerere pull Aceasta este o listă de verificare pe care ar trebui să o urmăriți înainte de a deschide cererea de tragere.
+   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-   - Completează detaliile după cum consideri potrivit. Aceste informații vor fi revizuite și revizorii vor decide dacă solicitarea dvs. de tragere este sau nu acceptată.
+   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-   - Dacă PR este menit să abordeze o problemă GitHub existentă, atunci, la sfârșitul lui corpul de descriere al PR, utilizaţi cuvântul cheie _Închide_ cu numărul de emitere pentru a [închide automat acea problemă dacă PR este acceptat şi fuzionat](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > Exemplu: `Închizările #123` vor închide problema 123
+     > Example: `Closes #123` will close issue 123
 
-5. Indicați dacă ați testat pe o copie locală a site-ului sau nu.
+5. Indicate if you have tested on a local copy of the site or not.
 
-   Acest lucru este foarte important atunci când se fac modificări care nu sunt doar editate la conținut text ca documentație sau o descriere a provocării. Exemple de modificări care necesită testare locală includ JavaScript, CSS, sau HTML care ar putea schimba funcționalitatea sau aspectul unei pagini.
+   This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-## Feedback la cererile pull
+## Feedback on pull requests
 
-> Felicitări! :tada: pentru a face un PR și mulțumesc mult pentru că ai nevoie de timp pentru a contribui,
+> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
 
-Moderatorii noștri vor arunca o privire și îți vor lăsa un feedback. Vă rugăm să aveţi răbdare cu colegii moderatori şi să respectaţi timpul. Toate cererile de tragere sunt revizuite în timp util.
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-Dacă ai nevoie de asistență, te rugăm să discuți în [camera de chat a contributorilor](https://gitter.im/FreeCodeCamp/Contributors), suntem mai mult decât bucuroși să te ajutăm.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Dacă doriți să contribuiți cu mai multe solicitări, îți recomandăm să citești [făcând modificări și sincronizând](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) ghidurile pentru a evita ștergerea furculii tale.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
-## Conflicte la o cerere de tragere
+## Conflicts on a pull request
 
-Pot apărea conflicte pentru că mulți contribuitori lucrează în depozit, iar modificările vă pot întrerupe PR care este în așteptarea unei evaluări și a unei fuziuni.
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-De cele mai multe ori, este posibil să nu aveți nevoie de o rebază, pentru că zdrobim toate comitetele, Cu toate acestea, dacă este solicitată o rebază aici, este ceea ce ar trebui să faceți.
+More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
 
-### Pentru remedieri și caracteristici obișnuite ale erorilor
+### For usual bug fixes and features
 
-Când lucrezi la bug-uri și funcții obișnuite pe ramura noastră de dezvoltare `master`, poți să faci o simplă rebază:
+When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
 
-1. Rebasează-ți copia locală:
+1. Rebase your local copy:
 
    ```console
    git checkout <pr-branch>
    git pull --rebase upstream master
    ```
 
-2. Rezolvați orice conflicte și adăugați/editați comitete
+2. Resolve any conflicts and add / edit commits
 
    ```console
-   # Fie
-   git adaugă .
+   # Either
+   git add .
    git commit -m "chore: resolve conflicts"
 
-   # or
+   # Or
    git add .
-   git commit --amende--no-edit
+   git commit --amend --no-edit
    ```
 
-3. Împingeţi înapoi modificările la PR
+3. Push back your changes to the PR
 
    ```console
    git push --force origin <pr-branch>
    ```
 
-### Pentru curriculum și caracteristici viitoare
+### For upcoming curriculum and features
 
-Când lucrezi la caracteristici pentru viitoarele noastre curriculum `următoare-*` ramuri, ai un cherry pick:
+When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
 
-1. Asigură-te că amfiti sincronizați cu localul tău:
+1. Make sure your upstream comes in sync with your local:
 
    ```console
    git checkout master
@@ -124,9 +124,9 @@ Când lucrezi la caracteristici pentru viitoarele noastre curriculum `următoare
    git reset --hard upstream/next-python-projects
    ```
 
-2. Faceți o copie de rezervă
+2. Take backup
 
-   a. Fie ştergeţi ramura locală după ce aţi făcut o copie de rezervă (dacă încă o aveţi local):
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
       ```console
       git checkout <pr-branch-name>
@@ -137,42 +137,42 @@ Când lucrezi la caracteristici pentru viitoarele noastre curriculum `următoare
       git checkout -b <backup-branch-name>
 
       # example:
-      # git checkout -b backup-feature-feature/add-numpy-video-question
+      #  git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
 
-   b Sau doar o copie de rezervă a ramurii dvs. pr (dacă nu o aveți la nivel local):
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
       ```console
       git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # exemplu:
-      # git checkout -b backup-feature-add-numpy-video-question origin/feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
-4. Începeți cu o listă curată:
+4. Start off with a clean slate:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Rezolvă orice conflicte și curățare, instalați teste
+5. Resolve any conflicts, and cleanup, install run tests
 
    ```console
    npm run clean
 
    npm ci
-   npm run test:curriculum --superblock =<superblock-name>
+   npm run test:curriculum --superblock=<superblock-name>
 
-   # exemplu:
+   # example:
 
-   # npm run test:curriculum --superblock=python-for-toți
+   # npm run test:curriculum --superblock=python-for-everybody
 
    ```
 
-6. Dacă totul arată bine, împinge înapoi la PR
+6. If everything looks good push back to the PR
 
    ```console
    git push --force origin <pr-branch-name>

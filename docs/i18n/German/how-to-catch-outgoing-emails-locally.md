@@ -1,67 +1,67 @@
-> **Hinweis:** Dies ist ein **optionaler** Schritt und wird nur benötigt, wenn mit E-Mail-Workflows gearbeitet wird
+> **Note:** This is an **optional** step and is required only when working with email workflows
 
-## Einführung
+## Introduction
 
-Einige E-Mail-Workflows, wie das Aktualisieren der E-Mail eines Benutzers, erfordern den Backend-Api-Server, um ausgehende E-Mails zu senden. Eine Alternative zur Verwendung eines E-Mail-Diensteanbieters für das Senden von tatsächlichen E-Mail-Nachrichten, Mailhog ist ein Entwicklerwerkzeug für E-Mail-Tests, das die von deiner FreeCodeCamp-Instanz gesendeten E-Mail-Nachrichten erfasst.
+Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. An alternative to using an email service provider to send actual email messages, Mailhog is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
-## MailHog installieren
+## Installing MailHog
 
-MailHog kann unter macOS, Windows und Linux installiert werden.
+MailHog can be installed on macOS, Windows and Linux.
 
-- [Einführung](#introduction)
-- [MailHog installieren](#installing-mailhog)
-  - [MailHog auf macOS installieren](#installing-mailhog-on-macos)
-  - [MailHog unter Windows installieren](#installing-mailhog-on-windows)
-  - [MailHog unter Linux installieren](#installing-mailhog-on-linux)
-- [MailHog verwenden](#using-mailhog)
-- [Nützliche Links](#useful-links)
+- [Introduction](#introduction)
+- [Installing MailHog](#installing-mailhog)
+  - [Installing MailHog on macOS](#installing-mailhog-on-macos)
+  - [Installing MailHog on Windows](#installing-mailhog-on-windows)
+  - [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Using MailHog](#using-mailhog)
+- [Useful Links](#useful-links)
 
-### MailHog auf macOS installieren
+### Installing MailHog on macOS
 
-Installiere MailHog auf macOS mit [Homebrew](https://brew.sh/):
+Install MailHog on macOS with [Homebrew](https://brew.sh/):
 
 ```bash
-brauen mailhog
-brauen Dienste starten mailhog
+brew install mailhog
+brew services start mailhog
 ```
 
-Die obigen Befehle starten einen Mailhog-Dienst im Hintergrund.
+The above commands will start a mailhog service in the background.
 
-Wenn die Installation abgeschlossen ist, können Sie [mit MailHog](#using-mailhog) starten.
+When the installation completes, you can start [using MailHog](#using-mailhog).
 
-### MailHog unter Windows installieren
+### Installing MailHog on Windows
 
-Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Suchen und klicken Sie auf den Link für Ihre Windows-Version (32 oder 64 bit) und eine .exe Datei wird auf Ihren Computer heruntergeladen.
+Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
 
-Wenn der Download abgeschlossen ist, klicken Sie zum Öffnen der Datei. Es kann eine Windows-Firewall-Benachrichtigung erscheinen, die Zugriff auf MailHog anfordert. Eine Standard-Windows-Kommandozeilen-Eingabeaufforderung öffnet sich, wo MailHog läuft, sobald der Zugriff auf die Firewall gewährt wird.
+When the download completes, click to open the file. A Windows firewall notification may appear, requesting access permission for MailHog. A standard Windows command line prompt will open where MailHog will be running once firewall access is granted.
 
-Schließen Sie MailHog, indem Sie das Fenster zur Eingabeaufforderung schließen. Um MailHog erneut zu starten, klicken Sie auf die MailHog ausführbare Datei (. xe) Datei, die ursprünglich heruntergeladen wurde - es ist nicht notwendig, eine neue MailHog Installationsdatei herunterzuladen.
+Close MailHog by closing the command prompt window. To start MailHog again, click on the MailHog executable (.exe) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
-Beginne [mit MailHog](#using-mailhog).
+Start [using MailHog](#using-mailhog).
 
-### MailHog unter Linux installieren
+### Installing MailHog on Linux
 
-Installieren Sie zuerst [Go](https://golang.org).
+First, install [Go](https://golang.org).
 
-Führen Sie die folgenden Befehle aus, um GO auf Debian-basierten Systemen wie Ubuntu und Linux Mint zu installieren.
+Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
 
 ```bash
 sudo apt-get install golang
 ```
 
-Führen Sie die folgenden Befehle aus, um GO auf RPM-basierten Systemen wie CentOS, Fedora, Red Hat Linux usw. zu installieren.
+Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
 
 ```bash
 sudo dnf install golang
 ```
 
-Alternativ können Sie die folgenden Befehle ausführen, um GO zu installieren.
+Alternatively, run the following commands to install GO.
 
 ```bash
 sudo yum install golang
 ```
 
-Legen Sie nun den Pfad für Go mit den folgenden Befehlen fest.
+Now set the path for Go with the following commands.
 
 ```bash
 echo "export GOPATH=$HOME/go" >> ~/.profile
@@ -69,7 +69,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-Geben Sie schließlich die folgenden Befehle ein, um MailHog zu installieren und auszuführen.
+Finally, enter the commands below to install and run MailHog.
 
 ```bash
 go get github.com/mailhog/MailHog
@@ -77,24 +77,24 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-Beginne [mit MailHog](#using-mailhog).
+Start [using MailHog](#using-mailhog).
 
-## MailHog verwenden
+## Using MailHog
 
-Öffnen Sie einen neuen Browser-Tab oder ein Fenster und navigieren Sie zu [http://localhost:8025](http://localhost:8025) um Ihren MailHog Posteingang zu öffnen, sobald die MailHog Installation abgeschlossen ist und MailHog läuft. Der Posteingang wird ähnlich dem unten abgebildeten Bildschirm angezeigt.
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running. The inbox will appear similar to the screen shot below.
 
 ![MailHog Screenshot 1](images/mailhog/1.jpg)
 
-E-Mails deiner FreeCodeCamp-Installation werden wie unten angezeigt
+Emails sent by your freeCodeCamp installation will appear as below
 
 ![MailHog Screenshot 2](images/mailhog/2.jpg)
 
-Zwei Registerkarten, mit denen Sie entweder reinen Text oder Quelltext anzeigen können, stehen zur Verfügung, wenn Sie eine bestimmte E-Mail öffnen. Stellen Sie sicher, dass der Reiter Klartext wie unten ausgewählt ist.
+Two tabs that allow you to view either plain text or source content will be available when you open a given email. Ensure that the plain text tab is selected as below.
 
 ![MailHog Screenshot 3](images/mailhog/3.jpg)
 
-Alle Links in der E-Mail sollten anklicken und auf ihre URL auflösen.
+All links in the email should be clickable and resolve to their URL.
 
-## Nützliche Links
+## Useful Links
 
-- Weitere Informationen zu MailHog finden Sie im [MailHog](https://github.com/mailhog/MailHog) Projektarchiv. Zusätzliche Informationen sind auch zu benutzerdefinierten MailHog Konfigurationen verfügbar.
+- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog. Additional information is also available regarding custom MailHog configurations.

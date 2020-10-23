@@ -1,179 +1,179 @@
-# كيفية فتح طلب سحب (PR)
+# How to open a Pull Request (PR)
 
-يتيح لك طلب سحب إرسال تغييرات من الشوك الخاص بك على GitHub إلى المستودع الرئيسي لـ freeCodeCamp.org. بمجرد الانتهاء من إجراء تغييرات على التعليمة البرمجية، أو تحديات البرمجة، يجب عليك اتباع هذه المبادئ التوجيهية لإرسال PR.
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-## إعداد عنوان جيد لـ PR
+## Prepare a good PR title
 
-نوصي باستخدام [عنوان ورسائل تقليدية](https://www.conventionalcommits.org/) للإلتزامات وسحب الطلب. وتتخذ الاتفاقية الشكل التالي:
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<type>([النطاق/النطاقات الاختيارية]): <description>`
+> `<type>([optional scope(s)]): <description>`
 > 
-> وعلى سبيل المثال:
+> For example:
 > 
-> `إصلاح (تعلم): اختبارات الدو...بينما تحدي الحلقة`
+> `fix(learn): tests for the do...while loop challenge`
 
-عند فتح طلب سحب (PR)، يمكنك استخدام أدناه لتحديد النوع والنطاق (اختياري) والوصف.
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
 
-**النوع:**
+**Type:**
 
-| نوع       | متى يتم تحديد                                                |
-|:--------- |:------------------------------------------------------------ |
-| إصلاح     | تغيير أو تحديث/تحسين وظائف واختبارات ودروس وما إلى ذلك.      |
-| الأجرام   | فقط إذا كنت تضيف وظائف جديدة، اختبارات، إلخ.                 |
-| عصى       | التغييرات التي لا تتصل بالكود أو الاختبارات أو الدرس الواحد. |
-| المستندات | تغييرات على دليل `/docs` أو المبادئ التوجيهية المساهمة، إلخ. |
+| Type  | When to select                                                               |
+|:----- |:---------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                        |
+| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
 
-**النطاق:**
+**Scope:**
 
-يمكنك تحديد نطاق من [قائمة التسميات](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**وصف:**
+**Description:**
 
-ابقائها قصيرة (أقل من 30 حرفاً) وبسيطة، يمكنك إضافة المزيد من المعلومات في مربع وصف العلاقات العامة والتعليقات.
+Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-وفيما يلي بعض الأمثلة على عناوين حقوق الملكية الفكرية الجيدة:
+Some examples of good PRs titles would be:
 
-- `إصلاح (أ11y): تحسين تباين شريط البحث`
-- `الميزة: إضافة المزيد من الاختبارات إلى تحديات html و css`
-- `إصلاح (api,العميل): منع أخطاء CORS عند تقديم النموذج`
-- `docs(i18n): الترجمة الصينية للإعداد المحلي`
+- `fix(a11y): improved search bar contrast`
+- `feat: add more tests to html and css challenges`
+- `fix(api,client): prevent CORS errors on form submission`
+- `docs(i18n): Chinese translation of local setup`
 
-## اقتراح طلب سحب
+## Proposing a Pull Request
 
-1. بمجرد أن يتم الالتزام بالتعديلات، سيتم مطالبتك بإنشاء طلب سحب على صفحة GitHub الخاصة بك.
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![الصورة - مقارنة طلب السحب على GitHub](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. بشكل افتراضي، يجب أن تكون جميع طلبات السحب ضد مخزن FreCodeCamp الرئيسي، `رئيسي` فرع.
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-   تأكد من أن القاعدة الخاصة بك تم تعيينها على رمز كامب/FreCodeCamp عند رفع طلب سحب.
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![الصورة - مقارنة الشوكات عند تقديم طلب سحب](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. قم بتقديم طلب السحب من فرعك إلى فرع `الكود كامب الرئيسي`
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
 
-4. في متن حسابك الشخصي يتضمن ملخصاً أكثر تفصيلاً للتغييرات التي قمت بها ولماذا.
+4. In the body of your PR include a more detailed summary of the changes you made and why.
 
-   - سيتم تقديمك مع قالب طلب الجذب. هذه قائمة مرجعية كان يجب عليك متابعتها قبل فتح طلب السحب.
+   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-   - قم بتعبئة التفاصيل كما تراها مناسبة. وسيتم استعراض هذه المعلومات وسيقرر المراجعون ما إذا كان طلب السحب الخاص بك قد قُبل أم لا.
+   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-   - إذا كان الغرض من اللعبة هو معالجة مشكلة GitHub موجودة عندئذ، في نهاية جسم وصف PR، استخدم الكلمة المفتاحية _يغلق_ مع رقم المشكلة [أغلق هذه المشكلة تلقائيًا إذا تم قبول ودمج الـ PR](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > على سبيل المثال: `إغلاق #123` سيغلق المشكلة 123
+     > Example: `Closes #123` will close issue 123
 
-5. حدد ما إذا كنت قد اختبرت على نسخة محلية من الموقع أم لا.
+5. Indicate if you have tested on a local copy of the site or not.
 
-   هذا مهم جداً عند إجراء تغييرات لا تقتصر على تعديل محتوى النص مثل التوثيق أو وصف التحدي. وتشمل أمثلة التغييرات التي تحتاج إلى اختبار محلي جافا سكريبت أو CSS أو HTML التي يمكن أن تغير وظيفة أو تخطيط الصفحة.
+   This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-## تعليقات على طلبات السحب
+## Feedback on pull requests
 
-> تهانينا! :tada: حول إجراء كلمة مرور وشكرا جزيلا على تخصيص الوقت للإسهام.
+> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
 
-سوف يلقي المشرفون الآن نظرة ويتركون لك ردود الفعل. يرجى التحلي بالصبر مع زملائهم المشرفين واحترام وقتهم. ويتم استعراض جميع طلبات السحب في الوقت المناسب.
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-إذا كنت بحاجة إلى أي مساعدة يرجى المناقشة في [غرفة الدردشة المساهمين](https://gitter.im/FreeCodeCamp/Contributors)، نحن سعداء للغاية لمساعدتك.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!تلميح] إذا كنت ترغب في المساهمة بمزيد من طلبات السحب، ننصحك بقراءة [إجراء التغييرات ومزامنة](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) المبادئ التوجيهية لتجنب الاضطرار إلى حذف الشوك.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
-## تضارب حول طلب السحب
+## Conflicts on a pull request
 
-يمكن أن تنشأ تناقضات لأن العديد من المساهمين يعملون على المستودع، والتغييرات يمكن أن تحطم حسابك الشخصي الذي هو في انتظار المراجعة والدمج.
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-وفي كثير من الأحيان قد لا تحتاج إلى قاعدة جديدة، لأننا نهدم جميع الالتزامات، ولكن إذا كان طلب إعادة قاعدة هنا هو ما ينبغي أن تفعله.
+More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
 
-### لإصلاح الأخطاء والميزات المعتادة
+### For usual bug fixes and features
 
-عندما تعمل على الأخطاء والميزات العادية في فرع التطوير `الرئيسي`، يمكنك القيام بإعادة قاعدة بسيطة:
+When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
 
-1. استند إلى نسختك المحلية:
-
-   ```console
-   git دفع <pr-branch>
-   git سحب --rebase الرئيسي في أعلى المجرى
-   ```
-
-2. حل أي تعارضات وإضافة / تحرير الالتزامات
+1. Rebase your local copy:
 
    ```console
-   # إما
-   git يضيف.
-   git الالتزام -m "chore: حل التعارضات"
-
-   # أو
-   git إضافة.
-   git الالتزام --تعديل --عدم تحرير
+   git checkout <pr-branch>
+   git pull --rebase upstream master
    ```
 
-3. قم بالعودة إلى التغييرات الخاصة بك في بطاقة PR
+2. Resolve any conflicts and add / edit commits
 
    ```console
-   git push --أصل القوة <pr-branch>
+   # Either
+   git add .
+   git commit -m "chore: resolve conflicts"
+
+   # Or
+   git add .
+   git commit --amend --no-edit
    ```
 
-### للمناهج الدراسية والمميزات القادمة
-
-عندما تعمل على الميزات الخاصة بفروع المناهج الدراسية `التالية*` ، لديك اختيار الكرز:
-
-1. تأكد من أن أعلى البث يأتي في تزامن مع اللغة المحلية الخاصة بك:
+3. Push back your changes to the PR
 
    ```console
-   git الخروج الرئيسي
-   git يجلب --كل --prune
-   git الخروج التالي لمشاريع python-
-   git إعادة تعيين --مشاريع Python التالية - Python
+   git push --force origin <pr-branch>
    ```
 
-2. أخذ نسخة احتياطية
+### For upcoming curriculum and features
 
-   (أ) (أ) إما حذف الفرع المحلي الخاص بك بعد أخذ نسخة احتياطية (إذا كنت لا تزال لديك محلياً):
+When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
+
+1. Make sure your upstream comes in sync with your local:
+
+   ```console
+   git checkout master
+   git fetch --all --prune
+   git checkout next-python-projects
+   git reset --hard upstream/next-python-projects
+   ```
+
+2. Take backup
+
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
       ```console
-      git الخروج <pr-branch-name>
+      git checkout <pr-branch-name>
 
-      # مثال:
-      # git Checout feat/add-numpy-video-question
+      # example:
+      # git checkout feat/add-numpy-video-question
 
-      git Checout -b <backup-branch-name>
+      git checkout -b <backup-branch-name>
 
-      # مثال:
-      # git Checout -b backup-feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
 
-   (ب) (ب) أو مجرد نسخة احتياطية لفرع pr الخاص بك (إذا لم يكن لديك محلياً):
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
       ```console
-      git الخروج -b <backup-branch-name> الأصل /<pr-branch-name>
+      git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # مثال:
-      # git Checout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
-4. البدء بصفحة نظيفة:
+4. Start off with a clean slate:
 
    ```console
-   git الدفع -b <pr-branch-name> مشاريع python-
-   git cherry-seleck <commit-hash>
+   git checkout -b <pr-branch-name> next-python-projects
+   git cherry-pick <commit-hash>
    ```
 
-5. حل أي تضارب، وتنظيف، وتثبيت اختبارات التشغيل
+5. Resolve any conflicts, and cleanup, install run tests
 
    ```console
-   npm تشغيل نظيفة
+   npm run clean
 
    npm ci
-   npm تشغيل الاختبار:منهج --superblock=<superblock-name>
+   npm run test:curriculum --superblock=<superblock-name>
 
-   # مثال:
+   # example:
 
-   # npm تشغيل الاختبار:منهج --superblock=python-for-all person
+   # npm run test:curriculum --superblock=python-for-everybody
 
    ```
 
-6. إذا بدا كل شيء جيدًا ضحك للعودة إلى اللعبة
+6. If everything looks good push back to the PR
 
    ```console
-   git push --أصل القوة <pr-branch-name>
+   git push --force origin <pr-branch-name>
    ```

@@ -1,102 +1,102 @@
-# Jak otevřít požadavek na natažení (PR)
+# How to open a Pull Request (PR)
 
-Požadavek na natažení umožňuje odesílat změny z tvého rozštěpení na GitHubu na hlavní repositář FreeCodeCamp.org. Jakmile provedete změny kódu, nebo kódovací výzvy, měli byste se řídit těmito pokyny a poslat PR.
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-## Připravte dobrý PR název
+## Prepare a good PR title
 
-Doporučujeme použít [běžný název a zprávy](https://www.conventionalcommits.org/) pro revize a požadavek na natažení. Úmluva má tento formát:
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<type>([volitelný rozsah(y)]): <description>`
+> `<type>([optional scope(s)]): <description>`
 > 
-> Například:
+> For example:
 > 
-> `fix(naučení): testy pro to... zatímco smyčka výzva`
+> `fix(learn): tests for the do...while loop challenge`
 
-Při otevírání Pull Request(PR) můžete použít níže uvedené k určení typu, rozsahu (volitelné) a popisu.
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
 
-**Typ:**
+**Type:**
 
-| Typ         | Kdy vybrat                                                                   |
-|:----------- |:---------------------------------------------------------------------------- |
-| opravit     | Změněná nebo aktualizovaná/vylepšená/funkčnost, zkoušky, verbiáž lekce, atd. |
-| pek         | Pouze pokud přidáváte nové funkce, testy atd.                                |
-| koruna      | Změny, které se nevztahují k kódu, testům nebo slovnímu znění lekce.         |
-| dokumentace | Změny adresáře `/docs` nebo pokynů pro přispívání atd.                       |
+| Type  | When to select                                                               |
+|:----- |:---------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                        |
+| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
 
-**Oblast působnosti:**
+**Scope:**
 
-Můžete si vybrat rozsah z [tohoto seznamu štítků](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Popis:**
+**Description:**
 
-Zachovejte ji krátkou (méně než 30 znaků) a jednoduše můžete přidat více informací do políčka pro popis PR a komentáře.
+Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-Některé příklady dobrých PRS by byly:
+Some examples of good PRs titles would be:
 
-- `fixa11y): zlepšený kontrast vyhledávací lišty`
-- `funkce: přidejte další testy do html a css challenge`
-- `oprava (api,client): brání chybám CORS při vkládání formulářů`
-- `Dokumenty(i18n): Čínský překlad lokálního nastavení`
+- `fix(a11y): improved search bar contrast`
+- `feat: add more tests to html and css challenges`
+- `fix(api,client): prevent CORS errors on form submission`
+- `docs(i18n): Chinese translation of local setup`
 
-## Návrh požadavku na natažení
+## Proposing a Pull Request
 
-1. Jakmile budou provedeny úpravy, budete vyzváni k vytvoření požadavku na natažení na GitHubu stránce.
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Obrázek - Porovnat požadavek na natažení na GitHubu](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. Ve výchozím nastavení by všechny požadavky na natažení měly být proti hlavnímu repozitáři freeCamp `, master` větvi.
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-   Ujistěte se, že při zvednutí požadavku na natažení je vaše základní rozštěpení nastaveno na volný CodeCamp/freeCodeCamp
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![Obrázek - porovnávání vidlic při požadavku na natažení](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. Odešlete požadavek na natažení od větev na pobočku freeCodeCamp's `master` FreeCamp.
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
 
-4. V těle vašeho PR uveďte podrobnější shrnutí změn, které jste provedli a proč.
+4. In the body of your PR include a more detailed summary of the changes you made and why.
 
-   - Budete prezentováni s šablonou požadavku na natažení. Toto je kontrolní seznam, který jste měli před otevřením požadavku na natažení následovat.
+   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-   - Vyplňte podrobnosti, jak to považujete za vhodné. Tyto informace budou přezkoumány a hodnotitelé rozhodnou, zda je vaše žádost o natažení přijata, či nikoli.
+   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-   - Pokud má PR řešit existující GitHub problém, pak na konci popisného orgánu vašeho PR, použít klíčové slovo _Zavře_ s číslem úkolu [automaticky zavřít tento úkol, pokud je PR přijat a sloučen](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > Příklad: `Uzavře #123` zavře úkol 123
+     > Example: `Closes #123` will close issue 123
 
-5. Uveďte, zda jste testovali na místní kopii stránky, nebo ne.
+5. Indicate if you have tested on a local copy of the site or not.
 
-   To je velmi důležité při provádění změn, které nejsou pouhými úpravami textového obsahu, jako je dokumentace nebo popis výzvy. Příklady změn, které vyžadují místní testování, zahrnují JavaScript, CSS nebo HTML, které mohou změnit funkčnost nebo rozložení stránky.
+   This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-## Zpětná vazba na požadavky na natažení
+## Feedback on pull requests
 
-> Blahopřejeme! :tada: při vytváření PR a moc děkujeme za to, že věnoval čas na příspěvek.
+> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
 
-Naši moderátoři se nyní podívají a zanechají vám zpětnou vazbu. Buďte prosím trpěliví s kolegy moderátory a respektujte jejich čas. Všechny požadavky na natažení jsou včas přezkoumány.
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-Pokud potřebujete pomoc, prosím diskutujte v chatovací místnosti [přispěvatelů](https://gitter.im/FreeCodeCamp/Contributors), rádi Vám pomůžeme.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Pokud chcete přispět dalšími požadavky na natažení, doporučujeme přečíst si [dělat změny a synchronizovat](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) pokyny, abyste nemuseli mazat vaše rozštěpení.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
-## Konflikty na žádost o stažení
+## Conflicts on a pull request
 
-Konflikty mohou nastat, protože mnoho přispěvatelů pracuje v úložišti a změny mohou poškodit váš PR, který čeká na recenzi a fúzi.
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-Častěji než nemusíte vyžadovat rebázi, protože všechny závazky rozmělňujeme, Nicméně pokud je zde požadována rebace, je to, co byste měli udělat.
+More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
 
-### Pro běžné opravy chyb a funkce
+### For usual bug fixes and features
 
-Když pracujete na běžných chybách a funkcích na naší vývojové větvi `master`můžete udělat jednoduchou rebázi:
+When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
 
-1. Rebujte svou místní kopii:
+1. Rebase your local copy:
 
    ```console
    git checkout <pr-branch>
-   git pull --rebase proti master
+   git pull --rebase upstream master
    ```
 
-2. Vyřešit konflikty a přidat / upravit revize
+2. Resolve any conflicts and add / edit commits
 
    ```console
-   # Buď
+   # Either
    git add .
    git commit -m "chore: resolve conflicts"
 
@@ -105,17 +105,17 @@ Když pracujete na běžných chybách a funkcích na naší vývojové větvi `
    git commit --amend --no-edit
    ```
 
-3. Přesuňte změny zpět do PR
+3. Push back your changes to the PR
 
    ```console
-   git push --force původ <pr-branch>
+   git push --force origin <pr-branch>
    ```
 
-### Pro nadcházející učební plány a funkce
+### For upcoming curriculum and features
 
-Když pracujete na funkcích pro naše nadcházející učební osnovy `další*` pobočky, máte možnost vybrat:
+When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
 
-1. Ujistěte se, že váš předcházející stream je synchronizován s vašimi lokálními:
+1. Make sure your upstream comes in sync with your local:
 
    ```console
    git checkout master
@@ -124,41 +124,41 @@ Když pracujete na funkcích pro naše nadcházející učební osnovy `další*
    git reset --hard upstream/next-python-projects
    ```
 
-2. Vytvořit zálohu
+2. Take backup
 
-   „Technologie“ ve smyslu všeobecné poznámky k technologii pro „vývoj“, „výrobu“ nebo „užití“ zařízení nebo „softwaru“ uvedených v položkách 3A, 3B nebo 3D. Buď smažte svou místní větev po přijetí zálohy (pokud ji stále lokálně máte):
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
       ```console
       git checkout <pr-branch-name>
 
-      # příklad:
+      # example:
       # git checkout feat/add-numpy-video-question
 
       git checkout -b <backup-branch-name>
 
-      # příklad:
-      # git checkout -b backup-feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
 
-   „Technologie“ ve smyslu všeobecné poznámky k technologii pro „vývoj“, „výrobu“ nebo „užití“ zařízení nebo „softwaru“ uvedených v položkách 7A, 7B nebo 7C. Nebo jen zálohu vaší pr větve (pokud ji lokálně nemáte):
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
       ```console
       git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # příklad:
-      # git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
-4. Začněte s čistým slatem:
+4. Start off with a clean slate:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Vyřešit konflikty a vyčistit, nainstalovat testy
+5. Resolve any conflicts, and cleanup, install run tests
 
    ```console
    npm run clean
@@ -172,8 +172,8 @@ Když pracujete na funkcích pro naše nadcházející učební osnovy `další*
 
    ```
 
-6. Pokud vše vypadá dobře zpátky do PR
+6. If everything looks good push back to the PR
 
    ```console
-   git push --force původ <pr-branch-name>
+   git push --force origin <pr-branch-name>
    ```

@@ -1,108 +1,112 @@
-# Miten koodaukseen liittyviä haasteita voidaan käsitellä
+# How to work on coding challenges
 
-Tavoitteenamme on kehittää hauska ja selkeä vuorovaikutteinen oppimiskokemus.
+Our goal is to develop a fun and clear interactive learning experience.
 
-Vuorovaikutteisten koodaushaasteiden suunnittelu on vaikeaa. Olisi paljon helpompi kirjoittaa pitkä selitys tai luoda video opetusohjelma, ja siellä on paikka niille Medium ja YouTube. Kuitenkin, meidän ydinopetussuunnitelma, olemme kiinni mikä toimii parhaiten useimmat ihmiset - täysin interaktiivinen, videopeli kaltainen kokemus.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-Haluamme, että leiriläiset saavuttavat virtaustilan. Haluamme, että ne rakentavat vauhtia ja räjähtävät opetussuunnitelmamme läpi mahdollisimman harvalla välipalalla. Haluamme, että ne käsittelevät hankkeita luottavaisin mielin ja että ne altistuvat laajasti ohjelmasuunnittelukonsepteille.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
-Näiden haasteiden luominen edellyttää valtavaa luovuutta ja yksityiskohtien huomiointia. Saatavilla on paljon apua. Sinulla on tukea koko joukko osallistujia, joille voit pomppia ideoita pois ja demo haasteitasi. Pysy aktiivisena [osallistujien huoneessa](https://gitter.im/freecodecamp/contributors) ja kysy paljon kysymyksiä.
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-Autuksesi avulla voimme suunnitella interaktiivisen koodausopetussuunnitelman, joka auttaa miljoonia ihmisiä oppimaan koodaamaan tulevina vuosina.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
-Kunkin haasteen sisältö on tallennettu omaan markdown tiedostoon. Tämä markdown tiedosto on myöhemmin muunnettu HTML käyttäen työkaluja luoda interaktiivisia verkkosivuja.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-Löydät kaikki freeCodeCamp.orgin opetussuunnitelman sisällön [`/opetussuunnitelma/haasteita`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges) hakemistosta.
+With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-## Määritä opetussuunnitelman työkalun asetukset
+The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
 
-Ennen kuin työskentelet opetussuunnitelman, sinun pitäisi perustaa joitakin työkaluja, joiden avulla voit testata muutoksia. Voit käyttää mitä tahansa alla olevaa vaihtoehtoa:
+You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges) directory.
 
-- Voit [määrittää freeCodeCamp paikallisesti](how-to-setup-freecodecamp-locally.md). Tämä on **erittäin suositeltavaa** säännöllisille/toistuville maksuille. Tämä asetus sallii sinun työskennellä ja testata muutoksiasi.
-- Käytä Gitpodia, ilmainen online dev ympäristö. Alla olevan painikkeen napsauttaminen käynnistää käyttövalmiuden koodin dev ympäristön freeCodeCamp selaimessasi. Se kestää vain muutaman minuutin.
+## Set up the tooling for the curriculum
 
-  [![Avaa Gitpodissa](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
 
-- Muokkaa tiedostoja GitHubin käyttöliittymässä klikkaamalla kynä kuvaketta vastaavaa tiedostoa. Vaikka tämä on nopein tapa, sitä ei suositella ****, koska et pysty testaamaan muutoksia GitHubissa. Jos ylläpitäjämme päättelevät, että tekemäsi muutokset on testattava paikallisesti, sinun on noudatettava yllä olevia menetelmiä sen sijaan uudelleen.
+- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
+- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
 
-## Haasteen Malli
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-Alla on malli siitä, miltä haasteen markdown tiedostot näyttävät tällä hetkellä.  Jos haluat nähdä virtaviivaistetun mallin , hyväksymme sen [alla](#upcoming-challenge-template).
+- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead again.
+
+## Challenge Template
+
+Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
 
 ````md
 ---
-id: Yksilöllinen tunniste (aakkosnumeerinen, MongoDB_id)
-otsikko: Challenge Title
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
 challengeType: 0
 videoUrl: 'url of video explanation'
 ---
 
-## Kuvaus
+## Description
 
 <section id='description'>
-A Kuvaus haasteesta ja siitä, mitä tarvitaan
+A Description of the challenge and what is required to pass
 </section>
 
-## Ohjeet
+## Instructions
 
 <section id='instructions'>
-Ohjeet siitä, mitä tarkalleen pitää tehdä.
+Instructions about what exactly needs to be done.
 </section>
 
-## Testit
+## Tests
 
 <section id='tests'>
 
 ```yml
-testit:
-  - teksti: Tulisiko palauttaa "foo"
-    testiMerkkijono: 'Kieltäytynyt funktio mahdollisesti käyttäen Chai asetuksia'
+tests:
+  - text: Should return "foo"
+    testString: 'A stringified function possibly using Chai asserts'
 ````
 
 </section>
 
-## Haasteen Siemenet
+## Challenge Seed
 
 <section id='challengeSeed'>
 
 <div id='{ext}-seed'>
 
 ```{ext}
-Koodi näytetään oletusarvoisesti editorissa.
+Code displayed in the editor by default.
 
-Tämä on vaadittu osa haasteen.
+This is a required section for the challenge.
 ```
 
 </div>
 
-### Ennen Testejä
+### Before Test
 
 <div id='{ext}-setup'>
 
 ```{ext}
-Valinnainen testiasetusten koodi.
+Optional Test setup code.
 ```
 
 </div>
 
-### Testin Jälkeen
+### After Test
 
 <div id='{ext}-teardown'>
 
 ```{ext}
-Valinnainen Testaa alas -koodi.
+Optional Test tear down code.
 ```
 
 </div>
 
 </section>
 
-## Ratkaisu
+## Solution
 
 <section id='solution'>
 
 ```{ext}
-// ratkaisu tarvitaan
+// solution required
 ```
 
 </section>
@@ -111,312 +115,389 @@ Valinnainen Testaa alas -koodi.
 
 > [!NOTE]
 >
-> 1. Edellä olevissa jaksoissa esimerkkejä `{ext}` ovat:
+> 1. In the above sections, examples of `{ext}` are:
 >
 >   - `html` - HTML/CSS
 >   - `js` - JavaScript
 >   - `jsx` - JSX
 >
-> 2. Yllä olevan `Tests`-osion `text`- ja `testString`-osion tulee olla kelvollinen YAML-merkkijono. `testString` voi olla stringified funktio tai lauseke, joka voi käyttää Chai-asetuksia.
+> 2. For the `Tests` section above, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression using which could use Chai asserts.
 
-## Numerointihaasteet
+## Numbering Challenges
 
-Jokainen haaste tarvitsee `id`. Jos et määritä yksi, MongoDB luo uuden satunnaisen kun se tallentaa tiedot; kuitenkin, emme halua sen tekevän sitä, koska haluamme haasteen olevan johdonmukainen eri ympäristöissä (lavastus, tuotanto, paljon erilaisia kehittäjiä, jne.).
+Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
 
-Luo uusi kuori (olettaen MongoDB on käynnissä erikseen):
+To generate a new one in a shell (assuming MongoDB is running separately):
 
-1. Suorita `mongo`-komento.
-2. Suorita `ObjectId()` komento.
+1. Run `mongo` command.
+2. Run `ObjectId()` command.
 
-Esimerkiksi:
+For example:
 
 ```bash
 $ mongo
 MongoDB shell version v3.6.1
 connecting to: mongodb://127.0.0.1:27017
-MongoDB serveri: 3.4.10
+MongoDB server version: 3.4.10
 ...
 $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-Tulos on uusi id, esimerkiksi `5a474d78df58bafeb35d34` edellä.
+The result is a new id, for example `5a474d78df58bafeb3535d34` above.
 
-Kun sinulla on id, laita se merkkikansioon `id` -kenttään yläreunassa, esim.
+Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
 ```yml
 ---
 id: 5a474d78df58bafeb3535d34
-otsikko: Haaste otsikko
+title: Challenge Title
 ```
 
-## Haasteiden nimeäminen
+## Naming challenges
 
-Asioiden nimeäminen on vaikeaa. Olemme helpottaneet sitä asettamalla joitakin rajoituksia.
+Naming things is hard. We've made it easier by imposing some constraints.
 
-Kaikkien haasteen otsikoiden tulee olla täsmällisiä, ja niiden tulee noudattaa tätä kaavaa:
+All challenge titles should be explicit and should follow this pattern:
 
-\[verb\]\[objektin lauseke\]
+\[verb\]\[object clause\]
 
-Tässä muutamia esimerkkejä haasteen nimiä:
+Here are some example challenge names:
 
-- Määritä elementin täyttö napsauttamalla komentoa
-- Tiivistetty matriisi kanssa .reduce
-- Käytä kiinnike Notation löytää ensimmäinen merkki merkkijonossa
+- Use Clockwise Notation to Specify the Padding of an Element
+- Condense arrays with .reduce
+- Use Bracket Notation to Find the First Character in a String
 
-## Haasteen kuvaukset/ohjeet
+## Challenge descriptions/instructions
 
-Lausekkeiden on oltava selkeitä ja ytimekkäitä ja niissä on oltava mahdollisimman vähän ammattikieltä. Jos käytetään kielenkäyttö on välittömästi määriteltävä tavallisena englanninkielisenä.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-Säilytä kohdat lyhennettyinä (noin 1-4 lausetta). Ihmiset ovat todennäköisemmin lukea useita lyhyitä kappaleita kuin seinän tekstiä.
+Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Haastetekstin pitäisi käyttää toista henkilöä ("sinua") auttaakseen antamaan sille keskusteluäänen. Näin teksti ja ohjeet näyttävät puhuvan suoraan kamppailijan kanssa haasteen läpi. Yritä välttää käyttämästä ensimmäistä henkilöä ("I", "me", "Let's" ja "me").
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Älä käytä lähteviä linkkejä. Nämä keskeyttävät virtauksen. Leirintäalueiden ei pitäisi koskaan olla google mitään näiden haasteiden aikana. Jos on resursseja, luulet, että leiriläiset hyötyisivät niistä, lisää ne haasteeseen liittyvään artikkeliin.
+Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-Voit lisätä kaavioita, jos ehdottoman välttämätöntä.
+You can add diagrams if absolutely necessary.
 
-Älä käytä emojeja tai hymiöitä haasteissa. freeCodeCamp on globaali yhteisö, ja emojin tai emotiikan kulttuurinen merkitys voi olla erilainen eri puolilla maailmaa. Myös emojit voivat tehdä eri järjestelmiä.
+Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
-Oikea substantiivi pitäisi käyttää oikeaa iskunvaimennusta kun mahdollista. Alla on luettelo sanoista, kuten niiden pitäisi näkyä haasteissa.
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
-- JavaScript (suuraakkosin "J" ja "S" eikä lyhenteitä)
+- JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
-- Edessä-end kehitys (adjective form with a dash) on, kun työskentelet etupäässä (substantiivi lomake ilman dash). Sama pätee "takaisin loppuun", "täysi pino", ja moniin muihin yhdistettyihin termeihin.
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-### 2 minuutin sääntö
+### The 2-minute rule
 
-Jokaisen haasteen pitäisi olla ratkaistavissa 120 sekunnin kuluessa syntyperäisen englantilaisen puhujan, joka on suorittanut siihen liittyvät haasteet. Tähän sisältyy aika, jonka kuluu ohjeiden lukemiseen, ymmärrä kylvetty koodi, kirjoittaa oma koodinsa ja saada kaikki testit hyväksyttäväksi.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their own code and get all the tests to pass.
 
-Jos haasteen loppuun saattaminen kestää yli kaksi minuuttia, sinulla on kaksi vaihtoehtoa:
+If it takes longer than two minutes to complete the challenge, you have two options:
 
-- Yksinkertaista haastetta, tai
-- Jaa haaste kahteen haasteeseen.
+- Simplify the challenge, or
+- Split the challenge into two challenges.
 
-2 minuutin sääntö pakottaa sinut, haastesuunnittelija, tekemään ohjeistasi ytimekkäät, seed code -koodisi selväksi ja testit suoraan.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
-Seuraamme, kuinka kauan leiriläisten on ratkaistava muutoksia ja käytettävä näitä tietoja löytääkseen haasteita, joita on yksinkertaistettava tai jaettava.
+We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
 
-### Modulaarisuus
+### Modularity
 
-Jokaisen haasteen pitäisi opettaa täsmälleen yksi käsite, ja käsitteen pitäisi näkyä haasteen nimestä.
+Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
-Aiemmin käsiteltyjä käsitteitä voidaan vahvistaa toistolla ja variaatioilla esimerkiksi ottaa käyttöön h1 elementtejä yhdessä haasteessa, sitten h3 elementtejä muutamia haasteita myöhemmin.
+We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 
-Tavoitteenamme on vastata tuhansiin 2 minuutin haasteisiin. Ne voivat virrata yhteen ja toistaa aiemmin katettuja käsitteitä.
+Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
-### Haastetekstin muotoilu
+### Formatting challenge text
 
-Tässä on erityisiä muotoilu ohjeita haasteen tekstiä ja esimerkkejä:
+Here are specific formatting guidelines for challenge text and examples:
 
-- Kielen avainsanat menevät `<code>` -tageissa. Esimerkiksi HTML-tagien nimet tai CSS-ominaisuuksien nimet
-- Hakusanan ensimmäinen ilmentymä kun se on määritelty, tai yleiset avainsanat (esim. "objekti" tai "muuttumattomat") menevät `<dfn>` -tageissa
-- Viittaukset koodin osiin (eli funktioon, menetelmään tai muuttujan nimiin) olisi käärittävä `<code>` -tageihin. Katso alla oleva esimerkki:
-- Käytä <code>parseInt</code> muuntaaksesi muuttujan <code>realNumber</code> kokonaislukuksi.
-- Monirivisiä koodilohkoja **edeltää tyhjä rivi**. Seuraava rivi on aloitettava kolmella reitillä, joita seuraa välittömästi yksi [tuetuista kielistä](https://prismjs.com/#supported-languages). Täydentääksesi koodilohkon sinun on aloitettava uusi rivi, jossa on vain kolme backtickia ja **toinen tyhjä rivi**. **Huomautus:** Jos aiot käyttää esimerkkikoodia YAML, käytä `yaml` sen sijaan, että `yml` kieliä selausmerkkien oikealle puolelle.
+- Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
+- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
+- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+```md
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+```
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
 
-Katso alla oleva esimerkki:
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
-Seuraava esimerkki koodista:
+The following is an example of code:
 
 ```{language}
 
-[SINUN KOODI TÄSTÄ]
+[YOUR CODE HERE]
 
 ````
 ````
 
-- Lisätietoja huomautuksen muodossa tulisi muotoilla `<strong>Huomautus:</strong> Loput huomautustekstiä...
-- Jos tarvitaan useita muistiinpanoja luetella kaikki huomautukset erillisissä lauseissa käyttäen muotoa `<strong>Huomautuksia:</strong> Ensimmäisen huomautuksen tekstiä. Toinen huomautusteksti.`.
-- Käytä kaksinkertaisia lainauksia soveltuvin osin
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
+- Use single-quotes where applicable
 
-## Kirjoittaminen testit
+**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
 
-Haasteita pitäisi olla mahdollisimman vähän testejä tarpeen tarkistaa, että camper ymmärtää konseptin.
+## Writing tests
 
-Tavoitteenamme on kommunikoida se yksittäinen piste, että haaste yrittää opettaa, ja testata, että he ovat ymmärtäneet tämän pisteen.
+Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
 
-Haastetestit voivat hyödyntää Node.js ja Chai.js väitöskirjakirjastoja. Tarvittaessa käyttäjän luomaa koodia voi myös käyttää muuttujassa.
+Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
 
-## seed code Formatting
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
 
-Tässä on erityiset muotoiluohjeet haasteen seed codeille:
+## Formatting seed code
 
-- Käytä kahta välilyöntiä sisennykseen
-- Javascript-lausunnot päättyvät puolipisteeseen
-- Käytä kaksinkertaisia lainausmerkkejä tarvittaessa
-- Kommenttimerkkien ja kommentin välillä tulisi olla välilyönti itse
+Here are specific formatting guidelines for the challenge seed code:
 
-  `// Korjaa tämä rivi`
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-## Vinkkejä ja ratkaisuja
+### Seed code comments
 
-Jokaisella haasteella on `Hanki Hint`-painike, jotta käyttäjä voi käyttää mitä tahansa haastetta varten luotuja vihjejä/ratkaisuja. Opetussuunnitelman vihjeet/ratkaisut aiheet sijaitsevat [foorumissamme](https://forum.freecodecamp.org/c/guide) `Guide`-kategorian alla.
+We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
-Jos löydät ongelman olemassa olevan haasteen vihjeiden/ratkaisujen aiheen kanssa, voit tehdä ehdotuksia foorumilla [osallistujien kategoriassa](https://forum.freecodecamp.org/c/contributors). Moderaattorit ja käyttäjät, joilla on luotettavuustaso 3, tarkastelevat kommentteja ja päättävät, sisällyttävätkö ne muutokset vastaavaan vihje-/ratkaisuaiheeseen vai eivät.
+Comments used should have a space between the comment characters and the comment themselves.  In general comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
-### Uusien Haastevihjeiden/ratkaisujen lisääminen Aiheet
+Example of valid single line JavaScript comment:
 
-Ota seuraavat vaiheet lisätessään uusi haasteen vihjeitä tai ratkaisuja koskeva aihe.
+```js
+// Only change code below this line
+````
 
-1. Aloita seuraamalla samoja vaiheita uuden aiheen luomiseksi, mutta tarkista seuraava jotta voit luoda otsikko.
-2. Aiheen otsikon tulisi alkaa otsikolla `freeCodeCamp Challenge Guide: `, joka on mukana opetussuunnitelman haasteen otsikossa. Esimerkiksi, jos haaste on nimeltään "`Chunky Monkey`", aiheen otsikko olisi "`freeCodeCamp Challenge Guide: Chunky Monkey`".
-3. `camperbot` pitäisi olla näiden aiheiden tai viestien omistaja, joten sinun täytyy pyytää admin muuttaa omistusoikeus tärkein viesti `camperbotin `.
-4. Kun uusi aihe on luotu, foorumi aiheen tunnus on luotu. Se sijaitsee foorumin aiheen URL-osoitteen lopussa. Tämä tunnus on lisättävä opetussuunnitelman haasteen etuosaan, joka tapahtuu tavanomaisen `Get a Hint`-painikkeen vetämisprosessin kautta, jotta se voidaan linkittää aiheeseen.
+Example of a valid CSS comment:
 
-### Ohjeet vihjeiden ja ratkaisujen sisällölle
+```js
+/* Only change code above this line */
+```
 
-Kun ehdotetaan ratkaisua opetussuunnitelman haasteeseen liittyvään oppaaseen liittyvään aiheeseen, koko koodi on lisättävä. Tämä sisältää kaikki alkuperäisen seed code plus kaikki muutokset, joita tarvitaan kaikkien haastetestien suorittamiseen. Seuraavaa mallia tulisi käyttää luotaessa uusia vihjejä/ratkaisuja aiheita:
+If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
+
+```js
+var a = 3;
+var b = 17;
+var c = 12;
+
+// Only change code below this line
+a = a + 12;
+b = 9 + b;
+c = c + 7;
+```
+
+If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
+### Translation of seed code comments
+
+There are separate comment dictionaries for each language. The [English vesion of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
+
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated.
+
+```text
+Declare the myGlobal variable below this line
+```
+> [!NOTE]
+> 
+> We are working on an integration to make it possible to work on i18n for the comment dictionary.
+
+## Hints and Solutions
+
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
+
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+
+### Adding new Challenge hints/solutions Topics
+
+Take the following steps when adding a new challenge hints/solutions related topic.
+
+1. Start by following the same steps for creating a new topic but review the next for creating the title.
+2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
+4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
+
+### Guidelines for content of hints and solutions topics
+
+When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
 ````md
-# Haasteen nimi Goes Here
+# Challenge Name Goes Here
 
 ---
 
-## Ongelmanselitys
+## Problem Explanation
 
-Tämä tiivistää mitä on tehtävä ilman, että vain toistetaan haasteen kuvausta ja/tai ohjeita. Tämä on valinnainen osio
+This summarizes what need to be done without just restating the challenge description and/or instructions. This is an optional section
 
-#### Relevant Linkit
+#### Relevant Links
 
 - [Link Text](link_url_goes_here)
 - [Link Text](link_url_goes_here)
 
 ---
 
-## Vinkkejä
+## Hints
 
-### Vihje 1
+### Hint 1
 
-Vihje menee tänne
+Hint goes here
 
-### Vihje 2
+### Hint 2
 
-Vihje menee tänne
+Hint goes here
 
 ---
 
-## Ratkaisut
+## Solutions
 
-<details><summary>Ratkaisu 1 (Click to Show/Hide)</summary>
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-``js
-funktio myFunc() {
-  konsoli. og('Hei maailma!');
+```js
+function myFunc() {
+  console.log('Hello World!');
 }
 ````
 
-#### Koodin Selitys
+#### Code Explanation
 
-- Koodin selitys menee tähän
-- Koodin selitys menee tähän
+- Code explanation goes here
+- Code explanation goes here
 
-#### Asiaankuuluvat Linkit
+#### Relevant Links
 
-- [Linkin Teksti](link_url_goes_here)
-- [Linkin Teksti](link_url_goes_here)
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
 
 </details>
 ````
 
 ## Testing Challenges
 
-Ennen kuin [luo pull-pyyntö](how-to-open-a-pull-request. d) sinun on vahvistettava, että tekemäsi muutokset eivät aiheuta tahattomasti ongelmia haasteen kanssa. 
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
-1. Voit testata kaikkia haasteita suorita alla oleva komento juurihakemistosta
+1. To test all challenges run the below command from the root directory
 
 ````
-npm run testi:opetussuunnitelma
+npm run test:curriculum
 ``` 
 
-2. Voit myös testata lohkoa tai haasteiden ylälohkoa näillä komennoilla
+2. You can also test a block or a superblock of challenges with these commands
 
 ```
-npm run test:curriculum --block='Basic HTML ja HTML5'
+npm run test:curriculum --block='Basic HTML and HTML5'
 ```
 
 ```
 npm run test:curriculum --superblock=responsive-web-design
 ```
 
-Voit myös testata yhtä haastetta erikseen suorittamalla seuraavat vaiheet:
+You are also able to test one challenge individually by performing the following steps:
 
-1. Vaihda `curriculum`-kansioon:
-
-   ```
-   cd opetussuunnitelma
-   ```
-
-2. Suorita seuraava jokaiselle haastetiedostolle, jota varten olet muuttunut:
+1. Switch to the `curriculum` directory:
 
    ```
-   npm run test -- -g 'haasteen koko englanninkielinen otsikko'
+   cd curriculum
    ```
 
-Kun olet varmistanut, että jokainen haaste olet työskennellyt läpäisee testit, [luo pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
+2. Run the following for each challenge file for which you have changed:
+
+   ```
+   npm run test -- -g 'the full English title of the challenge'
+   ```
+
+Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
 > [!TIP]
-> Voit asettaa `LOCALE` ympäristömuuttujan `.env` sen haasteen (haasteiden) kieleen, jota sinun täytyy testata.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
-> Tällä hetkellä hyväksytyt arvot ovat `english` ja `chinese`, ja `english` on oletusarvoisesti asetettu.
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-## Tuleva Haastemalli
+## Upcoming Challenge Template
 
-Haastemalli päivitetään puhtaampaan ja vähemmän sisäkkäiseen rakenteeseen.  Tätä ei ole täysin viimeistelty, mutta lopullisen rakenteen tulisi olla lähellä:
+The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
 
 ````mdx
 
 ---
-id: Yksilöllinen tunniste (aakkosnumeerinen, MongoDB_id)
-otsikko: 'Challenge Title'
-challengeType: Integer, määritelty `client/utils/challengeTypes. s`
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: 'Challenge Title'
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
 
-import Script from './script. dx';
+import Script from './script.mdx';
 
 ## --step-description--
 
-Kuvaus teksti, merkitty
+Description text, in markdown
 
 ```html
 <div> 
-  esimerkki koodi
+  example code
 </div>
 ```
 
-## --step-vihjeet--
+## --step-hints--
 
 ![test-id-1]
 
-On sattumanvarainen määrä kolminkertaisia ids, ohjeet (merkit) ja koodilohkoja.
+There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.
 
 ```js
-Testin yksi koodi
+Code for test one
 ```
 
 ![test-id-2]
 
-Lisää ohjeita markdown syntaksi
+More instructions in markdown syntax
 
 ```js
-Lisää koodi
+More code
 ```
 
 ## --step-seed--
 
-### --ennen-käyttäjäkoodi--
+### --before-user-code--
 
 ```lang
-Koodi arvioitu ennen käyttäjän
+Code evaluated before the user’s
 ```
 
 ### --after-user-code--
 
 ```lang
-Koodi arvioidaan käyttäjän jälkeen ja juuri ennen testejä
+Code evaluated after the user’s, and just before the tests
 ```
 
 ### --seed-content--
@@ -424,15 +505,15 @@ Koodi arvioidaan käyttäjän jälkeen ja juuri ennen testejä
 ![index-html]
 
 ```html
-Jotkut html
+Some html
 ```
 
 ```css
-Joitakin css
+Some css
 ```
 
 ```js
-Jotkut js
+Some js
 ```
 
 ![index-js]
@@ -441,63 +522,63 @@ Jotkut js
 
 
 <h1 spaces-before="0">
-  --ratkaisu-merkki--
+  --solution-marker--
 </h1>
 
 
 
 <p spaces-before="0">
-  Täsmälleen sama kuin siemenlohko
+  Exactly the same as the seeds section
 </p>
 
 <h2 spaces-before="0">
-  --next-solution-merkki
+  --next-solution-marker
 </h2>
 
 
 
 <p spaces-before="0">
-  Sama uudelleen
+  Same again
 </p>
 
 <h1 spaces-before="0">
-  --question-merkki--
+  --question-marker--
 </h1>
 
 <h2 spaces-before="0">
-  --text-markker--
+  --text-marker--
 </h2>
 
 
 
 <p spaces-before="0">
-  Kysymys menisi tähän (käytetään vain videon haasteet)
+  The question would go here (only used for video challenges)
 </p>
 
 <h2 spaces-before="0">
-  --vastausmerkki--
+  --answers-marker--
 </h2>
 
 
 
 <p spaces-before="0">
-  Vastaa 1
+  Answer 1
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  Vastaa 2
+  Answer 2
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  Vastaa 2
+  More answers
 </p>
 
 <h2 spaces-before="0">
-  --ratkaisu-merkki--
+  --solution-marker--
 </h2>
 
 
@@ -513,13 +594,13 @@ Jotkut js
 </p>
 
 <h3 spaces-before="0">
-  Hyödyllisiä Linkkejä
+  Useful Links
 </h3>
 
 
 
 <p spaces-before="0">
-  Haasteiden luominen ja muokkaaminen:
+  Creating and Editing Challenges:
 </p>
 
 
@@ -527,14 +608,14 @@ Jotkut js
 <ol start="1">
   <li>
     <p spaces-before="0">
-      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">Haastetyypit</a> - mitä numeerinen haaste tarkoittaa (enum).
+      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">Challenge types</a> - what the numeric challenge type values mean (enum).
     </p>
   </li>
 
   
   <li>
     <p spaces-before="0">
-      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Osallistuminen FreeCodeCamp - Kirjoittaminen ES6 Challenge Testit</a> - video jälkeen <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> hän osallistuu vanhan version opetussuunnitelman.
+      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Contributing to FreeCodeCamp - Writing ES6 Challenge Tests</a> - a video following <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> as he contributes to the old version of the curriculum.
     </p>
   </li>
 

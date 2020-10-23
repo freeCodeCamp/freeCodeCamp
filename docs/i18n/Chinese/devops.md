@@ -1,227 +1,708 @@
-# 在FreeCodeCamp.org开发者操作
+# DevOps Handbook
 
-本指南将帮助您了解我们的基础设施堆栈以及我们如何维护我们的平台。 虽然本指南没有关于所有操作的详尽无遗的细节，但可以用来作为你理解系统的参考。
+This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
 
-让我们知道，如果你有反馈意见或询问，我们将乐于加以澄清。
+Let us know, if you have feedback or queries, and we will be happy to clarify.
 
-## 我们如何构建、测试和部署代码库？
+# Flight Manual - Code deployments
 
-这个仓库是持续构建、测试和部署到 **个独立的基础设施组合(塞尔维亚、 数据库、 CDN 等)**。
+This repository is continuously built, tested and deployed to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
 
-这涉及按顺序采取的三个步骤：
+This involves three steps to be followed in sequence:
 
-1. 新的更改(修复和功能)通过拉取请求合并到我们的初级开发分支(`主`)。
-2. 这些更改是通过一系列自动测试进行的。
-3. 测试通过后，我们会发布更改（或在需要时更新它们）以部署到我们的基础设施。
+1. New changes (both fixes and features) are merged into our primary development branch (`master`) via pull requests.
+2. These changes are run through a series of automated tests.
+3. Once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
-#### 构建代码库-映射Git分支到部署。
+#### Building the codebase - Mapping Git Branches to Deployments.
 
-典型的 [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (默认开发分支) 已合并到 [`生产暂存`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) 分支每天一次并释放到一个孤立的基础设施。
+Typically, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
-这是我们的开发者和志愿贡献者的中间版本。 它也被称为“暂存”或“乙型”释放。
+This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
-它与我们在 `freeCodeCamp.org`的现场生产环境完全相同，而不是使用一套单独的数据库、服务器、网络代理等。 这种隔离使我们能够在像场景一样的“生产”中测试正在进行的开发和功能，而不会影响到FreeCodeCamp.org主平台的正常用户。
+It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
-开发人员团队 [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) 对Staging平台上的更改感到高兴。 这些更改每隔几天移动到 [`当前生产`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) 分支。
+Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch.
 
-这是移动我们在 FreeCodeCamp.org 上生产平台更改的最后版本。
+This is the final release that moves changes to our production platforms on freeCodeCamp.org.
 
-#### 测试更改 - 集成和用户接受测试。
+#### Testing changes - Integration and User Acceptance Testing.
 
-我们采用不同程度的整合和验收测试来检查守则的质量。 我们所有的测试都是通过诸如 [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) 和 [Azure Pelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp) 等软件完成的。
+We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
-我们有测试挑战解决方案、服务器 API 和客户端用户界面的单元测试。 这有助于我们检验不同组成部分之间的一体化。
+We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
-> [!注意] 我们也正在编写终端用户测试，这将有助于复制真实的世界情景，如更新电子邮件或拨打到 API 或第三方服务。
+> [!NOTE] We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
 
-这些测试一起有助于防止问题重复发生，并确保我们在处理另一个错误或功能时不会引入错误。
+Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
 
-#### 正在部署更改 - 正在推送对服务器的更改。
+#### Deploying Changes - Pushing changes to servers.
 
-我们配置了连续传送软件，将更改推送到我们的开发和生产服务器。
+We have configured continuous delivery software to push changes to our development and production servers.
 
-一旦更改被推送到受保护的释放分支，构建管道将自动触发到该分支。 建造管道负责建造人工制品并将其存放在冷藏库以供日后使用。
+Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
 
-构建管道继续启动，如果它成功运行，就会触发相应的释放管道。 释放管道负责收集建筑工材，将其移动到服务器并投入运行。
+The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers and going live.
 
-构建和发布状态 [可在这里访问](#build-test-and-deployment-status)。
+Status of builds and releases are [available here](#build-test-and-deployment-status).
 
-## 触发建造、试验和部署。
+## Trigger a build, test and deploy
 
-目前，只有开发者团队的成员可以推送到生产分支。 `production-*` 分支的更改只能通过快速合并到 [`上游`](https://github.com/freeCodeCamp/freeCodeCamp) 降落。
+Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> [!注意] 在今后几天中，我们将通过提取请求来改善这种流动，以更好地管理访问和提高透明度。
+> [!NOTE] In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
 
-### 正在推送对待发布应用程序的更改。
+### Pushing changes to Staging Applications.
 
-1. 正确配置您的遥控器。
+1. Configure your remotes correctly.
 
    ```sh
-   git 远程-v
+   git remote -v
    ```
 
-   **结果：**
+   **Results:**
 
    ```
-   original git@github.com:raisedadead/freeCodeCamp.git (fetch)
-   origin git@github.com:raisedadead/freeCodeCamp.git (pack)
+   origin   git@github.com:raisedadead/freeCodeCamp.git (fetch)
+   origin   git@github.com:raisedadead/freeCodeCamp.git (push)
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (fetch)
-   upstream git@github.com:freeCodeCamp/freeCodeCamp.git (pus)
+   upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. 请确保您的 `主分支` 原始并与上游同步。
+2. Make sure your `master` branch is pristine and in sync with the upstream.
 
    ```sh
-   git 签出master
-   git 获取--all --prune
+   git checkout master
+   git fetch --all --prune
    git reset --hard upstream/master
    ```
 
-3. 检查Travis CI正在上游的 `主` 分支上。
+3. Check that the Travis CI is passing on the `master` branch for upstream.
 
-   [连续集成](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) 测试应该是绿色的， `` 分支应该是绿色的。
+   The [continuous integration](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) tests should be green and PASSING for the `master` branch.
 
-    <details> <summary> 正在检查Travis CI上的状态(屏幕截图) </summary>
+    <details> <summary> Checking status on Travis CI (screenshot) </summary>
       <br>
-      ![在 Travis CI 上检查构建状态](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png)
+      ![Check build status on Travis CI](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png)
     </details>
 
-   如果这个失败，您应该停止并调查错误。
+   If this is failing you should stop and investigate the errors.
 
-4. 确认您能够在本地构建资源库。
-
-   ```
-   npm 运行清理和开发
-   ```
-
-5. 通过快速合并将更改从 `主` 移动到 `生产暂存`
+4. Confirm that you are able to build the repository locally.
 
    ```
-   git 签出生产暂存
-   git 合并主
-   git 推送上流
+   npm run clean-and-develop
    ```
 
-   > [!注意] 您将无法强制推送，如果您已经重写了历史记录，这些命令将会出去。
+5. Move changes from `master` to `production-staging` via a fast-forward merge
+
+   ```
+   git checkout production-staging
+   git merge master
+   git push upstream
+   ```
+
+   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
    > 
-   > 如果他们这样做，你可能做了一些不正确的事情，你应该刚刚开始。
+   > If they do, you may have done something incorrectly and you should just start over.
 
-上述步骤将自动触发运行于 `生产暂存` 分支的构建管道。 一旦构建完成，伪影将被保存为冷存储中的 `.zip` 文件，以后检索和使用。
+The above steps will automatically trigger a run on the build pipeline for the `production-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
 
-当从已连接的构建管道中可以找到新的艺术品时，释放管道会自动触发。 对于暂存平台，这个过程不需要手动批准，伪影被推送到客户端 CDN 和 API 服务器。
+The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
 
-> [!TIP|label:估计数] 通常运行需要 ~20-25分钟才能完成安装，客户端运行需要 ~15-20 分钟， 和 ~5-10 分钟让API能够在线使用。 从代码推送到在分阶段平台上运行，整个过程总共需要 **~35-45 分钟**。
+> [!TIP|label:Estimates] Typically the build run takes ~20-25 minutes to complete followed by the release run which takes ~15-20 mins for the client, and ~5-10 mins for the API to be available live. From code push to being live on the staging platforms the whole process takes **~35-45 mins** in total.
 
-### 推送对生产应用程序的更改。
+### Pushing changes to Production Applications.
 
-这个过程基本上与中转平台相同，还有几个额外的检查。 这仅仅是为了确保我们不会在 freeCodeCamp.org 上断开任何东西，因为它可以看到数以百计的用户在任何时候使用它。
+The process is mostly the same as the staging platforms, with a few extra checks in place. This is just to make sure, we do not break anything on freeCodeCamp.org which can see hundreds of users using it at any moment.
 
-| 不要执行这些命令，除非您已经验证所有的工作都在暂存平台上。 您不应在继续进行之前绕过或跳过任何预览测试。 |
-|:---------------------------------------------------- |
-|                                                      |
+| Do NOT execute these commands unless you have verified that everything is working on the staging platform. You should not bypass or skip any testing on staging before proceeding further. |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                                            |
 
 
-1. 请确保您的 `生产暂存` 分支原始并与上游同步。
+1. Make sure your `production-staging` branch is pristine and in sync with the upstream.
 
    ```sh
-   git 签出生产暂存
-   git 抓取--all --prune
+   git checkout production-staging
+   git fetch --all --prune
    git reset --hard upstream/production-staging
    ```
 
-2. 通过快速合并将变化从 `生产暂存` 移动到 `生产当前`
+2. Move changes from `production-staging` to `production-current` via a fast-forward merge
 
    ```
-   git 签出当前production-current
-   git 合并production-staging
-   git 推送上流
+   git checkout production-current
+   git merge production-staging
+   git push upstream
    ```
 
-   > [!注意] 您将无法强制推送，如果您已经重写了历史记录，这些命令将会出去。
+   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
    > 
-   > 如果他们这样做，你可能做了一些不正确的事情，你应该刚刚开始。
+   > If they do, you may have done something incorrectly and you should just start over.
 
-上述步骤将自动触发 `生产-当前` 分支在构建管道上的运行。 一旦建筑工件准备就绪，它将触发释放管道上的运行。
+The above steps will automatically trigger a run on the build pipeline for the `production-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
 
-> [!TIP|label:估计数] 通常构建运行需要20-25分钟才能完成。
+> [!TIP|label:Estimates] Typically the build run takes ~20-25 minutes to complete.
 
-**工作人员行动的其他步骤**
+**Additional Steps for Staff Action**
 
-一个版本运行触发，开发人员团队成员将收到自动手动干预电子邮件。 他们可以通过 _批准_ 或 _拒绝发布_。
+One a release run is triggered, members of the developer staff team will receive an automated manual intervention email. They can either _approve_ or _reject_ the release run.
 
-如果更改运行得很好，并且已经在暂存平台上测试，那么它就可以被批准。 批准必须在被自动拒绝之前4小时内发出。 员工可以重新启动手动运行的被拒绝的释放，或者等待下一个释放周期。
+If the changes are working nicely and have been tested on the staging platform, then it can be approved. The approval must be given within 4 hours of the release being triggered before getting rejected automatically. A staff can re-trigger the release run manually for rejected runs, or wait for the next cycle of release.
 
-工作人员使用：
+For staff use:
 
-| 请检查您的电子邮件直接链接或 [在构建运行完成后转到发布面板](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)。 |
-|:---------------------------------------------------------------------------------------------- |
-|                                                                                                |
+| Check your email for a direct link or [go to the release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) after the build run is complete. |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                    |
 
 
-一旦一名工作人员批准发布，管道将把更改现场推送到FreeCodeCodeCamp.org的生产CDN和API服务器。 他们通常需要 ~15-20 分钟的客户端，还需要 ~5 分钟的API服务器才能正常使用。
+Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
-> [!TIP|label:估算] 运行的版本通常需要 ~15-20 分钟，每一个 API 实例的 ~5-10 分钟即可使用。 从代码推送到在生产平台上运行，整个过程总共需要 **~90-120 分钟** (不算等待员工批准的时间)。
+> [!TIP|label:Estimates] The release run typically takes ~15-20 mins for each client instance, and ~5-10 mins for each API instance to be available live. From code push to being live on the production platforms the whole process takes **~90-120 mins** in total (not counting the wait time for the staff approval).
 
-## 构建、测试和部署状态
+## Build, Test and Deployment Status
 
-这里是代码库的当前测试、构建和部署状态。
+Here is the current test, build and deployment status of the codebase.
 
-| 类型    | 分支                                                                              | 状态                                                                                                                                                                                                                                          | 仪表板                                                                        |
-|:----- |:------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:-------------------------------------------------------------------------- |
-| CI 测试 | [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)            | ![Travis CI 构建状态](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                        | [转到状态仪表板](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| CI 测试 | [`生产暂存中`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Travis CI 构建状态](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                            | [转到状态仪表板](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| 构建管道线 | [`生产暂存中`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![构建状态](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [转到状态仪表板](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| 释放流线  | [`生产暂存中`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                             | [转到状态仪表板](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
-| CI 测试 | [`当前生产`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current)  | ![Travis CI 构建状态](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [转到状态仪表板](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| 构建管道线 | [`当前生产`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging)  | [![构建状态](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [转到状态仪表板](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| 释放流线  | [`当前生产`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging)  |                                                                                                                                                                                                                                             | [转到状态仪表板](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| Type             | Branch                                                                                       | Status                                                                                                                                                                                                                                              | Dashboard                                                                                 |
+|:---------------- |:-------------------------------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------- |
+| CI Tests         | [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                         | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                        | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| CI Tests         | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| Build Pipeline   | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
 
-## 早期访问和测试测试版
+## Early access and beta testing
 
-我们欢迎您在 **"公开测试"** 模式中测试这些版本，并尽早访问平台上即将出现的功能。 有时这些功能/变化会被称为接下来的 **、殴打、挂起** 等。
+We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
 
-您通过反馈和发布报告做出的贡献将帮助我们在 `免费CodeCodeCamp上创建生产平台。 rg` 更多 **复原力**, **一致性** 和 **稳定** 对所有人来说都是如此。
+Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent** and **stable** for everyone.
 
-我们感谢您报告了您遇到的bug，并帮助使FreeCodeCamp.org变得更好。 你摇一摇！
+We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
 
-### 确定平台即将到来的版本
+### Identifying the upcoming version of the platforms
 
-目前有一个公开测试版本：
+Currently a public beta testing version is available at:
 
-<h1 align="center"><a href='https://www.freecodecamp.dev' _target='blank'>Freecodecamp.dev</a></h1>
+<h1 align="center"><a href='https://www.freecodecamp.dev' _target='blank'>freecodecamp.dev</a></h1>
 
-> [!注意] 域名与 **`freeCodeCamp.org`** 不同。 这是为了防止搜索引擎索引并避免平台的普通用户感到困惑。
+> [!NOTE] The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
 
-### 确定平台的当前版本
+### Identifying the current version of the platforms
 
 **The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
 
-开发团队在发布更改时将从 `生产暂存` 分支合并到 `生产当前` 的变化。 顶部提交应该是您在网站上看到的活动内容。
+The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site.
 
-您可以通过访问状态部分中可用的构建和部署日志来识别部署的确切版本。 或者，您也可以在 [贡献者聊天室](https://gitter.im/FreeCodeCamp/Contributors) 打扰我们以获得确认。
+You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) for a confirmation.
 
-### 已知限制
+### Known Limitations
 
-使用平台的 beta 版本时有一些已知的限制和权衡。
+There are some known limitations and tradeoffs when using the beta version of the platform.
 
-- #### 这些测试平台上的所有数据 / 个人进度 `不会被保存或传输到` 生产。
+- #### All data / personal progress on these beta platforms `will NOT be saved or carried over` to production.
 
-  **测试版上的用户将有一个与生产分开的帐户。** 测试版使用一个与生产分开的实际数据库。 这使我们有能力防止任何意外丢失数据或修改。 开发团队可以根据需要清理这个测试版上的数据库。
+  **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev team may purge the database on this beta version as needed.
 
-- #### 测试平台的使用时间和可靠性没有保障。
+- #### There are no guarantees on the uptime and reliability of the beta platforms.
 
-  预计部署工作将频繁进行，有时是每天多次。 因此，测试版有时会出现意外故障或功能中断。
+  Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### 不要向这个站点发送普通用户作为确认修复的措施
+- #### Do not send regular users to this site as a measure of confirming a fix
 
-  测试站现在是，而且一直是为了加强当地的发展和测试，没有其它东西。 这不是对即将到来的许诺，而是对正在进行的工作的概述。
+  The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### 签名页面可能看起来不同于生产
+- #### Sign page may look different than production
 
-   我们在作者0上使用 Freecodecamp.dev 的测试租户，因此没有能力设置自定义域。 这使得所有重定向回调和登录页面都出现在默认域名上： `https://freecodecamp-dev.auth0.com/`。 这不会影响我们能够获得的功能接近生产。
+  We use a test tenant for freecodecamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
 
-## 报告问题和留下反馈
+## Reporting issues and leaving feedback
 
-请为讨论和报告错误打开新问题。 您可以将他们标记为 **[`发布：下次/测试`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** 进行测试。
+Please open fresh issues for discussions and reporting bugs. You can label them as **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** for triage.
 
-如果您有任何查询，您可以向 `dev[at]freecodecamp.org` 发送一封电子邮件。 因为所有安全漏洞都应该报告给 `安全[at]Freecodecamp.org` 而不是公共跟踪器和论坛。
+You may send an email to `dev[at]freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security[at]freecodecamp.org` instead of the public tracker and forum.
+
+# Flight Manual - Server Maintenance
+
+> [!WARNING]
+> 
+> 1. The guide applies to the **freeCodeCamp Staff members only**.
+> 2. These instructions should not be considered exhaustive, please use caution.
+
+As a member of the staff, you may have been given access to our cloud service providers like Azure, Digital Ocean, etc.
+
+Here are some handy commands that you can use to work on the Virtual Machines (VM), for instance performing maintenance updates or doing general houeskeeping.
+
+## Get a list of the VMs
+
+> [!NOTE] While you may already have SSH access to the VMs, that alone will not let you list VMs unless you been granted access to the cloud portals as well.
+
+### Azure
+
+Install Azure CLI `az`: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
+
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
+
+```
+brew install azure-cli
+```
+
+> **(One-time) Login:**
+
+```
+az login
+```
+
+> **Get the list of VM names and P addresses:**
+
+```
+az vm list-ip-addresses --output table
+```
+
+### Digital Ocean
+
+Install Digital Ocean CLI `doctl`: https://github.com/digitalocean/doctl#installing-doctl
+
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
+
+```
+brew install doctl
+```
+
+> **(One-time) Login:**
+
+Authentication and context switching: https://github.com/digitalocean/doctl#authenticating-with-digitalocean
+
+```
+doctl auth init
+```
+
+> **Get the list of VM names and IP addresses:**
+
+```
+doctl compute droplet list --format "ID,Name,PublicIPv4"
+```
+
+## Spin a VM (or VM Scale Set)
+
+> Todo: Add instructions for spinning VM(s)
+
+
+<!--
+
+The below instructions are stale.
+
+### 0. Prerequisites (workspace Setup) for Staff
+
+Get a login session on `azure cli`, and clone the
+[`infra`](https://github.com/freeCodeCamp/infra) for setting up template
+workspace.
+
+```console
+az login
+git clone https://github.com/freeCodeCamp/infra
+cd infra
+```
+
+Use the Scratchpad subdirectory for temporary files, and making one-off edits.
+The contents in this subdirectory are intentionally ignored from source control.
+
+### 1. Provision VMs on Azure.
+
+List all Resource Groups
+
+```console
+az group list --output table
+```
+
+```console
+Name                               Location       Status
+---------------------------------  -------------  ---------
+tools-rg                           eastus         Succeeded
+```
+
+Create a Resource Group
+
+```
+az group create --location eastus --name stg-rg
+```
+
+```console
+az group list --output table
+```
+
+```console
+Name                               Location       Status
+---------------------------------  -------------  ---------
+tools-rg                           eastus         Succeeded
+stg-rg                             eastus         Succeeded
+```
+
+Next per the need, provision a single VM or a scaleset.
+
+#### A. provision single instances
+
+```console
+az vm create \
+  --resource-group stg-rg-eastus \
+  --name <VIRTUAL_MACHINE_NAME> \
+  --image UbuntuLTS \
+  --size <VIRTUAL_MACHINE_SKU>
+  --custom-data cloud-init/nginx-cloud-init.yaml \
+  --admin-username <USERNAME> \
+  --ssh-key-values <SSH_KEYS>.pub
+```
+
+#### B. provision scaleset instance
+
+```console
+az vmss create \
+  --resource-group stg-rg-eastus \
+  --name <VIRTUAL_MACHINE_SCALESET_NAME> \
+  --image UbuntuLTS \
+  --size <VIRTUAL_MACHINE_SKU>
+  --upgrade-policy-mode automatic \
+  --custom-data cloud-init/nginx-cloud-init.yaml \
+  --admin-username <USERNAME> \
+  --ssh-key-values <SSH_KEYS>.pub
+```
+
+> [!NOTE]
+>
+> - The custom-data config should allow you to configure and add SSH keys,
+>   install packages etc. via the `cloud-init` templates in your local
+>   workspace. Tweak the files in your local workspace as needed. The cloud-init
+>   config is optional and you can omit it completely to do setups manually as
+>   well.
+>
+> - The virtual machine SKU is something like: **Standard_B2s** which can be
+>   retrived by executing something like
+>   `az vm list-sizes -l eastus --output table` or checking the Azure portal
+>   pricing.
+
+-->
+
+## Keep VMs updated
+
+You should keep the VMs up to date by performing updates and upgrades. This will ensure that the virtual machine is patched with latest security fixes.
+
+> [!WARNING] Before you run these commands:
+> 
+> - Make sure that the VM has been provisioned completely and there is no post-install steps running.
+> - If you are updating packages on a VM that is already serving an application, make sure the app has been stopped / saved. Package updates will cause network bandwidth, memory and/or CPU usage spikes leading to outages on running applications.
+
+Update package information
+
+```console
+sudo apt update
+```
+
+Upgrade installed packages
+
+```console
+sudo apt upgrade -y
+```
+
+Cleanup unused packages
+
+```console
+sudo apt autoremove -y
+```
+
+## Work on Web Servers (Proxy)
+
+We are running load balanced (Azure Load Balancer) instances for our web servers. These servers are running NGINX which reverse proxy all of the traffic to freeCodeCamp.org from various applications running on their own infrastructures.
+
+The NGINX config is available on [this repository](https://github.com/freeCodeCamp/nginx-config).
+
+### First Install
+
+Provisioning VMs with the Code
+
+#### 1. (Optional) Install NGINX and configure from repository.
+
+The basic setup should be ready OOTB, via the cloud-init configuration. SSH and make changes as necessary for the particular instance(s).
+
+If you did not use the cloud-init config previously use the below for manual setup of NGINX and error pages:
+
+```console
+sudo su
+
+cd /var/www/html
+git clone https://github.com/freeCodeCamp/error-pages
+
+cd /etc/
+rm -rf nginx
+git clone https://github.com/freeCodeCamp/nginx-config nginx
+
+cd /etc/nginx
+```
+
+#### 2. Install Cloudflare origin certificates and upstream application config.
+
+Get the Cloudflare origin certificates from the secure storage and install at required locations.
+
+**OR**
+
+Move over existing certificates:
+
+```console
+# Local
+scp -r username@source-server-public-ip:/etc/nginx/ssl ./
+scp -pr ./ssl username@target-server-public-ip:/tmp/
+
+# Remote
+rm -rf ./ssl
+mv /tmp/ssl ./
+```
+
+Update Upstream Configurations:
+
+```console
+vi configs/upstreams.conf
+```
+
+Add/update the source/origin application IP addresses.
+
+#### 3. Setup networking and firewalls.
+
+Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
+
+#### 4. Add the VM to the load balancer backend pool.
+
+Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
+
+### Logging and Monitoring
+
+1. Check status for NGINX service using the below command:
+
+```console
+sudo systemctl status nginx
+```
+
+2. Logging and monitoring for the servers are available at:
+
+> <h3 align="center"><a href='https://amplify.nginx.com' _target='blank'>https://amplify.nginx.com</a></h3>
+### Updating Instances (Maintenance)
+
+Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
+
+1. SSH into the instance and enter sudo
+
+```console
+sudo su
+```
+
+2. Get the latest config code.
+
+```console
+cd /etc/nginx
+git fetch --all --prune
+git reset --hard origin/master
+```
+
+3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+
+```console
+nginx -t
+nginx -s reload
+```
+
+## Work on API Instances
+
+1. Install build tools for node binaries (`node-gyp`) etc.
+
+```console
+sudo apt install build-essential
+```
+
+### First Install
+
+Provisioning VMs with the Code
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot
+
+   ```console
+   npm i -g npm
+   npm i -g pm2
+   pm2 install pm2-logrotate
+   pm2 startup
+   ```
+
+3. Clone freeCodeCamp, setup env and keys.
+
+   ```console
+   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+   cd freeCodeCamp
+   git checkout production-current # or any other branch to be deployed
+   ```
+
+4. Create the `.env` from the secure credentials storage.
+
+5. Create the `google-credentials.json` from the secure credentials storage.
+
+6. Install dependencies
+
+   ```console
+   npm ci
+   ```
+
+7. Build the server
+
+   ```console
+   npm run ensure-env && npm run build:server
+   ```
+
+8. Start Instances
+
+   ```console
+   cd api-server
+   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   ```
+
+### Logging and Monitoring
+
+```console
+pm2 logs
+```
+
+```console
+pm2 monit
+```
+
+### Updating Instances (Maintenance)
+
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding enviroment variables.
+
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+
+#### 1. Manual Updates - Used for updating dependencies, env variables.
+
+1. Stop all instances
+
+```console
+pm2 stop all
+```
+
+2. Install dependencies
+
+```console
+npm ci
+```
+
+3. Build the server
+
+```console
+npm run ensure-env && npm run build:server
+```
+
+4. Start Instances
+
+```console
+pm2 start all --update-env && pm2 logs
+```
+
+#### 2. Rolling updates - Used for logical changes to code.
+
+```console
+pm2 reload all --update-env && pm2 logs
+```
+
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+
+## Work on Client Instances
+
+1. Install build tools for node binaries (`node-gyp`) etc.
+
+```console
+sudo apt install build-essential
+```
+
+### First Install
+
+Provisioning VMs with the Code
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot
+
+   ```console
+   npm i -g npm
+   npm i -g pm2
+   npm install -g serve
+   pm2 install pm2-logrotate
+   pm2 startup
+   ```
+
+3. Clone client config, setup env and keys.
+
+   ```console
+   git clone https://github.com/freeCodeCamp/client-config.git client
+   cd client
+   ```
+
+   ```console
+   git clone https://github.com/freeCodeCamp/client-config.git client
+   cd client
+   ```
+
+   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipline.
+
+   > Todo: This setup needs to move to S3 or Azure Blob storage 
+   > 
+   > ```console
+   echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   chmod +x client-start-primary.sh
+   pm2 delete client-primary
+   pm2 start  ./client-start-primary.sh --name client-primary
+   echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   chmod +x client-start-secondary.sh
+   pm2 delete client-secondary
+   pm2 start  ./client-start-secondary.sh --name client-secondary
+```
+
+### Logging and Monitoring
+
+```console
+pm2 logs
+```
+
+```console
+pm2 monit
+```
+
+### Updating Instances (Maintenance)
+
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding enviroment variables.
+
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+
+#### 1. Manual Updates - Used for updating dependencies, env variables.
+
+1. Stop all instances
+
+   ```console
+   pm2 stop all
+   ```
+
+2. Install or update dependencies
+
+3. Start Instances
+
+   ```console
+   pm2 start all --update-env && pm2 logs
+   ```
+
+#### 2. Rolling updates - Used for logical changes to code.
+
+```console
+pm2 reload all --update-env && pm2 logs
+```
+
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.

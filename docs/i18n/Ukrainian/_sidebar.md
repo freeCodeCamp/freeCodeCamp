@@ -1,36 +1,39 @@
-- **З чого почати**
-  - [Вступ](index 'Сприяти безкоштовному CodeCamp.org спільноті')
-  - [Найчастіші питання](FAQ.md)
-- **Внесок коду**
-- - [Встановити вільний CodeCamp локально](how-to-setup-freecodecamp-locally.md)
-  - [Відкрити запит на злиття](how-to-open-a-pull-request.md)
-  - [Робота над завданнями з кодуванням](how-to-work-on-coding-challenges.md)
-  - [Робота з відео викликами](how-to-help-with-video-challenges.md)
-  - [Робота з темою новин](how-to-work-on-the-news-theme.md)
-  - [Працювати в документації](how-to-work-on-the-docs-theme.md)
-- **Необов'язкові посібники**
-  - [Спіймати вихідні листи локально](how-to-catch-outgoing-emails-locally.md)
-  - [Встановити безкоштовний CodeCamp на WSL](how-to-setup-wsl.md)
+- **Getting Started**
+  - [Introduction](index.md "Contribute to the freeCodeCamp.org Community")
+  - [Frequently Asked Questions](FAQ.md)
+- **Code Contribution**
+  - [Set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md)
+  - [Open a pull request](how-to-open-a-pull-request.md)
+  - [Work on coding challenges](how-to-work-on-coding-challenges.md)
+  - [Work on video challenges](how-to-help-with-video-challenges.md)
+  - [Work on the news theme](how-to-work-on-the-news-theme.md)
+  - [Work on the docs theme](how-to-work-on-the-docs-theme.md)
+- **Optional Guides**
+  - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
+  - [Set up freeCodeCamp on WSL](how-to-setup-wsl.md)
 
 ---
+
+<!-- The section below should not use relative linking -->
 
 - **中文社区贡献指南**
-  - [成为专栏作者](/i18n/chinese/news-author-application.md)
-  - [文章翻译计划](/i18n/chinese/news-translations.md)
-  - [视频翻译计划](/i18n/chinese/video-translations.md)
+  - [成为专栏作者](/i18n/Chinese/news-author-application.md)
+  - [文章翻译计划](/i18n/Chinese/news-translations.md)
+  - [视频翻译计划](/i18n/Chinese/video-translations.md)
+
+<!-- The section above should not use relative linking -->
 
 ---
 
-- **Політ** (для співробітників & модифікації)
-  - [Довідник модератора](flight-manuals/moderator-handbook.md)
-  - [Шаблони для відповідей](flight-manuals/using-reply-templates.md)
-  - [Огляд DevOps](devops.md)
-  - [Робота на серверах](flight-manuals/working-on-virtual-machines.md)
+- **Flight Manuals** (for Staff & Mods)
+  - [Moderator Handbook](moderator-handbook.md)
+  - [Reply Templates](moderator-handbook?id=using-reply-templates)
+  - [DevOps Handbook](devops.md)
 
 ---
 
-- **Наші спільноти**
+- **Our Community**
   - [**GitHub**](https://github.com/freecodecamp/freecodecamp)
-  - [**Форум**](https://freecodecamp.org/forum/c/contributors)
-  - [**Gitter чат**](https://gitter.im/FreeCodeCamp/Contributors)
+  - [**Discourse Forum**](https://freecodecamp.org/forum/c/contributors)
+  - [**Gitter Chat**](https://gitter.im/FreeCodeCamp/Contributors)
   - [**Discord Server**](https://discord.gg/pFspAhS)

@@ -3,8 +3,7 @@
 const selectors = {
   heading: "[data-test-label='landing-header']",
   smallCallToAction: "[data-test-label='landing-small-cta']",
-  firstNavigationLink: '.nav-list .nav-link:first-child',
-  lastNavigationLink: '.nav-list .nav-link:last-child',
+  navigationLinks: '.nav-list',
   avatarContainer: '.avatar-container',
   defaultAvatar: '.avatar-container svg'
 };
@@ -12,6 +11,7 @@ const selectors = {
 describe('Navbar', () => {
   beforeEach(() => {
     cy.visit('/');
+    cy.viewport(1200, 660);
   });
 
   it('Should render properly', () => {
@@ -51,14 +51,16 @@ describe('Navbar', () => {
 
   // have the curriculum and CTA on landing and /learn pages.
   it(
-    'Should have `Curriculum` link on landing and learn pages' +
+    'Should have `Forum` and `Curriculum` links on landing and learn pages' +
       'page when not signed in',
     () => {
-      cy.get(selectors.firstNavigationLink)
+      cy.get(selectors.navigationLinks).contains('Forum');
+      cy.get(selectors.navigationLinks)
         .contains('Curriculum')
         .click();
       cy.url().should('include', '/learn');
-      cy.get(selectors.firstNavigationLink).contains('Curriculum');
+      cy.get(selectors.navigationLinks).contains('Curriculum');
+      cy.get(selectors.navigationLinks).contains('Forum');
     }
   );
 
@@ -67,7 +69,7 @@ describe('Navbar', () => {
       'page when not signed in',
     () => {
       cy.contains(selectors.smallCallToAction, 'Sign In');
-      cy.get(selectors.firstNavigationLink)
+      cy.get(selectors.navigationLinks)
         .contains('Curriculum')
         .click();
       cy.contains(selectors.smallCallToAction, 'Sign In');
@@ -76,7 +78,7 @@ describe('Navbar', () => {
 
   it('Should have `Profile` link when user is signed in', () => {
     cy.login()
-      .get(selectors.lastNavigationLink)
+      .get(selectors.navigationLinks)
       .contains('Profile')
       .click();
     cy.url().should('include', '/developmentuser');

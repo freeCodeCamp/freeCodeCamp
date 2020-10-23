@@ -1,40 +1,54 @@
-# ドキュメントテーマの使い方
+# How to work on the docs theme
 
-> [!NOTE] ドキュメントサイトのコンテンツを操作するために何も設定する必要はありません。
+> [!NOTE] A quick reminder that you do not need to setup anything for working on the content for the documentation site.
 > 
-> 貢献するガイドラインに取り組むには、ここ `ドキュメント` ディレクトリ [にあるファイルを編集または追加することができます](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs)。 変更がマージされると、ドキュメントサイトで自動的に利用可能になります。
+> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). When your changes are merged, it will be made available automatically at the documentation site.
 
-## ドキュメントウェブサイトの構造
+## Structure of the docs website
 
-サイトは [`docsify`](https://docsify.js.org)を使用して生成され、GitHub ページを使用して提供されます。
+The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
 
-通常、サイトの設定を変更したり、サイトをローカルにビルドしたりする必要はありません。 興味がある場合は、以下のように動作します。
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
-- The homepage source for this site is available in [`docs/index.html`](index.html).
-- `docsify` と GitHub Pages を使用して、このファイルをSPAとして提供します。
-- `docsify` スクリプトは、 `docs` ディレクトリ内の `markdown` ファイルの内容を必要に応じて生成します。
-- ホームページは [`_coverpage.md`](_coverpage.md) から生成される。
-- サイドバーナビゲーションは [`_sidebar.md`](_sidebar.md) から生成されます。
+- The homepage's source for this site is available in [`docs/index.html`](index.html).
+- We serve this file as a SPA using `docsify` and GitHub Pages.
+- The `docsify` script generates the content of `markdown` files in `docs` directory on demand.
+- The homepage is generated from the [`_coverpage.md`](_coverpage.md).
+- the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
-## ローカルでドキュメントサイトを提供しています
+## Serving the documentation site locally
 
-freeCodeCampをクローン:
+Clone freeCodeCamp:
 
-```sh
+```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-serve docs
-```
-
-`docsify` をインストールする
-
-```sh
-npm install -g docsify
-```
-
-`/docs` ディレクトリを開く
-
-```sh
 docsify serve docs
 ```
 
-あるいは、freeCodeCampをローカルにインストールした場合(ローカルのセットアップガイドを参照してください)。 CLI を開発ツールとバンドルして、リポジトリのルートから `npm run docs:serve` を実行できます。
+Install `docsify`:
+
+```console
+npm install -g docsify
+```
+
+and serve the `/docs` directory
+
+```console
+docsify serve docs
+```
+
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+
+### Serve and launch the documentation site only
+
+```console
+npm run docs:serve
+```
+
+### Serve the documentation site alongside freeCodeCamp locally:
+
+```console
+npm run develop
+```
+
+> The documentation site should be available at <http://localhost:3200>

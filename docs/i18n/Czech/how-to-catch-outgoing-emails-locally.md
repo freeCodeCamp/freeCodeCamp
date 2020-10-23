@@ -1,75 +1,75 @@
-> **Poznámka:** Toto je **volitelný** krok a je vyžadován pouze při práci s e-mailovými pracovními postupy
+> **Note:** This is an **optional** step and is required only when working with email workflows
 
-## Úvod
+## Introduction
 
-Některé e-mailové workflow, jako je aktualizace e-mailu uživatele, vyžaduje api-server na back-end odeslání odchozích e-mailů. alternativou k použití poskytovatele e-mailové služby pro odesílání aktuálních e-mailových zpráv, Mailhog je vývojářský nástroj pro testování e-mailů, který bude chytat zprávy odeslané instancí vašeho freeCodeCamp.
+Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. An alternative to using an email service provider to send actual email messages, Mailhog is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
-## Instalace MailHog
+## Installing MailHog
 
-MailHog může být nainstalován na macOS, Windows a Linux.
+MailHog can be installed on macOS, Windows and Linux.
 
-- [Úvod](#introduction)
-- [Instalace MailHog](#installing-mailhog)
-  - [Instalace MailHog na macOS](#installing-mailhog-on-macos)
-  - [Instalace MailHog na Windows](#installing-mailhog-on-windows)
-  - [Instalace MailHog na Linux](#installing-mailhog-on-linux)
-- [Použití MailHog](#using-mailhog)
-- [Užitečné odkazy](#useful-links)
+- [Introduction](#introduction)
+- [Installing MailHog](#installing-mailhog)
+  - [Installing MailHog on macOS](#installing-mailhog-on-macos)
+  - [Installing MailHog on Windows](#installing-mailhog-on-windows)
+  - [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Using MailHog](#using-mailhog)
+- [Useful Links](#useful-links)
 
-### Instalace MailHog na macOS
+### Installing MailHog on macOS
 
-Nainstalujte MailHog na macOS s [Homebrew](https://brew.sh/):
+Install MailHog on macOS with [Homebrew](https://brew.sh/):
 
 ```bash
 brew install mailhog
 brew services start mailhog
 ```
 
-Výše uvedené příkazy spustí mailhog službu na pozadí.
+The above commands will start a mailhog service in the background.
 
-Po dokončení instalace můžete spustit [pomocí MailHog](#using-mailhog).
+When the installation completes, you can start [using MailHog](#using-mailhog).
 
-### Instalace MailHog na Windows
+### Installing MailHog on Windows
 
-Stáhněte si nejnovější verzi MailHog z oficiálního repositáře [MailHog's](https://github.com/mailhog/MailHog/releases). Najděte a klikněte na odkaz pro verzi Windows (32 nebo 64 bitů) a soubor .exe bude stažen do vašeho počítače.
+Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
 
-Po dokončení stahování klikněte pro otevření souboru. Může se objevit notifikace Windows firewall s žádostí o přístupové oprávnění pro MailHog. Standardní příkazová řádka Windows se otevře tam, kde bude MailHog spuštěn, jakmile bude umožněn přístup k firewall.
+When the download completes, click to open the file. A Windows firewall notification may appear, requesting access permission for MailHog. A standard Windows command line prompt will open where MailHog will be running once firewall access is granted.
 
-Zavřete MailHog zavřením okna s výzvou k příkazu. Chcete-li znovu spustit MailHog, klikněte na spustitelný soubor MailHog (. xe) soubor, který byl původně stažen - není nutné stahovat nový instalační soubor MailHog.
+Close MailHog by closing the command prompt window. To start MailHog again, click on the MailHog executable (.exe) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
-Začněte [používat MailHog](#using-mailhog).
+Start [using MailHog](#using-mailhog).
 
-### Instalace MailHog na Linux
+### Installing MailHog on Linux
 
-Nejprve nainstalujte [Go](https://golang.org).
+First, install [Go](https://golang.org).
 
-Spusťte následující příkazy k instalaci GO na systémy jako Ubuntu a Linux Mint.
+Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
 
 ```bash
 sudo apt-get install golang
 ```
 
-Spusťte následující příkazy k instalaci GO na systémy založené na RPM jako CentOS, Fedora, Red Hat Linux, atd.
+Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
 
 ```bash
 sudo dnf install golang
 ```
 
-Případně spusťte následující příkazy k instalaci GO.
+Alternatively, run the following commands to install GO.
 
 ```bash
 sudo yum install golang
 ```
 
-Nyní nastavte cestu pro Jít s následujícími příkazy.
+Now set the path for Go with the following commands.
 
 ```bash
 echo "export GOPATH=$HOME/go" >> ~/.profile
-ozvěna 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
+echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-Konečně zadejte příkazy níže pro instalaci a spuštění MailHog.
+Finally, enter the commands below to install and run MailHog.
 
 ```bash
 go get github.com/mailhog/MailHog
@@ -77,24 +77,24 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-Začněte [používat MailHog](#using-mailhog).
+Start [using MailHog](#using-mailhog).
 
-## Použití MailHog
+## Using MailHog
 
-Otevřete novou záložku nebo okno prohlížeče a přejděte na [http://localhost:8025](http://localhost:8025) pro otevření vaší schránky MailHog po dokončení instalace MailHog a spuštění MailHog. Doručená pošta se zobrazí podobně jako snímek obrazovky níže.
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running. The inbox will appear similar to the screen shot below.
 
 ![MailHog Screenshot 1](images/mailhog/1.jpg)
 
-E-maily odeslané vaší instalací freeCodeCamp se zobrazí níže
+Emails sent by your freeCodeCamp installation will appear as below
 
 ![MailHog Screenshot 2](images/mailhog/2.jpg)
 
-Při otevření daného e-mailu budou k dispozici dvě záložky, které vám umožní zobrazit prostý text nebo zdrojový obsah. Ujistěte se, že je vybrána záložka prostého textu, jak je uvedeno níže.
+Two tabs that allow you to view either plain text or source content will be available when you open a given email. Ensure that the plain text tab is selected as below.
 
 ![MailHog Screenshot 3](images/mailhog/3.jpg)
 
-Všechny odkazy v e-mailu by měly být možné kliknout a vyřešit jejich URL.
+All links in the email should be clickable and resolve to their URL.
 
-## Užitečné odkazy
+## Useful Links
 
-- Podívejte se na úložiště [MailHog](https://github.com/mailhog/MailHog) pro další informace týkající se MailHog. Další informace jsou k dispozici také o vlastních konfiguracích MailHog.
+- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog. Additional information is also available regarding custom MailHog configurations.

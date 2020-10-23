@@ -1,45 +1,43 @@
-[FreeCodeCamp.org](https://freecodecamp.org) 社区是可能的，因为像你这样的数以千计的善意志愿者。 我们欢迎对社区作出的任何和所有贡献，并高兴地欢迎你们在一起。
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!注意] 在您继续之前，请快速2分钟阅读我们的 [行为守则](https://www.freecodecamp.org/code-of-conduct) 我们在整个社会严格执行这项政策。 我们想要为FreeCodeCamp.org做出贡献，这对每个人来说都是一个安全和包容的经历。
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-贡献愉快。
+Happy contributing.
 
-欢迎：
+You are welcome to:
 
-- 在我们的 [编码挑战中创建、更新和修复错误](#coding-challenges)。
-- 帮助我们修复FreeCodeCamp.org的 [学习平台](#learning-platform) 中的 bug 。
-- _(即将来临)_ 帮助我们将FreeCodeCamp.org翻译成世界语言。
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-有问题？ 走到 [这些常见问题](/FAQ.md) ，我们在那里回答一些常见的关于贡献的问题。
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## 编码挑战
+## Curriculum
 
-我们的所有编码挑战都由社区管理，带来像你这样的志愿者的专家知识。
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-你们可以帮助扩大它们，并使它们的措辞更好。 您也可以更新用户故事来更好地解释概念或删除多余的故事，并改进挑战测试，使其更准确地测试人们的代码。
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**如果您有兴趣改进这些编码挑战，这里 [如何处理编码挑战](how-to-work-on-coding-challenges.md)。**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## 学习平台
+## Learning Platform
 
-我们的学习平台运行在一个现代的 JavaScript 堆栈上。 它有各种组件、工具和库，包括但不限于：Node.js、MongoDB、LoopBack、OAuth 2.0、React、Gatsby、Webpack等等。
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-广义而言，
+Broadly, we use
 
-- 我们有基于 Node.js 的 API 服务器。
-- 基于React的客户端应用集。
-- 一个我们用来评估我们的前端项目的脚本。
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-为此做出贡献需要对API、ES6语法和许多好奇心有所了解。
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-从根本上讲，我们期望基本上熟悉上述一些技术、工具和图书馆。 话虽如此，你们不必是他们的专家。
+If you want to help us improve our codebase...
 
-**如果你想要帮助我们改进我们的代码库，你可以使用 Gitpod，免费的在线开发环境**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![在 Gitpod 中打开](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(在您的浏览器中为FreeCodeCodeCamp启动一个现成的开发环境。)
+Or you can...
 
-或
-
-**you can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

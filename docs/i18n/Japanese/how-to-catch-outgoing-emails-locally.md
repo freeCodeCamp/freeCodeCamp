@@ -1,67 +1,67 @@
-> **Note:** This is an **optional** step and is only only when with email workflow
+> **Note:** This is an **optional** step and is required only when working with email workflows
 
-## はじめに
+## Introduction
 
-ユーザーのメールを更新するなどの一部のメールワークフローでは、バックエンドの api-server が送信メールを送信する必要があります。 実際の電子メールメッセージを送信するために電子メールサービスプロバイダを使用する代わりに Mailhogはメールテスト用の開発ツールで、freeCodeCampインスタンスから送信されたメールメッセージをキャッチします。
+Some email workflows, like updating a user's email, requires the back-end api-server to send outgoing emails. An alternative to using an email service provider to send actual email messages, Mailhog is a developer tool for email testing that will catch the email messages sent by your freeCodeCamp instance.
 
-## MailHog のインストール
+## Installing MailHog
 
-MailHog は macOS、Windows、Linux にインストールできます。
+MailHog can be installed on macOS, Windows and Linux.
 
-- [はじめに](#introduction)
-- [MailHog のインストール](#installing-mailhog)
-  - [macOSへのMailHogのインストール](#installing-mailhog-on-macos)
-  - [WindowsへのMailHogのインストール](#installing-mailhog-on-windows)
-  - [LinuxへのMailHogのインストール](#installing-mailhog-on-linux)
-- [MailHog の使用](#using-mailhog)
-- [有用なリンク](#useful-links)
+- [Introduction](#introduction)
+- [Installing MailHog](#installing-mailhog)
+  - [Installing MailHog on macOS](#installing-mailhog-on-macos)
+  - [Installing MailHog on Windows](#installing-mailhog-on-windows)
+  - [Installing MailHog on Linux](#installing-mailhog-on-linux)
+- [Using MailHog](#using-mailhog)
+- [Useful Links](#useful-links)
 
-### macOSへのMailHogのインストール
+### Installing MailHog on macOS
 
-[Homebrew](https://brew.sh/) を使って macOS に MailHog をインストールする :
+Install MailHog on macOS with [Homebrew](https://brew.sh/):
 
 ```bash
 brew install mailhog
 brew services start mailhog
 ```
 
-上記のコマンドは、バックグラウンドでmailhog サービスを開始します。
+The above commands will start a mailhog service in the background.
 
-インストールが完了したら、MailHog [を使用して](#using-mailhog) を起動できます。
+When the installation completes, you can start [using MailHog](#using-mailhog).
 
-### WindowsへのMailHogのインストール
+### Installing MailHog on Windows
 
-[MailHog の公式リポジトリ](https://github.com/mailhog/MailHog/releases) から最新バージョンの MailHog をダウンロードしてください。 Windows版(32ビットまたは64ビット)のリンクをクリックすると、.exeファイルがコンピュータにダウンロードされます。
+Download the latest version of MailHog from [MailHog's official repository](https://github.com/mailhog/MailHog/releases). Locate and click on the link for your Windows version (32 or 64 bit) and a .exe file will be downloaded to your computer.
 
-ダウンロードが完了したら、クリックしてファイルを開きます。 Windowsファイアウォールの通知が表示されたり、MailHogのアクセス許可を要求したりすることがあります。 ファイアウォールへのアクセスが許可されると、MailHog が実行される標準の Windows コマンドラインプロンプトが開きます。
+When the download completes, click to open the file. A Windows firewall notification may appear, requesting access permission for MailHog. A standard Windows command line prompt will open where MailHog will be running once firewall access is granted.
 
-コマンドプロンプトウィンドウを閉じてMailHogを閉じます。 MailHog を再度起動するには、MailHog 実行可能ファイル (. xe) 最初にダウンロードされたファイル - 新しいMailHogインストールファイルをダウンロードする必要はありません。
+Close MailHog by closing the command prompt window. To start MailHog again, click on the MailHog executable (.exe) file that was downloaded initially - it is not necessary to download a new MailHog installation file.
 
-MailHog [を使用して](#using-mailhog) を開始します。
+Start [using MailHog](#using-mailhog).
 
-### LinuxへのMailHogのインストール
+### Installing MailHog on Linux
 
-まず、 [Go](https://golang.org) をインストールします。
+First, install [Go](https://golang.org).
 
-UbuntuやLinux MintなどのDebianベースのシステムにGOをインストールするには、次のコマンドを実行します。
+Run the following commands to install GO on Debian-based systems like Ubuntu and Linux Mint.
 
 ```bash
 sudo apt-get install golang
 ```
 
-CentOS、Fedora、Red Hat LinuxなどのRPMベースのシステムにGOをインストールするには、次のコマンドを実行します。
+Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
 
 ```bash
 sudo dnf install golang
 ```
 
-または、GOをインストールするには、次のコマンドを実行します。
+Alternatively, run the following commands to install GO.
 
 ```bash
 sudo yum install golang
 ```
 
-次のコマンドで Go のパスを設定します。
+Now set the path for Go with the following commands.
 
 ```bash
 echo "export GOPATH=$HOME/go" >> ~/.profile
@@ -69,7 +69,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-最後に、MailHog をインストールして実行するために以下のコマンドを入力します。
+Finally, enter the commands below to install and run MailHog.
 
 ```bash
 go get github.com/mailhog/MailHog
@@ -77,24 +77,24 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-MailHog [を使用して](#using-mailhog) を開始します。
+Start [using MailHog](#using-mailhog).
 
-## MailHog の使用
+## Using MailHog
 
-新しいブラウザータブまたはウィンドウを開き、 [http://localhost:8025](http://localhost:8025) に移動して、MailHog のインストールが完了し、MailHog が実行されているときに受信トレイを開きます。 受信トレイは以下のスクリーンショットと同様に表示されます。
+Open a new browser tab or window and navigate to [http://localhost:8025](http://localhost:8025) to open your MailHog inbox when the MailHog installation has completed and MailHog is running. The inbox will appear similar to the screen shot below.
 
-![MailHog のスクリーンショット1](images/mailhog/1.jpg)
+![MailHog Screenshot 1](images/mailhog/1.jpg)
 
-freeCodeCampのインストールによって送信されたメールは以下のように表示されます
+Emails sent by your freeCodeCamp installation will appear as below
 
-![MailHog スクリーンショット2](images/mailhog/2.jpg)
+![MailHog Screenshot 2](images/mailhog/2.jpg)
 
-特定の電子メールを開くと、プレーンテキストまたはソースコンテンツのいずれかを表示できる2つのタブが表示されます。 プレーンテキストタブが以下のように選択されていることを確認します。
+Two tabs that allow you to view either plain text or source content will be available when you open a given email. Ensure that the plain text tab is selected as below.
 
-![MailHog スクリーンショット3](images/mailhog/3.jpg)
+![MailHog Screenshot 3](images/mailhog/3.jpg)
 
-メール内のすべてのリンクはクリック可能で、そのURLに解決される必要があります。
+All links in the email should be clickable and resolve to their URL.
 
-## 有用なリンク
+## Useful Links
 
-- MailHog に関連する詳細情報については、 [MailHog](https://github.com/mailhog/MailHog) リポジトリを参照してください。 カスタム MailHog 設定に関する追加情報も入手できます。
+- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog. Additional information is also available regarding custom MailHog configurations.

@@ -1,45 +1,43 @@
-The [freeCodeCamp.org](https://freecodecamp.org) yhteisö on mahdollista ansiosta tuhansia vapaaehtoisia kuten sinä. Suhtaudumme myönteisesti kaikkiin yhteisön toimintaan ja olemme innoissamme voidessamme toivottaa teidät tervetulleeksi.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!HUOM] Ennen kuin jatkat, ole hyvä ja ota nopeasti 2 minuuttia lukea [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). Noudatamme sitä tiukasti kaikkialla yhteisössämme. Haluamme edistää freeCodeCamp.orgin käyttöä turvallisena ja osallisena kokemuksena kaikille.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Onnellinen osallistuminen.
+Happy contributing.
 
-Olet tervetullut:
+You are welcome to:
 
-- Luo, päivitä ja korjaa vikoja [koodaushaasteisiimme](#coding-challenges).
-- Auta meitä korjaamaan bugeja freeCodeCamp.orgin [oppimisalustalla](#learning-platform).
-- _(Tulossa pian)_ Auta meitä kääntämään freeCodeCamp.org maailman kielille.
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-Onko kysyttävää? Head over to [these FAQs](/FAQ.md) where we answer some common queries about contributing.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## Koodaus Haasteet
+## Curriculum
 
-Kaikki koodaushaasteemme kuratoivat yhteisö ja tuovat asiantuntevaa tietoa kaltaisistasi vapaaehtoisista.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-Voit auttaa laajentamaan niitä ja parantamaan niiden sanamuotoa. Voit myös päivittää käyttäjän tarinoita selittää käsite paremmin tai poistaa tarpeettomia ja parantaa haasteen testejä, jotta ne paremmin testata ihmisten koodia.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**Jos olet kiinnostunut parantamaan näitä koodauksen haasteita, tässä [miten koodauksen haasteita käsitellään.](how-to-work-on-coding-challenges.md)**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Oppimisfoorumi
+## Learning Platform
 
-Meidän oppimisalusta toimii moderni JavaScript pino. Siinä on erilaisia komponentteja, työkaluja ja kirjastoja, mukaan lukien mutta ei rajoittuen, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, ja enemmän.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Laajasti
+Broadly, we use
 
-- Meillä on Node.js pohjainen API-palvelin.
-- Joukko React-pohjaisia asiakassovelluksia.
-- Käsikirjoitus, jota käytämme arvioimaan etupään projektejamme.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-Tämän edistäminen vaatii jonkin verran ymmärrystä API:ista, ES6-syntaksista ja paljon uteliaisuutta.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-Pohjimmiltaan odotamme perustietoisuutta joistakin edellä mainituista teknologioista, välineistä ja kirjastoista. Näin ollen teidän ei tarvitse olla heidän asiantuntijansa, jotta voisitte antaa panoksensa.
+If you want to help us improve our codebase...
 
-**Jos haluat auttaa meitä parantamaan codebase, voit joko käyttää Gitpod, ilmainen online dev ympäristö**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Avaa Gitpodissa](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Starts valmis koodi dev ympäristö freeCodeCamp selaimessasi.)
+Or you can...
 
-TAI
-
-**voit [määrittää freeCodeCamp paikallisesti](how-to-setup-freecodecamp-locally.md) koneellasi.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

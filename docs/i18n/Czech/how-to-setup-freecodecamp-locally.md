@@ -1,326 +1,326 @@
-Postupujte podle těchto pravidel pro lokální nastavení freeCodeCamp ve vašem systému. To je velmi doporučeno, pokud chcete přispívat pravidelně.
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-Pro některé příspěvkové workflow, musíte mít freeCodeCamp běžet lokálně. Například, prohlížení výzev kódování nebo ladění a opravování chyb v kódu.
+Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
-> [!TIP] Pokud nemáte zájem o nastavení bezplatného CodeCamp lokálně zvážit použití Gitpod, bezplatné online prostředí pro vývojáře.
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
 > 
-> [![Otevřít v Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 > 
-> (Spustí prostředí vývojáře připraveného ke kódu pro freeCodeCamp ve vašem prohlížeči.)
+> (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
-## Připravte svůj místní stroj
+### How to prepare your local machine
 
-Začněte instalací nezbytného softwaru pro váš operační systém.
+Start by installing the prerequisite software for your operating system.
 
-Podporujeme především vývoj na **\*nix** systémech. Naši zaměstnanci a přispěvatelé komunity pravidelně pracují s kódovou databází pomocí nástrojů nainstalovaných na Ubuntu a macOS.
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
-Podporujeme také Windows 10 prostřednictvím WSL2, který můžete připravit na [čtení tohoto průvodce](/how-to-setup-wsl).
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](/how-to-setup-wsl).
 
-Někteří členové komunity se také vyvíjejí na Windows 10 nativně s Git pro Windows (Git Bash) a dalšími nástroji nainstalovanými v Windows. V tuto chvíli nemáme oficiální podporu pro takové nastavení, doporučujeme místo toho použít WSL2.
+Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-**Předpoklady:**
+**Prerequisites:**
 
-| Předpokladem                                                                                  | Verze | Poznámky                                                                                                                                                                                        |
-| --------------------------------------------------------------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                  | `12x` | [LTS rozvrh](https://github.com/nodejs/Release#release-schedule)                                                                                                                                |
-| npm (přichází s Nodem)                                                                        | `6.x` | Nemá žádné verze LTS, používáme verzi propojenou s Node LTS                                                                                                                                     |
-| [MongoDB komunitní server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6` | [Poznámky k vydání](https://docs.mongodb.com/manual/release-notes/), Poznámka: Aktuálně jsme na `3.6`, [aktualizace je naplánována](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
+| Prerequisite                                                                                  | Version | Notes                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                    |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS                                                                                                                  |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
 
-> [!DANGER] Pokud máte jinou verzi, nainstalujte prosím doporučenou verzi. Podporujeme pouze problémy s instalací doporučených verzí. Detaily viz [řešení problémů](#troubleshooting).
+> [!DANGER] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
-Pokud je Node.js již nainstalován na vašem počítači, spusťte následující příkazy pro ověření verzí:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
-uzel -v
+node -v
 npm -v
 ```
 
-> [!TIP] Důrazně doporučujeme aktualizovat na nejnovější stabilní verze výše uvedeného softwaru, známého také jako Long Term Support (LTS) release.
+> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-Jakmile máte nainstalované předpoklady, musíte připravit své vývojové prostředí. To je běžné u mnoha vývojových pracovních postupů a budete to muset udělat pouze jednou.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-**Postupujte podle těchto kroků, abyste mohli své vývojové prostředí připravit:**
+**Follow these steps to get your development environment ready:**
 
-1. Nainstalujte [Git](https://git-scm.com/) nebo Vašeho oblíbeného Git klienta, pokud již nemáte. Aktualizujte na nejnovější verzi; verze, která byla připojena k vašemu OS může být zastaralá.
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (Volitelné, ale doporučeno) [Nastavte klíč SSH](https://help.github.com/articles/generating-an-ssh-key/) pro GitHub.
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. Nainstalujte si editor kódu dle vašeho výběru.
+3. Install a code editor of your choice.
 
-   Důrazně doporučujeme používat [Visual Studio Code](https://code.visualstudio.com/) nebo [Atom](https://atom.io/). Jsou to skvělé, zdarma a open source editory.
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. Nastavte odkaz pro editor kódu.
+4. Set up linting for your code editor.
 
-   V editoru byste měli mít [ESLint](http://eslint.org/docs/user-guide/integrations.html), a zvýrazní vše, co neodpovídá
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP] Neignorujte prosím žádné chyby odkazu. Mají pomoci **vám** a zajistit čistou a jednoduchou kódovou základnu.
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## Rozštěpit úložiště na GitHubu
+## Fork the repository on GitHub
 
-příručce JavaScriptů [ freeCodeCamp.](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-Toto je nezbytné, protože umožňuje pracovat na vlastní kopii freeCodeCamp na GitHubu, nebo stáhnout (klonovat) váš repozitář, aby fungoval lokálně. Později budete moci prostřednictvím požadavku na natažení (PR) požádat o změny na hlavní repozitář.
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-> [!TIP] Hlavní repozitář na `https://github.com/freeCodeCamp/freeCodeCamp` je často označován jako `předcházející repozitář`.
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
 > 
-> Vaše rozštěpení na `https://github.com/YOUR_USER_NAME/freeCodeCamp` je často označováno jako `původ`.
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
 
-**Postupujte podle těchto kroků a rozštěpte repozitář `https://github.com/freeCodeCamp/freeCodeCamp`:**
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
 
-1. Přejděte do repositáře freeCodeCamp na GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 
-2. Klikněte na tlačítko "Fork" v pravém horním rohu rozhraní ([Další podrobnosti](https://help.github.com/articles/fork-a-repo/))
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 
-3. Po rozdělení repozitáře budete pořízeni do kopie repositáře freeCodeCamp na `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 <details>
    <summary>
-      Jak rozštěpit volný CodeCamp na GitHubu (snímek obrazovky)
+      How to fork freeCodeCamp on GitHub (screenshot)
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Jak rozštěpit bezplatný CodeCamp na GitHubu" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
-## Klonovat rozštěpení z GitHub
+## Clone your fork from GitHub
 
-[Klonování](https://help.github.com/articles/cloning-a-repository/) je místo, kde **stáhnete** kopii repozitáře z `vzdálené` polohy, kterou buď vlastníte, nebo někdo jiný. V takovém případě je toto vzdálené umístění vaší `fork` z repozitáře freeCodeCamp, který by měl být k dispozici na `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
 
-Spustit tyto příkazy na vašem lokálním počítači:
+Run these commands on your local machine:
 
-1. Otevřete Terminál / Příkazový příkaz / Shell v adresáři projektů
+1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-   _tj.: `/yourprojectsdirectory/`_
+   _i.e.: `/yourprojectsdirectory/`_
 
-2. Klonujte si rozštěpení volného CodeCamp, nahrazte `YOUR_USER_NAME` vaším GitHub uživatelským jménem
-
-   ```console
-   git klonovat --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-   ```
-
-Spustit tyto příkazy na vašem lokálním počítači:
-
-Toto stáhne celý freeCodeCamp repositář do adresáře projektů.
-
-## Nastavit synchronizaci od nadřazeného
-
-Poznámka: `--depth=1` vytvoří mělký klon tvého vidlice s nejaktuálnější historií/commit.
-
-[Jak již bylo zmíněno](#fork-the-repository-on-github), hlavní repozitář je určen `před repozitářem`. Vaše rozštěpení označované jako `původ`.
-
-Potřebujete odkaz z vašeho lokálního klonu do `předcházejícího` repozitáře kromě `původu`. To je tak, že můžete synchronizovat změny z hlavního repositáře bez požadavku na opakované vytváření a klonování.
-
-1. Změnit adresář na nový freeCodeCamp adresář:
+2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
    ```console
-   cd bezplatný CodeCamp
+   git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-2. Přidat vzdálený odkaz do hlavního repositáře freeCodeCamp:
+This will download the entire freeCodeCamp repository to your projects directory.
+
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+
+## Set up syncing from parent
+
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
+
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
+
+You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
+
+1. Change directory to the new freeCodeCamp directory:
+
+   ```console
+   cd freeCodeCamp
+   ```
+
+2. Add a remote reference to the main freeCodeCamp repository:
 
    ```console
    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-3. Ujistěte se, že konfigurace vypadá správně:
+3. Ensure the configuration looks correct:
 
    ```console
    git remote -v
    ```
 
-   Výstup by měl vypadat jako níže:
+   The output should look something like below:
 
    ```console
-   původ https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-   původ https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-   upstream https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-   upstream https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Místně spuštěný bezplatný CodeCamp
+## Running freeCodeCamp locally
 
-Nyní, když máte lokální kopii freeCodeCamp, můžete sledovat tyto instrukce a spustit je lokálně. To vám umožní:
+Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
-- Náhled úprav na stránky, jak by se objevily na platformě učení.
-- Práce na problémech a vylepšeních souvisejících s uživatelským rozhraním.
-- Ladit a opravit problémy s aplikačními servery a klientskými aplikacemi.
+- Preview edits to pages as they would appear on the learning platform.
+- Work on UI related issues and enhancements.
+- Debug and fix issues with the application servers and client apps.
 
-Pokud se narazíte na problémy, nejprve proveďte vyhledání vašeho problému a zjistěte, zda byl již zodpovězen. Pokud nemůžete najít řešení, prosím prohledejte naše [GitHub problémy](https://github.com/freeCodeCamp/freeCodeCamp/issues) pro řešení a nahlaste problém, pokud ještě nebyl nahlášen.
+If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-A jako vždy, neváhejte skočit na naši [Chatovací místnost na Gitteru](https://gitter.im/FreeCodeCamp/Contributors) nebo [náš Discord server](https://discord.gg/pFspAhS), pro rychlé dotazy.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Pokud jednoduše upravujete soubory, můžete ho přeskočit lokálně. Například provedení `rebase`nebo řešení `sloučení` konfliktů.
+> [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
 > 
-> Do této části pokynů se vždy můžete vrátit později. Měli byste **** tento krok přeskočit, pokud nepotřebujete spouštět aplikace na vašem počítači.
+> You can always return to this part of the instructions later. You should **only** skip this step if you do not need to run the apps on your machine.
 > 
-> [Přeskočit na provedení změn](#making-changes-locally).
+> [Skip to making changes](#making-changes-locally).
 
-### Nastavení závislostí
+### Configuring dependencies
 
-#### Krok 1: Nastavte proměnnou prostředí
+#### Step 1: Set up the environment variable file
 
-Výchozí API klíče a proměnné prostředí jsou uloženy v souboru `sample.env`. Tento soubor musí být zkopírován do nového souboru s názvem `.env` , který je dynamicky přístupný během instalačního kroku.
+The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
 ```console
-# Vytvořte kopii "sample.env" a pojmenujte ji ".env".
-# Vyplňte potřebné API klíče a tajné klíče:
+# Create a copy of the "sample.env" and name it ".env".
+# Populate it with the necessary API keys and secrets:
 
 # macOS / Linux
-cp vzorek. nv .env
+cp sample.env .env
 
 # Windows
 copy sample.env .env
 ```
 
-Klávesy v souboru `.env` nejsou __ vyžadovány pro místní spuštění aplikace. Můžete ponechat výchozí hodnoty zkopírované z `vzor.env` jako.
+The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
-> [!TIP] Mějte na paměti, pokud chcete používat služby jako Auth0 nebo Algolia, pro tyto služby budete muset získat vlastní API klíče a odpovídajícím způsobem upravit položky v `. nv` soubor.
+> [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Krok 2: Instalovat závislosti
+#### Step 2: Install dependencies
 
-Tento krok nainstaluje závislosti, které jsou nezbytné pro spuštění aplikace:
+This step will install the dependencies required for the application to run:
 
 ```console
 npm ci
 ```
 
-#### Krok 3: Start MongoDB a seed databáze
+#### Step 3: Start MongoDB and seed the database
 
-Než budete moci spustit aplikaci lokálně, budete muset spustit službu MongoDB.
+Before you can run the application locally, you will need to start the MongoDB service.
 
-> [!POZNÁMKA] Pokud není MongoDB spuštěno v jiném nastavení, než je výchozí nastavení, URL uložená jako hodnota `MONGOHQ_URL` v `. nv` soubor by měl fungovat v pořádku. Pokud používáte vlastní konfiguraci, upravte tuto hodnotu podle potřeby.
+> [!NOTE] Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
 
-Tento krok nainstaluje závislosti, které jsou nezbytné pro spuštění aplikace:
+Start the MongoDB server in a separate terminal:
 
-- Na macOS & Ubuntu:
+- On macOS & Ubuntu:
 
   ```console
   mongod
   ```
 
-- V systému Windows musíte zadat úplnou cestu k binárnímu `mongod`
+- On Windows, you must specify the full path to the `mongod` binary
 
   ```console
-  "C:\Program Soubory\MongoDB\Server\3.6\bin\mongod"
+  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
   ```
 
-  Ujistěte se, že chcete nahradit `3.6` verzí, kterou jste nainstalovali
+  Make sure to replace `3.6` with the version you have installed
 
-> [!TIP] Můžete se vyhnout tomu, abyste MongoDB museli kdykoliv spustit instalací služby na pozadí. Můžete se o tom [dozvědět více v jejich dokumentaci pro váš OS](https://docs.mongodb.com/manual/administration/install-community/)
+> [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-Dále pojďme získat databázi. V tomto kroku spustíme níže uvedený příkaz, který vyplňuje server MongoDB s počátečními datovými sadami, které jsou vyžadovány službami. Patří k nim mimo jiné několik schémat.
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```console
 npm run seed
 ```
 
-#### Krok 4: Spusťte klientskou aplikaci FreeCamp a API server
+#### Step 4: Start the freeCodeCamp client application and API server
 
-Spusťte MongoDB server v samostatném terminálu:
+You can now start up the API server and the client applications.
 
 ```console
-vývoj npm běhu
+npm run develop
 ```
 
-Ujistěte se, že chcete nahradit `3.6` verzí, kterou jste nainstalovali
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-> [!POZNÁMKA] Jakmile je tento prohlížeč připraven, otevřete webový prohlížeč a **navštivte <http://localhost:8000>**. Pokud se aplikace načítá, blahopřejeme – vše je nastaveno! Nyní máte kopii celé vzdělávací platformy FreeCodeCamp, která běží na vašem místním počítači.
+> [!NOTE] Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-> [!TIP] API Server slouží API na `http://localhost:3000`. Aplikace Gatsby slouží klientské aplikaci na `http://localhost:8000`
+> [!TIP] The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
-> Pokud navštívíte [http://localhost:3000/Explorer](http://localhost:3000/explorer) , měli byste vidět dostupné API.
+> If you visit <http://localhost:3000/explorer> you should see the available APIs.
 
-## Přihlásit se s místním uživatelem
+## Sign in with a local user
 
-Vaše místní nastavení automaticky vyplní místního uživatele v databázi. Kliknutím na tlačítko `Přihlásit se` vás automaticky ověří do místní aplikace.
+Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
 
-Nicméně přístup k uživatelským portfoliovým stránkám je trochu trický. Ve vývoji, Gatsby přebírá obsluhu stránek na straně klienta a proto dostanete `404` stránku pro uživatelské portfolio při lokálním fungování.
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
 
-Tento jediný příkaz spustí všechny služby, včetně API serveru a klientských aplikací, na kterých můžete pracovat.
+Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
    <summary>
-      Jak se přihlásit při práci na místě (snímek obrazovky)
+      How to sign in when working locally (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Jak se přihlásit při práci na místě" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
 </details>
 
-## Probíhá lokální změny
+## Making changes locally
 
-Nyní můžete provést změny v souborech a provést změny v místním klonu rozštěpení.
+You can now make changes to files and commit your changes to your local clone of your fork.
 
-Postupujte podle těchto kroků:
+Follow these steps:
 
-1. Ověřte, že jste na `master` větvi:
+1. Validate that you are on the `master` branch:
 
    ```console
    git status
    ```
 
-   Měli byste získat výstup takto:
+   You should get an output like this:
 
    ```console
-   Na pobočce master
-   Vaše větev je aktuální s 'původ/mistrovství'.
+   On branch master
+   Your branch is up-to-date with 'origin/master'.
 
-   nic k ověření, čištění pracovního adresáře
+   nothing to commit, working directory clean
    ```
 
-   Pokud nejste na mistru nebo není váš pracovní adresář čistý, vyřešte všechny nevyřízené soubory/commity a pokladnu `master`:
+   If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
 
    ```console
-   mistr git pokladny
+   git checkout master
    ```
 
-2. Synchronizujte nejnovější změny z volné CodeCamp proti proudu `master` do vaší místní hlavní větve:
+2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
 
-   > [!VAROVÁNÍ] Pokud máte nějaký nevyřízený požadavek na natažení, který jste podali od `master` větve tvého vidlice, na konci tohoto kroku je ztratíte.
+   > [!WARNING] If you have any outstanding pull request that you made from the `master` branch of your fork, you will lose them at the end of this step.
    > 
-   > Před provedením tohoto kroku byste měli zajistit, aby byl váš požadavek na natažení sloučen moderátorem. Abychom se tomuto scénáři vyhnuli, měli byste **vždy** pracovat na jiné větvi než je `master`.
+   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `master`.
 
-   Tento krok **synchronizuje nejnovější změny** z hlavního repositáře freeCodeCamp. Je důležité, abyste přeorientovali větev na nejnovější `upstream/master` co nejčastěji, abyste se později vyhnuli konfliktům.
+   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
 
-   Aktualizujte svou lokální kopii repositáře freeCodeCamp před repozitářem:
-
-   ```console
-   git načíst proti proudu
-   ```
-
-   Těžko resetovat svou hlavní větev pomocí volného CodeCamp master:
+   Update your local copy of the freeCodeCamp upstream repository:
 
    ```console
-   git resetuje --hard upstream/master
+   git fetch upstream
    ```
 
-   Stiskněte svou hlavní větev do svého původu, abyste měli čistou historii na tvém forku na GitHubu:
+   Hard reset your master branch with the freeCodeCamp master:
+
+   ```console
+   git reset --hard upstream/master
+   ```
+
+   Push your master branch to your origin to have a clean history on your fork on GitHub:
 
    ```console
    git push origin master --force
    ```
 
-   Váš aktuální mistr se shoduje s aktuálním streamem/mistrem tím, že provedete rozdíl:
+   You can validate your current master matches the upstream/master by performing a diff:
 
    ```console
-   git odlišit nahoru/master
+   git diff upstream/master
    ```
 
-   Výsledný výstup by měl být prázdný.
+   The resulting output should be empty.
 
-3. Vytvořit novou větev:
+3. Create a fresh new branch:
 
-   Práce na samostatné pobočce pro každý problém vám pomůže udržet vaši místní kopii čistý. Nikdy byste neměli pracovat na `mistrovi`. Uloží vaši kopii freeCodeCamp a možná budete muset začít s novým klonem nebo vidlicí.
+   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
-   Zkontrolujte, zda jste na `master` , jak bylo vysvětleno výše, a odsud odešlete od:
+   Check that you are on `master` as explained previously, and branch off from there:
 
    ```console
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Název větve by měl začínat `fix/`, `funkcí/`, `dokumentací/`, atd. Vyhněte se používání čísel úkolů v větvích. Uchovávejte je krátké, smysluplné a jedinečné.
+   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
-   Mezi dobré názvy poboček patří:
+   Some examples of good branch names are:
 
    ```md
    fix/update-challenges-for-react
@@ -330,156 +330,156 @@ Postupujte podle těchto kroků:
    translate/add-spanish-basic-html
    ```
 
-4. Upravte stránky a pracujte na kódu v oblíbeném textovém editoru.
+4. Edit pages and work on code in your favorite text editor.
 
-5. Jakmile jste spokojeni se změnami, měli byste volitelně spustit freeCodeCamp pro zobrazení změn.
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Ujistěte se, že jste opravili chyby a zkontrolujte formátování změn.
+6. Make sure you fix any errors and check the formatting of your changes.
 
-7. Zkontrolujte a potvrďte aktualizované soubory:
+7. Check and confirm the files you are updating:
 
    ```console
    git status
    ```
 
-   Toto by mělo zobrazit seznam `nefázovaných` souborů, které jste upravili.
+   This should show a list of `unstaged` files that you have edited.
 
    ```console
-   Funkce větev / dokumentace
-   Vaše větev je aktuální s 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Změny nejsou ve stadiu pro commit:
-   (použijte "git add/rm <file>... pro aktualizaci toho, co bude přidáno)
-   (použijte "git checkout -- <file>. " pro odstranění změn v pracovním adresáři)
+   Changes not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
 
-       změněny: PŘÍSPĚVEK d
-       změněn: dokumenty/README.md
-       změněny: dokumenty/how-to-setup-freecodecamp-local. d
-       změněny: dokumentaci/jak-work-on-guide-articles.md
-...
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
+   ...
    ```
 
-8. Funguje změny a učiní závazek:
+8. Stage the changes and make a commit:
 
-   V tomto kroku byste měli označit pouze soubory, které jste upravili nebo přidali. Můžete provést resetování a vyřešit soubory, které jste v případě potřeby nezamýšleli změnit.
+   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
    ```console
-   git přidat cestu/do/my/changed/file.ext
+   git add path/to/my/changed/file.ext
    ```
 
-   Nebo můžete přidat všechny `nefázované` soubory do oblasti přípravy:
+   Or you can add all the `unstaged` files to the staging area:
 
    ```console
    git add .
    ```
 
-   Až vytvoříte commit, budou přidány pouze soubory, které byly přesunuty do přípravné oblasti.
+   Only the files that were moved to the staging area will be added when you make a commit.
 
    ```console
    git status
    ```
 
-   Výstup:
+   Output:
 
    ```console
-   Funkce větev / dokumentace
-   Vaše větev je aktuální s 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Změny, které mají být provedeny:
-   (použijte "git reset HEAD <file>..." to unstage)
+   Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
 
-       změněny: CONTRIBUTING.md
-       změněny: docs/README.md
-       změněny: docs/how-to-setup-freecodecamp-locally.md
-       upraveno: docs/how-to-work-on-guide-articles.md
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
    ```
 
-   Nyní můžete provést své změny s krátkou zprávou, jako je toto:
+   Now, you can commit your changes with a short message like so:
 
    ```console
-   git commit -m "opravit: moje krátká zpráva commitu"
+   git commit -m "fix: my short commit message"
    ```
 
-   Některé příklady:
+   Some examples:
 
    ```md
-   oprava: update guide article for Java - for smyčka
+   fix: update guide article for Java - for loop
    feat: add guide article for alexa skills
    ```
 
-   Nepovinné:
+   Optional:
 
-   Důrazně doporučujeme vytvořit konvenční zprávu commitu. Toto je dobrá praxe, kterou uvidíte u některých populárních Open Source repozitářů. Jako vývojář vás to povzbuzuje ke sledování standardních postupů.
+   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
 
-   Některé příklady konvenčních zpráv commitů jsou:
+   Some examples of conventional commit messages are:
 
    ```md
-   oprava: update HTML guide article
+   fix: update HTML guide article
    fix: update build scripts for Travis-CI
    feat: add article for JavaScript hoisting
-   docs: update přispívající pravidla
+   docs: update contributing guidelines
    ```
 
-   Zachovat tyto krátké, ne více než 50 znaků. V popisu zprávy commitu můžete vždy přidat další informace.
+   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-   Netrvá to více času než nekonvenční zpráva jako 'update file' nebo 'add index.md'
+   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-   Více informací o tom, proč byste měli používat konvenční commity [zde](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. Pokud si uvědomíte, že po provedení revize je třeba upravit soubor nebo aktualizovat zprávu commitu, můžete tak učinit po úpravě souborů:
+9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
    ```console
    git commit --amend
    ```
 
-   Tímto se otevře výchozí textový editor, jako je `nano` nebo `vi` , kde můžete upravit název zprávy a přidat/upravit popis.
+   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
-10. Dále můžete odeslat své změny na rozštěpení:
+10. Next, you can push your changes to your fork:
 
     ```console
     git push origin branch/name-here
     ```
 
-## Návrh požadavku na natažení (PR)
+## Proposing a Pull Request (PR)
 
-Poté, co jste změnili své změny, podívejte se zde na [jak otevřít Pull Request](how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## Odkaz na rychlé příkazy
+## Quick commands reference
 
-Nyní můžete provést změny v souborech a provést změny v místním klonu rozštěpení.
+A quick reference to the commands that you will need when working locally.
 
-| příkaz                                                         | Popis                                                                                 |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `npm ci`                                                       | Instalujte / přeinstalujte všechny závislosti a bootstrapy různé služby.              |
-| `npm run seed`                                                 | Analyzuje všechny soubory challenge markdown a vloží je do MongoDB.                   |
-| `vývoj npm běhu`                                               | Spustí Free CodeCamp API Server a aplikace klienta.                                   |
-| `npm test`                                                     | Spustit všechny JS testy v systému, včetně klienta, serveru, linky a challenge testů. |
-| `npm run test:klient`                                          | Spustit klientskou testovací sadu.                                                    |
-| `npm run test:curriculum`                                      | Spustit testovací sadu učebních plánů.                                                |
-| `npm run test:curriculum --block='Základní HTML a HTML5'`      | Vyzkoušejte specifický blok.                                                          |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Vyzkoušejte specifický SuperBlock.                                                    |
-| `npm run test-curriculum full-výstup`                          | Po první chybě spustit testovací sadu učebních osnov                                  |
-| `npm run test:server`                                          | Spustit serverovou testovací sadu.                                                    |
-| `npm běh e2e`                                                  | Spusťte konec Cypresu pro ukončení testů.                                             |
-| `npm vyčistit`                                                 | Odinstaluje všechny závislosti a vyčistí mezipaměti.                                  |
+| command                                                        | description                                                                         |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
+| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
+| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
-## Řešení problémů
+## Troubleshooting
 
-### Problémy s instalací doporučených předpokladů
+### Issues with installing the recommended prerequisites
 
-Postupujte podle těchto kroků:
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later and Windows 10 (with WSL2).
 
-Doporučujeme prozkoumat váš konkrétní problém u zdrojů, jako je Google, Stack Overflow nebo Stack Exchange. Existuje velká šance, že někdo čelil stejnému problému a na váš konkrétní dotaz již existuje odpověď.
+It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-Pokud jste na jiném OS a/nebo stále běžejí problémy, podívejte se na [získání nápovědy](#getting-help).
+If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
-> Pokud navštívíte [http://localhost:3000/Explorer](http://localhost:3000/explorer) , měli byste vidět dostupné API.
+> [!WARNING]
 > 
-> Vyhněte se prosím vytváření GitHub problémů v nezbytných podmínkách. Jsou mimo rozsah tohoto projektu.
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### Problémy s uživatelským rozhraním, písmy, chyby sestavení atd.
+### Issues with the UI, Fonts, build errors etc.
 
-Pokud narazíte na problémy s UI, fonty nebo uvidíte chyby sestavení, může být čištění užitečné:
+If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
 ```console
 npm run clean
@@ -488,17 +488,17 @@ npm run seed
 npm run develop
 ```
 
-NEBO
+OR
 
-Použít zástupce
+Use the shortcut
 
 ```
-npm běh čištění a vývoj
+npm run clean-and-develop
 ```
 
-Výsledný výstup by měl být prázdný.
+If you continue to face issues with the build, cleaning up the workspace is recommend.
 
-Použít `git čištění` v interativním režimu:
+Use `git clean` in interative mode:
 
 ```
 git clean -ifdX
@@ -506,41 +506,41 @@ git clean -ifdX
 
 <details>
    <summary>
-      Jak vyčistit git nesledované soubory (screenshot)
+      How to clean git untracked files (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Jak vyčistit git nesledované soubory" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
-### Problémy s API, přihlášením, podáním výzvy atd.
+### Issues with API, Login, Challenge Submissions, etc.
 
-Pokud se nemůžete přihlásit a místo toho uvidíte banner s chybovou zprávou, že bude nahlášen na freeCodeCamp, prosím zkontrolujte, zda váš místní port `3000` není používán jiným programem.
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-**Na Linuxu / macOS / WSL na Windows - Z terminálu:**
+**On Linux / macOS / WSL on Windows - From Terminal:**
 
 ```console
 netstat -ab | grep "3000"
 
-tcp4 0 0.0.0.0:3000 DESKTOP LISTEN
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**Na Windows - Z Elevated PowerShell:**
+**On Windows - From Elevated PowerShell:**
 
 ```powershell
-netstat -ab | Vybraný řetězec "3000"
+netstat -ab | Select-String "3000"
 
-TCP 0.0.0:3000 DESKTOP LISTENING
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
-### Problémy při instalaci závislostí
+### Issues installing dependencies
 
-Nepovinné:
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-Nastavení může chvíli trvat poprvé, v závislosti na šířce pásma. Buďte trpěliví, a pokud jste stále uvězněni, obnovujeme místo offline nastavení GitPod.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommed using GitPod instead of an offline setup.
 
-## Získávání nápovědy
+## Getting Help
 
-Pokud jste uvízli a potřebujete pomoc, dejte nám vědět tím, že se zeptáte v kategorii ['přispěvatelé' na našem fóru](https://forum.freecodecamp.org/c/contributors) nebo [přispěvatelé](https://gitter.im/FreeCodeCamp/Contributors) na Gitteru.
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-V konzoli prohlížeče nebo v Bash / Terminálu / příkazovém řádku může být chyba, která pomůže identifikovat problém. Zadejte tuto chybovou zprávu v popisu problému, aby ostatní mohli problém snadněji identifikovat a pomohli vám najít řešení.
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

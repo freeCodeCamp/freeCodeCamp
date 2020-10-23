@@ -1,179 +1,179 @@
-# 如何打开合并请求 (PR)
+# How to open a Pull Request (PR)
 
-一个拉取请求使您能够将您在 GitHub 上的分叉中的更改发送到FreeCodeCodeCamp.org的主仓库中。 一旦您完成了代码的更改或编码挑战，您应该遵循这些指南来发送一个 PR。
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-## 准备一个好的 PR 标题
+## Prepare a good PR title
 
-我们建议使用 [常规标题和消息](https://www.conventionalcommits.org/) 来提交和拉取请求。 公约有以下形式：
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<type>([可选范围(s)]): <description>`
+> `<type>([optional scope(s)]): <description>`
 > 
-> 例如：
+> For example:
 > 
-> `修复(学习)：在循环挑战的同时进行此项测试......`
+> `fix(learn): tests for the do...while loop challenge`
 
-当打开合并请求(PR)，您可以使用下面的方法来确定类型、范围(可选)和描述。
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
 
-**类型:**
+**Type:**
 
-| 类型   | 何时选择                  |
-|:---- |:--------------------- |
-| 修复   | 已更改或更新/改进功能、测试、课本等。   |
-| feat | 仅当您正在添加新功能、测试等。       |
-| 合唱团  | 与课程的代码、测试或顶点无关的更改。    |
-| 文档   | 更改为 `/docs` 目录或贡献指南等。 |
+| Type  | When to select                                                               |
+|:----- |:---------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                        |
+| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
 
-**范围：**
+**Scope:**
 
-您可以从 [此标签列表](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope) 中选择一个范围。
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
 **Description:**
 
-保持简短(小于30个字符)，您可以在 PR 描述框和评论中添加更多信息。
+Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-优秀PRs标题的一些例子包括：
+Some examples of good PRs titles would be:
 
-- `修复(a11): 改进搜索栏对比度`
-- `功能：添加更多测试到 html 和 css 挑战`
-- `修复 (api,client): 防止提交窗体时发生CORS 错误`
-- `docs(i18n)：本地设置的中文翻译`
+- `fix(a11y): improved search bar contrast`
+- `feat: add more tests to html and css challenges`
+- `fix(api,client): prevent CORS errors on form submission`
+- `docs(i18n): Chinese translation of local setup`
 
-## 提出拉取请求
+## Proposing a Pull Request
 
-1. 一旦编辑完成，您将被提示在您的 GitHub 页面上创建一个拉取请求。
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![图像 - 比较GitHub 上的拉取请求](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. 默认情况下，所有合并请求都应该与免费CodeCamp的主仓库相对应， `主分支`。
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-   请确保您的基叉已设置为免费CodeCamp/免费CodeCamp 在提升合并请求。
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![图像 - 在提出拉取请求时比较叉数](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. 将您的分支拉取请求提交给FreeCodeCamp的 `主` 分支。
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
 
-4. 在您的 PR 正文中包含一个更详细的您所做的更改及其原因。
+4. In the body of your PR include a more detailed summary of the changes you made and why.
 
-   - 您将收到拉请求模板。 这是一个您在打开拉取请求之前应该遵循的核对表。
+   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-   - 填写你认为合适的详细信息。 此信息将被审核，审核者将决定您的拉取请求是否被接受。
+   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-   - 如果PR 是为了解决现有的 GitHub 问题，那么，在 结束时，您的 PR's 描述实体， 使用关键字 _关闭了有问题号的_ 到 [自动关闭了该问题，如果接受并合并了](https://help.github.com/en/articles/closing-issues-using-keywords)。
+   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > 示例： `关闭 #123` 将关闭问题 123
+     > Example: `Closes #123` will close issue 123
 
-5. 注明是否在网站的本地副本上进行过测试。
+5. Indicate if you have tested on a local copy of the site or not.
 
-   在进行不仅仅是编辑文档或挑战描述等文本内容的更改时，这一点非常重要。 需要本地测试的更改实例包括JavaScript、CSS 或 HTML 可能改变页面功能或布局。
+   This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-## 对合并请求的反馈
+## Feedback on pull requests
 
-> 恭喜！ :tada: 即将创建一个PR 并非常感谢花费时间做出贡献。
+> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
 
-我们的版主现在看看看并留下反馈。 请耐心看看同伴版主并尊重他们的时间。 所有合并请求都在适当时候得到审查。
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-如果您需要任何帮助，请在 [贡献者聊天室](https://gitter.im/FreeCodeCamp/Contributors)中讨论，我们非常乐意帮助您。
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!提示] 如果您想要提交更多的拉取请求。 我们建议您阅读 [做出更改并同步](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) 指南，以避免必须删除您的叉。
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
-## 在合并请求上冲突
+## Conflicts on a pull request
 
-可能会发生冲突，因为许多贡献者在仓库中工作，并且更改可能会破坏您正在等待审查和合并的PR 。
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-你可能经常不需要重置基地，因为我们会挤掉所有的提交， 但是，如果在此请求重置基础，这是你应该做的。
+More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
 
-### 通常错误修复和功能
+### For usual bug fixes and features
 
 When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
 
-1. 重置您的本地副本：
+1. Rebase your local copy:
 
    ```console
-   git 结帐 <pr-branch>
-   git pull --rebase 上游管理员
+   git checkout <pr-branch>
+   git pull --rebase upstream master
    ```
 
-2. 解决任何冲突并添加/编辑提交
+2. Resolve any conflicts and add / edit commits
 
    ```console
-   #
-   git 添加 .
-   git 提交 -m "chore: 解决冲突"
+   # Either
+   git add .
+   git commit -m "chore: resolve conflicts"
 
-   # 或
-   git 添加 .
-   git 提交 --revise --no-edit
+   # Or
+   git add .
+   git commit --amend --no-edit
    ```
 
-3. 将您的更改推回到PR
+3. Push back your changes to the PR
 
    ```console
-   git 推送--force 来源 <pr-branch>
+   git push --force origin <pr-branch>
    ```
 
-### 即将开设的课程和功能
+### For upcoming curriculum and features
 
-当您正在为我们即将上来的课程 `下一个*` 分支开发功能时，您已经做了一次棋盘选择：
+When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
 
-1. 请确保您的上游与您的本地同步：
+1. Make sure your upstream comes in sync with your local:
 
    ```console
-   git 签出master
-   git 获取--all --prune
-   git 签出下一个 python-project
-   git 重置 --hard upstream/next python-projects
+   git checkout master
+   git fetch --all --prune
+   git checkout next-python-projects
+   git reset --hard upstream/next-python-projects
    ```
 
-2. 备份备份
+2. Take backup
 
-   a. 备份后删除您的本地分支(如果您仍然有本地分支)：
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
       ```console
-      git 结帐 <pr-branch-name>
+      git checkout <pr-branch-name>
 
-      # 示例：
-      git 结帐功能/附加numpy-video-question
+      # example:
+      # git checkout feat/add-numpy-video-question
 
-      git 结帐-b <backup-branch-name>
+      git checkout -b <backup-branch-name>
 
-      # 示例：
-      # git 结帐-b 备份功能/附加numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
 
-   b. 会议文件。 或者仅备份您的 pr 分支(如果您没有本地分支的话)：
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
       ```console
-      git 结帐-b <backup-branch-name> origin/<pr-branch-name>
+      git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # 例如：
-      # git 结帐-b b备份功能/附加numpy-video question origin/feate/addnumpy-video question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
-4. 开始时有一个干净的套件：
+4. Start off with a clean slate:
 
    ```console
-   git 签出 -b <pr-branch-name> 下一个 python-projects
-   git cherry-self <commit-hash>
+   git checkout -b <pr-branch-name> next-python-projects
+   git cherry-pick <commit-hash>
    ```
 
-5. 解决任何冲突并清理，安装运行测试
+5. Resolve any conflicts, and cleanup, install run tests
 
    ```console
-   npm 运行清洁
+   npm run clean
 
    npm ci
-   npm 运行测试:course --superblock=<superblock-name>
+   npm run test:curriculum --superblock=<superblock-name>
 
-   # 例如：
+   # example:
 
-   # npm 运行测试:course --superblock=python-for everyone
+   # npm run test:curriculum --superblock=python-for-everybody
 
    ```
 
-6. 如果一切看起来都很好，请回到PR
+6. If everything looks good push back to the PR
 
    ```console
-   git 推送--force 来源 <pr-branch-name>
+   git push --force origin <pr-branch-name>
    ```

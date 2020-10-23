@@ -1,95 +1,76 @@
-### GitHubとOpen Sourceは初めてですが、どこから始めるべきでしょうか?
+### I am new to GitHub and Open Source. Where should I start?
 
-["オープンソースガイドに貢献する方法"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source) を読んでください。 これは、最初のタイマーフレンドリーなプロジェクトとガイドラインの圧縮リソースです。
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
-### freeCodeCampのカリキュラムを翻訳できますか？
+### Can I translate freeCodeCamp's curriculum?
 
-freeCodeCampでは、 **中国** から始まるローカライゼーションの取り組みを開始します。
+Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon.
 
-より多くの言語でカリキュラムを利用できるようにするつもりですが、期限にはまだコミットできません。 スタッフ、アクティブな貢献者、サーバーコストなどのいくつかの運用制限は、国際化(i18n)の取り組みを推進する役割を果たします。
+Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
 
-私たちはこれらの言語でi18nの取り組みを開始する予定です:アラビア語、ポルトガル語。 私たちは中国語でカリキュラムをリリースした後、ロシア語とスペイン語(特に順序はありません)。
+### How can I report a new bug?
 
-**なぜ中国のカリキュラムに注目しているのですか?**
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-中国は、英語を母国語としない聴衆の中で最大の人口学的地域です。 現在、数十万人のユーザーが古いバージョンのプラットフォームを使用しています。 中国のカリキュラムに焦点を当てると、i18nに関連する物流の見積もりができます。
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-私たちは、ポルトガルとスペインの人口統計地域としてラテンアメリカに焦点を当てます。
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-上記以外の言語へのi18nの予定はありません。
+### How can I report a security issue?
 
-上記の言語でi18nに取り組むことをお勧めしません。 展開時の任意のタイムラインを期待することなく、プルリクエストを受け入れることができます。
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### 新しいバグを報告するにはどうすればいいですか?
+### I am a student. Can I work on a feature for academic credits?
 
-バグを見つけたと思われる場合は、最初に ["ヘルプ私はバグを見つけました"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) の記事を読んで、その指示に従ってください。
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-新しいバグだと確信している場合は、先に進んで新しいGitHubの問題を作成してください。 バグを再現できるように、できるだけ多くの情報を含めるようにしてください。 これを支援するために事前に定義された課題テンプレートがあります。
+We request you to plan ahead and work on code contributions with this in mind.
 
-チャレンジでコーディング支援を求める問題は解決されますのでご注意ください。 課題トラッカーは、コードベースに関連する問題や議論のために厳密に使用されます。 疑わしいときはいつでも、報告する前に [フォーラム](https://forum.freecodecamp.org) で支援を求めるべきです。
+### What do these different labels that are tagged on issues mean?
 
-### セキュリティ問題を報告するにはどうすればいいですか?
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-セキュリティ上の問題については、GitHubの課題を作成しないでください。 代わりに、 `security@freecodecamp.org` にメールを送信してください。
+### Where do I start if I want to work on an issue?
 
-### 私は学生ですが、私たちのチームは学術的な単位のための機能に取り組むことができますか?
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-はい、もちろん。
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are special issues that are designed for people who have not contributed to the freeCodeCamp codebase before.
 
-私たちはすべての貢献に開放されています あなたの大学や大学で要件となるような時間軸には一切関与しません 私たちはすべての貢献に開放されています あなたの大学や大学で要件となるような時間軸には一切関与しません 私たちは、ボランティア開発者による多くのプルリクエストやコード貢献を受けており、彼らの時間と努力を尊重しています。 私たちは、PRがすべてに公平であるために特別な注意を払うことはできません。
+### I found a typo. Should I report an issue before I can make a pull request?
 
-これを念頭に置いて、事前に計画を立て、機能に取り組むようお願いします。
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-### 課題にタグ付けされているこれらの異なるラベルはどういう意味ですか?
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-コードメンテナは [](https://en.wikipedia.org/wiki/Software_bug#Bug_management) の優先度、重大度、その他の要因に基づいてリクエストをトリアージしてプルします。 [こちら](https://github.com/freecodecamp/freecodecamp/labels) では、その意味の完全な用語集を見つけることができます。
+### How can I get an issue assigned to me?
 
-### 問題に取り組む場合は、どこから始めますか?
+We typically do not assign issues to anyone other than long-time contributors.  Instead, we follow the below policy to be fair to everyone:
 
-[**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quickly overview of a quick overview of what is available to work.
+1. We are most likely to merge the first pull request that addresses the issue.
+2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
+   - Did you include tests?
+   - Did you catch all usecases?
+   - Did you ensure all tests pass, and confirm everything works locally?
+3. Finally, we give priority to pull requests which follow our recommended guidelines.
+   - Did you follow the pull request checklist?
+   - Did you give your pull request a meaningful title?
 
-> [!TIP] **`のヘルプは`** の問題を把握しており、作業する前に許可を求める必要はありません。 ただし、 **`の最初のタイマーのみの問題`** は、以前に freeCodeCamp コードベースに貢献していない人のために予約されています。 これらの問題が何をすべきかを明確にしていない場合は、コメントで質問してください。
+### I am stuck on something that is not included in this documentation.
 
-### タイプミスを見つけました。 プルリクエストを行う前に問題を報告しますか？
-
-タイプミスやその他の文言変更の場合、最初に問題を作成せずにプルリクエストを直接開くことができます。 問題は、カリキュラムのコードや構造的な側面に関連するより大きな問題を議論するためにより多くのものです。
-
-ただし、プルリクエストの説明領域に詳細、内容などを記載し、ごくわずかな変更でもあなたの貢献を理解しレビューするのに役立ちます。
-
-### 課題はどのように割り当てられますか?
-
-我々は通常、曖昧なノーショーを避けるために、長年の貢献者以外の誰にも問題を割り当てません。 代わりに、私たちは以下の方針に従い、すべての人に公平になります。
-
-1. 任意の問題に対する最初のプルリクエストをマージすることを推奨します。
-2. 同じ問題に対する複数のプルリクエストの場合、プルリクエストのコードの品質を優先します。
-   - テストを含めましたか？
-   - ユースケースは全部捕まえましたか？
-   - すべてのテストが合格することを確認し、すべてのテストがローカルで動作することを確認しましたか?
-3. 最後に、私たちは推奨されるガイドラインに従ったプルリクエストを好みます。
-   - プルリクエストのチェックリストをフォローしましたか？
-   - プルリクエストのタイトルに意味のある名前を付けましたか？
-
-先に説明したように、 `ヘルプ` または `最初のタイマーのみ` とマークされている課題に対する権限は必要ありません。
-
-ガイドラインに従い、プルリクエストを開きます。
-
-### 私はこのドキュメントに含まれていない何かに引っかかっています。
-
-**お気軽にお問い合わせください:**
+**Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The public `Contributors` [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 - The `#Contributors` channel on [our Discord community server](https://discord.gg/pFspAhS).
 
-私たちは、あなたが作業したいトピックのいずれかに貢献するお手伝いをすることを楽しみにしています。 関連する問題のスレッドで私たちに質問をお気軽に, 我々は明確に喜んでいるだろう. 新しいクエリを投稿する前に必ずクエリを検索してください。
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-礼儀正しく、患者である。 私たちのボランティアとモデレーターのコミュニティは、常にあなたの質問をガイドしています。
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-**追加のアシスト:**
+**Additional Assistance:**
 
-スタック、コードベースのアーキテクチャについて質問がある場合は、スタッフ開発チームまでお気軽にお問い合わせください。
+If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| スタッフ                  | フォーラムにメッセージを送信                                                               |
+| Staff                 | Send message on Forum                                                        |
 |:--------------------- |:---------------------------------------------------------------------------- |
 | Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
 | Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
@@ -98,4 +79,4 @@ freeCodeCampでは、 **中国** から始まるローカライゼーション�
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
 | Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 
-**開発者スタッフにメールでお問い合わせください: `dev[at]freecodecamp.org`**
+**You can email our developer staff at: `dev[at]freecodecamp.org`**

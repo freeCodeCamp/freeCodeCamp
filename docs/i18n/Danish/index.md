@@ -1,45 +1,43 @@
-Fællesskabet [freeCodeCamp.org](https://freecodecamp.org) er muligt takket være tusindvis af venlige frivillige som dig. Vi byder alle bidrag til fællesskabet velkommen og er glade for at byde dig velkommen ombord.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!BEMÆRK] Før du fortsætter, skal du tage et hurtigt 2 minutter at læse vores [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). Vi håndhæver den strengt på tværs af vores samfund. Vi ønsker at bidrage til freeCodeCamp.org for at være en sikker og inklusiv oplevelse for alle.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Glad bidrag.
+Happy contributing.
 
-Du er velkommen til:
+You are welcome to:
 
-- Opret, opdater og reparer fejl i vores [kodningsudfordringer](#coding-challenges).
-- Hjælp os med at rette fejl i freeCodeCamp.org's [læringsplatform](#learning-platform).
-- _(Kommer snart)_ Hjælp os med at oversætte freeCodeCamp.org til verdens sprog.
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-Har du spørgsmål? Gå over til [disse ofte stillede spørgsmål](/FAQ.md) , hvor vi besvarer nogle almindelige spørgsmål om at bidrage.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## Kodning Udfordringer
+## Curriculum
 
-Alle vores kodningsudfordringer er kurateret af fællesskabet, der bringer ekspert viden fra frivillige som dig.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-Du kan hjælpe med at udvide dem og gøre deres ordlyd bedre. Du kan også opdatere brugerhistorierne for at forklare konceptet bedre eller fjerne overflødige og forbedre udfordringstestene for at gøre dem mere præcist teste folks kode.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**Hvis du er interesseret i at forbedre disse kodningsudfordringer, her er [hvordan man arbejder på kodningsudfordringer](how-to-work-on-coding-challenges.md).**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Læringsplatform
+## Learning Platform
 
-Vores læringsplatform kører på en moderne JavaScript stack. Det har forskellige komponenter, værktøjer og biblioteker, herunder men ikke begrænset til, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, og meget mere.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Bredt
+Broadly, we use
 
-- Vi har en node.js-baseret API-server.
-- Et sæt React-baserede klientprogrammer.
-- Et script, som vi bruger til at evaluere vores front-end projekter.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-Bidrag til dette kræver en vis forståelse af API'er, ES6 Syntax, og en masse nysgerrighed.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-I bund og grund forventer vi grundlæggende kendskab til nogle af de førnævnte teknologier, værktøjer og biblioteker. Når det er sagt, er De ikke forpligtet til at være ekspert i dem for at bidrage.
+If you want to help us improve our codebase...
 
-**Hvis du ønsker at hjælpe os med at forbedre vores kodebase, kan du enten bruge Gitpod, et gratis online dev miljø**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Åbn i Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Starter et klar-til-kode dev miljø til freeCodeCamp i din browser.)
+Or you can...
 
-ELLER
-
-**du kan [konfigurere freeCodeCamp lokalt](how-to-setup-freecodecamp-locally.md) på din maskine.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

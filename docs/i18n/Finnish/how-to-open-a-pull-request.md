@@ -1,121 +1,121 @@
-# Kuinka avata Pull-pyyntö (PR)
+# How to open a Pull Request (PR)
 
-Pull pyyntö mahdollistaa sen, että voit lähettää muutoksia haarukastasi GitHubissa freeCodeCamp.orgin päärepoon. Kun olet tehnyt muutoksia koodiin, tai koodaus haasteita, sinun tulee noudattaa näitä ohjeita lähettää PR.
+A pull request (PR) enables you to send changes from your fork on GitHub to freeCodeCamp.org's main repository. Once you are done making changes to the code, you can follow these guidelines to open a PR.
 
-## Valmistele hyvä PR-otsikko
+## Prepare a good PR title
 
-Suosittelemme käyttämään [perinteistä otsikkoa ja viestejä](https://www.conventionalcommits.org/) commitit ja vedä pyyntö. Yleissopimuksen muoto on seuraava:
+We recommend using [conventional title and messages](https://www.conventionalcommits.org/) for commits and pull request. The convention has the following format:
 
-> `<type>([valinnainen soveltamisala(t)]): <description>`
+> `<type>([optional scope(s)]): <description>`
 > 
-> Esimerkiksi:
+> For example:
 > 
-> `fix(learn): testit tehdä...kun silmukka haaste`
+> `fix(learn): tests for the do...while loop challenge`
 
-Kun avaat Pull Request(PR), voit käyttää alla olevaa määrittääksesi tyypin, laajuuden (valinnainen) ja kuvauksen.
+When opening a Pull Request(PR), you can use the below to determine the type, scope (optional) and description.
 
-**Tyyppi:**
+**Type:**
 
-| Tyyppi | Milloin valita                                                                          |
-|:------ |:--------------------------------------------------------------------------------------- |
-| korjaa | Muutettu tai päivitetty/parannettu toiminnallisuus, testit, oppitunti ja niin edelleen. |
-| tappio | Vain jos lisäät uusia toimintoja, testejä jne.                                          |
-| urakka | Muutokset, jotka eivät liity oppituntien koodiin, testeihin tai sanamuotoon.            |
-| docs   | Muutokset `/docs` -hakemistoon tai rahoitukseen liittyviin ohjeisiin jne.               |
+| Type  | When to select                                                               |
+|:----- |:---------------------------------------------------------------------------- |
+| fix   | Changed or updated/improved functionality, tests, verbiage of a lesson, etc. |
+| feat  | Only if you are adding new functionality, tests, etc.                        |
+| chore | Changes that are not related to code, tests or verbiage of a lesson.         |
+| docs  | Changes to `/docs` directory or the contributing guidelines, etc.            |
 
-**Laajuus:**
+**Scope:**
 
-Voit valita laajuuden [tästä tunnisteiden luettelosta](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
+You can select a scope from [this list of labels](https://github.com/freeCodeCamp/freeCodeCamp/labels?q=scope).
 
-**Kuvaus:**
+**Description:**
 
-Pidä se lyhyt (alle 30 merkkiä) ja yksinkertainen, voit lisätä lisää tietoa PR-kuvauslaatikkoon ja kommentteihin.
+Keep it short (less than 30 characters) and simple, you can add more information in the PR description box and comments.
 
-Esimerkkejä PR-ohjelmien hyvistä nimikkeistä olisivat seuraavat:
+Some examples of good PRs titles would be:
 
-- `fix(a11y): parempi hakupalkin kontrasti`
-- `feat: lisää testejä html- ja css haasteisiin`
-- `fix(api,client): estää CORS-virheitä lomakkeen toimittamisessa`
-- `docs(i18n): Kiinankielinen käännös paikallisten asetusten`
+- `fix(a11y): improved search bar contrast`
+- `feat: add more tests to html and css challenges`
+- `fix(api,client): prevent CORS errors on form submission`
+- `docs(i18n): Chinese translation of local setup`
 
-## Pull-pyynnön ehdottaminen
+## Proposing a Pull Request
 
-1. Kun muokkaukset on sitoutunut, sinua kehotetaan luomaan pull-pyyntö haarukkaasi GitHub Page.
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 
-   ![Kuva - Vertaa pull-pyynnön kehotusta GitHubissa](./images/github/compare-pull-request-prompt.png)
+   ![Image - Compare pull request prompt on GitHub](./images/github/compare-pull-request-prompt.png)
 
-2. Oletuksena kaikkien pull-pyyntöjen pitäisi olla freeCodeCamp main repoa, `master` haaraa vastaan.
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-   Varmista, että Base Fork on asetettu freeCodeCamp/freeCodeCamp kun nostat Pull Request.
+   Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
 
-   ![Kuva - Haarukkien vertailu pull-pyyntöä tehtäessä](./images/github/comparing-forks-for-pull-request.png)
+   ![Image - Comparing forks when making a pull request](./images/github/comparing-forks-for-pull-request.png)
 
-3. Lähetä pull-pyyntö haarasta freeCodeCampin `master` -haaraan.
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
 
-4. PR sisältää yksityiskohtaisemman yhteenvedon muutoksista, jotka olet tehnyt ja miksi.
+4. In the body of your PR include a more detailed summary of the changes you made and why.
 
-   - Sinut tullaan esittämään pull pyyntö malli . Tämä on tarkistuslista, jota sinun olisi pitänyt seurata ennen pull-pyynnön avaamista.
+   - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-   - Täytä tiedot niin kuin näette sopivaksi. Nämä tiedot tarkistetaan ja arvioijat päättävät, hyväksytäänkö pull-pyyntösi vai ei.
+   - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-   - Jos PR:n tarkoituksena on puuttua olemassa olevaan GitHub Issueen, sitten lopussa teidän PR: n kuvauselin, käytä avainsanaa _Sulkee_ viitenumerolla [sulkee tämän ongelman automaattisesti, jos PR on hyväksytty ja yhdistetty](https://help.github.com/en/articles/closing-issues-using-keywords).
+   - If the PR is meant to address an existing GitHub Issue then, at the end of your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
 
-     > Esimerkki: `Sulkee #123` sulkee ongelman 123
+     > Example: `Closes #123` will close issue 123
 
-5. Ilmoittakaa, onko olet testannut paikallista kopiota sivustosta vai ei.
+5. Indicate if you have tested on a local copy of the site or not.
 
-   Tämä on erittäin tärkeää, kun tehdään muutoksia, jotka eivät ole pelkästään tekstin sisältöä kuten dokumentaatio tai haasteiden kuvaus. Esimerkkejä paikallista testausta vaativista muutoksista ovat JavaScript, CSS, tai HTML jotka voivat muuttaa sivun toiminnallisuutta tai asettelua.
+   This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-## Palaute pull-pyynnöistä
+## Feedback on pull requests
 
-> Onnittelut! :tada: kun olet tehnyt PR:n ja kiitos paljon siitä, että olet käyttänyt aikaa osallistumiseen.
+> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
 
-Moderaattorimme tulevat nyt katsomaan ja jättämään sinulle palautetta. Olkaa kärsivällisiä muiden moderaattoreiden kanssa ja kunnioittakaa heidän aikaansa. Kaikki pull-pyynnöt tarkistetaan aikanaan.
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-Jos tarvitset apua, keskustele [osallistujien chat-huoneesta](https://gitter.im/FreeCodeCamp/Contributors), olemme enemmän kuin mielellämme auttaa sinua.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Jos haluat osallistua enemmän vetopyyntöjä, suosittelemme, että luet [tehdä muutoksia ja synkronoit](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) ohjeet, jottei haarukkaasi tarvitse poistaa.
+> [!TIP] If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
-## Ristiriidat pull-pyynnössä
+## Conflicts on a pull request
 
-Ristiriitoja voi syntyä, koska monet tietolähteet työskentelevät arkistossa, ja muutokset voivat rikkoa PR:si, joka odottaa arvostelua ja yhdistämistä.
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
 
-Useammin kuin ei ehkä vaadi rebase, koska me squash all commits, kuitenkin jos perustetta pyydetään tässä on mitä sinun pitäisi tehdä.
+More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
 
-### Tavallisia korjauksia ja ominaisuuksia varten
+### For usual bug fixes and features
 
-Kun työskentelet säännöllisten vikojen ja ominaisuuksien parissa kehityshaarassamme `master`, voit tehdä yksinkertaisen korjauksen:
+When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
 
-1. Luo paikallinen kopio:
+1. Rebase your local copy:
 
    ```console
    git checkout <pr-branch>
-   git pull --rebase ylävirtaan master
+   git pull --rebase upstream master
    ```
 
-2. Ratkaise mahdolliset ristiriidat ja lisää / muokkaa commitit
+2. Resolve any conflicts and add / edit commits
 
    ```console
-   # Joko
+   # Either
    git add .
-   git commit -m "chore: ratkaista ristiriidat"
+   git commit -m "chore: resolve conflicts"
 
-   # Tai
+   # Or
    git add .
    git commit --amend --no-edit
    ```
 
-3. Paina muutoksesi takaisin PR:ään
+3. Push back your changes to the PR
 
    ```console
    git push --force origin <pr-branch>
    ```
 
-### Tulevat opetussuunnitelmat ja ominaisuudet
+### For upcoming curriculum and features
 
-Kun työskentelet tulevan opetussuunnitelman ominaisuuksien parissa, `seuraava *` sivukonttori, sinulla on kirsikkavalinta:
+When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
 
-1. Varmista, että ylävirrasi tulee synkronoitua paikallisesi kanssa:
+1. Make sure your upstream comes in sync with your local:
 
    ```console
    git checkout master
@@ -124,9 +124,9 @@ Kun työskentelet tulevan opetussuunnitelman ominaisuuksien parissa, `seuraava *
    git reset --hard upstream/next-python-projects
    ```
 
-2. Ota varmuuskopio
+2. Take backup
 
-   a. Joko poista paikallinen sivukonttorisi varmuuskopion ottamisen jälkeen (jos sinulla on vielä se paikallisesti):
+   a. Either delete your local branch after taking a backup (if you still have it locally):
 
       ```console
       git checkout <pr-branch-name>
@@ -137,28 +137,28 @@ Kun työskentelet tulevan opetussuunnitelman ominaisuuksien parissa, `seuraava *
       git checkout -b <backup-branch-name>
 
       # example:
-      # git checkout -b backup-feat/add-numpy-video-question
+      #  git checkout -b backup-feat/add-numpy-video-question
 
       git branch -D <pr-branch-name>
       ```
 
-   b. Tai vain varmuuskopio Pr haarasta (jos sinulla ei ole sitä paikallisesti):
+   b. Or just a backup of your pr branch (if you do not have it locally):
 
       ```console
       git checkout -b <backup-branch-name> origin/<pr-branch-name>
 
-      # esimerkki:
-      # git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
       ```
 
-4. Aloita pois päältä puhtaalla liittimellä:
+4. Start off with a clean slate:
 
    ```console
    git checkout -b <pr-branch-name> next-python-projects
    git cherry-pick <commit-hash>
    ```
 
-5. Ratkaise mahdolliset ristiriidat ja siivoa, asenna suoritettavat testit
+5. Resolve any conflicts, and cleanup, install run tests
 
    ```console
    npm run clean
@@ -172,7 +172,7 @@ Kun työskentelet tulevan opetussuunnitelman ominaisuuksien parissa, `seuraava *
 
    ```
 
-6. Jos kaikki näyttää hyvältä työnnä takaisin PR-palveluun
+6. If everything looks good push back to the PR
 
    ```console
    git push --force origin <pr-branch-name>

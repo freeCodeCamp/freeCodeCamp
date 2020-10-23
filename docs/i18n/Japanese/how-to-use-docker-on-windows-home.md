@@ -1,15 +1,15 @@
-# Windows HomeでDockerを使用する方法
+# How to use Docker on Windows Home
 
-Windows Homeでdockerを設定する際に避けるべき落とし穴がいくつかあります。 まず、 [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) を管理者として使用する必要があります。 残念ながら、Windows Home は Docker for Windows デスクトップをサポートしていないため、代わりにツールボックスを使用する必要があります。 インストールでは、シンボリックリンクを使用するため、管理者として実行する必要があります。
+There are a few pitfalls to be avoided when setting up docker on Windows Home. First of all you have to use [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) as Administrator. Unfortunately Windows Home does not support Docker for Windows Desktop, so Toolbox must be used instead. It has to be run as Administrator as the installation uses symlinks, which cannot be created otherwise.
 
-ツールボックスをインストールしたら、管理者として Docker Quickstart Terminal を実行します。 これは、 `既定の` 仮想マシンを作成します。 まだ存在しない場合。 それが起こったら、ターミナルを閉じて(再び管理者として)VirtualBoxを開きます。 `デフォルト` マシンを見ることができます。 サイトはかなりリソース集約的ですので、仮想マシンを停止し、特にメモリをできるだけ多くの設定を上げます。 4GBのラムで動作することが確認されています。
+Once you've installed the toolbox, run Docker Quickstart Terminal as Administrator. This will create a `default` virtual machine, if it does not already exist. Once that has happened, close the terminal and open VirtualBox (again as Administrator). You should be able to see the `default` machine. The site is quite resource intensive, so stop the virtual machine and raise the settings as much as you can - memory in particular. It has been confirmed to work with 4GB of ram.
 
-Dockerが動作していることに満足したら、freeCodeCampリポジトリを `C:\Users`内のディレクトリにクローンします。 これらのディレクトリは共有され、インストール中に必要なローカルディレクトリに Docker アクセスを提供します。
+Once you're happy that Docker is working, clone the freeCodeCamp repository to a directory inside `C:\Users`. These directories are shared giving Docker access to the local directories, which it needs during installation.
 
-次のようなメッセージが表示される場合
+If you see messages like
 
 ```shell
-bash: change_volumes_owner.sh: そのようなファイルやディレクトリがありません
+bash: change_volumes_owner.sh: No such file or directory
 ```
 
-npm run docker:init `` が犯人である可能性があります。
+when you `npm run docker:init` this is likely the culprit.

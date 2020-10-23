@@ -1,45 +1,43 @@
-Спільнота [freeCodeCamp.org](https://freecodecamp.org) можлива завдяки тисячам різних волонтерів, як ви. Ми вітаємо будь-який і всі внески до спільноти, і з радістю вітаємо вас на борт.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!NOTE] Перед тим, як ви продовжите, будь ласка, зробіть швидкі 2 хвилини, щоб прочитати наш [Кодекс поведінки](https://www.freecodecamp.org/code-of-conduct). Ми наполегливо застосовуємо це в нашій громаді. Ми хочемо, щоб допомогти freeCodeCamp.org був безпечним та всеосяжним досвідом для всіх.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Щасливий внесок.
+Happy contributing.
 
-Ласкаво просимо:
+You are welcome to:
 
-- Створюйте, оновлюйте та виправляйте помилки в нашому [завданнях з кодування](#coding-challenges).
-- Допоможіть нам виправити помилки у безкоштовній CodeCamp.org [навчальній платформі](#learning-platform).
-- _(Коли ми наближаємось скоро)_ Допоможіть нам перекласти freeCodeCamp.org на світові мови.
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-Маєте запитання? Перехід на [ці запитання](/FAQ.md) де ми відповідаємо на деякі поширені запити щодо внеску.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## Завдання Кодування
+## Curriculum
 
-Всі наші проблеми з кодуванням хвилюються спільнотою, приносячи знання експертів не так добре, як ви.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-Ви можете допомогти розширити їх і зробити їх кращим. Ви також можете оновити історії користувачів, щоб пояснити концепцію кращою або видалити зайві або покращити тести з завдання, щоб зробити їх більш точними тестами людей.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**Якщо вам цікаво вирішити ці проблеми з програмуванням, ось [працювати над завданнями з кодування](how-to-work-on-coding-challenges.md).**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Платформа навчання
+## Learning Platform
 
-Наша платформа навчання працює на сучасному стеку JavaScript. Він має різні компоненти, інструменти та бібліотеки, включаючи, але не обмежується, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, та багато іншого.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Бродлі
+Broadly, we use
 
-- У нас є сервер API на базі Node.js.
-- Набір програм на основі ReactS-клієнтів.
-- Скрипт, який ми використовуємо для оцінювання наших передніх проектів.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-Вхід для цього вимагає розуміння API, ES6 Синтаксису та великої допитливості.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-По суті, ми очікуємо від основної ознайомлення з деякими застарілими технологіями, інструментами та бібліотеками. З урахуванням сказаного, вам не потрібно бути експертом для їх внеску.
+If you want to help us improve our codebase...
 
-**Якщо ви хочете допомогти нам поліпшити нашу кодову базу, ви можете використовувати Gitpod, безкоштовний інтернет-розробник**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Відкрити у Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Для безкоштовного CodeCamp у вашому браузері)
+Or you can...
 
-АБО
-
-**ви можете [встановити безкоштовний CodeCamp локально](how-to-setup-freecodecamp-locally.md) на вашій машині.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**

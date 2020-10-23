@@ -1,97 +1,97 @@
-# Configurați freeCodeCamp pe un subsistem Windows pentru Linux (WSL)
+# Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
 
-> [!NOTĂ] Înainte să urmaţi aceste instrucţiuni asiguraţi-vă că sistemul dumneavoastră îndeplineşte cerinţele
+> [!NOTE] Before you follow these instructions make sure your system meets the requirements
 > 
-> **WSL 2**: Windows 10 64-bit (Versiunea 2004, Build 19041 sau mai mult) - disponibil pentru toate distribuțiile, inclusiv Windows 10 Home.
+> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
 > 
-> **Docker Desktop pentru Windows**: Vezi cerințele respective pentru [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) și [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
+> **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-Acest ghid acoperă câțiva pași comuni cu configurarea WSL2. odată ce unele dintre problemele comune cu WSL2 sunt soluționate, ar trebui să puteți urmări ghidul nostru local de configurare pentru a lucra cu freeCodeCamp pe Windows care rulează un distro WSL ca Ubuntu.
+This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow the our local setup guide to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
 
-## Activează WSL
+## Enable WSL
 
-Urmați instrucțiunile de pe [documentația oficială](https://docs.microsoft.com/en-us/windows/wsl/install-win10) pentru a instala WSL1 și apoi pentru a trece la WSL2.
+Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL1 and followed by upgrading to WSL2.
 
 ## Install Ubuntu
 
-1. Am recomandat sa utilizam Ubuntu-18.04 sau mai mult cu WSL2.
+1. We recommended using Ubuntu-18.04 or above with WSL2.
 
-   > [!NOTĂ]
+   > [!NOTE]
    > 
-   > În timp ce puteți utiliza alte distanțe pe bază de debieni, acestea vin cu ajutorul propriei aruncări și sunt dincolo de domeniul acestui ghid.
+   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
 
-2. Actualizează dependențele pentru OS
+2. Update the dependencies for the OS
 
    ```console
-   actualizare apt
+   sudo apt update
    sudo apt upgrade -y
 
-   # curățare
+   # cleanup
    sudo apt autoremove -y
    ```
 
-## Configurare Git
+## Set up Git
 
-Git vine pre-instalat cu Ubuntu 18.04, verifică dacă versiunea Git cu `git --version`.
+Git comes pre-installed with Ubuntu 18.04, verify that your Git version with `git --version`.
 
 ```output
 ~
-!git --version
-git versiunea 2.25.1
+❯ git --version
+git version 2.25.1
 ```
 
-(Opțional, dar recomandat) Acum puteți trece la [configurarea cheilor ssh](https://help.github.com/articles/generating-an-ssh-key) cu GitHub.
+(Optional but recommended) You can now proceed to [setting up your ssh keys](https://help.github.com/articles/generating-an-ssh-key) with GitHub.
 
-## Instalarea unui Editor de cod
+## Installing a Code Editor
 
-Vă recomandăm să instalați [Visual Studio Code](https://code.visualstudio.com) pe Windows 10. Are suport mare pentru WSL și instalează automat toate extensiile necesare pe distanța WSL.
+We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
 
-În esență, îți vei edita și păstra codul pe Ubuntu-18.04 cu codul VS instalat pe Windows.
+Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
 
-## Instalarea desktopului Docker
+## Installing Docker Desktop
 
-**Docker Desktop pentru Windows** vă permite să instalați și să rulați baze de date și servicii precum MongoDB, NGINX, etc. Acest lucru este util pentru a evita capcanele comune cu instalarea MongoDB sau a altor servicii direct pe Windows sau WSL2.
+**Docker Desktop for Windows** allows you to install and run database and services like MongoDB, NGINX, etc. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
 
-Urmărește instrucțiunile de pe documentația oficială [](https://docs.docker.com/docker-for-windows/install) și instalează Docker Desktop pentru distribuția ta Windows.
+Follow the instructuction on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
-Există unele cerințe minime de hardware pentru cea mai bună experiență.
+There are some minimum hardware requirements for the best experience.
 
-## Configurați desktop-ul Docker pentru WSL
+## Configure Docker Desktop for WSL
 
-Odată ce Docker Desktop este instalat, [urmați aceste instrucțiuni](https://docs.docker.com/docker-for-windows/wsl) și configurați-o pentru a utiliza instalarea Ubuntu-18.04 ca backend.
+Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
 
-Asta face ca containerele să ruleze pe partea WSL în loc să ruleze pe Windows. Veţi putea accesa serviciile prin `http://localhost` atât pe Windows cât şi pe Ubuntu.
+This makes it so that the containers run on WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
 
-## Instalează MongoDB din Docker Hub
+## Install MongoDB from Docker Hub
 
-Odată ce ai configurat Docker Desktop să lucrezi cu WSL2, urmează acești pași pentru a începe un serviciu MongoDB:
+Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
 
-1. Lansați un nou terminal Ubuntu-18.04
+1. Launch a new Ubuntu-18.04 terminal
 
-2. Trage `MongoDB 3.6` din dockerhub
+2. Pull `MongoDB 3.6` from dockerhub
 
    ```console
    docker pull mongo:3
    ```
 
-3. Porniți serviciul MongoDB în portul `27017`, și configurați-l pentru a rula automat la repornirile sistemului
+3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
 
    ```console
    docker run -it \
      -v mongodata:/data/db \
      -p 27017:27017 \
      --name mongodb \
-     --restart unlless stopped \
+     --restart unless-stopped \
      -d mongo:3
    ```
 
-4. Acum puteţi accesa serviciul atât din Windows cât şi din Ubuntu la `mongodb://localhost:27017`.
+4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
 
-## Instalând Node.js şi npm
+## Installing Node.js and npm
 
-Vă recomandăm să instalați versiunea LTS pentru Node.js cu un manager de versiuni node - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-După instalare, utilizaţi aceste comenzi pentru a instala şi utiliza versiunea Node.js după cum este necesar
+Once installed use these commands to install and use the Node.js version as needed
 
 ```console
 nvm install --lts
@@ -101,29 +101,29 @@ nvm install --lts
 
 nvm install 14
 
-# Utilizare
-# nvm utilizarea <version>
+# Usage
+# nvm use <version>
 
-nvm 12
+nvm use 12
 ```
 
-Node.js vine pachetul cu `npm`, puteți actualiza la ultimele versiuni de `npm` cu:
+Node.js comes bundled with `npm`, you can update to the latest versions of `npm` with:
 
 ```console
-npm instalare -g npm@latest
+npm install -g npm@latest
 ```
 
-## Configurați tabăra freeCodep local
+## Set up freeCodeCamp locally
 
-Acum că ați instalat condițiile prealabile, urmați [ghidul nostru local de configurare](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) pentru a clona, instala și instala freeCodeCamp local pe calculatorul dvs.
+Now that you have installed the pre-requisites, follow [our local setup guide](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) to clone, install and setup freeCodeCamp locally on your machine.
 
-> [!ATENŢIE]
+> [!WARNING]
 > 
-> Rețineți că, în acest moment, configurația pentru testele Cypress (și nevoile GUI aferente) este în curs de desfășurare. Ar trebui să mai puteţi lucra la cea mai mare parte a codebazului.
+> Please note, at this time the set up for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
 
-## Link-uri utile
+## Useful Links
 
-- [O configurare WSL2 Dev cu Ubuntu 20.04, Node.js, MongoDB, VS Code și Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - un articol de Mrugesh Mohapatra (Staff Developer la freeCodeCamp.org)
-- Întrebări frecvente privind:
-  - [Subsistemul Windows pentru Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
-  - [Docker Desktop pentru Windows](https://docs.docker.com/docker-for-windows/faqs)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- Frequently asked questions on:
+  - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
+  - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

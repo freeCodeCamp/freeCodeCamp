@@ -1,83 +1,97 @@
-# Как работать над вызовами кодирования
+# How to work on coding challenges
 
-Наша цель состоит в том, чтобы развить интересный и понятный опыт интерактивного обучения.
+Our goal is to develop a fun and clear interactive learning experience.
 
-Проектирование интерактивных задач кодирования является сложным делом. Было бы намного проще написать длительное объяснение или создать видео учебник, и есть место для тех, кто находится на Средней и YouTube. Тем не менее, для нашей основной учебной программы мы придерживаемся того, что работает лучше всего для большинства людей - полностью интерактивный опыт в видеоигре.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-Мы хотим, чтобы лагеря достигли состояния потока. Мы хотим, чтобы они придали импульс и проникли через нашу учебную программу с как можно меньшим количеством змей. Мы хотим, чтобы они с уверенностью участвовали в проектах и пользовались широкими возможностями программирования.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
-Создание этих вызовов требует огромного творческого потенциала и внимания к деталям. Достаточно много помощи. Вы будете получать поддержку со стороны целого коллектива участников, которым вы можете отказаться от идей и демо своих испытаний. Оставайтесь активными в [комнате участников](https://gitter.im/freecodecamp/contributors) и задайте много вопросов.
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-С вашей помощью мы можем разработать интерактивный учебный план, который поможет миллионам людей научиться программировать в течение многих лет.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
-Контент для каждого испытания хранится в собственном файле markdown. Этот файл markdown позже преобразуется в HTML, используя наши инструменты для создания интерактивных веб-страниц.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-Все содержимое учебника свободно CodeCamp.org можно найти в каталоге [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges).
+With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-## Настройка инструментария для учебной программы
+The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
 
-Прежде чем работать в учебном плане, вам нужно будет создать инструмент, который поможет вам проверить изменения. Вы можете использовать любую опцию из нижеперечисленных вариантов:
+You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges) directory.
 
-- Вы можете [настроить freeCodeCamp локально](how-to-setup-freecodecamp-locally.md). Это **настоятельно рекомендуется** для регулярных/повторных взносов. Эта настройка позволяет вам работать и тестировать изменения.
-- Используйте Gitpod, бесплатную среду онлайн dev. Нажав на кнопку ниже, вы запустите готовое к коду окружение для свободного CodeCamp в вашем браузере. Это занимает всего несколько минут.
+## Set up the tooling for the curriculum
 
-  [![Открыть в Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
 
-- Отредактируйте файлы на интерфейсе GitHub, нажав на значок карандаша для соответствующего файла. Хотя это самый быстрый способ, он **не рекомендуется**, потому что вы не можете проверить ваши изменения на GitHub. Если наши сопровождающие приходят к выводу, что изменения, внесенные вами, должны быть протестированы локально, то вам нужно будет следовать вышеуказанным методам снова.
+- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
+- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
 
-## Шаблон вызова
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-Ниже приведен шаблон того, как выглядят файлы markdown вызова.  Чтобы увидеть упорядоченный шаблон, мы примем его на [ниже](#upcoming-challenge-template).
+- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead again.
+
+## Challenge Template
+
+Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
 
 ````md
 ---
-id: Уникальный идентификатор (буквенно-цифровый, MongoDB_id)
+id: Unique identifier (alphanumerical, MongoDB_id)
 title: Challenge Title
 challengeType: 0
 videoUrl: 'url of video explanation'
 ---
 
-## Описание
+## Description
 
 <section id='description'>
-Описание вызова и что необходимо для прохождения
+A Description of the challenge and what is required to pass
 </section>
 
-## Инструкции
+## Instructions
 
 <section id='instructions'>
-Инструкции о том, что именно нужно сделать.
+Instructions about what exactly needs to be done.
 </section>
 
-## Тесты
+## Tests
 
 <section id='tests'>
 
 ```yml
 tests:
-  - текст: Должен возвращать "foo"
-    тестовая строка: "Строковая функция, возможно использование Chai asserts"
+  - text: Should return "foo"
+    testString: 'A stringified function possibly using Chai asserts'
 ````
 
 </section>
 
-## Семена вызова
+## Challenge Seed
 
 <section id='challengeSeed'>
 
 <div id='{ext}-seed'>
 
 ```{ext}
-код, отображаемый в редакторе по умолчанию.
+Code displayed in the editor by default.
 
-Это необходимый раздел для вызова.
+This is a required section for the challenge.
 ```
 
 </div>
 
-### Перед тестом
+### Before Test
 
 <div id='{ext}-setup'>
+
+```{ext}
+Optional Test setup code.
+```
+
+</div>
+
+### After Test
+
+<div id='{ext}-teardown'>
 
 ```{ext}
 Optional Test tear down code.
@@ -85,304 +99,372 @@ Optional Test tear down code.
 
 </div>
 
-### После теста
-
-<div id='{ext}-teardown'>
-
-```{ext}
-Дополнительный тестовый код.
-```
-
-</div>
-
 </section>
 
-## Решение
+## Solution
 
 <section id='solution'>
 
 ```{ext}
-// требуется решение
+// solution required
 ```
 
 </section>
 
 ````
 
-> [!ПРИМЕЧАНИЕ]
+> [!NOTE]
 >
-> 1. В вышеуказанных разделах примеры `{ext}`:
+> 1. In the above sections, examples of `{ext}` are:
 >
 >   - `html` - HTML/CSS
 >   - `js` - JavaScript
 >   - `jsx` - JSX
 >
-> 2. Для раздела `Tests` выше `text` и `testString` должны быть действительными YAML строками. `testString` может быть строчной функцией или выражением, с помощью которого можно утверждать Chai.
+> 2. For the `Tests` section above, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression using which could use Chai asserts.
 
-## Многочисленные вызовы
+## Numbering Challenges
 
-Каждое испытание требует `id`. Если вы не указали один, то MongoDB создаст новый случайный тип при сохранении данных; Однако, мы не хотим, чтобы это делали, поскольку мы хотим, чтобы идентификаторы вызовов были последовательными в различных средах (поэтапно, , много различных разработчиков и т.п.).
+Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
 
-Чтобы сгенерировать новый в оболочке (предполагая, что MongoDB работает отдельно):
+To generate a new one in a shell (assuming MongoDB is running separately):
 
-1. Запустите команду «mongo».
-2. Запустите команду `ObjectId()`.
+1. Run `mongo` command.
+2. Run `ObjectId()` command.
 
-Например:
+For example:
 
 ```bash
 $ mongo
-Оболочка MongoDB версии v3.6.1
-подключающаяся к mongodb://127.0.0.1:27017
-MongoDB сервер версия: 3.4.10
+MongoDB shell version v3.6.1
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
 ...
 $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-Результатом является новая помощь, например `5a474d78df58bafeb35d34` выше.
+The result is a new id, for example `5a474d78df58bafeb3535d34` above.
 
-После того, как у вас есть свой идентификатор, поместите его в файл markdown в качестве идентификатора `в верхней части` , напр.
+Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
 ```yml
 ---
-id: 5a474d78df58bafeb35d34
+id: 5a474d78df58bafeb3535d34
 title: Challenge Title
 ```
 
-## Задачи в области именования
+## Naming challenges
 
-Тяжелое назование. Мы сделали это проще, введя некоторые ограничения.
+Naming things is hard. We've made it easier by imposing some constraints.
 
-Все названия заданий должны быть явными и следовать этой схеме:
+All challenge titles should be explicit and should follow this pattern:
 
-\[verb\]\[положение объекта\]
+\[verb\]\[object clause\]
 
-Вот несколько примеров названий вызовов:
+Here are some example challenge names:
 
-- Используйте нотацию по часовой стрелке для указания отступа элемента
-- Конденсирующие массивы с .reduce
-- Используйте нотации скобки, чтобы найти первый символ в строке
+- Use Clockwise Notation to Specify the Padding of an Element
+- Condense arrays with .reduce
+- Use Bracket Notation to Find the First Character in a String
 
-## Описания/инструкции для вызова
+## Challenge descriptions/instructions
 
-Приговоры должны быть четкими и краткими с минимальным жаргоном. If used, jargon should be immediately defined in plain English.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-Коротко хранить абзацы (около 1-4 предложений). Люди чаще читают несколько коротких абзацев, чем стенка текста.
+Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Текст вызова должен использовать второго человека ("вы"), чтобы помочь ему разговорный звук. Таким образом текст и инструкции, как представляется, непосредственно говорят в кампере, работая с этой проблемой. Постарайтесь не использовать первого человека ("Я", "мы", "да" и "нас").
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Не использовать исходящие ссылки. Они прерывают поток. В ходе этих вызовов лагерям никогда не придется ничего делать в Google. Если есть ресурсы, которые вы считаете, что лагеря выиграют от них, добавьте их в статью, посвященную руководству по вызову.
+Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-Вы можете добавить диаграммы в случае крайней необходимости.
+You can add diagrams if absolutely necessary.
 
-Не используйте эмодзи или смайлики в испытаниях. Free CodeCamp имеет глобальное сообщество, и культурное значение эмодзи или эмоций может быть различным по всему миру. Также, emojis может показаться по-разному на разных системах.
+Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
-Надлежащие существительные должны использовать правильную заглавную букву, когда это возможно. Ниже приведен список слов, которые должны появиться в вызовах.
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
-- JavaScript (заглавные буквы в "J" и "S" и без аббревиатур)
+- JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
-- Разработка фронт-энда (прилагательное форма с тире) - это когда вы работаете на передней части (существительная форма без тире). То же самое относится и к "обратно конца", "полный стек", и многие другие составные термины.
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-### 2-минутное правило
+### The 2-minute rule
 
-Каждый вызов должен быть разрешен в течение 120 секунд родным англичанином, который завершил задания перед ним. Это включает в себя время, необходимое для прочтения направлений/инструкций для понимания кода сиденья, Напишите свой собственный код и получите все тесты для прохождения.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their own code and get all the tests to pass.
 
-Если для завершения испытания потребуется более двух минут, у вас есть два варианта:
+If it takes longer than two minutes to complete the challenge, you have two options:
 
-- Упростить вызов, или
-- Разделить задачу на два вызова.
+- Simplify the challenge, or
+- Split the challenge into two challenges.
 
-2-минутное правило вынуждает вас, дизайнер вызовов, чтобы сделать ваши указания четкими, ваш seed код и ваши тесты прямо вперед.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
-Мы отслеживаем, сколько времени требуется для решения изменений и использования этой информации для определения задач, которые необходимо упростить или разбить.
+We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
 
-### Модульность
+### Modularity
 
-Каждое задание должно обучать именно одному понятию, и это понятие должно быть видно из названия вызова.
+Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
-Мы можем укрепить ранее покрытые концепции путем повторения и вариаций - например, вносит h1 элементы в один вызов, затем h3 элементы позже.
+We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 
-Наша цель состоит в том, чтобы иметь тысячи 2-минутных испытаний. Они могут объединять усилия и повторять ранее охваченные концепции.
+Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
-### Форматирование вызова
+### Formatting challenge text
 
-Ниже приведены конкретные руководящие принципы для форматирования текста и примеров:
+Here are specific formatting guidelines for challenge text and examples:
 
-- Ключевые слова языка находятся в тегах `<code>`. Например, имена тегов HTML или имена свойств CSS
-- Первый экземпляр ключевого слова при его определении или общие ключевые слова (т.е. "object" или "immutable") находятся в `<dfn>` тегов
-- Ссылки на части кода (т.е. функция, метод или имена переменных) должны быть завернуты в `<code>` тегов. Пример ниже:
-- Используйте <code>parseInt</code> для преобразования переменной <code>realNumber</code> в целое число.
-- Блоки многострочного кода **должны предшествовать пустой строкой**. Следующая строка должна начинаться с трех backtick'ов, за которыми следует немедленно один из [поддерживаемых языков](https://prismjs.com/#supported-languages). Чтобы заполнить блок кода, вы должны начать новую строку, в которой есть только три backticks и **еще одна пустая строка**. **Примечание:** Если вы собираетесь использовать код примера в YAML, используйте `yaml` вместо `yml` для языка справа от обратной связи.
+- Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
+- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
+- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+```md
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+```
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
 
-Пример ниже:
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
-Ниже приведен пример кода:
+The following is an example of code:
 
 ```{language}
 
-[ВАШ КОД ЗДЕСЬ]
+[YOUR CODE HERE]
 
 ````
 ````
 
-- Дополнительная информация в виде заметки должна быть отформатирована `<strong>Примечание:</strong> Отказ от текста заметки... - При необходимости нескольких заметок, затем перечислите все заметки в отдельных предложениях, используя формат `<strong>Примечания:</strong> Текст первой заметки. Второй текст заметки.
-- Используйте двойные кавычки, где это применимо
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
+- Use single-quotes where applicable
 
-## Письменные тесты
+**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
 
-Испытания должны иметь минимальное количество тестов, необходимых для проверки понимания кемпером.
+## Writing tests
 
-Наша цель заключается в том, чтобы сообщить единую точку, которую задача пытается преподавать, и проверить, что они поняли этот момент.
+Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
 
-Тестирование вызовов может использовать библиотеки для установки Node.js и Chai.js. Также, при необходимости, к переменной `code` можно получить доступ созданный пользователем код.
+Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
 
-## Форматирование кода seed seed
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
 
-Ниже приведены конкретные рекомендации по форматированию кода seed задания:
+## Formatting seed code
 
-- Используйте два пробела для отступа
-- JavaScript операторы заканчиваются точкой с точкой с запятой
-- используйте двойные кавычки, где это применимо
-- Произведенные комментарии должны иметь пробел между символами комментария и самими комментариями
+Here are specific formatting guidelines for the challenge seed code:
 
-  `// Исправьте эту строку`
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-## Подсказки и решения
+### Seed code comments
 
-Каждое задание имеет кнопку `Получить Hint`, , чтобы пользователь мог получить доступ к любым подсказкам/решениям, которые были созданы для вызова. Подсказки по учебному плану/темы находятся на [нашем форуме](https://forum.freecodecamp.org/c/guide) в категории `Guide`.
+We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
-Если вы нашли проблему с подсказками или решениями вызова, вы можете внести предложения в [категорию участников](https://forum.freecodecamp.org/c/contributors) на форуме. Модераторы и пользователи с уровнем доверия 3 рассмотрят комментарии и решат, включить ли изменения в соответствующую тему подсказки/решения.
+Comments used should have a space between the comment characters and the comment themselves.  In general comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
-### Добавление новых подсказок/тем решений
+Example of valid single line JavaScript comment:
 
-Пройдите следующие шаги при добавлении новых подсказок/связанных с решениями темы.
+```js
+// Only change code below this line
+````
 
-1. Начните с тех же шагов для создания новой темы, но оставьте отзыв о следующей для создания заголовка.
-2. Название темы должно начинаться с `freeCodeCamp Challenge Guide: `, совпадающий с фактическим названием учебного задания. Например, если вызов называется "`Chunky Monkey`", название темы будет "`freeCodeCamp Challenge Guide: Chunky Monkey`".
-3. `camperbot` должен быть владельцем этих тем/записей, поэтому вам нужно будет запросить администратора для смены владельца основного сообщения на `camperbot`.
-4. После создания новой темы создается ID темы форума. Она находится в конце URL темы форума. Этот идентификатор должен быть добавлен на первый план файла задания в учебном плане через нормальный процесс запроса на слияние для кнопки `Получить хинт` для связи с темой.
+Example of a valid CSS comment:
 
-### Руководящие принципы для содержания подсказок и тем решений
+```js
+/* Only change code above this line */
+```
 
-При предложении решения для задания учебного плана с темой Руководства, необходимо добавить полный код. Это включает в себя все исходные коды семенного кода, а также любые изменения, необходимые для прохождения всех испытательных испытаний. Следующий шаблон должен использоваться при создании новых подсказок/тем решений:
+If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
 
-``md
-# Вызовите Имя Здесь
+```js
+var a = 3;
+var b = 17;
+var c = 12;
+
+// Only change code below this line
+a = a + 12;
+b = 9 + b;
+c = c + 7;
+```
+
+If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
+### Translation of seed code comments
+
+There are separate comment dictionaries for each language. The [English vesion of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
+
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated.
+
+```text
+Declare the myGlobal variable below this line
+```
+> [!NOTE]
+> 
+> We are working on an integration to make it possible to work on i18n for the comment dictionary.
+
+## Hints and Solutions
+
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
+
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+
+### Adding new Challenge hints/solutions Topics
+
+Take the following steps when adding a new challenge hints/solutions related topic.
+
+1. Start by following the same steps for creating a new topic but review the next for creating the title.
+2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
+4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
+
+### Guidelines for content of hints and solutions topics
+
+When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
+
+````md
+# Challenge Name Goes Here
 
 ---
 
-## Пояснение проблемы
+## Problem Explanation
 
-Таким образом, что нужно сделать без повторного описания задачи и/или инструкций. Это опциональная секция
+This summarizes what need to be done without just restating the challenge description and/or instructions. This is an optional section
 
-#### Связанные ссылки
+#### Relevant Links
 
-- [Текст ссылки](link_url_goes_here)
-- [Текст ссылки](link_url_goes_here)
-
----
-
-## Подсказки
-
-### Подсказка 1
-
-Подсказка идет
-
-### Подсказка 2
-
-Подсказка идет
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
 
 ---
 
-## Разрешения
+## Hints
 
-<details><summary>Решение 1 (Нажмите, чтобы Показать/Скрыть)</summary>
+### Hint 1
+
+Hint goes here
+
+### Hint 2
+
+Hint goes here
+
+---
+
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```js
 function myFunc() {
-  консоль. og('Привет мир!');
+  console.log('Hello World!');
 }
 ````
 
-#### Объяснение кода
+#### Code Explanation
 
-- Здесь пояснение кода
-- Здесь пояснение кода
+- Code explanation goes here
+- Code explanation goes here
 
-#### Соответствующие ссылки
+#### Relevant Links
 
-- [Текст ссылки](link_url_goes_here)
-- [Текст ссылки](link_url_goes_here)
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
 
 </details>
 ````
 
-## Испытания на тестирование
+## Testing Challenges
 
-Прежде чем вы [создаете запрос на слияние](how-to-open-a-pull-request. г) для ваших изменений, вы должны подтвердить, что внесенные вами изменения не случайно вызывают проблем с вызовом. 
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
-1. Чтобы проверить все вызовы, запустите команду ниже из корневого каталога
+1. To test all challenges run the below command from the root directory
 
 ````
-тест npm:curriculum
+npm run test:curriculum
 ``` 
 
-2. Вы также можете протестировать блок или суперблок испытаний с помощью этих команд
+2. You can also test a block or a superblock of challenges with these commands
 
 ```
-npm запустить тест:учебный план --block='Основы HTML и HTML5'
+npm run test:curriculum --block='Basic HTML and HTML5'
 ```
 
 ```
-npm запуск test:curriculum --superblock=отзывчивый web-дизайн
+npm run test:curriculum --superblock=responsive-web-design
 ```
 
-Вы также можете самостоятельно протестировать одно испытание, выполнив следующие шаги:
+You are also able to test one challenge individually by performing the following steps:
 
-1. Переключиться на папку «Учебный план»:
-
-   ```
-   cd учебный план
-   ```
-
-2. Выполните следующие действия для каждого файла вызова, для которого вы изменили:
+1. Switch to the `curriculum` directory:
 
    ```
-   тест npm -- -g 'полный английский заголовок вызова'
+   cd curriculum
    ```
 
-Как только вы подтвердили, что каждое испытание, которое вы проработали при прохождении тестов, [пожалуйста, создайте запрос на слияние](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
+2. Run the following for each challenge file for which you have changed:
+
+   ```
+   npm run test -- -g 'the full English title of the challenge'
+   ```
+
+Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
 > [!TIP]
-> Вы можете установить переменную окружения `LOCALE` в `.env` на язык испытания, который необходимо проверить.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
-> Принятые значения являются `english` и `chinese`, а `english` устанавливается по умолчанию.
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-## Шаблон предстоящего вызова
+## Upcoming Challenge Template
 
-Шаблон испытания в процессе обновления до более чистой и менее вложенной структуры.  Это не было полностью завершено, но следующие должны быть близки к окончательной структуре:
+The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
 
-``mdx
+````mdx
 
 ---
-id: Уникальный идентификатор (буквенно-цифровый, MongoDB_id)
+id: Unique identifier (alphanumerical, MongoDB_id)
 title: 'Challenge Title'
-challengeType: Integer, defined in `client/utils/challengeTypes. s`
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
 videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
 
-import Script from './script. dx';
+import Script from './script.mdx';
 
 ## --step-description--
 
-Текст описания, в markdown
+Description text, in markdown
 
 ```html
 <div> 
-  пример кода
+  example code
 </div>
 ```
 
@@ -390,48 +472,48 @@ import Script from './script. dx';
 
 ![test-id-1]
 
-Имеется произвольное количество трофеев идентификаторов, инструкций (в markdown) и блоков кода.
+There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.
 
 ```js
-Код для теста
+Code for test one
 ```
 
 ![test-id-2]
 
-Больше инструкций в синтаксисе markdown
+More instructions in markdown syntax
 
 ```js
-Больше кода
+More code
 ```
 
 ## --step-seed--
 
-### --pre-user-код--
+### --before-user-code--
 
 ```lang
-Код вычисляется перед пользователем
+Code evaluated before the user’s
 ```
 
-### --after-user-код--
+### --after-user-code--
 
 ```lang
-Код оценивается после пользователей, и перед тестами
+Code evaluated after the user’s, and just before the tests
 ```
 
-### --seed-содержимое--
+### --seed-content--
 
 ![index-html]
 
 ```html
-Некоторые html
+Some html
 ```
 
 ```css
-Некоторые css
+Some css
 ```
 
 ```js
-Некоторые js
+Some js
 ```
 
 ![index-js]
@@ -446,17 +528,17 @@ import Script from './script. dx';
 
 
 <p spaces-before="0">
-  Точно так же, как семена
+  Exactly the same as the seeds section
 </p>
 
 <h2 spaces-before="0">
-  --next-solution-маркер
+  --next-solution-marker
 </h2>
 
 
 
 <p spaces-before="0">
-  То же самое
+  Same again
 </p>
 
 <h1 spaces-before="0">
@@ -470,29 +552,29 @@ import Script from './script. dx';
 
 
 <p spaces-before="0">
-  Вопрос будет здесь (используется только для видеоиспытаний)
+  The question would go here (only used for video challenges)
 </p>
 
 <h2 spaces-before="0">
-  --answers-маркера--
+  --answers-marker--
 </h2>
 
 
 
 <p spaces-before="0">
-  Ответ 1
+  Answer 1
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  Ответ 2
+  Answer 2
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  Ответ 2
+  More answers
 </p>
 
 <h2 spaces-before="0">
@@ -512,13 +594,13 @@ import Script from './script. dx';
 </p>
 
 <h3 spaces-before="0">
-  Полезные ссылки
+  Useful Links
 </h3>
 
 
 
 <p spaces-before="0">
-  Создание и редактирование вызовов:
+  Creating and Editing Challenges:
 </p>
 
 
@@ -526,14 +608,14 @@ import Script from './script. dx';
 <ol start="1">
   <li>
     <p spaces-before="0">
-      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">типы вызовов</a> - что означает числовый тип задания (перечислить).
+      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">Challenge types</a> - what the numeric challenge type values mean (enum).
     </p>
   </li>
 
   
   <li>
     <p spaces-before="0">
-      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Вклад в FreeCodeCamp - написание ES6 испытаний</a> - видео, следующего за <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> , поскольку он вносит вклад в старую версию учебного плана.
+      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Contributing to FreeCodeCamp - Writing ES6 Challenge Tests</a> - a video following <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> as he contributes to the old version of the curriculum.
     </p>
   </li>
 

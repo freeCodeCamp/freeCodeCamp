@@ -1,45 +1,43 @@
-De [freeCodeCamp.org](https://freecodecamp.org) community is mogelijk dankzij duizenden vriendelijke vrijwilligers zoals jij. Wij verwelkomen alle bijdragen aan de gemeenschap en zijn blij u aan boord te kunnen verwelkomen.
+The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. If you want to contribute your time and expertise, we would be excited to welcome you aboard.
 
-> [!NOT] Voordat je verder gaat, neem je 2 minuten de tijd om onze [Gedragscode](https://www.freecodecamp.org/code-of-conduct) te lezen. We handhaven het streng in onze hele gemeenschap. We willen bijdragen aan freeCodeCamp.org om voor iedereen een veilige en inclusieve ervaring te zijn.
+> [!NOTE] Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We strictly enforce it across our community so that contributing to freeCodeCamp.org is a safe, inclusive experience for everyone.
 
-Fijne bijdrage.
+Happy contributing.
 
-Je bent welkom tot:
+You are welcome to:
 
-- Maak, update en los bugs op in onze [coderingsuitdagingen](#coding-challenges).
-- Help ons fouten op te lossen in freeCodeCamp.org's [leerplatform](#learning-platform).
-- _(Binnenkort)_ Help ons freeCodeCamp.org te vertalen naar wereldtalen.
+- Create, update and fix bugs in our [curriculum](#curriculum).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- _(Coming Soon)_ Help us translate freeCodeCamp.org to world languages.
 
-Heb je vragen? Ga naar [deze FAQs](/FAQ.md) waar we antwoorden geven op veelvoorkomende vragen over bijdragen.
+We answer the most common questions about contributing [in our contributor FAQ](/FAQ.md).
 
-## Codering Uitdagingen
+## Curriculum
 
-Al onze programmeeruitdagingen worden beheerst door de gemeenschap, door het inbrengen van deskundigenkennis van vrijwilligers zoals jij.
+Our curriculum is curated by the global freeCodeCamp community. This way, we are able to incorporate expert knowledge from volunteers like you.
 
-Je kunt helpen om ze uit te breiden en hun formulering te verbeteren. Je kunt de gebruikersverhalen ook bijwerken om het concept beter uit te leggen of overbodige te verwijderen en de challenge tests te verbeteren om ze nauwkeuriger de code van mensen te laten testen.
+You can help expand and improve the curriculum. You can also update project user stories to better-explain concepts. And you can improve our automated tests so that we can more accurately test people's code.
 
-**Als je geïnteresseerd bent in het verbeteren van deze coderingsuitdagingen, is hier [hoe je moet werken aan coderingsuitdagingen](how-to-work-on-coding-challenges.md).**
+**If you're interested in improving our curriculum, here's [how to contribute to the curriculum](how-to-work-on-coding-challenges.md).**
 
-## Platform leren
+## Learning Platform
 
-Ons leerplatform draait op een moderne JavaScript-stack. Het bevat verschillende componenten, gereedschappen en bibliotheken, waaronder maar niet beperkt tot, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, en meer.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries. These include Node.js, MongoDB, OAuth 2.0, React, Gatsby, Webpack, and more.
 
-Breed,
+Broadly, we use
 
-- We hebben een Node.js gebaseerde API-server.
-- Een set van React-gebaseerde client applicaties.
-- Een script dat we gebruiken om onze front-end projecten te evalueren.
+- a Node.js based API server
+- a set of React-based client applications
+- and testing scripts to evaluate camper-submitted curriculum projects.
 
-Voor een bijdrage hieraan is wat begrip van APIs, ES6 Syntax en veel nieuwsgierigheid.
+If you want to productively contribute to the curriculum, we recommend some familiarity with these tools.
 
-In wezen verwachten we basiskennis van de eerder genoemde technologieën, instrumenten en bibliotheken. Met dit gezegd zijnde, hoeft u geen expert op hen te zijn om een bijdrage te leveren.
+If you want to help us improve our codebase...
 
-**Als je ons wilt helpen met het verbeteren van onze codebase, kun je Gitpod, een gratis online dev omgeving gebruiken**
+**you can either use Gitpod, a free online dev environment that starts a ready-to-code dev environment for freeCodeCamp in your browser.**
 
-[![Openen in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Begint een kant-en-klare dev omgeving voor freeCodeCamp in uw browser.)
+Or you can...
 
-of
-
-**U kunt [uw freeCodeCamp lokaal instellen](how-to-setup-freecodecamp-locally.md) op uw computer.**
+**[set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md) on your machine.**
