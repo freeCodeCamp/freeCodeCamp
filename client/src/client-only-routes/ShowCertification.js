@@ -7,6 +7,7 @@ import { createSelector } from 'reselect';
 import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
+import ShowProjectLinks from './ShowProjectLinks';
 // eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
 
@@ -312,6 +313,7 @@ const ShowCertification = props => {
         </Row>
       </Grid>
       {signedInUserName === username ? shareCertBtns : ''}
+      <ShowProjectLinks name={userFullName} certTitle={certTitle} />
     </div>
   );
 };
