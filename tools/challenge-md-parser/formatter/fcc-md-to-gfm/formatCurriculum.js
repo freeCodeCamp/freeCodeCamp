@@ -6,7 +6,7 @@ const {
 const readDirP = require('readdirp-walk');
 const fs = require('fs');
 
-const challengeDir = '../../../curriculum/challenges/english';
+const challengeDir = '../../../../curriculum/challenges/english';
 
 readDirP({ root: challengeDir, fileFilter: ['*.md'] }).on('data', file => {
   if (file.stat.isFile()) {

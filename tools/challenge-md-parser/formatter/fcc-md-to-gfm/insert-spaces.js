@@ -153,7 +153,7 @@ function htmlVisitor(node) {
   // 'html' nodes contain un-parsed html strings, so we first convert them
   // to hast and then parse them to produce a syntax tree (so we can locate
   // and modify the instructions and description)
-  const section = raw(toHast(node, { allowDangerousHTML: true }));
+  const section = raw(toHast(node, { allowDangerousHtml: true }));
   if (
     section.type === 'element' &&
     (section.properties.id === 'instructions' ||
@@ -221,7 +221,7 @@ function htmlVisitor(node) {
       { type: 'root', children: section.children },
       {
         allowDangerousCharacters: true,
-        allowDangerousHTML: true,
+        allowDangerousHtml: true,
         quote: "'"
       }
     );

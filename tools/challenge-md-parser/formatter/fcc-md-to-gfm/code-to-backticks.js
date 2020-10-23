@@ -10,18 +10,18 @@ function codeToInline(h, node) {
     // console.log('Leaving code block as it does not just contain text');
     // console.log(node);
     // throw Error('Too many children');
-    return rawHTML(h, node);
+    return rawHtml(h, node);
   } else {
     return inlineCode(h, node);
   }
 }
 
-function rawHTML(h, node) {
+function rawHtml(h, node) {
   return {
     type: 'html',
     value: toHtml(node, {
       allowDangerousCharacters: true,
-      allowDangerousHTML: true,
+      allowDangerousHtml: true,
       quote: "'"
     })
   };
@@ -34,14 +34,14 @@ function plugin() {
     visit(tree, 'paragraph', visitor);
 
     function visitor(node, id, parent) {
-      const paragraph = raw(toHast(node, { allowDangerousHTML: true }));
+      const paragraph = raw(toHast(node, { allowDangerousHtml: true }));
       parent.children[id] = toMdast(paragraph, {
         handlers: {
           code: codeToInline,
-          dfn: rawHTML,
-          sup: rawHTML,
-          sub: rawHTML,
-          button: rawHTML
+          dfn: rawHtml,
+          sup: rawHtml,
+          sub: rawHtml,
+          button: rawHtml
         }
       });
     }
