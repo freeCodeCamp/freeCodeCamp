@@ -329,3 +329,26 @@ body.close .github-corner {
 .docsify-copy-code-button {
   font-size: 0.7em !important;
 }
+
+/****** Others ******/
+
+.i18n-lang-list ul {
+  height: 10em;
+  font-size: larger;
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+
+.i18n-lang-list li {
+  text-align: left;
+  width: 5em;
+}

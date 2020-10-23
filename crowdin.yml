@@ -1,6 +1,0 @@
-files:
-  - source: /curriculum/challenges/english/**/*.md
-    translation: /curriculum/challenges/%language%/**/%original_file_name%
-  - source: /curriculum/dictionaries/english/**/*.js
-    translation: /curriculum/dictionaries/%language%/**/%original_file_name%
-

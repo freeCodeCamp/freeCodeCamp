@@ -30,29 +30,12 @@ describe('<NavLinks />', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<AuthOrProfile {...landingPageProps} />);
     const result = shallow.getRenderOutput();
-    // expect(result.props.children).toEqual('Sign In');
-
-    expect(deepChildrenProp(result, 0).children === 'Curriculum').toBeTruthy();
 
     expect(
-      result.props.children[1].props['data-test-label'] === 'landing-small-cta'
+      hasForumNavItem(result) &&
+        hasCurriculumNavItem(result) &&
+        hasSignInButton(result)
     ).toBeTruthy();
-  });
-
-  it('has Curriculum and Portfolio links when user signed in on /learn', () => {
-    const defaultUserProps = {
-      user: {
-        username: 'test-user',
-        picture: 'https://freecodecamp.org/image.png'
-      },
-      pending: false
-    };
-    const shallow = new ShallowRenderer();
-    shallow.render(<AuthOrProfile {...defaultUserProps} />);
-    const result = shallow.getRenderOutput();
-
-    expect(hasCurriculumNavItem(result)).toBeTruthy();
-    expect(hasProfileNavItem(result)).toBeTruthy();
   });
 
   it('has avatar with default border for default users', () => {
@@ -120,28 +103,30 @@ describe('<NavLinks />', () => {
   });
 });
 
-const deepChildrenProp = (component, childNumber) =>
-  component.props.children[childNumber].props.children.props;
+const navigationLinks = (component, navItem) => {
+  return component.props.children[0].props.children[navItem].props.children
+    .props;
+};
 
-const hasProfileNavItem = component => {
-  const profileElement = deepChildrenProp(component, 1);
-  return (
-    profileElement.children[0] === 'Profile' &&
-    profileElement.to === '/test-user'
-  );
+const profileNavItem = component => component[2].children[0];
+
+const hasForumNavItem = component => {
+  const { children, to } = navigationLinks(component, 0);
+  return children === 'Forum' && to === 'https://forum.freecodecamp.org';
 };
 
 const hasCurriculumNavItem = component => {
-  const curriculumElement = deepChildrenProp(component, 0);
-  return (
-    curriculumElement.children === 'Curriculum' &&
-    curriculumElement.to === '/learn'
-  );
+  const { children, to } = navigationLinks(component, 1);
+  return children === 'Curriculum' && to === '/learn';
 };
 
+const hasSignInButton = component =>
+  component.props.children[1].props.children === 'Sign In';
+
 const avatarHasClass = (componentTree, classes) => {
+  // componentTree[1].children[0].children[1].props.className
   return (
-    componentTree[1].children[0].children[1].props.className ===
+    profileNavItem(componentTree).children[1].props.className ===
     'avatar-container ' + classes
   );
 };

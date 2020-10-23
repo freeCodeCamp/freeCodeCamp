@@ -11,7 +11,7 @@ title: 设置环境
 
 在接下来的挑战中，我们将会用到 <code>chat.pug</code> 文件。首先，你需要在你的 <code>routes.js</code> 文件中为 <code>/chat</code> 添加一个处理 GET 请求的路由，并给它传入 <code>ensureAuthenticated</code>。在回调函数中，我们需要让它 render <code>chat.pug</code> 文件，并在响应中包含 <code>{ user: req.user }</code> 信息。现在，请修改 <code>/auth/github/callback</code> 路由，让它可以像这样设置 user_id：<code>req.session.user_id = req.user.id</code>，并在设置完成后重定向至 <code>/chat</code>。
 
-我们还需要添加 <code>html</code> 和 <code>socket.io</code> 两个依赖项，并且像这样引入：
+我们还需要添加 <code>http</code> 和 <code>socket.io</code> 两个依赖项，并且像这样引入：
 
 ```javascript
 const http = require('http').createServer(app);
@@ -62,7 +62,7 @@ tests:
   - text: 应添加 Socket.IO 作为依赖。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'socket.io', 'Your project should list "socket.io" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
   - text: 应正确引入 <code>http</code>，并示例化为 <code>http</code>。
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /http.*=.*require.*('|")http\1/gi, 'Your project should list "html" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /http.*=.*require.*('|")http\1/gi, 'Your project should list "http" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
   - text: 应正确引入 <code>socket.io</code>，并示例化为 <code>io</code>。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /io.*=.*require.*('|")socket.io\1.*http/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })
   - text: Socket.IO 应监听连接。

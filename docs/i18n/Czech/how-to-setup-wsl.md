@@ -1,80 +1,80 @@
-# Nastavit freeCodeCamp na Windows Subsystem pro Linux (WSL)
+# Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
 
-> [!POZNÁMKA] Dříve než budete postupovat podle těchto pokynů, ujistěte se, že váš systém splňuje požadavky
+> [!NOTE] Before you follow these instructions make sure your system meets the requirements
 > 
-> **WSL 2**: Windows 10 64-bit (verze 2004, Build 19041 nebo vyšší) - k dispozici pro všechny distribuce včetně Windows 10 Domů.
+> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
 > 
-> **Docker Desktop pro Windows**: Viz příslušné požadavky pro [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) a [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
+> **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-Tento návod pokrývá některé společné kroky s nastavením WSL2. jakmile se řeší některé společné problémy s WSL2, byste měli být schopni sledovat náš místní průvodce nastavením a pracovat s freeCodeCamp na systému Windows a běžet tak jako Ubuntu.
+This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow the our local setup guide to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
 
-## Povolit WSL
+## Enable WSL
 
-Postupujte podle pokynů na [oficiální dokumentaci](https://docs.microsoft.com/en-us/windows/wsl/install-win10) a nainstalujte WSL1 a poté přejděte na WSL2.
+Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL1 and followed by upgrading to WSL2.
 
 ## Install Ubuntu
 
-1. Doporučujeme používat Ubuntu-18.04 nebo vyšší s WSL2.
+1. We recommended using Ubuntu-18.04 or above with WSL2.
 
-   > [!POZNÁMKA]
+   > [!NOTE]
    > 
-   > I když můžete použít jiné nedebianské distros, všechny přicházejí s jejich vlastními gotchas a jsou mimo rámec tohoto průvodce.
+   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
 
-2. Aktualizovat závislosti pro OS
+2. Update the dependencies for the OS
 
    ```console
    sudo apt update
    sudo apt upgrade -y
 
-   # čištění
+   # cleanup
    sudo apt autoremove -y
    ```
 
-## Nastavit Git
+## Set up Git
 
-Git přichází předinstalovaný s Ubuntu 18.04, ověřte, zda vaše Git verze s `git --version`.
+Git comes pre-installed with Ubuntu 18.04, verify that your Git version with `git --version`.
 
 ```output
 ~
-<unk> git --version
-git verze 2.25.1
+❯ git --version
+git version 2.25.1
 ```
 
-(Volitelné, ale doporučeno) Nyní můžete pokračovat v [nastavení ssh klíče](https://help.github.com/articles/generating-an-ssh-key) pomocí GitHub.
+(Optional but recommended) You can now proceed to [setting up your ssh keys](https://help.github.com/articles/generating-an-ssh-key) with GitHub.
 
-## Instalace editoru kódu
+## Installing a Code Editor
 
-Důrazně doporučujeme nainstalovat [Visual Studio Code](https://code.visualstudio.com) na Windows 10. Má velkou podporu pro WSL a automaticky nainstaluje všechna potřebná rozšíření do distro.
+We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
 
-V podstatě upravíte a uložíte svůj kód na Ubuntu-18.04 s VS kódem nainstalovaným v Windows.
+Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
 
-## Instalace Docker Desktop
+## Installing Docker Desktop
 
-**Docker Desktop pro Windows** umožňuje instalovat a spouštět databázi a služby jako MongoDB, NGINX, atd. To je užitečné, abychom se vyhnuli běžným nástrahám při instalaci MongoDB nebo jiných služeb přímo na Windows nebo WSL2.
+**Docker Desktop for Windows** allows you to install and run database and services like MongoDB, NGINX, etc. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
 
-Postupujte podle instrukcí na [oficiální dokumentaci](https://docs.docker.com/docker-for-windows/install) a nainstalujte Docker Desktop pro vaši distribuci Windows.
+Follow the instructuction on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
-Existují minimální požadavky na hardware pro nejlepší zážitky.
+There are some minimum hardware requirements for the best experience.
 
-## Konfigurace Docker pro WSL
+## Configure Docker Desktop for WSL
 
-Jakmile je Docker Desktop nainstalován, [postupujte podle těchto instrukcí](https://docs.docker.com/docker-for-windows/wsl) a nastavte jej tak, aby byla jako backend použita instalace Ubuntu-18.04.
+Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
 
-To znamená, že kontejnery běží na WSL místo běhu na Windows. Budete mít přístup ke službám přes `http://localhost` jak na Windows, tak na Ubuntu.
+This makes it so that the containers run on WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
 
-## Instalovat MongoDB z Docker Hub
+## Install MongoDB from Docker Hub
 
-Jakmile jste nakonfigurovali Docker pro práci s WSL2, postupujte podle těchto kroků pro spuštění služby MongoDB:
+Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
 
-1. Spustit nový terminál Ubuntu-18.04
+1. Launch a new Ubuntu-18.04 terminal
 
-2. Pull `MongoDB 3.6` z dockerhub
+2. Pull `MongoDB 3.6` from dockerhub
 
    ```console
    docker pull mongo:3
    ```
 
-3. Spusťte službu MongoDB na portu `27017`a nastavte ji tak, aby běžela automaticky při restartování systému
+3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
 
    ```console
    docker run -it \
@@ -85,13 +85,13 @@ Jakmile jste nakonfigurovali Docker pro práci s WSL2, postupujte podle těchto 
      -d mongo:3
    ```
 
-4. Nyní máte přístup ke službě jak z Windows tak z Ubuntu na `mongodb://localhost:27017`.
+4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
 
-## Instalace Node.js a npm
+## Installing Node.js and npm
 
-Doporučujeme nainstalovat verzi LTS pro Node.js se správcem verzí uzlu - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-Po instalaci použijte tyto příkazy k instalaci a použijte podle potřeby verzi Node.js
+Once installed use these commands to install and use the Node.js version as needed
 
 ```console
 nvm install --lts
@@ -107,23 +107,23 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js přichází s `npm`, můžete aktualizovat na nejnovější verze `npm` pomocí:
+Node.js comes bundled with `npm`, you can update to the latest versions of `npm` with:
 
 ```console
 npm install -g npm@latest
 ```
 
-## Nastavit volný CodeCamp lokálně
+## Set up freeCodeCamp locally
 
-Nyní, když jste nainstalovali předběžné požadavky, postupujte podle [našeho místního průvodce nastavením](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) pro klonování, instalaci a nastavení freeCodeCamp lokálně na vašem počítači.
+Now that you have installed the pre-requisites, follow [our local setup guide](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) to clone, install and setup freeCodeCamp locally on your machine.
 
-> [!VAROVÁNÍ]
+> [!WARNING]
 > 
-> Mějte prosím na paměti, že právě probíhá nastavení Cypress testů (a související potřeby GUI). Měli byste být stále schopni pracovat na většině kódu.
+> Please note, at this time the set up for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
 
-## Užitečné odkazy
+## Useful Links
 
-- [WSL2 Dev Setup s Ubuntu 20.04, Node.js, MongoDB, VS Code a Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - článek Mrugesh Mohapatra (Staff Developer na freeCodeCamp.org)
-- Často kladené otázky na:
-  - [Podsystém Windows pro Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
-  - [Docker pro Windows](https://docs.docker.com/docker-for-windows/faqs)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- Frequently asked questions on:
+  - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
+  - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)

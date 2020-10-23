@@ -127,7 +127,7 @@
 .nav-skeleton {
   height: var(--header-height);
   margin-right: 15px;
-  width: 200px;
+  width: 350px;
 }
 
 .nav-list .fcc-loader {
@@ -208,7 +208,7 @@
   }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1079px) {
   .site-header {
     padding-right: 0;
     padding-left: 0;
@@ -274,7 +274,7 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1080px) {
   .universal-nav-middle {
     flex: 1 0 30%;
     margin-right: 0px;

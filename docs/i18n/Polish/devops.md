@@ -1,75 +1,75 @@
-# Operacje dla programistów na darmowym CodeCamp.org
+# DevOps Handbook
 
-Ten przewodnik pomoże Ci zrozumieć nasz stos infrastruktury i sposób utrzymania naszych platform. Chociaż niniejszy przewodnik nie zawiera wyczerpujących szczegółów dotyczących wszystkich operacji, może on być wykorzystany jako punkt odniesienia dla Państwa zrozumienia systemów.
+This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
 
-Wiedzmy, jeśli masz opinie lub zapytania i z przyjemnością wyjaśnimy.
+Let us know, if you have feedback or queries, and we will be happy to clarify.
 
-## W jaki sposób tworzymy, przetestowujemy i wdrażamy bazę kodową?
+# Flight Manual - Code deployments
 
 This repository is continuously built, tested and deployed to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
 
-Obejmuje to trzy etapy, które należy wykonać kolejno:
+This involves three steps to be followed in sequence:
 
-1. Nowe zmiany (zarówno poprawki jak i funkcje) są scalane w naszym głównym oddziale rozwoju (`master`) za pomocą pull requestów.
-2. Zmiany te przeprowadza się poprzez szereg zautomatyzowanych testów.
-3. Po przejściu testów wydamy zmiany (lub w razie potrzeby zaktualizuje) w celu wdrożenia naszej infrastruktury.
+1. New changes (both fixes and features) are merged into our primary development branch (`master`) via pull requests.
+2. These changes are run through a series of automated tests.
+3. Once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
-#### Budowanie ebazy kodowej - mapowanie gałęzi Git do wdrożeń.
+#### Building the codebase - Mapping Git Branches to Deployments.
 
-Zwykle [`główny`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (domyślna gałąź rozwojowa) jest scalona w [`gałąź`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) raz dziennie i jest uwalniana do odizolowanej infrastruktury.
+Typically, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
-To jest wydanie pośrednie dla naszych programistów i wolontariuszy. Jest ona również znana jako "etap" lub "beta".
+This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
-Jest to identyczne z naszym żywym środowiskiem produkcyjnym w `freeCodeCamp.org`, inne niż przy użyciu oddzielnego zestawu baz danych, serwerów, proxy internetowych itp. Izolacja ta pozwala nam przetestować bieżący rozwój i cechy w scenariuszu „produkcji”, nie wpływając na zwykłych użytkowników głównych platform FreCodeCamp.org.
+It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
-Gdy zespół deweloperów [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) jest zadowolony ze zmian na platformie testowej, te zmiany są przenoszone co kilka dni do gałęzi [`aktualnej produkcji`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current).
+Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging platform, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch.
 
-To jest ostateczna wersja, która przenosi zmiany na nasze platformy produkcyjne na freeCodeCamp.org.
+This is the final release that moves changes to our production platforms on freeCodeCamp.org.
 
-#### Testowanie zmian - Testowanie integracji i akceptacji użytkownika.
+#### Testing changes - Integration and User Acceptance Testing.
 
-Stosujemy różne poziomy integracji i testów akceptacji w celu sprawdzenia jakości kodu. Wszystkie nasze testy są wykonywane przez oprogramowanie takie jak [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) i [Azure Ruropeline](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
+We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
-Mamy testy jednostkowe do testowania naszych rozwiązań wyzwań, interfejsów API serwera i użytkowników klientów. Pomagają nam one przetestować integrację pomiędzy różnymi komponentami.
+We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
-> [!NOTE] Jesteśmy również w trakcie pisania testów użytkowników końcowych, które pomogą w replikowaniu scenariuszy prawdziwego świata, takich jak aktualizacja wiadomości e-mail lub wywołanie połączenia do API lub usług innych firm.
+> [!NOTE] We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
 
-Łącznie te testy pomagają zapobiec powtórzeniu się problemów i upewnić się, że nie wprowadzimy błędu podczas pracy nad innym błędem lub funkcją.
+Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
 
-#### Wdrażanie zmian - Przesyłanie zmian na serwery.
+#### Deploying Changes - Pushing changes to servers.
 
-Skonfigurowaliśmy oprogramowanie do ciągłej dostawy, aby wprowadzać zmiany do naszych serwerów rozwojowych i produkcyjnych.
+We have configured continuous delivery software to push changes to our development and production servers.
 
-Po przepychaniu zmian do chronionych gałęzi uwalniania automatycznie uruchamia się budowę rurociągu dla gałęzi. Budowa rurociągów jest odpowiedzialna za budowę artefaktów i przechowywanie ich w chłodni do późniejszego wykorzystania.
+Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
 
-Budowa rurociągu uruchamia odpowiedni rurociąg wydania, jeśli zakończy się pomyślnym uruchomieniem. Rurociągi wydania są odpowiedzialne za zbieranie artefaktów budowy, przenoszenie ich na serwery i przechodzenie na żywo.
+The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers and going live.
 
-Status kompilacji i wydań jest [dostępny tutaj](#build-test-and-deployment-status).
+Status of builds and releases are [available here](#build-test-and-deployment-status).
 
-## Uruchamianie budowy, testowania i rozmieszczenia.
+## Trigger a build, test and deploy
 
-Obecnie tylko członkowie zespołu deweloperskiego mogą przepychać do gałęzi produkcyjnych. Zmiany w `produkcji*` gałęzie mogą lądować tylko poprzez szybkie połączenie w przód do [`przed`](https://github.com/freeCodeCamp/freeCodeCamp).
+Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> [!UWAGA] W nadchodzących dniach poprawilibyśmy ten przepływ do wykonania poprzez pull-requests, aby poprawić zarządzanie dostępem i przejrzystość.
+> [!NOTE] In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
 
-### Przesyłanie zmian do aplikacji testowych.
+### Pushing changes to Staging Applications.
 
-1. Skonfiguruj pilota poprawnie.
+1. Configure your remotes correctly.
 
    ```sh
-   git zdalny -v
+   git remote -v
    ```
 
-   **Wyniki:**
+   **Results:**
 
    ```
-   origingit@github.com:raisedadead/freeCodeCamp.git (fetch)
-   origingit@github.com:raisedadead/freeCodeCamp.git (push)
+   origin   git@github.com:raisedadead/freeCodeCamp.git (fetch)
+   origin   git@github.com:raisedadead/freeCodeCamp.git (push)
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (fetch)
    upstream git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Upewnij się, że Twoja gałąź `` jest niesamowita i w synchronizacji z upstreamem.
+2. Make sure your `master` branch is pristine and in sync with the upstream.
 
    ```sh
    git checkout master
@@ -77,24 +77,24 @@ Obecnie tylko członkowie zespołu deweloperskiego mogą przepychać do gałęzi
    git reset --hard upstream/master
    ```
 
-3. Sprawdź, czy Travis CI jest przekazywany na gałęzi `główny` dla upstream.
+3. Check that the Travis CI is passing on the `master` branch for upstream.
 
-   Testy [ciągłej integracji](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) powinny być zielone i PASSING dla `głównego` gałęzi.
+   The [continuous integration](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) tests should be green and PASSING for the `master` branch.
 
-    <details> <summary> Sprawdzanie statusu w Travis CI (zrzut ekranu) </summary>
+    <details> <summary> Checking status on Travis CI (screenshot) </summary>
       <br>
-      ![Sprawdź status budowy w Travis CI](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png)
+      ![Check build status on Travis CI](https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png)
     </details>
 
-   Jeśli to się nie powiedzie, powinieneś zatrzymać i zbadać błędy.
+   If this is failing you should stop and investigate the errors.
 
-4. Potwierdź, że możesz utworzyć repozytorium lokalnie.
+4. Confirm that you are able to build the repository locally.
 
    ```
-   npm uruchom czysto i rozwiń
+   npm run clean-and-develop
    ```
 
-5. Przenieś zmiany z `mistrza` do `etapu produkcji` poprzez szybkie scalanie
+5. Move changes from `master` to `production-staging` via a fast-forward merge
 
    ```
    git checkout production-staging
@@ -102,126 +102,607 @@ Obecnie tylko członkowie zespołu deweloperskiego mogą przepychać do gałęzi
    git push upstream
    ```
 
-   > [!NOTE] Nie będziesz w stanie wymusić wypchnięcia i jeśli przepisałeś historię w każdym razie, te polecenia będą się błędne.
+   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
    > 
-   > Jeśli tak się stanie, być może zrobiłeś coś niepoprawnego i po prostu powinieneś zacząć od nowa.
+   > If they do, you may have done something incorrectly and you should just start over.
 
-Powyższe kroki automatycznie uruchomi się na rurociągu budowy dla gałęzi `etap produkcji`. Gdy kompilacja zostanie zakończona, artefakty są zapisywane jako pliki `.zip` w chłodni do pobrania i wykorzystania później.
+The above steps will automatically trigger a run on the build pipeline for the `production-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
 
-Rurociąg uwalniania jest uruchamiany automatycznie, gdy nowy artefakt jest dostępny z podłączonego rurociągu budowy. Dla platform testowych ten proces nie wymaga ręcznego zatwierdzania, a artefakty są wysyłane na serwery CDN i API klienta.
+The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
 
-> [!TIP|label:Estimates] Zwykle kompilacja trwa ~20-25 minut, a następnie uruchomienie wydania, które zajmuje ~15-20 minut dla klienta, i ~5-10 minut aby API było dostępne na żywo. Od wypychania kodu do bycia na platformach do testowania, cały proces zajmuje łącznie **~35-45 minut**.
+> [!TIP|label:Estimates] Typically the build run takes ~20-25 minutes to complete followed by the release run which takes ~15-20 mins for the client, and ~5-10 mins for the API to be available live. From code push to being live on the staging platforms the whole process takes **~35-45 mins** in total.
 
-### Ładowanie zmian w aplikacjach produkcyjnych.
+### Pushing changes to Production Applications.
 
-Proces ten jest w większości taki sam jak platformy testowe, z kilkoma dodatkowymi kontrolami. Chodzi o to, aby mieć pewność, że nie niszczymy nic na wolnym CodeCamp.org, który widzi setki użytkowników z niego korzystających w każdej chwili.
+The process is mostly the same as the staging platforms, with a few extra checks in place. This is just to make sure, we do not break anything on freeCodeCamp.org which can see hundreds of users using it at any moment.
 
-| NIE wykonuj tych poleceń, chyba że sprawdziłeś czy wszystko działa na platformie testowej. Nie powinieneś omijać ani pomijać żadnych testów testowania przed kontynuowaniem testu. |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|                                                                                                                                                                                    |
+| Do NOT execute these commands unless you have verified that everything is working on the staging platform. You should not bypass or skip any testing on staging before proceeding further. |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                                            |
 
 
-1. Upewnij się, że Twoja gałąź `stopniowania produkcji` jest niesamowita i w trakcie synchronizacji z górnym biegiem czasu.
+1. Make sure your `production-staging` branch is pristine and in sync with the upstream.
 
    ```sh
-   git checkout production staging
+   git checkout production-staging
    git fetch --all --prune
    git reset --hard upstream/production-staging
    ```
 
-2. Przenieś zmiany z `etapu produkcji` na `prąd produkcyjny` poprzez szybkie połączenie w przód
+2. Move changes from `production-staging` to `production-current` via a fast-forward merge
 
    ```
    git checkout production-current
-   git scalge production-staging
+   git merge production-staging
    git push upstream
    ```
 
-   > [!NOTE] Nie będziesz w stanie wymusić wypchnięcia i jeśli przepisałeś historię w każdym razie, te polecenia będą się błędne.
+   > [!NOTE] You will not be able to force push and if you have re-written the history in anyway these commands will error out.
    > 
-   > Jeśli tak się stanie, być może zrobiłeś coś niepoprawnego i po prostu powinieneś zacząć od nowa.
+   > If they do, you may have done something incorrectly and you should just start over.
 
-Powyższe kroki automatycznie uruchomi się na rurociągu budowy dla gałęzi `prądu produkcyjnego`. Gdy budowniczy artefakt będzie gotowy, uruchomi on proces uwalniania.
+The above steps will automatically trigger a run on the build pipeline for the `production-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
 
-> [!TIP|label:Estimates] Zwykle kompilacja trwa ~20-25 minut.
+> [!TIP|label:Estimates] Typically the build run takes ~20-25 minutes to complete.
 
-**Dodatkowe kroki dla działań kadrowych**
+**Additional Steps for Staff Action**
 
-Jeden z uruchomień wydania jest uruchomiony, członkowie zespołu deweloperów otrzymają automatyczny ręczny e-mail z interwencją. Mogą one _zatwierdzić_ lub _odrzucić_ uruchomienie wydania.
+One a release run is triggered, members of the developer staff team will receive an automated manual intervention email. They can either _approve_ or _reject_ the release run.
 
-Jeżeli zmiany działają ładnie i zostały przetestowane na platformie testowej, można je zatwierdzić. Homologacja musi zostać udzielona w ciągu 4 godzin od uruchomienia zwolnienia, zanim zostanie automatycznie odrzucona. Administracja może uruchomić ponownie uruchomienie ręcznie dla odrzuconych uruchomień, lub poczekać na następny cykl zwolnienia.
+If the changes are working nicely and have been tested on the staging platform, then it can be approved. The approval must be given within 4 hours of the release being triggered before getting rejected automatically. A staff can re-trigger the release run manually for rejected runs, or wait for the next cycle of release.
 
-Dla personelu:
+For staff use:
 
-| Sprawdź swój adres e-mail, aby uzyskać bezpośredni link lub [przejść do panelu wydania](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) po zakończeniu kompilacji. |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|                                                                                                                                                                                  |
+| Check your email for a direct link or [go to the release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) after the build run is complete. |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                    |
 
 
-Gdy jeden z członków personelu zatwierdzi wydanie, rurociąg przepycha zmiany na żywo na serwery CDN i API freeCodeCamp.org. Zwykle zajmują około 15-20 minut dla klienta i około 5 minut dla serwerów API dostępnych na żywo.
+Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
-> [!TIP|label:Estimates] Uruchamianie wydania zajmuje zazwyczaj ~15-20 minut dla każdej instancji klienta i ~5-10 minut dla każdej instancji API, aby była dostępna na żywo. Od wypychania kodu do życia na platformach produkcyjnych cały proces zajmuje łącznie **~90-120 min** (nie licząc czasu oczekiwania na zatwierdzenie personelu).
+> [!TIP|label:Estimates] The release run typically takes ~15-20 mins for each client instance, and ~5-10 mins for each API instance to be available live. From code push to being live on the production platforms the whole process takes **~90-120 mins** in total (not counting the wait time for the staff approval).
 
-## Stan budowy, testowania i wdrożenia
+## Build, Test and Deployment Status
 
-Oto bieżący test, kompilacja i stan rozmieszczenia bazy.
+Here is the current test, build and deployment status of the codebase.
 
-| Typ                 | Oddział                                                                                    | Status                                                                                                                                                                                                                                                   | Pulpit                                                                                     |
-|:------------------- |:------------------------------------------------------------------------------------------ |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:------------------------------------------------------------------------------------------ |
-| CI Testy            | [`mistrz`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                       | ![Status kompilacji Travis CI](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                        | [Przejdź do panelu stanu](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| CI Testy            | [`etapy produkcji`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging)  | ![Status kompilacji Travis CI](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                            | [Przejdź do panelu stanu](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| Zbuduj rurociąg     | [`etapy produkcji`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging)  | [![Status kompilacji](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Przejdź do panelu stanu](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| Rurociąg uwolnienia | [`etapy produkcji`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging)  |                                                                                                                                                                                                                                                          | [Przejdź do panelu stanu](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
-| CI Testy            | [`prąd produkcyjny`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Status kompilacji Travis CI](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Przejdź do panelu stanu](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| Zbuduj rurociąg     | [`prąd produkcyjny`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Status kompilacji](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [Przejdź do panelu stanu](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
-| Rurociąg uwolnienia | [`prąd produkcyjny`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                          | [Przejdź do panelu stanu](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| Type             | Branch                                                                                       | Status                                                                                                                                                                                                                                              | Dashboard                                                                                 |
+|:---------------- |:-------------------------------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:----------------------------------------------------------------------------------------- |
+| CI Tests         | [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                         | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)                                                                                                                                                        | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| CI Tests         | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-dev-ci?branchName=production-staging)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=15&branchName=production-staging) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current)                                                                                                                                            | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
+| Build Pipeline   | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | [![Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/dot-org-ci?branchName=production-current)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build/latest?definitionId=17&branchName=production-current) | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                                                                                                                                                                     | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
 
-## Wczesny dostęp i testy beta
+## Early access and beta testing
 
-Witamy w przetestowaniu tych wydań w trybie **"publicznego beta testowania"** i uzyskujemy szybki dostęp do nadchodzących funkcji platformy. Czasami te funkcje/zmiany są określane jako **następne, beta, etap,** itd. wymiennie.
+We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
 
-Twój wkład poprzez informacje zwrotne i raporty o błędach pomoże nam stworzyć platformy produkcyjne na `freeCodeCamp. rg` bardziej **odporny**, **spójny** i **stabilny** dla wszystkich.
+Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent** and **stable** for everyone.
 
-Dziękujemy za zgłaszanie błędów, które napotkasz i pomoc w ulepszeniu freeCodeCamp.org. Jesteś skalisty!
+We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
 
-### Identyfikacja przyszłej wersji platform
+### Identifying the upcoming version of the platforms
 
-Obecnie publiczna wersja beta testowa jest dostępna na stronie:
+Currently a public beta testing version is available at:
 
-<h1 align="center"><a href='https://www.freecodecamp.dev' _target='blank'>dev</a></h1>
+<h1 align="center"><a href='https://www.freecodecamp.dev' _target='blank'>freecodecamp.dev</a></h1>
 
-> [!NOTE] Nazwa domeny jest inna niż **`freeCodeCamp.org`**. Ma to na celu zapobieganie indeksowaniu wyszukiwarek i unikanie dezorientacji dla regularnych użytkowników platformy.
+> [!NOTE] The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
 
-### Identyfikacja obecnej wersji platform
+### Identifying the current version of the platforms
 
-**Obecna wersja platformy jest zawsze dostępna pod adresem [`freeCodeCamp.org`](https://www.freecodecamp.org).**
+**The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
 
-Zespół dev-team scala zmiany z gałęzi `produkcyjnej` na `produkcję, prąd` po ich wydaniu. Najlepszym zatwierdzeniem powinno być to, co widzisz na żywo na stronie.
+The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site.
 
-Możesz zidentyfikować dokładną wersję, odwiedzając dzienniki budowy i wdrożenia dostępne w sekcji statusu. Alternatywnie możesz również wypchnąć nas w [kontrybucji na czacie](https://gitter.im/FreeCodeCamp/Contributors) w celu potwierdzenia.
+You can identify the exact version deployed by visiting the build and deployment logs available in the status section. Alternatively you can also ping us in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) for a confirmation.
 
-### Znane ograniczenia
+### Known Limitations
 
-Istnieją pewne znane ograniczenia i kompromisy podczas używania wersji beta platformy.
+There are some known limitations and tradeoffs when using the beta version of the platform.
 
-- #### Wszystkie dane / osobisty postęp na tych platformach beta `NIE zostanie zapisany ani przeniesiony` do produkcji.
+- #### All data / personal progress on these beta platforms `will NOT be saved or carried over` to production.
 
-  **Użytkownicy wersji beta będą mieli oddzielne konto od produkcji.** Wersja beta używa fizycznie oddzielnej bazy danych od produkcji. Daje nam to możliwość zapobiegania przypadkowej utracie danych lub zmianom. Zespół deweloperski może w razie potrzeby oczyścić bazę danych w tej wersji beta.
+  **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev team may purge the database on this beta version as needed.
 
-- #### Nie ma gwarancji dotyczących czasu pracy i niezawodności platform beta.
+- #### There are no guarantees on the uptime and reliability of the beta platforms.
 
-  Przewiduje się, że stosowanie będzie częste i w przypadku szybkich iteracji, czasami wielokrotnych razy dziennie. W rezultacie pojawi się nieoczekiwany czas przestoju lub uszkodzona funkcjonalność wersji beta.
+  Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result there will be unexpected downtime at times or broken functionality on the beta version.
 
-- #### Nie wysyłaj regularnych użytkowników na tę witrynę w celu potwierdzenia naprawienia
+- #### Do not send regular users to this site as a measure of confirming a fix
 
-  Witryna beta jest i zawsze wspierała rozwój lokalny i testowanie, nic innego. Nie jest to obietnica co nadchodzi, ale gwiazdka tego, co się sprawdza.
+  The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### Strona znaku może wyglądać inaczej niż produkcja
+- #### Sign page may look different than production
 
-   W Auth0 używamy lokatora testowego dla freecodecamp.dev i dlatego nie mają możliwości ustawiania domeny niestandardowej. To sprawia, że wszystkie wywołania zwrotne przekierowania i strona logowania pojawiają się w domenie domyślnej, takiej jak: `https://freecodecamp-dev.auth0.com/`. Nie ma to wpływu na funkcjonalność tak blisko produkcji, jak to możliwe.
+  We use a test tenant for freecodecamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
 
-## Kwestie związane ze sprawozdawczością i pozostawienie opinii
+## Reporting issues and leaving feedback
 
-Proszę otworzyć nowe problemy do dyskusji i zgłaszania błędów. Możesz oznaczyć je jako **[`wydanie: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** dla triage'u.
+Please open fresh issues for discussions and reporting bugs. You can label them as **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** for triage.
 
-Możesz wysłać e-mail do `dev[at]freecodecamp.org` jeśli masz jakieś zapytania. Ponieważ zawsze wszystkie luki w zabezpieczeniach powinny być zgłaszane do `zabezpieczeń[at]freecodecamp.org` zamiast publicznego trackera i forum.
+You may send an email to `dev[at]freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security[at]freecodecamp.org` instead of the public tracker and forum.
+
+# Flight Manual - Server Maintenance
+
+> [!WARNING]
+> 
+> 1. The guide applies to the **freeCodeCamp Staff members only**.
+> 2. These instructions should not be considered exhaustive, please use caution.
+
+As a member of the staff, you may have been given access to our cloud service providers like Azure, Digital Ocean, etc.
+
+Here are some handy commands that you can use to work on the Virtual Machines (VM), for instance performing maintenance updates or doing general houeskeeping.
+
+## Get a list of the VMs
+
+> [!NOTE] While you may already have SSH access to the VMs, that alone will not let you list VMs unless you been granted access to the cloud portals as well.
+
+### Azure
+
+Install Azure CLI `az`: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
+
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
+
+```
+brew install azure-cli
+```
+
+> **(One-time) Login:**
+
+```
+az login
+```
+
+> **Get the list of VM names and P addresses:**
+
+```
+az vm list-ip-addresses --output table
+```
+
+### Digital Ocean
+
+Install Digital Ocean CLI `doctl`: https://github.com/digitalocean/doctl#installing-doctl
+
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
+
+```
+brew install doctl
+```
+
+> **(One-time) Login:**
+
+Authentication and context switching: https://github.com/digitalocean/doctl#authenticating-with-digitalocean
+
+```
+doctl auth init
+```
+
+> **Get the list of VM names and IP addresses:**
+
+```
+doctl compute droplet list --format "ID,Name,PublicIPv4"
+```
+
+## Spin a VM (or VM Scale Set)
+
+> Todo: Add instructions for spinning VM(s)
+
+
+<!--
+
+The below instructions are stale.
+
+### 0. Prerequisites (workspace Setup) for Staff
+
+Get a login session on `azure cli`, and clone the
+[`infra`](https://github.com/freeCodeCamp/infra) for setting up template
+workspace.
+
+```console
+az login
+git clone https://github.com/freeCodeCamp/infra
+cd infra
+```
+
+Use the Scratchpad subdirectory for temporary files, and making one-off edits.
+The contents in this subdirectory are intentionally ignored from source control.
+
+### 1. Provision VMs on Azure.
+
+List all Resource Groups
+
+```console
+az group list --output table
+```
+
+```console
+Name                               Location       Status
+---------------------------------  -------------  ---------
+tools-rg                           eastus         Succeeded
+```
+
+Create a Resource Group
+
+```
+az group create --location eastus --name stg-rg
+```
+
+```console
+az group list --output table
+```
+
+```console
+Name                               Location       Status
+---------------------------------  -------------  ---------
+tools-rg                           eastus         Succeeded
+stg-rg                             eastus         Succeeded
+```
+
+Next per the need, provision a single VM or a scaleset.
+
+#### A. provision single instances
+
+```console
+az vm create \
+  --resource-group stg-rg-eastus \
+  --name <VIRTUAL_MACHINE_NAME> \
+  --image UbuntuLTS \
+  --size <VIRTUAL_MACHINE_SKU>
+  --custom-data cloud-init/nginx-cloud-init.yaml \
+  --admin-username <USERNAME> \
+  --ssh-key-values <SSH_KEYS>.pub
+```
+
+#### B. provision scaleset instance
+
+```console
+az vmss create \
+  --resource-group stg-rg-eastus \
+  --name <VIRTUAL_MACHINE_SCALESET_NAME> \
+  --image UbuntuLTS \
+  --size <VIRTUAL_MACHINE_SKU>
+  --upgrade-policy-mode automatic \
+  --custom-data cloud-init/nginx-cloud-init.yaml \
+  --admin-username <USERNAME> \
+  --ssh-key-values <SSH_KEYS>.pub
+```
+
+> [!NOTE]
+>
+> - The custom-data config should allow you to configure and add SSH keys,
+>   install packages etc. via the `cloud-init` templates in your local
+>   workspace. Tweak the files in your local workspace as needed. The cloud-init
+>   config is optional and you can omit it completely to do setups manually as
+>   well.
+>
+> - The virtual machine SKU is something like: **Standard_B2s** which can be
+>   retrived by executing something like
+>   `az vm list-sizes -l eastus --output table` or checking the Azure portal
+>   pricing.
+
+-->
+
+## Keep VMs updated
+
+You should keep the VMs up to date by performing updates and upgrades. This will ensure that the virtual machine is patched with latest security fixes.
+
+> [!WARNING] Before you run these commands:
+> 
+> - Make sure that the VM has been provisioned completely and there is no post-install steps running.
+> - If you are updating packages on a VM that is already serving an application, make sure the app has been stopped / saved. Package updates will cause network bandwidth, memory and/or CPU usage spikes leading to outages on running applications.
+
+Update package information
+
+```console
+sudo apt update
+```
+
+Upgrade installed packages
+
+```console
+sudo apt upgrade -y
+```
+
+Cleanup unused packages
+
+```console
+sudo apt autoremove -y
+```
+
+## Work on Web Servers (Proxy)
+
+We are running load balanced (Azure Load Balancer) instances for our web servers. These servers are running NGINX which reverse proxy all of the traffic to freeCodeCamp.org from various applications running on their own infrastructures.
+
+The NGINX config is available on [this repository](https://github.com/freeCodeCamp/nginx-config).
+
+### First Install
+
+Provisioning VMs with the Code
+
+#### 1. (Optional) Install NGINX and configure from repository.
+
+The basic setup should be ready OOTB, via the cloud-init configuration. SSH and make changes as necessary for the particular instance(s).
+
+If you did not use the cloud-init config previously use the below for manual setup of NGINX and error pages:
+
+```console
+sudo su
+
+cd /var/www/html
+git clone https://github.com/freeCodeCamp/error-pages
+
+cd /etc/
+rm -rf nginx
+git clone https://github.com/freeCodeCamp/nginx-config nginx
+
+cd /etc/nginx
+```
+
+#### 2. Install Cloudflare origin certificates and upstream application config.
+
+Get the Cloudflare origin certificates from the secure storage and install at required locations.
+
+**OR**
+
+Move over existing certificates:
+
+```console
+# Local
+scp -r username@source-server-public-ip:/etc/nginx/ssl ./
+scp -pr ./ssl username@target-server-public-ip:/tmp/
+
+# Remote
+rm -rf ./ssl
+mv /tmp/ssl ./
+```
+
+Update Upstream Configurations:
+
+```console
+vi configs/upstreams.conf
+```
+
+Add/update the source/origin application IP addresses.
+
+#### 3. Setup networking and firewalls.
+
+Configure Azure firewalls and `ufw` as needed for ingress origin addresses.
+
+#### 4. Add the VM to the load balancer backend pool.
+
+Configure and add rules to load balancer if needed. You may also need to add the VMs to load balancer backend pool if needed.
+
+### Logging and Monitoring
+
+1. Check status for NGINX service using the below command:
+
+```console
+sudo systemctl status nginx
+```
+
+2. Logging and monitoring for the servers are available at:
+
+> <h3 align="center"><a href='https://amplify.nginx.com' _target='blank'>https://amplify.nginx.com</a></h3>
+### Updating Instances (Maintenance)
+
+Config changes to our NGINX instances are maintained on GitHub, these should be deployed on each instance like so:
+
+1. SSH into the instance and enter sudo
+
+```console
+sudo su
+```
+
+2. Get the latest config code.
+
+```console
+cd /etc/nginx
+git fetch --all --prune
+git reset --hard origin/master
+```
+
+3. Test and reload the config [with Signals](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/#controlling-nginx).
+
+```console
+nginx -t
+nginx -s reload
+```
+
+## Work on API Instances
+
+1. Install build tools for node binaries (`node-gyp`) etc.
+
+```console
+sudo apt install build-essential
+```
+
+### First Install
+
+Provisioning VMs with the Code
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot
+
+   ```console
+   npm i -g npm
+   npm i -g pm2
+   pm2 install pm2-logrotate
+   pm2 startup
+   ```
+
+3. Clone freeCodeCamp, setup env and keys.
+
+   ```console
+   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+   cd freeCodeCamp
+   git checkout production-current # or any other branch to be deployed
+   ```
+
+4. Create the `.env` from the secure credentials storage.
+
+5. Create the `google-credentials.json` from the secure credentials storage.
+
+6. Install dependencies
+
+   ```console
+   npm ci
+   ```
+
+7. Build the server
+
+   ```console
+   npm run ensure-env && npm run build:server
+   ```
+
+8. Start Instances
+
+   ```console
+   cd api-server
+   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   ```
+
+### Logging and Monitoring
+
+```console
+pm2 logs
+```
+
+```console
+pm2 monit
+```
+
+### Updating Instances (Maintenance)
+
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding enviroment variables.
+
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+
+#### 1. Manual Updates - Used for updating dependencies, env variables.
+
+1. Stop all instances
+
+```console
+pm2 stop all
+```
+
+2. Install dependencies
+
+```console
+npm ci
+```
+
+3. Build the server
+
+```console
+npm run ensure-env && npm run build:server
+```
+
+4. Start Instances
+
+```console
+pm2 start all --update-env && pm2 logs
+```
+
+#### 2. Rolling updates - Used for logical changes to code.
+
+```console
+pm2 reload all --update-env && pm2 logs
+```
+
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.
+
+## Work on Client Instances
+
+1. Install build tools for node binaries (`node-gyp`) etc.
+
+```console
+sudo apt install build-essential
+```
+
+### First Install
+
+Provisioning VMs with the Code
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot
+
+   ```console
+   npm i -g npm
+   npm i -g pm2
+   npm install -g serve
+   pm2 install pm2-logrotate
+   pm2 startup
+   ```
+
+3. Clone client config, setup env and keys.
+
+   ```console
+   git clone https://github.com/freeCodeCamp/client-config.git client
+   cd client
+   ```
+
+   ```console
+   git clone https://github.com/freeCodeCamp/client-config.git client
+   cd client
+   ```
+
+   Start placeholder instances for the web client, these will be updated with artifacts from the Azure pipline.
+
+   > Todo: This setup needs to move to S3 or Azure Blob storage 
+   > 
+   > ```console
+   echo "serve -c ../../serve.json www -p 50505" >> client-start-primary.sh
+   chmod +x client-start-primary.sh
+   pm2 delete client-primary
+   pm2 start  ./client-start-primary.sh --name client-primary
+   echo "serve -c ../../serve.json www -p 52525" >> client-start-secondary.sh
+   chmod +x client-start-secondary.sh
+   pm2 delete client-secondary
+   pm2 start  ./client-start-secondary.sh --name client-secondary
+```
+
+### Logging and Monitoring
+
+```console
+pm2 logs
+```
+
+```console
+pm2 monit
+```
+
+### Updating Instances (Maintenance)
+
+Code changes need to be deployed to the API instances from time to time. It can be a rolling update or a manual update. The later is essential when changing dependencies or adding enviroment variables.
+
+> [!DANGER] The automated pipelines are not handling dependencies updates at the minute. We need to do a manual update before any deployment pipeline runs.
+
+#### 1. Manual Updates - Used for updating dependencies, env variables.
+
+1. Stop all instances
+
+   ```console
+   pm2 stop all
+   ```
+
+2. Install or update dependencies
+
+3. Start Instances
+
+   ```console
+   pm2 start all --update-env && pm2 logs
+   ```
+
+#### 2. Rolling updates - Used for logical changes to code.
+
+```console
+pm2 reload all --update-env && pm2 logs
+```
+
+> [!NOTE] We are handling rolling updates to code, logic, via pipelines. You should not need to run these commands. These are here for documentation.

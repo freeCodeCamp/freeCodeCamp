@@ -1,199 +1,199 @@
-# Kuinka auttaa videon haasteissa
+# How to help with video challenges
 
-Videon haasteet ovat uudenlainen haaste freeCodeCampin opetussuunnitelmassa.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-Videon haaste on pieni osa koko pitkien videokurssien tietyssä aiheessa. Videon haaste-sivu upottaa YouTube-videon. Jokaisella haasteen sivulla on yksi monivalintakysymys, joka liittyy videoon. Käyttäjän on vastattava kysymykseen oikein, ennen kuin hän siirtyy kurssilla seuraavaan videohaasteeseen.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-Videon haastesivujen ovat luoneet freeCodeCamp tiimin jäsenet. YouTube-videot on ladattu myös freeCodeCamp tiimin jäseniltä. Monilla videon haasteista ei vielä ole niihin liittyviä kysymyksiä.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-Voit auttaa luomalla video-osioihin liittyviä monivalintakysymyksiä ja lisäämällä kysymyksiä videon haasteiden markdown tiedostoihin.
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Haasteen Malli
+## Challenge Template
 
-Alla on malli siitä, miltä haasteen markdown tiedostot näyttävät.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
-id: Yksilöllinen tunniste (aakkosnumeerinen, MongoDB_id)
-otsikko: Challenge Title
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
 challengeType: 11
 videoId: 'YouTube videoId for video challenge'
 ---
 
-## Kuvaus
+## Description
 
 <section id='description'>
-Valinnainen kuvaus videoon liittyvillä hyödyllisillä tiedoilla.
+An optional description with helpful information related to the video.
 </section>
 
-## Testit
+## Tests
 
 <section id='tests'>
 
-````yml
-kysymys:
-  tekstiä: 'Kysymys'
-  vastauksia:
-    - 'Vastaus yksi'
-    - 'Vastaus kaksi'
-    - 'Vastaus kolmi'
-  ratkaisu: 3
+```yml
+question:
+  text: 'Question'
+  answers:
+    - 'Answer One'
+    - 'Answer Two'
+    - 'Answer Three'
+  solution: 3
 ````
 
 </section>
 ````
 
-## Kysymysten luominen videon haasteita varten
+## Creating questions for video challenges
 
-### Käytä videon haasteen kuvaustiedostoja
+### Access the video challenge markdown files
 
-Löydät kuvaustiedostot videon haasteen kuvaustiedostoista opetussuunnitelmassa:
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Data Analysis with Python Course](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [TensorFlow 2.0 Course](https://github. om/freeCodeCamp/freeCodeCamp/tree/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
 - [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
 - [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
 Pick a challenge markdown file from the options above.
 
-### Hiipii haasteeseen liittyvän videon läpi ja luo mutipla valintakysymys
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-Ensinnäkin, etsi videoId.
+First, find the videoId.
 
-Esimerkiksi, seuraavassa koodissa otsikko video haaste markdown tiedoston, videoId on "nVAaxZ34khk". GitHubissa tiedot on sijoitettava taulukon muotoon.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
-id: 5e9a093a74c4063ca6f7c14d otsikko: Data Analysis Example A challengeType: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
 
-Seuraavaksi käytä YouTube-videota tuolla videotunnuksella. Videon url-osoite on:
-https://www.youtube. om/watch?v=[videoId]    (lisää videoID URL ilman hakasulkuja)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-Yllä olevassa esimerkissä url on https://www. outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim the YouTube video with that videoID and think of multiple choice question based on the content of the video.
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### Lisää kysymys merkkikansioon
+### Add the question to the markdown file
 
-Voit lisätä kysymyksen paikallisesti tai suoraan sulkemalla GitHubin käyttöliittymän. Lisätäksesi kysymyksen paikallisesti, sinun täytyy [määrittää freeCodeCamp paikallinen](how-to-setup-freecodecamp-locally.md). Voit myös löytää tiedoston GitHubista ja klikkaa muokkaa painiketta lisätäksesi kysymyksen suoraan selaimessasi.
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-Jos kysymystä ei ole vielä lisätty tiettyyn videon haasteeseen, sillä on seuraava oletuskysymys:
-
-````yml
-kysymys:
-  teksti: •
-    Kysymys
-  vastauksia:
-    - ¶
-      yksi
-    - −
-      kaksi
-    - −
-      kolme
-  ratkaisu: 3
-```
-
-Päivitä sana “Kysymys” kysymykselläsi. Päivitä “yksi”, “kaksi”, ja “kolme” kanssa mahdollisia vastauksia. Varmista, että päivitä ratkaisun numero, jolla vastaus on oikea. Voit lisätä enemmän mahdollisia vastauksia käyttäen samaa muotoa. Kysymystä ja vastauksia voidaan ympäröidä lainausmerkeillä.
-
-#### Käytä merkintää muotoillaksesi kysymyksesi
-
-Käsiteltävänä oleva teksti on luokiteltu merkiksi. Yksinkertaisin tapa varmistaa, että se on muotoiltu oikein on aloittaa kysymys `teksti: ¶`, kuten tämä:
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-kysymys:
-  teksti: ¶
-    Kysymys
+question:
+  text: |
+    Question
+  answers:
+    - |
+      one
+    - |
+      two
+    - |
+      three
+  solution: 3
 ```
 
-Sitten sinun täytyy varmistaa, että kysymyksesi on uudella rivillä ja indented yhdellä tasolla enemmän kuin `tekstiä: ¶`.
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-Samaa lähestymistapaa voidaan käyttää vastauksissa, joten koko kysymys tulee
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-kysymys:
-  teksti: ¶
-    Kysymys
-  vastauksia:
-  - ·
-    Ensimmäinen vastaus
-  - ·
-    Toinen
-  - −
-    Kolmas
-  ratkaisu: 2
+question:
+  text: |
+    Question
 ```
 
-Varmista, että jokainen vastaus on uskottava, mutta on vain yksi oikea vastaus.
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-#### HTML:n käyttö
+The same approach can be used for the answers, so the entire question becomes
 
-Kysymykset ja vastaukset voivat sisältää tiettyjä HTML-tageja, kuten `<br>` uudelle riville. HTML-tunnisteita tulee käyttää säästeliäästi, kun kysymyksiä ei voida ilmaista ilman niitä.
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
+    Second
+  - |
+    Third
+  solution: 2
+```
 
-### Esimerkit kysymyksistä
+Make sure each answer is plausible but there is only one correct answer.
 
-#### Esimerkkejä ilman HTML
+#### Use of HTML
+
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+
+### Question examples
+
+#### Examples without HTML
 
 ````yml
-kysymys:
-  teksti: ¶
-    Mitä tämä JavaScript-koodi kirjautuu konsoliin?
-    ``js
+question:
+  text: |
+    What does this JavaScript code log to the console?
+    ```js
     console.log('hello world');
     ````
 
 
-    Valitse vastaus!
-  vastaukset:
-    - ¶ hello *maailma*
-    - ¶ **hello** maailma
-    - ¶ hello maailma ratkaisu: 3
+    Select an answer!
+  answers:
+    - | hello *world*
+    - | **hello** world
+    - | hello world solution: 3
 ````
 
 ````yml
-kysymys:
-  teksti: ¶
-    Mitä tulostaa tämän koodin käytön jälkeen:
+question:
+  text: |
+    What will print out after running this code:
     ```py
-    leveys = 15
-    korkeus = 12.
-    print(korkeus/3)
+    width = 15
+    height = 12.0
+    print(height/3)
     ````
-  vastaukset:
+  answers:
     - | 39
     - | 4
-    - ¶ 4,0
-    - ¶ 5,0
-    - ¶ 5 ratkaisu: 3
+    - | 4.0
+    - | 5.0
+    - | 5 solution: 3
 ````
 
-#### Esimerkki HTML:llä
+#### Example with HTML
 
 ```yml
-kysymys:
-  teksti: ¶
-    Mitä tulostaa tämän koodin käytön jälkeen:
-    <pre><code>leveys = 15<br>korkeus = 12.<br>print(height/3)<code></pre>
-  vastauksia:
-    - pt
+question:
+  text: |
+    What will print out after running this code:
+    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
+  answers:
+    - |
       39
-    - pt
+    - |
       4
-    - pt
-      4.
-    - ¶
-      5.
-    - ¶
+    - |
+      4.0
+    - |
+      5.0
+    - |
       5
-  liuos: 3
+  solution: 3
 ````
 
-Lopullinen esimerkki osoittaa, että HTML voidaan käyttää, mutta se ei ole yhtä luettavissa kuin versio ilman sitä.
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-Lisää esimerkkejä, voit katsoa seuraavan videokurssin merkkilevyjä varten. Kaikilla haasteilla on jo kysymyksiä: [Python kaikille -kurssi](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Avaa pull-pyyntö
+## Open a pull request
 
-Kun olet luonut yhden tai useamman kysymyksen, voit toimittaa muutokset uuteen haaraan ja [avaa pull-pyynnön](how-to-open-a-pull-request.md).
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

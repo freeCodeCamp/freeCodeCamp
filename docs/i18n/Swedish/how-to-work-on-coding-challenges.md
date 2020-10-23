@@ -1,408 +1,489 @@
-# Hur man arbetar med kodningsutmaningar
+# How to work on coding challenges
 
-Vårt mål är att utveckla en rolig och tydlig interaktiv inlärningsupplevelse.
+Our goal is to develop a fun and clear interactive learning experience.
 
-Det är svårt att utforma interaktiva kodningsutmaningar. Det skulle vara mycket lättare att skriva en lång förklaring eller att skapa en video tutorial, och det finns en plats för dem på Medium och YouTube. Men för vår grundläggande läroplan håller vi fast vid det som fungerar bäst för de flesta människor - en helt interaktiv, spelliknande upplevelse.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-Vi vill att campare ska uppnå ett flödestillstånd. Vi vill att de ska bygga fart och spränga genom vår läroplan med så få hakar som möjligt. Vi vill att de ska gå in i projekten med tillförsikt och få en bred exponering för programmeringskoncept.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
-Att skapa dessa utmaningar kräver enorm kreativitet och detaljrikedom. Det finns gott om hjälp. Du har stöd från ett helt team av bidragsgivare som du kan studsa idéer och demo dina utmaningar. Håll dig aktiv i [bidragsgivarens rum](https://gitter.im/freecodecamp/contributors) och ställ massor av frågor.
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
 
-Med din hjälp kan vi utforma en interaktiv kodning läroplan som kommer att hjälpa miljontals människor lära sig att koda för många år framöver.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
 
-Innehållet för varje utmaning lagras i sin egen markdown-fil. Denna markdown fil konverteras senare till HTML med hjälp av våra verktyg för att skapa interaktiva webbsidor.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-Du hittar allt av freeCodeCamp.orgs läroplansinnehåll i katalogen [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges).
+With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-## Ställ in verktyg för läroplanen
+The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
 
-Innan du arbetar med läroplanen skulle du behöva ställa in verktyg för att hjälpa dig att testa dina ändringar. Du kan använda valfritt alternativ nedan:
+You can find all of freeCodeCamp.org's curricular content in the [`/curriculum/challenges`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges) directory.
 
-- Du kan [ställa in freeCodeCamp lokalt](how-to-setup-freecodecamp-locally.md). Detta rekommenderas **starkt** för reguljära/upprepa bidrag. Denna inställning låter dig arbeta och testa dina ändringar.
-- Använd Gitpod, en gratis online dev-miljö. Om du klickar på knappen nedan startar du en miljö som är redo att koda dev för freeCodeCamp i din webbläsare. Det tar bara några minuter.
+## Set up the tooling for the curriculum
 
-  [![Öppna i Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+Before you work on the curriculum, you would need to set up some tooling to help you test your changes. You can use any option from the below:
 
-- Redigera filerna på GitHubs gränssnitt genom att klicka på pennikonen för motsvarande fil. Även om detta är det snabbaste sättet, Det är **rekommenderas inte**, eftersom du inte kan testa dina ändringar på GitHub. Om våra utvecklare drar slutsatsen att de ändringar som ni gjorde måste testas lokalt skulle ni istället behöva följa metoderna ovan igen.
+- You can [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). This is **highly recommended** for regular/repeat contributions. This setup allows you to work and test your changes.
+- Use Gitpod, a free online dev environment. Clicking the button below will start a ready-to-code dev environment for freeCodeCamp in your browser. It only takes a few minutes.
 
-## Utmaningsmall
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-Nedan finns en mall för hur de utmanade markdown-filerna ser ut för närvarande.  För att se den strömlinjeformade mallen kommer vi att anta [under](#upcoming-challenge-template).
+- Edit the files on GitHub's interface by clicking the pencil icon for the corresponding file. While this is the quickest way, It is **not recommended**, because you are unable to test your changes on GitHub. If our maintainers conclude that the changes you made need to be tested locally, you would need to follow the methods above instead again.
+
+## Challenge Template
+
+Below is a template of what the challenge markdown files look like currently.  To see the streamlined template we will be adopting see [below](#upcoming-challenge-template).
 
 ````md
 ---
-id: Unik identifierare (alfanumeriska, MongoDB_id)
-titel: Utmaningstitel
-challengeTyp: 0
-videoUrl: 'Url of video förklaring'
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
+challengeType: 0
+videoUrl: 'url of video explanation'
 ---
 
-## Beskrivning
+## Description
 
 <section id='description'>
-En beskrivning av utmaningen och vad som krävs för att klara
+A Description of the challenge and what is required to pass
 </section>
 
-## Instruktioner
+## Instructions
 
 <section id='instructions'>
-Instruktioner om exakt vad som behöver göras.
+Instructions about what exactly needs to be done.
 </section>
 
-## Tester
+## Tests
 
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Bör returnera "foo"
-    testString: 'En strängifierad funktion möjligen med Chai asserts'
+  - text: Should return "foo"
+    testString: 'A stringified function possibly using Chai asserts'
 ````
 
 </section>
 
-## Utmaning Frö
+## Challenge Seed
 
 <section id='challengeSeed'>
 
 <div id='{ext}-seed'>
 
 ```{ext}
-Koden som visas i redigeraren som standard.
+Code displayed in the editor by default.
 
-Detta är ett obligatoriskt avsnitt för utmaningen.
+This is a required section for the challenge.
 ```
 
 </div>
 
-### Före testet
+### Before Test
 
 <div id='{ext}-setup'>
 
 ```{ext}
-Valfri konfigurationskod.
+Optional Test setup code.
 ```
 
 </div>
 
-### Efter testet
+### After Test
 
 <div id='{ext}-teardown'>
 
 ```{ext}
-Valfri testkod för rivning.
+Optional Test tear down code.
 ```
 
 </div>
 
 </section>
 
-## Lösning
+## Solution
 
 <section id='solution'>
 
 ```{ext}
-// lösning krävs
+// solution required
 ```
 
 </section>
 
 ````
 
-> [!OBS]
+> [!NOTE]
 >
-> 1. I de ovan nämnda avsnitten, exempel på `{ext}` är:
+> 1. In the above sections, examples of `{ext}` are:
 >
 >   - `html` - HTML/CSS
 >   - `js` - JavaScript
 >   - `jsx` - JSX
 >
-> 2. För avsnittet `Tests` ovan, `text` och `testString` ska vara giltiga YAML-strängar. `testString` kan vara en strängad funktion eller uttryck som använder sig av Chai påståenden.
+> 2. For the `Tests` section above, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression using which could use Chai asserts.
 
-## Numreringsutmaningar
+## Numbering Challenges
 
-Varje utmaning behöver en `id`. Om du inte anger en, då kommer MongoDB att skapa en ny slumpmässig när den sparar data; Men vi vill inte att det ska göra det, eftersom vi vill att utmaningen id ska vara konsekvent i olika miljöer (mellanlagring, produktion, massor av olika utvecklare, etc.).
+Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
 
-För att generera en ny i ett skal (förutsatt att MongoDB körs separat):
+To generate a new one in a shell (assuming MongoDB is running separately):
 
-1. Kör `mongo`-kommandot.
-2. Kör kommandot `ObjectId()` .
+1. Run `mongo` command.
+2. Run `ObjectId()` command.
 
-Till exempel:
+For example:
 
 ```bash
 $ mongo
 MongoDB shell version v3.6.1
-ansluter till: mongodb://127.0.0.1:27017
-MongoDB serverversion: 3.4.10
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
 ...
 $ ObjectId()
 ObjectId("5a474d78df58bafeb3535d34")
 ````
 
-Resultatet är ett nytt id, till exempel `5a474d78df58bafeb353535d34` ovan.
+The result is a new id, for example `5a474d78df58bafeb3535d34` above.
 
-När du har ditt ID, lägg det i markdown filen som `-id` fältet högst upp, t.ex.
+Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
 ```yml
 ---
 id: 5a474d78df58bafeb3535d34
-titel: Utmaningstitel
+title: Challenge Title
 ```
 
-## Namnge utmaningar
+## Naming challenges
 
-Att namnge saker är svårt. Vi har gjort det lättare genom att införa vissa begränsningar.
+Naming things is hard. We've made it easier by imposing some constraints.
 
-Alla utmaningstitlar bör vara explicita och bör följa detta mönster:
+All challenge titles should be explicit and should follow this pattern:
 
-\[verb\]\[objektklausul\]
+\[verb\]\[object clause\]
 
-Här är några exempel på utmaningar:
+Here are some example challenge names:
 
-- Använd Clockwise Notation för att ange utfyllnad av ett element
-- Kondensera matriser med .reduce
-- Använd Bracket Notation för att hitta den första karaktären i en sträng
+- Use Clockwise Notation to Specify the Padding of an Element
+- Condense arrays with .reduce
+- Use Bracket Notation to Find the First Character in a String
 
-## Utmaningsbeskrivningar/instruktioner
+## Challenge descriptions/instructions
 
-Meningar bör vara tydliga och koncisa med minimal jargong. Om användning, ska jargong omedelbart definieras i vanlig engelska.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-Håll paragraferna korta (ca 1-4 meningar). Folk är mer benägna att läsa flera korta stycken än en vägg av text.
+Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Utmaningstexten ska använda den andra personen ("du") för att hjälpa till att ge den en konversationston. På så sätt verkar texten och instruktionerna tala direkt med husbilen som arbetar genom utmaningen. Försök att undvika att använda den första personen ("jag", "vi", "låtar" och "oss").
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Använd inte utgående länkar. Dessa avbryter flödet. Campare bör aldrig behöva google något under dessa utmaningar. Om det finns resurser som du tror att campare skulle dra nytta av, lägg till dem i utmaningen Guide-relaterade artikel.
+Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-Du kan lägga till diagram om det är absolut nödvändigt.
+You can add diagrams if absolutely necessary.
 
-Använd inte emojis eller emoticons i utmaningar. freeCodeCamp har ett globalt samhälle, och den kulturella betydelsen av en emoji eller emoticon kan vara annorlunda runt om i världen. Dessutom kan emojis göra olika på olika system.
+Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
-Korrekt substantiv bör använda korrekt kapitalisering när det är möjligt. Nedan följer en lista med ord som de ska visas i utmaningarna.
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
-- JavaScript (stora bokstäver i "J" och "S" och inga förkortningar)
+- JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
-- Fram-end utveckling (adjektiv form med en streck) är när du arbetar på den främre änden (substantiv form utan streck). Samma sak gäller med "back end", "full stack", och många andra sammansatta termer.
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-### 2-minutersregeln
+### The 2-minute rule
 
-Varje utmaning bör vara lösbar inom 120 sekunder av en engelskspråkig person som har slutfört de utmaningar som leder fram till den. Detta inkluderar hur lång tid det tar att läsa riktningarna/instruktionerna förstår den fröiga koden, skriva sin egen kod och få alla tester att passera.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their own code and get all the tests to pass.
 
-Om det tar längre tid än två minuter att slutföra utmaningen, har du två alternativ:
+If it takes longer than two minutes to complete the challenge, you have two options:
 
-- Förenkla utmaningen eller
-- Dela upp utmaningen i två utmaningar.
+- Simplify the challenge, or
+- Split the challenge into two challenges.
 
-2-minutersregeln tvingar dig, utmaningskonstruktören, att göra dina riktningar koncis, din frö kod tydlig och dina tester rakt framåt.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
-Vi spårar hur lång tid det tar för campare att lösa förändringar och använder denna information för att identifiera utmaningar som behöver förenklas eller delas.
+We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
 
-### Modularitet
+### Modularity
 
-Varje utmaning ska lära ut exakt ett begrepp, och det konceptet ska framgå av utmaningens namn.
+Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
 
-Vi kan förstärka tidigare täckta koncept genom repetition och variationer - till exempel introducera h1 element i en utmaning, sedan h3 element några utmaningar senare.
+We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
 
-Vårt mål är att ha tusentals utmaningar på 2 minuter. Dessa kan flöda samman och upprepa tidigare täckta begrepp.
+Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
 
-### Formatering av utmaningstext
+### Formatting challenge text
 
-Här är specifika formateringsriktlinjer för utmaningstext och exempel:
+Here are specific formatting guidelines for challenge text and examples:
 
-- Språkets sökord går in `<code>` taggar. Till exempel namn på HTML-taggar eller CSS-egenskapsnamn
-- Första instansen av ett nyckelord när det definieras, eller allmänna nyckelord (dvs "objekt" eller "oföränderlig") går in `<dfn>` taggar
-- Referenser till koddelar (t.ex. funktion, metod eller variabelnamn) ska vara inslagna i `<code>` taggar. Se exempel nedan:
-- Använd <code>parseInt</code> för att konvertera variabeln <code>realNumber</code> till ett heltal.
-- Flerraders kodblock **måste föregås av en tom rad**. Nästa rad måste börja med tre backticks följt omedelbart av ett av de [språk som stöds](https://prismjs.com/#supported-languages). För att slutföra kodblocket, måste du starta en ny rad som bara har tre backticks och **en annan tom rad**. **Obs:** Om du ska använda en exempelkod i YAML, använd `yaml` istället för `yml` för språket till höger om backticks.
+- Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
+- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
+- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+```md
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+```
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
 
-Se exempel nedan:
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
-Följande är ett exempel på kod:
+The following is an example of code:
 
 ```{language}
 
-[DIN KOD HÄR]
+[YOUR CODE HERE]
 
 ````
 ````
 
-- Ytterligare information i form av en anteckning ska formateras `<strong>Obs:</strong> Resten av anteckningstext...
-- Om flera anteckningar behövs, lista sedan alla anteckningar i separata meningar med formatet `<strong>Anteckningar:</strong> Första anteckningstexten. Andra anteckningen text.`.
-- Använd dubbla citat där det är tillämpligt
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
+- Use single-quotes where applicable
 
-## Skrivtester
+**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
 
-Utmaningar bör ha det minsta antal tester som krävs för att verifiera att en husbil förstår ett koncept.
+## Writing tests
 
-Vårt mål är att kommunicera den enda punkt som utmaningen försöker lära ut, och testa att de har förstått den punkten.
+Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
 
-Utmaningstester kan använda sig av Node.js och Chai.js påståendebibliotek. Dessutom, om det behövs, kan användargenererad kod nås i `kod`-variabeln.
+Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
 
-## Formatera seed code
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
 
-Här är specifika formateringsriktlinjer för challenge seed code:
+## Formatting seed code
 
-- Använd två mellanslag för att indentera
-- JavaScript-satser slutar med en semikolon
-- Använd dubbla citat i förekommande fall
-- Kommentarer gjorda bör ha ett mellanslag mellan kommentartecknen och kommentaren själva
+Here are specific formatting guidelines for the challenge seed code:
 
-  `// Fix this line`
+- Use two spaces to indent
+- JavaScript statements end with a semicolon
+- Use double quotes where applicable
 
-## Tips och lösningar
+### Seed code comments
 
-Varje utmaning har en `Get a Hint`-knapp, så att en användare kan komma åt alla ledtrådar / lösningar som har skapats för utmaningen. Ämnen för kursplan/lösningar finns på [vårt forum](https://forum.freecodecamp.org/c/guide) under kategorin "Guide".
+We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
 
-Om du hittar ett problem med en befintlig utmanings ledtråd, kan du komma med förslag i kategorin [bidragsgivare] (https://forum.freecodecamp.org/c/bidragsgivare) på forumet. Moderatorer och användare med förtroendenivå 3 kommer att granska kommentarerna och avgöra om de ska inkludera ändringarna i motsvarande tips/lösningsämne.
+Comments used should have a space between the comment characters and the comment themselves.  In general comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
 
-### Lägga till nya Challenge-tips/-lösningar Ämnen
+Example of valid single line JavaScript comment:
 
-Ta följande steg när du lägger till ett nytt utmaningstips/-relaterat ämne.
+```js
+// Only change code below this line
+````
 
-1. Börja med att följa samma steg för att skapa ett nytt ämne men granska nästa för att skapa titeln.
-2. Titeln på ämnet bör börja med `freeCodeCamp Challenge Guide: ` sammanfogade med den faktiska titeln på läroplanens utmaning. Till exempel, om utmaningen heter "`Chunky Monkey`", skulle ämnestiteln vara "`freeCodeCamp Challenge Guide: Chunky Monkey`".
-3. `camperbot` bör vara ägaren till dessa ämnen/inlägg, så måste du be en administratör att ändra äganderätten till huvudinlägget till `camperbot`.
-4. När det nya ämnet har skapats, skapas ett forumämne-id. Den ligger i slutet av forumets ämne URL. Detta id måste läggas till frontmaterien i kursplanens utmaningsfil via den normala pull-förfrågan processen för `Get a Hint`-knappen för att länka till ämnet.
+Example of a valid CSS comment:
 
-### Riktlinjer för innehåll av ledtrådar och lösningar
+```js
+/* Only change code above this line */
+```
 
-När man föreslår en lösning för ett kursplaneringsrelaterat ämne den fullständiga koden måste läggas till. Detta inkluderar all den ursprungliga seed koden plus alla ändringar som behövs för att klara alla Challenge-tester. Följande mall ska användas för att skapa nya ledtrådar/lösningar:
+If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
+
+```js
+var a = 3;
+var b = 17;
+var c = 12;
+
+// Only change code below this line
+a = a + 12;
+b = 9 + b;
+c = c + 7;
+```
+
+If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
+### Translation of seed code comments
+
+There are separate comment dictionaries for each language. The [English vesion of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
+
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated.
+
+```text
+Declare the myGlobal variable below this line
+```
+> [!NOTE]
+> 
+> We are working on an integration to make it possible to work on i18n for the comment dictionary.
+
+## Hints and Solutions
+
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
+
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+
+### Adding new Challenge hints/solutions Topics
+
+Take the following steps when adding a new challenge hints/solutions related topic.
+
+1. Start by following the same steps for creating a new topic but review the next for creating the title.
+2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
+4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
+
+### Guidelines for content of hints and solutions topics
+
+When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests. The following template should be used when creating new hints/solutions topics:
 
 ````md
-# Utmaningsnamn går här
+# Challenge Name Goes Here
 
 ---
 
-## Problemförklaring
+## Problem Explanation
 
-Detta sammanfattar vad som behöver göras utan att bara upprepa utmaningsbeskrivningen och/eller instruktionerna. Detta är ett valfritt avsnitt
+This summarizes what need to be done without just restating the challenge description and/or instructions. This is an optional section
 
-#### Relevanta länkar
+#### Relevant Links
 
-- [Länk Text](link_url_goes_here)
-- [Länk Text](link_url_goes_here)
-
----
-
-## Tips
-
-### Tips 1
-
-Tips går här
-
-### Tips 2
-
-Tips går här
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
 
 ---
 
-## Lösningar
+## Hints
 
-<details><summary>Lösning 1 (Klicka för att visa/dölja)</summary>
+### Hint 1
+
+Hint goes here
+
+### Hint 2
+
+Hint goes here
+
+---
+
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```js
 function myFunc() {
-  konsol. og('Hej världen!');
+  console.log('Hello World!');
 }
 ````
 
-#### Kod Förklaring
+#### Code Explanation
 
-- Kod förklaring går här
-- Kod förklaring går här
+- Code explanation goes here
+- Code explanation goes here
 
-#### Relevanta länkar
+#### Relevant Links
 
-- [Länk text](link_url_goes_here)
-- [Länk text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
 
 </details>
 ````
 
-## Testa utmaningar
+## Testing Challenges
 
-Innan du [skapa en pull-request](how -to-open-a-pull-request. d) för dina ändringar måste du bekräfta att de ändringar du gjort inte oavsiktligt orsakar problem med utmaningen. 
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
-1. För att testa alla utmaningar kör kommandot nedan från rotkatalogen
+1. To test all challenges run the below command from the root directory
 
 ````
-npm köra test: läroplan
+npm run test:curriculum
 ``` 
 
-2. Du kan också testa ett block eller ett superblock av utmaningar med dessa kommandon
+2. You can also test a block or a superblock of challenges with these commands
 
 ```
-npm kör test: läroplan --block='Grundläggande HTML och HTML5'
+npm run test:curriculum --block='Basic HTML and HTML5'
 ```
 
 ```
-npm kör test: läroplan --superblock=responsive-web-design
+npm run test:curriculum --superblock=responsive-web-design
 ```
 
-Du kan också testa en utmaning individuellt genom att utföra följande steg:
+You are also able to test one challenge individually by performing the following steps:
 
-1. Växla till katalogen 'läroplan' :
-
-   ```
-   CD-läroplan
-   ```
-
-2. Kör följande för varje utmaningsfil som du har ändrat på:
+1. Switch to the `curriculum` directory:
 
    ```
-   npm run test – -g 'utmaningens fullständiga engelska titel'
+   cd curriculum
    ```
 
-När du har verifierat att varje utmaning som du har arbetat med klarar testerna, skapa en pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
+2. Run the following for each challenge file for which you have changed:
+
+   ```
+   npm run test -- -g 'the full English title of the challenge'
+   ```
+
+Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
 > [!TIP]
-> Du kan ställa in miljövariabeln `LOCALE` i `.env` till språket i utmaningen du behöver för att testa.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
-> De för närvarande accepterade värdena är `english` och` chinese`, med `english` som standard.
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
-## Kommande Challenge-mall
+## Upcoming Challenge Template
 
-Utmaningsmallen som håller på att uppdateras till en renare, mindre nästlad struktur.  Detta har inte slutförts helt, men följande bör nära den slutliga strukturen:
+The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
 
 ````mdx
 
 ---
-id: Unik identifierare (alfanumeriska, MongoDB_id)
-titel: 'Challenge Title'
-challengeTyp: Integer, definierat i 'client/utils/challengeTypes. s`
-videoUrl: 'Url of video förklaring'
-forumÄmnesId: 12345
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: 'Challenge Title'
+challengeType: Integer, defined in `client/utils/challengeTypes.js`
+videoUrl: 'url of video explanation'
+forumTopicId: 12345
 ---
 
-importera skript från './script. dx';
+import Script from './script.mdx';
 
 ## --step-description--
 
-Beskrivning text, i markdown
+Description text, in markdown
 
 ```html
 <div> 
-  exempel kod
+  example code
 </div>
 ```
 
-## --steg-ledtrådar--
+## --step-hints--
 
 ![test-id-1]
 
-Det kommer att finnas ett godtyckligt antal tripletter av ids, instruktioner (i markdown) och kodblock.
+There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.
 
 ```js
-Kod för test en
+Code for test one
 ```
 
 ![test-id-2]
 
-Fler instruktioner i markdown syntax
+More instructions in markdown syntax
 
 ```js
-Mer kod
+More code
 ```
 
 ## --step-seed--
@@ -410,29 +491,29 @@ Mer kod
 ### --before-user-code--
 
 ```lang
-Koden utvärderades före användarens
+Code evaluated before the user’s
 ```
 
 ### --after-user-code--
 
 ```lang
-Koden utvärderas efter användaren, och strax före testerna
+Code evaluated after the user’s, and just before the tests
 ```
 
-### --seed-innehåll--
+### --seed-content--
 
 ![index-html]
 
 ```html
-Lite html
+Some html
 ```
 
 ```css
-Lite css
+Some css
 ```
 
 ```js
-Vissa js
+Some js
 ```
 
 ![index-js]
@@ -447,17 +528,17 @@ Vissa js
 
 
 <p spaces-before="0">
-  Exakt samma som frön sektionen
+  Exactly the same as the seeds section
 </p>
 
 <h2 spaces-before="0">
-  --nästa-lösning-markör
+  --next-solution-marker
 </h2>
 
 
 
 <p spaces-before="0">
-  Samma igen
+  Same again
 </p>
 
 <h1 spaces-before="0">
@@ -471,7 +552,7 @@ Vissa js
 
 
 <p spaces-before="0">
-  Frågan skulle gå hit (används endast för videoutmaningar)
+  The question would go here (only used for video challenges)
 </p>
 
 <h2 spaces-before="0">
@@ -481,19 +562,19 @@ Vissa js
 
 
 <p spaces-before="0">
-  Svar 1
+  Answer 1
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  Svar 2
+  Answer 2
 </p>
 
 <hr />
 
 <p spaces-before="0">
-  Svar 2
+  More answers
 </p>
 
 <h2 spaces-before="0">
@@ -513,13 +594,13 @@ Vissa js
 </p>
 
 <h3 spaces-before="0">
-  Användbara länkar
+  Useful Links
 </h3>
 
 
 
 <p spaces-before="0">
-  Skapa och redigera utmaningar:
+  Creating and Editing Challenges:
 </p>
 
 
@@ -527,14 +608,14 @@ Vissa js
 <ol start="1">
   <li>
     <p spaces-before="0">
-      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">Utmaningstyper</a> - vad de numeriska utmaningstyperna betyder (enum).
+      <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13">Challenge types</a> - what the numeric challenge type values mean (enum).
     </p>
   </li>
 
   
   <li>
     <p spaces-before="0">
-      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Bidra till FreeCodeCamp - Skriva ES6 Challenge Tests</a> - en video som följer <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> eftersom han bidrar till den gamla versionen av läroplanen.
+      <a href="https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s">Contributing to FreeCodeCamp - Writing ES6 Challenge Tests</a> - a video following <a href="https://twitter.com/ArrowoodTech">Ethan Arrowood</a> as he contributes to the old version of the curriculum.
     </p>
   </li>
 

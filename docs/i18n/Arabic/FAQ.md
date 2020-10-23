@@ -1,101 +1,82 @@
-### أنا جديد على GitHub و Open Source، أين يجب أن أبدأ؟
+### I am new to GitHub and Open Source. Where should I start?
 
-اقرأ ["كيفية المساهمة في دليل المصدر المفتوح"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). إنه مورد جامع من أول مشاريع ومبادئ توجيهية ملائمة للتوقيت
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
-### هل يمكنني ترجمة المنهج التعليمي لـ FreCodeCamp؟
+### Can I translate freeCodeCamp's curriculum?
 
-سنقوم بإطلاق جهود التوطين على FreCodeCamp بدءاً ب **الصينية** أولاً.
+Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon.
 
-ونحن نعتزم جعل المنهاج الدراسي متاحا بمزيد من اللغات، ولكن لا يمكننا الالتزام بأي مواعيد نهائية حتى الآن. وتؤدي عدة قيود تشغيلية مثل الموظفين والمساهمين النشطين وتكاليف حواسيب الخدمة دورا في دفع جهود التدويل (18 سنة).
+Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
 
-ونحن نعتزم البدء في بذل جهود في إطار برنامج العمل 18n بهذه اللغات: العربية والبرتغالية. الروسية والإسبانية (دون ترتيب محدد) بعد أن أصدرنا المنهج الدراسي باللغة الصينية.
+### How can I report a new bug?
 
-**لماذا تركز على المناهج الصينية أولاً؟**
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-الصين هي أكبر المناطق الديمغرافية، في جمهورنا غير الناطقين بالإنجليزية الأصلية. حاليا، لدينا مئات الآلاف من المستخدمين باستخدام نسخة قديمة من المنصة. والتركيز على المنهج الدراسي الصيني سيعطينا تقديرا للسوقيات المشاركة في الـ i18n.
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-وسوف نركز على أمريكا اللاتينية بوصفها المنطقة الديمغرافية للبرتغالية والإسبانية.
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-وليس لدينا أي خطط لـ i18n في المستقبل المنظور لأي لغة أخرى غير ما ورد أعلاه.
+### How can I report a security issue?
 
-ونحن لا نشجعكم على العمل بشأن الـ i18 باللغات المذكورة أعلاه. ويمكننا أن نقبل طلبات السحب دون أن نتوقع أي مواعيد زمنية لنشر القوات.
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### كيف يمكنني الإبلاغ عن خطأ جديد؟
+### I am a student. Can I work on a feature for academic credits?
 
-إذا كنت تعتقد أنك وجدت خطأ، اقرأ أولاً مقالة ["ساعدني في العثور على بوج"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) واتبع تعليماتها.
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-إذا كنت واثقا من أنه خطأ جديد، قم بالمضي قدما و أنشئ مشكلة GitHub جديدة. تأكد من تضمين أكبر قدر ممكن من المعلومات حتى نتمكن من تكرار الخطأ. لدينا نموذج مشكلة محدد مسبقاً لمساعدتك من خلال هذا.
+We request you to plan ahead and work on code contributions with this in mind.
 
-يرجى ملاحظة أنه سيتم إغلاق أي مشاكل تبحث عن مساعدة في الترميز في التحدي. أما تعقب القضايا فيتعلق حصراً بالقضايا والمناقشات ذات الصلة بالترادف. كلما كان هناك شك، يجب عليك [طلب المساعدة في المنتدى](https://forum.freecodecamp.org) قبل إعداد التقرير.
+### What do these different labels that are tagged on issues mean?
 
-### كيف يمكنني الإبلاغ عن مسألة أمنية؟
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-الرجاء عدم إنشاء مشاكل GitHub للمشاكل الأمنية. بدلاً من ذلك، يرجى إرسال بريد إلكتروني إلى `security@freecodecamp.org` وسوف ننظر فيه فوراً.
+### Where do I start if I want to work on an issue?
 
-### أنا طالب، هل يمكنني أو فريقنا العمل على ميزة للائتمانات الأكاديمية؟
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-نعم، بالتأكيد.
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are special issues that are designed for people who have not contributed to the freeCodeCamp codebase before.
 
-وفي حين أننا منفتحون على جميع المساهمات، يرجى ملاحظة أننا غير قادرين على الالتزام بأي جداول زمنية قد تكون مطلوبة في الكلية أو الجامعة الخاصة بك. ونحن نتلقى العديد من طلبات السحب وإسهامات الرموز من مطوري المتطوعين، ونحن نحترم وقتهم وجهودهم. ولن يكون بوسعنا أن نولي أي رأي رسمي أي اهتمام خاص ليكون منصفا للجميع.
+### I found a typo. Should I report an issue before I can make a pull request?
 
-ونطلب منكم أن تخطططوا مسبقا وأن تعملوا على وضع هذه الميزة نصب أعيننا.
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-### ماذا تعني هذه التسميات المختلفة الموسومة على المشكلات؟
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-مشرفو التعليمات البرمجية [مقارنة](https://en.wikipedia.org/wiki/Software_bug#Bug_management) يصدرون الطلبات ويسحبون الطلبات بناء على أولويتهم وشدتهم وعوامل أخرى. يمكنك [العثور على مسرد كامل لمعانيهم هنا](https://github.com/freecodecamp/freecodecamp/labels).
+### How can I get an issue assigned to me?
 
-### أين أبدأ إذا أردت أن أعمل بشأن إحدى القضايا؟
+We typically do not assign issues to anyone other than long-time contributors.  Instead, we follow the below policy to be fair to everyone:
 
-يجب أن تمر عبر [**`المساعدة المطلوبة`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) أو [**`المؤقت الأول فقط`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) من أجل نظرة عامة سريعة لما هو متاح لك للعمل عليه.
+1. We are most likely to merge the first pull request that addresses the issue.
+2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
+   - Did you include tests?
+   - Did you catch all usecases?
+   - Did you ensure all tests pass, and confirm everything works locally?
+3. Finally, we give priority to pull requests which follow our recommended guidelines.
+   - Did you follow the pull request checklist?
+   - Did you give your pull request a meaningful title?
 
-> [!تلميح] **`ساعد`** المشكلات المطلوبة ، ولا تحتاج إلى البحث عن إذن قبل العمل عليها. ومع ذلك، فإن المشكلات مع **`التسمية الأولى فقط`** محفوظة للأشخاص الذين لم يساهموا في رمز FreCodeCamp من قبل. وإذا كانت هذه المسائل تفتقر إلى الوضوح بشأن ما ينبغي عمله، فلا تتردد في طرح الأسئلة في التعليقات.
+### I am stuck on something that is not included in this documentation.
 
-### وجدت طابعاً، هل يجب أن أبلغ عن مشكلة قبل أن أتمكن من تقديم طلب سحب؟
-
-بالنسبة للطباعيات وغيرها من التغييرات في الصياغة، يمكنك فتح طلبات السحب مباشرة دون إنشاء مشكلة أولاً. أما القضايا فتتعلق بقدر أكبر بمناقشة المشاكل الأكبر المرتبطة بالجوانب البرمجية أو الهيكلية للمناهج الدراسية.
-
-ومع ذلك، يرجى ذكر التفاصيل، والسياق، وما إلى ذلك في مجال وصف طلب السحب لمساعدتنا على فهم واستعراض مساهمتك حتى من أجل إجراء تغييرات طفيفة.
-
-### كيف أحصل على مشكلة تم تعيينها لي؟
-
-وعادة ما لا نحيل المسائل إلى أي شخص آخر غير المساهمين منذ وقت طويل لتجنب العروض الغامضة التي لا تظهر على الإطلاق. وبدلا من ذلك، نتبع السياسة التالية لتكون عادلة للجميع:
-
-1. يفضل دمج طلب السحب الأول لأي مشكلة.
-2. في حالة طلبات السحب المتعددة لنفس المشكلة، نعطي الأولوية لجودة الرمز في طلبات السحب .
-   - هل قمت بإدراج اختبارات؟
-   - هل حصلت على جميع الاستخدامات؟
-   - هل تأكد من مرور جميع الاختبارات، وأكدت أن كل شيء يعمل محليا؟
-3. وأخيرا، نحن نؤيد طلبات السحب التي تتبع مبادئنا التوجيهية الموصى بها.
-   - هل اتبعت قائمة طلب السحب؟
-   - هل قمت بتسمية عنوان طلب السحب الخاص بك؟
-
-أنت لست بحاجة إلى أي إذن للمشكلات التي تم وضع علامة عليها `المساعدة المطلوبة` أو `المؤقت الأول فقط` كما هو موضح سابقاً.
-
-اتبع المبادئ التوجيهية بعناية وفتح طلب الجذب.
-
-### وأنا عالقة بشأن شيء غير مدرج في هذه الوثائق.
-
-**لا تتردد في طلب المساعدة في:**
+**Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The public `Contributors` [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 - The `#Contributors` channel on [our Discord community server](https://discord.gg/pFspAhS).
 
-ونحن متحمسون لمساعدتك في المساهمة في أي من المواضيع التي تودون العمل بشأنها. لا تتردد في طرح أسئلة علينا بشأن المواضيع ذات الصلة، وسوف يسعدنا أن نوضح ذلك. تأكد من البحث عن استفسارك قبل نشر استعلام جديد.
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-كن مهذباً وصبراً. مجتمعنا من المتطوعين والمديرين دائمًا ما يدور لإرشادك من خلال الاستفسارات الخاصة بك.
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-**المساعدة الإضافية**
+**Additional Assistance:**
 
-إذا كان لديك استفسارات حول المكدس ، هندسة الكود ، لا تتردد في التواصل مع فريق موظفينا:
+If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| الموظفون             | إرسال رسالة في المنتدى                                                       |
-|:-------------------- |:---------------------------------------------------------------------------- |
-| مروجيش محباترا       | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
-| أحمد عبد الشاب       | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
-| Kristofer Koishigawa | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
-| توم موندلوك          | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
-| أوليفر إيتون ويليامز | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
-| رانديل داوسون        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
+| Staff                 | Send message on Forum                                                        |
+|:--------------------- |:---------------------------------------------------------------------------- |
+| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
+| Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
+| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
+| Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
+| Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
+| Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 
-**يمكنك إرسال بريد إلكتروني لموظفي المطور في: `dev[at]freecodecamp.org`**
+**You can email our developer staff at: `dev[at]freecodecamp.org`**

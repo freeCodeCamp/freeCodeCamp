@@ -1,326 +1,326 @@
-Följ dessa riktlinjer för att sätta upp freeCodeCamp lokalt på ditt system. Detta rekommenderas starkt om du vill bidra regelbundet.
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-För en del av arbetsflödena för bidrag behöver du ha freeCodeCamp som körs lokalt. Till exempel förhandsgranskar kodningsutmaningar eller felsökning och rättning av buggar i kodbasen.
+Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
-> [!TIP] Om du inte är intresserad av att sätta upp freeCodeCamp lokalt överväg att använda Gitpod, en gratis online dev-miljö.
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
 > 
-> [![Öppna i Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 > 
-> (Startar en kodfärdig utvecklingsmiljö för freeCodeCamp i din webbläsare.)
+> (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
-## Förbered din lokala maskin
+### How to prepare your local machine
 
-Börja med att installera nödvändig programvara för ditt operativsystem.
+Start by installing the prerequisite software for your operating system.
 
-Vi stödjer i första hand utvecklingen på **\*nix** system. Vår personal och våra medarbetare arbetar regelbundet med kodbasen med verktyg som är installerade på Ubuntu och macOS.
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
-Vi stöder också Windows 10 via WSL2, som du kan förbereda genom att [läsa denna guide](/how-to-setup-wsl).
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](/how-to-setup-wsl).
 
-Vissa medlemmar i gemenskapen utvecklas också på Windows 10 inbyggt med Git för Windows (Git Bash), och andra verktyg installerade på Windows. Vi har inte officiellt stöd för en sådan installation just nu, rekommenderar vi att använda WSL2 istället.
+Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-**Förutsättningar:**
+**Prerequisites:**
 
-| Förutsättning                                                                                 | Version | Anteckningar                                                                                                                                                                               |
-| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Node.js](http://nodejs.org)                                                                  | `12.x`  | [LTS Schema](https://github.com/nodejs/Release#release-schedule)                                                                                                                           |
-| npm (levereras med nod)                                                                       | `6.x`   | Har inte LTS-utgåvor, vi använder versionen tillsammans med Node LTS                                                                                                                       |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Versionsfakta](https://docs.mongodb.com/manual/release-notes/), Notera: Vi är just nu på `3,6`, en [uppgradering är planerad](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
+| Prerequisite                                                                                  | Version | Notes                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                    |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS                                                                                                                  |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
 
-> [!DANGER] Om du har en annan version, vänligen installera den rekommenderade versionen. Vi kan endast stödja installationsproblem för rekommenderade versioner. Se [felsökning](#troubleshooting) för detaljer.
+> [!DANGER] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
-Om Node.js redan är installerat på din maskin, kör följande kommandon för att validera versionerna:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
-nod -v
+node -v
 npm -v
 ```
 
-> [!TIP] Vi rekommenderar starkt att uppdatera till de senaste stabila utgåvorna av programvaran som listas ovan, även känd som Long Term Support (LTS) utgåvor.
+> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-När du har installerat förutsättningarna måste du förbereda din utvecklingsmiljö. Detta är vanligt för många utvecklingsarbetsflöden, och du behöver bara göra detta en gång.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-**Följ dessa steg för att få din utvecklingsmiljö klar:**
+**Follow these steps to get your development environment ready:**
 
-1. Installera [Git](https://git-scm.com/) eller din favorit Git klient, om du inte redan har det. Uppdatera till den senaste versionen; den version som levereras med ditt OS kan vara föråldrad.
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (Valfritt men rekommenderat) [Ställ in en SSH-nyckel](https://help.github.com/articles/generating-an-ssh-key/) för GitHub.
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. Installera en kodredigerare som du väljer.
+3. Install a code editor of your choice.
 
-   Vi rekommenderar starkt att du använder [Visual Studio-kod](https://code.visualstudio.com/) eller [Atom](https://atom.io/). Dessa är stora, fria och öppen källkod redaktörer.
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. Ställ in linting för din kodredigerare.
+4. Set up linting for your code editor.
 
-   Du bör ha [ESLint körs i din editor](http://eslint.org/docs/user-guide/integrations.html), och det kommer att markera allt som inte överensstämmer med [freeCodeCamps JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP] Vänligen ignorera inga linting fel. De är avsedda att **hjälpa** dig och att säkerställa en ren och enkel kodbas.
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## Forka utvecklingskatalogen på GitHub
+## Fork the repository on GitHub
 
-[Forkning](https://help.github.com/articles/about-forks/) är ett steg där du får din egen kopia av freeCodeCamps huvudarkiv (a.k.a _repo_) på GitHub.
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-Detta är viktigt, eftersom det gör att du kan arbeta på din egen kopia av freeCodeCamp på GitHub, eller för att ladda ner (klona) ditt utvecklingskatalog för att arbeta lokalt. Senare kommer du att kunna begära att ändringar dras in i huvudarkivet från din gaffel via en pull-förfrågan (PR).
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-> [!TIP] Huvudarkivet på `https://github.com/freeCodeCamp/freeCodeCamp` kallas ofta för `uppströms` förrådet.
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
 > 
-> Din fork på `https://github.com/YOUR_USER_NAME/freeCodeCamp` kallas ofta `ursprung`.
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
 
-**Följ dessa steg för att fork `https://github.com/freeCodeCamp/freeCodeCamp` utvecklingskatalog:**
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
 
-1. Gå till freeCodeCamp repository på GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 
-2. Klicka på "Fork" knappen i övre högra hörnet av gränssnittet ([Mer information Här](https://help.github.com/articles/fork-a-repo/))
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 
-3. Efter att utvecklingskatalogen har blivit forkad kommer du att tas till din kopia av freeCodeCamp-arkivet på `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 <details>
    <summary>
-      Hur man fork freeCodeCamp på GitHub (skärmdump)
+      How to fork freeCodeCamp on GitHub (screenshot)
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Hur man fork freeCodeCamp på GitHub" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
-## Klona din gaffel från GitHub
+## Clone your fork from GitHub
 
-[Kloning](https://help.github.com/articles/cloning-a-repository/) är där du **laddar ner** en kopia av ett arkiv från en `avlägsen` plats som antingen ägs av dig eller av någon annan. I ditt fall är denna fjärranslutning din `fork` av freeCodeCamps utvecklingskatalog som bör vara tillgänglig på `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
 
-Kör dessa kommandon på din lokala maskin:
+Run these commands on your local machine:
 
-1. Öppna en Terminal / Kommandotolken / Shell i din projektkatalog
+1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-   _dvs.: `/yourprojectsdirectory/`_
+   _i.e.: `/yourprojectsdirectory/`_
 
-2. Klona din fork av freeCodeCamp, ersätter `YOUR_USER_NAME` med ditt GitHub användarnamn
+2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
    ```console
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-Detta kommer att ladda ner hela freeCodeCamp-arkivet till din projektkatalog.
+This will download the entire freeCodeCamp repository to your projects directory.
 
-Notera: `--depth=1` skapar en ytlig klon av din gaffel, med bara den senaste historiken/commit.
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Konfigurera synkronisering från förälder
+## Set up syncing from parent
 
-Nu när du har laddat ner en kopia av din fork, måste du ställa in en `uppströms` fjärrkontroll till förälderförrådet.
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[Som tidigare nämnts](#fork-the-repository-on-github), huvudarkivet refereras `uppströms` repository. Din gaffel kallad `ursprung` förrådet.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
 
-Du behöver en referens från din lokala klon till `uppströms` utvecklingskatalogen utöver `ursprung` utvecklingskatalogen. Detta är så att du kan synkronisera förändringar från huvudarkivet utan krav på forking och kloning upprepade gånger.
+You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Ändra katalog till den nya freeCodeCamp-katalogen:
+1. Change directory to the new freeCodeCamp directory:
 
    ```console
    cd freeCodeCamp
    ```
 
-2. Lägg till en fjärrreferens till det huvudsakliga freeCodeCamp-arkivet:
+2. Add a remote reference to the main freeCodeCamp repository:
 
    ```console
-   git remote lägg till upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+   git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-3. Se till att konfigurationen ser korrekt ut:
+3. Ensure the configuration looks correct:
 
    ```console
-   git fjärr -v
+   git remote -v
    ```
 
-   Utgången ska se ut ungefär som nedan:
+   The output should look something like below:
 
    ```console
-   origin https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-   origin https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-   upstream https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-   upstream https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Running freeCodeCamp lokalt
+## Running freeCodeCamp locally
 
-Nu när du har en lokal kopia av freeCodeCamp, kan du följa dessa instruktioner för att köra den lokalt. Detta kommer att tillåta dig att:
+Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
-- Förhandsgranska redigeringar till sidor som de skulle visas på lärplattformen.
-- Arbeta med UI relaterade frågor och förbättringar.
-- Felsök och åtgärda problem med applikationsservrar och klientappar.
+- Preview edits to pages as they would appear on the learning platform.
+- Work on UI related issues and enhancements.
+- Debug and fix issues with the application servers and client apps.
 
-Om du stöter på problem, först utföra en webbsökning för ditt problem och se om det redan har besvarats. Om du inte hittar en lösning, sök på vår [GitHub issues-sida](https://github.com/freeCodeCamp/freeCodeCamp/issues) för en lösning och rapportera problemet om det ännu inte har rapporterats.
+If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-Och som alltid, välkommen att hoppa på till vår [bidragsgivare Chattrum på Gitter](https://gitter.im/FreeCodeCamp/Contributors) eller [vår Discord-server](https://discord.gg/pFspAhS), för snabba frågor.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Du kan hoppa över att köra freeCodeCamp lokalt om du helt enkelt redigerar filer. Till exempel, utföra en `rebase`, eller lösa `sammanfoga` konflikter.
+> [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
 > 
-> Du kan alltid återgå till denna del av anvisningarna senare. Du bör **bara** hoppa över detta steg om du inte behöver köra apparna på din maskin.
+> You can always return to this part of the instructions later. You should **only** skip this step if you do not need to run the apps on your machine.
 > 
-> [Hoppa över till att göra ändringar](#making-changes-locally).
+> [Skip to making changes](#making-changes-locally).
 
-### Konfigurerar beroenden
+### Configuring dependencies
 
-#### Steg 1: Ställ in miljövariabelfilen
+#### Step 1: Set up the environment variable file
 
-Standard API-nycklar och miljövariabler lagras i filen `sample.env`. Denna fil måste kopieras till en ny fil som heter `.env` som nås dynamiskt under installationssteget.
+The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
 ```console
-# Skapa en kopia av "sample.env" och namnge det ".env".
-# Populera det med nödvändiga API-nycklar och hemligheter:
+# Create a copy of the "sample.env" and name it ".env".
+# Populate it with the necessary API keys and secrets:
 
 # macOS / Linux
-cp-prov. nv .env
+cp sample.env .env
 
 # Windows
-kopiera sample.env .env
+copy sample.env .env
 ```
 
-Nycklarna i filen `.env` är _inte_ krävs för att kunna köra appen lokalt. Du kan lämna standardvärdena kopierade över från `sample.env` as-is.
+The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
-> [!TIP] Tänk på om du vill använda tjänster som Auth0 eller Algolia, du måste skaffa dina egna API-nycklar för dessa tjänster och redigera posterna i enlighet med `. nv` fil.
+> [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Steg 2: Installera beroenden
+#### Step 2: Install dependencies
 
-Detta steg kommer att installera de beroenden som krävs för att programmet ska köra:
+This step will install the dependencies required for the application to run:
 
 ```console
 npm ci
 ```
 
-#### Steg 3: Starta MongoDB och säd databasen
+#### Step 3: Start MongoDB and seed the database
 
-Innan du kan köra programmet lokalt, måste du starta MongoDB tjänsten.
+Before you can run the application locally, you will need to start the MongoDB service.
 
-> [!NOTE] Om du inte har MongoDB igång i en annan installation än standardinställningen, URL lagrad som `MONGOHQ_URL` värde i `. nv` filen bör fungera bra. Om du använder en anpassad konfiguration, ändra detta värde efter behov.
+> [!NOTE] Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
 
-Starta MongoDB-servern i en separat terminal:
+Start the MongoDB server in a separate terminal:
 
-- På macOS & Ubuntu:
+- On macOS & Ubuntu:
 
   ```console
   mongod
   ```
 
-- I Windows måste du ange hela sökvägen till `monguden` binär
+- On Windows, you must specify the full path to the `mongod` binary
 
   ```console
-  "C:\Program Filer\MongoDB\Server\3.6\bin\mongod"
+  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
   ```
 
-  Se till att ersätta `3.6` med den version du har installerat
+  Make sure to replace `3.6` with the version you have installed
 
-> [!TIP] Du kan undvika att behöva starta MongoDB varje gång genom att installera den som en bakgrundstjänst. Du kan [lära dig mer om det i deras dokumentation för ditt operativsystem](https://docs.mongodb.com/manual/administration/install-community/)
+> [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-Därefter kan vi säda databasen. I detta steg kör vi kommandot nedan som fyller MongoDB-servern med några initiala datamängder som krävs av tjänster. Dessa inkluderar bland annat några scheman.
-
-```console
-npm kör seed
-```
-
-#### Steg 4: Starta gratisCodeCamp-klientprogrammet och API-servern
-
-Du kan nu starta upp API-servern och klientprogrammen.
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```console
-Npm kör utveckla
+npm run seed
 ```
 
-Detta enda kommando kommer att skjuta upp alla tjänster, inklusive API-servern och klientprogram som finns tillgängliga för dig att arbeta på.
+#### Step 4: Start the freeCodeCamp client application and API server
 
-> [!NOTE] Öppna en webbläsare och **besök <http://localhost:8000>**. Om appen laddar, grattis – du är helt klar! Du har nu en kopia av freeCodeCamps hela inlärningsplattform som körs på din lokala maskin.
+You can now start up the API server and the client applications.
 
-> [!TIP] API-servern serverar API:er på `http://localhost:3000`. Gatsby appen betjänar klientprogrammet på `http://localhost:8000`
+```console
+npm run develop
+```
 
-> Om du besöker <http://localhost:3000/explorer> bör du se tillgängliga API:er.
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-## Logga in med en lokal användare
+> [!NOTE] Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-Din lokala inställning fyller automatiskt en lokal användare i databasen. Om du klickar på `Logga in` -knappen kommer du automatiskt att autentiseras i den lokala applikationen.
+> [!TIP] The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
-Att komma åt användarportföljen är dock lite knepigt. Under utveckling, Gatsby tar över servering av klientsidor och därför får du en `404` sida för användarportföljen när du arbetar lokalt.
+> If you visit <http://localhost:3000/explorer> you should see the available APIs.
 
-Klicka bara på **"Förhandsgranska Anpassad 404 sida"** knappen kommer att vidarebefordra dig till rätt sida.
+## Sign in with a local user
+
+Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
+
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+
+Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
    <summary>
-      Hur du loggar in när du arbetar lokalt (skärmdump)
+      How to sign in when working locally (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Hur du loggar in när du arbetar lokalt" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
 </details>
 
-## Gör ändringar lokalt
+## Making changes locally
 
-Du kan nu göra ändringar i filer och binda dina ändringar till din lokala klon av din gaffel.
+You can now make changes to files and commit your changes to your local clone of your fork.
 
-Följ dessa steg:
+Follow these steps:
 
-1. Validera att du är på `master` branchen:
+1. Validate that you are on the `master` branch:
 
    ```console
    git status
    ```
 
-   Du bör få en utgång som denna:
+   You should get an output like this:
 
    ```console
-   På filialmästare
-   Din filial är uppdaterad med 'origin/master'.
+   On branch master
+   Your branch is up-to-date with 'origin/master'.
 
-   inget att begå, arbetskatalogen ren
+   nothing to commit, working directory clean
    ```
 
-   Om du inte är på master eller om din arbetskatalog inte är ren, lösa eventuella utestående filer/commits och kassan `master`:
+   If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
 
    ```console
-   git kassan master
+   git checkout master
    ```
 
-2. Synkronisera de senaste ändringarna från freeCodeCamp uppströms `master` branch till din lokala huvudkontor:
+2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
 
-   > [!VARNING] Om du har några utestående pull-förfrågan som du gjort från `huvuddelen` av din fork, du kommer att förlora dem i slutet av detta steg.
+   > [!WARNING] If you have any outstanding pull request that you made from the `master` branch of your fork, you will lose them at the end of this step.
    > 
-   > Du bör se till att din pull-förfrågan slås samman av en moderator innan du utför detta steg. För att undvika detta scenario, bör du **alltid** arbeta på en gren annan än `befälhavaren`.
+   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `master`.
 
-   Detta steg **kommer att synkronisera de senaste ändringarna** från huvudarkivet för freeCodeCamp. Det är viktigt att du bygger om din filial ovanpå den senaste `uppströms/master` så ofta som möjligt för att undvika konflikter senare.
+   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
 
-   Uppdatera din lokala kopia av freeCodeCamp uppströms utvecklingskatalog:
-
-   ```console
-   git hämta uppströms
-   ```
-
-   Svårt återställ din huvudgren med freeCodeCamp-mästaren:
+   Update your local copy of the freeCodeCamp upstream repository:
 
    ```console
-   git återställning --hard upstream/master
+   git fetch upstream
    ```
 
-   Tryck din huvudgren till ditt ursprung för att ha en ren historik på din gaffel på GitHub:
+   Hard reset your master branch with the freeCodeCamp master:
+
+   ```console
+   git reset --hard upstream/master
+   ```
+
+   Push your master branch to your origin to have a clean history on your fork on GitHub:
 
    ```console
    git push origin master --force
    ```
 
-   Du kan validera din nuvarande mästare matchar uppströms/mästaren genom att göra en diff:
+   You can validate your current master matches the upstream/master by performing a diff:
 
    ```console
-   git diff uppströms/master
+   git diff upstream/master
    ```
 
-   Resultatet bör vara tomt.
+   The resulting output should be empty.
 
-3. Skapa en ny ny gren:
+3. Create a fresh new branch:
 
-   Att arbeta på en separat avdelning för varje ärende hjälper dig att hålla din lokala arbetskopia ren. Du bör aldrig arbeta på `mästaren`. Detta kommer att jorda din kopia av freeCodeCamp och du kan behöva börja om med en färsk klon eller gaffel.
+   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
-   Kontrollera att du är på `master` som förklarats tidigare, och grenen därifrån:
+   Check that you are on `master` as explained previously, and branch off from there:
 
    ```console
-   git kassan -b fix/update-guide-for-xyz
+   git checkout -b fix/update-guide-for-xyz
    ```
 
-   Ditt grennamn bör börja med en `fix/`, `feat/`, `docs/`, etc. Undvik att använda problem nummer i grenar. Håll dem korta, meningsfulla och unika.
+   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
-   Några exempel på bra grennamn är:
+   Some examples of good branch names are:
 
    ```md
    fix/update-challenges-for-react
@@ -330,217 +330,217 @@ Följ dessa steg:
    translate/add-spanish-basic-html
    ```
 
-4. Redigera sidor och arbeta med kod i din favorit textredigerare.
+4. Edit pages and work on code in your favorite text editor.
 
-5. När du är nöjd med ändringarna bör du eventuellt köra freeCodeCamp lokalt för att förhandsgranska ändringarna.
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Kontrollera att du åtgärdar eventuella fel och kontrollera formateringen av dina ändringar.
+6. Make sure you fix any errors and check the formatting of your changes.
 
-7. Kontrollera och bekräfta filerna du uppdaterar:
+7. Check and confirm the files you are updating:
 
    ```console
    git status
    ```
 
-   Detta bör visa en lista med `unstaged` filer som du har redigerat.
+   This should show a list of `unstaged` files that you have edited.
 
    ```console
-   På grenfunktion/dokumentation
-   Din filial är uppdaterad med 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Ändringar är inte iscensatta:
-   (använd "git add/rm <file>... för att uppdatera vad som kommer att anges)
-   (använd "git checkout -- <file>. ." för att kassera ändringar i arbetskatalogen)
+   Changes not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
 
-       modifierade: ANSLUTNING. d
-       ändrad: docs/README.md
-       ändrad: docs/how to setup-freecodecamp-locally. d
-       ändrad: docs/how to work-on-guide-articles.md
-...
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
+   ...
    ```
 
-8. Steg ändringarna och gör ett åtagande:
+8. Stage the changes and make a commit:
 
-   I det här steget ska du bara markera filer som du har redigerat eller lagt till själv. Du kan göra en återställning och lösa filer som du inte har för avsikt att ändra om det behövs.
+   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
    ```console
    git add path/to/my/changed/file.ext
    ```
 
-   Eller så kan du lägga till alla `unstaged` filer till mellanlagringen området:
+   Or you can add all the `unstaged` files to the staging area:
 
    ```console
    git add .
    ```
 
-   Endast de filer som flyttades till mellanlagringen kommer att läggas till när du gör en incheckning.
+   Only the files that were moved to the staging area will be added when you make a commit.
 
    ```console
    git status
    ```
 
-   Utgång:
+   Output:
 
    ```console
-   På grenfunktion/dokumentation
-   Din filial är uppdaterad med 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Ändringar som ska lämnas in:
-   (använd "git reset HEAD <file>..." to unstage)
+   Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
 
-       modifierad: CONTRIBUTING.md
-       modifierad: docs/README.md
-       modifierad: docs/how-to-setup-freecodecamp-locally.md
-       modifierad: docs/how-to-work-on-guide-articles.md
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
    ```
 
-   Nu kan du utföra dina ändringar med ett kort meddelande som så:
+   Now, you can commit your changes with a short message like so:
 
    ```console
    git commit -m "fix: my short commit message"
    ```
 
-   Några exempel:
+   Some examples:
 
    ```md
-   fix: uppdatera guide artikel för Java - för loop
-   funktion: lägg till guide artikel för alexa färdigheter
+   fix: update guide article for Java - for loop
+   feat: add guide article for alexa skills
    ```
 
-   Valfritt:
+   Optional:
 
-   Vi rekommenderar starkt att göra en konventionell begå budskap. Detta är en bra metod som du kommer att se på några av de populära Open Source-arkiven. Som utvecklare uppmuntrar detta dig att följa vanliga metoder.
+   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
 
-   Några exempel på konventionella commit meddelanden är:
+   Some examples of conventional commit messages are:
 
    ```md
-   fix: uppdatera HTML guide artikeln
-   fix: uppdatera bygga skript för Travis-CI
-   funktion: lägg till artikel för JavaScript hissa
-   dokument: uppdatera bidragande riktlinjer
+   fix: update HTML guide article
+   fix: update build scripts for Travis-CI
+   feat: add article for JavaScript hoisting
+   docs: update contributing guidelines
    ```
 
-   Behåll dessa kort, inte mer än 50 tecken. Du kan alltid lägga till ytterligare information i beskrivningen av incheckningsmeddelandet.
+   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-   Detta tar inte längre tid än ett okonventionellt meddelande som "uppdatera fil" eller "lägg till index.md"
+   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-   Du kan lära dig mer om varför du ska använda konventionella commits [här](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. Om du inser att du behöver redigera en fil eller uppdatera commit-meddelandet efter att du gjort en commit kan du göra det efter att ha redigerat filerna med:
+9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
    ```console
-   git commit --ändra
+   git commit --amend
    ```
 
-   Detta kommer att öppna en standard textredigerare som `nano` eller `vi` där du kan redigera kommandot titel och lägga till/redigera beskrivningen.
+   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
-10. Därefter kan du driva dina ändringar till din gaffel:
+10. Next, you can push your changes to your fork:
 
     ```console
-    git push-ursprung branch/namn-här
+    git push origin branch/name-here
     ```
 
-## Föreslå en Pull-begäran (PR)
+## Proposing a Pull Request (PR)
 
-När du har åtagit dig dina ändringar, kolla här för [hur du öppnar en Pull Request](how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## Snabb kommandoreferens
+## Quick commands reference
 
-En snabb referens till de kommandon som du behöver när du arbetar lokalt.
+A quick reference to the commands that you will need when working locally.
 
-| kommando                                                        | beskrivning                                                                         |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm ci`                                                        | Installerar / installera om alla beroenden och bootstraps de olika tjänsterna.      |
-| `npm kör seed`                                                  | Analyserar alla Challenge-markdown-filer och sätter in dem i MongoDB.               |
-| `Npm kör utveckla`                                              | Startar gratisCodeCamp API-server och klientprogram.                                |
-| `NPM test`                                                      | Kör alla JS-tester i systemet, inklusive klient, server, lint och Challenge-tester. |
-| `npm kör test: klient`                                          | Kör klienttestsviten.                                                               |
-| `npm köra test: läroplan`                                       | Kör testsviten för läroplanerna.                                                    |
-| `npm kör test: läroplan --block='Grundläggande HTML och HTML5'` | Testa ett specifikt block.                                                          |
-| `npm kör test: läroplan --superblock='responsive-web-design'`   | Testa en specifik SuperBlock.                                                       |
-| `npm kör test-läroplan-full utgång`                             | Kör testsviten för kursplaner, utan att behöva borra efter det första felet         |
-| `npm kör test:server`                                           | Kör testsviten för servern.                                                         |
-| `Npm kör e2e`                                                   | Kör Cypress slut för att avsluta tester.                                            |
-| `Npm kör ren`                                                   | Avinstallerar alla beroenden och rensar upp cacher.                                 |
+| command                                                        | description                                                                         |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
+| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
+| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
-## Felsökning
+## Troubleshooting
 
-### Problem med att installera rekommenderade förutsättningar
+### Issues with installing the recommended prerequisites
 
-Vi utvecklar regelbundet på de senaste eller mest populära operativsystem som macOS 10.15 eller senare, Ubuntu 18.04 eller senare och Windows 10 (med WSL2).
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later and Windows 10 (with WSL2).
 
-Det rekommenderas att du undersöker ditt specifika problem på resurser som Google, Stack Overflow och Stack Exchange. Det finns en god chans att någon har ställts inför samma problem och det finns redan ett svar på din specifika fråga.
+It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-Om du är på ett annat operativsystem och/eller fortfarande stöter på problem, se [få hjälp](#getting-help).
+If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
-> [!VARNING]
+> [!WARNING]
 > 
-> Undvik att skapa GitHub-problem för nödvändiga problem. De ligger utanför detta projekts räckvidd.
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### Problem med användargränssnittet, teckensnitt, byggfel etc.
+### Issues with the UI, Fonts, build errors etc.
 
-Om du stöter på problem med användargränssnittet, typsnitt eller se byggfel en rensning kan vara användbart:
+If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
 ```console
-npm kör ren
+npm run clean
 npm ci
 npm run seed
-npm run utveckla
+npm run develop
 ```
 
-ELLER
+OR
 
-Använd genvägen
-
-```
-Npm kör rena-och-utveckla
-```
-
-Om du fortsätter att möta problem med bygget, städa upp arbetsytan rekommenderas.
-
-Använd `git clean` i interativt läge:
+Use the shortcut
 
 ```
-git ren -ifdX
+npm run clean-and-develop
+```
+
+If you continue to face issues with the build, cleaning up the workspace is recommend.
+
+Use `git clean` in interative mode:
+
+```
+git clean -ifdX
 ```
 
 <details>
    <summary>
-      Hur man rensar git ospårade filer (skärmdump)
+      How to clean git untracked files (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Hur man rensar git ospårade filer" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
-### Problem med API, inloggning, Challenge-inlämningar etc.
+### Issues with API, Login, Challenge Submissions, etc.
 
-Om du inte kan logga in, och istället ser du en banner med ett felmeddelande som det kommer att rapporteras till freeCodeCamp, dubbelkolla att din lokala port `3000` inte används av ett annat program.
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-**På Linux / macOS / WSL på Windows - Från Terminal:**
+**On Linux / macOS / WSL on Windows - From Terminal:**
 
 ```console
-netstat -ab <unk> grep "3000"
+netstat -ab | grep "3000"
 
-tcp4 0 0.0.0:3000 DESKTOP LISTEN
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**På Windows - Från förhöjd PowerShell:**
+**On Windows - From Elevated PowerShell:**
 
 ```powershell
-netstat -ab <unk> Välj-String "3000"
+netstat -ab | Select-String "3000"
 
-TCP 0.0.0:3000 DESKTOP LISTENING
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
-### Problem med att installera beroenden
+### Issues installing dependencies
 
-Om du får fel när du installerar beroenden, se till att du inte befinner dig i ett begränsat nätverk eller att dina brandväggsinställningar inte hindrar dig från att komma åt resurser.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-Första gången installationen kan ta en stund beroende på din nätverksbandbredd. Ha tålamod, och om du fortfarande sitter fast kom vi om med GitPod istället för en offline-installation.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommed using GitPod instead of an offline setup.
 
-## Få hjälp
+## Getting Help
 
-Om du har fastnat och behöver hjälp, låt oss veta genom att fråga i kategorin ['Bidragsgivare' på vårt forum](https://forum.freecodecamp.org/c/contributors) eller i chattrummet [Bidragsgivarna](https://gitter.im/FreeCodeCamp/Contributors) på Gitter.
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-Det kan finnas ett fel i din webbläsares konsol eller i Bash / Terminal / Kommandorad som hjälper till att identifiera problemet. Ge detta felmeddelande i din problembeskrivning så att andra lättare kan identifiera problemet och hjälpa dig att hitta en lösning.
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

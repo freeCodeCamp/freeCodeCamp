@@ -2,11 +2,15 @@
 
 Our goal is to develop a fun and clear interactive learning experience.
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
 We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
-Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges. Stay active in the [contributors room](https://gitter.im/freecodecamp/contributors) and ask lots of questions.
+Note that for Version 7.0 of the freeCodeCamp curriculum, we are moving toward [an entirely project-focused model with a lot more repetition](https://www.freecodecamp.org/news/python-curriculum-is-live/).
+
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges.
+
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
 With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
@@ -210,12 +214,15 @@ Our goal is to have thousands of 2-minute challenges. These can flow together an
 Here are specific formatting guidelines for challenge text and examples:
 
 - Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
-- The first instance of a keyword when it's being defined, or general keywords (i.e. "object" or "immutable") go in `<dfn>` tags
+- The first instance of a keyword when it's being defined, or general keywords (e.g. "object" or "immutable") go in `<dfn>` tags
 - References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
-- Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
-- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
+```md
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+```
+- References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
+- Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
 
-See example below:
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
 The following is an example of code:
@@ -229,7 +236,9 @@ The following is an example of code:
 
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text. Second note text.`.
-- Use double quotes where applicable
+- Use single-quotes where applicable
+
+**Note:** The equivalent _Markdown_ should be used, where applicable, in place of _HTML_ tags.
 
 ## Writing tests
 
@@ -246,9 +255,81 @@ Here are specific formatting guidelines for the challenge seed code:
 - Use two spaces to indent
 - JavaScript statements end with a semicolon
 - Use double quotes where applicable
-- Comments made should have a space between the comment characters and the comment themselves
 
-  `// Fix this line`
+### Seed code comments
+
+We have a [comment dictionary](/curriculum/dictionaries/english/comments.js) that contains the only comments that can be used within the seed code. The exact case and spacing of the dictionary comment must be used. The comment dictionary should not be expanded without prior discussion with the dev-team.
+
+Comments used should have a space between the comment characters and the comment themselves.  In general comments should be used sparingly. Always consider rewriting a challenge's description or instructions if it could avoid using a seed code comment.
+
+Example of valid single line JavaScript comment:
+
+```js
+// Only change code below this line
+````
+
+Example of a valid CSS comment:
+
+```js
+/* Only change code above this line */
+```
+
+If a challenge only has a single place where code changes are needed, please use the comments in the following example to instruct the user where changes should be made.
+
+```js
+var a = 3;
+var b = 17;
+var c = 12;
+
+// Only change code below this line
+a = a + 12;
+b = 9 + b;
+c = c + 7;
+```
+
+If a challenge has multiple places where the user is expected to change code (i.e. the React challenges)
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
+### Translation of seed code comments
+
+There are separate comment dictionaries for each language. The [English vesion of the comment dictionary](/curriculum/dictionaries/english/comments.js) is the basis for the translations found in the corresponding non-English versions of the files. The non-English version of the Chinese comment dictionary would be located at `/curriculum/dictionaries/chinese/comments.js`.  Each dictionary consists of an array of objects with a unique `id` property and a `text` property.  Only the `text` should be modified to encompass the translation of the corresponding English comment.
+
+Some comments may contain a word/phrase that should not be translated. For example, variable names or proper library names like "React" should not be translated.  See the comment below as an example. The word `myGlobal` should not be translated.
+
+```text
+Declare the myGlobal variable below this line
+```
+> [!NOTE]
+> 
+> We are working on an integration to make it possible to work on i18n for the comment dictionary.
 
 ## Hints and Solutions
 
@@ -261,7 +342,7 @@ If you find a problem with an existing challenge's hints/solutions topic, you ca
 Take the following steps when adding a new challenge hints/solutions related topic.
 
 1. Start by following the same steps for creating a new topic but review the next for creating the title.
-2. The title of the topic should start with `freeCodeCamp Challenge Guide: ` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
+2. The title of the topic should start with `freeCodeCamp Challenge Guide:` concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "`Chunky Monkey`", the topic title would be "`freeCodeCamp Challenge Guide: Chunky Monkey`".
 3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
 4. Once the new topic is created, a forum topic id is created. It is located at the end of the forum topic URL. This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
 

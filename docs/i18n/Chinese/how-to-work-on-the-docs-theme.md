@@ -1,40 +1,54 @@
-# 如何在文档主题上工作
+# How to work on the docs theme
 
-> [!注意] 一个快速提醒, 你不需要为文档站点的内容设置任何操作。
+> [!NOTE] A quick reminder that you do not need to setup anything for working on the content for the documentation site.
 > 
-> 要在贡献指南上工作，您可以在这里编辑或添加 `文档` 目录 [中的文件](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs)。 当您的更改被合并时，它将自动在文档网站上提供。
+> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). When your changes are merged, it will be made available automatically at the documentation site.
 
-## 文档网站的结构
+## Structure of the docs website
 
-网站使用 [`docsify`](https://docsify.js.org)生成，并使用GitHub 页面。
+The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
 
-通常，您不需要更改任何配置或本地构建站点。 如果你有兴趣，这里是它的工作方式：
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
-- 此站点的主页源在 [`docs/index.html`](index.html) 中可用。
-- 我们使用 `将` 和 GitHub 页面作为一个 SPA 服务于这个文件。
-- `Docsify` 脚本生成 `markdown` 文件的内容在 `docs` 目录需要时生成.
-- 主页来自 [`_coverpage.md`](_coverpage.md)
-- 侧边栏导航由 [`_sidebar.md`](_sidebar.md) 生成。
+- The homepage's source for this site is available in [`docs/index.html`](index.html).
+- We serve this file as a SPA using `docsify` and GitHub Pages.
+- The `docsify` script generates the content of `markdown` files in `docs` directory on demand.
+- The homepage is generated from the [`_coverpage.md`](_coverpage.md).
+- the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
-## 在当地服务文件网站
+## Serving the documentation site locally
 
-克隆免费CodeCamp：
+Clone freeCodeCamp:
 
-```sh
+```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-docsify service docs
+docsify serve docs
 ```
 
-安装 `对码化`：
+Install `docsify`:
 
-```sh
+```console
 npm install -g docsify
 ```
 
-并服务 `/docs` 目录
+and serve the `/docs` directory
 
-```sh
-对服务文档
+```console
+docsify serve docs
 ```
 
-或者，如果您已经在本地安装了免费CodeCamp(见本地安装指南)， 我们将CLI与开发工具捆绑在一起，以便您可以从仓库的根目录运行 `npm 运行文档：服务`。
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+
+### Serve and launch the documentation site only
+
+```console
+npm run docs:serve
+```
+
+### Serve the documentation site alongside freeCodeCamp locally:
+
+```console
+npm run develop
+```
+
+> The documentation site should be available at <http://localhost:3200>

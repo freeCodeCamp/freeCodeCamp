@@ -1,326 +1,326 @@
-Urmați aceste recomandări pentru a configura tabăra freeCodep la nivel local în sistemul dvs. Acest lucru este foarte recomandat dacă doriţi să contribuiţi în mod regulat.
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-Pentru unele fluxuri de lucru pentru contribuții, trebuie să ai tabăra freeCodep rulează local. De exemplu, previzualizarea provocărilor de codificare sau depanarea și repararea erorilor în codebase.
+Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
-> [!TIP] Dacă nu sunteți interesat să configurați tabăra freeCodep local luați în considerare utilizarea Gitpod, un mediu de dezvoltatori online gratuit.
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
 > 
-> [![Deschide în Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 > 
-> (Începe un mediu de dezvoltatori gata de cod pentru tabăra freeCodep în browser-ul tău.)
+> (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
-## Pregătiți-vă calculatorul local
+### How to prepare your local machine
 
-Începeți prin instalarea programului de bază pentru sistemul dvs. de operare.
+Start by installing the prerequisite software for your operating system.
 
-Susținem în principal dezvoltarea sistemelor **\*nix**. Personalul nostru și colaboratorii comunității lucrează în mod regulat cu codebaza folosind instrumentele instalate pe Ubuntu și macOS.
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
-Suportăm de asemenea Windows 10 prin WSL2, pe care îl puteți pregăti prin [citirea acestui ghid](/how-to-setup-wsl).
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](/how-to-setup-wsl).
 
-Unii membri ai comunității se dezvoltă, de asemenea, pe Windows 10 nativ cu Git pentru Windows (Git Bash) și alte instrumente instalate pe Windows. Nu avem sprijin oficial pentru o astfel de configurare în acest moment, recomandăm în schimb utilizarea WSL2.
+Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-**Premise:**
+**Prerequisites:**
 
-| Cerințe prealabile                                                                             | Versiune | Note                                                                                                                                                                                                |
-| ---------------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                                   | `12,x`   | [Schema LTS](https://github.com/nodejs/Release#release-schedule)                                                                                                                                    |
-| npm (vine alături de Node)                                                                     | `6,x`    | Nu are lansări LTS, folosim versiunea pachetată cu Node LTS                                                                                                                                         |
-| [Server Comunitate MongoDB](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`    | [Notele de lansare](https://docs.mongodb.com/manual/release-notes/), Notă: Suntem în prezent pe `3.6`, o [actualizare este planificată](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
+| Prerequisite                                                                                  | Version | Notes                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                    |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS                                                                                                                  |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
 
-> [!DANGER] Dacă ai o versiune diferită, instalează versiunea recomandată. Putem suporta doar probleme de instalare pentru versiunile recomandate. Vezi [troubleshooting](#troubleshooting) pentru detalii.
+> [!DANGER] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
-Dacă Node.js este deja instalat pe mașina dvs., executați următoarele comenzi pentru a valida versiunile:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
 node -v
 npm -v
 ```
 
-> [!TIP] Vă recomandăm cu căldură actualizarea la ultimele versiuni stabile ale software-ului menționat mai sus, cunoscute și ca versiuni de suport pe termen lung (LTS).
+> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-Odată ce cerințele sunt instalate, trebuie să vă pregătiți mediul de dezvoltare. Acest lucru este comun pentru multe fluxuri de lucru în domeniul dezvoltării şi va trebui să faceţi acest lucru o singură dată.
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-**Urmează acești pași pentru a-ți pregăti mediul de dezvoltare:**
+**Follow these steps to get your development environment ready:**
 
-1. Instalează [Git](https://git-scm.com/) sau clientul tău Git favorit, dacă nu ai fost deja. Actualizează la ultima versiune; versiunea care a venit în pachet cu sistemul tău de operare poate fi învechită.
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (Opțional, dar recomandat) [Configurați o cheie SSH](https://help.github.com/articles/generating-an-ssh-key/) pentru GitHub.
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. Instalează un editor de cod ales de tine.
+3. Install a code editor of your choice.
 
-   Vă recomandăm să folosiți [Vizualizare Studio Code](https://code.visualstudio.com/) sau [Atom](https://atom.io/). Aceştia sunt editori de cod grozavi, liberi şi cu sursă deschisă.
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. Configurați linte-ul pentru editorul de cod.
+4. Set up linting for your code editor.
 
-   Ar trebui să aveți [ESLint rulând în editorul dvs.](http://eslint.org/docs/user-guide/integrations.html), și va evidenția orice nu se conformează cu [Ghidul de stil JavaScript](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) al freeCodeCamp.
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!TIP] Nu ignorați nicio eroare de linting. Acestea sunt menite să **ajute** şi să asigure un cod simplu şi curat.
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## Fă depozitul pe GitHub
+## Fork the repository on GitHub
 
-[Forking](https://help.github.com/articles/about-forks/) este un pas în care primești propria copie a depozitului principal freeCodeCamp(a.k.a _repo_) pe GitHub.
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-Acest lucru este esențial, deoarece vă permite să lucrați la propria copie de FreeCodeCamp pe GitHub, sau pentru a descărca (clona) depozitul dumneavoastră pentru a funcționa la nivel local. Ulterior, veți putea solicita modificări pentru a fi trase în depozitul principal de pe furculiță prin intermediul unei cereri de tragere (PR).
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-> [!TIP] Depozitul principal la `https://github.com/freeCodeCamp/freeCodeCamp` este adesea referit ca depozitul `în amonte`.
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
 > 
-> Fork-ul dvs. la `https://github.com/YOUR_USER_NAME/freeCodeCamp` este adesea referit ca `originea repo-ului`.
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
 
-**Urmaţi aceşti paşi pentru a falsifica `https://github.com/freeCodeCamp/freeCodeCamp`:**
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
 
-1. Mergeți la depozitul freeCodeCamp pe GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 
-2. Faceți clic pe butonul "Fork" din colțul din dreapta sus al interfeței ([Mai multe detalii aici](https://help.github.com/articles/fork-a-repo/))
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 
-3. Dupa ce depozitul a fost forjat, vei fi dus la copia ta a depozitului freeCodeCamp la `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 <details>
    <summary>
-      Cum să forjezi tabăra freeCodep pe GitHub (captură de ecran)
+      How to fork freeCodeCamp on GitHub (screenshot)
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="Cum să forjezi tabăra freeCodep pe GitHub" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
-## Clonați furculița din GitHub
+## Clone your fork from GitHub
 
-[Clonarea](https://help.github.com/articles/cloning-a-repository/) este locul unde **descarci** o copie a unui depozit dintr-o `locație la distanță` care este deținută fie de tine, fie de altcineva. În cazul tău, această locaţie la distanţă este `fork-ul` de depozitul freeCodeCamp, care ar trebui să fie disponibil la `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
 
-Rulează aceste comenzi pe mașina locală:
+Run these commands on your local machine:
 
-1. Deschide un terminal / Comandă Prompt / Shell în directorul de proiecte
+1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-   _.e.: `/yourprojectsdirectory/`_
+   _i.e.: `/yourprojectsdirectory/`_
 
-2. Clonați forcul dvs. de freeCodeCamp, înlocuind `YOUR_USER_NAME` cu numele dvs de utilizator GitHub
+2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
    ```console
    git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-Acest lucru va descărca întregul depozit freeCodeCamp în directorul de proiecte.
+This will download the entire freeCodeCamp repository to your projects directory.
 
-Notă: `--depth=1` creează o clonă superficială a furcii dvs., cu doar cel mai recent istoric/commit.
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Configurare sincronizare de la părinte
+## Set up syncing from parent
 
-Acum că ai descărcat o copie a furcii tale, va trebui să configurezi o `în amonte` telecomandă către repo-ul părinte.
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
-[Așa cum s-a menționat anterior](#fork-the-repository-on-github), repertoriul principal este trimis `în amonte`. Furculița ta s-a referit la `depozitul de origine`.
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
 
-Ai nevoie de o referință de la clona locală la depozitul `în amonte` în plus față de depozitul `origine`. Pentru a putea sincroniza modificările din depozitul principal fără cerința de a forja și clona în mod repetat.
+You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
 
-1. Schimbă directorul cu noul director freeCodeCamp:
+1. Change directory to the new freeCodeCamp directory:
 
    ```console
-   cd tabăra freeCodep
+   cd freeCodeCamp
    ```
 
-2. Adăugați o referință de la distanță la repertoriul principal freeCodeMP:
+2. Add a remote reference to the main freeCodeCamp repository:
 
    ```console
    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-3. Asigurați-vă că configurația arată corect:
+3. Ensure the configuration looks correct:
 
    ```console
    git remote -v
    ```
 
-   Ieșirea ar trebui să arate ca mai jos:
+   The output should look something like below:
 
    ```console
-   originea https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-   originile https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
-   în amonte https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-   în amonte https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-## Rulând local tabăra freeCodep
+## Running freeCodeCamp locally
 
-Acum că ai o copie locală de freeCodeCamp, poți urma aceste instrucțiuni pentru a rula local. Acest lucru vă va permite să:
+Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
-- Previzualizează editările pe pagini așa cum ar apărea pe platforma de învățare.
-- Lucrul la problemele și îmbunătățirile interfeței.
-- Depanare și rezolvare probleme cu serverele aplicației și aplicațiile clienților.
+- Preview edits to pages as they would appear on the learning platform.
+- Work on UI related issues and enhancements.
+- Debug and fix issues with the application servers and client apps.
 
-Dacă chiar întâmpini probleme, mai întâi efectuează o căutare web pentru problema ta și vezi dacă ai primit deja un răspuns. Dacă nu puteţi găsi o soluţie, vă rugăm să căutați pagina noastră de probleme [GitHub](https://github.com/freeCodeCamp/freeCodeCamp/issues) pentru o soluție și să raportați problema dacă nu a fost încă raportată.
+If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
-Și ca întotdeauna, nu ezita să participi la [Camera noastră de chat pentru colaboratori pe Gitter](https://gitter.im/FreeCodeCamp/Contributors) sau [serverul nostru Discord](https://discord.gg/pFspAhS), pentru întrebări rapide.
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-> [!TIP] Puteţi sări peste rularea taberei freeCodep local dacă pur şi simplu editaţi fişiere. De exemplu, efectuând o `rebase`, sau rezolvând `conflicte de îmbinare`.
+> [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
 > 
-> Puteți reveni întotdeauna la această parte a instrucțiunilor mai târziu. Trebuie **doar** să săriți peste acest pas dacă nu trebuie să rulați aplicațiile pe calculatorul dvs.
+> You can always return to this part of the instructions later. You should **only** skip this step if you do not need to run the apps on your machine.
 > 
-> [Sari peste pentru a face modificări](#making-changes-locally).
+> [Skip to making changes](#making-changes-locally).
 
-### Configurare dependențe
+### Configuring dependencies
 
-#### Pasul 1: Configurați fișierul variabilei de mediu
+#### Step 1: Set up the environment variable file
 
-Tastele API implicite şi variabilele mediului sunt stocate în fişierul `sample.env`. Acest fișier trebuie să fie copiat într-un fișier nou numit `.env` care este accesat dinamic în timpul pasului de instalare.
+The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
 ```console
-# Creați o copie a "sample.env" și denumiți-o ".env".
-# Populează cu cheile și secretele necesare API:
+# Create a copy of the "sample.env" and name it ".env".
+# Populate it with the necessary API keys and secrets:
 
 # macOS / Linux
-probă cp. nv .env
+cp sample.env .env
 
 # Windows
 copy sample.env .env
 ```
 
-Cheile din fișierul `.env` sunt _nu_ obligatoriu pentru a putea rula aplicația la nivel local. Puteți lăsa valorile implicite copiate din `sample.env` as-is.
+The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
-> [!TIP] Rețineți dacă doriți să utilizați servicii precum Auth0 sau Algolia, va trebui să achiziționați propriile chei API pentru aceste servicii și să editați intrările în mod corespunzător în `. fișier nv`.
+> [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### Pasul 2: Instalează dependențe
+#### Step 2: Install dependencies
 
-Acest pas va instala dependențele necesare pentru ca aplicația să ruleze:
+This step will install the dependencies required for the application to run:
 
 ```console
 npm ci
 ```
 
-#### Pasul 3: Porniți MongoDB și semnațiți baza de date
+#### Step 3: Start MongoDB and seed the database
 
-Înainte de a putea rula aplicaţia la nivel local, va trebui să porniţi serviciul MongoDB.
+Before you can run the application locally, you will need to start the MongoDB service.
 
-> [!NOTĂ] Cu excepţia cazului în care aveţi MongoDB care rulează într-o configurare diferită de cea implicită, URL-ul stocat ca valoarea `MONGOHQ_URL` în `. fişierul nv` ar trebui să funcţioneze bine. Dacă folosiți o configurație personalizată, modificați această valoare după cum este necesar.
+> [!NOTE] Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
 
-Porniți serverul MongoDB într-un terminal separat:
+Start the MongoDB server in a separate terminal:
 
-- Pe macOS & Ubuntu:
+- On macOS & Ubuntu:
 
   ```console
   mongod
   ```
 
-- Pe Windows, trebuie să specifici calea completă către binarul `mongod`
+- On Windows, you must specify the full path to the `mongod` binary
 
   ```console
   "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
   ```
 
-  Asigurați-vă că înlocuiți `3.6` cu versiunea instalată
+  Make sure to replace `3.6` with the version you have installed
 
-> [!TIP] Puteţi evita să începeţi MongoDB de fiecare dată instalându-l ca un serviciu de fundal. Poți [afla mai multe despre asta în documentația lor pentru sistemul de operare](https://docs.mongodb.com/manual/administration/install-community/)
+> [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-Apoi, hai să semănăm baza de date. În acest pas, executăm comanda de mai jos care completează serverul MongoDB cu unele seturi de date inițiale care sunt necesare pentru servicii. Acestea includ câteva programe, printre altele.
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```console
 npm run seed
 ```
 
-#### Pasul 4: Începe aplicația client freeCodeCamp și serverul API
+#### Step 4: Start the freeCodeCamp client application and API server
 
-Acum puteți porni serverul API și aplicațiile clientului.
+You can now start up the API server and the client applications.
 
 ```console
-dezvoltare npm
+npm run develop
 ```
 
-Această singură comandă va activa toate serviciile, inclusiv serverul API și aplicațiile client disponibile pentru ca dvs. să lucrați.
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-> [!NOTĂ] Odată gata, deschideți un browser web și **vizitați <http://localhost:8000>**. Dacă aplicația se încarcă, felicitări - toți sunteți setați! Acum ai o copie a întregii platforme de învăţare a freeCodeCamp-ului rulând pe maşina ta locală.
+> [!NOTE] Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-> Serverul API serveşte API-uri la `http://localhost:3000`. Aplicația Gatsby servește aplicația client la `http://localhost:8000`
+> [!TIP] The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
-> Dacă vizitați [http://localhost:3000/explororer](http://localhost:3000/explorer) ar trebui să vedeți API-urile disponibile.
+> If you visit <http://localhost:3000/explorer> you should see the available APIs.
 
-## Conectați-vă cu un utilizator local
+## Sign in with a local user
 
-Configurarea locală populează automat un utilizator local în baza de date. Apăsând butonul `Conectare` te va autentifica automat în aplicația locală.
+Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
 
-Cu toate acestea, accesarea paginii portofoliului utilizatorului este un pic complicată. În dezvoltare, Gatsby preia servind paginile client-side și astfel veți obține o pagină `404` pentru portofoliul de utilizatori atunci când lucrați local.
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
 
-Doar apăsând pe butonul **"Previzualizare pagină personalizată 404"** te va redirecționa către pagina corectă.
+Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
    <summary>
-      Cum să te conectezi când lucrezi local (captură ecran)
+      How to sign in when working locally (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="Cum să te conectezi când lucrezi local" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
 </details>
 
-## Efectuarea de schimbări locale
+## Making changes locally
 
-Acum puteți face modificări în fișiere și să comiteți modificările la clona locală a furcii dvs.
+You can now make changes to files and commit your changes to your local clone of your fork.
 
-Urmează acești pași:
+Follow these steps:
 
-1. Validați că sunteți pe ramura `master`:
+1. Validate that you are on the `master` branch:
 
    ```console
    git status
    ```
 
-   Ar trebui să obții un rezultat ca acesta:
+   You should get an output like this:
 
    ```console
-   În stăpânul sucursalei
-   sucursala este actualizată cu 'origin/master'.
+   On branch master
+   Your branch is up-to-date with 'origin/master'.
 
-   nimic de comis, director de lucru curat
+   nothing to commit, working directory clean
    ```
 
-   Dacă nu sunteți maestru sau directorul dvs. de lucru nu este curat, rezolvați orice fișiere/comitete restante și finalizați `comandantul`:
+   If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
 
    ```console
-   git master checkout
+   git checkout master
    ```
 
-2. Sincronizează ultimele modificări din tabăra freeCodep în amonte `maestru` în ramura principală locală:
+2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
 
-   > [!ATENȚIE] Dacă ai o cerere remarcabilă de pull pe care ai făcut-o din ramura `master` a furcii tale, le veți pierde la sfârșitul acestui pas.
+   > [!WARNING] If you have any outstanding pull request that you made from the `master` branch of your fork, you will lose them at the end of this step.
    > 
-   > Trebuie să vă asigurați că cererea pull este fuzionată de un moderator înainte de a efectua acest pas. Pentru a evita acest scenariu, ar trebui **întotdeauna** să lucrați la o ramură diferită de `master`.
+   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `master`.
 
-   Acest pas **va sincroniza ultimele schimbări** din depozitul principal al freeCodeCamp. Este important să vă rebazați sucursala pe cele mai recente `în amonte/master` cât mai des posibil pentru a evita conflictele mai târziu.
+   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
 
-   Actualizați copia locală a depozitului freeCodeCamp în amonte:
-
-   ```console
-   git preia în amonte
-   ```
-
-   Resetați stâlpul principal cu masterul tabăra freeCodep:
+   Update your local copy of the freeCodeCamp upstream repository:
 
    ```console
-   git resetare --hard upstream/master
+   git fetch upstream
    ```
 
-   Apăsați sucursala principală spre originea dvs. pentru a avea un istoric curat pe furculița dvs. pe GitHub:
+   Hard reset your master branch with the freeCodeCamp master:
 
    ```console
-   git push master origine --force
+   git reset --hard upstream/master
    ```
 
-   Poți valida maestrul tău curent se potrivește în amonte/master efectuând un dif:
+   Push your master branch to your origin to have a clean history on your fork on GitHub:
 
    ```console
-   git difuzează în amonte/master
+   git push origin master --force
    ```
 
-   Ieșirea rezultată trebuie să fie goală.
+   You can validate your current master matches the upstream/master by performing a diff:
 
-3. Creează o ramură nouă nouă:
+   ```console
+   git diff upstream/master
+   ```
 
-   Lucrul la o sucursală separată pentru fiecare problemă vă ajută să păstraţi copia de lucru locală curată. Nu ar trebui să lucrezi niciodată la `master`. Asta îți va întinde copia de tabără freeCodep și s-ar putea să trebuiască să începi cu o clonă sau furcă proaspătă.
+   The resulting output should be empty.
 
-   Verifică dacă ești pe `master` așa cum s-a explicat anterior, și ramură de acolo:
+3. Create a fresh new branch:
+
+   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+
+   Check that you are on `master` as explained previously, and branch off from there:
 
    ```console
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   Numele sucursalei ar trebui să înceapă cu `fix/`, `funcție /`, `documente/`, etc. Evitați utilizarea numerelor de emisiune în sucursale. Păstrați-le pe scurt, semnificativ și unic.
+   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
 
-   Câteva exemple de nume bune de filiale sunt:
+   Some examples of good branch names are:
 
    ```md
    fix/update-challenges-for-react
@@ -330,156 +330,156 @@ Urmează acești pași:
    translate/add-spanish-basic-html
    ```
 
-4. Editează paginile și lucrează la cod în editorul tău de text favorit.
+4. Edit pages and work on code in your favorite text editor.
 
-5. Odată ce ești mulțumit de schimbări, ar trebui să rulezi opțional tabăra freeCodep local pentru a previzualiza schimbările.
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Asigură-te că ai reparat orice eroare și verifică formatarea modificărilor tale.
+6. Make sure you fix any errors and check the formatting of your changes.
 
-7. Bifați și confirmați fișierele pe care le actualizați:
+7. Check and confirm the files you are updating:
 
    ```console
    git status
    ```
 
-   Aceasta ar trebui să afișeze o listă de `unstaged` fișiere pe care le-ați editat.
+   This should show a list of `unstaged` files that you have edited.
 
    ```console
-   Pe o caracteristică/documentație sucursală
-   sucursala este actualizată cu 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Modificări neorganizate pentru angajament:
-   (utilizaţi "git add/rm <file>... pentru a actualiza ceea ce va fi angajat)
-   (folosiți "git checkout -- <file>. „să renunțe la modificările din directorul de lucru
+   Changes not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
 
-       modificate: CONTRIBUȚIE. d
-       modificat: documente/README.md
-       modificate: documente/cum-la-setup-freecodecamp-local. d
-       modificat: documente/how-to-work-on-guide-articles.md
-...
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
+   ...
    ```
 
-8. Stadiul modificărilor și angajamentul asumat în acest sens:
+8. Stage the changes and make a commit:
 
-   În acest pas, ar trebui să marcați doar fișierele pe care le-ați editat sau pe care le-ați adăugat. Puteți efectua o resetare și rezolva fișiere pe care nu ați intenționat să le modificați dacă este necesar.
+   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
    ```console
    git add path/to/my/changed/file.ext
    ```
 
-   Sau puteți adăuga toate `fișierele nestabilite` în zona de așteptare:
+   Or you can add all the `unstaged` files to the staging area:
 
    ```console
    git add .
    ```
 
-   Numai fișierele care au fost mutate în zona de aşteptare vor fi adăugate când faceți o comitere.
+   Only the files that were moved to the staging area will be added when you make a commit.
 
    ```console
    git status
    ```
 
-   Rezultat:
+   Output:
 
    ```console
-   Pe o caracteristică/documentație sucursală
-   sucursala este actualizată cu 'upstream/feat/documentation'.
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   Modificări pentru a fi compuse:
-   (utilizaţi "git reset HEAD <file>..." pentru a dezinstala)
+   Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
 
-       modificat: CONTRIBUTING.md
-       modificat: documente/README.md
-       modificate: documente/how-to-setup-freecodecamp-locally.md
-       modificate: documente/how-to-work-on-guide-articles.md
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
    ```
 
-   Acum, puteţi comite modificările cu un scurt mesaj astfel:
+   Now, you can commit your changes with a short message like so:
 
    ```console
    git commit -m "fix: my short commit message"
    ```
 
-   Câteva exemple:
+   Some examples:
 
    ```md
-   fix: actualizare articol ghid pentru Java - pentru buclă
-   feat: adaugă articol ghid pentru abilități alexa
+   fix: update guide article for Java - for loop
+   feat: add guide article for alexa skills
    ```
 
-   Opţional:
+   Optional:
 
-   Vă recomandăm să faceți un mesaj convențional. Aceasta este o bună practică pe care o veți vedea pe unele dintre depozitele populare Open Source. În calitate de dezvoltator, acest lucru vă încurajează să urmați practicile standard.
+   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
 
-   Câteva exemple de mesaje convenționale de comitere sunt:
+   Some examples of conventional commit messages are:
 
    ```md
-   reparații: actualizare a articolului ghid HTML
-   fixare: actualizare script-uri pentru Travis-CI
-   feat: adăugare articol pentru ciocnirea JavaScript
-   documente: actualizare ghiduri contribuție
+   fix: update HTML guide article
+   fix: update build scripts for Travis-CI
+   feat: add article for JavaScript hoisting
+   docs: update contributing guidelines
    ```
 
-   Păstraţi aceste scurte, nu mai mult de 50 de caractere. Puteți adăuga întotdeauna informații suplimentare în descrierea mesajului de comitere.
+   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-   Acest lucru nu durează mai mult decât un mesaj neconvențional, cum ar fi „fișier de actualizare” sau „adaugă index.md”
+   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-   Poți afla mai multe despre motivul pentru care ar trebui să folosești comitetele convenționale [aici](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. Dacă vă dați seama că trebuie să editați un fișier sau să actualizați mesajul de comitere după ce ați făcut o comitere puteți face acest lucru după ce ați editat fișierele cu:
+9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
    ```console
-   git comite --Modificare
+   git commit --amend
    ```
 
-   Acest lucru va deschide un editor de text implicit ca `nano` sau `vi` unde puteți edita titlul mesajului de comitere și adăugați/edita descrierea.
+   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
-10. Apoi, îți poți împinge modificările la furculiță:
+10. Next, you can push your changes to your fork:
 
     ```console
     git push origin branch/name-here
     ```
 
-## Propunerea unei solicitări prin tragere (PR)
+## Proposing a Pull Request (PR)
 
-După ce ai comis modificările, verifică aici [cum să deschizi o Cerere Pull](how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## Referință comenzi rapide
+## Quick commands reference
 
-O referire rapidă la comenzile de care veți avea nevoie când lucrați local.
+A quick reference to the commands that you will need when working locally.
 
-| comandă                                                        | descriere                                                                                      |
-| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `npm ci`                                                       | Instalează/reinstalează toate dependențele și bootstraps diferitele servicii.                  |
-| `npm run seed`                                                 | Analizează toate fişierele de încercare markdown şi le introduce în MongoDB.                   |
-| `dezvoltare npm`                                               | Începe aplicația FreeCodeCamp API Server și Client.                                            |
-| `test npm`                                                     | Rulează toate testele JS în sistem, inclusiv testele pentru client, server, lint și provocare. |
-| `npm run test:client`                                          | Rulează suita de testare client.                                                               |
-| `npm run test:curriculum`                                      | Rulează suita de teste de curriculum.                                                          |
-| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Testează un bloc specific.                                                                     |
-| `npm run test:curriculum --superblock='responsive-web-design'` | Testează un anumit SuperBlock.                                                                 |
-| `npm rulează test-curriculum-ul complet`                       | Rulează testul curriculum, fără salvare după prima eroare                                      |
-| `npm run test:server`                                          | Rulează suita de testare a serverului.                                                         |
-| `npm rulează e2e`                                              | Rulează capătul Cypress pentru a termina testele.                                              |
-| `npm rulat curat`                                              | Dezinstalează toate dependenţele şi curăţă geocutiile.                                         |
+| command                                                        | description                                                                         |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
+| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
+| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
-## Depanare
+## Troubleshooting
 
-### Probleme cu instalarea cerinţelor prealabile recomandate
+### Issues with installing the recommended prerequisites
 
-Ne dezvoltăm în mod regulat pe cele mai recente sau mai populare sisteme de operare precum macOS 10.15 sau mai târziu, Ubuntu 18.04 sau mai târziu și Windows 10 (cu WSL2).
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later and Windows 10 (with WSL2).
 
-Este recomandat să cercetezi problema ta specifică cu privire la resurse precum Google, Stack Overflow și Stack Exchange. Există o şansă bună ca cineva să se confrunte cu aceeaşi problemă şi există deja un răspuns la o întrebare specifică.
+It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-Dacă ești pe un alt sistem de operare și/sau încă te lovești de probleme, vezi [obținerea ajutorului](#getting-help).
+If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
-> [!ATENŢIE]
+> [!WARNING]
 > 
-> Vă rugăm să evitați crearea de probleme GitHub pentru probleme preliminare. Ele nu intră în domeniul de aplicare al acestui proiect.
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### Probleme cu IU, fonturi, erori de construcție etc.
+### Issues with the UI, Fonts, build errors etc.
 
-Dacă întâmpini probleme cu IU, Fonturi sau vezi erorile de construcție o curățare poate fi utilă:
+If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
 ```console
 npm run clean
@@ -488,59 +488,59 @@ npm run seed
 npm run develop
 ```
 
-SAU
+OR
 
-Folosește scurtătura
-
-```
-npm curățare și dezvoltare
-```
-
-Dacă vă confruntați în continuare cu problemele legate de construcție, este recomandată curățarea spațiului de lucru.
-
-Utilizaţi `git curat` în modul interativ:
+Use the shortcut
 
 ```
-git curățat -ifdX
+npm run clean-and-develop
+```
+
+If you continue to face issues with the build, cleaning up the workspace is recommend.
+
+Use `git clean` in interative mode:
+
+```
+git clean -ifdX
 ```
 
 <details>
    <summary>
-      Cum să curăţaţi fişierele git neurmărite (captură de ecran)
+      How to clean git untracked files (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="Cum să curăţaţi fişierele git neurmărite" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
-### Probleme cu API, Logare, Provocări, etc.
+### Issues with API, Login, Challenge Submissions, etc.
 
-Dacă nu vă puteți conecta, și în schimb vedeți un banner cu un mesaj de eroare care va fi raportat la freeCodeCamp, te rugăm să verifici din nou dacă portul tău local `3000` nu este utilizat de un alt program.
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-**Pe Linux / macOS / WSL pe Windows - Din Terminal:**
+**On Linux / macOS / WSL on Windows - From Terminal:**
 
 ```console
-netstat -ab "3000"
+netstat -ab | grep "3000"
 
-tcp4 0 0.0.0.0:3000 DESKTOP LISTEN
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**Pe Windows - De la PowerShell crescut:**
+**On Windows - From Elevated PowerShell:**
 
 ```powershell
-netstat -ab <unk> Select-Șirul "3000"
+netstat -ab | Select-String "3000"
 
-TCP 0.0.0.0:3000 DESKTOP LISTENING
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
-### Probleme la instalarea dependenţelor
+### Issues installing dependencies
 
-Dacă primiți erori în timpul instalării dependențelor, vă rugăm să vă asigurați că nu sunteți într-o rețea restricționată sau setările dvs. de firewall nu vă împiedică să accesați resursele.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-Configurarea pentru prima dată poate dura o vreme în funcție de lățimea de bandă a rețelei. Fiți răbdător, și dacă sunteți încă blocat, am reînceput să utilizați GitPod în loc de o configurare offline.
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommed using GitPod instead of an offline setup.
 
-## Obțineți ajutor
+## Getting Help
 
-Dacă sunteți blocat și aveți nevoie de ajutor, spuneți-ne întrebându-ne în categoria ['Contribuitori' de pe forumul nostru](https://forum.freecodecamp.org/c/contributors) sau [camera de chat pentru colaboratori](https://gitter.im/FreeCodeCamp/Contributors) pe Gitter.
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-Ar putea exista o eroare în consola browser-ului sau în linia de comandă Bash / Terminal / Comandă care va ajuta la identificarea problemei. Furnizați acest mesaj de eroare în descrierea problemei dvs., astfel încât alții să poată identifica mai ușor problema și să vă ajute să găsiți o rezoluție.
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

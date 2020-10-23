@@ -1,95 +1,76 @@
-### Olen uusi GitHub ja Open Source, mistä minun pitäisi aloittaa?
+### I am new to GitHub and Open Source. Where should I start?
 
-Lue ["Kuinka auttaa avoimen lähdekoodin opas"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). Se on kompressoiva resurssi ensimmäinen ajastin ystävällisiä projekteja ja ohjeita.
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
-### Voinko kääntää freeCodeCampin opetussuunnitelma?
+### Can I translate freeCodeCamp's curriculum?
 
-Tulemme potkimaan lokalisointi pyrkimyksiä freeCodeCamp alkaa **Kiinan** ensin.
+Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon.
 
-Aiomme asettaa opetussuunnitelman saataville useammilla kielillä, mutta emme voi sitoutua mihinkään määräaikoihin. Useilla toiminnallisilla rajoilla, kuten henkilöstöllä, aktiivisilla osallistujilla ja palvelinkustannuksilla, on oma roolinsa kansainvälistymisen (i18n) toimien vauhdittamisessa.
+Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
 
-Aiomme aloittaa i18n ponnistelut näillä kielillä: arabia, portugali, Venäläinen ja espanja (ei missään nimessä) sen jälkeen, kun olemme julkaisseet opetussuunnitelman kiinalaisille.
+### How can I report a new bug?
 
-**Miksi te keskitytte ensin Kiinan opetussuunnitelmaan?**
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-Kiina on suurin väestörakenteen alueet, meidän ei-natiivi Englanti puhuva yleisö. Tällä hetkellä meillä on satoja tuhansia käyttäjiä käyttäen vanhaa versiota alustasta. Keskittyminen Kiinan opetussuunnitelma antaa meille arvion logistiikka mukana i18n.
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-Keskitymme Latinalaiseen Amerikkaan Portugalin ja Espanjan väestönkehityksen alueena.
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-Meillä ei ole lähitulevaisuudessa mitään suunnitelmia i18n:n puolesta muille kuin edellä mainituille kielille.
+### How can I report a security issue?
 
-Emme rohkaise sinua työskentelemään i18n edellä mainituilla kielillä. Voimme hyväksyä pyynnöt ilman minkäänlaisia odotuksia niiden käyttöönotosta.
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### Miten voin ilmoittaa uudesta virheestä?
+### I am a student. Can I work on a feature for academic credits?
 
-Jos luulet, että olet löytänyt virheen, lue ensin ["Apua olen löytänyt Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) artikkeli ja seuraa sen ohjeita.
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-Jos olet varma, että se on uusi bugi, mene eteenpäin ja luo uusi GitHub ongelma. Muista sisällyttää niin paljon tietoa kuin mahdollista, jotta voimme jäljentää vian. Meillä on ennalta määritelty ongelma malli auttaa sinua tämän läpi.
+We request you to plan ahead and work on code contributions with this in mind.
 
-Huomioithan, että kaikki ongelmat, jotka etsivät koodausapua haasteesta, tullaan sulkemaan. Ongelman seuranta on ehdottomasti codebaseihin liittyviä kysymyksiä ja keskusteluja. Aina kun epäilet, sinun pitäisi [hakea apua foorumilla](https://forum.freecodecamp.org) ennen raportin laatimista.
+### What do these different labels that are tagged on issues mean?
 
-### Miten voin ilmoittaa turvallisuuskysymyksestä?
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-Älä luo GitHubin ongelmia turvallisuusongelmien ratkaisemiseksi. Sen sijaan lähetä sähköpostia osoitteeseen `security@freecodecamp.org` ja tarkastelemme sitä välittömästi.
+### Where do I start if I want to work on an issue?
 
-### Minä olen opiskelija, voinko minä tai tiimimme työskennellä akateemisten opintosuoritusten parissa?
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-Kyllä, varmasti.
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are special issues that are designed for people who have not contributed to the freeCodeCamp codebase before.
 
-Vaikka olemme avoimia kaikille kannanotoille, olkaa hyvä ja ottakaa huomioon, että emme voi sitoutua mihinkään aikatauluun, joka voi olla vaatimuksena yliopistossanne tai yliopistossanne. Saamme paljon vetopyyntöjä ja koodausta vapaaehtoisten kehittäjien toimesta, ja kunnioitamme heidän aikaansa ja ponnistelujaan. Emme voi antaa minkäänlaista PR-oikeutta erityistä huomiota ollaksemme oikeudenmukaisia kaikille.
+### I found a typo. Should I report an issue before I can make a pull request?
 
-Pyydämme teitä suunnittelemaan tulevaisuutta ja työskentelemään ominaisuuden parissa tämän mielessä.
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-### Mitä nämä eri merkit merkitsevät asioille?
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-Koodin ylläpitäjät [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) kysymyksiä ja vetää pyyntöjä perustuen niiden prioriteetti, vakavuus ja muut tekijät. Voit [löytää täydellisen sanaston niiden merkityksiä täällä](https://github.com/freecodecamp/freecodecamp/labels).
+### How can I get an issue assigned to me?
 
-### Mistä aloitan, jos haluan työskennellä asian parissa?
+We typically do not assign issues to anyone other than long-time contributors.  Instead, we follow the below policy to be fair to everyone:
 
-Sinun pitäisi käydä läpi [**`apua halusi`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) tai [**`ensimmäinen ajastimet vain`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) ongelmaa jotta saat nopeasti yleiskuvan siitä, mitä voit työskennellä.
+1. We are most likely to merge the first pull request that addresses the issue.
+2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
+   - Did you include tests?
+   - Did you catch all usecases?
+   - Did you ensure all tests pass, and confirm everything works locally?
+3. Finally, we give priority to pull requests which follow our recommended guidelines.
+   - Did you follow the pull request checklist?
+   - Did you give your pull request a meaningful title?
 
-> [!TIP] **`auttaa halusi`** ongelmat ovat kourat, ja sinun ei tarvitse hakea lupaa ennen työstämistä niitä. Kuitenkin ongelmia **`ensimmäinen ajastimet vain`** merkki on varattu ihmisille, jotka eivät ole osallistuneet freeCodeCamp koodausta ennen. Jos nämä asiat eivät ole selvillä siitä, mitä on tehtävä, voit esittää kysymyksiä kommenteissa.
+### I am stuck on something that is not included in this documentation.
 
-### Löysin typon, pitäisikö minun kertoa asiasta ennen kuin voin esittää pull-pyynnön?
-
-Tyyppien ja muiden sanamuotojen muutosten osalta voit suoraan avata vetopyyntöjä luomatta ensin kysymystä. Ongelmia on enemmän keskustella suurempia ongelmia, jotka liittyvät käytännesääntöihin tai rakenteellisiin näkökohtiin.
-
-Kuitenkin, mainitse yksityiskohtia, konteksti jne. pull pyynnön kuvausalueella auttaa meitä ymmärtämään ja tarkistamaan oman panoksesi jopa pieniä muutoksia.
-
-### Miten saan ongelman joka on määrätty minulle?
-
-Emme yleensä anna kysymyksiä kenellekään muulle kuin pitkäaikaiselle osallistujalle, jotta vältyttäisiin monitulkintaisilta esityksiltä. Sen sijaan noudatamme seuraavassa esitettyä politiikkaa oikeudenmukaisesti kaikille:
-
-1. Ensisijaisena vaihtoehtona on, että kaikki asiat yhdistetään ensimmäiseen vetopyyntöön.
-2. Jos samaa asiaa koskevia useita pullonkauloja koskevia pyyntöjä on esitetty, lähdekoodin laatu on asetettava etusijalle.
-   - Oteitko mukaan testejä?
-   - Saitko kiinni kaikki käyttökohteet?
-   - Varmistatko kaikki testit läpäisevän, ja vahvistitte, että kaikki toimii paikallisesti?
-3. Lopuksi kannatamme pyyntöjä, jotka noudattavat suositeltuja ohjeita.
-   - Nouditko pull-pyynnön tarkistuslistaa?
-   - Nimitkö pull-pyyntösi otsikon mielekkäästi?
-
-Et tarvitse lupaa ongelmiin, jotka on merkitty `auttaa halusi` tai `ensimmäinen ajastimet vain` kuten aiemmin selitettiin.
-
-Noudata ohjeita huolellisesti ja avaa pull-pyyntö.
-
-### Olen juuttunut asiaan, joka ei sisälly näihin asiakirjoihin.
-
-**Voit vapaasti pyytää apua:**
+**Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The public `Contributors` [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 - The `#Contributors` channel on [our Discord community server](https://discord.gg/pFspAhS).
 
-Olemme innoissamme siitä, että autat sinua osallistumaan mihin tahansa aiheeseen, jonka parissa haluatte työskennellä. Voit vapaasti esittää meille kysymyksiä aiheeseen liittyvistä aiheista, ja olemme iloisia voidessamme selventää. Varmista, että etsit hakuasi ennen uuden lähettämistä.
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-Ole kohtelias ja kärsivällinen. Vapaaehtoistyömme ja moderaattorimme ovat aina valmiina opastamaan sinut kyselyjesi läpi.
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-**Ylimääräinen Apu:**
+**Additional Assistance:**
 
-Jos sinulla on kysyttävää pinosta, arkkitehtuuri codebase, voit vapaasti tavoittaa meidän henkilökunta dev joukkue:
+If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| Henkilökunta          | Lähetä viesti foorumissa                                                     |
+| Staff                 | Send message on Forum                                                        |
 |:--------------------- |:---------------------------------------------------------------------------- |
 | Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
 | Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
@@ -98,4 +79,4 @@ Jos sinulla on kysyttävää pinosta, arkkitehtuuri codebase, voit vapaasti tavo
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
 | Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 
-**Voit lähettää sähköpostia kehittäjähenkilökunnallemme: `dev[at]freecodecamp.org`**
+**You can email our developer staff at: `dev[at]freecodecamp.org`**

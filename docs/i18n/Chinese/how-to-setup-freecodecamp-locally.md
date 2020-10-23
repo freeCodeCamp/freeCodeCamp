@@ -1,546 +1,546 @@
-遵循这些准则在您的系统上本地建立免费CodeCamp。 如果您想要定期捐款，这将是强烈推荐的。
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-对于一些贡献的工作流，您需要在本地运行免费CodeCamp。 例如，预览编码挑战或调试和修复编解码器中的bug。
+Some of these contribution workflows – like fixing bugs in the codebase or curriculum – need you to run freeCodeCamp locally on your computer.
 
-> [!提示] 如果您不想在本地建立免费CodeCamp，请使用 Gitpod，免费的在线开发环境。
+> [!TIP] If you are not interested in setting up freeCodeCamp locally, consider using Gitpod, a free online dev environment.
 > 
-> [![在 Gitpod 中打开](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 > 
-> (在您的浏览器中为FreeCodeCodeCamp启动一个现成的开发环境。)
+> (Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
-## 准备您的本地机
+### How to prepare your local machine
 
-首先为您的操作系统安装必备软件。
+Start by installing the prerequisite software for your operating system.
 
-我们主要支持开发 **\*nix** 系统。 我们的工作人员和社区贡献者经常使用安装在 Ubuntu 和 macOS 上的工具与代码库合作。
+We primarily support development on Linux and Unix-based systems. Our staff and community contributors regularly work with the codebase using tools installed on Ubuntu and macOS.
 
-我们还通过 WSL 2 支持Windows 10，您可以通过 [阅读本指南](/how-to-setup-wsl) 来准备它。
+We also support Windows 10 via WSL2, which you can prepare by [reading this guide](/how-to-setup-wsl).
 
-一些社区成员还在Windows 10上使用Git for Windows (Git Bash)开发，以及安装在Windows上的其他工具。 我们目前对这种设置没有官方支持，我们建议使用WSL2。
+Some community members also develop on Windows 10 natively with Git for Windows (Git Bash), and other tools installed on Windows. We do not have official support for such a setup at this time, we recommend using WSL2 instead.
 
-**前提条件：**
+**Prerequisites:**
 
-| 前提条件：                                                                              | 版本     | 注                                                                                                                                            |
-| ---------------------------------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Node.js](http://nodejs.org)                                                       | `12.x` | [LTS 计划](https://github.com/nodejs/Release#release-schedule)                                                                                 |
-| npm (随后与节点捆绑)                                                                      | `6.x`  | 没有LTS版本，我们使用与节点LTS捆绑的版本                                                                                                                      |
-| [MongoDB 社区服务器](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`  | [发布笔记](https://docs.mongodb.com/manual/release-notes/), 注意：我们目前在 `3.6`, 计划进行 [升级](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275) |
+| Prerequisite                                                                                  | Version | Notes                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Node.js](http://nodejs.org)                                                                  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                    |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS                                                                                                                  |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
 
-> [!DANGER] 如果您有不同的版本，请安装推荐版本。 我们只能支持推荐版本的安装问题。 详情见 [故障排除](#troubleshooting)。
+> [!DANGER] If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
-如果Node.js已经安装在您的机器上，运行以下命令来验证版本：
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```console
-节点-v
+node -v
 npm -v
 ```
 
-> [!提示] 我们强烈建议更新上面列出的软件的最新稳定版本，也称为长期支持(LTS)版本。
+> [!TIP] We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-一旦安装了前提条件，您需要准备您的开发环境。 这对许多发展工作流来说是常见的，你只需要做一次这么做。
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-**按照这些步骤准备好您的发展环境：**
+**Follow these steps to get your development environment ready:**
 
-1. 如果您还没有安装 [Git](https://git-scm.com/) 或您最喜欢的 Git 客户端。 更新到最新版本；与您的操作系统捆绑的版本可能已经过时。
+1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (可选但推荐) [为 GitHub 设置一个 SSH 密钥](https://help.github.com/articles/generating-an-ssh-key/)。
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
-3. 安装您选择的代码编辑器。
+3. Install a code editor of your choice.
 
-   我们强烈建议使用 [Visual Studio 代码](https://code.visualstudio.com/) 或 [Atom](https://atom.io/)。 这些是巨大的、免费的和开源代码编辑器。
+   We highly recommend using [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. 为您的代码编辑器设置行号。
+4. Set up linting for your code editor.
 
-   您应该在您的编辑器中运行 [ESLint](http://eslint.org/docs/user-guide/integrations.html)并且它将突出任何不符合 [免费CodeCamp的 JavaScript 风格指南](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) 的内容。
+   You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-   > [!提示] 请不要忽略任何行号错误。 They are meant to **help** you and to ensure a clean and simple codebase.
+   > [!TIP] Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
-## 在 GitHub 上派生仓库
+## Fork the repository on GitHub
 
-[Forcing](https://help.github.com/articles/about-forks/) 是你在GitHub 上获取你自己的 FreeCodeCamp的主要存储库 (a.k.a _repo_) 的一个步骤。
+[Forking](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-这是非常重要的，因为它允许您在GitHub上使用您自己的免费CodeCamp， 或者下载 (克隆) 您的资源库在本地工作。 稍后，您将能够通过拉取请求(PR)从分叉中提取到主存储库。
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
-> [!TIP] 主仓库在 `https://github.com/freeCodeCamp/freeCodeCode` 经常被称为 `上游的` 仓库.
+> [!TIP] The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
 > 
-> 您在 `https://github.com/YOUR_USER_NAME/freeCodeCamp` 的叉经常被称为 `来源` 资源库。
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
 
-**按照这些步骤派生 `https://github.com/freeCodeCamp/freeCodeCodeCamp` 仓库：**
+**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
 
-1. 转到GitHub上的免费CodeCamp仓库： [https://github.com/freeCodeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp)
+1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 
-2. 点击接口右上角的“Fork”按钮([此处有更多详细信息](https://help.github.com/articles/fork-a-repo/))
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 
-3. 当仓库被解压后，你将被带到你的免费CodeCamp 仓库的副本： `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 <details>
    <summary>
-      如何派生GitHub 上的 FreeCodeCamp (screshot)
+      How to fork freeCodeCamp on GitHub (screenshot)
    </summary>
 
    <br>
-   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="如何在 GitHub 上派生免费CodeCamp" />
+   <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/github/how-to-fork-freeCodeCamp.gif" alt="How to fork freeCodeCamp on GitHub" />
 </details>
 
-## 从GitHub 复制你的叉文件
+## Clone your fork from GitHub
 
-[克隆](https://help.github.com/articles/cloning-a-repository/) 是您的位置 **下载** 从 `远程` 处下载的仓库副本，由您或其他人拥有。 In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+[Cloning](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
 
-在本地机器上运行这些命令：
+Run these commands on your local machine:
 
-1. 在您的工程目录中打开终端/命令提示/Shell
+1. Open a Terminal / Command Prompt / Shell in your projects directory
 
-   _i.e. : `/你的项目目录/`_
+   _i.e.: `/yourprojectsdirectory/`_
 
-2. 克隆你的免费CodeCamp，用你的 GitHub 用户名替换 `YOUR_USER_NAME`
-
-   ```console
-   git 克隆--depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
-   ```
-
-这将下载整个免费CodeCamp 仓库到您的项目目录。
-
-注意： `--depth=1` 创建了一个你的叉中的浅色克隆，只有最近的历史/提交。
-
-## 设置父同步
-
-既然你已经下载了你的叉副本，你将需要设置一个 `上游` 远程到父仓库中。
-
-[如前面提到的](#fork-the-repository-on-github), 主仓库已被调用 `上游的` 仓库. 你的叉被称为 `来源` 仓库。
-
-除了 `来源于` 仓库外，您还需要本地克隆的引用到 `上游` 存储库。 这是为了您可以同步主仓库中的更改，而无需重复叉和克隆。
-
-1. 将目录更改为新的 FreeCodeCamp 目录：
+2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
 
    ```console
-   cd 免费CodeCamp
+   git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
    ```
 
-2. 添加远程引用到主FreeCodeCamp仓库：
+This will download the entire freeCodeCamp repository to your projects directory.
+
+Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+
+## Set up syncing from parent
+
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
+
+[As mentioned earlier](#fork-the-repository-on-github), the main repository is referred `upstream` repository. Your fork referred to as the `origin` repository.
+
+You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
+
+1. Change directory to the new freeCodeCamp directory:
 
    ```console
-   git 远程添加上游版 https://github.com/freeCodeCamp/freeCodeCamp.git
+   cd freeCodeCamp
    ```
 
-3. 确保配置正确：
+2. Add a remote reference to the main freeCodeCamp repository:
 
    ```console
-   git 远程-v
+   git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
    ```
 
-   输出应该像下面这样：
+3. Ensure the configuration looks correct:
 
    ```console
-   原点 https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
-   原点 https://github.com/YOUR_USER_NAME/freeCodeCamp.git (pack)
-   上游流https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
-   上游流 https://github.com/freeCodeCamp/freeCodeCamp.git (pus)
+   git remote -v
    ```
 
-## 在本地运行免费CodeCamp
+   The output should look something like below:
 
-现在你有一个本地的免费CodeCamp，你可以按照这些指示在本地运行。 这将允许您：
+   ```console
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+   origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+   ```
 
-- 预览将出现在学习平台上的页面.
-- 4. 关于与用户界面有关的问题和改进的工作。
-- 与应用程序服务器和客户端应用程序调试和修复问题。
+## Running freeCodeCamp locally
 
-如果您确实遇到了问题，请先对您的问题进行网页搜索，并查看是否已经回答过了。 如果您找不到解决方案， 如果尚未报告，请搜索我们的 [GitHub 问题](https://github.com/freeCodeCamp/freeCodeCamp/issues) 页面并报告问题。
+Now that you have a local copy of freeCodeCamp, you can follow these instructions to run it locally. This will allow you to:
 
-一如既往， 觉得可以随时连接到我们的 [贡献者聊天室在 Gitter](https://gitter.im/FreeCodeCamp/Contributors) 或 [我们的 Discord 服务器](https://discord.gg/pFspAhS), 快速查询。
+- Preview edits to pages as they would appear on the learning platform.
+- Work on UI related issues and enhancements.
+- Debug and fix issues with the application servers and client apps.
 
-> [!提示] 如果你只是编辑文件，你可能会跳过本地免费运行CodeCamp。 例如，执行 `rebase`, 或解决 `合并` 冲突。
+If you do run into issues, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our [GitHub issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
+
+And as always, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
+
+> [!TIP] You may skip running freeCodeCamp locally if you are simply editing files. For instance, performing a `rebase`, or resolving `merge` conflicts.
 > 
-> 以后您总是可以返回说明的这一部分。 You should **only** skip this step if you do not need to run the apps on your machine.
+> You can always return to this part of the instructions later. You should **only** skip this step if you do not need to run the apps on your machine.
 > 
-> [跳过进行更改](#making-changes-locally)。
+> [Skip to making changes](#making-changes-locally).
 
-### 配置依赖项
+### Configuring dependencies
 
-#### 第 1 步：设置环境变量文件
+#### Step 1: Set up the environment variable file
 
-默认 API 密钥和环境变量存储在文件 `sample.env` 中。 此文件需要复制到一个名为 `.env` 的新文件，该文件是在安装过程中动态访问的。
+The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
 ```console
-# 创建一个 "sample.env" 的副本，并命名它".env"。
-# 用必要的 API 密钥和密钥填充它：
+# Create a copy of the "sample.env" and name it ".env".
+# Populate it with the necessary API keys and secrets:
 
 # macOS / Linux
-cp 样本。 nv .env
+cp sample.env .env
 
 # Windows
-复制 sample.env .env
+copy sample.env .env
 ```
 
-`.env` 文件中的密钥 _并不需要更改_ 才能本地运行应用程序。 您可以保留从 `sample.env` 复制的默认值。
+The keys in the `.env` file are _not_ required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
-> [!提示] 如果您想要使用像Auth0 或 Algolia 这样的服务，请记住。 您必须为这些服务获取您自己的 API 密钥，并相应地在 `中编辑条目。 nv` 文件。
+> [!TIP] Keep in mind if you want to use services like Auth0 or Algolia, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-#### 步骤 2: 安装依赖关系
+#### Step 2: Install dependencies
 
-此步骤将安装应用程序运行所需的依赖关系：
+This step will install the dependencies required for the application to run:
 
 ```console
 npm ci
 ```
 
-#### 步骤 3: 启动 MongoDB 并种子数据库
+#### Step 3: Start MongoDB and seed the database
 
-在本地运行应用程序之前，您需要启动 MongoDB 服务。
+Before you can run the application locally, you will need to start the MongoDB service.
 
-> [!注意] 除非您在 MongoDB 中运行的设置不同于默认， 在 `中存储为 <code>MONGOHQ_URL` 值的 URL。 nv</code> 文件应该正常工作。 如果您正在使用自定义配置，请根据需要修改此值。
+> [!NOTE] Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine. If you are using a custom configuration, modify this value as needed.
 
-在 MongoDB 服务器单独的终端中启动：
+Start the MongoDB server in a separate terminal:
 
-- 在 macOS & Ubuntu：
+- On macOS & Ubuntu:
 
   ```console
   mongod
   ```
 
-- 在 Windows上，您必须指定 `怪物` 双进制的完整路径
+- On Windows, you must specify the full path to the `mongod` binary
 
   ```console
   "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
   ```
 
-  请确保将 `3.6` 替换为您已安装的版本
+  Make sure to replace `3.6` with the version you have installed
 
-> [!提示] 您可以通过安装它作为后台服务来避免每次启动 MongoDB 。 您可以 [在他们为您的操作系统提供的文档中了解更多关于它的信息](https://docs.mongodb.com/manual/administration/install-community/)
+> [!TIP] You can avoid having to start MongoDB every time by installing it as a background service. You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-接下来，让我们来做数据库的种子。 在这个步骤中，我们运行下面的命令，将MongoDB 服务器填充一些服务所需的初始数据集。 除其他外，其中包括一些计划。
-
-```console
-npm 运行种子
-```
-
-#### 步骤 4: 启动免费CodeCam客户端应用程序和 API 服务器
-
-您现在可以启动 API 服务器和客户端应用程序。
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```console
-npm 运行开发
+npm run seed
 ```
 
-这个单一命令将会发射所有的服务，包括API服务器和客户端应用程序供您使用。
+#### Step 4: Start the freeCodeCamp client application and API server
 
-> [!注意] 一旦准备就绪, 打开网页浏览器和 **访问 <http://localhost:8000>** 如果应用程序加载，恭喜——你都已设置！ 您现在有一个免费CodeCamp的整个学习平台在您的本地机器上运行。
+You can now start up the API server and the client applications.
 
-> [!提示] API 服务器在 `http://localhost:3000` 上提供 API。 Gatsby应用在 `http://localhost:8000` 为客户端应用程序服务
+```console
+npm run develop
+```
 
-> 如果您访问 <http://localhost:3000/explorer> ，您应该看到可用的 API。
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
-## 使用本地用户登录
+> [!NOTE] Once ready, open a web browser and **visit <http://localhost:8000>**. If the app loads, congratulations – you're all set! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
-您的本地设置自动将本地用户添加到数据库中。 点击 `登录` 按钮将自动认证您进入本地应用程序。
+> [!TIP] The API Server serves APIs at `http://localhost:3000`. The Gatsby app serves the client application at `http://localhost:8000`
 
-然而，访问用户组合页面有点微妙。 在发展中， Gatsby接管了客户端页面的服务，因此在本地工作时，您将获得用户组合的 `404` 页面。
+> If you visit <http://localhost:3000/explorer> you should see the available APIs.
 
-只需点击 **"预览自定义 404 页面"** 按钮会将您转到正确的页面。
+## Sign in with a local user
+
+Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
+
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+
+Simply clicking the **"Preview Custom 404 Page"** button will forward you to the correct page.
 
 <details>
    <summary>
-      如何在本地工作时登录 (屏幕截图)
+      How to sign in when working locally (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="如何在本地工作时登录" />
+   <img src="https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif" alt="How to sign in when working locally" />
 </details>
 
-## 在当地进行变化
+## Making changes locally
 
-您现在可以对文件进行更改并将您的更改提交给您的本地叉。
+You can now make changes to files and commit your changes to your local clone of your fork.
 
-跟随这些步骤：
+Follow these steps:
 
-1. 验证您在 `master` 分支：
+1. Validate that you are on the `master` branch:
 
    ```console
    git status
    ```
 
-   您应该获得如下输出：
+   You should get an output like this:
 
    ```console
-   对于分支管理员
-   您的分支是最新的，带有“原始/主”
+   On branch master
+   Your branch is up-to-date with 'origin/master'.
 
-   无需提交，工作目录清理
+   nothing to commit, working directory clean
    ```
 
-   如果您不在主目录，或者您的工作目录没有被清理，解决任何未处理的文件/提交和结帐 `主`:
+   If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
 
    ```console
-   git 结帐管理员
+   git checkout master
    ```
 
-2. 从上游的FreeCodeCamp `master` 分支同步到您的本地主分支的最新更改：
+2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
 
-   > [!警告] 如果你有任何未完成的拉取请求是从你的叉的 `主` 分支提出的 在这一步结束时，你会丢失他们。
+   > [!WARNING] If you have any outstanding pull request that you made from the `master` branch of your fork, you will lose them at the end of this step.
    > 
-   > 您应该确保您的拉取请求在执行此步骤之前由版主合并。 To avoid this scenario, you should **always** work on a branch other than the `master`.
+   > You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should **always** work on a branch other than the `master`.
 
-   这个步骤 **将同步来自免费CodeCamp主要仓库的最新更改**。 重要的是您尽可能频繁地将分支重新建立在最新的 `上面/主` 上面，以避免以后发生冲突。
+   This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
 
-   更新您本地的 FreeCodeCamp 上游版本库：
-
-   ```console
-   git 获取上流
-   ```
-
-   使用免费CodeCamp大师重置您的主分支：
+   Update your local copy of the freeCodeCamp upstream repository:
 
    ```console
-   git 重置 --hard 上游/管理员
+   git fetch upstream
    ```
 
-   将您的主分支推送到您的原始位置，在GitHub上的叉上有一个干净的历史记录：
+   Hard reset your master branch with the freeCodeCamp master:
 
    ```console
-   git 推送原始主--force
+   git reset --hard upstream/master
    ```
 
-   您可以通过执行一个分支来验证您当前的主匹配的上游/主：
+   Push your master branch to your origin to have a clean history on your fork on GitHub:
 
    ```console
-   git diff 上游/大师
+   git push origin master --force
    ```
 
-   生成的输出应为空。
-
-3. 创建新分支：
-
-   为每个问题单独工作一个分支有助于您保持本地工作副本干净。 你永远不应该在 `主` 上工作。 这将使您的免费CodeCamp的副本土生土长，并且您可能必须从新的克隆或叉开始。
-
-   检查您是否像以前解释过的那样在 `主` 上，并从那里关闭分支：
+   You can validate your current master matches the upstream/master by performing a diff:
 
    ```console
-   git 结帐-b fix/update-guide-for-xyz
+   git diff upstream/master
    ```
 
-   您的分支名称应该以 `修复/`、 `feature/`、 `docs/`等开头。 避免在分支中使用问题编号。 保持其简短、有意义和独特性。
+   The resulting output should be empty.
 
-   良好的分支名称的一些例子包括：
+3. Create a fresh new branch:
+
+   Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+
+   Check that you are on `master` as explained previously, and branch off from there:
+
+   ```console
+   git checkout -b fix/update-guide-for-xyz
+   ```
+
+   Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+
+   Some examples of good branch names are:
 
    ```md
-   修复/update-challenges-for-action
+   fix/update-challenges-for-react
    fix/update-guide-for-html-css
-   fix/platform-bug-sign-in issues
+   fix/platform-bug-sign-in-issues
    feat/add-guide-article-for-javascript
    translate/add-spanish-basic-html
    ```
 
-4. 在您最喜欢的文本编辑器中编辑页面并使用代码。
+4. Edit pages and work on code in your favorite text editor.
 
-5. 一旦您对更改感到满意，您应该可以在本地免费运行CodeCamp来预览更改。
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. 请确保您修复任何错误并检查您更改的格式。
+6. Make sure you fix any errors and check the formatting of your changes.
 
-7. 检查并确认您正在更新的文件：
-
-   ```console
-   git status
-   ```
-
-   这将显示您编辑的 `未发布的` 文件列表。
-
-   ```console
-   对于分支功能/文档
-   您的分支是最新的 "upstream/feate/documentation"。
-
-   更改尚未提交：
-   (使用 git add/rm <file>... 更新将要执行的内容
-   (使用 "git 结帐" - <file>." 放弃工作目录中的更改)
-
-       修改: CONTRIBUTING。 d
-       修改：docsor README.md
-       修改：docs/howto setup-freecodecamp-local。 d
-       修改: docs/how-work-on-guide-articles.md
-...
-   ```
-
-8. 阶段更改并提交：
-
-   在这个步骤中，您只应标记您自己编辑或添加的文件。 您可以执行重置和解析文件，如果需要，您不打算更改这些文件。
-
-   ```console
-   git 添加路径到/my/changed/file.ext
-   ```
-
-   或者您可以将所有 `未发布的` 文件添加到暂存区域：
-
-   ```console
-   git 添加
-   ```
-
-   只有移到暂存区域的文件才会在提交时被添加。
+7. Check and confirm the files you are updating:
 
    ```console
    git status
    ```
 
-   输出:
+   This should show a list of `unstaged` files that you have edited.
 
    ```console
-   对于分支功能/文档
-   您的分支是最新的 "upstream/feate/documentation"。
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
 
-   要进行的更改：
-   (使用 "git reset HEAD <file>..." to unstage)
+   Changes not staged for commit:
+   (use "git add/rm <file>..." to update what will be committed)
+   (use "git checkout -- <file>..." to discard changes in working directory)
 
-       修改：CONTRIBUTING.md
-       修改：docs/README.md
-       修改：docs/howto setup-freecodecamp-locally.md
-       修改：docs/how-work-on-guide-articles.md
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
+   ...
    ```
 
-   现在，您可以用这样一个简短的消息来提交您的更改：
+8. Stage the changes and make a commit:
+
+   In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
    ```console
-   git 提交 -m "修复：我的短提交信息"
+   git add path/to/my/changed/file.ext
    ```
 
-   一些例子：
+   Or you can add all the `unstaged` files to the staging area:
+
+   ```console
+   git add .
+   ```
+
+   Only the files that were moved to the staging area will be added when you make a commit.
+
+   ```console
+   git status
+   ```
+
+   Output:
+
+   ```console
+   On branch feat/documentation
+   Your branch is up to date with 'upstream/feat/documentation'.
+
+   Changes to be committed:
+   (use "git reset HEAD <file>..." to unstage)
+
+       modified:   CONTRIBUTING.md
+       modified:   docs/README.md
+       modified:   docs/how-to-setup-freecodecamp-locally.md
+       modified:   docs/how-to-work-on-guide-articles.md
+   ```
+
+   Now, you can commit your changes with a short message like so:
+
+   ```console
+   git commit -m "fix: my short commit message"
+   ```
+
+   Some examples:
 
    ```md
-   修复：为 Java 更新指南文章 - 循环
-   功能：为alexa 技能添加指南文章
+   fix: update guide article for Java - for loop
+   feat: add guide article for alexa skills
    ```
 
-   可选：
+   Optional:
 
-   我们强烈建议发表一项常规承诺信息。 这是一个好的做法，您将在一些受欢迎的开源仓库中看到。 作为开发者，这鼓励您遵循标准做法。
+   We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
 
-   常规承诺信息的一些例子是：
+   Some examples of conventional commit messages are:
 
    ```md
-   修复：更新 HTML 指南文章
-   修复：更新 Travis-CI 版本的脚本
-   功能：为JavaScript 钩子
-   文档添加文章：更新贡献指南
+   fix: update HTML guide article
+   fix: update build scripts for Travis-CI
+   feat: add article for JavaScript hoisting
+   docs: update contributing guidelines
    ```
 
-   保持这些短篇幅不超过50个字符。 您总是可以在提交消息的描述中添加额外信息。
+   Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-   这不需要任何额外的时间，只需要一个非常规信息，例如“更新文件”或“添加索引.md”
+   This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-   您可以了解更多关于您为什么要在这里使用常规提交 [](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits)。
+   You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. 如果您意识到需要编辑文件或在提交后更新提交消息，您可以在编辑文件后这样做：
+9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
 
    ```console
-   git 提交 --revision
+   git commit --amend
    ```
 
-   这将打开一个默认文本编辑器，如 `nano` or `vi` ，您可以在那里编辑提交的消息标题并添加/编辑描述。
+   This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
-10. 接下来，你可以将你的更改推到你的叉中：
+10. Next, you can push your changes to your fork:
 
     ```console
-    git 推送来源分支/名称到这里
+    git push origin branch/name-here
     ```
 
-## 提出合并请求(PR)
+## Proposing a Pull Request (PR)
 
-在您提交了您的更改后，请在这里检查 [如何打开一个合并请求](how-to-open-a-pull-request.md)。
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
-## 快速命令参考
+## Quick commands reference
 
-快速引用您在本地工作时需要的命令。
+A quick reference to the commands that you will need when working locally.
 
-| 命令                                                         | description                        |
-| ---------------------------------------------------------- | ---------------------------------- |
-| `npm ci`                                                   | 安装/重新安装所有依赖关系和引导不同的服务。             |
-| `npm 运行种子`                                                 | 解析所有挑战Markdown文件并将其插入MongoDB。      |
-| `npm 运行开发`                                                 | 启动免费CodeCamp API 服务器和客户端应用程序。      |
-| `npm 测试`                                                   | 在系统中运行所有 JS 测试，包括客户端、服务器、 直线和挑战测试。 |
-| `npm 运行测试：客户端`                                             | 运行客户端测试套件。                         |
-| `npm 运行测试：课程`                                              | 运行课程测试套件。                          |
-| `npm 运行测试:course --block='Basic HTML 和 HTML5'`             | 测试特定方块。                            |
-| `npm 运行 test:course --superblock='responsible web-design'` | 测试一个特定的超级块。                        |
-| `npm 运行测试课程全文输出`                                           | 运行课程测试套件，而不会在第一个错误后进行保养。           |
-| `npm 运行测试：服务器`                                             | 运行服务器测试套件。                         |
-| `npm 运行e2e`                                                | 运行 Cypress 端口来结束测试。                |
-| `npm 运行清理`                                                 | 卸载所有依赖关系并清理缓存。                     |
+| command                                                        | description                                                                         |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
+| `npm run test-curriculum-full-output`                          | Run the curriculum test suite, without bailing after the first error                |
+| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                                   |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
-## 故障排除
+## Troubleshooting
 
-### 安装推荐前提条件的问题
+### Issues with installing the recommended prerequisites
 
-我们经常在最新或最受欢迎的操作系统上开发，如macOS 10.15或更高版本，Ubuntu 18.04或更高版本，以及Windows 10(WSL2)。
+We regularly develop on the latest or most popular operating systems like macOS 10.15 or later, Ubuntu 18.04 or later and Windows 10 (with WSL2).
 
-建议在资源上研究您的具体问题，例如谷歌、堆栈溢出和堆栈交换。 有一个很好的机会让某人面临同样的问题，你的具体查询已经有一个答案。
+It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
 
-如果您处于不同的操作系统和/或仍在出现问题，请参阅 [获取帮助](#getting-help)。
+If you are on a different OS and/or are still running into issues, see [getting help](#getting-help).
 
-> [!警告]
+> [!WARNING]
 > 
-> 请避免为前提问题创建 GitHub 问题。 它们超出了该项目的范围。
+> Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
-### UI、字体、构建错误等问题。
+### Issues with the UI, Fonts, build errors etc.
 
-如果您面临UI问题，字体或看到构建错误，清理可能有用：
+If you face issues with the UI, Fonts or see builds errors a cleanup can be useful:
 
 ```console
-npm 运行清洁
+npm run clean
 npm ci
-npm 运行种子
-npm 运行开发
+npm run seed
+npm run develop
 ```
 
-或
+OR
 
-使用快捷方式
-
-```
-npm 运行清理和开发
-```
-
-如果你继续面临建筑物问题，清理工作区是推荐的。
-
-在交互模式下使用 `git 净化`
+Use the shortcut
 
 ```
-git 清理-ifdX
+npm run clean-and-develop
+```
+
+If you continue to face issues with the build, cleaning up the workspace is recommend.
+
+Use `git clean` in interative mode:
+
+```
+git clean -ifdX
 ```
 
 <details>
    <summary>
-      如何清理git 解压过的文件(屏幕截图)
+      How to clean git untracked files (screenshot)
    </summary>
 
    <br>
-   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="如何清理git 解压过的文件" />
+   <img src="https://user-images.githubusercontent.com/1884376/94270515-ca579400-ff5d-11ea-8ff1-152cade31654.gif" alt="How to clean git untracked files" />
 </details>
 
-### API、登录、挑战提交等问题
+### Issues with API, Login, Challenge Submissions, etc.
 
-如果您不能登录，而是看到一个带有错误消息的横幅，它将被报告给FreeCodeCodeCamp， 请再次检查您的本地端口 `3000` 是否没有被另一个程序使用。
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port `3000` is not in use by a different program.
 
-**在 Linux / macOS / WSL 窗口上 - 从终端：**
+**On Linux / macOS / WSL on Windows - From Terminal:**
 
 ```console
 netstat -ab | grep "3000"
 
-tcp4 0 0 0.0.0.0:3000 DESKTOP LISTEN
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
 ```
 
-**在 Windows 上 - 从高亮的电源架：**
+**On Windows - From Elevated PowerShell:**
 
 ```powershell
-netstat -ab | 选择字符串"3000"
+netstat -ab | Select-String "3000"
 
-TCP 0.0.0:3000DESKTOP 列表正在注意中
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
 ```
 
-### 安装依赖关系的问题
+### Issues installing dependencies
 
-如果您在安装依赖时遇到错误， 请确保您不在受限制的网络中，或您的防火墙设置不会阻止您访问资源。
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources.
 
-首次设置可能需要一段时间，取决于您的网络带宽。 耐心等待，如果你仍然被卡住，我们使用GitPod 而不是脱机设置。
+The first time setup can take a while depending on your network bandwidth. Be patient, and if you are still stuck we recommed using GitPod instead of an offline setup.
 
-## 获取帮助
+## Getting Help
 
-如果您被卡住并需要帮助。 通过在 [中在我们的论坛](https://forum.freecodecamp.org/c/contributors) 上询问贡献者的类别或在 Gitter 上的 [贡献者聊天室](https://gitter.im/FreeCodeCamp/Contributors) 来让我们知道。
+If you are stuck and need help, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 
-在您的浏览器控制台或Bash / Terminal / Command 行中可能有错误，将有助于识别问题。 在您的问题描述中提供此错误信息，以便其他人能够更容易地识别问题并帮助您找到解决方案。
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

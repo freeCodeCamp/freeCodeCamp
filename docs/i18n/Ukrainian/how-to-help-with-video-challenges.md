@@ -1,199 +1,199 @@
-# Як допомогти з відеовикликами
+# How to help with video challenges
 
-Відеовиклики - це новий тип виклику у навчальній програмі freeCodeCamp.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
-Відео-виклик - це маленька частина курсу з повною тривалістю на певну тему. Вкладення відео до відео з завданням. Кожна сторінка завдання має одне питання з безліччю вибору, яке стосується відео. Користувач повинен правильно відповісти на питання, перш ніж перейти до наступного відео-виклику в курсі.
+A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 
-Сторінки з відео-викликів створюються членами команди freeCodeCamp . Відео від YouTube також завантажуються членами безкоштовного Кодексу. Багато відеовикликів ще не мають питань, пов'язаних з ними.
+The video challenge pages are created by members of the freeCodeCamp team. YouTube videos are also uploaded by members of the freeCodeCamp team. Many of the video challenges do not yet have questions associated with them.
 
-Ви можете допомогти, створивши питання з декількома відповідями на вибір для відео розділів і додавши питання до файлів розмітки для відео-задач.
+You can help by creating multiple choice questions related to video sections and adding the questions to the markdown files for the video challenges.
 
 
-## Шаблон виклику
+## Challenge Template
 
-Нижче наведено шаблон того, як виглядають файли виклику markdown.
+Below is a template of what the challenge markdown files look like.
 
 ````md
 ---
-Унікальний ідентифікатор (alphanumeral, MongoDB_id)
-title: Заголовок виклику
+id: Unique identifier (alphanumerical, MongoDB_id)
+title: Challenge Title
 challengeType: 11
-videoId: 'YouTube videoId для відеодзвінка
+videoId: 'YouTube videoId for video challenge'
 ---
 
-## Опис
+## Description
 
 <section id='description'>
-Факультативний опис з корисною інформацією, пов'язаною з відео.
+An optional description with helpful information related to the video.
 </section>
 
-## Тести
+## Tests
 
 <section id='tests'>
 
-`yml
+```yml
 question:
-  текст: 'Питання'
-  відповідей:
-    - 'Відповісти Одній'
-    - 'Відповідь Two'
-    - 'Відповідь Three'
+  text: 'Question'
+  answers:
+    - 'Answer One'
+    - 'Answer Two'
+    - 'Answer Three'
   solution: 3
 ````
 
 </section>
 ````
 
-## Створення питань для відео-викликів
+## Creating questions for video challenges
 
-### Доступ до відео файлів з комплексом розмітки
+### Access the video challenge markdown files
 
-Ви можете знайти файли markdown для відео-викликів на таких місцях у навчальній програмі:
+You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Аналізатор даних з Python Курсом](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [TensorFlow 2.0 Курс](https://github. om/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
-- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/freeCodeCamp/treric/curriculum/challenges/english/08-data-Analis-with-python/numpy)
-- Як несільські Неробочі Курси(https://github.com/freeCode/freeCode/tree/master/curulum/challenges/englum/engle-learning-with-py/11-machin-al-thon-neurs-uk-network
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
-Вибрати варіант з відповідного файлу зверху.
+Pick a challenge markdown file from the options above.
 
-### Скайм через відео, пов'язане з викликом та створити мультиплікаційне запитання
+### Skim through the video associated with the challenge and create a mutiple choice question
 
-Спочатку, знайти відеоматеріал.
+First, find the videoId.
 
-Наприклад, у наступному коді з заголовка файлу з відеоспостереженням, відео містить "nVAaxZ34khk". На GitHub, інформація повинна зберігатися в форматі таблиці.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ````
 ---
-id: 5e9a093a74c4063ca6f7c14d title: Аналізатор даних приклад challengeType: 11
+id: 5e9a093a74c4063ca6f7c14d title: Data Analysis Example A challengeType: 11
 videoId: nVAaxZ34khk
 ---
 ```
 
-Далі доступ до відео на YouTube з цим відеороликом. URL-адреса для відео буде так:
-https://www.youtube. om/watch?v=[videoId]    (додайте videoId на URL без квадратних дужок)
+Next, access the YouTube video with that videoId. The url for the video will be:
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-У прикладі вище, URL-адреса - https://www. outube.com/watch?v=nVAaxZ34khk
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
-Skim відео YouTube з цим відеоID та думати про множинний вибір на основі вмісту відео.
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
-### Додайте питання до файлу розмітки
+### Add the question to the markdown file
 
-Ви можете додати питання локально або безпосередньо через GitHub інтерфейс. Щоб додати питання локально, вам потрібно [налаштувати безкоштовноCodeCamp локально](як-setup-freecodecamp-locally.md). Ви також можете знайти файл на GitHub і натисніть кнопку редагування, щоб додати питання прямо в вашому браузері.
+You can add the question locally or directly throught the GitHub interface. To add the question locally, you need to [set up freeCodeCamp locally](how-to-setup-freecodecamp-locally.md). You can also find the file on GitHub and click the edit button to add the question right in your browser.
 
-Якщо питання ще не було додане до певної відео-виклику, у нього буде наступне запитання за замовчуванням:
-
-```yml
-питання:
-  текст: |
-    Питання
-  відповідей:
-    - |
-      один
-    - |
-      два
-    - |
-
-  рішення: 3
-```
-
-Оновіть слово "Питання" своїм питанням. Оновіть "один", "два" та "трійку" з можливими відповідями. Переконайтеся, що оновлення номеру розв'язку з відповіддю буде правильною. Ви можете додати більше відповідей використовуючи такий же формат. Питання і відповіді можна оточити лапками.
-
-#### Використовувати markdown для форматування вашого питання
-
-Текст у питанні розцінюється як розмітка. Найпростіший спосіб переконатися, що він відформатований правильно, це розпочати питання з `тексту: |`, на зразок цього:
+If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-запитання:
-  текст: |
-    Питання
+question:
+  text: |
+    Question
+  answers:
+    - |
+      one
+    - |
+      two
+    - |
+      three
+  solution: 3
 ```
 
-Тоді ви повинні переконатися, що ваше питання знаходиться на новому рядку, і для відступу на один рівень більше, ніж `текст: |`.
+Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-Один і той самий підхід можна використовувати для відповідей тому повне питання стає
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
-запитання:
-  текст: |
-    Питання
-  відповіде:
-  - |
-    Перша відповідь
-  - |
-    Друга
-  - |
-    Трет
-  рішення: 2
+question:
+  text: |
+    Question
 ```
 
-Переконайтеся, що кожна відповідь правдоподібна, але є лише одна правильна відповідь.
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
 
-#### Використання HTML
+The same approach can be used for the answers, so the entire question becomes
 
-Питання та відповіді можуть містити певні теги HTML, такі як `<br>` - новий рядок. HTML-теги повинні використовуватися одночасно, якщо питання не можуть бути виражені без них.
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
+    Second
+  - |
+    Third
+  solution: 2
+```
 
-### Приклади питань
+Make sure each answer is plausible but there is only one correct answer.
 
-#### Приклади без HTML
+#### Use of HTML
+
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+
+### Question examples
+
+#### Examples without HTML
 
 ````yml
-запитання:
-  текст: |
-    Що робить цей JavaScript код в консоль?
+question:
+  text: |
+    What does this JavaScript code log to the console?
     ```js
-    console.log('Привіт світ');
+    console.log('hello world');
     ````
 
 
-    Виберіть відповідь!
-  відповідей:
-    - | привіт *світ*
-    - | **привіт** світ
-    - | привіт світ рішення: 3
+    Select an answer!
+  answers:
+    - | hello *world*
+    - | **hello** world
+    - | hello world solution: 3
 ````
 
-``yml
-питання:
-  текст: |
-    Що виведе на екран після запуску цього коду:
+````yml
+question:
+  text: |
+    What will print out after running this code:
     ```py
     width = 15
-    висота = 12.
-    print(висота/3)
+    height = 12.0
+    print(height/3)
     ````
-  відповідей:
+  answers:
     - | 39
     - | 4
     - | 4.0
     - | 5.0
-    - | 5 рішення: 3
+    - | 5 solution: 3
 ````
 
-#### Приклад з HTML
+#### Example with HTML
 
-`yml
+```yml
 question:
-  текст: |
-    Що виведе після запуску цього коду:
-    <pre><code>ширина = 15<br>висота = 12.<br>print(height/3)<code></pre>
-  відповідей:
+  text: |
+    What will print out after running this code:
+    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
+  answers:
     - |
       39
     - |
       4
     - |
-      4.
+      4.0
     - |
-      5.
+      5.0
     - |
       5
-  рішення: 3
+  solution: 3
 ````
 
-Остаточний приклад демонструє, що HTML можна використовувати, але він не такий читабельний, як версія без нього.
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-Для прикладів, ви можете переглянути файли markdown для наступного відео-курсу. Усі виклики вже мають запитання: [Python для всіх курсів](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
-## Відкрити запит на злиття
+## Open a pull request
 
-Після створення одного або декількох запитань, ви можете затвердити зміни до нової гілки і [відкрити pull request](how-to-open-a-pull-request.md).
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

@@ -11,7 +11,7 @@ forumTopicId: 301566
 
 The following challenges will make use of the <code>chat.pug</code> file. So, in your <code>routes.js</code> file, add a GET route pointing to <code>/chat</code> which makes use of <code>ensureAuthenticated</code>, and renders <code>chat.pug</code>, with <code>{ user: req.user }</code> passed as an argument to the response. Now, alter your existing <code>/auth/github/callback</code> route to set the <code>req.session.user_id = req.user.id</code>, and redirect to <code>/chat</code>.
 
-Add <code>html</code> and <code>socket.io</code> as a dependency and require/instantiate them in your server defined as follows:
+Add <code>http</code> and <code>socket.io</code> as a dependency and require/instantiate them in your server defined as follows:
 
 ```javascript
 const http = require('http').createServer(app);
@@ -62,7 +62,7 @@ tests:
   - text: <code>socket.io</code> should be a dependency.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'socket.io', 'Your project should list "socket.io" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
   - text: You should correctly require and instantiate <code>http</code> as <code>http</code>.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /http.*=.*require.*('|")http\1/gi, 'Your project should list "html" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /http.*=.*require.*('|")http\1/gi, 'Your project should list "http" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
   - text: You should correctly require and instantiate <code>socket.io</code> as <code>io</code>.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /io.*=.*require.*('|")socket.io\1.*http/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })
   - text: Socket.IO should be listening for connections.

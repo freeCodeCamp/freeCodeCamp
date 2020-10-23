@@ -1,40 +1,54 @@
-# Cum să lucrezi la tema documentelor
+# How to work on the docs theme
 
-> [!NOTĂ] Un scurt memento că nu trebuie să setați nimic pentru a lucra la conținutul site-ului de documentație.
+> [!NOTE] A quick reminder that you do not need to setup anything for working on the content for the documentation site.
 > 
-> Pentru a lucra la ghidurile de contribuţie, puteţi edita sau adăuga fişiere în directorul `documente` [disponibil aici](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). Atunci când modificările sunt îmbinate, acestea vor fi puse la dispoziție automat pe site-ul de documentare.
+> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). When your changes are merged, it will be made available automatically at the documentation site.
 
-## Structura site-ului de documentare
+## Structure of the docs website
 
-Site-ul este generat folosind [`docsify`](https://docsify.js.org), și servit folosind pagini GitHub.
+The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
 
-De obicei nu ar trebui să modificați nicio configurație sau să construiți site-ul local. În cazul în care sunteţi interesaţi, iată cum funcţionează:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
-- Sursa paginii principale pentru acest site este disponibilă în [`documente/index.html`](index.html).
-- Noi servim acest fișier ca SPA folosind `docsify` și paginile GitHub.
-- Scriptul `docsify` generează conținutul `markdown` fișierelor în `documente` la cerere.
-- Pagina de start este generată din [`_coverpage.md`](_coverpage.md).
-- navigarea pe bara laterală este generată de [`_sidebar.md`](_sidebar.md).
+- The homepage's source for this site is available in [`docs/index.html`](index.html).
+- We serve this file as a SPA using `docsify` and GitHub Pages.
+- The `docsify` script generates the content of `markdown` files in `docs` directory on demand.
+- The homepage is generated from the [`_coverpage.md`](_coverpage.md).
+- the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
-## Activarea site-ului de documentare local
+## Serving the documentation site locally
 
-Clonează freeCodeCamp:
+Clone freeCodeCamp:
 
-```sh
+```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-docsify serve documente
+docsify serve docs
 ```
 
-Instalează `docsify`:
+Install `docsify`:
 
-```sh
+```console
 npm install -g docsify
 ```
 
-și să deservească directorul `/docs`
+and serve the `/docs` directory
 
-```sh
-docsify servește documente
+```console
+docsify serve docs
 ```
 
-Alternativ, dacă aţi instalat tabăra freeCodep local (a se vedea ghidul de configurare locală), grupăm CLI cu unelte de dezvoltare pentru a putea rula `npm run docs:serve` din rădăcina repoului.
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+
+### Serve and launch the documentation site only
+
+```console
+npm run docs:serve
+```
+
+### Serve the documentation site alongside freeCodeCamp locally:
+
+```console
+npm run develop
+```
+
+> The documentation site should be available at <http://localhost:3200>

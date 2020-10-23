@@ -1,15 +1,15 @@
-# Як використовувати Docker на Домі Windows
+# How to use Docker on Windows Home
 
-Під час налаштування док-панелі Windows має декілька підкадрів. Спочатку ви повинні використовувати [Інструменти Docker](https://docs.docker.com/toolbox/toolbox_install_windows/) як Адміністратор. На жаль Домівка Windows не підтримує Docker для Windows Desktop, тому натомість потрібно використовувати Інструменти. Необхідно використовувати символічні посилання, які не можна створити в іншому випадку.
+There are a few pitfalls to be avoided when setting up docker on Windows Home. First of all you have to use [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) as Administrator. Unfortunately Windows Home does not support Docker for Windows Desktop, so Toolbox must be used instead. It has to be run as Administrator as the installation uses symlinks, which cannot be created otherwise.
 
-Після інсталяції панелі інструментів, запустіть Docker Quickstart термінал від адміністратора. Це створить `віртуальну машину за замовчуванням` , якщо її ще не існує. Як тільки це сталося, закрийте термінал і відкрийте VirtualBox (знову від Адміністратора). Ви можете побачити `машину за замовчуванням`. Сайт вимагає багато ресурсів, тому зупиніть віртуальну машину і підніміть налаштування так само, як можете, зокрема - пам'ять Підтверджено працювати з 4GB барабанів.
+Once you've installed the toolbox, run Docker Quickstart Terminal as Administrator. This will create a `default` virtual machine, if it does not already exist. Once that has happened, close the terminal and open VirtualBox (again as Administrator). You should be able to see the `default` machine. The site is quite resource intensive, so stop the virtual machine and raise the settings as much as you can - memory in particular. It has been confirmed to work with 4GB of ram.
 
-Після того, як ви будете задоволені, що Docker працює, клонуйте репозиторій freeCodeCamp в каталог `C:\Users`. Ці каталоги надають спільний доступ до Docker для місцевих каталогів, які потрібні під час встановлення.
+Once you're happy that Docker is working, clone the freeCodeCamp repository to a directory inside `C:\Users`. These directories are shared giving Docker access to the local directories, which it needs during installation.
 
-Якщо ви бачите такі повідомлення як
+If you see messages like
 
 ```shell
-bash: change_volumes_owner.sh: немає такого файлу чи каталогу
+bash: change_volumes_owner.sh: No such file or directory
 ```
 
-коли ви `npm запустіть docker:init` це, ймовірно, буде вирахувано.
+when you `npm run docker:init` this is likely the culprit.

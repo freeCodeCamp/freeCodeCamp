@@ -1,40 +1,54 @@
-# Hoe te werken aan het thema van de documenten
+# How to work on the docs theme
 
-> [!NOT] Een snelle herinnering dat je niets hoeft te installeren om te werken aan de inhoud van de documentatiesite.
+> [!NOTE] A quick reminder that you do not need to setup anything for working on the content for the documentation site.
 > 
-> Om te werken aan de bijdragende richtlijnen, kun je bestanden bewerken of toevoegen in de `docs` directory [die hier beschikbaar zijn](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). Wanneer je wijzigingen zijn samengevoegd, wordt deze automatisch beschikbaar op de documentatiesite.
+> To work on the contributing guidelines, you can edit or add files in the `docs` directory [available here](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/docs). When your changes are merged, it will be made available automatically at the documentation site.
 
-## Structuur van de documentenwebsite
+## Structure of the docs website
 
-De site wordt gegenereerd met behulp van [`docsify`](https://docsify.js.org), en wordt geserveerd met behulp van GitHub pagina's.
+The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
 
-Normaal gesproken hoeft u geen configuratie te wijzigen of de site lokaal te bouwen. In het geval dat je geïnteresseerd bent, is hier hoe het werkt:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
-- De bron van de startpagina voor deze site is beschikbaar in [`documenten/index.html`](index.html).
-- We dienen dit bestand als een SPA met behulp van `docsify` en GitHub pagina's.
-- Het `docsify` script genereert de inhoud van `markdown` bestanden in `docs` directory op vraag.
-- De startpagina is gegenereerd door de [`_coverpage.md`](_coverpage.md).
-- de zijbalk navigatie wordt gegenereerd door [`_sidebar.md`](_sidebar.md).
+- The homepage's source for this site is available in [`docs/index.html`](index.html).
+- We serve this file as a SPA using `docsify` and GitHub Pages.
+- The `docsify` script generates the content of `markdown` files in `docs` directory on demand.
+- The homepage is generated from the [`_coverpage.md`](_coverpage.md).
+- the sidebar navigation is generated from [`_sidebar.md`](_sidebar.md).
 
-## Documentatie lokaal te bedienen
+## Serving the documentation site locally
 
-Kloon gratiscode:
+Clone freeCodeCamp:
 
-```sh
+```console
 git clone https://github.com/freeCodeCamp/freeCodeCamp.git
-docsify dient docs
+docsify serve docs
 ```
 
-Installeer `docsify`:
+Install `docsify`:
 
-```sh
+```console
 npm install -g docsify
 ```
 
-en bedien de map `/docs`
+and serve the `/docs` directory
 
-```sh
-docs uitdelen
+```console
+docsify serve docs
 ```
 
-Of als u het freeCodeCamp lokaal hebt geïnstalleerd (zie de lokale installatiehandleiding), we bundelen de CLI met de ontwikkelaarshulpm zodat je `npm run docs:serve` van de root van de repo.
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run any of the below commands as needed from the root of the repo:
+
+### Serve and launch the documentation site only
+
+```console
+npm run docs:serve
+```
+
+### Serve the documentation site alongside freeCodeCamp locally:
+
+```console
+npm run develop
+```
+
+> The documentation site should be available at <http://localhost:3200>

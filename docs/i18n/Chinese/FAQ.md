@@ -1,101 +1,82 @@
-### 我是 GitHub 和 Open Source, 我应该从哪里开始？
+### I am new to GitHub and Open Source. Where should I start?
 
-阅读我们的 ["如何为开源指南做出贡献"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source)。 它是第一个适合计时器的项目和准则的令人愉快的资源。
+Read our ["How to Contribute to Open Source Guide"](https://github.com/freeCodeCamp/how-to-contribute-to-open-source). It's a comprehensive reference for first-timer-friendly projects. And it includes a lot of open source contribution tips.
 
-### 我可以翻译免费CodeCamp的课程吗？
+### Can I translate freeCodeCamp's curriculum?
 
-我们将首先从 **中文** 开始在免费CodeCamp上启动本地化工作。
+Yes. We will roll out the tools for translating freeCodeCamp's curriculum soon.
 
-我们打算以更多的语言提供课程，但是我们还不能承诺遵守任何最后期限。 一些操作限制，例如工作人员、积极贡献者和服务器费用，在推动国际化努力方面发挥了一定作用。
+Eventually, we intend to localize freeCodeCamp into several major world languages, starting with: Arabic, Chinese, Hindi, Portuguese, Russian, and Spanish.
 
-我们打算以阿拉伯语、葡萄牙语等语言开始i18n的努力。 在我们发布了中文课程之后，俄语和西班牙语(无特定顺序)。
+### How can I report a new bug?
 
-**您为什么先集中精力处理中文课程？**
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-中国是人口最多的地区，在我国非母语英语听众中也是如此。 目前，我们有数十万用户使用旧版本的平台。 以中文课程为重点，将为我们提供对i18所涉后勤问题的估计。
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-我们将把重点放在作为葡萄牙语和西班牙语人口区域的拉丁美洲上。
+Please note that these GitHub issues are for codebase-related issues and discussions – not for getting help with learning to code. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before creating a GitHub issue.
 
-在可预见的将来，除了上述语言之外，我们没有任何关于i18n语的计划。
+### How can I report a security issue?
 
-我们不鼓励您在i18n上使用上述语言。 我们可以接受拉动请求，而不期待任何部署时间表。
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-### 我如何报告一个新的 bug？
+### I am a student. Can I work on a feature for academic credits?
 
-如果你觉得你发现了一个 bug，请先阅读 ["帮助我找到了一个 Bug "](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) 篇文章，然后按照它的说明操作。
+Yes. Please note we are unable to commit to any timelines or paperwork that may be a requirement by your college or university. We receive many pull-requests and code contributions by volunteer developers, and we respect their time and efforts. Out of respect for all of our other contributors, we will not give any PR special priority just because it happens to be school-related.
 
-如果你相信这是一个新的bug，继续前进并创建一个新的 GitHub 问题。 请务必包含尽可能多的信息，以便我们能够复制漏洞。 我们有一个预先定义的问题模板来帮助您完成这个任务。
+We request you to plan ahead and work on code contributions with this in mind.
 
-请注意，在挑战中寻求编码帮助的任何问题都将被关闭。 问题跟踪器严格用于编程相关问题和讨论。 Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before making a report.
+### What do these different labels that are tagged on issues mean?
 
-### 我如何报告一个安全问题？
+The code maintainers [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-请不要为安全问题创建 GitHub 问题。 相反，请向 `security@freecodecamp.org` 发送一封电子邮件，我们将立即进行调查。
+### Where do I start if I want to work on an issue?
 
-### 我是学生，我或我们的团队能否研究一种学分功能？
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-是的，確認。
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are special issues that are designed for people who have not contributed to the freeCodeCamp codebase before.
 
-虽然我们愿意提供所有捐款。 请注意我们无法对你的学院或大学可能需要的任何时间表作出承诺。 我们收到志愿开发者的许多提取请求和代码贡献，并且我们尊重他们的时间和努力。 我们将无法对任何公共责任给予任何特别关注，使之对所有人都是公平的。
+### I found a typo. Should I report an issue before I can make a pull request?
 
-我们请你考虑到这一点，事先计划和开发一个功能。
+For typos and other wording changes, you can directly open pull requests without creating an issue first. Please be sure to mention details in the pull request description to help us understand and review your contribution – even if it's just a minor change.
 
-### 这些不同的标签在问题上意味着什么？
+Please do create an issue if you want to discuss bigger aspects of the codebase or curriculum.
 
-代码维护者 [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull request 依据他们的优先级、严重性和其他因素。 You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+### How can I get an issue assigned to me?
 
-### 如果我想就一个问题开展工作，我将从哪里开始？
+We typically do not assign issues to anyone other than long-time contributors.  Instead, we follow the below policy to be fair to everyone:
 
-您应该通过 [**`帮助您需要`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) 或 [**`第一次计时器`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) 一些问题来快速概述您可以做些什么。
+1. We are most likely to merge the first pull request that addresses the issue.
+2. In the case of multiple contributors opening a pull request for the same issue at around the same time, we will give priority to the pull request that best addresses the issue. Some of the things we consider:
+   - Did you include tests?
+   - Did you catch all usecases?
+   - Did you ensure all tests pass, and confirm everything works locally?
+3. Finally, we give priority to pull requests which follow our recommended guidelines.
+   - Did you follow the pull request checklist?
+   - Did you give your pull request a meaningful title?
 
-> [!TIP] **`需要帮助`** 问题已经解决到抓取的时候，您不需要在处理这些问题之前寻求权限。 然而，只有 **`第一次计时器`** 标签被保留给以前没有贡献免费CodeCamp代码库的人。 如果这些问题不清楚需要做些什么，请随时在评论中提出问题。
+### I am stuck on something that is not included in this documentation.
 
-### 我找到了一个搭配器，我是否应该在提出拉取请求之前报告一个问题？
-
-对于typo和其他文字更改，您可以直接打开合并请求，而不需要先创建一个问题。 讨论与守则或课程结构有关的更大问题的问题更多。
-
-然而，请在拉取请求的描述区域中提及详细信息和上下文等，以帮助我们理解和审查您的贡献，即使是做了小的修改。
-
-### 如何分配给我的问题？
-
-我们通常不把问题分配给任何人，而不是长期的贡献者，以避免模棱两可的表现。 相反，我们奉行以下政策，对每个人都是公平的：
-
-1. 任何问题的第一个拉取请求更喜欢被合并。
-2. 在同一问题的多个合并请求中，我们优先考虑合并请求中的代码质量。
-   - 您是否包括测试？
-   - 捕获所有用户吗？
-   - 您是否确认了所有测试通过，并确认了所有在本地运行的测试？
-3. 最后，我们赞成按照我们建议的准则拉取请求。
-   - 您是否遵循拉取请求列表？
-   - 您是否有意义地命名了您的拉请求标题？
-
-您不需要任何权限来处理标记为 `有帮助需要` 或 `首次计时器如先前所解释的`。
-
-仔细遵循准则并打开拉取请求。
-
-### 我被困在这份文件中没有包含的东西上。
-
-**随时请求帮助：**
+**Feel free to ask for help in:**
 
 - The `Contributors` category of [our community forum](https://forum.freecodecamp.org/c/contributors).
-- The public `Contributors` [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 - The `#Contributors` channel on [our Discord community server](https://discord.gg/pFspAhS).
 
-我们很高兴能帮助您为您想要处理的任何主题做出贡献。 请随时就相关的问题向我们提出问题，我们将乐于加以澄清。 请确保您在发布新查询之前搜索您的查询。
+We are excited to help you contribute to any of the topics that you would like to work on. If you ask us questions on the related issue threads, we will be glad to clarify. Be sure to search for your question before posting a new one.
 
-耐心和礼貌。 我们的志愿者和版主一直围绕着你来指导你完成你的查询。
+Thanks in advance for being polite and patient. Remember – this community is run mainly by volunteers.
 
-**额外援助：**
+**Additional Assistance:**
 
-如果您有关于编解码器堆栈架构的查询，请随时联系我们的员工开发团队：
+If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| 工作人员                  | 发送论坛消息                                                                       |
+| Staff                 | Send message on Forum                                                        |
 |:--------------------- |:---------------------------------------------------------------------------- |
-| Mrugesh Mohamatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
-| 2. Ahmad Abdolsaheb   | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
+| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
+| Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
 | Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
 | Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
 | Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
-| Randel Dawson         | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
+| Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 
-**您可以发送电子邮件给我们的开发人员： `dev[at]freecodecamp.org`**
+**You can email our developer staff at: `dev[at]freecodecamp.org`**

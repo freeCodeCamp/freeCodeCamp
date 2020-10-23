@@ -1,38 +1,38 @@
-# FreeCodeCamp auf Windows Subsystem für Linux (WSL) einrichten
+# Set up freeCodeCamp on Windows Subsystem for Linux (WSL)
 
 > [!HINWEIS] Bevor Sie diesen Anweisungen folgen, stellen Sie sicher, dass Ihr System die Anforderungen erfüllt
 > 
-> **WSL 2**: Windows 10 64-Bit (Version 2004, Build 19041 oder höher) - verfügbar für alle Distributionen, einschließlich Windows 10 Home.
+> **WSL 2**: Windows 10 64-bit (Version 2004, Build 19041 or higher) - available for all distributions including Windows 10 Home.
 > 
-> **Docker Desktop für Windows**: Siehe die jeweiligen Voraussetzungen für [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) und [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
+> **Docker Desktop for Windows**: See respective requirements for [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/#system-requirements) and [Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/#system-requirements)
 
-Diese Anleitung behandelt einige häufige Schritte mit dem Setup von WSL2. Sobald einige der häufigen Probleme mit WSL2 behoben sind, Sie sollten in der Lage sein, unserem lokalen Setup-Guide zu folgen, um mit FreeCodeCamp unter Windows mit einer WSL-Distribution wie Ubuntu zu arbeiten.
+This guide covers some common steps with the setup of WSL2. Once some of the common issues with WSL2 are addressed, you should be able to follow the our local setup guide to work with freeCodeCamp on Windows running a WSL distro like Ubuntu.
 
-## WSL aktivieren
+## Enable WSL
 
-Folgen Sie den Anweisungen in der [-offiziellen Dokumentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) um WSL1 zu installieren und dann auf WSL2 zu aktualisieren.
+Follow the instructions on the [official documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to install WSL1 and followed by upgrading to WSL2.
 
 ## Install Ubuntu
 
-1. Wir empfehlen Ubuntu-18.04 oder höher mit WSL2.
+1. We recommended using Ubuntu-18.04 or above with WSL2.
 
-   > [!HINWEIS]
+   > [!NOTE]
    > 
-   > Während Sie andere nicht-debian-basierte Distributionen verwenden können, kommen sie alle mit ihren eigenen Gotchas und sind außerhalb des Geltungsbereichs dieser Anleitung.
+   > While you may use other non-debian based distros, they all come with their own gotchas and are beyond the scope of this guide.
 
-2. Abhängigkeiten für das Betriebssystem aktualisieren
+2. Update the dependencies for the OS
 
    ```console
    sudo apt update
    sudo apt upgrade -y
 
-   # bereinigen
+   # cleanup
    sudo apt autoremove -y
    ```
 
-## Git einrichten
+## Set up Git
 
-Git kommt vorinstalliert mit Ubuntu 18.04, überprüfen Sie, dass Ihre Git-Version mit `git --version`.
+Git comes pre-installed with Ubuntu 18.04, verify that your Git version with `git --version`.
 
 ```output
 ~
@@ -40,58 +40,58 @@ Git kommt vorinstalliert mit Ubuntu 18.04, überprüfen Sie, dass Ihre Git-Versi
 git Version 2.25.1
 ```
 
-(Optional, aber empfohlen) Sie können nun mit [fortfahren und Ihre SSH-Schlüssel](https://help.github.com/articles/generating-an-ssh-key) mit GitHub einrichten.
+(Optional but recommended) You can now proceed to [setting up your ssh keys](https://help.github.com/articles/generating-an-ssh-key) with GitHub.
 
-## Installation eines Code Editors
+## Installing a Code Editor
 
-Wir empfehlen dringend, [Visual Studio Code](https://code.visualstudio.com) unter Windows 10 zu installieren. Es hat große Unterstützung für WSL und installiert automatisch alle notwendigen Erweiterungen auf Ihrem WSL Distribut.
+We highly recommend installing [Visual Studio Code](https://code.visualstudio.com) on Windows 10. It has great support for WSL and automatically installs all the necessary extensions on your WSL distro.
 
-Grundsätzlich werden Sie Ihren Code auf Ubuntu-18.04 bearbeiten und speichern, wobei VS Code unter Windows installiert ist.
+Essentially, you will edit and store your code on Ubuntu-18.04 with VS Code installed on Windows.
 
-## Docker Desktop installieren
+## Installing Docker Desktop
 
-**Docker Desktop für Windows** ermöglicht die Installation und Ausführung von Datenbanken und Diensten wie MongoDB, NGINX, etc. Dies ist nützlich, um häufige Fallstricke bei der Installation von MongoDB oder anderen Diensten direkt unter Windows oder WSL2 zu vermeiden. Dies ist nützlich, um häufige Fallstricke bei der Installation von MongoDB oder anderen Diensten direkt unter Windows oder WSL2 zu vermeiden.
+**Docker Desktop für Windows** ermöglicht die Installation und Ausführung von Datenbanken und Diensten wie MongoDB, NGINX, etc. Dies ist nützlich, um häufige Fallstricke bei der Installation von MongoDB oder anderen Diensten direkt unter Windows oder WSL2 zu vermeiden. This is useful to avoid common pitfalls with installing MongoDB or other services directly on Windows or WSL2.
 
-Folgen Sie der Anleitung in der [-offiziellen Dokumentation](https://docs.docker.com/docker-for-windows/install) und installieren Sie Docker Desktop für Ihre Windows-Distribution.
+Follow the instructuction on the [official documentation](https://docs.docker.com/docker-for-windows/install) and install Docker Desktop for your Windows distribution.
 
-Es gibt einige minimale Hardwareanforderungen für die beste Erfahrung.
+There are some minimum hardware requirements for the best experience.
 
-## Docker Desktop für WSL konfigurieren
+## Configure Docker Desktop for WSL
 
-Sobald Docker Desktop installiert ist, [folgen Sie diesen Anweisungen](https://docs.docker.com/docker-for-windows/wsl) und konfigurieren Sie sie so, dass sie die Ubuntu-18.04 Installation als Backend verwenden.
+Once Docker Desktop is installed, [follow these instructions](https://docs.docker.com/docker-for-windows/wsl) and configure it to use the Ubuntu-18.04 installation as a backend.
 
-Dies macht es so, dass die Container auf der WSL-Seite laufen, anstatt unter Windows zu laufen. Sie können auf die Dienste über `http://localhost` unter Windows und Ubuntu zugreifen.
+This makes it so that the containers run on WSL side instead of running on Windows. You will be able to access the services over `http://localhost` on both Windows and Ubuntu.
 
-## MongoDB von Docker Hub installieren
+## Install MongoDB from Docker Hub
 
-Sobald Sie Docker Desktop für die Arbeit mit WSL2 konfiguriert haben, folgen Sie diesen Schritten, um einen MongoDB-Dienst zu starten:
+Once you have configured Docker Desktop to work with WSL2, follow these steps to start a MongoDB service:
 
-1. Starte ein neues Ubuntu-18.04 Terminal
+1. Launch a new Ubuntu-18.04 terminal
 
-2. Ziehe `MongoDB 3.6` von Dockerhub
+2. Pull `MongoDB 3.6` from dockerhub
 
    ```console
    docker pull mongo:3
    ```
 
-3. Starten Sie den MongoDB-Dienst am Port `27017`und konfigurieren Sie ihn so, dass er automatisch beim System-Neustart ausgeführt wird
+3. Start the MongoDB service at port `27017`, and configure it to run automatically on system restarts
 
    ```console
    docker run -it \
      -v mongodata:/data/db \
      -p 27017:27017 \
      --name mongodb \
-     --restart unless-stop \
+     --restart unless-stopped \
      -d mongo:3
    ```
 
-4. Sie können nun auf den Dienst von Windows oder Ubuntu unter `mongodb://localhost:27017` zugreifen.
+4. You can now access the service from both Windows or Ubuntu at `mongodb://localhost:27017`.
 
-## Installiere Node.js und npm
+## Installing Node.js and npm
 
-Wir empfehlen Ihnen, das LTS-Release für Node.js mit einem Knotenversionsmanager zu installieren - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+We recommend you install the LTS release for Node.js with a node version manager - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-Sobald installiert, verwenden Sie diese Befehle um die Node.js Version zu installieren und bei Bedarf zu verwenden
+Once installed use these commands to install and use the Node.js version as needed
 
 ```console
 nvm install --lts
@@ -107,23 +107,23 @@ nvm install 14
 nvm use 12
 ```
 
-Node.js wird mit `npm`gebündelt, Sie können auf die neueste Version von `npm` aktualisieren mit:
+Node.js comes bundled with `npm`, you can update to the latest versions of `npm` with:
 
 ```console
-npm Installation -g npm@latest
+npm install -g npm@latest
 ```
 
-## FreeCodeCamp lokal einrichten
+## Set up freeCodeCamp locally
 
-Nachdem Sie die Voraussetzungen installiert haben, folgen Sie [unserem lokalen Setup-Leitfaden](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) um FreeCodeCamp lokal auf Ihrem Rechner zu klonen, zu installieren und einzurichten.
+Now that you have installed the pre-requisites, follow [our local setup guide](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally) to clone, install and setup freeCodeCamp locally on your machine.
 
-> [!WARNUNG]
+> [!WARNING]
 > 
-> Bitte beachten Sie, dass zu diesem Zeitpunkt die Einrichtung für Cypress Tests (und verwandte GUI erforderlich) in Arbeit sind. Sie sollten immer noch in der Lage sein, an den meisten der Codebase zu arbeiten.
+> Please note, at this time the set up for Cypress tests (and related GUI needs) are a work in progress. You should still be able to work on most of the codebase.
 
-## Nützliche Links
+## Useful Links
 
-- [Ein WSL2 Dev Setup mit Ubuntu 20.04, Node.js, MongoDB, VS Code und Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - ein Artikel von Mrugesh Mohapatra (Mitarbeiter Entwickler auf freeCodeCamp.org)
-- Häufig gestellte Fragen am:
-  - [Windows Subsystem für Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
-  - [Docker Desktop für Windows](https://docs.docker.com/docker-for-windows/faqs)
+- [A WSL2 Dev Setup with Ubuntu 20.04, Node.js, MongoDB, VS Code and Docker](https://devlog.sh/wsl2-dev-setup-with-ubuntu-nodejs-mongodb-and-docker) - an article by Mrugesh Mohapatra (Staff Developer at freeCodeCamp.org)
+- Frequently asked questions on:
+  - [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq)
+  - [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/faqs)
