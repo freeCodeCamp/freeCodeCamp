@@ -1,27 +1,82 @@
 /* eslint-disable react/jsx-sort-props */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import {
+  Table,
+  Button,
+  DropdownButton,
+  MenuItem,
+  Modal
+} from '@freecodecamp/react-bootstrap';
+import { maybeUrlRE } from '../utils';
+import { FullWidthRow, Spacer } from '../components/helpers';
+import { createSelector } from 'reselect';
+import { projectMap } from '../resources/certAndProjectMap';
+import { Link } from 'gatsby';
+import SolutionViewer from '../components/settings/SolutionViewer';
+import { find } from 'lodash';
+import { userSelector } from '../redux';
+import { connect } from 'react-redux';
+
+const propTypes = {
+  certTitle: PropTypes.string,
+  name: PropTypes.string,
+  user: PropTypes.shape({
+    about: PropTypes.string,
+    completedChallenges: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        solution: PropTypes.string,
+        githubLink: PropTypes.string,
+        challengeType: PropTypes.number,
+        completedDate: PropTypes.number,
+        files: PropTypes.array
+      })
+    ),
+    username: PropTypes.string
+  })
+};
+const mapStateToProps = createSelector(
+  userSelector,
+  user => ({
+    user
+  })
+);
+
+const initSolutionState = {
+  projectTitle: '',
+  files: null,
+  solution: null,
+  isOpen: false
+};
 
 const ShowProjectLinks = props => {
+  const [solutionState, setSolutionState] = useState(initSolutionState);
+
+  const handleSolutionModalHide = () => setSolutionState(initSolutionState);
+
   const getProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges } = this.props;
+    const {
+      user: { completedChallenges }
+    } = props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
     );
+
     if (!completedProject) {
       return null;
     }
+
     const { solution, githubLink, files } = completedProject;
     const onClickHandler = () =>
-      this.setState({
-        solutionViewer: {
-          projectTitle,
-          files,
-          solution,
-          isOpen: true
-        }
+      setSolutionState({
+        projectTitle,
+        files,
+        solution,
+        isOpen: true
       });
+
     if (files && files.length) {
       return (
         <Button
@@ -95,39 +150,19 @@ const ShowProjectLinks = props => {
       <Spacer />
       <h3 className='text-center'>{certName}</h3>
       <Table>
-        <thead>
-          <tr>
-            <th>Project Name</th>
-            <th>Solution</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderProjectsFor(certName, this.getUserIsCertMap()[certName])}
-        </tbody>
+        <tbody>{renderProjectsFor(certName)}</tbody>
       </Table>
     </FullWidthRow>
   );
 
-  const renderProjectsFor = (certName, isCert) => {
-    const { username, isHonest, createFlashMessage, verifyCert } = this.props;
-    const { superBlock } = first(projectMap[certName]);
-    const certLocation = `/certification/${username}/${superBlock}`;
-    const createClickHandler = superBlock => e => {
-      e.preventDefault();
-      if (isCert) {
-        return navigate(certLocation);
-      }
-      return isHonest
-        ? verifyCert(superBlock)
-        : createFlashMessage(honestyInfoMessage);
-    };
+  const renderProjectsFor = certName => {
     return projectMap[certName].map(({ link, title, id }) => (
       <tr className='project-row' key={id}>
         <td className='project-title col-sm-8'>
           <Link to={link}>{title}</Link>
         </td>
         <td className='project-solution col-sm-4'>
-          {this.getProjectSolution(id, title)}
+          {getProjectSolution(id, title)}
         </td>
       </tr>
     ));
@@ -135,17 +170,52 @@ const ShowProjectLinks = props => {
   return (
     <div>
       As part of this certification, {props.name} built the following projects
-      and got all automated test suites to pass: If you suspect that any of
-      these projects violate the{' '}
+      and got all automated test suites to pass:
+      {renderCertification(props.certTitle)}
+      {solutionState.isOpen ? (
+        <Modal
+          aria-labelledby='solution-viewer-modal-title'
+          bsSize='large'
+          onHide={handleSolutionModalHide}
+          show={solutionState.isOpen}
+        >
+          <Modal.Header className='this-one?' closeButton={true}>
+            <Modal.Title id='solution-viewer-modal-title'>
+              Solution for {solutionState.projectTitle}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <SolutionViewer
+              files={solutionState.files}
+              solution={solutionState.solution}
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={handleSolutionModalHide}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      ) : null}
+      If you suspect that any of these projects violate the{' '}
       <a
         href='https://www.freecodecamp.org/news/academic-honesty-policy/'
         target='_blank'
       >
         academic honesty policy
       </a>
-      , please [report this to our team](Report URL).
+      , please{' '}
+      <a
+        href={`/user/${props.user.username}/report-user`}
+        target='_blank'
+        rel='noreferrer'
+      >
+        report this to our team
+      </a>
+      .
     </div>
   );
 };
 
-export default ShowProjectLinks;
+ShowProjectLinks.propTypes = propTypes;
+ShowProjectLinks.displayName = 'ShowProjectLinks';
+
+export default connect(mapStateToProps)(ShowProjectLinks);
