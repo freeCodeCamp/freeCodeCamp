@@ -81,6 +81,10 @@ export const saveResponseAuthCookies = () => {
 export const loginRedirect = () => {
   return (req, res) => {
     const successRedirect = req => {
+      if (req && req.session && req.session.returnTo) {
+      	delete req.session.returnTo;
+      }
+
       if (req && req.query && req.query.returnTo) {
         return req.query.returnTo;
       }
