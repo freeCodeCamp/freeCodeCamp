@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <title></title>
+      <script>
+         function Addition()
+         {
+         var firstnumber = document.getElementById("txtfirstnumber").value;
+         var secondnumber = document.getElementById("txtsecondnumber").value;
+         var lblresult = document.getElementById("lblresult");
+         var result= parseInt(firstnumber)+parseInt(secondnumber);
+         lblresult.innerHTML=result;
+         
+         }
+         function Substraction()
+         {
+         var firstnumber = document.getElementById("txtfirstnumber").value;
+         var secondnumber = document.getElementById("txtsecondnumber").value;
+         var lblresult = document.getElementById("lblresult");
+         var result= parseInt(firstnumber)- parseInt(secondnumber);
+         lblresult.innerHTML=result;
+         
+         }
+         function Multiplication()
+         {
+         var firstnumber = document.getElementById("txtfirstnumber").value;
+         var secondnumber = document.getElementById("txtsecondnumber").value;
+         var lblresult = document.getElementById("lblresult");
+         var result= parseInt(firstnumber)*parseInt(secondnumber);
+         lblresult.innerHTML=result;
+         
+         }
+         function divison()
+         {
+         var firstnumber = document.getElementById("txtfirstnumber").value;
+         var secondnumber = document.getElementById("txtsecondnumber").value;
+         var lblresult = document.getElementById("lblresult");
+         var result= parseInt(firstnumber)/parseInt(secondnumber);
+         lblresult.innerHTML=result;
+         
+         }    
+      </script>
+   </head>
+   <body>
+      <span>Enter first number:</span>
+      <input id="txtfirstnumber" type="text" >
+      <span>Enter second number:</span>
+      <input id="txtsecondnumber" type="text" >
+      <br><br>
+      <input type="button" value="Addition" onclick="Addition()">
+      <input type="button" value="Substraction" onclick="Substraction()">
+      <input type="button" value="Multiplication"onclick= "Multiplication()">
+      <input type="button" value="divison" onclick="divison()">
+      <br><br>
+      <span>result:</span><label id="lblresult">
+   </body>
