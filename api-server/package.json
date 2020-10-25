@@ -82,7 +82,7 @@
     "joi": "^13.7.0",
     "joi-objectid": "^2.0.0",
     "loopback-component-explorer": "^6.4.0",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.6",
     "passport-mock-strategy": "^2.0.0",
     "pm2": "^4.5.0",
     "smee-client": "^1.2.2",
