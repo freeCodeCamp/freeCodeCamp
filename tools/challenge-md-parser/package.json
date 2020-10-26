@@ -23,7 +23,8 @@
   "dependencies": {
     "hast-util-select": "^2.1.0",
     "hast-util-to-html": "^7.1.1",
-    "js-yaml": "^3.12.0",
+    "he": "^1.2.0",
+    "js-yaml": "^3.14.0",
     "lodash": "^4.17.20",
     "mdast-builder": "^1.1.1",
     "mdast-util-to-hast": "^9.1.1",

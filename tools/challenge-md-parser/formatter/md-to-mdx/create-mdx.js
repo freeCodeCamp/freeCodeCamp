@@ -1,5 +1,6 @@
 const { isEmpty, pick } = require('lodash');
 const yaml = require('js-yaml');
+const he = require('he');
 
 const {
   getCodeToBackticksSync,
@@ -10,210 +11,41 @@ const { correctUrl } = require('../../formatter/fcc-md-to-gfm/insert-spaces');
 const codeToBackticksSync = getCodeToBackticksSync(true);
 const unified = require('unified');
 
-const remarkStringify = require('remark-stringify');
 const remarkParse = require('remark-parse');
 const find = require('unist-util-find');
+const remark2rehype = require('remark-rehype');
+const html = require('rehype-stringify');
+const raw = require('rehype-raw');
 
 var parser = unified().use(remarkParse);
-var mdCompiler = unified().use(remarkStringify);
+var mdToHTML = unified()
+  .use(remarkParse)
+  .use(remark2rehype, { allowDangerousHtml: true })
+  .use(raw)
+  .use(html, { allowDangerousCharacters: true, allowDangerousHtml: true })
+  .processSync;
 
 function parseMd(text) {
   return parser.parse(text);
 }
 
-function stringifyMd(mdast) {
-  return mdCompiler.stringify(mdast);
-}
-
-function escapeMDText(text) {
-  const tree = {
-    type: 'paragraph',
-    children: [{ type: 'text', value: text }]
-  };
-  // Is there a trailing /n ? apparently not
-  return stringifyMd(tree);
-}
-
 // inspired by wrapRecursive, but takes in text and outputs text.
-function wrapUrls(rawText, title) {
+function wrapUrls(rawText) {
   const mdNode = parseMd(rawText);
 
   const link = find(mdNode, { type: 'link' });
 
   if (link) {
-    console.log(`${title} had link.
-link: ${link.url}`);
-    console.log(`hint:
-${rawText}`);
-
     const url = correctUrl(link.url);
     const pos = rawText.indexOf(url);
     const head = rawText.slice(0, pos);
     const tail = rawText.slice(pos + url.length);
     const newText = head + '`' + url + '`' + wrapUrls(tail);
-    console.log('produced:');
-    console.log(newText);
-    console.log();
     return newText;
   } else {
     return rawText;
   }
 }
-
-const challengeData = {
-  id: 'bd7123c8c441eddfaeb5bdef',
-  title: 'Say: Hello to HTML Elements',
-  challengeType: 0,
-  videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gpt2',
-  forumTopicId: 18276,
-  required: [
-    {
-      link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
-      raw: true
-    }
-  ],
-  tests: [
-    {
-      text: '<code>h1</code> element should have the text "Hello World".',
-      testString: "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()));"
-    },
-    {
-      text: 'Your <code>h1</code> element should have the text "Hello World".',
-      testString: "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()));"
-    },
-    {
-      // text: 'This <code>var x = y*y;</code> should be fine',
-      text: 'This <code>var x = y*y*y;</code> should *be* flagged up',
-      testString: "assert.isTrue((/hello(\\s)+test2/gi).test($('h1').text()));"
-    },
-    {
-      text: 'Text with embedded https://www.example.com url',
-      testString: "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()));"
-    },
-    {
-      text: 'ZigZagMatrix(2) should return [[0, 1], [2, 3]].',
-      testString: ''
-    }
-  ],
-  solutions: [
-    {
-      indexhtml: {
-        key: 'indexhtml',
-        ext: 'html',
-        name: 'index',
-        contents: '<h1>Hello World</h1>\n',
-        head: '',
-        tail: ''
-      },
-      indexjs: {
-        key: 'indexjs',
-        ext: 'js',
-        name: 'index',
-        contents: 'var x = "y";\n',
-        head: '',
-        tail: ''
-      }
-    },
-    {
-      indexhtml: {
-        key: 'indexhtml',
-        ext: 'html',
-        name: 'index',
-        contents: `<h1>
-Hello World
-</h1>
-`,
-        head: '',
-        tail: ''
-      }
-    }
-  ],
-  videoId: 'nVAaxZ34khk',
-  question: {
-    text:
-      'What will the following Python program print out?:\n' +
-      '```python\n' +
-      `def fred():
-  print("Zap")
-def jane():
-print("ABC")
-
-jane()
-fred()
-jane()
-` +
-      '```\n',
-    answers: [
-      'The size in gigabytes the dataframe we loaded into memory is.\n',
-      'How many rows and columns our dataframe has.\n',
-      'How many rows the source data had before loading.\n',
-      'How many columns the source data had before loading.\n'
-    ],
-    solution: 2
-  },
-  description:
-    "Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.\n" +
-    '\n' +
-    "First, you'll start by building a simple web page using HTML. You can edit code in your code editor, which is embedded into this web page.\n" +
-    '\n' +
-    "Do you see the code in your code editor that says `<h1>Hello</h1>`? That's an HTML element.\n" +
-    '\n' +
-    'Most HTML elements have an opening tag and a closing tag.\n' +
-    '\n' +
-    'Opening tags look like this:\n' +
-    '\n' +
-    '`<h1>`\n' +
-    '\n' +
-    'Closing tags look like this:\n' +
-    '\n' +
-    '`</h1>`\n' +
-    '\n' +
-    'The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.\n' +
-    '\n' +
-    `Each challenge has tests you can run at any time by clicking the "Run tests" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.\n`,
-  instructions:
-    'To pass the test on this challenge, change your `h1` element\'s text to say "Hello World".\n',
-  files: {
-    indexhtml: {
-      key: 'indexhtml',
-      ext: 'html',
-      name: 'index',
-      contents: `<h1>
-      Hello
-</h1>`,
-      head: '',
-      tail: '</closing>',
-      editableRegionBoundaries: [1, 2]
-    },
-    indexjsx: {
-      key: 'indexjsx',
-      ext: 'jsx',
-      name: 'index',
-      contents: `<Hello world={'world'}>
-      Hello
-</Hello>`,
-      head: 'var x = "y"',
-      tail: 'var tail',
-      editableRegionBoundaries: []
-    },
-    indexcss: {
-      key: 'indexcss',
-      ext: 'css',
-      name: 'index',
-      contents: `body {
-  color: red;
-}`,
-      head: '',
-      tail: '',
-      editableRegionBoundaries: []
-    }
-  }
-};
-
-/* TODO Test with
- * curriculum/challenges/english/01-responsive-web-design/basic-css-cafe-menu/part-004.md
- * to make sure the ERMS go in the right places.
- */
 
 const frontmatterProperties = [
   'id',
@@ -272,6 +104,106 @@ ${strTests}
 `;
 }
 
+function validateHints({ tests, question, title }) {
+  if (tests) {
+    tests.forEach(({ text }) => {
+      validateAndLog(text, title, false);
+    });
+  }
+  if (question && question.text) {
+    validateAndLog(question.text, title, false);
+  }
+  if (question && question.answers) {
+    question.answers.forEach(text => {
+      validateAndLog(text, title, false);
+    });
+  }
+}
+
+function validateAndLog(text, title, log = true) {
+  const { valid, parsed, parsedSimplified, finalHint } = validateText(text);
+  if (!valid) {
+    if (log) {
+      console.log('original'.padEnd(8, ' '), text);
+      console.log('parsed'.padEnd(8, ' '), parsed);
+      console.log('finalP'.padEnd(8, ' '), parsedSimplified);
+      console.log('finalT'.padEnd(8, ' '), finalHint);
+    }
+    throw Error(title);
+  }
+}
+
+function validateText(text) {
+  // hints can be empty; empty hints don't need validating.
+  if (!text) {
+    return { valid: true };
+  }
+
+  // the trailing \n will not affect the final html, so we can trim.  At worst
+  // there will be <br> difference between the two.
+  text = text.trim();
+
+  let parsed = mdToHTML(text).contents;
+
+  // parsed text is expected to get wrapped in p tags, so we remove them.
+  // NOTE: this is a bit zealous, but allowing any p tags generates a ton of
+  // false positives.
+  if (parsed.match(/^<p>.*<\/p>$/s)) {
+    parsed = parsed.replace(/<p>/g, '').replace(/<\/p>/g, '');
+  } else if (parsed.match(/^<p>.*<\/p>\n<pre>/)) {
+    parsed = parsed.match(/^<p>(.*)<\/p>/s)[1];
+    text = text.match(/^(.*?)```/s)[1];
+  } else if (
+    parsed.match(/^<pre><code>/) ||
+    parsed.match(/^<pre><code\s*class/)
+  ) {
+    // TODO: figure out how to handle the
+    /*
+    question: | text
+      ```lang
+      sfasfd
+      ```
+
+    */
+    // type of question.  Actually, since this is already md format, we can
+    // probably let these through.  Just check that they match the <p>stuff</p>
+    // <pre> blah and we should be okay.
+
+    // throw Error(`Unexpected parse result ${parsed}`);
+    return { valid: true, parsed };
+  } else {
+    throw Error(`Unexpected parse result ${parsed}`);
+  }
+
+  if (text === parsed) {
+    return { valid: true, parsed };
+  }
+
+  // it's possible the hint contained ` not code tags, so we replace in both
+  // also trimming because we know whitespace is actually preserved by the mdx
+  // parser
+
+  let finalParsed = parsed.replace(/<code>/g, '`').replace(/<\/code>/g, '`');
+  let finalHint = text.replace(/<code>/g, '`').replace(/<\/code>/g, '`');
+
+  // I've verified that whitespace is preserved by formatting and that the mdx
+  // parser also preserves it when it should (i.e. inside ``).  So, for
+  // simplicity, I'm collapsing it here.
+  finalParsed = finalParsed.replace(/\s+/g, '');
+  finalHint = finalHint.replace(/\s+/g, '');
+  // TODO: is this too lax?  Just forcing them both to use the decoded
+  // characters.
+  finalParsed = he.decode(finalParsed);
+  finalHint = he.decode(finalHint);
+
+  return {
+    valid: finalHint === finalParsed,
+    parsed,
+    parsedSimplified: finalParsed,
+    finalHint
+  };
+}
+
 function hintToMd(hint, title) {
   // we're only interested in `code` and want to avoid catching ```code```
   const codeRE = /(?<!`)`[^`]+`(?!`)/g;
@@ -303,10 +235,12 @@ function hintToMd(hint, title) {
   });
   // depending on how the hint is represented in yaml, it can have extra \n
   // chars at the end, so we should trim.
-  return newHint.join('').trim();
+  newHint = newHint.join('').trim();
+
+  return newHint;
 }
 
-function wrapCode(hint, title) {
+function wrapCode(hint) {
   if (typeof hint !== 'string') {
     return '';
   }
@@ -324,13 +258,13 @@ function wrapCode(hint, title) {
     mdHint = hint.replace(codeRE, replacer);
   } catch (err) {
     // console.log('err', err);
-    console.log(`${title} failed
-hint:
-${hint}`);
+    //     console.log(`${title} failed
+    // hint:
+    // ${hint}`);
     mdHint = hint.replace(codeRE, '`$1`');
-    console.log('produced:');
-    console.log(mdHint);
-    console.log();
+    // console.log('produced:');
+    // console.log(mdHint);
+    // console.log();
   }
   return mdHint;
 }
@@ -484,6 +418,7 @@ function challengeToString(data) {
 }
 
 exports.challengeToString = challengeToString;
+exports.validateHints = validateHints;
 
 // console.log(exports.challengeToString(challengeData));
 // // exports.challengeToString(challengeData);
@@ -492,9 +427,4 @@ exports.challengeToString = challengeToString;
 //   hintToMd('ZigZagMatrix(2) should return [[0, 1], [2, 3]].', 'title')
 // );
 
-// console.log(
-//   hintToMd(
-//     'ZigZagMatrix(2) <code>should  aaaa</code> return [[0, 1], [2, 3]].',
-//     'title'
-//   )
-// );
+// console.log(hintToMd('lar@freecodecamp.org', 'title'));
