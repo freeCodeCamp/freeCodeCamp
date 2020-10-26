@@ -24,7 +24,7 @@ const imageConfig = {
 };
 
 function CampersImage({ page }) {
-  const { spacerSize, height, width } = ImageConfig[page];
+  const { spacerSize, height, width } = imageConfig[page];
   return (
     <Media minWidth={LARGE_SCREEN_SIZE}>
       <Spacer size={spacerSize} />
