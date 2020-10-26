@@ -34,7 +34,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   });
 
   watcher.on('change', filePath =>
-    /\.md$/.test(filePath)
+    /\.mdx?$/.test(filePath)
       ? onSourceChange(filePath)
           .then(challenge => {
             reporter.info(
