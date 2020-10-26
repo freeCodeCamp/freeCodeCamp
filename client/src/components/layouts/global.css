@@ -436,7 +436,7 @@ pre {
 
 .panel-primary > .panel-heading {
   background-color: transparent;
-  border-color: var(--color-primary);
+  border-color: var(--primary-color);
 }
 
 .has-success .help-block,

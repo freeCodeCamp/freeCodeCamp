@@ -4,5 +4,9 @@
 }
 
 .solution-viewer {
-  border-color: var(--color-primary);
+  border-color: var(--primary-color);
+}
+
+.panel-heading {
+  color: var(--primary-color) !important;
 }
