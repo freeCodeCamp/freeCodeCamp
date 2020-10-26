@@ -1,15 +1,10 @@
 /* eslint-disable react/jsx-sort-props */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Table,
-  Button,
-  DropdownButton,
-  MenuItem,
-  Modal
-} from '@freecodecamp/react-bootstrap';
+import '../components/layouts/project-links.css';
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { maybeUrlRE } from '../utils';
-import { FullWidthRow, Spacer } from '../components/helpers';
+import { Spacer } from '../components/helpers';
 import { createSelector } from 'reselect';
 import { projectMap } from '../resources/certAndProjectMap';
 import { Link } from 'gatsby';
@@ -19,23 +14,21 @@ import { userSelector } from '../redux';
 import { connect } from 'react-redux';
 
 const propTypes = {
-  certTitle: PropTypes.string,
-  name: PropTypes.string,
+  certName: PropTypes.string,
   user: PropTypes.shape({
-    about: PropTypes.string,
     completedChallenges: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
         solution: PropTypes.string,
         githubLink: PropTypes.string,
-        challengeType: PropTypes.number,
-        completedDate: PropTypes.number,
         files: PropTypes.array
       })
     ),
+    name: PropTypes.string,
     username: PropTypes.string
   })
 };
+
 const mapStateToProps = createSelector(
   userSelector,
   user => ({
@@ -59,6 +52,7 @@ const ShowProjectLinks = props => {
     const {
       user: { completedChallenges }
     } = props;
+
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -79,49 +73,40 @@ const ShowProjectLinks = props => {
 
     if (files && files.length) {
       return (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
+        <button
           onClick={onClickHandler}
+          className='project-link-button-override'
         >
-          Show Code
-        </Button>
+          solution
+        </button>
       );
     }
     if (githubLink) {
       return (
-        <div className='solutions-dropdown'>
-          <DropdownButton
-            block={true}
+        <>
+          <a
             bsStyle='primary'
-            className='btn-invert'
-            id={`dropdown-for-${projectId}`}
-            title='Show Solutions'
+            href={solution}
+            rel='noopener noreferrer'
+            target='_blank'
           >
-            <MenuItem
-              bsStyle='primary'
-              href={solution}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              Front End
-            </MenuItem>
-            <MenuItem
-              bsStyle='primary'
-              href={githubLink}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              Back End
-            </MenuItem>
-          </DropdownButton>
-        </div>
+            solution
+          </a>
+          ,{' '}
+          <a
+            bsStyle='primary'
+            href={githubLink}
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            source
+          </a>
+        </>
       );
     }
     if (maybeUrlRE.test(solution)) {
       return (
-        <Button
+        <a
           block={true}
           bsStyle='primary'
           className='btn-invert'
@@ -129,49 +114,36 @@ const ShowProjectLinks = props => {
           rel='noopener noreferrer'
           target='_blank'
         >
-          Show Solution
-        </Button>
+          solution
+        </a>
       );
     }
     return (
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        onClick={onClickHandler}
-      >
-        Show Code
-      </Button>
+      <button className='project-link-button-override' onClick={onClickHandler}>
+        solution
+      </button>
     );
   };
 
   const renderCertification = certName => (
-    <FullWidthRow key={certName}>
-      <Spacer />
-      <h3 className='text-center'>{certName}</h3>
-      <Table>
-        <tbody>{renderProjectsFor(certName)}</tbody>
-      </Table>
-    </FullWidthRow>
+    <ul key={certName}>{renderProjectsFor(certName)}</ul>
   );
 
   const renderProjectsFor = certName => {
     return projectMap[certName].map(({ link, title, id }) => (
-      <tr className='project-row' key={id}>
-        <td className='project-title col-sm-8'>
-          <Link to={link}>{title}</Link>
-        </td>
-        <td className='project-solution col-sm-4'>
-          {getProjectSolution(id, title)}
-        </td>
-      </tr>
+      <li key={id}>
+        <Link to={link}>{title}</Link>: {getProjectSolution(id, title)}
+      </li>
     ));
   };
+  const { name, username } = props.user;
   return (
     <div>
-      As part of this certification, {props.name} built the following projects
-      and got all automated test suites to pass:
-      {renderCertification(props.certTitle)}
+      As part of this certification, {name} built the following projects and got
+      all automated test suites to pass:
+      <Spacer />
+      {renderCertification(props.certName)}
+      <Spacer />
       {solutionState.isOpen ? (
         <Modal
           aria-labelledby='solution-viewer-modal-title'
@@ -199,12 +171,13 @@ const ShowProjectLinks = props => {
       <a
         href='https://www.freecodecamp.org/news/academic-honesty-policy/'
         target='_blank'
+        rel='noreferrer'
       >
         academic honesty policy
       </a>
       , please{' '}
       <a
-        href={`/user/${props.user.username}/report-user`}
+        href={`/user/${username}/report-user`}
         target='_blank'
         rel='noreferrer'
       >
