@@ -305,7 +305,6 @@ class DonateForm extends Component {
         )}
         <Spacer />
         <div className='donate-btn-group'>
-          {' '}
           <Button
             block={true}
             bsStyle='primary'
