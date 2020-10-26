@@ -25,7 +25,7 @@ In this challenge, you will create a utility for your tree. Write a JavaScript m
 ```yml
 tests:
   - text: Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.push(3); test.push(4); test.push(5); return isBinarySearchTree(test) == true})());
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.push(1); test.push(5); test.push(3); test.push(2); test.push(4); return isBinarySearchTree(test) == true})());
 ```
 
 </section>
