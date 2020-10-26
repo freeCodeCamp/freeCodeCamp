@@ -61,7 +61,7 @@
     "react-monaco-editor": "^0.36.0",
     "react-redux": "^5.0.7",
     "react-reflex": "^3.1.0",
-    "react-responsive": "^6.1.1",
+    "react-responsive": "^8.1.0",
     "react-spinkit": "^3.0.0",
     "react-stripe-elements": "^2.0.3",
     "react-tooltip": "^4.2.10",
