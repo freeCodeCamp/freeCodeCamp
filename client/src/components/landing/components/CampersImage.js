@@ -29,7 +29,7 @@ function CampersImage({ page }) {
     <Media minWidth={LARGE_SCREEN_SIZE}>
       <Spacer size={spacerSize} />
       <ImageLoader
-        alt='Freecodecamp students at a local study'
+        alt='freeCodeCamp students at a local study group in South Korea.'
         className='landing-page-image'
         height={height}
         src={wideImg}
