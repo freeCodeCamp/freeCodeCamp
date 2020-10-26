@@ -115,7 +115,7 @@ export class DonatePage extends Component {
                 <DonateSupportText />
               </Col>
               <Col lg={6}>
-                <CampersImage page={'donate'} />
+                <CampersImage page='donate' />
               </Col>
             </Fragment>
           </Row>
