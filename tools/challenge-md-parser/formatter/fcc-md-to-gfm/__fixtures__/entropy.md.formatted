@@ -47,6 +47,7 @@ tests:
     testString: assert.equal(entropy('0123456789abcdef'), 4);
   - text: <code>entropy("1223334444")</code> should return <code>1.8464393446710154</code>
     testString: assert.equal(entropy('1223334444'), 1.8464393446710154);
+
 ```
 
 </section>
@@ -92,6 +93,7 @@ function entropy(s) {
   });
   return sum;
 }
+
 ```
 
 </section>

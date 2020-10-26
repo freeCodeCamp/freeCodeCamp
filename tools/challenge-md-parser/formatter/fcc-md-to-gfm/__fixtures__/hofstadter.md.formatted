@@ -76,6 +76,7 @@ tests:
     testString: assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1]);
   - text: <code>ffs()</code> should return <code>1041</code>
     testString: assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1]);
+
 ```
 
 </section>
@@ -106,6 +107,7 @@ function ffs(n) {
 ```js
 const ffrParamRes = [[10, 69], [50, 1509], [100, 5764], [1000, 526334]];
 const ffsParamRes = [[10, 14], [50, 59], [100, 112], [1000, 1041]];
+
 ```
 
 </div>
@@ -144,6 +146,7 @@ function ffs (n) {
   extendSequences(n);
   return S[n];
 }
+
 ```
 
 </section>

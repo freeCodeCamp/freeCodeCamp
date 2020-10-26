@@ -48,6 +48,7 @@ tests:
     testString: const newCode = removeAssignments(code); assert(!/dog/.test(newCode) && !/ran/.test(newCode) && !/big/.test(newCode) && !/quickly/.test(newCode));    
   - text: <code>wordBlanks</code> should contain all of the words assigned to the variables <code>myNoun</code>, <code>myVerb</code>, <code>myAdjective</code> and <code>myAdverb</code> separated by non-word characters (and any additional words in your madlib).
     testString: assert(/\bdog\b/.test(wordBlanks) && /\bbig\b/.test(wordBlanks) && /\bran\b/.test(wordBlanks) && /\bquickly\b/.test(wordBlanks));
+
 ```
 
 </section>
@@ -65,6 +66,7 @@ var myVerb = "ran";
 var myAdverb = "quickly";
 
 var wordBlanks = ""; // Only change this line;
+
 ```
 
 </div>

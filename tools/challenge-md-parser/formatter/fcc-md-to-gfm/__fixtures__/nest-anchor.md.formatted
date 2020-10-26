@@ -58,6 +58,7 @@ tests:
     testString: assert(code.match(/<\/p>/g) && code.match(/<p/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
   - text: Make sure each of your <code>a</code> elements has a closing tag.
     testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
+
 ```
 
 </section>

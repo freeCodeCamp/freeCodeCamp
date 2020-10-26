@@ -40,6 +40,7 @@ tests:
     testString: assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")));
   - text: Make sure your <code>a</code> element has a closing tag.
     testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
+
 ```
 
 </section>

@@ -50,6 +50,7 @@ To pass the test on this challenge, change your `h1` element's text to say "Hell
 tests:
   - text: Your <code>h1</code> element should have the text "Hello World".
     testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()));
+
 ```
 
 </section>

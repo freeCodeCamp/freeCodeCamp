@@ -49,6 +49,7 @@ tests:
     testString: assert($("button").hasClass("btn-block"));
   - text: All of your <code>button</code> elements should have closing tags.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+
 ```
 
 </section>
