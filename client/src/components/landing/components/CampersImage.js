@@ -10,7 +10,7 @@ const propTypes = {
 
 const LARGE_SCREEN_SIZE = 1200;
 
-const ImageConfig = {
+const imageConfig = {
   donate: {
     spacerSize: 0,
     height: 345,
