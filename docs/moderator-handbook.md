@@ -43,9 +43,9 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 ```markdown
 Thank you for your pull request.
  
-I am closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
+We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
  
-If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you, and happy coding.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
 
 2. **Challenge Code Edits** These are changes to the code in a challenge - the Challenge Seed, Challenge Solution, and Test Strings. These pull requests need to be pulled down from GitHub and tested on your local computer to make sure the challenge tests can still be passed with the current solution, and the new code doesn't introduce any errors. Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful to not make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
@@ -118,9 +118,9 @@ Thank you and happy coding.
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so I am closing it as a duplicate.
+This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
 
-If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
 4. **Fixed in staging** Some problems may have already been fixed in staging, but don't have a GitHub issue associated with them. If this is the case, you can paste the following message, close the issue, and add a `status: resolved/shipping` label:
@@ -128,9 +128,9 @@ If you think I'm wrong in closing this issue, please reopen it and add further c
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, I'm closing this issue.
+This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
-If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
 #### Closing Stale, Outdated, Inactive Issues and Pull Requests
@@ -469,9 +469,9 @@ Thank you and happy coding.
 ```markdown
 Thank you for your pull request.
 
-I am closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
+We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
 
-If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you, and happy coding.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
 
 ## Closing Invalid Issues
@@ -493,9 +493,9 @@ Thank you and happy coding.
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so I am closing it as a duplicate.
+This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
 
-If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
 
 > When an issue is fixed in staging.
@@ -503,7 +503,7 @@ If you think I'm wrong in closing this issue, please reopen it and add further c
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, I'm closing this issue.
+This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
 
-If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
