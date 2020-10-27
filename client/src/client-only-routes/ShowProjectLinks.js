@@ -5,16 +5,16 @@ import '../components/layouts/project-links.css';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { maybeUrlRE } from '../utils';
 import { Spacer } from '../components/helpers';
-import { createSelector } from 'reselect';
 import { projectMap } from '../resources/certAndProjectMap';
 import { Link } from 'gatsby';
 import SolutionViewer from '../components/settings/SolutionViewer';
 import { find } from 'lodash';
-import { userSelector } from '../redux';
-import { connect } from 'react-redux';
 
 const propTypes = {
   certName: PropTypes.string,
+  fetchProfileForUser: PropTypes.func,
+  maybeUser: PropTypes.string,
+  name: PropTypes.string,
   user: PropTypes.shape({
     completedChallenges: PropTypes.arrayOf(
       PropTypes.shape({
@@ -24,17 +24,10 @@ const propTypes = {
         files: PropTypes.array
       })
     ),
-    name: PropTypes.string,
     username: PropTypes.string
-  })
+  }),
+  username: PropTypes.string
 };
-
-const mapStateToProps = createSelector(
-  userSelector,
-  user => ({
-    user
-  })
-);
 
 const initSolutionState = {
   projectTitle: '',
@@ -84,21 +77,11 @@ const ShowProjectLinks = props => {
     if (githubLink) {
       return (
         <>
-          <a
-            bsStyle='primary'
-            href={solution}
-            rel='noopener noreferrer'
-            target='_blank'
-          >
+          <a href={solution} rel='noopener noreferrer' target='_blank'>
             solution
           </a>
           ,{' '}
-          <a
-            bsStyle='primary'
-            href={githubLink}
-            rel='noopener noreferrer'
-            target='_blank'
-          >
+          <a href={githubLink} rel='noopener noreferrer' target='_blank'>
             source
           </a>
         </>
@@ -107,8 +90,7 @@ const ShowProjectLinks = props => {
     if (maybeUrlRE.test(solution)) {
       return (
         <a
-          block={true}
-          bsStyle='primary'
+          block={'true'}
           className='btn-invert'
           href={solution}
           rel='noopener noreferrer'
@@ -136,11 +118,11 @@ const ShowProjectLinks = props => {
       </li>
     ));
   };
-  const { name, username } = props.user;
+  const { username = '' } = props.user;
   return (
     <div>
-      As part of this certification, {name} built the following projects and got
-      all automated test suites to pass:
+      As part of this certification, {props.name} built the following projects
+      and got all automated test suites to pass:
       <Spacer />
       {renderCertification(props.certName)}
       <Spacer />
@@ -191,4 +173,4 @@ const ShowProjectLinks = props => {
 ShowProjectLinks.propTypes = propTypes;
 ShowProjectLinks.displayName = 'ShowProjectLinks';
 
-export default connect(mapStateToProps)(ShowProjectLinks);
+export default ShowProjectLinks;

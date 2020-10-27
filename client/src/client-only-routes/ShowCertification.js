@@ -18,7 +18,9 @@ import {
   userFetchStateSelector,
   usernameSelector,
   isDonatingSelector,
-  executeGA
+  executeGA,
+  userByNameSelector,
+  fetchProfileForUser
 } from '../redux';
 import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -27,6 +29,7 @@ import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
 import { Loader, Spacer } from '../components/helpers';
+import { isEmpty } from 'lodash';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -41,6 +44,7 @@ const propTypes = {
   certName: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
   executeGA: PropTypes.func,
+  fetchProfileForUser: PropTypes.func,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -52,6 +56,17 @@ const propTypes = {
   }),
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
+  user: PropTypes.shape({
+    completedChallenges: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        solution: PropTypes.string,
+        githubLink: PropTypes.string,
+        files: PropTypes.array
+      })
+    ),
+    username: PropTypes.string
+  }),
   userFetchState: PropTypes.shape({
     complete: PropTypes.bool
   }),
@@ -60,29 +75,39 @@ const propTypes = {
   validCertName: PropTypes.bool
 };
 
+const createRequestedUserSelector = () => (state, { username = '' }) =>
+  userByNameSelector(username.toLowerCase())(state);
+
 const validCertNames = certMap.map(cert => cert.slug);
 
-const mapStateToProps = (state, { certName }) => {
-  const validCertName = validCertNames.some(name => name === certName);
+const mapStateToProps = (state, props) => {
+  console.log(props);
+  const validCertName = validCertNames.some(name => name === props.certName);
+  const requestedUserSelector = createRequestedUserSelector();
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
     usernameSelector,
     userFetchStateSelector,
     isDonatingSelector,
-    (cert, fetchState, signedInUserName, userFetchState, isDonating) => ({
+    requestedUserSelector,
+    (cert, fetchState, signedInUserName, userFetchState, isDonating, user) => ({
       cert,
       fetchState,
       validCertName,
       signedInUserName,
       userFetchState,
-      isDonating
+      isDonating,
+      user
     })
   );
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFlashMessage, showCert, executeGA }, dispatch);
+  bindActionCreators(
+    { createFlashMessage, showCert, fetchProfileForUser, executeGA },
+    dispatch
+  );
 
 const ShowCertification = props => {
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
@@ -103,8 +128,17 @@ const ShowCertification = props => {
       signedInUserName,
       isDonating,
       cert: { username = '' },
+      fetchProfileForUser,
+      user,
       executeGA
     } = props;
+    console.log('Run2...');
+    if (!signedInUserName || signedInUserName !== username) {
+      if (isEmpty(user)) {
+        console.log('Run...', username);
+        fetchProfileForUser(username);
+      }
+    }
 
     if (
       !isDonationDisplayed &&
@@ -124,7 +158,15 @@ const ShowCertification = props => {
         }
       });
     }
-  }, [isDonationDisplayed, props]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    isDonationDisplayed,
+    props.userFetchState,
+    props.signedInUserName,
+    props.isDonating,
+    props.cert,
+    props.executeGA
+  ]);
 
   const hideDonationSection = () => {
     setIsDonationDisplayed(false);
@@ -185,6 +227,7 @@ const ShowCertification = props => {
     certTitle,
     completionTime
   } = cert;
+  const { user } = props;
 
   const certDate = new Date(date);
   const certYear = certDate.getFullYear();
@@ -312,9 +355,19 @@ const ShowCertification = props => {
           </footer>
         </Row>
       </Grid>
-      {signedInUserName === username ? shareCertBtns : ''}
-      <Spacer size={2} />
-      <ShowProjectLinks certName={certTitle} />
+      {signedInUserName === username ? (
+        shareCertBtns
+      ) : (
+        <>
+          <Spacer size={2} />
+          <ShowProjectLinks
+            username={username}
+            user={user}
+            name={userFullName}
+            certName={certTitle}
+          />
+        </>
+      )}
     </div>
   );
 };
