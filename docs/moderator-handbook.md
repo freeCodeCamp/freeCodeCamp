@@ -369,9 +369,9 @@ Once you resolve these issues, We will be able to review your PR and merge it. �
 
 ---
 
-> Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
->
-> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
+
+Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ```
 
 ### Syncing Fork
@@ -407,9 +407,9 @@ Once you sync your fork and pass the build, We will be able to review your PR an
 
 ---
 
-> Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
->
-> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
+
+Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
 ### Merge Conflicts
@@ -425,9 +425,9 @@ Once you resolve these conflicts, We will be able to review your PR and merge it
 
 ---
 
-> If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
->
-> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
+
+Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ```
 
 ¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
@@ -447,7 +447,7 @@ Thanks again! 😊
 
 ---
 
-> If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
+If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 ```
 
 ### Closing invalid pull requests
@@ -474,7 +474,7 @@ We are closing this pull request. Please add links and other details to the chal
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
 
-## Closing Invalid Issues
+### Closing Invalid Issues
 
 > When an issue relates to the camper's code.
 
