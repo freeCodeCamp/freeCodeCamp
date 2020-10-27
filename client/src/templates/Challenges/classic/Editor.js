@@ -969,11 +969,9 @@ class Editor extends Component {
 Editor.displayName = 'Editor';
 Editor.propTypes = propTypes;
 
-// NOTE: withRef gets replaced by forwardRef in react-redux 6,
-// https://github.com/reduxjs/react-redux/releases/tag/v6.0.0
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
   null,
-  { withRef: true }
+  { forwardRef: true }
 )(Editor);
