@@ -40,11 +40,13 @@ Pull Requests (PRs) are how contributors submit changes to freeCodeCamp's reposi
 
 1. **Challenge Instruction Edits** These are changes to the text of challenges - the Description, Instructions, or Test Text. You can also review these right on GitHub and decide whether to merge them. We need to be a bit more careful about these, because millions of people will encounter this text as they work through the freeCodeCamp curriculum. Does the pull request make the text more clear without making it much longer? Are the edits relevant and not overly pedantic? Remember that our goal is for challenges to be as clear and as short as possible. They aren't the place for obscure details. Also, contributors may try to add links to resources to the challenges. You can close these pull requests and reply to them with this:
 
-   > Thank you for your pull request.
-   >
-   > I am closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
-   >
-   > If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you, and happy coding.
+```markdown
+Thank you for your pull request.
+ 
+We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
+ 
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
+```
 
 2. **Challenge Code Edits** These are changes to the code in a challenge - the Challenge Seed, Challenge Solution, and Test Strings. These pull requests need to be pulled down from GitHub and tested on your local computer to make sure the challenge tests can still be passed with the current solution, and the new code doesn't introduce any errors. Some contributors may try to add additional tests to cover pedantic corner-cases. We need to be careful to not make the challenge too complicated. These challenges and their tests should be as simple and intuitive as possible. Aside from the algorithm challenges and interview prep section, learners should be able to solve each challenge within about 2 minutes.
 
@@ -76,11 +78,13 @@ There are also situations where the contributor is trying to add a link to their
 
 In both of these situations, you should go ahead and close their pull request and reply with this standard message:
 
-> Thank you for opening this pull request.
->
-> This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
->
-> Thank you and happy coding.
+```markdown
+Thank you for opening this pull request.
+
+This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
+
+Thank you and happy coding.
+```
 
 If you need a second opinion on a pull request, go ahead and leave your comments on the pull request, then add the "discussing" label to the pull request.
 
@@ -92,13 +96,15 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
 
 1. **Code Help Requests**, which people have mistakenly created GitHub issues for. If someone is asking for help, paste the following message, then close the issue.
 
-   > Thank you for reporting this issue.
-   >
-   > This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the \*\*"Help"\*\* button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
-   >
-   > If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
-   >
-   > Thank you and happy coding.
+```markdown
+Thank you for reporting this issue.
+ 
+This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Help"** button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+
+If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
+
+Thank you and happy coding.
+```
 
 2. **Bug or Clarification issues** Try to reproduce the bug yourself if you can. If not, ask them for the steps to reproduce the bug, and whether they have any screenshots, videos, or additional details that can help you reproduce the issue. Once you can reproduce the issue - or at least confirm it's a legit issue - label it `confirmed`. Then:
 
@@ -109,18 +115,23 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
 
 3. **Duplicate Issues** If an issue is the same as another reported issue, the prior reported issue should take precedence. Flag as `Duplicate`, paste the following message replacing `#XXXXX` with the issue number, then close the issue.
 
-   > Thank you for reporting this issue.
-   >
-   > This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so I am closing it as a duplicate.
-   >
-   > If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
+```markdown
+Thank you for reporting this issue.
+
+This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
+
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
+```
 
 4. **Fixed in staging** Some problems may have already been fixed in staging, but don't have a GitHub issue associated with them. If this is the case, you can paste the following message, close the issue, and add a `status: resolved/shipping` label:
-   > Thank you for reporting this issue.
-   >
-   > This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, I'm closing this issue.
-   >
-   > If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
+
+```markdown
+Thank you for reporting this issue.
+
+This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
+
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
+```
 
 #### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
@@ -201,19 +212,9 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 
 2. **If the camper clearly violates the Code of Conduct, the moderator will proceed as follows:**
 
-- Suspend the offending camper, but don't warn or threaten them. Instead, quietly give them the Suspended role on Discord, then send them the following message:
+- Suspend the offending camper, but don't warn or threaten them. Instead, use the CamperBot command `!fCC suspend @username reason`, where `username` is the @mention of the user to suspend and `reason` is a brief description of the reason for the suspension.
 
-```
-This is a standard message notifying you that I had to temporarily suspend you from talking on the freeCodeCamp Discord server.
-
-I am a moderator acting on behalf of our open source community. I can consider removing your suspension, but I need you to take the following 3 steps first:
-
-1. Read our Code of Conduct: https://code-of-conduct.freecodecamp.org/
-2. Message me back confirming that you have finished reading it.
-3. Explain to me why you think I suspended you, and why I should remove your suspension.
-```
-
-- Report a short summary of the event and how they responded to it in the #admin channel. Here's an example of what such a summary might look like:
+- Report a short summary of the event and how they responded to it in the #activity-log channel. Here's an example of what such a summary might look like:
 
 ```
 Suspended: _@username_
@@ -251,8 +252,7 @@ In all other situations - even situations where the code of conduct is violated 
    Don’t use @everyone or @here under any circumstances! Every single person in that chat room will get a notification. In some cases, tens of thousands of people.
    Instead, if you want people to see an announcement, you can pin it to the channel to allow everyone to read it.
 
-6. **Don’t threaten to ban or suspend**
-   If a camper is breaking the code of conduct, don’t threaten to ban or suspend them, and never warn them in public. Instead, talk to them privately, or send them a DM and issue a suspension (per the above protocol). No one else in that channel needs to know that you banned / suspended the person - campers can view the summary in the #activity-log channel if they want to keep up on that information. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
+6. **Don’t threaten to ban or suspend** If a camper is breaking the code of conduct, don’t threaten to ban or suspend them, and never warn them in public. Instead, talk to them privately, or use the bot to issue a suspension (per the above protocol). No one else in that channel needs to know that you banned / suspended the person - campers can view the summary in the #activity-log channel if they want to keep up on that information. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
 
 - Camper posts a wall of code to request help
 
@@ -310,20 +310,15 @@ You may be approached by organizations who want to partner or co-brand with free
 
 You may come across situations where users are seeking medical advice or are dealing with mental health issues and are looking for support. As a matter of policy, you should avoid talking privately about these matters. Should the situation at some point reflect back to fCC, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help. As difficult as it sometimes can be, avoid giving any tips or advice other than pointing the user in the direction of professional help!
 
-If this happens on Discord: Suspend the user. This is not to punish them! Suspending a user will create a private channel that's only accessible by the user and the team. This will benefit both the user and fCC in several ways:
+If this happens on Discord: Create a private channel for the user and the mod team. This should be done manually, as using the bot suspension flow carries negative connotation and may cause the user to feel they are being punished.
 
 - The user is guaranteed some privacy
 - Public chat is no longer disrupted
 - Other team members can pitch in, should you be uncomfortable dealing with the situation yourself
 
-> [!NOTE]
-> Suspending a user automatically gives them a message about reading our Code of Conduct. Make sure you inform the user that you Suspended them to give them some privacy and that they're not being punished. This is very important! We absolutely want to avoid giving users the idea that they're being punished for reaching out to get help!
-
 If you believe the user is capable of rejoining the community, right click on the private channel and copy the ID. Put the following message in #mod-log:
 
 > Reference medical advice: <channel ID> <username>
-
-After that, you can remove the Suspension from the user as you normally do.
 
 Helpful URLs:
 
@@ -339,7 +334,7 @@ This XKCD comic perfectly summarizes most communities' thoughts on free speech. 
 
 Thanks for reading this, and thanks for helping the developer community!
 
-## Using Reply Templates
+## Reply Templates
 
 These are some of the standard reply templates that you may use while reviewing pull requests and triaging issues.
 
@@ -374,9 +369,9 @@ Once you resolve these issues, We will be able to review your PR and merge it. �
 
 ---
 
-> Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
->
-> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
+
+Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ```
 
 ### Syncing Fork
@@ -412,9 +407,9 @@ Once you sync your fork and pass the build, We will be able to review your PR an
 
 ---
 
-> Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
->
-> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
+
+Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
 ### Merge Conflicts
@@ -430,9 +425,9 @@ Once you resolve these conflicts, We will be able to review your PR and merge it
 
 ---
 
-> If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
->
-> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
+
+Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ```
 
 ¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
@@ -452,7 +447,7 @@ Thanks again! 😊
 
 ---
 
-> If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
+If you have any questions, feel free to ask questions on the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or [our Discord server](https://discord.gg/pFspAhS).
 ```
 
 ### Closing invalid pull requests
@@ -467,4 +462,48 @@ Thank you for opening this pull request.
 This is a standard message notifying you that we've reviewed your pull request and have decided not to merge it. We would welcome future pull requests from you.
 
 Thank you and happy coding.
+```
+
+> When PR adds links to external resources.
+
+```markdown
+Thank you for your pull request.
+
+We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
+
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
+```
+
+### Closing Invalid Issues
+
+> When an issue relates to the camper's code.
+
+```markdown
+Thank you for reporting this issue.
+
+This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Help"** button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+
+If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
+
+Thank you and happy coding.
+```
+
+> When an issue is duplicate of an earlier issue
+
+```markdown
+Thank you for reporting this issue.
+
+This is a standard message notifying you that this issue appears to be very similar to issue #XXXXX, so we are closing it as a duplicate.
+
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
+```
+
+> When an issue is fixed in staging.
+
+```markdown
+Thank you for reporting this issue.
+
+This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, we're closing this issue.
+
+If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you and happy coding.
 ```
