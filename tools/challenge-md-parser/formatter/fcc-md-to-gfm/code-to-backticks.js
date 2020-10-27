@@ -34,7 +34,21 @@ function plugin() {
     visit(tree, 'paragraph', visitor);
 
     function visitor(node, id, parent) {
-      const paragraph = raw(toHast(node, { allowDangerousHtml: true }));
+      const hast = toHast(node, { allowDangerousHtml: true });
+      const lastChild = hast.children.slice(-1)[0];
+
+      if (
+        shouldThrow &&
+        lastChild &&
+        lastChild.value &&
+        lastChild.value.match(/<\w*>/) &&
+        !lastChild.value.match(/<br>/)
+      ) {
+        console.log('Unclosed tag', lastChild.value);
+        throw Error('Unclosed tag in paragraph.');
+      }
+
+      const paragraph = raw(hast);
       parent.children[id] = toMdast(paragraph, {
         handlers: {
           code: codeToInline,
