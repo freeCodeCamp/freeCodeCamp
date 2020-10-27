@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Panel } from '@freecodecamp/react-bootstrap';
 import Prism from 'prismjs';
 
-import './solution-viewer.css';
-
 const prismLang = {
   css: 'css',
   js: 'javascript',

@@ -437,6 +437,16 @@ pre {
 .panel-primary > .panel-heading {
   background-color: transparent;
   border-color: var(--primary-color);
+  color: var(--primary-color) !important;
+}
+
+.solution-viewer,
+.solution-viewer pre {
+  margin-bottom: 0px;
+}
+
+.solution-viewer {
+  border-color: var(--primary-color);
 }
 
 .has-success .help-block,
