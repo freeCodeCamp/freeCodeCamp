@@ -18,6 +18,7 @@ Closing tags look like this:
 <code>&#60;/h1&#62;</code>
 The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.
 Each challenge has tests you can run at any time by clicking the "Run tests" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.
+<strong>Note:</strong>&nbsp;Testing non-breaking note stuff.
 </section>
 
 ## Instructions

@@ -65,10 +65,10 @@ function escapeMd(hastNode) {
   if (hastNode.value === '\n\n') return hastNode;
   // A trailing space gets converted to \n, because hastToMdast will be told
   // told this is a paragraph, which it isn't
-  const trailingSpace = / /.test(hastNode.value[hastNode.value.length - 1]);
+  const trailingSpace = /\s/.test(hastNode.value[hastNode.value.length - 1]);
   // leading spaces also get ignored, but need to be added in, since they can
   // be following html elements.
-  const leadingSpace = / /.test(hastNode.value[0]);
+  const leadingSpace = /\s/.test(hastNode.value[0]);
   // fake a hast tree.  Is there a less hacky approach?
   const hastTree = {
     type: 'root',
