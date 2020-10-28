@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import TimelinePagination from './TimelinePagination';
 import { FullWidthRow, Link } from '../../helpers';
-import SolutionViewer from '../../settings/SolutionViewer';
+import SolutionViewer from '../../SolutionViewer/SolutionViewer';
 import {
   getCertIds,
   getPathFromID,

@@ -61,7 +61,15 @@ const propTypes = {
         id: PropTypes.string,
         solution: PropTypes.string,
         githubLink: PropTypes.string,
-        files: PropTypes.array
+        files: PropTypes.arrayOf(
+          PropTypes.shape({
+            contents: PropTypes.string,
+            ext: PropTypes.string,
+            key: PropTypes.string,
+            name: PropTypes.string,
+            path: PropTypes.string
+          })
+        )
       })
     ),
     username: PropTypes.string
@@ -74,14 +82,13 @@ const propTypes = {
   validCertName: PropTypes.bool
 };
 
-const createRequestedUserSelector = () => (state, { username = '' }) =>
+const requestedUserSelector = (state, { username = '' }) =>
   userByNameSelector(username.toLowerCase())(state);
 
 const validCertNames = certMap.map(cert => cert.slug);
 
 const mapStateToProps = (state, props) => {
   const validCertName = validCertNames.some(name => name === props.certName);
-  const requestedUserSelector = createRequestedUserSelector();
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,

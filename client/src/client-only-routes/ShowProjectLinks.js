@@ -2,12 +2,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../components/layouts/project-links.css';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { maybeUrlRE } from '../utils';
 import { Spacer } from '../components/helpers';
 import { projectMap } from '../resources/certAndProjectMap';
 import { Link } from 'gatsby';
-import SolutionViewer from '../components/settings/SolutionViewer';
+import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find } from 'lodash';
 
 const propTypes = {
@@ -19,7 +18,15 @@ const propTypes = {
         id: PropTypes.string,
         solution: PropTypes.string,
         githubLink: PropTypes.string,
-        files: PropTypes.array
+        files: PropTypes.arrayOf(
+          PropTypes.shape({
+            contents: PropTypes.string,
+            ext: PropTypes.string,
+            key: PropTypes.string,
+            name: PropTypes.string,
+            path: PropTypes.string
+          })
+        )
       })
     ),
     username: PropTypes.string
@@ -125,27 +132,13 @@ const ShowProjectLinks = props => {
       {renderCertification(props.certName)}
       <Spacer />
       {solutionState.isOpen ? (
-        <Modal
-          aria-labelledby='solution-viewer-modal-title'
-          bsSize='large'
-          onHide={handleSolutionModalHide}
-          show={solutionState.isOpen}
-        >
-          <Modal.Header className='this-one?' closeButton={true}>
-            <Modal.Title id='solution-viewer-modal-title'>
-              Solution for {solutionState.projectTitle}
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <SolutionViewer
-              files={solutionState.files}
-              solution={solutionState.solution}
-            />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={handleSolutionModalHide}>Close</Button>
-          </Modal.Footer>
-        </Modal>
+        <ProjectModal
+          files={solutionState.files}
+          handleSolutionModalHide={handleSolutionModalHide}
+          isOpen={solutionState.isOpen}
+          projectTitle={solutionState.projectTitle}
+          solution={solutionState.solution}
+        />
       ) : null}
       If you suspect that any of these projects violate the{' '}
       <a

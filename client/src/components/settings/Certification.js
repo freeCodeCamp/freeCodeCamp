@@ -7,8 +7,7 @@ import {
   Table,
   Button,
   DropdownButton,
-  MenuItem,
-  Modal
+  MenuItem
 } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
@@ -19,7 +18,7 @@ import {
 } from '../../resources/certAndProjectMap';
 
 import SectionHeader from './SectionHeader';
-import SolutionViewer from './SolutionViewer';
+import ProjectModal from '../SolutionViewer/ProjectModal';
 import { FullWidthRow, Spacer } from '../helpers';
 import { Form } from '../formHelpers';
 
@@ -577,24 +576,13 @@ export class CertificationSettings extends Component {
         {this.renderLegacyFullStack()}
         {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
-          <Modal
-            aria-labelledby='solution-viewer-modal-title'
-            bsSize='large'
-            onHide={this.handleSolutionModalHide}
-            show={isOpen}
-          >
-            <Modal.Header className='this-one?' closeButton={true}>
-              <Modal.Title id='solution-viewer-modal-title'>
-                Solution for {projectTitle}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <SolutionViewer files={files} solution={solution} />
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.handleSolutionModalHide}>Close</Button>
-            </Modal.Footer>
-          </Modal>
+          <ProjectModal
+            files={files}
+            handleSolutionModalHide={this.handleSolutionModalHide}
+            isOpen={isOpen}
+            projectTitle={projectTitle}
+            solution={solution}
+          />
         ) : null}
       </section>
     );
