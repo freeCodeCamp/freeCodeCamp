@@ -437,7 +437,7 @@ pre {
 .panel-primary > .panel-heading {
   background-color: transparent;
   border-color: var(--primary-color);
-  color: var(--primary-color) !important;
+  color: var(--primary-color);
 }
 
 .solution-viewer,
