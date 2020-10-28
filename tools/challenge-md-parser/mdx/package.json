@@ -10,7 +10,6 @@
     "unist-util-select": "^3.0.1"
   },
   "dependencies": {
-    "hast-util-select": "^2.1.0",
     "hast-util-to-html": "^7.1.1",
     "js-yaml": "^3.12.0",
     "lodash": "^4.17.19",
@@ -19,15 +18,11 @@
     "mdast-util-to-hast": "^9.1.1",
     "micromark-extension-gfm-strikethrough": "^0.6.1",
     "micromark-extension-gfm-table": "^0.4.1",
-    "rehype-raw": "^3.0.0",
-    "rehype-stringify": "^4.0.0",
     "remark": "^13.0.0",
     "remark-frontmatter": "^3.0.0",
     "remark-html": "^12.0.0",
     "remark-mdx": "^1.6.18",
     "remark-parse": "^9.0.0",
-    "remark-rehype": "^3.0.1",
-    "remark-stringify": "^6.0.4",
     "to-vfile": "^5.0.1",
     "unified": "^7.0.0",
     "unist-util-find": "^1.0.1",
