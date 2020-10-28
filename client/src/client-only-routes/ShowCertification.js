@@ -8,7 +8,6 @@ import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 import ShowProjectLinks from './ShowProjectLinks';
-// eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
 
 import {
@@ -81,7 +80,6 @@ const createRequestedUserSelector = () => (state, { username = '' }) =>
 const validCertNames = certMap.map(cert => cert.slug);
 
 const mapStateToProps = (state, props) => {
-  console.log(props);
   const validCertName = validCertNames.some(name => name === props.certName);
   const requestedUserSelector = createRequestedUserSelector();
   return createSelector(
@@ -132,10 +130,9 @@ const ShowCertification = props => {
       user,
       executeGA
     } = props;
-    console.log('Run2...');
+
     if (!signedInUserName || signedInUserName !== username) {
       if (isEmpty(user)) {
-        console.log('Run...', username);
         fetchProfileForUser(username);
       }
     }

@@ -12,8 +12,6 @@ import { find } from 'lodash';
 
 const propTypes = {
   certName: PropTypes.string,
-  fetchProfileForUser: PropTypes.func,
-  maybeUser: PropTypes.string,
   name: PropTypes.string,
   user: PropTypes.shape({
     completedChallenges: PropTypes.arrayOf(
