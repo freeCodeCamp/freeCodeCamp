@@ -76,7 +76,7 @@ exports.submitTypes = {
 };
 
 // determine which help forum questions should be posted to
-exports.helpCategory = {
+exports.helpCategoryMap = {
   'basic-html-and-html5': 'HTML-CSS',
   'basic-css': 'HTML-CSS',
   'applied-visual-design': 'HTML-CSS',
