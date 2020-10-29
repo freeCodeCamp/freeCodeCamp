@@ -132,7 +132,14 @@ const ShowProjectLinks = props => {
         const certLocation = `/certification/${username}/${superBlock}`;
         return (
           <li key={ind}>
-            <Link to={certLocation}>{cert.title}</Link>
+            <a
+              href={certLocation}
+              className='btn-invert'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              {cert.title}
+            </a>
           </li>
         );
       });
