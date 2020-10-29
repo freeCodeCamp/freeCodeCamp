@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import '../components/layouts/project-links.css';
 import { maybeUrlRE } from '../utils';
 import { Spacer } from '../components/helpers';
-import { projectMap } from '../resources/certAndProjectMap';
+import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
 import { Link } from 'gatsby';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
-import { find } from 'lodash';
+import { find, first } from 'lodash';
 
 const propTypes = {
   certName: PropTypes.string,
@@ -117,11 +117,33 @@ const ShowProjectLinks = props => {
   );
 
   const renderProjectsFor = certName => {
-    return projectMap[certName].map(({ link, title, id }) => (
-      <li key={id}>
-        <Link to={link}>{title}</Link>: {getProjectSolution(id, title)}
-      </li>
-    ));
+    if (certName === 'Legacy Full Stack') {
+      const legacyCerts = [
+        { title: 'Responsive Web Design' },
+        { title: 'JavaScript Algorithms and Data Structures' },
+        { title: 'Front End Libraries' },
+        { title: 'Data Visualization' },
+        { title: 'APIs and Microservices' },
+        { title: 'Legacy Information Security and Quality Assurance' }
+      ];
+      return legacyCerts.map((cert, ind) => {
+        const mapToUse = projectMap[cert.title] || legacyProjectMap[cert.title];
+        const { superBlock } = first(mapToUse);
+        const certLocation = `/certification/${username}/${superBlock}`;
+        return (
+          <li key={ind}>
+            <Link to={certLocation}>{cert.title}</Link>
+          </li>
+        );
+      });
+    }
+    return (projectMap[certName] || legacyProjectMap[certName]).map(
+      ({ link, title, id }) => (
+        <li key={id}>
+          <Link to={link}>{title}</Link>: {getProjectSolution(id, title)}
+        </li>
+      )
+    );
   };
   const { username = '' } = props.user;
   return (

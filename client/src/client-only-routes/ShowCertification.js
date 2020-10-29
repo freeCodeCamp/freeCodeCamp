@@ -139,7 +139,7 @@ const ShowCertification = props => {
     } = props;
 
     if (!signedInUserName || signedInUserName !== username) {
-      if (isEmpty(user)) {
+      if (isEmpty(user) && username) {
         fetchProfileForUser(username);
       }
     }
