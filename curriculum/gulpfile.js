@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const gulp = require('gulp');
 const through2 = require('through2');
 
-const { locale } = require('../config/env.json');
+const { locale } = require('../config/env.js');
 const { getChallengesForLang } = require('./getChallenges');
 const { testedLang } = require('./utils');
 const lintMarkdown = require('../tools/scripts/lint');

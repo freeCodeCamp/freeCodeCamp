@@ -6,7 +6,7 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
 import { executeGA } from '../../../redux';
-import { forumLocation } from '../../../../config/env.json';
+import { forumLocation } from '../../../../../config/env';
 
 import './help-modal.css';
 
@@ -78,7 +78,4 @@ export class HelpModal extends Component {
 HelpModal.displayName = 'HelpModal';
 HelpModal.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HelpModal);
+export default connect(mapStateToProps, mapDispatchToProps)(HelpModal);

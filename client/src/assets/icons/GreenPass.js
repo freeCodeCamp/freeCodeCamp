@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 function GreenPass(props) {
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>Passed</span>
       <svg
         height='50'
@@ -49,7 +49,7 @@ function GreenPass(props) {
           />
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

@@ -8,7 +8,7 @@ import {
 } from '../redux';
 import { tap, mapTo } from 'rxjs/operators';
 import { helpCategory } from '../../../../utils/challengeTypes';
-import { forumLocation } from '../../../../../config/env.json';
+import { forumLocation } from '../../../../../config/env.js';
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;

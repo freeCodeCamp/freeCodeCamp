@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const propTypes = {};
 
 function GooglePay(props) {
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>Google Pay Logo</span>
       <svg
         height={272}
@@ -63,7 +63,7 @@ function GooglePay(props) {
           </g>
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

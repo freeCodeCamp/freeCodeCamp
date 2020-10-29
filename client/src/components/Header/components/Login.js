@@ -5,18 +5,15 @@ import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/react-bootstrap';
 
 import { isSignedInSelector } from '../../../redux';
-import { apiLocation } from '../../../../config/env.json';
+import { apiLocation } from '../../../../../config/env';
 
 import { gtagReportConversion } from '../../../analytics/gtag';
 
 import './login.css';
 
-const mapStateToProps = createSelector(
-  isSignedInSelector,
-  isSignedIn => ({
-    isSignedIn
-  })
-);
+const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
+  isSignedIn
+}));
 
 function Login(props) {
   const {

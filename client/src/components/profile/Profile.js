@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
@@ -10,7 +10,7 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
-import { apiLocation } from '../../../config/env.json';
+import { apiLocation } from '../../../../config/env';
 
 const propTypes = {
   isSessionUser: PropTypes.bool,
@@ -52,7 +52,7 @@ const propTypes = {
 
 function renderMessage(isSessionUser, username) {
   return isSessionUser ? (
-    <Fragment>
+    <>
       <FullWidthRow>
         <h2 className='text-center'>
           You have not made your portfolio public.
@@ -66,9 +66,9 @@ function renderMessage(isSessionUser, username) {
         </p>
       </FullWidthRow>
       <Spacer />
-    </Fragment>
+    </>
   ) : (
-    <Fragment>
+    <>
       <FullWidthRow>
         <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
           {username} has not made their portfolio public.
@@ -85,7 +85,7 @@ function renderMessage(isSessionUser, username) {
         <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>
       </FullWidthRow>
       <Spacer />
-    </Fragment>
+    </>
   );
 }
 
@@ -125,7 +125,7 @@ function renderProfile(user) {
   } = user;
 
   return (
-    <Fragment>
+    <>
       <Camper
         about={showAbout ? about : null}
         githubProfile={githubProfile}
@@ -152,7 +152,7 @@ function renderProfile(user) {
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
       <Spacer />
-    </Fragment>
+    </>
   );
 }
 
@@ -163,7 +163,7 @@ function Profile({ user, isSessionUser }) {
   } = user;
 
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>Profile | freeCodeCamp.org</title>
       </Helmet>
@@ -197,7 +197,7 @@ function Profile({ user, isSessionUser }) {
         )}
         <Spacer />
       </Grid>
-    </Fragment>
+    </>
   );
 }
 

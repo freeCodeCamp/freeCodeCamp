@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { curry } from 'lodash';
 import { createSelector } from 'reselect';
@@ -38,7 +38,7 @@ const propTypes = {
 
 function renderCertShow(username, cert) {
   return cert.show ? (
-    <Fragment key={cert.title}>
+    <>
       <Row>
         <Col className='certifications' sm={10} smPush={1}>
           <Link
@@ -51,7 +51,7 @@ function renderCertShow(username, cert) {
         </Col>
       </Row>
       <ButtonSpacer />
-    </Fragment>
+    </>
   ) : null;
 }
 

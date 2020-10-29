@@ -1,7 +1,7 @@
 /* global jest, expect */
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import { apiLocation } from '../../config/env.json';
+import { apiLocation } from '../../../config/env';
 
 import { ShowSettings } from './ShowSettings';
 

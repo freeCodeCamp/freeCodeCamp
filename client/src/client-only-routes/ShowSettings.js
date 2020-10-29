@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { apiLocation } from '../../config/env.json';
+import { apiLocation } from '../../../config/env';
+
 import {
   signInLoadingSelector,
   userSelector,
@@ -172,7 +173,7 @@ export function ShowSettings(props) {
   }
 
   return (
-    <Fragment>
+    <>
       <Helmet title='Settings | freeCodeCamp.org' />
       <Grid>
         <main>
@@ -251,14 +252,11 @@ export function ShowSettings(props) {
           <DangerZone />
         </main>
       </Grid>
-    </Fragment>
+    </>
   );
 }
 
 ShowSettings.displayName = 'ShowSettings';
 ShowSettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowSettings);

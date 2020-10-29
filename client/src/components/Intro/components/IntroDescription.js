@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Spacer } from '../../helpers';
 import { Col } from '@freecodecamp/react-bootstrap';
-import { forumLocation } from '../../../../config/env.json';
+import { forumLocation } from '../../../../../config/env';
 
 import '../intro.css';
 

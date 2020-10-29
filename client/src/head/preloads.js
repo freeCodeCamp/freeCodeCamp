@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styleSheets from './styleSheets';
 
 const preloads = styleSheets.map(styleSheet => (
-  <React.Fragment key={`preload-${styleSheet.props.href}`}>
+  <Fragment key={`preload-${styleSheet.props.href}`}>
     <link as='style' href={styleSheet.props.href} rel='preload' />
     {styleSheet}
-  </React.Fragment>
+  </Fragment>
 ));
 
 export default preloads;

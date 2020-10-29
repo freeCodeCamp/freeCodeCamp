@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -163,7 +163,7 @@ class DefaultLayout extends Component {
     } = this.props;
 
     return (
-      <Fragment>
+      <>
         <Helmet
           bodyAttributes={{
             class: useTheme
@@ -235,7 +235,7 @@ class DefaultLayout extends Component {
             {showFooter && <Footer />}
           </div>
         </WithInstantSearch>
-      </Fragment>
+      </>
     );
   }
 }
@@ -243,7 +243,4 @@ class DefaultLayout extends Component {
 DefaultLayout.displayName = 'DefaultLayout';
 DefaultLayout.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DefaultLayout);
+export default connect(mapStateToProps, mapDispatchToProps)(DefaultLayout);
