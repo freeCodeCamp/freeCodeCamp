@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../components/layouts/project-links.css';
 import { maybeUrlRE } from '../utils';
-import { Spacer } from '../components/helpers';
+import { Spacer, Link } from '../components/helpers';
 import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
-import { Link } from 'gatsby';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find, first } from 'lodash';
 
@@ -111,10 +110,6 @@ const ShowProjectLinks = props => {
     );
   };
 
-  const renderCertification = certName => (
-    <ul key={certName}>{renderProjectsFor(certName)}</ul>
-  );
-
   const renderProjectsFor = certName => {
     if (certName === 'Legacy Full Stack') {
       const legacyCerts = [
@@ -164,7 +159,7 @@ const ShowProjectLinks = props => {
         ? `As part of this Legacy Full Stack certification, ${name} completed the following certifications:`
         : `As part of this certification, ${name} built the following projects and got all automated test suites to pass:`}
       <Spacer />
-      {renderCertification(certName)}
+      <ul>{renderProjectsFor(certName)}</ul>
       <Spacer />
       {isOpen ? (
         <ProjectModal
