@@ -35,6 +35,7 @@ export const ChallengeNode = PropTypes.shape({
   forumTopicId: PropTypes.number,
   guideUrl: PropTypes.string,
   head: PropTypes.arrayOf(PropTypes.string),
+  helpCategory: PropTypes.string,
   instructions: PropTypes.string,
   isComingSoon: PropTypes.bool,
   isLocked: PropTypes.bool,
