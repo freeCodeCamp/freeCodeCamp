@@ -29,8 +29,7 @@ const propTypes = {
       })
     ),
     username: PropTypes.string
-  }),
-  username: PropTypes.string
+  })
 };
 
 const initSolutionState = {
@@ -139,21 +138,28 @@ const ShowProjectLinks = props => {
       )
     );
   };
-  const { username = '' } = props.user;
+
+  const {
+    certName,
+    name,
+    user: { username }
+  } = props;
+  const { files, isOpen, projectTitle, solution } = solutionState;
   return (
     <div>
-      As part of this certification, {props.name} built the following projects
-      and got all automated test suites to pass:
+      {certName === 'Legacy Full Stack'
+        ? `As part of this Legacy Full Stack certification, ${name} completed the following certifications:`
+        : `As part of this certification, ${name} built the following projects and got all automated test suites to pass:`}
       <Spacer />
-      {renderCertification(props.certName)}
+      {renderCertification(certName)}
       <Spacer />
-      {solutionState.isOpen ? (
+      {isOpen ? (
         <ProjectModal
-          files={solutionState.files}
+          files={files}
           handleSolutionModalHide={handleSolutionModalHide}
-          isOpen={solutionState.isOpen}
-          projectTitle={solutionState.projectTitle}
-          solution={solutionState.solution}
+          isOpen={isOpen}
+          projectTitle={projectTitle}
+          solution={solution}
         />
       ) : null}
       If you suspect that any of these projects violate the{' '}

@@ -365,7 +365,6 @@ const ShowCertification = props => {
         <>
           <Spacer size={2} />
           <ShowProjectLinks
-            username={username}
             user={user}
             name={userFullName}
             certName={certTitle}
