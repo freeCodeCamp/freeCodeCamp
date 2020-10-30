@@ -1,8 +1,14 @@
 import React, { Component, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import format from 'date-fns/format';
-import { find, reverse, sortBy } from 'lodash';
-import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
+import { reverse, sortBy } from 'lodash';
+import {
+  Button,
+  Modal,
+  Table,
+  DropdownButton,
+  MenuItem
+} from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import TimelinePagination from './TimelinePagination';
@@ -66,7 +72,9 @@ class TimelineInner extends Component {
     this.state = {
       solutionToView: null,
       solutionOpen: false,
-      pageNo: 1
+      pageNo: 1,
+      solution: null,
+      files: null
     };
 
     this.closeSolution = this.closeSolution.bind(this);
@@ -76,11 +84,69 @@ class TimelineInner extends Component {
     this.prevPage = this.prevPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
     this.lastPage = this.lastPage.bind(this);
+    this.renderViewButton = this.renderViewButton.bind(this);
+  }
+
+  renderViewButton(Id, files, githubLink, solution) {
+    if (files && files.length) {
+      return (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={() => this.viewSolution(Id, solution, files)}
+        >
+          View
+        </Button>
+      );
+    } else if (githubLink) {
+      return (
+        <div className='solutions-dropdown'>
+          <DropdownButton
+            block={true}
+            bsStyle='primary'
+            className='btn-invert'
+            id={`dropdown-for-${Id}`}
+            title='View All'
+          >
+            <MenuItem
+              bsStyle='primary'
+              href={solution}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              Front End
+            </MenuItem>
+            <MenuItem
+              bsStyle='primary'
+              href={githubLink}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              Back End
+            </MenuItem>
+          </DropdownButton>
+        </div>
+      );
+    } else {
+      return (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          href={solution}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          View
+        </Button>
+      );
+    }
   }
 
   renderCompletion(completed) {
     const { idToNameMap, username } = this.props;
-    const { id } = completed;
+    const { id, files, githubLink, solution } = completed;
     const completedDate = new Date(completed.completedDate);
     const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
@@ -99,6 +165,7 @@ class TimelineInner extends Component {
             <Link to={challengePath}>{challengeTitle}</Link>
           )}
         </td>
+        <td>{this.renderViewButton(id, files, githubLink, solution)}</td>
         <td className='text-center'>
           <time dateTime={completedDate.toISOString()}>
             {format(completedDate, 'MMMM d, y')}
@@ -107,11 +174,13 @@ class TimelineInner extends Component {
       </tr>
     );
   }
-  viewSolution(id) {
+  viewSolution(id, solution, files) {
     this.setState(state => ({
       ...state,
       solutionToView: id,
-      solutionOpen: true
+      solutionOpen: true,
+      solution,
+      files
     }));
   }
 
@@ -119,7 +188,9 @@ class TimelineInner extends Component {
     this.setState(state => ({
       ...state,
       solutionToView: null,
-      solutionOpen: false
+      solutionOpen: false,
+      solution: null,
+      files: null
     }));
   }
 
@@ -169,6 +240,7 @@ class TimelineInner extends Component {
             <thead>
               <tr>
                 <th>Challenge</th>
+                <th>Solution</th>
                 <th className='text-center'>Completed</th>
               </tr>
             </thead>
@@ -194,10 +266,8 @@ class TimelineInner extends Component {
             </Modal.Header>
             <Modal.Body>
               <SolutionViewer
-                solution={find(
-                  completedMap,
-                  ({ id: completedId }) => completedId === id
-                )}
+                files={this.state.files}
+                solution={this.state.solution}
               />
             </Modal.Body>
             <Modal.Footer>
