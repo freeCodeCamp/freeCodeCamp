@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { TabPane, Tabs } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
@@ -8,7 +8,7 @@ import { createStructuredSelector } from 'reselect';
 import { currentTabSelector, moveToTab } from '../redux';
 import { bindActionCreators } from 'redux';
 import EditorTabs from './EditorTabs';
-import { showUpcomingChanges } from '../../../../../config/env';
+import { showUpcomingChanges } from '../../../../config/env.json';
 
 const mapStateToProps = createStructuredSelector({
   currentTab: currentTabSelector
@@ -57,7 +57,7 @@ class MobileLayout extends Component {
     };
 
     return (
-      <>
+      <Fragment>
         <Tabs
           activeKey={currentTab}
           defaultActiveKey={1}
@@ -81,7 +81,7 @@ class MobileLayout extends Component {
           )}
         </Tabs>
         <ToolPanel guideUrl={guideUrl} isMobile={true} videoUrl={videoUrl} />
-      </>
+      </Fragment>
     );
   }
 }
@@ -89,4 +89,7 @@ class MobileLayout extends Component {
 MobileLayout.displayName = 'MobileLayout';
 MobileLayout.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MobileLayout);

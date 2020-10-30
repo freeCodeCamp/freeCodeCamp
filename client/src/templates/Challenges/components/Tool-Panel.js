@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -44,7 +44,7 @@ function ToolPanel({
   videoUrl
 }) {
   return (
-    <>
+    <Fragment>
       <div
         className={`tool-panel-group button-group ${
           isMobile ? 'tool-panel-group-mobile' : ''
@@ -96,11 +96,14 @@ function ToolPanel({
           </MenuItem>
         </DropdownButton>
       </div>
-    </>
+    </Fragment>
   );
 }
 
 ToolPanel.displayName = 'ToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolPanel);

@@ -1,6 +1,6 @@
 /* global expect */
 
-import { forumLocation } from '../../../../../config/env.js';
+import { forumLocation } from '../../../../../config/env.json';
 
 const { getGuideUrl } = require('./');
 

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const propTypes = {};
 
 function Heart(props) {
   return (
-    <>
+    <Fragment>
       <span className='sr-only'>Heart</span>
       <svg
         height={184}
@@ -28,7 +28,7 @@ function Heart(props) {
           </g>
         </g>
       </svg>
-    </>
+    </Fragment>
   );
 }
 

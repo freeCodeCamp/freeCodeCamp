@@ -24,10 +24,10 @@ import {
   donationUrls,
   modalDefaultDonation
 } from '../../../../config/donation-settings';
-import { deploymentEnv, stripePublicKey } from '../../../../config/env';
-// import { deploymentEnv, stripePublicKey } from '../../../../../config/env';
+import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
+import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
@@ -462,4 +462,7 @@ class DonateForm extends Component {
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(DonateForm);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonateForm);

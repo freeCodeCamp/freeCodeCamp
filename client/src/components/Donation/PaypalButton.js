@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
-import { paypalClientId, deploymentEnv } from '../../../../config/env';
+import { paypalClientId, deploymentEnv } from '../../../config/env.json';
 import {
   paypalConfigurator,
   paypalConfigTypes

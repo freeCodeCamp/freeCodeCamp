@@ -53,5 +53,5 @@ if (FREECODECAMP_NODE_ENV === 'production') {
     throw Error("SHOW_UPCOMING_CHANGES should never be 'true' in production");
 }
 
-fs.writeFileSync(`${clientPath}/config/env.js`, JSON.stringify(env));
+fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));
 fs.writeFileSync(`${globalConfigPath}/env.json`, JSON.stringify(env));

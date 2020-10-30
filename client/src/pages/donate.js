@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
@@ -74,7 +74,7 @@ export class DonatePage extends Component {
     }
 
     return (
-      <>
+      <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
         <Grid className='donate-page-wrapper'>
           <Spacer />
@@ -89,7 +89,7 @@ export class DonatePage extends Component {
             </Col>
           </Row>
           <Row>
-            <>
+            <Fragment>
               <Col md={6}>
                 <Row>
                   <Col sm={10} smOffset={1} xs={12}>
@@ -116,11 +116,11 @@ export class DonatePage extends Component {
               <Col md={6}>
                 <DonateText />
               </Col>
-            </>
+            </Fragment>
           </Row>
           <Spacer />
         </Grid>
-      </>
+      </Fragment>
     );
   }
 }
@@ -128,4 +128,7 @@ export class DonatePage extends Component {
 DonatePage.displayName = 'DonatePage';
 DonatePage.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(DonatePage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonatePage);

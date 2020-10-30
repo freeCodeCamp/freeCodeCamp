@@ -1,4 +1,4 @@
-import { forumLocation } from '../../../../../config/env.js';
+import { forumLocation } from '../../../../../config/env.json';
 
 export function getGuideUrl({ forumTopicId, title = '' }) {
   title = encodeURIComponent(title);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
 import PropTypes from 'prop-types';
 import Login from '../components/Login';
-import { forumLocation } from '../../../../../config/env.js';
+import { forumLocation } from '../../../../../config/env.json';
 
 const propTypes = {
   displayMenu: PropTypes.bool,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -109,7 +109,7 @@ class ShowUser extends Component {
     const { textarea } = this.state;
     const placeholderText = `Please provide as much detail as possible about the account or behavior you are reporting.`;
     return (
-      <>
+      <Fragment>
         <Helmet>
           <title>Report a users portfolio | freeCodeCamp.org</title>
         </Helmet>
@@ -146,7 +146,7 @@ class ShowUser extends Component {
             </form>
           </Col>
         </Row>
-      </>
+      </Fragment>
     );
   }
 }
@@ -154,4 +154,7 @@ class ShowUser extends Component {
 ShowUser.displayName = 'ShowUser';
 ShowUser.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowUser);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ShowUser);

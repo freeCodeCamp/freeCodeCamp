@@ -3,7 +3,7 @@
 node_modules
 yarn-error.log
 
-config/env.js
+config/env.json
 config/frame-runner.json
 config/sass-compile.json
 config/test-evaluator.json

@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const propTypes = {};
 
 function DonateWithPayPal(props) {
   return (
-    <>
+    <Fragment>
       <span className='sr-only'>Donate with PayPal</span>
       <svg
         height={31}
@@ -48,7 +48,7 @@ function DonateWithPayPal(props) {
           </text>
         </g>
       </svg>
-    </>
+    </Fragment>
   );
 }
 

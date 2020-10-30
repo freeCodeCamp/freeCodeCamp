@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import PropTypes from 'prop-types';
 import { first } from 'lodash';
 import EditorTabs from './EditorTabs';
 import ActionRow from './ActionRow';
-import { showUpcomingChanges } from '../../../../../config/env';
+import { showUpcomingChanges } from '../../../../config/env.json';
 
 const propTypes = {
   challengeFiles: PropTypes.object,
@@ -46,7 +46,7 @@ class DesktopLayout extends Component {
     const challengeFile = this.getChallengeFile();
 
     return (
-      <>
+      <Fragment>
         {showUpcomingChanges && hasEditableBoundries && <ActionRow />}
         <ReflexContainer className='desktop-layout' orientation='vertical'>
           <ReflexElement flex={1} {...resizeProps}>
@@ -58,12 +58,12 @@ class DesktopLayout extends Component {
               <ReflexContainer key={challengeFile.key} orientation='horizontal'>
                 <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
                   {
-                    <>
+                    <Fragment>
                       {showUpcomingChanges && !hasEditableBoundries && (
                         <EditorTabs />
                       )}
                       {editor}
-                    </>
+                    </Fragment>
                   }
                 </ReflexElement>
                 <ReflexSplitter propagate={true} {...resizeProps} />
@@ -80,7 +80,7 @@ class DesktopLayout extends Component {
             </ReflexElement>
           )}
         </ReflexContainer>
-      </>
+      </Fragment>
     );
   }
 }
