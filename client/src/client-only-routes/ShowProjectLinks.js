@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../components/layouts/project-links.css';
 import { maybeUrlRE } from '../utils';
-import { Spacer, Link } from '../components/helpers';
+import { Spacer } from '../components/helpers';
 import { projectMap, legacyProjectMap } from '../resources/certAndProjectMap';
+import { Link } from 'gatsby';
 import ProjectModal from '../components/SolutionViewer/ProjectModal';
 import { find, first } from 'lodash';
 
@@ -80,8 +81,13 @@ const ShowProjectLinks = props => {
     if (githubLink) {
       return (
         <>
-          <Link to={solution}> solution</Link>,{' '}
-          <Link to={githubLink}> source</Link>
+          <a href={solution} rel='noopener noreferrer' target='_blank'>
+            solution
+          </a>
+          ,{' '}
+          <a href={githubLink} rel='noopener noreferrer' target='_blank'>
+            source
+          </a>
         </>
       );
     }
@@ -125,7 +131,14 @@ const ShowProjectLinks = props => {
         const certLocation = `/certification/${username}/${superBlock}`;
         return (
           <li key={ind}>
-            <Link to={certLocation}>{cert.title}</Link>
+            <a
+              href={certLocation}
+              className='btn-invert'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              {cert.title}
+            </a>
           </li>
         );
       });
@@ -163,12 +176,22 @@ const ShowProjectLinks = props => {
         />
       ) : null}
       If you suspect that any of these projects violate the{' '}
-      <Link to='https://www.freecodecamp.org/news/academic-honesty-policy/'>
-        {' '}
+      <a
+        href='https://www.freecodecamp.org/news/academic-honesty-policy/'
+        target='_blank'
+        rel='noreferrer'
+      >
         academic honesty policy
-      </Link>
+      </a>
       , please{' '}
-      <Link to={`/user/${username}/report-user`}>report this to our team</Link>.
+      <a
+        href={`/user/${username}/report-user`}
+        target='_blank'
+        rel='noreferrer'
+      >
+        report this to our team
+      </a>
+      .
     </div>
   );
 };
