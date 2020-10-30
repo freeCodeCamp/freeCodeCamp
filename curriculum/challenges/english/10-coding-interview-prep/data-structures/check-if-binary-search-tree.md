@@ -37,7 +37,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
   this.value = value;
   this.left = null;
@@ -48,7 +48,6 @@ function BinarySearchTree() {
 }
 function isBinarySearchTree(tree) {
   // Only change code below this line
-  
   // Only change code above this line
 }
 ```
@@ -56,6 +55,7 @@ function isBinarySearchTree(tree) {
 </div>
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -99,7 +99,7 @@ BinarySearchTree.prototype.push = function(val) {
 <section id='solution'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
   this.value = value;
   this.left = null;
@@ -134,7 +134,7 @@ function isBinarySearchTree(tree) {
     checkTree(tree.root);
     return isBST;
   }
-};
+}
 ```
 
 </section>
