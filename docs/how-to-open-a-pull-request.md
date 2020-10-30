@@ -38,6 +38,8 @@ Some examples of good PRs titles would be:
 - `fix(api,client): prevent CORS errors on form submission`
 - `docs(i18n): Chinese translation of local setup`
 
+A good source of good commit principles can be found here [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
+
 ## Proposing a Pull Request
 
 1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
