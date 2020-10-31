@@ -153,7 +153,8 @@ class ShowClassic extends Component {
         challengeNode: {
           files,
           fields: { tests },
-          challengeType
+          challengeType,
+          helpCategory
         }
       },
       pageContext: { challengeMeta }
@@ -161,7 +162,12 @@ class ShowClassic extends Component {
     initConsole('');
     createFiles(files);
     initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
   }
 
@@ -341,6 +347,7 @@ export const query = graphql`
       description
       instructions
       challengeType
+      helpCategory
       videoUrl
       forumTopicId
       fields {

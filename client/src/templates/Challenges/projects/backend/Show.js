@@ -123,14 +123,20 @@ export class BackEnd extends Component {
         challengeNode: {
           fields: { tests },
           title,
-          challengeType
+          challengeType,
+          helpCategory
         }
       },
       pageContext: { challengeMeta }
     } = this.props;
     initConsole();
     initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
   }
 
@@ -224,6 +230,7 @@ export const query = graphql`
       description
       instructions
       challengeType
+      helpCategory
       fields {
         blockName
         slug
