@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 function Spacer(props) {
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>Passed</span>
       <svg
         className='tick'
@@ -17,7 +17,7 @@ function Spacer(props) {
           <rect fillOpacity='0' height='200' paddingtop='5' width='200' />
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

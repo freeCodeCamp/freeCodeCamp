@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
@@ -18,7 +18,7 @@ function SuperBlockIntroductionPage({ data: { markdownRemark } }) {
     frontmatter: { superBlock }
   } = markdownRemark;
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>{superBlock} | freeCodeCamp.org</title>
       </Helmet>
@@ -28,7 +28,7 @@ function SuperBlockIntroductionPage({ data: { markdownRemark } }) {
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </FullWidthRow>
-    </Fragment>
+    </>
   );
 }
 

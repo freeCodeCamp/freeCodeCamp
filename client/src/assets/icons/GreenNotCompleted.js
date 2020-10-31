@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const propTypes = {};
 
 function GreenNotCompleted(props) {
   return (
-    <Fragment>
+    <>
       <span className='sr-only'>Not Passed</span>
       <svg
         height='50'
@@ -28,7 +28,7 @@ function GreenNotCompleted(props) {
           />
         </g>
       </svg>
-    </Fragment>
+    </>
   );
 }
 

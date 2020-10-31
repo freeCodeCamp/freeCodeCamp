@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import PrismFormatted from './PrismFormatted';
@@ -15,10 +15,10 @@ function ChallengeDescription({ description, instructions, section }) {
     <div className={`challenge-instructions ${section}`}>
       <PrismFormatted text={description} />
       {instructions && (
-        <Fragment>
+        <>
           <hr />
           <PrismFormatted text={instructions} />
-        </Fragment>
+        </>
       )}
       <hr />
     </div>

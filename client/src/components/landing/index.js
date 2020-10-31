@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
@@ -29,7 +29,7 @@ export const Landing = ({ page = 'landing' }) => {
   `);
 
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>Learn to code at home | freeCodeCamp.org</title>
       </Helmet>
@@ -45,7 +45,7 @@ export const Landing = ({ page = 'landing' }) => {
           <Certifications nodes={data.challenges.nodes} page={page} />
         </Grid>
       </main>
-    </Fragment>
+    </>
   );
 };
 
