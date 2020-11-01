@@ -6,6 +6,7 @@ forumTopicId: 301509
 ---
 
 ## Description
+
 <section id='description'>
 Build a full stack JavaScript app that is functionally similar to this: <a href='https://url-shortener-microservice.freecodecamp.rocks/' target='_blank'>https://url-shortener-microservice.freecodecamp.rocks/</a>.
 Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
@@ -13,11 +14,13 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,13 +38,13 @@ tests:
       const res = await fetch(url + '/api/shorturl/new/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `url=https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`
+        body: `url=https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
       });
 
       if (res.ok) {
         const { short_url, original_url } = await res.json();
         assert.isNotNull(short_url);
-        assert.match(original_url, new RegExp(`https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`));
+        assert.match(original_url, new RegExp(`https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`));
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
@@ -57,7 +60,7 @@ tests:
       const postResponse = await fetch(url + '/api/shorturl/new/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `url=https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`
+        body: `url=https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`
       });
 
       if (postResponse.ok) {
@@ -73,7 +76,7 @@ tests:
         const { redirected, url } = getResponse;
 
         assert.isTrue(redirected);
-        assert.strictEqual(url, `https://timestamp-microservice.freecodecamp.rocks/${urlVariable}`);
+        assert.strictEqual(url, `https://timestamp-microservice.freecodecamp.rocks/api/timestamp/${urlVariable}`);
       } else {
         throw new Error(`${getResponse.status} ${getResponse.statusText}`);
       }
@@ -92,7 +95,7 @@ tests:
       if (res.ok) {
         const { error } = await res.json();
         assert.isNotNull(error);
-        assert.strictEqual(error.toLowerCase(), 'invalid url'); 
+        assert.strictEqual(error.toLowerCase(), 'invalid url');
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
@@ -103,11 +106,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
