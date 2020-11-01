@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -167,7 +167,7 @@ class UsernameSettings extends Component {
     const { isValidUsername, validating } = this.props;
 
     return (
-      <Fragment>
+      <>
         <form id='usernameSettings' onSubmit={this.handleSubmit}>
           <FullWidthRow>
             <FormGroup>
@@ -191,7 +191,7 @@ class UsernameSettings extends Component {
             />
           </FullWidthRow>
         </form>
-      </Fragment>
+      </>
     );
   }
 }
@@ -199,7 +199,4 @@ class UsernameSettings extends Component {
 UsernameSettings.displayName = 'UsernameSettings';
 UsernameSettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UsernameSettings);
+export default connect(mapStateToProps, mapDispatchToProps)(UsernameSettings);

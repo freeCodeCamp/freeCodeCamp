@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import {
@@ -290,11 +290,11 @@ class PortfolioSettings extends Component {
             </Button>
           </form>
           {index + 1 !== arr.length && (
-            <Fragment>
+            <>
               <Spacer />
               <hr />
               <Spacer />
-            </Fragment>
+            </>
           )}
         </FullWidthRow>
       </div>

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   FormGroup,
@@ -28,7 +28,7 @@ export default function ToggleSetting({
   ...restProps
 }) {
   return (
-    <Fragment>
+    <>
       <div className='toggle-setting-container'>
         <FormGroup>
           <ControlLabel className='toggle-label' htmlFor={flagName}>
@@ -48,7 +48,7 @@ export default function ToggleSetting({
         </FormGroup>
       </div>
       <ButtonSpacer />
-    </Fragment>
+    </>
   );
 }
 

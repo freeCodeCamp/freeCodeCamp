@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const HonestyPolicy = () => {
   return (
-    <Fragment>
+    <>
       <p key={1}>
         Before you can claim a verified certification, you must accept our
         Academic Honesty Pledge, which reads:
@@ -42,7 +42,7 @@ const HonestyPolicy = () => {
         <a href='mailto:team@freecodecamp.org'>team@freecodecamp.org</a> and we
         will investigate.
       </p>
-    </Fragment>
+    </>
   );
 };
 

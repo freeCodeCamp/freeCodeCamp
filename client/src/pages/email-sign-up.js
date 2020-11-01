@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -54,7 +54,7 @@ class AcceptPrivacyTerms extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         <Helmet>
           <title>Email Sign Up | freeCodeCamp.org</title>
         </Helmet>
@@ -104,14 +104,11 @@ class AcceptPrivacyTerms extends Component {
             </Col>
           </Row>
         </Grid>
-      </Fragment>
+      </>
     );
   }
 }
 
 AcceptPrivacyTerms.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AcceptPrivacyTerms);
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptPrivacyTerms);
