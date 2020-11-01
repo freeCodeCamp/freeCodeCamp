@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -6,9 +6,12 @@ import { fetchUser, isSignedInSelector, executeGA } from '../../redux';
 import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
 
-const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
-  isSignedIn
-}));
+const mapStateToProps = createSelector(
+  isSignedInSelector,
+  isSignedIn => ({
+    isSignedIn
+  })
+);
 
 const mapDispatchToProps = { fetchUser, executeGA };
 
@@ -25,10 +28,10 @@ class CertificationLayout extends Component {
     const { children } = this.props;
 
     return (
-      <>
+      <Fragment>
         <Helmet bodyAttributes={{ class: 'light-palette' }} />
         {children}
-      </>
+      </Fragment>
     );
   }
 }

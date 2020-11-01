@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const propTypes = {};
 
 function IntroInformation(props) {
   return (
-    <>
+    <Fragment>
       <span className='sr-only'>IntroInformation</span>
       <svg
         height='50'
@@ -39,7 +39,7 @@ function IntroInformation(props) {
           />
         </g>
       </svg>
-    </>
+    </Fragment>
   );
 }
 

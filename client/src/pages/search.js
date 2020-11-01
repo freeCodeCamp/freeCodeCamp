@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
@@ -20,7 +20,7 @@ class SearchPage extends Component {
   }
   render() {
     return (
-      <>
+      <Fragment>
         <Helmet title='Search | freeCodeCamp.org' />
         <Index indexName='news' />
         <Grid>
@@ -32,7 +32,7 @@ class SearchPage extends Component {
             </Col>
           </Row>
         </Grid>
-      </>
+      </Fragment>
     );
   }
 }
@@ -40,4 +40,7 @@ class SearchPage extends Component {
 SearchPage.displayName = 'SearchPage';
 SearchPage.propTypes = propTypes;
 
-export default connect(null, mapDispatchToProps)(SearchPage);
+export default connect(
+  null,
+  mapDispatchToProps
+)(SearchPage);

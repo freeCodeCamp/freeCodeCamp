@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 function ToggleCheck(props) {
   return (
-    <>
+    <Fragment>
       <span className='sr-only'>Passed</span>
       <svg
         className='tick'
@@ -60,7 +60,7 @@ function ToggleCheck(props) {
           />
         </g>
       </svg>
-    </>
+    </Fragment>
   );
 }
 

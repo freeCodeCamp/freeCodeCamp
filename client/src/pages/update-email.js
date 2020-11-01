@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { bindActionCreators } from 'redux';
@@ -78,7 +78,7 @@ class UpdateEmail extends Component {
   render() {
     const { isNewEmail } = this.props;
     return (
-      <>
+      <Fragment>
         <Helmet>
           <title>Update your email address | freeCodeCamp.org</title>
         </Helmet>
@@ -126,7 +126,7 @@ class UpdateEmail extends Component {
             </Col>
           </Row>
         </Grid>
-      </>
+      </Fragment>
     );
   }
 }
@@ -134,4 +134,7 @@ class UpdateEmail extends Component {
 UpdateEmail.displayName = 'Update-Email';
 UpdateEmail.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(UpdateEmail);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UpdateEmail);
