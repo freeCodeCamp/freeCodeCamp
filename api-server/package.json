@@ -55,7 +55,7 @@
     "passport-auth0": "^1.3.3",
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
-    "query-string": "^6.13.5",
+    "query-string": "^6.13.6",
     "rss-parser": "^3.9.0",
     "rx": "^4.1.0",
     "shortid": "^2.2.15",
