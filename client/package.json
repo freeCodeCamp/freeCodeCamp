@@ -14,7 +14,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "@freecodecamp/loop-protect": "^2.2.1",
     "@freecodecamp/react-bootstrap": "^0.32.3",
     "@freecodecamp/react-calendar-heatmap": "^1.0.0",
