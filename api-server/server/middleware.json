@@ -29,6 +29,7 @@
   "auth:before": {
     "express-flash": {},
     "./middlewares/express-extensions": {},
+    "./middlewares/add-return-to": {},
     "./middlewares/cookie-parser": {},
     "./middlewares/request-authorization": {}
   },
