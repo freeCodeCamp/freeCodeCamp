@@ -6,8 +6,8 @@ import { isEmail } from 'validator';
 import { homeLocation } from '../../../config/env';
 import {
   createPassportCallbackAuthenticator,
-  saveResponseAuthCookies,
-  loginRedirect
+  devSaveResponseAuthCookies,
+  devLoginRedirect
 } from '../component-passport';
 import { ifUserRedirectTo, ifNoUserRedirectTo } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
@@ -37,8 +37,8 @@ module.exports = function enableAuthentication(app) {
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
   const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
-  const saveAuthCookies = saveResponseAuthCookies();
-  const loginSuccessRedirect = loginRedirect();
+  const devSaveAuthCookies = devSaveResponseAuthCookies();
+  const devLoginSuccessRedirect = devLoginRedirect();
   const api = app.loopback.Router();
 
   // Use a local mock strategy for signing in if we are in dev mode.
@@ -48,8 +48,8 @@ module.exports = function enableAuthentication(app) {
     api.get(
       '/signin',
       passport.authenticate('devlogin'),
-      saveAuthCookies,
-      loginSuccessRedirect
+      devSaveAuthCookies,
+      devLoginSuccessRedirect
     );
   } else {
     api.get(

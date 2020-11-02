@@ -63,7 +63,7 @@ export function setupPassport(app) {
   });
 }
 
-export const saveResponseAuthCookies = () => {
+export const devSaveResponseAuthCookies = () => {
   return (req, res, next) => {
     const user = req.user;
 
@@ -78,7 +78,7 @@ export const saveResponseAuthCookies = () => {
   };
 };
 
-export const loginRedirect = () => {
+export const devLoginRedirect = () => {
   return (req, res) => {
     const successRedirect = req => {
       if (!!req && req.session && req.session.returnTo) {
