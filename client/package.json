@@ -52,7 +52,7 @@
     "query-string": "^6.13.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-final-form": "^6.5.1",
+    "react-final-form": "^6.5.2",
     "react-ga": "^2.7.0",
     "react-helmet": "^6.1.0",
     "react-hotkeys": "^2.0.0",
