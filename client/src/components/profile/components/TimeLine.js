@@ -11,6 +11,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import './timeline.css';
 import TimelinePagination from './TimelinePagination';
 import { FullWidthRow, Link } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
@@ -87,16 +88,17 @@ class TimelineInner extends Component {
     this.renderViewButton = this.renderViewButton.bind(this);
   }
 
-  renderViewButton(Id, files, githubLink, solution) {
+  renderViewButton(id, files, githubLink, solution) {
     if (files && files.length) {
       return (
         <Button
           block={true}
           bsStyle='primary'
           className='btn-invert'
-          onClick={() => this.viewSolution(Id, solution, files)}
+          id={`btn-for-${id}`}
+          onClick={() => this.viewSolution(id, solution, files)}
         >
-          View
+          Show Code
         </Button>
       );
     } else if (githubLink) {
@@ -106,7 +108,7 @@ class TimelineInner extends Component {
             block={true}
             bsStyle='primary'
             className='btn-invert'
-            id={`dropdown-for-${Id}`}
+            id={`dropdown-for-${id}`}
             title='View All'
           >
             <MenuItem
@@ -135,6 +137,7 @@ class TimelineInner extends Component {
           bsStyle='primary'
           className='btn-invert'
           href={solution}
+          id={`btn-for-${id}`}
           rel='noopener noreferrer'
           target='_blank'
         >
