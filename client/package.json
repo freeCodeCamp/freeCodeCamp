@@ -28,7 +28,7 @@
     "chai": "^4.2.0",
     "csrf": "^3.1.0",
     "date-fns": "^2.16.1",
-    "entities": "^1.1.2",
+    "entities": "^2.1.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "final-form": "^4.20.1",
