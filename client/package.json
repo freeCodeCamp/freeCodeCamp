@@ -110,7 +110,7 @@
     "copy-webpack-plugin": "^5.1.2",
     "jest": "^26.6.1",
     "monaco-editor-webpack-plugin": "^1.9.0",
-    "react-test-renderer": "^16.10.2",
+    "react-test-renderer": "^16.14.0",
     "redux-saga-test-plan": "^4.0.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
