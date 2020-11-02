@@ -83,7 +83,10 @@ export const devLoginRedirect = () => {
     const successRedirect = req => {
       if (!!req && req.session && req.session.returnTo) {
         delete req.session.returnTo;
-        return `${homeLocation}/learn`;
+      }
+
+      if (req && req.query && req.query.returnTo) {
+        return req.query.returnTo;
       }
       return `${homeLocation}/learn`;
     };

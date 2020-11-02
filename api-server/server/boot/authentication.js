@@ -53,6 +53,7 @@ module.exports = function enableAuthentication(app) {
   if (process.env.LOCAL_MOCK_AUTH === 'true') {
     api.get(
       '/signin',
+      addRedirect,
       passport.authenticate('devlogin'),
       devSaveAuthCookies,
       devLoginSuccessRedirect
