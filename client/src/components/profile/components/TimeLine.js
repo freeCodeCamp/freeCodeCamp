@@ -20,6 +20,9 @@ import {
   getPathFromID,
   getTitleFromId
 } from '../../../../../utils';
+
+import { maybeUrlRE } from '../../../utils';
+
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 
 // Items per page in timeline.
@@ -109,7 +112,7 @@ class TimelineInner extends Component {
             bsStyle='primary'
             className='btn-invert'
             id={`dropdown-for-${id}`}
-            title='View All'
+            title='View'
           >
             <MenuItem
               bsStyle='primary'
@@ -130,7 +133,7 @@ class TimelineInner extends Component {
           </DropdownButton>
         </div>
       );
-    } else {
+    } else if (maybeUrlRE.test(solution)) {
       return (
         <Button
           block={true}
@@ -144,6 +147,8 @@ class TimelineInner extends Component {
           View
         </Button>
       );
+    } else {
+      return null;
     }
   }
 
