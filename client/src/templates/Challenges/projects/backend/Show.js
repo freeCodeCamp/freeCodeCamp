@@ -100,16 +100,22 @@ export class BackEnd extends Component {
   componentDidUpdate(prevProps) {
     const {
       data: {
-        challengeNode: { title: prevTitle }
+        challengeNode: {
+          title: prevTitle,
+          fields: { tests: prevTests }
+        }
       }
     } = prevProps;
     const {
       data: {
-        challengeNode: { title: currentTitle }
+        challengeNode: {
+          title: currentTitle,
+          fields: { tests: currTests }
+        }
       }
     } = this.props;
-    if (prevTitle !== currentTitle) {
-      this.initializeComponent();
+    if (prevTitle !== currentTitle || prevTests !== currTests) {
+      this.initializeComponent(currentTitle);
     }
   }
 
