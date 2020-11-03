@@ -22,7 +22,6 @@ import {
 } from '../../../../../utils';
 
 import { maybeUrlRE } from '../../../utils';
-
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 
 // Items per page in timeline.
