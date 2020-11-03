@@ -45,9 +45,9 @@ tests:
       const parsed = await data.json();
       assert.isTrue(parsed.headers['referrer-policy']?.includes('same-origin'));
       }"
-  - text: I can POST a thread to a specific message board by passing form data `text` and `delete_password` to `/api/threads/{board}` (Recommend `res.redirect` to board page `/b/{board}`). The saved database record will have at least the following fields: `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
+  - text: I can POST a thread to a specific message board by passing form data `text` and `delete_password` to `/api/threads/{board}` (Recommend `res.redirect` to board page `/b/{board}`). The saved database record will have at least the following fields: `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
     testString: ''
-  - text: I can POST a reply to a thread on a specific board by passing form data `text`, `delete_password`, & `thread_id` to `/api/replies/{board}` and it will also update the `bumped_on` date to the comment's date (Recommend `res.redirect` to thread page `/b/{board}/{thread_id}`). In the thread's `replies` array, an object will be saved with at least the following properties:  `_id`, `text`, `created_on`, `delete_password`, & `reported`.
+  - text: I can POST a reply to a thread on a specific board by passing form data `text`, `delete_password`, & `thread_id` to `/api/replies/{board}` and it will also update the `bumped_on` date to the comment's date (Recommend `res.redirect` to thread page `/b/{board}/{thread_id}`). In the thread's `replies` array, an object will be saved with at least the following properties: `_id`, `text`, `created_on`, `delete_password`, & `reported`.
     testString: ''
   - text: I can GET an array of the most recent 10 bumped threads on the board with only the most recent 3 replies each from `/api/threads/{board}`. The `reported` and `delete_password` fields will not be sent to the client.
     testString: ''
