@@ -17,6 +17,8 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 <section id='instructions'>
 
+**HINT:** Do not forget to use a body parsing middleware to handle the POST requests. Also, you can use the function `dns.lookup(host, cb)` from the `dns` core module to verify a submitted URL.
+
 </section>
 
 ## Tests
