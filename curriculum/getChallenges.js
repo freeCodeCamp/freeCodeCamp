@@ -16,6 +16,7 @@ const { dasherize, nameify } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { blockNameify } = require('../utils/block-nameify');
 const { supportedLangs } = require('./utils');
+const { helpCategoryMap } = require('../client/utils/challengeTypes');
 
 const access = util.promisify(fs.access);
 
@@ -275,6 +276,8 @@ ${getFullPath('english')}
     challenge.required = required.concat(challenge.required || []);
     challenge.template = template;
     challenge.time = time;
+    challenge.helpCategory =
+      challenge.helpCategory || helpCategoryMap[dasherize(blockName)];
 
     return prepareChallenge(challenge);
   };

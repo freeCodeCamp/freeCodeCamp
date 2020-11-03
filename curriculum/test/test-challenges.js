@@ -42,10 +42,7 @@ const {
 const MongoIds = require('./utils/mongoIds');
 const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const {
-  challengeTypes,
-  helpCategory
-} = require('../../client/utils/challengeTypes');
+const { challengeTypes } = require('../../client/utils/challengeTypes');
 
 const { dasherize } = require('../../utils/slugs');
 const { toSortedArray } = require('../../utils/sort-files');
@@ -249,15 +246,6 @@ async function getChallenges(lang) {
   return sortChallenges(challenges);
 }
 
-function validateBlock(challenge) {
-  const dashedBlock = dasherize(challenge.block);
-  if (!helpCategory.hasOwnProperty(dashedBlock)) {
-    return `'${dashedBlock}' block not found as a helpCategory in client/utils/challengeTypes.js file for the '${challenge.title}' challenge`;
-  } else {
-    return null;
-  }
-}
-
 function populateTestsForLang({ lang, challenges, meta }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
@@ -285,13 +273,9 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
           it('Common checks', function() {
             const result = validateChallenge(challenge);
-            const invalidBlock = validateBlock(challenge);
 
             if (result.error) {
               throw new AssertionError(result.error);
-            }
-            if (challenge.challengeType !== 7 && invalidBlock) {
-              throw new Error(invalidBlock);
             }
             const { id, title, block, dashedName } = challenge;
             const dashedBlock = dasherize(block);
