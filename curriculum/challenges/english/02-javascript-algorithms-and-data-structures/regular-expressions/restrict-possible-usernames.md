@@ -47,6 +47,8 @@ tests:
     testString: assert(userCheck.test("Z97"));
   - text: Your regex should not match <code>c57bT3</code>
     testString: assert(!userCheck.test("c57bT3"));  
+  - text: Your regex should match <code>AB1</code>
+    testString: assert(userCheck.test("AB1"));
 
 ```
 
