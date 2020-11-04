@@ -6,33 +6,46 @@ forumTopicId: 301545
 ---
 
 ## Description
+
 <section id='description'>
-<code>Model.findOne()</code> behaves like <code>.find()</code>, but it returns only one document (not an array), even if there are multiple items. It is especially useful when searching by properties that you have declared as unique. 
+
+`Model.findOne()` behaves like `.find()`, but it returns only one document (not an array), even if there are multiple items. It is especially useful when searching by properties that you have declared as unique.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Find just one person which has a certain food in the person&apos;s favorites, using <code>Model.findOne() -> Person</code>. Use the function argument food as search key.
+
+Modify the `findOneByFood` function to find just one person which has a certain food in the person's favorites, using `Model.findOne() -> Person`. Use the function argument `food` as search key.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: Find one item should succeed
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-by-food'', {name: ''Gary'', age: 46, favoriteFoods: [''chicken salad'']}).then(data => { assert.equal(data.name, ''Gary'', ''item.name is not what expected''); assert.deepEqual(data.favoriteFoods, [''chicken salad''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
-
+    testString: |
+      getUserInput => $.post(getUserInput('url') + '/_api/find-one-by-food', {name: 'Gary', age: 46, favoriteFoods: ['chicken salad']}).then(data => {
+        assert.equal(data.name, 'Gary', 'item.name is not what expected');
+        assert.deepEqual(data.favoriteFoods, ['chicken salad'], 'item.favoriteFoods is not what expected');
+        assert.equal(data.__v, 0, 'The item should be not previously edited');
+        }, xhr => { throw new Error(xhr.responseText); })
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
