@@ -27,7 +27,7 @@ function handleError(err, client) {
 /* eslint-disable max-len */
 const fullyCertifiedUser = {
   _id: ObjectId('5fa2db00a25c1c1fa49ce067'),
-  email: 'test@bar.com',
+  email: 'foo@bar.com',
   emailVerified: true,
   progressTimestamps: [],
   isBanned: false,
@@ -280,13 +280,13 @@ const fullyCertifiedUser = {
   rand: 0.6126749173148205,
   theme: 'default',
   profileUI: {
-    isLocked: true,
-    showAbout: false,
+    isLocked: false,
+    showAbout: true,
     showCerts: true,
     showDonation: false,
-    showHeatMap: false,
+    showHeatMap: true,
     showLocation: false,
-    showName: false,
+    showName: true,
     showPoints: false,
     showPortfolio: true,
     showTimeLine: true
@@ -316,7 +316,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
     try {
       user.insertOne({
         _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
-        email: 'foo@bar.com',
+        email: 'foo2@bar.com',
         emailVerified: true,
         progressTimestamps: [],
         isBanned: false,
