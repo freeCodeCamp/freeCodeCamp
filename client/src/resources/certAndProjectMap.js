@@ -7,7 +7,7 @@ const feLibsBase = '/learn/front-end-libraries/front-end-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
 const apiMicroBase =
   '/learn/apis-and-microservices/apis-and-microservices-projects';
-const qaBase = 'learn/quality-assurance/quality-assurance-projects';
+const qaBase = '/learn/quality-assurance/quality-assurance-projects';
 const infoSecBase = '/learn/information-security/information-security-projects';
 const sciCompPyBase =
   '/learn/scientific-computing-with-python/' +
