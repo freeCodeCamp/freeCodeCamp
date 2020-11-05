@@ -58,6 +58,46 @@ describe('<certification />', () => {
       container.querySelector('#button-legacy-front-end')
     ).not.toBeInTheDocument();
   });
+
+  it('Render button when only solution is present', () => {
+    const { container } = renderWithRedux(
+      <CertificationSettings {...propsForOnlySolution} />
+    );
+
+    expect(
+      container.querySelector('#btn-for-5e46f802ac417301a38fb92b')
+    ).toHaveAttribute('href', 'https://github.com/freeCodeCamp/freeCodeCamp');
+  });
+
+  it('Render button when both githubLink and solution is present', () => {
+    const { container } = renderWithRedux(
+      <CertificationSettings {...propsForOnlySolution} />
+    );
+
+    const linkList = container.querySelector(
+      '#dropdown-for-5e4f5c4b570f7e3a4949899f + ul'
+    );
+    const links = linkList.querySelectorAll('a');
+
+    expect(links[0]).toHaveAttribute(
+      'href',
+      'https://github.com/freeCodeCamp/freeCodeCamp1'
+    );
+
+    expect(links[1]).toHaveAttribute(
+      'href',
+      'https://github.com/freeCodeCamp/freeCodeCamp2'
+    );
+  });
+
+  it('rendering the correct button when files is present', () => {
+    const { getByText } = renderWithRedux(
+      <CertificationSettings {...propsForOnlySolution} />
+    );
+
+    const button = getByText('Show Code');
+    expect(button).toBeInTheDocument();
+  });
 });
 
 const defaultTestProps = {
@@ -206,4 +246,37 @@ const defaultTestProps = {
   verifyCert: () => {},
   errors: {},
   submit: () => {}
+};
+
+const contents = 'This is not JS';
+const ext = 'js';
+const key = 'indexjs';
+const name = 'index';
+const path = 'index.js';
+
+const propsForOnlySolution = {
+  ...defaultTestProps,
+  completedChallenges: [
+    {
+      id: '5e46f802ac417301a38fb92b',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e4f5c4b570f7e3a4949899f',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp1',
+      githubLink: 'https://github.com/freeCodeCamp/freeCodeCamp2'
+    },
+    {
+      id: '5e46f7f8ac417301a38fb92a',
+      files: [
+        {
+          contents,
+          ext,
+          key,
+          name,
+          path
+        }
+      ]
+    }
+  ]
 };

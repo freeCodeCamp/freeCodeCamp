@@ -14,6 +14,7 @@ To improve performance, most browsers prefetch DNS records for the links in a pa
 ## Instructions
 <section id='instructions'>
 
+Use the `helmet.dnsPrefetchControl()` method on your server.
 </section>
 
 ## Tests

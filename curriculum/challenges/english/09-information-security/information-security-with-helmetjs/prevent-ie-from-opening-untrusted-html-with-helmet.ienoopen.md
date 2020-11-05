@@ -14,6 +14,7 @@ Some web applications will serve untrusted HTML for download. Some versions of I
 ## Instructions
 <section id='instructions'>
 
+Use the `helmet.ieNoOpen()` method on your server.
 </section>
 
 ## Tests
