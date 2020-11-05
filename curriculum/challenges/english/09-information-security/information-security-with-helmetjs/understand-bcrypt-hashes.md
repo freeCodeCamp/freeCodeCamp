@@ -15,6 +15,9 @@ BCrypt hashes will always looks like <code>$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1
 ## Instructions
 <section id='instructions'>
 To begin using BCrypt, add it as a dependency in your project and require it as 'bcrypt' in your server.
+
+Add all your code for these lessons in the `server.js` file between the code we have started you off with. Do not change or delete the code we have added for you.
+
 Submit your page when you think you've got it right.
 </section>
 

@@ -14,6 +14,8 @@ Helmet helps you secure your Express apps by setting various HTTP headers.
 ## Instructions
 <section id='instructions'>
 
+All your code for these lessons goes in the `myApp.js` file between the lines of code we have started you off with. Do not change or delete the code we have added for you.
+
 Install Helmet version `3.21.3`, then require it.
 </section>
 
