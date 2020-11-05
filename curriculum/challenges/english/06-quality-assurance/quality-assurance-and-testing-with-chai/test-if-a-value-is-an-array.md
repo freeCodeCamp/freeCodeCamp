@@ -17,7 +17,7 @@ As a reminder, this project is being built upon the following starter project on
 
 <section id='instructions'>
 
-Within `tests/1_unit-tests.js`, alter the relevant `'Arrays'` suite tests, using `assert.isArray()` or `assert.isNotArray()` to make the tests pass.
+Within `tests/1_unit-tests.js` under the test labelled `#11` in the `Arrays` suite, change each `assert` to either `assert.isArray` or `assert.isNotArray` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 </section>
 

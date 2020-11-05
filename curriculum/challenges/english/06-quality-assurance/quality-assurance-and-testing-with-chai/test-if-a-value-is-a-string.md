@@ -19,7 +19,7 @@ As a reminder, this project is being built upon the following starter project on
 
 <section id='instructions'>
 
-Within `tests/1_unit-tests.js`, alter the relevant `'Strings'` suite tests, using `assert.isString()` or `assert.isNotString()` to make the tests pass.
+Within `tests/1_unit-tests.js` under the test labelled `#13` in the `Strings` suite, change each `assert` to either `assert.isString` or `assert.isNotString` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 </section>
 

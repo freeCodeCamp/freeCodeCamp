@@ -17,7 +17,7 @@ As a reminder, this project is being built upon the following starter project on
 
 <section id='instructions'>
 
-Within `tests/1_unit-tests.js`, alter the relevant `'Comparisons'` suite tests, using `assert.isBelow()` (i.e. less than) or `assert.isAtLeast()` (i.e. greater than or equal) to make the tests pass.
+Within `tests/1_unit-tests.js` under the test labelled `#9` in the `Comparisons` suite, change each `assert` to either `assert.isBelow` or `assert.isAtLeast` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 </section>
 

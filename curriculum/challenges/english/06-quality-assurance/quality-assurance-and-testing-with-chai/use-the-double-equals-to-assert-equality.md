@@ -19,7 +19,7 @@ As a reminder, this project is being built upon the following starter project on
 
 <section id='instructions'>
 
-Within `tests/1_unit-tests.js`, alter the relevant `'Equality'` suite tests, using `assert.equal()` or `assert.notEqual()` to make the tests pass.
+Within `tests/1_unit-tests.js` under the test labelled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 </section>
 

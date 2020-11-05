@@ -27,7 +27,7 @@ assert.isTrue(1, 'this will NOT pass with the number value 1');
 
 <section id='instructions'>
 
-Within `tests/1_unit-tests.js`, alter the relevant `'Basic Assertions'` suite tests, using `assert.isTrue()` or `assert.isNotTrue()` to make the tests pass.
+Within `tests/1_unit-tests.js` under the test labelled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
 </section>
 
