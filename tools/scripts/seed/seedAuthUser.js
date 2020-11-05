@@ -59,158 +59,450 @@ const fullyCertifiedUser = {
   isMachineLearningPyCertV7: true,
   completedChallenges: [
     {
-      id: 'bd7158d8c242eddfaeb5bd13',
-      completedDate: 1564605580284,
-      solution: 'https://codepen.io/sky020/full/bGpPvmB',
+      id: '5e46f8edac417301a38fb931',
+      completedDate: 1604536016469,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f8edac417301a38fb930',
+      completedDate: 1604536010506,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f8e3ac417301a38fb92f',
+      completedDate: 1604536002531,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f8dcac417301a38fb92e',
+      completedDate: 1604535993670,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f8d6ac417301a38fb92d',
+      completedDate: 1604535986890,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e601c775ac9d0ecd8b94aff',
+      completedDate: 1604535961284,
+      solution: 'https://www.google.com',
+      githubLink: 'https://github.com/camperbot/hello',
+      challengeType: 4,
+      files: []
+    },
+    {
+      id: '5e46f983ac417301a38fb933',
+      completedDate: 1604535946358,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f979ac417301a38fb932',
+      completedDate: 1604535939856,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e4f5c4b570f7e3a4949899f',
+      completedDate: 1604535904357,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f802ac417301a38fb92b',
+      completedDate: 1604535897124,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f7f8ac417301a38fb92a',
+      completedDate: 1604535890292,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f7e5ac417301a38fb929',
+      completedDate: 1604535883448,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e46f7e5ac417301a38fb928',
+      completedDate: 1604535876944,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e44414f903586ffb414c950',
+      completedDate: 1604535852958,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e444147903586ffb414c94f',
+      completedDate: 1604535846071,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e44413e903586ffb414c94e',
+      completedDate: 1604535835741,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e444136903586ffb414c94d',
+      completedDate: 1604535828482,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5e44412c903586ffb414c94c',
+      completedDate: 1604535817550,
+      solution: 'https://www.google.com',
+      challengeType: 10,
+      files: []
+    },
+    {
+      id: '5a8b073d06fa14fcfde687aa',
+      completedDate: 1603988717491,
+      solution: 'https://boilerplate-project-exercisetracker.sky020.repl.co',
+      githubLink: 'https://www.google.com',
+      challengeType: 4,
+      files: []
+    },
+    {
+      id: '587d7fa6367417b2b2512bc0',
+      completedDate: 1603988562483,
+      solution: 'https://www.google.com',
       challengeType: 3,
       files: []
     },
     {
-      id: 'bd7158d8c442eddfaeb5bd0f',
-      completedDate: 1594851795364,
-      solution: 'https://codepen.io/sky020/full/RwWaXLG',
+      id: '587d7fa6367417b2b2512bbf',
+      completedDate: 1603988554778,
+      solution: 'https://www.google.com',
       challengeType: 3,
       files: []
     },
     {
       id: '587d7dbc367417b2b2512bae',
-      completedDate: 1590518084401,
-      solution: 'https://codepen.io/sky020/full/OJyMzpz',
-      challengeType: 3,
-      files: []
-    },
-    {
-      id: 'bd7158d8c442eddfaeb5bd17',
-      completedDate: 1588883237705,
-      solution: 'https://codepen.io/sky020/full/rNOpOoY',
-      challengeType: 3,
-      files: []
-    },
-    {
-      id: 'bd7157d8c242eddfaeb5bd13',
-      completedDate: 1586716083363,
-      solution: 'https://codepen.io/sky020/full/XWmbpzL',
-      challengeType: 3,
-      files: []
-    },
-    {
-      id: 'bd7158d8c442eddfaeb5bd13',
-      completedDate: 1584375225621,
-      solution: 'https://codepen.io/sky020/full/xxGjWGJ',
+      completedDate: 1603988539437,
+      solution: 'https://www.google.com',
       challengeType: 3,
       files: []
     },
     {
       id: '587d78b0367417b2b2512b05',
-      completedDate: 1564604533019,
-      solution: 'https://codepen.io/anon/pen/aewZRd?editors=1100',
+      completedDate: 1603988516606,
+      solution: 'https://www.google.com',
       challengeType: 3,
       files: []
     },
     {
       id: '587d78af367417b2b2512b04',
-      completedDate: 1564588689134,
-      solution: 'https://codepen.io/anon/pen/bXRGNa',
+      completedDate: 1603988510092,
+      solution: 'https://www.google.com',
       challengeType: 3,
       files: []
     },
     {
       id: '587d78af367417b2b2512b03',
-      completedDate: 1564503248099,
-      solution: 'https://codepen.io/anon/pen/aeJebw',
+      completedDate: 1603988504394,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7157d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7156d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7155d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7154d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7153d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7168d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7178d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7188d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7198d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7108d8c242eddfaeb5bd13',
+      completedDate: 1603986450907,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bdef',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bdff',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bd0e',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bdee',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bd0f',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bdef',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bdff',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bd0e',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bd0f',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bdee',
+      completedDate: 1603986433268,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c242eddfaeb5bd13',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd13',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd0f',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd17',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd10',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd1f',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
       challengeType: 3,
       files: []
     },
     {
       id: 'bd7158d8c442eddfaeb5bd18',
-      completedDate: 1564499307296,
-      solution: 'https://codepen.io/anon/pen/ZgeNdZ',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
       challengeType: 3,
       files: []
     },
     {
+      id: 'bd7158d8c442eddfaeb5bd19',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c442eedfaeb5bd1c',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd1c',
+      completedDate: 1603986413107,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: '5e601c0d5ac9d0ecd8b94afe',
+      completedDate: 1603473352708,
+      solution: 'https://www.google.com',
+      githubLink: 'https://github.com/camperbot/hello',
+      challengeType: 4,
+      files: []
+    },
+    {
       id: '5e601bf95ac9d0ecd8b94afd',
-      completedDate: 1604105066474,
-      solution: 'https://boilerplate-project-sudoku-solver-1.sky020.repl.co',
-      challengeType: 4,
-      files: []
-    },
-    {
-      id: '587d8249367417b2b2512c42',
-      completedDate: 1604101122291,
-      solution: 'https://boilerplate-project-issuetracker.sky020.repl.co',
-      challengeType: 4,
-      files: []
-    },
-    {
-      id: '587d824a367417b2b2512c43',
-      completedDate: 1603043857038,
-      solution: 'https://boilerplate-project-library-2.sky020.repl.co',
-      challengeType: 4,
-      files: []
-    },
-    {
-      id: '587d824a367417b2b2512c44',
-      completedDate: 1600119016238,
-      solution: 'https://www.test.com',
-      challengeType: 4,
-      files: []
-    },
-    {
-      id: 'bd7158d8c443edefaeb5bd0f',
-      completedDate: 1595267576441,
-      solution: 'https://boilerplate-project-filemetadata.sky020.repl.co',
-      githubLink: 'https://github.com/Sky020/boilerplate-project-filemetadata',
-      challengeType: 4,
-      files: []
-    },
-    {
-      id: '5a8b073d06fa14fcfde687aa',
-      completedDate: 1594998490187,
-      solution: 'https://boilerplate-project-exercisetracker.sky020.repl.co',
-      githubLink:
-        'https://github.com/Sky020/boilerplate-project-exercisetracker',
-      challengeType: 4,
-      files: []
-    },
-    {
-      id: 'bd7158d8c443edefaeb5bd0e',
-      completedDate: 1594913484845,
-      solution: 'https://boilerplate-project-urlshortener.sky020.repl.co',
-      githubLink: 'https://github.com/Sky020/boilerplate-project-urlshortener',
-      challengeType: 4,
-      files: []
-    },
-    {
-      id: 'bd7158d8c443edefaeb5bdff',
-      completedDate: 1594856436516,
-      solution: 'https://boilerplate-project-headerparser.sky020.repl.co',
-      githubLink: 'https://github.com/Sky020/boilerplate-project-headerparser',
-      challengeType: 4,
-      files: []
-    },
-    {
-      id: 'bd7158d8c443edefaeb5bdef',
-      completedDate: 1594854872530,
-      solution: 'https://boilerplate-project-timestamp.sky020.repl.co',
-      githubLink: 'https://github.com/Sky020/boilerplate-project-timestamp',
+      completedDate: 1603473346015,
+      solution: 'https://www.google.com',
+      githubLink: 'https://github.com/camperbot/hello',
       challengeType: 4,
       files: []
     },
     {
       id: '587d8249367417b2b2512c41',
-      completedDate: 1588364210362,
-      solution: 'https://metric-to-imperial-converter.glitch.me',
-      challengeType: 4,
+      completedDate: 1603473315758,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: '587d8249367417b2b2512c42',
+      completedDate: 1603473315758,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: '587d824a367417b2b2512c43',
+      completedDate: 1603473315758,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: '587d824a367417b2b2512c44',
+      completedDate: 1603473315758,
+      solution: 'https://www.google.com',
+      challengeType: 3,
+      files: []
+    },
+    {
+      id: '587d824a367417b2b2512c45',
+      completedDate: 1603473315758,
+      solution: 'https://www.google.com',
+      challengeType: 3,
       files: []
     },
     {
       id: 'aa2e6f85cab2ab736c9a9b24',
-      completedDate: 1572364372137,
+      completedDate: 1603473265477,
       files: [
         {
           contents:
-            'function checkCashRegister(price, cash, cid) {\n  let stat = {status: "OPEN", change: []};\n  let tot = 0;\n\n  for (let coin of cid) {\n    tot += coin[1];\n  }\n\n  let total = tot.toFixed(2);\n  let newarr = [];\n  let cd = JSON.parse(JSON.stringify(cid));\n  let exact = false;\n  function changer(chan) {\n    chan = Number(chan.toFixed(2));\n    //console.log(chan)\n    if (chan >= 100 && cd[8][1] >= 100) {\n      cd[8][1] -= 100;\n      changer(chan - 100);\n    } else if (chan >= 20 && cd[7][1] >= 20) {\n      cd[7][1] -= 20;\n      changer(chan - 20);\n    } else if (chan >= 10 && cd[6][1] >= 10) {\n      cd[6][1] -= 10;\n      changer(chan - 10);\n    } else if (chan >= 5 && cd[5][1] >= 5) {\n      cd[5][1] -= 5;\n      changer(chan - 5);\n    } else if (chan >= 1 && cd[4][1] >= 1) {\n      cd[4][1] -= 1;\n      changer(chan - 1);\n    } else if (chan >= 0.25 && cd[3][1] >= 0.25) {\n      cd[3][1] -= 0.25;\n      changer(chan - 0.25);\n    } else if (chan >= 0.1 && cd[2][1] >= 0.1) {\n      cd[2][1] -= 0.1;\n      changer(chan - 0.1);\n    } else if (chan >= 0.05 && cd[1][1] >= 0.05) {\n      cd[1][1] -= 0.05;\n      changer(chan - 0.05);\n    } else if (chan >= 0.01 && cd[0][1] >= 0.01) {\n      cd[0][1] -= 0.01;\n      changer(chan - 0.01);\n    }\n    console.log("Chan: " +chan)\n    if (chan == 0) {\n      console.log(chan)\n      exact = true;\n    }\n    newarr.push([cd[8][0],cid[8][1]-cd[8][1]],[cd[7][0],cid[7][1]-cd[7][1]],[cd[6][0],cid[6][1]-cd[6][1]],[cd[5][0],cid[5][1]-cd[5][1]],[cd[4][0],cid[4][1]-cd[4][1]],[cd[3][0],cid[3][1]-cd[3][1]],[cd[2][0],Number((cid[2][1]-cd[2][1]).toFixed(2))],[cd[1][0],cid[1][1]-cd[1][1]],[cd[0][0],Number((cid[0][1]-cd[0][1]).toFixed(2))]);\n    return newarr;\n  }\n\n  let obj;\n  console.log("Total: ",total,\'Change: \',cash-price)\n  if (total < cash-price) {\n    stat.status = "INSUFFICIENT_FUNDS";\n    stat.change = [];\n  } else if (total == cash-price) {\n    stat.status = "CLOSED";\n    stat.change = cid;\n  } else if (total > cash-price) {\n    stat.status = "OPEN";\n    obj = changer(cash-price);\n    console.log(exact)\n    if (exact) {\n      for (let i = 0; i<9;i++) {\n        if (obj[i][1] != 0) {\n        stat.change.push(obj[i]);\n        }\n      }\n    } else {\n      stat.status = "INSUFFICIENT_FUNDS";\n      stat.change = [];\n    }\n  }\n  console.log(stat)\n  return stat;\n}\ncheckCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])\ncheckCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])\n\ncheckCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])',
+            "var denom = [\n\t{ name: 'ONE HUNDRED', val: 100},\n\t{ name: 'TWENTY', val: 20},\n\t{ name: 'TEN', val: 10},\n\t{ name: 'FIVE', val: 5},\n\t{ name: 'ONE', val: 1},\n\t{ name: 'QUARTER', val: 0.25},\n\t{ name: 'DIME', val: 0.1},\n\t{ name: 'NICKEL', val: 0.05},\n\t{ name: 'PENNY', val: 0.01}\n];\n\nfunction checkCashRegister(price, cash, cid) {\n var output = {status: null, change: []};\n var change = cash - price;\n var register = cid.reduce(function(acc, curr) {\n acc.total += curr[1];\n acc[curr[0]] = curr[1];\n return acc;\n }, {total: 0});\n if(register.total === change) {\n output.status = 'CLOSED';\n output.change = cid;\n return output;\n }\n if(register.total < change) {\n output.status = 'INSUFFICIENT_FUNDS';\n return output;\n }\n var change_arr = denom.reduce(function(acc, curr) {\n var value = 0;\n while(register[curr.name] > 0 && change >= curr.val) {\n change -= curr.val;\n register[curr.name] -= curr.val;\n value += curr.val;\n change = Math.round(change * 100) / 100;\n }\n if(value > 0) {\n acc.push([ curr.name, value ]);\n }\n return acc;\n }, []);\n if(change_arr.length < 1 || change > 0) {\n output.status = 'INSUFFICIENT_FUNDS';\n return output;\n }\n output.status = 'OPEN';\n output.change = change_arr;\n return output;\n}",
           ext: 'js',
           path: 'index.js',
           name: 'index',
@@ -220,11 +512,11 @@ const fullyCertifiedUser = {
     },
     {
       id: 'aff0395860f5d3034dc0bfc9',
-      completedDate: 1568384598936,
+      completedDate: 1603473233173,
       files: [
         {
           contents:
-            'function telephoneCheck(str) {\n  let test = str.concat("");\n  // console.log((test.match(/^(1\\s?)?(\\(\\d{3}\\)|\\d{3})[\\s\\-]?\\d{3}[\\s\\-]?\\d{4}$/gm)))\n  return (str == test.match(/^(1\\s?)?(\\(\\d{3}\\)|\\d{3})[\\s\\-]?\\d{3}[\\s\\-]?\\d{4}$/gm));\n}\n\ntelephoneCheck("1 555-555-5555");',
+            'var re = /^([+]?1[\\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\\s.-]?){1}([0-9]{4}){1}$/;\n\nfunction telephoneCheck(str) {\n  return re.test(str);\n}\n\ntelephoneCheck("555-555-5555");',
           ext: 'js',
           path: 'index.js',
           name: 'index',
@@ -234,11 +526,11 @@ const fullyCertifiedUser = {
     },
     {
       id: '56533eb9ac21ba0edf2244e2',
-      completedDate: 1565992001026,
+      completedDate: 1603473203559,
       files: [
         {
           contents:
-            "function rot13(str) { // LBH QVQ VG!\n    let alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];\n\n    let new_str = \"\";\n    for (let letter of str) {\n        let new_letter;\n        if (letter.match(/\\w/gi)) {\n            new_letter = alpha[(alpha.indexOf(letter)+13) % 26];\n        } else {\n            new_letter = letter;\n        }\n        new_str += (new_letter);\n    }\n    console.log(new_str);\n    return new_str;\n}\n\n// Change the inputs below to test\nrot13(\"SERR PBQR PNZC\");",
+            "var lookup = {\n  'A': 'N','B': 'O','C': 'P','D': 'Q',\n  'E': 'R','F': 'S','G': 'T','H': 'U',\n  'I': 'V','J': 'W','K': 'X','L': 'Y',\n  'M': 'Z','N': 'A','O': 'B','P': 'C',\n  'Q': 'D','R': 'E','S': 'F','T': 'G',\n  'U': 'H','V': 'I','W': 'J','X': 'K',\n  'Y': 'L','Z': 'M'\n};\n\nfunction rot13(encodedStr) {\n  var codeArr = encodedStr.split(\"\");  // String to Array\n  var decodedArr = []; // Your Result goes here\n  // Only change code below this line\n\n  decodedArr = codeArr.map(function(letter) {\n    if(lookup.hasOwnProperty(letter)) {\n      letter = lookup[letter];\n    }\n    return letter;\n  });\n\n  // Only change code above this line\n  return decodedArr.join(\"\"); // Array to String\n}",
           ext: 'js',
           path: 'index.js',
           name: 'index',
@@ -248,11 +540,11 @@ const fullyCertifiedUser = {
     },
     {
       id: 'a7f4d8f2483413a6ce226cac',
-      completedDate: 1565990769068,
+      completedDate: 1603473177327,
       files: [
         {
           contents:
-            "function convertToRoman(num) {\n    const numerals = ['I','V','X','L','C','D','M'];\n\n    let str_num = num.toString();\n    let numer = \"\";\n    let indexer = 2*str_num.length -2\n    for (let i of str_num) {\n\n        if (i <= 3) {\n            numer += numerals[0+indexer].repeat(i);\n        } else if (i == 4) {\n            numer += (numerals[0+indexer] + numerals[1+indexer]);\n        } else if (i == 5) {\n            numer += numerals[1+indexer];\n        } else if (i <= 8) {\n            numer += (numerals[1+indexer] + numerals[0+indexer].repeat(i-5));\n        } else if (i == 9) {\n            numer += (numerals[0+indexer] + numerals[2+indexer])\n        }\n        indexer -= 2;\n    }\n    return numer;\n}\n\nconvertToRoman(3999);",
+            "function convertToRoman(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}",
           ext: 'js',
           path: 'index.js',
           name: 'index',
@@ -262,17 +554,83 @@ const fullyCertifiedUser = {
     },
     {
       id: 'aaa48de84e1ecc7c742e1124',
-      completedDate: 1565902324149,
+      completedDate: 1603473139868,
       files: [
         {
           contents:
-            'function palindrome(str) {\n  // Good luck!\n  let str1 = str.replace(/(,|\\(|\\)|\\.|#|@|\\^|\\&|\\/|-|\\*|_|\\|)*\\s*/gi,\'\').toLowerCase();\n  console.log(str1)\n  const str_len = str1.length;\n  if (str_len > 1) {\n    let split_str = str1.split("");\n    let arr_str = split_str.reverse();\n    let reversed_str = arr_str.join("");\n    return (str1 == reversed_str);\n  } else {\n    return false;\n  }\n}\n\n\n\npalindrome("  e)Yes  (aRe. fu#l, of 1*3 | 2-3 | 5/2 |&|9^2");',
+            "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}",
           ext: 'js',
           path: 'index.js',
           name: 'index',
           key: 'indexjs'
         }
       ]
+    },
+    {
+      id: '5e611829481575a52dc59c0e',
+      completedDate: 1603473409138,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '561abd10cb81ac38a17513bc',
+      completedDate: 1603473416169,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '561add10cb82ac38a17513be',
+      completedDate: 1603986466899,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '660add10cb82ac38a17513be',
+      completedDate: 1603986473645,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '561add10cb82ac39a17513bc',
+      completedDate: 1603986478894,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '561add10cb82ac38a17213bc',
+      completedDate: 1603986497333,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '561add10cb82ac38a17513bc',
+      completedDate: 1603988756758,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '561acd10cb82ac38a17513bc',
+      completedDate: 1603988760517,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '5a553ca864b52e1d8bceea14',
+      completedDate: 1603988762817,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '561add10cb82ac38a17523bc',
+      completedDate: 1603988764850,
+      challengeType: 7,
+      files: []
+    },
+    {
+      id: '561add10cb82ac38a17213bd',
+      completedDate: 1603988778431,
+      challengeType: 7,
+      files: []
     }
   ],
   portfolio: [],
@@ -280,14 +638,14 @@ const fullyCertifiedUser = {
   rand: 0.6126749173148205,
   theme: 'default',
   profileUI: {
-    isLocked: false,
+    isLocked: true,
     showAbout: true,
     showCerts: true,
-    showDonation: false,
+    showDonation: true,
     showHeatMap: true,
-    showLocation: false,
+    showLocation: true,
     showName: true,
-    showPoints: false,
+    showPoints: true,
     showPortfolio: true,
     showTimeLine: true
   },
