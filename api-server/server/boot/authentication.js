@@ -2,8 +2,11 @@ import passport from 'passport';
 import dedent from 'dedent';
 import { check } from 'express-validator/check';
 import { isEmail } from 'validator';
+import jwt from 'jsonwebtoken';
 
 import { homeLocation } from '../../../config/env';
+import { jwtSecret } from '../../../config/secrets';
+
 import {
   createPassportCallbackAuthenticator,
   saveResponseAuthCookies,
@@ -52,22 +55,10 @@ module.exports = function enableAuthentication(app) {
       loginSuccessRedirect
     );
   } else {
-    api.get(
-      '/signin',
-      (req, res, next) => {
-        if (req && req.query && req.query.returnTo) {
-          req.query.returnTo = `${homeLocation}/${req.query.returnTo}`;
-        }
-        return next();
-      },
-      ifUserRedirect,
-      (req, res, next) => {
-        const state = req.query.returnTo
-          ? Buffer.from(req.query.returnTo).toString('base64')
-          : null;
-        return passport.authenticate('auth0-login', { state })(req, res, next);
-      }
-    );
+    api.get('/signin', ifUserRedirect, (req, res, next) => {
+      const state = jwt.sign({ returnTo: req.query.returnTo }, jwtSecret);
+      return passport.authenticate('auth0-login', { state })(req, res, next);
+    });
 
     api.get(
       '/auth/auth0/callback',
