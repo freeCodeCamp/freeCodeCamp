@@ -17,7 +17,7 @@ As a reminder, this project is being built upon the following starter project on
 
 <section id='instructions'>
 
-Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with your name'` test to assert the `status` and the `text` response to make the test pass.
+Within `tests/2_functional-tests.js`, alter the `'Test GET /hello with your name'` test (`// #2`) to assert the `status` and the `text` response to make the test pass.
 
 Send your name in the query, appending `?name=<your_name>` to the route. The endpoint responds with `'hello <your_name>'`.
 

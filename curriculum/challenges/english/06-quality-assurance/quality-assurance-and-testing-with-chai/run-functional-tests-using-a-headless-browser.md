@@ -27,7 +27,7 @@ With a headless browser, before the actual testing, we need to **visit** the pag
 
 <section id='instructions'>
 
-Within `tests/2_functional-tests.js`, immediately after the `Browser` declaration add your project URL to the `site` property of the variable:
+Within `tests/2_functional-tests.js`, immediately after the `Browser` declaration, add your project URL to the `site` property of the variable:
 
 ```js
 Browser.site = 'https://sincere-cone.gomix.me'; // Your URL here

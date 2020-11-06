@@ -20,7 +20,7 @@ Now that you have seen how it is done, it is your turn to do it from scratch.
 
 <section id='instructions'>
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "da Verrazzano"}'` test:
+Within `tests/2_functional-tests.js`, alter the `'send {surname: "da Verrazzano"}'` test (`// #4`):
 
 Send the following JSON response as a payload to the `/travellers` route:
 

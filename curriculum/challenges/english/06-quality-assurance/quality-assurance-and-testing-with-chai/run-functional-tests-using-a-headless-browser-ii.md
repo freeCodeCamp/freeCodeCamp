@@ -13,13 +13,32 @@ As a reminder, this project is being built upon the following starter project on
 
 In the HTML main view we provided a input form. It sends data to the `PUT /travellers` endpoint that we used above with an Ajax request. When the request successfully completes, the client code appends a `<div>` containing the info returned by the call to the DOM.
 
+```js
+test('#test - submit the input "surname" : "Polo"', function (done) {
+  browser.fill("surname", "Polo").pressButton("submit", function () {
+  // pressButton is ## Async ##.
+  // It waits for the ajax call to complete...
+
+  // assert that status is OK 200
+  browser.assert.success();
+  // assert that the text inside the element 'span#name' is 'Marco'
+  browser.assert.text("span#name", "Marco");
+  // assert that the text inside the element 'span#surname' is 'Polo'
+  browser.assert.text("span#surname", "Polo");
+  // assert that the element(s) 'span#dates' exist and their count is 1
+  browser.assert.element("span#dates", 1);
+
+  done(); // It's an async test, so we have to call 'done()''
+});
+```
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
 
-Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Colombo" - write your e2e test...'` test, automate filling-in and submitting the form:
+Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Colombo" - write your e2e test...'` test (`// #5`), automate filling-in and submitting the form:
 
 1. Fill in the form
 2. Submit it pressing `'submit'` button.

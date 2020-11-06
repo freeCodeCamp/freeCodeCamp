@@ -36,7 +36,7 @@ See the server code for more details.
 
 <section id='instructions'>
 
-Within `tests/2_functional-tests.js`, alter the `'send {surname: "Colombo"}'` test:
+Within `tests/2_functional-tests.js`, alter the `'send {surname: "Colombo"}'` test (`// #3`):
 
 Send the following JSON response as a payload:
 

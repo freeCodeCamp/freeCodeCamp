@@ -16,7 +16,7 @@ As a reminder, this project is being built upon the following starter project on
 
 <section id='instructions'>
 
-Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Vespucci" - write your e2e test...'` test, automate filling-in and submitting the form from scratch:
+Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Vespucci" - write your e2e test...'` test (`// #6`), automate filling-in and submitting the form from scratch:
 
 1. Fill in the form with the `surname` of `Vespucci`
 2. Submit it pressing `'submit'` button
