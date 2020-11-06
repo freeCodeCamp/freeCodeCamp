@@ -37,7 +37,7 @@ tests:
         const url = getUserInput('url');
         assert(!/.*\/sudoku-solver\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
-  - text: You can `POST` `/api/solve` with form data containing `puzzle` which will be a string containing a combination of numbers (1-9) and periods `.` to represent empty spaces. The returned object will contain `solution` with the solved puzzle.
+  - text: You can `POST` `/api/solve` with form data containing `puzzle` which will be a string containing a combination of numbers (1-9) and periods `.` to represent empty spaces. The returned object will contain a `solution` property with the solved puzzle.
     testString: "async getUserInput => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const output = '769235418851496372432178956174569283395842761628713549283657194516924837947381625';
@@ -128,7 +128,7 @@ tests:
       assert.property(parsed, 'valid');
       assert.isTrue(parsed.valid);
       }"
-  - text: The return value will be an object containing `valid`, which is `true` if the number may be placed at the provided coordinate and `false` if the number may not. If false, the returned object will also contain `conflict` which is an array containing the strings `"row"`, `"column"`, and/or `"region"` depending on which makes the placement invalid.
+  - text: The return value from the `POST` to `/api/check` will be an object containing a `valid` property, which is `true` if the number may be placed at the provided coordinate and `false` if the number may not. If false, the returned object will also contain a `conflict` property which is an array containing the strings `"row"`, `"column"`, and/or `"region"` depending on which makes the placement invalid.
     testString: "async getUserInput => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const coordinate = 'A1';
@@ -148,7 +148,7 @@ tests:
       assert.include(parsed.conflict, 'row');
       assert.include(parsed.conflict, 'column');
       }"
-  - text: If the submitted puzzle contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
+  - text: If the puzzle submitted to `/api/check` contains values which are not numbers or periods, the returned value will be `{ error: 'Invalid characters in puzzle' }`
     testString: "async getUserInput => {
       const input = 'AA9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const coordinate = 'A1';
@@ -197,7 +197,7 @@ tests:
       assert.property(parsed, 'error');
       assert.equal(parsed.error, output);
       }"
-  - text: If the coordinate does not point to an existing grid cell, the returned value will be `{ error: 'Invalid coordinate'}`
+  - text: If the coordinate submitted to `api/check` does not point to an existing grid cell, the returned value will be `{ error: 'Invalid coordinate'}`
     testString: "async getUserInput => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const output = 'Invalid coordinate';
@@ -214,7 +214,7 @@ tests:
       assert.property(parsed, 'error');
       assert.equal(parsed.error, output);
       }"
-  - text: If the `value` is not a number between 1 and 9, the returned values will be `{ error: 'Invalid value' }`
+  - text: If the `value` submitted to `/api/check` is not a number between 1 and 9, the returned values will be `{ error: 'Invalid value' }`
     testString: "async getUserInput => {
       const input = '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..';
       const output = 'Invalid value';
