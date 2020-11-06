@@ -11,26 +11,30 @@ forumTopicId: 301594
 
 As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
-In the HTML main view we provided a input form. It sends data to the `PUT /travellers` endpoint that we used above with an Ajax request. When the request successfully completes, the client code appends a `<div>` containing the info returned by the call to the DOM.
+In the HTML main view we provided a input form. It sends data to the `PUT /travellers` endpoint that we used above with an Ajax request. When the request successfully completes, the client code appends a `<div>` containing the info returned by the call to the DOM. Here is an example of how to interact with this form:
 
 ```js
 test('#test - submit the input "surname" : "Polo"', function (done) {
-  browser.fill("surname", "Polo").pressButton("submit", function () {
-  // pressButton is ## Async ##.
-  // It waits for the ajax call to complete...
-
-  // assert that status is OK 200
-  browser.assert.success();
-  // assert that the text inside the element 'span#name' is 'Marco'
-  browser.assert.text("span#name", "Marco");
-  // assert that the text inside the element 'span#surname' is 'Polo'
-  browser.assert.text("span#surname", "Polo");
-  // assert that the element(s) 'span#dates' exist and their count is 1
-  browser.assert.element("span#dates", 1);
-
-  done(); // It's an async test, so we have to call 'done()''
-});
+  browser.fill('surname', 'Polo').pressButton('submit', function () {
+    browser.assert.success();
+    browser.assert.text('span#name', 'Marco');
+    browser.assert.text('span#surname', 'Polo');
+    browser.assert.element('span#dates', 1);
+    done();
+  });
+}
 ```
+
+First, the `fill` method of the `browser` object fills the `surname` field of the form with the value `'Polo'`. Immediately after, the `pressButton` method invokes the `submit` event listener of the form. The `pressButton` method is asynchronous.
+
+Then, once a response is received from the AJAX request, a few assertions are made confirming:
+
+1. The status of the response is `200`
+2. The text within the `<span id='name'></span>` element matches `'Marco'`
+3. The text within the `<span id='surname'></span>` element matches `'Polo'`
+4. The there is `1` `<span id='dates'></span>` element.
+
+Finally, the `done` callback is invoked, which is needed due to the asynchronous test.
 
 </section>
 
