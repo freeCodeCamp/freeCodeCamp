@@ -221,7 +221,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: All 24 unit tests are complete and passing.
+  - text: All 24 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
     testString: "async getUserInput => {
       try {
         const getTests = await $.get(getUserInput('url') + '/_api/get-tests' );
@@ -238,7 +238,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: All 6 functional tests are complete and passing.
+  - text: All 6 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
     testString: "async getUserInput => {
       try {
         const getTests = await $.get(getUserInput('url') + '/_api/get-tests' );
