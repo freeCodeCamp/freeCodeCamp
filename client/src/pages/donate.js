@@ -9,7 +9,9 @@ import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
+import DonateSupportText from '../components/Donation/DonateSupportText';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
+import CampersImage from '../components/landing/components/CampersImage';
 
 const propTypes = {
   executeGA: PropTypes.func,
@@ -79,42 +81,41 @@ export class DonatePage extends Component {
         <Grid className='donate-page-wrapper'>
           <Spacer />
           <Row>
-            <Col sm={10} smOffset={1} xs={12}>
-              <h1 className='text-center'>
-                {isDonating
-                  ? 'Thank You for Your Support'
-                  : 'Become a Supporter'}
-              </h1>
-              <Spacer />
-            </Col>
-          </Row>
-          <Row>
             <Fragment>
-              <Col md={6}>
-                <Row>
-                  <Col sm={10} smOffset={1} xs={12}>
+              <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
+                <Row className='donate-text'>
+                  <Col className={'text-center'} xs={12}>
                     {isDonating ? (
-                      <Alert>
-                        <p>
-                          Thank you for being a supporter of freeCodeCamp. You
-                          currently have a recurring donation.
-                        </p>
-                        <br />
-                        <p>
-                          If you would like to make additional donations, those
-                          will help our nonprofit and our mission, too.
-                        </p>
-                      </Alert>
-                    ) : null}
+                      <h2>Thank you for your support</h2>
+                    ) : (
+                      <h2>Help us do more</h2>
+                    )}
+                    <Spacer />
                   </Col>
                 </Row>
+                {isDonating ? (
+                  <Alert>
+                    <p>
+                      Thank you for being a supporter of freeCodeCamp. You
+                      currently have a recurring donation.
+                    </p>
+                    <br />
+                    <p>
+                      If you would like to make additional donations, those will
+                      help our nonprofit and our mission, too.
+                    </p>
+                  </Alert>
+                ) : null}
+                <DonateText isDonating={isDonating} />
+                <Spacer />
                 <DonateForm
                   enableDonationSettingsPage={this.enableDonationSettingsPage}
                   handleProcessing={this.handleProcessing}
                 />
+                <DonateSupportText />
               </Col>
-              <Col md={6}>
-                <DonateText />
+              <Col lg={6}>
+                <CampersImage page='donate' />
               </Col>
             </Fragment>
           </Row>
