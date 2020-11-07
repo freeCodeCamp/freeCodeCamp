@@ -31,7 +31,7 @@
 		"complexity": 0,
 		"consistent-return": 2,
 		"consistent-this": 0,
-		"curly": 2,
+		"curly": 1,
 		"default-case": 2,
 		"dot-notation": 0,
 		"eol-last": 2,
@@ -183,12 +183,12 @@
     "prefer-object-spread/prefer-object-spread": 2,
     "prettier/prettier": "error",
 		"quote-props": [2, "as-needed"],
-		"quotes": [2, "single", "avoid-escape"],
+		"quotes": [1, "single", "avoid-escape"],
 		"radix": 2,
 		"react/display-name": 2,
 		"react/jsx-boolean-value": [2, "always"],
 		"react/jsx-closing-bracket-location": [
-      2,
+      1,
 			{ "selfClosing": "line-aligned", "nonEmpty": "props-aligned" }
 		],
 		"react/jsx-no-undef": 2,
@@ -211,7 +211,7 @@
 		"semi-spacing": [2, { "before": false, "after": true }],
 		"sort-vars": 0,
 		"space-before-blocks": [2, "always"],
-		"space-before-function-paren": [2, "never"],
+		"space-before-function-paren": [1, "never"],
 		"space-in-brackets": 0,
 		"space-in-parens": 0,
 		"space-infix-ops": 2,
@@ -223,7 +223,7 @@
 		"valid-typeof": 2,
 		"vars-on-top": 0,
 		"wrap-iife": [2, "any"],
-		"wrap-regex": 2,
+		"wrap-regex": 1,
 		"yoda": 0
   },
   "settings": {
