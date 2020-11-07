@@ -182,7 +182,7 @@
     "padded-blocks": 0,
     "prefer-object-spread/prefer-object-spread": 2,
     "prettier/prettier": "error",
-		"quote-props": [2, "as-needed"],
+		"quote-props": [1, "as-needed"],
 		"quotes": [1, "single", "avoid-escape"],
 		"radix": 2,
 		"react/display-name": 2,
