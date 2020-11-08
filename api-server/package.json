@@ -17,7 +17,7 @@
     "@sentry/node": "^5.26.0",
     "accepts": "^1.3.7",
     "auth0-js": "^9.14.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.0",
     "bad-words": "^3.0.3",
     "body-parser": "^1.19.0",
     "chai": "~3.4.1",
