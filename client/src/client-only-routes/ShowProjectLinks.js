@@ -128,7 +128,7 @@ const ShowProjectLinks = props => {
           <li key={ind}>
             <a
               href={certLocation}
-              className='btn-invert'
+              className='btn-invert project-link'
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -141,7 +141,10 @@ const ShowProjectLinks = props => {
     return (projectMap[certName] || legacyProjectMap[certName]).map(
       ({ link, title, id }) => (
         <li key={id}>
-          <Link to={link}>{title}</Link>: {getProjectSolution(id, title)}
+          <Link to={link} className='project-link'>
+            {title}
+          </Link>
+          : {getProjectSolution(id, title)}
         </li>
       )
     );

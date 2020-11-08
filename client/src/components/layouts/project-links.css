@@ -10,3 +10,7 @@
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
 }
+
+.project-link {
+  font-weight: 800;
+}
