@@ -22,8 +22,8 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 <strong>User Story #10:</strong> I can tweet the current quote by clicking on the <code>#tweet-quote</code><code>a</code> element. This <code>a</code> element should include the <code>"twitter.com/intent/tweet"</code> path in its <code>href</code> attribute to tweet the current quote.
 <strong>User Story #11:</strong> The <code>#quote-box</code> wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
 You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
-<strong>Note:</strong> If you are developing this project on CodePen, restrictions prevent the Twitter link from loading in the same window. Use the <code>target="_blank"</code> attribute on the <code>#tweet-quote</code> element as a workaround.
 Once you're done, submit the URL to your working project with all its tests passing.
+<strong>Note:</strong> Twitter does not allow links to be loaded in an iframe. Try using the <code>target="_blank"</code> or <code>target="_top"</code> attribute on the <code>#tweet-quote</code> element if your tweet won't load. <code>target="_top"</code> will replace the current tab so make sure your work is saved.
 </section>
 
 ## Instructions
