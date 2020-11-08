@@ -41,11 +41,16 @@ tests:
 <div id='js-seed'>
 
 ```js
-function isSorted(a){
-  for(let i = 0; i < a.length - 1; i++)
-    if(a[i] > a[i + 1])
-      return false;
-  return true;
+function isSorted(a) {
+  if (Array.isArray(a) && a.length) {
+    for (let i = 0; i < a.length - 1; i++) {
+      if (a[i] > a[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  return false;
 }
 // Generate a randomly filled array
 var array = new Array();
