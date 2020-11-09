@@ -56,7 +56,7 @@
     "jsdom": "^12.2.0",
     "live-server": "^1.2.1",
     "lodash": "^4.17.20",
-    "mocha": "8.2.0",
+    "mocha": "8.2.1",
     "puppeteer": "^5.3.1",
     "readdirp-walk": "^1.7.0",
     "rehype": "^11.0.0",
