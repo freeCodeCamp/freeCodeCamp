@@ -41,7 +41,7 @@
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
-    "gatsby-remark-prismjs": "^3.5.16",
+    "gatsby-remark-prismjs": "^3.6.0",
     "gatsby-source-filesystem": "^2.4.2",
     "gatsby-transformer-remark": "^2.9.2",
     "jquery": "^3.5.1",
