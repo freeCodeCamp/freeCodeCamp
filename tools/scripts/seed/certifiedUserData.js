@@ -2,7 +2,7 @@
 const ObjectId = require('mongodb').ObjectID;
 const defaulUserImage = require('../../../config/misc').defaulUserImage;
 
-export default {
+module.exports = {
   _id: ObjectId('5fa2db00a25c1c1fa49ce067'),
   email: 'foo@bar.com',
   emailVerified: true,

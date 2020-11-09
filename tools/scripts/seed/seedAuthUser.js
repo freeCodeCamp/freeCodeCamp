@@ -1,4 +1,4 @@
-import fullyCertifiedUser from './certifiedUserData';
+const fullyCertifiedUser = require('./certifiedUserData');
 
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
