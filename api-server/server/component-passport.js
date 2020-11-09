@@ -11,6 +11,8 @@ import { getUserById } from './utils/user-stats';
 import { homeLocation } from '../../config/env';
 import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
+import { jwtSecret } from '../../config/secrets';
+import getReturnTo from './utils/get-return-to';
 
 const passportOptions = {
   emailOptional: true,
@@ -63,7 +65,7 @@ export function setupPassport(app) {
   });
 }
 
-export const saveResponseAuthCookies = () => {
+export const devSaveResponseAuthCookies = () => {
   return (req, res, next) => {
     const user = req.user;
 
@@ -78,12 +80,11 @@ export const saveResponseAuthCookies = () => {
   };
 };
 
-export const loginRedirect = () => {
+export const devLoginRedirect = () => {
   return (req, res) => {
     const successRedirect = req => {
-      if (!!req && req.session && req.session.returnTo) {
-        delete req.session.returnTo;
-        return `${homeLocation}/learn`;
+      if (req && req.query && req.query.returnTo) {
+        return req.query.returnTo;
       }
       return `${homeLocation}/learn`;
     };
@@ -101,10 +102,14 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
   res,
   next
 ) => {
-  const returnTo =
-    req && req.query && req.query.state
-      ? Buffer.from(req.query.state, 'base64').toString('utf-8')
-      : `${homeLocation}/learn`;
+  const state = req && req.query && req.query.state;
+  const { returnTo } = getReturnTo(state, jwtSecret);
+
+  // TODO: getReturnTo returns a {returnTo, success} object, so we can use
+  // 'success' to show a flash message, but currently it immediately gets
+  // overwritten by a second message. We should either change the message if
+  // !success or allow multiple messages to appear at once.
+
   return passport.authenticate(
     strategy,
     { session: false },
@@ -116,7 +121,6 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       if (!user || !userInfo) {
         return res.redirect('/signin');
       }
-      const redirect = `${returnTo}`;
 
       const { accessToken } = userInfo;
       const { provider } = config;
@@ -140,9 +144,10 @@ we recommend using your email address: ${user.email} to sign in instead.
         setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);
       }
-      // TODO: enable 'returnTo' for sign-up
+      // TODO: handle returning to /email-sign-up without relying on
+      // homeLocation
       if (user.acceptedPrivacyTerms) {
-        return res.redirectWithFlash(redirect);
+        return res.redirectWithFlash(returnTo);
       } else {
         return res.redirectWithFlash(`${homeLocation}/email-sign-up`);
       }

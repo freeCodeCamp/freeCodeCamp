@@ -42,6 +42,8 @@ tests:
     testString: 'assert(checkObj({city: "Seattle"}, "city") === "Seattle");'
   - text: '<code>checkObj({city: "Seattle"}, "district")</code> should return <code>"Not Found"</code>.'
     testString: 'assert(checkObj({city: "Seattle"}, "district") === "Not Found");'
+  - text: '<code>checkObj({pet: "kitten", bed: "sleigh"}, "gift")</code> should return <code>"Not Found"</code>.'
+    testString: 'assert(checkObj({pet: "kitten", bed: "sleigh"}, "gift") === "Not Found");'
 ```
 
 </section>
