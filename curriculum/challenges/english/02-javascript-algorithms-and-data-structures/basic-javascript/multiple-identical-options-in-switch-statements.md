@@ -11,6 +11,7 @@ forumTopicId: 18242
 If the <code>break</code> statement is omitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:
 
 ```js
+var result = "";
 switch(val) {
   case 1:
   case 2:
