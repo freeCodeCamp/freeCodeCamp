@@ -39,7 +39,7 @@ tests:
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp/1451001600000'').then(data => { assert(data.unix === 1451001600000 && data.utc === "Fri, 25 Dec 2015 00:00:00 GMT"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: 'Your project can handle dates that can be successfully parsed by `new Date(date_string)`'
     testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/api/timestamp/05 October 2011'').then(data => { assert(data.unix === 1317772800000 && data.utc === "Wed, 05 Oct 2011 00:00:00 GMT" ) }, xhr => { throw new Error(xhr.responseText); })'
-  - text: "If the input date string is invalid, the api returns an object having the structure { error : 'Invalid Date' }"
+  - text: 'If the input date string is invalid, the api returns an object having the structure `{ error : "Invalid Date" }`'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp/this-is-not-a-date'').then(data => { assert.equal(data.error.toLowerCase(), ''invalid date'');}, xhr => { throw new Error(xhr.responseText); })'
   - text: 'An empty date parameter should return the current time in a JSON object with a `unix` key'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp'').then(data => { var now = Date.now(); assert.approximately(data.unix, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })'
