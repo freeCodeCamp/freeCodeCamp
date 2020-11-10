@@ -79,7 +79,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: I can <b>get</b> /api/books/{_id} to retrieve a single object of a book containing <code>title</code>, <code>_id</code>, & an array of <code>comments</code> (empty array if no comments present).
+  - text: I can <b>get</b> /api/books/{_id} to retrieve a single object of a book containing <code>title</code>, <code>_id</code>, & an array of <code>comments</code> (empty array if no comments present). If no book is found, return '<code>no book exists</code>'.
     testString: "async getUserInput => {
        try {
          let url = getUserInput('url') + '/api/books';
@@ -99,7 +99,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: I can <b>post</b> a <code>comment</code> to /api/books/{_id} to add a comment to a book and returned will be the books object similar to <b>get</b> /api/books/{_id}. If <code>comment</code> is not included in the request, return '<code>missing required field comment</code>'
+  - text: I can <b>post</b> a <code>comment</code> to /api/books/{_id} to add a comment to a book and returned will be the books object similar to <b>get</b> /api/books/{_id}. If <code>comment</code> is not included in the request, return '<code>missing required field comment</code>'. If no book is found, return '<code>no book exists</code>`.
     testString: "async getUserInput => {
        try {
          let url = getUserInput('url') + '/api/books';       
@@ -120,14 +120,14 @@ tests:
          let commentErr = await $.post(url + '/' + bookId);
          assert.isString(commentErr);
          assert.equal(commentErr, 'missing required field comment');
-         let failingComment = await $.post(url + '/f665eb46e296f6b9b6a504d', { 'comment': 'Never Seen Comment' });
+         let failingComment = await $.post(url + '/5f665eb46e296f6b9b6a504d', { 'comment': 'Never Seen Comment' });
          assert.isString(failingComment);
          assert.equal(failingComment, 'no book exists');
        } catch(err) {
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: I can <b>delete</b> /api/books/{_id} to delete a book from the collection. Returned will be '<code>delete successful</code>' if successful.
+  - text: I can <b>delete</b> /api/books/{_id} to delete a book from the collection. Returned will be '<code>delete successful</code>' if successful. If no book is found, return '<code>no book exists</code>'.
     testString: "async getUserInput => {
        try {
         let url = getUserInput('url') + '/api/books';
