@@ -40,7 +40,7 @@ tests:
       getUserInput => {
         assert(!/.*\/personal-library\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
-  - text: I can <b>post</b> a <code>title</code> to /api/books to add a book and returned will be the object with the <code>title</code> and a unique <code>_id</code>.  If <code>title</code> is not included in the request, return '<code>missing required field title</code>'
+  - text: You can send a <b>POST</b> request to <code>/api/books</code> with <code>title</code> as part of the form data to add a book.  The returned response will be an object with the <code>title</code> and a unique <code>_id</code> as keys.  If <code>title</code> is not included in the request, the returned response should be the string <code>missing required field title</code>.
     testString: "async getUserInput => {
        try {
          let data1 = await $.post(getUserInput('url') + '/api/books', { 'title': 'Faux Book 1' });
@@ -55,7 +55,8 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: I can <b>get</b> /api/books to retrieve an array of all books containing <code>title</code>, <code>_id</code>, & <code>commentcount</code>.
+  - text: You can send a <b>GET</b> request to <code>/api/books</code> and receive a JSON response representing all the books. 
+ The JSON response will be an array of objects with each object (book) containing <code>title</code>, <code>_id</code>, and <code>commentcount</code> properties.
     testString: "async getUserInput => {
        try {
          let url = getUserInput('url') + '/api/books';
@@ -79,7 +80,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: I can <b>get</b> /api/books/{_id} to retrieve a single object of a book containing <code>title</code>, <code>_id</code>, & an array of <code>comments</code> (empty array if no comments present). If no book is found, return '<code>no book exists</code>'.
+  - text: You can send a <b>GET</b> request to <code>/api/books/{_id}</code> to retrieve a single object of a book containing the properties <code>title</code>, <code>_id</code>, and a <code>comments</code> array (empty array if no comments present). If no book is found, return the string <code>no book exists</code>.
     testString: "async getUserInput => {
        try {
          let url = getUserInput('url') + '/api/books';
@@ -99,7 +100,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: I can <b>post</b> a <code>comment</code> to /api/books/{_id} to add a comment to a book and returned will be the books object similar to <b>get</b> /api/books/{_id}. If <code>comment</code> is not included in the request, return '<code>missing required field comment</code>'. If no book is found, return '<code>no book exists</code>`.
+  - text: You can send a <b>POST</b> request containing <code>comment</code> as the form body data to <code>/api/books/{_id}</code> to add a comment to a book. The returned response will be the books object similar to <b>GET</b> <code>/api/books/{_id}</code> request in an earlier test. If <code>comment</code> is not included in the request, return the string <code>missing required field comment</code>`. If no book is found, return the string <code>no book exists</code>.
     testString: "async getUserInput => {
        try {
          let url = getUserInput('url') + '/api/books';       
@@ -127,7 +128,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: I can <b>delete</b> /api/books/{_id} to delete a book from the collection. Returned will be '<code>delete successful</code>' if successful. If no book is found, return '<code>no book exists</code>'.
+  - text: You can send a <b>DELETE</b> request to <code>/api/books/{_id}</code> to delete a book from the collection. The returned response will be the string <code>delete successful</code> if successful. If no book is found, return the string <code>no book exists</code>.
     testString: "async getUserInput => {
        try {
         let url = getUserInput('url') + '/api/books';
@@ -144,7 +145,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: I can send a <b>delete</b> request to /api/books to delete all books in the database. Returned will be '<code>'complete delete successful</code>' if successful.
+  - text: You can send a <b>DELETE</b> request to <code>/api/books</code> to delete all books in the database. The returned response will be the string <code>'complete delete successful</code> if successful.
     testString: "async getUserInput => {
        try {
         const deleteAll = await $.ajax({ url: getUserInput('url') + '/api/books', type: 'DELETE' });
