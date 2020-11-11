@@ -8,15 +8,20 @@ forumTopicId: 301506
 ## Description
 
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href='https://file-metadata-microservice.freecodecamp.rocks/' target='_blank'>https://file-metadata-microservice.freecodecamp.rocks/</a>.
-Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
-Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-filemetadata' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-filemetadata/'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://file-metadata-microservice.freecodecamp.rocks/' target='_blank'>https://file-metadata-microservice.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
+
+- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-filemetadata/'>this GitHub repo</a> and complete your project locally.
+- Use <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-filemetadata' target='_blank'>our repl.it starter project</a> to complete your project.
+- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
 </section>
 
 ## Instructions
 
 <section id='instructions'>
 
+**HINT:** You can use the `multer` npm package to handle file uploading.
 </section>
 
 ## Tests
@@ -25,26 +30,26 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I can provide my own project, not the example URL.
+  - text: You should provide your own project, not the example URL.
     testString: |
       getUserInput => {
         assert(!/.*\/file-metadata-microservice\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
-  - text: I can submit a form that includes a file upload.
+  - text: You can submit a form that includes a file upload.
     testString: "async getUserInput => {
       const site = await fetch(getUserInput('url'));
       const data = await site.text();
       const doc = new DOMParser().parseFromString(data, 'text/html');
       assert(doc.querySelector('input[type=\"file\"]'));
     }"
-  - text: The form file input field has the <code>name</code> attribute set to <code>upfile</code>.
+  - text: The form file input field has the `name` attribute set to `upfile`.
     testString: "async getUserInput => {
       const site = await fetch(getUserInput('url'));
       const data = await site.text();
       const doc = new DOMParser().parseFromString(data, 'text/html');
       assert(doc.querySelector('input[name=\"upfile\"]'));
     }"
-  - text: When I submit something, I will receive the file <code>name</code>, <code>type</code>, and <code>size</code> in bytes within the JSON response.
+  - text: When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
     testString: "async getUserInput => {
       const formData = new FormData();
       const fileData = await fetch('https://cdn.freecodecamp.org/weather-icons/01d.png');
