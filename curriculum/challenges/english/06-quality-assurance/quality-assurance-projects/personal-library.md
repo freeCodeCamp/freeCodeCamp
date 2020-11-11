@@ -35,7 +35,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 ```yml
 tests:
-  - text: I can provide my own project, not the example URL.
+  - text: You can provide your own project, not the example URL.
     testString: |
       getUserInput => {
         assert(!/.*\/personal-library\.freecodecamp\.rocks/.test(getUserInput('url')));
@@ -55,8 +55,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }"
-  - text: You can send a <b>GET</b> request to <code>/api/books</code> and receive a JSON response representing all the books. 
- The JSON response will be an array of objects with each object (book) containing <code>title</code>, <code>_id</code>, and <code>commentcount</code> properties.
+  - text: You can send a <b>GET</b> request to <code>/api/books</code> and receive a JSON response representing all the books. The JSON response will be an array of objects with each object (book) containing <code>title</code>, <code>_id</code>, and <code>commentcount</code> properties.
     testString: "async getUserInput => {
        try {
          let url = getUserInput('url') + '/api/books';
