@@ -88,7 +88,7 @@ tests:
           created_by: "fCC",
         };
         const data = await $.post(getUserInput("url") + "/api/issues/fcc-project", { created_by: "fCC" });
-        assert.isString(data);
+        assert.isObject(data);
         assert.property(data, "error");
         assert.equal(data.error, "required field(s) missing");
       } catch(err) {
@@ -168,7 +168,7 @@ tests:
             "_id": itemToUpdate._id, 
             issue_text: "New Issue Text" 
           }});
-        asset.isObject(updateSucccess);
+        assert.isObject(updateSucccess);
         assert.deepEqual(updateSucccess, { 
           result: "successfully updated", 
           "_id": itemToUpdate._id 
@@ -189,7 +189,7 @@ tests:
         const badUpdate = await $.ajax({url: url, type: "PUT"});
         assert.isObject(badUpdate);
         assert.property(badUpdate, "error");
-        assert.equal(badUpdate, "missing _id");
+        assert.equal(badUpdate.error, "missing _id");
       } catch(err) {
         throw new Error(err.responseText || err.message);
       }
@@ -197,6 +197,7 @@ tests:
   - text: If I `PUT` to `/api/issues/{projectname}` and no update fields are sent, return `{ error: 'no update field(s) sent', '_id': _id }`. On any other error, return `{ error: 'could not update ', _id: + _id }`.
     testString: 'async getUserInput => { 
       try {
+        const url = getUserInput("url") + "/api/issues/fcc-project";
         const badUpdate = await $.ajax({
           url: url,
           type: "PUT",
@@ -257,12 +258,12 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }'
-  - text: All 11 functional tests are complete and passing.
+  - text: All 14 functional tests are complete and passing.
     testString: 'async getUserInput => { 
       try {
         const getTests = await $.get(getUserInput("url") + "/_api/get-tests" );
         assert.isArray(getTests);
-        assert.isAtLeast(getTests.length, 11, "At least 11 tests passed");
+        assert.isAtLeast(getTests.length, 14, "At least 14 tests passed");
         getTests.forEach(test => {
           assert.equal(test.state, "passed", "Test in Passed State");
           assert.isAtLeast(test.assertions.length, 1, "At least one assertion per test");
