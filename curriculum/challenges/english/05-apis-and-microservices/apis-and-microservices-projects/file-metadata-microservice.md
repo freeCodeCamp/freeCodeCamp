@@ -20,7 +20,7 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 ## Instructions
 
 <section id='instructions'>
-
+**HINT:** You can use the `multer` npm package to handle file uploading.
 </section>
 
 ## Tests
