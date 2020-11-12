@@ -24,6 +24,7 @@
 }
 
 #description p,
-#instructions p {
+#instructions p,
+#description ul {
   font-family: 'Lato', sans-serif;
 }
