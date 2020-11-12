@@ -27,10 +27,20 @@ export class SolutionForm extends Component {
   componentDidMount() {
     this.props.updateSolutionForm({});
   }
-  handleSubmit(values) {
-    this.props.updateSolutionForm(values);
-    this.props.onSubmit();
+
+  handleSubmit(validatedValues) {
+    // Do not execute challenge, if errors
+    if (validatedValues.errors.length === 0) {
+      if (validatedValues.invalidValues.length === 0) {
+        // updates values on server
+        this.props.updateSolutionForm(validatedValues.values);
+        this.props.onSubmit({ isShouldCompletionModalOpen: true });
+      } else {
+        this.props.onSubmit({ isShouldCompletionModalOpen: false });
+      }
+    }
   }
+
   render() {
     const { isSubmitting, challengeType, description, t } = this.props;
 

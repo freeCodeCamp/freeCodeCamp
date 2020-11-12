@@ -87,6 +87,7 @@ export class BackEnd extends Component {
     super(props);
     this.state = {};
     this.updateDimensions = this.updateDimensions.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -152,6 +153,10 @@ export class BackEnd extends Component {
     challengeMounted(challengeMeta.id);
   }
 
+  handleSubmit({ isShouldCompletionModalOpen }) {
+    this.props.executeChallenge(isShouldCompletionModalOpen);
+  }
+
   render() {
     const {
       data: {
@@ -172,7 +177,6 @@ export class BackEnd extends Component {
       },
       t,
       tests,
-      executeChallenge,
       updateSolutionFormValues
     } = this.props;
 
@@ -205,7 +209,7 @@ export class BackEnd extends Component {
                 />
                 <SolutionForm
                   challengeType={challengeType}
-                  onSubmit={executeChallenge}
+                  onSubmit={this.handleSubmit}
                   updateSolutionForm={updateSolutionFormValues}
                 />
                 <ProjectToolPanel

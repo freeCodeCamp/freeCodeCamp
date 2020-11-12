@@ -4,7 +4,6 @@ import { createTypes } from '../../../../utils/stateManagement';
 
 import { createPoly } from '../../../../../utils/polyvinyl';
 import { getLines } from '../../../../../utils/get-lines';
-import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
 import codeLockEpic from './code-lock-epic';
 import createQuestionEpic from './create-question-epic';
@@ -97,7 +96,6 @@ export const types = createTypes(
 );
 
 export const epics = [
-  challengeModalEpic,
   codeLockEpic,
   completionEpic,
   createQuestionEpic,
@@ -195,6 +193,7 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 

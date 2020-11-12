@@ -329,7 +329,7 @@ export class CertificationSettings extends Component {
   };
 
   // legacy projects rendering
-  handleSubmitLegacy(formChalObj) {
+  handleSubmitLegacy({ values: formChalObj }) {
     const {
       isHonest,
       createFlashMessage,
