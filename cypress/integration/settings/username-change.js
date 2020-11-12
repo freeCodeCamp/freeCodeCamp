@@ -141,9 +141,9 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('Quincy Larson', { force: true });
 
-    cy.get('@usernameForm').within(() => {
-      cy.contains('Save').should('be.disabled');
-    });
+    cy.get('@usernameForm')
+      .contains('Save')
+      .should('be.disabled');
   });
 
   it('Should change username if `Save` button is clicked', () => {
