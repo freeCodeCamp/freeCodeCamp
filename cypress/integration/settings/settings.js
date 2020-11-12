@@ -16,9 +16,11 @@ describe('Settings', () => {
         .should('have.class', 'btn-invert btn btn-lg btn-primary btn-block');
     });
 
-    it('Should take user to their public portfolio when clicked', () => {
+    it('Should take to the landing page when clicked', () => {
       cy.contains('Sign me out of freeCodeCamp').click({ force: true });
-      cy.url().should('include', '/');
+      cy.location().should(loc => {
+        expect(loc.pathname).to.eq('/');
+      });
     });
   });
 });
