@@ -23,7 +23,19 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 1. Set `NODE_ENV` to test without quotes when ready to write tests and DB to your databases connection string (in `.env`)
 2. Recommended to create controllers/handlers and handle routing in `routes/api.js`
 3. You will add any security features to `server.js`
-4. You will create all of the functional/unit tests in `tests/2_functional-tests.js`
+
+Write the following tests in `tests/2_functional-tests.js`:
+
+- Creating a new thread: POST request to `/api/threads/{board}`
+- Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
+- Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
+- Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+- Reporting a thread: PUT request to `/api/threads/{board}`
+- Creating a new reply: POST request to `/api/replies/{board}`
+- Viewing a single thread with all replies: GET request to `/api/replies/{board}`
+- Deleting a reply with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
+- Deleting a reply with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+- Reporting a reply: PUT request to `/api/replies/{board}`
 
 </section>
 
@@ -55,7 +67,7 @@ tests:
       const parsed = await data.json();
       assert.isTrue(parsed.headers['referrer-policy']?.includes('same-origin'));
       }"
-  - text: You can send POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
+  - text: You can send a POST request to `/api/threads/{board}` with form data including `text` and `delete_password`. The saved database record will have at least the fields `_id`, `text`, `created_on`(date & time), `bumped_on`(date & time, starts same as `created_on`), `reported` (boolean), `delete_password`, & `replies` (array).
     testString: ''
   - text: You can send a POST request to `/api/replies/{board}` with form data including `text`, `delete_password`, & `thread_id`. This will update the `bumped_on` date to the comment's date. In the thread's `replies` array, an object will be saved with at least the properties `_id`, `text`, `created_on`, `delete_password`, & `reported`.
     testString: ''
