@@ -1,4 +1,4 @@
-/* global cy */
+/* global cy expect */
 
 describe('Settings', () => {
   beforeEach(() => {
