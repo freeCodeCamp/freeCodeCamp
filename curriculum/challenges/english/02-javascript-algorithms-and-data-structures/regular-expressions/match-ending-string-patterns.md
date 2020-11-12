@@ -25,7 +25,7 @@ storyRegex.test(noEnding);
 
 ## Instructions
 <section id='instructions'>
-Use the anchor character (<code>$</code>) to match the string <code>"caboose"</code> at the end of the string <code>caboose</code>.
+Use the dollar sign character (<code>$</code>) to match the string <code>"caboose"</code> at the end of the string <code>caboose</code>.
 </section>
 
 ## Tests
