@@ -198,24 +198,6 @@ describe('Username input field', () => {
     cy.resetUsername();
   });
 
-  it('Should be able to close the shown flash message', () => {
-    cy.get('@usernameInput')
-      .clear({ force: true })
-      .type('bjorno', { force: true });
-    cy.contains('Username is available.');
-    cy.get('@usernameInput').type('{enter}', { force: true, release: false });
-
-    cy.contains('We have updated your username to bjorno').within(() => {
-      cy.get('button').click();
-    });
-
-    cy.contains('We have updated your username to bjorno').should(
-      'not.be.visible'
-    );
-
-    cy.resetUsername();
-  });
-
   it('Should change username if enter is pressed', () => {
     cy.get('@usernameInput')
       .clear({ force: true })
