@@ -16,6 +16,7 @@ const doubleMarkerAST = require('../__fixtures__/ast-double-marker.json');
 const jsxSeedAST = require('../__fixtures__/ast-jsx-seed.json');
 const cCodeAST = require('../__fixtures__/ast-c-code.json');
 const explodedMarkerAST = require('../__fixtures__/ast-exploded-marker.json');
+const emptyContentAST = require('../__fixtures__/ast-empty-contents.json');
 
 const addSeed = require('./add-seed');
 const { isObject } = require('lodash');
@@ -272,9 +273,11 @@ const Button = () => {
     */
   });
 
-  it('should warn if a seed is empty', () => {
-    /* would be nice to have warnings if a user creates, say, # --seed--
-     but forgets ## --seed-contents-- or uses # --seed-contents by accident. */
+  it('should throw an error if a seed has no contents', () => {
+    expect.assertions(1);
+    expect(() => plugin(emptyContentAST, file)).toThrow(
+      `## --seed-contents-- must appear in # --seed-- sections`
+    );
   });
 
   it('should have an output to match the snapshot', () => {

@@ -7,7 +7,6 @@ Object {
 <pre><code class=\\"language-html\\">code example
 </code></pre>
 </section>",
-  "files": Object {},
   "instructions": "<section id=\\"instructions\\">
 <p>Paragraph 0</p>
 <pre><code class=\\"language-html\\">code example 0
@@ -72,7 +71,43 @@ Object {
     anothersubkey: another value
 </code></pre>
 </section>",
-  "files": Object {},
+  "files": Object {
+    "indexcss": Object {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": Array [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "key": "indexcss",
+      "name": "index",
+      "tail": "",
+    },
+    "indexhtml": Object {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": Array [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "key": "indexhtml",
+      "name": "index",
+      "tail": "",
+    },
+    "indexjs": Object {
+      "contents": "var x = 'y';",
+      "editableRegionBoundaries": Array [],
+      "ext": "js",
+      "head": "",
+      "id": "",
+      "key": "indexjs",
+      "name": "index",
+      "tail": "",
+    },
+  },
   "instructions": "<section id=\\"instructions\\">
 <p>Paragraph 0</p>
 <pre><code class=\\"language-html\\">code example 0
@@ -403,7 +438,43 @@ Object {
 <pre><code class=\\"language-html\\">code example
 </code></pre>
 </section>",
-  "files": Object {},
+  "files": Object {
+    "indexcss": Object {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": Array [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "key": "indexcss",
+      "name": "index",
+      "tail": "",
+    },
+    "indexhtml": Object {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": Array [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "key": "indexhtml",
+      "name": "index",
+      "tail": "",
+    },
+    "indexjs": Object {
+      "contents": "var x = 'y';",
+      "editableRegionBoundaries": Array [],
+      "ext": "js",
+      "head": "",
+      "id": "",
+      "key": "indexjs",
+      "name": "index",
+      "tail": "",
+    },
+  },
   "forumTopicId": 18276,
   "id": "bd7123c8c441eddfaeb5bdef",
   "isHidden": false,
