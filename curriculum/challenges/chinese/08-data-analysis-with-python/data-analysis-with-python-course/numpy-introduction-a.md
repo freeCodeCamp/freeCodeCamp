@@ -24,7 +24,7 @@ question:
     - |
       Often you won't work directly with Numpy.
     - |
-      It is extremely slow.
+      It's is extremely slow.
     - |
       Working with Numpy is difficult.
   solution: 1
