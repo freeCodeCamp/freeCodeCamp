@@ -12,8 +12,8 @@ const propTypes = {
 
 function ChallengeDescription({ description, instructions, section }) {
   return (
-    <div className={`challenge-instructions ${section}`}>
-      <PrismFormatted text={description} />
+    <div className={`challenge-instructions${section ? ' ' + section : ''}`}>
+      {description && <PrismFormatted text={description} />}
       {instructions && (
         <Fragment>
           <hr />
