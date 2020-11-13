@@ -38,7 +38,47 @@ Object {
 <pre><code class=\\"language-html\\">code example
 </code></pre>
 </section>",
-  "files": Object {},
+  "files": Object {
+    "indexcss": Object {
+      "contents": "body {
+  background: green;
+}",
+      "editableRegionBoundaries": Array [],
+      "ext": "css",
+      "head": "",
+      "id": "",
+      "key": "indexcss",
+      "name": "index",
+      "tail": "",
+    },
+    "indexhtml": Object {
+      "contents": "<html>
+  <body>
+  </body>
+</html>",
+      "editableRegionBoundaries": Array [],
+      "ext": "html",
+      "head": "",
+      "id": "",
+      "key": "indexhtml",
+      "name": "index",
+      "tail": "",
+    },
+    "indexjs": Object {
+      "contents": "var x = 'y';
+for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+  // imported from script.mdx
+}",
+      "editableRegionBoundaries": Array [],
+      "ext": "js",
+      "head": "",
+      "id": "custom-name",
+      "key": "indexjs",
+      "name": "index",
+      "tail": "",
+    },
+  },
   "instructions": "<section id=\\"instructions\\">
 <p>Paragraph 0</p>
 <pre><code class=\\"language-html\\">code example 0

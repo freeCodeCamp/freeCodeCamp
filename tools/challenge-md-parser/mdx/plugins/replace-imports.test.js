@@ -29,6 +29,7 @@ describe('replace-imports', () => {
   });
 
   it('should return a function', () => {
+    expect.assertions(1);
     const plugin = addImports();
 
     expect(typeof plugin).toEqual('function');
@@ -96,8 +97,9 @@ describe('replace-imports', () => {
 
   it('should remove all import statements', done => {
     expect.assertions(2);
+    const selector = 'leafDirective[name=import]';
     const plugin = addImports();
-    const importNodes = selectAll('import', importsAST);
+    const importNodes = selectAll(selector, importsAST);
 
     expect(importNodes.length).toBe(1);
 
@@ -105,7 +107,7 @@ describe('replace-imports', () => {
       if (err) {
         done(err);
       } else {
-        const importNodes = selectAll('import', importsAST);
+        const importNodes = selectAll(selector, importsAST);
         expect(importNodes.length).toBe(0);
         done();
       }
@@ -113,27 +115,28 @@ describe('replace-imports', () => {
     plugin(importsAST, correctFile, next);
   });
 
-  it('should remove all matching <Components>', done => {
+  it('should remove all matching ::use statements', done => {
     expect.assertions(2);
+    const selector = 'leafDirective[name=use]';
     const plugin = addImports();
-    const jsxNodes = selectAll('jsx', importsAST);
+    const components = selectAll(selector, importsAST);
 
     // one matching component and two other jsx nodes
-    expect(jsxNodes.length).toBe(3);
+    expect(components.length).toBe(1);
 
     const next = err => {
       if (err) {
         done(err);
       } else {
-        const jsxNodes = selectAll('jsx', importsAST);
-        expect(jsxNodes.length).toBe(2);
+        const components = selectAll(selector, importsAST);
+        expect(components.length).toBe(0);
         done();
       }
     };
     plugin(importsAST, correctFile, next);
   });
 
-  it('should replace the <Components> with the imported content', done => {
+  it('should replace the ::use statement with the imported content', done => {
     // checks the contents of script.mdx are there after the import step
     expect.assertions(2);
     const plugin = addImports();
