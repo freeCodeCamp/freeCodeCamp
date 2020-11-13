@@ -6,11 +6,13 @@ const selectAll = require('unist-util-select').selectAll;
 
 const addImports = require('./replace-imports');
 const originalImportsAST = require('../__fixtures__/ast-imports.json');
+const originalImportsTwoAST = require('../__fixtures__/ast-imports-two.json');
 const originalSimpleAST = require('../__fixtures__/ast-simple.json');
 const originalMarkerAST = require('../__fixtures__/ast-marker-imports.json');
 
 describe('replace-imports', () => {
   let importsAST;
+  let importsTwoAST;
   let simpleAST;
   let markerAST;
   let correctFile;
@@ -18,6 +20,7 @@ describe('replace-imports', () => {
 
   beforeEach(() => {
     importsAST = cloneDeep(originalImportsAST);
+    importsTwoAST = cloneDeep(originalImportsTwoAST);
     simpleAST = cloneDeep(originalSimpleAST);
     markerAST = cloneDeep(originalMarkerAST);
     correctFile = toVfile(
@@ -161,6 +164,44 @@ describe('replace-imports', () => {
       }
     };
     plugin(importsAST, correctFile, next);
+  });
+
+  it('should handle multiple import statements', done => {
+    // checks the contents of script.mdx are there after the import step
+    expect.assertions(4);
+    const plugin = addImports();
+
+    const next = err => {
+      if (err) {
+        done(err);
+      } else {
+        const jsNodes = selectAll('code[lang=js]', importsTwoAST);
+        expect(jsNodes.length).toBe(4);
+
+        const codeValues = jsNodes.map(({ value }) => value);
+        expect(codeValues).toEqual(
+          expect.arrayContaining([
+            `for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+  // imported from script.mdx
+}`
+          ])
+        );
+        const cssNodes = selectAll('code[lang=css]', importsTwoAST);
+        expect(cssNodes.length).toBe(2);
+
+        const cssValues = cssNodes.map(({ value }) => value);
+        expect(cssValues).toEqual(
+          expect.arrayContaining([
+            `div {
+  background: red
+}`
+          ])
+        );
+        done();
+      }
+    };
+    plugin(importsTwoAST, correctFile, next);
   });
 
   it('should reject imported files with editable region markers', done => {
