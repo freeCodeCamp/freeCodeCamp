@@ -12,7 +12,7 @@ describe('Top contributor in user profile', () => {
 
   beforeEach(() => {
     cy.login();
-    cy.contains('Profile').click();
+    cy.contains('Profile').click({ force: true });
 
     // The following line is only required if you want to test it in development
     // cy.contains('Preview custom 404 page').click();
