@@ -7,3 +7,9 @@
   margin-bottom: 1.45rem;
   font-size: 0.9rem;
 }
+
+#description p,
+#instructions p,
+#description ul {
+  font-family: 'Lato', sans-serif;
+}
