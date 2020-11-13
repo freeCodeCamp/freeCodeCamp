@@ -61,8 +61,13 @@ function codeToData(node, seeds, seedKey, validate) {
 function idToData(node, index, parent, seeds) {
   const id = getId(node);
 
+  // If this is reached, the node type is neither root nor code. If it is not
+  // an id, there must be a syntax error.
   if (!id) {
-    throw Error('Unexpected id syntax must be ![id]()\n');
+    throw Error(
+      'Unexpected syntax in seed/solution. Must be ![id]() or a code ' +
+        'block (```) \n'
+    );
   }
   const codeNode = parent.children[index + 1];
   if (codeNode && is(codeNode, 'code')) {
