@@ -1,4 +1,5 @@
 const is = require('unist-util-is');
+const position = require('unist-util-position');
 const { isEmpty } = require('lodash');
 
 const getId = require('./get-id');
@@ -36,11 +37,12 @@ function codeToData(node, seeds, seedKey, validate) {
   if (validate) validate(node);
   const lang = node.lang;
   if (!supportedLanguages.includes(lang))
-    throw Error(
-      lang +
-        ' is not a supported language. Please use one of\n' +
-        'js, css, html, jsx or py'
-    );
+    throw Error(`On line ${
+      position.start(node).line
+    } '${lang}' is not a supported language.
+ Please use one of js, css, html, jsx or py
+`);
+
   const key = `index${lang}`;
   const id = seeds[key] ? seeds[key].id : '';
   // the contents will be missing if there is an id preceeding this code

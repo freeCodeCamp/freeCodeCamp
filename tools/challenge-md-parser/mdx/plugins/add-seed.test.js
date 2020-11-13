@@ -170,8 +170,8 @@ describe('add-seed plugin', () => {
   it('throws an error if there is any code of an unsupported language', () => {
     expect.assertions(1);
     expect(() => plugin(cCodeAST, file)).toThrow(
-      'c is not a supported language. Please use one of\n' +
-        'js, css, html, jsx or py'
+      "On line 30 'c' is not a supported language.\n" +
+        ' Please use one of js, css, html, jsx or py'
     );
   });
 
