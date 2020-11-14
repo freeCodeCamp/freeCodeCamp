@@ -55,15 +55,15 @@ tests:
   - text: Your code should declare a mixin named <code>border-radius</code> which has a parameter named <code>$radius</code>.
     testString: assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
   - text: Your code should include the <code>-webkit-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
-    testString: assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/-webkit-border-radius:\$radius;/gi));
   - text: Your code should include the <code>-moz-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
-    testString: assert(code.match(/-moz-border-radius:\s*?\$radius;/gi));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/-moz-border-radius:\$radius;/gi));
   - text: Your code should include the <code>-ms-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
-    testString: assert(code.match(/-ms-border-radius:\s*?\$radius;/gi));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
   - text: Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.
-    testString: assert(code.match(/border-radius:\s*?\$radius;/gi).length == 4);
+    testString: assert(__helpers.removeWhiteSpace(code).match(/border-radius:\$radius;/gi).length == 4);
   - text: Your code should call the <code>border-radius mixin</code> using the <code>@include</code> keyword, setting it to 15px.
-    testString: assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\);/gi));
+    testString: assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
 
 ```
 
