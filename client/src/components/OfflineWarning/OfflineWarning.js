@@ -26,7 +26,9 @@ function OfflineWarning({ isOnline, isSignedIn }) {
 
   return showWarning ? (
     <div className='offline-warning'>
-      You appear to be offline, your progress may not be being saved.
+      <div className='alert-info'>
+        You appear to be offline, your progress may not be being saved.
+      </div>
     </div>
   ) : null;
 }
