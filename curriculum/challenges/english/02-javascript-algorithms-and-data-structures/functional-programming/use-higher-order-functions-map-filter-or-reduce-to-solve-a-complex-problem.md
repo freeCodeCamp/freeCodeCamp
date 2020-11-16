@@ -26,7 +26,7 @@ We have defined a function named <code>squareList</code>.  You need to complete 
 tests:
   - text: <code>squareList</code> should be a <code>function</code>.
     testString: assert.typeOf(squareList, 'function'), '<code>squareList</code> should be a <code>function</code>';
-  - text: <code>for</code> or <code>while</code> loops or <code>forEach</code> should not be used.
+  - text: <code>for</code>, <code>while</code>, and <code>forEach</code> should not be used.
     testString: assert(!__helpers.removeJSComments(code).match(/for|while|forEach/g));
   - text: <code>map</code>, <code>filter</code>, or <code>reduce</code> should be used.
     testString: assert(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/\.(map|filter|reduce)\(/g));
