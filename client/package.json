@@ -34,7 +34,7 @@
     "final-form": "^4.20.1",
     "gatsby": "^2.25.3",
     "gatsby-cli": "^2.12.117",
-    "gatsby-link": "^2.4.16",
+    "gatsby-link": "^2.5.0",
     "gatsby-plugin-advanced-sitemap": "^1.5.6",
     "gatsby-plugin-create-client-paths": "^2.3.13",
     "gatsby-plugin-manifest": "^2.5.2",
