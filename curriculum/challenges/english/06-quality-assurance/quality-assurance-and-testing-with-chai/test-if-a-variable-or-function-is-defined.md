@@ -29,11 +29,11 @@ Within `tests/1_unit-tests.js` under the test labelled `#2` in the `Basic Assert
 tests:
   - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isDefined vs. isUndefined.
+  - text: You should choose the correct method for the first assertion - `isDefined` vs. `isUndefined`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[0].method, 'isDefined', 'Null is not undefined'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isDefined vs. isUndefined.
+  - text: You should choose the correct method for the second assertion - `isDefined` vs. `isUndefined`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[1].method, 'isUndefined', 'Undefined is undefined'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isDefined vs. isUndefined.
+  - text: You should choose the correct method for the third assertion - `isDefined` vs. `isUndefined`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[2].method, 'isDefined', 'A string is not undefined'); }, xhr => { throw new Error(xhr.responseText); })
 ```
 

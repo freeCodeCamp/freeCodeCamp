@@ -29,9 +29,9 @@ Within `tests/1_unit-tests.js` under the test labelled `#11` in the `Arrays` sui
 tests:
   - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isArray vs. isNotArray.
+  - text: You should choose the correct method for the first assertion - `isArray` vs. `isNotArray`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[0].method, 'isArray', 'String.prototype.split() returns an Array'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isArray vs. isNotArray.
+  - text: You should choose the correct method for the second assertion - `isArray` vs. `isNotArray`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=10').then(data => {  assert.equal(data.assertions[1].method, 'isNotArray', 'Array.prototype.indexOf() returns a number'); }, xhr => { throw new Error(xhr.responseText); })
 ```
 

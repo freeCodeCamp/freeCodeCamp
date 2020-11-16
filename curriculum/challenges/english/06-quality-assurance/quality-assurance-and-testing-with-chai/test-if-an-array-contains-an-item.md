@@ -29,9 +29,9 @@ Within `tests/1_unit-tests.js` under the test labelled `#12` in the `Arrays` sui
 tests:
   - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - include vs. notInclude.
+  - text: You should choose the correct method for the first assertion - `include` vs. `notInclude`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[0].method, 'notInclude', 'It\'s summer in july...'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - include vs. notInclude.
+  - text: You should choose the correct method for the second assertion - `include` vs. `notInclude`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[1].method, 'include', 'JavaScript is a backend language !!'); }, xhr => { throw new Error(xhr.responseText); })
 ```
 

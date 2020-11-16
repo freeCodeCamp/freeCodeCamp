@@ -29,9 +29,9 @@ Within `tests/1_unit-tests.js` under the test labelled `#1` in the `Basic Assert
 tests:
   - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isNull vs. isNotNull.
+  - text: You should choose the correct method for the first assertion - `isNull` vs. `isNotNull`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {  assert.equal(data.assertions[0].method, 'isNull', 'Null is null'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isNull vs. isNotNull.
+  - text: You should choose the correct method for the second assertion - `isNull` vs. `isNotNull`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(data => {  assert.equal(data.assertions[1].method, 'isNotNull', '1 is not null'); }, xhr => { throw new Error(xhr.responseText); })
 ```
 

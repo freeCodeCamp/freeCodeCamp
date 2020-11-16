@@ -31,11 +31,11 @@ Within `tests/1_unit-tests.js` under the test labelled `#13` in the `Strings` su
 tests:
   - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isString vs. isNotString.
+  - text: You should choose the correct method for the first assertion - `isString` vs. `isNotString`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[0].method, 'isNotString', 'A float number is not a string'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isString vs. isNotString.
+  - text: You should choose the correct method for the second assertion - `isString` vs. `isNotString`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[1].method, 'isString', 'environment vars are strings (or undefined)'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the right assertion - isString vs. isNotString.
+  - text: You should choose the correct method for the third assertion - `isString` vs. `isNotString`.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=12').then(data => {  assert.equal(data.assertions[2].method, 'isString', 'A JSON is a string'); }, xhr => { throw new Error(xhr.responseText); })
 ```
 
