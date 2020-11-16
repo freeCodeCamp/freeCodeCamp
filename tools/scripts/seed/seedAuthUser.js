@@ -4,6 +4,8 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectID;
 const debug = require('debug');
 
+const envVariables = process.argv;
+
 const log = debug('fcc:tools:seedLocalAuthUser');
 const { MONGOHQ_URL } = process.env;
 
@@ -73,7 +75,9 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
         isMachineLearningPyCertV7: false,
         completedChallenges: [],
         portfolio: [],
-        yearsTopContributor: [],
+        yearsTopContributor: envVariables.includes('--top-contributor')
+          ? ['2017', '2018', '2019']
+          : [],
         rand: 0.6126749173148205,
         theme: 'default',
         profileUI: {
@@ -91,7 +95,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
         badges: {
           coreTeam: []
         },
-        isDonating: false,
+        isDonating: envVariables.includes('--donor'),
         emailAuthLinkTTL: null,
         emailVerifyTTL: null
       });
