@@ -30,7 +30,7 @@ question:
     - |
       Often you won't work directly with Numpy.
     - |
-      It's is extremely slow.
+      It is extremely slow.
     - |
       Working with Numpy is difficult.
   solution: 1
