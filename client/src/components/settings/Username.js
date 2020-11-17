@@ -9,6 +9,7 @@ import {
   Alert,
   FormGroup
 } from '@freecodecamp/react-bootstrap';
+import { withTranslation } from 'react-i18next';
 
 import {
   validateUsername,
@@ -22,6 +23,7 @@ import { isValidUsername } from '../../../../utils/validate';
 const propTypes = {
   isValidUsername: PropTypes.bool,
   submitNewUsername: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired,
   username: PropTypes.string,
   validateUsername: PropTypes.func.isRequired,
   validating: PropTypes.bool
@@ -116,6 +118,7 @@ class UsernameSettings extends Component {
   }
 
   renderAlerts(validating, error, isValidUsername) {
+    const { t } = this.props;
     if (!validating && error) {
       return (
         <FullWidthRow>
@@ -147,10 +150,7 @@ class UsernameSettings extends Component {
       return (
         <FullWidthRow>
           <Alert bsStyle='success'>Username is available.</Alert>
-          <Alert bsStyle='info'>
-            Please note, changing your username will also change the URL to your
-            profile and your certifications.
-          </Alert>
+          <Alert bsStyle='info'>{t('settings.text.username-change')}</Alert>
         </FullWidthRow>
       );
     }
@@ -164,7 +164,7 @@ class UsernameSettings extends Component {
       characterValidation: { valid, error },
       submitClicked
     } = this.state;
-    const { isValidUsername, validating } = this.props;
+    const { isValidUsername, t, validating } = this.props;
 
     return (
       <Fragment>
@@ -172,7 +172,7 @@ class UsernameSettings extends Component {
           <FullWidthRow>
             <FormGroup>
               <ControlLabel htmlFor='username-settings'>
-                <strong>Username</strong>
+                <strong>{t('settings.labels.username')}</strong>
               </ControlLabel>
               <FormControl
                 name='username-settings'
@@ -199,7 +199,9 @@ class UsernameSettings extends Component {
 UsernameSettings.displayName = 'UsernameSettings';
 UsernameSettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UsernameSettings);
+export default withTranslation()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(UsernameSettings)
+);

@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import fontawesome from '@fortawesome/fontawesome';
+import { withTranslation } from 'react-i18next';
 
 import {
   fetchUser,
@@ -44,30 +45,6 @@ fontawesome.config = {
   autoAddCss: false
 };
 
-const metaKeywords = [
-  'javascript',
-  'js',
-  'website',
-  'web',
-  'development',
-  'free',
-  'code',
-  'camp',
-  'course',
-  'courses',
-  'html',
-  'css',
-  'react',
-  'redux',
-  'api',
-  'front',
-  'back',
-  'end',
-  'learn',
-  'tutorial',
-  'programming'
-];
-
 const propTypes = {
   children: PropTypes.node.isRequired,
   executeGA: PropTypes.func,
@@ -86,6 +63,7 @@ const propTypes = {
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool,
   signedInUserName: PropTypes.string,
+  t: PropTypes.func.isRequired,
   theme: PropTypes.string,
   useTheme: PropTypes.bool,
   user: PropTypes.object
@@ -157,6 +135,7 @@ class DefaultLayout extends Component {
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
+      t,
       theme = 'default',
       user,
       useTheme = true
@@ -173,11 +152,9 @@ class DefaultLayout extends Component {
           meta={[
             {
               name: 'description',
-              content: `Learn to code at home. Build projects. Earn certifications. Since 2014,
-                 more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech
-                 companies including Google, Apple, Amazon, and Microsoft.`
+              content: t('meta.description')
             },
-            { name: 'keywords', content: metaKeywords.join(', ') }
+            { name: 'keywords', content: t('meta.keywords') }
           ]}
         >
           <link
@@ -243,7 +220,9 @@ class DefaultLayout extends Component {
 DefaultLayout.displayName = 'DefaultLayout';
 DefaultLayout.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DefaultLayout);
+export default withTranslation()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(DefaultLayout)
+);

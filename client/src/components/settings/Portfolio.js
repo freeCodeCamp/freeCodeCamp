@@ -10,6 +10,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash';
 import isURL from 'validator/lib/isURL';
+import { withTranslation } from 'react-i18next';
 
 import { hasProtocolRE } from '../../utils';
 
@@ -27,6 +28,7 @@ const propTypes = {
       url: PropTypes.string
     })
   ),
+  t: PropTypes.func.isRequired,
   updatePortfolio: PropTypes.func.isRequired,
   username: PropTypes.string
 };
@@ -187,6 +189,7 @@ class PortfolioSettings extends Component {
   }
 
   renderPortfolio = (portfolio, index, arr) => {
+    const { t } = this.props;
     const { id, title, description, url, image } = portfolio;
     const pristine = this.isFormPristine(id);
     const {
@@ -213,7 +216,7 @@ class PortfolioSettings extends Component {
                 pristine || (!pristine && !title) ? null : titleState
               }
             >
-              <ControlLabel>Title</ControlLabel>
+              <ControlLabel>{t('settings.labels.title')}</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'title')}
                 required={true}
@@ -228,7 +231,7 @@ class PortfolioSettings extends Component {
                 pristine || (!pristine && !url) ? null : urlState
               }
             >
-              <ControlLabel>URL</ControlLabel>
+              <ControlLabel>{t('settings.labels.url')}</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'url')}
                 required={true}
@@ -241,7 +244,7 @@ class PortfolioSettings extends Component {
               controlId={`${id}-image`}
               validationState={pristine ? null : imageState}
             >
-              <ControlLabel>Image</ControlLabel>
+              <ControlLabel>{t('settings.labels.image')}</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'image')}
                 type='url'
@@ -253,7 +256,7 @@ class PortfolioSettings extends Component {
               controlId={`${id}-description`}
               validationState={pristine ? null : descriptionState}
             >
-              <ControlLabel>Description</ControlLabel>
+              <ControlLabel>{t('settings.labels.description')}</ControlLabel>
               <FormControl
                 componentClass='textarea'
                 onChange={this.createOnChangeHandler(id, 'description')}
@@ -276,7 +279,7 @@ class PortfolioSettings extends Component {
                 })
               }
             >
-              Save this portfolio item
+              {t('buttons.save-portfolio')}
             </BlockSaveButton>
             <ButtonSpacer />
             <Button
@@ -286,7 +289,7 @@ class PortfolioSettings extends Component {
               onClick={() => this.handleRemoveItem(id)}
               type='button'
             >
-              Remove this portfolio item
+              {t('buttons.remove-portfolio')}
             </Button>
           </form>
           {index + 1 !== arr.length && (
@@ -302,16 +305,14 @@ class PortfolioSettings extends Component {
   };
 
   render() {
+    const { t } = this.props;
     const { portfolio = [] } = this.state;
     return (
       <section id='portfolio-settings'>
-        <SectionHeader>Portfolio Settings</SectionHeader>
+        <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
         <FullWidthRow>
           <div className='portfolio-settings-intro'>
-            <p className='p-intro'>
-              Share your non-freeCodeCamp projects, articles or accepted pull
-              requests.
-            </p>
+            <p className='p-intro'>{t('settings.text.share-projects')}</p>
           </div>
         </FullWidthRow>
         <FullWidthRow>
@@ -323,7 +324,7 @@ class PortfolioSettings extends Component {
             onClick={this.handleAdd}
             type='button'
           >
-            Add a new portfolio Item
+            {t('buttons.add-portfolio')}
           </Button>
         </FullWidthRow>
         <Spacer size={2} />
@@ -336,4 +337,4 @@ class PortfolioSettings extends Component {
 PortfolioSettings.displayName = 'PortfolioSettings';
 PortfolioSettings.propTypes = propTypes;
 
-export default PortfolioSettings;
+export default withTranslation()(PortfolioSettings);

@@ -7,6 +7,7 @@ import {
   faHeart,
   faCalendar
 } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 import { AvatarRenderer } from '../../helpers';
 
@@ -35,10 +36,13 @@ const propTypes = {
   yearsTopContributor: PropTypes.array
 };
 
+// going to need to figure out how to pluralize i18n
+// I think rect-i18next can help with that - see docs
 function pluralise(word, condition) {
   return condition ? word + 's' : word;
 }
 
+// similar to above - see interpolation in docs
 function joinArray(array) {
   return array.reduce((string, item, index, array) => {
     if (string.length > 0) {
@@ -79,6 +83,7 @@ function Camper({
   twitter,
   website
 }) {
+  const { t } = useTranslation();
   return (
     <div>
       <Row>
@@ -108,7 +113,7 @@ function Camper({
       {location && <p className='text-center location'>{location}</p>}
       {isDonating && (
         <p className='text-center supporter'>
-          <FontAwesomeIcon icon={faHeart} /> Supporter
+          <FontAwesomeIcon icon={faHeart} /> {t('profile.supporter')}
         </p>
       )}
       {about && <p className='bio text-center'>{about}</p>}
@@ -122,7 +127,7 @@ function Camper({
           <br />
           <p className='text-center yearsTopContributor'>
             <FontAwesomeIcon icon={faAward} />{' '}
-            <Link to={'/top-contributors'}>Top Contributor</Link>
+            <Link to={'/top-contributors'}>{t('profile.contributor')}</Link>
           </p>
           <p className='text-center'>{joinArray(yearsTopContributor)}</p>
         </div>

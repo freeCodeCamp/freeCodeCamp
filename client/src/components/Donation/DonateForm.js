@@ -12,6 +12,8 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
+import { withTranslation } from 'react-i18next';
+
 import {
   amountsConfig,
   durationsConfig,
@@ -55,6 +57,7 @@ const propTypes = {
   navigate: PropTypes.func.isRequired,
   postChargeStripe: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
+  t: PropTypes.func.isRequired,
   updateDonationFormState: PropTypes.func
 };
 
@@ -250,9 +253,11 @@ class DonateForm extends Component {
 
   renderDurationAmountOptions() {
     const { donationAmount, donationDuration, processing } = this.state;
+    const { t } = this.props;
+
     return !processing ? (
       <div>
-        <h3>Select gift frequency:</h3>
+        <h3>{t('donate.gift-frequency')}</h3>
         <Tabs
           activeKey={donationDuration}
           animation={false}
@@ -268,7 +273,7 @@ class DonateForm extends Component {
               title={this.durations[duration]}
             >
               <Spacer />
-              <h3>Select gift amount:</h3>
+              <h3>{t('donate.gift-amount')}</h3>
               <div>
                 <ToggleButtonGroup
                   animation={`false`}
@@ -295,7 +300,7 @@ class DonateForm extends Component {
   }
 
   renderDonationOptions() {
-    const { handleProcessing, isSignedIn, addDonation } = this.props;
+    const { handleProcessing, isSignedIn, addDonation, t } = this.props;
     const { donationAmount, donationDuration } = this.state;
 
     const isOneTime = donationDuration === 'onetime';
@@ -303,11 +308,13 @@ class DonateForm extends Component {
     return (
       <div>
         {isOneTime ? (
-          <b>Confirm your one-time donation of ${donationAmount / 100}:</b>
+          <b>
+            {t('donate.confirm-1')} ${donationAmount / 100}:
+          </b>
         ) : (
           <b>
-            Confirm your donation of ${donationAmount / 100} /{' '}
-            {donationDuration}:
+            {t('donate.confirm-2')} ${donationAmount / 100} / {donationDuration}
+            :
           </b>
         )}
         <Spacer />
@@ -318,7 +325,7 @@ class DonateForm extends Component {
             id='confirm-donation-btn'
             onClick={e => this.handleStripeCheckoutRedirect(e, 'credit card')}
           >
-            <b>Credit Card</b>
+            <b>{t('donate.credit-card')}</b>
           </Button>
           <PaypalButton
             addDonation={addDonation}
@@ -348,14 +355,17 @@ class DonateForm extends Component {
       handleProcessing,
       defaultTheme,
       addDonation,
-      postChargeStripe
+      postChargeStripe,
+      t
     } = this.props;
 
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>{this.getDonationButtonLabel()} with PayPal:</b>
+          <b>
+            {this.getDonationButtonLabel()} {t('donate.paypal')}
+          </b>
           <Spacer />
           <PaypalButton
             addDonation={addDonation}
@@ -367,7 +377,7 @@ class DonateForm extends Component {
         </Col>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>Or donate with a credit card:</b>
+          <b>{t('donate.credit-card-2')}</b>
           <Spacer />
           <StripeProvider stripe={stripe}>
             <Elements>
@@ -433,7 +443,9 @@ class DonateForm extends Component {
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DonateForm);
+export default withTranslation()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(DonateForm)
+);

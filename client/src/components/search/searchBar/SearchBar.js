@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import { isEqual } from 'lodash';
+import { withTranslation } from 'react-i18next';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -23,6 +24,7 @@ const propTypes = {
   innerRef: PropTypes.object,
   isDropdownEnabled: PropTypes.bool,
   isSearchFocused: PropTypes.bool,
+  t: PropTypes.func.isRequired,
   toggleSearchDropdown: PropTypes.func.isRequired,
   toggleSearchFocused: PropTypes.func.isRequired,
   updateSearchQuery: PropTypes.func.isRequired
@@ -42,8 +44,6 @@ const mapDispatchToProps = dispatch =>
     { toggleSearchDropdown, toggleSearchFocused, updateSearchQuery },
     dispatch
   );
-
-const placeholder = 'Search 6,000+ tutorials';
 
 export class SearchBar extends Component {
   constructor(props) {
@@ -173,8 +173,9 @@ export class SearchBar extends Component {
   };
 
   render() {
-    const { isDropdownEnabled, isSearchFocused, innerRef } = this.props;
+    const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
+    const placeholder = t('misc.search');
 
     return (
       <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
@@ -211,7 +212,9 @@ export class SearchBar extends Component {
 SearchBar.displayName = 'SearchBar';
 SearchBar.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SearchBar);
+export default withTranslation()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(SearchBar)
+);

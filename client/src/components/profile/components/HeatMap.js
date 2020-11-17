@@ -7,6 +7,7 @@ import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
 import startOfDay from 'date-fns/startOfDay';
 import isEqual from 'date-fns/isEqual';
+import { useTranslation } from 'react-i18next';
 
 import FullWidthRow from '../../helpers/FullWidthRow';
 import Spacer from '../../helpers/Spacer';
@@ -23,7 +24,8 @@ const innerPropTypes = {
   currentStreak: PropTypes.number,
   longestStreak: PropTypes.number,
   pages: PropTypes.array,
-  points: PropTypes.number
+  points: PropTypes.number,
+  t: PropTypes.func.isRequired
 };
 
 class HeatMapInner extends Component {
@@ -57,7 +59,7 @@ class HeatMapInner extends Component {
   }
 
   render() {
-    const { calendarData, currentStreak, longestStreak, pages } = this.props;
+    const { calendarData, currentStreak, longestStreak, pages, t } = this.props;
     const { startOfCalendar, endOfCalendar } = pages[this.state.pageIndex];
     const title = `${startOfCalendar.toLocaleDateString('en-US', {
       year: 'numeric',
@@ -136,10 +138,10 @@ class HeatMapInner extends Component {
         <Row>
           <div className='streak-container'>
             <span className='streak' data-testid='longest-streak'>
-              <b>Longest Streak:</b> {longestStreak || 0}
+              <b>{t('profile.longest-streak')}</b> {longestStreak || 0}
             </span>
             <span className='streak' data-testid='current-streak'>
-              <b>Current Streak:</b> {currentStreak || 0}
+              <b>{t('profile.current-streak')}</b> {currentStreak || 0}
             </span>
           </div>
         </Row>
@@ -152,6 +154,7 @@ class HeatMapInner extends Component {
 HeatMapInner.propTypes = innerPropTypes;
 
 const HeatMap = props => {
+  const { t } = useTranslation();
   const { calendar } = props;
 
   /**
@@ -244,6 +247,7 @@ const HeatMap = props => {
       currentStreak={currentStreak}
       longestStreak={longestStreak}
       pages={pages}
+      t={t}
     />
   );
 };
