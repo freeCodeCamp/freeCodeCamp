@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
+import { SkeletonSprite, AvatarRenderer } from '../../helpers';
 import PropTypes from 'prop-types';
 import Login from '../components/Login';
 import { forumLocation } from '../../../../../config/env.json';
+import { Link, Trans } from 'gatsby-plugin-react-i18next';
 
 const propTypes = {
   displayMenu: PropTypes.bool,
@@ -30,7 +31,7 @@ export function AuthOrProfile({ user, pending }) {
       </li>
       <li>
         <Link className='nav-link' to='/learn'>
-          Curriculum
+          <Trans>Curriculum</Trans>
         </Link>
       </li>
     </>

@@ -11,6 +11,7 @@ import {
   GoogleLogo
 } from '../../../assets/images/components';
 import CampersImage from './CampersImage';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 const propTypes = {
   page: PropTypes.string
@@ -30,13 +31,19 @@ function landingTop({ page }) {
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <h1 className='big-heading' data-test-label={`${page}-header`}>
-            Learn to code at home.
+            <Trans>Learn to code at home</Trans>.
           </h1>
-          <h1 className='big-heading '>Build projects.</h1>
-          <h1 className='big-heading'>Earn certifications.</h1>
+          <h1 className='big-heading '>
+            <Trans>Build projects.</Trans>
+          </h1>
+          <h1 className='big-heading'>
+            <Trans>Earn certifications.</Trans>
+          </h1>
           <h2>
-            Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten
-            jobs at tech companies including:
+            <Trans>
+              Since 2014, more than 40,000 freeCodeCamp.org graduates have
+              gotten jobs at tech companies including:
+            </Trans>
           </h2>
           <div className='logo-row'>
             <AppleLogo />

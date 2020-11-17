@@ -3,6 +3,7 @@ import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 import Testimonials from './components/Testimonials';
 import LandingTop from './components/LandingTop';
@@ -16,6 +17,7 @@ const propTypes = {
 };
 
 export const Landing = ({ page = 'landing' }) => {
+  const { t } = useTranslation();
   const data = useStaticQuery(graphql`
     query certifications {
       challenges: allChallengeNode(
@@ -31,7 +33,7 @@ export const Landing = ({ page = 'landing' }) => {
   return (
     <Fragment>
       <Helmet>
-        <title>Learn to code at home | freeCodeCamp.org</title>
+        <title>{t('Learn to code at home')} | freeCodeCamp.org</title>
       </Helmet>
       <main className='landing-page'>
         <Grid>

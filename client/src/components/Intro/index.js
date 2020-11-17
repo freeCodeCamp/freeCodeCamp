@@ -5,6 +5,7 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { randomQuote } from '../../utils/get-words';
 import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 import IntroDescription from './components/IntroDescription';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import './intro.css';
 import Login from '../Header/components/Login';
@@ -50,7 +51,7 @@ function Intro({
         </Row>
         <FullWidthRow>
           <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-            Update my account settings
+            <Trans>Update my account settings</Trans>
           </Link>
           {completedChallengeCount > 0 ? (
             <CurrentChallengeLink isLargeBtn={true}>
