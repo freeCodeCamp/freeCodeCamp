@@ -65,7 +65,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          record: true
           parallel: true
           build: npm run build
           # this should mirror the production build, but for now we're just using the dev
