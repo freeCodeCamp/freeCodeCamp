@@ -6,8 +6,15 @@ jobs:
     name: Test
     runs-on: ubuntu-18.04
     strategy:
+      # when one test fails, DO NOT cancel the other
+      # containers, because this will kill Cypress processes
+      # leaving the Dashboard hanging ...
+      # https://github.com/cypress-io/github-action/issues/48
+      fail-fast: false
       matrix:
         browsers: [chrome]
+        # machines to be used in test parallelization
+        machines: [1, 2, 3]
     services:
       mongodb:
         image: mongo:3.6.19
@@ -56,9 +63,10 @@ jobs:
         run: npm run seed
 
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          parallel: true
           build: npm run build
           # this should mirror the production build, but for now we're just using the dev
           # server and gatsby serve instead (the npm script serve:client needs updating!)
@@ -70,3 +78,6 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
