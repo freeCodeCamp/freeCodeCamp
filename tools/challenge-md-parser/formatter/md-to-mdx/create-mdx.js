@@ -1,6 +1,9 @@
 const { isEmpty, pick } = require('lodash');
 const yaml = require('js-yaml');
 const he = require('he');
+const prettier = require('prettier');
+
+const prettierOptions = prettier.resolveConfig.sync();
 
 const {
   getCodeToBackticksSync,
@@ -93,7 +96,13 @@ function createHints({ tests, title }) {
       ({ text, testString }) => `${hintToMd(text, title)}
 
 ${'```js'}
-${typeof testString === 'string' ? testString.trim() : ''}
+${
+  typeof testString === 'string'
+    ? prettier
+        .format(testString, { ...prettierOptions, parser: 'babel' })
+        .trim()
+    : ''
+}
 ${'```'}
 `
     )

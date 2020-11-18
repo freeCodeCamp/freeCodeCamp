@@ -27,6 +27,7 @@
     "unist-util-visit": "^2.0.3"
   },
   "dependencies": {
-    "he": "^1.2.0"
+    "he": "^1.2.0",
+    "prettier": "^2.1.2"
   }
 }
