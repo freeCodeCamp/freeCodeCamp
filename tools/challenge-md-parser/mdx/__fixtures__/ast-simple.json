@@ -364,22 +364,13 @@
       }
     },
     {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "image",
-          "title": null,
-          "url": "",
-          "alt": "html-key",
-          "position": {
-            "start": { "line": 64, "column": 1, "offset": 520 },
-            "end": { "line": 64, "column": 14, "offset": 533 }
-          }
-        }
-      ],
+      "type": "leafDirective",
+      "name": "id",
+      "attributes": { "id": "html-key" },
+      "children": [],
       "position": {
         "start": { "line": 64, "column": 1, "offset": 520 },
-        "end": { "line": 64, "column": 14, "offset": 533 }
+        "end": { "line": 64, "column": 16, "offset": 535 }
       }
     },
     {
@@ -388,8 +379,8 @@
       "meta": null,
       "value": "<html>\n  <body>\n  </body>\n</html>",
       "position": {
-        "start": { "line": 66, "column": 1, "offset": 535 },
-        "end": { "line": 71, "column": 4, "offset": 580 }
+        "start": { "line": 66, "column": 1, "offset": 537 },
+        "end": { "line": 71, "column": 4, "offset": 582 }
       }
     },
     {
@@ -398,8 +389,8 @@
       "meta": null,
       "value": "body {\n  background: white;\n}",
       "position": {
-        "start": { "line": 73, "column": 1, "offset": 582 },
-        "end": { "line": 77, "column": 4, "offset": 622 }
+        "start": { "line": 73, "column": 1, "offset": 584 },
+        "end": { "line": 77, "column": 4, "offset": 624 }
       }
     },
     {
@@ -408,13 +399,13 @@
       "meta": null,
       "value": "var x = 'y';\n``",
       "position": {
-        "start": { "line": 79, "column": 1, "offset": 624 },
-        "end": { "line": 82, "column": 1, "offset": 646 }
+        "start": { "line": 79, "column": 1, "offset": 626 },
+        "end": { "line": 82, "column": 1, "offset": 648 }
       }
     }
   ],
   "position": {
     "start": { "line": 1, "column": 1, "offset": 0 },
-    "end": { "line": 82, "column": 1, "offset": 646 }
+    "end": { "line": 82, "column": 1, "offset": 648 }
   }
 }

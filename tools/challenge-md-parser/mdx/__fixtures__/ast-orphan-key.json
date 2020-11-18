@@ -58,27 +58,18 @@
       }
     },
     {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "image",
-          "title": null,
-          "url": "",
-          "alt": "key-for-html",
-          "position": {
-            "start": { "line": 18, "column": 1, "offset": 123 },
-            "end": { "line": 18, "column": 18, "offset": 140 }
-          }
-        }
-      ],
+      "type": "leafDirective",
+      "name": "id",
+      "attributes": { "id": "key-for-html" },
+      "children": [],
       "position": {
         "start": { "line": 18, "column": 1, "offset": 123 },
-        "end": { "line": 18, "column": 18, "offset": 140 }
+        "end": { "line": 18, "column": 20, "offset": 142 }
       }
     }
   ],
   "position": {
     "start": { "line": 1, "column": 1, "offset": 0 },
-    "end": { "line": 19, "column": 1, "offset": 141 }
+    "end": { "line": 19, "column": 1, "offset": 143 }
   }
 }

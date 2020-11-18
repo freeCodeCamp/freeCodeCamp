@@ -48,22 +48,13 @@
       }
     },
     {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "image",
-          "title": null,
-          "url": "",
-          "alt": "key-for-css",
-          "position": {
-            "start": { "line": 12, "column": 1, "offset": 81 },
-            "end": { "line": 12, "column": 17, "offset": 97 }
-          }
-        }
-      ],
+      "type": "leafDirective",
+      "name": "id",
+      "attributes": { "id": "key-for-css" },
+      "children": [],
       "position": {
         "start": { "line": 12, "column": 1, "offset": 81 },
-        "end": { "line": 12, "column": 17, "offset": 97 }
+        "end": { "line": 12, "column": 19, "offset": 99 }
       }
     },
     {
@@ -72,27 +63,18 @@
       "meta": null,
       "value": "body {\n  background: green;\n}",
       "position": {
-        "start": { "line": 14, "column": 1, "offset": 99 },
-        "end": { "line": 18, "column": 4, "offset": 139 }
+        "start": { "line": 14, "column": 1, "offset": 101 },
+        "end": { "line": 18, "column": 4, "offset": 141 }
       }
     },
     {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "image",
-          "title": null,
-          "url": "",
-          "alt": "key-for-js",
-          "position": {
-            "start": { "line": 20, "column": 1, "offset": 141 },
-            "end": { "line": 20, "column": 16, "offset": 156 }
-          }
-        }
-      ],
+      "type": "leafDirective",
+      "name": "id",
+      "attributes": { "id": "key-for-js" },
+      "children": [],
       "position": {
-        "start": { "line": 20, "column": 1, "offset": 141 },
-        "end": { "line": 20, "column": 16, "offset": 156 }
+        "start": { "line": 20, "column": 1, "offset": 143 },
+        "end": { "line": 20, "column": 18, "offset": 160 }
       }
     },
     {
@@ -101,80 +83,13 @@
       "meta": null,
       "value": "var x = 'y';",
       "position": {
-        "start": { "line": 22, "column": 1, "offset": 158 },
-        "end": { "line": 24, "column": 4, "offset": 180 }
-      }
-    },
-    {
-      "type": "heading",
-      "depth": 1,
-      "children": [
-        {
-          "type": "text",
-          "value": "--solutions--",
-          "position": {
-            "start": { "line": 27, "column": 3, "offset": 185 },
-            "end": { "line": 27, "column": 16, "offset": 198 }
-          }
-        }
-      ],
-      "position": {
-        "start": { "line": 27, "column": 1, "offset": 183 },
-        "end": { "line": 27, "column": 16, "offset": 198 }
-      }
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "image",
-          "title": null,
-          "url": "",
-          "alt": "html-key",
-          "position": {
-            "start": { "line": 29, "column": 1, "offset": 200 },
-            "end": { "line": 29, "column": 14, "offset": 213 }
-          }
-        }
-      ],
-      "position": {
-        "start": { "line": 29, "column": 1, "offset": 200 },
-        "end": { "line": 29, "column": 14, "offset": 213 }
-      }
-    },
-    {
-      "type": "code",
-      "lang": "html",
-      "meta": null,
-      "value": "<html>\n  <body>\n  </body>\n</html>",
-      "position": {
-        "start": { "line": 31, "column": 1, "offset": 215 },
-        "end": { "line": 36, "column": 4, "offset": 260 }
-      }
-    },
-    {
-      "type": "code",
-      "lang": "css",
-      "meta": null,
-      "value": "body {\n  background: white;\n}",
-      "position": {
-        "start": { "line": 38, "column": 1, "offset": 262 },
-        "end": { "line": 42, "column": 4, "offset": 302 }
-      }
-    },
-    {
-      "type": "code",
-      "lang": "js",
-      "meta": null,
-      "value": "var x = 'y';",
-      "position": {
-        "start": { "line": 44, "column": 1, "offset": 304 },
-        "end": { "line": 46, "column": 4, "offset": 326 }
+        "start": { "line": 22, "column": 1, "offset": 162 },
+        "end": { "line": 24, "column": 4, "offset": 184 }
       }
     }
   ],
   "position": {
     "start": { "line": 1, "column": 1, "offset": 0 },
-    "end": { "line": 47, "column": 1, "offset": 327 }
+    "end": { "line": 25, "column": 1, "offset": 185 }
   }
 }
