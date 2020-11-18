@@ -24,11 +24,16 @@ describe('get-id', () => {
     expect(actual).toBeNull();
   });
 
+  // TODO: bin this (and the json!) after development (it'll be a silly test
+  // once we're using directives)
   it('should ignore image nodes', () => {
     expect.assertions(1);
     const actual = getId(imageNode);
     expect(actual).toBeNull();
   });
+
+  // TODO: bin this (and the json!) after development (it'll be a silly test
+  // once we're using directives)
 
   // TODO: do we want to fail silently? Might it be better to output warnings
   // or perhaps even stop the parser? Probably warnings if anything.

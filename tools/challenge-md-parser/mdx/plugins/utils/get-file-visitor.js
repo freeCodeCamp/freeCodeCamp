@@ -67,17 +67,17 @@ function idToData(node, index, parent, seeds) {
   // an id, there must be a syntax error.
   if (!id) {
     throw Error(
-      'Unexpected syntax in seed/solution. Must be ![id]() or a code ' +
+      'Unexpected syntax in seed/solution. Must be ::id{#id} or a code ' +
         'block (```) \n'
     );
   }
   const codeNode = parent.children[index + 1];
   if (codeNode && is(codeNode, 'code')) {
     const key = `index${codeNode.lang}`;
-    if (seeds[key]) throw Error('![id]()s must come before code blocks');
+    if (seeds[key]) throw Error('::id{#id}s must come before code blocks');
     seeds[key] = defaultFile(codeNode.lang, id);
   } else {
-    throw Error('![id]()s must come before code blocks');
+    throw Error('::id{#id}s must come before code blocks');
   }
 }
 
