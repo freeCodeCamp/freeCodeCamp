@@ -27,30 +27,30 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 Write the following tests in `tests/1_unit-tests.js`:
 
-- Translate "Mangoes are my favorite fruit." to British English
-- Translate "I ate yogurt for breakfast." to British English
-- Translate "We had a party at my friend's condo." to British English
-- Translate "Can you toss this in the trashcan for me?" to British English
-- Translate "The parking lot was full." to British English
-- Translate "Like a high tech Rube Goldberg machine." to British English
-- Translate "To play hooky means to skip class or work." to British English
-- Translate "No Mr. Bond, I expect you to die." to British English
-- Translate "Dr. Grosh will see you now." to British English
-- Translate "Lunch is at 12:15 today." to British English
-- Translate "We watched the footie match for a while." to American English
-- Translate "Paracetamol takes up to an hour to work." to American English
-- Translate "First, caramelise the onions." to American English
-- Translate "I spent the bank holiday at the funfair." to American English
-- Translate "I had a bicky then went to the chippy." to American English
-- Translate "I've just got bits and bobs in my bum bag." to American English
-- Translate "The car boot sale at Boxted Airfield was called off." to American English
-- Translate "Have you met Mrs Kalyani?" to American English
-- Translate "Prof Joyner of King's College, London." to American English
-- Translate "Tea time is usually around 4 or 4.30." to American English
-- Highlight translation in "Mangoes are my favorite fruit."
-- Highlight translation in "I ate yogurt for breakfast."
-- Highlight translation in "We watched the footie match for a while."
-- Highlight translation in "Paracetamol takes up to an hour to work."
+- Translate <code>Mangoes are my favorite fruit.</code> to British English
+- Translate <code>I ate yogurt for breakfast.</code> to British English
+- Translate <code>We had a party at my friend's condo.</code> to British English
+- Translate <code>Can you toss this in the trashcan for me?</code> to British English
+- Translate <code>The parking lot was full.</code> to British English
+- Translate <code>Like a high tech Rube Goldberg machine.</code> to British English
+- Translate <code>To play hooky means to skip class or work.</code> to British English
+- Translate <code>No Mr. Bond, I expect you to die.</code> to British English
+- Translate <code>Dr. Grosh will see you now.</code> to British English
+- Translate <code>Lunch is at 12:15 today.</code> to British English
+- Translate <code>We watched the footie match for a while.</code> to American English
+- Translate <code>Paracetamol takes up to an hour to work.</code> to American English
+- Translate <code>First, caramelise the onions.</code> to American English
+- Translate <code>I spent the bank holiday at the funfair.</code> to American English
+- Translate <code>I had a bicky then went to the chippy.</code> to American English
+- Translate <code>I've just got bits and bobs in my bum bag.</code> to American English
+- Translate <code>The car boot sale at Boxted Airfield was called off.</code> to American English
+- Translate <code>Have you met Mrs Kalyani?</code> to American English
+- Translate <code>Prof Joyner of King's College, London.</code> to American English
+- Translate <code>Tea time is usually around 4 or 4.30.</code> to American English
+- Highlight translation in <code>Mangoes are my favorite fruit.</code>
+- Highlight translation in <code>I ate yogurt for breakfast.</code>
+- Highlight translation in <code>We watched the footie match for a while.</code>
+- Highlight translation in <code>Paracetamol takes up to an hour to work.</code>
 
 Write the following tests in `tests/2_functional-tests.js`:
 
