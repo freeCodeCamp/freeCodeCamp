@@ -14,33 +14,13 @@ To learn how to write Cypress tests, or 'specs', please see Cypress' official [d
 
 ### How to run tests
 
-**1. Change directory to the freeCodeCamp directory:**
+**1. Ensure that MongoDB and client applications are running**
 
-    ```console
-    cd yourProjectDirectory
-    ```
+  - [Start MongoDB and seed the database](/how-to-setup-freecodecamp-locally?id=step-3-start-mongodb-and-seed-the-database)
 
-**2. Start the MongoDB server in a separate terminal**
-
-  - On macOS & Ubuntu:
-
-    ```console
-    mongod
-    ```
-
-  - On Windows, you must specify the full path to the `mongod` binary
-
-    ```console
-    "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-    ```
-
-**3. Start up the API server and the client applications.**
-
-    ```console
-    npm run develop
-    ```
-
-**4. Run the cypress tests**
+  - [Start the freeCodeCamp client application and API server](/how-to-setup-freecodecamp-locally?id=step-4-start-the-freecodecamp-client-application-and-api-server)
+ 
+**2. Run the cypress tests**
 
   To run tests against production builds, replace `dev` with `prd` bellow.
 
