@@ -67,7 +67,7 @@ Some examples of good PRs titles would be:
 
    - This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
 
-   - These changes should be accompanied by corresponding [Cypress integration tests](/how-to-add-cypress-tests).
+   - If your PR affects the behaviour of a page it should be accompanied by corresponding [Cypress integration tests](/how-to-add-cypress-tests).
 
 ## Feedback on pull requests
 
