@@ -65,6 +65,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          tag: para
           record: true
           parallel: true
           build: npm run build
