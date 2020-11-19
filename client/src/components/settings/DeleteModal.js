@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import { ButtonSpacer } from '../helpers';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
@@ -29,16 +30,13 @@ function DeleteModal(props) {
       </Modal.Header>
       <Modal.Body>
         <p>
-          This will really delete all your data, including all your progress and
-          account information.
+          <Trans>settings.danger.delete-p1</Trans>
         </p>
         <p>
-          We won't be able to recover any of it for you later, even if you
-          change your mind.
+          <Trans>settings.danger.delete-p2</Trans>
         </p>
         <p>
-          If there's something we could do better, send us an email instead and
-          we'll do our best: &thinsp;
+          <Trans>settings.danger.delete-p3</Trans> &thinsp;
           <a href='mailto:team@freecodecamp.org' title='team@freecodecamp.org'>
             team@freecodecamp.org
           </a>
@@ -52,7 +50,7 @@ function DeleteModal(props) {
           onClick={props.onHide}
           type='button'
         >
-          Nevermind, I don't want to delete my account
+          <Trans>settings.danger.nevermind</Trans>
         </Button>
         <ButtonSpacer />
         <Button
@@ -63,11 +61,13 @@ function DeleteModal(props) {
           onClick={props.delete}
           type='button'
         >
-          I am 100% certain. Delete everything related to this account
+          <Trans>settings.danger.certain</Trans>
         </Button>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>
+          <Trans>buttons.close</Trans>
+        </Button>
       </Modal.Footer>
     </Modal>
   );

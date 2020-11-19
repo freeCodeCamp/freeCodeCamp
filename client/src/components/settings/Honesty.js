@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import { FullWidthRow } from '../helpers';
 import SectionHeader from './SectionHeader';
@@ -21,7 +22,9 @@ const Honesty = ({ isHonest, updateIsHonest }) => {
       className='disabled-agreed'
       disabled={true}
     >
-      <p>You have accepted our Academic Honesty Policy.</p>
+      <p>
+        <Trans>buttons.accepted-honesty</Trans>
+      </p>
     </Button>
   ) : (
     <Button
@@ -29,12 +32,14 @@ const Honesty = ({ isHonest, updateIsHonest }) => {
       bsStyle='primary'
       onClick={() => updateIsHonest({ isHonest: true })}
     >
-      Agree
+      <Trans>buttons.agree</Trans>
     </Button>
   );
   return (
     <section className='honesty-policy'>
-      <SectionHeader>Academic Honesty Policy</SectionHeader>
+      <SectionHeader>
+        <Trans>settings.headings.honesty</Trans>
+      </SectionHeader>
       <FullWidthRow>
         <Panel className='honesty-panel'>
           <HonestyPolicy />

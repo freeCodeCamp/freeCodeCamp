@@ -12,6 +12,7 @@ import {
   Button
 } from '@freecodecamp/react-bootstrap';
 import isEmail from 'validator/lib/isEmail';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import { updateMyEmail } from '../../redux/settings';
 import { maybeEmailRE } from '../../utils';
@@ -38,7 +39,7 @@ export function UpdateEmailButton() {
   return (
     <Link style={{ textDecoration: 'none' }} to='/update-email'>
       <Button block={true} bsSize='lg' bsStyle='primary'>
-        Edit
+        <Trans>buttons.edit</Trans>
       </Button>
     </Link>
   );
@@ -148,12 +149,14 @@ class EmailSettings extends Component {
       state: confirmEmailValidation,
       message: confirmEmailValidationMessage
     } = this.getValidationForConfirmEmail();
+
+    const { t } = useTranslation();
     if (!currentEmail) {
       return (
         <div>
           <FullWidthRow>
             <p className='large-p text-center'>
-              You do not have an email associated with this account.
+              <Trans>settings.email.missing</Trans>
             </p>
           </FullWidthRow>
           <FullWidthRow>
@@ -164,13 +167,16 @@ class EmailSettings extends Component {
     }
     return (
       <div className='email-settings'>
-        <SectionHeader>Email Settings</SectionHeader>
+        <SectionHeader>
+          <Trans>settings.email.heading</Trans>
+        </SectionHeader>
         {isEmailVerified ? null : (
           <FullWidthRow>
             <HelpBlock>
               <Alert bsStyle='info' className='text-center'>
-                Your email has not been verified.
+                <Trans>settings.email.not-verified</Trans>
                 <br />
+                <Trans>settings.email.check</Trans>
                 Please check your email, or{' '}
                 <Link to='/update-email'>
                   request a new verification email here
@@ -183,14 +189,18 @@ class EmailSettings extends Component {
         <FullWidthRow>
           <form id='form-update-email' onSubmit={this.handleSubmit}>
             <FormGroup controlId='current-email'>
-              <ControlLabel>Current Email</ControlLabel>
+              <ControlLabel>
+                <Trans>settings.email.current</Trans>
+              </ControlLabel>
               <FormControl.Static>{currentEmail}</FormControl.Static>
             </FormGroup>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
             >
-              <ControlLabel>New Email</ControlLabel>
+              <ControlLabel>
+                <Trans>settings.email.new</Trans>
+              </ControlLabel>
               <FormControl
                 onChange={this.createHandleEmailFormChange('newEmail')}
                 type='email'
@@ -204,7 +214,9 @@ class EmailSettings extends Component {
               controlId='confirm-email'
               validationState={confirmEmailValidation}
             >
-              <ControlLabel>Confirm New Email</ControlLabel>
+              <ControlLabel>
+                <Trans>settings.email.confirm</Trans>
+              </ControlLabel>
               <FormControl
                 onChange={this.createHandleEmailFormChange('confirmNewEmail')}
                 type='email'
@@ -227,11 +239,11 @@ class EmailSettings extends Component {
         <FullWidthRow>
           <form id='form-quincy-email' onSubmit={this.handleSubmit}>
             <ToggleSetting
-              action="Send me Quincy's weekly email"
+              action={t('settings.email.weekly')}
               flag={sendQuincyEmail}
               flagName='sendQuincyEmail'
-              offLabel='No thanks'
-              onLabel='Yes please'
+              offLabel={t('settings.email.no')}
+              onLabel={t('settings.email.yes')}
               toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
             />
           </form>

@@ -7,6 +7,7 @@ import {
   AvatarRenderer
 } from '../../helpers';
 import PropTypes from 'prop-types';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import Login from '../components/Login';
 
@@ -31,18 +32,22 @@ export function AuthOrProfile({ user, pathName, pending }) {
       </div>
     );
   } else if (pathName === '/' || !isUserSignedIn) {
-    return <Login data-test-label='landing-small-cta'>Sign In</Login>;
+    return (
+      <Login data-test-label='landing-small-cta'>
+        <Trans>buttons.sign-in</Trans>
+      </Login>
+    );
   } else {
     return (
       <>
         <li>
           <Link className='nav-link' to='/learn'>
-            Curriculum
+            <Trans>buttons.curriculum</Trans>
           </Link>
         </li>
         <li>
           <Link className='nav-link' to={`/${user.username}`}>
-            Profile
+            <Trans>buttons.profile</Trans>
           </Link>
           <Link
             className={`avatar-nav-link ${badgeColorClass}`}

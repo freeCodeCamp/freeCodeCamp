@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Trans } from 'gatsby-plugin-react-i18next';
 import Link from '../helpers/Link';
 
 import './footer.css';
@@ -23,30 +23,22 @@ function Footer() {
         <div className='footer-top'>
           <div className='footer-desc-col'>
             <p>
-              freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit
-              organization (United States Federal Tax Identification Number:
-              82-0779546)
+              <Trans>footer.tax-exempt-status</Trans>
             </p>
             <p>
-              Our mission: to help people learn to code for free. We accomplish
-              this by creating thousands of videos, articles, and interactive
-              coding lessons - all freely available to the public. We also have
-              thousands of freeCodeCamp study groups around the world.
+              <Trans>footer.mission-statement</Trans>
             </p>
             <p>
-              Donations to freeCodeCamp go toward our education initiatives, and
-              help pay for servers, services, and staff.
+              <Trans>footer.donation-initiatives</Trans>
             </p>
             <p className='footer-donation'>
-              You can&nbsp;
-              <Link className='inline' to='/donate'>
-                make a tax-deductible donation here
-              </Link>
-              .
+              <Trans>footer.donate-link</Trans>
             </p>
           </div>
           <div className='trending-guides'>
-            <div className='col-header'>Trending Guides</div>
+            <div className='col-header'>
+              <Trans>footer.trending-guides</Trans>
+            </div>
             <div className='trending-guides-row'>
               <div className='footer-col footer-col-1'>
                 <Link
@@ -303,73 +295,75 @@ function Footer() {
           </div>
         </div>
         <div className='footer-buttom'>
-          <div className='col-header'>Our Nonprofit</div>
+          <div className='col-header'>
+            <Trans>footer.our-nonprofit</Trans>
+          </div>
           <div className='footer-divder' />
           <div className='our-nonprofit'>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/about/'}
             >
-              About
+              <Trans>footer.links.about</Trans>
             </Link>
             <Link
               external={false}
               sameTab={false}
               to={'https://www.linkedin.com/school/free-code-camp/people/'}
             >
-              Alumni Network
+              <Trans>footer.links.alumni</Trans>
             </Link>
             <Link external={false} to={'https://github.com/freeCodeCamp/'}>
-              Open Source
+              <Trans>footer.links.open-source</Trans>
             </Link>
             <Link
               external={false}
               sameTab={false}
               to={'https://www.freecodecamp.org/shop/'}
             >
-              Shop
+              <Trans>footer.links.shop</Trans>
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/support/'}
             >
-              Support
+              <Trans>footer.links.support</Trans>
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/sponsors/'}
             >
-              Sponsors
+              <Trans>footer.links.sponsors</Trans>
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/academic-honesty-policy/'}
             >
-              Academic Honesty
+              <Trans>footer.links.honesty</Trans>
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/code-of-conduct/'}
             >
-              Code of Conduct
+              <Trans>footer.links.coc</Trans>
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/privacy-policy/'}
             >
-              Privacy Policy
+              <Trans>footer.links.privacy</Trans>
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/terms-of-service/'}
             >
-              Terms of Service
+              <Trans>footer.links.tos</Trans>
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/copyright-policy/'}
             >
-              Copyright Policy
+              <Trans>footer.links.copyright</Trans>
             </Link>
           </div>
         </div>

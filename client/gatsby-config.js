@@ -32,8 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
-        languages: ['en', 'es'],
-        defaultLanguage: 'en',
+        languages: ['english', 'espanol'],
+        defaultLanguage: 'english',
         path: `${__dirname}/src/locales`,
         siteUrl: config.homeLocation,
         i18nextOptions: {
@@ -41,15 +41,15 @@ module.exports = {
           lowerCaseLng: true,
           saveMissing: false,
           interpolation: {
-            escapeValue: false
+            escapeValue: '.'
           },
-          keySeparator: false,
+          keySeparator: '.',
           nsSeparator: false
         },
         pages: [
           {
             matchPath: '/ignored-page',
-            languages: ['en']
+            languages: ['english', 'espanol']
           }
         ]
       }

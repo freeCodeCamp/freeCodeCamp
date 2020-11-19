@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "title": "Aprenda a codificar en casa"
+  },
+  "buttons": {
+    "view-curriculum": "Ver el plan de estudios",
+		"close": "Cerrar",
+		"edit": "Editar",
+		"show-code": "Mostrar código",
+    "show-solution": "Mostrar solución",
+    "frontend": "Interfaz",
+    "backend": "Spanish Back End",
+    "show-cert": "Mostrar certificación",
+    "claim-cert": "Certificación de reclamo",
+		"accepted-honesty": "Ha aceptado nuestra Política de honestidad académica.",
+		"agree": "De acuerdo",
+		"save-portfolio": "Guardar este artículo de cartera",
+		"remove-portfolio": "Eliminar este artículo de cartera",
+		"add-portfolio": "Agregar un nuevo artículo de cartera",
+		"download-data": "Descarga tus datos",
+		"public": "Pública",
+		"private": "Privada",
+		"off": "Apagada",
+		"on": "En",
+		"sign-in": "Registrarse",
+		"curriculum": "Plan de estudios",
+		"profile": "Perfil"
+
+  },
+  "landing": {
+    "big-heading-1": "Aprenda a codificar en casa.",
+    "big-heading-2": "Construye proyectos.",
+    "big-heading-3": "Obtén certificaciones.",
+    "h2-heading": "Desde 2014, más de 40.000 graduados de freeCodeCamp.org han conseguido trabajos en empresas de tecnología, entre las que se incluyen:",
+    "logged-in-cta-btn": "Empiece (es gratis)",
+    "logged-out-cta-btn": "Inicia sesión para guardar tu progreso (es gratis)",
+    "hero-img-description" : "Estudiantes de freeCodeCamp en un grupo de estudio local en Corea del Sur.",
+    "as-seen-in": "Como se vio en:",
+    "testimonials": {
+      "heading": "Esto es lo que dicen nuestros antiguos alumnos sobre freeCodeCamp:",
+      "shawn": {
+        "location": "<strong>Shawn Wang</strong> en Singapur",
+        "occupation": "Ingeniero de software en <strong>Amazon</strong>",
+        "testimony": "Da miedo cambiar de carrera. Solo gané la confianza de que podía codificar trabajando con los cientos de horas de lecciones gratuitas en freeCodeCamp. En un año tenía un trabajo de seis cifras como ingeniero de software. <strong>freeCodeCamp cambió mi vida.</strong>"
+      },
+      "sarah": {
+        "location": "<strong>Sarah Chima</strong> en Nigeria",
+        "occupation": "Ingeniera de software en <strong>ChatDesk</strong>",
+        "testimony": "<strong>freeCodeCamp fue la puerta de entrada a mi carrera</strong> como desarrollador de software. El plan de estudios bien estructurado llevó mi conocimiento de codificación de un nivel principiante total a un nivel muy seguro. Era todo lo que necesitaba para conseguir mi primer trabajo de desarrollador en una empresa increíble."
+      },
+      "emma": {
+        "location": "<strong>Emma Bostian</strong> en Suecia",
+        "occupation": "Ingeniera de software en <strong>Spotify</strong>",
+        "testimony": "Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong>freeCodeCamp me dio las habilidades</strong> y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify."
+      }
+    },
+    "certification-heading": "Obtenga certificaciones verificadas gratuitas en:"
+  },
+	"settings": {
+    "labels": {
+      "username": "Nombre de usuario",
+      "name": "Nombre",
+      "location": "Ubicación",
+      "picture": "Imagen",
+      "about": "Acerca de",
+			"personal": "Sitio web personal",
+			"title": "Título",
+			"url": "URL",
+			"image": "Imagen",
+			"description": "Descripción",
+      "project-name": "Nombre del proyecto",
+      "solution": "Solución",
+      "solution-for": "Solución para",
+			"my-profile": "Mi perfil",
+			"my-name": "Mi nombre",
+			"my-location": "Mi ubicacion",
+			"my-about": "Mi acerca de",
+			"my-points": "Mis puntos",
+			"my-heatmap": "Mi mapa de calor",
+			"my-certs": "Mis certificaciones",
+			"my-portfolio": "Mi portafolio",
+			"my-timeline": "Mi cronología",
+			"my-donations": "Mis donaciones",
+			"night-mode": "Modo nocturno"
+    },
+		"headings": {
+      "certs": "Certificaciones",
+      "legacy-certs": "Certificaciones heredadas",
+			"honesty": "Política de honestidad académica",
+			"internet": "Tu presencia en Internet",
+			"portfolio": "Configuración de la cartera",
+			"privacy": "La configuración de privacidad"
+		},
+		"text": {
+			"share-projects": "Comparta sus proyectos, artículos o solicitudes de extracción aceptadas que no sean de freeCodeCamp.",
+      "claim-legacy": "Una vez que haya obtenido las siguientes certificaciones de FreeCodeCamp, podrá reclamar las",
+      "privacy": "La configuración de esta sección le permite controlar lo que se muestra en su cartera pública de freeCodeCamp.",
+			"data": "Para ver qué datos tenemos en su cuenta, haga clic en el botón 'Descarga tus datos' a continuación",
+			"disabled": "Sus certificaciones se deshabilitarán si se configuran como privadas.",
+			"username-change": "Tenga en cuenta que cambiar su nombre de usuario también cambiará la URL de su perfil y sus certificaciones."
+		},
+		"danger": {
+			"heading": "Zona peligrosa",
+			"be-careful": "Por favor tenga cuidado. Los cambios en esta sección son permanentes.",
+			"reset": "Restablecer todo mi progreso",
+			"delete": "Borrar mi cuenta",
+			"delete-title": "Borrar mi cuenta",
+			"delete-p1": "Esto realmente eliminará todos sus datos, incluido todo su progreso e información de cuenta.",
+			"delete-p2": "No podremos recuperar nada más tarde, incluso si cambia de opinión.",
+			"delete-p3": "Si hay algo que podamos hacer mejor, envíanos un correo electrónico y haremos todo lo posible:",
+			"nevermind": "No importa, no quiero borrar mi cuenta",
+			"certain": "Estoy 100% seguro. Eliminar todo lo relacionado con esta cuenta",
+			"reset-heading": "Restablecer mi progreso",
+			"reset-p1": "Esto realmente eliminará todo su progreso, puntos, desafíos completados, nuestros registros de sus proyectos, cualquier certificación que tenga, todo.",
+			"reset-p2": "No podremos recuperar nada más tarde, incluso si cambia de opinión.",
+			"nevermind-2": "No importa, no quiero borrar todo mi progreso",
+			"reset-confirm": "Reinicia todo. Quiero empezar desde el principio"
+		},
+		"email": {
+			"missing": "No tiene un correo electrónico asociado con esta cuenta.",
+			"heading": "Ajustes del correo electrónico",
+			"not-verified": "Tu email no se ha verificado.",
+			"check": "",
+			"current": "Correo electrónico actual",
+			"new": "Nuevo correo electrónico",
+			"confirm": "confirme nuevo correo electrónico",
+			"weekly": "Envíame el correo electrónico semanal de Quincy",
+			"no": "No, gracias",
+			"yes": "sí por favor"
+		}
+	},
+  "footer": {
+    "tax-exempt-status": "freeCodeCamp es una organización sin fines de lucro 501 (c) (3) exenta de impuestos respaldada por donantes (Número de identificación fiscal federal de los Estados Unidos: 82-0779546)",
+    "mission-statement": "Nuestra misión: ayudar a las personas a aprender a codificar de forma gratuita. Logramos esto mediante la creación de miles de videos, artículos y lecciones de codificación interactivas, todos disponibles gratuitamente para el público. También tenemos miles de grupos de estudio de freeCodeCamp en todo el mundo.",
+    "donation-initiatives": "Las donaciones a freeCodeCamp se destinan a nuestras iniciativas educativas y ayudan a pagar los servidores, los servicios y el personal.",
+    "donate-link": "Puede <Link className='inline' to='/donate'>hacer una donación deducible de impuestos aquí</Link>.",
+    "trending-guides": "Guías de tendencias",
+    "our-nonprofit": "Nuestra sin fines de lucro",
+    "links": {
+      "about": "Acerca de",
+      "alumni": "Red de antiguos alumnos",
+      "open-source": "Fuente abierta",
+      "shop": "tienda",
+      "support": "Apoyo",
+      "sponsors": "Patrocinadoras",
+      "honesty": "Honestidad académica",
+      "coc": "Código de Conducta",
+      "privacy": "Política de privacidad",
+      "tos": "Términos de servicio",
+      "copyright": "Política de derechos de autor"
+    }
+  },
+  "four-oh-four": {
+    "page-not-found": "Página no encontrada",
+    "not-found": "No encontrada:",
+    "heres-a-quote": "No pudimos encontrar lo que buscaba, pero aquí hay una cita:"
+  },
+  "foot": {
+    "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)",
+  }
+}

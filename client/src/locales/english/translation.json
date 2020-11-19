@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "title": "Learn to code at home"
+  },
+  "buttons": {
+    "view-curriculum": "View the Curriculum",
+		"close": "Close",
+		"edit": "Edit",
+    "show-code": "Show Code",
+    "show-solution": "Show Solution",
+    "frontend": "Front End",
+    "backend": "Back End",
+    "show-cert": "Show Certification",
+    "claim-cert": "Claim Certification",
+		"accepted-honesty": "You have accepted our Academic Honesty Policy.",
+		"agree": "Agree",
+		"save-portfolio": "Save this portfolio item",
+		"remove-portfolio": "Remove this portfolio item",
+		"add-portfolio": "Add a new portfolio Item",
+		"download-data": "Download your data",
+		"public": "Public",
+		"private": "Private",
+		"off": "Off",
+		"on": "On",
+		"sign-in": "Sign in",
+		"curriculum": "Curriculum",
+		"profile": "Profile"
+  },
+  "landing": {
+    "big-heading-1": "Learn to code at home.",
+    "big-heading-2": "Build projects.",
+    "big-heading-3": "Earn certifications.",
+    "h2-heading": "Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
+    "logged-in-cta-btn": "Get started (it's free)",
+    "logged-out-cta-btn": "Sign in to save your progress (it's free)",
+    "hero-img-description" : "freeCodeCamp students at a local study group in South Korea.",
+    "as-seen-in": "As seen in:",
+    "testimonials": {
+      "heading": "Here is what our alumni say about freeCodeCamp:",
+      "shawn": {
+        "location": "<strong>Shawn Wang</strong> in Singapore",
+        "occupation": "Software Engineer at <strong>Amazon</strong>",
+        "testimony": "It's scary to change careers. I only gained confidence that I could code by working through the hundreds of hours of free lessons on freeCodeCamp. Within a year I had a six-figure job as a Software Engineer. <strong>freeCodeCamp changed my life.</strong>"
+      },
+      "sarah": {
+        "location": "<strong>Sarah Chima</strong> in Nigeria",
+        "occupation": "Software Engineer at <strong>ChatDesk</strong>",
+        "testimony": "<strong>freeCodeCamp was the gateway to my career</strong> as a software developer. The well-structured curriculum took my coding knowledge from a total beginner level to a very confident level. It was everything I needed to land my first dev job at an amazing company."
+      },
+      "emma": {
+        "location": "<strong>Emma Bostian</strong> in Sweden",
+        "occupation": "Software Engineer at <strong>Spotify</strong>",
+        "testimony": "I've always struggled with learning JavaScript. I've taken many courses but freeCodeCamp's course was the one which stuck. Studying JavaScript as well as data structures and algorithms on <strong>freeCodeCamp gave me the skills</strong> and confidence I needed to land my dream job as a software engineer at Spotify."
+      }
+    },
+    "certification-heading": "Earn free verified certifications in:"
+  },
+  "settings": {
+    "labels": {
+      "username": "Username",
+      "name": "Name",
+      "location": "Location",
+      "picture": "Picture",
+      "about": "About",
+			"personal": "Personal Website",
+			"title": "Title",
+			"url": "URL",
+			"image": "Image",
+			"description": "Description",
+      "project-name": "Project Name",
+      "solution": "Solution",
+      "solution-for": "Solution for",
+			"my-profile": "My profile",
+			"my-name": "My name",
+			"my-location": "My location",
+			"my-about": "My about",
+			"my-points": "My points",
+			"my-heatmap": "My heatmap",
+			"my-certs": "My certifications",
+			"my-portfolio": "My portfolio",
+			"my-timeline": "My timeline",
+			"my-donations": "My donations",
+			"night-mode": "Night Mode"
+    },
+		"headings": {
+      "certs": "Certifications",
+      "legacy-certs": "Legacy Certifications",
+			"honesty": "Academic Honesty Policy",
+			"internet": "Your Internet Presence",
+			"portfolio": "Portfolio Settings",
+			"privacy": "Privacy Settings"
+		},
+		"text": {
+			"share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
+      "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the",
+      "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio.",
+			"data": "To see what data we hold on your account, click the 'Download your data' button below",
+			"disabled": "Your certifications will be disabled, if set to private.",
+			"username-change": "Please note, changing your username will also change the URL to your profile and your certifications."
+		},
+		"danger": {
+			"heading": "Danger Zone",
+			"be-careful": "Please be careful. Changes in this section are permanent.",
+			"reset": "Reset all of my progress",
+			"delete": "Delete my account",
+			"delete-title": "Delete My Account",
+			"delete-p1": "This will really delete all your data, including all your progress and account information.",
+			"delete-p2": "We won't be able to recover any of it for you later, even if you change your mind.",
+			"delete-p3": "If there's something we could do better, send us an email instead and we'll do our best:",
+			"nevermind": "Nevermind, I don't want to delete my account",
+			"certain": "I am 100% certain. Delete everything related to this account",
+			"reset-heading": "Reset My Progress",
+			"reset-p1": "This will really delete all of your progress, points, completed challenges, our records of your projects, any certifications you have, everything.",
+			"reset-p2": "We won't be able to recover any of it for you later, even if you change your mind.",
+			"nevermind-2": "Nevermind, I don't want to delete all of my progress",
+			"reset-confirm": "Reset everything. I want to start from the beginning"
+		},
+		"email": {
+			"missing": "You do not have an email associated with this account.",
+			"heading": "Email Settings",
+			"not-verified": "Your email has not been verified.",
+			"check": "Please check your email, or <Link to='/update-email'>request a new verification email here</Link>.",
+			"current": "Current Email",
+			"new": "New Email",
+			"confirm": "Confirm New Email",
+			"weekly": "Send me Quincy's weekly email",
+			"no": "No thanks",
+			"yes": "Yes please"
+		}
+  },
+  "footer": {
+    "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)",
+    "mission-statement": "Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.",
+    "donation-initiatives": "Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.",
+    "donate-link": "You can <Link className='inline' to='/donate'> make a tax-deductible donation here</Link>.",
+    "trending-guides": "Trending Guides",
+    "our-nonprofit": "Our Nonprofit",
+    "links": {
+      "about": "About",
+      "alumni": "Alumni Network",
+      "open-source": "Open Source",
+      "shop": "Shop",
+      "support": "Support",
+      "sponsors": "Sponsors",
+      "honesty": "Academic Honesty",
+      "coc": "Code of Conduct",
+      "privacy": "Privacy Policy",
+      "tos": "Terms of Service",
+      "copyright": "Copyright Policy"
+    }
+  },
+  "four-oh-four": {
+    "page-not-found": "Page not found",
+    "not-found": "404 Not Found:",
+    "heres-a-quote": "We couldn't find what you were looking for, but here is a quote:"
+  },
+  "foot": {
+    "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)",
+  }
+}

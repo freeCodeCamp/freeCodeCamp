@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Media from 'react-responsive';
 import { Spacer, ImageLoader } from '../../helpers';
 import wideImg from '../../../assets/images/landing/wide-image.png';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 const propTypes = {
   page: PropTypes.string
@@ -24,19 +25,21 @@ const imageConfig = {
 };
 
 function CampersImage({ page }) {
+  const { t } = useTranslation();
   const { spacerSize, height, width } = imageConfig[page];
+
   return (
     <Media minWidth={LARGE_SCREEN_SIZE}>
       <Spacer size={spacerSize} />
       <ImageLoader
-        alt='freeCodeCamp students at a local study group in South Korea.'
+        alt={t('landing.hero-img-description')}
         className='landing-page-image'
         height={height}
         src={wideImg}
         width={width}
       />
       <p className='text-center caption'>
-        freeCodeCamp students at a local study group in South Korea.
+        <Trans>landing.hero-img-description</Trans>
       </p>
     </Media>
   );

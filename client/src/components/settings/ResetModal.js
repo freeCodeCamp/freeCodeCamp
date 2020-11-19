@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import { ButtonSpacer } from '../helpers';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
@@ -23,17 +24,16 @@ function ResetModal(props) {
       show={show}
     >
       <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>Reset My Progress</Modal.Title>
+        <Modal.Title id='modal-title'>
+          <Trans>settings.danger.reset-heading</Trans>
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <p>
-          This will really delete all of your progress, points, completed
-          challenges, our records of your projects, any certifications you have,
-          everything.
+          <Trans>settings.danger.reset-p1</Trans>
         </p>
         <p>
-          We won't be able to recover any of it for you later, even if you
-          change your mind.
+          <Trans>settings.danger.reset-p2</Trans>
         </p>
         <hr />
         <Button
@@ -44,7 +44,7 @@ function ResetModal(props) {
           onClick={props.onHide}
           type='button'
         >
-          Nevermind, I don't want to delete all of my progress
+          <Trans>settings.danger.nevermind-2</Trans>
         </Button>
         <ButtonSpacer />
         <Button
@@ -55,11 +55,13 @@ function ResetModal(props) {
           onClick={props.reset}
           type='button'
         >
-          Reset everything. I want to start from the beginning
+          <Trans>settings.danger.reset-confirm</Trans>
         </Button>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>
+          <Trans>buttons.close</Trans>
+        </Button>
       </Modal.Footer>
     </Modal>
   );

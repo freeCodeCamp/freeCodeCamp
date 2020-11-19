@@ -9,6 +9,7 @@ import {
   Alert,
   FormGroup
 } from '@freecodecamp/react-bootstrap';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import {
   validateUsername,
@@ -148,8 +149,7 @@ class UsernameSettings extends Component {
         <FullWidthRow>
           <Alert bsStyle='success'>Username is available.</Alert>
           <Alert bsStyle='info'>
-            Please note, changing your username will also change the URL to your
-            profile and your certifications.
+            <Trans>settings.text.username-change</Trans>
           </Alert>
         </FullWidthRow>
       );
@@ -172,7 +172,9 @@ class UsernameSettings extends Component {
           <FullWidthRow>
             <FormGroup>
               <ControlLabel htmlFor='username-settings'>
-                <strong>Username</strong>
+                <strong>
+                  <Trans>settings.labels.username</Trans>
+                </strong>
               </ControlLabel>
               <FormControl
                 name='username-settings'

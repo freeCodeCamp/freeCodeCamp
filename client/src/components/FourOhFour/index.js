@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Spacer } from '../../components/helpers';
 import { Link } from 'gatsby';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
 import { randomQuote } from '../../utils/get-words';
@@ -9,17 +10,20 @@ import { randomQuote } from '../../utils/get-words';
 import './404.css';
 
 const FourOhFour = () => {
+  const { t } = useTranslation();
   const quote = randomQuote();
   return (
     <div className='notfound-page-wrapper'>
-      <Helmet title='Page Not Found | freeCodeCamp' />
-      <img alt='404 Not Found' src={notFoundLogo} />
+      <Helmet title={t('four-oh-four.page-not-found') + '| freeCodeCamp'} />
+      <img alt={t('four-oh-four.not-found')} src={notFoundLogo} />
       <Spacer />
-      <h1>Page not found.</h1>
+      <h1>
+        <Trans>four-oh-four.page-not-found</Trans>.
+      </h1>
       <Spacer />
       <div>
         <p>
-          We couldn&#x27;t find what you were looking for, but here is a quote:
+          <Trans>four-oh-four.heres-a-quote</Trans>
         </p>
         <Spacer />
         <blockquote className='quote-wrapper'>
@@ -32,7 +36,7 @@ const FourOhFour = () => {
       </div>
       <Spacer size={2} />
       <Link className='btn btn-cta' to='/learn'>
-        View the Curriculum
+        <Trans>buttons.view-curriculum</Trans>
       </Link>
     </div>
   );

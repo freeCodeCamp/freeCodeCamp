@@ -10,6 +10,7 @@ import { FullWidthRow, Spacer } from '../helpers';
 import ThemeSettings from './Theme';
 import UsernameSettings from './Username';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 const propTypes = {
   about: PropTypes.string,
@@ -134,7 +135,9 @@ class AboutSettings extends Component {
           <form id='camper-identity' onSubmit={this.handleSubmit}>
             <FormGroup controlId='about-name'>
               <ControlLabel>
-                <strong>Name</strong>
+                <strong>
+                  <Trans>settings.labels.name</Trans>
+                </strong>
               </ControlLabel>
               <FormControl
                 onChange={this.handleNameChange}
@@ -144,7 +147,9 @@ class AboutSettings extends Component {
             </FormGroup>
             <FormGroup controlId='about-location'>
               <ControlLabel>
-                <strong>Location</strong>
+                <strong>
+                  <Trans>settings.labels.location</Trans>
+                </strong>
               </ControlLabel>
               <FormControl
                 onChange={this.handleLocationChange}
@@ -154,7 +159,9 @@ class AboutSettings extends Component {
             </FormGroup>
             <FormGroup controlId='about-picture'>
               <ControlLabel>
-                <strong>Picture</strong>
+                <strong>
+                  <Trans>settings.labels.picture</Trans>
+                </strong>
               </ControlLabel>
               <FormControl
                 onChange={this.handlePictureChange}
@@ -165,7 +172,9 @@ class AboutSettings extends Component {
             </FormGroup>
             <FormGroup controlId='about-about'>
               <ControlLabel>
-                <strong>About</strong>
+                <strong>
+                  <Trans>settings.labels.about</Trans>
+                </strong>
               </ControlLabel>
               <FormControl
                 componentClass='textarea'

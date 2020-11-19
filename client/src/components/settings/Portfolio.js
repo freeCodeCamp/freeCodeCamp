@@ -10,6 +10,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { findIndex, find, isEqual } from 'lodash';
 import isURL from 'validator/lib/isURL';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import { hasProtocolRE } from '../../utils';
 
@@ -213,7 +214,9 @@ class PortfolioSettings extends Component {
                 pristine || (!pristine && !title) ? null : titleState
               }
             >
-              <ControlLabel>Title</ControlLabel>
+              <ControlLabel>
+                <Trans>settings.labels.title</Trans>
+              </ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'title')}
                 required={true}
@@ -228,7 +231,9 @@ class PortfolioSettings extends Component {
                 pristine || (!pristine && !url) ? null : urlState
               }
             >
-              <ControlLabel>URL</ControlLabel>
+              <ControlLabel>
+                <Trans>settings.labels.url</Trans>
+              </ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'url')}
                 required={true}
@@ -241,7 +246,9 @@ class PortfolioSettings extends Component {
               controlId={`${id}-image`}
               validationState={pristine ? null : imageState}
             >
-              <ControlLabel>Image</ControlLabel>
+              <ControlLabel>
+                <Trans>settings.labels.image</Trans>
+              </ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'image')}
                 type='url'
@@ -253,7 +260,9 @@ class PortfolioSettings extends Component {
               controlId={`${id}-description`}
               validationState={pristine ? null : descriptionState}
             >
-              <ControlLabel>Description</ControlLabel>
+              <ControlLabel>
+                <Trans>settings.labels.description</Trans>
+              </ControlLabel>
               <FormControl
                 componentClass='textarea'
                 onChange={this.createOnChangeHandler(id, 'description')}
@@ -276,7 +285,7 @@ class PortfolioSettings extends Component {
                 })
               }
             >
-              Save this portfolio item
+              <Trans>buttons.save-portfolio</Trans>
             </BlockSaveButton>
             <ButtonSpacer />
             <Button
@@ -286,7 +295,7 @@ class PortfolioSettings extends Component {
               onClick={() => this.handleRemoveItem(id)}
               type='button'
             >
-              Remove this portfolio item
+              <Trans>buttons.remove-portfolio</Trans>
             </Button>
           </form>
           {index + 1 !== arr.length && (
@@ -305,12 +314,13 @@ class PortfolioSettings extends Component {
     const { portfolio = [] } = this.state;
     return (
       <section id='portfolio-settings'>
-        <SectionHeader>Portfolio Settings</SectionHeader>
+        <SectionHeader>
+          <Trans>settings.headings.portfolio</Trans>
+        </SectionHeader>
         <FullWidthRow>
           <div className='portfolio-settings-intro'>
             <p className='p-intro'>
-              Share your non-freeCodeCamp projects, articles or accepted pull
-              requests.
+              <Trans>settings.text.share-projects</Trans>
             </p>
           </div>
         </FullWidthRow>
@@ -323,7 +333,7 @@ class PortfolioSettings extends Component {
             onClick={this.handleAdd}
             type='button'
           >
-            Add a new portfolio Item
+            <Trans>buttons.add-portfolio</Trans>
           </Button>
         </FullWidthRow>
         <Spacer size={2} />

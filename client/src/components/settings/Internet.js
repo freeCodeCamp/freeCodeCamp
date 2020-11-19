@@ -9,6 +9,7 @@ import {
   ControlLabel
 } from '@freecodecamp/react-bootstrap';
 import isURL from 'validator/lib/isURL';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import { maybeUrlRE } from '../../utils';
 
@@ -180,7 +181,9 @@ class InternetSettings extends Component {
 
     return (
       <Fragment>
-        <SectionHeader>Your Internet Presence</SectionHeader>
+        <SectionHeader>
+          <Trans>settings.headings.internet</Trans>
+        </SectionHeader>
         <FullWidthRow>
           <form id='internet-presence' onSubmit={this.handleSubmit}>
             <FormGroup
@@ -229,7 +232,9 @@ class InternetSettings extends Component {
               controlId='internet-website'
               validationState={websiteValidation}
             >
-              <ControlLabel>Personal Website</ControlLabel>
+              <ControlLabel>
+                <Trans>settings.labels.personal</Trans>
+              </ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('website')}
                 placeholder='https://example.com'

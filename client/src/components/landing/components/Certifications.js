@@ -5,6 +5,7 @@ import { uniq } from 'lodash';
 import { Spacer, Link } from '../../helpers';
 import LinkButton from '../../../assets/icons/LinkButton';
 import BigCallToAction from './BigCallToAction';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 const propTypes = {
   nodes: PropTypes.array,
@@ -19,7 +20,9 @@ const Certifications = ({ nodes, page }) => {
   return (
     <Row className='certification-section'>
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        <h1 className='big-heading'>Earn free verified certifications in:</h1>
+        <h1 className='big-heading'>
+          <Trans>landing.certification-heading</Trans>
+        </h1>
         <ul data-test-label='certifications'>
           {superBlocks.map((superBlock, i) => (
             <li key={i}>

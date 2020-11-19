@@ -18,6 +18,7 @@ const propTypes = {
 
 export const Landing = ({ page = 'landing' }) => {
   const { t } = useTranslation();
+
   const data = useStaticQuery(graphql`
     query certifications {
       challenges: allChallengeNode(
@@ -33,7 +34,7 @@ export const Landing = ({ page = 'landing' }) => {
   return (
     <Fragment>
       <Helmet>
-        <title>{t('Learn to code at home')} | freeCodeCamp.org</title>
+        <title>{t('metadata.title')} | freeCodeCamp.org</title>
       </Helmet>
       <main className='landing-page'>
         <Grid>

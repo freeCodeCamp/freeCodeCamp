@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import { deleteAccount, resetProgress } from '../../redux/settings';
@@ -55,9 +56,13 @@ class DangerZone extends Component {
       <div className='danger-zone text-center'>
         <FullWidthRow>
           <Panel bsStyle='danger'>
-            <Panel.Heading>Danger Zone</Panel.Heading>
+            <Panel.Heading>
+              <Trans>settings.danger.heading</Trans>
+            </Panel.Heading>
             <Spacer />
-            <p>Please be careful. Changes in this section are permanent.</p>
+            <p>
+              <Trans>settings.danger.be-careful</Trans>
+            </p>
             <FullWidthRow>
               <Button
                 block={true}
@@ -67,7 +72,7 @@ class DangerZone extends Component {
                 onClick={() => this.toggleResetModal()}
                 type='button'
               >
-                Reset all of my progress
+                <Trans>settings.danger.reset</Trans>
               </Button>
               <ButtonSpacer />
               <Button
@@ -78,7 +83,7 @@ class DangerZone extends Component {
                 onClick={() => this.toggleDeleteModal()}
                 type='button'
               >
-                Delete my account
+                <Trans>settings.danger.delete</Trans>
               </Button>
               <Spacer />
             </FullWidthRow>

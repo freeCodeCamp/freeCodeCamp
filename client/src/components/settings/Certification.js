@@ -12,6 +12,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import {
   projectMap,
@@ -197,7 +198,7 @@ export class CertificationSettings extends Component {
           id={`btn-for-${projectId}`}
           onClick={onClickHandler}
         >
-          Show Code
+          <Trans>buttons.show-code</Trans>
         </Button>
       );
     }
@@ -217,7 +218,7 @@ export class CertificationSettings extends Component {
               rel='noopener noreferrer'
               target='_blank'
             >
-              Front End
+              <Trans>buttons.frontend</Trans>
             </MenuItem>
             <MenuItem
               bsStyle='primary'
@@ -225,7 +226,7 @@ export class CertificationSettings extends Component {
               rel='noopener noreferrer'
               target='_blank'
             >
-              Back End
+              <Trans>buttons.backend</Trans>
             </MenuItem>
           </DropdownButton>
         </div>
@@ -242,7 +243,7 @@ export class CertificationSettings extends Component {
           rel='noopener noreferrer'
           target='_blank'
         >
-          Show Solution
+          <Trans>buttons.show-solution</Trans>
         </Button>
       );
     }
@@ -254,7 +255,7 @@ export class CertificationSettings extends Component {
         id={`btn-for-${projectId}`}
         onClick={onClickHandler}
       >
-        Show Code
+        <Trans>buttons.show-code</Trans>
       </Button>
     );
   };
@@ -266,8 +267,12 @@ export class CertificationSettings extends Component {
       <Table>
         <thead>
           <tr>
-            <th>Project Name</th>
-            <th>Solution</th>
+            <th>
+              <Trans>settings.labels.project-name</Trans>
+            </th>
+            <th>
+              <Trans>settings.labels.solution</Trans>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -310,7 +315,11 @@ export class CertificationSettings extends Component {
               href={certLocation}
               onClick={createClickHandler(superBlock)}
             >
-              {isCert ? 'Show Certification' : 'Claim Certification'}
+              {isCert ? (
+                <Trans>buttons.show-cert</Trans>
+              ) : (
+                <Trans>buttons.claim-cert</Trans>
+              )}
             </Button>
           </td>
         </tr>
@@ -465,7 +474,7 @@ export class CertificationSettings extends Component {
               style={buttonStyle}
               target='_blank'
             >
-              Show Certification
+              <Trans>buttons.show-cert</Trans>
             </Button>
           </div>
         ) : null}
@@ -522,8 +531,8 @@ export class CertificationSettings extends Component {
         <h3 className='text-center'>Legacy Full Stack Certification</h3>
         <div>
           <p>
-            Once you've earned the following freeCodeCamp certifications, you'll
-            be able to claim the Legacy Full Stack Developer Certification:
+            <Trans>settings.text.claim-legacy</Trans> Legacy Full Stack
+            Certification:
           </p>
           <ul>
             <li>Responsive Web Design</li>
@@ -547,7 +556,11 @@ export class CertificationSettings extends Component {
               style={buttonStyle}
               target='_blank'
             >
-              {isFullStackCert ? 'Show Certification' : 'Claim Certification'}
+              {isFullStackCert ? (
+                <Trans>buttons.show-cert</Trans>
+              ) : (
+                <Trans>buttons.claim-cert</Trans>
+              )}
             </Button>
           ) : (
             <Button
@@ -559,7 +572,7 @@ export class CertificationSettings extends Component {
               style={buttonStyle}
               target='_blank'
             >
-              Claim Certification
+              <Trans>buttons.claim-cert</Trans>
             </Button>
           )}
         </div>
@@ -574,9 +587,13 @@ export class CertificationSettings extends Component {
     } = this.state;
     return (
       <section id='certification-settings'>
-        <SectionHeader>Certifications</SectionHeader>
+        <SectionHeader>
+          <Trans>settings.headings.certs</Trans>
+        </SectionHeader>
         {certifications.map(this.renderCertifications)}
-        <SectionHeader>Legacy Certifications</SectionHeader>
+        <SectionHeader>
+          <Trans>settings.headings.legacy-certs</Trans>
+        </SectionHeader>
         {this.renderLegacyFullStack()}
         {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
@@ -588,14 +605,16 @@ export class CertificationSettings extends Component {
           >
             <Modal.Header className='this-one?' closeButton={true}>
               <Modal.Title id='solution-viewer-modal-title'>
-                Solution for {projectTitle}
+                <Trans>settings.labels.solution-for</Trans> {projectTitle}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <SolutionViewer files={files} solution={solution} />
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.handleSolutionModalHide}>Close</Button>
+              <Button onClick={this.handleSolutionModalHide}>
+                <Trans>buttons.close</Trans>
+              </Button>
             </Modal.Footer>
           </Modal>
         ) : null}
