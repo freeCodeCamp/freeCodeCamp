@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import './offline-warning.css';
 
@@ -26,7 +27,7 @@ function OfflineWarning({ isOnline, isSignedIn }) {
 
   return showWarning ? (
     <div className='offline-warning alert-info'>
-      You appear to be offline, your progress may not be being saved.
+      <Trans>misc.offline</Trans>
     </div>
   ) : null;
 }

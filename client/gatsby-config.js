@@ -41,17 +41,11 @@ module.exports = {
           lowerCaseLng: true,
           saveMissing: false,
           interpolation: {
-            escapeValue: '.'
+            escapeValue: false
           },
           keySeparator: '.',
           nsSeparator: false
-        },
-        pages: [
-          {
-            matchPath: '/ignored-page',
-            languages: ['english', 'espanol']
-          }
-        ]
+        }
       }
     },
     {

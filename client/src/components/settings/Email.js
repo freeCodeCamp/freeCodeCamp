@@ -176,10 +176,9 @@ class EmailSettings extends Component {
               <Alert bsStyle='info' className='text-center'>
                 <Trans>settings.email.not-verified</Trans>
                 <br />
-                <Trans>settings.email.check</Trans>
-                Please check your email, or{' '}
+                <Trans>settings.email.check-text</Trans>{' '}
                 <Link to='/update-email'>
-                  request a new verification email here
+                  <Trans>settings.email.check-link</Trans>
                 </Link>
                 .
               </Alert>

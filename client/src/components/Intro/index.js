@@ -5,6 +5,7 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { randomQuote } from '../../utils/get-words';
 import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 import IntroDescription from './components/IntroDescription';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 import './intro.css';
 import Login from '../Header/components/Login';
@@ -27,6 +28,7 @@ function Intro({
   completedChallengeCount,
   slug
 }) {
+  const { t } = useTranslation();
   if (pending && !complete) {
     return (
       <>
@@ -43,18 +45,20 @@ function Intro({
           <Col sm={10} smOffset={1} xs={12}>
             <Spacer />
             <h1 className='text-center '>
-              {name ? `Welcome back, ${name}.` : `Welcome to freeCodeCamp.org`}
+              {name
+                ? `${t('learn.welcome-1')} ${name}.`
+                : `${t('learn.welcome-2')}`}
             </h1>
             <Spacer />
           </Col>
         </Row>
         <FullWidthRow>
           <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-            Update my account settings
+            <Trans>buttons.update-settings</Trans>
           </Link>
           {completedChallengeCount > 0 ? (
             <CurrentChallengeLink isLargeBtn={true}>
-              Go to current challenge
+              <Trans>buttons.current-challenge</Trans>
             </CurrentChallengeLink>
           ) : (
             ''
@@ -78,8 +82,11 @@ function Intro({
             <Col sm={10} smOffset={1} xs={12}>
               <Spacer />
               <h4>
-                If you are new to coding, we recommend you{' '}
-                <Link to={slug}>start at the beginning</Link>.
+                <Trans>buttons.start-at-beginning-text</Trans>
+                <Link to={slug}>
+                  <Trans>buttons.start-at-beginning-link</Trans>
+                </Link>
+                .
               </h4>
             </Col>
           ) : (
@@ -94,14 +101,16 @@ function Intro({
         <Row>
           <Col sm={8} smOffset={2} xs={12}>
             <Spacer />
-            <h1>Welcome to freeCodeCamp's curriculum.</h1>
+            <h1>
+              <Trans>learn.heading</Trans>
+            </h1>
             <Spacer size={1} />
           </Col>
           <IntroDescription />
           <Col sm={8} smOffset={2} xs={12}>
             <Spacer />
             <Login block={true}>
-              Sign in to save your progress (it's free)
+              <Trans>buttons.logged-out-cta-btn</Trans>
             </Login>
           </Col>
         </Row>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Spacer } from '../../helpers';
 import { Col } from '@freecodecamp/react-bootstrap';
 import { forumLocation } from '../../../../config/env.json';
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 import '../intro.css';
 
@@ -15,52 +16,54 @@ function IntroDescription() {
       smOffset={1}
       xs={12}
     >
-      <strong>Please slow down and read this.</strong>
+      <strong>
+        <Trans>learn.read-this.heading</Trans>
+      </strong>
       <Spacer />
-      <p>freeCodeCamp is a proven path to your first software developer job.</p>
       <p>
-        More than 40,000 people have gotten developer jobs after completing this
-        – including at big companies like Google and Microsoft.
+        <Trans>learn.read-this.p1</Trans>
       </p>
       <p>
-        If you are new to programming, we recommend you start at the beginning
-        and earn these certifications in order.
+        <Trans>learn.read-this.p2</Trans>
       </p>
       <p>
-        To earn each certification, build its 5 required projects and get all
-        their tests to pass.
+        <Trans>learn.read-this.p3</Trans>
       </p>
       <p>
-        You can add these certifications to your résumé or LinkedIn. But more
-        important than the certifications is the practice you get along the way.
-      </p>
-      <p>If you feel overwhelmed, that is normal. Programming is hard.</p>
-      <p>Practice is the key. Practice, practice, practice.</p>
-      <p>
-        And this curriculum will give you thousands of hours of hands-on
-        programming practice.
+        <Trans>learn.read-this.p4</Trans>
       </p>
       <p>
-        And if you want to learn more math and computer science theory, we also
-        have thousands of hours of video courses on{' '}
+        <Trans>learn.read-this.p5</Trans>
+      </p>
+      <p>
+        <Trans>learn.read-this.p6</Trans>
+      </p>
+      <p>
+        <Trans>learn.read-this.p7</Trans>
+      </p>
+      <p>
+        <Trans>learn.read-this.p8</Trans>
+      </p>
+      <p>
+        <Trans>learn.read-this.p9</Trans>{' '}
         <Link className='inline' to='https://youtube.com/freecodecamp'>
-          freeCodeCamp's YouTube channel
+          <Trans>learn.read-this.p9-link</Trans>
         </Link>
         .
       </p>
       <p>
-        If you want to get a developer job or freelance clients, programming
-        skills will be just part of the puzzle. You also need to build your
-        personal network and your reputation as a developer.
+        <Trans>learn.read-this.p10</Trans>
       </p>
       <p>
-        You can do this on Twitter and GitHub, and also on{' '}
+        <Trans>learn.read-this.p11</Trans>{' '}
         <Link className='inline' to={forumLocation}>
-          the freeCodeCamp forum
+          <Trans>learn.read-this.p11-link</Trans>
         </Link>
         .
       </p>
-      <p>Happy coding.</p>
+      <p>
+        <Trans>learn.read-this.p12</Trans>
+      </p>
     </Col>
   );
 }

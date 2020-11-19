@@ -12,6 +12,8 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
+import { Trans } from 'gatsby-plugin-react-i18next';
+
 import {
   amountsConfig,
   durationsConfig,
@@ -238,7 +240,9 @@ class DonateForm extends Component {
     const { donationAmount, donationDuration, processing } = this.state;
     return !processing ? (
       <div>
-        <h3>Select gift frequency:</h3>
+        <h3>
+          <Trans>donate.gift-frequency</Trans>
+        </h3>
         <Tabs
           activeKey={donationDuration}
           animation={false}
@@ -254,7 +258,9 @@ class DonateForm extends Component {
               title={this.durations[duration]}
             >
               <Spacer />
-              <h3>Select gift amount:</h3>
+              <h3>
+                <Trans>donate.gift-amount</Trans>
+              </h3>
               <div>
                 <ToggleButtonGroup
                   animation={`false`}
@@ -296,10 +302,12 @@ class DonateForm extends Component {
     return (
       <div>
         {isOneTime ? (
-          <b>Confirm your one-time donation of ${donationAmount / 100}:</b>
+          <b>
+            <Trans>donate.confirm-1</Trans> ${donationAmount / 100}:
+          </b>
         ) : (
           <b>
-            Confirm your donation of ${donationAmount / 100} /{' '}
+            <Trans>donate.confirm-2</Trans> ${donationAmount / 100} /{' '}
             {donationDuration}:
           </b>
         )}
@@ -311,7 +319,9 @@ class DonateForm extends Component {
             id='confirm-donation-btn'
             onClick={e => this.handleStripeCheckoutRedirect(e, 'credit card')}
           >
-            <b>Credit Card</b>
+            <b>
+              <Trans>donate.credit-card</Trans>
+            </b>
           </Button>
           <PaypalButton
             addDonation={addDonation}
@@ -348,7 +358,9 @@ class DonateForm extends Component {
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>{this.getDonationButtonLabel()} with PayPal:</b>
+          <b>
+            {this.getDonationButtonLabel()} <Trans>donate.paypal</Trans>
+          </b>
           <Spacer />
           <PaypalButton
             addDonation={addDonation}
@@ -360,7 +372,9 @@ class DonateForm extends Component {
         </Col>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>Or donate with a credit card:</b>
+          <b>
+            <Trans>donate.credit-card-2</Trans>
+          </b>
           <Spacer />
           <StripeProvider stripe={stripe}>
             <Elements>

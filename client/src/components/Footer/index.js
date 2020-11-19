@@ -32,7 +32,11 @@ function Footer() {
               <Trans>footer.donation-initiatives</Trans>
             </p>
             <p className='footer-donation'>
-              <Trans>footer.donate-link</Trans>
+              <Trans>footer.donate-text</Trans>{' '}
+              <Link className='inline' to='/donate'>
+                <Trans>footer.donate-link</Trans>
+              </Link>
+              .
             </p>
           </div>
           <div className='trending-guides'>

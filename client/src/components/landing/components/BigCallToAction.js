@@ -10,9 +10,9 @@ const propTypes = {
 const BigCallToAction = ({ page }) => (
   <Login block={true} data-test-label={`${page}-big-cta`}>
     {page === 'landing' ? (
-      <Trans>landing.logged-in-cta-btn</Trans>
+      <Trans>buttons.logged-in-cta-btn</Trans>
     ) : (
-      <Trans>landing.logged-out-cta-btn</Trans>
+      <Trans>buttons.logged-out-cta-btn</Trans>
     )}
   </Login>
 );

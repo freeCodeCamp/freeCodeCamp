@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
+// import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
+import { SkeletonSprite, AvatarRenderer } from '../../helpers';
 import PropTypes from 'prop-types';
 import Login from '../components/Login';
 import { forumLocation } from '../../../../../config/env.json';
+import { Trans, Link } from 'gatsby-plugin-react-i18next';
 
 const propTypes = {
   displayMenu: PropTypes.bool,
@@ -25,12 +27,12 @@ export function AuthOrProfile({ user, pending }) {
           sameTab={true}
           to={forumLocation}
         >
-          Forum
+          <Trans>buttons.forum</Trans>
         </Link>
       </li>
       <li>
         <Link className='nav-link' to='/learn'>
-          Curriculum
+          <Trans>buttons.curriculum</Trans>
         </Link>
       </li>
     </>
@@ -46,7 +48,9 @@ export function AuthOrProfile({ user, pending }) {
     return (
       <>
         {CurriculumAndForumLinks}
-        <Login data-test-label='landing-small-cta'>Sign In</Login>
+        <Login data-test-label='landing-small-cta'>
+          <Trans>buttons.sign-in</Trans>
+        </Login>
       </>
     );
   } else {
@@ -55,7 +59,7 @@ export function AuthOrProfile({ user, pending }) {
         {CurriculumAndForumLinks}
         <li>
           <Link className='nav-link' to={`/${user.username}`}>
-            Profile
+            <Trans>buttons.profile</Trans>
             <AvatarRenderer
               isDonating={isUserDonating}
               isTopContributor={isTopContributor}
