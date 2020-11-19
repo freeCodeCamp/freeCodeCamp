@@ -26,6 +26,14 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 3. You will add any security features to `server.js`
 4. You will create all of the functional tests in `tests/2_functional-tests.js`
 
+Write the following tests in `tests/2_functional-tests.js`:
+
+- Viewing one stock: GET request to `/api/stock-prices/`
+- Viewing one stock and liking it: GET request to `/api/stock-prices/`
+- Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
+- Viewing two stocks: GET request to `/api/stock-prices/`
+- Viewing two stocks and liking them: GET request to `/api/stock-prices/`
+
 </section>
 
 ## Tests
