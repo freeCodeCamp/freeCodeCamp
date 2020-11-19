@@ -11,7 +11,7 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 Since all reliable stock price APIs require an API key, we've built a workaround. Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank">https://stock-price-checker-proxy.freecodecamp.rocks/</a> to get up-to-date stock price information without needing to sign up for your own key.
 Working on this project will involve you writing your code using one of the following methods:
 
-- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-stockchecker/'>this GitHub repo</a> and complete your project locally.
+- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-stockchecker/' target='_blank'>this GitHub repo</a> and complete your project locally.
 - Use <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-stockchecker' target='_blank'>our repl.it starter project</a> to complete your project.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
