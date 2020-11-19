@@ -53,11 +53,11 @@ tests:
     display: flex;
     margin-left: 10px;
   }
-  header .follow-btn {
+  header .action-button-container {
     display: flex;
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
+  header .action-button-container button {
     border: 0;
     border-radius: 3px;
     padding: 5px;
@@ -103,7 +103,7 @@ tests:
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
   </div>
-  <div class="follow-btn">
+  <div class="action-button-container">
     <button>Follow</button>
   </div>
 </header>
@@ -156,11 +156,11 @@ tests:
     display: flex;
     margin-left: 10px;
   }
-  header .follow-btn {
+  header .action-button-container {
     display: flex;
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
+  header .action-button-container button {
     border: 0;
     border-radius: 3px;
     padding: 5px;
@@ -206,7 +206,7 @@ tests:
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
   </div>
-  <div class="follow-btn">
+  <div class="action-button-container">
     <button>Follow</button>
   </div>
 </header>

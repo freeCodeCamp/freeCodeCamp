@@ -14,7 +14,7 @@ To the right is the tweet embed that will be used as the practical example. Some
 ## Instructions
 <section id='instructions'>
 Add the CSS property <code>display: flex</code> to all of the following items - note that the selectors are already set up in the CSS:
-<code>header</code>, the header's <code>.profile-name</code>, the header's <code>.follow-btn</code>, the header's <code>h3</code> and <code>h4</code>, the <code>footer</code>, and the footer's <code>.stats</code>.
+<code>header</code>, the header's <code>.profile-name</code>, the header's <code>.action-button-container</code>, the header's <code>h3</code> and <code>h4</code>, the <code>footer</code>, and the footer's <code>.stats</code>.
 </section>
 
 ## Tests
@@ -32,8 +32,8 @@ tests:
     testString: assert($('h4').css('display') == 'flex');
   - text: Your <code>.profile-name</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('.profile-name').css('display') == 'flex');
-  - text: Your <code>.follow-btn</code> should have a <code>display</code> property set to <code>flex</code>.
-    testString: assert($('.follow-btn').css('display') == 'flex');
+  - text: Your <code>.action-button-container</code> should have a <code>display</code> property set to <code>flex</code>.
+    testString: assert($('.action-button-container').css('display') == 'flex');
   - text: Your <code>.stats</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('.stats').css('display') == 'flex');
 
@@ -63,11 +63,11 @@ tests:
 
     margin-left: 10px;
   }
-  header .follow-btn {
+  header .action-button-container {
 
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
+  header .action-button-container button {
     border: 0;
     border-radius: 3px;
     padding: 5px;
@@ -112,7 +112,7 @@ tests:
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
   </div>
-  <div class="follow-btn">
+  <div class="action-button-container">
     <button>Follow</button>
   </div>
 </header>
@@ -164,11 +164,11 @@ tests:
     display: flex;
     margin-left: 10px;
   }
-  header .follow-btn {
+  header .action-button-container {
     display: flex;
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
+  header .action-button-container button {
     border: 0;
     border-radius: 3px;
     padding: 5px;
@@ -213,7 +213,7 @@ tests:
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
   </div>
-  <div class="follow-btn">
+  <div class="action-button-container">
     <button>Follow</button>
   </div>
 </header>

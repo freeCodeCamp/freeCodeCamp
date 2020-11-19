@@ -13,7 +13,7 @@ The last challenge introduced the <code>align-items</code> property and gave an 
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element. Set the value to <code>center</code>.
+Add the CSS property <code>align-items</code> to the header's <code>.action-button-container</code> element. Set the value to <code>center</code>.
 </section>
 
 ## Tests
@@ -21,8 +21,8 @@ Add the CSS property <code>align-items</code> to the header's <code>.follow-btn<
 
 ```yml
 tests:
-  - text: The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of <code>center</code>.
-    testString: assert($('.follow-btn').css('align-items') == 'center');
+  - text: The <code>.action-button-container</code> element should have the <code>align-items</code> property set to a value of <code>center</code>.
+    testString: assert($('.action-button-container').css('align-items') == 'center');
 
 ```
 
@@ -53,12 +53,12 @@ tests:
     justify-content: center;
     margin-left: 10px;
   }
-  header .follow-btn {
+  header .action-button-container {
     display: flex;
 
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
+  header .action-button-container button {
     border: 0;
     border-radius: 3px;
     padding: 5px;
@@ -100,7 +100,7 @@ tests:
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
   </div>
-  <div class="follow-btn">
+  <div class="action-button-container">
     <button>Follow</button>
   </div>
 </header>
@@ -155,12 +155,12 @@ tests:
     justify-content: center;
     margin-left: 10px;
   }
-  header .follow-btn {
+  header .action-button-container {
     display: flex;
     align-items: center;
     margin: 0 0 0 auto;
   }
-  header .follow-btn button {
+  header .action-button-container button {
     border: 0;
     border-radius: 3px;
     padding: 5px;
@@ -202,7 +202,7 @@ tests:
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
   </div>
-  <div class="follow-btn">
+  <div class="action-button-container">
     <button>Follow</button>
   </div>
 </header>
