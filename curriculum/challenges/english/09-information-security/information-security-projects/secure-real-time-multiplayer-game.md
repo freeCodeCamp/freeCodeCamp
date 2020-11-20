@@ -6,11 +6,13 @@ challengeType: 4
 
 ## Description
 <section id='description'>
-Develop a 2D real time multiplayer game using the HTML Canvas API and <a href='https://socket.io/' target='_blank'>Socket.io</a> that is functionally similar to this: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>.
+Develop a 2D real time multiplayer game using the HTML Canvas API and <a href='https://socket.io/' target='_blank'>Socket.io</a> that is functionally similar to this: <a href="https://secure-real-time-multiplayer-game.freecodecamp.rocks/" target="_blank">https://secure-real-time-multiplayer-game.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
 
-Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it URL (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
+- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/' target='_blank'>this GitHub repo</a> and complete your project locally.
+- Use <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game' target='_blank'>our repl.it starter project</a> to complete your project.
+- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
-Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game">this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 </section>
 
 ## Instructions
@@ -23,7 +25,7 @@ Start this project on Repl.it using <a href="https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I can provide my own project, not the example URL.
+  - text: You can provide your own project, not the example URL.
     testString: |
       getUserInput => {
         assert(!/.*\/secure-real-time-multiplayer-game\.freecodecamp\.rocks/.test(getUserInput('url')));
