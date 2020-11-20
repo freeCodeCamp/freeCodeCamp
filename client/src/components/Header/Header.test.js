@@ -70,7 +70,7 @@ describe('<NavLinks />', () => {
     expect(avatarHasClass(componentTree, 'gold-border')).toBeTruthy();
   });
 
-  it('has avatar with green border for top contributors', () => {
+  it('has avatar with blue border for top contributors', () => {
     const topContributorUserProps = {
       user: {
         username: 'test-user',
@@ -84,7 +84,7 @@ describe('<NavLinks />', () => {
       .create(<AuthOrProfile {...topContributorUserProps} />)
       .toJSON();
 
-    expect(avatarHasClass(componentTree, 'green-border')).toBeTruthy();
+    expect(avatarHasClass(componentTree, 'blue-border')).toBeTruthy();
   });
   it('has avatar with purple border for donating top contributors', () => {
     const topDonatingContributorUserProps = {
