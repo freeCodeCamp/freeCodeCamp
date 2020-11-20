@@ -1,3 +1,4 @@
 {
-  "projectId": "ke77ns"
+  "projectId": "ke77ns",
+  "baseUrl": "http://localhost:8000"
 }
