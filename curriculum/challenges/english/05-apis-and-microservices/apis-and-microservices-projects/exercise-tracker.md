@@ -65,7 +65,7 @@ tests:
       }
     }
     "
-  - text: 'You can `POST` to `/api/exercise/add` with form data `userId=_id`, `description`, `duration`, and optionally `date`. If no date is supplied, it will use current date. The response returned will be the user object with the exercise fields added.'
+  - text: 'You can `POST` to `/api/exercise/add` with form data `userId=_id`, `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. The response returned will be the user object with the exercise fields added.'
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/new-user', {
