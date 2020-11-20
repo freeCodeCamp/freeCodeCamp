@@ -7,7 +7,7 @@
   },
   "parser": "babel-eslint",
   "root": true,
-  "extends": ["./.eslint-base.json", "prettier", "prettier/react"],
+  "extends": ["./.eslintrc-base.json", "prettier", "prettier/react"],
   "plugins": ["react", "import", "prefer-object-spread", "prettier", "react-hooks", "jsx-a11y"],
   "globals": {
 		"Promise": true,
