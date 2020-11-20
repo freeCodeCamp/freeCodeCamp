@@ -7,7 +7,7 @@ forumTopicId: 302361
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app on <a href='https://repl.it/' target='_blank'>Repl.it</a> that allows you to search for images like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> and browse recent search queries like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Use a site builder of your choice to complete the project.
+Build a full stack JavaScript app that allows you to search for images like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</a> and browse recent search queries like this: <a href='https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/' target='_blank'>https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/</a>. Use a site builder of your choice to complete the project.
 Here are the specific user stories you should implement for this project:
 <strong>User Story:</strong> You can get the image URLs, alt text and page URLs for a set of images relating to a given search string.
 <strong>User Story:</strong> You can paginate through the responses by adding a ?offset=2 parameter to the URL.
