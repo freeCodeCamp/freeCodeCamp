@@ -98,7 +98,7 @@ tests:
       }
     }
     "
-  - text: You can make a `GET` request to `/api/exercise/log` with a parameter of `userId=_id` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties. Also included is a `count` key with the the total exercise count as its value.
+  - text: You can make a `GET` request to `/api/exercise/log` with a parameter of `userId=_id` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/new-user', {
