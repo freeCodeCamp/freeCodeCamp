@@ -58,6 +58,8 @@ tests:
       if (res.ok) {
         const data = await res.json();
         assert.isArray(data);
+        assert.isString(data[0].username);
+        assert.isString(data[0]._id);
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
