@@ -9,7 +9,7 @@ forumTopicId: 301505
 <section id='description'>
 Build a full stack JavaScript app that is functionally similar to this: <a href='https://exercise-tracker.freecodecamp.rocks/' target='_blank'>https://exercise-tracker.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
 
-- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>this GitHub repo</a> and complete your project locally.
+- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/' target='_blank'>this GitHub repo</a> and complete your project locally.
 - Use <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-exercisetracker' target='_blank'>our repl.it starter project</a> to complete your project.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
