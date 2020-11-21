@@ -7,14 +7,13 @@ forumTopicId: 302363
 
 ## Description
 <section id='description'>
-<strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://watchstocks.herokuapp.com/' target='_blank'>https://watchstocks.herokuapp.com/</a>.
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://watchstocks.herokuapp.com/' target='_blank'>https://watchstocks.herokuapp.com/</a>. Use a site builder of your choice to complete the project.
 Here are the specific user stories you should implement for this project:
-<strong>User Story:</strong> I can view a graph displaying the recent trend lines for each added stock.
-<strong>User Story:</strong> I can add new stocks by their symbol name.
-<strong>User Story:</strong> I can remove stocks.
-<strong>User Story:</strong> I can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.
-Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
+<strong>User Story:</strong> You can view a graph displaying the recent trend lines for each added stock.
+<strong>User Story:</strong> You can add new stocks by their symbol name.
+<strong>User Story:</strong> You can remove stocks.
+<strong>User Story:</strong> You can see changes in real-time when any other user adds or removes a stock. For this you will need to use Web Sockets.
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 </section>
 
 ## Instructions

@@ -30,7 +30,30 @@ tests:
   - text: MinHeap should have a method called sort.
     testString: assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; return (typeof test.sort == 'function')})());
   - text: The sort method should return an array containing all items added to the min heap in sorted order.
-    testString: assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; test.insert(3); test.insert(12); test.insert(5); test.insert(10); test.insert(1); test.insert(27); test.insert(42); test.insert(57); test.insert(5); var result = test.sort(); return (isSorted(result)); })());
+    testString: |+
+      assert((() => {
+        if (typeof MinHeap === "undefined") {
+          return false;
+        }
+
+        const heap = new MinHeap();
+        const arr = createRandomArray(25);
+
+        for (let i of arr) {
+          heap.insert(i);
+        }
+
+        const result = heap.sort();
+        arr.sort((a, b) => a - b);
+
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] !== result[i]) {
+            return false;
+          }
+        }
+        return true;
+
+      })());
 ```
 
 </section>
@@ -48,11 +71,15 @@ function isSorted(a){
   return true;
 }
 // Generate a randomly filled array
-var array = new Array();
-(function createArray(size = 5) {
-  array.push(+(Math.random() * 100).toFixed(0));
-  return size > 1 ? createArray(size - 1) : undefined;
-})(25);
+function createRandomArray(size = 5){
+  let a = new Array(size);
+  for(let i = 0; i < size; i++)
+    a[i] = Math.floor(Math.random() * 100);
+  
+  return a;
+}
+const array = createRandomArray(25);
+
 var MinHeap = function() {
   // Only change code below this line
   
