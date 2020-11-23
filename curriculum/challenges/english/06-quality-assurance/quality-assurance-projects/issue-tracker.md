@@ -192,7 +192,7 @@ tests:
         throw new Error(err.responseText || err.message);
       }
     }'
-  - text: When the `PUT` request sent to `/api/issues/{projectname}` does not include update fields, the return value is `{ error: 'no update field(s) sent', '_id': _id }`. On any other error, the return value is `{ error: 'could not update ', _id: + _id }`.
+  - text: When the `PUT` request sent to `/api/issues/{projectname}` does not include update fields, the return value is `{ error: 'no update field(s) sent', '_id': _id }`. On any other error, the return value is `{ error: 'could not update', '_id': _id }`.
     testString: 'async getUserInput => { 
       try {
         const url = getUserInput("url") + "/api/issues/fcc-project";
