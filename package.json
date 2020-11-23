@@ -57,7 +57,6 @@
     "test:utils": "jest --rootDir ./utils"
   },
   "devDependencies": {
-    "@freecodecamp/eslint-config": "^2.0.2",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
     "cypress": "^5.3.0",
