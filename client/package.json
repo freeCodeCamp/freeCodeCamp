@@ -110,7 +110,7 @@
     "react-test-renderer": "^16.14.0",
     "redux-saga-test-plan": "^4.0.1",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^4.2.0"
   },
   "repository": {
     "type": "git",
