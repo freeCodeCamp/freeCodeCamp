@@ -74,7 +74,6 @@
     "loopback-component-explorer": "^6.4.0",
     "nodemon": "^2.0.6",
     "passport-mock-strategy": "^2.0.0",
-    "pm2": "^4.5.0",
     "smee-client": "^1.2.2"
   },
   "resolutions": {
