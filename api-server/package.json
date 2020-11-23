@@ -79,7 +79,7 @@
     "babel-plugin-transform-imports": "^1.5.1",
     "cross-env": "^6.0.3",
     "jest": "^26.6.1",
-    "joi": "^13.7.0",
+    "joi": "^17.3.0",
     "joi-objectid": "^2.0.0",
     "loopback-component-explorer": "^6.4.0",
     "nodemon": "^2.0.6",
