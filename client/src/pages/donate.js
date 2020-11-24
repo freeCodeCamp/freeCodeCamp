@@ -101,13 +101,15 @@ export class DonatePage extends Component {
                     </p>
                     <br />
                     <p>
-                      If you would like to make additional donations, those will
-                      help our nonprofit and our mission, too.
+                      You can make an additional one-time donation of any amount
+                      using this link:{' '}
+                      <a href='https://www.paypal.me/freecodecamp'>
+                        https://www.paypal.me/freecodecamp
+                      </a>
                     </p>
                   </Alert>
                 ) : null}
                 <DonateText isDonating={isDonating} />
-                <Spacer />
                 <DonateForm
                   enableDonationSettingsPage={this.enableDonationSettingsPage}
                   handleProcessing={this.handleProcessing}

@@ -8,8 +8,7 @@ const amountsConfig = {
   onetime: [2500, 5000, 7500, 10000, 15000]
 };
 const defaultAmount = {
-  month: 1000,
-  onetime: 2500
+  month: 500
 };
 const defaultDonation = {
   donationAmount: defaultAmount['month'],
