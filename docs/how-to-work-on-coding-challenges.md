@@ -445,9 +445,9 @@ Once you have verified that each challenge you've worked on passes the tests, [p
 
 ## Upcoming Challenge Template
 
-The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
+The challenge template in the process of being updated to a cleaner, less nested structure.
 
-````mdx
+````md
 
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
@@ -457,29 +457,25 @@ videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
 
-import Script from './script.mdx';
+::import{component="Script" from="./script.md" }
 
 # --description--
 
 Description text, in markdown
 
 ```html
-<div> 
+<div>
   example code
 </div>
 ```
 
 # --hints--
 
-![test-id-1]()
-
-There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.  
+There will be an arbitrary number of pairs of instructions (in markdown) and code blocks.  
 
 ```js
 Code for test one
 ```
-
-![test-id-2]()
 
 More instructions in markdown syntax
 
@@ -503,7 +499,7 @@ Code evaluated after the user’s, and just before the tests
 
 ## --seed-contents--
 
-![index-html]()
+::id{#index-html}
 
 ```html
 Some html
@@ -517,9 +513,9 @@ Some css
 Some js
 ```
 
-![index-js]()
+::id{#index-js}
 
-<Script />
+::use{component="Script"}
 
 
 # --solutions--
