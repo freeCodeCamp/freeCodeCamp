@@ -407,3 +407,8 @@ button#confirm-donation-btn:hover {
     margin-right: auto;
   }
 }
+
+.donate-page-wrapper .alert.alert-info a:hover {
+  color: #327290;
+  background-color: #acdef3;
+}
