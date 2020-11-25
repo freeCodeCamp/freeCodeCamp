@@ -54,7 +54,6 @@ tests:
 
 ```js
 function freezeObj() {
-  'use strict';
   const MATH_CONSTANTS = {
     PI: 3.14
   };
@@ -83,7 +82,6 @@ const PI = freezeObj();
 
 ```js
 function freezeObj() {
-  'use strict';
   const MATH_CONSTANTS = {
     PI: 3.14
   };
