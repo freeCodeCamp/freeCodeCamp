@@ -526,7 +526,7 @@ Object {
         "end": Object {
           "column": 4,
           "line": 6,
-          "offset": 126,
+          "offset": 125,
         },
         "start": Object {
           "column": 1,
@@ -537,7 +537,7 @@ Object {
       "type": "code",
       "value": "for (let index = 0; index < array.length; index++) {
   const element = array[index];
-  // imported from script.mdx
+  // imported from script.md
 }",
     },
   ],

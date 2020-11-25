@@ -21,7 +21,7 @@ function getTest(hintNodes) {
   const testString = testStringNode.value;
 
   if (!text) throw Error('text is missing from hint');
-  // stub tests (i.e. text, but no testString) are allowed, but the mdx must
+  // stub tests (i.e. text, but no testString) are allowed, but the md must
   // have a code block, even if it is empty.
   if (!testString && testString !== '')
     throw Error('testString (code block) is missing from hint');

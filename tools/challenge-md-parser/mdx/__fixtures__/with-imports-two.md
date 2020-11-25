@@ -1,4 +1,5 @@
-::import{component="Script" from="./script.mdx" }
+::import{component="Script" from="./script.md" }
+::import{component="Second" from="./script-two.md" }
 
 # --description--
 
@@ -18,15 +19,11 @@ code example 0
 
 # --hints--
 
-::id{#test-id-1}
-
 First hint
 
 ```js
 // test code
 ```
-
-::id{#test-id-2}
 
 Second hint with <code>code</code>
 
@@ -36,6 +33,8 @@ Second hint with <code>code</code>
 
 
 # --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -49,6 +48,8 @@ body {
   background: green;
 }
 ```
+
+::use{component="Second"}
 
 ::id{#custom-name}
 

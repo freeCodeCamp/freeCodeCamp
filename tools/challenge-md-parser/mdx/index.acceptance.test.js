@@ -2,54 +2,54 @@
 
 const path = require('path');
 
-const { parseMDX } = require('./');
+const { parseMD } = require('./');
 
-describe('mdx parser', () => {
-  it('should parse a simple mdx file', async () => {
-    const parsed = await parseMDX(
-      path.resolve(__dirname, '__fixtures__/simple.mdx')
+describe('challenge parser', () => {
+  it('should parse a simple md file', async () => {
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/simple.md')
     );
     expect(parsed).toMatchSnapshot();
   });
 
-  it('should parse a more realistic mdx file', async () => {
-    const parsed = await parseMDX(
-      path.resolve(__dirname, '__fixtures__/realistic.mdx')
+  it('should parse a more realistic md file', async () => {
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/realistic.md')
     );
     expect(parsed).toMatchSnapshot();
   });
 
-  it('should import mdx from other files', async () => {
-    const parsed = await parseMDX(
-      path.resolve(__dirname, '__fixtures__/with-imports.mdx')
+  it('should import md from other files', async () => {
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/with-imports.md')
     );
     expect(parsed).toMatchSnapshot();
   });
 
   it('should parse frontmatter', async () => {
-    const parsed = await parseMDX(
-      path.resolve(__dirname, '__fixtures__/with-frontmatter.mdx')
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/with-frontmatter.md')
     );
     expect(parsed).toMatchSnapshot();
   });
 
   it('should parse gfm strikethrough and frontmatter', async () => {
-    const parsed = await parseMDX(
-      path.resolve(__dirname, '__fixtures__/with-gfm.mdx')
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/with-gfm.md')
     );
     expect(parsed).toMatchSnapshot();
   });
 
   it('should not mix other YAML with the frontmatter', async () => {
-    const parsed = await parseMDX(
-      path.resolve(__dirname, '__fixtures__/with-yaml.mdx')
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/with-yaml.md')
     );
     expect(parsed).toMatchSnapshot();
   });
 
   it('it should parse video questions', async () => {
-    const parsed = await parseMDX(
-      path.resolve(__dirname, '__fixtures__/with-video-question.mdx')
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/with-video-question.md')
     );
     expect(parsed).toMatchSnapshot();
   });

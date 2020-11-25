@@ -83,7 +83,7 @@ describe('add-text', () => {
   });
 
   // eslint-disable-next-line max-len
-  it('should add nothing if a section id does not appear in the mdx', () => {
+  it('should add nothing if a section id does not appear in the md', () => {
     const plugin = addText([descriptionId]);
     plugin(incorrectMarkersAST, file);
     expect(file.data[descriptionId]).toBeUndefined();

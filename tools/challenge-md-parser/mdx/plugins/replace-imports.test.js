@@ -24,10 +24,10 @@ describe('replace-imports', () => {
     simpleAST = cloneDeep(originalSimpleAST);
     markerAST = cloneDeep(originalMarkerAST);
     correctFile = toVfile(
-      path.resolve(__dirname, '../__fixtures__/with-imports.mdx')
+      path.resolve(__dirname, '../__fixtures__/with-imports.md')
     );
     incorrectFile = toVfile(
-      path.resolve(__dirname, '../__fixtures__/incorrect-path/with-imports.mdx')
+      path.resolve(__dirname, '../__fixtures__/incorrect-path/with-imports.md')
     );
   });
 
@@ -140,7 +140,7 @@ describe('replace-imports', () => {
   });
 
   it('should replace the ::use statement with the imported content', done => {
-    // checks the contents of script.mdx are there after the import step
+    // checks the contents of script.md are there after the import step
     expect.assertions(2);
     const plugin = addImports();
 
@@ -156,7 +156,7 @@ describe('replace-imports', () => {
           expect.arrayContaining([
             `for (let index = 0; index < array.length; index++) {
   const element = array[index];
-  // imported from script.mdx
+  // imported from script.md
 }`
           ])
         );
@@ -167,7 +167,7 @@ describe('replace-imports', () => {
   });
 
   it('should handle multiple import statements', done => {
-    // checks the contents of script.mdx are there after the import step
+    // checks the contents of script.md are there after the import step
     expect.assertions(4);
     const plugin = addImports();
 
@@ -183,7 +183,7 @@ describe('replace-imports', () => {
           expect.arrayContaining([
             `for (let index = 0; index < array.length; index++) {
   const element = array[index];
-  // imported from script.mdx
+  // imported from script.md
 }`
           ])
         );

@@ -1,3 +1,6 @@
+::import{component="Script" from="./script.md" }
+::import{component="Second" from="./script-two.md" }
+
 # --description--
 
 Paragraph 1
@@ -28,14 +31,6 @@ Second hint with <code>code</code>
 // more test code
 ```
 
-Third *hint* with <code>code</code> and `inline code`
-
-```js
-// more test code
-if(let x of xs) {
-  console.log(x);
-}
-```
 
 # --seed--
 
@@ -48,38 +43,16 @@ if(let x of xs) {
 </html>
 ```
 
-![key-for-css]()
-
 ```css
 body {
   background: green;
 }
 ```
 
-![key-for-js]()
+::id{#custom-name}
 
 ```js
 var x = 'y';
 ```
 
-
-# --solutions--
-
-![html-key]()
-
-```html
-<html>
-  <body>
-  </body>
-</html>
-```
-
-```css
-body {
-  background: white;
-}
-```
-
-```js
-var x = 'y';
-``
+::use{component="Script"}

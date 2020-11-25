@@ -42,7 +42,7 @@ const processor = unified()
   .use(addSeed)
   .use(addSolution);
 
-exports.parseMDX = function parseMDX(filename) {
+exports.parseMD = function parseMD(filename) {
   return new Promise((resolve, reject) => {
     const file = readSync(filename);
     const tree = processor.parse(file);

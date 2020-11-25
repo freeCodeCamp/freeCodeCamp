@@ -2,7 +2,7 @@ const path = require('path');
 const { findIndex, reduce, toString } = require('lodash');
 const readDirP = require('readdirp-walk');
 const { parseMarkdown } = require('../tools/challenge-md-parser');
-const { parseMDX } = require('../tools/challenge-md-parser/mdx');
+const { parseMD } = require('../tools/challenge-md-parser/mdx');
 const fs = require('fs');
 const util = require('util');
 /* eslint-disable max-len */
@@ -204,7 +204,7 @@ async function parseTranslation(
   transPath,
   dict,
   lang,
-  parse = parseMDX
+  parse = parseMD
 ) {
   const engChal = await parse(engPath);
   const translatedChal = await parse(transPath);
@@ -263,7 +263,7 @@ ${getFullPath('english')}
           ));
     } else {
       challenge = await (useEnglish
-        ? parseMDX(getFullPath('english'))
+        ? parseMD(getFullPath('english'))
         : parseTranslation(
             getFullPath('english'),
             getFullPath(lang),

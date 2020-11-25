@@ -7,7 +7,7 @@ function createChallengeNode(challenge, reporter) {
   // TODO: either handle empty descriptions inside Gatsby OR ensure that
   // description defaults to '' when creating challenges.
   // ditto for seeds and instructions.
-  // create-mdx should, then, not create empty seed, description or instruction
+  // create-md should, then, not create empty seed, description or instruction
   // sections.
   if (
     typeof challenge.description !== 'string' &&

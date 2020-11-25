@@ -4,7 +4,7 @@ const directive = require('remark-directive');
 const frontmatter = require('remark-frontmatter');
 
 (async () => {
-  const path = './example.mdx';
+  const path = './example.md';
   const file = await read(path);
   await remark()
     .use(directive)

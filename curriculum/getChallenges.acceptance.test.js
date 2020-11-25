@@ -1,6 +1,6 @@
 /* global expect */
 
-// TODO: update these to mdx
+// TODO: update these to use the new parser
 
 const path = require('path');
 

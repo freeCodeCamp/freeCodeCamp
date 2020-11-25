@@ -6,7 +6,7 @@
       "name": "import",
       "attributes": {
         "component": "Script",
-        "from": "./script-with-markers.mdx"
+        "from": "./script-with-markers.md"
       },
       "children": [],
       "position": {

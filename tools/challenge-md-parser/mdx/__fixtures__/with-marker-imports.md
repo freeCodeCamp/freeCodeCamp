@@ -1,4 +1,4 @@
-::import{component="Script" from="./script-with-markers.mdx" }
+::import{component="Script" from="./script-with-markers.md" }
 
 # --description--
 

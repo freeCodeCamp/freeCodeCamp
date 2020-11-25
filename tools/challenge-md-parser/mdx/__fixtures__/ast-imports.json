@@ -4,7 +4,7 @@
     {
       "type": "leafDirective",
       "name": "import",
-      "attributes": { "component": "Script", "from": "./script.mdx" },
+      "attributes": { "component": "Script", "from": "./script.md" },
       "children": [],
       "position": {
         "start": { "line": 1, "column": 1, "offset": 0 },
