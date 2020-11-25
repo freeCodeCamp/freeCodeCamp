@@ -65,7 +65,7 @@ tests:
   - text: A <code>setter</code> should  be defined.
     testString: assert((() => {const desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');return !!desc && typeof desc.set === 'function';})());
   - text: Calling the <code>setter</code> with a Celsius value should set the temperature.
-    testString: assert((() => {const t = new Thermostat(32); t.temperature = 26;return t.temperature === 26;})());
+    testString: assert((() => {const t = new Thermostat(32); t.temperature = 26; const u = new Thermostat(32); u.temperature = 50; return t.temperature === 26 && u.temperature === 50;})());
 
 ```
 
