@@ -11,7 +11,6 @@ The keyword <code>let</code> is not the only new way to declare variables. In ES
 <code>const</code> has all the awesome features that <code>let</code> has, with the added bonus that variables declared using <code>const</code> are read-only. They are a constant value, which means that once a variable is assigned with <code>const</code>, it cannot be reassigned.
 
 ```js
-"use strict";
 const FAV_PET = "Cats";
 FAV_PET = "Dogs"; // returns error
 ```
@@ -51,7 +50,6 @@ tests:
 
 ```js
 function printManyTimes(str) {
-  "use strict";
 
   // Only change code below this line
 
@@ -77,7 +75,6 @@ printManyTimes("freeCodeCamp");
 
 ```js
 function printManyTimes(str) {
-  "use strict";
 
   const SENTENCE = str + " is cool!";
   for (let i = 0; i < str.length; i+=2) {

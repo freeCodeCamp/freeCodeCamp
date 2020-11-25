@@ -67,7 +67,6 @@ tests:
 
 ```js
 var magic = function() {
-  "use strict";
   return new Date();
 };
 ```
@@ -83,7 +82,6 @@ var magic = function() {
 
 ```js
 const magic = () => {
-  "use strict";
   return new Date();
 };
 ```

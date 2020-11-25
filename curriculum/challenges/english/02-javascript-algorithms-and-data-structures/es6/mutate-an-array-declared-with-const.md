@@ -12,7 +12,6 @@ Some developers prefer to assign all their variables using <code>const</code> by
 However, it is important to understand that objects (including arrays and functions) assigned to a variable using <code>const</code> are still mutable. Using the <code>const</code> declaration only prevents reassignment of the variable identifier.
 
 ```js
-"use strict";
 const s = [5, 6, 7];
 s = [1, 2, 3]; // throws error, trying to assign a const
 s[2] = 45; // works just as it would with an array declared with var or let
