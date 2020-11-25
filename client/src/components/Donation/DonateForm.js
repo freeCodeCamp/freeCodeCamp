@@ -234,6 +234,20 @@ class DonateForm extends Component {
     ));
   }
 
+  renderDonationDescription() {
+    const { donationAmount, donationDuration } = this.state;
+    return (
+      <p className='donation-description'>
+        {`Your `}
+        {this.getFormatedAmountLabel(donationAmount)}
+        {` donation will provide `}
+        {this.convertToTimeContributed(donationAmount)}
+        {` of learning to people around the world`}
+        {donationDuration === 'onetime' ? `.` : ` each ${donationDuration}.`}
+      </p>
+    );
+  }
+
   renderDurationAmountOptions() {
     const { donationAmount, donationDuration, processing } = this.state;
     return !processing ? (
@@ -267,14 +281,7 @@ class DonateForm extends Component {
                   {this.renderAmountButtons(duration)}
                 </ToggleButtonGroup>
                 <Spacer />
-                <p className='donation-description'>
-                  {`Your `}
-                  {this.getFormatedAmountLabel(donationAmount)}
-                  {` donation will provide `}
-                  {this.convertToTimeContributed(donationAmount)}
-                  {` of learning to people around the world`}
-                  {duration === 'onetime' ? `.` : ` each ${duration}.`}
-                </p>
+                {this.renderDonationDescription()}
               </div>
             </Tab>
           ))}
@@ -383,7 +390,7 @@ class DonateForm extends Component {
   renderPageForm() {
     return (
       <Row>
-        <Col xs={12}>{this.renderDurationAmountOptions()}</Col>
+        <Col xs={12}>{this.renderDonationDescription()}</Col>
         <Col xs={12}>{this.renderDonationOptions()}</Col>
       </Row>
     );

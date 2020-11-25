@@ -38,10 +38,10 @@ tests:
       try {
         const data1 = await $.get(getUserInput('url') + '/api/convert?input=1gal');
         assert.equal(data1.returnNum, 3.78541);
-        assert.equal(data1.returnUnit, 'l');
+        assert.equal(data1.returnUnit, 'L');
         const data2 = await $.get(getUserInput('url') + '/api/convert?input=10gal');
         assert.equal(data2.returnNum, 37.8541);
-        assert.equal(data2.returnUnit, 'l');
+        assert.equal(data2.returnUnit, 'L');
         const data3 = await $.get(getUserInput('url') + '/api/convert?input=1l');
         assert.equal(data3.returnNum, 0.26417);
         assert.equal(data3.returnUnit, 'gal');
@@ -49,7 +49,7 @@ tests:
         assert.equal(data4.returnNum, 2.64172);
         assert.equal(data4.returnUnit, 'gal');
       } catch(xhr) {
-        throw new Error(xhr.responseText);
+        throw new Error(xhr.responseText || xhr.message);
       }
     }
     "
@@ -69,7 +69,7 @@ tests:
         assert.equal(data4.returnNum, 22.04624);
         assert.equal(data4.returnUnit, 'lbs');
       } catch(xhr) {
-        throw new Error(xhr.responseText);
+        throw new Error(xhr.responseText || xhr.message);
       }
     }
     "
@@ -89,33 +89,128 @@ tests:
         assert.equal(data4.returnNum, 6.21373); 
         assert.equal(data4.returnUnit, 'mi');
       } catch(xhr) {
-        throw new Error(xhr.responseText);
+        throw new Error(xhr.responseText || xhr.message);
       }
     }
     "
+  - text: All incoming units should be accepted in both upper and lower case, but should be returned in both the <code>initUnit</code> and <code>returnUnit</code> in lower case, except for liter, which should be represented as an uppercase <code>'L'</code>.
+    testString: "async getUserInput => { 
+      try {
+        const data1 = await $.get(getUserInput('url') + '/api/convert?input=1gal');
+        assert.equal(data1.initUnit, 'gal');
+        assert.equal(data1.returnUnit, 'L');
+        const data2 = await $.get(getUserInput('url') + '/api/convert?input=10L');
+        assert.equal(data2.initUnit, 'L');
+        assert.equal(data2.returnUnit, 'gal');
+        const data3 = await $.get(getUserInput('url') + '/api/convert?input=1l');
+        assert.equal(data3.initUnit, 'L');
+        assert.equal(data3.returnUnit, 'gal');
+        const data4 = await $.get(getUserInput('url') + '/api/convert?input=10KM');
+        assert.equal(data4.initUnit, 'km');
+        assert.equal(data4.returnUnit, 'mi');
+      } catch(xhr) {
+        throw new Error(xhr.responseText || xhr.message);
+      }
+    }"
   - text: If my unit of measurement is invalid, returned will be <code>'invalid unit'</code>.
     testString: "async getUserInput => { 
       try {
         const data = await $.get(getUserInput('url') + '/api/convert?input=1min');
-        assert(data.initUnit === 'invalid unit' || data === 'invalid unit');
+        assert(data.error === 'invalid unit' || data === 'invalid unit');
       } catch(xhr) {
-        throw new Error(xhr.responseText);
+        throw new Error(xhr.responseText || xhr.message);
       }
     }
     "
-  - text: If my number is invalid, returned with will 'invalid number'.
-    testString: ''
-  - text: If both are invalid, return will be 'invalid number and unit'.
-    testString: ''
+  - text: If my number is invalid, returned will be <code>'invalid number'</code>.
+    testString: "async getUserInput => { 
+      try {
+        const data = await $.get(getUserInput('url') + '/api/convert?input=1//2gal');
+        assert(data.error === 'invalid number' || data === 'invalid number');
+      } catch(xhr) {
+        throw new Error(xhr.responseText || xhr.message);
+      }
+    }"
+  - text: If both the unit and number are invalid, returned will be <code>'invalid number and unit'</code>.
+    testString: "async getUserInput => { 
+      try {
+        const data = await $.get(getUserInput('url') + '/api/convert?input=1//2min');
+        assert(data.error === 'invalid number and unit' || data === 'invalid number and unit');
+      } catch(xhr) {
+        throw new Error(xhr.responseText || xhr.message);
+      }
+    }"
   - text: I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
-    testString: ''
-  - text: My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format '{initNum} {initial_Units} converts to {returnNum} {return_Units}' with the result rounded to 5 decimals in the string.
-    testString: ''
+    testString: "async getUserInput => {
+      try {
+        const data1 = await $.get(getUserInput('url') + '/api/convert?input=mi');
+        assert.approximately(data1.initNum, 1, 0.001);
+        assert.approximately(data1.returnNum, 1.60934, 0.001);
+        assert.equal(data1.returnUnit, 'km');
+        const data2 = await $.get(getUserInput('url') + '/api/convert?input=1/5mi');
+        assert.approximately(data2.initNum, 1/5, 0.1);
+        assert.approximately(data2.returnNum, 0.32187, 0.001);
+        assert.equal(data2.returnUnit, 'km');
+        const data3 = await $.get(getUserInput('url') + '/api/convert?input=1.5/7km');
+        assert.approximately(data3.initNum, 1.5/7, 0.001);
+        assert.approximately(data3.returnNum, 0.13315, 0.001);
+        assert.equal(data3.returnUnit, 'mi');
+        const data4 = await $.get(getUserInput('url') + '/api/convert?input=3/2.7km');
+        assert.approximately(data4.initNum, 3/2.7, 0.001);
+        assert.approximately(data4.returnNum, 0.69041, 0.001);
+        assert.equal(data4.returnUnit, 'mi');
+      } catch(err) {
+        throw new Error(err.responseText || err.message);
+      }
+    }
+    "
+  - text: My return will consist of the <code>initNum</code>, <code>initUnit</code>, <code>returnNum</code>, <code>returnUnit</code>, and <code>string</code> spelling out units in the format <code>'{initNum} {initial_Units} converts to {returnNum} {return_Units}'</code> with the result rounded to 5 decimals.
+    testString: "async getUserInput => { 
+      try {
+        const data = await $.get(getUserInput('url') + '/api/convert?input=2mi');
+        assert.equal(data.initNum, 2);
+        assert.equal(data.initUnit, 'mi');
+        assert.approximately(data.returnNum, 3.21868, 0.001);
+        assert.equal(data.returnUnit, 'km', 'returnUnit did not match');
+        assert.equal(data.string, '2 miles converts to 3.21868 kilometers')
+      } catch(xhr) {
+        throw new Error(xhr.responseText || xhr.message);
+      }
+    }"
   - text: All 16 unit tests are complete and passing.
-    testString: ''
+    testString: "async getUserInput => {
+      try {
+        const getTests = await $.get(getUserInput('url') + '/_api/get-tests' );
+        assert.isArray(getTests);
+        const unitTests = getTests.filter((test) => {
+          return !!test.context.match(/Unit Tests ->/ig);
+        });
+        assert.isAtLeast(unitTests.length, 16, 'At least 16 tests passed');
+        unitTests.forEach(test => {
+          assert.equal(test.state, 'passed', 'Tests in Passed State');
+          assert.isAtLeast(test.assertions.length, 1, 'At least one assertion per test');
+        });
+      } catch(err) {
+        throw new Error(err.responseText || err.message);
+      }
+    }"
   - text: All 5 functional tests are complete and passing.
-    testString: ''
-
+    testString: "async getUserInput => {
+      try {
+        const getTests = await $.get(getUserInput('url') + '/_api/get-tests' );
+        assert.isArray(getTests);
+        const functTests = getTests.filter((test) => {
+          return !!test.context.match(/Functional Tests ->/ig);
+        });
+        assert.isAtLeast(functTests.length, 5, 'At least 5 tests passed');
+        functTests.forEach(test => {
+          assert.equal(test.state, 'passed', 'Tests in Passed State');
+          assert.isAtLeast(test.assertions.length, 1, 'At least one assertion per test');
+        });
+      } catch(err) {
+        throw new Error(err.responseText || err.message);
+      }
+    }"
 ```
 
 </section>
