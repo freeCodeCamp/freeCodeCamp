@@ -32,7 +32,7 @@ When there is no function body, and only a return value, arrow function syntax a
 const myFunc = () => "value";
 ```
 
-This code will still return <code>value</code> by default.
+This code will still return the string <code>value</code> by default.
 </section>
 
 ## Instructions
