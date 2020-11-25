@@ -221,8 +221,8 @@ async function parseTranslation(
 function createChallengeCreator(basePath, lang) {
   const hasEnglishSource = hasEnglishSourceCreator(basePath);
   return async function createChallenge(filePath, maybeMeta) {
-    function getFullPath(pathLang, relativePath = filePath) {
-      return path.resolve(__dirname, basePath, pathLang, relativePath);
+    function getFullPath(pathLang) {
+      return path.resolve(__dirname, basePath, pathLang, filePath);
     }
     let meta;
     if (maybeMeta) {
@@ -253,9 +253,9 @@ ${getFullPath('english')}
 
     if (isMdx) {
       challenge = await (useEnglish
-        ? parseMDX(getFullPath('english', filePath))
+        ? parseMDX(getFullPath('english'))
         : parseTranslation(
-            getFullPath('english', filePath),
+            getFullPath('english'),
             getFullPath(lang),
             COMMENT_TRANSLATIONS,
             lang
