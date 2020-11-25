@@ -53,7 +53,6 @@ tests:
 
 ```js
 const createPerson = (name, age, gender) => {
-  "use strict";
   // Only change code below this line
   return {
     name: name,
@@ -75,7 +74,6 @@ const createPerson = (name, age, gender) => {
 
 ```js
 const createPerson = (name, age, gender) => {
-  "use strict";
   return {
     name,
     age,
