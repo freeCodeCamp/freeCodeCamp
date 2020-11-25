@@ -60,7 +60,7 @@ tests:
       const parsed = await data.json();
       assert.property(parsed, 'stockData');
     }"
-  - text: The `stockData` property includes the `stock` ticker as a string, the `price` (decimal in string format), and `likes` as a number.
+  - text: The `stockData` property includes the `stock` ticker as a string, the `price` as a number, and `likes` as a number.
     testString: "async getUserInput => {
       const data = await fetch(getUserInput('url') + '/api/stock-prices?stock=GOOG');
       const parsed = await data.json();
