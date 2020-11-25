@@ -141,7 +141,7 @@ tests:
       }
     }
     "
-  - text: 'A request to `/api/exercise/log` includes a `count` key that is the number of exercises returned.'
+  - text: 'A request to a user's log (`/api/exercise/log`) returns an object with a `count` property representing the number of exercises returned.'
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/new-user', {
