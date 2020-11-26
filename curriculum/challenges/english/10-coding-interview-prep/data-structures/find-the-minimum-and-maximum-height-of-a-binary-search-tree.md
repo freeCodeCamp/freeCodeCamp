@@ -39,7 +39,7 @@ tests:
   - text: The <code>isBalanced</code> method should return false if the tree is an unbalanced binary search tree.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced() === false; })());
   - text: The <code>isBalanced</code> method should return true if the tree is a balanced binary search tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(10); test.add(3); test.add(22); test.add(1); test.add(2); test.add(17); test.add(32); return test.isBalanced() === true; })());
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(10); test.add(3); test.add(22); test.add(1); test.add(4); test.add(17); test.add(32); return test.isBalanced() === true; })());
 ```
 
 </section>
