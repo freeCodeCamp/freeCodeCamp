@@ -6,15 +6,23 @@ forumTopicId: 301591
 ---
 
 ## Description
+
 <section id='description'>
+
 As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 This exercise is similar to the preceding one. Look at it for the details.
+
+Now that you have seen how it is done, it is your turn to do it from scratch.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Send 
+
+Within `tests/2_functional-tests.js`, alter the `'send {surname: "da Verrazzano"}'` test (`// #4`):
+
+Send the following JSON response as a payload to the `/travellers` route:
 
 ```json
 {
@@ -22,12 +30,19 @@ Send
 }
 ```
 
-Replace <code>assert.fail()</code> and make the test pass.
-Check for 1) <code>status</code>, 2) <code>type</code>, 3) <code>body.name</code>, 4) <code>body.surname</code>.
-Follow the assertion order above: we rely on it.
+Check for the following, within a `request.end` callback:
+
+1. `status`
+2. `type`
+3. `body.name`
+4. `body.surname`
+
+Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,17 +57,18 @@ tests:
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.match(data.assertions[2].args[1], /('|")Giovanni\1/);}, xhr => { throw new Error(xhr.responseText); })
   - text: You should test for 'res.body.surname' to be 'da Verrazzano'
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(data => { assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.match(data.assertions[3].args[1], /('|")da Verrazzano\1/);}, xhr => { throw new Error(xhr.responseText); })
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
