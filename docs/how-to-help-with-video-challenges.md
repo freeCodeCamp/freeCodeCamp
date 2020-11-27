@@ -122,7 +122,7 @@ More answers
 1
 ```
 
-Update the  “Question Text” with your question. Update the “Answer 1”, “Answer  2”, and so on with the possible answers. Make sure to update the video-solution number with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
+Update the  “Question Text” with your question. Update the `Answer 1`, `Answer 2`, and so on with the possible answers. Make sure to update the video-solution number with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
 ### Question examples
 

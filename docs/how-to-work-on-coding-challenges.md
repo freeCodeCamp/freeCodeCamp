@@ -96,20 +96,25 @@ Some css
 ```
 
 ```js
-Some js
+console.log('freeCodeCamp is awesome!');
 ```
 
 # --solutions--
 
 Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
 
----
+```js
+// first solution
+```
 
-second solution
+```js
+// second solution
+```
 
----
 
-third solution etc.
+```js
+// third solution etc.
+```
 
 # --question--
 
