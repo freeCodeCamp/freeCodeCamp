@@ -248,19 +248,10 @@ ${getFullPath('english')}
     // while the auditing is ongoing, we default to English for un-audited certs
     // once that's complete, we can revert to using isEnglishChallenge(fullPath)
     const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
-    const isMdx = getFullPath('english').slice(-1) === 'x';
+    const isCert = path.extname(filePath) === 'markdown';
     let challenge;
 
-    if (isMdx) {
-      challenge = await (useEnglish
-        ? parseMDX(getFullPath('english'))
-        : parseTranslation(
-            getFullPath('english'),
-            getFullPath(lang),
-            COMMENT_TRANSLATIONS,
-            lang
-          ));
-    } else {
+    if (isCert) {
       challenge = await (useEnglish
         ? parseMarkdown(getFullPath('english'))
         : parseTranslation(
@@ -269,6 +260,15 @@ ${getFullPath('english')}
             COMMENT_TRANSLATIONS,
             lang,
             parseMarkdown
+          ));
+    } else {
+      challenge = await (useEnglish
+        ? parseMDX(getFullPath('english'))
+        : parseTranslation(
+            getFullPath('english'),
+            getFullPath(lang),
+            COMMENT_TRANSLATIONS,
+            lang
           ));
     }
     const challengeOrder = findIndex(
