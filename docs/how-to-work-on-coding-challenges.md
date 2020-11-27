@@ -88,11 +88,22 @@ Code evaluated after the user’s code, and just before the tests
 Boilerplate code to render to the editor
 
 ```html
-Some html
+<body>
+  <p class="main-text">
+    Hello world!
+  </p>
+</body>
 ```
 
 ```css
-Some css
+body {
+  margin: 0;
+  background-color: #3a3240;
+}
+
+.main-text {
+  color: #aea8d3;
+}
 ```
 
 ```js
@@ -110,7 +121,6 @@ Solutions are used for the CI tests to ensure that changes to the hints will sti
 ```js
 // second solution
 ```
-
 
 ```js
 // third solution etc.
