@@ -6,10 +6,13 @@ forumTopicId: 301590
 ---
 
 ## Description
+
 <section id='description'>
+
 As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+
 In the next example we'll see how to send data in a request payload (body).
-We are going to test a PUT request. The <code>'/travellers'</code> endpoint accepts a JSON object taking the structure:
+We are going to test a PUT request. The `'/travellers'` endpoint accepts a JSON object taking the structure:
 
 ```json
 {
@@ -18,7 +21,7 @@ We are going to test a PUT request. The <code>'/travellers'</code> endpoint acce
 ```
 
 The route responds with :
- 
+
 ```json
 {
   "name": [first name], "surname": [last name], "dates": [birth - death years]
@@ -30,8 +33,12 @@ See the server code for more details.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Send <br>
+
+Within `tests/2_functional-tests.js`, alter the `'send {surname: "Colombo"}'` test (`// #3`):
+
+Send the following JSON response as a payload:
 
 ```json
 {
@@ -39,12 +46,19 @@ Send <br>
 }
 ```
 
-Replace <code>assert.fail()</code> and make the test pass.
-Check for 1) <code>status</code>, 2) <code>type</code>, 3) <code>body.name</code>, 4) <code>body.surname</code>.
-Follow the assertion order above, We rely on it.
+Check for the following, within the `request.end` callback:
+
+1. `status`
+2. `type`
+3. `body.name`
+4. `body.surname`
+
+Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -59,17 +73,18 @@ tests:
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[2].method, 'equal'); assert.equal(data.assertions[2].args[0], 'res.body.name'); assert.match(data.assertions[2].args[1], /('|")Cristoforo\1/);}, xhr => { throw new Error(xhr.responseText); })
   - text: You should test for 'res.body.surname' to be 'Colombo'.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=2').then(data => { assert.equal(data.assertions[3].method, 'equal'); assert.equal(data.assertions[3].args[0], 'res.body.surname'); assert.match(data.assertions[3].args[1], /('|")Colombo\1/);}, xhr => { throw new Error(xhr.responseText); })
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

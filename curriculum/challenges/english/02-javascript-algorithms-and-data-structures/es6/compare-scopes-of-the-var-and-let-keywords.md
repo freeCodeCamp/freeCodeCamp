@@ -54,7 +54,6 @@ console.log(printNumTwo());
 As you can see, <code>printNumTwo()</code> prints 3 and not 2. This is because the value assigned to <code>i</code> was updated and the <code>printNumTwo()</code> returns the global <code>i</code> and not the value <code>i</code> had when the function was created in the for loop. The <code>let</code> keyword does not follow this behavior:
 
 ```js
-'use strict';
 let printNumTwo;
 for (let i = 0; i < 3; i++) {
   if (i === 2) {
@@ -101,7 +100,6 @@ tests:
 
 ```js
 function checkScope() {
-  'use strict';
   var i = 'function scope';
   if (true) {
     i = 'block scope';
@@ -123,7 +121,6 @@ function checkScope() {
 
 ```js
 function checkScope() {
-  'use strict';
   let i = 'function scope';
   if (true) {
     let i = 'block scope';

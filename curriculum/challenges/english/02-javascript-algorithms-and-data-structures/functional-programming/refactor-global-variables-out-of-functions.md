@@ -8,8 +8,8 @@ forumTopicId: 301235
 ## Description
 <section id='description'>
 So far, we have seen two distinct principles for functional programming:
-1) Don't alter a variable or object - create new variables and objects and return them if need be from a function.
-2) Declare function arguments - any computation inside a function depends only on the arguments, and not on any global object or variable.
+1) Don't alter a variable or object - create new variables and objects and return them if need be from a function. Hint: using something like <code>var newArr = arrVar</code>, where <code>arrVar</code> is an array will simply create a reference to the existing variable and not a copy. So changing a value in <code>newArr</code> would change the value in <code>arrVar</code>.
+2) Declare function parameters - any computation inside a function depends only on the arguments passed to the function, and not on any global object or variable.
 Adding one to a number is not very exciting, but we can apply these principles when working with arrays or more complex objects.
 </section>
 
