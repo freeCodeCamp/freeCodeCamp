@@ -7,4 +7,3 @@ superBlock: Data Analysis with Python
 
 Neural networks are at the core of what we are calling Artificial Intelligence today. They can seem impenetrable, and even mystical, if you are trying to understand them for the first time, but they don't have to.
 Even if you are completely new to neural networks, these lectures by Brandon Rohrer will get you comfortable with the concepts and the math behind them.
-Let us get started. As we walk through the tutorials, you will get a better sense of each concept and gain the required skills.
