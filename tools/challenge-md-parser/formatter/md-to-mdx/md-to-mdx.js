@@ -11,8 +11,11 @@ readDirP({ root: challengeDir, fileFilter: ['*.md'] }).on('data', file => {
     generateTranscribableChallenge(file.fullPath)
       .then(challengeToString)
       .then(text => fs.writeFileSync(file.fullPath + 'x', text))
-      .catch(() => {
+      .catch(err => {
+        console.log('Error transforming');
         console.log(file.path);
+        console.log('mdx version not created.');
+        console.log(err);
       });
   }
 });

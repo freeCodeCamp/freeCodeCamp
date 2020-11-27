@@ -12,6 +12,7 @@ readDirP({
     getText(file.fullPath)
       .then(validateHints)
       .catch(() => {
+        console.log('invalid hint in');
         console.log(file.path);
       });
   }

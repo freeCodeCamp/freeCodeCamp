@@ -58,7 +58,8 @@ const frontmatterProperties = [
   'videoUrl',
   'forumTopicId',
   'isPrivate',
-  'required'
+  'required',
+  'helpCategory'
 ];
 
 const otherProperties = [
@@ -73,7 +74,7 @@ const otherProperties = [
 function createFrontmatter(data) {
   Object.keys(data).forEach(key => {
     if (!frontmatterProperties.includes(key) && !otherProperties.includes(key))
-      throw `Unknown property ${key}`;
+      throw Error(`Unknown property '${key}'`);
   });
 
   // TODO: sort the keys?  It doesn't matter from a machine perspective, but
