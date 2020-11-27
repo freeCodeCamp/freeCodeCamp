@@ -6,68 +6,54 @@ videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
 ---
 
-## Description
-<section id='description'>
-<code>Number</code> is a data type in JavaScript which represents numeric data.
+# --description--
+
+`Number` is a data type in JavaScript which represents numeric data.
+
 Now let's try to add two numbers using JavaScript.
-JavaScript uses the <code>+</code> symbol as an addition operator when placed between two numbers.
-<strong>Example:</strong>
+
+JavaScript uses the `+` symbol as an addition operator when placed between two numbers.
+
+**Example:**
 
 ```js
 myVar = 5 + 10; // assigned 15
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Change the <code>0</code> so that sum will equal <code>20</code>.
-</section>
+Change the `0` so that sum will equal `20`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>sum</code> should equal <code>20</code>.
-    testString: assert(sum === 20);
-  - text: You should use the <code>+</code> operator.
-    testString: assert(/\+/.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`sum` should equal `20`.
 
 ```js
-var sum = 10 + 0;
-
+assert(sum === 20);
 ```
 
-</div>
+You should use the `+` operator.
 
+```js
+assert(/\+/.test(code));
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(z){return 'sum = '+z;})(sum);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var sum = 10 + 0;
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var sum = 10 + 10;
 ```
-
-</section>

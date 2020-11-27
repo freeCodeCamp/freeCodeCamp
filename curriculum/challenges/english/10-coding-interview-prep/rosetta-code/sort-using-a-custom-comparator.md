@@ -5,46 +5,100 @@ challengeType: 5
 forumTopicId: 302309
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 Write a function to sort an array (or list) of strings in order of descending length, and in ascending lexicographic order for strings of equal length.
-</section>
 
-## Instructions
+# --hints--
 
-<section id='instructions'>
+`lengthSorter` should be a function.
 
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>lengthSorter</code> should be a function.
-    testString: assert(typeof lengthSorter == 'function');
-  - text: <code>lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])</code> should return an array.
-    testString: assert(Array.isArray(lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])));
-  - text: <code>lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])</code> should return <code>["strings", "sample", "sorted", "Here", "some", "are", "be", "to"]</code>.
-    testString: assert.deepEqual(lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"]), ["strings", "sample", "sorted", "Here", "some", "are", "be", "to"]);
-  - text: <code>lengthSorter(["I", "hope", "your", "day", "is", "going", "good", "?"])</code> should return <code>["going", "good", "hope", "your", "day", "is", "?","I"]</code>.
-    testString: assert.deepEqual(lengthSorter(["I", "hope", "your", "day", "is", "going", "good", "?"]), ["going", "good", "hope", "your", "day", "is", "?","I"]);
-  - text: <code>lengthSorter(["Mine", "is", "going", "great"])</code> should return <code>["going", "great", "Mine", "is"]</code>.
-    testString: assert.deepEqual(lengthSorter(["Mine", "is", "going", "great"]), ["going", "great", "Mine", "is"]);
-  - text: <code>lengthSorter(["Have", "fun", "sorting", "!!"])</code> should return <code>["sorting", "Have", "fun", "!!"]</code>.
-    testString: assert.deepEqual(lengthSorter(["Have", "fun", "sorting", "!!"]), ["sorting", "Have", "fun", "!!"]);
-  - text: <code>lengthSorter(["Everything", "is", "good", "!!"])</code> should return <code>["Everything", "good", "!!", "is"]</code>.
-    testString: assert.deepEqual(lengthSorter(["Everything", "is", "good", "!!"]), ["Everything", "good", "!!", "is"]);
+```js
+assert(typeof lengthSorter == 'function');
 ```
 
-</section>
+`lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])` should return an array.
 
-## Challenge Seed
+```js
+assert(
+  Array.isArray(
+    lengthSorter([
+      'Here',
+      'are',
+      'some',
+      'sample',
+      'strings',
+      'to',
+      'be',
+      'sorted'
+    ])
+  )
+);
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])` should return `["strings", "sample", "sorted", "Here", "some", "are", "be", "to"]`.
+
+```js
+assert.deepEqual(
+  lengthSorter([
+    'Here',
+    'are',
+    'some',
+    'sample',
+    'strings',
+    'to',
+    'be',
+    'sorted'
+  ]),
+  ['strings', 'sample', 'sorted', 'Here', 'some', 'are', 'be', 'to']
+);
+```
+
+`lengthSorter(["I", "hope", "your", "day", "is", "going", "good", "?"])` should return `["going", "good", "hope", "your", "day", "is", "?","I"]`.
+
+```js
+assert.deepEqual(
+  lengthSorter(['I', 'hope', 'your', 'day', 'is', 'going', 'good', '?']),
+  ['going', 'good', 'hope', 'your', 'day', 'is', '?', 'I']
+);
+```
+
+`lengthSorter(["Mine", "is", "going", "great"])` should return `["going", "great", "Mine", "is"]`.
+
+```js
+assert.deepEqual(lengthSorter(['Mine', 'is', 'going', 'great']), [
+  'going',
+  'great',
+  'Mine',
+  'is'
+]);
+```
+
+`lengthSorter(["Have", "fun", "sorting", "!!"])` should return `["sorting", "Have", "fun", "!!"]`.
+
+```js
+assert.deepEqual(lengthSorter(['Have', 'fun', 'sorting', '!!']), [
+  'sorting',
+  'Have',
+  'fun',
+  '!!'
+]);
+```
+
+`lengthSorter(["Everything", "is", "good", "!!"])` should return `["Everything", "good", "!!", "is"]`.
+
+```js
+assert.deepEqual(lengthSorter(['Everything', 'is', 'good', '!!']), [
+  'Everything',
+  'good',
+  '!!',
+  'is'
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function lengthSorter(arr) {
@@ -52,12 +106,7 @@ function lengthSorter(arr) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function lengthSorter(arr) {
@@ -69,5 +118,3 @@ function lengthSorter(arr) {
   return arr;
 }
 ```
-
-</section>

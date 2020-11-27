@@ -4,37 +4,44 @@ title: Part 7
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-You can add images to your website by using the `img` element. `img` elements have an opening tag without a closing tag. A tag for an element without  a closing tag is known as a <dfn>self-closing tag</dfn>. 
+You can add images to your website by using the `img` element. `img` elements have an opening tag without a closing tag. A tag for an element without a closing tag is known as a <dfn>self-closing tag</dfn>.
 
 Add an `img` element below the `p` element. At this point, no image will show up in the browser.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `img` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: "Your `img` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
-    testString: assert( document.querySelector('img') );
-  - text: Your `img` element should not have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( !code.match(/<\/img\>/) );
-  - text: You should only have one `img` element. Remove any extras.
-    testString: assert( document.querySelectorAll('img').length === 1 );
-  - text: Your `img` element should be below the `p` element. You have them in the wrong order.
-    testString: const collection = [...document.querySelectorAll('p,img')].map(node => node.nodeName); assert( collection.indexOf('P') < collection.indexOf('IMG') );
-
+```js
+assert(document.querySelector('img'));
 ```
 
-</section>
+Your `img` element should not have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!code.match(/<\/img\>/));
+```
 
-<div id='html-seed'>
+You should only have one `img` element. Remove any extras.
+
+```js
+assert(document.querySelectorAll('img').length === 1);
+```
+
+Your `img` element should be below the `p` element. You have them in the wrong order.
+
+```js
+const collection = [...document.querySelectorAll('p,img')].map(
+  (node) => node.nodeName
+);
+assert(collection.indexOf('P') < collection.indexOf('IMG'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -43,13 +50,11 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      --fcc-editable-region--
+--fcc-editable-region--
       <p>Click here to view more cat photos.</p>
-      --fcc-editable-region--
+--fcc-editable-region--
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

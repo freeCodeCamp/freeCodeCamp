@@ -4,29 +4,21 @@ title: Part 15
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it. Start by rewriting the styles you have created into the `styles.css` file.  Make sure to exclude the opening and closing `style` tags.
+You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it. Start by rewriting the styles you have created into the `styles.css` file. Make sure to exclude the opening and closing `style` tags.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -54,16 +46,9 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 --fcc-editable-region--
 
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

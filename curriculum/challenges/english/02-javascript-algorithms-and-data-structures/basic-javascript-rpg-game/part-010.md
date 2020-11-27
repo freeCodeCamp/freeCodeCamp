@@ -4,58 +4,27 @@ title: Part 10
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In order to update HTML elements on the page, you need to get references to them in your JavaScript code. The code `let el = document.querySelector("#el");` gets a reference to an HTML element with an `id` of `el` and assigns it to the variable `el`.
 
 Get a reference to the HTML element with the `id` of `button1` and assign it to a variable with the name `button1`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    # testString: assert(typeof button1 === "object" && button1.id === 'button1' && button1.innerHTML === 'Go to store'); # More flexible test, but JS needs to be in a separate file
-    testString: assert(/let\s+button1\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button1\s*[\'\"\`]\s*\);?/.test(code));
-
+```js
+assert(
+  /let\s+button1\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button1\s*[\'\"\`]\s*\);?/.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory = ["stick"];
-
-  
-</script>
-
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -121,25 +90,30 @@ let inventory = ["stick"];
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick"];
 
-</section>
+  
+</script>
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -154,5 +128,3 @@ let inventory = ["stick"];
 let button1 = document.querySelector('#button1');
 </script>
 ```
-
-</section>

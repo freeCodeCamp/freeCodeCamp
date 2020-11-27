@@ -6,11 +6,13 @@ videoUrl: 'https://scrimba.com/c/cGryJs8'
 forumTopicId: 16164
 ---
 
-## Description
-<section id='description'>
-There are two ways to access the properties of an object: dot notation (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.
+# --description--
+
+There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`), similar to an array.
+
 Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
-Here is a sample of using dot notation (<code>.</code>) to read an object's property:
+
+Here is a sample of using dot notation (`.`) to read an object's property:
 
 ```js
 var myObj = {
@@ -21,37 +23,51 @@ var prop1val = myObj.prop1; // val1
 var prop2val = myObj.prop2; // val2
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Read in the property values of <code>testObj</code> using dot notation. Set the variable <code>hatValue</code> equal to the object's property <code>hat</code> and set the variable <code>shirtValue</code> equal to the object's property <code>shirt</code>.
-</section>
+Read in the property values of `testObj` using dot notation. Set the variable `hatValue` equal to the object's property `hat` and set the variable `shirtValue` equal to the object's property `shirt`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>hatValue</code> should be a string
-    testString: assert(typeof hatValue === 'string' );
-  - text: The value of <code>hatValue</code> should be <code>"ballcap"</code>
-    testString: assert(hatValue === 'ballcap' );
-  - text: <code>shirtValue</code> should be a string
-    testString: assert(typeof shirtValue === 'string' );
-  - text: The value of <code>shirtValue</code> should be <code>"jersey"</code>
-    testString: assert(shirtValue === 'jersey' );
-  - text: You should use dot notation twice
-    testString: assert(code.match(/testObj\.\w+/g).length > 1);
+`hatValue` should be a string
 
+```js
+assert(typeof hatValue === 'string');
 ```
 
-</section>
+The value of `hatValue` should be `"ballcap"`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(hatValue === 'ballcap');
+```
 
-<div id='js-seed'>
+`shirtValue` should be a string
+
+```js
+assert(typeof shirtValue === 'string');
+```
+
+The value of `shirtValue` should be `"jersey"`
+
+```js
+assert(shirtValue === 'jersey');
+```
+
+You should use dot notation twice
+
+```js
+assert(code.match(/testObj\.\w+/g).length > 1);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b) { return "hatValue = '" + a + "', shirtValue = '" + b + "'"; })(hatValue,shirtValue);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -67,23 +83,7 @@ var hatValue = testObj;      // Change this line
 var shirtValue = testObj;    // Change this line
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(a,b) { return "hatValue = '" + a + "', shirtValue = '" + b + "'"; })(hatValue,shirtValue);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var testObj = {
@@ -95,5 +95,3 @@ var testObj = {
 var hatValue = testObj.hat;
 var shirtValue = testObj.shirt;
 ```
-
-</section>

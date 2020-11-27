@@ -4,59 +4,32 @@ title: Part 12
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 We need a way to iterate through all the `meal` items in the `total` array and return the values that the user entered as an array.
 
 The `map()` method allows us to do exactly that.
 
-Delete `const meal = total[0];` and chain the `.map()` method to the end of your `Array.from()` method.
-Here's an example of `.map()` chained to an array: `[3, 2, 1].map()`
+Delete `const meal = total[0];` and chain the `.map()` method to the end of your `Array.from()` method. Here's an example of `.map()` chained to an array: `[3, 2, 1].map()`
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.toString().replace(/\s/g, '').match(/Array\.from\(document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)\)\.map\(\)\;?/) );
+```js
+assert(
+  code
+    .toString()
+    .replace(/\s/g, '')
+    .match(
+      /Array\.from\(document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)\)\.map\(\)\;?/
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-    const total = Array.from(document.getElementsByClassName('cal-control'));
-    const meal = total[0];
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -116,24 +89,28 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(document.getElementsByClassName('cal-control'));
+    const meal = total[0];
+  }
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -147,5 +124,3 @@ tests:
   }
 </script>
 ```
-
-</section>

@@ -4,31 +4,40 @@ title: Part 8
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give the dashboard a `background-color` of `white` and a `box-shadow` of `5px 5px 5px 5px #888` to give it a little depth.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const dashboard = $(".dashboard"); assert(dashboard.css("background-color") === "rgb(255, 255, 255)" && dashboard.css("box-shadow") === "rgb(136, 136, 136) 5px 5px 5px 5px");
-
+```js
+const dashboard = $('.dashboard');
+assert(
+  dashboard.css('background-color') === 'rgb(255, 255, 255)' &&
+    dashboard.css('box-shadow') === 'rgb(136, 136, 136) 5px 5px 5px 5px'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <style>
@@ -45,31 +54,7 @@ body {
 </style>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -85,5 +70,3 @@ body {
 }
 </style>
 ```
-
-</section>

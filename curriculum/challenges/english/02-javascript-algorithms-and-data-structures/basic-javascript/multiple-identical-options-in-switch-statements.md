@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/cdBKWCV'
 forumTopicId: 18242
 ---
 
-## Description
-<section id='description'>
-If the <code>break</code> statement is omitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:
+# --description--
+
+If the `break` statement is omitted from a `switch` statement's `case`, the following `case` statement(s) are executed until a `break` is encountered. If you have multiple inputs with the same output, you can represent them in a `switch` statement like this:
 
 ```js
 var result = "";
@@ -24,50 +24,88 @@ switch(val) {
 ```
 
 Cases for 1, 2, and 3 will all produce the same result.
-</section>
 
-## Instructions
-<section id='instructions'>
-Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - "Low"<br><code>4-6</code> - "Mid"<br><code>7-9</code> - "High"
-<strong>Note</strong><br>You will need to have a <code>case</code> statement for each number in the range.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Write a switch statement to set `answer` for the following ranges:  
+`1-3` - "Low"  
+`4-6` - "Mid"  
+`7-9` - "High"
 
-```yml
-tests:
-  - text: <code>sequentialSizes(1)</code> should return "Low"
-    testString: assert(sequentialSizes(1) === "Low");
-  - text: <code>sequentialSizes(2)</code> should return "Low"
-    testString: assert(sequentialSizes(2) === "Low");
-  - text: <code>sequentialSizes(3)</code> should return "Low"
-    testString: assert(sequentialSizes(3) === "Low");
-  - text: <code>sequentialSizes(4)</code> should return "Mid"
-    testString: assert(sequentialSizes(4) === "Mid");
-  - text: <code>sequentialSizes(5)</code> should return "Mid"
-    testString: assert(sequentialSizes(5) === "Mid");
-  - text: <code>sequentialSizes(6)</code> should return "Mid"
-    testString: assert(sequentialSizes(6) === "Mid");
-  - text: <code>sequentialSizes(7)</code> should return "High"
-    testString: assert(sequentialSizes(7) === "High");
-  - text: <code>sequentialSizes(8)</code> should return "High"
-    testString: assert(sequentialSizes(8) === "High");
-  - text: <code>sequentialSizes(9)</code> should return "High"
-    testString: assert(sequentialSizes(9) === "High");
-  - text: You should not use any <code>if</code> or <code>else</code> statements
-    testString: assert(!/else/g.test(code) || !/if/g.test(code));
-  - text: You should have nine <code>case</code> statements
-    testString: assert(code.match(/case/g).length === 9);
+**Note**  
+You will need to have a `case` statement for each number in the range.
 
+# --hints--
+
+`sequentialSizes(1)` should return "Low"
+
+```js
+assert(sequentialSizes(1) === 'Low');
 ```
 
-</section>
+`sequentialSizes(2)` should return "Low"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(sequentialSizes(2) === 'Low');
+```
 
-<div id='js-seed'>
+`sequentialSizes(3)` should return "Low"
+
+```js
+assert(sequentialSizes(3) === 'Low');
+```
+
+`sequentialSizes(4)` should return "Mid"
+
+```js
+assert(sequentialSizes(4) === 'Mid');
+```
+
+`sequentialSizes(5)` should return "Mid"
+
+```js
+assert(sequentialSizes(5) === 'Mid');
+```
+
+`sequentialSizes(6)` should return "Mid"
+
+```js
+assert(sequentialSizes(6) === 'Mid');
+```
+
+`sequentialSizes(7)` should return "High"
+
+```js
+assert(sequentialSizes(7) === 'High');
+```
+
+`sequentialSizes(8)` should return "High"
+
+```js
+assert(sequentialSizes(8) === 'High');
+```
+
+`sequentialSizes(9)` should return "High"
+
+```js
+assert(sequentialSizes(9) === 'High');
+```
+
+You should not use any `if` or `else` statements
+
+```js
+assert(!/else/g.test(code) || !/if/g.test(code));
+```
+
+You should have nine `case` statements
+
+```js
+assert(code.match(/case/g).length === 9);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sequentialSizes(val) {
@@ -81,18 +119,9 @@ function sequentialSizes(val) {
 }
 
 sequentialSizes(1);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function sequentialSizes(val) {
@@ -118,5 +147,3 @@ function sequentialSizes(val) {
   return answer;
 }
 ```
-
-</section>

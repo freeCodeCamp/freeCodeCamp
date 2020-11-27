@@ -5,66 +5,65 @@ challengeType: 11
 videoId: sTMN_pdI6S0
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+-   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
+-   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-</section>
+# --question--
 
-## Tests
+## --text--
 
-<section id='tests'>
+What will the following code print out?
 
-````yml
-question:
-  text: |
-    What will the following code print out?
+```py
+import pandas as pd
+import numpy as np
 
-    ```py
-    import pandas as pd
-    import numpy as np
+s = pd.Series([np.nan, 1, 2, np.nan, 3])
+s = s.fillna(method='ffill')
 
-    s = pd.Series([np.nan, 1, 2, np.nan, 3])
-    s = s.fillna(method='ffill')
+print(s)
+```
 
-    print(s)
-    ```
+## --answers--
 
-  answers:
-    - |
-      ```
-      0    1.0
-      1    1.0
-      2    2.0
-      3    3.0
-      4    3.0
-      dtype: float64
-      ```
-    - |
-      ```
-      0    NaN
-      1    1.0
-      2    2.0
-      3    2.0
-      4    3.0
-      dtype: float64
-      ```
-    - |
-      ```
-      0    NaN
-      1    1.0
-      2    2.0
-      3    NaN
-      4    3.0
-      dtype: float64
-      ```
-  solution: 2
-````
+```
+0    1.0
+1    1.0
+2    2.0
+3    3.0
+4    3.0
+dtype: float64
+```
 
-</section>
+---
+
+```
+0    NaN
+1    1.0
+2    2.0
+3    2.0
+4    3.0
+dtype: float64
+```
+
+---
+
+```
+0    NaN
+1    1.0
+2    2.0
+3    NaN
+4    3.0
+dtype: float64
+```
+
+## --video-solution--
+
+2
+

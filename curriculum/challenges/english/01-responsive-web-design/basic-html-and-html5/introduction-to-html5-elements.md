@@ -6,11 +6,13 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cBkZGpt7'
 forumTopicId: 301097
 ---
 
-## Description
-<section id='description'>
-HTML5 introduces more descriptive HTML tags. These include <code>main</code>, <code>header</code>, <code>footer</code>, <code>nav</code>, <code>video</code>, <code>article</code>, <code>section</code> and others.
-These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The <code>main</code> HTML5 tag helps search engines and other developers find the main content of your page.
-Example usage, a <code>main</code> element with two child elements nested inside it:
+# --description--
+
+HTML5 introduces more descriptive HTML tags. These include `main`, `header`, `footer`, `nav`, `video`, `article`, `section` and others.
+
+These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The `main` HTML5 tag helps search engines and other developers find the main content of your page.
+
+Example usage, a `main` element with two child elements nested inside it:
 
 ```html
 <main> 
@@ -19,43 +21,64 @@ Example usage, a <code>main</code> element with two child elements nested inside
 </main>
 ```
 
-<strong>Note:</strong> Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.
-</section>
+**Note:** Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.
 
-## Instructions
-<section id='instructions'>
-Create a second <code>p</code> element after the existing <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>
-Then, create a <code>main</code> element and nest the two <code>p</code> elements inside the <code>main</code> element.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Create a second `p` element after the existing `p` element with the following kitty ipsum text: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
-```yml
-tests:
-  - text: You should have 2 <code>p</code> elements with Kitty Ipsum text.
-    testString: assert($("p").length > 1);
-  - text: Each of your <code>p</code> elements should have a closing tag.
-    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
-  - text: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.
-    testString: assert.isTrue((/Purr\s+jump\s+eat/gi).test($("p").text()));
-  - text: Your code should have one <code>main</code> element.
-    testString: assert($('main').length === 1);
-  - text: The <code>main</code> element should have two paragraph elements as children.
-    testString: assert($("main").children("p").length === 2);
-  - text: The opening <code>main</code> tag should come before the first paragraph tag.
-    testString: assert(code.match(/<main>\s*?<p>/g));
-  - text: The closing <code>main</code> tag should come after the second closing paragraph tag.
-    testString: assert(code.match(/<\/p>\s*?<\/main>/g));
+Then, create a `main` element and nest the two `p` elements inside the `main` element.
 
+# --hints--
+
+You should have 2 `p` elements with Kitty Ipsum text.
+
+```js
+assert($('p').length > 1);
 ```
 
-</section>
+Each of your `p` elements should have a closing tag.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/<\/p>/g) &&
+    code.match(/<\/p>/g).length === code.match(/<p/g).length
+);
+```
 
-<div id='html-seed'>
+Your `p` element should contain the first few words of the provided additional `kitty ipsum text`.
+
+```js
+assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));
+```
+
+Your code should have one `main` element.
+
+```js
+assert($('main').length === 1);
+```
+
+The `main` element should have two paragraph elements as children.
+
+```js
+assert($('main').children('p').length === 2);
+```
+
+The opening `main` tag should come before the first paragraph tag.
+
+```js
+assert(code.match(/<main>\s*?<p>/g));
+```
+
+The closing `main` tag should come after the second closing paragraph tag.
+
+```js
+assert(code.match(/<\/p>\s*?<\/main>/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -63,14 +86,7 @@ tests:
 <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -79,5 +95,3 @@ tests:
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```
-
-</section>

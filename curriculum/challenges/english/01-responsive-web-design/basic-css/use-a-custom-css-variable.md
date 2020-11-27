@@ -6,45 +6,65 @@ videoUrl: 'https://scrimba.com/c/cM989ck'
 forumTopicId: 301090
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 After you create your variable, you can assign its value to other CSS properties by referencing the name you gave it.
 
 ```css
 background: var(--penguin-skin);
 ```
 
-This will change the background of whatever element you are targeting to gray because that is the value of the <code>--penguin-skin</code> variable.
-Note that styles will not be applied unless the variable names are an exact match.
-</section>
+This will change the background of whatever element you are targeting to gray because that is the value of the `--penguin-skin` variable. Note that styles will not be applied unless the variable names are an exact match.
 
-## Instructions
-<section id='instructions'>
-Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code>, <code>penguin-bottom</code>, <code>right-hand</code> and <code>left-hand</code> classes.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Apply the `--penguin-skin` variable to the `background` property of the `penguin-top`, `penguin-bottom`, `right-hand` and `left-hand` classes.
 
-```yml
-tests:
-  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>penguin-top</code> class.
-    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
-  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>penguin-bottom</code> class.
-    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi));
-  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>right-hand</code> class.
-    testString: assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi));
-  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>left-hand</code> class.
-    testString: assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi));
+# --hints--
 
+The `--penguin-skin` variable should be applied to the `background` property of the `penguin-top` class.
+
+```js
+assert(
+  code.match(
+    /.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi
+  )
+);
 ```
 
-</section>
+The `--penguin-skin` variable should be applied to the `background` property of the `penguin-bottom` class.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi
+  )
+);
+```
 
-<div id='html-seed'>
+The `--penguin-skin` variable should be applied to the `background` property of the `right-hand` class.
+
+```js
+assert(
+  code.match(
+    /.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi
+  )
+);
+```
+
+The `--penguin-skin` variable should be applied to the `background` property of the `left-hand` class.
+
+```js
+assert(
+  code.match(
+    /.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -259,18 +279,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.penguin-top {background: var(--penguin-skin);} .penguin-bottom {background: var(--penguin-skin);} .right-hand {background: var(--penguin-skin);} .left-hand {background: var(--penguin-skin);}</style>
 ```
-
-</section>

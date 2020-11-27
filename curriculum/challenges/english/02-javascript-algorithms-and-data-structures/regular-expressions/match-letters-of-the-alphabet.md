@@ -5,11 +5,13 @@ challengeType: 1
 forumTopicId: 301354
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You saw how you can use <dfn>character sets</dfn> to specify a group of characters to match, but that's a lot of typing when you need to match a large range of characters (for example, every letter in the alphabet). Fortunately, there is a built-in feature that makes this short and simple.
-Inside a character set, you can define a range of characters to match using a hyphen character: <code>-</code>.
-For example, to match lowercase letters <code>a</code> through <code>e</code> you would use <code>[a-e]</code>.
+
+Inside a character set, you can define a range of characters to match using a hyphen character: `-`.
+
+For example, to match lowercase letters `a` through `e` you would use `[a-e]`.
 
 ```js
 let catStr = "cat";
@@ -21,34 +23,36 @@ batStr.match(bgRegex); // Returns ["bat"]
 matStr.match(bgRegex); // Returns null
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Match all the letters in the string <code>quoteSample</code>.
-<strong>Note</strong><br>Be sure to match both upper- and lowercase <strong>letters<strong>.
-</section>
+Match all the letters in the string `quoteSample`.
 
-## Tests
-<section id='tests'>
+**Note**  
+Be sure to match both upper- and lowercase **letters**.\*\*\*\*
 
-```yml
-tests:
-  - text: Your regex <code>alphabetRegex</code> should match 35 items.
-    testString: assert(result.length == 35);
-  - text: Your regex <code>alphabetRegex</code> should use the global flag.
-    testString: assert(alphabetRegex.flags.match(/g/).length == 1);
-  - text: Your regex <code>alphabetRegex</code> should use the case insensitive flag.
-    testString: assert(alphabetRegex.flags.match(/i/).length == 1);
+# --hints--
 
+Your regex `alphabetRegex` should match 35 items.
+
+```js
+assert(result.length == 35);
 ```
 
-</section>
+Your regex `alphabetRegex` should use the global flag.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(alphabetRegex.flags.match(/g/).length == 1);
+```
 
-<div id='js-seed'>
+Your regex `alphabetRegex` should use the case insensitive flag.
+
+```js
+assert(alphabetRegex.flags.match(/i/).length == 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let quoteSample = "The quick brown fox jumps over the lazy dog.";
@@ -56,19 +60,10 @@ let alphabetRegex = /change/; // Change this line
 let result = alphabetRegex; // Change this line
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let quoteSample = "The quick brown fox jumps over the lazy dog.";
 let alphabetRegex = /[a-z]/gi; // Change this line
 let result = quoteSample.match(alphabetRegex); // Change this line
 ```
-
-</section>

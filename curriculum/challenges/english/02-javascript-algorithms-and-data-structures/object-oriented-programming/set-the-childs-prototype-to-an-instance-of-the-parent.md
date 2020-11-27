@@ -5,46 +5,40 @@ challengeType: 1
 forumTopicId: 301325
 ---
 
-## Description
-<section id='description'>
-In the previous challenge you saw the first step for inheriting behavior from the supertype (or parent) <code>Animal</code>: making a new instance of <code>Animal</code>.
-This challenge covers the next step: set the <code>prototype</code> of the subtype (or child)&mdash;in this case, <code>Bird</code>&mdash;to be an instance of <code>Animal</code>.
+# --description--
+
+In the previous challenge you saw the first step for inheriting behavior from the supertype (or parent) `Animal`: making a new instance of `Animal`.
+
+This challenge covers the next step: set the `prototype` of the subtype (or child)—in this case, `Bird`—to be an instance of `Animal`.
 
 ```js
 Bird.prototype = Object.create(Animal.prototype);
 ```
 
-Remember that the <code>prototype</code> is like the "recipe" for creating an object. In a way, the recipe for <code>Bird</code> now includes all the key "ingredients" from <code>Animal</code>.
+Remember that the `prototype` is like the "recipe" for creating an object. In a way, the recipe for `Bird` now includes all the key "ingredients" from `Animal`.
 
 ```js
 let duck = new Bird("Donald");
 duck.eat(); // prints "nom nom nom"
 ```
 
-<code>duck</code> inherits all of <code>Animal</code>'s properties, including the <code>eat</code> method.
-</section>
+`duck` inherits all of `Animal`'s properties, including the `eat` method.
 
-## Instructions
-<section id='instructions'>
-Modify the code so that instances of <code>Dog</code> inherit from <code>Animal</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Modify the code so that instances of `Dog` inherit from `Animal`.
 
-```yml
-tests:
-  - text: <code>Dog.prototype</code> should be an instance of <code>Animal</code>.
-    testString: assert(Animal.prototype.isPrototypeOf(Dog.prototype));
+# --hints--
 
+`Dog.prototype` should be an instance of `Animal`.
+
+```js
+assert(Animal.prototype.isPrototypeOf(Dog.prototype));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function Animal() { }
@@ -62,18 +56,9 @@ function Dog() { }
 
 
 let beagle = new Dog();
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function Animal() { }
@@ -91,5 +76,3 @@ Dog.prototype = Object.create(Animal.prototype);
 let beagle = new Dog();
 beagle.eat();
 ```
-
-</section>

@@ -1,12 +1,11 @@
 ---
 id: 5900f3b61000cf542c50fec9
-challengeType: 5
 title: 'Problem 74: Digit factorial chains'
+challengeType: 5
 forumTopicId: 302187
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The number 145 is well known for the property that the sum of the factorial of its digits is equal to 145:
 
@@ -31,31 +30,23 @@ Starting with 69 produces a chain of five non-repeating terms, but the longest n
 
 How many chains, with a starting number below one million, contain exactly sixty non-repeating terms?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`digitFactorialChains()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>digitFactorialChains()</code> should return a number.
-    testString: assert(typeof digitFactorialChains() === 'number');
-  - text: <code>digitFactorialChains()</code> should return 402.
-    testString: assert.strictEqual(digitFactorialChains(), 402);
-
+```js
+assert(typeof digitFactorialChains() === 'number');
 ```
 
-</section>
+`digitFactorialChains()` should return 402.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(digitFactorialChains(), 402);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function digitFactorialChains() {
@@ -66,17 +57,8 @@ function digitFactorialChains() {
 digitFactorialChains();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

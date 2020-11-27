@@ -5,43 +5,57 @@ challengeType: 0
 forumTopicId: 18371
 ---
 
-## Description
-<section id='description'>
-Bootstrap uses a responsive 12-column grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.
+# --description--
+
+Bootstrap uses a responsive 12-column grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a `div` element.
+
 Bootstrap has different column width attributes that it uses depending on how wide the user's screen is. For example, phones have narrow screens, and laptops have wider screens.
-Take for example Bootstrap's <code>col-md-*</code> class. Here, <code>md</code> means medium, and <code>*</code> is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
-In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where <code>xs</code> means extra small (like an extra-small mobile phone screen), and <code>*</code> is the number of columns specifying how many columns wide the element should be.
-Put the <code>Like</code>, <code>Info</code> and <code>Delete</code> buttons side-by-side by nesting all three of them within one <code>&#60;div class="row"&#62;</code> element, then each of them within a <code>&#60;div class="col-xs-4"&#62;</code> element.
-The <code>row</code> class is applied to a <code>div</code>, and the buttons themselves can be nested within it.
-</section>
 
-## Instructions
-<section id='instructions'>
+Take for example Bootstrap's `col-md-*` class. Here, `md` means medium, and `*` is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
 
-</section>
+In the Cat Photo App that we're building, we'll use `col-xs-*`, where `xs` means extra small (like an extra-small mobile phone screen), and `*` is the number of columns specifying how many columns wide the element should be.
 
-## Tests
-<section id='tests'>
+Put the `Like`, `Info` and `Delete` buttons side-by-side by nesting all three of them within one `<div class="row">` element, then each of them within a `<div class="col-xs-4">` element.
 
-```yml
-tests:
-  - text: Your buttons should all be nested within the same <code>div</code> element with the class <code>row</code>.
-    testString: assert($("div.row:has(button)").length > 0);
-  - text: Each of your Bootstrap buttons should be nested within its own <code>div</code> element with the class <code>col-xs-4</code>.
-    testString: assert($("div.col-xs-4:has(button)").length > 2);
-  - text: Each of your <code>button</code> elements should have a closing tag.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
-  - text: Each of your <code>div</code> elements should have a closing tag.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
+The `row` class is applied to a `div`, and the buttons themselves can be nested within it.
 
+# --hints--
+
+Your buttons should all be nested within the same `div` element with the class `row`.
+
+```js
+assert($('div.row:has(button)').length > 0);
 ```
 
-</section>
+Each of your Bootstrap buttons should be nested within its own `div` element with the class `col-xs-4`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div.col-xs-4:has(button)').length > 2);
+```
 
-<div id='html-seed'>
+Each of your `button` elements should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+Each of your `div` elements should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<div/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -106,14 +120,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -186,5 +193,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

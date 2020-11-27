@@ -5,83 +5,173 @@ challengeType: 5
 forumTopicId: 16044
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Convert the given number into a roman numeral.
-All <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">roman numerals</a> answers should be provided in upper-case.
-</section>
 
-## Instructions
-<section id='instructions'>
+All [roman numerals](http://www.mathsisfun.com/roman-numerals.html) answers should be provided in upper-case.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`convertToRoman(2)` should return "II".
 
-```yml
-tests:
-  - text: <code>convertToRoman(2)</code> should return "II".
-    testString: assert.deepEqual(convertToRoman(2), "II");
-  - text: <code>convertToRoman(3)</code> should return "III".
-    testString: assert.deepEqual(convertToRoman(3), "III");
-  - text: <code>convertToRoman(4)</code> should return "IV".
-    testString: assert.deepEqual(convertToRoman(4), "IV");
-  - text: <code>convertToRoman(5)</code> should return "V".
-    testString: assert.deepEqual(convertToRoman(5), "V");
-  - text: <code>convertToRoman(9)</code> should return "IX".
-    testString: assert.deepEqual(convertToRoman(9), "IX");
-  - text: <code>convertToRoman(12)</code> should return "XII".
-    testString: assert.deepEqual(convertToRoman(12), "XII");
-  - text: <code>convertToRoman(16)</code> should return "XVI".
-    testString: assert.deepEqual(convertToRoman(16), "XVI");
-  - text: <code>convertToRoman(29)</code> should return "XXIX".
-    testString: assert.deepEqual(convertToRoman(29), "XXIX");
-  - text: <code>convertToRoman(44)</code> should return "XLIV".
-    testString: assert.deepEqual(convertToRoman(44), "XLIV");
-  - text: <code>convertToRoman(45)</code> should return "XLV"
-    testString: assert.deepEqual(convertToRoman(45), "XLV");
-  - text: <code>convertToRoman(68)</code> should return "LXVIII"
-    testString: assert.deepEqual(convertToRoman(68), "LXVIII");
-  - text: <code>convertToRoman(83)</code> should return "LXXXIII"
-    testString: assert.deepEqual(convertToRoman(83), "LXXXIII");
-  - text: <code>convertToRoman(97)</code> should return "XCVII"
-    testString: assert.deepEqual(convertToRoman(97), "XCVII");
-  - text: <code>convertToRoman(99)</code> should return "XCIX"
-    testString: assert.deepEqual(convertToRoman(99), "XCIX");
-  - text: <code>convertToRoman(400)</code> should return "CD"
-    testString: assert.deepEqual(convertToRoman(400), "CD");
-  - text: <code>convertToRoman(500)</code> should return "D"
-    testString: assert.deepEqual(convertToRoman(500), "D");
-  - text: <code>convertToRoman(501)</code> should return "DI"
-    testString: assert.deepEqual(convertToRoman(501), "DI");
-  - text: <code>convertToRoman(649)</code> should return "DCXLIX"
-    testString: assert.deepEqual(convertToRoman(649), "DCXLIX");
-  - text: <code>convertToRoman(798)</code> should return "DCCXCVIII"
-    testString: assert.deepEqual(convertToRoman(798), "DCCXCVIII");
-  - text: <code>convertToRoman(891)</code> should return "DCCCXCI"
-    testString: assert.deepEqual(convertToRoman(891), "DCCCXCI");
-  - text: <code>convertToRoman(1000)</code> should return "M"
-    testString: assert.deepEqual(convertToRoman(1000), "M");
-  - text: <code>convertToRoman(1004)</code> should return "MIV"
-    testString: assert.deepEqual(convertToRoman(1004), "MIV");
-  - text: <code>convertToRoman(1006)</code> should return "MVI"
-    testString: assert.deepEqual(convertToRoman(1006), "MVI");
-  - text: <code>convertToRoman(1023)</code> should return "MXXIII"
-    testString: assert.deepEqual(convertToRoman(1023), "MXXIII");
-  - text: <code>convertToRoman(2014)</code> should return "MMXIV"
-    testString: assert.deepEqual(convertToRoman(2014), "MMXIV");
-  - text: <code>convertToRoman(3999)</code> should return "MMMCMXCIX"
-    testString: assert.deepEqual(convertToRoman(3999), "MMMCMXCIX");
-
+```js
+assert.deepEqual(convertToRoman(2), 'II');
 ```
 
-</section>
+`convertToRoman(3)` should return "III".
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(convertToRoman(3), 'III');
+```
 
-<div id='js-seed'>
+`convertToRoman(4)` should return "IV".
+
+```js
+assert.deepEqual(convertToRoman(4), 'IV');
+```
+
+`convertToRoman(5)` should return "V".
+
+```js
+assert.deepEqual(convertToRoman(5), 'V');
+```
+
+`convertToRoman(9)` should return "IX".
+
+```js
+assert.deepEqual(convertToRoman(9), 'IX');
+```
+
+`convertToRoman(12)` should return "XII".
+
+```js
+assert.deepEqual(convertToRoman(12), 'XII');
+```
+
+`convertToRoman(16)` should return "XVI".
+
+```js
+assert.deepEqual(convertToRoman(16), 'XVI');
+```
+
+`convertToRoman(29)` should return "XXIX".
+
+```js
+assert.deepEqual(convertToRoman(29), 'XXIX');
+```
+
+`convertToRoman(44)` should return "XLIV".
+
+```js
+assert.deepEqual(convertToRoman(44), 'XLIV');
+```
+
+`convertToRoman(45)` should return "XLV"
+
+```js
+assert.deepEqual(convertToRoman(45), 'XLV');
+```
+
+`convertToRoman(68)` should return "LXVIII"
+
+```js
+assert.deepEqual(convertToRoman(68), 'LXVIII');
+```
+
+`convertToRoman(83)` should return "LXXXIII"
+
+```js
+assert.deepEqual(convertToRoman(83), 'LXXXIII');
+```
+
+`convertToRoman(97)` should return "XCVII"
+
+```js
+assert.deepEqual(convertToRoman(97), 'XCVII');
+```
+
+`convertToRoman(99)` should return "XCIX"
+
+```js
+assert.deepEqual(convertToRoman(99), 'XCIX');
+```
+
+`convertToRoman(400)` should return "CD"
+
+```js
+assert.deepEqual(convertToRoman(400), 'CD');
+```
+
+`convertToRoman(500)` should return "D"
+
+```js
+assert.deepEqual(convertToRoman(500), 'D');
+```
+
+`convertToRoman(501)` should return "DI"
+
+```js
+assert.deepEqual(convertToRoman(501), 'DI');
+```
+
+`convertToRoman(649)` should return "DCXLIX"
+
+```js
+assert.deepEqual(convertToRoman(649), 'DCXLIX');
+```
+
+`convertToRoman(798)` should return "DCCXCVIII"
+
+```js
+assert.deepEqual(convertToRoman(798), 'DCCXCVIII');
+```
+
+`convertToRoman(891)` should return "DCCCXCI"
+
+```js
+assert.deepEqual(convertToRoman(891), 'DCCCXCI');
+```
+
+`convertToRoman(1000)` should return "M"
+
+```js
+assert.deepEqual(convertToRoman(1000), 'M');
+```
+
+`convertToRoman(1004)` should return "MIV"
+
+```js
+assert.deepEqual(convertToRoman(1004), 'MIV');
+```
+
+`convertToRoman(1006)` should return "MVI"
+
+```js
+assert.deepEqual(convertToRoman(1006), 'MVI');
+```
+
+`convertToRoman(1023)` should return "MXXIII"
+
+```js
+assert.deepEqual(convertToRoman(1023), 'MXXIII');
+```
+
+`convertToRoman(2014)` should return "MMXIV"
+
+```js
+assert.deepEqual(convertToRoman(2014), 'MMXIV');
+```
+
+`convertToRoman(3999)` should return "MMMCMXCIX"
+
+```js
+assert.deepEqual(convertToRoman(3999), 'MMMCMXCIX');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function convertToRoman(num) {
@@ -91,15 +181,7 @@ function convertToRoman(num) {
 convertToRoman(36);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function convertToRoman(num) {
@@ -114,5 +196,3 @@ function convertToRoman(num) {
   return res.join('');
 }
 ```
-
-</section>

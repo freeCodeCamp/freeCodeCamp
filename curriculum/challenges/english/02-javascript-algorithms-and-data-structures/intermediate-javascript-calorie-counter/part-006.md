@@ -4,52 +4,23 @@ title: Part 6
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 When a form is submitted, the browser will try to submit it to a server and reload the page. We want to prevent this from happening and do our own processing on the client side.
 
 Prevent the default behavior of the form submit event by calling `e.preventDefault()` inside of the `calculate` function.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(calculate.toString().match(/e\.preventDefault\(\s*\)/));
+```js
+assert(calculate.toString().match(/e\.preventDefault\(\s*\)/));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {}
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -109,24 +80,24 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {}
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -137,5 +108,3 @@ tests:
   }
 </script>
 ```
-
-</section>

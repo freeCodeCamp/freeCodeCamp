@@ -5,10 +5,9 @@ challengeType: 5
 forumTopicId: 385317
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-There are several ways to generate a self-referential sequence. One very common one (the <a href="https://rosettacode.org/wiki/Look-and-say sequence" target="_blank">Look-and-say sequence</a>) is to start with a positive integer, then generate the next term by concatenating enumerated groups of adjacent alike digits:
+There are several ways to generate a self-referential sequence. One very common one (the [Look-and-say sequence](<https://rosettacode.org/wiki/Look-and-say sequence>)) is to start with a positive integer, then generate the next term by concatenating enumerated groups of adjacent alike digits:
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 
@@ -23,42 +22,100 @@ Count how many of each alike digit there is, then concatenate the sum and digit 
 Sort the digits largest to smallest. Do not include counts of digits that do not appear in the previous term.
 
 Depending on the seed value, series generated this way always either converge to a stable value or to a short cyclical pattern. (For our purposes, converge means that an element matches a previously seen element.) The sequence shown, with a seed value of 0, converges to a stable value of 1433223110 after 11 iterations. The seed value that converges most quickly is 22. It goes stable after the first element. (The next element is 22, which has been seen before.)
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
 Write a function that takes the seed value as parameter, generates a self referential sequence until it converges, and returns it as an array.
-</section>
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`selfReferential` should be a function.
 
-```yml
-tests:
-  - text: <code>selfReferential</code> should be a function.
-    testString: assert(typeof selfReferential === 'function');
-  - text: <code>selfReferential(40)</code> should return a array.
-    testString: assert(Array.isArray(selfReferential(40)));
-  - text: <code>selfReferential(40)</code> should return <code>["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]</code>.
-    testString: assert.deepEqual(selfReferential(40), ["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]);
-  - text: <code>selfReferential(132110)</code> should return <code>["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]</code>.
-    testString: assert.deepEqual(selfReferential(132110), ["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]);
-  - text: <code>selfReferential(132211)</code> should return <code>["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]</code>.
-    testString: assert.deepEqual(selfReferential(132211), ["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]);
-  - text: <code>selfReferential(1413223110)</code> should return <code>["1413223110", "1423224110", "2413323110", "1433223110"]</code>.
-    testString: assert.deepEqual(selfReferential(1413223110), ["1413223110", "1423224110", "2413323110", "1433223110"]);
-  - text: <code>selfReferential(251413126110)</code> should return <code>["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]</code>.
-    testString: assert.deepEqual(selfReferential(251413126110), ["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]);
+```js
+assert(typeof selfReferential === 'function');
 ```
 
-</section>
+`selfReferential(40)` should return a array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(selfReferential(40)));
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`selfReferential(40)` should return `["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]`.
+
+```js
+assert.deepEqual(selfReferential(40), [
+  '40',
+  '1410',
+  '142110',
+  '14123110',
+  '1413124110',
+  '2413125110',
+  '151413224110',
+  '152413225110',
+  '251413324110',
+  '152423224110',
+  '152413423110'
+]);
+```
+
+`selfReferential(132110)` should return `["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]`.
+
+```js
+assert.deepEqual(selfReferential(132110), [
+  '132110',
+  '13123110',
+  '23124110',
+  '1413223110',
+  '1423224110',
+  '2413323110',
+  '1433223110'
+]);
+```
+
+`selfReferential(132211)` should return `["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]`.
+
+```js
+assert.deepEqual(selfReferential(132211), [
+  '132211',
+  '132231',
+  '232221',
+  '134211',
+  '14131231',
+  '14231241',
+  '24132231',
+  '14233221'
+]);
+```
+
+`selfReferential(1413223110)` should return `["1413223110", "1423224110", "2413323110", "1433223110"]`.
+
+```js
+assert.deepEqual(selfReferential(1413223110), [
+  '1413223110',
+  '1423224110',
+  '2413323110',
+  '1433223110'
+]);
+```
+
+`selfReferential(251413126110)` should return `["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]`.
+
+```js
+assert.deepEqual(selfReferential(251413126110), [
+  '251413126110',
+  '16151413225110',
+  '16251413226110',
+  '26151413325110',
+  '16251423225110',
+  '16251413424110',
+  '16153413225110'
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function selfReferential(n) {
@@ -66,12 +123,7 @@ function selfReferential(n) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function selfReferential(n) {
@@ -147,5 +199,3 @@ function selfReferential(n) {
   return sequence(n);
 }
 ```
-
-</section>

@@ -5,31 +5,33 @@ challengeType: 11
 videoId: Fo1tW09KIwo
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What is used to indicate a new line in a string?
 
-```yml
-question:
-  text: |
-    What is used to indicate a new line in a string?
+## --answers--
 
-  answers:
-    - |
-        \n
-    - |
-        {new_line}
-    - |
-        {n}
-    - |
-        /n
-    - |
-        /new
-  solution: 1
-```
+\\n
 
-</section>
+---
+
+{new_line}
+
+---
+
+{n}
+
+---
+
+/n
+
+---
+
+/new
+
+## --video-solution--
+
+1
+

@@ -5,47 +5,61 @@ challengeType: 6
 forumTopicId: 16773
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Using jQuery, you can change the text between the start and end tags of an element. You can even change HTML markup.
-jQuery has a function called <code>.html()</code> that lets you add HTML tags and text within an element. Any content previously within the element will be completely replaced with the content you provide using this function.
+
+jQuery has a function called `.html()` that lets you add HTML tags and text within an element. Any content previously within the element will be completely replaced with the content you provide using this function.
+
 Here's how you would rewrite and emphasize the text of our heading:
-<code>$("h3").html("&#60;em&#62;jQuery Playground&#60;/em&#62;");</code>
-jQuery also has a similar function called <code>.text()</code> that only alters text without adding tags. In other words, this function will not evaluate any HTML tags passed to it, but will instead treat it as the text you want to replace the existing content with.
-Change the button with id <code>target4</code> by emphasizing its text.
-<a href="https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element" target="_blank">View our news article for &#60;em&#62;</a> to learn the difference between <code>&#60;i&#62;</code> and <code>&#60;em&#62</code> and their uses.
-Note that while the <code>&#60;i&#62;</code> tag has traditionally been used to emphasize text, it has since been adopted for use as a tag for icons. The <code>&#60;em&#62;</code> tag is now widely accepted as the tag for emphasis. Either will work for this challenge.
-</section>
 
-## Instructions
-<section id='instructions'>
+`$("h3").html("<em>jQuery Playground</em>");`
 
-</section>
+jQuery also has a similar function called `.text()` that only alters text without adding tags. In other words, this function will not evaluate any HTML tags passed to it, but will instead treat it as the text you want to replace the existing content with.
 
-## Tests
-<section id='tests'>
+Change the button with id `target4` by emphasizing its text.
 
-```yml
-tests:
-  - text: You should emphasize the text in your <code>target4</code> button by adding HTML tags.
-    testString: assert.isTrue((/<em>|<i>\s*#target4\s*<\/em>|<\/i>/gi).test($("#target4").html()));
-  - text: The text should otherwise remain unchanged.
-    testString: assert($("#target4") && $("#target4").text().trim() === '#target4');
-  - text: You should not alter any other text.
-    testString: assert.isFalse((/<em>|<i>/gi).test($("h3").html()));
-  - text: You should be using <code>.html()</code> and not <code>.text()</code>.
-    testString: assert(code.match(/\.html\(/g));
-  - text: You should select <code>button id="target4"</code> with jQuery.
-    testString: assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/));
+[View our news article for &lt;em>](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) to learn the difference between `<i>` and `<em>` and their uses.
 
+Note that while the `<i>` tag has traditionally been used to emphasize text, it has since been adopted for use as a tag for icons. The `<em>` tag is now widely accepted as the tag for emphasis. Either will work for this challenge.
+
+# --hints--
+
+You should emphasize the text in your `target4` button by adding HTML tags.
+
+```js
+assert.isTrue(
+  /<em>|<i>\s*#target4\s*<\/em>|<\/i>/gi.test($('#target4').html())
+);
 ```
 
-</section>
+The text should otherwise remain unchanged.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#target4') && $('#target4').text().trim() === '#target4');
+```
 
-<div id='html-seed'>
+You should not alter any other text.
+
+```js
+assert.isFalse(/<em>|<i>/gi.test($('h3').html()));
+```
+
+You should be using `.html()` and not `.text()`.
+
+```js
+assert(code.match(/\.html\(/g));
+```
+
+You should select `button id="target4"` with jQuery.
+
+```js
+assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -80,14 +94,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -119,5 +126,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

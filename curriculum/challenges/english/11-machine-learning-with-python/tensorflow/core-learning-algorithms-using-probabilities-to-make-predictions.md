@@ -5,27 +5,25 @@ challengeType: 11
 videoId: fYAYvLUawnc
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
-  answers:
-    - |
-      `tensorflow.keras`
-    - |
-      `tensorflow_gpu`
-    - |
-      `tensorflow_probability`
-  solution: 3
-```
+`tensorflow.keras`
 
-</section>
+---
+
+`tensorflow_gpu`
+
+---
+
+`tensorflow_probability`
+
+## --video-solution--
+
+3
+

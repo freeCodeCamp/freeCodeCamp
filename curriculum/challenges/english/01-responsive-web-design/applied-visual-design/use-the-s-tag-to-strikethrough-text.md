@@ -6,36 +6,48 @@ videoUrl: ''
 forumTopicId: 301079
 ---
 
-## Description
-<section id='description'>
-To strikethrough text, which is when a horizontal line cuts across the characters, you can use the <code>s</code> tag. It shows that a section of text is no longer valid. With the <code>s</code> tag, the browser applies the CSS of <code>text-decoration: line-through;</code> to the element.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Wrap the <code>s</code> tag around "Google" inside the <code>h4</code> tag and then add the word "Alphabet" beside it, which should not have the strikethrough formatting.
-</section>
+To strikethrough text, which is when a horizontal line cuts across the characters, you can use the `s` tag. It shows that a section of text is no longer valid. With the `s` tag, the browser applies the CSS of `text-decoration: line-through;` to the element.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should add one <code>s</code> tag to the markup.
-    testString: assert($('s').length == 1);
-  - text: A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.
-    testString: assert($('h4 > s').text().match(/Google/gi) && !$('h4 > s').text().match(/Alphabet/gi));
-  - text: You should include the word "Alphabet" in the <code>h4</code> tag, without strikethrough formatting.
-    testString: assert($('h4').html().match(/Alphabet/gi));
+Wrap the `s` tag around "Google" inside the `h4` tag and then add the word "Alphabet" beside it, which should not have the strikethrough formatting.
 
+# --hints--
+
+Your code should add one `s` tag to the markup.
+
+```js
+assert($('s').length == 1);
 ```
 
-</section>
+A `s` tag should wrap around the Google text in the `h4` tag. It should not contain the word Alphabet.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('h4 > s')
+    .text()
+    .match(/Google/gi) &&
+    !$('h4 > s')
+      .text()
+      .match(/Alphabet/gi)
+);
+```
 
-<div id='html-seed'>
+You should include the word "Alphabet" in the `h4` tag, without strikethrough formatting.
+
+```js
+assert(
+  $('h4')
+    .html()
+    .match(/Alphabet/gi)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -78,14 +90,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -127,5 +132,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

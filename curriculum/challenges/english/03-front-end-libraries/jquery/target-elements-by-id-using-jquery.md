@@ -1,47 +1,52 @@
 ---
 id: bad87fee1348bd9aeda08826
 title: Target Elements by id Using jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18317
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can also target elements by their id attributes.
-First target your <code>button</code> element with the id <code>target3</code> by using the <code>$("#target3")</code> selector.
-Note that, just like with CSS declarations, you type a <code>#</code> before the id's name.
-Then use jQuery's <code>.addClass()</code> function to add the classes <code>animated</code> and <code>fadeOut</code>.
-Here's how you'd make the <code>button</code> element with the id <code>target6</code> fade out:
-<code>$("#target6").addClass("animated fadeOut")</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+First target your `button` element with the id `target3` by using the `$("#target3")` selector.
 
-</section>
+Note that, just like with CSS declarations, you type a `#` before the id's name.
 
-## Tests
-<section id='tests'>
+Then use jQuery's `.addClass()` function to add the classes `animated` and `fadeOut`.
 
-```yml
-tests:
-  - text: You should select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.
-    testString: assert($("#target3").hasClass("animated"));
-  - text: You should target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.
-    testString: assert(($("#target3").hasClass("fadeOut") || $("#target3").hasClass("fadeout"))  && code.match(/\$\(\s*.#target3.\s*\)/g));
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(!code.match(/class.*animated/g));
+Here's how you'd make the `button` element with the id `target6` fade out:
 
+`$("#target6").addClass("animated fadeOut")`.
+
+# --hints--
+
+You should select the `button` element with the `id` of `target3` and use the jQuery `addClass()` function to give it the class of `animated`.
+
+```js
+assert($('#target3').hasClass('animated'));
 ```
 
-</section>
+You should target the element with the id `target3` and use the jQuery `addClass()` function to give it the class `fadeOut`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  ($('#target3').hasClass('fadeOut') || $('#target3').hasClass('fadeout')) &&
+    code.match(/\$\(\s*.#target3.\s*\)/g)
+);
+```
 
-<div id='html-seed'>
+You should only use jQuery to add these classes to the element.
+
+```js
+assert(!code.match(/class.*animated/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -77,14 +82,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -119,5 +117,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

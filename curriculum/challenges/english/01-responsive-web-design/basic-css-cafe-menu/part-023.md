@@ -4,8 +4,7 @@ title: Part 23
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Comments in CSS look like this:
 
@@ -15,24 +14,17 @@ Comments in CSS look like this:
 
 In your style sheet, comment out the the line containing the `background-color` property and value, so you can see the effect of only styling `div` element. This will make the background white again.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -59,15 +51,11 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
-  --fcc-editable-region--
+--fcc-editable-region--
   background-color: burlywood;
-  --fcc-editable-region--
+--fcc-editable-region--
 }
 
 h1, h2, p {
@@ -79,6 +67,3 @@ div {
 }
 ```
 
-</div>
-
-</section>

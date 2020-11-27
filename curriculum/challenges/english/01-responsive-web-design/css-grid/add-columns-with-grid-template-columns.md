@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/p/pByETK/c7NzDHv'
 forumTopicId: 301117
 ---
 
-## Description
-<section id='description'>
-Simply creating a grid element doesn't get you very far. You need to define the structure of the grid as well. To add some columns to the grid, use the <code>grid-template-columns</code> property on a grid container as demonstrated below:
+# --description--
+
+Simply creating a grid element doesn't get you very far. You need to define the structure of the grid as well. To add some columns to the grid, use the `grid-template-columns` property on a grid container as demonstrated below:
 
 ```css
 .container {
@@ -17,31 +17,27 @@ Simply creating a grid element doesn't get you very far. You need to define the 
 }
 ```
 
-This will give your grid two columns that are each 50px wide.
-The number of parameters given to the <code>grid-template-columns</code> property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column.
-</section>
+This will give your grid two columns that are each 50px wide. The number of parameters given to the `grid-template-columns` property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column.
 
-## Instructions
-<section id='instructions'>
-Give the grid container three columns that are each <code>100px</code> wide.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Give the grid container three columns that are each `100px` wide.
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi));
+# --hints--
 
+`container` class should have a `grid-template-columns` property with three units of `100px`.
+
+```js
+assert(
+  code.match(
+    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -72,18 +68,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.container {grid-template-columns: 100px 100px 100px;}</style>
 ```
-
-</section>

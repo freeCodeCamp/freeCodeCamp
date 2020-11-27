@@ -4,38 +4,58 @@ title: Part 103
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 This is true, so `highPrecedence` might be a pure function. If you inspect it, you can see that it indeed performs no I/O and doesn't use functions like `Math.random()` - so it's pure.
 
 Remove the `console.log` statement.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(!code.includes("console.log"));
-
+```js
+assert(!code.includes('console.log'));
 ```
 
+# --seed--
 
-</section>
+## --before-user-code--
 
-## Challenge Seed
-<section id='challengeSeed'>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spreadsheet</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: 50px repeat(10, 200px);
+      grid-template-rows: repeat(11, 30px);
+    }
+    .label {
+      background-color: lightgray;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <div></div>
+</div>
+```
 
-<div id='html-seed'>
+## --after-user-code--
+
+```html
+</body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -140,57 +160,7 @@ const update = event => {
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Spreadsheet</title>
-  <style>
-    #container {
-      display: grid;
-      grid-template-columns: 50px repeat(10, 200px);
-      grid-template-rows: repeat(11, 30px);
-    }
-    .label {
-      background-color: lightgray;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 30px;
-    }
-  </style>
-</head>
-<body>
-<div id="container">
-  <div></div>
-</div>
-```
-
-</div>
-
-
-### After Test
-<div id='html-teardown'>
-
-```html
-</body>
-</html>
-```
-
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -290,5 +260,3 @@ const update = event => {
 };
 </script>
 ```
-
-</section>

@@ -1,12 +1,11 @@
 ---
 id: 5900f3c51000cf542c50fed8
-challengeType: 5
 title: 'Problem 87: Prime power triples'
+challengeType: 5
 forumTopicId: 302201
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The smallest number expressible as the sum of a prime square, prime cube, and prime fourth power is 28. In fact, there are exactly four numbers below fifty that can be expressed in such a way:
 
@@ -19,31 +18,23 @@ The smallest number expressible as the sum of a prime square, prime cube, and pr
 
 How many numbers below fifty million can be expressed as the sum of a prime square, prime cube, and prime fourth power?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`primePowerTriples()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>primePowerTriples()</code> should return a number.
-    testString: assert(typeof primePowerTriples() === 'number');
-  - text: <code>primePowerTriples()</code> should return 1097343.
-    testString: assert.strictEqual(primePowerTriples(), 1097343);
-
+```js
+assert(typeof primePowerTriples() === 'number');
 ```
 
-</section>
+`primePowerTriples()` should return 1097343.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(primePowerTriples(), 1097343);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function primePowerTriples() {
@@ -54,17 +45,8 @@ function primePowerTriples() {
 primePowerTriples();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

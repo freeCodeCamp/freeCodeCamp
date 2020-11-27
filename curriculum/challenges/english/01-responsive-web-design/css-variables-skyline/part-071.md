@@ -4,32 +4,26 @@ title: Part 71
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The windows are stacked on top of each other at the left of the section, behind the purple building. Add a new class below `building-wrap` called `window-wrap` and add these properties to it: `display: flex;`, `align-items: center;`, and `justify-content: space-evenly;`. This will be used in a few places to center window elements vertically and space them evenly in their parent.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const wWrap = code.match(/\.window-wrap\s*{[\s\S]+?[^}]}/g)[0]; assert(/display\s*:\s*flex\s*(;|})/g.test(wWrap) && /align-items\s*:\s*center\s*(;|})/g.test(wWrap) && /justify-content\s*:\s*space-evenly\s*(;|})/g.test(wWrap));
-
-
+```js
+const wWrap = code.match(/\.window-wrap\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /display\s*:\s*flex\s*(;|})/g.test(wWrap) &&
+    /align-items\s*:\s*center\s*(;|})/g.test(wWrap) &&
+    /justify-content\s*:\s*space-evenly\s*(;|})/g.test(wWrap)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -262,12 +256,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -505,5 +494,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

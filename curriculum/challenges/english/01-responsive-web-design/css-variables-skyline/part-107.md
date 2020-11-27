@@ -4,31 +4,26 @@ title: Part 107
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Finally! You made it to the last building! Add a repeating gradient to it with a `90deg` direction. Use the building color from `0%` to `10%` and `transparent` from `10%` to `30%`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*(;|})/g.test(fb6));
-
+```js
+const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*(;|})/g.test(
+    fb6
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -393,12 +388,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -769,5 +759,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

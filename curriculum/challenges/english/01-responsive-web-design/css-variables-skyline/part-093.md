@@ -4,31 +4,26 @@ title: Part 93
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give the `fb3-window` elements a `width` of `25%`, a `height` of `80%`, and use your `--window-color1` variable as the `background-color` value.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb3w = code.match(/\.fb3-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*25%\s*(;|})/g.test(fb3w) && /height\s*:\s*80%\s*(;|})/g.test(fb3w) && /background-color\s*:\s*var\(\s*--window-color1\s*\)\s*(;|})/g.test(fb3w));
-
+```js
+const fb3w = code.match(/\.fb3-window\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*25%\s*(;|})/g.test(fb3w) &&
+    /height\s*:\s*80%\s*(;|})/g.test(fb3w) &&
+    /background-color\s*:\s*var\(\s*--window-color1\s*\)\s*(;|})/g.test(fb3w)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -345,12 +340,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -672,5 +662,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

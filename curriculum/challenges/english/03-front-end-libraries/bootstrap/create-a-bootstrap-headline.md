@@ -5,57 +5,61 @@ challengeType: 0
 forumTopicId: 16812
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now let's build something from scratch to practice our HTML, CSS and Bootstrap skills.
+
 We'll build a jQuery playground, which we'll soon put to use in our jQuery challenges.
-To start with, create an <code>h3</code> element, with the text <code>jQuery Playground</code>.
-Color your <code>h3</code> element with the <code>text-primary</code> Bootstrap class, and center it with the <code>text-center</code> Bootstrap class.
-</section>
 
-## Instructions
-<section id='instructions'>
+To start with, create an `h3` element, with the text `jQuery Playground`.
 
-</section>
+Color your `h3` element with the `text-primary` Bootstrap class, and center it with the `text-center` Bootstrap class.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should add an <code>h3</code> element to your page.
-    testString: assert($("h3") && $("h3").length > 0);
-  - text: Your <code>h3</code> element should have a closing tag.
-    testString: assert(code.match(/<\/h3>/g) && code.match(/<h3/g) && code.match(/<\/h3>/g).length === code.match(/<h3/g).length);
-  - text: Your <code>h3</code> element should be colored by applying the class <code>text-primary</code>
-    testString: assert($("h3").hasClass("text-primary"));
-  - text: Your <code>h3</code> element should be centered by applying the class <code>text-center</code>
-    testString: assert($("h3").hasClass("text-center"));
-  - text: Your <code>h3</code> element should have the text <code>jQuery Playground</code>.
-    testString: assert.isTrue((/jquery(\s)+playground/gi).test($("h3").text()));
+You should add an `h3` element to your page.
 
+```js
+assert($('h3') && $('h3').length > 0);
 ```
 
-</section>
+Your `h3` element should have a closing tag.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/<\/h3>/g) &&
+    code.match(/<h3/g) &&
+    code.match(/<\/h3>/g).length === code.match(/<h3/g).length
+);
+```
 
-<div id='html-seed'>
+Your `h3` element should be colored by applying the class `text-primary`
+
+```js
+assert($('h3').hasClass('text-primary'));
+```
+
+Your `h3` element should be centered by applying the class `text-center`
+
+```js
+assert($('h3').hasClass('text-center'));
+```
+
+Your `h3` element should have the text `jQuery Playground`.
+
+```js
+assert.isTrue(/jquery(\s)+playground/gi.test($('h3').text()));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
-
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h3 class="text-primary text-center">jQuery Playground</h3>
 ```
-
-</section>

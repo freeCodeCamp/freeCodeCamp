@@ -6,34 +6,31 @@ videoUrl: 'https://scrimba.com/c/c2MDqu2'
 forumTopicId: 301066
 ---
 
-## Description
-<section id='description'>
-The next positioning tool does not actually use <code>position</code>, but sets the <code>float</code> property of an element. Floating elements are removed from the normal flow of a document and pushed to either the <code>left</code> or <code>right</code> of their containing parent element. It's commonly used with the <code>width</code> property to specify how much horizontal space the floated element requires.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-The given markup would work well as a two-column layout, with the <code>section</code> and <code>aside</code> elements next to each other. Give the <code>#left</code> item a <code>float</code> of <code>left</code> and the <code>#right</code> item a <code>float</code> of <code>right</code>.
-</section>
+The next positioning tool does not actually use `position`, but sets the `float` property of an element. Floating elements are removed from the normal flow of a document and pushed to either the `left` or `right` of their containing parent element. It's commonly used with the `width` property to specify how much horizontal space the floated element requires.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.
-    testString: assert($('#left').css('float') == 'left');
-  - text: The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.
-    testString: assert($('#right').css('float') == 'right');
+The given markup would work well as a two-column layout, with the `section` and `aside` elements next to each other. Give the `#left` item a `float` of `left` and the `#right` item a `float` of `right`.
 
+# --hints--
+
+The element with id `left` should have a `float` value of `left`.
+
+```js
+assert($('#left').css('float') == 'left');
 ```
 
-</section>
+The element with id `right` should have a `float` value of `right`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#right').css('float') == 'right');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <head>
@@ -67,14 +64,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <head>
@@ -107,5 +97,3 @@ tests:
   </aside>
 </body>
 ```
-
-</section>

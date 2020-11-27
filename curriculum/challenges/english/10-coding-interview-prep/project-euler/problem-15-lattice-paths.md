@@ -1,12 +1,11 @@
 ---
 id: 5900f37b1000cf542c50fe8e
-challengeType: 5
 title: 'Problem 15: Lattice paths'
+challengeType: 5
 forumTopicId: 301780
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
 
@@ -14,35 +13,35 @@ Starting in the top left corner of a 2×2 grid, and only being able to move to t
 
 How many such routes are there through a given `gridSize`?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`latticePaths(4)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>latticePaths(4)</code> should return a number.
-    testString: assert(typeof latticePaths(4) === 'number');
-  - text: <code>latticePaths(4)</code> should return 70.
-    testString: assert.strictEqual(latticePaths(4), 70);
-  - text: <code>latticePaths(9)</code> should return 48620.
-    testString: assert.strictEqual(latticePaths(9), 48620);
-  - text: <code>latticePaths(20)</code> should return 137846528820.
-    testString: assert.strictEqual(latticePaths(20), 137846528820);
-
+```js
+assert(typeof latticePaths(4) === 'number');
 ```
 
-</section>
+`latticePaths(4)` should return 70.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(latticePaths(4), 70);
+```
 
-<div id='js-seed'>
+`latticePaths(9)` should return 48620.
+
+```js
+assert.strictEqual(latticePaths(9), 48620);
+```
+
+`latticePaths(20)` should return 137846528820.
+
+```js
+assert.strictEqual(latticePaths(20), 137846528820);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function latticePaths(gridSize) {
@@ -53,15 +52,7 @@ function latticePaths(gridSize) {
 latticePaths(4);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function latticePaths(gridSize) {
@@ -74,5 +65,3 @@ function latticePaths(gridSize) {
   return paths;
 }
 ```
-
-</section>

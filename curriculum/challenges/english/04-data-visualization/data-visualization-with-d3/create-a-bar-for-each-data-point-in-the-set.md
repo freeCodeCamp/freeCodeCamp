@@ -5,10 +5,11 @@ challengeType: 6
 forumTopicId: 301482
 ---
 
-## Description
-<section id='description'>
-The last challenge added only one rectangle to the <code>svg</code> element to represent a bar. Here, you'll combine what you've learned so far about <code>data()</code>, <code>enter()</code>, and SVG shapes to create and append a rectangle for each data point in <code>dataset</code>.
-A previous challenge showed the format for how to create and append a <code>div</code> for each item in <code>dataset</code>:
+# --description--
+
+The last challenge added only one rectangle to the `svg` element to represent a bar. Here, you'll combine what you've learned so far about `data()`, `enter()`, and SVG shapes to create and append a rectangle for each data point in `dataset`.
+
+A previous challenge showed the format for how to create and append a `div` for each item in `dataset`:
 
 ```js
 d3.select("body").selectAll("div")
@@ -17,36 +18,41 @@ d3.select("body").selectAll("div")
   .append("div")
 ```
 
-There are a few differences working with <code>rect</code> elements instead of <code>divs</code>. The <code>rects</code> must be appended to an <code>svg</code> element, not directly to the <code>body</code>. Also, you need to tell D3 where to place each <code>rect</code> within the <code>svg</code> area. The bar placement will be covered in the next challenge.
-</section>
+There are a few differences working with `rect` elements instead of `divs`. The `rects` must be appended to an `svg` element, not directly to the `body`. Also, you need to tell D3 where to place each `rect` within the `svg` area. The bar placement will be covered in the next challenge.
 
-## Instructions
-<section id='instructions'>
-Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to create and append a <code>rect</code> for each item in <code>dataset</code>. The bars should display all on top of each other; this will be fixed in the next challenge.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Use the `data()`, `enter()`, and `append()` methods to create and append a `rect` for each item in `dataset`. The bars should display all on top of each other; this will be fixed in the next challenge.
 
-```yml
-tests:
-  - text: Your document should have 9 <code>rect</code> elements.
-    testString: assert($('rect').length == 9);
-  - text: Your code should use the <code>data()</code> method.
-    testString: assert(code.match(/\.data/g));
-  - text: Your code should use the <code>enter()</code> method.
-    testString: assert(code.match(/\.enter/g));
-  - text: Your code should use the <code>append()</code> method.
-    testString: assert(code.match(/\.append/g));
+# --hints--
 
+Your document should have 9 `rect` elements.
+
+```js
+assert($('rect').length == 9);
 ```
 
-</section>
+Your code should use the `data()` method.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.data/g));
+```
 
-<div id='html-seed'>
+Your code should use the `enter()` method.
+
+```js
+assert(code.match(/\.enter/g));
+```
+
+Your code should use the `append()` method.
+
+```js
+assert(code.match(/\.append/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -75,14 +81,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -107,7 +106,4 @@ tests:
        .attr("height", 100);
   </script>
 </body>
-
 ```
-
-</section>

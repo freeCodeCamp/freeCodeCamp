@@ -4,31 +4,30 @@ title: Part 25
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 That one used the fallback value as well? I see the problem now! The variables you declared in `bb1` do not cascade to the `bb2` and `bb3` sibling elements. That's just how CSS works. Because of this, variables are often declared in the `:root` selector. This is the highest level selector in CSS; putting your variables there will make them usable everywhere. Add the `:root` selector to the top of your stylesheet and move all your variable declarations there.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(rootStyle) && /--building-color2\s*:\s*#66cc99\s*(;|\s*})/g.test(rootStyle) && /--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(rootStyle) && !/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style) && !/--building-color2\s*:\s*#66cc99\s*(;|\s*})/g.test(bb1style) && !/--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(bb1style));
-
+```js
+const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0];
+const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(rootStyle) &&
+    /--building-color2\s*:\s*#66cc99\s*(;|\s*})/g.test(rootStyle) &&
+    /--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(rootStyle) &&
+    !/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style) &&
+    !/--building-color2\s*:\s*#66cc99\s*(;|\s*})/g.test(bb1style) &&
+    !/--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(bb1style)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -130,12 +129,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -239,5 +233,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

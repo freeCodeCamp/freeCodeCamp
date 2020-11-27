@@ -4,31 +4,27 @@ title: Part 64
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Remove the `background-color` property and value from `bb4` and add it to the three new sections; `bb4a`, `bb4b`, and `bb4c`, so only the sections are filled.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb4 = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(bb4) && $(".bb4a").css("background-color") === "rgb(83, 140, 198)" && $(".bb4b").css("background-color") === "rgb(83, 140, 198)" && $(".bb4c").css("background-color") === "rgb(83, 140, 198)");
-
+```js
+const bb4 = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  !/background-color/g.test(bb4) &&
+    $('.bb4a').css('background-color') === 'rgb(83, 140, 198)' &&
+    $('.bb4b').css('background-color') === 'rgb(83, 140, 198)' &&
+    $('.bb4c').css('background-color') === 'rgb(83, 140, 198)'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -244,12 +240,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -466,5 +457,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

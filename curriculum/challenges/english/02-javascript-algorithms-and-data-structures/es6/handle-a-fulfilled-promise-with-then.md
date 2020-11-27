@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301203
 ---
 
-## Description
-<section id='description'>
-Promises are most useful when you have a process that takes an unknown amount of time in your code (i.e. something asynchronous), often a server request. When you make a server request it takes some amount of time, and after it completes you usually want to do something with the response from the server. This can be achieved by using the <code>then</code> method. The <code>then</code> method is executed immediately after your promise is fulfilled with <code>resolve</code>. Here’s an example:
+# --description--
+
+Promises are most useful when you have a process that takes an unknown amount of time in your code (i.e. something asynchronous), often a server request. When you make a server request it takes some amount of time, and after it completes you usually want to do something with the response from the server. This can be achieved by using the `then` method. The `then` method is executed immediately after your promise is fulfilled with `resolve`. Here’s an example:
 
 ```js
 myPromise.then(result => {
@@ -15,69 +15,72 @@ myPromise.then(result => {
 });
 ```
 
-<code>result</code> comes from the argument given to the <code>resolve</code> method.
-</section>
+`result` comes from the argument given to the `resolve` method.
 
-## Instructions
-<section id='instructions'>
-Add the <code>then</code> method to your promise. Use <code>result</code> as the parameter of its callback function and log <code>result</code> to the console.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Add the `then` method to your promise. Use `result` as the parameter of its callback function and log `result` to the console.
 
-```yml
-tests:
-  - text: You should call the <code>then</code> method on the promise.
-    testString: assert(__helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.then\(/g));
-  - text: Your <code>then</code> method should have a callback function with <code>result</code> as its parameter.
-    testString: assert(resultIsParameter);
-  - text: You should log <code>result</code> to the console.
-    testString: assert(resultIsParameter && __helpers.removeWhiteSpace(code).match(/\.then\(.*?result.*?console.log\(result\).*?\)/));
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+You should call the `then` method on the promise.
 
 ```js
-const makeServerRequest = new Promise((resolve, reject) => {
-  // responseFromServer is set to true to represent a successful response from a server
-  let responseFromServer = true;
-	
-  if(responseFromServer) {
-    resolve("We got the data");
-  } else {	
-    reject("Data not received");
-  }
-});
+assert(
+  __helpers.removeWhiteSpace(code).match(/(makeServerRequest|\))\.then\(/g)
+);
 ```
 
-</div>
+Your `then` method should have a callback function with `result` as its parameter.
 
-### After Test
-<div id='js-teardown'>
+```js
+assert(resultIsParameter);
+```
+
+You should log `result` to the console.
+
+```js
+assert(
+  resultIsParameter &&
+    __helpers
+      .removeWhiteSpace(code)
+      .match(/\.then\(.*?result.*?console.log\(result\).*?\)/)
+);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const resultIsParameter = /\.then\((function\(result\){|result|\(result\)=>)/.test(__helpers.removeWhiteSpace(code));
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+## --seed-contents--
 
 ```js
 const makeServerRequest = new Promise((resolve, reject) => {
   // responseFromServer is set to true to represent a successful response from a server
   let responseFromServer = true;
-	
+    
   if(responseFromServer) {
     resolve("We got the data");
-  } else {	
+  } else {  
+    reject("Data not received");
+  }
+});
+```
+
+# --solutions--
+
+```js
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
     reject("Data not received");
   }
 });
@@ -86,5 +89,3 @@ makeServerRequest.then(result => {
   console.log(result);
 });
 ```
-
-</section>

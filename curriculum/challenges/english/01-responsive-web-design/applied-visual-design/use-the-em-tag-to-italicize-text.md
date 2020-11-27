@@ -6,34 +6,31 @@ videoUrl: 'https://scrimba.com/c/cVJRBtp'
 forumTopicId: 301078
 ---
 
-## Description
-<section id='description'>
-To emphasize text, you can use the <code>em</code> tag. This displays text as italicized, as the browser applies the CSS of <code>font-style: italic;</code> to the element.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Wrap an <code>em</code> tag around the contents of the paragraph tag to give it emphasis.
-</section>
+To emphasize text, you can use the `em` tag. This displays text as italicized, as the browser applies the CSS of `font-style: italic;` to the element.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should add an <code>em</code> tag to the markup.
-    testString: assert($('em').length == 1);
-  - text: The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.
-    testString: assert($('p').children().length == 1 && $('em').children().length == 2);
+Wrap an `em` tag around the contents of the paragraph tag to give it emphasis.
 
+# --hints--
+
+Your code should add an `em` tag to the markup.
+
+```js
+assert($('em').length == 1);
 ```
 
-</section>
+The `em` tag should wrap around the contents of the `p` tag but not the `p` tag itself.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('p').children().length == 1 && $('em').children().length == 2);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -76,14 +73,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -125,5 +115,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

@@ -1,53 +1,63 @@
 ---
-title: 'Abundant, deficient and perfect number classifications'
 id: 594810f028c0303b75339acd
+title: 'Abundant, deficient and perfect number classifications'
 challengeType: 5
 forumTopicId: 302221
 ---
 
-## Description
-<section id='description'>
-These define three classifications of positive integers based on their <a href='https://rosettacode.org/wiki/Proper divisors' title='Proper divisors' target='_blank'>proper divisors</a>.
-Let $P(n)$ be the sum of the proper divisors of <code>n</code> where proper divisors are all positive integers <code>n</code> other than <code>n</code> itself.
+# --description--
 
-If <code>P(n) < n</code> then <code>n</code> is classed as <code>deficient</code>
+These define three classifications of positive integers based on their [proper divisors](<https://rosettacode.org/wiki/Proper divisors> "Proper divisors").
 
-If <code>P(n) === n</code> then <code>n</code> is classed as <code>perfect</code>
+Let $P(n)$ be the sum of the proper divisors of `n` where proper divisors are all positive integers `n` other than `n` itself.
 
-If <code>P(n) > n</code> then <code>n</code> is classed as <code>abundant</code>
+If `P(n) < n` then `n` is classed as `deficient`
 
-<strong>Example</strong>:
-<code>6</code> has proper divisors of <code>1</code>, <code>2</code>, and <code>3</code>.
-<code>1 + 2 + 3 = 6</code>, so <code>6</code> is classed as a perfect number.
-</section>
+If `P(n) === n` then `n` is classed as `perfect`
 
-## Instructions
-<section id='instructions'>
-Implement a function that calculates how many of the integers from <code>1</code> to <code>20,000</code> (inclusive) are in each of the three classes. Output the result as an array in the following format <code>[deficient, perfect, abundant]</code>.
-</section>
+If `P(n) > n` then `n` is classed as `abundant`
 
-## Tests
-<section id='tests'>
+**Example**: `6` has proper divisors of `1`, `2`, and `3`. `1 + 2 + 3 = 6`, so `6` is classed as a perfect number.
 
-```yml
-tests:
-  - text: <code>getDPA</code> should be a function.
-    testString: assert(typeof getDPA === 'function');
-  - text: <code>getDPA</code> should return an array.
-    testString: assert(Array.isArray(getDPA(100)));
-  - text: <code>getDPA</code> return value should have a length of 3.
-    testString: assert(getDPA(100).length === 3);
-  - text: <code>getDPA(20000)</code> should equal [15043, 4, 4953]
-    testString: assert.deepEqual(getDPA(20000), solution);
+# --instructions--
 
+Implement a function that calculates how many of the integers from `1` to `20,000` (inclusive) are in each of the three classes. Output the result as an array in the following format `[deficient, perfect, abundant]`.
+
+# --hints--
+
+`getDPA` should be a function.
+
+```js
+assert(typeof getDPA === 'function');
 ```
 
-</section>
+`getDPA` should return an array.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(Array.isArray(getDPA(100)));
+```
 
-<div id='js-seed'>
+`getDPA` return value should have a length of 3.
+
+```js
+assert(getDPA(100).length === 3);
+```
+
+`getDPA(20000)` should equal [15043, 4, 4953]
+
+```js
+assert.deepEqual(getDPA(20000), solution);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+const solution = [15043, 4, 4953];
+```
+
+## --seed-contents--
 
 ```js
 function getDPA(num) {
@@ -55,23 +65,7 @@ function getDPA(num) {
 }
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const solution = [15043, 4, 4953];
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function getDPA(num) {
@@ -91,7 +85,4 @@ function getDPA(num) {
   }
   return dpa;
 }
-
 ```
-
-</section>

@@ -1,49 +1,63 @@
 ---
 id: bad87fee1348bd9aed108826
 title: Target a Specific Child of an Element Using jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18315
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.
+
 Fortunately, jQuery has some other tricks for targeting the right elements.
-jQuery uses CSS Selectors to target elements. The <code>target:nth-child(n)</code> CSS selector allows you to select all the nth elements with the target class or element type.
+
+jQuery uses CSS Selectors to target elements. The `target:nth-child(n)` CSS selector allows you to select all the nth elements with the target class or element type.
+
 Here's how you would give the third element in each well the bounce class:
-<code>$(".target:nth-child(3)").addClass("animated bounce");</code>
-Make the second child in each of your well elements bounce. You must select the elements' children with the <code>target</code> class.
-</section>
 
-## Instructions
-<section id='instructions'>
+`$(".target:nth-child(3)").addClass("animated bounce");`
 
-</section>
+Make the second child in each of your well elements bounce. You must select the elements' children with the `target` class.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The second element in your <code>target</code> elements should bounce.
-    testString: assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"));
-  - text: Only two elements should bounce.
-    testString: assert($(".animated.bounce").length === 2);
-  - text: You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.
-    testString: assert(code.match(/\:nth-child\(/g));
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\('.target:nth-child\(2\)'\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g));
+The second element in your `target` elements should bounce.
 
+```js
+assert(
+  $('.target:nth-child(2)').hasClass('animated') &&
+    $('.target:nth-child(2)').hasClass('bounce')
+);
 ```
 
-</section>
+Only two elements should bounce.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.animated.bounce').length === 2);
+```
 
-<div id='html-seed'>
+You should use the `:nth-child()` selector to modify these elements.
+
+```js
+assert(code.match(/\:nth-child\(/g));
+```
+
+You should only use jQuery to add these classes to the element.
+
+```js
+assert(
+  code.match(/\$\(".target:nth-child\(2\)"\)/g) ||
+    code.match(/\$\('.target:nth-child\(2\)'\)/g) ||
+    code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) ||
+    code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -84,14 +98,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -131,5 +138,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

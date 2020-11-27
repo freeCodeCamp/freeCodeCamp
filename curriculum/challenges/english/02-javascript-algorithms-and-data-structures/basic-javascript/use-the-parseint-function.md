@@ -6,42 +6,53 @@ videoUrl: 'https://scrimba.com/c/cm83LSW'
 forumTopicId: 301183
 ---
 
-## Description
-<section id='description'>
-The <code>parseInt()</code> function parses a string and returns an integer. Here's an example:
-<code>var a = parseInt("007");</code>
-The above function converts the string "007" to an integer 7. If the first character in the string can't be converted into a number, then it returns <code>NaN</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Use <code>parseInt()</code> in the <code>convertToInteger</code> function so it converts the input string <code>str</code> into an integer, and returns it.
-</section>
+The `parseInt()` function parses a string and returns an integer. Here's an example:
 
-## Tests
-<section id='tests'>
+`var a = parseInt("007");`
 
-```yml
-tests:
-  - text: <code>convertToInteger</code> should use the <code>parseInt()</code> function
-    testString: assert(/parseInt/g.test(code));
-  - text: <code>convertToInteger("56")</code> should return a number
-    testString: assert(typeof(convertToInteger("56")) === "number");
-  - text: <code>convertToInteger("56")</code> should return 56
-    testString: assert(convertToInteger("56") === 56);
-  - text: <code>convertToInteger("77")</code> should return 77
-    testString: assert(convertToInteger("77") === 77);
-  - text: <code>convertToInteger("JamesBond")</code> should return NaN
-    testString: assert.isNaN(convertToInteger("JamesBond"));
+The above function converts the string "007" to an integer 7. If the first character in the string can't be converted into a number, then it returns `NaN`.
 
+# --instructions--
+
+Use `parseInt()` in the `convertToInteger` function so it converts the input string `str` into an integer, and returns it.
+
+# --hints--
+
+`convertToInteger` should use the `parseInt()` function
+
+```js
+assert(/parseInt/g.test(code));
 ```
 
-</section>
+`convertToInteger("56")` should return a number
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof convertToInteger('56') === 'number');
+```
 
-<div id='js-seed'>
+`convertToInteger("56")` should return 56
+
+```js
+assert(convertToInteger('56') === 56);
+```
+
+`convertToInteger("77")` should return 77
+
+```js
+assert(convertToInteger('77') === 77);
+```
+
+`convertToInteger("JamesBond")` should return NaN
+
+```js
+assert.isNaN(convertToInteger('JamesBond'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function convertToInteger(str) {
@@ -51,19 +62,10 @@ function convertToInteger(str) {
 convertToInteger("56");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function convertToInteger(str) {
   return parseInt(str);
 }
 ```
-
-</section>

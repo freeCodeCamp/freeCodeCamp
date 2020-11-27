@@ -6,11 +6,13 @@ videoUrl: 'https://scrimba.com/c/cnpymfJ'
 forumTopicId: 301092
 ---
 
-## Description
-<section id='description'>
-You have been adding <code>id</code> or <code>class</code> attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.
+# --description--
+
+You have been adding `id` or `class` attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.
+
 Let's bring out CatPhotoApp again to practice using CSS Selectors.
-For this challenge, you will use the <code>[attr=value]</code> attribute selector to style the checkboxes in CatPhotoApp. This selector matches and styles elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute <code>type</code> and a corresponding value of <code>radio</code>:
+
+For this challenge, you will use the `[attr=value]` attribute selector to style the checkboxes in CatPhotoApp. This selector matches and styles elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute `type` and a corresponding value of `radio`:
 
 ```css
 [type='radio'] {
@@ -18,33 +20,57 @@ For this challenge, you will use the <code>[attr=value]</code> attribute selecto
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Using the <code>type</code> attribute selector, try to give the checkboxes in CatPhotoApp a top margin of 10px and a bottom margin of 15px.
-</section>
+Using the `type` attribute selector, try to give the checkboxes in CatPhotoApp a top margin of 10px and a bottom margin of 15px.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>type</code> attribute selector should be used to select the checkboxes.
-    testString: assert(code.match(/<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi));
-  - text: The top margins of the checkboxes should be 10px.
-    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()));
-  - text: The bottom margins of the checkboxes should be 15px.
-    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()));
+The `type` attribute selector should be used to select the checkboxes.
 
+```js
+assert(
+  code.match(
+    /<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi
+  )
+);
 ```
 
-</section>
+The top margins of the checkboxes should be 10px.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    var count = 0;
+    $("[type='checkbox']").each(function () {
+      if ($(this).css('marginTop') === '10px') {
+        count++;
+      }
+    });
+    return count === 3;
+  })()
+);
+```
 
-<div id='html-seed'>
+The bottom margins of the checkboxes should be 15px.
+
+```js
+assert(
+  (function () {
+    var count = 0;
+    $("[type='checkbox']").each(function () {
+      if ($(this).css('marginBottom') === '15px') {
+        count++;
+      }
+    });
+    return count === 3;
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -111,14 +137,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -188,5 +207,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

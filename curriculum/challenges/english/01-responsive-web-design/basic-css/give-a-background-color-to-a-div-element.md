@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cdRKMCk'
 forumTopicId: 18190
 ---
 
-## Description
-<section id='description'>
-You can set an element's background color with the <code>background-color</code> property.
-For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:
+# --description--
+
+You can set an element's background color with the `background-color` property.
+
+For example, if you wanted an element's background color to be `green`, you'd put this within your `style` element:
 
 ```css
 .green-background {
@@ -17,33 +18,33 @@ For example, if you wanted an element's background color to be <code>green</code
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Create a class called <code>silver-background</code> with the <code>background-color</code> of silver. Assign this class to your <code>div</code> element.
-</section>
+Create a class called `silver-background` with the `background-color` of silver. Assign this class to your `div` element.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your<code>div</code> element should have the class <code>silver-background</code>.
-    testString: assert($("div").hasClass("silver-background"));
-  - text: Your <code>div</code> element should have a silver background.
-    testString: assert($("div").css("background-color") === "rgb(192, 192, 192)");
-  - text: A class named <code>silver-background</code> should be defined within the <code>style</code> element and the value of <code>silver</code> should be assigned to the <code>background-color</code> property.
-    testString: assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/));
+Your`div` element should have the class `silver-background`.
 
+```js
+assert($('div').hasClass('silver-background'));
 ```
 
-</section>
+Your `div` element should have a silver background.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div').css('background-color') === 'rgb(192, 192, 192)');
+```
 
-<div id='html-seed'>
+A class named `silver-background` should be defined within the `style` element and the value of `silver` should be assigned to the `background-color` property.
+
+```js
+assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -106,14 +107,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -179,5 +173,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

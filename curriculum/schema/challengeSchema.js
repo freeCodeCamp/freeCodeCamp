@@ -14,6 +14,7 @@ const fileJoi = Joi.object().keys({
   tail: Joi.string().allow(''),
   seed: Joi.string().allow(''),
   contents: Joi.string().allow(''),
+  id: Joi.string().allow(''),
   history: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')]
 });
 
@@ -87,6 +88,7 @@ const schema = Joi.object()
     tests: Joi.array().items(
       // public challenges
       Joi.object().keys({
+        id: Joi.string().allow(''),
         text: Joi.string().required(),
         testString: Joi.string()
           .allow('')

@@ -6,72 +6,71 @@ videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
 ---
 
-## Description
-<section id='description'>
-You can easily <dfn>increment</dfn> or add one to a variable with the <code>++</code> operator.
-<code>i++;</code>
+# --description--
+
+You can easily <dfn>increment</dfn> or add one to a variable with the `++` operator.
+
+`i++;`
+
 is the equivalent of
-<code>i = i + 1;</code>
-<strong>Note</strong><br>The entire line becomes <code>i++;</code>, eliminating the need for the equal sign.
-</section>
 
-## Instructions
-<section id='instructions'>
-Change the code to use the <code>++</code> operator on <code>myVar</code>.
-</section>
+`i = i + 1;`
 
-## Tests
-<section id='tests'>
+**Note**  
+The entire line becomes `i++;`, eliminating the need for the equal sign.
 
-```yml
-tests:
-  - text: <code>myVar</code> should equal <code>88</code>.
-    testString: assert(myVar === 88);
-  - text: You should not use the assignment operator.
-    testString: assert(/var\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2});/.test(code));
-  - text: You should use the <code>++</code> operator.
-    testString: assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
-  - text: You should not change code above the specified comment.
-    testString: assert(/var myVar = 87;/.test(code));
+# --instructions--
 
+Change the code to use the `++` operator on `myVar`.
+
+# --hints--
+
+`myVar` should equal `88`.
+
+```js
+assert(myVar === 88);
 ```
 
-</section>
+You should not use the assignment operator.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  /var\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2});/.test(code)
+);
+```
 
-<div id='js-seed'>
+You should use the `++` operator.
+
+```js
+assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
+```
+
+You should not change code above the specified comment.
+
+```js
+assert(/var myVar = 87;/.test(code));
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return 'myVar = ' + z;})(myVar);
+```
+
+## --seed-contents--
 
 ```js
 var myVar = 87;
 
 // Only change code below this line
 myVar = myVar + 1;
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(z){return 'myVar = ' + z;})(myVar);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myVar = 87;
 myVar++;
 ```
-
-</section>

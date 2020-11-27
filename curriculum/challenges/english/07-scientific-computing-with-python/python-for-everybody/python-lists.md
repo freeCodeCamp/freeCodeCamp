@@ -5,32 +5,34 @@ challengeType: 11
 videoId: Y0cvfDpYC_c
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What is the value of x after running this code:
 
-```yml
-question:
-  text: |
-    What is the value of x after running this code:
-    ```python
-    fruit = "banana"
-    x = fruit[1]
-    ```
-  answers:
-    - |
-        banana
-    - |
-        a
-    - |
-        b
-    - |
-        True
-  solution: 2
+```python
+fruit = "banana"
+x = fruit[1]
 ```
 
-</section>
+## --answers--
+
+banana
+
+---
+
+a
+
+---
+
+b
+
+---
+
+True
+
+## --video-solution--
+
+2
+

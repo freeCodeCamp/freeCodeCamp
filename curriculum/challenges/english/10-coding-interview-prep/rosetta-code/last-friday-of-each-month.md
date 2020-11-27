@@ -5,55 +5,75 @@ challengeType: 5
 forumTopicId: 302299
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Write a function that returns the date of the last Friday of a given month for a given year.
 
-</section>
+# --hints--
 
-## Instructions
+`lastFriday` should be a function.
 
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>lastFriday</code> should be a function.
-    testString: assert(typeof lastFriday == 'function');
-  - text: <code>lastFriday(2018, 1)</code> should return a number.
-    testString: assert(typeof lastFriday(2018, 1) == 'number');
-  - text: <code>lastFriday(2018, 1)</code> should return <code>26</code>.
-    testString: assert.equal(lastFriday(2018, 1), 26);
-  - text: <code>lastFriday(2017, 2)</code> should return <code>24</code>.
-    testString: assert.equal(lastFriday(2017, 2), 24);
-  - text: <code>lastFriday(2012, 3)</code> should return <code>30</code>.
-    testString: assert.equal(lastFriday(2012, 3), 30);
-  - text: <code>lastFriday(1900, 4)</code> should return <code>27</code>.
-    testString: assert.equal(lastFriday(1900, 4), 27);
-  - text: <code>lastFriday(2000, 5)</code> should return <code>26</code>.
-    testString: assert.equal(lastFriday(2000, 5), 26);
-  - text: <code>lastFriday(2006, 6)</code> should return <code>30</code>.
-    testString: assert.equal(lastFriday(2006, 6), 30);
-  - text: <code>lastFriday(2010, 7)</code> should return <code>30</code>.
-    testString: assert.equal(lastFriday(2010, 7), 30);
-  - text: <code>lastFriday(2005, 8)</code> should return <code>26</code>.
-    testString: assert.equal(lastFriday(2005, 8), 26);
+```js
+assert(typeof lastFriday == 'function');
 ```
 
-</section>
+`lastFriday(2018, 1)` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof lastFriday(2018, 1) == 'number');
+```
 
-<section id='challengeSeed'>
+`lastFriday(2018, 1)` should return `26`.
 
-<div id='js-seed'>
+```js
+assert.equal(lastFriday(2018, 1), 26);
+```
+
+`lastFriday(2017, 2)` should return `24`.
+
+```js
+assert.equal(lastFriday(2017, 2), 24);
+```
+
+`lastFriday(2012, 3)` should return `30`.
+
+```js
+assert.equal(lastFriday(2012, 3), 30);
+```
+
+`lastFriday(1900, 4)` should return `27`.
+
+```js
+assert.equal(lastFriday(1900, 4), 27);
+```
+
+`lastFriday(2000, 5)` should return `26`.
+
+```js
+assert.equal(lastFriday(2000, 5), 26);
+```
+
+`lastFriday(2006, 6)` should return `30`.
+
+```js
+assert.equal(lastFriday(2006, 6), 30);
+```
+
+`lastFriday(2010, 7)` should return `30`.
+
+```js
+assert.equal(lastFriday(2010, 7), 30);
+```
+
+`lastFriday(2005, 8)` should return `26`.
+
+```js
+assert.equal(lastFriday(2005, 8), 26);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function lastFriday(year, month) {
@@ -61,12 +81,7 @@ function lastFriday(year, month) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function lastFriday(year, month) {
@@ -81,5 +96,3 @@ function lastFriday(year, month) {
   }
 }
 ```
-
-</section>

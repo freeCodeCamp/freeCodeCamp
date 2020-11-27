@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301155
 ---
 
-## Description
-<section id='description'>
-Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the <code>hasOwnProperty()</code> method and the other uses the <code>in</code> keyword. If we have an object <code>users</code> with a property of <code>Alan</code>, we could check for its presence in either of the following ways:
+# --description--
+
+Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the `hasOwnProperty()` method and the other uses the `in` keyword. If we have an object `users` with a property of `Alan`, we could check for its presence in either of the following ways:
 
 ```js
 users.hasOwnProperty('Alan');
@@ -15,38 +15,77 @@ users.hasOwnProperty('Alan');
 // both return true
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-We've created an object, <code>users</code>, with some users in it and a function <code>isEveryoneHere</code>, which we pass the <code>users</code> object to as an argument. Finish writing this function so that it returns <code>true</code> only if the <code>users</code> object contains all four names, <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>, as keys, and <code>false</code> otherwise.
-</section>
+We've created an object, `users`, with some users in it and a function `isEveryoneHere`, which we pass the `users` object to as an argument. Finish writing this function so that it returns `true` only if the `users` object contains all four names, `Alan`, `Jeff`, `Sarah`, and `Ryan`, as keys, and `false` otherwise.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>users</code> object should only contain the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>
-    testString: assert("Alan" in users && "Jeff" in users && "Sarah" in users && "Ryan" in users && Object.keys(users).length === 4);
-  - text: The function <code>isEveryoneHere</code> should return <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object
-    testString: assert(isEveryoneHere(users) === true);
-  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Alan</code> is not a property on the <code>users</code> object
-    testString: assert((function() { delete users.Alan; return isEveryoneHere(users) })() === false);
-  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Jeff</code> is not a property on the <code>users</code> object
-    testString: assert((function() { delete users.Jeff; return isEveryoneHere(users) })() === false);
-  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Sarah</code> is not a property on the <code>users</code> object
-    testString: assert((function() { delete users.Sarah; return isEveryoneHere(users) })() === false);
-  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Ryan</code> is not a property on the <code>users</code> object
-    testString: assert((function() { delete users.Ryan; return isEveryoneHere(users) })() === false);
+The `users` object should only contain the keys `Alan`, `Jeff`, `Sarah`, and `Ryan`
+
+```js
+assert(
+  'Alan' in users &&
+    'Jeff' in users &&
+    'Sarah' in users &&
+    'Ryan' in users &&
+    Object.keys(users).length === 4
+);
 ```
 
-</section>
+The function `isEveryoneHere` should return `true` if `Alan`, `Jeff`, `Sarah`, and `Ryan` are properties on the `users` object
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(isEveryoneHere(users) === true);
+```
 
-<div id='js-seed'>
+The function `isEveryoneHere` should return `false` if `Alan` is not a property on the `users` object
+
+```js
+assert(
+  (function () {
+    delete users.Alan;
+    return isEveryoneHere(users);
+  })() === false
+);
+```
+
+The function `isEveryoneHere` should return `false` if `Jeff` is not a property on the `users` object
+
+```js
+assert(
+  (function () {
+    delete users.Jeff;
+    return isEveryoneHere(users);
+  })() === false
+);
+```
+
+The function `isEveryoneHere` should return `false` if `Sarah` is not a property on the `users` object
+
+```js
+assert(
+  (function () {
+    delete users.Sarah;
+    return isEveryoneHere(users);
+  })() === false
+);
+```
+
+The function `isEveryoneHere` should return `false` if `Ryan` is not a property on the `users` object
+
+```js
+assert(
+  (function () {
+    delete users.Ryan;
+    return isEveryoneHere(users);
+  })() === false
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let users = {
@@ -77,14 +116,7 @@ function isEveryoneHere(obj) {
 console.log(isEveryoneHere(users));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let users = {
@@ -117,5 +149,3 @@ function isEveryoneHere(obj) {
 
 console.log(isEveryoneHere(users));
 ```
-
-</section>

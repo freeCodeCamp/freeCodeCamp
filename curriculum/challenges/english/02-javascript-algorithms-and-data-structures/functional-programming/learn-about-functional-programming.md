@@ -5,40 +5,43 @@ challengeType: 1
 forumTopicId: 301233
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Functional programming is a style of programming where solutions are simple, isolated functions, without any side effects outside of the function scope.
-<code>INPUT -> PROCESS -> OUTPUT</code>
+
+`INPUT -> PROCESS -> OUTPUT`
+
 Functional programming is about:
+
 1) Isolated functions - there is no dependence on the state of the program, which includes global variables that are subject to change
+
 2) Pure functions - the same input always gives the same output
+
 3) Functions with limited side effects - any changes, or mutations, to the state of the program outside the function are carefully controlled
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 The members of freeCodeCamp happen to love tea.
-In the code editor, the <code>prepareTea</code> and <code>getTea</code> functions are already defined for you. Call the <code>getTea</code> function to get 40 cups of tea for the team, and store them in the <code>tea4TeamFCC</code> variable.
-</section>
 
-## Tests
-<section id='tests'>
+In the code editor, the `prepareTea` and `getTea` functions are already defined for you. Call the `getTea` function to get 40 cups of tea for the team, and store them in the `tea4TeamFCC` variable.
 
-```yml
-tests:
-  - text: The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.
-    testString: assert(tea4TeamFCC.length === 40);
-  - text: The <code>tea4TeamFCC</code> variable should hold cups of green tea.
-    testString: assert(tea4TeamFCC[0] === 'greenTea');
+# --hints--
 
+The `tea4TeamFCC` variable should hold 40 cups of tea for the team.
+
+```js
+assert(tea4TeamFCC.length === 40);
 ```
 
-</section>
+The `tea4TeamFCC` variable should hold cups of green tea.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(tea4TeamFCC[0] === 'greenTea');
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Function that returns a string representing a cup of green tea
@@ -64,14 +67,7 @@ const tea4TeamFCC = null;
 // Only change code above this line
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const prepareTea = () => 'greenTea';
@@ -89,5 +85,3 @@ const getTea = (numOfCups) => {
 
 const tea4TeamFCC = getTea(40); 
 ```
-
-</section>

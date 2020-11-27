@@ -1,14 +1,16 @@
 ---
-title: Ethiopian multiplication
 id: 599d1566a02b571412643b84
+title: Ethiopian multiplication
 challengeType: 5
 forumTopicId: 302257
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
-<strong>Method:</strong>
+
+**Method:**
+
 <ol>
   <li>Take two numbers to be multiplied and write them down at the top of two columns</li>
   <li>In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of <code>1</code></li>
@@ -16,37 +18,44 @@ Ethiopian multiplication is a method of multiplying integers using only addition
   <li>Examine the table produced and discard any row where the value in the left column is even</li>
   <li>Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together</li>
 </ol>
-<strong>For example:</strong> <code>17 &times; 34</code>
-<pre>
-17   34
+
+**For example:** `17 × 34`
+
+<pre>17   34
 </pre>
+
 Halving the first column:
-<pre>
-17   34
+
+<pre>17   34
 8
 4
 2
 1
 </pre>
+
 Doubling the second column:
-<pre>
-17   34
+
+<pre>17   34
 8    68
 4   136
 2   272
 1   544
 </pre>
+
 Strike-out rows whose first cell is even:
-<pre>
-17   34
+
+<pre>17   34
 8    <strike>68</strike>
 4   <strike>136</strike>
 2   <strike>272</strike>
 1   544
 </pre>
+
 Sum the remaining numbers in the right-hand column:
-<pre>
-17   34
+
+<!-- markdownlint-disable MD003 -->
+
+<pre>17   34
 8    --
 4   ---
 2   ---
@@ -54,46 +63,65 @@ Sum the remaining numbers in the right-hand column:
    ====
     578
 </pre>
-So <code>17</code> multiplied by <code>34</code>, by the Ethiopian method is <code>578</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+<!-- markdownlint-enable MD003 -->
+
+So `17` multiplied by `34`, by the Ethiopian method is `578`.
+
+# --instructions--
+
 The task is to define three named functions/methods/procedures/subroutines:
+
 <ol>
   <li>one to halve an integer,</li>
   <li>one to double an integer, and</li>
   <li>one to state if an integer is even</li>
 </ol>
+
 Use these functions to create a function that does Ethiopian multiplication.
-</section>
 
-## Tests
-<section id='tests'>
+<!-- markdownlint-disable MD046-->
+# --hints--
 
-```yml
-tests:
-  - text: <code>eth_mult</code> should be a function.
-    testString: assert(typeof eth_mult === 'function');
-  - text: <code>eth_mult(17,34)</code> should return <code>578</code>.
-    testString: assert.equal(eth_mult(17, 34), 578);
-  - text: <code>eth_mult(23,46)</code> should return <code>1058</code>.
-    testString: assert.equal(eth_mult(23, 46), 1058);
-  - text: <code>eth_mult(12,27)</code> should return <code>324</code>.
-    testString: assert.equal(eth_mult(12, 27), 324);
-  - text: <code>eth_mult(56,98)</code> should return <code>5488</code>.
-    testString: assert.equal(eth_mult(56, 98), 5488);
-  - text: <code>eth_mult(63,74)</code> should return <code>4662</code>.
-    testString: assert.equal(eth_mult(63, 74), 4662);
+`eth_mult` should be a function.
 
+```js
+assert(typeof eth_mult === 'function');
 ```
 
-</section>
+`eth_mult(17,34)` should return `578`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.equal(eth_mult(17, 34), 578);
+```
 
-<div id='js-seed'>
+`eth_mult(23,46)` should return `1058`.
+
+```js
+assert.equal(eth_mult(23, 46), 1058);
+```
+
+`eth_mult(12,27)` should return `324`.
+
+```js
+assert.equal(eth_mult(12, 27), 324);
+```
+
+`eth_mult(56,98)` should return `5488`.
+
+```js
+assert.equal(eth_mult(56, 98), 5488);
+```
+
+`eth_mult(63,74)` should return `4662`.
+
+```js
+assert.equal(eth_mult(63, 74), 4662);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function eth_mult(a, b) {
@@ -101,15 +129,7 @@ function eth_mult(a, b) {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function eth_mult(a, b) {
@@ -132,5 +152,3 @@ function eth_mult(a, b) {
   return sum + b[0];
 }
 ```
-
-</section>

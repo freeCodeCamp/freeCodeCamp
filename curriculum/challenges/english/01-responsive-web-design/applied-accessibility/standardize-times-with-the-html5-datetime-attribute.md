@@ -6,39 +6,61 @@ videoUrl: 'https://scrimba.com/c/cmzMgtz'
 forumTopicId: 301025
 ---
 
-## Description
-<section id='description'>
-Continuing with the date theme, HTML5 also introduced the <code>time</code> element along with a <code>datetime</code> attribute to standardize times. This is an inline element that can wrap a date or time on a page. A valid format of that date is held by the <code>datetime</code> attribute. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner in the text.
+# --description--
+
+Continuing with the date theme, HTML5 also introduced the `time` element along with a `datetime` attribute to standardize times. This is an inline element that can wrap a date or time on a page. A valid format of that date is held by the `datetime` attribute. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner in the text.
+
 Here's an example:
-<code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-Camper Cat's Mortal Kombat survey results are in! Wrap a <code>time</code> tag around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;" and add a <code>datetime</code> attribute to it set to "2016-09-15".
-</section>
+`<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should have a <code>p</code> element which includes the text <code>Thank you to everyone for responding to Master Camper Cat's survey.</code> and include a <code>time</code> element.
-    testString: assert(timeElement.length);
-  - text: Your added <code>time</code> tags should wrap around the text <code>Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;</code>.
-    testString: assert(timeElement.length && $(timeElement).html().trim() === "Thursday, September 15<sup>th</sup>");
-  - text: Your added <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.
-    testString: assert(datetimeAttr && datetimeAttr.length);
-  - text: Your added <code>datetime</code> attribute should be set to a value of <code>2016-09-15</code>.
-    testString: assert(datetimeAttr === "2016-09-15");
+Camper Cat's Mortal Kombat survey results are in! Wrap a `time` tag around the text "Thursday, September 15&lt;sup>th&lt;/sup>" and add a `datetime` attribute to it set to "2016-09-15".
+
+# --hints--
+
+Your code should have a `p` element which includes the text `Thank you to everyone for responding to Master Camper Cat's survey.` and include a `time` element.
+
+```js
+assert(timeElement.length);
 ```
 
-</section>
+Your added `time` tags should wrap around the text `Thursday, September 15<sup>th</sup>`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  timeElement.length &&
+    $(timeElement).html().trim() === 'Thursday, September 15<sup>th</sup>'
+);
+```
 
-<div id='html-seed'>
+Your added `time` tag should have a `datetime` attribute that is not empty.
+
+```js
+assert(datetimeAttr && datetimeAttr.length);
+```
+
+Your added `datetime` attribute should be set to a value of `2016-09-15`.
+
+```js
+assert(datetimeAttr === '2016-09-15');
+```
+
+# --seed--
+
+## --after-user-code--
+
+```html
+<script>
+const pElement = $("article > p")
+  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
+const timeElement = pElement[0] ? $(pElement[0]).find("time") : null;
+const datetimeAttr = $(timeElement).attr("datetime");
+</script>
+```
+
+## --seed-contents--
 
 ```html
 <body>
@@ -74,25 +96,7 @@ tests:
 </body>
 ```
 
-</div>
-
-<div id='html-teardown'>
-
-```html
-<script>
-const pElement = $("article > p")
-  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
-const timeElement = pElement[0] ? $(pElement[0]).find("time") : null;
-const datetimeAttr = $(timeElement).attr("datetime");
-</script>
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -123,5 +127,3 @@ const datetimeAttr = $(timeElement).attr("datetime");
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
-
-</section>

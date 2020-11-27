@@ -5,11 +5,13 @@ challengeType: 0
 forumTopicId: 301462
 ---
 
-## Description
-<section id='description'>
-The <code>@for</code> directive adds styles in a loop, very similar to a <code>for</code> loop in JavaScript.
-<code>@for</code> is used in two ways: "start through end" or "start to end". The main difference is that the "start <b>to</b> end" <em>excludes</em> the end number as part of the count, and "start <b>through</b> end" <em>includes</em> the end number as part of the count.
-Here's a start <b>through</b> end example:
+# --description--
+
+The `@for` directive adds styles in a loop, very similar to a `for` loop in JavaScript.
+
+`@for` is used in two ways: "start through end" or "start to end". The main difference is that the "start **to** end" *excludes* the end number as part of the count, and "start **through** end" *includes* the end number as part of the count.
+
+Here's a start **through** end example:
 
 ```scss
 @for $i from 1 through 12 {
@@ -17,7 +19,7 @@ Here's a start <b>through</b> end example:
 }
 ```
 
-The <code>#{$i}</code> part is the syntax to combine a variable (<code>i</code>) with text to make a string. When the Sass file is converted to CSS, it looks like this:
+The `#{$i}` part is the syntax to combine a variable (`i`) with text to make a string. When the Sass file is converted to CSS, it looks like this:
 
 ```scss
 .col-1 {
@@ -36,40 +38,54 @@ The <code>#{$i}</code> part is the syntax to combine a variable (<code>i</code>)
 ```
 
 This is a powerful way to create a grid layout. Now you have twelve options for column widths available as CSS classes.
-</section>
 
-## Instructions
-<section id='instructions'>
-Write a <code>@for</code> directive that takes a variable <code>$j</code> that goes from 1 <b>to</b> 6.
-It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> where each has a <code>font-size</code> set to 15px multiplied by the index.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Write a `@for` directive that takes a variable `$j` that goes from 1 **to** 6.
 
-```yml
-tests:
-  - text: Your code should use the <code>@for</code> directive.
-    testString: assert(code.match(/@for /g));
-  - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 15px.
-    testString: assert($('.text-1').css('font-size') == '15px');
-  - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 30px.
-    testString: assert($('.text-2').css('font-size') == '30px');
-  - text: Your <code>.text-3</code> class should have a <code>font-size</code> of 45px.
-    testString: assert($('.text-3').css('font-size') == '45px');
-  - text: Your <code>.text-4</code> class should have a <code>font-size</code> of 60px.
-    testString: assert($('.text-4').css('font-size') == '60px');
-  - text: Your <code>.text-5</code> class should have a <code>font-size</code> of 75px.
-    testString: assert($('.text-5').css('font-size') == '75px');
+It should create 5 classes called `.text-1` to `.text-5` where each has a `font-size` set to 15px multiplied by the index.
 
+# --hints--
+
+Your code should use the `@for` directive.
+
+```js
+assert(code.match(/@for /g));
 ```
 
-</section>
+Your `.text-1` class should have a `font-size` of 15px.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.text-1').css('font-size') == '15px');
+```
 
-<div id='html-seed'>
+Your `.text-2` class should have a `font-size` of 30px.
+
+```js
+assert($('.text-2').css('font-size') == '30px');
+```
+
+Your `.text-3` class should have a `font-size` of 45px.
+
+```js
+assert($('.text-3').css('font-size') == '45px');
+```
+
+Your `.text-4` class should have a `font-size` of 60px.
+
+```js
+assert($('.text-4').css('font-size') == '60px');
+```
+
+Your `.text-5` class should have a `font-size` of 75px.
+
+```js
+assert($('.text-5').css('font-size') == '75px');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style type='text/scss'>
@@ -85,14 +101,7 @@ tests:
 <p class="text-5">Hello</p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style type='text/scss'>
@@ -110,6 +119,8 @@ tests:
 <p class="text-5">Hello</p>
 ```
 
+---
+
 ```html
 <style type='text/scss'>
 
@@ -125,5 +136,3 @@ tests:
 <p class="text-4">Hello</p>
 <p class="text-5">Hello</p>
 ```
-
-</section>

@@ -6,43 +6,63 @@ videoUrl: 'https://scrimba.com/c/c2Qv7AV'
 forumTopicId: 16660
 ---
 
-## Description
-<section id='description'>
-Like the <code>+=</code> operator, <code>-=</code> subtracts a number from a variable.
-<code>myVar = myVar - 5;</code>
-will subtract <code>5</code> from <code>myVar</code>. This can be rewritten as:
-<code>myVar -= 5;</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator.
-</section>
+Like the `+=` operator, `-=` subtracts a number from a variable.
 
-## Tests
-<section id='tests'>
+`myVar = myVar - 5;`
 
-```yml
-tests:
-  - text: <code>a</code> should equal <code>5</code>.
-    testString: assert(a === 5);
-  - text: <code>b</code> should equal <code>-6</code>.
-    testString: assert(b === -6);
-  - text: <code>c</code> should equal <code>2</code>.
-    testString: assert(c === 2);
-  - text: You should use the <code>-=</code> operator for each variable.
-    testString: assert(code.match(/-=/g).length === 3);
-  - text: You should not modify the code above the specified comment.
-    testString: assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code));
+will subtract `5` from `myVar`. This can be rewritten as:
 
+`myVar -= 5;`
+
+# --instructions--
+
+Convert the assignments for `a`, `b`, and `c` to use the `-=` operator.
+
+# --hints--
+
+`a` should equal `5`.
+
+```js
+assert(a === 5);
 ```
 
-</section>
+`b` should equal `-6`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(b === -6);
+```
 
-<div id='js-seed'>
+`c` should equal `2`.
+
+```js
+assert(c === 2);
+```
+
+You should use the `-=` operator for each variable.
+
+```js
+assert(code.match(/-=/g).length === 3);
+```
+
+You should not modify the code above the specified comment.
+
+```js
+assert(
+  /var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code)
+);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
+```
+
+## --seed-contents--
 
 ```js
 var a = 11;
@@ -55,23 +75,7 @@ b = b - 15;
 c = c - 1;
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var a = 11;
@@ -81,8 +85,4 @@ var c = 3;
 a -= 6;
 b -= 15;
 c -= 1;
-
-
 ```
-
-</section>

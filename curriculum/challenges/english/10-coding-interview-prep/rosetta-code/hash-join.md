@@ -1,25 +1,28 @@
 ---
-title: Hash join
 id: 5956795bc9e2c415eb244de1
+title: Hash join
 challengeType: 5
 forumTopicId: 302284
 ---
 
-## Description
-<section id='description'>
-An <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join" title="wp: Join_(SQL)#Inner_join" target="_blank">inner join</a> is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href="https://en.wikipedia.org/wiki/Nested loop join" title="wp: Nested loop join" target="_blank">nested loop join</a> algorithm, but a more scalable alternative is the <a href="https://en.wikipedia.org/wiki/hash join" title="wp: hash join" target="_blank">hash join</a> algorithm.
+# --description--
+
+An [inner join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join "wp: Join\_(SQL)#Inner_join") is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the [nested loop join](<https://en.wikipedia.org/wiki/Nested loop join> "wp: Nested loop join") algorithm, but a more scalable alternative is the [hash join](<https://en.wikipedia.org/wiki/hash join> "wp: hash join") algorithm.
+
 The "hash join" algorithm consists of two steps:
+
 <ol>
-  <li><strong>Hash phase:</strong> Create a <a href="https://en.wikipedia.org/wiki/Multimap" title="wp: Multimap" target="_blank">multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
+  <li><strong>Hash phase:</strong> Create a <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
   <ul>
     <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
     <li>Ideally we should create the multimap for the smaller table, thus minimizing its creation time and memory size.</li>
   </ul>
   <li><strong>Join phase:</strong> Scan the other table, and find matching rows by looking in the multimap created before.</li>
 </ol>
+
 In pseudo-code, the algorithm could be expressed as follows:
-<pre>
-<strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
+
+<pre><strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
 <strong>let</strong> <i>B</i> = the second input table (or ideally, the smaller one)
 <strong>let</strong> <i>j<sub>A</sub></i> = the join column ID of table <i>A</i>
 <strong>let</strong> <i>j<sub>B</sub></i> = the join column ID of table <i>B</i>
@@ -32,10 +35,8 @@ In pseudo-code, the algorithm could be expressed as follows:
     <strong>let</strong> <i>c</i> = the concatenation of row <i>a</i> and row <i>b</i>
     <strong>place</strong> row <i>c</i> in table <i>C</i>
 </pre>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
 Implement the "hash join" algorithm as a function and demonstrate that it passes the test-case listed below. The function should accept two arrays of objects and return an array of combined objects.
 
@@ -127,51 +128,35 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
 
 <h4><strong>Output</strong></h4>
 
-|A_age|A_name|B_character|B_nemesis|
-|--- |--- |--- |--- |
-|27|Jonah|Jonah|Whales|
-|27|Jonah|Jonah|Spiders|
-|18|Alan|Alan|Ghosts|
-|18|Alan|Alan|Zombies|
-|28|Glory|Glory|Buffy|
-|28|Alan|Alan|Ghosts|
-|28|Alan|Alan|Zombies|
+| A_age | A_name | B_character | B_nemesis |
+| ----- | ------ | ----------- | --------- |
+| 27    | Jonah  | Jonah       | Whales    |
+| 27    | Jonah  | Jonah       | Spiders   |
+| 18    | Alan   | Alan        | Ghosts    |
+| 18    | Alan   | Alan        | Zombies   |
+| 28    | Glory  | Glory       | Buffy     |
+| 28    | Alan   | Alan        | Ghosts    |
+| 28    | Alan   | Alan        | Zombies   |
 
 The order of the rows in the output table is not significant.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>hashJoin</code> should be a function.
-    testString: assert(typeof hashJoin === 'function');
-  - text: '<code>hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])</code> should return <code>[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]</code>'
-    testString: assert.deepEqual(hashJoin(hash1, hash2), res);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`hashJoin` should be a function.
 
 ```js
-function hashJoin(hash1, hash2) {
-
-  return [];
-}
+assert(typeof hashJoin === 'function');
 ```
 
-</div>
+`hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])` should return `[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]`
 
+```js
+assert.deepEqual(hashJoin(hash1, hash2), res);
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 const hash1 = [
@@ -205,13 +190,16 @@ const bench1 = [{ name: 'u2v7v', num: 1 }, { name: 'n53c8', num: 10 }, { name: '
 const bench2 = [{ friend: 'o8b', num: 8 }, { friend: 'ye', num: 2 }, { friend: '32i', num: 5 }, { friend: 'uz', num: 3 }, { friend: 'a5k', num: 4 }, { friend: 'uad', num: 7 }, { friend: '3w5', num: 10 }, { friend: 'vw', num: 10 }, { friend: 'ah', num: 4 }, { friend: 'qv', num: 7 }, { friend: 'ozv', num: 2 }, { friend: '9ri', num: 10 }, { friend: '7nu', num: 4 }, { friend: 'w3', num: 9 }, { friend: 'tgp', num: 8 }, { friend: 'ibs', num: 1 }, { friend: 'ss7', num: 6 }, { friend: 'g44', num: 9 }, { friend: 'tab', num: 9 }, { friend: 'zem', num: 10 }];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function hashJoin(hash1, hash2) {
 
-## Solution
-<section id='solution'>
+  return [];
+}
+```
 
+# --solutions--
 
 ```js
 function hashJoin(hash1, hash2) {
@@ -245,8 +233,4 @@ function hashJoin(hash1, hash2) {
 
   return hJoin(hash1, hash2, 'name=character');
 }
-
-
 ```
-
-</section>

@@ -6,43 +6,65 @@ videoUrl: 'https://scrimba.com/c/c2QvKT2'
 forumTopicId: 16659
 ---
 
-## Description
-<section id='description'>
-The <code>/=</code> operator divides a variable by another number.
-<code>myVar = myVar / 5;</code>
-Will divide <code>myVar</code> by <code>5</code>. This can be rewritten as:
-<code>myVar /= 5;</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>/=</code> operator.
-</section>
+The `/=` operator divides a variable by another number.
 
-## Tests
-<section id='tests'>
+`myVar = myVar / 5;`
 
-```yml
-tests:
-  - text: <code>a</code> should equal <code>4</code>.
-    testString: assert(a === 4);
-  - text: <code>b</code> should equal <code>27</code>.
-    testString: assert(b === 27);
-  - text: <code>c</code> should equal <code>3</code>.
-    testString: assert(c === 3);
-  - text: You should use the <code>/=</code> operator for each variable.
-    testString: assert(code.match(/\/=/g).length === 3);
-  - text: You should not modify the code above the specified comment.
-    testString: assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code));
+Will divide `myVar` by `5`. This can be rewritten as:
 
+`myVar /= 5;`
+
+# --instructions--
+
+Convert the assignments for `a`, `b`, and `c` to use the `/=` operator.
+
+# --hints--
+
+`a` should equal `4`.
+
+```js
+assert(a === 4);
 ```
 
-</section>
+`b` should equal `27`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(b === 27);
+```
 
-<div id='js-seed'>
+`c` should equal `3`.
+
+```js
+assert(c === 3);
+```
+
+You should use the `/=` operator for each variable.
+
+```js
+assert(code.match(/\/=/g).length === 3);
+```
+
+You should not modify the code above the specified comment.
+
+```js
+assert(
+  /var a = 48;/.test(code) &&
+    /var b = 108;/.test(code) &&
+    /var c = 33;/.test(code)
+);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
+```
+
+## --seed-contents--
 
 ```js
 var a = 48;
@@ -55,23 +77,7 @@ b = b / 4;
 c = c / 11;
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var a = 48;
@@ -82,5 +88,3 @@ a /= 12;
 b /= 4;
 c /= 11;
 ```
-
-</section>

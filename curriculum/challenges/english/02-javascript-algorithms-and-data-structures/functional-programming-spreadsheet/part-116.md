@@ -4,8 +4,7 @@ title: Part 116
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can also pass in a negative argument to `slice` to specify that index from the end:
 
@@ -15,31 +14,54 @@ You can also pass in a negative argument to `slice` to specify that index from t
 
 Use a negative index to add a function `lasttwo` which returns the last two elements of an array.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(JSON.stringify(spreadsheetFunctions.lasttwo([2, 6, 1, 4, 3])) === "[4,3]");
-
+```js
+assert(
+  JSON.stringify(spreadsheetFunctions.lasttwo([2, 6, 1, 4, 3])) === '[4,3]'
+);
 ```
 
+# --seed--
 
-</section>
+## --before-user-code--
 
-## Challenge Seed
-<section id='challengeSeed'>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spreadsheet</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: 50px repeat(10, 200px);
+      grid-template-rows: repeat(11, 30px);
+    }
+    .label {
+      background-color: lightgray;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <div></div>
+</div>
+```
 
-<div id='html-seed'>
+## --after-user-code--
+
+```html
+</body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -149,57 +171,7 @@ const update = event => {
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Spreadsheet</title>
-  <style>
-    #container {
-      display: grid;
-      grid-template-columns: 50px repeat(10, 200px);
-      grid-template-rows: repeat(11, 30px);
-    }
-    .label {
-      background-color: lightgray;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 30px;
-    }
-  </style>
-</head>
-<body>
-<div id="container">
-  <div></div>
-</div>
-```
-
-</div>
-
-
-### After Test
-<div id='html-teardown'>
-
-```html
-</body>
-</html>
-```
-
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -308,5 +280,3 @@ const update = event => {
 };
 </script>
 ```
-
-</section>

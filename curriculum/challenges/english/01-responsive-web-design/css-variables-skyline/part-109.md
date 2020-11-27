@@ -4,31 +4,22 @@ title: Part 109
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can remove the `background-color` for this building now, since it isn't needed.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb6));
-
+```js
+const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0];
+assert(!/background-color/g.test(fb6));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -406,12 +397,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -787,5 +773,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

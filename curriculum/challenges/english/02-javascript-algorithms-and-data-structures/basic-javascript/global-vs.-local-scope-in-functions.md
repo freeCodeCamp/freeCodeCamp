@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
 ---
 
-## Description
-<section id='description'>
-It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.
+# --description--
+
+It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the `local` variable takes precedence over the `global` variable.
+
 In this example:
 
 ```js
@@ -19,34 +20,35 @@ function myFun() {
 }
 ```
 
-The function <code>myFun</code> will return <code>"Head"</code> because the <code>local</code> version of the variable is present.
-</section>
+The function `myFun` will return `"Head"` because the `local` version of the variable is present.
 
-## Instructions
-<section id='instructions'>
-Add a local variable to <code>myOutfit</code> function to override the value of <code>outerWear</code> with <code>"sweater"</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Add a local variable to `myOutfit` function to override the value of `outerWear` with `"sweater"`.
 
-```yml
-tests:
-  - text: You should not change the value of the global <code>outerWear</code>.
-    testString: assert(outerWear === "T-Shirt");
-  - text: <code>myOutfit</code> should return <code>"sweater"</code>.
-    testString: assert(myOutfit() === "sweater");
-  - text: You should not change the return statement.
-    testString: assert(/return outerWear/.test(code));
+# --hints--
 
+You should not change the value of the global `outerWear`.
+
+```js
+assert(outerWear === 'T-Shirt');
 ```
 
-</section>
+`myOutfit` should return `"sweater"`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(myOutfit() === 'sweater');
+```
 
-<div id='js-seed'>
+You should not change the return statement.
+
+```js
+assert(/return outerWear/.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -64,15 +66,7 @@ function myOutfit() {
 myOutfit();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var outerWear = "T-Shirt";
@@ -81,5 +75,3 @@ function myOutfit() {
   return outerWear;
 }
 ```
-
-</section>

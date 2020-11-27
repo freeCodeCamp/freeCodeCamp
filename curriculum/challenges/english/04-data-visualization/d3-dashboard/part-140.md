@@ -4,33 +4,55 @@ title: Part 140
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 There's a problem, each time you hover a label it adds all the elements to the container again. If you empty the container at the top of the function, it will redraw them where they need to be.
 
 Go back to the top of the function and use `d3.select` to select the `.dashboard` element and chain the `html` function to it with an empty string as it parameter. Empty means no spaces.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/d3\.select\(('|"|`)\.dashboard\1\)\.html\(('|"|`)\2\)/g.test(script));
-
+```js
+const script = $('.dashboard').siblings('script')[1].innerHTML;
+assert(/d3\.select\(('|"|`)\.dashboard\1\)\.html\(('|"|`)\2\)/g.test(script));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -242,47 +264,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -493,5 +475,3 @@ tests:
   drawDashboard(2020);
 </script>
 ```
-
-</section>

@@ -4,29 +4,21 @@ title: Part 36
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now align the text to the `right` for the elements with the `price` class.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -73,10 +65,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -102,6 +90,3 @@ h1, h2, p {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

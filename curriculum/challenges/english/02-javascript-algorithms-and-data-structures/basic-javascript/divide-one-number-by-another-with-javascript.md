@@ -6,70 +6,52 @@ videoUrl: 'https://scrimba.com/c/cqkbdAr'
 forumTopicId: 17566
 ---
 
-## Description
-<section id='description'>
-We can also divide one number by another.
-JavaScript uses the <code>/</code> symbol for division.
+# --description--
 
-<strong>Example</strong>
+We can also divide one number by another.
+
+JavaScript uses the `/` symbol for division.
+
+**Example**
 
 ```js
 myVar = 16 / 2; // assigned 8
 ```
 
+# --instructions--
 
-</section>
+Change the `0` so that the `quotient` is equal to `2`.
 
-## Instructions
-<section id='instructions'>
-Change the <code>0</code> so that the <code>quotient</code> is equal to <code>2</code>.
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: The variable <code>quotient</code> should be equal to 2.
-    testString: assert(quotient === 2);
-  - text: You should use the <code>/</code> operator.
-    testString: assert(/\d+\s*\/\s*\d+/.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The variable `quotient` should be equal to 2.
 
 ```js
-var quotient = 66 / 0;
-
-
+assert(quotient === 2);
 ```
 
-</div>
+You should use the `/` operator.
 
+```js
+assert(/\d+\s*\/\s*\d+/.test(code));
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(z){return 'quotient = '+z;})(quotient);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var quotient = 66 / 0;
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var quotient = 66 / 33;
 ```
-
-</section>

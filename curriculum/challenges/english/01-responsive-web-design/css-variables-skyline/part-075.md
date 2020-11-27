@@ -4,31 +4,21 @@ title: Part 75
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add the `building-wrap` class to the `fb1` element to center the sections.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".fb1.building-wrap").length === 1);
-
+```js
+assert($('.fb1.building-wrap').length === 1);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -281,12 +271,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -538,5 +523,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

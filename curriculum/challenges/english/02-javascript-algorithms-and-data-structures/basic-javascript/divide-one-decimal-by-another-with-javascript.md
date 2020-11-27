@@ -6,60 +6,50 @@ videoUrl: 'https://scrimba.com/c/cBZe9AW'
 forumTopicId: 18255
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now let's divide one decimal by another.
-</section>
 
-## Instructions
-<section id='instructions'>
-Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.2</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Change the `0.0` so that `quotient` will equal to `2.2`.
 
-```yml
-tests:
-  - text: The variable <code>quotient</code> should equal <code>2.2</code>
-    testString: assert(quotient === 2.2);
-  - text: You should use the <code>/</code> operator to divide 4.4 by 2
-    testString: assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
-  - text: The quotient variable should only be assigned once
-    testString: assert(code.match(/quotient/g).length === 1);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The variable `quotient` should equal `2.2`
 
 ```js
-var quotient = 0.0 / 2.0; // Change this line
+assert(quotient === 2.2);
 ```
 
-</div>
+You should use the `/` operator to divide 4.4 by 2
 
+```js
+assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
+```
 
-### After Test
-<div id='js-teardown'>
+The quotient variable should only be assigned once
+
+```js
+assert(code.match(/quotient/g).length === 1);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(y){return 'quotient = '+y;})(quotient);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var quotient = 0.0 / 2.0; // Change this line
+```
 
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 var quotient = 4.4 / 2.0;
 ```
-
-</section>

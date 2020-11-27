@@ -5,41 +5,76 @@ challengeType: 6
 forumTopicId: 301425
 ---
 
-## Description
-<section id='description'>
-You can design a more complex stateful component by combining the concepts covered so far. These include initializing <code>state</code>, writing methods that set <code>state</code>, and assigning click handlers to trigger these methods.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-The <code>Counter</code> component keeps track of a <code>count</code> value in <code>state</code>. There are two buttons which call methods <code>increment()</code> and <code>decrement()</code>. Write these methods so the counter value is incremented or decremented by 1 when the appropriate button is clicked. Also, create a <code>reset()</code> method so when the reset button is clicked, the count is set to 0.
-<strong>Note:</strong>&nbsp;Make sure you don't modify the <code>classNames</code> of the buttons. Also, remember to add the necessary bindings for the newly-created methods in the constructor.
-</section>
+You can design a more complex stateful component by combining the concepts covered so far. These include initializing `state`, writing methods that set `state`, and assigning click handlers to trigger these methods.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>Counter</code> should return a <code>div</code> element which contains three buttons with text content in this order <code>Increment!</code>, <code>Decrement!</code>, <code>Reset</code>.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Counter)); return (mockedComponent.find('.inc').text() === 'Increment!' && mockedComponent.find('.dec').text() === 'Decrement!' && mockedComponent.find('.reset').text() === 'Reset'); })());
-  - text: The state of <code>Counter</code> should initialize with a <code>count</code> property set to <code>0</code>.
-    testString: 'const mockedComponent = Enzyme.mount(React.createElement(Counter)); assert(mockedComponent.find("h1").text() === "Current Count: 0")'
-  - text: Clicking the increment button should increment the count by <code>1</code>.
-    testString: 'const mockedComponent = Enzyme.mount(React.createElement(Counter)); mockedComponent.find(".inc").simulate("click"); assert(mockedComponent.find("h1").text() === "Current Count: 1")'
-  - text: Clicking the decrement button should decrement the count by <code>1</code>.
-    testString: 'const mockedComponent = Enzyme.mount(React.createElement(Counter)); mockedComponent.find(".dec").simulate("click"); assert(mockedComponent.find("h1").text() === "Current Count: -1")'
-  - text: Clicking the reset button should reset the count to <code>0</code>.
-    testString: 'const mockedComponent = Enzyme.mount(React.createElement(Counter)); mockedComponent.setState({ count: 5 }); const currentCountElement = mockedComponent.find("h1"); assert(currentCountElement.text() === "Current Count: 5"); mockedComponent.find(".reset").simulate("click"); assert(currentCountElement.text() === "Current Count: 0");'
+The `Counter` component keeps track of a `count` value in `state`. There are two buttons which call methods `increment()` and `decrement()`. Write these methods so the counter value is incremented or decremented by 1 when the appropriate button is clicked. Also, create a `reset()` method so when the reset button is clicked, the count is set to 0.
 
+**Note:** Make sure you don't modify the `classNames` of the buttons. Also, remember to add the necessary bindings for the newly-created methods in the constructor.
+
+# --hints--
+
+`Counter` should return a `div` element which contains three buttons with text content in this order `Increment!`, `Decrement!`, `Reset`.
+
+```js
+assert(
+  (() => {
+    const mockedComponent = Enzyme.mount(React.createElement(Counter));
+    return (
+      mockedComponent.find('.inc').text() === 'Increment!' &&
+      mockedComponent.find('.dec').text() === 'Decrement!' &&
+      mockedComponent.find('.reset').text() === 'Reset'
+    );
+  })()
+);
 ```
 
-</section>
+The state of `Counter` should initialize with a `count` property set to `0`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+const mockedComponent = Enzyme.mount(React.createElement(Counter));
+assert(mockedComponent.find('h1').text() === 'Current Count: 0');
+```
 
-<div id='jsx-seed'>
+Clicking the increment button should increment the count by `1`.
+
+```js
+const mockedComponent = Enzyme.mount(React.createElement(Counter));
+mockedComponent.find('.inc').simulate('click');
+assert(mockedComponent.find('h1').text() === 'Current Count: 1');
+```
+
+Clicking the decrement button should decrement the count by `1`.
+
+```js
+const mockedComponent = Enzyme.mount(React.createElement(Counter));
+mockedComponent.find('.dec').simulate('click');
+assert(mockedComponent.find('h1').text() === 'Current Count: -1');
+```
+
+Clicking the reset button should reset the count to `0`.
+
+```js
+const mockedComponent = Enzyme.mount(React.createElement(Counter));
+mockedComponent.setState({ count: 5 });
+const currentCountElement = mockedComponent.find('h1');
+assert(currentCountElement.text() === 'Current Count: 5');
+mockedComponent.find('.reset').simulate('click');
+assert(currentCountElement.text() === 'Current Count: 0');
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<Counter />, document.getElementById('root'))
+```
+
+## --seed-contents--
 
 ```jsx
 class Counter extends React.Component {
@@ -68,23 +103,7 @@ class Counter extends React.Component {
 };
 ```
 
-</div>
-
-
-### After Test
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<Counter />, document.getElementById('root'))
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 class Counter extends React.Component {
@@ -124,5 +143,3 @@ class Counter extends React.Component {
   }
 };
 ```
-
-</section>

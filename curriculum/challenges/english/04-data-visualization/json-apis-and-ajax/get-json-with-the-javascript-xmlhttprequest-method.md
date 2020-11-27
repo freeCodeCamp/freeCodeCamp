@@ -5,14 +5,20 @@ challengeType: 6
 forumTopicId: 301502
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can also request data from an external source. This is where APIs come into play.
+
 Remember that APIs - or Application Programming Interfaces - are tools that computers use to communicate with one another. You'll learn how to update HTML with the data we get from APIs using a technology called AJAX.
+
 Most web APIs transfer data in a format called JSON. JSON stands for JavaScript Object Notation.
-JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a <code>{</code> and a <code>}</code>.
+
+JSON syntax looks very similar to JavaScript object literal notation. JSON has object properties and their current values, sandwiched between a `{` and a `}`.
+
 These properties and their values are often referred to as "key-value pairs".
-However, JSON transmitted by APIs are sent as <code>bytes</code>, and your application receives it as a <code>string</code>. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The <code>JSON.parse</code> method parses the string and constructs the JavaScript object described by it.
+
+However, JSON transmitted by APIs are sent as `bytes`, and your application receives it as a `string`. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The `JSON.parse` method parses the string and constructs the JavaScript object described by it.
+
 You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:
 
 ```js
@@ -25,42 +31,63 @@ req.onload = function(){
 };
 ```
 
-Here's a review of what each piece is doing. The JavaScript <code>XMLHttpRequest</code> object has a number of properties and methods that are used to transfer data. First, an instance of the <code>XMLHttpRequest</code> object is created and saved in the <code>req</code> variable.
-Next, the <code>open</code> method initializes a request - this example is requesting data from an API, therefore is a "GET" request. The second argument for <code>open</code> is the URL of the API you are requesting data from. The third argument is a Boolean value where <code>true</code> makes it an asynchronous request.
-The <code>send</code> method sends the request. Finally, the <code>onload</code> event handler parses the returned data and applies the <code>JSON.stringify</code> method to convert the JavaScript object into a string. This string is then inserted as the message text.
-</section>
+Here's a review of what each piece is doing. The JavaScript `XMLHttpRequest` object has a number of properties and methods that are used to transfer data. First, an instance of the `XMLHttpRequest` object is created and saved in the `req` variable. Next, the `open` method initializes a request - this example is requesting data from an API, therefore is a "GET" request. The second argument for `open` is the URL of the API you are requesting data from. The third argument is a Boolean value where `true` makes it an asynchronous request. The `send` method sends the request. Finally, the `onload` event handler parses the returned data and applies the `JSON.stringify` method to convert the JavaScript object into a string. This string is then inserted as the message text.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo API. Then click the "Get Message" button. Your AJAX function will replace the "The message will go here" text with the raw JSON output from the API.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should create a new <code>XMLHttpRequest</code>.
-    testString: assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
-  - text: Your code should use the <code>open</code> method to initialize a "GET" request to the freeCodeCamp Cat Photo API.
-    testString: assert(code.match(/\.open\(\s*?('|")GET\1\s*?,\s*?('|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g));
-  - text: Your code should use the <code>send</code> method to send the request.
-    testString: assert(code.match(/\.send\(\s*\)/g));
-  - text: Your code should have an <code>onload</code> event handler set to a function.
-    testString: assert(code.match(/\.onload\s*=\s*(function|\(\s*?\))\s*?(\(\s*?\)|\=\>)\s*?{/g));
-  - text: Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.
-    testString: assert(code.match(/JSON\s*\.parse\(\s*.*\.responseText\s*\)/g));
-  - text: Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.
-    testString: assert(code.match(/document\s*\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\s*\.innerHTML\s*?=\s*?JSON\.stringify\(.+?\)/g));
+Your code should create a new `XMLHttpRequest`.
 
+```js
+assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
 ```
 
-</section>
+Your code should use the `open` method to initialize a "GET" request to the freeCodeCamp Cat Photo API.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /\.open\(\s*?('|")GET\1\s*?,\s*?('|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g
+  )
+);
+```
 
-<div id='html-seed'>
+Your code should use the `send` method to send the request.
+
+```js
+assert(code.match(/\.send\(\s*\)/g));
+```
+
+Your code should have an `onload` event handler set to a function.
+
+```js
+assert(
+  code.match(/\.onload\s*=\s*(function|\(\s*?\))\s*?(\(\s*?\)|\=\>)\s*?{/g)
+);
+```
+
+Your code should use the `JSON.parse` method to parse the `responseText`.
+
+```js
+assert(code.match(/JSON\s*\.parse\(\s*.*\.responseText\s*\)/g));
+```
+
+Your code should get the element with class `message` and change its inner HTML to the string of JSON data.
+
+```js
+assert(
+  code.match(
+    /document\s*\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\s*\.innerHTML\s*?=\s*?JSON\.stringify\(.+?\)/g
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -112,14 +139,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -173,5 +193,3 @@ tests:
   </button>
 </p>
 ```
-
-</section>

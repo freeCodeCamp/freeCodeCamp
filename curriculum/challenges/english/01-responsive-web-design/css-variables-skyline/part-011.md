@@ -4,31 +4,27 @@ title: Part 11
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Nest four `div` elements in the `bb1` container. Give them the classes `bb1a`, `bb1b`, `bb1c`, and `bb1d` in that order. This building will have four sections.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1 = $(".bb1")[0]; assert(bb1.contains($("div.bb1a")[0]) && bb1.contains($("div.bb1b")[0]) && bb1.contains($("div.bb1c")[0]) && bb1.contains($("div.bb1d")[0]));
-
+```js
+const bb1 = $('.bb1')[0];
+assert(
+  bb1.contains($('div.bb1a')[0]) &&
+    bb1.contains($('div.bb1b')[0]) &&
+    bb1.contains($('div.bb1c')[0]) &&
+    bb1.contains($('div.bb1d')[0])
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -67,12 +63,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -115,5 +106,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

@@ -6,11 +6,13 @@ videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
 ---
 
-## Description
-<section id='description'>
-One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.
-However, an <code>id</code> is not reusable and should only be applied to one element. An <code>id</code> also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the <code>id</code> will be applied.
-Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element:
+# --description--
+
+One cool thing about `id` attributes is that, like classes, you can style them using CSS.
+
+However, an `id` is not reusable and should only be applied to one element. An `id` also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the `id` will be applied.
+
+Here's an example of how you can take your element with the `id` attribute of `cat-photo-element` and give it the background color of green. In your `style` element:
 
 ```css
 #cat-photo-element {
@@ -18,36 +20,44 @@ Here's an example of how you can take your element with the <code>id</code> attr
 }
 ```
 
-Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.
-</section>
+Note that inside your `style` element, you always reference classes by putting a `.` in front of their names. You always reference ids by putting a `#` in front of their names.
 
-## Instructions
-<section id='instructions'>
-Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Try giving your form, which now has the `id` attribute of `cat-photo-form`, a green background.
 
-```yml
-tests:
-  - text: Your <code>form</code> element should have the id of <code>cat-photo-form</code>.
-    testString: assert($("form").attr("id") === "cat-photo-form");
-  - text: Your <code>form</code> element should have the <code>background-color</code> of green.
-    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)");
-  - text: Your <code>form</code> element should have an <code>id</code> attribute.
-    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0);
-  - text: You should not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.
-    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
+# --hints--
 
+Your `form` element should have the id of `cat-photo-form`.
+
+```js
+assert($('form').attr('id') === 'cat-photo-form');
 ```
 
-</section>
+Your `form` element should have the `background-color` of green.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#cat-photo-form').css('background-color') === 'rgb(0, 128, 0)');
+```
 
-<div id='html-seed'>
+Your `form` element should have an `id` attribute.
+
+```js
+assert(
+  code.match(/<form.*cat-photo-form.*>/gi) &&
+    code.match(/<form.*cat-photo-form.*>/gi).length > 0
+);
+```
+
+You should not give your `form` any `class` or `style` attributes.
+
+```js
+assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -114,14 +124,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -191,5 +194,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

@@ -5,9 +5,9 @@ challengeType: 6
 forumTopicId: 301503
 ---
 
-## Description
-<section id='description'>
-You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:
+# --description--
+
+You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called `DOMContentLoaded`. Here's the code that does this:
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,37 +15,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:
+You can implement event handlers that go inside of the `DOMContentLoaded` function. You can implement an `onclick` event handler which triggers when the user clicks on the element with id `getMessage`, by adding the following code:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add a click event handler inside of the <code>DOMContentLoaded</code> function for the element with id of <code>getMessage</code>.
-</section>
+Add a click event handler inside of the `DOMContentLoaded` function for the element with id of `getMessage`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.
-    testString: assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
-  - text: Your code should add an <code>onclick</code> event handler.
-    testString: assert(typeof document.getElementById('getMessage').onclick === 'function');
+Your code should use the `document.getElementById` method to select the `getMessage` element.
 
+```js
+assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
 ```
 
-</section>
+Your code should add an `onclick` event handler.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof document.getElementById('getMessage').onclick === 'function');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -94,14 +90,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -148,5 +137,3 @@ tests:
   </button>
 </p>
 ```
-
-</section>

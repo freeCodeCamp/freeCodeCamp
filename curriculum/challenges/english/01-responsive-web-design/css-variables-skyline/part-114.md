@@ -4,8 +4,8 @@ title: Part 114
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 A media query can be used to change styles based on certain conditions, and they look like this:
 
 ```css
@@ -15,27 +15,18 @@ A media query can be used to change styles based on certain conditions, and they
 ```
 
 Add an empty media query at the bottom of your stylesheet with a condition of `max-width: 1000px`. Styles added in here will take effect when the document size is 1000px wide or less.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/\@media\s*\(\s*max-width\s*:\s*1000px\s*\)\s*{\s*}/g.test(code));
-
+```js
+assert(/\@media\s*\(\s*max-width\s*:\s*1000px\s*\)\s*{\s*}/g.test(code));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -421,12 +412,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -815,5 +801,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

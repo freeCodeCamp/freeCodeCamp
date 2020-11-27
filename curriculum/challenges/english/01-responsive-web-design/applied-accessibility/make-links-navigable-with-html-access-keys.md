@@ -6,41 +6,49 @@ videoUrl: 'https://scrimba.com/c/cQvmaTp'
 forumTopicId: 301021
 ---
 
-## Description
-<section id='description'>
-HTML offers the <code>accesskey</code> attribute to specify a shortcut key to activate or bring focus to an element. This can make navigation more efficient for keyboard-only users.
+# --description--
+
+HTML offers the `accesskey` attribute to specify a shortcut key to activate or bring focus to an element. This can make navigation more efficient for keyboard-only users.
+
 HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.
+
 Here's an example:
-<code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an <code>accesskey</code> attribute to both links and set the first one to "g" (for Garfield) and the second one to "c" (for Chuck Norris).
-</section>
+`<button accesskey="b">Important Button</button>`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "first".
-    testString: assert($('#first').attr('accesskey'));
-  - text: Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "second".
-    testString: assert($('#second').attr('accesskey'));
-  - text: Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "first" to "g". Note that case matters.
-    testString: assert($('#first').attr('accesskey') == 'g');
-  - text: Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "second" to "c". Note that case matters.
-    testString: assert($('#second').attr('accesskey') == 'c');
+Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an `accesskey` attribute to both links and set the first one to "g" (for Garfield) and the second one to "c" (for Chuck Norris).
 
+# --hints--
+
+Your code should add an `accesskey` attribute to the `a` tag with the `id` of "first".
+
+```js
+assert($('#first').attr('accesskey'));
 ```
 
-</section>
+Your code should add an `accesskey` attribute to the `a` tag with the `id` of "second".
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#second').attr('accesskey'));
+```
 
-<div id='html-seed'>
+Your code should set the `accesskey` attribute on the `a` tag with the `id` of "first" to "g". Note that case matters.
+
+```js
+assert($('#first').attr('accesskey') == 'g');
+```
+
+Your code should set the `accesskey` attribute on the `a` tag with the `id` of "second" to "c". Note that case matters.
+
+```js
+assert($('#second').attr('accesskey') == 'c');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -67,14 +75,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -100,5 +101,3 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
-
-</section>

@@ -4,53 +4,21 @@ title: Part 9
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 For now, let's start the player with just the stick. Delete the dagger and sword items in the array. More items will be added to the array during game play.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(inventory[0] === 'stick' && inventory.length === 1);
-
+```js
+assert(inventory[0] === 'stick' && inventory.length === 1);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory = ["stick", "dagger", "sword"];
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -116,26 +84,29 @@ let inventory = ["stick", "dagger", "sword"];
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick", "dagger", "sword"];
 
-</section>
+</script>
+```
 
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -148,5 +119,3 @@ let monsterHealth;
 let inventory = ["stick"];
 </script>
 ```
-
-</section>

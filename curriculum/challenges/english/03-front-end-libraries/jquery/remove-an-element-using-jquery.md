@@ -5,36 +5,37 @@ challengeType: 6
 forumTopicId: 18262
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now let's remove an HTML element from your page using jQuery.
-jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely
-Remove element <code>target4</code> from the page by using the <code>.remove()</code> function.
-</section>
 
-## Instructions
-<section id='instructions'>
+jQuery has a function called `.remove()` that will remove an HTML element entirely
 
-</section>
+Remove element `target4` from the page by using the `.remove()` function.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should use jQuery to remove your <code>target4</code> element from your page.
-    testString: assert($("#target4").length === 0 && code.match(/\$\(["']#target4["']\).remove\(\)/g));
-  - text: You should only use jQuery to remove this element.
-    testString: assert(code.match(/id="target4/g) && !code.match(/<!--.*id="target4".*-->/g) && $("#right-well").length > 0);
+You should use jQuery to remove your `target4` element from your page.
 
+```js
+assert(
+  $('#target4').length === 0 && code.match(/\$\(["']#target4["']\).remove\(\)/g)
+);
 ```
 
-</section>
+You should only use jQuery to remove this element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/id="target4/g) &&
+    !code.match(/<!--.*id="target4".*-->/g) &&
+    $('#right-well').length > 0
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -70,14 +71,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -112,5 +106,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

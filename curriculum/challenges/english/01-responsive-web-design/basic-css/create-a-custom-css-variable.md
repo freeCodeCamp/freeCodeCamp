@@ -6,39 +6,33 @@ videoUrl: 'https://scrimba.com/c/cQd27Hr'
 forumTopicId: 301086
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 To create a CSS variable, you just need to give it a name with two hyphens in front of it and assign it a value like this:
 
 ```css
 --penguin-skin: gray;
 ```
 
-This will create a variable named <code>--penguin-skin</code> and assign it the value of <code>gray</code>.
-Now you can use that variable elsewhere in your CSS to change the value of other elements to gray.
-</section>
+This will create a variable named `--penguin-skin` and assign it the value of `gray`. Now you can use that variable elsewhere in your CSS to change the value of other elements to gray.
 
-## Instructions
-<section id='instructions'>
-In the <code>penguin</code> class, create a variable name <code>--penguin-skin</code> and give it a value of <code>gray</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+In the `penguin` class, create a variable name `--penguin-skin` and give it a value of `gray`.
 
-```yml
-tests:
-  - text: <code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.
-    testString: assert(code.match(/\.penguin\s*\{[^{}]*?--penguin-skin\s*:\s*gr[ae]y\s*;[^{}]*?\}/gi));
+# --hints--
 
+`penguin` class should declare the `--penguin-skin` variable and assign it to `gray`.
+
+```js
+assert(
+  code.match(/\.penguin\s*\{[^{}]*?--penguin-skin\s*:\s*gr[ae]y\s*;[^{}]*?\}/gi)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -239,18 +233,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.penguin {--penguin-skin: gray;}</style>
 ```
-
-</section>

@@ -1,12 +1,11 @@
 ---
 id: 5900f37a1000cf542c50fe8d
-challengeType: 5
 title: 'Problem 14: Longest Collatz sequence'
+challengeType: 5
 forumTopicId: 301768
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The following iterative sequence is defined for the set of positive integers:
 
@@ -24,41 +23,53 @@ Which starting number, under the given `limit`, produces the longest chain?
 
 **Note:** Once the chain starts the terms are allowed to go above one million.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`longestCollatzSequence(14)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>longestCollatzSequence(14)</code> should return a number.
-    testString: assert(typeof longestCollatzSequence(14) === 'number');
-  - text: <code>longestCollatzSequence(14)</code> should return 9.
-    testString: assert.strictEqual(longestCollatzSequence(14), 9);
-  - text: <code>longestCollatzSequence(5847)</code> should return 3711.
-    testString: assert.strictEqual(longestCollatzSequence(5847), 3711);
-  - text: <code>longestCollatzSequence(46500)</code> should return 35655.
-    testString: assert.strictEqual(longestCollatzSequence(46500), 35655);
-  - text: <code>longestCollatzSequence(54512)</code> should return 52527.
-    testString: assert.strictEqual(longestCollatzSequence(54512), 52527);
-  - text: <code>longestCollatzSequence(100000)</code> should return 77031.
-    testString: assert.strictEqual(longestCollatzSequence(100000), 77031);
-  - text: <code>longestCollatzSequence(1000000)</code> should return 837799.
-    testString: assert.strictEqual(longestCollatzSequence(1000000), 837799);
-
+```js
+assert(typeof longestCollatzSequence(14) === 'number');
 ```
 
-</section>
+`longestCollatzSequence(14)` should return 9.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(longestCollatzSequence(14), 9);
+```
 
-<div id='js-seed'>
+`longestCollatzSequence(5847)` should return 3711.
+
+```js
+assert.strictEqual(longestCollatzSequence(5847), 3711);
+```
+
+`longestCollatzSequence(46500)` should return 35655.
+
+```js
+assert.strictEqual(longestCollatzSequence(46500), 35655);
+```
+
+`longestCollatzSequence(54512)` should return 52527.
+
+```js
+assert.strictEqual(longestCollatzSequence(54512), 52527);
+```
+
+`longestCollatzSequence(100000)` should return 77031.
+
+```js
+assert.strictEqual(longestCollatzSequence(100000), 77031);
+```
+
+`longestCollatzSequence(1000000)` should return 837799.
+
+```js
+assert.strictEqual(longestCollatzSequence(1000000), 837799);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function longestCollatzSequence(limit) {
@@ -69,15 +80,7 @@ function longestCollatzSequence(limit) {
 longestCollatzSequence(14);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function longestCollatzSequence(limit) {
@@ -105,5 +108,3 @@ function colLen(n) {
   }
 }
 ```
-
-</section>

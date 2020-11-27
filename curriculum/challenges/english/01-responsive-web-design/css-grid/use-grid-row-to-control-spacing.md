@@ -6,40 +6,47 @@ videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
 forumTopicId: 301137
 ---
 
-## Description
-<section id='description'>
-Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the <code>grid-row</code> property on a grid item.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Make the element with the <code>item5</code> class consume the last two rows.
-</section>
+Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the `grid-row` property on a grid item.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>item5</code> class should have a <code>grid-row</code> property.
-    testString: assert(__helpers.removeWhiteSpace($('style').text()).match(/\.item5{.*grid-row:.*}/g));
-  - text: <code>item5</code> class should have a <code>grid-row</code> property which results in it consuming the last two rows of the grid.
-    testString: "
-      const rowStart = getComputedStyle($('.item5')[0]).gridRowStart;
-      const rowEnd = getComputedStyle($('.item5')[0]).gridRowEnd;
-      const result = rowStart.toString() + rowEnd.toString();
-      const correctResults = ['24', '2-1', '2span 2', '2span2', 'span 2-1', '-12', 'span 2span 2', 'span 2auto', 'autospan 2'];
-      assert(correctResults.includes(result));
-    "
+Make the element with the `item5` class consume the last two rows.
 
+# --hints--
+
+`item5` class should have a `grid-row` property.
+
+```js
+assert(
+  __helpers.removeWhiteSpace($('style').text()).match(/\.item5{.*grid-row:.*}/g)
+);
 ```
 
-</section>
+`item5` class should have a `grid-row` property which results in it consuming the last two rows of the grid.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+const rowStart = getComputedStyle($('.item5')[0]).gridRowStart;
+const rowEnd = getComputedStyle($('.item5')[0]).gridRowEnd;
+const result = rowStart.toString() + rowEnd.toString();
+const correctResults = [
+  '24',
+  '2-1',
+  '2span 2',
+  '2span2',
+  'span 2-1',
+  '-12',
+  'span 2span 2',
+  'span 2auto',
+  'autospan 2'
+];
+assert(correctResults.includes(result));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -77,15 +84,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>
@@ -120,5 +119,3 @@ tests:
   <div class="item5">5</div>
 </div>
 ```
-
-</section>

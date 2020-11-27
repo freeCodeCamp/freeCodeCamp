@@ -5,34 +5,36 @@ challengeType: 11
 videoId: LaCZnTbQGkE
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What will the following program print?:
 
-```yml
-question:
-  text: |
-    What will the following program print?:
-    ```python
-    import re
-    s = 'A message from csev@umich.edu to cwen@iupui.edu about meeting @2PM'
-    lst = re.findall('\\S+@\\S+', s)
-    print(lst)
-    ```
-  answers:
-    - |
-        ['csev@umich.edu', 'cwen@iupui.edu']
-    - |
-        ['csev@umich.edu']
-    - |
-        ['umich.edu', 'iupui.edu']
-    - |
-        ['csev@', 'cwen@']
-  solution: 1
+```python
+import re
+s = 'A message from csev@umich.edu to cwen@iupui.edu about meeting @2PM'
+lst = re.findall('\\S+@\\S+', s)
+print(lst)
 ```
 
-</section>
+## --answers--
+
+['csev@umich.edu', 'cwen@iupui.edu']
+
+---
+
+['csev@umich.edu']
+
+---
+
+['umich.edu', 'iupui.edu']
+
+---
+
+['csev@', 'cwen@']
+
+## --video-solution--
+
+1
+

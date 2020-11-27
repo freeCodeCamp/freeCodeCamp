@@ -4,40 +4,27 @@ title: Part 1
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 As you learned in the last few steps of the Cat Photo App, there is a basic structure need to start building your web page.
 
-Add the `<!DOCTYPE html>` and an `html` element. 
+Add the `<!DOCTYPE html>` and an `html` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
-
 --fcc-editable-region--
 
 --fcc-editable-region--
-
 ```
 
-</div>
-
-</section>

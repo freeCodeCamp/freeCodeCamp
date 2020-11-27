@@ -4,31 +4,37 @@ title: Part 10
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give the container some space by adding a `padding` of `100px 10px` to the `body` element.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0]; assert(/padding\s*:\s*100px\s*10px\s*(;|})/g.test(body));
-
+```js
+const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0];
+assert(/padding\s*:\s*100px\s*10px\s*(;|})/g.test(body));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <style>
@@ -48,31 +54,7 @@ body {
 </style>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -90,5 +72,3 @@ body {
 }
 </style>
 ```
-
-</section>

@@ -5,9 +5,10 @@ challengeType: 1
 forumTopicId: 301185
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 When a function or method doesn't take any arguments, you may forget to include the (empty) opening and closing parentheses when calling it. Often times the result of a function call is saved in a variable for other use in your code. This error can be detected by logging variable values (or their types) to the console and seeing that one is set to a function reference, instead of the expected value the function returns.
+
 The variables in the following example are different:
 
 ```js
@@ -18,31 +19,27 @@ let varOne = myFunction; // set to equal a function
 let varTwo = myFunction(); // set to equal the string "You rock!"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Fix the code so the variable <code>result</code> is set to the value returned from calling the function <code>getNine</code>.
-</section>
+Fix the code so the variable `result` is set to the value returned from calling the function `getNine`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.
-    testString: assert(result == 9);
-  - text: Your code should call the <code>getNine</code> function.
-    testString: assert(code.match(/getNine\(\)/g).length == 2);
+Your code should fix the variable `result` so it is set to the number that the function `getNine` returns.
 
+```js
+assert(result == 9);
 ```
 
-</section>
+Your code should call the `getNine` function.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/getNine\(\)/g).length == 2);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function getNine() {
@@ -55,14 +52,7 @@ let result = getNine;
 console.log(result);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function getNine() {
@@ -74,5 +64,3 @@ function getNine() {
 let result = getNine();
 console.log(result);
 ```
-
-</section>

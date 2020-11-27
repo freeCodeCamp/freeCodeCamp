@@ -1,24 +1,25 @@
 ---
-title: Closest-pair problem
 id: 5951a53863c8a34f02bf1bdc
+title: Closest-pair problem
 challengeType: 5
 forumTopicId: 302232
 ---
 
-## Description
-<section id='description'>
-Provide a function to find the closest two points among a set of given points in two dimensions,  i.e. to solve the  <a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem" target="blank">Closest pair of points problem</a>  in the  <i>planar</i>  case.
-The straightforward solution is a  O(n<sup>2</sup>) algorithm (which we can call <i>brute-force algorithm</i>); the pseudo-code (using indexes) could be simply:
-<pre>
-<strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
-<strong>if</strong> N < 2 <strong>then</strong>
+# --description--
+
+Provide a function to find the closest two points among a set of given points in two dimensions, i.e. to solve the [Closest pair of points problem](<https://en.wikipedia.org/wiki/Closest pair of points problem> "wp: Closest pair of points problem") in the *planar* case.
+
+The straightforward solution is a O(n<sup>2</sup>) algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+
+<pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
+<strong>if</strong> N &#x3C; 2 <strong>then</strong>
   <strong>return</strong> ∞
 <strong>else</strong>
   minDistance ← |P(1) - P(2)|
   minPoints ← { P(1), P(2) }
   <strong>foreach</strong> i ∈ [1, N-1]
     <strong>foreach</strong> j ∈ [i+1, N]
-      <strong>if</strong> |P(i) - P(j)| < minDistance <strong>then</strong>
+      <strong>if</strong> |P(i) - P(j)| &#x3C; minDistance <strong>then</strong>
         minDistance ← |P(i) - P(j)|
         minPoints ← { P(i), P(j) }
       <strong>endif</strong>
@@ -27,9 +28,10 @@ The straightforward solution is a  O(n<sup>2</sup>) algorithm (which we can call
   <strong>return</strong> minDistance, minPoints
 <strong>endif</strong>
 </pre>
-A better algorithm is based on the recursive divide and conquer approach, as explained also at <a href="https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case" title="wp: Closest pair of points problem#Planar_case" target="_blank">Wikipedia's Closest pair of points problem</a>, which is <code>O(nlog(n))</code> a pseudo-code could be:
-<pre>
-<strong>closestPair</strong> of (xP, yP)
+
+A better algorithm is based on the recursive divide and conquer approach, as explained also at [Wikipedia's Closest pair of points problem](<https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case> "wp: Closest pair of points problem#Planar_case"), which is `O(nlog(n))` a pseudo-code could be:
+
+<pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
   yP is P(1) .. P(N) sorted by y coordinate (ascending order)
 <strong>if</strong> N ≤ 3 <strong>then</strong>
@@ -39,20 +41,20 @@ A better algorithm is based on the recursive divide and conquer approach, as exp
   xR ← points of xP from ⌈N/2⌉+1 to N
   xm ← xP(⌈N/2⌉)<sub>x</sub>
   yL ← { p ∈ yP : p<sub>x</sub> ≤ xm }
-  yR ← { p ∈ yP : p<sub>x</sub> &gt; xm }
+  yR ← { p ∈ yP : p<sub>x</sub> > xm }
   (dL, pairL) ← closestPair of (xL, yL)
   (dR, pairR) ← closestPair of (xR, yR)
   (dmin, pairMin) ← (dR, pairR)
-  <strong>if</strong> dL < dR <strong>then</strong>
+  <strong>if</strong> dL &#x3C; dR <strong>then</strong>
     (dmin, pairMin) ← (dL, pairL)
   <strong>endif</strong>
-  yS ← { p ∈ yP : |xm - p<sub>x</sub>| &lt; dmin }
+  yS ← { p ∈ yP : |xm - p<sub>x</sub>| &#x3C; dmin }
   nS ← number of points in yS
   (closest, closestPair) ← (dmin, pairMin)
   <strong>for</strong> i <strong>from</strong> 1 <strong>to</strong> nS - 1
     k ← i + 1
-    <strong>while</strong> k ≤ nS <strong>and</strong> yS(k)<sub>y</sub> - yS(i)<sub>y</sub> < dmin
-      <strong>if</strong> |yS(k) - yS(i)| < closest <strong>then</strong>
+    <strong>while</strong> k ≤ nS <strong>and</strong> yS(k)<sub>y</sub> - yS(i)<sub>y</sub> &#x3C; dmin
+      <strong>if</strong> |yS(k) - yS(i)| &#x3C; closest <strong>then</strong>
         (closest, closestPair) ← (|yS(k) - yS(i)|, {yS(k), yS(i)})
       <strong>endif</strong>
       k ← k + 1
@@ -61,82 +63,72 @@ A better algorithm is based on the recursive divide and conquer approach, as exp
   <strong>return</strong> closest, closestPair
 <strong>endif</strong>
 </pre>
-For the input, expect the argument to be an array of objects (points) with <code>x</code> and <code>y</code> members set to numbers. For the output, return an object containing the key:value pairs for  <code>distance</code> and <code>pair</code> (the pair of two closest points).
-<strong>References and further readings:</strong>
+
+For the input, expect the argument to be an array of objects (points) with `x` and `y` members set to numbers. For the output, return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+
+**References and further readings:**
+
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem" target="_blank">Closest pair of points problem</a></li>
-  <li><a href="https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html" target="_blank">Closest Pair (McGill)</a></li>
-  <li><a href="https://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf" target="_blank">Closest Pair (UCSB)</a></li>
-  <li><a href="https://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf" target="_blank">Closest pair (WUStL)</a></li>
+  <li><a href='https://en.wikipedia.org/wiki/Closest pair of points problem' title='wp: Closest pair of points problem' target='_blank'>Closest pair of points problem</a></li>
+  <li><a href='https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html' target='_blank'>Closest Pair (McGill)</a></li>
+  <li><a href='https://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf' target='_blank'>Closest Pair (UCSB)</a></li>
+  <li><a href='https://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf' target='_blank'>Closest pair (WUStL)</a></li>
  </ul>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>getClosestPair</code> should be a function.
-    testString: assert(typeof getClosestPair === 'function');
-  - text: Distance should be the following.
-    testString: assert.equal(getClosestPair(points1).distance, answer1.distance);
-  - text: Points should be the following.
-    testString: assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points1))).pair, answer1.pair);
-  - text: Distance should be the following.
-    testString: assert.equal(getClosestPair(points2).distance, answer2.distance);
-  - text: Points should be the following.
-    testString: assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points2))).pair, answer2.pair);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`getClosestPair` should be a function.
 
 ```js
-const Point = function(x, y) {
-  this.x = x;
-  this.y = y;
-};
-Point.prototype.getX = function() {
-  return this.x;
-};
-Point.prototype.getY = function() {
-  return this.y;
-};
-
-function getClosestPair(pointsArr) {
-
-  return true;
-}
+assert(typeof getClosestPair === 'function');
 ```
 
-</div>
+Distance should be the following.
 
+```js
+assert.equal(getClosestPair(points1).distance, answer1.distance);
+```
 
-### After Test
-<div id='js-teardown'>
+Points should be the following.
+
+```js
+assert.deepEqual(
+  JSON.parse(JSON.stringify(getClosestPair(points1))).pair,
+  answer1.pair
+);
+```
+
+Distance should be the following.
+
+```js
+assert.equal(getClosestPair(points2).distance, answer2.distance);
+```
+
+Points should be the following.
+
+```js
+assert.deepEqual(
+  JSON.parse(JSON.stringify(getClosestPair(points2))).pair,
+  answer2.pair
+);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const points1 = [
-	new Point(0.748501, 4.09624),
-	new Point(3.00302, 5.26164),
-	new Point(3.61878,  9.52232),
-	new Point(7.46911,  4.71611),
-	new Point(5.7819,   2.69367),
-	new Point(2.34709,  8.74782),
-	new Point(2.87169,  5.97774),
-	new Point(6.33101,  0.463131),
-	new Point(7.46489,  4.6268),
-	new Point(1.45428,  0.087596)
+    new Point(0.748501, 4.09624),
+    new Point(3.00302, 5.26164),
+    new Point(3.61878,  9.52232),
+    new Point(7.46911,  4.71611),
+    new Point(5.7819,   2.69367),
+    new Point(2.34709,  8.74782),
+    new Point(2.87169,  5.97774),
+    new Point(6.33101,  0.463131),
+    new Point(7.46489,  4.6268),
+    new Point(1.45428,  0.087596)
 ];
 
 const points2 = [
@@ -229,13 +221,27 @@ const benchmarkPoints = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+const Point = function(x, y) {
+  this.x = x;
+  this.y = y;
+};
+Point.prototype.getX = function() {
+  return this.x;
+};
+Point.prototype.getY = function() {
+  return this.y;
+};
 
-## Solution
-<section id='solution'>
+function getClosestPair(pointsArr) {
 
+  return true;
+}
+```
+
+# --solutions--
 
 ```js
 const Point = function(x, y) {
@@ -250,98 +256,98 @@ Point.prototype.getY = function() {
 };
 
 const mergeSort = function mergeSort(points, comp) {
-	if(points.length < 2) return points;
+    if(points.length < 2) return points;
 
-	var n = points.length,
-		i = 0,
-		j = 0,
-		leftN = Math.floor(n / 2),
-		rightN = leftN;
+    var n = points.length,
+        i = 0,
+        j = 0,
+        leftN = Math.floor(n / 2),
+        rightN = leftN;
 
-	var leftPart = mergeSort( points.slice(0, leftN), comp),
-		rightPart = mergeSort( points.slice(rightN), comp );
+    var leftPart = mergeSort( points.slice(0, leftN), comp),
+        rightPart = mergeSort( points.slice(rightN), comp );
 
-	var sortedPart = [];
+    var sortedPart = [];
 
-	while((i < leftPart.length) && (j < rightPart.length)) {
-		if(comp(leftPart[i], rightPart[j]) < 0) {
-			sortedPart.push(leftPart[i]);
-			i += 1;
-		}
-		else {
-			sortedPart.push(rightPart[j]);
-			j += 1;
-		}
-	}
-	while(i < leftPart.length) {
-		sortedPart.push(leftPart[i]);
-		i += 1;
-	}
-	while(j < rightPart.length) {
-		sortedPart.push(rightPart[j]);
-		j += 1;
-	}
-	return sortedPart;
+    while((i < leftPart.length) && (j < rightPart.length)) {
+        if(comp(leftPart[i], rightPart[j]) < 0) {
+            sortedPart.push(leftPart[i]);
+            i += 1;
+        }
+        else {
+            sortedPart.push(rightPart[j]);
+            j += 1;
+        }
+    }
+    while(i < leftPart.length) {
+        sortedPart.push(leftPart[i]);
+        i += 1;
+    }
+    while(j < rightPart.length) {
+        sortedPart.push(rightPart[j]);
+        j += 1;
+    }
+    return sortedPart;
 };
 
 const closestPair = function _closestPair(Px, Py) {
-	if(Px.length < 2) return { distance: Infinity, pair: [ new Point(0, 0), new Point(0, 0) ] };
-	if(Px.length < 3) {
-		//find euclid distance
-		var d = Math.sqrt( Math.pow(Math.abs(Px[1].x - Px[0].x), 2) + Math.pow(Math.abs(Px[1].y - Px[0].y), 2) );
-		return {
-			distance: d,
-			pair: [ Px[0], Px[1] ]
-		};
-	}
+    if(Px.length < 2) return { distance: Infinity, pair: [ new Point(0, 0), new Point(0, 0) ] };
+    if(Px.length < 3) {
+        //find euclid distance
+        var d = Math.sqrt( Math.pow(Math.abs(Px[1].x - Px[0].x), 2) + Math.pow(Math.abs(Px[1].y - Px[0].y), 2) );
+        return {
+            distance: d,
+            pair: [ Px[0], Px[1] ]
+        };
+    }
 
-	var	n = Px.length,
-		leftN = Math.floor(n / 2),
-		rightN = leftN;
+    var n = Px.length,
+        leftN = Math.floor(n / 2),
+        rightN = leftN;
 
-	var Xl = Px.slice(0, leftN),
-		Xr = Px.slice(rightN),
-		Xm = Xl[leftN - 1],
-		Yl = [],
-		Yr = [];
-	//separate Py
-	for(var i = 0; i < Py.length; i += 1) {
-		if(Py[i].x <= Xm.x)
-			Yl.push(Py[i]);
-		else
-			Yr.push(Py[i]);
-	}
+    var Xl = Px.slice(0, leftN),
+        Xr = Px.slice(rightN),
+        Xm = Xl[leftN - 1],
+        Yl = [],
+        Yr = [];
+    //separate Py
+    for(var i = 0; i < Py.length; i += 1) {
+        if(Py[i].x <= Xm.x)
+            Yl.push(Py[i]);
+        else
+            Yr.push(Py[i]);
+    }
 
-	var dLeft = _closestPair(Xl, Yl),
-		dRight = _closestPair(Xr, Yr);
+    var dLeft = _closestPair(Xl, Yl),
+        dRight = _closestPair(Xr, Yr);
 
-	var minDelta = dLeft.distance,
-		closestPair = dLeft.pair;
-	if(dLeft.distance > dRight.distance) {
-		minDelta = dRight.distance;
-		closestPair = dRight.pair;
-	}
+    var minDelta = dLeft.distance,
+        closestPair = dLeft.pair;
+    if(dLeft.distance > dRight.distance) {
+        minDelta = dRight.distance;
+        closestPair = dRight.pair;
+    }
 
-	//filter points around Xm within delta (minDelta)
-	var closeY = [];
-	for(i = 0; i < Py.length; i += 1) {
-		if(Math.abs(Py[i].x - Xm.x) < minDelta) closeY.push(Py[i]);
-	}
-	//find min within delta. 8 steps max
-	for(i = 0; i < closeY.length; i += 1) {
-		for(var j = i + 1; j < Math.min( (i + 8), closeY.length ); j += 1) {
-			var d = Math.sqrt( Math.pow(Math.abs(closeY[j].x - closeY[i].x), 2) + Math.pow(Math.abs(closeY[j].y - closeY[i].y), 2) );
-			if(d < minDelta) {
-				minDelta = d;
-				closestPair = [ closeY[i], closeY[j] ]
-			}
-		}
-	}
+    //filter points around Xm within delta (minDelta)
+    var closeY = [];
+    for(i = 0; i < Py.length; i += 1) {
+        if(Math.abs(Py[i].x - Xm.x) < minDelta) closeY.push(Py[i]);
+    }
+    //find min within delta. 8 steps max
+    for(i = 0; i < closeY.length; i += 1) {
+        for(var j = i + 1; j < Math.min( (i + 8), closeY.length ); j += 1) {
+            var d = Math.sqrt( Math.pow(Math.abs(closeY[j].x - closeY[i].x), 2) + Math.pow(Math.abs(closeY[j].y - closeY[i].y), 2) );
+            if(d < minDelta) {
+                minDelta = d;
+                closestPair = [ closeY[i], closeY[j] ]
+            }
+        }
+    }
 
-	return {
-		distance: minDelta,
-		pair: closestPair
-	};
+    return {
+        distance: minDelta,
+        pair: closestPair
+    };
 };
 
 function getClosestPair(points) {
@@ -353,7 +359,4 @@ function getClosestPair(points) {
 
   return closestPair(Px, Py);
 }
-
 ```
-
-</section>

@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cBZQGcv'
 forumTopicId: 18342
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In order to get the last letter of a string, you can subtract one from the string's length.
-For example, if <code>var firstName = "Charles"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.
+
+For example, if `var firstName = "Charles"`, you can get the value of the last letter of the string by using `firstName[firstName.length - 1]`.
 
 Example:
 
@@ -18,32 +19,35 @@ var firstName = "Charles";
 var lastLetter = firstName[firstName.length - 1]; // lastLetter is "s"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName</code> variable.
-<strong>Hint: </strong> Try looking at the example above if you get stuck.
-</section>
+Use <dfn>bracket notation</dfn> to find the last character in the `lastName` variable.
 
-## Tests
-<section id='tests'>
+**Hint:** Try looking at the example above if you get stuck.
 
-```yml
-tests:
-  - text: <code>lastLetterOfLastName</code> should be "e".
-    testString: assert(lastLetterOfLastName === "e");
-  - text: You should use <code>.length</code> to get the last letter.
-    testString: assert(code.match(/\.length/g).length > 0);
+# --hints--
 
+`lastLetterOfLastName` should be "e".
+
+```js
+assert(lastLetterOfLastName === 'e');
 ```
 
-</section>
+You should use `.length` to get the last letter.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.length/g).length > 0);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(v){return v;})(lastLetterOfLastName);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -51,31 +55,11 @@ var lastName = "Lovelace";
 
 // Only change code below this line
 var lastLetterOfLastName = lastName; // Change this line
-
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(v){return v;})(lastLetterOfLastName);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var lastName = "Lovelace";
 var lastLetterOfLastName = lastName[lastName.length - 1];
 ```
-
-</section>

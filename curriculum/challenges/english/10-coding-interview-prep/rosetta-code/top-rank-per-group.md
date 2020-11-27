@@ -1,16 +1,17 @@
 ---
-title: Top rank per group
 id: 595011cba5a81735713873bd
+title: Top rank per group
 challengeType: 5
 forumTopicId: 302339
 ---
 
-## Description
-<section id='description'>
-Find the top <code>n</code> ranked data in each group, where <code>n</code> is provided as a parameter. Name of the rank and the group are also provided as parameter.
+# --description--
+
+Find the top `n` ranked data in each group, where `n` is provided as a parameter. Name of the rank and the group are also provided as parameter.
+
 Given the following data:
-<pre>
-[
+
+<pre>[
   { name: 'Tyler Bennett', id: 'E10297', salary: 32000, dept: 'D101' },
   { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050' },
   { name: 'George Woltman', id: 'E00127', salary: 53500, dept: 'D101' },
@@ -26,11 +27,14 @@ Given the following data:
   { name: 'Timothy Grove', id: 'E16398', salary: 29900, dept: 'D190' }
 ];
 </pre>
+
 one could rank top 10 employees in each department by calling
-<code>topRankPerGroup(10, data, 'dept', 'salary')</code>
+
+`topRankPerGroup(10, data, 'dept', 'salary')`
+
 Given the following data:
-<pre>
-[
+
+<pre>[
   { name: 'Friday 13th', genre: 'horror', rating: 9.9 },
   { name: "Nightmare on Elm's Street", genre: 'horror', rating: 5.7 },
   { name: 'Titanic', genre: 'drama', rating: 7.3 },
@@ -38,56 +42,58 @@ Given the following data:
   { name: 'Blade runner', genre: 'scifi', rating: 8.9 }
 ];
 </pre>
+
 one could rank the top-rated movie in each genre by calling
-<code>topRankPerGroup(1, data, 'genre', 'rating')</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+`topRankPerGroup(1, data, 'genre', 'rating')`
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>topRankPerGroup</code> should be a function.
-    testString: assert(typeof topRankPerGroup === 'function');
-  - text: <code>topRankPerGroup</code> should return undefined on negative n values.
-    testString: assert(typeof topRankPerGroup(-1, []) === 'undefined');
-  - text: First department should be D050
-    testString: assert.equal(res1[0][0].dept, 'D050');
-  - text: First department should be D050
-    testString: assert.equal(res1[0][1].salary, 21900);
-  - text: The last department should be D202
-    testString: assert.equal(res1[3][3].dept, 'D202');
-  - text: <code>topRankPerGroup(1, ...)</code> should return only top ranking result per group.
-    testString: assert.equal(res2[2].length, 1);
-  - text: <code>topRankPerGroup(1, ...)</code> should return only top ranking result per group.
-    testString: assert.equal(res3[2][1].name, 'Maze Runner');
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`topRankPerGroup` should be a function.
 
 ```js
-function topRankPerGroup(n, data, groupName, rankName) {
-
-  return true;
-}
+assert(typeof topRankPerGroup === 'function');
 ```
 
-</div>
+`topRankPerGroup` should return undefined on negative n values.
 
+```js
+assert(typeof topRankPerGroup(-1, []) === 'undefined');
+```
 
-### After Test
-<div id='js-teardown'>
+First department should be D050
+
+```js
+assert.equal(res1[0][0].dept, 'D050');
+```
+
+First department should be D050
+
+```js
+assert.equal(res1[0][1].salary, 21900);
+```
+
+The last department should be D202
+
+```js
+assert.equal(res1[3][3].dept, 'D202');
+```
+
+`topRankPerGroup(1, ...)` should return only top ranking result per group.
+
+```js
+assert.equal(res2[2].length, 1);
+```
+
+`topRankPerGroup(1, ...)` should return only top ranking result per group.
+
+```js
+assert.equal(res3[2][1].name, 'Maze Runner');
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const testData1 = [
@@ -118,16 +124,18 @@ const testData2 = [
 
 const res2 = topRankPerGroup(1, testData2, 'genre', 'rating');
 const res3 = topRankPerGroup(2, testData2, 'genre', 'rating');
-
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function topRankPerGroup(n, data, groupName, rankName) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 const collectDept = function (arrOfObj, groupName) {
@@ -156,7 +164,4 @@ function topRankPerGroup(n, data, groupName, rankName) {
   return sortRank(collectDept(data, groupName),
     rankName).map(list => list.slice(0, n));
 }
-
 ```
-
-</section>

@@ -5,54 +5,148 @@ challengeType: 5
 forumTopicId: 302336
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-The <a href="https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm" target="_blank">Sutherland-Hodgman clipping algorithm</a> finds the polygon that is the intersection between an arbitrary polygon (the "subject polygon") and a convex polygon (the "clip polygon").
-It is used in computer graphics (especially 2D graphics) to reduce the complexity of a scene being displayed by eliminating parts of a polygon that do not need to be displayed.
-Take the closed polygon defined by the points:
+The [Sutherland-Hodgman clipping algorithm](<https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm>) finds the polygon that is the intersection between an arbitrary polygon (the "subject polygon") and a convex polygon (the "clip polygon"). It is used in computer graphics (especially 2D graphics) to reduce the complexity of a scene being displayed by eliminating parts of a polygon that do not need to be displayed. Take the closed polygon defined by the points:
 
 <pre>[(50, 150), (200, 50), (350, 150), (350, 300), (250, 300), (200, 250), (150, 350), (100, 250), (100, 200)]</pre>
 
 and clip it by the rectangle defined by the points:
 
 <pre>[(100, 100), (300, 100), (300, 300), (100, 300)]</pre>
-</section>
 
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Write a function that takes 2 arrays as parameters. The first array contains the points of the subject polygon and the second array contains the points of the clipping polygon. The function should return an array containing the points of the clipped polygon. Each number should be rounded to 3 decimal places.
 
-</section>
+# --hints--
 
-## Tests
+`clip` should be a function.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>clip</code> should be a function.
-    testString: assert(typeof clip == 'function');
-  - text: <code>clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])</code> should return an array.
-    testString: assert(Array.isArray(clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])));
-  - text: <code>clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])</code> should return <code>[[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]</code>.
-    testString: assert.deepEqual(clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]]), [[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]);
-  - text: <code>clip([[150, 200], [400, 450], [30, 50]], [[10, 10], [300, 200], [400, 600], [100, 300]])</code> should return <code>[[150, 200], [350, 400], [348.611, 394.444], [30, 50]]</code>.
-    testString: assert.deepEqual(clip([[150, 200], [400, 450], [30, 50]], [[10, 10], [300, 200], [400, 600], [100, 300]]), [[150, 200], [350, 400], [348.611, 394.444], [30, 50]]);
-  - text: <code>clip([[250, 200], [100, 450], [130, 250]], [[50, 60], [100, 230], [400, 600], [100, 300]])</code> should return <code>[[129.167, 329.167], [119.565, 319.565], [121.854, 304.305]]</code>.
-    testString: assert.deepEqual(clip([[250, 200], [100, 450], [130, 250]], [[50, 60], [100, 230], [400, 600], [100, 300]]), [[129.167, 329.167], [119.565, 319.565], [121.854, 304.305]]);
+```js
+assert(typeof clip == 'function');
 ```
 
-</section>
+`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` should return an array.
 
-## Challenge Seed
+```js
+assert(
+  Array.isArray(
+    clip(
+      [
+        [50, 150],
+        [200, 50],
+        [350, 150],
+        [350, 300],
+        [250, 300],
+        [200, 250],
+        [150, 350],
+        [100, 250],
+        [100, 200]
+      ],
+      [
+        [100, 100],
+        [300, 100],
+        [300, 300],
+        [100, 300]
+      ]
+    )
+  )
+);
+```
 
-<section id='challengeSeed'>
+`clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])` should return `[[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]`.
 
-<div id='js-seed'>
+```js
+assert.deepEqual(
+  clip(
+    [
+      [50, 150],
+      [200, 50],
+      [350, 150],
+      [350, 300],
+      [250, 300],
+      [200, 250],
+      [150, 350],
+      [100, 250],
+      [100, 200]
+    ],
+    [
+      [100, 100],
+      [300, 100],
+      [300, 300],
+      [100, 300]
+    ]
+  ),
+  [
+    [100, 116.667],
+    [125, 100],
+    [275, 100],
+    [300, 116.667],
+    [300, 300],
+    [250, 300],
+    [200, 250],
+    [175, 300],
+    [125, 300],
+    [100, 250]
+  ]
+);
+```
+
+`clip([[150, 200], [400, 450], [30, 50]], [[10, 10], [300, 200], [400, 600], [100, 300]])` should return `[[150, 200], [350, 400], [348.611, 394.444], [30, 50]]`.
+
+```js
+assert.deepEqual(
+  clip(
+    [
+      [150, 200],
+      [400, 450],
+      [30, 50]
+    ],
+    [
+      [10, 10],
+      [300, 200],
+      [400, 600],
+      [100, 300]
+    ]
+  ),
+  [
+    [150, 200],
+    [350, 400],
+    [348.611, 394.444],
+    [30, 50]
+  ]
+);
+```
+
+`clip([[250, 200], [100, 450], [130, 250]], [[50, 60], [100, 230], [400, 600], [100, 300]])` should return `[[129.167, 329.167], [119.565, 319.565], [121.854, 304.305]]`.
+
+```js
+assert.deepEqual(
+  clip(
+    [
+      [250, 200],
+      [100, 450],
+      [130, 250]
+    ],
+    [
+      [50, 60],
+      [100, 230],
+      [400, 600],
+      [100, 300]
+    ]
+  ),
+  [
+    [129.167, 329.167],
+    [119.565, 319.565],
+    [121.854, 304.305]
+  ]
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function clip(subjectPolygon, clipPolygon) {
@@ -60,12 +154,7 @@ function clip(subjectPolygon, clipPolygon) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function clip(subjectPolygon, clipPolygon) {
@@ -107,5 +196,3 @@ function clip(subjectPolygon, clipPolygon) {
   return outputList.map(e => e.map(f => Math.round(f * 1000) / 1000));
 }
 ```
-
-</section>

@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301158
 ---
 
-## Description
-<section id='description'>
-The next method we will cover is <code>slice()</code>. Rather than modifying an array, <code>slice()</code> copies or <em>extracts</em> a given number of elements to a new array, leaving the array it is called upon untouched. <code>slice()</code> takes only 2 parameters &mdash; the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:
+# --description--
+
+The next method we will cover is `slice()`. Rather than modifying an array, `slice()` copies or *extracts* a given number of elements to a new array, leaving the array it is called upon untouched. `slice()` takes only 2 parameters — the first is the index at which to begin extraction, and the second is the index at which to stop extraction (extraction will occur up to, but not including the element at this index). Consider this:
 
 ```js
 let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
@@ -18,31 +18,31 @@ let todaysWeather = weatherConditions.slice(1, 3);
 ```
 
 In effect, we have created a new array by extracting elements from an existing array.
-</section>
 
-## Instructions
-<section id='instructions'>
-We have defined a function, <code>forecast</code>, that takes an array as an argument. Modify the function using <code>slice()</code> to extract information from the argument array and return a new array that contains the elements <code>'warm'</code> and <code>'sunny'</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+We have defined a function, `forecast`, that takes an array as an argument. Modify the function using `slice()` to extract information from the argument array and return a new array that contains the elements `'warm'` and `'sunny'`.
 
-```yml
-tests:
-  - text: <code>forecast</code> should return <code>["warm", "sunny"]</code>
-    testString: assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny']);
-  - text: The <code>forecast</code> function should utilize the <code>slice()</code> method
-    testString: assert(/\.slice\(/.test(code));
+# --hints--
 
+`forecast` should return `["warm", "sunny"]`
+
+```js
+assert.deepEqual(
+  forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']),
+  ['warm', 'sunny']
+);
 ```
 
-</section>
+The `forecast` function should utilize the `slice()` method
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/\.slice\(/.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function forecast(arr) {
@@ -55,19 +55,10 @@ function forecast(arr) {
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function forecast(arr) {
   return arr.slice(2,4);
 }
 ```
-
-</section>

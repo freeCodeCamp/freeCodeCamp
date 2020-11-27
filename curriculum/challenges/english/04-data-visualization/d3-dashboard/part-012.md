@@ -4,53 +4,22 @@ title: Part 12
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Back in the HTML file, add a `script` tag at the bottom of the head element and give it a `src` attribute of `./d3-5.9.2.min.js`. Don't forget the closing tag. This will add the D3 library to your project from a downloaded copy.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const script = code.match(/<script\s+[\s\S]+?[^>]>\s*<\/script\s*>/gi)[0]; assert(/src\s*=\s*('|")\s*(\.\/)?d3-5.9.2.min.js\s*\1/gi.test(script));
-
+```js
+const script = code.match(/<script\s+[\s\S]+?[^>]>\s*<\/script\s*>/gi)[0];
+assert(/src\s*=\s*('|")\s*(\.\/)?d3-5.9.2.min.js\s*\1/gi.test(script));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <link rel="stylesheet" href="./dashboard.css">
-
-    
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <style>
@@ -71,12 +40,25 @@ tests:
 </style>
 ```
 
-</div>
-</section>
+## --seed-contents--
 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css">
 
-## Solution
-<section id='solution'>
+    
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -94,5 +76,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

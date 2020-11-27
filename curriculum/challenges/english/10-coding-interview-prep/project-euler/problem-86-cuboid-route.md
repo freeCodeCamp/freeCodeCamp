@@ -1,12 +1,11 @@
 ---
 id: 5900f3c31000cf542c50fed5
-challengeType: 5
 title: 'Problem 86: Cuboid route'
+challengeType: 5
 forumTopicId: 302200
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 A spider, S, sits in one corner of a cuboid room, measuring 6 by 5 by 3, and a fly, F, sits in the opposite corner. By travelling on the surfaces of the room the shortest "straight line" distance from S to F is 10 and the path is shown on the diagram.
 
@@ -18,31 +17,23 @@ It can be shown that there are exactly 2060 distinct cuboids, ignoring rotations
 
 Find the least value of M such that the number of solutions first exceeds one million.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`cuboidRoute()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>cuboidRoute()</code> should return a number.
-    testString: assert(typeof cuboidRoute() === 'number');
-  - text: <code>cuboidRoute()</code> should return 1818.
-    testString: assert.strictEqual(cuboidRoute(), 1818);
-
+```js
+assert(typeof cuboidRoute() === 'number');
 ```
 
-</section>
+`cuboidRoute()` should return 1818.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(cuboidRoute(), 1818);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function cuboidRoute() {
@@ -53,17 +44,8 @@ function cuboidRoute() {
 cuboidRoute();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

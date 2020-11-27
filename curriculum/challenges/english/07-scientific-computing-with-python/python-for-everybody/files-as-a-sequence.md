@@ -5,30 +5,35 @@ challengeType: 11
 videoId: cIA0EokbaHE
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target='_blank'>Exercise</a>
-</section>
 
-## Tests
-<section id='tests'>
+\- [Exercise](https://www.youtube.com/watch?v=il1j4wkte2E)
 
-```yml
-question:
-  text: |
-    What does the word 'continue' do in the middle of a loop?
+# --question--
 
-  answers:
-    - |
-        Skips to the code directly after the loop.
-    - |
-        Skips to the next line in the code.
-    - |
-        Skips to the next iteration of the loop.
-    - |
-        Skips the next block of code.
-  solution: 3
-```
+## --text--
 
-</section>
+What does the word 'continue' do in the middle of a loop?
+
+## --answers--
+
+Skips to the code directly after the loop.
+
+---
+
+Skips to the next line in the code.
+
+---
+
+Skips to the next iteration of the loop.
+
+---
+
+Skips the next block of code.
+
+## --video-solution--
+
+3
+

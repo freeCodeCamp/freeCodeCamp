@@ -4,29 +4,21 @@ title: Part 76
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -91,10 +83,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -156,6 +144,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

@@ -4,13 +4,9 @@ title: Part 5
 challengeType: 0
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-By default, `onsubmit` will pass the event object as a parameter to the function it calls.
-People usually call it `e`, short for event.
-Update the `calculate()` function to accept `e` as parameter.
+By default, `onsubmit` will pass the event object as a parameter to the function it calls. People usually call it `e`, short for event. Update the `calculate()` function to accept `e` as parameter.
 
 Here is an example of an empty function called `square` that takes a `number` as a parameter:
 
@@ -18,44 +14,17 @@ Here is an example of an empty function called `square` that takes a `number` as
 function square(number) {}
 ```
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(calculate.toString().match(/function calculate\(\s*e\)\s*\{\s*\}/));
+```js
+assert(calculate.toString().match(/function calculate\(\s*e\)\s*\{\s*\}/));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate() {}
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -115,24 +84,24 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate() {}
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -141,5 +110,3 @@ tests:
   function calculate(e) {}
 </script>
 ```
-
-</section>

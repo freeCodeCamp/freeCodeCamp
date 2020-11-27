@@ -1,40 +1,29 @@
 ---
 id: 5900f42b1000cf542c50ff3d
-challengeType: 5
 title: 'Problem 190: Maximising a weighted product'
+challengeType: 5
 forumTopicId: 301828
 ---
 
-## Description
-<section id='description'>
-Let Sm = (x1, x2, ... , xm) be the m-tuple of positive real numbers with x1 + x2 + ... + xm = m for which Pm = x1 * x22 * ... * xmm is maximised.
+# --description--
 
-For example, it can be verified that [P10] = 4112 ([ ] is the integer part function).
+Let Sm = (x1, x2, ... , xm) be the m-tuple of positive real numbers with x1 + x2 + ... + xm = m for which Pm = x1 \* x22 \* ... \* xmm is maximised.
 
-Find Σ[Pm] for 2 ≤ m ≤ 15.
-</section>
+For example, it can be verified that \[P10] = 4112 (\[ ] is the integer part function).
 
-## Instructions
-<section id='instructions'>
+Find Σ\[Pm] for 2 ≤ m ≤ 15.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`euler190()` should return 371048281.
 
-```yml
-tests:
-  - text: <code>euler190()</code> should return 371048281.
-    testString: assert.strictEqual(euler190(), 371048281);
-
+```js
+assert.strictEqual(euler190(), 371048281);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler190() {
@@ -45,17 +34,8 @@ function euler190() {
 euler190();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

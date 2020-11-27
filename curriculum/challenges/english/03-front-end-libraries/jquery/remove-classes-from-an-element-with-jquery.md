@@ -1,45 +1,49 @@
 ---
 id: bad87fee1348bd9aed918626
 title: Remove Classes from an Element with jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18264
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
-In the same way you can add classes to an element with jQuery's <code>addClass()</code> function, you can remove them with jQuery's <code>removeClass()</code> function.
+# --description--
+
+In the same way you can add classes to an element with jQuery's `addClass()` function, you can remove them with jQuery's `removeClass()` function.
+
 Here's how you would do this for a specific button:
-<code>$("#target2").removeClass("btn-default");</code>
-Let's remove the <code>btn-default</code> class from all of our <code>button</code> elements.
-</section>
 
-## Instructions
-<section id='instructions'>
+`$("#target2").removeClass("btn-default");`
 
-</section>
+Let's remove the `btn-default` class from all of our `button` elements.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>btn-default</code> class should be removed from all of your <code>button</code> elements.
-    testString: assert($(".btn-default").length === 0);
-  - text: You should only use jQuery to remove this class from the element.
-    testString: assert(code.match(/btn btn-default/g));
-  - text: You should only remove the <code>btn-default</code> class.
-    testString: assert(code.match(/\.[\v\s]*removeClass[\s\v]*\([\s\v]*('|")\s*btn-default\s*('|")[\s\v]*\)/gm));
+The `btn-default` class should be removed from all of your `button` elements.
 
+```js
+assert($('.btn-default').length === 0);
 ```
 
-</section>
+You should only use jQuery to remove this class from the element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/btn btn-default/g));
+```
 
-<div id='html-seed'>
+You should only remove the `btn-default` class.
+
+```js
+assert(
+  code.match(
+    /\.[\v\s]*removeClass[\s\v]*\([\s\v]*('|")\s*btn-default\s*('|")[\s\v]*\)/gm
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -76,14 +80,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -119,5 +116,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

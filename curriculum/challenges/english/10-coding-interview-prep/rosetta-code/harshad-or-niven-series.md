@@ -1,41 +1,50 @@
 ---
-title: Harshad or Niven series
 id: 595668ca4cfe1af2fb9818d4
+title: Harshad or Niven series
 challengeType: 5
 forumTopicId: 302281
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The Harshad or Niven numbers are positive integers ≥ 1 that are divisible by the sum of their digits.
-For example, <code>42</code> is a <a href="https://rosettacode.org/wiki/Harshad_or_Niven_series" title="Harshad or Niven series" target="_blank">Harshad number</a> as <code>42</code> is divisible by <code>(4 + 2)</code> without remainder.
+
+For example, `42` is a [Harshad number](https://rosettacode.org/wiki/Harshad_or_Niven_series "Harshad or Niven series") as `42` is divisible by `(4 + 2)` without remainder.
+
 Assume that the series is defined as the numbers in increasing order.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Implement a function to generate successive members of the Harshad sequence.
+
 Use it to list the first twenty members of the sequence and list the first Harshad number greater than 1000.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>isHarshadOrNiven</code> should be a function.
-    testString: assert(typeof isHarshadOrNiven === 'function');
-  - text: '<code>isHarshadOrNiven()</code> should return <code>{"firstTwenty": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],"firstOver1000": 1002}</code>'
-    testString: assert.deepEqual(isHarshadOrNiven(), res);
+`isHarshadOrNiven` should be a function.
 
+```js
+assert(typeof isHarshadOrNiven === 'function');
 ```
 
-</section>
+`isHarshadOrNiven()` should return `{"firstTwenty": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],"firstOver1000": 1002}`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(isHarshadOrNiven(), res);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+const res = {
+  firstTwenty: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],
+  firstOver1000: 1002
+};
+```
+
+## --seed-contents--
 
 ```js
 function isHarshadOrNiven() {
@@ -49,26 +58,7 @@ function isHarshadOrNiven() {
 }
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const res = {
-  firstTwenty: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],
-  firstOver1000: 1002
-};
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function isHarshadOrNiven() {
@@ -104,7 +94,4 @@ function isHarshadOrNiven() {
 
   return res;
 }
-
 ```
-
-</section>

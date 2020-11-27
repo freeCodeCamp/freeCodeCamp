@@ -4,31 +4,22 @@ title: Part 57
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Remove the `margin` and `border-top` properties and values from `bb2a` to turn it into a triangle for the top of the building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(!/margin/g.test(bb2a) && !/border-top/g.test(bb2a));
-
+```js
+const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
+assert(!/margin/g.test(bb2a) && !/border-top/g.test(bb2a));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -221,12 +212,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -416,5 +402,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

@@ -4,52 +4,21 @@ title: Part 6
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Declare variables named `monsterHealth` and `inventory` without initializing them.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    # testString: assert(/let\s+monsterHealth\s*;?/.test(code) && /let\s+inventory\s*;?/.test(code));
-    testString: assert(monsterHealth === undefined && inventory === undefined);
-
+```js
+assert(monsterHealth === undefined && inventory === undefined);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -115,26 +84,27 @@ let fighting;
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
 
-</section>
+</script>
+```
 
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -147,5 +117,3 @@ let monsterHealth;
 let inventory;
 </script>
 ```
-
-</section>

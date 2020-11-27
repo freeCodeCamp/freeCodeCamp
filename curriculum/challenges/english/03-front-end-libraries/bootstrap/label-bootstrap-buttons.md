@@ -5,43 +5,53 @@ challengeType: 0
 forumTopicId: 18222
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Just like we labeled our wells, we want to label our buttons.
-Give each of your <code>button</code> elements text that corresponds to its <code>id</code>'s selector.
-</section>
 
-## Instructions
-<section id='instructions'>
+Give each of your `button` elements text that corresponds to its `id`'s selector.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `button` element with the id `target1` should have the text `#target1`.
 
-```yml
-tests:
-  - text: Your <code>button</code> element with the id <code>target1</code> should have the text <code>#target1</code>.
-    testString: assert(new RegExp("#target1","gi").test($("#target1").text()));
-  - text: Your <code>button</code> element with the id <code>target2</code> should have the text <code>#target2</code>.
-    testString: assert(new RegExp("#target2","gi").test($("#target2").text()));
-  - text: Your <code>button</code> element with the id <code>target3</code> should have the text <code>#target3</code>.
-    testString: assert(new RegExp("#target3","gi").test($("#target3").text()));
-  - text: Your <code>button</code> element with the id <code>target4</code> should have the text <code>#target4</code>.
-    testString: assert(new RegExp("#target4","gi").test($("#target4").text()));
-  - text: Your <code>button</code> element with the id <code>target5</code> should have the text <code>#target5</code>.
-    testString: assert(new RegExp("#target5","gi").test($("#target5").text()));
-  - text: Your <code>button</code> element with the id <code>target6</code> should have the text <code>#target6</code>.
-    testString: assert(new RegExp("#target6","gi").test($("#target6").text()));
-
+```js
+assert(new RegExp('#target1', 'gi').test($('#target1').text()));
 ```
 
-</section>
+Your `button` element with the id `target2` should have the text `#target2`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(new RegExp('#target2', 'gi').test($('#target2').text()));
+```
 
-<div id='html-seed'>
+Your `button` element with the id `target3` should have the text `#target3`.
+
+```js
+assert(new RegExp('#target3', 'gi').test($('#target3').text()));
+```
+
+Your `button` element with the id `target4` should have the text `#target4`.
+
+```js
+assert(new RegExp('#target4', 'gi').test($('#target4').text()));
+```
+
+Your `button` element with the id `target5` should have the text `#target5`.
+
+```js
+assert(new RegExp('#target5', 'gi').test($('#target5').text()));
+```
+
+Your `button` element with the id `target6` should have the text `#target6`.
+
+```js
+assert(new RegExp('#target6', 'gi').test($('#target6').text()));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -67,14 +77,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -99,5 +102,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

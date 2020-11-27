@@ -5,8 +5,8 @@ challengeType: 1
 forumTopicId: 301156
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Another huge advantage of the <dfn>spread</dfn> operator, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:
 
 ```js
@@ -17,31 +17,28 @@ let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
 ```
 
 Using spread syntax, we have just achieved an operation that would have been more complex and more verbose had we used traditional methods.
-</section>
 
-## Instructions
-<section id='instructions'>
-We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>. Modify the function using the <dfn>spread</dfn> operator so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+We have defined a function `spreadOut` that returns the variable `sentence`. Modify the function using the <dfn>spread</dfn> operator so that it returns the array `['learning', 'to', 'code', 'is', 'fun']`.
 
-```yml
-tests:
-  - text: <code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>
-    testString: assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun']);
-  - text: The <code>spreadOut</code> function should utilize spread syntax
-    testString: assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1);
+# --hints--
 
+`spreadOut` should return `["learning", "to", "code", "is", "fun"]`
+
+```js
+assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun']);
 ```
 
-</section>
+The `spreadOut` function should utilize spread syntax
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function spreadOut() {
@@ -53,14 +50,7 @@ function spreadOut() {
 console.log(spreadOut());
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function spreadOut() {
@@ -68,7 +58,4 @@ function spreadOut() {
   let sentence = ['learning', ...fragment, 'is', 'fun'];
   return sentence;
 }
-
 ```
-
-</section>

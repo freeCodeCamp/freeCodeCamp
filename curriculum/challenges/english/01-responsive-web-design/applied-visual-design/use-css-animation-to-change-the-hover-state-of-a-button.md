@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cg4vZAa'
 forumTopicId: 301073
 ---
 
-## Description
-<section id='description'>
-You can use CSS <code>@keyframes</code> to change the color of a button in its hover state.
+# --description--
+
+You can use CSS `@keyframes` to change the color of a button in its hover state.
+
 Here's an example of changing the width of an image on hover:
 
 ```html
@@ -28,32 +29,29 @@ Here's an example of changing the width of an image on hover:
 <img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" />
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Note that <code>ms</code> stands for milliseconds, where 1000ms is equal to 1s.
-Use CSS <code>@keyframes</code> to change the <code>background-color</code> of the <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>.
-</section>
+Note that `ms` stands for milliseconds, where 1000ms is equal to 1s.
 
-## Tests
-<section id='tests'>
+Use CSS `@keyframes` to change the `background-color` of the `button` element so it becomes `#4791d0` when a user hovers over it. The `@keyframes` rule should only have an entry for `100%`.
 
-```yml
-tests:
-  - text: The @keyframes rule should use the <code>animation-name</code> background-color.
-    testString: assert(code.match(/@keyframes\s+?background-color\s*?{/g));
-  - text: There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.
-    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));
+# --hints--
 
+The @keyframes rule should use the `animation-name` background-color.
+
+```js
+assert(code.match(/@keyframes\s+?background-color\s*?{/g));
 ```
 
-</section>
+There should be one rule under `@keyframes` that changes the `background-color` to `#4791d0` at 100%.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -75,14 +73,7 @@ tests:
 <button>Register</button>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -106,5 +97,3 @@ tests:
 </style>
 <button>Register</button>
 ```
-
-</section>

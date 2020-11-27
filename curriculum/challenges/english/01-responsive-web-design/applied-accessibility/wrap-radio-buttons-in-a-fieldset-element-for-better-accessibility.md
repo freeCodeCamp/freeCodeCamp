@@ -6,11 +6,14 @@ videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030
 ---
 
-## Description
-<section id='description'>
-The next form topic covers accessibility of radio buttons. Each choice is given a <code>label</code> with a <code>for</code> attribute tying to the <code>id</code> of the corresponding item as covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set.
-The <code>fieldset</code> tag surrounds the entire grouping of radio buttons to achieve this. It often uses a <code>legend</code> tag to provide a description for the grouping, which is read by screen readers for each choice in the <code>fieldset</code> element.
-The <code>fieldset</code> wrapper and <code>legend</code> tag are not necessary when the choices are self-explanatory, like a gender selection. Using a <code>label</code> with the <code>for</code> attribute for each radio button is sufficient.
+# --description--
+
+The next form topic covers accessibility of radio buttons. Each choice is given a `label` with a `for` attribute tying to the `id` of the corresponding item as covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set.
+
+The `fieldset` tag surrounds the entire grouping of radio buttons to achieve this. It often uses a `legend` tag to provide a description for the grouping, which is read by screen readers for each choice in the `fieldset` element.
+
+The `fieldset` wrapper and `legend` tag are not necessary when the choices are self-explanatory, like a gender selection. Using a `label` with the `for` attribute for each radio button is sufficient.
+
 Here's an example:
 
 ```html
@@ -27,37 +30,48 @@ Here's an example:
 </form>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons and learned from our last lesson to use label tags with <code>for</code> attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the <code>div</code> tag surrounding the radio buttons to a <code>fieldset</code> tag, and change the <code>p</code> tag inside it to a <code>legend</code>.
-</section>
+Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons and learned from our last lesson to use label tags with `for` attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the `div` tag surrounding the radio buttons to a `fieldset` tag, and change the `p` tag inside it to a `legend`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should have a <code>fieldset</code> tag around the radio button set.
-    testString: assert($('fieldset').length == 1);
-  - text: The <code>fieldset</code> element should have a closing tag.
-    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length);
-  - text: Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.
-    testString: assert($('legend').length == 1);
-  - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0);
-  - text: Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.
-    testString: assert($('p').length == 4);
+Your code should have a `fieldset` tag around the radio button set.
 
+```js
+assert($('fieldset').length == 1);
 ```
 
-</section>
+The `fieldset` element should have a closing tag.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/<\/fieldset>/g) &&
+    code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length
+);
+```
 
-<div id='html-seed'>
+Your code should have a `legend` tag around the text asking what level ninja a user is.
+
+```js
+assert($('legend').length == 1);
+```
+
+Your code should not have any `div` tags.
+
+```js
+assert($('div').length == 0);
+```
+
+Your code should no longer have a `p` tag around the text asking what level ninja a user is.
+
+```js
+assert($('p').length == 4);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -105,14 +119,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -155,5 +162,3 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
-
-</section>

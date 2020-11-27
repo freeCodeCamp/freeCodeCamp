@@ -5,40 +5,88 @@ challengeType: 6
 forumTopicId: 301413
 ---
 
-## Description
-<section id='description'>
-The if/else statements worked in the last challenge, but there's a more concise way to achieve the same result. Imagine that you are tracking several conditions in a component and you want different elements to render depending on each of these conditions. If you write a lot of <code>else if</code> statements to return slightly different UIs, you may repeat code which leaves room for error. Instead, you can use the <code>&&</code> logical operator to perform conditional logic in a more concise way. This is possible because you want to check if a condition is <code>true</code>, and if it is, return some markup. Here's an example:
-<code>{condition && &lt;p&gt;markup&lt;/p&gt;}</code>
-If the <code>condition</code> is <code>true</code>, the markup will be returned. If the condition is <code>false</code>, the operation will immediately return <code>false</code> after evaluating the <code>condition</code> and return nothing. You can include these statements directly in your JSX and string multiple conditions together by writing <code>&&</code> after each one. This allows you to handle more complex conditional logic in your <code>render()</code> method without repeating a lot of code.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Solve the previous example again, so the <code>h1</code> only renders if <code>display</code> is <code>true</code>, but use the <code>&&</code> logical operator instead of an <code>if/else</code> statement.
-</section>
+The if/else statements worked in the last challenge, but there's a more concise way to achieve the same result. Imagine that you are tracking several conditions in a component and you want different elements to render depending on each of these conditions. If you write a lot of `else if` statements to return slightly different UIs, you may repeat code which leaves room for error. Instead, you can use the `&&` logical operator to perform conditional logic in a more concise way. This is possible because you want to check if a condition is `true`, and if it is, return some markup. Here's an example:
 
-## Tests
-<section id='tests'>
+`{condition && <p>markup</p>}`
 
-```yml
-tests:
-  - text: <code>MyComponent</code> should exist and render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length; })());
-  - text: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find(''div'').length === 1 && updated.find(''div'').children().length === 2 && updated.find(''button'').length === 1 && updated.find(''h1'').length === 1); }; '
-  - text: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find(''div'').length === 1 && updated.find(''div'').children().length === 1 && updated.find(''button'').length === 1 && updated.find(''h1'').length === 0); }; '
-  - text: The render method should use the && logical operator to check the condition of this.state.display.
-    testString: getUserInput => assert(getUserInput('index').includes('&&'));
+If the `condition` is `true`, the markup will be returned. If the condition is `false`, the operation will immediately return `false` after evaluating the `condition` and return nothing. You can include these statements directly in your JSX and string multiple conditions together by writing `&&` after each one. This allows you to handle more complex conditional logic in your `render()` method without repeating a lot of code.
 
+# --instructions--
+
+Solve the previous example again, so the `h1` only renders if `display` is `true`, but use the `&&` logical operator instead of an `if/else` statement.
+
+# --hints--
+
+`MyComponent` should exist and render.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
+    return mockedComponent.find('MyComponent').length;
+  })()
+);
 ```
 
-</section>
+When `display` is set to `true`, a `div`, `button`, and `h1` should render.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+async () => {
+  const waitForIt = (fn) =>
+    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
+  const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
+  const state_1 = () => {
+    mockedComponent.setState({ display: true });
+    return waitForIt(() => mockedComponent);
+  };
+  const updated = await state_1();
+  assert(
+    updated.find('div').length === 1 &&
+      updated.find('div').children().length === 2 &&
+      updated.find('button').length === 1 &&
+      updated.find('h1').length === 1
+  );
+};
+```
 
-<div id='jsx-seed'>
+When `display` is set to `false`, only a `div` and `button` should render.
+
+```js
+async () => {
+  const waitForIt = (fn) =>
+    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
+  const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
+  const state_1 = () => {
+    mockedComponent.setState({ display: false });
+    return waitForIt(() => mockedComponent);
+  };
+  const updated = await state_1();
+  assert(
+    updated.find('div').length === 1 &&
+      updated.find('div').children().length === 1 &&
+      updated.find('button').length === 1 &&
+      updated.find('h1').length === 0
+  );
+};
+```
+
+The render method should use the && logical operator to check the condition of this.state.display.
+
+```js
+(getUserInput) => assert(getUserInput('index').includes('&&'));
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
+
+## --seed-contents--
 
 ```jsx
 class MyComponent extends React.Component {
@@ -66,23 +114,7 @@ class MyComponent extends React.Component {
 };
 ```
 
-</div>
-
-
-### After Test
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<MyComponent />, document.getElementById('root'))
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 class MyComponent extends React.Component {
@@ -109,5 +141,3 @@ class MyComponent extends React.Component {
   }
 };
 ```
-
-</section>

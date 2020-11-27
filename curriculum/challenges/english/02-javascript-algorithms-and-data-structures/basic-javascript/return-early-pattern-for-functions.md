@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
 ---
 
-## Description
-<section id='description'>
-When a <code>return</code> statement is reached, the execution of the current function stops and control returns to the calling location.
-<strong>Example</strong>
+# --description--
+
+When a `return` statement is reached, the execution of the current function stops and control returns to the calling location.
+
+**Example**
 
 ```js
 function myFun() {
@@ -20,43 +21,62 @@ function myFun() {
 myFun();
 ```
 
-The above outputs "Hello" to the console, returns "World", but <code>"byebye"</code> is never output, because the function exits at the <code>return</code> statement.
-</section>
+The above outputs "Hello" to the console, returns "World", but `"byebye"` is never output, because the function exits at the `return` statement.
 
-## Instructions
-<section id='instructions'>
-Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.
-<strong>Hint</strong><br>Remember that <a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Modify the function `abTest` so that if `a` or `b` are less than `0` the function will immediately exit with a value of `undefined`.
 
-```yml
-tests:
-  - text: <code>abTest(2,2)</code> should return a number
-    testString: assert(typeof abTest(2,2) === 'number' );
-  - text: <code>abTest(2,2)</code> should return <code>8</code>
-    testString: assert(abTest(2,2) === 8 );
-  - text: <code>abTest(-2,2)</code> should return <code>undefined</code>
-    testString: assert(abTest(-2,2) === undefined );
-  - text: <code>abTest(2,-2)</code> should return <code>undefined</code>
-    testString: assert(abTest(2,-2) === undefined );
-  - text: <code>abTest(2,8)</code> should return <code>18</code>
-    testString: assert(abTest(2,8) === 18 );
-  - text: <code>abTest(3,3)</code> should return <code>12</code>
-    testString: assert(abTest(3,3) === 12 );
-  - text: <code>abTest(0,0)</code> should return <code>0</code>
-    testString: assert(abTest(0,0) === 0);
-    
+**Hint**  
+Remember that [`undefined` is a keyword](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), not a string.
+
+# --hints--
+
+`abTest(2,2)` should return a number
+
+```js
+assert(typeof abTest(2, 2) === 'number');
 ```
 
-</section>
+`abTest(2,2)` should return `8`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(abTest(2, 2) === 8);
+```
 
-<div id='js-seed'>
+`abTest(-2,2)` should return `undefined`
+
+```js
+assert(abTest(-2, 2) === undefined);
+```
+
+`abTest(2,-2)` should return `undefined`
+
+```js
+assert(abTest(2, -2) === undefined);
+```
+
+`abTest(2,8)` should return `18`
+
+```js
+assert(abTest(2, 8) === 18);
+```
+
+`abTest(3,3)` should return `12`
+
+```js
+assert(abTest(3, 3) === 12);
+```
+
+`abTest(0,0)` should return `0`
+
+```js
+assert(abTest(0, 0) === 0);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -73,15 +93,7 @@ function abTest(a, b) {
 abTest(2,2);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function abTest(a, b) {
@@ -91,5 +103,3 @@ function abTest(a, b) {
   return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
 }
 ```
-
-</section>

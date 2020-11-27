@@ -4,54 +4,25 @@ title: Part 1
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
- 
 When a browser loads a page, it creates a Document Object Model (DOM) representation of the page which includes all of the HTML elements in a tree structure.
 
 In JavaScript, you can access the DOM by referencing the global `document` object.
 
 To view the DOM, log it to the console with `console.log(document)`.
 
+# --hints--
 
-</section>
+See description above for instructions.
 
-
-## Instructions
-<section id='instructions'>
-</section>
-
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, '').match(/console\.log\(document\)/));
-
+```js
+assert(code.replace(/\s/g, '').match(/console\.log\(document\)/));
 ```
 
-</section>
+# --seed--
 
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -102,29 +73,25 @@ tests:
     </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
 
+</script>
+```
 
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
 console.log(document);
 </script>
 ```
-
-</section>

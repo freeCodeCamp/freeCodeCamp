@@ -1,12 +1,11 @@
 ---
 id: 5900f38a1000cf542c50fe9d
-challengeType: 5
 title: 'Problem 30: Digit n powers'
+challengeType: 5
 forumTopicId: 301953
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
 
@@ -22,37 +21,41 @@ The sum of these numbers is 1634 + 8208 + 9474 = 19316.
 
 Find the sum of all the numbers that can be written as the sum of `n` powers of their digits.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`digitnPowers(2)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>digitnPowers(2)</code> should return a number.
-    testString: assert(typeof digitnPowers(2) === 'number');
-  - text: <code>digitnPowers(2)</code> should return 0.
-    testString: assert(digitnPowers(2) == 0);
-  - text: <code>digitnPowers(3)</code> should return 1301.
-    testString: assert(digitnPowers(3) == 1301);
-  - text: <code>digitnPowers(4)</code> should return 19316.
-    testString: assert(digitnPowers(4) == 19316);
-  - text: <code>digitnPowers(5)</code> should return 443839.
-    testString: assert(digitnPowers(5) == 443839);
-
+```js
+assert(typeof digitnPowers(2) === 'number');
 ```
 
-</section>
+`digitnPowers(2)` should return 0.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(digitnPowers(2) == 0);
+```
 
-<div id='js-seed'>
+`digitnPowers(3)` should return 1301.
+
+```js
+assert(digitnPowers(3) == 1301);
+```
+
+`digitnPowers(4)` should return 19316.
+
+```js
+assert(digitnPowers(4) == 19316);
+```
+
+`digitnPowers(5)` should return 443839.
+
+```js
+assert(digitnPowers(5) == 443839);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function digitnPowers(n) {
@@ -63,17 +66,8 @@ function digitnPowers(n) {
 digitnPowers(5);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

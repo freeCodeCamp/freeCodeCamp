@@ -5,34 +5,30 @@ challengeType: 6
 forumTopicId: 301484
 ---
 
-## Description
-<section id='description'>
-A scatter plot is another type of visualization. It usually uses circles to map data points, which have two values each. These values tie to the <code>x</code> and <code>y</code> axes, and are used to position the circle in the visualization.
-SVG has a <code>circle</code> tag to create the circle shape. It works a lot like the <code>rect</code> elements you used for the bar chart.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to bind <code>dataset</code> to new <code>circle</code> elements that are appended to the SVG canvas.
-<strong>Note</strong><br>The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
-</section>
+A scatter plot is another type of visualization. It usually uses circles to map data points, which have two values each. These values tie to the `x` and `y` axes, and are used to position the circle in the visualization.
 
-## Tests
-<section id='tests'>
+SVG has a `circle` tag to create the circle shape. It works a lot like the `rect` elements you used for the bar chart.
 
-```yml
-tests:
-  - text: Your code should have 10 <code>circle</code> elements.
-    testString: assert($('circle').length == 10);
+# --instructions--
 
+Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG canvas.
+
+**Note**  
+The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
+
+# --hints--
+
+Your code should have 10 `circle` elements.
+
+```js
+assert($('circle').length == 10);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <body>
@@ -70,14 +66,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -111,7 +100,4 @@ tests:
 
   </script>
 </body>
-
 ```
-
-</section>

@@ -5,40 +5,38 @@ challengeType: 2
 forumTopicId: 301525
 ---
 
-## Description
-<section id='description'>
-A <code>version</code> is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
+# --description--
+
+A `version` is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
 
 ```json
 "version": "1.2.0",
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add a <code>version</code> to the package.json file of your project.
-</section>
+Add a `version` to the package.json file of your project.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: package.json should have a valid "version" key
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+package.json should have a valid "version" key
 
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/package.json').then(
+    (data) => {
+      var packJson = JSON.parse(data);
+      assert(packJson.version, '"version" is missing');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -47,5 +45,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

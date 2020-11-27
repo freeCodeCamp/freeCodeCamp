@@ -1,12 +1,11 @@
 ---
 id: 5900f3a61000cf542c50feb9
-challengeType: 5
 title: 'Problem 58: Spiral primes'
+challengeType: 5
 forumTopicId: 302169
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed.
 
@@ -24,31 +23,23 @@ It is interesting to note that the odd squares lie along the bottom right diagon
 
 If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the ratio of primes along both diagonals first falls below 10%?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`spiralPrimes()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>spiralPrimes()</code> should return a number.
-    testString: assert(typeof spiralPrimes() === 'number');
-  - text: <code>spiralPrimes()</code> should return 26241.
-    testString: assert.strictEqual(spiralPrimes(), 26241);
-
+```js
+assert(typeof spiralPrimes() === 'number');
 ```
 
-</section>
+`spiralPrimes()` should return 26241.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(spiralPrimes(), 26241);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function spiralPrimes() {
@@ -59,17 +50,8 @@ function spiralPrimes() {
 spiralPrimes();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

@@ -1,42 +1,33 @@
 ---
 id: 5900f3ab1000cf542c50febe
-challengeType: 5
 title: 'Problem 63: Powerful digit counts'
+challengeType: 5
 forumTopicId: 302175
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The 5-digit number, 16807 = 7<sup>5</sup>, is also a fifth power. Similarly, the 9-digit number, 134217728 = 8<sup>9</sup>, is a ninth power.
 
-How many <var>n</var>-digit positive integers exist which are also an <var>n</var>th power?
+How many `n`-digit positive integers exist which are also an `n`th power?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`powerfulDigitCounts()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>powerfulDigitCounts()</code> should return a number.
-    testString: assert(typeof powerfulDigitCounts() === 'number');
-  - text: <code>powerfulDigitCounts()</code> should return 49.
-    testString: assert.strictEqual(powerfulDigitCounts(), 49);
-
+```js
+assert(typeof powerfulDigitCounts() === 'number');
 ```
 
-</section>
+`powerfulDigitCounts()` should return 49.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(powerfulDigitCounts(), 49);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function powerfulDigitCounts() {
@@ -47,17 +38,8 @@ function powerfulDigitCounts() {
 powerfulDigitCounts();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

@@ -5,65 +5,74 @@ challengeType: 11
 videoId: nLDychdBwUg
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target='_blank'>Exercise</a>
-</section>
 
-## Tests
-<section id='tests'>
+\- [Exercise](https://www.youtube.com/watch?v=ksvGhDsjtpw)
 
-```yml
-question:
-  text: |
-    What will the following Python program print out?:
-    ```python
-    def fred():
-        print("Zap")
-    def jane():
-        print("ABC")
+# --question--
 
-    jane()
-    fred()
-    jane()
-    ```
-  answers:
-    - |
-        Zap
+## --text--
 
-        ABC
+What will the following Python program print out?:
 
-        jane
+```python
+def fred():
+    print("Zap")
+def jane():
+    print("ABC")
 
-        fred
-
-        jane
-    - |
-        Zap
-
-        ABC
-
-        Zap
-    - |
-        ABC
-
-        Zap
-
-        jane
-    - |
-        ABC
-
-        Zap
-
-        ABC
-    - |
-        Zap
-
-        Zap
-
-        Zap
-  solution: 4
+jane()
+fred()
+jane()
 ```
 
-</section>
+## --answers--
+
+Zap
+
+ABC
+
+jane
+
+fred
+
+jane
+
+---
+
+Zap
+
+ABC
+
+Zap
+
+---
+
+ABC
+
+Zap
+
+jane
+
+---
+
+ABC
+
+Zap
+
+ABC
+
+---
+
+Zap
+
+Zap
+
+Zap
+
+## --video-solution--
+
+4
+

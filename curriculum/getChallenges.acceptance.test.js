@@ -1,5 +1,7 @@
 /* global expect */
 
+// TODO: update these to use the new parser
+
 const path = require('path');
 
 const { parseMarkdown } = require('../tools/challenge-md-parser');
@@ -19,7 +21,8 @@ describe('translation parser', () => {
         path.resolve(__dirname, '__fixtures__/english/challenge.md'),
         path.resolve(__dirname, '__fixtures__/chinese/challenge.md'),
         SIMPLE_TRANSLATION,
-        'chinese'
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });
@@ -35,7 +38,8 @@ describe('translation parser', () => {
         ),
         path.resolve(__dirname, '__fixtures__/chinese/challenge.md'),
         SIMPLE_TRANSLATION,
-        'chinese'
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });
@@ -51,7 +55,8 @@ describe('translation parser', () => {
         ),
         path.resolve(__dirname, '__fixtures__/chinese/challenge.md'),
         SIMPLE_TRANSLATION,
-        'chinese'
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });
@@ -67,7 +72,8 @@ describe('translation parser', () => {
         ),
         path.resolve(__dirname, '__fixtures__/chinese/challenge.md'),
         SIMPLE_TRANSLATION,
-        'chinese'
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });
@@ -77,7 +83,9 @@ describe('translation parser', () => {
       parseTranslation(
         path.resolve(__dirname, '__fixtures__/english/challenge.md'),
         path.resolve(__dirname, '__fixtures__/chinese/challenge-stripped.md'),
-        SIMPLE_TRANSLATION
+        SIMPLE_TRANSLATION,
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });

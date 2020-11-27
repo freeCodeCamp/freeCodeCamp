@@ -4,44 +4,64 @@ title: Part 58
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add a final checkbox after the previous one with an `id` attribute value of `energetic`. The `name` and attribute should be the same as the last checkbox.
 
 Also add a `label` element to the right of the new checkbox with text `Energetic`. Make sure to associate the `label` element with the new checkbox.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You need to add a new checkbox.
 
-```yml
-tests:
-  - text: You need to add a new checkbox.
-    testString: assert( $('input[type="checkbox"]').length === 3 );
-  - text: Your new checkbox should have an `id` attribute with the value `energetic` and a `name` attribute with the value `personality`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: |
-      const checkboxes = [ ...$('input[type="checkbox"]') ];
-      assert( checkboxes.some(checkbox => checkbox.id === 'energetic' && checkbox.getAttribute('name') === 'personality') );
-  - text: Your new checkbox should be after the first one. You have them in the wrong order.
-    testString: |
-      const checkboxes = [...$('input[type="checkbox"]')].map(checkbox => checkbox.id);
-      assert( checkboxes.indexOf('lazy') < checkboxes.indexOf('energetic') );
-  - text: On the right side of your new checkbox, there should be `label` element with the text `Energetic`.
-    testString: |
-      const nextElementSibling = $('input[type="checkbox"]')[2].nextElementSibling;
-      assert( nextElementSibling.nodeName === 'LABEL' && nextElementSibling.innerText.replace(/\s+/g, '').match(/^Energetic$/i) );
-  - text: The new `label` should have a `for` attribute with the same value as the `id` attribute of the new checkbox. You have either omitted the value or have a typo.
-    testString: assert( $('input[type="checkbox"]')[2].nextElementSibling.getAttribute('for') === 'energetic' );
-
+```js
+assert($('input[type="checkbox"]').length === 3);
 ```
 
-</section>
+Your new checkbox should have an `id` attribute with the value `energetic` and a `name` attribute with the value `personality`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const checkboxes = [...$('input[type="checkbox"]')];
+assert(
+  checkboxes.some(
+    (checkbox) =>
+      checkbox.id === 'energetic' &&
+      checkbox.getAttribute('name') === 'personality'
+  )
+);
+```
+
+Your new checkbox should be after the first one. You have them in the wrong order.
+
+```js
+const checkboxes = [...$('input[type="checkbox"]')].map(
+  (checkbox) => checkbox.id
+);
+assert(checkboxes.indexOf('lazy') < checkboxes.indexOf('energetic'));
+```
+
+On the right side of your new checkbox, there should be `label` element with the text `Energetic`.
+
+```js
+const nextElementSibling = $('input[type="checkbox"]')[2].nextElementSibling;
+assert(
+  nextElementSibling.nodeName === 'LABEL' &&
+    nextElementSibling.innerText.replace(/\s+/g, '').match(/^Energetic$/i)
+);
+```
+
+The new `label` should have a `for` attribute with the same value as the `id` attribute of the new checkbox. You have either omitted the value or have a typo.
+
+```js
+assert(
+  $('input[type="checkbox"]')[2].nextElementSibling.getAttribute('for') ===
+    'energetic'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -87,10 +107,10 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
+--fcc-editable-region--
             <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
             <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
-            --fcc-editable-region--
+--fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
@@ -101,5 +121,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

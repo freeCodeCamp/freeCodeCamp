@@ -4,44 +4,50 @@ title: Part 48
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 If you select the `Indoor` radio button and submit the form, the form data for the button is based on its `name` and `value` attributes. Since your radio buttons do not have a `value` attribute, the form data will include `indoor-outdoor=on`, which is not useful when you have multiple buttons.
 
 Add a `value` attribute to both radio buttons. For convenience, set the button's `value` attribute to the same value as its `id` attribute.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Both radio buttons should still be located between opening and closing `label` element tags.
 
-```yml
-tests:
-  - text: Both radio buttons should still be located between opening and closing `label` element tags. 
-    testString: |
-      const labelChildNodes = [ ...document.querySelectorAll('form > label') ].map(node => node.childNodes);
-      assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
-  - text: Both radio buttons should have a `value` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: |
-      const radioButtons = [...document.querySelectorAll('input[type="radio"]')];
-      assert( radioButtons.every(btn => btn.hasAttribute('value')) );
-  - text: The `Indoor` radio button's `value` attribute should be set to `indoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: |
-      const indoorRadioButton = document.querySelector('#indoor');
-      assert( indoorRadioButton.getAttribute('value').match(/^indoor$/) );
-  - text: The `Outdoor` radio button's `value` attribute should be set to `outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: |
-      const outdoorRadioButton = document.querySelector('#outdoor');
-      assert( outdoorRadioButton.getAttribute('value').match(/^outdoor$/) );
-
+```js
+const labelChildNodes = [...document.querySelectorAll('form > label')].map(
+  (node) => node.childNodes
+);
+assert(
+  labelChildNodes.filter((childNode) => childNode[0].nodeName === 'INPUT')
+    .length === 2
+);
 ```
 
-</section>
+Both radio buttons should have a `value` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const radioButtons = [...document.querySelectorAll('input[type="radio"]')];
+assert(radioButtons.every((btn) => btn.hasAttribute('value')));
+```
+
+The `Indoor` radio button's `value` attribute should be set to `indoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+const indoorRadioButton = document.querySelector('#indoor');
+assert(indoorRadioButton.getAttribute('value').match(/^indoor$/));
+```
+
+The `Outdoor` radio button's `value` attribute should be set to `outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+const outdoorRadioButton = document.querySelector('#outdoor');
+assert(outdoorRadioButton.getAttribute('value').match(/^outdoor$/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -79,10 +85,10 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
           <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
@@ -92,5 +98,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

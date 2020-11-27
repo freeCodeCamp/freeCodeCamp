@@ -5,33 +5,43 @@ challengeType: 11
 videoId: z-SBYcvEQOc
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target='_blank'>Exercise: Email</a>
-- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target='_blank'>Exercise: Roster</a>
-- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target='_blank'>Exercise: Tracks</a>
-- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target='_blank'>Exercise: Twfriends</a>
-- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target='_blank'>Exercise: Twspider</a>
-</section>
 
-## Tests
-<section id='tests'>
+\- [Exercise: Email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
 
-```yml
-question:
-  text: |
-    Which is an example of a many-to-many relationship?
-  answers:
-    - |
-        teacher to student
-    - |
-        customer to order
-    - |
-        book to pages
-    - |
-        city to country
-  solution: 1
-```
+\- [Exercise: Roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
 
-</section>
+\- [Exercise: Tracks](https://www.youtube.com/watch?v=I-E7avcPeSE)
+
+\- [Exercise: Twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+
+\- [Exercise: Twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
+
+# --question--
+
+## --text--
+
+Which is an example of a many-to-many relationship?
+
+## --answers--
+
+teacher to student
+
+---
+
+customer to order
+
+---
+
+book to pages
+
+---
+
+city to country
+
+## --video-solution--
+
+1
+

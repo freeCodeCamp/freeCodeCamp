@@ -5,58 +5,85 @@ challengeType: 5
 forumTopicId: 302302
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<b>Left factorials</b>,  $ !n $,  may refer to either  <i>subfactorials</i>  or to  <i>factorial sums</i>. The same notation can be confusingly seen used for the two different definitions. Sometimes,  <i>subfactorials</i>  (also known as <i>derangements</i>)  may use any of the notations:
+**Left factorials**, $ !n $, may refer to either *subfactorials* or to *factorial sums*. The same notation can be confusingly seen used for the two different definitions. Sometimes, *subfactorials* (also known as *derangements*) may use any of the notations:
+
 <ul>
   <li>$!n`$</li>
   <li>$!n$</li>
   <li>$n¡$</li>
 </ul>
-(It may not be visually obvious, but the last example uses an upside-down exclamation mark.) This task will be using this formula for <b>left factorial</b>:
-$ !n = \sum_{k=0}^{n-1} k! $
+
+(It may not be visually obvious, but the last example uses an upside-down exclamation mark.) This task will be using this formula for **left factorial**:
+
+$ !n = \\sum\_{k=0}^{n-1} k! $
+
 where $!0 = 0$
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
 Write a function to calculate the left factorial of a given number.
-</section>
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`leftFactorial` should be a function.
 
-```yml
-tests:
-  - text: <code>leftFactorial</code> should be a function.
-    testString: assert(typeof leftFactorial == 'function');
-  - text: <code>leftFactorial(0)</code> should return a number.
-    testString: assert(typeof leftFactorial(0) == 'number');
-  - text: <code>leftFactorial(0)</code> should return <code>0</code>.
-    testString: assert.equal(leftFactorial(0), 0);
-  - text: <code>leftFactorial(1)</code> should return <code>1</code>.
-    testString: assert.equal(leftFactorial(1), 1);
-  - text: <code>leftFactorial(2)</code> should return <code>2</code>.
-    testString: assert.equal(leftFactorial(2), 2);
-  - text: <code>leftFactorial(3)</code> should return <code>4</code>.
-    testString: assert.equal(leftFactorial(3), 4);
-  - text: <code>leftFactorial(10)</code> should return <code>409114</code>.
-    testString: assert.equal(leftFactorial(10), 409114);
-  - text: <code>leftFactorial(17)</code> should return <code>22324392524314</code>.
-    testString: assert.equal(leftFactorial(17), 22324392524314);
-  - text: <code>leftFactorial(19)</code> should return <code>6780385526348314</code>.
-    testString: assert.equal(leftFactorial(19), 6780385526348314);
+```js
+assert(typeof leftFactorial == 'function');
 ```
 
-</section>
+`leftFactorial(0)` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof leftFactorial(0) == 'number');
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`leftFactorial(0)` should return `0`.
+
+```js
+assert.equal(leftFactorial(0), 0);
+```
+
+`leftFactorial(1)` should return `1`.
+
+```js
+assert.equal(leftFactorial(1), 1);
+```
+
+`leftFactorial(2)` should return `2`.
+
+```js
+assert.equal(leftFactorial(2), 2);
+```
+
+`leftFactorial(3)` should return `4`.
+
+```js
+assert.equal(leftFactorial(3), 4);
+```
+
+`leftFactorial(10)` should return `409114`.
+
+```js
+assert.equal(leftFactorial(10), 409114);
+```
+
+`leftFactorial(17)` should return `22324392524314`.
+
+```js
+assert.equal(leftFactorial(17), 22324392524314);
+```
+
+`leftFactorial(19)` should return `6780385526348314`.
+
+```js
+assert.equal(leftFactorial(19), 6780385526348314);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function leftFactorial(n) {
@@ -64,12 +91,7 @@ function leftFactorial(n) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function leftFactorial(n) {
@@ -90,5 +112,3 @@ function leftFactorial(n) {
   return res;
 }
 ```
-
-</section>

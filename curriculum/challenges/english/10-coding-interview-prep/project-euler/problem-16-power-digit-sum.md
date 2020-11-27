@@ -1,46 +1,45 @@
 ---
 id: 5900f37d1000cf542c50fe8f
-challengeType: 5
 title: 'Problem 16: Power digit sum'
+challengeType: 5
 forumTopicId: 301791
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
 
-What is the sum of the digits of the number 2<sup>`exponent`</sup>?
+What is the sum of the digits of the number 2<sup><code>exponent</code></sup>?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`powerDigitSum(15)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>powerDigitSum(15)</code> should return a number.
-    testString: assert(typeof powerDigitSum(15) === 'number');
-  - text: <code>powerDigitSum(15)</code> should return 26.
-    testString: assert.strictEqual(powerDigitSum(15), 26);
-  - text: <code>powerDigitSum(128)</code> should return 166.
-    testString: assert.strictEqual(powerDigitSum(128), 166);
-  - text: <code>powerDigitSum(1000)</code> should return 1366.
-    testString: assert.strictEqual(powerDigitSum(1000), 1366);
-
+```js
+assert(typeof powerDigitSum(15) === 'number');
 ```
 
-</section>
+`powerDigitSum(15)` should return 26.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(powerDigitSum(15), 26);
+```
 
-<div id='js-seed'>
+`powerDigitSum(128)` should return 166.
+
+```js
+assert.strictEqual(powerDigitSum(128), 166);
+```
+
+`powerDigitSum(1000)` should return 1366.
+
+```js
+assert.strictEqual(powerDigitSum(1000), 1366);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function powerDigitSum(exponent) {
@@ -51,15 +50,7 @@ function powerDigitSum(exponent) {
 powerDigitSum(15);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function powerDigitSum(exponent) {
@@ -91,5 +82,3 @@ function powerDigitSum(exponent) {
   return sum;
 }
 ```
-
-</section>

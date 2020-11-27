@@ -4,9 +4,7 @@ title: Part 28
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 If you look near the bottom of the HTML page, notice that there is currently an empty `div` element: `<div id="output"></div>`.
 
@@ -14,56 +12,21 @@ We will be inserting output inside this `div`, telling the user if they are in a
 
 Create a variable named `output` and set it equal to this division element with the `id` of `output`.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s*output\s*=\s*document\.getElementById\([\'\"\`]output[\'\"\`]\)/.test(code))
+```js
+assert(
+  /const\s*output\s*=\s*document\.getElementById\([\'\"\`]output[\'\"\`]\)/.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -123,24 +86,36 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+  }
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -163,5 +138,3 @@ tests:
   }
 </script>
 ```
-
-</section>

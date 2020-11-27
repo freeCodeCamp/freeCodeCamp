@@ -5,27 +5,25 @@ challengeType: 11
 videoId: ugYfJNTawks
 ---
 
-## Description
-<section id='description'>
-</section>
+# --question--
 
-## Tests
-<section id='tests'>
+## --text--
 
-```yml
-question:
-  text: |
-    Which socket object method lets you set the maximum amount of data your client accepts at once?
+Which socket object method lets you set the maximum amount of data your client accepts at once?
 
-  answers:
-    - |
-      `.recv(1024)`
-    - |
-      `.decode('ascii')`
-    - |
-      `.connect(host, port)`
-  solution: 1
-```
+## --answers--
 
-</section>
+`.recv(1024)`
+
+---
+
+`.decode('ascii')`
+
+---
+
+`.connect(host, port)`
+
+## --video-solution--
+
+1
 

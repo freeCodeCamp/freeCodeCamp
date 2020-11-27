@@ -4,31 +4,23 @@ title: Part 67
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add the new `building-wrap` class to the `bb1` and `bb4` elements. This will apply the centering properties to the buildings that need it.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".bb1.building-wrap").length === 1 && $(".bb4.building-wrap").length === 1);
-
+```js
+assert(
+  $('.bb1.building-wrap').length === 1 && $('.bb4.building-wrap').length === 1
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -249,12 +241,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -474,5 +461,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

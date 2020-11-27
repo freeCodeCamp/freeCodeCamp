@@ -1,33 +1,33 @@
 ---
 id: 5e7b9f050b6c005b0e76f056
-title: Variables, Expressions, and Statements
+title: 'Variables, Expressions, and Statements'
 challengeType: 11
 videoId: nELR-uyyrok
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What is the symbol used in an assignment statement?
 
-```yml
-question:
-  text: |
-    What is the symbol used in an assignment statement?
+## --answers--
 
-  answers:
-    - |
-        ~
-    - |
-        &
-    - |
-        =
-    - |
-        |
-  solution: 3
-```
+~
 
-</section>
+---
+
+&
+
+---
+
+=
+
+---
+
+\|
+
+## --video-solution--
+
+3
+

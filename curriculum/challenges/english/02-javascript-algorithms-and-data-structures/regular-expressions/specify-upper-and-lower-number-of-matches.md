@@ -5,11 +5,13 @@ challengeType: 1
 forumTopicId: 301367
 ---
 
-## Description
-<section id='description'>
-Recall that you use the plus sign <code>+</code> to look for one or more characters and the asterisk <code>*</code> to look for zero or more characters. These are convenient but sometimes you want to match a certain range of patterns.
-You can specify the lower and upper number of patterns with <dfn>quantity specifiers</dfn>. Quantity specifiers are used with curly brackets (<code>{</code> and <code>}</code>). You put two numbers between the curly brackets - for the lower and upper number of patterns.
-For example, to match only the letter <code>a</code> appearing between <code>3</code> and <code>5</code> times in the string <code>"ah"</code>, your regex would be <code>/a{3,5}h/</code>.
+# --description--
+
+Recall that you use the plus sign `+` to look for one or more characters and the asterisk `*` to look for zero or more characters. These are convenient but sometimes you want to match a certain range of patterns.
+
+You can specify the lower and upper number of patterns with <dfn>quantity specifiers</dfn>. Quantity specifiers are used with curly brackets (`{` and `}`). You put two numbers between the curly brackets - for the lower and upper number of patterns.
+
+For example, to match only the letter `a` appearing between `3` and `5` times in the string `"ah"`, your regex would be `/a{3,5}h/`.
 
 ```js
 let A4 = "aaaah";
@@ -19,40 +21,57 @@ multipleA.test(A4); // Returns true
 multipleA.test(A2); // Returns false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Change the regex <code>ohRegex</code> to match the entire phrase <code>"Oh no"</code> only when it has <code>3</code> to <code>6</code> letter <code>h</code>'s.
-</section>
+Change the regex `ohRegex` to match the entire phrase `"Oh no"` only when it has `3` to `6` letter `h`'s.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your regex should use curly brackets.
-    testString: assert(ohRegex.source.match(/{.*?}/).length > 0);
-  - text: Your regex should not match <code>"Ohh no"</code>
-    testString: assert(!ohRegex.test("Ohh no"));
-  - text: Your regex should match <code>"Ohhh no"</code>
-    testString: assert("Ohhh no".match(ohRegex)[0].length === 7);
-  - text: Your regex should match <code>"Ohhhh no"</code>
-    testString: assert("Ohhhh no".match(ohRegex)[0].length === 8);
-  - text: Your regex should match <code>"Ohhhhh no"</code>
-    testString: assert("Ohhhhh no".match(ohRegex)[0].length === 9);
-  - text: Your regex should match <code>"Ohhhhhh no"</code>
-    testString: assert("Ohhhhhh no".match(ohRegex)[0].length === 10);
-  - text: Your regex should not match <code>"Ohhhhhhh no"</code>
-    testString: assert(!ohRegex.test("Ohhhhhhh no"));
+Your regex should use curly brackets.
 
+```js
+assert(ohRegex.source.match(/{.*?}/).length > 0);
 ```
 
-</section>
+Your regex should not match `"Ohh no"`
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(!ohRegex.test('Ohh no'));
+```
+
+Your regex should match `"Ohhh no"`
+
+```js
+assert('Ohhh no'.match(ohRegex)[0].length === 7);
+```
+
+Your regex should match `"Ohhhh no"`
+
+```js
+assert('Ohhhh no'.match(ohRegex)[0].length === 8);
+```
+
+Your regex should match `"Ohhhhh no"`
+
+```js
+assert('Ohhhhh no'.match(ohRegex)[0].length === 9);
+```
+
+Your regex should match `"Ohhhhhh no"`
+
+```js
+assert('Ohhhhhh no'.match(ohRegex)[0].length === 10);
+```
+
+Your regex should not match `"Ohhhhhhh no"`
+
+```js
+assert(!ohRegex.test('Ohhhhhhh no'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let ohStr = "Ohhh no";
@@ -60,16 +79,10 @@ let ohRegex = /change/; // Change this line
 let result = ohRegex.test(ohStr);
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let ohStr = "Ohhh no";
 let ohRegex = /Oh{3,6} no/; // Change this line
 let result = ohRegex.test(ohStr);
 ```
-
-</section>

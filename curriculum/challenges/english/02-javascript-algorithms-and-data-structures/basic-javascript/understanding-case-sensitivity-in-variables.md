@@ -6,13 +6,17 @@ videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In JavaScript all variables and function names are case sensitive. This means that capitalization matters.
-<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you <em>do not</em> use this language feature.
+
+`MYVAR` is not the same as `MyVar` nor `myvar`. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you *do not* use this language feature.
+
 <h4>Best Practice</h4>
+
 Write variable names in JavaScript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.
-<strong>Examples:</strong>
+
+**Examples:**
 
 ```js
 var someVariable;
@@ -20,39 +24,54 @@ var anotherVariableName;
 var thisVariableNameIsSoLong;
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.<br>Do not create any new variables.
-</section>
+Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.  
+Do not create any new variables.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>studlyCapVar</code> should be defined and have a value of <code>10</code>.
-    testString: assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
-  - text: <code>properCamelCase</code> should be defined and have a value of <code>"A String"</code>.
-    testString: assert(typeof properCamelCase !== 'undefined' && properCamelCase === "A String");
-  - text: <code>titleCaseOver</code> should be defined and have a value of <code>9000</code>.
-    testString: assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
-  - text: <code>studlyCapVar</code> should use camelCase in both declaration and assignment sections.
-    testString: assert(code.match(/studlyCapVar/g).length === 2);
-  - text: <code>properCamelCase</code> should use camelCase in both declaration and assignment sections.
-    testString: assert(code.match(/properCamelCase/g).length === 2);
-  - text: <code>titleCaseOver</code> should use camelCase in both declaration and assignment sections.
-    testString: assert(code.match(/titleCaseOver/g).length === 2);
+`studlyCapVar` should be defined and have a value of `10`.
 
+```js
+assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
 ```
 
-</section>
+`properCamelCase` should be defined and have a value of `"A String"`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  typeof properCamelCase !== 'undefined' && properCamelCase === 'A String'
+);
+```
 
-<div id='js-seed'>
+`titleCaseOver` should be defined and have a value of `9000`.
+
+```js
+assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
+```
+
+`studlyCapVar` should use camelCase in both declaration and assignment sections.
+
+```js
+assert(code.match(/studlyCapVar/g).length === 2);
+```
+
+`properCamelCase` should use camelCase in both declaration and assignment sections.
+
+```js
+assert(code.match(/properCamelCase/g).length === 2);
+```
+
+`titleCaseOver` should use camelCase in both declaration and assignment sections.
+
+```js
+assert(code.match(/titleCaseOver/g).length === 2);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Variable declarations
@@ -66,15 +85,7 @@ PRoperCAmelCAse = "A String";
 tITLEcASEoVER = 9000;
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var studlyCapVar;
@@ -85,5 +96,3 @@ studlyCapVar = 10;
 properCamelCase = "A String";
 titleCaseOver = 9000;
 ```
-
-</section>

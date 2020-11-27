@@ -5,32 +5,25 @@ challengeType: 11
 videoId: H6qtjRTfSog
 ---
 
-## Description
-<section id='description'>
-</section>
+# --question--
 
-## Instructions
-<section id='instructions'>
+## --text--
 
-</section>
+Where are your programs stored when they are running?
 
-## Tests
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    Where are your programs stored when they are running?
+Hard Drive.
 
-  answers:
-    - |
-        Hard Drive.
-    - |
-        Memory.
-    - |
-        Central Processing Unit.
-  solution: 2
+---
 
-```
+Memory.
 
-</section>
+---
+
+Central Processing Unit.
+
+## --video-solution--
+
+2
+

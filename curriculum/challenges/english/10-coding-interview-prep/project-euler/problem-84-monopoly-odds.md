@@ -1,14 +1,13 @@
 ---
 id: 5900f3c11000cf542c50fed3
-challengeType: 5
 title: 'Problem 84: Monopoly odds'
+challengeType: 5
 forumTopicId: 302198
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-In the game, <i>Monopoly</i>, the standard board is set up in the following way:
+In the game, *Monopoly*, the standard board is set up in the following way:
 
 <div style="text-align: center;">
   <table cellspacing="1" cellpadding="5" border="0" style="background-color: black; color: black;" align="center">
@@ -124,31 +123,23 @@ Statistically it can be shown that the three most popular squares, in order, are
 
 If, instead of using two 6-sided dice, two 4-sided dice are used, find the six-digit modal string.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`monopolyOdds()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>monopolyOdds()</code> should return a number.
-    testString: assert(typeof monopolyOdds() === 'number');
-  - text: <code>monopolyOdds()</code> should return 101524.
-    testString: assert.strictEqual(monopolyOdds(), 101524);
-
+```js
+assert(typeof monopolyOdds() === 'number');
 ```
 
-</section>
+`monopolyOdds()` should return 101524.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(monopolyOdds(), 101524);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function monopolyOdds() {
@@ -159,17 +150,8 @@ function monopolyOdds() {
 monopolyOdds();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cnQyKur'
 forumTopicId: 16165
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.
+
 Here is an example of using a variable to access a property:
 
 ```js
@@ -34,40 +35,59 @@ var someProp = propPrefix("Name"); // someProp now holds the value 'propName'
 console.log(someObj[someProp]); // "John"
 ```
 
-Note that we do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>.
-</section>
+Note that we do *not* use quotes around the variable name when using it to access the property because we are using the *value* of the variable, not the *name*.
 
-## Instructions
-<section id='instructions'>
-Set the <code>playerNumber</code> variable to <code>16</code>. Then, use the variable to look up the player's name and assign it to <code>player</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Set the `playerNumber` variable to `16`. Then, use the variable to look up the player's name and assign it to `player`.
 
-```yml
-tests:
-  - text: <code>playerNumber</code> should be a number
-    testString: assert(typeof playerNumber === 'number');
-  - text: The variable <code>player</code> should be a string
-    testString: assert(typeof player === 'string');
-  - text: The value of <code>player</code> should be "Montana"
-    testString: assert(player === 'Montana');
-  - text: You should use bracket notation to access <code>testObj</code>
-    testString: assert(/testObj\s*?\[.*?\]/.test(code));
-  - text: You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.
-    testString: assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
-  - text: You should be using the variable <code>playerNumber</code> in your bracket notation
-    testString: assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
+# --hints--
 
+`playerNumber` should be a number
+
+```js
+assert(typeof playerNumber === 'number');
 ```
 
-</section>
+The variable `player` should be a string
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof player === 'string');
+```
 
-<div id='js-seed'>
+The value of `player` should be "Montana"
+
+```js
+assert(player === 'Montana');
+```
+
+You should use bracket notation to access `testObj`
+
+```js
+assert(/testObj\s*?\[.*?\]/.test(code));
+```
+
+You should not assign the value `Montana` to the variable `player` directly.
+
+```js
+assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
+```
+
+You should be using the variable `playerNumber` in your bracket notation
+
+```js
+assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof player !== "undefined"){(function(v){return v;})(player);}
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -83,23 +103,7 @@ var playerNumber;       // Change this line
 var player = testObj;   // Change this line
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-if(typeof player !== "undefined"){(function(v){return v;})(player);}
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var testObj = {
@@ -110,5 +114,3 @@ var testObj = {
 var playerNumber = 16;
 var player = testObj[playerNumber];
 ```
-
-</section>

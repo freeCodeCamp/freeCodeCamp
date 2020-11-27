@@ -5,45 +5,67 @@ challengeType: 5
 forumTopicId: 385281
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Lucas-Lehmer Test: for $p$ an odd prime, the Mersenne number $2^p-1$ is prime if and only if $2^p-1$ divides $S(p-1)$ where $S(n+1)=(S(n))^2-2$, and $S(1)=4$.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Write a function that returns whether the given Mersenne number is prime or not.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-``` yml
-tests:
-  - text: <code>lucasLehmer</code> should be a function.
-    testString: assert(typeof lucasLehmer == 'function');
-  - text: <code>lucasLehmer(11)</code> should return a boolean.
-    testString: assert(typeof lucasLehmer(11) == 'boolean');
-  - text: <code>lucasLehmer(11)</code> should return <code>false</code>.
-    testString: assert.equal(lucasLehmer(11), false);
-  - text: <code>lucasLehmer(15)</code> should return <code>false</code>.
-    testString: assert.equal(lucasLehmer(15), false);
-  - text: <code>lucasLehmer(13)</code> should return <code>true</code>.
-    testString: assert.equal(lucasLehmer(13), true);
-  - text: <code>lucasLehmer(17)</code> should return <code>true</code>.
-    testString: assert.equal(lucasLehmer(17), true);
-  - text: <code>lucasLehmer(19)</code> should return <code>true</code>.
-    testString: assert.equal(lucasLehmer(19), true);
-  - text: <code>lucasLehmer(21)</code> should return <code>false</code>.
-    testString: assert.equal(lucasLehmer(21), false);
+`lucasLehmer` should be a function.
+
+```js
+assert(typeof lucasLehmer == 'function');
 ```
 
-</section>
+`lucasLehmer(11)` should return a boolean.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof lucasLehmer(11) == 'boolean');
+```
 
-<div id='js-seed'>
+`lucasLehmer(11)` should return `false`.
+
+```js
+assert.equal(lucasLehmer(11), false);
+```
+
+`lucasLehmer(15)` should return `false`.
+
+```js
+assert.equal(lucasLehmer(15), false);
+```
+
+`lucasLehmer(13)` should return `true`.
+
+```js
+assert.equal(lucasLehmer(13), true);
+```
+
+`lucasLehmer(17)` should return `true`.
+
+```js
+assert.equal(lucasLehmer(17), true);
+```
+
+`lucasLehmer(19)` should return `true`.
+
+```js
+assert.equal(lucasLehmer(19), true);
+```
+
+`lucasLehmer(21)` should return `false`.
+
+```js
+assert.equal(lucasLehmer(21), false);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function lucasLehmer(p) {
@@ -51,12 +73,7 @@ function lucasLehmer(p) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function lucasLehmer(p) {
@@ -89,5 +106,3 @@ function lucasLehmer(p) {
     return isPrime(p) && isMersennePrime(p)
 }
 ```
-
-</section>

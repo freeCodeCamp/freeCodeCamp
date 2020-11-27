@@ -6,32 +6,27 @@ videoUrl: 'https://scrimba.com/p/pByETK/cPbJ2Cv'
 forumTopicId: 301125
 ---
 
-## Description
-<section id='description'>
-You can add a gap in between the rows of a grid using <code>grid-row-gap</code> in the same way that you added a gap in between columns in the previous challenge.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Create a gap for the rows that is <code>5px</code> tall.
-</section>
+You can add a gap in between the rows of a grid using `grid-row-gap` in the same way that you added a gap in between columns in the previous challenge.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi));
+Create a gap for the rows that is `5px` tall.
 
+# --hints--
+
+`container` class should have a `grid-row-gap` property that has the value of `5px`.
+
+```js
+assert(
+  code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -65,18 +60,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.container {grid-row-gap: 5px;}</style>
 ```
-
-</section>

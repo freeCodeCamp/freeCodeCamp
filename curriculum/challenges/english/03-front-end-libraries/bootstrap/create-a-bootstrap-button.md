@@ -5,37 +5,42 @@ challengeType: 0
 forumTopicId: 16811
 ---
 
-## Description
-<section id='description'>
-Bootstrap has its own styles for <code>button</code> elements, which look much better than the plain HTML ones.
-Create a new <code>button</code> element below your large kitten photo. Give it the <code>btn</code> and <code>btn-default</code> classes, as well as the text of "Like".
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap has its own styles for `button` elements, which look much better than the plain HTML ones.
 
-</section>
+Create a new `button` element below your large kitten photo. Give it the `btn` and `btn-default` classes, as well as the text of "Like".
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should create a new <code>button</code> element with the text "Like".
-    testString: assert(new RegExp("like","gi").test($("button").text()) && ($("img.img-responsive + button.btn").length > 0));
-  - text: 'Your new button should have two classes: <code>btn</code> and <code>btn-default</code>.'
-    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
-  - text: All of your <code>button</code> elements should have closing tags.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+You should create a new `button` element with the text "Like".
 
+```js
+assert(
+  new RegExp('like', 'gi').test($('button').text()) &&
+    $('img.img-responsive + button.btn').length > 0
+);
 ```
 
-</section>
+Your new button should have two classes: `btn` and `btn-default`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
+```
 
-<div id='html-seed'>
+All of your `button` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -98,14 +103,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <html>
@@ -175,5 +173,3 @@ tests:
 </div>
 </html>
 ```
-
-</section>

@@ -4,37 +4,100 @@ title: Part 85
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now we'll start working on fighting monsters. Organize your code by moving the `fightDragon` function to the bottom of the code near the other fight functions.
 
 Below where the `weapons` array is defined, define a `monsters` array. Set the contents of the `monsters` array to: `{ name: "slime", level: 2, health: 15 }, {name: "fanged beast", level: 8, health: 60 }, { name: "dragon", level: 20, health: 300 }`. Space out the code similar to the `weapons` array so that it is easier to read.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: |
-      assert.deepStrictEqual(monsters, [{ name: "slime", level: 2, health: 15 }, {name: "fanged beast", level: 8, health: 60 }, { name: "dragon", level: 20, health: 300 }]);
-
+```js
+assert.deepStrictEqual(monsters, [
+  { name: 'slime', level: 2, health: 15 },
+  { name: 'fanged beast', level: 8, health: 60 },
+  { name: 'dragon', level: 20, health: 300 }
+]);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
+## --before-user-code--
 
-<div id='html-seed'>
+```html
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RPG - Dragon Repeller</title>
+  <style>
+    body {
+      background-color: darkblue;
+    }
+    #text {
+      background-color: black;
+      color: white;
+      padding: 10px;
+    }
+    #game {
+      max-width: 500px;
+      max-height: 400px;
+      background-color: lightgray;
+      color: white;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    #controls {
+      border: 1px black solid;
+      padding: 5px;
+    }
+    #stats {
+      border: 1px black solid;
+      color: black;
+      padding: 5px;
+    }
+    #monsterStats {
+      display: none;
+      border: 1px black solid;
+      color: white;
+      padding: 5px;
+      background-color: red;
+    }
+    .stat {
+      padding-right: 10px;
+    }
+  </style>
+</head>
+<body>
+<div id="game">
+  <div id="stats">
+    <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+    <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+    <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+  </div>
+  <div id="controls">
+    <button id="button1">Go to store</button>
+    <button id="button2">Go to cave</button>
+    <button id="button3">Fight dragon</button>
+  </div>
+  <div id="monsterStats">
+    <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+    <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+  </div>
+  <div id="text">Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.</div>
+</div>
+```
+
+## --after-user-code--
+
+```html
+</body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -180,95 +243,7 @@ function fightBeast() {
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>RPG - Dragon Repeller</title>
-  <style>
-    body {
-      background-color: darkblue;
-    }
-    #text {
-      background-color: black;
-      color: white;
-      padding: 10px;
-    }
-    #game {
-      max-width: 500px;
-      max-height: 400px;
-      background-color: lightgray;
-      color: white;
-      margin: 0 auto;
-      padding: 10px;
-    }
-    #controls {
-      border: 1px black solid;
-      padding: 5px;
-    }
-    #stats {
-      border: 1px black solid;
-      color: black;
-      padding: 5px;
-    }
-    #monsterStats {
-      display: none;
-      border: 1px black solid;
-      color: white;
-      padding: 5px;
-      background-color: red;
-    }
-    .stat {
-      padding-right: 10px;
-    }
-  </style>
-</head>
-<body>
-<div id="game">
-  <div id="stats">
-    <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
-    <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
-    <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
-  </div>
-  <div id="controls">
-    <button id="button1">Go to store</button>
-    <button id="button2">Go to cave</button>
-    <button id="button3">Fight dragon</button>
-  </div>
-  <div id="monsterStats">
-    <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-    <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
-  </div>
-  <div id="text">Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.</div>
-</div>
-```
-
-</div>
-
-
-### After Test
-<div id='html-teardown'>
-
-```html
-</body>
-</html>
-```
-
-</div>
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -430,5 +405,3 @@ function fightDragon() {
 }
 </script>
 ```
-
-</section>

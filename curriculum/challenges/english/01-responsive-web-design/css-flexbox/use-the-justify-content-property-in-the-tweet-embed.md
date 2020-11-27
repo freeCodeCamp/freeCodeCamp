@@ -6,32 +6,29 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/c43GgTa'
 forumTopicId: 301115
 ---
 
-## Description
-<section id='description'>
-The last challenge showed an example of the <code>justify-content</code> property. For the tweet embed, this property can be applied to align the items in the <code>.profile-name</code> element.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>justify-content</code> to the header's <code>.profile-name</code> element and set the value to any of the options from the last challenge.
-</section>
+The last challenge showed an example of the `justify-content` property. For the tweet embed, this property can be applied to align the items in the `.profile-name` element.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: 'The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: <code>center</code>, <code>flex-start</code>, <code>flex-end</code>, <code>space-between</code>, <code>space-around</code>, or <code>space-evenly</code>.'
-    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around|space-evenly)\s*;/g));'
+Add the CSS property `justify-content` to the header's `.profile-name` element and set the value to any of the options from the last challenge.
 
+# --hints--
+
+The `.profile-name` element should have the `justify-content` property set to any of these values: `center`, `flex-start`, `flex-end`, `space-between`, `space-around`, or `space-evenly`.
+
+```js
+assert(
+  code.match(
+    /header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around|space-evenly)\s*;/g
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -125,14 +122,7 @@ tests:
 </footer>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -225,5 +215,3 @@ tests:
   </div>
 </footer>
 ```
-
-</section>

@@ -5,52 +5,122 @@ challengeType: 1
 forumTopicId: 301633
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-In the last section, we talked about what a stack is and how we can use an array to represent a stack. In this section, we will be creating our own stack class.
-Although you can use arrays to create stacks, sometimes it is best to limit the amount of control we have with our stacks.
-Apart from the <code>push</code> and <code>pop</code> method, stacks have other useful methods. Let's add a <code>peek</code>, <code>isEmpty</code>, and <code>clear</code> method to our stack class.
-</section>
+In the last section, we talked about what a stack is and how we can use an array to represent a stack. In this section, we will be creating our own stack class. Although you can use arrays to create stacks, sometimes it is best to limit the amount of control we have with our stacks. Apart from the `push` and `pop` method, stacks have other useful methods. Let's add a `peek`, `isEmpty`, and `clear` method to our stack class.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
-Write a <code>push</code> method that pushes an element to the top of the stack, a <code>pop</code> method that removes and returns the element on the top of the stack, a <code>peek</code> method that looks at the top element in the stack, an <code>isEmpty</code> method that checks if the stack is empty, and a <code>clear</code> method that removes all elements from the stack.
-Normally stacks don't have this, but we've added a <code>print</code> helper method that console logs the collection.
-</section>
+Write a `push` method that pushes an element to the top of the stack, a `pop` method that removes and returns the element on the top of the stack, a `peek` method that looks at the top element in the stack, an `isEmpty` method that checks if the stack is empty, and a `clear` method that removes all elements from the stack. Normally stacks don't have this, but we've added a `print` helper method that console logs the collection.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>Stack</code> class should have a <code>push</code> method.
-    testString: assert((function(){var test = new Stack(); return (typeof test.push === 'function')}()));
-  - text: Your <code>Stack</code> class should have a <code>pop</code> method.
-    testString: assert((function(){var test = new Stack(); return (typeof test.pop === 'function')}()));
-  - text: Your <code>Stack</code> class should have a <code>peek</code> method.
-    testString: assert((function(){var test = new Stack(); return (typeof test.peek === 'function')}()));
-  - text: Your <code>Stack</code> class should have a <code>isEmpty</code> method.
-    testString: assert((function(){var test = new Stack(); return (typeof test.isEmpty === 'function')}()));
-  - text: Your <code>Stack</code> class should have a <code>clear</code> method.
-    testString: assert((function(){var test = new Stack(); return (typeof test.clear === 'function')}()));
-  - text: The <code>peek</code> method should return the top element of the stack
-    testString: assert((function(){var test = new Stack();  test.push('CS50'); return (test.peek() === 'CS50')}()));
-  - text: The <code>pop</code> method should remove and return the top element of the stack
-    testString: assert((function(){var test = new Stack(); test.push('CS50'); return (test.pop() === 'CS50');}()));
-  - text: The <code>isEmpty</code> method should return true if a stack does not contain any elements
-    testString: assert((function(){var test = new Stack(); return test.isEmpty()}()));
-  - text: The <code>clear</code> method should remove all element from the stack
-    testString: assert((function(){var test = new Stack();  test.push('CS50'); test.clear(); return (test.isEmpty())}()));
+Your `Stack` class should have a `push` method.
+
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    return typeof test.push === 'function';
+  })()
+);
 ```
 
-</section>
+Your `Stack` class should have a `pop` method.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    return typeof test.pop === 'function';
+  })()
+);
+```
 
-<div id='js-seed'>
+Your `Stack` class should have a `peek` method.
+
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    return typeof test.peek === 'function';
+  })()
+);
+```
+
+Your `Stack` class should have a `isEmpty` method.
+
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    return typeof test.isEmpty === 'function';
+  })()
+);
+```
+
+Your `Stack` class should have a `clear` method.
+
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    return typeof test.clear === 'function';
+  })()
+);
+```
+
+The `peek` method should return the top element of the stack
+
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    test.push('CS50');
+    return test.peek() === 'CS50';
+  })()
+);
+```
+
+The `pop` method should remove and return the top element of the stack
+
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    test.push('CS50');
+    return test.pop() === 'CS50';
+  })()
+);
+```
+
+The `isEmpty` method should return true if a stack does not contain any elements
+
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    return test.isEmpty();
+  })()
+);
+```
+
+The `clear` method should remove all element from the stack
+
+```js
+assert(
+  (function () {
+    var test = new Stack();
+    test.push('CS50');
+    test.clear();
+    return test.isEmpty();
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function Stack() {
@@ -64,11 +134,7 @@ function Stack() {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 class Stack {
@@ -95,5 +161,3 @@ class Stack {
   }
 }
 ```
-
-</section>

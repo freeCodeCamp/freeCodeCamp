@@ -5,9 +5,10 @@ challengeType: 0
 forumTopicId: 301455
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style sheet.
+
 Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. Consider "box-shadow":
 
 ```scss
@@ -19,8 +20,7 @@ div {
 }
 ```
 
-It's a lot of typing to re-write this rule for all the elements that have a <code>box-shadow</code>, or to change each value to test different effects.
-Mixins are like functions for CSS. Here is how to write one:
+It's a lot of typing to re-write this rule for all the elements that have a `box-shadow`, or to change each value to test different effects. Mixins are like functions for CSS. Here is how to write one:
 
 ```scss
 @mixin box-shadow($x, $y, $blur, $c){ 
@@ -31,8 +31,7 @@ Mixins are like functions for CSS. Here is how to write one:
 }
 ```
 
-The definition starts with <code>@mixin</code> followed by a custom name. The parameters (the <code>$x</code>, <code>$y</code>, <code>$blur</code>, and <code>$c</code> in the example above) are optional.
-Now any time a <code>box-shadow</code> rule is needed, only a single line calling the mixin replaces having to type all the vendor prefixes. A mixin is called with the <code>@include</code> directive:
+The definition starts with `@mixin` followed by a custom name. The parameters (the `$x`, `$y`, `$blur`, and `$c` in the example above) are optional. Now any time a `box-shadow` rule is needed, only a single line calling the mixin replaces having to type all the vendor prefixes. A mixin is called with the `@include` directive:
 
 ```scss
 div {
@@ -40,39 +39,58 @@ div {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Write a mixin for <code>border-radius</code> and give it a <code>$radius</code> parameter. It should use all the vendor prefixes from the example. Then use the <code>border-radius</code> mixin to give the <code>#awesome</code> element a border radius of 15px.
-</section>
+Write a mixin for `border-radius` and give it a `$radius` parameter. It should use all the vendor prefixes from the example. Then use the `border-radius` mixin to give the `#awesome` element a border radius of 15px.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should declare a mixin named <code>border-radius</code> which has a parameter named <code>$radius</code>.
-    testString: assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
-  - text: Your code should include the <code>-webkit-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
-    testString: assert(__helpers.removeWhiteSpace(code).match(/-webkit-border-radius:\$radius;/gi));
-  - text: Your code should include the <code>-moz-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
-    testString: assert(__helpers.removeWhiteSpace(code).match(/-moz-border-radius:\$radius;/gi));
-  - text: Your code should include the <code>-ms-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.
-    testString: assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
-  - text: Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.
-    testString: assert(__helpers.removeWhiteSpace(code).match(/border-radius:\$radius;/gi).length == 4);
-  - text: Your code should call the <code>border-radius mixin</code> using the <code>@include</code> keyword, setting it to 15px.
-    testString: assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
+Your code should declare a mixin named `border-radius` which has a parameter named `$radius`.
 
+```js
+assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
 ```
 
-</section>
+Your code should include the `-webkit-border-radius` vendor prefix that uses the `$radius` parameter.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  __helpers.removeWhiteSpace(code).match(/-webkit-border-radius:\$radius;/gi)
+);
+```
 
-<div id='html-seed'>
+Your code should include the `-moz-border-radius` vendor prefix that uses the `$radius` parameter.
+
+```js
+assert(
+  __helpers.removeWhiteSpace(code).match(/-moz-border-radius:\$radius;/gi)
+);
+```
+
+Your code should include the `-ms-border-radius` vendor prefix that uses the `$radius` parameter.
+
+```js
+assert(__helpers.removeWhiteSpace(code).match(/-ms-border-radius:\$radius;/gi));
+```
+
+Your code should include the general `border-radius` rule that uses the `$radius` parameter.
+
+```js
+assert(
+  __helpers.removeWhiteSpace(code).match(/border-radius:\$radius;/gi).length ==
+    4
+);
+```
+
+Your code should call the `border-radius mixin` using the `@include` keyword, setting it to 15px.
+
+```js
+assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style type='text/scss'>
@@ -88,17 +106,9 @@ tests:
 </style>
 
 <div id="awesome"></div>
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style type='text/scss'>
@@ -119,5 +129,3 @@ tests:
 
 <div id="awesome"></div>
 ```
-
-</section>

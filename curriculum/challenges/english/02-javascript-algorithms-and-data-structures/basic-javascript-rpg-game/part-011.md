@@ -4,55 +4,21 @@ title: Part 11
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can also declare variables with the `const` key word. Since `button1` is a constant that will never change, switch the `let` keyword that declares the variable to `const`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s+button1\s*/.test(code));
-
+```js
+assert(/const\s+button1\s*/.test(code));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory = ["stick"];
-
-let button1 = document.querySelector('#button1');
-  
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -118,25 +84,31 @@ let button1 = document.querySelector('#button1');
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick"];
 
-</section>
+let button1 = document.querySelector('#button1');
+  
+</script>
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -151,5 +123,3 @@ let inventory = ["stick"];
 const button1 = document.querySelector('#button1');
 </script>
 ```
-
-</section>

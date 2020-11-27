@@ -5,34 +5,31 @@ challengeType: 6
 forumTopicId: 301492
 ---
 
-## Description
-<section id='description'>
-D3 methods can add styles to the bar labels. The <code>fill</code> attribute sets the color of the text for a <code>text</code> node. The <code>style()</code> method sets CSS rules for other styles, such as "font-family" or "font-size".
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Set the <code>font-size</code> of the <code>text</code> elements to 25px, and the color of the text to red.
-</section>
+D3 methods can add styles to the bar labels. The `fill` attribute sets the color of the text for a `text` node. The `style()` method sets CSS rules for other styles, such as "font-family" or "font-size".
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The labels should all have a <code>fill</code> color of red.
-    testString: assert($('text').css('fill') == 'rgb(255, 0, 0)');
-  - text: The labels should all have a <code>font-size</code> of 25 pixels.
-    testString: assert($('text').css('font-size') == '25px');
+Set the `font-size` of the `text` elements to 25px, and the color of the text to red.
 
+# --hints--
+
+The labels should all have a `fill` color of red.
+
+```js
+assert($('text').css('fill') == 'rgb(255, 0, 0)');
 ```
 
-</section>
+The labels should all have a `font-size` of 25 pixels.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('text').css('font-size') == '25px');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -73,14 +70,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -116,7 +106,4 @@ tests:
        .attr("fill", "red")
   </script>
 </body>
-
 ```
-
-</section>

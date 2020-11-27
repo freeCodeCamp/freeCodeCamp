@@ -1,46 +1,45 @@
 ---
 id: bad87fee1348bd9aedc08826
 title: Target Elements by Class Using jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18316
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
-You see how we made all of your <code>button</code> elements bounce? We selected them with <code>$("button")</code>, then we added some CSS classes to them with <code>.addClass("animated bounce");</code>.
-You just used jQuery's <code>.addClass()</code> function, which allows you to add classes to elements.
-First, let's target your <code>div</code> elements with the class <code>well</code> by using the <code>$(".well")</code> selector.
-Note that, just like with CSS declarations, you type a <code>.</code> before the class's name.
-Then use jQuery's <code>.addClass()</code> function to add the classes <code>animated</code> and <code>shake</code>.
-For example, you could make all the elements with the class <code>text-primary</code> shake by adding the following to your <code>document ready function</code>:
-<code>$(".text-primary").addClass("animated shake");</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+You see how we made all of your `button` elements bounce? We selected them with `$("button")`, then we added some CSS classes to them with `.addClass("animated bounce");`.
 
-</section>
+You just used jQuery's `.addClass()` function, which allows you to add classes to elements.
 
-## Tests
-<section id='tests'>
+First, let's target your `div` elements with the class `well` by using the `$(".well")` selector.
 
-```yml
-tests:
-  - text: You should use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.
-    testString: assert($(".well").hasClass("animated") && $(".well").hasClass("shake"));
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(!code.match(/class\.\*animated/g));
+Note that, just like with CSS declarations, you type a `.` before the class's name.
 
+Then use jQuery's `.addClass()` function to add the classes `animated` and `shake`.
+
+For example, you could make all the elements with the class `text-primary` shake by adding the following to your `document ready function`:
+
+`$(".text-primary").addClass("animated shake");`
+
+# --hints--
+
+You should use the jQuery `addClass()` function to give the classes `animated` and `shake` to all your elements with the class `well`.
+
+```js
+assert($('.well').hasClass('animated') && $('.well').hasClass('shake'));
 ```
 
-</section>
+You should only use jQuery to add these classes to the element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!code.match(/class\.\*animated/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -74,14 +73,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -115,5 +107,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

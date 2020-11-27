@@ -1,12 +1,11 @@
 ---
 id: 5900f3b91000cf542c50fecc
-challengeType: 5
 title: 'Problem 77: Prime summations'
+challengeType: 5
 forumTopicId: 302190
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 It is possible to write ten as the sum of primes in exactly five different ways:
 
@@ -20,31 +19,23 @@ It is possible to write ten as the sum of primes in exactly five different ways:
 
 What is the first value which can be written as the sum of primes in over five thousand different ways?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`primeSummations()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>primeSummations()</code> should return a number.
-    testString: assert(typeof primeSummations() === 'number');
-  - text: <code>primeSummations()</code> should return 71.
-    testString: assert.strictEqual(primeSummations(), 71);
-
+```js
+assert(typeof primeSummations() === 'number');
 ```
 
-</section>
+`primeSummations()` should return 71.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(primeSummations(), 71);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function primeSummations() {
@@ -55,17 +46,8 @@ function primeSummations() {
 primeSummations();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

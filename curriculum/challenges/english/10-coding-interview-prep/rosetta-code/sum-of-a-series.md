@@ -5,58 +5,61 @@ challengeType: 5
 forumTopicId: 302333
 ---
 
-## Description
+# --description--
 
-<section id='description'>
+Compute the **n**<sup>th</sup> term of a [series](<https://en.wikipedia.org/wiki/Series (mathematics)>), i.e. the sum of the **n** first terms of the corresponding [sequence](https://en.wikipedia.org/wiki/sequence). Informally this value, or its limit when **n** tends to infinity, is also called the *sum of the series*, thus the title of this task. For this task, use: $S*n = \\sum*{k=1}^n \\frac{1}{k^2}$ and compute $S\_{1000}$ This approximates the [zeta function](<https://en.wikipedia.org/wiki/Riemann zeta function>) for S=2, whose exact value $\\zeta(2) = {\\pi^2\\over 6}$ is the solution of the [Basel problem](<https://en.wikipedia.org/wiki/Basel problem>).
 
-Compute the <b>n</b><sup>th</sup> term of a <a href="https://en.wikipedia.org/wiki/Series (mathematics)" target="_blank">series</a>, i.e. the sum of the <b>n</b> first terms of the corresponding <a href="https://en.wikipedia.org/wiki/sequence" target="_blank">sequence</a>.
-Informally this value, or its limit when <b>n</b> tends to infinity, is also called the <i>sum of the series</i>, thus the title of this task.
-For this task, use:
-<span style="margin-left: 2em;">$S_n = \sum_{k=1}^n \frac{1}{k^2}$</span>
-and compute $S_{1000}$
-This approximates the <a href="https://en.wikipedia.org/wiki/Riemann zeta function" target="_blank">zeta function</a> for S=2, whose exact value
-<span style="margin-left: 2em;">$\zeta(2) = {\pi^2\over 6}$</span>
-is the solution of the <a href="https://en.wikipedia.org/wiki/Basel problem" target="_blank">Basel problem</a>.
-
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Write a function that take $a$ and $b$ as parameters and returns the sum of $a^{th}$ to $b^{th}$ members of the sequence.
 
-</section>
+# --hints--
 
-## Tests
+`sum` should be a function.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>sum</code> should be a function.
-    testString: assert(typeof sum == 'function');
-  - text: <code>sum(1, 100)</code> should return a number.
-    testString: assert(typeof sum(1, 100) == 'number');
-  - text: <code>sum(1, 100)</code> should return <code>1.6349839001848923</code>.
-    testString: assert.equal(sum(1, 100), 1.6349839001848923);
-  - text: <code>sum(33, 46)</code> should return <code>0.009262256361481223</code>.
-    testString: assert.equal(sum(33, 46), 0.009262256361481223);
-  - text: <code>sum(21, 213)</code> should return <code>0.044086990748706555</code>.
-    testString: assert.equal(sum(21, 213), 0.044086990748706555);
-  - text: <code>sum(11, 111)</code> should return <code>0.08619778593108679</code>.
-    testString: assert.equal(sum(11, 111), 0.08619778593108679);
-  - text: <code>sum(1, 10)</code> should return <code>1.5497677311665408</code>.
-    testString: assert.equal(sum(1, 10), 1.5497677311665408);
+```js
+assert(typeof sum == 'function');
 ```
 
-</section>
+`sum(1, 100)` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof sum(1, 100) == 'number');
+```
 
-<section id='challengeSeed'>
+`sum(1, 100)` should return `1.6349839001848923`.
 
-<div id='js-seed'>
+```js
+assert.equal(sum(1, 100), 1.6349839001848923);
+```
+
+`sum(33, 46)` should return `0.009262256361481223`.
+
+```js
+assert.equal(sum(33, 46), 0.009262256361481223);
+```
+
+`sum(21, 213)` should return `0.044086990748706555`.
+
+```js
+assert.equal(sum(21, 213), 0.044086990748706555);
+```
+
+`sum(11, 111)` should return `0.08619778593108679`.
+
+```js
+assert.equal(sum(11, 111), 0.08619778593108679);
+```
+
+`sum(1, 10)` should return `1.5497677311665408`.
+
+```js
+assert.equal(sum(1, 10), 1.5497677311665408);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sum(a, b) {
@@ -64,12 +67,7 @@ function sum(a, b) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function sum(a, b) {
@@ -81,5 +79,3 @@ function sum(a, b) {
   return s;
 }
 ```
-
-</section>

@@ -4,31 +4,28 @@ title: Part 70
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give the `bb4-window` class a `width` of `18%`, a `height` of `90%`, and add your `--window-color4` variable as the `background-color`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb4Window = code.match(/\.bb4-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*18%\s*(;|})/g.test(bb4Window) && /height\s*:\s*90%\s*(;|})/g.test(bb4Window) && /background-color\s*:\s*var\(\s*--window-color4\s*\)\s*(;|})/g.test(bb4Window));
-
+```js
+const bb4Window = code.match(/\.bb4-window\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*18%\s*(;|})/g.test(bb4Window) &&
+    /height\s*:\s*90%\s*(;|})/g.test(bb4Window) &&
+    /background-color\s*:\s*var\(\s*--window-color4\s*\)\s*(;|})/g.test(
+      bb4Window
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -255,12 +252,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -492,5 +484,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

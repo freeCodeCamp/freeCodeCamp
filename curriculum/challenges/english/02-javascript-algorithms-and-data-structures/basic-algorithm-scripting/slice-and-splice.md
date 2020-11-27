@@ -5,45 +5,73 @@ challengeType: 5
 forumTopicId: 301148
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You are given two arrays and an index.
+
 Copy each element of the first array into the second array, in order.
-Begin inserting elements at index <code>n</code> of the second array.
+
+Begin inserting elements at index `n` of the second array.
+
 Return the resulting array. The input arrays should remain the same after the function runs.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`frankenSplice([1, 2, 3], [4, 5], 1)` should return `[4, 1, 2, 3, 5]`.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.
-    testString: assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5]);
-  - text: <code>frankenSplice([1, 2], ["a", "b"], 1)</code> should return <code>["a", 1, 2, "b"]</code>.
-    testString: assert.deepEqual(frankenSplice(testArr1, testArr2, 1), ["a", 1, 2, "b"]);
-  - text: <code>frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)</code> should return <code>["head", "shoulders", "claw", "tentacle", "knees", "toes"]</code>.
-    testString: assert.deepEqual(frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2), ["head", "shoulders", "claw", "tentacle", "knees", "toes"]);
-  - text: All elements from the first array should be added to the second array in their original order.
-    testString: assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);
-  - text: The first array should remain the same after the function runs.
-    testString: frankenSplice(testArr1, testArr2, 1); assert.deepEqual(testArr1, [1, 2]);
-  - text: The second array should remain the same after the function runs.
-    testString: frankenSplice(testArr1, testArr2, 1); assert.deepEqual(testArr2, ["a", "b"]);
-
+```js
+assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5]);
 ```
 
-</section>
+`frankenSplice([1, 2], ["a", "b"], 1)` should return `["a", 1, 2, "b"]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(frankenSplice(testArr1, testArr2, 1), ['a', 1, 2, 'b']);
+```
 
-<div id='js-seed'>
+`frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)` should return `["head", "shoulders", "claw", "tentacle", "knees", "toes"]`.
+
+```js
+assert.deepEqual(
+  frankenSplice(
+    ['claw', 'tentacle'],
+    ['head', 'shoulders', 'knees', 'toes'],
+    2
+  ),
+  ['head', 'shoulders', 'claw', 'tentacle', 'knees', 'toes']
+);
+```
+
+All elements from the first array should be added to the second array in their original order.
+
+```js
+assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);
+```
+
+The first array should remain the same after the function runs.
+
+```js
+frankenSplice(testArr1, testArr2, 1);
+assert.deepEqual(testArr1, [1, 2]);
+```
+
+The second array should remain the same after the function runs.
+
+```js
+frankenSplice(testArr1, testArr2, 1);
+assert.deepEqual(testArr2, ['a', 'b']);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+let testArr1 = [1, 2];
+let testArr2 = ["a", "b"];
+```
+
+## --seed-contents--
 
 ```js
 function frankenSplice(arr1, arr2, n) {
@@ -53,24 +81,7 @@ function frankenSplice(arr1, arr2, n) {
 frankenSplice([1, 2, 3], [4, 5, 6], 1);
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-let testArr1 = [1, 2];
-let testArr2 = ["a", "b"];
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function frankenSplice(arr1, arr2, n) {
@@ -83,7 +94,4 @@ function frankenSplice(arr1, arr2, n) {
 }
 
 frankenSplice([1, 2, 3], [4, 5], 1);
-
 ```
-
-</section>

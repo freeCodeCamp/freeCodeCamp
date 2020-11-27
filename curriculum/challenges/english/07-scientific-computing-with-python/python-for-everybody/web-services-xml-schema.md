@@ -5,27 +5,25 @@ challengeType: 11
 videoId: yWU9kTxW-nc
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What is XSD?
 
-```yml
-question:
-  text: |
-    What is XSD?
+## --answers--
 
-  answers:
-    - |
-        The W3C Schema specification for XML.
-    - |
-        The standard JSON schema from MOZ.
-    - |
-        Extensible Situational Driver
-  solution: 1
-```
+The W3C Schema specification for XML.
 
-</section>
+---
+
+The standard JSON schema from MOZ.
+
+---
+
+Extensible Situational Driver
+
+## --video-solution--
+
+1
+

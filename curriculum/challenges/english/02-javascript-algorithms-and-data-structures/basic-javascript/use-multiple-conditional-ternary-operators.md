@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cyWJBT4'
 forumTopicId: 301179
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In the previous challenge, you used a single conditional operator. You can also chain them together to check for multiple conditions.
+
 The following function uses if, else if, and else statements to check multiple conditions:
 
 ```js
@@ -43,35 +44,39 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-In the <code>checkSign</code> function, use multiple conditional operators - following the recommended format used in <code>findGreaterOrEqual</code> - to check if a number is positive, negative or zero. The function should return <code>"positive"</code>, <code>"negative"</code> or <code>"zero"</code>.
-</section>
+In the `checkSign` function, use multiple conditional operators - following the recommended format used in `findGreaterOrEqual` - to check if a number is positive, negative or zero. The function should return `"positive"`, `"negative"` or `"zero"`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>checkSign</code> should use multiple conditional operators
-    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
-  - text: <code>checkSign(10)</code> should return "positive". Note that capitalization matters
-    testString: assert(checkSign(10) === 'positive');
-  - text: <code>checkSign(-12)</code> should return "negative". Note that capitalization matters
-    testString: assert(checkSign(-12) === 'negative');
-  - text: <code>checkSign(0)</code> should return "zero". Note that capitalization matters
-    testString: assert(checkSign(0) === 'zero');
+`checkSign` should use multiple conditional operators
 
+```js
+assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
 ```
 
-</section>
+`checkSign(10)` should return "positive". Note that capitalization matters
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(checkSign(10) === 'positive');
+```
 
-<div id='js-seed'>
+`checkSign(-12)` should return "negative". Note that capitalization matters
+
+```js
+assert(checkSign(-12) === 'negative');
+```
+
+`checkSign(0)` should return "zero". Note that capitalization matters
+
+```js
+assert(checkSign(0) === 'zero');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function checkSign(num) {
@@ -81,19 +86,10 @@ function checkSign(num) {
 checkSign(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function checkSign(num) {
   return (num > 0) ? 'positive' : (num < 0) ? 'negative' : 'zero';
 }
 ```
-
-</section>

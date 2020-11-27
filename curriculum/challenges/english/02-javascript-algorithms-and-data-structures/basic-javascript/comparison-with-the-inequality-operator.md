@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cdBm9Sr'
 forumTopicId: 16787
 ---
 
-## Description
-<section id='description'>
-The inequality operator (<code>!=</code>) is the opposite of the equality operator. It means "Not Equal" and returns <code>false</code> where equality would return <code>true</code> and <em>vice versa</em>. Like the equality operator, the inequality operator will convert data types of values while comparing.
-<strong>Examples</strong>
+# --description--
+
+The inequality operator (`!=`) is the opposite of the equality operator. It means "Not Equal" and returns `false` where equality would return `true` and *vice versa*. Like the equality operator, the inequality operator will convert data types of values while comparing.
+
+**Examples**
 
 ```js
 1 !=  2     // true
@@ -19,39 +20,51 @@ The inequality operator (<code>!=</code>) is the opposite of the equality operat
 0 != false  // false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add the inequality operator <code>!=</code> in the <code>if</code> statement so that the function will return "Not Equal" when <code>val</code> is not equivalent to <code>99</code>
-</section>
+Add the inequality operator `!=` in the `if` statement so that the function will return "Not Equal" when `val` is not equivalent to `99`
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testNotEqual(99)</code> should return "Equal"
-    testString: assert(testNotEqual(99) === "Equal");
-  - text: <code>testNotEqual("99")</code> should return "Equal"
-    testString: assert(testNotEqual("99") === "Equal");
-  - text: <code>testNotEqual(12)</code> should return "Not Equal"
-    testString: assert(testNotEqual(12) === "Not Equal");
-  - text: <code>testNotEqual("12")</code> should return "Not Equal"
-    testString: assert(testNotEqual("12") === "Not Equal");
-  - text: <code>testNotEqual("bob")</code> should return "Not Equal"
-    testString: assert(testNotEqual("bob") === "Not Equal");
-  - text: You should use the <code>!=</code> operator
-    testString: assert(code.match(/(?!!==)!=/));
+`testNotEqual(99)` should return "Equal"
 
+```js
+assert(testNotEqual(99) === 'Equal');
 ```
 
-</section>
+`testNotEqual("99")` should return "Equal"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testNotEqual('99') === 'Equal');
+```
 
-<div id='js-seed'>
+`testNotEqual(12)` should return "Not Equal"
+
+```js
+assert(testNotEqual(12) === 'Not Equal');
+```
+
+`testNotEqual("12")` should return "Not Equal"
+
+```js
+assert(testNotEqual('12') === 'Not Equal');
+```
+
+`testNotEqual("bob")` should return "Not Equal"
+
+```js
+assert(testNotEqual('bob') === 'Not Equal');
+```
+
+You should use the `!=` operator
+
+```js
+assert(code.match(/(?!!==)!=/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -65,15 +78,7 @@ function testNotEqual(val) {
 testNotEqual(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testNotEqual(val) {
@@ -83,5 +88,3 @@ function testNotEqual(val) {
   return "Equal";
 }
 ```
-
-</section>

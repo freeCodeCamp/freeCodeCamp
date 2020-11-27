@@ -5,48 +5,43 @@ challengeType: 2
 forumTopicId: 301545
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 `Model.findOne()` behaves like `.find()`, but it returns only one document (not an array), even if there are multiple items. It is especially useful when searching by properties that you have declared as unique.
 
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Modify the `findOneByFood` function to find just one person which has a certain food in the person's favorites, using `Model.findOne() -> Person`. Use the function argument `food` as search key.
 
-</section>
+# --hints--
 
-## Tests
+Find one item should succeed
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: Find one item should succeed
-    testString: |
-      getUserInput => $.post(getUserInput('url') + '/_api/find-one-by-food', {name: 'Gary', age: 46, favoriteFoods: ['chicken salad']}).then(data => {
-        assert.equal(data.name, 'Gary', 'item.name is not what expected');
-        assert.deepEqual(data.favoriteFoods, ['chicken salad'], 'item.favoriteFoods is not what expected');
-        assert.equal(data.__v, 0, 'The item should be not previously edited');
-        }, xhr => { throw new Error(xhr.responseText); })
+```js
+(getUserInput) =>
+  $.post(getUserInput('url') + '/_api/find-one-by-food', {
+    name: 'Gary',
+    age: 46,
+    favoriteFoods: ['chicken salad']
+  }).then(
+    (data) => {
+      assert.equal(data.name, 'Gary', 'item.name is not what expected');
+      assert.deepEqual(
+        data.favoriteFoods,
+        ['chicken salad'],
+        'item.favoriteFoods is not what expected'
+      );
+      assert.equal(data.__v, 0, 'The item should be not previously edited');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -55,5 +50,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

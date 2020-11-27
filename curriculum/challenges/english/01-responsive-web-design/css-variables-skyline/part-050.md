@@ -4,31 +4,22 @@ title: Part 50
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Create a new variable in `:root` named `window-color2` with a value of `#8cd9b3`. This will be used as the secondary color for this building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--window-color2\s*:\s*#8cd9b3\s*(;|})/g.test(rootStyle));
-
+```js
+const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
+assert(/--window-color2\s*:\s*#8cd9b3\s*(;|})/g.test(rootStyle));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -207,12 +198,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -391,5 +377,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

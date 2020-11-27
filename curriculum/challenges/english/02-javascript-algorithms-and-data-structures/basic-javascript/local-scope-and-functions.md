@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cd62NhM'
 forumTopicId: 18227
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.
-Here is a function <code>myTest</code> with a local variable called <code>loc</code>.
+
+Here is a function `myTest` with a local variable called `loc`.
 
 ```js
 function myTest() {
@@ -20,40 +21,38 @@ myTest(); // logs "foo"
 console.log(loc); // loc is not defined
 ```
 
-<code>loc</code> is not defined outside of the function.
-</section>
+`loc` is not defined outside of the function.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
-The editor has two `console.log`s to help you see what is happening. Check the console as you code to see how it changes.  Declare a local variable `myVar` inside `myLocalScope` and run the tests.
+The editor has two `console.log`s to help you see what is happening. Check the console as you code to see how it changes. Declare a local variable `myVar` inside `myLocalScope` and run the tests.
 
 **Note:** The console will still have 'ReferenceError: myVar is not defined', but this will not cause the tests to fail.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The code should not contain a global <code>myVar</code> variable.
-    testString: |
-      function declared(){
-        myVar;
-      }
-      assert.throws(declared, ReferenceError);
-  - text: You should add a local <code>myVar</code> variable.
-    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar[\s\S]*}/.test(__helpers.removeWhiteSpace(code)));
+The code should not contain a global `myVar` variable.
 
-
+```js
+function declared() {
+  myVar;
+}
+assert.throws(declared, ReferenceError);
 ```
 
-</section>
+You should add a local `myVar` variable.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  /functionmyLocalScope\(\)\{.+(var|let|const)myVar[\s\S]*}/.test(
+    __helpers.removeWhiteSpace(code)
+  )
+);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function myLocalScope() {
@@ -67,16 +66,9 @@ myLocalScope();
 // Run and check the console
 // myVar is not defined outside of myLocalScope
 console.log('outside myLocalScope', myVar);
-
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function myLocalScope() {
@@ -90,7 +82,4 @@ myLocalScope();
 // Run and check the console
 // myVar is not defined outside of myLocalScope
 console.log('outside myLocalScope', myVar);
-
 ```
-
-</section>

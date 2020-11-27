@@ -4,38 +4,58 @@ title: Part 94
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `slice` method takes two arguments. It extracts characters from the string from the index specified by the first argument up to (but not including) the second argument. The index starts at 0.
 
 Use the `slice` method to log the first two letters of `value` to the console.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("console.log(value.slice(0,2))"));
-
+```js
+assert(code.replace(/\s/g, '').includes('console.log(value.slice(0,2))'));
 ```
 
+# --seed--
 
-</section>
+## --before-user-code--
 
-## Challenge Seed
-<section id='challengeSeed'>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spreadsheet</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: 50px repeat(10, 200px);
+      grid-template-rows: repeat(11, 30px);
+    }
+    .label {
+      background-color: lightgray;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <div></div>
+</div>
+```
 
-<div id='html-seed'>
+## --after-user-code--
+
+```html
+</body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -136,57 +156,7 @@ const update = event => {
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Spreadsheet</title>
-  <style>
-    #container {
-      display: grid;
-      grid-template-columns: 50px repeat(10, 200px);
-      grid-template-rows: repeat(11, 30px);
-    }
-    .label {
-      background-color: lightgray;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 30px;
-    }
-  </style>
-</head>
-<body>
-<div id="container">
-  <div></div>
-</div>
-```
-
-</div>
-
-
-### After Test
-<div id='html-teardown'>
-
-```html
-</body>
-</html>
-```
-
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -285,5 +255,3 @@ const update = event => {
 };
 </script>
 ```
-
-</section>

@@ -1,14 +1,13 @@
 ---
 id: 5900f3cc1000cf542c50fedf
-challengeType: 5
 title: 'Problem 96: Su Doku'
+challengeType: 5
 forumTopicId: 302213
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Su Doku (Japanese meaning <i>number place</i>) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
+Su Doku (Japanese meaning *number place*) is the name given to a popular puzzle concept. Its origin is unclear, but credit must be attributed to Leonhard Euler who invented a similar, and much more difficult, puzzle idea called Latin Squares. The objective of Su Doku puzzles, however, is to replace the blanks (or zeros) in a 9 by 9 grid in such that each row, column, and 3 by 3 box contains each of the digits 1 to 9. Below is an example of a typical starting puzzle grid and its solution grid.
 
 <div style="margin: auto; background-color: white; padding: 10px; width: 80%; text-align: center;">
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -106,33 +105,29 @@ The `puzzlesArr` array contains fifty different Su Doku puzzle strings ranging i
 
 By solving all fifty puzzles find the sum of the 3-digit numbers found in the top left corner of each solution grid; for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`suDoku(testPuzzles)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>suDoku(testPuzzles)</code> should return a number.
-    testString: assert(typeof suDoku(testPuzzles) === 'number');
-  - text: <code>suDoku(testPuzzles)</code> should return 1190.
-    testString: assert.strictEqual(suDoku(testPuzzles), 1190);
-  - text: <code>suDoku(puzzlesArr)</code> should return 24702.
-    testString: assert.strictEqual(suDoku(puzzlesArr), 24702);
-
+```js
+assert(typeof suDoku(testPuzzles) === 'number');
 ```
 
-</section>
+`suDoku(testPuzzles)` should return 1190.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(suDoku(testPuzzles), 1190);
+```
 
-<div id='js-seed'>
+`suDoku(puzzlesArr)` should return 24702.
+
+```js
+assert.strictEqual(suDoku(puzzlesArr), 24702);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function suDoku(arr) {
@@ -204,17 +199,8 @@ const puzzlesArr = [
 suDoku(testPuzzles);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

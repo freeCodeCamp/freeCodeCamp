@@ -4,29 +4,21 @@ title: Part 73
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Go ahead and add another `hr` element between the `main` element and the `footer` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -44,7 +36,7 @@ tests:
         <p class="established">Est. 2020</p>
       </header>
       <hr>
-      --fcc-editable-region--
+--fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -86,15 +78,11 @@ tests:
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
+--fcc-editable-region--
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -152,6 +140,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

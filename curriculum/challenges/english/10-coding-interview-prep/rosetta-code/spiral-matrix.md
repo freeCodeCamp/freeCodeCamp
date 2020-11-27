@@ -5,13 +5,9 @@ challengeType: 5
 forumTopicId: 302321
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-Produce a spiral array.
-A <i>spiral array</i> is a square arrangement of the first N<sup>2</sup> natural numbers, where the numbers increase sequentially as you go around the edges of the array spiraling inwards.
-For example, given <b>5</b>, produce this array:
+Produce a spiral array. A *spiral array* is a square arrangement of the first N<sup>2</sup> natural numbers, where the numbers increase sequentially as you go around the edges of the array spiraling inwards. For example, given **5**, produce this array:
 
 <pre>
 0  1  2  3  4
@@ -20,39 +16,57 @@ For example, given <b>5</b>, produce this array:
 13 22 21 20 7
 12 11 10  9 8
 </pre>
-</section>
 
-## Instructions
+# --hints--
 
-<section id='instructions'>
+`spiralArray` should be a function.
 
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>spiralArray</code> should be a function.
-    testString: assert(typeof spiralArray=='function');
-  - text: <code>spiralArray(3)</code> should return an array.
-    testString: assert(Array.isArray(spiralArray(3)));
-  - text: <code>spiralArray(3)</code> should return <code>[[0, 1, 2],[7, 8, 3],[6, 5, 4]]</code>.
-    testString: assert.deepEqual(spiralArray(3), [[0, 1, 2], [7, 8, 3], [6, 5, 4]]);
-  - text: <code>spiralArray(4)</code> should return <code>[[0, 1, 2, 3],[11, 12, 13, 4],[10, 15, 14, 5],[9, 8, 7, 6]]</code>.
-    testString: assert.deepEqual(spiralArray(4), [[0, 1, 2, 3], [11, 12, 13, 4], [10, 15, 14, 5], [9, 8, 7, 6]]);
-  - text: <code>spiralArray(5)</code> should return <code>[[0, 1, 2, 3, 4],[15, 16, 17, 18, 5],[14, 23, 24, 19, 6],[13, 22, 21, 20, 7],[12, 11, 10, 9, 8]]</code>.
-    testString: assert.deepEqual(spiralArray(5), [[0, 1, 2, 3, 4], [15, 16, 17, 18, 5], [14, 23, 24, 19, 6], [13, 22, 21, 20, 7], [12, 11, 10, 9, 8]]);
+```js
+assert(typeof spiralArray == 'function');
 ```
 
-</section>
+`spiralArray(3)` should return an array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(spiralArray(3)));
+```
 
-<section id='challengeSeed'>
+`spiralArray(3)` should return `[[0, 1, 2],[7, 8, 3],[6, 5, 4]]`.
 
-<div id='js-seed'>
+```js
+assert.deepEqual(spiralArray(3), [
+  [0, 1, 2],
+  [7, 8, 3],
+  [6, 5, 4]
+]);
+```
+
+`spiralArray(4)` should return `[[0, 1, 2, 3],[11, 12, 13, 4],[10, 15, 14, 5],[9, 8, 7, 6]]`.
+
+```js
+assert.deepEqual(spiralArray(4), [
+  [0, 1, 2, 3],
+  [11, 12, 13, 4],
+  [10, 15, 14, 5],
+  [9, 8, 7, 6]
+]);
+```
+
+`spiralArray(5)` should return `[[0, 1, 2, 3, 4],[15, 16, 17, 18, 5],[14, 23, 24, 19, 6],[13, 22, 21, 20, 7],[12, 11, 10, 9, 8]]`.
+
+```js
+assert.deepEqual(spiralArray(5), [
+  [0, 1, 2, 3, 4],
+  [15, 16, 17, 18, 5],
+  [14, 23, 24, 19, 6],
+  [13, 22, 21, 20, 7],
+  [12, 11, 10, 9, 8]
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function spiralArray(n) {
@@ -60,12 +74,7 @@ function spiralArray(n) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function spiralArray(n) {
@@ -97,5 +106,3 @@ function spiralArray(n) {
   return arr;
 }
 ```
-
-</section>

@@ -1,14 +1,13 @@
 ---
 id: 5900f3bd1000cf542c50fed0
-challengeType: 5
 title: 'Problem 81: Path sum: two ways'
+challengeType: 5
 forumTopicId: 302195
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by <strong>only moving to the right and down</strong>, is indicated in bold red and is equal to 2427.
+In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by **only moving to the right and down**, is indicated in bold red and is equal to 2427.
 
 <div style='text-align: center;'>
   $\begin{pmatrix}
@@ -22,58 +21,29 @@ In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom
 
 Find the minimal path sum from the top left to the bottom right by only moving right and down in `matrix`, a 2D array containing an 80 by 80 matrix.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>pathSumTwoWays(testMatrix)</code> should return a number.
-    testString: assert(typeof pathSumTwoWays(testMatrix) === 'number');
-  - text: <code>pathSumTwoWays(testMatrix)</code> should return 2427.
-    testString: assert.strictEqual(pathSumTwoWays(testMatrix), 2427);
-  - text: <code>pathSumTwoWays(matrix)</code> should return 427337.
-    testString: assert.strictEqual(pathSumTwoWays(matrix), 427337);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`pathSumTwoWays(testMatrix)` should return a number.
 
 ```js
-function pathSumTwoWays(arr) {
-
-  return true;
-}
-
-// Only change code above this line
-
-const testMatrix = [
-  [131, 673, 234, 103, 18],
-  [201, 96, 342, 965, 150],
-  [630, 803, 746, 422, 111],
-  [537, 699, 497, 121, 956],
-  [805, 732, 524, 37, 331]
-];
-
-pathSumTwoWays(testMatrix);
+assert(typeof pathSumTwoWays(testMatrix) === 'number');
 ```
 
-</div>
+`pathSumTwoWays(testMatrix)` should return 2427.
 
+```js
+assert.strictEqual(pathSumTwoWays(testMatrix), 2427);
+```
 
-### Before Test
-<div id='js-setup'>
+`pathSumTwoWays(matrix)` should return 427337.
+
+```js
+assert.strictEqual(pathSumTwoWays(matrix), 427337);
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 const matrix = [
@@ -160,17 +130,29 @@ const matrix = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
+```js
+function pathSumTwoWays(arr) {
 
+  return true;
+}
 
-</section>
+// Only change code above this line
 
-## Solution
-<section id='solution'>
+const testMatrix = [
+  [131, 673, 234, 103, 18],
+  [201, 96, 342, 965, 150],
+  [630, 803, 746, 422, 111],
+  [537, 699, 497, 121, 956],
+  [805, 732, 524, 37, 331]
+];
+
+pathSumTwoWays(testMatrix);
+```
+
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

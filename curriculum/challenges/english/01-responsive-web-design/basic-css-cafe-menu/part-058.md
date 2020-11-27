@@ -4,31 +4,23 @@ title: Part 58
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
 
 Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -85,10 +77,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -123,6 +111,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

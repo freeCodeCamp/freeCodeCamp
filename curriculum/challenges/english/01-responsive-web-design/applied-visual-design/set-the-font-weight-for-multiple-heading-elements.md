@@ -6,43 +6,57 @@ videoUrl: 'https://scrimba.com/c/crVWRHq'
 forumTopicId: 301069
 ---
 
-## Description
-<section id='description'>
-You set the <code>font-size</code> of each heading tag in the last challenge, here you'll adjust the <code>font-weight</code>.
-The <code>font-weight</code> property sets how thick or thin characters are in a section of text.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+You set the `font-size` of each heading tag in the last challenge, here you'll adjust the `font-weight`.
+
+The `font-weight` property sets how thick or thin characters are in a section of text.
+
+# --instructions--
+
 <ul><li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li><li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li><li>Set the <code>font-weight</code> of the <code>h3</code> tag to 500.</li><li>Set the <code>font-weight</code> of the <code>h4</code> tag to 400.</li><li>Set the <code>font-weight</code> of the <code>h5</code> tag to 300.</li><li>Set the <code>font-weight</code> of the <code>h6</code> tag to 200.</li></ul>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.
-    testString: assert($('h1').css('font-weight') == '800');
-  - text: Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.
-    testString: assert($('h2').css('font-weight') == '600');
-  - text: Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.
-    testString: assert($('h3').css('font-weight') == '500');
-  - text: Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.
-    testString: assert($('h4').css('font-weight') == '400');
-  - text: Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.
-    testString: assert($('h5').css('font-weight') == '300');
-  - text: Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.
-    testString: assert($('h6').css('font-weight') == '200');
+Your code should set the `font-weight` property for the `h1` tag to 800.
 
+```js
+assert($('h1').css('font-weight') == '800');
 ```
 
-</section>
+Your code should set the `font-weight` property for the `h2` tag to 600.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').css('font-weight') == '600');
+```
 
-<div id='html-seed'>
+Your code should set the `font-weight` property for the `h3` tag to 500.
+
+```js
+assert($('h3').css('font-weight') == '500');
+```
+
+Your code should set the `font-weight` property for the `h4` tag to 400.
+
+```js
+assert($('h4').css('font-weight') == '400');
+```
+
+Your code should set the `font-weight` property for the `h5` tag to 300.
+
+```js
+assert($('h5').css('font-weight') == '300');
+```
+
+Your code should set the `font-weight` property for the `h6` tag to 200.
+
+```js
+assert($('h6').css('font-weight') == '200');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -79,14 +93,7 @@ tests:
 <h6>This is h6 text</h6>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -122,5 +129,3 @@ tests:
 <h5>This is h5 text</h5>
 <h6>This is h6 text</h6>
 ```
-
-</section>

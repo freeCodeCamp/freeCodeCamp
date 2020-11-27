@@ -6,33 +6,27 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/cgz3QS7'
 forumTopicId: 301105
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 This section uses alternating challenge styles to show how to use CSS to position elements in a flexible way. First, a challenge will explain theory, then a practical challenge using a simple tweet component will apply the flexbox concept.
-Placing the CSS property <code>display: flex;</code> on an element allows you to use other flex properties to build a responsive page.
-</section>
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>display</code> to <code>#box-container</code> and set its value to <code>flex</code>.
-</section>
+Placing the CSS property `display: flex;` on an element allows you to use other flex properties to build a responsive page.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>#box-container</code> should have the <code>display</code> property set to a value of <code>flex</code>.
-    testString: assert($('#box-container').css('display') == 'flex');
+Add the CSS property `display` to `#box-container` and set its value to `flex`.
 
+# --hints--
+
+`#box-container` should have the `display` property set to a value of `flex`.
+
+```js
+assert($('#box-container').css('display') == 'flex');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -59,14 +53,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -92,5 +79,3 @@ tests:
   <div id="box-2"></div>
 </div>
 ```
-
-</section>

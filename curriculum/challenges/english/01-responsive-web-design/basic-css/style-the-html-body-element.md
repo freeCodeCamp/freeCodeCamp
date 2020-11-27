@@ -6,16 +6,17 @@ videoUrl: 'https://scrimba.com/c/cB77PHW'
 forumTopicId: 18313
 ---
 
-## Description
-<section id='description'>
-Now let's start fresh and talk about CSS inheritance.
-Every HTML page has a <code>body</code> element.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.
-We can do this by adding the following to our <code>style</code> element:
+Now let's start fresh and talk about CSS inheritance.
+
+Every HTML page has a `body` element.
+
+# --instructions--
+
+We can prove that the `body` element exists here by giving it a `background-color` of black.
+
+We can do this by adding the following to our `style` element:
 
 ```css
 body {
@@ -23,28 +24,33 @@ body {
 }
 ```
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `body` element should have the `background-color` of black.
 
-```yml
-tests:
-  - text: Your <code>body</code> element should have the <code>background-color</code> of black.
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
-  - text: Your CSS rule should be properly formatted with both opening and closing curly brackets.
-    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
-  - text: Your CSS rule should end with a semi-colon.
-    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
-
+```js
+assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-</section>
+Your CSS rule should be properly formatted with both opening and closing curly brackets.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i)
+);
+```
 
-<div id='html-seed'>
+Your CSS rule should end with a semi-colon.
+
+```js
+assert(
+  code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -52,14 +58,7 @@ tests:
 </style>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -68,5 +67,3 @@ body {
 }
 </style>
 ```
-
-</section>

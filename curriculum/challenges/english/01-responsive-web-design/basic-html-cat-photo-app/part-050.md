@@ -4,46 +4,51 @@ title: Part 50
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `legend` element acts as a caption for the content in the `fieldset` element. It gives users context about what they should enter into that part of the form.
 
 Add a `legend` element with the text `Is your cat an indoor or outdoor cat?` above both of the radio buttons.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `legend` element should have an opening tag. Opening tags have the following syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: "Your `legend` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('legend') );
-  - text: Your `legend` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/legend\>/) );
-  - text: Your `legend` element should be the first element right below `fieldset` element's opening tag and before the first radio button's opening `label` tag. It is not in the correct position.
-    testString: |
-      const fieldsetElem = document.querySelector('fieldset');
-      const fieldsetElemChildren = fieldsetElem.children;
-      assert(
-        fieldsetElem.firstElementChild.nodeName === 'LEGEND' &&
-        fieldsetElemChildren[1].nodeName === 'LABEL' &&
-        fieldsetElemChildren[1].children[0].nodeName === 'INPUT' &&
-        fieldsetElemChildren[1].children[0].id === 'indoor'
-      );
-  - text: "Your `legend` element's text should be `Is your cat an indoor or outdoor cat?`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags."
-    testString: |
-      const extraSpacesRemoved = document.querySelector('legend').innerText.replace(/\s+/g, ' ');
-      assert( extraSpacesRemoved.match(/Is your cat an indoor or outdoor cat\??$/i) );
-
+```js
+assert(document.querySelector('legend'));
 ```
 
-</section>
+Your `legend` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/<\/legend\>/));
+```
+
+Your `legend` element should be the first element right below `fieldset` element's opening tag and before the first radio button's opening `label` tag. It is not in the correct position.
+
+```js
+const fieldsetElem = document.querySelector('fieldset');
+const fieldsetElemChildren = fieldsetElem.children;
+assert(
+  fieldsetElem.firstElementChild.nodeName === 'LEGEND' &&
+    fieldsetElemChildren[1].nodeName === 'LABEL' &&
+    fieldsetElemChildren[1].children[0].nodeName === 'INPUT' &&
+    fieldsetElemChildren[1].children[0].id === 'indoor'
+);
+```
+
+Your `legend` element's text should be `Is your cat an indoor or outdoor cat?`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags.
+
+```js
+const extraSpacesRemoved = document
+  .querySelector('legend')
+  .innerText.replace(/\s+/g, ' ');
+assert(extraSpacesRemoved.match(/Is your cat an indoor or outdoor cat\??$/i));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -83,10 +88,10 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
-            --fcc-editable-region--
+--fcc-editable-region--
             <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
-            --fcc-editable-region--
+--fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
@@ -97,5 +102,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

@@ -1,12 +1,11 @@
 ---
 id: 5900f39e1000cf542c50feb1
-challengeType: 5
 title: 'Problem 50: Consecutive prime sum'
+challengeType: 5
 forumTopicId: 302161
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The prime 41, can be written as the sum of six consecutive primes:
 
@@ -18,33 +17,29 @@ The longest sum of consecutive primes below one-thousand that adds to a prime, c
 
 Which prime, below one-million, can be written as the sum of the most consecutive primes?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`consecutivePrimeSum(1000)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>consecutivePrimeSum(1000)</code> should return a number.
-    testString: assert(typeof consecutivePrimeSum(1000) === 'number');
-  - text: <code>consecutivePrimeSum(1000)</code> should return 953.
-    testString: assert.strictEqual(consecutivePrimeSum(1000), 953);
-  - text: <code>consecutivePrimeSum(1000000)</code> should return 997651.
-    testString: assert.strictEqual(consecutivePrimeSum(1000000), 997651);
-
+```js
+assert(typeof consecutivePrimeSum(1000) === 'number');
 ```
 
-</section>
+`consecutivePrimeSum(1000)` should return 953.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(consecutivePrimeSum(1000), 953);
+```
 
-<div id='js-seed'>
+`consecutivePrimeSum(1000000)` should return 997651.
+
+```js
+assert.strictEqual(consecutivePrimeSum(1000000), 997651);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function consecutivePrimeSum(limit) {
@@ -55,15 +50,7 @@ function consecutivePrimeSum(limit) {
 consecutivePrimeSum(1000000);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function consecutivePrimeSum(limit) {
@@ -105,5 +92,3 @@ function consecutivePrimeSum(limit) {
   }
 }
 ```
-
-</section>

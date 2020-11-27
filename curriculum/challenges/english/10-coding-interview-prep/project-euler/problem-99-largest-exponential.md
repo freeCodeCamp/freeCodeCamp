@@ -1,14 +1,13 @@
 ---
 id: 5900f3d01000cf542c50fee2
-challengeType: 5
 title: 'Problem 99: Largest exponential'
+challengeType: 5
 forumTopicId: 302216
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Comparing two numbers written in index form like 2<sup>11</sup> and 3<sup>7</sup> is not difficult, as any calculator would confirm that 2<sup>11</sup> = 2048 < 3<sup>7</sup> = 2187.
+Comparing two numbers written in index form like 2<sup>11</sup> and 3<sup>7</sup> is not difficult, as any calculator would confirm that 2<sup>11</sup> = 2048 &lt; 3<sup>7</sup> = 2187.
 
 However, confirming that 632382<sup>518061</sup> > 519432<sup>525806</sup> would be much more difficult, as both numbers contain over three million digits.
 
@@ -16,31 +15,23 @@ Using the included 2D array of base/exponent pairs, determine which pair has the
 
 **Note:** The first array in `baseExp` represent the numbers in the example given above.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`largestExponential()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>largestExponential()</code> should return a number.
-    testString: assert(typeof largestExponential() === 'number');
-  - text: <code>largestExponential()</code> should return 709.
-    testString: assert.strictEqual(largestExponential(), 709);
-
+```js
+assert(typeof largestExponential() === 'number');
 ```
 
-</section>
+`largestExponential()` should return 709.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(largestExponential(), 709);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function largestExponential() {
@@ -57,17 +48,8 @@ const baseExp = [
 largestExponential();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

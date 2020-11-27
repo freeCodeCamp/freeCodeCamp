@@ -1,42 +1,33 @@
 ---
 id: 5900f3aa1000cf542c50febd
-challengeType: 5
 title: 'Problem 62: Cubic permutations'
+challengeType: 5
 forumTopicId: 302174
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The cube, 41063625 (345<sup>3</sup>), can be permuted to produce two other cubes: 56623104 (384<sup>3</sup>) and 66430125 (405<sup>3</sup>). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
 
 Find the smallest cube for which exactly five permutations of its digits are cube.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`cubicPermutations()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>cubicPermutations()</code> should return a number.
-    testString: assert(typeof cubicPermutations() === 'number');
-  - text: <code>cubicPermutations()</code> should return 127035954683.
-    testString: assert.strictEqual(cubicPermutations(), 127035954683);
-
+```js
+assert(typeof cubicPermutations() === 'number');
 ```
 
-</section>
+`cubicPermutations()` should return 127035954683.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(cubicPermutations(), 127035954683);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function cubicPermutations() {
@@ -47,17 +38,8 @@ function cubicPermutations() {
 cubicPermutations();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

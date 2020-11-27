@@ -5,11 +5,13 @@ challengeType: 1
 forumTopicId: 301365
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want a specific number of matches.
+
 To specify a certain number of patterns, just have that one number between the curly brackets.
-For example, to match only the word <code>"hah"</code> with the letter <code>a</code> <code>3</code> times, your regex would be <code>/ha{3}h/</code>.
+
+For example, to match only the word `"hah"` with the letter `a` `3` times, your regex would be `/ha{3}h/`.
 
 ```js
 let A4 = "haaaah";
@@ -21,39 +23,56 @@ multipleHA.test(A3); // Returns true
 multipleHA.test(A100); // Returns false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Change the regex <code>timRegex</code> to match the word <code>"Timber"</code> only when it has four letter <code>m</code>'s.
-</section>
+Change the regex `timRegex` to match the word `"Timber"` only when it has four letter `m`'s.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your regex should use curly brackets.
-    testString: assert(timRegex.source.match(/{.*?}/).length > 0);
-  - text: Your regex should not match <code>"Timber"</code>
-    testString: timRegex.lastIndex = 0; assert(!timRegex.test("Timber"));
-  - text: Your regex should not match <code>"Timmber"</code>
-    testString: timRegex.lastIndex = 0; assert(!timRegex.test("Timmber"));
-  - text: Your regex should not match <code>"Timmmber"</code>
-    testString: timRegex.lastIndex = 0; assert(!timRegex.test("Timmmber"));
-  - text: Your regex should match <code>"Timmmmber"</code>
-    testString: timRegex.lastIndex = 0; assert(timRegex.test("Timmmmber"));
-  - text: Your regex should not match <code>"Timber"</code> with 30 <code>m</code>'s in it.
-    testString: timRegex.lastIndex = 0; assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"));
+Your regex should use curly brackets.
 
+```js
+assert(timRegex.source.match(/{.*?}/).length > 0);
 ```
 
-</section>
+Your regex should not match `"Timber"`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+timRegex.lastIndex = 0;
+assert(!timRegex.test('Timber'));
+```
 
-<div id='js-seed'>
+Your regex should not match `"Timmber"`
+
+```js
+timRegex.lastIndex = 0;
+assert(!timRegex.test('Timmber'));
+```
+
+Your regex should not match `"Timmmber"`
+
+```js
+timRegex.lastIndex = 0;
+assert(!timRegex.test('Timmmber'));
+```
+
+Your regex should match `"Timmmmber"`
+
+```js
+timRegex.lastIndex = 0;
+assert(timRegex.test('Timmmmber'));
+```
+
+Your regex should not match `"Timber"` with 30 `m`'s in it.
+
+```js
+timRegex.lastIndex = 0;
+assert(!timRegex.test('Ti' + 'm'.repeat(30) + 'ber'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let timStr = "Timmmmber";
@@ -61,19 +80,10 @@ let timRegex = /change/; // Change this line
 let result = timRegex.test(timStr);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let timStr = "Timmmmber";
 let timRegex = /Tim{4}ber/; // Change this line
 let result = timRegex.test(timStr);
 ```
-
-</section>

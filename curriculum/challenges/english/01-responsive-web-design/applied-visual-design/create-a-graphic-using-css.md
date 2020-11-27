@@ -6,39 +6,45 @@ videoUrl: 'https://scrimba.com/c/cEDWPs6'
 forumTopicId: 301048
 ---
 
-## Description
-<section id='description'>
-By manipulating different selectors and properties, you can make interesting shapes. One of the easier ones to try is a crescent moon shape. For this challenge you need to work with the <code>box-shadow</code> property that sets the shadow of an element, along with the <code>border-radius</code> property that controls the roundness of the element's corners.
+# --description--
+
+By manipulating different selectors and properties, you can make interesting shapes. One of the easier ones to try is a crescent moon shape. For this challenge you need to work with the `box-shadow` property that sets the shadow of an element, along with the `border-radius` property that controls the roundness of the element's corners.
+
 You will create a round, transparent object with a crisp shadow that is slightly offset to the side - the shadow is actually going to be the moon shape you see.
-In order to create a round object, the <code>border-radius</code> property should be set to a value of 50%.
-You may recall from an earlier challenge that the <code>box-shadow</code> property takes values for <code>offset-x</code>, <code>offset-y</code>, <code>blur-radius</code>, <code>spread-radius</code> and a color value in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.
-</section>
 
-## Instructions
-<section id='instructions'>
-Manipulate the square element in the editor to create the moon shape. First, change the <code>background-color</code> to transparent, then set the <code>border-radius</code> property to 50% to make the circular shape. Finally, change the <code>box-shadow</code> property to set the <code>offset-x</code> to 25px, the <code>offset-y</code> to 10px, <code>blur-radius</code> to 0, <code>spread-radius</code> to 0, and color to blue.
-</section>
+In order to create a round object, the `border-radius` property should be set to a value of 50%.
 
-## Tests
-<section id='tests'>
+You may recall from an earlier challenge that the `box-shadow` property takes values for `offset-x`, `offset-y`, `blur-radius`, `spread-radius` and a color value in that order. The `blur-radius` and `spread-radius` values are optional.
 
-```yml
-tests:
-  - text: The value of the <code>background-color</code> property should be set to <code>transparent</code>.
-    testString: assert(code.match(/background-color:\s*?transparent;/gi));
-  - text: The value of the <code>border-radius</code> property should be set to <code>50%</code>.
-    testString: assert(code.match(/border-radius:\s*?50%;/gi));
-  - text: The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.
-    testString: assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi));
+# --instructions--
 
+Manipulate the square element in the editor to create the moon shape. First, change the `background-color` to transparent, then set the `border-radius` property to 50% to make the circular shape. Finally, change the `box-shadow` property to set the `offset-x` to 25px, the `offset-y` to 10px, `blur-radius` to 0, `spread-radius` to 0, and color to blue.
+
+# --hints--
+
+The value of the `background-color` property should be set to `transparent`.
+
+```js
+assert(code.match(/background-color:\s*?transparent;/gi));
 ```
 
-</section>
+The value of the `border-radius` property should be set to `50%`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/border-radius:\s*?50%;/gi));
+```
 
-<div id='html-seed'>
+The value of the `box-shadow` property should be set to 25px for `offset-x`, 10px for `offset-y`, 0 for `blur-radius`, 0 for `spread-radius`, and finally blue for the color.
+
+```js
+assert(
+  code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -60,15 +66,7 @@ tests:
 <div class="center"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>
@@ -87,7 +85,4 @@ tests:
   }
 </style>
 <div class="center"></div>
-
 ```
-
-</section>

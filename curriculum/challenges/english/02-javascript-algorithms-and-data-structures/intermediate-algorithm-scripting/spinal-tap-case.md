@@ -5,40 +5,51 @@ challengeType: 5
 forumTopicId: 16078
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`spinalCase("This Is Spinal Tap")` should return `"this-is-spinal-tap"`.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>spinalCase("This Is Spinal Tap")</code> should return <code>"this-is-spinal-tap"</code>.
-    testString: assert.deepEqual(spinalCase("This Is Spinal Tap"), "this-is-spinal-tap");
-  - text: <code>spinalCase("thisIsSpinal<wbr>Tap")</code> should return <code>"this-is-spinal-tap"</code>.
-    testString: assert.strictEqual(spinalCase('thisIsSpinalTap'), "this-is-spinal-tap");
-  - text: <code>spinalCase("The_Andy_<wbr>Griffith_Show")</code> should return <code>"the-andy-griffith-show"</code>.
-    testString: assert.strictEqual(spinalCase("The_Andy_Griffith_Show"), "the-andy-griffith-show");
-  - text: <code>spinalCase("Teletubbies say Eh-oh")</code> should return <code>"teletubbies-say-eh-oh"</code>.
-    testString: assert.strictEqual(spinalCase("Teletubbies say Eh-oh"), "teletubbies-say-eh-oh");
-  - text: <code>spinalCase("AllThe-small Things")</code> should return <code>"all-the-small-things"</code>.
-    testString: assert.strictEqual(spinalCase("AllThe-small Things"), "all-the-small-things");
-
+```js
+assert.deepEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap');
 ```
 
-</section>
+`spinalCase("thisIsSpinalTap")` should return `"this-is-spinal-tap"`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap');
+```
 
-<div id='js-seed'>
+`spinalCase("The_Andy_Griffith_Show")` should return `"the-andy-griffith-show"`.
+
+```js
+assert.strictEqual(
+  spinalCase('The_Andy_Griffith_Show'),
+  'the-andy-griffith-show'
+);
+```
+
+`spinalCase("Teletubbies say Eh-oh")` should return `"teletubbies-say-eh-oh"`.
+
+```js
+assert.strictEqual(
+  spinalCase('Teletubbies say Eh-oh'),
+  'teletubbies-say-eh-oh'
+);
+```
+
+`spinalCase("AllThe-small Things")` should return `"all-the-small-things"`.
+
+```js
+assert.strictEqual(spinalCase('AllThe-small Things'), 'all-the-small-things');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function spinalCase(str) {
@@ -48,15 +59,7 @@ function spinalCase(str) {
 spinalCase('This Is Spinal Tap');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function spinalCase(str) {
@@ -64,5 +67,3 @@ function spinalCase(str) {
   return str.toLowerCase().replace(/\ |\_/g, '-');
 }
 ```
-
-</section>

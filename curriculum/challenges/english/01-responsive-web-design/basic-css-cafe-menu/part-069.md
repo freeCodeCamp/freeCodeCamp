@@ -4,32 +4,23 @@ title: Part 69
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The default properties of an `hr` element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the `height` property.
 
 Change the height the `hr` element to be `3px`.
 
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -93,10 +84,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -151,6 +138,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

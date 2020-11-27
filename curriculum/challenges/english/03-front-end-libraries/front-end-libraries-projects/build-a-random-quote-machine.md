@@ -5,52 +5,49 @@ challengeType: 3
 forumTopicId: 301374
 ---
 
-## Description
-<section id='description'>
-<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/qRZeGZ' target='_blank'>https://codepen.io/freeCodeCamp/full/qRZeGZ</a>.
-Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.
+# --description--
+
+**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/qRZeGZ>.
+
+Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
+
 You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
-<strong>User Story #1:</strong> I can see a wrapper element with a corresponding <code>id="quote-box"</code>.
-<strong>User Story #2:</strong> Within <code>#quote-box</code>, I can see an element with a corresponding <code>id="text"</code>.
-<strong>User Story #3:</strong> Within <code>#quote-box</code>, I can see an element with a corresponding <code>id="author"</code>.
-<strong>User Story #4:</strong> Within <code>#quote-box</code>, I can see a clickable element with a corresponding <code>id="new-quote"</code>.
-<strong>User Story #5:</strong> Within <code>#quote-box</code>, I can see a clickable <code>a</code> element with a corresponding <code>id="tweet-quote"</code>.
-<strong>User Story #6:</strong> On first load, my quote machine displays a random quote in the element with <code>id="text"</code>.
-<strong>User Story #7:</strong> On first load, my quote machine displays the random quote's author in the element with <code>id="author"</code>.
-<strong>User Story #8:</strong> When the <code>#new-quote</code> button is clicked, my quote machine should fetch a new quote and display it in the <code>#text</code> element.
-<strong>User Story #9:</strong> My quote machine should fetch the new quote's author when the <code>#new-quote</code> button is clicked and display it in the <code>#author</code> element.
-<strong>User Story #10:</strong> I can tweet the current quote by clicking on the <code>#tweet-quote</code><code>a</code> element. This <code>a</code> element should include the <code>"twitter.com/intent/tweet"</code> path in its <code>href</code> attribute to tweet the current quote.
-<strong>User Story #11:</strong> The <code>#quote-box</code> wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
-You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+
+**User Story #1:** I can see a wrapper element with a corresponding `id="quote-box"`.
+
+**User Story #2:** Within `#quote-box`, I can see an element with a corresponding `id="text"`.
+
+**User Story #3:** Within `#quote-box`, I can see an element with a corresponding `id="author"`.
+
+**User Story #4:** Within `#quote-box`, I can see a clickable element with a corresponding `id="new-quote"`.
+
+**User Story #5:** Within `#quote-box`, I can see a clickable `a` element with a corresponding `id="tweet-quote"`.
+
+**User Story #6:** On first load, my quote machine displays a random quote in the element with `id="text"`.
+
+**User Story #7:** On first load, my quote machine displays the random quote's author in the element with `id="author"`.
+
+**User Story #8:** When the `#new-quote` button is clicked, my quote machine should fetch a new quote and display it in the `#text` element.
+
+**User Story #9:** My quote machine should fetch the new quote's author when the `#new-quote` button is clicked and display it in the `#author` element.
+
+**User Story #10:** I can tweet the current quote by clicking on the ```#tweet-quote``a``` element. This `a` element should include the `"twitter.com/intent/tweet"` path in its `href` attribute to tweet the current quote.
+
+**User Story #11:** The `#quote-box` wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
+
+You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
+
 Once you're done, submit the URL to your working project with all its tests passing.
-<strong>Note:</strong> Twitter does not allow links to be loaded in an iframe. Try using the <code>target="_blank"</code> or <code>target="_top"</code> attribute on the <code>#tweet-quote</code> element if your tweet won't load. <code>target="_top"</code> will replace the current tab so make sure your work is saved.
-</section>
 
-## Instructions
-<section id='instructions'>
+**Note:** Twitter does not allow links to be loaded in an iframe. Try using the `target="_blank"` or `target="_top"` attribute on the `#tweet-quote` element if your tweet won't load. `target="_top"` will replace the current tab so make sure your work is saved.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
 
-```yml
-tests: []
+# --seed--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

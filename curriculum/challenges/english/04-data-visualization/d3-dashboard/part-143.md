@@ -4,31 +4,56 @@ title: Part 143
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Similar to how you made the text bold for the label of the displayed year; change the `fill` of the `twitter-circles` to your `twitterColor` for the currently displayed year. To do this, use a "d function" that returns the `twitterColor` when `d.year` equals `year`, and leave it `white` if it doesn't.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(Object.values($('.dashboard svg circle')).filter(el => el.getAttribute && el.getAttribute('fill') === '#7cd9d1').length === 1);
-
+```js
+assert(
+  Object.values($('.dashboard svg circle')).filter(
+    (el) => el.getAttribute && el.getAttribute('fill') === '#7cd9d1'
+  ).length === 1
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -241,47 +266,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -495,5 +480,3 @@ tests:
   drawDashboard(2020);
 </script>
 ```
-
-</section>

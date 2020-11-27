@@ -6,33 +6,31 @@ videoUrl: 'https://scrimba.com/c/cGJqqAE'
 forumTopicId: 301054
 ---
 
-## Description
-<section id='description'>
-For this challenge, you'll change the <code>opacity</code> of an animated element so it gradually fades as it reaches the right side of the screen.
-In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the <code>@keyframes</code> rule.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Target the element with the id of <code>ball</code> and add the <code>opacity</code> property set to 0.1 at <code>50%</code>, so the element fades as it moves to the right.
-</section>
+For this challenge, you'll change the `opacity` of an animated element so it gradually fades as it reaches the right side of the screen.
 
-## Tests
-<section id='tests'>
+In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the `@keyframes` rule.
 
-```yml
-tests:
-  - text: The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.
-    testString: assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi));
+# --instructions--
 
+Target the element with the id of `ball` and add the `opacity` property set to 0.1 at `50%`, so the element fades as it moves to the right.
+
+# --hints--
+
+The `keyframes` rule for fade should set the `opacity` property to 0.1 at 50%.
+
+```js
+assert(
+  code.match(
+    /@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -65,15 +63,7 @@ tests:
 <div id="ball"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>
@@ -102,5 +92,3 @@ tests:
 </style>
 <div id="ball"></div>
 ```
-
-</section>

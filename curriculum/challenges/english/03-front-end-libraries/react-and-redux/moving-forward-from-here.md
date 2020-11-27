@@ -5,35 +5,36 @@ challengeType: 6
 forumTopicId: 301434
 ---
 
-## Description
-<section id='description'>
-Congratulations! You finished the lessons on React and Redux. There's one last item worth pointing out before you move on. Typically, you won't write React apps in a code editor like this. This challenge gives you a glimpse of what the syntax looks like if you're working with npm and a file system on your own machine. The code should look similar, except for the use of <code>import</code> statements (these pull in all of the dependencies that have been provided for you in the challenges). The "Managing Packages with npm" section covers npm in more detail.
+# --description--
+
+Congratulations! You finished the lessons on React and Redux. There's one last item worth pointing out before you move on. Typically, you won't write React apps in a code editor like this. This challenge gives you a glimpse of what the syntax looks like if you're working with npm and a file system on your own machine. The code should look similar, except for the use of `import` statements (these pull in all of the dependencies that have been provided for you in the challenges). The "Managing Packages with npm" section covers npm in more detail.
+
 Finally, writing React and Redux code generally requires some configuration. This can get complicated quickly. If you are interested in experimenting on your own machine, the
-<a id='CRA' target ='_blank' href='https://github.com/facebookincubator/create-react-app'>Create React App</a> comes configured and ready to go.
+
+[Create React App](https://github.com/facebookincubator/create-react-app) comes configured and ready to go.
+
 Alternatively, you can enable Babel as a JavaScript Preprocessor in CodePen, add React and ReactDOM as external JavaScript resources, and work there as well.
-</section>
 
-## Instructions
-<section id='instructions'>
-Log the message <code>'Now I know React and Redux!'</code> to the console.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Log the message `'Now I know React and Redux!'` to the console.
 
-```yml
-tests:
-  - text: The message <code>Now I know React and Redux!</code> should be logged to the console.
-    testString: getUserInput => assert(/console\s*\.\s*log\s*\(\s*('|"|`)Now I know React and Redux!\1\s*\)/.test(getUserInput('index')));
+# --hints--
 
+The message `Now I know React and Redux!` should be logged to the console.
+
+```js
+(getUserInput) =>
+  assert(
+    /console\s*\.\s*log\s*\(\s*('|"|`)Now I know React and Redux!\1\s*\)/.test(
+      getUserInput('index')
+    )
+  );
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='jsx-seed'>
+## --seed-contents--
 
 ```jsx
 /*
@@ -60,21 +61,10 @@ ReactDOM.render(
 */
 
 // Only change code below this line
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 console.log('Now I know React and Redux!');
 ```
-
-</section>

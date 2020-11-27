@@ -4,31 +4,23 @@ title: Part 54
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Something does not look right. You added the correct `class` attribute to the `p` elements with dessert names, but you have not defined a selector for it.
 
 Since the `flavor` class selector already has the properties you want, just add the `dessert` class to it.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -85,10 +77,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -122,6 +110,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

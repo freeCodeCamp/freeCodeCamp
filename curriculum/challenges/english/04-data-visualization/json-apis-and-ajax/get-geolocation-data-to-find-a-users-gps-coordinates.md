@@ -5,12 +5,16 @@ challengeType: 6
 forumTopicId: 18188
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Another cool thing you can do is access your user's current location. Every browser has a built in navigator that can give you this information.
+
 The navigator will get the user's current longitude and latitude.
+
 You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.
+
 By selecting allow, you will see the text on the output phone change to your latitude and longitude.
+
 Here's code that does this:
 
 ```js
@@ -21,36 +25,43 @@ if (navigator.geolocation){
 }
 ```
 
-First, it checks if the <code>navigator.geolocation</code> object exists. If it does, the <code>getCurrentPosition</code> method on that object is called, which initiates an asynchronous request for the user's position. If the request is successful, the callback function in the method runs. This function accesses the <code>position</code> object's values for latitude and longitude using dot notation and updates the HTML.
-</section>
+First, it checks if the `navigator.geolocation` object exists. If it does, the `getCurrentPosition` method on that object is called, which initiates an asynchronous request for the user's position. If the request is successful, the callback function in the method runs. This function accesses the `position` object's values for latitude and longitude using dot notation and updates the HTML.
 
-## Instructions
-<section id='instructions'>
-Add the example code inside the <code>script</code> tags to check a user's current location and insert it into the HTML.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Add the example code inside the `script` tags to check a user's current location and insert it into the HTML.
 
-```yml
-tests:
-  - text: Your code should use <code>navigator.geolocation</code> to access the user&#39;s current location.
-    testString: assert(code.match(/navigator\.geolocation\.getCurrentPosition/g));
-  - text: Your code should use <code>position.coords.latitude</code> to display the user&#39;s latitudinal location.
-    testString: assert(code.match(/position\.coords\.latitude/g));
-  - text: Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.
-    testString: assert(code.match(/position\.coords\.longitude/g));
-  - text: You should display the user&#39;s position within the <code>data</code> div element.
-    testString: assert(code.match(/document\.getElementById\(\s*?('|")data\1\s*?\)\.innerHTML/g));
+# --hints--
 
+Your code should use `navigator.geolocation` to access the user's current location.
+
+```js
+assert(code.match(/navigator\.geolocation\.getCurrentPosition/g));
 ```
 
-</section>
+Your code should use `position.coords.latitude` to display the user's latitudinal location.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/position\.coords\.latitude/g));
+```
 
-<div id='html-seed'>
+Your code should use `position.coords.longitude` to display the user's longitudinal location.
+
+```js
+assert(code.match(/position\.coords\.longitude/g));
+```
+
+You should display the user's position within the `data` div element.
+
+```js
+assert(
+  code.match(/document\.getElementById\(\s*?('|")data\1\s*?\)\.innerHTML/g)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -65,14 +76,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -90,3 +94,4 @@ tests:
 </div>
 
 </section>
+```

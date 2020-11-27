@@ -4,29 +4,21 @@ title: Part 65
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add a `footer` element below the `main` element, where you can some additional information.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -43,7 +35,7 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      --fcc-editable-region--
+--fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -79,15 +71,11 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
+--fcc-editable-region--
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -139,6 +127,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

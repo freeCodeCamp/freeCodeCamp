@@ -5,45 +5,63 @@ challengeType: 0
 forumTopicId: 18370
 ---
 
-## Description
-<section id='description'>
-You can use spans to create inline elements. Remember when we used the <code>btn-block</code> class to make the button fill the entire row?
+# --description--
+
+You can use spans to create inline elements. Remember when we used the `btn-block` class to make the button fill the entire row?
+
 <button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>normal button</button>
+
 <button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>btn-block button</button>
+
 That illustrates the difference between an "inline" element and a "block" element.
-By using the inline <code>span</code> element, you can put several elements on the same line, and even style different parts of the same line differently.
-Nest the word "love" in your "Things cats love" element below within a <code>span</code> element. Then give that <code>span</code> the class <code>text-danger</code> to make the text red.
+
+By using the inline `span` element, you can put several elements on the same line, and even style different parts of the same line differently.
+
+Nest the word "love" in your "Things cats love" element below within a `span` element. Then give that `span` the class `text-danger` to make the text red.
+
 Here's how you would do this with the "Top 3 things cats hate" element:
-<code>&#60;p&#62;Top 3 things cats &#60;span class="text-danger"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+`<p>Top 3 things cats <span class="text-danger">hate:</span></p>`
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `span` element should be inside your `p` element.
 
-```yml
-tests:
-  - text: Your <code>span</code> element should be inside your <code>p</code> element.
-    testString: assert($("p span") && $("p span").length > 0);
-  - text: Your <code>span</code> element should have just the text <code>love</code>.
-    testString: assert($("p span") && $("p span").text().match(/love/i) && !$("p span").text().match(/Things cats/i));
-  - text: Your <code>span</code> element should have class <code>text-danger</code>.
-    testString: assert($("span").hasClass("text-danger"));
-  - text: Your <code>span</code> element should have a closing tag.
-    testString: assert(code.match(/<\/span>/g) && code.match(/<span/g) && code.match(/<\/span>/g).length === code.match(/<span/g).length);
-
+```js
+assert($('p span') && $('p span').length > 0);
 ```
 
-</section>
+Your `span` element should have just the text `love`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('p span') &&
+    $('p span').text().match(/love/i) &&
+    !$('p span')
+      .text()
+      .match(/Things cats/i)
+);
+```
 
-<div id='html-seed'>
+Your `span` element should have class `text-danger`.
+
+```js
+assert($('span').hasClass('text-danger'));
+```
+
+Your `span` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/span>/g) &&
+    code.match(/<span/g) &&
+    code.match(/<\/span>/g).length === code.match(/<span/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -103,14 +121,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -169,5 +180,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

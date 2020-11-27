@@ -5,33 +5,27 @@ challengeType: 6
 forumTopicId: 301469
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 It's possible to add effects that highlight a bar when the user hovers over it with the mouse. So far, the styling for the rectangles is applied with the built-in D3 and SVG methods, but you can use CSS as well.
-You set the CSS class on the SVG elements with the <code>attr()</code> method. Then the <code>:hover</code> pseudo-class for your new class holds the style rules for any hover effects.
-</section>
 
-## Instructions
-<section id='instructions'>
-Use the <code>attr()</code> method to add a class of <code>bar</code> to all the <code>rect</code> elements. This changes the <code>fill</code> color of the bar to brown when you mouse over it.
-</section>
+You set the CSS class on the SVG elements with the `attr()` method. Then the `:hover` pseudo-class for your new class holds the style rules for any hover effects.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your <code>rect</code> elements should have a class of <code>bar</code>.
-    testString: assert($('rect').attr('class') == "bar");
+Use the `attr()` method to add a class of `bar` to all the `rect` elements. This changes the `fill` color of the bar to brown when you mouse over it.
 
+# --hints--
+
+Your `rect` elements should have a class of `bar`.
+
+```js
+assert($('rect').attr('class') == 'bar');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -78,14 +72,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -128,5 +115,3 @@ tests:
   </script>
 </body>
 ```
-
-</section>

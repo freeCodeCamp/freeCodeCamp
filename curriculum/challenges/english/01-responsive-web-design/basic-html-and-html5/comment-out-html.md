@@ -6,41 +6,55 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cGyGbca'
 forumTopicId: 16782
 ---
 
-## Description
-<section id='description'>
-Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>
-Here you'll need to end the comment before your <code>h2</code> element begins.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Comment out your <code>h1</code> element and your <code>p</code> element, but not your <code>h2</code> element.
-</section>
+Remember that in order to start a comment, you need to use `<!--` and to end a comment, you need to use `-->`
 
-## Tests
-<section id='tests'>
+Here you'll need to end the comment before your `h2` element begins.
 
-```yml
-tests:
-  - text: Your <code>h1</code> element should be commented out so that it is not visible on the page.
-    testString: assert(($("h1").length === 0));
-  - text: Your <code>h2</code> element should not be commented out so that it is visible on the page.
-    testString: assert(($("h2").length > 0));
-  - text: Your <code>p</code> element should be commented out so that it is not visible on the page.
-    testString: assert(($("p").length === 0));
-  - text: Each of your comments should be closed with <code>--&#62;</code>.
-    testString: assert(code.match(/[^fc]-->/g).length > 1);
-  - text: You should not change the order of the <code>h1</code> <code>h2</code> or <code>p</code> in the code.
-    testString: assert((code.match(/<([a-z0-9]){1,2}>/g)[0]==="<h1>" && code.match(/<([a-z0-9]){1,2}>/g)[1]==="<h2>" && code.match(/<([a-z0-9]){1,2}>/g)[2]==="<p>") );
+# --instructions--
 
+Comment out your `h1` element and your `p` element, but not your `h2` element.
+
+# --hints--
+
+Your `h1` element should be commented out so that it is not visible on the page.
+
+```js
+assert($('h1').length === 0);
 ```
 
-</section>
+Your `h2` element should not be commented out so that it is visible on the page.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').length > 0);
+```
 
-<div id='html-seed'>
+Your `p` element should be commented out so that it is not visible on the page.
+
+```js
+assert($('p').length === 0);
+```
+
+Each of your comments should be closed with `-->`.
+
+```js
+assert(code.match(/[^fc]-->/g).length > 1);
+```
+
+You should not change the order of the `h1` `h2` or `p` in the code.
+
+```js
+assert(
+  code.match(/<([a-z0-9]){1,2}>/g)[0] === '<h1>' &&
+    code.match(/<([a-z0-9]){1,2}>/g)[1] === '<h2>' &&
+    code.match(/<([a-z0-9]){1,2}>/g)[2] === '<p>'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <!--
@@ -52,19 +66,10 @@ tests:
 -->
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!--<h1>Hello World</h1>-->
 <h2>CatPhotoApp</h2> 
 <!--<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p> -->
 ```
-
-</section>

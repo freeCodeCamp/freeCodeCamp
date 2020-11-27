@@ -5,60 +5,125 @@ challengeType: 5
 forumTopicId: 301611
 ---
 
-## Description
-<section id='description'>
-The mathematical term <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of two sets is the set of elements which are in either of the two sets but not in both. For example, for sets <code>A = {1, 2, 3}</code> and <code>B = {2, 3, 4}</code>, <code>A &xutri; B = {1, 4}</code>.
+# --description--
 
-Symmetric difference is a binary operation, which means it operates on only two elements. So to evaluate an expression involving symmetric differences among <em>three</em> elements (<code>A &xutri; B &xutri; C</code>), you must complete one operation at a time. Thus, for sets <code>A</code> and <code>B</code> above, and <code>C = {2, 3}</code>, <code>A &xutri; B &xutri; C = (A &xutri; B) &xutri; C = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>.
-</section>
+The mathematical term <dfn>symmetric difference</dfn> (`△` or `⊕`) of two sets is the set of elements which are in either of the two sets but not in both. For example, for sets `A = {1, 2, 3}` and `B = {2, 3, 4}`, `A △ B = {1, 4}`.
 
-## Instructions
-<section id='instructions'>
-Create a function that takes two or more arrays and returns an array of their symmetric difference. The returned array must contain only unique values (<em>no duplicates</em>).
-</section>
+Symmetric difference is a binary operation, which means it operates on only two elements. So to evaluate an expression involving symmetric differences among *three* elements (`A △ B △ C`), you must complete one operation at a time. Thus, for sets `A` and `B` above, and `C = {2, 3}`, `A △ B △ C = (A △ B) △ C = {1, 4} △ {2, 3} = {1, 2, 3, 4}`.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.
-    testString: assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5]);
-  - text: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should contain only three elements.
-    testString: assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3);
-  - text: <code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.
-    testString: assert.sameMembers(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5]);
-  - text: <code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should contain only three elements.
-    testString: assert.equal(sym([1, 2, 3, 3], [5, 2, 1, 4]).length, 3);
-  - text: <code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should return <code>[3, 4, 5]</code>.
-    testString: assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5]);
-  - text: <code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should contain only three elements.
-    testString: assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3);
-  - text: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>
-    testString: assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5]);
-  - text: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should contain only three elements.
-    testString: assert.equal(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).length, 3);
-  - text: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.
-    testString: assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5]);
-  - text: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should contain only three elements.
-    testString: assert.equal(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).length, 3);
-  - text: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should return <code>[2, 3, 4, 6, 7]</code>.
-    testString: assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]), [2, 3, 4, 6, 7]);
-  - text: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should contain only five elements.
-    testString: assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]).length, 5);
-  - text: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should return <code>[1, 2, 4, 5, 6, 7, 8, 9]</code>.
-    testString: assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]), [1, 2, 4, 5, 6, 7, 8, 9]);
-  - text: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should contain only eight elements.
-    testString: assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]).length, 8);
+Create a function that takes two or more arrays and returns an array of their symmetric difference. The returned array must contain only unique values (*no duplicates*).
 
+# --hints--
+
+`sym([1, 2, 3], [5, 2, 1, 4])` should return `[3, 4, 5]`.
+
+```js
+assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5]);
 ```
 
-</section>
+`sym([1, 2, 3], [5, 2, 1, 4])` should contain only three elements.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3);
+```
 
-<div id='js-seed'>
+`sym([1, 2, 3, 3], [5, 2, 1, 4])` should return `[3, 4, 5]`.
+
+```js
+assert.sameMembers(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5]);
+```
+
+`sym([1, 2, 3, 3], [5, 2, 1, 4])` should contain only three elements.
+
+```js
+assert.equal(sym([1, 2, 3, 3], [5, 2, 1, 4]).length, 3);
+```
+
+`sym([1, 2, 3], [5, 2, 1, 4, 5])` should return `[3, 4, 5]`.
+
+```js
+assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5]);
+```
+
+`sym([1, 2, 3], [5, 2, 1, 4, 5])` should contain only three elements.
+
+```js
+assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3);
+```
+
+`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` should return `[1, 4, 5]`
+
+```js
+assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5]);
+```
+
+`sym([1, 2, 5], [2, 3, 5], [3, 4, 5])` should contain only three elements.
+
+```js
+assert.equal(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).length, 3);
+```
+
+`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` should return `[1, 4, 5]`.
+
+```js
+assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5]);
+```
+
+`sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])` should contain only three elements.
+
+```js
+assert.equal(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).length, 3);
+```
+
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` should return `[2, 3, 4, 6, 7]`.
+
+```js
+assert.sameMembers(
+  sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]),
+  [2, 3, 4, 6, 7]
+);
+```
+
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])` should contain only five elements.
+
+```js
+assert.equal(
+  sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]).length,
+  5
+);
+```
+
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` should return `[1, 2, 4, 5, 6, 7, 8, 9]`.
+
+```js
+assert.sameMembers(
+  sym(
+    [3, 3, 3, 2, 5],
+    [2, 1, 5, 7],
+    [3, 4, 6, 6],
+    [1, 2, 3],
+    [5, 3, 9, 8],
+    [1]
+  ),
+  [1, 2, 4, 5, 6, 7, 8, 9]
+);
+```
+
+`sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])` should contain only eight elements.
+
+```js
+assert.equal(
+  sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])
+    .length,
+  8
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sym(args) {
@@ -68,15 +133,7 @@ function sym(args) {
 sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function sym() {
@@ -89,7 +146,4 @@ function sym() {
   });
 }
 sym([1, 2, 3], [5, 2, 1, 4]);
-
 ```
-
-</section>

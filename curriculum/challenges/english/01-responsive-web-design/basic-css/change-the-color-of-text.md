@@ -6,41 +6,47 @@ videoUrl: 'https://scrimba.com/c/cRkVmSm'
 forumTopicId: 16775
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now let's change the color of some of our text.
-We can do this by changing the <code>style</code> of your <code>h2</code> element.
-The property that is responsible for the color of an element's text is the <code>color</code> style property.
-Here's how you would set your <code>h2</code> element's text color to blue:
-<code>&#60;h2 style="color: blue;"&#62;CatPhotoApp&#60;/h2&#62;</code>
-Note that it is a good practice to end inline <code>style</code> declarations with a <code>;</code> .
-</section>
 
-## Instructions
-<section id='instructions'>
-Change your <code>h2</code> element's style so that its text color is red.
-</section>
+We can do this by changing the `style` of your `h2` element.
 
-## Tests
-<section id='tests'>
+The property that is responsible for the color of an element's text is the `color` style property.
 
-```yml
-tests:
-  - text: Your <code>h2</code> element should have a <code>style</code> declaration.
-    testString: assert($("h2").attr('style'));
-  - text: Your <code>h2</code> element should have color set to <code>red</code>.
-    testString: assert($("h2")[0].style.color === "red");
-  - text: Your <code>style</code> declaration should end with a <code>;</code> .
-    testString: assert($("h2").attr('style') && $("h2").attr('style').endsWith(';'));
+Here's how you would set your `h2` element's text color to blue:
 
+`<h2 style="color: blue;">CatPhotoApp</h2>`
+
+Note that it is a good practice to end inline `style` declarations with a `;` .
+
+# --instructions--
+
+Change your `h2` element's style so that its text color is red.
+
+# --hints--
+
+Your `h2` element should have a `style` declaration.
+
+```js
+assert($('h2').attr('style'));
 ```
 
-</section>
+Your `h2` element should have color set to `red`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2')[0].style.color === 'red');
+```
 
-<div id='html-seed'>
+Your `style` declaration should end with a `;` .
+
+```js
+assert($('h2').attr('style') && $('h2').attr('style').endsWith(';'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -76,14 +82,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2 style="color: red;">CatPhotoApp</h2>
@@ -118,5 +117,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

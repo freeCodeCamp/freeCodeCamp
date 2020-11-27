@@ -6,39 +6,45 @@ videoUrl: 'https://scrimba.com/c/cg4RWh4'
 forumTopicId: 16633
 ---
 
-## Description
-<section id='description'>
-Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.
-CSS allows you to control the <code>margin</code> of all four individual sides of an element with the <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Give the blue box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
-</section>
+Sometimes you will want to customize an element so that it has a different `margin` on each of its sides.
 
-## Tests
-<section id='tests'>
+CSS allows you to control the `margin` of all four individual sides of an element with the `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` properties.
 
-```yml
-tests:
-  - text: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-top") === "40px");
-  - text: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-right") === "20px");
-  - text: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-bottom") === "20px");
-  - text: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-left") === "40px");
+# --instructions--
 
+Give the blue box a `margin` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+
+# --hints--
+
+Your `blue-box` class should give the top of elements `40px` of `margin`.
+
+```js
+assert($('.blue-box').css('margin-top') === '40px');
 ```
 
-</section>
+Your `blue-box` class should give the right of elements `20px` of `margin`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.blue-box').css('margin-right') === '20px');
+```
 
-<div id='html-seed'>
+Your `blue-box` class should give the bottom of elements `20px` of `margin`.
+
+```js
+assert($('.blue-box').css('margin-bottom') === '20px');
+```
+
+Your `blue-box` class should give the left of elements `40px` of `margin`.
+
+```js
+assert($('.blue-box').css('margin-left') === '40px');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -81,14 +87,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -134,5 +133,3 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
-
-</section>

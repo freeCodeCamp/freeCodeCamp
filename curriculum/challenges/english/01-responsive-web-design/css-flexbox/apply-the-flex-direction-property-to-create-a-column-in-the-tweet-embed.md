@@ -6,32 +6,25 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103
 ---
 
-## Description
-<section id='description'>
-The tweet embed <code>header</code> and <code>footer</code> used the <code>flex-direction</code> property earlier with a row value. Similarly, the items inside the <code>.profile-name</code> element would work well stacked as a column.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>flex-direction</code> to the header's <code>.profile-name</code> element and set the value to column.
-</section>
+The tweet embed `header` and `footer` used the `flex-direction` property earlier with a row value. Similarly, the items inside the `.profile-name` element would work well stacked as a column.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.
-    testString: assert($('.profile-name').css('flex-direction') == 'column');
+Add the CSS property `flex-direction` to the header's `.profile-name` element and set the value to column.
 
+# --hints--
+
+The `.profile-name` element should have a `flex-direction` property set to column.
+
+```js
+assert($('.profile-name').css('flex-direction') == 'column');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -124,14 +117,7 @@ tests:
 </footer>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -223,5 +209,3 @@ tests:
   </div>
 </footer>
 ```
-
-</section>

@@ -5,41 +5,92 @@ challengeType: 6
 forumTopicId: 301427
 ---
 
-## Description
-<section id='description'>
-Now that you understand how to use <code>connect</code> to connect React to Redux, you can apply what you've learned to your React component that handles messages.
-In the last lesson, the component you connected to Redux was named <code>Presentational</code>, and this wasn't arbitrary. This term <i>generally</i> refers to React components that are not directly connected to Redux. They are simply responsible for the presentation of UI and do this as a function of the props they receive. By contrast, container components are connected to Redux. These are typically responsible for dispatching actions to the store and often pass store state to child components as props.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-The code editor has all the code you've written in this section so far. The only change is that the React component is renamed to <code>Presentational</code>. Create a new component held in a constant called <code>Container</code> that uses <code>connect</code> to connect the <code>Presentational</code> component to Redux. Then, in the <code>AppWrapper</code>, render the React Redux <code>Provider</code> component. Pass <code>Provider</code> the Redux <code>store</code> as a prop and render <code>Container</code> as a child. Once everything is setup, you will see the messages app rendered to the page again.
-</section>
+Now that you understand how to use `connect` to connect React to Redux, you can apply what you've learned to your React component that handles messages.
 
-## Tests
-<section id='tests'>
+In the last lesson, the component you connected to Redux was named `Presentational`, and this wasn't arbitrary. This term *generally* refers to React components that are not directly connected to Redux. They are simply responsible for the presentation of UI and do this as a function of the props they receive. By contrast, container components are connected to Redux. These are typically responsible for dispatching actions to the store and often pass store state to child components as props.
 
-```yml
-tests:
-  - text: The <code>AppWrapper</code> should render to the page.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })());
-  - text: The <code>Presentational</code> component should render to page.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })());
-  - text: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })());
-  - text: The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })());
-  - text: The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })());
+# --instructions--
 
+The code editor has all the code you've written in this section so far. The only change is that the React component is renamed to `Presentational`. Create a new component held in a constant called `Container` that uses `connect` to connect the `Presentational` component to Redux. Then, in the `AppWrapper`, render the React Redux `Provider` component. Pass `Provider` the Redux `store` as a prop and render `Container` as a child. Once everything is setup, you will see the messages app rendered to the page again.
+
+# --hints--
+
+The `AppWrapper` should render to the page.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(AppWrapper));
+    return mockedComponent.find('AppWrapper').length === 1;
+  })()
+);
 ```
 
-</section>
+The `Presentational` component should render to page.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(AppWrapper));
+    return mockedComponent.find('Presentational').length === 1;
+  })()
+);
+```
 
-<div id='jsx-seed'>
+The `Presentational` component should render an `h2`, `input`, `button`, and `ul` elements.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(AppWrapper));
+    const PresentationalComponent = mockedComponent.find('Presentational');
+    return (
+      PresentationalComponent.find('div').length === 1 &&
+      PresentationalComponent.find('h2').length === 1 &&
+      PresentationalComponent.find('button').length === 1 &&
+      PresentationalComponent.find('ul').length === 1
+    );
+  })()
+);
+```
+
+The `Presentational` component should receive `messages` from the Redux store as a prop.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(AppWrapper));
+    const PresentationalComponent = mockedComponent.find('Presentational');
+    const props = PresentationalComponent.props();
+    return Array.isArray(props.messages);
+  })()
+);
+```
+
+The `Presentational` component should receive the `submitMessage` action creator as a prop.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(AppWrapper));
+    const PresentationalComponent = mockedComponent.find('Presentational');
+    const props = PresentationalComponent.props();
+    return typeof props.submitNewMessage === 'function';
+  })()
+);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<AppWrapper />, document.getElementById('root'))
+```
+
+## --seed-contents--
 
 ```jsx
 // Redux:
@@ -142,23 +193,7 @@ class AppWrapper extends React.Component {
 };
 ```
 
-</div>
-
-
-### After Test
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<AppWrapper />, document.getElementById('root'))
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 // Redux:
@@ -262,5 +297,3 @@ class AppWrapper extends React.Component {
   }
 };
 ```
-
-</section>

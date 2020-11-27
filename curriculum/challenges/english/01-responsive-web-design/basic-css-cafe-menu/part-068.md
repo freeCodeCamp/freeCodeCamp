@@ -4,31 +4,23 @@ title: Part 68
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can use an `hr` element to display a divider between sections of different content.
 
 First, add an `hr` element between the first `header` element and the `main` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -41,7 +33,7 @@ tests:
   </head>
   <body>
     <div class="menu">
-      --fcc-editable-region--
+--fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
@@ -81,7 +73,7 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
+--fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -92,10 +84,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -147,6 +135,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

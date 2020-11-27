@@ -1,12 +1,11 @@
 ---
 id: 5900f37f1000cf542c50fe92
-challengeType: 5
 title: 'Problem 19: Counting Sundays'
+challengeType: 5
 forumTopicId: 301827
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You are given the following information, but you may prefer to do some research for yourself.
 
@@ -18,35 +17,35 @@ You are given the following information, but you may prefer to do some research 
 
 How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`countingSundays(1943, 1946)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>countingSundays(1943, 1946)</code> should return a number.
-    testString: assert(typeof countingSundays(1943, 1946) === 'number');
-  - text: <code>countingSundays(1943, 1946)</code> should return 6.
-    testString: assert.strictEqual(countingSundays(1943, 1946), 6);
-  - text: <code>countingSundays(1995, 2000)</code> should return 10.
-    testString: assert.strictEqual(countingSundays(1995, 2000), 10);
-  - text: <code>countingSundays(1901, 2000)</code> should return 171.
-    testString: assert.strictEqual(countingSundays(1901, 2000), 171);
-
+```js
+assert(typeof countingSundays(1943, 1946) === 'number');
 ```
 
-</section>
+`countingSundays(1943, 1946)` should return 6.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(countingSundays(1943, 1946), 6);
+```
 
-<div id='js-seed'>
+`countingSundays(1995, 2000)` should return 10.
+
+```js
+assert.strictEqual(countingSundays(1995, 2000), 10);
+```
+
+`countingSundays(1901, 2000)` should return 171.
+
+```js
+assert.strictEqual(countingSundays(1901, 2000), 171);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function countingSundays(firstYear, lastYear) {
@@ -57,15 +56,7 @@ function countingSundays(firstYear, lastYear) {
 countingSundays(1943, 1946);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function countingSundays(firstYear, lastYear) {
@@ -82,5 +73,3 @@ function countingSundays(firstYear, lastYear) {
   return sundays;
 }
 ```
-
-</section>

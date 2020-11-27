@@ -1,48 +1,57 @@
 ---
-title: Fibonacci sequence
 id: 597f24c1dda4e70f53c79c81
+title: Fibonacci sequence
 challengeType: 5
 forumTopicId: 302268
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Write a function to generate the <code>n<sup>th</sup></code> Fibonacci number.
+
 The <code>n<sup>th</sup></code> Fibonacci number is given by:
+
 <code>F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></code>
+
 The first two terms of the series are 0 and 1.
+
 Hence, the series is: 0, 1, 1, 2, 3, 5, 8, 13...
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`fibonacci` should be a function.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>fibonacci</code> should be a function.
-    testString: assert(typeof fibonacci === 'function');
-  - text: <code>fibonacci(2)</code> should return a number.
-    testString: assert(typeof fibonacci(2) == 'number');
-  - text: <code>fibonacci(3)</code> should return 2.
-    testString: assert.equal(fibonacci(3),2);
-  - text: <code>fibonacci(5)</code> should return 5.
-    testString: assert.equal(fibonacci(5),5);
-  - text: <code>fibonacci(10)</code> should return 55.
-    testString: assert.equal(fibonacci(10),55);
-
+```js
+assert(typeof fibonacci === 'function');
 ```
 
-</section>
+`fibonacci(2)` should return a number.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof fibonacci(2) == 'number');
+```
 
-<div id='js-seed'>
+`fibonacci(3)` should return 2.
+
+```js
+assert.equal(fibonacci(3), 2);
+```
+
+`fibonacci(5)` should return 5.
+
+```js
+assert.equal(fibonacci(5), 5);
+```
+
+`fibonacci(10)` should return 55.
+
+```js
+assert.equal(fibonacci(10), 55);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function fibonacci(n) {
@@ -50,15 +59,7 @@ function fibonacci(n) {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function fibonacci(n) {
@@ -70,7 +71,4 @@ function fibonacci(n) {
   }
   return a;
 }
-
 ```
-
-</section>

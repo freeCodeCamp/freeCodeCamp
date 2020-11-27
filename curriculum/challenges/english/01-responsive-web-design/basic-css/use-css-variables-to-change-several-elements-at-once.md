@@ -6,37 +6,45 @@ videoUrl: 'https://scrimba.com/c/c6bDECm'
 forumTopicId: 301093
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 <dfn>CSS Variables</dfn> are a powerful way to change many CSS style properties at once by changing only one value.
+
 Follow the instructions below to see how changing just three values can change the styling of many elements.
-</section>
 
-## Instructions
-<section id='instructions'>
-In the <code>penguin</code> class, change the <code>black</code> value to <code>gray</code>, the <code>gray</code> value to <code>white</code>, and the <code>yellow</code> value to <code>orange</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+In the `penguin` class, change the `black` value to `gray`, the `gray` value to `white`, and the `yellow` value to `orange`.
 
-```yml
-tests:
-  - text: <code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
-  - text: <code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
-  - text: <code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi));
+# --hints--
 
+`penguin` class should declare the `--penguin-skin` variable and assign it to `gray`.
+
+```js
+assert(
+  code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi)
+);
 ```
 
-</section>
+`penguin` class should declare the `--penguin-belly` variable and assign it to `white`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi)
+);
+```
 
-<div id='html-seed'>
+`penguin` class should declare the `--penguin-beak` variable and assign it to `orange`.
+
+```js
+assert(
+  code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -241,18 +249,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.penguin {--penguin-skin: gray; --penguin-belly: white; --penguin-beak: orange;}</style>
 ```
-
-</section>

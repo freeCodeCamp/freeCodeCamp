@@ -4,31 +4,31 @@ title: Part 19
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give the new buildings `width` and `height` properties of: `10%` and `50%` for `bb2`, `10%` and `55%` for `bb3`, and `11%` and `58%` for `bb4`. You will be using almost all percent based units and some Flexbox for this project, so everything will be completely responsive.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2 = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0]; const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0]; const bb4 = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*10%\s*(;|})/g.test(bb2) && /height\s*:\s*50%\s*(;|})/g.test(bb2) && /width\s*:\s*10%\s*(;|})/g.test(bb3) && /height\s*:\s*55%\s*(;|})/g.test(bb3) && /width\s*:\s*11%\s*(;|})/g.test(bb4) && /height\s*:\s*58%\s*(;|})/g.test(bb4));
-
+```js
+const bb2 = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0];
+const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];
+const bb4 = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*10%\s*(;|})/g.test(bb2) &&
+    /height\s*:\s*50%\s*(;|})/g.test(bb2) &&
+    /width\s*:\s*10%\s*(;|})/g.test(bb3) &&
+    /height\s*:\s*55%\s*(;|})/g.test(bb3) &&
+    /width\s*:\s*11%\s*(;|})/g.test(bb4) &&
+    /height\s*:\s*58%\s*(;|})/g.test(bb4)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -103,12 +103,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -197,5 +192,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

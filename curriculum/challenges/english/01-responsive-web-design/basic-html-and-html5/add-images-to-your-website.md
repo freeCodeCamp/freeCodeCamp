@@ -6,48 +6,67 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
 forumTopicId: 16640
 ---
 
-## Description
-<section id='description'>
-You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.
+# --description--
+
+You can add images to your website by using the `img` element, and point to a specific image's URL using the `src` attribute.
+
 An example of this would be:
-<code>&#60img src="https://www.freecatphotoapp.com/your-image.jpg"&#62</code>
-Note that <code>img</code> elements are self-closing.
-All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
-<strong>Note:</strong> If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
-Ideally the <code>alt</code> attribute should not contain special characters unless needed.
-Let's add an <code>alt</code> attribute to our <code>img</code> example above:
-<code>&#60img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie."&#62</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+`<img src="https://www.freecatphotoapp.com/your-image.jpg">`
+
+Note that `img` elements are self-closing.
+
+All `img` elements **must** have an `alt` attribute. The text inside an `alt` attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
+
+**Note:** If the image is purely decorative, using an empty `alt` attribute is a best practice.
+
+Ideally the `alt` attribute should not contain special characters unless needed.
+
+Let's add an `alt` attribute to our `img` example above:
+
+`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">`
+
+# --instructions--
+
 Let's try to add an image to our website:
-Within the existing <code>main</code> element, insert an <code>img</code> element before the existing <code>p</code> elements.
-Now set the <code>src</code> attribute so that it points to this url:
-<code>https://bit.ly/fcc-relaxing-cat</code>
-Finally, don't forget to give your <code>img</code> element an <code>alt</code>  attribute with applicable text.
-</section>
 
-## Tests
-<section id='tests'>
+Within the existing `main` element, insert an `img` element before the existing `p` elements.
 
-```yml
-tests:
-  - text: Your page should have an image element.
-    testString: assert($("img").length);
-  - text: Your image should have a <code>src</code> attribute that points to the kitten image.
-    testString: assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($("img").attr("src")));
-  - text: Your image element's <code>alt</code> attribute should not be empty.
-    testString: assert($("img").attr("alt") && $("img").attr("alt").length && /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(__helpers.removeWhiteSpace(code)));
+Now set the `src` attribute so that it points to this url:
 
+`https://bit.ly/fcc-relaxing-cat`
+
+Finally, don't forget to give your `img` element an `alt` attribute with applicable text.
+
+# --hints--
+
+Your page should have an image element.
+
+```js
+assert($('img').length);
 ```
 
-</section>
+Your image should have a `src` attribute that points to the kitten image.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($('img').attr('src')));
+```
 
-<div id='html-seed'>
+Your image element's `alt` attribute should not be empty.
+
+```js
+assert(
+  $('img').attr('alt') &&
+    $('img').attr('alt').length &&
+    /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(
+      __helpers.removeWhiteSpace(code)
+    )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -59,14 +78,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -76,5 +88,3 @@ tests:
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```
-
-</section>

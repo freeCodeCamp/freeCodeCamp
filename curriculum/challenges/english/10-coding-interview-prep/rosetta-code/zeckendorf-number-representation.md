@@ -1,51 +1,37 @@
 ---
-title: Zeckendorf number representation
 id: 594810f028c0303b75339ad6
+title: Zeckendorf number representation
 challengeType: 5
 forumTopicId: 302346
 ---
 
-## Description
-<section id='description'>
-Just as numbers can be represented in a positional notation as sums of multiples of the powers of ten (decimal) or two (binary); all the positive integers can be represented as the sum of one or zero times the distinct members of the Fibonacci series. Recall that the first six distinct Fibonacci numbers are:  <code>1, 2, 3, 5, 8, 13</code>.
-The decimal number eleven can be written as <code>0*13 + 1*8 + 0*5 + 1*3 + 0*2 + 0*1</code> or <code>010100</code> in positional notation where the columns represent multiplication by a particular member of the sequence. Leading zeroes are dropped so that 11 decimal becomes <code>10100</code>. 10100 is not the only way to make 11 from the Fibonacci numbers however <code>0*13 + 1*8 + 0*5 + 0*3 + 1*2 + 1*1</code> or 010011 would also represent decimal 11. For a true Zeckendorf number there is the added restriction that <i>no two consecutive Fibonacci numbers can be used</i> which leads to the former unique solution.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Write a function that generates and returns an array of the first <code>n</code> Zeckendorf numbers in order.
-</section>
+Just as numbers can be represented in a positional notation as sums of multiples of the powers of ten (decimal) or two (binary); all the positive integers can be represented as the sum of one or zero times the distinct members of the Fibonacci series. Recall that the first six distinct Fibonacci numbers are: `1, 2, 3, 5, 8, 13`.
 
-## Tests
-<section id='tests'>
+The decimal number eleven can be written as `0*13 + 1*8 + 0*5 + 1*3 + 0*2 + 0*1` or `010100` in positional notation where the columns represent multiplication by a particular member of the sequence. Leading zeroes are dropped so that 11 decimal becomes `10100`. 10100 is not the only way to make 11 from the Fibonacci numbers however `0*13 + 1*8 + 0*5 + 0*3 + 1*2 + 1*1` or 010011 would also represent decimal 11. For a true Zeckendorf number there is the added restriction that *no two consecutive Fibonacci numbers can be used* which leads to the former unique solution.
 
-```yml
-tests:
-  - text: zeckendorf should be function.
-    testString: assert.equal(typeof zeckendorf, 'function');
-  - text: Your <code>zeckendorf</code> function should return the correct answer.
-    testString: assert.deepEqual(answer, solution20);
+# --instructions--
 
-```
+Write a function that generates and returns an array of the first `n` Zeckendorf numbers in order.
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+zeckendorf should be function.
 
 ```js
-function zeckendorf(n) {
-
-}
+assert.equal(typeof zeckendorf, 'function');
 ```
 
-</div>
+Your `zeckendorf` function should return the correct answer.
 
+```js
+assert.deepEqual(answer, solution20);
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 const range = (m, n) => (
@@ -63,12 +49,15 @@ const solution20 = [
 const answer = range(1, 20).map(zeckendorf);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function zeckendorf(n) {
 
-## Solution
-<section id='solution'>
+}
+```
+
+# --solutions--
 
 ```js
 // zeckendorf :: Int -> String
@@ -109,7 +98,4 @@ const tail = xs => (
 );
 
 const reverse = xs => xs.slice(0).reverse();
-
 ```
-
-</section>

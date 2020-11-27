@@ -6,33 +6,27 @@ videoUrl: 'https://scrimba.com/p/pByETK/cqwREC4'
 forumTopicId: 301129
 ---
 
-## Description
-<section id='description'>
-Turn any HTML element into a grid container by setting its <code>display</code> property to <code>grid</code>. This gives you the ability to use all the other properties associated with CSS Grid.
-<strong>Note:</strong> In CSS Grid, the parent element is referred to as the <dfn>container</dfn> and its children are called <dfn>items</dfn>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Change the display of the div with the <code>container</code> class to <code>grid</code>.
-</section>
+Turn any HTML element into a grid container by setting its `display` property to `grid`. This gives you the ability to use all the other properties associated with CSS Grid.
 
-## Tests
-<section id='tests'>
+**Note:** In CSS Grid, the parent element is referred to as the <dfn>container</dfn> and its children are called <dfn>items</dfn>.
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
+# --instructions--
 
+Change the display of the div with the `container` class to `grid`.
+
+# --hints--
+
+`container` class should have a `display` property with a value of `grid`.
+
+```js
+assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -62,18 +56,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.container {display: grid;}</style>
 ```
-
-</section>
