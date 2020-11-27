@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
@@ -12,6 +13,7 @@ Make the `Est. 2020` text italicized by creating an `established` class selector
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

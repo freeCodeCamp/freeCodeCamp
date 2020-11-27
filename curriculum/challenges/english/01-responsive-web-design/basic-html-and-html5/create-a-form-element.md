@@ -6,20 +6,27 @@ forumTopicId: 16817
 ---
 
 ## Description
+
 <section id='description'>
-You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.
+
+You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your `form` element.
+
 For example:
-<code>&#60;form action="/url-where-you-want-to-submit-form-data"&#62;&#60;/form&#62;</code>
+
+`<form action="/url-where-you-want-to-submit-form-data"></form>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-Nest the existing input element inside a <code>form</code> element and assign `"https://freecatphotoapp.com/submit-cat-photo"` to the <code>action</code> attribute of the <code>form</code> element.
+Nest the existing input element inside a `form` element and assign `"https://freecatphotoapp.com/submit-cat-photo"` to the `action` attribute of the `form` element.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,11 +73,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

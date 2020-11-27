@@ -8,14 +8,16 @@ forumTopicId: 302314
 ## Description
 
 <section id='description'>
-Gnome sort is a sorting algorithm which is similar to <a href="https://rosettacode.org/wiki/Insertion sort" target="_blank">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="https://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>.
+
+Gnome sort is a sorting algorithm which is similar to [Insertion sort](<https://rosettacode.org/wiki/Insertion sort>), except that moving an element to its proper place is accomplished by a series of swaps, as in [Bubble Sort](<https://rosettacode.org/wiki/Bubble Sort>).
+
 The pseudocode for the algorithm is:
-<pre>
-<b>function</b> <i>gnomeSort</i>(a[0..size-1])
+
+<pre><b>function</b> <i>gnomeSort</i>(a[0..size-1])
   i := 1
   j := 2
-  <b>while</b> i < size <b>do</b>
-    <b>if</b> a[i-1] <= a[i] <b>then</b>
+  <b>while</b> i &#x3C; size <b>do</b>
+    <b>if</b> a[i-1] &#x3C;= a[i] <b>then</b>
       <i>/// for descending sort, use >= for comparison</i>
       i := j
       j := j + 1
@@ -29,12 +31,15 @@ The pseudocode for the algorithm is:
     <b>endif</b>
   <b>done</b>
 </pre>
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function to implement the above pseudo code. The function should return the sorted array.
+
 </section>
 
 ## Tests
@@ -73,6 +78,7 @@ function gnomeSort(a) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

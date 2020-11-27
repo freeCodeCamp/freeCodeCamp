@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Next, you are going to add some new form `input` elements, so add another `fieldset` element directly below the current `fieldset` element.
@@ -12,6 +13,7 @@ Next, you are going to add some new form `input` elements, so add another `field
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -108,4 +111,5 @@ tests:
 ```
 
 </div>
+
 </section>

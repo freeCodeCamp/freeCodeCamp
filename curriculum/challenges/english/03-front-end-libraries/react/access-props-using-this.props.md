@@ -6,17 +6,25 @@ forumTopicId: 301375
 ---
 
 ## Description
+
 <section id='description'>
+
 The last several challenges covered the basic ways to pass props to child components. But what if the child component that you're passing a prop to is an ES6 class component, rather than a stateless functional component? The ES6 class component uses a slightly different convention to access props.
-Anytime you refer to a class component within itself, you use the <code>this</code> keyword. To access props within a class component, you preface the code that you use to access it with <code>this</code>. For example, if an ES6 class component has a prop called <code>data</code>, you write <code>{this.props.data}</code> in JSX.
+
+Anytime you refer to a class component within itself, you use the `this` keyword. To access props within a class component, you preface the code that you use to access it with `this`. For example, if an ES6 class component has a prop called `data`, you write `{this.props.data}` in JSX.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Render an instance of the <code>ReturnTempPassword</code> component in the parent component <code>ResetPassword</code>. Here, give <code>ReturnTempPassword</code> a prop of <code>tempPassword</code> and assign it a value of a string that is at least 8 characters long. Within the child, <code>ReturnTempPassword</code>, access the <code>tempPassword</code> prop within the <code>strong</code> tags to make sure the user sees the temporary password.
+
+Render an instance of the `ReturnTempPassword` component in the parent component `ResetPassword`. Here, give `ReturnTempPassword` a prop of `tempPassword` and assign it a value of a string that is at least 8 characters long. Within the child, `ReturnTempPassword`, access the `tempPassword` prop within the `strong` tags to make sure the user sees the temporary password.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -80,8 +89,8 @@ class ResetPassword extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -93,8 +102,8 @@ ReactDOM.render(<ResetPassword />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class ReturnTempPassword extends React.Component {

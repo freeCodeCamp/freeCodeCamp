@@ -6,23 +6,30 @@ forumTopicId: 301150
 ---
 
 ## Description
+
 <section id='description'>
-In the first object challenge we mentioned the use of bracket notation as a way to access property values using the evaluation of a variable. For instance, imagine that our <code>foods</code> object is being used in a program for a supermarket cash register. We have some function that sets the <code>selectedFood</code> and we want to check our <code>foods</code> object for the presence of that food. This might look like:
+
+In the first object challenge we mentioned the use of bracket notation as a way to access property values using the evaluation of a variable. For instance, imagine that our `foods` object is being used in a program for a supermarket cash register. We have some function that sets the `selectedFood` and we want to check our `foods` object for the presence of that food. This might look like:
 
 ```js
 let selectedFood = getCurrentFood(scannedItem);
 let inventory = foods[selectedFood];
 ```
 
-This code will evaluate the value stored in the <code>selectedFood</code> variable and return the value of that key in the <code>foods</code> object, or <code>undefined</code> if it is not present. Bracket notation is very useful because sometimes object properties are not known before runtime or we need to access them in a more dynamic way.
+This code will evaluate the value stored in the `selectedFood` variable and return the value of that key in the `foods` object, or `undefined` if it is not present. Bracket notation is very useful because sometimes object properties are not known before runtime or we need to access them in a more dynamic way.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-We've defined a function, <code>checkInventory</code>, which receives a scanned item as an argument. Return the current value of the <code>scannedItem</code> key in the <code>foods</code> object. You can assume that only valid keys will be provided as an argument to <code>checkInventory</code>.
+
+We've defined a function, `checkInventory`, which receives a scanned item as an argument. Return the current value of the `scannedItem` key in the `foods` object. You can assume that only valid keys will be provided as an argument to `checkInventory`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,11 +76,10 @@ console.log(checkInventory("apples"));
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -7,10 +7,14 @@ forumTopicId: 16785
 ---
 
 ## Description
+
 <section id='description'>
-The greater than or equal to operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.
-Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.
-<strong>Examples</strong>
+
+The greater than or equal to operator (`>=`) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns `true`. Otherwise, it returns `false`.
+
+Like the equality operator, `greater than or equal to` operator will convert data types while comparing.
+
+**Examples**
 
 ```js
 6   >=  6   // true
@@ -22,11 +26,15 @@ Like the equality operator, <code>greater than or equal to</code> operator will 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -75,13 +84,11 @@ testGreaterOrEqual(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testGreaterOrEqual(val) {

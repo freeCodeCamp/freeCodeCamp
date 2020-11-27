@@ -15,6 +15,7 @@ Create a variable named `calorieInput` and set it equal to another `input` docum
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

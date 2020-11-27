@@ -6,17 +6,23 @@ forumTopicId: 16657
 ---
 
 ## Description
+
 <section id='description'>
-Bootstrap has another button class called <code>btn-default</code>.
-Apply both the <code>btn</code> and <code>btn-default</code> classes to each of your <code>button</code> elements.
+
+Bootstrap has another button class called `btn-default`.
+
+Apply both the `btn` and `btn-default` classes to each of your `button` elements.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -59,11 +66,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

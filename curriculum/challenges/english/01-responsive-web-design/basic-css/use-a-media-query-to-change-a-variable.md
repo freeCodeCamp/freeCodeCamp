@@ -7,17 +7,25 @@ forumTopicId: 301091
 ---
 
 ## Description
+
 <section id='description'>
+
 CSS Variables can simplify the way you use media queries.
+
 For instance, when your screen is smaller or larger than your media query break point, you can change the value of a variable, and it will apply its style wherever it is used.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In the <code>:root</code> selector of the <code>media query</code>, change it so <code>--penguin-size</code> is redefined and given a value of <code>200px</code>. Also, redefine <code>--penguin-skin</code> and give it a value of <code>black</code>. Then resize the preview to see this change in action.
+
+In the `:root` selector of the `media query`, change it so `--penguin-size` is redefined and given a value of `200px`. Also, redefine `--penguin-skin` and give it a value of `black`. Then resize the preview to see this change in action.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -269,13 +278,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>@media (max-width: 350px) {:root {--penguin-size: 200px; --penguin-skin: black;}}</style>

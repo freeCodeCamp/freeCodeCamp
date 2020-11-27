@@ -7,8 +7,10 @@ forumTopicId: 16777
 ---
 
 ## Description
+
 <section id='description'>
-Font size is controlled by the <code>font-size</code> CSS property, like this:
+
+Font size is controlled by the `font-size` CSS property, like this:
 
 ```css
 h1 {
@@ -19,11 +21,15 @@ h1 {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Inside the same <code>&#60;style&#62;</code> tag that contains your <code>red-text</code> class, create an entry for <code>p</code> elements and set the <code>font-size</code> to 16 pixels (<code>16px</code>).
+
+Inside the same `<style>` tag that contains your `red-text` class, create an entry for `p` elements and set the `font-size` to 16 pixels (`16px`).
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -82,11 +89,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

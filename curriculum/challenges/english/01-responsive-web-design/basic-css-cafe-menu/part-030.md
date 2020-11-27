@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 It’s looking good. Time to start adding some menu items. Add an empty `article` element under the `Coffees` heading. It will contain a flavor and price of each coffee you currently offer.
@@ -12,6 +13,7 @@ It’s looking good. Time to start adding some menu items. Add an empty `article
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

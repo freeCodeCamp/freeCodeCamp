@@ -6,24 +6,34 @@ forumTopicId: 302237
 ---
 
 ## Description
+
 <section id='description'>
+
 Create a function, or show a built-in function, to count the number of non-overlapping occurrences of a substring inside a string.
+
 The function should take two arguments:
+
 <ul>
   <li>the first argument being the string to search, and</li>
   <li>the second a substring to be searched for.</li>
 </ul>
+
 It should return an integer count.
+
 The matching should yield the highest number of non-overlapping matches.
+
 In general, this essentially means matching from left-to-right or right-to-left.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,8 +66,8 @@ function countSubstring(str, subStr) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -70,8 +81,8 @@ const results = [3, 2, 2];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function countSubstring(str, subStr) {

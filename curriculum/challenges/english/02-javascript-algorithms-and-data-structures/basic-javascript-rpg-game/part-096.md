@@ -5,18 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Now use the `+=` operator to append more text to `text.innerText`. Add the text " You attack it with your [weapon name]." but replace "[weapon name]" with the actual weapon name. Remember, you can get the weapon name with `weapons[currentWeapon].name`.
+Now use the `+=` operator to append more text to `text.innerText`. Add the text " You attack it with your \[weapon name]." but replace "\[weapon name]" with the actual weapon name. Remember, you can get the weapon name with `weapons[currentWeapon].name`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -223,8 +227,8 @@ function dodge() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -293,8 +297,8 @@ function dodge() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -304,12 +308,11 @@ function dodge() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

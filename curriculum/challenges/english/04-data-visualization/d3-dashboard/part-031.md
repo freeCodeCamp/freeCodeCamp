@@ -5,18 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 After all that work, something is finally displayed on the graph. It's the y-axis and all the numbers are hidden on the left.
 
 Move the axis your `svgMargin` to the right by chaining an `attr` function to the selection. Use it to set the `transform` to `translate(${svgMargin}, 0)`. Use a template literal (backticks) to set the value so you can put your variable in there.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -81,8 +87,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -115,10 +121,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

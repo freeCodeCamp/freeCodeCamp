@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add your `window-wrap` class to `fb2b` to position the new window elements.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -317,10 +323,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

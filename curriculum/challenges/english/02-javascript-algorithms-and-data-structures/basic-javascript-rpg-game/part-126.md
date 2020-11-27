@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-In the `attack` function, move the line `monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;` into the `if` block. 
+In the `attack` function, move the line `monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;` into the `if` block.
 
 Here is an example of code in an `if` block that logs a message to the console:
 
@@ -20,11 +21,13 @@ if (isTrue()) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -299,8 +303,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -369,8 +373,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -380,12 +384,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

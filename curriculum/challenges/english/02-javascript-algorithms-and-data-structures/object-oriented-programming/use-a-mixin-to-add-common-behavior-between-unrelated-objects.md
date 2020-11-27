@@ -6,8 +6,11 @@ forumTopicId: 301331
 ---
 
 ## Description
+
 <section id='description'>
-As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solution. Inheritance does not work well for unrelated objects like <code>Bird</code> and <code>Airplane</code>. They can both fly, but a <code>Bird</code> is not a type of <code>Airplane</code> and vice versa.
+
+As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solution. Inheritance does not work well for unrelated objects like `Bird` and `Airplane`. They can both fly, but a `Bird` is not a type of `Airplane` and vice versa.
+
 For unrelated objects, it's better to use <dfn>mixins</dfn>. A mixin allows other objects to use a collection of functions.
 
 ```js
@@ -18,7 +21,7 @@ let flyMixin = function(obj) {
 };
 ```
 
-The <code>flyMixin</code> takes any object and gives it the <code>fly</code> method.
+The `flyMixin` takes any object and gives it the `fly` method.
 
 ```js
 let bird = {
@@ -35,22 +38,27 @@ flyMixin(bird);
 flyMixin(plane);
 ```
 
-Here <code>bird</code> and <code>plane</code> are passed into <code>flyMixin</code>, which then assigns the <code>fly</code> function to each object. Now <code>bird</code> and <code>plane</code> can both fly:
+Here `bird` and `plane` are passed into `flyMixin`, which then assigns the `fly` function to each object. Now `bird` and `plane` can both fly:
 
 ```js
 bird.fly(); // prints "Flying, wooosh!"
 plane.fly(); // prints "Flying, wooosh!"
 ```
 
-Note how the mixin allows for the same <code>fly</code> method to be reused by unrelated objects <code>bird</code> and <code>plane</code>.
+Note how the mixin allows for the same `fly` method to be reused by unrelated objects `bird` and `plane`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a mixin named <code>glideMixin</code> that defines a method named <code>glide</code>. Then use the <code>glideMixin</code> to give both <code>bird</code> and <code>boat</code> the ability to glide.
+
+Create a mixin named `glideMixin` that defines a method named `glide`. Then use the `glideMixin` to give both `bird` and `boat` the ability to glide.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -67,6 +75,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -93,13 +102,11 @@ let boat = {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 let bird = {

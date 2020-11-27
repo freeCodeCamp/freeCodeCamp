@@ -62,6 +62,7 @@ function lastFriday(year, month) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

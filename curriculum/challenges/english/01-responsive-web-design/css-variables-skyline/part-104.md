@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 On to the next building! It's the green one in the foreground. Give it a `repeating-linear-gradient` with your building color from `0%` to `5%` and `transparent` from `5%` to `10%`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -382,10 +388,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

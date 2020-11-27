@@ -6,16 +6,21 @@ forumTopicId: 301798
 ---
 
 ## Description
+
 <section id='description'>
+
 How many 20 digit numbers n (without any leading zero) exist such that no three consecutive digits of n have a sum greater than 9?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -28,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -43,11 +49,10 @@ euler164();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

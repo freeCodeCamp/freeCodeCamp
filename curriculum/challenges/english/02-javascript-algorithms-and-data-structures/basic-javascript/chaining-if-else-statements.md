@@ -7,8 +7,10 @@ forumTopicId: 16772
 ---
 
 ## Description
+
 <section id='description'>
-<code>if/else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:
+
+`if/else` statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained `if` / `else if` statements:
 
 ```js
 if (condition1) {
@@ -26,12 +28,21 @@ if (condition1) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:
-<code>num &lt; 5</code> - return "Tiny"<br><code>num &lt; 10</code> - return "Small"<br><code>num &lt; 15</code> - return "Medium"<br><code>num &lt; 20</code> - return "Large"<br><code>num >= 20</code>  - return "Huge"
+
+Write chained `if`/`else if` statements to fulfill the following conditions:
+
+`num < 5` - return "Tiny"  
+`num < 10` - return "Small"  
+`num < 15` - return "Medium"  
+`num < 20` - return "Large"  
+`num >= 20` - return "Huge"
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -68,6 +79,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -86,13 +98,11 @@ testSize(7);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testSize(num) {

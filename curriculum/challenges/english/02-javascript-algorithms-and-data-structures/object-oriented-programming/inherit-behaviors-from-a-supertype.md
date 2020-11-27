@@ -6,8 +6,10 @@ forumTopicId: 301319
 ---
 
 ## Description
+
 <section id='description'>
-In the previous challenge, you created a <code>supertype</code> called <code>Animal</code> that defined behaviors shared by all animals:
+
+In the previous challenge, you created a `supertype` called `Animal` that defined behaviors shared by all animals:
 
 ```js
 function Animal() { }
@@ -16,9 +18,7 @@ Animal.prototype.eat = function() {
 };
 ```
 
-This and the next challenge will cover how to reuse <code>Animal's</code> methods inside <code>Bird</code> and <code>Dog</code> without defining them again. It uses a technique called inheritance.
-This challenge covers the first step: make an instance of the <code>supertype</code> (or parent).
-You already know one way to create an instance of <code>Animal</code> using the <code>new</code> operator:
+This and the next challenge will cover how to reuse `Animal's` methods inside `Bird` and `Dog` without defining them again. It uses a technique called inheritance. This challenge covers the first step: make an instance of the `supertype` (or parent). You already know one way to create an instance of `Animal` using the `new` operator:
 
 ```js
 let animal = new Animal();
@@ -30,7 +30,7 @@ There are some disadvantages when using this syntax for inheritance, which are t
 let animal = Object.create(Animal.prototype);
 ```
 
-<code>Object.create(obj)</code> creates a new object, and sets <code>obj</code> as the new object's <code>prototype</code>. Recall that the <code>prototype</code> is like the "recipe" for creating an object. By setting the <code>prototype</code> of <code>animal</code> to be <code>Animal's</code> <code>prototype</code>, you are effectively giving the <code>animal</code> instance the same "recipe" as any other instance of <code>Animal</code>.
+`Object.create(obj)` creates a new object, and sets `obj` as the new object's `prototype`. Recall that the `prototype` is like the "recipe" for creating an object. By setting the `prototype` of `animal` to be `Animal's` `prototype`, you are effectively giving the `animal` instance the same "recipe" as any other instance of `Animal`.
 
 ```js
 animal.eat(); // prints "nom nom nom"
@@ -40,11 +40,15 @@ animal instanceof Animal; // => true
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <code>Object.create</code> to make two instances of <code>Animal</code> named <code>duck</code> and <code>beagle</code>.
+
+Use `Object.create` to make two instances of `Animal` named `duck` and `beagle`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -67,6 +71,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -89,13 +94,11 @@ let beagle; // Change this line
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Animal() { }

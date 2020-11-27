@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now it's easy to see that the text is centered inside the `div` element. Currently, the width of the `div` element is specified in pixels (`px`). Change the `width` property's value to be `80%`, to make it is 80% the width of its parent element (`body`).
@@ -12,6 +13,7 @@ Now it's easy to see that the text is centered inside the `div` element. Current
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

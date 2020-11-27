@@ -6,21 +6,28 @@ forumTopicId: 302243
 ---
 
 ## Description
+
 <section id='description'>
+
 Return an array with the current date in the formats:
+
 <ul>
   <li>2007-11-23</li>
   <li>Friday, November 23, 2007</li>
 </ul>
-Example output: <code>['2007-11-23', 'Friday, November 23, 2007']</code>
+
+Example output: `['2007-11-23', 'Friday, November 23, 2007']`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,8 +60,8 @@ function getDateFormats() {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -75,8 +83,8 @@ const equalsMessage = `message: <code>getDataFormats()</code> should return <cod
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function getDateFormats() {

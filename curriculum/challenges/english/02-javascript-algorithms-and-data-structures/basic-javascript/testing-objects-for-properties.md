@@ -7,9 +7,12 @@ forumTopicId: 18324
 ---
 
 ## Description
+
 <section id='description'>
-Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.
-<strong>Example</strong>
+
+Sometimes it is useful to check if the property of a given object exists or not. We can use the `.hasOwnProperty(propname)` method of objects to determine if that object has the given property name. `.hasOwnProperty()` returns `true` or `false` if the property is found or not.
+
+**Example**
 
 ```js
 var myObj = {
@@ -23,11 +26,15 @@ myObj.hasOwnProperty("middle"); // false
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Modify the function <code>checkObj</code> to test if an object passed to the function (<code>obj</code>) contains a specific property (<code>checkProp</code>). If the property is found, return that property's value. If not, return <code>"Not Found"</code>.
+
+Modify the function `checkObj` to test if an object passed to the function (`obj`) contains a specific property (`checkProp`). If the property is found, return that property's value. If not, return `"Not Found"`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,6 +75,7 @@ function checkObj(obj, checkProp) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,6 +6,7 @@ forumTopicId: 302194
 ---
 
 ## Description
+
 <section id='description'>
 
 It is well known that if the square root of a natural number is not an integer, then it is irrational. The decimal expansion of such square roots is infinite without any repeating pattern at all.
@@ -17,11 +18,13 @@ For the first one hundred natural numbers, find the total of the digital sums of
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,11 +55,10 @@ sqrtDigitalExpansion();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

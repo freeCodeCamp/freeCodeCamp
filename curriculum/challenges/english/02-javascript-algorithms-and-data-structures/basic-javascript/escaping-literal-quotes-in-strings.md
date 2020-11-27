@@ -7,21 +7,33 @@ forumTopicId: 17568
 ---
 
 ## Description
+
 <section id='description'>
-When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: <code>"</code> or <code>'</code> inside of your string?
-In JavaScript, you can <dfn>escape</dfn> a quote from considering it as an end of string quote by placing a <dfn>backslash</dfn> (<code>\</code>) in front of the quote.
-<code>var sampleStr = "Alan said, \"Peter is learning JavaScript\".";</code>
+
+When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: `"` or `'` inside of your string?
+
+In JavaScript, you can <dfn>escape</dfn> a quote from considering it as an end of string quote by placing a <dfn>backslash</dfn> (`\`) in front of the quote.
+
+`var sampleStr = "Alan said, \"Peter is learning JavaScript\".";`
+
 This signals to JavaScript that the following quote is not the end of the string, but should instead appear inside the string. So if you were to print this to the console, you would get:
-<code>Alan said, "Peter is learning JavaScript".</code>
+
+`Alan said, "Peter is learning JavaScript".`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <dfn>backslashes</dfn> to assign a string to the <code>myStr</code> variable so that if you were to print it to the console, you would see:
-<code>I am a "double quoted" string inside "double quotes".</code>
+
+Use <dfn>backslashes</dfn> to assign a string to the `myStr` variable so that if you were to print it to the console, you would see:
+
+`I am a "double quoted" string inside "double quotes".`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,8 +61,8 @@ var myStr = ""; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -67,8 +80,8 @@ var myStr = ""; // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myStr = "I am a \"double quoted\" string inside \"double quotes\".";

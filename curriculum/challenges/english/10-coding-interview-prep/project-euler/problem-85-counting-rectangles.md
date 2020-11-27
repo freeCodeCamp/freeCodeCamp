@@ -6,6 +6,7 @@ forumTopicId: 302199
 ---
 
 ## Description
+
 <section id='description'>
 
 By counting carefully it can be seen that a rectangular grid measuring 3 by 2 contains eighteen rectangles:
@@ -17,11 +18,13 @@ Although there exists no rectangular grid that contains exactly two million rect
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,11 +55,10 @@ countingRectangles();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

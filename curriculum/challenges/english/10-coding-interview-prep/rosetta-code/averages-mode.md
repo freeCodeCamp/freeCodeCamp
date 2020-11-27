@@ -6,18 +6,25 @@ forumTopicId: 302226
 ---
 
 ## Description
+
 <section id='description'>
-Write a program to find the <a href='https://en.wikipedia.org/wiki/Mode (statistics)' title='wp: Mode (statistics)' target='_blank'>mode</a> value of a collection.
+
+Write a program to find the [mode](<https://en.wikipedia.org/wiki/Mode (statistics)> "wp: Mode (statistics)") value of a collection.
+
 The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.
+
 If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,8 +55,8 @@ function mode(arr) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -61,8 +69,8 @@ const arr2 = [1, 2, 4, 4, 1];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function mode(arr) {

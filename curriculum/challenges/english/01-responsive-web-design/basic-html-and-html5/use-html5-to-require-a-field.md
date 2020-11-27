@@ -7,18 +7,27 @@ forumTopicId: 18360
 ---
 
 ## Description
+
 <section id='description'>
+
 You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.
-For example, if you wanted to make a text input field required, you can just add the attribute <code>required</code> within your <code>input</code> element, like this: <code>&#60;input type="text" required&#62;</code>
+
+For example, if you wanted to make a text input field required, you can just add the attribute `required` within your `input` element, like this: `<input type="text" required>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.
+
+Make your text `input` a `required` field, so that your user can't submit the form without completing this field.
+
 Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required?
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,11 +73,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -7,16 +7,23 @@ forumTopicId: 301037
 ---
 
 ## Description
+
 <section id='description'>
-The font size of header tags (<code>h1</code> through <code>h6</code>) should generally be larger than the font size of paragraph tags. This makes it easier for the user to visually understand the layout and level of importance of everything on the page. You use the <code>font-size</code> property to adjust the size of the text in an element.
+
+The font size of header tags (`h1` through `h6`) should generally be larger than the font size of paragraph tags. This makes it easier for the user to visually understand the layout and level of importance of everything on the page. You use the `font-size` property to adjust the size of the text in an element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-To make the heading significantly larger than the paragraph, change the <code>font-size</code> of the <code>h4</code> tag to 27 pixels.
+
+To make the heading significantly larger than the paragraph, change the `font-size` of the `h4` tag to 27 pixels.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -7,9 +7,13 @@ forumTopicId: 301096
 ---
 
 ## Description
+
 <section id='description'>
-You can add another level of organization in your HTML document within the <code>html</code> tags with the <code>head</code> and <code>body</code> elements. Any markup with information about your page would go into the <code>head</code> tag. Then any markup with the content of the page (what displays for a user) would go into the <code>body</code> tag.
-Metadata elements, such as <code>link</code>, <code>meta</code>, <code>title</code>, and <code>style</code>, typically go inside the <code>head</code> element.
+
+You can add another level of organization in your HTML document within the `html` tags with the `head` and `body` elements. Any markup with information about your page would go into the `head` tag. Then any markup with the content of the page (what displays for a user) would go into the `body` tag.
+
+Metadata elements, such as `link`, `meta`, `title`, and `style`, typically go inside the `head` element.
+
 Here's an example of a page's layout:
 
 ```html
@@ -27,11 +31,15 @@ Here's an example of a page's layout:
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Edit the markup so there's a <code>head</code> and a <code>body</code>. The <code>head</code> element should only include the <code>title</code>, and the <code>body</code> element should only include the <code>h1</code> and <code>p</code>.
+
+Edit the markup so there's a `head` and a `body`. The `head` element should only include the `title`, and the `body` element should only include the `h1` and `p`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -90,6 +98,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -107,11 +116,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

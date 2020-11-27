@@ -6,16 +6,21 @@ forumTopicId: 16041
 ---
 
 ## Description
+
 <section id='description'>
-Repeat a given string <code>str</code> (first argument) for <code>num</code> times (second argument). Return an empty string if <code>num</code> is not a positive number. For the purpose of this challenge, do <em>not</em> use the built-in <code>.repeat()</code> method.
+
+Repeat a given string `str` (first argument) for `num` times (second argument). Return an empty string if `num` is not a positive number. For the purpose of this challenge, do *not* use the built-in `.repeat()` method.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,13 +62,11 @@ repeatStringNumTimes("abc", 3);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function repeatStringNumTimes(str, num) {

@@ -6,23 +6,35 @@ forumTopicId: 301193
 ---
 
 ## Description
+
 <section id='description'>
+
 You may have noticed that some freeCodeCamp JavaScript challenges include their own console. This console behaves a little differently than the browser console you used in the last challenge.
+
 The following challenge is meant to highlight the main difference between the freeCodeCamp console and your browser console.
-When you run ordinary JavaScript, the browser's console will display your <code>console.log()</code> statements the exact number of times it is called.
-The freeCodeCamp console will print your <code>console.log()</code> statements a short time after the editor detects a change in the script, as well as during testing.
+
+When you run ordinary JavaScript, the browser's console will display your `console.log()` statements the exact number of times it is called.
+
+The freeCodeCamp console will print your `console.log()` statements a short time after the editor detects a change in the script, as well as during testing.
+
 The freeCodeCamp console is cleared before the tests are run and, to avoid spam, only prints the logs during the first test (see the note below for exceptions).
-If you would like to see every log for every test, run the tests, and open the browser console. If you prefer to use the browser console, and want it to mimic the freeCodeCamp console, place <code>console.clear()</code> before any other <code>console</code> calls, to clear the browser console.
+
+If you would like to see every log for every test, run the tests, and open the browser console. If you prefer to use the browser console, and want it to mimic the freeCodeCamp console, place `console.clear()` before any other `console` calls, to clear the browser console.
 
 **Note:** `console.log`s inside functions are printed to the freeCodeCamp console whenever those functions are called, this can help debugging functions that are called during testing.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-First, use <code>console.log</code> to log the <code>output</code> variable. Then, use <code>console.clear</code> to clear the browser console.
+
+First, use `console.log` to log the `output` variable. Then, use `console.clear` to clear the browser console.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,8 +69,8 @@ let output = "Get this to log once in the freeCodeCamp console and twice in the 
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 // Open your browser console.

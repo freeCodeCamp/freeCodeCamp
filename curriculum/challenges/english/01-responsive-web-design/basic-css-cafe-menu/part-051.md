@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 For the two `p` elements you just added, add `dessert` as the value of the first `p` element's `class` attribute and the value `price` as the second `p` elements `class` attribute.
@@ -12,6 +13,7 @@ For the two `p` elements you just added, add `dessert` as the value of the first
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

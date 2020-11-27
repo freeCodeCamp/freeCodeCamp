@@ -6,23 +6,34 @@ forumTopicId: 385279
 ---
 
 ## Description
+
 <section id='description'>
+
 Loop over multiple arrays and create a new array whose $i^{th}$ element is the concatenation of $i^{th}$ element of each of the given.
+
 For this example, if you are given this array of arrays:
-<code>[ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]</code>
+
+`[ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]`
+
 the output should be:
-<code>["aA1","bB2","cC3"]</code>
+
+`["aA1","bB2","cC3"]`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that takes an array of arrays as a parameter and returns an array of strings satisfying the given description.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>loopSimult</code> should be a function.
     testString: assert(typeof loopSimult == 'function');
@@ -43,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,6 +70,7 @@ function loopSimult(A) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

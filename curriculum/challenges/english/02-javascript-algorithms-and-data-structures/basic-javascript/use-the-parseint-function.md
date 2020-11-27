@@ -7,18 +7,27 @@ forumTopicId: 301183
 ---
 
 ## Description
+
 <section id='description'>
-The <code>parseInt()</code> function parses a string and returns an integer. Here's an example:
-<code>var a = parseInt("007");</code>
-The above function converts the string "007" to an integer 7. If the first character in the string can't be converted into a number, then it returns <code>NaN</code>.
+
+The `parseInt()` function parses a string and returns an integer. Here's an example:
+
+`var a = parseInt("007");`
+
+The above function converts the string "007" to an integer 7. If the first character in the string can't be converted into a number, then it returns `NaN`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <code>parseInt()</code> in the <code>convertToInteger</code> function so it converts the input string <code>str</code> into an integer, and returns it.
+
+Use `parseInt()` in the `convertToInteger` function so it converts the input string `str` into an integer, and returns it.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,11 +63,10 @@ convertToInteger("56");
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `input` element is allows you several ways to collect data from a web form. Like anchor (`a`) elements, `input` elements are <dfn>self-closing</dfn> and do not need closing tags.
@@ -14,6 +15,7 @@ Nest an `input` element in the `form` element.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -92,4 +95,5 @@ tests:
 ```
 
 </div>
+
 </section>

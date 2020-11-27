@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add a `head` element within the `html` element, so you can add a `title` element. The title element's text should be `Camper Cafe Menu`.
@@ -12,6 +13,7 @@ Add a `head` element within the `html` element, so you can add a `title` element
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

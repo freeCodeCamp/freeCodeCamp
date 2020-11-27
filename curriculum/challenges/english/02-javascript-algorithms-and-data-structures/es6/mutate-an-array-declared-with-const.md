@@ -6,10 +6,14 @@ forumTopicId: 301206
 ---
 
 ## Description
+
 <section id='description'>
-The <code>const</code> declaration has many use cases in modern JavaScript.
-Some developers prefer to assign all their variables using <code>const</code> by default, unless they know they will need to reassign the value. Only in that case, they use <code>let</code>.
-However, it is important to understand that objects (including arrays and functions) assigned to a variable using <code>const</code> are still mutable. Using the <code>const</code> declaration only prevents reassignment of the variable identifier.
+
+The `const` declaration has many use cases in modern JavaScript.
+
+Some developers prefer to assign all their variables using `const` by default, unless they know they will need to reassign the value. Only in that case, they use `let`.
+
+However, it is important to understand that objects (including arrays and functions) assigned to a variable using `const` are still mutable. Using the `const` declaration only prevents reassignment of the variable identifier.
 
 ```js
 const s = [5, 6, 7];
@@ -18,15 +22,20 @@ s[2] = 45; // works just as it would with an array declared with var or let
 console.log(s); // returns [5, 6, 45]
 ```
 
-As you can see, you can mutate the object <code>[5, 6, 7]</code> itself and the variable <code>s</code> will still point to the altered array <code>[5, 6, 45]</code>. Like all arrays, the array elements in <code>s</code> are mutable, but because <code>const</code> was used, you cannot use the variable identifier <code>s</code> to point to a different array using the assignment operator.
+As you can see, you can mutate the object `[5, 6, 7]` itself and the variable `s` will still point to the altered array `[5, 6, 45]`. Like all arrays, the array elements in `s` are mutable, but because `const` was used, you cannot use the variable identifier `s` to point to a different array using the assignment operator.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <code>[2, 5, 7]</code> using various element assignments.
+
+An array is declared as `const s = [5, 7, 2]`. Change the array to `[2, 5, 7]` using various element assignments.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,11 +73,10 @@ editInPlace();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,6 +6,7 @@ forumTopicId: 302207
 ---
 
 ## Description
+
 <section id='description'>
 
 Each of the six faces on a cube has a different digit (0 to 9) written on it; the same is done to a second cube. By placing the two cubes side-by-side in different positions we can form a variety of 2-digit numbers.
@@ -34,11 +35,13 @@ How many distinct arrangements of the two cubes allow for all of the square numb
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,11 +72,10 @@ cubeDigitPairs();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

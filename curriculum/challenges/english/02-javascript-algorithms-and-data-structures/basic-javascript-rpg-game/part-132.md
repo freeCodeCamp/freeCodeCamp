@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Decrement the value of `currentWeapon` using `--`. For example, say `num` equals 5. After running `num--`, `num` now equals 4.
@@ -12,11 +13,13 @@ Decrement the value of `currentWeapon` using `--`. For example, say `num` equals
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -300,8 +304,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -370,8 +374,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -381,12 +385,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

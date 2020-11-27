@@ -7,19 +7,29 @@ forumTopicId: 16647
 ---
 
 ## Description
+
 <section id='description'>
-Placeholder text is what is displayed in your <code>input</code> element before your user has inputted anything.
+
+Placeholder text is what is displayed in your `input` element before your user has inputted anything.
+
 You can create placeholder text like so:
-<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code><br>
-<strong>Note:</strong> Remember that <code>input</code> elements are self-closing.
+
+`<input type="text" placeholder="this is placeholder text">`  
+
+**Note:** Remember that `input` elements are self-closing.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Set the <code>placeholder</code> value of your text <code>input</code> to "cat photo URL".
+
+Set the `placeholder` value of your text `input` to "cat photo URL".
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,11 +77,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

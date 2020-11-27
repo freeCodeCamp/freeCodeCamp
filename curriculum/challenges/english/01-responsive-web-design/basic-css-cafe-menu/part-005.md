@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The name of the cafe is `Camper Cafe`. Add an `h1` element with the name of the cafe in capitalized letters to make it stand out.
@@ -12,6 +13,7 @@ The name of the cafe is `Camper Cafe`. Add an `h1` element with the name of the 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

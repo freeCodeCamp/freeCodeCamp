@@ -7,16 +7,23 @@ forumTopicId: 18255
 ---
 
 ## Description
+
 <section id='description'>
+
 Now let's divide one decimal by another.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.2</code>.
+
+Change the `0.0` so that `quotient` will equal to `2.2`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -43,8 +51,8 @@ var quotient = 0.0 / 2.0; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -56,6 +64,7 @@ var quotient = 0.0 / 2.0; // Change this line
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

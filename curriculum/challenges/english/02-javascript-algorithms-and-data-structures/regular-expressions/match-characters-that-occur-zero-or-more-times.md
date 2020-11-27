@@ -6,9 +6,12 @@ forumTopicId: 301351
 ---
 
 ## Description
+
 <section id='description'>
-The last challenge used the plus <code>+</code> sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
-The character to do this is the asterisk or star: <code>*</code>.
+
+The last challenge used the plus `+` sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
+
+The character to do this is the asterisk or star: `*`.
 
 ```js
 let soccerWord = "gooooooooal!";
@@ -23,11 +26,15 @@ oPhrase.match(goRegex); // Returns null
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-For this challenge, <code>chewieQuote</code> has been initialized as "Aaaaaaaaaaaaaaaarrrgh!" behind the scenes. Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match an uppercase <code>"A"</code> character immediately followed by zero or more lowercase <code>"a"</code> characters in <code>chewieQuote</code>. Your regex does not need flags or character classes, and it should not match any of the other quotes.
+
+For this challenge, `chewieQuote` has been initialized as "Aaaaaaaaaaaaaaaarrrgh!" behind the scenes. Create a regex `chewieRegex` that uses the `*` character to match an uppercase `"A"` character immediately followed by zero or more lowercase `"a"` characters in `chewieQuote`. Your regex does not need flags or character classes, and it should not match any of the other quotes.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +57,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,6 +73,7 @@ let result = chewieQuote.match(chewieRegex);
 </div>
 
 ## Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -76,6 +85,7 @@ const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

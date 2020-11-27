@@ -6,8 +6,10 @@ forumTopicId: 301355
 ---
 
 ## Description
+
 <section id='description'>
-In the last challenge, you searched for the word <code>"Hello"</code> using the regular expression <code>/Hello/</code>. That regex searched for a literal match of the string <code>"Hello"</code>. Here's another example searching for a literal match of the string <code>"Kevin"</code>:
+
+In the last challenge, you searched for the word `"Hello"` using the regular expression `/Hello/`. That regex searched for a literal match of the string `"Hello"`. Here's another example searching for a literal match of the string `"Kevin"`:
 
 ```js
 let testStr = "Hello, my name is Kevin.";
@@ -16,7 +18,7 @@ testRegex.test(testStr);
 // Returns true
 ```
 
-Any other forms of <code>"Kevin"</code> will not match. For example, the regex <code>/Kevin/</code> will not match <code>"kevin"</code> or <code>"KEVIN"</code>.
+Any other forms of `"Kevin"` will not match. For example, the regex `/Kevin/` will not match `"kevin"` or `"KEVIN"`.
 
 ```js
 let wrongRegex = /kevin/;
@@ -25,14 +27,19 @@ wrongRegex.test(testStr);
 ```
 
 A future challenge will show how to match those other forms as well.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Complete the regex <code>waldoRegex</code> to find <code>"Waldo"</code> in the string <code>waldoIsHiding</code> with a literal match.
+
+Complete the regex `waldoRegex` to find `"Waldo"` in the string `waldoIsHiding` with a literal match.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,11 +69,10 @@ let result = waldoRegex.test(waldoIsHiding);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

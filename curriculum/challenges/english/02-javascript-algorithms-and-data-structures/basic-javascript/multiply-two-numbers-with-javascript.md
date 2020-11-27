@@ -7,25 +7,31 @@ forumTopicId: 18243
 ---
 
 ## Description
-<section id='description'>
-We can also multiply one number by another.
-JavaScript uses the <code>*</code> symbol for multiplication of two numbers.
 
-<strong>Example</strong>
+<section id='description'>
+
+We can also multiply one number by another.
+
+JavaScript uses the `*` symbol for multiplication of two numbers.
+
+**Example**
 
 ```js
 myVar = 13 * 13; // assigned 169
 ```
 
-
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the <code>0</code> so that product will equal <code>80</code>.
+
+Change the `0` so that product will equal `80`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,8 +59,8 @@ var product = 8 * 0;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -65,8 +72,8 @@ var product = 8 * 0;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var product = 8 * 10;

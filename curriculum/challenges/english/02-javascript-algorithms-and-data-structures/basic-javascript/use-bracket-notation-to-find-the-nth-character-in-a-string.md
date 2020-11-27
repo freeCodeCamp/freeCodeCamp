@@ -7,9 +7,12 @@ forumTopicId: 18343
 ---
 
 ## Description
+
 <section id='description'>
+
 You can also use <dfn>bracket notation</dfn> to get the character at other positions within a string.
-Remember that computers start counting at <code>0</code>, so the first character is actually the zeroth character.
+
+Remember that computers start counting at `0`, so the first character is actually the zeroth character.
 
 Example:
 
@@ -21,12 +24,17 @@ var secondLetterOfFirstName = firstName[1]; // secondLetterOfFirstName is "d"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of the <code>lastName</code> variable using bracket notation.
-<strong>Hint: </strong> Try looking at the example above if you get stuck.
+
+Let's try to set `thirdLetterOfLastName` to equal the third letter of the `lastName` variable using bracket notation.
+
+**Hint:** Try looking at the example above if you get stuck.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +66,8 @@ var thirdLetterOfLastName = lastName; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -70,8 +79,8 @@ var thirdLetterOfLastName = lastName; // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var lastName = "Lovelace";

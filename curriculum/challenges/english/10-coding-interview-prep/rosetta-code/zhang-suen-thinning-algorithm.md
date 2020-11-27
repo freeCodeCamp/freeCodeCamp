@@ -6,12 +6,14 @@ forumTopicId: 302347
 ---
 
 ## Description
+
 <section id='description'>
 
-This is an algorithm used to thin a black and white i.e. one bit per pixel images.
-For example, with an input image of:
+This is an algorithm used to thin a black and white i.e. one bit per pixel images. For example, with an input image of:
+
 <!-- TODO write fully in markdown>
 <!-- markdownlint-disable -->
+
 <pre>
  #################                   #############
  ##################               ################
@@ -30,7 +32,9 @@ For example, with an input image of:
  ########     ####### ######      ################ ######
  ########     ####### ######         ############# ######
 </pre>
+
 It produces the thinned output:
+
 <pre>
 
     # ##########                       #######
@@ -52,8 +56,7 @@ It produces the thinned output:
 
 <h2>Algorithm</h2>
 
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes.
-The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
 
 <table border="3">
   <tr><td style="text-align: center;">P9</td><td style="text-align: center;">P2</td><td style="text-align: center;">P3</td></tr>
@@ -62,6 +65,7 @@ The algorithm operates on all black pixels P1 that can have eight neighbours. Th
 </table>
 
 Obviously the boundary pixels of the image cannot have the full eight neighbours.
+
 <ul>
   <li>Define $A(P1)$ = the number of transitions from white to black, (0 -> 1) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).</li>
   <li>Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )</li>
@@ -98,14 +102,19 @@ After iterating over the image and collecting all the pixels satisfying all step
 <h3>Iteration:</h3>
 
 If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a routine to perform Zhang-Suen thinning on the provided image matrix.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -124,6 +133,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -156,8 +166,8 @@ function thinImage(image) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -208,8 +218,8 @@ const result = thinImage(imageForTests);
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Point(x, y) {

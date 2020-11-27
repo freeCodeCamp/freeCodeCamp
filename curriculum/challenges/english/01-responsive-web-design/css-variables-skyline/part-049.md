@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Give `bb2b` a `width` and `height` of `100%` to make it fill the building container. You will add something on the top a little later.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -203,10 +209,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

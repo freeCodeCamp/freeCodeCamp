@@ -7,8 +7,10 @@ forumTopicId: 301130
 ---
 
 ## Description
+
 <section id='description'>
-You can group cells of your grid together into an <dfn>area</dfn> and give the area a custom name. Do this by using <code>grid-template-areas</code> on the container like this:
+
+You can group cells of your grid together into an <dfn>area</dfn> and give the area a custom name. Do this by using `grid-template-areas` on the container like this:
 
 ```css
 grid-template-areas:
@@ -17,17 +19,20 @@ grid-template-areas:
   "footer footer footer";
 ```
 
-The code above merges the top three cells together into an area named <code>header</code>, the bottom three cells into a <code>footer</code> area, and it makes two areas in the middle row; <code>advert</code> and <code>content</code>.
-<strong>Note:</strong> Every word in the code represents a cell and every pair of quotation marks represent a row.
-In addition to custom labels, you can use a period (<code>.</code>) to designate an empty cell in the grid.
+The code above merges the top three cells together into an area named `header`, the bottom three cells into a `footer` area, and it makes two areas in the middle row; `advert` and `content`. **Note:** Every word in the code represents a cell and every pair of quotation marks represent a row. In addition to custom labels, you can use a period (`.`) to designate an empty cell in the grid.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Place the area template so that the cell labeled <code>advert</code> becomes an empty cell.
+
+Place the area template so that the cell labeled `advert` becomes an empty cell.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

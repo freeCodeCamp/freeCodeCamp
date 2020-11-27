@@ -6,16 +6,19 @@ isPrivate: true
 ---
 
 ## Description
+
 <section id='description'>
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,11 +41,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,22 +6,29 @@ forumTopicId: 302269
 ---
 
 ## Description
+
 <section id='description'>
-The  Fibonacci Word  may be created in a manner analogous to the  Fibonacci Sequence <a href="https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" target="_blank">as described here</a>:
-<pre>
-Define  F_Word<sub>1</sub>  as  <strong>1</strong>
+
+The Fibonacci Word may be created in a manner analogous to the Fibonacci Sequence [as described here](https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf):
+
+<pre>Define  F_Word<sub>1</sub>  as  <strong>1</strong>
 Define  F_Word<sub>2</sub>  as  <strong>0</strong>
 Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <strong>01</strong>
 Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
 </pre>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a function to return the Fibonacci Words up to <code>n</code>. <code>n</code> will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: <code>{ N: 1, Length: 1, Entropy: 0, Word: '1' }</code>.
+
+Write a function to return the Fibonacci Words up to `n`. `n` will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: `{ N: 1, Length: 1, Entropy: 0, Word: '1' }`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,8 +58,8 @@ function fibWord(n) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -71,8 +79,8 @@ let ans=[ { N: 1, Length: 1, Entropy: 0, Word: '1' },
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function fibWord(n) {

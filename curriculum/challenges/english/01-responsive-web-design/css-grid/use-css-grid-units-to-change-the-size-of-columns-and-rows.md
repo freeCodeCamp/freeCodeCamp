@@ -7,11 +7,17 @@ forumTopicId: 301134
 ---
 
 ## Description
+
 <section id='description'>
-You can use absolute and relative units like <code>px</code> and <code>em</code> in CSS Grid to define the size of rows and columns. You can use these as well:
-<code>fr</code>: sets the column or row to a fraction of the available space,
-<code>auto</code>: sets the column or row to the width or height of its content automatically,
-<code>%</code>: adjusts the column or row to the percent width of its container.
+
+You can use absolute and relative units like `px` and `em` in CSS Grid to define the size of rows and columns. You can use these as well:
+
+`fr`: sets the column or row to a fraction of the available space,
+
+`auto`: sets the column or row to the width or height of its content automatically,
+
+`%`: adjusts the column or row to the percent width of its container.
+
 Here's the code that generates the output in the preview:
 
 ```css
@@ -19,14 +25,19 @@ grid-template-columns: auto 50px 10% 2fr 1fr;
 ```
 
 This snippet creates five columns. The first column is as wide as its content, the second column is 50px, the third column is 10% of its container, and for the last two columns; the remaining space is divided into three sections, two are allocated for the fourth column, and one for the fifth.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Make a grid with three columns whose widths are as follows: 1fr, 100px, and 2fr.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,13 +88,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.container {grid-template-columns: 1fr 100px 2fr;}</style>

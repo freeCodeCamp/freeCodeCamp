@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Next, you want to align the price to the right. Add a class named `price` to your `p` element that has `3.00` as its text.
@@ -12,6 +13,7 @@ Next, you want to align the price to the right. Add a class named `price` to you
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

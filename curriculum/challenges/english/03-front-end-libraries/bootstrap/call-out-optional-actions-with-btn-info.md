@@ -6,18 +6,25 @@ forumTopicId: 16770
 ---
 
 ## Description
+
 <section id='description'>
-Bootstrap comes with several pre-defined colors for buttons. The <code>btn-info</code> class is used to call attention to optional actions that the user can take.
-Create a new block-level Bootstrap button below your "Like" button with the text "Info", and add Bootstrap's <code>btn-info</code> and <code>btn-block</code> classes to it.
-Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes.
+
+Bootstrap comes with several pre-defined colors for buttons. The `btn-info` class is used to call attention to optional actions that the user can take.
+
+Create a new block-level Bootstrap button below your "Like" button with the text "Info", and add Bootstrap's `btn-info` and `btn-block` classes to it.
+
+Note that these buttons still need the `btn` and `btn-block` classes.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -103,11 +111,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -7,16 +7,23 @@ forumTopicId: 301103
 ---
 
 ## Description
+
 <section id='description'>
-The tweet embed <code>header</code> and <code>footer</code> used the <code>flex-direction</code> property earlier with a row value. Similarly, the items inside the <code>.profile-name</code> element would work well stacked as a column.
+
+The tweet embed `header` and `footer` used the `flex-direction` property earlier with a row value. Similarly, the items inside the `.profile-name` element would work well stacked as a column.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the CSS property <code>flex-direction</code> to the header's <code>.profile-name</code> element and set the value to column.
+
+Add the CSS property `flex-direction` to the header's `.profile-name` element and set the value to column.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -126,11 +134,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

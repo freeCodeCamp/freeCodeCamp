@@ -9,8 +9,7 @@ forumTopicId: 301591
 
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-This exercise is similar to the preceding one. Look at it for the details.
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/). This exercise is similar to the preceding one. Look at it for the details.
 
 Now that you have seen how it is done, it is your turn to do it from scratch.
 
@@ -32,10 +31,10 @@ Send the following JSON response as a payload to the `/travellers` route:
 
 Check for the following, within a `request.end` callback:
 
-1. `status`
-2. `type`
-3. `body.name`
-4. `body.surname`
+1.  `status`
+2.  `type`
+3.  `body.name`
+4.  `body.surname`
 
 Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
 

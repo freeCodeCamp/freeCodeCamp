@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 `append` a `tr` element to the selection and then append a `th` element right after it. `tr` is for defining a row of the table, and `th` is for defining the header cells of the table.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -204,8 +210,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -238,10 +244,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

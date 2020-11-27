@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Create a new `const` named `xScale`. Use it to create another linear scale like you did for the y-scale. This will be the horizontal or "x" axis.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -67,8 +73,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -101,10 +107,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

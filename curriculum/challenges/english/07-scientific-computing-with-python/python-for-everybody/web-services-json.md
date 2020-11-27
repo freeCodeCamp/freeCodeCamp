@@ -6,14 +6,16 @@ videoId: ZJE-U56BppM
 ---
 
 ## Description
+
 <section id='description'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What will the following code print?:
@@ -46,6 +48,6 @@ question:
     - |
         [Error]
   solution: 2
-```
+````
 
 </section>

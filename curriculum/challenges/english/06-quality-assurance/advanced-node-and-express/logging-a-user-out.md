@@ -6,11 +6,12 @@ forumTopicId: 301560
 ---
 
 ## Description
+
 <section id='description'>
 
 Creating the logout logic is easy. The route should just unauthenticate the user and redirect to the home page instead of rendering any view.
 
-In passport, unauthenticating a user is as easy as just calling <code>req.logout();</code> before redirecting.
+In passport, unauthenticating a user is as easy as just calling `req.logout();` before redirecting.
 
 ```js
 app.route('/logout')
@@ -30,16 +31,18 @@ app.use((req, res, next) => {
 });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,11 +57,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

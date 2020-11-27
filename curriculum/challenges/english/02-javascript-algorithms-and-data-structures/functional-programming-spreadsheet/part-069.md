@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Remove the `fn` declaration and return statement. Set `varRangeExpanded` to the result of using the `replace` method on `x`, with `rangeRegex` as the first argument and `""` as the second argument. Then, return it.
@@ -12,12 +13,13 @@ Remove the `fn` declaration and return statement. Set `varRangeExpanded` to the 
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,10 +29,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -98,8 +100,8 @@ const evalFormula = x => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -130,8 +132,8 @@ const evalFormula = x => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -141,11 +143,10 @@ const evalFormula = x => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

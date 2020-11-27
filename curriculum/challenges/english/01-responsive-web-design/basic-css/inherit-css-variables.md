@@ -7,18 +7,27 @@ forumTopicId: 301088
 ---
 
 ## Description
+
 <section id='description'>
+
 When you create a variable, it is available for you to use inside the selector in which you create it. It also is available in any of that selector's descendants. This happens because CSS variables are inherited, just like ordinary properties.
+
 To make use of inheritance, CSS variables are often defined in the <dfn>:root</dfn> element.
-<code>:root</code> is a <dfn>pseudo-class</dfn> selector that matches the root element of the document, usually the <code>html</code> element. By creating your variables in <code>:root</code>, they will be available globally and can be accessed from any other selector in the style sheet.
+
+`:root` is a <dfn>pseudo-class</dfn> selector that matches the root element of the document, usually the `html` element. By creating your variables in `:root`, they will be available globally and can be accessed from any other selector in the style sheet.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Define a variable named <code>--penguin-belly</code> in the <code>:root</code> selector and give it the value of <code>pink</code>. You can then see that the variable is inherited and that all the child elements which use it get pink backgrounds.
+
+Define a variable named `--penguin-belly` in the `:root` selector and give it the value of `pink`. You can then see that the variable is inherited and that all the child elements which use it get pink backgrounds.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -241,13 +251,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>:root {--penguin-belly: pink;}</style>

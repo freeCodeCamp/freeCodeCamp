@@ -7,8 +7,11 @@ forumTopicId: 301073
 ---
 
 ## Description
+
 <section id='description'>
-You can use CSS <code>@keyframes</code> to change the color of a button in its hover state.
+
+You can use CSS `@keyframes` to change the color of a button in its hover state.
+
 Here's an example of changing the width of an image on hover:
 
 ```html
@@ -31,12 +34,17 @@ Here's an example of changing the width of an image on hover:
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Note that <code>ms</code> stands for milliseconds, where 1000ms is equal to 1s.
-Use CSS <code>@keyframes</code> to change the <code>background-color</code> of the <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>.
+
+Note that `ms` stands for milliseconds, where 1000ms is equal to 1s.
+
+Use CSS `@keyframes` to change the `background-color` of the `button` element so it becomes `#4791d0` when a user hovers over it. The `@keyframes` rule should only have an entry for `100%`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,11 +86,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

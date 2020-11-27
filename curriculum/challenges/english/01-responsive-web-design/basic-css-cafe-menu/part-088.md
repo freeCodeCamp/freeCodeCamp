@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now the top spacing looks good. The space below the address at the bottom of the menu is a little bigger than the space at the top of the menu and the `h1` element.
@@ -14,6 +15,7 @@ To decrease the default margin space below the address `p` element, create a cla
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

@@ -6,20 +6,23 @@ forumTopicId: 302078
 ---
 
 ## Description
+
 <section id='description'>
 
-We shall say that an <var>n</var>-digit number is pandigital if it makes use of all the digits 1 to <var>n</var> exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
 
 What is the largest `n`-length digit pandigital prime that exists?
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,13 +55,11 @@ pandigitalPrime(7);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function pandigitalPrime(n) {

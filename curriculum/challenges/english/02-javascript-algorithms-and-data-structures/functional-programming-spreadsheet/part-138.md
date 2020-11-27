@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `Array` function takes an argument `x` and creates an array of size `x` filled with `undefined`.
@@ -14,12 +15,13 @@ Make `range` return an array of `undefined` with size `end - start + 1`.
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,10 +31,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -169,8 +171,8 @@ const update = event => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -201,8 +203,8 @@ const update = event => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -212,11 +214,10 @@ const update = event => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

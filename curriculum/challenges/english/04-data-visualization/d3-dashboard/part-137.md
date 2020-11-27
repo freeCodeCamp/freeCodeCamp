@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 At the top of the function create a new `const` named `index`. You are going to use it to find the item in the `data` array with the year that is passed to the function.
@@ -19,13 +20,17 @@ array.findIndex(d =>
 ```
 
 After this, you will be able to use `data[index]` to get that item in the array.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -250,8 +256,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -284,10 +290,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

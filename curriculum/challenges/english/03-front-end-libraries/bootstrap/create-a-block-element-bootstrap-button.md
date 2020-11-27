@@ -6,25 +6,39 @@ forumTopicId: 16810
 ---
 
 ## Description
+
 <section id='description'>
-Normally, your <code>button</code> elements with the <code>btn</code> and <code>btn-default</code> classes are only as wide as the text that they contain. For example:
-<code>&lt;button class="btn btn-default"&gt;Submit&lt;/button&gt;</code>
+
+Normally, your `button` elements with the `btn` and `btn-default` classes are only as wide as the text that they contain. For example:
+
+`<button class="btn btn-default">Submit</button>`
+
 This button would only be as wide as the word "Submit".
+
 <button class='btn btn-default'>Submit</button>
-By making them block elements with the additional class of <code>btn-block</code>, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
-<code>&lt;button class="btn btn-default btn-block"&gt;Submit&lt;/button&gt;</code>
+
+By making them block elements with the additional class of `btn-block`, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
+
+`<button class="btn btn-default btn-block">Submit</button>`
+
 This button would take up 100% of the available width.
+
 <button class='btn btn-default btn-block'>Submit</button>
-Note that these buttons still need the <code>btn</code> class.
-Add Bootstrap's <code>btn-block</code> class to your Bootstrap button.
+
+Note that these buttons still need the `btn` class.
+
+Add Bootstrap's `btn-block` class to your Bootstrap button.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -108,11 +123,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

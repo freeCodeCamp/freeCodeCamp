@@ -6,9 +6,12 @@ forumTopicId: 301315
 ---
 
 ## Description
+
 <section id='description'>
-A constructor function that inherits its <code>prototype</code> object from a supertype constructor function can still have its own methods in addition to inherited methods.
-For example, <code>Bird</code> is a constructor that inherits its <code>prototype</code> from <code>Animal</code>:
+
+A constructor function that inherits its `prototype` object from a supertype constructor function can still have its own methods in addition to inherited methods.
+
+For example, `Bird` is a constructor that inherits its `prototype` from `Animal`:
 
 ```js
 function Animal() { }
@@ -20,7 +23,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-In addition to what is inherited from <code>Animal</code>, you want to add behavior that is unique to <code>Bird</code> objects. Here, <code>Bird</code> will get a <code>fly()</code> function. Functions are added to <code>Bird's</code> <code>prototype</code> the same way as any constructor function:
+In addition to what is inherited from `Animal`, you want to add behavior that is unique to `Bird` objects. Here, `Bird` will get a `fly()` function. Functions are added to `Bird's` `prototype` the same way as any constructor function:
 
 ```js
 Bird.prototype.fly = function() {
@@ -28,7 +31,7 @@ Bird.prototype.fly = function() {
 };
 ```
 
-Now instances of <code>Bird</code> will have both <code>eat()</code> and <code>fly()</code> methods:
+Now instances of `Bird` will have both `eat()` and `fly()` methods:
 
 ```js
 let duck = new Bird();
@@ -39,11 +42,15 @@ duck.fly(); // prints "I'm flying!"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add all necessary code so the <code>Dog</code> object inherits from <code>Animal</code> and the <code>Dog's</code> <code>prototype</code> constructor is set to Dog. Then add a <code>bark()</code> method to the <code>Dog</code> object so that <code>beagle</code> can both <code>eat()</code> and <code>bark()</code>. The <code>bark()</code> method should print "Woof!" to the console.
+
+Add all necessary code so the `Dog` object inherits from `Animal` and the `Dog's` `prototype` constructor is set to Dog. Then add a `bark()` method to the `Dog` object so that `beagle` can both `eat()` and `bark()`. The `bark()` method should print "Woof!" to the console.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -71,6 +78,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -93,13 +101,11 @@ let beagle = new Dog();
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Animal() { }

@@ -7,18 +7,27 @@ forumTopicId: 17557
 ---
 
 ## Description
+
 <section id='description'>
+
 Previously we have used the code
-<code>var myName = "your name";</code>
-<code>"your name"</code> is called a <dfn>string</dfn> <dfn>literal</dfn>. It is a string because it is a series of zero or more characters enclosed in single or double quotes.
+
+`var myName = "your name";`
+
+`"your name"` is called a <dfn>string</dfn> <dfn>literal</dfn>. It is a string because it is a series of zero or more characters enclosed in single or double quotes.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create two new <code>string</code> variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively.
+
+Create two new `string` variables: `myFirstName` and `myLastName` and assign them the values of your first and last name, respectively.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,8 +55,8 @@ tests:
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -58,8 +68,8 @@ if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(fun
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myFirstName = "Alan";

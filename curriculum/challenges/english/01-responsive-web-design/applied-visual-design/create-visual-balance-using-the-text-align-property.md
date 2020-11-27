@@ -7,21 +7,33 @@ forumTopicId: 301053
 ---
 
 ## Description
+
 <section id='description'>
+
 This section of the curriculum focuses on Applied Visual Design. The first group of challenges build on the given card layout to show a number of core principles.
-Text is often a large part of web content. CSS has several options for how to align it with the <code>text-align</code> property.
-<code>text-align: justify;</code> causes all lines of text except the last line to meet the left and right edges of the line box.
-<code>text-align: center;</code> centers the text
-<code>text-align: right;</code> right-aligns the text
-And <code>text-align: left;</code> (the default) left-aligns the text.
+
+Text is often a large part of web content. CSS has several options for how to align it with the `text-align` property.
+
+`text-align: justify;` causes all lines of text except the last line to meet the left and right edges of the line box.
+
+`text-align: center;` centers the text
+
+`text-align: right;` right-aligns the text
+
+And `text-align: left;` (the default) left-aligns the text.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Align the <code>h4</code> tag's text, which says "Google", to the center. Then justify the paragraph tag which contains information about how Google was founded.
+
+Align the `h4` tag's text, which says "Google", to the center. Then justify the paragraph tag which contains information about how Google was founded.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,11 +91,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

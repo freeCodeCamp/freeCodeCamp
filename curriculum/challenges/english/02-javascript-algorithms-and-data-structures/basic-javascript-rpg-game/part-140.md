@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Inside the `while` loop, push a random number between 0 and 10 onto the end of the `numbers` array. Get the random number with `Math.floor(Math.random() * 11)`.
@@ -12,11 +13,13 @@ Inside the `while` loop, push a random number between 0 and 10 onto the end of t
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -326,8 +330,8 @@ function pick(guess) {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -396,8 +400,8 @@ function pick(guess) {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -407,12 +411,11 @@ function pick(guess) {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

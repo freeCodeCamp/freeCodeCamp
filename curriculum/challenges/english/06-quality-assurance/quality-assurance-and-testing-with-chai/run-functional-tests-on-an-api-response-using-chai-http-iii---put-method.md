@@ -9,10 +9,9 @@ forumTopicId: 301590
 
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
-In the next example we'll see how to send data in a request payload (body).
-We are going to test a PUT request. The `'/travellers'` endpoint accepts a JSON object taking the structure:
+In the next example we'll see how to send data in a request payload (body). We are going to test a PUT request. The `'/travellers'` endpoint accepts a JSON object taking the structure:
 
 ```json
 {
@@ -48,10 +47,10 @@ Send the following JSON response as a payload:
 
 Check for the following, within the `request.end` callback:
 
-1. `status`
-2. `type`
-3. `body.name`
-4. `body.surname`
+1.  `status`
+2.  `type`
+3.  `body.name`
+4.  `body.surname`
 
 Follow the assertion order above - we rely on it. Be sure to remove `assert.fail()`, once complete.
 

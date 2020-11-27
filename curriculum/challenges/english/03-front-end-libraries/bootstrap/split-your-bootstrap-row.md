@@ -6,17 +6,23 @@ forumTopicId: 18306
 ---
 
 ## Description
+
 <section id='description'>
+
 Now that we have a Bootstrap Row, let's split it into two columns to house our elements.
-Create two <code>div</code> elements within your row, both with the class <code>col-xs-6</code>.
+
+Create two `div` elements within your row, both with the class `col-xs-6`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -47,11 +54,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

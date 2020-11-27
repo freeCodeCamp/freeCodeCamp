@@ -6,34 +6,37 @@ forumTopicId: 302191
 ---
 
 ## Description
+
 <section id='description'>
 
 Let p(n) represent the number of different ways in which n coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so p(5)=7.
 
 <div style='text-align: center;'>
 
-  |Coin piles|
-  |--- |
-  |OOOOO|
-  |OOOO   O|
-  |OOO   OO|
-  |OOO   O   O|
-  |OO   OO   O|
-  |OO   O   O   O|
-  |O   O   O   O   O|
+| Coin piles        |
+| ----------------- |
+| OOOOO             |
+| OOOO   O          |
+| OOO   OO          |
+| OOO   O   O       |
+| OO   OO   O       |
+| OO   O   O   O    |
+| O   O   O   O   O |
 
 </div>
 
-Find the least value of <var>n</var> for which p(<var>n</var>) is divisible by one million.
+Find the least value of `n` for which p(`n`) is divisible by one million.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,11 +67,10 @@ coinPartitions();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -7,16 +7,23 @@ forumTopicId: 301121
 ---
 
 ## Description
+
 <section id='description'>
-Using the <code>align-items</code> property on a grid container will set the vertical alignment for all the items in our grid.
+
+Using the `align-items` property on a grid container will set the vertical alignment for all the items in our grid.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Use it now to move all the items to the end of each cell.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -68,13 +76,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.container {align-items: end;}</style>

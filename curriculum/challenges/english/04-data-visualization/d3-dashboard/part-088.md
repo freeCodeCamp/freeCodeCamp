@@ -5,18 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The pie chart needs a new scale to set the colors. Create a new `const` named `pieColors` and set it equal to `d3.scaleOrdinal()`. An ordinal scale is for a set of data that will have exactly one item in the range specifically for it.
-  
+
 In this case, each platform of followers you have will map directly to a single color with nothing in between.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -169,8 +175,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -203,10 +209,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

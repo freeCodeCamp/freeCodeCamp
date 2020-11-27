@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You can also declare variables with the `const` key word. Since `button1` is a constant that will never change, switch the `let` keyword that declares the variable to `const`.
@@ -12,11 +13,13 @@ You can also declare variables with the `const` key word. Since `button1` is a c
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -50,8 +54,8 @@ let button1 = document.querySelector('#button1');
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -120,8 +124,8 @@ let button1 = document.querySelector('#button1');
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -131,12 +135,11 @@ let button1 = document.querySelector('#button1');
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

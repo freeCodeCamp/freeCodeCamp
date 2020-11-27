@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The word "condition" inside the if statement is just a placeholder. Change the condition to check if the amount of gold the player has is greater than or equal to 10. 
+The word "condition" inside the if statement is just a placeholder. Change the condition to check if the amount of gold the player has is greater than or equal to 10.
 
 Here is an `if` statement that checks if `num` is greater than or equal to 5:
 
@@ -20,11 +21,13 @@ if (num >= 5) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -137,8 +141,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -207,8 +211,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -218,12 +222,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

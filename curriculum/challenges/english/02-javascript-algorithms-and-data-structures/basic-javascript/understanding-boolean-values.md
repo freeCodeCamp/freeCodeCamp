@@ -7,17 +7,26 @@ forumTopicId: 301176
 ---
 
 ## Description
+
 <section id='description'>
-Another data type is the <dfn>Boolean</dfn>. <code>Booleans</code> may only be one of two values: <code>true</code> or <code>false</code>. They are basically little on-off switches, where <code>true</code> is "on" and <code>false</code> is "off."  These two states are mutually exclusive.
-<strong>Note</strong><br><code>Boolean</code> values are never written with quotes. The <code>strings</code> <code>"true"</code> and <code>"false"</code> are not <code>Boolean</code> and have no special meaning in JavaScript.
+
+Another data type is the <dfn>Boolean</dfn>. `Booleans` may only be one of two values: `true` or `false`. They are basically little on-off switches, where `true` is "on" and `false` is "off." These two states are mutually exclusive.
+
+**Note**  
+`Boolean` values are never written with quotes. The `strings` `"true"` and `"false"` are not `Boolean` and have no special meaning in JavaScript.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Modify the <code>welcomeToBooleans</code> function so that it returns <code>true</code> instead of <code>false</code> when the run button is clicked.
+
+Modify the `welcomeToBooleans` function so that it returns `true` instead of `false` when the run button is clicked.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,8 +59,8 @@ function welcomeToBooleans() {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -62,8 +72,8 @@ welcomeToBooleans();
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function welcomeToBooleans() {

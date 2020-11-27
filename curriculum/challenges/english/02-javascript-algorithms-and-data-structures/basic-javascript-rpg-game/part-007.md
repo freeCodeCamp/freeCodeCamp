@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now set the inventory to equal the string "stick".
 
-Strings must be surrounded with double quotes `"`, single quotes `'`, or backticks <code>`</code>.
+Strings must be surrounded with double quotes `"`, single quotes `'`, or backticks `` ` ``.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -50,8 +54,8 @@ let inventory;
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -120,8 +124,8 @@ let inventory;
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -131,13 +135,11 @@ let inventory;
 
 </div>
 
-
 </section>
 
-
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

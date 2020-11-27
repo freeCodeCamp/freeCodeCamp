@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `fill` method takes an argument and replaces all elements of the array with that argument.
@@ -14,12 +15,13 @@ Use it on the array in `range` to replace everything with `start`.
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,10 +31,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -169,8 +171,8 @@ const update = event => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -201,8 +203,8 @@ const update = event => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -212,11 +214,10 @@ const update = event => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

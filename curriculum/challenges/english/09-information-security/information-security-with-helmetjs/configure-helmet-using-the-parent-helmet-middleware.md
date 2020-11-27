@@ -6,9 +6,13 @@ forumTopicId: 301575
 ---
 
 ## Description
+
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-infosec">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.
-<code>app.use(helmet())</code> will automatically include all the middleware introduced above, except <code>noCache()</code>, and <code>contentSecurityPolicy()</code>, but these can be enabled if necessary. You can also disable or configure any other middleware individually, using a configuration object.
+
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-infosec), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-infosec/).
+
+`app.use(helmet())` will automatically include all the middleware introduced above, except `noCache()`, and `contentSecurityPolicy()`, but these can be enabled if necessary. You can also disable or configure any other middleware individually, using a configuration object.
+
 <h3>Example:</h3>
 
 ```js
@@ -26,15 +30,18 @@ app.use(helmet({
 }))
 ```
 
-We introduced each middleware separately for teaching purposes and for ease of testing. Using the ‘parent’ <code>helmet()</code> middleware is easy to implement in a real project.
+We introduced each middleware separately for teaching purposes and for ease of testing. Using the ‘parent’ `helmet()` middleware is easy to implement in a real project.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,11 +54,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add an empty `article` element under the `Desserts` heading. Give it a `class` attribute with the value `item`.
@@ -12,6 +13,7 @@ Add an empty `article` element under the `Desserts` heading. Give it a `class` a
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

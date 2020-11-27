@@ -7,17 +7,25 @@ forumTopicId: 301062
 ---
 
 ## Description
+
 <section id='description'>
-Here's one more continuous animation example with the <code>animation-iteration-count</code> property that uses the heart you designed in a previous challenge.
-The one-second long heartbeat animation consists of two animated pieces. The <code>heart</code> elements (including the <code>:before</code> and <code>:after</code> pieces) are animated to change size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.
+
+Here's one more continuous animation example with the `animation-iteration-count` property that uses the heart you designed in a previous challenge.
+
+The one-second long heartbeat animation consists of two animated pieces. The `heart` elements (including the `:before` and `:after` pieces) are animated to change size using the `transform` property, and the background `div` is animated to change its color using the `background` property.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Keep the heart beating by adding the <code>animation-iteration-count</code> property for both the <code>back</code> class and the <code>heart</code> class and setting the value to infinite. The <code>heart:before</code> and <code>heart:after</code> selectors do not need any animation properties.
+
+Keep the heart beating by adding the `animation-iteration-count` property for both the `back` class and the `heart` class and setting the value to infinite. The `heart:before` and `heart:after` selectors do not need any animation properties.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -110,11 +119,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

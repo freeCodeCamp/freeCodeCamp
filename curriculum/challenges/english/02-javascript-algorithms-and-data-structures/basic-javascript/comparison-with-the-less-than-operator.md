@@ -7,9 +7,12 @@ forumTopicId: 16789
 ---
 
 ## Description
+
 <section id='description'>
-The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two numbers. If the number to the left is less than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.
-<strong>Examples</strong>
+
+The <dfn>less than</dfn> operator (`<`) compares the values of two numbers. If the number to the left is less than the number to the right, it returns `true`. Otherwise, it returns `false`. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.
+
+**Examples**
 
 ```js
 2   < 5  // true
@@ -22,11 +25,15 @@ The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Add the less than operator to the indicated lines so that the return statements make sense.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,13 +81,11 @@ testLessThan(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testLessThan(val) {

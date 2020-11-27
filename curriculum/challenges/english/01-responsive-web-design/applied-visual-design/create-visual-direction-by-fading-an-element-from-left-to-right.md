@@ -7,17 +7,25 @@ forumTopicId: 301054
 ---
 
 ## Description
+
 <section id='description'>
-For this challenge, you'll change the <code>opacity</code> of an animated element so it gradually fades as it reaches the right side of the screen.
-In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the <code>@keyframes</code> rule.
+
+For this challenge, you'll change the `opacity` of an animated element so it gradually fades as it reaches the right side of the screen.
+
+In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the `@keyframes` rule.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Target the element with the id of <code>ball</code> and add the <code>opacity</code> property set to 0.1 at <code>50%</code>, so the element fades as it moves to the right.
+
+Target the element with the id of `ball` and add the `opacity` property set to 0.1 at `50%`, so the element fades as it moves to the right.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,13 +76,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

@@ -6,16 +6,21 @@ forumTopicId: 302277
 ---
 
 ## Description
+
 <section id='description'>
+
 Write a function that returns the greatest common divisor of two integers.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,13 +60,11 @@ function gcd(a, b) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function gcd(a, b) {

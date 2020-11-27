@@ -6,14 +6,16 @@ videoId: 7lFM1T_CxBs
 ---
 
 ## Description
+
 <section id='description'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What will the output of the following code be like?:
@@ -31,6 +33,6 @@ question:
     - |
         A header, a footer, and the contents of "romeo.txt".
   solution: 1
-```
+````
 
 </section>

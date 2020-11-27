@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The flavors and prices are currently stacked on top of each other and centered with their respectable `p` elements. It would be nice if the flavor was on the left and the price was on the right.
@@ -14,6 +15,7 @@ Add the class name `flavor` to the `French Vanilla` `p` element.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

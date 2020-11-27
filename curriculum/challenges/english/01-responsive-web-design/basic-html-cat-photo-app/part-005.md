@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 HTML5 has some elements that identify different content areas. These elements make your HTML easier to read and help with Search Engine Optimization (SEO) and accessibility.
@@ -14,6 +15,7 @@ Identify the main section of this page by adding a `<main>` opening tag after th
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -52,4 +55,5 @@ tests:
 ```
 
 </div>
+
 </section>

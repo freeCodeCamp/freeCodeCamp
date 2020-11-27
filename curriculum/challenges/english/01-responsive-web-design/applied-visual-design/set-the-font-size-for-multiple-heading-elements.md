@@ -7,13 +7,19 @@ forumTopicId: 301067
 ---
 
 ## Description
+
 <section id='description'>
-The <code>font-size</code> property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, you'll set the values for all <code>h1</code> through <code>h6</code> tags to balance the heading sizes.
+
+The `font-size` property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, you'll set the values for all `h1` through `h6` tags to balance the heading sizes.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
   <p>In the <code>style</code> tags, set the <code>font-size</code> of the:</p>
+
   <ul>
     <li><code>h1</code> tag to 68px.</li>
     <li><code>h2</code> tag to 52px.</li>
@@ -22,9 +28,11 @@ The <code>font-size</code> property is used to specify how large the text is in 
     <li><code>h5</code> tag to 21px.</li>
     <li><code>h6</code> tag to 14px.</li>
   </ul>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,11 +79,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

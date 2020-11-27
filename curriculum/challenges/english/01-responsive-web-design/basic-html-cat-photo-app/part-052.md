@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add a `legend` element with the text `What's your cat's personality?` inside the second `fieldset` element.
@@ -12,6 +13,7 @@ Add a `legend` element with the text `What's your cat's personality?` inside the
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -101,4 +104,5 @@ tests:
 ```
 
 </div>
+
 </section>

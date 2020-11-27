@@ -6,7 +6,9 @@ forumTopicId: 16020
 ---
 
 ## Description
+
 <section id='description'>
+
 Fill in the object constructor with the following methods below:
 
 ```js
@@ -18,17 +20,18 @@ setLastName(last)
 setFullName(firstAndLast)
 ```
 
-Run the tests to see the expected output for each method.
-The methods that take an argument must accept only one argument and it has to be a string.
-These methods must be the only available means of interacting with the object.
+Run the tests to see the expected output for each method. The methods that take an argument must accept only one argument and it has to be a string. These methods must be the only available means of interacting with the object.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -63,6 +66,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -95,12 +99,11 @@ if(bob){
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var Person = function(firstAndLast) {

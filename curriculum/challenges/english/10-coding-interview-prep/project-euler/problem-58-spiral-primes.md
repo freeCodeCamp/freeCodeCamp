@@ -6,6 +6,7 @@ forumTopicId: 302169
 ---
 
 ## Description
+
 <section id='description'>
 
 Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed.
@@ -27,11 +28,13 @@ If one complete new layer is wrapped around the spiral above, a square spiral wi
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,11 +65,10 @@ spiralPrimes();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

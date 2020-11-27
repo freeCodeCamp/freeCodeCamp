@@ -5,11 +5,12 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-We don't want a player's only weapon to break. 
+We don't want a player's only weapon to break.
 
-Use the "logical and" operator (`&&`) to add a second condition to the `if` expression you just wrote. A player's weapon should only be able to break if `inventory.length` does not equal (`!==`) one. 
+Use the "logical and" operator (`&&`) to add a second condition to the `if` expression you just wrote. A player's weapon should only be able to break if `inventory.length` does not equal (`!==`) one.
 
 Here is an example of an `if` expression with the conditions that `firstName` equals "Quincy" AND `lastName` does NOT equal "Larson". With `&&`, both conditions must be true or else the entire statement evaluates to false.
 
@@ -22,11 +23,13 @@ if (firstName === "Quincy" && lastName !== "Larson") {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -311,8 +315,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -381,8 +385,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -392,12 +396,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add the `name` attribute with the value `personality` to the checkbox `input` element.
@@ -14,6 +15,7 @@ While you won't notice this in the browser, doing this makes it easier for a ser
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -91,4 +94,5 @@ tests:
 ```
 
 </div>
+
 </section>

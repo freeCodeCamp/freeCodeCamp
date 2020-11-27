@@ -6,9 +6,13 @@ forumTopicId: 301232
 ---
 
 ## Description
+
 <section id='description'>
+
 The <dfn>arity</dfn> of a function is the number of arguments it requires. <dfn>Currying</dfn> a function means to convert a function of N arity into N functions of arity 1.
+
 In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.
+
 Here's an example:
 
 ```js
@@ -37,8 +41,7 @@ var funcForY = curried(1);
 console.log(funcForY(2)); // Prints 3
 ```
 
-Similarly, <dfn>partial application</dfn> can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments.
-Here's an example:
+Similarly, <dfn>partial application</dfn> can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments. Here's an example:
 
 ```js
 //Impartial function
@@ -52,11 +55,15 @@ partialFn(10); // Returns 13
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Fill in the body of the <code>add</code> function so it uses currying to add parameters <code>x</code>, <code>y</code>, and <code>z</code>.
+
+Fill in the body of the `add` function so it uses currying to add parameters `x`, `y`, and `z`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -75,6 +82,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -91,11 +99,10 @@ add(10)(20)(30);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

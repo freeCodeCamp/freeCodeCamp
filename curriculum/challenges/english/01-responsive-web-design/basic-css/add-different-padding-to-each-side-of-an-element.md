@@ -7,17 +7,25 @@ forumTopicId: 16634
 ---
 
 ## Description
+
 <section id='description'>
-Sometimes you will want to customize an element so that it has different amounts of <code>padding</code> on each of its sides.
-CSS allows you to control the <code>padding</code> of all four individual sides of an element with the <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties.
+
+Sometimes you will want to customize an element so that it has different amounts of `padding` on each of its sides.
+
+CSS allows you to control the `padding` of all four individual sides of an element with the `padding-top`, `padding-right`, `padding-bottom`, and `padding-left` properties.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Give the blue box a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
+
+Give the blue box a `padding` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -83,11 +92,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

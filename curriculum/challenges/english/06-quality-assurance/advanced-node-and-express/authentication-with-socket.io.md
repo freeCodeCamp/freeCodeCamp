@@ -9,9 +9,9 @@ forumTopicId: 301548
 
 <section id='description'>
 
-Currently, you cannot determine who is connected to your web socket. While <code>req.user</code> contains the user object, that's only when your user interacts with the web server, and with web sockets you have no <code>req</code> (request) and therefore no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!
+Currently, you cannot determine who is connected to your web socket. While `req.user` contains the user object, that's only when your user interacts with the web server, and with web sockets you have no `req` (request) and therefore no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!
 
-Add <code>passport.socketio</code>, <code>connect-mongo</code>, and <code>cookie-parser</code> as dependencies and require them as <code>passportSocketIo</code>, <code>MongoStore</code>, and <code>cookieParser</code> respectively. Also, we need to initialize a new memory store, from <code>express-session</code> which we previously required. It should look like this:
+Add `passport.socketio`, `connect-mongo`, and `cookie-parser` as dependencies and require them as `passportSocketIo`, `MongoStore`, and `cookieParser` respectively. Also, we need to initialize a new memory store, from `express-session` which we previously required. It should look like this:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -34,11 +34,11 @@ io.use(
 );
 ```
 
-Be sure to add the <code>key</code> and <code>store</code> to the <code>session</code> middleware mounted on the app. This is necessary to tell _SocketIO_ which session to relate to.
+Be sure to add the `key` and `store` to the `session` middleware mounted on the app. This is necessary to tell *SocketIO* which session to relate to.
 
 <hr>
 
-Now, define the <code>success</code>, and <code>fail</code> callback functions:
+Now, define the `success`, and `fail` callback functions:
 
 ```js
 function onAuthorizeSuccess(data, accept) {
@@ -54,7 +54,7 @@ function onAuthorizeFail(data, message, error, accept) {
 }
 ```
 
-The user object is now accessible on your socket object as <code>socket.request.user</code>. For example, now you can add the following:
+The user object is now accessible on your socket object as `socket.request.user`. For example, now you can add the following:
 
 ```js
 console.log('user ' + socket.request.user.name + ' connected');
@@ -62,7 +62,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 
 It will log to the server console who has connected!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point [here](https://gist.github.com/camperbot/1414cc9433044e306dd7fd0caa1c6254).
 
 </section>
 

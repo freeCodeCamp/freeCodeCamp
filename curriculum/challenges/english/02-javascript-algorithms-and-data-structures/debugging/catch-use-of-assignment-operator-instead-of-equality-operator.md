@@ -6,11 +6,16 @@ forumTopicId: 301191
 ---
 
 ## Description
+
 <section id='description'>
-Branching programs, i.e. ones that do different things if certain conditions are met, rely on <code>if</code>, <code>else if</code>, and <code>else</code> statements in JavaScript. The condition sometimes takes the form of testing whether a result is equal to a value.
-This logic is spoken (in English, at least) as "if x equals y, then ..." which can literally translate into code using the <code>=</code>, or assignment operator. This leads to unexpected control flow in your program.
-As covered in previous challenges, the assignment operator (<code>=</code>) in JavaScript assigns a value to a variable name. And the <code>==</code> and <code>===</code> operators check for equality (the triple <code>===</code> tests for strict equality, meaning both value and type are the same).
-The code below assigns <code>x</code> to be 2, which evaluates as <code>true</code>. Almost every value on its own in JavaScript evaluates to <code>true</code>, except what are known as the "falsy" values: <code>false</code>, <code>0</code>, <code>""</code> (an empty string), <code>NaN</code>, <code>undefined</code>, and <code>null</code>.
+
+Branching programs, i.e. ones that do different things if certain conditions are met, rely on `if`, `else if`, and `else` statements in JavaScript. The condition sometimes takes the form of testing whether a result is equal to a value.
+
+This logic is spoken (in English, at least) as "if x equals y, then ..." which can literally translate into code using the `=`, or assignment operator. This leads to unexpected control flow in your program.
+
+As covered in previous challenges, the assignment operator (`=`) in JavaScript assigns a value to a variable name. And the `==` and `===` operators check for equality (the triple `===` tests for strict equality, meaning both value and type are the same).
+
+The code below assigns `x` to be 2, which evaluates as `true`. Almost every value on its own in JavaScript evaluates to `true`, except what are known as the "falsy" values: `false`, `0`, `""` (an empty string), `NaN`, `undefined`, and `null`.
 
 ```js
 let x = 1;
@@ -25,11 +30,15 @@ if (x = y) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Fix the condition so the program runs the right branch, and the appropriate value is assigned to <code>result</code>.
+
+Fix the condition so the program runs the right branch, and the appropriate value is assigned to `result`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,11 +74,10 @@ console.log(result);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

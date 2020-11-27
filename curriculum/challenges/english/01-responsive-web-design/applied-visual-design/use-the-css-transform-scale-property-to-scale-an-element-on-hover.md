@@ -7,8 +7,11 @@ forumTopicId: 301077
 ---
 
 ## Description
+
 <section id='description'>
-The <code>transform</code> property has a variety of functions that let you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.
+
+The `transform` property has a variety of functions that let you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as `:hover` that specify a certain state of an element, the `transform` property can easily add interactivity to your elements.
+
 Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:
 
 ```css
@@ -17,16 +20,20 @@ p:hover {
 }
 ```
 
+**Note:** Applying a transform to a `div` element will also affect any child elements contained in the div.
 
-  <strong>Note:</strong> Applying a transform to a <code>div</code> element will also affect any child elements contained in the div.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use the <code>transform</code> property to scale the <code>div</code> element to 1.1 times its original size when a user hovers over it.
+
+Add a CSS rule for the `hover` state of the `div` and use the `transform` property to scale the `div` element to 1.1 times its original size when a user hovers over it.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,13 +73,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

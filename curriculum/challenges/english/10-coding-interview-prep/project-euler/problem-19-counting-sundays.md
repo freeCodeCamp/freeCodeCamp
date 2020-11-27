@@ -6,6 +6,7 @@ forumTopicId: 301827
 ---
 
 ## Description
+
 <section id='description'>
 
 You are given the following information, but you may prefer to do some research for yourself.
@@ -21,11 +22,13 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,13 +63,11 @@ countingSundays(1943, 1946);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function countingSundays(firstYear, lastYear) {

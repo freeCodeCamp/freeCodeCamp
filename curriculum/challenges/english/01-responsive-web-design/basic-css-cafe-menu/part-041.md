@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-That worked, but there is still a little space on the right of the price. 
+That worked, but there is still a little space on the right of the price.
 
-You could keep trying various percentages for the widths.  Instead,  simply move the price `p` element to be on the same line and make sure there is no space between them.
+You could keep trying various percentages for the widths. Instead, simply move the price `p` element to be on the same line and make sure there is no space between them.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

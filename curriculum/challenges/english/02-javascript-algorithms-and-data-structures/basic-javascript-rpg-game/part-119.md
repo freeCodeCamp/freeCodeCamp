@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The game could be complete now, but let's make it more interesting. 
+The game could be complete now, but let's make it more interesting.
 
 Inside the `attack` function, change the line `health -= monsters[fighting].level;` to `health -= getMonsterAttackValue(monsters[fighting].level);` This sets `health` to equal `health` minus the return value of the `getMonsterAttackValue` function. Also, pass the level of the monster to `getMonsterAttackValue` as an argument.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -283,8 +287,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -353,8 +357,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -364,12 +368,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

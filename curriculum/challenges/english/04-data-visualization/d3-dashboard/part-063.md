@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Add the D3 `data` function to your selection and pass it the data array like this: 
+Add the D3 `data` function to your selection and pass it the data array like this:
 
 ```js
 .data(data)
@@ -16,10 +17,13 @@ Add the D3 `data` function to your selection and pass it the data array like thi
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -130,8 +135,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -164,10 +169,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

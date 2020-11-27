@@ -6,17 +6,23 @@ forumTopicId: 18198
 ---
 
 ## Description
+
 <section id='description'>
+
 Now let's make sure all the content on your page is mobile-responsive.
-Let's nest your <code>h3</code> element within a <code>div</code> element with the class <code>container-fluid</code>.
+
+Let's nest your `h3` element within a `div` element with the class `container-fluid`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -45,11 +52,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

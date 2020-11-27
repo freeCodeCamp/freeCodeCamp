@@ -23,6 +23,7 @@ Insert the above callback function as an argument in the `.reduce()` method.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

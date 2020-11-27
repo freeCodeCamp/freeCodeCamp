@@ -6,17 +6,25 @@ forumTopicId: 301362
 ---
 
 ## Description
+
 <section id='description'>
+
 Sometimes whitespace characters around strings are not wanted but are there. Typical processing of strings is to remove the whitespace at the start and end of it.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.
-<strong>Note:</strong> The <code>String.prototype.trim()</code> method would work here, but you'll need to complete this challenge using regular expressions.
+
+**Note:** The `String.prototype.trim()` method would work here, but you'll need to complete this challenge using regular expressions.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,11 +54,10 @@ let result = hello; // Change this line
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

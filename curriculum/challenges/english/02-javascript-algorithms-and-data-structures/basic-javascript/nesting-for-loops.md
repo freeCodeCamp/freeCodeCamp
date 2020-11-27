@@ -7,7 +7,9 @@ forumTopicId: 18248
 ---
 
 ## Description
+
 <section id='description'>
+
 If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:
 
 ```js
@@ -21,15 +23,20 @@ for (var i=0; i < arr.length; i++) {
 }
 ```
 
-This outputs each sub-element in <code>arr</code> one at a time. Note that for the inner loop, we are checking the <code>.length</code> of <code>arr[i]</code>, since <code>arr[i]</code> is itself an array.
+This outputs each sub-element in `arr` one at a time. Note that for the inner loop, we are checking the `.length` of `arr[i]`, since `arr[i]` is itself an array.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Modify function <code>multiplyAll</code> so that it returns the product of all the numbers in the sub-arrays of <code>arr</code>.
+
+Modify function `multiplyAll` so that it returns the product of all the numbers in the sub-arrays of `arr`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,13 +73,11 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function multiplyAll(arr) {

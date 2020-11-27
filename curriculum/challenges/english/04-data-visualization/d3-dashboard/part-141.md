@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now when you hover a label, you can see the data for the different years.
@@ -13,7 +14,7 @@ Where you created the `text` elements for the x-axis labels, change the `font` t
 
 To do this, create a "d function" in the `font` value area and return the above sting if `d` equals `year`. Otherwise, return the string that is currently there (`10px verdana`). It's easiest to use a ternary operator for this.
 
-Here's a hint: 
+Here's a hint:
 
 ```js
 .style('font', d => d === year ? )
@@ -22,10 +23,13 @@ Here's a hint:
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -253,8 +258,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -287,10 +292,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

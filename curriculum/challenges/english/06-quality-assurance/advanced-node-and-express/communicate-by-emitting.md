@@ -23,13 +23,13 @@ Now, when someone connects, you should increment the count before emitting the c
 ++currentUsers;
 ```
 
-Finally, after incrementing the count, you should emit the event (still within the connection listener). The event should be named 'user count', and the data should just be the <code>currentUsers</code>.
+Finally, after incrementing the count, you should emit the event (still within the connection listener). The event should be named 'user count', and the data should just be the `currentUsers`.
 
 ```js
 io.emit('user count', currentUsers);
 ```
 
-Now, you can implement a way for your client to listen for this event! Similar to listening for a connection on the server, you will use the <code>on</code> keyword.
+Now, you can implement a way for your client to listen for this event! Similar to listening for a connection on the server, you will use the `on` keyword.
 
 ```js
 socket.on('user count', function(data) {
@@ -39,7 +39,7 @@ socket.on('user count', function(data) {
 
 Now, try loading up your app, authenticate, and you should see in your client console '1' representing the current user count! Try loading more clients up, and authenticating to see the number go up.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5).
 
 </section>
 

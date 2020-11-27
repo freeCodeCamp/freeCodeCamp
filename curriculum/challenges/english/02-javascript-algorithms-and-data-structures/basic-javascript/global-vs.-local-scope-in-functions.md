@@ -7,8 +7,11 @@ forumTopicId: 18194
 ---
 
 ## Description
+
 <section id='description'>
-It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.
+
+It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the `local` variable takes precedence over the `global` variable.
+
 In this example:
 
 ```js
@@ -19,15 +22,20 @@ function myFun() {
 }
 ```
 
-The function <code>myFun</code> will return <code>"Head"</code> because the <code>local</code> version of the variable is present.
+The function `myFun` will return `"Head"` because the `local` version of the variable is present.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a local variable to <code>myOutfit</code> function to override the value of <code>outerWear</code> with <code>"sweater"</code>.
+
+Add a local variable to `myOutfit` function to override the value of `outerWear` with `"sweater"`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,13 +75,11 @@ myOutfit();
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var outerWear = "T-Shirt";

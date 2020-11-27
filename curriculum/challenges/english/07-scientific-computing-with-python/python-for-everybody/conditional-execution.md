@@ -6,14 +6,16 @@ videoId: gz_IfIsZQtc
 ---
 
 ## Description
+
 <section id='description'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Which code is indented correctly to print "Yes" if x = 0 and y = 10?
@@ -44,6 +46,6 @@ question:
                 print("Yes")
         ```
   solution: 4
-```
+````
 
 </section>

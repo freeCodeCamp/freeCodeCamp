@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Before we write the code for the `buyWeapon` function, use `const` to create a `weapons` variable right above the `locations` array. Set it to equal an empty array.
@@ -12,11 +13,13 @@ Before we write the code for the `buyWeapon` function, use `const` to create a `
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -131,8 +135,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -201,8 +205,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -212,12 +216,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

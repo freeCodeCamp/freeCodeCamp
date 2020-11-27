@@ -7,10 +7,14 @@ forumTopicId: 18339
 ---
 
 ## Description
+
 <section id='description'>
-One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.
-However, an <code>id</code> is not reusable and should only be applied to one element. An <code>id</code> also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the <code>id</code> will be applied.
-Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element:
+
+One cool thing about `id` attributes is that, like classes, you can style them using CSS.
+
+However, an `id` is not reusable and should only be applied to one element. An `id` also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the `id` will be applied.
+
+Here's an example of how you can take your element with the `id` attribute of `cat-photo-element` and give it the background color of green. In your `style` element:
 
 ```css
 #cat-photo-element {
@@ -18,15 +22,20 @@ Here's an example of how you can take your element with the <code>id</code> attr
 }
 ```
 
-Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.
+Note that inside your `style` element, you always reference classes by putting a `.` in front of their names. You always reference ids by putting a `#` in front of their names.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background.
+
+Try giving your form, which now has the `id` attribute of `cat-photo-form`, a green background.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -116,11 +126,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

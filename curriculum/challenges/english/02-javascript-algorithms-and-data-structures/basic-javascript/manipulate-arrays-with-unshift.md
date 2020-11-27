@@ -7,9 +7,12 @@ forumTopicId: 18239
 ---
 
 ## Description
+
 <section id='description'>
-Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements to the beginning of an array i.e. add elements in front of the array.
-<code>.unshift()</code> works exactly like <code>.push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.
+
+Not only can you `shift` elements off of the beginning of an array, you can also `unshift` elements to the beginning of an array i.e. add elements in front of the array.
+
+`.unshift()` works exactly like `.push()`, but instead of adding the element at the end of the array, `unshift()` adds the element at the beginning of the array.
 
 Example:
 
@@ -23,11 +26,15 @@ ourArray.unshift("Happy");
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add <code>["Paul",35]</code> to the beginning of the <code>myArray</code> variable using <code>unshift()</code>.
+
+Add `["Paul",35]` to the beginning of the `myArray` variable using `unshift()`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,8 +64,8 @@ myArray.shift();
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -69,8 +77,8 @@ myArray.shift();
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myArray = [["John", 23], ["dog", 3]];

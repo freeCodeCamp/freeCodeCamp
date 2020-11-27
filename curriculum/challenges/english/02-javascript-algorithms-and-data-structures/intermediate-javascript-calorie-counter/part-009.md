@@ -8,14 +8,14 @@ challengeType: 0
 
 <section id='description'>
 
-To make the document objects easier to handle, let's turn them into an array.
-Wrap the `document.getElementsByClassName('cal-control')` portion of your code in an `Array.from()` method.
+To make the document objects easier to handle, let's turn them into an array. Wrap the `document.getElementsByClassName('cal-control')` portion of your code in an `Array.from()` method.
 
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

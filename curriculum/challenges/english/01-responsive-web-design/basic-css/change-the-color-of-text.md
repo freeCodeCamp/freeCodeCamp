@@ -7,21 +7,33 @@ forumTopicId: 16775
 ---
 
 ## Description
+
 <section id='description'>
+
 Now let's change the color of some of our text.
-We can do this by changing the <code>style</code> of your <code>h2</code> element.
-The property that is responsible for the color of an element's text is the <code>color</code> style property.
-Here's how you would set your <code>h2</code> element's text color to blue:
-<code>&#60;h2 style="color: blue;"&#62;CatPhotoApp&#60;/h2&#62;</code>
-Note that it is a good practice to end inline <code>style</code> declarations with a <code>;</code> .
+
+We can do this by changing the `style` of your `h2` element.
+
+The property that is responsible for the color of an element's text is the `color` style property.
+
+Here's how you would set your `h2` element's text color to blue:
+
+`<h2 style="color: blue;">CatPhotoApp</h2>`
+
+Note that it is a good practice to end inline `style` declarations with a `;` .
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change your <code>h2</code> element's style so that its text color is red.
+
+Change your `h2` element's style so that its text color is red.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,11 +91,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

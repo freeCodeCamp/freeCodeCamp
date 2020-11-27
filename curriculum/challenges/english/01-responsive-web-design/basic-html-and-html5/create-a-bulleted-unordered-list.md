@@ -7,9 +7,13 @@ forumTopicId: 16814
 ---
 
 ## Description
+
 <section id='description'>
+
 HTML has a special element for creating <dfn>unordered lists</dfn>, or bullet point style lists.
-Unordered lists start with an opening <code>&#60;ul&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, unordered lists close with a <code>&#60;/ul&#62;</code>
+
+Unordered lists start with an opening `<ul>` element, followed by any number of `<li>` elements. Finally, unordered lists close with a `</ul>`
+
 For example:
 
 ```html
@@ -20,14 +24,19 @@ For example:
 ```
 
 would create a bullet point style list of "milk" and "cheese".
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Remove the last two <code>p</code> elements and create an unordered list of three things that cats love at the bottom of the page.
+
+Remove the last two `p` elements and create an unordered list of three things that cats love at the bottom of the page.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,11 +75,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

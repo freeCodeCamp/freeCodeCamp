@@ -6,19 +6,29 @@ forumTopicId: 301393
 ---
 
 ## Description
+
 <section id='description'>
+
 Now that you're getting comfortable writing JSX, you may be wondering how it differs from HTML.
+
 So far, it may seem that HTML and JSX are exactly the same.
-One key difference in JSX is that you can no longer use the word <code>class</code> to define HTML classes. This is because <code>class</code> is a reserved word in JavaScript. Instead, JSX uses <code>className</code>.
-In fact, the naming convention for all HTML attributes and event references in JSX become camelCase. For example, a click event in JSX is <code>onClick</code>, instead of <code>onclick</code>. Likewise, <code>onchange</code> becomes <code>onChange</code>. While this is a subtle difference, it is an important one to keep in mind moving forward.
+
+One key difference in JSX is that you can no longer use the word `class` to define HTML classes. This is because `class` is a reserved word in JavaScript. Instead, JSX uses `className`.
+
+In fact, the naming convention for all HTML attributes and event references in JSX become camelCase. For example, a click event in JSX is `onClick`, instead of `onclick`. Likewise, `onchange` becomes `onChange`. While this is a subtle difference, it is an important one to keep in mind moving forward.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Apply a class of <code>myDiv</code> to the <code>div</code> provided in the JSX code.
+
+Apply a class of `myDiv` to the `div` provided in the JSX code.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -47,8 +58,8 @@ const JSX = (
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -60,8 +71,8 @@ ReactDOM.render(JSX, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 const JSX = (

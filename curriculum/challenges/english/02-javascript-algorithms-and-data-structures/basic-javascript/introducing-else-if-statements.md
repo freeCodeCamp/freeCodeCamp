@@ -7,8 +7,10 @@ forumTopicId: 18206
 ---
 
 ## Description
+
 <section id='description'>
-If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.
+
+If you have multiple conditions that need to be addressed, you can chain `if` statements together with `else if` statements.
 
 ```js
 if (num > 15) {
@@ -23,11 +25,15 @@ if (num > 15) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Convert the logic to use <code>else if</code> statements.
+
+Convert the logic to use `else if` statements.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -77,13 +84,11 @@ testElseIf(7);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testElseIf(val) {

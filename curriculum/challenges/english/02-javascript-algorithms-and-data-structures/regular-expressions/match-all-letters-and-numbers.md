@@ -6,9 +6,12 @@ forumTopicId: 301346
 ---
 
 ## Description
+
 <section id='description'>
-Using character classes, you were able to search for all letters of the alphabet with <code>[a-z]</code>. This kind of character class is common enough that there is a shortcut for it, although it includes a few extra characters as well.
-The closest character class in JavaScript to match the alphabet is <code>\w</code>. This shortcut is equal to <code>[A-Za-z0-9_]</code>. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (<code>_</code>).
+
+Using character classes, you were able to search for all letters of the alphabet with `[a-z]`. This kind of character class is common enough that there is a shortcut for it, although it includes a few extra characters as well.
+
+The closest character class in JavaScript to match the alphabet is `\w`. This shortcut is equal to `[A-Za-z0-9_]`. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (`_`).
 
 ```js
 let longHand = /[A-Za-z0-9_]+/;
@@ -22,14 +25,19 @@ shortHand.test(varNames); // Returns true
 ```
 
 These shortcut character classes are also known as <dfn>shorthand character classes</dfn>.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the shorthand character class <code>\w</code> to count the number of alphanumeric characters in various quotes and strings.
+
+Use the shorthand character class `\w` to count the number of alphanumeric characters in various quotes and strings.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,11 +73,10 @@ let result = quoteSample.match(alphabetRegexV2).length;
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,8 +6,11 @@ forumTopicId: 301457
 ---
 
 ## Description
+
 <section id='description'>
+
 Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
+
 Normally, each element is targeted on a different line to style it, like so:
 
 ```scss
@@ -44,11 +47,15 @@ nav {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the nesting technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. For testing purposes, the <code>h1</code> should come before the <code>p</code> element.
+
+Use the nesting technique shown above to re-organize the CSS rules for both children of `.blog-post` element. For testing purposes, the `h1` should come before the `p` element.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -61,6 +68,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -87,11 +95,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

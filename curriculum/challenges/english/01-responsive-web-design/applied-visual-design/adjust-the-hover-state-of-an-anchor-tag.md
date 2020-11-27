@@ -7,9 +7,12 @@ forumTopicId: 301035
 ---
 
 ## Description
+
 <section id='description'>
+
 This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.
-For example, the styling of an anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector. Here's the CSS to change the <code>color</code> of the anchor tag to red during its hover state:
+
+For example, the styling of an anchor tag can be changed for its hover state using the `:hover` pseudo-class selector. Here's the CSS to change the `color` of the anchor tag to red during its hover state:
 
 ```css
 a:hover {
@@ -20,11 +23,15 @@ a:hover {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The code editor has a CSS rule to style all <code>a</code> tags black. Add a rule so that when the user hovers over the <code>a</code> tag, the <code>color</code> is blue.
+
+The code editor has a CSS rule to style all `a` tags black. Add a rule so that when the user hovers over the `a` tag, the `color` is blue.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -57,11 +65,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

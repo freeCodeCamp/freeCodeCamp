@@ -6,11 +6,17 @@ forumTopicId: 301360
 ---
 
 ## Description
+
 <section id='description'>
+
 <dfn>Lookaheads</dfn> are patterns that tell JavaScript to look-ahead in your string to check for patterns further along. This can be useful when you want to search for multiple patterns over the same string.
+
 There are two kinds of lookaheads: <dfn>positive lookahead</dfn> and <dfn>negative lookahead</dfn>.
-A positive lookahead will look to make sure the element in the search pattern is there, but won't actually match it. A positive lookahead is used as <code>(?=...)</code> where the <code>...</code> is the required part that is not matched.
-On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there. A negative lookahead is used as <code>(?!...)</code> where the <code>...</code> is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+
+A positive lookahead will look to make sure the element in the search pattern is there, but won't actually match it. A positive lookahead is used as `(?=...)` where the `...` is the required part that is not matched.
+
+On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there. A negative lookahead is used as `(?!...)` where the `...` is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+
 Lookaheads are a bit confusing but some examples will help.
 
 ```js
@@ -33,11 +39,15 @@ checkPass.test(password); // Returns true
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use lookaheads in the <code>pwRegex</code> to match passwords that are greater than 5 characters long, do not begin with numbers, and have two consecutive digits.
+
+Use lookaheads in the `pwRegex` to match passwords that are greater than 5 characters long, do not begin with numbers, and have two consecutive digits.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -66,6 +76,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -78,13 +89,11 @@ let result = pwRegex.test(sampleWord);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var pwRegex =  /^\D(?=\w{5})(?=\w*\d{2})/;

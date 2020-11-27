@@ -6,17 +6,25 @@ forumTopicId: 301470
 ---
 
 ## Description
+
 <section id='description'>
-A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG <code>title</code> element.
-<code>title</code> pairs with the <code>text()</code> method to dynamically add data to the bars.
+
+A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG `title` element.
+
+`title` pairs with the `text()` method to dynamically add data to the bars.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Append a <code>title</code> element under each <code>rect</code> node. Then call the <code>text()</code> method with a callback function so the text displays the data value.
+
+Append a `title` element under each `rect` node. Then call the `text()` method with a callback function so the text displays the data value.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -99,11 +108,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

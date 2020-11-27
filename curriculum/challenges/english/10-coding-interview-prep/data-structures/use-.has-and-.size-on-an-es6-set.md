@@ -6,22 +6,35 @@ forumTopicId: 301717
 ---
 
 ## Description
+
 <section id='description'>
+
 Let's look at the .has and .size methods available on the ES6 Set object.
+
 First, create an ES6 Set
-<code>var set = new Set([1,2,3]);</code>
+
+`var set = new Set([1,2,3]);`
+
 The .has method will check if the value is contained within the set.
-<code>var hasTwo = set.has(2);</code>
+
+`var hasTwo = set.has(2);`
+
 The .size method will return an integer representing the size of the Set
-<code>var howBig = set.size;</code>
+
+`var howBig = set.size;`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 In this exercise we will pass an array and a value to the checkSet() function. Your function should create an ES6 set from the array argument. Find if the set contains the value argument. Find the size of the set. And return those two values in an array.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,6 +66,7 @@ function checkSet(arrToBeSet, checkValue){
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

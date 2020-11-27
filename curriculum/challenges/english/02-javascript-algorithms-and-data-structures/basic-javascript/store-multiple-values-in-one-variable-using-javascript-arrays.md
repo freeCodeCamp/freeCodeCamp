@@ -7,19 +7,30 @@ forumTopicId: 18309
 ---
 
 ## Description
+
 <section id='description'>
-With JavaScript <code>array</code> variables, we can store several pieces of data in one place.
+
+With JavaScript `array` variables, we can store several pieces of data in one place.
+
 You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:
-<code>var sandwich = ["peanut butter", "jelly", "bread"]</code>.
+
+`var sandwich = ["peanut butter", "jelly", "bread"]`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Modify the new array <code>myArray</code> so that it contains both a <code>string</code> and a <code>number</code> (in that order).
-<strong>Hint</strong><br>Refer to the example code in the text editor if you get stuck.
+
+Modify the new array `myArray` so that it contains both a `string` and a `number` (in that order).
+
+**Hint**  
+Refer to the example code in the text editor if you get stuck.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,8 +60,8 @@ var myArray = [];
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -61,8 +73,8 @@ var myArray = [];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myArray = ["The Answer", 42];

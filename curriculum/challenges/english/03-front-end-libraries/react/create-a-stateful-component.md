@@ -6,9 +6,12 @@ forumTopicId: 301391
 ---
 
 ## Description
+
 <section id='description'>
-One of the most important topics in React is <code>state</code>. State consists of any data your application needs to know about, that can change over time. You want your apps to respond to state changes and present an updated UI when necessary. React offers a nice solution for the state management of modern web applications.
-You create state in a React component by declaring a <code>state</code> property on the component class in its <code>constructor</code>. This initializes the component with <code>state</code> when it is created. The <code>state</code> property must be set to a JavaScript <code>object</code>. Declaring it looks like this:
+
+One of the most important topics in React is `state`. State consists of any data your application needs to know about, that can change over time. You want your apps to respond to state changes and present an updated UI when necessary. React offers a nice solution for the state management of modern web applications.
+
+You create state in a React component by declaring a `state` property on the component class in its `constructor`. This initializes the component with `state` when it is created. The `state` property must be set to a JavaScript `object`. Declaring it looks like this:
 
 ```jsx
 this.state = {
@@ -16,15 +19,20 @@ this.state = {
 }
 ```
 
-You have access to the <code>state</code> object throughout the life of your component. You can update it, render it in your UI, and pass it as props to child components. The <code>state</code> object can be as complex or as simple as you need it to be. Note that you must create a class component by extending <code>React.Component</code> in order to create <code>state</code> like this.
+You have access to the `state` object throughout the life of your component. You can update it, render it in your UI, and pass it as props to child components. The `state` object can be as complex or as simple as you need it to be. Note that you must create a class component by extending `React.Component` in order to create `state` like this.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-There is a component in the code editor that is trying to render a <code>name</code> property from its <code>state</code>. However, there is no <code>state</code> defined. Initialize the component with <code>state</code> in the <code>constructor</code> and assign your name to a property of <code>name</code>.
+
+There is a component in the code editor that is trying to render a `name` property from its `state`. However, there is no `state` defined. Initialize the component with `state` in the `constructor` and assign your name to a property of `name`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -68,8 +77,8 @@ class StatefulComponent extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -81,8 +90,8 @@ ReactDOM.render(<StatefulComponent />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class StatefulComponent extends React.Component {

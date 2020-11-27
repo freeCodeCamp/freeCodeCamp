@@ -6,13 +6,16 @@ videoId: 32WBFS7lfsw
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks below to complete the `build_model` function:
@@ -57,7 +60,6 @@ question:
 
       D: `return model`
   solution: 3
-```
+````
 
 </section>
-

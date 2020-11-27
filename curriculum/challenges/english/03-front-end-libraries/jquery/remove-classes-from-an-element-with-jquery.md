@@ -8,19 +8,27 @@ forumTopicId: 18264
 ---
 
 ## Description
+
 <section id='description'>
-In the same way you can add classes to an element with jQuery's <code>addClass()</code> function, you can remove them with jQuery's <code>removeClass()</code> function.
+
+In the same way you can add classes to an element with jQuery's `addClass()` function, you can remove them with jQuery's `removeClass()` function.
+
 Here's how you would do this for a specific button:
-<code>$("#target2").removeClass("btn-default");</code>
-Let's remove the <code>btn-default</code> class from all of our <code>button</code> elements.
+
+`$("#target2").removeClass("btn-default");`
+
+Let's remove the `btn-default` class from all of our `button` elements.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

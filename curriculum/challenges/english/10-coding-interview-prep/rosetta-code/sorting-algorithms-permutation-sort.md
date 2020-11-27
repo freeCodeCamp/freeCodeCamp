@@ -8,13 +8,16 @@ forumTopicId: 302316
 ## Description
 
 <section id='description'>
+
 Write a function to implement a permutation sort, which proceeds by generating the possible permutations of the input array until discovering the sorted one. The function should return the sorted array.
+
 Pseudocode:
-<pre>
-<b>while not</b> InOrder(list) <b>do</b>
+
+<pre><b>while not</b> InOrder(list) <b>do</b>
   nextPermutation(list)
 <b>done</b>
 </pre>
+
 </section>
 
 ## Instructions
@@ -59,6 +62,7 @@ function permutationSort(arr) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

@@ -7,16 +7,23 @@ forumTopicId: 301070
 ---
 
 ## Description
+
 <section id='description'>
-CSS offers the <code>line-height</code> property to change the height of each line in a block of text. As the name suggests, it changes the amount of vertical space that each line of text gets.
+
+CSS offers the `line-height` property to change the height of each line in a block of text. As the name suggests, it changes the amount of vertical space that each line of text gets.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a <code>line-height</code> property to the <code>p</code> tag and set it to 25px.
+
+Add a `line-height` property to the `p` tag and set it to 25px.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -47,11 +55,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

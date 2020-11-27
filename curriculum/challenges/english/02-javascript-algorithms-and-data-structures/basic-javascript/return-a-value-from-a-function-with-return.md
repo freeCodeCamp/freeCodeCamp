@@ -7,9 +7,12 @@ forumTopicId: 18271
 ---
 
 ## Description
+
 <section id='description'>
-We can pass values into a function with <dfn>arguments</dfn>. You can use a <code>return</code> statement to send a value back out of a function.
-<strong>Example</strong>
+
+We can pass values into a function with <dfn>arguments</dfn>. You can use a `return` statement to send a value back out of a function.
+
+**Example**
 
 ```js
 function plusThree(num) {
@@ -18,15 +21,20 @@ function plusThree(num) {
 var answer = plusThree(5); // 8
 ```
 
-<code>plusThree</code> takes an <dfn>argument</dfn> for <code>num</code> and returns a value equal to <code>num + 3</code>.
+`plusThree` takes an <dfn>argument</dfn> for `num` and returns a value equal to `num + 3`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value. See the last line in the editor for an example of how you can test your <code>timesFive</code> function.
+
+Create a function `timesFive` that accepts one argument, multiplies it by `5`, and returns the new value. See the last line in the editor for an example of how you can test your `timesFive` function.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,13 +66,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function timesFive(num) {

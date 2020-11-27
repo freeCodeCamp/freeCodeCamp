@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 There are many kinds of inputs you can create using the `type` attribute. You can easily create a password field, reset button, or a control to let users select a file from their computer.
@@ -14,6 +15,7 @@ Create a text field to get text input from a user by adding the `type` attribute
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -85,4 +88,5 @@ tests:
 ```
 
 </div>
+
 </section>

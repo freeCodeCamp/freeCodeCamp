@@ -6,16 +6,21 @@ forumTopicId: 16005
 ---
 
 ## Description
+
 <section id='description'>
-Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a two-dimensional array.
+
+Write a function that splits an array (first argument) into groups the length of `size` (second argument) and returns them as a two-dimensional array.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,13 +60,11 @@ chunkArrayInGroups(["a", "b", "c", "d"], 2);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function chunkArrayInGroups(arr, size) {

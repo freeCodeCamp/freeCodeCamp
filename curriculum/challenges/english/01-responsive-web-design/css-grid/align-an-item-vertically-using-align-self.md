@@ -7,16 +7,23 @@ forumTopicId: 301123
 ---
 
 ## Description
+
 <section id='description'>
-Just as you can align an item horizontally, there's a way to align an item vertically as well. To do this, you use the <code>align-self</code> property on an item. This property accepts all of the same values as <code>justify-self</code> from the last challenge.
+
+Just as you can align an item horizontally, there's a way to align an item vertically as well. To do this, you use the `align-self` property on an item. This property accepts all of the same values as `justify-self` from the last challenge.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Align the item with the class <code>item3</code> vertically at the <code>end</code>.
+
+Align the item with the class `item3` vertically at the `end`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -72,13 +80,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.item3 {align-self: end;}</style>

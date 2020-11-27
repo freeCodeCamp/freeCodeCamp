@@ -6,24 +6,29 @@ forumTopicId: 302131
 ---
 
 ## Description
-<section id='description'>
-Let f(n) = n2 - 3n - 1.
-Let p be a prime.
-Let R(p) be the smallest positive integer n such that f(n) mod p2 = 0 if such an integer n exists, otherwise R(p) = 0.
 
+<section id='description'>
+
+Let f(n) = n2 - 3n - 1.
+
+Let p be a prime.
+
+Let R(p) be the smallest positive integer n such that f(n) mod p2 = 0 if such an integer n exists, otherwise R(p) = 0.
 
 Let SR(L) be ∑R(p) for all primes not exceeding L.
 
-
 Find SR(107).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,11 +57,10 @@ euler457();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

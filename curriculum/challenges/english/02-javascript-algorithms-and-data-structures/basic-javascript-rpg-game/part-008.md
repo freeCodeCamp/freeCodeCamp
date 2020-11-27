@@ -5,11 +5,12 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Since the inventory can store multiple items, change the value of `inventory` to an array with the items stick, dagger, and sword.
 
-Here is an example of a variable sandwich that equals a three-item array: 
+Here is an example of a variable sandwich that equals a three-item array:
 
 ```js
 let sandwich = ["peanut butter", "jelly", "bread"];
@@ -18,11 +19,13 @@ let sandwich = ["peanut butter", "jelly", "bread"];
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -54,8 +58,8 @@ let inventory = "stick";
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -124,8 +128,8 @@ let inventory = "stick";
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -135,13 +139,11 @@ let inventory = "stick";
 
 </div>
 
-
 </section>
 
-
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

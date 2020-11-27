@@ -7,17 +7,25 @@ forumTopicId: 16782
 ---
 
 ## Description
+
 <section id='description'>
-Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>
-Here you'll need to end the comment before your <code>h2</code> element begins.
+
+Remember that in order to start a comment, you need to use `<!--` and to end a comment, you need to use `-->`
+
+Here you'll need to end the comment before your `h2` element begins.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Comment out your <code>h1</code> element and your <code>p</code> element, but not your <code>h2</code> element.
+
+Comment out your `h1` element and your `p` element, but not your `h2` element.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -54,11 +63,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -7,9 +7,13 @@ forumTopicId: 301098
 ---
 
 ## Description
+
 <section id='description'>
-<code>a</code> (<i>anchor</i>) elements can also be used to create internal links to jump to different sections within a webpage.
-To create an internal link, you assign a link's <code>href</code> attribute to a hash symbol <code>#</code> plus the value of the <code>id</code> attribute for the element that you want to internally link to, usually further down the page. You then need to add the same <code>id</code> attribute to the element you are linking to. An <code>id</code> is an attribute that uniquely describes an element.
+
+`a` (*anchor*) elements can also be used to create internal links to jump to different sections within a webpage.
+
+To create an internal link, you assign a link's `href` attribute to a hash symbol `#` plus the value of the `id` attribute for the element that you want to internally link to, usually further down the page. You then need to add the same `id` attribute to the element you are linking to. An `id` is an attribute that uniquely describes an element.
+
 Below is an example of an internal anchor link and its target element:
 
 ```html
@@ -18,17 +22,24 @@ Below is an example of an internal anchor link and its target element:
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-When users click the Contacts link, they'll be taken to the section of the webpage with the <b>Contacts</b> header element.
+When users click the Contacts link, they'll be taken to the section of the webpage with the **Contacts** header element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change your external link to an internal link by changing the <code>href</code> attribute to "#footer" and the text from "cat photos" to "Jump to Bottom".
-Remove the <code>target="_blank"</code> attribute from the anchor tag since this causes the linked document to open in a new window tab.
-Then add an <code>id</code> attribute with a value of "footer" to the <code>&lt;footer&gt;</code> element at the bottom of the page.
+
+Change your external link to an internal link by changing the `href` attribute to "#footer" and the text from "cat photos" to "Jump to Bottom".
+
+Remove the `target="_blank"` attribute from the anchor tag since this causes the linked document to open in a new window tab.
+
+Then add an `id` attribute with a value of "footer" to the `<footer>` element at the bottom of the page.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +62,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,6 +90,7 @@ tests:
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

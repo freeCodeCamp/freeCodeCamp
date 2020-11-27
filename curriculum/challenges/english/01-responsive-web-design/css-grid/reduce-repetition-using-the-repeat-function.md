@@ -7,9 +7,13 @@ forumTopicId: 301133
 ---
 
 ## Description
+
 <section id='description'>
-When you used <code>grid-template-columns</code> and <code>grid-template-rows</code> to define the structure of a grid, you entered a value for each row or column you created.
-Let's say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually. Fortunately, there's a better way - by using the <code>repeat</code> function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
+
+When you used `grid-template-columns` and `grid-template-rows` to define the structure of a grid, you entered a value for each row or column you created.
+
+Let's say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually. Fortunately, there's a better way - by using the `repeat` function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
+
 Here's an example that would create the 100 row grid, each row at 50px tall.
 
 ```css
@@ -28,15 +32,20 @@ This translates to:
 grid-template-columns: 1fr 50px 1fr 50px 20px;
 ```
 
-<strong>Note:</strong> The <code>1fr 50px</code> is repeated twice followed by 20px.
+**Note:** The `1fr 50px` is repeated twice followed by 20px.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <code>repeat</code> to remove repetition from the <code>grid-template-columns</code> property.
+
+Use `repeat` to remove repetition from the `grid-template-columns` property.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -88,13 +98,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.container {grid-template-columns: repeat(3, 1fr);}</style>

@@ -8,7 +8,8 @@ forumTopicId: 301421
 ## Description
 
 <section id='description'>
-Sometimes you might need to know the previous state when updating the state. However, state updates may be asynchronous - this means React may batch multiple <code>setState()</code> calls into a single update. This means you can't rely on the previous value of <code>this.state</code> or <code>this.props</code> when calculating the next value. So, you should not use code like this:
+
+Sometimes you might need to know the previous state when updating the state. However, state updates may be asynchronous - this means React may batch multiple `setState()` calls into a single update. This means you can't rely on the previous value of `this.state` or `this.props` when calculating the next value. So, you should not use code like this:
 
 ```jsx
 this.setState({
@@ -16,7 +17,7 @@ this.setState({
 });
 ```
 
-Instead, you should pass <code>setState</code> a function that allows you to access state and props. Using a function with <code>setState</code> guarantees you are working with the most current values of state and props. This means that the above should be rewritten as:
+Instead, you should pass `setState` a function that allows you to access state and props. Using a function with `setState` guarantees you are working with the most current values of state and props. This means that the above should be rewritten as:
 
 ```jsx
 this.setState((state, props) => ({
@@ -39,10 +40,15 @@ Note that you have to wrap the object literal in parentheses, otherwise JavaScri
 ## Instructions
 
 <section id='instructions'>
-<code>MyComponent</code> has a <code>visibility</code> property which is initialized to <code>false</code>. The render method returns one view if the value of <code>visibility</code> is true, and a different view if it is false.
-Currently, there is no way of updating the <code>visibility</code> property in the component's <code>state</code>. The value should toggle back and forth between true and false. There is a click handler on the button which triggers a class method called <code>toggleVisibility()</code>. Pass a function to <code>setState</code> to define this method so that the <code>state</code> of <code>visibility</code> toggles to the opposite value when the method is called. If <code>visibility</code> is <code>false</code>, the method sets it to <code>true</code>, and vice versa.
-Finally, click the button to see the conditional rendering of the component based on its <code>state</code>.
-<strong>Hint:</strong>&nbsp;Don't forget to bind the <code>this</code> keyword to the method in the constructor!
+
+`MyComponent` has a `visibility` property which is initialized to `false`. The render method returns one view if the value of `visibility` is true, and a different view if it is false.
+
+Currently, there is no way of updating the `visibility` property in the component's `state`. The value should toggle back and forth between true and false. There is a click handler on the button which triggers a class method called `toggleVisibility()`. Pass a function to `setState` to define this method so that the `state` of `visibility` toggles to the opposite value when the method is called. If `visibility` is `false`, the method sets it to `true`, and vice versa.
+
+Finally, click the button to see the conditional rendering of the component based on its `state`.
+
+**Hint:** Don't forget to bind the `this` keyword to the method in the constructor!
+
 </section>
 
 ## Tests

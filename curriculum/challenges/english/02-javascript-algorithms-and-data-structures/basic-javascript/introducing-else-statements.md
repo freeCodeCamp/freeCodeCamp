@@ -7,8 +7,10 @@ forumTopicId: 18207
 ---
 
 ## Description
+
 <section id='description'>
-When a condition for an <code>if</code> statement is true, the block of code following it is executed. What about when that condition is false?  Normally nothing would happen. With an <code>else</code> statement, an alternate block of code can be executed.
+
+When a condition for an `if` statement is true, the block of code following it is executed. What about when that condition is false? Normally nothing would happen. With an `else` statement, an alternate block of code can be executed.
 
 ```js
 if (num > 10) {
@@ -21,11 +23,15 @@ if (num > 10) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Combine the <code>if</code> statements into a single <code>if/else</code> statement.
+
+Combine the `if` statements into a single `if/else` statement.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -77,13 +84,11 @@ testElse(4);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testElse(val) {

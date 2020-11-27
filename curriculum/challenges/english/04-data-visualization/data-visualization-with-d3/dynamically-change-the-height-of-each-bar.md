@@ -6,8 +6,10 @@ forumTopicId: 301486
 ---
 
 ## Description
+
 <section id='description'>
-The height of each bar can be set to the value of the data point in the array, similar to how the <code>x</code> value was set dynamically.
+
+The height of each bar can be set to the value of the data point in the array, similar to how the `x` value was set dynamically.
 
 ```js
 selection.attr("property", (d, i) => {
@@ -21,12 +23,18 @@ selection.attr("property", (d, i) => {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the callback function for the <code>height</code> attribute to return the data value times 3.
-<strong>Note</strong><br>Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example.
+
+Change the callback function for the `height` attribute to return the data value times 3.
+
+**Note**  
+Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -92,11 +101,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

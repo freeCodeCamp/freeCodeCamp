@@ -6,6 +6,7 @@ forumTopicId: 302160
 ---
 
 ## Description
+
 <section id='description'>
 
 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
@@ -15,11 +16,13 @@ What is the smallest positive number that is evenly divisible by all of the numb
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,13 +61,11 @@ smallestMult(20);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function smallestMult(n){

@@ -7,20 +7,32 @@ forumTopicId: 17558
 ---
 
 ## Description
+
 <section id='description'>
-You can easily <dfn>decrement</dfn> or decrease a variable by one with the <code>--</code> operator.
-<code>i--;</code>
+
+You can easily <dfn>decrement</dfn> or decrease a variable by one with the `--` operator.
+
+`i--;`
+
 is the equivalent of
-<code>i = i - 1;</code>
-<strong>Note</strong><br>The entire line becomes <code>i--;</code>, eliminating the need for the equal sign.
+
+`i = i - 1;`
+
+**Note**  
+The entire line becomes `i--;`, eliminating the need for the equal sign.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the code to use the <code>--</code> operator on <code>myVar</code>.
+
+Change the code to use the `--` operator on `myVar`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,8 +66,8 @@ myVar = myVar - 1;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -66,8 +79,8 @@ myVar = myVar - 1;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myVar = 11;

@@ -7,16 +7,23 @@ forumTopicId: 18335
 ---
 
 ## Description
+
 <section id='description'>
-When JavaScript variables are declared, they have an initial value of <code>undefined</code>. If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>"undefined"</code>.
+
+When JavaScript variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN` which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an `undefined` variable, you will get a literal <dfn>string</dfn> of `"undefined"`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>"I am a"</code> respectively so that they will not be <code>undefined</code>.
+
+Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` respectively so that they will not be `undefined`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,8 +61,8 @@ c = c + " String!";
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -66,8 +74,8 @@ c = c + " String!";
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var a = 5;

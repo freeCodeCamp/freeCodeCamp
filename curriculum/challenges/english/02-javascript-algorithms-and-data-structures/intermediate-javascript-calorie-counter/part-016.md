@@ -15,6 +15,7 @@ Now let's simplify the function by refactoring it to use arrow functions. As an 
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

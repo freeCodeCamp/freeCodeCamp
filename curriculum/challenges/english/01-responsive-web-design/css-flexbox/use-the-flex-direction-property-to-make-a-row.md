@@ -7,18 +7,27 @@ forumTopicId: 301110
 ---
 
 ## Description
+
 <section id='description'>
-Adding <code>display: flex</code> to an element turns it into a flex container. This makes it possible to align any children of that element into rows or columns. You do this by adding the <code>flex-direction</code> property to the parent item and setting it to row or column. Creating a row will align the children horizontally, and creating a column will align the children vertically.
-Other options for <code>flex-direction</code> are <code>row-reverse</code> and <code>column-reverse</code>.
-<strong>Note:</strong> The default value for the <code>flex-direction</code> property is <code>row</code>.
+
+Adding `display: flex` to an element turns it into a flex container. This makes it possible to align any children of that element into rows or columns. You do this by adding the `flex-direction` property to the parent item and setting it to row or column. Creating a row will align the children horizontally, and creating a column will align the children vertically.
+
+Other options for `flex-direction` are `row-reverse` and `column-reverse`.
+
+**Note:** The default value for the `flex-direction` property is `row`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of <code>row-reverse</code>.
+
+Add the CSS property `flex-direction` to the `#box-container` element, and give it a value of `row-reverse`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,11 +73,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

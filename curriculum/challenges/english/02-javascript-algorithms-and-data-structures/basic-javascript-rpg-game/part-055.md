@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Now when a player tries to buy health it will only work if they have enough money. If the player does not have enough money, nothing will happen. Add an `else` statement where you can put code to run if a player dees not have enough money. 
+Now when a player tries to buy health it will only work if they have enough money. If the player does not have enough money, nothing will happen. Add an `else` statement where you can put code to run if a player dees not have enough money.
 
 Here is an example of an empty `else` statement:
 
@@ -21,11 +22,13 @@ if (num >= 5) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -138,8 +142,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -208,8 +212,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -219,12 +223,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

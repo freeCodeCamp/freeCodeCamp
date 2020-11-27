@@ -6,9 +6,13 @@ forumTopicId: 301720
 ---
 
 ## Description
+
 <section id='description'>
-Do you remember the ES6 spread operator <code>...</code>?
-<code>...</code> can take iterable objects in ES6 and turn them into arrays.
+
+Do you remember the ES6 spread operator `...`?
+
+`...` can take iterable objects in ES6 and turn them into arrays.
+
 Let's create a Set, and check out the spread function.
 
 ```js
@@ -20,12 +24,17 @@ console.log(setToArr) // returns [ 1, 2, 3 ]
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In this exercise we will pass a set object to the <code>checkSet</code> function. It should return an array containing the values of the Set.
-Now you've successfully learned how to use the ES6 <code>Set()</code> object, good job!
+
+In this exercise we will pass a set object to the `checkSet` function. It should return an array containing the values of the Set.
+
+Now you've successfully learned how to use the ES6 `Set()` object, good job!
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,8 +65,8 @@ function checkSet(set){
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function checkSet(set){

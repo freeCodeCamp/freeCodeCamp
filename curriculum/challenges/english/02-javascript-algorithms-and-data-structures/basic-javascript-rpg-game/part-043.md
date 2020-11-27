@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now update the three `onclick` properties. These will look very similar to the `innerText` properties, except instead of using the `"button text"` part of the `location`, use `"button functions"`.
@@ -12,11 +13,13 @@ Now update the three `onclick` properties. These will look very similar to the `
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -110,8 +114,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -180,8 +184,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -191,12 +195,11 @@ function buyWeapon() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

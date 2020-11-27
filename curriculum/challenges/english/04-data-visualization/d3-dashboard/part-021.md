@@ -5,18 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Your line graph needs some scales so it knows how to translate the data into visual distances. The first one is the scale for the y-axis. It will be to show the number of followers. D3 has many utilities for creating scales. You want to use it's `scaleLinear` method for this scale.
 
 Create a new `const` named `yScale`, and set it equal to `d3.scaleLinear()`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -65,8 +71,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -99,10 +105,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

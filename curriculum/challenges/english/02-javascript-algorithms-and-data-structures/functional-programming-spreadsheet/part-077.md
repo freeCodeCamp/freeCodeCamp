@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 `evalFormula` should return the value passed to it if this value remained unchanged. Otherwise, it should call itself with the latest value.
@@ -14,12 +15,13 @@ Use the ternary operator in the last line of `evalFormula` to return `functionEx
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,10 +31,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -108,8 +110,8 @@ const evalFormula = x => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -140,8 +142,8 @@ const evalFormula = x => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -151,11 +153,10 @@ const evalFormula = x => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

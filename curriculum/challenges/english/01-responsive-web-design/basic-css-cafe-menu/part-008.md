@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 It's time to add some menu content. Add a `main` element below the existing `header` element. It will eventually contain pricing information about coffees and desserts offered by the cafe.
@@ -12,6 +13,7 @@ It's time to add some menu content. Add a `main` element below the existing `hea
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

@@ -7,10 +7,14 @@ forumTopicId: 301015
 ---
 
 ## Description
+
 <section id='description'>
-HTML5 introduced the <code>figure</code> element, along with the related <code>figcaption</code>. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the <code>figure</code>.
+
+HTML5 introduced the `figure` element, along with the related `figcaption`. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the `figure`.
+
 For data visualizations like charts, the caption can be used to briefly note the trends or conclusions for users with visual impairments. Another challenge covers how to move a table version of the chart's data off-screen (using CSS) for screen reader users.
-Here's an example - note that the <code>figcaption</code> goes inside the <code>figure</code> tags and can be combined with other elements:
+
+Here's an example - note that the `figcaption` goes inside the `figure` tags and can be combined with other elements:
 
 ```html
 <figure>
@@ -25,11 +29,15 @@ Here's an example - note that the <code>figcaption</code> goes inside the <code>
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the <code>div</code> tag he used to a <code>figure</code> tag, and the <code>p</code> tag that surrounds the caption to a <code>figcaption</code> tag.
+
+Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the `div` tag he used to a `figure` tag, and the `p` tag that surrounds the caption to a `figcaption` tag.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -102,11 +111,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

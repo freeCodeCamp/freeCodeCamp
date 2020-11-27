@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The axis labels are `text` elements within the `g`, you can use the `selectAll` function to select them. Chain the `selectAll` function to select the `text` elements in this group. You can do that like this: 
+The axis labels are `text` elements within the `g`, you can use the `selectAll` function to select them. Chain the `selectAll` function to select the `text` elements in this group. You can do that like this:
 
 ```js
 .selectAll('element')
@@ -16,10 +17,13 @@ The axis labels are `text` elements within the `g`, you can use the `selectAll` 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -89,8 +94,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -123,10 +128,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

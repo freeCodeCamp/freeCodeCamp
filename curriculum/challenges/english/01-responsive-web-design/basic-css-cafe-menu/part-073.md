@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Go ahead and add another `hr` element between the `main` element and the `footer` element.
@@ -12,6 +13,7 @@ Go ahead and add another `hr` element between the `main` element and the `footer
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

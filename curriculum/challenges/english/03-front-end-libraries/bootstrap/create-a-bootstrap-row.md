@@ -6,17 +6,23 @@ forumTopicId: 16813
 ---
 
 ## Description
+
 <section id='description'>
+
 Now we'll create a Bootstrap row for our inline elements.
-Create a <code>div</code> element below the <code>h3</code> tag, with a class of <code>row</code>.
+
+Create a `div` element below the `h3` tag, with a class of `row`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -49,11 +56,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

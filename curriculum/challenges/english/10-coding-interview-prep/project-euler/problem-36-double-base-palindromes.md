@@ -6,6 +6,7 @@ forumTopicId: 302020
 ---
 
 ## Description
+
 <section id='description'>
 
 The decimal number, 585 = 1001001001<sub>2</sub> (binary), is palindromic in both bases.
@@ -17,11 +18,13 @@ Find the sum of all numbers, less than `n`, whereas 1000 ≤ `n` ≤ 1000000, wh
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,11 +61,10 @@ doubleBasePalindromes(1000000);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,21 +6,33 @@ forumTopicId: 301628
 ---
 
 ## Description
+
 <section id='description'>
-Let's create a <code>linked list</code> class. Every linked list should start out with a few basic properties: a <code>head</code> (the first item in your list) and a <code>length</code> (number of items in your list). Sometimes you'll see implementations of linked lists that incorporate a <code>tail</code> for the last element of the list, but for now we'll just stick with these two. Whenever we add an element to the linked list, our <code>length</code> property should be incremented by one.
-We'll want to have a way to add items to our linked list, so the first method we'll want to create is the <code>add</code> method.
-If our list is empty, adding an element to our linked list is straightforward enough: we just wrap that element in a <code>Node</code> class, and we assign that node to the <code>head</code> of our linked list.
-But what if our list already has one or more members? How do we add an element to the list? Recall that each node in a linked list has a <code>next</code> property. To add a node to the list, find the last node in the list, and point that last node's <code>next</code> property at our new node. (Hint: you know you've reached the end of a linked list when a node's <code>next</code> property is <code>null</code>.)
+
+Let's create a `linked list` class. Every linked list should start out with a few basic properties: a `head` (the first item in your list) and a `length` (number of items in your list). Sometimes you'll see implementations of linked lists that incorporate a `tail` for the last element of the list, but for now we'll just stick with these two. Whenever we add an element to the linked list, our `length` property should be incremented by one.
+
+We'll want to have a way to add items to our linked list, so the first method we'll want to create is the `add` method.
+
+If our list is empty, adding an element to our linked list is straightforward enough: we just wrap that element in a `Node` class, and we assign that node to the `head` of our linked list.
+
+But what if our list already has one or more members? How do we add an element to the list? Recall that each node in a linked list has a `next` property. To add a node to the list, find the last node in the list, and point that last node's `next` property at our new node. (Hint: you know you've reached the end of a linked list when a node's `next` property is `null`.)
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write an add method that assigns the first node you push to the linked list to the <code>head</code>; after that, whenever adding a node, every node should be referenced by the previous node's <code>next</code> property.
+
+Write an add method that assigns the first node you push to the linked list to the `head`; after that, whenever adding a node, every node should be referenced by the previous node's `next` property.
+
 Note
-Your list's <code>length</code> should increase by one every time an element is added to the linked list.
+
+Your list's `length` should increase by one every time an element is added to the linked list.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -71,11 +84,10 @@ function LinkedList() {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

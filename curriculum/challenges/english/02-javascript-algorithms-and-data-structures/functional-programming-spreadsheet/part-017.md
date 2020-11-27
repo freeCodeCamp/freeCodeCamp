@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `match` parameter is currently unused, which can lead to unused variable warnings in some linters.
@@ -16,12 +17,13 @@ Note that a single underscore can only be used once in a function and may confli
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,10 +33,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -60,8 +62,8 @@ const infixEval = (str, regex) =>
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -92,8 +94,8 @@ const infixEval = (str, regex) =>
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -103,11 +105,10 @@ const infixEval = (str, regex) =>
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

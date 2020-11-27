@@ -7,25 +7,31 @@ forumTopicId: 17566
 ---
 
 ## Description
-<section id='description'>
-We can also divide one number by another.
-JavaScript uses the <code>/</code> symbol for division.
 
-<strong>Example</strong>
+<section id='description'>
+
+We can also divide one number by another.
+
+JavaScript uses the `/` symbol for division.
+
+**Example**
 
 ```js
 myVar = 16 / 2; // assigned 8
 ```
 
-
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the <code>0</code> so that the <code>quotient</code> is equal to <code>2</code>.
+
+Change the `0` so that the `quotient` is equal to `2`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,8 +59,8 @@ var quotient = 66 / 0;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -65,8 +72,8 @@ var quotient = 66 / 0;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var quotient = 66 / 33;

@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-For loops are declared with three optional expressions separated by semicolons: `for ([initialization]; [condition]; [final-expression])`. 
+For loops are declared with three optional expressions separated by semicolons: `for ([initialization]; [condition]; [final-expression])`.
 
 The initialization statement is executed only one time before the loop starts and is often used to define and set up the loop variable. Think of it like declaring a variable to use as a counter in your `for` loop.
 
@@ -16,11 +17,13 @@ Many `for` loops use `i` as an initializer and start from 0, so change `let x = 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -336,8 +340,8 @@ function pick(guess) {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -406,8 +410,8 @@ function pick(guess) {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -417,12 +421,11 @@ function pick(guess) {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

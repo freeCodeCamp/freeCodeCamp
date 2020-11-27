@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Next in the `goFight` function, set `monsterHealth` to equal the health of the current monster. You can get the health of the current monster with `monsters[fighting].health`. Try to understand that line before continuing.
@@ -12,11 +13,13 @@ Next in the `goFight` function, set `monsterHealth` to equal the health of the c
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -218,8 +222,8 @@ function dodge() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -288,8 +292,8 @@ function dodge() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -299,12 +303,11 @@ function dodge() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

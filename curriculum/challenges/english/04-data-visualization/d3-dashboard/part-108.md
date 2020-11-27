@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Your percent values are numbers less than one. You will need to multiply it by 100, round of the decimals, and add a `%` sign. Use a template literal to return this to the `text` function:
@@ -14,13 +15,17 @@ ${Math.round(percent * 100)}%
 ```
 
 Don't forget that you need a `return` statement here since you aren't using an implicit return.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -198,8 +204,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -232,10 +238,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

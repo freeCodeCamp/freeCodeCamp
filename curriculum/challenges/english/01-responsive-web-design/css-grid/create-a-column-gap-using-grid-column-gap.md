@@ -7,22 +7,29 @@ forumTopicId: 301124
 ---
 
 ## Description
+
 <section id='description'>
-So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the <code>grid-column-gap</code> property like this:
+
+So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the `grid-column-gap` property like this:
 
 ```css
 grid-column-gap: 10px;
 ```
 
 This creates 10px of empty space between all of our columns.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Give the columns in the grid a <code>20px</code> gap.
+
+Give the columns in the grid a `20px` gap.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,13 +81,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.container {grid-column-gap: 20px;}</style>

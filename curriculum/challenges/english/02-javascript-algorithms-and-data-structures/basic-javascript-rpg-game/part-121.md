@@ -5,18 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The attack of the monster will be based on the monster's level and player's `xp`. In the `getMonsterAttackValue` function, use `const` to create a variable called `hit`. Set it to equal the equation `(level * 5) - (Math.floor(Math.random() * xp))`. 
+The attack of the monster will be based on the monster's level and player's `xp`. In the `getMonsterAttackValue` function, use `const` to create a variable called `hit`. Set it to equal the equation `(level * 5) - (Math.floor(Math.random() * xp))`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -285,8 +289,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -355,8 +359,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -366,12 +370,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

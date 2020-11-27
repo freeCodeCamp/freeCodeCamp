@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Create an `h2` element in the `section` element and give it the text `Coffees`.
@@ -12,6 +13,7 @@ Create an `h2` element in the `section` element and give it the text `Coffees`.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

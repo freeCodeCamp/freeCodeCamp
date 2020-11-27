@@ -7,16 +7,23 @@ forumTopicId: 301125
 ---
 
 ## Description
+
 <section id='description'>
-You can add a gap in between the rows of a grid using <code>grid-row-gap</code> in the same way that you added a gap in between columns in the previous challenge.
+
+You can add a gap in between the rows of a grid using `grid-row-gap` in the same way that you added a gap in between columns in the previous challenge.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a gap for the rows that is <code>5px</code> tall.
+
+Create a gap for the rows that is `5px` tall.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,13 +75,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.container {grid-row-gap: 5px;}</style>

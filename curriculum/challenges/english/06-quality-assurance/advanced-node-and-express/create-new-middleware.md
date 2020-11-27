@@ -6,11 +6,12 @@ forumTopicId: 301551
 ---
 
 ## Description
+
 <section id='description'>
 
-As is, any user can just go to <code>/profile</code> whether they have authenticated or not, by typing in the url. We want to prevent this, by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.
+As is, any user can just go to `/profile` whether they have authenticated or not, by typing in the url. We want to prevent this, by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.
 
-The challenge here is creating the middleware function <code>ensureAuthenticated(req, res, next)</code>, which will check if a user is authenticated by calling passport's <code>isAuthenticated</code> method on the <code>request</code> which, in turn, checks if <code>req.user</code> is defined. If it is, then <code>next()</code> should be called, otherwise, we can just respond to the request with a redirect to our homepage to login. An implementation of this middleware is:
+The challenge here is creating the middleware function `ensureAuthenticated(req, res, next)`, which will check if a user is authenticated by calling passport's `isAuthenticated` method on the `request` which, in turn, checks if `req.user` is defined. If it is, then `next()` should be called, otherwise, we can just respond to the request with a redirect to our homepage to login. An implementation of this middleware is:
 
 ```js
 function ensureAuthenticated(req, res, next) {
@@ -21,7 +22,7 @@ function ensureAuthenticated(req, res, next) {
 };
 ```
 
-Now add <em>ensureAuthenticated</em> as a middleware to the request for the profile page before the argument to the get request containing the function that renders the page.
+Now add *ensureAuthenticated* as a middleware to the request for the profile page before the argument to the get request containing the function that renders the page.
 
 ```js
 app
@@ -31,16 +32,18 @@ app
  });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959).
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,11 +58,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

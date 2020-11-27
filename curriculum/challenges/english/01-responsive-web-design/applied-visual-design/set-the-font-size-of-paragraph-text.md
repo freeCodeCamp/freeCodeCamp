@@ -7,16 +7,23 @@ forumTopicId: 301068
 ---
 
 ## Description
+
 <section id='description'>
-The <code>font-size</code> property in CSS is not limited to headings, it can be applied to any element containing text.
+
+The `font-size` property in CSS is not limited to headings, it can be applied to any element containing text.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the value of the <code>font-size</code> property for the paragraph to 16px to make it more visible.
+
+Change the value of the `font-size` property for the paragraph to 16px to make it more visible.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -46,11 +54,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

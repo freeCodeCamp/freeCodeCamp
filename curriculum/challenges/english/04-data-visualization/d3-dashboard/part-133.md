@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The legend has all the information is needs, but the title looks a little misaligned. Go to where you created your  `legendTitle` variable and set the `position` to `relative` and the `left` to `20px` using `style` functions.
+The legend has all the information is needs, but the title looks a little misaligned. Go to where you created your `legendTitle` variable and set the `position` to `relative` and the `left` to `20px` using `style` functions.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -227,8 +233,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -261,10 +267,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -7,19 +7,29 @@ forumTopicId: 16659
 ---
 
 ## Description
+
 <section id='description'>
-The <code>/=</code> operator divides a variable by another number.
-<code>myVar = myVar / 5;</code>
-Will divide <code>myVar</code> by <code>5</code>. This can be rewritten as:
-<code>myVar /= 5;</code>
+
+The `/=` operator divides a variable by another number.
+
+`myVar = myVar / 5;`
+
+Will divide `myVar` by `5`. This can be rewritten as:
+
+`myVar /= 5;`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>/=</code> operator.
+
+Convert the assignments for `a`, `b`, and `c` to use the `/=` operator.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +68,8 @@ c = c / 11;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -70,8 +81,8 @@ c = c / 11;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var a = 48;

@@ -6,6 +6,7 @@ forumTopicId: 301757
 ---
 
 ## Description
+
 <section id='description'>
 
 Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
@@ -116,11 +117,13 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -137,6 +140,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -160,6 +164,7 @@ largeSum(testNums);
 </div>
 
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -274,12 +279,11 @@ const testNums = [
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function largeSum(arr) {

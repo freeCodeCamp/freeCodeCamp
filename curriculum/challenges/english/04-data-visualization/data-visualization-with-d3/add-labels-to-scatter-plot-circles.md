@@ -6,18 +6,27 @@ forumTopicId: 301477
 ---
 
 ## Description
+
 <section id='description'>
+
 You can add text to create labels for the points in a scatter plot.
-The goal is to display the comma-separated values for the first (<code>x</code>) and second (<code>y</code>) fields of each item in <code>dataset</code>.
-The <code>text</code> nodes need <code>x</code> and <code>y</code> attributes to position it on the SVG canvas. In this challenge, the <code>y</code> value (which determines height) can use the same value that the <code>circle</code> uses for its <code>cy</code> attribute. The <code>x</code> value can be slightly larger than the <code>cx</code> value of the <code>circle</code>, so the label is visible. This will push the label to the right of the plotted point.
+
+The goal is to display the comma-separated values for the first (`x`) and second (`y`) fields of each item in `dataset`.
+
+The `text` nodes need `x` and `y` attributes to position it on the SVG canvas. In this challenge, the `y` value (which determines height) can use the same value that the `circle` uses for its `cy` attribute. The `x` value can be slightly larger than the `cx` value of the `circle`, so the label is visible. This will push the label to the right of the plotted point.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Label each point on the scatter plot using the <code>text</code> elements. The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is "34, 78". Set the <code>x</code> attribute so it's 5 units more than the value you used for the <code>cx</code> attribute on the <code>circle</code>. Set the <code>y</code> attribute the same way that's used for the <code>cy</code> value on the <code>circle</code>.
+
+Label each point on the scatter plot using the `text` elements. The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is "34, 78". Set the `x` attribute so it's 5 units more than the value you used for the `cx` attribute on the `circle`. Set the `y` attribute the same way that's used for the `cy` value on the `circle`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -102,11 +112,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

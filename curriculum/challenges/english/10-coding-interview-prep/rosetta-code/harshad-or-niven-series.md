@@ -6,19 +6,29 @@ forumTopicId: 302281
 ---
 
 ## Description
+
 <section id='description'>
+
 The Harshad or Niven numbers are positive integers ≥ 1 that are divisible by the sum of their digits.
-For example, <code>42</code> is a <a href="https://rosettacode.org/wiki/Harshad_or_Niven_series" title="Harshad or Niven series" target="_blank">Harshad number</a> as <code>42</code> is divisible by <code>(4 + 2)</code> without remainder.
+
+For example, `42` is a [Harshad number](https://rosettacode.org/wiki/Harshad_or_Niven_series "Harshad or Niven series") as `42` is divisible by `(4 + 2)` without remainder.
+
 Assume that the series is defined as the numbers in increasing order.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Implement a function to generate successive members of the Harshad sequence.
+
 Use it to list the first twenty members of the sequence and list the first Harshad number greater than 1000.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,8 +62,8 @@ function isHarshadOrNiven() {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -67,8 +78,8 @@ const res = {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function isHarshadOrNiven() {

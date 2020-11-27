@@ -6,10 +6,14 @@ forumTopicId: 301339
 ---
 
 ## Description
+
 <section id='description'>
-Sometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses <code>()</code>.
-If you want to find either <code>Penguin</code> or <code>Pumpkin</code> in a string, you can use the following Regular Expression: <code>/P(engu|umpk)in/g</code>
-Then check whether the desired string groups are in the test string by using the <code>test()</code> method.
+
+Sometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses `()`.
+
+If you want to find either `Penguin` or `Pumpkin` in a string, you can use the following Regular Expression: `/P(engu|umpk)in/g`
+
+Then check whether the desired string groups are in the test string by using the `test()` method.
 
 ```js
 let testStr = "Pumpkin";
@@ -21,12 +25,17 @@ testRegex.test(testStr);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Fix the regex so that it checks for the names of <code>Franklin Roosevelt</code> or <code>Eleanor Roosevelt</code> in a case sensitive manner and it should make concessions for middle names.
-Then fix the code so that the regex that you have created is checked against <code>myString</code> and either <code>true</code> or <code>false</code> is returned depending on whether the regex matches.
+
+Fix the regex so that it checks for the names of `Franklin Roosevelt` or `Eleanor Roosevelt` in a case sensitive manner and it should make concessions for middle names.
+
+Then fix the code so that the regex that you have created is checked against `myString` and either `true` or `false` is returned depending on whether the regex matches.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +57,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,11 +71,10 @@ let result = false; // Change this line
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

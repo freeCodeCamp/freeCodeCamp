@@ -7,9 +7,12 @@ forumTopicId: 18336
 ---
 
 ## Description
+
 <section id='description'>
+
 After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
-For example, let's look at <code>ourDog</code>:
+
+For example, let's look at `ourDog`:
 
 ```js
 var ourDog = {
@@ -20,18 +23,20 @@ var ourDog = {
 };
 ```
 
-Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property:
-<code>ourDog.name = "Happy Camper";</code> or
-<code>ourDog["name"] = "Happy Camper";</code>
-Now when we evaluate <code>ourDog.name</code>, instead of getting "Camper", we'll get his new name, "Happy Camper".
+Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property: `ourDog.name = "Happy Camper";` or `ourDog["name"] = "Happy Camper";` Now when we evaluate `ourDog.name`, instead of getting "Camper", we'll get his new name, "Happy Camper".
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Update the <code>myDog</code> object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.
+
+Update the `myDog` object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,8 +72,8 @@ var myDog = {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -79,8 +85,8 @@ var myDog = {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myDog = {

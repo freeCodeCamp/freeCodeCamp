@@ -6,11 +6,16 @@ forumTopicId: 301491
 ---
 
 ## Description
+
 <section id='description'>
+
 By default, scales use the identity relationship. This means the input value maps to the output value. However, scales can be much more flexible and interesting.
+
 Say a dataset has values ranging from 50 to 480. This is the input information for a scale, also known as the <dfn>domain</dfn>.
-You want to map those points along the <code>x</code> axis on the SVG canvas, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
-The <code>domain()</code> and <code>range()</code> methods set these values for the scale. Both methods take an array of at least two elements as an argument. Here's an example:
+
+You want to map those points along the `x` axis on the SVG canvas, between 10 units and 500 units. This is the output information, also known as the <dfn>range</dfn>.
+
+The `domain()` and `range()` methods set these values for the scale. Both methods take an array of at least two elements as an argument. Here's an example:
 
 ```js
 // Set a domain
@@ -27,15 +32,22 @@ d3.scaleLinear()
 ```
 
 Notice that the scale uses the linear relationship between the domain and range values to figure out what the output should be for a given number. The minimum value in the domain (50) maps to the minimum value (10) in the range.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a scale and set its domain to <code>[250, 500]</code> and range to <code>[10, 150]</code>.
-<strong>Note</strong><br>You can chain the <code>domain()</code> and <code>range()</code> methods onto the <code>scale</code> variable.
+
+Create a scale and set its domain to `[250, 500]` and range to `[10, 150]`.
+
+**Note**  
+You can chain the `domain()` and `range()` methods onto the `scale` variable.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -56,6 +68,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,11 +92,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

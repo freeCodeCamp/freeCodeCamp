@@ -6,21 +6,31 @@ forumTopicId: 14271
 ---
 
 ## Description
+
 <section id='description'>
+
 Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.
-For example, <code>addTogether(2, 3)</code> should return <code>5</code>, and <code>addTogether(2)</code> should return a function.
+
+For example, `addTogether(2, 3)` should return `5`, and `addTogether(2)` should return a function.
+
 Calling this returned function with a single argument will then return the sum:
-<code>var sumTwoAnd = addTogether(2);</code>
-<code>sumTwoAnd(3)</code> returns <code>5</code>.
+
+`var sumTwoAnd = addTogether(2);`
+
+`sumTwoAnd(3)` returns `5`.
+
 If either argument isn't a valid number, return undefined.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,13 +68,11 @@ addTogether(2,3);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function addTogether() {

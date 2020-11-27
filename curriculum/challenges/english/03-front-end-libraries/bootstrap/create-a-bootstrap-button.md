@@ -6,17 +6,23 @@ forumTopicId: 16811
 ---
 
 ## Description
+
 <section id='description'>
-Bootstrap has its own styles for <code>button</code> elements, which look much better than the plain HTML ones.
-Create a new <code>button</code> element below your large kitten photo. Give it the <code>btn</code> and <code>btn-default</code> classes, as well as the text of "Like".
+
+Bootstrap has its own styles for `button` elements, which look much better than the plain HTML ones.
+
+Create a new `button` element below your large kitten photo. Give it the `btn` and `btn-default` classes, as well as the text of "Like".
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -100,11 +107,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

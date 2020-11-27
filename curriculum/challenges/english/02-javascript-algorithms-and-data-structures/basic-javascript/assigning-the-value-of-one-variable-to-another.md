@@ -9,6 +9,7 @@ forumTopicId: 418265
 ## Description
 
 <section id='description'>
+
 After a value is assigned to a variable using the <dfn>assignment</dfn> operator, you can assign the value of that variable to another variable using the <dfn>assignment</dfn> operator.
 
 ```js
@@ -25,7 +26,9 @@ The above declares a `myVar` variable with no value, then assigns it the value `
 ## Instructions
 
 <section id='instructions'>
-Assign the contents of <code>a</code> to variable <code>b</code>.
+
+Assign the contents of `a` to variable `b`.
+
 </section>
 
 ## Tests

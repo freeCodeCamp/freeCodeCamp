@@ -6,10 +6,12 @@ forumTopicId: 302220
 ---
 
 ## Description
+
 <section id='description'>
+
 You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:
-<pre>
-(B O)
+
+<pre>(B O)
 (X K)
 (D Q)
 (C P)
@@ -30,19 +32,26 @@ You are given a collection of ABC blocks (e.g., childhood alphabet blocks). Ther
 (P C)
 (Z M)
 </pre>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+
 Some rules to keep in mind:
+
 <ul>
   <li>Once a letter on a block is used, that block cannot be used again.</li>
   <li>The function should be case-insensitive.</li>
 </ul>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -69,6 +78,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -81,8 +91,8 @@ function canMakeWord(word) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -94,8 +104,8 @@ const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function canMakeWord(word) {

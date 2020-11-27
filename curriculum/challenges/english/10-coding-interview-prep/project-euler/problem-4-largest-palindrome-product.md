@@ -6,6 +6,7 @@ forumTopicId: 302065
 ---
 
 ## Description
+
 <section id='description'>
 
 A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
@@ -15,11 +16,13 @@ Find the largest palindrome made from the product of two `n`-digit numbers.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,13 +55,11 @@ largestPalindromeProduct(3);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const largestPalindromeProduct = (digit)=>{

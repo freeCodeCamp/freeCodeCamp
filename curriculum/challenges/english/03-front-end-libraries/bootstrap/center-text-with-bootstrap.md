@@ -6,18 +6,25 @@ forumTopicId: 16771
 ---
 
 ## Description
+
 <section id='description'>
-Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class <code>text-center</code> to our <code>h2</code> element.
+
+Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class `text-center` to our `h2` element.
+
 Remember that you can add several classes to the same element by separating each of them with a space, like this:
-<code>&#60h2 class="red-text text-center"&#62your text&#60/h2&#62</code>
+
+`<h2 class="red-text text-center">your text</h2>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -98,11 +106,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,13 +5,14 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 If you play the game in its current state you might notice a bug. If your `xp` is high enough, the `getMonsterAttackValue` function will sometimes return a negative number, which will actually add to your total health when fighting a monster!
 
 In `getMonsterAttackValue`, change `return hit` to a ternary operator that returns `hit` if `hit` is greater than 0, or returns 0 if it is not.
 
-For example, here's a function that returns 5 if `tickets` is greater than 3, or returns 0 if it is not: 
+For example, here's a function that returns 5 if `tickets` is greater than 3, or returns 0 if it is not:
 
 ```js
 function applyDiscount(tickets) {
@@ -22,11 +23,13 @@ function applyDiscount(tickets) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -297,8 +301,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -367,8 +371,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -378,12 +382,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

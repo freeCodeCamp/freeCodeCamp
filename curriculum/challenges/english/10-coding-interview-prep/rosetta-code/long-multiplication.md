@@ -6,21 +6,30 @@ forumTopicId: 385269
 ---
 
 ## Description
+
 <section id='description'>
-Explicitly implement  <a href="https://en.wikipedia.org/wiki/long multiplication">long multiplication</a>.
+
+Explicitly implement [long multiplication](<https://en.wikipedia.org/wiki/long multiplication>).
+
 This is one possible approach to arbitrary-precision integer algebra.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that takes two strings of large numbers as parameters. Your function should return the product of these two large numbers as a string.
-<strong>Note:</strong> In JavaScript, arithmetic operations are inaccurate with large numbers, so you will have to implement precise multiplication yourself.
+
+**Note:** In JavaScript, arithmetic operations are inaccurate with large numbers, so you will have to implement precise multiplication yourself.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>mult</code> should be a function.
     testString: assert(typeof mult == 'function');
@@ -41,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,6 +66,7 @@ function mult(strNum1, strNum2) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

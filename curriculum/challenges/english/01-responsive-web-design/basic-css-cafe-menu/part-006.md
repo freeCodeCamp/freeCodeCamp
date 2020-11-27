@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 To let visitors know the cafe was founded in 2020, add a `p` element below the `h1` element with the text `Est. 2020`.
@@ -12,6 +13,7 @@ To let visitors know the cafe was founded in 2020, add a `p` element below the `
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

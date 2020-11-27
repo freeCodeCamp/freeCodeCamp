@@ -6,21 +6,31 @@ forumTopicId: 16639
 ---
 
 ## Description
+
 <section id='description'>
-Recall that in addition to class attributes, you can give each of your elements an <code>id</code> attribute.
+
+Recall that in addition to class attributes, you can give each of your elements an `id` attribute.
+
 Each id must be unique to a specific element and used only once per page.
-Let's give a unique id to each of our <code>div</code> elements of class <code>well</code>.
+
+Let's give a unique id to each of our `div` elements of class `well`.
+
 Remember that you can give an element an id like this:
-<code>&#60;div class="well" id="center-well"&#62;</code>
-Give the well on the left the id of <code>left-well</code>. Give the well on the right the id of <code>right-well</code>.
+
+`<div class="well" id="center-well">`
+
+Give the well on the left the id of `left-well`. Give the well on the right the id of `right-well`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,11 +74,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

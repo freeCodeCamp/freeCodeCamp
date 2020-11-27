@@ -7,8 +7,10 @@ forumTopicId: 18242
 ---
 
 ## Description
+
 <section id='description'>
-If the <code>break</code> statement is omitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:
+
+If the `break` statement is omitted from a `switch` statement's `case`, the following `case` statement(s) are executed until a `break` is encountered. If you have multiple inputs with the same output, you can represent them in a `switch` statement like this:
 
 ```js
 var result = "";
@@ -24,15 +26,25 @@ switch(val) {
 ```
 
 Cases for 1, 2, and 3 will all produce the same result.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - "Low"<br><code>4-6</code> - "Mid"<br><code>7-9</code> - "High"
-<strong>Note</strong><br>You will need to have a <code>case</code> statement for each number in the range.
+
+Write a switch statement to set `answer` for the following ranges:  
+`1-3` - "Low"  
+`4-6` - "Mid"  
+`7-9` - "High"
+
+**Note**  
+You will need to have a `case` statement for each number in the range.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -65,6 +77,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -86,13 +99,11 @@ sequentialSizes(1);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function sequentialSizes(val) {

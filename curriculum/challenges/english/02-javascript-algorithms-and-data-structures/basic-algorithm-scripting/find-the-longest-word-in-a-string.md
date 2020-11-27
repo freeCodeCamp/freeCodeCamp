@@ -6,17 +6,23 @@ forumTopicId: 16015
 ---
 
 ## Description
+
 <section id='description'>
+
 Return the length of the longest word in the provided sentence.
+
 Your response should be a number.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,13 +60,11 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function findLongestWordLength(str) {

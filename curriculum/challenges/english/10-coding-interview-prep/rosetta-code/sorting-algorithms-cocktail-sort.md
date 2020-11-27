@@ -8,9 +8,10 @@ forumTopicId: 302312
 ## Description
 
 <section id='description'>
-The cocktail shaker sort is an improvement on the <a href="https://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>. The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from <a href="https://en.wikipedia.org/wiki/Cocktail sort" target="_blank">wikipedia</a>):</p>
-<pre>
-<b>function</b> <i>cocktailSort</i>( A : list of sortable items )
+
+The cocktail shaker sort is an improvement on the [Bubble Sort](<https://rosettacode.org/wiki/Bubble Sort>). The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from [wikipedia](<https://en.wikipedia.org/wiki/Cocktail sort>)):
+
+<pre><b>function</b> <i>cocktailSort</i>( A : list of sortable items )
   <b>do</b>
     swapped := false
     <b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b>
@@ -31,12 +32,15 @@ The cocktail shaker sort is an improvement on the <a href="https://rosettacode.o
   <b>while</b> swapped; <i>// if no elements have been swapped,</i>
                 <i>// then the list is sorted</i>
 </pre>
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function that sorts a given array using cocktail sort.
+
 </section>
 
 ## Tests
@@ -75,6 +79,7 @@ function cocktailSort(arr) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

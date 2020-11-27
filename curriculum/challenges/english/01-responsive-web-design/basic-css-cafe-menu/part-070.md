@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
@@ -12,6 +13,7 @@ Change the background color of the `hr` element to `brown` so it matches the col
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 We have to fix an error. The `currentWeapon` variable is the array index. Array indexing starts at zero. The index of the last element in an array is one less than the length of the array. In the `if` condition you are working on, change `weapons.length` to `weapons.length - 1`.
@@ -12,11 +13,13 @@ We have to fix an error. The `currentWeapon` variable is the array index. Array 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -163,8 +167,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -233,8 +237,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -244,12 +248,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

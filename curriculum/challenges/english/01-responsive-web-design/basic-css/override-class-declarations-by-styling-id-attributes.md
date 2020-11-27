@@ -7,18 +7,28 @@ forumTopicId: 18251
 ---
 
 ## Description
+
 <section id='description'>
-We just proved that browsers read CSS from top to bottom in order of their declaration. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last. Notice that if we even had put <code>blue-text</code> before <code>pink-text</code> in our <code>h1</code> element's classes, it would still look at the declaration order and not the order of their use!
+
+We just proved that browsers read CSS from top to bottom in order of their declaration. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last. Notice that if we even had put `blue-text` before `pink-text` in our `h1` element's classes, it would still look at the declaration order and not the order of their use!
+
 But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?
-Let's override your <code>pink-text</code> and <code>blue-text</code> classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.
+
+Let's override your `pink-text` and `blue-text` classes, and make your `h1` element orange, by giving the `h1` element an id and then styling that id.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-text</code>. Remember, id styles look like this:
-<code>&#60;h1 id="orange-text"&#62;</code>
-Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.
-Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:
+
+Give your `h1` element the `id` attribute of `orange-text`. Remember, id styles look like this:
+
+`<h1 id="orange-text">`
+
+Leave the `blue-text` and `pink-text` classes on your `h1` element.
+
+Create a CSS declaration for your `orange-text` id in your `style` element. Here's an example of what this looks like:
 
 ```css
 #brown-text {
@@ -26,10 +36,12 @@ Create a CSS declaration for your <code>orange-text</code> id in your <code>styl
 }
 ```
 
-<strong>Note:</strong> It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
+**Note:** It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,6 +66,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,11 +90,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

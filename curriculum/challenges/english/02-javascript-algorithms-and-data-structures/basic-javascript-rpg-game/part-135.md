@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Add a new object to the `locations` array. 
+Add a new object to the `locations` array.
 
 Set `name` to "easter egg", `"button text"` to `["2", "8", "Go to town square?"]`, `"button functions"` to `[pickTwo, pickEight, goTown]`, and `text` to "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -308,8 +312,8 @@ function easterEgg() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -381,8 +385,8 @@ let pickTwo, pickEight; // initialize for test
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -392,12 +396,11 @@ let pickTwo, pickEight; // initialize for test
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

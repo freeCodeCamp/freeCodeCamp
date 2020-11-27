@@ -6,9 +6,12 @@ forumTopicId: 301479
 ---
 
 ## Description
+
 <section id='description'>
-D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the <code>style()</code> method to change the styling for different elements.
-For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the <code>style()</code> method and include the conditional logic. The callback function uses the <code>d</code> parameter to represent the data point:
+
+D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the `style()` method to change the styling for different elements.
+
+For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the `style()` method and include the conditional logic. The callback function uses the `d` parameter to represent the data point:
 
 ```js
 selection.style("color", (d) => {
@@ -16,16 +19,23 @@ selection.style("color", (d) => {
 });
 ```
 
-The <code>style()</code> method is not limited to setting the <code>color</code> - it can be used with other CSS properties as well.
+The `style()` method is not limited to setting the `color` - it can be used with other CSS properties as well.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the <code>style()</code> method to the code in the editor to set the <code>color</code> of the <code>h2</code> elements conditionally. Write the callback function so if the data value is less than 20, it returns "red", otherwise it returns "green".
-<strong>Note</strong><br>You can use if-else logic, or the ternary operator.
+
+Add the `style()` method to the code in the editor to set the `color` of the `h2` elements conditionally. Write the callback function so if the data value is less than 20, it returns "red", otherwise it returns "green".
+
+**Note**  
+You can use if-else logic, or the ternary operator.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,6 +64,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,11 +90,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now use the `+=` operator to add to `text.innerText`. Add the string " In your inventory you have: " (with spaces at the beginning and end). Then add the `inventory` variable to the end of the string.
@@ -12,11 +13,13 @@ Now use the `+=` operator to add to `text.innerText`. Add the string " In your i
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -178,8 +182,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -248,8 +252,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -259,12 +263,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

@@ -6,26 +6,32 @@ forumTopicId: 302230
 ---
 
 ## Description
+
 <section id='description'>
+
 Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+
 <h4><strong>Examples:</strong></h4>
 
-| Input | Output |
-| --- | --- |
-| <code>[]</code> | true |
-| <code>][</code> | false |
-| <code>[][]</code> | true |
-| <code>][][</code> | false |
-| <code>[]][[]</code> | false |
-| <code>[[[[]]]]</code> | true |
+| Input                     | Output |
+| ------------------------- | ------ |
+| <code>\[]</code>          | true   |
+| <code>]\[</code>          | false  |
+| <code>[][]</code>         | true   |
+| <code>]\[]</code>         | false  |
+| <code>\[]]\[\[]</code>    | false  |
+| <code>\[\[\[\[]]]]</code> | true   |
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -74,6 +80,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -87,8 +94,8 @@ function isBalanced(str) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -119,8 +126,8 @@ const testCases = [
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function isBalanced(str) {

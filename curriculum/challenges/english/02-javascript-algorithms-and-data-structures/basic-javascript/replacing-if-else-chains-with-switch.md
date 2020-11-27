@@ -7,8 +7,10 @@ forumTopicId: 18266
 ---
 
 ## Description
+
 <section id='description'>
-If you have many options to choose from, a <code>switch</code> statement can be easier to write than many chained <code>if</code>/<code>else if</code> statements. The following:
+
+If you have many options to choose from, a `switch` statement can be easier to write than many chained `if`/`else if` statements. The following:
 
 ```js
 if (val === 1) {
@@ -38,11 +40,15 @@ switch(val) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the chained <code>if</code>/<code>else if</code> statements into a <code>switch</code> statement.
+
+Change the chained `if`/`else if` statements into a `switch` statement.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -73,6 +79,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -104,13 +111,11 @@ chainToSwitch(7);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function chainToSwitch(val) {

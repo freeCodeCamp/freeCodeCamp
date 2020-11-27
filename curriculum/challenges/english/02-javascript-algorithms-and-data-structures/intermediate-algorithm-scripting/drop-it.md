@@ -6,17 +6,23 @@ forumTopicId: 16010
 ---
 
 ## Description
+
 <section id='description'>
-Given the array <code>arr</code>, iterate through and remove each element starting from the first element (the 0 index) until the function <code>func</code> returns <code>true</code> when the iterated element is passed through it.
-Then return the rest of the array once the condition is satisfied, otherwise, <code>arr</code> should be returned as an empty array.
+
+Given the array `arr`, iterate through and remove each element starting from the first element (the 0 index) until the function `func` returns `true` when the iterated element is passed through it.
+
+Then return the rest of the array once the condition is satisfied, otherwise, `arr` should be returned as an empty array.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,13 +60,11 @@ dropElements([1, 2, 3], function(n) {return n < 3; });
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function dropElements(arr, func) {

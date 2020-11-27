@@ -6,16 +6,23 @@ forumTopicId: 301492
 ---
 
 ## Description
+
 <section id='description'>
-D3 methods can add styles to the bar labels. The <code>fill</code> attribute sets the color of the text for a <code>text</code> node. The <code>style()</code> method sets CSS rules for other styles, such as "font-family" or "font-size".
+
+D3 methods can add styles to the bar labels. The `fill` attribute sets the color of the text for a `text` node. The `style()` method sets CSS rules for other styles, such as "font-family" or "font-size".
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Set the <code>font-size</code> of the <code>text</code> elements to 25px, and the color of the text to red.
+
+Set the `font-size` of the `text` elements to 25px, and the color of the text to red.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -75,11 +83,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

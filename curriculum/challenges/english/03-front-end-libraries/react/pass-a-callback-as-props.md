@@ -6,17 +6,25 @@ forumTopicId: 301400
 ---
 
 ## Description
+
 <section id='description'>
-You can pass <code>state</code> as props to child components, but you're not limited to passing data. You can also pass handler functions or any method that's defined on a React component to a child component. This is how you allow child components to interact with their parent components. You pass methods to a child just like a regular prop. It's assigned a name and you have access to that method name under <code>this.props</code> in the child component.
+
+You can pass `state` as props to child components, but you're not limited to passing data. You can also pass handler functions or any method that's defined on a React component to a child component. This is how you allow child components to interact with their parent components. You pass methods to a child just like a regular prop. It's assigned a name and you have access to that method name under `this.props` in the child component.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-There are three components outlined in the code editor. The <code>MyApp</code> component is the parent that will render the <code>GetInput</code> and <code>RenderInput</code> child components. Add the <code>GetInput</code> component to the render method in <code>MyApp</code>, then pass it a prop called <code>input</code> assigned to <code>inputValue</code> from <code>MyApp</code>&apos;s <code>state</code>. Also create a prop called <code>handleChange</code> and pass the input handler <code>handleChange</code> to it.
-Next, add <code>RenderInput</code> to the render method in <code>MyApp</code>, then create a prop called <code>input</code> and pass the <code>inputValue</code> from <code>state</code> to it. Once you are finished you will be able to type in the <code>input</code> field in the <code>GetInput</code> component, which then calls the handler method in its parent via props. This updates the input in the <code>state</code> of the parent, which is passed as props to both children. Observe how the data flows between the components and how the single source of truth remains the <code>state</code> of the parent component. Admittedly, this example is a bit contrived, but should serve to illustrate how data and callbacks can be passed between React components.
+
+There are three components outlined in the code editor. The `MyApp` component is the parent that will render the `GetInput` and `RenderInput` child components. Add the `GetInput` component to the render method in `MyApp`, then pass it a prop called `input` assigned to `inputValue` from `MyApp`'s `state`. Also create a prop called `handleChange` and pass the input handler `handleChange` to it.
+
+Next, add `RenderInput` to the render method in `MyApp`, then create a prop called `input` and pass the `inputValue` from `state` to it. Once you are finished you will be able to type in the `input` field in the `GetInput` component, which then calls the handler method in its parent via props. This updates the input in the `state` of the parent, which is passed as props to both children. Observe how the data flows between the components and how the single source of truth remains the `state` of the parent component. Admittedly, this example is a bit contrived, but should serve to illustrate how data and callbacks can be passed between React components.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -99,8 +108,8 @@ class RenderInput extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -112,8 +121,8 @@ ReactDOM.render(<MyApp />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class MyApp extends React.Component {

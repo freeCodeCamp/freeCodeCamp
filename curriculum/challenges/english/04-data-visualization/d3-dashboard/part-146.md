@@ -5,18 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The last thing is that the legend title always shows 2020. Change the `text` of the `legendTitle` to a template literal that shows the currently displayed year followed by a space and `followers`.
 
 That's it, your dashboard is finished! Don't forget to admire your hard work.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -247,8 +253,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -281,10 +287,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

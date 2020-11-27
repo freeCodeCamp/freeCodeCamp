@@ -6,6 +6,7 @@ forumTopicId: 301952
 ---
 
 ## Description
+
 <section id='description'>
 
 The prime factors of 13195 are 5, 7, 13 and 29.
@@ -15,11 +16,13 @@ What is the largest prime factor of the given `number`?
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,13 +65,11 @@ largestPrimeFactor(13195);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const largestPrimeFactor = (number) => {

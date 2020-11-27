@@ -6,10 +6,14 @@ forumTopicId: 301357
 ---
 
 ## Description
+
 <section id='description'>
-You learned how to match literal patterns (<code>/literal/</code>) and wildcard character (<code>/./</code>). Those are the extremes of regular expressions, where one finds exact matches and the other matches everything. There are options that are a balance between the two extremes.
-You can search for a literal pattern with some flexibility with <dfn>character classes</dfn>. Character classes allow you to define a group of characters you wish to match by placing them inside square (<code>[</code> and <code>]</code>) brackets.
-For example, you want to match <code>"bag"</code>, <code>"big"</code>, and <code>"bug"</code> but not <code>"bog"</code>. You can create the regex <code>/b[aiu]g/</code> to do this. The <code>[aiu]</code> is the character class that will only match the characters <code>"a"</code>, <code>"i"</code>, or <code>"u"</code>.
+
+You learned how to match literal patterns (`/literal/`) and wildcard character (`/./`). Those are the extremes of regular expressions, where one finds exact matches and the other matches everything. There are options that are a balance between the two extremes.
+
+You can search for a literal pattern with some flexibility with <dfn>character classes</dfn>. Character classes allow you to define a group of characters you wish to match by placing them inside square (`[` and `]`) brackets.
+
+For example, you want to match `"bag"`, `"big"`, and `"bug"` but not `"bog"`. You can create the regex `/b[aiu]g/` to do this. The `[aiu]` is the character class that will only match the characters `"a"`, `"i"`, or `"u"`.
 
 ```js
 let bigStr = "big";
@@ -26,12 +30,18 @@ bogStr.match(bgRegex); // Returns null
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use a character class with vowels (<code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code>) in your regex <code>vowelRegex</code> to find all the vowels in the string <code>quoteSample</code>.
-<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels.
+
+Use a character class with vowels (`a`, `e`, `i`, `o`, `u`) in your regex `vowelRegex` to find all the vowels in the string `quoteSample`.
+
+**Note**  
+Be sure to match both upper- and lowercase vowels.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +62,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,11 +75,10 @@ let result = vowelRegex; // Change this line
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

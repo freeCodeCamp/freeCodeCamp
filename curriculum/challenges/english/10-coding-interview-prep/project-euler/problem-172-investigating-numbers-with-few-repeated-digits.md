@@ -6,16 +6,21 @@ forumTopicId: 301807
 ---
 
 ## Description
+
 <section id='description'>
+
 How many 18-digit numbers n (without leading zeros) are there such that no digit occurs more than three times in n?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -28,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -43,11 +49,10 @@ euler172();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

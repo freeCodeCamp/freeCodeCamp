@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Inside the `locations` array, on the `kill monster` object, "button functions" is currently set to `[goTown, goTown, goTown]`. Change the third `goTown` to `easterEgg`. This is how a player will access the hidden feature of the game.
@@ -12,11 +13,13 @@ Inside the `locations` array, on the `kill monster` object, "button functions" i
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -346,8 +350,8 @@ function pick(guess) {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -416,8 +420,8 @@ function pick(guess) {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -427,12 +431,11 @@ function pick(guess) {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

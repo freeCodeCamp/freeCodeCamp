@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 ES6 introduced a shorthand object literal syntax:
@@ -15,18 +16,18 @@ const myObject = { a };
 console.log(myObject); // { a: 10 }
 ```
 
-First, move `sum` outside of `spreadsheetFunctions`.
-`sum` should be a function expression similar to `isEven`.
+First, move `sum` outside of `spreadsheetFunctions`. `sum` should be a function expression similar to `isEven`.
 
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,10 +37,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -161,8 +162,8 @@ const update = event => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -193,8 +194,8 @@ const update = event => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -204,11 +205,10 @@ const update = event => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

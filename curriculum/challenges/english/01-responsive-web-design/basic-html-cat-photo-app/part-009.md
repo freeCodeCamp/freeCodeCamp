@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-All `img` elements should have an `alt` attribute. The `alt` attribute's text is used for screen readers to improve accessibility and is displayed if the image fails to load.  For example, `<img src="cat.jpg" alt="A cat">` has an `alt` attribute with the text `A cat`.
+All `img` elements should have an `alt` attribute. The `alt` attribute's text is used for screen readers to improve accessibility and is displayed if the image fails to load. For example, `<img src="cat.jpg" alt="A cat">` has an `alt` attribute with the text `A cat`.
 
 Add an `alt` attribute to the `img` element with the text `A cute orange cat lying on its back`.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -52,4 +55,5 @@ tests:
 ```
 
 </div>
+
 </section>

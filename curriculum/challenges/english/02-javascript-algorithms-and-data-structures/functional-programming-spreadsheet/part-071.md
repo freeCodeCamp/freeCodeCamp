@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Replace the `n1` return value in `varRangeExpanded` with `rangeFromString(n1, n2)`.
@@ -12,12 +13,13 @@ Replace the `n1` return value in `varRangeExpanded` with `rangeFromString(n1, n2
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,10 +29,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -100,8 +102,8 @@ const evalFormula = x => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -132,8 +134,8 @@ const evalFormula = x => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -143,11 +145,10 @@ const evalFormula = x => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

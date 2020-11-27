@@ -9,7 +9,7 @@ forumTopicId: 302332
 
 <section id='description'>
 
-The objective is to write a function that finds the sum of all positive multiples of 3 or 5 below <i>n</i>.
+The objective is to write a function that finds the sum of all positive multiples of 3 or 5 below *n*.
 
 </section>
 
@@ -56,6 +56,7 @@ function sumMults(n) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

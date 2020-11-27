@@ -6,17 +6,25 @@ forumTopicId: 385288
 ---
 
 ## Description
+
 <section id='description'>
+
 The Lempel-Ziv-Welch (LZW) algorithm provides loss-less data compression.
-You can read a complete description of it in the <a href="https://en.wikipedia.org/wiki/Lempel-Ziv-Welch" target="_blank">Wikipedia article</a> on the subject.
+
+You can read a complete description of it in the [Wikipedia article](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch) on the subject.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a function that takes two parameters. The first parameter is a boolean where `true` indicates compress and `false` indicates decompress. The second parameter is either a string or an array to be processed. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
+
+Write a function that takes two parameters. The first parameter is a boolean where \`true\` indicates compress and \`false\` indicates decompress. The second parameter is either a string or an array to be processed. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,6 +68,7 @@ function LZW (compressData, input) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

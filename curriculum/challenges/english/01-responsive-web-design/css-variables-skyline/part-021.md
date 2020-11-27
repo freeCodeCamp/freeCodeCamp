@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 I don't like how spaced out the buildings are. Squeeze them together by adding two empty `div` elements to the top of the `background-buildings` element, two more at the bottom of it, and one more in between `bb3` and `bb4`. These will be added as things that are spaced evenly across the container, effectively moving the buildings closer to the center.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -122,10 +128,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

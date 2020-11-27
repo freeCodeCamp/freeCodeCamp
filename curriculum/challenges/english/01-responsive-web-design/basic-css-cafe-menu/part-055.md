@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You can give your menu some space between the content and the sides with various `padding` properties.
@@ -14,6 +15,7 @@ Give the `menu` class a `padding-left` and a `padding-right` with the same value
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

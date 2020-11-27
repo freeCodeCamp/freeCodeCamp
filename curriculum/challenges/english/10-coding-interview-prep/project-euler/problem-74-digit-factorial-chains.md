@@ -6,6 +6,7 @@ forumTopicId: 302187
 ---
 
 ## Description
+
 <section id='description'>
 
 The number 145 is well known for the property that the sum of the factorial of its digits is equal to 145:
@@ -34,11 +35,13 @@ How many chains, with a starting number below one million, contain exactly sixty
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,11 +72,10 @@ digitFactorialChains();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

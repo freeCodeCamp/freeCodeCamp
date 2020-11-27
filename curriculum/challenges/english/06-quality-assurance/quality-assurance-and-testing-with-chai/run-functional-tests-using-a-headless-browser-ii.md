@@ -9,7 +9,7 @@ forumTopicId: 301594
 
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 In the HTML main view we provided a input form. It sends data to the `PUT /travellers` endpoint that we used above with an Ajax request. When the request successfully completes, the client code appends a `<div>` containing the info returned by the call to the DOM. Here is an example of how to interact with this form:
 
@@ -29,10 +29,10 @@ First, the `fill` method of the `browser` object fills the `surname` field of th
 
 Then, once a response is received from the AJAX request, a few assertions are made confirming:
 
-1. The status of the response is `200`
-2. The text within the `<span id='name'></span>` element matches `'Marco'`
-3. The text within the `<span id='surname'></span>` element matches `'Polo'`
-4. The there is `1` `<span id='dates'></span>` element.
+1.  The status of the response is `200`
+2.  The text within the `<span id='name'></span>` element matches `'Marco'`
+3.  The text within the `<span id='surname'></span>` element matches `'Polo'`
+4.  The there is `1` `<span id='dates'></span>` element.
 
 Finally, the `done` callback is invoked, which is needed due to the asynchronous test.
 
@@ -44,15 +44,15 @@ Finally, the `done` callback is invoked, which is needed due to the asynchronous
 
 Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Colombo" - write your e2e test...'` test (`// #5`), automate filling-in and submitting the form:
 
-1. Fill in the form
-2. Submit it pressing `'submit'` button.
+1.  Fill in the form
+2.  Submit it pressing `'submit'` button.
 
 Within the callback:
 
-1. assert that status is OK `200`
-2. assert that the text inside the element `span#name` is `'Cristoforo'`
-3. assert that the text inside the element `span#surname` is `'Colombo'`
-4. assert that the element(s) `span#dates` exist and their count is `1`
+1.  assert that status is OK `200`
+2.  assert that the text inside the element `span#name` is `'Cristoforo'`
+3.  assert that the text inside the element `span#surname` is `'Colombo'`
+4.  assert that the element(s) `span#dates` exist and their count is `1`
 
 Do not forget to to remove the `assert.fail()` call.
 

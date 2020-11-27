@@ -6,19 +6,29 @@ forumTopicId: 301500
 ---
 
 ## Description
+
 <section id='description'>
+
 When the click event happens, you can use JavaScript to update an HTML element.
-For example, when a user clicks the "Get Message" button, it changes the text of the element with the class <code>message</code> to say "Here is the message".
+
+For example, when a user clicks the "Get Message" button, it changes the text of the element with the class `message` to say "Here is the message".
+
 This works by adding the following code within the click event:
-<code>document.getElementsByClassName('message')[0].textContent="Here is the message";</code>
+
+`document.getElementsByClassName('message')[0].textContent="Here is the message";`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add code inside the <code>onclick</code> event handler to change the text inside the <code>message</code> element to say "Here is the message".
+
+Add code inside the `onclick` event handler to change the text inside the `message` element to say "Here is the message".
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -87,11 +98,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

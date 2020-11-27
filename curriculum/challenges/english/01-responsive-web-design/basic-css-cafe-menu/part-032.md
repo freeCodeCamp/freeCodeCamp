@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Starting below the existing coffee/price pair, add the following coffees and prices using an `article` element with two nested `p` elements inside each. As before, the first `p` element's text should contain the coffee flavor and the second `p` element's text should contain the price.
@@ -19,6 +20,7 @@ Mocah 4.50
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

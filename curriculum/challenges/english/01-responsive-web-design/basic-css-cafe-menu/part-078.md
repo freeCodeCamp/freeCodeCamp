@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now add the `bottom-line` class to the second `hr` element so the styling is applied.
@@ -12,6 +13,7 @@ Now add the `bottom-line` class to the second `hr` element so the styling is app
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

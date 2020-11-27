@@ -7,17 +7,25 @@ forumTopicId: 301173
 ---
 
 ## Description
+
 <section id='description'>
+
 In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.
+
 Let's multiply two decimals together to get their product.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the <code>0.0</code> so that product will equal <code>5.0</code>.
+
+Change the `0.0` so that product will equal `5.0`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -44,8 +53,8 @@ var product = 2.0 * 0.0;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -57,8 +66,8 @@ var product = 2.0 * 0.0;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var product = 2.0 * 2.5;

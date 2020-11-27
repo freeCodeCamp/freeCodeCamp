@@ -6,6 +6,7 @@ forumTopicId: 301734
 ---
 
 ## Description
+
 <section id='description'>
 
 In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
@@ -40,11 +41,13 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -61,6 +64,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -108,13 +112,11 @@ largestGridProduct(testGrid);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function largestGridProduct(arr) {

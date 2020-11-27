@@ -8,11 +8,13 @@ forumTopicId: 302318
 ## Description
 
 <section id='description'>
-Write a function to perform <a href="https://en.wikipedia.org/wiki/Stooge sort" target="_blank">Stooge Sort</a> on an array of integers. The function should return a sorted array.
+
+Write a function to perform [Stooge Sort](<https://en.wikipedia.org/wiki/Stooge sort>) on an array of integers. The function should return a sorted array.
+
 The Stooge Sort algorithm is as follows:
-<pre>
-<b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
-  <b>if</b> L[j] < L[i] <b>then</b>
+
+<pre><b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
+  <b>if</b> L[j] &#x3C; L[i] <b>then</b>
     L[i] <b>↔</b> L[j]
   <b>if</b> j - i > 1 <b>then</b>
     t <b>:=</b> (j - i + 1)/3
@@ -21,6 +23,7 @@ The Stooge Sort algorithm is as follows:
     stoogesort(L, i , j-t)
   <b>return</b> L
 </pre>
+
 </section>
 
 ## Instructions
@@ -65,6 +68,7 @@ function stoogeSort(arr) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

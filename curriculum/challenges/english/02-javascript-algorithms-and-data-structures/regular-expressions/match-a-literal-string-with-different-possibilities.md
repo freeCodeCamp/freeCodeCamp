@@ -6,19 +6,29 @@ forumTopicId: 301345
 ---
 
 ## Description
+
 <section id='description'>
-Using regexes like <code>/coding/</code>, you can look for the pattern <code>"coding"</code> in another string.
-This is powerful to search single strings, but it's limited to only one pattern. You can search for multiple patterns using the <code>alternation</code> or <code>OR</code> operator: <code>|</code>.
-This operator matches patterns either before or after it. For example, if you wanted to match <code>"yes"</code> or <code>"no"</code>, the regex you want is <code>/yes|no/</code>.
-You can also search for more than just two patterns. You can do this by adding more patterns with more <code>OR</code> operators separating them, like <code>/yes|no|maybe/</code>.
+
+Using regexes like `/coding/`, you can look for the pattern `"coding"` in another string.
+
+This is powerful to search single strings, but it's limited to only one pattern. You can search for multiple patterns using the `alternation` or `OR` operator: `|`.
+
+This operator matches patterns either before or after it. For example, if you wanted to match `"yes"` or `"no"`, the regex you want is `/yes|no/`.
+
+You can also search for more than just two patterns. You can do this by adding more patterns with more `OR` operators separating them, like `/yes|no|maybe/`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Complete the regex <code>petRegex</code> to match the pets <code>"dog"</code>, <code>"cat"</code>, <code>"bird"</code>, or <code>"fish"</code>.
+
+Complete the regex `petRegex` to match the pets `"dog"`, `"cat"`, `"bird"`, or `"fish"`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,11 +66,10 @@ let result = petRegex.test(petString);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

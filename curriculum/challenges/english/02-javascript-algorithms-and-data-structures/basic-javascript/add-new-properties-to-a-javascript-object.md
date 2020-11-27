@@ -7,13 +7,20 @@ forumTopicId: 301169
 ---
 
 ## Description
+
 <section id='description'>
+
 You can add new properties to existing JavaScript objects the same way you would modify them.
-Here's how we would add a <code>"bark"</code> property to <code>ourDog</code>:
-<code>ourDog.bark = "bow-wow";</code>
+
+Here's how we would add a `"bark"` property to `ourDog`:
+
+`ourDog.bark = "bow-wow";`
+
 or
-<code>ourDog["bark"] = "bow-wow";</code>
-Now when we evaluate <code>ourDog.bark</code>, we'll get his bark, "bow-wow".
+
+`ourDog["bark"] = "bow-wow";`
+
+Now when we evaluate `ourDog.bark`, we'll get his bark, "bow-wow".
 
 Example:
 
@@ -31,11 +38,15 @@ ourDog.bark = "bow-wow";
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a <code>"bark"</code> property to <code>myDog</code> and set it to a dog sound, such as "woof". You may use either dot or bracket notation.
+
+Add a `"bark"` property to `myDog` and set it to a dog sound, such as "woof". You may use either dot or bracket notation.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,8 +81,8 @@ var myDog = {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -82,8 +94,8 @@ var myDog = {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myDog = {

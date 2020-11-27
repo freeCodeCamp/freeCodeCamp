@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You can use an `hr` element to display a divider between sections of different content.
@@ -14,6 +15,7 @@ First, add an `hr` element between the first `header` element and the `main` ele
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

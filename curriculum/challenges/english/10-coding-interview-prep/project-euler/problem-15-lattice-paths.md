@@ -6,6 +6,7 @@ forumTopicId: 301780
 ---
 
 ## Description
+
 <section id='description'>
 
 Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
@@ -17,11 +18,13 @@ How many such routes are there through a given `gridSize`?
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,13 +59,11 @@ latticePaths(4);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function latticePaths(gridSize) {

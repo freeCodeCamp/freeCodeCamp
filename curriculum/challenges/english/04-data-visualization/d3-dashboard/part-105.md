@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 In the function you just created, create a `const` named `values`. Use the `d3.values` function to get the values of the 2020 followers and set the result to your `values` variable. Here's how to get the values:
@@ -16,13 +17,17 @@ d3.values(data[8].followers)
 It will be an array with the values of the followers for the three platforms in 2020.
 
 Note that this "d function" has curly brackets. So you could `console.log(values)` in there to see it's value.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -198,8 +204,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -232,10 +238,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

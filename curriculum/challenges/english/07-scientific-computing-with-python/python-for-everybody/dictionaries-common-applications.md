@@ -6,14 +6,16 @@ videoId: f17xPfIXct0
 ---
 
 ## Description
+
 <section id='description'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What will the following code print?
@@ -33,6 +35,6 @@ question:
     - |
         [will return error]
   solution: 3
-```
+````
 
 </section>

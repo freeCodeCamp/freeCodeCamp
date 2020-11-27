@@ -6,25 +6,34 @@ forumTopicId: 301494
 ---
 
 ## Description
+
 <section id='description'>
+
 With the scales set up, it's time to map the scatter plot again. The scales are like processing functions that turn the x and y raw data into values that fit and render correctly on the SVG canvas. They keep the data within the screen's plotting area.
-You set the coordinate attribute values for an SVG shape with the scaling function. This includes <code>x</code> and <code>y</code> attributes for <code>rect</code> or <code>text</code> elements, or <code>cx</code> and <code>cy</code> for <code>circles</code>. Here's an example:
+
+You set the coordinate attribute values for an SVG shape with the scaling function. This includes `x` and `y` attributes for `rect` or `text` elements, or `cx` and `cy` for `circles`. Here's an example:
 
 ```js
 shape
   .attr("x", (d) => xScale(d[0]))
 ```
 
-Scales set shape coordinate attributes to place the data points onto the SVG canvas. You don't need to apply scales when you display the actual data value, for example, in the <code>text()</code> method for a tooltip or label.
+Scales set shape coordinate attributes to place the data points onto the SVG canvas. You don't need to apply scales when you display the actual data value, for example, in the `text()` method for a tooltip or label.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <code>xScale</code> and <code>yScale</code> to position both the <code>circle</code> and <code>text</code> shapes onto the SVG canvas. For the <code>circles</code>, apply the scales to set the <code>cx</code> and <code>cy</code> attributes. Give them a radius of 5 units, too.
-For the <code>text</code> elements, apply the scales to set the <code>x</code> and <code>y</code> attributes. The labels should be offset to the right of the dots. To do this, add 10 units to the x data value before passing it to the <code>xScale</code>.
+
+Use `xScale` and `yScale` to position both the `circle` and `text` shapes onto the SVG canvas. For the `circles`, apply the scales to set the `cx` and `cy` attributes. Give them a radius of 5 units, too.
+
+For the `text` elements, apply the scales to set the `x` and `y` attributes. The labels should be offset to the right of the dots. To do this, add 10 units to the x data value before passing it to the `xScale`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -79,6 +88,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -143,11 +153,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -6,9 +6,12 @@ forumTopicId: 301334
 ---
 
 ## Description
+
 <section id='description'>
+
 There's a principle in programming called <dfn>Don't Repeat Yourself (DRY)</dfn>. The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
-Notice in the example below that the <code>describe</code> method is shared by <code>Bird</code> and <code>Dog</code>:
+
+Notice in the example below that the `describe` method is shared by `Bird` and `Dog`:
 
 ```js
 Bird.prototype = {
@@ -26,7 +29,7 @@ Dog.prototype = {
 };
 ```
 
-The <code>describe</code> method is repeated in two places. The code can be edited to follow the DRY principle by creating a <code>supertype</code> (or parent) called <code>Animal</code>:
+The `describe` method is repeated in two places. The code can be edited to follow the DRY principle by creating a `supertype` (or parent) called `Animal`:
 
 ```js
 function Animal() { };
@@ -39,7 +42,7 @@ Animal.prototype = {
 };
 ```
 
-Since <code>Animal</code> includes the <code>describe</code> method, you can remove it from <code>Bird</code> and <code>Dog</code>:
+Since `Animal` includes the `describe` method, you can remove it from `Bird` and `Dog`:
 
 ```js
 Bird.prototype = {
@@ -54,11 +57,15 @@ Dog.prototype = {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The <code>eat</code> method is repeated in both <code>Cat</code> and <code>Bear</code>. Edit the code in the spirit of DRY by moving the <code>eat</code> method to the <code>Animal</code> <code>supertype</code>.
+
+The `eat` method is repeated in both `Cat` and `Bear`. Edit the code in the spirit of DRY by moving the `eat` method to the `Animal` `supertype`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -75,6 +82,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -112,13 +120,11 @@ Animal.prototype = {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Cat(name) {

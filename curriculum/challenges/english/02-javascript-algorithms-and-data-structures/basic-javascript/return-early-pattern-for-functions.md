@@ -7,9 +7,12 @@ forumTopicId: 18272
 ---
 
 ## Description
+
 <section id='description'>
-When a <code>return</code> statement is reached, the execution of the current function stops and control returns to the calling location.
-<strong>Example</strong>
+
+When a `return` statement is reached, the execution of the current function stops and control returns to the calling location.
+
+**Example**
 
 ```js
 function myFun() {
@@ -20,16 +23,23 @@ function myFun() {
 myFun();
 ```
 
-The above outputs "Hello" to the console, returns "World", but <code>"byebye"</code> is never output, because the function exits at the <code>return</code> statement.
+The above outputs "Hello" to the console, returns "World", but `"byebye"` is never output, because the function exits at the `return` statement.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.
-<strong>Hint</strong><br>Remember that <a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string.
+
+Modify the function `abTest` so that if `a` or `b` are less than `0` the function will immediately exit with a value of `undefined`.
+
+**Hint**  
+Remember that [`undefined` is a keyword](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables), not a string.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,6 +64,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -75,13 +86,11 @@ abTest(2,2);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function abTest(a, b) {

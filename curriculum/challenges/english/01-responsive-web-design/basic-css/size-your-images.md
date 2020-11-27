@@ -7,9 +7,12 @@ forumTopicId: 18282
 ---
 
 ## Description
+
 <section id='description'>
-CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.
-For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:
+
+CSS has a property called `width` that controls an element's width. Just like with fonts, we'll use `px` (pixels) to specify the image's width.
+
+For example, if we wanted to create a CSS class called `larger-image` that gave HTML elements a width of 500 pixels, we'd use:
 
 ```html
 <style>
@@ -22,11 +25,15 @@ For example, if we wanted to create a CSS class called <code>larger-image</code>
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.
+
+Create a class called `smaller-image` and use it to resize the image so that it's only 100 pixels wide.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -97,11 +105,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

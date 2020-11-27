@@ -6,14 +6,16 @@ videoId: p1r3h_AMMIM
 ---
 
 ## Description
+
 <section id='description'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What will the following program print?:
@@ -67,6 +69,6 @@ question:
 
         Miya party count 1
   solution: 2
-```
+````
 
 </section>

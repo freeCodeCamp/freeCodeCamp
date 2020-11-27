@@ -7,23 +7,29 @@ forumTopicId: 301086
 ---
 
 ## Description
+
 <section id='description'>
+
 To create a CSS variable, you just need to give it a name with two hyphens in front of it and assign it a value like this:
 
 ```css
 --penguin-skin: gray;
 ```
 
-This will create a variable named <code>--penguin-skin</code> and assign it the value of <code>gray</code>.
-Now you can use that variable elsewhere in your CSS to change the value of other elements to gray.
+This will create a variable named `--penguin-skin` and assign it the value of `gray`. Now you can use that variable elsewhere in your CSS to change the value of other elements to gray.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In the <code>penguin</code> class, create a variable name <code>--penguin-skin</code> and give it a value of <code>gray</code>.
+
+In the `penguin` class, create a variable name `--penguin-skin` and give it a value of `gray`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -241,13 +248,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.penguin {--penguin-skin: gray;}</style>

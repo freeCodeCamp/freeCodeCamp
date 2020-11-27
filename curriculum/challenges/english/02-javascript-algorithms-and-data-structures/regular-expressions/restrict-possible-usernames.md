@@ -6,21 +6,33 @@ forumTopicId: 301363
 ---
 
 ## Description
+
 <section id='description'>
+
 Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
+
 You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+
 1) Usernames can only use alpha-numeric characters.
+
 2) The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+
 3) Username letters can be lowercase and uppercase.
+
 4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the regex <code>userCheck</code> to fit the constraints listed above.
+
+Change the regex `userCheck` to fit the constraints listed above.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,6 +67,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,11 +80,10 @@ let result = userCheck.test(username);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

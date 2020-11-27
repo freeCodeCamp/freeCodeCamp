@@ -21,6 +21,7 @@ Replace the current callback function argument in the `reduce()` function with t
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

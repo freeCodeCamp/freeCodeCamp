@@ -7,9 +7,12 @@ forumTopicId: 18190
 ---
 
 ## Description
+
 <section id='description'>
-You can set an element's background color with the <code>background-color</code> property.
-For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:
+
+You can set an element's background color with the `background-color` property.
+
+For example, if you wanted an element's background color to be `green`, you'd put this within your `style` element:
 
 ```css
 .green-background {
@@ -20,11 +23,15 @@ For example, if you wanted an element's background color to be <code>green</code
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a class called <code>silver-background</code> with the <code>background-color</code> of silver. Assign this class to your <code>div</code> element.
+
+Create a class called `silver-background` with the `background-color` of silver. Assign this class to your `div` element.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -108,11 +116,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -6,17 +6,23 @@ forumTopicId: 16815
 ---
 
 ## Description
+
 <section id='description'>
+
 Not every class needs to have corresponding CSS. Sometimes we create classes just for the purpose of selecting these elements more easily using jQuery.
-Give each of your <code>button</code> elements the class <code>target</code>.
+
+Give each of your `button` elements the class `target`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -57,11 +64,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

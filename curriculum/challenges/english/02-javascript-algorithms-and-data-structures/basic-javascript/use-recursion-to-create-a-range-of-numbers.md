@@ -6,6 +6,7 @@ forumTopicId: 301180
 ---
 
 ## Description
+
 <section id='description'>
 
 Continuing from the previous challenge, we provide you another opportunity to create a recursive function to solve a problem.
@@ -13,14 +14,18 @@ Continuing from the previous challenge, we provide you another opportunity to cr
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-We have defined a function named <code>rangeOfNumbers</code> with two parameters. The function should return an array of integers which begins with a number represented by the <code>startNum</code> parameter and ends with a number represented by the <code>endNum</code> parameter.  The starting number will always be less than or equal to the ending number.  Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both <code>startNum</code> and <code>endNum</code> are the same.
+
+We have defined a function named `rangeOfNumbers` with two parameters. The function should return an array of integers which begins with a number represented by the `startNum` parameter and ends with a number represented by the `endNum` parameter. The starting number will always be less than or equal to the ending number. Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both `startNum` and `endNum` are the same.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: Your function should return an array.
     testString: assert(Array.isArray(rangeOfNumbers(5, 10)));
@@ -39,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,6 +60,7 @@ function rangeOfNumbers(startNum, endNum) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

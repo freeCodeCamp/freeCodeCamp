@@ -6,21 +6,25 @@ forumTopicId: 302103
 ---
 
 ## Description
+
 <section id='description'>
+
 Let S(n,m) = ∑φ(n × i) for 1 ≤ i ≤ m. (φ is Euler's totient function)
+
 You are given that S(510510,106 )= 45480596821125120.
 
+Find S(510510,1011). Give the last 9 digits of your answer.
 
-Find S(510510,1011).
-Give the last 9 digits of your answer.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,11 +53,10 @@ euler432();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

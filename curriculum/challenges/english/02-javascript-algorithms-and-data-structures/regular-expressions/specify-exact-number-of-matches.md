@@ -6,10 +6,14 @@ forumTopicId: 301365
 ---
 
 ## Description
+
 <section id='description'>
+
 You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want a specific number of matches.
+
 To specify a certain number of patterns, just have that one number between the curly brackets.
-For example, to match only the word <code>"hah"</code> with the letter <code>a</code> <code>3</code> times, your regex would be <code>/ha{3}h/</code>.
+
+For example, to match only the word `"hah"` with the letter `a` `3` times, your regex would be `/ha{3}h/`.
 
 ```js
 let A4 = "haaaah";
@@ -24,11 +28,15 @@ multipleHA.test(A100); // Returns false
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the regex <code>timRegex</code> to match the word <code>"Timber"</code> only when it has four letter <code>m</code>'s.
+
+Change the regex `timRegex` to match the word `"Timber"` only when it has four letter `m`'s.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,11 +72,10 @@ let result = timRegex.test(timStr);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

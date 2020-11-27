@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 As you learned in the last few steps of the Cat Photo App, there is a basic structure need to start building your web page.
 
-Add the `<!DOCTYPE html>` and an `html` element. 
+Add the `<!DOCTYPE html>` and an `html` element.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

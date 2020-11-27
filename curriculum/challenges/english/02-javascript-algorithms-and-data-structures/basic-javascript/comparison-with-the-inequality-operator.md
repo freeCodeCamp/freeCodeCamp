@@ -7,9 +7,12 @@ forumTopicId: 16787
 ---
 
 ## Description
+
 <section id='description'>
-The inequality operator (<code>!=</code>) is the opposite of the equality operator. It means "Not Equal" and returns <code>false</code> where equality would return <code>true</code> and <em>vice versa</em>. Like the equality operator, the inequality operator will convert data types of values while comparing.
-<strong>Examples</strong>
+
+The inequality operator (`!=`) is the opposite of the equality operator. It means "Not Equal" and returns `false` where equality would return `true` and *vice versa*. Like the equality operator, the inequality operator will convert data types of values while comparing.
+
+**Examples**
 
 ```js
 1 !=  2     // true
@@ -22,11 +25,15 @@ The inequality operator (<code>!=</code>) is the opposite of the equality operat
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the inequality operator <code>!=</code> in the <code>if</code> statement so that the function will return "Not Equal" when <code>val</code> is not equivalent to <code>99</code>
+
+Add the inequality operator `!=` in the `if` statement so that the function will return "Not Equal" when `val` is not equivalent to `99`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,13 +75,11 @@ testNotEqual(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testNotEqual(val) {

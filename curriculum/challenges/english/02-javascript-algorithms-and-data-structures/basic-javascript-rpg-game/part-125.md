@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-In the `attack` function after the line `health -= getMonsterAttackValue(monsters[fighting].level);`, create an empty if expression. For the condition, put the function call `isMonsterHit()`. 
+In the `attack` function after the line `health -= getMonsterAttackValue(monsters[fighting].level);`, create an empty if expression. For the condition, put the function call `isMonsterHit()`.
 
 Here is an example of an empty if expression with a function call as the condition:
 
@@ -20,11 +21,13 @@ if (isTrue()) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -295,8 +299,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -365,8 +369,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -376,12 +380,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

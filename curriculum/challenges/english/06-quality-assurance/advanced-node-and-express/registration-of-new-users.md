@@ -6,13 +6,14 @@ forumTopicId: 301561
 ---
 
 ## Description
+
 <section id='description'>
 
-Now we need to allow a new user on our site to register an account. On the <code>res.render</code> for the home page add a new variable to the object passed along--<code>showRegistration: true</code>. When you refresh your page, you should then see the registration form that was already created in your <code>index.pug</code> file! This form is set up to <b>POST</b> on <code>/register</code>, so this is where we should set up to accept the <b>POST</b> and create the user object in the database.
+Now we need to allow a new user on our site to register an account. On the `res.render` for the home page add a new variable to the object passed along--`showRegistration: true`. When you refresh your page, you should then see the registration form that was already created in your `index.pug` file! This form is set up to **POST** on `/register`, so this is where we should set up to accept the **POST** and create the user object in the database.
 
 The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
 
-The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home <em>OR</em> if user is undefined and no error occurs then 'insertOne' into the database with the username and password, and, as long as no errors occur, call <em>next</em> to go to step 2, authenticating the new user, which we've already written the logic for in our POST <em>/login</em> route.
+The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home *OR* if user is undefined and no error occurs then 'insertOne' into the database with the username and password, and, as long as no errors occur, call *next* to go to step 2, authenticating the new user, which we've already written the logic for in our POST */login* route.
 
 ```js
 app.route('/register')
@@ -47,18 +48,20 @@ app.route('/register')
   );
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e).
 
-**NOTE:** From this point onwards, issues can arise relating to the use of the _picture-in-picture_ browser. If you are using an online IDE which offers a preview of the app within the editor, it is recommended to open this preview in a new tab.
+**NOTE:** From this point onwards, issues can arise relating to the use of the *picture-in-picture* browser. If you are using an online IDE which offers a preview of the app within the editor, it is recommended to open this preview in a new tab.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -133,11 +136,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

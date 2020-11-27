@@ -6,24 +6,30 @@ forumTopicId: 302344
 ---
 
 ## Description
+
 <section id='description'>
 
 Even today, with proportional fonts and complex layouts, there are still cases where you need to wrap text at a specified column. The basic task is to wrap a paragraph of text in a simple way.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 Write a function that can wrap this text to any number of characters. As an example, the text wrapped to 80 characters should look like the following:
+
 <pre>
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
 algorithm. If your language provides this, you get easy extra credit, but you
 must reference documentation indicating that the algorithm is something better
 than a simple minimum length algorithm.
 </pre>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,8 +65,8 @@ function wrap(text, limit) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -83,8 +90,8 @@ const firstRow42 = 'Wrap text using a more sophisticated';
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function wrap(text, limit) {

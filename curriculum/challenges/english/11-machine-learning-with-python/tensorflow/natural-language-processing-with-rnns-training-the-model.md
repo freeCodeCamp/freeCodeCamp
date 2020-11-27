@@ -6,13 +6,16 @@ videoId: hEUiK7j9UI8
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks below to save your model's checkpoints in the `./checkpoints` directory and call the latest checkpoint for training:
@@ -49,7 +52,6 @@ question:
 
       C: `checkpoint_callback`
   solution: 2
-```
+````
 
 </section>
-

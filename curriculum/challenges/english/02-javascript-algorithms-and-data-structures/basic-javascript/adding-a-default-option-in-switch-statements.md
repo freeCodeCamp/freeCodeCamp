@@ -7,9 +7,12 @@ forumTopicId: 16653
 ---
 
 ## Description
+
 <section id='description'>
-In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.
-A <code>default</code> statement should be the last case.
+
+In a `switch` statement you may not be able to specify all possible values as `case` statements. Instead, you can add the `default` statement which will be executed if no matching `case` statements are found. Think of it like the final `else` statement in an `if/else` chain.
+
+A `default` statement should be the last case.
 
 ```js
 switch (num) {
@@ -29,11 +32,19 @@ switch (num) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a switch statement to set <code>answer</code> for the following conditions:<br><code>"a"</code> - "apple"<br><code>"b"</code> - "bird"<br><code>"c"</code> - "cat"<br><code>default</code> - "stuff"
+
+Write a switch statement to set `answer` for the following conditions:  
+`"a"` - "apple"  
+`"b"` - "bird"  
+`"c"` - "cat"  
+`default` - "stuff"
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -60,6 +71,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -81,13 +93,11 @@ switchOfStuff(1);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function switchOfStuff(val) {

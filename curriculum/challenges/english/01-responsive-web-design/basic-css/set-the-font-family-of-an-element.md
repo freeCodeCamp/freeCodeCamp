@@ -7,9 +7,12 @@ forumTopicId: 18278
 ---
 
 ## Description
+
 <section id='description'>
-You can set which font an element should use, by using the <code>font-family</code> property.
-For example, if you wanted to set your <code>h2</code> element's font to <code>sans-serif</code>, you would use the following CSS:
+
+You can set which font an element should use, by using the `font-family` property.
+
+For example, if you wanted to set your `h2` element's font to `sans-serif`, you would use the following CSS:
 
 ```css
 h2 {
@@ -20,11 +23,15 @@ h2 {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Make all of your <code>p</code> elements use the <code>monospace</code> font.
+
+Make all of your `p` elements use the `monospace` font.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -87,11 +95,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

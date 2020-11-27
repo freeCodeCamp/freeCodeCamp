@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Add a third object in the `locations` array with the same properties as the other two objects. 
+Add a third object in the `locations` array with the same properties as the other two objects.
 
-Set `name` to "cave". Set the elements in the `"button text"` array to ["Fight slime", "Fight fanged beast", and "Go to town square". Set te elements in the `"button functions"` array to be "fightSlime", "fightBeast", and "goTown". Set the value of the `text` property to "You enter the cave. You see some monsters.".
+Set `name` to "cave". Set the elements in the `"button text"` array to \["Fight slime", "Fight fanged beast", and "Go to town square". Set te elements in the `"button functions"` array to be "fightSlime", "fightBeast", and "goTown". Set the value of the `text` property to "You enter the cave. You see some monsters.".
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -114,8 +118,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -189,8 +193,8 @@ function fightBeast() {}
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -200,12 +204,11 @@ function fightBeast() {}
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

@@ -6,9 +6,12 @@ forumTopicId: 301318
 ---
 
 ## Description
+
 <section id='description'>
+
 Objects can have a special type of property, called a <dfn>method</dfn>.
-Methods are properties that are functions. This adds different behavior to an object. Here is the <code>duck</code> example with a method:
+
+Methods are properties that are functions. This adds different behavior to an object. Here is the `duck` example with a method:
 
 ```js
 let duck = {
@@ -20,16 +23,20 @@ duck.sayName();
 // Returns "The name of this duck is Aflac."
 ```
 
-The example adds the <code>sayName</code> method, which is a function that returns a sentence giving the name of the <code>duck</code>.
-Notice that the method accessed the <code>name</code> property in the return statement using <code>duck.name</code>. The next challenge will cover another way to do this.
+The example adds the `sayName` method, which is a function that returns a sentence giving the name of the `duck`. Notice that the method accessed the `name` property in the return statement using `duck.name`. The next challenge will cover another way to do this.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Using the <code>dog</code> object, give it a method called <code>sayLegs</code>. The method should return the sentence "This dog has 4 legs."
+
+Using the `dog` object, give it a method called `sayLegs`. The method should return the sentence "This dog has 4 legs."
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,13 +68,11 @@ dog.sayLegs();
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 let dog = {

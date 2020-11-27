@@ -6,18 +6,27 @@ forumTopicId: 301413
 ---
 
 ## Description
+
 <section id='description'>
-The if/else statements worked in the last challenge, but there's a more concise way to achieve the same result. Imagine that you are tracking several conditions in a component and you want different elements to render depending on each of these conditions. If you write a lot of <code>else if</code> statements to return slightly different UIs, you may repeat code which leaves room for error. Instead, you can use the <code>&&</code> logical operator to perform conditional logic in a more concise way. This is possible because you want to check if a condition is <code>true</code>, and if it is, return some markup. Here's an example:
-<code>{condition && &lt;p&gt;markup&lt;/p&gt;}</code>
-If the <code>condition</code> is <code>true</code>, the markup will be returned. If the condition is <code>false</code>, the operation will immediately return <code>false</code> after evaluating the <code>condition</code> and return nothing. You can include these statements directly in your JSX and string multiple conditions together by writing <code>&&</code> after each one. This allows you to handle more complex conditional logic in your <code>render()</code> method without repeating a lot of code.
+
+The if/else statements worked in the last challenge, but there's a more concise way to achieve the same result. Imagine that you are tracking several conditions in a component and you want different elements to render depending on each of these conditions. If you write a lot of `else if` statements to return slightly different UIs, you may repeat code which leaves room for error. Instead, you can use the `&&` logical operator to perform conditional logic in a more concise way. This is possible because you want to check if a condition is `true`, and if it is, return some markup. Here's an example:
+
+`{condition && <p>markup</p>}`
+
+If the `condition` is `true`, the markup will be returned. If the condition is `false`, the operation will immediately return `false` after evaluating the `condition` and return nothing. You can include these statements directly in your JSX and string multiple conditions together by writing `&&` after each one. This allows you to handle more complex conditional logic in your `render()` method without repeating a lot of code.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Solve the previous example again, so the <code>h1</code> only renders if <code>display</code> is <code>true</code>, but use the <code>&&</code> logical operator instead of an <code>if/else</code> statement.
+
+Solve the previous example again, so the `h1` only renders if `display` is `true`, but use the `&&` logical operator instead of an `if/else` statement.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -68,8 +78,8 @@ class MyComponent extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -81,8 +91,8 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class MyComponent extends React.Component {

@@ -7,11 +7,16 @@ forumTopicId: 16650
 ---
 
 ## Description
+
 <section id='description'>
-<code>Number</code> is a data type in JavaScript which represents numeric data.
+
+`Number` is a data type in JavaScript which represents numeric data.
+
 Now let's try to add two numbers using JavaScript.
-JavaScript uses the <code>+</code> symbol as an addition operator when placed between two numbers.
-<strong>Example:</strong>
+
+JavaScript uses the `+` symbol as an addition operator when placed between two numbers.
+
+**Example:**
 
 ```js
 myVar = 5 + 10; // assigned 15
@@ -20,11 +25,15 @@ myVar = 5 + 10; // assigned 15
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the <code>0</code> so that sum will equal <code>20</code>.
+
+Change the `0` so that sum will equal `20`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,8 +60,8 @@ var sum = 10 + 0;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -63,8 +73,8 @@ var sum = 10 + 0;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var sum = 10 + 10;

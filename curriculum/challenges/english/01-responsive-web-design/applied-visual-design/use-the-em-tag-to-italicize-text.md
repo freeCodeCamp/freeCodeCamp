@@ -7,16 +7,23 @@ forumTopicId: 301078
 ---
 
 ## Description
+
 <section id='description'>
-To emphasize text, you can use the <code>em</code> tag. This displays text as italicized, as the browser applies the CSS of <code>font-style: italic;</code> to the element.
+
+To emphasize text, you can use the `em` tag. This displays text as italicized, as the browser applies the CSS of `font-style: italic;` to the element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Wrap an <code>em</code> tag around the contents of the paragraph tag to give it emphasis.
+
+Wrap an `em` tag around the contents of the paragraph tag to give it emphasis.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,11 +86,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

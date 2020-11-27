@@ -6,26 +6,35 @@ forumTopicId: 302263
 ---
 
 ## Description
+
 <section id='description'>
+
 Write a function to return the factorial of a number.
+
 Factorial of a number is given by:
-<pre>
-<big>n! = n * (n-1) * (n-2) * ..... * 1</big>
+
+<pre><big>n! = n * (n-1) * (n-2) * ..... * 1</big>
 </pre>
+
 For example:
+
 <ul>
   <li><code>3! = 3 * 2 * 1 = 6</code></li>
   <li><code>4! = 4 * 3 * 2 * 1 = 24</code></li>
 </ul>
-<strong>Note:</strong> <code>0! = 1</code>
+
+**Note:** `0! = 1`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,12 +68,11 @@ function factorial(n) {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function factorial(n) {

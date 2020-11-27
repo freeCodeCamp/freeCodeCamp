@@ -6,15 +6,20 @@ forumTopicId: 302238
 ---
 
 ## Description
+
 <section id='description'>
-There are four types of common coins in <a href="https://en.wikipedia.org/wiki/United_States" target="_blank">US</a> currency:
+
+There are four types of common coins in [US](https://en.wikipedia.org/wiki/United_States) currency:
+
 <ul>
   <li>quarters (25 cents)</li>
   <li>dimes (10 cents)</li>
   <li>nickels (5 cents), and</li>
   <li>pennies (1 cent)</li>
 </ul>
+
 <p>There are six ways to make change for 15 cents:</p>
+
 <ul>
   <li>A dime and a nickel</li>
   <li>A dime and 5 pennies</li>
@@ -23,14 +28,19 @@ There are four types of common coins in <a href="https://en.wikipedia.org/wiki/U
   <li>A nickel and 10 pennies</li>
   <li>15 pennies</li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Implement a function to determine how many ways there are to make change for a dollar using these common coins (1 dollar = 100 cents)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,13 +69,11 @@ function countCoins() {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function countCoins() {

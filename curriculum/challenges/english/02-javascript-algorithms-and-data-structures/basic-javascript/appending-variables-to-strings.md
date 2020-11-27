@@ -7,8 +7,10 @@ forumTopicId: 16656
 ---
 
 ## Description
+
 <section id='description'>
-Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (<code>+=</code>) operator.
+
+Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (`+=`) operator.
 
 Example:
 
@@ -22,11 +24,15 @@ ourStr += anAdjective;
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Set <code>someAdjective</code> to a string of at least 3 characters and append it to <code>myStr</code> using the <code>+=</code> operator.
+
+Set `someAdjective` to a string of at least 3 characters and append it to `myStr` using the `+=` operator.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,8 +62,8 @@ var myStr = "Learning to code is ";
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -81,8 +88,8 @@ var myStr = "Learning to code is ";
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var someAdjective = "neat";

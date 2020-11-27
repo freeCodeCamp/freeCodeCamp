@@ -6,15 +6,24 @@ forumTopicId: 301636
 ---
 
 ## Description
+
 <section id='description'>
-Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure <code>Set</code> so many of the operations you wrote by hand are now included for you. Let's take a look:
+
+Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure `Set` so many of the operations you wrote by hand are now included for you. Let's take a look:
+
 To create a new empty set:
-<code>var set = new Set();</code>
+
+`var set = new Set();`
+
 You can create a set with a value:
-<code>var set = new Set(1);</code>
+
+`var set = new Set(1);`
+
 You can create a set with an array:
-<code>var set = new Set([1, 2, 3]);</code>
-Once you have created a set, you can add the values you wish using the <code>add</code> method:
+
+`var set = new Set([1, 2, 3]);`
+
+Once you have created a set, you can add the values you wish using the `add` method:
 
 ```js
 var set = new Set([1, 2, 3]);
@@ -31,11 +40,15 @@ var set = new Set([1, 2, 3, 1, 2, 3]);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-For this exercise, return a set with the following values: <code>1, 2, 3, 'Taco', 'Cat', 'Awesome'</code>
+
+For this exercise, return a set with the following values: `1, 2, 3, 'Taco', 'Cat', 'Awesome'`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -66,13 +80,11 @@ checkSet();
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function checkSet(){var set = new Set([1,2,3,'Taco','Cat','Awesome']);

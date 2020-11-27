@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 After a monster is defeated the monster stat box should no longer display. On the first line of the `update` function add: `monsterStats.style.display = "none";`.
@@ -12,11 +13,13 @@ After a monster is defeated the monster stat box should no longer display. On th
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -257,8 +261,8 @@ function lose() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -330,8 +334,8 @@ function restart() {} // Initialize for test
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -341,12 +345,11 @@ function restart() {} // Initialize for test
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

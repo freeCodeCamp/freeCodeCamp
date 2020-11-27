@@ -6,17 +6,23 @@ forumTopicId: 16044
 ---
 
 ## Description
+
 <section id='description'>
+
 Convert the given number into a roman numeral.
-All <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">roman numerals</a> answers should be provided in upper-case.
+
+All [roman numerals](http://www.mathsisfun.com/roman-numerals.html) answers should be provided in upper-case.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -79,6 +85,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -93,13 +100,11 @@ convertToRoman(36);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function convertToRoman(num) {

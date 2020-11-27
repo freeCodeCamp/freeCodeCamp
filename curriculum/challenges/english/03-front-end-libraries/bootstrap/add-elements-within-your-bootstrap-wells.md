@@ -6,17 +6,23 @@ forumTopicId: 16636
 ---
 
 ## Description
+
 <section id='description'>
-Now we're several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.
-Nest three <code>button</code> elements within each of your <code>well</code> <code>div</code> elements.
+
+Now we're several `div` elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our `button` elements.
+
+Nest three `button` elements within each of your `well` `div` elements.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -61,11 +68,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

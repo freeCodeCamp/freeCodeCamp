@@ -6,21 +6,33 @@ forumTopicId: 301498
 ---
 
 ## Description
+
 <section id='description'>
-The last two challenges cover the basics of displaying data dynamically with D3 using the <code>data()</code> and <code>enter()</code> methods. These methods take a data set and, together with the <code>append()</code> method, create a new DOM element for each entry in the data set.
-In the previous challenge, you created a new <code>h2</code> element for each item in the <code>dataset</code> array, but they all contained the same text, "New Title". This is because you have not made use of the data that is bound to each of the <code>h2</code> elements.
-The D3 <code>text()</code> method can take a string or a callback function as an argument:
-<code>selection.text((d) => d)</code>
-In the example above, the parameter <code>d</code> refers to a single entry in the dataset that a selection is bound to.
-Using the current example as context, the first <code>h2</code> element is bound to 12, the second <code>h2</code> element is bound to 31, the third <code>h2</code> element is bound to 22, and so on.
+
+The last two challenges cover the basics of displaying data dynamically with D3 using the `data()` and `enter()` methods. These methods take a data set and, together with the `append()` method, create a new DOM element for each entry in the data set.
+
+In the previous challenge, you created a new `h2` element for each item in the `dataset` array, but they all contained the same text, "New Title". This is because you have not made use of the data that is bound to each of the `h2` elements.
+
+The D3 `text()` method can take a string or a callback function as an argument:
+
+`selection.text((d) => d)`
+
+In the example above, the parameter `d` refers to a single entry in the dataset that a selection is bound to.
+
+Using the current example as context, the first `h2` element is bound to 12, the second `h2` element is bound to 31, the third `h2` element is bound to 22, and so on.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the <code>text()</code> method so that each <code>h2</code> element displays the corresponding value from the <code>dataset</code> array with a single space and "USD". For example, the first heading should be "12 USD".
+
+Change the `text()` method so that each `h2` element displays the corresponding value from the `dataset` array with a single space and "USD". For example, the first heading should be "12 USD".
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,11 +86,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

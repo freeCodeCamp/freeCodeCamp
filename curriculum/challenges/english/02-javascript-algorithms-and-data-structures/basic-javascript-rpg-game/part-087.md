@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Inside the `fightSlime` function, set `fighting` to equal 0 (which is the index of the slime in the `monsters` array). On the next line, call the `goFight` function.
 
-As a reminder, here is how you would call a function named `myFunc`: `myFunc();`. 
+As a reminder, here is how you would call a function named `myFunc`: `myFunc();`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -202,8 +206,8 @@ function goFight() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -272,8 +276,8 @@ function goFight() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -283,12 +287,11 @@ function goFight() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

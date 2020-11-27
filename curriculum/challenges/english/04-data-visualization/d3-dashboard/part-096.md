@@ -5,15 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Add the `enter` function to the current selection. Just like before, the initial selection here has a length of zero and the data has a length of three. So when you append elements in the next step, three will be created; one for each slice of the pie.</section>
+Add the `enter` function to the current selection. Just like before, the initial selection here has a length of zero and the data has a length of three. So when you append elements in the next step, three will be created; one for each slice of the pie.
+
+</section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -176,8 +183,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -210,10 +217,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

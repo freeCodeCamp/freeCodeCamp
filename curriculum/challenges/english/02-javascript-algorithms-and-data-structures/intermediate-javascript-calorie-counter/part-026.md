@@ -17,6 +17,7 @@ Create a variable named `difference` and set it equal to `total - maxCalories`
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

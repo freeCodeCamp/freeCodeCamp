@@ -6,17 +6,25 @@ forumTopicId: 301381
 ---
 
 ## Description
+
 <section id='description'>
+
 As the challenges continue to use more complex compositions with React components and JSX, there is one important point to note. Rendering ES6 style class components within other components is no different than rendering the simple components you used in the last few challenges. You can render JSX elements, stateless functional components, and ES6 class components within other components.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In the code editor, the <code>TypesOfFood</code> component is already rendering a component called <code>Vegetables</code>. Also, there is the <code>Fruits</code> component from the last challenge.
-Nest two components inside of <code>Fruits</code> &mdash; first <code>NonCitrus</code>, and then <code>Citrus</code>. Both of these components are provided for you behind the scenes. Next, nest the <code>Fruits</code> class component into the <code>TypesOfFood</code> component, below the <code>h1</code> header and above <code>Vegetables</code>. The result should be a series of nested components, which uses two different component types.
+
+In the code editor, the `TypesOfFood` component is already rendering a component called `Vegetables`. Also, there is the `Fruits` component from the last challenge.
+
+Nest two components inside of `Fruits` — first `NonCitrus`, and then `Citrus`. Both of these components are provided for you behind the scenes. Next, nest the `Fruits` class component into the `TypesOfFood` component, below the `h1` header and above `Vegetables`. The result should be a series of nested components, which uses two different component types.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -77,6 +86,7 @@ class TypesOfFood extends React.Component {
 </div>
 
 ### Before Test
+
 <div id='jsx-setup'>
 
 ```jsx
@@ -129,6 +139,7 @@ class Vegetables extends React.Component {
 </div>
 
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -140,8 +151,8 @@ ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class Fruits extends React.Component {

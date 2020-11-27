@@ -15,6 +15,7 @@ Now assign the document object you just referenced to a variable named `total`. 
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

@@ -6,10 +6,14 @@ forumTopicId: 302255
 ---
 
 ## Description
+
 <section id='description'>
+
 An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices.
-For example, in a sequence  <big>$A$</big>:
-<ul style="list-style: none;">
+
+For example, in a sequence $A$:
+
+<ul style='list-style: none;'>
   <li><big>$A_0 = -7$</big></li>
   <li><big>$A_1 =  1$</big></li>
   <li><big>$A_2 =  5$</big></li>
@@ -18,25 +22,37 @@ For example, in a sequence  <big>$A$</big>:
   <li><big>$A_5 =  3$</big></li>
   <li><big>$A_6 =  0$</big></li>
 </ul>
-<code>3</code> is an equilibrium index, because:
-<ul style="list-style: none;">
+
+`3` is an equilibrium index, because:
+
+<ul style='list-style: none;'>
   <li><big>$A_0 + A_1 + A_2 = A_4 + A_5 + A_6$</big></li>
 </ul>
-<code>6</code> is also an equilibrium index, because:
-<ul style="list-style: none;">
+
+`6` is also an equilibrium index, because:
+
+<ul style='list-style: none;'>
   <li><big>$A_0 + A_1 + A_2 + A_3 + A_4 + A_5 = 0$</big></li>
 </ul>
+
 (sum of zero elements is zero)
-<code>7</code> is not an equilibrium index, because it is not a valid index of sequence <big>$A$</big>.
+
+`7` is not an equilibrium index, because it is not a valid index of sequence $A$.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that, given a sequence, returns its equilibrium indices (if any).
+
 Assume that the sequence may be very long.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -61,6 +77,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,8 +90,8 @@ function equilibrium(a) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -94,8 +111,8 @@ const ans = [[3, 6], [], [1], [0, 1, 2, 3, 4, 5, 6], [0], []];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function equilibrium(a) {

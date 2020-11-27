@@ -6,19 +6,27 @@ forumTopicId: 18347
 ---
 
 ## Description
+
 <section id='description'>
+
 When we start using jQuery, we will modify HTML elements without needing to actually change them in HTML.
+
 Let's make sure that everyone knows they shouldn't actually modify any of this code directly.
-Remember that you can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>
-Add a comment at the top of your HTML that says <code>Code below this line should not be changed</code>
+
+Remember that you can start a comment with `<!--` and end a comment with `-->`
+
+Add a comment at the top of your HTML that says `Code below this line should not be changed`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,11 +76,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -6,6 +6,7 @@ forumTopicId: 301998
 ---
 
 ## Description
+
 <section id='description'>
 
 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
@@ -17,11 +18,13 @@ Find the numbers and the sum of the numbers which are equal to the sum of the fa
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,11 +59,10 @@ digitFactorial();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

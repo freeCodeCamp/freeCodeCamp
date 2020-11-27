@@ -6,17 +6,23 @@ forumTopicId: 301707
 ---
 
 ## Description
+
 <section id='description'>
-In this exercise, we are going to perform a subset test on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>isSubsetOf</code>. This will compare the first set against the second, and if the first set is fully contained within the second, it will return <code>true</code>.
-For example, if <code>setA = ['a','b']</code> and <code>setB = ['a','b','c','d']</code>, then <code>setA</code> is a subset of <code>setB</code>, so <code>setA.isSubsetOf(setB)</code> should return <code>true</code>.
+
+In this exercise, we are going to perform a subset test on 2 sets of data. We will create a method on our `Set` data structure called `isSubsetOf`. This will compare the first set against the second, and if the first set is fully contained within the second, it will return `true`.
+
+For example, if `setA = ['a','b']` and `setB = ['a','b','c','d']`, then `setA` is a subset of `setB`, so `setA.isSubsetOf(setB)` should return `true`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -134,9 +141,11 @@ class Set {
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

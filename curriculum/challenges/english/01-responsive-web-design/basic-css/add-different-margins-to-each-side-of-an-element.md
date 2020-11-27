@@ -7,17 +7,25 @@ forumTopicId: 16633
 ---
 
 ## Description
+
 <section id='description'>
-Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.
-CSS allows you to control the <code>margin</code> of all four individual sides of an element with the <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties.
+
+Sometimes you will want to customize an element so that it has a different `margin` on each of its sides.
+
+CSS allows you to control the `margin` of all four individual sides of an element with the `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` properties.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Give the blue box a <code>margin</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
+
+Give the blue box a `margin` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -83,11 +92,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -6,25 +6,41 @@ forumTopicId: 302285
 ---
 
 ## Description
+
 <section id='description'>
-<a href="https://en.wikipedia.org/wiki/Heron's formula" title="wp: Heron's formula" target="_blank">Hero's formula</a> for the area of a triangle given the length of its three sides <code> a</code>, <code>b</code>, and <code>c</code> is given by:
-$A = \sqrt{s(s-a)(s-b)(s-c)},$
-where <code>s</code> is half the perimeter of the triangle; that is,
-$s=\frac{a+b+c}{2}.$
+
+[Hero's formula](<https://en.wikipedia.org/wiki/Heron's formula> "wp: Heron's formula") for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
+
+$A = \\sqrt{s(s-a)(s-b)(s-c)},$
+
+where `s` is half the perimeter of the triangle; that is,
+
+$s=\\frac{a+b+c}{2}.$
+
 Heronian triangles are triangles whose sides and area are all integers.
-An example is the triangle with sides <code>3, 4, 5</code> whose area is <code>6</code> (and whose perimeter is <code>12</code>).
-Note that any triangle whose sides are all an integer multiple of <code>3, 4, 5</code>; such as <code>6, 8, 10,</code> will also be a Heronian triangle.
+
+An example is the triangle with sides `3, 4, 5` whose area is `6` (and whose perimeter is `12`).
+
+Note that any triangle whose sides are all an integer multiple of `3, 4, 5`; such as `6, 8, 10,` will also be a Heronian triangle.
+
 Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor
-of all three sides is <code>1</code> (unity).
-This will exclude, for example, triangle <code>6, 8, 10.</code>
+
+of all three sides is `1` (unity).
+
+This will exclude, for example, triangle `6, 8, 10.`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Implement a function based on Hero's formula that returns the first <code>n<sub>th</sub></code> ordered triangles in an array of arrays.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,8 +76,8 @@ function heronianTriangle(n) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -79,8 +96,8 @@ const res = [
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function heronianTriangle(n) {

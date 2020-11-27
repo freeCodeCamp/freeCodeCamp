@@ -7,8 +7,11 @@ forumTopicId: 16799
 ---
 
 ## Description
+
 <section id='description'>
-Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.
+
+Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (`&&`) returns `true` if and only if the <dfn>operands</dfn> to the left and right of it are true.
+
 The same effect could be achieved by nesting an if statement inside another if:
 
 ```js
@@ -20,7 +23,7 @@ if (num > 5) {
 return "No";
 ```
 
-will only return "Yes" if <code>num</code> is greater than <code>5</code> and less than <code>10</code>. The same logic can be written as:
+will only return "Yes" if `num` is greater than `5` and less than `10`. The same logic can be written as:
 
 ```js
 if (num > 5 && num < 10) {
@@ -32,11 +35,15 @@ return "No";
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Replace the two if statements with one statement, using the && operator, which will return <code>"Yes"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>. Otherwise, will return <code>"No"</code>.
+
+Replace the two if statements with one statement, using the && operator, which will return `"Yes"` if `val` is less than or equal to `50` and greater than or equal to `25`. Otherwise, will return `"No"`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -67,6 +74,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -90,13 +98,11 @@ testLogicalAnd(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testLogicalAnd(val) {

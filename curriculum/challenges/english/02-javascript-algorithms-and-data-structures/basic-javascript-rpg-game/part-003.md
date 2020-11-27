@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Create a variable called `currentWeapon` and set it to 0. When a name has two words, the convention is to use so-called "lowerCamelCase". The first word is all lowercase, and then the first letter of every preceding word is uppercased.
@@ -14,11 +15,13 @@ When a name has two words, the convention is to use so-called "lowerCamelCase". 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -46,8 +50,8 @@ var gold = 50;
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -116,8 +120,8 @@ var gold = 50;
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -127,13 +131,11 @@ var gold = 50;
 
 </div>
 
-
 </section>
 
-
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

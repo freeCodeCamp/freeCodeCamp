@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Chain a `text` function to set the text of each pie slice to a percentage. Set the value to a "d function" with curly brackets and leave the function empty for now. It should look like this:
@@ -17,17 +18,20 @@ Chain a `text` function to set the text of each pie slice to a percentage. Set t
 
 The method for getting the percent of each slice will take a few steps:
 
-1. Find the total number of followers for the displayed year
-2. Divide the followers of a single platform by that total
-3. Turn it into a string to display
+1.  Find the total number of followers for the displayed year
+2.  Divide the followers of a single platform by that total
+3.  Turn it into a string to display
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -201,8 +206,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -235,10 +240,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

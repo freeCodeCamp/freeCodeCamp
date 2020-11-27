@@ -23,10 +23,10 @@ Modify the `queryChain` function to find people who like the food specified by t
 
 If you are eager to learn and want to go deeper, You may look at:
 
-- Indexes ( very important for query efficiency ),
-- Pre/Post hooks,
-- Validation,
-- Schema Virtuals and Model, Static, and Instance methods,
+-   Indexes ( very important for query efficiency ),
+-   Pre/Post hooks,
+-   Validation,
+-   Schema Virtuals and Model, Static, and Instance methods,
 
 </section>
 

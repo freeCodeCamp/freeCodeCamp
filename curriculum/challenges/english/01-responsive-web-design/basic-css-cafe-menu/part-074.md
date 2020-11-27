@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
@@ -12,6 +13,7 @@ To create a little more room around the menu, add `20px` of space on the inside 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

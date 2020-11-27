@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 When you added the D3 library earlier, it put an object named `d3` in your project with a bunch of functions. One of them is `select`; you can use dot notation to access this and the other functions from the object. Create a new variable named `lineGraph` and use `d3.select` to select the `.dashboard` element. Here's an example of something similar:
@@ -16,10 +17,13 @@ const variableName = d3.select('.className')
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -63,8 +68,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -97,10 +102,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

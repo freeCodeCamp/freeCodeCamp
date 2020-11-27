@@ -6,17 +6,23 @@ forumTopicId: 16006
 ---
 
 ## Description
+
 <section id='description'>
-Check if a string (first argument, <code>str</code>) ends with the given target string (second argument, <code>target</code>).
-This challenge <em>can</em> be solved with the <code>.endsWith()</code> method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+
+Check if a string (first argument, `str`) ends with the given target string (second argument, `target`).
+
+This challenge *can* be solved with the `.endsWith()` method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,13 +70,11 @@ confirmEnding("Bastian", "n");
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function confirmEnding(str, target) {

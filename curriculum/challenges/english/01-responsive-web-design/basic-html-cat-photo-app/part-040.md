@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 To prevent a user from submitting your form when required information is missing, you need to add the `required` attribute to an `input` element. There's no need to set a value to the `required` attribute. Instead, just add the word `required` to the `input` element, making sure there is space between it and other attributes.
@@ -12,6 +13,7 @@ To prevent a user from submitting your form when required information is missing
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -81,4 +84,5 @@ tests:
 ```
 
 </div>
+
 </section>

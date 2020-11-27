@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Notice that everything you've added to the page so far is inside the `body` element. All page content elements that should be rendered to the page go inside the `body` element. However, other important information goes inside the `head` element.
@@ -14,6 +15,7 @@ Add a `head` element just above the `body` element.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -102,4 +105,5 @@ tests:
 ```
 
 </div>
+
 </section>

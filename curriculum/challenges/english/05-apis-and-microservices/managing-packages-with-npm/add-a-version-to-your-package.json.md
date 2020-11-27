@@ -6,8 +6,10 @@ forumTopicId: 301525
 ---
 
 ## Description
+
 <section id='description'>
-A <code>version</code> is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
+
+A `version` is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
 
 ```json
 "version": "1.2.0",
@@ -16,11 +18,15 @@ A <code>version</code> is one of the required fields of your package.json file. 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a <code>version</code> to the package.json file of your project.
+
+Add a `version` to the package.json file of your project.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,11 +39,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

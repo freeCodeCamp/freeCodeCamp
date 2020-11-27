@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You now have three type selectors with the exact same styling. You can add the same group of styles to many elements by separating the selectors with commas like this:
@@ -20,6 +21,7 @@ Use a single type selector to center the `h1`, `h2` and `p` elements at the same
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

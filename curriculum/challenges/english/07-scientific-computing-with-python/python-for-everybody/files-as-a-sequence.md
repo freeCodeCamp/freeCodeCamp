@@ -6,12 +6,17 @@ videoId: cIA0EokbaHE
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=il1j4wkte2E" target='_blank'>Exercise</a>
+
+\- [Exercise](https://www.youtube.com/watch?v=il1j4wkte2E)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml

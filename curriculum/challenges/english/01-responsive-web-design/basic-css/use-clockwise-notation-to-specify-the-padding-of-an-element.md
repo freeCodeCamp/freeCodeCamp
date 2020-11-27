@@ -7,18 +7,27 @@ forumTopicId: 18346
 ---
 
 ## Description
+
 <section id='description'>
-Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties individually, you can specify them all in one line, like this:
-<code>padding: 10px 20px 10px 20px;</code>
+
+Instead of specifying an element's `padding-top`, `padding-right`, `padding-bottom`, and `padding-left` properties individually, you can specify them all in one line, like this:
+
+`padding: 10px 20px 10px 20px;`
+
 These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use Clockwise Notation to give the ".blue-box" class a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
+
+Use Clockwise Notation to give the ".blue-box" class a `padding` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -83,11 +93,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

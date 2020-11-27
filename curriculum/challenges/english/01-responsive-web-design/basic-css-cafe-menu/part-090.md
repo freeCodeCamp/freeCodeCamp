@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The menu looks good, but other than the coffee beans background image, it is mainly just text.
@@ -14,6 +15,7 @@ Under the `Coffees` heading, add an image using the url `https://tinyurl.com/caf
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

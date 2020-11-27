@@ -6,15 +6,20 @@ videoId: lxcFa7ldCi0
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=-9TfJF2dwHI" target='_blank'>Exercise</a>
+
+\- [Exercise](https://www.youtube.com/watch?v=-9TfJF2dwHI)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What does n equal in this code?
@@ -34,6 +39,6 @@ question:
     - |
         `lar@freecodecamp.org`
   solution: 4
-```
+````
 
 </section>

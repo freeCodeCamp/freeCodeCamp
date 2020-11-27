@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 So the styling of the page looks similar on mobile as it does on a desktop or laptop, you need to add a `meta` element with a special `content` attribute.
@@ -18,6 +19,7 @@ Add the following within the `head` element:
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

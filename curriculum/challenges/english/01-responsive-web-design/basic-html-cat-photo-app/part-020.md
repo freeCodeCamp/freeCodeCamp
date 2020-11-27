@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Use list item (`li`) elements to create items in a list. Here is an example of list items in an unordered list:
@@ -16,11 +17,12 @@ Use list item (`li`) elements to create items in a list. Here is an example of l
 </ul>
 ```
 
-Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`. 
+Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,4 +69,5 @@ tests:
 ```
 
 </div>
+
 </section>

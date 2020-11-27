@@ -6,20 +6,29 @@ forumTopicId: 18340
 ---
 
 ## Description
+
 <section id='description'>
-Now let's try moving elements from one <code>div</code> to another.
-jQuery has a function called <code>appendTo()</code> that allows you to select HTML elements and append them to another element.
-For example, if we wanted to move <code>target4</code> from our right well to our left well, we would use:
-<code>$("#target4").appendTo("#left-well");</code>
-Move your <code>target2</code> element from your <code>left-well</code> to your <code>right-well</code>.
+
+Now let's try moving elements from one `div` to another.
+
+jQuery has a function called `appendTo()` that allows you to select HTML elements and append them to another element.
+
+For example, if we wanted to move `target4` from our right well to our left well, we would use:
+
+`$("#target4").appendTo("#left-well");`
+
+Move your `target2` element from your `left-well` to your `right-well`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

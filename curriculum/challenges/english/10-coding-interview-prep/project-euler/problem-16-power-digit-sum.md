@@ -6,20 +6,23 @@ forumTopicId: 301791
 ---
 
 ## Description
+
 <section id='description'>
 
 2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
 
-What is the sum of the digits of the number 2<sup>`exponent`</sup>?
+What is the sum of the digits of the number 2<sup><code>exponent</code></sup>?
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,13 +57,11 @@ powerDigitSum(15);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function powerDigitSum(exponent) {

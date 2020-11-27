@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Replace the second argument of `str.replace` with an anonymous function, which takes `match`, `arg1`, `fn`, and `arg2`, and returns `infixToFunction["+"]`.
@@ -12,12 +13,13 @@ Replace the second argument of `str.replace` with an anonymous function, which t
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,10 +29,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -53,8 +55,8 @@ const infixEval = (str, regex) => str.replace(regex, infixToFunction["+"]);
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -85,8 +87,8 @@ const infixEval = (str, regex) => str.replace(regex, infixToFunction["+"]);
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -96,11 +98,10 @@ const infixEval = (str, regex) => str.replace(regex, infixToFunction["+"]);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

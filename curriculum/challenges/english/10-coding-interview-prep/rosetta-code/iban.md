@@ -6,23 +6,33 @@ forumTopicId: 302289
 ---
 
 ## Description
+
 <section id='description'>
-The  <a href="https://en.wikipedia.org/wiki/International_Bank_Account_Number" target="_blank">International Bank Account Number (IBAN)</a>  is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating <a href="https://en.wikipedia.org/wiki/Transcription_error" target="_blank">transcription errors</a>.
+
+The [International Bank Account Number (IBAN)](https://en.wikipedia.org/wiki/International_Bank_Account_Number) is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating [transcription errors](https://en.wikipedia.org/wiki/Transcription_error).
+
 The IBAN consists of up to 34 alphanumeric characters:
+
 <ul>
   <li>first the two-letter ISO 3166-1 alpha-2 country code</li>
   <li>then two check digits, and</li>
   <li>finally a country-specific Basic Bank Account Number (BBAN).</li>
 </ul>
+
 The check digits enable a sanity check of the bank account number to confirm its integrity even before submitting a transaction.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that takes IBAN string as parameter. If it is valid return true. Otherwise, return false.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +57,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,8 +73,8 @@ function isValid(iban) {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function isValid(iban) {

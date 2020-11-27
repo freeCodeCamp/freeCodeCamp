@@ -6,13 +6,16 @@ videoId: K8bz1bmOCTw
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks below to build a sequential model of dense layers:
@@ -45,7 +48,6 @@ question:
 
       C: `dense`
   solution: 1
-```
+````
 
 </section>
-

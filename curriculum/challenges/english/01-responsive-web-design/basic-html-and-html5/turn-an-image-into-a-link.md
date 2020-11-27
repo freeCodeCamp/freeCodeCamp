@@ -7,23 +7,31 @@ forumTopicId: 18327
 ---
 
 ## Description
+
 <section id='description'>
-You can make elements into links by nesting them within an <code>a</code> element.
-Nest your image within an <code>a</code> element. Here's an example:
+
+You can make elements into links by nesting them within an `a` element.
+
+Nest your image within an `a` element. Here's an example:
 
 `<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>`
 
-Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.
+Remember to use `#` as your `a` element's `href` property in order to turn it into a dead link.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Place the existing image element within an <code>a</code> (<i>anchor</i>) element.
+
+Place the existing image element within an `a` (*anchor*) element.
+
 Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -58,11 +67,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

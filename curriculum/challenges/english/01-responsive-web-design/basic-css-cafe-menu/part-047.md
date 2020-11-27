@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You will come back to the styling the menu in a few steps, but for now, go ahead add a second `section` element below the first for displaying the desserts offered by the cafe.
@@ -12,6 +13,7 @@ You will come back to the styling the menu in a few steps, but for now, go ahead
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

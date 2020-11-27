@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 After the `h3` element with the `Things cats love:` text, add an unordered list (`ul`) element. Note that nothing will be displayed at this point.
@@ -12,6 +13,7 @@ After the `h3` element with the `Things cats love:` text, add an unordered list 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -57,4 +60,5 @@ tests:
 ```
 
 </div>
+
 </section>

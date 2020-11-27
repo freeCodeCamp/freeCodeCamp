@@ -7,17 +7,25 @@ forumTopicId: 301040
 ---
 
 ## Description
+
 <section id='description'>
-There are a variety of ways to alter the animation rates of similarly animated elements. So far, this has been achieved by applying an <code>animation-iteration-count</code> property and setting <code>@keyframes</code> rules.
-To illustrate, the animation on the right consists of two "stars" that each decrease in size and opacity at the 20% mark in the <code>@keyframes</code> rule, which creates the twinkle animation. You can change the <code>@keyframes</code> rule for one of the elements so the stars twinkle at different rates.
+
+There are a variety of ways to alter the animation rates of similarly animated elements. So far, this has been achieved by applying an `animation-iteration-count` property and setting `@keyframes` rules.
+
+To illustrate, the animation on the right consists of two "stars" that each decrease in size and opacity at the 20% mark in the `@keyframes` rule, which creates the twinkle animation. You can change the `@keyframes` rule for one of the elements so the stars twinkle at different rates.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Alter the animation rate for the element with the class name of <code>star-1</code> by changing its <code>@keyframes</code> rule to 50%.
+
+Alter the animation rate for the element with the class name of `star-1` by changing its `@keyframes` rule to 50%.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -91,13 +100,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

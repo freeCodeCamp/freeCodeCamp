@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 While you're working in the `locations` array, add another object at the end. Set `name` to "lose". Set `"button text"` to `["REPLAY?", "REPLAY?", "REPLAY?"]`. Set `"button functions"` to `[restart, restart, restart]`. And set `text` to "You die. ☠️".
@@ -12,11 +13,13 @@ While you're working in the `locations` array, add another object at the end. Se
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -252,8 +256,8 @@ function lose() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -325,8 +329,8 @@ function restart() {} // Initialize for test
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -336,12 +340,11 @@ function restart() {} // Initialize for test
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

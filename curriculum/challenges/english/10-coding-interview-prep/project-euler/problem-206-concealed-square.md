@@ -6,16 +6,21 @@ forumTopicId: 301847
 ---
 
 ## Description
+
 <section id='description'>
-Find the unique positive integer whose square has the form 1_2_3_4_5_6_7_8_9_0, where each “_” is a single digit.
+
+Find the unique positive integer whose square has the form 1_2_3_4_5_6_7_8_9_0, where each “\_” is a single digit.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -28,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -43,11 +49,10 @@ euler206();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

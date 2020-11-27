@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add a second `p` element below the one with the link and give it the text `123 freeCodeCamp Drive`.
@@ -12,6 +13,7 @@ Add a second `p` element below the one with the link and give it the text `123 f
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

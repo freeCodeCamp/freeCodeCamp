@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `title` is one of several elements that provide extra information not visible on the web page, but could be useful for search engines or how the page gets displayed.
@@ -14,6 +15,7 @@ Inside the `head` element, nest a `meta` element with an attribute named `charse
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

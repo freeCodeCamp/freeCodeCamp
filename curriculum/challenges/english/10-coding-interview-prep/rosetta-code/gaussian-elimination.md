@@ -6,18 +6,25 @@ forumTopicId: 302272
 ---
 
 ## Description
+
 <section id='description'>
-Write a function to solve \(Ax = b\) using Gaussian elimination then backwards substitution.
-\(A\) being an \(n \times n\) matrix. Also, \(x\) and \(b\) are \(n\) by 1 vectors.
+
+Write a function to solve \\(Ax = b\\) using Gaussian elimination then backwards substitution.
+
+\\(A\\) being an \\(n \\times n\\) matrix. Also, \\(x\\) and \\(b\\) are \\(n\\) by 1 vectors.
+
 To improve accuracy, please use partial pivoting and scaling.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +65,8 @@ function gaussianElimination(A,b) {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function gaussianElimination(A, b) {

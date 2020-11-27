@@ -7,9 +7,12 @@ forumTopicId: 18237
 ---
 
 ## Description
+
 <section id='description'>
-An easy way to append data to the end of an array is via the <code>push()</code> function.
-<code>.push()</code> takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
+
+An easy way to append data to the end of an array is via the `push()` function.
+
+`.push()` takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
 
 Examples:
 
@@ -26,11 +29,15 @@ arr2.push(["happy", "joy"]);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Push <code>["dog", 3]</code> onto the end of the <code>myArray</code> variable.
+
+Push `["dog", 3]` onto the end of the `myArray` variable.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,8 +66,8 @@ var myArray = [["John", 23], ["cat", 2]];
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -71,8 +79,8 @@ var myArray = [["John", 23], ["cat", 2]];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myArray = [["John", 23], ["cat", 2]];

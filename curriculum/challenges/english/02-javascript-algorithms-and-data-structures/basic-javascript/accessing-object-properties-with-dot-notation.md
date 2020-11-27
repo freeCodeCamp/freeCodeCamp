@@ -7,10 +7,14 @@ forumTopicId: 16164
 ---
 
 ## Description
+
 <section id='description'>
-There are two ways to access the properties of an object: dot notation (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.
+
+There are two ways to access the properties of an object: dot notation (`.`) and bracket notation (`[]`), similar to an array.
+
 Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
-Here is a sample of using dot notation (<code>.</code>) to read an object's property:
+
+Here is a sample of using dot notation (`.`) to read an object's property:
 
 ```js
 var myObj = {
@@ -24,11 +28,15 @@ var prop2val = myObj.prop2; // val2
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Read in the property values of <code>testObj</code> using dot notation. Set the variable <code>hatValue</code> equal to the object's property <code>hat</code> and set the variable <code>shirtValue</code> equal to the object's property <code>shirt</code>.
+
+Read in the property values of `testObj` using dot notation. Set the variable `hatValue` equal to the object's property `hat` and set the variable `shirtValue` equal to the object's property `shirt`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +57,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,8 +78,8 @@ var shirtValue = testObj;    // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -82,8 +91,8 @@ var shirtValue = testObj;    // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var testObj = {

@@ -7,11 +7,16 @@ forumTopicId: 301016
 ---
 
 ## Description
+
 <section id='description'>
+
 Improving accessibility with semantic HTML markup applies to using both appropriate tag names as well as attributes. The next several challenges cover some important scenarios using attributes in forms.
-The <code>label</code> tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The <code>for</code> attribute on a <code>label</code> tag explicitly associates that <code>label</code> with the form control and is used by screen readers.
-You learned about radio buttons and their labels in a lesson in the Basic HTML section. In that lesson, we wrapped the radio button input element inside a <code>label</code> element along with the label text in order to make the text clickable. Another way to achieve this is by using the <code>for</code> attribute as explained in this lesson.
-The value of the <code>for</code> attribute must be the same as the value of the <code>id</code> attribute of the form control. Here's an example:
+
+The `label` tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The `for` attribute on a `label` tag explicitly associates that `label` with the form control and is used by screen readers.
+
+You learned about radio buttons and their labels in a lesson in the Basic HTML section. In that lesson, we wrapped the radio button input element inside a `label` element along with the label text in order to make the text clickable. Another way to achieve this is by using the `for` attribute as explained in this lesson.
+
+The value of the `for` attribute must be the same as the value of the `id` attribute of the form control. Here's an example:
 
 ```html
 <form>
@@ -23,11 +28,15 @@ The value of the <code>for</code> attribute must be the same as the value of the
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Camper Cat expects a lot of interest in his thoughtful blog posts and wants to include an email sign up form. Add a <code>for</code> attribute on the email <code>label</code> that matches the <code>id</code> on its <code>input</code> field.
+
+Camper Cat expects a lot of interest in his thoughtful blog posts and wants to include an email sign up form. Add a `for` attribute on the email `label` that matches the `id` on its `input` field.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -83,11 +93,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

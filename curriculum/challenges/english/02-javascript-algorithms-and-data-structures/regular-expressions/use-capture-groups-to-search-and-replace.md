@@ -6,9 +6,12 @@ forumTopicId: 301368
 ---
 
 ## Description
+
 <section id='description'>
+
 Searching is useful. However, you can make searching even more powerful when it also changes (or replaces) the text you match.
-You can search and replace text in a string using <code>.replace()</code> on a string. The inputs for <code>.replace()</code> is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
+
+You can search and replace text in a string using `.replace()` on a string. The inputs for `.replace()` is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
 
 ```js
 let wrongText = "The sky is silver.";
@@ -17,7 +20,7 @@ wrongText.replace(silverRegex, "blue");
 // Returns "The sky is blue."
 ```
 
-You can also access capture groups in the replacement string with dollar signs (<code>$</code>).
+You can also access capture groups in the replacement string with dollar signs (`$`).
 
 ```js
 "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
@@ -27,11 +30,15 @@ You can also access capture groups in the replacement string with dollar signs (
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a regex <code>fixRegex</code> using three capture groups that will search for each word in the string "one two three". Then update the <code>replaceText</code> variable to replace "one two three" with the string "three two one" and assign the result to the <code>result</code> variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (<code>$</code>) syntax.
+
+Write a regex `fixRegex` using three capture groups that will search for each word in the string "one two three". Then update the `replaceText` variable to replace "one two three" with the string "three two one" and assign the result to the `result` variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (`$`) syntax.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,6 +62,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,11 +76,10 @@ let result = str.replace(fixRegex, replaceText);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

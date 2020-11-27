@@ -6,8 +6,11 @@ forumTopicId: 301217
 ---
 
 ## Description
+
 <section id='description'>
+
 In some cases, you can destructure the object in a function argument itself.
+
 Consider the code below:
 
 ```js
@@ -25,15 +28,20 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 }
 ```
 
-When <code>profileData</code> is passed to the above function, the values are destructured from the function parameter for use within the function.
+When `profileData` is passed to the above function, the values are destructured from the function parameter for use within the function.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use destructuring assignment within the argument to the function <code>half</code> to send only <code>max</code> and <code>min</code> inside the function.
+
+Use destructuring assignment within the argument to the function `half` to send only `max` and `min` inside the function.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -74,11 +83,10 @@ const half = (stats) => (stats.max + stats.min) / 2.0;
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

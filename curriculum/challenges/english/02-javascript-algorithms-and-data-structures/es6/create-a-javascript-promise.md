@@ -6,8 +6,10 @@ forumTopicId: 301197
 ---
 
 ## Description
+
 <section id='description'>
-A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. <code>Promise</code> is a constructor function, so you need to use the <code>new</code> keyword to create one. It takes a function, as its argument, with two parameters - <code>resolve</code> and <code>reject</code>. These are methods used to determine the outcome of the promise. The syntax looks like this:
+
+A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. `Promise` is a constructor function, so you need to use the `new` keyword to create one. It takes a function, as its argument, with two parameters - `resolve` and `reject`. These are methods used to determine the outcome of the promise. The syntax looks like this:
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -18,11 +20,15 @@ const myPromise = new Promise((resolve, reject) => {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a new promise called <code>makeServerRequest</code>. Pass in a function with <code>resolve</code> and <code>reject</code> parameters to the constructor.
+
+Create a new promise called `makeServerRequest`. Pass in a function with `resolve` and `reject` parameters to the constructor.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -44,9 +51,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

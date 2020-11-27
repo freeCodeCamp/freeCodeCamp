@@ -7,8 +7,11 @@ forumTopicId: 18273
 ---
 
 ## Description
+
 <section id='description'>
-You may recall from <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.
+
+You may recall from [Comparison with the Equality Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator) that all comparison operators return a boolean `true` or `false` value.
+
 Sometimes people use an if/else statement to do a comparison, like this:
 
 ```js
@@ -21,7 +24,7 @@ function isEqual(a,b) {
 }
 ```
 
-But there's a better way to do this. Since <code>===</code> returns <code>true</code> or <code>false</code>, we can return the result of the comparison:
+But there's a better way to do this. Since `===` returns `true` or `false`, we can return the result of the comparison:
 
 ```js
 function isEqual(a,b) {
@@ -32,11 +35,15 @@ function isEqual(a,b) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Fix the function <code>isLess</code> to remove the <code>if/else</code> statements.
+
+Fix the function `isLess` to remove the `if/else` statements.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,13 +81,11 @@ isLess(10, 15);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function isLess(a, b) {

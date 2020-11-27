@@ -6,13 +6,19 @@ forumTopicId: 302218
 ---
 
 ## Description
+
 <section id='description'>
-The <a href="https://en.wikipedia.org/wiki/24_Game" target="_blank">24 Game</a> tests a person's mental arithmetic.
+
+The [24 Game](https://en.wikipedia.org/wiki/24_Game) tests a person's mental arithmetic.
+
 The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
 
 <h4><strong>Rules:</strong></h4>
@@ -23,15 +29,17 @@ Implement a function that takes a string of four digits as its argument, with ea
   <li> The order of the digits when given does not have to be preserved. </li>
 </ul>
 
-| Example input | Example output |
-| --- | --- |
-| <code>solve24("4878");</code> | <code>(7-8/8)*4</code> |
-| <code>solve24("1234");</code> | <code>3&ast;1&ast;4&ast;2</code> |
-| <code>solve24("6789");</code> | <code>(6*8)/(9-7)</code> |
-| <code>solve24("1127");</code> | <code>(1+7)*(2+1)</code> |
+| Example input                 | Example output            |
+| ----------------------------- | ------------------------- |
+| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code>   |
+| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code>   |
+| <code>solve24("6789");</code> | <code>(6\*8)/(9-7)</code> |
+| <code>solve24("1127");</code> | <code>(1+7)\*(2+1)</code> |
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,8 +74,8 @@ function solve24 (numStr) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -128,8 +137,8 @@ function replaceChar(origString, replaceChar, index) {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function solve24(numStr) {

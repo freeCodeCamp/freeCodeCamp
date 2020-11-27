@@ -6,7 +6,9 @@ forumTopicId: 301156
 ---
 
 ## Description
+
 <section id='description'>
+
 Another huge advantage of the <dfn>spread</dfn> operator, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:
 
 ```js
@@ -17,14 +19,19 @@ let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
 ```
 
 Using spread syntax, we have just achieved an operation that would have been more complex and more verbose had we used traditional methods.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>. Modify the function using the <dfn>spread</dfn> operator so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>.
+
+We have defined a function `spreadOut` that returns the variable `sentence`. Modify the function using the <dfn>spread</dfn> operator so that it returns the array `['learning', 'to', 'code', 'is', 'fun']`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,11 +63,10 @@ console.log(spreadOut());
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,18 +6,25 @@ forumTopicId: 18323
 ---
 
 ## Description
+
 <section id='description'>
-The <code>btn-primary</code> class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
-Replace Bootstrap's <code>btn-default</code> class with <code>btn-primary</code> in your button.
-Note that this button will still need the <code>btn</code> and <code>btn-block</code> classes.
+
+The `btn-primary` class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
+
+Replace Bootstrap's `btn-default` class with `btn-primary` in your button.
+
+Note that this button will still need the `btn` and `btn-block` classes.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -101,11 +109,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
+You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma. This second font would be used in case the browser does not have the font built-in to it.
 
-Add the fallback font `serif` after the `Impact` font. 
+Add the fallback font `serif` after the `Impact` font.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

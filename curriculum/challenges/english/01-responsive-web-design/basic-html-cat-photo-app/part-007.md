@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-You can add images to your website by using the `img` element. `img` elements have an opening tag without a closing tag. A tag for an element without  a closing tag is known as a <dfn>self-closing tag</dfn>. 
+You can add images to your website by using the `img` element. `img` elements have an opening tag without a closing tag. A tag for an element without a closing tag is known as a <dfn>self-closing tag</dfn>.
 
 Add an `img` element below the `p` element. At this point, no image will show up in the browser.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -52,4 +55,5 @@ tests:
 ```
 
 </div>
+
 </section>

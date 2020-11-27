@@ -6,13 +6,16 @@ videoId: CeGW761BIsA
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks to complete the `banner` function below:
@@ -38,7 +41,6 @@ question:
 
       B: `int(port)`
   solution: 3
-```
+````
 
 </section>
-

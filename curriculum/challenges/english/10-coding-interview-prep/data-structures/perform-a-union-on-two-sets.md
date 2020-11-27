@@ -6,16 +6,23 @@ forumTopicId: 301708
 ---
 
 ## Description
+
 <section id='description'>
-In this exercise we are going to perform a union on two sets of data. We will create a method on our <code>Set</code> data structure called <code>union</code>. This method should take another <code>Set</code> as an argument and return the <code>union</code> of the two sets, excluding any duplicate values.
-For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the union of setA and setB is: <code>setA.union(setB) = ['a', 'b', 'c', 'd', 'e']</code>.
+
+In this exercise we are going to perform a union on two sets of data. We will create a method on our `Set` data structure called `union`. This method should take another `Set` as an argument and return the `union` of the two sets, excluding any duplicate values.
+
+For example, if `setA = ['a','b','c']` and `setB = ['a','b','d','e']`, then the union of setA and setB is: `setA.union(setB) = ['a', 'b', 'c', 'd', 'e']`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -79,9 +87,11 @@ class Set {
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

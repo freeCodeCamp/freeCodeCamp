@@ -6,32 +6,48 @@ forumTopicId: 302286
 ---
 
 ## Description
+
 <section id='description'>
+
 These two sequences of positive integers are defined as:
-<span style="margin-left: 2em;"><big>$R(1)=1\ ;\ S(1)=2 \\R(n)=R(n-1)+S(n-1), \quad n>1.$</big></span>
-The sequence <big>$S(n)$</big> is further defined as the sequence of positive integers not present in <big>$R(n)$</big>.
-Sequence <big>$R$</big> starts:
+
+$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$
+
+The sequence $S(n)$ is further defined as the sequence of positive integers not present in $R(n)$.
+
+Sequence $R$ starts:
+
 <pre>1, 3, 7, 12, 18, ...</pre>
-Sequence <big>$S$</big> starts:
+
+Sequence $S$ starts:
+
 <pre>2, 4, 5, 6, 8, ...</pre>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create two functions named <code>ffr</code> and <code>ffs</code>  that when given <code>n</code> return <code>R(n)</code> or <code>S(n)</code> respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
-No maximum value for <code>n</code> should be assumed.
-<strong>References</strong>
+
+Create two functions named `ffr` and `ffs` that when given `n` return `R(n)` or `S(n)` respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
+
+No maximum value for `n` should be assumed.
+
+**References**
+
 <ul>
   <li>
-    Sloane's <a href="https://oeis.org/A005228" target="_blank">A005228</a> and <a href="https://oeis.org/A030124" target="_blank">A030124</a>.
+    Sloane's <a href='https://oeis.org/A005228' target='_blank'>A005228</a> and <a href='https://oeis.org/A030124' target='_blank'>A030124</a>.
   </li>
   <li>
-    Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" target="_blank">Hofstadter Figure-Figure sequences</a>.
+    Wikipedia: <a href='https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' title='wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences' target='_blank'>Hofstadter Figure-Figure sequences</a>.
   </li>
 </ul>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -66,6 +82,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -82,8 +99,8 @@ function ffs(n) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -97,8 +114,8 @@ const ffsParamRes = [[10, 14], [50, 59], [100, 112], [1000, 1041]];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const R = [null, 1];

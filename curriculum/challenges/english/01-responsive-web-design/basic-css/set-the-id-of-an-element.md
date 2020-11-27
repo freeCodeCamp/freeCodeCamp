@@ -7,20 +7,31 @@ forumTopicId: 18279
 ---
 
 ## Description
+
 <section id='description'>
-In addition to classes, each HTML element can also have an <code>id</code> attribute.
-There are several benefits to using <code>id</code> attributes: You can use an <code>id</code> to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.
-<code>id</code> attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same <code>id</code> attribute.
-Here's an example of how you give your <code>h2</code> element the id of <code>cat-photo-app</code>:
-<code>&#60;h2 id="cat-photo-app"></code>
+
+In addition to classes, each HTML element can also have an `id` attribute.
+
+There are several benefits to using `id` attributes: You can use an `id` to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.
+
+`id` attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same `id` attribute.
+
+Here's an example of how you give your `h2` element the id of `cat-photo-app`:
+
+`<h2 id="cat-photo-app">`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Give your <code>form</code> element the id <code>cat-photo-form</code>.
+
+Give your `form` element the id `cat-photo-form`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -104,11 +116,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

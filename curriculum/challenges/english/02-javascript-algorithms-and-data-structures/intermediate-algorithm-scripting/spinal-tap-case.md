@@ -6,16 +6,21 @@ forumTopicId: 16078
 ---
 
 ## Description
+
 <section id='description'>
+
 Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,13 +56,11 @@ spinalCase('This Is Spinal Tap');
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function spinalCase(str) {

@@ -6,20 +6,23 @@ forumTopicId: 301906
 ---
 
 ## Description
+
 <section id='description'>
+
 A sequence is defined as:
 
-gk = 1, for 0 ≤ k ≤ 1999
-gk = gk-2000 + gk-1999, for k ≥ 2000.
-Find gk mod 20092010 for k = 1018.
+gk = 1, for 0 ≤ k ≤ 1999 gk = gk-2000 + gk-1999, for k ≥ 2000. Find gk mod 20092010 for k = 1018.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,11 +51,10 @@ euler258();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

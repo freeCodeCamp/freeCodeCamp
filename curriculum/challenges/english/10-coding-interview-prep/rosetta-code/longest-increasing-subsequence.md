@@ -6,25 +6,38 @@ forumTopicId: 385272
 ---
 
 ## Description
+
 <section id='description'>
+
 The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible. An example:
+
 For the following array:
-$\{3, 10, 2, 1, 20\}$
+
+$\\{3, 10, 2, 1, 20\\}$
+
 Longest increasing sequence is:
-$\{3, 10, 20\}$
-For more information on this problem please see <a href="https://en.wikipedia.org/wiki/Longest increasing subsequence" target="_blank">Wikipedia</a>.
+
+$\\{3, 10, 20\\}$
+
+For more information on this problem please see [Wikipedia](<https://en.wikipedia.org/wiki/Longest increasing subsequence>).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that takes an array of numbers as a parameter and returns the longest increasing subsequence.
+
 It is guaranteed that every array will have a longest increasing subsequence.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>findSequence</code> should be a function.
     testString: assert(typeof findSequence == 'function');
@@ -45,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,6 +74,7 @@ function findSequence(input) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

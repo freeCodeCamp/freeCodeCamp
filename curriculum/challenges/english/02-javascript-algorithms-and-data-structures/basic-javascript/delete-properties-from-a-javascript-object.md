@@ -7,9 +7,12 @@ forumTopicId: 17560
 ---
 
 ## Description
+
 <section id='description'>
+
 We can also delete properties from objects like this:
-<code>delete ourDog.bark;</code>
+
+`delete ourDog.bark;`
 
 Example:
 
@@ -25,7 +28,7 @@ var ourDog = {
 delete ourDog.bark;
 ```
 
-After the last line shown above, <code>ourDog</code> looks like:
+After the last line shown above, `ourDog` looks like:
 
 ```js
 {
@@ -39,11 +42,15 @@ After the last line shown above, <code>ourDog</code> looks like:
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Delete the <code>"tails"</code> property from <code>myDog</code>. You may use either dot or bracket notation.
+
+Delete the `"tails"` property from `myDog`. You may use either dot or bracket notation.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -58,6 +65,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -79,8 +87,8 @@ var myDog = {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -92,8 +100,8 @@ var myDog = {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myDog = {

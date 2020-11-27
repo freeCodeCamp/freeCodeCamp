@@ -7,8 +7,11 @@ forumTopicId: 18337
 ---
 
 ## Description
+
 <section id='description'>
+
 Classes are reusable styles that can be added to HTML elements.
+
 Here's an example CSS class declaration:
 
 ```html
@@ -19,19 +22,22 @@ Here's an example CSS class declaration:
 </style>
 ```
 
-You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.
-You can apply a class to an HTML element like this:
-<code>&#60;h2 class="blue-text"&#62;CatPhotoApp&#60;/h2&#62;</code>
-Note that in your CSS <code>style</code> element, class names start with a period. In your HTML elements' class attribute, the class name does not include the period.
+You can see that we've created a CSS class called `blue-text` within the `<style>` tag. You can apply a class to an HTML element like this: `<h2 class="blue-text">CatPhotoApp</h2>` Note that in your CSS `style` element, class names start with a period. In your HTML elements' class attribute, the class name does not include the period.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Inside your <code>style</code> element, change the <code>h2</code> selector to <code>.red-text</code> and update the color's value from <code>blue</code> to <code>red</code>.
-Give your <code>h2</code> element the <code>class</code> attribute with a value of <code>'red-text'</code>.
+
+Inside your `style` element, change the `h2` selector to `.red-text` and update the color's value from `blue` to `red`.
+
+Give your `h2` element the `class` attribute with a value of `'red-text'`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -96,11 +103,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

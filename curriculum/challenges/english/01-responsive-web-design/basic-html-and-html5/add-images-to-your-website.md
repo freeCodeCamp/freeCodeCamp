@@ -7,36 +7,47 @@ forumTopicId: 16640
 ---
 
 ## Description
+
 <section id='description'>
-You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.
+
+You can add images to your website by using the `img` element, and point to a specific image's URL using the `src` attribute.
+
 An example of this would be:
 
 `<img src="https://www.freecatphotoapp.com/your-image.jpg">`
 
-Note that <code>img</code> elements are self-closing.
+Note that `img` elements are self-closing.
 
-All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
+All `img` elements **must** have an `alt` attribute. The text inside an `alt` attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
 
-<strong>Note:</strong> If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
+**Note:** If the image is purely decorative, using an empty `alt` attribute is a best practice.
 
-Ideally the <code>alt</code> attribute should not contain special characters unless needed.
+Ideally the `alt` attribute should not contain special characters unless needed.
 
-Let's add an <code>alt</code> attribute to our <code>img</code> example above:
+Let's add an `alt` attribute to our `img` example above:
 
 `<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">`
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Let's try to add an image to our website:
-Within the existing <code>main</code> element, insert an <code>img</code> element before the existing <code>p</code> elements.
-Now set the <code>src</code> attribute so that it points to this url:
-<code>https://bit.ly/fcc-relaxing-cat</code>
-Finally, don't forget to give your <code>img</code> element an <code>alt</code>  attribute with applicable text.
+
+Within the existing `main` element, insert an `img` element before the existing `p` elements.
+
+Now set the `src` attribute so that it points to this url:
+
+`https://bit.ly/fcc-relaxing-cat`
+
+Finally, don't forget to give your `img` element an `alt` attribute with applicable text.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +64,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -69,11 +81,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

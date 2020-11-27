@@ -7,15 +7,22 @@ forumTopicId: 18313
 ---
 
 ## Description
+
 <section id='description'>
+
 Now let's start fresh and talk about CSS inheritance.
-Every HTML page has a <code>body</code> element.
+
+Every HTML page has a `body` element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.
-We can do this by adding the following to our <code>style</code> element:
+
+We can prove that the `body` element exists here by giving it a `background-color` of black.
+
+We can do this by adding the following to our `style` element:
 
 ```css
 body {
@@ -26,6 +33,7 @@ body {
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -54,11 +63,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

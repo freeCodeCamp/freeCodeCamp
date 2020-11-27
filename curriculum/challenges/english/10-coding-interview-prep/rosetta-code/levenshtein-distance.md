@@ -6,28 +6,40 @@ forumTopicId: 385264
 ---
 
 ## Description
+
 <section id='description'>
-In information theory and computer science, the <strong>Levenshtein distance</strong> is a <a href="https://en.wikipedia.org/wiki/string metric">metric</a> for measuring the amount of difference between two sequences (i.e. an <a href="https://en.wikipedia.org/wiki/edit distance">edit distance</a>). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
+
+In information theory and computer science, the **Levenshtein distance** is a [metric](<https://en.wikipedia.org/wiki/string metric>) for measuring the amount of difference between two sequences (i.e. an [edit distance](<https://en.wikipedia.org/wiki/edit distance>)). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
+
 Example:
-The Levenshtein distance between "<strong>kitten</strong>" and "<strong>sitting</strong>" is 3, since the following three edits change one into the other, and there isn't a way to do it with fewer than three edits:
+
+The Levenshtein distance between "**kitten**" and "**sitting**" is 3, since the following three edits change one into the other, and there isn't a way to do it with fewer than three edits:
+
 <ul>
-  <li><strong>k</strong>itten &nbsp; <strong>s</strong>itten &nbsp;&nbsp; (substitution of 'k' with 's')</strong></li>
-  <li>sitt<strong>e</strong>n &nbsp; sitt<strong>i</strong>n &nbsp;&nbsp; (substitution of 'e' with 'i')</strong></li>
-  <li>sittin &nbsp; sittin<strong>g</strong> &nbsp;&nbsp; (insert 'g' at the end).</strong></li>
+  <li><strong>k</strong>itten   <strong>s</strong>itten    (substitution of 'k' with 's')</li>
+  <li>sitt<strong>e</strong>n   sitt<strong>i</strong>n    (substitution of 'e' with 'i')</li>
+  <li>sittin   sittin<strong>g</strong>    (insert 'g' at the end).</li>
 </ul>
-<i>The Levenshtein distance between &nbsp; "<strong>rosettacode</strong>", &nbsp; "<strong>raisethysword</strong>" &nbsp; is  <strong>8</strong>.</i>
-<i>The distance between two strings is same as that when both strings are reversed.</i>
+
+*The Levenshtein distance between "**rosettacode**", "**raisethysword**" is **8**.*
+
+*The distance between two strings is same as that when both strings are reversed.*
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that returns the Levenshtein distance between two strings given as parameters.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>levenshtein</code> should be a function.
     testString: assert(typeof levenshtein == 'function');
@@ -50,6 +62,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,6 +78,7 @@ function levenshtein(a, b) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

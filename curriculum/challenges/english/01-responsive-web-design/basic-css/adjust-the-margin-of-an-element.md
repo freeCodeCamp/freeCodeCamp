@@ -7,18 +7,27 @@ forumTopicId: 16654
 ---
 
 ## Description
+
 <section id='description'>
-An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.
-Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has a bigger <code>margin</code> than the blue box, making it appear smaller.
-When you increase the blue box's <code>margin</code>, it will increase the distance between its border and surrounding elements.
+
+An element's `margin` controls the amount of space between an element's `border` and surrounding elements.
+
+Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has a bigger `margin` than the blue box, making it appear smaller.
+
+When you increase the blue box's `margin`, it will increase the distance between its border and surrounding elements.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the <code>margin</code> of the blue box to match that of the red box.
+
+Change the `margin` of the blue box to match that of the red box.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,11 +88,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

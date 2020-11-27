@@ -7,17 +7,25 @@ forumTopicId: 16649
 ---
 
 ## Description
+
 <section id='description'>
-Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.
+
+Your cat photo currently has sharp corners. We can round out those corners with a CSS property called `border-radius`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.
-<strong>Note:</strong> This challenge allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or the <code>.smaller-image</code> class.
+
+You can specify a `border-radius` with pixels. Give your cat photo a `border-radius` of `10px`.
+
+**Note:** This challenge allows for multiple possible solutions. For example, you may add `border-radius` to either the `.thick-green-border` class or the `.smaller-image` class.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -98,11 +107,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

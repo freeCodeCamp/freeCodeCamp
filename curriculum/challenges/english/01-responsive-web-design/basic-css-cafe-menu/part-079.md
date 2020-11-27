@@ -5,13 +5,15 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Next you are going to be styling the `footer` element. To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

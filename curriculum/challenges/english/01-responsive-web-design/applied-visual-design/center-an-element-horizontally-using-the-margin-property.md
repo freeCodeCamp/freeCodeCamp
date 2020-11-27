@@ -7,17 +7,25 @@ forumTopicId: 301043
 ---
 
 ## Description
+
 <section id='description'>
-Another positioning technique is to center a block element horizontally. One way to do this is to set its <code>margin</code> to a value of auto.
-This method works for images, too. Images are inline elements by default, but can be changed to block elements when you set the <code>display</code> property to block.
+
+Another positioning technique is to center a block element horizontally. One way to do this is to set its `margin` to a value of auto.
+
+This method works for images, too. Images are inline elements by default, but can be changed to block elements when you set the `display` property to block.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Center the <code>div</code> on the page by adding a <code>margin</code> property with a value of auto.
+
+Center the `div` on the page by adding a `margin` property with a value of auto.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,13 +57,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

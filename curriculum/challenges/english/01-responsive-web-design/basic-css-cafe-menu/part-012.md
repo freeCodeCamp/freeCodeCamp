@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You can add style to an element by specifying it in the `style` element and setting a property for it like this:
@@ -20,6 +21,7 @@ Center your `h1` element by setting its `text-align` property to the value `cent
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

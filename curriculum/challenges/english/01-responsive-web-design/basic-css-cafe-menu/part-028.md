@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 To apply the class's styling to the `div` element, add a `class` attribute to the `div` element's opening tag and set its value to `menu`.
@@ -12,6 +13,7 @@ To apply the class's styling to the `div` element, add a `class` attribute to th
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

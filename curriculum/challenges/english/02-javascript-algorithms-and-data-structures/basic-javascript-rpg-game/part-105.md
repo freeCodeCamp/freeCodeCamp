@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 In the `defeatMonster` function, set `gold` to equal `gold` plus the monster's level times 6.7. You can get the monster's level with `monsters[fighting].level`.
@@ -14,11 +15,13 @@ Here is how you would set `num` to equal `num` plus five times eight: `num += 5 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -242,8 +246,8 @@ function lose() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -312,8 +316,8 @@ function lose() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -323,12 +327,11 @@ function lose() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

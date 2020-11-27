@@ -6,19 +6,27 @@ forumTopicId: 302341
 ---
 
 ## Description
+
 <section id='description'>
-Solve the <a href="https://en.wikipedia.org/wiki/Towers_of_Hanoi" title="wp: Towers_of_Hanoi" target="_blank">Towers of Hanoi</a> problem.</p>
-Your solution should accept the number of discs as the first parameters, and three string used to identify each of the three stacks of discs, for example <code>towerOfHanoi(4, 'A', 'B', 'C')</code>. The function should return an array of arrays containing the list of moves, source -> destination.
-For example, the array <code>[['A', 'C'], ['B', 'A']]</code> indicates that the 1st move was to move a disc from stack A to C, and the 2nd move was to move a disc from stack B to A.
-</p>
+
+Solve the [Towers of Hanoi](https://en.wikipedia.org/wiki/Towers_of_Hanoi "wp: Towers_of_Hanoi") problem.
+
+Your solution should accept the number of discs as the first parameters, and three string used to identify each of the three stacks of discs, for example `towerOfHanoi(4, 'A', 'B', 'C')`. The function should return an array of arrays containing the list of moves, source -> destination.
+
+For example, the array `[['A', 'C'], ['B', 'A']]` indicates that the 1st move was to move a disc from stack A to C, and the 2nd move was to move a disc from stack B to A.
+
+<p></p>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,8 +61,8 @@ function towerOfHanoi(n, a, b, c) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -68,8 +77,8 @@ const res7First10Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function towerOfHanoi(n, a, b, c) {

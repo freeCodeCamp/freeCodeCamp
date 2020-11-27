@@ -7,19 +7,29 @@ forumTopicId: 18246
 ---
 
 ## Description
+
 <section id='description'>
-The <code>div</code> element, also known as a division element, is a general purpose container for other elements.
-The <code>div</code> element is probably the most commonly used HTML element of all.
-Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another line with <code>&#60;/div&#62;</code>.
+
+The `div` element, also known as a division element, is a general purpose container for other elements.
+
+The `div` element is probably the most commonly used HTML element of all.
+
+Just like any other non-self-closing element, you can open a `div` element with `<div>` and close it on another line with `</div>`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Nest your "Things cats love" and "Things cats hate" lists all within a single <code>div</code> element.
-Hint: Try putting your opening <code>div</code> tag above your "Things cats love" <code>p</code> element and your closing <code>div</code> tag after your closing <code>ol</code> tag so that both of your lists are within one <code>div</code>.
+
+Nest your "Things cats love" and "Things cats hate" lists all within a single `div` element.
+
+Hint: Try putting your opening `div` tag above your "Things cats love" `p` element and your closing `div` tag after your closing `ol` tag so that both of your lists are within one `div`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

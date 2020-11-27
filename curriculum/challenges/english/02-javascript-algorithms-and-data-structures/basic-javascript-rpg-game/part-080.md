@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Use the `let` keyword to create a variable named `currentWeapon`. Don't set it equal to anything yet. Notice that we already have a `currentWeapon` variable from earlier. Since the `let` keyword is used instead of `var`, this new version of `currentWeapon` is scoped only to this `if` statement. At the close of the `if` statement, the old version of `currentWeapon` will be used again.
@@ -12,11 +13,13 @@ Use the `let` keyword to create a variable named `currentWeapon`. Don't set it e
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -174,8 +178,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -244,8 +248,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -255,12 +259,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

@@ -7,18 +7,27 @@ forumTopicId: 18193
 ---
 
 ## Description
+
 <section id='description'>
+
 In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.
-Variables which are used without the <code>var</code> keyword are automatically created in the <code>global</code> scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with <code>var</code>.
+
+Variables which are used without the `var` keyword are automatically created in the `global` scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with `var`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Using <code>var</code>, declare a global variable named <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.
-Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword.
+
+Using `var`, declare a global variable named `myGlobal` outside of any function. Initialize it with a value of `10`.
+
+Inside function `fun1`, assign `5` to `oopsGlobal` ***without*** using the `var` keyword.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,6 +77,7 @@ function fun2() {
 </div>
 
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -95,6 +106,7 @@ capture();
 </div>
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -109,8 +121,8 @@ uncapture();
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myGlobal = 10;

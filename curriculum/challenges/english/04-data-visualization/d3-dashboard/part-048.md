@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Tell the path what data to use. Add an `attr` function and set the `d` to `twitterLine(data)`. This will the build the path using the `twitterLine` function you created and your data variable.
@@ -12,13 +13,17 @@ Tell the path what data to use. Add an `attr` function and set the `d` to `twitt
 Note that the `d` in this case is a path attribute for drawing a line and is different from a "d function".
 
 After you have added your code, take a look at the data flow to help understand what is happening. You pass the data array to your `twitterLine` function where it sets the x and y values using your "d functions". The "d functions" go through each item in the array, passing part of the item to each scale to find the appropriate coordinates. When it's done, the value you are setting here is created and sent back. The result ends up being a confusing string of numbers and coordinates to tell the path how to be drawn.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -102,8 +108,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -136,10 +142,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -6,31 +6,40 @@ forumTopicId: 302261
 ---
 
 ## Description
+
 <section id='description'>
-Write a function to implement a Brain**** interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
-RCBF is a set of <a href="https://rosettacode.org/wiki/Brainf***" title="Brainf***" target="_blank">Brainf***</a> compilers and interpreters written for Rosetta Code in a variety of languages.
+
+Write a function to implement a Brain\*\*\*\* interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
+
+RCBF is a set of [Brainf\*\*\*](https://rosettacode.org/wiki/Brainf*** "Brainf\*\*\*") compilers and interpreters written for Rosetta Code in a variety of languages.
+
 Below are links to each of the versions of RCBF.
+
 An implementation need only properly implement the following instructions:
 
-| Command | Description |
-| --- | --- |
-| <code>&gt;</code> | Move the pointer to the right |
-| <code>&lt;</code> | Move the pointer to the left |
-| <code>+</code> | Increment the memory cell under the pointer |
-| <code>-</code> | Decrement the memory cell under the pointer |
-| <code>.</code> | Output the character signified by the cell at the pointer |
-| <code>,</code> | Input a character and store it in the cell at the pointer |
-| <code>[</code> | Jump past the matching <code>]</code> if the cell under the pointer is 0 |
-| <code>]</code> | Jump back to the matching <code>[</code> if the cell under the pointer is nonzero |
-Any cell size is allowed, EOF (<u>E</u>nd-<u>O</u>-<u>F</u>ile) support is optional, as is whether you have bounded or unbounded memory.
+| Command           | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| <code>></code>    | Move the pointer to the right                                                      |
+| <code>&lt;</code> | Move the pointer to the left                                                       |
+| <code>+</code>    | Increment the memory cell under the pointer                                        |
+| <code>-</code>    | Decrement the memory cell under the pointer                                        |
+| <code>.</code>    | Output the character signified by the cell at the pointer                          |
+| <code>,</code>    | Input a character and store it in the cell at the pointer                          |
+| <code>\[</code>   | Jump past the matching <code>]</code> if the cell under the pointer is 0           |
+| <code>]</code>    | Jump back to the matching <code>\[</code> if the cell under the pointer is nonzero |
+
+Any cell size is allowed, EOF (*E*nd-*O*-*F*ile) support is optional, as is whether you have bounded or unbounded memory.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,6 +74,7 @@ function brain(prog) {
 </div>
 
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -136,12 +147,11 @@ let bye='++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>++++++++++
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function brain(prog){

@@ -6,9 +6,12 @@ forumTopicId: 301456
 ---
 
 ## Description
+
 <section id='description'>
-Sass has a feature called <code>extend</code> that makes it easy to borrow the CSS rules from one element and build upon them in another.
-For example, the below block of CSS rules style a <code>.panel</code> class. It has a <code>background-color</code>, <code>height</code> and <code>border</code>.
+
+Sass has a feature called `extend` that makes it easy to borrow the CSS rules from one element and build upon them in another.
+
+For example, the below block of CSS rules style a `.panel` class. It has a `background-color`, `height` and `border`.
 
 ```scss
 .panel{
@@ -18,9 +21,7 @@ For example, the below block of CSS rules style a <code>.panel</code> class. It 
 }
 ```
 
-Now you want another panel called <code>.big-panel</code>. It has the same base properties as <code>.panel</code>, but also needs a <code>width</code> and <code>font-size</code>.
-It's possible to copy and paste the initial CSS rules from <code>.panel</code>, but the code becomes repetitive as you add more types of panels.
-The <code>extend</code> directive is a simple way to reuse the rules written for one element, then add more for another:
+Now you want another panel called `.big-panel`. It has the same base properties as `.panel`, but also needs a `width` and `font-size`. It's possible to copy and paste the initial CSS rules from `.panel`, but the code becomes repetitive as you add more types of panels. The `extend` directive is a simple way to reuse the rules written for one element, then add more for another:
 
 ```scss
 .big-panel{
@@ -30,15 +31,20 @@ The <code>extend</code> directive is a simple way to reuse the rules written for
 }
 ```
 
-The <code>.big-panel</code> will have the same properties as <code>.panel</code> in addition to the new styles.
+The `.big-panel` will have the same properties as `.panel` in addition to the new styles.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Make a class <code>.info-important</code> that extends <code>.info</code> and also has a <code>background-color</code> set to magenta.
+
+Make a class `.info-important` that extends `.info` and also has a `background-color` set to magenta.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,11 +91,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

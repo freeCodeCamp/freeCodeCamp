@@ -8,17 +8,24 @@ forumTopicId: 302311
 ## Description
 
 <section id='description'>
-<a href="https://en.wikipedia.org/wiki/Bogosort" target="_blank">Bogosort</a> a list of numbers.
+
+[Bogosort](https://en.wikipedia.org/wiki/Bogosort) a list of numbers.
+
 Bogosort simply shuffles a collection randomly until it is sorted.
+
 "Bogosort" is a perversely inefficient algorithm only used as an in-joke.
-Its average run-time is  O(n!)  because the chance that any given shuffle of a set will end up in sorted order is about one in  <i>n</i>  factorial,  and the worst case is infinite since there's no guarantee that a random shuffling will ever produce a sorted sequence.
-Its best case is  O(n)  since a single pass through the elements may suffice to order them.
+
+Its average run-time is O(n!) because the chance that any given shuffle of a set will end up in sorted order is about one in *n* factorial, and the worst case is infinite since there's no guarantee that a random shuffling will ever produce a sorted sequence.
+
+Its best case is O(n) since a single pass through the elements may suffice to order them.
+
 Pseudocode:
-<pre>
-<b>while not</b> InOrder(list) <b>do</b>
+
+<pre><b>while not</b> InOrder(list) <b>do</b>
   Shuffle(list)
 <b>done</b>
 </pre>
+
 </section>
 
 ## Instructions
@@ -63,6 +70,7 @@ function bogosort(v) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Now you will add a footer section to the page. 
+Now you will add a footer section to the page.
 
 After the `main` element, add a `footer` element.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -95,4 +98,5 @@ tests:
 ```
 
 </div>
+
 </section>

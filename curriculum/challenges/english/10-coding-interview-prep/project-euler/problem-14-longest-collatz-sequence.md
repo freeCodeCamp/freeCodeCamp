@@ -6,6 +6,7 @@ forumTopicId: 301768
 ---
 
 ## Description
+
 <section id='description'>
 
 The following iterative sequence is defined for the set of positive integers:
@@ -27,11 +28,13 @@ Which starting number, under the given `limit`, produces the longest chain?
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -56,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -71,13 +75,11 @@ longestCollatzSequence(14);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function longestCollatzSequence(limit) {

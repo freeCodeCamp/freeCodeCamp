@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `locations` array contains two locations: the town square and store. Currently the entire array with both locations is being passed in to the update function. Pass in only the first element of the locations array by adding `[0]` at the end of the name of the array. For example, `exampleFunction(arg[0]);`
@@ -12,11 +13,13 @@ The `locations` array contains two locations: the town square and store. Current
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -110,8 +114,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -180,8 +184,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -191,12 +195,11 @@ function buyWeapon() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

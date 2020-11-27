@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Inside the third `section` element add an `h2` tag with the text `Cat Form`.
@@ -12,6 +13,7 @@ Inside the third `section` element add an `h2` tag with the text `Cat Form`.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -91,4 +94,5 @@ tests:
 ```
 
 </div>
+
 </section>

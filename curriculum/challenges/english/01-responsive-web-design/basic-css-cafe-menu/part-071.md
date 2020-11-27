@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+Notice the grey color along the edges of the line. Those edges are known as <dfn>borders</dfn>. Each side of an element can have a different color or they can all be the same.
 
 Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

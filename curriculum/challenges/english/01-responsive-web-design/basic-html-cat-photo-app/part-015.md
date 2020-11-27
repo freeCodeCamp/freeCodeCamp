@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Before adding any new content, you should make use of a `section` element to separate the cat photos content from the future content.
@@ -14,6 +15,7 @@ Take all the elements currently located within the `main` element and nest them 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -58,4 +61,5 @@ tests:
 ```
 
 </div>
+
 </section>

@@ -6,17 +6,25 @@ forumTopicId: 301408
 ---
 
 ## Description
+
 <section id='description'>
-There is another way to access <code>state</code> in a component. In the <code>render()</code> method, before the <code>return</code> statement, you can write JavaScript directly. For example, you could declare functions, access data from <code>state</code> or <code>props</code>, perform computations on this data, and so on. Then, you can assign any data to variables, which you have access to in the <code>return</code> statement.
+
+There is another way to access `state` in a component. In the `render()` method, before the `return` statement, you can write JavaScript directly. For example, you could declare functions, access data from `state` or `props`, perform computations on this data, and so on. Then, you can assign any data to variables, which you have access to in the `return` statement.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In the <code>MyComponent</code> render method, define a <code>const</code> called <code>name</code> and set it equal to the name value in the component's <code>state</code>. Because you can write JavaScript directly in this part of the code, you don't have to enclose this reference in curly braces.
-Next, in the return statement, render this value in an <code>h1</code> tag using the variable <code>name</code>. Remember, you need to use the JSX syntax (curly braces for JavaScript) in the return statement.
+
+In the `MyComponent` render method, define a `const` called `name` and set it equal to the name value in the component's `state`. Because you can write JavaScript directly in this part of the code, you don't have to enclose this reference in curly braces.
+
+Next, in the return statement, render this value in an `h1` tag using the variable `name`. Remember, you need to use the JSX syntax (curly braces for JavaScript) in the return statement.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -64,8 +73,8 @@ class MyComponent extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -77,8 +86,8 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class MyComponent extends React.Component {

@@ -7,18 +7,27 @@ forumTopicId: 301081
 ---
 
 ## Description
+
 <section id='description'>
-The <code>text-transform</code> property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.
-The following table shows how the different <code>text-transform</code>values change the example text "Transform me".
-<table class="table table-striped"><thead><th>Value<th>Result<tbody><tr><td><code>lowercase</code><td>"transform me"<tr><td><code>uppercase</code><td>"TRANSFORM ME"<tr><td><code>capitalize</code><td>"Transform Me"<tr><td><code>initial</code><td>Use the default value<tr><td><code>inherit</code><td>Use the <code>text-transform</code> value from the parent element<tr><td><code>none</code><td><strong>Default:</strong> Use the original text</td></table>
+
+The `text-transform` property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.
+
+The following table shows how the different `text-transform`values change the example text "Transform me".
+
+<table class='table table-striped'><thead><tr><th>Value</th><th>Result</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>Use the default value</td></tr><tr><td><code>inherit</code></td><td>Use the <code>text-transform</code> value from the parent element</td></tr><tr><td><code>none</code></td><td><strong>Default:</strong> Use the original text</td></tr></tbody></table>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Transform the text of the <code>h4</code> to be uppercase using the <code>text-transform</code> property.
+
+Transform the text of the `h4` to be uppercase using the `text-transform` property.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -88,11 +98,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

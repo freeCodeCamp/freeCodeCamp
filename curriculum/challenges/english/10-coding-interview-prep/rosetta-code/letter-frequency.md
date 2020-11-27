@@ -6,22 +6,32 @@ forumTopicId: 385263
 ---
 
 ## Description
+
 <section id='description'>
+
 Given a string, calculate the frequency of each character.
+
 All characters should be counted. This includes lower and upper case letters, digits, whitespace, special characters, or any other distinct characters.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function to count the occurrences of each character in a given string.
-The function should return a 2D array with each of the elements in the following form: <code>['char', freq]</code>. The character should be a string with a length of 1, and frequency is a number denoting the count.
-For example, given the string "ab", your function should return <code>[['a', 1], ['b', 1]]</code>.
+
+The function should return a 2D array with each of the elements in the following form: `['char', freq]`. The character should be a string with a length of 1, and frequency is a number denoting the count.
+
+For example, given the string "ab", your function should return `[['a', 1], ['b', 1]]`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>letterFrequency</code> should be a function.
     testString: assert(typeof letterFrequency == 'function');
@@ -44,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,6 +70,7 @@ function letterFrequency(txt) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

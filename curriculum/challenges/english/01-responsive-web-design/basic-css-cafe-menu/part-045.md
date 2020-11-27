@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 To complete the styling, add the applicable class names `flavor` and `price` to all the remaining `p` elements.
@@ -12,6 +13,7 @@ To complete the styling, add the applicable class names `flavor` and `price` to 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

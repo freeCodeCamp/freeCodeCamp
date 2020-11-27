@@ -6,8 +6,11 @@ forumTopicId: 301225
 ---
 
 ## Description
+
 <section id='description'>
+
 ES6 adds some nice support for easily defining object literals.
+
 Consider the following code:
 
 ```js
@@ -17,9 +20,7 @@ const getMousePosition = (x, y) => ({
 });
 ```
 
-<code>getMousePosition</code> is a simple function that returns an object containing two properties.
-ES6 provides the syntactic sugar to eliminate the redundancy of having to write <code>x: x</code>. You can simply write <code>x</code> once, and it will be converted to<code>x: x</code> (or something equivalent) under the hood.
-Here is the same function from above rewritten to use this new syntax:
+`getMousePosition` is a simple function that returns an object containing two properties. ES6 provides the syntactic sugar to eliminate the redundancy of having to write `x: x`. You can simply write `x` once, and it will be converted to`x: x` (or something equivalent) under the hood. Here is the same function from above rewritten to use this new syntax:
 
 ```js
 const getMousePosition = (x, y) => ({ x, y });
@@ -28,11 +29,15 @@ const getMousePosition = (x, y) => ({ x, y });
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use object property shorthand with object literals to create and return an object with <code>name</code>, <code>age</code> and <code>gender</code> properties.
+
+Use object property shorthand with object literals to create and return an object with `name`, `age` and `gender` properties.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,11 +71,10 @@ const createPerson = (name, age, gender) => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

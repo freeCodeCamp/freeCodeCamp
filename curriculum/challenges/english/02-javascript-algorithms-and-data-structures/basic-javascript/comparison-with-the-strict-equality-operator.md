@@ -7,25 +7,34 @@ forumTopicId: 16790
 ---
 
 ## Description
+
 <section id='description'>
-Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
+
+Strict equality (`===`) is the counterpart to the equality operator (`==`). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
+
 If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.
-<strong>Examples</strong>
+
+**Examples**
 
 ```js
 3 ===  3   // true
 3 === '3'  // false
 ```
 
-In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.
+In the second example, `3` is a `Number` type and `'3'` is a `String` type.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the strict equality operator in the <code>if</code> statement so the function will return "Equal" when <code>val</code> is strictly equal to <code>7</code>
+
+Use the strict equality operator in the `if` statement so the function will return "Equal" when `val` is strictly equal to `7`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,13 +72,11 @@ testStrict(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testStrict(val) {

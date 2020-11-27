@@ -9,14 +9,7 @@ forumTopicId: 302333
 
 <section id='description'>
 
-Compute the <b>n</b><sup>th</sup> term of a <a href="https://en.wikipedia.org/wiki/Series (mathematics)" target="_blank">series</a>, i.e. the sum of the <b>n</b> first terms of the corresponding <a href="https://en.wikipedia.org/wiki/sequence" target="_blank">sequence</a>.
-Informally this value, or its limit when <b>n</b> tends to infinity, is also called the <i>sum of the series</i>, thus the title of this task.
-For this task, use:
-<span style="margin-left: 2em;">$S_n = \sum_{k=1}^n \frac{1}{k^2}$</span>
-and compute $S_{1000}$
-This approximates the <a href="https://en.wikipedia.org/wiki/Riemann zeta function" target="_blank">zeta function</a> for S=2, whose exact value
-<span style="margin-left: 2em;">$\zeta(2) = {\pi^2\over 6}$</span>
-is the solution of the <a href="https://en.wikipedia.org/wiki/Basel problem" target="_blank">Basel problem</a>.
+Compute the **n**<sup>th</sup> term of a [series](<https://en.wikipedia.org/wiki/Series (mathematics)>), i.e. the sum of the **n** first terms of the corresponding [sequence](https://en.wikipedia.org/wiki/sequence). Informally this value, or its limit when **n** tends to infinity, is also called the *sum of the series*, thus the title of this task. For this task, use: $S*n = \\sum*{k=1}^n \\frac{1}{k^2}$ and compute $S\_{1000}$ This approximates the [zeta function](<https://en.wikipedia.org/wiki/Riemann zeta function>) for S=2, whose exact value $\\zeta(2) = {\\pi^2\\over 6}$ is the solution of the [Basel problem](<https://en.wikipedia.org/wiki/Basel problem>).
 
 </section>
 
@@ -65,6 +58,7 @@ function sum(a, b) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

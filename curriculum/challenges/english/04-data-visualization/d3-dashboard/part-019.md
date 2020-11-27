@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You can't see it, but there is now an `svg` element nested in your dashboard container. When you appended it, it became the "selection" for this area of code. Any functions you chain after it will be used on this selection.
@@ -18,13 +19,17 @@ const variableName = d3.select('element')
 ```
 
 Chain an `attr` function to the selection that sets the `width` as the `svgWidth` variable you created earlier. When using a variable as a value, you do not need to put it in any kind of quotations.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -71,8 +77,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -105,10 +111,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

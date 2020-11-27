@@ -6,15 +6,20 @@ videoId: dZXzBXUxxCs
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=EhQxwzyT16E" target='_blank'>Exercise</a>
+
+\- [Exercise](https://www.youtube.com/watch?v=EhQxwzyT16E)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Which does the same thing as the following code?:
@@ -44,6 +49,6 @@ question:
         print( [ (k,v) for k,v in counts.values().sort() ] )
         ```
   solution: 1
-```
+````
 
 </section>

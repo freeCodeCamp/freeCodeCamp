@@ -6,22 +6,25 @@ forumTopicId: 301921
 ---
 
 ## Description
+
 <section id='description'>
-For a positive number n, define S(n) as the sum of the integers x, for which 1<x<n andx3≡1 mod n.
 
+For a positive number n, define S(n) as the sum of the integers x, for which 1
 
-When n=91, there are 8 possible values for x, namely : 9, 16, 22, 29, 53, 74, 79, 81.
-Thus, S(91)=9+16+22+29+53+74+79+81=363.
+When n=91, there are 8 possible values for x, namely : 9, 16, 22, 29, 53, 74, 79, 81. Thus, S(91)=9+16+22+29+53+74+79+81=363.
 
 Find S(13082761331670030).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,11 +53,10 @@ euler271();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,10 +6,10 @@ forumTopicId: 301984
 ---
 
 ## Description
+
 <section id='description'>
+
 A series of three rooms are connected to each other by automatic doors.
-
-
 
 Each door is operated by a security card. Once you enter a room the door automatically closes and that security card cannot be used again. A machine at the start will dispense an unlimited number of cards, but each room (including the starting room) contains scanners and if they detect that you are holding more than three security cards or if they detect an unattended security card on the floor, then all the doors will become permanently locked. However, each room contains a box where you may safely store any number of security cards for use at a later stage.
 
@@ -19,24 +19,24 @@ However, if you make use of the storage boxes, then escape is possible. For exam
 
 It is possible to travel through six rooms using a total of 123 security cards while carrying a maximum of 3 cards.
 
-Let C be the maximum number of cards which can be carried at any time.
-Let R be the number of rooms to travel through.
-Let M(C,R) be the minimum number of cards required from the dispensing machine to travel through R rooms carrying up to a maximum of C cards at any time.
+Let C be the maximum number of cards which can be carried at any time. Let R be the number of rooms to travel through. Let M(C,R) be the minimum number of cards required from the dispensing machine to travel through R rooms carrying up to a maximum of C cards at any time.
 
 For example, M(3,6)=123 and M(4,6)=23.And, ΣM(C,6)=146 for 3 ≤ C ≤ 4.
-
 
 You are given that ΣM(C,10)=10382 for 3 ≤ C ≤ 10.
 
 Find ΣM(C,30) for 3 ≤ C ≤ 40.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,11 +65,10 @@ euler327();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

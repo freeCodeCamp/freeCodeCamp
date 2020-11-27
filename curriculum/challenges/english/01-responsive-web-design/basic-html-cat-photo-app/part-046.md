@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Nest a another radio button with the option `Outdoor` in a new `label` element. The new radio button should be placed after the first one. Also, set its `id` attribute value to `outdoor`.
@@ -12,6 +13,7 @@ Nest a another radio button with the option `Outdoor` in a new `label` element. 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -89,4 +92,5 @@ tests:
 ```
 
 </div>
+
 </section>

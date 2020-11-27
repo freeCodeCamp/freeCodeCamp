@@ -6,22 +6,23 @@ forumTopicId: 302034
 ---
 
 ## Description
+
 <section id='description'>
-Let R(M, N) be the number of lattice points (x, y) which satisfy M<x≤N, M<y≤N and  is odd.
-We can verify that R(0, 100) = 3019 and R(100, 10000) = 29750422.
-Find R(2·106, 109).
 
+Let R(M, N) be the number of lattice points (x, y) which satisfy M
 
+Note: represents the floor function.
 
-Note:  represents the floor function.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,11 +51,10 @@ euler372();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

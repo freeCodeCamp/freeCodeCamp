@@ -6,18 +6,23 @@ forumTopicId: 301867
 ---
 
 ## Description
+
 <section id='description'>
+
 Let us call an integer sided triangle with sides a ≤ b ≤ c barely obtuse if the sides satisfy a2 + b2 = c2 - 1.
 
 How many barely obtuse triangles are there with perimeter ≤ 75,000,000?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,11 +51,10 @@ euler224();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -7,9 +7,12 @@ forumTopicId: 16824
 ---
 
 ## Description
+
 <section id='description'>
+
 HTML has another special element for creating <dfn>ordered lists</dfn>, or numbered lists.
-Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists are closed with the <code>&#60;/ol&#62;</code> tag.
+
+Ordered lists start with an opening `<ol>` element, followed by any number of `<li>` elements. Finally, ordered lists are closed with the `</ol>` tag.
 
 For example:
 
@@ -21,14 +24,19 @@ For example:
 ```
 
 would create a numbered list of "Garfield" and "Sylvester".
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Create an ordered list of the top 3 things cats hate the most.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -61,6 +69,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -85,11 +94,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

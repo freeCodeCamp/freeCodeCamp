@@ -8,19 +8,27 @@ forumTopicId: 18361
 ---
 
 ## Description
+
 <section id='description'>
+
 We're done playing with our jQuery playground. Let's tear it down!
-jQuery can target the <code>body</code> element as well.
-Here's how we would make the entire body fade out: <code> $("body").addClass("animated fadeOut");</code>
-But let's do something more dramatic. Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.
+
+jQuery can target the `body` element as well.
+
+Here's how we would make the entire body fade out: `$("body").addClass("animated fadeOut");`
+
+But let's do something more dramatic. Add the classes `animated` and `hinge` to your `body` element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,11 +90,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

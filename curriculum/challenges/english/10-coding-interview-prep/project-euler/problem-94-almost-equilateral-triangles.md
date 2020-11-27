@@ -6,6 +6,7 @@ forumTopicId: 302211
 ---
 
 ## Description
+
 <section id='description'>
 
 It is easily proved that no equilateral triangle exists with integral length sides and integral area. However, the <dfn>almost equilateral triangle</dfn> 5-5-6 has an area of 12 square units.
@@ -17,11 +18,13 @@ Find the sum of the perimeters of all <dfn>almost equilateral triangle</dfn> wit
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,11 +55,10 @@ almostEquilateralTriangles();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,30 +6,41 @@ forumTopicId: 302234
 ---
 
 ## Description
+
 <section id='description'>
-Comma quibbling is a task originally set by Eric Lippert in his <a href="https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" target="_blank">blog</a>.
+
+Comma quibbling is a task originally set by Eric Lippert in his [blog](https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
+
 <ol>
   <li>An input of no words produces the output string of just the two brace characters (<code>"{}"</code>)</li>
   <li>An input of just one word, e.g. <code>["ABC"]</code>, produces the output string of the word inside the two braces, e.g. <code>"{ABC}"</code></li>
   <li>An input of two words, e.g. <code>["ABC", "DEF"]</code>, produces the output string of the two words inside the two braces with the words separated by the string <code>" and "</code>, e.g. <code>"{ABC and DEF}"</code></li>
   <li>An input of three or more words, e.g. <code>["ABC", "DEF", "G", "H"]</code>, produces the output string of all but the last word separated by <code>", "</code> with the last word separated by <code>" and "</code> and all within braces; e.g. <code>"{ABC, DEF, G and H}"</code></li>
 </ol>
+
 Test your function with the following series of inputs showing your output here on this page:
+
 <ul>
   <li>[] # (No input words).</li>
   <li>["ABC"]</li>
   <li>["ABC", "DEF"]</li>
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
-<strong>Note:</strong> Assume words are non-empty strings of uppercase characters for this task.
+
+**Note:** Assume words are non-empty strings of uppercase characters for this task.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,8 +77,8 @@ function quibble(words) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -79,8 +91,8 @@ const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function quibble(words) {

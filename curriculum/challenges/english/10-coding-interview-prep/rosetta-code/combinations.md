@@ -6,12 +6,16 @@ forumTopicId: 302233
 ---
 
 ## Description
+
 <section id='description'>
-Given non-negative integers <code>m</code> and <code>n</code>, generate all size <code>m</code> combinations of the integers from <code>0</code> (zero) to <code>n-1</code> in sorted order (each combination is sorted and the entire table is sorted).
-<strong>Example:</strong>
-<code>3</code> comb <code>5</code> is:
-<pre>
-0 1 2
+
+Given non-negative integers `m` and `n`, generate all size `m` combinations of the integers from `0` (zero) to `n-1` in sorted order (each combination is sorted and the entire table is sorted).
+
+**Example:**
+
+`3` comb `5` is:
+
+<pre>0 1 2
 0 1 3
 0 1 4
 0 2 3
@@ -22,14 +26,17 @@ Given non-negative integers <code>m</code> and <code>n</code>, generate all size
 1 3 4
 2 3 4
 </pre>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,8 +67,8 @@ function combinations(m, n) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -76,8 +84,8 @@ const testOutput2 = [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 2, 5], [0, 1, 3, 4], [0,
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function combinations(m, n) {

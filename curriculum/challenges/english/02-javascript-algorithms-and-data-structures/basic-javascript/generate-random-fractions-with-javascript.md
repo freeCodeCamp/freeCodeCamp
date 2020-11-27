@@ -7,18 +7,28 @@ forumTopicId: 18185
 ---
 
 ## Description
+
 <section id='description'>
+
 Random numbers are useful for creating random behavior.
-JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>
-<strong>Note</strong><br>Like <a href='/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator' target='_blank'>Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can <code>return</code> the value of the <code>Math.random()</code> function.
+
+JavaScript has a `Math.random()` function that generates a random decimal number between `0` (inclusive) and not quite up to `1` (exclusive). Thus `Math.random()` can return a `0` but never quite return a `1`
+
+**Note**  
+Like [Storing Values with the Equal Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), all function calls will be resolved before the `return` executes, so we can `return` the value of the `Math.random()` function.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change <code>randomFraction</code> to return a random number instead of returning <code>0</code>.
+
+Change `randomFraction` to return a random number instead of returning `0`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,8 +63,8 @@ function randomFraction() {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -65,8 +76,8 @@ function randomFraction() {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function randomFraction() {

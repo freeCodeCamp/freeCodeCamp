@@ -6,13 +6,16 @@ videoId: lYeLtu8Nq7c
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks below to create the model for the RNN:
@@ -45,7 +48,6 @@ question:
 
       C: `LSTM`
   solution: 3
-```
+````
 
 </section>
-

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Write the code for the `fightBeast` and `fightDragon` functions, using the `fightSlime` function as an example. Make sure to delete the line that is already in the `fightDragon` function.
@@ -12,11 +13,13 @@ Write the code for the `fightBeast` and `fightDragon` functions, using the `figh
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -202,8 +206,8 @@ function goFight() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -272,8 +276,8 @@ function goFight() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -283,12 +287,11 @@ function goFight() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

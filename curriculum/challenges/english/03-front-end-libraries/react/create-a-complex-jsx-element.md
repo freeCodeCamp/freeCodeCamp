@@ -6,13 +6,20 @@ forumTopicId: 301382
 ---
 
 ## Description
+
 <section id='description'>
+
 The last challenge was a simple example of JSX, but JSX can represent more complex HTML as well.
+
 One important thing to know about nested JSX is that it must return a single element.
+
 This one parent element would wrap all of the other levels of nested elements.
+
 For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.
+
 Here's an example:
-<b>Valid JSX:</b>
+
+**Valid JSX:**
 
 ```jsx
 <div>
@@ -22,7 +29,7 @@ Here's an example:
 </div>
 ```
 
-<b>Invalid JSX:</b>
+**Invalid JSX:**
 
 ```jsx
 <p>Paragraph One</p>
@@ -33,13 +40,19 @@ Here's an example:
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Define a new constant <code>JSX</code> that renders a <code>div</code> which contains the following elements in order:
-An <code>h1</code>, a <code>p</code>, and an unordered list that contains three <code>li</code> items. You can include any text you want within each element.
-<strong>Note:</strong>&nbsp;When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a <code>div</code> tag to wrap all the child elements within a single parent element. If you remove the <code>div</code>, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.
+
+Define a new constant `JSX` that renders a `div` which contains the following elements in order:
+
+An `h1`, a `p`, and an unordered list that contains three `li` items. You can include any text you want within each element.
+
+**Note:** When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a `div` tag to wrap all the child elements within a single parent element. If you remove the `div`, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -60,6 +73,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -71,8 +85,8 @@ tests:
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -84,8 +98,8 @@ ReactDOM.render(JSX, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 const JSX = (

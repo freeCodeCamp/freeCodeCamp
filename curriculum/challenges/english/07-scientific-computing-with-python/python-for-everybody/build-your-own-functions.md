@@ -6,15 +6,20 @@ videoId: nLDychdBwUg
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=ksvGhDsjtpw" target='_blank'>Exercise</a>
+
+\- [Exercise](https://www.youtube.com/watch?v=ksvGhDsjtpw)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What will the following Python program print out?:
@@ -64,6 +69,6 @@ question:
 
         Zap
   solution: 4
-```
+````
 
 </section>

@@ -7,17 +7,25 @@ forumTopicId: 301093
 ---
 
 ## Description
+
 <section id='description'>
+
 <dfn>CSS Variables</dfn> are a powerful way to change many CSS style properties at once by changing only one value.
+
 Follow the instructions below to see how changing just three values can change the styling of many elements.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In the <code>penguin</code> class, change the <code>black</code> value to <code>gray</code>, the <code>gray</code> value to <code>white</code>, and the <code>yellow</code> value to <code>orange</code>.
+
+In the `penguin` class, change the `black` value to `gray`, the `gray` value to `white`, and the `yellow` value to `orange`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -243,13 +252,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.penguin {--penguin-skin: gray; --penguin-belly: white; --penguin-beak: orange;}</style>

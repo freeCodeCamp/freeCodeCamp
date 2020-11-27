@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The word "Arg!" should have quotes around it. Besides escaping quotes, there is another way you can include quote marks inside a quote. Change the double quotes to single quotes around the sentence, "The monster screams Arg! as it dies. You gain experience points and find gold". Then add double quotes around "Arg!"
@@ -12,11 +13,13 @@ The word "Arg!" should have quotes around it. Besides escaping quotes, there is 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -252,8 +256,8 @@ function lose() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -322,8 +326,8 @@ function lose() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -333,12 +337,11 @@ function lose() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

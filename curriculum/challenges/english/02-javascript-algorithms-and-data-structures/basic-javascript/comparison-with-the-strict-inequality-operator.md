@@ -7,9 +7,12 @@ forumTopicId: 16791
 ---
 
 ## Description
+
 <section id='description'>
-The strict inequality operator (<code>!==</code>) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.
-<strong>Examples</strong>
+
+The strict inequality operator (`!==`) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns `false` where strict equality would return `true` and *vice versa*. Strict inequality will not convert data types.
+
+**Examples**
 
 ```js
 3 !==  3   // false
@@ -20,11 +23,15 @@ The strict inequality operator (<code>!==</code>) is the logical opposite of the
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the strict inequality operator to the <code>if</code> statement so the function will return "Not Equal" when <code>val</code> is not strictly equal to <code>17</code>
+
+Add the strict inequality operator to the `if` statement so the function will return "Not Equal" when `val` is not strictly equal to `17`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,13 +71,11 @@ testStrictNotEqual(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testStrictNotEqual(val) {

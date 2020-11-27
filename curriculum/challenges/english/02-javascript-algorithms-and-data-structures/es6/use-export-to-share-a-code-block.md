@@ -6,8 +6,10 @@ forumTopicId: 301219
 ---
 
 ## Description
+
 <section id='description'>
-Imagine a file called <code>math_functions.js</code> that contains several functions related to mathematical operations. One of them is stored in a variable, <code>add</code>, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to <code>export</code> it.
+
+Imagine a file called `math_functions.js` that contains several functions related to mathematical operations. One of them is stored in a variable, `add`, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to `export` it.
 
 ```js
 export const add = (x, y) => {
@@ -34,11 +36,15 @@ export { add, subtract };
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 There are two string-related functions in the editor. Export both of them using the method of your choice.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -66,9 +73,11 @@ const lowercaseString = (string) => {
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

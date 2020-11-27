@@ -6,19 +6,29 @@ forumTopicId: 18320
 ---
 
 ## Description
+
 <section id='description'>
-When HTML elements are placed one level below another they are called <dfn>children</dfn> of that element. For example, the button elements in this challenge with the text "#target1", "#target2", and "#target3" are all children of the <code>&#60;div class="well" id="left-well"&#62;</code> element.
-jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.
-Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color <code>blue</code>:
-<code>$("#left-well").children().css("color", "blue")</code>
+
+When HTML elements are placed one level below another they are called <dfn>children</dfn> of that element. For example, the button elements in this challenge with the text "#target1", "#target2", and "#target3" are all children of the `<div class="well" id="left-well">` element.
+
+jQuery has a function called `children()` that allows you to access the children of whichever element you've selected.
+
+Here's an example of how you would use the `children()` function to give the children of your `left-well` element the color `blue`:
+
+`$("#left-well").children().css("color", "blue")`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Give all the children of your <code>right-well</code> element the color orange.
+
+Give all the children of your `right-well` element the color orange.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,11 +90,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

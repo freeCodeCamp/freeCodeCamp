@@ -7,8 +7,10 @@ forumTopicId: 301135
 ---
 
 ## Description
+
 <section id='description'>
-The <code>grid-area</code> property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, you can create an area on the fly for an item to be placed like this:
+
+The `grid-area` property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, you can create an area on the fly for an item to be placed like this:
 
 ```css
 item1 { grid-area: 1/1/2/4; }
@@ -21,14 +23,19 @@ grid-area: horizontal line to start at / vertical line to start at / horizontal 
 ```
 
 So the item in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Using the <code>grid-area</code> property, place the element with <code>item5</code> class between the third and fourth horizontal lines and between the first and fourth vertical lines.
+
+Using the `grid-area` property, place the element with `item5` class between the third and fourth horizontal lines and between the first and fourth vertical lines.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -83,13 +91,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.item5 {grid-area: 3/1/4/4;}</style>

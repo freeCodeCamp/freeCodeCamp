@@ -6,20 +6,29 @@ forumTopicId: 302249
 ---
 
 ## Description
+
 <section id='description'>
+
 There is a highly organized city that has decided to assign a number to each of their departments:
+
 <ul>
   <li>Police department</li>
   <li>Sanitation department</li>
   <li>Fire department</li>
 </ul>
-Each department can have a number between 1 and 7  (inclusive).
+
+Each department can have a number between 1 and 7 (inclusive).
+
 The three department numbers are to be unique (different from each other) and must add up to the number 12.
+
 The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a program which outputs all valid combinations as an array.
 
 ```js
@@ -33,6 +42,7 @@ Write a program which outputs all valid combinations as an array.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,8 +75,8 @@ function combinations(possibleNumbers, total) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -95,8 +106,8 @@ const result = [
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function combinations(possibleNumbers, total) {

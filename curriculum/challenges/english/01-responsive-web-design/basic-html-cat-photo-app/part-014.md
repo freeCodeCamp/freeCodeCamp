@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Turn the image into a link by surrounding it with necessary element tags. Use `https://freecatphotoapp.com` as the anchor's `href` attribute value.
@@ -12,6 +13,7 @@ Turn the image into a link by surrounding it with necessary element tags. Use `h
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -59,4 +62,5 @@ tests:
 ```
 
 </div>
+
 </section>

@@ -6,28 +6,43 @@ forumTopicId: 302303
 ---
 
 ## Description
+
 <section id='description'>
-<a href="https://en.wikipedia.org/wiki/S-Expression" title="wp: S-Expression" target="_blank">S-Expressions</a> are one convenient way to parse and store data.
+
+[S-Expressions](https://en.wikipedia.org/wiki/S-Expression "wp: S-Expression") are one convenient way to parse and store data.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
+
 The function should read a single but nested S-Expression from a string and return it as a (nested) array.
+
 Newlines and other whitespace may be ignored unless contained within a quoted string.
-"<tt>()</tt>"  inside quoted strings are not interpreted, but treated as part of the string.
-Handling escaped quotes inside a string is optional; thus "<tt>(foo"bar)</tt>" may be treated as a string "<tt>foo"bar</tt>", or as an error.
-For this, the reader need not recognize "<tt>\</tt>" for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
-Note that with the exception of "<tt>()"</tt>" ("<tt>\</tt>" if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
+
+"`()`" inside quoted strings are not interpreted, but treated as part of the string.
+
+Handling escaped quotes inside a string is optional; thus "`(foo"bar)`" may be treated as a string "`foo"bar`", or as an error.
+
+For this, the reader need not recognize "`\`" for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
+
+Note that with the exception of "`()"`" ("`\`" if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
+
 The reader should be able to read the following input
-<pre>
-((data "quoted data" 123 4.5)
+
+<pre>((data "quoted data" 123 4.5)
 (data (!@# (4.5) "(more" "data)")))
 </pre>
-and turn it into a native data structure. (See the <a href="https://rosettacode.org/wiki/S-Expressions#Pike" title="#Pike" target="_blank">Pike</a>, <a href="https://rosettacode.org/wiki/S-Expressions#Python" title="#Python" target="_blank">Python</a> and <a href="https://rosettacode.org/wiki/S-Expressions#Ruby" title="#Ruby" target="_blank">Ruby</a> implementations for examples of native data structures.)
+
+and turn it into a native data structure. (See the [Pike](https://rosettacode.org/wiki/S-Expressions#Pike "\#Pike"), [Python](https://rosettacode.org/wiki/S-Expressions#Python "\#Python") and [Ruby](https://rosettacode.org/wiki/S-Expressions#Ruby "\#Ruby") implementations for examples of native data structures.)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +73,8 @@ function parseSexpr(str) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -74,8 +90,8 @@ const basicSolution = [["data","\"quoted data\"",123,4.5],["data",["!@#",[4.5],"
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function parseSexpr(str) {

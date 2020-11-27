@@ -6,18 +6,27 @@ forumTopicId: 301490
 ---
 
 ## Description
+
 <section id='description'>
-D3 also has the <code>selectAll()</code> method to select a group of elements. It returns an array of HTML nodes for all the items in the document that match the input string. Here's an example to select all the anchor tags in a document:
-<code>const anchors = d3.selectAll("a");</code>
-Like the <code>select()</code> method, <code>selectAll()</code> supports method chaining, and you can use it with other methods.
+
+D3 also has the `selectAll()` method to select a group of elements. It returns an array of HTML nodes for all the items in the document that match the input string. Here's an example to select all the anchor tags in a document:
+
+`const anchors = d3.selectAll("a");`
+
+Like the `select()` method, `selectAll()` supports method chaining, and you can use it with other methods.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Select all of the <code>li</code> tags in the document, and change their text to "list item" by chaining the <code>.text()</code> method.
+
+Select all of the `li` tags in the document, and change their text to "list item" by chaining the `.text()` method.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -57,11 +67,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -8,21 +8,27 @@ forumTopicId: 302308
 ## Description
 
 <section id='description'>
-When sorting records in a table by a particular column or field, a <a href="https://en.wikipedia.org/wiki/Stable_sort#Stability" target="_blank">stable sort</a> will always retain the  relative order of records that have the same key.
-For example, in this table of countries and cities, a stable sort on the <b>second</b> column, the cities, would  keep the US Birmingham above the UK Birmingham. (Although an unstable sort <i>might</i>, in this case, place the US Birmingham above the UK Birmingham, a stable sort routine would <i>guarantee</i> it).
-<pre>
-UK  London
+
+When sorting records in a table by a particular column or field, a [stable sort](https://en.wikipedia.org/wiki/Stable_sort#Stability) will always retain the relative order of records that have the same key.
+
+For example, in this table of countries and cities, a stable sort on the **second** column, the cities, would keep the US Birmingham above the UK Birmingham. (Although an unstable sort *might*, in this case, place the US Birmingham above the UK Birmingham, a stable sort routine would *guarantee* it).
+
+<pre>UK  London
 US  New York
 US  Birmingham
 UK  Birmingham
 </pre>
+
 Similarly, stable sorting on just the first column would generate "UK London" as the first item and "US Birmingham" as the last item (since the order of the elements having the same first word – "UK" or "US" – would be maintained).
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function that takes a 2D array as a parameter. Each element has 2 elements similar to the above example. The function should sort the array as mentioned previously and return the sorted array.
+
 </section>
 
 ## Tests

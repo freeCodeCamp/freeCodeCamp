@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Within the second `section` element, add a new `h2` element with the text `Cat Lists`.
@@ -12,6 +13,7 @@ Within the second `section` element, add a new `h2` element with the text `Cat L
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,4 +66,5 @@ tests:
 ```
 
 </div>
+
 </section>

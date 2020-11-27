@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Now that the store and cave locations are complete, we'll code the actions at those locations. Inside the `buyHealth` function, set `gold` to equal `gold` minus 10. 
+Now that the store and cave locations are complete, we'll code the actions at those locations. Inside the `buyHealth` function, set `gold` to equal `gold` minus 10.
 
-For example here is how you would set set `num` to equal 5 less than `num`: `num = num - 5;`. 
+For example here is how you would set set `num` to equal 5 less than `num`: `num = num - 5;`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -126,8 +130,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -196,8 +200,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -207,12 +211,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

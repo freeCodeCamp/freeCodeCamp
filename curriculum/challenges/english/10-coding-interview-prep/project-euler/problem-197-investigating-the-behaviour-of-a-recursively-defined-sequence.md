@@ -6,20 +6,25 @@ forumTopicId: 301835
 ---
 
 ## Description
+
 <section id='description'>
+
 Given is the function f(x) = ⌊230.403243784-x2⌋ × 10-9 ( ⌊ ⌋ is the floor-function),
+
 the sequence un is defined by u0 = -1 and un+1 = f(un).
 
-Find un + un+1 for n = 1012.
-Give your answer with 9 digits after the decimal point.
+Find un + un+1 for n = 1012. Give your answer with 9 digits after the decimal point.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,11 +53,10 @@ euler197();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -7,18 +7,23 @@ forumTopicId: 18349
 ---
 
 ## Description
+
 <section id='description'>
+
 With CSS, there are hundreds of CSS properties that you can use to change the way an element looks on your page.
-When you entered <code>&#60;h2 style="color: red;"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were styling that individual <code>h2</code> element with inline CSS, which stands for Cascading Style Sheets.
+
+When you entered `<h2 style="color: red;">CatPhotoApp</h2>`, you were styling that individual `h2` element with inline CSS, which stands for Cascading Style Sheets.
+
 That's one way to specify the style of an element, but there's a better way to apply CSS.
-At the top of your code, create a <code>style</code> block like this:
+
+At the top of your code, create a `style` block like this:
 
 ```html
 <style>
 </style>
 ```
 
-Inside that style block, you can create a <dfn>CSS selector</dfn> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, you would add a style rule that looks like this:
+Inside that style block, you can create a <dfn>CSS selector</dfn> for all `h2` elements. For example, if you wanted all `h2` elements to be red, you would add a style rule that looks like this:
 
 ```html
 <style>
@@ -28,15 +33,20 @@ Inside that style block, you can create a <dfn>CSS selector</dfn> for all <code>
 </style>
 ```
 
-Note that it's important to have both opening and closing curly braces (<code>{</code> and <code>}</code>) around each element's style rule(s). You also need to make sure that your element's style definition is between the opening and closing style tags. Finally, be sure to add a semicolon to the end of each of your element's style rules.
+Note that it's important to have both opening and closing curly braces (`{` and `}`) around each element's style rule(s). You also need to make sure that your element's style definition is between the opening and closing style tags. Finally, be sure to add a semicolon to the end of each of your element's style rules.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Delete your <code>h2</code> element's style attribute, and instead create a CSS <code>style</code> block. Add the necessary CSS to turn all <code>h2</code> elements blue.
+
+Delete your `h2` element's style attribute, and instead create a CSS `style` block. Add the necessary CSS to turn all `h2` elements blue.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -57,6 +67,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -97,11 +108,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

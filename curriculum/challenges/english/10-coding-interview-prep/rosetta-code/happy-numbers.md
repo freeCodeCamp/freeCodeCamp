@@ -6,17 +6,25 @@ forumTopicId: 302280
 ---
 
 ## Description
+
 <section id='description'>
-A <a href="https://en.wikipedia.org/wiki/Happy_number" target="_blank">happy number</a> is defined by the following process:
-Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals <code>1</code> (where it will stay), or it loops endlessly in a cycle which does not include <code>1</code>. Those numbers for which this process ends in <code>1</code> are happy numbers, while those that do not end in <code>1</code> are unhappy numbers.
+
+A [happy number](https://en.wikipedia.org/wiki/Happy_number) is defined by the following process:
+
+Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals `1` (where it will stay), or it loops endlessly in a cycle which does not include `1`. Those numbers for which this process ends in `1` are happy numbers, while those that do not end in `1` are unhappy numbers.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Implement a function that returns true if the number is happy, or false if not.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,13 +74,11 @@ function happy(number) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function happy (number) {

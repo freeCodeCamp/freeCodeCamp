@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Emphasize the word `love` in the `figcaption` element by wrapping it in an emphasis (`em`) element.
@@ -12,6 +13,7 @@ Emphasize the word `love` in the `figcaption` element by wrapping it in an empha
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -67,4 +70,5 @@ tests:
 ```
 
 </div>
+
 </section>

@@ -6,7 +6,9 @@ forumTopicId: 301223
 ---
 
 ## Description
+
 <section id='description'>
+
 Just like a regular function, you can pass arguments into an arrow function.
 
 ```js
@@ -33,11 +35,15 @@ multiplier(4, 2); // returns 8
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Rewrite the <code>myConcat</code> function which appends contents of <code>arr2</code> to <code>arr1</code> so that the function uses arrow function syntax.
+
+Rewrite the `myConcat` function which appends contents of `arr2` to `arr1` so that the function uses arrow function syntax.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -58,6 +64,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,11 +79,10 @@ console.log(myConcat([1, 2], [3, 4, 5]));
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

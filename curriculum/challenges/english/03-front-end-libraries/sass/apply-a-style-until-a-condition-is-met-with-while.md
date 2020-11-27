@@ -6,9 +6,12 @@ forumTopicId: 301454
 ---
 
 ## Description
+
 <section id='description'>
-The <code>@while</code> directive is an option with similar functionality to the JavaScript <code>while</code> loop. It creates CSS rules until a condition is met.
-The <code>@for</code> challenge gave an example to create a simple grid system. This can also work with <code>@while</code>.
+
+The `@while` directive is an option with similar functionality to the JavaScript `while` loop. It creates CSS rules until a condition is met.
+
+The `@for` challenge gave an example to create a simple grid system. This can also work with `@while`.
 
 ```scss
 $x: 1;
@@ -18,17 +21,22 @@ $x: 1;
 }
 ```
 
-First, define a variable <code>$x</code> and set it to 1. Next, use the <code>@while</code> directive to create the grid system <i>while</i> <code>$x</code> is less than 13.
-After setting the CSS rule for <code>width</code>, <code>$x</code> is incremented by 1 to avoid an infinite loop.
+First, define a variable `$x` and set it to 1. Next, use the `@while` directive to create the grid system *while* `$x` is less than 13. After setting the CSS rule for `width`, `$x` is incremented by 1 to avoid an infinite loop.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <code>@while</code> to create a series of classes with different <code>font-sizes</code>.
-There should be 5 different classes from <code>text-1</code> to <code>text-5</code>. Then set <code>font-size</code> to <code>15px</code> multiplied by the current index number. Make sure to avoid an infinite loop!
+
+Use `@while` to create a series of classes with different `font-sizes`.
+
+There should be 5 different classes from `text-1` to `text-5`. Then set `font-size` to `15px` multiplied by the current index number. Make sure to avoid an infinite loop!
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,6 +87,7 @@ tests:
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

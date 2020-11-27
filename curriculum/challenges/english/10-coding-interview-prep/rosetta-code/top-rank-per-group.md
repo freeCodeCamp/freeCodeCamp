@@ -6,11 +6,14 @@ forumTopicId: 302339
 ---
 
 ## Description
+
 <section id='description'>
-Find the top <code>n</code> ranked data in each group, where <code>n</code> is provided as a parameter. Name of the rank and the group are also provided as parameter.
+
+Find the top `n` ranked data in each group, where `n` is provided as a parameter. Name of the rank and the group are also provided as parameter.
+
 Given the following data:
-<pre>
-[
+
+<pre>[
   { name: 'Tyler Bennett', id: 'E10297', salary: 32000, dept: 'D101' },
   { name: 'John Rappl', id: 'E21437', salary: 47000, dept: 'D050' },
   { name: 'George Woltman', id: 'E00127', salary: 53500, dept: 'D101' },
@@ -26,11 +29,14 @@ Given the following data:
   { name: 'Timothy Grove', id: 'E16398', salary: 29900, dept: 'D190' }
 ];
 </pre>
+
 one could rank top 10 employees in each department by calling
-<code>topRankPerGroup(10, data, 'dept', 'salary')</code>
+
+`topRankPerGroup(10, data, 'dept', 'salary')`
+
 Given the following data:
-<pre>
-[
+
+<pre>[
   { name: 'Friday 13th', genre: 'horror', rating: 9.9 },
   { name: "Nightmare on Elm's Street", genre: 'horror', rating: 5.7 },
   { name: 'Titanic', genre: 'drama', rating: 7.3 },
@@ -38,16 +44,21 @@ Given the following data:
   { name: 'Blade runner', genre: 'scifi', rating: 8.9 }
 ];
 </pre>
+
 one could rank the top-rated movie in each genre by calling
-<code>topRankPerGroup(1, data, 'genre', 'rating')</code>
+
+`topRankPerGroup(1, data, 'genre', 'rating')`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -72,6 +83,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -85,8 +97,8 @@ function topRankPerGroup(n, data, groupName, rankName) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -126,8 +138,8 @@ const res3 = topRankPerGroup(2, testData2, 'genre', 'rating');
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const collectDept = function (arrOfObj, groupName) {

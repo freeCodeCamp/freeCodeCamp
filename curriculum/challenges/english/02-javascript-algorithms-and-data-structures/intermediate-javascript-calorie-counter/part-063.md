@@ -17,6 +17,7 @@ Get a reference to the `document` element with the `id` of `clear` and set its `
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

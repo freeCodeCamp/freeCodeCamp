@@ -9,10 +9,7 @@ forumTopicId: 302301
 
 <section id='description'>
 
-The least common multiple of 12 and 18 is 36, because 12 is a factor (12 &times; 3 = 36), and 18 is a factor (18 &times; 2 = 36), and there is no positive integer less than 36 that has both factors. As a special case, if either <i>m</i> or <i>n</i> is zero, then the least common multiple is zero.
-One way to calculate the least common multiple is to iterate all the multiples of <i>m</i>, until you find one that is also a multiple of <i>n</i>.
-If you already have <i>gcd</i> for <a href="https://rosettacode.org/wiki/greatest common divisor" target="_blank">greatest common divisor</a>, then this formula calculates <i>lcm</i>.
-\( \operatorname{lcm}(m, n) = \frac{|m \times n|}{\operatorname{gcd}(m, n)} \)
+The least common multiple of 12 and 18 is 36, because 12 is a factor (12 × 3 = 36), and 18 is a factor (18 × 2 = 36), and there is no positive integer less than 36 that has both factors. As a special case, if either *m* or *n* is zero, then the least common multiple is zero. One way to calculate the least common multiple is to iterate all the multiples of *m*, until you find one that is also a multiple of *n*. If you already have *gcd* for [greatest common divisor](<https://rosettacode.org/wiki/greatest common divisor>), then this formula calculates *lcm*. ( \\operatorname{lcm}(m, n) = \\frac{|m \\times n|}{\\operatorname{gcd}(m, n)} )
 
 </section>
 
@@ -20,8 +17,7 @@ If you already have <i>gcd</i> for <a href="https://rosettacode.org/wiki/greates
 
 <section id='instructions'>
 
-Compute the least common multiple of an array of integers.
-Given <i>m</i> and <i>n</i>, the least common multiple is the smallest positive integer that has both <i>m</i> and <i>n</i> as factors.
+Compute the least common multiple of an array of integers. Given *m* and *n*, the least common multiple is the smallest positive integer that has both *m* and *n* as factors.
 
 </section>
 
@@ -62,6 +58,7 @@ function LCM(A) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

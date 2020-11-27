@@ -5,18 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add a `mouseover` event to the `tumblr-circles` and `instagram-circles` in the same way that you did for the `twitter-circles`.
 
 After that, you will be able hover any of the circles or year labels to get the information for that year.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -247,8 +253,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -281,10 +287,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

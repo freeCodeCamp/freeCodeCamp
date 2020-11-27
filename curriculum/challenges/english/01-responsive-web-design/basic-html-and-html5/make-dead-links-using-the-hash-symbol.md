@@ -7,18 +7,27 @@ forumTopicId: 18230
 ---
 
 ## Description
+
 <section id='description'>
-Sometimes you want to add <code>a</code> elements to your website before you know where they will link.
-This is also handy when you're changing the behavior of a link using <code>JavaScript</code>, which we'll learn about later.
+
+Sometimes you want to add `a` elements to your website before you know where they will link.
+
+This is also handy when you're changing the behavior of a link using `JavaScript`, which we'll learn about later.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The current value of the <code>href</code> attribute is a link that points to "https://freecatphotoapp.com". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link.
-For example: <code>href="#"</code>
+
+The current value of the `href` attribute is a link that points to "`https://freecatphotoapp.com`". Replace the `href` attribute value with a `#`, also known as a hash symbol, to create a dead link.
+
+For example: `href="#"`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -49,11 +59,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

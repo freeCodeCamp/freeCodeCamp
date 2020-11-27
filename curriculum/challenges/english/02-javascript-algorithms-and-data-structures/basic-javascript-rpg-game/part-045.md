@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now update the `goStore` function. The code should look just like the code inside the `goTown` function, except the number 0 should be changed to 1. After this step would be a good time to try out the game so far. You should be able to move between the store and the town square.
@@ -12,11 +13,13 @@ Now update the `goStore` function. The code should look just like the code insid
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -110,8 +114,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -180,8 +184,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -191,12 +195,11 @@ function buyWeapon() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

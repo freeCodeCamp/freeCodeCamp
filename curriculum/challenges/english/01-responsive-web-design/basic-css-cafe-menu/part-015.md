@@ -5,13 +5,15 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it. Start by rewriting the styles you have created into the `styles.css` file.  Make sure to exclude the opening and closing `style` tags.
+You have styled three elements by writing CSS inside the `style` tags. This works, but since there will many more styles, it's best to put all the styles in a separate file and link to it. Start by rewriting the styles you have created into the `styles.css` file. Make sure to exclude the opening and closing `style` tags.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

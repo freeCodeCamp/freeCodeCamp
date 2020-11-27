@@ -6,38 +6,50 @@ forumTopicId: 302231
 ---
 
 ## Description
+
 <section id='description'>
+
 Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
-<strong>Exceptions:</strong>
+
+**Exceptions:**
+
 <ul>
   <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
   <li>If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.</li>
   <li>If the points form a diameter then return a single circle.</li>
   <li>If the points are too far apart then no circles can be drawn.</li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
-<strong>For edge cases, return the following:</strong>
+
+**For edge cases, return the following:**
+
 <ul>
   <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
   <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
   <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
-<strong>Sample inputs:</strong>
-<pre>
-      p1                p2           r
+
+**Sample inputs:**
+
+<pre>      p1                p2           r
 0.1234, 0.9876    0.8765, 0.2345    2.0
 0.0000, 2.0000    0.0000, 0.0000    1.0
 0.1234, 0.9876    0.1234, 0.9876    2.0
 0.1234, 0.9876    0.8765, 0.2345    0.5
 0.1234, 0.9876    0.1234, 0.9876    0.0
 </pre>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -60,6 +72,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,8 +86,8 @@ function getCircles(...args) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -99,8 +112,8 @@ const answers = [
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const hDist = (p1, p2) => Math.hypot(...p1.map((e, i) => e - p2[i])) / 2;

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Inside the for loop, use the `+=` operator to add to the end of `text.innerText`. Add the the number at index `i` in the `numbers` array with `numbers[i]`. Then add a new line. So the entire line inside the for loop should look like: `text.innerText += numbers[i] + "\n";`
@@ -12,11 +13,13 @@ Inside the for loop, use the `+=` operator to add to the end of `text.innerText`
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -332,8 +336,8 @@ function pick(guess) {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -402,8 +406,8 @@ function pick(guess) {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -413,12 +417,11 @@ function pick(guess) {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

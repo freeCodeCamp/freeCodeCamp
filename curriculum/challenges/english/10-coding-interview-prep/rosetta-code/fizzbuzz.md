@@ -6,9 +6,11 @@ forumTopicId: 385370
 ---
 
 ## Description
+
 <section id='description'>
 
 Write a program that generates an array of integers from 1 to 100 (inclusive). But:
+
 <ul>
     <li>for multiples of 3, add <code>"Fizz"</code> to the array instead of the number</li>
     <li>for multiples of 5, add <code>"Buzz"</code> to the array instead of the number</li>
@@ -22,9 +24,11 @@ Write a program that generates an array of integers from 1 to 100 (inclusive). B
 <section id='instructions'>
 
 Your program should return an array containing the results based on the rules above.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,6 +67,7 @@ function fizzBuzz() {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

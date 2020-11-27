@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Chain the `y` function to the line and pass it a "d function" that returns your `yScale` with `d.followers.twitter` as its argument.
@@ -12,13 +13,17 @@ Chain the `y` function to the line and pass it a "d function" that returns your 
 This is similar to how you set the x values. It will use the values of your Twitter followers and your `yScale` to set the y coordinate for each item.
 
 These "d functions" use implicit returns. But if you add curly brackets and a return statement, you can put any JavaScript in there that you want. Including `console.log` statements that can be useful for debugging.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -99,8 +105,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -133,10 +139,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

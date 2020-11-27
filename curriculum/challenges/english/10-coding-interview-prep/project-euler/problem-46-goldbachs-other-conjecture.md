@@ -6,6 +6,7 @@ forumTopicId: 302134
 ---
 
 ## Description
+
 <section id='description'>
 
 It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square.
@@ -26,11 +27,13 @@ What is the smallest odd composite that cannot be written as the sum of a prime 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,13 +64,11 @@ goldbachsOtherConjecture();
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function goldbachsOtherConjecture() {  function isPrime(num) {

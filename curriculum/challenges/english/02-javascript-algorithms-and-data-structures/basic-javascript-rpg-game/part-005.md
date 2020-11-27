@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now you will declare a variable without initializing it.
 
-Using the `let` keyword, declare a variable called `fighting` but don't set it equal to anything. Just end the line with a semicolon right after the variable name. 
+Using the `let` keyword, declare a variable called `fighting` but don't set it equal to anything. Just end the line with a semicolon right after the variable name.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -47,8 +51,8 @@ let currentWeapon = 0;
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -117,8 +121,8 @@ let currentWeapon = 0;
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -128,13 +132,11 @@ let currentWeapon = 0;
 
 </div>
 
-
 </section>
 
-
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

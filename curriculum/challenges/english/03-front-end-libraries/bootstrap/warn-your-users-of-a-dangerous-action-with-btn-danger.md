@@ -6,18 +6,25 @@ forumTopicId: 18375
 ---
 
 ## Description
+
 <section id='description'>
-Bootstrap comes with several pre-defined colors for buttons. The <code>btn-danger</code> class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
-Create a button with the text "Delete" and give it the class <code>btn-danger</code>.
-Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes.
+
+Bootstrap comes with several pre-defined colors for buttons. The `btn-danger` class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
+
+Create a button with the text "Delete" and give it the class `btn-danger`.
+
+Note that these buttons still need the `btn` and `btn-block` classes.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -104,11 +112,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

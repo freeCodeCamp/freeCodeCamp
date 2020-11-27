@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Paragraph (`p`) elements are used to create paragraph text on websites. 
+Paragraph (`p`) elements are used to create paragraph text on websites.
 
 Create a paragraph (`p`) element below your `h2` element, and give it the text `Click here to view more cat photos.`
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,4 +51,5 @@ tests:
 ```
 
 </div>
+
 </section>

@@ -6,19 +6,27 @@ forumTopicId: 16025
 ---
 
 ## Description
+
 <section id='description'>
+
 Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
-For example, <code>["hello", "Hello"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.
-The arguments <code>["hello", "hey"]</code> should return false because the string "hello" does not contain a "y".
-Lastly, <code>["Alien", "line"]</code>, should return true because all of the letters in "line" are present in "Alien".
+
+For example, `["hello", "Hello"]`, should return true because all of the letters in the second string are present in the first, ignoring case.
+
+The arguments `["hello", "hey"]` should return false because the string "hello" does not contain a "y".
+
+Lastly, `["Alien", "line"]`, should return true because all of the letters in "line" are present in "Alien".
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,13 +76,11 @@ mutation(["hello", "hey"]);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function mutation(arr) {

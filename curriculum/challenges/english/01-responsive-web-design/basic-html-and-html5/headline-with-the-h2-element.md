@@ -7,18 +7,27 @@ forumTopicId: 18196
 ---
 
 ## Description
+
 <section id='description'>
+
 Over the next few lessons, we'll build an HTML5 cat photo web app piece-by-piece.
-The <code>h2</code> element you will be adding in this step will add a level two heading to the web page.
-This element tells the browser about the structure of your website. <code>h1</code> elements are often used for main headings, while <code>h2</code> elements are generally used for subheadings. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements to indicate different levels of subheadings.
+
+The `h2` element you will be adding in this step will add a level two heading to the web page.
+
+This element tells the browser about the structure of your website. `h1` elements are often used for main headings, while `h2` elements are generally used for subheadings. There are also `h3`, `h4`, `h5` and `h6` elements to indicate different levels of subheadings.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML element below your "Hello World" <code>h1</code> element.
+
+Add an `h2` tag that says "CatPhotoApp" to create a second HTML element below your "Hello World" `h1` element.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,8 +58,6 @@ tests:
 ```
 
 </div>
-
-
 
 </section>
 
@@ -62,6 +70,4 @@ tests:
 <h2>CatPhotoApp</h2>
 ```
 
-</section>  
-
-
+</section>

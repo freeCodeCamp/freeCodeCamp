@@ -6,8 +6,10 @@ forumTopicId: 301337
 ---
 
 ## Description
+
 <section id='description'>
-Anytime a constructor function creates a new object, that object is said to be an <dfn>instance</dfn> of its constructor. JavaScript gives a convenient way to verify this with the <code>instanceof</code> operator. <code>instanceof</code> allows you to compare an object to a constructor, returning <code>true</code> or <code>false</code> based on whether or not that object was created with the constructor. Here's an example:
+
+Anytime a constructor function creates a new object, that object is said to be an <dfn>instance</dfn> of its constructor. JavaScript gives a convenient way to verify this with the `instanceof` operator. `instanceof` allows you to compare an object to a constructor, returning `true` or `false` based on whether or not that object was created with the constructor. Here's an example:
 
 ```js
 let Bird = function(name, color) {
@@ -21,7 +23,7 @@ let crow = new Bird("Alexis", "black");
 crow instanceof Bird; // => true
 ```
 
-If an object is created without using a constructor, <code>instanceof</code> will verify that it is not an instance of that constructor:
+If an object is created without using a constructor, `instanceof` will verify that it is not an instance of that constructor:
 
 ```js
 let canary = {
@@ -36,11 +38,15 @@ canary instanceof Bird; // => false
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a new instance of the <code>House</code> constructor, calling it <code>myHouse</code> and passing a number of bedrooms. Then, use <code>instanceof</code> to verify that it is an instance of <code>House</code>.
+
+Create a new instance of the `House` constructor, calling it `myHouse` and passing a number of bedrooms. Then, use `instanceof` to verify that it is an instance of `House`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,13 +79,11 @@ function House(numBedrooms) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function House(numBedrooms) {

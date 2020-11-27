@@ -6,6 +6,7 @@ forumTopicId: 301908
 ---
 
 ## Description
+
 <section id='description'>
 
 A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
@@ -14,16 +15,18 @@ A unit fraction contains 1 in the numerator. The decimal representation of the u
 
 Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that <sup>1</sup>/<sub>7</sub> has a 6-digit recurring cycle.
 
-Find the value of <var>d</var> < <var>`n`</var> for which <sup>1</sup>/<sub>d</sub> contains the longest recurring cycle in its decimal fraction part.
+Find the value of `d` &lt; `n` for which <sup>1</sup>/<sub>d</sub> contains the longest recurring cycle in its decimal fraction part.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,11 +63,10 @@ reciprocalCycles(1000);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

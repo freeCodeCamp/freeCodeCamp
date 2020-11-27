@@ -15,6 +15,7 @@ Add the `line` to the `output` element using the `appendChild()` method.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

@@ -7,17 +7,25 @@ forumTopicId: 301105
 ---
 
 ## Description
+
 <section id='description'>
+
 This section uses alternating challenge styles to show how to use CSS to position elements in a flexible way. First, a challenge will explain theory, then a practical challenge using a simple tweet component will apply the flexbox concept.
-Placing the CSS property <code>display: flex;</code> on an element allows you to use other flex properties to build a responsive page.
+
+Placing the CSS property `display: flex;` on an element allows you to use other flex properties to build a responsive page.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the CSS property <code>display</code> to <code>#box-container</code> and set its value to <code>flex</code>.
+
+Add the CSS property `display` to `#box-container` and set its value to `flex`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -61,11 +70,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -6,19 +6,26 @@ forumTopicId: 385281
 ---
 
 ## Description
+
 <section id='description'>
+
 Lucas-Lehmer Test: for $p$ an odd prime, the Mersenne number $2^p-1$ is prime if and only if $2^p-1$ divides $S(p-1)$ where $S(n+1)=(S(n))^2-2$, and $S(1)=4$.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that returns whether the given Mersenne number is prime or not.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>lucasLehmer</code> should be a function.
     testString: assert(typeof lucasLehmer == 'function');
@@ -41,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,6 +64,7 @@ function lucasLehmer(p) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,17 +6,25 @@ forumTopicId: 301480
 ---
 
 ## Description
+
 <section id='description'>
+
 The bars are in the right position, but they are all the same black color. SVG has a way to change the color of the bars.
-In SVG, a <code>rect</code> shape is colored with the <code>fill</code> attribute. It supports hex codes, color names, and rgb values, as well as more complex options like gradients and transparency.
+
+In SVG, a `rect` shape is colored with the `fill` attribute. It supports hex codes, color names, and rgb values, as well as more complex options like gradients and transparency.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add an <code>attr()</code> method to set the "fill" of all the bars to the color "navy".
+
+Add an `attr()` method to set the "fill" of all the bars to the color "navy".
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,11 +74,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

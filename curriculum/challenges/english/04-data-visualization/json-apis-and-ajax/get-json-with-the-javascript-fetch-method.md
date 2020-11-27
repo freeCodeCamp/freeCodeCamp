@@ -6,9 +6,12 @@ forumTopicId: 301501
 ---
 
 ## Description
+
 <section id='description'>
-Another way to request external data is to use the JavaScript <code>fetch()</code>  method. It is equivalent to XMLHttpRequest, but the syntax is considered easier to understand.
-Here is the code for making a GET request to <code>/json/cats.json</code>
+
+Another way to request external data is to use the JavaScript `fetch()` method. It is equivalent to XMLHttpRequest, but the syntax is considered easier to understand.
+
+Here is the code for making a GET request to `/json/cats.json`
 
 ```js
 
@@ -20,23 +23,28 @@ fetch('/json/cats.json')
 
 ```
 
-Take a look at each piece of this code. 
+Take a look at each piece of this code.
 
-The first line is the one that makes the request. So, <code>fetch(URL)</code> makes a GET request to the URL specified. The method returns a Promise.
+The first line is the one that makes the request. So, `fetch(URL)` makes a GET request to the URL specified. The method returns a Promise.
 
-After a Promise is returned, if the request was successful, the <code>then</code> method is executed, which takes the response and converts it to JSON format.
+After a Promise is returned, if the request was successful, the `then` method is executed, which takes the response and converts it to JSON format.
 
-The <code>then</code> method also returns a Promise, which is handled by the next <code>then</code> method. The argument in the second <code>then</code> is the JSON object you are looking for! 
+The `then` method also returns a Promise, which is handled by the next `then` method. The argument in the second `then` is the JSON object you are looking for!
 
-Now, it selects the element that will receive the data by using <code>document.getElementById()</code>. Then it modifies the HTML code of the element by inserting a string created from the JSON object returned from the request.
+Now, it selects the element that will receive the data by using `document.getElementById()`. Then it modifies the HTML code of the element by inserting a string created from the JSON object returned from the request.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo API. But this time, using the <code>fetch</code> method instead of <code>XMLHttpRequest</code>.
+
+Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo API. But this time, using the `fetch` method instead of `XMLHttpRequest`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -109,11 +118,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

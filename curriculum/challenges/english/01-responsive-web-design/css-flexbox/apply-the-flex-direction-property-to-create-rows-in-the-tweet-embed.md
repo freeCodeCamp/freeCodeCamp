@@ -7,16 +7,23 @@ forumTopicId: 301104
 ---
 
 ## Description
+
 <section id='description'>
-The <code>header</code> and <code>footer</code> in the tweet embed example have child items that could be arranged as rows using the <code>flex-direction</code> property. This tells CSS to align the children horizontally.
+
+The `header` and `footer` in the tweet embed example have child items that could be arranged as rows using the `flex-direction` property. This tells CSS to align the children horizontally.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the CSS property <code>flex-direction</code> to both the <code>header</code> and <code>footer</code> and set the value to row.
+
+Add the CSS property `flex-direction` to both the `header` and `footer` and set the value to row.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -131,11 +139,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

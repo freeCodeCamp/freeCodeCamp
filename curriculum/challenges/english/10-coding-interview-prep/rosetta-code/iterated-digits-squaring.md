@@ -6,20 +6,27 @@ forumTopicId: 302291
 ---
 
 ## Description
+
 <section id='description'>
+
 If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:
-<pre>
-15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
+
+<pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
 7 -> 49 -> 97 -> 130 -> 10 -> 1
 </pre>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,13 +66,11 @@ function iteratedSquare(n) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function iteratedSquare(n) {

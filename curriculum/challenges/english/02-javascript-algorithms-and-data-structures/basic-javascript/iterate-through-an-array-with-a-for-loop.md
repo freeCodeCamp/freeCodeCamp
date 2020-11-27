@@ -7,8 +7,10 @@ forumTopicId: 18216
 ---
 
 ## Description
+
 <section id='description'>
-A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:
+
+A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a `for` loop. This code will output each element of the array `arr` to the console:
 
 ```js
 var arr = [10, 9, 8, 7, 6];
@@ -17,15 +19,20 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
-Remember that arrays have zero-based indexing, which means the last index of the array is <code>length - 1</code>. Our condition for this loop is <code>i < arr.length</code>, which stops the loop when <code>i</code> is equal to <code>length</code>. In this case the last iteration is <code>i === 4</code> i.e. when <code>i</code> becomes equal to <code>arr.length</code> and outputs <code>6</code> to the console.
+Remember that arrays have zero-based indexing, which means the last index of the array is `length - 1`. Our condition for this loop is `i < arr.length`, which stops the loop when `i` is equal to `length`. In this case the last iteration is `i === 4` i.e. when `i` becomes equal to `arr.length` and outputs `6` to the console.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <code>for</code> loop to add the value of each element of the <code>myArr</code> array to <code>total</code>.
+
+Declare and initialize a variable `total` to `0`. Use a `for` loop to add the value of each element of the `myArr` array to `total`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -57,6 +65,7 @@ var myArr = [ 2, 3, 4, 5, 6];
 </div>
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -69,6 +78,7 @@ var myArr = [ 2, 3, 4, 5, 6];
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -7,11 +7,16 @@ forumTopicId: 16661
 ---
 
 ## Description
+
 <section id='description'>
+
 In programming, it is common to use assignments to modify the contents of a variable. Remember that everything to the right of the equals sign is evaluated first, so we can say:
-<code>myVar = myVar + 5;</code>
-to add <code>5</code> to <code>myVar</code>. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
-One such operator is the <code>+=</code> operator.
+
+`myVar = myVar + 5;`
+
+to add `5` to `myVar`. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
+
+One such operator is the `+=` operator.
 
 ```js
 var myVar = 1;
@@ -22,11 +27,15 @@ console.log(myVar); // Returns 6
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>+=</code> operator.
+
+Convert the assignments for `a`, `b`, and `c` to use the `+=` operator.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,8 +74,8 @@ c = c + 7;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -77,8 +87,8 @@ c = c + 7;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var a = 3;

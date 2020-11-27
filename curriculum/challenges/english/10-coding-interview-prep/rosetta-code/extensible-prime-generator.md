@@ -6,24 +6,32 @@ forumTopicId: 302262
 ---
 
 ## Description
+
 <section id='description'>
+
 Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+
 The generator should be able to:
+
 <ul>
   <li>Show the first <code>n</code> prime numbers</li>
   <li>Show the prime numbers in a range</li>
   <li>Show the number of primes in a range</li>
   <li>Show the <code>n<sup>th</sup></code> prime number</li>
 </ul>
-The function should have two parameters. The first will receive <code>n</code> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
+
+The function should have two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,13 +65,11 @@ function primeGenerator(num, showPrimes) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function primeGenerator(num, showPrimes) {

@@ -15,6 +15,7 @@ Create a variable named `clearForm` and set it equal to a blank arrow function l
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

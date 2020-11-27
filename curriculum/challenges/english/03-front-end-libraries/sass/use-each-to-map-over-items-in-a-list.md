@@ -6,10 +6,10 @@ forumTopicId: 301461
 ---
 
 ## Description
+
 <section id='description'>
 
-The last challenge showed how the <code>@for</code> directive uses a starting and ending value to loop a certain number of times. Sass also offers the <code>@each</code> directive which loops over each item in a list or map.
-On each iteration, the variable gets assigned to the current value from the list or map.
+The last challenge showed how the `@for` directive uses a starting and ending value to loop a certain number of times. Sass also offers the `@each` directive which loops over each item in a list or map. On each iteration, the variable gets assigned to the current value from the list or map.
 
 ```scss
 @each $color in blue, red, green {
@@ -27,8 +27,7 @@ $colors: (color1: blue, color2: red, color3: green);
 }
 ```
 
-Note that the <code>$key</code> variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have <code>color1</code>, <code>color2</code>... in it.
-Both of the above code examples are converted into the following CSS:
+Note that the `$key` variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have `color1`, `color2`... in it. Both of the above code examples are converted into the following CSS:
 
 ```scss
 .blue-text {
@@ -47,13 +46,15 @@ Both of the above code examples are converted into the following CSS:
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-Write an <code>@each</code> directive that goes through a list: <code>blue, black, red</code> and assigns each variable to a <code>.color-bg</code> class, where the "color" part changes for each item.
-Each class should set the <code>background-color</code> the respective color.
+Write an `@each` directive that goes through a list: `blue, black, red` and assigns each variable to a `.color-bg` class, where the "color" part changes for each item. Each class should set the `background-color` the respective color.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -72,6 +73,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -97,6 +99,7 @@ tests:
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 The solution requires using the $color variable twice: once for the class name and once for setting the background color. You can use either the list or map data type.

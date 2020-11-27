@@ -7,16 +7,23 @@ forumTopicId: 18229
 ---
 
 ## Description
+
 <section id='description'>
-In addition to pixels, you can also specify the <code>border-radius</code> using a percentage.
+
+In addition to pixels, you can also specify the `border-radius` using a percentage.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Give your cat photo a <code>border-radius</code> of <code>50%</code>.
+
+Give your cat photo a `border-radius` of `50%`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -98,11 +106,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

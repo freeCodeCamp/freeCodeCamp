@@ -7,8 +7,11 @@ forumTopicId: 18208
 ---
 
 ## Description
+
 <section id='description'>
+
 Sometimes you may want to store data in a flexible <dfn>Data Structure</dfn>. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and <dfn>objects</dfn>.
+
 Here's an example of a complex data structure:
 
 ```js
@@ -27,9 +30,7 @@ var ourMusic = [
 ];
 ```
 
-This is an array which contains one object inside. The object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>"formats"</code> array. If you want to add more album records, you can do this by adding records to the top level array.
-Objects hold data in a property, which has a key-value format. In the example above, <code>"artist": "Daft Punk"</code> is a property that has a key of <code>"artist"</code> and a value of <code>"Daft Punk"</code>.
-<a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.
+This is an array which contains one object inside. The object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested `"formats"` array. If you want to add more album records, you can do this by adding records to the top level array. Objects hold data in a property, which has a key-value format. In the example above, `"artist": "Daft Punk"` is a property that has a key of `"artist"` and a value of `"Daft Punk"`. [JavaScript Object Notation](http://www.json.org/) or `JSON` is a related data interchange format used to store data.
 
 ```json
 {
@@ -45,15 +46,21 @@ Objects hold data in a property, which has a key-value format. In the example ab
 }
 ```
 
-<strong>Note</strong><br>You will need to place a comma after every object in the array, unless it is the last object in the array.
+**Note**  
+You will need to place a comma after every object in the array, unless it is the last object in the array.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a new album to the <code>myMusic</code> array. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings.
+
+Add a new album to the `myMusic` array. Add `artist` and `title` strings, `release_year` number, and a `formats` array of strings.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -82,6 +89,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -106,8 +114,8 @@ var myMusic = [
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -119,8 +127,8 @@ var myMusic = [
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myMusic = [

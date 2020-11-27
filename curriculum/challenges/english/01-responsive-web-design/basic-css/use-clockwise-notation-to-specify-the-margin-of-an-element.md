@@ -7,19 +7,29 @@ forumTopicId: 18345
 ---
 
 ## Description
+
 <section id='description'>
-Let's try this again, but with <code>margin</code> this time.
-Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties individually, you can specify them all in one line, like this:
-<code>margin: 10px 20px 10px 20px;</code>
+
+Let's try this again, but with `margin` this time.
+
+Instead of specifying an element's `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` properties individually, you can specify them all in one line, like this:
+
+`margin: 10px 20px 10px 20px;`
+
 These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use Clockwise Notation to give the element with the <code>blue-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
+
+Use Clockwise Notation to give the element with the `blue-box` class a margin of `40px` on its top and left side, but only `20px` on its bottom and right side.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -87,6 +98,7 @@ tests:
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

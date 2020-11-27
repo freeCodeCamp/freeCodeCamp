@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Using your new `flavor` class as a selector, set the `text-align` property's value to `left`.
@@ -12,6 +13,7 @@ Using your new `flavor` class as a selector, set the `text-align` property's val
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

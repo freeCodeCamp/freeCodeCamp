@@ -6,11 +6,16 @@ forumTopicId: 301220
 ---
 
 ## Description
+
 <section id='description'>
+
 You can obtain values from an object and set the value of a property within an object.
+
 These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.
+
 Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
-Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.<br><br>
+
+Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.  
 
 ```js
 class Book {
@@ -32,19 +37,21 @@ novel.writer = 'newAuthor';
 console.log(novel.writer);  // newAuthor
 ```
 
-Notice the syntax used to invoke the getter and setter. They do not even look like functions.
-Getters and setters are important because they hide internal implementation details.
-<strong>Note:</strong> It is convention to precede the name of a private variable with an underscore (<code>_</code>). However, the practice itself does not make a variable private.
+Notice the syntax used to invoke the getter and setter. They do not even look like functions. Getters and setters are important because they hide internal implementation details. **Note:** It is convention to precede the name of a private variable with an underscore (`_`). However, the practice itself does not make a variable private.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the <code>class</code> keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
-In the class, create a <code>getter</code> to obtain the temperature in Celsius and a <code>setter</code> to set the temperature in Celsius.
 
-Remember that `C = 5/9 * (F - 32)` and `F = C * 9.0 / 5 + 32`, where <code>F</code> is the value of temperature in Fahrenheit, and <code>C</code> is the value of the same temperature in Celsius.
+Use the `class` keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
 
-<strong>Note:</strong> When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+In the class, create a `getter` to obtain the temperature in Celsius and a `setter` to set the temperature in Celsius.
+
+Remember that `C = 5/9 * (F - 32)` and `F = C * 9.0 / 5 + 32`, where `F` is the value of temperature in Fahrenheit, and `C` is the value of the same temperature in Celsius.
+
+**Note:** When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
 
 This is the power of a getter and a setter. You are creating an API for another user, who can get the correct result regardless of which one you track.
 
@@ -53,6 +60,7 @@ In other words, you are abstracting implementation details from the user.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -77,6 +85,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -94,11 +103,10 @@ temp = thermos.temperature; // 26 in Celsius
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

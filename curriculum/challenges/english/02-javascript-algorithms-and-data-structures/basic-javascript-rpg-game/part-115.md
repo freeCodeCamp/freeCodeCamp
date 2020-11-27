@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Inside the `attack` function, update the contents of the `else if` statement. Instead of calling the `defeatMonster` function right away, create an `if` statement with an `else` statement. If the player is fighting the dragon (`fighting === 2`), then call the `winGame` function. Else, call the `defeatMonster` function.
@@ -12,11 +13,13 @@ Inside the `attack` function, update the contents of the `else if` statement. In
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -271,8 +275,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -341,8 +345,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -352,12 +356,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

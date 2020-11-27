@@ -6,17 +6,24 @@ forumTopicId: 16008
 ---
 
 ## Description
+
 <section id='description'>
+
 Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
-<strong>Note</strong><br>You can return the array with its elements in any order.
+
+**Note**  
+You can return the array with its elements in any order.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -57,6 +64,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,13 +80,11 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function diffArray(arr1, arr2) {

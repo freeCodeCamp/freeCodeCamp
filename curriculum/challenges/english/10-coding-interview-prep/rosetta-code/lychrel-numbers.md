@@ -6,7 +6,9 @@ forumTopicId: 385287
 ---
 
 ## Description
+
 <section id='description'>
+
 <ol>
   <li>Take an integer <code>n₀</code>, greater than zero.</li>
   <li>Form the next number <code>n</code> of the series by reversing <code>n₀</code> and adding it to <code>n₀</code></li>
@@ -30,17 +32,17 @@ And if `n₀` = 55 we get:
 110 + 011 = 121,  a palindrome!
 ```
 
-Notice that the check for a palindrome happens <i>after</i> an addition.
+Notice that the check for a palindrome happens *after* an addition.
 
-Some starting numbers seem to go on forever; the recurrence relation for 196 has been calculated for millions of repetitions forming numbers with millions of digits, without forming a palindrome. These numbers that do not end in a palindrome are called <b>Lychrel numbers</b>.
+Some starting numbers seem to go on forever; the recurrence relation for 196 has been calculated for millions of repetitions forming numbers with millions of digits, without forming a palindrome. These numbers that do not end in a palindrome are called **Lychrel numbers**.
 
 For the purposes of this task a Lychrel number is any starting number that does not form a palindrome within 500 (or more) iterations.
 
-<strong>Seed and related Lychrel numbers:</strong>
+**Seed and related Lychrel numbers:**
 
 Any integer produced in the sequence of a Lychrel number is also a Lychrel number.
 
-In general, any sequence from one Lychrel number <i>might</i> converge to join the sequence from a prior Lychrel number candidate; for example the sequences for the numbers 196 and then 689 begin:
+In general, any sequence from one Lychrel number *might* converge to join the sequence from a prior Lychrel number candidate; for example the sequences for the numbers 196 and then 689 begin:
 
 ```bash
     196
@@ -59,14 +61,16 @@ In general, any sequence from one Lychrel number <i>might</i> converge to join t
 
 So we see that the sequence starting with 689 converges to, and continues with the same numbers as that for 196.
 
-Because of this we can further split the Lychrel numbers into true <b>Seed</b> Lychrel number candidates, and <b>Related</b> numbers that produce no palindromes but have integers in their sequence seen as part of the sequence generated from a lower Lychrel number.
+Because of this we can further split the Lychrel numbers into true **Seed** Lychrel number candidates, and **Related** numbers that produce no palindromes but have integers in their sequence seen as part of the sequence generated from a lower Lychrel number.
 
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. Otherwise, return false. Remember that the iteration limit is 500.
+
 </section>
 
 ## Tests

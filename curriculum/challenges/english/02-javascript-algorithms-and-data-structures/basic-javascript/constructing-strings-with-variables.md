@@ -7,8 +7,10 @@ forumTopicId: 16805
 ---
 
 ## Description
+
 <section id='description'>
-Sometimes you will need to build a string, <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> style. By using the concatenation operator (<code>+</code>), you can insert one or more variables into a string you're building.
+
+Sometimes you will need to build a string, [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs) style. By using the concatenation operator (`+`), you can insert one or more variables into a string you're building.
 
 Example:
 
@@ -21,11 +23,15 @@ var ourStr = "Hello, our name is " + ourName + ", how are you?";
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Set <code>myName</code> to a string equal to your name and build <code>myStr</code> with <code>myName</code> between the strings <code>"My name is "</code> and <code>" and I am well!"</code>
+
+Set `myName` to a string equal to your name and build `myStr` with `myName` between the strings `"My name is "` and `" and I am well!"`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,8 +61,8 @@ var myStr;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -80,8 +87,8 @@ var myStr;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myName = "Bob";

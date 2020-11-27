@@ -5,18 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Once a player has the best weapon, they can't buy another one. Wrap all the code in the `buyWeapon` function inside another `if` statement. The condition should check if `currentWeapon` is less than 3 (the index of the last weapon). 
+Once a player has the best weapon, they can't buy another one. Wrap all the code in the `buyWeapon` function inside another `if` statement. The condition should check if `currentWeapon` is less than 3 (the index of the last weapon).
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -161,8 +165,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -231,8 +235,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -242,12 +246,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

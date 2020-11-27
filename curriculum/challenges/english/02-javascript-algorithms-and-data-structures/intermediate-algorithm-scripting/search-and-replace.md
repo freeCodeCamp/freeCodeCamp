@@ -6,20 +6,30 @@ forumTopicId: 16045
 ---
 
 ## Description
+
 <section id='description'>
+
 Perform a search and replace on the sentence using the arguments provided and return the new sentence.
+
 First argument is the sentence to perform the search and replace on.
+
 Second argument is the word that you will be replacing (before).
+
 Third argument is what you will be replacing the second argument with (after).
-<strong>Note</strong><br> Preserve the case of the first character in the original word when you are replacing it. For example if you mean to replace the word "Book" with the word "dog", it should be replaced as "Dog"
+
+**Note**  
+Preserve the case of the first character in the original word when you are replacing it. For example if you mean to replace the word "Book" with the word "dog", it should be replaced as "Dog"
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,13 +67,11 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function myReplace(str, before, after) {

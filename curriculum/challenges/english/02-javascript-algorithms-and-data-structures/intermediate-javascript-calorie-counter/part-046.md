@@ -12,7 +12,7 @@ Another way that we can set the text of the `consumed` element is to set the `in
 
 For example:
 
-```js 
+```js
 consumed.innerHTML = `Hello world`;
 ```
 
@@ -23,6 +23,7 @@ Set the inner HTML of `consumed` to "XX Consumed Calories", where "XX" is the `t
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

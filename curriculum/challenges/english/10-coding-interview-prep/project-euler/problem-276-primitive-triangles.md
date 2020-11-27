@@ -6,18 +6,25 @@ forumTopicId: 301926
 ---
 
 ## Description
+
 <section id='description'>
+
 Consider the triangles with integer sides a, b and c with a ≤ b ≤ c.
-An integer sided triangle (a,b,c) is called primitive if  gcd(a,b,c)=1.
+
+An integer sided triangle (a,b,c) is called primitive if gcd(a,b,c)=1.
+
 How many primitive integer sided triangles exist with a perimeter not exceeding 10 000 000?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,11 +53,10 @@ euler276();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

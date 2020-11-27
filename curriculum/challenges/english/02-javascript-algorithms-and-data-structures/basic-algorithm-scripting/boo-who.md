@@ -6,17 +6,23 @@ forumTopicId: 16000
 ---
 
 ## Description
+
 <section id='description'>
+
 Check if a value is classified as a boolean primitive. Return true or false.
+
 Boolean primitives are true and false.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,13 +68,11 @@ booWho(null);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function booWho(bool) {

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Designate what the first button in the HTML does by setting the `onclick` property of `button1` to the function name `goStore`. You will create the `goStore` function later. For example, in `button.onclick = openProgram;`, the `onclick` property of `button` is set to `openProgram`.
@@ -12,11 +13,13 @@ Designate what the first button in the HTML does by setting the `onclick` proper
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,8 +66,8 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -132,8 +136,8 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -143,12 +147,11 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

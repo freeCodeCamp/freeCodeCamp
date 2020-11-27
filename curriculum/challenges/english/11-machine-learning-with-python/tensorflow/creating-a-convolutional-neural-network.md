@@ -6,13 +6,16 @@ videoId: kfv0K8MtkIc
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks below to complete the architecture for a convolutional neural network:
@@ -47,7 +50,6 @@ question:
 
       C: `MaxPooling2D`
   solution: 3
-```
+````
 
 </section>
-

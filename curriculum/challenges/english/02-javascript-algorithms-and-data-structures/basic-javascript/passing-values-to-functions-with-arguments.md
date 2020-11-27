@@ -7,9 +7,12 @@ forumTopicId: 18254
 ---
 
 ## Description
+
 <section id='description'>
+
 <dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.
-Here is a function with two parameters, <code>param1</code> and <code>param2</code>:
+
+Here is a function with two parameters, `param1` and `param2`:
 
 ```js
 function testFun(param1, param2) {
@@ -17,17 +20,20 @@ function testFun(param1, param2) {
 }
 ```
 
-Then we can call <code>testFun</code>:
-<code>testFun("Hello", "World");</code>
-We have passed two arguments, <code>"Hello"</code> and <code>"World"</code>. Inside the function, <code>param1</code> will equal "Hello" and <code>param2</code> will equal "World". Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.
+Then we can call `testFun`: `testFun("Hello", "World");` We have passed two arguments, `"Hello"` and `"World"`. Inside the function, `param1` will equal "Hello" and `param2` will equal "World". Note that you could call `testFun` again with different arguments and the parameters would take on the value of the new arguments.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 <ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function with two numbers as arguments.</li></ol>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,6 +65,7 @@ tests:
 </div>
 
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -86,6 +94,7 @@ capture();
 </div>
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -103,8 +112,8 @@ if (typeof functionWithArgs !== "function") {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function functionWithArgs(a, b) {

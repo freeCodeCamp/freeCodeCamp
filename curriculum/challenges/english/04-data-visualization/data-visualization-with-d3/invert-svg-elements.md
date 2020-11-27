@@ -6,21 +6,34 @@ forumTopicId: 301488
 ---
 
 ## Description
+
 <section id='description'>
+
 You may have noticed the bar chart looked like it's upside-down, or inverted. This is because of how SVG uses (x, y) coordinates.
-In SVG, the origin point for the coordinates is in the upper-left corner. An <code>x</code> coordinate of 0 places a shape on the left edge of the SVG area. A <code>y</code> coordinate of 0 places a shape on the top edge of the SVG area. Higher <code>x</code> values push the rectangle to the right. Higher <code>y</code> values push the rectangle down.
-To make the bars right-side-up, you need to change the way the <code>y</code> coordinate is calculated. It needs to account for both the height of the bar and the total height of the SVG area.
-The height of the SVG area is 100. If you have a data point of 0 in the set, you would want the bar to start at the bottom of the SVG area (not the top). To do this, the <code>y</code> coordinate needs a value of 100. If the data point value were 1, you would start with a <code>y</code> coordinate of 100 to set the bar at the bottom. Then you need to account for the height of the bar of 1, so the final <code>y</code> coordinate would be 99.
-The <code>y</code> coordinate that is <code>y = heightOfSVG - heightOfBar</code> would place the bars right-side-up.
+
+In SVG, the origin point for the coordinates is in the upper-left corner. An `x` coordinate of 0 places a shape on the left edge of the SVG area. A `y` coordinate of 0 places a shape on the top edge of the SVG area. Higher `x` values push the rectangle to the right. Higher `y` values push the rectangle down.
+
+To make the bars right-side-up, you need to change the way the `y` coordinate is calculated. It needs to account for both the height of the bar and the total height of the SVG area.
+
+The height of the SVG area is 100. If you have a data point of 0 in the set, you would want the bar to start at the bottom of the SVG area (not the top). To do this, the `y` coordinate needs a value of 100. If the data point value were 1, you would start with a `y` coordinate of 100 to set the bar at the bottom. Then you need to account for the height of the bar of 1, so the final `y` coordinate would be 99.
+
+The `y` coordinate that is `y = heightOfSVG - heightOfBar` would place the bars right-side-up.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the callback function for the <code>y</code> attribute to set the bars right-side-up. Remember that the <code>height</code> of the bar is 3 times the data value <code>d</code>.
-<strong>Note</strong><br>In general, the relationship is <code>y = h - m * d</code>, where <code>m</code> is the constant that scales the data points.
+
+Change the callback function for the `y` attribute to set the bars right-side-up. Remember that the `height` of the bar is 3 times the data value `d`.
+
+**Note**  
+In general, the relationship is `y = h - m * d`, where `m` is the constant that scales the data points.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +62,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -86,11 +100,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

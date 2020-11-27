@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Use the `+=` operator to add "Your [last item in inventory array] breaks." to the end of `text.innerText`. Instead of the bracketed text, it should show the actual item name. 
+Use the `+=` operator to add "Your \[last item in inventory array] breaks." to the end of `text.innerText`. Instead of the bracketed text, it should show the actual item name.
 
 Use `inventory.pop()` to both remove the last element from the array AND return that element. For example:
 
@@ -20,11 +21,13 @@ console.log("I bought " + shoppingList.pop() + "."); // Logs "I bought cereal."
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -308,8 +312,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -378,8 +382,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -389,12 +393,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

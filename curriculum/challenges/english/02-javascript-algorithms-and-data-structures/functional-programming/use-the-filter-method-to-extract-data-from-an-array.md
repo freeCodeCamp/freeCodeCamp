@@ -6,11 +6,16 @@ forumTopicId: 18179
 ---
 
 ## Description
+
 <section id='description'>
-Another useful array function is <code>Array.prototype.filter()</code>, or simply <code>filter()</code>. 
-<code>filter</code> calls a function on each element of an array and returns a new array containing only the elements for which that function returns <code>true</code>.  In other words, it filters the array, based on the function passed to it.  Like <code>map</code>, it does this without needing to modify the original array.
-The callback function accepts three arguments.  The first argument is the current element being processed.  The second is the index of that element and the third is the array upon which the <code>filter</code> method was called.
-See below for an example using the <code>filter</code> method on the <code>users</code> array to return a new array containing only the users under the age of 30. For simplicity, the example only uses the first argument of the callback.
+
+Another useful array function is `Array.prototype.filter()`, or simply `filter()`.
+
+`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns `true`. In other words, it filters the array, based on the function passed to it. Like `map`, it does this without needing to modify the original array.
+
+The callback function accepts three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `filter` method was called.
+
+See below for an example using the `filter` method on the `users` array to return a new array containing only the users under the age of 30. For simplicity, the example only uses the first argument of the callback.
 
 ```js
 const users = [
@@ -26,11 +31,15 @@ console.log(usersUnder30); // [ { name: 'Amy', age: 20 }, { name: 'camperCat', a
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The variable <code>watchList</code> holds an array of objects with information on several movies. Use a combination of <code>filter</code> and <code>map</code> on <code>watchList</code> to assign a new array of objects with only <code>title</code> and <code>rating</code> keys.  The new array should only include objects where <code>imdbRating</code> is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.
+
+The variable `watchList` holds an array of objects with information on several movies. Use a combination of `filter` and `map` on `watchList` to assign a new array of objects with only `title` and `rating` keys. The new array should only include objects where `imdbRating` is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -49,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -179,11 +189,10 @@ console.log(filteredList);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The range for this scale will go from the left of your graph to the right, with 2012 on the left and 2020 on the right. Add the `range` function to the `xScale` and pass it an array with the values: `svgMargin` and `svgWidth - svgMargin`. This will translate to `[70, 630]`. So 2012 will use 70 as is x-coordinate and 2020 will use 630 as its x-coordinate.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -70,8 +76,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -104,10 +110,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

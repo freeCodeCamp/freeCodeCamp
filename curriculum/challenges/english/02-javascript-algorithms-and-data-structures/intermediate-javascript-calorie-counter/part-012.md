@@ -12,14 +12,14 @@ We need a way to iterate through all the `meal` items in the `total` array and r
 
 The `map()` method allows us to do exactly that.
 
-Delete `const meal = total[0];` and chain the `.map()` method to the end of your `Array.from()` method.
-Here's an example of `.map()` chained to an array: `[3, 2, 1].map()`
+Delete `const meal = total[0];` and chain the `.map()` method to the end of your `Array.from()` method. Here's an example of `.map()` chained to an array: `[3, 2, 1].map()`
 
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

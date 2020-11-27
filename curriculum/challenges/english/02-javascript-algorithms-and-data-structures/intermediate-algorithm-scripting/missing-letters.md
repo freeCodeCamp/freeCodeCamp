@@ -6,17 +6,23 @@ forumTopicId: 16023
 ---
 
 ## Description
+
 <section id='description'>
+
 Find the missing letter in the passed letter range and return it.
+
 If all letters are present in the range, return undefined.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,13 +58,11 @@ fearNotLetter("abce");
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function fearNotLetter (str) {

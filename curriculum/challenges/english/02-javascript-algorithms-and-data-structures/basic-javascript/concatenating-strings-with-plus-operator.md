@@ -7,15 +7,19 @@ forumTopicId: 16802
 ---
 
 ## Description
+
 <section id='description'>
-In JavaScript, when the <code>+</code> operator is used with a <code>String</code> value, it is called the <dfn>concatenation</dfn> operator. You can build a new string out of other strings by <dfn>concatenating</dfn> them together.
-<strong>Example</strong>
+
+In JavaScript, when the `+` operator is used with a `String` value, it is called the <dfn>concatenation</dfn> operator. You can build a new string out of other strings by <dfn>concatenating</dfn> them together.
+
+**Example**
 
 ```js
 'My name is Alan,' + ' I concatenate.'
 ```
 
-<strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+**Note**  
+Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
 
 Example:
 
@@ -27,11 +31,15 @@ var ourStr = "I come first. " + "I come second.";
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Build <code>myStr</code> from the strings <code>"This is the start. "</code> and <code>"This is the end."</code> using the <code>+</code> operator.
+
+Build `myStr` from the strings `"This is the start. "` and `"This is the end."` using the `+` operator.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,8 +70,8 @@ var myStr; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -80,8 +89,8 @@ var myStr; // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myStr = "This is the start. " + "This is the end.";

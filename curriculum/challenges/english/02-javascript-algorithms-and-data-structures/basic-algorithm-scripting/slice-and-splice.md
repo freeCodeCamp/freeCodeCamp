@@ -6,19 +6,27 @@ forumTopicId: 301148
 ---
 
 ## Description
+
 <section id='description'>
+
 You are given two arrays and an index.
+
 Copy each element of the first array into the second array, in order.
-Begin inserting elements at index <code>n</code> of the second array.
+
+Begin inserting elements at index `n` of the second array.
+
 Return the resulting array. The input arrays should remain the same after the function runs.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,8 +64,8 @@ frankenSplice([1, 2, 3], [4, 5, 6], 1);
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -69,8 +78,8 @@ let testArr2 = ["a", "b"];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function frankenSplice(arr1, arr2, n) {

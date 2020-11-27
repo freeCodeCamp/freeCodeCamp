@@ -6,8 +6,11 @@ forumTopicId: 301157
 ---
 
 ## Description
+
 <section id='description'>
-While <code>slice()</code> allows us to be selective about what elements of an array to copy, among several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy <em>all</em> of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: <code>...</code>
+
+While `slice()` allows us to be selective about what elements of an array to copy, among several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy *all* of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: `...`
+
 In practice, we can use the spread operator to copy an array like so:
 
 ```js
@@ -20,11 +23,15 @@ let thatArray = [...thisArray];
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-We have defined a function, <code>copyMachine</code> which takes <code>arr</code> (an array) and <code>num</code> (a number) as arguments. The function is supposed to return a new array made up of <code>num</code> copies of <code>arr</code>. We have done most of the work for you, but it doesn't work quite right yet. Modify the function using spread syntax so that it works correctly (hint: another method we have already covered might come in handy here!).
+
+We have defined a function, `copyMachine` which takes `arr` (an array) and `num` (a number) as arguments. The function is supposed to return a new array made up of `num` copies of `arr`. We have done most of the work for you, but it doesn't work quite right yet. Modify the function using spread syntax so that it works correctly (hint: another method we have already covered might come in handy here!).
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,6 +77,7 @@ console.log(copyMachine([true, false, true], 2));
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

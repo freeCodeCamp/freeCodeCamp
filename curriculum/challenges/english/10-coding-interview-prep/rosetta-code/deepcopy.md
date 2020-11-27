@@ -6,23 +6,30 @@ forumTopicId: 302247
 ---
 
 ## Description
+
 <section id='description'>
+
 Write a function that returns a deep copy of a given object. The copy must not be the same object that was given.
+
 This task will not test for:
+
 <ul>
   <li>Objects with properties that are functions</li>
   <li>Date objects or object with properties that are Date objects</li>
   <li>RegEx or object with properties that are RegEx objects</li>
   <li>Prototype copying</li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,8 +64,8 @@ function deepcopy(obj) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -77,8 +85,8 @@ const obj3 = {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function deepcopy(obj) {

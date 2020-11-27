@@ -6,10 +6,14 @@ forumTopicId: 301366
 ---
 
 ## Description
+
 <section id='description'>
+
 You can specify the lower and upper number of patterns with quantity specifiers using curly brackets. Sometimes you only want to specify the lower number of patterns with no upper limit.
+
 To only specify the lower number of patterns, keep the first number followed by a comma.
-For example, to match only the string <code>"hah"</code> with the letter <code>a</code> appearing at least <code>3</code> times, your regex would be <code>/ha{3,}h/</code>.
+
+For example, to match only the string `"hah"` with the letter `a` appearing at least `3` times, your regex would be `/ha{3,}h/`.
 
 ```js
 let A4 = "haaaah";
@@ -24,11 +28,15 @@ multipleA.test(A100); // Returns true
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the regex <code>haRegex</code> to match the word <code>"Hazzah"</code> only when it has four or more letter <code>z</code>'s.
+
+Change the regex `haRegex` to match the word `"Hazzah"` only when it has four or more letter `z`'s.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,11 +74,10 @@ let result = haRegex.test(haStr);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

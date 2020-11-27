@@ -15,6 +15,7 @@ Similar to how you removed each `foodInputs` elements, use the `forEach()` funct
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

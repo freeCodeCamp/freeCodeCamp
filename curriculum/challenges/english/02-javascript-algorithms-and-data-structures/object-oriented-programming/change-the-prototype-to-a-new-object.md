@@ -6,8 +6,10 @@ forumTopicId: 301316
 ---
 
 ## Description
+
 <section id='description'>
-Up until now you have been adding properties to the <code>prototype</code> individually:
+
+Up until now you have been adding properties to the `prototype` individually:
 
 ```js
 Bird.prototype.numLegs = 2;
@@ -25,7 +27,7 @@ Bird.prototype.describe = function() {
 }
 ```
 
-A more efficient way is to set the <code>prototype</code> to a new object that already contains the properties. This way, the properties are added all at once:
+A more efficient way is to set the `prototype` to a new object that already contains the properties. This way, the properties are added all at once:
 
 ```js
 Bird.prototype = {
@@ -42,11 +44,15 @@ Bird.prototype = {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the property <code>numLegs</code> and the two methods <code>eat()</code> and <code>describe()</code> to the <code>prototype</code> of <code>Dog</code> by setting the <code>prototype</code> to a new object.
+
+Add the property `numLegs` and the two methods `eat()` and `describe()` to the `prototype` of `Dog` by setting the `prototype` to a new object.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -65,6 +71,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -82,13 +89,11 @@ Dog.prototype = {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Dog(name) {

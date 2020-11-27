@@ -6,21 +6,31 @@ forumTopicId: 16780
 ---
 
 ## Description
+
 <section id='description'>
+
 In addition to moving elements, you can also copy them from one place to another.
-jQuery has a function called <code>clone()</code> that makes a copy of an element.
-For example, if we wanted to copy <code>target2</code> from our <code>left-well</code> to our <code>right-well</code>, we would use:
-<code>$("#target2").clone().appendTo("#right-well");</code>
+
+jQuery has a function called `clone()` that makes a copy of an element.
+
+For example, if we wanted to copy `target2` from our `left-well` to our `right-well`, we would use:
+
+`$("#target2").clone().appendTo("#right-well");`
+
 Did you notice this involves sticking two jQuery functions together? This is called <dfn>function chaining</dfn> and it's a convenient way to get things done with jQuery.
-Clone your <code>target5</code> element and append it to your <code>left-well</code>.
+
+Clone your `target5` element and append it to your `left-well`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,11 +90,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

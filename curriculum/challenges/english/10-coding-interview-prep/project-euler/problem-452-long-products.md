@@ -6,19 +6,27 @@ forumTopicId: 302125
 ---
 
 ## Description
+
 <section id='description'>
+
 Define F(m,n) as the number of n-tuples of positive integers for which the product of the elements doesn't exceed m.
+
 F(10, 10) = 571.
-F(106, 106) mod 1 234 567 891 = 252903833.
-Find F(109, 109) mod 1 234 567 891.
+
+F(106, 106) mod 1 234 567 891 = 252903833.
+
+Find F(109, 109) mod 1 234 567 891.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,11 +55,10 @@ euler452();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

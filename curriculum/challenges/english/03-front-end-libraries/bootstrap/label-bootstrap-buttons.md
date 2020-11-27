@@ -6,17 +6,23 @@ forumTopicId: 18222
 ---
 
 ## Description
+
 <section id='description'>
+
 Just like we labeled our wells, we want to label our buttons.
-Give each of your <code>button</code> elements text that corresponds to its <code>id</code>'s selector.
+
+Give each of your `button` elements text that corresponds to its `id`'s selector.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -69,11 +76,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

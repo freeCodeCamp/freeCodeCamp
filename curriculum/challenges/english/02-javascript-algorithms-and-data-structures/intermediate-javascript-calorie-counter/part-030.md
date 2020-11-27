@@ -23,6 +23,7 @@ Create a variable named `resultText` and set it equal to a text node. Leave the 
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

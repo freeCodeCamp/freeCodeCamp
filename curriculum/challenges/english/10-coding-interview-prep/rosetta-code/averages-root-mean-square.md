@@ -6,19 +6,27 @@ forumTopicId: 302228
 ---
 
 ## Description
+
 <section id='description'>
-Compute the  <a href="https://en.wikipedia.org/wiki/Root mean square" title="wp: Root mean square" target='_blank'>Root mean square</a>  of the numbers 1 through 10 inclusive.
-The <i>root mean square</i> is also known by its initials RMS (or rms), and as the <strong>quadratic mean</strong>.
+
+Compute the [Root mean square](<https://en.wikipedia.org/wiki/Root mean square> "wp: Root mean square") of the numbers 1 through 10 inclusive.
+
+The *root mean square* is also known by its initials RMS (or rms), and as the **quadratic mean**.
+
 The RMS is calculated as the mean of the squares of the numbers, square-rooted:
-<big>$$x_{\mathrm{rms}} = \sqrt {{{x_1}^2 + {x_2}^2 + \cdots + {x_n}^2} \over n}. $$</big>
+
+$$x\_{\\mathrm{rms}} = \\sqrt {{{x_1}^2 + {x_2}^2 + \\cdots + {x_n}^2} \\over n}. $$
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,8 +54,8 @@ function rms(arr) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -59,8 +68,8 @@ const answer1 = 6.2048368229954285;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function rms(arr) {

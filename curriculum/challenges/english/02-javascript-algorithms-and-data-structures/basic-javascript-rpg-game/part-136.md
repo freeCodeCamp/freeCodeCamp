@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-At the end of the code, add two new functions named `pickTwo` and `pickEight`. 
+At the end of the code, add two new functions named `pickTwo` and `pickEight`.
 
-Inside each function call the `pick()` function. Pass either "2" or "8" as arguments to `pick` depending on the function name. 
+Inside each function call the `pick()` function. Pass either "2" or "8" as arguments to `pick` depending on the function name.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -313,8 +317,8 @@ function easterEgg() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -386,8 +390,8 @@ const pick = num => num; // Initialize for test
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -397,12 +401,11 @@ const pick = num => num; // Initialize for test
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

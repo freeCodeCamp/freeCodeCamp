@@ -6,13 +6,16 @@ videoId: h1XUt1AgIOI
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks below to use Google's pre-trained MobileNet V2 model as a base for a convolutional neural network:
@@ -44,7 +47,6 @@ question:
 
       C: `False`
   solution: 1
-```
+````
 
 </section>
-

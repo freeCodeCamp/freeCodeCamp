@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now set the `onclick` property of `button2` and `button3`. The second button should be set to `goCave` and the third button should be set to `fightDragon`.
@@ -12,11 +13,13 @@ Now set the `onclick` property of `button2` and `button3`. The second button sho
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,8 +66,8 @@ button1.onclick = goStore;
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -132,8 +136,8 @@ button1.onclick = goStore;
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -143,12 +147,11 @@ button1.onclick = goStore;
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

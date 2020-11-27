@@ -6,7 +6,9 @@ forumTopicId: 301153
 ---
 
 ## Description
+
 <section id='description'>
+
 At their most basic, objects are just collections of <dfn>key-value</dfn> pairs. In other words, they are pieces of data (<dfn>values</dfn>) mapped to unique identifiers called <dfn>properties</dfn> (<dfn>keys</dfn>). Take a look at an example:
 
 ```js
@@ -17,13 +19,13 @@ const tekkenCharacter = {
 };
 ```
 
-The above code defines a Tekken video game character object called <code>tekkenCharacter</code>. It has three properties, each of which map to a specific value. If you want to add an additional property, such as "origin", it can be done by assigning <code>origin</code> to the object:
+The above code defines a Tekken video game character object called `tekkenCharacter`. It has three properties, each of which map to a specific value. If you want to add an additional property, such as "origin", it can be done by assigning `origin` to the object:
 
 ```js
 tekkenCharacter.origin = 'South Korea';
 ```
 
-This uses dot notation. If you were to observe the <code>tekkenCharacter</code> object, it will now include the <code>origin</code> property. Hwoarang also had distinct orange hair. You can add this property with bracket notation by doing:
+This uses dot notation. If you were to observe the `tekkenCharacter` object, it will now include the `origin` property. Hwoarang also had distinct orange hair. You can add this property with bracket notation by doing:
 
 ```js
 tekkenCharacter['hair color'] = 'dyed orange';
@@ -53,11 +55,15 @@ After adding all the examples, the object will look like this:
 </section>
 
 ## Instructions
+
 <section id='instructions'>
- A <code>foods</code> object has been created with three entries. Using the syntax of your choice, add three more entries to it: <code>bananas</code> with a value of <code>13</code>, <code>grapes</code> with a value of <code>35</code>, and <code>strawberries</code> with a value of <code>27</code>.
+
+A `foods` object has been created with three entries. Using the syntax of your choice, add three more entries to it: `bananas` with a value of `13`, `grapes` with a value of `35`, and `strawberries` with a value of `27`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -78,6 +84,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -98,11 +105,10 @@ console.log(foods);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

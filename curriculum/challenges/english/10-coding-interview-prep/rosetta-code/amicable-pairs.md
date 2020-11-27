@@ -6,22 +6,32 @@ forumTopicId: 302225
 ---
 
 ## Description
+
 <section id='description'>
-Two integers $N$ and $M$ are said to be <a href='https://en.wikipedia.org/wiki/Amicable numbers' title='wp: Amicable numbers' target='_blank'>amicable pairs</a> if $N \neq M$ and the sum of the <a href="https://rosettacode.org/wiki/Proper divisors" title="Proper divisors" target="_blank">proper divisors</a> of $N$ ($\mathrm{sum}(\mathrm{propDivs}(N))$) $= M$ as well as $\mathrm{sum}(\mathrm{propDivs}(M)) = N$.
-<strong>Example:</strong>
-<strong>1184</strong> and <strong>1210</strong> are an amicable pair, with proper divisors:
+
+Two integers $N$ and $M$ are said to be [amicable pairs](<https://en.wikipedia.org/wiki/Amicable numbers> "wp: Amicable numbers") if $N \\neq M$ and the sum of the [proper divisors](<https://rosettacode.org/wiki/Proper divisors> "Proper divisors") of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
+
+**Example:**
+
+**1184** and **1210** are an amicable pair, with proper divisors:
+
 <ul>
   <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592  and</li>
   <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605   respectively.</li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Calculate and show here the Amicable pairs below 20,000 (there are eight).
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,8 +64,8 @@ function amicablePairsUpTo(maxNum) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -81,8 +92,8 @@ const answer20000 = [
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 // amicablePairsUpTo :: Int -> [(Int, Int)]

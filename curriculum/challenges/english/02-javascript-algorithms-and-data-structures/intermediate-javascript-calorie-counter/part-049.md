@@ -19,6 +19,7 @@ Set the `class` attribute of the `output` element equal to a class named `border
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

@@ -6,37 +6,44 @@ forumTopicId: 301572
 ---
 
 ## Description
+
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://stock-price-checker.freecodecamp.rocks/" target="_blank">https://stock-price-checker.freecodecamp.rocks/</a>.
-Since all reliable stock price APIs require an API key, we've built a workaround. Use <a href="https://stock-price-checker-proxy.freecodecamp.rocks/" target="_blank">https://stock-price-checker-proxy.freecodecamp.rocks/</a> to get up-to-date stock price information without needing to sign up for your own key.
+
+Build a full stack JavaScript app that is functionally similar to this: <https://stock-price-checker.freecodecamp.rocks/>.
+
+Since all reliable stock price APIs require an API key, we've built a workaround. Use <https://stock-price-checker-proxy.freecodecamp.rocks/> to get up-to-date stock price information without needing to sign up for your own key.
+
 Working on this project will involve you writing your code using one of the following methods:
 
-- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-stockchecker/' target='_blank'>this GitHub repo</a> and complete your project locally.
-- Use <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-stockchecker' target='_blank'>our repl.it starter project</a> to complete your project.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-stockchecker/) and complete your project locally.
+-   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-stockchecker) to complete your project.
+-   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-1. SET `NODE_ENV` to `test` without quotes and set `DB` to your MongoDB connection string
-2. Complete the project in `routes/api.js` or by creating a handler/controller
-3. You will add any security features to `server.js`
-4. You will create all of the functional tests in `tests/2_functional-tests.js`
+1.  SET `NODE_ENV` to `test` without quotes and set `DB` to your MongoDB connection string
+2.  Complete the project in `routes/api.js` or by creating a handler/controller
+3.  You will add any security features to `server.js`
+4.  You will create all of the functional tests in `tests/2_functional-tests.js`
 
 Write the following tests in `tests/2_functional-tests.js`:
 
-- Viewing one stock: GET request to `/api/stock-prices/`
-- Viewing one stock and liking it: GET request to `/api/stock-prices/`
-- Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
-- Viewing two stocks: GET request to `/api/stock-prices/`
-- Viewing two stocks and liking them: GET request to `/api/stock-prices/`
+-   Viewing one stock: GET request to `/api/stock-prices/`
+-   Viewing one stock and liking it: GET request to `/api/stock-prices/`
+-   Viewing the same stock and liking it again: GET request to `/api/stock-prices/`
+-   Viewing two stocks: GET request to `/api/stock-prices/`
+-   Viewing two stocks and liking them: GET request to `/api/stock-prices/`
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -95,11 +102,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

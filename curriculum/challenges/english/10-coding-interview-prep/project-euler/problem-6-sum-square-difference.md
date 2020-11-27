@@ -6,6 +6,7 @@ forumTopicId: 302171
 ---
 
 ## Description
+
 <section id='description'>
 
 The sum of the squares of the first ten natural numbers is,
@@ -23,11 +24,13 @@ Find the difference between the sum of the squares of the first `n` natural numb
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,13 +65,11 @@ sumSquareDifference(100);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const sumSquareDifference = (number)=>{

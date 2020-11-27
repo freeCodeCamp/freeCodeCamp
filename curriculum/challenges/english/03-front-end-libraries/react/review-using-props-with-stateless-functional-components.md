@@ -6,18 +6,27 @@ forumTopicId: 301411
 ---
 
 ## Description
+
 <section id='description'>
+
 Except for the last challenge, you've been passing props to stateless functional components. These components act like pure functions. They accept props as input and return the same view every time they are passed the same props. You may be wondering what state is, and the next challenge will cover it in more detail. Before that, here's a review of the terminology for components.
-A <em>stateless functional component</em> is any function you write which accepts props and returns JSX. A <em>stateless component</em>, on the other hand, is a class that extends <code>React.Component</code>, but does not use internal state (covered in the next challenge). Finally, a <em>stateful component</em> is a class component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.
+
+A *stateless functional component* is any function you write which accepts props and returns JSX. A *stateless component*, on the other hand, is a class that extends `React.Component`, but does not use internal state (covered in the next challenge). Finally, a *stateful component* is a class component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.
+
 A common pattern is to try to minimize statefulness and to create stateless functional components wherever possible. This helps contain your state management to a specific area of your application. In turn, this improves development and maintenance of your app by making it easier to follow how changes to state affect its behavior.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The code editor has a <code>CampSite</code> component that renders a <code>Camper</code> component as a child. Define the <code>Camper</code> component and assign it default props of <code>{ name: 'CamperBot' }</code>. Inside the <code>Camper</code> component, render any code that you want, but make sure to have one <code>p</code> element that includes only the <code>name</code> value that is passed in as a <code>prop</code>. Finally, define <code>propTypes</code> on the <code>Camper</code> component to require <code>name</code> to be provided as a prop and verify that it is of type <code>string</code>.
+
+The code editor has a `CampSite` component that renders a `Camper` component as a child. Define the `Camper` component and assign it default props of `{ name: 'CamperBot' }`. Inside the `Camper` component, render any code that you want, but make sure to have one `p` element that includes only the `name` value that is passed in as a `prop`. Finally, define `propTypes` on the `Camper` component to require `name` to be provided as a prop and verify that it is of type `string`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -62,6 +72,7 @@ class CampSite extends React.Component {
 </div>
 
 ### Before Test
+
 <div id='jsx-setup'>
 
 ```jsx
@@ -73,6 +84,7 @@ var PropTypes = {
 </div>
 
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -84,8 +96,8 @@ ReactDOM.render(<CampSite />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class CampSite extends React.Component {

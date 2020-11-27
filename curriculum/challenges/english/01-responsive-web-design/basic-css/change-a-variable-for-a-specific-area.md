@@ -7,17 +7,25 @@ forumTopicId: 301085
 ---
 
 ## Description
+
 <section id='description'>
-When you create your variables in <code>:root</code> they will set the value of that variable for the whole page.
+
+When you create your variables in `:root` they will set the value of that variable for the whole page.
+
 You can then over-write these variables by setting them again within a specific element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the value of <code>--penguin-belly</code> to <code>white</code> in the <code>penguin</code> class.
+
+Change the value of `--penguin-belly` to `white` in the `penguin` class.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -241,13 +250,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

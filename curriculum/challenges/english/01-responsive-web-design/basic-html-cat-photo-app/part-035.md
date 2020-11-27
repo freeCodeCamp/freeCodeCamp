@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `action` attribute indicates where form data should be sent. For example, `<form action="/submit-url"></form>` tells the browser that the form data should be sent to the path `/submit-url`.
@@ -14,6 +15,7 @@ Add an `action` attribute with the value `https://freecatphotoapp.com/submit-cat
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -92,4 +95,5 @@ tests:
 ```
 
 </div>
+
 </section>

@@ -7,22 +7,35 @@ forumTopicId: 18253
 ---
 
 ## Description
+
 <section id='description'>
-Our "pink-text" class overrode our <code>body</code> element's CSS declaration!
-We just proved that our classes will override the <code>body</code> element's CSS. So the next logical question is, what can we do to override our <code>pink-text</code> class?
+
+Our "pink-text" class overrode our `body` element's CSS declaration!
+
+We just proved that our classes will override the `body` element's CSS. So the next logical question is, what can we do to override our `pink-text` class?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create an additional CSS class called <code>blue-text</code> that gives an element the color blue. Make sure it's below your <code>pink-text</code> class declaration.
-Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins.
+
+Create an additional CSS class called `blue-text` that gives an element the color blue. Make sure it's below your `pink-text` class declaration.
+
+Apply the `blue-text` class to your `h1` element in addition to your `pink-text` class, and let's see which one wins.
+
 Applying multiple class attributes to a HTML element is done with a space between them like this:
-<code>class="class1 class2"</code>
-<strong>Note:</strong> It doesn't matter which order the classes are listed in the HTML element.
-However, the order of the <code>class</code> declarations in the <code>&#60;style&#62;</code> section is what is important. The second declaration will always take precedence over the first. Because <code>.blue-text</code> is declared second, it overrides the attributes of <code>.pink-text</code>
+
+`class="class1 class2"`
+
+**Note:** It doesn't matter which order the classes are listed in the HTML element.
+
+However, the order of the `class` declarations in the `<style>` section is what is important. The second declaration will always take precedence over the first. Because `.blue-text` is declared second, it overrides the attributes of `.pink-text`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -61,11 +75,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

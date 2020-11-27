@@ -6,8 +6,11 @@ forumTopicId: 301324
 ---
 
 ## Description
+
 <section id='description'>
-When an object inherits its <code>prototype</code> from another object, it also inherits the supertype's constructor property.
+
+When an object inherits its `prototype` from another object, it also inherits the supertype's constructor property.
+
 Here's an example:
 
 ```js
@@ -17,7 +20,7 @@ let duck = new Bird();
 duck.constructor // function Animal(){...}
 ```
 
-But <code>duck</code> and all instances of <code>Bird</code> should show that they were constructed by <code>Bird</code> and not <code>Animal</code>. To do so, you can manually set <code>Bird's</code> constructor property to the <code>Bird</code> object:
+But `duck` and all instances of `Bird` should show that they were constructed by `Bird` and not `Animal`. To do so, you can manually set `Bird's` constructor property to the `Bird` object:
 
 ```js
 Bird.prototype.constructor = Bird;
@@ -27,11 +30,15 @@ duck.constructor // function Bird(){...}
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Fix the code so <code>duck.constructor</code> and <code>beagle.constructor</code> return their respective constructors.
+
+Fix the code so `duck.constructor` and `beagle.constructor` return their respective constructors.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +57,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,13 +80,11 @@ let beagle = new Dog();
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Animal() { }

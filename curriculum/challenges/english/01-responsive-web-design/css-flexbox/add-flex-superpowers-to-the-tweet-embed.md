@@ -7,17 +7,25 @@ forumTopicId: 301100
 ---
 
 ## Description
+
 <section id='description'>
-To the right is the tweet embed that will be used as the practical example. Some of the elements would look better with a different layout. The last challenge demonstrated <code>display: flex</code>. Here you'll add it to several components in the tweet embed to start adjusting their positioning.
+
+To the right is the tweet embed that will be used as the practical example. Some of the elements would look better with a different layout. The last challenge demonstrated `display: flex`. Here you'll add it to several components in the tweet embed to start adjusting their positioning.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the CSS property <code>display: flex</code> to all of the following items - note that the selectors are already set up in the CSS:
-<code>header</code>, the header's <code>.profile-name</code>, the header's <code>.follow-btn</code>, the header's <code>h3</code> and <code>h4</code>, the <code>footer</code>, and the footer's <code>.stats</code>.
+
+Add the CSS property `display: flex` to all of the following items - note that the selectors are already set up in the CSS:
+
+`header`, the header's `.profile-name`, the header's `.follow-btn`, the header's `h3` and `h4`, the `footer`, and the footer's `.stats`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -140,11 +149,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

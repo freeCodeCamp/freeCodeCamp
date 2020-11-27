@@ -6,19 +6,22 @@ forumTopicId: 302232
 ---
 
 ## Description
+
 <section id='description'>
-Provide a function to find the closest two points among a set of given points in two dimensions,  i.e. to solve the  <a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem" target="blank">Closest pair of points problem</a>  in the  <i>planar</i>  case.
-The straightforward solution is a  O(n<sup>2</sup>) algorithm (which we can call <i>brute-force algorithm</i>); the pseudo-code (using indexes) could be simply:
-<pre>
-<strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
-<strong>if</strong> N < 2 <strong>then</strong>
+
+Provide a function to find the closest two points among a set of given points in two dimensions, i.e. to solve the [Closest pair of points problem](<https://en.wikipedia.org/wiki/Closest pair of points problem> "wp: Closest pair of points problem") in the *planar* case.
+
+The straightforward solution is a O(n<sup>2</sup>) algorithm (which we can call *brute-force algorithm*); the pseudo-code (using indexes) could be simply:
+
+<pre><strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
+<strong>if</strong> N &#x3C; 2 <strong>then</strong>
   <strong>return</strong> ∞
 <strong>else</strong>
   minDistance ← |P(1) - P(2)|
   minPoints ← { P(1), P(2) }
   <strong>foreach</strong> i ∈ [1, N-1]
     <strong>foreach</strong> j ∈ [i+1, N]
-      <strong>if</strong> |P(i) - P(j)| < minDistance <strong>then</strong>
+      <strong>if</strong> |P(i) - P(j)| &#x3C; minDistance <strong>then</strong>
         minDistance ← |P(i) - P(j)|
         minPoints ← { P(i), P(j) }
       <strong>endif</strong>
@@ -27,9 +30,10 @@ The straightforward solution is a  O(n<sup>2</sup>) algorithm (which we can call
   <strong>return</strong> minDistance, minPoints
 <strong>endif</strong>
 </pre>
-A better algorithm is based on the recursive divide and conquer approach, as explained also at <a href="https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case" title="wp: Closest pair of points problem#Planar_case" target="_blank">Wikipedia's Closest pair of points problem</a>, which is <code>O(nlog(n))</code> a pseudo-code could be:
-<pre>
-<strong>closestPair</strong> of (xP, yP)
+
+A better algorithm is based on the recursive divide and conquer approach, as explained also at [Wikipedia's Closest pair of points problem](<https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case> "wp: Closest pair of points problem#Planar_case"), which is `O(nlog(n))` a pseudo-code could be:
+
+<pre><strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
   yP is P(1) .. P(N) sorted by y coordinate (ascending order)
 <strong>if</strong> N ≤ 3 <strong>then</strong>
@@ -39,20 +43,20 @@ A better algorithm is based on the recursive divide and conquer approach, as exp
   xR ← points of xP from ⌈N/2⌉+1 to N
   xm ← xP(⌈N/2⌉)<sub>x</sub>
   yL ← { p ∈ yP : p<sub>x</sub> ≤ xm }
-  yR ← { p ∈ yP : p<sub>x</sub> &gt; xm }
+  yR ← { p ∈ yP : p<sub>x</sub> > xm }
   (dL, pairL) ← closestPair of (xL, yL)
   (dR, pairR) ← closestPair of (xR, yR)
   (dmin, pairMin) ← (dR, pairR)
-  <strong>if</strong> dL < dR <strong>then</strong>
+  <strong>if</strong> dL &#x3C; dR <strong>then</strong>
     (dmin, pairMin) ← (dL, pairL)
   <strong>endif</strong>
-  yS ← { p ∈ yP : |xm - p<sub>x</sub>| &lt; dmin }
+  yS ← { p ∈ yP : |xm - p<sub>x</sub>| &#x3C; dmin }
   nS ← number of points in yS
   (closest, closestPair) ← (dmin, pairMin)
   <strong>for</strong> i <strong>from</strong> 1 <strong>to</strong> nS - 1
     k ← i + 1
-    <strong>while</strong> k ≤ nS <strong>and</strong> yS(k)<sub>y</sub> - yS(i)<sub>y</sub> < dmin
-      <strong>if</strong> |yS(k) - yS(i)| < closest <strong>then</strong>
+    <strong>while</strong> k ≤ nS <strong>and</strong> yS(k)<sub>y</sub> - yS(i)<sub>y</sub> &#x3C; dmin
+      <strong>if</strong> |yS(k) - yS(i)| &#x3C; closest <strong>then</strong>
         (closest, closestPair) ← (|yS(k) - yS(i)|, {yS(k), yS(i)})
       <strong>endif</strong>
       k ← k + 1
@@ -61,22 +65,28 @@ A better algorithm is based on the recursive divide and conquer approach, as exp
   <strong>return</strong> closest, closestPair
 <strong>endif</strong>
 </pre>
-For the input, expect the argument to be an array of objects (points) with <code>x</code> and <code>y</code> members set to numbers. For the output, return an object containing the key:value pairs for  <code>distance</code> and <code>pair</code> (the pair of two closest points).
-<strong>References and further readings:</strong>
+
+For the input, expect the argument to be an array of objects (points) with `x` and `y` members set to numbers. For the output, return an object containing the key:value pairs for `distance` and `pair` (the pair of two closest points).
+
+**References and further readings:**
+
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem" target="_blank">Closest pair of points problem</a></li>
-  <li><a href="https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html" target="_blank">Closest Pair (McGill)</a></li>
-  <li><a href="https://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf" target="_blank">Closest Pair (UCSB)</a></li>
-  <li><a href="https://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf" target="_blank">Closest pair (WUStL)</a></li>
+  <li><a href='https://en.wikipedia.org/wiki/Closest pair of points problem' title='wp: Closest pair of points problem' target='_blank'>Closest pair of points problem</a></li>
+  <li><a href='https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html' target='_blank'>Closest Pair (McGill)</a></li>
+  <li><a href='https://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf' target='_blank'>Closest Pair (UCSB)</a></li>
+  <li><a href='https://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf' target='_blank'>Closest pair (WUStL)</a></li>
  </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -97,6 +107,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -121,8 +132,8 @@ function getClosestPair(pointsArr) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -234,8 +245,8 @@ const benchmarkPoints = [
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const Point = function(x, y) {

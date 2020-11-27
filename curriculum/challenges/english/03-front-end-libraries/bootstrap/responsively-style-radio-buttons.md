@@ -9,18 +9,25 @@ forumTopicId: 18270
 ---
 
 ## Description
+
 <section id='description'>
-You can use Bootstrap's <code>col-xs-*</code> classes on <code>form</code> elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.
-Nest both your radio buttons within a <code>&#60;div class="row"&#62;</code> element. Then nest each of them within a <code>&#60;div class="col-xs-6"&#62;</code> element.
-<strong>Note:</strong> As a reminder, radio buttons are <code>input</code> elements of type <code>radio</code>.
+
+You can use Bootstrap's `col-xs-*` classes on `form` elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.
+
+Nest both your radio buttons within a `<div class="row">` element. Then nest each of them within a `<div class="col-xs-6">` element.
+
+**Note:** As a reminder, radio buttons are `input` elements of type `radio`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -103,11 +111,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

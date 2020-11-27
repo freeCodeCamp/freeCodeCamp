@@ -6,7 +6,9 @@ forumTopicId: 301214
 ---
 
 ## Description
+
 <section id='description'>
+
 You can use the same principles from the previous two lessons to destructure values from nested objects.
 
 Using an object similar to previous examples:
@@ -35,11 +37,15 @@ const { johnDoe: { age: userAge, email: userEmail }} = user;
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>lowToday</code> and <code>highToday</code> the values of <code>today.low</code> and <code>today.high</code> from the <code>LOCAL_FORECAST</code> object.
+
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `lowToday` and `highToday` the values of `today.low` and `today.high` from the `LOCAL_FORECAST` object.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -57,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -76,9 +83,11 @@ const highToday = LOCAL_FORECAST.today.high;
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

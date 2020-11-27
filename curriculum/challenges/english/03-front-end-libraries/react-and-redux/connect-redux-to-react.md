@@ -6,19 +6,29 @@ forumTopicId: 301426
 ---
 
 ## Description
+
 <section id='description'>
-Now that you've written both the <code>mapStateToProps()</code> and the <code>mapDispatchToProps()</code> functions, you can use them to map <code>state</code> and <code>dispatch</code> to the <code>props</code> of one of your React components. The <code>connect</code> method from React Redux can handle this task. This method takes two optional arguments, <code>mapStateToProps()</code> and <code>mapDispatchToProps()</code>. They are optional because you may have a component that only needs access to <code>state</code> but doesn't need to dispatch any actions, or vice versa.
+
+Now that you've written both the `mapStateToProps()` and the `mapDispatchToProps()` functions, you can use them to map `state` and `dispatch` to the `props` of one of your React components. The `connect` method from React Redux can handle this task. This method takes two optional arguments, `mapStateToProps()` and `mapDispatchToProps()`. They are optional because you may have a component that only needs access to `state` but doesn't need to dispatch any actions, or vice versa.
+
 To use this method, pass in the functions as arguments, and immediately call the result with your component. This syntax is a little unusual and looks like:
-<code>connect(mapStateToProps, mapDispatchToProps)(MyComponent)</code>
-<strong>Note:</strong>&nbsp;If you want to omit one of the arguments to the <code>connect</code> method, you pass <code>null</code> in its place.
+
+`connect(mapStateToProps, mapDispatchToProps)(MyComponent)`
+
+**Note:** If you want to omit one of the arguments to the `connect` method, you pass `null` in its place.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The code editor has the <code>mapStateToProps()</code> and <code>mapDispatchToProps()</code> functions and a new React component called <code>Presentational</code>. Connect this component to Redux with the <code>connect</code> method from the <code>ReactRedux</code> global object, and call it immediately on the <code>Presentational</code> component. Assign the result to a new <code>const</code> called <code>ConnectedComponent</code> that represents the connected component. That's it, now you're connected to Redux! Try changing either of <code>connect</code>'s arguments to <code>null</code> and observe the test results.
+
+The code editor has the `mapStateToProps()` and `mapDispatchToProps()` functions and a new React component called `Presentational`. Connect this component to Redux with the `connect` method from the `ReactRedux` global object, and call it immediately on the `Presentational` component. Assign the result to a new `const` called `ConnectedComponent` that represents the connected component. That's it, now you're connected to Redux! Try changing either of `connect`'s arguments to `null` and observe the test results.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -77,8 +88,8 @@ const connect = ReactRedux.connect;
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -103,8 +114,8 @@ ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 const addMessage = (message) => {

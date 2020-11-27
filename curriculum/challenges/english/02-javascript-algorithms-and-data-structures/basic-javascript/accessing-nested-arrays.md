@@ -7,8 +7,11 @@ forumTopicId: 16160
 ---
 
 ## Description
+
 <section id='description'>
+
 As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.
+
 Here is an example of how to access a nested array:
 
 ```js
@@ -37,11 +40,15 @@ ourPets[1].names[0]; // "Spot"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation.
+
+Retrieve the second tree from the variable `myPlants` using object dot and array bracket notation.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -56,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -89,8 +97,8 @@ var secondTree = ""; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -107,8 +115,8 @@ var secondTree = ""; // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myPlants = [

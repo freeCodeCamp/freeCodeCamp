@@ -6,6 +6,7 @@ forumTopicId: 301862
 ---
 
 ## Description
+
 <section id='description'>
 
 Using `names`, an array defined in the background containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
@@ -17,11 +18,13 @@ What is the total of all the name scores in the array?
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,6 +64,7 @@ namesScores(test1);
 </div>
 
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -68,10 +73,10 @@ const names = ['MARY','PATRICIA','LINDA','BARBARA','ELIZABETH','JENNIFER','MARIA
 
 </div>
 
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

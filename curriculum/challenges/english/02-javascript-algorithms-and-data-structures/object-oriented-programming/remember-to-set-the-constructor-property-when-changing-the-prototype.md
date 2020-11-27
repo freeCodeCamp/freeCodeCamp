@@ -6,8 +6,10 @@ forumTopicId: 301323
 ---
 
 ## Description
+
 <section id='description'>
-There is one crucial side effect of manually setting the prototype to a new object. It erases the <code>constructor</code> property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
+
+There is one crucial side effect of manually setting the prototype to a new object. It erases the `constructor` property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
 
 ```js
 duck.constructor === Bird; // false -- Oops
@@ -15,7 +17,7 @@ duck.constructor === Object; // true, all objects inherit from Object.prototype
 duck instanceof Bird; // true, still works
 ```
 
-To fix this, whenever a prototype is manually set to a new object, remember to define the <code>constructor</code> property:
+To fix this, whenever a prototype is manually set to a new object, remember to define the `constructor` property:
 
 ```js
 Bird.prototype = {
@@ -33,11 +35,15 @@ Bird.prototype = {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Define the <code>constructor</code> property on the <code>Dog</code> <code>prototype</code>.
+
+Define the `constructor` property on the `Dog` `prototype`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -74,13 +81,11 @@ Dog.prototype = {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Dog(name) {

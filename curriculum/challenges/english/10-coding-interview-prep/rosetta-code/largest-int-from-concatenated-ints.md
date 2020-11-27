@@ -56,6 +56,7 @@ function maxCombine(xs) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

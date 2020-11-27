@@ -6,8 +6,10 @@ forumTopicId: 301463
 ---
 
 ## Description
+
 <section id='description'>
-The <code>@if</code> directive in Sass is useful to test for a specific case - it works just like the <code>if</code> statement in JavaScript</code>.
+
+The `@if` directive in Sass is useful to test for a specific case - it works just like the `if` statement in JavaScript.
 
 ```scss
 @mixin make-bold($bool) {
@@ -17,7 +19,7 @@ The <code>@if</code> directive in Sass is useful to test for a specific case - i
 }
 ```
 
-And just like in JavaScript, <code>@else if</code> and <code>@else</code> test for more conditions:
+And just like in JavaScript, `@else if` and `@else` test for more conditions:
 
 ```scss
 @mixin text-effect($val) {
@@ -39,8 +41,10 @@ And just like in JavaScript, <code>@else if</code> and <code>@else</code> test f
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a mixin called <code>border-stroke</code> that takes a parameter <code>$val</code>. The mixin should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:
+
+Create a mixin called `border-stroke` that takes a parameter `$val`. The mixin should check for the following conditions using `@if`, `@else if`, and `@else`:
 
 ```scss
 light - 1px solid black
@@ -48,10 +52,12 @@ medium - 3px solid black
 heavy - 6px solid black
 ```
 
-If <code>$val</code> is not <code>light</code>, <code>medium</code>, or <code>heavy</code>, the border should be set to <code>none</code>.
+If `$val` is not `light`, `medium`, or `heavy`, the border should be set to `none`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -72,6 +78,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -94,11 +101,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

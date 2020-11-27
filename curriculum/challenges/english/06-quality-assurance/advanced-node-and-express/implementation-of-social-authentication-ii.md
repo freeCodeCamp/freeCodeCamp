@@ -6,11 +6,12 @@ forumTopicId: 301557
 ---
 
 ## Description
+
 <section id='description'>
 
-The last part of setting up your GitHub authentication is to create the strategy itself. For this, you will need to add the dependency of 'passport-github' to your project and require it in your <code>auth.js</code> as <code>GithubStrategy</code> like this: <code>const GitHubStrategy = require('passport-github').Strategy;</code>. Do not forget to require and configure <code>dotenv</code> to use your environment variables.
+The last part of setting up your GitHub authentication is to create the strategy itself. For this, you will need to add the dependency of 'passport-github' to your project and require it in your `auth.js` as `GithubStrategy` like this: `const GitHubStrategy = require('passport-github').Strategy;`. Do not forget to require and configure `dotenv` to use your environment variables.
 
-To set up the GitHub strategy, you have to tell Passport to use an instantiated <code>GitHubStrategy</code>, which accepts 2 arguments: an object (containing <code>clientID</code>, <code>clientSecret</code>, and <code>callbackURL</code>) and a function to be called when a user is successfully authenticated, which will determine if the user is new and what fields to save initially in the user's database object. This is common across many strategies, but some may require more information as outlined in that specific strategy's GitHub README. For example, Google requires a <em>scope</em> as well which determines what kind of information your request is asking to be returned and asks the user to approve such access. The current strategy we are implementing has its usage outlined <a href='https://github.com/jaredhanson/passport-github/' target='_blank'>here</a>, but we're going through it all right here on freeCodeCamp!
+To set up the GitHub strategy, you have to tell Passport to use an instantiated `GitHubStrategy`, which accepts 2 arguments: an object (containing `clientID`, `clientSecret`, and `callbackURL`) and a function to be called when a user is successfully authenticated, which will determine if the user is new and what fields to save initially in the user's database object. This is common across many strategies, but some may require more information as outlined in that specific strategy's GitHub README. For example, Google requires a *scope* as well which determines what kind of information your request is asking to be returned and asks the user to approve such access. The current strategy we are implementing has its usage outlined [here](https://github.com/jaredhanson/passport-github/), but we're going through it all right here on freeCodeCamp!
 
 Here's how your new strategy should look at this point:
 
@@ -29,16 +30,18 @@ passport.use(new GitHubStrategy({
 
 Your authentication won't be successful yet, and it will actually throw an error without the database logic and callback, but it should log your GitHub profile to your console if you try it!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/ff3a1166684c1b184709ac0bee30dee6).
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,11 +58,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

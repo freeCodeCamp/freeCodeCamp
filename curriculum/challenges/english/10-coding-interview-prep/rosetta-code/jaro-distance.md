@@ -6,35 +6,53 @@ forumTopicId: 302292
 ---
 
 ## Description
+
 <section id='description'>
-The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that <code>0</code> equates to no similarity and <code>1</code> is an exact match. 
-<strong>Definition</strong>
-The Jaro distance  \( d_j \)  of two given strings  \(s_1\)  and  \(s_2\) is
-\begin{align}d_j = \begin{cases}0&amp;  & \text{if }m=0 \\\\{\frac {1}{3}}\left({\frac {m}{|s_{1}|}}+{\frac {m}{|s_{2}|}}+{\frac {m-t}{m}}\right)&amp; & \text{otherwise}\end{cases}\end{align}
+
+The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that `0` equates to no similarity and `1` is an exact match.
+
+**Definition**
+
+The Jaro distance \\( d_j \\) of two given strings \\(s_1\\) and \\(s_2\\) is
+
+\\begin{align}d_j = \\begin{cases}0& & \\text{if }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s\_{1}|}}+{\\frac {m}{|s\_{2}|}}+{\\frac {m-t}{m}}\\right)& & \\text{otherwise}\\end{cases}\\end{align}
+
 Where:
+
 <ul>
   <li>\(m\) is the number of <i>matching characters</i>;</li>
   <li> \(t\) is half the number of <i>transpositions</i>.</li>
-</uL>
-Two characters from  \(s_1\)   and  \(s_2\)   respectively, are considered <i>matching</i> only if they are the same and not farther than  \(\left\lfloor\frac{\max(|s_1|,|s_2|)}{2}\right\rfloor-1\).
-Each character of  \(s_1\)   is compared with all its matching characters in  \(s_2\) . The number of matching (but different sequence order) characters divided by 2 defines the number of <i>transpositions</i>.
-<strong>Example</strong>
-Given the strings  \(s_1\)   <i>DWAYNE</i>  and  \(s_2\)   <i>DUANE</i>  we find:
+</ul>
+
+Two characters from \\(s_1\\) and \\(s_2\\) respectively, are considered *matching* only if they are the same and not farther than \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).
+
+Each character of \\(s_1\\) is compared with all its matching characters in \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of *transpositions*.
+
+**Example**
+
+Given the strings \\(s_1\\) *DWAYNE* and \\(s_2\\) *DUANE* we find:
+
 <ul>
   <li>\(m = 4\)</li>
   <li>\(|s_1| = 6\)</li>
   <li>\(|s_2| = 5\)</li>
   <li>\(t = 0\)</li>
 </ul>
-We find a Jaro score of: \(d_j = \frac{1}{3}\left(\frac{4}{6} + \frac{4}{5} + \frac{4-0}{4}\right) = 0.822\).
+
+We find a Jaro score of: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function a that takes two strings as parameters and returns the associated Jaro distance.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -59,6 +77,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -74,8 +93,8 @@ function jaro(s, t) {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function jaro(s, t) {

@@ -70,6 +70,7 @@ const list = [
 ```
 
 </div>
+
 </section>
 
 ## Solution

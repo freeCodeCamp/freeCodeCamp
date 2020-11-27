@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Unfortunately, impure functions are necessary - if you don't use them, the application won't perform any I/O so won't do anything. 
+Unfortunately, impure functions are necessary - if you don't use them, the application won't perform any I/O so won't do anything.
 
 But we have an impure function that could be pure - `evalFormula`. It calls `document.getElementById(c + n).value`, but this value can change, even if the arguments don't.
 
@@ -16,12 +17,13 @@ Change these calls to `""` - the function is now pure but doesn't work.
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,10 +33,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -143,8 +145,8 @@ const update = event => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -175,8 +177,8 @@ const update = event => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -186,11 +188,10 @@ const update = event => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

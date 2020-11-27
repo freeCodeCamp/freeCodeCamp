@@ -6,13 +6,19 @@ videoId: 3muQV-Im3Z0
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://youtu.be/F7mtLrYzZP8" target='_blank'>Install Python on Windows</a>
-- <a href="https://youtu.be/wfLnZP-4sZw" target='_blank'>Install Python on MacOS</a>
+
+\- [Install Python on Windows](https://youtu.be/F7mtLrYzZP8)
+
+\- [Install Python on MacOS](https://youtu.be/wfLnZP-4sZw)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml

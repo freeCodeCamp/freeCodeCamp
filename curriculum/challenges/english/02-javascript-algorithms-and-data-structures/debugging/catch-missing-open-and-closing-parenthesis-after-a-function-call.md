@@ -6,8 +6,11 @@ forumTopicId: 301185
 ---
 
 ## Description
+
 <section id='description'>
+
 When a function or method doesn't take any arguments, you may forget to include the (empty) opening and closing parentheses when calling it. Often times the result of a function call is saved in a variable for other use in your code. This error can be detected by logging variable values (or their types) to the console and seeing that one is set to a function reference, instead of the expected value the function returns.
+
 The variables in the following example are different:
 
 ```js
@@ -21,11 +24,15 @@ let varTwo = myFunction(); // set to equal the string "You rock!"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Fix the code so the variable <code>result</code> is set to the value returned from calling the function <code>getNine</code>.
+
+Fix the code so the variable `result` is set to the value returned from calling the function `getNine`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,11 +65,10 @@ console.log(result);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -7,25 +7,31 @@ forumTopicId: 18314
 ---
 
 ## Description
-<section id='description'>
-We can also subtract one number from another.
-JavaScript uses the <code>-</code> symbol for subtraction.
 
-<strong>Example</strong>
+<section id='description'>
+
+We can also subtract one number from another.
+
+JavaScript uses the `-` symbol for subtraction.
+
+**Example**
 
 ```js
 myVar = 12 - 6; // assigned 6
 ```
 
-
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Change the <code>0</code> so the difference is <code>12</code>.
+
+Change the `0` so the difference is `12`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,8 +58,8 @@ var difference = 45 - 0;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -64,8 +71,8 @@ var difference = 45 - 0;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var difference = 45 - 33;

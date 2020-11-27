@@ -6,6 +6,7 @@ forumTopicId: 302197
 ---
 
 ## Description
+
 <section id='description'>
 
 **Note:** This problem is a significantly more challenging version of Problem 81.
@@ -27,11 +28,13 @@ Find the minimal path sum from the top left to the bottom right by moving left, 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,8 +77,8 @@ pathSumFourWays(testMatrix);
 
 </div>
 
-
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -164,11 +168,10 @@ const matrix = [
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

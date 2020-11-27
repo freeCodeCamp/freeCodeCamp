@@ -6,7 +6,9 @@ forumTopicId: 301215
 ---
 
 ## Description
+
 <section id='description'>
+
 Destructuring allows you to assign a new variable name when extracting values. You can do this by putting the new name after a colon when assigning the value.
 
 Using the same object from the last example:
@@ -22,15 +24,20 @@ const { name: userName, age: userAge } = user;
 // userName = 'John Doe', userAge = 34
 ```
 
-You may read it as "get the value of <code>user.name</code> and assign it to a new variable named <code>userName</code>" and so on.
+You may read it as "get the value of `user.name` and assign it to a new variable named `userName`" and so on.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>highToday</code> and <code>highTomorrow</code> the values of <code>today</code> and <code>tomorrow</code> from the <code>HIGH_TEMPERATURES</code> object.
+
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `highToday` and `highTomorrow` the values of `today` and `tomorrow` from the `HIGH_TEMPERATURES` object.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -67,9 +75,11 @@ const highTomorrow = HIGH_TEMPERATURES.tomorrow;
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

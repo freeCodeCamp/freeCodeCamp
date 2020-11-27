@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `title` element determines what browsers show in the title bar or tab for the page.
@@ -14,6 +15,7 @@ Add a `title` element within the `head` element. Its text should be `CatPhotoApp
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -105,4 +108,5 @@ tests:
 ```
 
 </div>
+
 </section>

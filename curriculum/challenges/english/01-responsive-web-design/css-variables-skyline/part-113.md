@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 At the top of the sky gradient color list, where you would put a direction for the gradient; add `closest-corner circle at 15% 15%,`. This will move the start of the gradient to `15%` from the top and left. It will make it end at the `closest-corner` and it will maintain a `circle` shape. These are some keywords built into gradients to describe how it behaves.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -414,10 +420,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

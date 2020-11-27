@@ -5,16 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
 
 Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
 
-
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

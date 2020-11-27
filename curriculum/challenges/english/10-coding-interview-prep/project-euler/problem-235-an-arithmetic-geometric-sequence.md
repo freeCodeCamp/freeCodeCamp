@@ -6,23 +6,27 @@ forumTopicId: 301879
 ---
 
 ## Description
-<section id='description'>
-Given is the arithmetic-geometric sequence u(k) = (900-3k)rk-1.
-Let s(n) = Σk=1...nu(k).
 
+<section id='description'>
+
+Given is the arithmetic-geometric sequence u(k) = (900-3k)rk-1.
+
+Let s(n) = Σk=1...nu(k).
 
 Find the value of r for which s(5000) = -600,000,000,000.
 
-
 Give your answer rounded to 12 places behind the decimal point.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,11 +55,10 @@ euler235();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

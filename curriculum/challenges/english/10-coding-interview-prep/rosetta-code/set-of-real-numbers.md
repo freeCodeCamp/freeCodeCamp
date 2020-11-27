@@ -8,7 +8,8 @@ forumTopicId: 385322
 ## Description
 
 <section id='description'>
-All real numbers form the uncountable set ℝ.  Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers <i>a</i> and <i>b</i> where <i>a</i> ≤ <i>b</i>.  There are actually four cases for the meaning of "between", depending on open or closed boundary:
+
+All real numbers form the uncountable set ℝ. Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers *a* and *b* where *a* ≤ *b*. There are actually four cases for the meaning of "between", depending on open or closed boundary:
 
 <ul>
   <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
@@ -17,9 +18,9 @@ All real numbers form the uncountable set ℝ.  Among its subsets, relatively si
   <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
 </ul>
 
-Note that if <i>a</i> = <i>b</i>, of the four only [<i>a</i>, <i>a</i>] would be non-empty.
+Note that if *a* = *b*, of the four only \[*a*, *a*] would be non-empty.
 
-<strong>Task</strong>
+**Task**
 
 <ul>
   <li>Devise a way to represent any set of real numbers, for the definition of "any" in the implementation notes below.</li>
@@ -43,17 +44,18 @@ Note that if <i>a</i> = <i>b</i>, of the four only [<i>a</i>, <i>a</i>] would be
     </li>
   </ul>
 </ul>
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
 
-Write a function that takes 2 objects, a string and an array as parameters. The objects represents the set and have attributes: `low`, `high` and `rangeType`. 
+Write a function that takes 2 objects, a string and an array as parameters. The objects represents the set and have attributes: `low`, `high` and `rangeType`.
 
-The `rangeType` can have values 0, 1, 2 and 3 for `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` and `RIGHT_OPEN`, respectively. The function should implement a set using this information. 
+The `rangeType` can have values 0, 1, 2 and 3 for `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` and `RIGHT_OPEN`, respectively. The function should implement a set using this information.
 
-The string represents the operation to be performed on the sets. It can be: `"union"`, `"intersect"` and `"subtract"` (difference). 
+The string represents the operation to be performed on the sets. It can be: `"union"`, `"intersect"` and `"subtract"` (difference).
 
 After performing the operation, the function should check if the values in the array are present in the resultant set and store a corresponding boolean value to an array. The function should return this array.
 
@@ -95,6 +97,7 @@ function realSet(set1, set2, operation, values) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

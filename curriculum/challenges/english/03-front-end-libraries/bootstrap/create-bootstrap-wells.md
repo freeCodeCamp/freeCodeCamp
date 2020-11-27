@@ -6,17 +6,23 @@ forumTopicId: 16825
 ---
 
 ## Description
+
 <section id='description'>
-Bootstrap has a class called <code>well</code> that can create a visual sense of depth for your columns.
-Nest one <code>div</code> element with the class <code>well</code> within each of your <code>col-xs-6</code> <code>div</code> elements.
+
+Bootstrap has a class called `well` that can create a visual sense of depth for your columns.
+
+Nest one `div` element with the class `well` within each of your `col-xs-6` `div` elements.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -53,11 +60,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -6,16 +6,19 @@ forumTopicId: 302340
 ---
 
 ## Description
+
 <section id='description'>
 
-Given a mapping between items, and items they depend on, a <a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting" target="_blank">topological sort</a> orders items so that no item precedes an item it depends upon.
-The compiling of a library in the <a href="https://en.wikipedia.org/wiki/VHDL" title="wp: VHDL" target="_blank">VHDL</a> language has the constraint that a library must be compiled after any library it depends on.
+Given a mapping between items, and items they depend on, a [topological sort](<https://en.wikipedia.org/wiki/Topological sorting> "wp: Topological sorting") orders items so that no item precedes an item it depends upon. The compiling of a library in the [VHDL](https://en.wikipedia.org/wiki/VHDL "wp: VHDL") language has the constraint that a library must be compiled after any library it depends on.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 Write a function that will return a valid compile order of VHDL libraries from their dependencies.
+
 <ul>
   <li>Assume library names are single words.</li>
   <li>Items mentioned as only dependents have no dependents of their own, but their order of compiling must be given.</li>
@@ -50,9 +53,11 @@ There are two popular algorithms for topological sorting:
   <li><a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting" target="_blank">Kahn's 1962 topological sort</a></li>
   <li><a href="https://www.embeddedrelated.com/showarticle/799.php" target="_blank">depth-first search</a></li>
 </ul>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -73,6 +78,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -86,8 +92,8 @@ function topologicalSort(libs) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -137,8 +143,8 @@ const solutionUnorderable = ['Base'];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function topologicalSort(libs) {

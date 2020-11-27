@@ -7,16 +7,23 @@ forumTopicId: 301119
 ---
 
 ## Description
+
 <section id='description'>
-The grid you created in the last challenge will set the number of rows automatically. To adjust the rows manually, use the <code>grid-template-rows</code> property in the same way you used <code>grid-template-columns</code> in previous challenge.
+
+The grid you created in the last challenge will set the number of rows automatically. To adjust the rows manually, use the `grid-template-rows` property in the same way you used `grid-template-columns` in previous challenge.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add two rows to the grid that are <code>50px</code> tall each.
+
+Add two rows to the grid that are `50px` tall each.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,13 +73,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.container {grid-template-rows: 50px 50px;}</style>

@@ -6,40 +6,46 @@ forumTopicId: 301568
 ---
 
 ## Description
+
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://anonymous-message-board.freecodecamp.rocks/" target="_blank">https://anonymous-message-board.freecodecamp.rocks/</a>.
+
+Build a full stack JavaScript app that is functionally similar to this: <https://anonymous-message-board.freecodecamp.rocks/>.
+
 Working on this project will involve you writing your code using one of the following methods:
 
-- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-messageboard/' target='_blank'>this GitHub repo</a> and complete your project locally.
-- Use <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-messageboard' target='_blank'>our repl.it starter project</a> to complete your project.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+-   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-messageboard/) and complete your project locally.
+-   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-messageboard) to complete your project.
+-   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your projects source code in the `GitHub Link` field.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-1. Set `NODE_ENV` to test without quotes when ready to write tests and DB to your databases connection string (in `.env`)
-2. Recommended to create controllers/handlers and handle routing in `routes/api.js`
-3. You will add any security features to `server.js`
+1.  Set `NODE_ENV` to test without quotes when ready to write tests and DB to your databases connection string (in `.env`)
+2.  Recommended to create controllers/handlers and handle routing in `routes/api.js`
+3.  You will add any security features to `server.js`
 
 Write the following tests in `tests/2_functional-tests.js`:
 
-- Creating a new thread: POST request to `/api/threads/{board}`
-- Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
-- Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
-- Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
-- Reporting a thread: PUT request to `/api/threads/{board}`
-- Creating a new reply: POST request to `/api/replies/{board}`
-- Viewing a single thread with all replies: GET request to `/api/replies/{board}`
-- Deleting a reply with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
-- Deleting a reply with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
-- Reporting a reply: PUT request to `/api/replies/{board}`
+-   Creating a new thread: POST request to `/api/threads/{board}`
+-   Viewing the 10 most recent threads with 3 replies each: GET request to `/api/threads/{board}`
+-   Deleting a thread with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
+-   Deleting a thread with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+-   Reporting a thread: PUT request to `/api/threads/{board}`
+-   Creating a new reply: POST request to `/api/replies/{board}`
+-   Viewing a single thread with all replies: GET request to `/api/replies/{board}`
+-   Deleting a reply with the incorrect password: DELETE request to `/api/threads/{board}` with an invalid `delete_password`
+-   Deleting a reply with the correct password: DELETE request to `/api/threads/{board}` with a valid `delete_password`
+-   Reporting a reply: PUT request to `/api/replies/{board}`
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -91,11 +97,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

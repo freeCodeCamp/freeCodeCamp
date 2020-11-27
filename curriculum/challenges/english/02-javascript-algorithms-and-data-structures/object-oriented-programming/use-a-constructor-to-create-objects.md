@@ -6,8 +6,10 @@ forumTopicId: 18233
 ---
 
 ## Description
+
 <section id='description'>
-Here's the <code>Bird</code> constructor from the previous challenge:
+
+Here's the `Bird` constructor from the previous challenge:
 
 ```js
 function Bird() {
@@ -20,8 +22,7 @@ function Bird() {
 let blueBird = new Bird();
 ```
 
-Notice that the <code>new</code> operator is used when calling a constructor. This tells JavaScript to create a new instance of <code>Bird</code> called <code>blueBird</code>. Without the <code>new</code> operator, <code>this</code> inside the constructor would not point to the newly created object, giving unexpected results.
-Now <code>blueBird</code> has all the properties defined inside the <code>Bird</code> constructor:
+Notice that the `new` operator is used when calling a constructor. This tells JavaScript to create a new instance of `Bird` called `blueBird`. Without the `new` operator, `this` inside the constructor would not point to the newly created object, giving unexpected results. Now `blueBird` has all the properties defined inside the `Bird` constructor:
 
 ```js
 blueBird.name; // => Albert
@@ -39,11 +40,15 @@ blueBird.name; // => Elvira
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the <code>Dog</code> constructor from the last lesson to create a new instance of <code>Dog</code>, assigning it to a variable <code>hound</code>.
+
+Use the `Dog` constructor from the last lesson to create a new instance of `Dog`, assigning it to a variable `hound`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -58,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -75,13 +81,11 @@ function Dog() {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Dog() {

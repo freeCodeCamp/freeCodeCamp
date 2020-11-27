@@ -7,9 +7,12 @@ forumTopicId: 301177
 ---
 
 ## Description
+
 <section id='description'>
-A function can include the <code>return</code> statement but it does not have to. In the case that the function doesn't have a <code>return</code> statement, when you call it, the function processes the inner code but the returned value is <code>undefined</code>.
-<strong>Example</strong>
+
+A function can include the `return` statement but it does not have to. In the case that the function doesn't have a `return` statement, when you call it, the function processes the inner code but the returned value is `undefined`.
+
+**Example**
 
 ```js
 var sum = 0;
@@ -19,15 +22,20 @@ function addSum(num) {
 addSum(3); // sum will be modified but returned value is undefined
 ```
 
-<code>addSum</code> is a function without a <code>return</code> statement. The function will change the global <code>sum</code> variable but the returned value of the function is <code>undefined</code>.
+`addSum` is a function without a `return` statement. The function will change the global `sum` variable but the returned value of the function is `undefined`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a function <code>addFive</code> without any arguments. This function adds 5 to the <code>sum</code> variable, but its returned value is <code>undefined</code>.
+
+Create a function `addFive` without any arguments. This function adds 5 to the `sum` variable, but its returned value is `undefined`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,10 +78,9 @@ addFive();
 
 </div>
 
-
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var sum = 0;

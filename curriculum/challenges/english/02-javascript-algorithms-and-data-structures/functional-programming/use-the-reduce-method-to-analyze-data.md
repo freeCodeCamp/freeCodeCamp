@@ -6,18 +6,18 @@ forumTopicId: 301313
 ---
 
 ## Description
+
 <section id='description'>
 
-<code>Array.prototype.reduce()</code>, or simply <code>reduce()</code>, is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the <code>reduce</code> method.
+`Array.prototype.reduce()`, or simply `reduce()`, is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the `reduce` method.
 
-The <code>reduce</code> method allows for more general forms of array processing, and it's possible to show that both <code>filter</code> and <code>map</code> can be derived as special applications of <code>reduce</code>.
-The <code>reduce</code> method iterates over each item in an array and returns a single value (i.e. string, number, object, array).  This is achieved via a callback function that is called on each iteration.
+The `reduce` method allows for more general forms of array processing, and it's possible to show that both `filter` and `map` can be derived as special applications of `reduce`. The `reduce` method iterates over each item in an array and returns a single value (i.e. string, number, object, array). This is achieved via a callback function that is called on each iteration.
 
-The callback function accepts four arguments. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, the second is the current element being processed, the third is the index of that element and the fourth is the array upon which <code>reduce</code> is called.
+The callback function accepts four arguments. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, the second is the current element being processed, the third is the index of that element and the fourth is the array upon which `reduce` is called.
 
-In addition to the callback function, <code>reduce</code> has an additional parameter which takes an initial value for the accumulator.  If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
+In addition to the callback function, `reduce` has an additional parameter which takes an initial value for the accumulator. If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
 
-See below for an example using <code>reduce</code> on the <code>users</code> array to return the sum of all the users' ages. For simplicity, the example only uses the first and second arguments.
+See below for an example using `reduce` on the `users` array to return the sum of all the users' ages. For simplicity, the example only uses the first and second arguments.
 
 ```js
 const users = [
@@ -49,11 +49,15 @@ console.log(usersObj); // { John: 34, Amy: 20, camperCat: 10 }
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The variable <code>watchList</code> holds an array of objects with information on several movies. Use <code>reduce</code> to find the average IMDB rating of the movies <strong>directed by Christopher Nolan</strong>. Recall from prior challenges how to <code>filter</code> data and <code>map</code> over it to pull what you need. You may need to create other variables, and return the average rating from <code>getRating</code> function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
+
+The variable `watchList` holds an array of objects with information on several movies. Use `reduce` to find the average IMDB rating of the movies **directed by Christopher Nolan**. Recall from prior challenges how to `filter` data and `map` over it to pull what you need. You may need to create other variables, and return the average rating from `getRating` function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -74,6 +78,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -206,11 +211,10 @@ console.log(getRating(watchList));
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

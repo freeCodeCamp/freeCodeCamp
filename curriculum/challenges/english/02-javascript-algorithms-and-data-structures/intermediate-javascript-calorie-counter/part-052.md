@@ -10,7 +10,7 @@ challengeType: 0
 
 We want a function to run every time the user clicks the "Add Entry" button.
 
-Chain the `onclick` property to the end of `document.getElementById('add')` and set it equal to an empty function: 
+Chain the `onclick` property to the end of `document.getElementById('add')` and set it equal to an empty function:
 
 ```js
 function() {}
@@ -21,6 +21,7 @@ function() {}
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

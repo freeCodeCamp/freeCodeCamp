@@ -6,10 +6,14 @@ forumTopicId: 301343
 ---
 
 ## Description
+
 <section id='description'>
+
 Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
+
 Here's an example to review how to do this:
-The regex <code>/z+/</code> matches the letter <code>z</code> when it appears one or more times in a row. It would find matches in all of the following strings:
+
+The regex `/z+/` matches the letter `z` when it appears one or more times in a row. It would find matches in all of the following strings:
 
 ```js
 "z"
@@ -19,7 +23,7 @@ The regex <code>/z+/</code> matches the letter <code>z</code> when it appears on
 "abczzzzzzzzzzzzzzzzzzzzzabc"
 ```
 
-But it does not find matches in the following strings since there are no letter <code>z</code> characters:
+But it does not find matches in the following strings since there are no letter `z` characters:
 
 ```js
 ""
@@ -30,11 +34,15 @@ But it does not find matches in the following strings since there are no letter 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a greedy regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter <code>C</code>.
+
+Write a greedy regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter `C`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -59,6 +67,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -70,11 +79,10 @@ let reCriminals = /./; // Change this line
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

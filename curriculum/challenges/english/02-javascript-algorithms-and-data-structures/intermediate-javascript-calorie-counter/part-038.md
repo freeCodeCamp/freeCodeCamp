@@ -17,6 +17,7 @@ Create an `hr` element and assign it to a variable named `line`.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

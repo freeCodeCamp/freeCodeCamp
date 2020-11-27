@@ -6,53 +6,94 @@ forumTopicId: 385280
 ---
 
 ## Description
+
 <section id='description'>
-Every square matrix $A$ can be decomposed into a product of a lower triangular matrix $L$ and a upper triangular matrix $U$, as described in <a href="https://en.wikipedia.org/wiki/LU decomposition">LU decomposition</a>.
+
+Every square matrix $A$ can be decomposed into a product of a lower triangular matrix $L$ and a upper triangular matrix $U$, as described in [LU decomposition](<https://en.wikipedia.org/wiki/LU decomposition>).
+
 $A = LU$
+
 It is a modified form of Gaussian elimination.
-While the <a href="http://rosettacode.org/wiki/Cholesky decomposition">Cholesky decomposition</a> only works for symmetric, positive definite matrices, the more general LU decomposition works for any square matrix.
+
+While the [Cholesky decomposition](<http://rosettacode.org/wiki/Cholesky decomposition>) only works for symmetric, positive definite matrices, the more general LU decomposition works for any square matrix.
+
 There are several algorithms for calculating $L$ and $U$.
-To derive <i>Crout's algorithm</i> for a 3x3 example, we have to solve the following system:
-\begin{align}A = \begin{pmatrix} a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23}\\ a_{31} & a_{32} & a_{33}\\ \end{pmatrix}= \begin{pmatrix} l_{11} & 0 & 0 \\ l_{21} & l_{22} & 0 \\ l_{31} & l_{32} & l_{33}\\ \end{pmatrix} \begin{pmatrix} u_{11} & u_{12} & u_{13} \\ 0 & u_{22} & u_{23} \\ 0 & 0 & u_{33} \end{pmatrix} = LU\end{align}
+
+To derive *Crout's algorithm* for a 3x3 example, we have to solve the following system:
+
+\\begin{align}A = \\begin{pmatrix} a\_{11} & a\_{12} & a\_{13}\\\\ a\_{21} & a\_{22} & a\_{23}\\\\ a\_{31} & a\_{32} & a\_{33}\\\\ \\end{pmatrix}= \\begin{pmatrix} l\_{11} & 0 & 0 \\\\ l\_{21} & l\_{22} & 0 \\\\ l\_{31} & l\_{32} & l\_{33}\\\\ \\end{pmatrix} \\begin{pmatrix} u\_{11} & u\_{12} & u\_{13} \\\\ 0 & u\_{22} & u\_{23} \\\\ 0 & 0 & u\_{33} \\end{pmatrix} = LU\\end{align}
+
 We now would have to solve 9 equations with 12 unknowns. To make the system uniquely solvable, usually the diagonal elements of $L$ are set to 1
-$l_{11}=1$
-$l_{22}=1$
-$l_{33}=1$
+
+$l\_{11}=1$
+
+$l\_{22}=1$
+
+$l\_{33}=1$
+
 so we get a solvable system of 9 unknowns and 9 equations.
-\begin{align}A = \begin{pmatrix} a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23}\\ a_{31} & a_{32} & a_{33}\\ \end{pmatrix} = \begin{pmatrix} 1      & 0      & 0 \\ l_{21} & 1      & 0 \\ l_{31} & l_{32} & 1\\ \end{pmatrix} \begin{pmatrix} u_{11} & u_{12} & u_{13} \\ 0 & u_{22} & u_{23} \\ 0 & 0 & u_{33} \end{pmatrix} = \begin{pmatrix} u_{11}        & u_{12}                    & u_{13}              \\ u_{11}l_{21}  & u_{12}l_{21}+u_{22}       & u_{13}l_{21}+u_{23} \\ u_{11}l_{31}  & u_{12}l_{31}+u_{22}l_{32} & u_{13}l_{31} + u_{23}l_{32}+u_{33} \end{pmatrix} = LU\end{align}
+
+\\begin{align}A = \\begin{pmatrix} a\_{11} & a\_{12} & a\_{13}\\\\ a\_{21} & a\_{22} & a\_{23}\\\\ a\_{31} & a\_{32} & a\_{33}\\\\ \\end{pmatrix} = \\begin{pmatrix} 1 & 0 & 0 \\\\ l\_{21} & 1 & 0 \\\\ l\_{31} & l\_{32} & 1\\\\ \\end{pmatrix} \\begin{pmatrix} u\_{11} & u\_{12} & u\_{13} \\\\ 0 & u\_{22} & u\_{23} \\\\ 0 & 0 & u\_{33} \\end{pmatrix} = \\begin{pmatrix} u\_{11} & u\_{12} & u\_{13} \\\\ u\_{11}l\_{21} & u\_{12}l\_{21}+u\_{22} & u\_{13}l\_{21}+u\_{23} \\\\ u\_{11}l\_{31} & u\_{12}l\_{31}+u\_{22}l\_{32} & u\_{13}l\_{31} + u\_{23}l\_{32}+u\_{33} \\end{pmatrix} = LU\\end{align}
+
 Solving for the other $l$ and $u$, we get the following equations:
-$u_{11}=a_{11}$
-$u_{12}=a_{12}$
-$u_{13}=a_{13}$
-$u_{22}=a_{22} - u_{12}l_{21}$
-$u_{23}=a_{23} - u_{13}l_{21}$
-$u_{33}=a_{33} - (u_{13}l_{31} + u_{23}l_{32})$
+
+$u\_{11}=a\_{11}$
+
+$u\_{12}=a\_{12}$
+
+$u\_{13}=a\_{13}$
+
+$u\_{22}=a\_{22} - u\_{12}l\_{21}$
+
+$u\_{23}=a\_{23} - u\_{13}l\_{21}$
+
+$u\_{33}=a\_{33} - (u\_{13}l\_{31} + u\_{23}l\_{32})$
+
 and for $l$:
-$l_{21}=\frac{1}{u_{11}} a_{21}$
-$l_{31}=\frac{1}{u_{11}} a_{31}$
-$l_{32}=\frac{1}{u_{22}} (a_{32} - u_{12}l_{31})$
+
+$l\_{21}=\\frac{1}{u\_{11}} a\_{21}$
+
+$l\_{31}=\\frac{1}{u\_{11}} a\_{31}$
+
+$l\_{32}=\\frac{1}{u\_{22}} (a\_{32} - u\_{12}l\_{31})$
+
 We see that there is a calculation pattern, which can be expressed as the following formulas, first for $U$
-$u_{ij} = a_{ij} - \sum_{k=1}^{i-1} u_{kj}l_{ik}$
+
+$u\_{ij} = a\_{ij} - \\sum\_{k=1}^{i-1} u\_{kj}l\_{ik}$
+
 and then for $L$
-$l_{ij} = \frac{1}{u_{jj}} (a_{ij} - \sum_{k=1}^{j-1} u_{kj}l_{ik})$
-We see in the second formula that to get the $l_{ij}$ below the diagonal, we have to divide by the diagonal element (pivot) $u_{jj}$, so we get problems when $u_{jj}$ is either 0 or very small, which leads to numerical instability.
-The solution to this problem is <i>pivoting</i> $A$, which means rearranging the rows of $A$, prior to the $LU$ decomposition, in a way that the largest element of each column gets onto the diagonal of $A$. Rearranging the rows means to multiply $A$ by a permutation matrix $P$:
-$PA \Rightarrow A'$
+
+$l\_{ij} = \\frac{1}{u\_{jj}} (a\_{ij} - \\sum\_{k=1}^{j-1} u\_{kj}l\_{ik})$
+
+We see in the second formula that to get the $l\_{ij}$ below the diagonal, we have to divide by the diagonal element (pivot) $u\_{jj}$, so we get problems when $u\_{jj}$ is either 0 or very small, which leads to numerical instability.
+
+The solution to this problem is *pivoting* $A$, which means rearranging the rows of $A$, prior to the $LU$ decomposition, in a way that the largest element of each column gets onto the diagonal of $A$. Rearranging the rows means to multiply $A$ by a permutation matrix $P$:
+
+$PA \\Rightarrow A'$
+
 Example:
-\begin{align} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 1 & 4 \\ 2 & 3 \end{pmatrix} \Rightarrow \begin{pmatrix} 2 & 3 \\ 1 & 4 \end{pmatrix} \end{align}
+
+\\begin{align} \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\begin{pmatrix} 1 & 4 \\\\ 2 & 3 \\end{pmatrix} \\Rightarrow \\begin{pmatrix} 2 & 3 \\\\ 1 & 4 \\end{pmatrix} \\end{align}
+
 The decomposition algorithm is then applied on the rearranged matrix so that
+
 $PA = LU$
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The task is to implement a routine which will take a square nxn matrix $A$ and return a lower triangular matrix $L$, a upper triangular matrix $U$ and a permutation matrix $P$, so that the above equation is fullfilled. The returned value should be in the form <code>[L, U, P]</code>.
+
+The task is to implement a routine which will take a square nxn matrix $A$ and return a lower triangular matrix $L$, a upper triangular matrix $U$ and a permutation matrix $P$, so that the above equation is fullfilled. The returned value should be in the form `[L, U, P]`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>luDecomposition</code> should be a function.
     testString: assert(typeof luDecomposition == 'function');
@@ -71,6 +112,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -86,6 +128,7 @@ function luDecomposition(A) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

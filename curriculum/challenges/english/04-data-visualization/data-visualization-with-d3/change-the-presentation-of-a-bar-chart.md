@@ -6,19 +6,30 @@ forumTopicId: 301481
 ---
 
 ## Description
+
 <section id='description'>
+
 The last challenge created a bar chart, but there are a couple of formatting changes that could improve it:
-1) Add space between each bar to visually separate them, which is done by adding a margin to the CSS for the <code>bar</code> class
+
+1) Add space between each bar to visually separate them, which is done by adding a margin to the CSS for the `bar` class
+
 2) Increase the height of the bars to better show the difference in values, which is done by multiplying the value by a number to scale the height
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-First, add a <code>margin</code> of 2px to the <code>bar</code> class in the <code>style</code> tag. Next, change the callback function in the <code>style()</code> method so it returns a value 10 times the original data value (plus the "px").
-<strong>Note</strong><br>Multiplying each data point by the <em>same</em> constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
+
+First, add a `margin` of 2px to the `bar` class in the `style` tag. Next, change the callback function in the `style()` method so it returns a value 10 times the original data value (plus the "px").
+
+**Note**  
+Multiplying each data point by the *same* constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,11 +92,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

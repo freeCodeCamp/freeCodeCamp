@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
@@ -12,6 +13,7 @@ Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in th
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,8 +26,8 @@ tests:
 </section>
 
 ## Challenge Seed
-<section id='challengeSeed'>
 
+<section id='challengeSeed'>
 
 <div id='html-seed'>
 

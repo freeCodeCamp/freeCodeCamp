@@ -6,18 +6,29 @@ videoId: RYdW660KkaQ
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=KfhslNzopxo" target='_blank'>Exercise: Geodata</a>
-- <a href="https://www.youtube.com/watch?v=wSpl1-7afAk" target='_blank'>Exercise: Gmane Model</a>
-- <a href="https://www.youtube.com/watch?v=H3w4lOFBUOI" target='_blank'>Exercise: Gmane Spider</a>
-- <a href="https://www.youtube.com/watch?v=LRqVPMEXByw" target='_blank'>Exercise: Gmane Viz</a>
-- <a href="https://www.youtube.com/watch?v=yFRAZBkBDBs" target='_blank'>Exercise: Page Rank</a>
-- <a href="https://www.youtube.com/watch?v=sXedPQ_AnWA" target='_blank'>Exercise: Page Spider</a>
-- <a href="https://www.youtube.com/watch?v=Fm0hpkxsZoo" target='_blank'>Exercise: Page Viz</a>
+
+\- [Exercise: Geodata](https://www.youtube.com/watch?v=KfhslNzopxo)
+
+\- [Exercise: Gmane Model](https://www.youtube.com/watch?v=wSpl1-7afAk)
+
+\- [Exercise: Gmane Spider](https://www.youtube.com/watch?v=H3w4lOFBUOI)
+
+\- [Exercise: Gmane Viz](https://www.youtube.com/watch?v=LRqVPMEXByw)
+
+\- [Exercise: Page Rank](https://www.youtube.com/watch?v=yFRAZBkBDBs)
+
+\- [Exercise: Page Spider](https://www.youtube.com/watch?v=sXedPQ_AnWA)
+
+\- [Exercise: Page Viz](https://www.youtube.com/watch?v=Fm0hpkxsZoo)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml

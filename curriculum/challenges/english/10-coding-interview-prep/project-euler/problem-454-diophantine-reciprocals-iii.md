@@ -6,24 +6,27 @@ forumTopicId: 302127
 ---
 
 ## Description
+
 <section id='description'>
 
-In the following equation x, y, and n are positive integers.
-1/x + 1/y= 1/n
+In the following equation x, y, and n are positive integers. 1/x + 1/y= 1/n
+
 <!-- TODO Use MathJax -->
 
-For a limit L we define F(L) as the number of solutions which satisfy x < y ≤ L.
+For a limit L we define F(L) as the number of solutions which satisfy x &lt; y ≤ L.
 
-We can verify that F(15) = 4 and F(1000) = 1069.
-Find F(1012).
+We can verify that F(15) = 4 and F(1000) = 1069. Find F(1012).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,11 +55,10 @@ euler454();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-You can link to another page with the anchor (`a`) element. For example, <a href="https://www.freecodecamp.org"></a> would link to `freecodecamp.org`. 
+You can link to another page with the anchor (`a`) element. For example, [](https://www.freecodecamp.org) would link to `freecodecamp.org`.
 
 Add an anchor element after the paragraph that links to `https://freecatphotoapp.com`. At this point, the link won’t show up in the preview.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -57,4 +60,5 @@ tests:
 ```
 
 </div>
+
 </section>

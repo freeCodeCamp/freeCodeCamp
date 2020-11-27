@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 HTML <dfn>attributes</dfn> are special words used inside the opening tag of an element to control the element's behavior. The `src` attribute in an `img` element specifies the image's URL (where the image is located). An example of an `img` element using an `src` attribute: `<img src="https://www.your-image-source.com/your-image.jpg">`.
@@ -14,6 +15,7 @@ Add an `src` attribute to the existing `img` element that is set to the followin
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -53,4 +56,5 @@ tests:
 ```
 
 </div>
+
 </section>

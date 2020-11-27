@@ -6,14 +6,16 @@ videoId: dnzvfimrRMg
 ---
 
 ## Description
+
 <section id='description'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What does dict equal after running this code?:
@@ -45,6 +47,6 @@ question:
         {'Fri': 20, 'Thu': 13, 'Sat': 2, 'Sun': 9}
         ```
   solution: 5
-```
+````
 
 </section>

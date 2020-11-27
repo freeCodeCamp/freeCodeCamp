@@ -6,9 +6,13 @@ forumTopicId: 302252
 ---
 
 ## Description
+
 <section id='description'>
+
 Implement basic element-wise matrix-matrix and scalar-matrix operations.
-<strong>Implement:</strong>
+
+**Implement:**
+
 <ul>
   <li>addition</li>
   <li>subtraction</li>
@@ -16,15 +20,19 @@ Implement basic element-wise matrix-matrix and scalar-matrix operations.
   <li>division</li>
   <li>exponentiation</li>
 </ul>
+
 The first parameter will be the operation to be performed, for example, "m_add" for matrix addition and "s_add" for scalar addition. The second and third parameters will be the matrices on which the operations are to be performed.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,13 +72,11 @@ function operation(op, arr1, arr2) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function operation(op, arr1, arr2) {

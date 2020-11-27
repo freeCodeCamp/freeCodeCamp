@@ -6,15 +6,19 @@ forumTopicId: 302224
 ---
 
 ## Description
+
 <section id='description'>
 
-Given a text file of many lines, where fields within a line are delineated by a single <code>$</code> character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+Given a text file of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 Use the following text to test your programs:
+
 <pre>
 Given$a$text$file$of$many$lines
 where$fields$within$a$line$
@@ -27,7 +31,9 @@ Further,$allow$for$each$word$in$a$column$to$be$either$left$
 justified,$right$justified
 or$center$justified$within$its$column.
 </pre>
-<strong>Note that:</strong>
+
+**Note that:**
+
 <ul>
   <li>The example input texts lines may, or may not, have trailing dollar characters.</li>
   <li>All columns should share the same alignment.</li>
@@ -36,9 +42,11 @@ or$center$justified$within$its$column.
   <li>The minimum space between columns should be computed from the text and not hard-coded.</li>
   <li>It is not a requirement to add separating characters between or around columns.</li>
 </ul>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -57,6 +65,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -82,8 +91,8 @@ function formatText(input, justification) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -139,8 +148,8 @@ const centerAligned = '  Given        a        text     file    of     many     
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const testArr = [

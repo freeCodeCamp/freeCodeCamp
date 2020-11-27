@@ -7,18 +7,27 @@ forumTopicId: 18182
 ---
 
 ## Description
+
 <section id='description'>
-You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.
-<code>"Alan Peter".length; // 10</code>
-For example, if we created a variable <code>var firstName = "Charles"</code>, we could find out how long the string <code>"Charles"</code> is by using the <code>firstName.length</code> property.
+
+You can find the length of a `String` value by writing `.length` after the string variable or string literal.
+
+`"Alan Peter".length; // 10`
+
+For example, if we created a variable `var firstName = "Charles"`, we could find out how long the string `"Charles"` is by using the `firstName.length` property.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable and assign it to <code>lastNameLength</code>.
+
+Use the `.length` property to count the number of characters in the `lastName` variable and assign it to `lastNameLength`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,8 +66,8 @@ lastNameLength = lastName;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var lastNameLength = 0;

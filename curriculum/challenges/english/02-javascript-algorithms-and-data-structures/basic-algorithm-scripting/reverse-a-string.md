@@ -6,18 +6,25 @@ forumTopicId: 16043
 ---
 
 ## Description
+
 <section id='description'>
+
 Reverse the provided string.
+
 You may need to turn the string into an array before you can reverse it.
+
 Your result must be a string.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,13 +58,11 @@ reverseString("hello");
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function reverseString(str) {

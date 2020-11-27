@@ -5,18 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Each circle needs a `cx` and `cy` attribute so it knows where to display on the SVG. These are similar to the x and y coordinates for the lines and will be calculated in the same way. The difference is that, for circles, the `cx` and `cy` are attributes, so you need to use the `attr` function.
 
 Use the `attr` function to set the `cx` to `d => xScale(d.year)`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -130,8 +136,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -164,10 +170,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `fieldset` element is used to group related inputs and labels together in a web form. `fieldset` elements are <dfn>block-level elements</dfn>, meaning that they appear on a new line.
@@ -14,6 +15,7 @@ Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and d
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -90,4 +93,5 @@ tests:
 ```
 
 </div>
+
 </section>

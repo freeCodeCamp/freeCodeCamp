@@ -7,10 +7,14 @@ forumTopicId: 301097
 ---
 
 ## Description
+
 <section id='description'>
-HTML5 introduces more descriptive HTML tags. These include <code>main</code>, <code>header</code>, <code>footer</code>, <code>nav</code>, <code>video</code>, <code>article</code>, <code>section</code> and others.
-These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The <code>main</code> HTML5 tag helps search engines and other developers find the main content of your page.
-Example usage, a <code>main</code> element with two child elements nested inside it:
+
+HTML5 introduces more descriptive HTML tags. These include `main`, `header`, `footer`, `nav`, `video`, `article`, `section` and others.
+
+These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The `main` HTML5 tag helps search engines and other developers find the main content of your page.
+
+Example usage, a `main` element with two child elements nested inside it:
 
 ```html
 <main> 
@@ -19,16 +23,22 @@ Example usage, a <code>main</code> element with two child elements nested inside
 </main>
 ```
 
-<strong>Note:</strong> Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.
+**Note:** Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a second <code>p</code> element after the existing <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>
-Then, create a <code>main</code> element and nest the two <code>p</code> elements inside the <code>main</code> element.
+
+Create a second `p` element after the existing `p` element with the following kitty ipsum text: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+
+Then, create a `main` element and nest the two `p` elements inside the `main` element.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,11 +76,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

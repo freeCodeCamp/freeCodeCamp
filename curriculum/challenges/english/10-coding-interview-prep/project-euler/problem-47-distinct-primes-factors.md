@@ -6,6 +6,7 @@ forumTopicId: 302145
 ---
 
 ## Description
+
 <section id='description'>
 
 The first two consecutive numbers to have two distinct prime factors are:
@@ -28,11 +29,13 @@ Find the first four consecutive integers to have four distinct prime factors eac
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,6 +73,7 @@ distinctPrimeFactors(4, 4);
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,18 +6,25 @@ forumTopicId: 18191
 ---
 
 ## Description
+
 <section id='description'>
+
 We will also want to be able to use jQuery to target each button by its unique id.
-Give each of your buttons a unique id, starting with <code>target1</code> and ending with <code>target6</code>.
-Make sure that <code>target1</code> to <code>target3</code> are in <code>#left-well</code>, and <code>target4</code> to <code>target6</code> are in <code>#right-well</code>.
+
+Give each of your buttons a unique id, starting with `target1` and ending with `target6`.
+
+Make sure that `target1` to `target3` are in `#left-well`, and `target4` to `target6` are in `#right-well`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,11 +78,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

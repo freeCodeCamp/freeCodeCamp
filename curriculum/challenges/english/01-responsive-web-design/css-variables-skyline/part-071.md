@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The windows are stacked on top of each other at the left of the section, behind the purple building. Add a new class below `building-wrap` called `window-wrap` and add these properties to it: `display: flex;`, `align-items: center;`, and `justify-content: space-evenly;`. This will be used in a few places to center window elements vertically and space them evenly in their parent.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -28,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -263,10 +269,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

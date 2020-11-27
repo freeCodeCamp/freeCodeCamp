@@ -6,19 +6,27 @@ forumTopicId: 16812
 ---
 
 ## Description
+
 <section id='description'>
+
 Now let's build something from scratch to practice our HTML, CSS and Bootstrap skills.
+
 We'll build a jQuery playground, which we'll soon put to use in our jQuery challenges.
-To start with, create an <code>h3</code> element, with the text <code>jQuery Playground</code>.
-Color your <code>h3</code> element with the <code>text-primary</code> Bootstrap class, and center it with the <code>text-center</code> Bootstrap class.
+
+To start with, create an `h3` element, with the text `jQuery Playground`.
+
+Color your `h3` element with the `text-primary` Bootstrap class, and center it with the `text-center` Bootstrap class.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -52,6 +61,7 @@ tests:
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

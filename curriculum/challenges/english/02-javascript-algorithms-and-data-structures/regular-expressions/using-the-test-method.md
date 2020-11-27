@@ -6,10 +6,14 @@ forumTopicId: 301369
 ---
 
 ## Description
+
 <section id='description'>
+
 Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.
-If you want to find the word <code>"the"</code> in the string <code>"The dog chased the cat"</code>, you could use the following regular expression: <code>/the/</code>. Notice that quote marks are not required within the regular expression.
-JavaScript has multiple ways to use regexes. One way to test a regex is using the <code>.test()</code> method. The <code>.test()</code> method takes the regex, applies it to a string (which is placed inside the parentheses), and returns <code>true</code> or <code>false</code> if your pattern finds something or not.
+
+If you want to find the word `"the"` in the string `"The dog chased the cat"`, you could use the following regular expression: `/the/`. Notice that quote marks are not required within the regular expression.
+
+JavaScript has multiple ways to use regexes. One way to test a regex is using the `.test()` method. The `.test()` method takes the regex, applies it to a string (which is placed inside the parentheses), and returns `true` or `false` if your pattern finds something or not.
 
 ```js
 let testStr = "freeCodeCamp";
@@ -21,11 +25,15 @@ testRegex.test(testStr);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Apply the regex <code>myRegex</code> on the string <code>myString</code> using the <code>.test()</code> method.
+
+Apply the regex `myRegex` on the string `myString` using the `.test()` method.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,11 +61,10 @@ let result = myRegex; // Change this line
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

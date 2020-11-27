@@ -6,14 +6,17 @@ helpCategory: Python
 ---
 
 ## Description
+
 <section id='description'>
+
 For this project you will learn about the importance of good security by creating a password cracker to figure out passwords that were hashed using SHA-1.
 
-You can access <a href='https://repl.it/github/freeCodeCamp/boilerplate-SHA-1-password-cracker' target='_blank'>the full project description and starter code on Repl.it</a>.
+You can access [the full project description and starter code on Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-SHA-1-password-cracker).
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 
 We are still developing the interactive instructional part of the Python curriculum. For now, here are some videos on the freeCodeCamp.org YouTube channel that will teach you some of the Python skills required for this project:
+
 <ul>
   <li>
     <a href='https://www.freecodecamp.org/news/python-for-everybody/'>Python for Everybody Video Course</a> (14 hours)
@@ -26,11 +29,13 @@ We are still developing the interactive instructional part of the Python curricu
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,11 +48,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```py

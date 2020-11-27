@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Go to where you `call` the `xAxis` and create a `mouseover` event for the labels. Chain the `on` function to them, pass it the string `mouseover`, and give it a value of a "d function" that calls `drawDashboard` with `d` as the argument. It will look like this:
@@ -14,13 +15,17 @@ Go to where you `call` the `xAxis` and create a `mouseover` event for the labels
 ```
 
 So now, when you hover a label, the function will be called with the year that is being hovered.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -247,8 +253,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -281,10 +287,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

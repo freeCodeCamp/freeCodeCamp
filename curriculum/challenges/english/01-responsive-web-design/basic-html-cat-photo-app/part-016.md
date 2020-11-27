@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 It is time to add a new section. Add a second `section` element below the existing `section` element.
@@ -12,6 +13,7 @@ It is time to add a new section. Add a second `section` element below the existi
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,4 +70,5 @@ tests:
 ```
 
 </div>
+
 </section>

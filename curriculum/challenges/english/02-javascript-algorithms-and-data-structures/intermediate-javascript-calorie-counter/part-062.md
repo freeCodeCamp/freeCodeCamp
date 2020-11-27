@@ -17,6 +17,7 @@ The Add Entry functionality is now finished. You can test it by clicking the "Ad
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

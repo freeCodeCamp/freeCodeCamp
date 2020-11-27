@@ -6,16 +6,23 @@ forumTopicId: 301447
 ---
 
 ## Description
+
 <section id='description'>
-Time to practice removing items from an array. The spread operator can be used here as well. Other useful JavaScript methods include <code>slice()</code> and <code>concat()</code>.
+
+Time to practice removing items from an array. The spread operator can be used here as well. Other useful JavaScript methods include `slice()` and `concat()`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 The reducer and action creator were modified to remove an item from an array based on the index of the item. Finish writing the reducer so a new state array is returned with the item at the specific index removed.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,13 +67,11 @@ const store = Redux.createStore(immutableReducer);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const immutableReducer = (state = [0,1,2,3,4,5], action) => {

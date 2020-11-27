@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You can use radio buttons for questions where you want only one answer out of multiple options.
@@ -16,6 +17,7 @@ Before the text input, add a radio button with the option `Indoor`.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -104,4 +107,5 @@ tests:
 ```
 
 </div>
+
 </section>

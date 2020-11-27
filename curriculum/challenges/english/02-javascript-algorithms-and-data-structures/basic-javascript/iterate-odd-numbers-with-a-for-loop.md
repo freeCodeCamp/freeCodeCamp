@@ -7,9 +7,12 @@ forumTopicId: 18212
 ---
 
 ## Description
+
 <section id='description'>
-For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.
-We'll start at <code>i = 0</code> and loop while <code>i &#60; 10</code>. We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.
+
+For loops don't have to iterate one at a time. By changing our `final-expression`, we can count by even numbers.
+
+We'll start at `i = 0` and loop while `i < 10`. We'll increment `i` by 2 each loop with `i += 2`.
 
 ```js
 var ourArray = [];
@@ -18,16 +21,20 @@ for (var i = 0; i < 10; i += 2) {
 }
 ```
 
-<code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.
-Let's change our <code>initialization</code> so we can count by odd numbers.
+`ourArray` will now contain `[0,2,4,6,8]`. Let's change our `initialization` so we can count by odd numbers.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for</code> loop.
+
+Push the odd numbers from 1 through 9 to `myArray` using a `for` loop.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +65,8 @@ var myArray = [];
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -70,8 +78,8 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myArray = [];

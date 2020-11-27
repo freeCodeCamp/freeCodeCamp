@@ -6,6 +6,7 @@ forumTopicId: 301953
 ---
 
 ## Description
+
 <section id='description'>
 
 Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
@@ -25,11 +26,13 @@ Find the sum of all the numbers that can be written as the sum of `n` powers of 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,11 +69,10 @@ digitnPowers(5);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -9,24 +9,22 @@ forumTopicId: 301423
 
 <section id='description'>
 
-React components have several special methods that provide opportunities to perform actions at specific points in the lifecycle of a component. These are called lifecycle methods, or lifecycle hooks, and allow you to catch components at certain points in time. This can be before they are rendered, before they update, before they receive props, before they unmount, and so on. Here is a list of some of the main lifecycle methods:
-<code>componentWillMount()</code>
-<code>componentDidMount()</code>
-<code>shouldComponentUpdate()</code>
-<code>componentDidUpdate()</code>
-<code>componentWillUnmount()</code>
-The next several lessons will cover some of the basic use cases for these lifecycle methods.
+React components have several special methods that provide opportunities to perform actions at specific points in the lifecycle of a component. These are called lifecycle methods, or lifecycle hooks, and allow you to catch components at certain points in time. This can be before they are rendered, before they update, before they receive props, before they unmount, and so on. Here is a list of some of the main lifecycle methods: `componentWillMount()` `componentDidMount()` `shouldComponentUpdate()` `componentDidUpdate()` `componentWillUnmount()` The next several lessons will cover some of the basic use cases for these lifecycle methods.
 
-<strong>Note:</strong> The `componentWillMount` Lifecycle method will be deprecated in a future version of 16.X and removed in version 17. [(Source)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+**Note:** The `componentWillMount` Lifecycle method will be deprecated in a future version of 16.X and removed in version 17. [(Source)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-The <code>componentWillMount()</code> method is called before the <code>render()</code> method when a component is being mounted to the DOM. Log something to the console within <code>componentWillMount()</code> - you may want to have your browser console open to see the output.
+The `componentWillMount()` method is called before the `render()` method when a component is being mounted to the DOM. Log something to the console within `componentWillMount()` - you may want to have your browser console open to see the output.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -63,8 +62,8 @@ class MyComponent extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -76,8 +75,8 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class MyComponent extends React.Component {

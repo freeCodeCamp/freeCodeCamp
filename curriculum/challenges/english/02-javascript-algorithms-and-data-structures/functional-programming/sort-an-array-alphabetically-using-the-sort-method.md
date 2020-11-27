@@ -6,8 +6,11 @@ forumTopicId: 18303
 ---
 
 ## Description
+
 <section id='description'>
-The <code>sort</code> method sorts the elements of an array according to the callback function.
+
+The `sort` method sorts the elements of an array according to the callback function.
+
 For example:
 
 ```js
@@ -28,19 +31,20 @@ reverseAlpha(['l', 'h', 'z', 'b', 's']);
 // Returns ['z', 's', 'l', 'h', 'b']
 ```
 
-JavaScript's default sorting method is by string Unicode point value, which may return unexpected results. Therefore, it is encouraged to provide a callback function to specify how to sort the array items. When such a callback function, normally called <code>compareFunction</code>, is supplied, the array elements are sorted according to the return value of the <code>compareFunction</code>:
-If <code>compareFunction(a,b)</code> returns a value less than 0 for two elements <code>a</code> and <code>b</code>, then <code>a</code> will come before <code>b</code>.
-If <code>compareFunction(a,b)</code> returns a value greater than 0 for two elements <code>a</code> and <code>b</code>, then <code>b</code> will come before <code>a</code>.
-If <code>compareFunction(a,b)</code> returns a value equal to 0 for two elements <code>a</code> and <code>b</code>, then <code>a</code> and <code>b</code> will remain unchanged.
+JavaScript's default sorting method is by string Unicode point value, which may return unexpected results. Therefore, it is encouraged to provide a callback function to specify how to sort the array items. When such a callback function, normally called `compareFunction`, is supplied, the array elements are sorted according to the return value of the `compareFunction`: If `compareFunction(a,b)` returns a value less than 0 for two elements `a` and `b`, then `a` will come before `b`. If `compareFunction(a,b)` returns a value greater than 0 for two elements `a` and `b`, then `b` will come before `a`. If `compareFunction(a,b)` returns a value equal to 0 for two elements `a` and `b`, then `a` and `b` will remain unchanged.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the <code>sort</code> method in the <code>alphabeticalOrder</code> function to sort the elements of <code>arr</code> in alphabetical order.
+
+Use the `sort` method in the `alphabeticalOrder` function to sort the elements of `arr` in alphabetical order.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -59,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -75,11 +80,10 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,6 +6,7 @@ forumTopicId: 301897
 ---
 
 ## Description
+
 <section id='description'>
 
 The Fibonacci sequence is defined by the recurrence relation:
@@ -23,11 +24,13 @@ What is the index of the first term in the Fibonacci sequence to contain `n` dig
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,13 +67,11 @@ digitFibonacci(20);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const digitFibonacci = (n) => {

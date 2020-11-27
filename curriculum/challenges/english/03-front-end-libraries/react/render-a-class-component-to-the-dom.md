@@ -6,18 +6,27 @@ forumTopicId: 301404
 ---
 
 ## Description
+
 <section id='description'>
+
 You may remember using the ReactDOM API in an earlier challenge to render JSX elements to the DOM. The process for rendering React components will look very similar. The past few challenges focused on components and composition, so the rendering was done for you behind the scenes. However, none of the React code you write will render to the DOM without making a call to the ReactDOM API.
-Here's a refresher on the syntax: <code>ReactDOM.render(componentToRender, targetNode)</code>. The first argument is the React component that you want to render. The second argument is the DOM node that you want to render that component within.
-React components are passed into <code>ReactDOM.render()</code> a little differently than JSX elements. For JSX elements, you pass in the name of the element that you want to render. However, for React components, you need to use the same syntax as if you were rendering a nested component, for example <code>ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)</code>. You use this syntax for both ES6 class components and functional components.
+
+Here's a refresher on the syntax: `ReactDOM.render(componentToRender, targetNode)`. The first argument is the React component that you want to render. The second argument is the DOM node that you want to render that component within.
+
+React components are passed into `ReactDOM.render()` a little differently than JSX elements. For JSX elements, you pass in the name of the element that you want to render. However, for React components, you need to use the same syntax as if you were rendering a nested component, for example `ReactDOM.render(<ComponentToRender />, targetNode)`. You use this syntax for both ES6 class components and functional components.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Both the <code>Fruits</code> and <code>Vegetables</code> components are defined for you behind the scenes. Render both components as children of the <code>TypesOfFood</code> component, then render <code>TypesOfFood</code> to the DOM. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use.
+
+Both the `Fruits` and `Vegetables` components are defined for you behind the scenes. Render both components as children of the `TypesOfFood` component, then render `TypesOfFood` to the DOM. There is a `div` with `id='challenge-node'` available for you to use.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -65,6 +75,7 @@ class TypesOfFood extends React.Component {
 </div>
 
 ### Before Test
+
 <div id='jsx-setup'>
 
 ```jsx
@@ -107,12 +118,11 @@ const Vegetables = () => {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class TypesOfFood extends React.Component {

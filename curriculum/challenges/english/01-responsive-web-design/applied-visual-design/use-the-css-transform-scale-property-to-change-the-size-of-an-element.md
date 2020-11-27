@@ -7,8 +7,10 @@ forumTopicId: 301076
 ---
 
 ## Description
+
 <section id='description'>
-To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:
+
+To change the scale of an element, CSS has the `transform` property, along with its `scale()` function. The following code example doubles the size of all the paragraph elements on the page:
 
 ```css
 p {
@@ -19,11 +21,15 @@ p {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Increase the size of the element with the id of <code>ball2</code> to 1.5 times its original size.
+
+Increase the size of the element with the id of `ball2` to 1.5 times its original size.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -71,13 +78,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

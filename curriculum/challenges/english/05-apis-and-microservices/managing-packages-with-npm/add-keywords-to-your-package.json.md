@@ -6,23 +6,31 @@ forumTopicId: 301526
 ---
 
 ## Description
+
 <section id='description'>
-The <code>keywords</code> field is where you can describe your project using related keywords. Here's an example:
+
+The `keywords` field is where you can describe your project using related keywords. Here's an example:
 
 ```json
 "keywords": [ "descriptive", "related", "words" ],
 ```
 
 As you can see, this field is structured as an array of double-quoted strings.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add an array of suitable strings to the <code>keywords</code> field in the package.json file of your project.
+
+Add an array of suitable strings to the `keywords` field in the package.json file of your project.
+
 One of the keywords should be "freecodecamp".
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,11 +47,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

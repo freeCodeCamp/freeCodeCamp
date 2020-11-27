@@ -6,16 +6,21 @@ forumTopicId: 302250
 ---
 
 ## Description
+
 <section id='description'>
-Convert a given date from the  <a href="https://en.wikipedia.org/wiki/Gregorian calendar" title="wp: Gregorian calendar" target="_blank">Gregorian calendar</a>  to the  <a href="https://en.wikipedia.org/wiki/Discordian calendar" title="wp: Discordian calendar" target="_blank">Discordian calendar</a>.
+
+Convert a given date from the [Gregorian calendar](<https://en.wikipedia.org/wiki/Gregorian calendar> "wp: Gregorian calendar") to the [Discordian calendar](<https://en.wikipedia.org/wiki/Discordian calendar> "wp: Discordian calendar").
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,13 +61,11 @@ function discordianDate(date) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 /**

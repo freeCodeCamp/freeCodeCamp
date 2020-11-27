@@ -6,17 +6,23 @@ forumTopicId: 301709
 ---
 
 ## Description
+
 <section id='description'>
-In this exercise we are going to perform an intersection on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>intersection</code>. An intersection of sets represents all values that are common to two or more sets. This method should take another <code>Set</code> as an argument and return the <code>intersection</code> of the two sets.
-For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the intersection of setA and setB is: <code>setA.intersection(setB) = ['a', 'b']</code>.
+
+In this exercise we are going to perform an intersection on 2 sets of data. We will create a method on our `Set` data structure called `intersection`. An intersection of sets represents all values that are common to two or more sets. This method should take another `Set` as an argument and return the `intersection` of the two sets.
+
+For example, if `setA = ['a','b','c']` and `setB = ['a','b','d','e']`, then the intersection of setA and setB is: `setA.intersection(setB) = ['a', 'b']`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -92,11 +99,12 @@ class Set {
 ```
 
 </div>
+
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 class Set {

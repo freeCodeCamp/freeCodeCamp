@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `hasOwnProperty` method checks if a key exists in an object. So `spreadsheetFunctions.hasOwnProperty("")` would return `true`, but replacing `""` with anything else would make it return `false`.
@@ -14,12 +15,13 @@ Chain `hasOwnProperty` to `spreadsheetFunctions` to check if the `fn.toLowerCase
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,10 +31,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,8 +81,8 @@ const applyFn = str => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -111,8 +113,8 @@ const applyFn = str => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -122,11 +124,10 @@ const applyFn = str => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

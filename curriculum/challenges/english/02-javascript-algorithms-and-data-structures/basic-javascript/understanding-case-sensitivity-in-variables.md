@@ -7,12 +7,18 @@ forumTopicId: 18334
 ---
 
 ## Description
+
 <section id='description'>
+
 In JavaScript all variables and function names are case sensitive. This means that capitalization matters.
-<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you <em>do not</em> use this language feature.
+
+`MYVAR` is not the same as `MyVar` nor `myvar`. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you *do not* use this language feature.
+
 <h4>Best Practice</h4>
+
 Write variable names in JavaScript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.
-<strong>Examples:</strong>
+
+**Examples:**
 
 ```js
 var someVariable;
@@ -23,11 +29,16 @@ var thisVariableNameIsSoLong;
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.<br>Do not create any new variables.
+
+Modify the existing declarations and assignments so their names use <dfn>camelCase</dfn>.  
+Do not create any new variables.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,13 +80,11 @@ tITLEcASEoVER = 9000;
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var studlyCapVar;

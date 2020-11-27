@@ -6,9 +6,12 @@ forumTopicId: 301353
 ---
 
 ## Description
+
 <section id='description'>
-You've learned that you can use a shortcut to match alphanumerics <code>[A-Za-z0-9_]</code> using <code>\w</code>. A natural pattern you might want to search for is the opposite of alphanumerics.
-You can search for the opposite of the <code>\w</code> with <code>\W</code>. Note, the opposite pattern uses a capital letter. This shortcut is the same as <code>[^A-Za-z0-9_]</code>.
+
+You've learned that you can use a shortcut to match alphanumerics `[A-Za-z0-9_]` using `\w`. A natural pattern you might want to search for is the opposite of alphanumerics.
+
+You can search for the opposite of the `\w` with `\W`. Note, the opposite pattern uses a capital letter. This shortcut is the same as `[^A-Za-z0-9_]`.
 
 ```js
 let shortHand = /\W/;
@@ -21,11 +24,15 @@ sentence.match(shortHand); // Returns ["!"]
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the shorthand character class <code>\W</code> to count the number of non-alphanumeric characters in various quotes and strings.
+
+Use the shorthand character class `\W` to count the number of non-alphanumeric characters in various quotes and strings.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,11 +68,10 @@ let result = quoteSample.match(nonAlphabetRegex).length;
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

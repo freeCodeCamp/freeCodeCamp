@@ -7,9 +7,13 @@ forumTopicId: 301031
 ---
 
 ## Description
+
 <section id='description'>
-The <code>box-shadow</code> property applies one or more shadows to an element.
-The <code>box-shadow</code> property takes values for
+
+The `box-shadow` property applies one or more shadows to an element.
+
+The `box-shadow` property takes values for
+
 <ul>
   <li><code>offset-x</code> (how far to push the shadow horizontally from the element),</li>
   <li><code>offset-y</code> (how far to push the shadow vertically from the element),</li>
@@ -17,8 +21,11 @@ The <code>box-shadow</code> property takes values for
   <li><code>spread-radius</code> and</li>
   <li><code>color</code>, in that order.</li>
 </ul>
-The <code>blur-radius</code> and <code>spread-radius</code> values are optional.
-Multiple box-shadows can be created by using commas to separate properties of each <code>box-shadow</code> element.
+
+The `blur-radius` and `spread-radius` values are optional.
+
+Multiple box-shadows can be created by using commas to separate properties of each `box-shadow` element.
+
 Here's an example of the CSS to create multiple shadows with some blur, at mostly-transparent black colors:
 
 ```css
@@ -28,11 +35,15 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The element now has an id of <code>thumbnail</code>. With this selector, use the example CSS values above to place a <code>box-shadow</code> on the card.
+
+The element now has an id of `thumbnail`. With this selector, use the example CSS values above to place a `box-shadow` on the card.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -100,13 +112,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

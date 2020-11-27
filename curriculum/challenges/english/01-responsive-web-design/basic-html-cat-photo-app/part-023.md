@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 A figure caption (`figcaption`) element is used to add a caption to describe the image contained withing the `figure` element. For example, `<figcaption>A cute cat</figcaption>` adds the caption `A cute cat`.
@@ -14,6 +15,7 @@ After the image nested in the `figure` element, add a `figcaption` element with 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -72,4 +75,5 @@ tests:
 ```
 
 </div>
+
 </section>

@@ -6,22 +6,27 @@ forumTopicId: 302132
 ---
 
 ## Description
+
 <section id='description'>
+
 Consider the alphabet A made out of the letters of the word "project": A={c,e,j,o,p,r,t}.
+
 Let T(n) be the number of strings of length n consisting of letters from A that do not have a substring that is one of the 5040 permutations of "project".
 
 T(7)=77-7!=818503.
 
-
 Find T(1012). Give the last 9 digits of your answer.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,11 +55,10 @@ euler458();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -7,19 +7,29 @@ forumTopicId: 18204
 ---
 
 ## Description
+
 <section id='description'>
-Now we've proven that every HTML page has a <code>body</code> element, and that its <code>body</code> element can also be styled with CSS.
-Remember, you can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.
+
+Now we've proven that every HTML page has a `body` element, and that its `body` element can also be styled with CSS.
+
+Remember, you can style your `body` element just like any other HTML element, and all your other elements will inherit your `body` element's styles.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-First, create a <code>h1</code> element with the text <code>Hello World</code>
-Then, let's give all elements on your page the color of <code>green</code> by adding <code>color: green;</code> to your <code>body</code> element's style declaration.
-Finally, give your <code>body</code> element the font-family of <code>monospace</code> by adding <code>font-family: monospace;</code> to your <code>body</code> element's style declaration.
+
+First, create a `h1` element with the text `Hello World`
+
+Then, let's give all elements on your page the color of `green` by adding `color: green;` to your `body` element's style declaration.
+
+Finally, give your `body` element the font-family of `monospace` by adding `font-family: monospace;` to your `body` element's style declaration.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -59,11 +70,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

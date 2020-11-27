@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now go ahead and change both the `flavor` and `price` class' widths to be `50%` again.
@@ -12,6 +13,7 @@ Now go ahead and change both the `flavor` and `price` class' widths to be `50%` 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

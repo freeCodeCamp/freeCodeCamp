@@ -18,8 +18,7 @@ arr.reduce((accumulator, currentValue) => {
 }, 0);
 ```
 
-At `arr[0]`, the function is `(0, 1) => { return 0 + 1 }`,
-since `arr[0] = 1 = currentValue`.
+At `arr[0]`, the function is `(0, 1) => { return 0 + 1 }`, since `arr[0] = 1 = currentValue`.
 
 At `arr[1]`, the function is `(1, 3) => 1 + 3`,
 
@@ -32,6 +31,7 @@ In the body of the callback function, replace `/* code to run */` with `return a
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

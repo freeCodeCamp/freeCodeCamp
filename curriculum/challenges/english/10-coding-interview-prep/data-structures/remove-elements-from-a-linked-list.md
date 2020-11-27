@@ -6,20 +6,31 @@ forumTopicId: 301712
 ---
 
 ## Description
+
 <section id='description'>
-The next important method that any implementation of a linked list will need is a <code>remove</code> method. This method should take the element we want to remove as an argument, and then search the list to find and remove the node that contains that element.
-Whenever we remove a node from a linked list, it's important that we don't accidentally orphan the rest of the list in doing so. Recall that every node's <code>next</code> property points to the node that follows it in the list. If we're removing the middle element, say, we'll want to make sure that we have a connection from that element's previous node's <code>next</code> property to the middle element's <code>next</code> property (which is the next node in the list!)
+
+The next important method that any implementation of a linked list will need is a `remove` method. This method should take the element we want to remove as an argument, and then search the list to find and remove the node that contains that element.
+
+Whenever we remove a node from a linked list, it's important that we don't accidentally orphan the rest of the list in doing so. Recall that every node's `next` property points to the node that follows it in the list. If we're removing the middle element, say, we'll want to make sure that we have a connection from that element's previous node's `next` property to the middle element's `next` property (which is the next node in the list!)
+
 This might sound really confusing, so let's return to the conga line example so we have a good conceptual model. Picture yourself in a conga line, and the person directly in front of you leaves the line. The person who just left the line no longer has her hands on anyone in line--and you no longer have your hands on the person that left. You step forward and put your hands on next person you see.
-If the element we wish to remove is the <code>head</code> element, we reassign the <code>head</code> to the second node of the linked list.
+
+If the element we wish to remove is the `head` element, we reassign the `head` to the second node of the linked list.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a <code>remove</code> method that takes an element and removes it from the linked list.
-<strong>Note:</strong> The <code>length</code> of the list should decrease by one every time an element is removed from the linked list.
+
+Write a `remove` method that takes an element and removes it from the linked list.
+
+**Note:** The `length` of the list should decrease by one every time an element is removed from the linked list.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -91,6 +103,7 @@ function LinkedList() {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

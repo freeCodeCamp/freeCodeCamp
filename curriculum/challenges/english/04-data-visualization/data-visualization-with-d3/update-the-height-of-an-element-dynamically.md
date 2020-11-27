@@ -6,20 +6,31 @@ forumTopicId: 301493
 ---
 
 ## Description
+
 <section id='description'>
+
 The previous challenges covered how to display data from an array and how to add CSS classes. You can combine these lessons to create a simple bar chart. There are two steps to this:
-1) Create a <code>div</code> for each data point in the array
-2) Give each <code>div</code> a dynamic height, using a callback function in the <code>style()</code> method that sets height equal to the data value
+
+1) Create a `div` for each data point in the array
+
+2) Give each `div` a dynamic height, using a callback function in the `style()` method that sets height equal to the data value
+
 Recall the format to set a style using a callback function:
-<code>selection.style("cssProperty", (d) => d)</code>
+
+`selection.style("cssProperty", (d) => d)`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the <code>style()</code> method to the code in the editor to set the <code>height</code> property for each element. Use a callback function to return the value of the data point with the string "px" added to it.
+
+Add the `style()` method to the code in the editor to set the `height` property for each element. Use a callback function to return the value of the data point with the string "px" added to it.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,11 +93,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

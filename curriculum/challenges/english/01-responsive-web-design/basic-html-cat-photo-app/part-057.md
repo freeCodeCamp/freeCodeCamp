@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add another checkbox after the one you just added. The `id` attribute value should be `lazy` and the `name` attribute value should be the same as the last checkbox.
@@ -14,6 +15,7 @@ Also add a `label` element to the right of the new checkbox with the text `Lazy`
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -101,4 +104,5 @@ tests:
 ```
 
 </div>
+
 </section>

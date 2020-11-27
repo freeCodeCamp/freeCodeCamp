@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Just like in the `locations` array, all the elements in `weapons` will be objects. Add four objects to the `weapons` array, each with two properties: `name` and `power`. The first should be the `name` "stick" with `power` set to 5. Then, "dagger" with set `power` to 30. Next, "claw hammer" with a `power` of 50. Finally, "sword" with a `power` of 100.
@@ -12,11 +13,13 @@ Just like in the `locations` array, all the elements in `weapons` will be object
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -134,8 +138,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -204,8 +208,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -215,12 +219,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

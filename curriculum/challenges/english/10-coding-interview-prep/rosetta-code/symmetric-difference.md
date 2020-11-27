@@ -9,9 +9,7 @@ forumTopicId: 16086
 
 <section id='description'>
 
-Given two <a href="https://rosettacode.org/wiki/set" target="_blank">set</a>s <i>A</i> and <i>B</i>, compute $(A \setminus B) \cup (B \setminus A).$
-That is, enumerate the items that are in <i>A</i> or <i>B</i> but not both. This set is called the <a href="https://en.wikipedia.org/wiki/Symmetric difference" target="_blank">symmetric difference</a> of <i>A</i> and <i>B</i>.
-In other words: $(A \cup B) \setminus (A \cap B)$ (the set of items that are in at least one of <i>A</i> or <i>B</i> minus the set of items that are in both <i>A</i> and <i>B</i>).
+Given two [set](https://rosettacode.org/wiki/set)s *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ That is, enumerate the items that are in *A* or *B* but not both. This set is called the [symmetric difference](<https://en.wikipedia.org/wiki/Symmetric difference>) of *A* and *B*. In other words: $(A \\cup B) \\setminus (A \\cap B)$ (the set of items that are in at least one of *A* or *B* minus the set of items that are in both *A* and *B*).
 
 </section>
 
@@ -60,6 +58,7 @@ function symmetricDifference(A, B) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

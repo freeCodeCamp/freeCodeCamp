@@ -6,9 +6,13 @@ forumTopicId: 302227
 ---
 
 ## Description
+
 <section id='description'>
-Compute all three of the <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Pythagorean means' title='wp: Pythagorean means' target="_blank">Pythagorean means</a> of the set of integers $1$ through $10$ (inclusive).
-Show that <big>$A(x_1,\ldots,x_n) \geq G(x_1,\ldots,x_n) \geq H(x_1,\ldots,x_n)$</big> for this set of positive integers.
+
+Compute all three of the [Pythagorean means](<https://en.wikipedia.org/wiki/Pythagorean means> "wp: Pythagorean means") of the set of integers $1$ through $10$ (inclusive).
+
+Show that $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ for this set of positive integers.
+
 <ul>
   <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
   <big>$ A(x_1, \ldots, x_n) = \frac{x_1 + \cdots + x_n}{n}$</big></li>
@@ -17,11 +21,15 @@ Show that <big>$A(x_1,\ldots,x_n) \geq G(x_1,\ldots,x_n) \geq H(x_1,\ldots,x_n)$
   <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list:<br>
   <big>$ H(x_1, \ldots, x_n) = \frac{n}{\frac{1}{x_1} + \cdots + \frac{1}{x_n}} $</big></li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 When writing your function, assume the input is an ordered array of all inclusive numbers.
+
 For the answer, please output an object in the following format:
 
 ```js
@@ -38,6 +46,7 @@ For the answer, please output an object in the following format:
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,8 +74,8 @@ function pythagoreanMeans(rangeArr) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -86,8 +96,8 @@ const answer1 = {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function pythagoreanMeans(rangeArr) {

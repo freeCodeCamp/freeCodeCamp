@@ -6,18 +6,27 @@ forumTopicId: 301431
 ---
 
 ## Description
+
 <section id='description'>
-Here you'll finish creating the <code>DisplayMessages</code> component.
+
+Here you'll finish creating the `DisplayMessages` component.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-First, in the <code>render()</code> method, have the component render an <code>input</code> element, <code>button</code> element, and <code>ul</code> element. When the <code>input</code> element changes, it should trigger a <code>handleChange()</code> method. Also, the <code>input</code> element should render the value of <code>input</code> that's in the component's state. The <code>button</code> element should trigger a <code>submitMessage()</code> method when it's clicked.
-Second, write these two methods. The <code>handleChange()</code> method should update the <code>input</code> with what the user is typing. The <code>submitMessage()</code> method should concatenate the current message (stored in <code>input</code>) to the <code>messages</code> array in local state, and clear the value of the <code>input</code>.
-Finally, use the <code>ul</code> to map over the array of <code>messages</code> and render it to the screen as a list of <code>li</code> elements.
+
+First, in the `render()` method, have the component render an `input` element, `button` element, and `ul` element. When the `input` element changes, it should trigger a `handleChange()` method. Also, the `input` element should render the value of `input` that's in the component's state. The `button` element should trigger a `submitMessage()` method when it's clicked.
+
+Second, write these two methods. The `handleChange()` method should update the `input` with what the user is typing. The `submitMessage()` method should concatenate the current message (stored in `input`) to the `messages` array in local state, and clear the value of the `input`.
+
+Finally, use the `ul` to map over the array of `messages` and render it to the screen as a list of `li` elements.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -72,8 +82,8 @@ class DisplayMessages extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -85,8 +95,8 @@ ReactDOM.render(<DisplayMessages />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class DisplayMessages extends React.Component {

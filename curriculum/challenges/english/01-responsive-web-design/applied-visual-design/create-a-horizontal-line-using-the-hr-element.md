@@ -7,17 +7,25 @@ forumTopicId: 301049
 ---
 
 ## Description
+
 <section id='description'>
-You can use the <code>hr</code> tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.
+
+You can use the `hr` tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add an <code>hr</code> tag underneath the <code>h4</code> which contains the card title.
-<strong>Note:</strong> In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag.
+
+Add an `hr` tag underneath the `h4` which contains the card title.
+
+**Note:** In HTML, `hr` is a self-closing tag, and therefore doesn't need a separate closing tag.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,11 +89,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

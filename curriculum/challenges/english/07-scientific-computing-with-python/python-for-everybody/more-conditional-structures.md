@@ -8,9 +8,13 @@ videoId: HdL82tAZR20
 ## Description
 
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=crLerB4ZxMI" target='_blank'>Exercise 1</a>
-- <a href="https://www.youtube.com/watch?v=KJN3-7HH6yk" target='_blank'>Exercise 2</a>
+
+\- [Exercise 1](https://www.youtube.com/watch?v=crLerB4ZxMI)
+
+\- [Exercise 2](https://www.youtube.com/watch?v=KJN3-7HH6yk)
+
 </section>
 
 ## Tests

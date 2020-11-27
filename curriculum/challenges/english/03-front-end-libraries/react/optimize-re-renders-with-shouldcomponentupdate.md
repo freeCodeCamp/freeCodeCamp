@@ -8,14 +8,19 @@ forumTopicId: 301398
 ## Description
 
 <section id='description'>
-So far, if any component receives new <code>state</code> or new <code>props</code>, it re-renders itself and all its children. This is usually okay. But React provides a lifecycle method you can call when child components receive new <code>state</code> or <code>props</code>, and declare specifically if the components should update or not. The method is <code>shouldComponentUpdate()</code>, and it takes <code>nextProps</code> and <code>nextState</code> as parameters.
-This method is a useful way to optimize performance. For example, the default behavior is that your component re-renders when it receives new <code>props</code>, even if the <code>props</code> haven't changed. You can use <code>shouldComponentUpdate()</code> to prevent this by comparing the <code>props</code>. The method must return a <code>boolean</code> value that tells React whether or not to update the component. You can compare the current props (<code>this.props</code>) to the next props (<code>nextProps</code>) to determine if you need to update or not, and return <code>true</code> or <code>false</code> accordingly.
+
+So far, if any component receives new `state` or new `props`, it re-renders itself and all its children. This is usually okay. But React provides a lifecycle method you can call when child components receive new `state` or `props`, and declare specifically if the components should update or not. The method is `shouldComponentUpdate()`, and it takes `nextProps` and `nextState` as parameters.
+
+This method is a useful way to optimize performance. For example, the default behavior is that your component re-renders when it receives new `props`, even if the `props` haven't changed. You can use `shouldComponentUpdate()` to prevent this by comparing the `props`. The method must return a `boolean` value that tells React whether or not to update the component. You can compare the current props (`this.props`) to the next props (`nextProps`) to determine if you need to update or not, and return `true` or `false` accordingly.
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
-The <code>shouldComponentUpdate()</code> method is added in a component called <code>OnlyEvens</code>. Currently, this method returns <code>true</code> so <code>OnlyEvens</code> re-renders every time it receives new <code>props</code>. Modify the method so <code>OnlyEvens</code> updates only if the <code>value</code> of its new props is even. Click the <code>Add</code> button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
+
+The `shouldComponentUpdate()` method is added in a component called `OnlyEvens`. Currently, this method returns `true` so `OnlyEvens` re-renders every time it receives new `props`. Modify the method so `OnlyEvens` updates only if the `value` of its new props is even. Click the `Add` button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
+
 </section>
 
 ## Tests

@@ -7,21 +7,33 @@ forumTopicId: 18186
 ---
 
 ## Description
+
 <section id='description'>
+
 It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.
+
 <ol><li>Use <code>Math.random()</code> to generate a random decimal.</li><li>Multiply that random decimal by <code>20</code>.</li><li>Use another function, <code>Math.floor()</code> to round the number down to its nearest whole number.</li></ol>
-Remember that <code>Math.random()</code> can never quite return a <code>1</code> and, because we're rounding down, it's impossible to actually get <code>20</code>. This technique will give us a whole number between <code>0</code> and <code>19</code>.
+
+Remember that `Math.random()` can never quite return a `1` and, because we're rounding down, it's impossible to actually get `20`. This technique will give us a whole number between `0` and `19`.
+
 Putting everything together, this is what our code looks like:
-<code>Math.floor(Math.random() * 20);</code>
-We are calling <code>Math.random()</code>, multiplying the result by 20, then passing the value to <code>Math.floor()</code> function to round the value down to the nearest whole number.
+
+`Math.floor(Math.random() * 20);`
+
+We are calling `Math.random()`, multiplying the result by 20, then passing the value to `Math.floor()` function to round the value down to the nearest whole number.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use this technique to generate and return a random whole number between <code>0</code> and <code>9</code>.
+
+Use this technique to generate and return a random whole number between `0` and `9`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,8 +68,8 @@ function randomWholeNum() {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -68,8 +81,8 @@ function randomWholeNum() {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function randomWholeNum() {

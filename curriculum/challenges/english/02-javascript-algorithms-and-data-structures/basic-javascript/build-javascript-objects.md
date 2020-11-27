@@ -7,10 +7,15 @@ forumTopicId: 16769
 ---
 
 ## Description
+
 <section id='description'>
-You may have heard the term <code>object</code> before.
-Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.
+
+You may have heard the term `object` before.
+
+Objects are similar to `arrays`, except that instead of using indexes to access and modify their data, you access the data in objects through what are called `properties`.
+
 Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.
+
 Here's a sample cat object:
 
 ```js
@@ -22,7 +27,7 @@ var cat = {
 };
 ```
 
-In this example, all the properties are stored as strings, such as - <code>"name"</code>, <code>"legs"</code>, and <code>"tails"</code>. However, you can also use numbers as properties. You can even omit the quotes for single-word string properties, as follows:
+In this example, all the properties are stored as strings, such as - `"name"`, `"legs"`, and `"tails"`. However, you can also use numbers as properties. You can even omit the quotes for single-word string properties, as follows:
 
 ```js
 var anotherObject = {
@@ -33,15 +38,21 @@ var anotherObject = {
 ```
 
 However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Make an object that represents a dog called <code>myDog</code> which contains the properties <code>"name"</code> (a string), <code>"legs"</code>, <code>"tails"</code> and <code>"friends"</code>.
-You can set these object properties to whatever values you want, as long as <code>"name"</code> is a string, <code>"legs"</code> and <code>"tails"</code> are numbers, and <code>"friends"</code> is an array.
+
+Make an object that represents a dog called `myDog` which contains the properties `"name"` (a string), `"legs"`, `"tails"` and `"friends"`.
+
+You can set these object properties to whatever values you want, as long as `"name"` is a string, `"legs"` and `"tails"` are numbers, and `"friends"` is an array.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -62,6 +73,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -77,8 +89,8 @@ var myDog = {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -90,8 +102,8 @@ var myDog = {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myDog = {

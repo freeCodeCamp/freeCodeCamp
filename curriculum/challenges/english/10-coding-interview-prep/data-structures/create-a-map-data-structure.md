@@ -6,16 +6,19 @@ forumTopicId: 301629
 ---
 
 ## Description
+
 <section id='description'>
 
 The next few challenges will cover maps and hash tables. Maps are data structures that store key-value pairs. In JavaScript, these are available to us as objects. Maps provide rapid lookup of stored items based on key values and are very common and useful data structures.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-Let's get some practice creating our own map. Because JavaScript objects provide a much more efficient map structure than anything we could write here, this is intended primarily as a learning exercise. However, JavaScript objects only provide us with certain operations. What if we wanted to define custom operations?
-Use the <code>Map</code> object provided here as a wrapper around a JavaScript <code>object</code>. Create the following methods and operations on the Map object:
+Let's get some practice creating our own map. Because JavaScript objects provide a much more efficient map structure than anything we could write here, this is intended primarily as a learning exercise. However, JavaScript objects only provide us with certain operations. What if we wanted to define custom operations? Use the `Map` object provided here as a wrapper around a JavaScript `object`. Create the following methods and operations on the Map object:
+
 <ul>
 <li><code>add</code> accepts a <code>key, value</code> pair to add to the map.</li>
 <li><code>remove</code> accepts a key and removes the associated <code>key, value</code> pair</li>
@@ -25,9 +28,11 @@ Use the <code>Map</code> object provided here as a wrapper around a JavaScript <
 <li><code>size</code> returns the number of items in the map</li>
 <li><code>clear</code> empties the map</li>
 </ul>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,9 +71,11 @@ var Map = function() {
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

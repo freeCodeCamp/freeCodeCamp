@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The code for an ordered list (`ol`) is similar to an unordered list, but list items in an ordered list are numbered when displayed.
@@ -14,6 +15,7 @@ After the final second section' last `h3` element, add an ordered list with thes
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -71,4 +74,5 @@ tests:
 ```
 
 </div>
+
 </section>

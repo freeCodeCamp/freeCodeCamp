@@ -6,8 +6,11 @@ forumTopicId: 301531
 ---
 
 ## Description
+
 <section id='description'>
-Similar to how the tilde we learned about in the last challenge allows npm to install the latest PATCH for a dependency, the caret (<code>^</code>) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
+
+Similar to how the tilde we learned about in the last challenge allows npm to install the latest PATCH for a dependency, the caret (`^`) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
+
 Your current version of moment should be "~2.10.2" which allows npm to install to the latest 2.10.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 2.x.x version.
 
 ```json
@@ -15,15 +18,21 @@ Your current version of moment should be "~2.10.2" which allows npm to install t
 ```
 
 This would allow updates to any 1.x.x version of the package.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the caret (<code>^</code>) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.
-<strong>Note:</strong> The version numbers themselves should not be changed.
+
+Use the caret (`^`) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.
+
+**Note:** The version numbers themselves should not be changed.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,11 +47,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

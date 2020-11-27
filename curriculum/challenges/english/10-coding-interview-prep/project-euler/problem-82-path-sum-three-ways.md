@@ -6,6 +6,7 @@ forumTopicId: 302196
 ---
 
 ## Description
+
 <section id='description'>
 
 **Note:** This problem is a more challenging version of Problem 81.
@@ -27,11 +28,13 @@ Find the minimal path sum from the left column to the right column in `matrix`, 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,8 +77,8 @@ pathSumThreeWays(testMatrix);
 
 </div>
 
-
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -164,11 +168,10 @@ const matrix = [
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

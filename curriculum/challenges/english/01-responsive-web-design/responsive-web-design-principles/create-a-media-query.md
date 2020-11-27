@@ -7,9 +7,13 @@ forumTopicId: 301139
 ---
 
 ## Description
+
 <section id='description'>
+
 Media Queries are a new technique introduced in CSS3 that change the presentation of content based on different viewport sizes. The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.
+
 Media Queries consist of a media type, and if that media type matches the type of device the document is displayed on, the styles are applied. You can have as many selectors and styles inside your media query as you want.
+
 Here's an example of a media query that returns the content when the device's width is less than or equal to 100px:
 
 `@media (max-width: 100px) { /* CSS Rules */ }`
@@ -23,11 +27,15 @@ Remember, the CSS inside the media query is applied only if the media type match
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a media query, so that the <code>p</code> tag has a <code>font-size</code> of <code>10px</code> when the device's height is less than or equal to <code>800px</code>.
+
+Add a media query, so that the `p` tag has a `font-size` of `10px` when the device's height is less than or equal to `800px`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,11 +72,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Make a comment to describe what the next few lines of code will do. Comments can be written with either two forward-slashes `//` or with a multi-line sequence `/* */`. For example, here is a single line comment that says "hello world": `// hello world`.
@@ -14,11 +15,13 @@ Write a single line comment that says "initialize buttons".
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -61,8 +65,8 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -131,8 +135,8 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -142,12 +146,11 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

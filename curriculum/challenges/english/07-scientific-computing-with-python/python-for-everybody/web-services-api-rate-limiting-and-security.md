@@ -6,15 +6,23 @@ videoId: pI-g0lI8ngs
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=TJGJN0T8tak" target='_blank'>Exercise: GeoJSON</a>
-- <a href="https://www.youtube.com/watch?v=vTmw5RtfGMY" target='_blank'>Exercise: JSON</a>
-- <a href="https://www.youtube.com/watch?v=2c7YwhvpCro" target='_blank'>Exercise: Twitter</a>
-- <a href="https://www.youtube.com/watch?v=AopYOlDa-vY" target='_blank'>Exercise: XML</a>
+
+\- [Exercise: GeoJSON](https://www.youtube.com/watch?v=TJGJN0T8tak)
+
+\- [Exercise: JSON](https://www.youtube.com/watch?v=vTmw5RtfGMY)
+
+\- [Exercise: Twitter](https://www.youtube.com/watch?v=2c7YwhvpCro)
+
+\- [Exercise: XML](https://www.youtube.com/watch?v=AopYOlDa-vY)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml

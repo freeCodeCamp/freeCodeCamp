@@ -6,13 +6,16 @@ videoId: j5xsxjq_Xk8
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks below to create the training examples for the RNN:
@@ -35,7 +38,6 @@ question:
 
       B: `from_generator`
   solution: 1
-```
+````
 
 </section>
-

@@ -7,16 +7,23 @@ forumTopicId: 301079
 ---
 
 ## Description
+
 <section id='description'>
-To strikethrough text, which is when a horizontal line cuts across the characters, you can use the <code>s</code> tag. It shows that a section of text is no longer valid. With the <code>s</code> tag, the browser applies the CSS of <code>text-decoration: line-through;</code> to the element.
+
+To strikethrough text, which is when a horizontal line cuts across the characters, you can use the `s` tag. It shows that a section of text is no longer valid. With the `s` tag, the browser applies the CSS of `text-decoration: line-through;` to the element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Wrap the <code>s</code> tag around "Google" inside the <code>h4</code> tag and then add the word "Alphabet" beside it, which should not have the strikethrough formatting.
+
+Wrap the `s` tag around "Google" inside the `h4` tag and then add the word "Alphabet" beside it, which should not have the strikethrough formatting.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,11 +88,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

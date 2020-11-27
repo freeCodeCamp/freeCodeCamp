@@ -6,7 +6,9 @@ forumTopicId: 301332
 ---
 
 ## Description
+
 <section id='description'>
+
 An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or <dfn>module</dfn>. For example, an earlier challenge defined two mixins:
 
 ```js
@@ -41,8 +43,7 @@ let motionModule = (function () {
 })(); // The two parentheses cause the function to be immediately invoked
 ```
 
-Note that you have an immediately invoked function expression (IIFE) that returns an object <code>motionModule</code>. This returned object contains all of the mixin behaviors as properties of the object.
-The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. Here is an example using it:
+Note that you have an immediately invoked function expression (IIFE) that returns an object `motionModule`. This returned object contains all of the mixin behaviors as properties of the object. The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. Here is an example using it:
 
 ```js
 motionModule.glideMixin(duck);
@@ -52,11 +53,15 @@ duck.glide();
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a module named <code>funModule</code> to wrap the two mixins <code>isCuteMixin</code> and <code>singMixin</code>. <code>funModule</code> should return an object.
+
+Create a module named `funModule` to wrap the two mixins `isCuteMixin` and `singMixin`. `funModule` should return an object.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -73,6 +78,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -92,13 +98,11 @@ let singMixin = function(obj) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const funModule = (function () {

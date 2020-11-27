@@ -6,6 +6,7 @@ forumTopicId: 302193
 ---
 
 ## Description
+
 <section id='description'>
 
 The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
@@ -36,11 +37,13 @@ Find the `n` adjacent digits in the 1000-digit number that have the greatest pro
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -57,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,13 +77,11 @@ largestProductinaSeries(13);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const largestProductinaSeries = (number)=>{

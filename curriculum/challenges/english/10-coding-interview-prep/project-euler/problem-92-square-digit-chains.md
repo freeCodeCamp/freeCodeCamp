@@ -6,6 +6,7 @@ forumTopicId: 302209
 ---
 
 ## Description
+
 <section id='description'>
 
 A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
@@ -24,11 +25,13 @@ How many starting numbers below ten million will arrive at 89?
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,11 +62,10 @@ squareDigitChains();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

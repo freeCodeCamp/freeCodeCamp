@@ -6,10 +6,15 @@ forumTopicId: 301181
 ---
 
 ## Description
+
 <section id='description'>
+
 The <dfn>conditional operator</dfn>, also called the <dfn>ternary operator</dfn>, can be used as a one line if-else expression.
+
 The syntax is:
-<code>condition ? expression-if-true : expression-if-false;</code>
+
+`condition ? expression-if-true : expression-if-false;`
+
 The following function uses an if-else statement to check a condition:
 
 ```js
@@ -23,7 +28,7 @@ function findGreater(a, b) {
 }
 ```
 
-This can be re-written using the <code>conditional operator</code>:
+This can be re-written using the `conditional operator`:
 
 ```js
 function findGreater(a, b) {
@@ -34,11 +39,15 @@ function findGreater(a, b) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the <code>conditional operator</code> in the <code>checkEqual</code> function to check if two numbers are equal or not. The function should return either "Equal" or "Not Equal".
+
+Use the `conditional operator` in the `checkEqual` function to check if two numbers are equal or not. The function should return either "Equal" or "Not Equal".
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -56,6 +65,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -70,11 +80,10 @@ checkEqual(1, 2);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

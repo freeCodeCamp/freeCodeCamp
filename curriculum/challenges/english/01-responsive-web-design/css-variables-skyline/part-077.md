@@ -5,17 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
+
 Don't worry about the space at the bottom, everything will get moved down later when you add some height to the element at the top of the building.
 
 Add a `repeating-linear-gradient` to `fb1c` with a `90deg` angle, your `--building-color4` from `0%` to `10%` and `transparent` from `10%` to `15%`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -28,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -283,10 +290,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now you will add a web form to collect information from users.
@@ -14,6 +15,7 @@ After the `Cat Form` heading, add a `form` element.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -86,4 +89,5 @@ tests:
 ```
 
 </div>
+
 </section>

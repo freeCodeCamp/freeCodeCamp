@@ -6,6 +6,7 @@ forumTopicId: 301723
 ---
 
 ## Description
+
 <section id='description'>
 
 The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
@@ -15,11 +16,13 @@ Find the sum of all the primes below `n`.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,6 +62,7 @@ primeSummation(2000000);
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

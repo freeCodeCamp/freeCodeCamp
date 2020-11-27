@@ -6,6 +6,7 @@ forumTopicId: 302179
 ---
 
 ## Description
+
 <section id='description'>
 
 By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
@@ -26,11 +27,13 @@ Find the maximum total from top to bottom in `numTriangle`, a 2D array defined i
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,9 +71,8 @@ maximumPathSumII(testTriangle);
 
 </div>
 
-
-
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -78,11 +81,10 @@ const numTriangle = [[59,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

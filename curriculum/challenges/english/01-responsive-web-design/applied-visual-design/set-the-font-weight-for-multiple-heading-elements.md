@@ -7,17 +7,25 @@ forumTopicId: 301069
 ---
 
 ## Description
+
 <section id='description'>
-You set the <code>font-size</code> of each heading tag in the last challenge, here you'll adjust the <code>font-weight</code>.
-The <code>font-weight</code> property sets how thick or thin characters are in a section of text.
+
+You set the `font-size` of each heading tag in the last challenge, here you'll adjust the `font-weight`.
+
+The `font-weight` property sets how thick or thin characters are in a section of text.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 <ul><li>Set the <code>font-weight</code> of the <code>h1</code> tag to 800.</li><li>Set the <code>font-weight</code> of the <code>h2</code> tag to 600.</li><li>Set the <code>font-weight</code> of the <code>h3</code> tag to 500.</li><li>Set the <code>font-weight</code> of the <code>h4</code> tag to 400.</li><li>Set the <code>font-weight</code> of the <code>h5</code> tag to 300.</li><li>Set the <code>font-weight</code> of the <code>h6</code> tag to 200.</li></ul>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,11 +90,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

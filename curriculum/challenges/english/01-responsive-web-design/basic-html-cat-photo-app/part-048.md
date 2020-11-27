@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 If you select the `Indoor` radio button and submit the form, the form data for the button is based on its `name` and `value` attributes. Since your radio buttons do not have a `value` attribute, the form data will include `indoor-outdoor=on`, which is not useful when you have multiple buttons.
@@ -14,6 +15,7 @@ Add a `value` attribute to both radio buttons. For convenience, set the button's
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -93,4 +96,5 @@ tests:
 ```
 
 </div>
+
 </section>

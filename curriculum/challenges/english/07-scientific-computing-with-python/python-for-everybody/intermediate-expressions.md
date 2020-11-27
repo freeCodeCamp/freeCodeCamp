@@ -6,16 +6,22 @@ videoId: dKgUaIa5ATg
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://youtu.be/t_4DPwsaGDY" target='_blank'>Exercise 1</a>
-- <a href="https://youtu.be/wgkC8SxraAQ" target='_blank'>Exercise 2</a>
+
+\- [Exercise 1](https://youtu.be/t_4DPwsaGDY)
+
+\- [Exercise 2](https://youtu.be/wgkC8SxraAQ)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What will print out after running this code:
@@ -36,6 +42,6 @@ question:
     - |
         5
   solution: 3
-```
+````
 
 </section>

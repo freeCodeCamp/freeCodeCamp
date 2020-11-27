@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now that the `goTown` function calls the `update` function with the first element of the `locations` array, it is time to use that location information to update the `innerText` and `onclick` properties.
 
-Inside the `update` function, change `button1.innerText` to equal `location["button text"]`. That line gets the `"button text"` property of the `location` that was passed into the `update` function`.
+Inside the `update` function, change `button1.innerText` to equal `location["button text"]`. That line gets the `"button text"` property of the `location` that was passed into the `update` function\`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -112,8 +116,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -182,8 +186,8 @@ function buyWeapon() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -193,12 +197,11 @@ function buyWeapon() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

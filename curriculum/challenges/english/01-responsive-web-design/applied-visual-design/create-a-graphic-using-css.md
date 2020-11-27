@@ -7,19 +7,29 @@ forumTopicId: 301048
 ---
 
 ## Description
+
 <section id='description'>
-By manipulating different selectors and properties, you can make interesting shapes. One of the easier ones to try is a crescent moon shape. For this challenge you need to work with the <code>box-shadow</code> property that sets the shadow of an element, along with the <code>border-radius</code> property that controls the roundness of the element's corners.
+
+By manipulating different selectors and properties, you can make interesting shapes. One of the easier ones to try is a crescent moon shape. For this challenge you need to work with the `box-shadow` property that sets the shadow of an element, along with the `border-radius` property that controls the roundness of the element's corners.
+
 You will create a round, transparent object with a crisp shadow that is slightly offset to the side - the shadow is actually going to be the moon shape you see.
-In order to create a round object, the <code>border-radius</code> property should be set to a value of 50%.
-You may recall from an earlier challenge that the <code>box-shadow</code> property takes values for <code>offset-x</code>, <code>offset-y</code>, <code>blur-radius</code>, <code>spread-radius</code> and a color value in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.
+
+In order to create a round object, the `border-radius` property should be set to a value of 50%.
+
+You may recall from an earlier challenge that the `box-shadow` property takes values for `offset-x`, `offset-y`, `blur-radius`, `spread-radius` and a color value in that order. The `blur-radius` and `spread-radius` values are optional.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Manipulate the square element in the editor to create the moon shape. First, change the <code>background-color</code> to transparent, then set the <code>border-radius</code> property to 50% to make the circular shape. Finally, change the <code>box-shadow</code> property to set the <code>offset-x</code> to 25px, the <code>offset-y</code> to 10px, <code>blur-radius</code> to 0, <code>spread-radius</code> to 0, and color to blue.
+
+Manipulate the square element in the editor to create the moon shape. First, change the `background-color` to transparent, then set the `border-radius` property to 50% to make the circular shape. Finally, change the `box-shadow` property to set the `offset-x` to 25px, the `offset-y` to 10px, `blur-radius` to 0, `spread-radius` to 0, and color to blue.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,13 +73,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

@@ -6,18 +6,25 @@ forumTopicId: 18223
 ---
 
 ## Description
+
 <section id='description'>
+
 For the sake of clarity, let's label both of our wells with their ids.
-Above your left-well, inside its <code>col-xs-6</code> <code>div</code> element, add a <code>h4</code> element with the text <code>#left-well</code>.
-Above your right-well, inside its <code>col-xs-6</code> <code>div</code> element, add a <code>h4</code> element with the text <code>#right-well</code>.
+
+Above your left-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#left-well`.
+
+Above your right-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#right-well`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,11 +74,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

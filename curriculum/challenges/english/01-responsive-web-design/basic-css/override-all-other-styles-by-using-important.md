@@ -7,21 +7,33 @@ forumTopicId: 18249
 ---
 
 ## Description
+
 <section id='description'>
-Yay! We just proved that inline styles will override all the CSS declarations in your <code>style</code> element.
+
+Yay! We just proved that inline styles will override all the CSS declarations in your `style` element.
+
 But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.
-In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use <code>!important</code>
-Let's go all the way back to our <code>pink-text</code> class declaration. Remember that our <code>pink-text</code> class was overridden by subsequent class declarations, id declarations, and inline styles.
+
+In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use `!important`
+
+Let's go all the way back to our `pink-text` class declaration. Remember that our `pink-text` class was overridden by subsequent class declarations, id declarations, and inline styles.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Let's add the keyword <code>!important</code> to your pink-text element's color declaration to make 100% sure that your <code>h1</code> element will be pink.
+
+Let's add the keyword `!important` to your pink-text element's color declaration to make 100% sure that your `h1` element will be pink.
+
 An example of how to do this is:
-<code>color: red !important;</code>
+
+`color: red !important;`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,11 +83,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

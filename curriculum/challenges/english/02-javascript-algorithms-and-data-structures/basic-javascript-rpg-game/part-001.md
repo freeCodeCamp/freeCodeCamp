@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 To keep track of the player's experience points, we've declared a variable called `xp` and assigned it the starting value of 0.
@@ -14,11 +15,13 @@ Create another variable to keep track of health and start it at 100.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -44,8 +48,8 @@ var xp = 0;
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -114,8 +118,8 @@ var xp = 0;
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -125,13 +129,11 @@ var xp = 0;
 
 </div>
 
-
 </section>
 
-
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

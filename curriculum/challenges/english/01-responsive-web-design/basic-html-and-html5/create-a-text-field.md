@@ -7,20 +7,31 @@ forumTopicId: 16823
 ---
 
 ## Description
+
 <section id='description'>
+
 Now let's create a web form.
-<code>input</code> elements are a convenient way to get input from your user.
+
+`input` elements are a convenient way to get input from your user.
+
 You can create a text input like this:
-<code>&#60;input type="text"&#62;</code>
-Note that <code>input</code> elements are self-closing.
+
+`<input type="text">`
+
+Note that `input` elements are self-closing.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create an <code>input</code> element of type <code>text</code> below your lists.
+
+Create an `input` element of type `text` below your lists.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,11 +75,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

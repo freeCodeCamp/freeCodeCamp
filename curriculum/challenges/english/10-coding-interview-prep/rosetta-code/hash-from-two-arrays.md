@@ -6,20 +6,27 @@ forumTopicId: 302283
 ---
 
 ## Description
+
 <section id='description'>
+
 Using two Arrays of equal length, create a Hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
-<strong>Related task:</strong>
+
+**Related task:**
+
 <ul>
-  <li><a href="https://rosettacode.org/wiki/Associative arrays/Creation" title="Associative arrays/Creation" target="_blank">Associative arrays/Creation</a></li>
+  <li><a href='https://rosettacode.org/wiki/Associative arrays/Creation' title='Associative arrays/Creation' target='_blank'>Associative arrays/Creation</a></li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +65,8 @@ function arrToObj (keys, vals) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -86,8 +94,8 @@ const res = [
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function arrToObj (keys, vals) {

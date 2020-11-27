@@ -6,17 +6,23 @@ forumTopicId: 302278
 ---
 
 ## Description
+
 <section id='description'>
+
 Given a sequence of integers, find a continuous subsequence which maximizes the sum of its elements, that is, the elements of no other single subsequence add up to a value larger than this one.
-An empty subsequence is considered to have the sum of \( 0 \);  thus if all elements are negative, the result must be the empty sequence.
+
+An empty subsequence is considered to have the sum of \\( 0 \\); thus if all elements are negative, the result must be the empty sequence.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,8 +65,8 @@ function maximumSubsequence(population) {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function maximumSubsequence(population) {

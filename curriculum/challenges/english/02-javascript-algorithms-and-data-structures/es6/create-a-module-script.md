@@ -6,22 +6,29 @@ forumTopicId: 301198
 ---
 
 ## Description
+
 <section id='description'>
-JavaScript started with a small role to play on an otherwise mostly HTML web. Today, it’s huge, and some websites are built almost entirely with JavaScript. In order to make JavaScript more modular, clean, and maintainable; ES6 introduced a way to easily share code among JavaScript files. This involves exporting parts of a file for use in one or more other files, and importing the parts you need, where you need them. In order to take advantage of this functionality, you need to create a script in your HTML document with a type of <code>module</code>. Here’s an example:
+
+JavaScript started with a small role to play on an otherwise mostly HTML web. Today, it’s huge, and some websites are built almost entirely with JavaScript. In order to make JavaScript more modular, clean, and maintainable; ES6 introduced a way to easily share code among JavaScript files. This involves exporting parts of a file for use in one or more other files, and importing the parts you need, where you need them. In order to take advantage of this functionality, you need to create a script in your HTML document with a type of `module`. Here’s an example:
 
 ```html
 <script type="module" src="filename.js"></script>
 ```
 
-A script that uses this <code>module</code> type can now use the <code>import</code> and <code>export</code> features you will learn about in the upcoming challenges. 
+A script that uses this `module` type can now use the `import` and `export` features you will learn about in the upcoming challenges.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a script to the HTML document of type <code>module</code> and give it the source file of <code>index.js</code>
+
+Add a script to the HTML document of type `module` and give it the source file of `index.js`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -51,9 +59,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

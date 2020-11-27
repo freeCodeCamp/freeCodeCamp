@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Chain `map` onto `range(start.charCodeAt(0), end.charCodeAt(0))`, with `x => x` as the argument.
@@ -12,12 +13,13 @@ Chain `map` onto `range(start.charCodeAt(0), end.charCodeAt(0))`, with `x => x` 
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,10 +29,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -86,8 +88,8 @@ const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0));
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -118,8 +120,8 @@ const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0));
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -129,11 +131,10 @@ const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0));
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

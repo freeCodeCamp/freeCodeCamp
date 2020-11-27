@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
@@ -14,6 +15,7 @@ Add a `max-width` property to the `menu` class with a value of `500px` to preven
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

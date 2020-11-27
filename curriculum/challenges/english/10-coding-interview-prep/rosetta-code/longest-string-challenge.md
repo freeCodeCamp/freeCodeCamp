@@ -6,19 +6,26 @@ forumTopicId: 385275
 ---
 
 ## Description
+
 <section id='description'>
+
 In this challenge, you have to find the strings that are the longest among the given strings.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that takes an array of strings and returns the strings that have a length equal to the longest length.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>longestString</code> should be a function.
     testString: assert(typeof longestString == 'function');
@@ -39,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,6 +62,7 @@ function longestString(strings) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

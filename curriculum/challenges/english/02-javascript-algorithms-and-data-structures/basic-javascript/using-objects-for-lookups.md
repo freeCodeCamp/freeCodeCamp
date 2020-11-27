@@ -7,8 +7,11 @@ forumTopicId: 18373
 ---
 
 ## Description
+
 <section id='description'>
-Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a <code>switch</code> statement or an <code>if/else</code> chain. This is most useful when you know that your input data is limited to a certain range.
+
+Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a `switch` statement or an `if/else` chain. This is most useful when you know that your input data is limited to a certain range.
+
 Here is an example of a simple reverse alphabet lookup:
 
 ```js
@@ -32,11 +35,15 @@ alpha[value]; // "Y"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Convert the switch statement into an object called <code>lookup</code>. Use it to look up <code>val</code> and assign the associated string to the <code>result</code> variable.
+
+Convert the switch statement into an object called `lookup`. Use it to look up `val` and assign the associated string to the `result` variable.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -65,6 +72,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -104,13 +112,11 @@ phoneticLookup("charlie");
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function phoneticLookup(val) {

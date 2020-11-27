@@ -8,35 +8,45 @@ forumTopicId: 302313
 ## Description
 
 <section id='description'>
-Implement a <i>comb sort</i>.
-The <b>Comb Sort</b> is a variant of the <a href="https://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>.
-Like the <a href="https://rosettacode.org/wiki/Shell sort" target="_blank">Shell sort</a>, the Comb Sort increases the gap used in comparisons and exchanges.
-Dividing the gap by $(1-e^{-\varphi})^{-1} \approx 1.247330950103979$ works best, but 1.3 may be more practical.
+
+Implement a *comb sort*.
+
+The **Comb Sort** is a variant of the [Bubble Sort](<https://rosettacode.org/wiki/Bubble Sort>).
+
+Like the [Shell sort](<https://rosettacode.org/wiki/Shell sort>), the Comb Sort increases the gap used in comparisons and exchanges.
+
+Dividing the gap by $(1-e^{-\\varphi})^{-1} \\approx 1.247330950103979$ works best, but 1.3 may be more practical.
+
 Some implementations use the insertion sort once the gap is less than a certain amount.
-<b>Also see</b>
+
+**Also see**
+
 <ul>
-  <li>the Wikipedia article: <a href="https://en.wikipedia.org/wiki/Comb sort" target="_blank">Comb sort</a>.</li>
+  <li>the Wikipedia article: <a href='https://en.wikipedia.org/wiki/Comb sort' target='_blank'>Comb sort</a>.</li>
 </ul>
+
 Variants:
+
 <ul>
   <li>Combsort11 makes sure the gap ends in (11, 8, 6, 4, 3, 2, 1), which is significantly faster than the other two possible endings.</li>
   <li>Combsort with different endings changes to a more efficient sort when the data is almost sorted (when the gap is small). Comb sort with a low gap isn't much better than the Bubble Sort.</li>
 </ul>
+
 Pseudocode:
-<pre>
-<b>function</b> combsort(<b>array</b> input)
+
+<pre><b>function</b> combsort(<b>array</b> input)
   gap := input<b>.size</b> <i>//initialize gap size</i>
   <b>loop until</b> gap = 1 <b>and</b> swaps = 0
     <i>//update the gap value for a next comb. Below is an example</i>
     gap := int(gap / 1.25)
-    <b>if</b> gap < 1 
+    <b>if</b> gap &#x3C; 1 
       <i>//minimum gap is 1</i>
       gap := 1
     <b>end if</b>
     i := 0
-    swaps := 0 <i>//see <a href="https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort" target="_blank">Bubble Sort</a> for an explanation</i>
+    swaps := 0 <i>//see <a href='https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort' target='_blank'>Bubble Sort</a> for an explanation</i>
     <i>//a single "comb" over the input list</i>
-    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href="https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort" target="_blank">Shell sort</a> for similar idea</i>
+    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href='https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort' target='_blank'>Shell sort</a> for similar idea</i>
       <b>if</b> input[i] > input[i+gap]
         <b>swap</b>(input[i], input[i+gap])
         swaps := 1 <i>// Flag a swap has occurred, so the</i>
@@ -47,12 +57,15 @@ Pseudocode:
   <b>end loop</b>
 <b>end function</b>
 </pre>
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function that sorts a given array using Comb sort.
+
 </section>
 
 ## Tests
@@ -91,6 +104,7 @@ function combSort(arr) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

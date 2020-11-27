@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 After the last `img` element, add a `figcaption` element with the text `Cats hate other cats.`
@@ -12,6 +13,7 @@ After the last `img` element, add a `figcaption` element with the text `Cats hat
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -84,4 +87,5 @@ tests:
 ```
 
 </div>
+
 </section>

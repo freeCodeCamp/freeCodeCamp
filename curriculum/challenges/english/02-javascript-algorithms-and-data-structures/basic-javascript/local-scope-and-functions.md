@@ -7,9 +7,12 @@ forumTopicId: 18227
 ---
 
 ## Description
+
 <section id='description'>
+
 Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.
-Here is a function <code>myTest</code> with a local variable called <code>loc</code>.
+
+Here is a function `myTest` with a local variable called `loc`.
 
 ```js
 function myTest() {
@@ -20,18 +23,22 @@ myTest(); // logs "foo"
 console.log(loc); // loc is not defined
 ```
 
-<code>loc</code> is not defined outside of the function.
+`loc` is not defined outside of the function.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-The editor has two `console.log`s to help you see what is happening. Check the console as you code to see how it changes.  Declare a local variable `myVar` inside `myLocalScope` and run the tests.
+The editor has two `console.log`s to help you see what is happening. Check the console as you code to see how it changes. Declare a local variable `myVar` inside `myLocalScope` and run the tests.
 
 **Note:** The console will still have 'ReferenceError: myVar is not defined', but this will not cause the tests to fail.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -75,8 +83,8 @@ console.log('outside myLocalScope', myVar);
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function myLocalScope() {

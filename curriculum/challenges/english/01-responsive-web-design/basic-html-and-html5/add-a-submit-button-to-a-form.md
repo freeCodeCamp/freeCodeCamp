@@ -7,18 +7,27 @@ forumTopicId: 16627
 ---
 
 ## Description
+
 <section id='description'>
-Let's add a <code>submit</code> button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.
+
+Let's add a `submit` button to your form. Clicking this button will send the data from your form to the URL you specified with your form's `action` attribute.
+
 Here's an example submit button:
-<code>&#60;button type="submit"&#62;this button submits the form&#60;/button&#62;</code>
+
+`<button type="submit">this button submits the form</button>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a button as the last element of your <code>form</code> element with a type of <code>submit</code>, and "Submit" as its text.
+
+Add a button as the last element of your `form` element with a type of `submit`, and "Submit" as its text.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,9 +77,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

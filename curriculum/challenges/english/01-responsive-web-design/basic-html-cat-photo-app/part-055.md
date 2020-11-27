@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 There's another way to associate an `input` element's text with the element itself. You can nest the text within a `label` element and add a `for` attribute with the same value as the `input` element's `id` attribute.
@@ -14,6 +15,7 @@ Associate the text `Loving` with the checkbox by only nesting the text `Loving` 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -111,4 +114,5 @@ tests:
 ```
 
 </div>
+
 </section>

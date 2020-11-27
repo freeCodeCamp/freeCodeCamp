@@ -6,6 +6,7 @@ forumTopicId: 302157
 ---
 
 ## Description
+
 <section id='description'>
 
 The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
@@ -15,11 +16,13 @@ Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3<
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,13 +59,11 @@ selfPowers(1000, 10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function selfPowers(power, lastDigits) {

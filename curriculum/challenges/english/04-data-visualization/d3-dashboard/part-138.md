@@ -5,24 +5,28 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 There are four places in the file where you used `data[8]` to set data to the year 2020. Change all five of them to `data[index]` so you can pass in any year to the function to display the data from that year.
 
 The five spots are:
 
-1. The `domain` for `pieColors`.
-2. The `data` for `pieGraphData`.
-3. The `text` for your pie slice text.
-4. The `data` for your `legendRows`.
+1.  The `domain` for `pieColors`.
+2.  The `data` for `pieGraphData`.
+3.  The `text` for your pie slice text.
+4.  The `data` for your `legendRows`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -246,8 +251,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -280,10 +285,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

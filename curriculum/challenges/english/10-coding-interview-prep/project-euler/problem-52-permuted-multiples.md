@@ -6,20 +6,23 @@ forumTopicId: 302163
 ---
 
 ## Description
+
 <section id='description'>
 
 It can be seen that the number, 125874, and its double, 251748, contain exactly the same digits, but in a different order.
 
-Find the smallest positive integer, <var>x</var>, such that <var>2x</var>, <var>3x</var>, <var>4x</var>, <var>5x</var>, and <var>6x</var>, contain the same digits.
+Find the smallest positive integer, `x`, such that `2x`, `3x`, `4x`, `5x`, and `6x`, contain the same digits.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,13 +53,11 @@ permutedMultiples();
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function permutedMultiples() {

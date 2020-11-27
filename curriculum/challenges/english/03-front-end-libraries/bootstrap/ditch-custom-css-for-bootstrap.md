@@ -6,20 +6,29 @@ forumTopicId: 17565
 ---
 
 ## Description
+
 <section id='description'>
+
 We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.
+
 Don't worry - there will be plenty of time to customize our CSS later.
-Delete the <code>.red-text</code>, <code>p</code>, and <code>.smaller-image</code> CSS declarations from your <code>style</code> element so that the only declarations left in your <code>style</code> element are <code>h2</code> and <code>thick-green-border</code>.
-Then delete the <code>p</code> element that contains a dead link. Then remove the <code>red-text</code> class from your <code>h2</code> element and replace it with the <code>text-primary</code> Bootstrap class.
-Finally, remove the "smaller-image" class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class.
+
+Delete the `.red-text`, `p`, and `.smaller-image` CSS declarations from your `style` element so that the only declarations left in your `style` element are `h2` and `thick-green-border`.
+
+Then delete the `p` element that contains a dead link. Then remove the `red-text` class from your `h2` element and replace it with the `text-primary` Bootstrap class.
+
+Finally, remove the "smaller-image" class from your first `img` element and replace it with the `img-responsive` class.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -117,11 +127,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

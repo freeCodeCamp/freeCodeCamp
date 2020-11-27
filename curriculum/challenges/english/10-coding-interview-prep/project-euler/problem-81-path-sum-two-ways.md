@@ -6,9 +6,10 @@ forumTopicId: 302195
 ---
 
 ## Description
+
 <section id='description'>
 
-In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by <strong>only moving to the right and down</strong>, is indicated in bold red and is equal to 2427.
+In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by **only moving to the right and down**, is indicated in bold red and is equal to 2427.
 
 <div style='text-align: center;'>
   $\begin{pmatrix}
@@ -25,11 +26,13 @@ Find the minimal path sum from the top left to the bottom right by only moving r
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -71,8 +75,8 @@ pathSumTwoWays(testMatrix);
 
 </div>
 
-
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -162,11 +166,10 @@ const matrix = [
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

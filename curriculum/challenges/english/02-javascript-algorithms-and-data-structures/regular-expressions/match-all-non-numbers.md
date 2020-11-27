@@ -6,17 +6,25 @@ forumTopicId: 301347
 ---
 
 ## Description
+
 <section id='description'>
-The last challenge showed how to search for digits using the shortcut <code>\d</code> with a lowercase <code>d</code>. You can also search for non-digits using a similar shortcut that uses an uppercase <code>D</code> instead.
-The shortcut to look for non-digit characters is <code>\D</code>. This is equal to the character class <code>[^0-9]</code>, which looks for a single character that is not a number between zero and nine.
+
+The last challenge showed how to search for digits using the shortcut `\d` with a lowercase `d`. You can also search for non-digits using a similar shortcut that uses an uppercase `D` instead.
+
+The shortcut to look for non-digit characters is `\D`. This is equal to the character class `[^0-9]`, which looks for a single character that is not a number between zero and nine.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the shorthand character class for non-digits <code>\D</code> to count how many non-digits are in movie titles.
+
+Use the shorthand character class for non-digits `\D` to count how many non-digits are in movie titles.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,11 +64,10 @@ let result = movieName.match(noNumRegex).length;
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

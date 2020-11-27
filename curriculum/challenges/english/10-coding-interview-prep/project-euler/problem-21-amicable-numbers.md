@@ -6,11 +6,12 @@ forumTopicId: 301851
 ---
 
 ## Description
+
 <section id='description'>
 
-Let d(<var>n</var>) be defined as the sum of proper divisors of <var>n</var> (numbers less than <var>n</var> which divide evenly into <var>n</var>).
+Let d(`n`) be defined as the sum of proper divisors of `n` (numbers less than `n` which divide evenly into `n`).
 
-If d(<var>a</var>) = <var>b</var> and d(<var>b</var>) = <var>a</var>, where <var>a</var> ≠ <var>b</var>, then <var>a</var> and <var>b</var> are an amicable pair and each of <var>a</var> and <var>b</var> are called amicable numbers.
+If d(`a`) = `b` and d(`b`) = `a`, where `a` ≠ `b`, then `a` and `b` are an amicable pair and each of `a` and `b` are called amicable numbers.
 
 For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 
@@ -19,11 +20,13 @@ Evaluate the sum of all the amicable numbers under `n`.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,13 +63,11 @@ sumAmicableNum(10000);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const sumAmicableNum = (n) => {

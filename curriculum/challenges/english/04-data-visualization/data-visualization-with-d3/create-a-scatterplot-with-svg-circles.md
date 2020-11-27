@@ -6,18 +6,28 @@ forumTopicId: 301484
 ---
 
 ## Description
+
 <section id='description'>
-A scatter plot is another type of visualization. It usually uses circles to map data points, which have two values each. These values tie to the <code>x</code> and <code>y</code> axes, and are used to position the circle in the visualization.
-SVG has a <code>circle</code> tag to create the circle shape. It works a lot like the <code>rect</code> elements you used for the bar chart.
+
+A scatter plot is another type of visualization. It usually uses circles to map data points, which have two values each. These values tie to the `x` and `y` axes, and are used to position the circle in the visualization.
+
+SVG has a `circle` tag to create the circle shape. It works a lot like the `rect` elements you used for the bar chart.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to bind <code>dataset</code> to new <code>circle</code> elements that are appended to the SVG canvas.
-<strong>Note</strong><br>The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
+
+Use the `data()`, `enter()`, and `append()` methods to bind `dataset` to new `circle` elements that are appended to the SVG canvas.
+
+**Note**  
+The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -72,11 +83,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

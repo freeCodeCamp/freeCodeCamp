@@ -8,10 +8,15 @@ forumTopicId: 302310
 ## Description
 
 <section id='description'>
-Sort an array of positive integers using the <a href="https://en.wikipedia.org/wiki/Bead_sort" target="_blank">Bead Sort Algorithm</a>.
-A  <i>bead sort</i>  is also known as a  <i>gravity sort</i>.
-The algorithm has  O(S),  where  S  is the sum of the integers in the input set:  Each bead is moved individually.
+
+Sort an array of positive integers using the [Bead Sort Algorithm](https://en.wikipedia.org/wiki/Bead_sort).
+
+A *bead sort* is also known as a *gravity sort*.
+
+The algorithm has O(S), where S is the sum of the integers in the input set: Each bead is moved individually.
+
 This is the case when bead sort is implemented without a mechanism to assist in finding empty spaces below the beads, such as in software implementations.
+
 </section>
 
 ## Instructions
@@ -56,6 +61,7 @@ function beadSort(arr) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

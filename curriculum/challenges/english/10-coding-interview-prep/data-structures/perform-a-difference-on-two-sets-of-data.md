@@ -6,17 +6,23 @@ forumTopicId: 301706
 ---
 
 ## Description
+
 <section id='description'>
-In this exercise we are going to perform a difference on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>difference</code>. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should take another <code>Set</code> as an argument and return the <code>difference</code> of the two sets.
-For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the difference of setA and setB is: <code>setA.difference(setB) = ['c']</code>.
+
+In this exercise we are going to perform a difference on 2 sets of data. We will create a method on our `Set` data structure called `difference`. A difference of sets should compare two sets and return the items present in the first set that are absent in the second. This method should take another `Set` as an argument and return the `difference` of the two sets.
+
+For example, if `setA = ['a','b','c']` and `setB = ['a','b','d','e']`, then the difference of setA and setB is: `setA.difference(setB) = ['c']`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -115,9 +122,11 @@ class Set {
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

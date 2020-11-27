@@ -6,13 +6,16 @@ videoId: RBBSNta234s
 ---
 
 ## Description
+
 <section id='description'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Fill in the blanks to complete the following Q-Learning equation:
@@ -41,7 +44,6 @@ question:
 
       C: `next_state`
   solution: 1
-```
+````
 
 </section>
-

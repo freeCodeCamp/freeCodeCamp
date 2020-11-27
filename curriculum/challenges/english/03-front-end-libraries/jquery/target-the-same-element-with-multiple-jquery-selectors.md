@@ -8,22 +8,34 @@ forumTopicId: 18322
 ---
 
 ## Description
+
 <section id='description'>
-Now you know three ways of targeting elements: by type: <code>$("button")</code>, by class: <code>$(".btn")</code>, and by id <code>$("#target1")</code>.
-Although it is possible to add multiple classes in a single <code>.addClass()</code> call, let's add them to the same element in <em>three separate ways</em>.
-Using <code>.addClass()</code>, add only one class at a time to the same element, three different ways:
-Add the <code>animated</code> class to all elements with type <code>button</code>.
-Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.
-Add the <code>btn-primary</code> class to the button with id <code>#target1</code>.
-<strong>Note</strong><br>You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes <code>shake</code>, <code>animated</code>, and <code>btn-primary</code> to <code>#target1</code>.
+
+Now you know three ways of targeting elements: by type: `$("button")`, by class: `$(".btn")`, and by id `$("#target1")`.
+
+Although it is possible to add multiple classes in a single `.addClass()` call, let's add them to the same element in *three separate ways*.
+
+Using `.addClass()`, add only one class at a time to the same element, three different ways:
+
+Add the `animated` class to all elements with type `button`.
+
+Add the `shake` class to all the buttons with class `.btn`.
+
+Add the `btn-primary` class to the button with id `#target1`.
+
+**Note**  
+You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes `shake`, `animated`, and `btn-primary` to `#target1`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,11 +97,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

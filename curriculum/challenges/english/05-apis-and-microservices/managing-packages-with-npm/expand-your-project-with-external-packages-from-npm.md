@@ -6,8 +6,11 @@ forumTopicId: 301527
 ---
 
 ## Description
+
 <section id='description'>
-One of the biggest reasons to use a package manager, is their powerful dependency management. Instead of manually having to make sure that you get all dependencies whenever you set up a project on a new computer, npm automatically installs everything for you. But how can npm know exactly what your project needs? Meet the <code>dependencies</code> section of your package.json file.
+
+One of the biggest reasons to use a package manager, is their powerful dependency management. Instead of manually having to make sure that you get all dependencies whenever you set up a project on a new computer, npm automatically installs everything for you. But how can npm know exactly what your project needs? Meet the `dependencies` section of your package.json file.
+
 In this section, packages your project requires are stored using the following format:
 
 ```json
@@ -21,12 +24,17 @@ In this section, packages your project requires are stored using the following f
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add version "2.14.0" of the "moment" package to the <code>dependencies</code> field of your package.json file.
-<strong>Note:</strong> Moment is a handy library for working with time and dates.
+
+Add version "2.14.0" of the "moment" package to the `dependencies` field of your package.json file.
+
+**Note:** Moment is a handy library for working with time and dates.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,11 +49,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

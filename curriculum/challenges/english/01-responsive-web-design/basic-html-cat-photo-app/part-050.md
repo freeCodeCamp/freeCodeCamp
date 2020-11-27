@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `legend` element acts as a caption for the content in the `fieldset` element. It gives users context about what they should enter into that part of the form.
@@ -14,6 +15,7 @@ Add a `legend` element with the text `Is your cat an indoor or outdoor cat?` abo
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -98,4 +101,5 @@ tests:
 ```
 
 </div>
+
 </section>

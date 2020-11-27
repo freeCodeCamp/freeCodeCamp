@@ -6,8 +6,10 @@ forumTopicId: 301503
 ---
 
 ## Description
+
 <section id='description'>
-You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:
+
+You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called `DOMContentLoaded`. Here's the code that does this:
 
 ```js
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 ```
 
-You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:
+You can implement event handlers that go inside of the `DOMContentLoaded` function. You can implement an `onclick` event handler which triggers when the user clicks on the element with id `getMessage`, by adding the following code:
 
 ```js
 document.getElementById('getMessage').onclick = function(){};
@@ -24,11 +26,15 @@ document.getElementById('getMessage').onclick = function(){};
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add a click event handler inside of the <code>DOMContentLoaded</code> function for the element with id of <code>getMessage</code>.
+
+Add a click event handler inside of the `DOMContentLoaded` function for the element with id of `getMessage`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -96,11 +103,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

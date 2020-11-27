@@ -6,19 +6,27 @@ forumTopicId: 302290
 ---
 
 ## Description
+
 <section id='description'>
-An <i>identity matrix</i> is a square matrix of size \( n \times n \), where the diagonal elements are all <code>1</code>s (ones), and all the other elements are all <code>0</code>s (zeroes).
+
+An *identity matrix* is a square matrix of size \\( n \\times n \\), where the diagonal elements are all `1`s (ones), and all the other elements are all `0`s (zeroes).
+
 <ul>
-  <li style="list-style: none;">\(\displaystyle I_{n}=\begin{bmatrix} 1 & 0 & 0 \cr 0 & 1 & 0 \cr 0 & 0 & 1 \cr \end{bmatrix}\)</li>
+  <li style='list-style: none;'>\(\displaystyle I_{n}=\begin{bmatrix} 1 &#x26; 0 &#x26; 0 \cr 0 &#x26; 1 &#x26; 0 \cr 0 &#x26; 0 &#x26; 1 \cr \end{bmatrix}\)</li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a function that takes a number <code>n</code> as a parameter and returns the identity matrix of order \( n \times n \).
+
+Write a function that takes a number `n` as a parameter and returns the identity matrix of order \\( n \\times n \\).
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,8 +62,8 @@ function idMatrix(n) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -69,8 +78,8 @@ let results=[[ [ 1 ] ],
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function idMatrix(n) {

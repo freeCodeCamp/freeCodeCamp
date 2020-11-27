@@ -6,23 +6,32 @@ forumTopicId: 302253
 ---
 
 ## Description
+
 <section id='description'>
-An  emirp (<strong>prime</strong> spelled backwards) are primes that when reversed (in their decimal representation) are a different prime.
+
+An emirp (**prime** spelled backwards) are primes that when reversed (in their decimal representation) are a different prime.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a function that: 
+
+Write a function that:
+
 <ul>
   <li>Shows the first <code>n</code> emirp numbers.</li>
   <li>Shows the emirp numbers in a range.</li>
   <li>Shows the number of emirps in a range.</li>
   <li>Shows the <code>n<sup>th</sup></code> emirp number.</li>
 </ul>
-The function should accept two parameters. The first will receive <code>n</code> or the range as an array. The second will receive a boolean, that specifies if the function returns the emirps as an array or a single number (the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array or a number.
+
+The function should accept two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the emirps as an array or a single number (the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array or a number.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,13 +65,11 @@ function emirps(n) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function emirps(num, showEmirps)

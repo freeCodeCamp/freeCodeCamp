@@ -7,18 +7,27 @@ forumTopicId: 16166
 ---
 
 ## Description
+
 <section id='description'>
-An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.
-If you set an element's <code>margin</code> to a negative value, the element will grow larger.
+
+An element's `margin` controls the amount of space between an element's `border` and surrounding elements.
+
+If you set an element's `margin` to a negative value, the element will grow larger.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Try to set the <code>margin</code> to a negative value like the one for the red box.
-Change the <code>margin</code> of the blue box to <code>-15px</code>, so it fills the entire horizontal width of the yellow box around it.
+
+Try to set the `margin` to a negative value like the one for the red box.
+
+Change the `margin` of the blue box to `-15px`, so it fills the entire horizontal width of the yellow box around it.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
 
-Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`.  This is a fairly common font that is very readable.
+Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`. This is a fairly common font that is very readable.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

@@ -7,9 +7,13 @@ forumTopicId: 16163
 ---
 
 ## Description
+
 <section id='description'>
-The second way to access the properties of an object is bracket notation (<code>[]</code>). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+
+The second way to access the properties of an object is bracket notation (`[]`). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+
 However, you can still use bracket notation on object properties without spaces.
+
 Here is a sample of using bracket notation to read an object's property:
 
 ```js
@@ -24,14 +28,19 @@ myObj["NoSpace"];    // USS Enterprise
 ```
 
 Note that property names with spaces in them must be in quotes (single or double).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Read the values of the properties <code>"an entree"</code> and <code>"the drink"</code> of <code>testObj</code> using bracket notation and assign them to <code>entreeValue</code> and <code>drinkValue</code> respectively.
+
+Read the values of the properties `"an entree"` and `"the drink"` of `testObj` using bracket notation and assign them to `entreeValue` and `drinkValue` respectively.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -52,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,8 +82,8 @@ var drinkValue = testObj;    // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -85,8 +95,8 @@ var drinkValue = testObj;    // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var testObj = {

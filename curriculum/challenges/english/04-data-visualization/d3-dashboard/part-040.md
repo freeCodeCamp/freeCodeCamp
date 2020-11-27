@@ -5,18 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 There are a number of D3 functions to work with how the "ticks" or your axis labels are displayed; one of them is `ticks`. Go back to where you defined the `yAxis` variable and chain a `ticks` function to it and pass it these two arguments: `6, '~s'`.
 
 The `6` will set the number of ticks used to 6, and the `~s` will make the labels display the number of thousands followed by a `k`. For example, `4000` will become `4k`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -90,8 +96,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -124,10 +130,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

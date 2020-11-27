@@ -6,28 +6,39 @@ forumTopicId: 385277
 ---
 
 ## Description
+
 <section id='description'>
-The <a href="https://en.wikipedia.org/wiki/Look and say sequence" target="_blank">Look and say sequence</a> is a recursively defined sequence of numbers.
+
+The [Look and say sequence](<https://en.wikipedia.org/wiki/Look and say sequence>) is a recursively defined sequence of numbers.
+
 Sequence Definition
+
 <ul><li>Take a decimal number</li>
 <li><span>Look</span> at the number, visually grouping consecutive runs of the same digit.</li>
 <li><span>Say</span> the number, from left to right, group by group; as how many of that digit there are - followed by the digit grouped.</li></ul><span> This becomes the next number of the sequence.</span>
-<span>An example:</span>
+
+An example:
+
 <ul><li>Starting with the number 1, you have <span>one</span> 1 which produces 11</li>
 <li>Starting with 11, you have <span>two</span> 1's. I.E.: 21</li>
 <li>Starting with 21, you have <span>one</span> 2, then <span>one</span> 1. I.E.: (12)(11) which becomes 1211</li>
 <li>Starting with 1211, you have <span>one</span> 1, <span>one</span> 2, then <span>two</span> 1's. I.E.: (11)(12)(21) which becomes 111221</li></ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that accepts a string as a parameter, processes it, and returns the resultant string.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>lookAndSay</code> should be a function.
     testString: assert(typeof lookAndSay == 'function');
@@ -48,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,6 +75,7 @@ function lookAndSay(str) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-You can insert variables into a string with the concatenation (`+`) operator. Update the "You now have a new weapon." string so it says "You now have a " and then lists the name of the new weapon. Make sure to add a period at the end of the sentence. 
+You can insert variables into a string with the concatenation (`+`) operator. Update the "You now have a new weapon." string so it says "You now have a " and then lists the name of the new weapon. Make sure to add a period at the end of the sentence.
 
 Here is an example that creates the string "Hello, our name is freeCodeCamp.":
 
@@ -19,11 +20,13 @@ let ourStr = "Hello, our name is " + ourName + ".";
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -164,8 +168,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -234,8 +238,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -245,12 +249,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

@@ -8,12 +8,19 @@ forumTopicId: 302307
 ## Description
 
 <section id='description'>
+
 Given a list of values and a set of integer indices into that value list, the task is to sort the values at the given indices, but preserving the values at indices outside the set of those to be sorted.
+
 Make your function work with the following list of values and set of indices:
-<code> values: [7, <b>6</b>, 5, 4, 3, 2, <b>1</b>, <b>0</b>]</code>
-<code> indices(0-based): {6, 1, 7}</code>
+
+<code>values: [7, <b>6</b>, 5, 4, 3, 2, <b>1</b>, <b>0</b>]</code>
+
+`indices(0-based): {6, 1, 7}`
+
 Where the correct result would be:
+
 <code>[7, <b>0</b>, 5, 4, 3, 2, <b>1</b>, <b>6</b>]</code>.
+
 </section>
 
 ## Instructions

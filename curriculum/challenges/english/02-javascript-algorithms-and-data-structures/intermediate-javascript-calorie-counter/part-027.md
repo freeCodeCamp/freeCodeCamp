@@ -21,6 +21,7 @@ Use the same ternary syntax that you used to determine `maxCalories`.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

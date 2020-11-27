@@ -6,6 +6,7 @@ forumTopicId: 301965
 ---
 
 ## Description
+
 <section id='description'>
 
 In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
@@ -21,11 +22,13 @@ How many different ways can `n` pence be made using any number of coins?
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,13 +65,11 @@ coinSums(200);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const coinSums = (n) => {

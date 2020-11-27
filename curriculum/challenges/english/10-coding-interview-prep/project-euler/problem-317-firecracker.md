@@ -6,23 +6,25 @@ forumTopicId: 301973
 ---
 
 ## Description
-<section id='description'>
-A firecracker explodes at a height of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 m/s.
 
+<section id='description'>
+
+A firecracker explodes at a height of 100 m above level ground. It breaks into a large number of very small fragments, which move in every direction; all of them have the same initial velocity of 20 m/s.
 
 We assume that the fragments move without air resistance, in a uniform gravitational field with g=9.81 m/s2.
 
+Find the volume (in m3) of the region through which the fragments move before reaching the ground. Give your answer rounded to four decimal places.
 
-Find the volume (in m3) of the region through which the fragments move before reaching the ground.
-Give your answer rounded to four decimal places.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,11 +53,10 @@ euler317();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

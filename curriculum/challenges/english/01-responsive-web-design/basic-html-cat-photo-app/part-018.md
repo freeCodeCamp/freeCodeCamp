@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.
@@ -14,6 +15,7 @@ After the last `h2` element of the second `section` element, add an `h3` element
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +38,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,4 +65,5 @@ tests:
 ```
 
 </div>
+
 </section>

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 You want the array passed to `pie` to be an array of key/value objects for the 2020 followers. `d3.entries` will build that array for you. Here's how that looks:
@@ -26,13 +27,17 @@ The array it builds looks like this:
 This is where the `value` comes from in your `pie` variable.
 
 Add the `d3.entries` function as your `pie` argument. Use it to create the above array.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -195,8 +201,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -229,10 +235,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

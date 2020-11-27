@@ -6,20 +6,25 @@ forumTopicId: 302284
 ---
 
 ## Description
+
 <section id='description'>
-An <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join" title="wp: Join_(SQL)#Inner_join" target="_blank">inner join</a> is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href="https://en.wikipedia.org/wiki/Nested loop join" title="wp: Nested loop join" target="_blank">nested loop join</a> algorithm, but a more scalable alternative is the <a href="https://en.wikipedia.org/wiki/hash join" title="wp: hash join" target="_blank">hash join</a> algorithm.
+
+An [inner join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join "wp: Join\_(SQL)#Inner_join") is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the [nested loop join](<https://en.wikipedia.org/wiki/Nested loop join> "wp: Nested loop join") algorithm, but a more scalable alternative is the [hash join](<https://en.wikipedia.org/wiki/hash join> "wp: hash join") algorithm.
+
 The "hash join" algorithm consists of two steps:
+
 <ol>
-  <li><strong>Hash phase:</strong> Create a <a href="https://en.wikipedia.org/wiki/Multimap" title="wp: Multimap" target="_blank">multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
+  <li><strong>Hash phase:</strong> Create a <a href='https://en.wikipedia.org/wiki/Multimap' title='wp: Multimap' target='_blank'>multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
   <ul>
     <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
     <li>Ideally we should create the multimap for the smaller table, thus minimizing its creation time and memory size.</li>
   </ul>
   <li><strong>Join phase:</strong> Scan the other table, and find matching rows by looking in the multimap created before.</li>
 </ol>
+
 In pseudo-code, the algorithm could be expressed as follows:
-<pre>
-<strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
+
+<pre><strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
 <strong>let</strong> <i>B</i> = the second input table (or ideally, the smaller one)
 <strong>let</strong> <i>j<sub>A</sub></i> = the join column ID of table <i>A</i>
 <strong>let</strong> <i>j<sub>B</sub></i> = the join column ID of table <i>B</i>
@@ -32,9 +37,11 @@ In pseudo-code, the algorithm could be expressed as follows:
     <strong>let</strong> <i>c</i> = the concatenation of row <i>a</i> and row <i>b</i>
     <strong>place</strong> row <i>c</i> in table <i>C</i>
 </pre>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 Implement the "hash join" algorithm as a function and demonstrate that it passes the test-case listed below. The function should accept two arrays of objects and return an array of combined objects.
@@ -127,21 +134,22 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
 
 <h4><strong>Output</strong></h4>
 
-|A_age|A_name|B_character|B_nemesis|
-|--- |--- |--- |--- |
-|27|Jonah|Jonah|Whales|
-|27|Jonah|Jonah|Spiders|
-|18|Alan|Alan|Ghosts|
-|18|Alan|Alan|Zombies|
-|28|Glory|Glory|Buffy|
-|28|Alan|Alan|Ghosts|
-|28|Alan|Alan|Zombies|
+| A_age | A_name | B_character | B_nemesis |
+| ----- | ------ | ----------- | --------- |
+| 27    | Jonah  | Jonah       | Whales    |
+| 27    | Jonah  | Jonah       | Spiders   |
+| 18    | Alan   | Alan        | Ghosts    |
+| 18    | Alan   | Alan        | Zombies   |
+| 28    | Glory  | Glory       | Buffy     |
+| 28    | Alan   | Alan        | Ghosts    |
+| 28    | Alan   | Alan        | Zombies   |
 
 The order of the rows in the output table is not significant.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -156,6 +164,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -169,8 +178,8 @@ function hashJoin(hash1, hash2) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -210,8 +219,8 @@ const bench2 = [{ friend: 'o8b', num: 8 }, { friend: 'ye', num: 2 }, { friend: '
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function hashJoin(hash1, hash2) {

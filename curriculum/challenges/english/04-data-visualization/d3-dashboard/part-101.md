@@ -9,11 +9,13 @@ challengeType: 0
 <section id='description'>
 
 Back at the bottom, where you draw the chart. Use the `attr` function to set the `fill` to a "d function". In the "d function", use your `pieColors` scale to get the color value for the platform(`d.data.key`). So when each platform is passed to your scale, is will get the appropriate color to use as the fill from the scales range.
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests
@@ -236,6 +238,7 @@ tests:
 ```
 
 </div>
+
 </section>
 
 ## Solution

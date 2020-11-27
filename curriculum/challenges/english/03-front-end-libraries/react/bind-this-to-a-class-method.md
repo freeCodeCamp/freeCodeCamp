@@ -6,20 +6,31 @@ forumTopicId: 301379
 ---
 
 ## Description
+
 <section id='description'>
-In addition to setting and updating <code>state</code>, you can also define methods for your component class. A class method typically needs to use the <code>this</code> keyword so it can access properties on the class (such as <code>state</code> and <code>props</code>) inside the scope of the method. There are a few ways to allow your class methods to access <code>this</code>.
-One common way is to explicitly bind <code>this</code> in the constructor so <code>this</code> becomes bound to the class methods when the component is initialized. You may have noticed the last challenge used <code>this.handleClick = this.handleClick.bind(this)</code> for its <code>handleClick</code> method in the constructor. Then, when you call a function like <code>this.setState()</code> within your class method, <code>this</code> refers to the class and will not be <code>undefined</code>.
-<strong>Note:</strong>&nbsp;The <code>this</code> keyword is one of the most confusing aspects of JavaScript but it plays an important role in React. Although its behavior here is totally normal, these lessons aren't the place for an in-depth review of <code>this</code> so please refer to other lessons if the above is confusing!
+
+In addition to setting and updating `state`, you can also define methods for your component class. A class method typically needs to use the `this` keyword so it can access properties on the class (such as `state` and `props`) inside the scope of the method. There are a few ways to allow your class methods to access `this`.
+
+One common way is to explicitly bind `this` in the constructor so `this` becomes bound to the class methods when the component is initialized. You may have noticed the last challenge used `this.handleClick = this.handleClick.bind(this)` for its `handleClick` method in the constructor. Then, when you call a function like `this.setState()` within your class method, `this` refers to the class and will not be `undefined`.
+
+**Note:** The `this` keyword is one of the most confusing aspects of JavaScript but it plays an important role in React. Although its behavior here is totally normal, these lessons aren't the place for an in-depth review of `this` so please refer to other lessons if the above is confusing!
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The code editor has a component with a <code>state</code> that keeps track of the text. It also has a method which allows you to set the text to <code>"You clicked!"</code>. However, the method doesn't work because it's using the <code>this</code> keyword that is undefined. Fix it by explicitly binding <code>this</code> to the <code>handleClick()</code> method in the component's constructor.
-Next, add a click handler to the <code>button</code> element in the render method. It should trigger the <code>handleClick()</code> method when the button receives a click event. Remember that the method you pass to the <code>onClick</code> handler needs curly braces because it should be interpreted directly as JavaScript.
-Once you complete the above steps you should be able to click the button and see <code>You clicked!</code>.
+
+The code editor has a component with a `state` that keeps track of the text. It also has a method which allows you to set the text to `"You clicked!"`. However, the method doesn't work because it's using the `this` keyword that is undefined. Fix it by explicitly binding `this` to the `handleClick()` method in the component's constructor.
+
+Next, add a click handler to the `button` element in the render method. It should trigger the `handleClick()` method when the button receives a click event. Remember that the method you pass to the `onClick` handler needs curly braces because it should be interpreted directly as JavaScript.
+
+Once you complete the above steps you should be able to click the button and see `You clicked!`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -71,8 +83,8 @@ class MyComponent extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -84,8 +96,8 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class MyComponent extends React.Component {

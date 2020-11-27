@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 After the `figure` element, add another `h3` element with the text `Top 3 things cats hate:`.
@@ -12,6 +13,7 @@ After the `figure` element, add another `h3` element with the text `Top 3 things
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -67,4 +70,5 @@ tests:
 ```
 
 </div>
+
 </section>

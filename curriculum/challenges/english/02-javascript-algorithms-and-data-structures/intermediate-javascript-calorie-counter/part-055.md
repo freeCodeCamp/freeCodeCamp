@@ -19,6 +19,7 @@ Add the class name `food-control` to the `foodInput` element.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

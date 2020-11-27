@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 In the previous step, you used a <dfn>type selector</dfn> to style the `h1` element. Go ahead and center the `h2` and `p` elements with a new type selector for each one.
@@ -12,6 +13,7 @@ In the previous step, you used a <dfn>type selector</dfn> to style the `h1` elem
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

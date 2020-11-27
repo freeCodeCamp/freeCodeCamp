@@ -7,10 +7,14 @@ forumTopicId: 18341
 ---
 
 ## Description
+
 <section id='description'>
-<dfn>Bracket notation</dfn> is a way to get a character at a specific <code>index</code> within a string.
+
+<dfn>Bracket notation</dfn> is a way to get a character at a specific `index` within a string.
+
 Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.
-For example, the character at index 0 in the word "Charles" is "C". So if <code>var firstName = "Charles"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.
+
+For example, the character at index 0 in the word "Charles" is "C". So if `var firstName = "Charles"`, you can get the value of the first letter of the string by using `firstName[0]`.
 
 Example:
 
@@ -22,12 +26,17 @@ var firstLetter = firstName[0]; // firstLetter is "C"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use bracket notation to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.
-<strong>Hint: </strong> Try looking at the example above if you get stuck.
+
+Use bracket notation to find the first character in the `lastName` variable and assign it to `firstLetterOfLastName`.
+
+**Hint:** Try looking at the example above if you get stuck.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,8 +68,8 @@ firstLetterOfLastName = lastName; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -71,8 +81,8 @@ firstLetterOfLastName = lastName; // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var firstLetterOfLastName = "";

@@ -7,22 +7,35 @@ forumTopicId: 16821
 ---
 
 ## Description
+
 <section id='description'>
+
 Forms commonly use <dfn>checkboxes</dfn> for questions that may have more than one answer.
-Checkboxes are a type of <code>input</code>.
-Each of your checkboxes can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will automatically associate the checkbox input with the label element surrounding it.
-All related checkbox inputs should have the same <code>name</code> attribute.
-It is considered best practice to explicitly define the relationship between a checkbox <code>input</code> and its corresponding <code>label</code> by setting the <code>for</code> attribute on the <code>label</code> element to match the <code>id</code> attribute of the associated <code>input</code> element.
+
+Checkboxes are a type of `input`.
+
+Each of your checkboxes can be nested within its own `label` element. By wrapping an `input` element inside of a `label` element it will automatically associate the checkbox input with the label element surrounding it.
+
+All related checkbox inputs should have the same `name` attribute.
+
+It is considered best practice to explicitly define the relationship between a checkbox `input` and its corresponding `label` by setting the `for` attribute on the `label` element to match the `id` attribute of the associated `input` element.
+
 Here's an example of a checkbox:
-<code>&#60;label for="loving"&#62;&#60;input id="loving" type="checkbox" name="personality"&#62; Loving&#60;/label&#62;</code>
+
+`<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of <code>personality</code>.
+
+Add to your form a set of three checkboxes. Each checkbox should be nested within its own `label` element. All three should share the `name` attribute of `personality`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,11 +91,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The default color of link that has not yet been clicked on a page is typically blue.  The default color of a link that has already been visited from a page is typically purple.
+The default color of link that has not yet been clicked on a page is typically blue. The default color of a link that has already been visited from a page is typically purple.
 
 To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

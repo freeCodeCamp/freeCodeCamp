@@ -7,21 +7,35 @@ forumTopicId: 18184
 ---
 
 ## Description
+
 <section id='description'>
-The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.
-<strong>Example</strong>
+
+The <dfn>remainder</dfn> operator `%` gives the remainder of the division of two numbers.
+
+**Example**
+
 <blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>
-<strong>Usage</strong><br>In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by <code>2</code>.
+
+**Usage**  
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`.
+
 <blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>
-<strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as  the "modulus" operator. It is very similar to modulus, but does not work properly with negative numbers.
+
+**Note**  
+The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as the "modulus" operator. It is very similar to modulus, but does not work properly with negative numbers.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator.
+
+Set `remainder` equal to the remainder of `11` divided by `3` using the <dfn>remainder</dfn> (`%`) operator.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,8 +66,8 @@ var remainder;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -64,8 +79,8 @@ var remainder;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var remainder =  11 % 3;

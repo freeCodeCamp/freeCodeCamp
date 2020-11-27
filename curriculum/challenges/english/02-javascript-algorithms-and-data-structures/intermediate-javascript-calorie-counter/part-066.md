@@ -17,6 +17,7 @@ In the body of the `clearOutput()` function, set the `innerHTML` property of tha
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

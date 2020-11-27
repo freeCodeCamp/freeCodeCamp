@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-At the end of the code, create a `restart` function. Inside the function, set `xp` to 0, set `health` to 100, set `gold` to 50, set `currentWeapon` to 0, and set `inventory` to `["stick"]`. Also, update the `innerText` properties of `goldText`, `healthText`, and `xpText` to their current values. Finally, call the `goTown()` function. 
+At the end of the code, create a `restart` function. Inside the function, set `xp` to 0, set `health` to 100, set `gold` to 50, set `currentWeapon` to 0, and set `inventory` to `["stick"]`. Also, update the `innerText` properties of `goldText`, `healthText`, and `xpText` to their current values. Finally, call the `goTown()` function.
 
 After this step is a good time to test the game so far.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -261,8 +265,8 @@ function lose() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -331,8 +335,8 @@ function lose() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -342,12 +346,11 @@ function lose() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

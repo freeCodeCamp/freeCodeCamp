@@ -6,21 +6,31 @@ forumTopicId: 18321
 ---
 
 ## Description
+
 <section id='description'>
-Every HTML element has a <code>parent</code> element from which it <code>inherits</code> properties.
-For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class="container-fluid"&#62</code>, which itself has the parent <code>body</code>.
-jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.
-Here's an example of how you would use the <code>parent()</code> function if you wanted to give the parent element of the <code>left-well</code> element a background color of blue:
-<code>$("#left-well").parent().css("background-color", "blue")</code>
-Give the parent of the <code>#target1</code> element a background-color of red.
+
+Every HTML element has a `parent` element from which it `inherits` properties.
+
+For example, your `jQuery Playground` `h3` element has the parent element of `<div class="container-fluid">`, which itself has the parent `body`.
+
+jQuery has a function called `parent()` that allows you to access the parent of whichever element you've selected.
+
+Here's an example of how you would use the `parent()` function if you wanted to give the parent element of the `left-well` element a background color of blue:
+
+`$("#left-well").parent().css("background-color", "blue")`
+
+Give the parent of the `#target1` element a background-color of red.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,11 +95,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

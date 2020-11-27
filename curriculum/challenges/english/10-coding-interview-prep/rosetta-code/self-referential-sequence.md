@@ -8,7 +8,8 @@ forumTopicId: 385317
 ## Description
 
 <section id='description'>
-There are several ways to generate a self-referential sequence. One very common one (the <a href="https://rosettacode.org/wiki/Look-and-say sequence" target="_blank">Look-and-say sequence</a>) is to start with a positive integer, then generate the next term by concatenating enumerated groups of adjacent alike digits:
+
+There are several ways to generate a self-referential sequence. One very common one (the [Look-and-say sequence](<https://rosettacode.org/wiki/Look-and-say sequence>)) is to start with a positive integer, then generate the next term by concatenating enumerated groups of adjacent alike digits:
 
 <pre>0, 10, 1110, 3110, 132110, 1113122110, 311311222110 ...</pre>
 
@@ -23,12 +24,15 @@ Count how many of each alike digit there is, then concatenate the sum and digit 
 Sort the digits largest to smallest. Do not include counts of digits that do not appear in the previous term.
 
 Depending on the seed value, series generated this way always either converge to a stable value or to a short cyclical pattern. (For our purposes, converge means that an element matches a previously seen element.) The sequence shown, with a seed value of 0, converges to a stable value of 1433223110 after 11 iterations. The seed value that converges most quickly is 22. It goes stable after the first element. (The next element is 22, which has been seen before.)
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function that takes the seed value as parameter, generates a self referential sequence until it converges, and returns it as an array.
+
 </section>
 
 ## Tests
@@ -67,6 +71,7 @@ function selfReferential(n) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

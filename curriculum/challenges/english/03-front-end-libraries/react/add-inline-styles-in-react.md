@@ -6,17 +6,25 @@ forumTopicId: 301378
 ---
 
 ## Description
+
 <section id='description'>
-You may have noticed in the last challenge that there were several other syntax differences from HTML inline styles in addition to the <code>style</code> attribute set to a JavaScript object. First, the names of certain CSS style properties use camel case. For example, the last challenge set the size of the font with <code>fontSize</code> instead of <code>font-size</code>. Hyphenated words like <code>font-size</code> are invalid syntax for JavaScript object properties, so React uses camel case. As a rule, any hyphenated style properties are written using camel case in JSX.
-All property value length units (like <code>height</code>, <code>width</code>, and <code>fontSize</code>) are assumed to be in <code>px</code> unless otherwise specified. If you want to use <code>em</code>, for example, you wrap the value and the units in quotes, like <code>{fontSize: "4em"}</code>. Other than the length values that default to <code>px</code>, all other property values should be wrapped in quotes.
+
+You may have noticed in the last challenge that there were several other syntax differences from HTML inline styles in addition to the `style` attribute set to a JavaScript object. First, the names of certain CSS style properties use camel case. For example, the last challenge set the size of the font with `fontSize` instead of `font-size`. Hyphenated words like `font-size` are invalid syntax for JavaScript object properties, so React uses camel case. As a rule, any hyphenated style properties are written using camel case in JSX.
+
+All property value length units (like `height`, `width`, and `fontSize`) are assumed to be in `px` unless otherwise specified. If you want to use `em`, for example, you wrap the value and the units in quotes, like `{fontSize: "4em"}`. Other than the length values that default to `px`, all other property values should be wrapped in quotes.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-If you have a large set of styles, you can assign a style <code>object</code> to a constant to keep your code organized. Initialize a <code>styles</code> constant and assign an <code>object</code> with three style properties and their values to it. Give the <code>div</code> a color of <code>"purple"</code>, a font-size of <code>40</code>, and a border of <code>"2px solid purple"</code>. Then set the <code>style</code> attribute equal to the <code>styles</code> constant.
+
+If you have a large set of styles, you can assign a style `object` to a constant to keep your code organized. Initialize a `styles` constant and assign an `object` with three style properties and their values to it. Give the `div` a color of `"purple"`, a font-size of `40`, and a border of `"2px solid purple"`. Then set the `style` attribute equal to the `styles` constant.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -61,8 +70,8 @@ class Colorful extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -74,8 +83,8 @@ ReactDOM.render(<Colorful />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 const styles = {

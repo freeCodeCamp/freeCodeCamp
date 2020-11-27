@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-So far you have been using type selectors to style elements.  A <dfn>class selector</dfn> is defined by a name with a dot directly in front it, like this:
+So far you have been using type selectors to style elements. A <dfn>class selector</dfn> is defined by a name with a dot directly in front it, like this:
 
 ```css
 .class-name {
@@ -20,6 +21,7 @@ Change the existing `div` selector into a class selector by replacing `div` with
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

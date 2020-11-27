@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 To improve accessibility of the image you just added, add an `alt` attribute with the text `Five cats looking around a field.`
@@ -12,6 +13,7 @@ To improve accessibility of the image you just added, add an `alt` attribute wit
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -76,4 +79,5 @@ tests:
 ```
 
 </div>
+
 </section>

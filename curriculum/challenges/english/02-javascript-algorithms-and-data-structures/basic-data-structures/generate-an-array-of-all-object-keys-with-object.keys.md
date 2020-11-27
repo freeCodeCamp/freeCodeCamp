@@ -6,16 +6,23 @@ forumTopicId: 301160
 ---
 
 ## Description
+
 <section id='description'>
-We can also generate an array which contains all the keys stored in an object using the <code>Object.keys()</code> method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.
+
+We can also generate an array which contains all the keys stored in an object using the `Object.keys()` method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Finish writing the <code>getArrayOfUsers</code> function so that it returns an array containing all the properties in the object it receives as an argument.
+
+Finish writing the `getArrayOfUsers` function so that it returns an array containing all the properties in the object it receives as an argument.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,11 +73,10 @@ console.log(getArrayOfUsers(users));
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

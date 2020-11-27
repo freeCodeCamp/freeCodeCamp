@@ -5,7 +5,9 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
+
 A media query can be used to change styles based on certain conditions, and they look like this:
 
 ```css
@@ -15,13 +17,17 @@ A media query can be used to change styles based on certain conditions, and they
 ```
 
 Add an empty media query at the bottom of your stylesheet with a condition of `max-width: 1000px`. Styles added in here will take effect when the document size is 1000px wide or less.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -422,10 +429,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

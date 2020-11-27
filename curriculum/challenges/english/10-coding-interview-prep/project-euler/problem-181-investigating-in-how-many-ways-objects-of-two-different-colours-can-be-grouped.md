@@ -6,19 +6,27 @@ forumTopicId: 301817
 ---
 
 ## Description
+
 <section id='description'>
+
 Having three black objects B and one white object W they can be grouped in 7 ways like this:
+
 (BBBW)(B,BBW)(B,B,BW)(B,B,B,W)
+
 (B,BB,W)(BBB,W)(BB,BW)
-In how many ways can sixty black objects B and forty white objects W be  thus grouped?
+
+In how many ways can sixty black objects B and forty white objects W be thus grouped?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,11 +55,10 @@ euler181();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

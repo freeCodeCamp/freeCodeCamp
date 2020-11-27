@@ -6,18 +6,27 @@ forumTopicId: 301626
 ---
 
 ## Description
+
 <section id='description'>
+
 All of the linked lists we've created so far are singly linked lists. Here, we'll create a <dfn>doubly linked list</dfn>. As the name implies, nodes in a doubly linked list have references to the next and previous node in the list.
+
 This allows us to traverse the list in both directions but it also requires more memory to be used because every node must contain an additional reference to the previous node in the list.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-We've provided a <code>Node</code> object and started our <code>DoublyLinkedList</code>. Let's add two methods to our doubly linked list called <code>add</code> and <code>remove</code>. The <code>add</code> method should add the given element to the list while the <code>remove</code> method should remove all occurrences of a given element in the list.
-Be careful to handle any possible edge cases when writing these methods, such as deletions for the first or last element. Also, removing any item on an empty list should return <code>null</code>.
+
+We've provided a `Node` object and started our `DoublyLinkedList`. Let's add two methods to our doubly linked list called `add` and `remove`. The `add` method should add the given element to the list while the `remove` method should remove all occurrences of a given element in the list.
+
+Be careful to handle any possible edge cases when writing these methods, such as deletions for the first or last element. Also, removing any item on an empty list should return `null`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -64,8 +74,8 @@ var DoublyLinkedList = function() {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -106,9 +116,11 @@ DoublyLinkedList.prototype = Object.assign(
 ```
 
 </div>
+
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

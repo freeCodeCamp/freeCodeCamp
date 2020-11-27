@@ -6,18 +6,25 @@ forumTopicId: 302271
 ---
 
 ## Description
+
 <section id='description'>
-Implement one algorithm (or more) to compute the <a href="https://en.wikipedia.org/wiki/Gamma function">Gamma</a> ($\Gamma$) function (in the real field only).
+
+Implement one algorithm (or more) to compute the [Gamma](<https://en.wikipedia.org/wiki/Gamma function>) ($\\Gamma$) function (in the real field only).
+
 The Gamma function can be defined as:
+
 <div style='padding-left: 4em;'><big><big>$\Gamma(x) = \displaystyle\int_0^\infty t^{x-1}e^{-t} dt$</big></big></div>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,6 +63,7 @@ function gamma(x) {
 </div>
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -68,8 +77,8 @@ function round(x) {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function gamma(x) {

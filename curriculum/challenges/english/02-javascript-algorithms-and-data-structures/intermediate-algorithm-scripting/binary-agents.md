@@ -6,17 +6,23 @@ forumTopicId: 14273
 ---
 
 ## Description
+
 <section id='description'>
+
 Return an English translated sentence of the passed binary string.
+
 The binary string will be space separated.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,13 +52,11 @@ binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 0110
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function binaryAgent(str) {

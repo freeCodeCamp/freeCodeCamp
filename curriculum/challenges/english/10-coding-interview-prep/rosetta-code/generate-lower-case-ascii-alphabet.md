@@ -6,16 +6,21 @@ forumTopicId: 302274
 ---
 
 ## Description
+
 <section id='description'>
-Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range <code>['a', 'd']</code>, the function should return <code>['a', 'b', 'c', 'd']</code>.
+
+Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range `['a', 'd']`, the function should return `['a', 'b', 'c', 'd']`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,8 +58,8 @@ function lascii(cFrom, cTo) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -71,8 +77,8 @@ let results=[
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function lascii(cFrom, cTo) {

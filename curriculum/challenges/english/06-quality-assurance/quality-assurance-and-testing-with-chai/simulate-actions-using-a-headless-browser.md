@@ -8,7 +8,7 @@ challengeType: 2
 
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 </section>
 
@@ -18,15 +18,15 @@ As a reminder, this project is being built upon the following starter project on
 
 Within `tests/2_functional-tests.js`, in the `'submit "surname" : "Vespucci" - write your e2e test...'` test (`// #6`), automate filling-in and submitting the form from scratch:
 
-1. Fill in the form with the `surname` of `Vespucci`
-2. Submit it pressing `'submit'` button
+1.  Fill in the form with the `surname` of `Vespucci`
+2.  Submit it pressing `'submit'` button
 
 Within the callback:
 
-1. assert that status is `200`
-2. assert that the text inside the element `span#name` is `'Amerigo'`
-3. assert that the text inside the element `span#surname` is `'Vespucci'`
-4. assert that the element(s) `span#dates` exist and their count is `1`
+1.  assert that status is `200`
+2.  assert that the text inside the element `span#name` is `'Amerigo'`
+3.  assert that the text inside the element `span#surname` is `'Vespucci'`
+4.  assert that the element(s) `span#dates` exist and their count is `1`
 
 Do not forget to to remove the `assert.fail()` call.
 

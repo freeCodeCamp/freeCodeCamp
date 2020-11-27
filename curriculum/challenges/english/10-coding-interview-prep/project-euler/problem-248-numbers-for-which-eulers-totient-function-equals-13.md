@@ -6,17 +6,23 @@ forumTopicId: 301895
 ---
 
 ## Description
+
 <section id='description'>
+
 The first number n for which φ(n)=13! is 6227180929.
+
 Find the 150,000th such number.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -44,11 +51,10 @@ euler248();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Now that the text on the buttons have changed, the `onclick` properties on the buttons should change. Inside the goStore function, update the `onclick` property of all three buttons. The new functions should be `buyHealth`, `buyWeapon`, and `goTown`. If you have trouble, look at how the buttons were initialized.
@@ -12,11 +13,13 @@ Now that the text on the buttons have changed, the `onclick` properties on the b
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,8 +82,8 @@ function fightDragon() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -148,8 +152,8 @@ function fightDragon() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -159,12 +163,11 @@ function fightDragon() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

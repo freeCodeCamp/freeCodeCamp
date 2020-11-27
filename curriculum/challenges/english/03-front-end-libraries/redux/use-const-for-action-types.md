@@ -6,17 +6,25 @@ forumTopicId: 301450
 ---
 
 ## Description
+
 <section id='description'>
-A common practice when working with Redux is to assign action types as read-only constants, then reference these constants wherever they are used. You can refactor the code you're working with to write the action types as <code>const</code> declarations.
+
+A common practice when working with Redux is to assign action types as read-only constants, then reference these constants wherever they are used. You can refactor the code you're working with to write the action types as `const` declarations.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Declare <code>LOGIN</code> and <code>LOGOUT</code> as <code>const</code> values and assign them to the strings <code>'LOGIN'</code> and <code>'LOGOUT'</code>, respectively. Then, edit the <code>authReducer()</code> and the action creators to reference these constants instead of string values.
-<strong>Note:</strong>&nbsp;It's generally a convention to write constants in all uppercase, and this is standard practice in Redux as well.
+
+Declare `LOGIN` and `LOGOUT` as `const` values and assign them to the strings `'LOGIN'` and `'LOGOUT'`, respectively. Then, edit the `authReducer()` and the action creators to reference these constants instead of string values.
+
+**Note:** It's generally a convention to write constants in all uppercase, and this is standard practice in Redux as well.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -94,13 +103,11 @@ const logoutUser = () => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const LOGIN = 'LOGIN';

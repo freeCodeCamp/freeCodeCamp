@@ -6,6 +6,7 @@ forumTopicId: 302161
 ---
 
 ## Description
+
 <section id='description'>
 
 The prime 41, can be written as the sum of six consecutive primes:
@@ -21,11 +22,13 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,13 +61,11 @@ consecutivePrimeSum(1000000);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function consecutivePrimeSum(limit) {

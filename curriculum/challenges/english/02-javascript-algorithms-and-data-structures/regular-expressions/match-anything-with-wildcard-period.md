@@ -6,9 +6,12 @@ forumTopicId: 301348
 ---
 
 ## Description
+
 <section id='description'>
-Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: <code>.</code>
-The wildcard character <code>.</code> will match any one character. The wildcard is also called <code>dot</code> and <code>period</code>. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match <code>"hug"</code>, <code>"huh"</code>, <code>"hut"</code>, and <code>"hum"</code>, you can use the regex <code>/hu./</code> to match all four words.
+
+Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: `.`
+
+The wildcard character `.` will match any one character. The wildcard is also called `dot` and `period`. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match `"hug"`, `"huh"`, `"hut"`, and `"hum"`, you can use the regex `/hu./` to match all four words.
 
 ```js
 let humStr = "I'll hum a song";
@@ -21,11 +24,15 @@ huRegex.test(hugStr); // Returns true
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Complete the regex <code>unRegex</code> so that it matches the strings <code>"run"</code>, <code>"sun"</code>, <code>"fun"</code>, <code>"pun"</code>, <code>"nun"</code>, and <code>"bun"</code>. Your regex should use the wildcard character.
+
+Complete the regex `unRegex` so that it matches the strings `"run"`, `"sun"`, `"fun"`, `"pun"`, `"nun"`, and `"bun"`. Your regex should use the wildcard character.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -56,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,11 +76,10 @@ let result = unRegex.test(exampleStr);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

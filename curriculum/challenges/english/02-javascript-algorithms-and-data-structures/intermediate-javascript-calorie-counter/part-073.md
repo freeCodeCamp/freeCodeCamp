@@ -19,6 +19,7 @@ This is similar to how you declared the `foodInputs` variable previously.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

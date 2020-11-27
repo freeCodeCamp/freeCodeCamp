@@ -7,9 +7,13 @@ forumTopicId: 301020
 ---
 
 ## Description
+
 <section id='description'>
+
 Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to show the importance of a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect.
+
 However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.
+
 Here's an example of the CSS rules that accomplish this:
 
 ```css
@@ -23,19 +27,25 @@ Here's an example of the CSS rules that accomplish this:
 }
 ```
 
-<strong>Note:</strong> The following CSS approaches will NOT do the same thing:
+**Note:** The following CSS approaches will NOT do the same thing:
+
 <ul>
 <li><code>display: none;</code> or <code>visibility: hidden;</code> hides content for everyone, including screen reader users</li>
 <li>Zero values for pixel sizes, such as <code>width: 0px; height: 0px;</code> removes that element from the flow of your document, meaning screen readers will ignore it</li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an <code>sr-only</code> class, but the CSS rules aren't filled in yet. Give the <code>position</code> an absolute value, the <code>left</code> a -10000px value, and the <code>width</code> and <code>height</code> both 1px values.
+
+Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an `sr-only` class, but the CSS rules aren't filled in yet. Give the `position` an absolute value, the `left` a -10000px value, and the `width` and `height` both 1px values.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,6 +64,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -147,11 +158,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

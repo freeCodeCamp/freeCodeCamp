@@ -6,17 +6,25 @@ forumTopicId: 18181
 ---
 
 ## Description
+
 <section id='description'>
+
 You've learned shortcuts for common string patterns like alphanumerics. Another common pattern is looking for just digits or numbers.
-The shortcut to look for digit characters is <code>\d</code>, with a lowercase <code>d</code>. This is equal to the character class <code>[0-9]</code>, which looks for a single character of any number between zero and nine.
+
+The shortcut to look for digit characters is `\d`, with a lowercase `d`. This is equal to the character class `[0-9]`, which looks for a single character of any number between zero and nine.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the shorthand character class <code>\d</code> to count how many digits are in movie titles. Written out numbers ("six" instead of 6) do not count.
+
+Use the shorthand character class `\d` to count how many digits are in movie titles. Written out numbers ("six" instead of 6) do not count.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,11 +64,10 @@ let result = movieName.match(numRegex).length;
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

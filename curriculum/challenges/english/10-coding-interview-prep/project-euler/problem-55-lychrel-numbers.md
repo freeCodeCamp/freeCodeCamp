@@ -6,6 +6,7 @@ forumTopicId: 302166
 ---
 
 ## Description
+
 <section id='description'>
 
 If we take 47, reverse and add, 47 + 74 = 121, which is palindromic.
@@ -24,18 +25,20 @@ Although no one has proved it yet, it is thought that some numbers, like 196, ne
 
 Surprisingly, there are palindromic numbers that are themselves Lychrel numbers; the first example is 4994.
 
-How many Lychrel numbers are there below <code>num</code>?
+How many Lychrel numbers are there below `num`?
 
 **Note:** Wording was modified slightly on 24 April 2007 to emphasize the theoretical nature of Lychrel numbers.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -58,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,13 +77,11 @@ countLychrelNumbers(10000);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const countLychrelNumbers = (size) => {

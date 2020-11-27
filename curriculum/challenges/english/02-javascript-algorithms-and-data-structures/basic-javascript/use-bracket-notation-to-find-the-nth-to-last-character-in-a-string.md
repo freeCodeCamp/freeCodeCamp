@@ -7,9 +7,12 @@ forumTopicId: 18344
 ---
 
 ## Description
+
 <section id='description'>
+
 You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.
-For example, you can get the value of the third-to-last letter of the <code>var firstName = "Charles"</code> string by using <code>firstName[firstName.length - 3]</code>
+
+For example, you can get the value of the third-to-last letter of the `var firstName = "Charles"` string by using `firstName[firstName.length - 3]`
 
 Example:
 
@@ -21,12 +24,17 @@ var thirdToLastLetter = firstName[firstName.length - 3]; // thirdToLastLetter is
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <dfn>bracket notation</dfn> to find the second-to-last character in the <code>lastName</code> string.
-<strong>Hint: </strong> Try looking at the example above if you get stuck.
+
+Use <dfn>bracket notation</dfn> to find the second-to-last character in the `lastName` string.
+
+**Hint:** Try looking at the example above if you get stuck.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +66,8 @@ var secondToLastLetterOfLastName = lastName; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -70,8 +79,8 @@ var secondToLastLetterOfLastName = lastName; // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var lastName = "Lovelace";

@@ -6,18 +6,25 @@ forumTopicId: 18262
 ---
 
 ## Description
+
 <section id='description'>
+
 Now let's remove an HTML element from your page using jQuery.
-jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely
-Remove element <code>target4</code> from the page by using the <code>.remove()</code> function.
+
+jQuery has a function called `.remove()` that will remove an HTML element entirely
+
+Remove element `target4` from the page by using the `.remove()` function.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -72,11 +80,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

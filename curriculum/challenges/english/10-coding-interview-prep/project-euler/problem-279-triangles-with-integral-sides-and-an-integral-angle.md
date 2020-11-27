@@ -6,16 +6,21 @@ forumTopicId: 301929
 ---
 
 ## Description
+
 <section id='description'>
+
 How many triangles are there with integral sides, at least one integral angle (measured in degrees), and a perimeter that does not exceed 108?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -28,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -43,11 +49,10 @@ euler279();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

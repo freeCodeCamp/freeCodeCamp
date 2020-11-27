@@ -5,21 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-When a player clicks the 'Go to store' button, the buttons and text in the game should change.
-Remove the code inside the `goStore` function. Add a new line of code inside the function that updates the text of `button1` so that it says "Buy 10 health (10 gold)".
+When a player clicks the 'Go to store' button, the buttons and text in the game should change. Remove the code inside the `goStore` function. Add a new line of code inside the function that updates the text of `button1` so that it says "Buy 10 health (10 gold)".
 
 For example, this code updates the text of `button` to say "Click Me": `button.innerText = "Click Me";`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,8 +83,8 @@ function fightDragon() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -150,8 +153,8 @@ function fightDragon() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -161,12 +164,11 @@ function fightDragon() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

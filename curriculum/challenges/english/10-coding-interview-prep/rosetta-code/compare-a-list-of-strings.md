@@ -6,20 +6,26 @@ forumTopicId: 302235
 ---
 
 ## Description
+
 <section id='description'>
-Given a <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" title="wp: List_(abstract_data_type)" target="_blank">list</a> of arbitrarily many strings, implement a function for each of the following conditions:
+
+Given a [list](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") of arbitrarily many strings, implement a function for each of the following conditions:
+
 <ul>
   <li>test if they are all lexically equal</li>
   <li>test if every string is lexically less than the one after it  (i.e. whether the list is in strict ascending order)</li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,8 +79,8 @@ function azSorted(arr) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -85,8 +92,8 @@ const testCases = [['AA', 'AA', 'AA', 'AA'], ['AA', 'ACB', 'BB', 'CC'], [], ['AA
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function allEqual(a) {

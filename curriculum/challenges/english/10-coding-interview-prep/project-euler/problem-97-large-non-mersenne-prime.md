@@ -6,6 +6,7 @@ forumTopicId: 302214
 ---
 
 ## Description
+
 <section id='description'>
 
 The first known prime found to exceed one million digits was discovered in 1999, and is a Mersenne prime of the form 2<sup>6972593</sup>−1; it contains exactly 2,098,960 digits. Subsequently other Mersenne primes, of the form 2<sup><var>p</var></sup>−1, have been found which contain more digits.
@@ -17,11 +18,13 @@ Find the last ten digits of this prime number.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,11 +55,10 @@ lrgNonMersennePrime();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

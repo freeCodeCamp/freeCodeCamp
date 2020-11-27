@@ -7,8 +7,11 @@ forumTopicId: 16165
 ---
 
 ## Description
+
 <section id='description'>
+
 Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.
+
 Here is an example of using a variable to access a property:
 
 ```js
@@ -34,15 +37,20 @@ var someProp = propPrefix("Name"); // someProp now holds the value 'propName'
 console.log(someObj[someProp]); // "John"
 ```
 
-Note that we do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>.
+Note that we do *not* use quotes around the variable name when using it to access the property because we are using the *value* of the variable, not the *name*.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Set the <code>playerNumber</code> variable to <code>16</code>. Then, use the variable to look up the player's name and assign it to <code>player</code>.
+
+Set the `playerNumber` variable to `16`. Then, use the variable to look up the player's name and assign it to `player`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -65,6 +73,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -85,8 +94,8 @@ var player = testObj;   // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -98,8 +107,8 @@ if(typeof player !== "undefined"){(function(v){return v;})(player);}
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var testObj = {

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Set `functionExpanded` to `applyFn(varExpanded)` in `evalFormula`. Return `functionExpanded`.
@@ -12,12 +13,13 @@ Set `functionExpanded` to `applyFn(varExpanded)` in `evalFormula`. Return `funct
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,10 +28,10 @@ tests:
     testString: assert(code.includes("functionExpanded") && applyFn("2+2") === "4");
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -104,8 +106,8 @@ const evalFormula = x => {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -136,8 +138,8 @@ const evalFormula = x => {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -147,11 +149,10 @@ const evalFormula = x => {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

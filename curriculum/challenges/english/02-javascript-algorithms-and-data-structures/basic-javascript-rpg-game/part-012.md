@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Here are the ids of the other HTML elements that we want a reference to in the JavaScript code: `button2`, `button3`, `text`, `xpText`, `healthText`, `goldText`, `monsterStats`, `monsterNameText`, `monsterHealthText`. 
+Here are the ids of the other HTML elements that we want a reference to in the JavaScript code: `button2`, `button3`, `text`, `xpText`, `healthText`, `goldText`, `monsterStats`, `monsterNameText`, `monsterHealthText`.
 
 Just like you did with `storeButton`, create variables and set them equal to the element references.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -52,8 +56,8 @@ const button1 = document.querySelector('#button1');
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -122,8 +126,8 @@ const button1 = document.querySelector('#button1');
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -133,12 +137,11 @@ const button1 = document.querySelector('#button1');
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

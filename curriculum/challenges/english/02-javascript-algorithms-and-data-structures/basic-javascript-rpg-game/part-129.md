@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The player should hit if either `Math.random() > .2` OR if the player's health is less than 20. At the end of the return statement, add the "logical or" operator (`||`) and then check if `health` is less than 20. 
+The player should hit if either `Math.random() > .2` OR if the player's health is less than 20. At the end of the return statement, add the "logical or" operator (`||`) and then check if `health` is less than 20.
 
 Here is an example that returns true if either a number is less than 10 or more than 20: `num < 10 || num > 20`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -298,8 +302,8 @@ function restart() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -368,8 +372,8 @@ function restart() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -379,12 +383,11 @@ function restart() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

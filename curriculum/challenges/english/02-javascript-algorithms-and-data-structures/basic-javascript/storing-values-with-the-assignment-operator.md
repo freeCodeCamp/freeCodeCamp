@@ -7,26 +7,36 @@ forumTopicId: 18310
 ---
 
 ## Description
+
 <section id='description'>
-In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator (<code>=</code>). 
-<code>myVariable = 5;</code>
-This assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.
-If there are any calculations to the right of the <code>=</code> operator, those are performed before the value is assigned to the variable on the left of the operator.
+
+In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator (`=`).
+
+`myVariable = 5;`
+
+This assigns the `Number` value `5` to `myVariable`.
+
+If there are any calculations to the right of the `=` operator, those are performed before the value is assigned to the variable on the left of the operator.
 
 ```js
 var myVar;
 myVar = 5;
 ```
 
-First, this code creates a variable named <code>myVar</code>. Then, the code assigns <code>5</code> to <code>myVar</code>. Now, if <code>myVar</code> appears again in the code, the program will treat it as if it is <code>5</code>.
+First, this code creates a variable named `myVar`. Then, the code assigns `5` to `myVar`. Now, if `myVar` appears again in the code, the program will treat it as if it is `5`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Assign the value <code>7</code> to variable <code>a</code>.
+
+Assign the value `7` to variable `a`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,6 +67,7 @@ var a;
 </div>
 
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -67,6 +79,7 @@ if (typeof a != 'undefined') {
 </div>
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -78,8 +91,8 @@ if (typeof a != 'undefined') {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var a;

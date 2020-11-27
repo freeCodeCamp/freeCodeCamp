@@ -6,6 +6,7 @@ forumTopicId: 302201
 ---
 
 ## Description
+
 <section id='description'>
 
 The smallest number expressible as the sum of a prime square, prime cube, and prime fourth power is 28. In fact, there are exactly four numbers below fifty that can be expressed in such a way:
@@ -22,11 +23,13 @@ How many numbers below fifty million can be expressed as the sum of a prime squa
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,11 +60,10 @@ primePowerTriples();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

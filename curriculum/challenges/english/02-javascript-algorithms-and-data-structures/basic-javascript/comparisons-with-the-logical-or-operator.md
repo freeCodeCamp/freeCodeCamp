@@ -7,9 +7,13 @@ forumTopicId: 16800
 ---
 
 ## Description
+
 <section id='description'>
-The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of the <dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.
-The <dfn>logical or</dfn> operator is composed of two pipe symbols: (<code>||</code>). This can typically be found between your Backspace and Enter keys.
+
+The <dfn>logical or</dfn> operator (`||`) returns `true` if either of the <dfn>operands</dfn> is `true`. Otherwise, it returns `false`.
+
+The <dfn>logical or</dfn> operator is composed of two pipe symbols: (`||`). This can typically be found between your Backspace and Enter keys.
+
 The pattern below should look familiar from prior waypoints:
 
 ```js
@@ -22,7 +26,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-will return "Yes" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:
+will return "Yes" only if `num` is between `5` and `10` (5 and 10 included). The same logic can be written as:
 
 ```js
 if (num > 10 || num < 5) {
@@ -34,11 +38,15 @@ return "Yes";
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Combine the two <code>if</code> statements into one statement which returns <code>"Outside"</code> if <code>val</code> is not between <code>10</code> and <code>20</code>, inclusive. Otherwise, return <code>"Inside"</code>.
+
+Combine the two `if` statements into one statement which returns `"Outside"` if `val` is not between `10` and `20`, inclusive. Otherwise, return `"Inside"`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -69,6 +77,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -94,13 +103,11 @@ testLogicalOr(15);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testLogicalOr(val) {

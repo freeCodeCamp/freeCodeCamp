@@ -8,8 +8,11 @@ videoId: VJrP2FUzKP0
 ## Description
 
 <section id='description'>
+
 More resources:
-- <a href="https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk" target="_blank" rel="noopener noreferrer">Slides</a>
+
+\- [Slides](https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk)
+
 </section>
 
 ## Tests

@@ -6,6 +6,7 @@ forumTopicId: 302204
 ---
 
 ## Description
+
 <section id='description'>
 
 For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a "best" way of writing a particular number.
@@ -21,9 +22,9 @@ For example, it would appear that there are at least six ways of writing the num
   XVI<br>
 </div>
 
-However, according to the rules only <span style="font-family: 'courier new', monospace;">XIIIIII</span> and <span style="font-family: 'courier new', monospace;">XVI</span> are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
+However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
 
-The array, `roman`, contains one thousand numbers written in valid, but not necessarily minimal, Roman numerals; see <a href="https://projecteuler.net/about=roman_numerals" target="_blank">About... Roman Numerals</a> for the definitive rules for this problem.
+The array, `roman`, contains one thousand numbers written in valid, but not necessarily minimal, Roman numerals; see [About... Roman Numerals](https://projecteuler.net/about=roman_numerals) for the definitive rules for this problem.
 
 Find the number of characters saved by writing each of these in their minimal form.
 
@@ -32,11 +33,13 @@ Find the number of characters saved by writing each of these in their minimal fo
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,11 +76,10 @@ romanNumerals(roman);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

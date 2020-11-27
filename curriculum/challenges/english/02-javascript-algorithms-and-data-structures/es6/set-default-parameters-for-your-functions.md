@@ -6,8 +6,11 @@ forumTopicId: 301209
 ---
 
 ## Description
+
 <section id='description'>
+
 In order to help us create more flexible functions, ES6 introduces <dfn>default parameters</dfn> for functions.
+
 Check out this code:
 
 ```js
@@ -17,15 +20,20 @@ console.log(greeting("John")); // Hello John
 console.log(greeting()); // Hello Anonymous
 ```
 
-The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>"Anonymous"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.
+The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter `name` will receive its default value `"Anonymous"` when you do not provide a value for the parameter. You can add default values for as many parameters as you want.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified.
+
+Modify the function `increment` by adding default parameters so that it will add 1 to `number` if `value` is not specified.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,11 +63,10 @@ const increment = (number, value) => number + value;
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

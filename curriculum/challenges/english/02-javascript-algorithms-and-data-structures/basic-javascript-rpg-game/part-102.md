@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-An `else` statement can be conditional with an `else if` statement. At the end of the `if` statement, add an `else if` statement to check if `monsterHealth` is less than or equal to zero. Inside the `else if` block, call the `defeatMonster()` function. 
+An `else` statement can be conditional with an `else if` statement. At the end of the `if` statement, add an `else if` statement to check if `monsterHealth` is less than or equal to zero. Inside the `else if` block, call the `defeatMonster()` function.
 
 Here is an example of an `if` statement with `else if` and `else`:
 
@@ -24,11 +25,13 @@ if (num > 15) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -243,8 +247,8 @@ function dodge() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -313,8 +317,8 @@ function dodge() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -324,12 +328,11 @@ function dodge() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

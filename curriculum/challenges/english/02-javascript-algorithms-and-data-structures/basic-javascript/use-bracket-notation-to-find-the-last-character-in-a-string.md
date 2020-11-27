@@ -7,9 +7,12 @@ forumTopicId: 18342
 ---
 
 ## Description
+
 <section id='description'>
+
 In order to get the last letter of a string, you can subtract one from the string's length.
-For example, if <code>var firstName = "Charles"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.
+
+For example, if `var firstName = "Charles"`, you can get the value of the last letter of the string by using `firstName[firstName.length - 1]`.
 
 Example:
 
@@ -21,12 +24,17 @@ var lastLetter = firstName[firstName.length - 1]; // lastLetter is "s"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName</code> variable.
-<strong>Hint: </strong> Try looking at the example above if you get stuck.
+
+Use <dfn>bracket notation</dfn> to find the last character in the `lastName` variable.
+
+**Hint:** Try looking at the example above if you get stuck.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +66,8 @@ var lastLetterOfLastName = lastName; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -70,8 +79,8 @@ var lastLetterOfLastName = lastName; // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var lastName = "Lovelace";

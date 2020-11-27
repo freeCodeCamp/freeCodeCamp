@@ -6,6 +6,7 @@ forumTopicId: 302190
 ---
 
 ## Description
+
 <section id='description'>
 
 It is possible to write ten as the sum of primes in exactly five different ways:
@@ -23,11 +24,13 @@ What is the first value which can be written as the sum of primes in over five t
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,11 +61,10 @@ primeSummations();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

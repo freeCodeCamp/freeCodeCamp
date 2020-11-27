@@ -6,21 +6,25 @@ forumTopicId: 301948
 ---
 
 ## Description
+
 <section id='description'>
+
 Given is an integer sided triangle ABC with BC ≤ AC ≤ AB.k is the angular bisector of angle ACB.m is the tangent at C to the circumscribed circle of ABC.n is a line parallel to m through B.
+
 The intersection of n and k is called E.
 
-
-
 How many triangles ABC with a perimeter not exceeding 100 000 exist such that BE has integral length?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,11 +53,10 @@ euler296();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

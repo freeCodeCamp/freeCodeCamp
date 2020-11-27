@@ -6,20 +6,31 @@ forumTopicId: 301409
 ---
 
 ## Description
+
 <section id='description'>
-Once you define a component's initial state, you can display any part of it in the UI that is rendered. If a component is stateful, it will always have access to the data in <code>state</code> in its <code>render()</code> method. You can access the data with <code>this.state</code>.
-If you want to access a state value within the <code>return</code> of the render method, you have to enclose the value in curly braces.
-<code>State</code> is one of the most powerful features of components in React. It allows you to track important data in your app and render a UI in response to changes in this data. If your data changes, your UI will change. React uses what is called a virtual DOM, to keep track of changes behind the scenes. When state data updates, it triggers a re-render of the components using that data - including child components that received the data as a prop. React updates the actual DOM, but only where necessary. This means you don't have to worry about changing the DOM. You simply declare what the UI should look like.
-Note that if you make a component stateful, no other components are aware of its <code>state</code>. Its <code>state</code> is completely encapsulated, or local to that component, unless you pass state data to a child component as <code>props</code>. This notion of encapsulated <code>state</code> is very important because it allows you to write certain logic, then have that logic contained and isolated in one place in your code.
+
+Once you define a component's initial state, you can display any part of it in the UI that is rendered. If a component is stateful, it will always have access to the data in `state` in its `render()` method. You can access the data with `this.state`.
+
+If you want to access a state value within the `return` of the render method, you have to enclose the value in curly braces.
+
+`State` is one of the most powerful features of components in React. It allows you to track important data in your app and render a UI in response to changes in this data. If your data changes, your UI will change. React uses what is called a virtual DOM, to keep track of changes behind the scenes. When state data updates, it triggers a re-render of the components using that data - including child components that received the data as a prop. React updates the actual DOM, but only where necessary. This means you don't have to worry about changing the DOM. You simply declare what the UI should look like.
+
+Note that if you make a component stateful, no other components are aware of its `state`. Its `state` is completely encapsulated, or local to that component, unless you pass state data to a child component as `props`. This notion of encapsulated `state` is very important because it allows you to write certain logic, then have that logic contained and isolated in one place in your code.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In the code editor, <code>MyComponent</code> is already stateful. Define an <code>h1</code> tag in the component's render method which renders the value of <code>name</code> from the component's state.
-<strong>Note:</strong>&nbsp;The <code>h1</code> should only render the value from <code>state</code> and nothing else. In JSX, any code you write with curly braces <code>{ }</code> will be treated as JavaScript. So to access the value from <code>state</code> just enclose the reference in curly braces.
+
+In the code editor, `MyComponent` is already stateful. Define an `h1` tag in the component's render method which renders the value of `name` from the component's state.
+
+**Note:** The `h1` should only render the value from `state` and nothing else. In JSX, any code you write with curly braces `{ }` will be treated as JavaScript. So to access the value from `state` just enclose the reference in curly braces.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -63,8 +75,8 @@ class MyComponent extends React.Component {
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -76,8 +88,8 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 class MyComponent extends React.Component {

@@ -6,6 +6,7 @@ forumTopicId: 302100
 ---
 
 ## Description
+
 <section id='description'>
 
 The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
@@ -27,11 +28,13 @@ Find the numbers of all 0 to 9 pandigital numbers with this property.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -48,6 +51,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,6 +70,7 @@ substringDivisibility();
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

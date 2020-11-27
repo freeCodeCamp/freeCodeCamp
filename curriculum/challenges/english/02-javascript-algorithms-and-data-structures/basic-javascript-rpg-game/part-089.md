@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add a new object in the `locations` array with all the same properties as the other objects in the array. Set `name` to "fight". Set `"button text"` to `["Attack", "Dodge", "Run"]`. Set `"button functions"` to `[attack, dodge, goTown]`. And set `text` to "You are fighting a monster.".
@@ -12,11 +13,13 @@ Add a new object in the `locations` array with all the same properties as the ot
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -206,8 +210,8 @@ function goFight() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -281,8 +285,8 @@ const dodge = () => {}
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -292,12 +296,11 @@ const dodge = () => {}
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

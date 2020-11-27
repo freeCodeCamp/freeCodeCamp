@@ -5,7 +5,9 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
+
 You can make an instant color change in a gradient by giving the transition zero space like this:
 
 ```css
@@ -18,13 +20,17 @@ gradient-type(
 ```
 
 Here, the top half of the element will be `color1` and the bottom half will be `color2`. Add a `linear-gradient` to `bb2b` that uses `--building-color2` from `0%` to `6%` and `--window-color2` from `6%` to `9%`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -219,10 +226,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

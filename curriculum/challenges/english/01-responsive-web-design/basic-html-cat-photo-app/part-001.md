@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 HTML elements have opening tags like `<h1>` and closing tags like `</h1>`.
@@ -14,6 +15,7 @@ Find the `h1` element and change the text between its opening and closing tags t
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -49,4 +52,5 @@ tests:
 ```
 
 </div>
+
 </section>

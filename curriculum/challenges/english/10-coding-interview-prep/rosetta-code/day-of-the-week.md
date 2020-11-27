@@ -6,16 +6,23 @@ forumTopicId: 302245
 ---
 
 ## Description
+
 <section id='description'>
+
 A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Write a function that takes a start year and an end year and return an array of all the years where the 25th of December will be a Sunday.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,8 +55,8 @@ function findXmasSunday(start, end) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -61,8 +69,8 @@ const secondSolution = [2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 20
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function findXmasSunday(start, end) {

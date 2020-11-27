@@ -6,20 +6,31 @@ forumTopicId: 301711
 ---
 
 ## Description
+
 <section id='description'>
+
 Before we move on to another data structure, let's get a couple of last bits of practice with linked lists.
-Let's write a <code>removeAt</code> method that removes the <code>element</code> at a given <code>index</code>. The method should be called <code>removeAt(index)</code>. To remove an <code>element</code> at a certain <code>index</code>, we'll need to keep a running count of each node as we move along the linked list.
-A common technique used to iterate through the elements of a linked list involves a <dfn>'runner'</dfn>, or sentinel, that 'points' at the nodes that your code is comparing. In our case, starting at the <code>head</code> of our list, we start with a <code>currentIndex</code> variable that starts at <code>0</code>. The <code>currentIndex</code> should increment by one for each node we pass.
-Just like our <code>remove(element)</code> method, which <a href="/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list" target="_blank">we covered in a previous lesson</a>, we need to be careful not to orphan the rest of our list when we remove the node in our <code>removeAt(index)</code> method. We keep our nodes contiguous by making sure that the node that has reference to the removed node has a reference to the next node.
+
+Let's write a `removeAt` method that removes the `element` at a given `index`. The method should be called `removeAt(index)`. To remove an `element` at a certain `index`, we'll need to keep a running count of each node as we move along the linked list.
+
+A common technique used to iterate through the elements of a linked list involves a <dfn>'runner'</dfn>, or sentinel, that 'points' at the nodes that your code is comparing. In our case, starting at the `head` of our list, we start with a `currentIndex` variable that starts at `0`. The `currentIndex` should increment by one for each node we pass.
+
+Just like our `remove(element)` method, which [we covered in a previous lesson](/learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list), we need to be careful not to orphan the rest of our list when we remove the node in our `removeAt(index)` method. We keep our nodes contiguous by making sure that the node that has reference to the removed node has a reference to the next node.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a <code>removeAt(index)</code> method that removes and returns a node at a given <code>index</code>. The method should return <code>null</code> if the given <code>index</code> is either negative, or greater than or equal to the <code>length</code> of the linked list.
-<strong>Note:</strong> Remember to keep count of the <code>currentIndex</code>.
+
+Write a `removeAt(index)` method that removes and returns a node at a given `index`. The method should return `null` if the given `index` is either negative, or greater than or equal to the `length` of the linked list.
+
+**Note:** Remember to keep count of the `currentIndex`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -93,6 +105,7 @@ function LinkedList() {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

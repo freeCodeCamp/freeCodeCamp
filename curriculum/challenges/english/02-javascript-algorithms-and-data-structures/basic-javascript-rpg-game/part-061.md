@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The value of `currentWeapon` corresponds to an index in the `weapons` array. The player starts with a stick since `currentWeapon` starts at 0 and `weapons[0]` is the "stick" weapon. In the `buyWeapon` function, add one to `currentWeapon` since the user is buying the next weapon in the `weapons` array.
@@ -12,11 +13,13 @@ The value of `currentWeapon` corresponds to an index in the `weapons` array. The
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -154,8 +158,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -224,8 +228,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -235,12 +239,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

@@ -7,16 +7,23 @@ forumTopicId: 301080
 ---
 
 ## Description
+
 <section id='description'>
-To make text bold, you can use the <code>strong</code> tag. This is often used to draw attention to text and symbolize that it is important. With the <code>strong</code> tag, the browser applies the CSS of <code>font-weight: bold;</code> to the element.
+
+To make text bold, you can use the `strong` tag. This is often used to draw attention to text and symbolize that it is important. With the `strong` tag, the browser applies the CSS of `font-weight: bold;` to the element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Wrap a <code>strong</code> tag around "Stanford University" inside the <code>p</code> tag (do not include the period).
+
+Wrap a `strong` tag around "Stanford University" inside the `p` tag (do not include the period).
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

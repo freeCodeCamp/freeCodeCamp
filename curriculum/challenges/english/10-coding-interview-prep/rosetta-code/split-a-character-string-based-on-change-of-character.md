@@ -9,9 +9,7 @@ forumTopicId: 302322
 
 <section id='description'>
 
-Split a (character) string into comma (plus a blank) delimited strings based on a change of character (left to right).
-Blanks should be treated as any other character (except they are problematic to display clearly). The same applies to commas.
-For instance, the string:
+Split a (character) string into comma (plus a blank) delimited strings based on a change of character (left to right). Blanks should be treated as any other character (except they are problematic to display clearly). The same applies to commas. For instance, the string:
 
 <pre>
 "gHHH5YY++///\"
@@ -22,6 +20,7 @@ should be split as:
 <pre>
 ["g", "HHH", "5", "YY", "++", "///", "\" ];
 </pre>
+
 </section>
 
 ## Instructions
@@ -67,6 +66,7 @@ function split(str) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

@@ -6,8 +6,11 @@ forumTopicId: 301510
 ---
 
 ## Description
+
 <section id='description'>
-Middleware can be mounted at a specific route using <code>app.METHOD(path, middlewareFunction)</code>. Middleware can also be chained inside route definition.
+
+Middleware can be mounted at a specific route using `app.METHOD(path, middlewareFunction)`. Middleware can also be chained inside route definition.
+
 Look at the following example:
 
 ```js
@@ -24,12 +27,17 @@ This approach is useful to split the server operations into smaller units. That 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In the route <code>app.get('/now', ...)</code> chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the <code>req.time</code> key. You can use <code>new Date().toString()</code>. In the handler, respond with a JSON object, taking the structure <code>{time: req.time}</code>.
-<strong>Note:</strong> The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct.
+
+In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.
+
+**Note:** The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,11 +52,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

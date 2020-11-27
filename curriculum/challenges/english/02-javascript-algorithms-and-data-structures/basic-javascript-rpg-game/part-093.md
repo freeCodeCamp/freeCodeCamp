@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The HTML that shows the monster stats that has been hidden using CSS. Display the `monsterStats` HTML element by updating its CSS `display` property to equal `block`. 
+The HTML that shows the monster stats that has been hidden using CSS. Display the `monsterStats` HTML element by updating its CSS `display` property to equal `block`.
 
 Here is an example of updating the `display` property of an element named `myElement`: `myElement.style.display = "block";`
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -221,8 +225,8 @@ function dodge() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -291,8 +295,8 @@ function dodge() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -302,12 +306,11 @@ function dodge() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

@@ -6,15 +6,20 @@ videoId: KgT_fYLXnyk
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target='_blank'>Exercise</a>
+
+\- [Exercise](https://www.youtube.com/watch?v=1bSqHot-KwE)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What is the value of i in the following code?
@@ -34,6 +39,6 @@ question:
     - |
         na
   solution: 2
-```
+````
 
 </section>

@@ -9,7 +9,7 @@ forumTopicId: 302251
 
 <section id='description'>
 
-Create a function, to compute the <b><a href="https://en.wikipedia.org/wiki/Dot product">dot product</a></b>, also known as the <b>scalar product</b> of two vectors.
+Create a function, to compute the **[dot product](<https://en.wikipedia.org/wiki/Dot product>)**, also known as the **scalar product** of two vectors.
 
 </section>
 
@@ -56,6 +56,7 @@ function dotProduct(ary1, ary2) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

@@ -8,7 +8,7 @@ challengeType: 0
 
 <section id='description'>
 
-Create a variable named `clearOutput` and set it equal to a blank arrow function: 
+Create a variable named `clearOutput` and set it equal to a blank arrow function:
 
 ```js
 const clearOutput = () => {}
@@ -21,6 +21,7 @@ This is similar to `function clearOutput () {}`.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

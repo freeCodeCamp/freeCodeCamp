@@ -7,8 +7,11 @@ forumTopicId: 18378
 ---
 
 ## Description
+
 <section id='description'>
+
 In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.
+
 Here's an example of a function:
 
 ```js
@@ -17,17 +20,20 @@ function functionName() {
 }
 ```
 
-You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:
-<code>functionName();</code>
-Each time the function is called it will print out the message <code>"Hello World"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.
+You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this: `functionName();` Each time the function is called it will print out the message `"Hello World"` on the dev console. All of the code between the curly braces will be executed every time the function is called.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 <ol><li>Create a function called <code>reusableFunction</code> which prints <code>"Hi World"</code> to the dev console.</li><li>Call the function.</li></ol>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,6 +64,7 @@ tests:
 </div>
 
 ### Before Test
+
 <div id='js-setup'>
 
 ```js
@@ -87,6 +95,7 @@ capture();
 </div>
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -104,8 +113,8 @@ if (typeof reusableFunction !== "function") {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function reusableFunction() {

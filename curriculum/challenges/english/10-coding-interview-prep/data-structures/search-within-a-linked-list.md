@@ -6,18 +6,27 @@ forumTopicId: 301715
 ---
 
 ## Description
+
 <section id='description'>
-Let's add a few more useful methods to our linked list class. Wouldn't it be useful if we could tell if our list was empty or not, as with our <code>Stack</code> and <code>Queue</code> classes?
-We should also be able to find specific elements in our linked list. Traversing through data structures is something you'll want to get a lot of practice with! Let's create an <code>indexOf</code> method that takes an <code>element</code> as an argument, and returns that element's <code>index</code> in the linked list. If the element is not found in the linked list, return <code>-1</code>.
-Let's also implement a method that does the opposite: an <code>elementAt</code> method that takes an <code>index</code> as an argument and returns the <code>element</code> at the given <code>index</code>. If no <code>element</code> is found, return <code>undefined</code>.
+
+Let's add a few more useful methods to our linked list class. Wouldn't it be useful if we could tell if our list was empty or not, as with our `Stack` and `Queue` classes?
+
+We should also be able to find specific elements in our linked list. Traversing through data structures is something you'll want to get a lot of practice with! Let's create an `indexOf` method that takes an `element` as an argument, and returns that element's `index` in the linked list. If the element is not found in the linked list, return `-1`.
+
+Let's also implement a method that does the opposite: an `elementAt` method that takes an `index` as an argument and returns the `element` at the given `index`. If no `element` is found, return `undefined`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write an <code>isEmpty</code> method that checks if the linked list is empty, an <code>indexOf</code> method that returns the <code>index</code> of a given element, and an <code>elementAt</code> that returns an <code>element</code> at a given <code>index.
+
+Write an `isEmpty` method that checks if the linked list is empty, an `indexOf` method that returns the `index` of a given element, and an `elementAt` that returns an `element` at a given `index.`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -113,6 +123,7 @@ function LinkedList() {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

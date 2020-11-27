@@ -6,8 +6,10 @@ forumTopicId: 301224
 ---
 
 ## Description
+
 <section id='description'>
-When defining functions within objects in ES5, we have to use the keyword <code>function</code> as follows:
+
+When defining functions within objects in ES5, we have to use the keyword `function` as follows:
 
 ```js
 const person = {
@@ -18,7 +20,7 @@ const person = {
 };
 ```
 
-With ES6, You can remove the <code>function</code> keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
+With ES6, You can remove the `function` keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
 
 ```js
 const person = {
@@ -32,11 +34,15 @@ const person = {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Refactor the function <code>setGear</code> inside the object <code>bicycle</code> to use the shorthand syntax described above.
+
+Refactor the function `setGear` inside the object `bicycle` to use the shorthand syntax described above.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -75,6 +82,7 @@ console.log(bicycle.gear);
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

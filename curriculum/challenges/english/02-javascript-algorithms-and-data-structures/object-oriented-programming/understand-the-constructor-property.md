@@ -6,8 +6,10 @@ forumTopicId: 301327
 ---
 
 ## Description
+
 <section id='description'>
-There is a special <code>constructor</code> property located on the object instances <code>duck</code> and <code>beagle</code> that were created in the previous challenges:
+
+There is a special `constructor` property located on the object instances `duck` and `beagle` that were created in the previous challenges:
 
 ```js
 let duck = new Bird();
@@ -17,8 +19,7 @@ console.log(duck.constructor === Bird);  //prints true
 console.log(beagle.constructor === Dog);  //prints true
 ```
 
-Note that the <code>constructor</code> property is a reference to the constructor function that created the instance.
-The advantage of the <code>constructor</code> property is that it's possible to check for this property to find out what kind of object it is. Here's an example of how this could be used:
+Note that the `constructor` property is a reference to the constructor function that created the instance. The advantage of the `constructor` property is that it's possible to check for this property to find out what kind of object it is. Here's an example of how this could be used:
 
 ```js
 function joinBirdFraternity(candidate) {
@@ -30,15 +31,21 @@ function joinBirdFraternity(candidate) {
 }
 ```
 
-<strong>Note</strong><br>Since the <code>constructor</code> property can be overwritten (which will be covered in the next two challenges) it’s generally better to use the <code>instanceof</code> method to check the type of an object.
+**Note**  
+Since the `constructor` property can be overwritten (which will be covered in the next two challenges) it’s generally better to use the `instanceof` method to check the type of an object.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a <code>joinDogFraternity</code> function that takes a <code>candidate</code> parameter and, using the <code>constructor</code> property, return <code>true</code> if the candidate is a <code>Dog</code>, otherwise return <code>false</code>.
+
+Write a `joinDogFraternity` function that takes a `candidate` parameter and, using the `constructor` property, return `true` if the candidate is a `Dog`, otherwise return `false`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -55,6 +62,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,13 +81,11 @@ function joinDogFraternity(candidate) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Dog(name) {

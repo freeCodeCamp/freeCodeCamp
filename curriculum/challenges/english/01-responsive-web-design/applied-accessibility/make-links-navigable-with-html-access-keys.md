@@ -7,19 +7,29 @@ forumTopicId: 301021
 ---
 
 ## Description
+
 <section id='description'>
-HTML offers the <code>accesskey</code> attribute to specify a shortcut key to activate or bring focus to an element. This can make navigation more efficient for keyboard-only users.
+
+HTML offers the `accesskey` attribute to specify a shortcut key to activate or bring focus to an element. This can make navigation more efficient for keyboard-only users.
+
 HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.
+
 Here's an example:
-<code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code>
+
+`<button accesskey="b">Important Button</button>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an <code>accesskey</code> attribute to both links and set the first one to "g" (for Garfield) and the second one to "c" (for Chuck Norris).
+
+Camper Cat wants the links around the two blog article titles to have keyboard shortcuts so his site's users can quickly navigate to the full story. Add an `accesskey` attribute to both links and set the first one to "g" (for Garfield) and the second one to "c" (for Chuck Norris).
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -69,11 +80,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

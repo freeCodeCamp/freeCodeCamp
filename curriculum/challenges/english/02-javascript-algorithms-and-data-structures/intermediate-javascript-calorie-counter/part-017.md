@@ -17,6 +17,7 @@ Chain the `reduce()` method to the `Array.from()` expression.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

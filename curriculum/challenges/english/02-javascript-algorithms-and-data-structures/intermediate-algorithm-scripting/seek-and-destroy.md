@@ -6,17 +6,24 @@ forumTopicId: 16046
 ---
 
 ## Description
+
 <section id='description'>
+
 You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
-<strong>Note</strong><br> You have to use the <code>arguments</code> object.
+
+**Note**  
+You have to use the `arguments` object.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,13 +61,11 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function destroyer(arr) {

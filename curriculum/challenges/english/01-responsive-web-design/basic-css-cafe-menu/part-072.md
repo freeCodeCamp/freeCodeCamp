@@ -5,15 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
+Notice how the thickness of the line looks bigger? The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
 
 Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

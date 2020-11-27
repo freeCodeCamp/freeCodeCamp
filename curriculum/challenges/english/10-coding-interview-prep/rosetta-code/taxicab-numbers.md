@@ -6,31 +6,45 @@ forumTopicId: 302337
 ---
 
 ## Description
+
 <section id='description'>
-A &nbsp; <a href="https://en.wikipedia.org/wiki/Hardy–Ramanujan number" title="wp: Hardy–Ramanujan number" target="_blank">taxicab number</a> (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
-The first taxicab number is <code>1729</code>, which is:
-<span style="margin-left: 2em;">1<sup>3</sup> &nbsp; + &nbsp; 12<sup>3</sup> &nbsp; &nbsp; &nbsp; and</span>
-<span style="margin-left: 2em;">9<sup>3</sup> &nbsp; + &nbsp; 10<sup>3</sup>.</span>
+
+A [taxicab number](<https://en.wikipedia.org/wiki/Hardy–Ramanujan number> "wp: Hardy–Ramanujan number") (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
+
+The first taxicab number is `1729`, which is:
+
+1<sup>3</sup> + 12<sup>3</sup> and
+
+9<sup>3</sup> + 10<sup>3</sup>.
+
 Taxicab numbers are also known as:
+
 <ul>
   <li>taxi numbers</li>
   <li>taxi-cab numbers</li>
   <li>taxi cab numbers</li>
   <li>Hardy-Ramanujan numbers</li>
 </ul>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a function that returns the lowest <code>n</code> taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
-<strong>See also:</strong>
+
+Write a function that returns the lowest `n` taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
+
+**See also:**
+
 <ul>
-  <li><a href="https://oeis.org/A001235" target="_blank">A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Taxicab_number" target="_blank">taxicab number</a> on Wikipedia.</li>
+  <li><a href='https://oeis.org/A001235' target='_blank'>A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
+  <li><a href='https://en.wikipedia.org/wiki/Taxicab_number' target='_blank'>taxicab number</a> on Wikipedia.</li>
 </ul>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +67,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,8 +81,8 @@ function taxicabNumbers(n) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -86,8 +101,8 @@ const res39From20To29 = [314496, 320264, 327763, 373464, 402597, 439101, 443889,
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function taxicabNumbers(nNumbers) {

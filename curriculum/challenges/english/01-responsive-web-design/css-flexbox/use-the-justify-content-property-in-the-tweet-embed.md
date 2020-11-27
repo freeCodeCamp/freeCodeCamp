@@ -7,16 +7,23 @@ forumTopicId: 301115
 ---
 
 ## Description
+
 <section id='description'>
-The last challenge showed an example of the <code>justify-content</code> property. For the tweet embed, this property can be applied to align the items in the <code>.profile-name</code> element.
+
+The last challenge showed an example of the `justify-content` property. For the tweet embed, this property can be applied to align the items in the `.profile-name` element.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the CSS property <code>justify-content</code> to the header's <code>.profile-name</code> element and set the value to any of the options from the last challenge.
+
+Add the CSS property `justify-content` to the header's `.profile-name` element and set the value to any of the options from the last challenge.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -127,11 +135,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

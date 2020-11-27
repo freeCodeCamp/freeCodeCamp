@@ -6,7 +6,9 @@ forumTopicId: 301216
 ---
 
 ## Description
+
 <section id='description'>
+
 <dfn>Destructuring assignment</dfn> is special syntax introduced in ES6, for neatly assigning values taken directly from an object.
 
 Consider the following ES5 code:
@@ -25,17 +27,22 @@ const { name, age } = user;
 // name = 'John Doe', age = 34
 ```
 
-Here, the <code>name</code> and <code>age</code> variables will be created and assigned the values of their respective values from the <code>user</code> object. You can see how much cleaner this is.
+Here, the `name` and `age` variables will be created and assigned the values of their respective values from the `user` object. You can see how much cleaner this is.
 
 You can extract as many or few values from the object as you want.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>today</code> and <code>tomorrow</code> the values of <code>today</code> and <code>tomorrow</code> from the <code>HIGH_TEMPERATURES</code> object.
+
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `today` and `tomorrow` the values of `today` and `tomorrow` from the `HIGH_TEMPERATURES` object.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,6 +61,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -77,6 +85,7 @@ const tomorrow = HIGH_TEMPERATURES.tomorrow;
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

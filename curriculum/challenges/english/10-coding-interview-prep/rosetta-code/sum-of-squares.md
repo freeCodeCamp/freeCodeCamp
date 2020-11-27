@@ -56,6 +56,7 @@ function sumsq(array) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

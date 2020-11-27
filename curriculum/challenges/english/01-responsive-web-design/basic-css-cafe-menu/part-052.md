@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Something does not look right. You added the correct `class` attribute value to the `p` element with `Donunt` as its text, but you have not defined a selector for it.
@@ -14,6 +15,7 @@ Since the `flavor` class selector already has the properties you want, just add 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

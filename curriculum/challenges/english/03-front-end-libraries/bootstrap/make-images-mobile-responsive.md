@@ -6,18 +6,25 @@ forumTopicId: 18232
 ---
 
 ## Description
+
 <section id='description'>
-First, add a new image below the existing one. Set its <code>src</code> attribute to <code>https://bit.ly/fcc-running-cats</code>.
+
+First, add a new image below the existing one. Set its `src` attribute to `https://bit.ly/fcc-running-cats`.
+
 It would be great if this image could be exactly the width of our phone's screen.
-Fortunately, with Bootstrap, all we need to do is add the <code>img-responsive</code> class to your image. Do this, and the image should perfectly fit the width of your page.
+
+Fortunately, with Bootstrap, all we need to do is add the `img-responsive` class to your image. Do this, and the image should perfectly fit the width of your page.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -103,11 +111,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

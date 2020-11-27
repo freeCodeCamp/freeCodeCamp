@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Inside `pick`, create a `while` loop to run the same code multiple times. The code inside the `while` loop should keep repeating while `numbers.length` is less than 10 and stop once that condition is no longer true. 
+Inside `pick`, create a `while` loop to run the same code multiple times. The code inside the `while` loop should keep repeating while `numbers.length` is less than 10 and stop once that condition is no longer true.
 
 Here is an example of a while loop that repeats code inside the loop while `i` is less than five.
 
@@ -24,11 +25,13 @@ while(i < 5) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -335,8 +339,8 @@ function pick(guess) {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -405,8 +409,8 @@ function pick(guess) {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -416,12 +420,11 @@ function pick(guess) {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

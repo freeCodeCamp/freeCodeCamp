@@ -6,17 +6,23 @@ forumTopicId: 302265
 ---
 
 ## Description
+
 <section id='description'>
+
 Write a function that returns the factors of a positive integer as an array.
+
 These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,8 +54,8 @@ function factors(num) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -60,8 +67,8 @@ const ans=[[1,3,5,9,15,45],[1,53],[1,2,4,8,16,32,64]];
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function factors(num)

@@ -6,10 +6,14 @@ forumTopicId: 301496
 ---
 
 ## Description
+
 <section id='description'>
-The D3 methods <code>domain()</code> and <code>range()</code> set that information for your scale based on the data. There are a couple methods to make that easier.
+
+The D3 methods `domain()` and `range()` set that information for your scale based on the data. There are a couple methods to make that easier.
+
 Often when you set the domain, you'll want to use the minimum and maximum values within the data set. Trying to find these values manually, especially in a large data set, may cause errors.
-D3 has two methods - <code>min()</code> and <code>max()</code> to return this information. Here's an example:
+
+D3 has two methods - `min()` and `max()` to return this information. Here's an example:
 
 ```js
 const exampleData = [34, 234, 73, 90, 6, 52];
@@ -17,9 +21,7 @@ d3.min(exampleData) // Returns 6
 d3.max(exampleData) // Returns 234
 ```
 
-A dataset may have nested arrays, like the [x, y] coordinate pairs that were in the scatter plot example. In that case, you need to tell D3 how to calculate the maximum and minimum.
-Fortunately, both the <code>min()</code> and <code>max()</code> methods take a callback function.
-In this example, the callback function's argument <code>d</code> is for the current inner array. The callback needs to return the element from the inner array (the x or y value) over which you want to compute the maximum or minimum. Here's an example for how to find the min and max values with an array of arrays:
+A dataset may have nested arrays, like the \[x, y] coordinate pairs that were in the scatter plot example. In that case, you need to tell D3 how to calculate the maximum and minimum. Fortunately, both the `min()` and `max()` methods take a callback function. In this example, the callback function's argument `d` is for the current inner array. The callback needs to return the element from the inner array (the x or y value) over which you want to compute the maximum or minimum. Here's an example for how to find the min and max values with an array of arrays:
 
 ```js
 const locationData = [[1, 7],[6, 3],[8, 3]];
@@ -31,11 +33,15 @@ const minX = d3.min(locationData, (d) => d[0]);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The <code>positionData</code> array holds sub arrays of x, y, and z coordinates. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the <code>output</code> variable.
+
+The `positionData` array holds sub arrays of x, y, and z coordinates. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the `output` variable.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +56,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,11 +80,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

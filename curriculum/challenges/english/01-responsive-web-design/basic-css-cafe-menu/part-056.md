@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
@@ -12,6 +13,7 @@ That looks better. Now try to add the same `20px` padding to the top and bottom 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

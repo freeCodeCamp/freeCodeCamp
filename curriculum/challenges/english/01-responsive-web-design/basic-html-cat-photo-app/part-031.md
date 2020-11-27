@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `strong` element is used to indicate that some text is of strong importance or urgent.
@@ -14,6 +15,7 @@ In the `figcaption` you just added, indicate that `hate` is of strong importance
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -77,4 +80,5 @@ tests:
 ```
 
 </div>
+
 </section>

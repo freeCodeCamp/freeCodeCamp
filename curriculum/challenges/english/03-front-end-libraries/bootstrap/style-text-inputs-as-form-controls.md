@@ -9,18 +9,25 @@ forumTopicId: 18312
 ---
 
 ## Description
+
 <section id='description'>
-You can add the <code>fa-paper-plane</code> Font Awesome icon by adding <code>&#60;i class="fa fa-paper-plane"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.
-Give your form's text input field a class of <code>form-control</code>. Give your form's submit button the classes <code>btn btn-primary</code>. Also give this button the Font Awesome icon of <code>fa-paper-plane</code>.
-All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with the class <code>.form-control</code> have a width of 100%.
+
+You can add the `fa-paper-plane` Font Awesome icon by adding `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
+
+Give your form's text input field a class of `form-control`. Give your form's submit button the classes `btn btn-primary`. Also give this button the Font Awesome icon of `fa-paper-plane`.
+
+All textual `<input>`, `<textarea>`, and `<select>` elements with the class `.form-control` have a width of 100%.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -120,11 +128,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
@@ -12,6 +13,7 @@ Moving down to the `footer` element, make all the text have a value of `14px` fo
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

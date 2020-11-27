@@ -7,24 +7,33 @@ forumTopicId: 18241
 ---
 
 ## Description
+
 <section id='description'>
+
 Unlike strings, the entries of arrays are <dfn>mutable</dfn> and can be changed freely.
-<strong>Example</strong>
+
+**Example**
 
 ```js
 var ourArray = [50,40,30];
 ourArray[0] = 15; // equals [15,40,30]
 ```
 
-<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+**Note**  
+There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>45</code>.
+
+Modify the data stored at index `0` of `myArray` to a value of `45`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,8 +64,8 @@ var myArray = [18,64,99];
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -67,8 +77,8 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myArray = [18,64,99];

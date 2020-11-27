@@ -6,8 +6,10 @@ forumTopicId: 301326
 ---
 
 ## Description
+
 <section id='description'>
-In the following example, the <code>Bird</code> constructor defines two properties: <code>name</code> and <code>numLegs</code>:
+
+In the following example, the `Bird` constructor defines two properties: `name` and `numLegs`:
 
 ```js
 function Bird(name) {
@@ -19,9 +21,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-<code>name</code> and <code>numLegs</code> are called <code>own</code> properties, because they are defined directly on the instance object. That means that <code>duck</code> and <code>canary</code> each has its own separate copy of these properties.
-In fact every instance of <code>Bird</code> will have its own copy of these properties.
-The following code adds all of the <code>own</code> properties of <code>duck</code> to the array <code>ownProps</code>:
+`name` and `numLegs` are called `own` properties, because they are defined directly on the instance object. That means that `duck` and `canary` each has its own separate copy of these properties. In fact every instance of `Bird` will have its own copy of these properties. The following code adds all of the `own` properties of `duck` to the array `ownProps`:
 
 ```js
 let ownProps = [];
@@ -38,11 +38,15 @@ console.log(ownProps); // prints [ "name", "numLegs" ]
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the <code>own</code> properties of <code>canary</code> to the array <code>ownProps</code>.
+
+Add the `own` properties of `canary` to the array `ownProps`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -59,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -79,13 +84,11 @@ let ownProps = [];
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Bird(name) {

@@ -6,6 +6,7 @@ forumTopicId: 302189
 ---
 
 ## Description
+
 <section id='description'>
 
 It is possible to write five as a sum in exactly six different ways:
@@ -24,11 +25,13 @@ How many different ways can one hundred be written as a sum of at least two posi
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -43,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,11 +62,10 @@ countingSummations();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

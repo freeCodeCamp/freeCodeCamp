@@ -9,27 +9,35 @@ forumTopicId: 16638
 ---
 
 ## Description
+
 <section id='description'>
+
 Font Awesome is a convenient library of icons. These icons can be webfonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+
 You can include Font Awesome in any app by adding the following code to the top of your HTML:
 
 `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">`
 
 In this case, we've already added it for you to this page behind the scenes.
 
-The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:
+The `i` element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the `i` element to turn it into an icon, for example:
 
-<code>&lt;i class="fas fa-info-circle"&gt;&lt;/i&gt;</code>
+`<i class="fas fa-info-circle"></i>`
 
-Note that the <code>span</code> element is also acceptable for use with icons.
+Note that the `span` element is also acceptable for use with icons.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>. Make sure to keep the text "Like" next to the icon.
+
+Use Font Awesome to add a `thumbs-up` icon to your like button by giving it an `i` element with the classes `fas` and `fa-thumbs-up`. Make sure to keep the text "Like" next to the icon.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +55,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -113,11 +122,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

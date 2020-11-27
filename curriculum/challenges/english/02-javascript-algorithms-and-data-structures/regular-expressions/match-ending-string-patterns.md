@@ -6,9 +6,12 @@ forumTopicId: 301352
 ---
 
 ## Description
+
 <section id='description'>
+
 In the last challenge, you learned to use the caret character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
-You can search the end of strings using the dollar sign character <code>$</code> at the end of the regex.
+
+You can search the end of strings using the dollar sign character `$` at the end of the regex.
 
 ```js
 let theEnding = "This is a never ending story";
@@ -24,11 +27,15 @@ storyRegex.test(noEnding);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the anchor character (<code>$</code>) to match the string <code>"caboose"</code> at the end of the string <code>caboose</code>.
+
+Use the anchor character (`$`) to match the string `"caboose"` at the end of the string `caboose`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -45,6 +52,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,11 +65,10 @@ let result = lastRegex.test(caboose);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

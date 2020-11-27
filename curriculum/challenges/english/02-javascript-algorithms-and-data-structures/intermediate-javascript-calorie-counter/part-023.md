@@ -21,6 +21,7 @@ Create a variable named `maxCalories` and set it equal to the document element w
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

@@ -6,16 +6,25 @@ videoId: z-SBYcvEQOc
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=uQ3Qv1z_Vao" target='_blank'>Exercise: Email</a>
-- <a href="https://www.youtube.com/watch?v=qEkUEAz8j3o" target='_blank'>Exercise: Roster</a>
-- <a href="https://www.youtube.com/watch?v=I-E7avcPeSE" target='_blank'>Exercise: Tracks</a>
-- <a href="https://www.youtube.com/watch?v=RZRAoBFIH6A" target='_blank'>Exercise: Twfriends</a>
-- <a href="https://www.youtube.com/watch?v=xBaJddvJL4A" target='_blank'>Exercise: Twspider</a>
+
+\- [Exercise: Email](https://www.youtube.com/watch?v=uQ3Qv1z_Vao)
+
+\- [Exercise: Roster](https://www.youtube.com/watch?v=qEkUEAz8j3o)
+
+\- [Exercise: Tracks](https://www.youtube.com/watch?v=I-E7avcPeSE)
+
+\- [Exercise: Twfriends](https://www.youtube.com/watch?v=RZRAoBFIH6A)
+
+\- [Exercise: Twspider](https://www.youtube.com/watch?v=xBaJddvJL4A)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml

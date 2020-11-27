@@ -7,22 +7,29 @@ forumTopicId: 18247
 ---
 
 ## Description
+
 <section id='description'>
+
 You can also nest arrays within other arrays, like below:
 
 ```js
 [["Bulls", 23], ["White Sox", 45]]
 ```
 
-This is also called a <dfn>multi-dimensional array<dfn>.
+This is also called a <dfn>multi-dimensional array<dfn>.</dfn></dfn>
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a nested array called <code>myArray</code>.
+
+Create a nested array called `myArray`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -35,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,8 +55,8 @@ var myArray = [];
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -60,8 +68,8 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myArray = [[1,2,3]];

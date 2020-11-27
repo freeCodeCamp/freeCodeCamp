@@ -7,16 +7,23 @@ forumTopicId: 301137
 ---
 
 ## Description
+
 <section id='description'>
-Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the <code>grid-row</code> property on a grid item.
+
+Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the `grid-row` property on a grid item.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Make the element with the <code>item5</code> class consume the last two rows.
+
+Make the element with the `item5` class consume the last two rows.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,13 +87,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

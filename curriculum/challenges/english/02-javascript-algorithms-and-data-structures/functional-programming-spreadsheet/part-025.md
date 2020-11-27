@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Define an empty function `applyFn` which takes an argument `str`. Use the curly brace syntax with an anonymous function. Do not wrap parentheses around the parameter.
@@ -12,12 +13,13 @@ Define an empty function `applyFn` which takes an argument `str`. Use the curly 
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,10 +29,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,8 +68,8 @@ const spreadsheetFunctions = {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -98,8 +100,8 @@ const spreadsheetFunctions = {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -109,11 +111,10 @@ const spreadsheetFunctions = {
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

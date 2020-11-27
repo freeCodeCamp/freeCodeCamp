@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Since the cafe's main product for sale is coffee, you could use an image of coffee beans for the background of the page.
@@ -14,6 +15,7 @@ Delete the comment and its contents inside the `body` type selector. Now add a `
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -26,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

@@ -6,16 +6,21 @@ forumTopicId: 301942
 ---
 
 ## Description
+
 <section id='description'>
-How many integers 0 ≤ n < 1018 have the property that the sum of the digits of n equals the sum of digits of 137n?
+
+How many integers 0 ≤ n &lt; 1018 have the property that the sum of the digits of n equals the sum of digits of 137n?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -28,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -43,11 +49,10 @@ euler290();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

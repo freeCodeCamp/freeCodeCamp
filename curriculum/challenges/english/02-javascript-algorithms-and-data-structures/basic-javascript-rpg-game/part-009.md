@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 For now, let's start the player with just the stick. Delete the dagger and sword items in the array. More items will be added to the array during game play.
@@ -12,11 +13,13 @@ For now, let's start the player with just the stick. Delete the dagger and sword
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,8 +52,8 @@ let inventory = ["stick", "dagger", "sword"];
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -118,8 +122,8 @@ let inventory = ["stick", "dagger", "sword"];
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -129,13 +133,11 @@ let inventory = ["stick", "dagger", "sword"];
 
 </div>
 
-
 </section>
 
-
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

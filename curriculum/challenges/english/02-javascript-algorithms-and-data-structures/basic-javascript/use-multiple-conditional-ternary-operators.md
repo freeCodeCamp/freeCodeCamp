@@ -7,8 +7,11 @@ forumTopicId: 301179
 ---
 
 ## Description
+
 <section id='description'>
+
 In the previous challenge, you used a single conditional operator. You can also chain them together to check for multiple conditions.
+
 The following function uses if, else if, and else statements to check multiple conditions:
 
 ```js
@@ -46,11 +49,15 @@ function findGreaterOrEqual(a, b) {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-In the <code>checkSign</code> function, use multiple conditional operators - following the recommended format used in <code>findGreaterOrEqual</code> - to check if a number is positive, negative or zero. The function should return <code>"positive"</code>, <code>"negative"</code> or <code>"zero"</code>.
+
+In the `checkSign` function, use multiple conditional operators - following the recommended format used in `findGreaterOrEqual` - to check if a number is positive, negative or zero. The function should return `"positive"`, `"negative"` or `"zero"`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -69,6 +76,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -83,11 +91,10 @@ checkSign(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -6,24 +6,27 @@ forumTopicId: 302205
 ---
 
 ## Description
+
 <section id='description'>
 
-A Pythagorean triplet is a set of three natural numbers, <var>a</var> < <var>b</var> < <var>c</var>, for which,
+A Pythagorean triplet is a set of three natural numbers, `a` &lt; `b` &lt; `c`, for which,
 
 <div style='text-align: center;'><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
 
 For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
 
-There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000. Find the product <var>abc</var> such that <var>a</var> + <var>b</var> + <var>c</var> = `n`.
+There exists exactly one Pythagorean triplet for which `a` + `b` + `c` = 1000. Find the product `abc` such that `a` + `b` + `c` = `n`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,13 +62,11 @@ specialPythagoreanTriplet(1000);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const specialPythagoreanTriplet = (n)=>{

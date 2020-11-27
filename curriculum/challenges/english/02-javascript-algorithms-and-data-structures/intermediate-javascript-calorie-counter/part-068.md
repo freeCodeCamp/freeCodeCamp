@@ -17,6 +17,7 @@ In the `calculate()` function, right after `event.preventDefault()`, call the `c
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

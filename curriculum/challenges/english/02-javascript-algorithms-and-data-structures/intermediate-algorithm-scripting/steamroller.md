@@ -8,7 +8,9 @@ forumTopicId: 16079
 ## Description
 
 <section id='description'>
+
 Flatten a nested array. You must account for varying levels of nesting.
+
 </section>
 
 ## Instructions

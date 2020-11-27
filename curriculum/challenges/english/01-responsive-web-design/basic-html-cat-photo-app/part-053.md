@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Forms commonly use checkboxes for questions that may have more than one answer. For example, here's a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
@@ -14,6 +15,7 @@ Under the `legend` element you just added, add an `input` with its `type` attrib
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -104,4 +107,5 @@ tests:
 ```
 
 </div>
+
 </section>

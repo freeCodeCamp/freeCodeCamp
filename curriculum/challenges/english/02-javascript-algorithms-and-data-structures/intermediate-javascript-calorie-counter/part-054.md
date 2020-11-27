@@ -15,6 +15,7 @@ Set the `placeholder` property of the `foodInput` equal to `'food name'`.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

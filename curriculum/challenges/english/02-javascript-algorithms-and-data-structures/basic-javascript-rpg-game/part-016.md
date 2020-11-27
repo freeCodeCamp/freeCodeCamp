@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Create the `goStore` function to hold the code that runs whenever the player goes to the store. Here is an example of an empty function called `functionName` (Note the opening curly brace at the end of the first line and the closing curly brace on the second line):
@@ -17,11 +18,13 @@ function functionName() {
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -71,8 +75,8 @@ button3.onclick = fightDragon;
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -141,8 +145,8 @@ button3.onclick = fightDragon;
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -152,12 +156,11 @@ button3.onclick = fightDragon;
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

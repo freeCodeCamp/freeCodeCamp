@@ -6,8 +6,10 @@ forumTopicId: 301330
 ---
 
 ## Description
+
 <section id='description'>
-Just like people inherit genes from their parents, an object inherits its <code>prototype</code> directly from the constructor function that created it. For example, here the <code>Bird</code> constructor creates the <code>duck</code> object:
+
+Just like people inherit genes from their parents, an object inherits its `prototype` directly from the constructor function that created it. For example, here the `Bird` constructor creates the `duck` object:
 
 ```js
 function Bird(name) {
@@ -17,7 +19,7 @@ function Bird(name) {
 let duck = new Bird("Donald");
 ```
 
-<code>duck</code> inherits its <code>prototype</code> from the <code>Bird</code> constructor function. You can show this relationship with the <code>isPrototypeOf</code> method:
+`duck` inherits its `prototype` from the `Bird` constructor function. You can show this relationship with the `isPrototypeOf` method:
 
 ```js
 Bird.prototype.isPrototypeOf(duck);
@@ -27,11 +29,15 @@ Bird.prototype.isPrototypeOf(duck);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use <code>isPrototypeOf</code> to check the <code>prototype</code> of <code>beagle</code>.
+
+Use `isPrototypeOf` to check the `prototype` of `beagle`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -44,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,13 +69,11 @@ let beagle = new Dog("Snoopy");
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function Dog(name) {

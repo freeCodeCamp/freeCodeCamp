@@ -7,18 +7,27 @@ forumTopicId: 18329
 ---
 
 ## Description
+
 <section id='description'>
+
 Commenting is a way that you can leave comments for other developers within your code without affecting the resulting output that is displayed to the end user.
+
 Commenting is also a convenient way to make code inactive without having to delete it entirely.
-Comments in HTML start with <code>&#60;!--</code> and end with a <code>--&#62;</code>
+
+Comments in HTML start with `<!--` and end with a `-->`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.
+
+Uncomment your `h1`, `h2` and `p` elements.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -53,11 +63,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -6,9 +6,10 @@ forumTopicId: 302198
 ---
 
 ## Description
+
 <section id='description'>
 
-In the game, <i>Monopoly</i>, the standard board is set up in the following way:
+In the game, *Monopoly*, the standard board is set up in the following way:
 
 <div style="text-align: center;">
   <table cellspacing="1" cellpadding="5" border="0" style="background-color: black; color: black;" align="center">
@@ -127,11 +128,13 @@ If, instead of using two 6-sided dice, two 4-sided dice are used, find the six-d
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -146,6 +149,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -161,11 +165,10 @@ monopolyOdds();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Gradients can use as many colors as you want like this:
@@ -18,13 +19,17 @@ gradient-type(
 ```
 
 Add a `linear-gradient` to `bb1d` with `orange` as the first color, `--building-color1` as the second, and `--window-color1` as the third. Remember to use the gradient on the `background` property.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -207,10 +213,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

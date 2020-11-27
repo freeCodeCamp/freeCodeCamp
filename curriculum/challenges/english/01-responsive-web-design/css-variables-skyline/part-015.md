@@ -5,16 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 To use a variable, just put the variable name in parenthesis with `var` in front of them like this: `var(--variable-name)`. Add your variable as the value of the `background-color` property of the `bb1a` class. Whatever value you gave the variable will be applied to whatever property you use it on. In this case, your variable has the value of `#999`. So `#999` will be used as the value for the `background-color` property.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -27,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -97,10 +103,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

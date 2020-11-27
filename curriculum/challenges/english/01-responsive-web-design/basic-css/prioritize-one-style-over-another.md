@@ -7,19 +7,29 @@ forumTopicId: 18258
 ---
 
 ## Description
+
 <section id='description'>
+
 Sometimes your HTML elements will receive multiple styles that conflict with one another.
-For example, your <code>h1</code> element can't be both green and pink at the same time.
-Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class <em>override</em> the <code>body</code> element's <code>color: green;</code> CSS property?
+
+For example, your `h1` element can't be both green and pink at the same time.
+
+Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class *override* the `body` element's `color: green;` CSS property?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a CSS class called <code>pink-text</code> that gives an element the color pink.
-Give your <code>h1</code> element the class of <code>pink-text</code>.
+
+Create a CSS class called `pink-text` that gives an element the color pink.
+
+Give your `h1` element the class of `pink-text`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -53,11 +64,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

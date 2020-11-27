@@ -6,24 +6,33 @@ forumTopicId: 302260
 ---
 
 ## Description
+
 <section id='description'>
-Create an interpreter for a <a href="https://en.wikipedia.org/wiki/Markov algorithm" title="wp: Markov algorithm" target="_blank">Markov Algorithm</a>.
+
+Create an interpreter for a [Markov Algorithm](<https://en.wikipedia.org/wiki/Markov algorithm> "wp: Markov algorithm").
+
 Rules have the syntax:
-<pre>
-[ruleset] ::= (([comment] | [rule]) [newline]+)*
+
+<pre>[ruleset] ::= (([comment] | [rule]) [newline]+)*
 [comment] ::= # {[any character]}
 [rule] ::= [pattern] [whitespace] -> [whitespace] [.] [replacement]
 [whitespace] ::= ([tab] | [space]) [[whitespace]]
 </pre>
+
 There is one rule per line.
-If there is a <code>.</code> (period) present before the  [replacement], then this is a terminating rule in which case the interpreter must halt execution.
+
+If there is a `.` (period) present before the \[replacement], then this is a terminating rule in which case the interpreter must halt execution.
+
 A ruleset consists of a sequence of rules, with optional comments.
-<span style="font-size: 1.5rem">Rulesets</span>
+
+Rulesets
+
 Use the following tests on entries:
-<strong>Ruleset 1:</strong>
-<pre>
-# This rules file is extracted from Wikipedia:
-# http://en.wikipedia.org/wiki/Markov_Algorithm
+
+**Ruleset 1:**
+
+<pre># This rules file is extracted from Wikipedia:
+# <code>http://en.wikipedia.org/wiki/Markov_Algorithm</code>
 A -> apple
 B -> bag
 S -> shop
@@ -31,14 +40,20 @@ T -> the
 the shop -> my brother
 a never used -> .terminating rule
 </pre>
+
 Sample text of:
-<code>I bought a B of As from T S.</code>
+
+`I bought a B of As from T S.`
+
 Should generate the output:
-<code>I bought a bag of apples from my brother.</code>
-<strong>Ruleset 2:</strong>
+
+`I bought a bag of apples from my brother.`
+
+**Ruleset 2:**
+
 A test of the terminating rule
-<pre>
-# Slightly modified from the rules on Wikipedia
+
+<pre># Slightly modified from the rules on Wikipedia
 A -> apple
 B -> bag
 S -> .shop
@@ -46,14 +61,20 @@ T -> the
 the shop -> my brother
 a never used -> .terminating rule
 </pre>
+
 Sample text of:
-<code>I bought a B of As from T S.</code>
+
+`I bought a B of As from T S.`
+
 Should generate:
-<code>I bought a bag of apples from T shop.</code>
-<strong>Ruleset 3:</strong>
+
+`I bought a bag of apples from T shop.`
+
+**Ruleset 3:**
+
 This tests for correct substitution order and may trap simple regexp based replacement routines if special regexp characters are not escaped.
-<pre>
-# BNF Syntax testing rules
+
+<pre># BNF Syntax testing rules
 A -> apple
 WWWW -> with
 Bgage -> ->.*
@@ -65,14 +86,20 @@ T -> the
 the shop -> my brother
 a never used -> .terminating rule
 </pre>
+
 Sample text of:
-<code>I bought a B of As W my Bgage from T S.</code>
+
+`I bought a B of As W my Bgage from T S.`
+
 Should generate:
-<code>I bought a bag of apples with my money from T shop.</code>
-<strong>Ruleset 4:</strong>
-This tests for correct order of scanning of rules, and may trap replacement routines that scan in the wrong order.  It implements a general unary multiplication engine.  (Note that the input expression must be placed within underscores in this implementation.)
-<pre>
-### Unary Multiplication Engine, for testing Markov Algorithm implementations
+
+`I bought a bag of apples with my money from T shop.`
+
+**Ruleset 4:**
+
+This tests for correct order of scanning of rules, and may trap replacement routines that scan in the wrong order. It implements a general unary multiplication engine. (Note that the input expression must be placed within underscores in this implementation.)
+
+<pre>### Unary Multiplication Engine, for testing Markov Algorithm implementations
 ### By Donal Fellows.
 # Unary addition engine
 _+1 -> _1+
@@ -98,16 +125,24 @@ y_ -> _
 1+_ -> 1
 _+_ ->
 </pre>
+
 Sample text of:
-<code>_1111*11111_</code>
+
+`_1111*11111_`
+
 should generate the output:
-<code>11111111111111111111</code>
-<strong>Ruleset 5:</strong>
-A simple <a href="http://en.wikipedia.org/wiki/Turing_machine" title="link: http://en.wikipedia.org/wiki/Turing_machine" target="_blank">Turing machine</a>, implementing a three-state <a href="http://en.wikipedia.org/wiki/Busy_beaver" title="link: http://en.wikipedia.org/wiki/Busy_beaver" target="_blank">busy beaver</a>.
-The tape consists of <code>0</code>s and <code>1</code>s, the states are <code>A</code>, <code>B</code>, <code>C</code> and <code>H</code> (for <code>H</code>alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
+
+`11111111111111111111`
+
+**Ruleset 5:**
+
+A simple [Turing machine](http://en.wikipedia.org/wiki/Turing_machine "link: http&#x3A;//en.wikipedia.org/wiki/Turing_machine"), implementing a three-state [busy beaver](http://en.wikipedia.org/wiki/Busy_beaver "link: http&#x3A;//en.wikipedia.org/wiki/Busy_beaver").
+
+The tape consists of `0`s and `1`s, the states are `A`, `B`, `C` and `H` (for `H`alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
+
 Besides demonstrating that the Markov algorithm is Turing-complete, it also made me catch a bug in the C++ implementation which wasn't caught by the first four rulesets.
-<pre>
-# Turing machine: three-state busy beaver
+
+<pre># Turing machine: three-state busy beaver
 #
 # state A, symbol 0 => write 1, move right, new state B
 A0 -> 1B
@@ -126,18 +161,25 @@ B1 -> 1B
 0C1 -> H01
 1C1 -> H11
 </pre>
+
 This ruleset should turn
-<code>000000A000000</code>
+
+`000000A000000`
+
 into
-<code>00011H1111000</code>
+
+`00011H1111000`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -160,6 +202,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -172,13 +215,11 @@ function markov(rules,test) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function markov(rules,test) {

@@ -6,19 +6,29 @@ forumTopicId: 18265
 ---
 
 ## Description
+
 <section id='description'>
-The last few challenges showed that each object in the JSON array contains an <code>imageLink</code> key with a value that is the URL of a cat's image.
-When you're looping through these objects, you can use this <code>imageLink</code> property to display this image in an <code>img</code> element.
+
+The last few challenges showed that each object in the JSON array contains an `imageLink` key with a value that is the URL of a cat's image.
+
+When you're looping through these objects, you can use this `imageLink` property to display this image in an `img` element.
+
 Here's the code that does this:
-<code>html += "&lt;img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'&gt;";</code>
+
+`html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add code to use the <code>imageLink</code> and <code>altText</code> properties in an <code>img</code> tag.
+
+Add code to use the `imageLink` and `altText` properties in an `img` tag.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -100,11 +111,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

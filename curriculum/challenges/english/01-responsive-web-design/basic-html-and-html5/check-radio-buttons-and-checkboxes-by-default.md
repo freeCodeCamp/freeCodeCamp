@@ -7,18 +7,27 @@ forumTopicId: 301094
 ---
 
 ## Description
+
 <section id='description'>
-You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.
+
+You can set a checkbox or radio button to be checked by default using the `checked` attribute.
+
 To do this, just add the word "checked" to the inside of an input element. For example:
-<code>&#60;input type="radio" name="test-name" checked&#62;</code>
+
+`<input type="radio" name="test-name" checked>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Set the first of your radio buttons and the first of your checkboxes to both be checked by default.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,11 +80,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

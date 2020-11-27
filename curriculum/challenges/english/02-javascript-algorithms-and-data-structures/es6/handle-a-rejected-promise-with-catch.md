@@ -6,8 +6,10 @@ forumTopicId: 301204
 ---
 
 ## Description
+
 <section id='description'>
-<code>catch</code> is the method used when your promise has been rejected. It is executed immediately after a promise's <code>reject</code> method is called. Here’s the syntax:
+
+`catch` is the method used when your promise has been rejected. It is executed immediately after a promise's `reject` method is called. Here’s the syntax:
 
 ```js
 myPromise.catch(error => {
@@ -15,15 +17,20 @@ myPromise.catch(error => {
 });
 ```
 
-<code>error</code> is the argument passed in to the <code>reject</code> method.
+`error` is the argument passed in to the `reject` method.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Add the <code>catch</code> method to your promise. Use <code>error</code> as the parameter of its callback function and log <code>error</code> to the console.
+
+Add the `catch` method to your promise. Use `error` as the parameter of its callback function and log `error` to the console.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -62,6 +70,7 @@ makeServerRequest.then(result => {
 </div>
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -73,6 +82,7 @@ const errorIsParameter = /\.catch\((function\(error\){|error|\(error\)=>)/.test(
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

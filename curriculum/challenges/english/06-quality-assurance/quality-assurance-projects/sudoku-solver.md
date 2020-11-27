@@ -5,60 +5,65 @@ challengeType: 4
 ---
 
 ## Description
-<section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://sudoku-solver.freecodecamp.rocks/" target="_blank">https://sudoku-solver.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
 
-- Clone <a href='https://github.com/freecodecamp/boilerplate-project-sudoku-solver' target='_blank'>this GitHub repo</a> and complete your project locally.
-- Use <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-sudoku-solver' target='_blank'>our repl.it starter project</a> to complete your project.
-- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+<section id='description'>
+
+Build a full stack JavaScript app that is functionally similar to this: <https://sudoku-solver.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
+
+-   Clone [this GitHub repo](https://github.com/freecodecamp/boilerplate-project-sudoku-solver) and complete your project locally.
+-   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-sudoku-solver) to complete your project.
+-   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-- All puzzle logic can go into `/controllers/sudoku-solver.js`
-- All routing logic can go into `/routes/api.js`
-- See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
-- To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
-- To run the tests in the console, use the command `npm run test`. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+-   All puzzle logic can go into `/controllers/sudoku-solver.js`
+-   All routing logic can go into `/routes/api.js`
+-   See the `puzzle-strings.js` file in `/controllers` for some sample puzzles your application should solve
+-   To run the challenge tests on this page, set `NODE_ENV` to `test` without quotes in the `.env` file
+-   To run the tests in the console, use the command `npm run test`. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
 Write the following tests in `tests/1_unit-tests.js`:
 
-- Logic handles a valid puzzle string of 81 characters
-- Logic handles a puzzle string with invalid characters (not 1-9 or `.`)
-- Logic handles a puzzle string that is not 81 characters in length
-- Logic handles a valid row placement
-- Logic handles an invalid row placement
-- Logic handles a valid column placement
-- Logic handles an invalid column placement
-- Logic handles a valid region (3x3 grid) placement
-- Logic handles an invalid region (3x3 grid) placement
-- Valid puzzle strings pass the solver
-- Invalid puzzle strings fail the solver
-- Solver returns the the expected solution for an incomplete puzzzle
+-   Logic handles a valid puzzle string of 81 characters
+-   Logic handles a puzzle string with invalid characters (not 1-9 or `.`)
+-   Logic handles a puzzle string that is not 81 characters in length
+-   Logic handles a valid row placement
+-   Logic handles an invalid row placement
+-   Logic handles a valid column placement
+-   Logic handles an invalid column placement
+-   Logic handles a valid region (3x3 grid) placement
+-   Logic handles an invalid region (3x3 grid) placement
+-   Valid puzzle strings pass the solver
+-   Invalid puzzle strings fail the solver
+-   Solver returns the the expected solution for an incomplete puzzzle
 
 Write the following tests in `tests/2_functional-tests.js`
 
-- Solve a puzzle with valid puzzle string: POST request to `/api/solve`
-- Solve a puzzle with missing puzzle string: POST request to `/api/solve`
-- Solve a puzzle with invalid characters: POST request to `/api/solve`
-- Solve a puzzle with incorrect length: POST request to `/api/solve`
-- Solve a puzzle that cannot be solved: POST request to `/api/solve`
-- Check a puzzle placement with all fields: POST request to `/api/check`
-- Check a puzzle placement with single placement conflict: POST request to `/api/check`
-- Check a puzzle placement with multiple placement conflicts: POST request to `/api/check`
-- Check a puzzle placement with all placement conflicts: POST request to `/api/check`
-- Check a puzzle placement with missing required fields: POST request to `/api/check`
-- Check a puzzle placement with invalid characters: POST request to `/api/check`
-- Check a puzzle placement with incorrect length: POST request to `/api/check`
-- Check a puzzle placement with invalid placement coordinate: POST request to `/api/check`
-- Check a puzzle placement with invalid placement value: POST request to `/api/check`
+-   Solve a puzzle with valid puzzle string: POST request to `/api/solve`
+-   Solve a puzzle with missing puzzle string: POST request to `/api/solve`
+-   Solve a puzzle with invalid characters: POST request to `/api/solve`
+-   Solve a puzzle with incorrect length: POST request to `/api/solve`
+-   Solve a puzzle that cannot be solved: POST request to `/api/solve`
+-   Check a puzzle placement with all fields: POST request to `/api/check`
+-   Check a puzzle placement with single placement conflict: POST request to `/api/check`
+-   Check a puzzle placement with multiple placement conflicts: POST request to `/api/check`
+-   Check a puzzle placement with all placement conflicts: POST request to `/api/check`
+-   Check a puzzle placement with missing required fields: POST request to `/api/check`
+-   Check a puzzle placement with invalid characters: POST request to `/api/check`
+-   Check a puzzle placement with incorrect length: POST request to `/api/check`
+-   Check a puzzle placement with invalid placement coordinate: POST request to `/api/check`
+-   Check a puzzle placement with invalid placement value: POST request to `/api/check`
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -300,11 +305,13 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

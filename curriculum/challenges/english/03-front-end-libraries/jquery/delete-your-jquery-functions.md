@@ -8,17 +8,23 @@ forumTopicId: 17561
 ---
 
 ## Description
+
 <section id='description'>
+
 These animations were cool at first, but now they're getting kind of distracting.
-Delete all three of these jQuery functions from your <code>document ready function</code>, but leave your <code>document ready function</code> itself intact.
+
+Delete all three of these jQuery functions from your `document ready function`, but leave your `document ready function` itself intact.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

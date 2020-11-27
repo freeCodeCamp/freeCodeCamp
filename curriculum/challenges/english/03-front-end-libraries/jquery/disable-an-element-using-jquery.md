@@ -6,21 +6,31 @@ forumTopicId: 17563
 ---
 
 ## Description
+
 <section id='description'>
+
 You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.
+
 When you disable a button, it will become grayed-out and can no longer be clicked.
-jQuery has a function called <code>.prop()</code> that allows you to adjust the properties of elements.
+
+jQuery has a function called `.prop()` that allows you to adjust the properties of elements.
+
 Here's how you would disable all buttons:
-<code>$("button").prop("disabled", true);</code>
-Disable only the <code>target1</code> button.
+
+`$("button").prop("disabled", true);`
+
+Disable only the `target1` button.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +47,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,11 +87,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

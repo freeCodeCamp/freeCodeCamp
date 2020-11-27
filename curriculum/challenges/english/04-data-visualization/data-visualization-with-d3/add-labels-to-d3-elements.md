@@ -6,19 +6,30 @@ forumTopicId: 301476
 ---
 
 ## Description
+
 <section id='description'>
-D3 lets you label a graph element, such as a bar, using the SVG <code>text</code> element.
-Like the <code>rect</code> element, a <code>text</code> element needs to have <code>x</code> and <code>y</code> attributes, to place it on the SVG canvas. It also needs to access the data to display those values.
+
+D3 lets you label a graph element, such as a bar, using the SVG `text` element.
+
+Like the `rect` element, a `text` element needs to have `x` and `y` attributes, to place it on the SVG canvas. It also needs to access the data to display those values.
+
 D3 gives you a high level of control over how you label your bars.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The code in the editor already binds the data to each new <code>text</code> element. First, append <code>text</code> nodes to the <code>svg</code>. Next, add attributes for the <code>x</code> and <code>y</code> coordinates. They should be calculated the same way as the <code>rect</code> ones, except the <code>y</code> value for the <code>text</code> should make the label sit 3 units higher than the bar. Finally, use the D3 <code>text()</code> method to set the label equal to the data point value.
-<strong>Note</strong><br>For the label to sit higher than the bar, decide if the <code>y</code> value for the <code>text</code> should be 3 greater or 3 less than the <code>y</code> value for the bar.
+
+The code in the editor already binds the data to each new `text` element. First, append `text` nodes to the `svg`. Next, add attributes for the `x` and `y` coordinates. They should be calculated the same way as the `rect` ones, except the `y` value for the `text` should make the label sit 3 units higher than the bar. Finally, use the D3 `text()` method to set the label equal to the data point value.
+
+**Note**  
+For the label to sit higher than the bar, decide if the `y` value for the `text` should be 3 greater or 3 less than the `y` value for the bar.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -47,6 +58,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -89,11 +101,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

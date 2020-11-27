@@ -6,19 +6,23 @@ forumTopicId: 301943
 ---
 
 ## Description
-<section id='description'>
-A prime number p is called a Panaitopol prime if  for some positive integersx and y.
 
+<section id='description'>
+
+A prime number p is called a Panaitopol prime if for some positive integersx and y.
 
 Find how many Panaitopol primes are less than 5×1015.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,11 +51,10 @@ euler291();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

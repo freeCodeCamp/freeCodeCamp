@@ -17,7 +17,7 @@ Pass an object containing the property `username` and value of `req.user.usernam
 h2.center#welcome Welcome, #{username}!
 ```
 
-This creates an `h2` element with the class '`center`' and id '`welcome`' containing the text '`Welcome, `' followed by the username.
+This creates an `h2` element with the class '`center`' and id '`welcome`' containing the text '`Welcome,`' followed by the username.
 
 Also, in `profile.pug`, add a link referring to the `/logout` route, which will host the logic to unauthenticate a user.
 
@@ -25,7 +25,7 @@ Also, in `profile.pug`, add a link referring to the `/logout` route, which will 
 a(href='/logout') Logout
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a).
 
 </section>
 

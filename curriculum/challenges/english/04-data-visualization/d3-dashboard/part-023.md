@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `range` function describes how to map the domain values for display on the graph. For example, a value of 5000 followers can't use 5000 as it y-coordinate on the SVG or it would be off the graph. You need to tell the range where the top and bottom of the graph is so the scale can give appropriate values for the y-coordinate.
@@ -12,13 +13,17 @@ The `range` function describes how to map the domain values for display on the g
 Chain the `range` function below the `domain` and pass it an array with `svgHeight - svgMargin` and `svgMargin` as the values. That will translate to `[430, 70]`. This is where the top and bottom of the graph are. So a data point of 5000 followers will map to a value of 430 to use as its y-coordinate and 0 followers will use 70 as its y-coordinate. Any value in between will scale linearly.
 
 Your graph will have a margin around it for things like axes and labels. The actual line data will display on the inside of this margin area, which is why you use those values. This will become more clear as you progress through the project.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -69,8 +75,8 @@ tests:
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -103,10 +109,11 @@ tests:
 ```
 
 </div>
+
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html

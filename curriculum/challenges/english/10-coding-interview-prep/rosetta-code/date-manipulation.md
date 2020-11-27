@@ -6,18 +6,25 @@ forumTopicId: 302244
 ---
 
 ## Description
+
 <section id='description'>
+
 Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
-Example input: <code>"March 6 2009 7:30pm EST"</code>
-Example output: <code>"March 7 2009 7:30am EST"</code>
+
+Example input: `"March 6 2009 7:30pm EST"`
+
+Example output: `"March 7 2009 7:30am EST"`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,8 +66,8 @@ function add12Hours(dateString) {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function add12Hours(dateString) {

@@ -7,9 +7,12 @@ forumTopicId: 18277
 ---
 
 ## Description
+
 <section id='description'>
-If you have many options to choose from, use a <dfn>switch</dfn> statement. A <code>switch</code> statement tests a value and can have many <dfn>case</dfn> statements which define various possible values. Statements are executed from the first matched <code>case</code> value until a <code>break</code> is encountered.
-Here is an example of a <code>switch</code> statement:
+
+If you have many options to choose from, use a <dfn>switch</dfn> statement. A `switch` statement tests a value and can have many <dfn>case</dfn> statements which define various possible values. Statements are executed from the first matched `case` value until a `break` is encountered.
+
+Here is an example of a `switch` statement:
 
 ```js
 switch(lowercaseLetter) {
@@ -22,15 +25,24 @@ switch(lowercaseLetter) {
 }
 ```
 
-<code>case</code> values are tested with strict equality (<code>===</code>). The <code>break</code> tells JavaScript to stop executing statements. If the <code>break</code> is omitted, the next statement will be executed.
+`case` values are tested with strict equality (`===`). The `break` tells JavaScript to stop executing statements. If the `break` is omitted, the next statement will be executed.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Write a switch statement which tests <code>val</code> and sets <code>answer</code> for the following conditions:<br><code>1</code> - "alpha"<br><code>2</code> - "beta"<br><code>3</code> - "gamma"<br><code>4</code> - "delta"
+
+Write a switch statement which tests `val` and sets `answer` for the following conditions:  
+`1` - "alpha"  
+`2` - "beta"  
+`3` - "gamma"  
+`4` - "delta"
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +65,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -74,13 +87,11 @@ caseInSwitch(1);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function caseInSwitch(val) {

@@ -6,14 +6,21 @@ videoId: Uyioq2q4cEg
 ---
 
 ## Description
+
 <section id='description'>
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=dWLdI143W-g" target='_blank'>Exercise: socket1</a>
-- <a href="https://www.youtube.com/watch?v=8yis2DvbBkI" target='_blank'>Exercise: urllib</a>
-- <a href="https://www.youtube.com/watch?v=g9flPDG9nnY" target='_blank'>Exercise: urllinks</a>
+
+\- [Exercise: socket1](https://www.youtube.com/watch?v=dWLdI143W-g)
+
+\- [Exercise: urllib](https://www.youtube.com/watch?v=8yis2DvbBkI)
+
+\- [Exercise: urllinks](https://www.youtube.com/watch?v=g9flPDG9nnY)
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml

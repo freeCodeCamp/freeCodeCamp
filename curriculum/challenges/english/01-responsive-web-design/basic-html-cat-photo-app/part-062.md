@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Nest a `p` element with the text `No Copyright - freeCodeCamp.org` within the `footer` element.
@@ -12,6 +13,7 @@ Nest a `p` element with the text `No Copyright - freeCodeCamp.org` within the `f
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -33,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -98,4 +101,5 @@ tests:
 ```
 
 </div>
+
 </section>

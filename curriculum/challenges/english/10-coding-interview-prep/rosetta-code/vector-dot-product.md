@@ -6,18 +6,23 @@ forumTopicId: 302343
 ---
 
 ## Description
+
 <section id='description'>
 
 A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
-Write a function that takes any numbers of vectors (arrays) as input and computes their dot product. Your function should return <code>null</code> on invalid inputs such as vectors of different lengths.
+Write a function that takes any numbers of vectors (arrays) as input and computes their dot product. Your function should return `null` on invalid inputs such as vectors of different lengths.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,13 +58,11 @@ function dotProduct(...vectors) {
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function dotProduct(...vectors) {

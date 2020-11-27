@@ -7,19 +7,29 @@ forumTopicId: 18202
 ---
 
 ## Description
+
 <section id='description'>
-<code>p</code> elements are the preferred element for paragraph text on websites. <code>p</code> is short for "paragraph".
+
+`p` elements are the preferred element for paragraph text on websites. `p` is short for "paragraph".
+
 You can create a paragraph element like this:
-<code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>
+
+`<p>I'm a p tag!</p>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a <code>p</code> element below your <code>h2</code> element, and give it the text "Hello Paragraph".
-<strong>Note:</strong> As a convention, all HTML tags are written in lowercase, for example <code>&#60;p&#62;&#60;/p&#62;</code> and not <code>&#60;P&#62;&#60;/P&#62;</code>.
+
+Create a `p` element below your `h2` element, and give it the text "Hello Paragraph".
+
+**Note:** As a convention, all HTML tags are written in lowercase, for example `<p></p>` and not `<P></P>`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +46,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -47,11 +58,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

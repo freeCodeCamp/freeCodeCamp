@@ -8,14 +8,19 @@ forumTopicId: 385318
 ## Description
 
 <section id='description'>
-Semiprime numbers are natural numbers that are products of exactly two (possibly equal) <a href="https://rosettacode.org/wiki/prime_number" target="_blank">prime numbers</a>.
+
+Semiprime numbers are natural numbers that are products of exactly two (possibly equal) [prime numbers](https://rosettacode.org/wiki/prime_number).
+
 <pre>1679  =  23 x 73</pre>
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function that returns true if a number is semiprime, or false if it is not.
+
 </section>
 
 ## Tests
@@ -64,6 +69,7 @@ function isSemiPrime(n) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

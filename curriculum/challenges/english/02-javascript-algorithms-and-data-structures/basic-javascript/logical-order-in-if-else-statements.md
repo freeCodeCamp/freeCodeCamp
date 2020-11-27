@@ -7,10 +7,15 @@ forumTopicId: 18228
 ---
 
 ## Description
+
 <section id='description'>
-Order is important in <code>if</code>, <code>else if</code> statements.
+
+Order is important in `if`, `else if` statements.
+
 The function is executed from top to bottom so you will want to be careful of what statement comes first.
+
 Take these two functions as an example.
+
 Here's the first:
 
 ```js
@@ -49,11 +54,15 @@ bar(0) // "Less than two"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Change the order of logic in the function so that it will return the correct statements in all cases.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -70,6 +79,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -90,13 +100,11 @@ orderMyLogic(7);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function orderMyLogic(val) {

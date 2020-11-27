@@ -6,19 +6,27 @@ forumTopicId: 301735
 ---
 
 ## Description
+
 <section id='description'>
+
 In the following equation x, y, and n are positive integers.
-1/<var>x</var> + 1/<var>y</var> = 1/<var>n</var>
-It can be verified that when <var>n</var> = 1260 there are 113 distinct solutions and this is the least value of <var>n</var> for which the total number of distinct solutions exceeds one hundred.
-What is the least value of <var>n</var> for which the number of distinct solutions exceeds four million?
+
+1/`x` + 1/`y` = 1/`n`
+
+It can be verified that when `n` = 1260 there are 113 distinct solutions and this is the least value of `n` for which the total number of distinct solutions exceeds one hundred.
+
+What is the least value of `n` for which the number of distinct solutions exceeds four million?
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,11 +55,10 @@ diophantineTwo();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

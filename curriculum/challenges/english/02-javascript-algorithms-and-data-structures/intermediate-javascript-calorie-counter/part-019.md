@@ -23,6 +23,7 @@ arr.reduce((accumulator, currentValue) => {
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

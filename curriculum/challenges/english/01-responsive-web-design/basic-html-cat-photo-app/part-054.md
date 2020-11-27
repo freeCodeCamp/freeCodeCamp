@@ -5,12 +5,15 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add an `id` attribute with the value `loving` to the checkbox input.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -25,6 +28,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -86,4 +90,5 @@ tests:
 ```
 
 </div>
+
 </section>

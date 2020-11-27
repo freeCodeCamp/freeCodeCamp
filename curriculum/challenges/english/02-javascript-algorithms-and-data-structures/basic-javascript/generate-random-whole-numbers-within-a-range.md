@@ -7,19 +7,29 @@ forumTopicId: 18187
 ---
 
 ## Description
+
 <section id='description'>
+
 Instead of generating a random whole number between zero and a given number like we did before, we can generate a random whole number that falls within a range of two specific numbers.
-To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>.
+
+To do this, we'll define a minimum number `min` and a maximum number `max`.
+
 Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:
-<code>Math.floor(Math.random() * (max - min + 1)) + min</code>
+
+`Math.floor(Math.random() * (max - min + 1)) + min`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a function called <code>randomRange</code> that takes a range <code>myMin</code> and <code>myMax</code> and returns a random whole number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>, inclusive.
+
+Create a function called `randomRange` that takes a range `myMin` and `myMax` and returns a random whole number that's greater than or equal to `myMin`, and is less than or equal to `myMax`, inclusive.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +48,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,8 +63,8 @@ function randomRange(myMin, myMax) {
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -78,8 +89,8 @@ for(var i = 0; i < 100; i++) {
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function randomRange(myMin, myMax) {

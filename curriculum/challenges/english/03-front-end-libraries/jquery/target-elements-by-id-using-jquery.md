@@ -8,21 +8,31 @@ forumTopicId: 18317
 ---
 
 ## Description
+
 <section id='description'>
+
 You can also target elements by their id attributes.
-First target your <code>button</code> element with the id <code>target3</code> by using the <code>$("#target3")</code> selector.
-Note that, just like with CSS declarations, you type a <code>#</code> before the id's name.
-Then use jQuery's <code>.addClass()</code> function to add the classes <code>animated</code> and <code>fadeOut</code>.
-Here's how you'd make the <code>button</code> element with the id <code>target6</code> fade out:
-<code>$("#target6").addClass("animated fadeOut")</code>.
+
+First target your `button` element with the id `target3` by using the `$("#target3")` selector.
+
+Note that, just like with CSS declarations, you type a `#` before the id's name.
+
+Then use jQuery's `.addClass()` function to add the classes `animated` and `fadeOut`.
+
+Here's how you'd make the `button` element with the id `target6` fade out:
+
+`$("#target6").addClass("animated fadeOut")`.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -39,6 +49,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,11 +90,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -7,25 +7,41 @@ forumTopicId: 18276
 ---
 
 ## Description
+
 <section id='description'>
+
 Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.
+
 First, you'll start by building a simple web page using HTML. You can edit code in your code editor, which is embedded into this web page.
-Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML element.
+
+Do you see the code in your code editor that says `<h1>Hello</h1>`? That's an HTML element.
+
 Most HTML elements have an opening tag and a closing tag.
+
 Opening tags look like this:
-<code>&#60;h1&#62;</code>
+
+`<h1>`
+
 Closing tags look like this:
-<code>&#60;/h1&#62;</code>
+
+`</h1>`
+
 The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.
+
 Each challenge has tests you can run at any time by clicking the "Run tests" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-To pass the test on this challenge, change your <code>h1</code> element's text to say "Hello World".
+
+To pass the test on this challenge, change your `h1` element's text to say "Hello World".
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +54,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,11 +65,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

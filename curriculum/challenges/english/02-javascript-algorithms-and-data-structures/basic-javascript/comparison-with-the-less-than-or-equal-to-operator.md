@@ -7,9 +7,12 @@ forumTopicId: 16788
 ---
 
 ## Description
+
 <section id='description'>
-The less than or equal to operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.
-<strong>Examples</strong>
+
+The less than or equal to operator (`<=`) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns `true`. If the number on the left is greater than the number on the right, it returns `false`. Like the equality operator, `less than or equal to` converts data types.
+
+**Examples**
 
 ```js
 4   <= 5  // true
@@ -22,11 +25,15 @@ The less than or equal to operator (<code>&lt;=</code>) compares the values of t
 </section>
 
 ## Instructions
+
 <section id='instructions'>
+
 Add the less than or equal to operator to the indicated lines so that the return statements make sense.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -53,6 +60,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -76,13 +84,11 @@ testLessOrEqual(10);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 function testLessOrEqual(val) {

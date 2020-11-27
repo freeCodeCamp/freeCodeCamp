@@ -8,13 +8,17 @@ forumTopicId: 301231
 ## Description
 
 <section id='description'>
-You might learn a lot about the <code>filter</code> method if you implement your own version of it. It is recommended you use a <code>for</code> loop or <code>Array.prototype.forEach()</code>.
+
+You might learn a lot about the `filter` method if you implement your own version of it. It is recommended you use a `for` loop or `Array.prototype.forEach()`.
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
-Write your own <code>Array.prototype.myFilter()</code>, which should behave exactly like <code>Array.prototype.filter()</code>. You should not use the built-in <code>filter</code> method. The <code>Array</code> instance can be accessed in the <code>myFilter</code> method using <code>this</code>.
+
+Write your own `Array.prototype.myFilter()`, which should behave exactly like `Array.prototype.filter()`. You should not use the built-in `filter` method. The `Array` instance can be accessed in the `myFilter` method using `this`.
+
 </section>
 
 ## Tests

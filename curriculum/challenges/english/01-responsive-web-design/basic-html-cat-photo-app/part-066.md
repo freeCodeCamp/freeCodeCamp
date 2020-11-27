@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element.
@@ -14,6 +15,7 @@ Add the `lang` attribute with the value `en` to the opening `html` tag to specif
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='html-seed'>
 
@@ -103,4 +106,5 @@ tests:
 ```
 
 </div>
+
 </section>

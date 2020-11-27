@@ -6,14 +6,16 @@ videoId: 3Lxpladfh2k
 ---
 
 ## Description
+
 <section id='description'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What will the following code print?:
@@ -51,6 +53,6 @@ question:
 
         9 kris
   solution: 3
-```
+````
 
 </section>

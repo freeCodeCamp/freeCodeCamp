@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 After the unordered list, add a new image with an `src` attribute value set to `https://bit.ly/fcc-lasagna` and an `alt` attribute value set to `A slice of lasagna on a plate.`
@@ -12,6 +13,7 @@ After the unordered list, add a new image with an `src` attribute value set to `
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +36,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,4 +69,5 @@ tests:
 ```
 
 </div>
+
 </section>

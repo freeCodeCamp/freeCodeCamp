@@ -6,7 +6,9 @@ forumTopicId: 301342
 ---
 
 ## Description
+
 <section id='description'>
+
 So far, you have only been able to extract or search a pattern once.
 
 ```js
@@ -16,7 +18,7 @@ testStr.match(ourRegex);
 // Returns ["Repeat"]
 ```
 
-To search or extract a pattern more than once, you can use the <code>g</code> flag.
+To search or extract a pattern more than once, you can use the `g` flag.
 
 ```js
 let repeatRegex = /Repeat/g;
@@ -27,12 +29,18 @@ testStr.match(repeatRegex);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Using the regex <code>starRegex</code>, find and extract both <code>"Twinkle"</code> words from the string <code>twinkleStar</code>.
-<strong>Note</strong><br>You can have multiple flags on your regex like <code>/search/gi</code>
+
+Using the regex `starRegex`, find and extract both `"Twinkle"` words from the string `twinkleStar`.
+
+**Note**  
+You can have multiple flags on your regex like `/search/gi`
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -51,6 +59,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,11 +72,10 @@ let result = twinkleStar; // Change this line
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 HTML elements are often nested within other HTML elements. In the previous step you nested the `h2` element, comment and `p` element within the `main` element. A nested element is a child of its parent element.
@@ -14,6 +15,7 @@ To make HTML easier to read, indent the `h2` element, the comment, and `p` eleme
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +42,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -60,4 +63,5 @@ tests:
 ```
 
 </div>
+
 </section>

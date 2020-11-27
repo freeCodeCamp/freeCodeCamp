@@ -6,17 +6,25 @@ forumTopicId: 301128
 ---
 
 ## Description
+
 <section id='description'>
-Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you  have a grid within a grid.
-For example, by setting the <code>display</code> and <code>grid-template-columns</code> properties of the element with the <code>item3</code> class, you create a grid within your grid.
+
+Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you have a grid within a grid.
+
+For example, by setting the `display` and `grid-template-columns` properties of the element with the `item3` class, you create a grid within your grid.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Turn the element with the <code>item3</code> class into a grid with two columns with a width of <code>auto</code> and <code>1fr</code> using <code>display</code> and <code>grid-template-columns</code>.
+
+Turn the element with the `item3` class into a grid with two columns with a width of `auto` and `1fr` using `display` and `grid-template-columns`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +39,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -98,13 +107,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>.item3 {grid-template-columns: auto 1fr; display: grid;}</style>

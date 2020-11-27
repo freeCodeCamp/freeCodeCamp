@@ -6,22 +6,25 @@ forumTopicId: 301922
 ---
 
 ## Description
+
 <section id='description'>
-For a positive number n, define C(n) as the number of the integers x, for which 1<x<n andx3≡1 mod n.
 
+For a positive number n, define C(n) as the number of the integers x, for which 1
 
-When n=91, there are 8 possible values for x, namely : 9, 16, 22, 29, 53, 74, 79, 81.
-Thus, C(91)=8.
+When n=91, there are 8 possible values for x, namely : 9, 16, 22, 29, 53, 74, 79, 81. Thus, C(91)=8.
 
 Find the sum of the positive numbers n≤1011 for which C(n)=242.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,6 +37,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,11 +53,10 @@ euler272();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

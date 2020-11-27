@@ -7,18 +7,27 @@ forumTopicId: 301064
 ---
 
 ## Description
+
 <section id='description'>
-That's great, but it doesn't work right yet. Notice how the animation resets after <code>500ms</code> has passed, causing the button to revert back to the original color. You want the button to stay highlighted.
-This can be done by setting the <code>animation-fill-mode</code> property to <code>forwards</code>. The <code>animation-fill-mode</code> specifies the style applied to an element when the animation has finished. You can set it like so:
-<code>animation-fill-mode: forwards;</code>
+
+That's great, but it doesn't work right yet. Notice how the animation resets after `500ms` has passed, causing the button to revert back to the original color. You want the button to stay highlighted.
+
+This can be done by setting the `animation-fill-mode` property to `forwards`. The `animation-fill-mode` specifies the style applied to an element when the animation has finished. You can set it like so:
+
+`animation-fill-mode: forwards;`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Set the <code>animation-fill-mode</code> property of <code>button:hover</code> to <code>forwards</code> so the button stays highlighted when a user hovers over it.
+
+Set the `animation-fill-mode` property of `button:hover` to `forwards` so the button stays highlighted when a user hovers over it.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +40,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -61,13 +71,11 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>

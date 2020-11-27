@@ -5,14 +5,17 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 The `figure` element represents self-contained content and will allow you to associate an image with a caption.
 
 Nest the image you just added within a `figure` element.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +33,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -64,4 +68,5 @@ tests:
 ```
 
 </div>
+
 </section>

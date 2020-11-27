@@ -6,17 +6,25 @@ forumTopicId: 301186
 ---
 
 ## Description
+
 <section id='description'>
-The <code>console.log()</code> and <code>typeof</code> methods are the two primary ways to check intermediate values and types of program output. Now it's time to get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error.
+
+The `console.log()` and `typeof` methods are the two primary ways to check intermediate values and types of program output. Now it's time to get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error.
+
 Transposed, missing, or mis-capitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript variable and function names are case-sensitive.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Fix the two spelling errors in the code so the <code>netWorkingCapital</code> calculation works.
+
+Fix the two spelling errors in the code so the `netWorkingCapital` calculation works.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +45,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,11 +59,10 @@ console.log(`Net working capital is: ${netWorkingCapital}`);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

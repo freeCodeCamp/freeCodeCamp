@@ -6,9 +6,10 @@ forumTopicId: 302216
 ---
 
 ## Description
+
 <section id='description'>
 
-Comparing two numbers written in index form like 2<sup>11</sup> and 3<sup>7</sup> is not difficult, as any calculator would confirm that 2<sup>11</sup> = 2048 < 3<sup>7</sup> = 2187.
+Comparing two numbers written in index form like 2<sup>11</sup> and 3<sup>7</sup> is not difficult, as any calculator would confirm that 2<sup>11</sup> = 2048 &lt; 3<sup>7</sup> = 2187.
 
 However, confirming that 632382<sup>518061</sup> > 519432<sup>525806</sup> would be much more difficult, as both numbers contain over three million digits.
 
@@ -19,11 +20,13 @@ Using the included 2D array of base/exponent pairs, determine which pair has the
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -38,6 +41,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,11 +63,10 @@ largestExponential();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

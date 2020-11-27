@@ -6,9 +6,12 @@ forumTopicId: 301349
 ---
 
 ## Description
+
 <section id='description'>
+
 Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
-In an earlier challenge, you used the caret character (<code>^</code>) inside a character set to create a negated character set in the form <code>[^thingsThatWillNotBeMatched]</code>. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+
+In an earlier challenge, you used the caret character (`^`) inside a character set to create a negated character set in the form `[^thingsThatWillNotBeMatched]`. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
 
 ```js
 let firstString = "Ricky is first and can be found.";
@@ -23,11 +26,15 @@ firstRegex.test(notFirst);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Use the caret character in a regex to find <code>"Cal"</code> only in the beginning of the string <code>rickyAndCal</code>.
+
+Use the caret character in a regex to find `"Cal"` only in the beginning of the string `rickyAndCal`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -46,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,11 +66,10 @@ let result = calRegex.test(rickyAndCal);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

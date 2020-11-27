@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Add one last image under the `Desserts` heading using the url `https://tinyurl.com/cafe-pie-fcc`. Give the image an `alt` value of `pie icon`.
@@ -12,6 +13,7 @@ Add one last image under the `Desserts` heading using the url `https://tinyurl.c
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -24,6 +26,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

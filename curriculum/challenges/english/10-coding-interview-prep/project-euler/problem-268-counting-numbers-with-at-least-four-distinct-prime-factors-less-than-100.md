@@ -6,18 +6,23 @@ forumTopicId: 301917
 ---
 
 ## Description
+
 <section id='description'>
+
 It can be verified that there are 23 positive integers less than 1000 that are divisible by at least four distinct primes less than 100.
 
 Find how many positive integers less than 1016 are divisible by at least four distinct primes less than 100.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +35,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,11 +51,10 @@ euler268();
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

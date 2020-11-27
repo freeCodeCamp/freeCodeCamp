@@ -5,18 +5,21 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Inside the `dodge` function, set `text.innerText` equal to "You dodge the attack from the [monster's name]." Instead of "[monster's name]", get the monster's name with `monsters[fighting].name`.
+Inside the `dodge` function, set `text.innerText` equal to "You dodge the attack from the \[monster's name]." Instead of "\[monster's name]", get the monster's name with `monsters[fighting].name`.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -239,8 +243,8 @@ function lose() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -309,8 +313,8 @@ function lose() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -320,12 +324,11 @@ function lose() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

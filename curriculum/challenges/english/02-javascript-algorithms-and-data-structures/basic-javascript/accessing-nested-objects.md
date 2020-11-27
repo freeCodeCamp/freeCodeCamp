@@ -7,8 +7,11 @@ forumTopicId: 16161
 ---
 
 ## Description
+
 <section id='description'>
+
 The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
 Here is a nested object:
 
 ```js
@@ -31,11 +34,15 @@ ourStorage.desk.drawer; // "stapler"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents</code> variable. Use dot notation for all properties where possible, otherwise use bracket notation.
+
+Access the `myStorage` object and assign the contents of the `glove box` property to the `gloveBoxContents` variable. Use dot notation for all properties where possible, otherwise use bracket notation.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +57,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -74,8 +82,8 @@ var gloveBoxContents = undefined; // Change this line
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -92,8 +100,8 @@ var gloveBoxContents = undefined; // Change this line
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myStorage = {

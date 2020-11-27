@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 `arg1` and `arg2` are the numbers input by the user in a string such as "1+3".
@@ -14,12 +15,13 @@ Pass `parseFloat(arg1)` and `parseFloat(arg2)` as the arguments to `infixToFunct
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -29,10 +31,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -58,8 +60,8 @@ const infixEval = (str, regex) =>
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -90,8 +92,8 @@ const infixEval = (str, regex) =>
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -101,11 +103,10 @@ const infixEval = (str, regex) =>
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

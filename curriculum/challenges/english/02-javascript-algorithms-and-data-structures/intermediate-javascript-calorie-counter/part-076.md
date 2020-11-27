@@ -15,6 +15,7 @@ Congratulations! Have fun playing with your completed calorie counter.
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

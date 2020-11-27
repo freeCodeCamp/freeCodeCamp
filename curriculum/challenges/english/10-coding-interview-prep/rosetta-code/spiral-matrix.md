@@ -9,9 +9,7 @@ forumTopicId: 302321
 
 <section id='description'>
 
-Produce a spiral array.
-A <i>spiral array</i> is a square arrangement of the first N<sup>2</sup> natural numbers, where the numbers increase sequentially as you go around the edges of the array spiraling inwards.
-For example, given <b>5</b>, produce this array:
+Produce a spiral array. A *spiral array* is a square arrangement of the first N<sup>2</sup> natural numbers, where the numbers increase sequentially as you go around the edges of the array spiraling inwards. For example, given **5**, produce this array:
 
 <pre>
 0  1  2  3  4
@@ -20,6 +18,7 @@ For example, given <b>5</b>, produce this array:
 13 22 21 20 7
 12 11 10  9 8
 </pre>
+
 </section>
 
 ## Instructions
@@ -61,6 +60,7 @@ function spiralArray(n) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

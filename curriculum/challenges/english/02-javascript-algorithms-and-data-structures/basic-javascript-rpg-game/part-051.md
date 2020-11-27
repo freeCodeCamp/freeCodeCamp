@@ -5,20 +5,23 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-There is a shorthand way to add or subtract from a variable called compound assignment. The long way to add to a variable is `num = num + 5`. The shorthand way is `num += 5`. It works the same way with subtraction. 
+There is a shorthand way to add or subtract from a variable called compound assignment. The long way to add to a variable is `num = num + 5`. The shorthand way is `num += 5`. It works the same way with subtraction.
 
 Update both lines inside the `buyHealth` function to use compound assignment.
 
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -31,6 +34,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -127,8 +131,8 @@ function fightBeast() {
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -197,8 +201,8 @@ function fightBeast() {
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -208,12 +212,11 @@ function fightBeast() {
 
 </div>
 
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <script>

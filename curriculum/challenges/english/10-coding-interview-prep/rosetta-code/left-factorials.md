@@ -8,21 +8,29 @@ forumTopicId: 302302
 ## Description
 
 <section id='description'>
-<b>Left factorials</b>,  $ !n $,  may refer to either  <i>subfactorials</i>  or to  <i>factorial sums</i>. The same notation can be confusingly seen used for the two different definitions. Sometimes,  <i>subfactorials</i>  (also known as <i>derangements</i>)  may use any of the notations:
+
+**Left factorials**, $ !n $, may refer to either *subfactorials* or to *factorial sums*. The same notation can be confusingly seen used for the two different definitions. Sometimes, *subfactorials* (also known as *derangements*) may use any of the notations:
+
 <ul>
   <li>$!n`$</li>
   <li>$!n$</li>
   <li>$n¡$</li>
 </ul>
-(It may not be visually obvious, but the last example uses an upside-down exclamation mark.) This task will be using this formula for <b>left factorial</b>:
-$ !n = \sum_{k=0}^{n-1} k! $
+
+(It may not be visually obvious, but the last example uses an upside-down exclamation mark.) This task will be using this formula for **left factorial**:
+
+$ !n = \\sum\_{k=0}^{n-1} k! $
+
 where $!0 = 0$
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function to calculate the left factorial of a given number.
+
 </section>
 
 ## Tests
@@ -65,6 +73,7 @@ function leftFactorial(n) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

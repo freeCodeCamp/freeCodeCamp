@@ -6,6 +6,7 @@ forumTopicId: 301930
 ---
 
 ## Description
+
 <section id='description'>
 
 Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
@@ -25,11 +26,13 @@ What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed i
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,13 +69,11 @@ spiralDiagonals(1001);
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 const spiralDiagonals = (n) => {

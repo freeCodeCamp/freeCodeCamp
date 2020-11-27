@@ -5,9 +5,10 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-The `p` elements are nested in an `article` elements with the class attribute of `item`.  You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
+The `p` elements are nested in an `article` elements with the class attribute of `item`. You can style all the `p` elements nested anywhere in elements with a class named `item` like this:
 
 ```css
 .item p { }
@@ -18,6 +19,7 @@ Using the above selector, add a `display` property with value `inline-block` so 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>

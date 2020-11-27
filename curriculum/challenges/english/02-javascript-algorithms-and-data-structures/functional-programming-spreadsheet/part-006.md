@@ -5,6 +5,7 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
 Anonymous functions are often passed as arguments to other functions, but what if you want to call one later? You can assign anonymous functions to variables and call them with the variable's name:
@@ -17,17 +18,18 @@ const fn = function(x) {
 fn();
 ```
 
-Assign the anonymous function to the variable `addVar`. 
+Assign the anonymous function to the variable `addVar`.
 
 </section>
 
 ## Instructions
-<section id='instructions'>
 
+<section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,10 +39,10 @@ tests:
 
 ```
 
-
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -60,8 +62,8 @@ const infixToFunction = {};
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -92,8 +94,8 @@ const infixToFunction = {};
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -103,11 +105,10 @@ const infixToFunction = {};
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

@@ -7,11 +7,16 @@ forumTopicId: 16158
 ---
 
 ## Description
+
 <section id='description'>
+
 We can access the data inside arrays using <dfn>indexes</dfn>.
-Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of <code>0</code>.
-<br />
-<strong>Example</strong>
+
+Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of `0`.
+
+<br>
+
+**Example**
 
 ```js
 var array = [50,60,70];
@@ -19,15 +24,21 @@ array[0]; // equals 50
 var data = array[1];  // equals 60
 ```
 
-<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+**Note**  
+There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code> using bracket notation.
+
+Create a variable called `myData` and set it to equal the first value of `myArray` using bracket notation.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,8 +68,8 @@ var myArray = [50,60,70];
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -69,8 +81,8 @@ if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var myArray = [50,60,70];

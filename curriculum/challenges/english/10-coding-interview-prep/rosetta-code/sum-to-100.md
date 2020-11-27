@@ -8,16 +8,23 @@ forumTopicId: 302335
 ## Description
 
 <section id='description'>
-Find solutions to the  <i>sum to one hundred</i>  puzzle.
-Add (insert) the mathematical operators <b>+</b> or <b>─</b> (plus or minus)  before any of the digits in the decimal numeric string   <b>123456789</b>   such that the resulting mathematical expression adds up to a particular sum   (in this iconic case,  <b>100</b>).
+
+Find solutions to the *sum to one hundred* puzzle.
+
+Add (insert) the mathematical operators **+** or **─** (plus or minus) before any of the digits in the decimal numeric string **123456789** such that the resulting mathematical expression adds up to a particular sum (in this iconic case, **100**).
+
 Example:
+
 <pre><b>123 + 4 - 5 + 67 - 89   =   100</b></pre>
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
+
 Write a function that takes a number as parameter. The function should return an array containing all solutions for the given number. The solutions should be strings representing the expressions. For example: "1+23-456+78-9". Sort the array before returning it.
+
 </section>
 
 ## Tests
@@ -56,6 +63,7 @@ function sumTo100(n) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

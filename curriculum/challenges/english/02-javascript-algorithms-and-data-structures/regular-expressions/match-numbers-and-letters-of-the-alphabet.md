@@ -6,9 +6,13 @@ forumTopicId: 301356
 ---
 
 ## Description
+
 <section id='description'>
-Using the hyphen (<code>-</code>) to match a range of characters is not limited to letters. It also works to match a range of numbers.
-For example, <code>/[0-5]/</code> matches any number between <code>0</code> and <code>5</code>, including the <code>0</code> and <code>5</code>.
+
+Using the hyphen (`-`) to match a range of characters is not limited to letters. It also works to match a range of numbers.
+
+For example, `/[0-5]/` matches any number between `0` and `5`, including the `0` and `5`.
+
 Also, it is possible to combine a range of letters and numbers in a single character set.
 
 ```js
@@ -21,11 +25,15 @@ jennyStr.match(myRegex);
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Create a single regex that matches a range of letters between <code>h</code> and <code>s</code>, and a range of numbers between <code>2</code> and <code>6</code>. Remember to include the appropriate flags in the regex.
+
+Create a single regex that matches a range of letters between `h` and `s`, and a range of numbers between `2` and `6`. Remember to include the appropriate flags in the regex.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -42,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,11 +63,10 @@ let result = myRegex; // Change this line
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

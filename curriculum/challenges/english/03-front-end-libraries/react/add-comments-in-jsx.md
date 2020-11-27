@@ -6,17 +6,25 @@ forumTopicId: 301376
 ---
 
 ## Description
+
 <section id='description'>
+
 JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, JSX has its own way to do this.
-To put comments inside JSX, you use the syntax <code>{/* */}</code> to wrap around the comment text.
+
+To put comments inside JSX, you use the syntax `{/* */}` to wrap around the comment text.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-The code editor has a JSX element similar to what you created in the last challenge. Add a comment somewhere within the provided <code>div</code> element, without modifying the existing <code>h1</code> or <code>p</code> elements.
+
+The code editor has a JSX element similar to what you created in the last challenge. Add a comment somewhere within the provided `div` element, without modifying the existing `h1` or `p` elements.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -36,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -51,8 +60,8 @@ const JSX = (
 
 </div>
 
-
 ### After Test
+
 <div id='jsx-teardown'>
 
 ```jsx
@@ -64,8 +73,8 @@ ReactDOM.render(JSX, document.getElementById('root'))
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```jsx
 const JSX = (

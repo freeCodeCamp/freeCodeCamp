@@ -6,23 +6,35 @@ forumTopicId: 18370
 ---
 
 ## Description
+
 <section id='description'>
-You can use spans to create inline elements. Remember when we used the <code>btn-block</code> class to make the button fill the entire row?
+
+You can use spans to create inline elements. Remember when we used the `btn-block` class to make the button fill the entire row?
+
 <button class='btn' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>normal button</button>
+
 <button class='btn btn-block' style='background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);'>btn-block button</button>
+
 That illustrates the difference between an "inline" element and a "block" element.
-By using the inline <code>span</code> element, you can put several elements on the same line, and even style different parts of the same line differently.
-Nest the word "love" in your "Things cats love" element below within a <code>span</code> element. Then give that <code>span</code> the class <code>text-danger</code> to make the text red.
+
+By using the inline `span` element, you can put several elements on the same line, and even style different parts of the same line differently.
+
+Nest the word "love" in your "Things cats love" element below within a `span` element. Then give that `span` the class `text-danger` to make the text red.
+
 Here's how you would do this with the "Top 3 things cats hate" element:
-<code>&#60;p&#62;Top 3 things cats &#60;span class="text-danger"&#62;hate:&#60;/span&#62;&#60;/p&#62;</code>
+
+`<p>Top 3 things cats <span class="text-danger">hate:</span></p>`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -41,6 +53,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -105,11 +118,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html

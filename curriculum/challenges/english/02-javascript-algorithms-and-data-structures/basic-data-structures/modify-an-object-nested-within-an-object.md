@@ -6,7 +6,9 @@ forumTopicId: 301164
 ---
 
 ## Description
+
 <section id='description'>
+
 Now let's take a look at a slightly more complex object. Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript, including arrays and even other objects. Consider the following:
 
 ```js
@@ -25,7 +27,7 @@ let nestedObject = {
 };
 ```
 
-<code>nestedObject</code> has three properties: <code>id</code> (value is a number), <code>date</code> (value is a string), and <code>data</code> (value is an object with its nested structure). While structures can quickly become complex, we can still use the same notations to access the information we need. To assign the value <code>10</code> to the <code>busy</code> property of the nested <code>onlineStatus</code> object, we use dot notation to reference the property:
+`nestedObject` has three properties: `id` (value is a number), `date` (value is a string), and `data` (value is an object with its nested structure). While structures can quickly become complex, we can still use the same notations to access the information we need. To assign the value `10` to the `busy` property of the nested `onlineStatus` object, we use dot notation to reference the property:
 
 ```js
 nestedObject.data.onlineStatus.busy = 10;
@@ -34,11 +36,15 @@ nestedObject.data.onlineStatus.busy = 10;
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Here we've defined an object <code>userActivity</code>, which includes another object nested within it. Set the value of the <code>online</code> key to <code>45</code>.
+
+Here we've defined an object `userActivity`, which includes another object nested within it. Set the value of the `online` key to `45`.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -57,6 +63,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -80,11 +87,10 @@ console.log(userActivity);
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -8,15 +8,21 @@ forumTopicId: 301230
 ## Description
 
 <section id='description'>
-As you have seen from applying <code>Array.prototype.map()</code>, or simply <code>map()</code> earlier, the <code>map</code> method returns an array of the same length as the one it was called on. It also doesn't alter the original array, as long as its callback function doesn't.
-In other words, <code>map</code> is a pure function, and its output depends solely on its inputs. Plus, it takes another function as its argument.
-You might learn a lot about the <code>map</code> method if you implement your own version of it. It is recommended you use a <code>for</code> loop or <code>Array.prototype.forEach()</code>.
+
+As you have seen from applying `Array.prototype.map()`, or simply `map()` earlier, the `map` method returns an array of the same length as the one it was called on. It also doesn't alter the original array, as long as its callback function doesn't.
+
+In other words, `map` is a pure function, and its output depends solely on its inputs. Plus, it takes another function as its argument.
+
+You might learn a lot about the `map` method if you implement your own version of it. It is recommended you use a `for` loop or `Array.prototype.forEach()`.
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
-Write your own <code>Array.prototype.myMap()</code>, which should behave exactly like <code>Array.prototype.map()</code>. You should not use the built-in <code>map</code> method. The <code>Array</code> instance can be accessed in the <code>myMap</code> method using <code>this</code>.
+
+Write your own `Array.prototype.myMap()`, which should behave exactly like `Array.prototype.map()`. You should not use the built-in `map` method. The `Array` instance can be accessed in the `myMap` method using `this`.
+
 </section>
 
 ## Tests

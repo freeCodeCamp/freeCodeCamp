@@ -8,14 +8,19 @@ forumTopicId: 323649
 ## Description
 
 <section id='description'>
+
 The 0-1 knapsack problem is defined as follows:
+
 You are given an array of objects representing items to be put in a knapsack. The objects have 3 attributes: name, weight, and value. The items need to be selected so that the total weight does not exceed the maximum weight and the value is maximized.
+
 </section>
 
 ## Instructions
 
 <section id='instructions'>
-Write a function to solve the knapsack problem.  The function is given the array of objects and the maximum weight as parameters. It should return the maximum total value possible.
+
+Write a function to solve the knapsack problem. The function is given the array of objects and the maximum weight as parameters. It should return the maximum total value possible.
+
 </section>
 
 ## Tests
@@ -52,6 +57,7 @@ function knapsack(items, maxweight) {
 ```
 
 </div>
+
 </section>
 
 ## Solution

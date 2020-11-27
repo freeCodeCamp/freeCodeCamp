@@ -15,6 +15,7 @@ Create a variable named `meal` and set it equal to the first index of `total` (`
 ## Instructions
 
 <section id='instructions'>
+
 </section>
 
 ## Tests

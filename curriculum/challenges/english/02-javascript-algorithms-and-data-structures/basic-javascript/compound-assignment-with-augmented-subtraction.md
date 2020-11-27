@@ -7,19 +7,29 @@ forumTopicId: 16660
 ---
 
 ## Description
+
 <section id='description'>
-Like the <code>+=</code> operator, <code>-=</code> subtracts a number from a variable.
-<code>myVar = myVar - 5;</code>
-will subtract <code>5</code> from <code>myVar</code>. This can be rewritten as:
-<code>myVar -= 5;</code>
+
+Like the `+=` operator, `-=` subtracts a number from a variable.
+
+`myVar = myVar - 5;`
+
+will subtract `5` from `myVar`. This can be rewritten as:
+
+`myVar -= 5;`
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
-Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator.
+
+Convert the assignments for `a`, `b`, and `c` to use the `-=` operator.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -40,6 +50,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,8 +68,8 @@ c = c - 1;
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
@@ -70,8 +81,8 @@ c = c - 1;
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var a = 11;

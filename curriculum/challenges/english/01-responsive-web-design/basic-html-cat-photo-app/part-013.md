@@ -5,13 +5,15 @@ challengeType: 0
 ---
 
 ## Description
+
 <section id='description'>
 
-Add a `target` attribute with the value `_blank` to the anchor (`a`) element's opening tag, so that the link opens in a new tab. 
+Add a `target` attribute with the value `_blank` to the anchor (`a`) element's opening tag, so that the link opens in a new tab.
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -30,6 +32,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -51,4 +54,5 @@ tests:
 ```
 
 </div>
+
 </section>

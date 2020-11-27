@@ -9,18 +9,25 @@ forumTopicId: 16637
 ---
 
 ## Description
+
 <section id='description'>
+
 Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+
 </section>
 
 ## Instructions
-<section id='instructions'>
-Use Font Awesome to add an <code>info-circle</code> icon to your info button and a <code>trash</code> icon to your delete button.
 
-<strong>Note:</strong> The <code>span</code> element is an acceptable alternative to the <code>i</code> element for the directions below.
+<section id='instructions'>
+
+Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.
+
+**Note:** The `span` element is an acceptable alternative to the `i` element for the directions below.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -37,6 +44,7 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -103,11 +111,10 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html
