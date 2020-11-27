@@ -25,6 +25,42 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 - To run the tests on Repl.it, set `NODE_ENV` to `test` without quotes in the `.env` file
 - To run the tests in the console, use the command `npm run test`. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
 
+Write the following tests in `tests/1_unit-tests.js`:
+
+- Translate <code>Mangoes are my favorite fruit.</code> to British English
+- Translate <code>I ate yogurt for breakfast.</code> to British English
+- Translate <code>We had a party at my friend's condo.</code> to British English
+- Translate <code>Can you toss this in the trashcan for me?</code> to British English
+- Translate <code>The parking lot was full.</code> to British English
+- Translate <code>Like a high tech Rube Goldberg machine.</code> to British English
+- Translate <code>To play hooky means to skip class or work.</code> to British English
+- Translate <code>No Mr. Bond, I expect you to die.</code> to British English
+- Translate <code>Dr. Grosh will see you now.</code> to British English
+- Translate <code>Lunch is at 12:15 today.</code> to British English
+- Translate <code>We watched the footie match for a while.</code> to American English
+- Translate <code>Paracetamol takes up to an hour to work.</code> to American English
+- Translate <code>First, caramelise the onions.</code> to American English
+- Translate <code>I spent the bank holiday at the funfair.</code> to American English
+- Translate <code>I had a bicky then went to the chippy.</code> to American English
+- Translate <code>I've just got bits and bobs in my bum bag.</code> to American English
+- Translate <code>The car boot sale at Boxted Airfield was called off.</code> to American English
+- Translate <code>Have you met Mrs Kalyani?</code> to American English
+- Translate <code>Prof Joyner of King's College, London.</code> to American English
+- Translate <code>Tea time is usually around 4 or 4.30.</code> to American English
+- Highlight translation in <code>Mangoes are my favorite fruit.</code>
+- Highlight translation in <code>I ate yogurt for breakfast.</code>
+- Highlight translation in <code>We watched the footie match for a while.</code>
+- Highlight translation in <code>Paracetamol takes up to an hour to work.</code>
+
+Write the following tests in `tests/2_functional-tests.js`:
+
+- Translation with text and locale fields: POST request to `/api/translate`
+- Translation with text and invalid locale field: POST request to `/api/translate`
+- Translation with missing text field: POST request to `/api/translate`
+- Translation with missing locale field: POST request to `/api/translate`
+- Translation with empty text: POST request to `/api/translate`
+- Translation with text that needs no translation: POST request to `/api/translate`
+
 </section>
 
 ## Tests

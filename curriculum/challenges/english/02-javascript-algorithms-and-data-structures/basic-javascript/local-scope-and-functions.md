@@ -57,7 +57,6 @@ tests:
 
 ```js
 function myLocalScope() {
-  'use strict';
 
   // Only change code below this line
 
@@ -81,7 +80,6 @@ console.log('outside myLocalScope', myVar);
 
 ```js
 function myLocalScope() {
-  'use strict';
 
   // Only change code below this line
   var myVar;

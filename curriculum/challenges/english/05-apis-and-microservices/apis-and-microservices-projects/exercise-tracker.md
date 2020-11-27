@@ -7,9 +7,13 @@ forumTopicId: 301505
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href='https://exercise-tracker.freecodecamp.rocks/' target='_blank'>https://exercise-tracker.freecodecamp.rocks/</a>.
-Working on this project will involve you writing your code on Repl.it on our starter project. After completing this project you can copy your public Repl.it url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
-Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-exercisetracker' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>this repository</a> on GitHub! If you use Repl.it, remember to save the link to your project somewhere safe!
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://exercise-tracker.freecodecamp.rocks/' target='_blank'>https://exercise-tracker.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
+
+- Clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/' target='_blank'>this GitHub repo</a> and complete your project locally.
+- Use <a href='https://repl.it/github/freeCodeCamp/boilerplate-project-exercisetracker' target='_blank'>our repl.it starter project</a> to complete your project.
+- Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
+
+When you are done, make sure a working demo of your project is hosted somewhere public. Then submit the URL to it in the `Solution Link` field. Optionally, also submit a link to your project's source code in the `GitHub Link` field.
 </section>
 
 ## Instructions
@@ -22,13 +26,13 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I can provide my own project, not the example URL.
+  - text: You should provide your own project, not the example URL.
     testString: |
       getUserInput => {
         const url = getUserInput('url');
         assert(!/.*\/exercise-tracker\.freecodecamp\.rocks/.test(getUserInput('url')));
       }
-  - text: I can create a user by posting form data username to /api/exercise/new-user and returned will be an object with username and <code>_id</code>.
+  - text: You can `POST` to `/api/exercise/new-user` with form data `username` to create a new user. The returned response will be an object with `username` and `_id` properties.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/new-user', {
@@ -46,7 +50,7 @@ tests:
       }
     }
     "
-  - text: I can get an array of all users by getting api/exercise/users with the same info as when creating a user.
+  - text: You can make a `GET` request to `api/exercise/users` to get an array of all users. Each element in the array is an object containing a user's `username` and `_id`.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/users');
@@ -54,12 +58,14 @@ tests:
       if (res.ok) {
         const data = await res.json();
         assert.isArray(data);
+        assert.isString(data[0].username);
+        assert.isString(data[0]._id);
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
     }
     "
-  - text: 'I can add an exercise to any user by posting form data userId(_id), description, duration, and optionally date to /api/exercise/add. If no date supplied it will use current date. App will return the user object with the exercise fields added.'
+  - text: 'You can `POST` to `/api/exercise/add` with form data `userId=_id`, `description`, `duration`, and optionally `date`. If no date is supplied, the current date will be used. The response returned will be the user object with the exercise fields added.'
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/new-user', {
@@ -94,7 +100,7 @@ tests:
       }
     }
     "
-  - text: I can retrieve a full exercise log of any user by getting /api/exercise/log with a parameter of userId(_id). App will return the user object with added array log and count (total exercise count).
+  - text: You can make a `GET` request to `/api/exercise/log` with a parameter of `userId=_id` to retrieve a full exercise log of any user. The returned response will be the user object with a `log` array of all the exercises added. Each log item has the `description`, `duration`, and `date` properties.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/new-user', {
@@ -135,7 +141,47 @@ tests:
       }
     }
     "
-  - text: 'I can retrieve part of the log of any user by also passing along optional parameters of from & to or limit. (Date format yyyy-mm-dd, limit = int)'
+  - text: "A request to a user's log (`/api/exercise/log`) returns an object with a `count` property representing the number of exercises returned."
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const res = await fetch(url + '/api/exercise/new-user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `username=fcc_test_${Date.now()}`.substr(0, 29)
+      });
+
+      if (res.ok) {
+        const { _id, username } = await res.json();
+        const expected = {
+          username,
+          description: 'test',
+          duration: 60,
+          _id,
+          date: new Date().toDateString()
+        };
+
+        const addRes = await fetch(url + '/api/exercise/add', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `userId=${_id}&description=${expected.description}&duration=${expected.duration}`
+        });
+        if (addRes.ok) {
+          const logRes = await fetch(url + `/api/exercise/log?userId=${_id}`);
+          if (logRes.ok) {
+            const { count } = await logRes.json();
+            assert(count);
+          } else {
+            throw new Error(`${logRes.status} ${logRes.statusText}`);
+          }
+        } else {
+          throw new Error(`${addRes.status} ${addRes.statusText}`);
+        }
+      } else {
+        throw new Error(`${res.status} ${res.statusText}`);
+      }
+    }
+    "
+  - text: 'You can add `from`, `to` and `limit` parameters to a `/api/exercise/log` request to retrieve part of the log of any user. `from` and `to` are dates in `yyyy-mm-dd` format. `limit` is an integer of how many logs to send back.'
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/exercise/new-user', {

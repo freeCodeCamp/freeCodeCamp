@@ -15,12 +15,16 @@ videoUrl: ''
 
 ## Tests
 <section id='tests'>
+
+text
 ```yml
 tests:
   - text: text
       testString: testString
 
 ```
+moretext
+
 </section>
 
 ## Challenge Seed
@@ -28,8 +32,6 @@ tests:
 
 <div id='html-seed'>
 </div>
-
-
 
 </section>
 

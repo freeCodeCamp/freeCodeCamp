@@ -32,7 +32,7 @@ When there is no function body, and only a return value, arrow function syntax a
 const myFunc = () => "value";
 ```
 
-This code will still return <code>value</code> by default.
+This code will still return the string <code>value</code> by default.
 </section>
 
 ## Instructions
@@ -67,7 +67,6 @@ tests:
 
 ```js
 var magic = function() {
-  "use strict";
   return new Date();
 };
 ```
@@ -83,7 +82,6 @@ var magic = function() {
 
 ```js
 const magic = () => {
-  "use strict";
   return new Date();
 };
 ```
