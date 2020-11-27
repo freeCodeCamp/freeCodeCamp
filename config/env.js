@@ -21,7 +21,8 @@ const {
   ALGOLIA_API_KEY: algoliaAPIKey,
   PAYPAL_CLIENT_ID: paypalClientId,
   DEPLOYMENT_ENV: deploymentEnv,
-  SHOW_UPCOMING_CHANGES: showUpcomingChanges
+  SHOW_UPCOMING_CHANGES: showUpcomingChanges,
+  NODE_BUILD_ENV: environment
 } = process.env;
 
 const locations = {
@@ -34,7 +35,7 @@ const locations = {
 module.exports = Object.assign(locations, {
   locale,
   deploymentEnv,
-  environment: process.env.FREECODECAMP_NODE_ENV || 'development',
+  environment,
   stripePublicKey:
     !stripePublicKey || stripePublicKey === 'pk_from_stripe_dashboard'
       ? null

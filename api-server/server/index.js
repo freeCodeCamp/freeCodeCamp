@@ -28,7 +28,7 @@ if (sentry.dns === 'dsn_from_sentry_dashboard') {
   log('Sentry initialized');
 }
 
-Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
+Rx.config.longStackSupport = process.env.NODE_BUILD_ENV === 'development';
 const app = loopback();
 
 app.set('state namespace', '__fcc__');

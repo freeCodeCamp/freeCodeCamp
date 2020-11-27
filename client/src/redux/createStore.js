@@ -32,15 +32,15 @@ const composeEnhancers = composeWithDevTools({
 
 export const createStore = () => {
   let store;
-  if (environment === 'production') {
+  if (environment === 'development') {
     store = reduxCreateStore(
       rootReducer,
-      applyMiddleware(sagaMiddleware, epicMiddleware)
+      composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
     );
   } else {
     store = reduxCreateStore(
       rootReducer,
-      composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
+      applyMiddleware(sagaMiddleware, epicMiddleware)
     );
   }
   sagaMiddleware.run(rootSaga);

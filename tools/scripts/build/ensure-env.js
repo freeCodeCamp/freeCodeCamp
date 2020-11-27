@@ -9,9 +9,7 @@ const log = debug('fcc:ensure-env');
 const clientPath = path.resolve(__dirname, '../../../client');
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
-const { FREECODECAMP_NODE_ENV } = process.env;
-
-if (FREECODECAMP_NODE_ENV !== 'development') {
+if (process.env.NODE_BUILD_ENV !== 'development') {
   const locationKeys = [
     'homeLocation',
     'apiLocation',

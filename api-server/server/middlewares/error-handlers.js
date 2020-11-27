@@ -21,7 +21,7 @@ ${JSON.stringify(error, null, 2)}
 `;
 };
 
-const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
+const isDev = process.env.NODE_BUILD_ENV === 'development';
 
 export default function prodErrorHandler() {
   // error handling in production.

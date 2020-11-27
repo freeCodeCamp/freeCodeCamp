@@ -42,7 +42,7 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
 
 exports.createPages = function createPages({ graphql, actions, reporter }) {
   if (!env.algoliaAPIKey || !env.algoliaAppId) {
-    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+    if (process.env.NODE_BUILD_ENV !== 'development') {
       throw new Error(
         'Algolia App id and API key are required to start the client!'
       );
@@ -54,7 +54,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
   }
 
   if (!env.stripePublicKey) {
-    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+    if (process.env.NODE_BUILD_ENV !== 'development') {
       throw new Error('Stripe public key is required to start the client!');
     } else {
       reporter.info(

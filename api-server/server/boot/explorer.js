@@ -3,7 +3,7 @@ const createDebugger = require('debug');
 const log = createDebugger('fcc:boot:explorer');
 
 module.exports = function mountLoopBackExplorer(app) {
-  if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+  if (process.env.NODE_BUILD_ENV !== 'development') {
     return;
   }
   let explorer;
