@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
-// CI is 'true' in the build pipeline
-if (process.env.CI !== 'true') {
+// IN_AZURE_BUILD is 'true' in the build pipeline
+if (process.env.IN_AZURE_BUILD !== 'true') {
   const envPath = path.resolve(__dirname, '../.env');
   if (!fs.existsSync(envPath)) {
     throw Error('.env not found, please copy sample.env to .env.');
