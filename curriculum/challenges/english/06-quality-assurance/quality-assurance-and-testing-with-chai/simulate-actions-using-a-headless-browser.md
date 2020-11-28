@@ -55,9 +55,8 @@ All tests should pass.
   $.get(getUserInput('url') + '/_api/get-tests?type=functional').then(
     (data) => {
       data.slice(0, 4).forEach((test) => {
-        assert.equal(test.state, 'passed')
+        assert.equal(test.state, 'passed');
       })
-      ;
     },
     (xhr) => {
       throw new Error(xhr.responseText);
