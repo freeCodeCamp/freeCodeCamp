@@ -48,7 +48,7 @@
     "invariant": "^2.2.4",
     "joi": "^13.3.0",
     "joi-objectid": "^2.0.0",
-    "jsdom": "^12.2.0",
+    "jsdom": "^16.4.0",
     "live-server": "^1.2.1",
     "lodash": "^4.17.20",
     "mocha": "8.2.1",
