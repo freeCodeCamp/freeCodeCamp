@@ -4,31 +4,23 @@ title: Part 33
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The flavors and prices are currently stacked on top of each other and centered with their respectable `p` elements. It would be nice if the flavor was on the left and the price was on the right.
 
 Add the class name `flavor` to the `French Vanilla` `p` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -49,10 +41,10 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article>
-            --fcc-editable-region--
+--fcc-editable-region--
             <p>French Vanilla</p>
             <p>3.00</p>
-            --fcc-editable-region--
+--fcc-editable-region--
           </article>
           <article>
             <p>Carmel Macchiato</p>
@@ -77,10 +69,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -98,6 +86,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

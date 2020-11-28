@@ -6,10 +6,12 @@ videoUrl: 'https://scrimba.com/c/cbQmmC4'
 forumTopicId: 16803
 ---
 
-## Description
-<section id='description'>
-We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.
-<strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+# --description--
+
+We can also use the `+=` operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.
+
+**Note**  
+Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
 
 Example:
 
@@ -19,46 +21,27 @@ ourStr += "I come second.";
 // ourStr is now "I come first. I come second."
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Build <code>myStr</code> over several lines by concatenating these two strings: <code>"This is the first sentence. "</code> and <code>"This is the second sentence."</code> using the <code>+=</code> operator. Use the <code>+=</code> operator similar to how it is shown in the editor. Start by assigning the first string to <code>myStr</code>, then add on the second string.
-</section>
+Build `myStr` over several lines by concatenating these two strings: `"This is the first sentence. "` and `"This is the second sentence."` using the `+=` operator. Use the `+=` operator similar to how it is shown in the editor. Start by assigning the first string to `myStr`, then add on the second string.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>myStr</code> should have a value of <code>This is the first sentence. This is the second sentence.</code>
-    testString: assert(myStr === "This is the first sentence. This is the second sentence.");
-  - text: You should use the <code>+=</code> operator to build <code>myStr</code>.
-    testString: assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`myStr` should have a value of `This is the first sentence. This is the second sentence.`
 
 ```js
-
-// Only change code below this line
-
-var myStr;
-
-
+assert(myStr === 'This is the first sentence. This is the second sentence.');
 ```
 
-</div>
+You should use the `+=` operator to build `myStr`.
 
+```js
+assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(){
@@ -70,17 +53,17 @@ var myStr;
 })();
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Only change code below this line
 
-## Solution
-<section id='solution'>
+var myStr;
+```
 
+# --solutions--
 
 ```js
 var myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 ```
-
-</section>

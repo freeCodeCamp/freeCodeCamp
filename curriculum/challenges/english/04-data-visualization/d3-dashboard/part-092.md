@@ -4,33 +4,58 @@ title: Part 92
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Chain a `value` function to `pie` and pass it `d => d.value`. Each piece of data(`d`) will have a `key`(platform) and a `value`(number of followers), you want to return the number of followers here. The pie function will create an array of objects from these values that describe the angles and sizes the pie chart needs.
 
 In a few steps, you will make an array out of your data variable that will be passed to this function.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/const pie = d3\.pie\(\)\s*\.\s*value\s*\(\s*d\s*=>\s*d\.value\s*\)/g.test(code));
-
+```js
+assert(
+  /const pie = d3\.pie\(\)\s*\.\s*value\s*\(\s*d\s*=>\s*d\.value\s*\)/g.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -173,47 +198,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -356,5 +341,3 @@ tests:
   
 </script>
 ```
-
-</section>

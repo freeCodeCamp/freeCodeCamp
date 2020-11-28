@@ -1,50 +1,49 @@
 ---
 id: 5900f3761000cf542c50fe88
-challengeType: 5
 title: 'Problem 9: Special Pythagorean triplet'
+challengeType: 5
 forumTopicId: 302205
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-A Pythagorean triplet is a set of three natural numbers, <var>a</var> < <var>b</var> < <var>c</var>, for which,
+A Pythagorean triplet is a set of three natural numbers, `a` &lt; `b` &lt; `c`, for which,
 
 <div style='text-align: center;'><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
 
 For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
 
-There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000. Find the product <var>abc</var> such that <var>a</var> + <var>b</var> + <var>c</var> = `n`.
+There exists exactly one Pythagorean triplet for which `a` + `b` + `c` = 1000. Find the product `abc` such that `a` + `b` + `c` = `n`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`specialPythagoreanTriplet(24)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>specialPythagoreanTriplet(24)</code> should return a number.
-    testString: assert(typeof specialPythagoreanTriplet(24) === 'number');
-  - text: <code>specialPythagoreanTriplet(24)</code> should return 480.
-    testString: assert.strictEqual(specialPythagoreanTriplet(24), 480);
-  - text: <code>specialPythagoreanTriplet(120)</code> should return 49920, 55080 or 60000
-    testString: assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));
-  - text: <code>specialPythagoreanTriplet(1000)</code> should return 31875000.
-    testString: assert.strictEqual(specialPythagoreanTriplet(1000), 31875000);
-
+```js
+assert(typeof specialPythagoreanTriplet(24) === 'number');
 ```
 
-</section>
+`specialPythagoreanTriplet(24)` should return 480.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(specialPythagoreanTriplet(24), 480);
+```
 
-<div id='js-seed'>
+`specialPythagoreanTriplet(120)` should return 49920, 55080 or 60000
+
+```js
+assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));
+```
+
+`specialPythagoreanTriplet(1000)` should return 31875000.
+
+```js
+assert.strictEqual(specialPythagoreanTriplet(1000), 31875000);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function specialPythagoreanTriplet(n) {
@@ -56,15 +55,7 @@ function specialPythagoreanTriplet(n) {
 specialPythagoreanTriplet(1000);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const specialPythagoreanTriplet = (n)=>{
@@ -80,5 +71,3 @@ const specialPythagoreanTriplet = (n)=>{
  }
 }
 ```
-
-</section>

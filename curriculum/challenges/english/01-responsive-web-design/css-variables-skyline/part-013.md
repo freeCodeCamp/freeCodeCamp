@@ -4,31 +4,26 @@ title: Part 13
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give your `bb1` element these style properties: `display: flex;`, `flex-direction: column;`, and `align-items: center;`. This will center the parts of the building using "flex" or "flexbox". You will learn about it in more detail on another project.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1 = $(".bb1"); assert(bb1.css("display") === "flex" && bb1.css("flex-direction") === "column" && bb1.css("align-items") === "center");
-
+```js
+const bb1 = $('.bb1');
+assert(
+  bb1.css('display') === 'flex' &&
+    bb1.css('flex-direction') === 'column' &&
+    bb1.css('align-items') === 'center'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -92,12 +87,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -163,5 +153,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

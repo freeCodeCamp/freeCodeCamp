@@ -4,53 +4,25 @@ title: Part 8
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Now assign the document object you just referenced to a variable named `total`. Since this variable will not change, use `const` to create it.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s*total\s*=\s*document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)/.test(code));
+```js
+assert(
+  /const\s*total\s*=\s*document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)/.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-    document.getElementsByClassName('cal-control');
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -110,24 +82,27 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
+    document.getElementsByClassName('cal-control');
+  }
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -139,5 +114,3 @@ tests:
   }
 </script>
 ```
-
-</section>

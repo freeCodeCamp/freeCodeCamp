@@ -6,35 +6,41 @@ videoUrl: 'https://scrimba.com/c/ceJNBSb'
 forumTopicId: 301080
 ---
 
-## Description
-<section id='description'>
-To make text bold, you can use the <code>strong</code> tag. This is often used to draw attention to text and symbolize that it is important. With the <code>strong</code> tag, the browser applies the CSS of <code>font-weight: bold;</code> to the element.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Wrap a <code>strong</code> tag around "Stanford University" inside the <code>p</code> tag (do not include the period).
-</section>
+To make text bold, you can use the `strong` tag. This is often used to draw attention to text and symbolize that it is important. With the `strong` tag, the browser applies the CSS of `font-weight: bold;` to the element.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should add one <code>strong</code> tag to the markup.
-    testString: assert($('strong').length == 1);
-  - text: The <code>strong</code> tag should be inside the <code>p</code> tag.
-    testString: assert($('p').children('strong').length == 1);
-  - text: The <code>strong</code> tag should wrap around the words <code>Stanford University</code>.
-    testString: assert($('strong').text().match(/^Stanford University\.?$/gi));
+Wrap a `strong` tag around "Stanford University" inside the `p` tag (do not include the period).
+
+# --hints--
+
+Your code should add one `strong` tag to the markup.
+
+```js
+assert($('strong').length == 1);
 ```
 
-</section>
+The `strong` tag should be inside the `p` tag.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('p').children('strong').length == 1);
+```
 
-<div id='html-seed'>
+The `strong` tag should wrap around the words `Stanford University`.
+
+```js
+assert(
+  $('strong')
+    .text()
+    .match(/^Stanford University\.?$/gi)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -77,14 +83,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -126,5 +125,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

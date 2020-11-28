@@ -5,34 +5,34 @@ challengeType: 11
 videoId: MtgXS1MofRw
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+-   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas)
+-   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-</section>
+# --question--
 
-## Tests
+## --text--
 
-<section id='tests'>
+What method does a `Cursor` instance have and what does it allow?
 
-```yml
-question:
-  text: |
-    What method does a `Cursor` instance have and what does it allow?
-  answers:
-    - |
-      The `Cursor` instance has a `.run()` method which allows you to run SQL queries.
-    - |
-      The `Cursor` instance has a `.select()` method which allows you to select records.
-    - |
-      The `Cursor` instance has an `.execute()` method which will receive SQL parameters to run against the database.
-  solution: 3
-```
+## --answers--
 
-</section>
+The `Cursor` instance has a `.run()` method which allows you to run SQL queries.
+
+---
+
+The `Cursor` instance has a `.select()` method which allows you to select records.
+
+---
+
+The `Cursor` instance has an `.execute()` method which will receive SQL parameters to run against the database.
+
+## --video-solution--
+
+3
+

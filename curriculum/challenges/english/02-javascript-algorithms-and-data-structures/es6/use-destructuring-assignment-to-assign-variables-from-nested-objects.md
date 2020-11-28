@@ -5,8 +5,8 @@ challengeType: 1
 forumTopicId: 301214
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can use the same principles from the previous two lessons to destructure values from nested objects.
 
 Using an object similar to previous examples:
@@ -32,33 +32,50 @@ And here's how you can assign an object properties' values to variables with dif
 const { johnDoe: { age: userAge, email: userEmail }} = user;
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>lowToday</code> and <code>highToday</code> the values of <code>today.low</code> and <code>today.high</code> from the <code>LOCAL_FORECAST</code> object.
-</section>
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `lowToday` and `highToday` the values of `today.low` and `today.high` from the `LOCAL_FORECAST` object.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should remove the ES5 assignment syntax.
-    testString: assert(!code.match(/lowToday = LOCAL_FORECAST\.today\.low/g) && !code.match(/highToday = LOCAL_FORECAST\.today.high/g))
-  - text: You should use destructuring to create the <code>lowToday</code> variable.
-    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
-  - text: You should use destructuring to create the <code>highToday</code> variable.
-    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
-  - text: <code>lowToday</code> should be equal to <code>64</code> and <code>highToday</code> should be equal to <code>77</code>.
-    testString: assert(lowToday === 64 && highToday === 77);
+You should remove the ES5 assignment syntax.
+
+```js
+assert(
+  !code.match(/lowToday = LOCAL_FORECAST\.today\.low/g) &&
+    !code.match(/highToday = LOCAL_FORECAST\.today.high/g)
+);
 ```
 
-</section>
+You should use destructuring to create the `lowToday` variable.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(
+  code.match(
+    /(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g
+  )
+);
+```
+
+You should use destructuring to create the `highToday` variable.
+
+```js
+assert(
+  code.match(
+    /(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g
+  )
+);
+```
+
+`lowToday` should be equal to `64` and `highToday` should be equal to `77`.
+
+```js
+assert(lowToday === 64 && highToday === 77);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 const LOCAL_FORECAST = {
@@ -75,11 +92,7 @@ const highToday = LOCAL_FORECAST.today.high;
 // Only change code above this line
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const LOCAL_FORECAST = {
@@ -90,5 +103,3 @@ const LOCAL_FORECAST = {
  
 const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
 ```
-
-</section>

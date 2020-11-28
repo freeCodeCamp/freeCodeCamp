@@ -6,34 +6,29 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cMd4EcQ'
 forumTopicId: 18360
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.
-For example, if you wanted to make a text input field required, you can just add the attribute <code>required</code> within your <code>input</code> element, like this: <code>&#60;input type="text" required&#62;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-Make your text <code>input</code> a <code>required</code> field, so that your user can't submit the form without completing this field.
+For example, if you wanted to make a text input field required, you can just add the attribute `required` within your `input` element, like this: `<input type="text" required>`
+
+# --instructions--
+
+Make your text `input` a `required` field, so that your user can't submit the form without completing this field.
+
 Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required?
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your text <code>input</code> element should have the <code>required</code> attribute.
-    testString: assert($("input").prop("required"));
+Your text `input` element should have the `required` attribute.
 
+```js
+assert($('input').prop('required'));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -61,14 +56,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -95,5 +83,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

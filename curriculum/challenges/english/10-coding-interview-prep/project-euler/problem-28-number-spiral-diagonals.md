@@ -1,12 +1,11 @@
 ---
 id: 5900f3881000cf542c50fe9b
-challengeType: 5
 title: 'Problem 28: Number spiral diagonals'
+challengeType: 5
 forumTopicId: 301930
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
 
@@ -22,37 +21,41 @@ It can be verified that the sum of the numbers on the diagonals is 101.
 
 What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`spiralDiagonals(101)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>spiralDiagonals(101)</code> should return a number.
-    testString: assert(typeof spiralDiagonals(101) === 'number');
-  - text: <code>spiralDiagonals(101)</code> should return 692101.
-    testString: assert(spiralDiagonals(101) == 692101);
-  - text: <code>spiralDiagonals(303)</code> should return 18591725.
-    testString: assert(spiralDiagonals(303) == 18591725);
-  - text: <code>spiralDiagonals(505)</code> should return 85986601.
-    testString: assert(spiralDiagonals(505) == 85986601);
-  - text: <code>spiralDiagonals(1001)</code> should return 669171001.
-    testString: assert(spiralDiagonals(1001) == 669171001);
-
+```js
+assert(typeof spiralDiagonals(101) === 'number');
 ```
 
-</section>
+`spiralDiagonals(101)` should return 692101.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(spiralDiagonals(101) == 692101);
+```
 
-<div id='js-seed'>
+`spiralDiagonals(303)` should return 18591725.
+
+```js
+assert(spiralDiagonals(303) == 18591725);
+```
+
+`spiralDiagonals(505)` should return 85986601.
+
+```js
+assert(spiralDiagonals(505) == 85986601);
+```
+
+`spiralDiagonals(1001)` should return 669171001.
+
+```js
+assert(spiralDiagonals(1001) == 669171001);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function spiralDiagonals(n) {
@@ -63,15 +66,7 @@ function spiralDiagonals(n) {
 spiralDiagonals(1001);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const spiralDiagonals = (n) => {
@@ -85,5 +80,3 @@ const spiralDiagonals = (n) => {
   return sum;
 };
 ```
-
-</section>

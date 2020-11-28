@@ -5,57 +5,93 @@ challengeType: 5
 forumTopicId: 16025
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
-For example, <code>["hello", "Hello"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.
-The arguments <code>["hello", "hey"]</code> should return false because the string "hello" does not contain a "y".
-Lastly, <code>["Alien", "line"]</code>, should return true because all of the letters in "line" are present in "Alien".
-</section>
 
-## Instructions
-<section id='instructions'>
+For example, `["hello", "Hello"]`, should return true because all of the letters in the second string are present in the first, ignoring case.
 
-</section>
+The arguments `["hello", "hey"]` should return false because the string "hello" does not contain a "y".
 
-## Tests
-<section id='tests'>
+Lastly, `["Alien", "line"]`, should return true because all of the letters in "line" are present in "Alien".
 
-```yml
-tests:
-  - text: <code>mutation(["hello", "hey"])</code> should return false.
-    testString: assert(mutation(["hello", "hey"]) === false);
-  - text: <code>mutation(["hello", "Hello"])</code> should return true.
-    testString: assert(mutation(["hello", "Hello"]) === true);
-  - text: <code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should return true.
-    testString: assert(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) === true);
-  - text: <code>mutation(["Mary", "Army"])</code> should return true.
-    testString: assert(mutation(["Mary", "Army"]) === true);
-  - text: <code>mutation(["Mary", "Aarmy"])</code> should return true.
-    testString: assert(mutation(["Mary", "Aarmy"]) === true);
-  - text: <code>mutation(["Alien", "line"])</code> should return true.
-    testString: assert(mutation(["Alien", "line"]) === true);
-  - text: <code>mutation(["floor", "for"])</code> should return true.
-    testString: assert(mutation(["floor", "for"]) === true);
-  - text: <code>mutation(["hello", "neo"])</code> should return false.
-    testString: assert(mutation(["hello", "neo"]) === false);
-  - text: <code>mutation(["voodoo", "no"])</code> should return false.
-    testString: assert(mutation(["voodoo", "no"]) === false);
-  - text: <code>mutation(["ate", "date"]</code> should return false.
-    testString: assert(mutation(["ate", "date"]) === false);
-  - text: <code>mutation(["Tiger", "Zebra"])</code> should return false.
-    testString: assert(mutation(["Tiger", "Zebra"]) === false);
-  - text: <code>mutation(["Noel", "Ole"])</code> should return true.
-    testString: assert(mutation(["Noel", "Ole"]) === true);
+# --hints--
 
+`mutation(["hello", "hey"])` should return false.
+
+```js
+assert(mutation(['hello', 'hey']) === false);
 ```
 
-</section>
+`mutation(["hello", "Hello"])` should return true.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(mutation(['hello', 'Hello']) === true);
+```
 
-<div id='js-seed'>
+`mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])` should return true.
+
+```js
+assert(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu']) === true);
+```
+
+`mutation(["Mary", "Army"])` should return true.
+
+```js
+assert(mutation(['Mary', 'Army']) === true);
+```
+
+`mutation(["Mary", "Aarmy"])` should return true.
+
+```js
+assert(mutation(['Mary', 'Aarmy']) === true);
+```
+
+`mutation(["Alien", "line"])` should return true.
+
+```js
+assert(mutation(['Alien', 'line']) === true);
+```
+
+`mutation(["floor", "for"])` should return true.
+
+```js
+assert(mutation(['floor', 'for']) === true);
+```
+
+`mutation(["hello", "neo"])` should return false.
+
+```js
+assert(mutation(['hello', 'neo']) === false);
+```
+
+`mutation(["voodoo", "no"])` should return false.
+
+```js
+assert(mutation(['voodoo', 'no']) === false);
+```
+
+`mutation(["ate", "date"]` should return false.
+
+```js
+assert(mutation(['ate', 'date']) === false);
+```
+
+`mutation(["Tiger", "Zebra"])` should return false.
+
+```js
+assert(mutation(['Tiger', 'Zebra']) === false);
+```
+
+`mutation(["Noel", "Ole"])` should return true.
+
+```js
+assert(mutation(['Noel', 'Ole']) === true);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function mutation(arr) {
@@ -65,15 +101,7 @@ function mutation(arr) {
 mutation(["hello", "hey"]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function mutation(arr) {
@@ -85,7 +113,4 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"]);
-
 ```
-
-</section>

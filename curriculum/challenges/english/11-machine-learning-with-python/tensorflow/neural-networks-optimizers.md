@@ -5,27 +5,25 @@ challengeType: 11
 videoId: hdOtRPQe1o4
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What is an optimizer function?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What is an optimizer function?
-  answers:
-    - |
-      A function that increases the accuracy of a model's predictions.
-    - |
-      A function that implements the gradient descent and backpropagation algorithms for you.
-    - |
-      A function that reduces the time a model needs to train.
-  solution: 2
-```
+A function that increases the accuracy of a model's predictions.
 
-</section>
+---
+
+A function that implements the gradient descent and backpropagation algorithms for you.
+
+---
+
+A function that reduces the time a model needs to train.
+
+## --video-solution--
+
+2
+

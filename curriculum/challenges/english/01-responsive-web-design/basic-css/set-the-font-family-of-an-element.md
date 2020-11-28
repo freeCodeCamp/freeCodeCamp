@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/c3bvpCg'
 forumTopicId: 18278
 ---
 
-## Description
-<section id='description'>
-You can set which font an element should use, by using the <code>font-family</code> property.
-For example, if you wanted to set your <code>h2</code> element's font to <code>sans-serif</code>, you would use the following CSS:
+# --description--
+
+You can set which font an element should use, by using the `font-family` property.
+
+For example, if you wanted to set your `h2` element's font to `sans-serif`, you would use the following CSS:
 
 ```css
 h2 {
@@ -17,29 +18,26 @@ h2 {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Make all of your <code>p</code> elements use the <code>monospace</code> font.
-</section>
+Make all of your `p` elements use the `monospace` font.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>p</code> elements should use the font <code>monospace</code>.
-    testString: assert($("p").not(".red-text").css("font-family").match(/monospace/i));
+Your `p` elements should use the font `monospace`.
 
+```js
+assert(
+  $('p')
+    .not('.red-text')
+    .css('font-family')
+    .match(/monospace/i)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -85,14 +83,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -138,5 +129,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

@@ -5,44 +5,51 @@ challengeType: 1
 forumTopicId: 301229
 ---
 
-## Description
-<section id='description'>
-<dfn>Concatenation</dfn> means to join items end to end. JavaScript offers the <code>concat</code> method for both strings and arrays that work in the same way. For arrays, the method is called on one, then another array is provided as the argument to <code>concat</code>, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example:
+# --description--
+
+<dfn>Concatenation</dfn> means to join items end to end. JavaScript offers the `concat` method for both strings and arrays that work in the same way. For arrays, the method is called on one, then another array is provided as the argument to `concat`, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example:
 
 ```js
 [1, 2, 3].concat([4, 5, 6]);
 // Returns a new array [1, 2, 3, 4, 5, 6]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use the <code>concat</code> method in the <code>nonMutatingConcat</code> function to concatenate <code>attach</code> to the end of <code>original</code>. The function should return the concatenated array.
-</section>
+Use the `concat` method in the `nonMutatingConcat` function to concatenate `attach` to the end of `original`. The function should return the concatenated array.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should use the <code>concat</code> method.
-    testString: assert(code.match(/\.concat/g));
-  - text: The <code>first</code> array should not change.
-    testString: assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
-  - text: The <code>second</code> array should not change.
-    testString: assert(JSON.stringify(second) === JSON.stringify([4, 5]));
-  - text: <code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.
-    testString: assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]));
+Your code should use the `concat` method.
 
+```js
+assert(code.match(/\.concat/g));
 ```
 
-</section>
+The `first` array should not change.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
+```
 
-<div id='js-seed'>
+The `second` array should not change.
+
+```js
+assert(JSON.stringify(second) === JSON.stringify([4, 5]));
+```
+
+`nonMutatingConcat([1, 2, 3], [4, 5])` should return `[1, 2, 3, 4, 5]`.
+
+```js
+assert(
+  JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) ===
+    JSON.stringify([1, 2, 3, 4, 5])
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function nonMutatingConcat(original, attach) {
@@ -56,14 +63,7 @@ var second = [4, 5];
 nonMutatingConcat(first, second);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function nonMutatingConcat(original, attach) {
@@ -75,5 +75,3 @@ var first = [1, 2, 3];
 var second = [4, 5];
 nonMutatingConcat(first, second);
 ```
-
-</section>

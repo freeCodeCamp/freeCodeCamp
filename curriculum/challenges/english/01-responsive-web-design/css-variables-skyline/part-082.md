@@ -4,31 +4,27 @@ title: Part 82
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give `fb2a` a `width` of `100%` and `fb2b` a `width` of `100%` and `height` of `75%`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0]; const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*100%\s*(;|})/g.test(fb2a) && /width\s*:\s*100%\s*(;|})/g.test(fb2b) && /height\s*:\s*75%\s*(;|})/g.test(fb2b));
-
+```js
+const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0];
+const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*100%\s*(;|})/g.test(fb2a) &&
+    /width\s*:\s*100%\s*(;|})/g.test(fb2b) &&
+    /height\s*:\s*75%\s*(;|})/g.test(fb2b)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -303,12 +299,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -591,5 +582,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

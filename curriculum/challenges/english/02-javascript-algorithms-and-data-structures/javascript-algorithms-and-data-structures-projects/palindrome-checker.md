@@ -5,60 +5,101 @@ challengeType: 5
 forumTopicId: 16004
 ---
 
-## Description
-<section id='description'>
-Return <code>true</code> if the given string is a palindrome. Otherwise, return <code>false</code>.
+# --description--
+
+Return `true` if the given string is a palindrome. Otherwise, return `false`.
+
 A <dfn>palindrome</dfn> is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
-<strong>Note</strong><br>You'll need to remove <strong>all non-alphanumeric characters</strong> (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
-We'll pass strings with varying formats, such as <code>"racecar"</code>, <code>"RaceCar"</code>, and <code>"race CAR"</code> among others.
-We'll also pass strings with special symbols, such as <code>"2A3*3a2"</code>, <code>"2A3  3a2"</code>, and <code>"2_A3*3#A2"</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+**Note:** You'll need to remove **all non-alphanumeric characters** (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
 
-</section>
+We'll pass strings with varying formats, such as `"racecar"`, `"RaceCar"`, and `"race CAR"` among others.
 
-## Tests
-<section id='tests'>
+We'll also pass strings with special symbols, such as `"2A3*3a2"`, `"2A3 3a2"`, and `"2_A3*3#A2"`.
 
-```yml
-tests:
-  - text: <code>palindrome("eye")</code> should return a boolean.
-    testString: assert(typeof palindrome("eye") === "boolean");
-  - text: <code>palindrome("eye")</code> should return true.
-    testString: assert(palindrome("eye") === true);
-  - text: <code>palindrome("_eye")</code> should return true.
-    testString: assert(palindrome("_eye") === true);
-  - text: <code>palindrome("race car")</code> should return true.
-    testString: assert(palindrome("race car") === true);
-  - text: <code>palindrome("not a palindrome")</code> should return false.
-    testString: assert(palindrome("not a palindrome") === false);
-  - text: <code>palindrome("A man, a plan, a canal. Panama")</code> should return true.
-    testString: assert(palindrome("A man, a plan, a canal. Panama") === true);
-  - text: <code>palindrome("never odd or even")</code> should return true.
-    testString: assert(palindrome("never odd or even") === true);
-  - text: <code>palindrome("nope")</code> should return false.
-    testString: assert(palindrome("nope") === false);
-  - text: <code>palindrome("almostomla")</code> should return false.
-    testString: assert(palindrome("almostomla") === false);
-  - text: <code>palindrome("My age is 0, 0 si ega ym.")</code> should return true.
-    testString: assert(palindrome("My age is 0, 0 si ega ym.") === true);
-  - text: <code>palindrome("1 eye for of 1 eye.")</code> should return false.
-    testString: assert(palindrome("1 eye for of 1 eye.") === false);
-  - text: '<code>palindrome("0_0 (: /-\ :) 0-0")</code> should return true.'
-    testString: 'assert(palindrome("0_0 (: /-\ :) 0-0") === true);'
-  - text: <code>palindrome("five|\_/|four")</code> should return false.
-    testString: assert(palindrome("five|\_/|four") === false);
+# --hints--
 
+`palindrome("eye")` should return a boolean.
+
+```js
+assert(typeof palindrome('eye') === 'boolean');
 ```
 
-</section>
+`palindrome("eye")` should return true.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(palindrome('eye') === true);
+```
 
-<div id='js-seed'>
+`palindrome("_eye")` should return true.
+
+```js
+assert(palindrome('_eye') === true);
+```
+
+`palindrome("race car")` should return true.
+
+```js
+assert(palindrome('race car') === true);
+```
+
+`palindrome("not a palindrome")` should return false.
+
+```js
+assert(palindrome('not a palindrome') === false);
+```
+
+`palindrome("A man, a plan, a canal. Panama")` should return true.
+
+```js
+assert(palindrome('A man, a plan, a canal. Panama') === true);
+```
+
+`palindrome("never odd or even")` should return true.
+
+```js
+assert(palindrome('never odd or even') === true);
+```
+
+`palindrome("nope")` should return false.
+
+```js
+assert(palindrome('nope') === false);
+```
+
+`palindrome("almostomla")` should return false.
+
+```js
+assert(palindrome('almostomla') === false);
+```
+
+`palindrome("My age is 0, 0 si ega ym.")` should return true.
+
+```js
+assert(palindrome('My age is 0, 0 si ega ym.') === true);
+```
+
+`palindrome("1 eye for of 1 eye.")` should return false.
+
+```js
+assert(palindrome('1 eye for of 1 eye.') === false);
+```
+
+`palindrome("0_0 (: /-\ :) 0-0")` should return true.
+
+```js
+assert(palindrome('0_0 (: /- :) 0-0') === true);
+```
+
+`palindrome("five|\_/|four")` should return false.
+
+```js
+assert(palindrome('five|_/|four') === false);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function palindrome(str) {
@@ -70,15 +111,7 @@ function palindrome(str) {
 palindrome("eye");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function palindrome(str) {
@@ -91,5 +124,3 @@ function palindrome(str) {
   return false;
 }
 ```
-
-</section>

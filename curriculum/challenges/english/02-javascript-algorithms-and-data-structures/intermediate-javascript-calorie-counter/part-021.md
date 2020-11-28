@@ -4,9 +4,7 @@ title: Part 21
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 To track how the `reduce()` function works, log the values of the `accumulator` and `currentValue` in the callback function before the `return` statement like this: `console.log({ accumulator })`
 
@@ -14,55 +12,17 @@ You can also check your progress by adding `console.log({ total })` at the end o
 
 When you enter calorie values in the form and push the Calculate button, you will see the values of `accumulator` and `currentValue` in each iteration of the `reduce()` callback function.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/console.log\({accumulator}\)/) );
+```js
+assert(code.replace(/\s/g, '').match(/console.log\({accumulator}\)/));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => {
-        // log the values of the `accumulator` and `currentValue` here
-        return accumulator + currentValue;
-      }, 0);
-
-    // log the value of `total` here
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -122,24 +82,35 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => {
+        // log the values of the `accumulator` and `currentValue` here
+        return accumulator + currentValue;
+      }, 0);
+
+    // log the value of `total` here
+  }
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -160,5 +131,3 @@ tests:
   }
 </script>
 ```
-
-</section>

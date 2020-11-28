@@ -5,10 +5,11 @@ challengeType: 2
 forumTopicId: 301578
 ---
 
-## Description
-<section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-bcrypt">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'>GitHub</a>.
-As hashing is designed to be computationally intensive, it is recommended to do so asynchronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call 
+# --description--
+
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-bcrypt), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-bcrypt/).
+
+As hashing is designed to be computationally intensive, it is recommended to do so asynchronously on your server as to avoid blocking incoming connections while you hash. All you have to do to hash a password asynchronous is call
 
 ```js
 bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
@@ -16,12 +17,11 @@ bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
 });
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 Add this hashing function to your server(we've already defined the variables used in the function for you to use) and log it to the console for you to see! At this point you would normally save the hash to your database.
-Now when you need to figure out if a new input is the same data as the hash you would just use the compare function. 
+
+Now when you need to figure out if a new input is the same data as the hash you would just use the compare function.
 
 ```js
 bcrypt.compare(myPlaintextPassword, hash, (err, res) => {
@@ -43,27 +43,35 @@ bcrypt.hash('passw0rd!', 13, (err, hash) => {
 ```
 
 Submit your page when you think you've got it right.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Async hash should be generated and correctly compared.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /START_ASYNC[^]*bcrypt.hash.*myPlaintextPassword( |),( |)saltRounds( |),( |).*err( |),( |)hash[^]*END_ASYNC/gi, 'You should call bcrypt.hash on myPlaintextPassword and saltRounds and handle err and hash as a result in the callback'); assert.match(data, /START_ASYNC[^]*bcrypt.hash[^]*bcrypt.compare.*myPlaintextPassword( |),( |)hash( |),( |).*err( |),( |)res[^]*}[^]*}[^]*END_ASYNC/gi, 'Nested within the hash function should be the compare function comparing myPlaintextPassword to hash'); }, xhr => { throw new Error(xhr.statusText); })
+Async hash should be generated and correctly compared.
 
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/server.js').then(
+    (data) => {
+      assert.match(
+        data,
+        /START_ASYNC[^]*bcrypt.hash.*myPlaintextPassword( |),( |)saltRounds( |),( |).*err( |),( |)hash[^]*END_ASYNC/gi,
+        'You should call bcrypt.hash on myPlaintextPassword and saltRounds and handle err and hash as a result in the callback'
+      );
+      assert.match(
+        data,
+        /START_ASYNC[^]*bcrypt.hash[^]*bcrypt.compare.*myPlaintextPassword( |),( |)hash( |),( |).*err( |),( |)res[^]*}[^]*}[^]*END_ASYNC/gi,
+        'Nested within the hash function should be the compare function comparing myPlaintextPassword to hash'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -72,5 +80,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

@@ -5,41 +5,47 @@ challengeType: 6
 forumTopicId: 17563
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.
+
 When you disable a button, it will become grayed-out and can no longer be clicked.
-jQuery has a function called <code>.prop()</code> that allows you to adjust the properties of elements.
+
+jQuery has a function called `.prop()` that allows you to adjust the properties of elements.
+
 Here's how you would disable all buttons:
-<code>$("button").prop("disabled", true);</code>
-Disable only the <code>target1</code> button.
-</section>
 
-## Instructions
-<section id='instructions'>
+`$("button").prop("disabled", true);`
 
-</section>
+Disable only the `target1` button.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>target1</code> button should be disabled.
-    testString: assert($("#target1") && $("#target1").prop("disabled") && code.match(/["']disabled["'],( true|true)/g));
-  - text: No other buttons should be disabled.
-    testString: assert($("#target2") && !$("#target2").prop("disabled"));
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(!code.match(/disabled[^<]*>/g));
+Your `target1` button should be disabled.
 
+```js
+assert(
+  $('#target1') &&
+    $('#target1').prop('disabled') &&
+    code.match(/["']disabled["'],( true|true)/g)
+);
 ```
 
-</section>
+No other buttons should be disabled.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#target2') && !$('#target2').prop('disabled'));
+```
 
-<div id='html-seed'>
+You should only use jQuery to add these classes to the element.
+
+```js
+assert(!code.match(/disabled[^<]*>/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -74,14 +80,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -116,5 +115,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

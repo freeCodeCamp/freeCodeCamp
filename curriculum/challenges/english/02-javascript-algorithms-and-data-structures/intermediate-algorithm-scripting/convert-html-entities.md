@@ -5,44 +5,63 @@ challengeType: 5
 forumTopicId: 16007
 ---
 
-## Description
-<section id='description'>
-Convert the characters <code>&</code>, <code><</code>, <code>></code>, <code>"</code> (double quote), and <code>'</code> (apostrophe), in a string to their corresponding HTML entities.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Convert the characters `&`, `<`, `>`, `"` (double quote), and `'` (apostrophe), in a string to their corresponding HTML entities.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`convertHTML("Dolce & Gabbana")` should return `"Dolce &amp; Gabbana"`.
 
-```yml
-tests:
-  - text: <code>convertHTML("Dolce & Gabbana")</code> should return <code>"Dolce &amp;amp; Gabbana"</code>.
-    testString: assert.match(convertHTML("Dolce & Gabbana"), /Dolce &amp; Gabbana/);
-  - text: <code>convertHTML("Hamburgers < Pizza < Tacos")</code> should return <code>"Hamburgers &amp;lt; Pizza &amp;lt; Tacos"</code>.
-    testString: assert.match(convertHTML("Hamburgers < Pizza < Tacos"), /Hamburgers &lt; Pizza &lt; Tacos/);
-  - text: <code>convertHTML("Sixty > twelve")</code> should return <code>"Sixty &amp;gt; twelve"</code>.
-    testString: assert.match(convertHTML("Sixty > twelve"), /Sixty &gt; twelve/);
-  - text: <code>convertHTML(&apos;Stuff in "quotation marks"&apos;)</code> should return <code>"Stuff in &amp;quot;quotation marks&amp;quot;"</code>.
-    testString: assert.match(convertHTML('Stuff in "quotation marks"'), /Stuff in &quot;quotation marks&quot;/);
-  - text: <code>convertHTML("Schindler&apos;s List")</code> should return <code>"Schindler&amp;apos;s List"</code>.
-    testString: assert.match(convertHTML("Schindler's List"), /Schindler&apos;s List/);
-  - text: <code>convertHTML("<>")</code> should return <code>"&amp;lt;&amp;gt;"</code>.
-    testString: assert.match(convertHTML('<>'), /&lt;&gt;/);
-  - text: <code>convertHTML("abc")</code> should return <code>"abc"</code>.
-    testString: assert.strictEqual(convertHTML('abc'), 'abc');
-
+```js
+assert.match(convertHTML('Dolce & Gabbana'), /Dolce &amp; Gabbana/);
 ```
 
-</section>
+`convertHTML("Hamburgers < Pizza < Tacos")` should return `"Hamburgers &lt; Pizza &lt; Tacos"`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.match(
+  convertHTML('Hamburgers < Pizza < Tacos'),
+  /Hamburgers &lt; Pizza &lt; Tacos/
+);
+```
 
-<div id='js-seed'>
+`convertHTML("Sixty > twelve")` should return `"Sixty &gt; twelve"`.
+
+```js
+assert.match(convertHTML('Sixty > twelve'), /Sixty &gt; twelve/);
+```
+
+`convertHTML('Stuff in "quotation marks"')` should return `"Stuff in &quot;quotation marks&quot;"`.
+
+```js
+assert.match(
+  convertHTML('Stuff in "quotation marks"'),
+  /Stuff in &quot;quotation marks&quot;/
+);
+```
+
+`convertHTML("Schindler's List")` should return `"Schindler&apos;s List"`.
+
+```js
+assert.match(convertHTML("Schindler's List"), /Schindler&apos;s List/);
+```
+
+`convertHTML("<>")` should return `"&lt;&gt;"`.
+
+```js
+assert.match(convertHTML('<>'), /&lt;&gt;/);
+```
+
+`convertHTML("abc")` should return `"abc"`.
+
+```js
+assert.strictEqual(convertHTML('abc'), 'abc');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function convertHTML(str) {
@@ -52,15 +71,7 @@ function convertHTML(str) {
 convertHTML("Dolce & Gabbana");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var MAP = { '&': '&amp;',
@@ -75,5 +86,3 @@ function convertHTML(str) {
   });
 }
 ```
-
-</section>

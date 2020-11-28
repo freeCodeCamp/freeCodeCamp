@@ -4,32 +4,33 @@ title: Part 27
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 After the ordered list, add another `figure` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure>/g).length === 2 );
-  - text: There should be a `figure` element right above the second `section` element's closing tag.
-    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
-
+```js
+assert(document.querySelectorAll('figure').length === 2);
 ```
 
-</section>
+Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/<\/figure>/g).length === 2);
+```
+
+There should be a `figure` element right above the second `section` element's closing tag.
+
+```js
+assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -55,18 +56,16 @@ tests:
           <figcaption>Cats <em>love</em> lasagna.</figcaption>  
         </figure>
         <h3>Top 3 things cats hate:</h3>
-        --fcc-editable-region--
+--fcc-editable-region--
         <ol>
           <li>flea treatment</li>
           <li>thunder</li>
           <li>other cats</li>
         </ol>
-        --fcc-editable-region--
+--fcc-editable-region--
       </section>
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

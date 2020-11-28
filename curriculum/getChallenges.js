@@ -2,6 +2,7 @@ const path = require('path');
 const { findIndex, reduce, toString } = require('lodash');
 const readDirP = require('readdirp-walk');
 const { parseMarkdown } = require('../tools/challenge-md-parser');
+const { parseMD } = require('../tools/challenge-md-parser/mdx');
 const fs = require('fs');
 const util = require('util');
 /* eslint-disable max-len */
@@ -198,9 +199,15 @@ async function buildCurriculum(file, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function parseTranslation(engPath, transPath, dict, lang) {
-  const engChal = await parseMarkdown(engPath);
-  const translatedChal = await parseMarkdown(transPath);
+async function parseTranslation(
+  engPath,
+  transPath,
+  dict,
+  lang,
+  parse = parseMD
+) {
+  const engChal = await parse(engPath);
+  const translatedChal = await parse(transPath);
 
   // challengeType 11 is for video challenges, which have no seeds, so we skip
   // them.
@@ -241,14 +248,29 @@ ${getFullPath('english')}
     // while the auditing is ongoing, we default to English for un-audited certs
     // once that's complete, we can revert to using isEnglishChallenge(fullPath)
     const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
-    const challenge = await (useEnglish
-      ? parseMarkdown(getFullPath('english'))
-      : parseTranslation(
-          getFullPath('english'),
-          getFullPath(lang),
-          COMMENT_TRANSLATIONS,
-          lang
-        ));
+    const isCert = path.extname(filePath) === 'markdown';
+    let challenge;
+
+    if (isCert) {
+      challenge = await (useEnglish
+        ? parseMarkdown(getFullPath('english'))
+        : parseTranslation(
+            getFullPath('english'),
+            getFullPath(lang),
+            COMMENT_TRANSLATIONS,
+            lang,
+            parseMarkdown
+          ));
+    } else {
+      challenge = await (useEnglish
+        ? parseMD(getFullPath('english'))
+        : parseTranslation(
+            getFullPath('english'),
+            getFullPath(lang),
+            COMMENT_TRANSLATIONS,
+            lang
+          ));
+    }
     const challengeOrder = findIndex(
       meta.challengeOrder,
       ([id]) => id === challenge.id

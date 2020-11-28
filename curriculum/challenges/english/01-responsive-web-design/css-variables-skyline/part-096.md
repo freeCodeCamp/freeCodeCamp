@@ -4,31 +4,24 @@ title: Part 96
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Only three more building to go. Nest two new `div` elements within the `fb4` element and give them the classes of `fb4a` and `fb4b`, in that order. Remember that you sort of flipped the location of `fb4` and `fb5`, so it's the rightmost purple building you are working on now.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb4 = $(".fb4").children("div"); assert(fb4.length === 2 && fb4[0] === $("div.fb4a")[0] && fb4[1] === $("div.fb4b")[0]);
-
+```js
+const fb4 = $('.fb4').children('div');
+assert(
+  fb4.length === 2 && fb4[0] === $('div.fb4a')[0] && fb4[1] === $('div.fb4b')[0]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -351,12 +344,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -681,5 +669,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

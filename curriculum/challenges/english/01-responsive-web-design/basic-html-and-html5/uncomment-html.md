@@ -6,40 +6,47 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cBmG9T7'
 forumTopicId: 18329
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Commenting is a way that you can leave comments for other developers within your code without affecting the resulting output that is displayed to the end user.
+
 Commenting is also a convenient way to make code inactive without having to delete it entirely.
-Comments in HTML start with <code>&#60;!--</code> and end with a <code>--&#62;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.
-</section>
+Comments in HTML start with `<!--` and end with a `-->`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your <code>h1</code> element should be visible on the page by uncommenting it.
-    testString: assert($("h1").length > 0);
-  - text: Your <code>h2</code> element should be visible on the page by uncommenting it.
-    testString: assert($("h2").length > 0);
-  - text: Your <code>p</code> element should be visible on the page by uncommenting it.
-    testString: assert($("p").length > 0);
-  - text: No trailing comment tags should be visible on the page (i.e. <code>--></code>).
-    testString: assert(!$('*:contains("-->")')[1]);
+Uncomment your `h1`, `h2` and `p` elements.
 
+# --hints--
+
+Your `h1` element should be visible on the page by uncommenting it.
+
+```js
+assert($('h1').length > 0);
 ```
 
-</section>
+Your `h2` element should be visible on the page by uncommenting it.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').length > 0);
+```
 
-<div id='html-seed'>
+Your `p` element should be visible on the page by uncommenting it.
+
+```js
+assert($('p').length > 0);
+```
+
+No trailing comment tags should be visible on the page (i.e. `-->`).
+
+```js
+assert(!$('*:contains("-->")')[1]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <!--
@@ -51,14 +58,7 @@ tests:
 -->
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h1>Hello World</h1>
@@ -67,5 +67,3 @@ tests:
 
 <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```
-
-</section>

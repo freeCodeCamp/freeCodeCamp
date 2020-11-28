@@ -5,58 +5,42 @@ challengeType: 1
 forumTopicId: 301624
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 Since you already know what a binary search tree is, this challenge will establish how it is you can tell that a tree is a binary search tree or not.
+
 The main distinction of a binary search tree is that the nodes are ordered in an organized fashion. Nodes have at most 2 child nodes (placed to the right and/or left) based on if the child node's value is greater than or equal to (right) or less than (left) the parent node.
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
-In this challenge, you will create a utility for your tree. Write a JavaScript method <code>isBinarySearchTree</code> which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not. Use recursion whenever possible.
-</section>
+In this challenge, you will create a utility for your tree. Write a JavaScript method `isBinarySearchTree` which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not. Use recursion whenever possible.
 
-## Tests
+# --hints--
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.push(1); test.push(5); test.push(3); test.push(2); test.push(4); return isBinarySearchTree(test) == true})());
-```
-
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+Your Binary Search Tree should return true when checked with `isBinarySearchTree()`.
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-  this.root = null;
-}
-function isBinarySearchTree(tree) {
-  // Only change code below this line
-  
-  // Only change code above this line
-}
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    test.push(1);
+    test.push(5);
+    test.push(3);
+    test.push(2);
+    test.push(4);
+    return isBinarySearchTree(test) == true;
+  })()
+);
 ```
 
-</div>
+# --seed--
 
-### After Test
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 BinarySearchTree.prototype.push = function(val) {
@@ -90,13 +74,26 @@ BinarySearchTree.prototype.push = function(val) {
 };
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+}
+function isBinarySearchTree(tree) {
+  // Only change code below this line
+  
+  // Only change code above this line
+}
+```
 
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
@@ -136,5 +133,3 @@ function isBinarySearchTree(tree) {
   }
 };
 ```
-
-</section>

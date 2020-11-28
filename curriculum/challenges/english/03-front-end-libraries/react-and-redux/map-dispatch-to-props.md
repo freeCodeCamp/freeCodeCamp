@@ -5,10 +5,11 @@ challengeType: 6
 forumTopicId: 301432
 ---
 
-## Description
-<section id='description'>
-The <code>mapDispatchToProps()</code> function is used to provide specific action creators to your React components so they can dispatch actions against the Redux store. It's similar in structure to the <code>mapStateToProps()</code> function you wrote in the last challenge. It returns an object that maps dispatch actions to property names, which become component <code>props</code>. However, instead of returning a piece of <code>state</code>, each property returns a function that calls <code>dispatch</code> with an action creator and any relevant action data. You have access to this <code>dispatch</code> because it's passed in to <code>mapDispatchToProps()</code> as a parameter when you define the function, just like you passed <code>state</code> to <code>mapStateToProps()</code>. Behind the scenes, React Redux is using Redux's <code>store.dispatch()</code> to conduct these dispatches with <code>mapDispatchToProps()</code>. This is similar to how it uses <code>store.subscribe()</code> for components that are mapped to <code>state</code>.
-For example, you have a <code>loginUser()</code> action creator that takes a <code>username</code> as an action payload. The object returned from <code>mapDispatchToProps()</code> for this action creator would look something like:
+# --description--
+
+The `mapDispatchToProps()` function is used to provide specific action creators to your React components so they can dispatch actions against the Redux store. It's similar in structure to the `mapStateToProps()` function you wrote in the last challenge. It returns an object that maps dispatch actions to property names, which become component `props`. However, instead of returning a piece of `state`, each property returns a function that calls `dispatch` with an action creator and any relevant action data. You have access to this `dispatch` because it's passed in to `mapDispatchToProps()` as a parameter when you define the function, just like you passed `state` to `mapStateToProps()`. Behind the scenes, React Redux is using Redux's `store.dispatch()` to conduct these dispatches with `mapDispatchToProps()`. This is similar to how it uses `store.subscribe()` for components that are mapped to `state`.
+
+For example, you have a `loginUser()` action creator that takes a `username` as an action payload. The object returned from `mapDispatchToProps()` for this action creator would look something like:
 
 ```jsx
 {
@@ -18,35 +19,59 @@ For example, you have a <code>loginUser()</code> action creator that takes a <co
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-The code editor provides an action creator called <code>addMessage()</code>. Write the function <code>mapDispatchToProps()</code> that takes <code>dispatch</code> as an argument, then returns an object. The object should have a property <code>submitNewMessage</code> set to the dispatch function, which takes a parameter for the new message to add when it dispatches <code>addMessage()</code>.
-</section>
+The code editor provides an action creator called `addMessage()`. Write the function `mapDispatchToProps()` that takes `dispatch` as an argument, then returns an object. The object should have a property `submitNewMessage` set to the dispatch function, which takes a parameter for the new message to add when it dispatches `addMessage()`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.
-    testString: assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty('type') && addMessageTest.hasOwnProperty('message')); })());
-  - text: <code>mapDispatchToProps</code> should be a function.
-    testString: assert(typeof mapDispatchToProps === 'function');
-  - text: <code>mapDispatchToProps</code> should return an object.
-    testString: assert(typeof mapDispatchToProps() === 'object');
-  - text: Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.
-    testString: assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage('__TEST__MESSAGE__'); return (testAction.type === 'ADD' && testAction.message === '__TEST__MESSAGE__'); })());
+`addMessage` should return an object with keys `type` and `message`.
 
+```js
+assert(
+  (function () {
+    const addMessageTest = addMessage();
+    return (
+      addMessageTest.hasOwnProperty('type') &&
+      addMessageTest.hasOwnProperty('message')
+    );
+  })()
+);
 ```
 
-</section>
+`mapDispatchToProps` should be a function.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof mapDispatchToProps === 'function');
+```
 
-<div id='jsx-seed'>
+`mapDispatchToProps` should return an object.
+
+```js
+assert(typeof mapDispatchToProps() === 'object');
+```
+
+Dispatching `addMessage` with `submitNewMessage` from `mapDispatchToProps` should return a message to the dispatch function.
+
+```js
+assert(
+  (function () {
+    let testAction;
+    const dispatch = (fn) => {
+      testAction = fn;
+    };
+    let dispatchFn = mapDispatchToProps(dispatch);
+    dispatchFn.submitNewMessage('__TEST__MESSAGE__');
+    return (
+      testAction.type === 'ADD' && testAction.message === '__TEST__MESSAGE__'
+    );
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```jsx
 const addMessage = (message) => {
@@ -57,18 +82,9 @@ const addMessage = (message) => {
 };
 
 // Change code below this line
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 const addMessage = (message) => {
@@ -88,5 +104,3 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 ```
-
-</section>

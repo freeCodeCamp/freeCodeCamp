@@ -5,15 +5,21 @@ challengeType: 1
 forumTopicId: 18214
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its input arguments.
+
 This is only the beginning. As its name suggests, functional programming is centered around a theory of functions.
+
 It would make sense to be able to pass them as arguments to other functions, and return a function from another function. Functions are considered <dfn>first class objects</dfn> in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
-Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at <code>Array.prototype.map()</code>, or more simply <code>map</code>.
-The <code>map</code> method iterates over each item in an array and returns a new array containing the results of calling the callback function on each element.  It does this without mutating the original array.
-When the callback is used, it is passed three arguments.  The first argument is the current element being processed.  The second is the index of that element and the third is the array upon which the <code>map</code> method was called.
-See below for an example using the <code>map</code> method on the <code>users</code> array to return a new array containing only the names of the users as elements. For simplicity, the example only uses the first argument of the callback.
+
+Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at `Array.prototype.map()`, or more simply `map`.
+
+The `map` method iterates over each item in an array and returns a new array containing the results of calling the callback function on each element. It does this without mutating the original array.
+
+When the callback is used, it is passed three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `map` method was called.
+
+See below for an example using the `map` method on the `users` array to return a new array containing only the names of the users as elements. For simplicity, the example only uses the first argument of the callback.
 
 ```js
 const users = [
@@ -26,35 +32,47 @@ const names = users.map(user => user.name);
 console.log(names); // [ 'John', 'Amy', 'camperCat' ]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-The <code>watchList</code> array holds objects with information on several movies.  Use <code>map</code> on <code>watchList</code> to assign a new array of objects with only <code>title</code> and <code>rating</code> keys to the <code>ratings</code> variable. The code in the editor currently uses a <code>for</code> loop to do this, so you should replace the loop functionality with your <code>map</code> expression.
-</section>
+The `watchList` array holds objects with information on several movies. Use `map` on `watchList` to assign a new array of objects with only `title` and `rating` keys to the `ratings` variable. The code in the editor currently uses a `for` loop to do this, so you should replace the loop functionality with your `map` expression.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>watchList</code> variable should not change.
-    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron");
-  - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
-  - text: Your code should use the <code>map</code> method.
-    testString: assert(code.match(/\.map/g));
-  - text: <code>ratings</code> should equal <code>[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]</code>.
-    testString: assert.deepEqual(ratings, [{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]);
+The `watchList` variable should not change.
 
+```js
+assert(
+  watchList[0].Title === 'Inception' && watchList[4].Director == 'James Cameron'
+);
 ```
 
-</section>
+Your code should not use a `for` loop.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!__helpers.removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
+```
 
-<div id='js-seed'>
+Your code should use the `map` method.
+
+```js
+assert(code.match(/\.map/g));
+```
+
+`ratings` should equal `[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]`.
+
+```js
+assert.deepEqual(ratings, [
+  { title: 'Inception', rating: '8.8' },
+  { title: 'Interstellar', rating: '8.6' },
+  { title: 'The Dark Knight', rating: '9.0' },
+  { title: 'Batman Begins', rating: '8.3' },
+  { title: 'Avatar', rating: '7.9' }
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // The global variable
@@ -183,12 +201,7 @@ for(var i=0; i < watchList.length; i++){
 console.log(JSON.stringify(ratings));
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // The global variable
@@ -312,5 +325,3 @@ var ratings = watchList.map(function(movie) {
   }
 });
 ```
-
-</section>

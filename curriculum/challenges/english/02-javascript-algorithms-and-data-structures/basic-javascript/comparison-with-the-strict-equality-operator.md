@@ -6,47 +6,54 @@ videoUrl: 'https://scrimba.com/c/cy87atr'
 forumTopicId: 16790
 ---
 
-## Description
-<section id='description'>
-Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
+# --description--
+
+Strict equality (`===`) is the counterpart to the equality operator (`==`). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
+
 If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.
-<strong>Examples</strong>
+
+**Examples**
 
 ```js
 3 ===  3   // true
 3 === '3'  // false
 ```
 
-In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.
-</section>
+In the second example, `3` is a `Number` type and `'3'` is a `String` type.
 
-## Instructions
-<section id='instructions'>
-Use the strict equality operator in the <code>if</code> statement so the function will return "Equal" when <code>val</code> is strictly equal to <code>7</code>
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Use the strict equality operator in the `if` statement so the function will return "Equal" when `val` is strictly equal to `7`
 
-```yml
-tests:
-  - text: <code>testStrict(10)</code> should return "Not Equal"
-    testString: assert(testStrict(10) === "Not Equal");
-  - text: <code>testStrict(7)</code> should return "Equal"
-    testString: assert(testStrict(7) === "Equal");
-  - text: <code>testStrict("7")</code> should return "Not Equal"
-    testString: assert(testStrict("7") === "Not Equal");
-  - text: You should use the <code>===</code> operator
-    testString: assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);
+# --hints--
 
+`testStrict(10)` should return "Not Equal"
+
+```js
+assert(testStrict(10) === 'Not Equal');
 ```
 
-</section>
+`testStrict(7)` should return "Equal"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testStrict(7) === 'Equal');
+```
 
-<div id='js-seed'>
+`testStrict("7")` should return "Not Equal"
+
+```js
+assert(testStrict('7') === 'Not Equal');
+```
+
+You should use the `===` operator
+
+```js
+assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -60,15 +67,7 @@ function testStrict(val) {
 testStrict(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testStrict(val) {
@@ -78,5 +77,3 @@ function testStrict(val) {
   return "Not Equal";
 }
 ```
-
-</section>

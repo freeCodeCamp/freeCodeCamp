@@ -5,9 +5,7 @@ challengeType: 2
 forumTopicId: 301535
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 **C**RUD Part I - CREATE
 
@@ -27,11 +25,7 @@ const someFunc = function(done) {
 };
 ```
 
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Create a person schema called `personSchema` having this prototype:
 
@@ -43,40 +37,48 @@ age :  number
 favoriteFoods : array of strings (*)
 ```
 
-Use the Mongoose basic schema types. If you want you can also add more fields, use simple validators like required or unique, and set default values. See the <a href='http://mongoosejs.com/docs/guide.html'>Mongoose docs</a>.
+Use the Mongoose basic schema types. If you want you can also add more fields, use simple validators like required or unique, and set default values. See the [Mongoose docs](http://mongoosejs.com/docs/guide.html).
 
 Now, create a model called `Person` from the `personSchema`.
 
-</section>
+# --hints--
 
-## Tests
+Creating an instance from a mongoose schema should succeed
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: Creating an instance from a mongoose schema should succeed
-    testString: |
-      getUserInput => $.post(getUserInput('url') + '/_api/mongoose-model', {name: 'Mike', age: 28, favoriteFoods: ['pizza', 'cheese']}).then(data => {
-        assert.equal(data.name, 'Mike', '"model.name" is not what expected');
-        assert.equal(data.age, '28', '"model.age" is not what expected');
-        assert.isArray(data.favoriteFoods, '"model.favoriteFoods" is not an Array');
-        assert.include(data.favoriteFoods, 'pizza', '"model.favoriteFoods" does not include the expected items');
-        assert.include(data.favoriteFoods, 'cheese', '"model.favoriteFoods" does not include the expected items');
-        }, xhr => { throw new Error(xhr.responseText); })
+```js
+(getUserInput) =>
+  $.post(getUserInput('url') + '/_api/mongoose-model', {
+    name: 'Mike',
+    age: 28,
+    favoriteFoods: ['pizza', 'cheese']
+  }).then(
+    (data) => {
+      assert.equal(data.name, 'Mike', '"model.name" is not what expected');
+      assert.equal(data.age, '28', '"model.age" is not what expected');
+      assert.isArray(
+        data.favoriteFoods,
+        '"model.favoriteFoods" is not an Array'
+      );
+      assert.include(
+        data.favoriteFoods,
+        'pizza',
+        '"model.favoriteFoods" does not include the expected items'
+      );
+      assert.include(
+        data.favoriteFoods,
+        'cheese',
+        '"model.favoriteFoods" does not include the expected items'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -85,5 +87,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

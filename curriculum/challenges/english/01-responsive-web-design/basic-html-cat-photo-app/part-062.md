@@ -4,37 +4,41 @@ title: Part 62
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Nest a `p` element with the text `No Copyright - freeCodeCamp.org` within the `footer` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted the `footer` element or it is missing an opening tag or closing tag."
 
-```yml
-tests:
-  - text: You have either deleted the `footer` element or it is missing an opening tag or closing tag."
-    testString: assert( document.querySelector('footer') && code.match(/<\/footer>/) );
-  - text: Your `footer` element should have a `p` element. Make sure to added an opening tag and closing tag for the `p` element.
-    testString: assert( document.querySelector('footer > p') );
-  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: |
-      const pElemClosingTags = code.match(/<\/p\>/g);
-      assert( pElemClosingTags && pElemClosingTags.length === 2);
-  - text: "Your `p` element's text should be `No Copyright - freeCodeCamp.org`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags."
-    testString: |
-      const extraSpacesRemoved = $('footer > p')[0].innerText.replace(/\s+/g, ' ');
-      assert( extraSpacesRemoved.match(/No Copyright - freeCodeCamp\.org$/i) );
+```js
+assert(document.querySelector('footer') && code.match(/<\/footer>/));
 ```
 
-</section>
+Your `footer` element should have a `p` element. Make sure to added an opening tag and closing tag for the `p` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(document.querySelector('footer > p'));
+```
+
+Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+const pElemClosingTags = code.match(/<\/p\>/g);
+assert(pElemClosingTags && pElemClosingTags.length === 2);
+```
+
+Your `p` element's text should be `No Copyright - freeCodeCamp.org`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags.
+
+```js
+const extraSpacesRemoved = $('footer > p')[0].innerText.replace(/\s+/g, ' ');
+assert(extraSpacesRemoved.match(/No Copyright - freeCodeCamp\.org$/i));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -89,13 +93,11 @@ tests:
         </form>
       </section>
     </main>
-    --fcc-editable-region--
+--fcc-editable-region--
     <footer>
     </footer>
-    --fcc-editable-region--
+--fcc-editable-region--
   </body>
 </html>
 ```
 
-</div>
-</section>

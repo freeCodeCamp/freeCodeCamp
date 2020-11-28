@@ -1,54 +1,75 @@
 ---
-title: Iterated digits squaring
 id: 5a23c84252665b21eecc7ec1
+title: Iterated digits squaring
 challengeType: 5
 forumTopicId: 302291
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:
-<pre>
-15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
+
+<pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
 7 -> 49 -> 97 -> 130 -> 10 -> 1
 </pre>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>iteratedSquare</code> should be a function.
-    testString: assert(typeof iteratedSquare=='function');
-  - text: <code>iteratedSquare(4)</code> should return a number.
-    testString: assert(typeof iteratedSquare(4)=='number');
-  - text: <code>iteratedSquare(4)</code> should return <code>89</code>.
-    testString: assert.equal(iteratedSquare(4),89);
-  - text: <code>iteratedSquare(7)</code> should return <code>1</code>.
-    testString: assert.equal(iteratedSquare(7),1);
-  - text: <code>iteratedSquare(15)</code> should return <code>89</code>.
-    testString: assert.equal(iteratedSquare(15),89);
-  - text: <code>iteratedSquare(20)</code> should return <code>89</code>.
-    testString: assert.equal(iteratedSquare(20),89);
-  - text: <code>iteratedSquare(70)</code> should return <code>1</code>.
-    testString: assert.equal(iteratedSquare(70),1);
-  - text: <code>iteratedSquare(100)</code> should return <code>1</code>.
-    testString: assert.equal(iteratedSquare(100),1);
+`iteratedSquare` should be a function.
 
+```js
+assert(typeof iteratedSquare == 'function');
 ```
 
-</section>
+`iteratedSquare(4)` should return a number.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof iteratedSquare(4) == 'number');
+```
 
-<div id='js-seed'>
+`iteratedSquare(4)` should return `89`.
+
+```js
+assert.equal(iteratedSquare(4), 89);
+```
+
+`iteratedSquare(7)` should return `1`.
+
+```js
+assert.equal(iteratedSquare(7), 1);
+```
+
+`iteratedSquare(15)` should return `89`.
+
+```js
+assert.equal(iteratedSquare(15), 89);
+```
+
+`iteratedSquare(20)` should return `89`.
+
+```js
+assert.equal(iteratedSquare(20), 89);
+```
+
+`iteratedSquare(70)` should return `1`.
+
+```js
+assert.equal(iteratedSquare(70), 1);
+```
+
+`iteratedSquare(100)` should return `1`.
+
+```js
+assert.equal(iteratedSquare(100), 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function iteratedSquare(n) {
@@ -56,30 +77,19 @@ function iteratedSquare(n) {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function iteratedSquare(n) {
-	var total;
-	while (n != 89 && n != 1) {
-		total = 0;
-		while (n > 0) {
-			total += Math.pow(n % 10, 2);
-			n = Math.floor(n/10);
-		}
-		n = total;
-	}
-	return n;
+    var total;
+    while (n != 89 && n != 1) {
+        total = 0;
+        while (n > 0) {
+            total += Math.pow(n % 10, 2);
+            n = Math.floor(n/10);
+        }
+        n = total;
+    }
+    return n;
 }
-
 ```
-
-</section>

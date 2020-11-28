@@ -4,31 +4,34 @@ title: Part 16
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 It's that simple. Use the same variable as the `background-color` of the `bb1b`, `bb1c`, and `bb1d` classes to fill in the rest of the building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1bStyle = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0]; const bb1cStyle = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0]; const bb1dStyle = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(bb1bStyle) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(bb1cStyle) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(bb1dStyle));
-
+```js
+const bb1bStyle = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0];
+const bb1cStyle = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0];
+const bb1dStyle = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(
+    bb1bStyle
+  ) &&
+    /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(
+      bb1cStyle
+    ) &&
+    /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(
+      bb1dStyle
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -97,12 +100,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -173,5 +171,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

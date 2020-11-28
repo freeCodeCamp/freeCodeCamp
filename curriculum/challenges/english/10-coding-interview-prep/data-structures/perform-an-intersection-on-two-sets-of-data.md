@@ -5,34 +5,48 @@ challengeType: 1
 forumTopicId: 301709
 ---
 
-## Description
-<section id='description'>
-In this exercise we are going to perform an intersection on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>intersection</code>. An intersection of sets represents all values that are common to two or more sets. This method should take another <code>Set</code> as an argument and return the <code>intersection</code> of the two sets.
-For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the intersection of setA and setB is: <code>setA.intersection(setB) = ['a', 'b']</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+In this exercise we are going to perform an intersection on 2 sets of data. We will create a method on our `Set` data structure called `intersection`. An intersection of sets represents all values that are common to two or more sets. This method should take another `Set` as an argument and return the `intersection` of the two sets.
 
-</section>
+For example, if `setA = ['a','b','c']` and `setB = ['a','b','d','e']`, then the intersection of setA and setB is: `setA.intersection(setB) = ['a', 'b']`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>Set</code> class should have a <code>intersection</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.intersection === 'function')})());
-  - text: The proper collection should be returned.
-    testString: assert((function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')})());
+Your `Set` class should have a `intersection` method.
 
+```js
+assert(
+  (function () {
+    var test = new Set();
+    return typeof test.intersection === 'function';
+  })()
+);
 ```
 
-</section>
+The proper collection should be returned.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(
+  (function () {
+    var setA = new Set();
+    var setB = new Set();
+    setA.add('a');
+    setA.add('b');
+    setA.add('c');
+    setB.add('c');
+    setB.add('d');
+    var intersectionSetAB = setA.intersection(setB);
+    return (
+      intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c'
+    );
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 class Set {
@@ -91,12 +105,7 @@ class Set {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 class Set {
@@ -172,5 +181,3 @@ class Set {
   }
 }
 ```
-
-</section>

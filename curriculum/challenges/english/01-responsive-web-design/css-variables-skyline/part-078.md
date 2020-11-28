@@ -4,8 +4,7 @@ title: Part 78
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You can add multiple gradients to an element by separating them with a comma (`,`) like this:
 
@@ -19,27 +18,23 @@ gradient2(
 ```
 
 Add a `repeating-linear-gradient` to `fb1c` below the one that's there; use your `--building-color4` from `0%` to `10%` and `--window-color4` from `10%` and `90%`. This will fill in behind the gradient you added last.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*15%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*var\(\s*--window-color4\s*\)\s*10%\s*,\s*var\(\s*--window-color4\s*\)\s*90%\s*\)\s*(;|})/g.test(fb1c));
-
+```js
+const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*15%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*var\(\s*--window-color4\s*\)\s*10%\s*,\s*var\(\s*--window-color4\s*\)\s*90%\s*\)\s*(;|})/g.test(
+    fb1c
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -299,12 +294,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -569,5 +559,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

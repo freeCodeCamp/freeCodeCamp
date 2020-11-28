@@ -4,31 +4,23 @@ title: Part 86
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu.  This is due to the browser having some default top margin for the `h1` element.
+The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu. This is due to the browser having some default top margin for the `h1` element.
 
 Change the top margin of the `h1` element to `0` to remove all the top margin.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -92,10 +84,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -185,6 +173,3 @@ a:active {
 }
 ```
 
-</div>
-
-</section>

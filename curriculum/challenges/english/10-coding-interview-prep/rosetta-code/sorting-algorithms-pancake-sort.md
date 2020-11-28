@@ -5,54 +5,83 @@ challengeType: 5
 forumTopicId: 302315
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-Write a function to sort an array of integers (of any convenient size) into ascending order using <a href="https://en.wikipedia.org/wiki/Pancake sorting" target="_blank">Pancake sorting</a>. The function should return the sorted array.
+Write a function to sort an array of integers (of any convenient size) into ascending order using [Pancake sorting](<https://en.wikipedia.org/wiki/Pancake sorting>). The function should return the sorted array.
+
 In short, instead of individual elements being sorted, the only operation allowed is to "flip" one end of the list, like so:
-<pre>
-Before:
+
+<pre>Before:
 <b>6 7 8 9</b> 2 5 3 4 1<br>
 After:
 <b>9 8 7 6</b> 2 5 3 4 1
 </pre>
-Only one end of the list can be flipped; this should be the low end, but the high end is okay if it's easier to code or works better, but it <b>must</b> be the same end for the entire solution. (The end flipped can't be arbitrarily changed.)
-</section>
 
-## Instructions
+Only one end of the list can be flipped; this should be the low end, but the high end is okay if it's easier to code or works better, but it **must** be the same end for the entire solution. (The end flipped can't be arbitrarily changed.)
 
-<section id='instructions'>
+# --hints--
 
-</section>
+`pancakeSort` should be a function.
 
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>pancakeSort</code> should be a function.
-    testString: assert(typeof pancakeSort == 'function');
-  - text: <code>pancakeSort([25, 32, 12, 7, 20])</code> should return an array.
-    testString: assert(Array.isArray(pancakeSort([25, 32, 12, 7, 20])));
-  - text: <code>pancakeSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
-    testString: assert.deepEqual(pancakeSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
-  - text: <code>pancakeSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
-    testString: assert.deepEqual(pancakeSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
-  - text: <code>pancakeSort([43, 36, 20, 34, 24])</code> should return <code>[20, 24, 34, 36, 43]</code>.
-    testString: assert.deepEqual(pancakeSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
-  - text: <code>pancakeSort([12, 33, 26, 18, 1, 16, 38])</code> should return <code>[1, 12, 16, 18, 26, 33, 38]</code>.
-    testString: assert.deepEqual(pancakeSort([12, 33, 26, 18, 1, 16, 38]), [1, 12, 16, 18, 26, 33, 38]);
-  - text: <code>pancakeSort([3, 39, 48, 16, 1, 4, 29])</code> should return <code>[1, 3, 4, 16, 29, 39, 48]</code>.
-    testString: assert.deepEqual(pancakeSort([3, 39, 48, 16, 1, 4, 29]), [1, 3, 4, 16, 29, 39, 48]);
+```js
+assert(typeof pancakeSort == 'function');
 ```
 
-</section>
+`pancakeSort([25, 32, 12, 7, 20])` should return an array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(pancakeSort([25, 32, 12, 7, 20])));
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`pancakeSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+
+```js
+assert.deepEqual(pancakeSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
+```
+
+`pancakeSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+
+```js
+assert.deepEqual(pancakeSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
+```
+
+`pancakeSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+
+```js
+assert.deepEqual(pancakeSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
+```
+
+`pancakeSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+
+```js
+assert.deepEqual(pancakeSort([12, 33, 26, 18, 1, 16, 38]), [
+  1,
+  12,
+  16,
+  18,
+  26,
+  33,
+  38
+]);
+```
+
+`pancakeSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+
+```js
+assert.deepEqual(pancakeSort([3, 39, 48, 16, 1, 4, 29]), [
+  1,
+  3,
+  4,
+  16,
+  29,
+  39,
+  48
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function pancakeSort(arr) {
@@ -60,12 +89,7 @@ function pancakeSort(arr) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function pancakeSort(arr) {
@@ -97,5 +121,3 @@ function pancakeSort(arr) {
   return arr;
 }
 ```
-
-</section>

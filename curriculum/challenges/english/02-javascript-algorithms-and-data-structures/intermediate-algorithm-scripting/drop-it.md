@@ -5,43 +5,83 @@ challengeType: 5
 forumTopicId: 16010
 ---
 
-## Description
-<section id='description'>
-Given the array <code>arr</code>, iterate through and remove each element starting from the first element (the 0 index) until the function <code>func</code> returns <code>true</code> when the iterated element is passed through it.
-Then return the rest of the array once the condition is satisfied, otherwise, <code>arr</code> should be returned as an empty array.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Given the array `arr`, iterate through and remove each element starting from the first element (the 0 index) until the function `func` returns `true` when the iterated element is passed through it.
 
-</section>
+Then return the rest of the array once the condition is satisfied, otherwise, `arr` should be returned as an empty array.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>dropElements([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.
-    testString: assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}), [3, 4]);
-  - text: <code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code> should return <code>[1, 0, 1]</code>.
-    testString: assert.deepEqual(dropElements([0, 1, 0, 1], function(n) {return n === 1;}), [1, 0, 1]);
-  - text: <code>dropElements([1, 2, 3], function(n) {return n > 0;})</code> should return <code>[1, 2, 3]</code>.
-    testString: assert.deepEqual(dropElements([1, 2, 3], function(n) {return n > 0;}), [1, 2, 3]);
-  - text: <code>dropElements([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.
-    testString: assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n > 5;}), []);
-  - text: <code>dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.
-    testString: assert.deepEqual(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}), [7, 4]);
-  - text: <code>dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.
-    testString: assert.deepEqual(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}), [3, 9, 2]);
+`dropElements([1, 2, 3, 4], function(n) {return n >= 3;})` should return `[3, 4]`.
 
+```js
+assert.deepEqual(
+  dropElements([1, 2, 3, 4], function (n) {
+    return n >= 3;
+  }),
+  [3, 4]
+);
 ```
 
-</section>
+`dropElements([0, 1, 0, 1], function(n) {return n === 1;})` should return `[1, 0, 1]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(
+  dropElements([0, 1, 0, 1], function (n) {
+    return n === 1;
+  }),
+  [1, 0, 1]
+);
+```
 
-<div id='js-seed'>
+`dropElements([1, 2, 3], function(n) {return n > 0;})` should return `[1, 2, 3]`.
+
+```js
+assert.deepEqual(
+  dropElements([1, 2, 3], function (n) {
+    return n > 0;
+  }),
+  [1, 2, 3]
+);
+```
+
+`dropElements([1, 2, 3, 4], function(n) {return n > 5;})` should return `[]`.
+
+```js
+assert.deepEqual(
+  dropElements([1, 2, 3, 4], function (n) {
+    return n > 5;
+  }),
+  []
+);
+```
+
+`dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})` should return `[7, 4]`.
+
+```js
+assert.deepEqual(
+  dropElements([1, 2, 3, 7, 4], function (n) {
+    return n > 3;
+  }),
+  [7, 4]
+);
+```
+
+`dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})` should return `[3, 9, 2]`.
+
+```js
+assert.deepEqual(
+  dropElements([1, 2, 3, 9, 2], function (n) {
+    return n > 2;
+  }),
+  [3, 9, 2]
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function dropElements(arr, func) {
@@ -51,15 +91,7 @@ function dropElements(arr, func) {
 dropElements([1, 2, 3], function(n) {return n < 3; });
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function dropElements(arr, func) {
@@ -69,5 +101,3 @@ function dropElements(arr, func) {
   return arr;
 }
 ```
-
-</section>

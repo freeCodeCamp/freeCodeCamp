@@ -4,31 +4,23 @@ title: Part 75
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Focusing on the menu items and prices, there is a fairly large gap between each line.
 
 Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -93,10 +85,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -156,6 +144,3 @@ h1, h2 {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

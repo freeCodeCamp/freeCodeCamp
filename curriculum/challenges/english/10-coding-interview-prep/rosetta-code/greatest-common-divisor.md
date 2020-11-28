@@ -1,50 +1,67 @@
 ---
-title: Greatest common divisor
 id: 5a23c84252665b21eecc7e82
+title: Greatest common divisor
 challengeType: 5
 forumTopicId: 302277
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Write a function that returns the greatest common divisor of two integers.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`gcd` should be a function.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>gcd</code> should be a function.
-    testString: assert(typeof gcd=='function');
-  - text: <code>gcd(24,36)</code> should return a number.
-    testString: assert(typeof gcd(24,36)=='number');
-  - text: <code>gcd(24,36)</code> should return <code>12</code>.
-    testString: assert.equal(gcd(24,36),12);
-  - text: <code>gcd(30,48)</code> should return <code>6</code>.
-    testString: assert.equal(gcd(30,48),6);
-  - text: <code>gcd(10,15)</code> should return <code>5</code>.
-    testString: assert.equal(gcd(10,15),5);
-  - text: <code>gcd(100,25)</code> should return <code>25</code>.
-    testString: assert.equal(gcd(100,25),25);
-  - text: <code>gcd(13,250)</code> should return <code>1</code>.
-    testString: assert.equal(gcd(13,250),1);
-  - text: <code>gcd(1300,250)</code> should return <code>50</code>.
-    testString: assert.equal(gcd(1300,250),50);
-
+```js
+assert(typeof gcd == 'function');
 ```
 
-</section>
+`gcd(24,36)` should return a number.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof gcd(24, 36) == 'number');
+```
 
-<div id='js-seed'>
+`gcd(24,36)` should return `12`.
+
+```js
+assert.equal(gcd(24, 36), 12);
+```
+
+`gcd(30,48)` should return `6`.
+
+```js
+assert.equal(gcd(30, 48), 6);
+```
+
+`gcd(10,15)` should return `5`.
+
+```js
+assert.equal(gcd(10, 15), 5);
+```
+
+`gcd(100,25)` should return `25`.
+
+```js
+assert.equal(gcd(100, 25), 25);
+```
+
+`gcd(13,250)` should return `1`.
+
+```js
+assert.equal(gcd(13, 250), 1);
+```
+
+`gcd(1300,250)` should return `50`.
+
+```js
+assert.equal(gcd(1300, 250), 50);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function gcd(a, b) {
@@ -52,21 +69,10 @@ function gcd(a, b) {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function gcd(a, b) {
   return b==0 ? Math.abs(a):gcd(b, a % b);
 }
-
 ```
-
-</section>

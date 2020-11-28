@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301326
 ---
 
-## Description
-<section id='description'>
-In the following example, the <code>Bird</code> constructor defines two properties: <code>name</code> and <code>numLegs</code>:
+# --description--
+
+In the following example, the `Bird` constructor defines two properties: `name` and `numLegs`:
 
 ```js
 function Bird(name) {
@@ -19,9 +19,7 @@ let duck = new Bird("Donald");
 let canary = new Bird("Tweety");
 ```
 
-<code>name</code> and <code>numLegs</code> are called <code>own</code> properties, because they are defined directly on the instance object. That means that <code>duck</code> and <code>canary</code> each has its own separate copy of these properties.
-In fact every instance of <code>Bird</code> will have its own copy of these properties.
-The following code adds all of the <code>own</code> properties of <code>duck</code> to the array <code>ownProps</code>:
+`name` and `numLegs` are called `own` properties, because they are defined directly on the instance object. That means that `duck` and `canary` each has its own separate copy of these properties. In fact every instance of `Bird` will have its own copy of these properties. The following code adds all of the `own` properties of `duck` to the array `ownProps`:
 
 ```js
 let ownProps = [];
@@ -35,33 +33,37 @@ for (let property in duck) {
 console.log(ownProps); // prints [ "name", "numLegs" ]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add the <code>own</code> properties of <code>canary</code> to the array <code>ownProps</code>.
-</section>
+Add the `own` properties of `canary` to the array `ownProps`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>ownProps</code> should include the values <code>"numLegs"</code> and <code>"name"</code>.
-    testString: assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
-  - text: You should solve this challenge without using the built in method <code>Object.keys()</code>.
-    testString: assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
-  - text: You should solve this challenge without hardcoding the <code>ownProps</code> array.
-    testString: assert(!/\[\s*(?:'|")(?:name|numLegs)|(?:push|concat)\(\s*(?:'|")(?:name|numLegs)/.test(code));
+`ownProps` should include the values `"numLegs"` and `"name"`.
 
+```js
+assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
 ```
 
-</section>
+You should solve this challenge without using the built in method `Object.keys()`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
+```
 
-<div id='js-seed'>
+You should solve this challenge without hardcoding the `ownProps` array.
+
+```js
+assert(
+  !/\[\s*(?:'|")(?:name|numLegs)|(?:push|concat)\(\s*(?:'|")(?:name|numLegs)/.test(
+    code
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function Bird(name) {
@@ -72,20 +74,9 @@ function Bird(name) {
 let canary = new Bird("Tweety");
 let ownProps = [];
 // Only change code below this line
-
-
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function Bird(name) {
@@ -108,5 +99,3 @@ function getOwnProps (obj) {
 
 const ownProps = getOwnProps(canary);
 ```
-
-</section>

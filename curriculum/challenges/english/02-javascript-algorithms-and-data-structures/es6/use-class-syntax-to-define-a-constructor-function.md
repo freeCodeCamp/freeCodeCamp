@@ -5,11 +5,13 @@ challengeType: 1
 forumTopicId: 301212
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 ES6 provides a new syntax to create objects, using the <dfn>class</dfn> keyword.
-It should be noted that the <code>class</code> syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
-In ES5, we usually define a constructor function and use the <code>new</code> keyword to instantiate an object.
+
+It should be noted that the `class` syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
+
+In ES5, we usually define a constructor function and use the `new` keyword to instantiate an object.
 
 ```js
 var SpaceShuttle = function(targetPlanet){
@@ -18,7 +20,7 @@ var SpaceShuttle = function(targetPlanet){
 var zeus = new SpaceShuttle('Jupiter');
 ```
 
-The <code>class</code> syntax simply replaces the constructor function creation:
+The `class` syntax simply replaces the constructor function creation:
 
 ```js
 class SpaceShuttle {
@@ -29,40 +31,52 @@ class SpaceShuttle {
 const zeus = new SpaceShuttle('Jupiter');
 ```
 
-It should be noted that the <code>class</code> keyword declares a new function, to which a constructor is added. This constructor is invoked when <code>new</code> is called to create a new object.<br>
-<strong>Notes:</strong><br><ul>
-<li> UpperCamelCase should be used by convention for ES6 class names, as in <code>SpaceShuttle</code> used above.</li>
-<li> The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.</li></ul>
-</section>
+It should be noted that the `class` keyword declares a new function, to which a constructor is added. This constructor is invoked when `new` is called to create a new object.  
+**Notes:**  
 
-## Instructions
-<section id='instructions'>
-Use the <code>class</code> keyword and write a constructor to create the <code>Vegetable</code> class.
-The <code>Vegetable</code> class allows you to create a vegetable object with a property <code>name</code> that gets passed to the constructor.
-</section>
+-   UpperCamelCase should be used by convention for ES6 class names, as in `SpaceShuttle` used above.
+-   The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.
-    testString: assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function');
-  - text: <code>class</code> keyword should be used.
-    testString: assert(code.match(/class/g));
-  - text: <code>Vegetable</code> should be able to be instantiated.
-    testString: assert(() => {const a = new Vegetable("apple"); return typeof a === 'object';});
-  - text: <code>carrot.name</code> should return <code>carrot</code>.
-    testString: assert(carrot.name=='carrot');
+Use the `class` keyword and write a constructor to create the `Vegetable` class.
 
+The `Vegetable` class allows you to create a vegetable object with a property `name` that gets passed to the constructor.
+
+# --hints--
+
+`Vegetable` should be a `class` with a defined `constructor` method.
+
+```js
+assert(
+  typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function'
+);
 ```
 
-</section>
+`class` keyword should be used.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/class/g));
+```
 
-<div id='js-seed'>
+`Vegetable` should be able to be instantiated.
+
+```js
+assert(() => {
+  const a = new Vegetable('apple');
+  return typeof a === 'object';
+});
+```
+
+`carrot.name` should return `carrot`.
+
+```js
+assert(carrot.name == 'carrot');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Only change code below this line
@@ -73,14 +87,7 @@ const carrot = new Vegetable('carrot');
 console.log(carrot.name); // Should display 'carrot'
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 class Vegetable {
@@ -90,5 +97,3 @@ class Vegetable {
 }
 const carrot = new Vegetable('carrot');
 ```
-
-</section>

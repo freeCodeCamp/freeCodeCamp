@@ -5,47 +5,112 @@ challengeType: 5
 forumTopicId: 385279
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Loop over multiple arrays and create a new array whose $i^{th}$ element is the concatenation of $i^{th}$ element of each of the given.
+
 For this example, if you are given this array of arrays:
-<code>[ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]</code>
+
+`[ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]`
+
 the output should be:
-<code>["aA1","bB2","cC3"]</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+`["aA1","bB2","cC3"]`
+
+# --instructions--
+
 Write a function that takes an array of arrays as a parameter and returns an array of strings satisfying the given description.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-``` yml
-tests:
-  - text: <code>loopSimult</code> should be a function.
-    testString: assert(typeof loopSimult == 'function');
-  - text: <code>loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])</code> should return a array.
-    testString: assert(Array.isArray(loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])));
-  - text: <code>loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])</code> should return <code>["aA1", "bB2", "cC3"]</code>.
-    testString: assert.deepEqual(loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]]), ["aA1", "bB2", "cC3"]);
-  - text: <code>loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])</code> should return <code>["c47", "b57", "cC3"]</code>.
-    testString: assert.deepEqual(loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]]), ["c47", "b57", "cC3"]);
-  - text: <code>loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])</code> should return <code>["aA1", "bB2", "cC3", "dd4"]</code>.
-    testString: assert.deepEqual(loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]]), ["aA1", "bB2", "cC3", "dd4"]);
-  - text: <code>loopSimult([["a", "b"], ["A", "B"], [1, 2]])</code> should return <code>["aA1", "bB2"]</code>.
-    testString: assert.deepEqual(loopSimult([["a", "b"], ["A", "B"], [1, 2]]), ["aA1", "bB2"]);
-  - text: <code>loopSimult([["b", "c"], ["B", "C"], [2, 3]])</code> should return <code>["bB2", "cC3"]</code>.
-    testString: assert.deepEqual(loopSimult([["b", "c"], ["B", "C"], [2, 3]]), ["bB2", "cC3"]);
+`loopSimult` should be a function.
+
+```js
+assert(typeof loopSimult == 'function');
 ```
 
-</section>
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` should return a array.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  Array.isArray(
+    loopSimult([
+      ['a', 'b', 'c'],
+      ['A', 'B', 'C'],
+      [1, 2, 3]
+    ])
+  )
+);
+```
 
-<div id='js-seed'>
+`loopSimult([["a", "b", "c"], ["A", "B", "C"], [1, 2, 3]])` should return `["aA1", "bB2", "cC3"]`.
+
+```js
+assert.deepEqual(
+  loopSimult([
+    ['a', 'b', 'c'],
+    ['A', 'B', 'C'],
+    [1, 2, 3]
+  ]),
+  ['aA1', 'bB2', 'cC3']
+);
+```
+
+`loopSimult([["c", "b", "c"], ["4", "5", "C"], [7, 7, 3]])` should return `["c47", "b57", "cC3"]`.
+
+```js
+assert.deepEqual(
+  loopSimult([
+    ['c', 'b', 'c'],
+    ['4', '5', 'C'],
+    [7, 7, 3]
+  ]),
+  ['c47', 'b57', 'cC3']
+);
+```
+
+`loopSimult([["a", "b", "c", "d"], ["A", "B", "C", "d"], [1, 2, 3, 4]])` should return `["aA1", "bB2", "cC3", "dd4"]`.
+
+```js
+assert.deepEqual(
+  loopSimult([
+    ['a', 'b', 'c', 'd'],
+    ['A', 'B', 'C', 'd'],
+    [1, 2, 3, 4]
+  ]),
+  ['aA1', 'bB2', 'cC3', 'dd4']
+);
+```
+
+`loopSimult([["a", "b"], ["A", "B"], [1, 2]])` should return `["aA1", "bB2"]`.
+
+```js
+assert.deepEqual(
+  loopSimult([
+    ['a', 'b'],
+    ['A', 'B'],
+    [1, 2]
+  ]),
+  ['aA1', 'bB2']
+);
+```
+
+`loopSimult([["b", "c"], ["B", "C"], [2, 3]])` should return `["bB2", "cC3"]`.
+
+```js
+assert.deepEqual(
+  loopSimult([
+    ['b', 'c'],
+    ['B', 'C'],
+    [2, 3]
+  ]),
+  ['bB2', 'cC3']
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function loopSimult(A) {
@@ -53,12 +118,7 @@ function loopSimult(A) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function loopSimult(A) {
@@ -72,5 +132,3 @@ function loopSimult(A) {
     return res;
 }
 ```
-
-</section>

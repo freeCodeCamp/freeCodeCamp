@@ -4,29 +4,21 @@ title: Part 74
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -91,10 +83,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 --fcc-editable-region--
 body {
@@ -153,6 +141,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

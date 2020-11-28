@@ -1,14 +1,13 @@
 ---
 id: 5900f3a81000cf542c50feba
-challengeType: 5
 title: 'Problem 59: XOR decryption'
+challengeType: 5
 forumTopicId: 302170
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Each character on a computer is assigned a unique code and the preferred standard is ASCII (American Standard Code for Information Interchange). For example, uppercase A = 65, asterisk (*) = 42, and lowercase k = 107.
+Each character on a computer is assigned a unique code and the preferred standard is ASCII (American Standard Code for Information Interchange). For example, uppercase A = 65, asterisk (\*) = 42, and lowercase k = 107.
 
 A modern encryption method is to take a text file, convert the bytes to ASCII, then XOR each byte with a given value, taken from a secret key. The advantage with the XOR function is that using the same encryption key on the cipher text, restores the plain text; for example, 65 XOR 42 = 107, then 107 XOR 42 = 65.
 
@@ -18,31 +17,23 @@ Unfortunately, this method is impractical for most users, so the modified method
 
 Your task has been made easy, as the encryption key consists of three lower case characters. Using `cipher`, an array containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`XORDecryption(cipher)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>XORDecryption(cipher)</code> should return a number.
-    testString: assert(typeof XORDecryption(cipher) === 'number');
-  - text: <code>XORDecryption(cipher)</code> should return 129448.
-    testString: assert.strictEqual(XORDecryption(cipher), 129448);
-
+```js
+assert(typeof XORDecryption(cipher) === 'number');
 ```
 
-</section>
+`XORDecryption(cipher)` should return 129448.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(XORDecryption(cipher), 129448);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function XORDecryption(arr) {
@@ -59,17 +50,8 @@ const cipher = [
 XORDecryption(cipher);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

@@ -6,38 +6,44 @@ videoUrl: 'https://scrimba.com/c/cvmqEAd'
 forumTopicId: 18182
 ---
 
-## Description
-<section id='description'>
-You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.
-<code>"Alan Peter".length; // 10</code>
-For example, if we created a variable <code>var firstName = "Charles"</code>, we could find out how long the string <code>"Charles"</code> is by using the <code>firstName.length</code> property.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable and assign it to <code>lastNameLength</code>.
-</section>
+You can find the length of a `String` value by writing `.length` after the string variable or string literal.
 
-## Tests
-<section id='tests'>
+`"Alan Peter".length; // 10`
 
-```yml
-tests:
-  - text: 'You should not change the variable declarations in the <code>// Setup</code> section.'
-    testString: assert(code.match(/var lastNameLength = 0;/) && code.match(/var lastName = "Lovelace";/));   
-  - text: <code>lastNameLength</code> should be equal to eight.
-    testString: assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8); 
-  - text: 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.'
-    testString: assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
+For example, if we created a variable `var firstName = "Charles"`, we could find out how long the string `"Charles"` is by using the `firstName.length` property.
 
+# --instructions--
+
+Use the `.length` property to count the number of characters in the `lastName` variable and assign it to `lastNameLength`.
+
+# --hints--
+
+You should not change the variable declarations in the `// Setup` section.
+
+```js
+assert(
+  code.match(/var lastNameLength = 0;/) &&
+    code.match(/var lastName = "Lovelace";/)
+);
 ```
 
-</section>
+`lastNameLength` should be equal to eight.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8);
+```
 
-<div id='js-seed'>
+You should be getting the length of `lastName` by using `.length` like this: `lastName.length`.
+
+```js
+assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -47,22 +53,12 @@ var lastName = "Lovelace";
 // Only change code below this line
 
 lastNameLength = lastName;
-
-
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var lastNameLength = 0;
 var lastName = "Lovelace";
 lastNameLength = lastName.length;
 ```
-
-</section>

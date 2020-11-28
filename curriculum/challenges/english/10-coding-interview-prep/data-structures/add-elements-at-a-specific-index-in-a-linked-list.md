@@ -5,40 +5,60 @@ challengeType: 1
 forumTopicId: 301619
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Let's create a addAt(index,element) method that adds an element at a given index.
-Just like how we remove elements at a given index, we need to keep track of the currentIndex as we traverse the linked list. When the currentIndex matches the given index, we would need to reassign the previous node's next property to reference the new added node. And the new node should reference the next node in the currentIndex.
-Returning to the conga line example, a new person wants to join the line, but he wants to join in the middle. You are in the middle of the line, so you take your hands off of the person ahead of you. The new person walks over and puts his hands on the person you once had hands on, and you now have your hands on the new person.
-</section>
+Let's create a addAt(index,element) method that adds an element at a given index. Just like how we remove elements at a given index, we need to keep track of the currentIndex as we traverse the linked list. When the currentIndex matches the given index, we would need to reassign the previous node's next property to reference the new added node. And the new node should reference the next node in the currentIndex. Returning to the conga line example, a new person wants to join the line, but he wants to join in the middle. You are in the middle of the line, so you take your hands off of the person ahead of you. The new person walks over and puts his hands on the person you once had hands on, and you now have your hands on the new person.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
-Create an <code>addAt(index,element)</code> method that adds an element at a given index. Return false if an element could not be added.
-<strong>Note:</strong> Remember to check if the given index is a negative or is longer than the length of the linked list.
-</section>
+Create an `addAt(index,element)` method that adds an element at a given index. Return false if an element could not be added. **Note:** Remember to check if the given index is a negative or is longer than the length of the linked list.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.head().element === 'cat'}()));
-  - text: Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.size() === 3}()));
-  - text: Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return (test.addAt(4,'cat') === false); }()));
+Your `addAt` method should reassign `head` to the new node when the given index is 0.
+
+```js
+assert(
+  (function () {
+    var test = new LinkedList();
+    test.add('cat');
+    test.add('dog');
+    test.addAt(0, 'cat');
+    return test.head().element === 'cat';
+  })()
+);
 ```
 
-</section>
+Your `addAt` method should increase the length of the linked list by one for each new node added to the linked list.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    var test = new LinkedList();
+    test.add('cat');
+    test.add('dog');
+    test.addAt(0, 'cat');
+    return test.size() === 3;
+  })()
+);
+```
 
-<div id='js-seed'>
+Your `addAt` method should return `false` if a node was unable to be added.
+
+```js
+assert(
+  (function () {
+    var test = new LinkedList();
+    test.add('cat');
+    test.add('dog');
+    return test.addAt(4, 'cat') === false;
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function LinkedList() {
@@ -80,11 +100,7 @@ function LinkedList() {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function LinkedList() {
@@ -141,8 +157,4 @@ function LinkedList() {
     length++;
   }
 }
-
-
 ```
-
-</section>

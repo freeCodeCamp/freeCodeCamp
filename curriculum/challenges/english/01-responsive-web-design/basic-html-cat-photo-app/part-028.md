@@ -4,40 +4,59 @@ title: Part 28
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Inside the `figure` element you just added, nest an `img` element with a `src` attribute set to `https://bit.ly/fcc-cats`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your second `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: 'Your second `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your second `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure>/g).length === 2 );
-  - text: There should be a second `figure` element right above the second `section` element's closing tag. You have them in the wrong order.
-    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
-  - text: You should have a third `img` element nested in the `figure` element.
-    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
-  - text: The third image should have an `src` attribute set to `https://bit.ly/fcc-cats`.
-    testString: |
-      const catsImg = document.querySelectorAll('figure > img')[1];
-      assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
-  - text: Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<img\s+.+\s+src\s*=\s*https:\/\/bit\.ly\/fcc-cats/.test(code) );
-
+```js
+assert(document.querySelectorAll('figure').length === 2);
 ```
 
-</section>
+Your second `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/<\/figure>/g).length === 2);
+```
+
+There should be a second `figure` element right above the second `section` element's closing tag. You have them in the wrong order.
+
+```js
+assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
+```
+
+You should have a third `img` element nested in the `figure` element.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+assert(
+  catsImg &&
+    catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats'
+);
+```
+
+The third image should have an `src` attribute set to `https://bit.ly/fcc-cats`.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+assert(
+  catsImg &&
+    catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats'
+);
+```
+
+Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+
+```js
+assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/bit\.ly\/fcc-cats/.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -68,15 +87,13 @@ tests:
           <li>thunder</li>
           <li>other cats</li>
         </ol>
-        --fcc-editable-region--
+--fcc-editable-region--
         <figure>
         </figure>
-        --fcc-editable-region--
+--fcc-editable-region--
       </section>
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

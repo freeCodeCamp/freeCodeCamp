@@ -5,36 +5,66 @@ challengeType: 6
 forumTopicId: 301447
 ---
 
-## Description
-<section id='description'>
-Time to practice removing items from an array. The spread operator can be used here as well. Other useful JavaScript methods include <code>slice()</code> and <code>concat()</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Time to practice removing items from an array. The spread operator can be used here as well. Other useful JavaScript methods include `slice()` and `concat()`.
+
+# --instructions--
+
 The reducer and action creator were modified to remove an item from an array based on the index of the item. Finish writing the reducer so a new state array is returned with the item at the specific index removed.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The Redux store should exist and initialize with a state equal to <code>[0,1,2,3,4,5]</code>
-    testString: assert((function() { const initialState = store.getState(); return (Array.isArray(initialState) === true && DeepEqual(initialState, [0, 1, 2, 3, 4, 5])); })());
-  - text: <code>removeItem</code> and <code>immutableReducer</code> both should be functions.
-    testString: assert(typeof removeItem === 'function' && typeof immutableReducer === 'function');
-  - text: Dispatching the <code>removeItem</code> action creator should remove items from the state and should NOT mutate state.
-    testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(removeItem(3)); const state_1 = store.getState(); store.dispatch(removeItem(2)); const state_2 = store.getState(); store.dispatch(removeItem(0)); store.dispatch(removeItem(0)); store.dispatch(removeItem(0)); const state_3 = store.getState(); return isFrozen && DeepEqual(state_1, [0, 1, 2, 4, 5]) && DeepEqual(state_2, [0, 1, 4, 5]) && DeepEqual(state_3, [5]); })());
+The Redux store should exist and initialize with a state equal to `[0,1,2,3,4,5]`
 
+```js
+assert(
+  (function () {
+    const initialState = store.getState();
+    return (
+      Array.isArray(initialState) === true &&
+      DeepEqual(initialState, [0, 1, 2, 3, 4, 5])
+    );
+  })()
+);
 ```
 
-</section>
+`removeItem` and `immutableReducer` both should be functions.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  typeof removeItem === 'function' && typeof immutableReducer === 'function'
+);
+```
 
-<div id='js-seed'>
+Dispatching the `removeItem` action creator should remove items from the state and should NOT mutate state.
+
+```js
+assert(
+  (function () {
+    const initialState = store.getState();
+    const isFrozen = DeepFreeze(initialState);
+    store.dispatch(removeItem(3));
+    const state_1 = store.getState();
+    store.dispatch(removeItem(2));
+    const state_2 = store.getState();
+    store.dispatch(removeItem(0));
+    store.dispatch(removeItem(0));
+    store.dispatch(removeItem(0));
+    const state_3 = store.getState();
+    return (
+      isFrozen &&
+      DeepEqual(state_1, [0, 1, 2, 4, 5]) &&
+      DeepEqual(state_2, [0, 1, 4, 5]) &&
+      DeepEqual(state_3, [5])
+    );
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 const immutableReducer = (state = [0,1,2,3,4,5], action) => {
@@ -57,15 +87,7 @@ const removeItem = (index) => {
 const store = Redux.createStore(immutableReducer);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const immutableReducer = (state = [0,1,2,3,4,5], action) => {
@@ -89,5 +111,3 @@ const removeItem = (index) => {
 
 const store = Redux.createStore(immutableReducer);
 ```
-
-</section>

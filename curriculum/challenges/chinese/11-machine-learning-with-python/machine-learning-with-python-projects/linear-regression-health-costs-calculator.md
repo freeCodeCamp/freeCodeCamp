@@ -9,7 +9,7 @@ In this challenge, you will predict healthcare costs using a regression algorith
 
 You are given a dataset that contains information about different people including their healthcare costs. Use the data to predict healthcare costs based on new data.
 
-You can access <a href='https://colab.research.google.com/drive/1o8sTSCMa8Tnmcqhp_2BKKJEaHFoFmRzI?usp=sharing' target='_blank'>the full project instructions and starter code on Google Colaboratory</a>.
+You can access <a href='https://colab.research.google.com/github/freeCodeCamp/boilerplate-linear-regression-health-costs-calculator/blob/master/fcc_predict_health_costs_with_regression.ipynb' target='_blank'>the full project instructions and starter code on Google Colaboratory</a>.
 
 After going to that link, create a copy of the notebook either in your own account or locally. Once you complete the project and it passes the test (included at that link), submit your project link below. If you are submitting a Google Colaboratory link, make sure to turn on link sharing for "anyone with the link."
 

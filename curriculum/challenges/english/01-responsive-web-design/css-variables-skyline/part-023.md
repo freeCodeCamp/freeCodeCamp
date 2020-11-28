@@ -4,31 +4,26 @@ title: Part 23
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Hmm, I'm not sure why that didn't work. You can add a fallback value to a variable by putting it as the second value of where you use the variable like this: `var(--variable-name, fallback-value)`. The property will use the fallback value when there's a problem with the variable. Add a fallback value of `green` to the `background-color` of `bb2`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2style = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--building-color2\s*,\s*green\s*\)\s*(;|\s*})/g.test(bb2style));
-
+```js
+const bb2style = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background-color\s*:\s*var\(\s*--building-color2\s*,\s*green\s*\)\s*(;|\s*})/g.test(
+    bb2style
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -128,12 +123,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -232,5 +222,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

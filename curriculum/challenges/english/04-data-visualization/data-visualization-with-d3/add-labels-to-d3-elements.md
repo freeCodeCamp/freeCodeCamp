@@ -5,51 +5,80 @@ challengeType: 6
 forumTopicId: 301476
 ---
 
-## Description
-<section id='description'>
-D3 lets you label a graph element, such as a bar, using the SVG <code>text</code> element.
-Like the <code>rect</code> element, a <code>text</code> element needs to have <code>x</code> and <code>y</code> attributes, to place it on the SVG canvas. It also needs to access the data to display those values.
+# --description--
+
+D3 lets you label a graph element, such as a bar, using the SVG `text` element.
+
+Like the `rect` element, a `text` element needs to have `x` and `y` attributes, to place it on the SVG canvas. It also needs to access the data to display those values.
+
 D3 gives you a high level of control over how you label your bars.
-</section>
 
-## Instructions
-<section id='instructions'>
-The code in the editor already binds the data to each new <code>text</code> element. First, append <code>text</code> nodes to the <code>svg</code>. Next, add attributes for the <code>x</code> and <code>y</code> coordinates. They should be calculated the same way as the <code>rect</code> ones, except the <code>y</code> value for the <code>text</code> should make the label sit 3 units higher than the bar. Finally, use the D3 <code>text()</code> method to set the label equal to the data point value.
-<strong>Note</strong><br>For the label to sit higher than the bar, decide if the <code>y</code> value for the <code>text</code> should be 3 greater or 3 less than the <code>y</code> value for the bar.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+The code in the editor already binds the data to each new `text` element. First, append `text` nodes to the `svg`. Next, add attributes for the `x` and `y` coordinates. They should be calculated the same way as the `rect` ones, except the `y` value for the `text` should make the label sit 3 units higher than the bar. Finally, use the D3 `text()` method to set the label equal to the data point value.
 
-```yml
-tests:
-  - text: The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.
-    testString: assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61');
-  - text: The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.
-    testString: assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4');
-  - text: The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.
-    testString: assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31');
-  - text: The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.
-    testString: assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46');
-  - text: The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.
-    testString: assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22');
-  - text: The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.
-    testString: assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43');
-  - text: The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.
-    testString: assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10');
-  - text: The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.
-    testString: assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55');
-  - text: The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.
-    testString: assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70');
+**Note**  
+For the label to sit higher than the bar, decide if the `y` value for the `text` should be 3 greater or 3 less than the `y` value for the bar.
 
+# --hints--
+
+The first `text` element should have a label of 12 and a `y` value of 61.
+
+```js
+assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61');
 ```
 
-</section>
+The second `text` element should have a label of 31 and a `y` value of 4.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4');
+```
 
-<div id='html-seed'>
+The third `text` element should have a label of 22 and a `y` value of 31.
+
+```js
+assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31');
+```
+
+The fourth `text` element should have a label of 17 and a `y` value of 46.
+
+```js
+assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46');
+```
+
+The fifth `text` element should have a label of 25 and a `y` value of 22.
+
+```js
+assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22');
+```
+
+The sixth `text` element should have a label of 18 and a `y` value of 43.
+
+```js
+assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43');
+```
+
+The seventh `text` element should have a label of 29 and a `y` value of 10.
+
+```js
+assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10');
+```
+
+The eighth `text` element should have a label of 14 and a `y` value of 55.
+
+```js
+assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55');
+```
+
+The ninth `text` element should have a label of 9 and a `y` value of 70.
+
+```js
+assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -87,14 +116,7 @@ tests:
 <body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -128,7 +150,4 @@ tests:
        .text((d) => d)
   </script>
 <body>
-
 ```
-
-</section>

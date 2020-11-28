@@ -5,44 +5,57 @@ challengeType: 0
 forumTopicId: 17565
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.
+
 Don't worry - there will be plenty of time to customize our CSS later.
-Delete the <code>.red-text</code>, <code>p</code>, and <code>.smaller-image</code> CSS declarations from your <code>style</code> element so that the only declarations left in your <code>style</code> element are <code>h2</code> and <code>thick-green-border</code>.
-Then delete the <code>p</code> element that contains a dead link. Then remove the <code>red-text</code> class from your <code>h2</code> element and replace it with the <code>text-primary</code> Bootstrap class.
-Finally, remove the "smaller-image" class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class.
-</section>
 
-## Instructions
-<section id='instructions'>
+Delete the `.red-text`, `p`, and `.smaller-image` CSS declarations from your `style` element so that the only declarations left in your `style` element are `h2` and `thick-green-border`.
 
-</section>
+Then delete the `p` element that contains a dead link. Then remove the `red-text` class from your `h2` element and replace it with the `text-primary` Bootstrap class.
 
-## Tests
-<section id='tests'>
+Finally, remove the "smaller-image" class from your first `img` element and replace it with the `img-responsive` class.
 
-```yml
-tests:
-  - text: Your h2 element should no longer have the class <code>red-text</code>.
-    testString: assert(!$("h2").hasClass("red-text"));
-  - text: Your h2 element should now have the class <code>text-primary</code>.
-    testString: assert($("h2").hasClass("text-primary"));
-  - text: Your paragraph elements should no longer use the font <code>Monospace</code>.
-    testString: assert(!$("p").css("font-family").match(/monospace/i));
-  - text: The <code>smaller-image</code> class should be removed from your top image.
-    testString: assert(!$("img").hasClass("smaller-image"));
-  - text: You should add the <code>img-responsive</code> class to your top image.
-    testString: assert($(".img-responsive").length > 1);
+# --hints--
 
+Your h2 element should no longer have the class `red-text`.
+
+```js
+assert(!$('h2').hasClass('red-text'));
 ```
 
-</section>
+Your h2 element should now have the class `text-primary`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').hasClass('text-primary'));
+```
 
-<div id='html-seed'>
+Your paragraph elements should no longer use the font `Monospace`.
+
+```js
+assert(
+  !$('p')
+    .css('font-family')
+    .match(/monospace/i)
+);
+```
+
+The `smaller-image` class should be removed from your top image.
+
+```js
+assert(!$('img').hasClass('smaller-image'));
+```
+
+You should add the `img-responsive` class to your top image.
+
+```js
+assert($('.img-responsive').length > 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -115,14 +128,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -179,5 +185,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

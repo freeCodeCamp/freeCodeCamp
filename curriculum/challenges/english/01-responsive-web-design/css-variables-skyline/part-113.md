@@ -4,31 +4,26 @@ title: Part 113
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 At the top of the sky gradient color list, where you would put a direction for the gradient; add `closest-corner circle at 15% 15%,`. This will move the start of the gradient to `15%` from the top and left. It will make it end at the `closest-corner` and it will maintain a `circle` shape. These are some keywords built into gradients to describe how it behaves.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(sky));
-
+```js
+const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(
+    sky
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -413,12 +408,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -803,5 +793,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

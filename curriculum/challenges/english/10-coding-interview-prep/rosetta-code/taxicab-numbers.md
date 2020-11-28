@@ -1,74 +1,81 @@
 ---
-title: Taxicab numbers
 id: 594ecc0d9a8cf816e3340187
+title: Taxicab numbers
 challengeType: 5
 forumTopicId: 302337
 ---
 
-## Description
-<section id='description'>
-A &nbsp; <a href="https://en.wikipedia.org/wiki/Hardy–Ramanujan number" title="wp: Hardy–Ramanujan number" target="_blank">taxicab number</a> (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
-The first taxicab number is <code>1729</code>, which is:
-<span style="margin-left: 2em;">1<sup>3</sup> &nbsp; + &nbsp; 12<sup>3</sup> &nbsp; &nbsp; &nbsp; and</span>
-<span style="margin-left: 2em;">9<sup>3</sup> &nbsp; + &nbsp; 10<sup>3</sup>.</span>
+# --description--
+
+A [taxicab number](<https://en.wikipedia.org/wiki/Hardy–Ramanujan number> "wp: Hardy–Ramanujan number") (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
+
+The first taxicab number is `1729`, which is:
+
+1<sup>3</sup> + 12<sup>3</sup> and
+
+9<sup>3</sup> + 10<sup>3</sup>.
+
 Taxicab numbers are also known as:
+
 <ul>
   <li>taxi numbers</li>
   <li>taxi-cab numbers</li>
   <li>taxi cab numbers</li>
   <li>Hardy-Ramanujan numbers</li>
 </ul>
-</section>
 
-## Instructions
-<section id='instructions'>
-Write a function that returns the lowest <code>n</code> taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
-<strong>See also:</strong>
+# --instructions--
+
+Write a function that returns the lowest `n` taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
+
+**See also:**
+
 <ul>
-  <li><a href="https://oeis.org/A001235" target="_blank">A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
-  <li><a href="https://en.wikipedia.org/wiki/Taxicab_number" target="_blank">taxicab number</a> on Wikipedia.</li>
+  <li><a href='https://oeis.org/A001235' target='_blank'>A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
+  <li><a href='https://en.wikipedia.org/wiki/Taxicab_number' target='_blank'>taxicab number</a> on Wikipedia.</li>
 </ul>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>taxicabNumbers</code> should be a function.
-    testString: assert(typeof taxicabNumbers === 'function');
-  - text: <code>taxicabNumbers</code> should return an array.
-    testString: assert(typeof taxicabNumbers(2) === 'object');
-  - text: <code>taxicabNumbers</code> should return an array of numbers.
-    testString: assert(typeof taxicabNumbers(100)[0] === 'number');
-  - text: <code>taxicabNumbers(4)</code> should return [1729, 4104, 13832, 20683].
-    testString: assert.deepEqual(taxicabNumbers(4), res4);
-  - text: <code>taxicabNumbers(25)</code> should return [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597]
-    testString: assert.deepEqual(taxicabNumbers(25), res25);
-  - text: <code>taxicabNumbers(39)</code> resulting numbers from 20 - 29 should be [314496,320264,327763,373464,402597,439101,443889,513000,513856].
-    testString: assert.deepEqual(taxicabNumbers(39).slice(20, 29), res39From20To29);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`taxicabNumbers` should be a function.
 
 ```js
-function taxicabNumbers(n) {
-
-  return true;
-}
+assert(typeof taxicabNumbers === 'function');
 ```
 
-</div>
+`taxicabNumbers` should return an array.
 
+```js
+assert(typeof taxicabNumbers(2) === 'object');
+```
 
-### After Test
-<div id='js-teardown'>
+`taxicabNumbers` should return an array of numbers.
+
+```js
+assert(typeof taxicabNumbers(100)[0] === 'number');
+```
+
+`taxicabNumbers(4)` should return [1729, 4104, 13832, 20683].
+
+```js
+assert.deepEqual(taxicabNumbers(4), res4);
+```
+
+`taxicabNumbers(25)` should return [1729, 4104, 13832, 20683, 32832, 39312, 40033, 46683, 64232, 65728, 110656, 110808, 134379, 149389, 165464, 171288, 195841, 216027, 216125, 262656, 314496, 320264, 327763, 373464, 402597]
+
+```js
+assert.deepEqual(taxicabNumbers(25), res25);
+```
+
+`taxicabNumbers(39)` resulting numbers from 20 - 29 should be [314496,320264,327763,373464,402597,439101,443889,513000,513856].
+
+```js
+assert.deepEqual(taxicabNumbers(39).slice(20, 29), res39From20To29);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const res4 = [1729, 4104, 13832, 20683];
@@ -81,13 +88,16 @@ const res25 = [
 const res39From20To29 = [314496, 320264, 327763, 373464, 402597, 439101, 443889, 513000, 513856];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function taxicabNumbers(n) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 function taxicabNumbers(nNumbers) {
@@ -126,7 +136,4 @@ function taxicabNumbers(nNumbers) {
   });
   return res.map(item => parseInt(item, 10));
 }
-
 ```
-
-</section>

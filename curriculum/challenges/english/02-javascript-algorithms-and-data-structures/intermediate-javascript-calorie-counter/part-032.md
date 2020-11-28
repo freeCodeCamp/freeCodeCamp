@@ -4,9 +4,7 @@ title: Part 32
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Notice how if `total` is less than `maxCalories`, `difference` is a negative number.
 
@@ -14,61 +12,21 @@ We want to show the absolute value of the difference so it displays "300" rather
 
 Wrap the `difference` in a `Math.abs()` function.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*Math\.abs\(\s*difference\s*\)\s*\)/.test(code));
+```js
+assert(
+  /const\s*resultText\s*=\s*document\.createTextNode\(\s*Math\.abs\(\s*difference\s*\)\s*\)/.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-
-    const output = document.getElementById('output');
-
-    const result = document.createElement('h3');
-    const resultText = document.createTextNode(difference);
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -128,24 +86,41 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode(difference);
+  }
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -171,5 +146,3 @@ tests:
   }
 </script>
 ```
-
-</section>

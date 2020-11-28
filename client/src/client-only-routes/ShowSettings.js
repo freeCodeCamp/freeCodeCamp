@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { apiLocation } from '../../config/env.json';
+import { apiLocation, homeLocation } from '../../config/env.json';
 import {
   signInLoadingSelector,
   userSelector,
@@ -167,7 +167,7 @@ export function ShowSettings(props) {
   }
 
   if (!isSignedIn) {
-    navigate(`${apiLocation}/signin?returnTo=settings`);
+    navigate(`${apiLocation}/signin?returnTo=${homeLocation}/settings`);
     return <Loader fullScreen={true} />;
   }
 

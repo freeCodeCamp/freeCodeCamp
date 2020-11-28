@@ -4,48 +4,58 @@ title: Part 33
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Inside the third `section` element add an `h2` tag with the text `Cat Form`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Unable to find the third `section` element. You may have accidentally deleted it or the opening tag or closing tag.
 
-```yml
-tests:
-  - text: "Unable to find the third `section` element. You may have accidentally deleted it or the opening tag or closing tag."
-    testString: |
-      assert(
-        document.querySelectorAll('section').length === 3 &&
-        code.match(/<\/section>/g).length === 3
-      );
-  - text: Your `h2` element should have an opening tag and closing tag. You may be missing one or both of the required tags.
-    testString: |
-      assert(
-        document.querySelectorAll('h2').length >= 3 &&
-        code.match(/<\/h2>/g).length >= 3
-      );
-  - text: You should only add one `h2` element. Please remove any extras.
-    testString: assert( document.querySelectorAll('h2').length === 3 );
-  - text: The new `h2` element should be located right above the third `section` element's closing tag.
-    testString: |
-      const thirdSection = document.querySelectorAll('section')[2];
-      assert( thirdSection.lastElementChild.nodeName === 'H2' );
-  - text: Your `h2` element's text should be `Cat Form`.
-    testString: |
-      const thirdSection = document.querySelectorAll('section')[2];
-      assert( thirdSection.querySelector('h2').innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat form' );
-
+```js
+assert(
+  document.querySelectorAll('section').length === 3 &&
+    code.match(/<\/section>/g).length === 3
+);
 ```
 
-</section>
+Your `h2` element should have an opening tag and closing tag. You may be missing one or both of the required tags.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(
+  document.querySelectorAll('h2').length >= 3 &&
+    code.match(/<\/h2>/g).length >= 3
+);
+```
+
+You should only add one `h2` element. Please remove any extras.
+
+```js
+assert(document.querySelectorAll('h2').length === 3);
+```
+
+The new `h2` element should be located right above the third `section` element's closing tag.
+
+```js
+const thirdSection = document.querySelectorAll('section')[2];
+assert(thirdSection.lastElementChild.nodeName === 'H2');
+```
+
+Your `h2` element's text should be `Cat Form`.
+
+```js
+const thirdSection = document.querySelectorAll('section')[2];
+assert(
+  thirdSection
+    .querySelector('h2')
+    .innerText.toLowerCase()
+    .replace(/\s+/g, ' ') === 'cat form'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -81,14 +91,12 @@ tests:
           <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
         </figure>
       </section>
-      --fcc-editable-region--
+--fcc-editable-region--
       <section>
       </section>
-      --fcc-editable-region--
+--fcc-editable-region--
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

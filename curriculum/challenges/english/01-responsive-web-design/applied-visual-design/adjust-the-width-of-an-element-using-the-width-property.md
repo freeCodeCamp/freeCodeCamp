@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/cvVLPtN'
 forumTopicId: 301039
 ---
 
-## Description
-<section id='description'>
-You can specify the width of an element using the <code>width</code> property in CSS. Values can be given in relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:
+# --description--
+
+You can specify the width of an element using the `width` property in CSS. Values can be given in relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:
 
 ```css
 img {
@@ -16,29 +16,26 @@ img {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add a <code>width</code> property to the entire card and set it to an absolute value of 245px. Use the <code>fullCard</code> class to select the element.
-</section>
+Add a `width` property to the entire card and set it to an absolute value of 245px. Use the `fullCard` class to select the element.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.
-    testString: const fullCard = code.match(/\.fullCard\s*{[\s\S]+?[^}]}/g); assert(fullCard && /width\s*:\s*245px\s*(;|})/gi.test(fullCard[0]) && $('.fullCard').css('maxWidth') === 'none');
+Your code should change the `width` property of the card to 245 pixels by using the `fullCard` class selector.
 
+```js
+const fullCard = code.match(/\.fullCard\s*{[\s\S]+?[^}]}/g);
+assert(
+  fullCard &&
+    /width\s*:\s*245px\s*(;|})/gi.test(fullCard[0]) &&
+    $('.fullCard').css('maxWidth') === 'none'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -77,14 +74,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -122,5 +112,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
-if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
+// PIPELINE_ENV  is 'true' in the build pipeline
+if (process.env.PIPELINE_ENV !== 'true') {
   const envPath = path.resolve(__dirname, '../.env');
   if (!fs.existsSync(envPath)) {
     throw Error('.env not found, please copy sample.env to .env.');

@@ -1,20 +1,18 @@
 ---
-title: Align columns
 id: 594810f028c0303b75339ad0
+title: Align columns
 challengeType: 5
 forumTopicId: 302224
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Given a text file of many lines, where fields within a line are delineated by a single <code>$</code> character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
-</section>
+Given a text file of many lines, where fields within a line are delineated by a single `$` character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
 Use the following text to test your programs:
+
 <pre>
 Given$a$text$file$of$many$lines
 where$fields$within$a$line$
@@ -27,7 +25,9 @@ Further,$allow$for$each$word$in$a$column$to$be$either$left$
 justified,$right$justified
 or$center$justified$within$its$column.
 </pre>
-<strong>Note that:</strong>
+
+**Note that:**
+
 <ul>
   <li>The example input texts lines may, or may not, have trailing dollar characters.</li>
   <li>All columns should share the same alignment.</li>
@@ -36,55 +36,36 @@ or$center$justified$within$its$column.
   <li>The minimum space between columns should be computed from the text and not hard-coded.</li>
   <li>It is not a requirement to add separating characters between or around columns.</li>
 </ul>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>formatText</code> should be a function.
-    testString: assert(typeof formatText === 'function');
-  - text: '<code>formatText</code> with the above input and "right" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''right''), rightAligned);'
-  - text: '<code>formatText</code> with the above input and "left" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''left''), leftAligned);'
-  - text: '<code>formatText</code> with the above input and "center" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''center''), centerAligned);'
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`formatText` should be a function.
 
 ```js
-const testArr = [
-  'Given$a$text$file$of$many$lines',
-  'where$fields$within$a$line$',
-  'are$delineated$by$a$single$"dollar"$character',
-  'write$a$program',
-  'that$aligns$each$column$of$fields$',
-  'by$ensuring$that$words$in$each$',
-  'column$are$separated$by$at$least$one$space.',
-  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',
-  'justified,$right$justified',
-  'or$center$justified$within$its$column.'
-];
-
-function formatText(input, justification) {
-
-}
+assert(typeof formatText === 'function');
 ```
 
-</div>
+`formatText` with the above input and "right" justification should produce the following:
 
+```js
+assert.strictEqual(formatText(testInput, 'right'), rightAligned);
+```
 
-### After Test
-<div id='js-teardown'>
+`formatText` with the above input and "left" justification should produce the following:
+
+```js
+assert.strictEqual(formatText(testInput, 'left'), leftAligned);
+```
+
+`formatText` with the above input and "center" justification should produce the following:
+
+```js
+assert.strictEqual(formatText(testInput, 'center'), centerAligned);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const testInput = [
@@ -134,13 +115,28 @@ const centerAligned = '  Given        a        text     file    of     many     
 '    or       center   justified within  its   column. ';
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+const testArr = [
+  'Given$a$text$file$of$many$lines',
+  'where$fields$within$a$line$',
+  'are$delineated$by$a$single$"dollar"$character',
+  'write$a$program',
+  'that$aligns$each$column$of$fields$',
+  'by$ensuring$that$words$in$each$',
+  'column$are$separated$by$at$least$one$space.',
+  'Further,$allow$for$each$word$in$a$column$to$be$either$left$',
+  'justified,$right$justified',
+  'or$center$justified$within$its$column.'
+];
 
-## Solution
-<section id='solution'>
+function formatText(input, justification) {
 
+}
+```
+
+# --solutions--
 
 ```js
 const testArr = [
@@ -194,7 +190,4 @@ function formatText(input, justification) {
   input = input.join('\n');
   return input;
 }
-
 ```
-
-</section>

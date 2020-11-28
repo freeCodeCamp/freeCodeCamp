@@ -5,10 +5,11 @@ challengeType: 6
 forumTopicId: 301479
 ---
 
-## Description
-<section id='description'>
-D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the <code>style()</code> method to change the styling for different elements.
-For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the <code>style()</code> method and include the conditional logic. The callback function uses the <code>d</code> parameter to represent the data point:
+# --description--
+
+D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the `style()` method to change the styling for different elements.
+
+For example, you may want to color a data point blue if it has a value less than 20, and red otherwise. You can use a callback function in the `style()` method and include the conditional logic. The callback function uses the `d` parameter to represent the data point:
 
 ```js
 selection.style("color", (d) => {
@@ -16,47 +17,74 @@ selection.style("color", (d) => {
 });
 ```
 
-The <code>style()</code> method is not limited to setting the <code>color</code> - it can be used with other CSS properties as well.
-</section>
+The `style()` method is not limited to setting the `color` - it can be used with other CSS properties as well.
 
-## Instructions
-<section id='instructions'>
-Add the <code>style()</code> method to the code in the editor to set the <code>color</code> of the <code>h2</code> elements conditionally. Write the callback function so if the data value is less than 20, it returns "red", otherwise it returns "green".
-<strong>Note</strong><br>You can use if-else logic, or the ternary operator.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Add the `style()` method to the code in the editor to set the `color` of the `h2` elements conditionally. Write the callback function so if the data value is less than 20, it returns "red", otherwise it returns "green".
 
-```yml
-tests:
-  - text: The first <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(0).css('color') == "rgb(255, 0, 0)");
-  - text: The second <code>h2</code> should have a <code>color</code> of green.
-    testString: assert($('h2').eq(1).css('color') == "rgb(0, 128, 0)");
-  - text: The third <code>h2</code> should have a <code>color</code> of green.
-    testString: assert($('h2').eq(2).css('color') == "rgb(0, 128, 0)");
-  - text: The fourth <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(3).css('color') == "rgb(255, 0, 0)");
-  - text: The fifth <code>h2</code> should have a <code>color</code> of green.
-    testString: assert($('h2').eq(4).css('color') == "rgb(0, 128, 0)");
-  - text: The sixth <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(5).css('color') == "rgb(255, 0, 0)");
-  - text: The seventh <code>h2</code> should have a <code>color</code> of green.
-    testString: assert($('h2').eq(6).css('color') == "rgb(0, 128, 0)");
-  - text: The eighth <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(7).css('color') == "rgb(255, 0, 0)");
-  - text: The ninth <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(8).css('color') == "rgb(255, 0, 0)");
+**Note**  
+You can use if-else logic, or the ternary operator.
 
+# --hints--
+
+The first `h2` should have a `color` of red.
+
+```js
+assert($('h2').eq(0).css('color') == 'rgb(255, 0, 0)');
 ```
 
-</section>
+The second `h2` should have a `color` of green.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').eq(1).css('color') == 'rgb(0, 128, 0)');
+```
 
-<div id='html-seed'>
+The third `h2` should have a `color` of green.
+
+```js
+assert($('h2').eq(2).css('color') == 'rgb(0, 128, 0)');
+```
+
+The fourth `h2` should have a `color` of red.
+
+```js
+assert($('h2').eq(3).css('color') == 'rgb(255, 0, 0)');
+```
+
+The fifth `h2` should have a `color` of green.
+
+```js
+assert($('h2').eq(4).css('color') == 'rgb(0, 128, 0)');
+```
+
+The sixth `h2` should have a `color` of red.
+
+```js
+assert($('h2').eq(5).css('color') == 'rgb(255, 0, 0)');
+```
+
+The seventh `h2` should have a `color` of green.
+
+```js
+assert($('h2').eq(6).css('color') == 'rgb(0, 128, 0)');
+```
+
+The eighth `h2` should have a `color` of red.
+
+```js
+assert($('h2').eq(7).css('color') == 'rgb(255, 0, 0)');
+```
+
+The ninth `h2` should have a `color` of red.
+
+```js
+assert($('h2').eq(8).css('color') == 'rgb(255, 0, 0)');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -77,14 +105,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -99,7 +120,4 @@ tests:
       .style("color", (d) => d < 20 ? "red" : "green")
   </script>
 </body>
-
 ```
-
-</section>

@@ -4,29 +4,21 @@ title: Part 20
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 That brown background makes it hard to read the text. Change the `body` element's background color to be `burlywood` so it has some color but you are still be able to read the text.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -51,10 +43,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 --fcc-editable-region--
 body {
@@ -66,6 +54,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

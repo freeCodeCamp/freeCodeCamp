@@ -6,47 +6,49 @@ videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 When using your variable as a CSS property value, you can attach a fallback value that your browser will revert to if the given variable is invalid.
-<strong>Note:</strong> This fallback is not used to increase browser compatibility, and it will not work on IE browsers. Rather, it is used so that the browser has a color to display if it cannot find your variable.
+
+**Note:** This fallback is not used to increase browser compatibility, and it will not work on IE browsers. Rather, it is used so that the browser has a color to display if it cannot find your variable.
+
 Here's how you do it:
 
 ```css
 background: var(--penguin-skin, black);
 ```
 
-This will set background to black if your variable wasn't set.
-Note that this can be useful for debugging.
+This will set background to black if your variable wasn't set. Note that this can be useful for debugging.
 
-</section>
+# --instructions--
 
-## Instructions
+It looks like there is a problem with the variables supplied to the `.penguin-top` and `.penguin-bottom` classes. Rather than fix the typo, add a fallback value of `black` to the `background` property of the `.penguin-top` and `.penguin-bottom` classes.
 
-<section id='instructions'>
-It looks like there is a problem with the variables supplied to the <code>.penguin-top</code> and <code>.penguin-bottom</code> classes. Rather than fix the typo, add a fallback value of <code>black</code> to the <code>background</code> property of the <code>.penguin-top</code> and <code>.penguin-bottom</code> classes.
-</section>
+# --hints--
 
-## Tests
+The fallback value of `black` should be used in the `background` property of the `penguin-top` class.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: The fallback value of <code>black</code> should be used in the <code>background</code> property of the <code>penguin-top</code> class.
-    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
-  - text: The fallback value of <code>black</code> should be used in <code>background</code> property of the <code>penguin-bottom</code> class.
-    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));
+```js
+assert(
+  code.match(
+    /.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi
+  )
+);
 ```
 
-</section>
+The fallback value of `black` should be used in `background` property of the `penguin-bottom` class.
 
-## Challenge Seed
+```js
+assert(
+  code.match(
+    /.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi
+  )
+);
+```
 
-<section id='challengeSeed'>
+# --seed--
 
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -255,13 +257,7 @@ tests:
 </div>
 ```
 
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -273,5 +269,3 @@ tests:
   }
 </style>
 ```
-
-</section>

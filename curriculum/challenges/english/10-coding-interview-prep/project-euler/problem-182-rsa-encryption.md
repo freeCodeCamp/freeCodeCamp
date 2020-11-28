@@ -1,50 +1,29 @@
 ---
 id: 5900f4231000cf542c50ff35
-challengeType: 5
 title: 'Problem 182: RSA encryption'
+challengeType: 5
 forumTopicId: 301818
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The RSA encryption is based on the following procedure:
+
 Generate two distinct primes p and q.Compute n=pq and φ=(p-1)(q-1).
-Find an integer e, 1<e<φ, such that gcd(e,φ)=1.
-A message in this system is a number in the interval [0,n-1].
-A text to be encrypted is then somehow converted to messages (numbers in the interval [0,n-1]).
-To encrypt the text,  for each message, m, c=me mod n is calculated.
-To decrypt the text, the following procedure is needed: calculate d such that ed=1 mod φ, then for each encrypted message, c, calculate m=cd mod n.
-There exist values of e and m  such that me mod n=m.We call messages m for which me mod n=m unconcealed messages.
-An issue when choosing e is that there should not be too many unconcealed messages.  For instance, let p=19 and q=37.
-Then n=19*37=703 and φ=18*36=648.
-If we choose e=181, then, although gcd(181,648)=1 it turns out that all possible messagesm (0≤m≤n-1) are unconcealed when calculating me mod n.
-For any valid choice of e there exist some unconcealed messages.
-It's important that the number of unconcealed messages is at a minimum.
-Choose p=1009 and q=3643.
-Find the sum of all values of e, 1<e<φ(1009,3643) and gcd(e,φ)=1, so that the number of unconcealed messages for this value of e is at a minimum.
-</section>
 
-## Instructions
-<section id='instructions'>
+Find an integer e, 1&lt;e&lt;φ, such='' that='' gcd(e,φ)='1.' a='' message='' in='' this='' system='' is='' number='' the='' interval='' \[0,n-1].='' text='' to='' be='' encrypted='' then='' somehow='' converted='' messages='' (numbers='' \[0,n-1]).='' encrypt='' text,='' for='' each='' message,='' m,='' c='me' mod='' n='' calculated.='' decrypt='' following='' procedure='' needed:='' calculate='' d='' ed='1' φ,='' c,='' m='cd' n.='' there='' exist='' values='' of='' e='' and='' me='' call='' which='' unconcealed='' messages.='' an='' issue='' when='' choosing='' should='' not='' too='' many='' instance,='' let='' p='19' q='37.' φ='18\*36=648.' if='' we='' choose='' then,='' although='' gcd(181,648)='1' it='' turns='' out='' all='' possible='' messagesm='' (0≤m≤n-1)='' are='' calculating='' any='' valid='' choice='' some='' it's='' important='' at='' minimum.='' find='' sum='' e,='' 1&lt;e&lt;φ(1009,3643)='' so='' value='' &lt;='' section=''>&lt;/e&lt;φ,>
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`euler182()` should return 399788195976.
 
-```yml
-tests:
-  - text: <code>euler182()</code> should return 399788195976.
-    testString: assert.strictEqual(euler182(), 399788195976);
-
+```js
+assert.strictEqual(euler182(), 399788195976);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler182() {
@@ -55,17 +34,8 @@ function euler182() {
 euler182();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

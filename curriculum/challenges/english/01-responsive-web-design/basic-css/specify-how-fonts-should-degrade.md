@@ -6,11 +6,13 @@ videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
 ---
 
-## Description
-<section id='description'>
-There are several default fonts that are available in all browsers. These generic font families include <code>monospace</code>, <code>serif</code> and <code>sans-serif</code>
+# --description--
+
+There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`
+
 When one font isn't available, you can tell the browser to "degrade" to another font.
-For example, if you wanted an element to use the <code>Helvetica</code> font, but degrade to the <code>sans-serif</code> font when <code>Helvetica</code> isn't available, you will specify it as follows:
+
+For example, if you wanted an element to use the `Helvetica` font, but degrade to the `sans-serif` font when `Helvetica` isn't available, you will specify it as follows:
 
 ```css
 p {
@@ -19,37 +21,52 @@ p {
 ```
 
 Generic font family names are not case-sensitive. Also, they do not need quotes because they are CSS keywords.
-</section>
 
-## Instructions
-<section id='instructions'>
-To begin, apply the <code>monospace</code> font to the <code>h2</code> element, so that it now has two fonts - <code>Lobster</code> and <code>monospace</code>.
-In the last challenge, you imported the <code>Lobster</code> font using the <code>link</code> tag. Now comment out that import of the <code>Lobster</code> font (using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your <code>h2</code> element degrades to the <code>monospace</code> font.
-<strong>Note:</strong> If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+To begin, apply the `monospace` font to the `h2` element, so that it now has two fonts - `Lobster` and `monospace`.
 
-```yml
-tests:
-  - text: Your h2 element should use the font <code>Lobster</code>.
-    testString: assert($("h2").css("font-family").match(/^"?lobster/i));
-  - text: Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.
-    testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(code));
-  - text: You should comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.
-    testString: assert(new RegExp("<!--[^fc]", "gi").test(code));
-  - text: You should close your comment by adding <code>--&#62;</code>.
-    testString: assert(new RegExp("[^fc]-->", "gi").test(code));
+In the last challenge, you imported the `Lobster` font using the `link` tag. Now comment out that import of the `Lobster` font (using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your `h2` element degrades to the `monospace` font.
 
+**Note:** If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font.
+
+# --hints--
+
+Your h2 element should use the font `Lobster`.
+
+```js
+assert(
+  $('h2')
+    .css('font-family')
+    .match(/^"?lobster/i)
+);
 ```
 
-</section>
+Your h2 element should degrade to the font `monospace` when `Lobster` is not available.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  /\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(
+    code
+  )
+);
+```
 
-<div id='html-seed'>
+You should comment out your call to Google for the `Lobster` font by putting `<!--` in front of it.
+
+```js
+assert(new RegExp('<!--[^fc]', 'gi').test(code));
+```
+
+You should close your comment by adding `-->`.
+
+```js
+assert(new RegExp('[^fc]-->', 'gi').test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -101,14 +118,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!--<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">-->
@@ -159,5 +169,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

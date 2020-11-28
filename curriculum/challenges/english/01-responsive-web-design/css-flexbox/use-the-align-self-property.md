@@ -6,35 +6,33 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvzfv'
 forumTopicId: 301107
 ---
 
-## Description
-<section id='description'>
-The final property for flex items is <code>align-self</code>. This property allows you to adjust each item's alignment individually, instead of setting them all at once. This is useful since other common adjustment techniques using the CSS properties <code>float</code>, <code>clear</code>, and <code>vertical-align</code> do not work on flex items.
-<code>align-self</code> accepts the same values as <code>align-items</code> and will override any value set by the <code>align-items</code> property.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>align-self</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of <code>center</code> and give <code>#box-2</code> a value of <code>flex-end</code>.
-</section>
+The final property for flex items is `align-self`. This property allows you to adjust each item's alignment individually, instead of setting them all at once. This is useful since other common adjustment techniques using the CSS properties `float`, `clear`, and `vertical-align` do not work on flex items.
 
-## Tests
-<section id='tests'>
+`align-self` accepts the same values as `align-items` and will override any value set by the `align-items` property.
 
-```yml
-tests:
-  - text: The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of <code>center</code>.
-    testString: assert($('#box-1').css('align-self') == 'center');
-  - text: The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of <code>flex-end</code>.
-    testString: assert($('#box-2').css('align-self') == 'flex-end');
+# --instructions--
 
+Add the CSS property `align-self` to both `#box-1` and `#box-2`. Give `#box-1` a value of `center` and give `#box-2` a value of `flex-end`.
+
+# --hints--
+
+The `#box-1` element should have the `align-self` property set to a value of `center`.
+
+```js
+assert($('#box-1').css('align-self') == 'center');
 ```
 
-</section>
+The `#box-2` element should have the `align-self` property set to a value of `flex-end`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#box-2').css('align-self') == 'flex-end');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -63,14 +61,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -98,5 +89,3 @@ tests:
   <div id="box-2"></div>
 </div>
 ```
-
-</section>

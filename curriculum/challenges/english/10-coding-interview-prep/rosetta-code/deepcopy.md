@@ -1,64 +1,58 @@
 ---
-title: Deepcopy
 id: 596a8888ab7c01048de257d5
+title: Deepcopy
 challengeType: 5
 forumTopicId: 302247
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Write a function that returns a deep copy of a given object. The copy must not be the same object that was given.
+
 This task will not test for:
+
 <ul>
   <li>Objects with properties that are functions</li>
   <li>Date objects or object with properties that are Date objects</li>
   <li>RegEx or object with properties that are RegEx objects</li>
   <li>Prototype copying</li>
 </ul>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>deepcopy</code> should be a function.
-    testString: assert(typeof deepcopy === 'function');
-  - text: '<code>deepcopy({test: "test"})</code> should return an object.'
-    testString: 'assert(typeof deepcopy(obj1) === ''object'');'
-  - text: <code>deepcopy</code> should not return the same object that was provided.
-    testString: assert(deepcopy(obj2) != obj2);
-  - text: When passed an object containing an array, <code>deepcopy</code> should return a deep copy of the object.
-    testString: assert.deepEqual(deepcopy(obj2), obj2);
-  - text: When passed an object containing another object, <code>deepcopy</code>  should return a deep copy of the object.
-    testString: assert.deepEqual(deepcopy(obj3), obj3);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`deepcopy` should be a function.
 
 ```js
-function deepcopy(obj) {
-
-  return true;
-}
+assert(typeof deepcopy === 'function');
 ```
 
-</div>
+`deepcopy({test: "test"})` should return an object.
 
+```js
+assert(typeof deepcopy(obj1) === 'object');
+```
 
-### After Test
-<div id='js-teardown'>
+`deepcopy` should not return the same object that was provided.
+
+```js
+assert(deepcopy(obj2) != obj2);
+```
+
+When passed an object containing an array, `deepcopy` should return a deep copy of the object.
+
+```js
+assert.deepEqual(deepcopy(obj2), obj2);
+```
+
+When passed an object containing another object, `deepcopy`  should return a deep copy of the object.
+
+```js
+assert.deepEqual(deepcopy(obj3), obj3);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const obj1 = { test: 'test' };
@@ -72,20 +66,19 @@ const obj3 = {
 };
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function deepcopy(obj) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 function deepcopy(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
-
-
 ```
-
-</section>

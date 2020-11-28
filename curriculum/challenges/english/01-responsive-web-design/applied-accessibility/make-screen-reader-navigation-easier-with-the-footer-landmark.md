@@ -6,36 +6,37 @@ videoUrl: 'https://scrimba.com/c/crVrDh8'
 forumTopicId: 301022
 ---
 
-## Description
-<section id='description'>
-Similar to <code>header</code> and <code>nav</code>, the <code>footer</code> element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Camper Cat's training page is making good progress. Change the <code>div</code> he used to wrap his copyright information at the bottom of the page to a <code>footer</code> element.
-</section>
+Similar to `header` and `nav`, the `footer` element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should have one <code>footer</code> tag.
-    testString: assert($('footer').length == 1);
-  - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0);
-  - text: Your code should have an opening and closing <code>footer</code> tag.
-    testString: assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g));
+Camper Cat's training page is making good progress. Change the `div` he used to wrap his copyright information at the bottom of the page to a `footer` element.
 
+# --hints--
+
+Your code should have one `footer` tag.
+
+```js
+assert($('footer').length == 1);
 ```
 
-</section>
+Your code should not have any `div` tags.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div').length == 0);
+```
 
-<div id='html-seed'>
+Your code should have an opening and closing `footer` tag.
+
+```js
+assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -74,14 +75,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -119,5 +113,3 @@ tests:
 
 </body>
 ```
-
-</section>

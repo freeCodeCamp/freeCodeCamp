@@ -4,8 +4,7 @@ title: Part 40
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Gradients in CSS are a way to transition between colors across the distance of an element. They are applied to the `background` property and the syntax looks like this:
 
@@ -17,27 +16,23 @@ gradient-type(
 ```
 
 In the example, `color1` is solid at the top, `color2` is solid at the bottom, and in between it transitions evenly from one to the next. In `bb1a`, add a gradient of type `linear-gradient` to the `background` property with `--building-color1` as the first color and `--window-color1` as the second.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1a = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1a));
-
+```js
+const bb1a = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(
+    bb1a
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -203,12 +198,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -377,5 +367,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

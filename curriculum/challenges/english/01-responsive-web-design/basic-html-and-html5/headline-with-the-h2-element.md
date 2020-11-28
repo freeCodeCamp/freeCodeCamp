@@ -6,62 +6,64 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
 forumTopicId: 18196
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Over the next few lessons, we'll build an HTML5 cat photo web app piece-by-piece.
-The <code>h2</code> element you will be adding in this step will add a level two heading to the web page.
-This element tells the browser about the structure of your website. <code>h1</code> elements are often used for main headings, while <code>h2</code> elements are generally used for subheadings. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements to indicate different levels of subheadings.
-</section>
 
-## Instructions
-<section id='instructions'>
-Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML element below your "Hello World" <code>h1</code> element.
-</section>
+The `h2` element you will be adding in this step will add a level two heading to the web page.
 
-## Tests
-<section id='tests'>
+This element tells the browser about the structure of your website. `h1` elements are often used for main headings, while `h2` elements are generally used for subheadings. There are also `h3`, `h4`, `h5` and `h6` elements to indicate different levels of subheadings.
 
-```yml
-tests:
-  - text: You should create an <code>h2</code> element.
-    testString: assert(($("h2").length > 0));
-  - text: Your <code>h2</code> element should have a closing tag.
-    testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length);
-  - text: Your <code>h2</code> element should have the text <code>CatPhotoApp</code>.
-    testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()));
-  - text: Your <code>h1</code> element should have the text <code>Hello World</code>.
-    testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()));
-  - text: Your <code>h1</code> element should be before your <code>h2</code> element.
-    testString: assert(code.match(/<h1>\s*?.*?\s*?<\/h1>\s*<h2>\s*?.*?\s*?<\/h2>/gi));
+# --instructions--
 
+Add an `h2` tag that says "CatPhotoApp" to create a second HTML element below your "Hello World" `h1` element.
+
+# --hints--
+
+You should create an `h2` element.
+
+```js
+assert($('h2').length > 0);
 ```
 
-</section>
+Your `h2` element should have a closing tag.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/<\/h2>/g) &&
+    code.match(/<\/h2>/g).length === code.match(/<h2>/g).length
+);
+```
 
-<div id='html-seed'>
+Your `h2` element should have the text `CatPhotoApp`.
+
+```js
+assert.isTrue(/cat(\s)?photo(\s)?app/gi.test($('h2').text()));
+```
+
+Your `h1` element should have the text `Hello World`.
+
+```js
+assert.isTrue(/hello(\s)+world/gi.test($('h1').text()));
+```
+
+Your `h1` element should be before your `h2` element.
+
+```js
+assert(code.match(/<h1>\s*?.*?\s*?<\/h1>\s*<h2>\s*?.*?\s*?<\/h2>/gi));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h1>Hello World</h1>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```html
 <h1>Hello World</h1>
 <h2>CatPhotoApp</h2>
 ```
-
-</section>  
-
-

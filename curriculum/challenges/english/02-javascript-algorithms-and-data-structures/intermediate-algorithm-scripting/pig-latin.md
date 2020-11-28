@@ -5,46 +5,65 @@ challengeType: 5
 forumTopicId: 16039
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Pig Latin is a way of altering English Words. The rules are as follows:
-- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
-- If a word begins with a vowel, just add "way" at the end.
-</section>
 
-## Instructions
-<section id='instructions'>
+\- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+
+\- If a word begins with a vowel, just add "way" at the end.
+
+# --instructions--
+
 Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>translatePigLatin("california")</code> should return "aliforniacay".
-    testString: assert.deepEqual(translatePigLatin("california"), "aliforniacay");
-  - text: <code>translatePigLatin("paragraphs")</code> should return "aragraphspay".
-    testString: assert.deepEqual(translatePigLatin("paragraphs"), "aragraphspay");
-  - text: <code>translatePigLatin("glove")</code> should return "oveglay".
-    testString: assert.deepEqual(translatePigLatin("glove"), "oveglay");
-  - text: <code>translatePigLatin("algorithm")</code> should return "algorithmway".
-    testString: assert.deepEqual(translatePigLatin("algorithm"), "algorithmway");
-  - text: <code>translatePigLatin("eight")</code> should return "eightway".
-    testString: assert.deepEqual(translatePigLatin("eight"), "eightway");
-  - text: Should handle words where the first vowel comes in the middle of the word.  <code>translatePigLatin("schwartz")</code> should return "artzschway". 
-    testString: assert.deepEqual(translatePigLatin("schwartz"), "artzschway");
-  - text: Should handle words without vowels. <code>translatePigLatin("rhythm")</code> should return "rhythmay".
-    testString: assert.deepEqual(translatePigLatin("rhythm"), "rhythmay");
+`translatePigLatin("california")` should return "aliforniacay".
 
+```js
+assert.deepEqual(translatePigLatin('california'), 'aliforniacay');
 ```
 
-</section>
+`translatePigLatin("paragraphs")` should return "aragraphspay".
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(translatePigLatin('paragraphs'), 'aragraphspay');
+```
 
-<div id='js-seed'>
+`translatePigLatin("glove")` should return "oveglay".
+
+```js
+assert.deepEqual(translatePigLatin('glove'), 'oveglay');
+```
+
+`translatePigLatin("algorithm")` should return "algorithmway".
+
+```js
+assert.deepEqual(translatePigLatin('algorithm'), 'algorithmway');
+```
+
+`translatePigLatin("eight")` should return "eightway".
+
+```js
+assert.deepEqual(translatePigLatin('eight'), 'eightway');
+```
+
+Should handle words where the first vowel comes in the middle of the word.  `translatePigLatin("schwartz")` should return "artzschway".
+
+```js
+assert.deepEqual(translatePigLatin('schwartz'), 'artzschway');
+```
+
+Should handle words without vowels. `translatePigLatin("rhythm")` should return "rhythmay".
+
+```js
+assert.deepEqual(translatePigLatin('rhythm'), 'rhythmay');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function translatePigLatin(str) {
@@ -54,15 +73,7 @@ function translatePigLatin(str) {
 translatePigLatin("consonant");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function translatePigLatin(str) {
@@ -79,5 +90,3 @@ function isVowel(c) {
   return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;
 }
 ```
-
-</section>

@@ -4,35 +4,57 @@ title: Part 101
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Back at the bottom, where you draw the chart. Use the `attr` function to set the `fill` to a "d function". In the "d function", use your `pieColors` scale to get the color value for the platform(`d.data.key`). So when each platform is passed to your scale, is will get the appropriate color to use as the fill from the scales range.
-</section>
 
-## Instructions
+# --hints--
 
-<section id='instructions'>
-</section>
+test-text
 
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: test-text
-    testString: const pathsArr = $('.dashboard div svg g path'); assert(pathsArr[0].getAttribute('fill') === '#7cd9d1' && pathsArr[1].getAttribute('fill') === '#f6dd71' && pathsArr[2].getAttribute('fill') === '#fd9b98');
-
+```js
+const pathsArr = $('.dashboard div svg g path');
+assert(
+  pathsArr[0].getAttribute('fill') === '#7cd9d1' &&
+    pathsArr[1].getAttribute('fill') === '#f6dd71' &&
+    pathsArr[2].getAttribute('fill') === '#fd9b98'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
+## --before-user-code--
 
-<section id='challengeSeed'>
-<div id='html-seed'>
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -200,47 +222,7 @@ tests:
 </script>
 ```
 
-</div>
-
-### Before Test
-
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -392,5 +374,3 @@ tests:
 
 </script>
 ```
-
-</section>

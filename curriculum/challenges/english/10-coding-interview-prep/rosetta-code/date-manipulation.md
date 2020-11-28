@@ -1,50 +1,69 @@
 ---
-title: Date manipulation
 id: 5966c21cf732a95f1b67dd28
+title: Date manipulation
 challengeType: 5
 forumTopicId: 302244
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
-Example input: <code>"March 6 2009 7:30pm EST"</code>
-Example output: <code>"March 7 2009 7:30am EST"</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+Example input: `"March 6 2009 7:30pm EST"`
 
-</section>
+Example output: `"March 7 2009 7:30am EST"`
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>add12Hours</code> should be a function.
-    testString: assert(typeof add12Hours === 'function');
-  - text: <code>add12Hours(dateString)</code> should return a string.
-    testString: assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');
-  - text: <code>add12Hours("January 17 2017 11:43am EST")</code> should return <code>"January 17 2017 11:43pm EST"</code>
-    testString: assert(add12Hours('January 17 2017 11:43am EST') === 'January 17 2017 11:43pm EST');
-  - text: Should handle day change. <code>add12Hours("March 6 2009 7:30pm EST")</code> should return <code>"March 7 2009 7:30am EST"</code>
-    testString: assert(add12Hours('March 6 2009 7:30pm EST') === 'March 7 2009 7:30am EST');
-  - text: Should handle month change in a leap years. <code>add12Hours("February 29 2004 9:15pm EST")</code> should return <code>"March 1 2004 9:15am EST"</code>
-    testString: assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST');
-  - text: Should handle month change in a common years. <code>add12Hours("February 28 1999 3:15pm EST")</code> should return <code>"March 1 1999 3:15am EST"</code>
-    testString: assert(add12Hours('February 28 1999 3:15pm EST') === 'March 1 1999 3:15am EST');
-  - text: Should handle year change. <code>add12Hours("December 31 2020 1:45pm EST")</code> should return <code>"January 1 2021 1:45am EST"</code>
-    testString: assert(add12Hours('December 31 2020 1:45pm EST') === 'January 1 2021 1:45am EST');
+`add12Hours` should be a function.
 
+```js
+assert(typeof add12Hours === 'function');
 ```
 
-</section>
+`add12Hours(dateString)` should return a string.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');
+```
 
-<div id='js-seed'>
+`add12Hours("January 17 2017 11:43am EST")` should return `"January 17 2017 11:43pm EST"`
+
+```js
+assert(
+  add12Hours('January 17 2017 11:43am EST') === 'January 17 2017 11:43pm EST'
+);
+```
+
+Should handle day change. `add12Hours("March 6 2009 7:30pm EST")` should return `"March 7 2009 7:30am EST"`
+
+```js
+assert(add12Hours('March 6 2009 7:30pm EST') === 'March 7 2009 7:30am EST');
+```
+
+Should handle month change in a leap years. `add12Hours("February 29 2004 9:15pm EST")` should return `"March 1 2004 9:15am EST"`
+
+```js
+assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST');
+```
+
+Should handle month change in a common years. `add12Hours("February 28 1999 3:15pm EST")` should return `"March 1 1999 3:15am EST"`
+
+```js
+assert(add12Hours('February 28 1999 3:15pm EST') === 'March 1 1999 3:15am EST');
+```
+
+Should handle year change. `add12Hours("December 31 2020 1:45pm EST")` should return `"January 1 2021 1:45am EST"`
+
+```js
+assert(
+  add12Hours('December 31 2020 1:45pm EST') === 'January 1 2021 1:45am EST'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function add12Hours(dateString) {
@@ -53,13 +72,7 @@ function add12Hours(dateString) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function add12Hours(dateString) {
@@ -92,7 +105,4 @@ function add12Hours(dateString) {
 
   return `${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()} ${hoursOutput}:${date.getMinutes()}${abbreviation} EST`;
 }
-
 ```
-
-</section>

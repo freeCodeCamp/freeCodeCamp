@@ -1,43 +1,31 @@
 ---
 id: 5900f4d01000cf542c50ffe3
-challengeType: 5
 title: 'Problem 356: Largest roots of cubic polynomials'
+challengeType: 5
 forumTopicId: 302016
 ---
 
-## Description
-<section id='description'>
-Let an be the largest real root of a polynomial g(x) = x3 - 2n·x2 + n.
-For example, a2 = 3.86619826...
+# --description--
 
+Let an be the largest real root of a polynomial g(x) = x3 - 2n·x2 + n.
+
+For example, a2 = 3.86619826...
 
 Find the last eight digits of.
 
+Note: represents the floor function.
 
-Note:  represents the floor function.
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`euler356()` should return 28010159.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler356()</code> should return 28010159.
-    testString: assert.strictEqual(euler356(), 28010159);
-
+```js
+assert.strictEqual(euler356(), 28010159);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler356() {
@@ -48,17 +36,8 @@ function euler356() {
 euler356();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

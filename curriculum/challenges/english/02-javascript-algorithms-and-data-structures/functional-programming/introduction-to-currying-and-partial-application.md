@@ -5,10 +5,12 @@ challengeType: 1
 forumTopicId: 301232
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The <dfn>arity</dfn> of a function is the number of arguments it requires. <dfn>Currying</dfn> a function means to convert a function of N arity into N functions of arity 1.
+
 In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.
+
 Here's an example:
 
 ```js
@@ -37,8 +39,7 @@ var funcForY = curried(1);
 console.log(funcForY(2)); // Prints 3
 ```
 
-Similarly, <dfn>partial application</dfn> can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments.
-Here's an example:
+Similarly, <dfn>partial application</dfn> can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments. Here's an example:
 
 ```js
 //Impartial function
@@ -49,35 +50,39 @@ var partialFn = impartial.bind(this, 1, 2);
 partialFn(10); // Returns 13
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Fill in the body of the <code>add</code> function so it uses currying to add parameters <code>x</code>, <code>y</code>, and <code>z</code>.
-</section>
+Fill in the body of the `add` function so it uses currying to add parameters `x`, `y`, and `z`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>add(10)(20)(30)</code> should return <code>60</code>.
-    testString: assert(add(10)(20)(30) === 60);
-  - text: <code>add(1)(2)(3)</code> should return <code>6</code>.
-    testString: assert(add(1)(2)(3) === 6);
-  - text: <code>add(11)(22)(33)</code> should return <code>66</code>.
-    testString: assert(add(11)(22)(33) === 66);
-  - text: Your code should include a final statement that returns <code>x + y + z</code>.
-    testString: assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
+`add(10)(20)(30)` should return `60`.
 
+```js
+assert(add(10)(20)(30) === 60);
 ```
 
-</section>
+`add(1)(2)(3)` should return `6`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(add(1)(2)(3) === 6);
+```
 
-<div id='js-seed'>
+`add(11)(22)(33)` should return `66`.
+
+```js
+assert(add(11)(22)(33) === 66);
+```
+
+Your code should include a final statement that returns `x + y + z`.
+
+```js
+assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function add(x) {
@@ -89,17 +94,8 @@ function add(x) {
 add(10)(20)(30);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const add = x => y => z => x + y + z
 ```
-
-</section>

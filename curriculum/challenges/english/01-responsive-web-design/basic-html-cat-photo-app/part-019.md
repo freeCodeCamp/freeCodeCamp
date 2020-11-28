@@ -4,35 +4,34 @@ title: Part 19
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 After the `h3` element with the `Things cats love:` text, add an unordered list (`ul`) element. Note that nothing will be displayed at this point.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `ul` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: 'Your `ul` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('ul') );
-  - text: Your `ul` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/ul>/) );
-  - text: The `ul` element should be above the second `section` element's closing tag.
-    testString: |
-      const secondSectionLastElemNode = $('main > section')[1].lastElementChild;
-      assert( secondSectionLastElemNode.nodeName === 'UL' );
-
+```js
+assert(document.querySelector('ul'));
 ```
 
-</section>
+Your `ul` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/<\/ul>/));
+```
 
-<div id='html-seed'>
+The `ul` element should be above the second `section` element's closing tag.
+
+```js
+const secondSectionLastElemNode = $('main > section')[1].lastElementChild;
+assert(secondSectionLastElemNode.nodeName === 'UL');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -46,15 +45,13 @@ tests:
         <a href="https://freecatphotoapp.com"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>
-        --fcc-editable-region--
+--fcc-editable-region--
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
-        --fcc-editable-region--
+--fcc-editable-region--
       </section>
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

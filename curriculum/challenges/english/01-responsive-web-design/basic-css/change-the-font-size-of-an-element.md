@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/c3bvDc8'
 forumTopicId: 16777
 ---
 
-## Description
-<section id='description'>
-Font size is controlled by the <code>font-size</code> CSS property, like this:
+# --description--
+
+Font size is controlled by the `font-size` CSS property, like this:
 
 ```css
 h1 {
@@ -16,29 +16,21 @@ h1 {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Inside the same <code>&#60;style&#62;</code> tag that contains your <code>red-text</code> class, create an entry for <code>p</code> elements and set the <code>font-size</code> to 16 pixels (<code>16px</code>).
-</section>
+Inside the same `<style>` tag that contains your `red-text` class, create an entry for `p` elements and set the `font-size` to 16 pixels (`16px`).
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.
-    testString: assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));
+Between the `style` tags, give the `p` elements `font-size` of `16px`. Browser and Text zoom should be at 100%.
 
+```js
+assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -80,14 +72,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -131,5 +116,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

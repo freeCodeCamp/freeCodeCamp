@@ -4,63 +4,27 @@ title: Part 15
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Change the `"+"` in the call to `infixToFunction` to `fn`.
 
 `fn` is the operator that the user inputs (`+`, `-`, `*` or `/`) - we use `infixToFunction` to get the function that corresponds to it.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes('str.replace(regex,(match,arg1,fn,arg2)=>infixToFunction[fn])'));
-
+```js
+assert(
+  code
+    .replace(/\s/g, '')
+    .includes('str.replace(regex,(match,arg1,fn,arg2)=>infixToFunction[fn])')
+);
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
-
-const infixEval = (str, regex) =>
-  str.replace(regex, (match, arg1, fn, arg2) =>
-    infixToFunction["+"]
-  );
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -88,25 +52,35 @@ const infixEval = (str, regex) =>
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) =>
+  str.replace(regex, (match, arg1, fn, arg2) =>
+    infixToFunction["+"]
+  );
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -123,5 +97,3 @@ const infixEval = (str, regex) =>
   );
 </script>
 ```
-
-</section>

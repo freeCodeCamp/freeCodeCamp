@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/caeJgsw'
 forumTopicId: 16772
 ---
 
-## Description
-<section id='description'>
-<code>if/else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:
+# --description--
+
+`if/else` statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained `if` / `else if` statements:
 
 ```js
 if (condition1) {
@@ -23,54 +23,99 @@ if (condition1) {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:
-<code>num &lt; 5</code> - return "Tiny"<br><code>num &lt; 10</code> - return "Small"<br><code>num &lt; 15</code> - return "Medium"<br><code>num &lt; 20</code> - return "Large"<br><code>num >= 20</code>  - return "Huge"
-</section>
+Write chained `if`/`else if` statements to fulfill the following conditions:
 
-## Tests
-<section id='tests'>
+`num < 5` - return "Tiny"  
+`num < 10` - return "Small"  
+`num < 15` - return "Medium"  
+`num < 20` - return "Large"  
+`num >= 20` - return "Huge"
 
-```yml
-tests:
-  - text: You should have at least four <code>else</code> statements
-    testString: assert(code.match(/else/g).length > 3);
-  - text: You should have at least four <code>if</code> statements
-    testString: assert(code.match(/if/g).length > 3);
-  - text: You should have at least one <code>return</code> statement
-    testString: assert(code.match(/return/g).length >= 1);
-  - text: <code>testSize(0)</code> should return "Tiny"
-    testString: assert(testSize(0) === "Tiny");
-  - text: <code>testSize(4)</code> should return "Tiny"
-    testString: assert(testSize(4) === "Tiny");
-  - text: <code>testSize(5)</code> should return "Small"
-    testString: assert(testSize(5) === "Small");
-  - text: <code>testSize(8)</code> should return "Small"
-    testString: assert(testSize(8) === "Small");
-  - text: <code>testSize(10)</code> should return "Medium"
-    testString: assert(testSize(10) === "Medium");
-  - text: <code>testSize(14)</code> should return "Medium"
-    testString: assert(testSize(14) === "Medium");
-  - text: <code>testSize(15)</code> should return "Large"
-    testString: assert(testSize(15) === "Large");
-  - text: <code>testSize(17)</code> should return "Large"
-    testString: assert(testSize(17) === "Large");
-  - text: <code>testSize(20)</code> should return "Huge"
-    testString: assert(testSize(20) === "Huge");
-  - text: <code>testSize(25)</code> should return "Huge"
-    testString: assert(testSize(25) === "Huge");
+# --hints--
 
+You should have at least four `else` statements
+
+```js
+assert(code.match(/else/g).length > 3);
 ```
 
-</section>
+You should have at least four `if` statements
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/if/g).length > 3);
+```
 
-<div id='js-seed'>
+You should have at least one `return` statement
+
+```js
+assert(code.match(/return/g).length >= 1);
+```
+
+`testSize(0)` should return "Tiny"
+
+```js
+assert(testSize(0) === 'Tiny');
+```
+
+`testSize(4)` should return "Tiny"
+
+```js
+assert(testSize(4) === 'Tiny');
+```
+
+`testSize(5)` should return "Small"
+
+```js
+assert(testSize(5) === 'Small');
+```
+
+`testSize(8)` should return "Small"
+
+```js
+assert(testSize(8) === 'Small');
+```
+
+`testSize(10)` should return "Medium"
+
+```js
+assert(testSize(10) === 'Medium');
+```
+
+`testSize(14)` should return "Medium"
+
+```js
+assert(testSize(14) === 'Medium');
+```
+
+`testSize(15)` should return "Large"
+
+```js
+assert(testSize(15) === 'Large');
+```
+
+`testSize(17)` should return "Large"
+
+```js
+assert(testSize(17) === 'Large');
+```
+
+`testSize(20)` should return "Huge"
+
+```js
+assert(testSize(20) === 'Huge');
+```
+
+`testSize(25)` should return "Huge"
+
+```js
+assert(testSize(25) === 'Huge');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testSize(num) {
@@ -84,15 +129,7 @@ function testSize(num) {
 testSize(7);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testSize(num) {
@@ -109,5 +146,3 @@ function testSize(num) {
   }
 }
 ```
-
-</section>

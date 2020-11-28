@@ -5,56 +5,59 @@ challengeType: 0
 forumTopicId: 16813
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now we'll create a Bootstrap row for our inline elements.
-Create a <code>div</code> element below the <code>h3</code> tag, with a class of <code>row</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+Create a `div` element below the `h3` tag, with a class of `row`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You should add a `div` element below your `h3` element.
 
-```yml
-tests:
-  - text: You should add a <code>div</code> element below your <code>h3</code> element.
-    testString: assert(($("div").length > 1) && ($("div.row h3.text-primary").length == 0) && ($("div.row + h3.text-primary").length == 0) && ($("h3.text-primary + div.row").length > 0));
-  - text: Your <code>div</code> element should have the class <code>row</code>
-    testString: assert($("div").hasClass("row"));
-  - text: Your <code>row div</code> should be nested inside the <code>container-fluid div</code>
-    testString: assert($("div.container-fluid div.row").length > 0);
-  - text: Your <code>div</code> element should have a closing tag.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
-
+```js
+assert(
+  $('div').length > 1 &&
+    $('div.row h3.text-primary').length == 0 &&
+    $('div.row + h3.text-primary').length == 0 &&
+    $('h3.text-primary + div.row').length > 0
+);
 ```
 
-</section>
+Your `div` element should have the class `row`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div').hasClass('row'));
+```
 
-<div id='html-seed'>
+Your `row div` should be nested inside the `container-fluid div`
+
+```js
+assert($('div.container-fluid div.row').length > 0);
+```
+
+Your `div` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<div/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
 
 </div>
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -62,5 +65,3 @@ tests:
   <div class="row"></div>
 </div>
 ```
-
-</section>

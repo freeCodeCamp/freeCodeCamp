@@ -4,31 +4,22 @@ title: Part 45
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 It's a little hidden behind the foreground buildings, but you can see the three color gradient there. Since you are using that now, remove the `background-color` property from `bb1d`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1dStyle = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(bb1dStyle));
-
+```js
+const bb1dStyle = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0];
+assert(!/background-color/g.test(bb1dStyle));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -201,12 +192,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -377,5 +363,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

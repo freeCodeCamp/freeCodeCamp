@@ -4,54 +4,21 @@ title: Part 11
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Log `meal.value` to the console, enter a number in the Breakfast input and hit the Calculate button. You'll notice that it displays what you entered.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
+```js
 
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: ''
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-    const total = Array.from(document.getElementsByClassName('cal-control'));
-    const meal = total[0];
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -111,24 +78,14 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+## --seed-contents--
 
 ```html
 <script>
@@ -142,4 +99,16 @@ tests:
 </script>
 ```
 
-</section>
+# --solutions--
+
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(document.getElementsByClassName('cal-control'));
+    const meal = total[0];
+  }
+</script>
+```

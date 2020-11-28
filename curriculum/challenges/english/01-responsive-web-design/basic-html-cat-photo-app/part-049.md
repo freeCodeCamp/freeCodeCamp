@@ -4,40 +4,48 @@ title: Part 49
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `fieldset` element is used to group related inputs and labels together in a web form. `fieldset` elements are <dfn>block-level elements</dfn>, meaning that they appear on a new line.
 
 Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and don't forget to indent the buttons.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Both radio buttons should still be located between opening and closing `label` element tags.
 
-```yml
-tests:
-  - text: Both radio buttons should still be located between opening and closing `label` element tags. 
-    testString: |
-      const labelChildNodes = [ ...$('label') ].map(node => [ ...node.childNodes ]);
-      assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
-  - text: "Your `fieldset` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('fieldset') );
-  - text: Your `fieldset` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/fieldset\>/) );
-  - text: Both radio button and associated labels should be between the opening and closing tags of the `fieldset` element.
-    testString: |
-      const radioButtons = [ ...$('input[type="radio"]') ];
-      assert( radioButtons.every(btn => btn.parentNode.parentNode.nodeName === "FIELDSET") );
-
+```js
+const labelChildNodes = [...$('label')].map((node) => [...node.childNodes]);
+assert(
+  labelChildNodes.filter((childNode) => childNode[0].nodeName === 'INPUT')
+    .length === 2
+);
 ```
 
-</section>
+Your `fieldset` element should have an opening tag. Opening tags have the following syntax: `<elementName>`.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(document.querySelector('fieldset'));
+```
+
+Your `fieldset` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+assert(code.match(/<\/fieldset\>/));
+```
+
+Both radio button and associated labels should be between the opening and closing tags of the `fieldset` element.
+
+```js
+const radioButtons = [...$('input[type="radio"]')];
+assert(
+  radioButtons.every((btn) => btn.parentNode.parentNode.nodeName === 'FIELDSET')
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -76,10 +84,10 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
           <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
@@ -89,5 +97,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

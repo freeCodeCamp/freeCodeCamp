@@ -4,29 +4,21 @@ title: Part 89
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now apply the `address` class to the `p` element containing the address.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -80,22 +72,18 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
-      --fcc-editable-region--
+--fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
+--fcc-editable-region--
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -189,6 +177,3 @@ a:active {
 }
 ```
 
-</div>
-
-</section>

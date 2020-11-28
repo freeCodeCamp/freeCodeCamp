@@ -5,9 +5,9 @@ challengeType: 6
 forumTopicId: 301386
 ---
 
-## Description
-<section id='description'>
-The other way to define a React component is with the ES6 <code>class</code> syntax. In the following example, <code>Kitten</code> extends <code>React.Component</code>:
+# --description--
+
+The other way to define a React component is with the ES6 `class` syntax. In the following example, `Kitten` extends `React.Component`:
 
 ```jsx
 class Kitten extends React.Component {
@@ -23,38 +23,50 @@ class Kitten extends React.Component {
 }
 ```
 
-This creates an ES6 class <code>Kitten</code> which extends the <code>React.Component</code> class. So the <code>Kitten</code> class now has access to many useful React features, such as local state and lifecycle hooks. Don't worry if you aren't familiar with these terms yet, they will be covered in greater detail in later challenges.
-Also notice the <code>Kitten</code> class has a <code>constructor</code> defined within it that calls <code>super()</code>. It uses <code>super()</code> to call the constructor of the parent class, in this case <code>React.Component</code>. The constructor is a special method used during the initialization of objects that are created with the <code>class</code> keyword. It is best practice to call a component's <code>constructor</code> with <code>super</code>, and pass <code>props</code> to both. This makes sure the component is initialized properly. For now, know that it is standard for this code to be included. Soon you will see other uses for the constructor as well as <code>props</code>.
-</section>
+This creates an ES6 class `Kitten` which extends the `React.Component` class. So the `Kitten` class now has access to many useful React features, such as local state and lifecycle hooks. Don't worry if you aren't familiar with these terms yet, they will be covered in greater detail in later challenges. Also notice the `Kitten` class has a `constructor` defined within it that calls `super()`. It uses `super()` to call the constructor of the parent class, in this case `React.Component`. The constructor is a special method used during the initialization of objects that are created with the `class` keyword. It is best practice to call a component's `constructor` with `super`, and pass `props` to both. This makes sure the component is initialized properly. For now, know that it is standard for this code to be included. Soon you will see other uses for the constructor as well as `props`.
 
-## Instructions
-<section id='instructions'>
-<code>MyComponent</code> is defined in the code editor using class syntax. Finish writing the <code>render</code> method so it returns a <code>div</code> element that contains an <code>h1</code> with the text <code>Hello React!</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+`MyComponent` is defined in the code editor using class syntax. Finish writing the `render` method so it returns a `div` element that contains an `h1` with the text `Hello React!`.
 
-```yml
-tests:
-  - text: The React component should return a <code>div</code> element.
-    testString: assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
-  - text: The returned <code>div</code> should render an <code>h1</code> header within it.
-    testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.shallow(React.createElement(MyComponent)).html()));
-  - text: The <code>h1</code> header should contain the string <code>Hello React!</code>.
-    testString: assert(Enzyme.shallow(React.createElement(MyComponent)).html() === '<div><h1>Hello React!</h1></div>');
+# --hints--
 
+The React component should return a `div` element.
+
+```js
+assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
 ```
 
-</section>
+The returned `div` should render an `h1` header within it.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  /<div><h1>.*<\/h1><\/div>/.test(
+    Enzyme.shallow(React.createElement(MyComponent)).html()
+  )
+);
+```
 
-<div id='jsx-seed'>
+The `h1` header should contain the string `Hello React!`.
+
+```js
+assert(
+  Enzyme.shallow(React.createElement(MyComponent)).html() ===
+    '<div><h1>Hello React!</h1></div>'
+);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
+```
 
+## --seed-contents--
+
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -69,23 +81,7 @@ class MyComponent extends React.Component {
 };
 ```
 
-</div>
-
-
-### After Test
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<MyComponent />, document.getElementById('root'))
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 class MyComponent extends React.Component {
@@ -103,5 +99,3 @@ class MyComponent extends React.Component {
   }
 };
 ```
-
-</section>

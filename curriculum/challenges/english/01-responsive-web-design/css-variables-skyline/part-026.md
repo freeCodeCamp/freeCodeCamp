@@ -4,30 +4,30 @@ title: Part 26
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now that you've worked the bugs out and the buildings are the right colors, you can remove the fallback values in the two places they were used. Go ahead and do that now.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2style = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0]; const bb3style = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--building-color2\s*\)\s*(;|\s*})/g.test(bb2style) && /background-color\s*:\s*var\(\s*--building-color3\s*\)\s*(;|\s*})/g.test(bb3style));
-
+```js
+const bb2style = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0];
+const bb3style = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background-color\s*:\s*var\(\s*--building-color2\s*\)\s*(;|\s*})/g.test(
+    bb2style
+  ) &&
+    /background-color\s*:\s*var\(\s*--building-color3\s*\)\s*(;|\s*})/g.test(
+      bb3style
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -132,12 +132,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -241,5 +236,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

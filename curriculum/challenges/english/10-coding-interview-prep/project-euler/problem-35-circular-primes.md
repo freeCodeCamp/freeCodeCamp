@@ -1,58 +1,69 @@
 ---
 id: 5900f38f1000cf542c50fea2
-challengeType: 5
 title: 'Problem 35: Circular primes'
+challengeType: 5
 forumTopicId: 302009
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
 
 There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
 
 How many circular primes are there below `n`, whereas 100 ≤ `n` ≤ 1000000?
-  
-<br><strong>Note:</strong><br>
+
+**Note:**  
 
 Circular primes individual rotation can exceed `n`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`circularPrimes(100)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>circularPrimes(100)</code> should return a number.
-    testString: assert(typeof circularPrimes(100) === 'number');
-  - text: <code>circularPrimes(100)</code> should return 13.
-    testString: assert(circularPrimes(100) == 13);
-  - text: <code>circularPrimes(100000)</code> should return 43.
-    testString: assert(circularPrimes(100000) == 43);
-  - text: <code>circularPrimes(250000)</code> should return 45.
-    testString: assert(circularPrimes(250000) == 45);
-  - text: <code>circularPrimes(500000)</code> should return 49.
-    testString: assert(circularPrimes(500000) == 49);
-  - text: <code>circularPrimes(750000)</code> should return 49.
-    testString: assert(circularPrimes(750000) == 49);
-  - text: <code>circularPrimes(1000000)</code> should return 55.
-    testString: assert(circularPrimes(1000000) == 55);
-
+```js
+assert(typeof circularPrimes(100) === 'number');
 ```
 
-</section>
+`circularPrimes(100)` should return 13.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(circularPrimes(100) == 13);
+```
 
-<div id='js-seed'>
+`circularPrimes(100000)` should return 43.
+
+```js
+assert(circularPrimes(100000) == 43);
+```
+
+`circularPrimes(250000)` should return 45.
+
+```js
+assert(circularPrimes(250000) == 45);
+```
+
+`circularPrimes(500000)` should return 49.
+
+```js
+assert(circularPrimes(500000) == 49);
+```
+
+`circularPrimes(750000)` should return 49.
+
+```js
+assert(circularPrimes(750000) == 49);
+```
+
+`circularPrimes(1000000)` should return 55.
+
+```js
+assert(circularPrimes(1000000) == 55);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function circularPrimes(n) {
@@ -63,15 +74,7 @@ function circularPrimes(n) {
 circularPrimes(1000000);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function rotate(n) {
@@ -126,5 +129,3 @@ function circularPrimes(n) {
   return count;
 }
 ```
-
-</section>

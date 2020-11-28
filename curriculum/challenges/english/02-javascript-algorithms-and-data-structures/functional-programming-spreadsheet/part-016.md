@@ -4,63 +4,29 @@ title: Part 16
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 `arg1` and `arg2` are the numbers input by the user in a string such as "1+3".
 
 Pass `parseFloat(arg1)` and `parseFloat(arg2)` as the arguments to `infixToFunction[fn]` (remember `infixToFunction[fn]` is a function).
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: const regex = /([0-9.]+)([+-\/*])([0-9.]+)/; assert(infixEval("23+35", regex) === "58" && infixEval("100-20", regex) === "80" && infixEval("10*10", regex) === "100" && infixEval("120/6", regex) === "20");
-
+```js
+const regex = /([0-9.]+)([+-\/*])([0-9.]+)/;
+assert(
+  infixEval('23+35', regex) === '58' &&
+    infixEval('100-20', regex) === '80' &&
+    infixEval('10*10', regex) === '100' &&
+    infixEval('120/6', regex) === '20'
+);
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
-
-const infixEval = (str, regex) =>
-  str.replace(regex, (match, arg1, fn, arg2) =>
-    infixToFunction[fn]
-  );
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -88,25 +54,35 @@ const infixEval = (str, regex) =>
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) =>
+  str.replace(regex, (match, arg1, fn, arg2) =>
+    infixToFunction[fn]
+  );
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -123,5 +99,3 @@ const infixEval = (str, regex) =>
   );
 </script>
 ```
-
-</section>

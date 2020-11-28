@@ -5,43 +5,35 @@ challengeType: 5
 forumTopicId: 16085
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-A <dfn>prime number</dfn> is a whole number greater than 1 with exactly two divisors: 1 and
-itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In
-contrast, 4 is not prime since it is divisible by 1, 2 and 4.
+A <dfn>prime number</dfn> is a whole number greater than 1 with exactly two divisors: 1 and itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
 
-Rewrite `sumPrimes` so it returns the sum of all prime numbers that are less than or
-equal to num.
+Rewrite `sumPrimes` so it returns the sum of all prime numbers that are less than or equal to num.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`sumPrimes(10)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>sumPrimes(10)</code> should return a number.
-    testString: assert.deepEqual(typeof sumPrimes(10), 'number');
-  - text: <code>sumPrimes(10)</code> should return 17.
-    testString: assert.deepEqual(sumPrimes(10), 17);
-  - text: <code>sumPrimes(977)</code> should return 73156.
-    testString: assert.deepEqual(sumPrimes(977), 73156);
-
+```js
+assert.deepEqual(typeof sumPrimes(10), 'number');
 ```
 
-</section>
+`sumPrimes(10)` should return 17.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(sumPrimes(10), 17);
+```
 
-<div id='js-seed'>
+`sumPrimes(977)` should return 73156.
+
+```js
+assert.deepEqual(sumPrimes(977), 73156);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sumPrimes(num) {
@@ -51,15 +43,7 @@ function sumPrimes(num) {
 sumPrimes(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function eratosthenesArray(n) {
@@ -88,5 +72,3 @@ function sumPrimes(num) {
 
 sumPrimes(10);
 ```
-
-</section>

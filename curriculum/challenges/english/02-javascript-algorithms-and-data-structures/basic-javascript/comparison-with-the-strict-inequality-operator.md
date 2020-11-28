@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cKekkUy'
 forumTopicId: 16791
 ---
 
-## Description
-<section id='description'>
-The strict inequality operator (<code>!==</code>) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.
-<strong>Examples</strong>
+# --description--
+
+The strict inequality operator (`!==`) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns `false` where strict equality would return `true` and *vice versa*. Strict inequality will not convert data types.
+
+**Examples**
 
 ```js
 3 !==  3   // false
@@ -17,37 +18,45 @@ The strict inequality operator (<code>!==</code>) is the logical opposite of the
 4 !==  3   // true
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add the strict inequality operator to the <code>if</code> statement so the function will return "Not Equal" when <code>val</code> is not strictly equal to <code>17</code>
-</section>
+Add the strict inequality operator to the `if` statement so the function will return "Not Equal" when `val` is not strictly equal to `17`
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testStrictNotEqual(17)</code> should return "Equal"
-    testString: assert(testStrictNotEqual(17) === "Equal");
-  - text: <code>testStrictNotEqual("17")</code> should return "Not Equal"
-    testString: assert(testStrictNotEqual("17") === "Not Equal");
-  - text: <code>testStrictNotEqual(12)</code> should return "Not Equal"
-    testString: assert(testStrictNotEqual(12) === "Not Equal");
-  - text: <code>testStrictNotEqual("bob")</code> should return "Not Equal"
-    testString: assert(testStrictNotEqual("bob") === "Not Equal");
-  - text: You should use the <code>!==</code> operator
-    testString: assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
+`testStrictNotEqual(17)` should return "Equal"
 
+```js
+assert(testStrictNotEqual(17) === 'Equal');
 ```
 
-</section>
+`testStrictNotEqual("17")` should return "Not Equal"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testStrictNotEqual('17') === 'Not Equal');
+```
 
-<div id='js-seed'>
+`testStrictNotEqual(12)` should return "Not Equal"
+
+```js
+assert(testStrictNotEqual(12) === 'Not Equal');
+```
+
+`testStrictNotEqual("bob")` should return "Not Equal"
+
+```js
+assert(testStrictNotEqual('bob') === 'Not Equal');
+```
+
+You should use the `!==` operator
+
+```js
+assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -61,15 +70,7 @@ function testStrictNotEqual(val) {
 testStrictNotEqual(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testStrictNotEqual(val) {
@@ -79,5 +80,3 @@ function testStrictNotEqual(val) {
   return "Equal";
 }
 ```
-
-</section>

@@ -5,52 +5,80 @@ challengeType: 5
 forumTopicId: 302316
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 Write a function to implement a permutation sort, which proceeds by generating the possible permutations of the input array until discovering the sorted one. The function should return the sorted array.
+
 Pseudocode:
-<pre>
-<b>while not</b> InOrder(list) <b>do</b>
+
+<pre><b>while not</b> InOrder(list) <b>do</b>
   nextPermutation(list)
 <b>done</b>
 </pre>
-</section>
 
-## Instructions
+# --hints--
 
-<section id='instructions'>
+`permutationSort` should be a function.
 
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>permutationSort</code> should be a function.
-    testString: assert(typeof permutationSort == 'function');
-  - text: <code>permutationSort([25, 32, 12, 7, 20])</code> should return an array.
-    testString: assert(Array.isArray(permutationSort([25, 32, 12, 7, 20])));
-  - text: <code>permutationSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
-    testString: assert.deepEqual(permutationSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
-  - text: <code>permutationSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
-    testString: assert.deepEqual(permutationSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
-  - text: <code>permutationSort([43, 36, 20, 34, 24])</code> should return <code>[20, 24, 34, 36, 43]</code>.
-    testString: assert.deepEqual(permutationSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
-  - text: <code>permutationSort([12, 33, 26, 18, 1, 16, 38])</code> should return <code>[1, 12, 16, 18, 26, 33, 38]</code>.
-    testString: assert.deepEqual(permutationSort([12, 33, 26, 18, 1, 16, 38]), [1, 12, 16, 18, 26, 33, 38]);
-  - text: <code>permutationSort([3, 39, 48, 16, 1, 4, 29])</code> should return <code>[1, 3, 4, 16, 29, 39, 48]</code>.
-    testString: assert.deepEqual(permutationSort([3, 39, 48, 16, 1, 4, 29]), [1, 3, 4, 16, 29, 39, 48]);
+```js
+assert(typeof permutationSort == 'function');
 ```
 
-</section>
+`permutationSort([25, 32, 12, 7, 20])` should return an array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(permutationSort([25, 32, 12, 7, 20])));
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`permutationSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+
+```js
+assert.deepEqual(permutationSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
+```
+
+`permutationSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+
+```js
+assert.deepEqual(permutationSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
+```
+
+`permutationSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+
+```js
+assert.deepEqual(permutationSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
+```
+
+`permutationSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+
+```js
+assert.deepEqual(permutationSort([12, 33, 26, 18, 1, 16, 38]), [
+  1,
+  12,
+  16,
+  18,
+  26,
+  33,
+  38
+]);
+```
+
+`permutationSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+
+```js
+assert.deepEqual(permutationSort([3, 39, 48, 16, 1, 4, 29]), [
+  1,
+  3,
+  4,
+  16,
+  29,
+  39,
+  48
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function permutationSort(arr) {
@@ -58,12 +86,7 @@ function permutationSort(arr) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function permutationSort(arr) {
@@ -105,5 +128,3 @@ function permutationSort(arr) {
   return pSort(arr);
 }
 ```
-
-</section>

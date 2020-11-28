@@ -4,31 +4,26 @@ title: Part 85
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give the `fb2-window` elements a `width` of `22%`, `height` of `100%`, and a `background-color` of your `--window-color3` variable.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb2w = code.match(/\.fb2-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*22%\s*(;|})/g.test(fb2w) && /height\s*:\s*100%\s*(;|})/g.test(fb2w) && /background-color\s*:\s*var\(\s*--window-color3\s*\)\s*(;|})/g.test(fb2w));
-
+```js
+const fb2w = code.match(/\.fb2-window\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*22%\s*(;|})/g.test(fb2w) &&
+    /height\s*:\s*100%\s*(;|})/g.test(fb2w) &&
+    /background-color\s*:\s*var\(\s*--window-color3\s*\)\s*(;|})/g.test(fb2w)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -316,12 +311,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -614,5 +604,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

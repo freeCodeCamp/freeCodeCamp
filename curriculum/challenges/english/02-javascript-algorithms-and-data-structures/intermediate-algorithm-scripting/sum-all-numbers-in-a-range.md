@@ -5,44 +5,47 @@ challengeType: 5
 forumTopicId: 16083
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 We'll pass you an array of two numbers. Return the sum of those two numbers plus the sum of all the numbers between them. The lowest number will not always come first.
 
-For example, <code>sumAll([4,1])</code> should return <code>10</code> because sum of all the numbers between 1 and 4 (both inclusive) is <code>10</code>.
+For example, `sumAll([4,1])` should return `10` because sum of all the numbers between 1 and 4 (both inclusive) is `10`.
 
+# --hints--
 
-</section>
+`sumAll([1, 4])` should return a number.
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>sumAll([1, 4])</code> should return a number.
-    testString: assert(typeof sumAll([1, 4]) === 'number');
-  - text: <code>sumAll([1, 4])</code> should return 10.
-    testString: assert.deepEqual(sumAll([1, 4]), 10);
-  - text: <code>sumAll([4, 1])</code> should return 10.
-    testString: assert.deepEqual(sumAll([4, 1]), 10);
-  - text: <code>sumAll([5, 10])</code> should return 45.
-    testString: assert.deepEqual(sumAll([5, 10]), 45);
-  - text: <code>sumAll([10, 5])</code> should return 45.
-    testString: assert.deepEqual(sumAll([10, 5]), 45);
-
+```js
+assert(typeof sumAll([1, 4]) === 'number');
 ```
 
-</section>
+`sumAll([1, 4])` should return 10.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(sumAll([1, 4]), 10);
+```
 
-<div id='js-seed'>
+`sumAll([4, 1])` should return 10.
+
+```js
+assert.deepEqual(sumAll([4, 1]), 10);
+```
+
+`sumAll([5, 10])` should return 45.
+
+```js
+assert.deepEqual(sumAll([5, 10]), 45);
+```
+
+`sumAll([10, 5])` should return 45.
+
+```js
+assert.deepEqual(sumAll([10, 5]), 45);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sumAll(arr) {
@@ -52,15 +55,7 @@ function sumAll(arr) {
 sumAll([1, 4]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function sumAll(arr) {
@@ -72,5 +67,3 @@ function sumAll(arr) {
   return sum;
 }
 ```
-
-</section>

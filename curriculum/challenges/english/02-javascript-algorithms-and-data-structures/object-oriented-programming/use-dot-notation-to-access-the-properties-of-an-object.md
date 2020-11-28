@@ -5,8 +5,8 @@ challengeType: 1
 forumTopicId: 301333
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The last challenge created an object with various properties. Now you'll see how to access the values of those properties. Here's an example:
 
 ```js
@@ -18,32 +18,29 @@ console.log(duck.name);
 // This prints "Aflac" to the console
 ```
 
-Dot notation is used on the object name, <code>duck</code>, followed by the name of the property, <code>name</code>, to access the value of "Aflac".
-</section>
+Dot notation is used on the object name, `duck`, followed by the name of the property, `name`, to access the value of "Aflac".
 
-## Instructions
-<section id='instructions'>
-Print both properties of the <code>dog</code> object to your console.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Print both properties of the `dog` object to your console.
 
-```yml
-tests:
-  - text: Your code should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.
-    testString: assert(/console.log\(.*dog\.name.*\)/g.test(code));
-  - text: Your code should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.
-    testString: assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
+# --hints--
 
+Your code should use `console.log` to print the value for the `name` property of the `dog` object.
+
+```js
+assert(/console.log\(.*dog\.name.*\)/g.test(code));
 ```
 
-</section>
+Your code should use `console.log` to print the value for the `numLegs` property of the `dog` object.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 let dog = {
@@ -51,19 +48,9 @@ let dog = {
   numLegs: 4
 };
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 let dog = {
@@ -73,5 +60,3 @@ let dog = {
 console.log(dog.name);
 console.log(dog.numLegs);
 ```
-
-</section>

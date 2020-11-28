@@ -5,27 +5,25 @@ challengeType: 11
 videoId: eCATNvwraXg
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What is **not** a good way to increase the accuracy of a convolutional neural network?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What is **not** a good way to increase the accuracy of a convolutional neural network?
-  answers:
-    - |
-      Augmenting the data you already have.
-    - |
-      Using a pre-trained model.
-    - |
-      Using your test data to retrain the model.
-  solution: 3
-```
+Augmenting the data you already have.
 
-</section>
+---
+
+Using a pre-trained model.
+
+---
+
+Using your test data to retrain the model.
+
+## --video-solution--
+
+3
+

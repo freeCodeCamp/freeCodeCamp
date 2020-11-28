@@ -1,12 +1,11 @@
 ---
 id: 5900f3c51000cf542c50fed7
-challengeType: 5
 title: 'Problem 89: Roman numerals'
+challengeType: 5
 forumTopicId: 302204
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a "best" way of writing a particular number.
 
@@ -21,39 +20,31 @@ For example, it would appear that there are at least six ways of writing the num
   XVI<br>
 </div>
 
-However, according to the rules only <span style="font-family: 'courier new', monospace;">XIIIIII</span> and <span style="font-family: 'courier new', monospace;">XVI</span> are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
+However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
 
-The array, `roman`, contains one thousand numbers written in valid, but not necessarily minimal, Roman numerals; see <a href="https://projecteuler.net/about=roman_numerals" target="_blank">About... Roman Numerals</a> for the definitive rules for this problem.
+The array, `roman`, contains one thousand numbers written in valid, but not necessarily minimal, Roman numerals; see [About... Roman Numerals](https://projecteuler.net/about=roman_numerals) for the definitive rules for this problem.
 
 Find the number of characters saved by writing each of these in their minimal form.
 
 **Note:** You can assume that all the Roman numerals in the array contain no more than four consecutive identical units.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`romanNumerals(roman)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>romanNumerals(roman)</code> should return a number.
-    testString: assert(typeof romanNumerals(roman) === 'number');
-  - text: <code>romanNumerals(roman)</code> should return 743.
-    testString: assert.strictEqual(romanNumerals(roman), 743);
-
+```js
+assert(typeof romanNumerals(roman) === 'number');
 ```
 
-</section>
+`romanNumerals(roman)` should return 743.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(romanNumerals(roman), 743);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function romanNumerals(arr) {
@@ -70,17 +61,8 @@ const roman = [
 romanNumerals(roman);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

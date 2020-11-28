@@ -4,31 +4,23 @@ title: Part 77
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
 
 Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -92,10 +84,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -161,6 +149,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

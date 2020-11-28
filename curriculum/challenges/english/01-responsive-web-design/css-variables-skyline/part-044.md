@@ -4,8 +4,7 @@ title: Part 44
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Gradients can use as many colors as you want like this:
 
@@ -18,27 +17,23 @@ gradient-type(
 ```
 
 Add a `linear-gradient` to `bb1d` with `orange` as the first color, `--building-color1` as the second, and `--window-color1` as the third. Remember to use the gradient on the `background` property.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*linear-gradient\(\s*orange\s*,\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1d));
-
+```js
+const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*linear-gradient\(\s*orange\s*,\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(
+    bb1d
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -206,12 +201,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -383,5 +373,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

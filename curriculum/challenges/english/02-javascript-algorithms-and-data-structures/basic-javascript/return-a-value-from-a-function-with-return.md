@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cy87wue'
 forumTopicId: 18271
 ---
 
-## Description
-<section id='description'>
-We can pass values into a function with <dfn>arguments</dfn>. You can use a <code>return</code> statement to send a value back out of a function.
-<strong>Example</strong>
+# --description--
+
+We can pass values into a function with <dfn>arguments</dfn>. You can use a `return` statement to send a value back out of a function.
+
+**Example**
 
 ```js
 function plusThree(num) {
@@ -18,52 +19,46 @@ function plusThree(num) {
 var answer = plusThree(5); // 8
 ```
 
-<code>plusThree</code> takes an <dfn>argument</dfn> for <code>num</code> and returns a value equal to <code>num + 3</code>.
-</section>
+`plusThree` takes an <dfn>argument</dfn> for `num` and returns a value equal to `num + 3`.
 
-## Instructions
-<section id='instructions'>
-Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value. See the last line in the editor for an example of how you can test your <code>timesFive</code> function.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Create a function `timesFive` that accepts one argument, multiplies it by `5`, and returns the new value. See the last line in the editor for an example of how you can test your `timesFive` function.
 
-```yml
-tests:
-  - text: <code>timesFive</code> should be a function
-    testString: assert(typeof timesFive === 'function');
-  - text: <code>timesFive(5)</code> should return <code>25</code>
-    testString: assert(timesFive(5) === 25);
-  - text: <code>timesFive(2)</code> should return <code>10</code>
-    testString: assert(timesFive(2) === 10);
-  - text: <code>timesFive(0)</code> should return <code>0</code>
-    testString: assert(timesFive(0) === 0);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`timesFive` should be a function
 
 ```js
-
-
-
+assert(typeof timesFive === 'function');
 ```
 
-</div>
+`timesFive(5)` should return `25`
 
+```js
+assert(timesFive(5) === 25);
+```
 
+`timesFive(2)` should return `10`
 
-</section>
+```js
+assert(timesFive(2) === 10);
+```
 
-## Solution
-<section id='solution'>
+`timesFive(0)` should return `0`
 
+```js
+assert(timesFive(0) === 0);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
+# --solutions--
 
 ```js
 function timesFive(num) {
@@ -71,5 +66,3 @@ function timesFive(num) {
 }
 timesFive(10);
 ```
-
-</section>

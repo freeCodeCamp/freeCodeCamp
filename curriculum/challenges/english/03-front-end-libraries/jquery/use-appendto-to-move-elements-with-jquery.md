@@ -5,40 +5,41 @@ challengeType: 6
 forumTopicId: 18340
 ---
 
-## Description
-<section id='description'>
-Now let's try moving elements from one <code>div</code> to another.
-jQuery has a function called <code>appendTo()</code> that allows you to select HTML elements and append them to another element.
-For example, if we wanted to move <code>target4</code> from our right well to our left well, we would use:
-<code>$("#target4").appendTo("#left-well");</code>
-Move your <code>target2</code> element from your <code>left-well</code> to your <code>right-well</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Now let's try moving elements from one `div` to another.
 
-</section>
+jQuery has a function called `appendTo()` that allows you to select HTML elements and append them to another element.
 
-## Tests
-<section id='tests'>
+For example, if we wanted to move `target4` from our right well to our left well, we would use:
 
-```yml
-tests:
-  - text: Your <code>target2</code> element should not be inside your <code>left-well</code>.
-    testString: assert($("#left-well").children("#target2").length === 0);
-  - text: Your <code>target2</code> element should be inside your <code>right-well</code>.
-    testString: assert($("#right-well").children("#target2").length > 0);
-  - text: You should only use jQuery to move these elements.
-    testString: assert(!code.match(/class.*animated/g));
+`$("#target4").appendTo("#left-well");`
 
+Move your `target2` element from your `left-well` to your `right-well`.
+
+# --hints--
+
+Your `target2` element should not be inside your `left-well`.
+
+```js
+assert($('#left-well').children('#target2').length === 0);
 ```
 
-</section>
+Your `target2` element should be inside your `right-well`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#right-well').children('#target2').length > 0);
+```
 
-<div id='html-seed'>
+You should only use jQuery to move these elements.
+
+```js
+assert(!code.match(/class.*animated/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -75,14 +76,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -118,5 +112,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

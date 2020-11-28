@@ -5,48 +5,145 @@ challengeType: 5
 forumTopicId: 385288
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The Lempel-Ziv-Welch (LZW) algorithm provides loss-less data compression.
-You can read a complete description of it in the <a href="https://en.wikipedia.org/wiki/Lempel-Ziv-Welch" target="_blank">Wikipedia article</a> on the subject.
-</section>
 
-## Instructions
-<section id='instructions'>
-Write a function that takes two parameters. The first parameter is a boolean where `true` indicates compress and `false` indicates decompress. The second parameter is either a string or an array to be processed. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
-</section>
+You can read a complete description of it in the [Wikipedia article](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch) on the subject.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>LZW</code> should be a function.
-    testString: assert(typeof LZW === 'function');
-  - text: <code>LZW(true, "TOBEORNOTTOBEORTOBEORNOT")</code> should return a array.
-    testString: assert(Array.isArray(LZW(true, "TOBEORNOTTOBEORTOBEORNOT")));
-  - text: <code>LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])</code> should return a string.
-    testString: assert(typeof LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]) === 'string');
-  - text: <code>LZW(true, "TOBEORNOTTOBEORTOBEORNOT")</code> should return <code>[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]</code>.
-    testString: assert.deepEqual(LZW(true, "TOBEORNOTTOBEORTOBEORNOT"), [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]);
-  - text: <code>LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])</code> should return <code>"TOBEORNOTTOBEORTOBEORNOT"</code>.
-    testString: assert.equal(LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]), "TOBEORNOTTOBEORTOBEORNOT");
-  - text: <code>LZW(true, "0123456789")</code> should return <code>[48, 49, 50, 51, 52, 53, 54, 55, 56, 57]</code>.
-    testString: assert.deepEqual(LZW(true, "0123456789"), [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]);
-  - text: <code>LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57])</code> should return <code>"0123456789"</code>.
-    testString: assert.equal(LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]), "0123456789");
-  - text: <code>LZW(true, "BABAABAAA")</code> should return <code>[66, 65, 256, 257, 65, 260]</code>.
-    testString: assert.deepEqual(LZW(true, "BABAABAAA"), [66, 65, 256, 257, 65, 260]);
-  - text: <code>LZW(false, [66, 65, 256, 257, 65, 260])</code> should return <code>"BABAABAAA"</code>.
-    testString: assert.equal(LZW(false, [66, 65, 256, 257, 65, 260]), "BABAABAAA");
+Write a function that takes two parameters. The first parameter is a boolean where \`true\` indicates compress and \`false\` indicates decompress. The second parameter is either a string or an array to be processed. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
+
+# --hints--
+
+`LZW` should be a function.
+
+```js
+assert(typeof LZW === 'function');
 ```
 
-</section>
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` should return a array.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(Array.isArray(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT')));
+```
 
-<div id='js-seed'>
+`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` should return a string.
+
+```js
+assert(
+  typeof LZW(false, [
+    84,
+    79,
+    66,
+    69,
+    79,
+    82,
+    78,
+    79,
+    84,
+    256,
+    258,
+    260,
+    265,
+    259,
+    261,
+    263
+  ]) === 'string'
+);
+```
+
+`LZW(true, "TOBEORNOTTOBEORTOBEORNOT")` should return `[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]`.
+
+```js
+assert.deepEqual(LZW(true, 'TOBEORNOTTOBEORTOBEORNOT'), [
+  84,
+  79,
+  66,
+  69,
+  79,
+  82,
+  78,
+  79,
+  84,
+  256,
+  258,
+  260,
+  265,
+  259,
+  261,
+  263
+]);
+```
+
+`LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])` should return `"TOBEORNOTTOBEORTOBEORNOT"`.
+
+```js
+assert.equal(
+  LZW(false, [
+    84,
+    79,
+    66,
+    69,
+    79,
+    82,
+    78,
+    79,
+    84,
+    256,
+    258,
+    260,
+    265,
+    259,
+    261,
+    263
+  ]),
+  'TOBEORNOTTOBEORTOBEORNOT'
+);
+```
+
+`LZW(true, "0123456789")` should return `[48, 49, 50, 51, 52, 53, 54, 55, 56, 57]`.
+
+```js
+assert.deepEqual(LZW(true, '0123456789'), [
+  48,
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+]);
+```
+
+`LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57])` should return `"0123456789"`.
+
+```js
+assert.equal(
+  LZW(false, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]),
+  '0123456789'
+);
+```
+
+`LZW(true, "BABAABAAA")` should return `[66, 65, 256, 257, 65, 260]`.
+
+```js
+assert.deepEqual(LZW(true, 'BABAABAAA'), [66, 65, 256, 257, 65, 260]);
+```
+
+`LZW(false, [66, 65, 256, 257, 65, 260])` should return `"BABAABAAA"`.
+
+```js
+assert.equal(LZW(false, [66, 65, 256, 257, 65, 260]), 'BABAABAAA');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function LZW (compressData, input) {
@@ -54,12 +151,7 @@ function LZW (compressData, input) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function LZW (compressData, input) {
@@ -144,5 +236,3 @@ function LZW (compressData, input) {
   }
 }
 ```
-
-</section>

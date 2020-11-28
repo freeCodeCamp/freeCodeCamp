@@ -4,36 +4,41 @@ title: Part 61
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now you will add a footer section to the page. 
+Now you will add a footer section to the page.
 
 After the `main` element, add a `footer` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted the `main` element or it is missing an opening tag or closing tag."
 
-```yml
-tests:
-  - text: You have either deleted the `main` element or it is missing an opening tag or closing tag."
-    testString: assert( document.querySelector('main') && code.match(/<\/main>/) );
-  - text: "Your `footer` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('footer') );
-  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/footer\>/) );
-  - text: Your `footer` element should the below the closing `main` element tag. You have it put it somewhere else.
-    testString: assert( document.querySelector('main').nextElementSibling.nodeName === 'FOOTER' );
-
+```js
+assert(document.querySelector('main') && code.match(/<\/main>/));
 ```
 
-</section>
+Your `footer` element should have an opening tag. Opening tags have the following syntax: `<elementName>`.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(document.querySelector('footer'));
+```
+
+Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+assert(code.match(/<\/footer\>/));
+```
+
+Your `footer` element should the below the closing `main` element tag. You have it put it somewhere else.
+
+```js
+assert(document.querySelector('main').nextElementSibling.nodeName === 'FOOTER');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -87,12 +92,10 @@ tests:
           <button type="submit">Submit</button>
         </form>
       </section>
-    --fcc-editable-region-- 
+--fcc-editable-region--
     </main>
   </body>
 </html>
 --fcc-editable-region--
 ```
 
-</div>
-</section>

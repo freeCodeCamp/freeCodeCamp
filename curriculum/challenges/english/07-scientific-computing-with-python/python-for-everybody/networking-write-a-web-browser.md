@@ -5,45 +5,45 @@ challengeType: 11
 videoId: zjyT9DaAjx4
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What does the following code create?:
 
-```yml
-question:
-  text: |
-    What does the following code create?:
+```py
+import socket
 
-    ```py
-    import socket
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))
+cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+mysock.send(cmd)
 
-    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    mysock.connect(('data.pr4e.org', 80))
-    cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
-    mysock.send(cmd)
-
-    while True:
-        data = mysock.recv(512)
-        if len(data) < 1:
-            break
-        print(data.decode(),end='')
-    mysock.close()
-    ```
-
-  answers:
-    - |
-        A simple web server.
-    - |
-        A simple email client.
-    - |
-        A simple todo list.
-    - |
-        A simple web browser.
-  solution: 4
+while True:
+    data = mysock.recv(512)
+    if len(data) < 1:
+        break
+    print(data.decode(),end='')
+mysock.close()
 ```
 
-</section>
+## --answers--
+
+A simple web server.
+
+---
+
+A simple email client.
+
+---
+
+A simple todo list.
+
+---
+
+A simple web browser.
+
+## --video-solution--
+
+4
+

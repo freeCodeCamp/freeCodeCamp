@@ -4,31 +4,26 @@ title: Part 98
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add your `--building-color1` variable as value of the `background-color` property of `fb4b`. Then, remove the `background-color` from `fb4`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb4 = code.match(/\.fb4\s*{[\s\S]+?[^}]}/g)[0]; const fb4b = code.match(/\.fb4b\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb4) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb4b));
-
+```js
+const fb4 = code.match(/\.fb4\s*{[\s\S]+?[^}]}/g)[0];
+const fb4b = code.match(/\.fb4b\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  !/background-color/g.test(fb4) &&
+    /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb4b)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -359,12 +354,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -694,5 +684,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

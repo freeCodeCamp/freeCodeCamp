@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 forumTopicId: 16630
 ---
 
-## Description
-<section id='description'>
-CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>.
+# --description--
+
+CSS borders have properties like `style`, `color` and `width`.
+
 For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:
 
 ```html
@@ -21,39 +22,53 @@ For example, if we wanted to create a red, 5 pixel border around an HTML element
 </style>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Create a class called <code>thick-green-border</code>. This class should add a 10px, solid, green border around an HTML element. Apply the class to your cat photo.
-Remember that you can apply multiple classes to an element using its <code>class</code> attribute, by separating each class name with a space. For example:
-<code>&lt;img class="class1 class2"&gt;</code>
-</section>
+Create a class called `thick-green-border`. This class should add a 10px, solid, green border around an HTML element. Apply the class to your cat photo.
 
-## Tests
-<section id='tests'>
+Remember that you can apply multiple classes to an element using its `class` attribute, by separating each class name with a space. For example:
 
-```yml
-tests:
-  - text: Your <code>img</code> element should have the class <code>smaller-image</code>.
-    testString: assert($("img").hasClass("smaller-image"));
-  - text: Your <code>img</code> element should have the class <code>thick-green-border</code>.
-    testString: assert($("img").hasClass("thick-green-border"));
-  - text: Your image should have a border width of <code>10px</code>.
-    testString: assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12);
-  - text: Your image should have a border style of <code>solid</code>.
-    testString: assert($("img").css("border-right-style") === "solid");
-  - text: The border around your <code>img</code> element should be green.
-    testString: assert($("img").css("border-left-color") === "rgb(0, 128, 0)");
+`<img class="class1 class2">`
 
+# --hints--
+
+Your `img` element should have the class `smaller-image`.
+
+```js
+assert($('img').hasClass('smaller-image'));
 ```
 
-</section>
+Your `img` element should have the class `thick-green-border`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('img').hasClass('thick-green-border'));
+```
 
-<div id='html-seed'>
+Your image should have a border width of `10px`.
+
+```js
+assert(
+  $('img').hasClass('thick-green-border') &&
+    parseInt($('img').css('border-top-width'), 10) >= 8 &&
+    parseInt($('img').css('border-top-width'), 10) <= 12
+);
+```
+
+Your image should have a border style of `solid`.
+
+```js
+assert($('img').css('border-right-style') === 'solid');
+```
+
+The border around your `img` element should be green.
+
+```js
+assert($('img').css('border-left-color') === 'rgb(0, 128, 0)');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -109,12 +124,7 @@ tests:
 </main>
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -175,5 +185,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

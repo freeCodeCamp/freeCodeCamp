@@ -6,11 +6,13 @@ videoUrl: 'https://scrimba.com/c/c6KBqtV'
 forumTopicId: 16785
 ---
 
-## Description
-<section id='description'>
-The greater than or equal to operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.
-Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.
-<strong>Examples</strong>
+# --description--
+
+The greater than or equal to operator (`>=`) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns `true`. Otherwise, it returns `false`.
+
+Like the equality operator, `greater than or equal to` operator will convert data types while comparing.
+
+**Examples**
 
 ```js
 6   >=  6   // true
@@ -19,43 +21,63 @@ Like the equality operator, <code>greater than or equal to</code> operator will 
 '7' >=  9   // false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testGreaterOrEqual(0)</code> should return "Less than 10"
-    testString: assert(testGreaterOrEqual(0) === "Less than 10");
-  - text: <code>testGreaterOrEqual(9)</code> should return "Less than 10"
-    testString: assert(testGreaterOrEqual(9) === "Less than 10");
-  - text: <code>testGreaterOrEqual(10)</code> should return "10 or Over"
-    testString: assert(testGreaterOrEqual(10) === "10 or Over");
-  - text: <code>testGreaterOrEqual(11)</code> should return "10 or Over"
-    testString: assert(testGreaterOrEqual(11) === "10 or Over");
-  - text: <code>testGreaterOrEqual(19)</code> should return "10 or Over"
-    testString: assert(testGreaterOrEqual(19) === "10 or Over");
-  - text: <code>testGreaterOrEqual(100)</code> should return "20 or Over"
-    testString: assert(testGreaterOrEqual(100) === "20 or Over");
-  - text: <code>testGreaterOrEqual(21)</code> should return "20 or Over"
-    testString: assert(testGreaterOrEqual(21) === "20 or Over");
-  - text: You should use the <code>&gt;=</code> operator at least twice
-    testString: assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);
+`testGreaterOrEqual(0)` should return "Less than 10"
 
+```js
+assert(testGreaterOrEqual(0) === 'Less than 10');
 ```
 
-</section>
+`testGreaterOrEqual(9)` should return "Less than 10"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testGreaterOrEqual(9) === 'Less than 10');
+```
 
-<div id='js-seed'>
+`testGreaterOrEqual(10)` should return "10 or Over"
+
+```js
+assert(testGreaterOrEqual(10) === '10 or Over');
+```
+
+`testGreaterOrEqual(11)` should return "10 or Over"
+
+```js
+assert(testGreaterOrEqual(11) === '10 or Over');
+```
+
+`testGreaterOrEqual(19)` should return "10 or Over"
+
+```js
+assert(testGreaterOrEqual(19) === '10 or Over');
+```
+
+`testGreaterOrEqual(100)` should return "20 or Over"
+
+```js
+assert(testGreaterOrEqual(100) === '20 or Over');
+```
+
+`testGreaterOrEqual(21)` should return "20 or Over"
+
+```js
+assert(testGreaterOrEqual(21) === '20 or Over');
+```
+
+You should use the `>=` operator at least twice
+
+```js
+assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testGreaterOrEqual(val) {
@@ -73,15 +95,7 @@ function testGreaterOrEqual(val) {
 testGreaterOrEqual(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testGreaterOrEqual(val) {
@@ -96,5 +110,3 @@ function testGreaterOrEqual(val) {
   return "Less than 10";
 }
 ```
-
-</section>

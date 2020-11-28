@@ -4,8 +4,7 @@ title: Part 104
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Chain a `text` function to set the text of each pie slice to a percentage. Set the value to a "d function" with curly brackets and leave the function empty for now. It should look like this:
 
@@ -17,31 +16,52 @@ Chain a `text` function to set the text of each pie slice to a percentage. Set t
 
 The method for getting the percent of each slice will take a few steps:
 
-1. Find the total number of followers for the displayed year
-2. Divide the followers of a single platform by that total
-3. Turn it into a string to display
+1.  Find the total number of followers for the displayed year
+2.  Divide the followers of a single platform by that total
+3.  Turn it into a string to display
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
-</section>
+test-text
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: test-text
-    testString: assert(/\.append\('text'\)\s*\.text\s*\(\s*d\s*=>\s*\{\s*\}\s*\)/g.test(code));
-
+```js
+assert(/\.append\('text'\)\s*\.text\s*\(\s*d\s*=>\s*\{\s*\}\s*\)/g.test(code));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -199,47 +219,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -398,5 +378,3 @@ tests:
     })
 </script>
 ```
-
-</section>

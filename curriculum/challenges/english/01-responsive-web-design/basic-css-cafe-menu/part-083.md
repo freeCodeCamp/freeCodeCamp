@@ -4,31 +4,23 @@ title: Part 83
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue; }`.
 
 Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -92,10 +84,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -179,6 +167,3 @@ a:visited {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

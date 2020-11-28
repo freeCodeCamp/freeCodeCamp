@@ -1,14 +1,13 @@
 ---
 id: 587d7b7d367417b2b2512b1d
-title: 'Iterate Through the Keys of an Object with a for...in Statement'
+title: Iterate Through the Keys of an Object with a for...in Statement
 challengeType: 1
 forumTopicId: 301162
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our <code>users</code> object, this could look like:
+Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our `users` object, this could look like:
 
 ```js
 for (let user in users) {
@@ -22,15 +21,11 @@ Sarah
 Ryan
 ```
 
-In this statement, we defined a variable <code>user</code>, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console.
-<strong>NOTE:</strong> Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
-</section>
+In this statement, we defined a variable `user`, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console. **NOTE:** Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
-We've defined a function <code>countOnline</code> which accepts one argument (a users object). Use a <dfn>for...in</dfn> statement within this function to loop through the users object passed into the function and return the number of users whose <code>online</code> property is set to <code>true</code>.  An example of a users object which could be passed to <code>countOnline</code> is shown below.  Each user will have an <code>online</code> property with either a <code>true</code> or <code>false</code> value.
-
+We've defined a function `countOnline` which accepts one argument (a users object). Use a <dfn>for...in</dfn> statement within this function to loop through the users object passed into the function and return the number of users whose `online` property is set to `true`. An example of a users object which could be passed to `countOnline` is shown below. Each user will have an `online` property with either a `true` or `false` value.
 
 ```js
 {
@@ -46,42 +41,39 @@ We've defined a function <code>countOnline</code> which accepts one argument (a 
 }
 ```
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: The function <code>countOnline</code> should use a `for in` statement to iterate through the object keys of the object passed to it.
-    testString: assert(code.match(/for\s*\(\s*(var|let|const)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)\s*{/));
-  - text: 'The function <code>countOnline</code> should return <code>1</code> when the object <code>{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }</code> is passed to it'
-    testString: assert(countOnline(usersObj1) === 1);
-  - text: 'The function <code>countOnline</code> should return <code>2</code> when the object <code>{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }</code> is passed to it'
-    testString: assert(countOnline(usersObj2) === 2);
-  - text: 'The function <code>countOnline</code> should return <code>0</code> when the object <code>{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }</code> is passed to it'
-    testString: assert(countOnline(usersObj3) === 0);
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The function `countOnline` should use a `for in` statement to iterate through the object keys of the object passed to it.
 
 ```js
-function countOnline(usersObj) {
-  // Only change code below this line
-
-  // Only change code above this line
-}
+assert(
+  code.match(
+    /for\s*\(\s*(var|let|const)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)\s*{/
+  )
+);
 ```
 
-</div>
+The function `countOnline` should return `1` when the object `{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }` is passed to it
 
-### After Test
-<div id='js-teardown'>
+```js
+assert(countOnline(usersObj1) === 1);
+```
+
+The function `countOnline` should return `2` when the object `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }` is passed to it
+
+```js
+assert(countOnline(usersObj2) === 2);
+```
+
+The function `countOnline` should return `0` when the object `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }` is passed to it
+
+```js
+assert(countOnline(usersObj3) === 0);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const usersObj1 = {
@@ -122,16 +114,19 @@ const usersObj3 = {
 }
 ```
 
-</div>
-
-
-</section>
-
-## Solution
-<section id='solution'>
+## --seed-contents--
 
 ```js
+function countOnline(usersObj) {
+  // Only change code below this line
 
+  // Only change code above this line
+}
+```
+
+# --solutions--
+
+```js
 function countOnline(usersObj) {
   let online = 0;
   for(let user in usersObj){
@@ -141,7 +136,4 @@ function countOnline(usersObj) {
   }
   return online;
 }
-
 ```
-
-</section>

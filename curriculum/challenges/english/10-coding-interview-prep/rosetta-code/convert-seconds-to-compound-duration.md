@@ -1,37 +1,42 @@
 ---
-title: Convert seconds to compound duration
 id: 596fd036dc1ab896c5db98b1
+title: Convert seconds to compound duration
 challengeType: 5
 forumTopicId: 302236
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Implement a function which:
+
 <ul>
   <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
   <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
 </ul>
-Demonstrate that it passes the following three test-cases:
-<div style="font-size:115%; font-weight: bold;">Test Cases</div>
 
-| Input number | Output number |
-| --- | --- |
-| 7259 | <code>2 hr, 59 sec</code> |
-| 728640059 | <code>1 d</code> |
-| 6000000 | <code>9 wk, 6 d, 10 hr, 40 min</code> |
+Demonstrate that it passes the following three test-cases:
+
+<div style='font-size:115%; font-weight: bold;'>Test Cases</div>
+
+| Input number | Output number                         |
+| ------------ | ------------------------------------- |
+| 7259         | <code>2 hr, 59 sec</code>             |
+| 728640059    | <code>1 d</code>                      |
+| 6000000      | <code>9 wk, 6 d, 10 hr, 40 min</code> |
+
 <div style="font-size:115%; font-weight: bold;">Details</div>
 <ul>
   <li>
     The following five units should be used:
 
-| Unit | Suffix used in Output | Conversion |
-| --- | --- | --- |
-| week | <code>wk</code> | 1 week = 7 days |
-| day | <code>d</code> | 1 day = 24 hours |
-| hour | <code>hr</code> | 1 hour = 60 minutes |
-| minute | <code>min</code> | 1 minute = 60 seconds |
-| second | <code>sec</code> | --- |
+| Unit   | Suffix used in Output | Conversion            |
+| ------ | --------------------- | --------------------- |
+| week   | <code>wk</code>       | 1 week = 7 days       |
+| day    | <code>d</code>        | 1 day = 24 hours      |
+| hour   | <code>hr</code>       | 1 hour = 60 minutes   |
+| minute | <code>min</code>      | 1 minute = 60 seconds |
+| second | <code>sec</code>      | ---                   |
+
   </li>
   <li>
     However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
@@ -43,35 +48,43 @@ Demonstrate that it passes the following three test-cases:
     Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
   </li>
 </ul>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`convertSeconds` should be a function.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>convertSeconds</code> should be a function.
-    testString: assert(typeof convertSeconds === 'function');
-  - text: <code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.
-    testString: assert.equal(convertSeconds(testCases[0]), results[0]);
-  - text: <code>convertSeconds(86400)</code> should return <code>1 d</code>.
-    testString: assert.equal(convertSeconds(testCases[1]), results[1]);
-  - text: <code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.
-    testString: assert.equal(convertSeconds(testCases[2]), results[2]);
-
+```js
+assert(typeof convertSeconds === 'function');
 ```
 
-</section>
+`convertSeconds(7259)` should return `2 hr, 59 sec`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.equal(convertSeconds(testCases[0]), results[0]);
+```
 
-<div id='js-seed'>
+`convertSeconds(86400)` should return `1 d`.
+
+```js
+assert.equal(convertSeconds(testCases[1]), results[1]);
+```
+
+`convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
+
+```js
+assert.equal(convertSeconds(testCases[2]), results[2]);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+const testCases = [7259, 86400, 6000000];
+const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
+```
+
+## --seed-contents--
 
 ```js
 function convertSeconds(sec) {
@@ -80,24 +93,7 @@ function convertSeconds(sec) {
 }
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const testCases = [7259, 86400, 6000000];
-const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function convertSeconds(sec) {
@@ -129,7 +125,4 @@ function convertSeconds(sec) {
 
   return compoundDuration(localNames, sec);
 }
-
 ```
-
-</section>

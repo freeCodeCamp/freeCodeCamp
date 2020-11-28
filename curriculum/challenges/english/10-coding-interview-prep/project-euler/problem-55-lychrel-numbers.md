@@ -1,12 +1,11 @@
 ---
 id: 5900f3a31000cf542c50feb6
-challengeType: 5
 title: 'Problem 55: Lychrel numbers'
+challengeType: 5
 forumTopicId: 302166
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 If we take 47, reverse and add, 47 + 74 = 121, which is palindromic.
 
@@ -24,43 +23,51 @@ Although no one has proved it yet, it is thought that some numbers, like 196, ne
 
 Surprisingly, there are palindromic numbers that are themselves Lychrel numbers; the first example is 4994.
 
-How many Lychrel numbers are there below <code>num</code>?
+How many Lychrel numbers are there below `num`?
 
 **Note:** Wording was modified slightly on 24 April 2007 to emphasize the theoretical nature of Lychrel numbers.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`countLychrelNumbers(1000)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>countLychrelNumbers(1000)</code> should return a number.
-    testString: assert(typeof countLychrelNumbers(1000) === 'number');
-  - text: <code>countLychrelNumbers(1000)</code> should return 13.
-    testString: assert.strictEqual(countLychrelNumbers(1000), 13);
-  - text: <code>countLychrelNumbers(3243)</code> should return 39.
-    testString: assert.strictEqual(countLychrelNumbers(3243), 39);
-  - text: <code>countLychrelNumbers(5000)</code> should return 76.
-    testString: assert.strictEqual(countLychrelNumbers(5000), 76);
-  - text: <code>countLychrelNumbers(7654)</code> should return 140.
-    testString: assert.strictEqual(countLychrelNumbers(7654), 140);
-  - text: <code>countLychrelNumbers(10000)</code> should return 249.
-    testString: assert.strictEqual(countLychrelNumbers(10000), 249);
-
+```js
+assert(typeof countLychrelNumbers(1000) === 'number');
 ```
 
-</section>
+`countLychrelNumbers(1000)` should return 13.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(countLychrelNumbers(1000), 13);
+```
 
-<div id='js-seed'>
+`countLychrelNumbers(3243)` should return 39.
+
+```js
+assert.strictEqual(countLychrelNumbers(3243), 39);
+```
+
+`countLychrelNumbers(5000)` should return 76.
+
+```js
+assert.strictEqual(countLychrelNumbers(5000), 76);
+```
+
+`countLychrelNumbers(7654)` should return 140.
+
+```js
+assert.strictEqual(countLychrelNumbers(7654), 140);
+```
+
+`countLychrelNumbers(10000)` should return 249.
+
+```js
+assert.strictEqual(countLychrelNumbers(10000), 249);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function countLychrelNumbers(num) {
@@ -71,15 +78,7 @@ function countLychrelNumbers(num) {
 countLychrelNumbers(10000);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const countLychrelNumbers = (size) => {
@@ -111,5 +110,3 @@ const countLychrelNumbers = (size) => {
   return total;
 }
 ```
-
-</section>

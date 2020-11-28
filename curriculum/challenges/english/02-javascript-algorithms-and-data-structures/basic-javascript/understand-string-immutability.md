@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cWPVaUR'
 forumTopicId: 18331
 ---
 
-## Description
-<section id='description'>
-In JavaScript, <code>String</code> values are <dfn>immutable</dfn>, which means that they cannot be altered once created.
+# --description--
+
+In JavaScript, `String` values are <dfn>immutable</dfn>, which means that they cannot be altered once created.
+
 For example, the following code:
 
 ```js
@@ -16,38 +17,40 @@ var myStr = "Bob";
 myStr[0] = "J";
 ```
 
-cannot change the value of <code>myStr</code> to "Job", because the contents of <code>myStr</code> cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change <code>myStr</code> would be to assign it with a new string, like this:
+cannot change the value of `myStr` to "Job", because the contents of `myStr` cannot be altered. Note that this does *not* mean that `myStr` cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change `myStr` would be to assign it with a new string, like this:
 
 ```js
 var myStr = "Bob";
 myStr = "Job";
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Correct the assignment to <code>myStr</code> so it contains the string value of <code>Hello World</code> using the approach shown in the example above.
-</section>
+Correct the assignment to `myStr` so it contains the string value of `Hello World` using the approach shown in the example above.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>myStr</code> should have a value of <code>Hello World</code>.
-    testString: assert(myStr === "Hello World");
-  - text: You should not change the code above the specified comment.
-    testString: assert(/myStr = "Jello World"/.test(code));
+`myStr` should have a value of `Hello World`.
 
+```js
+assert(myStr === 'Hello World');
 ```
 
-</section>
+You should not change the code above the specified comment.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/myStr = "Jello World"/.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(v){return "myStr = " + v;})(myStr);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -56,30 +59,11 @@ var myStr = "Jello World";
 // Only change code below this line
 myStr[0] = "H"; // Change this line
 // Only change code above this line
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(v){return "myStr = " + v;})(myStr);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myStr = "Jello World";
 myStr = "Hello World";
 ```
-
-</section>

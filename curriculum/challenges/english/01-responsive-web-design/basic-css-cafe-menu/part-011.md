@@ -4,34 +4,26 @@ title: Part 11
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Up until now, you have been limited regarding the presentation and appearance of the content you create. To start taking control, add a `style` element within the `head` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
 <html>
-  --fcc-editable-region--
+--fcc-editable-region--
   <head>
     <meta charset="utf-8" />
     <title>Camper Cafe Menu</title>
@@ -47,10 +39,7 @@ tests:
       </section>
     </main>
   </body>
-  --fcc-editable-region--
+--fcc-editable-region--
 <html>
 ```
 
-</div>
-
-</section>

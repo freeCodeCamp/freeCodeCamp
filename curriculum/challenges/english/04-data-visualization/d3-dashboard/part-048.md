@@ -4,35 +4,56 @@ title: Part 48
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Tell the path what data to use. Add an `attr` function and set the `d` to `twitterLine(data)`. This will the build the path using the `twitterLine` function you created and your data variable.
 
 Note that the `d` in this case is a path attribute for drawing a line and is different from a "d function".
 
 After you have added your code, take a look at the data flow to help understand what is happening. You pass the data array to your `twitterLine` function where it sets the x and y values using your "d functions". The "d functions" go through each item in the array, passing part of the item to each scale to find the appropriate coordinates. When it's done, the value you are setting here is created and sent back. The result ends up being a confusing string of numbers and coordinates to tell the path how to be drawn.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($('svg path')[2].getAttribute('d').length === 151);
-
+```js
+assert($('svg path')[2].getAttribute('d').length === 151);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -100,47 +121,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -209,5 +190,3 @@ tests:
 
 </script>
 ```
-
-</section>

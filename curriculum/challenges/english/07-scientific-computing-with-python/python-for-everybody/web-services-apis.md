@@ -5,29 +5,29 @@ challengeType: 11
 videoId: oUNn1psfBJg
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What does API stand for?
 
-```yml
-question:
-  text: |
-    What does API stand for?
+## --answers--
 
-  answers:
-    - |
-        Application Portable Intelligence
-    - |
-        Associate Programming International
-    - |
-        Application Program Interface
-    - |
-        Action Portable Interface
-  solution: 3
-```
+Application Portable Intelligence
 
-</section>
+---
+
+Associate Programming International
+
+---
+
+Application Program Interface
+
+---
+
+Action Portable Interface
+
+## --video-solution--
+
+3
+

@@ -6,57 +6,44 @@ videoUrl: 'https://scrimba.com/c/cEanysE'
 forumTopicId: 18310
 ---
 
-## Description
-<section id='description'>
-In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator (<code>=</code>). 
-<code>myVariable = 5;</code>
-This assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.
-If there are any calculations to the right of the <code>=</code> operator, those are performed before the value is assigned to the variable on the left of the operator.
+# --description--
+
+In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn> operator (`=`).
+
+`myVariable = 5;`
+
+This assigns the `Number` value `5` to `myVariable`.
+
+If there are any calculations to the right of the `=` operator, those are performed before the value is assigned to the variable on the left of the operator.
 
 ```js
 var myVar;
 myVar = 5;
 ```
 
-First, this code creates a variable named <code>myVar</code>. Then, the code assigns <code>5</code> to <code>myVar</code>. Now, if <code>myVar</code> appears again in the code, the program will treat it as if it is <code>5</code>.
-</section>
+First, this code creates a variable named `myVar`. Then, the code assigns `5` to `myVar`. Now, if `myVar` appears again in the code, the program will treat it as if it is `5`.
 
-## Instructions
-<section id='instructions'>
-Assign the value <code>7</code> to variable <code>a</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Assign the value `7` to variable `a`.
 
-```yml
-tests:
-  - text: You should not change code above the specified comment.
-    testString: assert(/var a;/.test(code));
-  - text: <code>a</code> should have a value of 7.
-    testString: assert(typeof a === 'number' && a === 7);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+You should not change code above the specified comment.
 
 ```js
-// Setup
-var a;
-
-// Only change code below this line
-
+assert(/var a;/.test(code));
 ```
 
-</div>
+`a` should have a value of 7.
 
-### Before Test
-<div id='js-setup'>
+```js
+assert(typeof a === 'number' && a === 7);
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 if (typeof a != 'undefined') {
@@ -64,26 +51,24 @@ if (typeof a != 'undefined') {
 }
 ```
 
-</div>
-
-### After Test
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 (function(a){return "a = " + a;})(a);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Setup
+var a;
 
-## Solution
-<section id='solution'>
+// Only change code below this line
+```
 
+# --solutions--
 
 ```js
 var a;
 a = 7;
 ```
-
-</section>

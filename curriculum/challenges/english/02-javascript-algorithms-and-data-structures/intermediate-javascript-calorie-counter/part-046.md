@@ -4,93 +4,33 @@ title: Part 46
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Another way that we can set the text of the `consumed` element is to set the `innerHTML` property.
 
 For example:
 
-```js 
+```js
 consumed.innerHTML = `Hello world`;
 ```
 
 Set the inner HTML of `consumed` to "XX Consumed Calories", where "XX" is the `total` variable that was previously created. Use template literals.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/consumed\.innerHTML\=\`\$\{total\}ConsumedCalories\`/) );
+```js
+assert(
+  code
+    .replace(/\s/g, '')
+    .match(/consumed\.innerHTML\=\`\$\{total\}ConsumedCalories\`/)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-
-    const output = document.getElementById('output');
-
-    const result = document.createElement('h3');
-    const resultText = document.createTextNode(
-      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
-    );
-
-    result.appendChild(resultText);
-    output.appendChild(result);
-
-    const line = document.createElement('hr');
-    output.appendChild(line);
-
-    const recommended = document.createElement('h4');
-    const recommendedText = document.createTextNode(
-      `${maxCalories} Recommended Calories`
-    );
-
-    recommended.appendChild(recommendedText);
-    output.appendChild(recommended);
-
-    const consumed = document.createElement('h4');
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -150,24 +90,59 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode(
+      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+    );
+
+    result.appendChild(resultText);
+    output.appendChild(result);
+
+    const line = document.createElement('hr');
+    output.appendChild(line);
+
+    const recommended = document.createElement('h4');
+    const recommendedText = document.createTextNode(
+      `${maxCalories} Recommended Calories`
+    );
+
+    recommended.appendChild(recommendedText);
+    output.appendChild(recommended);
+
+    const consumed = document.createElement('h4');
+  }
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -212,5 +187,3 @@ tests:
   }
 </script>
 ```
-
-</section>

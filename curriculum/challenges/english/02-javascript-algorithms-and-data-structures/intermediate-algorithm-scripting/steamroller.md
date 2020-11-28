@@ -5,43 +5,45 @@ challengeType: 5
 forumTopicId: 16079
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 Flatten a nested array. You must account for varying levels of nesting.
-</section>
 
-## Instructions
+# --hints--
 
-<section id='instructions'>
+`steamrollArray([[["a"]], [["b"]]])` should return `["a", "b"]`.
 
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>steamrollArray([[["a"]], [["b"]]])</code> should return <code>["a", "b"]</code>.
-    testString: assert.deepEqual(steamrollArray([[["a"]], [["b"]]]), ["a", "b"]);
-  - text: <code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.
-    testString: assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4]);
-  - text: <code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.
-    testString: assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
-  - text: <code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.
-    testString: assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
-  - text: Your solution should not use the <code>Array.prototype.flat()</code> or <code>Array.prototype.flatMap()</code> methods.
-    testString: assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+```js
+assert.deepEqual(steamrollArray([[['a']], [['b']]]), ['a', 'b']);
 ```
 
-</section>
+`steamrollArray([1, [2], [3, [[4]]]])` should return `[1, 2, 3, 4]`.
 
-## Challenge Seed
+```js
+assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4]);
+```
 
-<section id='challengeSeed'>
+`steamrollArray([1, [], [3, [[4]]]])` should return `[1, 3, 4]`.
 
-<div id='js-seed'>
+```js
+assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
+```
+
+`steamrollArray([1, {}, [3, [[4]]]])` should return `[1, {}, 3, 4]`.
+
+```js
+assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
+```
+
+Your solution should not use the `Array.prototype.flat()` or `Array.prototype.flatMap()` methods.
+
+```js
+assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function steamrollArray(arr) {
@@ -51,13 +53,7 @@ function steamrollArray(arr) {
 steamrollArray([1, [2], [3, [[4]]]]);
 ```
 
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function steamrollArray(arr) {
@@ -73,5 +69,3 @@ function steamrollArray(arr) {
   return out;
 }
 ```
-
-</section>

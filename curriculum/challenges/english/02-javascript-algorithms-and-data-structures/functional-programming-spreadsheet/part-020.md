@@ -4,65 +4,21 @@ title: Part 20
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In `highPrecedence`, define `regex` to be `/([0-9.]+)([*\/])([0-9.]+)/`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("regex=/([0-9.]+)([*\\/])([0-9.]+)/"));
-
+```js
+assert(code.replace(/\s/g, '').includes('regex=/([0-9.]+)([*\\/])([0-9.]+)/'));
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
-
-const infixEval = (str, regex) =>
-  str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
-  );
-
-const highPrecedence = str => {
-  return str;
-};
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -90,25 +46,39 @@ const highPrecedence = str => {
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) =>
+  str.replace(regex, (_, arg1, fn, arg2) =>
+    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+  );
+
+const highPrecedence = str => {
+  return str;
+};
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -130,5 +100,3 @@ const highPrecedence = str => {
 };
 </script>
 ```
-
-</section>

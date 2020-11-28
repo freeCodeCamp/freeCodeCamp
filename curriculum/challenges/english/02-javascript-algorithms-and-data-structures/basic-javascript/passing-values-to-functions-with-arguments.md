@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cy8rahW'
 forumTopicId: 18254
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 <dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.
-Here is a function with two parameters, <code>param1</code> and <code>param2</code>:
+
+Here is a function with two parameters, `param1` and `param2`:
 
 ```js
 function testFun(param1, param2) {
@@ -17,48 +18,55 @@ function testFun(param1, param2) {
 }
 ```
 
-Then we can call <code>testFun</code>:
-<code>testFun("Hello", "World");</code>
-We have passed two arguments, <code>"Hello"</code> and <code>"World"</code>. Inside the function, <code>param1</code> will equal "Hello" and <code>param2</code> will equal "World". Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.
-</section>
+Then we can call `testFun`: `testFun("Hello", "World");` We have passed two arguments, `"Hello"` and `"World"`. Inside the function, `param1` will equal "Hello" and `param2` will equal "World". Note that you could call `testFun` again with different arguments and the parameters would take on the value of the new arguments.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 <ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function with two numbers as arguments.</li></ol>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>functionWithArgs</code> should be a function.
-    testString: assert(typeof functionWithArgs === 'function');
-  - text: <code>functionWithArgs(1,2)</code> should output <code>3</code>.
-    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3);
-  - text: <code>functionWithArgs(7,9)</code> should output <code>16</code>.
-    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16);
-  - text: You should call <code>functionWithArgs</code> with two numbers after you define it.
-    testString: assert(/functionWithArgs\([-+]?\d*\.?\d*,[-+]?\d*\.?\d*\)/.test(code.replace(/\s/g, '')));
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`functionWithArgs` should be a function.
 
 ```js
-
-
-
+assert(typeof functionWithArgs === 'function');
 ```
 
-</div>
+`functionWithArgs(1,2)` should output `3`.
 
-### Before Test
-<div id='js-setup'>
+```js
+if (typeof functionWithArgs === 'function') {
+  capture();
+  functionWithArgs(1, 2);
+  uncapture();
+}
+assert(logOutput == 3);
+```
+
+`functionWithArgs(7,9)` should output `16`.
+
+```js
+if (typeof functionWithArgs === 'function') {
+  capture();
+  functionWithArgs(7, 9);
+  uncapture();
+}
+assert(logOutput == 16);
+```
+
+You should call `functionWithArgs` with two numbers after you define it.
+
+```js
+assert(
+  /functionWithArgs\([-+]?\d*\.?\d*,[-+]?\d*\.?\d*\)/.test(
+    code.replace(/\s/g, '')
+  )
+);
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 var logOutput = "";
@@ -83,10 +91,7 @@ function uncapture() {
 capture();
 ```
 
-</div>
-
-### After Test
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 uncapture();
@@ -98,13 +103,12 @@ if (typeof functionWithArgs !== "function") {
 }
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function functionWithArgs(a, b) {
@@ -112,5 +116,3 @@ function functionWithArgs(a, b) {
 }
 functionWithArgs(10, 5);
 ```
-
-</section>

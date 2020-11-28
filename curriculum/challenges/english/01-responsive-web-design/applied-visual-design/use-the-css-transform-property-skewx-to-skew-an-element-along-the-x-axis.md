@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cyLP8Sr'
 forumTopicId: 301074
 ---
 
-## Description
-<section id='description'>
-The next function of the <code>transform</code> property is <code>skewX()</code>, which skews the selected element along its X (horizontal) axis by a given degree.
+# --description--
+
+The next function of the `transform` property is `skewX()`, which skews the selected element along its X (horizontal) axis by a given degree.
+
 The following code skews the paragraph element by -32 degrees along the X-axis.
 
 ```css
@@ -17,29 +18,21 @@ p {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Skew the element with the id of <code>bottom</code> by 24 degrees along the X-axis by using the <code>transform</code> property.
-</section>
+Skew the element with the id of `bottom` by 24 degrees along the X-axis by using the `transform` property.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.
-    testString: assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
+The element with id `bottom` should be skewed by 24 degrees along its X-axis.
 
+```js
+assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -61,14 +54,7 @@ tests:
 <div id="bottom"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -88,5 +74,3 @@ tests:
 <div id="top"></div>
 <div id="bottom"></div>
 ```
-
-</section>

@@ -5,57 +5,93 @@ challengeType: 5
 forumTopicId: 385318
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-Semiprime numbers are natural numbers that are products of exactly two (possibly equal) <a href="https://rosettacode.org/wiki/prime_number" target="_blank">prime numbers</a>.
+Semiprime numbers are natural numbers that are products of exactly two (possibly equal) [prime numbers](https://rosettacode.org/wiki/prime_number).
+
 <pre>1679  =  23 x 73</pre>
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
 Write a function that returns true if a number is semiprime, or false if it is not.
-</section>
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`isSemiPrime` should be a function.
 
-```yml
-tests:
-  - text: <code>isSemiPrime</code> should be a function.
-    testString: assert(typeof isSemiPrime === 'function');
-  - text: <code>isSemiPrime(100)</code> should return a boolean.
-    testString: assert(typeof isSemiPrime(100) === 'boolean');
-  - text: <code>isSemiPrime(100)</code> should return <code>false</code>.
-    testString: assert.equal(isSemiPrime(100), false);
-  - text: <code>isSemiPrime(504)</code> should return <code>false</code>.
-    testString: assert.equal(isSemiPrime(504), false);
-  - text: <code>isSemiPrime(4)</code> should return <code>true</code>.
-    testString: assert.equal(isSemiPrime(4), true);
-  - text: <code>isSemiPrime(46)</code> should return <code>true</code>.
-    testString: assert.equal(isSemiPrime(46), true);
-  - text: <code>isSemiPrime(13)</code> should return <code>false</code>.
-    testString: assert.equal(isSemiPrime(13), false);
-  - text: <code>isSemiPrime(74)</code> should return <code>true</code>.
-    testString: assert.equal(isSemiPrime(74), true);
-  - text: <code>isSemiPrime(1679)</code> should return <code>true</code>.
-    testString: assert.equal(isSemiPrime(1679), true);
-  - text: <code>isSemiPrime(2)</code> should return <code>false</code>.
-    testString: assert.equal(isSemiPrime(2), false);
-  - text: <code>isSemiPrime(95)</code> should return <code>true</code>.
-    testString: assert.equal(isSemiPrime(95), true);
-  - text: <code>isSemiPrime(124)</code> should return <code>false</code>.
-    testString: assert.equal(isSemiPrime(124), false);
+```js
+assert(typeof isSemiPrime === 'function');
 ```
 
-</section>
+`isSemiPrime(100)` should return a boolean.
 
-## Challenge Seed
+```js
+assert(typeof isSemiPrime(100) === 'boolean');
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`isSemiPrime(100)` should return `false`.
+
+```js
+assert.equal(isSemiPrime(100), false);
+```
+
+`isSemiPrime(504)` should return `false`.
+
+```js
+assert.equal(isSemiPrime(504), false);
+```
+
+`isSemiPrime(4)` should return `true`.
+
+```js
+assert.equal(isSemiPrime(4), true);
+```
+
+`isSemiPrime(46)` should return `true`.
+
+```js
+assert.equal(isSemiPrime(46), true);
+```
+
+`isSemiPrime(13)` should return `false`.
+
+```js
+assert.equal(isSemiPrime(13), false);
+```
+
+`isSemiPrime(74)` should return `true`.
+
+```js
+assert.equal(isSemiPrime(74), true);
+```
+
+`isSemiPrime(1679)` should return `true`.
+
+```js
+assert.equal(isSemiPrime(1679), true);
+```
+
+`isSemiPrime(2)` should return `false`.
+
+```js
+assert.equal(isSemiPrime(2), false);
+```
+
+`isSemiPrime(95)` should return `true`.
+
+```js
+assert.equal(isSemiPrime(95), true);
+```
+
+`isSemiPrime(124)` should return `false`.
+
+```js
+assert.equal(isSemiPrime(124), false);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function isSemiPrime(n) {
@@ -63,12 +99,7 @@ function isSemiPrime(n) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function isSemiPrime(n) {
@@ -112,5 +143,3 @@ function isSemiPrime(n) {
   return ans.length == 2;
 }
 ```
-
-</section>

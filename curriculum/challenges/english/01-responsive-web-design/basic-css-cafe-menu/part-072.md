@@ -4,31 +4,23 @@ title: Part 72
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
+Notice how the thickness of the line looks bigger? The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
 
 Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -92,10 +84,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -154,6 +142,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

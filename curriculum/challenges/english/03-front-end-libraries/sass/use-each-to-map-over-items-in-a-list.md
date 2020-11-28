@@ -5,11 +5,9 @@ challengeType: 0
 forumTopicId: 301461
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The last challenge showed how the <code>@for</code> directive uses a starting and ending value to loop a certain number of times. Sass also offers the <code>@each</code> directive which loops over each item in a list or map.
-On each iteration, the variable gets assigned to the current value from the list or map.
+The last challenge showed how the `@for` directive uses a starting and ending value to loop a certain number of times. Sass also offers the `@each` directive which loops over each item in a list or map. On each iteration, the variable gets assigned to the current value from the list or map.
 
 ```scss
 @each $color in blue, red, green {
@@ -27,8 +25,7 @@ $colors: (color1: blue, color2: red, color3: green);
 }
 ```
 
-Note that the <code>$key</code> variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have <code>color1</code>, <code>color2</code>... in it.
-Both of the above code examples are converted into the following CSS:
+Note that the `$key` variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have `color1`, `color2`... in it. Both of the above code examples are converted into the following CSS:
 
 ```scss
 .blue-text {
@@ -44,37 +41,39 @@ Both of the above code examples are converted into the following CSS:
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
+Write an `@each` directive that goes through a list: `blue, black, red` and assigns each variable to a `.color-bg` class, where the "color" part changes for each item. Each class should set the `background-color` the respective color.
 
-Write an <code>@each</code> directive that goes through a list: <code>blue, black, red</code> and assigns each variable to a <code>.color-bg</code> class, where the "color" part changes for each item.
-Each class should set the <code>background-color</code> the respective color.
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your code should use the `@each` directive.
 
-```yml
-tests:
-  - text: Your code should use the <code>@each</code> directive.
-    testString: assert(code.match(/@each /g));
-  - text: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.
-    testString: assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)');
-  - text: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.
-    testString: assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)');
-  - text: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.
-    testString: assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
-
+```js
+assert(code.match(/@each /g));
 ```
 
-</section>
+Your `.blue-bg` class should have a `background-color` of blue.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)');
+```
 
-<div id='html-seed'>
+Your `.black-bg` class should have a `background-color` of black.
+
+```js
+assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)');
+```
+
+Your `.red-bg` class should have a `background-color` of red.
+
+```js
+assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style type='text/scss'>
@@ -92,16 +91,7 @@ tests:
 <div class="red-bg"></div>
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-The solution requires using the $color variable twice: once for the class name and once for setting the background color. You can use either the list or map data type.
-
-### List Data type
+# --solutions--
 
 ```html
 <style type='text/scss'>
@@ -121,7 +111,7 @@ The solution requires using the $color variable twice: once for the class name a
 <div class="red-bg"></div>
 ```
 
-### Map Data type
+---
 
 ```html
 <style type='text/scss'>
@@ -142,5 +132,3 @@ The solution requires using the $color variable twice: once for the class name a
 <div class="black-bg"></div>
 <div class="red-bg"></div>
 ```
-
-</section>

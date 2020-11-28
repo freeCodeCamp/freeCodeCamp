@@ -4,31 +4,26 @@ title: Part 112
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give the `sky` class a `radial-gradient`. Use `#ffcf33` from `0%` to `20%`, `#ffff66` at `21%`, and `#bbeeff` at `100%`. This will add circular gradient to the background that will be your sun.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*radial-gradient\(\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(sky));
-
+```js
+const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*radial-gradient\(\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(
+    sky
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -404,12 +399,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -793,5 +783,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

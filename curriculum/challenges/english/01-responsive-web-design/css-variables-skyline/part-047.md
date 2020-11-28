@@ -4,31 +4,26 @@ title: Part 47
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Remove `orange` from the `bb1d` gradient and change the `80%` to `50%`. This will make `--building-color1` solid for the top half, and then transition to `--window-color1` for the bottom half.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*50%\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1d));
-
+```js
+const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*50%\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(
+    bb1d
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -200,12 +195,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -375,5 +365,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

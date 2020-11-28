@@ -4,44 +4,45 @@ title: Part 59
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Like radio buttons, form data for selected checkboxes are `name` / `value` attribute pairs. While the `value` attribute is optional, it's best practice to include it with any checkboxes or radio buttons on the page.
 
 Add a `value` attribute to each checkbox. For convenience, set each checkbox's `value` attribute to the same value as its `id` attribute.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+All three checkboxes should have a `value` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
-```yml
-tests:
-  - text: All three checkboxes should have a `value` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: |
-      const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
-      assert( checkboxes.every(checkbox => checkbox.hasAttribute('value')) );
-  - text: The `value` attribute of the `Loving` checkbox should be set to `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: |
-      const lovingCheckbox = document.querySelector('#loving');
-      assert( lovingCheckbox.getAttribute('value').match(/^loving$/) );
-  - text: The `value` attribute of the `Lazy` checkbox should be set to `lazy`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: |
-      const lazyCheckbox = document.querySelector('#lazy');
-      assert( lazyCheckbox.getAttribute('value').match(/^lazy$/) );
-  - text: The `value` attribute of the `Energetic` checkbox should be set to `energetic`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: |
-      const energeticCheckbox = document.querySelector('#energetic');
-      assert( energeticCheckbox.getAttribute('value').match(/^energetic$/) );
-
+```js
+const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
+assert(checkboxes.every((checkbox) => checkbox.hasAttribute('value')));
 ```
 
-</section>
+The `value` attribute of the `Loving` checkbox should be set to `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const lovingCheckbox = document.querySelector('#loving');
+assert(lovingCheckbox.getAttribute('value').match(/^loving$/));
+```
+
+The `value` attribute of the `Lazy` checkbox should be set to `lazy`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+const lazyCheckbox = document.querySelector('#lazy');
+assert(lazyCheckbox.getAttribute('value').match(/^lazy$/));
+```
+
+The `value` attribute of the `Energetic` checkbox should be set to `energetic`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+const energeticCheckbox = document.querySelector('#energetic');
+assert(energeticCheckbox.getAttribute('value').match(/^energetic$/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -80,7 +81,7 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
             <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
@@ -92,7 +93,7 @@ tests:
             <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
             <input id="energetic" type="checkbox" name="personality"> <label for="energetic"> Energetic</label>
           </fieldset>
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
@@ -102,5 +103,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

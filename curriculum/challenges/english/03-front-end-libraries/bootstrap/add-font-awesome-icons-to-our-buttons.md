@@ -1,50 +1,70 @@
 ---
 id: bad87fee1348bd9aedd08845
 title: Add Font Awesome Icons to our Buttons
+challengeType: 0
+forumTopicId: 16638
 required:
   - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
-challengeType: 0
-forumTopicId: 16638
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Font Awesome is a convenient library of icons. These icons can be webfonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+
 You can include Font Awesome in any app by adding the following code to the top of your HTML:
-<code>&#60;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"&#62;</code>
+
+`<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">`
+
 In this case, we've already added it for you to this page behind the scenes.
-The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:
-<code>&lt;i class="fas fa-info-circle"&gt;&lt;/i&gt;</code>
-Note that the <code>span</code> element is also acceptable for use with icons.
-</section>
 
-## Instructions
-<section id='instructions'>
-Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>. Make sure to keep the text "Like" next to the icon.
-</section>
+The `i` element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the `i` element to turn it into an icon, for example:
 
-## Tests
-<section id='tests'>
+`<i class="fas fa-info-circle"></i>`
 
-```yml
-tests:
-  - text: You should add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.
-    testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
-  - text: Your <code>fa-thumbs-up</code> icon should be located within the Like button.
-    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
-  - text: Your <code>i</code> element should be nested within your <code>button</code> element.
-    testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
-  - text: Your icon element should have a closing tag.
-    testString: assert(code.match(/<\/i>|<\/span>/g));
+Note that the `span` element is also acceptable for use with icons.
+
+# --instructions--
+
+Use Font Awesome to add a `thumbs-up` icon to your like button by giving it an `i` element with the classes `fas` and `fa-thumbs-up`. Make sure to keep the text "Like" next to the icon.
+
+# --hints--
+
+You should add an `i` element with the classes `fas` and `fa-thumbs-up`.
+
+```js
+assert($('i').is('.fas.fa-thumbs-up') || $('span').is('.fas.fa-thumbs-up'));
 ```
 
-</section>
+Your `fa-thumbs-up` icon should be located within the Like button.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  ($('i.fa-thumbs-up').parent().text().match(/Like/gi) &&
+    $('.btn-primary > i').is('.fas.fa-thumbs-up')) ||
+    ($('span.fa-thumbs-up').parent().text().match(/Like/gi) &&
+      $('.btn-primary > span').is('.fas.fa-thumbs-up'))
+);
+```
 
-<div id='html-seed'>
+Your `i` element should be nested within your `button` element.
+
+```js
+assert(
+  $('button').children('i').length > 0 ||
+    $('button').children('span').length > 0
+);
+```
+
+Your icon element should have a closing tag.
+
+```js
+assert(code.match(/<\/i>|<\/span>/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -106,14 +126,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -174,5 +187,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

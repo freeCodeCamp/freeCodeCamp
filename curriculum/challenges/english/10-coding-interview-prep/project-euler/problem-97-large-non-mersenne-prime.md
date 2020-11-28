@@ -1,12 +1,11 @@
 ---
 id: 5900f3ce1000cf542c50fee0
-challengeType: 5
 title: 'Problem 97: Large non-Mersenne prime'
+challengeType: 5
 forumTopicId: 302214
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The first known prime found to exceed one million digits was discovered in 1999, and is a Mersenne prime of the form 2<sup>6972593</sup>−1; it contains exactly 2,098,960 digits. Subsequently other Mersenne primes, of the form 2<sup><var>p</var></sup>−1, have been found which contain more digits.
 
@@ -14,31 +13,23 @@ However, in 2004 there was found a massive non-Mersenne prime which contains 2,3
 
 Find the last ten digits of this prime number.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`lrgNonMersennePrime()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>lrgNonMersennePrime()</code> should return a number.
-    testString: assert(typeof lrgNonMersennePrime() === 'number');
-  - text: <code>lrgNonMersennePrime()</code> should return 8739992577.
-    testString: assert.strictEqual(lrgNonMersennePrime(), 8739992577);
-
+```js
+assert(typeof lrgNonMersennePrime() === 'number');
 ```
 
-</section>
+`lrgNonMersennePrime()` should return 8739992577.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(lrgNonMersennePrime(), 8739992577);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function lrgNonMersennePrime() {
@@ -49,17 +40,8 @@ function lrgNonMersennePrime() {
 lrgNonMersennePrime();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

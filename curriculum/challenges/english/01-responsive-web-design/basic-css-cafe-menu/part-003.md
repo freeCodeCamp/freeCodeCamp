@@ -4,43 +4,32 @@ title: Part 3
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `title` is one of several elements that provide extra information not visible on the web page, but could be useful for search engines or how the page gets displayed.
 
 Inside the `head` element, nest a `meta` element with an attribute named `charset` set to the value `utf-8` to tell the browser how to encode characters for the page. Note tha `meta` elements are self-closing.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
 <html>
-  --fcc-editable-region--
+--fcc-editable-region--
   <head>
     <title>Camper Cafe Menu</title>
   </head>
-  --fcc-editable-region--
+--fcc-editable-region--
 <html>
 ```
 
-</div>
-
-</section>

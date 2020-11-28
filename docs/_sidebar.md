@@ -11,6 +11,7 @@
 - **Optional Guides**
   - [Catch outgoing emails locally](how-to-catch-outgoing-emails-locally.md)
   - [Set up freeCodeCamp on WSL](how-to-setup-wsl.md)
+  - [Add Cypress tests](how-to-add-cypress-tests.md)
 
 ---
 
@@ -27,7 +28,6 @@
 
 - **Flight Manuals** (for Staff & Mods)
   - [Moderator Handbook](moderator-handbook.md)
-  - [Reply Templates](moderator-handbook?id=using-reply-templates)
   - [DevOps Handbook](devops.md)
 
 ---

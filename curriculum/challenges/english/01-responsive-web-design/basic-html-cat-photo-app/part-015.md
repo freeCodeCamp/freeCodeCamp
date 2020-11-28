@@ -4,58 +4,59 @@ title: Part 15
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Before adding any new content, you should make use of a `section` element to separate the cat photos content from the future content.
 
 Take all the elements currently located within the `main` element and nest them in a `section` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `section` element should have an opening tag. Opening tags have the following syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: "Your `section` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('section') );
-  - text: Your `section` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/section\>/) );
-  - text: The entire `section` element should be between the opening and closing tags of the `main` element.
-    testString: assert( document.querySelector('section').parentNode.nodeName === "MAIN" );
-  - text: The existing `h2`, comment, `p` element, and anchor (`a`) element should be between the opening and closing tags of the `section` element.
-    testString: |
-      const childrenOfSection = [ ...document.querySelector('section').childNodes ];
-      const foundElems = childrenOfSection.filter(child => {
-        return ['H2', 'A', 'P'].includes(child.nodeName);
-      });
-      assert( foundElems.length === 3 );
-
+```js
+assert(document.querySelector('section'));
 ```
 
-</section>
+Your `section` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/<\/section\>/));
+```
 
-<div id='html-seed'>
+The entire `section` element should be between the opening and closing tags of the `main` element.
+
+```js
+assert(document.querySelector('section').parentNode.nodeName === 'MAIN');
+```
+
+The existing `h2`, comment, `p` element, and anchor (`a`) element should be between the opening and closing tags of the `section` element.
+
+```js
+const childrenOfSection = [...document.querySelector('section').childNodes];
+const foundElems = childrenOfSection.filter((child) => {
+  return ['H2', 'A', 'P'].includes(child.nodeName);
+});
+assert(foundElems.length === 3);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
   <body>
     <h1>CatPhotoApp</h1>
-    --fcc-editable-region--
+--fcc-editable-region--
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
       <a href="https://freecatphotoapp.com"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
     </main>
-    --fcc-editable-region--
+--fcc-editable-region--
   </body>
 </html>
 ```
 
-</div>
-</section>

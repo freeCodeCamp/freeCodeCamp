@@ -5,10 +5,12 @@ challengeType: 0
 forumTopicId: 301460
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 One feature of Sass that's different than CSS is it uses variables. They are declared and set to store data, similar to JavaScript.
-In JavaScript, variables are defined using the <code>let</code> and <code>const</code> keywords. In Sass, variables start with a <code>$</code> followed by the variable name.
+
+In JavaScript, variables are defined using the `let` and `const` keywords. In Sass, variables start with a `$` followed by the variable name.
+
 Here are a couple examples:
 
 ```scss
@@ -23,35 +25,40 @@ h1 {
 ```
 
 One example where variables are useful is when a number of elements need to be the same color. If that color is changed, the only place to edit the code is the variable value.
-</section>
 
-## Instructions
-<section id='instructions'>
-Create a variable <code>$text-color</code> and set it to red. Then change the value of the <code>color</code> property for the <code>.blog-post</code> and <code>h2</code> to the <code>$text-color</code> variable.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Create a variable `$text-color` and set it to red. Then change the value of the `color` property for the `.blog-post` and `h2` to the `$text-color` variable.
 
-```yml
-tests:
-  - text: Your code should have a Sass variable declared for <code>$text-color</code> with a value of red.
-    testString: assert(code.match(/\$text-color:\s*?red;/g));
-  - text: Your code should use the <code>$text-color</code> variable to change the <code>color</code> for the <code>.blog-post</code> and <code>h2</code> items.
-    testString: assert(code.match(/color:\s*?\$text-color;/g));
-  - text: Your <code>.blog-post</code> element should have a <code>color</code> of red.
-    testString: assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
-  - text: Your <code>h2</code> elements should have a <code>color</code> of red.
-    testString: assert($('h2').css('color') == 'rgb(255, 0, 0)');
+# --hints--
 
+Your code should have a Sass variable declared for `$text-color` with a value of red.
+
+```js
+assert(code.match(/\$text-color:\s*?red;/g));
 ```
 
-</section>
+Your code should use the `$text-color` variable to change the `color` for the `.blog-post` and `h2` items.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/color:\s*?\$text-color;/g));
+```
 
-<div id='html-seed'>
+Your `.blog-post` element should have a `color` of red.
+
+```js
+assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
+```
+
+Your `h2` elements should have a `color` of red.
+
+```js
+assert($('h2').css('color') == 'rgb(255, 0, 0)');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style type='text/scss'>
@@ -80,14 +87,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style type='text/scss'>
@@ -115,5 +115,3 @@ tests:
   <p>Even more random text within a paragraph</p>
 </div>
 ```
-
-</section>

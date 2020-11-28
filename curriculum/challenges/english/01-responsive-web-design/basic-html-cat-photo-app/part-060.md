@@ -4,40 +4,56 @@ title: Part 60
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In order to make a checkbox checked or radio button selected by default, you need to add the `checked` attribute to it. There's no need to set a value to the `checked` attribute. Instead, just add the word `checked` to the `input` element, making sure there is space between it and other attributes.
 
 Make the first radio button and the first checkbox selected by default.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Make sure there still are two radio buttons and three checkboxes nested in their respective `fieldset` elements.
 
-```yml
-tests:
-  - text: Make sure there still are two radio buttons and three checkboxes nested in their respective `fieldset` elements.
-    testString: assert( $('input[type="radio"]').length === 2 && $('fieldset > input[type="checkbox"]').length === 3 );
-  - text: The first radio button is missing the `checked` attribute.
-    testString: assert( $('input[type="radio"]')[0].hasAttribute('checked') );
-  - text: The second radio button should not have the `checked` attribute.
-    testString: assert( !$('input[type="radio"]')[1].hasAttribute('checked') );
-  - text: The first checkbox is missing the `checked` attribute.
-    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('checked') );
-  - text: The second checkbox should not have the `checked` attribute.
-    testString: assert( !$('input[type="checkbox"]')[1].hasAttribute('checked') );
-  - text: The third checkbox should not have the `checked` attribute.
-    testString: assert( !$('input[type="checkbox"]')[2].hasAttribute('checked') );
-
+```js
+assert(
+  $('input[type="radio"]').length === 2 &&
+    $('fieldset > input[type="checkbox"]').length === 3
+);
 ```
 
-</section>
+The first radio button is missing the `checked` attribute.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert($('input[type="radio"]')[0].hasAttribute('checked'));
+```
+
+The second radio button should not have the `checked` attribute.
+
+```js
+assert(!$('input[type="radio"]')[1].hasAttribute('checked'));
+```
+
+The first checkbox is missing the `checked` attribute.
+
+```js
+assert($('input[type="checkbox"]')[0].hasAttribute('checked'));
+```
+
+The second checkbox should not have the `checked` attribute.
+
+```js
+assert(!$('input[type="checkbox"]')[1].hasAttribute('checked'));
+```
+
+The third checkbox should not have the `checked` attribute.
+
+```js
+assert(!$('input[type="checkbox"]')[2].hasAttribute('checked'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -76,7 +92,7 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
             <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
@@ -88,7 +104,7 @@ tests:
             <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
             <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic"> Energetic</label>
           </fieldset>
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
@@ -98,5 +114,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

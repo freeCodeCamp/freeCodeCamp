@@ -4,31 +4,23 @@ title: Part 29
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Since the cafe's main product for sale is coffee, you could use an image of coffee beans for the background of the page.
 
 Delete the comment and its contents inside the `body` type selector. Now add a `background-image` property and set its value to `url(https://tinyurl.com/coffee-beans-fcc)`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -55,17 +47,13 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
-  --fcc-editable-region--
+--fcc-editable-region--
   /*
   background-color: burlywood;
   */
-  --fcc-editable-region--
+--fcc-editable-region--
 }
 
 h1, h2, p {
@@ -80,6 +68,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

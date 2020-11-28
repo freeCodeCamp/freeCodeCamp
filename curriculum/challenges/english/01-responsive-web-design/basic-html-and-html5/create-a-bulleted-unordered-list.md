@@ -6,10 +6,12 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cDKVPuv'
 forumTopicId: 16814
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 HTML has a special element for creating <dfn>unordered lists</dfn>, or bullet point style lists.
-Unordered lists start with an opening <code>&#60;ul&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, unordered lists close with a <code>&#60;/ul&#62;</code>
+
+Unordered lists start with an opening `<ul>` element, followed by any number of `<li>` elements. Finally, unordered lists close with a `</ul>`
+
 For example:
 
 ```html
@@ -20,36 +22,54 @@ For example:
 ```
 
 would create a bullet point style list of "milk" and "cheese".
-</section>
 
-## Instructions
-<section id='instructions'>
-Remove the last two <code>p</code> elements and create an unordered list of three things that cats love at the bottom of the page.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Remove the last two `p` elements and create an unordered list of three things that cats love at the bottom of the page.
 
-```yml
-tests:
-  - text: Create a <code>ul</code> element.
-    testString: assert($("ul").length > 0);
-  - text: You should have three <code>li</code> elements within your <code>ul</code> element.
-    testString: assert($("ul li").length > 2);
-  - text: Your <code>ul</code> element should have a closing tag.
-    testString: assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length);
-  - text: Your <code>li</code> elements should have closing tags.
-    testString: assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length);
-  - text: Your <code>li</code> elements should not contain an empty string or only white-space.
-    testString: assert($("ul li").filter((_, item) => !$(item).text().trim()).length === 0);
+# --hints--
+
+Create a `ul` element.
+
+```js
+assert($('ul').length > 0);
 ```
 
-</section>
+You should have three `li` elements within your `ul` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('ul li').length > 2);
+```
 
-<div id='html-seed'>
+Your `ul` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/ul>/gi) &&
+    code.match(/<ul/gi) &&
+    code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length
+);
+```
+
+Your `li` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/li>/gi) &&
+    code.match(/<li[\s>]/gi) &&
+    code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length
+);
+```
+
+Your `li` elements should not contain an empty string or only white-space.
+
+```js
+assert($('ul li').filter((_, item) => !$(item).text().trim()).length === 0);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -63,14 +83,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -86,5 +99,3 @@ tests:
   </ul>
 </main>
 ```
-
-</section>

@@ -5,49 +5,83 @@ challengeType: 5
 forumTopicId: 385272
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible. An example:
+
 For the following array:
-$\{3, 10, 2, 1, 20\}$
+
+$\\{3, 10, 2, 1, 20\\}$
+
 Longest increasing sequence is:
-$\{3, 10, 20\}$
-For more information on this problem please see <a href="https://en.wikipedia.org/wiki/Longest increasing subsequence" target="_blank">Wikipedia</a>.
-</section>
 
-## Instructions
-<section id='instructions'>
+$\\{3, 10, 20\\}$
+
+For more information on this problem please see [Wikipedia](<https://en.wikipedia.org/wiki/Longest increasing subsequence>).
+
+# --instructions--
+
 Write a function that takes an array of numbers as a parameter and returns the longest increasing subsequence.
+
 It is guaranteed that every array will have a longest increasing subsequence.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-``` yml
-tests:
-  - text: <code>findSequence</code> should be a function.
-    testString: assert(typeof findSequence == 'function');
-  - text: <code>findSequence([3, 10, 2, 1, 20])</code> should return a array.
-    testString: assert(Array.isArray(findSequence([3, 10, 2, 1, 20])));
-  - text: <code>findSequence([3, 10, 2, 1, 20])</code> should return <code>[3, 10, 20]</code>.
-    testString: assert.deepEqual(findSequence([3, 10, 2, 1, 20]), [3, 10, 20]);
-  - text: <code>findSequence([2, 7, 3, 5, 8])</code> should return <code>[2, 3, 5, 8]</code>.
-    testString: assert.deepEqual(findSequence([2, 7, 3, 5, 8]), [2, 3, 5, 8]);
-  - text: <code>findSequence([2, 6, 4, 5, 1])</code> should return <code>[2, 4, 5]</code>.
-    testString: assert.deepEqual(findSequence([2, 6, 4, 5, 1]), [2, 4, 5]);
-  - text: <code>findSequence([10, 22, 9, 33, 21, 50, 60, 80])</code> should return <code>[10, 22, 33, 50, 60, 80]</code>.
-    testString: assert.deepEqual(findSequence([10, 22, 9, 33, 21, 50, 60, 80]), [10, 22, 33, 50, 60, 80]);
-  - text: <code>findSequence([0, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15])</code> should return <code>[0, 2, 6, 9, 11, 15</code>.
-    testString: assert.deepEqual(findSequence([0, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]), [0, 2, 6, 9, 11, 15]);
+`findSequence` should be a function.
+
+```js
+assert(typeof findSequence == 'function');
 ```
 
-</section>
+`findSequence([3, 10, 2, 1, 20])` should return a array.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(Array.isArray(findSequence([3, 10, 2, 1, 20])));
+```
 
-<div id='js-seed'>
+`findSequence([3, 10, 2, 1, 20])` should return `[3, 10, 20]`.
+
+```js
+assert.deepEqual(findSequence([3, 10, 2, 1, 20]), [3, 10, 20]);
+```
+
+`findSequence([2, 7, 3, 5, 8])` should return `[2, 3, 5, 8]`.
+
+```js
+assert.deepEqual(findSequence([2, 7, 3, 5, 8]), [2, 3, 5, 8]);
+```
+
+`findSequence([2, 6, 4, 5, 1])` should return `[2, 4, 5]`.
+
+```js
+assert.deepEqual(findSequence([2, 6, 4, 5, 1]), [2, 4, 5]);
+```
+
+`findSequence([10, 22, 9, 33, 21, 50, 60, 80])` should return `[10, 22, 33, 50, 60, 80]`.
+
+```js
+assert.deepEqual(findSequence([10, 22, 9, 33, 21, 50, 60, 80]), [
+  10,
+  22,
+  33,
+  50,
+  60,
+  80
+]);
+```
+
+`findSequence([0, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15])` should return `[0, 2, 6, 9, 11, 15`.
+
+```js
+assert.deepEqual(
+  findSequence([0, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]),
+  [0, 2, 6, 9, 11, 15]
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function findSequence(input) {
@@ -55,12 +89,7 @@ function findSequence(input) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function findSequence(input) {
@@ -88,5 +117,3 @@ function findSequence(input) {
     return output;
 }
 ```
-
-</section>

@@ -6,32 +6,25 @@ videoUrl: 'https://scrimba.com/c/c2MZ2uB'
 forumTopicId: 301075
 ---
 
-## Description
-<section id='description'>
-Given that the <code>skewX()</code> function skews the selected element along the X-axis by a given degree, it is no surprise that the <code>skewY()</code> property skews an element along the Y (vertical) axis.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Skew the element with the id of <code>top</code> -10 degrees along the Y-axis by using the <code>transform</code> property.
-</section>
+Given that the `skewX()` function skews the selected element along the X-axis by a given degree, it is no surprise that the `skewY()` property skews an element along the Y (vertical) axis.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.
-    testString: assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g));
+Skew the element with the id of `top` -10 degrees along the Y-axis by using the `transform` property.
 
+# --hints--
+
+The element with id `top` should be skewed by -10 degrees along its Y-axis.
+
+```js
+assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -54,15 +47,7 @@ tests:
 <div id="bottom"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>
@@ -83,5 +68,3 @@ tests:
 <div id="top"></div>
 <div id="bottom"></div>
 ```
-
-</section>

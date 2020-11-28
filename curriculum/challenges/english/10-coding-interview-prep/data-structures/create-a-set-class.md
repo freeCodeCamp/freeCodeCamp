@@ -5,11 +5,9 @@ challengeType: 1
 forumTopicId: 301632
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-In this exercise we are going to create a class named <code>Set</code> to emulate an abstract data structure called "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item.
-We can see how the ES6 <code>Set</code> object works in the example below:
+In this exercise we are going to create a class named `Set` to emulate an abstract data structure called "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item. We can see how the ES6 `Set` object works in the example below:
 
 ```js
 const set1 = new Set([1, 2, 3, 5, 5, 2, 0]);
@@ -21,53 +19,136 @@ console.log(set1.has(6));
 // output: false
 ```
 
-First, we will create an add method that adds a value to our set collection as long as the value does not already exist in the set.
-Then we will create a remove method that removes a value from the set collection if it already exists.
-And finally, we will create a size method that returns the number of elements inside the set collection.
-</section>
+First, we will create an add method that adds a value to our set collection as long as the value does not already exist in the set. Then we will create a remove method that removes a value from the set collection if it already exists. And finally, we will create a size method that returns the number of elements inside the set collection.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
-Create an <code>add</code> method that adds a unique value to the set collection and returns <code>true</code> if the value was successfully added and <code>false</code> otherwise.
+Create an `add` method that adds a unique value to the set collection and returns `true` if the value was successfully added and `false` otherwise.
 
-Create a <code>remove</code> method that accepts a value and checks if it exists in the set. If it does, then this method should remove it from the set collection, and return <code>true</code>. Otherwise, it should return <code>false</code>.
-Create a <code>size</code> method that returns the size of the set collection.
-</section>
+Create a `remove` method that accepts a value and checks if it exists in the set. If it does, then this method should remove it from the set collection, and return `true`. Otherwise, it should return `false`. Create a `size` method that returns the size of the set collection.
 
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `Set` class should have an `add` method.
 
-```yml
-tests:
-  - text: Your <code>Set</code> class should have an <code>add</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.add === 'function')}()));
-  - text: Your <code>add</code> method should not add duplicate values.
-    testString: assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()));
-  - text: Your <code>add</code> method should return <code>true</code> when a value has been successfully added.
-    testString: assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()));
-  - text: Your <code>add</code> method should return <code>false</code> when a duplicate value is added.
-    testString: assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()));
-  - text: Your <code>Set</code> class should have a <code>remove</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()));
-  - text: Your <code>remove</code> method should only remove items that are present in the set.
-    testString: assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b']);
-  - text: Your <code>remove</code> method should remove the given item from the set.
-    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()));
-  - text: Your <code>Set</code> class should have a <code>size</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.size === 'function')}()));
-  - text: The <code>size</code> method should return the number of elements in the collection.
-    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()));
-
+```js
+assert(
+  (function () {
+    var test = new Set();
+    return typeof test.add === 'function';
+  })()
+);
 ```
 
-</section>
+Your `add` method should not add duplicate values.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    var test = new Set();
+    test.add('a');
+    test.add('b');
+    test.add('a');
+    var vals = test.values();
+    return vals[0] === 'a' && vals[1] === 'b' && vals.length === 2;
+  })()
+);
+```
 
-<div id='js-seed'>
+Your `add` method should return `true` when a value has been successfully added.
+
+```js
+assert(
+  (function () {
+    var test = new Set();
+    var result = test.add('a');
+    return result != undefined && result === true;
+  })()
+);
+```
+
+Your `add` method should return `false` when a duplicate value is added.
+
+```js
+assert(
+  (function () {
+    var test = new Set();
+    test.add('a');
+    var result = test.add('a');
+    return result != undefined && result === false;
+  })()
+);
+```
+
+Your `Set` class should have a `remove` method.
+
+```js
+assert(
+  (function () {
+    var test = new Set();
+    return typeof test.remove === 'function';
+  })()
+);
+```
+
+Your `remove` method should only remove items that are present in the set.
+
+```js
+assert.deepEqual(
+  (function () {
+    var test = new Set();
+    test.add('a');
+    test.add('b');
+    test.remove('c');
+    return test.values();
+  })(),
+  ['a', 'b']
+);
+```
+
+Your `remove` method should remove the given item from the set.
+
+```js
+assert(
+  (function () {
+    var test = new Set();
+    test.add('a');
+    test.add('b');
+    test.remove('a');
+    var vals = test.values();
+    return vals[0] === 'b' && vals.length === 1;
+  })()
+);
+```
+
+Your `Set` class should have a `size` method.
+
+```js
+assert(
+  (function () {
+    var test = new Set();
+    return typeof test.size === 'function';
+  })()
+);
+```
+
+The `size` method should return the number of elements in the collection.
+
+```js
+assert(
+  (function () {
+    var test = new Set();
+    test.add('a');
+    test.add('b');
+    test.remove('a');
+    return test.size() === 1;
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 class Set {
@@ -93,12 +174,7 @@ class Set {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 class Set {
@@ -140,5 +216,3 @@ class Set {
   }
 }
 ```
-
-</section>

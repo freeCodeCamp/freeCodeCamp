@@ -4,8 +4,7 @@ title: Part 137
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 At the top of the function create a new `const` named `index`. You are going to use it to find the item in the `data` array with the year that is passed to the function.
 
@@ -19,27 +18,54 @@ array.findIndex(d =>
 ```
 
 After this, you will be able to use `data[index]` to get that item in the array.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/var index = data.findIndex\(function \(d\) \{\s*return (year === d\.year|d.year === year);\s*\}\);/g.test(script));
-
+```js
+const script = $('.dashboard').siblings('script')[1].innerHTML;
+assert(
+  /var index = data.findIndex\(function \(d\) \{\s*return (year === d\.year|d.year === year);\s*\}\);/g.test(
+    script
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -248,47 +274,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -495,5 +481,3 @@ tests:
   drawDashboard(2020);
 </script>
 ```
-
-</section>

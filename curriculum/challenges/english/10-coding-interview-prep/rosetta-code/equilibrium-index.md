@@ -1,15 +1,17 @@
 ---
-title: Equilibrium index
 id: 5987fd532b954e0f21b5d3f6
+title: Equilibrium index
 challengeType: 5
 forumTopicId: 302255
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices.
-For example, in a sequence  <big>$A$</big>:
-<ul style="list-style: none;">
+
+For example, in a sequence $A$:
+
+<ul style='list-style: none;'>
   <li><big>$A_0 = -7$</big></li>
   <li><big>$A_1 =  1$</big></li>
   <li><big>$A_2 =  5$</big></li>
@@ -18,64 +20,76 @@ For example, in a sequence  <big>$A$</big>:
   <li><big>$A_5 =  3$</big></li>
   <li><big>$A_6 =  0$</big></li>
 </ul>
-<code>3</code> is an equilibrium index, because:
-<ul style="list-style: none;">
+
+`3` is an equilibrium index, because:
+
+<ul style='list-style: none;'>
   <li><big>$A_0 + A_1 + A_2 = A_4 + A_5 + A_6$</big></li>
 </ul>
-<code>6</code> is also an equilibrium index, because:
-<ul style="list-style: none;">
+
+`6` is also an equilibrium index, because:
+
+<ul style='list-style: none;'>
   <li><big>$A_0 + A_1 + A_2 + A_3 + A_4 + A_5 = 0$</big></li>
 </ul>
+
 (sum of zero elements is zero)
-<code>7</code> is not an equilibrium index, because it is not a valid index of sequence <big>$A$</big>.
-</section>
 
-## Instructions
-<section id='instructions'>
+`7` is not an equilibrium index, because it is not a valid index of sequence $A$.
+
+# --instructions--
+
 Write a function that, given a sequence, returns its equilibrium indices (if any).
+
 Assume that the sequence may be very long.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>equilibrium</code> should be a function.
-    testString: assert(typeof equilibrium === 'function');
-  - text: <code>equilibrium([-7, 1, 5, 2, -4, 3, 0])</code> should return <code>[3,6]</code>.
-    testString: assert.deepEqual(equilibrium(equilibriumTests[0]), ans[0]);
-  - text: <code>equilibrium([2, 4, 6])</code> should return <code>[]</code>.
-    testString: assert.deepEqual(equilibrium(equilibriumTests[1]), ans[1]);
-  - text: <code>equilibrium([2, 9, 2])</code> should return <code>[1]</code>.
-    testString: assert.deepEqual(equilibrium(equilibriumTests[2]), ans[2]);
-  - text: <code>equilibrium([1, -1, 1, -1, 1, -1, 1])</code> should return <code>[0,1,2,3,4,5,6]</code>.
-    testString: assert.deepEqual(equilibrium(equilibriumTests[3]), ans[3]);
-  - text: <code>equilibrium([1])</code> should return <code>[0]</code>.
-    testString: assert.deepEqual(equilibrium(equilibriumTests[4]), ans[4]);
-  - text: <code>equilibrium([])</code> should return <code>[]</code>.
-    testString: assert.deepEqual(equilibrium(equilibriumTests[5]), ans[5]);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`equilibrium` should be a function.
 
 ```js
-function equilibrium(a) {
-
-}
+assert(typeof equilibrium === 'function');
 ```
 
-</div>
+`equilibrium([-7, 1, 5, 2, -4, 3, 0])` should return `[3,6]`.
 
+```js
+assert.deepEqual(equilibrium(equilibriumTests[0]), ans[0]);
+```
 
-### After Test
-<div id='js-teardown'>
+`equilibrium([2, 4, 6])` should return `[]`.
+
+```js
+assert.deepEqual(equilibrium(equilibriumTests[1]), ans[1]);
+```
+
+`equilibrium([2, 9, 2])` should return `[1]`.
+
+```js
+assert.deepEqual(equilibrium(equilibriumTests[2]), ans[2]);
+```
+
+`equilibrium([1, -1, 1, -1, 1, -1, 1])` should return `[0,1,2,3,4,5,6]`.
+
+```js
+assert.deepEqual(equilibrium(equilibriumTests[3]), ans[3]);
+```
+
+`equilibrium([1])` should return `[0]`.
+
+```js
+assert.deepEqual(equilibrium(equilibriumTests[4]), ans[4]);
+```
+
+`equilibrium([])` should return `[]`.
+
+```js
+assert.deepEqual(equilibrium(equilibriumTests[5]), ans[5]);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const equilibriumTests =
@@ -89,13 +103,15 @@ const equilibriumTests =
 const ans = [[3, 6], [], [1], [0, 1, 2, 3, 4, 5, 6], [0], []];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function equilibrium(a) {
 
-## Solution
-<section id='solution'>
+}
+```
 
+# --solutions--
 
 ```js
 function equilibrium(a) {
@@ -110,7 +126,4 @@ function equilibrium(a) {
     { if (l[i] === r[i]) e.push(i); }
   return e;
 }
-
 ```
-
-</section>

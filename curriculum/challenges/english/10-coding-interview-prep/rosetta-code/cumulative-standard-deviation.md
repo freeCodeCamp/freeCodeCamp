@@ -5,49 +5,76 @@ challengeType: 5
 forumTopicId: 302240
 ---
 
-## Description
+# --description--
 
-<section id='description'>
+Write a function that takes an array of numbers as parameter and returns the [standard deviation](<https://en.wikipedia.org/wiki/Standard Deviation>) of the series.
 
-Write a function that takes an array of numbers as parameter and returns the <a href="https://en.wikipedia.org/wiki/Standard Deviation">standard deviation</a> of the series.
+# --hints--
 
-</section>
+`standardDeviation` should be a function.
 
-## Instructions
-
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>standardDeviation</code> should be a function.
-    testString: assert(typeof standardDeviation == 'function');
-  - text: <code>standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])</code> should return a number.
-    testString: assert(typeof standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]) == 'number');
-  - text: <code>standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])</code> should return <code>2</code>.
-    testString: assert.equal(standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]), 2);
-  - text: <code>standardDeviation([600, 470, 170, 430, 300])</code> should return <code>147.323</code>.
-    testString: assert.equal(standardDeviation([600, 470, 170, 430, 300]), 147.323);
-  - text: <code>standardDeviation([75, 83, 96, 100, 121, 125])</code> should return <code>18.239</code>.
-    testString: assert.equal(standardDeviation([75, 83, 96, 100, 121, 125]), 18.239);
-  - text: <code>standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])</code> should return <code>16.87</code>.
-    testString: assert.equal(standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82]), 16.87);
-  - text: <code>standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])</code> should return <code>22.631</code>.
-    testString: assert.equal(standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314]), 22.631);
+```js
+assert(typeof standardDeviation == 'function');
 ```
 
-</section>
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]) == 'number');
+```
 
-<section id='challengeSeed'>
+`standardDeviation([2, 4, 4, 4, 5, 5, 7, 9])` should return `2`.
 
-<div id='js-seed'>
+```js
+assert.equal(standardDeviation([2, 4, 4, 4, 5, 5, 7, 9]), 2);
+```
+
+`standardDeviation([600, 470, 170, 430, 300])` should return `147.323`.
+
+```js
+assert.equal(standardDeviation([600, 470, 170, 430, 300]), 147.323);
+```
+
+`standardDeviation([75, 83, 96, 100, 121, 125])` should return `18.239`.
+
+```js
+assert.equal(standardDeviation([75, 83, 96, 100, 121, 125]), 18.239);
+```
+
+`standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82])` should return `16.87`.
+
+```js
+assert.equal(
+  standardDeviation([23, 37, 45, 49, 56, 63, 63, 70, 72, 82]),
+  16.87
+);
+```
+
+`standardDeviation([271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287, 314])` should return `22.631`.
+
+```js
+assert.equal(
+  standardDeviation([
+    271,
+    354,
+    296,
+    301,
+    333,
+    326,
+    285,
+    298,
+    327,
+    316,
+    287,
+    314
+  ]),
+  22.631
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function standardDeviation(arr) {
@@ -55,12 +82,7 @@ function standardDeviation(arr) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function standardDeviation(arr) {
@@ -76,5 +98,3 @@ function standardDeviation(arr) {
   return Math.round(std_dev * 1000) / 1000;
 }
 ```
-
-</section>

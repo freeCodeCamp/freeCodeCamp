@@ -6,10 +6,12 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cra9bfP'
 forumTopicId: 301096
 ---
 
-## Description
-<section id='description'>
-You can add another level of organization in your HTML document within the <code>html</code> tags with the <code>head</code> and <code>body</code> elements. Any markup with information about your page would go into the <code>head</code> tag. Then any markup with the content of the page (what displays for a user) would go into the <code>body</code> tag.
-Metadata elements, such as <code>link</code>, <code>meta</code>, <code>title</code>, and <code>style</code>, typically go inside the <code>head</code> element.
+# --description--
+
+You can add another level of organization in your HTML document within the `html` tags with the `head` and `body` elements. Any markup with information about your page would go into the `head` tag. Then any markup with the content of the page (what displays for a user) would go into the `body` tag.
+
+Metadata elements, such as `link`, `meta`, `title`, and `style`, typically go inside the `head` element.
+
 Here's an example of a page's layout:
 
 ```html
@@ -24,75 +26,90 @@ Here's an example of a page's layout:
 </html>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Edit the markup so there's a <code>head</code> and a <code>body</code>. The <code>head</code> element should only include the <code>title</code>, and the <code>body</code> element should only include the <code>h1</code> and <code>p</code>.
-</section>
+Edit the markup so there's a `head` and a `body`. The `head` element should only include the `title`, and the `body` element should only include the `h1` and `p`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: There should be only one <code>head</code> element on the page.
-    testString: |
-      const headElems = code.replace(/\n/g,'').match(/\<head\s*>.*?\<\/head\s*>/g);
-      assert(headElems && headElems.length === 1);
-  - text: There should be only one <code>body</code> element on the page.
-    testString: |
-      const bodyElems = code.replace(/\n/g,'').match(/<body\s*>.*?<\/body\s*>/g);
-      assert(bodyElems && bodyElems.length === 1);
-  - text: The <code>head</code> element should be a child of the <code>html</code> element.
-    testString: |
-      const htmlChildren = code.replace(/\n/g,'').match(/<html\s*>(?<children>.*)<\/html\s*>/);
-      let foundHead;
-      if(htmlChildren) {
-        const { children } = htmlChildren.groups;
+There should be only one `head` element on the page.
 
-        foundHead = children.match(/<head\s*>.*<\/head\s*>/);
-      }
-      assert(foundHead);
-  - text: The <code>body</code> element should be a child of the <code>html</code> element.
-    testString: |
-      const htmlChildren = code.replace(/\n/g,'').match(/<html\s*>(?<children>.*?)<\/html\s*>/);
-      let foundBody;
-      if(htmlChildren) {
-        const { children } = htmlChildren.groups;
-        foundBody = children.match(/<body\s*>.*<\/body\s*>/);
-      }
-      assert(foundBody);
-  - text: The <code>head</code> element should wrap around the <code>title</code> element.
-    testString: |
-      const headChildren = code.replace(/\n/g,'').match(/<head\s*>(?<children>.*?)<\/head\s*>/);
-      let foundTitle;
-      if(headChildren) {
-        const { children } = headChildren.groups;
-        foundTitle = children.match(/<title\s*>.*?<\/title\s*>/);
-      }
-      assert(foundTitle);
-  - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.
-    testString: |
-      const bodyChildren = code.replace(/\n/g,'').match(/<body\s*>(?<children>.*?)<\/body\s*>/);
-      let foundElems;
-      if(bodyChildren) {
-        const { children } = bodyChildren.groups;
-        const h1s = children.match(/<h1\s*>.*<\/h1\s*>/g);
-        const ps = children.match(/<p\s*>.*<\/p\s*>/g);
-        const numH1s = h1s ? h1s.length : 0;
-        const numPs = ps ? ps.length : 0;
-        foundElems = numH1s === 1 && numPs === 1;
-      }
-      assert(foundElems);
+```js
+const headElems = code.replace(/\n/g, '').match(/\<head\s*>.*?\<\/head\s*>/g);
+assert(headElems && headElems.length === 1);
 ```
 
-</section>
+There should be only one `body` element on the page.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+const bodyElems = code.replace(/\n/g, '').match(/<body\s*>.*?<\/body\s*>/g);
+assert(bodyElems && bodyElems.length === 1);
+```
 
-<div id='html-seed'>
+The `head` element should be a child of the `html` element.
+
+```js
+const htmlChildren = code
+  .replace(/\n/g, '')
+  .match(/<html\s*>(?<children>.*)<\/html\s*>/);
+let foundHead;
+if (htmlChildren) {
+  const { children } = htmlChildren.groups;
+
+  foundHead = children.match(/<head\s*>.*<\/head\s*>/);
+}
+assert(foundHead);
+```
+
+The `body` element should be a child of the `html` element.
+
+```js
+const htmlChildren = code
+  .replace(/\n/g, '')
+  .match(/<html\s*>(?<children>.*?)<\/html\s*>/);
+let foundBody;
+if (htmlChildren) {
+  const { children } = htmlChildren.groups;
+  foundBody = children.match(/<body\s*>.*<\/body\s*>/);
+}
+assert(foundBody);
+```
+
+The `head` element should wrap around the `title` element.
+
+```js
+const headChildren = code
+  .replace(/\n/g, '')
+  .match(/<head\s*>(?<children>.*?)<\/head\s*>/);
+let foundTitle;
+if (headChildren) {
+  const { children } = headChildren.groups;
+  foundTitle = children.match(/<title\s*>.*?<\/title\s*>/);
+}
+assert(foundTitle);
+```
+
+The `body` element should wrap around both the `h1` and `p` elements.
+
+```js
+const bodyChildren = code
+  .replace(/\n/g, '')
+  .match(/<body\s*>(?<children>.*?)<\/body\s*>/);
+let foundElems;
+if (bodyChildren) {
+  const { children } = bodyChildren.groups;
+  const h1s = children.match(/<h1\s*>.*<\/h1\s*>/g);
+  const ps = children.match(/<p\s*>.*<\/p\s*>/g);
+  const numH1s = h1s ? h1s.length : 0;
+  const numPs = ps ? ps.length : 0;
+  foundElems = numH1s === 1 && numPs === 1;
+}
+assert(foundElems);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -105,17 +122,9 @@ tests:
 </html>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
-
 <!DOCTYPE html>
 <html>
  <head>
@@ -127,5 +136,3 @@ tests:
  </body>
 </html>
 ```
-
-</section>

@@ -1,48 +1,51 @@
 ---
 id: 5900f36e1000cf542c50fe80
-challengeType: 5
 title: 'Problem 1: Multiples of 3 and 5'
+challengeType: 5
 forumTopicId: 301722
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below the provided parameter value `number`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`multiplesOf3and5(10)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>multiplesOf3and5(10)</code> should return a number.
-    testString: assert(typeof multiplesOf3and5(10) === 'number');
-  - text: <code>multiplesOf3and5(49)</code> should return 543.
-    testString: assert.strictEqual(multiplesOf3and5(49), 543);
-  - text: <code>multiplesOf3and5(1000)</code> should return 233168.
-    testString: assert.strictEqual(multiplesOf3and5(1000), 233168);
-  - text: <code>multiplesOf3and5(8456)</code> should return 16687353.
-    testString: assert.strictEqual(multiplesOf3and5(8456), 16687353);
-  - text: <code>multiplesOf3and5(19564)</code> should return 89301183.
-    testString: assert.strictEqual(multiplesOf3and5(19564), 89301183);
-
+```js
+assert(typeof multiplesOf3and5(10) === 'number');
 ```
 
-</section>
+`multiplesOf3and5(49)` should return 543.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(multiplesOf3and5(49), 543);
+```
 
-<div id='js-seed'>
+`multiplesOf3and5(1000)` should return 233168.
+
+```js
+assert.strictEqual(multiplesOf3and5(1000), 233168);
+```
+
+`multiplesOf3and5(8456)` should return 16687353.
+
+```js
+assert.strictEqual(multiplesOf3and5(8456), 16687353);
+```
+
+`multiplesOf3and5(19564)` should return 89301183.
+
+```js
+assert.strictEqual(multiplesOf3and5(19564), 89301183);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function multiplesOf3and5(number) {
@@ -53,15 +56,7 @@ function multiplesOf3and5(number) {
 multiplesOf3and5(1000);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const multiplesOf3and5 = (number) => {
@@ -75,5 +70,3 @@ const multiplesOf3and5 = (number) => {
   return total;
 };
 ```
-
-</section>

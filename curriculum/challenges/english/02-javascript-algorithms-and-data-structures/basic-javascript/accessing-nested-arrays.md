@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.
+
 Here is an example of how to access a nested array:
 
 ```js
@@ -34,31 +35,38 @@ ourPets[0].names[1]; // "Fluffy"
 ourPets[1].names[0]; // "Spot"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation.
-</section>
+Retrieve the second tree from the variable `myPlants` using object dot and array bracket notation.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>secondTree</code> should equal "pine".
-    testString: assert(secondTree === "pine");
-  - text: Your code should use dot and bracket notation to access <code>myPlants</code>.
-    testString: assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+`secondTree` should equal "pine".
 
+```js
+assert(secondTree === 'pine');
 ```
 
-</section>
+Your code should use dot and bracket notation to access `myPlants`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(x) {
+  if(typeof x != 'undefined') {
+    return "secondTree = " + x;
+  }
+  return "secondTree is undefined";
+})(secondTree);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -84,31 +92,9 @@ var myPlants = [
 // Only change code below this line
 
 var secondTree = ""; // Change this line
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(x) {
-  if(typeof x != 'undefined') {
-    return "secondTree = " + x;
-  }
-  return "secondTree is undefined";
-})(secondTree);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myPlants = [
@@ -134,5 +120,3 @@ var myPlants = [
 
 var secondTree = myPlants[1].list[1];
 ```
-
-</section>

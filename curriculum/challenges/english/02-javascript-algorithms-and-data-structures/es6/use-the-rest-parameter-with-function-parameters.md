@@ -5,9 +5,10 @@ challengeType: 1
 forumTopicId: 301221
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In order to help us create more flexible functions, ES6 introduces the <dfn>rest parameter</dfn> for function parameters. With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
+
 Check out this code:
 
 ```js
@@ -18,38 +19,47 @@ console.log(howMany(0, 1, 2)); // You have passed 3 arguments.
 console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.
 ```
 
-The rest parameter eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.
-</section>
+The rest parameter eliminates the need to check the `args` array and allows us to apply `map()`, `filter()` and `reduce()` on the parameters array.
 
-## Instructions
-<section id='instructions'>
-Modify the function <code>sum</code> using the rest parameter in such a way that the function <code>sum</code> is able to take any number of arguments and return their sum.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Modify the function `sum` using the rest parameter in such a way that the function `sum` is able to take any number of arguments and return their sum.
 
-```yml
-tests:
-  - text: The result of <code>sum(0,1,2)</code> should be 3
-    testString: assert(sum(0,1,2) === 3);
-  - text: The result of <code>sum(1,2,3,4)</code> should be 10
-    testString: assert(sum(1,2,3,4) === 10);
-  - text: The result of <code>sum(5)</code> should be 5
-    testString: assert(sum(5) === 5);
-  - text: The result of <code>sum()</code> should be 0
-    testString: assert(sum() === 0);
-  - text: The <code>sum</code> function should use the <code>...</code> rest parameter on the <code>args</code> parameter.
-    testString: assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
+# --hints--
 
+The result of `sum(0,1,2)` should be 3
+
+```js
+assert(sum(0, 1, 2) === 3);
 ```
 
-</section>
+The result of `sum(1,2,3,4)` should be 10
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(sum(1, 2, 3, 4) === 10);
+```
 
-<div id='js-seed'>
+The result of `sum(5)` should be 5
+
+```js
+assert(sum(5) === 5);
+```
+
+The result of `sum()` should be 0
+
+```js
+assert(sum() === 0);
+```
+
+The `sum` function should use the `...` rest parameter on the `args` parameter.
+
+```js
+assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 const sum = (x, y, z) => {
@@ -58,19 +68,10 @@ const sum = (x, y, z) => {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const sum = (...args) => {
   return args.reduce((a, b) => a + b, 0);
 }
 ```
-
-</section>

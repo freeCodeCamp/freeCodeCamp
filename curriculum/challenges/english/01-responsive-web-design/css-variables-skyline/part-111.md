@@ -4,31 +4,21 @@ title: Part 111
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add `sky` as a second class to the `background-buildings` element. You are going to make a background for the skyline.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".background-buildings.sky").length === 1);
-
+```js
+assert($('.background-buildings.sky').length === 1);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -404,12 +394,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -784,5 +769,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

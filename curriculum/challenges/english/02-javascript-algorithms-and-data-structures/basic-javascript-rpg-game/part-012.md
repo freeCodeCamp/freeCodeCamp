@@ -4,57 +4,51 @@ title: Part 12
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Here are the ids of the other HTML elements that we want a reference to in the JavaScript code: `button2`, `button3`, `text`, `xpText`, `healthText`, `goldText`, `monsterStats`, `monsterNameText`, `monsterHealthText`. 
+Here are the ids of the other HTML elements that we want a reference to in the JavaScript code: `button2`, `button3`, `text`, `xpText`, `healthText`, `goldText`, `monsterStats`, `monsterNameText`, `monsterHealthText`.
 
 Just like you did with `storeButton`, create variables and set them equal to the element references.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s+button2\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button2\s*[\'\"\`]\s*\);?/.test(code) && /const\s+button3\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button3\s*[\'\"\`]\s*\);?/.test(code) && /const\s+text\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#text\s*[\'\"\`]\s*\);?/.test(code) && /const\s+xpText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#xpText\s*[\'\"\`]\s*\);?/.test(code) && /const\s+healthText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#healthText\s*[\'\"\`]\s*\);?/.test(code) && /const\s+goldText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#goldText\s*[\'\"\`]\s*\);?/.test(code) && /const\s+monsterStats\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterStats\s*[\'\"\`]\s*\);?/.test(code) && /const\s+monsterNameText|monsterName\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterName\s*[\'\"\`]\s*\);?/.test(code) && /const\s+monsterHealthText|monsterHealth\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterHealth\s*[\'\"\`]\s*\);?/.test(code));
-
+```js
+assert(
+  /const\s+button2\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button2\s*[\'\"\`]\s*\);?/.test(
+    code
+  ) &&
+    /const\s+button3\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button3\s*[\'\"\`]\s*\);?/.test(
+      code
+    ) &&
+    /const\s+text\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#text\s*[\'\"\`]\s*\);?/.test(
+      code
+    ) &&
+    /const\s+xpText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#xpText\s*[\'\"\`]\s*\);?/.test(
+      code
+    ) &&
+    /const\s+healthText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#healthText\s*[\'\"\`]\s*\);?/.test(
+      code
+    ) &&
+    /const\s+goldText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#goldText\s*[\'\"\`]\s*\);?/.test(
+      code
+    ) &&
+    /const\s+monsterStats\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterStats\s*[\'\"\`]\s*\);?/.test(
+      code
+    ) &&
+    /const\s+monsterNameText|monsterName\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterName\s*[\'\"\`]\s*\);?/.test(
+      code
+    ) &&
+    /const\s+monsterHealthText|monsterHealth\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterHealth\s*[\'\"\`]\s*\);?/.test(
+      code
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory = ["stick"];
-
-const button1 = document.querySelector('#button1');
-  
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -120,25 +114,31 @@ const button1 = document.querySelector('#button1');
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick"];
 
-</section>
+const button1 = document.querySelector('#button1');
+  
+</script>
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -162,5 +162,3 @@ const monsterNameText = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 </script>
 ```
-
-</section>

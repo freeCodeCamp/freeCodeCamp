@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301312
 ---
 
-## Description
-<section id='description'>
-The <code>every</code> method works with arrays to check if <em>every</em> element passes a particular test. It returns a Boolean value - <code>true</code> if all values meet the criteria, <code>false</code> if not.
-For example, the following code would check if every element in the <code>numbers</code> array is less than 10:
+# --description--
+
+The `every` method works with arrays to check if *every* element passes a particular test. It returns a Boolean value - `true` if all values meet the criteria, `false` if not.
+
+For example, the following code would check if every element in the `numbers` array is less than 10:
 
 ```js
 var numbers = [1, 5, 8, 0, 10, 11];
@@ -18,35 +19,39 @@ numbers.every(function(currentValue) {
 // Returns false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use the <code>every</code> method inside the <code>checkPositive</code> function to check if every element in <code>arr</code> is positive. The function should return a Boolean value.
-</section>
+Use the `every` method inside the `checkPositive` function to check if every element in `arr` is positive. The function should return a Boolean value.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should use the <code>every</code> method.
-    testString: assert(code.match(/\.every/g));
-  - text: <code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.
-    testString: assert.isFalse(checkPositive([1, 2, 3, -4, 5]));
-  - text: <code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.
-    testString: assert.isTrue(checkPositive([1, 2, 3, 4, 5]));
-  - text: <code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.
-    testString: assert.isFalse(checkPositive([1, -2, 3, -4, 5]));
+Your code should use the `every` method.
 
+```js
+assert(code.match(/\.every/g));
 ```
 
-</section>
+`checkPositive([1, 2, 3, -4, 5])` should return `false`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.isFalse(checkPositive([1, 2, 3, -4, 5]));
+```
 
-<div id='js-seed'>
+`checkPositive([1, 2, 3, 4, 5])` should return `true`.
+
+```js
+assert.isTrue(checkPositive([1, 2, 3, 4, 5]));
+```
+
+`checkPositive([1, -2, 3, -4, 5])` should return `false`.
+
+```js
+assert.isFalse(checkPositive([1, -2, 3, -4, 5]));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function checkPositive(arr) {
@@ -58,14 +63,7 @@ function checkPositive(arr) {
 checkPositive([1, 2, 3, -4, 5]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function checkPositive(arr) {
@@ -75,5 +73,3 @@ function checkPositive(arr) {
 }
 checkPositive([1, 2, 3, -4, 5]);
 ```
-
-</section>

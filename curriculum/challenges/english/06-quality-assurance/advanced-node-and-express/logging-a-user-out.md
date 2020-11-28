@@ -5,12 +5,11 @@ challengeType: 2
 forumTopicId: 301560
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Creating the logout logic is easy. The route should just unauthenticate the user and redirect to the home page instead of rendering any view.
 
-In passport, unauthenticating a user is as easy as just calling <code>req.logout();</code> before redirecting.
+In passport, unauthenticating a user is as easy as just calling `req.logout();` before redirecting.
 
 ```js
 app.route('/logout')
@@ -30,36 +29,49 @@ app.use((req, res, next) => {
 });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b).
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`req.Logout` should be called in your `/logout` route.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>req.Logout</code> should be called in your <code>/logout</code> route.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /req.logout/gi, 'You should be calling req.logout() in your /logout route'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Logout should redirect to the home page.
-    testString: getUserInput => $.get(getUserInput('url')+ '/logout') .then(data => { assert.match(data, /Home page/gi, 'When a user logs out they should be redirected to the homepage'); }, xhr => { throw new Error(xhr.statusText); })
-
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/server.js').then(
+    (data) => {
+      assert.match(
+        data,
+        /req.logout/gi,
+        'You should be calling req.logout() in your /logout route'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
 ```
 
-</section>
+Logout should redirect to the home page.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/logout').then(
+    (data) => {
+      assert.match(
+        data,
+        /Home page/gi,
+        'When a user logs out they should be redirected to the homepage'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
+```
 
-</section>
+# --seed--
 
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -68,5 +80,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

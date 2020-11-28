@@ -6,32 +6,29 @@ videoUrl: 'https://scrimba.com/c/cQdwJC8'
 forumTopicId: 301052
 ---
 
-## Description
-<section id='description'>
-One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as you don't want the background to stand out too much, and take away from the foreground. The <code>background</code> property supports the <code>url()</code> function in order to link to an image of the chosen texture or pattern. The link address is wrapped in quotes inside the parentheses.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Using the url of <code>https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png</code>, set the <code>background</code> of the whole page with the <code>body</code> selector.
-</section>
+One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as you don't want the background to stand out too much, and take away from the foreground. The `background` property supports the `url()` function in order to link to an image of the chosen texture or pattern. The link address is wrapped in quotes inside the parentheses.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.
-    testString: assert(code.match(/background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi));
+Using the url of `https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png`, set the `background` of the whole page with the `body` selector.
 
+# --hints--
+
+Your `body` element should have a `background` property set to a `url()` with the given link.
+
+```js
+assert(
+  code.match(
+    /background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -41,14 +38,7 @@ tests:
 </style>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -57,5 +47,3 @@ tests:
   }
 </style>
 ```
-
-</section>

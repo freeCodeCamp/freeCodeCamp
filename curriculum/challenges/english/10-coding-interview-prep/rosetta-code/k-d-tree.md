@@ -5,56 +5,159 @@ challengeType: 5
 forumTopicId: 302295
 ---
 
-## Description
+# --description--
 
-<section id='description'>
+A k-d tree (short for *k*-dimensional tree) is a space-partitioning data structure for organizing points in a k-dimensional space. k-d trees are a useful data structure for several applications, such as searches involving a multidimensional search key (e.g. range searches and nearest neighbor searches). k-d trees are a special case of binary space partitioning trees. k-d trees are not suitable, however, for efficiently finding the nearest neighbor in high dimensional spaces. As a general rule, if the dimensionality is *k*, the number of points in the data, *N*, should be *N* ≫ 2<sup><i>k</i></sup>. Otherwise, when k-d trees are used with high-dimensional data, most of the points in the tree will be evaluated and the efficiency is no better than exhaustive search, and other methods such as approximate nearest-neighbor are used instead.
 
-A k-d tree (short for <i>k</i>-dimensional tree) is a space-partitioning data structure for organizing points in a k-dimensional space.
-k-d trees are a useful data structure for several applications, such as searches involving a multidimensional search key (e.g. range searches and nearest neighbor searches).
-k-d trees are a special case of binary space partitioning trees. k-d trees are not suitable, however, for efficiently finding the nearest neighbor in high dimensional spaces. As a general rule, if the dimensionality is <i>k</i>, the number of points in the data, <i>N</i>, should be <i>N</i> ≫ 2<sup><i>k</i></sup>.
-Otherwise, when k-d trees are used with high-dimensional data, most of the points in the tree will be evaluated and the efficiency is no better than exhaustive search, and other methods such as approximate nearest-neighbor are used instead.
-
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Write a function to perform a nearest neighbour search using k-d tree. The function takes two parameters: an array of k-dimensional points, and a single k-dimensional point whose nearest neighbour should be returned by the function. A k-dimensional point will be given as an array of k elements.
 
-</section>
+# --hints--
 
-## Tests
+`kdNN` should be a function.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>kdNN</code> should be a function.
-    testString: assert(typeof kdNN == 'function');
-  - text: <code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])</code> should return an array.
-    testString: assert(Array.isArray(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])));
-  - text: <code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])</code> should return <code>[ 8, 1 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2]), [8, 1]);
-  - text: <code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])</code> should return <code>[ 8, 1 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1]), [8, 1]);
-  - text: <code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])</code> should return <code>[ 2, 3 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2]), [2, 3]);
-  - text: <code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])</code> should return <code>[ 1, 2, 5 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3]), [1, 2, 5]);
-  - text: <code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])</code> should return <code>[ 4, 6, 7 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6]), [4, 6, 7]);
-  - text: <code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])</code> should return <code>[ 7, 8, 9 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8]), [7, 8, 9]);
+```js
+assert(typeof kdNN == 'function');
 ```
 
-</section>
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` should return an array.
 
-## Challenge Seed
+```js
+assert(
+  Array.isArray(
+    kdNN(
+      [
+        [2, 3],
+        [5, 4],
+        [9, 6],
+        [4, 7],
+        [8, 1],
+        [7, 2]
+      ],
+      [9, 2]
+    )
+  )
+);
+```
 
-<section id='challengeSeed'>
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])` should return `[ 8, 1 ]`.
 
-<div id='js-seed'>
+```js
+assert.deepEqual(
+  kdNN(
+    [
+      [2, 3],
+      [5, 4],
+      [9, 6],
+      [4, 7],
+      [8, 1],
+      [7, 2]
+    ],
+    [9, 2]
+  ),
+  [8, 1]
+);
+```
+
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])` should return `[ 8, 1 ]`.
+
+```js
+assert.deepEqual(
+  kdNN(
+    [
+      [2, 3],
+      [5, 4],
+      [9, 6],
+      [4, 7],
+      [8, 1],
+      [7, 2]
+    ],
+    [7, 1]
+  ),
+  [8, 1]
+);
+```
+
+`kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])` should return `[ 2, 3 ]`.
+
+```js
+assert.deepEqual(
+  kdNN(
+    [
+      [2, 3],
+      [5, 4],
+      [9, 6],
+      [4, 7],
+      [8, 1],
+      [7, 2]
+    ],
+    [3, 2]
+  ),
+  [2, 3]
+);
+```
+
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])` should return `[ 1, 2, 5 ]`.
+
+```js
+assert.deepEqual(
+  kdNN(
+    [
+      [2, 3, 1],
+      [9, 4, 5],
+      [4, 6, 7],
+      [1, 2, 5],
+      [7, 8, 9],
+      [3, 6, 1]
+    ],
+    [1, 2, 3]
+  ),
+  [1, 2, 5]
+);
+```
+
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])` should return `[ 4, 6, 7 ]`.
+
+```js
+assert.deepEqual(
+  kdNN(
+    [
+      [2, 3, 1],
+      [9, 4, 5],
+      [4, 6, 7],
+      [1, 2, 5],
+      [7, 8, 9],
+      [3, 6, 1]
+    ],
+    [4, 5, 6]
+  ),
+  [4, 6, 7]
+);
+```
+
+`kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])` should return `[ 7, 8, 9 ]`.
+
+```js
+assert.deepEqual(
+  kdNN(
+    [
+      [2, 3, 1],
+      [9, 4, 5],
+      [4, 6, 7],
+      [1, 2, 5],
+      [7, 8, 9],
+      [3, 6, 1]
+    ],
+    [8, 8, 8]
+  ),
+  [7, 8, 9]
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function kdNN(fpoints, fpoint) {
@@ -62,12 +165,7 @@ function kdNN(fpoints, fpoint) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function kdNN(fpoints, fpoint) {
@@ -368,5 +466,3 @@ function kdNN(fpoints, fpoint) {
   return tree.nearest(fpoint, 1, 1000)[0][0];
 }
 ```
-
-</section>

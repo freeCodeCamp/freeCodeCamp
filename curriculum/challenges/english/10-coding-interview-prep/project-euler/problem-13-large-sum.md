@@ -1,12 +1,11 @@
 ---
 id: 5900f37a1000cf542c50fe8c
-challengeType: 5
 title: 'Problem 13: Large sum'
+challengeType: 5
 forumTopicId: 301757
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
 
@@ -113,54 +112,29 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
   53503534226472524250874054075591789781264330331690<br>
 </div>
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>largeSum(testNums)</code> should return a number.
-    testString: assert(typeof largeSum(testNums) === 'number');
-  - text: <code>largeSum(testNums)</code> should return 8348422521.
-    testString: assert.strictEqual(largeSum(testNums), 8348422521);
-  - text: <code>largeSum(fiftyDigitNums)</code> should return 5537376230.
-    testString: assert.strictEqual(largeSum(fiftyDigitNums), 5537376230);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`largeSum(testNums)` should return a number.
 
 ```js
-function largeSum(arr) {
-
-  return true;
-}
-
-// Only change code above this line
-
-const testNums = [
-  '37107287533902102798797998220837590246510135740250',
-  '46376937677490009712648124896970078050417018260538'
-];
-
-largeSum(testNums);
+assert(typeof largeSum(testNums) === 'number');
 ```
 
-</div>
+`largeSum(testNums)` should return 8348422521.
 
-### Before Test
-<div id='js-setup'>
+```js
+assert.strictEqual(largeSum(testNums), 8348422521);
+```
+
+`largeSum(fiftyDigitNums)` should return 5537376230.
+
+```js
+assert.strictEqual(largeSum(fiftyDigitNums), 5537376230);
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 const fiftyDigitNums = [
@@ -272,14 +246,25 @@ const testNums = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
+```js
+function largeSum(arr) {
 
-</section>
+  return true;
+}
 
-## Solution
-<section id='solution'>
+// Only change code above this line
 
+const testNums = [
+  '37107287533902102798797998220837590246510135740250',
+  '46376937677490009712648124896970078050417018260538'
+];
+
+largeSum(testNums);
+```
+
+# --solutions--
 
 ```js
 function largeSum(arr) {
@@ -298,5 +283,3 @@ function largeSum(arr) {
   return parseInt(firstTen, 10);
 }
 ```
-
-</section>

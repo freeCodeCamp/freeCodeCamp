@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add solution plugin should have an output to match the snapshot 1`] = `
+Object {
+  "solutions": Array [
+    Object {
+      "indexcss": Object {
+        "contents": "body {
+  background: white;
+}",
+        "ext": "css",
+        "head": "",
+        "id": "",
+        "key": "indexcss",
+        "name": "index",
+        "tail": "",
+      },
+      "indexhtml": Object {
+        "contents": "<html>
+  <body>
+  </body>
+</html>",
+        "ext": "html",
+        "head": "",
+        "id": "html-key",
+        "key": "indexhtml",
+        "name": "index",
+        "tail": "",
+      },
+      "indexjs": Object {
+        "contents": "var x = 'y';
+\`\`",
+        "ext": "js",
+        "head": "",
+        "id": "",
+        "key": "indexjs",
+        "name": "index",
+        "tail": "",
+      },
+    },
+  ],
+}
+`;

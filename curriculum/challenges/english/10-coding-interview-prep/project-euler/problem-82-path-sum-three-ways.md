@@ -1,12 +1,11 @@
 ---
 id: 5900f3be1000cf542c50fed1
-challengeType: 5
 title: 'Problem 82: Path sum: three ways'
+challengeType: 5
 forumTopicId: 302196
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 **Note:** This problem is a more challenging version of Problem 81.
 
@@ -24,58 +23,29 @@ The minimal path sum in the 5 by 5 matrix below, by starting in any cell in the 
 
 Find the minimal path sum from the left column to the right column in `matrix`, a 2D array containing an 80 by 80 matrix.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>pathSumThreeWays(testMatrix)</code> should return a number.
-    testString: assert(typeof pathSumThreeWays(testMatrix) === 'number');
-  - text: <code>pathSumThreeWays(testMatrix)</code> should return 994.
-    testString: assert.strictEqual(pathSumThreeWays(testMatrix), 994);
-  - text: <code>pathSumThreeWays(matrix)</code> should return 260324.
-    testString: assert.strictEqual(pathSumThreeWays(matrix), 260324);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`pathSumThreeWays(testMatrix)` should return a number.
 
 ```js
-function pathSumThreeWays(arr) {
-
-  return true;
-}
-
-// Only change code above this line
-
-const testMatrix = [
-  [131, 673, 234, 103, 18],
-  [201, 96, 342, 965, 150],
-  [630, 803, 746, 422, 111],
-  [537, 699, 497, 121, 956],
-  [805, 732, 524, 37, 331]
-];
-
-pathSumThreeWays(testMatrix);
+assert(typeof pathSumThreeWays(testMatrix) === 'number');
 ```
 
-</div>
+`pathSumThreeWays(testMatrix)` should return 994.
 
+```js
+assert.strictEqual(pathSumThreeWays(testMatrix), 994);
+```
 
-### Before Test
-<div id='js-setup'>
+`pathSumThreeWays(matrix)` should return 260324.
+
+```js
+assert.strictEqual(pathSumThreeWays(matrix), 260324);
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 const matrix = [
@@ -162,17 +132,29 @@ const matrix = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
+```js
+function pathSumThreeWays(arr) {
 
+  return true;
+}
 
-</section>
+// Only change code above this line
 
-## Solution
-<section id='solution'>
+const testMatrix = [
+  [131, 673, 234, 103, 18],
+  [201, 96, 342, 965, 150],
+  [630, 803, 746, 422, 111],
+  [537, 699, 497, 121, 956],
+  [805, 732, 524, 37, 331]
+];
+
+pathSumThreeWays(testMatrix);
+```
+
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

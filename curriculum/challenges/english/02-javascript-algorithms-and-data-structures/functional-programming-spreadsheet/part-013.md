@@ -4,12 +4,11 @@ title: Part 13
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 `replace` is a higher order function because it can take a function as argument (higher order functions can also return functions).
 
-Pass the `+` function from `infixToFunction` to the `replace` method as the second argument. 
+Pass the `+` function from `infixToFunction` to the `replace` method as the second argument.
 
 This is how you would pass the `-` function:
 
@@ -17,54 +16,17 @@ This is how you would pass the `-` function:
 str.replace(regex, infixToFunction["-"])
 ```
 
+# --hints--
 
-</section>
+See description above for instructions.
 
-## Instructions
-<section id='instructions'>
-
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(infixEval("ab", /(a)b/) === "aba");
-
+```js
+assert(infixEval('ab', /(a)b/) === 'aba');
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
-
-const infixEval = (str, regex) => str.replace(regex, "");
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -92,25 +54,32 @@ const infixEval = (str, regex) => str.replace(regex, "");
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) => str.replace(regex, "");
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -124,5 +93,3 @@ const infixToFunction = {
 const infixEval = (str, regex) => str.replace(regex, infixToFunction["+"]);
 </script>
 ```
-
-</section>

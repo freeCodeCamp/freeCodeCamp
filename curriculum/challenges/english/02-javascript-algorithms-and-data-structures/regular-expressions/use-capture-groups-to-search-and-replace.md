@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301368
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Searching is useful. However, you can make searching even more powerful when it also changes (or replaces) the text you match.
-You can search and replace text in a string using <code>.replace()</code> on a string. The inputs for <code>.replace()</code> is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
+
+You can search and replace text in a string using `.replace()` on a string. The inputs for `.replace()` is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
 
 ```js
 let wrongText = "The sky is silver.";
@@ -17,47 +18,55 @@ wrongText.replace(silverRegex, "blue");
 // Returns "The sky is blue."
 ```
 
-You can also access capture groups in the replacement string with dollar signs (<code>$</code>).
+You can also access capture groups in the replacement string with dollar signs (`$`).
 
 ```js
 "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
 // Returns "Camp Code"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Write a regex <code>fixRegex</code> using three capture groups that will search for each word in the string "one two three". Then update the <code>replaceText</code> variable to replace "one two three" with the string "three two one" and assign the result to the <code>result</code> variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (<code>$</code>) syntax.
-</section>
+Write a regex `fixRegex` using three capture groups that will search for each word in the string "one two three". Then update the `replaceText` variable to replace "one two three" with the string "three two one" and assign the result to the `result` variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (`$`) syntax.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should use <code>.replace()</code> to search and replace.
-    testString: assert(code.match(/\.replace\(.*\)/));
-  - text: Your regex should change <code>"one two three"</code> to <code>"three two one"</code>
-    testString: assert(result === "three two one");
-  - text: You should not change the last line.
-    testString: assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
-  - text: <code>fixRegex</code> should use at least three capture groups.
-    testString: assert((new RegExp(fixRegex.source + '|')).exec('').length - 1 >= 3);
-  - text: <code>replaceText</code> should use parenthesized submatch string(s) (i.e. the nth parenthesized submatch string, $n, corresponds to the nth capture group).
-    testString: '{
-      const re = /(\$\d{1,2})+(?:[\D]|\b)/g;
-      assert(replaceText.match(re).length >= 3);
-    }'
+You should use `.replace()` to search and replace.
 
+```js
+assert(code.match(/\.replace\(.*\)/));
 ```
 
-</section>
+Your regex should change `"one two three"` to `"three two one"`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(result === 'three two one');
+```
 
-<div id='js-seed'>
+You should not change the last line.
+
+```js
+assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+```
+
+`fixRegex` should use at least three capture groups.
+
+```js
+assert(new RegExp(fixRegex.source + '|').exec('').length - 1 >= 3);
+```
+
+`replaceText` should use parenthesized submatch string(s) (i.e. the nth parenthesized submatch string, $n, corresponds to the nth capture group).
+
+```js
+{
+  const re = /(\$\d{1,2})+(?:[\D]|\b)/g;
+  assert(replaceText.match(re).length >= 3);
+}
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let str = "one two three";
@@ -66,14 +75,7 @@ let replaceText = ""; // Change this line
 let result = str.replace(fixRegex, replaceText);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let str = "one two three";
@@ -81,5 +83,3 @@ let fixRegex = /(\w+) (\w+) (\w+)/g; // Change this line
 let replaceText = "$3 $2 $1"; // Change this line
 let result = str.replace(fixRegex, replaceText);
 ```
-
-</section>

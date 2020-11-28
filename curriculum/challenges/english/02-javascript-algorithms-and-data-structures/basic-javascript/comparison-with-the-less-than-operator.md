@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cNVRWtB'
 forumTopicId: 16789
 ---
 
-## Description
-<section id='description'>
-The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two numbers. If the number to the left is less than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.
-<strong>Examples</strong>
+# --description--
+
+The <dfn>less than</dfn> operator (`<`) compares the values of two numbers. If the number to the left is less than the number to the right, it returns `true`. Otherwise, it returns `false`. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.
+
+**Examples**
 
 ```js
 2   < 5  // true
@@ -19,41 +20,57 @@ The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two
 '8' < 4  // false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 Add the less than operator to the indicated lines so that the return statements make sense.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testLessThan(0)</code> should return "Under 25"
-    testString: assert(testLessThan(0) === "Under 25");
-  - text: <code>testLessThan(24)</code> should return "Under 25"
-    testString: assert(testLessThan(24) === "Under 25");
-  - text: <code>testLessThan(25)</code> should return "Under 55"
-    testString: assert(testLessThan(25) === "Under 55");
-  - text: <code>testLessThan(54)</code> should return "Under 55"
-    testString: assert(testLessThan(54) === "Under 55");
-  - text: <code>testLessThan(55)</code> should return "55 or Over"
-    testString: assert(testLessThan(55) === "55 or Over");
-  - text: <code>testLessThan(99)</code> should return "55 or Over"
-    testString: assert(testLessThan(99) === "55 or Over");
-  - text: You should use the <code>&lt;</code> operator at least twice
-    testString: assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
+`testLessThan(0)` should return "Under 25"
 
+```js
+assert(testLessThan(0) === 'Under 25');
 ```
 
-</section>
+`testLessThan(24)` should return "Under 25"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testLessThan(24) === 'Under 25');
+```
 
-<div id='js-seed'>
+`testLessThan(25)` should return "Under 55"
+
+```js
+assert(testLessThan(25) === 'Under 55');
+```
+
+`testLessThan(54)` should return "Under 55"
+
+```js
+assert(testLessThan(54) === 'Under 55');
+```
+
+`testLessThan(55)` should return "55 or Over"
+
+```js
+assert(testLessThan(55) === '55 or Over');
+```
+
+`testLessThan(99)` should return "55 or Over"
+
+```js
+assert(testLessThan(99) === '55 or Over');
+```
+
+You should use the `<` operator at least twice
+
+```js
+assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testLessThan(val) {
@@ -71,15 +88,7 @@ function testLessThan(val) {
 testLessThan(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testLessThan(val) {
@@ -94,5 +103,3 @@ function testLessThan(val) {
   return "55 or Over";
 }
 ```
-
-</section>

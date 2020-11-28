@@ -4,36 +4,38 @@ title: Part 45
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `id` attribute is used to identify specific HTML elements. Each `id` attribute's value must be unique all other `id` values for the entire page.
 
 Add an `id` attribute with the value `indoor` to the radio button. When elements have multiple attributes, the order of the attributes doesn't matter.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your radio button should still be located between the opening and closing tags of the `label` element.
 
-```yml
-tests:
-  - text: Your radio button should still be located between the opening and closing tags of the `label` element. 
-    testString: |
-      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
-      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
-  - text: Your radio button should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( $('input')[0].hasAttribute('id') );
-  - text: Your radio element should have an `id` attribute with the value `indoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input')[0].id.match(/^indoor$/) );
-
+```js
+const labelChildNodes = [...$('form > label')[0].childNodes];
+assert(
+  labelChildNodes.filter((childNode) => childNode.nodeName === 'INPUT').length
+);
 ```
 
-</section>
+Your radio button should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert($('input')[0].hasAttribute('id'));
+```
+
+Your radio element should have an `id` attribute with the value `indoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+assert($('input')[0].id.match(/^indoor$/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -72,9 +74,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <label><input type="radio"> Indoor</label>
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
@@ -84,5 +86,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

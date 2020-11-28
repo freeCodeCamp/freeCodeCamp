@@ -5,10 +5,12 @@ challengeType: 1
 forumTopicId: 301340
 ---
 
-## Description
-<section id='description'>
-So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the <code>.match()</code> method.
-To use the <code>.match()</code> method, apply the method on a string and pass in the regex inside the parentheses. 
+# --description--
+
+So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the `.match()` method.
+
+To use the `.match()` method, apply the method on a string and pass in the regex inside the parentheses.
+
 Here's an example:
 
 ```js
@@ -27,33 +29,33 @@ Note that the `.match` syntax is the "opposite" of the `.test` method you have b
 /regex/.test('string');
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Apply the <code>.match()</code> method to extract the word <code>coding</code>.
-</section>
+Apply the `.match()` method to extract the word `coding`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>result</code> should have the word <code>coding</code>
-    testString: assert(result.join() === "coding");
-  - text: Your regex <code>codingRegex</code> should search for <code>coding</code>
-    testString: assert(codingRegex.source === "coding");
-  - text: You should use the <code>.match()</code> method.
-    testString: assert(code.match(/\.match\(.*\)/));
+The `result` should have the word `coding`
 
+```js
+assert(result.join() === 'coding');
 ```
 
-</section>
+Your regex `codingRegex` should search for `coding`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(codingRegex.source === 'coding');
+```
 
-<div id='js-seed'>
+You should use the `.match()` method.
+
+```js
+assert(code.match(/\.match\(.*\)/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let extractStr = "Extract the word 'coding' from this string.";
@@ -61,19 +63,10 @@ let codingRegex = /change/; // Change this line
 let result = extractStr; // Change this line
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let extractStr = "Extract the word 'coding' from this string.";
 let codingRegex = /coding/; // Change this line
 let result = extractStr.match(codingRegex); // Change this line
 ```
-
-</section>

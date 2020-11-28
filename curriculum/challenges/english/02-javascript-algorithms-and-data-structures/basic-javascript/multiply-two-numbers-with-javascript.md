@@ -6,70 +6,52 @@ videoUrl: 'https://scrimba.com/c/cP3y3Aq'
 forumTopicId: 18243
 ---
 
-## Description
-<section id='description'>
-We can also multiply one number by another.
-JavaScript uses the <code>*</code> symbol for multiplication of two numbers.
+# --description--
 
-<strong>Example</strong>
+We can also multiply one number by another.
+
+JavaScript uses the `*` symbol for multiplication of two numbers.
+
+**Example**
 
 ```js
 myVar = 13 * 13; // assigned 169
 ```
 
+# --instructions--
 
-</section>
+Change the `0` so that product will equal `80`.
 
-## Instructions
-<section id='instructions'>
-Change the <code>0</code> so that product will equal <code>80</code>.
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: The variable <code>product</code> should be equal to 80.
-    testString: assert(product === 80);
-  - text: You should use the <code>*</code> operator.
-    testString: assert(/\*/.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The variable `product` should be equal to 80.
 
 ```js
-var product = 8 * 0;
-
-
+assert(product === 80);
 ```
 
-</div>
+You should use the `*` operator.
 
+```js
+assert(/\*/.test(code));
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(z){return 'product = '+z;})(product);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var product = 8 * 0;
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var product = 8 * 10;
 ```
-
-</section>

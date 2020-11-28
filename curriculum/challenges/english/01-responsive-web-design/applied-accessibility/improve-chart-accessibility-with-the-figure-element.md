@@ -6,11 +6,13 @@ videoUrl: 'https://scrimba.com/c/cGJMqtE'
 forumTopicId: 301015
 ---
 
-## Description
-<section id='description'>
-HTML5 introduced the <code>figure</code> element, along with the related <code>figcaption</code>. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the <code>figure</code>.
+# --description--
+
+HTML5 introduced the `figure` element, along with the related `figcaption`. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the `figure`.
+
 For data visualizations like charts, the caption can be used to briefly note the trends or conclusions for users with visual impairments. Another challenge covers how to move a table version of the chart's data off-screen (using CSS) for screen reader users.
-Here's an example - note that the <code>figcaption</code> goes inside the <code>figure</code> tags and can be combined with other elements:
+
+Here's an example - note that the `figcaption` goes inside the `figure` tags and can be combined with other elements:
 
 ```html
 <figure>
@@ -22,39 +24,54 @@ Here's an example - note that the <code>figcaption</code> goes inside the <code>
 </figure>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the <code>div</code> tag he used to a <code>figure</code> tag, and the <code>p</code> tag that surrounds the caption to a <code>figcaption</code> tag.
-</section>
+Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the `div` tag he used to a `figure` tag, and the `p` tag that surrounds the caption to a `figcaption` tag.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should have one <code>figure</code> tag.
-    testString: assert($('figure').length == 1);
-  - text: Your code should have one <code>figcaption</code> tag.
-    testString: assert($('figcaption').length == 1);
-  - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0);
-  - text: Your code should not have any <code>p</code> tags.
-    testString: assert($('p').length == 0);
-  - text: The <code>figcaption</code> should be a child of the <code>figure</code> tag.
-    testString: assert($('figure').children('figcaption').length == 1);
-  - text: Your <code>figure</code> element should have a closing tag.
-    testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length);
+Your code should have one `figure` tag.
 
+```js
+assert($('figure').length == 1);
 ```
 
-</section>
+Your code should have one `figcaption` tag.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('figcaption').length == 1);
+```
 
-<div id='html-seed'>
+Your code should not have any `div` tags.
+
+```js
+assert($('div').length == 0);
+```
+
+Your code should not have any `p` tags.
+
+```js
+assert($('p').length == 0);
+```
+
+The `figcaption` should be a child of the `figure` tag.
+
+```js
+assert($('figure').children('figcaption').length == 1);
+```
+
+Your `figure` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/figure>/g) &&
+    code.match(/<\/figure>/g).length === code.match(/<figure>/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -100,14 +117,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -148,5 +158,3 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
-
-</section>

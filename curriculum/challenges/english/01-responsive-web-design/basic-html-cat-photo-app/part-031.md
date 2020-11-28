@@ -4,36 +4,53 @@ title: Part 31
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `strong` element is used to indicate that some text is of strong importance or urgent.
 
 In the `figcaption` you just added, indicate that `hate` is of strong importance by wrapping it in a `strong` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `strong` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: 'Your `strong` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('strong') );
-  - text: Your strong element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/strong\>/) );
-  - text: Your strong element should surround the word `hate` in the text `Cats hate other cats.` You have either omitted the text or have a typo.
-    testString: assert( document.querySelectorAll('figcaption')[1].querySelector('strong').innerText.toLowerCase() === 'hate' );
-  - text: The `figcaption`'s text should be `Cats hate other cats.` Check for typos and that the necessary spaces are present around the `strong` element's opening and closing tags.
-    testString: const secondFigCaption = document.querySelectorAll('figcaption')[1]; assert( secondFigCaption && secondFigCaption.innerText.replace(/\s+/gi, ' ').trim().match(/cats hate other cats\.?/i) );
-
+```js
+assert(document.querySelector('strong'));
 ```
 
-</section>
+Your strong element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/<\/strong\>/));
+```
+
+Your strong element should surround the word `hate` in the text `Cats hate other cats.` You have either omitted the text or have a typo.
+
+```js
+assert(
+  document
+    .querySelectorAll('figcaption')[1]
+    .querySelector('strong')
+    .innerText.toLowerCase() === 'hate'
+);
+```
+
+The `figcaption`'s text should be `Cats hate other cats.` Check for typos and that the necessary spaces are present around the `strong` element's opening and closing tags.
+
+```js
+const secondFigCaption = document.querySelectorAll('figcaption')[1];
+assert(
+  secondFigCaption &&
+    secondFigCaption.innerText
+      .replace(/\s+/gi, ' ')
+      .trim()
+      .match(/cats hate other cats\.?/i)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -66,9 +83,9 @@ tests:
         </ol>
         <figure>
           <img src="https://bit.ly/fcc-cats" alt="Five cats looking around a field.">
-          --fcc-editable-region--
+--fcc-editable-region--
           <figcaption>Cats hate other cats.</figcaption>  
-          --fcc-editable-region--
+--fcc-editable-region--
         </figure>
       </section>
     </main>
@@ -76,5 +93,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

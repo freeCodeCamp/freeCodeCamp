@@ -5,50 +5,128 @@ challengeType: 1
 forumTopicId: 301631
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Like stacks, queues are a collection of elements. But unlike stacks, queues follow the FIFO (First-In First-Out) principle. Elements added to a queue are pushed to the tail, or the end, of the queue, and only the element at the front of the queue is allowed to be removed.
+
 We could use an array to represent a queue, but just like stacks, we want to limit the amount of control we have over our queues.
+
 The two main methods of a queue class is the enqueue and the dequeue method. The enqueue method pushes an element to the tail of the queue, and the dequeue method removes and returns the element at the front of the queue. Other useful methods are the front, size, and isEmpty methods.
-</section>
 
-## Instructions
-<section id='instructions'>
-Write an <code>enqueue</code> method that pushes an element to the tail of the queue, a <code>dequeue</code> method that removes and returns the front element, a <code>front</code> method that lets us see the front element, a <code>size</code> method that shows the length, and an <code>isEmpty</code> method to check if the queue is empty.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Write an `enqueue` method that pushes an element to the tail of the queue, a `dequeue` method that removes and returns the front element, a `front` method that lets us see the front element, a `size` method that shows the length, and an `isEmpty` method to check if the queue is empty.
 
-```yml
-tests:
-  - text: Your <code>Queue</code> class should have a <code>enqueue</code> method.
-    testString: assert((function(){var test = new Queue();  return (typeof test.enqueue === 'function')}()));
-  - text: Your <code>Queue</code> class should have a <code>dequeue</code> method.
-    testString: assert((function(){var test = new Queue();  return (typeof test.dequeue === 'function')}()));
-  - text: Your <code>Queue</code> class should have a <code>front</code> method.
-    testString: assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()));
-  - text: Your <code>Queue</code> class should have a <code>size</code> method.
-    testString: assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()));
-  - text: Your <code>Queue</code> class should have an <code>isEmpty</code> method.
-    testString: assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()));
-  - text: The <code>dequeue</code> method should remove and return the front element of the queue
-    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.dequeue() === 'Smith')}()));
-  - text: The <code>front</code> method should return value of the front element of the queue
-    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()));
-  - text: The <code>size</code> method should return the length of the queue
-    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()));
-  - text: The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue
-    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); return !(test.isEmpty())}()));
+# --hints--
+
+Your `Queue` class should have a `enqueue` method.
+
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    return typeof test.enqueue === 'function';
+  })()
+);
 ```
 
-</section>
+Your `Queue` class should have a `dequeue` method.
 
-## Challenge Seed
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    return typeof test.dequeue === 'function';
+  })()
+);
+```
 
-<section id='challengeSeed'>
+Your `Queue` class should have a `front` method.
 
-<div id='js-seed'>
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    return typeof test.front === 'function';
+  })()
+);
+```
+
+Your `Queue` class should have a `size` method.
+
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    return typeof test.size === 'function';
+  })()
+);
+```
+
+Your `Queue` class should have an `isEmpty` method.
+
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    return typeof test.isEmpty === 'function';
+  })()
+);
+```
+
+The `dequeue` method should remove and return the front element of the queue
+
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    test.enqueue('Smith');
+    test.enqueue('John');
+    return test.dequeue() === 'Smith';
+  })()
+);
+```
+
+The `front` method should return value of the front element of the queue
+
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    test.enqueue('Smith');
+    test.enqueue('John');
+    return test.front() === 'Smith';
+  })()
+);
+```
+
+The `size` method should return the length of the queue
+
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    test.enqueue('Smith');
+    return test.size() === 1;
+  })()
+);
+```
+
+The `isEmpty` method should return `false` if there are elements in the queue
+
+```js
+assert(
+  (function () {
+    var test = new Queue();
+    test.enqueue('Smith');
+    return !test.isEmpty();
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function Queue() {
@@ -62,11 +140,7 @@ function Queue() {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function Queue () { 
@@ -97,5 +171,3 @@ function Queue () {
     // Only change code above this line
 }
 ```
-
-</section>

@@ -6,38 +6,43 @@ videoUrl: 'https://scrimba.com/c/cWmPpud'
 forumTopicId: 301033
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The Complementary Colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.
-</section>
 
-## Instructions
-<section id='instructions'>
-This page will use a shade of teal (<code>#09A7A1</code>) as the dominant color, and its orange (<code>#FF790E</code>) complement to visually highlight the sign-up buttons. Change the <code>background-color</code> of both the <code>header</code> and <code>footer</code> from black to the teal color. Then change the <code>h2</code> text <code>color</code> to teal as well. Finally, change the <code>background-color</code> of the <code>button</code> to the orange color.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+This page will use a shade of teal (`#09A7A1`) as the dominant color, and its orange (`#FF790E`) complement to visually highlight the sign-up buttons. Change the `background-color` of both the `header` and `footer` from black to the teal color. Then change the `h2` text `color` to teal as well. Finally, change the `background-color` of the `button` to the orange color.
 
-```yml
-tests:
-  - text: 'The <code>header</code> element should have a <code>background-color</code> of #09A7A1.'
-    testString: "assert($('header').css('background-color') == 'rgb(9, 167, 161)');"
-  - text: 'The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.'
-    testString: "assert($('footer').css('background-color') == 'rgb(9, 167, 161)');"
-  - text: 'The <code>h2</code> element should have a <code>color</code> of #09A7A1.'
-    testString: "assert($('h2').css('color') == 'rgb(9, 167, 161)');"
-  - text: 'The <code>button</code> element should have a <code>background-color</code> of #FF790E.'
-    testString: "assert($('button').css('background-color') == 'rgb(255, 121, 14)');"
+# --hints--
 
+The `header` element should have a `background-color` of #09A7A1.
+
+```js
+assert($('header').css('background-color') == 'rgb(9, 167, 161)');
 ```
 
-</section>
+The `footer` element should have a `background-color` of #09A7A1.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('footer').css('background-color') == 'rgb(9, 167, 161)');
+```
 
-<div id='html-seed'>
+The `h2` element should have a `color` of #09A7A1.
+
+```js
+assert($('h2').css('color') == 'rgb(9, 167, 161)');
+```
+
+The `button` element should have a `background-color` of #FF790E.
+
+```js
+assert($('button').css('background-color') == 'rgb(255, 121, 14)');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -80,14 +85,7 @@ tests:
 <footer>&copy; 2018 FCC Kitchen</footer>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -129,5 +127,3 @@ tests:
 <br>
 <footer>&copy; 2018 FCC Kitchen</footer>
 ```
-
-</section>

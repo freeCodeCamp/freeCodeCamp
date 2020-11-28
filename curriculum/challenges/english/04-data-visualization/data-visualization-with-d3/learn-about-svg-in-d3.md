@@ -5,40 +5,46 @@ challengeType: 6
 forumTopicId: 301489
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 <dfn>SVG</dfn> stands for <dfn>Scalable Vector Graphics</dfn>.
+
 Here "scalable" means that, if you zoom in or out on an object, it would not appear pixelated. It scales with the display system, whether it's on a small mobile screen or a large TV monitor.
-SVG is used to make common geometric shapes. Since D3 maps data into a visual representation, it uses SVG to create the shapes for the visualization. SVG shapes for a web page must go within an HTML <code>svg</code> tag.
-CSS can be scalable when styles use relative units (such as <code>vh</code>, <code>vw</code>, or percentages), but using SVG is more flexible to build data visualizations.
-</section>
 
-## Instructions
-<section id='instructions'>
-Add an <code>svg</code> node to the <code>body</code> using <code>append()</code>. Give it a <code>width</code> attribute set to the provided <code>w</code> constant and a <code>height</code> attribute set to the provided <code>h</code> constant using the <code>attr()</code> or <code>style()</code> methods for each. You'll see it in the output because there's a <code>background-color</code> of pink applied to it in the <code>style</code> tag.
-  <strong>Note</strong><br>When using <code>attr()</code> width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is.
-</section>
+SVG is used to make common geometric shapes. Since D3 maps data into a visual representation, it uses SVG to create the shapes for the visualization. SVG shapes for a web page must go within an HTML `svg` tag.
 
-## Tests
-<section id='tests'>
+CSS can be scalable when styles use relative units (such as `vh`, `vw`, or percentages), but using SVG is more flexible to build data visualizations.
 
-```yml
-tests:
-  - text: Your document should have 1 <code>svg</code> element.
-    testString: assert($('svg').length == 1);
-  - text: The <code>svg</code> element should have a <code>width</code> attribute set to 500 or styled to have a width of 500px.
-    testString: assert($('svg').attr('width') == '500'||$('svg').css('width') == '500px');
-  - text: The <code>svg</code> element should have a <code>height</code> attribute set to 100 or styled to have a height of 100px.
-    testString: assert($('svg').attr('height') == '100'||$('svg').css('height') == '100px');
+# --instructions--
 
+Add an `svg` node to the `body` using `append()`. Give it a `width` attribute set to the provided `w` constant and a `height` attribute set to the provided `h` constant using the `attr()` or `style()` methods for each. You'll see it in the output because there's a `background-color` of pink applied to it in the `style` tag.
+
+**Note**  
+When using `attr()` width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is.
+
+# --hints--
+
+Your document should have 1 `svg` element.
+
+```js
+assert($('svg').length == 1);
 ```
 
-</section>
+The `svg` element should have a `width` attribute set to 500 or styled to have a width of 500px.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('svg').attr('width') == '500' || $('svg').css('width') == '500px');
+```
 
-<div id='html-seed'>
+The `svg` element should have a `height` attribute set to 100 or styled to have a height of 100px.
+
+```js
+assert($('svg').attr('height') == '100' || $('svg').css('height') == '100px');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -63,14 +69,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -91,7 +90,4 @@ tests:
                   .attr("height", h)
   </script>
 </body>
-
 ```
-
-</section>

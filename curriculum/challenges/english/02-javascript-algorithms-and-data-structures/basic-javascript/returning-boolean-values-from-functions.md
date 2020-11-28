@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
 ---
 
-## Description
-<section id='description'>
-You may recall from <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.
+# --description--
+
+You may recall from [Comparison with the Equality Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator) that all comparison operators return a boolean `true` or `false` value.
+
 Sometimes people use an if/else statement to do a comparison, like this:
 
 ```js
@@ -21,7 +22,7 @@ function isEqual(a,b) {
 }
 ```
 
-But there's a better way to do this. Since <code>===</code> returns <code>true</code> or <code>false</code>, we can return the result of the comparison:
+But there's a better way to do this. Since `===` returns `true` or `false`, we can return the result of the comparison:
 
 ```js
 function isEqual(a,b) {
@@ -29,33 +30,33 @@ function isEqual(a,b) {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Fix the function <code>isLess</code> to remove the <code>if/else</code> statements.
-</section>
+Fix the function `isLess` to remove the `if/else` statements.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>isLess(10,15)</code> should return <code>true</code>
-    testString: assert(isLess(10,15) === true);
-  - text: <code>isLess(15,10)</code> should return <code>false</code>
-    testString: assert(isLess(15, 10) === false);
-  - text: You should not use any <code>if</code> or <code>else</code> statements
-    testString: assert(!/if|else/g.test(code));
+`isLess(10,15)` should return `true`
 
+```js
+assert(isLess(10, 15) === true);
 ```
 
-</section>
+`isLess(15,10)` should return `false`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(isLess(15, 10) === false);
+```
 
-<div id='js-seed'>
+You should not use any `if` or `else` statements
+
+```js
+assert(!/if|else/g.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function isLess(a, b) {
@@ -71,20 +72,10 @@ function isLess(a, b) {
 isLess(10, 15);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function isLess(a, b) {
   return a < b;
 }
 ```
-
-</section>

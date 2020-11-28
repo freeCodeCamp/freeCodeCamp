@@ -6,40 +6,55 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
 forumTopicId: 16627
 ---
 
-## Description
-<section id='description'>
-Let's add a <code>submit</code> button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.
+# --description--
+
+Let's add a `submit` button to your form. Clicking this button will send the data from your form to the URL you specified with your form's `action` attribute.
+
 Here's an example submit button:
-<code>&#60;button type="submit"&#62;this button submits the form&#60;/button&#62;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-Add a button as the last element of your <code>form</code> element with a type of <code>submit</code>, and "Submit" as its text.
-</section>
+`<button type="submit">this button submits the form</button>`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your form should have a button inside it.
-    testString: assert($("form").children("button").length > 0);
-  - text: Your submit button should have the attribute <code>type</code> set to <code>submit</code>.
-    testString: assert($("button").attr("type") === "submit");
-  - text: Your submit button should only have the text <code>Submit</code>.
-    testString: assert($("button").text().match(/^\s*submit\s*$/gi));
-  - text: Your <code>button</code> element should have a closing tag.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+Add a button as the last element of your `form` element with a type of `submit`, and "Submit" as its text.
 
+# --hints--
+
+Your form should have a button inside it.
+
+```js
+assert($('form').children('button').length > 0);
 ```
 
-</section>
+Your submit button should have the attribute `type` set to `submit`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button').attr('type') === 'submit');
+```
 
-<div id='html-seed'>
+Your submit button should only have the text `Submit`.
+
+```js
+assert(
+  $('button')
+    .text()
+    .match(/^\s*submit\s*$/gi)
+);
+```
+
+Your `button` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -66,11 +81,7 @@ tests:
 </main>
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -97,5 +108,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

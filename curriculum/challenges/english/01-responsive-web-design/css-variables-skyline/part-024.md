@@ -4,31 +4,28 @@ title: Part 24
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Create a new variable by the other ones named `--building-color3` and give it a value of `#cc6699`. Then use it as the `background-color` of the `bb3` class and give it a fallback value of `pink`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; const bb3style = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];assert(/--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(bb1style) && /background-color\s*:\s*var\(\s*--building-color3\s*,\s*pink\s*\)\s*(;|\s*})/g.test(bb3style));
-
+```js
+const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0];
+const bb3style = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(bb1style) &&
+    /background-color\s*:\s*var\(\s*--building-color3\s*,\s*pink\s*\)\s*(;|\s*})/g.test(
+      bb3style
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -128,12 +125,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -234,5 +226,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

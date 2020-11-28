@@ -4,9 +4,7 @@ title: Part 2
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 In our HTML document, we have a form element with an `id` attribute: `<form id="calorie-form">`
 
@@ -14,42 +12,21 @@ To reference and access this particular form in JavaScript, we can use the getEl
 
 The code `document.getElementById('my-form')` gets a reference to an HTML element with an `id` of `my-form`. Get a reference to the HTML element with the `id` of `calorie-form`.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie\-form[\'\"\`]\)/) );
+```js
+assert(
+  code
+    .replace(/\s/g, '')
+    .match(/document\.getElementById\([\'\"\`]calorie\-form[\'\"\`]\)/)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  //console.log(document);
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -109,24 +86,22 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  //console.log(document);
+</script>
+```
 
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -134,5 +109,3 @@ tests:
   document.getElementById('calorie-form');
 </script>
 ```
-
-</section>

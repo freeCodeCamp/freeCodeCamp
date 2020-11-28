@@ -6,34 +6,31 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
 forumTopicId: 301104
 ---
 
-## Description
-<section id='description'>
-The <code>header</code> and <code>footer</code> in the tweet embed example have child items that could be arranged as rows using the <code>flex-direction</code> property. This tells CSS to align the children horizontally.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>flex-direction</code> to both the <code>header</code> and <code>footer</code> and set the value to row.
-</section>
+The `header` and `footer` in the tweet embed example have child items that could be arranged as rows using the `flex-direction` property. This tells CSS to align the children horizontally.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>header</code> should have a <code>flex-direction</code> property set to row.
-    testString: assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
-  - text: The <code>footer</code> should have a <code>flex-direction</code> property set to row.
-    testString: assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));
+Add the CSS property `flex-direction` to both the `header` and `footer` and set the value to row.
 
+# --hints--
+
+The `header` should have a `flex-direction` property set to row.
+
+```js
+assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
 ```
 
-</section>
+The `footer` should have a `flex-direction` property set to row.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -129,14 +126,7 @@ tests:
 </footer>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -231,5 +221,3 @@ tests:
   </div>
 </footer>
 ```
-
-</section>

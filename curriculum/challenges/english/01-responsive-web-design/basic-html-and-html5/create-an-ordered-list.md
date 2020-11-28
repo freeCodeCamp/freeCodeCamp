@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cQ3B8TM'
 forumTopicId: 16824
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 HTML has another special element for creating <dfn>ordered lists</dfn>, or numbered lists.
-Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists are closed with the <code>&#60;/ol&#62;</code> tag.
+
+Ordered lists start with an opening `<ol>` element, followed by any number of `<li>` elements. Finally, ordered lists are closed with the `</ol>` tag.
 
 For example:
 
@@ -21,49 +22,96 @@ For example:
 ```
 
 would create a numbered list of "Garfield" and "Sylvester".
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Create an ordered list of the top 3 things cats hate the most.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should have an ordered list for <code>Top 3 things cats hate:</code>
-    testString: assert((/Top 3 things cats hate:/i).test($("ol").prev().text()));
-  - text: You should have an unordered list for <code>Things cats love:</code>
-    testString: assert((/Things cats love:/i).test($("ul").prev().text()));
-  - text: You should have only one <code>ul</code> element.
-    testString: assert.equal($("ul").length, 1);
-  - text: You should have only one <code>ol</code> element.
-    testString: assert.equal($("ol").length, 1);
-  - text: You should have three <code>li</code> elements within your <code>ul</code> element.
-    testString: assert.equal($("ul li").length, 3);
-  - text: You should have three <code>li</code> elements within your <code>ol</code> element.
-    testString: assert.equal($("ol li").length, 3);
-  - text: Your <code>ul</code> element should have a closing tag.
-    testString: assert(code.match(/<\/ul>/g) && code.match(/<\/ul>/g).length === code.match(/<ul>/g).length);
-  - text: Your <code>ol</code> element should have a closing tag.
-    testString: assert(code.match(/<\/ol>/g) && code.match(/<\/ol>/g).length === code.match(/<ol>/g).length);
-  - text: Your <code>li</code> element should have a closing tag.
-    testString: assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length);
-  - text: The <code>li</code> elements in your unordered list should not be empty.
-    testString: $('ul li').each((i, val) => assert(__helpers.removeWhiteSpace(val.textContent)));
-  - text: The <code>li</code> elements in your ordered list should not be empty.
-    testString: $('ol li').each((i, val) => assert(!!__helpers.removeWhiteSpace(val.textContent)));
+You should have an ordered list for `Top 3 things cats hate:`
 
+```js
+assert(/Top 3 things cats hate:/i.test($('ol').prev().text()));
 ```
 
-</section>
+You should have an unordered list for `Things cats love:`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/Things cats love:/i.test($('ul').prev().text()));
+```
 
-<div id='html-seed'>
+You should have only one `ul` element.
+
+```js
+assert.equal($('ul').length, 1);
+```
+
+You should have only one `ol` element.
+
+```js
+assert.equal($('ol').length, 1);
+```
+
+You should have three `li` elements within your `ul` element.
+
+```js
+assert.equal($('ul li').length, 3);
+```
+
+You should have three `li` elements within your `ol` element.
+
+```js
+assert.equal($('ol li').length, 3);
+```
+
+Your `ul` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/ul>/g) &&
+    code.match(/<\/ul>/g).length === code.match(/<ul>/g).length
+);
+```
+
+Your `ol` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/ol>/g) &&
+    code.match(/<\/ol>/g).length === code.match(/<ol>/g).length
+);
+```
+
+Your `li` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/li>/g) &&
+    code.match(/<li>/g) &&
+    code.match(/<\/li>/g).length === code.match(/<li>/g).length
+);
+```
+
+The `li` elements in your unordered list should not be empty.
+
+```js
+$('ul li').each((i, val) =>
+  assert(__helpers.removeWhiteSpace(val.textContent))
+);
+```
+
+The `li` elements in your ordered list should not be empty.
+
+```js
+$('ol li').each((i, val) =>
+  assert(!!__helpers.removeWhiteSpace(val.textContent))
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -83,14 +131,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -113,5 +154,3 @@ tests:
   </ol>
 </main>
 ```
-
-</section>

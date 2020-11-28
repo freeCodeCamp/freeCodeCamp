@@ -4,31 +4,28 @@ title: Part 21
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 I don't like how spaced out the buildings are. Squeeze them together by adding two empty `div` elements to the top of the `background-buildings` element, two more at the bottom of it, and one more in between `bb3` and `bb4`. These will be added as things that are spaced evenly across the container, effectively moving the buildings closer to the center.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb = $(".background-buildings").children("div"); assert(bb.length === 9 && bb[2] === $("div.bb1")[0] && bb[3] === $("div.bb2")[0] && bb[4] === $("div.bb3")[0] && bb[6] === $("div.bb4")[0]);
-
+```js
+const bb = $('.background-buildings').children('div');
+assert(
+  bb.length === 9 &&
+    bb[2] === $('div.bb1')[0] &&
+    bb[3] === $('div.bb2')[0] &&
+    bb[4] === $('div.bb3')[0] &&
+    bb[6] === $('div.bb4')[0]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -121,12 +118,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -223,5 +215,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

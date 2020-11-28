@@ -5,42 +5,53 @@ challengeType: 0
 forumTopicId: 18232
 ---
 
-## Description
-<section id='description'>
-First, add a new image below the existing one. Set its <code>src</code> attribute to <code>https://bit.ly/fcc-running-cats</code>.
+# --description--
+
+First, add a new image below the existing one. Set its `src` attribute to `https://bit.ly/fcc-running-cats`.
+
 It would be great if this image could be exactly the width of our phone's screen.
-Fortunately, with Bootstrap, all we need to do is add the <code>img-responsive</code> class to your image. Do this, and the image should perfectly fit the width of your page.
-</section>
 
-## Instructions
-<section id='instructions'>
+Fortunately, with Bootstrap, all we need to do is add the `img-responsive` class to your image. Do this, and the image should perfectly fit the width of your page.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You should have a total of two images.
 
-```yml
-tests:
-  - text: You should have a total of two images.
-    testString: assert($("img").length === 2);
-  - text: Your new image should be below your old one and have the class <code>img-responsive</code>.
-    testString: assert($("img:eq(1)").hasClass("img-responsive"));
-  - text: Your new image should not have the class <code>smaller-image</code>.
-    testString: assert(!$("img:eq(1)").hasClass("smaller-image"));
-  - text: Your new image should have a <code>src</code> of <code>https&#58;//bit.ly/fcc-running-cats</code>.
-    testString: assert($("img:eq(1)").attr("src") === "https://bit.ly/fcc-running-cats");
-  - text: Your new <code>img</code> element should have a closing angle bracket.
-    testString: assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2);
-
+```js
+assert($('img').length === 2);
 ```
 
-</section>
+Your new image should be below your old one and have the class `img-responsive`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('img:eq(1)').hasClass('img-responsive'));
+```
 
-<div id='html-seed'>
+Your new image should not have the class `smaller-image`.
+
+```js
+assert(!$('img:eq(1)').hasClass('smaller-image'));
+```
+
+Your new image should have a `src` of `https://bit.ly/fcc-running-cats`.
+
+```js
+assert($('img:eq(1)').attr('src') === 'https://bit.ly/fcc-running-cats');
+```
+
+Your new `img` element should have a closing angle bracket.
+
+```js
+assert(
+  code.match(/<img/g) &&
+    code.match(/<img[^<]*>/g).length === 2 &&
+    code.match(/<img/g).length === 2
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -101,14 +112,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -169,5 +173,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

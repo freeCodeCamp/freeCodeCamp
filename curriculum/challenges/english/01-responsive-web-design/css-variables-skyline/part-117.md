@@ -4,31 +4,27 @@ title: Part 117
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add a `:root` selector to the top of your media query. Then redefine all four of the `--building-color` variables to use the value `#000` there.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1]; assert(/--building-color1\s*:\s*#000\s*(;|})/g.test(root) && /--building-color2\s*:\s*#000\s*(;|})/g.test(root) && /--building-color3\s*:\s*#000\s*(;|})/g.test(root) && /--building-color4\s*:\s*#000\s*(;|})/g.test(root));
-
+```js
+const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1];
+assert(
+  /--building-color1\s*:\s*#000\s*(;|})/g.test(root) &&
+    /--building-color2\s*:\s*#000\s*(;|})/g.test(root) &&
+    /--building-color3\s*:\s*#000\s*(;|})/g.test(root) &&
+    /--building-color4\s*:\s*#000\s*(;|})/g.test(root)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -426,12 +422,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -835,5 +826,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

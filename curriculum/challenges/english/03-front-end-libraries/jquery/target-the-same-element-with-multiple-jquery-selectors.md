@@ -1,54 +1,77 @@
 ---
 id: bad87fee1348bd9aed908626
 title: Target the Same Element with Multiple jQuery Selectors
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18322
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
-Now you know three ways of targeting elements: by type: <code>$("button")</code>, by class: <code>$(".btn")</code>, and by id <code>$("#target1")</code>.
-Although it is possible to add multiple classes in a single <code>.addClass()</code> call, let's add them to the same element in <em>three separate ways</em>.
-Using <code>.addClass()</code>, add only one class at a time to the same element, three different ways:
-Add the <code>animated</code> class to all elements with type <code>button</code>.
-Add the <code>shake</code> class to all the buttons with class <code>.btn</code>.
-Add the <code>btn-primary</code> class to the button with id <code>#target1</code>.
-<strong>Note</strong><br>You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes <code>shake</code>, <code>animated</code>, and <code>btn-primary</code> to <code>#target1</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Now you know three ways of targeting elements: by type: `$("button")`, by class: `$(".btn")`, and by id `$("#target1")`.
 
-</section>
+Although it is possible to add multiple classes in a single `.addClass()` call, let's add them to the same element in *three separate ways*.
 
-## Tests
-<section id='tests'>
+Using `.addClass()`, add only one class at a time to the same element, three different ways:
 
-```yml
-tests:
-  - text: Your code should use the <code>$&#40"button"&#41</code> selector.
-    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?button\s*?(?:'|")/gi));
-  - text: Your code should use the <code>$&#40".btn"&#41</code> selector.
-    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?\.btn\s*?(?:'|")/gi));
-  - text: Your code should use the <code>$&#40"#target1"&#41</code> selector.
-    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")/gi));
-  - text: You should only add one class with each of your three selectors.
-    testString: assert(code.match(/addClass/g) && code.match(/addClass\s*?\(\s*?('|")\s*?[\w-]+\s*?\1\s*?\)/g).length > 2);
-  - text: Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.
-    testString: assert($('#target1').hasClass('animated') && $('#target1').hasClass('shake') && $('#target1').hasClass('btn-primary'));
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(!code.match(/class.*animated/g));
+Add the `animated` class to all elements with type `button`.
 
+Add the `shake` class to all the buttons with class `.btn`.
+
+Add the `btn-primary` class to the button with id `#target1`.
+
+**Note**  
+You should only be targeting one element and adding only one class at a time. Altogether, your three individual selectors will end up adding the three classes `shake`, `animated`, and `btn-primary` to `#target1`.
+
+# --hints--
+
+Your code should use the `$("button")` selector.
+
+```js
+assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?button\s*?(?:'|")/gi));
 ```
 
-</section>
+Your code should use the `$(".btn")` selector.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?\.btn\s*?(?:'|")/gi));
+```
 
-<div id='html-seed'>
+Your code should use the `$("#target1")` selector.
+
+```js
+assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")/gi));
+```
+
+You should only add one class with each of your three selectors.
+
+```js
+assert(
+  code.match(/addClass/g) &&
+    code.match(/addClass\s*?\(\s*?('|")\s*?[\w-]+\s*?\1\s*?\)/g).length > 2
+);
+```
+
+Your `#target1` element should have the classes `animated`‚ `shake` and `btn-primary`.
+
+```js
+assert(
+  $('#target1').hasClass('animated') &&
+    $('#target1').hasClass('shake') &&
+    $('#target1').hasClass('btn-primary')
+);
+```
+
+You should only use jQuery to add these classes to the element.
+
+```js
+assert(!code.match(/class.*animated/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -82,14 +105,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -124,5 +140,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

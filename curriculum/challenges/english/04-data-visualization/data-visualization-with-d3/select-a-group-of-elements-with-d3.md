@@ -5,38 +5,45 @@ challengeType: 6
 forumTopicId: 301490
 ---
 
-## Description
-<section id='description'>
-D3 also has the <code>selectAll()</code> method to select a group of elements. It returns an array of HTML nodes for all the items in the document that match the input string. Here's an example to select all the anchor tags in a document:
-<code>const anchors = d3.selectAll("a");</code>
-Like the <code>select()</code> method, <code>selectAll()</code> supports method chaining, and you can use it with other methods.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Select all of the <code>li</code> tags in the document, and change their text to "list item" by chaining the <code>.text()</code> method.
-</section>
+D3 also has the `selectAll()` method to select a group of elements. It returns an array of HTML nodes for all the items in the document that match the input string. Here's an example to select all the anchor tags in a document:
 
-## Tests
-<section id='tests'>
+`const anchors = d3.selectAll("a");`
 
-```yml
-tests:
-  - text: There should be 3 <code>li</code> elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.
-    testString: assert($('li').text().match(/list item/g).length == 3);
-  - text: Your code should access the <code>d3</code> object.
-    testString: assert(code.match(/d3/g));
-  - text: Your code should use the <code>selectAll</code> method.
-    testString: assert(code.match(/\.selectAll/g));
+Like the `select()` method, `selectAll()` supports method chaining, and you can use it with other methods.
 
+# --instructions--
+
+Select all of the `li` tags in the document, and change their text to "list item" by chaining the `.text()` method.
+
+# --hints--
+
+There should be 3 `li` elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.
+
+```js
+assert(
+  $('li')
+    .text()
+    .match(/list item/g).length == 3
+);
 ```
 
-</section>
+Your code should access the `d3` object.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/d3/g));
+```
 
-<div id='html-seed'>
+Your code should use the `selectAll` method.
+
+```js
+assert(code.match(/\.selectAll/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -55,14 +62,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -76,7 +76,4 @@ tests:
       .text("list item")
   </script>
 </body>
-
 ```
-
-</section>

@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/cqk8rf4'
 forumTopicId: 16805
 ---
 
-## Description
-<section id='description'>
-Sometimes you will need to build a string, <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> style. By using the concatenation operator (<code>+</code>), you can insert one or more variables into a string you're building.
+# --description--
+
+Sometimes you will need to build a string, [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs) style. By using the concatenation operator (`+`), you can insert one or more variables into a string you're building.
 
 Example:
 
@@ -18,45 +18,27 @@ var ourStr = "Hello, our name is " + ourName + ", how are you?";
 // ourStr is now "Hello, our name is freeCodeCamp, how are you?"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Set <code>myName</code> to a string equal to your name and build <code>myStr</code> with <code>myName</code> between the strings <code>"My name is "</code> and <code>" and I am well!"</code>
-</section>
+Set `myName` to a string equal to your name and build `myStr` with `myName` between the strings `"My name is "` and `" and I am well!"`
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>myName</code> should be set to a string at least 3 characters long.
-    testString: assert(typeof myName !== 'undefined' && myName.length > 2);
-  - text: You should use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it.
-    testString: assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`myName` should be set to a string at least 3 characters long.
 
 ```js
-// Only change code below this line
-var myName;
-var myStr;
-
-
+assert(typeof myName !== 'undefined' && myName.length > 2);
 ```
 
-</div>
+You should use two `+` operators to build `myStr` with `myName` inside it.
 
+```js
+assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(){
@@ -75,17 +57,17 @@ var myStr;
 })();
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Only change code below this line
+var myName;
+var myStr;
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myName = "Bob";
 var myStr = "My name is " + myName + " and I am well!";
 ```
-
-</section>

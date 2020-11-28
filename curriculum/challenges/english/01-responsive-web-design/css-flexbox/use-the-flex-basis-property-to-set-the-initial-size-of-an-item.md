@@ -6,39 +6,45 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/c3d9nCa'
 forumTopicId: 301108
 ---
 
-## Description
-<section id='description'>
-The <code>flex-basis</code> property specifies the initial size of the item before CSS makes adjustments with <code>flex-shrink</code> or <code>flex-grow</code>.
-The units used by the <code>flex-basis</code> property are the same as other size properties (<code>px</code>, <code>em</code>, <code>%</code>, etc.). The value <code>auto</code> sizes items based on the content.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Set the initial size of the boxes using <code>flex-basis</code>. Add the CSS property <code>flex-basis</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of <code>10em</code> and <code>#box-2</code> a value of <code>20em</code>.
-</section>
+The `flex-basis` property specifies the initial size of the item before CSS makes adjustments with `flex-shrink` or `flex-grow`.
 
-## Tests
-<section id='tests'>
+The units used by the `flex-basis` property are the same as other size properties (`px`, `em`, `%`, etc.). The value `auto` sizes items based on the content.
 
-```yml
-tests:
-  - text: The <code>#box-1</code> element should have a <code>flex-basis</code> property.
-    testString: assert($('#box-1').css('flex-basis') != 'auto');
-  - text: The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.
-    testString: assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g));
-  - text: The <code>#box-2</code> element should have the <code>flex-basis</code> property.
-    testString: assert($('#box-2').css('flex-basis') != 'auto');
-  - text: The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.
-    testString: assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));
+# --instructions--
 
+Set the initial size of the boxes using `flex-basis`. Add the CSS property `flex-basis` to both `#box-1` and `#box-2`. Give `#box-1` a value of `10em` and `#box-2` a value of `20em`.
+
+# --hints--
+
+The `#box-1` element should have a `flex-basis` property.
+
+```js
+assert($('#box-1').css('flex-basis') != 'auto');
 ```
 
-</section>
+The `#box-1` element should have a `flex-basis` value of `10em`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g));
+```
 
-<div id='html-seed'>
+The `#box-2` element should have the `flex-basis` property.
+
+```js
+assert($('#box-2').css('flex-basis') != 'auto');
+```
+
+The `#box-2` element should have a `flex-basis` value of `20em`.
+
+```js
+assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -66,14 +72,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -100,5 +99,3 @@ tests:
   <div id="box-2"></div>
 </div>
 ```
-
-</section>

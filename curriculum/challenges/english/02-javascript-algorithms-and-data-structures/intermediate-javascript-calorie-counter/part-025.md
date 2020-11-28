@@ -4,9 +4,7 @@ title: Part 25
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Use a ternary operator to assign the value of `maxCalories`. A ternary operator has the following syntax: `condition ? expressionTrue : expressionFalse`.
 
@@ -22,52 +20,21 @@ if (5 - 3 === 4) {
 
 `document.getElementById('female').checked` will return either `true` if it is checked or `false` if it isn't. Use a ternary operator to return 2000 if it is is checked and 2500 if it is not.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)\.checked\s*\?\s*2000\s*\:\s*2500/.test(code));
+```js
+assert(
+  /const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)\.checked\s*\?\s*2000\s*\:\s*2500/.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked;
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -127,24 +94,32 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked;
+  }
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -161,5 +136,3 @@ tests:
   }
 </script>
 ```
-
-</section>

@@ -1,12 +1,11 @@
 ---
 id: 5900f3cf1000cf542c50fee1
-challengeType: 5
 title: 'Problem 98: Anagramic squares'
+challengeType: 5
 forumTopicId: 302215
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 By replacing each of the letters in the word CARE with 1, 2, 9, and 6 respectively, we form a square number: 1296 = 36<sup>2</sup>. What is remarkable is that, by using the same digital substitutions, the anagram, RACE, also forms a square number: 9216 = 96<sup>2</sup>. We shall call CARE (and RACE) a square anagram word pair and specify further that leading zeroes are not permitted, neither may a different letter have the same digital value as another letter.
 
@@ -16,31 +15,23 @@ What is the largest square number formed by any member of such a pair?
 
 **Note:** All anagrams formed must be contained in the given `words` array.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`anagramicSquares()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>anagramicSquares()</code> should return a number.
-    testString: assert(typeof anagramicSquares() === 'number');
-  - text: <code>anagramicSquares()</code> should return 18769.
-    testString: assert.strictEqual(anagramicSquares(), 18769);
-
+```js
+assert(typeof anagramicSquares() === 'number');
 ```
 
-</section>
+`anagramicSquares()` should return 18769.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(anagramicSquares(), 18769);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function anagramicSquares() {
@@ -57,17 +48,8 @@ const words = [
 anagramicSquares();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

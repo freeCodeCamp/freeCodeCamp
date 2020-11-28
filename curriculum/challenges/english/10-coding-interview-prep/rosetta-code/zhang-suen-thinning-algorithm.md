@@ -1,17 +1,17 @@
 ---
-title: Zhang-Suen thinning algorithm
 id: 594810f028c0303b75339ad7
+title: Zhang-Suen thinning algorithm
 challengeType: 5
 forumTopicId: 302347
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-This is an algorithm used to thin a black and white i.e. one bit per pixel images.
-For example, with an input image of:
+This is an algorithm used to thin a black and white i.e. one bit per pixel images. For example, with an input image of:
+
 <!-- TODO write fully in markdown>
 <!-- markdownlint-disable -->
+
 <pre>
  #################                   #############
  ##################               ################
@@ -30,7 +30,9 @@ For example, with an input image of:
  ########     ####### ######      ################ ######
  ########     ####### ######         ############# ######
 </pre>
+
 It produces the thinned output:
+
 <pre>
 
     # ##########                       #######
@@ -51,8 +53,8 @@ It produces the thinned output:
 </pre>
 
 <h2>Algorithm</h2>
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes.
-The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+
+Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
 
 <table border="3">
   <tr><td style="text-align: center;">P9</td><td style="text-align: center;">P2</td><td style="text-align: center;">P3</td></tr>
@@ -61,13 +63,16 @@ The algorithm operates on all black pixels P1 that can have eight neighbours. Th
 </table>
 
 Obviously the boundary pixels of the image cannot have the full eight neighbours.
+
 <ul>
   <li>Define $A(P1)$ = the number of transitions from white to black, (0 -> 1) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).</li>
   <li>Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )</li>
 </ul>
 
 <h3>Step 1:</h3>
+
 All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+
   <ol>
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
@@ -75,10 +80,13 @@ All pixels are tested and pixels satisfying all the following conditions (simult
     <li>At least one of <strong>P2, P4 and P6</strong> is white</li>
     <li>At least one of <strong>P4, P6 and P8</strong> is white</li>
   </ol>
+
 After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
 
 <h3>Step 2:</h3>
+
 All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+
   <ol>
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
@@ -86,70 +94,46 @@ All pixels are again tested and pixels satisfying all the following conditions a
     <li>At least one of <strong>P2, P4 and P8</strong> is white</li>
     <li>At least one of <strong>P2, P6 and P8</strong> is white</li>
   </ol>
+  
 After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+
 <h3>Iteration:</h3>
+
 If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Write a routine to perform Zhang-Suen thinning on the provided image matrix.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>thinImage</code> should be a function.
-    testString: assert.equal(typeof thinImage, 'function');
-  - text: <code>thinImage</code> should return an array.
-    testString: assert(Array.isArray(result));
-  - text: <code>thinImage</code> should return an array of strings.
-    testString: assert.equal(typeof result[0], 'string');
-  - text: <code>thinImage</code> should return an array of strings.
-    testString: assert.deepEqual(result, expected);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`thinImage` should be a function.
 
 ```js
-const testImage = [
-  '                                                          ',
-  ' #################                   #############        ',
-  ' ##################               ################        ',
-  ' ###################            ##################        ',
-  ' ########     #######          ###################        ',
-  '   ######     #######         #######       ######        ',
-  '   ######     #######        #######                      ',
-  '   #################         #######                      ',
-  '   ################          #######                      ',
-  '   #################         #######                      ',
-  '   ######     #######        #######                      ',
-  '   ######     #######        #######                      ',
-  '   ######     #######         #######       ######        ',
-  ' ########     #######          ###################        ',
-  ' ########     ####### ######    ################## ###### ',
-  ' ########     ####### ######      ################ ###### ',
-  ' ########     ####### ######         ############# ###### ',
-  '                                                          '];
-
-function thinImage(image) {
-
-}
+assert.equal(typeof thinImage, 'function');
 ```
 
-</div>
+`thinImage` should return an array.
 
+```js
+assert(Array.isArray(result));
+```
 
-### After Test
-<div id='js-teardown'>
+`thinImage` should return an array of strings.
+
+```js
+assert.equal(typeof result[0], 'string');
+```
+
+`thinImage` should return an array of strings.
+
+```js
+assert.deepEqual(result, expected);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const imageForTests = [
@@ -194,13 +178,35 @@ const expected = [
 const result = thinImage(imageForTests);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+const testImage = [
+  '                                                          ',
+  ' #################                   #############        ',
+  ' ##################               ################        ',
+  ' ###################            ##################        ',
+  ' ########     #######          ###################        ',
+  '   ######     #######         #######       ######        ',
+  '   ######     #######        #######                      ',
+  '   #################         #######                      ',
+  '   ################          #######                      ',
+  '   #################         #######                      ',
+  '   ######     #######        #######                      ',
+  '   ######     #######        #######                      ',
+  '   ######     #######         #######       ######        ',
+  ' ########     #######          ###################        ',
+  ' ########     ####### ######    ################## ###### ',
+  ' ########     ####### ######      ################ ###### ',
+  ' ########     ####### ######         ############# ###### ',
+  '                                                          '];
 
-## Solution
-<section id='solution'>
+function thinImage(image) {
 
+}
+```
+
+# --solutions--
 
 ```js
 function Point(x, y) {
@@ -311,7 +317,4 @@ const ZhangSuen = (function () {
 function thinImage(image) {
   return ZhangSuen.main(image);
 }
-
 ```
-
-</section>

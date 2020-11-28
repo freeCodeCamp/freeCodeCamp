@@ -4,34 +4,26 @@ title: Part 16
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now that you have the CSS in the `styles.css` file, go ahead and remove the `style` element and all its content. Once it is removed, the text that as centered, will shift back to the left.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
 <html>
-  --fcc-editable-region--
+--fcc-editable-region--
   <head>
     <meta charset="utf-8" />
     <title>Camper Cafe Menu</title>
@@ -41,7 +33,7 @@ tests:
       }
     </style>
   </head>
-  --fcc-editable-region--
+--fcc-editable-region--
   <body>
     <header>
       <h1>CAMPER CAFE</h1>
@@ -56,16 +48,9 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 h1, h2, p {
   text-align: center;
 }
 ```
 
-</div>
-
-</section>

@@ -4,8 +4,7 @@ title: Part 54
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add these properties to `bb2a`:
 
@@ -20,27 +19,27 @@ Add these properties to `bb2a`:
 ```
 
 After you add these, you can see how a thick border on an element gives you some angles where two sides meet. You are going to use that bottom border as the top of the building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/margin\s*:\s*auto\s*(;|})/g.test(bb2a) && /width\s*:\s*5vw\s*(;|})/g.test(bb2a) && /height\s*:\s*5vw\s*(;|})/g.test(bb2a) && /border-top\s*:\s*1vw\s+solid\s+#000\s*(;|})/g.test(bb2a) && /border-bottom\s*:\s*1vw\s+solid\s+#000\s*(;|})/g.test(bb2a) && /border-left\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a) && /border-right\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a));
-
+```js
+const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /margin\s*:\s*auto\s*(;|})/g.test(bb2a) &&
+    /width\s*:\s*5vw\s*(;|})/g.test(bb2a) &&
+    /height\s*:\s*5vw\s*(;|})/g.test(bb2a) &&
+    /border-top\s*:\s*1vw\s+solid\s+#000\s*(;|})/g.test(bb2a) &&
+    /border-bottom\s*:\s*1vw\s+solid\s+#000\s*(;|})/g.test(bb2a) &&
+    /border-left\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a) &&
+    /border-right\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -225,12 +224,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -424,5 +418,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

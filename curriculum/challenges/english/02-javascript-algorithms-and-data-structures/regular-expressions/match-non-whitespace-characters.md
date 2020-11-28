@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 18210
 ---
 
-## Description
-<section id='description'>
-You learned about searching for whitespace using <code>\s</code>, with a lowercase <code>s</code>. You can also search for everything except whitespace.
-Search for non-whitespace using <code>\S</code>, which is an uppercase <code>s</code>. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class <code>[^ \r\t\f\n\v]</code>.
+# --description--
+
+You learned about searching for whitespace using `\s`, with a lowercase `s`. You can also search for everything except whitespace.
+
+Search for non-whitespace using `\S`, which is an uppercase `s`. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class `[^ \r\t\f\n\v]`.
 
 ```js
 let whiteSpace = "Whitespace. Whitespace everywhere!"
@@ -16,37 +17,48 @@ let nonSpaceRegex = /\S/g;
 whiteSpace.match(nonSpaceRegex).length; // Returns 32
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Change the regex <code>countNonWhiteSpace</code> to look for multiple non-whitespace characters in a string.
-</section>
+Change the regex `countNonWhiteSpace` to look for multiple non-whitespace characters in a string.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your regex should use the global flag.
-    testString: assert(countNonWhiteSpace.global);
-  - text: Your regex should use the shorthand character <code>\S</code> to match all non-whitespace characters.
-    testString: assert(/\\S/.test(countNonWhiteSpace.source));
-  - text: Your regex should find 35 non-spaces in <code>"Men are from Mars and women are from Venus."</code>
-    testString: assert("Men are from Mars and women are from Venus.".match(countNonWhiteSpace).length == 35);
-  - text: 'Your regex should find 23 non-spaces in <code>"Space: the final frontier."</code>'
-    testString: 'assert("Space: the final frontier.".match(countNonWhiteSpace).length == 23);'
-  - text: Your regex should find 21 non-spaces in <code>"MindYourPersonalSpace"</code>
-    testString: assert("MindYourPersonalSpace".match(countNonWhiteSpace).length == 21);
+Your regex should use the global flag.
 
+```js
+assert(countNonWhiteSpace.global);
 ```
 
-</section>
+Your regex should use the shorthand character `\S` to match all non-whitespace characters.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/\\S/.test(countNonWhiteSpace.source));
+```
 
-<div id='js-seed'>
+Your regex should find 35 non-spaces in `"Men are from Mars and women are from Venus."`
+
+```js
+assert(
+  'Men are from Mars and women are from Venus.'.match(countNonWhiteSpace)
+    .length == 35
+);
+```
+
+Your regex should find 23 non-spaces in `"Space: the final frontier."`
+
+```js
+assert('Space: the final frontier.'.match(countNonWhiteSpace).length == 23);
+```
+
+Your regex should find 21 non-spaces in `"MindYourPersonalSpace"`
+
+```js
+assert('MindYourPersonalSpace'.match(countNonWhiteSpace).length == 21);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let sample = "Whitespace is important in separating words";
@@ -54,19 +66,10 @@ let countNonWhiteSpace = /change/; // Change this line
 let result = sample.match(countNonWhiteSpace);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let sample = "Whitespace is important in separating words";
 let countNonWhiteSpace = /\S/g; // Change this line
 let result = sample.match(countNonWhiteSpace);
 ```
-
-</section>

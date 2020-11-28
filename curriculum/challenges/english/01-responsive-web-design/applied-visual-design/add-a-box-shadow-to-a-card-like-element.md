@@ -6,10 +6,12 @@ videoUrl: 'https://scrimba.com/c/cvVZdUd'
 forumTopicId: 301031
 ---
 
-## Description
-<section id='description'>
-The <code>box-shadow</code> property applies one or more shadows to an element.
-The <code>box-shadow</code> property takes values for
+# --description--
+
+The `box-shadow` property applies one or more shadows to an element.
+
+The `box-shadow` property takes values for
+
 <ul>
   <li><code>offset-x</code> (how far to push the shadow horizontally from the element),</li>
   <li><code>offset-y</code> (how far to push the shadow vertically from the element),</li>
@@ -17,39 +19,42 @@ The <code>box-shadow</code> property takes values for
   <li><code>spread-radius</code> and</li>
   <li><code>color</code>, in that order.</li>
 </ul>
-The <code>blur-radius</code> and <code>spread-radius</code> values are optional.
-Multiple box-shadows can be created by using commas to separate properties of each <code>box-shadow</code> element.
+
+The `blur-radius` and `spread-radius` values are optional.
+
+Multiple box-shadows can be created by using commas to separate properties of each `box-shadow` element.
+
 Here's an example of the CSS to create multiple shadows with some blur, at mostly-transparent black colors:
 
 ```css
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-The element now has an id of <code>thumbnail</code>. With this selector, use the example CSS values above to place a <code>box-shadow</code> on the card.
-</section>
+The element now has an id of `thumbnail`. With this selector, use the example CSS values above to place a `box-shadow` on the card.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.
-    testString: assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g));
-  - text: You should use the given CSS for the <code>box-shadow</code> value.
-    testString: assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\)\s*?,\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi));
+Your code should add a `box-shadow` property for the `thumbnail` id.
 
+```js
+assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g));
 ```
 
-</section>
+You should use the given CSS for the `box-shadow` value.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\)\s*?,\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi
+  )
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -98,15 +103,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>
@@ -154,5 +151,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

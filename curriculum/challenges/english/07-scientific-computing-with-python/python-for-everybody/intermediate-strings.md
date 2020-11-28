@@ -5,35 +5,44 @@ challengeType: 11
 videoId: KgT_fYLXnyk
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 More resources:
-- <a href="https://www.youtube.com/watch?v=1bSqHot-KwE" target='_blank'>Exercise</a>
-</section>
 
-## Tests
-<section id='tests'>
+\- [Exercise](https://www.youtube.com/watch?v=1bSqHot-KwE)
 
-```yml
-question:
-  text: |
-    What is the value of i in the following code?
-    ```python
-    word = "bananana"
-    i = word.find("na")
-    ```
-  answers:
-    - |
-        nanana
-    - |
-        2
-    - |
-        3
-    - |
-        True
-    - |
-        na
-  solution: 2
+# --question--
+
+## --text--
+
+What is the value of i in the following code?
+
+```python
+word = "bananana"
+i = word.find("na")
 ```
 
-</section>
+## --answers--
+
+nanana
+
+---
+
+2
+
+---
+
+3
+
+---
+
+True
+
+---
+
+na
+
+## --video-solution--
+
+2
+

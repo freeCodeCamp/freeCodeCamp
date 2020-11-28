@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cvbRVtr'
 forumTopicId: 16799
 ---
 
-## Description
-<section id='description'>
-Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.
+# --description--
+
+Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (`&&`) returns `true` if and only if the <dfn>operands</dfn> to the left and right of it are true.
+
 The same effect could be achieved by nesting an if statement inside another if:
 
 ```js
@@ -20,7 +21,7 @@ if (num > 5) {
 return "No";
 ```
 
-will only return "Yes" if <code>num</code> is greater than <code>5</code> and less than <code>10</code>. The same logic can be written as:
+will only return "Yes" if `num` is greater than `5` and less than `10`. The same logic can be written as:
 
 ```js
 if (num > 5 && num < 10) {
@@ -29,47 +30,75 @@ if (num > 5 && num < 10) {
 return "No";
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Replace the two if statements with one statement, using the && operator, which will return <code>"Yes"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>. Otherwise, will return <code>"No"</code>.
-</section>
+Replace the two if statements with one statement, using the && operator, which will return `"Yes"` if `val` is less than or equal to `50` and greater than or equal to `25`. Otherwise, will return `"No"`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should use the <code>&&</code> operator once
-    testString: assert(code.match(/&&/g).length === 1);
-  - text: You should only have one <code>if</code> statement
-    testString: assert(code.match(/if/g).length === 1);
-  - text: <code>testLogicalAnd(0)</code> should return "No"
-    testString: assert(testLogicalAnd(0) === "No");
-  - text: <code>testLogicalAnd(24)</code> should return "No"
-    testString: assert(testLogicalAnd(24) === "No");
-  - text: <code>testLogicalAnd(25)</code> should return "Yes"
-    testString: assert(testLogicalAnd(25) === "Yes");
-  - text: <code>testLogicalAnd(30)</code> should return "Yes"
-    testString: assert(testLogicalAnd(30) === "Yes");
-  - text: <code>testLogicalAnd(50)</code> should return "Yes"
-    testString: assert(testLogicalAnd(50) === "Yes");
-  - text: <code>testLogicalAnd(51)</code> should return "No"
-    testString: assert(testLogicalAnd(51) === "No");
-  - text: <code>testLogicalAnd(75)</code> should return "No"
-    testString: assert(testLogicalAnd(75) === "No");
-  - text: <code>testLogicalAnd(80)</code> should return "No"
-    testString: assert(testLogicalAnd(80) === "No");
+You should use the `&&` operator once
 
+```js
+assert(code.match(/&&/g).length === 1);
 ```
 
-</section>
+You should only have one `if` statement
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/if/g).length === 1);
+```
 
-<div id='js-seed'>
+`testLogicalAnd(0)` should return "No"
+
+```js
+assert(testLogicalAnd(0) === 'No');
+```
+
+`testLogicalAnd(24)` should return "No"
+
+```js
+assert(testLogicalAnd(24) === 'No');
+```
+
+`testLogicalAnd(25)` should return "Yes"
+
+```js
+assert(testLogicalAnd(25) === 'Yes');
+```
+
+`testLogicalAnd(30)` should return "Yes"
+
+```js
+assert(testLogicalAnd(30) === 'Yes');
+```
+
+`testLogicalAnd(50)` should return "Yes"
+
+```js
+assert(testLogicalAnd(50) === 'Yes');
+```
+
+`testLogicalAnd(51)` should return "No"
+
+```js
+assert(testLogicalAnd(51) === 'No');
+```
+
+`testLogicalAnd(75)` should return "No"
+
+```js
+assert(testLogicalAnd(75) === 'No');
+```
+
+`testLogicalAnd(80)` should return "No"
+
+```js
+assert(testLogicalAnd(80) === 'No');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testLogicalAnd(val) {
@@ -88,15 +117,7 @@ function testLogicalAnd(val) {
 testLogicalAnd(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testLogicalAnd(val) {
@@ -106,5 +127,3 @@ function testLogicalAnd(val) {
   return "No";
 }
 ```
-
-</section>

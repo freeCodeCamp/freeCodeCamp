@@ -5,68 +5,67 @@ challengeType: 11
 videoId: cDnt02BcHng
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+-   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/RDP-Reading-Data-with-Python-and-Pandas)
+-   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-</section>
+# --question--
 
-## Tests
+## --text--
 
-<section id='tests'>
+Given a file named `certificates.csv` with these contents:
 
-````yml
-question:
-  text: |
-    Given a file named `certificates.csv` with these contents:
+```
+Name$Certificates$Time (in months)
+Tom$8$16
+Kris$2$5
+Ahmad$5$9
+Beau$6$12
+```
 
-    ```
-    Name$Certificates$Time (in months)
-    Tom$8$16
-    Kris$2$5
-    Ahmad$5$9
-    Beau$6$12
-    ```
+Fill in the blanks for the missing arguments below:
 
-    Fill in the blanks for the missing arguments below:
+```py
+import csv
 
-    ```py
-    import csv
+with open(__A__, 'r') as fp:
+    reader = csv.reader(fp, delimiter=__B__)
+    next(reader)
+    for index, values in enumerate(reader):
+        name, certs_num, months_num = values
+        print(f"{name} earned {__C__} certificates in {months_num} months")
+```
 
-    with open(__A__, 'r') as fp:
-        reader = csv.reader(fp, delimiter=__B__)
-        next(reader)
-        for index, values in enumerate(reader):
-            name, certs_num, months_num = values
-            print(f"{name} earned {__C__} certificates in {months_num} months")
-    ```
+## --answers--
 
-  answers:
-    - |
-      A: `'certificates.csv'`
+A: `'certificates.csv'`
 
-      B: `'-'`
+B: `'-'`
 
-      C: `values`
-    - |
-      A: `'certificates.csv'`
+C: `values`
 
-      B: `'$'`
+---
 
-      C: `certs_num`
-    - |
-      A: `'certificates'`
+A: `'certificates.csv'`
 
-      B: `'$'`
+B: `'$'`
 
-      C: `certs_num`
-  solution: 2
-````
+C: `certs_num`
 
-</section>
+---
+
+A: `'certificates'`
+
+B: `'$'`
+
+C: `certs_num`
+
+## --video-solution--
+
+2
+

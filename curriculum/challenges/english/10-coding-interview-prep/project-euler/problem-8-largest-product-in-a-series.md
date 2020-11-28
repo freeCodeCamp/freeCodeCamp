@@ -1,12 +1,11 @@
 ---
 id: 5900f3741000cf542c50fe87
-challengeType: 5
 title: 'Problem 8: Largest product in a series'
+challengeType: 5
 forumTopicId: 302193
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 
@@ -33,33 +32,29 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 
 Find the `n` adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`largestProductinaSeries(4)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>largestProductinaSeries(4)</code> should return a number.
-    testString: assert(typeof largestProductinaSeries(4) === 'number');
-  - text: <code>largestProductinaSeries(4)</code> should return 5832.
-    testString: assert.strictEqual(largestProductinaSeries(4), 5832);
-  - text: <code>largestProductinaSeries(13)</code> should return 23514624000.
-    testString: assert.strictEqual(largestProductinaSeries(13), 23514624000);
-
+```js
+assert(typeof largestProductinaSeries(4) === 'number');
 ```
 
-</section>
+`largestProductinaSeries(4)` should return 5832.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(largestProductinaSeries(4), 5832);
+```
 
-<div id='js-seed'>
+`largestProductinaSeries(13)` should return 23514624000.
+
+```js
+assert.strictEqual(largestProductinaSeries(13), 23514624000);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function largestProductinaSeries(n) {
@@ -71,15 +66,7 @@ function largestProductinaSeries(n) {
 largestProductinaSeries(13);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const largestProductinaSeries = (number)=>{
@@ -102,5 +89,3 @@ const largestProductinaSeries = (number)=>{
  return Math.max(...productOfAdjDigits);
 }
 ```
-
-</section>

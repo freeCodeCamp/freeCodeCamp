@@ -12,9 +12,6 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
-import ApplePay from './assets/ApplePay';
-import GooglePay from './assets/GooglePay';
-import acceptedCards from './assets/accepted-cards.png';
 import {
   amountsConfig,
   durationsConfig,
@@ -237,11 +234,25 @@ class DonateForm extends Component {
     ));
   }
 
+  renderDonationDescription() {
+    const { donationAmount, donationDuration } = this.state;
+    return (
+      <p className='donation-description'>
+        {`Your `}
+        {this.getFormatedAmountLabel(donationAmount)}
+        {` donation will provide `}
+        {this.convertToTimeContributed(donationAmount)}
+        {` of learning to people around the world`}
+        {donationDuration === 'onetime' ? `.` : ` each ${donationDuration}.`}
+      </p>
+    );
+  }
+
   renderDurationAmountOptions() {
     const { donationAmount, donationDuration, processing } = this.state;
     return !processing ? (
       <div>
-        <h3>Duration and amount:</h3>
+        <h3>Select gift frequency:</h3>
         <Tabs
           activeKey={donationDuration}
           animation={false}
@@ -257,6 +268,7 @@ class DonateForm extends Component {
               title={this.durations[duration]}
             >
               <Spacer />
+              <h3>Select gift amount:</h3>
               <div>
                 <ToggleButtonGroup
                   animation={`false`}
@@ -269,14 +281,7 @@ class DonateForm extends Component {
                   {this.renderAmountButtons(duration)}
                 </ToggleButtonGroup>
                 <Spacer />
-                <p className='donation-description'>
-                  {`Your `}
-                  {this.getFormatedAmountLabel(donationAmount)}
-                  {` donation will provide `}
-                  {this.convertToTimeContributed(donationAmount)}
-                  {` of learning to people around the world`}
-                  {duration === 'onetime' ? `.` : ` each ${duration}.`}
-                </p>
+                {this.renderDonationDescription()}
               </div>
             </Tab>
           ))}
@@ -306,55 +311,25 @@ class DonateForm extends Component {
           </b>
         )}
         <Spacer />
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-cta'
-          id='confirm-donation-btn'
-          onClick={e => this.handleStripeCheckoutRedirect(e, 'apple pay')}
-        >
-          <span>Donate with Apple Pay</span>
-
-          <ApplePay className='apple-pay-logo' />
-        </Button>
-        <Spacer />
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-cta'
-          id='confirm-donation-btn'
-          onClick={e => this.handleStripeCheckoutRedirect(e, 'google pay')}
-        >
-          <span>Donate with Google Pay</span>
-          <GooglePay className='google-pay-logo' />
-        </Button>
-        <Spacer />
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-cta'
-          id='confirm-donation-btn'
-          onClick={e => this.handleStripeCheckoutRedirect(e, 'credit card')}
-        >
-          <span>Donate with Card</span>
-
-          <img
-            alt='accepted cards'
-            className='accepted-cards'
-            src={acceptedCards}
+        <div className='donate-btn-group'>
+          <Button
+            block={true}
+            bsStyle='primary'
+            id='confirm-donation-btn'
+            onClick={e => this.handleStripeCheckoutRedirect(e, 'credit card')}
+          >
+            <b>Credit Card</b>
+          </Button>
+          <PaypalButton
+            addDonation={addDonation}
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
+            handleProcessing={handleProcessing}
+            isSubscription={isOneTime ? false : true}
+            onDonationStateChange={this.onDonationStateChange}
+            skipAddDonation={!isSignedIn}
           />
-        </Button>
-        <Spacer />
-        <PaypalButton
-          addDonation={addDonation}
-          donationAmount={donationAmount}
-          donationDuration={donationDuration}
-          handleProcessing={handleProcessing}
-          isSubscription={isOneTime ? false : true}
-          onDonationStateChange={this.onDonationStateChange}
-          skipAddDonation={!isSignedIn}
-        />
-        <Spacer size={2} />
+        </div>
       </div>
     );
   }
@@ -415,12 +390,8 @@ class DonateForm extends Component {
   renderPageForm() {
     return (
       <Row>
-        <Col sm={10} smOffset={1} xs={12}>
-          {this.renderDurationAmountOptions()}
-        </Col>
-        <Col sm={10} smOffset={1} xs={12}>
-          {this.renderDonationOptions()}
-        </Col>
+        <Col xs={12}>{this.renderDonationDescription()}</Col>
+        <Col xs={12}>{this.renderDonationOptions()}</Col>
       </Row>
     );
   }

@@ -6,34 +6,31 @@ videoUrl: 'https://scrimba.com/c/c2MvrcB'
 forumTopicId: 18229
 ---
 
-## Description
-<section id='description'>
-In addition to pixels, you can also specify the <code>border-radius</code> using a percentage.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Give your cat photo a <code>border-radius</code> of <code>50%</code>.
-</section>
+In addition to pixels, you can also specify the `border-radius` using a percentage.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your image should have a border radius of <code>50%</code>, making it perfectly circular.
-    testString: assert(parseInt($("img").css("border-top-left-radius")) > 48);
-  - text: The <code>border-radius</code> value should use a percentage value of <code>50%</code>.
-    testString: assert(code.match(/50%/g));
+Give your cat photo a `border-radius` of `50%`.
 
+# --hints--
+
+Your image should have a border radius of `50%`, making it perfectly circular.
+
+```js
+assert(parseInt($('img').css('border-top-left-radius')) > 48);
 ```
 
-</section>
+The `border-radius` value should use a percentage value of `50%`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/50%/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -96,14 +93,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -166,5 +156,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

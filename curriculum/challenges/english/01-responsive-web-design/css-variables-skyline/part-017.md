@@ -4,31 +4,22 @@ title: Part 17
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 I don't really like that color. Change the value of your variable from `#999` to `#aa80ff` and you can see how it gets applied everywhere you used the variable. This is the main advantage of using variables, being able to quickly change many values in your stylesheet by just changing the value of a variable.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; assert(/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style));
-
+```js
+const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0];
+assert(/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -100,12 +91,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -176,5 +162,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

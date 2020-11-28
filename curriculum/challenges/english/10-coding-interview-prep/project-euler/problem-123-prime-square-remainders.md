@@ -1,39 +1,31 @@
 ---
 id: 5900f3e71000cf542c50fefa
-challengeType: 5
 title: 'Problem 123: Prime square remainders'
+challengeType: 5
 forumTopicId: 301750
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Let pn be the nth prime: 2, 3, 5, 7, 11, ..., and let r be the remainder when (pn−1)n + (pn+1)n is divided by pn2.
+
 For example, when n = 3, p3 = 5, and 43 + 63 = 280 ≡ 5 mod 25.
+
 The least value of n for which the remainder first exceeds 109 is 7037.
+
 Find the least value of n for which the remainder first exceeds 1010.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler123()` should return 21035.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler123()</code> should return 21035.
-    testString: assert.strictEqual(euler123(), 21035);
-
+```js
+assert.strictEqual(euler123(), 21035);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler123() {
@@ -44,17 +36,8 @@ function euler123() {
 euler123();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

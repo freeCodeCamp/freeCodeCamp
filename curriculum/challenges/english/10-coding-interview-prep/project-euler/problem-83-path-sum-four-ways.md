@@ -1,12 +1,11 @@
 ---
 id: 5900f3bf1000cf542c50fed2
-challengeType: 5
 title: 'Problem 83: Path sum: four ways'
+challengeType: 5
 forumTopicId: 302197
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 **Note:** This problem is a significantly more challenging version of Problem 81.
 
@@ -24,58 +23,29 @@ In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom
 
 Find the minimal path sum from the top left to the bottom right by moving left, right, up, and down in `matrix`, a 2D array defined in the background, containing an 80 by 80 matrix.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>pathSumFourWays(testMatrix)</code> should return a number.
-    testString: assert(typeof pathSumFourWays(testMatrix) === 'number');
-  - text: <code>pathSumFourWays(testMatrix)</code> should return 2297.
-    testString: assert.strictEqual(pathSumFourWays(testMatrix), 2297);
-  - text: <code>pathSumFourWays(matrix)</code> should return 425185.
-    testString: assert.strictEqual(pathSumFourWays(matrix), 425185);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`pathSumFourWays(testMatrix)` should return a number.
 
 ```js
-function pathSumFourWays(arr) {
-
-  return true;
-}
-
-// Only change code above this line
-
-const testMatrix = [
-  [131, 673, 234, 103, 18],
-  [201, 96, 342, 965, 150],
-  [630, 803, 746, 422, 111],
-  [537, 699, 497, 121, 956],
-  [805, 732, 524, 37, 331]
-];
-
-pathSumFourWays(testMatrix);
+assert(typeof pathSumFourWays(testMatrix) === 'number');
 ```
 
-</div>
+`pathSumFourWays(testMatrix)` should return 2297.
 
+```js
+assert.strictEqual(pathSumFourWays(testMatrix), 2297);
+```
 
-### Before Test
-<div id='js-setup'>
+`pathSumFourWays(matrix)` should return 425185.
+
+```js
+assert.strictEqual(pathSumFourWays(matrix), 425185);
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 const matrix = [
@@ -162,17 +132,29 @@ const matrix = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
+```js
+function pathSumFourWays(arr) {
 
+  return true;
+}
 
-</section>
+// Only change code above this line
 
-## Solution
-<section id='solution'>
+const testMatrix = [
+  [131, 673, 234, 103, 18],
+  [201, 96, 342, 965, 150],
+  [630, 803, 746, 422, 111],
+  [537, 699, 497, 121, 956],
+  [805, 732, 524, 37, 331]
+];
+
+pathSumFourWays(testMatrix);
+```
+
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

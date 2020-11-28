@@ -1,51 +1,80 @@
 ---
-title: Greatest subsequential sum
 id: 5a23c84252665b21eecc7e84
+title: Greatest subsequential sum
 challengeType: 5
 forumTopicId: 302278
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Given a sequence of integers, find a continuous subsequence which maximizes the sum of its elements, that is, the elements of no other single subsequence add up to a value larger than this one.
-An empty subsequence is considered to have the sum of \( 0 \);  thus if all elements are negative, the result must be the empty sequence.
-</section>
 
-## Instructions
-<section id='instructions'>
+An empty subsequence is considered to have the sum of \\( 0 \\); thus if all elements are negative, the result must be the empty sequence.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`maximumSubsequence` should be a function.
 
-```yml
-tests:
-  - text: <code>maximumSubsequence</code> should be a function.
-    testString: assert(typeof maximumSubsequence=='function');
-  - text: <code>maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])</code> should return an array.
-    testString: assert(Array.isArray(maximumSubsequence([ 1, 2,-1, 3, 10, -10 ])));
-  - text: <code>maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])</code> should return <code>[ 1, 2, -1, 3, 10 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([1,2,-1,3,10,-10]), [ 1, 2, -1, 3, 10 ]);
-  - text: <code>maximumSubsequence([ 0, 8, 10, -2, -4, -1, -5, -3 ])</code> should return <code>[ 0, 8, 10 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3]), [ 0, 8, 10 ]);
-  - text: <code>maximumSubsequence([ 9, 9, -10, 1 ])</code> should return <code>[ 9, 9 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([ 9, 9, -10, 1 ]), [ 9, 9 ]);
-  - text: <code>maximumSubsequence([ 7, 1, -5, -3, -8, 1 ])</code> should return <code>[ 7, 1 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([ 7, 1, -5, -3, -8, 1 ]), [ 7, 1 ]);
-  - text: <code>maximumSubsequence([ -3, 6, -1, 4, -4, -6 ])</code> should return <code>[ 6, -1, 4 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([ -3, 6, -1, 4, -4, -6 ]), [ 6, -1, 4 ]);
-  - text: <code>maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ])</code> should return <code>[ 3, 5, 6, -2, -1, 4 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ]), [ 3, 5, 6, -2, -1, 4 ]);
-
+```js
+assert(typeof maximumSubsequence == 'function');
 ```
 
-</section>
+`maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])` should return an array.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(Array.isArray(maximumSubsequence([1, 2, -1, 3, 10, -10])));
+```
 
-<div id='js-seed'>
+`maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])` should return `[ 1, 2, -1, 3, 10 ]`.
+
+```js
+assert.deepEqual(maximumSubsequence([1, 2, -1, 3, 10, -10]), [1, 2, -1, 3, 10]);
+```
+
+`maximumSubsequence([ 0, 8, 10, -2, -4, -1, -5, -3 ])` should return `[ 0, 8, 10 ]`.
+
+```js
+assert.deepEqual(maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3]), [
+  0,
+  8,
+  10
+]);
+```
+
+`maximumSubsequence([ 9, 9, -10, 1 ])` should return `[ 9, 9 ]`.
+
+```js
+assert.deepEqual(maximumSubsequence([9, 9, -10, 1]), [9, 9]);
+```
+
+`maximumSubsequence([ 7, 1, -5, -3, -8, 1 ])` should return `[ 7, 1 ]`.
+
+```js
+assert.deepEqual(maximumSubsequence([7, 1, -5, -3, -8, 1]), [7, 1]);
+```
+
+`maximumSubsequence([ -3, 6, -1, 4, -4, -6 ])` should return `[ 6, -1, 4 ]`.
+
+```js
+assert.deepEqual(maximumSubsequence([-3, 6, -1, 4, -4, -6]), [6, -1, 4]);
+```
+
+`maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ])` should return `[ 3, 5, 6, -2, -1, 4 ]`.
+
+```js
+assert.deepEqual(maximumSubsequence([-1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1]), [
+  3,
+  5,
+  6,
+  -2,
+  -1,
+  4
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function maximumSubsequence(population) {
@@ -53,13 +82,7 @@ function maximumSubsequence(population) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function maximumSubsequence(population) {
@@ -86,7 +109,4 @@ function maximumSubsequence(population) {
 
   return greatest;
 }
-
 ```
-
-</section>

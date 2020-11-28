@@ -5,64 +5,115 @@ challengeType: 5
 forumTopicId: 16094
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
-For example, <code>getIndexToIns([1,2,3,4], 1.5)</code> should return <code>1</code> because it is greater than <code>1</code> (index 0), but less than <code>2</code> (index 1).
-Likewise, <code>getIndexToIns([20,3,5], 19)</code> should return <code>2</code> because once the array has been sorted it will look like <code>[3,5,20]</code> and <code>19</code> is less than <code>20</code> (index 2) and greater than <code>5</code> (index 1).
-</section>
 
-## Instructions
-<section id='instructions'>
+For example, `getIndexToIns([1,2,3,4], 1.5)` should return `1` because it is greater than `1` (index 0), but less than `2` (index 1).
 
-</section>
+Likewise, `getIndexToIns([20,3,5], 19)` should return `2` because once the array has been sorted it will look like `[3,5,20]` and `19` is less than `20` (index 2) and greater than `5` (index 1).
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.
-    testString: assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3);
-  - text: <code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return a number.
-    testString: assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 35)) === "number");
-  - text: <code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.
-    testString: assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2);
-  - text: <code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return a number.
-    testString: assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 30)) === "number");
-  - text: <code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.
-    testString: assert(getIndexToIns([40, 60], 50) === 1);
-  - text: <code>getIndexToIns([40, 60], 50)</code> should return a number.
-    testString: assert(typeof(getIndexToIns([40, 60], 50)) === "number");
-  - text: <code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.
-    testString: assert(getIndexToIns([3, 10, 5], 3) === 0);
-  - text: <code>getIndexToIns([3, 10, 5], 3)</code> should return a number.
-    testString: assert(typeof(getIndexToIns([3, 10, 5], 3)) === "number");
-  - text: <code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.
-    testString: assert(getIndexToIns([5, 3, 20, 3], 5) === 2);
-  - text: <code>getIndexToIns([5, 3, 20, 3], 5)</code> should return a number.
-    testString: assert(typeof(getIndexToIns([5, 3, 20, 3], 5)) === "number");
-  - text: <code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.
-    testString: assert(getIndexToIns([2, 20, 10], 19) === 2);
-  - text: <code>getIndexToIns([2, 20, 10], 19)</code> should return a number.
-    testString: assert(typeof(getIndexToIns([2, 20, 10], 19)) === "number");
-  - text: <code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.
-    testString: assert(getIndexToIns([2, 5, 10], 15) === 3);
-  - text: <code>getIndexToIns([2, 5, 10], 15)</code> should return a number.
-    testString: assert(typeof(getIndexToIns([2, 5, 10], 15)) === "number");
-  - text: <code>getIndexToIns([], 1)</code> should return <code>0</code>.
-    testString: assert(getIndexToIns([], 1) === 0);
-  - text: <code>getIndexToIns([], 1)</code> should return a number.
-    testString: assert(typeof(getIndexToIns([], 1)) === "number");
+`getIndexToIns([10, 20, 30, 40, 50], 35)` should return `3`.
 
+```js
+assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3);
 ```
 
-</section>
+`getIndexToIns([10, 20, 30, 40, 50], 35)` should return a number.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof getIndexToIns([10, 20, 30, 40, 50], 35) === 'number');
+```
 
-<div id='js-seed'>
+`getIndexToIns([10, 20, 30, 40, 50], 30)` should return `2`.
+
+```js
+assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2);
+```
+
+`getIndexToIns([10, 20, 30, 40, 50], 30)` should return a number.
+
+```js
+assert(typeof getIndexToIns([10, 20, 30, 40, 50], 30) === 'number');
+```
+
+`getIndexToIns([40, 60], 50)` should return `1`.
+
+```js
+assert(getIndexToIns([40, 60], 50) === 1);
+```
+
+`getIndexToIns([40, 60], 50)` should return a number.
+
+```js
+assert(typeof getIndexToIns([40, 60], 50) === 'number');
+```
+
+`getIndexToIns([3, 10, 5], 3)` should return `0`.
+
+```js
+assert(getIndexToIns([3, 10, 5], 3) === 0);
+```
+
+`getIndexToIns([3, 10, 5], 3)` should return a number.
+
+```js
+assert(typeof getIndexToIns([3, 10, 5], 3) === 'number');
+```
+
+`getIndexToIns([5, 3, 20, 3], 5)` should return `2`.
+
+```js
+assert(getIndexToIns([5, 3, 20, 3], 5) === 2);
+```
+
+`getIndexToIns([5, 3, 20, 3], 5)` should return a number.
+
+```js
+assert(typeof getIndexToIns([5, 3, 20, 3], 5) === 'number');
+```
+
+`getIndexToIns([2, 20, 10], 19)` should return `2`.
+
+```js
+assert(getIndexToIns([2, 20, 10], 19) === 2);
+```
+
+`getIndexToIns([2, 20, 10], 19)` should return a number.
+
+```js
+assert(typeof getIndexToIns([2, 20, 10], 19) === 'number');
+```
+
+`getIndexToIns([2, 5, 10], 15)` should return `3`.
+
+```js
+assert(getIndexToIns([2, 5, 10], 15) === 3);
+```
+
+`getIndexToIns([2, 5, 10], 15)` should return a number.
+
+```js
+assert(typeof getIndexToIns([2, 5, 10], 15) === 'number');
+```
+
+`getIndexToIns([], 1)` should return `0`.
+
+```js
+assert(getIndexToIns([], 1) === 0);
+```
+
+`getIndexToIns([], 1)` should return a number.
+
+```js
+assert(typeof getIndexToIns([], 1) === 'number');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function getIndexToIns(arr, num) {
@@ -72,15 +123,7 @@ function getIndexToIns(arr, num) {
 getIndexToIns([40, 60], 50);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function getIndexToIns(arr, num) {
@@ -96,7 +139,4 @@ function getIndexToIns(arr, num) {
 }
 
 getIndexToIns([40, 60], 50);
-
 ```
-
-</section>
