@@ -2,7 +2,6 @@
 id: 587d824f367417b2b2512c5c
 title: Simulate Actions Using a Headless Browser
 challengeType: 2
-forumTopicId: 301595
 ---
 
 # --description--
