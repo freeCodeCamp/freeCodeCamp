@@ -47,7 +47,7 @@
     "gulp": "^4.0.2",
     "invariant": "^2.2.4",
     "joi": "^13.3.0",
-    "joi-objectid": "^2.0.0",
+    "joi-objectid": "^3.0.1",
     "jsdom": "^12.2.0",
     "live-server": "^1.2.1",
     "lodash": "^4.17.20",
