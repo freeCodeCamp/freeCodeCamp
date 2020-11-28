@@ -1,3 +1,4 @@
+const { freeCodeCampRepo, defaultBase } = require('../../../lib/constants');
 const config = require('../../../config');
 // config should be imported before importing any other file
 const mongoose = require('mongoose');
@@ -12,22 +13,52 @@ const db = mongoose.connect(
   { useNewUrlParser: true }
 );
 
-const { PR, INFO } = require('../models');
+const { PR, INFO, BOILERPLATE } = require('../models');
 const { getPRs, getUserInput, getFilenames } = require('../../../lib/get-prs');
+const { getRepos } = require('../../../lib/get-repos');
 const { rateLimiter } = require('../../../lib/utils');
 
 const lastUpdate = new Date();
 
 db.then(async () => {
+  // update boilerplate collection
+  await BOILERPLATE.deleteMany();
+  const repos = await getRepos();
+  const boilerplateRepos = repos
+    .filter(repo => repo.name.includes('boilerplate'))
+    .map(repo => repo.name);
+  for (repoName of boilerplateRepos) {
+    const { totalPRs, firstPR, lastPR } = await getUserInput(repoName, null, 'all');
+    if (totalPRs > 0) {
+      console.log(repoName);
+      const prPropsToGet = ['number', 'user', 'title', 'html_url'];
+      const { openPRs } = await getPRs(repoName, null, totalPRs, firstPR, lastPR, prPropsToGet);
+      const prsToAdd = [];
+      for (let i = 0; i < openPRs.length; i++) {
+        const {
+          number,
+          title,
+          user: { login: username },
+          html_url: prLink
+        } = openPRs[i];
+
+        prsToAdd.push({ _id: number, title, username, prLink });
+        console.log('added PR# ' + number + '\n');
+      }
+      await BOILERPLATE.create({ _id: repoName, prs: prsToAdd });
+    }
+  }
+
+  // update PRs for freeCodeCamp repo
   const oldPRs = await PR.find({}).then(data => data);
   const oldIndices = oldPRs.reduce((obj, { _id }, index) => {
     obj[_id] = index;
     return obj;
   }, {});
 
-  const { totalPRs, firstPR, lastPR } = await getUserInput('all');
+  const { totalPRs, firstPR, lastPR } = await getUserInput(freeCodeCampRepo, defaultBase, 'all');
   const prPropsToGet = ['number', 'user', 'title', 'updated_at'];
-  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(freeCodeCampRepo, defaultBase, totalPRs, firstPR, lastPR, prPropsToGet);
   let count = 0;
   const newIndices = {};
   for (let i = 0; i < openPRs.length; i++) {
@@ -43,13 +74,13 @@ db.then(async () => {
     const oldUpdatedAt = oldPrData ? oldPrData.updatedAt : null;
     if (!oldIndices.hasOwnProperty(number)) {
       // insert a new pr
-      const filenames = await getFilenames(number);
+      const filenames = await getFilenames(freeCodeCampRepo, number);
       count++;
       await PR.create({ _id: number, updatedAt, title, username, filenames });
       console.log('added PR# ' + number);
     } else if (updatedAt > oldUpdatedAt) {
       // update an existing pr
-      const filenames = await getFilenames(number);
+      const filenames = await getFilenames(freeCodeCampRepo, number);
       count++;
       await PR.findOneAndUpdate(
         { _id: number },

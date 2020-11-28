@@ -18,6 +18,7 @@ const envVarsSchema = Joi.object({
   GITHUB_ACCESS_TOKEN: Joi.string().required(),
   REPOSITORY_OWNER: Joi.string().required(),
   REPOSITORY: Joi.string().required(),
+  DEFAULT_BASE: Joi.string().required(),
   PRODUCTION_RUN: Joi.boolean()
     .default(false),
   WEBHOOK_PROXY_URL: Joi.string().required(),
@@ -42,7 +43,8 @@ const config = {
     id: envVars.GITHUB_USERNAME,
     secret: envVars.GITHUB_ACCESS_TOKEN,
     owner: envVars.REPOSITORY_OWNER,
-    repo: envVars.REPOSITORY,
+    freeCodeCampRepo: envVars.REPOSITORY,
+    defaultBase: envVars.DEFAULT_BASE,
     probot: {
       webhookUrl: envVars.WEBHOOK_PROXY_URL,
       webhookSecret: envVars.WEBHOOK_SECRET,

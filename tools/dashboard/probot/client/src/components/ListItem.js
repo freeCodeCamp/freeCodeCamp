@@ -16,8 +16,10 @@ const prNumStyle = { flex: 1 };
 const usernameStyle = { flex: 1 };
 const titleStyle = { flex: 3 };
 
-const ListItem = ({ number, username, prTitle: title }) => {
-  const prUrl = `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`;
+const ListItem = ({ number, username, prTitle: title, prLink }) => {
+  const prUrl = prLink
+    ? prLink
+    : `https://github.com/freeCodeCamp/freeCodeCamp/pull/${number}`;
   return (
     <Container>
       <a

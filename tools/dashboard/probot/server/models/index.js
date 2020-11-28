@@ -14,11 +14,23 @@ const info = new mongoose.Schema({
   prRange: String
 });
 
+const boilerplate = new mongoose.Schema({
+  _id: String,
+  prs: [{
+    _id: Number,
+    title: String,
+    username: String,
+    prLink: String
+  }]
+});
+
 const dbCollections = {
    pr: 'openprs',
-   info: 'info'
+   info: 'info',
+   boilerplate: 'boilerplate'
 };
 
 const PR = mongoose.model('PR', pr, dbCollections['pr']);
 const INFO = mongoose.model('INFO', info, dbCollections['info']);
-module.exports = { PR, INFO, dbCollections };
+const BOILERPLATE = mongoose.model('BOILERPLATE', boilerplate, dbCollections['boilerplate']);
+module.exports = { PR, INFO, BOILERPLATE, dbCollections };

@@ -1,8 +1,8 @@
 const config = require('../config');
 
 const owner = config.github.owner;
-const repo = config.github.repo;
-const fccBaseUrl = `https://github.com/${owner}/${repo}/`;
+const freeCodeCampRepo = config.github.freeCodeCampRepo;
+const fccBaseUrl = `https://github.com/${owner}/${freeCodeCampRepo}/`;
 const prBaseUrl = `${fccBaseUrl}pull/`;
 
 const octokitConfig = {
@@ -27,4 +27,4 @@ const octokitAuth = {
   password: config.github.secret
 };
 
-module.exports = { owner, repo, prBaseUrl, octokitConfig, octokitAuth };
+module.exports = { owner, freeCodeCampRepo, prBaseUrl, octokitConfig, octokitAuth };

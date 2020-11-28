@@ -27,7 +27,7 @@ async function probotPlugin(robot) {
   const landingPage = robot.route('/home');
   landingPage.use(require('express').static('public'));
   const app = robot.route('/dashboard');
-  const { pareto, pr, search, info } = require('./server/routes');
+  const { pareto, pr, search, info, boilerplates } = require('./server/routes');
 
   const staticPath = path.join(__dirname, '.', 'client', 'build');
   app.use(require('express').static(staticPath));
@@ -52,6 +52,7 @@ async function probotPlugin(robot) {
   app.use('/search', search);
   app.use('/pareto', pareto);
   app.use('/info', info);
+  app.use('/boilerplates', boilerplates);
 
   app.use(function(err, req, res) {
     res.status(err.status || 500).send(err.message);

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Tabs from './components/Tabs';
 import Search from './components/Search';
 import Pareto from './components/Pareto';
+import Boilerplates from './components/Boilerplates';
 import Footer from './components/Footer';
 
 import { ENDPOINT_INFO } from './constants';
@@ -114,6 +115,7 @@ class App extends Component {
         <Container>
           {view === 'search' && <Search />}
           {view === 'reports' && <Pareto />}
+          {view === 'boilerplates' && <Boilerplates />}
         </Container>
         {footerInfo && <Footer footerInfo={footerInfo} />}
       </PageContainer>
