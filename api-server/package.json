@@ -53,7 +53,7 @@
     "query-string": "^6.13.6",
     "rx": "^4.1.0",
     "stripe": "^6.36.0",
-    "uuid": "^3.4.0",
+    "uuid": "^8.3.1",
     "validator": "^9.4.1"
   },
   "devDependencies": {
