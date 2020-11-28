@@ -31,7 +31,7 @@ All tests should pass.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -45,7 +45,7 @@ You should assert that the headless browser request succeeded.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'browser.success');
     },
@@ -59,7 +59,7 @@ You should assert that the text inside the element 'span#name' is 'Amerigo'.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'browser.text');
       assert.match(data.assertions[1].args[0], /('|")span#name\1/);
@@ -75,7 +75,7 @@ You should assert that the text inside the element 'span#surname' is 'Vespucci'.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[2].method, 'browser.text');
       assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
@@ -91,7 +91,7 @@ You should assert that the element 'span#dates' exist and its count is 1.
 
 ```js
 (getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=6').then(
+  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=5').then(
     (data) => {
       assert.equal(data.assertions[3].method, 'browser.element');
       assert.match(data.assertions[3].args[0], /('|")span#dates\1/);
