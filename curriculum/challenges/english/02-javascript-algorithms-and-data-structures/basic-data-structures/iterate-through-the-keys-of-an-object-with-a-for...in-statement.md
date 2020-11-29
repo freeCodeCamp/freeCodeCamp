@@ -15,10 +15,10 @@ for (let user in users) {
 }
 
 // logs:
-Alan
-Jeff
-Sarah
-Ryan
+Alan;
+Jeff;
+Sarah;
+Ryan;
 ```
 
 In this statement, we defined a variable `user`, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console. **NOTE:** Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
@@ -48,7 +48,7 @@ The function `countOnline` should use a `for in` statement to iterate through th
 ```js
 assert(
   code.match(
-    /for\s*\(\s*(var|let|const)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)\s*{/
+    /for\s*\(\s*(var|let|const)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)/
   )
 );
 ```
@@ -86,7 +86,7 @@ const usersObj1 = {
   Sarah: {
     online: false
   }
-}
+};
 
 const usersObj2 = {
   Alan: {
@@ -98,8 +98,7 @@ const usersObj2 = {
   Sarah: {
     online: true
   }
-}
-
+};
 
 const usersObj3 = {
   Alan: {
@@ -111,7 +110,7 @@ const usersObj3 = {
   Sarah: {
     online: false
   }
-}
+};
 ```
 
 ## --seed-contents--
@@ -119,7 +118,6 @@ const usersObj3 = {
 ```js
 function countOnline(usersObj) {
   // Only change code below this line
-
   // Only change code above this line
 }
 ```
@@ -129,8 +127,8 @@ function countOnline(usersObj) {
 ```js
 function countOnline(usersObj) {
   let online = 0;
-  for(let user in usersObj){
-    if(usersObj[user].online) {
+  for (let user in usersObj) {
+    if (usersObj[user].online) {
       online++;
     }
   }
