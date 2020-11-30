@@ -13,6 +13,7 @@ describe('getSetAccessToken', () => {
   const invalidJWTSecret = 'This is not correct secret';
   const now = new Date(Date.now());
   const theBeginningOfTime = new Date(0);
+  const domain = process.env.COOKIE_DOMAIN || 'localhost';
   const accessToken = {
     id: '123abc',
     userId: '456def',
@@ -134,7 +135,7 @@ describe('getSetAccessToken', () => {
         expectedJWT,
         {
           signed: false,
-          domain: process.env.COOKIE_DOMAIN || 'localhost',
+          domain,
           maxAge: accessToken.ttl
         }
       ]);
@@ -147,7 +148,7 @@ describe('getSetAccessToken', () => {
       // expect.assertions(4);
       const req = mockReq();
       const res = mockRes();
-      const jwtOptions = { signed: false, domain: process.env.COOKIE_DOMAIN };
+      const jwtOptions = { signed: false, domain };
 
       removeCookies(req, res);
 
