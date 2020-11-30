@@ -4,31 +4,37 @@ title: Part 9
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now you can see your dashboard element. Center it by adding a `margin` of `auto` to it.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const dashboard = code.match(/.dashboard\s*{[\s\S]+?[^}]}/g)[0]; assert(/margin\s*:\s*auto\s*(;|})/g.test(dashboard));
-
+```js
+const dashboard = code.match(/.dashboard\s*{[\s\S]+?[^}]}/g)[0];
+assert(/margin\s*:\s*auto\s*(;|})/g.test(dashboard));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <style>
@@ -47,31 +53,7 @@ body {
 </style>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -88,5 +70,3 @@ body {
 }
 </style>
 ```
-
-</section>

@@ -4,46 +4,49 @@ title: Part 65
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `title` element determines what browsers show in the title bar or tab for the page.
 
 Add a `title` element within the `head` element. Its text should be `CatPhotoApp`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted the `head` element or it is missing an opening tag or closing tag.
 
-```yml
-tests:
-  - text: You have either deleted the `head` element or it is missing an opening tag or closing tag.
-    testString: assert( code.match(/\<head\>/) && code.match(/\<\/head\>/) );
-  - text: Your `title` element should be nested in the `head` element. Make sure to added an opening tag and closing tag for the `title` element.
-    testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.match(/\<head\>\<title\>.*\<\/title\>\<\/head\>/) );
-  - text: Your `title` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: |
-      assert( code.match(/\<\/title\>/) );
-  - text: Your `title` element's text should be `CatPhotoApp`. You have either omitted the text or have a typo.
-    testString: assert( document.title && document.title.toLowerCase() === 'catphotoapp' );
-
+```js
+assert(code.match(/\<head\>/) && code.match(/\<\/head\>/));
 ```
 
-</section>
+Your `title` element should be nested in the `head` element. Make sure to added an opening tag and closing tag for the `title` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const noSpaces = code.replace(/\s/g, '');
+assert(noSpaces.match(/\<head\>\<title\>.*\<\/title\>\<\/head\>/));
+```
+
+Your `title` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+assert(code.match(/\<\/title\>/));
+```
+
+Your `title` element's text should be `CatPhotoApp`. You have either omitted the text or have a typo.
+
+```js
+assert(document.title && document.title.toLowerCase() === 'catphotoapp');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
-  --fcc-editable-region--
+--fcc-editable-region--
   <head>
   </head>
-  --fcc-editable-region--
+--fcc-editable-region--
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -104,5 +107,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

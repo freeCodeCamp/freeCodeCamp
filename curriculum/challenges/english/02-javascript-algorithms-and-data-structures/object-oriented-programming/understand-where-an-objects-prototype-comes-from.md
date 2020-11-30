@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301330
 ---
 
-## Description
-<section id='description'>
-Just like people inherit genes from their parents, an object inherits its <code>prototype</code> directly from the constructor function that created it. For example, here the <code>Bird</code> constructor creates the <code>duck</code> object:
+# --description--
+
+Just like people inherit genes from their parents, an object inherits its `prototype` directly from the constructor function that created it. For example, here the `Bird` constructor creates the `duck` object:
 
 ```js
 function Bird(name) {
@@ -17,36 +17,28 @@ function Bird(name) {
 let duck = new Bird("Donald");
 ```
 
-<code>duck</code> inherits its <code>prototype</code> from the <code>Bird</code> constructor function. You can show this relationship with the <code>isPrototypeOf</code> method:
+`duck` inherits its `prototype` from the `Bird` constructor function. You can show this relationship with the `isPrototypeOf` method:
 
 ```js
 Bird.prototype.isPrototypeOf(duck);
 // returns true
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use <code>isPrototypeOf</code> to check the <code>prototype</code> of <code>beagle</code>.
-</section>
+Use `isPrototypeOf` to check the `prototype` of `beagle`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>
-    testString: assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
+You should show that `Dog.prototype` is the `prototype` of `beagle`
 
+```js
+assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function Dog(name) {
@@ -56,19 +48,9 @@ function Dog(name) {
 let beagle = new Dog("Snoopy");
 
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function Dog(name) {
@@ -77,5 +59,3 @@ function Dog(name) {
 let beagle = new Dog("Snoopy");
 Dog.prototype.isPrototypeOf(beagle);
 ```
-
-</section>

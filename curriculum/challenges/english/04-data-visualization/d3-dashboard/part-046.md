@@ -4,35 +4,58 @@ title: Part 46
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Chain the `y` function to the line and pass it a "d function" that returns your `yScale` with `d.followers.twitter` as its argument.
 
 This is similar to how you set the x values. It will use the values of your Twitter followers and your `yScale` to set the y coordinate for each item.
 
 These "d functions" use implicit returns. But if you add curly brackets and a return statement, you can put any JavaScript in there that you want. Including `console.log` statements that can be useful for debugging.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/\.y\s*\(\s*d\s*=>\s*yScale\s*\(\s*d\.followers.twitter\s*\)\s*\)/g.test(code));
-
+```js
+assert(
+  /\.y\s*\(\s*d\s*=>\s*yScale\s*\(\s*d\.followers.twitter\s*\)\s*\)/g.test(code)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -97,47 +120,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -203,5 +186,3 @@ tests:
     
 </script>
 ```
-
-</section>

@@ -4,29 +4,21 @@ title: Part 43
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now that you know it works, you can change the remaining `article` and `p` elements to match the first set.  Start by adding the class `item` to the other `article` elements.
+Now that you know it works, you can change the remaining `article` and `p` elements to match the first set. Start by adding the class `item` to the other `article` elements.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -49,7 +41,7 @@ tests:
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
           <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
@@ -66,17 +58,13 @@ tests:
             <p>Mocha</p>
             <p>4.50</p>
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -109,6 +97,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

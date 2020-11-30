@@ -5,65 +5,78 @@ challengeType: 5
 forumTopicId: 393913
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 Given a text string and an integer n, return the n most common words in the file (and the number of their occurrences) in decreasing frequency.
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
 Write a function to count the occurrences of each word and return the n most commons words along with the number of their occurences in decreasing frequency.
-The function should return a 2D array with each of the elements in the following form: <code>[word, freq]</code>.  <code>word</code> should be the lowercase version of the word and <code>freq</code> the number denoting the count.
+
+The function should return a 2D array with each of the elements in the following form: `[word, freq]`. `word` should be the lowercase version of the word and `freq` the number denoting the count.
+
 The function should return an empty array, if no string is provided.
-The function should be case insensitive, for example, the strings "Hello" and "hello" should be treated the same. 
-You can treat words that have special characters such as underscores, dashes, apostrophes, commas, etc., as distinct words. 
-For example, given the string "Hello hello goodbye", your function should return <code>[['hello', 2], ['goodbye', 1]]</code>.
-</section>
 
-## Tests
+The function should be case insensitive, for example, the strings "Hello" and "hello" should be treated the same.
 
-<section id='tests'>
+You can treat words that have special characters such as underscores, dashes, apostrophes, commas, etc., as distinct words.
 
-```yml
-tests:
-  - text: <code>wordFrequency</code> should be a function.
-    testString: assert(typeof wordFrequency == 'function');
-  - text: <code>wordFrequency</code> should return an array.
-    testString: assert(Array.isArray(wordFrequency("test")));
-  - text: <code>wordFrequency("Hello hello world", 2)</code> should return <code>[['hello', 2], ['world', 1]]</code>
-    testString: assert.deepEqual(wordFrequency(example_1, 2), example_1_solution)
-  - text: <code>wordFrequency("The quick brown fox jumped over the lazy dog", 1)</code> should return <code>[['the', 2]]</code>
-    testString: assert.deepEqual(wordFrequency(example_2, 1), example_2_solution)
-  - text: <code>wordFrequency("Opensource opensource open-source open source", 1)</code> should return <code>[['opensource', 2]]</code>
-    testString: assert.deepEqual(wordFrequency(example_3, 1), example_3_solution)
-  - text: <code>wordFrequency("Apple App apply aPP aPPlE", 3)</code> should return <code>[['app', 2], ['apple', 2], ['apply', 1]]</code> or <code>[['apple', 2], ['app', 2], ['apply', 1]]</code>
-    testString: const arr = JSON.stringify(wordFrequency(example_4, 3)); assert(arr === example_4_solution_a || arr === example_4_solution_b)
-  - text: <code>wordFrequency("c d a d c a b d d c", 4)</code> should return <code>[['d', 4], ['c', 3], ['a', 2], ['b', 1]]</code>
-    testString: assert.deepEqual(wordFrequency(example_5, 4), example_5_solution)
-  - text: <code>wordFrequency("", 5)</code> should return <code>[]</code>
-    testString: assert.deepEqual(wordFrequency(example_6, 5), example_6_solution)
-```
+For example, given the string "Hello hello goodbye", your function should return `[['hello', 2], ['goodbye', 1]]`.
 
-</section>
+# --hints--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-<div id='js-seed'>
+`wordFrequency` should be a function.
 
 ```js
-function wordFrequency(txt, n) {
-
-}
+assert(typeof wordFrequency == 'function');
 ```
 
-</div>
+`wordFrequency` should return an array.
 
-### Before Test
+```js
+assert(Array.isArray(wordFrequency('test')));
+```
 
-<div id='js-setup'>
+`wordFrequency("Hello hello world", 2)` should return `[['hello', 2], ['world', 1]]`
+
+```js
+assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
+```
+
+`wordFrequency("The quick brown fox jumped over the lazy dog", 1)` should return `[['the', 2]]`
+
+```js
+assert.deepEqual(wordFrequency(example_2, 1), example_2_solution);
+```
+
+`wordFrequency("Opensource opensource open-source open source", 1)` should return `[['opensource', 2]]`
+
+```js
+assert.deepEqual(wordFrequency(example_3, 1), example_3_solution);
+```
+
+`wordFrequency("Apple App apply aPP aPPlE", 3)` should return `[['app', 2], ['apple', 2], ['apply', 1]]` or `[['apple', 2], ['app', 2], ['apply', 1]]`
+
+```js
+const arr = JSON.stringify(wordFrequency(example_4, 3));
+assert(arr === example_4_solution_a || arr === example_4_solution_b);
+```
+
+`wordFrequency("c d a d c a b d d c", 4)` should return `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
+
+```js
+assert.deepEqual(wordFrequency(example_5, 4), example_5_solution);
+```
+
+`wordFrequency("", 5)` should return `[]`
+
+```js
+assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 var example_1 = 'Hello hello world';
@@ -81,12 +94,15 @@ var example_6 = '';
 var example_6_solution = [];
 ```
 
-</div>
-</section>
+## --seed-contents--
 
-## Solution
+```js
+function wordFrequency(txt, n) {
 
-<section id='solution'>
+}
+```
+
+# --solutions--
 
 ```js
 function wordFrequency(txt, n) {
@@ -117,5 +133,3 @@ function wordFrequency(txt, n) {
   return wordsArray.slice(0, n);
 }
 ```
-
-</section>

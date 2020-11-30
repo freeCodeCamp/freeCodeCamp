@@ -5,40 +5,52 @@ challengeType: 1
 forumTopicId: 301237
 ---
 
-## Description
-<section id='description'>
-A side effect of the <code>sort</code> method is that it changes the order of the elements in the original array. In other words, it mutates the array in place. One way to avoid this is to first concatenate an empty array to the one being sorted (remember that <code>slice</code> and <code>concat</code> return a new array), then run the <code>sort</code> method.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Use the <code>sort</code> method in the <code>nonMutatingSort</code> function to sort the elements of an array in ascending order. The function should return a new array, and not mutate the <code>globalArray</code> variable.
-</section>
+A side effect of the `sort` method is that it changes the order of the elements in the original array. In other words, it mutates the array in place. One way to avoid this is to first concatenate an empty array to the one being sorted (remember that `slice` and `concat` return a new array), then run the `sort` method.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should use the <code>sort</code> method.
-    testString: assert(nonMutatingSort.toString().match(/\.sort/g));
-  - text: The <code>globalArray</code> variable should not change.
-    testString: assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]));
-  - text: <code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.
-    testString: assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]));
-  - text: <code>nonMutatingSort(globalArray)</code> should not be hard coded.
-    testString: assert(!nonMutatingSort.toString().match(/[23569]/g));
-  - text: The function should return a new array, not the array passed to it.
-    testString: assert(nonMutatingSort(globalArray) !== globalArray);
+Use the `sort` method in the `nonMutatingSort` function to sort the elements of an array in ascending order. The function should return a new array, and not mutate the `globalArray` variable.
 
+# --hints--
+
+Your code should use the `sort` method.
+
+```js
+assert(nonMutatingSort.toString().match(/\.sort/g));
 ```
 
-</section>
+The `globalArray` variable should not change.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]));
+```
 
-<div id='js-seed'>
+`nonMutatingSort(globalArray)` should return `[2, 3, 5, 6, 9]`.
+
+```js
+assert(
+  JSON.stringify(nonMutatingSort(globalArray)) ===
+    JSON.stringify([2, 3, 5, 6, 9])
+);
+```
+
+`nonMutatingSort(globalArray)` should not be hard coded.
+
+```js
+assert(!nonMutatingSort.toString().match(/[23569]/g));
+```
+
+The function should return a new array, not the array passed to it.
+
+```js
+assert(nonMutatingSort(globalArray) !== globalArray);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 var globalArray = [5, 6, 3, 2, 9];
@@ -51,14 +63,7 @@ function nonMutatingSort(arr) {
 nonMutatingSort(globalArray);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 var globalArray = [5, 6, 3, 2, 9];
@@ -69,5 +74,3 @@ function nonMutatingSort(arr) {
 }
 nonMutatingSort(globalArray);
 ```
-
-</section>

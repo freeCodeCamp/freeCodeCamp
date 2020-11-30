@@ -5,61 +5,137 @@ challengeType: 1
 forumTopicId: 301642
 ---
 
-## Description
-<section id='description'>
-In this challenge you will define two methods, <code>findMin</code> and <code>findMax</code>. These methods should return the minimum and maximum value held in the binary search tree (don't worry about adding values to the tree for now, we have added some in the background). If you get stuck, reflect on the invariant that must be true for binary search trees: each left subtree is less than or equal to its parent and each right subtree is greater than or equal to its parent. Let's also say that our tree can only store integer values. If the tree is empty, either method should return <code>null</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+In this challenge you will define two methods, `findMin` and `findMax`. These methods should return the minimum and maximum value held in the binary search tree (don't worry about adding values to the tree for now, we have added some in the background). If you get stuck, reflect on the invariant that must be true for binary search trees: each left subtree is less than or equal to its parent and each right subtree is greater than or equal to its parent. Let's also say that our tree can only store integer values. If the tree is empty, either method should return `null`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: The <code>BinarySearchTree</code> data structure should exist.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
-  - text: The binary search tree should have a method called <code>findMin</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMin == 'function')})());
-  - text: The binary search tree should have a method called <code>findMax</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMax == 'function')})());
-  - text: The <code>findMin</code> method should return the minimum value in the binary search tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMin !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.findMin() == 1; })());
-  - text: The <code>findMax</code> method should return the maximum value in the binary search tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMax !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.findMax() == 87; })());
-  - text: The <code>findMin</code> and <code>findMax</code> methods should return <code>null</code> for an empty tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMin !== 'function') { return false; }; if (typeof test.findMax !== 'function') { return false; }; return (test.findMin() == null && test.findMax() == null) })());
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The `BinarySearchTree` data structure should exist.
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-  this.root = null;
-  // Only change code below this line
-  
-  // Only change code above this line
-}
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    }
+    return typeof test == 'object';
+  })()
+);
 ```
 
-</div>
+The binary search tree should have a method called `findMin`.
 
-### After Test
-<div id='js-teardown'>
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    return typeof test.findMin == 'function';
+  })()
+);
+```
+
+The binary search tree should have a method called `findMax`.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    return typeof test.findMax == 'function';
+  })()
+);
+```
+
+The `findMin` method should return the minimum value in the binary search tree.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.findMin !== 'function') {
+      return false;
+    }
+    test.add(4);
+    test.add(1);
+    test.add(7);
+    test.add(87);
+    test.add(34);
+    test.add(45);
+    test.add(73);
+    test.add(8);
+    return test.findMin() == 1;
+  })()
+);
+```
+
+The `findMax` method should return the maximum value in the binary search tree.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.findMax !== 'function') {
+      return false;
+    }
+    test.add(4);
+    test.add(1);
+    test.add(7);
+    test.add(87);
+    test.add(34);
+    test.add(45);
+    test.add(73);
+    test.add(8);
+    return test.findMax() == 87;
+  })()
+);
+```
+
+The `findMin` and `findMax` methods should return `null` for an empty tree.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.findMin !== 'function') {
+      return false;
+    }
+    if (typeof test.findMax !== 'function') {
+      return false;
+    }
+    return test.findMin() == null && test.findMax() == null;
+  })()
+);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 BinarySearchTree.prototype = Object.assign(
@@ -98,11 +174,24 @@ BinarySearchTree.prototype = Object.assign(
 );
 ```
 
-</div>
-</section>
+## --seed-contents--
 
-## Solution
-<section id='solution'>
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+}
+```
+
+# --solutions--
 
 ```js
 var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
@@ -277,5 +366,3 @@ function BinarySearchTree() {
 }
 let bst = new BinarySearchTree();
 ```
-
-</section>

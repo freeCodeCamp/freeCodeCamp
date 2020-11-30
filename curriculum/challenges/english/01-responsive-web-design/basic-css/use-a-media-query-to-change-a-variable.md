@@ -6,35 +6,41 @@ videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 CSS Variables can simplify the way you use media queries.
+
 For instance, when your screen is smaller or larger than your media query break point, you can change the value of a variable, and it will apply its style wherever it is used.
-</section>
 
-## Instructions
-<section id='instructions'>
-In the <code>:root</code> selector of the <code>media query</code>, change it so <code>--penguin-size</code> is redefined and given a value of <code>200px</code>. Also, redefine <code>--penguin-skin</code> and give it a value of <code>black</code>. Then resize the preview to see this change in action.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+In the `:root` selector of the `media query`, change it so `--penguin-size` is redefined and given a value of `200px`. Also, redefine `--penguin-skin` and give it a value of `black`. Then resize the preview to see this change in action.
 
-```yml
-tests:
-  - text: <code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.
-    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi));
-  - text: <code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.
-    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi));
+# --hints--
 
+`:root` should reassign the `--penguin-size` variable to `200px`.
+
+```js
+assert(
+  code.match(
+    /media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+`:root` should reassign the `--penguin-skin` variable to `black`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi
+  )
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -267,18 +273,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>@media (max-width: 350px) {:root {--penguin-size: 200px; --penguin-skin: black;}}</style>
 ```
-
-</section>

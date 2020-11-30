@@ -1,12 +1,11 @@
 ---
 id: 5900f3c11000cf542c50fed4
-challengeType: 5
 title: 'Problem 85: Counting rectangles'
+challengeType: 5
 forumTopicId: 302199
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 By counting carefully it can be seen that a rectangular grid measuring 3 by 2 contains eighteen rectangles:
 
@@ -14,31 +13,23 @@ By counting carefully it can be seen that a rectangular grid measuring 3 by 2 co
 
 Although there exists no rectangular grid that contains exactly two million rectangles, find the area of the grid with the nearest solution.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`countingRectangles()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>countingRectangles()</code> should return a number.
-    testString: assert(typeof countingRectangles() === 'number');
-  - text: <code>countingRectangles()</code> should return 2772.
-    testString: assert.strictEqual(countingRectangles(), 2772);
-
+```js
+assert(typeof countingRectangles() === 'number');
 ```
 
-</section>
+`countingRectangles()` should return 2772.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(countingRectangles(), 2772);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function countingRectangles() {
@@ -49,17 +40,8 @@ function countingRectangles() {
 countingRectangles();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

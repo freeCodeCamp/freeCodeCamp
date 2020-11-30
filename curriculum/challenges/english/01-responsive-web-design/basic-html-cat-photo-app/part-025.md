@@ -4,36 +4,46 @@ title: Part 25
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 After the `figure` element, add another `h3` element with the text `Top 3 things cats hate:`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+There should be an `h3` element right above the second `section` element's closing tag. Make it has an opening and closing tag.
 
-```yml
-tests:
-  - text: There should be an `h3` element right above the second `section` element's closing tag. Make it has an opening and closing tag.
-    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.nodeName === 'H3' && code.match(/<\/h3\>/g).length === 2);
-  - text: The new `h3` element should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
-    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'top 3 things cats hate:' );
-  - text: There should be a `figure` above the new `h3` element. You may have accidentally deleted the `figure` element.
-    testString: |
-      const secondSectionLastElemNode = document.querySelectorAll('main > section')[1].lastElementChild;
-      assert(
-        secondSectionLastElemNode.nodeName === 'H3' && secondSectionLastElemNode.previousElementSibling.nodeName === 'FIGURE'
-      );
-
+```js
+assert(
+  document.querySelectorAll('main > section')[1].lastElementChild.nodeName ===
+    'H3' && code.match(/<\/h3\>/g).length === 2
+);
 ```
 
-</section>
+The new `h3` element should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(
+  document
+    .querySelectorAll('main > section')[1]
+    .lastElementChild.innerText.toLowerCase()
+    .replace(/\s+/g, ' ') === 'top 3 things cats hate:'
+);
+```
+
+There should be a `figure` above the new `h3` element. You may have accidentally deleted the `figure` element.
+
+```js
+const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
+  .lastElementChild;
+assert(
+  secondSectionLastElemNode.nodeName === 'H3' &&
+    secondSectionLastElemNode.previousElementSibling.nodeName === 'FIGURE'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -54,17 +64,15 @@ tests:
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>
-        --fcc-editable-region--
+--fcc-editable-region--
         <figure>
           <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
           <figcaption>Cats <em>love</em> lasagna.</figcaption>  
         </figure>
-        --fcc-editable-region--
+--fcc-editable-region--
       </section>
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

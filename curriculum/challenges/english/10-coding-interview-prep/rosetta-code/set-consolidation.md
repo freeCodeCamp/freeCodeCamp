@@ -5,75 +5,92 @@ challengeType: 5
 forumTopicId: 385319
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-Given two sets of items then if any item is common to any set then the result of applying <i>consolidation</i> to those sets is a set of sets whose contents is:
+Given two sets of items then if any item is common to any set then the result of applying *consolidation* to those sets is a set of sets whose contents is:
 
 <ul>
   <li>The two input sets if no common item exists between the two input sets of items.</li>
   <li>The single set that is the union of the two input sets if they share a common item.</li>
 </ul>
 
-Given N sets of items where N > 2 then the result is the same as repeatedly replacing all combinations of two sets by their consolidation until no further consolidation between set pairs is possible. If N < 2 then consolidation has no strict meaning and the input can be returned.
+Given N sets of items where N > 2 then the result is the same as repeatedly replacing all combinations of two sets by their consolidation until no further consolidation between set pairs is possible. If N &lt; 2 then consolidation has no strict meaning and the input can be returned.
 
 Here are some examples:
 
-<strong>Example 1:</strong>
+**Example 1:**
 
-<span style="margin-left: 2em;">Given the two sets `{A,B}` and `{C,D}` then there is no common element between the sets and the result is the same as the input.</span>
+Given the two sets `{A,B}` and `{C,D}` then there is no common element between the sets and the result is the same as the input.
 
-<strong>Example 2:</strong>
+**Example 2:**
 
-<span style="margin-left: 2em;">Given the two sets `{A,B}` and `{B,D}` then there is a common element `B` between the sets and the result is the single set `{B,D,A}`.  (Note that order of items in a set is immaterial: `{A,B,D}` is the same as `{B,D,A}` and `{D,A,B}`, etc).</span>
+Given the two sets `{A,B}` and `{B,D}` then there is a common element `B` between the sets and the result is the single set `{B,D,A}`. (Note that order of items in a set is immaterial: `{A,B,D}` is the same as `{B,D,A}` and `{D,A,B}`, etc).
 
-<strong>Example 3:</strong>
+**Example 3:**
 
-<span style="margin-left: 2em;">Given the three sets `{A,B}` and `{C,D}` and `{D,B}` then there is no common element between the sets `{A,B}` and `{C,D}` but the sets `{A,B}` and `{D,B}` do share a common element that consolidates to produce the result `{B,D,A}`. On examining this result with the remaining set, `{C,D}`, they share a common element and so consolidate to the final output of the single set `{A,B,C,D}`</span>
+Given the three sets `{A,B}` and `{C,D}` and `{D,B}` then there is no common element between the sets `{A,B}` and `{C,D}` but the sets `{A,B}` and `{D,B}` do share a common element that consolidates to produce the result `{B,D,A}`. On examining this result with the remaining set, `{C,D}`, they share a common element and so consolidate to the final output of the single set `{A,B,C,D}`
 
-<strong>Example 4:</strong>
+**Example 4:**
 
-<span style="margin-left: 2em;">The consolidation of the five sets:</span>
+The consolidation of the five sets:
 
-<span style="margin-left: 4em;">`{H,I,K}`, `{A,B}`, `{C,D}`, `{D,B}`, and `{F,G,H}`</span>
+`{H,I,K}`, `{A,B}`, `{C,D}`, `{D,B}`, and `{F,G,H}`
 
-<span style="margin-left: 2em;">Is the two sets:</span>
+Is the two sets:
 
-<span style="margin-left: 4em;">`{A, C, B, D}`, and `{G, F, I, H, K}`</span>
-</section>
+`{A, C, B, D}`, and `{G, F, I, H, K}`
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
 Write a function that takes an array of strings as a parameter. Each string is represents a set with the characters representing the set elements. The function should return a 2D array containing the consolidated sets. Note: Each set should be sorted.
-</section>
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`setConsolidation` should be a function.
 
-```yml
-tests:
-  - text: <code>setConsolidation</code> should be a function.
-    testString: assert(typeof setConsolidation === 'function');
-  - text: <code>setConsolidation(["AB", "CD"])</code> should return a array.
-    testString: assert(Array.isArray(setConsolidation(["AB", "CD"])));
-  - text: <code>setConsolidation(["AB", "CD"])</code> should return <code>[["C", "D"], ["A", "B"]]</code>.
-    testString: assert.deepEqual(setConsolidation(["AB", "CD"]), [["C", "D"], ["A", "B"]]);
-  - text: <code>setConsolidation(["AB", "BD"])</code> should return <code>[["A", "B", "D"]]</code>.
-    testString: assert.deepEqual(setConsolidation(["AB", "BD"]), [["A", "B", "D"]]);
-  - text: <code>setConsolidation(["AB", "CD", "DB"])</code> should return <code>[["A", "B", "C", "D"]]</code>.
-    testString: assert.deepEqual(setConsolidation(["AB", "CD", "DB"]), [["A", "B", "C", "D"]]);
-  - text: <code>setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])</code> should return <code>[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]</code>.
-    testString: assert.deepEqual(setConsolidation(["HIK", "AB", "CD", "DB", "FGH"]), [["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]);
+```js
+assert(typeof setConsolidation === 'function');
 ```
 
-</section>
+`setConsolidation(["AB", "CD"])` should return a array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(setConsolidation(['AB', 'CD'])));
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`setConsolidation(["AB", "CD"])` should return `[["C", "D"], ["A", "B"]]`.
+
+```js
+assert.deepEqual(setConsolidation(['AB', 'CD']), [
+  ['C', 'D'],
+  ['A', 'B']
+]);
+```
+
+`setConsolidation(["AB", "BD"])` should return `[["A", "B", "D"]]`.
+
+```js
+assert.deepEqual(setConsolidation(['AB', 'BD']), [['A', 'B', 'D']]);
+```
+
+`setConsolidation(["AB", "CD", "DB"])` should return `[["A", "B", "C", "D"]]`.
+
+```js
+assert.deepEqual(setConsolidation(['AB', 'CD', 'DB']), [['A', 'B', 'C', 'D']]);
+```
+
+`setConsolidation(["HIK", "AB", "CD", "DB", "FGH"])` should return `[["F", "G", "H", "I", "K"], ["A", "B", "C", "D"]]`.
+
+```js
+assert.deepEqual(setConsolidation(['HIK', 'AB', 'CD', 'DB', 'FGH']), [
+  ['F', 'G', 'H', 'I', 'K'],
+  ['A', 'B', 'C', 'D']
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function setConsolidation(sets) {
@@ -81,12 +98,7 @@ function setConsolidation(sets) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function setConsolidation(sets) {
@@ -181,5 +193,3 @@ function setConsolidation(sets) {
   return h1;
 }
 ```
-
-</section>

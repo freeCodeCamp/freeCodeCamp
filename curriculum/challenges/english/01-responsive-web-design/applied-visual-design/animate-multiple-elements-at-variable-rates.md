@@ -6,37 +6,39 @@ videoUrl: 'https://scrimba.com/c/cnpWZc9'
 forumTopicId: 301042
 ---
 
-## Description
-<section id='description'>
-In the previous challenge, you changed the animation rates for two similarly animated elements by altering their <code>@keyframes</code> rules. You can achieve the same goal by manipulating the <code>animation-duration</code> of multiple elements.
-In the animation running in the code editor, there are three "stars" in the sky that twinkle at the same rate on a continuous loop. To make them twinkle at different rates, you can set the <code>animation-duration</code> property to different values for each element.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Set the <code>animation-duration</code> of the elements with the classes <code>star-1</code>, <code>star-2</code>, and <code>star-3</code> to 1s, 0.9s, and 1.1s, respectively.
-</section>
+In the previous challenge, you changed the animation rates for two similarly animated elements by altering their `@keyframes` rules. You can achieve the same goal by manipulating the `animation-duration` of multiple elements.
 
-## Tests
-<section id='tests'>
+In the animation running in the code editor, there are three "stars" in the sky that twinkle at the same rate on a continuous loop. To make them twinkle at different rates, you can set the `animation-duration` property to different values for each element.
 
-```yml
-tests:
-  - text: The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.
-    testString: assert($('.star-1').css('animation-duration') == '1s');
-  - text: The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.
-    testString: assert($('.star-2').css('animation-duration') == '0.9s');
-  - text: The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.
-    testString: assert($('.star-3').css('animation-duration') == '1.1s');
+# --instructions--
 
+Set the `animation-duration` of the elements with the classes `star-1`, `star-2`, and `star-3` to 1s, 0.9s, and 1.1s, respectively.
+
+# --hints--
+
+The `animation-duration` property for the star with class `star-1` should remain at 1s.
+
+```js
+assert($('.star-1').css('animation-duration') == '1s');
 ```
 
-</section>
+The `animation-duration` property for the star with class `star-2` should be 0.9s.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.star-2').css('animation-duration') == '0.9s');
+```
 
-<div id='html-seed'>
+The `animation-duration` property for the star with class `star-3` should be 1.1s.
+
+```js
+assert($('.star-3').css('animation-duration') == '1.1s');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -94,14 +96,7 @@ tests:
 <div class="star-3 stars"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -157,5 +152,3 @@ tests:
 <div class="star-2 stars"></div>
 <div class="star-3 stars"></div>
 ```
-
-</section>

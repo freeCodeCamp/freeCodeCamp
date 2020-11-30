@@ -1,12 +1,11 @@
 ---
 id: 5900f37d1000cf542c50fe90
-challengeType: 5
 title: 'Problem 17: Number letter counts'
+challengeType: 5
 forumTopicId: 301804
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
 
@@ -14,35 +13,35 @@ If all the numbers from 1 to given `limit` inclusive were written out in words, 
 
 **Note:** Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`numberLetterCounts(5)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>numberLetterCounts(5)</code> should return a number.
-    testString: assert(typeof numberLetterCounts(5) === 'number');
-  - text: <code>numberLetterCounts(5)</code> should return 19.
-    testString: assert.strictEqual(numberLetterCounts(5), 19);
-  - text: <code>numberLetterCounts(150)</code> should return 1903.
-    testString: assert.strictEqual(numberLetterCounts(150), 1903);
-  - text: <code>numberLetterCounts(1000)</code> should return 21124.
-    testString: assert.strictEqual(numberLetterCounts(1000), 21124);
-
+```js
+assert(typeof numberLetterCounts(5) === 'number');
 ```
 
-</section>
+`numberLetterCounts(5)` should return 19.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(numberLetterCounts(5), 19);
+```
 
-<div id='js-seed'>
+`numberLetterCounts(150)` should return 1903.
+
+```js
+assert.strictEqual(numberLetterCounts(150), 1903);
+```
+
+`numberLetterCounts(1000)` should return 21124.
+
+```js
+assert.strictEqual(numberLetterCounts(1000), 21124);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function numberLetterCounts(limit) {
@@ -53,15 +52,7 @@ function numberLetterCounts(limit) {
 numberLetterCounts(5);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function numberLetterCounts(limit) {
@@ -136,5 +127,3 @@ function numberLetterCounts(limit) {
   return numString.length;
 }
 ```
-
-</section>

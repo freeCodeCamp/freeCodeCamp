@@ -6,40 +6,43 @@ videoUrl: 'https://scrimba.com/c/c2MD3Tr'
 forumTopicId: 301056
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Color theory and its impact on design is a deep topic and only the basics are covered in the following challenges. On a website, color can draw attention to content, evoke emotions, or create visual harmony. Using different combinations of colors can really change the look of a website, and a lot of thought can go into picking a color palette that works with your content.
+
 The color wheel is a useful tool to visualize how colors relate to each other - it's a circle where similar hues are neighbors and different hues are farther apart. When two colors are opposite each other on the wheel, they are called complementary colors. They have the characteristic that if they are combined, they "cancel" each other out and create a gray color. However, when placed side-by-side, these colors appear more vibrant and produce a strong visual contrast.
+
 Some examples of complementary colors with their hex codes are:
+
 <blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)</blockquote>
-This is different than the outdated RYB color model that many of us were taught in school, which has different primary and complementary colors. Modern color theory uses the additive RGB model (like on a computer screen) and the subtractive CMY(K) model (like in printing). Read <a href='https://en.wikipedia.org/wiki/Color_model' target='_blank'>here</a> for more information on this complex subject.
+
+This is different than the outdated RYB color model that many of us were taught in school, which has different primary and complementary colors. Modern color theory uses the additive RGB model (like on a computer screen) and the subtractive CMY(K) model (like in printing). Read [here](https://en.wikipedia.org/wiki/Color_model) for more information on this complex subject.
+
 There are many color picking tools available online that have an option to find the complement of a color.
-<strong>Note:</strong> For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.
-</section>
 
-## Instructions
-<section id='instructions'>
-Change the <code>background-color</code> property of the <code>blue</code> and <code>yellow</code> classes to their respective colors. Notice how the colors look different next to each other than they do compared against the white background.
-</section>
+**Note:** For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.
-    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
-  - text: The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.
-    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
+Change the `background-color` property of the `blue` and `yellow` classes to their respective colors. Notice how the colors look different next to each other than they do compared against the white background.
 
+# --hints--
+
+The `div` element with class `blue` should have a `background-color` of blue.
+
+```js
+assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
 ```
 
-</section>
+The `div` element with class `yellow` should have a `background-color` of yellow.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -62,14 +65,7 @@ tests:
 <div class="yellow"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -91,5 +87,3 @@ tests:
 <div class="blue"></div>
 <div class="yellow"></div>
 ```
-
-</section>

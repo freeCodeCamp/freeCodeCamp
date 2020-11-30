@@ -4,29 +4,21 @@ title: Part 19
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The text is centered again so the link to the CSS file is working. Add another style to the file that changes the `background-color` property to `brown` for the `body` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -51,10 +43,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 --fcc-editable-region--
 h1, h2, p {
@@ -63,6 +51,3 @@ h1, h2, p {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

@@ -4,44 +4,63 @@ title: Part 57
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add another checkbox after the one you just added. The `id` attribute value should be `lazy` and the `name` attribute value should be the same as the last checkbox.
 
 Also add a `label` element to the right of the new checkbox with the text `Lazy`. Make sure to associate the `label` element with the new checkbox using the `for` attribute.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You need to add a new checkbox.
 
-```yml
-tests:
-  - text: You need to add a new checkbox.
-    testString: assert( $('input[type="checkbox"]').length === 2 );
-  - text: Your new checkbox should have an `id` attribute with the value `lazy` and a `name` attribute with the value `personality`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: |
-      const checkboxes = [ ...$('input[type="checkbox"]') ];
-      assert( checkboxes.some(checkbox => checkbox.id === 'lazy' && checkbox.getAttribute('name') === 'personality') );
-  - text: Your new checkbox should be after the first one. You have them in the wrong order.
-    testString: |
-      const checkboxes = [...$('input[type="checkbox"]')].map(checkbox => checkbox.id);
-      assert( checkboxes.indexOf('loving') < checkboxes.indexOf('lazy') );
-  - text: On the right side of your new checkbox, there should be `label` element with the text `Lazy`.
-    testString: |
-      const nextElementSibling = $('input[type="checkbox"]')[1].nextElementSibling;
-      assert( nextElementSibling.nodeName === 'LABEL' && nextElementSibling.innerText.replace(/\s+/g, '').match(/^Lazy$/i) );
-  - text: The new `label` should have a `for` attribute with the same value as the `id` attribute of the new checkbox. You have either omitted the value or have a typo.
-    testString: assert( $('input[type="checkbox"]')[1].nextElementSibling.getAttribute('for') === 'lazy' );
-
+```js
+assert($('input[type="checkbox"]').length === 2);
 ```
 
-</section>
+Your new checkbox should have an `id` attribute with the value `lazy` and a `name` attribute with the value `personality`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const checkboxes = [...$('input[type="checkbox"]')];
+assert(
+  checkboxes.some(
+    (checkbox) =>
+      checkbox.id === 'lazy' && checkbox.getAttribute('name') === 'personality'
+  )
+);
+```
+
+Your new checkbox should be after the first one. You have them in the wrong order.
+
+```js
+const checkboxes = [...$('input[type="checkbox"]')].map(
+  (checkbox) => checkbox.id
+);
+assert(checkboxes.indexOf('loving') < checkboxes.indexOf('lazy'));
+```
+
+On the right side of your new checkbox, there should be `label` element with the text `Lazy`.
+
+```js
+const nextElementSibling = $('input[type="checkbox"]')[1].nextElementSibling;
+assert(
+  nextElementSibling.nodeName === 'LABEL' &&
+    nextElementSibling.innerText.replace(/\s+/g, '').match(/^Lazy$/i)
+);
+```
+
+The new `label` should have a `for` attribute with the same value as the `id` attribute of the new checkbox. You have either omitted the value or have a typo.
+
+```js
+assert(
+  $('input[type="checkbox"]')[1].nextElementSibling.getAttribute('for') ===
+    'lazy'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -87,9 +106,9 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
+--fcc-editable-region--
             <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
-            --fcc-editable-region--
+--fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
@@ -100,5 +119,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

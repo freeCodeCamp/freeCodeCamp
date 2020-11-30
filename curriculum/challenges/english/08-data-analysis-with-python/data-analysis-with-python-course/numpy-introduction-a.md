@@ -5,35 +5,34 @@ challengeType: 11
 videoId: P-JjV6GBCmk
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+-   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/freecodecamp-intro-to-numpy)
+-   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-</section>
+# --question--
 
-## Tests
+## --text--
 
-<section id='tests'>
+Why is Numpy an important, but unpopular Python library?
 
-```yml
-question:
-  text: |
-    Why is Numpy an important, but unpopular Python library?
+## --answers--
 
-  answers:
-    - |
-      Often you won't work directly with Numpy.
-    - |
-      It is extremely slow.
-    - |
-      Working with Numpy is difficult.
-  solution: 1
-```
+Often you won't work directly with Numpy.
 
-</section>
+---
+
+It is extremely slow.
+
+---
+
+Working with Numpy is difficult.
+
+## --video-solution--
+
+1
+

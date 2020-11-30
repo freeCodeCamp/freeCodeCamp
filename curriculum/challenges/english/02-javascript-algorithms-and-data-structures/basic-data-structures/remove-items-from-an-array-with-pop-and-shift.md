@@ -5,9 +5,10 @@ challengeType: 1
 forumTopicId: 301165
 ---
 
-## Description
-<section id='description'>
-Both <code>push()</code> and <code>unshift()</code> have corresponding methods that are nearly functional opposites: <code>pop()</code> and <code>shift()</code>. As you may have guessed by now, instead of adding, <code>pop()</code> <em>removes</em> an element from the end of an array, while <code>shift()</code> removes an element from the beginning. The key difference between <code>pop()</code> and <code>shift()</code> and their cousins <code>push()</code> and <code>unshift()</code>, is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.
+# --description--
+
+Both `push()` and `unshift()` have corresponding methods that are nearly functional opposites: `pop()` and `shift()`. As you may have guessed by now, instead of adding, `pop()` *removes* an element from the end of an array, while `shift()` removes an element from the beginning. The key difference between `pop()` and `shift()` and their cousins `push()` and `unshift()`, is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.
+
 Let's take a look:
 
 ```js
@@ -28,33 +29,36 @@ let popped = greetings.pop();
 // greetings now equals []
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-We have defined a function, <code>popShift</code>, which takes an array as an argument and returns a new array. Modify the function, using <code>pop()</code> and <code>shift()</code>, to remove the first and last elements of the argument array, and assign the removed elements to their corresponding variables, so that the returned array contains their values.
-</section>
+We have defined a function, `popShift`, which takes an array as an argument and returns a new array. Modify the function, using `pop()` and `shift()`, to remove the first and last elements of the argument array, and assign the removed elements to their corresponding variables, so that the returned array contains their values.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>popShift(["challenge", "is", "not", "complete"])</code> should return <code>["challenge", "complete"]</code>
-    testString: assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), ["challenge", "complete"]);
-  - text: The <code>popShift</code> function should utilize the <code>pop()</code> method
-    testString: assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1);
-  - text: The <code>popShift</code> function should utilize the <code>shift()</code> method
-    testString: assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1);
+`popShift(["challenge", "is", "not", "complete"])` should return `["challenge", "complete"]`
 
+```js
+assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), [
+  'challenge',
+  'complete'
+]);
 ```
 
-</section>
+The `popShift` function should utilize the `pop()` method
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1);
+```
 
-<div id='js-seed'>
+The `popShift` function should utilize the `shift()` method
+
+```js
+assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function popShift(arr) {
@@ -66,14 +70,7 @@ function popShift(arr) {
 console.log(popShift(['challenge', 'is', 'not', 'complete']));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function popShift(arr) {
@@ -82,5 +79,3 @@ function popShift(arr) {
   return [shifted, popped];
 }
 ```
-
-</section>

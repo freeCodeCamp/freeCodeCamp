@@ -4,67 +4,21 @@ title: Part 21
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now, assign the result of calling `infixEval` with `str` and `regex` to `str2`.
-Return `str2`.
+Now, assign the result of calling `infixEval` with `str` and `regex` to `str2`. Return `str2`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(highPrecedence("7*6") === "42" && highPrecedence("50/25") === "2");
-
+```js
+assert(highPrecedence('7*6') === '42' && highPrecedence('50/25') === '2');
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
-
-const infixEval = (str, regex) =>
-  str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
-  );
-
-const highPrecedence = str => {
-  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
-  return str;
-};
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -92,25 +46,40 @@ const highPrecedence = str => {
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) =>
+  str.replace(regex, (_, arg1, fn, arg2) =>
+    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+  );
+
+const highPrecedence = str => {
+  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
+  return str;
+};
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -133,5 +102,3 @@ const highPrecedence = str => {
 };
 </script>
 ```
-
-</section>

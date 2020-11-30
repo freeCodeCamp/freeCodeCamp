@@ -6,51 +6,77 @@ videoUrl: 'https://scrimba.com/c/cK89PhP'
 forumTopicId: 18359
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 To review, hex codes use 6 hexadecimal digits to represent colors, two each for red (R), green (G), and blue (B) components.
+
 From these three pure colors (red, green, and blue), we can vary the amounts of each to create over 16 million other colors!
-For example, orange is pure red, mixed with some green, and no blue. In hex code, this translates to being <code>#FFA500</code>.
-The digit <code>0</code> is the lowest number in hex code, and represents a complete absence of color.
-The digit <code>F</code> is the highest number in hex code, and represents the maximum possible brightness.
-</section>
 
-## Instructions
-<section id='instructions'>
-Replace the color words in our <code>style</code> element with their correct hex codes.
-<table class='table table-striped'><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#1E90FF</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></table>
-</section>
+For example, orange is pure red, mixed with some green, and no blue. In hex code, this translates to being `#FFA500`.
 
-## Tests
-<section id='tests'>
+The digit `0` is the lowest number in hex code, and represents a complete absence of color.
 
-```yml
-tests:
-  - text: Your <code>h1</code> element with the text <code>I am red!</code> should be given the <code>color</code> red.
-    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
-  - text: The <code>hex code</code> for the color red should be used instead of the word <code>red</code>.
-    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?(#FF0000|#F00)\s*?;\s*?}/gi));
-  - text: Your <code>h1</code> element with the text <code>I am green!</code> should be given the <code>color</code> green.
-    testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
-  - text: The <code>hex code</code> for the color green should be used instead of the word <code>green</code>.
-    testString: assert(code.match(/\.green-text\s*?{\s*?color:\s*?(#00FF00|#0F0)\s*?;\s*?}/gi));
-  - text: Your <code>h1</code> element with the text <code>I am dodger blue!</code> should be given the <code>color</code> dodger blue.
-    testString: assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
-  - text: The <code>hex code</code> for the color dodger blue should be used instead of the word <code>dodgerblue</code>.
-    testString: assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));
-  - text: Your <code>h1</code> element with the text <code>I am orange!</code> should be given the <code>color</code> orange.
-    testString: assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
-  - text: The <code>hex code</code> for the color orange should be used instead of the word <code>orange</code>.
-    testString: assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
+The digit `F` is the highest number in hex code, and represents the maximum possible brightness.
 
+# --instructions--
+
+Replace the color words in our `style` element with their correct hex codes.
+
+<table class='table table-striped'><tbody><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#1E90FF</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></tbody></table>
+
+# --hints--
+
+Your `h1` element with the text `I am red!` should be given the `color` red.
+
+```js
+assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-</section>
+The `hex code` for the color red should be used instead of the word `red`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.red-text\s*?{\s*?color:\s*?(#FF0000|#F00)\s*?;\s*?}/gi));
+```
 
-<div id='html-seed'>
+Your `h1` element with the text `I am green!` should be given the `color` green.
+
+```js
+assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
+```
+
+The `hex code` for the color green should be used instead of the word `green`.
+
+```js
+assert(code.match(/\.green-text\s*?{\s*?color:\s*?(#00FF00|#0F0)\s*?;\s*?}/gi));
+```
+
+Your `h1` element with the text `I am dodger blue!` should be given the `color` dodger blue.
+
+```js
+assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
+```
+
+The `hex code` for the color dodger blue should be used instead of the word `dodgerblue`.
+
+```js
+assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));
+```
+
+Your `h1` element with the text `I am orange!` should be given the `color` orange.
+
+```js
+assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
+```
+
+The `hex code` for the color orange should be used instead of the word `orange`.
+
+```js
+assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -77,14 +103,7 @@ tests:
 <h1 class="orange-text">I am orange!</h1>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -110,5 +129,3 @@ tests:
 
 <h1 class="orange-text">I am orange!</h1>
 ```
-
-</section>

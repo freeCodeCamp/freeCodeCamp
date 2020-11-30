@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/cek4Efq'
 forumTopicId: 18207
 ---
 
-## Description
-<section id='description'>
-When a condition for an <code>if</code> statement is true, the block of code following it is executed. What about when that condition is false?  Normally nothing would happen. With an <code>else</code> statement, an alternate block of code can be executed.
+# --description--
+
+When a condition for an `if` statement is true, the block of code following it is executed. What about when that condition is false? Normally nothing would happen. With an `else` statement, an alternate block of code can be executed.
 
 ```js
 if (num > 10) {
@@ -18,41 +18,57 @@ if (num > 10) {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Combine the <code>if</code> statements into a single <code>if/else</code> statement.
-</section>
+Combine the `if` statements into a single `if/else` statement.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should only have one <code>if</code> statement in the editor
-    testString: assert(code.match(/if/g).length === 1);
-  - text: You should use an <code>else</code> statement
-    testString: assert(/else/g.test(code));
-  - text: <code>testElse(4)</code> should return "5 or Smaller"
-    testString: assert(testElse(4) === "5 or Smaller");
-  - text: <code>testElse(5)</code> should return "5 or Smaller"
-    testString: assert(testElse(5) === "5 or Smaller");
-  - text: <code>testElse(6)</code> should return "Bigger than 5"
-    testString: assert(testElse(6) === "Bigger than 5");
-  - text: <code>testElse(10)</code> should return "Bigger than 5".
-    testString: assert(testElse(10) === "Bigger than 5");
-  - text: You should not change the code above or below the specified comments.
-    testString: assert(/var result = "";/.test(code) && /return result;/.test(code));
+You should only have one `if` statement in the editor
 
+```js
+assert(code.match(/if/g).length === 1);
 ```
 
-</section>
+You should use an `else` statement
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/else/g.test(code));
+```
 
-<div id='js-seed'>
+`testElse(4)` should return "5 or Smaller"
+
+```js
+assert(testElse(4) === '5 or Smaller');
+```
+
+`testElse(5)` should return "5 or Smaller"
+
+```js
+assert(testElse(5) === '5 or Smaller');
+```
+
+`testElse(6)` should return "Bigger than 5"
+
+```js
+assert(testElse(6) === 'Bigger than 5');
+```
+
+`testElse(10)` should return "Bigger than 5".
+
+```js
+assert(testElse(10) === 'Bigger than 5');
+```
+
+You should not change the code above or below the specified comments.
+
+```js
+assert(/var result = "";/.test(code) && /return result;/.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testElse(val) {
@@ -72,18 +88,9 @@ function testElse(val) {
 }
 
 testElse(4);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testElse(val) {
@@ -96,5 +103,3 @@ function testElse(val) {
   return result;
 }
 ```
-
-</section>

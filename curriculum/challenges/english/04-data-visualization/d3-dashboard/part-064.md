@@ -4,35 +4,56 @@ title: Part 64
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Next, chain the `enter()` function to the selection. 
+Next, chain the `enter()` function to the selection.
 
 The enter function identifies elements that need to be added when the data array is longer than the selection array. This is why you wanted the `selectAll` to be an empty array before.
-    
+
 In this case, the `twitter-circles` selection has a length of 0, and the data array has a length of 9. So nine elements will be added when you use `append` in the next step.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/\.data\(data\)\s*\.enter\s*\(\s*\)/g.test(code));
-
+```js
+assert(/\.data\(data\)\s*\.enter\s*\(\s*\)/g.test(code));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -128,47 +149,7 @@ tests:
 </script> 
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -264,5 +245,3 @@ tests:
 
 </script>
 ```
-
-</section>

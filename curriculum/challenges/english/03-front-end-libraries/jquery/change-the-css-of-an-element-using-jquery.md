@@ -1,46 +1,45 @@
 ---
 id: bad87fee1348bd9aed908826
 title: Change the CSS of an Element Using jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 16776
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 We can also change the CSS of an HTML element directly with jQuery.
-jQuery has a function called <code>.css()</code> that allows you to change the CSS of an element.
+
+jQuery has a function called `.css()` that allows you to change the CSS of an element.
+
 Here's how we would change its color to blue:
-<code>$("#target1").css("color", "blue");</code>
+
+`$("#target1").css("color", "blue");`
+
 This is slightly different from a normal CSS declaration, because the CSS property and its value are in quotes, and separated with a comma instead of a colon.
-Delete your jQuery selectors, leaving an empty <code>document ready function</code>.
-Select <code>target1</code> and change its color to red.
-</section>
 
-## Instructions
-<section id='instructions'>
+Delete your jQuery selectors, leaving an empty `document ready function`.
 
-</section>
+Select `target1` and change its color to red.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>target1</code> element should have red text.
-    testString: assert($("#target1").css("color") === 'rgb(255, 0, 0)');
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(!code.match(/class.*animated/g));
+Your `target1` element should have red text.
 
+```js
+assert($('#target1').css('color') === 'rgb(255, 0, 0)');
 ```
 
-</section>
+You should only use jQuery to add these classes to the element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!code.match(/class.*animated/g));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -78,14 +77,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -121,5 +113,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

@@ -5,43 +5,102 @@ challengeType: 1
 forumTopicId: 301712
 ---
 
-## Description
-<section id='description'>
-The next important method that any implementation of a linked list will need is a <code>remove</code> method. This method should take the element we want to remove as an argument, and then search the list to find and remove the node that contains that element.
-Whenever we remove a node from a linked list, it's important that we don't accidentally orphan the rest of the list in doing so. Recall that every node's <code>next</code> property points to the node that follows it in the list. If we're removing the middle element, say, we'll want to make sure that we have a connection from that element's previous node's <code>next</code> property to the middle element's <code>next</code> property (which is the next node in the list!)
+# --description--
+
+The next important method that any implementation of a linked list will need is a `remove` method. This method should take the element we want to remove as an argument, and then search the list to find and remove the node that contains that element.
+
+Whenever we remove a node from a linked list, it's important that we don't accidentally orphan the rest of the list in doing so. Recall that every node's `next` property points to the node that follows it in the list. If we're removing the middle element, say, we'll want to make sure that we have a connection from that element's previous node's `next` property to the middle element's `next` property (which is the next node in the list!)
+
 This might sound really confusing, so let's return to the conga line example so we have a good conceptual model. Picture yourself in a conga line, and the person directly in front of you leaves the line. The person who just left the line no longer has her hands on anyone in line--and you no longer have your hands on the person that left. You step forward and put your hands on next person you see.
-If the element we wish to remove is the <code>head</code> element, we reassign the <code>head</code> to the second node of the linked list.
-</section>
 
-## Instructions
-<section id='instructions'>
-Write a <code>remove</code> method that takes an element and removes it from the linked list.
-<strong>Note:</strong> The <code>length</code> of the list should decrease by one every time an element is removed from the linked list.
-</section>
+If the element we wish to remove is the `head` element, we reassign the `head` to the second node of the linked list.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your <code>LinkedList</code> class should have a <code>remove</code> method.
-    testString: assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()));
-  - text: Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()));
-  - text: Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.
-    testString: assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("hamster"); test.remove("cat"); test.remove("fish"); return test.size() === 2})());
-  - text: Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('snake'); test.add('kitten'); test.remove('snake'); return test.head().next.next.element === 'kitten'})());
-  - text: Your <code>remove</code> method should not change the linked list if the element does not exist in the linked list.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('elephant'); return JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"dog","next":{"element":"kitten","next":null}}}'})());
+Write a `remove` method that takes an element and removes it from the linked list.
 
+**Note:** The `length` of the list should decrease by one every time an element is removed from the linked list.
+
+# --hints--
+
+Your `LinkedList` class should have a `remove` method.
+
+```js
+assert(
+  (function () {
+    var test = new LinkedList();
+    return typeof test.remove === 'function';
+  })()
+);
 ```
 
-</section>
+Your `remove` method should reassign `head` to the second node when the first node is removed.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(
+  (function () {
+    var test = new LinkedList();
+    test.add('cat');
+    test.add('dog');
+    test.remove('cat');
+    return test.head().element === 'dog';
+  })()
+);
+```
+
+Your `remove` method should decrease the `length` of the linked list by one for every node removed.
+
+```js
+assert(
+  (function () {
+    var test = new LinkedList();
+    test.add('cat');
+    test.add('dog');
+    test.add('hamster');
+    test.remove('cat');
+    test.remove('fish');
+    return test.size() === 2;
+  })()
+);
+```
+
+Your `remove` method should reassign the reference of the previous node of the removed node to the removed node's `next` reference.
+
+```js
+assert(
+  (function () {
+    var test = new LinkedList();
+    test.add('cat');
+    test.add('dog');
+    test.add('snake');
+    test.add('kitten');
+    test.remove('snake');
+    return test.head().next.next.element === 'kitten';
+  })()
+);
+```
+
+Your `remove` method should not change the linked list if the element does not exist in the linked list.
+
+```js
+assert(
+  (function () {
+    var test = new LinkedList();
+    test.add('cat');
+    test.add('dog');
+    test.add('kitten');
+    test.remove('elephant');
+    return (
+      JSON.stringify(test.head()) ===
+      '{"element":"cat","next":{"element":"dog","next":{"element":"kitten","next":null}}}'
+    );
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function LinkedList() {
@@ -86,12 +145,7 @@ function LinkedList() {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function LinkedList() {
@@ -153,5 +207,3 @@ function LinkedList() {
   };
 } 
 ```
-
-</section>

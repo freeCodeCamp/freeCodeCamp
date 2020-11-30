@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/cPpz4fr'
 forumTopicId: 301050
 ---
 
-## Description
-<section id='description'>
-One of the most popular shapes in the world is the heart shape, and in this challenge you'll create one using pure CSS. But first, you need to understand the <code>::before</code> and <code>::after</code> pseudo-elements. These pseudo-elements are used to add something before or after a selected element. In the following example, a <code>::before</code> pseudo-element is used to add a rectangle to an element with the class <code>heart</code>:
+# --description--
+
+One of the most popular shapes in the world is the heart shape, and in this challenge you'll create one using pure CSS. But first, you need to understand the `::before` and `::after` pseudo-elements. These pseudo-elements are used to add something before or after a selected element. In the following example, a `::before` pseudo-element is used to add a rectangle to an element with the class `heart`:
 
 ```css
 .heart::before {
@@ -23,39 +23,47 @@ One of the most popular shapes in the world is the heart shape, and in this chal
 }
 ```
 
-For the <code>::before</code> and <code>::after</code> pseudo-elements to function properly, they must have a defined <code>content</code> property. This property is usually used to add things like a photo or text to the selected element. When the <code>::before</code> and <code>::after</code> pseudo-elements are used to make shapes, the <code>content</code> property is still required, but it's set to an empty string.
-In the above example, the element with the class of <code>heart</code> has a <code>::before</code> pseudo-element that produces a yellow rectangle with <code>height</code> and <code>width</code> of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the <code>left</code> and 50px above the <code>top</code> of the element.
-</section>
+For the `::before` and `::after` pseudo-elements to function properly, they must have a defined `content` property. This property is usually used to add things like a photo or text to the selected element. When the `::before` and `::after` pseudo-elements are used to make shapes, the `content` property is still required, but it's set to an empty string. In the above example, the element with the class of `heart` has a `::before` pseudo-element that produces a yellow rectangle with `height` and `width` of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the `left` and 50px above the `top` of the element.
 
-## Instructions
-<section id='instructions'>
-Transform the element on the screen to a heart. In the <code>heart::after</code> selector, change the <code>background-color</code> to pink and the <code>border-radius</code> to 50%.
-Next, target the element with the class <code>heart</code> (just <code>heart</code>) and fill in the <code>transform</code> property. Use the <code>rotate()</code> function with -45 degrees.
-Finally, in the <code>heart::before</code> selector, set its <code>content</code> property to an empty string.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Transform the element on the screen to a heart. In the `heart::after` selector, change the `background-color` to pink and the `border-radius` to 50%.
 
-```yml
-tests:
-  - text: The <code>background-color</code> property of the <code>heart::after</code> selector should be pink.
-    testString: assert(code.match(/\.heart::after\s*?{\s*?background-color\s*?:\s*?pink\s*?;/gi));
-  - text: The <code>border-radius</code> of the <code>heart::after</code> selector should be 50%.
-    testString: assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
-  - text: The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.
-    testString: assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
-  - text: The <code>content</code> of the <code>heart::before</code> selector should be an empty string.
-    testString: assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
+Next, target the element with the class `heart` (just `heart`) and fill in the `transform` property. Use the `rotate()` function with -45 degrees.
 
+Finally, in the `heart::before` selector, set its `content` property to an empty string.
+
+# --hints--
+
+The `background-color` property of the `heart::after` selector should be pink.
+
+```js
+assert(
+  code.match(/\.heart::after\s*?{\s*?background-color\s*?:\s*?pink\s*?;/gi)
+);
 ```
 
-</section>
+The `border-radius` of the `heart::after` selector should be 50%.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
+```
 
-<div id='html-seed'>
+The `transform` property for the `heart` class should use a `rotate()` function set to -45 degrees.
+
+```js
+assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
+```
+
+The `content` of the `heart::before` selector should be an empty string.
+
+```js
+assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -95,14 +103,7 @@ tests:
 <div class="heart"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -141,5 +142,3 @@ tests:
 </style>
 <div class="heart"></div>
 ```
-
-</section>

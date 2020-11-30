@@ -5,46 +5,50 @@ challengeType: 11
 videoId: dnzvfimrRMg
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What does dict equal after running this code?:
 
-```yml
-question:
-  text: |
-    What does dict equal after running this code?:
-    ```python
-    dict = {"Fri": 20, "Thu": 6, "Sat": 1}
-    dict["Thu"] = 13
-    dict["Sat"] = 2
-    dict["Sun"] = 9
-    ```
-  answers:
-    - |
-        ```python
-        {'Fri': 20, 'Thu': 6, 'Sat': 1}
-        ```
-    - |
-        ```python
-        {'Fri': 20, 'Thu': 6, 'Sat': 1, 'Thu': 13, 'Sat': 2, 'Sun': 9}
-        ```
-    - |
-        ```python
-        {'Sun': 9}
-        ```
-    - |
-        ```python
-        {'Thu': 13, 'Sat': 2, 'Sun': 9}
-        ```
-    - |
-        ```python
-        {'Fri': 20, 'Thu': 13, 'Sat': 2, 'Sun': 9}
-        ```
-  solution: 5
+```python
+dict = {"Fri": 20, "Thu": 6, "Sat": 1}
+dict["Thu"] = 13
+dict["Sat"] = 2
+dict["Sun"] = 9
 ```
 
-</section>
+## --answers--
+
+```python
+{'Fri': 20, 'Thu': 6, 'Sat': 1}
+```
+
+---
+
+```python
+{'Fri': 20, 'Thu': 6, 'Sat': 1, 'Thu': 13, 'Sat': 2, 'Sun': 9}
+```
+
+---
+
+```python
+{'Sun': 9}
+```
+
+---
+
+```python
+{'Thu': 13, 'Sat': 2, 'Sun': 9}
+```
+
+---
+
+```python
+{'Fri': 20, 'Thu': 13, 'Sat': 2, 'Sun': 9}
+```
+
+## --video-solution--
+
+5
+

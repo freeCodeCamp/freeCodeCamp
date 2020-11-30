@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301152
 ---
 
-## Description
-<section id='description'>
-Remember in the last challenge we mentioned that <code>splice()</code> can take up to three parameters? Well, you can use the third parameter, comprised of one or more element(s), to add to the array. This can be incredibly useful for quickly switching out an element, or a set of elements, for another.
+# --description--
+
+Remember in the last challenge we mentioned that `splice()` can take up to three parameters? Well, you can use the third parameter, comprised of one or more element(s), to add to the array. This can be incredibly useful for quickly switching out an element, or a set of elements, for another.
 
 ```js
 const numbers = [10, 11, 12, 12, 15];
@@ -20,36 +20,56 @@ console.log(numbers);
 // returns [ 10, 11, 12, 13, 14, 15 ]
 ```
 
-Here we begin with an array of numbers. We then pass the following to <code>splice()</code>. The index at which to begin deleting elements (3), the number of elements to be deleted (1), and the elements (13, 14) to be inserted at that same index. Note that there can be any number of elements (separated by commas) following <code>amountToDelete</code>, each of which gets inserted.
-</section>
+Here we begin with an array of numbers. We then pass the following to `splice()`. The index at which to begin deleting elements (3), the number of elements to be deleted (1), and the elements (13, 14) to be inserted at that same index. Note that there can be any number of elements (separated by commas) following `amountToDelete`, each of which gets inserted.
 
-## Instructions
-<section id='instructions'>
-We have defined a function, <code>htmlColorNames</code>, which takes an array of HTML colors as an argument. Modify the function using <code>splice()</code> to remove the first two elements of the array and add <code>'DarkSalmon'</code> and <code>'BlanchedAlmond'</code> in their respective places.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+We have defined a function, `htmlColorNames`, which takes an array of HTML colors as an argument. Modify the function using `splice()` to remove the first two elements of the array and add `'DarkSalmon'` and `'BlanchedAlmond'` in their respective places.
 
-```yml
-tests:
-  - text: <code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurquoise", "FireBrick"]</code>
-    testString: assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']);
-  - text: The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method
-    testString: assert(/.splice/.test(code));
-  - text: You should not use <code>shift()</code> or <code>unshift()</code>.
-    testString: assert(!/shift|unshift/.test(code));
-  - text: You should not use array bracket notation.
-    testString: assert(!/\[\d\]\s*=/.test(code));
+# --hints--
 
+`htmlColorNames` should return `["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurquoise", "FireBrick"]`
+
+```js
+assert.deepEqual(
+  htmlColorNames([
+    'DarkGoldenRod',
+    'WhiteSmoke',
+    'LavenderBlush',
+    'PaleTurquoise',
+    'FireBrick'
+  ]),
+  [
+    'DarkSalmon',
+    'BlanchedAlmond',
+    'LavenderBlush',
+    'PaleTurquoise',
+    'FireBrick'
+  ]
+);
 ```
 
-</section>
+The `htmlColorNames` function should utilize the `splice()` method
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/.splice/.test(code));
+```
 
-<div id='js-seed'>
+You should not use `shift()` or `unshift()`.
+
+```js
+assert(!/shift|unshift/.test(code));
+```
+
+You should not use array bracket notation.
+
+```js
+assert(!/\[\d\]\s*=/.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function htmlColorNames(arr) {
@@ -62,14 +82,7 @@ function htmlColorNames(arr) {
 console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function htmlColorNames(arr) {
@@ -77,5 +90,3 @@ function htmlColorNames(arr) {
   return arr;
 }
 ```
-
-</section>

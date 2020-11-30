@@ -6,69 +6,52 @@ videoUrl: 'https://scrimba.com/c/cP3yQtk'
 forumTopicId: 18314
 ---
 
-## Description
-<section id='description'>
-We can also subtract one number from another.
-JavaScript uses the <code>-</code> symbol for subtraction.
+# --description--
 
-<strong>Example</strong>
+We can also subtract one number from another.
+
+JavaScript uses the `-` symbol for subtraction.
+
+**Example**
 
 ```js
 myVar = 12 - 6; // assigned 6
 ```
 
+# --instructions--
 
-</section>
+Change the `0` so the difference is `12`.
 
-## Instructions
-<section id='instructions'>
-Change the <code>0</code> so the difference is <code>12</code>.
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: The variable <code>difference</code> should be equal to 12.
-    testString: assert(difference === 12);
-  - text: You should only subtract one number from 45.
-    testString: assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The variable `difference` should be equal to 12.
 
 ```js
-var difference = 45 - 0;
-
-
+assert(difference === 12);
 ```
 
-</div>
+You should only subtract one number from 45.
 
+```js
+assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(z){return 'difference = '+z;})(difference);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var difference = 45 - 0;
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var difference = 45 - 33;
 ```
-
-</section>

@@ -5,52 +5,81 @@ challengeType: 6
 forumTopicId: 301493
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The previous challenges covered how to display data from an array and how to add CSS classes. You can combine these lessons to create a simple bar chart. There are two steps to this:
-1) Create a <code>div</code> for each data point in the array
-2) Give each <code>div</code> a dynamic height, using a callback function in the <code>style()</code> method that sets height equal to the data value
+
+1) Create a `div` for each data point in the array
+
+2) Give each `div` a dynamic height, using a callback function in the `style()` method that sets height equal to the data value
+
 Recall the format to set a style using a callback function:
-<code>selection.style("cssProperty", (d) => d)</code>
-</section>
 
-## Instructions
-<section id='instructions'>
-Add the <code>style()</code> method to the code in the editor to set the <code>height</code> property for each element. Use a callback function to return the value of the data point with the string "px" added to it.
-</section>
+`selection.style("cssProperty", (d) => d)`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The first <code>div</code> should have a <code>height</code> of 12 pixels.
-    testString: assert($('div').eq(0)[0].style.height === '12px');
-  - text: The second <code>div</code> should have a <code>height</code> of 31 pixels.
-    testString: assert($('div').eq(1)[0].style.height === '31px');
-  - text: The third <code>div</code> should have a <code>height</code> of 22 pixels.
-    testString: assert($('div').eq(2)[0].style.height === '22px');
-  - text: The fourth <code>div</code> should have a <code>height</code> of 17 pixels.
-    testString: assert($('div').eq(3)[0].style.height === '17px');
-  - text: The fifth <code>div</code> should have a <code>height</code> of 25 pixels.
-    testString: assert($('div').eq(4)[0].style.height === '25px');
-  - text: The sixth <code>div</code> should have a <code>height</code> of 18 pixels.
-    testString: assert($('div').eq(5)[0].style.height === '18px');
-  - text: The seventh <code>div</code> should have a <code>height</code> of 29 pixels.
-    testString: assert($('div').eq(6)[0].style.height === '29px');
-  - text: The eighth <code>div</code> should have a <code>height</code> of 14 pixels.
-    testString: assert($('div').eq(7)[0].style.height === '14px');
-  - text: The ninth <code>div</code> should have a <code>height</code> of 9 pixels.
-    testString: assert($('div').eq(8)[0].style.height === '9px');
+Add the `style()` method to the code in the editor to set the `height` property for each element. Use a callback function to return the value of the data point with the string "px" added to it.
 
+# --hints--
+
+The first `div` should have a `height` of 12 pixels.
+
+```js
+assert($('div').eq(0)[0].style.height === '12px');
 ```
 
-</section>
+The second `div` should have a `height` of 31 pixels.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div').eq(1)[0].style.height === '31px');
+```
 
-<div id='html-seed'>
+The third `div` should have a `height` of 22 pixels.
+
+```js
+assert($('div').eq(2)[0].style.height === '22px');
+```
+
+The fourth `div` should have a `height` of 17 pixels.
+
+```js
+assert($('div').eq(3)[0].style.height === '17px');
+```
+
+The fifth `div` should have a `height` of 25 pixels.
+
+```js
+assert($('div').eq(4)[0].style.height === '25px');
+```
+
+The sixth `div` should have a `height` of 18 pixels.
+
+```js
+assert($('div').eq(5)[0].style.height === '18px');
+```
+
+The seventh `div` should have a `height` of 29 pixels.
+
+```js
+assert($('div').eq(6)[0].style.height === '29px');
+```
+
+The eighth `div` should have a `height` of 14 pixels.
+
+```js
+assert($('div').eq(7)[0].style.height === '14px');
+```
+
+The ninth `div` should have a `height` of 9 pixels.
+
+```js
+assert($('div').eq(8)[0].style.height === '9px');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -79,14 +108,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -110,5 +132,3 @@ tests:
   </script>
 </body>
 ```
-
-</section>

@@ -1,38 +1,29 @@
 ---
 id: 5900f4671000cf542c50ff79
-challengeType: 5
 title: 'Problem 249: Prime Subset Sums'
+challengeType: 5
 forumTopicId: 301896
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Let S = {2, 3, 5, ..., 4999} be the set of prime numbers less than 5000.
+
 Find the number of subsets of S, the sum of whose elements is a prime number.
+
 Enter the rightmost 16 digits as your answer.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler249()` should return 9275262564250418.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler249()</code> should return 9275262564250418.
-    testString: assert.strictEqual(euler249(), 9275262564250418);
-
+```js
+assert.strictEqual(euler249(), 9275262564250418);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler249() {
@@ -43,17 +34,8 @@ function euler249() {
 euler249();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

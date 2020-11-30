@@ -4,36 +4,59 @@ title: Part 45
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Use the ternary operator to return `[]` if `start > end` and `[start].concat([end])` otherwise.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(JSON.stringify(range(3, 2)) === "[]" && JSON.stringify(range(1, 3)) === "[1,3]");
-
+```js
+assert(
+  JSON.stringify(range(3, 2)) === '[]' &&
+    JSON.stringify(range(1, 3)) === '[1,3]'
+);
 ```
 
+# --seed--
 
-</section>
+## --before-user-code--
 
-## Challenge Seed
-<section id='challengeSeed'>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spreadsheet</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: 50px repeat(10, 200px);
+      grid-template-rows: repeat(11, 30px);
+    }
+    .label {
+      background-color: lightgray;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <div></div>
+</div>
+```
 
-<div id='html-seed'>
+## --after-user-code--
+
+```html
+</body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -83,57 +106,7 @@ const range = (start, end) => {
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Spreadsheet</title>
-  <style>
-    #container {
-      display: grid;
-      grid-template-columns: 50px repeat(10, 200px);
-      grid-template-rows: repeat(11, 30px);
-    }
-    .label {
-      background-color: lightgray;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 30px;
-    }
-  </style>
-</head>
-<body>
-<div id="container">
-  <div></div>
-</div>
-```
-
-</div>
-
-
-### After Test
-<div id='html-teardown'>
-
-```html
-</body>
-</html>
-```
-
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -179,5 +152,3 @@ const range = (start, end) => {
 }
 </script>
 ```
-
-</section>

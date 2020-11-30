@@ -6,47 +6,85 @@ videoUrl: 'https://scrimba.com/c/c9bmdtR'
 forumTopicId: 18204
 ---
 
-## Description
-<section id='description'>
-Now we've proven that every HTML page has a <code>body</code> element, and that its <code>body</code> element can also be styled with CSS.
-Remember, you can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-First, create a <code>h1</code> element with the text <code>Hello World</code>
-Then, let's give all elements on your page the color of <code>green</code> by adding <code>color: green;</code> to your <code>body</code> element's style declaration.
-Finally, give your <code>body</code> element the font-family of <code>monospace</code> by adding <code>font-family: monospace;</code> to your <code>body</code> element's style declaration.
-</section>
+Now we've proven that every HTML page has a `body` element, and that its `body` element can also be styled with CSS.
 
-## Tests
-<section id='tests'>
+Remember, you can style your `body` element just like any other HTML element, and all your other elements will inherit your `body` element's styles.
 
-```yml
-tests:
-  - text: You should create an <code>h1</code> element.
-    testString: assert(($("h1").length > 0));
-  - text: Your <code>h1</code> element should have the text <code>Hello World</code>.
-    testString: assert(($("h1").length > 0 && $("h1").text().match(/hello world/i)));
-  - text: Your <code>h1</code> element should have a closing tag.
-    testString: assert(code.match(/<\/h1>/g) && code.match(/<h1/g) && code.match(/<\/h1>/g).length === code.match(/<h1/g).length);
-  - text: Your <code>body</code> element should have the <code>color</code> property of <code>green</code>.
-    testString: assert(($("body").css("color") === "rgb(0, 128, 0)"));
-  - text: Your <code>body</code> element should have the <code>font-family</code> property of <code>monospace</code>.
-    testString: assert(($("body").css("font-family").match(/monospace/i)));
-  - text: Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.
-    testString: assert(($("h1").length > 0 && $("h1").css("font-family").match(/monospace/i)));
-  - text: Your <code>h1</code> element should inherit the color green from your <code>body</code> element.
-    testString: assert(($("h1").length > 0 && $("h1").css("color") === "rgb(0, 128, 0)"));
+# --instructions--
 
+First, create a `h1` element with the text `Hello World`
+
+Then, let's give all elements on your page the color of `green` by adding `color: green;` to your `body` element's style declaration.
+
+Finally, give your `body` element the font-family of `monospace` by adding `font-family: monospace;` to your `body` element's style declaration.
+
+# --hints--
+
+You should create an `h1` element.
+
+```js
+assert($('h1').length > 0);
 ```
 
-</section>
+Your `h1` element should have the text `Hello World`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('h1').length > 0 &&
+    $('h1')
+      .text()
+      .match(/hello world/i)
+);
+```
 
-<div id='html-seed'>
+Your `h1` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/h1>/g) &&
+    code.match(/<h1/g) &&
+    code.match(/<\/h1>/g).length === code.match(/<h1/g).length
+);
+```
+
+Your `body` element should have the `color` property of `green`.
+
+```js
+assert($('body').css('color') === 'rgb(0, 128, 0)');
+```
+
+Your `body` element should have the `font-family` property of `monospace`.
+
+```js
+assert(
+  $('body')
+    .css('font-family')
+    .match(/monospace/i)
+);
+```
+
+Your `h1` element should inherit the font `monospace` from your `body` element.
+
+```js
+assert(
+  $('h1').length > 0 &&
+    $('h1')
+      .css('font-family')
+      .match(/monospace/i)
+);
+```
+
+Your `h1` element should inherit the color green from your `body` element.
+
+```js
+assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -57,14 +95,7 @@ tests:
 </style>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -77,5 +108,3 @@ tests:
 </style>
 <h1>Hello World!</h1>
 ```
-
-</section>

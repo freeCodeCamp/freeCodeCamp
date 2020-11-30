@@ -5,9 +5,10 @@ challengeType: 1
 forumTopicId: 16804
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 <dfn>Constructors</dfn> are functions that create new objects. They define properties and behaviors that will belong to the new object. Think of them as a blueprint for the creation of new objects.
+
 Here is an example of a constructor:
 
 ```js
@@ -18,50 +19,42 @@ function Bird() {
 }
 ```
 
-This constructor defines a <code>Bird</code> object with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> set to Albert, blue, and 2, respectively.
-Constructors follow a few conventions:
+This constructor defines a `Bird` object with properties `name`, `color`, and `numLegs` set to Albert, blue, and 2, respectively. Constructors follow a few conventions:
+
 <ul><li>Constructors are defined with a capitalized name to distinguish them from other functions that are not <code>constructors</code>.</li><li>Constructors use the keyword <code>this</code> to set properties of the object they will create. Inside the constructor, <code>this</code> refers to the new object it will create.</li><li>Constructors define properties and behaviors instead of returning a value as other functions might.</li></ul>
-</section>
 
-## Instructions
-<section id='instructions'>
-Create a constructor, <code>Dog</code>, with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> that are set to a string, a string, and a number, respectively.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Create a constructor, `Dog`, with properties `name`, `color`, and `numLegs` that are set to a string, a string, and a number, respectively.
 
-```yml
-tests:
-  - text: <code>Dog</code> should have a <code>name</code> property set to a string.
-    testString: assert(typeof (new Dog()).name === 'string');
-  - text: <code>Dog</code> should have a <code>color</code> property set to a string.
-    testString: assert(typeof (new Dog()).color === 'string');
-  - text: <code>Dog</code> should have a <code>numLegs</code> property set to a number.
-    testString: assert(typeof (new Dog()).numLegs === 'number');
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`Dog` should have a `name` property set to a string.
 
 ```js
-
+assert(typeof new Dog().name === 'string');
 ```
 
-</div>
+`Dog` should have a `color` property set to a string.
 
+```js
+assert(typeof new Dog().color === 'string');
+```
 
+`Dog` should have a `numLegs` property set to a number.
 
-</section>
+```js
+assert(typeof new Dog().numLegs === 'number');
+```
 
-## Solution
-<section id='solution'>
+# --seed--
 
+## --seed-contents--
+
+```js
+```
+
+# --solutions--
 
 ```js
 function Dog (name, color, numLegs) {
@@ -70,5 +63,3 @@ function Dog (name, color, numLegs) {
   this.numLegs = 4;
 }
 ```
-
-</section>

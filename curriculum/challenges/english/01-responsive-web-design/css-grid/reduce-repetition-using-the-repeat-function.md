@@ -6,10 +6,12 @@ videoUrl: 'https://scrimba.com/p/pByETK/cQvqyHR'
 forumTopicId: 301133
 ---
 
-## Description
-<section id='description'>
-When you used <code>grid-template-columns</code> and <code>grid-template-rows</code> to define the structure of a grid, you entered a value for each row or column you created.
-Let's say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually. Fortunately, there's a better way - by using the <code>repeat</code> function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
+# --description--
+
+When you used `grid-template-columns` and `grid-template-rows` to define the structure of a grid, you entered a value for each row or column you created.
+
+Let's say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually. Fortunately, there's a better way - by using the `repeat` function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
+
 Here's an example that would create the 100 row grid, each row at 50px tall.
 
 ```css
@@ -28,30 +30,27 @@ This translates to:
 grid-template-columns: 1fr 50px 1fr 50px 20px;
 ```
 
-<strong>Note:</strong> The <code>1fr 50px</code> is repeated twice followed by 20px.
-</section>
+**Note:** The `1fr 50px` is repeated twice followed by 20px.
 
-## Instructions
-<section id='instructions'>
-Use <code>repeat</code> to remove repetition from the <code>grid-template-columns</code> property.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Use `repeat` to remove repetition from the `grid-template-columns` property.
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi));
+# --hints--
 
+`container` class should have a `grid-template-columns` property that is set to repeat 3 columns with the width of `1fr`.
+
+```js
+assert(
+  code.match(
+    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -86,18 +85,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.container {grid-template-columns: repeat(3, 1fr);}</style>
 ```
-
-</section>

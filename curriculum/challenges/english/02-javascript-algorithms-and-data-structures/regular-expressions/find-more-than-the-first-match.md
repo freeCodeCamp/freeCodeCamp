@@ -5,8 +5,8 @@ challengeType: 1
 forumTopicId: 301342
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 So far, you have only been able to extract or search a pattern once.
 
 ```js
@@ -16,7 +16,7 @@ testStr.match(ourRegex);
 // Returns ["Repeat"]
 ```
 
-To search or extract a pattern more than once, you can use the <code>g</code> flag.
+To search or extract a pattern more than once, you can use the `g` flag.
 
 ```js
 let repeatRegex = /Repeat/g;
@@ -24,36 +24,48 @@ testStr.match(repeatRegex);
 // Returns ["Repeat", "Repeat", "Repeat"]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Using the regex <code>starRegex</code>, find and extract both <code>"Twinkle"</code> words from the string <code>twinkleStar</code>.
-<strong>Note</strong><br>You can have multiple flags on your regex like <code>/search/gi</code>
-</section>
+Using the regex `starRegex`, find and extract both `"Twinkle"` words from the string `twinkleStar`.
 
-## Tests
-<section id='tests'>
+**Note**  
+You can have multiple flags on your regex like `/search/gi`
 
-```yml
-tests:
-  - text: Your regex <code>starRegex</code> should use the global flag <code>g</code>
-    testString: assert(starRegex.flags.match(/g/).length == 1);
-  - text: Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>
-    testString: assert(starRegex.flags.match(/i/).length == 1);
-  - text: Your match should match both occurrences of the word <code>"Twinkle"</code>
-    testString: assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join());
-  - text: Your match <code>result</code> should have two elements in it.
-    testString: assert(result.length == 2);
+# --hints--
 
+Your regex `starRegex` should use the global flag `g`
+
+```js
+assert(starRegex.flags.match(/g/).length == 1);
 ```
 
-</section>
+Your regex `starRegex` should use the case insensitive flag `i`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(starRegex.flags.match(/i/).length == 1);
+```
 
-<div id='js-seed'>
+Your match should match both occurrences of the word `"Twinkle"`
+
+```js
+assert(
+  result.sort().join() ==
+    twinkleStar
+      .match(/twinkle/gi)
+      .sort()
+      .join()
+);
+```
+
+Your match `result` should have two elements in it.
+
+```js
+assert(result.length == 2);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let twinkleStar = "Twinkle, twinkle, little star";
@@ -61,19 +73,10 @@ let starRegex = /change/; // Change this line
 let result = twinkleStar; // Change this line
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /twinkle/gi;
 let result = twinkleStar.match(starRegex);
 ```
-
-</section>

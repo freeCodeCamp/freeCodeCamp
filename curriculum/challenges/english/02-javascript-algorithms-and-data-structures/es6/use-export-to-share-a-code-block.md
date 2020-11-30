@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301219
 ---
 
-## Description
-<section id='description'>
-Imagine a file called <code>math_functions.js</code> that contains several functions related to mathematical operations. One of them is stored in a variable, <code>add</code>, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to <code>export</code> it.
+# --description--
+
+Imagine a file called `math_functions.js` that contains several functions related to mathematical operations. One of them is stored in a variable, `add`, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to `export` it.
 
 ```js
 export const add = (x, y) => {
@@ -31,29 +31,35 @@ When you export a variable or function, you can import it in another file and us
 export { add, subtract };
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 There are two string-related functions in the editor. Export both of them using the method of your choice.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should properly export <code>uppercaseString</code>.
-    testString: assert(code.match(/(export\s+const\s+uppercaseString|export\s*{\s*(uppercaseString[^}]*|[^,]*,\s*uppercaseString\s*)})/g));
-  - text: You should properly export <code>lowercaseString</code>.
-    testString: assert(code.match(/(export\s+const\s+lowercaseString|export\s*{\s*(lowercaseString[^}]*|[^,]*,\s*lowercaseString\s*)})/g));
+You should properly export `uppercaseString`.
+
+```js
+assert(
+  code.match(
+    /(export\s+const\s+uppercaseString|export\s*{\s*(uppercaseString[^}]*|[^,]*,\s*uppercaseString\s*)})/g
+  )
+);
 ```
 
-</section>
+You should properly export `lowercaseString`.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(
+  code.match(
+    /(export\s+const\s+lowercaseString|export\s*{\s*(lowercaseString[^}]*|[^,]*,\s*lowercaseString\s*)})/g
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 const uppercaseString = (string) => {
@@ -65,11 +71,7 @@ const lowercaseString = (string) => {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 export const uppercaseString = (string) => {
@@ -80,5 +82,3 @@ export const lowercaseString = (string) => {
   return string.toLowerCase()
 }
 ```
-
-</section>

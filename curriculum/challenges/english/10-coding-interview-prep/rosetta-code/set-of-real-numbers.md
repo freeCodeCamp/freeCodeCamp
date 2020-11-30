@@ -5,10 +5,9 @@ challengeType: 5
 forumTopicId: 385322
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-All real numbers form the uncountable set ℝ.  Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers <i>a</i> and <i>b</i> where <i>a</i> ≤ <i>b</i>.  There are actually four cases for the meaning of "between", depending on open or closed boundary:
+All real numbers form the uncountable set ℝ. Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers *a* and *b* where *a* ≤ *b*. There are actually four cases for the meaning of "between", depending on open or closed boundary:
 
 <ul>
   <li>[<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> ≤ <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
@@ -17,9 +16,9 @@ All real numbers form the uncountable set ℝ.  Among its subsets, relatively si
   <li>(<i>a</i>, <i>b</i>]: {<i>x</i> | <i>a</i> < <i>x</i> and <i>x</i> ≤ <i>b</i> }</li>
 </ul>
 
-Note that if <i>a</i> = <i>b</i>, of the four only [<i>a</i>, <i>a</i>] would be non-empty.
+Note that if *a* = *b*, of the four only \[*a*, *a*] would be non-empty.
 
-<strong>Task</strong>
+**Task**
 
 <ul>
   <li>Devise a way to represent any set of real numbers, for the definition of "any" in the implementation notes below.</li>
@@ -43,50 +42,113 @@ Note that if <i>a</i> = <i>b</i>, of the four only [<i>a</i>, <i>a</i>] would be
     </li>
   </ul>
 </ul>
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
+Write a function that takes 2 objects, a string and an array as parameters. The objects represents the set and have attributes: `low`, `high` and `rangeType`.
 
-Write a function that takes 2 objects, a string and an array as parameters. The objects represents the set and have attributes: `low`, `high` and `rangeType`. 
+The `rangeType` can have values 0, 1, 2 and 3 for `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` and `RIGHT_OPEN`, respectively. The function should implement a set using this information.
 
-The `rangeType` can have values 0, 1, 2 and 3 for `CLOSED`, `BOTH_OPEN`, `LEFT_OPEN` and `RIGHT_OPEN`, respectively. The function should implement a set using this information. 
-
-The string represents the operation to be performed on the sets. It can be: `"union"`, `"intersect"` and `"subtract"` (difference). 
+The string represents the operation to be performed on the sets. It can be: `"union"`, `"intersect"` and `"subtract"` (difference).
 
 After performing the operation, the function should check if the values in the array are present in the resultant set and store a corresponding boolean value to an array. The function should return this array.
 
-</section>
+# --hints--
 
-## Tests
+`realSet` should be a function.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>realSet</code> should be a function.
-    testString: assert(typeof realSet=='function');
-  - text: <code>realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])</code> should return a array.
-    testString: assert(Array.isArray(realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])));
-  - text: <code>realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])</code> should return <code>[true, false, false]</code>.
-    testString: assert.deepEqual(realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3]), [true, false, false]);
-  - text: <code>realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])</code> should return <code>[false, false, false]</code>.
-    testString: assert.deepEqual(realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2]), [false, false, false]);
-  - text: <code>realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])</code> should return <code>[true, true, true]</code>.
-    testString: assert.deepEqual(realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2]), [true, true, true]);
-  - text: <code>realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])</code> should return <code>[false, false, true]</code>.
-    testString: assert.deepEqual(realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2]), [false, false, true]);
-  - text: <code>realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])</code> should return <code>[true, true, false]</code>.
-    testString: assert.deepEqual(realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32]), [true, true, false]);
+```js
+assert(typeof realSet == 'function');
 ```
 
-</section>
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return a array.
 
-## Challenge Seed
+```js
+assert(
+  Array.isArray(
+    realSet(
+      { low: 0, high: 1, rangeType: 2 },
+      { low: 0, high: 2, rangeType: 3 },
+      'union',
+      [1, 2, 3]
+    )
+  )
+);
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`realSet({"low":0, "high":1, "rangeType":2}, {"low":0, "high":2, "rangeType":3}, "union", [1, 2, 3])` should return `[true, false, false]`.
+
+```js
+assert.deepEqual(
+  realSet(
+    { low: 0, high: 1, rangeType: 2 },
+    { low: 0, high: 2, rangeType: 3 },
+    'union',
+    [1, 2, 3]
+  ),
+  [true, false, false]
+);
+```
+
+`realSet({"low":0, "high":2, "rangeType":3}, {"low":1, "high":2, "rangeType":2}, "intersect", [0, 1, 2])` should return `[false, false, false]`.
+
+```js
+assert.deepEqual(
+  realSet(
+    { low: 0, high: 2, rangeType: 3 },
+    { low: 1, high: 2, rangeType: 2 },
+    'intersect',
+    [0, 1, 2]
+  ),
+  [false, false, false]
+);
+```
+
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":1}, "subtract", [0, 1, 2])` should return `[true, true, true]`.
+
+```js
+assert.deepEqual(
+  realSet(
+    { low: 0, high: 3, rangeType: 3 },
+    { low: 0, high: 1, rangeType: 1 },
+    'subtract',
+    [0, 1, 2]
+  ),
+  [true, true, true]
+);
+```
+
+`realSet({"low":0, "high":3, "rangeType":3}, {"low":0, "high":1, "rangeType":0}, "subtract", [0, 1, 2])` should return `[false, false, true]`.
+
+```js
+assert.deepEqual(
+  realSet(
+    { low: 0, high: 3, rangeType: 3 },
+    { low: 0, high: 1, rangeType: 0 },
+    'subtract',
+    [0, 1, 2]
+  ),
+  [false, false, true]
+);
+```
+
+`realSet({"low":0, "high":33, "rangeType":1}, {"low":30, "high":31, "rangeType":0}, "intersect", [30, 31, 32])` should return `[true, true, false]`.
+
+```js
+assert.deepEqual(
+  realSet(
+    { low: 0, high: 33, rangeType: 1 },
+    { low: 30, high: 31, rangeType: 0 },
+    'intersect',
+    [30, 31, 32]
+  ),
+  [true, true, false]
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function realSet(set1, set2, operation, values) {
@@ -94,12 +156,7 @@ function realSet(set1, set2, operation, values) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function realSet(set1, set2, operation, values) {
@@ -179,5 +236,3 @@ function realSet(set1, set2, operation, values) {
   return result;
 }
 ```
-
-</section>

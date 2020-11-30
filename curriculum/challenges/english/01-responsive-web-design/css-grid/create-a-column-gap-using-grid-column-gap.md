@@ -6,38 +6,35 @@ videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
 ---
 
-## Description
-<section id='description'>
-So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the <code>grid-column-gap</code> property like this:
+# --description--
+
+So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the `grid-column-gap` property like this:
 
 ```css
 grid-column-gap: 10px;
 ```
 
 This creates 10px of empty space between all of our columns.
-</section>
 
-## Instructions
-<section id='instructions'>
-Give the columns in the grid a <code>20px</code> gap.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Give the columns in the grid a `20px` gap.
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));
+# --hints--
 
+`container` class should have a `grid-column-gap` property that has the value of `20px`.
+
+```js
+assert(
+  code.match(
+    /.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -71,18 +68,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.container {grid-column-gap: 20px;}</style>
 ```
-
-</section>

@@ -4,31 +4,27 @@ title: Part 29
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You want the foreground buildings container to sit directly on top of the background buildings element. Give it a `width` and `height` of `100%`, set the `position` to `absolute`, and the `top` to `0`. This will make it the same size as the body and move the start of it to the top left corner.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb = code.match(/\.foreground-buildings\s*{[\s\S]+?[^}]}/g)[0]; assert($(".foreground-buildings").css("position") === "absolute" && $(".foreground-buildings").css("top") === "0px" && /width\s*:\s*100%\s*(;|})/g.test(fb) && /height\s*:\s*100%\s*(;|})/g.test(fb));
-
+```js
+const fb = code.match(/\.foreground-buildings\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  $('.foreground-buildings').css('position') === 'absolute' &&
+    $('.foreground-buildings').css('top') === '0px' &&
+    /width\s*:\s*100%\s*(;|})/g.test(fb) &&
+    /height\s*:\s*100%\s*(;|})/g.test(fb)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -137,12 +133,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -257,5 +248,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

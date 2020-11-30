@@ -6,32 +6,25 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
 ---
 
-## Description
-<section id='description'>
-The last two challenges used the <code>flex-direction</code> property set to <code>row</code>. This property can also create a column by vertically stacking the children of a flex container.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of <code>column</code>.
-</section>
+The last two challenges used the `flex-direction` property set to `row`. This property can also create a column by vertically stacking the children of a flex container.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.
-    testString: assert($('#box-container').css('flex-direction') == 'column');
+Add the CSS property `flex-direction` to the `#box-container` element, and give it a value of `column`.
 
+# --hints--
+
+The `#box-container` element should have a `flex-direction` property set to column.
+
+```js
+assert($('#box-container').css('flex-direction') == 'column');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -59,14 +52,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -93,5 +79,3 @@ tests:
   <div id="box-2"></div>
 </div>
 ```
-
-</section>

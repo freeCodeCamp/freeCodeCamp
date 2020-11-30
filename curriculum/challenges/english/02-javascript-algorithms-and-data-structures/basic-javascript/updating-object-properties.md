@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
-For example, let's look at <code>ourDog</code>:
+
+For example, let's look at `ourDog`:
 
 ```js
 var ourDog = {
@@ -20,35 +21,35 @@ var ourDog = {
 };
 ```
 
-Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property:
-<code>ourDog.name = "Happy Camper";</code> or
-<code>ourDog["name"] = "Happy Camper";</code>
-Now when we evaluate <code>ourDog.name</code>, instead of getting "Camper", we'll get his new name, "Happy Camper".
-</section>
+Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property: `ourDog.name = "Happy Camper";` or `ourDog["name"] = "Happy Camper";` Now when we evaluate `ourDog.name`, instead of getting "Camper", we'll get his new name, "Happy Camper".
 
-## Instructions
-<section id='instructions'>
-Update the <code>myDog</code> object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Update the `myDog` object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.
 
-```yml
-tests:
-  - text: You should update <code>myDog</code>&apos;s <code>"name"</code> property to equal "Happy Coder".
-    testString: assert(/happy coder/gi.test(myDog.name));
-  - text: You should not edit the <code>myDog</code> definition.
-    testString: 'assert(/"name": "Coder"/.test(code));'
+# --hints--
 
+You should update `myDog`'s `"name"` property to equal "Happy Coder".
+
+```js
+assert(/happy coder/gi.test(myDog.name));
 ```
 
-</section>
+You should not edit the `myDog` definition.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/"name": "Coder"/.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myDog);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -60,27 +61,9 @@ var myDog = {
 };
 
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(z){return z;})(myDog);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myDog = {
@@ -91,5 +74,3 @@ var myDog = {
 };
 myDog.name = "Happy Coder";
 ```
-
-</section>

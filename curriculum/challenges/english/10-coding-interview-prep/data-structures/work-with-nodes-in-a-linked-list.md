@@ -5,35 +5,35 @@ challengeType: 1
 forumTopicId: 301721
 ---
 
-## Description
-<section id='description'>
-Another common data structure you'll run into in computer science is the <dfn>linked list</dfn>. A linked list is a linear collection of data elements, called 'nodes', each of which points to the next. Each <dfn>node</dfn> in a linked list contains two key pieces of information: the <code>element</code> itself, and a reference to the next <code>node</code>.
+# --description--
+
+Another common data structure you'll run into in computer science is the <dfn>linked list</dfn>. A linked list is a linear collection of data elements, called 'nodes', each of which points to the next. Each <dfn>node</dfn> in a linked list contains two key pieces of information: the `element` itself, and a reference to the next `node`.
+
 Imagine that you are in a conga line. You have your hands on the next person in the line, and the person behind you has their hands on you. You can see the person straight ahead of you, but they are blocking the view of the other people ahead in line. A node is just like a person in a conga line: they know who they are and they can only see the next person in line, but they are not aware of the other people ahead or behind them.
-</section>
 
-## Instructions
-<section id='instructions'>
-In our code editor, we've created two nodes, <code>Kitten</code> and <code>Puppy</code>, and we've manually connected the <code>Kitten</code> node to the <code>Puppy</code> node.
-Create a <code>Cat</code> and <code>Dog</code> node and manually add them to the line.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+In our code editor, we've created two nodes, `Kitten` and `Puppy`, and we've manually connected the `Kitten` node to the `Puppy` node.
 
-```yml
-tests:
-  - text: Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.
-    testString: assert(Puppy.next.element === "Cat");
-  - text: Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.
-    testString: assert(Cat.next.element === "Dog");
+Create a `Cat` and `Dog` node and manually add them to the line.
+
+# --hints--
+
+Your `Puppy` node should have a reference to a `Cat` node.
+
+```js
+assert(Puppy.next.element === 'Cat');
 ```
 
-</section>
+Your `Cat` node should have a reference to a `Dog` node.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(Cat.next.element === 'Dog');
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 var Node = function(element) {
@@ -45,18 +45,10 @@ var Puppy = new Node('Puppy');
 
 Kitten.next = Puppy;
 // Only change code below this line
-
-
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

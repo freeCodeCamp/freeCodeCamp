@@ -4,8 +4,7 @@ title: Part 141
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now when you hover a label, you can see the data for the different years.
 
@@ -13,33 +12,58 @@ Where you created the `text` elements for the x-axis labels, change the `font` t
 
 To do this, create a "d function" in the `font` value area and return the above sting if `d` equals `year`. Otherwise, return the string that is currently there (`10px verdana`). It's easiest to use a ternary operator for this.
 
-Here's a hint: 
+Here's a hint:
 
 ```js
 .style('font', d => d === year ? )
 ```
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
-</section>
+test-text
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: test-text
-    testString: assert(Object.values($('.dashboard svg g text')).filter(el => el.style && el.style.font.toLowerCase() === 'bold 10px verdana').length === 1);
-
+```js
+assert(
+  Object.values($('.dashboard svg g text')).filter(
+    (el) => el.style && el.style.font.toLowerCase() === 'bold 10px verdana'
+  ).length === 1
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -251,47 +275,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -502,5 +486,3 @@ tests:
   drawDashboard(2020);
 </script>
 ```
-
-</section>

@@ -5,43 +5,56 @@ challengeType: 6
 forumTopicId: 18321
 ---
 
-## Description
-<section id='description'>
-Every HTML element has a <code>parent</code> element from which it <code>inherits</code> properties.
-For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class="container-fluid"&#62</code>, which itself has the parent <code>body</code>.
-jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.
-Here's an example of how you would use the <code>parent()</code> function if you wanted to give the parent element of the <code>left-well</code> element a background color of blue:
-<code>$("#left-well").parent().css("background-color", "blue")</code>
-Give the parent of the <code>#target1</code> element a background-color of red.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Every HTML element has a `parent` element from which it `inherits` properties.
 
-</section>
+For example, your `jQuery Playground` `h3` element has the parent element of `<div class="container-fluid">`, which itself has the parent `body`.
 
-## Tests
-<section id='tests'>
+jQuery has a function called `parent()` that allows you to access the parent of whichever element you've selected.
 
-```yml
-tests:
-  - text: Your <code>left-well</code> element should have a red background.
-    testString: assert($("#left-well").css("background-color") === 'red' || $("#left-well").css("background-color") === 'rgb(255, 0, 0)' || $("#left-well").css("background-color").toLowerCase() === '#ff0000' || $("#left-well").css("background-color").toLowerCase() === '#f00');
-  - text: You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.
-    testString: assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
-  - text: The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.
-    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")\s*?\)\s*?\.parent/gi));
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(code.match(/<div class="well" id="left-well">/g));
+Here's an example of how you would use the `parent()` function if you wanted to give the parent element of the `left-well` element a background color of blue:
 
+`$("#left-well").parent().css("background-color", "blue")`
+
+Give the parent of the `#target1` element a background-color of red.
+
+# --hints--
+
+Your `left-well` element should have a red background.
+
+```js
+assert(
+  $('#left-well').css('background-color') === 'red' ||
+    $('#left-well').css('background-color') === 'rgb(255, 0, 0)' ||
+    $('#left-well').css('background-color').toLowerCase() === '#ff0000' ||
+    $('#left-well').css('background-color').toLowerCase() === '#f00'
+);
 ```
 
-</section>
+You should use the `.parent()` function to modify this element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
+```
 
-<div id='html-seed'>
+The `.parent()` method should be called on the `#target1` element.
+
+```js
+assert(
+  code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")\s*?\)\s*?\.parent/gi)
+);
+```
+
+You should only use jQuery to add these classes to the element.
+
+```js
+assert(code.match(/<div class="well" id="left-well">/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -82,14 +95,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -129,5 +135,3 @@ tests:
   </div>
 </body>
 ```
-
-</section>

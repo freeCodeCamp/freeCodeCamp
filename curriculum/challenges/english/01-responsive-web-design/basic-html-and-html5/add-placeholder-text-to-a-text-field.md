@@ -6,40 +6,55 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 forumTopicId: 16647
 ---
 
-## Description
-<section id='description'>
-Placeholder text is what is displayed in your <code>input</code> element before your user has inputted anything.
+# --description--
+
+Placeholder text is what is displayed in your `input` element before your user has inputted anything.
+
 You can create placeholder text like so:
-<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code><br>
-<strong>Note:</strong> Remember that <code>input</code> elements are self-closing.
-</section>
 
-## Instructions
-<section id='instructions'>
-Set the <code>placeholder</code> value of your text <code>input</code> to "cat photo URL".
-</section>
+`<input type="text" placeholder="this is placeholder text">`  
 
-## Tests
-<section id='tests'>
+**Note:** Remember that `input` elements are self-closing.
 
-```yml
-tests:
-  - text: You should add a <code>placeholder</code> attribute to the existing text <code>input</code> element.
-    testString: assert($("input[placeholder]").length > 0);
-  - text: You should set the value of your placeholder attribute to <code>cat photo URL</code>.
-    testString: assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/cat\s+photo\s+URL/gi));
-  - text: The finished <code>input</code> element should not have a closing tag.
-    testString: assert(!code.match(/<input.*\/?>.*<\/input>/gi));
-  - text: The finished <code>input</code> element should have valid syntax.
-    testString: assert($("input[type=text]").length > 0);
+# --instructions--
+
+Set the `placeholder` value of your text `input` to "cat photo URL".
+
+# --hints--
+
+You should add a `placeholder` attribute to the existing text `input` element.
+
+```js
+assert($('input[placeholder]').length > 0);
 ```
 
-</section>
+You should set the value of your placeholder attribute to `cat photo URL`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('input') &&
+    $('input').attr('placeholder') &&
+    $('input')
+      .attr('placeholder')
+      .match(/cat\s+photo\s+URL/gi)
+);
+```
 
-<div id='html-seed'>
+The finished `input` element should not have a closing tag.
+
+```js
+assert(!code.match(/<input.*\/?>.*<\/input>/gi));
+```
+
+The finished `input` element should have valid syntax.
+
+```js
+assert($('input[type=text]').length > 0);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -64,14 +79,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -95,5 +103,3 @@ tests:
   <input type="text" placeholder="cat photo URL">
 </main>
 ```
-
-</section>

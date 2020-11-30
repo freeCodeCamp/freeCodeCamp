@@ -1,12 +1,11 @@
 ---
 id: 5900f3861000cf542c50fe99
-challengeType: 5
 title: 'Problem 26: Reciprocal cycles'
+challengeType: 5
 forumTopicId: 301908
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 A unit fraction contains 1 in the numerator. The decimal representation of the unit fractions with denominators 2 to 10 are given:
 
@@ -14,39 +13,43 @@ A unit fraction contains 1 in the numerator. The decimal representation of the u
 
 Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that <sup>1</sup>/<sub>7</sub> has a 6-digit recurring cycle.
 
-Find the value of <var>d</var> < <var>`n`</var> for which <sup>1</sup>/<sub>d</sub> contains the longest recurring cycle in its decimal fraction part.
+Find the value of `d` &lt; `n` for which <sup>1</sup>/<sub>d</sub> contains the longest recurring cycle in its decimal fraction part.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`reciprocalCycles(700)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>reciprocalCycles(700)</code> should return a number.
-    testString: assert(typeof reciprocalCycles(700) === 'number');
-  - text: <code>reciprocalCycles(700)</code> should return 659.
-    testString: assert(reciprocalCycles(700) == 659);
-  - text: <code>reciprocalCycles(800)</code> should return 743.
-    testString: assert(reciprocalCycles(800) == 743);
-  - text: <code>reciprocalCycles(900)</code> should return 887.
-    testString: assert(reciprocalCycles(900) == 887);
-  - text: <code>reciprocalCycles(1000)</code> should return 983.
-    testString: assert(reciprocalCycles(1000) == 983);
-
+```js
+assert(typeof reciprocalCycles(700) === 'number');
 ```
 
-</section>
+`reciprocalCycles(700)` should return 659.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(reciprocalCycles(700) == 659);
+```
 
-<div id='js-seed'>
+`reciprocalCycles(800)` should return 743.
+
+```js
+assert(reciprocalCycles(800) == 743);
+```
+
+`reciprocalCycles(900)` should return 887.
+
+```js
+assert(reciprocalCycles(900) == 887);
+```
+
+`reciprocalCycles(1000)` should return 983.
+
+```js
+assert(reciprocalCycles(1000) == 983);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function reciprocalCycles(n) {
@@ -57,17 +60,8 @@ function reciprocalCycles(n) {
 reciprocalCycles(1000);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

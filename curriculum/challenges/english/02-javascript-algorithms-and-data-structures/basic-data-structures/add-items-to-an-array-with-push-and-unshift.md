@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301151
 ---
 
-## Description
-<section id='description'>
-An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time; in other words, arrays are <dfn>mutable</dfn>. In this challenge, we will look at two methods with which we can programmatically modify an array: <code>Array.push()</code> and <code>Array.unshift()</code>.
-Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the <code>push()</code> method adds elements to the end of an array, and <code>unshift()</code> adds elements to the beginning. Consider the following:
+# --description--
+
+An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time; in other words, arrays are <dfn>mutable</dfn>. In this challenge, we will look at two methods with which we can programmatically modify an array: `Array.push()` and `Array.unshift()`.
+
+Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the `push()` method adds elements to the end of an array, and `unshift()` adds elements to the beginning. Consider the following:
 
 ```js
 let twentyThree = 'XXIII';
@@ -21,33 +22,43 @@ romanNumerals.push(twentyThree);
 // now equals ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']Notice that we can also pass variables, which allows us even greater flexibility in dynamically modifying our array's data.
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-We have defined a function, <code>mixedNumbers</code>, which we are passing an array as an argument. Modify the function by using <code>push()</code> and <code>unshift()</code> to add <code>'I', 2, 'three'</code> to the beginning of the array and <code>7, 'VIII', 9</code> to the end so that the returned array contains representations of the numbers 1-9 in order.
-</section>
+We have defined a function, `mixedNumbers`, which we are passing an array as an argument. Modify the function by using `push()` and `unshift()` to add `'I', 2, 'three'` to the beginning of the array and `7, 'VIII', 9` to the end so that the returned array contains representations of the numbers 1-9 in order.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>mixedNumbers(["IV", 5, "six"])</code> should now return <code>["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]</code>
-    testString: assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', 9]);
-  - text: The <code>mixedNumbers</code> function should utilize the <code>push()</code> method
-    testString: assert(mixedNumbers.toString().match(/\.push/));
-  - text: The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method
-    testString: assert(mixedNumbers.toString().match(/\.unshift/));
+`mixedNumbers(["IV", 5, "six"])` should now return `["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]`
 
+```js
+assert.deepEqual(mixedNumbers(['IV', 5, 'six']), [
+  'I',
+  2,
+  'three',
+  'IV',
+  5,
+  'six',
+  7,
+  'VIII',
+  9
+]);
 ```
 
-</section>
+The `mixedNumbers` function should utilize the `push()` method
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(mixedNumbers.toString().match(/\.push/));
+```
 
-<div id='js-seed'>
+The `mixedNumbers` function should utilize the `unshift()` method
+
+```js
+assert(mixedNumbers.toString().match(/\.unshift/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function mixedNumbers(arr) {
@@ -60,14 +71,7 @@ function mixedNumbers(arr) {
 console.log(mixedNumbers(['IV', 5, 'six']));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function mixedNumbers(arr) {
@@ -76,5 +80,3 @@ function mixedNumbers(arr) {
   return arr;
 }
 ```
-
-</section>

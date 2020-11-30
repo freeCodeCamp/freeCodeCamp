@@ -4,38 +4,55 @@ title: Part 39
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Placeholder text is used to give people a hint about what kind of information to enter into an input. For example, `<input type="text" placeholder="Email address">`.
 
-Add the placeholder text `cat photo URL` to your `input` element.  
+Add the placeholder text `cat photo URL` to your `input` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
 
-```yml
-tests:
-  - text: You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
-    testString: assert( $('input').length );
-  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
-    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
-  - text: Your `input` element does not have a `placeholder` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( $('input')[0].hasAttribute('placeholder') );
-  - text: Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input')[0].getAttribute('placeholder').replace(/\s+/g, ' ').match(/^cat photo URL$/i) );
-  - text: Although you have set the `input` element's `placeholder` attribute to `cat photo URL`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*input\s+placeholder\s*=\s*cat\s+photo\s+url/i.test(code) );
-
+```js
+assert($('input').length);
 ```
 
-</section>
+Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(
+  $('form')[0].children.length === 1 &&
+    $('form')[0].innerText.trim().length === 0
+);
+```
+
+Your `input` element does not have a `placeholder` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+
+```js
+assert($('input')[0].hasAttribute('placeholder'));
+```
+
+Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+assert(
+  $('input')[0]
+    .getAttribute('placeholder')
+    .replace(/\s+/g, ' ')
+    .match(/^cat photo URL$/i)
+);
+```
+
+Although you have set the `input` element's `placeholder` attribute to `cat photo URL`, it is recommended to always surround the value of an attribute with quotation marks.
+
+```js
+assert(!/\<\s*input\s+placeholder\s*=\s*cat\s+photo\s+url/i.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -74,9 +91,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--  
+--fcc-editable-region--
           <input type="text" name="catphotourl">
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </section>
     </main>
@@ -84,5 +101,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

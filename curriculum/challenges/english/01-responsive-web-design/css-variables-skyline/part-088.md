@@ -4,31 +4,29 @@ title: Part 88
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 For the next building, nest four `div` elements within `fb3` with classes of `fb3a`, `fb3b`, `fb3a` again, and `fb3b` again, in that order. This building will have four sections and the top two will be almost the same as the bottom two.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb3 = $(".fb3").children("div"); console.log(fb3); assert(fb3.length === 4 && fb3[0] === $("div.fb3a")[0] && fb3[1] === $("div.fb3b")[0] && fb3[2] === $("div.fb3a")[1] && fb3[3] === $("div.fb3b")[1]);
-
+```js
+const fb3 = $('.fb3').children('div');
+console.log(fb3);
+assert(
+  fb3.length === 4 &&
+    fb3[0] === $('div.fb3a')[0] &&
+    fb3[1] === $('div.fb3b')[0] &&
+    fb3[2] === $('div.fb3a')[1] &&
+    fb3[3] === $('div.fb3b')[1]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -325,12 +323,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -631,5 +624,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

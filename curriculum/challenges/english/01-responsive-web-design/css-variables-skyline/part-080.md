@@ -4,31 +4,25 @@ title: Part 80
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 When you make the left and right borders bigger, the border on the bottom will expand to be the width of the combined left and right border widths. Add `2vw solid transparent;` as the value of the `border-left` and `border-right` properties of `fb1a`. They will be invisible, but it will make the border on the bottom `4vw` wide.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb1a = code.match(/\.fb1a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-left\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a) && /border-right\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a));
-
+```js
+const fb1a = code.match(/\.fb1a\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /border-left\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a) &&
+    /border-right\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -298,12 +292,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -574,5 +563,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

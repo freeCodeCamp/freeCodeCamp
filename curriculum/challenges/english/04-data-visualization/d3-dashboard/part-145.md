@@ -4,33 +4,63 @@ title: Part 145
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Change the `fill` of the `tumblr-circles` and `instagram-circles` to use a "d function" that returns their respective color variables when `d.year` equals `year`, leave it `white` when they don't. This is similar to how you set the fill of the Twitter circles.
 
 Then, all of the circles will get filled in for the currently displayed year.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const circles = Object.values($('.dashboard svg circle')); assert(circles.filter(el => el.getAttribute && (el.getAttribute('fill') === '#7cd9d1' || el.getAttribute('fill') === '#f6dd71' || el.getAttribute('fill') === '#fd9b98')).length === 3);
-
+```js
+const circles = Object.values($('.dashboard svg circle'));
+assert(
+  circles.filter(
+    (el) =>
+      el.getAttribute &&
+      (el.getAttribute('fill') === '#7cd9d1' ||
+        el.getAttribute('fill') === '#f6dd71' ||
+        el.getAttribute('fill') === '#fd9b98')
+  ).length === 3
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -247,47 +277,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -501,5 +491,3 @@ tests:
   drawDashboard(2020);
 </script>
 ```
-
-</section>

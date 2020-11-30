@@ -4,66 +4,23 @@ title: Part 13
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Make a comment to describe what the next few lines of code will do. Comments can be written with either two forward-slashes `//` or with a multi-line sequence `/* */`. For example, here is a single line comment that says "hello world": `// hello world`.
 
 Write a single line comment that says "initialize buttons".
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/\/\/\s*[iI]nitialize buttons/.test(code));
-
+```js
+assert(/\/\/\s*[iI]nitialize buttons/.test(code));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-let xp = 0;
-let health = 100;
-let gold = 50;
-let currentWeapon = 0;
-let fighting;
-let monsterHealth;
-let inventory = ["stick"];
-
-const button1 = document.querySelector('#button1');
-const button2 = document.querySelector("#button2");
-const button3 = document.querySelector("#button3");
-const text = document.querySelector("#text");
-const xpText = document.querySelector("#xpText");
-const healthText = document.querySelector("#healthText");
-const goldText = document.querySelector("#goldText");
-const monsterStats = document.querySelector("#monsterStats");
-const monsterNameText = document.querySelector("#monsterName");
-const monsterHealthText = document.querySelector("#monsterHealth");
-  
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -129,25 +86,40 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+let xp = 0;
+let health = 100;
+let gold = 50;
+let currentWeapon = 0;
+let fighting;
+let monsterHealth;
+let inventory = ["stick"];
 
-</section>
+const button1 = document.querySelector('#button1');
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+const text = document.querySelector("#text");
+const xpText = document.querySelector("#xpText");
+const healthText = document.querySelector("#healthText");
+const goldText = document.querySelector("#goldText");
+const monsterStats = document.querySelector("#monsterStats");
+const monsterNameText = document.querySelector("#monsterName");
+const monsterHealthText = document.querySelector("#monsterHealth");
+  
+</script>
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -173,5 +145,3 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 // initialize buttons
 </script>
 ```
-
-</section>

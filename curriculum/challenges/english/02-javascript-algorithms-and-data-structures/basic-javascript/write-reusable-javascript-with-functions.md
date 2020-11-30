@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.
+
 Here's an example of a function:
 
 ```js
@@ -17,47 +18,35 @@ function functionName() {
 }
 ```
 
-You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:
-<code>functionName();</code>
-Each time the function is called it will print out the message <code>"Hello World"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.
-</section>
+You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this: `functionName();` Each time the function is called it will print out the message `"Hello World"` on the dev console. All of the code between the curly braces will be executed every time the function is called.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 <ol><li>Create a function called <code>reusableFunction</code> which prints <code>"Hi World"</code> to the dev console.</li><li>Call the function.</li></ol>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>reusableFunction</code> should be a function.
-    testString: assert(typeof reusableFunction === 'function');
-  - text: <code>reusableFunction</code> should output "Hi World" to the dev console.
-    testString: assert(hiWorldWasLogged);
-  - text: You should call <code>reusableFunction</code> after you define it.
-    testString: assert(/^\s*reusableFunction\(\)\s*/m.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`reusableFunction` should be a function.
 
 ```js
-
-
-
+assert(typeof reusableFunction === 'function');
 ```
 
-</div>
+`reusableFunction` should output "Hi World" to the dev console.
 
-### Before Test
-<div id='js-setup'>
+```js
+assert(hiWorldWasLogged);
+```
+
+You should call `reusableFunction` after you define it.
+
+```js
+assert(/^\s*reusableFunction\(\)\s*/m.test(code));
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 var logOutput = "";
@@ -84,10 +73,7 @@ function uncapture() {
 capture();
 ```
 
-</div>
-
-### After Test
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 uncapture();
@@ -99,13 +85,12 @@ if (typeof reusableFunction !== "function") {
 }
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function reusableFunction() {
@@ -113,5 +98,3 @@ function reusableFunction() {
 }
 reusableFunction();
 ```
-
-</section>

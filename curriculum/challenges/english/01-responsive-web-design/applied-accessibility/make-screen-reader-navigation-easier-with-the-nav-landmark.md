@@ -6,39 +6,48 @@ videoUrl: 'https://scrimba.com/c/czVwWSv'
 forumTopicId: 301024
 ---
 
-## Description
-<section id='description'>
-The <code>nav</code> element is another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page.
-If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a <code>nav</code> tag as well. Using a <code>footer</code> (covered in the next challenge) is sufficient.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Camper Cat included navigation links at the top of his training page, but wrapped them in a <code>div</code>. Change the <code>div</code> to a <code>nav</code> tag to improve the accessibility on his page.
-</section>
+The `nav` element is another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page.
 
-## Tests
-<section id='tests'>
+If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a `nav` tag as well. Using a `footer` (covered in the next challenge) is sufficient.
 
-```yml
-tests:
-  - text: Your code should have one <code>nav</code> tag.
-    testString: assert($('nav').length == 1);
-  - text: Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.
-    testString: assert($('nav').children('ul').length == 1);
-  - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0);
-  - text: Your <code>nav</code> element should have a closing tag.
-    testString: assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length);
+# --instructions--
 
+Camper Cat included navigation links at the top of his training page, but wrapped them in a `div`. Change the `div` to a `nav` tag to improve the accessibility on his page.
+
+# --hints--
+
+Your code should have one `nav` tag.
+
+```js
+assert($('nav').length == 1);
 ```
 
-</section>
+Your `nav` tags should wrap around the `ul` and its list items.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('nav').children('ul').length == 1);
+```
 
-<div id='html-seed'>
+Your code should not have any `div` tags.
+
+```js
+assert($('div').length == 0);
+```
+
+Your `nav` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/nav>/g) &&
+    code.match(/<\/nav>/g).length === code.match(/<nav>/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -74,14 +83,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -116,5 +118,3 @@ tests:
   </main>
 </body>
 ```
-
-</section>

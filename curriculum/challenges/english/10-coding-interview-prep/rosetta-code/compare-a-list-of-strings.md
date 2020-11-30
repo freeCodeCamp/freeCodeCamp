@@ -1,62 +1,102 @@
 ---
-title: Compare a list of strings
 id: 596e457071c35c882915b3e4
+title: Compare a list of strings
 challengeType: 5
 forumTopicId: 302235
 ---
 
-## Description
-<section id='description'>
-Given a <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" title="wp: List_(abstract_data_type)" target="_blank">list</a> of arbitrarily many strings, implement a function for each of the following conditions:
+# --description--
+
+Given a [list](https://en.wikipedia.org/wiki/List_(abstract_data_type) "wp: List\_(abstract_data_type)") of arbitrarily many strings, implement a function for each of the following conditions:
+
 <ul>
   <li>test if they are all lexically equal</li>
   <li>test if every string is lexically less than the one after it  (i.e. whether the list is in strict ascending order)</li>
 </ul>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`allEqual` should be a function.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>allEqual</code> should be a function.
-    testString: assert(typeof allEqual === 'function');
-  - text: <code>azSorted</code> should be a function.
-    testString: assert(typeof azSorted === 'function');
-  - text: <code>allEqual(["AA", "AA", "AA", "AA"])</code> should return true.
-    testString: assert(allEqual(testCases[0]));
-  - text: <code>azSorted(["AA", "AA", "AA", "AA"])</code> should return false.
-    testString: assert(!azSorted(testCases[0]));
-  - text: <code>allEqual(["AA", "ACB", "BB", "CC"])</code> should return false.
-    testString: assert(!allEqual(testCases[1]));
-  - text: <code>azSorted(["AA", "ACB", "BB", "CC"])</code> should return true.
-    testString: assert(azSorted(testCases[1]));
-  - text: <code>allEqual([])</code> should return true.
-    testString: assert(allEqual(testCases[2]));
-  - text: <code>azSorted([])</code> should return true.
-    testString: assert(azSorted(testCases[2]));
-  - text: <code>allEqual(["AA"])</code> should return true.
-    testString: assert(allEqual(testCases[3]));
-  - text: <code>azSorted(["AA"])</code> should return true.
-    testString: assert(azSorted(testCases[3]));
-  - text: <code>allEqual(["BB", "AA"])</code> should return false.
-    testString: assert(!allEqual(testCases[4]));
-  - text: <code>azSorted(["BB", "AA"])</code> should return false.
-    testString: assert(!azSorted(testCases[4]));
-
+```js
+assert(typeof allEqual === 'function');
 ```
 
-</section>
+`azSorted` should be a function.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof azSorted === 'function');
+```
 
-<div id='js-seed'>
+`allEqual(["AA", "AA", "AA", "AA"])` should return true.
+
+```js
+assert(allEqual(testCases[0]));
+```
+
+`azSorted(["AA", "AA", "AA", "AA"])` should return false.
+
+```js
+assert(!azSorted(testCases[0]));
+```
+
+`allEqual(["AA", "ACB", "BB", "CC"])` should return false.
+
+```js
+assert(!allEqual(testCases[1]));
+```
+
+`azSorted(["AA", "ACB", "BB", "CC"])` should return true.
+
+```js
+assert(azSorted(testCases[1]));
+```
+
+`allEqual([])` should return true.
+
+```js
+assert(allEqual(testCases[2]));
+```
+
+`azSorted([])` should return true.
+
+```js
+assert(azSorted(testCases[2]));
+```
+
+`allEqual(["AA"])` should return true.
+
+```js
+assert(allEqual(testCases[3]));
+```
+
+`azSorted(["AA"])` should return true.
+
+```js
+assert(azSorted(testCases[3]));
+```
+
+`allEqual(["BB", "AA"])` should return false.
+
+```js
+assert(!allEqual(testCases[4]));
+```
+
+`azSorted(["BB", "AA"])` should return false.
+
+```js
+assert(!azSorted(testCases[4]));
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+const testCases = [['AA', 'AA', 'AA', 'AA'], ['AA', 'ACB', 'BB', 'CC'], [], ['AA'], ['BB', 'AA']];
+```
+
+## --seed-contents--
 
 ```js
 function allEqual(arr) {
@@ -70,23 +110,7 @@ function azSorted(arr) {
 }
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const testCases = [['AA', 'AA', 'AA', 'AA'], ['AA', 'ACB', 'BB', 'CC'], [], ['AA'], ['BB', 'AA']];
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function allEqual(a) {
@@ -104,7 +128,4 @@ function azSorted(a) {
     out = out && (a[i - 1] < a[i]);
   } return out;
 }
-
 ```
-
-</section>

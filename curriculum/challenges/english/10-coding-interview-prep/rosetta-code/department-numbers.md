@@ -1,25 +1,28 @@
 ---
-title: Department Numbers
 id: 59f40b17e79dbf1ab720ed7a
+title: Department Numbers
 challengeType: 5
 forumTopicId: 302249
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 There is a highly organized city that has decided to assign a number to each of their departments:
+
 <ul>
   <li>Police department</li>
   <li>Sanitation department</li>
   <li>Fire department</li>
 </ul>
-Each department can have a number between 1 and 7  (inclusive).
-The three department numbers are to be unique (different from each other) and must add up to the number 12.
-The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
-</section>
 
-## Instructions
-<section id='instructions'>
+Each department can have a number between 1 and 7 (inclusive).
+
+The three department numbers are to be unique (different from each other) and must add up to the number 12.
+
+The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
+
+# --instructions--
+
 Write a program which outputs all valid combinations as an array.
 
 ```js
@@ -30,43 +33,35 @@ Write a program which outputs all valid combinations as an array.
 [6, 4, 2] [6, 5, 1]
 ```
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>combinations</code> should be a function.
-    testString: assert(typeof combinations === 'function');
-  - text: <code>combinations([1, 2, 3], 6)</code> should return an Array.
-    testString: assert(Array.isArray(combinations([1, 2, 3], 6)));
-  - text: <code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.
-    testString: assert(combinations(nums, total).length === len);
-  - text: <code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.
-    testString: assert.deepEqual(combinations(nums, total), result);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`combinations` should be a function.
 
 ```js
-function combinations(possibleNumbers, total) {
-
-  return true;
-}
+assert(typeof combinations === 'function');
 ```
 
-</div>
+`combinations([1, 2, 3], 6)` should return an Array.
 
+```js
+assert(Array.isArray(combinations([1, 2, 3], 6)));
+```
 
-### After Test
-<div id='js-teardown'>
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return an array of length 14.
+
+```js
+assert(combinations(nums, total).length === len);
+```
+
+`combinations([1, 2, 3, 4, 5, 6, 7], 12)` should return all valid combinations.
+
+```js
+assert.deepEqual(combinations(nums, total), result);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const nums = [1, 2, 3, 4, 5, 6, 7];
@@ -90,13 +85,16 @@ const result = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function combinations(possibleNumbers, total) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 function combinations(possibleNumbers, total) {
@@ -124,7 +122,4 @@ function combinations(possibleNumbers, total) {
   }
   return allCombinations;
 }
-
 ```
-
-</section>

@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
 ---
 
-## Description
-<section id='description'>
-Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a <code>switch</code> statement or an <code>if/else</code> chain. This is most useful when you know that your input data is limited to a certain range.
+# --description--
+
+Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a `switch` statement or an `if/else` chain. This is most useful when you know that your input data is limited to a certain range.
+
 Here is an example of a simple reverse alphabet lookup:
 
 ```js
@@ -29,45 +30,71 @@ var value = 2;
 alpha[value]; // "Y"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Convert the switch statement into an object called <code>lookup</code>. Use it to look up <code>val</code> and assign the associated string to the <code>result</code> variable.
-</section>
+Convert the switch statement into an object called `lookup`. Use it to look up `val` and assign the associated string to the `result` variable.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>phoneticLookup("alpha")</code> should equal <code>"Adams"</code>
-    testString: assert(phoneticLookup("alpha") === 'Adams');
-  - text: <code>phoneticLookup("bravo")</code> should equal <code>"Boston"</code>
-    testString: assert(phoneticLookup("bravo") === 'Boston');
-  - text: <code>phoneticLookup("charlie")</code> should equal <code>"Chicago"</code>
-    testString: assert(phoneticLookup("charlie") === 'Chicago');
-  - text: <code>phoneticLookup("delta")</code> should equal <code>"Denver"</code>
-    testString: assert(phoneticLookup("delta") === 'Denver');
-  - text: <code>phoneticLookup("echo")</code> should equal <code>"Easy"</code>
-    testString: assert(phoneticLookup("echo") === 'Easy');
-  - text: <code>phoneticLookup("foxtrot")</code> should equal <code>"Frank"</code>
-    testString: assert(phoneticLookup("foxtrot") === 'Frank');
-  - text: <code>phoneticLookup("")</code> should equal <code>undefined</code>
-    testString: assert(typeof phoneticLookup("") === 'undefined');
-  - text: You should not modify the <code>return</code> statement
-    testString: assert(code.match(/return\sresult;/));
-  - text: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements
-    testString: assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')));
+`phoneticLookup("alpha")` should equal `"Adams"`
 
+```js
+assert(phoneticLookup('alpha') === 'Adams');
 ```
 
-</section>
+`phoneticLookup("bravo")` should equal `"Boston"`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(phoneticLookup('bravo') === 'Boston');
+```
 
-<div id='js-seed'>
+`phoneticLookup("charlie")` should equal `"Chicago"`
+
+```js
+assert(phoneticLookup('charlie') === 'Chicago');
+```
+
+`phoneticLookup("delta")` should equal `"Denver"`
+
+```js
+assert(phoneticLookup('delta') === 'Denver');
+```
+
+`phoneticLookup("echo")` should equal `"Easy"`
+
+```js
+assert(phoneticLookup('echo') === 'Easy');
+```
+
+`phoneticLookup("foxtrot")` should equal `"Frank"`
+
+```js
+assert(phoneticLookup('foxtrot') === 'Frank');
+```
+
+`phoneticLookup("")` should equal `undefined`
+
+```js
+assert(typeof phoneticLookup('') === 'undefined');
+```
+
+You should not modify the `return` statement
+
+```js
+assert(code.match(/return\sresult;/));
+```
+
+You should not use `case`, `switch`, or `if` statements
+
+```js
+assert(
+  !/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g, ''))
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -102,15 +129,7 @@ function phoneticLookup(val) {
 phoneticLookup("charlie");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function phoneticLookup(val) {
@@ -130,5 +149,3 @@ function phoneticLookup(val) {
   return result;
 }
 ```
-
-</section>

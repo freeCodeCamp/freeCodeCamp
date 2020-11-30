@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
 ---
 
-## Description
-<section id='description'>
-Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (<code>+=</code>) operator.
+# --description--
+
+Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (`+=`) operator.
 
 Example:
 
@@ -19,45 +19,27 @@ ourStr += anAdjective;
 // ourStr is now "freeCodeCamp is awesome!"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Set <code>someAdjective</code> to a string of at least 3 characters and append it to <code>myStr</code> using the <code>+=</code> operator.
-</section>
+Set `someAdjective` to a string of at least 3 characters and append it to `myStr` using the `+=` operator.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>someAdjective</code> should be set to a string at least 3 characters long.
-    testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
-  - text: You should append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator.
-    testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`someAdjective` should be set to a string at least 3 characters long.
 
 ```js
-// Change code below this line
-
-var someAdjective;
-var myStr = "Learning to code is ";
-
+assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
 ```
 
-</div>
+You should append `someAdjective` to `myStr` using the `+=` operator.
 
+```js
+assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(){
@@ -76,18 +58,19 @@ var myStr = "Learning to code is ";
 })();
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Change code below this line
 
-## Solution
-<section id='solution'>
+var someAdjective;
+var myStr = "Learning to code is ";
+```
 
+# --solutions--
 
 ```js
 var someAdjective = "neat";
 var myStr = "Learning to code is ";
 myStr += someAdjective;
 ```
-
-</section>

@@ -4,57 +4,21 @@ title: Part 15
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Since eventually we'll be adding all of the meal calories in the `total` array, explicitly convert `meal.value` into a number by wrapping it in the `Number()` function.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/Number\(meal\.value\)\;?/) );
+```js
+assert(code.replace(/\s/g, '').match(/Number\(meal\.value\)\;?/));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-    const total = Array.from(
-      document.getElementsByClassName('cal-control')
-    ).map(function(meal) {
-      return meal.value;
-    });
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -114,24 +78,31 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(
+      document.getElementsByClassName('cal-control')
+    ).map(function(meal) {
+      return meal.value;
+    });
+  }
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -147,5 +118,3 @@ tests:
   }
 </script>
 ```
-
-</section>

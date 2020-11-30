@@ -1,12 +1,11 @@
 ---
 id: 5900f3bb1000cf542c50fece
-challengeType: 5
 title: 'Problem 79: Passcode derivation'
+challengeType: 5
 forumTopicId: 302192
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was 531278, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: 317.
 
@@ -14,31 +13,23 @@ The array, `keylog`, contains fifty successful login attempts.
 
 Given that the three characters are always asked for in order, analyze the array so as to determine the shortest possible secret passcode of unknown length.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`passcodeDerivation(keylog)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>passcodeDerivation(keylog)</code> should return a number.
-    testString: assert(typeof passcodeDerivation(keylog) === 'number');
-  - text: <code>passcodeDerivation(keylog)</code> should return 73162890.
-    testString: assert.strictEqual(passcodeDerivation(keylog), 73162890);
-
+```js
+assert(typeof passcodeDerivation(keylog) === 'number');
 ```
 
-</section>
+`passcodeDerivation(keylog)` should return 73162890.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(passcodeDerivation(keylog), 73162890);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function passcodeDerivation(arr) {
@@ -55,17 +46,8 @@ const keylog = [
 passcodeDerivation(keylog);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

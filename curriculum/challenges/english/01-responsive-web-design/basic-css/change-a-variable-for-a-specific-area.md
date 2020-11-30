@@ -6,33 +6,29 @@ videoUrl: 'https://scrimba.com/c/cdRwbuW'
 forumTopicId: 301085
 ---
 
-## Description
-<section id='description'>
-When you create your variables in <code>:root</code> they will set the value of that variable for the whole page.
+# --description--
+
+When you create your variables in `:root` they will set the value of that variable for the whole page.
+
 You can then over-write these variables by setting them again within a specific element.
-</section>
 
-## Instructions
-<section id='instructions'>
-Change the value of <code>--penguin-belly</code> to <code>white</code> in the <code>penguin</code> class.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Change the value of `--penguin-belly` to `white` in the `penguin` class.
 
-```yml
-tests:
-  - text: The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
+# --hints--
 
+The `penguin` class should reassign the `--penguin-belly` variable to `white`.
+
+```js
+assert(
+  code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -239,20 +235,10 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>
 .penguin {--penguin-belly: white;}
 </style>
 ```
-
-</section>

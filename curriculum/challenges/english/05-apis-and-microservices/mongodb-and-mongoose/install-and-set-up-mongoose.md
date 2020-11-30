@@ -5,17 +5,11 @@ challengeType: 2
 forumTopicId: 301540
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 In this challenge, you will import the required projects, and connect to your Atlas database.
 
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Add `mongodb` and `mongoose` to the project’s `package.json`. Then, require mongoose as `mongoose` in `myApp.js`. Store your MongoDB Atlas database URI in a private `.env` file as `MONGO_URI`. Surround the the URI with single or double quotes, and make sure no space exists between both the variable and the `=`, and the value and `=`. Connect to the database using the following syntax:
 
@@ -23,44 +17,55 @@ Add `mongodb` and `mongoose` to the project’s `package.json`. Then, require mo
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });
 ```
 
-</section>
+# --hints--
 
-## Tests
+"mongodb" dependency should be in package.json
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: '"mongodb" dependency should be in package.json'
-    testString: |
-      getUserInput => $.get(getUserInput('url') + '/_api/file/package.json').then(data => {
-        var packJson = JSON.parse(data);
-        assert.property(packJson.dependencies, 'mongodb');
-        }, xhr => { throw new Error(xhr.responseText); })
-  - text: '"mongoose" dependency should be in package.json'
-    testString: |
-      getUserInput => $.get(getUserInput('url') + '/_api/file/package.json').then(data => {
-        var packJson = JSON.parse(data);
-        assert.property(packJson.dependencies, 'mongoose');
-        }, xhr => { throw new Error(xhr.responseText); })
-  - text: '"mongoose" should be connected to a database'
-    testString: |
-      getUserInput => $.get(getUserInput('url') + '/_api/is-mongoose-ok').then(data => {
-        assert.isTrue(data.isMongooseOk, 'mongoose is not connected')
-        }, xhr => { throw new Error(xhr.responseText); })
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/file/package.json').then(
+    (data) => {
+      var packJson = JSON.parse(data);
+      assert.property(packJson.dependencies, 'mongodb');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+"mongoose" dependency should be in package.json
 
-## Challenge Seed
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/file/package.json').then(
+    (data) => {
+      var packJson = JSON.parse(data);
+      assert.property(packJson.dependencies, 'mongoose');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-<section id='challengeSeed'>
+"mongoose" should be connected to a database
 
-</section>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/is-mongoose-ok').then(
+    (data) => {
+      assert.isTrue(data.isMongooseOk, 'mongoose is not connected');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-## Solution
+# --seed--
 
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -69,5 +74,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

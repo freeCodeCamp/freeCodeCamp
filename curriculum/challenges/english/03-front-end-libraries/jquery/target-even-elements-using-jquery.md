@@ -1,46 +1,54 @@
 ---
 id: bad87fee1348bd9aed008826
 title: Target Even Elements Using jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18318
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
-You can also target elements based on their positions using <code>:odd</code> or <code>:even</code> selectors.
-Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. This can be a little confusing as, counter-intuitively, <code>:odd</code> selects the second element (position 1), fourth element (position 3), and so on.
-Here's how you would target all the odd elements with class <code>target</code> and give them classes:
-<code>$(".target:odd").addClass("animated shake");</code>
-Try selecting all the even <code>target</code> elements and giving them the classes of <code>animated</code> and <code>shake</code>. Remember that <strong>even</strong> refers to the position of elements with a zero-based system in mind.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+You can also target elements based on their positions using `:odd` or `:even` selectors.
 
-</section>
+Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. This can be a little confusing as, counter-intuitively, `:odd` selects the second element (position 1), fourth element (position 3), and so on.
 
-## Tests
-<section id='tests'>
+Here's how you would target all the odd elements with class `target` and give them classes:
 
-```yml
-tests:
-  - text: All of the <code>target</code> elements that jQuery considers to be even should shake.
-    testString: assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'));
-  - text: You should use the <code>&#58;even</code> selector to modify these elements.
-    testString: assert(code.match(/\:even/g));
-  - text: You should only use jQuery to add these classes to the element.
-    testString: assert(code.match(/\$\(".target:even"\)/g) || code.match(/\$\('.target:even'\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g) || code.match(/\$\('.target'\).filter\(':even'\)/g));
+`$(".target:odd").addClass("animated shake");`
 
+Try selecting all the even `target` elements and giving them the classes of `animated` and `shake`. Remember that **even** refers to the position of elements with a zero-based system in mind.
+
+# --hints--
+
+All of the `target` elements that jQuery considers to be even should shake.
+
+```js
+assert(
+  $('.target:even').hasClass('animated') && $('.target:even').hasClass('shake')
+);
 ```
 
-</section>
+You should use the `:even` selector to modify these elements.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\:even/g));
+```
 
-<div id='html-seed'>
+You should only use jQuery to add these classes to the element.
+
+```js
+assert(
+  code.match(/\$\(".target:even"\)/g) ||
+    code.match(/\$\('.target:even'\)/g) ||
+    code.match(/\$\(".target"\).filter\(":even"\)/g) ||
+    code.match(/\$\('.target'\).filter\(':even'\)/g)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -83,14 +91,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -132,5 +133,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

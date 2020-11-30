@@ -5,10 +5,11 @@ challengeType: 6
 forumTopicId: 301391
 ---
 
-## Description
-<section id='description'>
-One of the most important topics in React is <code>state</code>. State consists of any data your application needs to know about, that can change over time. You want your apps to respond to state changes and present an updated UI when necessary. React offers a nice solution for the state management of modern web applications.
-You create state in a React component by declaring a <code>state</code> property on the component class in its <code>constructor</code>. This initializes the component with <code>state</code> when it is created. The <code>state</code> property must be set to a JavaScript <code>object</code>. Declaring it looks like this:
+# --description--
+
+One of the most important topics in React is `state`. State consists of any data your application needs to know about, that can change over time. You want your apps to respond to state changes and present an updated UI when necessary. React offers a nice solution for the state management of modern web applications.
+
+You create state in a React component by declaring a `state` property on the component class in its `constructor`. This initializes the component with `state` when it is created. The `state` property must be set to a JavaScript `object`. Declaring it looks like this:
 
 ```jsx
 this.state = {
@@ -16,39 +17,84 @@ this.state = {
 }
 ```
 
-You have access to the <code>state</code> object throughout the life of your component. You can update it, render it in your UI, and pass it as props to child components. The <code>state</code> object can be as complex or as simple as you need it to be. Note that you must create a class component by extending <code>React.Component</code> in order to create <code>state</code> like this.
-</section>
+You have access to the `state` object throughout the life of your component. You can update it, render it in your UI, and pass it as props to child components. The `state` object can be as complex or as simple as you need it to be. Note that you must create a class component by extending `React.Component` in order to create `state` like this.
 
-## Instructions
-<section id='instructions'>
-There is a component in the code editor that is trying to render a <code>name</code> property from its <code>state</code>. However, there is no <code>state</code> defined. Initialize the component with <code>state</code> in the <code>constructor</code> and assign your name to a property of <code>name</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+There is a component in the code editor that is trying to render a `name` property from its `state`. However, there is no `state` defined. Initialize the component with `state` in the `constructor` and assign your name to a property of `name`.
 
-```yml
-tests:
-  - text: <code>StatefulComponent</code> should exist and render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('StatefulComponent').length === 1; })());
-  - text: <code>StatefulComponent</code> should render a <code>div</code> and an <code>h1</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1; })());
-  - text: The state of <code>StatefulComponent</code> should be initialized with a property <code>name</code> set to a string.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && typeof initialState.name === 'string'); })());
-  - text: The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find('h1').text() === initialState.name; })());
+# --hints--
 
+`StatefulComponent` should exist and render.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(
+      React.createElement(StatefulComponent)
+    );
+    return mockedComponent.find('StatefulComponent').length === 1;
+  })()
+);
 ```
 
-</section>
+`StatefulComponent` should render a `div` and an `h1` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(
+      React.createElement(StatefulComponent)
+    );
+    return (
+      mockedComponent.find('div').length === 1 &&
+      mockedComponent.find('h1').length === 1
+    );
+  })()
+);
+```
 
-<div id='jsx-seed'>
+The state of `StatefulComponent` should be initialized with a property `name` set to a string.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(
+      React.createElement(StatefulComponent)
+    );
+    const initialState = mockedComponent.state();
+    return (
+      typeof initialState === 'object' && typeof initialState.name === 'string'
+    );
+  })()
+);
+```
+
+The property `name` in the state of `StatefulComponent` should render in the `h1` element.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(
+      React.createElement(StatefulComponent)
+    );
+    const initialState = mockedComponent.state();
+    return mockedComponent.find('h1').text() === initialState.name;
+  })()
+);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```jsx
+ReactDOM.render(<StatefulComponent />, document.getElementById('root'))
+```
 
+## --seed-contents--
+
+```jsx
 class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -66,23 +112,7 @@ class StatefulComponent extends React.Component {
 };
 ```
 
-</div>
-
-
-### After Test
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<StatefulComponent />, document.getElementById('root'))
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 class StatefulComponent extends React.Component {
@@ -101,5 +131,3 @@ class StatefulComponent extends React.Component {
   }
 };
 ```
-
-</section>

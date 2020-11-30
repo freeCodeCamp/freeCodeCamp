@@ -1,48 +1,51 @@
 ---
 id: 5900f3761000cf542c50fe89
-challengeType: 5
 title: 'Problem 10: Summation of primes'
+challengeType: 5
 forumTopicId: 301723
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
 Find the sum of all the primes below `n`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`primeSummation(17)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>primeSummation(17)</code> should return a number.
-    testString: assert(typeof primeSummation(17) === 'number');
-  - text: <code>primeSummation(17)</code> should return 41.
-    testString: assert.strictEqual(primeSummation(17), 41);
-  - text: <code>primeSummation(2001)</code> should return 277050.
-    testString: assert.strictEqual(primeSummation(2001), 277050);
-  - text: <code>primeSummation(140759)</code> should return 873608362.
-    testString: assert.strictEqual(primeSummation(140759), 873608362);
-  - text: <code>primeSummation(2000000)</code> should return 142913828922.
-    testString: assert.strictEqual(primeSummation(2000000), 142913828922);
-
+```js
+assert(typeof primeSummation(17) === 'number');
 ```
 
-</section>
+`primeSummation(17)` should return 41.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(primeSummation(17), 41);
+```
 
-<div id='js-seed'>
+`primeSummation(2001)` should return 277050.
+
+```js
+assert.strictEqual(primeSummation(2001), 277050);
+```
+
+`primeSummation(140759)` should return 873608362.
+
+```js
+assert.strictEqual(primeSummation(140759), 873608362);
+```
+
+`primeSummation(2000000)` should return 142913828922.
+
+```js
+assert.strictEqual(primeSummation(2000000), 142913828922);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function primeSummation(n) {
@@ -53,12 +56,7 @@ function primeSummation(n) {
 primeSummation(2000000);
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function primeSummation(n) {
@@ -80,5 +78,3 @@ function primeSummation(n) {
   return sum;
 }
 ```
-
-</section>

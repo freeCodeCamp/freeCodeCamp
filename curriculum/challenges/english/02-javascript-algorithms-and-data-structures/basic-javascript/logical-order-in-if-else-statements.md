@@ -6,11 +6,14 @@ videoUrl: 'https://scrimba.com/c/cwNvMUV'
 forumTopicId: 18228
 ---
 
-## Description
-<section id='description'>
-Order is important in <code>if</code>, <code>else if</code> statements.
+# --description--
+
+Order is important in `if`, `else if` statements.
+
 The function is executed from top to bottom so you will want to be careful of what statement comes first.
+
 Take these two functions as an example.
+
 Here's the first:
 
 ```js
@@ -46,33 +49,33 @@ foo(0) // "Less than one"
 bar(0) // "Less than two"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 Change the order of logic in the function so that it will return the correct statements in all cases.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>orderMyLogic(4)</code> should return "Less than 5"
-    testString: assert(orderMyLogic(4) === "Less than 5");
-  - text: <code>orderMyLogic(6)</code> should return "Less than 10"
-    testString: assert(orderMyLogic(6) === "Less than 10");
-  - text: <code>orderMyLogic(11)</code> should return "Greater than or equal to 10"
-    testString: assert(orderMyLogic(11) === "Greater than or equal to 10");
+`orderMyLogic(4)` should return "Less than 5"
 
+```js
+assert(orderMyLogic(4) === 'Less than 5');
 ```
 
-</section>
+`orderMyLogic(6)` should return "Less than 10"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(orderMyLogic(6) === 'Less than 10');
+```
 
-<div id='js-seed'>
+`orderMyLogic(11)` should return "Greater than or equal to 10"
+
+```js
+assert(orderMyLogic(11) === 'Greater than or equal to 10');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function orderMyLogic(val) {
@@ -88,15 +91,7 @@ function orderMyLogic(val) {
 orderMyLogic(7);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function orderMyLogic(val) {
@@ -109,5 +104,3 @@ function orderMyLogic(val) {
   }
 }
 ```
-
-</section>

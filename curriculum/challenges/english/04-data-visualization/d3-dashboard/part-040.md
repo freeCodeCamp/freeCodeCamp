@@ -4,33 +4,62 @@ title: Part 40
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 There are a number of D3 functions to work with how the "ticks" or your axis labels are displayed; one of them is `ticks`. Go back to where you defined the `yAxis` variable and chain a `ticks` function to it and pass it these two arguments: `6, '~s'`.
 
 The `6` will set the number of ticks used to 6, and the `~s` will make the labels display the number of thousands followed by a `k`. For example, `4000` will become `4k`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const ticks = $('.tick > text'); assert(ticks[0].innerHTML === '0k' && ticks[1].innerHTML === '1k' && ticks[2].innerHTML === '2k' && ticks[3].innerHTML === '3k' && ticks[4].innerHTML === '4k' && ticks[5].innerHTML === '5k');
-
+```js
+const ticks = $('.tick > text');
+assert(
+  ticks[0].innerHTML === '0k' &&
+    ticks[1].innerHTML === '1k' &&
+    ticks[2].innerHTML === '2k' &&
+    ticks[3].innerHTML === '3k' &&
+    ticks[4].innerHTML === '4k' &&
+    ticks[5].innerHTML === '5k'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -88,47 +117,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -186,5 +175,3 @@ tests:
     .style('font', '10px verdana');
 </script>
 ```
-
-</section>

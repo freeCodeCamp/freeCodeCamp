@@ -4,56 +4,25 @@ title: Part 12
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Use arrow function syntax to define a function `infixEval` which takes `str` and `regex` as arguments and returns `str.replace(regex, "")`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/constinfixEval=\(str,regex\)=>str\.replace\(regex,['"]{2}\)/.test(code.replace(/\s/g, '')));
-
+```js
+assert(
+  /constinfixEval=\(str,regex\)=>str\.replace\(regex,['"]{2}\)/.test(
+    code.replace(/\s/g, '')
+  )
+);
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -81,25 +50,30 @@ const infixToFunction = {
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -113,5 +87,3 @@ const infixToFunction = {
 const infixEval = (str, regex) => str.replace(regex, "");
 </script>
 ```
-
-</section>

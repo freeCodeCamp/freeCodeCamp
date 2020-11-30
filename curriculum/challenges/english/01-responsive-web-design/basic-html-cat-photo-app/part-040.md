@@ -4,34 +4,42 @@ title: Part 40
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 To prevent a user from submitting your form when required information is missing, you need to add the `required` attribute to an `input` element. There's no need to set a value to the `required` attribute. Instead, just add the word `required` to the `input` element, making sure there is space between it and other attributes.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
 
-```yml
-tests:
-  - text: You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
-    testString: assert( $('input').length );
-  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
-    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
-  - text: Your `input` element should have a `required` attribute. Remember, you just add the word `required` inside the `input` element's tag.
-    testString: assert( $('input')[0].hasAttribute('required') );
-  - text: A value should not be given to the `required` attribute.
-    testString: assert( $('input')[0].getAttribute('required') === '' );
-
+```js
+assert($('input').length);
 ```
 
-</section>
+Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(
+  $('form')[0].children.length === 1 &&
+    $('form')[0].innerText.trim().length === 0
+);
+```
+
+Your `input` element should have a `required` attribute. Remember, you just add the word `required` inside the `input` element's tag.
+
+```js
+assert($('input')[0].hasAttribute('required'));
+```
+
+A value should not be given to the `required` attribute.
+
+```js
+assert($('input')[0].getAttribute('required') === '');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -70,9 +78,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL">
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </section>
     </main>
@@ -80,5 +88,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

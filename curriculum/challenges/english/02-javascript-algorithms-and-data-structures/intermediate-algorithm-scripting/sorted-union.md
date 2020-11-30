@@ -5,39 +5,48 @@ challengeType: 5
 forumTopicId: 16077
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+
 In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+
 The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+
 Check the assertion tests for examples.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])` should return `[1, 3, 2, 5, 4]`.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])</code> should return <code>[1, 3, 2, 5, 4]</code>.
-    testString: assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4]);
-  - text: <code>uniteUnique([1, 2, 3], [5, 2, 1])</code> should return <code>[1, 2, 3, 5]</code>.
-    testString: assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5]);
-  - text: <code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.
-    testString: assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [1, 2, 3, 5, 4, 6, 7, 8]);
-
+```js
+assert.deepEqual(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4]);
 ```
 
-</section>
+`uniteUnique([1, 2, 3], [5, 2, 1])` should return `[1, 2, 3, 5]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5]);
+```
 
-<div id='js-seed'>
+`uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])` should return `[1, 2, 3, 5, 4, 6, 7, 8]`.
+
+```js
+assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [
+  1,
+  2,
+  3,
+  5,
+  4,
+  6,
+  7,
+  8
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function uniteUnique(arr) {
@@ -47,15 +56,7 @@ function uniteUnique(arr) {
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function uniteUnique(arr) {
@@ -64,5 +65,3 @@ function uniteUnique(arr) {
   }, []);
 }
 ```
-
-</section>

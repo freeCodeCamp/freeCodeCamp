@@ -6,32 +6,27 @@ videoUrl: 'https://scrimba.com/p/pByETK/ckzPeUv'
 forumTopicId: 301121
 ---
 
-## Description
-<section id='description'>
-Using the <code>align-items</code> property on a grid container will set the vertical alignment for all the items in our grid.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Using the `align-items` property on a grid container will set the vertical alignment for all the items in our grid.
+
+# --instructions--
+
 Use it now to move all the items to the end of each cell.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi));
+`container` class should have a `align-items` property that has the value of `end`.
 
+```js
+assert(
+  code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -66,18 +61,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.container {align-items: end;}</style>
 ```
-
-</section>

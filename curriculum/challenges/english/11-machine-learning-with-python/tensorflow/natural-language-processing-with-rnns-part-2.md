@@ -5,27 +5,25 @@ challengeType: 11
 videoId: mUU9YXOFbZg
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+Word embeddings are...:
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    Word embeddings are...:
-  answers:
-    - |
-      an unordered group of encoded words that describes the frequency of words in a given document.
-    - |
-      a group of encoded words that preserves the original order of the words in a given document.
-    - |
-      a vectorized representation of words in a given document that places words with similar meanings near each other.
-  solution: 3
-```
+an unordered group of encoded words that describes the frequency of words in a given document.
 
-</section>
+---
+
+a group of encoded words that preserves the original order of the words in a given document.
+
+---
+
+a vectorized representation of words in a given document that places words with similar meanings near each other.
+
+## --video-solution--
+
+3
+

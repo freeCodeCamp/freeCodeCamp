@@ -4,30 +4,21 @@ title: Part 66
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -79,18 +70,14 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
+--fcc-editable-region--
       <footer>
       </footer>
-      --fcc-editable-region--
+--fcc-editable-region--
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -142,6 +129,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

@@ -1,61 +1,65 @@
 ---
-title: Gamma function
 id: 5a23c84252665b21eecc7e76
+title: Gamma function
 challengeType: 5
 forumTopicId: 302271
 ---
 
-## Description
-<section id='description'>
-Implement one algorithm (or more) to compute the <a href="https://en.wikipedia.org/wiki/Gamma function">Gamma</a> ($\Gamma$) function (in the real field only).
+# --description--
+
+Implement one algorithm (or more) to compute the [Gamma](<https://en.wikipedia.org/wiki/Gamma function>) ($\\Gamma$) function (in the real field only).
+
 The Gamma function can be defined as:
+
 <div style='padding-left: 4em;'><big><big>$\Gamma(x) = \displaystyle\int_0^\infty t^{x-1}e^{-t} dt$</big></big></div>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>gamma</code> should be a function.
-    testString: assert(typeof gamma=='function')
-  - text: <code>gamma(.1)</code> should return a number.
-    testString: assert(typeof gamma(.1)=='number')
-  - text: <code>gamma(.1)</code> should return <code>9.513507698668736</code>.
-    testString: assert.equal(round(gamma(.1)), round(9.513507698668736))
-  - text: <code>gamma(.2)</code> should return <code>4.590843711998803</code>.
-    testString: assert.equal(round(gamma(.2)), round(4.590843711998803))
-  - text: <code>gamma(.3)</code> should return <code>2.9915689876875904</code>.
-    testString: assert.equal(round(gamma(.3)), round(2.9915689876875904))
-  - text: <code>gamma(.4)</code> should return <code>2.218159543757687</code>.
-    testString: assert.equal(round(gamma(.4)), round(2.218159543757687))
-  - text: <code>gamma(.5)</code> should return <code>1.7724538509055159</code>.
-    testString: assert.equal(round(gamma(.5)), round(1.7724538509055159))
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`gamma` should be a function.
 
 ```js
-function gamma(x) {
-
-}
+assert(typeof gamma == 'function');
 ```
 
-</div>
+`gamma(.1)` should return a number.
 
-### After Test
-<div id='js-teardown'>
+```js
+assert(typeof gamma(0.1) == 'number');
+```
+
+`gamma(.1)` should return `9.513507698668736`.
+
+```js
+assert.equal(round(gamma(0.1)), round(9.513507698668736));
+```
+
+`gamma(.2)` should return `4.590843711998803`.
+
+```js
+assert.equal(round(gamma(0.2)), round(4.590843711998803));
+```
+
+`gamma(.3)` should return `2.9915689876875904`.
+
+```js
+assert.equal(round(gamma(0.3)), round(2.9915689876875904));
+```
+
+`gamma(.4)` should return `2.218159543757687`.
+
+```js
+assert.equal(round(gamma(0.4)), round(2.218159543757687));
+```
+
+`gamma(.5)` should return `1.7724538509055159`.
+
+```js
+assert.equal(round(gamma(0.5)), round(1.7724538509055159));
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 function round(x) {
@@ -63,13 +67,15 @@ function round(x) {
 }
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function gamma(x) {
 
-## Solution
-<section id='solution'>
+}
+```
 
+# --solutions--
 
 ```js
 function gamma(x) {
@@ -94,7 +100,4 @@ function gamma(x) {
 
   return result;
 }
-
 ```
-
-</section>

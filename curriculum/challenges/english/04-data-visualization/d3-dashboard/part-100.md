@@ -4,33 +4,55 @@ title: Part 100
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The pie graph is being drawn at the `0, 0` coordinates of the SVG. Back on your `pieGraphData` variable, add an attribute that changes the `transform` to `translate(100, 100)`.
-    
+
 Since the pie chart has a radius of 100, and the SVG is 200 by 200, this will move it so it is centered.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const transform = $('.dashboard div svg g')[0].getAttribute('transform'); assert(/translate\s*\(\s*100\s*,\s*100\s*\)/g.test(transform));
-
+```js
+const transform = $('.dashboard div svg g')[0].getAttribute('transform');
+assert(/translate\s*\(\s*100\s*,\s*100\s*\)/g.test(transform));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -180,47 +202,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -387,5 +369,3 @@ tests:
 
 </script>
 ```
-
-</section>

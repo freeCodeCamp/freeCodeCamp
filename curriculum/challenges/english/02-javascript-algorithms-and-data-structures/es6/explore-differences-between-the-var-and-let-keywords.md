@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301202
 ---
 
-## Description
-<section id='description'>
-One of the biggest problems with declaring variables with the <code>var</code> keyword is that you can overwrite variable declarations without an error.
+# --description--
+
+One of the biggest problems with declaring variables with the `var` keyword is that you can overwrite variable declarations without an error.
 
 ```js
 var camper = 'James';
@@ -16,53 +16,48 @@ console.log(camper);
 // logs 'David'
 ```
 
-As you can see in the code above, the <code>camper</code> variable is originally declared as <code>James</code> and then overridden to be <code>David</code>.
-In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite.
-Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>
-A new keyword called <code>let</code> was introduced in ES6 to solve this potential issue with the <code>var</code> keyword.
-If you were to replace <code>var</code> with <code>let</code> in the variable declarations of the code above, the result would be an error.
+As you can see in the code above, the `camper` variable is originally declared as `James` and then overridden to be `David`. In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite. Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.  
+A new keyword called `let` was introduced in ES6 to solve this potential issue with the `var` keyword. If you were to replace `var` with `let` in the variable declarations of the code above, the result would be an error.
 
 ```js
 let camper = 'James';
 let camper = 'David'; // throws an error
 ```
 
-This error can be seen in the console of your browser.
-So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.
-Note the <code>"use strict"</code>. This enables Strict Mode, which catches common coding mistakes and "unsafe" actions. For instance:
+This error can be seen in the console of your browser. So unlike `var`, when using `let`, a variable with the same name can only be declared once. Note the `"use strict"`. This enables Strict Mode, which catches common coding mistakes and "unsafe" actions. For instance:
 
 ```js
 "use strict";
 x = 3.14; // throws an error because x is not declared
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Update the code so it only uses the <code>let</code> keyword.
-</section>
+Update the code so it only uses the `let` keyword.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>var</code> should not exist in the code.
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
-  - text: <code>catName</code> should be <code>Oliver</code>.
-    testString: assert(catName === "Oliver");
-  - text: <code>quote</code> should be <code>"Oliver says Meow!"</code>
-    testString: assert(quote === "Oliver says Meow!");
+`var` should not exist in the code.
 
+```js
+(getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-</section>
+`catName` should be `Oliver`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(catName === 'Oliver');
+```
 
-<div id='js-seed'>
+`quote` should be `"Oliver says Meow!"`
+
+```js
+assert(quote === 'Oliver says Meow!');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 var catName;
@@ -77,14 +72,7 @@ function catTalk() {
 catTalk();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let catName;
@@ -97,5 +85,3 @@ function catTalk() {
 }
 catTalk();
 ```
-
-</section>

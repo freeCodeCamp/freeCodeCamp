@@ -6,35 +6,41 @@ videoUrl: 'https://scrimba.com/c/cJKvwCM'
 forumTopicId: 301045
 ---
 
-## Description
-<section id='description'>
-In CSS animations, the <code>animation-timing-function</code> property controls how quickly an animated element changes over the duration of the animation. If the animation is a car moving from point A to point B in a given time (your <code>animation-duration</code>), the <code>animation-timing-function</code> says how the car accelerates and decelerates over the course of the drive.
-There are a number of predefined keywords available for popular options. For example, the default value is <code>ease</code>, which starts slow, speeds up in the middle, and then slows down again in the end. Other options include <code>ease-out</code>, which is quick in the beginning then slows down, <code>ease-in</code>, which is slow in the beginning, then speeds up at the end, or <code>linear</code>, which applies a constant animation speed throughout.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-For the elements with id of <code>ball1</code> and <code>ball2</code>, add an <code>animation-timing-function</code> property to each, and set <code>#ball1</code> to <code>linear</code>, and <code>#ball2</code> to <code>ease-out</code>. Notice the difference between how the elements move during the animation but end together, since they share the same <code>animation-duration</code> of 2 seconds.
-</section>
+In CSS animations, the `animation-timing-function` property controls how quickly an animated element changes over the duration of the animation. If the animation is a car moving from point A to point B in a given time (your `animation-duration`), the `animation-timing-function` says how the car accelerates and decelerates over the course of the drive.
 
-## Tests
-<section id='tests'>
+There are a number of predefined keywords available for popular options. For example, the default value is `ease`, which starts slow, speeds up in the middle, and then slows down again in the end. Other options include `ease-out`, which is quick in the beginning then slows down, `ease-in`, which is slow in the beginning, then speeds up at the end, or `linear`, which applies a constant animation speed throughout.
 
-```yml
-tests:
-  - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.
-    testString: const ball1Animation = __helpers.removeWhiteSpace($('#ball1').css('animation-timing-function'));assert(ball1Animation == 'linear' || ball1Animation == 'cubic-bezier(0,0,1,1)');
-  - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.
-    testString: const ball2Animation = __helpers.removeWhiteSpace($('#ball2').css('animation-timing-function')); assert(ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)');
+# --instructions--
 
+For the elements with id of `ball1` and `ball2`, add an `animation-timing-function` property to each, and set `#ball1` to `linear`, and `#ball2` to `ease-out`. Notice the difference between how the elements move during the animation but end together, since they share the same `animation-duration` of 2 seconds.
+
+# --hints--
+
+The value of the `animation-timing-function` property for the element with the id `ball1` should be linear.
+
+```js
+const ball1Animation = __helpers.removeWhiteSpace(
+  $('#ball1').css('animation-timing-function')
+);
+assert(ball1Animation == 'linear' || ball1Animation == 'cubic-bezier(0,0,1,1)');
 ```
 
-</section>
+The value of the `animation-timing-function` property for the element with the id `ball2` should be ease-out.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+const ball2Animation = __helpers.removeWhiteSpace(
+  $('#ball2').css('animation-timing-function')
+);
+assert(
+  ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)'
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -78,14 +84,7 @@ tests:
 <div class="balls" id="ball2"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -125,5 +124,3 @@ tests:
 <div class="balls" id="ball1"></div>
 <div class="balls" id="ball2"></div>
 ```
-
-</section>

@@ -4,34 +4,30 @@ title: Part 67
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 All pages should begin with `<!DOCTYPE html>`. This special string is known as a <dfn>declaration</dfn> and ensures the browser tries to meet industry-wide specifications.
 
 To complete this project, add this declaration as the first line of the code.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your code should begin with the declaration `<!DOCTYPE html>`. You may have omitted the declaration, have a typo, or it is not the first line of code.
 
-```yml
-tests:
-  - text: Your code should begin with the declaration `<!DOCTYPE html>`. You may have omitted the declaration, have a typo, or it is not the first line of code.
-    testString: assert( code.match(/\<\s*!DOCTYPE\s+html\s*\>/) );
-  - text: Your `<!DOCTYPE html>` must be located at the top of the document.
-    testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.match(/^\<\!DOCTYPEhtml\>\<html/) );
-
+```js
+assert(code.match(/\<\s*!DOCTYPE\s+html\s*\>/));
 ```
 
-</section>
+Your `<!DOCTYPE html>` must be located at the top of the document.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const noSpaces = code.replace(/\s/g, '');
+assert(noSpaces.match(/^\<\!DOCTYPEhtml\>\<html/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 --fcc-editable-region--
@@ -100,11 +96,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -171,5 +163,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

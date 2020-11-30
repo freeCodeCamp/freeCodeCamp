@@ -1,18 +1,18 @@
 ---
-title: 24 game
 id: 5951e88f64ebf159166a1176
+title: 24 game
 challengeType: 5
 forumTopicId: 302218
 ---
 
-## Description
-<section id='description'>
-The <a href="https://en.wikipedia.org/wiki/24_Game" target="_blank">24 Game</a> tests a person's mental arithmetic.
-The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+The [24 Game](https://en.wikipedia.org/wiki/24_Game) tests a person's mental arithmetic.
+
+The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+
+# --instructions--
+
 Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
 
 <h4><strong>Rules:</strong></h4>
@@ -23,51 +23,48 @@ Implement a function that takes a string of four digits as its argument, with ea
   <li> The order of the digits when given does not have to be preserved. </li>
 </ul>
 
-| Example input | Example output |
-| --- | --- |
-| <code>solve24("4878");</code> | <code>(7-8/8)*4</code> |
-| <code>solve24("1234");</code> | <code>3&ast;1&ast;4&ast;2</code> |
-| <code>solve24("6789");</code> | <code>(6*8)/(9-7)</code> |
-| <code>solve24("1127");</code> | <code>(1+7)*(2+1)</code> |
-</section>
+| Example input                 | Example output            |
+| ----------------------------- | ------------------------- |
+| <code>solve24("4878");</code> | <code>(7-8/8)\*4</code>   |
+| <code>solve24("1234");</code> | <code>3\*1\*4\*2</code>   |
+| <code>solve24("6789");</code> | <code>(6\*8)/(9-7)</code> |
+| <code>solve24("1127");</code> | <code>(1+7)\*(2+1)</code> |
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>solve24</code> should be a function.
-    testString: assert(typeof solve24 === 'function');
-  - text: <code>solve24("4878")</code> should return <code>(7-8/8)*4</code> or <code>4*(7-8/8)</code>
-    testString: assert(include(answers[0], removeParentheses(solve24(testCases[0]))));
-  - text: <code>solve24("1234")</code> should return any arrangement of <code>1*2*3*4</code>
-    testString: assert(include(answers[1], removeParentheses(solve24(testCases[1]))));
-  - text: <code>solve24("6789")</code> should return <code>(6*8)/(9-7)</code> or <code>(8*6)/(9-7)</code>
-    testString: assert(include(answers[2], removeParentheses(solve24(testCases[2]))));
-  - text: <code>solve24("1127")</code> should return a permutation of <code>(1+7)*(1+2)</code>
-    testString: assert(include(answers[3], removeParentheses(solve24(testCases[3]))));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`solve24` should be a function.
 
 ```js
-function solve24 (numStr) {
-
-  return true;
-}
+assert(typeof solve24 === 'function');
 ```
 
-</div>
+`solve24("4878")` should return `(7-8/8)*4` or `4*(7-8/8)`
 
+```js
+assert(include(answers[0], removeParentheses(solve24(testCases[0]))));
+```
 
-### After Test
-<div id='js-teardown'>
+`solve24("1234")` should return any arrangement of `1*2*3*4`
+
+```js
+assert(include(answers[1], removeParentheses(solve24(testCases[1]))));
+```
+
+`solve24("6789")` should return `(6*8)/(9-7)` or `(8*6)/(9-7)`
+
+```js
+assert(include(answers[2], removeParentheses(solve24(testCases[2]))));
+```
+
+`solve24("1127")` should return a permutation of `(1+7)*(1+2)`
+
+```js
+assert(include(answers[3], removeParentheses(solve24(testCases[3]))));
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const testCases = [
@@ -123,13 +120,16 @@ function replaceChar(origString, replaceChar, index) {
 }
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function solve24 (numStr) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 function solve24(numStr) {
@@ -199,7 +199,4 @@ function solve24(numStr) {
     }
   }
 }
-
 ```
-
-</section>

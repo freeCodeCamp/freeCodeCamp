@@ -1,12 +1,11 @@
 ---
 id: 5900f38b1000cf542c50fe9e
-challengeType: 5
 title: 'Problem 31: Coin sums'
+challengeType: 5
 forumTopicId: 301965
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
 
@@ -18,37 +17,41 @@ It is possible to make £2 in the following way:
 
 How many different ways can `n` pence be made using any number of coins?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`coinSums(50)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>coinSums(50)</code> should return a number.
-    testString: assert(typeof coinSums(50) === 'number');
-  - text: <code>coinSums(50)</code> should return 451.
-    testString: assert(coinSums(50) == 451);
-  - text: <code>coinSums(100)</code> should return 4563.
-    testString: assert(coinSums(100) == 4563);
-  - text: <code>coinSums(150)</code> should return 21873.
-    testString: assert(coinSums(150) == 21873);
-  - text: <code>coinSums(200)</code> should return 73682.
-    testString: assert(coinSums(200) == 73682);
-
+```js
+assert(typeof coinSums(50) === 'number');
 ```
 
-</section>
+`coinSums(50)` should return 451.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(coinSums(50) == 451);
+```
 
-<div id='js-seed'>
+`coinSums(100)` should return 4563.
+
+```js
+assert(coinSums(100) == 4563);
+```
+
+`coinSums(150)` should return 21873.
+
+```js
+assert(coinSums(150) == 21873);
+```
+
+`coinSums(200)` should return 73682.
+
+```js
+assert(coinSums(200) == 73682);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function coinSums(n) {
@@ -59,15 +62,7 @@ function coinSums(n) {
 coinSums(200);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const coinSums = (n) => {
@@ -79,5 +74,3 @@ const coinSums = (n) => {
   return getWays(n);
 };
 ```
-
-</section>

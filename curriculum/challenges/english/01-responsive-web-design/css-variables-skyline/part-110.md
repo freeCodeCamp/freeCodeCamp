@@ -4,31 +4,22 @@ title: Part 110
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Okay, the buildings are done. Go back to the `*` selector and remove the border you applied to everything at the beginning and the buildings will come together.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const all = code.match(/\*\s*{[\s\S]+?[^}]}/g)[0]; assert(!/border\s*:\s*1px\s+solid\s+black/g.test(all));
-
+```js
+const all = code.match(/\*\s*{[\s\S]+?[^}]}/g)[0];
+assert(!/border\s*:\s*1px\s+solid\s+black/g.test(all));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -405,12 +396,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -785,5 +771,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

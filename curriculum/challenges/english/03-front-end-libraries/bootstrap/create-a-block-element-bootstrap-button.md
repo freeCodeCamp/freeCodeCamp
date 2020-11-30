@@ -5,45 +5,55 @@ challengeType: 0
 forumTopicId: 16810
 ---
 
-## Description
-<section id='description'>
-Normally, your <code>button</code> elements with the <code>btn</code> and <code>btn-default</code> classes are only as wide as the text that they contain. For example:
-<code>&lt;button class="btn btn-default"&gt;Submit&lt;/button&gt;</code>
+# --description--
+
+Normally, your `button` elements with the `btn` and `btn-default` classes are only as wide as the text that they contain. For example:
+
+`<button class="btn btn-default">Submit</button>`
+
 This button would only be as wide as the word "Submit".
+
 <button class='btn btn-default'>Submit</button>
-By making them block elements with the additional class of <code>btn-block</code>, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
-<code>&lt;button class="btn btn-default btn-block"&gt;Submit&lt;/button&gt;</code>
+
+By making them block elements with the additional class of `btn-block`, your button will stretch to fill your page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
+
+`<button class="btn btn-default btn-block">Submit</button>`
+
 This button would take up 100% of the available width.
+
 <button class='btn btn-default btn-block'>Submit</button>
-Note that these buttons still need the <code>btn</code> class.
-Add Bootstrap's <code>btn-block</code> class to your Bootstrap button.
-</section>
 
-## Instructions
-<section id='instructions'>
+Note that these buttons still need the `btn` class.
 
-</section>
+Add Bootstrap's `btn-block` class to your Bootstrap button.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your button should still have the <code>btn</code> and <code>btn-default</code> classes.
-    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
-  - text: Your button should have the class <code>btn-block</code>.
-    testString: assert($("button").hasClass("btn-block"));
-  - text: All of your <code>button</code> elements should have closing tags.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+Your button should still have the `btn` and `btn-default` classes.
 
+```js
+assert($('button').hasClass('btn') && $('button').hasClass('btn-default'));
 ```
 
-</section>
+Your button should have the class `btn-block`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button').hasClass('btn-block'));
+```
 
-<div id='html-seed'>
+All of your `button` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -106,14 +116,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -175,5 +178,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

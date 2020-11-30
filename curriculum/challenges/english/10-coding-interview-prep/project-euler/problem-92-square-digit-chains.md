@@ -1,12 +1,11 @@
 ---
 id: 5900f3c81000cf542c50fedb
-challengeType: 5
 title: 'Problem 92: Square digit chains'
+challengeType: 5
 forumTopicId: 302209
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
 
@@ -21,31 +20,23 @@ Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop
 
 How many starting numbers below ten million will arrive at 89?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`squareDigitChains()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>squareDigitChains()</code> should return a number.
-    testString: assert(typeof squareDigitChains() === 'number');
-  - text: <code>squareDigitChains()</code> should return 8581146.
-    testString: assert.strictEqual(squareDigitChains(), 8581146);
-
+```js
+assert(typeof squareDigitChains() === 'number');
 ```
 
-</section>
+`squareDigitChains()` should return 8581146.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(squareDigitChains(), 8581146);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function squareDigitChains() {
@@ -56,17 +47,8 @@ function squareDigitChains() {
 squareDigitChains();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

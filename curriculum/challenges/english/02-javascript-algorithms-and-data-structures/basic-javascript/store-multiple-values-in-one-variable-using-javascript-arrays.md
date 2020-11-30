@@ -6,66 +6,58 @@ videoUrl: 'https://scrimba.com/c/crZQWAm'
 forumTopicId: 18309
 ---
 
-## Description
-<section id='description'>
-With JavaScript <code>array</code> variables, we can store several pieces of data in one place.
+# --description--
+
+With JavaScript `array` variables, we can store several pieces of data in one place.
+
 You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:
-<code>var sandwich = ["peanut butter", "jelly", "bread"]</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
-Modify the new array <code>myArray</code> so that it contains both a <code>string</code> and a <code>number</code> (in that order).
-<strong>Hint</strong><br>Refer to the example code in the text editor if you get stuck.
-</section>
+`var sandwich = ["peanut butter", "jelly", "bread"]`.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>myArray</code> should be an <code>array</code>.
-    testString: assert(typeof myArray == 'object');
-  - text: The first item in <code>myArray</code> should be a <code>string</code>.
-    testString: assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
-  - text: The second item in <code>myArray</code> should be a <code>number</code>.
-    testString: assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
+Modify the new array `myArray` so that it contains both a `string` and a `number` (in that order).
 
-```
+**Hint**  
+Refer to the example code in the text editor if you get stuck.
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`myArray` should be an `array`.
 
 ```js
-// Only change code below this line
-var myArray = [];
-
+assert(typeof myArray == 'object');
 ```
 
-</div>
+The first item in `myArray` should be a `string`.
 
+```js
+assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
+```
 
-### After Test
-<div id='js-teardown'>
+The second item in `myArray` should be a `number`.
+
+```js
+assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(z){return z;})(myArray);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Only change code below this line
+var myArray = [];
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myArray = ["The Answer", 42];
 ```
-
-</section>

@@ -5,37 +5,31 @@ challengeType: 1
 forumTopicId: 301231
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-You might learn a lot about the <code>filter</code> method if you implement your own version of it. It is recommended you use a <code>for</code> loop or <code>Array.prototype.forEach()</code>.
-</section>
+You might learn a lot about the `filter` method if you implement your own version of it. It is recommended you use a `for` loop or `Array.prototype.forEach()`.
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
-Write your own <code>Array.prototype.myFilter()</code>, which should behave exactly like <code>Array.prototype.filter()</code>. You should not use the built-in <code>filter</code> method. The <code>Array</code> instance can be accessed in the <code>myFilter</code> method using <code>this</code>.
-</section>
+Write your own `Array.prototype.myFilter()`, which should behave exactly like `Array.prototype.filter()`. You should not use the built-in `filter` method. The `Array` instance can be accessed in the `myFilter` method using `this`.
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`new_s` should equal `[23, 65, 5]`.
 
-```yml
-tests:
-  - text: <code>new_s</code> should equal <code>[23, 65, 5]</code>.
-    testString: assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]));
-  - text: Your code should not use the <code>filter</code> method.
-    testString: assert(!code.match(/\.?[\s\S]*?filter/g));
+```js
+assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]));
 ```
 
-</section>
+Your code should not use the `filter` method.
 
-## Challenge Seed
+```js
+assert(!code.match(/\.?[\s\S]*?filter/g));
+```
 
-<section id='challengeSeed'>
+# --seed--
 
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 // The global variable
@@ -53,13 +47,7 @@ var new_s = s.myFilter(function(item) {
 });
 ```
 
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 // the global Array
@@ -79,5 +67,3 @@ var new_s = s.myFilter(function(item) {
   return item % 2 === 1;
 });
 ```
-
-</section>

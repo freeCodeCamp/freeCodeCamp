@@ -5,33 +5,27 @@ challengeType: 6
 forumTopicId: 301480
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The bars are in the right position, but they are all the same black color. SVG has a way to change the color of the bars.
-In SVG, a <code>rect</code> shape is colored with the <code>fill</code> attribute. It supports hex codes, color names, and rgb values, as well as more complex options like gradients and transparency.
-</section>
 
-## Instructions
-<section id='instructions'>
-Add an <code>attr()</code> method to set the "fill" of all the bars to the color "navy".
-</section>
+In SVG, a `rect` shape is colored with the `fill` attribute. It supports hex codes, color names, and rgb values, as well as more complex options like gradients and transparency.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The bars should all have a <code>fill</code> color of navy.
-    testString: assert($('rect').css('fill') == "rgb(0, 0, 128)");
+Add an `attr()` method to set the "fill" of all the bars to the color "navy".
 
+# --hints--
+
+The bars should all have a `fill` color of navy.
+
+```js
+assert($('rect').css('fill') == 'rgb(0, 0, 128)');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <body>
@@ -63,14 +57,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -97,7 +84,4 @@ tests:
 
   </script>
 </body>
-
 ```
-
-</section>

@@ -5,39 +5,43 @@ challengeType: 5
 forumTopicId: 16014
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Remove all falsy values from an array.
-Falsy values in JavaScript are <code>false</code>, <code>null</code>, <code>0</code>, <code>""</code>, <code>undefined</code>, and <code>NaN</code>.
+
+Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN`.
+
 Hint: Try converting each value to a Boolean.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`bouncer([7, "ate", "", false, 9])` should return `[7, "ate", 9]`.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>bouncer([7, "ate", "", false, 9])</code> should return <code>[7, "ate", 9]</code>.
-    testString: assert.deepEqual(bouncer([7, "ate", "", false, 9]), [7, "ate", 9]);
-  - text: <code>bouncer(["a", "b", "c"])</code> should return <code>["a", "b", "c"]</code>.
-    testString: assert.deepEqual(bouncer(["a", "b", "c"]), ["a", "b", "c"]);
-  - text: <code>bouncer([false, null, 0, NaN, undefined, ""])</code> should return <code>[]</code>.
-    testString: assert.deepEqual(bouncer([false, null, 0, NaN, undefined, ""]), []);
-  - text: <code>bouncer([null, NaN, 1, 2, undefined])</code> should return <code>[1, 2]</code>.
-    testString: assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
+```js
+assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9]);
 ```
 
-</section>
+`bouncer(["a", "b", "c"])` should return `["a", "b", "c"]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c']);
+```
 
-<div id='js-seed'>
+`bouncer([false, null, 0, NaN, undefined, ""])` should return `[]`.
+
+```js
+assert.deepEqual(bouncer([false, null, 0, NaN, undefined, '']), []);
+```
+
+`bouncer([null, NaN, 1, 2, undefined])` should return `[1, 2]`.
+
+```js
+assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function bouncer(arr) {
@@ -47,15 +51,7 @@ function bouncer(arr) {
 bouncer([7, "ate", "", false, 9]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function bouncer(arr) {
@@ -63,7 +59,4 @@ function bouncer(arr) {
 }
 
 bouncer([7, "ate", "", false, 9]);
-
 ```
-
-</section>

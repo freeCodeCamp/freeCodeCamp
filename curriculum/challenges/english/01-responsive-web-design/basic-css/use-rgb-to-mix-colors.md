@@ -6,47 +6,85 @@ videoUrl: 'https://scrimba.com/c/cm24JU6'
 forumTopicId: 18368
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Just like with hex code, you can mix colors in RGB by using combinations of different values.
-</section>
 
-## Instructions
-<section id='instructions'>
-Replace the hex codes in our <code>style</code> element with their correct RGB values.
-<table class='table table-striped'><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna</td><td><code>rgb(160, 82, 45)</code></td></tr></table>
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Replace the hex codes in our `style` element with their correct RGB values.
 
-```yml
-tests:
-  - text: Your <code>h1</code> element with the text <code>I am red!</code> should have the <code>color</code> red.
-    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
-  - text: You should use <code>rgb</code> for the color red.
-    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?rgb\(\s*?255\s*?,\s*?0\s*?,\s*?0\s*?\)\s*?;\s*?}/gi));
-  - text: Your <code>h1</code> element with the text <code>I am orchid!</code> should have the <code>color</code> orchid.
-    testString: assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)');
-  - text: You should use <code>rgb</code> for the color orchid.
-    testString: assert(code.match(/\.orchid-text\s*?{\s*?color:\s*?rgb\(\s*?218\s*?,\s*?112\s*?,\s*?214\s*?\)\s*?;\s*?}/gi));
-  - text: Your <code>h1</code> element with the text <code>I am blue!</code> should have the <code>color</code> blue.
-    testString: assert($('.blue-text').css('color') === 'rgb(0, 0, 255)');
-  - text: You should use <code>rgb</code> for the color blue.
-    testString: assert(code.match(/\.blue-text\s*?{\s*?color:\s*?rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\)\s*?;\s*?}/gi));
-  - text: Your <code>h1</code> element with the text <code>I am sienna!</code> should have the <code>color</code> sienna.
-    testString: assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)');
-  - text: You should use <code>rgb</code> for the color sienna.
-    testString: assert(code.match(/\.sienna-text\s*?{\s*?color:\s*?rgb\(\s*?160\s*?,\s*?82\s*?,\s*?45\s*?\)\s*?;\s*?}/gi));
+<table class='table table-striped'><tbody><tr><th>Color</th><th>RGB</th></tr><tr><td>Blue</td><td><code>rgb(0, 0, 255)</code></td></tr><tr><td>Red</td><td><code>rgb(255, 0, 0)</code></td></tr><tr><td>Orchid</td><td><code>rgb(218, 112, 214)</code></td></tr><tr><td>Sienna</td><td><code>rgb(160, 82, 45)</code></td></tr></tbody></table>
 
+# --hints--
+
+Your `h1` element with the text `I am red!` should have the `color` red.
+
+```js
+assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
 ```
 
-</section>
+You should use `rgb` for the color red.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /\.red-text\s*?{\s*?color:\s*?rgb\(\s*?255\s*?,\s*?0\s*?,\s*?0\s*?\)\s*?;\s*?}/gi
+  )
+);
+```
 
-<div id='html-seed'>
+Your `h1` element with the text `I am orchid!` should have the `color` orchid.
+
+```js
+assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)');
+```
+
+You should use `rgb` for the color orchid.
+
+```js
+assert(
+  code.match(
+    /\.orchid-text\s*?{\s*?color:\s*?rgb\(\s*?218\s*?,\s*?112\s*?,\s*?214\s*?\)\s*?;\s*?}/gi
+  )
+);
+```
+
+Your `h1` element with the text `I am blue!` should have the `color` blue.
+
+```js
+assert($('.blue-text').css('color') === 'rgb(0, 0, 255)');
+```
+
+You should use `rgb` for the color blue.
+
+```js
+assert(
+  code.match(
+    /\.blue-text\s*?{\s*?color:\s*?rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\)\s*?;\s*?}/gi
+  )
+);
+```
+
+Your `h1` element with the text `I am sienna!` should have the `color` sienna.
+
+```js
+assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)');
+```
+
+You should use `rgb` for the color sienna.
+
+```js
+assert(
+  code.match(
+    /\.sienna-text\s*?{\s*?color:\s*?rgb\(\s*?160\s*?,\s*?82\s*?,\s*?45\s*?\)\s*?;\s*?}/gi
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -73,14 +111,7 @@ tests:
 <h1 class="blue-text">I am blue!</h1>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -106,5 +137,3 @@ tests:
 
 <h1 class="blue-text">I am blue!</h1>
 ```
-
-</section>

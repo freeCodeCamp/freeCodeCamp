@@ -5,40 +5,43 @@ challengeType: 5
 forumTopicId: 16043
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Reverse the provided string.
+
 You may need to turn the string into an array before you can reverse it.
+
 Your result must be a string.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`reverseString("hello")` should return a string.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>reverseString("hello")</code> should return a string.
-    testString: assert(typeof reverseString("hello") === "string");
-  - text: <code>reverseString("hello")</code> should become <code>"olleh"</code>.
-    testString: assert(reverseString("hello") === "olleh");
-  - text: <code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.
-    testString: assert(reverseString("Howdy") === "ydwoH");
-  - text: <code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.
-    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG");
-
+```js
+assert(typeof reverseString('hello') === 'string');
 ```
 
-</section>
+`reverseString("hello")` should become `"olleh"`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(reverseString('hello') === 'olleh');
+```
 
-<div id='js-seed'>
+`reverseString("Howdy")` should become `"ydwoH"`.
+
+```js
+assert(reverseString('Howdy') === 'ydwoH');
+```
+
+`reverseString("Greetings from Earth")` should return `"htraE morf sgniteerG"`.
+
+```js
+assert(reverseString('Greetings from Earth') === 'htraE morf sgniteerG');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function reverseString(str) {
@@ -48,15 +51,7 @@ function reverseString(str) {
 reverseString("hello");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function reverseString(str) {
@@ -64,7 +59,4 @@ function reverseString(str) {
 }
 
 reverseString("hello");
-
 ```
-
-</section>

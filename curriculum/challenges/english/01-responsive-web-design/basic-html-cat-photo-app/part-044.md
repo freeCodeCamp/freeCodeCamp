@@ -4,42 +4,53 @@ title: Part 44
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 `label` elements are used to help associate the text for an `input` element with the input element itself (especially for assistive technologies like screen readers). For example, `<label><input type="radio"> cat</label>` makes it so clicking the word `cat` also selects the corresponding radio button.
 
 Nest your `radio` button inside a `label` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You should make sure the radio button is still present.
 
-```yml
-tests:
-  - text: You should make sure the radio button is still present.
-    testString: assert( $('input[type="radio"]')[0] );
-  - text: The text ` Indoor` should be located directly to the right of your `radio` button. Make sure there is a space between the element and the text. You have either omitted the text or have a typo.
-    testString: |
-      const radioInputElem = $('input')[0];
-      assert( radioInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Indoor/i) );
-  - text: 'Your `label` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('label') );
-  - text: Your `label` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/label\>/) );
-  - text: Your radio button and its text should all be located between the opening and closing tags of the `label` element. 
-    testString: |
-      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
-      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
-
+```js
+assert($('input[type="radio"]')[0]);
 ```
 
-</section>
+The text ` Indoor` should be located directly to the right of your `radio` button. Make sure there is a space between the element and the text. You have either omitted the text or have a typo.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const radioInputElem = $('input')[0];
+assert(
+  radioInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Indoor/i)
+);
+```
+
+Your `label` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
+
+```js
+assert(document.querySelector('label'));
+```
+
+Your `label` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+assert(code.match(/<\/label\>/));
+```
+
+Your radio button and its text should all be located between the opening and closing tags of the `label` element.
+
+```js
+const labelChildNodes = [...$('form > label')[0].childNodes];
+assert(
+  labelChildNodes.filter((childNode) => childNode.nodeName === 'INPUT').length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -78,9 +89,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="radio"> Indoor
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
@@ -90,5 +101,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

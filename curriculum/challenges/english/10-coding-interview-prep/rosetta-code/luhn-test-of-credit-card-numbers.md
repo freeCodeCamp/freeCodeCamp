@@ -5,11 +5,12 @@ challengeType: 5
 forumTopicId: 385284
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-The <a href="https://en.wikipedia.org/wiki/Luhn algorithm" target="_blank">Luhn test</a> is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
+The [Luhn test](<https://en.wikipedia.org/wiki/Luhn algorithm>) is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.
+
 Those companies using credit card numbers that can be validated by the Luhn test have numbers that pass the following test:
+
 <ol>
   <li> Reverse the order of the digits in the number.</li>
   <li> Take the first, third, ... and every other odd digit in the reversed digits and sum them to form the partial sum s1</li>
@@ -40,45 +41,63 @@ The even digits:
 s1 + s2 = 70 which ends in zero which means that 49927398716 passes the Luhn test.
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-
-<section id='instructions'>
 Write a function that will validate a number with the Luhn test. Return true if it's a valid number. Otherwise, return false.
-</section>
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`luhnTest` should be a function.
 
-```yml
-tests:
-  - text: <code>luhnTest</code> should be a function.
-    testString: assert(typeof luhnTest === 'function');
-  - text: <code>luhnTest("4111111111111111")</code> should return a boolean.
-    testString: assert(typeof luhnTest("4111111111111111") === 'boolean');
-  - text: <code>luhnTest("4111111111111111")</code> should return <code>true</code>.
-    testString: assert.equal(luhnTest("4111111111111111"), true);
-  - text: <code>luhnTest("4111111111111112")</code> should return <code>false</code>.
-    testString: assert.equal(luhnTest("4111111111111112"), false);
-  - text: <code>luhnTest("49927398716")</code> should return <code>true</code>.
-    testString: assert.equal(luhnTest("49927398716"), true);
-  - text: <code>luhnTest("49927398717")</code> should return <code>false</code>.
-    testString: assert.equal(luhnTest("49927398717"), false);
-  - text: <code>luhnTest("1234567812345678")</code> should return <code>false</code>.
-    testString: assert.equal(luhnTest("1234567812345678"), false);
-  - text: <code>luhnTest("1234567812345670")</code> should return <code>true</code>.
-    testString: assert.equal(luhnTest("1234567812345670"), true);
+```js
+assert(typeof luhnTest === 'function');
 ```
 
-</section>
+`luhnTest("4111111111111111")` should return a boolean.
 
-## Challenge Seed
+```js
+assert(typeof luhnTest('4111111111111111') === 'boolean');
+```
 
-<section id='challengeSeed'>
+`luhnTest("4111111111111111")` should return `true`.
 
-<div id='js-seed'>
+```js
+assert.equal(luhnTest('4111111111111111'), true);
+```
+
+`luhnTest("4111111111111112")` should return `false`.
+
+```js
+assert.equal(luhnTest('4111111111111112'), false);
+```
+
+`luhnTest("49927398716")` should return `true`.
+
+```js
+assert.equal(luhnTest('49927398716'), true);
+```
+
+`luhnTest("49927398717")` should return `false`.
+
+```js
+assert.equal(luhnTest('49927398717'), false);
+```
+
+`luhnTest("1234567812345678")` should return `false`.
+
+```js
+assert.equal(luhnTest('1234567812345678'), false);
+```
+
+`luhnTest("1234567812345670")` should return `true`.
+
+```js
+assert.equal(luhnTest('1234567812345670'), true);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function luhnTest(str) {
@@ -86,13 +105,7 @@ function luhnTest(str) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function luhnTest(str) {
@@ -109,5 +122,3 @@ function luhnTest(str) {
   return counter % 10 == 0;
 }
 ```
-
-</section>

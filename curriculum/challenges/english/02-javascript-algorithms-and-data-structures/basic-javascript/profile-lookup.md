@@ -6,47 +6,64 @@ videoUrl: 'https://scrimba.com/c/cDqW2Cg'
 forumTopicId: 18259
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 We have an array of objects representing different people in our contacts lists.
-A <code>lookUpProfile</code> function that takes <code>name</code> and a property (<code>prop</code>) as arguments has been pre-written for you.
-The function should check if <code>name</code> is an actual contact's <code>firstName</code> and the given property (<code>prop</code>) is a property of that contact.
+
+A `lookUpProfile` function that takes `name` and a property (`prop`) as arguments has been pre-written for you.
+
+The function should check if `name` is an actual contact's `firstName` and the given property (`prop`) is a property of that contact.
+
 If both are true, then return the "value" of that property.
-If <code>name</code> does not correspond to any contacts then return <code>"No such contact"</code>.
-If <code>prop</code> does not correspond to any valid properties of a contact found to match <code>name</code> then return <code>"No such property"</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+If `name` does not correspond to any contacts then return `"No such contact"`.
 
-</section>
+If `prop` does not correspond to any valid properties of a contact found to match `name` then return `"No such property"`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>lookUpProfile("Kristian", "lastName")</code> should return <code>"Vos"</code>
-    testString: assert(lookUpProfile('Kristian','lastName') === "Vos");
-  - text: <code>lookUpProfile("Sherlock", "likes")</code> should return <code>["Intriguing Cases", "Violin"]</code>
-    testString: assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"]);
-  - text: <code>lookUpProfile("Harry", "likes")</code> should return an array
-    testString: assert(typeof lookUpProfile("Harry", "likes") === "object");
-  - text: <code>lookUpProfile("Bob", "number")</code> should return "No such contact"
-    testString: assert(lookUpProfile("Bob", "number") === "No such contact");
-  - text: <code>lookUpProfile("Bob", "potato")</code> should return "No such contact"
-    testString: assert(lookUpProfile("Bob", "potato") === "No such contact");
-  - text: <code>lookUpProfile("Akira", "address")</code> should return "No such property"
-    testString: assert(lookUpProfile("Akira", "address") === "No such property");
+`lookUpProfile("Kristian", "lastName")` should return `"Vos"`
 
+```js
+assert(lookUpProfile('Kristian', 'lastName') === 'Vos');
 ```
 
-</section>
+`lookUpProfile("Sherlock", "likes")` should return `["Intriguing Cases", "Violin"]`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(lookUpProfile('Sherlock', 'likes'), [
+  'Intriguing Cases',
+  'Violin'
+]);
+```
 
-<div id='js-seed'>
+`lookUpProfile("Harry", "likes")` should return an array
+
+```js
+assert(typeof lookUpProfile('Harry', 'likes') === 'object');
+```
+
+`lookUpProfile("Bob", "number")` should return "No such contact"
+
+```js
+assert(lookUpProfile('Bob', 'number') === 'No such contact');
+```
+
+`lookUpProfile("Bob", "potato")` should return "No such contact"
+
+```js
+assert(lookUpProfile('Bob', 'potato') === 'No such contact');
+```
+
+`lookUpProfile("Akira", "address")` should return "No such property"
+
+```js
+assert(lookUpProfile('Akira', 'address') === 'No such property');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -87,15 +104,7 @@ function lookUpProfile(name, prop){
 lookUpProfile("Akira", "likes");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var contacts = [
@@ -139,5 +148,3 @@ function lookUpProfile(name, prop){
 
 lookUpProfile("Akira", "likes");
 ```
-
-</section>

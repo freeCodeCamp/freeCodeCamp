@@ -6,45 +6,63 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/c9W7MhM'
 forumTopicId: 301100
 ---
 
-## Description
-<section id='description'>
-To the right is the tweet embed that will be used as the practical example. Some of the elements would look better with a different layout. The last challenge demonstrated <code>display: flex</code>. Here you'll add it to several components in the tweet embed to start adjusting their positioning.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>display: flex</code> to all of the following items - note that the selectors are already set up in the CSS:
-<code>header</code>, the header's <code>.profile-name</code>, the header's <code>.follow-btn</code>, the header's <code>h3</code> and <code>h4</code>, the <code>footer</code>, and the footer's <code>.stats</code>.
-</section>
+To the right is the tweet embed that will be used as the practical example. Some of the elements would look better with a different layout. The last challenge demonstrated `display: flex`. Here you'll add it to several components in the tweet embed to start adjusting their positioning.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your <code>header</code> should have a <code>display</code> property set to <code>flex</code>.
-    testString: assert($('header').css('display') == 'flex');
-  - text: Your <code>footer</code> should have a <code>display</code> property set to <code>flex</code>.
-    testString: assert($('footer').css('display') == 'flex');
-  - text: Your <code>h3</code> should have a <code>display</code> property set to <code>flex</code>.
-    testString: assert($('h3').css('display') == 'flex');
-  - text: Your <code>h4</code> should have a <code>display</code> property set to <code>flex</code>.
-    testString: assert($('h4').css('display') == 'flex');
-  - text: Your <code>.profile-name</code> should have a <code>display</code> property set to <code>flex</code>.
-    testString: assert($('.profile-name').css('display') == 'flex');
-  - text: Your <code>.follow-btn</code> should have a <code>display</code> property set to <code>flex</code>.
-    testString: assert($('.follow-btn').css('display') == 'flex');
-  - text: Your <code>.stats</code> should have a <code>display</code> property set to <code>flex</code>.
-    testString: assert($('.stats').css('display') == 'flex');
+Add the CSS property `display: flex` to all of the following items - note that the selectors are already set up in the CSS:
 
+`header`, the header's `.profile-name`, the header's `.follow-btn`, the header's `h3` and `h4`, the `footer`, and the footer's `.stats`.
+
+# --hints--
+
+Your `header` should have a `display` property set to `flex`.
+
+```js
+assert($('header').css('display') == 'flex');
 ```
 
-</section>
+Your `footer` should have a `display` property set to `flex`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('footer').css('display') == 'flex');
+```
 
-<div id='html-seed'>
+Your `h3` should have a `display` property set to `flex`.
+
+```js
+assert($('h3').css('display') == 'flex');
+```
+
+Your `h4` should have a `display` property set to `flex`.
+
+```js
+assert($('h4').css('display') == 'flex');
+```
+
+Your `.profile-name` should have a `display` property set to `flex`.
+
+```js
+assert($('.profile-name').css('display') == 'flex');
+```
+
+Your `.follow-btn` should have a `display` property set to `flex`.
+
+```js
+assert($('.follow-btn').css('display') == 'flex');
+```
+
+Your `.stats` should have a `display` property set to `flex`.
+
+```js
+assert($('.stats').css('display') == 'flex');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -138,14 +156,7 @@ tests:
 </footer>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -238,5 +249,3 @@ tests:
   </div>
 </footer>
 ```
-
-</section>

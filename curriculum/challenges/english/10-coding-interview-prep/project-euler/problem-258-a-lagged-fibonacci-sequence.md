@@ -1,40 +1,27 @@
 ---
 id: 5900f46e1000cf542c50ff81
-challengeType: 5
 title: 'Problem 258: A lagged Fibonacci sequence'
+challengeType: 5
 forumTopicId: 301906
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 A sequence is defined as:
 
-gk = 1, for 0 ≤ k ≤ 1999
-gk = gk-2000 + gk-1999, for k ≥ 2000.
-Find gk mod 20092010 for k = 1018.
-</section>
+gk = 1, for 0 ≤ k ≤ 1999 gk = gk-2000 + gk-1999, for k ≥ 2000. Find gk mod 20092010 for k = 1018.
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler258()` should return 12747994.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler258()</code> should return 12747994.
-    testString: assert.strictEqual(euler258(), 12747994);
-
+```js
+assert.strictEqual(euler258(), 12747994);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler258() {
@@ -45,17 +32,8 @@ function euler258() {
 euler258();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

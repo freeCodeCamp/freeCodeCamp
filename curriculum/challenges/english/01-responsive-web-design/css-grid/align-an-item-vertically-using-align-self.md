@@ -6,32 +6,25 @@ videoUrl: 'https://scrimba.com/p/pByETK/cmzd4fz'
 forumTopicId: 301123
 ---
 
-## Description
-<section id='description'>
-Just as you can align an item horizontally, there's a way to align an item vertically as well. To do this, you use the <code>align-self</code> property on an item. This property accepts all of the same values as <code>justify-self</code> from the last challenge.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Align the item with the class <code>item3</code> vertically at the <code>end</code>.
-</section>
+Just as you can align an item horizontally, there's a way to align an item vertically as well. To do this, you use the `align-self` property on an item. This property accepts all of the same values as `justify-self` from the last challenge.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.
-    testString: assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));
+Align the item with the class `item3` vertically at the `end`.
 
+# --hints--
+
+`item3` class should have a `align-self` property that has the value of `end`.
+
+```js
+assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -70,18 +63,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.item3 {align-self: end;}</style>
 ```
-
-</section>

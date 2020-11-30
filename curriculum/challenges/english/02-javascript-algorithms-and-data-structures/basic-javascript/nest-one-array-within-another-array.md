@@ -6,65 +6,45 @@ videoUrl: 'https://scrimba.com/c/crZQZf8'
 forumTopicId: 18247
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can also nest arrays within other arrays, like below:
 
 ```js
 [["Bulls", 23], ["White Sox", 45]]
 ```
 
-This is also called a <dfn>multi-dimensional array<dfn>.
-</section>
+This is also called a <dfn>multi-dimensional array<dfn>.</dfn></dfn>
 
-## Instructions
-<section id='instructions'>
-Create a nested array called <code>myArray</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Create a nested array called `myArray`.
 
-```yml
-tests:
-  - text: <code>myArray</code> should have at least one array nested within another array.
-    testString: assert(Array.isArray(myArray) && myArray.some(Array.isArray));
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`myArray` should have at least one array nested within another array.
 
 ```js
-// Only change code below this line
-var myArray = [];
-
+assert(Array.isArray(myArray) && myArray.some(Array.isArray));
 ```
 
-</div>
+# --seed--
 
-
-### After Test
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Only change code below this line
+var myArray = [];
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myArray = [[1,2,3]];
 ```
-
-</section>

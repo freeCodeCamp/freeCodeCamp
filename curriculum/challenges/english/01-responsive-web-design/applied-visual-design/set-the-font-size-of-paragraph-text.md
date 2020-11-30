@@ -6,32 +6,25 @@ videoUrl: 'https://scrimba.com/c/cVJ36Cr'
 forumTopicId: 301068
 ---
 
-## Description
-<section id='description'>
-The <code>font-size</code> property in CSS is not limited to headings, it can be applied to any element containing text.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Change the value of the <code>font-size</code> property for the paragraph to 16px to make it more visible.
-</section>
+The `font-size` property in CSS is not limited to headings, it can be applied to any element containing text.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.
-    testString: assert($('p').css('font-size') == '16px');
+Change the value of the `font-size` property for the paragraph to 16px to make it more visible.
 
+# --hints--
+
+Your `p` tag should have a `font-size` of 16 pixels.
+
+```js
+assert($('p').css('font-size') == '16px');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -44,14 +37,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -63,5 +49,3 @@ tests:
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 ```
-
-</section>

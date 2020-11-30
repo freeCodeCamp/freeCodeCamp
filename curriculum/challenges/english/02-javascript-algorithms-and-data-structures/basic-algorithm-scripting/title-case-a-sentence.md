@@ -5,39 +5,44 @@ challengeType: 5
 forumTopicId: 16088
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
 For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`titleCase("I'm a little tea pot")` should return a string.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>titleCase("I&#39;m a little tea pot")</code> should return a string.
-    testString: assert(typeof titleCase("I'm a little tea pot") === "string");
-  - text: <code>titleCase("I&#39;m a little tea pot")</code> should return <code>I&#39;m A Little Tea Pot</code>.
-    testString: assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot");
-  - text: <code>titleCase("sHoRt AnD sToUt")</code> should return <code>Short And Stout</code>.
-    testString: assert(titleCase("sHoRt AnD sToUt") === "Short And Stout");
-  - text: <code>titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")</code> should return <code>Here Is My Handle Here Is My Spout</code>.
-    testString: assert(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") === "Here Is My Handle Here Is My Spout");
-
+```js
+assert(typeof titleCase("I'm a little tea pot") === 'string');
 ```
 
-</section>
+`titleCase("I'm a little tea pot")` should return `I'm A Little Tea Pot`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot");
+```
 
-<div id='js-seed'>
+`titleCase("sHoRt AnD sToUt")` should return `Short And Stout`.
+
+```js
+assert(titleCase('sHoRt AnD sToUt') === 'Short And Stout');
+```
+
+`titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")` should return `Here Is My Handle Here Is My Spout`.
+
+```js
+assert(
+  titleCase('HERE IS MY HANDLE HERE IS MY SPOUT') ===
+    'Here Is My Handle Here Is My Spout'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function titleCase(str) {
@@ -47,15 +52,7 @@ function titleCase(str) {
 titleCase("I'm a little tea pot");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function titleCase(str) {
@@ -63,7 +60,4 @@ function titleCase(str) {
 }
 
 titleCase("I'm a little tea pot");
-
 ```
-
-</section>

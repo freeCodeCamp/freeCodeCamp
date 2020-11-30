@@ -4,31 +4,53 @@ title: Part 133
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The legend has all the information is needs, but the title looks a little misaligned. Go to where you created your  `legendTitle` variable and set the `position` to `relative` and the `left` to `20px` using `style` functions.
-</section>
+The legend has all the information is needs, but the title looks a little misaligned. Go to where you created your `legendTitle` variable and set the `position` to `relative` and the `left` to `20px` using `style` functions.
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const th = $('.dashboard div table thead tr th')[0]; assert(th.style.position === 'relative' && th.style.left === '20px');
-
+```js
+const th = $('.dashboard div table thead tr th')[0];
+assert(th.style.position === 'relative' && th.style.left === '20px');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -225,47 +247,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -463,5 +445,3 @@ tests:
     .attr('align', 'left');
 </script>
 ```
-
-</section>

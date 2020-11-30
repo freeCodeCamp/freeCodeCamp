@@ -6,53 +6,45 @@ videoUrl: 'https://scrimba.com/c/c9MEKHZ'
 forumTopicId: 18280
 ---
 
-## Description
-<section id='description'>
-Create a shopping list in the variable <code>myList</code>. The list should be a multi-dimensional array containing several sub-arrays.
+# --description--
+
+Create a shopping list in the variable `myList`. The list should be a multi-dimensional array containing several sub-arrays.
+
 The first element in each sub-array should contain a string with the name of the item. The second element should be a number representing the quantity i.e.
-<code>["Chocolate Bar", 15]</code>
+
+`["Chocolate Bar", 15]`
+
 There should be at least 5 sub-arrays in the list.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>myList</code> should be an array.
-    testString: assert(isArray);
-  - text: The first elements in each of your sub-arrays should all be strings.
-    testString: assert(hasString);
-  - text: The second elements in each of your sub-arrays should all be numbers.
-    testString: assert(hasNumber);
-  - text: You should have at least 5 items in your list.
-    testString: assert(count > 4);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`myList` should be an array.
 
 ```js
-var myList = [];
-
-
+assert(isArray);
 ```
 
-</div>
+The first elements in each of your sub-arrays should all be strings.
 
+```js
+assert(hasString);
+```
 
-### After Test
-<div id='js-teardown'>
+The second elements in each of your sub-arrays should all be numbers.
+
+```js
+assert(hasNumber);
+```
+
+You should have at least 5 items in your list.
+
+```js
+assert(count > 4);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 var count = 0;
@@ -83,13 +75,13 @@ var hasNumber = false;
 })(myList);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var myList = [];
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myList = [
@@ -100,5 +92,3 @@ var myList = [
   ["Toads", 9]
 ];
 ```
-
-</section>

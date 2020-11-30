@@ -1,44 +1,35 @@
 ---
 id: 5900f3b21000cf542c50fec5
-challengeType: 5
 title: 'Problem 70: Totient permutation'
+challengeType: 5
 forumTopicId: 302183
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Euler's Totient function, φ(<var>n</var>) [sometimes called the phi function], is used to determine the number of positive numbers less than or equal to <var>n</var> which are relatively prime to <var>n</var>. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, φ(9)=6. The number 1 is considered to be relatively prime to every positive number, so φ(1)=1.
+Euler's Totient function, φ(`n`) \[sometimes called the phi function], is used to determine the number of positive numbers less than or equal to `n` which are relatively prime to `n`. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, φ(9)=6. The number 1 is considered to be relatively prime to every positive number, so φ(1)=1.
 
 Interestingly, φ(87109)=79180, and it can be seen that 87109 is a permutation of 79180.
 
-Find the value of <var>n</var>, 1 < <var>n</var> < 10<sup>7</sup>, for which φ(<var>n</var>) is a permutation of <var>n</var> and the ratio <var>n</var>/φ(<var>n</var>) produces a minimum.
+Find the value of `n`, 1 &lt; `n` &lt; 10<sup>7</sup>, for which φ(`n`) is a permutation of `n` and the ratio `n`/φ(`n`) produces a minimum.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`totientPermutation()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>totientPermutation()</code> should return a number.
-    testString: assert(typeof totientPermutation() === 'number');
-  - text: <code>totientPermutation()</code> should return 8319823.
-    testString: assert.strictEqual(totientPermutation(), 8319823);
-
+```js
+assert(typeof totientPermutation() === 'number');
 ```
 
-</section>
+`totientPermutation()` should return 8319823.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(totientPermutation(), 8319823);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function totientPermutation() {
@@ -49,17 +40,8 @@ function totientPermutation() {
 totientPermutation();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

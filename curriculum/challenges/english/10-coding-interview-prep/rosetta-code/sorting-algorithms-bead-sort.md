@@ -5,49 +5,79 @@ challengeType: 5
 forumTopicId: 302310
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-Sort an array of positive integers using the <a href="https://en.wikipedia.org/wiki/Bead_sort" target="_blank">Bead Sort Algorithm</a>.
-A  <i>bead sort</i>  is also known as a  <i>gravity sort</i>.
-The algorithm has  O(S),  where  S  is the sum of the integers in the input set:  Each bead is moved individually.
+Sort an array of positive integers using the [Bead Sort Algorithm](https://en.wikipedia.org/wiki/Bead_sort).
+
+A *bead sort* is also known as a *gravity sort*.
+
+The algorithm has O(S), where S is the sum of the integers in the input set: Each bead is moved individually.
+
 This is the case when bead sort is implemented without a mechanism to assist in finding empty spaces below the beads, such as in software implementations.
-</section>
 
-## Instructions
+# --hints--
 
-<section id='instructions'>
+`beadSort` should be a function.
 
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>beadSort</code> should be a function.
-    testString: assert(typeof beadSort == 'function');
-  - text: <code>beadSort([25, 32, 12, 7, 20])</code> should return an array.
-    testString: assert(Array.isArray(beadSort([25, 32, 12, 7, 20])));
-  - text: <code>beadSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
-    testString: assert.deepEqual(beadSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
-  - text: <code>beadSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
-    testString: assert.deepEqual(beadSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
-  - text: <code>beadSort([43, 36, 20, 34, 24])</code> should return <code>[20, 24, 34, 36, 43]</code>.
-    testString: assert.deepEqual(beadSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
-  - text: <code>beadSort([12, 33, 26, 18, 1, 16, 38])</code> should return <code>[1, 12, 16, 18, 26, 33, 38]</code>.
-    testString: assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [1, 12, 16, 18, 26, 33, 38]);
-  - text: <code>beadSort([3, 39, 48, 16, 1, 4, 29])</code> should return <code>[1, 3, 4, 16, 29, 39, 48]</code>.
-    testString: assert.deepEqual(beadSort([3, 39, 48, 16, 1, 4, 29]), [1, 3, 4, 16, 29, 39, 48]);
+```js
+assert(typeof beadSort == 'function');
 ```
 
-</section>
+`beadSort([25, 32, 12, 7, 20])` should return an array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(beadSort([25, 32, 12, 7, 20])));
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`beadSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+
+```js
+assert.deepEqual(beadSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
+```
+
+`beadSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+
+```js
+assert.deepEqual(beadSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
+```
+
+`beadSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+
+```js
+assert.deepEqual(beadSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
+```
+
+`beadSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+
+```js
+assert.deepEqual(beadSort([12, 33, 26, 18, 1, 16, 38]), [
+  1,
+  12,
+  16,
+  18,
+  26,
+  33,
+  38
+]);
+```
+
+`beadSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+
+```js
+assert.deepEqual(beadSort([3, 39, 48, 16, 1, 4, 29]), [
+  1,
+  3,
+  4,
+  16,
+  29,
+  39,
+  48
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function beadSort(arr) {
@@ -55,12 +85,7 @@ function beadSort(arr) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function beadSort(arr) {
@@ -101,5 +126,3 @@ function beadSort(arr) {
   return sorted;
 }
 ```
-
-</section>

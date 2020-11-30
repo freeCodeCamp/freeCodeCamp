@@ -4,35 +4,37 @@ title: Part 13
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Add a `target` attribute with the value `_blank` to the anchor (`a`) element's opening tag, so that the link opens in a new tab. 
+Add a `target` attribute with the value `_blank` to the anchor (`a`) element's opening tag, so that the link opens in a new tab.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `p` element should have a nested anchor (`a`) element with the text `cat photos`. You may have deleted it or have a typo.
 
-```yml
-tests:
-  - text: Your `p` element should have a nested anchor (`a`) element with the text `cat photos`. You may have deleted it or have a typo.
-    testString: |
-      const anchor = $('p > a');
-      assert(anchor.length && anchor[0].innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos');
-  - text: Your anchor (`a`) element does not have a `target` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( document.querySelector('a').hasAttribute('target') );
-  - text: The value of the `target` attribute should '_blank'. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( document.querySelector('a').getAttribute('target') === '_blank' );
-
+```js
+const anchor = $('p > a');
+assert(
+  anchor.length &&
+    anchor[0].innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos'
+);
 ```
 
-</section>
+Your anchor (`a`) element does not have a `target` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(document.querySelector('a').hasAttribute('target'));
+```
 
-<div id='html-seed'>
+The value of the `target` attribute should '\_blank'. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+assert(document.querySelector('a').getAttribute('target') === '_blank');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -41,14 +43,12 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      --fcc-editable-region--
+--fcc-editable-region--
       <p>Click here to view more <a href="https://freecatphotoapp.com">cat photos</a>.</p>
-      --fcc-editable-region--
+--fcc-editable-region--
       <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

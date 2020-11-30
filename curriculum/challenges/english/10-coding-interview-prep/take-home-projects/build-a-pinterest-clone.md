@@ -5,46 +5,37 @@ challengeType: 4
 forumTopicId: 302352
 ---
 
-## Description
-<section id='description'>
-<strong>Objective:</strong> Build a <a href='https://repl.it/' target='_blank'>Repl.it</a> app that is functionally similar to this: <a href='https://build-a-pinterest-clone.freecodecamp.rocks/' target='_blank'>https://build-a-pinterest-clone.freecodecamp.rocks/</a>.
-Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.
-<strong>User Story:</strong> As an unauthenticated user, I can login with GitHub.
-<strong>User Story:</strong> As an authenticated user, I can link to images.
-<strong>User Story:</strong> As an authenticated user, I can delete images that I've linked to.
-<strong>User Story:</strong> As an authenticated user, I can see a Pinterest-style wall of all the images I've linked to.
-<strong>User Story:</strong> As an unauthenticated user, I can browse other users' walls of images.
-<strong>User Story:</strong> As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
-<strong>Hint:</strong> <a href='https://masonry.desandro.com/' target='_blank'>Masonry.js</a> is a library that allows for Pinterest-style image grids.
+# --description--
+
+**Objective:** Build a [Repl.it](https://repl.it/) app that is functionally similar to this: <https://build-a-pinterest-clone.freecodecamp.rocks/>.
+
+Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story). Use whichever libraries or APIs you need. Give it your own personal style.
+
+**User Story:** As an unauthenticated user, I can login with GitHub.
+
+**User Story:** As an authenticated user, I can link to images.
+
+**User Story:** As an authenticated user, I can delete images that I've linked to.
+
+**User Story:** As an authenticated user, I can see a Pinterest-style wall of all the images I've linked to.
+
+**User Story:** As an unauthenticated user, I can browse other users' walls of images.
+
+**User Story:** As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
+
+**Hint:** [Masonry.js](https://masonry.desandro.com/) is a library that allows for Pinterest-style image grids.
+
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
-</section>
 
-## Instructions
-<section id='instructions'>
+You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
 
-```yml
-tests: []
+# --seed--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

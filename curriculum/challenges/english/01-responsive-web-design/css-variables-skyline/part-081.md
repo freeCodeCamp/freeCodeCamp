@@ -4,31 +4,24 @@ title: Part 81
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 On to the next building! Nest two `div` elements within `fb2` and give them the classes of `fb2a` and `fb2b`, in that order.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb2 = $(".fb2").children("div"); assert(fb2.length === 2 && fb2[0] === $("div.fb2a")[0] && fb2[1] === $("div.fb2b")[0]);
-
+```js
+const fb2 = $('.fb2').children('div');
+assert(
+  fb2.length === 2 && fb2[0] === $('div.fb2a')[0] && fb2[1] === $('div.fb2b')[0]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -300,12 +293,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -579,5 +567,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

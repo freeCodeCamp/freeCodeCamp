@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
 ---
 
-## Description
-<section id='description'>
-An easy way to append data to the end of an array is via the <code>push()</code> function.
-<code>.push()</code> takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
+# --description--
+
+An easy way to append data to the end of an array is via the `push()` function.
+
+`.push()` takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
 
 Examples:
 
@@ -23,60 +24,53 @@ arr2.push(["happy", "joy"]);
 // arr2 now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Push <code>["dog", 3]</code> onto the end of the <code>myArray</code> variable.
-</section>
+Push `["dog", 3]` onto the end of the `myArray` variable.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>myArray</code> should now equal <code>[["John", 23], ["cat", 2], ["dog", 3]]</code>.
-    testString: assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] === 23 && d[2][0] == 'dog' && d[2][1] === 3 && d[2].length == 2){return true;}else{return false;}})(myArray));
+`myArray` should now equal `[["John", 23], ["cat", 2], ["dog", 3]]`.
 
+```js
+assert(
+  (function (d) {
+    if (
+      d[2] != undefined &&
+      d[0][0] == 'John' &&
+      d[0][1] === 23 &&
+      d[2][0] == 'dog' &&
+      d[2][1] === 3 &&
+      d[2].length == 2
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  })(myArray)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
+## --after-user-code--
 
-<div id='js-seed'>
+```js
+(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
 var myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myArray = [["John", 23], ["cat", 2]];
 myArray.push(["dog",3]);
 ```
-
-</section>

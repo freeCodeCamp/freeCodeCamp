@@ -4,38 +4,54 @@ title: Part 38
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In order for a form's data to be accessed by the locaton specified in the `action` attribute, you must give the text field a `name` attribute and assign it a value to represent the data being submitted. For example, you could use the following syntax for an email address text field: `<input type="text" name="email">`.
 
-Add the `name` attribute with the value `catphoto ` to your text field.
+Add the `name` attribute with the value `catphoto` to your text field.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
 
-```yml
-tests:
-  - text: You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
-    testString: assert( $('input').length );
-  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
-    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
-  - text: Your `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( $('input')[0].hasAttribute('name') );
-  - text: Your `input` element should have a `name` attribute with the value `catphotourl`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input')[0].getAttribute('name').match(/^catphotourl$/i) );
-  - text: Although you have set the `input` element's `name` attribute to `catphotourl`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*input\s+.*\s*=\s*catphotourl/.test(code) );
-
+```js
+assert($('input').length);
 ```
 
-</section>
+Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(
+  $('form')[0].children.length === 1 &&
+    $('form')[0].innerText.trim().length === 0
+);
+```
+
+Your `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+
+```js
+assert($('input')[0].hasAttribute('name'));
+```
+
+Your `input` element should have a `name` attribute with the value `catphotourl`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+assert(
+  $('input')[0]
+    .getAttribute('name')
+    .match(/^catphotourl$/i)
+);
+```
+
+Although you have set the `input` element's `name` attribute to `catphotourl`, it is recommended to always surround the value of an attribute with quotation marks.
+
+```js
+assert(!/\<\s*input\s+.*\s*=\s*catphotourl/.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -74,9 +90,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--  
+--fcc-editable-region--
           <input type="text">
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </section>
     </main>
@@ -84,5 +100,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

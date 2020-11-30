@@ -5,46 +5,61 @@ challengeType: 5
 forumTopicId: 302297
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<a href="https://en.wikipedia.org/wiki/Knight%27s_tour">Knight's Tour</a>Problem: You have an empty <code>w</code> * <code>h</code> chessboard, but for a single knight on some square. The knight must perform a sequence of legal moves that result in the knight visiting every square on the chessboard exactly once. Note that it is <i>not</i> a requirement that the tour be "closed"; that is, the knight need not end within a single move of its start position.
-</section>
+[Knight's Tour](https://en.wikipedia.org/wiki/Knight%27s_tour)Problem: You have an empty `w` \* `h` chessboard, but for a single knight on some square. The knight must perform a sequence of legal moves that result in the knight visiting every square on the chessboard exactly once. Note that it is *not* a requirement that the tour be "closed"; that is, the knight need not end within a single move of its start position.
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
-Write a function that takes <code>w</code> and <code>h</code> as parameters and returns the number of initial positions from where it is possible to achieve the task stated above.
-</section>
+Write a function that takes `w` and `h` as parameters and returns the number of initial positions from where it is possible to achieve the task stated above.
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`knightTour` should be a function.
 
-```yml
-tests:
-  - text: <code>knightTour</code> should be a function.
-    testString: assert(typeof knightTour == 'function');
-  - text: <code>knightTour(6, 6)</code> should return a number.
-    testString: assert(typeof knightTour(6, 6) == 'number');
-  - text: <code>knightTour(6, 6)</code> should return <code>35</code>.
-    testString: assert.equal(knightTour(6, 6), 35);
-  - text: <code>knightTour(5, 6)</code> should return <code>20</code>.
-    testString: assert.equal(knightTour(5, 6), 20);
-  - text: <code>knightTour(4, 6)</code> should return <code>10</code>.
-    testString: assert.equal(knightTour(4, 6), 10);
-  - text: <code>knightTour(7, 3)</code> should return <code>4</code>.
-    testString: assert.equal(knightTour(7, 3), 4);
-  - text: <code>knightTour(8, 6)</code> should return <code>47</code>.
-    testString: assert.equal(knightTour(8, 6), 47);
+```js
+assert(typeof knightTour == 'function');
 ```
 
-</section>
+`knightTour(6, 6)` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof knightTour(6, 6) == 'number');
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`knightTour(6, 6)` should return `35`.
+
+```js
+assert.equal(knightTour(6, 6), 35);
+```
+
+`knightTour(5, 6)` should return `20`.
+
+```js
+assert.equal(knightTour(5, 6), 20);
+```
+
+`knightTour(4, 6)` should return `10`.
+
+```js
+assert.equal(knightTour(4, 6), 10);
+```
+
+`knightTour(7, 3)` should return `4`.
+
+```js
+assert.equal(knightTour(7, 3), 4);
+```
+
+`knightTour(8, 6)` should return `47`.
+
+```js
+assert.equal(knightTour(8, 6), 47);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function knightTour(w, h) {
@@ -52,12 +67,7 @@ function knightTour(w, h) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function knightTour(w, h) {
@@ -141,5 +151,3 @@ function knightTour(w, h) {
   return cnt;
 }
 ```
-
-</section>

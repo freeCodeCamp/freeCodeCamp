@@ -6,35 +6,40 @@ videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176
 ---
 
-## Description
-<section id='description'>
-Another data type is the <dfn>Boolean</dfn>. <code>Booleans</code> may only be one of two values: <code>true</code> or <code>false</code>. They are basically little on-off switches, where <code>true</code> is "on" and <code>false</code> is "off."  These two states are mutually exclusive.
-<strong>Note</strong><br><code>Boolean</code> values are never written with quotes. The <code>strings</code> <code>"true"</code> and <code>"false"</code> are not <code>Boolean</code> and have no special meaning in JavaScript.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Modify the <code>welcomeToBooleans</code> function so that it returns <code>true</code> instead of <code>false</code> when the run button is clicked.
-</section>
+Another data type is the <dfn>Boolean</dfn>. `Booleans` may only be one of two values: `true` or `false`. They are basically little on-off switches, where `true` is "on" and `false` is "off." These two states are mutually exclusive.
 
-## Tests
-<section id='tests'>
+**Note**  
+`Boolean` values are never written with quotes. The `strings` `"true"` and `"false"` are not `Boolean` and have no special meaning in JavaScript.
 
-```yml
-tests:
-  - text: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.
-    testString: assert(typeof welcomeToBooleans() === 'boolean');
-  - text: <code>welcomeToBooleans()</code> should return true.
-    testString: assert(welcomeToBooleans() === true);
+# --instructions--
 
+Modify the `welcomeToBooleans` function so that it returns `true` instead of `false` when the run button is clicked.
+
+# --hints--
+
+The `welcomeToBooleans()` function should return a boolean (true/false) value.
+
+```js
+assert(typeof welcomeToBooleans() === 'boolean');
 ```
 
-</section>
+`welcomeToBooleans()` should return true.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(welcomeToBooleans() === true);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+welcomeToBooleans();
+```
+
+## --seed-contents--
 
 ```js
 function welcomeToBooleans() {
@@ -47,28 +52,10 @@ function welcomeToBooleans() {
 }
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-welcomeToBooleans();
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function welcomeToBooleans() {
   return true; // Change this line
 }
 ```
-
-</section>

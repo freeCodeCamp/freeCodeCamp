@@ -5,53 +5,88 @@ challengeType: 5
 forumTopicId: 16086
 ---
 
-## Description
+# --description--
 
-<section id='description'>
+Given two [set](https://rosettacode.org/wiki/set)s *A* and *B*, compute $(A \\setminus B) \\cup (B \\setminus A).$ That is, enumerate the items that are in *A* or *B* but not both. This set is called the [symmetric difference](<https://en.wikipedia.org/wiki/Symmetric difference>) of *A* and *B*. In other words: $(A \\cup B) \\setminus (A \\cap B)$ (the set of items that are in at least one of *A* or *B* minus the set of items that are in both *A* and *B*).
 
-Given two <a href="https://rosettacode.org/wiki/set" target="_blank">set</a>s <i>A</i> and <i>B</i>, compute $(A \setminus B) \cup (B \setminus A).$
-That is, enumerate the items that are in <i>A</i> or <i>B</i> but not both. This set is called the <a href="https://en.wikipedia.org/wiki/Symmetric difference" target="_blank">symmetric difference</a> of <i>A</i> and <i>B</i>.
-In other words: $(A \cup B) \setminus (A \cap B)$ (the set of items that are in at least one of <i>A</i> or <i>B</i> minus the set of items that are in both <i>A</i> and <i>B</i>).
-
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Write a function that takes two arrays as parameters and returns the symmetric difference. Sort the resultant array before returning it.
 
-</section>
+# --hints--
 
-## Tests
+`symmetricDifference` should be a function.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>symmetricDifference</code> should be a function.
-    testString: assert(typeof symmetricDifference == 'function');
-  - text: <code>symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])</code> should return an array.
-    testString: assert(Array.isArray(symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])));
-  - text: <code>symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])</code> should return <code>["Jim", "Serena"]</code>.
-    testString: assert.deepEqual(symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"]), ["Jim", "Serena"]);
-  - text: <code>symmetricDifference([1, 2, 3], [3, 4])</code> should return <code>[1, 2, 4]</code>.
-    testString: assert.deepEqual(symmetricDifference([1, 2, 3], [3, 4]), [1, 2, 4]);
-  - text: <code>symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7])</code> should return <code>[1, 2, 5, 7, 8]</code>.
-    testString: assert.deepEqual(symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7]), [1, 2, 5, 7, 8]);
-  - text: <code>symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9])</code> should return <code>[2, 4, 9]</code>.
-    testString: assert.deepEqual(symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9]), [2, 4, 9]);
-  - text: <code>symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9])</code> should return <code>[1, 3, 4, 8]</code>.
-    testString: assert.deepEqual(symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9]), [1, 3, 4, 8]);
+```js
+assert(typeof symmetricDifference == 'function');
 ```
 
-</section>
+`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` should return an array.
 
-## Challenge Seed
+```js
+assert(
+  Array.isArray(
+    symmetricDifference(
+      ['John', 'Bob', 'Mary', 'Serena'],
+      ['Jim', 'Mary', 'John', 'Bob']
+    )
+  )
+);
+```
 
-<section id='challengeSeed'>
+`symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])` should return `["Jim", "Serena"]`.
 
-<div id='js-seed'>
+```js
+assert.deepEqual(
+  symmetricDifference(
+    ['John', 'Bob', 'Mary', 'Serena'],
+    ['Jim', 'Mary', 'John', 'Bob']
+  ),
+  ['Jim', 'Serena']
+);
+```
+
+`symmetricDifference([1, 2, 3], [3, 4])` should return `[1, 2, 4]`.
+
+```js
+assert.deepEqual(symmetricDifference([1, 2, 3], [3, 4]), [1, 2, 4]);
+```
+
+`symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7])` should return `[1, 2, 5, 7, 8]`.
+
+```js
+assert.deepEqual(symmetricDifference([1, 2, 3, 4, 5], [3, 4, 8, 7]), [
+  1,
+  2,
+  5,
+  7,
+  8
+]);
+```
+
+`symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9])` should return `[2, 4, 9]`.
+
+```js
+assert.deepEqual(
+  symmetricDifference([1, 2, 3, 4, 5, 6, 7, 8], [1, 3, 5, 6, 7, 8, 9]),
+  [2, 4, 9]
+);
+```
+
+`symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9])` should return `[1, 3, 4, 8]`.
+
+```js
+assert.deepEqual(symmetricDifference([1, 2, 4, 7, 9], [2, 3, 7, 8, 9]), [
+  1,
+  3,
+  4,
+  8
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function symmetricDifference(A, B) {
@@ -59,12 +94,7 @@ function symmetricDifference(A, B) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function symmetricDifference(A, B) {
@@ -88,5 +118,3 @@ function symmetricDifference(A, B) {
   ).sort();
 }
 ```
-
-</section>

@@ -4,44 +4,81 @@ title: Part 30
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 After the last `img` element, add a `figcaption` element with the text `Cats hate other cats.`
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelectorAll('figcaption').length === 2 );
-  - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figcaption\>/g).length === 2 );
-  - text: There should be a `figure` element right above the second `section` element's closing tag.
-    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
-  - text: The last `img` element should be nested in the `figure` element.
-    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
-  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure\>/g).length === 2 );
-  - text: The `figcaption` element should be nested in the `figure` element.
-    testString: assert( document.querySelectorAll('figure > figcaption').length === 2);
-  - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have the `img` element and the `figcaption` element in the wrong order.
-    testString: assert( document.querySelectorAll('figcaption')[1].previousElementSibling.nodeName === 'IMG');
-  - text: The `figcaption` element should have the text `Cats hate other cats.` You have omitted a word or have a typo.
-    testString: assert( document.querySelectorAll('figcaption')[1].innerText.toLowerCase().match(/Cats hate other cats\.?$/i));
-    
+```js
+assert(document.querySelectorAll('figcaption').length === 2);
 ```
 
-</section>
+Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/<\/figcaption\>/g).length === 2);
+```
+
+There should be a `figure` element right above the second `section` element's closing tag.
+
+```js
+assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
+```
+
+The last `img` element should be nested in the `figure` element.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+assert(
+  catsImg &&
+    catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats'
+);
+```
+
+Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`.
+
+```js
+assert(document.querySelectorAll('figure').length === 2);
+```
+
+Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+assert(code.match(/<\/figure\>/g).length === 2);
+```
+
+The `figcaption` element should be nested in the `figure` element.
+
+```js
+assert(document.querySelectorAll('figure > figcaption').length === 2);
+```
+
+The `figcaption` element nested in the `figure` element should be below the `img` element. You have the `img` element and the `figcaption` element in the wrong order.
+
+```js
+assert(
+  document.querySelectorAll('figcaption')[1].previousElementSibling.nodeName ===
+    'IMG'
+);
+```
+
+The `figcaption` element should have the text `Cats hate other cats.` You have omitted a word or have a typo.
+
+```js
+assert(
+  document
+    .querySelectorAll('figcaption')[1]
+    .innerText.toLowerCase()
+    .match(/Cats hate other cats\.?$/i)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -73,9 +110,9 @@ tests:
           <li>other cats</li>
         </ol>
         <figure>
-          --fcc-editable-region--
+--fcc-editable-region--
           <img src="https://bit.ly/fcc-cats" alt="Five cats looking around a field.">
-          --fcc-editable-region--
+--fcc-editable-region--
         </figure>
       </section>
     </main>
@@ -83,5 +120,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

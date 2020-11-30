@@ -6,14 +6,14 @@ videoUrl: 'https://scrimba.com/c/cPpQNT3'
 forumTopicId: 301067
 ---
 
-## Description
-<section id='description'>
-The <code>font-size</code> property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, you'll set the values for all <code>h1</code> through <code>h6</code> tags to balance the heading sizes.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+The `font-size` property is used to specify how large the text is in a given element. This rule can be used for multiple elements to create visual consistency of text on a page. In this challenge, you'll set the values for all `h1` through `h6` tags to balance the heading sizes.
+
+# --instructions--
+
   <p>In the <code>style</code> tags, set the <code>font-size</code> of the:</p>
+
   <ul>
     <li><code>h1</code> tag to 68px.</li>
     <li><code>h2</code> tag to 52px.</li>
@@ -22,34 +22,49 @@ The <code>font-size</code> property is used to specify how large the text is in 
     <li><code>h5</code> tag to 21px.</li>
     <li><code>h6</code> tag to 14px.</li>
   </ul>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.
-    testString: assert($('h1').css('font-size') == '68px');
-  - text: Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.
-    testString: assert($('h2').css('font-size') == '52px');
-  - text: Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.
-    testString: assert($('h3').css('font-size') == '40px');
-  - text: Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.
-    testString: assert($('h4').css('font-size') == '32px');
-  - text: Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.
-    testString: assert($('h5').css('font-size') == '21px');
-  - text: Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.
-    testString: const regex = /h6\s*\{\s*font-size\s*:\s*14px\s*(;\s*\}|\})/i; assert.strictEqual(true, regex.test(code));
+Your code should set the `font-size` property for the `h1` tag to 68 pixels.
 
+```js
+assert($('h1').css('font-size') == '68px');
 ```
 
-</section>
+Your code should set the `font-size` property for the `h2` tag to 52 pixels.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').css('font-size') == '52px');
+```
 
-<div id='html-seed'>
+Your code should set the `font-size` property for the `h3` tag to 40 pixels.
+
+```js
+assert($('h3').css('font-size') == '40px');
+```
+
+Your code should set the `font-size` property for the `h4` tag to 32 pixels.
+
+```js
+assert($('h4').css('font-size') == '32px');
+```
+
+Your code should set the `font-size` property for the `h5` tag to 21 pixels.
+
+```js
+assert($('h5').css('font-size') == '21px');
+```
+
+Your code should set the `font-size` property for the `h6` tag to 14 pixels.
+
+```js
+const regex = /h6\s*\{\s*font-size\s*:\s*14px\s*(;\s*\}|\})/i;
+assert.strictEqual(true, regex.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -68,14 +83,7 @@ tests:
 <h6>This is h6 text</h6>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -105,5 +113,3 @@ tests:
 <h5>This is h5 text</h5>
 <h6>This is h6 text</h6>
 ```
-
-</section>

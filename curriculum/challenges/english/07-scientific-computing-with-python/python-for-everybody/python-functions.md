@@ -5,31 +5,33 @@ challengeType: 11
 videoId: 3JGF-n3tDPU
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What is the purpose of the "def" keyword in Python?
 
-```yml
-question:
-  text: |
-    What is the purpose of the "def" keyword in Python?
+## --answers--
 
-  answers:
-    - |
-        It is slang that means "The following code is really cool."
-    - |
-        It indicates the start of a function.
-    - |
-        It indicates that the following indented section of code is to be stored for later.
-    - |
-        It indicates the start of a function, and the following indented section of code is to be stored for later.
-    - |
-        None of the above.
-  solution: 4
-```
+It is slang that means "The following code is really cool."
 
-</section>
+---
+
+It indicates the start of a function.
+
+---
+
+It indicates that the following indented section of code is to be stored for later.
+
+---
+
+It indicates the start of a function, and the following indented section of code is to be stored for later.
+
+---
+
+None of the above.
+
+## --video-solution--
+
+4
+

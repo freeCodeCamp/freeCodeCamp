@@ -4,31 +4,28 @@ title: Part 37
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Move the position of `fb4` relative to where it is now by adding a `position` of `relative` and `left` of `10%` to it. Do the same for `fb5` but use `right` instead of `left`. This will cover up the remaining white space in between the buildings.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb4style = code.match(/\.fb4\s*{[\s\S]+?[^}]}/g)[0]; const fb5style = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0]; assert($(".fb4").css("position") === "relative" && $(".fb5").css("position") === "relative" && /left\s*:\s*10%\s*(;|})/g.test(fb4style) && /right\s*:\s*10%\s*(;|})/g.test(fb5style));
-
+```js
+const fb4style = code.match(/\.fb4\s*{[\s\S]+?[^}]}/g)[0];
+const fb5style = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  $('.fb4').css('position') === 'relative' &&
+    $('.fb5').css('position') === 'relative' &&
+    /left\s*:\s*10%\s*(;|})/g.test(fb4style) &&
+    /right\s*:\s*10%\s*(;|})/g.test(fb5style)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -187,12 +184,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -354,5 +346,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

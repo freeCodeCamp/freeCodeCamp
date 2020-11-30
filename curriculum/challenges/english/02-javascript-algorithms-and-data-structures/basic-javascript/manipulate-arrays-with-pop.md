@@ -6,10 +6,12 @@ videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
 ---
 
-## Description
-<section id='description'>
-Another way to change the data in an array is with the <code>.pop()</code> function.
-<code>.pop()</code> is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable. In other words, <code>.pop()</code> removes the last element from an array and returns that element.
+# --description--
+
+Another way to change the data in an array is with the `.pop()` function.
+
+`.pop()` is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable. In other words, `.pop()` removes the last element from an array and returns that element.
+
 Any type of entry can be "popped" off of an array - numbers, strings, even nested arrays.
 
 ```js
@@ -19,33 +21,55 @@ console.log(oneDown); // Returns 6
 console.log(threeArr); // Returns [1, 4]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the "popped off" value to <code>removedFromMyArray</code>.
-</section>
+Use the `.pop()` function to remove the last item from `myArray`, assigning the "popped off" value to `removedFromMyArray`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>myArray</code> should only contain <code>[["John", 23]]</code>.
-    testString: assert((function(d){if(d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray));
-  - text: You should use <code>pop()</code> on <code>myArray</code>.
-    testString: assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
-  - text: <code>removedFromMyArray</code> should only contain <code>["cat", 2]</code>.
-    testString: assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray));
+`myArray` should only contain `[["John", 23]]`.
 
+```js
+assert(
+  (function (d) {
+    if (d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined) {
+      return true;
+    } else {
+      return false;
+    }
+  })(myArray)
+);
 ```
 
-</section>
+You should use `pop()` on `myArray`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
+```
 
-<div id='js-seed'>
+`removedFromMyArray` should only contain `["cat", 2]`.
+
+```js
+assert(
+  (function (d) {
+    if (d[0] == 'cat' && d[1] === 2 && d[2] == undefined) {
+      return true;
+    } else {
+      return false;
+    }
+  })(removedFromMyArray)
+);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -53,31 +77,11 @@ var myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line
 var removedFromMyArray;
-
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myArray = [["John", 23], ["cat", 2]];
 var removedFromMyArray = myArray.pop();
 ```
-
-</section>

@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
 ---
 
-## Description
-<section id='description'>
-In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.
-A <code>default</code> statement should be the last case.
+# --description--
+
+In a `switch` statement you may not be able to specify all possible values as `case` statements. Instead, you can add the `default` statement which will be executed if no matching `case` statements are found. Think of it like the final `else` statement in an `if/else` chain.
+
+A `default` statement should be the last case.
 
 ```js
 switch (num) {
@@ -26,43 +27,67 @@ switch (num) {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Write a switch statement to set <code>answer</code> for the following conditions:<br><code>"a"</code> - "apple"<br><code>"b"</code> - "bird"<br><code>"c"</code> - "cat"<br><code>default</code> - "stuff"
-</section>
+Write a switch statement to set `answer` for the following conditions:  
+`"a"` - "apple"  
+`"b"` - "bird"  
+`"c"` - "cat"  
+`default` - "stuff"
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>switchOfStuff("a")</code> should have a value of "apple"
-    testString: assert(switchOfStuff("a") === "apple");
-  - text: <code>switchOfStuff("b")</code> should have a value of "bird"
-    testString: assert(switchOfStuff("b") === "bird");
-  - text: <code>switchOfStuff("c")</code> should have a value of "cat"
-    testString: assert(switchOfStuff("c") === "cat");
-  - text: <code>switchOfStuff("d")</code> should have a value of "stuff"
-    testString: assert(switchOfStuff("d") === "stuff");
-  - text: <code>switchOfStuff(4)</code> should have a value of "stuff"
-    testString: assert(switchOfStuff(4) === "stuff");
-  - text: You should not use any <code>if</code> or <code>else</code> statements
-    testString: assert(!/else/g.test(code) || !/if/g.test(code));
-  - text: You should use a <code>default</code> statement
-    testString: assert(switchOfStuff("string-to-trigger-default-case") === "stuff");
-  - text: You should have at least 3 <code>break</code> statements
-    testString: assert(code.match(/break/g).length > 2);
+`switchOfStuff("a")` should have a value of "apple"
 
+```js
+assert(switchOfStuff('a') === 'apple');
 ```
 
-</section>
+`switchOfStuff("b")` should have a value of "bird"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(switchOfStuff('b') === 'bird');
+```
 
-<div id='js-seed'>
+`switchOfStuff("c")` should have a value of "cat"
+
+```js
+assert(switchOfStuff('c') === 'cat');
+```
+
+`switchOfStuff("d")` should have a value of "stuff"
+
+```js
+assert(switchOfStuff('d') === 'stuff');
+```
+
+`switchOfStuff(4)` should have a value of "stuff"
+
+```js
+assert(switchOfStuff(4) === 'stuff');
+```
+
+You should not use any `if` or `else` statements
+
+```js
+assert(!/else/g.test(code) || !/if/g.test(code));
+```
+
+You should use a `default` statement
+
+```js
+assert(switchOfStuff('string-to-trigger-default-case') === 'stuff');
+```
+
+You should have at least 3 `break` statements
+
+```js
+assert(code.match(/break/g).length > 2);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function switchOfStuff(val) {
@@ -76,18 +101,9 @@ function switchOfStuff(val) {
 }
 
 switchOfStuff(1);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function switchOfStuff(val) {
@@ -109,5 +125,3 @@ function switchOfStuff(val) {
   return answer;
 }
 ```
-
-</section>

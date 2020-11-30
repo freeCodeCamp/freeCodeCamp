@@ -4,36 +4,55 @@ title: Part 29
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 To improve accessibility of the image you just added, add an `alt` attribute with the text `Five cats looking around a field.`
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure>/g).length === 2 );
-  - text: There should be a `figure` element right above the last `section` element's closing tag.
-    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
-  - text: The Cats `img` element should be nested in the `figure` element.
-    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
-  - text: The Cats `img` element should have an `alt` attribute with the value `Five cats looking around a field.`
-    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg.getAttribute('alt').replace(/\s+/g, ' ').match(/^Five cats looking around a field\.?$/i) );
-
+```js
+assert(document.querySelectorAll('figure').length === 2);
 ```
 
-</section>
+Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/<\/figure>/g).length === 2);
+```
+
+There should be a `figure` element right above the last `section` element's closing tag.
+
+```js
+assert($('main > section')[1].lastElementChild.nodeName === 'FIGURE');
+```
+
+The Cats `img` element should be nested in the `figure` element.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+assert(
+  catsImg &&
+    catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats'
+);
+```
+
+The Cats `img` element should have an `alt` attribute with the value `Five cats looking around a field.`
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+assert(
+  catsImg
+    .getAttribute('alt')
+    .replace(/\s+/g, ' ')
+    .match(/^Five cats looking around a field\.?$/i)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -65,9 +84,9 @@ tests:
           <li>other cats</li>
         </ol>
         <figure>
-          --fcc-editable-region--
+--fcc-editable-region--
           <img src="https://bit.ly/fcc-cats">
-          --fcc-editable-region--
+--fcc-editable-region--
         </figure>
       </section>
     </main>
@@ -75,5 +94,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

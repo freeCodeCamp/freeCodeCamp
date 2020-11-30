@@ -4,43 +4,53 @@ title: Part 17
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Within the second `section` element, add a new `h2` element with the text `Cat Lists`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `section` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: "Your `section` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
-    testString: |
-      assert(
-        document.querySelectorAll('section').length === 2 &&
-        code.match(/<\/section>/g).length === 2
-      );
-  - text: "Your `h2` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
-    testString: assert( document.querySelectorAll('h2').length === 2 );
-  - text: "Your `h2` element should have a closing tag. Closing tags have a `/` just after the `<` character."
-    testString: assert( code.match(/<\/h2\>/g).length === 2 );
-  - text: Your second `h2` element should be right above the second `section` element's closing tag. It is not in the correct position.
-    testString: |
-      const secondSection = document.querySelectorAll('section')[1];
-      assert( secondSection.lastElementChild.nodeName === 'H2' );
-  - text: The second `h2` element should have the text `Cat Lists`. You have either omitted the text or have a typo.
-    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase() ===  'cat lists');
-
+```js
+assert(
+  document.querySelectorAll('section').length === 2 &&
+    code.match(/<\/section>/g).length === 2
+);
 ```
 
-</section>
+Your `h2` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(document.querySelectorAll('h2').length === 2);
+```
 
-<div id='html-seed'>
+Your `h2` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+assert(code.match(/<\/h2\>/g).length === 2);
+```
+
+Your second `h2` element should be right above the second `section` element's closing tag. It is not in the correct position.
+
+```js
+const secondSection = document.querySelectorAll('section')[1];
+assert(secondSection.lastElementChild.nodeName === 'H2');
+```
+
+The second `h2` element should have the text `Cat Lists`. You have either omitted the text or have a typo.
+
+```js
+assert(
+  document
+    .querySelectorAll('main > section')[1]
+    .lastElementChild.innerText.toLowerCase() === 'cat lists'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -53,14 +63,12 @@ tests:
         <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
         <a href="https://freecatphotoapp.com"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       </section>
-      --fcc-editable-region--
+--fcc-editable-region--
       <section>
       </section>
-      --fcc-editable-region--
+--fcc-editable-region--
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

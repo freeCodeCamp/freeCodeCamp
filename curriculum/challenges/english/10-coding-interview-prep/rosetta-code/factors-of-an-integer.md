@@ -1,43 +1,51 @@
 ---
-title: Factors of an integer
 id: 597f1e7fbc206f0e9ba95dc4
+title: Factors of an integer
 challengeType: 5
 forumTopicId: 302265
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Write a function that returns the factors of a positive integer as an array.
+
 These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`factors` should be a function.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>factors</code> should be a function.
-    testString: assert(typeof factors === 'function');
-  - text: <code>factors(45)</code> should return <code>[1,3,5,9,15,45]</code>.
-    testString: assert.deepEqual(factors(45), ans[0]);
-  - text: <code>factors(53)</code> should return <code>[1,53]</code>.
-    testString: assert.deepEqual(factors(53), ans[1]);
-  - text: <code>factors(64)</code> should return <code>[1,2,4,8,16,32,64]</code>.
-    testString: assert.deepEqual(factors(64), ans[2]);
-
+```js
+assert(typeof factors === 'function');
 ```
 
-</section>
+`factors(45)` should return `[1,3,5,9,15,45]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(factors(45), ans[0]);
+```
 
-<div id='js-seed'>
+`factors(53)` should return `[1,53]`.
+
+```js
+assert.deepEqual(factors(53), ans[1]);
+```
+
+`factors(64)` should return `[1,2,4,8,16,32,64]`.
+
+```js
+assert.deepEqual(factors(64), ans[2]);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+const ans=[[1,3,5,9,15,45],[1,53],[1,2,4,8,16,32,64]];
+```
+
+## --seed-contents--
 
 ```js
 function factors(num) {
@@ -45,23 +53,7 @@ function factors(num) {
 }
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const ans=[[1,3,5,9,15,45],[1,53],[1,2,4,8,16,32,64]];
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function factors(num)
@@ -78,7 +70,4 @@ function factors(num)
  n_factors.sort(function(a, b){return a - b;});
  return n_factors;
 }
-
 ```
-
-</section>

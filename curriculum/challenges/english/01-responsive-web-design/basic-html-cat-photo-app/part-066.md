@@ -4,36 +4,36 @@ title: Part 66
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element.
 
 Add the `lang` attribute with the value `en` to the opening `html` tag to specify that the language of the page is English.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted the `html` element or it is missing an opening tag or closing tag.
 
-```yml
-tests:
-  - text: You have either deleted the `html` element or it is missing an opening tag or closing tag.
-    testString: assert( code.match(/\<html.*?\>/) && code.match(/\<\/html\>/) );
-  - text: Your `html` element should have a `lang` attribute with the value `en`. You may have omitted the attribute/value, or have a typo.
-    testString: |
-      const extraSpacesRemoved = code.replace(/\s+/g, ' ');
-      assert( extraSpacesRemoved.match(/\<html lang\=("|')([a-z]+)\1\>/) );
-  - text: Although you have set the `html` element's `lang` attribute to `en`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*html\s+lang\s*=en/i.test(code) );
-
+```js
+assert(code.match(/\<html.*?\>/) && code.match(/\<\/html\>/));
 ```
 
-</section>
+Your `html` element should have a `lang` attribute with the value `en`. You may have omitted the attribute/value, or have a typo.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const extraSpacesRemoved = code.replace(/\s+/g, ' ');
+assert(extraSpacesRemoved.match(/\<html lang\=("|')([a-z]+)\1\>/));
+```
+
+Although you have set the `html` element's `lang` attribute to `en`, it is recommended to always surround the value of an attribute with quotation marks.
+
+```js
+assert(!/\<\s*html\s+lang\s*=en/i.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 --fcc-editable-region--
@@ -102,5 +102,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

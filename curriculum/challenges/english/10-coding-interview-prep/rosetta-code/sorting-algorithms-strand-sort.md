@@ -5,47 +5,75 @@ challengeType: 5
 forumTopicId: 302319
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-Write a function to sort an array using the <a href="https://en.wikipedia.org/wiki/Strand sort" target="_blank">Strand sort</a>. The function should return the sorted array.
+Write a function to sort an array using the [Strand sort](<https://en.wikipedia.org/wiki/Strand sort>). The function should return the sorted array.
+
 This is a way of sorting numbers by extracting shorter sequences of already sorted numbers from an unsorted list.
-</section>
 
-## Instructions
+# --hints--
 
-<section id='instructions'>
+`strandSort` should be a function.
 
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>strandSort</code> should be a function.
-    testString: assert(typeof strandSort == 'function');
-  - text: <code>strandSort([25, 32, 12, 7, 20])</code> should return an array.
-    testString: assert(Array.isArray(strandSort([25, 32, 12, 7, 20])));
-  - text: <code>strandSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
-    testString: assert.deepEqual(strandSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
-  - text: <code>strandSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
-    testString: assert.deepEqual(strandSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
-  - text: <code>strandSort([43, 36, 20, 34, 24])</code> should return <code>[20, 24, 34, 36, 43]</code>.
-    testString: assert.deepEqual(strandSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
-  - text: <code>strandSort([12, 33, 26, 18, 1, 16, 38])</code> should return <code>[1, 12, 16, 18, 26, 33, 38]</code>.
-    testString: assert.deepEqual(strandSort([12, 33, 26, 18, 1, 16, 38]), [1, 12, 16, 18, 26, 33, 38]);
-  - text: <code>strandSort([3, 39, 48, 16, 1, 4, 29])</code> should return <code>[1, 3, 4, 16, 29, 39, 48]</code>.
-    testString: assert.deepEqual(strandSort([3, 39, 48, 16, 1, 4, 29]), [1, 3, 4, 16, 29, 39, 48]);
+```js
+assert(typeof strandSort == 'function');
 ```
 
-</section>
+`strandSort([25, 32, 12, 7, 20])` should return an array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(strandSort([25, 32, 12, 7, 20])));
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`strandSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+
+```js
+assert.deepEqual(strandSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
+```
+
+`strandSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+
+```js
+assert.deepEqual(strandSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
+```
+
+`strandSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+
+```js
+assert.deepEqual(strandSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
+```
+
+`strandSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+
+```js
+assert.deepEqual(strandSort([12, 33, 26, 18, 1, 16, 38]), [
+  1,
+  12,
+  16,
+  18,
+  26,
+  33,
+  38
+]);
+```
+
+`strandSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+
+```js
+assert.deepEqual(strandSort([3, 39, 48, 16, 1, 4, 29]), [
+  1,
+  3,
+  4,
+  16,
+  29,
+  39,
+  48
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function strandSort(list) {
@@ -53,12 +81,7 @@ function strandSort(list) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function strandSort(list) {
@@ -92,5 +115,3 @@ function strandSort(list) {
   return result;
 }
 ```
-
-</section>

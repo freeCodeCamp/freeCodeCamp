@@ -4,35 +4,45 @@ title: Part 22
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The `figure` element represents self-contained content and will allow you to associate an image with a caption.
 
 Nest the image you just added within a `figure` element.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('figure') );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure\>/) );
-  - text: There should be an `figure` element right above the second `section` element's closing tag.
-    testString: assert( $('section')[1].lastElementChild.nodeName === 'FIGURE' );
-  - text: The lasagna `img` element should be nested in the `figure` element.
-    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
+Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`.
+
+```js
+assert(document.querySelector('figure'));
 ```
 
-</section>
+Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/<\/figure\>/));
+```
 
-<div id='html-seed'>
+There should be an `figure` element right above the second `section` element's closing tag.
+
+```js
+assert($('section')[1].lastElementChild.nodeName === 'FIGURE');
+```
+
+The lasagna `img` element should be nested in the `figure` element.
+
+```js
+assert(
+  document.querySelector('figure > img') &&
+    document.querySelector('figure > img').getAttribute('src').toLowerCase() ===
+      'https://bit.ly/fcc-lasagna'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -53,9 +63,9 @@ tests:
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>
-        --fcc-editable-region--
+--fcc-editable-region--
         <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
-        --fcc-editable-region--
+--fcc-editable-region--
       </section>
     </main>
 
@@ -63,5 +73,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

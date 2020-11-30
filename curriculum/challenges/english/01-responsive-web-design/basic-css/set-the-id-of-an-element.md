@@ -6,36 +6,33 @@ videoUrl: 'https://scrimba.com/c/cN6MEc2'
 forumTopicId: 18279
 ---
 
-## Description
-<section id='description'>
-In addition to classes, each HTML element can also have an <code>id</code> attribute.
-There are several benefits to using <code>id</code> attributes: You can use an <code>id</code> to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.
-<code>id</code> attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same <code>id</code> attribute.
-Here's an example of how you give your <code>h2</code> element the id of <code>cat-photo-app</code>:
-<code>&#60;h2 id="cat-photo-app"></code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Give your <code>form</code> element the id <code>cat-photo-form</code>.
-</section>
+In addition to classes, each HTML element can also have an `id` attribute.
 
-## Tests
-<section id='tests'>
+There are several benefits to using `id` attributes: You can use an `id` to style a single element and later you'll learn that you can use them to select and modify specific elements with JavaScript.
 
-```yml
-tests:
-  - text: Your <code>form</code> element should have the id of <code>cat-photo-form</code>.
-    testString: assert($("form").attr("id") === "cat-photo-form");
+`id` attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same `id` attribute.
 
+Here's an example of how you give your `h2` element the id of `cat-photo-app`:
+
+`<h2 id="cat-photo-app">`
+
+# --instructions--
+
+Give your `form` element the id `cat-photo-form`.
+
+# --hints--
+
+Your `form` element should have the id of `cat-photo-form`.
+
+```js
+assert($('form').attr('id') === 'cat-photo-form');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -102,14 +99,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -175,5 +165,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

@@ -4,32 +4,23 @@ title: Part 84
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue; }`.
 
 Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
 
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -93,10 +84,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -184,6 +171,3 @@ a:hover {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

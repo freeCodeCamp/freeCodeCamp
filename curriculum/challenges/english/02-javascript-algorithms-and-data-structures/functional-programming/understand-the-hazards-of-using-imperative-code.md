@@ -5,44 +5,56 @@ challengeType: 1
 forumTopicId: 301241
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Functional programming is a good habit. It keeps your code easy to manage, and saves you from sneaky bugs. But before we get there, let's look at an imperative approach to programming to highlight where you may have issues.
+
 In English (and many other languages), the imperative tense is used to give commands. Similarly, an imperative style in programming is one that gives the computer a set of statements to perform a task.
-Often the statements change the state of the program, like updating global variables. A classic example is writing a <code>for</code> loop that gives exact directions to iterate over the indices of an array.
+
+Often the statements change the state of the program, like updating global variables. A classic example is writing a `for` loop that gives exact directions to iterate over the indices of an array.
+
 In contrast, functional programming is a form of declarative programming. You tell the computer what you want done by calling a method or function.
-JavaScript offers many predefined methods that handle common tasks so you don't need to write out how the computer should perform them. For example, instead of using the <code>for</code> loop mentioned above, you could call the <code>map</code> method which handles the details of iterating over an array. This helps to avoid semantic errors, like the "Off By One Errors" that were covered in the Debugging section.
+
+JavaScript offers many predefined methods that handle common tasks so you don't need to write out how the computer should perform them. For example, instead of using the `for` loop mentioned above, you could call the `map` method which handles the details of iterating over an array. This helps to avoid semantic errors, like the "Off By One Errors" that were covered in the Debugging section.
+
 Consider the scenario: you are browsing the web in your browser, and want to track the tabs you have opened. Let's try to model this using some simple object-oriented code.
+
 A Window object is made up of tabs, and you usually have more than one Window open. The titles of each open site in each Window object is held in an array. After working in the browser (opening new tabs, merging windows, and closing tabs), you want to print the tabs that are still open. Closed tabs are removed from the array and new tabs (for simplicity) get added to the end of it.
-The code editor shows an implementation of this functionality with functions for <code>tabOpen()</code>, <code>tabClose()</code>, and <code>join()</code>. The array <code>tabs</code> is part of the Window object that stores the name of the open pages.
 
+The code editor shows an implementation of this functionality with functions for `tabOpen()`, `tabClose()`, and `join()`. The array `tabs` is part of the Window object that stores the name of the open pages.
 
-</section>
+# --instructions--
 
+Examine the code in the editor. It's using a method that has side effects in the program, causing incorrect behaviour. The final list of open tabs, stored in `finalTabs.tabs`, should be `['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']` but the list produced by the code is slightly different.
 
-## Instructions
-<section id='instructions'>
-Examine the code in the editor. It's using a method that has side effects in the program, causing incorrect behaviour. The final list of open tabs, stored in <code>finalTabs.tabs</code>, should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code> but the list produced by the code is slightly different.
+Change `Window.prototype.tabClose` so that it removes the correct tab.
 
-Change <code>Window.prototype.tabClose</code> so that it removes the correct tab.  
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`finalTabs.tabs` should be `['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']`
 
-```yml
-tests:
-  - text: <code>finalTabs.tabs</code> should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code>
-    testString: assert.deepEqual(finalTabs.tabs, ['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab'])
-
+```js
+assert.deepEqual(finalTabs.tabs, [
+  'FB',
+  'Gitter',
+  'Reddit',
+  'Twitter',
+  'Medium',
+  'new tab',
+  'Netflix',
+  'YouTube',
+  'Vine',
+  'GMail',
+  'Work mail',
+  'Docs',
+  'freeCodeCamp',
+  'new tab'
+]);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 // tabs is an array of titles of each site open within the window
@@ -90,14 +102,7 @@ var finalTabs = socialWindow
 console.log(finalTabs.tabs);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // tabs is an array of titles of each site open within the window
@@ -137,5 +142,3 @@ var finalTabs = socialWindow
   .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
   .join(workWindow.tabClose(1).tabOpen());
 ```
-
-</section>

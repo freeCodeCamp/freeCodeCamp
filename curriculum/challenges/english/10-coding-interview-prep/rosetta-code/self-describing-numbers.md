@@ -1,17 +1,18 @@
 ---
-title: Self Describing Numbers
 id: 5eaf48389ee512d4d103684b
+title: Self Describing Numbers
 challengeType: 5
 forumTopicId: 385289
 ---
 
-## Description
-<section id='description'>
-There are several so-called "self describing" or <a target="_blank" href="https://en.wikipedia.org/wiki/Self-descriptive_number">"self-descriptive"</a> integers. 
+# --description--
+
+There are several so-called "self describing" or ["self-descriptive"](https://en.wikipedia.org/wiki/Self-descriptive_number) integers.
 
 An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each position is equal to the number of times that digit appears in the number.
 
-For example, <b>2020</b> is a four-digit self describing number:
+For example, **2020** is a four-digit self describing number:
+
 <ul>
     <li> position 0 has value 2 and there are two 0s in the number; </li>
     <li> position 1 has value 0 and there are no 1s in the number; </li>
@@ -19,39 +20,47 @@ For example, <b>2020</b> is a four-digit self describing number:
     <li> position 3 has value 0 and there are zero 3s; </li>
 </ul>
 
-Self-describing numbers < 100,000,000  are: 1210, 2020, 21200, 3211000, 42101000.
-</section>
+Self-describing numbers &lt; 100,000,000 are: 1210, 2020, 21200, 3211000, 42101000.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
 Write a function that takes a positive integer as a parameter. If it is self-describing return true. Otherwise, return false.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`isSelfDescribing` should be a function.
 
-```yml
-tests:
-  - text: <code>isSelfDescribing</code> should be a function.
-    testString: assert(typeof isSelfDescribing=='function');
-  - text: <code>isSelfDescribing()</code> should return a boolean.
-    testString: assert(typeof isSelfDescribing(2020) =='boolean');
-  - text: <code>isSelfDescribing(2020)</code> should return <code>true</code>.
-    testString: assert.equal(isSelfDescribing(2020), true);
-  - text: <code>isSelfDescribing(3021)</code> should return <code>false</code>.
-    testString: assert.equal(isSelfDescribing(3021), false);
-  - text: <code>isSelfDescribing(3211000)</code> should return <code>true</code>.
-    testString: assert.equal(isSelfDescribing(3211000), true);
+```js
+assert(typeof isSelfDescribing == 'function');
 ```
 
-</section>
+`isSelfDescribing()` should return a boolean.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof isSelfDescribing(2020) == 'boolean');
+```
 
-<div id='js-seed'>
+`isSelfDescribing(2020)` should return `true`.
+
+```js
+assert.equal(isSelfDescribing(2020), true);
+```
+
+`isSelfDescribing(3021)` should return `false`.
+
+```js
+assert.equal(isSelfDescribing(3021), false);
+```
+
+`isSelfDescribing(3211000)` should return `true`.
+
+```js
+assert.equal(isSelfDescribing(3211000), true);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function isSelfDescribing(n) {
@@ -59,13 +68,7 @@ function isSelfDescribing(n) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function isSelfDescribing(n) {
@@ -93,8 +96,4 @@ function isSelfDescribing(n) {
     }
     return true;
 }
-
-
 ```
-
-</section>

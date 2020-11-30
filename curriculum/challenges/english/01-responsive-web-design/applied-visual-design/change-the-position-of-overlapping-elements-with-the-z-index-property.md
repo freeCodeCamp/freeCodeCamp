@@ -6,32 +6,25 @@ videoUrl: 'https://scrimba.com/c/cM94aHk'
 forumTopicId: 301046
 ---
 
-## Description
-<section id='description'>
-When elements are positioned to overlap (i.e. using <code>position: absolute | relative | fixed | sticky</code>), the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the <code>z-index</code> property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the <code>z-index</code> property of an element move it higher in the stack than those with lower values.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add a <code>z-index</code> property to the element with the class name of <code>first</code> (the red rectangle) and set it to a value of 2 so it covers the other element (blue rectangle).
-</section>
+When elements are positioned to overlap (i.e. using `position: absolute | relative | fixed | sticky`), the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the `z-index` property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the `z-index` property of an element move it higher in the stack than those with lower values.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The element with class <code>first</code> should have a <code>z-index</code> value of 2.
-    testString: assert($('.first').css('z-index') == '2');
+Add a `z-index` property to the element with the class name of `first` (the red rectangle) and set it to a value of 2 so it covers the other element (blue rectangle).
 
+# --hints--
+
+The element with class `first` should have a `z-index` value of 2.
+
+```js
+assert($('.first').css('z-index') == '2');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -59,14 +52,7 @@ tests:
 <div class="second"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -92,5 +78,3 @@ tests:
 <div class="first"></div>
 <div class="second"></div>
 ```
-
-</section>

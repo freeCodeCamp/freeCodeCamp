@@ -1,12 +1,11 @@
 ---
 id: 5900f3b81000cf542c50fecb
-challengeType: 5
 title: 'Problem 76: Counting summations'
+challengeType: 5
 forumTopicId: 302189
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 It is possible to write five as a sum in exactly six different ways:
 
@@ -21,31 +20,23 @@ It is possible to write five as a sum in exactly six different ways:
 
 How many different ways can one hundred be written as a sum of at least two positive integers?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`countingSummations()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>countingSummations()</code> should return a number.
-    testString: assert(typeof countingSummations() === 'number');
-  - text: <code>countingSummations()</code> should return 190569291.
-    testString: assert.strictEqual(countingSummations(), 190569291);
-
+```js
+assert(typeof countingSummations() === 'number');
 ```
 
-</section>
+`countingSummations()` should return 190569291.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(countingSummations(), 190569291);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function countingSummations() {
@@ -56,17 +47,8 @@ function countingSummations() {
 countingSummations();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

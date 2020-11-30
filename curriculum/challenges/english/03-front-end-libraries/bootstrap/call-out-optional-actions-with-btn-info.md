@@ -5,40 +5,47 @@ challengeType: 0
 forumTopicId: 16770
 ---
 
-## Description
-<section id='description'>
-Bootstrap comes with several pre-defined colors for buttons. The <code>btn-info</code> class is used to call attention to optional actions that the user can take.
-Create a new block-level Bootstrap button below your "Like" button with the text "Info", and add Bootstrap's <code>btn-info</code> and <code>btn-block</code> classes to it.
-Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap comes with several pre-defined colors for buttons. The `btn-info` class is used to call attention to optional actions that the user can take.
 
-</section>
+Create a new block-level Bootstrap button below your "Like" button with the text "Info", and add Bootstrap's `btn-info` and `btn-block` classes to it.
 
-## Tests
-<section id='tests'>
+Note that these buttons still need the `btn` and `btn-block` classes.
 
-```yml
-tests:
-  - text: You should create a new <code>button</code> element with the text "Info".
-    testString: assert(new RegExp("info","gi").test($("button").text()));
-  - text: Both of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.
-    testString: assert($("button.btn-block.btn").length > 1);
-  - text: Your new button should have the class <code>btn-info</code>.
-    testString: assert($("button").hasClass("btn-info"));
-  - text: All of your <code>button</code> elements should have closing tags.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+# --hints--
 
+You should create a new `button` element with the text "Info".
+
+```js
+assert(new RegExp('info', 'gi').test($('button').text()));
 ```
 
-</section>
+Both of your Bootstrap buttons should have the `btn` and `btn-block` classes.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button.btn-block.btn').length > 1);
+```
 
-<div id='html-seed'>
+Your new button should have the class `btn-info`.
+
+```js
+assert($('button').hasClass('btn-info'));
+```
+
+All of your `button` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -101,14 +108,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -172,5 +172,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

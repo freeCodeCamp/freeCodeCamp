@@ -6,35 +6,33 @@ videoUrl: 'https://scrimba.com/c/c3bR8t7'
 forumTopicId: 301049
 ---
 
-## Description
-<section id='description'>
-You can use the <code>hr</code> tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add an <code>hr</code> tag underneath the <code>h4</code> which contains the card title.
-<strong>Note:</strong> In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag.
-</section>
+You can use the `hr` tag to add a horizontal line across the width of its containing element. This can be used to define a change in topic or to visually separate groups of content.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should add an <code>hr</code> tag to the markup.
-    testString: assert($('hr').length == 1);
-  - text: The <code>hr</code> tag should come between the title and the paragraph.
-    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi));
+Add an `hr` tag underneath the `h4` which contains the card title.
 
+**Note:** In HTML, `hr` is a self-closing tag, and therefore doesn't need a separate closing tag.
+
+# --hints--
+
+Your code should add an `hr` tag to the markup.
+
+```js
+assert($('hr').length == 1);
 ```
 
-</section>
+The `hr` tag should come between the title and the paragraph.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -78,14 +76,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -128,5 +119,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301224
 ---
 
-## Description
-<section id='description'>
-When defining functions within objects in ES5, we have to use the keyword <code>function</code> as follows:
+# --description--
+
+When defining functions within objects in ES5, we have to use the keyword `function` as follows:
 
 ```js
 const person = {
@@ -18,7 +18,7 @@ const person = {
 };
 ```
 
-With ES6, You can remove the <code>function</code> keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
+With ES6, You can remove the `function` keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
 
 ```js
 const person = {
@@ -29,33 +29,35 @@ const person = {
 };
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Refactor the function <code>setGear</code> inside the object <code>bicycle</code> to use the shorthand syntax described above.
-</section>
+Refactor the function `setGear` inside the object `bicycle` to use the shorthand syntax described above.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Traditional function expression should not be used.
-    testString: getUserInput => assert(!__helpers.removeJSComments(code).match(/function/));
-  - text: <code>setGear</code> should be a declarative function.
-    testString: assert(typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/));
-  - text: <code>bicycle.setGear(48)</code> should change the <code>gear</code> value to 48.
-    testString: assert((new bicycle.setGear(48)).gear === 48);
+Traditional function expression should not be used.
 
+```js
+(getUserInput) => assert(!__helpers.removeJSComments(code).match(/function/));
 ```
 
-</section>
+`setGear` should be a declarative function.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/)
+);
+```
 
-<div id='js-seed'>
+`bicycle.setGear(48)` should change the `gear` value to 48.
+
+```js
+assert(new bicycle.setGear(48).gear === 48);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Only change code below this line
@@ -70,12 +72,7 @@ bicycle.setGear(3);
 console.log(bicycle.gear);
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const bicycle = {
@@ -86,5 +83,3 @@ const bicycle = {
 };
 bicycle.setGear(3);
 ```
-
-</section>

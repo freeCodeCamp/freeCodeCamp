@@ -4,29 +4,21 @@ title: Part 79
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Next you are going to be styling the `footer` element. To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -89,10 +81,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -162,6 +150,3 @@ h1, h2 {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

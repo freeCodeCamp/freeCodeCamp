@@ -4,31 +4,27 @@ title: Part 33
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 I see some code that can be optimized. Move the `position` and `top` properties and values from `foreground-buildings` to `background-buildings`. Then select both `background-buildings` and `foreground-buildings` there, effectively applying those styles to both of the elements. You can use a comma (`,`) to separate selectors like this: `selector1, selector2`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".background-buildings").css("position") === "absolute" && $(".background-buildings").css("top") === "0px" && /(\.background-buildings\s*,\s*\.foreground-buildings|\.foreground-buildings\s*,\s*\.background-buildings)/g.test(code));
-
+```js
+assert(
+  $('.background-buildings').css('position') === 'absolute' &&
+    $('.background-buildings').css('top') === '0px' &&
+    /(\.background-buildings\s*,\s*\.foreground-buildings|\.foreground-buildings\s*,\s*\.background-buildings)/g.test(
+      code
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -184,12 +180,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -344,5 +335,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

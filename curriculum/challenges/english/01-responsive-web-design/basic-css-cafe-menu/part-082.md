@@ -4,31 +4,23 @@ title: Part 82
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue; }`.
 
 Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -92,10 +84,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -175,6 +163,3 @@ a {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

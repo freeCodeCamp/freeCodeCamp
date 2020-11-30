@@ -4,8 +4,7 @@ title: Part 44
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The line needs x and y values for each point of data. Chain `x` to the line and pass it a "d function". Here's how that will look:
 
@@ -16,27 +15,53 @@ The line needs x and y values for each point of data. Chain `x` to the line and 
 You will be passing your `data` array to this line function, where it will go through each item in the array(`d`) and create an x value based on the year(`d.year`).
 
 This is the first place you have seen a "d function". These are common in D3 and that is how I will refer to them throughout this project.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/const twitterLine = d3\.line\(\)\s*\.x\s*\(\s*d\s*=>\s*d\.year\s*\)/g.test(code));
-
+```js
+assert(
+  /const twitterLine = d3\.line\(\)\s*\.x\s*\(\s*d\s*=>\s*d\.year\s*\)/g.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -100,47 +125,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -204,5 +189,3 @@ tests:
 
 </script>
 ```
-
-</section>

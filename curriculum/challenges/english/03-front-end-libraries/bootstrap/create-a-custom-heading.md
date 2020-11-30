@@ -5,41 +5,55 @@ challengeType: 0
 forumTopicId: 16816
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 We will make a simple heading for our Cat Photo App by putting the title and relaxing cat image in the same row.
-Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.
-Nest your first image and your <code>h2</code> element within a single <code>&#60;div class="row"&#62;</code> element. Nest your <code>h2</code> element within a <code>&#60;div class="col-xs-8"&#62;</code> and your image in a <code>&#60;div class="col-xs-4"&#62;</code> so that they are on the same line.
+
+Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a `div` element.
+
+Nest your first image and your `h2` element within a single `<div class="row">` element. Nest your `h2` element within a `<div class="col-xs-8">` and your image in a `<div class="col-xs-4">` so that they are on the same line.
+
 Notice how the image is now just the right size to fit along the text?
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+Your `h2` element and topmost `img` element should both be nested together within a `div` element with the class `row`.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Your <code>h2</code> element and topmost <code>img</code> element should both be nested together within a <code>div</code> element with the class <code>row</code>.
-    testString: assert($("div.row:has(h2)").length > 0 && $("div.row:has(img)").length > 0);
-  - text: Your topmost <code>img</code> element should be nested within a <code>div</code> with the class <code>col-xs-4</code>.
-    testString: assert($("div.col-xs-4:has(img)").length > 0 && $("div.col-xs-4:has(div)").length === 0);
-  - text: Your <code>h2</code> element should be nested within a <code>div</code> with the class <code>col-xs-8</code>.
-    testString: assert($("div.col-xs-8:has(h2)").length > 0 && $("div.col-xs-8:has(div)").length === 0);
-  - text: All of your <code>div</code> elements should have closing tags.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
-
+```js
+assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0);
 ```
 
-</section>
+Your topmost `img` element should be nested within a `div` with the class `col-xs-4`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('div.col-xs-4:has(img)').length > 0 &&
+    $('div.col-xs-4:has(div)').length === 0
+);
+```
 
-<div id='html-seed'>
+Your `h2` element should be nested within a `div` with the class `col-xs-8`.
+
+```js
+assert(
+  $('div.col-xs-8:has(h2)').length > 0 &&
+    $('div.col-xs-8:has(div)').length === 0
+);
+```
+
+All of your `div` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<div/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -98,14 +112,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -167,5 +174,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

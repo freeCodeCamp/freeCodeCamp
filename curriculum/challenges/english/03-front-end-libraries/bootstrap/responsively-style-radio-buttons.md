@@ -1,45 +1,49 @@
 ---
 id: bad87fee1348bd9aedb08845
 title: Responsively Style Radio Buttons
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
-    raw: true
 challengeType: 0
 forumTopicId: 18270
+required:
+  - link: >-
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css
+    raw: true
 ---
 
-## Description
-<section id='description'>
-You can use Bootstrap's <code>col-xs-*</code> classes on <code>form</code> elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.
-Nest both your radio buttons within a <code>&#60;div class="row"&#62;</code> element. Then nest each of them within a <code>&#60;div class="col-xs-6"&#62;</code> element.
-<strong>Note:</strong> As a reminder, radio buttons are <code>input</code> elements of type <code>radio</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+You can use Bootstrap's `col-xs-*` classes on `form` elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.
 
-</section>
+Nest both your radio buttons within a `<div class="row">` element. Then nest each of them within a `<div class="col-xs-6">` element.
 
-## Tests
-<section id='tests'>
+**Note:** As a reminder, radio buttons are `input` elements of type `radio`.
 
-```yml
-tests:
-  - text: All of your radio buttons should be nested inside one <code>div</code> with the class <code>row</code>.
-    testString: assert($("div.row:has(input[type=\"radio\"])").length > 0);
-  - text: Each of your radio buttons should be nested inside its own <code>div</code> with the class <code>col-xs-6</code>.
-    testString: assert($("div.col-xs-6:has(input[type=\"radio\"])").length > 1);
-  - text: All of your <code>div</code> elements should have closing tags.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
+# --hints--
 
+All of your radio buttons should be nested inside one `div` with the class `row`.
+
+```js
+assert($('div.row:has(input[type="radio"])').length > 0);
 ```
 
-</section>
+Each of your radio buttons should be nested inside its own `div` with the class `col-xs-6`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div.col-xs-6:has(input[type="radio"])').length > 1);
+```
 
-<div id='html-seed'>
+All of your `div` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<div/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -101,14 +105,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -175,5 +172,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

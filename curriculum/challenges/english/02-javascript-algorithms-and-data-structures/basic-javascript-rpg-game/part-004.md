@@ -4,52 +4,28 @@ title: Part 4
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 We've been declaring variables with the `var` keyword. However, in modern JavaScript, it's better to use `let` instead of `var` because it fixes a number of unusual behaviors with `var` that make it difficult to reason about.
 
 Change every `var` to `let`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/let\s+xp\s*\=\s*0\;?/.test(code) && /let\s+health\s*\=\s*100\;?/.test(code) && /let\s+gold\s*\=\s*50\;?/.test(code) && /let\s+currentWeapon\s*\=\s*0\;?/.test(code));
-
+```js
+assert(
+  /let\s+xp\s*\=\s*0\;?/.test(code) &&
+    /let\s+health\s*\=\s*100\;?/.test(code) &&
+    /let\s+gold\s*\=\s*50\;?/.test(code) &&
+    /let\s+currentWeapon\s*\=\s*0\;?/.test(code)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-var xp = 0;
-var health = 100;
-var gold = 50;
-var currentWeapon = 0;
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -115,26 +91,26 @@ var currentWeapon = 0;
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+var xp = 0;
+var health = 100;
+var gold = 50;
+var currentWeapon = 0;
 
-</section>
+</script>
+```
 
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -144,5 +120,3 @@ let gold = 50;
 let currentWeapon = 0;
 </script>
 ```
-
-</section>

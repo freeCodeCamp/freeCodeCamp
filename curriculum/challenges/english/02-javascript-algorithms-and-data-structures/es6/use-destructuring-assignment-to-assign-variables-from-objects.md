@@ -5,8 +5,8 @@ challengeType: 1
 forumTopicId: 301215
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Destructuring allows you to assign a new variable name when extracting values. You can do this by putting the new name after a colon when assigning the value.
 
 Using the same object from the last example:
@@ -22,34 +22,52 @@ const { name: userName, age: userAge } = user;
 // userName = 'John Doe', userAge = 34
 ```
 
-You may read it as "get the value of <code>user.name</code> and assign it to a new variable named <code>userName</code>" and so on.
-</section>
+You may read it as "get the value of `user.name` and assign it to a new variable named `userName`" and so on.
 
-## Instructions
-<section id='instructions'>
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>highToday</code> and <code>highTomorrow</code> the values of <code>today</code> and <code>tomorrow</code> from the <code>HIGH_TEMPERATURES</code> object.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `highToday` and `highTomorrow` the values of `today` and `tomorrow` from the `HIGH_TEMPERATURES` object.
 
-```yml
-tests:
-  - text: You should remove the ES5 assignment syntax.
-    testString: assert(!code.match(/highToday = HIGH_TEMPERATURES\.today/g) && !code.match(/highTomorrow = HIGH_TEMPERATURES\.tomorrow/g))
-  - text: You should use destructuring to create the <code>highToday</code> variable.
-    testString: assert(code.match(/(var|const|let)\s*{\s*(today\s*:\s*highToday[^}]*|[^,]*,\s*today\s*:\s*highToday\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
-  - text: You should use destructuring to create the <code>highTomorrow</code> variable.
-    testString: assert(code.match(/(var|const|let)\s*{\s*(tomorrow\s*:\s*highTomorrow[^}]*|[^,]*,\s*tomorrow\s*:\s*highTomorrow\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
-  - text: <code>highToday</code> should be equal to <code>77</code> and <code>highTomorrow</code> should be equal to <code>80</code>.
-    testString: assert(highToday === 77 && highTomorrow === 80);
+# --hints--
+
+You should remove the ES5 assignment syntax.
+
+```js
+assert(
+  !code.match(/highToday = HIGH_TEMPERATURES\.today/g) &&
+    !code.match(/highTomorrow = HIGH_TEMPERATURES\.tomorrow/g)
+);
 ```
 
-</section>
+You should use destructuring to create the `highToday` variable.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(
+  code.match(
+    /(var|const|let)\s*{\s*(today\s*:\s*highToday[^}]*|[^,]*,\s*today\s*:\s*highToday\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
+  )
+);
+```
+
+You should use destructuring to create the `highTomorrow` variable.
+
+```js
+assert(
+  code.match(
+    /(var|const|let)\s*{\s*(tomorrow\s*:\s*highTomorrow[^}]*|[^,]*,\s*tomorrow\s*:\s*highTomorrow\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
+  )
+);
+```
+
+`highToday` should be equal to `77` and `highTomorrow` should be equal to `80`.
+
+```js
+assert(highToday === 77 && highTomorrow === 80);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 const HIGH_TEMPERATURES = {
@@ -66,11 +84,7 @@ const highTomorrow = HIGH_TEMPERATURES.tomorrow;
 // Only change code above this line
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const HIGH_TEMPERATURES = {
@@ -81,5 +95,3 @@ const HIGH_TEMPERATURES = {
 
 const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
 ```
-
-</section>

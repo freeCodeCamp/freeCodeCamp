@@ -4,49 +4,23 @@ title: Part 1
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 To keep track of the player's experience points, we've declared a variable called `xp` and assigned it the starting value of 0.
 
 Create another variable to keep track of health and start it at 100.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(health === 100);
-
+```js
+assert(health === 100);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-var xp = 0;
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -112,26 +86,23 @@ var xp = 0;
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+var xp = 0;
 
-</section>
+</script>
+```
 
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -139,5 +110,3 @@ var xp = 0;
 var health = 100;
 </script>
 ```
-
-</section>

@@ -5,13 +5,11 @@ challengeType: 2
 forumTopicId: 301564
 ---
 
-## Description
+# --description--
 
-<section id='description'>
+As a reminder, this project is built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-advancednode), or clone from [GitHub](https://github.com/freeCodeCamp/boilerplate-advancednode/).
 
-As a reminder, this project is built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode' target='_blank'>Repl.it</a>, or clone from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/' target='_blank'>GitHub</a>.
-
-A template engine enables you to use static template files (such as those written in _Pug_) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
+A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
 
 Add `pug@~3.0.0` as a dependency in your `package.json` file.
 
@@ -23,43 +21,86 @@ Change the argument of the `res.render()` declaration in the `/` route to be the
 
 If all went as planned, your app home page will stop showing the message "`Pug template is not defined.`" and will now display a message indicating you've successfully rendered the Pug template!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791).
 
-</section>
+# --hints--
 
-## Instructions
+Pug should be a dependency.
 
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: Pug should be a dependency.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'pug', 'Your project should list "pug" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: View engine should be Pug.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|")view engine('|"),( |)('|")pug('|")/gi, 'Your project should set Pug as a view engine'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Use the correct ExpressJS method to render the index page from the response.
-    testString: getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /FCC Advanced Node and Express/gi, 'You successfully rendered the Pug template!'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Pug should be working.
-    testString: getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /pug-success-message/gi, 'Your projects home page should now be rendered by pug with the projects .pug file unaltered'); }, xhr => { throw new Error(xhr.statusText); })
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/package.json').then(
+    (data) => {
+      var packJson = JSON.parse(data);
+      assert.property(
+        packJson.dependencies,
+        'pug',
+        'Your project should list "pug" as a dependency'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
 ```
 
-</section>
+View engine should be Pug.
 
-## Challenge Seed
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/server.js').then(
+    (data) => {
+      assert.match(
+        data,
+        /('|")view engine('|"),( |)('|")pug('|")/gi,
+        'Your project should set Pug as a view engine'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
+```
 
-<section id='challengeSeed'>
+Use the correct ExpressJS method to render the index page from the response.
 
-</section>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/').then(
+    (data) => {
+      assert.match(
+        data,
+        /FCC Advanced Node and Express/gi,
+        'You successfully rendered the Pug template!'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
+```
 
-## Solution
+Pug should be working.
 
-<section id='solution'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/').then(
+    (data) => {
+      assert.match(
+        data,
+        /pug-success-message/gi,
+        'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
+```
+
+# --seed--
+
+# --solutions--
 
 ```js
 /**
@@ -68,5 +109,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

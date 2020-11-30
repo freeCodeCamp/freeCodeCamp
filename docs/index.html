@@ -134,10 +134,17 @@
 
             // Used from https://github.com/ckoliber/docsify-rtl/blob/master/build/docsify-rtl.js,
             // Currently this is a hack because can't use the plugin as is.
-            if (vm.route.path.search('Arabic') !== -1) {
+            if (vm.route.path.search('Arabic') !== -1 || vm.route.path.search('Hebrew') !== -1) {
               for (var counter = 0, elements = document.getElementsByClassName("markdown-section"); counter < elements.length; counter++) {
                 var item = elements[counter];
                 item.dir = "rtl";
+              }
+            };
+
+            if (vm.route.path.search('Arabic') === -1 && vm.route.path.search('Hebrew') === -1) {
+              for (var counter = 0, elements = document.getElementsByClassName("markdown-section"); counter < elements.length; counter++) {
+                var item = elements[counter];
+                item.dir = "ltr";
               }
             };
 

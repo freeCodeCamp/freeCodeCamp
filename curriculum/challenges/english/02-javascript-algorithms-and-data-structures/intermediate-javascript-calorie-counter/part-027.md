@@ -4,9 +4,7 @@ title: Part 27
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 If `difference` is positive, the total calories the user ate is more than the `maxCalories` recommended, or a calories surplus -- otherwise, if `difference` is negative, the user has a calorie deficit.
 
@@ -16,54 +14,21 @@ If it is positive, `surplusOrDeficit` should be set equal to the string "Surplus
 
 Use the same ternary syntax that you used to determine `maxCalories`.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s*surplusOrDeficit\s*\=\s*difference\s*\>\s*0\s*\?\s*[\'\"\`]Surplus[\'\"\`]\s*\:\s*[\'\"\`]Deficit[\'\"\`]/.test(code));
+```js
+assert(
+  /const\s*surplusOrDeficit\s*\=\s*difference\s*\>\s*0\s*\?\s*[\'\"\`]Surplus[\'\"\`]\s*\:\s*[\'\"\`]Deficit[\'\"\`]/.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -123,24 +88,34 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+  }
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -161,5 +136,3 @@ tests:
   }
 </script>
 ```
-
-</section>

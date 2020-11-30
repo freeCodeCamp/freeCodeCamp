@@ -4,54 +4,27 @@ title: Part 9
 challengeType: 0
 ---
 
-## Description
+# --description--
 
-<section id='description'>
+To make the document objects easier to handle, let's turn them into an array. Wrap the `document.getElementsByClassName('cal-control')` portion of your code in an `Array.from()` method.
 
-To make the document objects easier to handle, let's turn them into an array.
-Wrap the `document.getElementsByClassName('cal-control')` portion of your code in an `Array.from()` method.
+# --hints--
 
-</section>
+See description above for instructions.
 
-## Instructions
-
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/Array\.from\(document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)\)/) );
+```js
+assert(
+  code
+    .replace(/\s/g, '')
+    .match(
+      /Array\.from\(document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)\)/
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-    const total = document.getElementsByClassName('cal-control');
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -111,24 +84,27 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
+    const total = document.getElementsByClassName('cal-control');
+  }
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -140,5 +116,3 @@ tests:
   }
 </script>
 ```
-
-</section>

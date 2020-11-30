@@ -4,29 +4,21 @@ title: Part 7
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Since the `p` element added in the previous step provides supplemental information about the cafe, nest both the `h1` and `p` elements in a `header` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -36,14 +28,11 @@ tests:
     <title>Camper Cafe Menu</title>
   </head>
   <body>
-    --fcc-editable-region--
+--fcc-editable-region--
     <h1>CAMPER CAFE</h1>
     <p>Est. 2020</p>
-    --fcc-editable-region--
+--fcc-editable-region--
   </body>
 <html>
 ```
 
-</div>
-
-</section>

@@ -1,12 +1,11 @@
 ---
 id: 5900f3721000cf542c50fe85
-challengeType: 5
 title: 'Problem 6: Sum square difference'
+challengeType: 5
 forumTopicId: 302171
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The sum of the squares of the first ten natural numbers is,
 
@@ -20,35 +19,35 @@ Hence the difference between the sum of the squares of the first ten natural num
 
 Find the difference between the sum of the squares of the first `n` natural numbers and the square of the sum.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`sumSquareDifference(10)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>sumSquareDifference(10)</code> should return a number.
-    testString: assert(typeof sumSquareDifference(10) === 'number');
-  - text: <code>sumSquareDifference(10)</code> should return 2640.
-    testString: assert.strictEqual(sumSquareDifference(10), 2640);
-  - text: <code>sumSquareDifference(20)</code> should return 41230.
-    testString: assert.strictEqual(sumSquareDifference(20), 41230);
-  - text: <code>sumSquareDifference(100)</code> should return 25164150.
-    testString: assert.strictEqual(sumSquareDifference(100), 25164150);
-
+```js
+assert(typeof sumSquareDifference(10) === 'number');
 ```
 
-</section>
+`sumSquareDifference(10)` should return 2640.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(sumSquareDifference(10), 2640);
+```
 
-<div id='js-seed'>
+`sumSquareDifference(20)` should return 41230.
+
+```js
+assert.strictEqual(sumSquareDifference(20), 41230);
+```
+
+`sumSquareDifference(100)` should return 25164150.
+
+```js
+assert.strictEqual(sumSquareDifference(100), 25164150);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sumSquareDifference(n) {
@@ -59,15 +58,7 @@ function sumSquareDifference(n) {
 sumSquareDifference(100);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const sumSquareDifference = (number)=>{
@@ -84,5 +75,3 @@ function sumOfSquareOfNumbers(n){
  return (n*(n+1)*(2*n+1))/6;
 }
 ```
-
-</section>

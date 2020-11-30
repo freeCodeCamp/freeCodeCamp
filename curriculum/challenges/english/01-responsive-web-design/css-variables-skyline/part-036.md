@@ -4,31 +4,30 @@ title: Part 36
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Squeeze the buildings together again by adding two empty `div` elements at both the top and bottom of the `foreground-buildings` element, and one more in between `fb2` and `fb3`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb = $(".foreground-buildings").children("div"); assert(fb.length === 11 && fb[2] === $("div.fb1")[0] && fb[3] === $("div.fb2")[0] && fb[5] === $("div.fb3")[0] && fb[6] === $("div.fb4")[0] && fb[7] === $("div.fb5")[0] && fb[8] === $("div.fb6")[0]);
-
+```js
+const fb = $('.foreground-buildings').children('div');
+assert(
+  fb.length === 11 &&
+    fb[2] === $('div.fb1')[0] &&
+    fb[3] === $('div.fb2')[0] &&
+    fb[5] === $('div.fb3')[0] &&
+    fb[6] === $('div.fb4')[0] &&
+    fb[7] === $('div.fb5')[0] &&
+    fb[8] === $('div.fb6')[0]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -182,12 +181,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -345,5 +339,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

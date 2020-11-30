@@ -5,11 +5,9 @@ challengeType: 2
 forumTopicId: 301596
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 `isTrue()` will test for the boolean value `true` and `isNotTrue()` will pass when given anything but the boolean value of `true`.
 
@@ -21,43 +19,79 @@ assert.isTrue(1, 'this will NOT pass with the number value 1');
 
 `isFalse()` and `isNotFalse()` also exist, and behave similarly to their true counterparts except they look for the boolean value of `false`.
 
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Within `tests/1_unit-tests.js` under the test labelled `#4` in the `Basic Assertions` suite, change each `assert` to either `assert.isTrue` or `assert.isNotTrue` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
-</section>
+# --hints--
 
-## Tests
+All tests should pass.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: All tests should pass.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the correct method for the first assertion - `isTrue` vs. `isNotTrue`.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[0].method, 'isTrue', 'True is true'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the correct method for the second assertion - `isTrue` vs. `isNotTrue`.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[1].method, 'isTrue', 'Double negation of a truthy value is true'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the correct method for the third assertion - `isTrue` vs. `isNotTrue`.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[2].method, 'isNotTrue', 'A truthy object is not true - neither is a false one'); }, xhr => { throw new Error(xhr.responseText); })
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+You should choose the correct method for the first assertion - `isTrue` vs. `isNotTrue`.
 
-## Challenge Seed
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(
+    (data) => {
+      assert.equal(data.assertions[0].method, 'isTrue', 'True is true');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-<section id='challengeSeed'>
+You should choose the correct method for the second assertion - `isTrue` vs. `isNotTrue`.
 
-</section>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(
+    (data) => {
+      assert.equal(
+        data.assertions[1].method,
+        'isTrue',
+        'Double negation of a truthy value is true'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-## Solution
+You should choose the correct method for the third assertion - `isTrue` vs. `isNotTrue`.
 
-<section id='solution'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(
+    (data) => {
+      assert.equal(
+        data.assertions[2].method,
+        'isNotTrue',
+        'A truthy object is not true - neither is a false one'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --seed--
+
+# --solutions--
 
 ```js
 /**
@@ -66,5 +100,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

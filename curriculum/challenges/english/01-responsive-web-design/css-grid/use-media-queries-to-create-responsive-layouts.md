@@ -6,33 +6,33 @@ videoUrl: 'https://scrimba.com/p/pByETK/cMbqeHk'
 forumTopicId: 301138
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 CSS Grid can be an easy way to make your site more responsive by using media queries to rearrange grid areas, change dimensions of a grid, and rearrange the placement of items.
+
 In the preview, when the viewport width is 300px or more, the number of columns changes from 1 to 2. The advertisement area then occupies the left column completely.
-</section>
 
-## Instructions
-<section id='instructions'>
-When the viewport width is <code>400px</code> or more, make the header area occupy the top row completely and the footer area occupy the bottom row completely.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+When the viewport width is `400px` or more, make the header area occupy the top row completely and the footer area occupy the bottom row completely.
 
-```yml
-tests:
-  - text: When the viewport is <code>400px</code> or more, <code>container</code> class should have a <code>grid-template-areas</code> property in which the header and footer areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.
-    testString: assert(__helpers.removeCssComments(code).match(/@media\s*?\(\s*?min-width\s*?:\s*?400px\s*?\)[\s\S]*.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
+# --hints--
 
+When the viewport is `400px` or more, `container` class should have a `grid-template-areas` property in which the header and footer areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.
+
+```js
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(
+      /@media\s*?\(\s*?min-width\s*?:\s*?400px\s*?\)[\s\S]*.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -103,14 +103,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -178,5 +171,3 @@ tests:
   <div class="item4">footer</div>
 </div>
 ```
-
-</section>

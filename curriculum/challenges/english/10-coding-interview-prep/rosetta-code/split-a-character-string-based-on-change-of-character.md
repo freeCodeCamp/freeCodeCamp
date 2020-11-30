@@ -5,13 +5,9 @@ challengeType: 5
 forumTopicId: 302322
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-Split a (character) string into comma (plus a blank) delimited strings based on a change of character (left to right).
-Blanks should be treated as any other character (except they are problematic to display clearly). The same applies to commas.
-For instance, the string:
+Split a (character) string into comma (plus a blank) delimited strings based on a change of character (left to right). Blanks should be treated as any other character (except they are problematic to display clearly). The same applies to commas. For instance, the string:
 
 <pre>
 "gHHH5YY++///\"
@@ -22,43 +18,84 @@ should be split as:
 <pre>
 ["g", "HHH", "5", "YY", "++", "///", "\" ];
 </pre>
-</section>
 
-## Instructions
+# --hints--
 
-<section id='instructions'>
+`split` should be a function.
 
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>split</code> should be a function.
-    testString: assert(typeof split == 'function');
-  - text: <code>split("hello")</code> should return an array.
-    testString: assert(Array.isArray(split("hello")));
-  - text: <code>split("hello")</code> should return <code>["h", "e", "ll", "o"]</code>.
-    testString: assert.deepEqual(split("hello"), ["h", "e", "ll", "o"]);
-  - text: <code>split("commission")</code> should return <code>["c", "o", "mm", "i", "ss", "i", "o", "n"]</code>.
-    testString: assert.deepEqual(split("commission"), ["c", "o", "mm", "i", "ss", "i", "o", "n"]);
-  - text: <code>split("ssss----====llloooo")</code> should return <code>["ssss", "----", "====", "lll", "oooo"]</code>.
-    testString: assert.deepEqual(split("ssss----====llloooo"), ["ssss", "----", "====", "lll", "oooo"]);
-  - text: <code>split("sssmmmaaammmaaat")</code> should return <code>["sss", "mmm", "aaa", "mmm", "aaa", "t"]</code>.
-    testString: assert.deepEqual(split("sssmmmaaammmaaat"), ["sss", "mmm", "aaa", "mmm", "aaa", "t"]);
-  - text: <code>split("gHHH5YY++///\")</code> should return <code>["g", "HHH", "5", "YY", "++", "///", "\\"]</code>.
-    testString: assert.deepEqual(split("gHHH5YY++///\\"), ["g", "HHH", "5", "YY", "++", "///", "\\"]);
+```js
+assert(typeof split == 'function');
 ```
 
-</section>
+`split("hello")` should return an array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(split('hello')));
+```
 
-<section id='challengeSeed'>
+`split("hello")` should return `["h", "e", "ll", "o"]`.
 
-<div id='js-seed'>
+```js
+assert.deepEqual(split('hello'), ['h', 'e', 'll', 'o']);
+```
+
+`split("commission")` should return `["c", "o", "mm", "i", "ss", "i", "o", "n"]`.
+
+```js
+assert.deepEqual(split('commission'), [
+  'c',
+  'o',
+  'mm',
+  'i',
+  'ss',
+  'i',
+  'o',
+  'n'
+]);
+```
+
+`split("ssss----====llloooo")` should return `["ssss", "----", "====", "lll", "oooo"]`.
+
+```js
+assert.deepEqual(split('ssss----====llloooo'), [
+  'ssss',
+  '----',
+  '====',
+  'lll',
+  'oooo'
+]);
+```
+
+`split("sssmmmaaammmaaat")` should return `["sss", "mmm", "aaa", "mmm", "aaa", "t"]`.
+
+```js
+assert.deepEqual(split('sssmmmaaammmaaat'), [
+  'sss',
+  'mmm',
+  'aaa',
+  'mmm',
+  'aaa',
+  't'
+]);
+```
+
+`split("gHHH5YY++///\")` should return `["g", "HHH", "5", "YY", "++", "///", "\\"]`.
+
+```js
+assert.deepEqual(split('gHHH5YY++///\\'), [
+  'g',
+  'HHH',
+  '5',
+  'YY',
+  '++',
+  '///',
+  '\\'
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function split(str) {
@@ -66,12 +103,7 @@ function split(str) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function split(str) {
@@ -110,5 +142,3 @@ function split(str) {
   return map(concat, group(stringChars(str)));
 }
 ```
-
-</section>

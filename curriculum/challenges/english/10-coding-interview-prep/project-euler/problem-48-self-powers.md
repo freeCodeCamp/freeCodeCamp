@@ -1,48 +1,51 @@
 ---
 id: 5900f39c1000cf542c50feaf
-challengeType: 5
 title: 'Problem 48: Self powers'
+challengeType: 5
 forumTopicId: 302157
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
 
 Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`selfPowers(10, 3)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>selfPowers(10, 3)</code> should return a number.
-    testString: assert(typeof selfPowers(10, 3) === 'number');
-  - text: <code>selfPowers(10, 3)</code> should return 317.
-    testString: assert.strictEqual(selfPowers(10, 3), 317);
-  - text: <code>selfPowers(150, 6)</code> should return 29045.
-    testString: assert.strictEqual(selfPowers(150, 6), 29045);
-  - text: <code>selfPowers(673, 7)</code> should return 2473989.
-    testString: assert.strictEqual(selfPowers(673, 7), 2473989);
-  - text: <code>selfPowers(1000, 10)</code> should return 9110846700.
-    testString: assert.strictEqual(selfPowers(1000, 10), 9110846700);
-
+```js
+assert(typeof selfPowers(10, 3) === 'number');
 ```
 
-</section>
+`selfPowers(10, 3)` should return 317.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(selfPowers(10, 3), 317);
+```
 
-<div id='js-seed'>
+`selfPowers(150, 6)` should return 29045.
+
+```js
+assert.strictEqual(selfPowers(150, 6), 29045);
+```
+
+`selfPowers(673, 7)` should return 2473989.
+
+```js
+assert.strictEqual(selfPowers(673, 7), 2473989);
+```
+
+`selfPowers(1000, 10)` should return 9110846700.
+
+```js
+assert.strictEqual(selfPowers(1000, 10), 9110846700);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function selfPowers(power, lastDigits) {
@@ -53,15 +56,7 @@ function selfPowers(power, lastDigits) {
 selfPowers(1000, 10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function selfPowers(power, lastDigits) {
@@ -82,5 +77,3 @@ function selfPowers(power, lastDigits) {
   return sum;
 }
 ```
-
-</section>

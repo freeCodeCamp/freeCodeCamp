@@ -4,29 +4,27 @@ title: Part 54
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add an `id` attribute with the value `loving` to the checkbox input.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your checkbox should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('id') );
-  - text: Your checkbox should have an `id` attribute with the value `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input[type="checkbox"]')[0].id.match(/^loving$/) );
+Your checkbox should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
+```js
+assert($('input[type="checkbox"]')[0].hasAttribute('id'));
 ```
 
-</section>
+Your checkbox should have an `id` attribute with the value `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert($('input[type="checkbox"]')[0].id.match(/^loving$/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -72,9 +70,9 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
+--fcc-editable-region--
             <input type="checkbox"> Loving
-            --fcc-editable-region--
+--fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
@@ -85,5 +83,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

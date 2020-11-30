@@ -5,46 +5,185 @@ challengeType: 6
 forumTopicId: 301431
 ---
 
-## Description
-<section id='description'>
-Here you'll finish creating the <code>DisplayMessages</code> component.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-First, in the <code>render()</code> method, have the component render an <code>input</code> element, <code>button</code> element, and <code>ul</code> element. When the <code>input</code> element changes, it should trigger a <code>handleChange()</code> method. Also, the <code>input</code> element should render the value of <code>input</code> that's in the component's state. The <code>button</code> element should trigger a <code>submitMessage()</code> method when it's clicked.
-Second, write these two methods. The <code>handleChange()</code> method should update the <code>input</code> with what the user is typing. The <code>submitMessage()</code> method should concatenate the current message (stored in <code>input</code>) to the <code>messages</code> array in local state, and clear the value of the <code>input</code>.
-Finally, use the <code>ul</code> to map over the array of <code>messages</code> and render it to the screen as a list of <code>li</code> elements.
-</section>
+Here you'll finish creating the `DisplayMessages` component.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: 'The <code>DisplayMessages</code> component should initialize with a state equal to <code>{ input: "", messages: [] }</code>.'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return ( typeof initialState === ''object'' && initialState.input === '''' && initialState.messages.length === 0); })());'
-  - text: The <code>DisplayMessages</code> component should render a <code>div</code> containing an <code>h2</code> element, a <code>button</code> element, a <code>ul</code> element, and <code>li</code> elements as children.
-    testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const state = () => { mockedComponent.setState({messages: [''__TEST__MESSAGE'']}); return waitForIt(() => mockedComponent )}; const updated = await state(); assert(updated.find(''div'').length === 1 && updated.find(''h2'').length === 1 && updated.find(''button'').length === 1 && updated.find(''ul'').length === 1 && updated.find(''li'').length > 0); }; '
-  - text: <code>.map</code> should be used on the <code>messages</code> array.
-    testString: assert(code.match(/this\.state\.messages\.map/g));
-  - text: The <code>input</code> element should render the value of <code>input</code> in local state.
-    testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find(''input'').simulate(''change'', { target: { value: v }}); const testValue = ''__TEST__EVENT__INPUT''; const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); assert(updated.find(''input'').props().value === testValue); }; '
-  - text: Calling the method <code>handleChange</code> should update the <code>input</code> value in state to the current input.
-    testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find(''input'').simulate(''change'', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = ''__TEST__EVENT__MESSAGE__''; const changed = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const afterInput = await changed(); assert(initialState.input === '''' && afterInput.state().input === ''__TEST__EVENT__MESSAGE__'');  }; '
-  - text: Clicking the <code>Add message</code> button should call the method <code>submitMessage</code> which should add the current <code>input</code> to the <code>messages</code> array in state.
-    testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find(''input'').simulate(''change'', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage_1 = ''__FIRST__MESSAGE__''; const firstChange = () => { causeChange(mockedComponent, testMessage_1); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstSubmit = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent )}; const afterSubmit_1 = await firstSubmit(); const submitState_1 = afterSubmit_1.state(); const testMessage_2 = ''__SECOND__MESSAGE__''; const secondChange = () => { causeChange(mockedComponent, testMessage_2); return waitForIt(() => mockedComponent )}; const secondResult = await secondChange(); const secondSubmit = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent )}; const afterSubmit_2 = await secondSubmit(); const submitState_2 = afterSubmit_2.state(); assert(initialState.messages.length === 0 && submitState_1.messages.length === 1 && submitState_2.messages.length === 2 && submitState_2.messages[1] === testMessage_2); }; '
-  - text: The <code>submitMessage</code> method should clear the current input.
-    testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find(''input'').simulate(''change'', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = ''__FIRST__MESSAGE__''; const firstChange = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstState = firstResult.state(); const firstSubmit = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent )}; const afterSubmit = await firstSubmit(); const submitState = afterSubmit.state(); assert(firstState.input === testMessage && submitState.input === ''''); }; '
+First, in the `render()` method, have the component render an `input` element, `button` element, and `ul` element. When the `input` element changes, it should trigger a `handleChange()` method. Also, the `input` element should render the value of `input` that's in the component's state. The `button` element should trigger a `submitMessage()` method when it's clicked.
 
+Second, write these two methods. The `handleChange()` method should update the `input` with what the user is typing. The `submitMessage()` method should concatenate the current message (stored in `input`) to the `messages` array in local state, and clear the value of the `input`.
+
+Finally, use the `ul` to map over the array of `messages` and render it to the screen as a list of `li` elements.
+
+# --hints--
+
+The `DisplayMessages` component should initialize with a state equal to `{ input: "", messages: [] }`.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
+    const initialState = mockedComponent.state();
+    return (
+      typeof initialState === 'object' &&
+      initialState.input === '' &&
+      initialState.messages.length === 0
+    );
+  })()
+);
 ```
 
-</section>
+The `DisplayMessages` component should render a `div` containing an `h2` element, a `button` element, a `ul` element, and `li` elements as children.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+async () => {
+  const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
+  const waitForIt = (fn) =>
+    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
+  const state = () => {
+    mockedComponent.setState({ messages: ['__TEST__MESSAGE'] });
+    return waitForIt(() => mockedComponent);
+  };
+  const updated = await state();
+  assert(
+    updated.find('div').length === 1 &&
+      updated.find('h2').length === 1 &&
+      updated.find('button').length === 1 &&
+      updated.find('ul').length === 1 &&
+      updated.find('li').length > 0
+  );
+};
+```
 
-<div id='jsx-seed'>
+`.map` should be used on the `messages` array.
+
+```js
+assert(code.match(/this\.state\.messages\.map/g));
+```
+
+The `input` element should render the value of `input` in local state.
+
+```js
+async () => {
+  const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
+  const waitForIt = (fn) =>
+    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
+  const causeChange = (c, v) =>
+    c.find('input').simulate('change', { target: { value: v } });
+  const testValue = '__TEST__EVENT__INPUT';
+  const changed = () => {
+    causeChange(mockedComponent, testValue);
+    return waitForIt(() => mockedComponent);
+  };
+  const updated = await changed();
+  assert(updated.find('input').props().value === testValue);
+};
+```
+
+Calling the method `handleChange` should update the `input` value in state to the current input.
+
+```js
+async () => {
+  const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
+  const waitForIt = (fn) =>
+    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
+  const causeChange = (c, v) =>
+    c.find('input').simulate('change', { target: { value: v } });
+  const initialState = mockedComponent.state();
+  const testMessage = '__TEST__EVENT__MESSAGE__';
+  const changed = () => {
+    causeChange(mockedComponent, testMessage);
+    return waitForIt(() => mockedComponent);
+  };
+  const afterInput = await changed();
+  assert(
+    initialState.input === '' &&
+      afterInput.state().input === '__TEST__EVENT__MESSAGE__'
+  );
+};
+```
+
+Clicking the `Add message` button should call the method `submitMessage` which should add the current `input` to the `messages` array in state.
+
+```js
+async () => {
+  const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
+  const waitForIt = (fn) =>
+    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
+  const causeChange = (c, v) =>
+    c.find('input').simulate('change', { target: { value: v } });
+  const initialState = mockedComponent.state();
+  const testMessage_1 = '__FIRST__MESSAGE__';
+  const firstChange = () => {
+    causeChange(mockedComponent, testMessage_1);
+    return waitForIt(() => mockedComponent);
+  };
+  const firstResult = await firstChange();
+  const firstSubmit = () => {
+    mockedComponent.find('button').simulate('click');
+    return waitForIt(() => mockedComponent);
+  };
+  const afterSubmit_1 = await firstSubmit();
+  const submitState_1 = afterSubmit_1.state();
+  const testMessage_2 = '__SECOND__MESSAGE__';
+  const secondChange = () => {
+    causeChange(mockedComponent, testMessage_2);
+    return waitForIt(() => mockedComponent);
+  };
+  const secondResult = await secondChange();
+  const secondSubmit = () => {
+    mockedComponent.find('button').simulate('click');
+    return waitForIt(() => mockedComponent);
+  };
+  const afterSubmit_2 = await secondSubmit();
+  const submitState_2 = afterSubmit_2.state();
+  assert(
+    initialState.messages.length === 0 &&
+      submitState_1.messages.length === 1 &&
+      submitState_2.messages.length === 2 &&
+      submitState_2.messages[1] === testMessage_2
+  );
+};
+```
+
+The `submitMessage` method should clear the current input.
+
+```js
+async () => {
+  const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
+  const waitForIt = (fn) =>
+    new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
+  const causeChange = (c, v) =>
+    c.find('input').simulate('change', { target: { value: v } });
+  const initialState = mockedComponent.state();
+  const testMessage = '__FIRST__MESSAGE__';
+  const firstChange = () => {
+    causeChange(mockedComponent, testMessage);
+    return waitForIt(() => mockedComponent);
+  };
+  const firstResult = await firstChange();
+  const firstState = firstResult.state();
+  const firstSubmit = () => {
+    mockedComponent.find('button').simulate('click');
+    return waitForIt(() => mockedComponent);
+  };
+  const afterSubmit = await firstSubmit();
+  const submitState = afterSubmit.state();
+  assert(firstState.input === testMessage && submitState.input === '');
+};
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<DisplayMessages />, document.getElementById('root'))
+```
+
+## --seed-contents--
 
 ```jsx
 class DisplayMessages extends React.Component {
@@ -70,23 +209,7 @@ class DisplayMessages extends React.Component {
 };
 ```
 
-</div>
-
-
-### After Test
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<DisplayMessages />, document.getElementById('root'))
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 class DisplayMessages extends React.Component {
@@ -134,5 +257,3 @@ class DisplayMessages extends React.Component {
   }
 };
 ```
-
-</section>

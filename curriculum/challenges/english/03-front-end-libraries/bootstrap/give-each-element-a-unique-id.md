@@ -5,44 +5,73 @@ challengeType: 0
 forumTopicId: 18191
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 We will also want to be able to use jQuery to target each button by its unique id.
-Give each of your buttons a unique id, starting with <code>target1</code> and ending with <code>target6</code>.
-Make sure that <code>target1</code> to <code>target3</code> are in <code>#left-well</code>, and <code>target4</code> to <code>target6</code> are in <code>#right-well</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+Give each of your buttons a unique id, starting with `target1` and ending with `target6`.
 
-</section>
+Make sure that `target1` to `target3` are in `#left-well`, and `target4` to `target6` are in `#right-well`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: One <code>button</code> element should have the id <code>target1</code>.
-    testString: assert($("#left-well").children("#target1") && $("#left-well").children("#target1").length > 0);
-  - text: One <code>button</code> element should have the id <code>target2</code>.
-    testString: assert($("#left-well").children("#target2") && $("#left-well").children("#target2").length > 0);
-  - text: One <code>button</code> element should have the id <code>target3</code>.
-    testString: assert($("#left-well").children("#target3") && $("#left-well").children("#target3").length > 0);
-  - text: One <code>button</code> element should have the id <code>target4</code>.
-    testString: assert($("#right-well").children("#target4") && $("#right-well").children("#target4").length > 0);
-  - text: One <code>button</code> element should have the id <code>target5</code>.
-    testString: assert($("#right-well").children("#target5") && $("#right-well").children("#target5").length > 0);
-  - text: One <code>button</code> element should have the id <code>target6</code>.
-    testString: assert($("#right-well").children("#target6") && $("#right-well").children("#target6").length > 0);
+One `button` element should have the id `target1`.
 
+```js
+assert(
+  $('#left-well').children('#target1') &&
+    $('#left-well').children('#target1').length > 0
+);
 ```
 
-</section>
+One `button` element should have the id `target2`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('#left-well').children('#target2') &&
+    $('#left-well').children('#target2').length > 0
+);
+```
 
-<div id='html-seed'>
+One `button` element should have the id `target3`.
+
+```js
+assert(
+  $('#left-well').children('#target3') &&
+    $('#left-well').children('#target3').length > 0
+);
+```
+
+One `button` element should have the id `target4`.
+
+```js
+assert(
+  $('#right-well').children('#target4') &&
+    $('#right-well').children('#target4').length > 0
+);
+```
+
+One `button` element should have the id `target5`.
+
+```js
+assert(
+  $('#right-well').children('#target5') &&
+    $('#right-well').children('#target5').length > 0
+);
+```
+
+One `button` element should have the id `target6`.
+
+```js
+assert(
+  $('#right-well').children('#target6') &&
+    $('#right-well').children('#target6').length > 0
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -68,14 +97,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -100,5 +122,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

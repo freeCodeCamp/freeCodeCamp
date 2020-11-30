@@ -5,40 +5,47 @@ challengeType: 0
 forumTopicId: 18375
 ---
 
-## Description
-<section id='description'>
-Bootstrap comes with several pre-defined colors for buttons. The <code>btn-danger</code> class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
-Create a button with the text "Delete" and give it the class <code>btn-danger</code>.
-Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap comes with several pre-defined colors for buttons. The `btn-danger` class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.
 
-</section>
+Create a button with the text "Delete" and give it the class `btn-danger`.
 
-## Tests
-<section id='tests'>
+Note that these buttons still need the `btn` and `btn-block` classes.
 
-```yml
-tests:
-  - text: You should create a new <code>button</code> element with the text "Delete".
-    testString: assert(new RegExp("Delete","gi").test($("button").text()));
-  - text: All of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.
-    testString: assert($("button.btn-block.btn").length > 2);
-  - text: Your new button should have the class <code>btn-danger</code>.
-    testString: assert($("button").hasClass("btn-danger"));
-  - text: All of your <code>button</code> elements should have closing tags.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+# --hints--
 
+You should create a new `button` element with the text "Delete".
+
+```js
+assert(new RegExp('Delete', 'gi').test($('button').text()));
 ```
 
-</section>
+All of your Bootstrap buttons should have the `btn` and `btn-block` classes.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button.btn-block.btn').length > 2);
+```
 
-<div id='html-seed'>
+Your new button should have the class `btn-danger`.
+
+```js
+assert($('button').hasClass('btn-danger'));
+```
+
+All of your `button` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -102,14 +109,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -173,5 +173,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

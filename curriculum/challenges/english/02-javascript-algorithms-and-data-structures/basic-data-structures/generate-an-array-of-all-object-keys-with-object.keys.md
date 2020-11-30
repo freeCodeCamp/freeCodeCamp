@@ -5,34 +5,51 @@ challengeType: 1
 forumTopicId: 301160
 ---
 
-## Description
-<section id='description'>
-We can also generate an array which contains all the keys stored in an object using the <code>Object.keys()</code> method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Finish writing the <code>getArrayOfUsers</code> function so that it returns an array containing all the properties in the object it receives as an argument.
-</section>
+We can also generate an array which contains all the keys stored in an object using the `Object.keys()` method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>users</code> object should only contain the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>
-    testString: assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4);
-  - text: The <code>getArrayOfUsers</code> function should return an array which contains all the keys in the <code>users</code> object
-    testString: assert((function() { users.Sam = {}; users.Lewis = {}; let R = getArrayOfUsers(users); return (R.indexOf('Alan') !== -1 && R.indexOf('Jeff') !== -1 && R.indexOf('Sarah') !== -1 && R.indexOf('Ryan') !== -1 && R.indexOf('Sam') !== -1 && R.indexOf('Lewis') !== -1); })() === true);
+Finish writing the `getArrayOfUsers` function so that it returns an array containing all the properties in the object it receives as an argument.
 
+# --hints--
+
+The `users` object should only contain the keys `Alan`, `Jeff`, `Sarah`, and `Ryan`
+
+```js
+assert(
+  'Alan' in users &&
+    'Jeff' in users &&
+    'Sarah' in users &&
+    'Ryan' in users &&
+    Object.keys(users).length === 4
+);
 ```
 
-</section>
+The `getArrayOfUsers` function should return an array which contains all the keys in the `users` object
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    users.Sam = {};
+    users.Lewis = {};
+    let R = getArrayOfUsers(users);
+    return (
+      R.indexOf('Alan') !== -1 &&
+      R.indexOf('Jeff') !== -1 &&
+      R.indexOf('Sarah') !== -1 &&
+      R.indexOf('Ryan') !== -1 &&
+      R.indexOf('Sam') !== -1 &&
+      R.indexOf('Lewis') !== -1
+    );
+  })() === true
+);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 let users = {
@@ -63,14 +80,7 @@ function getArrayOfUsers(obj) {
 console.log(getArrayOfUsers(users));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let users = {
@@ -98,5 +108,3 @@ function getArrayOfUsers(obj) {
 
 console.log(getArrayOfUsers(users));
 ```
-
-</section>

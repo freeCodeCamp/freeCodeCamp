@@ -6,43 +6,59 @@ videoUrl: 'https://scrimba.com/c/cnpybAd'
 forumTopicId: 18345
 ---
 
-## Description
-<section id='description'>
-Let's try this again, but with <code>margin</code> this time.
-Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> properties individually, you can specify them all in one line, like this:
-<code>margin: 10px 20px 10px 20px;</code>
+# --description--
+
+Let's try this again, but with `margin` this time.
+
+Instead of specifying an element's `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` properties individually, you can specify them all in one line, like this:
+
+`margin: 10px 20px 10px 20px;`
+
 These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.
-</section>
 
-## Instructions
-<section id='instructions'>
-Use Clockwise Notation to give the element with the <code>blue-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Use Clockwise Notation to give the element with the `blue-box` class a margin of `40px` on its top and left side, but only `20px` on its bottom and right side.
 
-```yml
-tests:
-  - text: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-top") === "40px");
-  - text: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-right") === "20px");
-  - text: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-bottom") === "20px");
-  - text: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-left") === "40px");
-  - text: You should use the clockwise notation to set the margin of <code>blue-box</code> class.
-    testString: assert(/\.blue-box\s*{[\s\S]*margin[\s]*:\s*\d+px\s+\d+px\s+\d+px\s+\d+px(;\s*[^}]+\s*}|;?\s*})/.test(__helpers.removeCssComments($('style').text())));
+# --hints--
 
+Your `blue-box` class should give the top of elements `40px` of `margin`.
+
+```js
+assert($('.blue-box').css('margin-top') === '40px');
 ```
 
-</section>
+Your `blue-box` class should give the right of elements `20px` of `margin`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.blue-box').css('margin-right') === '20px');
+```
 
-<div id='html-seed'>
+Your `blue-box` class should give the bottom of elements `20px` of `margin`.
+
+```js
+assert($('.blue-box').css('margin-bottom') === '20px');
+```
+
+Your `blue-box` class should give the left of elements `40px` of `margin`.
+
+```js
+assert($('.blue-box').css('margin-left') === '40px');
+```
+
+You should use the clockwise notation to set the margin of `blue-box` class.
+
+```js
+assert(
+  /\.blue-box\s*{[\s\S]*margin[\s]*:\s*\d+px\s+\d+px\s+\d+px\s+\d+px(;\s*[^}]+\s*}|;?\s*})/.test(
+    __helpers.removeCssComments($('style').text())
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -82,12 +98,7 @@ tests:
 </div>
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -127,5 +138,3 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
-
-</section>

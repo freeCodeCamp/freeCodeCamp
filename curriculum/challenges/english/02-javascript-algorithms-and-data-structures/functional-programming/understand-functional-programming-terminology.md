@@ -5,45 +5,57 @@ challengeType: 1
 forumTopicId: 301240
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The FCC Team had a mood swing and now wants two types of tea: green tea and black tea. General Fact: Client mood swings are pretty common.
-With that information, we'll need to revisit the <code>getTea</code> function from last challenge to handle various tea requests. We can modify <code>getTea</code> to accept a function as a parameter to be able to change the type of tea it prepares. This makes <code>getTea</code> more flexible, and gives the programmer more control when client requests change.
+
+With that information, we'll need to revisit the `getTea` function from last challenge to handle various tea requests. We can modify `getTea` to accept a function as a parameter to be able to change the type of tea it prepares. This makes `getTea` more flexible, and gives the programmer more control when client requests change.
+
 But first, let's cover some functional terminology:
-<dfn>Callbacks</dfn> are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in <code>filter</code>, the callback function tells JavaScript the criteria for how to filter an array.
+
+<dfn>Callbacks</dfn> are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in `filter`, the callback function tells JavaScript the criteria for how to filter an array.
+
 Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called <dfn>first class</dfn> functions. In JavaScript, all functions are first class functions.
+
 The functions that take a function as an argument, or return a function as a return value are called <dfn>higher order</dfn> functions.
+
 When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a <dfn>lambda</dfn>.
-</section>
 
-## Instructions
-<section id='instructions'>
-Prepare 27 cups of green tea and 13 cups of black tea and store them in <code>tea4GreenTeamFCC</code> and <code>tea4BlackTeamFCC</code> variables, respectively. Note that the <code>getTea</code> function has been modified so it now takes a function as the first argument.
+# --instructions--
+
+Prepare 27 cups of green tea and 13 cups of black tea and store them in `tea4GreenTeamFCC` and `tea4BlackTeamFCC` variables, respectively. Note that the `getTea` function has been modified so it now takes a function as the first argument.
+
 Note: The data (the number of cups of tea) is supplied as the last argument. We'll discuss this more in later lessons.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.
-    testString: assert(tea4GreenTeamFCC.length === 27);
-  - text: The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.
-    testString: assert(tea4GreenTeamFCC[0] === 'greenTea');
-  - text: The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.
-    testString: assert(tea4BlackTeamFCC.length === 13);
-  - text: The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.
-    testString: assert(tea4BlackTeamFCC[0] === 'blackTea');
+The `tea4GreenTeamFCC` variable should hold 27 cups of green tea for the team.
 
+```js
+assert(tea4GreenTeamFCC.length === 27);
 ```
 
-</section>
+The `tea4GreenTeamFCC` variable should hold cups of green tea.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(tea4GreenTeamFCC[0] === 'greenTea');
+```
 
-<div id='js-seed'>
+The `tea4BlackTeamFCC` variable should hold 13 cups of black tea.
+
+```js
+assert(tea4BlackTeamFCC.length === 13);
+```
+
+The `tea4BlackTeamFCC` variable should hold cups of black tea.
+
+```js
+assert(tea4BlackTeamFCC[0] === 'blackTea');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Function that returns a string representing a cup of green tea
@@ -78,14 +90,7 @@ console.log(
 );
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const prepareGreenTea = () => 'greenTea';
@@ -104,5 +109,3 @@ const getTea = (prepareTea, numOfCups) => {
 const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
 const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
 ```
-
-</section>

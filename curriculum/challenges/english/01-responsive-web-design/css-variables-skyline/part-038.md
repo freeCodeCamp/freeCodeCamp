@@ -4,31 +4,28 @@ title: Part 38
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Your code is starting to get quite long. Add a comment above the `fb1` class that says `FOREGROUND BUILDINGS - "fb" stands for "foreground building"` to help people understand your code. Above the `bb1` class add another comment that says `BACKGROUND BUILDINGS - "bb" stands for "background building"`. If you don't remember, comments in CSS look like this: `/* Comment here */`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/\/\*\s*BACKGROUND BUILDINGS - "bb" stands for "background building"\s*\*\//g.test(code) && /\/\*\s*FOREGROUND BUILDINGS - "fb" stands for "foreground building"\s*\*\//g.test(code));
-
+```js
+assert(
+  /\/\*\s*BACKGROUND BUILDINGS - "bb" stands for "background building"\s*\*\//g.test(
+    code
+  ) &&
+    /\/\*\s*FOREGROUND BUILDINGS - "fb" stands for "foreground building"\s*\*\//g.test(
+      code
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -191,12 +188,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -360,5 +352,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

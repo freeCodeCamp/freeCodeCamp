@@ -4,29 +4,21 @@ title: Part 13
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In the previous step, you used a <dfn>type selector</dfn> to style the `h1` element. Go ahead and center the `h2` and `p` elements with a new type selector for each one.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -34,13 +26,13 @@ tests:
   <head>
     <meta charset="utf-8" />
     <title>Camper Cafe Menu</title>
-    --fcc-editable-region--
+--fcc-editable-region--
     <style>
       h1 {
         text-align: center;
       }
     </style>
-    --fcc-editable-region--
+--fcc-editable-region--
   </head>
   <body>
     <header>
@@ -56,6 +48,3 @@ tests:
 <html>
 ```
 
-</div>
-
-</section>

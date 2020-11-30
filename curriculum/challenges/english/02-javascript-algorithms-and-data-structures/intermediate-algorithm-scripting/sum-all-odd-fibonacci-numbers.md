@@ -5,44 +5,55 @@ challengeType: 5
 forumTopicId: 16084
 ---
 
-## Description
-<section id='description'>
-Given a positive integer <code>num</code>, return the sum of all odd Fibonacci numbers that are less than or equal to <code>num</code>.
+# --description--
+
+Given a positive integer `num`, return the sum of all odd Fibonacci numbers that are less than or equal to `num`.
+
 The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the two previous numbers. The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
-For example, <code>sumFibs(10)</code> should return <code>10</code> because all odd Fibonacci numbers less than or equal to <code>10</code> are 1, 1, 3, and 5.
-</section>
 
-## Instructions
-<section id='instructions'>
+For example, `sumFibs(10)` should return `10` because all odd Fibonacci numbers less than or equal to `10` are 1, 1, 3, and 5.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`sumFibs(1)` should return a number.
 
-```yml
-tests:
-  - text: <code>sumFibs(1)</code> should return a number.
-    testString: assert(typeof sumFibs(1) === "number");
-  - text: <code>sumFibs(1000)</code> should return 1785.
-    testString: assert(sumFibs(1000) === 1785);
-  - text: <code>sumFibs(4000000)</code> should return 4613732.
-    testString: assert(sumFibs(4000000) === 4613732);
-  - text: <code>sumFibs(4)</code> should return 5.
-    testString: assert(sumFibs(4) === 5);
-  - text: <code>sumFibs(75024)</code> should return 60696.
-    testString: assert(sumFibs(75024) === 60696);
-  - text: <code>sumFibs(75025)</code> should return 135721.
-    testString: assert(sumFibs(75025) === 135721);
-
+```js
+assert(typeof sumFibs(1) === 'number');
 ```
 
-</section>
+`sumFibs(1000)` should return 1785.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(sumFibs(1000) === 1785);
+```
 
-<div id='js-seed'>
+`sumFibs(4000000)` should return 4613732.
+
+```js
+assert(sumFibs(4000000) === 4613732);
+```
+
+`sumFibs(4)` should return 5.
+
+```js
+assert(sumFibs(4) === 5);
+```
+
+`sumFibs(75024)` should return 60696.
+
+```js
+assert(sumFibs(75024) === 60696);
+```
+
+`sumFibs(75025)` should return 135721.
+
+```js
+assert(sumFibs(75025) === 135721);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sumFibs(num) {
@@ -52,15 +63,7 @@ function sumFibs(num) {
 sumFibs(4);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function sumFibs(num) {
@@ -76,5 +79,3 @@ function sumFibs(num) {
   return s;
 }
 ```
-
-</section>

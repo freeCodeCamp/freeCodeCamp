@@ -4,31 +4,26 @@ title: Part 86
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Move the `background-color` property and value from `fb2` to `fb2b` to just color the section and not the container.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb2 = code.match(/\.fb2\s*{[\s\S]+?[^}]}/g)[0]; const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb2) && /background-color\s*:\s*var\(\s*--building-color3\s*\)\s*(;|})/g.test(fb2b));
-
+```js
+const fb2 = code.match(/\.fb2\s*{[\s\S]+?[^}]}/g)[0];
+const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  !/background-color/g.test(fb2) &&
+    /background-color\s*:\s*var\(\s*--building-color3\s*\)\s*(;|})/g.test(fb2b)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -322,12 +317,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -620,5 +610,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

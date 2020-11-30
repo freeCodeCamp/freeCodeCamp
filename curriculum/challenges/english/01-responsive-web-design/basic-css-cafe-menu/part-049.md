@@ -4,29 +4,21 @@ title: Part 49
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add an empty `article` element under the `Desserts` heading. Give it a `class` attribute with the value `item`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -63,19 +55,15 @@ tests:
           </article>
         </section>
         <section>
-          --fcc-editable-region--
+--fcc-editable-region--
           <h2>Desserts</h2>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -108,6 +96,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

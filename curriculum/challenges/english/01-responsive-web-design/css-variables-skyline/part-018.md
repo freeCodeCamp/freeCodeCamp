@@ -4,31 +4,26 @@ title: Part 18
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Your first building looks pretty good now. Let's make some more! Nest three new `div` elements in the `background-buildings` container and give them the classes of `bb2`, `bb3`, and `bb4` in that order. These will be three more buildings for the background.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb = $(".background-buildings"); assert(bb.children(".bb2").length === 1 && bb.children(".bb3").length === 1 && bb.children(".bb4").length === 1);
-
+```js
+const bb = $('.background-buildings');
+assert(
+  bb.children('.bb2').length === 1 &&
+    bb.children('.bb3').length === 1 &&
+    bb.children('.bb4').length === 1
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -100,12 +95,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -179,5 +169,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

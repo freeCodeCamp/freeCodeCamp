@@ -4,36 +4,44 @@ title: Part 41
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Use the `button` element to create a clickable button. For example, `<button>Click Here</button>` creates a button with the text `Click Here`.
 
-Add a `button` element with the text `Submit` below the `input` element.  Note the default behavior of clicking a form button with any attributes submits the form to the location specified in the form's `action` attribute.
+Add a `button` element with the text `Submit` below the `input` element. Note the default behavior of clicking a form button with any attributes submits the form to the location specified in the form's `action` attribute.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `button` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: 'Your `button` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('button') );
-  - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/button\>/) );
-  - text: Your `button` element's text should be 'Submit'. You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('button').innerText.toLowerCase() === 'submit' );
-  - text: Your `button` element should be below the `input` element. You have them in the wrong order.
-    testString: const collection = [...document.querySelectorAll('input, button')].map(node => node.nodeName); assert( collection.indexOf('INPUT') < collection.indexOf('BUTTON') );
-
+```js
+assert(document.querySelector('button'));
 ```
 
-</section>
+Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/<\/button\>/));
+```
+
+Your `button` element's text should be 'Submit'. You have either omitted the text or have a typo.
+
+```js
+assert(document.querySelector('button').innerText.toLowerCase() === 'submit');
+```
+
+Your `button` element should be below the `input` element. You have them in the wrong order.
+
+```js
+const collection = [...document.querySelectorAll('input, button')].map(
+  (node) => node.nodeName
+);
+assert(collection.indexOf('INPUT') < collection.indexOf('BUTTON'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -72,9 +80,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </section>
     </main>
@@ -82,5 +90,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

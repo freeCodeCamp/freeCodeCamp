@@ -4,31 +4,25 @@ title: Part 101
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Fill in the windows with your secondary color for this building. Also add a `margin` of `10%` to give the windows some space.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--window-color1\s*\)\s*(;|})/g.test(fb4w) && /margin\s*:\s*10%\s*(;|})/g.test(fb4w));
-
+```js
+const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /background-color\s*:\s*var\(\s*--window-color1\s*\)\s*(;|})/g.test(fb4w) &&
+    /margin\s*:\s*10%\s*(;|})/g.test(fb4w)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -372,12 +366,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -722,5 +711,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

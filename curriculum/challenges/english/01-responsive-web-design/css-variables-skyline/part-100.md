@@ -4,31 +4,26 @@ title: Part 100
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give the `fb4-window` elements a `width` of `30%`, `height` of `10%`, and `border-radius` of `50%`. These will make some circular windows for this building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*30%\s*(;|})/g.test(fb4w) && /height\s*:\s*10%\s*(;|})/g.test(fb4w) && /border-radius\s*:\s*50%\s*(;|})/g.test(fb4w));
-
+```js
+const fb4w = code.match(/\.fb4-window\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*30%\s*(;|})/g.test(fb4w) &&
+    /height\s*:\s*10%\s*(;|})/g.test(fb4w) &&
+    /border-radius\s*:\s*50%\s*(;|})/g.test(fb4w)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -366,12 +361,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -714,5 +704,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

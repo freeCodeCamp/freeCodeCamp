@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/c/caeJ2hm'
 forumTopicId: 18206
 ---
 
-## Description
-<section id='description'>
-If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.
+# --description--
+
+If you have multiple conditions that need to be addressed, you can chain `if` statements together with `else if` statements.
 
 ```js
 if (num > 15) {
@@ -20,43 +20,67 @@ if (num > 15) {
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Convert the logic to use <code>else if</code> statements.
-</section>
+Convert the logic to use `else if` statements.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should have at least two <code>else</code> statements
-    testString: assert(code.match(/else/g).length > 1);
-  - text: You should have at least two <code>if</code> statements
-    testString: assert(code.match(/if/g).length > 1);
-  - text: You should have closing and opening curly braces for each <code>if else</code> code block.
-    testString: assert(code.match(/if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s+if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s*\{[\s\S]+\s*\}/));
-  - text: <code>testElseIf(0)</code> should return "Smaller than 5"
-    testString: assert(testElseIf(0) === "Smaller than 5");
-  - text: <code>testElseIf(5)</code> should return "Between 5 and 10"
-    testString: assert(testElseIf(5) === "Between 5 and 10");
-  - text: <code>testElseIf(7)</code> should return "Between 5 and 10"
-    testString: assert(testElseIf(7) === "Between 5 and 10");
-  - text: <code>testElseIf(10)</code> should return "Between 5 and 10"
-    testString: assert(testElseIf(10) === "Between 5 and 10");
-  - text: <code>testElseIf(12)</code> should return "Greater than 10"
-    testString: assert(testElseIf(12) === "Greater than 10");
+You should have at least two `else` statements
 
+```js
+assert(code.match(/else/g).length > 1);
 ```
 
-</section>
+You should have at least two `if` statements
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/if/g).length > 1);
+```
 
-<div id='js-seed'>
+You should have closing and opening curly braces for each `if else` code block.
+
+```js
+assert(
+  code.match(
+    /if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s+if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s*\{[\s\S]+\s*\}/
+  )
+);
+```
+
+`testElseIf(0)` should return "Smaller than 5"
+
+```js
+assert(testElseIf(0) === 'Smaller than 5');
+```
+
+`testElseIf(5)` should return "Between 5 and 10"
+
+```js
+assert(testElseIf(5) === 'Between 5 and 10');
+```
+
+`testElseIf(7)` should return "Between 5 and 10"
+
+```js
+assert(testElseIf(7) === 'Between 5 and 10');
+```
+
+`testElseIf(10)` should return "Between 5 and 10"
+
+```js
+assert(testElseIf(10) === 'Between 5 and 10');
+```
+
+`testElseIf(12)` should return "Greater than 10"
+
+```js
+assert(testElseIf(12) === 'Greater than 10');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testElseIf(val) {
@@ -72,18 +96,9 @@ function testElseIf(val) {
 }
 
 testElseIf(7);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testElseIf(val) {
@@ -96,5 +111,3 @@ function testElseIf(val) {
   }
 }
 ```
-
-</section>

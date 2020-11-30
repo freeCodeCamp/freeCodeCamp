@@ -4,29 +4,21 @@ title: Part 47
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You will come back to the styling the menu in a few steps, but for now, go ahead add a second `section` element below the first for displaying the desserts offered by the cafe.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -44,7 +36,7 @@ tests:
         <p>Est. 2020</p>
       </header>
       <main>
-        --fcc-editable-region--
+--fcc-editable-region--
         <section>
           <h2>Coffees</h2>
           <article class="item">
@@ -63,16 +55,12 @@ tests:
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
-        --fcc-editable-region--
+--fcc-editable-region--
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -105,6 +93,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301318
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Objects can have a special type of property, called a <dfn>method</dfn>.
-Methods are properties that are functions. This adds different behavior to an object. Here is the <code>duck</code> example with a method:
+
+Methods are properties that are functions. This adds different behavior to an object. Here is the `duck` example with a method:
 
 ```js
 let duck = {
@@ -20,33 +21,29 @@ duck.sayName();
 // Returns "The name of this duck is Aflac."
 ```
 
-The example adds the <code>sayName</code> method, which is a function that returns a sentence giving the name of the <code>duck</code>.
-Notice that the method accessed the <code>name</code> property in the return statement using <code>duck.name</code>. The next challenge will cover another way to do this.
-</section>
+The example adds the `sayName` method, which is a function that returns a sentence giving the name of the `duck`. Notice that the method accessed the `name` property in the return statement using `duck.name`. The next challenge will cover another way to do this.
 
-## Instructions
-<section id='instructions'>
-Using the <code>dog</code> object, give it a method called <code>sayLegs</code>. The method should return the sentence "This dog has 4 legs."
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Using the `dog` object, give it a method called `sayLegs`. The method should return the sentence "This dog has 4 legs."
 
-```yml
-tests:
-  - text: <code>dog.sayLegs()</code> should be a function.
-    testString: assert(typeof(dog.sayLegs) === 'function');
-  - text: <code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.
-    testString: assert(dog.sayLegs() === 'This dog has 4 legs.');
+# --hints--
 
+`dog.sayLegs()` should be a function.
+
+```js
+assert(typeof dog.sayLegs === 'function');
 ```
 
-</section>
+`dog.sayLegs()` should return the given string - note that punctuation and spacing matter.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(dog.sayLegs() === 'This dog has 4 legs.');
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 let dog = {
@@ -58,15 +55,7 @@ let dog = {
 dog.sayLegs();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 let dog = {
@@ -79,5 +68,3 @@ let dog = {
 
 dog.sayLegs();
 ```
-
-</section>

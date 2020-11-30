@@ -6,32 +6,25 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
 forumTopicId: 301106
 ---
 
-## Description
-<section id='description'>
-The last challenge introduced the <code>align-items</code> property and gave an example. This property can be applied to a few tweet embed elements to align the flex items inside them.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element. Set the value to <code>center</code>.
-</section>
+The last challenge introduced the `align-items` property and gave an example. This property can be applied to a few tweet embed elements to align the flex items inside them.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of <code>center</code>.
-    testString: assert($('.follow-btn').css('align-items') == 'center');
+Add the CSS property `align-items` to the header's `.follow-btn` element. Set the value to `center`.
 
+# --hints--
+
+The `.follow-btn` element should have the `align-items` property set to a value of `center`.
+
+```js
+assert($('.follow-btn').css('align-items') == 'center');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -126,14 +119,7 @@ tests:
 </footer>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -227,5 +213,3 @@ tests:
   </div>
 </footer>
 ```
-
-</section>

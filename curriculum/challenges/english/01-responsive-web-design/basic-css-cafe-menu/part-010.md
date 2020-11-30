@@ -4,29 +4,21 @@ title: Part 10
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Create an `h2` element in the `section` element and give it the text `Coffees`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -41,15 +33,12 @@ tests:
       <p>Est. 2020</p>
     </header>
     <main>
-      --fcc-editable-region--
+--fcc-editable-region--
       <section>
       </section>
-      --fcc-editable-region--
+--fcc-editable-region--
     </main>
   </body>
 <html>
 ```
 
-</div>
-
-</section>

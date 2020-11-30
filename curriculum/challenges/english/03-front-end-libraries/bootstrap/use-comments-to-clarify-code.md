@@ -5,41 +5,45 @@ challengeType: 0
 forumTopicId: 18347
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 When we start using jQuery, we will modify HTML elements without needing to actually change them in HTML.
+
 Let's make sure that everyone knows they shouldn't actually modify any of this code directly.
-Remember that you can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>
-Add a comment at the top of your HTML that says <code>Code below this line should not be changed</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+Remember that you can start a comment with `<!--` and end a comment with `-->`
 
-</section>
+Add a comment at the top of your HTML that says `Code below this line should not be changed`
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should start a comment with <code>&#60;!--</code> at the top of your HTML.
-    testString: assert(code.match(/^\s*<!--/));
-  - text: Your comment should have the text <code>Code below this line should not be changed</code>.
-    testString: assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
-  - text: You should close your comment with <code>--&#62;</code>.
-    testString: assert(code.match(/-->.*\n+.+/g));
-  - text: You should have the same number of comment openers and closers.
-    testString: assert(code.match(/<!--/g).length === code.match(/-->/g).length);
+You should start a comment with `<!--` at the top of your HTML.
 
+```js
+assert(code.match(/^\s*<!--/));
 ```
 
-</section>
+Your comment should have the text `Code below this line should not be changed`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
+```
 
-<div id='html-seed'>
+You should close your comment with `-->`.
+
+```js
+assert(code.match(/-->.*\n+.+/g));
+```
+
+You should have the same number of comment openers and closers.
+
+```js
+assert(code.match(/<!--/g).length === code.match(/-->/g).length);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -65,14 +69,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!-- Code below this line should not be changed -->
@@ -98,5 +95,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

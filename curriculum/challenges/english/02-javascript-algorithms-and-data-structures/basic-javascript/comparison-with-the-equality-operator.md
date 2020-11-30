@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
 ---
 
-## Description
-<section id='description'>
-There are many <dfn>comparison operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.
-The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value on the right of the operator to a variable on the left.
+# --description--
+
+There are many <dfn>comparison operators</dfn> in JavaScript. All of these operators return a boolean `true` or `false` value.
+
+The most basic operator is the equality operator `==`. The equality operator compares two values and returns `true` if they're equivalent or `false` if they are not. Note that equality is different from assignment (`=`), which assigns the value on the right of the operator to a variable on the left.
 
 ```js
 function equalityTest(myVal) {
@@ -20,8 +21,7 @@ function equalityTest(myVal) {
 }
 ```
 
-If <code>myVal</code> is equal to <code>10</code>, the equality operator returns <code>true</code>, so the code in the curly braces will execute, and the function will return <code>"Equal"</code>. Otherwise, the function will return <code>"Not Equal"</code>.
-In order for JavaScript to compare two different <dfn>data types</dfn> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
+If `myVal` is equal to `10`, the equality operator returns `true`, so the code in the curly braces will execute, and the function will return `"Equal"`. Otherwise, the function will return `"Not Equal"`. In order for JavaScript to compare two different <dfn>data types</dfn> (for example, `numbers` and `strings`), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
 
 ```js
 1   ==  1   // true
@@ -30,35 +30,39 @@ In order for JavaScript to compare two different <dfn>data types</dfn> (for exam
 "3" ==  3   // true
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add the equality operator to the indicated line so that the function will return "Equal" when <code>val</code> is equivalent to <code>12</code>.
-</section>
+Add the equality operator to the indicated line so that the function will return "Equal" when `val` is equivalent to `12`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testEqual(10)</code> should return "Not Equal"
-    testString: assert(testEqual(10) === "Not Equal");
-  - text: <code>testEqual(12)</code> should return "Equal"
-    testString: assert(testEqual(12) === "Equal");
-  - text: <code>testEqual("12")</code> should return "Equal"
-    testString: assert(testEqual("12") === "Equal");
-  - text: You should use the <code>==</code> operator
-    testString: assert(code.match(/==/g) && !code.match(/===/g));
+`testEqual(10)` should return "Not Equal"
 
+```js
+assert(testEqual(10) === 'Not Equal');
 ```
 
-</section>
+`testEqual(12)` should return "Equal"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testEqual(12) === 'Equal');
+```
 
-<div id='js-seed'>
+`testEqual("12")` should return "Equal"
+
+```js
+assert(testEqual('12') === 'Equal');
+```
+
+You should use the `==` operator
+
+```js
+assert(code.match(/==/g) && !code.match(/===/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -72,15 +76,7 @@ function testEqual(val) {
 testEqual(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testEqual(val) {
@@ -90,5 +86,3 @@ function testEqual(val) {
   return "Not Equal";
 }
 ```
-
-</section>

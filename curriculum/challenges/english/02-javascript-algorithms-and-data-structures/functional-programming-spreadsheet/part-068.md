@@ -4,38 +4,62 @@ title: Part 68
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 However, you don't need an arrow function. As `elemValue(n)` is a function, you can pass it to `map` directly.
 
 Change `x => elemValue(n)(x)` to `elemValue(n)`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constaddChars=c1=>c2=>n=>charRange(c1,c2).map(elemValue(n))"));
-
+```js
+assert(
+  code
+    .replace(/\s/g, '')
+    .includes('constaddChars=c1=>c2=>n=>charRange(c1,c2).map(elemValue(n))')
+);
 ```
 
+# --seed--
 
-</section>
+## --before-user-code--
 
-## Challenge Seed
-<section id='challengeSeed'>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spreadsheet</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: 50px repeat(10, 200px);
+      grid-template-rows: repeat(11, 30px);
+    }
+    .label {
+      background-color: lightgray;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <div></div>
+</div>
+```
 
-<div id='html-seed'>
+## --after-user-code--
+
+```html
+</body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -98,57 +122,7 @@ const evalFormula = x => {
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Spreadsheet</title>
-  <style>
-    #container {
-      display: grid;
-      grid-template-columns: 50px repeat(10, 200px);
-      grid-template-rows: repeat(11, 30px);
-    }
-    .label {
-      background-color: lightgray;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 30px;
-    }
-  </style>
-</head>
-<body>
-<div id="container">
-  <div></div>
-</div>
-```
-
-</div>
-
-
-### After Test
-<div id='html-teardown'>
-
-```html
-</body>
-</html>
-```
-
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -207,5 +181,3 @@ const evalFormula = x => {
 };
 </script>
 ```
-
-</section>

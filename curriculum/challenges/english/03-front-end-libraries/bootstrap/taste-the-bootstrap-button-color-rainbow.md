@@ -5,38 +5,41 @@ challengeType: 0
 forumTopicId: 18323
 ---
 
-## Description
-<section id='description'>
-The <code>btn-primary</code> class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
-Replace Bootstrap's <code>btn-default</code> class with <code>btn-primary</code> in your button.
-Note that this button will still need the <code>btn</code> and <code>btn-block</code> classes.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+The `btn-primary` class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
 
-</section>
+Replace Bootstrap's `btn-default` class with `btn-primary` in your button.
 
-## Tests
-<section id='tests'>
+Note that this button will still need the `btn` and `btn-block` classes.
 
-```yml
-tests:
-  - text: Your button should have the class <code>btn-primary</code>.
-    testString: assert($("button").hasClass("btn-primary"));
-  - text: Your button should still have the <code>btn</code> and <code>btn-block</code> classes.
-    testString: assert($("button").hasClass("btn-block") && $("button").hasClass("btn"));
-  - text: All your <code>button</code> elements should have closing tags.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+# --hints--
 
+Your button should have the class `btn-primary`.
+
+```js
+assert($('button').hasClass('btn-primary'));
 ```
 
-</section>
+Your button should still have the `btn` and `btn-block` classes.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button').hasClass('btn-block') && $('button').hasClass('btn'));
+```
 
-<div id='html-seed'>
+All your `button` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -99,14 +102,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -168,5 +164,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

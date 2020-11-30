@@ -5,12 +5,11 @@ challengeType: 5
 forumTopicId: 302312
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-The cocktail shaker sort is an improvement on the <a href="https://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>. The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from <a href="https://en.wikipedia.org/wiki/Cocktail sort" target="_blank">wikipedia</a>):</p>
-<pre>
-<b>function</b> <i>cocktailSort</i>( A : list of sortable items )
+The cocktail shaker sort is an improvement on the [Bubble Sort](<https://rosettacode.org/wiki/Bubble Sort>). The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from [wikipedia](<https://en.wikipedia.org/wiki/Cocktail sort>)):
+
+<pre><b>function</b> <i>cocktailSort</i>( A : list of sortable items )
   <b>do</b>
     swapped := false
     <b>for each</b> i <b>in</b> 0 <b>to</b> length( A ) - 2 <b>do</b>
@@ -31,42 +30,74 @@ The cocktail shaker sort is an improvement on the <a href="https://rosettacode.o
   <b>while</b> swapped; <i>// if no elements have been swapped,</i>
                 <i>// then the list is sorted</i>
 </pre>
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
 Write a function that sorts a given array using cocktail sort.
-</section>
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`cocktailSort` should be a function.
 
-```yml
-tests:
-  - text: <code>cocktailSort</code> should be a function.
-    testString: assert(typeof cocktailSort == 'function');
-  - text: <code>cocktailSort([25, 32, 12, 7, 20])</code> should return an array.
-    testString: assert(Array.isArray(cocktailSort([25, 32, 12, 7, 20])));
-  - text: <code>cocktailSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
-    testString: assert.deepEqual(cocktailSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
-  - text: <code>cocktailSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
-    testString: assert.deepEqual(cocktailSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
-  - text: <code>cocktailSort([43, 36, 20, 34, 24])</code> should return <code>[20, 24, 34, 36, 43]</code>.
-    testString: assert.deepEqual(cocktailSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
-  - text: <code>cocktailSort([12, 33, 26, 18, 1, 16, 38])</code> should return <code>[1, 12, 16, 18, 26, 33, 38]</code>.
-    testString: assert.deepEqual(cocktailSort([12, 33, 26, 18, 1, 16, 38]), [1, 12, 16, 18, 26, 33, 38]);
-  - text: <code>cocktailSort([3, 39, 48, 16, 1, 4, 29])</code> should return <code>[1, 3, 4, 16, 29, 39, 48]</code>.
-    testString: assert.deepEqual(cocktailSort([3, 39, 48, 16, 1, 4, 29]), [1, 3, 4, 16, 29, 39, 48]);
+```js
+assert(typeof cocktailSort == 'function');
 ```
 
-</section>
+`cocktailSort([25, 32, 12, 7, 20])` should return an array.
 
-## Challenge Seed
+```js
+assert(Array.isArray(cocktailSort([25, 32, 12, 7, 20])));
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`cocktailSort([25, 32, 12, 7, 20])` should return `[7, 12, 20, 25, 32]`.
+
+```js
+assert.deepEqual(cocktailSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32]);
+```
+
+`cocktailSort([38, 45, 35, 8, 13])` should return `[8, 13, 35, 38, 45]`.
+
+```js
+assert.deepEqual(cocktailSort([38, 45, 35, 8, 13]), [8, 13, 35, 38, 45]);
+```
+
+`cocktailSort([43, 36, 20, 34, 24])` should return `[20, 24, 34, 36, 43]`.
+
+```js
+assert.deepEqual(cocktailSort([43, 36, 20, 34, 24]), [20, 24, 34, 36, 43]);
+```
+
+`cocktailSort([12, 33, 26, 18, 1, 16, 38])` should return `[1, 12, 16, 18, 26, 33, 38]`.
+
+```js
+assert.deepEqual(cocktailSort([12, 33, 26, 18, 1, 16, 38]), [
+  1,
+  12,
+  16,
+  18,
+  26,
+  33,
+  38
+]);
+```
+
+`cocktailSort([3, 39, 48, 16, 1, 4, 29])` should return `[1, 3, 4, 16, 29, 39, 48]`.
+
+```js
+assert.deepEqual(cocktailSort([3, 39, 48, 16, 1, 4, 29]), [
+  1,
+  3,
+  4,
+  16,
+  29,
+  39,
+  48
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function cocktailSort(arr) {
@@ -74,12 +105,7 @@ function cocktailSort(arr) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function cocktailSort(arr) {
@@ -111,5 +137,3 @@ function cocktailSort(arr) {
   return arr;
 }
 ```
-
-</section>

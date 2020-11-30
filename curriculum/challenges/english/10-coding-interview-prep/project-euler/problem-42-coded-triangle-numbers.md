@@ -1,52 +1,55 @@
 ---
 id: 5900f3961000cf542c50fea9
-challengeType: 5
 title: 'Problem 42: Coded triangle numbers'
+challengeType: 5
 forumTopicId: 302089
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The <var>n</var><sup>th</sup> term of the sequence of triangle numbers is given by, <var>t<sub>n</sub></var> = ½<var>n</var>(<var>n</var>+1); so the first ten triangle numbers are:
+The `n`<sup>th</sup> term of the sequence of triangle numbers is given by, `tn` = ½`n`(`n`+1); so the first ten triangle numbers are:
 
 <div style='margin-left: 4em;'>1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...</div>
 
-By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = <var>t</var><sub>10</sub>. If the word value is a triangle number then we shall call the word a triangle word.
+By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = `t`<sub>10</sub>. If the word value is a triangle number then we shall call the word a triangle word.
 
 Using words array of `n`-length, how many are triangle words?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`codedTriangleNumbers(1400)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>codedTriangleNumbers(1400)</code> should return a number.
-    testString: assert(typeof codedTriangleNumbers(1400) === 'number');
-  - text: <code>codedTriangleNumbers(1400)</code> should return 129.
-    testString: assert(codedTriangleNumbers(1400) == 129);
-  - text: <code>codedTriangleNumbers(1500)</code> should return 137.
-    testString: assert(codedTriangleNumbers(1500) == 137);
-  - text: <code>codedTriangleNumbers(1600)</code> should return 141.
-    testString: assert(codedTriangleNumbers(1600) == 141);
-  - text: <code>codedTriangleNumbers(1786)</code> should return 162.
-    testString: assert(codedTriangleNumbers(1786) == 162);
-
+```js
+assert(typeof codedTriangleNumbers(1400) === 'number');
 ```
 
-</section>
+`codedTriangleNumbers(1400)` should return 129.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(codedTriangleNumbers(1400) == 129);
+```
 
-<div id='js-seed'>
+`codedTriangleNumbers(1500)` should return 137.
+
+```js
+assert(codedTriangleNumbers(1500) == 137);
+```
+
+`codedTriangleNumbers(1600)` should return 141.
+
+```js
+assert(codedTriangleNumbers(1600) == 141);
+```
+
+`codedTriangleNumbers(1786)` should return 162.
+
+```js
+assert(codedTriangleNumbers(1786) == 162);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function codedTriangleNumbers(n) {
@@ -60,17 +63,8 @@ const words = ['A','ABILITY','ABLE','ABOUT','ABOVE','ABSENCE','ABSOLUTELY','ACAD
 codedTriangleNumbers(1786);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

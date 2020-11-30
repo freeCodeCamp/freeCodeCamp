@@ -4,39 +4,59 @@ title: Part 21
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 After the unordered list, add a new image with an `src` attribute value set to `https://bit.ly/fcc-lasagna` and an `alt` attribute value set to `A slice of lasagna on a plate.`
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+There should be an `img` element right above the second `section` element's closing tag.
 
-```yml
-tests:
-  - text: There should be an `img` element right above the second `section` element's closing tag.
-    testString: assert( $('section')[1].lastElementChild.nodeName === 'IMG' );
-  - text: The new image either does not have an `alt` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert($('section')[1].lastElementChild.hasAttribute('alt') );
-  - text: The new image should have an `alt` value of `A slice of lasagna on a plate.` Make sure the `alt` attribute's value is surrounded with quotation marks.
-    testString: assert( $('section')[1].lastElementChild.getAttribute('alt').replace(/\s+/g, ' ').match(/^A slice of lasagna on a plate\.?$/i) );
-  - text: The new image does not have an `src` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert($('section')[1].lastElementChild.hasAttribute('src') );
-  - text: The new image should have an `src` value of `https://bit.ly/fcc-lasagna`. Make sure the `src` attribute's value is surrounded with quotation marks.
-    testString: assert( $('section')[1].lastElementChild.getAttribute('src') === 'https://bit.ly/fcc-lasagna');
-  - text: Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<img\s+.+\s+src\s*=\s*https:\/\/bit\.ly\/fcc-lasagna/.test(code) );
-
+```js
+assert($('section')[1].lastElementChild.nodeName === 'IMG');
 ```
 
-</section>
+The new image either does not have an `alt` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('section')[1].lastElementChild.hasAttribute('alt'));
+```
 
-<div id='html-seed'>
+The new image should have an `alt` value of `A slice of lasagna on a plate.` Make sure the `alt` attribute's value is surrounded with quotation marks.
+
+```js
+assert(
+  $('section')[1]
+    .lastElementChild.getAttribute('alt')
+    .replace(/\s+/g, ' ')
+    .match(/^A slice of lasagna on a plate\.?$/i)
+);
+```
+
+The new image does not have an `src` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+
+```js
+assert($('section')[1].lastElementChild.hasAttribute('src'));
+```
+
+The new image should have an `src` value of `https://bit.ly/fcc-lasagna`. Make sure the `src` attribute's value is surrounded with quotation marks.
+
+```js
+assert(
+  $('section')[1].lastElementChild.getAttribute('src') ===
+    'https://bit.ly/fcc-lasagna'
+);
+```
+
+Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+
+```js
+assert(!/\<img\s+.+\s+src\s*=\s*https:\/\/bit\.ly\/fcc-lasagna/.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -52,18 +72,16 @@ tests:
       <section>
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
-        --fcc-editable-region--
+--fcc-editable-region--
         <ul>
           <li>cat nip</li>
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>
-        --fcc-editable-region--
+--fcc-editable-region--
       </section>
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

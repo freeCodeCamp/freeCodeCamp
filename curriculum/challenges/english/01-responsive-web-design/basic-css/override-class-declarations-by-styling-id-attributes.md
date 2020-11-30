@@ -6,19 +6,23 @@ videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
 ---
 
-## Description
-<section id='description'>
-We just proved that browsers read CSS from top to bottom in order of their declaration. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last. Notice that if we even had put <code>blue-text</code> before <code>pink-text</code> in our <code>h1</code> element's classes, it would still look at the declaration order and not the order of their use!
-But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?
-Let's override your <code>pink-text</code> and <code>blue-text</code> classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-text</code>. Remember, id styles look like this:
-<code>&#60;h1 id="orange-text"&#62;</code>
-Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.
-Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:
+We just proved that browsers read CSS from top to bottom in order of their declaration. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last. Notice that if we even had put `blue-text` before `pink-text` in our `h1` element's classes, it would still look at the declaration order and not the order of their use!
+
+But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?
+
+Let's override your `pink-text` and `blue-text` classes, and make your `h1` element orange, by giving the `h1` element an id and then styling that id.
+
+# --instructions--
+
+Give your `h1` element the `id` attribute of `orange-text`. Remember, id styles look like this:
+
+`<h1 id="orange-text">`
+
+Leave the `blue-text` and `pink-text` classes on your `h1` element.
+
+Create a CSS declaration for your `orange-text` id in your `style` element. Here's an example of what this looks like:
 
 ```css
 #brown-text {
@@ -26,37 +30,55 @@ Create a CSS declaration for your <code>orange-text</code> id in your <code>styl
 }
 ```
 
-<strong>Note:</strong> It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
-</section>
+**Note:** It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>h1</code> element should have the class <code>pink-text</code>.
-    testString: assert($("h1").hasClass("pink-text"));
-  - text: Your <code>h1</code> element should have the class <code>blue-text</code>.
-    testString: assert($("h1").hasClass("blue-text"));
-  - text: Your <code>h1</code> element should have the id of <code>orange-text</code>.
-    testString: assert($("h1").attr("id") === "orange-text");
-  - text: There should be only one <code>h1</code> element.
-    testString: assert(($("h1").length === 1));
-  - text: Your <code>orange-text</code> id should have a CSS declaration. 
-    testString: assert(code.match(/#orange-text\s*{/gi));
-  - text: Your <code>h1</code> should not have any <code>style</code> attributes.
-    testString: assert(!code.match(/<h1.*style.*>/gi));
-  - text: Your <code>h1</code> element should be orange.
-    testString: assert($("h1").css("color") === "rgb(255, 165, 0)");
+Your `h1` element should have the class `pink-text`.
 
+```js
+assert($('h1').hasClass('pink-text'));
 ```
 
-</section>
+Your `h1` element should have the class `blue-text`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h1').hasClass('blue-text'));
+```
 
-<div id='html-seed'>
+Your `h1` element should have the id of `orange-text`.
+
+```js
+assert($('h1').attr('id') === 'orange-text');
+```
+
+There should be only one `h1` element.
+
+```js
+assert($('h1').length === 1);
+```
+
+Your `orange-text` id should have a CSS declaration.
+
+```js
+assert(code.match(/#orange-text\s*{/gi));
+```
+
+Your `h1` should not have any `style` attributes.
+
+```js
+assert(!code.match(/<h1.*style.*>/gi));
+```
+
+Your `h1` element should be orange.
+
+```js
+assert($('h1').css('color') === 'rgb(255, 165, 0)');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -75,14 +97,7 @@ tests:
 <h1 class="pink-text blue-text">Hello World!</h1>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -103,5 +118,3 @@ tests:
 </style>
 <h1 id="orange-text"  class="pink-text blue-text">Hello World!</h1>
 ```
-
-</section>

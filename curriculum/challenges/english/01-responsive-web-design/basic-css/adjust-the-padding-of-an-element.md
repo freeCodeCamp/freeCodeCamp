@@ -6,37 +6,35 @@ videoUrl: 'https://scrimba.com/c/cED8ZC2'
 forumTopicId: 301083
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now let's put our Cat Photo App away for a little while and learn more about styling HTML.
+
 You may have already noticed this, but all HTML elements are essentially little rectangles.
-Three important properties control the space that surrounds each HTML element: <code>padding</code>, <code>border</code>, and <code>margin</code>.
-An element's <code>padding</code> controls the amount of space between the element's content and its <code>border</code>.
-Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the blue box.
-When you increase the blue box's <code>padding</code>, it will increase the distance (<code>padding</code>) between the text and the border around it.
-</section>
 
-## Instructions
-<section id='instructions'>
-Change the <code>padding</code> of your blue box to match that of your red box.
-</section>
+Three important properties control the space that surrounds each HTML element: `padding`, `border`, and `margin`.
 
-## Tests
-<section id='tests'>
+An element's `padding` controls the amount of space between the element's content and its `border`.
 
-```yml
-tests:
-  - text: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-top") === "20px");
+Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has more `padding` than the blue box.
 
+When you increase the blue box's `padding`, it will increase the distance (`padding`) between the text and the border around it.
+
+# --instructions--
+
+Change the `padding` of your blue box to match that of your red box.
+
+# --hints--
+
+Your `blue-box` class should give elements `20px` of `padding`.
+
+```js
+assert($('.blue-box').css('padding-top') === '20px');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -77,14 +75,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -124,5 +115,3 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
-
-</section>

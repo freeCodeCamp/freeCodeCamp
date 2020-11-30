@@ -4,36 +4,60 @@ title: Part 36
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The axis labels are `text` elements within the `g`, you can use the `selectAll` function to select them. Chain the `selectAll` function to select the `text` elements in this group. You can do that like this: 
+The axis labels are `text` elements within the `g`, you can use the `selectAll` function to select them. Chain the `selectAll` function to select the `text` elements in this group. You can do that like this:
 
 ```js
 .selectAll('element')
 ```
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
-</section>
+test-text
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: test-text
-    testString: assert(/\.attr\('transform', `translate\(0, \$\{svgHeight - svgMargin\}\)`\)\s*\.selectAll\s*\(\s*('|"|`)text\1\s*\)/g.test(code));
-
+```js
+assert(
+  /\.attr\('transform', `translate\(0, \$\{svgHeight - svgMargin\}\)`\)\s*\.selectAll\s*\(\s*('|"|`)text\1\s*\)/g.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -87,47 +111,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -181,5 +165,3 @@ tests:
 
 </script>
 ```
-
-</section>

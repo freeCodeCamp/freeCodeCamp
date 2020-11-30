@@ -5,12 +5,15 @@ challengeType: 1
 forumTopicId: 18179
 ---
 
-## Description
-<section id='description'>
-Another useful array function is <code>Array.prototype.filter()</code>, or simply <code>filter()</code>. 
-<code>filter</code> calls a function on each element of an array and returns a new array containing only the elements for which that function returns <code>true</code>.  In other words, it filters the array, based on the function passed to it.  Like <code>map</code>, it does this without needing to modify the original array.
-The callback function accepts three arguments.  The first argument is the current element being processed.  The second is the index of that element and the third is the array upon which the <code>filter</code> method was called.
-See below for an example using the <code>filter</code> method on the <code>users</code> array to return a new array containing only the users under the age of 30. For simplicity, the example only uses the first argument of the callback.
+# --description--
+
+Another useful array function is `Array.prototype.filter()`, or simply `filter()`.
+
+`filter` calls a function on each element of an array and returns a new array containing only the elements for which that function returns `true`. In other words, it filters the array, based on the function passed to it. Like `map`, it does this without needing to modify the original array.
+
+The callback function accepts three arguments. The first argument is the current element being processed. The second is the index of that element and the third is the array upon which the `filter` method was called.
+
+See below for an example using the `filter` method on the `users` array to return a new array containing only the users under the age of 30. For simplicity, the example only uses the first argument of the callback.
 
 ```js
 const users = [
@@ -23,35 +26,46 @@ const usersUnder30 = users.filter(user => user.age < 30);
 console.log(usersUnder30); // [ { name: 'Amy', age: 20 }, { name: 'camperCat', age: 10 } ]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-The variable <code>watchList</code> holds an array of objects with information on several movies. Use a combination of <code>filter</code> and <code>map</code> on <code>watchList</code> to assign a new array of objects with only <code>title</code> and <code>rating</code> keys.  The new array should only include objects where <code>imdbRating</code> is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.
-</section>
+The variable `watchList` holds an array of objects with information on several movies. Use a combination of `filter` and `map` on `watchList` to assign a new array of objects with only `title` and `rating` keys. The new array should only include objects where `imdbRating` is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may need to convert them into numbers to perform mathematical operations on them.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>watchList</code> variable should not change.
-    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron");
-  - text: Your code should use the <code>filter</code> method.
-    testString: assert(code.match(/\.filter/g));
-  - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!code.match(/for\s*?\([\s\S]*?\)/g));
-  - text: '<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.'
-    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]);'
+The `watchList` variable should not change.
 
+```js
+assert(
+  watchList[0].Title === 'Inception' && watchList[4].Director == 'James Cameron'
+);
 ```
 
-</section>
+Your code should use the `filter` method.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.filter/g));
+```
 
-<div id='js-seed'>
+Your code should not use a `for` loop.
+
+```js
+assert(!code.match(/for\s*?\([\s\S]*?\)/g));
+```
+
+`filteredList` should equal `[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]`.
+
+```js
+assert.deepEqual(filteredList, [
+  { title: 'Inception', rating: '8.8' },
+  { title: 'Interstellar', rating: '8.6' },
+  { title: 'The Dark Knight', rating: '9.0' },
+  { title: 'Batman Begins', rating: '8.3' }
+]);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // The global variable
@@ -177,14 +191,7 @@ var filteredList;
 console.log(filteredList);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // The global variable
@@ -305,5 +312,3 @@ var watchList = [
 let filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
 // Only change code above this line
 ```
-
-</section>

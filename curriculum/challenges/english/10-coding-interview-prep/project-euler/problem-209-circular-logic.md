@@ -1,46 +1,31 @@
 ---
 id: 5900f43e1000cf542c50ff4f
-challengeType: 5
 title: 'Problem 209: Circular Logic'
+challengeType: 5
 forumTopicId: 301850
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 A k-input binary truth table is a map from k input bits
-(binary digits, 0 [false] or 1 [true]) to 1 output bit. For example, the 2-input binary truth tables for the logical AND and XOR functions are:
 
-x
-y
-x AND y000010100111x
-y
-x XOR y000011101110How many 6-input binary truth tables, τ, satisfy the formula
+(binary digits, 0 \[false] or 1 \[true]) to 1 output bit. For example, the 2-input binary truth tables for the logical AND and XOR functions are:
 
-τ(a, b, c, d, e, f) AND τ(b, c, d, e, f, a XOR (b AND c)) = 0
-for all 6-bit inputs (a, b, c, d, e, f)?
-</section>
+x y x AND y000010100111x y x XOR y000011101110How many 6-input binary truth tables, τ, satisfy the formula
 
-## Instructions
-<section id='instructions'>
+τ(a, b, c, d, e, f) AND τ(b, c, d, e, f, a XOR (b AND c)) = 0 for all 6-bit inputs (a, b, c, d, e, f)?
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`euler209()` should return 15964587728784.
 
-```yml
-tests:
-  - text: <code>euler209()</code> should return 15964587728784.
-    testString: assert.strictEqual(euler209(), 15964587728784);
-
+```js
+assert.strictEqual(euler209(), 15964587728784);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler209() {
@@ -51,17 +36,8 @@ function euler209() {
 euler209();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

@@ -6,33 +6,31 @@ videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 forumTopicId: 301127
 ---
 
-## Description
-<section id='description'>
-<code>auto-fit</code> works almost identically to <code>auto-fill</code>. The only difference is that when the container's size exceeds the size of all the items combined, <code>auto-fill</code> keeps inserting empty rows or columns and pushes your items to the side, while <code>auto-fit</code> collapses those empty rows or columns and stretches your items to fit the size of the container.
-<strong>Note:</strong> If your container can't fit all your items on one row, it will move them down to a new one.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-In the second grid, use <code>auto-fit</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>. Then resize the preview to see the difference.
-</section>
+`auto-fit` works almost identically to `auto-fill`. The only difference is that when the container's size exceeds the size of all the items combined, `auto-fill` keeps inserting empty rows or columns and pushes your items to the side, while `auto-fit` collapses those empty rows or columns and stretches your items to fit the size of the container.
 
-## Tests
-<section id='tests'>
+**Note:** If your container can't fit all your items on one row, it will move them down to a new one.
 
-```yml
-tests:
-  - text: <code>container2</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fit</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.
-    testString: assert(code.match(/.container2\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fit\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));
+# --instructions--
 
+In the second grid, use `auto-fit` with `repeat` to fill the grid with columns that have a minimum width of `60px` and maximum of `1fr`. Then resize the preview to see the difference.
+
+# --hints--
+
+`container2` class should have a `grid-template-columns` property with `repeat` and `auto-fit` that will fill the grid with columns that have a minimum width of `60px` and maximum of `1fr`.
+
+```js
+assert(
+  code.match(
+    /.container2\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fit\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -85,18 +83,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.container {grid-template-columns: repeat( auto-fill, minmax(60px, 1fr));} .container2 {grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));}</style>
 ```
-
-</section>

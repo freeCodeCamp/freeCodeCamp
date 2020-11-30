@@ -5,8 +5,8 @@ challengeType: 1
 forumTopicId: 301216
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 <dfn>Destructuring assignment</dfn> is special syntax introduced in ES6, for neatly assigning values taken directly from an object.
 
 Consider the following ES5 code:
@@ -25,37 +25,59 @@ const { name, age } = user;
 // name = 'John Doe', age = 34
 ```
 
-Here, the <code>name</code> and <code>age</code> variables will be created and assigned the values of their respective values from the <code>user</code> object. You can see how much cleaner this is.
+Here, the `name` and `age` variables will be created and assigned the values of their respective values from the `user` object. You can see how much cleaner this is.
 
 You can extract as many or few values from the object as you want.
-</section>
 
-## Instructions
-<section id='instructions'>
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>today</code> and <code>tomorrow</code> the values of <code>today</code> and <code>tomorrow</code> from the <code>HIGH_TEMPERATURES</code> object.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables `today` and `tomorrow` the values of `today` and `tomorrow` from the `HIGH_TEMPERATURES` object.
 
-```yml
-tests:
-  - text: You should remove the ES5 assignment syntax.
-    testString: assert(!__helpers.removeJSComments(code).match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g))
-  - text: You should use destructuring to create the <code>today</code> variable.
-    testString: assert(__helpers.removeJSComments(code).match(/(var|let|const)\s*{\s*(today[^}]*|[^,]*,\s*today)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
-  - text: You should use destructuring to create the <code>tomorrow</code> variable.
-    testString: assert(__helpers.removeJSComments(code).match(/(var|let|const)\s*{\s*(tomorrow[^}]*|[^,]*,\s*tomorrow)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
-  - text: <code>today</code> should be equal to <code>77</code> and <code>tomorrow</code> should be equal to <code>80</code>.
-    testString: assert(today === 77 && tomorrow === 80);
+# --hints--
 
+You should remove the ES5 assignment syntax.
+
+```js
+assert(
+  !__helpers
+    .removeJSComments(code)
+    .match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g)
+);
 ```
 
-</section>
+You should use destructuring to create the `today` variable.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(
+  __helpers
+    .removeJSComments(code)
+    .match(
+      /(var|let|const)\s*{\s*(today[^}]*|[^,]*,\s*today)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
+    )
+);
+```
+
+You should use destructuring to create the `tomorrow` variable.
+
+```js
+assert(
+  __helpers
+    .removeJSComments(code)
+    .match(
+      /(var|let|const)\s*{\s*(tomorrow[^}]*|[^,]*,\s*tomorrow)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g
+    )
+);
+```
+
+`today` should be equal to `77` and `tomorrow` should be equal to `80`.
+
+```js
+assert(today === 77 && tomorrow === 80);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 const HIGH_TEMPERATURES = {
@@ -72,12 +94,7 @@ const tomorrow = HIGH_TEMPERATURES.tomorrow;
 // Only change code above this line
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const HIGH_TEMPERATURES = {
@@ -88,5 +105,3 @@ const HIGH_TEMPERATURES = {
 
 const { today, tomorrow } = HIGH_TEMPERATURES;
 ```
-
-</section>

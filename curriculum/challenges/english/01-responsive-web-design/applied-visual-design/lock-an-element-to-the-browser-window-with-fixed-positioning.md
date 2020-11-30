@@ -6,37 +6,39 @@ videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061
 ---
 
-## Description
-<section id='description'>
-The next layout scheme that CSS offers is the <code>fixed</code> position, which is a type of absolute positioning that locks an element relative to the browser window. Similar to absolute positioning, it's used with the CSS offset properties and also removes the element from the normal flow of the document. Other items no longer "realize" where it is positioned, which may require some layout adjustments elsewhere.
-One key difference between the <code>fixed</code> and <code>absolute</code> positions is that an element with a fixed position won't move when the user scrolls.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-The navigation bar in the code is labeled with an id of <code>navbar</code>. Change its <code>position</code> to <code>fixed</code>, and offset it 0 pixels from the <code>top</code> and 0 pixels from the <code>left</code>. After you have added the code, scroll the preview window to see how the navigation stays in place.
-</section>
+The next layout scheme that CSS offers is the `fixed` position, which is a type of absolute positioning that locks an element relative to the browser window. Similar to absolute positioning, it's used with the CSS offset properties and also removes the element from the normal flow of the document. Other items no longer "realize" where it is positioned, which may require some layout adjustments elsewhere.
 
-## Tests
-<section id='tests'>
+One key difference between the `fixed` and `absolute` positions is that an element with a fixed position won't move when the user scrolls.
 
-```yml
-tests:
-  - text: The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.
-    testString: assert($('#navbar').css('position') == 'fixed');
-  - text: Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.
-    testString: assert($('#navbar').css('top') == '0px');
-  - text: Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.
-    testString: assert($('#navbar').css('left') == '0px');
+# --instructions--
 
+The navigation bar in the code is labeled with an id of `navbar`. Change its `position` to `fixed`, and offset it 0 pixels from the `top` and 0 pixels from the `left`. After you have added the code, scroll the preview window to see how the navigation stays in place.
+
+# --hints--
+
+The `#navbar` element should have a `position` set to `fixed`.
+
+```js
+assert($('#navbar').css('position') == 'fixed');
 ```
 
-</section>
+Your code should use the `top` CSS offset of 0 pixels on the `#navbar` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#navbar').css('top') == '0px');
+```
 
-<div id='html-seed'>
+Your code should use the `left` CSS offset of 0 pixels on the `#navbar` element.
+
+```js
+assert($('#navbar').css('left') == '0px');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -76,14 +78,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -122,5 +117,3 @@ tests:
   <p>I shift up when the #navbar is fixed to the browser window.</p>
 </body>
 ```
-
-</section>

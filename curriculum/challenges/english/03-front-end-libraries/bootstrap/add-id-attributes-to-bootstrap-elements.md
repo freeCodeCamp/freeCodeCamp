@@ -5,39 +5,43 @@ challengeType: 0
 forumTopicId: 16639
 ---
 
-## Description
-<section id='description'>
-Recall that in addition to class attributes, you can give each of your elements an <code>id</code> attribute.
+# --description--
+
+Recall that in addition to class attributes, you can give each of your elements an `id` attribute.
+
 Each id must be unique to a specific element and used only once per page.
-Let's give a unique id to each of our <code>div</code> elements of class <code>well</code>.
+
+Let's give a unique id to each of our `div` elements of class `well`.
+
 Remember that you can give an element an id like this:
-<code>&#60;div class="well" id="center-well"&#62;</code>
-Give the well on the left the id of <code>left-well</code>. Give the well on the right the id of <code>right-well</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+`<div class="well" id="center-well">`
 
-</section>
+Give the well on the left the id of `left-well`. Give the well on the right the id of `right-well`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your left <code>well</code> should have the id of <code>left-well</code>.
-    testString: assert($(".col-xs-6").children("#left-well") && $(".col-xs-6").children("#left-well").length > 0);
-  - text: Your right <code>well</code> should have the id of <code>right-well</code>.
-    testString: assert($(".col-xs-6").children("#right-well") && $(".col-xs-6").children("#right-well").length > 0);
+Your left `well` should have the id of `left-well`.
 
+```js
+assert(
+  $('.col-xs-6').children('#left-well') &&
+    $('.col-xs-6').children('#left-well').length > 0
+);
 ```
 
-</section>
+Your right `well` should have the id of `right-well`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('.col-xs-6').children('#right-well') &&
+    $('.col-xs-6').children('#right-well').length > 0
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -61,14 +65,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -91,5 +88,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

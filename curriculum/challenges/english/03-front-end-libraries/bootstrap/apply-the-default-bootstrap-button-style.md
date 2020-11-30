@@ -5,35 +5,29 @@ challengeType: 0
 forumTopicId: 16657
 ---
 
-## Description
-<section id='description'>
-Bootstrap has another button class called <code>btn-default</code>.
-Apply both the <code>btn</code> and <code>btn-default</code> classes to each of your <code>button</code> elements.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap has another button class called `btn-default`.
 
-</section>
+Apply both the `btn` and `btn-default` classes to each of your `button` elements.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should apply the <code>btn</code> class to each of your <code>button</code> elements.
-    testString: assert($(".btn").length > 5);
-  - text: You should apply the <code>btn-default</code> class to each of your <code>button</code> elements.
-    testString: assert($(".btn-default").length > 5);
+You should apply the `btn` class to each of your `button` elements.
 
+```js
+assert($('.btn').length > 5);
 ```
 
-</section>
+You should apply the `btn-default` class to each of your `button` elements.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.btn-default').length > 5);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -57,14 +51,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -87,5 +74,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

@@ -1,17 +1,19 @@
 ---
-title: Combinations
 id: 5958469238c0d8d2632f46db
+title: Combinations
 challengeType: 5
 forumTopicId: 302233
 ---
 
-## Description
-<section id='description'>
-Given non-negative integers <code>m</code> and <code>n</code>, generate all size <code>m</code> combinations of the integers from <code>0</code> (zero) to <code>n-1</code> in sorted order (each combination is sorted and the entire table is sorted).
-<strong>Example:</strong>
-<code>3</code> comb <code>5</code> is:
-<pre>
-0 1 2
+# --description--
+
+Given non-negative integers `m` and `n`, generate all size `m` combinations of the integers from `0` (zero) to `n-1` in sorted order (each combination is sorted and the entire table is sorted).
+
+**Example:**
+
+`3` comb `5` is:
+
+<pre>0 1 2
 0 1 3
 0 1 4
 0 2 3
@@ -22,46 +24,30 @@ Given non-negative integers <code>m</code> and <code>n</code>, generate all size
 1 3 4
 2 3 4
 </pre>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>combinations</code> should be a function.
-    testString: assert(typeof combinations === 'function');
-  - text: <code>combinations(3, 5)</code> should return <code>[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]</code>.
-    testString: assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1);
-  - text: <code>combinations(4, 6)</code> should return <code>[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]</code>
-    testString: assert.deepEqual(combinations(testInput2[0], testInput2[1]), testOutput2);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`combinations` should be a function.
 
 ```js
-function combinations(m, n) {
-
-  return true;
-}
+assert(typeof combinations === 'function');
 ```
 
-</div>
+`combinations(3, 5)` should return `[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]`.
 
+```js
+assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1);
+```
 
-### After Test
-<div id='js-teardown'>
+`combinations(4, 6)` should return `[[0,1,2,3], [0,1,2,4], [0,1,2,5], [0,1,3,4], [0,1,3,5], [0,1,4,5], [0,2,3,4], [0,2,3,5], [0,2,4,5], [0,3,4,5], [1,2,3,4], [1,2,3,5], [1,2,4,5], [1,3,4,5], [2,3,4,5]]`
+
+```js
+assert.deepEqual(combinations(testInput2[0], testInput2[1]), testOutput2);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const testInput1 = [3, 5];
@@ -71,13 +57,16 @@ const testInput2 = [4, 6];
 const testOutput2 = [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 2, 5], [0, 1, 3, 4], [0, 1, 3, 5], [0, 1, 4, 5], [0, 2, 3, 4], [0, 2, 3, 5], [0, 2, 4, 5], [0, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3, 5], [1, 2, 4, 5], [1, 3, 4, 5], [2, 3, 4, 5]];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function combinations(m, n) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 function combinations(m, n) {
@@ -102,7 +91,4 @@ function combinations(m, n) {
     return ret;
   }(m, nArr));
 }
-
 ```
-
-</section>

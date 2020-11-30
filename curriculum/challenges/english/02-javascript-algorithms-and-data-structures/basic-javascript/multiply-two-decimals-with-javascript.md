@@ -6,62 +6,46 @@ videoUrl: 'https://scrimba.com/c/ce2GeHq'
 forumTopicId: 301173
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.
+
 Let's multiply two decimals together to get their product.
-</section>
 
-## Instructions
-<section id='instructions'>
-Change the <code>0.0</code> so that product will equal <code>5.0</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Change the `0.0` so that product will equal `5.0`.
 
-```yml
-tests:
-  - text: The variable <code>product</code> should equal <code>5.0</code>.
-    testString: assert(product === 5.0);
-  - text: You should use the <code>*</code> operator
-    testString: assert(/\*/.test(code));
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The variable `product` should equal `5.0`.
 
 ```js
-var product = 2.0 * 0.0;
-
-
+assert(product === 5.0);
 ```
 
-</div>
+You should use the `*` operator
 
+```js
+assert(/\*/.test(code));
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(y){return 'product = '+y;})(product);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var product = 2.0 * 0.0;
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var product = 2.0 * 2.5;
 ```
-
-</section>

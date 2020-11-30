@@ -6,35 +6,33 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/c2p78cg'
 forumTopicId: 301111
 ---
 
-## Description
-<section id='description'>
-The opposite of <code>flex-shrink</code> is the <code>flex-grow</code> property. Recall that <code>flex-shrink</code> controls the size of the items when the container shrinks. The <code>flex-grow</code> property controls the size of items when the parent container expands.
-Using a similar example from the last challenge, if one item has a <code>flex-grow</code> value of <code>1</code> and the other has a <code>flex-grow</code> value of <code>3</code>, the one with the value of <code>3</code> will grow three times as much as the other.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>flex-grow</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of <code>1</code> and <code>#box-2</code> a value of <code>2</code>.
-</section>
+The opposite of `flex-shrink` is the `flex-grow` property. Recall that `flex-shrink` controls the size of the items when the container shrinks. The `flex-grow` property controls the size of items when the parent container expands.
 
-## Tests
-<section id='tests'>
+Using a similar example from the last challenge, if one item has a `flex-grow` value of `1` and the other has a `flex-grow` value of `3`, the one with the value of `3` will grow three times as much as the other.
 
-```yml
-tests:
-  - text: The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of <code>1</code>.
-    testString: assert($('#box-1').css('flex-grow') == '1');
-  - text: The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of <code>2</code>.
-    testString: assert($('#box-2').css('flex-grow') == '2');
+# --instructions--
 
+Add the CSS property `flex-grow` to both `#box-1` and `#box-2`. Give `#box-1` a value of `1` and `#box-2` a value of `2`.
+
+# --hints--
+
+The `#box-1` element should have the `flex-grow` property set to a value of `1`.
+
+```js
+assert($('#box-1').css('flex-grow') == '1');
 ```
 
-</section>
+The `#box-2` element should have the `flex-grow` property set to a value of `2`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#box-2').css('flex-grow') == '2');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -62,14 +60,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -96,5 +87,3 @@ tests:
   <div id="box-2"></div>
 </div>
 ```
-
-</section>

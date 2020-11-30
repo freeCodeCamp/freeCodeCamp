@@ -6,11 +6,13 @@ videoUrl: 'https://scrimba.com/c/cp6GbH4'
 forumTopicId: 16786
 ---
 
-## Description
-<section id='description'>
-The greater than operator (<code>&gt;</code>) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.
+# --description--
+
+The greater than operator (`>`) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns `true`. Otherwise, it returns `false`.
+
 Like the equality operator, greater than operator will convert data types of values while comparing.
-<strong>Examples</strong>
+
+**Examples**
 
 ```js
 5   >  3   // true
@@ -19,43 +21,63 @@ Like the equality operator, greater than operator will convert data types of val
 '1' >  9   // false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 Add the greater than operator to the indicated lines so that the return statements make sense.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testGreaterThan(0)</code> should return "10 or Under"
-    testString: assert(testGreaterThan(0) === "10 or Under");
-  - text: <code>testGreaterThan(10)</code> should return "10 or Under"
-    testString: assert(testGreaterThan(10) === "10 or Under");
-  - text: <code>testGreaterThan(11)</code> should return "Over 10"
-    testString: assert(testGreaterThan(11) === "Over 10");
-  - text: <code>testGreaterThan(99)</code> should return "Over 10"
-    testString: assert(testGreaterThan(99) === "Over 10");
-  - text: <code>testGreaterThan(100)</code> should return "Over 10"
-    testString: assert(testGreaterThan(100) === "Over 10");
-  - text: <code>testGreaterThan(101)</code> should return "Over 100"
-    testString: assert(testGreaterThan(101) === "Over 100");
-  - text: <code>testGreaterThan(150)</code> should return "Over 100"
-    testString: assert(testGreaterThan(150) === "Over 100");
-  - text: You should use the <code>&gt;</code> operator at least twice
-    testString: assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
+`testGreaterThan(0)` should return "10 or Under"
 
+```js
+assert(testGreaterThan(0) === '10 or Under');
 ```
 
-</section>
+`testGreaterThan(10)` should return "10 or Under"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testGreaterThan(10) === '10 or Under');
+```
 
-<div id='js-seed'>
+`testGreaterThan(11)` should return "Over 10"
+
+```js
+assert(testGreaterThan(11) === 'Over 10');
+```
+
+`testGreaterThan(99)` should return "Over 10"
+
+```js
+assert(testGreaterThan(99) === 'Over 10');
+```
+
+`testGreaterThan(100)` should return "Over 10"
+
+```js
+assert(testGreaterThan(100) === 'Over 10');
+```
+
+`testGreaterThan(101)` should return "Over 100"
+
+```js
+assert(testGreaterThan(101) === 'Over 100');
+```
+
+`testGreaterThan(150)` should return "Over 100"
+
+```js
+assert(testGreaterThan(150) === 'Over 100');
+```
+
+You should use the `>` operator at least twice
+
+```js
+assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testGreaterThan(val) {
@@ -73,15 +95,7 @@ function testGreaterThan(val) {
 testGreaterThan(10);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testGreaterThan(val) {
@@ -94,5 +108,3 @@ function testGreaterThan(val) {
   return "10 or Under";
 }
 ```
-
-</section>

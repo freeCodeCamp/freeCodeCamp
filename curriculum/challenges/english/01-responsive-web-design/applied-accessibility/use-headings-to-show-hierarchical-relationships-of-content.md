@@ -6,42 +6,53 @@ videoUrl: 'https://scrimba.com/c/cqVEktm'
 forumTopicId: 301026
 ---
 
-## Description
-<section id='description'>
-Headings (<code>h1</code> through <code>h6</code> elements) are workhorse tags that help provide structure and labeling to your content. Screen readers can be set to read only the headings on a page so the user gets a summary. This means it is important for the heading tags in your markup to have semantic meaning and relate to each other, not be picked merely for their size values.
-<em>Semantic meaning</em> means that the tag you use around content indicates the type of information it contains.
+# --description--
+
+Headings (`h1` through `h6` elements) are workhorse tags that help provide structure and labeling to your content. Screen readers can be set to read only the headings on a page so the user gets a summary. This means it is important for the heading tags in your markup to have semantic meaning and relate to each other, not be picked merely for their size values.
+
+*Semantic meaning* means that the tag you use around content indicates the type of information it contains.
+
 If you were writing a paper with an introduction, a body, and a conclusion, it wouldn't make much sense to put the conclusion as a subsection of the body in your outline. It should be its own section. Similarly, the heading tags in a webpage need to go in order and indicate the hierarchical relationships of your content.
+
 Headings with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.
-As an example, a page with an <code>h2</code> element followed by several subsections labeled with <code>h4</code> tags would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.
-One final point, each page should always have one (and only one) <code>h1</code> element, which is the main subject of your content. This and the other headings are used in part by search engines to understand the topic of the page.
-</section>
 
-## Instructions
-<section id='instructions'>
-Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the <code>h5</code> tags to the proper heading level to indicate they are subsections of the <code>h2</code> ones. Use <code>h3</code> tags for the purpose.
-</section>
+As an example, a page with an `h2` element followed by several subsections labeled with `h4` tags would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.
 
-## Tests
-<section id='tests'>
+One final point, each page should always have one (and only one) `h1` element, which is the main subject of your content. This and the other headings are used in part by search engines to understand the topic of the page.
 
-```yml
-tests:
-  - text: Your code should have 6 <code>h3</code> tags.
-    testString: assert($("h3").length === 6);
-  - text: Your code should have 6 <code>h3</code> closing tags.
-    testString: assert((code.match(/\/h3/g) || []).length===6);
-  - text: Your code should not have any <code>h5</code> tags.
-    testString: assert($("h5").length === 0);
-  - text: Your code should not have any <code>h5</code> closing tags.
-    testString: assert(/\/h5/.test(code)===false);
+# --instructions--
+
+Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the `h5` tags to the proper heading level to indicate they are subsections of the `h2` ones. Use `h3` tags for the purpose.
+
+# --hints--
+
+Your code should have 6 `h3` tags.
+
+```js
+assert($('h3').length === 6);
 ```
 
-</section>
+Your code should have 6 `h3` closing tags.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert((code.match(/\/h3/g) || []).length === 6);
+```
 
-<div id='html-seed'>
+Your code should not have any `h5` tags.
+
+```js
+assert($('h5').length === 0);
+```
+
+Your code should not have any `h5` closing tags.
+
+```js
+assert(/\/h5/.test(code) === false);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h1>How to Become a Ninja</h1>
@@ -60,14 +71,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h1>How to Become a Ninja</h1>
@@ -85,5 +89,3 @@ tests:
   <h3>How to Simplify your Life</h3>
 </main>
 ```
-
-</section>

@@ -4,55 +4,21 @@ title: Part 10
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Remove the now redundant `addVar` definition. 
+Remove the now redundant `addVar` definition.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(typeof addVar === "undefined");
-
+```js
+assert(typeof addVar === 'undefined');
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-const addVar = (x, y) => x + y;
-
-const infixToFunction = {
-  "+": (x, y) => x + y
-};
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -80,25 +46,29 @@ const infixToFunction = {
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+const addVar = (x, y) => x + y;
+
+const infixToFunction = {
+  "+": (x, y) => x + y
+};
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -107,5 +77,3 @@ const infixToFunction = {
 };
 </script>
 ```
-
-</section>

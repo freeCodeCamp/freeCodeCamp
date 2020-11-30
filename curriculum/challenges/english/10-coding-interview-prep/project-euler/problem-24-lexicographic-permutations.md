@@ -1,12 +1,11 @@
 ---
 id: 5900f3841000cf542c50fe97
-challengeType: 5
 title: 'Problem 24: Lexicographic permutations'
+challengeType: 5
 forumTopicId: 301885
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:
 
@@ -14,37 +13,41 @@ A permutation is an ordered arrangement of objects. For example, 3124 is one pos
 
 What is the `n`th lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`lexicographicPermutations(699999)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>lexicographicPermutations(699999)</code> should return a number.
-    testString: assert(typeof lexicographicPermutations(699999) === 'number');
-  - text: <code>lexicographicPermutations(699999)</code> should return 1938246570.
-    testString: assert(lexicographicPermutations(699999) == 1938246570);
-  - text: <code>lexicographicPermutations(899999)</code> should return 2536987410.
-    testString: assert(lexicographicPermutations(899999) == 2536987410);
-  - text: <code>lexicographicPermutations(900000)</code> should return 2537014689.
-    testString: assert(lexicographicPermutations(900000) == 2537014689);
-  - text: <code>lexicographicPermutations(999999)</code> should return 2783915460.
-    testString: assert(lexicographicPermutations(999999) == 2783915460);
-
+```js
+assert(typeof lexicographicPermutations(699999) === 'number');
 ```
 
-</section>
+`lexicographicPermutations(699999)` should return 1938246570.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(lexicographicPermutations(699999) == 1938246570);
+```
 
-<div id='js-seed'>
+`lexicographicPermutations(899999)` should return 2536987410.
+
+```js
+assert(lexicographicPermutations(899999) == 2536987410);
+```
+
+`lexicographicPermutations(900000)` should return 2537014689.
+
+```js
+assert(lexicographicPermutations(900000) == 2537014689);
+```
+
+`lexicographicPermutations(999999)` should return 2783915460.
+
+```js
+assert(lexicographicPermutations(999999) == 2783915460);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function lexicographicPermutations(n) {
@@ -55,17 +58,8 @@ function lexicographicPermutations(n) {
 lexicographicPermutations(999999);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

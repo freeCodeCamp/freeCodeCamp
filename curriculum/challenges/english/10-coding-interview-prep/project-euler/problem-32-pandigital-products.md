@@ -1,14 +1,13 @@
 ---
 id: 5900f38c1000cf542c50fe9f
-challengeType: 5
 title: 'Problem 32: Pandigital products'
+challengeType: 5
 forumTopicId: 301976
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-We shall say that an <var>n</var>-digit number is pandigital if it makes use of all the digits 1 to <var>n</var> exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
+We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
 
 The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
 
@@ -16,31 +15,23 @@ Find the sum of all products whose multiplicand/multiplier/product identity can 
 
 **Hint:** Some products can be obtained in more than one way so be sure to only include it once in your sum.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`pandigitalProducts()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>pandigitalProducts()</code> should return a number.
-    testString: assert(typeof pandigitalProducts() === 'number');
-  - text: <code>pandigitalProducts()</code> should return 45228.
-    testString: assert.strictEqual(pandigitalProducts(), 45228);
-
+```js
+assert(typeof pandigitalProducts() === 'number');
 ```
 
-</section>
+`pandigitalProducts()` should return 45228.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(pandigitalProducts(), 45228);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function pandigitalProducts() {
@@ -51,15 +42,7 @@ function pandigitalProducts() {
 pandigitalProducts();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function pandigitalProducts() {
@@ -100,5 +83,3 @@ function pandigitalProducts() {
   return sum;
 }
 ```
-
-</section>

@@ -5,9 +5,9 @@ challengeType: 0
 forumTopicId: 301099
 ---
 
-## Description
-<section id='description'>
-When a form gets submitted, the data is sent to the server and includes entries for the options selected. Inputs of type <code>radio</code> and <code>checkbox</code> report their values from the <code>value</code> attribute.
+# --description--
+
+When a form gets submitted, the data is sent to the server and includes entries for the options selected. Inputs of type `radio` and `checkbox` report their values from the `value` attribute.
 
 For example:
 
@@ -20,40 +20,67 @@ For example:
 </label>
 ```
 
+Here, you have two `radio` inputs. When the user submits the form with the `indoor` option selected, the form data will include the line: `indoor-outdoor=indoor`. This is from the `name` and `value` attributes of the "indoor" input.
 
-Here, you have two <code>radio</code> inputs. When the user submits the form with the <code>indoor</code> option selected, the form data will include the line: <code>indoor-outdoor=indoor</code>. This is from the <code>name</code> and <code>value</code> attributes of the "indoor" input.
+If you omit the `value` attribute, the submitted form data uses the default value, which is `on`. In this scenario, if the user clicked the "indoor" option and submitted the form, the resulting form data would be `indoor-outdoor=on`, which is not useful. So the `value` attribute needs to be set to something to identify the option.
 
-If you omit the <code>value</code> attribute, the submitted form data uses the default value, which is <code>on</code>. In this scenario, if the user clicked the "indoor" option and submitted the form, the resulting form data would be <code>indoor-outdoor=on</code>, which is not useful. So the <code>value</code> attribute needs to be set to something to identify the option.
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Give each of the <code>radio</code> and <code>checkbox</code> inputs the <code>value</code> attribute. Use the input label text, in lowercase, as the value for the attribute.
-</section>
+Give each of the `radio` and `checkbox` inputs the `value` attribute. Use the input label text, in lowercase, as the value for the attribute.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: One of your radio buttons should have the <code>value</code> attribute of <code>indoor</code>.
-    testString: assert($('label:contains("Indoor") > input[type="radio"]').filter("[value='indoor']").length > 0);
-  - text: One of your radio buttons should have the <code>value</code> attribute of <code>outdoor</code>.
-    testString: assert($('label:contains("Outdoor") > input[type="radio"]').filter("[value='outdoor']").length > 0);
-  - text: One of your checkboxes should have the <code>value</code> attribute of <code>loving</code>.
-    testString: assert($('label:contains("Loving") > input[type="checkbox"]').filter("[value='loving']").length > 0);
-  - text: One of your checkboxes should have the <code>value</code> attribute of <code>lazy</code>.
-    testString: assert($('label:contains("Lazy") > input[type="checkbox"]').filter("[value='lazy']").length > 0);
-  - text: One of your checkboxes should have the <code>value</code> attribute of <code>energetic</code>.
-    testString: assert($('label:contains("Energetic") > input[type="checkbox"]').filter("[value='energetic']").length > 0);
+One of your radio buttons should have the `value` attribute of `indoor`.
+
+```js
+assert(
+  $('label:contains("Indoor") > input[type="radio"]').filter("[value='indoor']")
+    .length > 0
+);
 ```
 
-</section>
+One of your radio buttons should have the `value` attribute of `outdoor`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('label:contains("Outdoor") > input[type="radio"]').filter(
+    "[value='outdoor']"
+  ).length > 0
+);
+```
 
-<div id='html-seed'>
+One of your checkboxes should have the `value` attribute of `loving`.
+
+```js
+assert(
+  $('label:contains("Loving") > input[type="checkbox"]').filter(
+    "[value='loving']"
+  ).length > 0
+);
+```
+
+One of your checkboxes should have the `value` attribute of `lazy`.
+
+```js
+assert(
+  $('label:contains("Lazy") > input[type="checkbox"]').filter("[value='lazy']")
+    .length > 0
+);
+```
+
+One of your checkboxes should have the `value` attribute of `energetic`.
+
+```js
+assert(
+  $('label:contains("Energetic") > input[type="checkbox"]').filter(
+    "[value='energetic']"
+  ).length > 0
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -86,14 +113,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -125,5 +145,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

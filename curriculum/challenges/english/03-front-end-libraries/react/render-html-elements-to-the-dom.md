@@ -5,40 +5,50 @@ challengeType: 6
 forumTopicId: 301406
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 So far, you've learned that JSX is a convenient tool to write readable HTML within JavaScript. With React, we can render this JSX directly to the HTML DOM using React's rendering API known as ReactDOM.
-ReactDOM offers a simple method to render React elements to the DOM which looks like this: <code>ReactDOM.render(componentToRender, targetNode)</code>, where the first argument is the React element or component that you want to render, and the second argument is the DOM node that you want to render the component to.
-As you would expect, <code>ReactDOM.render()</code> must be called after the JSX element declarations, just like how you must declare variables before using them.
-</section>
 
-## Instructions
-<section id='instructions'>
-The code editor has a simple JSX component. Use the <code>ReactDOM.render()</code> method to render this component to the page. You can pass defined JSX elements directly in as the first argument and use <code>document.getElementById()</code> to select the DOM node to render them to. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use. Make sure you don't change the <code>JSX</code> constant.
-</section>
+ReactDOM offers a simple method to render React elements to the DOM which looks like this: `ReactDOM.render(componentToRender, targetNode)`, where the first argument is the React element or component that you want to render, and the second argument is the DOM node that you want to render the component to.
 
-## Tests
-<section id='tests'>
+As you would expect, `ReactDOM.render()` must be called after the JSX element declarations, just like how you must declare variables before using them.
 
-```yml
-tests:
-  - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: assert(JSX.type === 'div');
-  - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
-    testString: assert(JSX.props.children[0].type === 'h1');
-  - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
-    testString: assert(JSX.props.children[1].type === 'p');
-  - text: The provided JSX element should render to the DOM node with id <code>challenge-node</code>.
-    testString: assert(document.getElementById('challenge-node').childNodes[0].innerHTML === '<h1>Hello World</h1><p>Lets render this to the DOM</p>');
+# --instructions--
 
+The code editor has a simple JSX component. Use the `ReactDOM.render()` method to render this component to the page. You can pass defined JSX elements directly in as the first argument and use `document.getElementById()` to select the DOM node to render them to. There is a `div` with `id='challenge-node'` available for you to use. Make sure you don't change the `JSX` constant.
+
+# --hints--
+
+The constant `JSX` should return a `div` element.
+
+```js
+assert(JSX.type === 'div');
 ```
 
-</section>
+The `div` should contain an `h1` tag as the first element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(JSX.props.children[0].type === 'h1');
+```
 
-<div id='jsx-seed'>
+The `div` should contain a `p` tag as the second element.
+
+```js
+assert(JSX.props.children[1].type === 'p');
+```
+
+The provided JSX element should render to the DOM node with id `challenge-node`.
+
+```js
+assert(
+  document.getElementById('challenge-node').childNodes[0].innerHTML ===
+    '<h1>Hello World</h1><p>Lets render this to the DOM</p>'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```jsx
 const JSX = (
@@ -48,18 +58,9 @@ const JSX = (
   </div>
 );
 // Change code below this line
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 const JSX = (
@@ -71,5 +72,3 @@ const JSX = (
 // Change code below this line
 ReactDOM.render(JSX, document.getElementById('challenge-node'));
 ```
-
-</section>

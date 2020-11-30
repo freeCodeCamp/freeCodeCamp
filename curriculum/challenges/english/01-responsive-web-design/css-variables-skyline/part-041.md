@@ -4,31 +4,27 @@ title: Part 41
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You want to add the same gradient to the next two sections. But instead of doing that, create a new class called `bb1-window` and move the `height` and `background` properties and values from `bb1a` to the new class.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1wStyle = code.match(/\.bb1-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/height\s*:\s*10%\s*(;|})/g.test(bb1wStyle) && /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1wStyle));
-
+```js
+const bb1wStyle = code.match(/\.bb1-window\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /height\s*:\s*10%\s*(;|})/g.test(bb1wStyle) &&
+    /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(
+      bb1wStyle
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -198,12 +194,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -375,5 +366,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

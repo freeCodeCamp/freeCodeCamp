@@ -6,9 +6,8 @@ videoUrl: ''
 forumTopicId: 418265
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 After a value is assigned to a variable using the <dfn>assignment</dfn> operator, you can assign the value of that variable to another variable using the <dfn>assignment</dfn> operator.
 
 ```js
@@ -20,50 +19,33 @@ myNum = myVar;
 
 The above declares a `myVar` variable with no value, then assigns it the value `5`. Next, a variable named `myNum` is declared with no value. Then, the contents of `myVar` (which is `5`) is assigned to the variable `myNum`. Now, `myNum` also has the value of `5`.
 
-</section>
+# --instructions--
 
-## Instructions
+Assign the contents of `a` to variable `b`.
 
-<section id='instructions'>
-Assign the contents of <code>a</code> to variable <code>b</code>.
-</section>
+# --hints--
 
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: You should not change code above the specified comment.
-    testString: assert(/var a;/.test(code) && /a = 7;/.test(code) &&  /var b;/.test(code));
-  - text: <code>b</code> should have a value of 7.
-    testString: assert(typeof b === 'number' && b === 7);
-  - text: <code>a</code> should be assigned to <code>b</code> with <code>=</code>.
-    testString: assert(/b\s*=\s*a\s*/g.test(code));
-```
-
-</section>
-
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+You should not change code above the specified comment.
 
 ```js
-// Setup
-var a;
-a = 7;
-var b;
-
-// Only change code below this line
+assert(/var a;/.test(code) && /a = 7;/.test(code) && /var b;/.test(code));
 ```
 
-</div>
+`b` should have a value of 7.
 
-### Before Test
+```js
+assert(typeof b === 'number' && b === 7);
+```
 
-<div id='js-setup'>
+`a` should be assigned to `b` with `=`.
+
+```js
+assert(/b\s*=\s*a\s*/g.test(code));
+```
+
+# --seed--
+
+## --before-user-code--
 
 ```js
 if (typeof a != 'undefined') {
@@ -74,11 +56,7 @@ if (typeof b != 'undefined') {
 }
 ```
 
-</div>
-
-### After Test
-
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 (function(a, b) {
@@ -86,13 +64,18 @@ if (typeof b != 'undefined') {
 })(a, b);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Setup
+var a;
+a = 7;
+var b;
 
-## Solution
+// Only change code below this line
+```
 
-<section id='solution'>
+# --solutions--
 
 ```js
 var a;
@@ -100,5 +83,3 @@ a = 7;
 var b;
 b = a;
 ```
-
-</section>

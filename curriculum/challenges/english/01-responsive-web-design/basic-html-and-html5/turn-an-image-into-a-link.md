@@ -6,40 +6,49 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cRdBnUr'
 forumTopicId: 18327
 ---
 
-## Description
-<section id='description'>
-You can make elements into links by nesting them within an <code>a</code> element.
-Nest your image within an <code>a</code> element. Here's an example:
-<code>&#60;a href="#"&#62;&#60;img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."&#62;&#60;/a&#62;</code>
-Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Place the existing image element within an <code>a</code> (<i>anchor</i>) element.
+You can make elements into links by nesting them within an `a` element.
+
+Nest your image within an `a` element. Here's an example:
+
+`<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>`
+
+Remember to use `#` as your `a` element's `href` property in order to turn it into a dead link.
+
+# --instructions--
+
+Place the existing image element within an `a` (*anchor*) element.
+
 Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The existing <code>img</code> element should be nested within an <code>a</code> element.
-    testString: assert($("a").children("img").length > 0);
-  - text: Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.
-    testString: assert(new RegExp("#").test($("a").children("img").parent().attr("href")));
-  - text: Each of your <code>a</code> elements should have a closing tag.
-    testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
+The existing `img` element should be nested within an `a` element.
 
+```js
+assert($('a').children('img').length > 0);
 ```
 
-</section>
+Your `a` element should be a dead link with a `href` attribute set to `#`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(new RegExp('#').test($('a').children('img').parent().attr('href')));
+```
 
-<div id='html-seed'>
+Each of your `a` elements should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/a>/g) &&
+    code.match(/<a/g) &&
+    code.match(/<\/a>/g).length === code.match(/<a/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -53,14 +62,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -73,5 +75,3 @@ tests:
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```
-
-</section>

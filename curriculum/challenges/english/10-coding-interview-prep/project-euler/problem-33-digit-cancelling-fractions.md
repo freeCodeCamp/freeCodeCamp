@@ -1,12 +1,11 @@
 ---
 id: 5900f38d1000cf542c50fea0
-challengeType: 5
 title: 'Problem 33: Digit cancelling fractions'
+challengeType: 5
 forumTopicId: 301987
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The fraction <sup>49</sup>/<sub>98</sub> is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that <sup>49</sup>/<sub>98</sub> = <sup>4</sup>/<sub>8</sub>, which is correct, is obtained by cancelling the 9s.
 
@@ -16,31 +15,23 @@ There are exactly four non-trivial examples of this type of fraction, less than 
 
 If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`digitCancellingFractions()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>digitCancellingFractions()</code> should return a number.
-    testString: assert(typeof digitCancellingFractions() === 'number');
-  - text: <code>digitCancellingFractions()</code> should return 100.
-    testString: assert.strictEqual(digitCancellingFractions(), 100);
-
+```js
+assert(typeof digitCancellingFractions() === 'number');
 ```
 
-</section>
+`digitCancellingFractions()` should return 100.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(digitCancellingFractions(), 100);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function digitCancellingFractions() {
@@ -51,15 +42,7 @@ function digitCancellingFractions() {
 digitCancellingFractions();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function digitCancellingFractions() {
@@ -116,5 +99,3 @@ function digitCancellingFractions() {
   return simplifyFraction(multipleNumerator, multipleDenominator)[1];
 }
 ```
-
-</section>

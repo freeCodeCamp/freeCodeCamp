@@ -5,45 +5,143 @@ challengeType: 5
 forumTopicId: 323649
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 The 0-1 knapsack problem is defined as follows:
+
 You are given an array of objects representing items to be put in a knapsack. The objects have 3 attributes: name, weight, and value. The items need to be selected so that the total weight does not exceed the maximum weight and the value is maximized.
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
-Write a function to solve the knapsack problem.  The function is given the array of objects and the maximum weight as parameters. It should return the maximum total value possible.
-</section>
+Write a function to solve the knapsack problem. The function is given the array of objects and the maximum weight as parameters. It should return the maximum total value possible.
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 100)` should return `405`.
 
-```yml
-tests:
-  - text: <code>knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 100)</code> should return <code>405</code>.
-    testString: assert.equal(knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 100), 405);
-  - text: <code>knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 200)</code> should return <code>510</code>.
-    testString: assert.equal(knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 200), 510);
-  - text: <code>knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 100)</code> should return <code>145</code>.
-    testString: assert.equal(knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 100), 145);
-  - text: <code>knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 200)</code> should return <code>185</code>.
-    testString: assert.equal(knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 200), 185);
-  - text: <code>knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 100)</code> should return <code>237</code>.
-    testString: assert.equal(knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 100), 237);
-  - text: <code>knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 200)</code> should return <code>317</code>.'
-    testString: assert.equal(knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 200), 317);
+```js
+assert.equal(
+  knapsack(
+    [
+      { name: 'map', weight: 9, value: 150 },
+      { name: 'compass', weight: 13, value: 35 },
+      { name: 'water', weight: 153, value: 200 },
+      { name: 'sandwich', weight: 50, value: 160 },
+      { name: 'glucose', weight: 15, value: 60 },
+      { name: 'tin', weight: 68, value: 45 },
+      { name: 'banana', weight: 27, value: 60 },
+      { name: 'apple', weight: 39, value: 40 }
+    ],
+    100
+  ),
+  405
+);
 ```
 
-</section>
+`knapsack([{ name:'map', weight:9, value:150 }, { name:'compass', weight:13, value:35 }, { name:'water', weight:153, value:200 }, { name:'sandwich', weight:50, value:160 }, { name:'glucose', weight:15, value:60 }, { name:'tin', weight:68, value:45 }, { name:'banana', weight:27, value:60 }, { name:'apple', weight:39, value:40 }], 200)` should return `510`.
 
-## Challenge Seed
+```js
+assert.equal(
+  knapsack(
+    [
+      { name: 'map', weight: 9, value: 150 },
+      { name: 'compass', weight: 13, value: 35 },
+      { name: 'water', weight: 153, value: 200 },
+      { name: 'sandwich', weight: 50, value: 160 },
+      { name: 'glucose', weight: 15, value: 60 },
+      { name: 'tin', weight: 68, value: 45 },
+      { name: 'banana', weight: 27, value: 60 },
+      { name: 'apple', weight: 39, value: 40 }
+    ],
+    200
+  ),
+  510
+);
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 100)` should return `145`.
+
+```js
+assert.equal(
+  knapsack(
+    [
+      { name: 'cheese', weight: 23, value: 30 },
+      { name: 'beer', weight: 52, value: 10 },
+      { name: 'suntan cream', weight: 11, value: 70 },
+      { name: 'camera', weight: 32, value: 30 },
+      { name: 'T-shirt', weight: 24, value: 15 },
+      { name: 'trousers', weight: 48, value: 10 },
+      { name: 'umbrella', weight: 73, value: 40 }
+    ],
+    100
+  ),
+  145
+);
+```
+
+`knapsack([{ name:'cheese', weight:23, value:30 }, { name:'beer', weight:52, value:10 }, { name:'suntan cream', weight:11, value:70 }, { name:'camera', weight:32, value:30 }, { name:'T-shirt', weight:24, value:15 }, { name:'trousers', weight:48, value:10 }, { name:'umbrella', weight:73, value:40 }], 200)` should return `185`.
+
+```js
+assert.equal(
+  knapsack(
+    [
+      { name: 'cheese', weight: 23, value: 30 },
+      { name: 'beer', weight: 52, value: 10 },
+      { name: 'suntan cream', weight: 11, value: 70 },
+      { name: 'camera', weight: 32, value: 30 },
+      { name: 'T-shirt', weight: 24, value: 15 },
+      { name: 'trousers', weight: 48, value: 10 },
+      { name: 'umbrella', weight: 73, value: 40 }
+    ],
+    200
+  ),
+  185
+);
+```
+
+`knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 100)` should return `237`.
+
+```js
+assert.equal(
+  knapsack(
+    [
+      { name: 'waterproof trousers', weight: 42, value: 70 },
+      { name: 'waterproof overclothes', weight: 43, value: 75 },
+      { name: 'note-case', weight: 22, value: 80 },
+      { name: 'sunglasses', weight: 7, value: 20 },
+      { name: 'towel', weight: 18, value: 12 },
+      { name: 'socks', weight: 4, value: 50 },
+      { name: 'book', weight: 30, value: 10 }
+    ],
+    100
+  ),
+  237
+);
+```
+
+`knapsack([{ name:'waterproof trousers', weight:42, value:70 }, { name:'waterproof overclothes', weight:43, value:75 }, { name:'note-case', weight:22, value:80 }, { name:'sunglasses', weight:7, value:20 }, { name:'towel', weight:18, value:12 }, { name:'socks', weight:4, value:50 }, { name:'book', weight:30, value:10 }], 200)` should return `317`.'
+
+```js
+assert.equal(
+  knapsack(
+    [
+      { name: 'waterproof trousers', weight: 42, value: 70 },
+      { name: 'waterproof overclothes', weight: 43, value: 75 },
+      { name: 'note-case', weight: 22, value: 80 },
+      { name: 'sunglasses', weight: 7, value: 20 },
+      { name: 'towel', weight: 18, value: 12 },
+      { name: 'socks', weight: 4, value: 50 },
+      { name: 'book', weight: 30, value: 10 }
+    ],
+    200
+  ),
+  317
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function knapsack(items, maxweight) {
@@ -51,12 +149,7 @@ function knapsack(items, maxweight) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function knapsack(items, maxweight) {
@@ -159,5 +252,3 @@ function knapsack(items, maxweight) {
   return val;
 }
 ```
-
-</section>

@@ -5,44 +5,83 @@ challengeType: 1
 forumTopicId: 301235
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 So far, we have seen two distinct principles for functional programming:
-1) Don't alter a variable or object - create new variables and objects and return them if need be from a function. Hint: using something like <code>var newArr = arrVar</code>, where <code>arrVar</code> is an array will simply create a reference to the existing variable and not a copy. So changing a value in <code>newArr</code> would change the value in <code>arrVar</code>.
+
+1) Don't alter a variable or object - create new variables and objects and return them if need be from a function. Hint: using something like `var newArr = arrVar`, where `arrVar` is an array will simply create a reference to the existing variable and not a copy. So changing a value in `newArr` would change the value in `arrVar`.
+
 2) Declare function parameters - any computation inside a function depends only on the arguments passed to the function, and not on any global object or variable.
+
 Adding one to a number is not very exciting, but we can apply these principles when working with arrays or more complex objects.
-</section>
 
-## Instructions
-<section id='instructions'>
-Rewrite the code so the global array <code>bookList</code> is not changed inside either function. The <code>add</code> function should add the given <code>bookName</code> to the end of the array passed to it and return a new array (list). The <code>remove</code> function should remove the given <code>bookName</code> from the array passed to it.
+# --instructions--
 
-<strong>Note:</strong> Both functions should return an array, and any new parameters should be added before the <code>bookName</code> parameter.
+Rewrite the code so the global array `bookList` is not changed inside either function. The `add` function should add the given `bookName` to the end of the array passed to it and return a new array (list). The `remove` function should remove the given `bookName` from the array passed to it.
 
-</section>
+**Note:** Both functions should return an array, and any new parameters should be added before the `bookName` parameter.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>bookList</code> should not change and still equal <code>["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]</code>.
-    testString: assert(JSON.stringify(bookList) === JSON.stringify(["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]));
-  - text: <code>newBookList</code> should equal <code>["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]</code>.
-    testString: assert(JSON.stringify(newBookList) === JSON.stringify(['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']));
-  - text: <code>newerBookList</code> should equal <code>["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]</code>.
-    testString: assert(JSON.stringify(newerBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']));
-  - text: <code>newestBookList</code> should equal <code>["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]</code>.
-    testString: assert(JSON.stringify(newestBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']));
+`bookList` should not change and still equal `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
 
+```js
+assert(
+  JSON.stringify(bookList) ===
+    JSON.stringify([
+      'The Hound of the Baskervilles',
+      'On The Electrodynamics of Moving Bodies',
+      'Philosophiæ Naturalis Principia Mathematica',
+      'Disquisitiones Arithmeticae'
+    ])
+);
 ```
 
-</section>
+`newBookList` should equal `["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  JSON.stringify(newBookList) ===
+    JSON.stringify([
+      'The Hound of the Baskervilles',
+      'On The Electrodynamics of Moving Bodies',
+      'Philosophiæ Naturalis Principia Mathematica',
+      'Disquisitiones Arithmeticae',
+      'A Brief History of Time'
+    ])
+);
+```
 
-<div id='js-seed'>
+`newerBookList` should equal `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]`.
+
+```js
+assert(
+  JSON.stringify(newerBookList) ===
+    JSON.stringify([
+      'The Hound of the Baskervilles',
+      'Philosophiæ Naturalis Principia Mathematica',
+      'Disquisitiones Arithmeticae'
+    ])
+);
+```
+
+`newestBookList` should equal `["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]`.
+
+```js
+assert(
+  JSON.stringify(newestBookList) ===
+    JSON.stringify([
+      'The Hound of the Baskervilles',
+      'Philosophiæ Naturalis Principia Mathematica',
+      'Disquisitiones Arithmeticae',
+      'A Brief History of Time'
+    ])
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // The global variable
@@ -76,14 +115,7 @@ var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The El
 console.log(bookList);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // The global variable
@@ -106,5 +138,3 @@ var newBookList = add(bookList, 'A Brief History of Time');
 var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
 var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
 ```
-
-</section>

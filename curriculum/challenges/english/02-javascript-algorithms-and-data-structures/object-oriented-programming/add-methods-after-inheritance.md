@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301315
 ---
 
-## Description
-<section id='description'>
-A constructor function that inherits its <code>prototype</code> object from a supertype constructor function can still have its own methods in addition to inherited methods.
-For example, <code>Bird</code> is a constructor that inherits its <code>prototype</code> from <code>Animal</code>:
+# --description--
+
+A constructor function that inherits its `prototype` object from a supertype constructor function can still have its own methods in addition to inherited methods.
+
+For example, `Bird` is a constructor that inherits its `prototype` from `Animal`:
 
 ```js
 function Animal() { }
@@ -20,7 +21,7 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.constructor = Bird;
 ```
 
-In addition to what is inherited from <code>Animal</code>, you want to add behavior that is unique to <code>Bird</code> objects. Here, <code>Bird</code> will get a <code>fly()</code> function. Functions are added to <code>Bird's</code> <code>prototype</code> the same way as any constructor function:
+In addition to what is inherited from `Animal`, you want to add behavior that is unique to `Bird` objects. Here, `Bird` will get a `fly()` function. Functions are added to `Bird's` `prototype` the same way as any constructor function:
 
 ```js
 Bird.prototype.fly = function() {
@@ -28,7 +29,7 @@ Bird.prototype.fly = function() {
 };
 ```
 
-Now instances of <code>Bird</code> will have both <code>eat()</code> and <code>fly()</code> methods:
+Now instances of `Bird` will have both `eat()` and `fly()` methods:
 
 ```js
 let duck = new Bird();
@@ -36,44 +37,63 @@ duck.eat(); // prints "nom nom nom"
 duck.fly(); // prints "I'm flying!"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add all necessary code so the <code>Dog</code> object inherits from <code>Animal</code> and the <code>Dog's</code> <code>prototype</code> constructor is set to Dog. Then add a <code>bark()</code> method to the <code>Dog</code> object so that <code>beagle</code> can both <code>eat()</code> and <code>bark()</code>. The <code>bark()</code> method should print "Woof!" to the console.
-</section>
+Add all necessary code so the `Dog` object inherits from `Animal` and the `Dog's` `prototype` constructor is set to Dog. Then add a `bark()` method to the `Dog` object so that `beagle` can both `eat()` and `bark()`. The `bark()` method should print "Woof!" to the console.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>Animal</code> should not respond to the <code>bark()</code> method.
-    testString: assert(typeof Animal.prototype.bark == "undefined");
-  - text: <code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.
-    testString: assert(typeof Dog.prototype.eat == "function");
-  - text: <code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.
-    testString: assert(Dog.prototype.hasOwnProperty('bark'));
-  - text: <code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.
-    testString: assert(beagle instanceof Animal);
-  - text: The constructor for <code>beagle</code> should be set to <code>Dog</code>.
-    testString: assert(beagle.constructor === Dog);
-  - text: <code>beagle.eat()</code> should log <code>"nom nom nom"</code>
-    testString: |
-      console.log = function(msg){throw msg;}
-      assert.throws(() => beagle.eat(),"nom nom nom");
-  - text: <code>beagle.bark()</code> should log <code>"Woof!"</code>
-    testString: |
-      console.log = function(msg){throw msg;}
-      assert.throws(() => beagle.bark(),"Woof!");
+`Animal` should not respond to the `bark()` method.
+
+```js
+assert(typeof Animal.prototype.bark == 'undefined');
 ```
 
-</section>
+`Dog` should inherit the `eat()` method from `Animal`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof Dog.prototype.eat == 'function');
+```
 
-<div id='js-seed'>
+`Dog` should have the `bark()` method as an `own` property.
+
+```js
+assert(Dog.prototype.hasOwnProperty('bark'));
+```
+
+`beagle` should be an `instanceof` `Animal`.
+
+```js
+assert(beagle instanceof Animal);
+```
+
+The constructor for `beagle` should be set to `Dog`.
+
+```js
+assert(beagle.constructor === Dog);
+```
+
+`beagle.eat()` should log `"nom nom nom"`
+
+```js
+console.log = function (msg) {
+  throw msg;
+};
+assert.throws(() => beagle.eat(), 'nom nom nom');
+```
+
+`beagle.bark()` should log `"Woof!"`
+
+```js
+console.log = function (msg) {
+  throw msg;
+};
+assert.throws(() => beagle.bark(), 'Woof!');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function Animal() { }
@@ -91,15 +111,7 @@ function Dog() { }
 let beagle = new Dog();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function Animal() { }
@@ -116,5 +128,3 @@ let beagle = new Dog();
 beagle.eat();
 beagle.bark();
 ```
-
-</section>

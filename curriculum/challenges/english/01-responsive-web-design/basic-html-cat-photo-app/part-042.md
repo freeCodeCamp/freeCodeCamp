@@ -4,38 +4,51 @@ title: Part 42
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Even through you added your button below the text input, they appear next to each other on the page. That's because both `input` and `button` elements are <dfn>inline elements</dfn>, which don't appear on new lines.
 
-You learned previously that the button submits the form by default, but you can explicitly add the `type` attribute with the value `submit` to it to make it clearer.  Go ahead and do this to specify this button should submit the form.
+You learned previously that the button submits the form by default, but you can explicitly add the `type` attribute with the value `submit` to it to make it clearer. Go ahead and do this to specify this button should submit the form.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `button` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
 
-```yml
-tests:
-  - text: 'Your `button` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('button') );
-  - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/button\>/) );
-  - text: Your `button` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
-    testString: assert( $('button')[0].hasAttribute('type') );
-  - text: Your `button` element should have a `type` attribute with the value `submit`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('button')[0].getAttribute('type').match(/^submit$/i) );
-  - text: Although you have set the `button` element's `type` attribute to `submit`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*button\s+type\s*=\s*submit/i.test(code) );
-
+```js
+assert(document.querySelector('button'));
 ```
 
-</section>
+Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/<\/button\>/));
+```
+
+Your `button` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
+
+```js
+assert($('button')[0].hasAttribute('type'));
+```
+
+Your `button` element should have a `type` attribute with the value `submit`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+assert(
+  $('button')[0]
+    .getAttribute('type')
+    .match(/^submit$/i)
+);
+```
+
+Although you have set the `button` element's `type` attribute to `submit`, it is recommended to always surround the value of an attribute with quotation marks.
+
+```js
+assert(!/\<\s*button\s+type\s*=\s*submit/i.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -75,9 +88,9 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
-          --fcc-editable-region--
+--fcc-editable-region--
           <button>Submit</button>
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </section>
     </main>
@@ -85,5 +98,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

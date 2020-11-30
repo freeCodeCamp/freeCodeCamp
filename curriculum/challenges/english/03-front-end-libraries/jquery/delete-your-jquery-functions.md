@@ -1,47 +1,57 @@
 ---
 id: bad87fee1348bd9aeda08726
 title: Delete Your jQuery Functions
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 17561
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 These animations were cool at first, but now they're getting kind of distracting.
-Delete all three of these jQuery functions from your <code>document ready function</code>, but leave your <code>document ready function</code> itself intact.
-</section>
 
-## Instructions
-<section id='instructions'>
+Delete all three of these jQuery functions from your `document ready function`, but leave your `document ready function` itself intact.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+All three of your jQuery functions should be deleted from your `document ready function`.
 
-```yml
-tests:
-  - text: All three of your jQuery functions should be deleted from your <code>document ready function</code>.
-    testString: assert(code.match(/\{\s*\}\);/g));
-  - text: You should leave your <code>script</code> element intact.
-    testString: assert(code.match(/<script>/g));
-  - text: You should leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> at the beginning of your <code>script</code> element.
-    testString: assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
-  - text: You should leave your "document ready function" closing <code>&#125;&#41;</code> intact.
-    testString: assert(code.match(/.*\s*\}\);/g));
-  - text: You should leave your <code>script</code> element closing tag intact.
-    testString: assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length);
-
+```js
+assert(code.match(/\{\s*\}\);/g));
 ```
 
-</section>
+You should leave your `script` element intact.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/<script>/g));
+```
 
-<div id='html-seed'>
+You should leave your `$(document).ready(function() {` at the beginning of your `script` element.
+
+```js
+assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
+```
+
+You should leave your "document ready function" closing `})` intact.
+
+```js
+assert(code.match(/.*\s*\}\);/g));
+```
+
+You should leave your `script` element closing tag intact.
+
+```js
+assert(
+  code.match(/<\/script>/g) &&
+    code.match(/<script/g) &&
+    code.match(/<\/script>/g).length === code.match(/<script/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -78,14 +88,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -118,5 +121,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>
