@@ -5,11 +5,13 @@ challengeType: 1
 forumTopicId: 301343
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
+
 Here's an example to review how to do this:
-The regex <code>/z+/</code> matches the letter <code>z</code> when it appears one or more times in a row. It would find matches in all of the following strings:
+
+The regex `/z+/` matches the letter `z` when it appears one or more times in a row. It would find matches in all of the following strings:
 
 ```js
 "z"
@@ -19,7 +21,7 @@ The regex <code>/z+/</code> matches the letter <code>z</code> when it appears on
 "abczzzzzzzzzzzzzzzzzzzzzabc"
 ```
 
-But it does not find matches in the following strings since there are no letter <code>z</code> characters:
+But it does not find matches in the following strings since there are no letter `z` characters:
 
 ```js
 ""
@@ -27,58 +29,77 @@ But it does not find matches in the following strings since there are no letter 
 "abcabc"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Write a greedy regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter <code>C</code>.
-</section>
+Write a greedy regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter `C`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your regex should match one criminal (<code>C</code>) in <code>"C"</code>
-    testString: assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C');
-  - text: Your regex should match two criminals (<code>CC</code>) in <code>"CC"</code>
-    testString: assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
-  - text: Your regex should match three criminals (<code>CCC</code>) in <code>"P1P5P4CCCP2P6P3"</code>
-    testString: assert('P1P5P4CCCP2P6P3'.match(reCriminals) && 'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC');
-  - text: Your regex should match five criminals (<code>CCCCC</code>) in <code>"P6P2P7P4P5CCCCCP3P1"</code>
-    testString: assert('P6P2P7P4P5CCCCCP3P1'.match(reCriminals) && 'P6P2P7P4P5CCCCCP3P1'.match(reCriminals)[0] == 'CCCCC');
-  - text: Your regex should not match any criminals in <code>""</code>
-    testString: assert(!reCriminals.test(''));
-  - text: Your regex should not match any criminals in <code>"P1P2P3"</code>
-    testString: assert(!reCriminals.test('P1P2P3'));
-  - text: Your regex should match fifty criminals (<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>) in <code>"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"</code>.
-    testString: assert('P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals) && 'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals)[0] == "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
+Your regex should match one criminal (`C`) in `"C"`
 
+```js
+assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C');
 ```
 
-</section>
+Your regex should match two criminals (`CC`) in `"CC"`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
+```
 
-<div id='js-seed'>
+Your regex should match three criminals (`CCC`) in `"P1P5P4CCCP2P6P3"`
+
+```js
+assert(
+  'P1P5P4CCCP2P6P3'.match(reCriminals) &&
+    'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC'
+);
+```
+
+Your regex should match five criminals (`CCCCC`) in `"P6P2P7P4P5CCCCCP3P1"`
+
+```js
+assert(
+  'P6P2P7P4P5CCCCCP3P1'.match(reCriminals) &&
+    'P6P2P7P4P5CCCCCP3P1'.match(reCriminals)[0] == 'CCCCC'
+);
+```
+
+Your regex should not match any criminals in `""`
+
+```js
+assert(!reCriminals.test(''));
+```
+
+Your regex should not match any criminals in `"P1P2P3"`
+
+```js
+assert(!reCriminals.test('P1P2P3'));
+```
+
+Your regex should match fifty criminals (`CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC`) in `"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"`.
+
+```js
+assert(
+  'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(
+    reCriminals
+  ) &&
+    'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(
+      reCriminals
+    )[0] == 'CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC'
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let reCriminals = /./; // Change this line
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let reCriminals = /C+/; // Change this line
 ```
-
-</section>

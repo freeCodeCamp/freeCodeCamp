@@ -4,31 +4,28 @@ title: Part 27
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Create another variable named `--building-color4` and give it a value of `#538cc6`, make sure it's in the `:root` selector this time. Then use it to fill in the last building.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; const bb4style = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0]; assert(/--building-color4\s*:\s*#538cc6\s*(;|\s*})/g.test(rootStyle) && /background-color\s*:\s*var\(\s*--building-color4\s*\)\s*(;|\s*})/g.test(bb4style));
-
+```js
+const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0];
+const bb4style = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /--building-color4\s*:\s*#538cc6\s*(;|\s*})/g.test(rootStyle) &&
+    /background-color\s*:\s*var\(\s*--building-color4\s*\)\s*(;|\s*})/g.test(
+      bb4style
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -133,12 +130,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -244,5 +236,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

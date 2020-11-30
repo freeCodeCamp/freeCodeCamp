@@ -5,34 +5,34 @@ challengeType: 6
 forumTopicId: 301443
 ---
 
-## Description
-<section id='description'>
-The Redux store object provides several methods that allow you to interact with it. For example, you can retrieve the current <code>state</code> held in the Redux store object with the <code>getState()</code> method.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-The code from the previous challenge is re-written more concisely in the code editor. Use <code>store.getState()</code> to retrieve the <code>state</code> from the <code>store</code>, and assign this to a new variable <code>currentState</code>.
-</section>
+The Redux store object provides several methods that allow you to interact with it. For example, you can retrieve the current `state` held in the Redux store object with the `getState()` method.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The redux store should have a value of 5 for the initial state.
-    testString: assert(store.getState()===5);
-  - text: A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.
-    testString: getUserInput => assert(currentState === 5 && getUserInput('index').includes('store.getState()'));
+The code from the previous challenge is re-written more concisely in the code editor. Use `store.getState()` to retrieve the `state` from the `store`, and assign this to a new variable `currentState`.
 
+# --hints--
+
+The redux store should have a value of 5 for the initial state.
+
+```js
+assert(store.getState() === 5);
 ```
 
-</section>
+A variable `currentState` should exist and should be assigned the current state of the Redux store.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) =>
+  assert(
+    currentState === 5 && getUserInput('index').includes('store.getState()')
+  );
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 const store = Redux.createStore(
@@ -40,18 +40,9 @@ const store = Redux.createStore(
 );
 
 // Change code below this line
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const store = Redux.createStore(
@@ -61,5 +52,3 @@ const store = Redux.createStore(
 // Change code below this line
 const currentState = store.getState();
 ```
-
-</section>

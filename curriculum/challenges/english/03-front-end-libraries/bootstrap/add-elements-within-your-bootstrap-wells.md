@@ -5,37 +5,42 @@ challengeType: 0
 forumTopicId: 16636
 ---
 
-## Description
-<section id='description'>
-Now we're several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.
-Nest three <code>button</code> elements within each of your <code>well</code> <code>div</code> elements.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Now we're several `div` elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our `button` elements.
 
-</section>
+Nest three `button` elements within each of your `well` `div` elements.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Three <code>button</code> elements should be nested within each of your <code>div</code> elements with class <code>well</code>.
-    testString: assert($("div.well:eq(0)").children("button").length === 3 && $("div.well:eq(1)").children("button").length === 3);
-  - text: You should have a total of 6 <code>button</code> elements.
-    testString: assert($("button") && $("button").length > 5);
-  - text: All of your <code>button</code> elements should have closing tags.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
+Three `button` elements should be nested within each of your `div` elements with class `well`.
 
+```js
+assert(
+  $('div.well:eq(0)').children('button').length === 3 &&
+    $('div.well:eq(1)').children('button').length === 3
+);
 ```
 
-</section>
+You should have a total of 6 `button` elements.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button') && $('button').length > 5);
+```
 
-<div id='html-seed'>
+All of your `button` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/button>/g) &&
+    code.match(/<button/g) &&
+    code.match(/<\/button>/g).length === code.match(/<button/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -59,14 +64,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -89,5 +87,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

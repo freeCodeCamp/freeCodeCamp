@@ -1,52 +1,51 @@
 ---
 id: 5900f3941000cf542c50fea7
-challengeType: 5
 title: 'Problem 40: Champernowne''s constant'
+challengeType: 5
 forumTopicId: 302066
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 An irrational decimal fraction is created by concatenating the positive integers:
 
-<span style='display: block; text-align: center;'>0.12345678910<b style='color: red;'>1</b>112131415161718192021...</span>
+0.12345678910**1**112131415161718192021...
 
 It can be seen that the 12<sup>th</sup> digit of the fractional part is 1.
 
-If <i>d<sub>n</sub></i> represents the <i>n</i><sup>th</sup> digit of the fractional part, find the value of the following expression.
+If *d<sub>n</sub>* represents the *n*<sup>th</sup> digit of the fractional part, find the value of the following expression.
 
-<span style='display: block; text-align: center;'>d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub></span>
+d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub>
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`champernownesConstant(100)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>champernownesConstant(100)</code> should return a number.
-    testString: assert(typeof champernownesConstant(100) === 'number');
-  - text: <code>champernownesConstant(100)</code> should return 5.
-    testString: assert.strictEqual(champernownesConstant(100), 5);
-  - text: <code>champernownesConstant(1000)</code> should return 15.
-    testString: assert.strictEqual(champernownesConstant(1000), 15);
-  - text: <code>champernownesConstant(1000000)</code> should return 210.
-    testString: assert.strictEqual(champernownesConstant(1000000), 210);
-
+```js
+assert(typeof champernownesConstant(100) === 'number');
 ```
 
-</section>
+`champernownesConstant(100)` should return 5.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(champernownesConstant(100), 5);
+```
 
-<div id='js-seed'>
+`champernownesConstant(1000)` should return 15.
+
+```js
+assert.strictEqual(champernownesConstant(1000), 15);
+```
+
+`champernownesConstant(1000000)` should return 210.
+
+```js
+assert.strictEqual(champernownesConstant(1000000), 210);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function champernownesConstant(n) {
@@ -57,15 +56,7 @@ function champernownesConstant(n) {
 champernownesConstant(100);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function champernownesConstant(n) {
@@ -83,5 +74,3 @@ function champernownesConstant(n) {
   return product;
 }
 ```
-
-</section>

@@ -4,31 +4,28 @@ title: Part 43
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You don't need the `height` or `background-color` properties in `bb1a`, `bb1b` or `bb1c` anymore, so go ahead and remove them.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb1aStyle = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0]; const bb1bStyle = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0]; const bb1cStyle = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(!/(height|background-color)/g.test(bb1aStyle) && !/(height|background-color)/g.test(bb1bStyle) && !/(height|background-color)/g.test(bb1cStyle));
-
+```js
+const bb1aStyle = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0];
+const bb1bStyle = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0];
+const bb1cStyle = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  !/(height|background-color)/g.test(bb1aStyle) &&
+    !/(height|background-color)/g.test(bb1bStyle) &&
+    !/(height|background-color)/g.test(bb1cStyle)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -201,12 +198,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -373,5 +365,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

@@ -6,8 +6,8 @@ videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:
 
 ```js
@@ -21,34 +21,47 @@ for (var i=0; i < arr.length; i++) {
 }
 ```
 
-This outputs each sub-element in <code>arr</code> one at a time. Note that for the inner loop, we are checking the <code>.length</code> of <code>arr[i]</code>, since <code>arr[i]</code> is itself an array.
-</section>
+This outputs each sub-element in `arr` one at a time. Note that for the inner loop, we are checking the `.length` of `arr[i]`, since `arr[i]` is itself an array.
 
-## Instructions
-<section id='instructions'>
-Modify function <code>multiplyAll</code> so that it returns the product of all the numbers in the sub-arrays of <code>arr</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Modify function `multiplyAll` so that it returns the product of all the numbers in the sub-arrays of `arr`.
 
-```yml
-tests:
-  - text: <code>multiplyAll([[1],[2],[3]])</code> should return <code>6</code>
-    testString: assert(multiplyAll([[1],[2],[3]]) === 6);
-  - text: <code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>
-    testString: assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040);
-  - text: <code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])</code> should return <code>54</code>
-    testString: assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54);
+# --hints--
 
+`multiplyAll([[1],[2],[3]])` should return `6`
+
+```js
+assert(multiplyAll([[1], [2], [3]]) === 6);
 ```
 
-</section>
+`multiplyAll([[1,2],[3,4],[5,6,7]])` should return `5040`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  multiplyAll([
+    [1, 2],
+    [3, 4],
+    [5, 6, 7]
+  ]) === 5040
+);
+```
 
-<div id='js-seed'>
+`multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])` should return `54`
+
+```js
+assert(
+  multiplyAll([
+    [5, 1],
+    [0.2, 4, 0.5],
+    [3, 9]
+  ]) === 54
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function multiplyAll(arr) {
@@ -60,18 +73,9 @@ function multiplyAll(arr) {
 }
 
 multiplyAll([[1,2],[3,4],[5,6,7]]);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function multiplyAll(arr) {
@@ -86,5 +90,3 @@ function multiplyAll(arr) {
 
 multiplyAll([[1,2],[3,4],[5,6,7]]);
 ```
-
-</section>

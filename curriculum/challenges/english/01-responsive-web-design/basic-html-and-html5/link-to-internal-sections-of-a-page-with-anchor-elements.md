@@ -6,10 +6,12 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098
 ---
 
-## Description
-<section id='description'>
-<code>a</code> (<i>anchor</i>) elements can also be used to create internal links to jump to different sections within a webpage.
-To create an internal link, you assign a link's <code>href</code> attribute to a hash symbol <code>#</code> plus the value of the <code>id</code> attribute for the element that you want to internally link to, usually further down the page. You then need to add the same <code>id</code> attribute to the element you are linking to. An <code>id</code> is an attribute that uniquely describes an element.
+# --description--
+
+`a` (*anchor*) elements can also be used to create internal links to jump to different sections within a webpage.
+
+To create an internal link, you assign a link's `href` attribute to a hash symbol `#` plus the value of the `id` attribute for the element that you want to internally link to, usually further down the page. You then need to add the same `id` attribute to the element you are linking to. An `id` is an attribute that uniquely describes an element.
+
 Below is an example of an internal anchor link and its target element:
 
 ```html
@@ -18,42 +20,65 @@ Below is an example of an internal anchor link and its target element:
 <h2 id="contacts-header">Contacts</h2>
 ```
 
-When users click the Contacts link, they'll be taken to the section of the webpage with the <b>Contacts</b> header element.
-</section>
+When users click the Contacts link, they'll be taken to the section of the webpage with the **Contacts** header element.
 
-## Instructions
-<section id='instructions'>
-Change your external link to an internal link by changing the <code>href</code> attribute to "#footer" and the text from "cat photos" to "Jump to Bottom".
-Remove the <code>target="_blank"</code> attribute from the anchor tag since this causes the linked document to open in a new window tab.
-Then add an <code>id</code> attribute with a value of "footer" to the <code>&lt;footer&gt;</code> element at the bottom of the page.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Change your external link to an internal link by changing the `href` attribute to "#footer" and the text from "cat photos" to "Jump to Bottom".
 
-```yml
-tests:
-  - text: There should be only one anchor tag on your page.
-    testString: assert($('a').length == 1);
-  - text: There should be only one <code>footer</code> tag on your page.
-    testString: assert($('footer').length == 1);
-  - text: The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".
-    testString: assert($('a').eq(0).attr('href') == "#footer");
-  - text: The <code>a</code> tag should not have a <code>target</code> attribute
-    testString: assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true);
-  - text: The <code>a</code> text should be "Jump to Bottom".
-    testString: assert($('a').eq(0).text().match(/Jump to Bottom/gi));
-  - text: The <code>footer</code> tag should have an <code>id</code> attribute set to "footer".
-    testString: assert($('footer').eq(0).attr('id') == "footer");
+Remove the `target="_blank"` attribute from the anchor tag since this causes the linked document to open in a new window tab.
 
+Then add an `id` attribute with a value of "footer" to the `<footer>` element at the bottom of the page.
+
+# --hints--
+
+There should be only one anchor tag on your page.
+
+```js
+assert($('a').length == 1);
 ```
 
-</section>
+There should be only one `footer` tag on your page.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('footer').length == 1);
+```
 
-<div id='html-seed'>
+The `a` tag should have an `href` attribute set to "#footer".
+
+```js
+assert($('a').eq(0).attr('href') == '#footer');
+```
+
+The `a` tag should not have a `target` attribute
+
+```js
+assert(
+  typeof $('a').eq(0).attr('target') == typeof undefined ||
+    $('a').eq(0).attr('target') == true
+);
+```
+
+The `a` text should be "Jump to Bottom".
+
+```js
+assert(
+  $('a')
+    .eq(0)
+    .text()
+    .match(/Jump to Bottom/gi)
+);
+```
+
+The `footer` tag should have an `id` attribute set to "footer".
+
+```js
+assert($('footer').eq(0).attr('id') == 'footer');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -73,12 +98,7 @@ tests:
 <footer>Copyright Cat Photo App</footer>
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -97,5 +117,3 @@ tests:
 
 <footer id="footer">Copyright Cat Photo App</footer>
 ```
-
-</section>

@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301351
 ---
 
-## Description
-<section id='description'>
-The last challenge used the plus <code>+</code> sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
-The character to do this is the asterisk or star: <code>*</code>.
+# --description--
+
+The last challenge used the plus `+` sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
+
+The character to do this is the asterisk or star: `*`.
 
 ```js
 let soccerWord = "gooooooooal!";
@@ -20,39 +21,61 @@ gPhrase.match(goRegex); // Returns ["g"]
 oPhrase.match(goRegex); // Returns null
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-For this challenge, <code>chewieQuote</code> has been initialized as "Aaaaaaaaaaaaaaaarrrgh!" behind the scenes. Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match an uppercase <code>"A"</code> character immediately followed by zero or more lowercase <code>"a"</code> characters in <code>chewieQuote</code>. Your regex does not need flags or character classes, and it should not match any of the other quotes.
-</section>
+For this challenge, `chewieQuote` has been initialized as "Aaaaaaaaaaaaaaaarrrgh!" behind the scenes. Create a regex `chewieRegex` that uses the `*` character to match an uppercase `"A"` character immediately followed by zero or more lowercase `"a"` characters in `chewieQuote`. Your regex does not need flags or character classes, and it should not match any of the other quotes.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.
-    testString: assert(/\*/.test(chewieRegex.source));
-  - text: Your regex should match <code>"A"</code> in <code>chewieQuote</code>.
-    testString: assert(result[0][0] === 'A');
-  - text: Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code> in <code>chewieQuote</code>.
-    testString: assert(result[0] === 'Aaaaaaaaaaaaaaaa');
-  - text: Your regex <code>chewieRegex</code> should match 16 characters in <code>chewieQuote</code>.
-    testString: assert(result[0].length === 16);
-  - text: Your regex should not match any characters in "He made a fair move. Screaming about it can't help you."
-    testString: assert(!"He made a fair move. Screaming about it can't help you.".match(chewieRegex));
-  - text: Your regex should not match any characters in "Let him have it. It's not wise to upset a Wookiee."
-    testString: assert(!"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex));
+Your regex `chewieRegex` should use the `*` character to match zero or more `a` characters.
 
+```js
+assert(/\*/.test(chewieRegex.source));
 ```
 
-</section>
+Your regex should match `"A"` in `chewieQuote`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(result[0][0] === 'A');
+```
 
-<div id='js-seed'>
+Your regex should match `"Aaaaaaaaaaaaaaaa"` in `chewieQuote`.
+
+```js
+assert(result[0] === 'Aaaaaaaaaaaaaaaa');
+```
+
+Your regex `chewieRegex` should match 16 characters in `chewieQuote`.
+
+```js
+assert(result[0].length === 16);
+```
+
+Your regex should not match any characters in "He made a fair move. Screaming about it can't help you."
+
+```js
+assert(
+  !"He made a fair move. Screaming about it can't help you.".match(chewieRegex)
+);
+```
+
+Your regex should not match any characters in "Let him have it. It's not wise to upset a Wookiee."
+
+```js
+assert(
+  !"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex)
+);
+```
+
+# --seed--
+
+## --before-user-code--
+
+```js
+const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+```
+
+## --seed-contents--
 
 ```js
 // Only change code below this line
@@ -62,25 +85,9 @@ let chewieRegex = /change/; // Change this line
 let result = chewieQuote.match(chewieRegex);
 ```
 
-</div>
-
-## Before Test
-<div id='js-setup'>
-
-```js
-const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
   let chewieRegex = /Aa*/;
   let result = chewieQuote.match(chewieRegex);
 ```
-
-</section>

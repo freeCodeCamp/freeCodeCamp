@@ -4,34 +4,39 @@ title: Part 56
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add the `name` attribute with the value `personality` to the checkbox `input` element.
 
 While you won't notice this in the browser, doing this makes it easier for a server to process your web form, especially when there are multiple checkboxes.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You should make sure the checkbox is still present.
 
-```yml
-tests:
-  - text: You should make sure the checkbox is still present.
-    testString: assert( $('input[type="checkbox"]')[0] );
-  - text: The checkbox `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name.
-    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('name') );
-  - text: The checkbox `input` element should have a `name` attribute with the value `personality`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input[type="checkbox"]')[0].getAttribute('name').match(/^personality$/) );
-
+```js
+assert($('input[type="checkbox"]')[0]);
 ```
 
-</section>
+The checkbox `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert($('input[type="checkbox"]')[0].hasAttribute('name'));
+```
+
+The checkbox `input` element should have a `name` attribute with the value `personality`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+assert(
+  $('input[type="checkbox"]')[0]
+    .getAttribute('name')
+    .match(/^personality$/)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -77,9 +82,9 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
+--fcc-editable-region--
             <input id="loving" type="checkbox"> <label for="loving">Loving</label>
-            --fcc-editable-region--
+--fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
@@ -90,5 +95,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

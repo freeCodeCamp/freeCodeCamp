@@ -5,41 +5,43 @@ challengeType: 6
 forumTopicId: 16780
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In addition to moving elements, you can also copy them from one place to another.
-jQuery has a function called <code>clone()</code> that makes a copy of an element.
-For example, if we wanted to copy <code>target2</code> from our <code>left-well</code> to our <code>right-well</code>, we would use:
-<code>$("#target2").clone().appendTo("#right-well");</code>
+
+jQuery has a function called `clone()` that makes a copy of an element.
+
+For example, if we wanted to copy `target2` from our `left-well` to our `right-well`, we would use:
+
+`$("#target2").clone().appendTo("#right-well");`
+
 Did you notice this involves sticking two jQuery functions together? This is called <dfn>function chaining</dfn> and it's a convenient way to get things done with jQuery.
-Clone your <code>target5</code> element and append it to your <code>left-well</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+Clone your `target5` element and append it to your `left-well`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `target5` element should be inside your `right-well`.
 
-```yml
-tests:
-  - text: Your <code>target5</code> element should be inside your <code>right-well</code>.
-    testString: assert($("#right-well").children("#target5").length > 0);
-  - text: A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.
-    testString: assert($("#left-well").children("#target5").length > 0);
-  - text: You should only use jQuery to move these elements.
-    testString: assert(!code.match(/class.*animated/g));
-
+```js
+assert($('#right-well').children('#target5').length > 0);
 ```
 
-</section>
+A copy of your `target5` element should also be inside your `left-well`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#left-well').children('#target5').length > 0);
+```
 
-<div id='html-seed'>
+You should only use jQuery to move these elements.
+
+```js
+assert(!code.match(/class.*animated/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -77,14 +79,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -121,5 +116,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

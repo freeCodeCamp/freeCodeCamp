@@ -1,41 +1,29 @@
 ---
 id: 5900f45c1000cf542c50ff6e
-challengeType: 5
 title: 'Problem 239: Twenty-two Foolish Primes'
+challengeType: 5
 forumTopicId: 301884
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 A set of disks numbered 1 through 100 are placed in a line in random order.
 
-What is the probability that we have a partial derangement such that exactly 22 prime number discs are found away from their natural positions?
-(Any number of non-prime disks may also be found in or out of their natural positions.)
+What is the probability that we have a partial derangement such that exactly 22 prime number discs are found away from their natural positions? (Any number of non-prime disks may also be found in or out of their natural positions.)
 
 Give your answer rounded to 12 places behind the decimal point in the form 0.abcdefghijkl.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler239()` should return 0.001887854841.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler239()</code> should return 0.001887854841.
-    testString: assert.strictEqual(euler239(), 0.001887854841);
-
+```js
+assert.strictEqual(euler239(), 0.001887854841);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler239() {
@@ -46,17 +34,8 @@ function euler239() {
 euler239();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

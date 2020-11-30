@@ -6,41 +6,52 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cNW4kC3'
 forumTopicId: 18246
 ---
 
-## Description
-<section id='description'>
-The <code>div</code> element, also known as a division element, is a general purpose container for other elements.
-The <code>div</code> element is probably the most commonly used HTML element of all.
-Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another line with <code>&#60;/div&#62;</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Nest your "Things cats love" and "Things cats hate" lists all within a single <code>div</code> element.
-Hint: Try putting your opening <code>div</code> tag above your "Things cats love" <code>p</code> element and your closing <code>div</code> tag after your closing <code>ol</code> tag so that both of your lists are within one <code>div</code>.
-</section>
+The `div` element, also known as a division element, is a general purpose container for other elements.
 
-## Tests
-<section id='tests'>
+The `div` element is probably the most commonly used HTML element of all.
 
-```yml
-tests:
-  - text: Your <code>p</code> elements should be nested inside your <code>div</code> element.
-    testString: assert($("div").children("p").length > 1);
-  - text: Your <code>ul</code> element should be nested inside your <code>div</code> element.
-    testString: assert($("div").children("ul").length > 0);
-  - text: Your <code>ol</code> element should be nested inside your <code>div</code> element.
-    testString: assert($("div").children("ol").length > 0);
-  - text: Your <code>div</code> element should have a closing tag.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length);
+Just like any other non-self-closing element, you can open a `div` element with `<div>` and close it on another line with `</div>`.
 
+# --instructions--
+
+Nest your "Things cats love" and "Things cats hate" lists all within a single `div` element.
+
+Hint: Try putting your opening `div` tag above your "Things cats love" `p` element and your closing `div` tag after your closing `ol` tag so that both of your lists are within one `div`.
+
+# --hints--
+
+Your `p` elements should be nested inside your `div` element.
+
+```js
+assert($('div').children('p').length > 1);
 ```
 
-</section>
+Your `ul` element should be nested inside your `div` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div').children('ul').length > 0);
+```
 
-<div id='html-seed'>
+Your `ol` element should be nested inside your `div` element.
+
+```js
+assert($('div').children('ol').length > 0);
+```
+
+Your `div` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div>/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -74,14 +85,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -114,5 +118,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

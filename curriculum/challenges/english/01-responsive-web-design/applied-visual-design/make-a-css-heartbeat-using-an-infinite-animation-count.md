@@ -6,35 +6,33 @@ videoUrl: 'https://scrimba.com/c/cDZpDUr'
 forumTopicId: 301062
 ---
 
-## Description
-<section id='description'>
-Here's one more continuous animation example with the <code>animation-iteration-count</code> property that uses the heart you designed in a previous challenge.
-The one-second long heartbeat animation consists of two animated pieces. The <code>heart</code> elements (including the <code>:before</code> and <code>:after</code> pieces) are animated to change size using the <code>transform</code> property, and the background <code>div</code> is animated to change its color using the <code>background</code> property.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Keep the heart beating by adding the <code>animation-iteration-count</code> property for both the <code>back</code> class and the <code>heart</code> class and setting the value to infinite. The <code>heart:before</code> and <code>heart:after</code> selectors do not need any animation properties.
-</section>
+Here's one more continuous animation example with the `animation-iteration-count` property that uses the heart you designed in a previous challenge.
 
-## Tests
-<section id='tests'>
+The one-second long heartbeat animation consists of two animated pieces. The `heart` elements (including the `:before` and `:after` pieces) are animated to change size using the `transform` property, and the background `div` is animated to change its color using the `background` property.
 
-```yml
-tests:
-  - text: The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.
-    testString: assert($('.heart').css('animation-iteration-count') == 'infinite');
-  - text: The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.
-    testString: assert($('.back').css('animation-iteration-count') == 'infinite');
+# --instructions--
 
+Keep the heart beating by adding the `animation-iteration-count` property for both the `back` class and the `heart` class and setting the value to infinite. The `heart:before` and `heart:after` selectors do not need any animation properties.
+
+# --hints--
+
+The `animation-iteration-count` property for the `heart` class should have a value of infinite.
+
+```js
+assert($('.heart').css('animation-iteration-count') == 'infinite');
 ```
 
-</section>
+The `animation-iteration-count` property for the `back` class should have a value of infinite.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.back').css('animation-iteration-count') == 'infinite');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -108,14 +106,7 @@ tests:
 <div class="heart"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -187,5 +178,3 @@ tests:
 <div class="back"></div>
 <div class="heart"></div>
 ```
-
-</section>

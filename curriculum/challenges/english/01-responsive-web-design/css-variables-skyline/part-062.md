@@ -4,31 +4,27 @@ title: Part 62
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The next building will have three sections. Nest three `div` elements within `bb4`. Give them the classes of `bb4a`, `bb4b` and `bb4c` in that order.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb4 = $(".bb4").children("div"); assert(bb4.length === 3 && bb4[0] === $(".bb4a")[0] && bb4[1] === $(".bb4b")[0] && bb4[2] === $(".bb4c")[0]);
-
+```js
+const bb4 = $('.bb4').children('div');
+assert(
+  bb4.length === 3 &&
+    bb4[0] === $('.bb4a')[0] &&
+    bb4[1] === $('.bb4b')[0] &&
+    bb4[2] === $('.bb4c')[0]
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -225,12 +221,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -430,5 +421,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

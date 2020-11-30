@@ -5,36 +5,31 @@ challengeType: 0
 forumTopicId: 16771
 ---
 
-## Description
-<section id='description'>
-Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class <code>text-center</code> to our <code>h2</code> element.
+# --description--
+
+Now that we're using Bootstrap, we can center our heading element to make it look better. All we need to do is add the class `text-center` to our `h2` element.
+
 Remember that you can add several classes to the same element by separating each of them with a space, like this:
-<code>&#60h2 class="red-text text-center"&#62your text&#60/h2&#62</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+`<h2 class="red-text text-center">your text</h2>`
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `h2` element should be centered by applying the class `text-center`
 
-```yml
-tests:
-  - text: Your <code>h2</code> element should be centered by applying the class <code>text-center</code>
-    testString: assert($("h2").hasClass("text-center"));
-  - text: Your <code>h2</code> element should still have the class <code>red-text</code>
-    testString: assert($("h2").hasClass("red-text"));
-
+```js
+assert($('h2').hasClass('text-center'));
 ```
 
-</section>
+Your `h2` element should still have the class `red-text`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').hasClass('red-text'));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -96,14 +91,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -164,5 +152,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

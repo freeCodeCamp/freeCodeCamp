@@ -6,39 +6,45 @@ videoUrl: 'https://scrimba.com/c/cB7mwUw'
 forumTopicId: 16634
 ---
 
-## Description
-<section id='description'>
-Sometimes you will want to customize an element so that it has different amounts of <code>padding</code> on each of its sides.
-CSS allows you to control the <code>padding</code> of all four individual sides of an element with the <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> properties.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Give the blue box a <code>padding</code> of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
-</section>
+Sometimes you will want to customize an element so that it has different amounts of `padding` on each of its sides.
 
-## Tests
-<section id='tests'>
+CSS allows you to control the `padding` of all four individual sides of an element with the `padding-top`, `padding-right`, `padding-bottom`, and `padding-left` properties.
 
-```yml
-tests:
-  - text: Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-top") === "40px");
-  - text: Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-right") === "20px");
-  - text: Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-bottom") === "20px");
-  - text: Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-left") === "40px");
+# --instructions--
 
+Give the blue box a `padding` of `40px` on its top and left side, but only `20px` on its bottom and right side.
+
+# --hints--
+
+Your `blue-box` class should give the top of the elements `40px` of `padding`.
+
+```js
+assert($('.blue-box').css('padding-top') === '40px');
 ```
 
-</section>
+Your `blue-box` class should give the right of the elements `20px` of `padding`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('.blue-box').css('padding-right') === '20px');
+```
 
-<div id='html-seed'>
+Your `blue-box` class should give the bottom of the elements `20px` of `padding`.
+
+```js
+assert($('.blue-box').css('padding-bottom') === '20px');
+```
+
+Your `blue-box` class should give the left of the elements `40px` of `padding`.
+
+```js
+assert($('.blue-box').css('padding-left') === '40px');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -81,14 +87,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -134,5 +133,3 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
-
-</section>

@@ -6,13 +6,17 @@ videoUrl: 'https://scrimba.com/c/cy87mf3'
 forumTopicId: 18348
 ---
 
-## Description
-<section id='description'>
-<code>If</code> statements are used to make decisions in code. The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions and they may only be <code>true</code> or <code>false</code>.
-When the condition evaluates to <code>true</code>, the program executes the statement inside the curly braces. When the Boolean condition evaluates to <code>false</code>, the statement inside the curly braces will not execute.
-<strong>Pseudocode</strong>
-<blockquote>if (<i>condition is true</i>) {<br>&nbsp;&nbsp;<i>statement is executed</i><br>}</blockquote>
-<strong>Example</strong>
+# --description--
+
+`If` statements are used to make decisions in code. The keyword `if` tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as `Boolean` conditions and they may only be `true` or `false`.
+
+When the condition evaluates to `true`, the program executes the statement inside the curly braces. When the Boolean condition evaluates to `false`, the statement inside the curly braces will not execute.
+
+**Pseudocode**
+
+<blockquote>if (<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>
+
+**Example**
 
 ```js
 function test (myCondition) {
@@ -25,38 +29,47 @@ test(true);  // returns "It was true"
 test(false); // returns "It was false"
 ```
 
-When <code>test</code> is called with a value of <code>true</code>, the <code>if</code> statement evaluates <code>myCondition</code> to see if it is <code>true</code> or not. Since it is <code>true</code>, the function returns <code>"It was true"</code>. When we call <code>test</code> with a value of <code>false</code>, <code>myCondition</code> is <em>not</em> <code>true</code> and the statement in the curly braces is not executed and the function returns <code>"It was false"</code>.
-</section>
+When `test` is called with a value of `true`, the `if` statement evaluates `myCondition` to see if it is `true` or not. Since it is `true`, the function returns `"It was true"`. When we call `test` with a value of `false`, `myCondition` is *not* `true` and the statement in the curly braces is not executed and the function returns `"It was false"`.
 
-## Instructions
-<section id='instructions'>
-Create an <code>if</code> statement inside the function to return <code>"Yes, that was true"</code> if the parameter <code>wasThatTrue</code> is <code>true</code> and return <code>"No, that was false"</code> otherwise.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Create an `if` statement inside the function to return `"Yes, that was true"` if the parameter `wasThatTrue` is `true` and return `"No, that was false"` otherwise.
 
-```yml
-tests:
-  - text: <code>trueOrFalse</code> should be a function
-    testString: assert(typeof trueOrFalse === "function");
-  - text: <code>trueOrFalse(true)</code> should return a string
-    testString: assert(typeof trueOrFalse(true) === "string");
-  - text: <code>trueOrFalse(false)</code> should return a string
-    testString: assert(typeof trueOrFalse(false) === "string");
-  - text: <code>trueOrFalse(true)</code> should return "Yes, that was true"
-    testString: assert(trueOrFalse(true) === "Yes, that was true");
-  - text: <code>trueOrFalse(false)</code> should return "No, that was false"
-    testString: assert(trueOrFalse(false) === "No, that was false");
+# --hints--
 
+`trueOrFalse` should be a function
+
+```js
+assert(typeof trueOrFalse === 'function');
 ```
 
-</section>
+`trueOrFalse(true)` should return a string
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof trueOrFalse(true) === 'string');
+```
 
-<div id='js-seed'>
+`trueOrFalse(false)` should return a string
+
+```js
+assert(typeof trueOrFalse(false) === 'string');
+```
+
+`trueOrFalse(true)` should return "Yes, that was true"
+
+```js
+assert(trueOrFalse(true) === 'Yes, that was true');
+```
+
+`trueOrFalse(false)` should return "No, that was false"
+
+```js
+assert(trueOrFalse(false) === 'No, that was false');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function trueOrFalse(wasThatTrue) {
@@ -69,15 +82,7 @@ function trueOrFalse(wasThatTrue) {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function trueOrFalse(wasThatTrue) {
@@ -87,5 +92,3 @@ function trueOrFalse(wasThatTrue) {
   return "No, that was false";
 }
 ```
-
-</section>

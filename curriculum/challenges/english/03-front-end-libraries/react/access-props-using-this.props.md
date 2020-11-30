@@ -5,41 +5,89 @@ challengeType: 6
 forumTopicId: 301375
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 The last several challenges covered the basic ways to pass props to child components. But what if the child component that you're passing a prop to is an ES6 class component, rather than a stateless functional component? The ES6 class component uses a slightly different convention to access props.
-Anytime you refer to a class component within itself, you use the <code>this</code> keyword. To access props within a class component, you preface the code that you use to access it with <code>this</code>. For example, if an ES6 class component has a prop called <code>data</code>, you write <code>{this.props.data}</code> in JSX.
-</section>
 
-## Instructions
-<section id='instructions'>
-Render an instance of the <code>ReturnTempPassword</code> component in the parent component <code>ResetPassword</code>. Here, give <code>ReturnTempPassword</code> a prop of <code>tempPassword</code> and assign it a value of a string that is at least 8 characters long. Within the child, <code>ReturnTempPassword</code>, access the <code>tempPassword</code> prop within the <code>strong</code> tags to make sure the user sees the temporary password.
-</section>
+Anytime you refer to a class component within itself, you use the `this` keyword. To access props within a class component, you preface the code that you use to access it with `this`. For example, if an ES6 class component has a prop called `data`, you write `{this.props.data}` in JSX.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>ResetPassword</code> component should return a single <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().type() === 'div'; })());
-  - text: The fourth child of <code>ResetPassword</code> should be the <code>ReturnTempPassword</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().childAt(3).name() === 'ReturnTempPassword'; })());
-  - text: The <code>ReturnTempPassword</code> component should have a prop called <code>tempPassword</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('ReturnTempPassword').props().tempPassword; })());
-  - text: The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least <code>8</code> characters.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find('ReturnTempPassword').props().tempPassword; return typeof temp === 'string' && temp.length >= 8; })());
-  - text: The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find('strong').text() === mockedComponent.find('ReturnTempPassword').props().tempPassword; })());
+Render an instance of the `ReturnTempPassword` component in the parent component `ResetPassword`. Here, give `ReturnTempPassword` a prop of `tempPassword` and assign it a value of a string that is at least 8 characters long. Within the child, `ReturnTempPassword`, access the `tempPassword` prop within the `strong` tags to make sure the user sees the temporary password.
 
+# --hints--
+
+The `ResetPassword` component should return a single `div` element.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
+    return mockedComponent.children().type() === 'div';
+  })()
+);
 ```
 
-</section>
+The fourth child of `ResetPassword` should be the `ReturnTempPassword` component.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
+    return (
+      mockedComponent.children().childAt(3).name() === 'ReturnTempPassword'
+    );
+  })()
+);
+```
 
-<div id='jsx-seed'>
+The `ReturnTempPassword` component should have a prop called `tempPassword`.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
+    return mockedComponent.find('ReturnTempPassword').props().tempPassword;
+  })()
+);
+```
+
+The `tempPassword` prop of `ReturnTempPassword` should be equal to a string of at least `8` characters.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
+    const temp = mockedComponent.find('ReturnTempPassword').props()
+      .tempPassword;
+    return typeof temp === 'string' && temp.length >= 8;
+  })()
+);
+```
+
+The `ReturnTempPassword` component should display the password you create as the `tempPassword` prop within `strong` tags.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(ResetPassword));
+    return (
+      mockedComponent.find('strong').text() ===
+      mockedComponent.find('ReturnTempPassword').props().tempPassword
+    );
+  })()
+);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<ResetPassword />, document.getElementById('root'))
+```
+
+## --seed-contents--
 
 ```jsx
 class ReturnTempPassword extends React.Component {
@@ -78,23 +126,7 @@ class ResetPassword extends React.Component {
 };
 ```
 
-</div>
-
-
-### After Test
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<ResetPassword />, document.getElementById('root'))
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 class ReturnTempPassword extends React.Component {
@@ -130,5 +162,3 @@ class ResetPassword extends React.Component {
   }
 };
 ```
-
-</section>

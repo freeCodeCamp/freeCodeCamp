@@ -1,12 +1,11 @@
 ---
 id: 5900f39c1000cf542c50feae
-challengeType: 5
 title: 'Problem 47: Distinct primes factors'
+challengeType: 5
 forumTopicId: 302145
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The first two consecutive numbers to have two distinct prime factors are:
 
@@ -25,35 +24,35 @@ The first three consecutive numbers to have three distinct prime factors are:
 
 Find the first four consecutive integers to have four distinct prime factors each. What is the first of these numbers?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`distinctPrimeFactors(2, 2)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>distinctPrimeFactors(2, 2)</code> should return a number.
-    testString: assert(typeof distinctPrimeFactors(2, 2) === 'number');
-  - text: <code>distinctPrimeFactors(2, 2)</code> should return 14.
-    testString: assert.strictEqual(distinctPrimeFactors(2, 2), 14);
-  - text: <code>distinctPrimeFactors(3, 3)</code> should return 644.
-    testString: assert.strictEqual(distinctPrimeFactors(3, 3), 644);
-  - text: <code>distinctPrimeFactors(4, 4)</code> should return 134043.
-    testString: assert.strictEqual(distinctPrimeFactors(4, 4), 134043);
-
+```js
+assert(typeof distinctPrimeFactors(2, 2) === 'number');
 ```
 
-</section>
+`distinctPrimeFactors(2, 2)` should return 14.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(distinctPrimeFactors(2, 2), 14);
+```
 
-<div id='js-seed'>
+`distinctPrimeFactors(3, 3)` should return 644.
+
+```js
+assert.strictEqual(distinctPrimeFactors(3, 3), 644);
+```
+
+`distinctPrimeFactors(4, 4)` should return 134043.
+
+```js
+assert.strictEqual(distinctPrimeFactors(4, 4), 134043);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
@@ -64,12 +63,7 @@ function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
 distinctPrimeFactors(4, 4);
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
@@ -116,5 +110,3 @@ function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
   return number - targetConsecutive + 1;
 }
 ```
-
-</section>

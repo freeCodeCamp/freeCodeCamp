@@ -1,41 +1,29 @@
 ---
 id: 5900f4291000cf542c50ff3a
-challengeType: 5
 title: 'Problem 187: Semiprimes'
+challengeType: 5
 forumTopicId: 301823
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 A composite is a number containing at least two prime factors. For example, 15 = 3 × 5; 9 = 3 × 3; 12 = 2 × 2 × 3.
 
-There are ten composites below thirty containing precisely two, not necessarily distinct, prime factors:
-4, 6, 9, 10, 14, 15, 21, 22, 25, 26.
+There are ten composites below thirty containing precisely two, not necessarily distinct, prime factors: 4, 6, 9, 10, 14, 15, 21, 22, 25, 26.
 
-How many composite integers, n < 108, have precisely two, not necessarily distinct, prime factors?
-</section>
+How many composite integers, n &lt; 108, have precisely two, not necessarily distinct, prime factors?
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler187()` should return 17427258.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler187()</code> should return 17427258.
-    testString: assert.strictEqual(euler187(), 17427258);
-
+```js
+assert.strictEqual(euler187(), 17427258);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler187() {
@@ -46,17 +34,8 @@ function euler187() {
 euler187();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

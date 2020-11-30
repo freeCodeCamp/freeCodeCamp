@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 18233
 ---
 
-## Description
-<section id='description'>
-Here's the <code>Bird</code> constructor from the previous challenge:
+# --description--
+
+Here's the `Bird` constructor from the previous challenge:
 
 ```js
 function Bird() {
@@ -20,8 +20,7 @@ function Bird() {
 let blueBird = new Bird();
 ```
 
-Notice that the <code>new</code> operator is used when calling a constructor. This tells JavaScript to create a new instance of <code>Bird</code> called <code>blueBird</code>. Without the <code>new</code> operator, <code>this</code> inside the constructor would not point to the newly created object, giving unexpected results.
-Now <code>blueBird</code> has all the properties defined inside the <code>Bird</code> constructor:
+Notice that the `new` operator is used when calling a constructor. This tells JavaScript to create a new instance of `Bird` called `blueBird`. Without the `new` operator, `this` inside the constructor would not point to the newly created object, giving unexpected results. Now `blueBird` has all the properties defined inside the `Bird` constructor:
 
 ```js
 blueBird.name; // => Albert
@@ -36,31 +35,27 @@ blueBird.name = 'Elvira';
 blueBird.name; // => Elvira
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use the <code>Dog</code> constructor from the last lesson to create a new instance of <code>Dog</code>, assigning it to a variable <code>hound</code>.
-</section>
+Use the `Dog` constructor from the last lesson to create a new instance of `Dog`, assigning it to a variable `hound`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>hound</code> should be created using the <code>Dog</code> constructor.
-    testString: assert(hound instanceof Dog);
-  - text: Your code should use the <code>new</code> operator to create an instance of <code>Dog</code>.
-    testString: assert(code.match(/new/g));
+`hound` should be created using the `Dog` constructor.
 
+```js
+assert(hound instanceof Dog);
 ```
 
-</section>
+Your code should use the `new` operator to create an instance of `Dog`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/new/g));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function Dog() {
@@ -69,19 +64,9 @@ function Dog() {
   this.numLegs = 4;
 }
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function Dog() {
@@ -91,5 +76,3 @@ function Dog() {
 }
 const hound = new Dog();
 ```
-
-</section>

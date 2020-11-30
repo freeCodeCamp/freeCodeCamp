@@ -1,67 +1,71 @@
 ---
-title: Heronian triangles
 id: 595b98f8b5a2245e243aa831
+title: Heronian triangles
 challengeType: 5
 forumTopicId: 302285
 ---
 
-## Description
-<section id='description'>
-<a href="https://en.wikipedia.org/wiki/Heron's formula" title="wp: Heron's formula" target="_blank">Hero's formula</a> for the area of a triangle given the length of its three sides <big> a,</big> <big>b,</big> and <big>c</big> is given by:
-<span style="margin-left: 2em;"><big>$A = \sqrt{s(s-a)(s-b)(s-c)},$</big></span>
-where <big>s</big> is half the perimeter of the triangle; that is,
-<span style="margin-left: 2em;"><big>$s=\frac{a+b+c}{2}.$</big></span>
+# --description--
+
+[Hero's formula](<https://en.wikipedia.org/wiki/Heron's formula> "wp: Heron's formula") for the area of a triangle given the length of its three sides `a`, `b`, and `c` is given by:
+
+$A = \\sqrt{s(s-a)(s-b)(s-c)},$
+
+where `s` is half the perimeter of the triangle; that is,
+
+$s=\\frac{a+b+c}{2}.$
+
 Heronian triangles are triangles whose sides and area are all integers.
-An example is the triangle with sides <code>3, 4, 5</code> whose area is <code>6</code> (and whose perimeter is <code>12</code>).
-Note that any triangle whose sides are all an integer multiple of <code>3, 4, 5</code>; such as <code>6, 8, 10,</code> will also be a Heronian triangle.
+
+An example is the triangle with sides `3, 4, 5` whose area is `6` (and whose perimeter is `12`).
+
+Note that any triangle whose sides are all an integer multiple of `3, 4, 5`; such as `6, 8, 10,` will also be a Heronian triangle.
+
 Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor
-of all three sides is <code>1</code> (unity).
-This will exclude, for example, triangle <code>6, 8, 10.</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+of all three sides is `1` (unity).
+
+This will exclude, for example, triangle `6, 8, 10.`
+
+# --instructions--
+
 Implement a function based on Hero's formula that returns the first <code>n<sub>th</sub></code> ordered triangles in an array of arrays.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>heronianTriangle</code> should be a function.
-    testString: assert(typeof heronianTriangle === 'function');
-  - text: <code>heronianTriangle(10)</code> should return <code>[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]</code>
-    testString: assert.deepEqual(heronianTriangle(testCases[0]), res[0]);
-  - text: <code>heronianTriangle(15)</code> should return <code>[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15]],</code>
-    testString: assert.deepEqual(heronianTriangle(testCases[1]), res[1]);
-  - text: <code>heronianTriangle(20)</code> should return <code>[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53]],</code>
-    testString: assert.deepEqual(heronianTriangle(testCases[2]), res[2]);
-  - text: <code>heronianTriangle(25)</code> should return <code>[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53], [19, 20, 37],[16, 17, 17], [17, 17, 30], [16, 25, 39], [13, 20, 21]]</code>
-    testString: assert.deepEqual(heronianTriangle(testCases[3]), res[3]);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`heronianTriangle` should be a function.
 
 ```js
-function heronianTriangle(n) {
-
-
-  return [];
-}
+assert(typeof heronianTriangle === 'function');
 ```
 
-</div>
+`heronianTriangle(10)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]`
 
+```js
+assert.deepEqual(heronianTriangle(testCases[0]), res[0]);
+```
 
-### After Test
-<div id='js-teardown'>
+`heronianTriangle(15)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15]],`
+
+```js
+assert.deepEqual(heronianTriangle(testCases[1]), res[1]);
+```
+
+`heronianTriangle(20)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53]],`
+
+```js
+assert.deepEqual(heronianTriangle(testCases[2]), res[2]);
+```
+
+`heronianTriangle(25)` should return `[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17], [13, 13, 24], [6, 25, 29], [11, 13, 20], [5, 29, 30], [13, 14, 15], [10, 17, 21], [7, 24, 25], [8, 29, 35], [12, 17, 25], [4, 51, 53], [19, 20, 37],[16, 17, 17], [17, 17, 30], [16, 25, 39], [13, 20, 21]]`
+
+```js
+assert.deepEqual(heronianTriangle(testCases[3]), res[3]);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const testCases = [10, 15, 20, 25];
@@ -74,13 +78,17 @@ const res = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function heronianTriangle(n) {
 
-## Solution
-<section id='solution'>
 
+  return [];
+}
+```
+
+# --solutions--
 
 ```js
 function heronianTriangle(n) {
@@ -143,7 +151,4 @@ function heronianTriangle(n) {
     }
   }
 }
-
 ```
-
-</section>

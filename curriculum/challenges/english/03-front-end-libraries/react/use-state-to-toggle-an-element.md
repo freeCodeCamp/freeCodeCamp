@@ -5,10 +5,9 @@ challengeType: 6
 forumTopicId: 301421
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-Sometimes you might need to know the previous state when updating the state. However, state updates may be asynchronous - this means React may batch multiple <code>setState()</code> calls into a single update. This means you can't rely on the previous value of <code>this.state</code> or <code>this.props</code> when calculating the next value. So, you should not use code like this:
+Sometimes you might need to know the previous state when updating the state. However, state updates may be asynchronous - this means React may batch multiple `setState()` calls into a single update. This means you can't rely on the previous value of `this.state` or `this.props` when calculating the next value. So, you should not use code like this:
 
 ```jsx
 this.setState({
@@ -16,7 +15,7 @@ this.setState({
 });
 ```
 
-Instead, you should pass <code>setState</code> a function that allows you to access state and props. Using a function with <code>setState</code> guarantees you are working with the most current values of state and props. This means that the above should be rewritten as:
+Instead, you should pass `setState` a function that allows you to access state and props. Using a function with `setState` guarantees you are working with the most current values of state and props. This means that the above should be rewritten as:
 
 ```jsx
 this.setState((state, props) => ({
@@ -34,60 +33,91 @@ this.setState(state => ({
 
 Note that you have to wrap the object literal in parentheses, otherwise JavaScript thinks it's a block of code.
 
-</section>
+# --instructions--
 
-## Instructions
+`MyComponent` has a `visibility` property which is initialized to `false`. The render method returns one view if the value of `visibility` is true, and a different view if it is false.
 
-<section id='instructions'>
-<code>MyComponent</code> has a <code>visibility</code> property which is initialized to <code>false</code>. The render method returns one view if the value of <code>visibility</code> is true, and a different view if it is false.
-Currently, there is no way of updating the <code>visibility</code> property in the component's <code>state</code>. The value should toggle back and forth between true and false. There is a click handler on the button which triggers a class method called <code>toggleVisibility()</code>. Pass a function to <code>setState</code> to define this method so that the <code>state</code> of <code>visibility</code> toggles to the opposite value when the method is called. If <code>visibility</code> is <code>false</code>, the method sets it to <code>true</code>, and vice versa.
-Finally, click the button to see the conditional rendering of the component based on its <code>state</code>.
-<strong>Hint:</strong>&nbsp;Don't forget to bind the <code>this</code> keyword to the method in the constructor!
-</section>
+Currently, there is no way of updating the `visibility` property in the component's `state`. The value should toggle back and forth between true and false. There is a click handler on the button which triggers a class method called `toggleVisibility()`. Pass a function to `setState` to define this method so that the `state` of `visibility` toggles to the opposite value when the method is called. If `visibility` is `false`, the method sets it to `true`, and vice versa.
 
-## Tests
+Finally, click the button to see the conditional rendering of the component based on its `state`.
 
-<section id='tests'>
+**Hint:** Don't forget to bind the `this` keyword to the method in the constructor!
 
-```yml
-tests:
-  - text: <code>MyComponent</code> should return a <code>div</code> element which contains a <code>button</code>.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find('div').find('button').length, 1);
-  - text: The state of <code>MyComponent</code> should initialize with a <code>visibility</code> property set to <code>false</code>.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).state('visibility'), false);
-  - text: Clicking the button element should toggle the <code>visibility</code> property in state between <code>true</code> and <code>false</code>.
-    testString: "(() => {
-      const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
-      const first = () => {
-      mockedComponent.setState({ visibility: false });
-      return mockedComponent.state('visibility');
-      };
-      const second = () => {
-      mockedComponent.find('button').simulate('click');
-      return mockedComponent.state('visibility');
-      };
-      const third = () => {
-      mockedComponent.find('button').simulate('click');
-      return mockedComponent.state('visibility');
-      };
-      const firstValue = first();
-      const secondValue = second();
-      const thirdValue = third();
-      assert(!firstValue && secondValue && !thirdValue);
-      })();"
-  - text: An anonymous function should be passed to <code>setState</code>.
-    testString: const paramRegex = '[a-zA-Z$_]\\w*(,[a-zA-Z$_]\\w*)?'; assert(new RegExp('this\\.setState\\((function\\(' + paramRegex + '\\){|([a-zA-Z$_]\\w*|\\(' + paramRegex + '\\))=>)').test(__helpers.removeWhiteSpace(code)));
-  - text: <code>this</code> should not be used inside <code>setState</code>
-    testString: assert(!/this\.setState\([^}]*this/.test(code));
+# --hints--
+
+`MyComponent` should return a `div` element which contains a `button`.
+
+```js
+assert.strictEqual(
+  Enzyme.mount(React.createElement(MyComponent)).find('div').find('button')
+    .length,
+  1
+);
 ```
 
-</section>
+The state of `MyComponent` should initialize with a `visibility` property set to `false`.
 
-## Challenge Seed
+```js
+assert.strictEqual(
+  Enzyme.mount(React.createElement(MyComponent)).state('visibility'),
+  false
+);
+```
 
-<section id='challengeSeed'>
+Clicking the button element should toggle the `visibility` property in state between `true` and `false`.
 
-<div id='jsx-seed'>
+```js
+(() => {
+  const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
+  const first = () => {
+    mockedComponent.setState({ visibility: false });
+    return mockedComponent.state('visibility');
+  };
+  const second = () => {
+    mockedComponent.find('button').simulate('click');
+    return mockedComponent.state('visibility');
+  };
+  const third = () => {
+    mockedComponent.find('button').simulate('click');
+    return mockedComponent.state('visibility');
+  };
+  const firstValue = first();
+  const secondValue = second();
+  const thirdValue = third();
+  assert(!firstValue && secondValue && !thirdValue);
+})();
+```
+
+An anonymous function should be passed to `setState`.
+
+```js
+const paramRegex = '[a-zA-Z$_]\\w*(,[a-zA-Z$_]\\w*)?';
+assert(
+  new RegExp(
+    'this\\.setState\\((function\\(' +
+      paramRegex +
+      '\\){|([a-zA-Z$_]\\w*|\\(' +
+      paramRegex +
+      '\\))=>)'
+  ).test(__helpers.removeWhiteSpace(code))
+);
+```
+
+`this` should not be used inside `setState`
+
+```js
+assert(!/this\.setState\([^}]*this/.test(code));
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'));
+```
+
+## --seed-contents--
 
 ```jsx
 class MyComponent extends React.Component {
@@ -122,23 +152,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-</div>
-
-### After Test
-
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<MyComponent />, document.getElementById('root'));
-```
-
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```jsx
 class MyComponent extends React.Component {
@@ -172,5 +186,3 @@ class MyComponent extends React.Component {
   }
 }
 ```
-
-</section>

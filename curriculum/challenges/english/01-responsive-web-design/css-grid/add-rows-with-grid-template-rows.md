@@ -6,32 +6,29 @@ videoUrl: 'https://scrimba.com/p/pByETK/cbp9Pua'
 forumTopicId: 301119
 ---
 
-## Description
-<section id='description'>
-The grid you created in the last challenge will set the number of rows automatically. To adjust the rows manually, use the <code>grid-template-rows</code> property in the same way you used <code>grid-template-columns</code> in previous challenge.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add two rows to the grid that are <code>50px</code> tall each.
-</section>
+The grid you created in the last challenge will set the number of rows automatically. To adjust the rows manually, use the `grid-template-rows` property in the same way you used `grid-template-columns` in previous challenge.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi));
+Add two rows to the grid that are `50px` tall each.
 
+# --hints--
+
+`container` class should have a `grid-template-rows` property with two units of `50px`.
+
+```js
+assert(
+  code.match(
+    /.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -63,18 +60,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.container {grid-template-rows: 50px 50px;}</style>
 ```
-
-</section>

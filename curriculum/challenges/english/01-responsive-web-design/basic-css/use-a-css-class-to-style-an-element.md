@@ -6,9 +6,10 @@ videoUrl: 'https://scrimba.com/c/c2MvDtV'
 forumTopicId: 18337
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Classes are reusable styles that can be added to HTML elements.
+
 Here's an example CSS class declaration:
 
 ```html
@@ -19,40 +20,43 @@ Here's an example CSS class declaration:
 </style>
 ```
 
-You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.
-You can apply a class to an HTML element like this:
-<code>&#60;h2 class="blue-text"&#62;CatPhotoApp&#60;/h2&#62;</code>
-Note that in your CSS <code>style</code> element, class names start with a period. In your HTML elements' class attribute, the class name does not include the period.
-</section>
+You can see that we've created a CSS class called `blue-text` within the `<style>` tag. You can apply a class to an HTML element like this: `<h2 class="blue-text">CatPhotoApp</h2>` Note that in your CSS `style` element, class names start with a period. In your HTML elements' class attribute, the class name does not include the period.
 
-## Instructions
-<section id='instructions'>
-Inside your <code>style</code> element, change the <code>h2</code> selector to <code>.red-text</code> and update the color's value from <code>blue</code> to <code>red</code>.
-Give your <code>h2</code> element the <code>class</code> attribute with a value of <code>'red-text'</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Inside your `style` element, change the `h2` selector to `.red-text` and update the color's value from `blue` to `red`.
 
-```yml
-tests:
-  - text: Your <code>h2</code> element should be red.
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
-  - text: Your <code>h2</code> element should have the class <code>red-text</code>.
-    testString: assert($("h2").hasClass("red-text"));
-  - text: Your stylesheet should declare a <code>red-text</code> class and have its color set to red.
-    testString: assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
-  - text: You should not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.
-    testString: assert($("h2").attr("style") === undefined);
+Give your `h2` element the `class` attribute with a value of `'red-text'`.
 
+# --hints--
+
+Your `h2` element should be red.
+
+```js
+assert($('h2').css('color') === 'rgb(255, 0, 0)');
 ```
 
-</section>
+Your `h2` element should have the class `red-text`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').hasClass('red-text'));
+```
 
-<div id='html-seed'>
+Your stylesheet should declare a `red-text` class and have its color set to red.
+
+```js
+assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
+```
+
+You should not use inline style declarations like `style="color: red"` in your `h2` element.
+
+```js
+assert($('h2').attr('style') === undefined);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -94,14 +98,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -142,5 +139,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

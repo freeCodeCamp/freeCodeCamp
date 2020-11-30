@@ -4,53 +4,25 @@ title: Part 4
 challengeType: 0
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-Create the `calculate` function that will hold the code to sum up the user's calorie inputs. Leave the body blank for now.
-Here is an example of an empty function called `square`:
+Create the `calculate` function that will hold the code to sum up the user's calorie inputs. Leave the body blank for now. Here is an example of an empty function called `square`:
 
 ```js
 function square() {}
 ```
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( typeof calculate === "function" );
+```js
+assert(typeof calculate === 'function');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -110,24 +82,22 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+</script>
+```
 
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -136,5 +106,3 @@ tests:
   function calculate() {}
 </script>
 ```
-
-</section>

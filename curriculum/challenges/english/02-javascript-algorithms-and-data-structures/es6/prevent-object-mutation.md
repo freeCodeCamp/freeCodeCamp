@@ -5,9 +5,10 @@ challengeType: 1
 forumTopicId: 301207
 ---
 
-## Description
-<section id='description'>
-As seen in the previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.
+# --description--
+
+As seen in the previous challenge, `const` declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function `Object.freeze` to prevent data mutation.
+
 Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error.
 
 ```js
@@ -22,35 +23,45 @@ console.log(obj);
 // { name: "FreeCodeCamp", review:"Awesome"}
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able to alter the value of <code>PI</code>, add, or delete properties.
-</section>
+In this challenge you are going to use `Object.freeze` to prevent mathematical constants from changing. You need to freeze the `MATH_CONSTANTS` object so that no one is able to alter the value of `PI`, add, or delete properties.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should not replace <code>const</code> keyword.
-    testString: getUserInput => assert(getUserInput('index').match(/const/g));
-  - text: <code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
-  - text: You should not change original <code>MATH_CONSTANTS</code>.
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g));
-  - text: <code>PI</code> should equal <code>3.14</code>.
-    testString: assert(PI === 3.14);
+You should not replace `const` keyword.
 
+```js
+(getUserInput) => assert(getUserInput('index').match(/const/g));
 ```
 
-</section>
+`MATH_CONSTANTS` should be a constant variable (by using `const`).
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) =>
+  assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
+```
 
-<div id='js-seed'>
+You should not change original `MATH_CONSTANTS`.
+
+```js
+(getUserInput) =>
+  assert(
+    getUserInput('index').match(
+      /const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g
+    )
+  );
+```
+
+`PI` should equal `3.14`.
+
+```js
+assert(PI === 3.14);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function freezeObj() {
@@ -71,14 +82,7 @@ function freezeObj() {
 const PI = freezeObj();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function freezeObj() {
@@ -96,5 +100,3 @@ function freezeObj() {
 }
 const PI = freezeObj();
 ```
-
-</section>

@@ -1,12 +1,11 @@
 ---
 id: 5900f3b71000cf542c50feca
-challengeType: 5
 title: 'Problem 75: Singular integer right triangles'
+challengeType: 5
 forumTopicId: 302188
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 It turns out that 12 cm is the smallest length of wire that can be bent to form an integer sided right angle triangle in exactly one way, but there are many more examples.
 
@@ -27,31 +26,23 @@ In contrast, some lengths of wire, like 20 cm, cannot be bent to form an integer
 
 Given that L is the length of the wire, for how many values of L ≤ 1,500,000 can exactly one integer sided right angle triangle be formed?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`singularIntRightTriangles()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>singularIntRightTriangles()</code> should return a number.
-    testString: assert(typeof singularIntRightTriangles() === 'number');
-  - text: <code>singularIntRightTriangles()</code> should return 161667.
-    testString: assert.strictEqual(singularIntRightTriangles(), 161667);
-
+```js
+assert(typeof singularIntRightTriangles() === 'number');
 ```
 
-</section>
+`singularIntRightTriangles()` should return 161667.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(singularIntRightTriangles(), 161667);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function singularIntRightTriangles() {
@@ -62,17 +53,8 @@ function singularIntRightTriangles() {
 singularIntRightTriangles();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

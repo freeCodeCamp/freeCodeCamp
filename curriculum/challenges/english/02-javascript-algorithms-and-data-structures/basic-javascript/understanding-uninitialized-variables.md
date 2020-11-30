@@ -6,38 +6,53 @@ videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
 ---
 
-## Description
-<section id='description'>
-When JavaScript variables are declared, they have an initial value of <code>undefined</code>. If you do a mathematical operation on an <code>undefined</code> variable your result will be <code>NaN</code> which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an <code>undefined</code> variable, you will get a literal <dfn>string</dfn> of <code>"undefined"</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Initialize the three variables <code>a</code>, <code>b</code>, and <code>c</code> with <code>5</code>, <code>10</code>, and <code>"I am a"</code> respectively so that they will not be <code>undefined</code>.
-</section>
+When JavaScript variables are declared, they have an initial value of `undefined`. If you do a mathematical operation on an `undefined` variable your result will be `NaN` which means <dfn>"Not a Number"</dfn>. If you concatenate a string with an `undefined` variable, you will get a literal <dfn>string</dfn> of `"undefined"`.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: <code>a</code> should be defined and evaluated to have the value of <code>6</code>.
-    testString: assert(typeof a === 'number' && a === 6);
-  - text: <code>b</code> should be defined and evaluated to have the value of <code>15</code>.
-    testString: assert(typeof b === 'number' && b === 15);
-  - text: <code>c</code> should not contain <code>undefined</code> and should have a value of "I am a String!"
-    testString: assert(!/undefined/.test(c) && c === "I am a String!");
-  - text: You should not change code below the specified comment.
-    testString: assert(/a = a \+ 1;/.test(code) && /b = b \+ 5;/.test(code) && /c = c \+ " String!";/.test(code));
+Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` respectively so that they will not be `undefined`.
 
+# --hints--
+
+`a` should be defined and evaluated to have the value of `6`.
+
+```js
+assert(typeof a === 'number' && a === 6);
 ```
 
-</section>
+`b` should be defined and evaluated to have the value of `15`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof b === 'number' && b === 15);
+```
 
-<div id='js-seed'>
+`c` should not contain `undefined` and should have a value of "I am a String!"
+
+```js
+assert(!/undefined/.test(c) && c === 'I am a String!');
+```
+
+You should not change code below the specified comment.
+
+```js
+assert(
+  /a = a \+ 1;/.test(code) &&
+    /b = b \+ 5;/.test(code) &&
+    /c = c \+ " String!";/.test(code)
+);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = '" + c + "'"; })(a,b,c);
+```
+
+## --seed-contents--
 
 ```js
 // Only change code below this line
@@ -51,23 +66,7 @@ b = b + 5;
 c = c + " String!";
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = '" + c + "'"; })(a,b,c);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var a = 5;
@@ -77,5 +76,3 @@ a = a + 1;
 b = b + 5;
 c = c + " String!";
 ```
-
-</section>

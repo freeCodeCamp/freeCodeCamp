@@ -5,68 +5,68 @@ challengeType: 11
 videoId: p1r3h_AMMIM
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What will the following program print?:
 
-```yml
-question:
-  text: |
-    What will the following program print?:
-    ```python
-    class PartyAnimal:
-        x = 0
-        name = ''
-        def __init__(self, nam):
-            self.name = nam
-            print(self.name,'constructed')
-        def party(self):
-            self.x = self.x + 1
-            print(self.name,'party count',self.x)
+```python
+class PartyAnimal:
+    x = 0
+    name = ''
+    def __init__(self, nam):
+        self.name = nam
+        print(self.name,'constructed')
+    def party(self):
+        self.x = self.x + 1
+        print(self.name,'party count',self.x)
 
-    q = PartyAnimal('Quincy')
-    m = PartyAnimal('Miya')
+q = PartyAnimal('Quincy')
+m = PartyAnimal('Miya')
 
-    q.party()
-    m.party()
-    q.party()
-    ```
-  answers:
-    - |
-        Quincy constructed
-
-        Miya constructed
-
-        Quincy party count 1
-
-        Miya party count 2
-
-        Quincy party count 3
-    - |
-        Quincy constructed
-
-        Miya constructed
-
-        Quincy party count 1
-
-        Miya party count 1
-
-        Quincy party count 2
-    - |
-        Quincy constructed
-
-        Quincy party count 1
-
-        Quincy party count 2
-
-        Miya constructed
-
-        Miya party count 1
-  solution: 2
+q.party()
+m.party()
+q.party()
 ```
 
-</section>
+## --answers--
+
+Quincy constructed
+
+Miya constructed
+
+Quincy party count 1
+
+Miya party count 2
+
+Quincy party count 3
+
+---
+
+Quincy constructed
+
+Miya constructed
+
+Quincy party count 1
+
+Miya party count 1
+
+Quincy party count 2
+
+---
+
+Quincy constructed
+
+Quincy party count 1
+
+Quincy party count 2
+
+Miya constructed
+
+Miya party count 1
+
+## --video-solution--
+
+2
+

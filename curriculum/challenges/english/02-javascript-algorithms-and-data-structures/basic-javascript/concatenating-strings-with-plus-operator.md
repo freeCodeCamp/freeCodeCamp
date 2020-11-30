@@ -6,16 +6,18 @@ videoUrl: 'https://scrimba.com/c/cNpM8AN'
 forumTopicId: 16802
 ---
 
-## Description
-<section id='description'>
-In JavaScript, when the <code>+</code> operator is used with a <code>String</code> value, it is called the <dfn>concatenation</dfn> operator. You can build a new string out of other strings by <dfn>concatenating</dfn> them together.
-<strong>Example</strong>
+# --description--
+
+In JavaScript, when the `+` operator is used with a `String` value, it is called the <dfn>concatenation</dfn> operator. You can build a new string out of other strings by <dfn>concatenating</dfn> them together.
+
+**Example**
 
 ```js
 'My name is Alan,' + ' I concatenate.'
 ```
 
-<strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+**Note**  
+Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
 
 Example:
 
@@ -24,46 +26,39 @@ var ourStr = "I come first. " + "I come second.";
 // ourStr is "I come first. I come second."
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Build <code>myStr</code> from the strings <code>"This is the start. "</code> and <code>"This is the end."</code> using the <code>+</code> operator.
-</section>
+Build `myStr` from the strings `"This is the start. "` and `"This is the end."` using the `+` operator.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>
-    testString: assert(myStr === "This is the start. This is the end.");
-  - text: You should use the <code>+</code> operator to build <code>myStr</code>.
-    testString: assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
-  - text: <code>myStr</code> should be created using the <code>var</code> keyword.
-    testString: assert(/var\s+myStr/.test(code));
-  - text: You should assign the result to the <code>myStr</code> variable.
-    testString: assert(/myStr\s*=/.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`myStr` should have a value of `This is the start. This is the end.`
 
 ```js
-var myStr; // Change this line
-
+assert(myStr === 'This is the start. This is the end.');
 ```
 
-</div>
+You should use the `+` operator to build `myStr`.
 
+```js
+assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
+```
 
-### After Test
-<div id='js-teardown'>
+`myStr` should be created using the `var` keyword.
+
+```js
+assert(/var\s+myStr/.test(code));
+```
+
+You should assign the result to the `myStr` variable.
+
+```js
+assert(/myStr\s*=/.test(code));
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(){
@@ -75,16 +70,14 @@ var myStr; // Change this line
 })();
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var myStr; // Change this line
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myStr = "This is the start. " + "This is the end.";
 ```
-
-</section>

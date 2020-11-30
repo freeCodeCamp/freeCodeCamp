@@ -5,58 +5,88 @@ challengeType: 6
 forumTopicId: 301429
 ---
 
-## Description
-<section id='description'>
-Now that you finished the React component, you need to move the logic it's performing locally in its <code>state</code> into Redux. This is the first step to connect the simple React app to Redux. The only functionality your app has is to add new messages from the user to an unordered list. The example is simple in order to demonstrate how React and Redux work together.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-First, define an action type 'ADD' and set it to a const <code>ADD</code>. Next, define an action creator <code>addMessage()</code> which creates the action to add a message. You'll need to pass a <code>message</code> to this action creator and include the message in the returned <code>action</code>.
-Then create a reducer called <code>messageReducer()</code> that handles the state for the messages. The initial state should equal an empty array. This reducer should add a message to the array of messages held in state, or return the current state. Finally, create your Redux store and pass it the reducer.
-</section>
+Now that you finished the React component, you need to move the logic it's performing locally in its `state` into Redux. This is the first step to connect the simple React app to Redux. The only functionality your app has is to add new messages from the user to an unordered list. The example is simple in order to demonstrate how React and Redux work together.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>
-    testString: assert(ADD === 'ADD');
-  - text: The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and <code>message</code> equal to the message that is passed in.
-    testString: assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })());
-  - text: <code>messageReducer</code> should be a function.
-    testString: assert(typeof messageReducer === 'function');
-  - text: The store should exist and have an initial state set to an empty array.
-    testString: assert((function() { const initialState = store.getState(); return typeof store === 'object' && initialState.length === 0; })());
-  - text: Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.
-    testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })());
-  - text: The <code>messageReducer</code> should return the current state if called with any other actions.
-    testString: 'assert((function() { const addState = store.getState(); store.dispatch({type: ''FAKE_ACTION''}); const testState = store.getState(); return (addState === testState); })());'
+First, define an action type 'ADD' and set it to a const `ADD`. Next, define an action creator `addMessage()` which creates the action to add a message. You'll need to pass a `message` to this action creator and include the message in the returned `action`.
 
+Then create a reducer called `messageReducer()` that handles the state for the messages. The initial state should equal an empty array. This reducer should add a message to the array of messages held in state, or return the current state. Finally, create your Redux store and pass it the reducer.
+
+# --hints--
+
+The const `ADD` should exist and hold a value equal to the string `ADD`
+
+```js
+assert(ADD === 'ADD');
 ```
 
-</section>
+The action creator `addMessage` should return an object with `type` equal to `ADD` and `message` equal to the message that is passed in.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    const addAction = addMessage('__TEST__MESSAGE__');
+    return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__';
+  })()
+);
+```
 
-<div id='jsx-seed'>
+`messageReducer` should be a function.
+
+```js
+assert(typeof messageReducer === 'function');
+```
+
+The store should exist and have an initial state set to an empty array.
+
+```js
+assert(
+  (function () {
+    const initialState = store.getState();
+    return typeof store === 'object' && initialState.length === 0;
+  })()
+);
+```
+
+Dispatching `addMessage` against the store should immutably add a new message to the array of messages held in state.
+
+```js
+assert(
+  (function () {
+    const initialState = store.getState();
+    const isFrozen = DeepFreeze(initialState);
+    store.dispatch(addMessage('__A__TEST__MESSAGE'));
+    const addState = store.getState();
+    return isFrozen && addState[0] === '__A__TEST__MESSAGE';
+  })()
+);
+```
+
+The `messageReducer` should return the current state if called with any other actions.
+
+```js
+assert(
+  (function () {
+    const addState = store.getState();
+    store.dispatch({ type: 'FAKE_ACTION' });
+    const testState = store.getState();
+    return addState === testState;
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```jsx
 // Define ADD, addMessage(), messageReducer(), and store here:
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 const ADD = 'ADD';
@@ -82,5 +112,3 @@ const messageReducer = (state = [], action) => {
 
 const store = Redux.createStore(messageReducer);
 ```
-
-</section>

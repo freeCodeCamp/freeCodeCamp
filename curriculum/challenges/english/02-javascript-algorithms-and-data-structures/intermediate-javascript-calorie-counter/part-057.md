@@ -4,98 +4,25 @@ title: Part 57
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Create a variable named `calorieInput` and set it equal to another `input` document element. This is similar to how you created the `foodInput`.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s*calorieInput\s*=\s*document\.createElement\([\'\"\`]input[\'\"\`]\)/.test(code));
+```js
+assert(
+  /const\s*calorieInput\s*=\s*document\.createElement\([\'\"\`]input[\'\"\`]\)/.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-
-    const output = document.getElementById('output');
-
-    const result = document.createElement('h3');
-    result.className = 'green-text';
-    const resultText = document.createTextNode(
-      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
-    );
-
-    result.appendChild(resultText);
-    output.appendChild(result);
-
-    const line = document.createElement('hr');
-    output.appendChild(line);
-
-    const recommended = document.createElement('h4');
-    const recommendedText = document.createTextNode(
-      `${maxCalories} Recommended Calories`
-    );
-
-    recommended.appendChild(recommendedText);
-    output.appendChild(recommended);
-
-    const consumed = document.createElement('h4');
-    consumed.innerHTML = `${total} Consumed Calories`;
-    output.appendChild(consumed);
-
-    output.setAttribute('class', 'bordered-class');
-    output.style.backgroundColor = '#FFF9C4';
-  }
-
-  document.getElementById('add').onclick = function() {
-    const foodInput = document.createElement('input');
-    foodInput.placeholder = 'food name';
-    foodInput.classList.add('food-control');
-    document.getElementById('entries').appendChild(foodInput);
-  };
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -155,24 +82,72 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    result.className = 'green-text';
+    const resultText = document.createTextNode(
+      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+    );
+
+    result.appendChild(resultText);
+    output.appendChild(result);
+
+    const line = document.createElement('hr');
+    output.appendChild(line);
+
+    const recommended = document.createElement('h4');
+    const recommendedText = document.createTextNode(
+      `${maxCalories} Recommended Calories`
+    );
+
+    recommended.appendChild(recommendedText);
+    output.appendChild(recommended);
+
+    const consumed = document.createElement('h4');
+    consumed.innerHTML = `${total} Consumed Calories`;
+    output.appendChild(consumed);
+
+    output.setAttribute('class', 'bordered-class');
+    output.style.backgroundColor = '#FFF9C4';
+  }
+
+  document.getElementById('add').onclick = function() {
+    const foodInput = document.createElement('input');
+    foodInput.placeholder = 'food name';
+    foodInput.classList.add('food-control');
+    document.getElementById('entries').appendChild(foodInput);
+  };
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -231,5 +206,3 @@ tests:
   };
 </script>
 ```
-
-</section>

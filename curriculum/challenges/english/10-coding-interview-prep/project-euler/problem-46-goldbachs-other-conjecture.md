@@ -1,12 +1,11 @@
 ---
 id: 5900f39a1000cf542c50fead
-challengeType: 5
 title: 'Problem 46: Goldbach''s other conjecture'
+challengeType: 5
 forumTopicId: 302134
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square.
 
@@ -23,31 +22,23 @@ It turns out that the conjecture was false.
 
 What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`goldbachsOtherConjecture()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>goldbachsOtherConjecture()</code> should return a number.
-    testString: assert(typeof goldbachsOtherConjecture() === 'number');
-  - text: <code>goldbachsOtherConjecture()</code> should return 5777.
-    testString: assert.strictEqual(goldbachsOtherConjecture(), 5777);
-
+```js
+assert(typeof goldbachsOtherConjecture() === 'number');
 ```
 
-</section>
+`goldbachsOtherConjecture()` should return 5777.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(goldbachsOtherConjecture(), 5777);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function goldbachsOtherConjecture() {
@@ -58,15 +49,7 @@ function goldbachsOtherConjecture() {
 goldbachsOtherConjecture();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function goldbachsOtherConjecture() {  function isPrime(num) {
@@ -113,5 +96,3 @@ function goldbachsOtherConjecture() {  function isPrime(num) {
   return answer;
 }
 ```
-
-</section>

@@ -5,50 +5,61 @@ challengeType: 5
 forumTopicId: 385315
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 A record consists of attributes that describe an entity. Each attribute has a name and a value. For example, a person can have an attribute `age` with a value of 25. An important operation on a list of records is to find a record with a particular attribute value.
 
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Write a function that takes a string as a parameter. The function should return the index of the item in `list` for which the value of the `name` attribute matches the given string.
 
-</section>
+# --hints--
 
-## Tests
+`searchCity` should be a function.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>searchCity</code> should be a function.
-    testString: assert(typeof searchCity === 'function');
-  - text: <code>searchCity("Dar Es Salaam")</code> should return a number.
-    testString: assert(typeof searchCity("Dar Es Salaam") === 'number');
-  - text: <code>searchCity("Dar Es Salaam")</code> should return <code>6</code>.
-    testString: assert.equal(searchCity("Dar Es Salaam"), 6);
-  - text: <code>searchCity("Casablanca")</code> should return <code>9</code>.
-    testString: assert.equal(searchCity("Casablanca"), 9);
-  - text: <code>searchCity("Cairo")</code> should return <code>1</code>.
-    testString: assert.equal(searchCity("Cairo"), 1);
-  - text: <code>searchCity("Mogadishu")</code> should return <code>4</code>.
-    testString: assert.equal(searchCity("Mogadishu"), 4);
-  - text: <code>searchCity("Lagos")</code> should return <code>0</code>.
-    testString: assert.equal(searchCity("Lagos"), 0);
+```js
+assert(typeof searchCity === 'function');
 ```
 
-</section>
+`searchCity("Dar Es Salaam")` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof searchCity('Dar Es Salaam') === 'number');
+```
 
-<section id='challengeSeed'>
-<div id='js-seed'>
+`searchCity("Dar Es Salaam")` should return `6`.
+
+```js
+assert.equal(searchCity('Dar Es Salaam'), 6);
+```
+
+`searchCity("Casablanca")` should return `9`.
+
+```js
+assert.equal(searchCity('Casablanca'), 9);
+```
+
+`searchCity("Cairo")` should return `1`.
+
+```js
+assert.equal(searchCity('Cairo'), 1);
+```
+
+`searchCity("Mogadishu")` should return `4`.
+
+```js
+assert.equal(searchCity('Mogadishu'), 4);
+```
+
+`searchCity("Lagos")` should return `0`.
+
+```js
+assert.equal(searchCity('Lagos'), 0);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function searchCity(name) {
@@ -69,12 +80,7 @@ const list = [
 ];
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function searchCity(name) {
@@ -94,5 +100,3 @@ const list = [
   { name: 'Casablanca', population: 3.98 }
 ];
 ```
-
-</section>

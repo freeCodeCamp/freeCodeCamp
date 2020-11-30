@@ -4,48 +4,21 @@ title: Part 2
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Create a variable called `gold` and set it to the value 50.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(gold === 50);
-
+```js
+assert(gold === 50);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-var xp = 0;
-var health = 100;
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -111,26 +84,24 @@ var health = 100;
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+var xp = 0;
+var health = 100;
 
-</section>
+</script>
+```
 
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -139,5 +110,3 @@ var health = 100;
 var gold = 50;
 </script>
 ```
-
-</section>

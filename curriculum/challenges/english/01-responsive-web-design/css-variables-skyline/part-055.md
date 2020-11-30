@@ -4,31 +4,27 @@ title: Part 55
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Next, remove the `width` and `height` from `bb2a`, and change the `border-left` and `border-right` to use `5vw` instead of `1vw`. The element will now have zero size and the borders will come together in the middle.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(!/width/g.test(bb2a) && !/height/g.test(bb2a) && /border-left\s*:\s*5vw\s+solid\s+#999\s*(;|})/g.test(bb2a) && /border-right\s*:\s*5vw\s+solid\s+#999\s*(;|})/g.test(bb2a));
-
+```js
+const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  !/width/g.test(bb2a) &&
+    !/height/g.test(bb2a) &&
+    /border-left\s*:\s*5vw\s+solid\s+#999\s*(;|})/g.test(bb2a) &&
+    /border-right\s*:\s*5vw\s+solid\s+#999\s*(;|})/g.test(bb2a)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -223,12 +219,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -420,5 +411,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

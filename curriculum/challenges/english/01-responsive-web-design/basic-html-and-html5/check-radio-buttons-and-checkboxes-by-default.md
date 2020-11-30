@@ -6,36 +6,35 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cWk3Qh6'
 forumTopicId: 301094
 ---
 
-## Description
-<section id='description'>
-You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.
+# --description--
+
+You can set a checkbox or radio button to be checked by default using the `checked` attribute.
+
 To do this, just add the word "checked" to the inside of an input element. For example:
-<code>&#60;input type="radio" name="test-name" checked&#62;</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+`<input type="radio" name="test-name" checked>`
+
+# --instructions--
+
 Set the first of your radio buttons and the first of your checkboxes to both be checked by default.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your first radio button on your form should be checked by default.
-    testString: assert($('input[type="radio"]').prop("checked"));
-  - text: Your first checkbox on your form should be checked by default.
-    testString: assert($('input[type="checkbox"]').prop("checked"));
+Your first radio button on your form should be checked by default.
 
+```js
+assert($('input[type="radio"]').prop('checked'));
 ```
 
-</section>
+Your first checkbox on your form should be checked by default.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('input[type="checkbox"]').prop('checked'));
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -68,14 +67,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -107,5 +99,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

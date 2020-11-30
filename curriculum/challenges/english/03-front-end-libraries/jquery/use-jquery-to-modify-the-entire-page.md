@@ -1,41 +1,33 @@
 ---
 id: bad87fee1348bd9aecb08826
 title: Use jQuery to Modify the Entire Page
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18361
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 We're done playing with our jQuery playground. Let's tear it down!
-jQuery can target the <code>body</code> element as well.
-Here's how we would make the entire body fade out: <code> $("body").addClass("animated fadeOut");</code>
-But let's do something more dramatic. Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.
-</section>
 
-## Instructions
-<section id='instructions'>
+jQuery can target the `body` element as well.
 
-</section>
+Here's how we would make the entire body fade out: `$("body").addClass("animated fadeOut");`
 
-## Tests
-<section id='tests'>
+But let's do something more dramatic. Add the classes `animated` and `hinge` to your `body` element.
 
-```yml
-tests:
-  - text: You should add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.
-    testString: assert($('body').hasClass('animated') && $('body').hasClass('hinge'));
+# --hints--
 
+You should add the classes `animated` and `hinge` to your `body` element.
+
+```js
+assert($('body').hasClass('animated') && $('body').hasClass('hinge'));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <script>
@@ -79,14 +71,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -129,5 +114,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

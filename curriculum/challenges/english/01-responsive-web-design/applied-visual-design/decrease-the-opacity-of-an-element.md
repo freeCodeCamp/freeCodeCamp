@@ -6,34 +6,33 @@ videoUrl: 'https://scrimba.com/c/c7aKqu4'
 forumTopicId: 301055
 ---
 
-## Description
-<section id='description'>
-The <code>opacity</code> property in CSS is used to adjust the opacity, or conversely, the transparency for an item.
+# --description--
+
+The `opacity` property in CSS is used to adjust the opacity, or conversely, the transparency for an item.
+
 <blockquote>A value of 1 is opaque, which isn't transparent at all.<br>A value of 0.5 is half see-through.<br>A value of 0 is completely transparent.</blockquote>
+
 The value given will apply to the entire element, whether that's an image with some transparency, or the foreground and background colors for a block of text.
-</section>
 
-## Instructions
-<section id='instructions'>
-Set the <code>opacity</code> of the anchor tags to 0.7 using <code>links</code> class to select them.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Set the `opacity` of the anchor tags to 0.7 using `links` class to select them.
 
-```yml
-tests:
-  - text: Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.
-    testString: assert(/\.links\s*{([\s\S]*?;)*\s*opacity\s*:\s*0*\.70*\s*(;[\s\S]*?|\s*)}/.test($('style').text()));
+# --hints--
 
+Your code should set the `opacity` property to 0.7 on the anchor tags by selecting the class of `links`.
+
+```js
+assert(
+  /\.links\s*{([\s\S]*?;)*\s*opacity\s*:\s*0*\.70*\s*(;[\s\S]*?|\s*)}/.test(
+    $('style').text()
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -83,14 +82,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -139,5 +131,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

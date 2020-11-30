@@ -4,31 +4,57 @@ title: Part 61
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Set the `stroke`, `stroke-width`, and `fill` attributes to their appropriate values for this line. The `stroke-width` and `fill` are the same as the other two.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const instagramPath = $('svg path')[4]; assert(instagramPath.getAttribute('stroke') === '#fd9b98' && instagramPath.getAttribute('stroke-width') == '3' && instagramPath.getAttribute('fill') === 'transparent');
-
+```js
+const instagramPath = $('svg path')[4];
+assert(
+  instagramPath.getAttribute('stroke') === '#fd9b98' &&
+    instagramPath.getAttribute('stroke-width') == '3' &&
+    instagramPath.getAttribute('fill') === 'transparent'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -118,47 +144,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -250,5 +236,3 @@ tests:
   
 </script>
 ```
-
-</section>

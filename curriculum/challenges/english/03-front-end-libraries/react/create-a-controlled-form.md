@@ -5,106 +5,130 @@ challengeType: 6
 forumTopicId: 301384
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-The last challenge showed that React can control the internal state for certain elements like <code>input</code> and <code>textarea</code>, which makes them controlled components. This applies to other form elements as well, including the regular HTML <code>form</code> element.
-</section>
+The last challenge showed that React can control the internal state for certain elements like `input` and `textarea`, which makes them controlled components. This applies to other form elements as well, including the regular HTML `form` element.
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
-The <code>MyForm</code> component is set up with an empty <code>form</code> with a submit handler. The submit handler will be called when the form is submitted.
-We've added a button which submits the form. You can see it has the <code>type</code> set to <code>submit</code> indicating it is the button controlling the form. Add the <code>input</code> element in the <code>form</code> and set its <code>value</code> and <code>onChange()</code> attributes like the last challenge. You should then complete the <code>handleSubmit</code> method so that it sets the component state property <code>submit</code> to the current input value in the local <code>state</code>.
-<strong>Note:</strong>&nbsp; You also must call <code>event.preventDefault()</code> in the submit handler, to prevent the default form submit behavior which will refresh the web page.
-Finally, create an <code>h1</code> tag after the <code>form</code> which renders the <code>submit</code> value from the component's <code>state</code>. You can then type in the form and click the button (or press enter), and you should see your input rendered to the page.
-</section>
+The `MyForm` component is set up with an empty `form` with a submit handler. The submit handler will be called when the form is submitted.
 
-## Tests
+We've added a button which submits the form. You can see it has the `type` set to `submit` indicating it is the button controlling the form. Add the `input` element in the `form` and set its `value` and `onChange()` attributes like the last challenge. You should then complete the `handleSubmit` method so that it sets the component state property `submit` to the current input value in the local `state`.
 
-<section id='tests'>
+**Note:** You also must call `event.preventDefault()` in the submit handler, to prevent the default form submit behavior which will refresh the web page.
 
-```yml
-tests:
-  - text: <code>MyForm</code> should return a <code>div</code> element which contains a <code>form</code> and an <code>h1</code> tag. The form should include an <code>input</code> and a <code>button</code>.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyForm)); return (mockedComponent.find('div').children().find('form').length === 1 && mockedComponent.find('div').children().find('h1').length === 1 && mockedComponent.find('form').children().find('input').length === 1 && mockedComponent.find('form').children().find('button').length === 1) })());
-  - text: The state of <code>MyForm</code> should initialize with <code>input</code> and <code>submit</code> properties, both set to empty strings.
-    testString: assert(Enzyme.mount(React.createElement(MyForm)).state('input') === '' && Enzyme.mount(React.createElement(MyForm)).state('submit') === '');
-  - text: Typing in the <code>input</code> element should update the <code>input</code> property of the component&apos;s state.
-    testString: "(() => {
-      const mockedComponent = Enzyme.mount(React.createElement(MyForm));
-      const _1 = () => {
-        mockedComponent.setState({ input: '' });
-        return mockedComponent.state('input');
-      };
-      const _2 = () => {
-        mockedComponent
-          .find('input')
-          .simulate('change', { target: { value: 'TestInput' } });
-        return {
-          state: mockedComponent.state('input'),
-          inputVal: mockedComponent.find('input').props().value,
-        };
-      };
-      const before = _1();
-      const after = _2();
-      assert(
-        before === '' &&
-          after.state === 'TestInput' &&
-          after.inputVal === 'TestInput'
-      );
-    })();
-    "
-  - text: Submitting the form should run <code>handleSubmit</code> which should set the <code>submit</code> property in state equal to the current input.
-    testString: "(() => {
-      const mockedComponent = Enzyme.mount(React.createElement(MyForm));
-      const _1 = () => {
-        mockedComponent.setState({ input: '' });
-        mockedComponent.setState({ submit: '' });
-        mockedComponent
-          .find('input')
-          .simulate('change', { target: { value: 'SubmitInput' } });
-        return mockedComponent.state('submit');
-      };
-      const _2 = () => {
-        mockedComponent.find('form').simulate('submit');
-        return mockedComponent.state('submit');
-      };
-      const before = _1();
-      const after = _2();
-      assert(before === '' && after === 'SubmitInput');
-    })();
-    "
-  - text: The <code>h1</code> header should render the value of the <code>submit</code> field from the component&apos;s state.
-    testString: "(() => {
-      const mockedComponent = Enzyme.mount(React.createElement(MyForm));
-      const _1 = () => {
-        mockedComponent.setState({ input: '' });
-        mockedComponent.setState({ submit: '' });
-        mockedComponent
-          .find('input')
-          .simulate('change', { target: { value: 'TestInput' } });
-        return mockedComponent.find('h1').text();
-      };
-      const _2 = () => {
-        mockedComponent.find('form').simulate('submit');
-        return mockedComponent.find('h1').text();
-      };
-      const before = _1();
-      const after = _2();
-      assert(before === '' && after === 'TestInput');
-    })();
-    "
+Finally, create an `h1` tag after the `form` which renders the `submit` value from the component's `state`. You can then type in the form and click the button (or press enter), and you should see your input rendered to the page.
 
+# --hints--
+
+`MyForm` should return a `div` element which contains a `form` and an `h1` tag. The form should include an `input` and a `button`.
+
+```js
+assert(
+  (() => {
+    const mockedComponent = Enzyme.mount(React.createElement(MyForm));
+    return (
+      mockedComponent.find('div').children().find('form').length === 1 &&
+      mockedComponent.find('div').children().find('h1').length === 1 &&
+      mockedComponent.find('form').children().find('input').length === 1 &&
+      mockedComponent.find('form').children().find('button').length === 1
+    );
+  })()
+);
 ```
 
-</section>
+The state of `MyForm` should initialize with `input` and `submit` properties, both set to empty strings.
 
-## Challenge Seed
+```js
+assert(
+  Enzyme.mount(React.createElement(MyForm)).state('input') === '' &&
+    Enzyme.mount(React.createElement(MyForm)).state('submit') === ''
+);
+```
 
-<section id='challengeSeed'>
+Typing in the `input` element should update the `input` property of the component's state.
 
-<div id='jsx-seed'>
+```js
+(() => {
+  const mockedComponent = Enzyme.mount(React.createElement(MyForm));
+  const _1 = () => {
+    mockedComponent.setState({ input: '' });
+    return mockedComponent.state('input');
+  };
+  const _2 = () => {
+    mockedComponent
+      .find('input')
+      .simulate('change', { target: { value: 'TestInput' } });
+    return {
+      state: mockedComponent.state('input'),
+      inputVal: mockedComponent.find('input').props().value
+    };
+  };
+  const before = _1();
+  const after = _2();
+  assert(
+    before === '' &&
+      after.state === 'TestInput' &&
+      after.inputVal === 'TestInput'
+  );
+})();
+```
+
+Submitting the form should run `handleSubmit` which should set the `submit` property in state equal to the current input.
+
+```js
+(() => {
+  const mockedComponent = Enzyme.mount(React.createElement(MyForm));
+  const _1 = () => {
+    mockedComponent.setState({ input: '' });
+    mockedComponent.setState({ submit: '' });
+    mockedComponent
+      .find('input')
+      .simulate('change', { target: { value: 'SubmitInput' } });
+    return mockedComponent.state('submit');
+  };
+  const _2 = () => {
+    mockedComponent.find('form').simulate('submit');
+    return mockedComponent.state('submit');
+  };
+  const before = _1();
+  const after = _2();
+  assert(before === '' && after === 'SubmitInput');
+})();
+```
+
+The `h1` header should render the value of the `submit` field from the component's state.
+
+```js
+(() => {
+  const mockedComponent = Enzyme.mount(React.createElement(MyForm));
+  const _1 = () => {
+    mockedComponent.setState({ input: '' });
+    mockedComponent.setState({ submit: '' });
+    mockedComponent
+      .find('input')
+      .simulate('change', { target: { value: 'TestInput' } });
+    return mockedComponent.find('h1').text();
+  };
+  const _2 = () => {
+    mockedComponent.find('form').simulate('submit');
+    return mockedComponent.find('h1').text();
+  };
+  const before = _1();
+  const after = _2();
+  assert(before === '' && after === 'TestInput');
+})();
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyForm />, document.getElementById('root'));
+```
+
+## --seed-contents--
 
 ```jsx
 class MyForm extends React.Component {
@@ -145,23 +169,7 @@ class MyForm extends React.Component {
 }
 ```
 
-</div>
-
-### After Test
-
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<MyForm />, document.getElementById('root'));
-```
-
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```jsx
 class MyForm extends React.Component {
@@ -198,5 +206,3 @@ class MyForm extends React.Component {
   }
 }
 ```
-
-</section>

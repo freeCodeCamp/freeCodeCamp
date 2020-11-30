@@ -1,14 +1,16 @@
 ---
-title: Averages/Pythagorean means
 id: 594d966a1467eb84194f0086
+title: Averages/Pythagorean means
 challengeType: 5
 forumTopicId: 302227
 ---
 
-## Description
-<section id='description'>
-Compute all three of the <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Pythagorean means' title='wp: Pythagorean means' target="_blank">Pythagorean means</a> of the set of integers <big>1</big> through <big>10</big> (inclusive).
-Show that <big>$A(x_1,\ldots,x_n) \geq G(x_1,\ldots,x_n) \geq H(x_1,\ldots,x_n)$</big> for this set of positive integers.
+# --description--
+
+Compute all three of the [Pythagorean means](<https://en.wikipedia.org/wiki/Pythagorean means> "wp: Pythagorean means") of the set of integers $1$ through $10$ (inclusive).
+
+Show that $A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$ for this set of positive integers.
+
 <ul>
   <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
   <big>$ A(x_1, \ldots, x_n) = \frac{x_1 + \cdots + x_n}{n}$</big></li>
@@ -17,11 +19,11 @@ Show that <big>$A(x_1,\ldots,x_n) \geq G(x_1,\ldots,x_n) \geq H(x_1,\ldots,x_n)$
   <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list:<br>
   <big>$ H(x_1, \ldots, x_n) = \frac{n}{\frac{1}{x_1} + \cdots + \frac{1}{x_n}} $</big></li>
 </ul>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 When writing your function, assume the input is an ordered array of all inclusive numbers.
+
 For the answer, please output an object in the following format:
 
 ```js
@@ -35,38 +37,23 @@ For the answer, please output an object in the following format:
 }
 ```
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>pythagoreanMeans</code> should be a function.
-    testString: assert(typeof pythagoreanMeans === 'function');
-  - text: <code>pythagoreanMeans([1, 2, ..., 10])</code> should equal the same output above.
-    testString: assert.deepEqual(pythagoreanMeans(range1), answer1);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`pythagoreanMeans` should be a function.
 
 ```js
-function pythagoreanMeans(rangeArr) {
-
-}
+assert(typeof pythagoreanMeans === 'function');
 ```
 
-</div>
+`pythagoreanMeans([1, 2, ..., 10])` should equal the same output above.
 
+```js
+assert.deepEqual(pythagoreanMeans(range1), answer1);
+```
 
-### After Test
-<div id='js-teardown'>
+# --seed--
+
+## --after-user-code--
 
 ```js
 const range1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -78,16 +65,17 @@ const answer1 = {
   },
   test: 'is A >= G >= H ? yes'
 };
-
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function pythagoreanMeans(rangeArr) {
 
-## Solution
-<section id='solution'>
+}
+```
 
+# --solutions--
 
 ```js
 function pythagoreanMeans(rangeArr) {
@@ -152,7 +140,4 @@ function pythagoreanMeans(rangeArr) {
       mean.Geometric >= mean.Harmonic ? 'yes' : 'no'}`
   };
 }
-
 ```
-
-</section>

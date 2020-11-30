@@ -4,8 +4,7 @@ title: Part 32
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Starting below the existing coffee/price pair, add the following coffees and prices using an `article` element with two nested `p` elements inside each. As before, the first `p` element's text should contain the coffee flavor and the second `p` element's text should contain the price.
 
@@ -16,24 +15,17 @@ Hazelnut 4.00
 Mocah 4.50
 ```
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -53,22 +45,18 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          --fcc-editable-region--
+--fcc-editable-region--
           <article>
             <p>French Vanilla</p>
             <p>3.00</p>
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -87,6 +75,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

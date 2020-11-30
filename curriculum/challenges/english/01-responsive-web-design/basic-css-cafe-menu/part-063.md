@@ -4,29 +4,21 @@ title: Part 63
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now apply the `established` class to the `Est. 2020` text.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -39,12 +31,12 @@ tests:
   </head>
   <body>
     <div class="menu">
-      --fcc-editable-region--
+--fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
       </header>
-      --fcc-editable-region--
+--fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -84,10 +76,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -131,6 +119,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

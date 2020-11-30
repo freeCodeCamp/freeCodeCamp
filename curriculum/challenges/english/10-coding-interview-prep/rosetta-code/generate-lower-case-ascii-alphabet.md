@@ -1,60 +1,61 @@
 ---
-title: Generate lower case ASCII alphabet
 id: 5a23c84252665b21eecc7e7a
+title: Generate lower case ASCII alphabet
 challengeType: 5
 forumTopicId: 302274
 ---
 
-## Description
-<section id='description'>
-Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range <code>['a', 'd']</code>, the function should return <code>['a', 'b', 'c', 'd']</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range `['a', 'd']`, the function should return `['a', 'b', 'c', 'd']`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>lascii</code> should be a function.
-    testString: assert(typeof lascii=='function');
-  - text: <code>lascii("a","d")</code> should return an array.
-    testString: assert(Array.isArray(lascii('a','d')));
-  - text: "<code>lascii('a','d')</code> should return <code>[ 'a', 'b', 'c', 'd' ]</code>."
-    testString: assert.deepEqual(lascii("a","d"),results[0]);
-  - text: <code>lascii('c','i')</code> should return <code>[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]</code>.
-    testString: assert.deepEqual(lascii("c","i"),results[1]);
-  - text: <code>lascii('m','q')</code> should return <code>[ 'm', 'n', 'o', 'p', 'q' ]</code>.
-    testString: assert.deepEqual(lascii("m","q"),results[2]);
-  - text: <code>lascii('k','n')</code> should return <code>[ 'k', 'l', 'm', 'n' ]</code>.
-    testString: assert.deepEqual(lascii("k","n"),results[3]);
-  - text: <code>lascii('t','z')</code> should return <code>[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]</code>.
-    testString: assert.deepEqual(lascii("t","z"),results[4]);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`lascii` should be a function.
 
 ```js
-function lascii(cFrom, cTo) {
-
-}
+assert(typeof lascii == 'function');
 ```
 
-</div>
+`lascii("a","d")` should return an array.
 
+```js
+assert(Array.isArray(lascii('a', 'd')));
+```
 
-### After Test
-<div id='js-teardown'>
+`lascii('a','d')` should return `[ 'a', 'b', 'c', 'd' ]`.
+
+```js
+assert.deepEqual(lascii('a', 'd'), results[0]);
+```
+
+`lascii('c','i')` should return `[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]`.
+
+```js
+assert.deepEqual(lascii('c', 'i'), results[1]);
+```
+
+`lascii('m','q')` should return `[ 'm', 'n', 'o', 'p', 'q' ]`.
+
+```js
+assert.deepEqual(lascii('m', 'q'), results[2]);
+```
+
+`lascii('k','n')` should return `[ 'k', 'l', 'm', 'n' ]`.
+
+```js
+assert.deepEqual(lascii('k', 'n'), results[3]);
+```
+
+`lascii('t','z')` should return `[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]`.
+
+```js
+assert.deepEqual(lascii('t', 'z'), results[4]);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 let results=[
@@ -66,13 +67,15 @@ let results=[
 ]
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function lascii(cFrom, cTo) {
 
-## Solution
-<section id='solution'>
+}
+```
 
+# --solutions--
 
 ```js
 function lascii(cFrom, cTo) {
@@ -92,7 +95,4 @@ function lascii(cFrom, cTo) {
   return cRange(cFrom, cTo);
 
 }
-
 ```
-
-</section>

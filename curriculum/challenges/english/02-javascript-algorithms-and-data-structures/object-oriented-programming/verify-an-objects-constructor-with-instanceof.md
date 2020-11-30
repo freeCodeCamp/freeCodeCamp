@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301337
 ---
 
-## Description
-<section id='description'>
-Anytime a constructor function creates a new object, that object is said to be an <dfn>instance</dfn> of its constructor. JavaScript gives a convenient way to verify this with the <code>instanceof</code> operator. <code>instanceof</code> allows you to compare an object to a constructor, returning <code>true</code> or <code>false</code> based on whether or not that object was created with the constructor. Here's an example:
+# --description--
+
+Anytime a constructor function creates a new object, that object is said to be an <dfn>instance</dfn> of its constructor. JavaScript gives a convenient way to verify this with the `instanceof` operator. `instanceof` allows you to compare an object to a constructor, returning `true` or `false` based on whether or not that object was created with the constructor. Here's an example:
 
 ```js
 let Bird = function(name, color) {
@@ -21,7 +21,7 @@ let crow = new Bird("Alexis", "black");
 crow instanceof Bird; // => true
 ```
 
-If an object is created without using a constructor, <code>instanceof</code> will verify that it is not an instance of that constructor:
+If an object is created without using a constructor, `instanceof` will verify that it is not an instance of that constructor:
 
 ```js
 let canary = {
@@ -33,31 +33,27 @@ let canary = {
 canary instanceof Bird; // => false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Create a new instance of the <code>House</code> constructor, calling it <code>myHouse</code> and passing a number of bedrooms. Then, use <code>instanceof</code> to verify that it is an instance of <code>House</code>.
-</section>
+Create a new instance of the `House` constructor, calling it `myHouse` and passing a number of bedrooms. Then, use `instanceof` to verify that it is an instance of `House`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.
-    testString: assert(typeof myHouse.numBedrooms === 'number');
-  - text: You should verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.
-    testString: assert(/myHouse\s*instanceof\s*House/.test(code));
+`myHouse` should have a `numBedrooms` attribute set to a number.
 
+```js
+assert(typeof myHouse.numBedrooms === 'number');
 ```
 
-</section>
+You should verify that `myHouse` is an instance of `House` using the `instanceof` operator.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(/myHouse\s*instanceof\s*House/.test(code));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function House(numBedrooms) {
@@ -65,20 +61,9 @@ function House(numBedrooms) {
 }
 
 // Only change code below this line
-
-
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function House(numBedrooms) {
@@ -87,5 +72,3 @@ function House(numBedrooms) {
 const myHouse = new House(4);
 console.log(myHouse instanceof House);
 ```
-
-</section>

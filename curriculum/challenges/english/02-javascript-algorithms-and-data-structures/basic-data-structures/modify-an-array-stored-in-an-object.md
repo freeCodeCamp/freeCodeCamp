@@ -5,36 +5,51 @@ challengeType: 1
 forumTopicId: 301163
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now you've seen all the basic operations for JavaScript objects. You can add, modify, and remove key-value pairs, check if keys exist, and iterate over all the keys in an object. As you continue learning JavaScript you will see even more versatile applications of objects. Additionally, the Data Structures lessons located in the Coding Interview Prep section of the curriculum also cover the ES6 <dfn>Map</dfn> and <dfn>Set</dfn> objects, both of which are similar to ordinary objects but provide some additional features. Now that you've learned the basics of arrays and objects, you're fully prepared to begin tackling more complex problems using JavaScript!
-</section>
 
-## Instructions
-<section id='instructions'>
-Take a look at the object we've provided in the code editor. The <code>user</code> object contains three keys. The <code>data</code> key contains five keys, one of which contains an array of <code>friends</code>. From this, you can see how flexible objects are as data structures. We've started writing a function <code>addFriend</code>. Finish writing it so that it takes a <code>user</code> object and adds the name of the <code>friend</code> argument to the array stored in <code>user.data.friends</code> and returns that array.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Take a look at the object we've provided in the code editor. The `user` object contains three keys. The `data` key contains five keys, one of which contains an array of `friends`. From this, you can see how flexible objects are as data structures. We've started writing a function `addFriend`. Finish writing it so that it takes a `user` object and adds the name of the `friend` argument to the array stored in `user.data.friends` and returns that array.
 
-```yml
-tests:
-  - text: The <code>user</code> object should have <code>name</code>, <code>age</code>, and <code>data</code> keys.
-    testString: assert('name' in user && 'age' in user && 'data' in user);
-  - text: The <code>addFriend</code> function should accept a <code>user</code> object and a <code>friend</code> string as arguments and add the friend to the array of <code>friends</code> in the <code>user</code> object.
-    testString: assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })());
-  - text: <code>addFriend(user, "Pete")</code> should return <code>["Sam", "Kira", "Tomo", "Pete"]</code>.
-    testString: assert.deepEqual((function() { delete user.data.friends; user.data.friends = ['Sam', 'Kira', 'Tomo']; return addFriend(user, 'Pete') })(), ['Sam', 'Kira', 'Tomo', 'Pete']);
+# --hints--
 
+The `user` object should have `name`, `age`, and `data` keys.
+
+```js
+assert('name' in user && 'age' in user && 'data' in user);
 ```
 
-</section>
+The `addFriend` function should accept a `user` object and a `friend` string as arguments and add the friend to the array of `friends` in the `user` object.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    let L1 = user.data.friends.length;
+    addFriend(user, 'Sean');
+    let L2 = user.data.friends.length;
+    return L2 === L1 + 1;
+  })()
+);
+```
 
-<div id='js-seed'>
+`addFriend(user, "Pete")` should return `["Sam", "Kira", "Tomo", "Pete"]`.
+
+```js
+assert.deepEqual(
+  (function () {
+    delete user.data.friends;
+    user.data.friends = ['Sam', 'Kira', 'Tomo'];
+    return addFriend(user, 'Pete');
+  })(),
+  ['Sam', 'Kira', 'Tomo', 'Pete']
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let user = {
@@ -66,14 +81,7 @@ function addFriend(userObj, friend) {
 console.log(addFriend(user, 'Pete'));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let user = {
@@ -101,5 +109,3 @@ function addFriend(userObj, friend) {
   return userObj.data.friends;
 }
 ```
-
-</section>

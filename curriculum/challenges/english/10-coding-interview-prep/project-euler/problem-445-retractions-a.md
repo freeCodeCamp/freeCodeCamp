@@ -1,47 +1,31 @@
 ---
 id: 5900f52a1000cf542c51003c
-challengeType: 5
 title: 'Problem 445: Retractions A'
+challengeType: 5
 forumTopicId: 302117
 ---
 
-## Description
-<section id='description'>
-For every integer n>1, the family of functions fn,a,b  is defined
-by fn,a,b(x)≡ax+b mod n for a,b,x integer and  0<a<n, 0≤b<n, 0≤x<n.
-We will call fn,a,b a retraction if fn,a,b(fn,a,b(x))≡fn,a,b(x) mod n for every 0≤x<n.
-Let R(n) be the number of retractions for n.
+# --description--
 
+For every integer n>1, the family of functions fn,a,b is defined
 
-You are given that
-∑ R(c) for c=C(100 000,k), and 1 ≤ k ≤99 999 ≡628701600 (mod 1 000 000 007).
-(C(n,k) is the binomial coefficient).
+by fn,a,b(x)≡ax+b mod n for a,b,x integer and 0
 
-Find ∑ R(c) for c=C(10 000 000,k), and 1 ≤k≤ 9 999 999.
-Give your answer modulo 1 000 000 007.
-</section>
+You are given that ∑ R(c) for c=C(100 000,k), and 1 ≤ k ≤99 999 ≡628701600 (mod 1 000 000 007). (C(n,k) is the binomial coefficient).
 
-## Instructions
-<section id='instructions'>
+Find ∑ R(c) for c=C(10 000 000,k), and 1 ≤k≤ 9 999 999. Give your answer modulo 1 000 000 007.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`euler445()` should return 659104042.
 
-```yml
-tests:
-  - text: <code>euler445()</code> should return 659104042.
-    testString: assert.strictEqual(euler445(), 659104042);
-
+```js
+assert.strictEqual(euler445(), 659104042);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler445() {
@@ -52,17 +36,8 @@ function euler445() {
 euler445();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

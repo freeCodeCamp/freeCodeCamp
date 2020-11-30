@@ -1,26 +1,31 @@
 ---
-title: Deal cards for FreeCell
 id: 59694356a6e7011f7f1c5f4e
+title: Deal cards for FreeCell
 challengeType: 5
 forumTopicId: 302246
 ---
 
-## Description
-<section id='description'>
-<i>FreeCell</i> is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for <a href="https://rosettacode.org/wiki/DOS" title="DOS" target="_blank">DOS</a>, then <a href="https://rosettacode.org/wiki/Windows" title="Windows" target="_blank">Windows</a>. This version introduced 32000 numbered deals.
+# --description--
+
+*FreeCell* is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for [DOS](https://rosettacode.org/wiki/DOS "DOS"), then [Windows](https://rosettacode.org/wiki/Windows "Windows"). This version introduced 32000 numbered deals.
+
 As the game became popular, Jim Horne disclosed the algorithm, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
-The algorithm uses this <a href="https://rosettacode.org/wiki/linear congruential generator" title="linear congruential generator" target="_blank">linear congruential generator</a> from Microsoft C:
+
+The algorithm uses this [linear congruential generator](<https://rosettacode.org/wiki/linear congruential generator> "linear congruential generator") from Microsoft C:
+
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
   <li>$rand_n = state_n \div 2^{16}$</li>
   <li>$rand_n$ is in range 0 to 32767.</li>
 </ul>
+
 The algorithm follows:
+
 <ol>
   <li>Seed the RNG with the number of the deal.
-  <li>Create an <a href="https://rosettacode.org/wiki/array" title="array" target="_blank">array</a> of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
+  </li><li>Create an <a href='https://rosettacode.org/wiki/array' title='array' target='_blank'>array</a> of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
   <li>Until the array is empty:</li>
-  <li>Choose a random card at index &equiv; next random number (mod array length).</li>
+  <li>Choose a random card at index ≡ next random number (mod array length).</li>
     <ul>
       <li>Swap this random card with the last card of the array.</li>
       <li>Remove this random card from the array. (Array length goes down by 1.)</li>
@@ -28,8 +33,11 @@ The algorithm follows:
     </ul>
   <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
-<strong>Example:</strong>
-<strong>Order to deal cards</strong>
+
+**Example:**
+
+**Order to deal cards**
+
 <pre> 1  2  3  4  5  6  7  8
  9 10 11 12 13 14 15 16
 17 18 19 20 21 22 23 24
@@ -37,7 +45,8 @@ The algorithm follows:
 33 34 35 36 37 38 39 40
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
-<strong>Game #1</strong>
+
+**Game #1**
 
 ```js
 [
@@ -51,7 +60,7 @@ The algorithm follows:
 ]
 ```
 
-<strong>Game #617</strong>
+**Game #617**
 
 ```js
 [
@@ -65,51 +74,47 @@ The algorithm follows:
 ]
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
-Deals can also be checked against <a href="https://freecellgamesolutions.com/" target="_blank">FreeCell solutions to 1000000 games</a>. (Summon a video solution, and it displays the initial deal.)
-</section>
 
-## Tests
-<section id='tests'>
+Deals can also be checked against [FreeCell solutions to 1000000 games](https://freecellgamesolutions.com/). (Summon a video solution, and it displays the initial deal.)
 
-```yml
-tests:
-  - text: <code>dealFreeCell</code> should be a function.
-    testString: assert(typeof dealFreeCell === 'function');
-  - text: <code>dealFreeCell(seed)</code> should return an object.
-    testString: assert(typeof dealFreeCell(1) === 'object');
-  - text: <code>dealFreeCell(seed)</code> should return an array of length 7.
-    testString: assert(dealFreeCell(1).length === 7);
-  - text: "<code>dealFreeCell(1)</code> should return an array identical to example \"Game #1\""
-    testString: "assert.deepEqual(dealFreeCell(1), game1);"
-  - text: "<code>dealFreeCell(617)</code> should return an array identical to example \"Game #617\""
-    testString: "assert.deepEqual(dealFreeCell(617), game617);"
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`dealFreeCell` should be a function.
 
 ```js
-function dealFreeCell(seed) {
-
-  return true;
-}
+assert(typeof dealFreeCell === 'function');
 ```
 
-</div>
+`dealFreeCell(seed)` should return an object.
 
+```js
+assert(typeof dealFreeCell(1) === 'object');
+```
 
-### After Test
-<div id='js-teardown'>
+`dealFreeCell(seed)` should return an array of length 7.
+
+```js
+assert(dealFreeCell(1).length === 7);
+```
+
+`dealFreeCell(1)` should return an array identical to example "Game #1"
+
+```js
+assert.deepEqual(dealFreeCell(1), game1);
+```
+
+`dealFreeCell(617)` should return an array identical to example "Game #617"
+
+```js
+assert.deepEqual(dealFreeCell(617), game617);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const replaceThis = 3;
@@ -133,13 +138,16 @@ const game617 = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function dealFreeCell(seed) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 // RNG
@@ -198,7 +206,4 @@ function dealFreeCell(seed) {
 
   return deltCards;
 }
-
 ```
-
-</section>

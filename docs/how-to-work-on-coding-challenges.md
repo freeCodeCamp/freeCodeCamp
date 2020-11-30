@@ -220,7 +220,8 @@ Use <code>parseInt</code> to convert the variable <code>realNumber</code> into a
 ```
 - References to file names and path directories (e.g. `package.json`, `src/components`) should be wrapped in `<code>` tags.
 - Multi-line code blocks **must be preceded by an empty line**. The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages). To complete the code block, you must start a newline which only has three backticks and **another empty line**. See example below:
-  
+- Whitespace matters in Markdown, so we recommend that you make it visible in your editor.  
+
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 
 ````md
@@ -444,9 +445,9 @@ Once you have verified that each challenge you've worked on passes the tests, [p
 
 ## Upcoming Challenge Template
 
-The challenge template in the process of being updated to a cleaner, less nested structure.  This has not been completely finalized, but the following should close to the final structure:
+The challenge template in the process of being updated to a cleaner, less nested structure.
 
-````mdx
+````md
 
 ---
 id: Unique identifier (alphanumerical, MongoDB_id)
@@ -456,29 +457,25 @@ videoUrl: 'url of video explanation'
 forumTopicId: 12345
 ---
 
-import Script from './script.mdx';
+::import{component="Script" from="./script.md" }
 
-## --step-description--
+# --description--
 
 Description text, in markdown
 
 ```html
-<div> 
+<div>
   example code
 </div>
 ```
 
-## --step-hints--
+# --hints--
 
-![test-id-1]
-
-There will be an arbitrary number of triples of ids, instructions (in markdown) and code blocks.  
+There will be an arbitrary number of pairs of instructions (in markdown) and code blocks.  
 
 ```js
 Code for test one
 ```
-
-![test-id-2]
 
 More instructions in markdown syntax
 
@@ -486,23 +483,23 @@ More instructions in markdown syntax
 More code
 ```
 
-## --step-seed--
+# --seed--
 
-### --before-user-code--
+## --before-user-code--
 
 ```lang
 Code evaluated before the user’s
 ```
 
-### --after-user-code--
+## --after-user-code--
 
 ```lang
 Code evaluated after the user’s, and just before the tests
 ```
 
-### --seed-content--
+## --seed-contents--
 
-![index-html]
+::id{#index-html}
 
 ```html
 Some html
@@ -516,26 +513,30 @@ Some css
 Some js
 ```
 
-![index-js]
+::id{#index-js}
 
-<Script />
+::use{component="Script"}
 
 
-# --solution-marker--
+# --solutions--
 
 Exactly the same as the seeds section
 
-## --next-solution-marker
+---
 
-Same again
+second solution
 
-# --question-marker--
+---
 
-## --text-marker--
+third solution etc.
+
+# --question--
+
+## --text--
 
 The question would go here (only used for video challenges)
 
-## --answers-marker--
+## --answers--
 
 Answer 1
 
@@ -547,7 +548,7 @@ Answer 2
 
 More answers
 
-## --solution-marker--
+## --video-solution--
 
 \<number of correct answer\>
 

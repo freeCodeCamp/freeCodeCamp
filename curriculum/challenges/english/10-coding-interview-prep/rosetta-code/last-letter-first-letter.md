@@ -5,51 +5,138 @@ challengeType: 5
 forumTopicId: 385256
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 A certain children's game involves starting with a word in a particular category. Each participant in turn says a word, but that word must begin with the final letter of the previous word. Once a word has been given, it cannot be repeated. If an opponent cannot give a word in the category, they fall out of the game.
+
 For example, with "animals" as the category,
-<pre>
-Child 1: dog
+
+<pre>Child 1: dog
 Child 2: goldfish
 Child 1: hippopotamus
 Child 2: snake
 ...
 </pre>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Write a function that takes an input array of words. The function should return an array of words where the first letter of each word is the same as the last letter of the previous word. Only use the words in the input array, and once a word is used it cannot be repeated. The words in the return array should be selected and sequenced so that that its length is maximized.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-``` yml
-tests:
-  - text: <code>findLongestChain</code> should be a function.
-    testString: assert(typeof findLongestChain == 'function');
-  - text: <code>findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])</code> should return an array.
-    testString: assert(Array.isArray(findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])));
-  - text: <code>findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])</code> should return <code>["involves", "starting", "game", "each"]</code>.
-    testString: assert.deepEqual(findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"]), ['involves', 'starting', 'game', 'each']);
-  - text: <code>findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])</code> should return <code>["braviary", "yamask", "kangaskhan"]</code>
-    testString: assert.deepEqual(findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"]), ['braviary', 'yamask', 'kangaskhan']);
-  - text: <code>findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])</code> should return <code>["poliwrath", "harp", "poochyena", "archana"]</code>.
-    testString: assert.deepEqual(findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"]), ['poliwrath', 'harp', 'poochyena', 'archana']);
-  - text: <code>findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])</code> should return <code>["scolipede", "elephant", "tigers", "sealeo"]</code>.
-    testString: assert.deepEqual(findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"]), ['scolipede', 'elephant', 'tigers', 'sealeo']);
-  - text: <code>findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])</code> should return <code>["machamp", "petilil", "lumineon", "nosepass"]</code>.
-    testString: assert.deepEqual(findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"]), ['machamp', 'petilil', 'lumineon', 'nosepass']);
+`findLongestChain` should be a function.
+
+```js
+assert(typeof findLongestChain == 'function');
 ```
 
-</section>
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` should return an array.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  Array.isArray(
+    findLongestChain([
+      'certain',
+      'each',
+      'game',
+      'involves',
+      'starting',
+      'with',
+      'word'
+    ])
+  )
+);
+```
 
-<div id='js-seed'>
+`findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])` should return `["involves", "starting", "game", "each"]`.
+
+```js
+assert.deepEqual(
+  findLongestChain([
+    'certain',
+    'each',
+    'game',
+    'involves',
+    'starting',
+    'with',
+    'word'
+  ]),
+  ['involves', 'starting', 'game', 'each']
+);
+```
+
+`findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])` should return `["braviary", "yamask", "kangaskhan"]`
+
+```js
+assert.deepEqual(
+  findLongestChain([
+    'audino',
+    'bagon',
+    'kangaskhan',
+    'banette',
+    'bidoof',
+    'braviary',
+    'exeggcute',
+    'yamask'
+  ]),
+  ['braviary', 'yamask', 'kangaskhan']
+);
+```
+
+`findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])` should return `["poliwrath", "harp", "poochyena", "archana"]`.
+
+```js
+assert.deepEqual(
+  findLongestChain([
+    'harp',
+    'poliwrath',
+    'poochyena',
+    'porygon2',
+    'porygonz',
+    'archana'
+  ]),
+  ['poliwrath', 'harp', 'poochyena', 'archana']
+);
+```
+
+`findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])` should return `["scolipede", "elephant", "tigers", "sealeo"]`.
+
+```js
+assert.deepEqual(
+  findLongestChain([
+    'scolipede',
+    'elephant',
+    'zeaking',
+    'sealeo',
+    'silcoon',
+    'tigers'
+  ]),
+  ['scolipede', 'elephant', 'tigers', 'sealeo']
+);
+```
+
+`findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])` should return `["machamp", "petilil", "lumineon", "nosepass"]`.
+
+```js
+assert.deepEqual(
+  findLongestChain([
+    'loudred',
+    'lumineon',
+    'lunatone',
+    'machamp',
+    'magnezone',
+    'nosepass',
+    'petilil',
+    'pidgeotto',
+    'pikachu'
+  ]),
+  ['machamp', 'petilil', 'lumineon', 'nosepass']
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function findLongestChain(items) {
@@ -57,12 +144,7 @@ function findLongestChain(items) {
 }
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function findLongestChain(items) {
@@ -126,5 +208,3 @@ function findLongestChain(items) {
   return longest_path;
 }
 ```
-
-</section>

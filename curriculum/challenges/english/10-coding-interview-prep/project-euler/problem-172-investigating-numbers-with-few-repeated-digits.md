@@ -1,36 +1,25 @@
 ---
 id: 5900f4181000cf542c50ff2b
-challengeType: 5
 title: 'Problem 172: Investigating numbers with few repeated digits'
+challengeType: 5
 forumTopicId: 301807
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 How many 18-digit numbers n (without leading zeros) are there such that no digit occurs more than three times in n?
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler172()` should return 227485267000992000.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler172()</code> should return 227485267000992000.
-    testString: assert.strictEqual(euler172(), 227485267000992000);
-
+```js
+assert.strictEqual(euler172(), 227485267000992000);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler172() {
@@ -41,17 +30,8 @@ function euler172() {
 euler172();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

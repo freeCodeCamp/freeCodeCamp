@@ -6,40 +6,48 @@ videoUrl: 'https://scrimba.com/c/cRkVbsQ'
 forumTopicId: 18311
 ---
 
-## Description
-<section id='description'>
-Classes allow you to use the same CSS styles on multiple HTML elements. You can see this by applying your <code>red-text</code> class to the first <code>p</code> element.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Classes allow you to use the same CSS styles on multiple HTML elements. You can see this by applying your `red-text` class to the first `p` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `h2` element should be red.
 
-```yml
-tests:
-  - text: Your <code>h2</code> element should be red.
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
-  - text: Your <code>h2</code> element should have the class <code>red-text</code>.
-    testString: assert($("h2").hasClass("red-text"));
-  - text: Your first <code>p</code> element should be red.
-    testString: assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)");
-  - text: Your second and third <code>p</code> elements should not be red.
-    testString: assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"));
-  - text: Your first <code>p</code> element should have the class <code>red-text</code>.
-    testString: assert($("p:eq(0)").hasClass("red-text"));
-
+```js
+assert($('h2').css('color') === 'rgb(255, 0, 0)');
 ```
 
-</section>
+Your `h2` element should have the class `red-text`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').hasClass('red-text'));
+```
 
-<div id='html-seed'>
+Your first `p` element should be red.
+
+```js
+assert($('p:eq(0)').css('color') === 'rgb(255, 0, 0)');
+```
+
+Your second and third `p` elements should not be red.
+
+```js
+assert(
+  !($('p:eq(1)').css('color') === 'rgb(255, 0, 0)') &&
+    !($('p:eq(2)').css('color') === 'rgb(255, 0, 0)')
+);
+```
+
+Your first `p` element should have the class `red-text`.
+
+```js
+assert($('p:eq(0)').hasClass('red-text'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -81,14 +89,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -129,5 +130,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

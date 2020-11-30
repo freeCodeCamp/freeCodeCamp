@@ -5,19 +5,17 @@ challengeType: 1
 forumTopicId: 301313
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-<code>Array.prototype.reduce()</code>, or simply <code>reduce()</code>, is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the <code>reduce</code> method.
+`Array.prototype.reduce()`, or simply `reduce()`, is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the `reduce` method.
 
-The <code>reduce</code> method allows for more general forms of array processing, and it's possible to show that both <code>filter</code> and <code>map</code> can be derived as special applications of <code>reduce</code>.
-The <code>reduce</code> method iterates over each item in an array and returns a single value (i.e. string, number, object, array).  This is achieved via a callback function that is called on each iteration.
+The `reduce` method allows for more general forms of array processing, and it's possible to show that both `filter` and `map` can be derived as special applications of `reduce`. The `reduce` method iterates over each item in an array and returns a single value (i.e. string, number, object, array). This is achieved via a callback function that is called on each iteration.
 
-The callback function accepts four arguments. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, the second is the current element being processed, the third is the index of that element and the fourth is the array upon which <code>reduce</code> is called.
+The callback function accepts four arguments. The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration, the second is the current element being processed, the third is the index of that element and the fourth is the array upon which `reduce` is called.
 
-In addition to the callback function, <code>reduce</code> has an additional parameter which takes an initial value for the accumulator.  If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
+In addition to the callback function, `reduce` has an additional parameter which takes an initial value for the accumulator. If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
 
-See below for an example using <code>reduce</code> on the <code>users</code> array to return the sum of all the users' ages. For simplicity, the example only uses the first and second arguments.
+See below for an example using `reduce` on the `users` array to return the sum of all the users' ages. For simplicity, the example only uses the first and second arguments.
 
 ```js
 const users = [
@@ -46,37 +44,47 @@ const usersObj = users.reduce((obj, user) => {
 console.log(usersObj); // { John: 34, Amy: 20, camperCat: 10 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-The variable <code>watchList</code> holds an array of objects with information on several movies. Use <code>reduce</code> to find the average IMDB rating of the movies <strong>directed by Christopher Nolan</strong>. Recall from prior challenges how to <code>filter</code> data and <code>map</code> over it to pull what you need. You may need to create other variables, and return the average rating from <code>getRating</code> function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
-</section>
+The variable `watchList` holds an array of objects with information on several movies. Use `reduce` to find the average IMDB rating of the movies **directed by Christopher Nolan**. Recall from prior challenges how to `filter` data and `map` over it to pull what you need. You may need to create other variables, and return the average rating from `getRating` function. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>watchList</code> variable should not change.
-    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron");
-  - text: Your code should use the <code>reduce</code> method.
-    testString: assert(code.match(/\.reduce/g));
-  - text: The <code>getRating(watchList)</code> should equal 8.675.
-    testString: assert(getRating(watchList) === 8.675);
-  - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!code.match(/for\s*?\([\s\S]*?\)/g));
-  - text: Your code should return correct output after modifying the <code>watchList</code> object.
-    testString: assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
+The `watchList` variable should not change.
 
+```js
+assert(
+  watchList[0].Title === 'Inception' && watchList[4].Director == 'James Cameron'
+);
 ```
 
-</section>
+Your code should use the `reduce` method.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\.reduce/g));
+```
 
-<div id='js-seed'>
+The `getRating(watchList)` should equal 8.675.
+
+```js
+assert(getRating(watchList) === 8.675);
+```
+
+Your code should not use a `for` loop.
+
+```js
+assert(!code.match(/for\s*?\([\s\S]*?\)/g));
+```
+
+Your code should return correct output after modifying the `watchList` object.
+
+```js
+assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 // The global variable
@@ -204,14 +212,7 @@ function getRating(watchList){
 console.log(getRating(watchList));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // The global variable
@@ -336,7 +337,4 @@ function getRating(watchList){
   averageRating = rating.reduce((accum, curr) => accum + curr)/rating.length;
   return averageRating;
 }
-
 ```
-
-</section>

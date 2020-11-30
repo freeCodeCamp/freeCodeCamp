@@ -5,28 +5,25 @@ challengeType: 11
 videoId: UVimlsy9eW0
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What are the main neural network components that make up a Long Short Term Memory network?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What are the main neural network components that make up a Long Short Term Memory network?
+New information and prediction.
 
-  answers:
-    - |
-      New information and prediction.
-    - |
-      Prediction, collected possibilities, and selection.
-    - |
-      Prediction, ignoring, forgetting, and selection.
-  solution: 3
-```
+---
 
-</section>
+Prediction, collected possibilities, and selection.
+
+---
+
+Prediction, ignoring, forgetting, and selection.
+
+## --video-solution--
+
+3
+

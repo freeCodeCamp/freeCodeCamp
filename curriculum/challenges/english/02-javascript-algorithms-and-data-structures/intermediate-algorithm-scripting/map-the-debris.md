@@ -5,38 +5,48 @@ challengeType: 5
 forumTopicId: 16021
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
-The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.
-You can read about orbital periods <a href="http://en.wikipedia.org/wiki/Orbital_period" target='_blank'>on Wikipedia</a>.
+
+The array will contain objects in the format `{name: 'name', avgAlt: avgAlt}`.
+
+You can read about orbital periods [on Wikipedia](http://en.wikipedia.org/wiki/Orbital_period).
+
 The values should be rounded to the nearest whole number. The body being orbited is Earth.
+
 The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km<sup>3</sup>s<sup>-2</sup>.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])` should return `[{name: "sputnik", orbitalPeriod: 86400}]`.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: '<code>orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])</code> should return <code>[{name: "sputnik", orbitalPeriod: 86400}]</code>.'
-    testString: 'assert.deepEqual(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]), [{name: "sputnik", orbitalPeriod: 86400}]);'
-  - text: '<code>orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])</code> should return <code>[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]</code>.'
-    testString: 'assert.deepEqual(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]), [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]);'
-
+```js
+assert.deepEqual(orbitalPeriod([{ name: 'sputnik', avgAlt: 35873.5553 }]), [
+  { name: 'sputnik', orbitalPeriod: 86400 }
+]);
 ```
 
-</section>
+`orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])` should return `[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(
+  orbitalPeriod([
+    { name: 'iss', avgAlt: 413.6 },
+    { name: 'hubble', avgAlt: 556.7 },
+    { name: 'moon', avgAlt: 378632.553 }
+  ]),
+  [
+    { name: 'iss', orbitalPeriod: 5557 },
+    { name: 'hubble', orbitalPeriod: 5734 },
+    { name: 'moon', orbitalPeriod: 2377399 }
+  ]
+);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function orbitalPeriod(arr) {
@@ -48,15 +58,7 @@ function orbitalPeriod(arr) {
 orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function orbitalPeriod(arr) {
@@ -72,7 +74,4 @@ function orbitalPeriod(arr) {
 }
 
 orbitalPeriod([{name : "sputkin", avgAlt : 35873.5553}]);
-
 ```
-
-</section>

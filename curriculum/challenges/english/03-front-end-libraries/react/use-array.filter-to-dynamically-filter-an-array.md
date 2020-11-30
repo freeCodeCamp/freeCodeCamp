@@ -5,104 +5,134 @@ challengeType: 6
 forumTopicId: 301416
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-The <code>map</code> array method is a powerful tool that you will use often when working with React. Another method related to <code>map</code> is <code>filter</code>, which filters the contents of an array based on a condition, then returns a new array. For example, if you have an array of users that all have a property <code>online</code> which can be set to <code>true</code> or <code>false</code>, you can filter only those users that are online by writing:
-<code>let onlineUsers = users.filter(user => user.online);</code>
-</section>
+The `map` array method is a powerful tool that you will use often when working with React. Another method related to `map` is `filter`, which filters the contents of an array based on a condition, then returns a new array. For example, if you have an array of users that all have a property `online` which can be set to `true` or `false`, you can filter only those users that are online by writing:
 
-## Instructions
+`let onlineUsers = users.filter(user => user.online);`
 
-<section id='instructions'>
-In the code editor, <code>MyComponent</code>&apos;s <code>state</code> is initialized with an array of users. Some users are online and some aren't. Filter the array so you see only the users who are online. To do this, first use <code>filter</code> to return a new array containing only the users whose <code>online</code> property is <code>true</code>. Then, in the <code>renderOnline</code> variable, map over the filtered array, and return a <code>li</code> element for each user that contains the text of their <code>username</code>. Be sure to include a unique <code>key</code> as well, like in the last challenges.
-</section>
+# --instructions--
 
-## Tests
+In the code editor, `MyComponent`'s `state` is initialized with an array of users. Some users are online and some aren't. Filter the array so you see only the users who are online. To do this, first use `filter` to return a new array containing only the users whose `online` property is `true`. Then, in the `renderOnline` variable, map over the filtered array, and return a `li` element for each user that contains the text of their `username`. Be sure to include a unique `key` as well, like in the last challenges.
 
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>MyComponent</code> should exist and render to the page.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find('MyComponent').length, 1);
-  - text: <code>MyComponent</code>&apos;s state should be initialized to an array of six users.")
-    testString: assert(Array.isArray(Enzyme.mount(React.createElement(MyComponent)).state('users')) === true && Enzyme.mount(React.createElement(MyComponent)).state('users').length === 6);
-  - text: <code>MyComponent</code> should return a <code>div</code>, an <code>h1</code>, and then an unordered list containing <code>li</code> elements for every user whose online status is set to <code>true</code>.
-    testString: "(() => {
-      const comp = Enzyme.mount(React.createElement(MyComponent));
-      const users = (bool) => ({
-        users: [
-          { username: 'Jeff', online: bool },
-          { username: 'Alan', online: bool },
-          { username: 'Mary', online: bool },
-          { username: 'Jim', online: bool },
-          { username: 'Laura', online: bool },
-        ],
-      });
-      const result = () => comp.find('li').length;
-      const _1 = result();
-      const _2 = () => {
-        comp.setState(users(true));
-        return result();
-      };
-      const _3 = () => {
-        comp.setState(users(false));
-        return result();
-      };
-      const _4 = () => {
-        comp.setState({ users: [] });
-        return result();
-      };
-      const _2_val = _2();
-      const _3_val = _3();
-      const _4_val = _4();
-      assert(
-        comp.find('div').length === 1 &&
-          comp.find('h1').length === 1 &&
-          comp.find('ul').length === 1 &&
-          _1 === 4 &&
-          _2_val === 5 &&
-          _3_val === 0 &&
-          _4_val === 0
-      );
-    })();
-    "
-  - text: <code>MyComponent</code> should render <code>li</code> elements that contain the username of each online user.
-    testString: "(() => {
-      const comp = Enzyme.mount(React.createElement(MyComponent));
-      const users = (bool) => ({
-        users: [
-          { username: 'Jeff', online: bool },
-          { username: 'Alan', online: bool },
-          { username: 'Mary', online: bool },
-          { username: 'Jim', online: bool },
-          { username: 'Laura', online: bool },
-        ],
-      });
-      const ul = () => {
-        comp.setState(users(true));
-        return comp.find('ul').html();
-      };
-      const html = ul();
-      assert(
-        html ===
-          '<ul><li>Jeff</li><li>Alan</li><li>Mary</li><li>Jim</li><li>Laura</li></ul>'
-      );
-    })();
-    "
-  - text: Each list item element should have a unique <code>key</code> attribute.
-    testString: assert((() => { const ul = Enzyme.mount(React.createElement(MyComponent)).find('ul'); console.log(ul.debug()); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key() ]); return keys.size === 4; })());
+`MyComponent` should exist and render to the page.
 
+```js
+assert.strictEqual(
+  Enzyme.mount(React.createElement(MyComponent)).find('MyComponent').length,
+  1
+);
 ```
 
-</section>
+`MyComponent`'s state should be initialized to an array of six users.")
 
-## Challenge Seed
+```js
+assert(
+  Array.isArray(
+    Enzyme.mount(React.createElement(MyComponent)).state('users')
+  ) === true &&
+    Enzyme.mount(React.createElement(MyComponent)).state('users').length === 6
+);
+```
 
-<section id='challengeSeed'>
+`MyComponent` should return a `div`, an `h1`, and then an unordered list containing `li` elements for every user whose online status is set to `true`.
 
-<div id='jsx-seed'>
+```js
+(() => {
+  const comp = Enzyme.mount(React.createElement(MyComponent));
+  const users = (bool) => ({
+    users: [
+      { username: 'Jeff', online: bool },
+      { username: 'Alan', online: bool },
+      { username: 'Mary', online: bool },
+      { username: 'Jim', online: bool },
+      { username: 'Laura', online: bool }
+    ]
+  });
+  const result = () => comp.find('li').length;
+  const _1 = result();
+  const _2 = () => {
+    comp.setState(users(true));
+    return result();
+  };
+  const _3 = () => {
+    comp.setState(users(false));
+    return result();
+  };
+  const _4 = () => {
+    comp.setState({ users: [] });
+    return result();
+  };
+  const _2_val = _2();
+  const _3_val = _3();
+  const _4_val = _4();
+  assert(
+    comp.find('div').length === 1 &&
+      comp.find('h1').length === 1 &&
+      comp.find('ul').length === 1 &&
+      _1 === 4 &&
+      _2_val === 5 &&
+      _3_val === 0 &&
+      _4_val === 0
+  );
+})();
+```
+
+`MyComponent` should render `li` elements that contain the username of each online user.
+
+```js
+(() => {
+  const comp = Enzyme.mount(React.createElement(MyComponent));
+  const users = (bool) => ({
+    users: [
+      { username: 'Jeff', online: bool },
+      { username: 'Alan', online: bool },
+      { username: 'Mary', online: bool },
+      { username: 'Jim', online: bool },
+      { username: 'Laura', online: bool }
+    ]
+  });
+  const ul = () => {
+    comp.setState(users(true));
+    return comp.find('ul').html();
+  };
+  const html = ul();
+  assert(
+    html ===
+      '<ul><li>Jeff</li><li>Alan</li><li>Mary</li><li>Jim</li><li>Laura</li></ul>'
+  );
+})();
+```
+
+Each list item element should have a unique `key` attribute.
+
+```js
+assert(
+  (() => {
+    const ul = Enzyme.mount(React.createElement(MyComponent)).find('ul');
+    console.log(ul.debug());
+    const keys = new Set([
+      ul.childAt(0).key(),
+      ul.childAt(1).key(),
+      ul.childAt(2).key(),
+      ul.childAt(3).key()
+    ]);
+    return keys.size === 4;
+  })()
+);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyComponent />, document.getElementById('root'));
+```
+
+## --seed-contents--
 
 ```jsx
 class MyComponent extends React.Component {
@@ -150,23 +180,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-</div>
-
-### After Test
-
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<MyComponent />, document.getElementById('root'));
-```
-
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```jsx
 class MyComponent extends React.Component {
@@ -217,5 +231,3 @@ class MyComponent extends React.Component {
   }
 }
 ```
-
-</section>

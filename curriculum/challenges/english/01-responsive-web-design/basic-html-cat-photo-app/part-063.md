@@ -4,44 +4,52 @@ title: Part 63
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) element. The `href` attribute should be set to `https://www.freecodecamp.org`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your anchor (`a`) element should be nested within the `footer` element. Make sure to added an opening tag and closing tag for the anchor (`a`) element.
 
-```yml
-tests:
-  - text: Your anchor (`a`) element should be nested within the `footer` element. Make sure to added an opening tag and closing tag for the anchor (`a`) element.
-    testString: assert( $('footer > p > a').length );
-  - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: |
-      const aElemClosingTags = code.match(/<\/a\>/g);
-      assert( aElemClosingTags && aElemClosingTags.length === 3);
-  - text: Your anchor (`a`) element should have an `href` attribute with the value `https://www.freecodecamp.org`. You may have omitted the attribute/value, or have a typo.
-    testString: |
-      const nestedAnchor = $('footer > p > a')[0];
-      assert( nestedAnchor.getAttribute('href') === 'https://www.freecodecamp.org' );
-  - text: The link's text should be `freeCodeCamp.org`. You have either omitted the text or have a typo.
-    testString: |
-      const nestedAnchor = $('footer > p > a')[0];
-      assert( nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') === 'freecodecamp.org');
-  - text: After nesting the anchor (`a`) element, the only `p` element content visible in the browser should be `No Copyright - freeCodeCamp.org`. Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
-    testString: |
-      const pText = $('footer > p')[0].innerText.toLowerCase().replace(/\s+/g, ' ');
-      assert( pText.match(/^no copyright - freecodecamp.org$/) );
-
+```js
+assert($('footer > p > a').length);
 ```
 
-</section>
+Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const aElemClosingTags = code.match(/<\/a\>/g);
+assert(aElemClosingTags && aElemClosingTags.length === 3);
+```
+
+Your anchor (`a`) element should have an `href` attribute with the value `https://www.freecodecamp.org`. You may have omitted the attribute/value, or have a typo.
+
+```js
+const nestedAnchor = $('footer > p > a')[0];
+assert(nestedAnchor.getAttribute('href') === 'https://www.freecodecamp.org');
+```
+
+The link's text should be `freeCodeCamp.org`. You have either omitted the text or have a typo.
+
+```js
+const nestedAnchor = $('footer > p > a')[0];
+assert(
+  nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') ===
+    'freecodecamp.org'
+);
+```
+
+After nesting the anchor (`a`) element, the only `p` element content visible in the browser should be `No Copyright - freeCodeCamp.org`. Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
+
+```js
+const pText = $('footer > p')[0].innerText.toLowerCase().replace(/\s+/g, ' ');
+assert(pText.match(/^no copyright - freecodecamp.org$/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -98,14 +106,12 @@ tests:
     </main>
     <footer>
       <p>
-        --fcc-editable-region--
+--fcc-editable-region--
         No Copyright - freeCodeCamp.org
-        --fcc-editable-region--
+--fcc-editable-region--
       </p>
     </footer>
   </body>
 </html>
 ```
 
-</div>
-</section>

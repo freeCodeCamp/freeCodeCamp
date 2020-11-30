@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
 ---
 
-## Description
-<section id='description'>
-You can group cells of your grid together into an <dfn>area</dfn> and give the area a custom name. Do this by using <code>grid-template-areas</code> on the container like this:
+# --description--
+
+You can group cells of your grid together into an <dfn>area</dfn> and give the area a custom name. Do this by using `grid-template-areas` on the container like this:
 
 ```css
 grid-template-areas:
@@ -17,32 +17,29 @@ grid-template-areas:
   "footer footer footer";
 ```
 
-The code above merges the top three cells together into an area named <code>header</code>, the bottom three cells into a <code>footer</code> area, and it makes two areas in the middle row; <code>advert</code> and <code>content</code>.
-<strong>Note:</strong> Every word in the code represents a cell and every pair of quotation marks represent a row.
-In addition to custom labels, you can use a period (<code>.</code>) to designate an empty cell in the grid.
-</section>
+The code above merges the top three cells together into an area named `header`, the bottom three cells into a `footer` area, and it makes two areas in the middle row; `advert` and `content`. **Note:** Every word in the code represents a cell and every pair of quotation marks represent a row. In addition to custom labels, you can use a period (`.`) to designate an empty cell in the grid.
 
-## Instructions
-<section id='instructions'>
-Place the area template so that the cell labeled <code>advert</code> becomes an empty cell.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Place the area template so that the cell labeled `advert` becomes an empty cell.
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>grid-template-areas</code> property similar to the preview but has <code>.</code> instead of the <code>advert</code> area.
-    testString: assert(__helpers.removeCssComments(code).match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
+# --hints--
 
+`container` class should have a `grid-template-areas` property similar to the preview but has `.` instead of the `advert` area.
+
+```js
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(
+      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -79,14 +76,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -121,5 +111,3 @@ tests:
   <div class="item5">5</div>
 </div>
 ```
-
-</section>

@@ -4,8 +4,7 @@ title: Part 18
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Your dashboard element is now "selected". D3 has a number of functions for working with a selection; one of them is `append`. It is used to add an element. Chain the `append` function to your selection and use it to add an `svg` element. Here's an example of how that might be done:
 
@@ -14,62 +13,17 @@ const variableName = d3.select('selectedElement')
   .append('elementToAdd')
 ```
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
-</section>
+test-text
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: test-text
-    testString: assert(lineGraph._groups[0][0] === $("svg")[0]);
-
-
+```js
+assert(lineGraph._groups[0][0] === $('svg')[0]);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
-
-```html
-<script>
-  const data = [ 
-    { year: 2012, followers: { twitter: 2594, tumblr:  401, instagram:   83 }},
-    { year: 2013, followers: { twitter: 3049, tumblr:  440, instagram:  192 }},
-    { year: 2014, followers: { twitter: 3511, tumblr:  415, instagram:  511 }},
-    { year: 2015, followers: { twitter: 3619, tumblr:  492, instagram: 1014 }},
-    { year: 2016, followers: { twitter: 4046, tumblr:  543, instagram: 2066 }},
-    { year: 2017, followers: { twitter: 3991, tumblr:  701, instagram: 3032 }},
-    { year: 2018, followers: { twitter: 3512, tumblr: 1522, instagram: 4512 }},
-    { year: 2019, followers: { twitter: 3274, tumblr: 1989, instagram: 4715 }},
-    { year: 2020, followers: { twitter: 2845, tumblr: 2040, instagram: 4801 }}
-  ];
-</script>
-<script>
-  const svgMargin = 70,
-    svgWidth = 700,
-    svgHeight = 500,
-    twitterColor = '#7cd9d1',
-    tumblrColor = '#f6dd71',
-    instagramColor = '#fd9b98';
-
-  const lineGraph = d3.select('.dashboard')
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -100,12 +54,37 @@ tests:
 </html>
 ```
 
-</div>
-</section>
+## --seed-contents--
+
+```html
+<script>
+  const data = [ 
+    { year: 2012, followers: { twitter: 2594, tumblr:  401, instagram:   83 }},
+    { year: 2013, followers: { twitter: 3049, tumblr:  440, instagram:  192 }},
+    { year: 2014, followers: { twitter: 3511, tumblr:  415, instagram:  511 }},
+    { year: 2015, followers: { twitter: 3619, tumblr:  492, instagram: 1014 }},
+    { year: 2016, followers: { twitter: 4046, tumblr:  543, instagram: 2066 }},
+    { year: 2017, followers: { twitter: 3991, tumblr:  701, instagram: 3032 }},
+    { year: 2018, followers: { twitter: 3512, tumblr: 1522, instagram: 4512 }},
+    { year: 2019, followers: { twitter: 3274, tumblr: 1989, instagram: 4715 }},
+    { year: 2020, followers: { twitter: 2845, tumblr: 2040, instagram: 4801 }}
+  ];
+</script>
+<script>
+  const svgMargin = 70,
+    svgWidth = 700,
+    svgHeight = 500,
+    twitterColor = '#7cd9d1',
+    tumblrColor = '#f6dd71',
+    instagramColor = '#fd9b98';
+
+  const lineGraph = d3.select('.dashboard')
 
 
-## Solution
-<section id='solution'>
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -135,5 +114,3 @@ tests:
 
 </script>
 ```
-
-</section>

@@ -1,61 +1,56 @@
 ---
-title: Amicable pairs
 id: 5949b579404977fbaefcd737
+title: Amicable pairs
 challengeType: 5
 forumTopicId: 302225
 ---
 
-## Description
-<section id='description'>
-Two integers $N$ and $M$ are said to be <a href='https://en.wikipedia.org/wiki/Amicable numbers' title='wp: Amicable numbers' target='_blank'>amicable pairs</a> if $N \neq M$ and the sum of the <a href="https://rosettacode.org/wiki/Proper divisors" title="Proper divisors" target="_blank">proper divisors</a> of $N$ ($\mathrm{sum}(\mathrm{propDivs}(N))$) $= M$ as well as $\mathrm{sum}(\mathrm{propDivs}(M)) = N$.
-<strong>Example:</strong>
-<strong>1184</strong> and <strong>1210</strong> are an amicable pair, with proper divisors:
+# --description--
+
+Two integers $N$ and $M$ are said to be [amicable pairs](<https://en.wikipedia.org/wiki/Amicable numbers> "wp: Amicable numbers") if $N \\neq M$ and the sum of the [proper divisors](<https://rosettacode.org/wiki/Proper divisors> "Proper divisors") of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.
+
+**Example:**
+
+**1184** and **1210** are an amicable pair, with proper divisors:
+
 <ul>
   <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592  and</li>
   <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605   respectively.</li>
 </ul>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Calculate and show here the Amicable pairs below 20,000 (there are eight).
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>amicablePairsUpTo</code> should be a function.
-    testString: assert(typeof amicablePairsUpTo === 'function');
-  - text: <code>amicablePairsUpTo(300)</code> should return <code>[[220,284]]</code>.
-    testString: assert.deepEqual(amicablePairsUpTo(300), answer300);
-  - text: <code>amicablePairsUpTo(3000)</code> should return <code>[[220,284],[1184,1210],[2620,2924]]</code>.
-    testString: assert.deepEqual(amicablePairsUpTo(3000), answer3000);
-  - text: <code>amicablePairsUpTo(20000)</code> should return <code>[[220,284],[1184,1210],[2620,2924],[5020,5564],[6232,6368],[10744,10856],[12285,14595],[17296,18416]]</code>.
-    testString: assert.deepEqual(amicablePairsUpTo(20000), answer20000);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`amicablePairsUpTo` should be a function.
 
 ```js
-function amicablePairsUpTo(maxNum) {
-
-  return true;
-}
+assert(typeof amicablePairsUpTo === 'function');
 ```
 
-</div>
+`amicablePairsUpTo(300)` should return `[[220,284]]`.
 
+```js
+assert.deepEqual(amicablePairsUpTo(300), answer300);
+```
 
-### After Test
-<div id='js-teardown'>
+`amicablePairsUpTo(3000)` should return `[[220,284],[1184,1210],[2620,2924]]`.
+
+```js
+assert.deepEqual(amicablePairsUpTo(3000), answer3000);
+```
+
+`amicablePairsUpTo(20000)` should return `[[220,284],[1184,1210],[2620,2924],[5020,5564],[6232,6368],[10744,10856],[12285,14595],[17296,18416]]`.
+
+```js
+assert.deepEqual(amicablePairsUpTo(20000), answer20000);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const answer300 = [[220, 284]];
@@ -76,13 +71,16 @@ const answer20000 = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function amicablePairsUpTo(maxNum) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 // amicablePairsUpTo :: Int -> [(Int, Int)]
@@ -124,7 +122,4 @@ function range(m, n, step) {
     length: Math.floor((n - m) / d) + 1
   }, (_, i) => m + (i * d));
 }
-
 ```
-
-</section>

@@ -1,12 +1,11 @@
 ---
 id: 5900f3d01000cf542c50fee3
-challengeType: 5
 title: 'Problem 100: Arranged probability'
+challengeType: 5
 forumTopicId: 301724
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 If a box contains twenty-one coloured discs, composed of fifteen blue discs and six red discs, and two discs were taken at random, it can be seen that the probability of taking two blue discs, P(BB) = (15/21)×(14/20) = 1/2.
 
@@ -14,31 +13,23 @@ The next such arrangement, for which there is exactly 50% chance of taking two b
 
 By finding the first arrangement to contain over 10<sup>12</sup> = 1,000,000,000,000 discs in total, determine the number of blue discs that the box would contain.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`arrangedProbability()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>arrangedProbability()</code> should return a number.
-    testString: assert(typeof arrangedProbability() === 'number');
-  - text: <code>arrangedProbability()</code> should return 756872327473.
-    testString: assert.strictEqual(arrangedProbability(), 756872327473);
-
+```js
+assert(typeof arrangedProbability() === 'number');
 ```
 
-</section>
+`arrangedProbability()` should return 756872327473.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(arrangedProbability(), 756872327473);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function arrangedProbability() {
@@ -49,17 +40,8 @@ function arrangedProbability() {
 arrangedProbability();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

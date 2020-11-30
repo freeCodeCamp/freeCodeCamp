@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301349
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
-In an earlier challenge, you used the caret character (<code>^</code>) inside a character set to create a negated character set in the form <code>[^thingsThatWillNotBeMatched]</code>. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+
+In an earlier challenge, you used the caret character (`^`) inside a character set to create a negated character set in the form `[^thingsThatWillNotBeMatched]`. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
 
 ```js
 let firstString = "Ricky is first and can be found.";
@@ -20,35 +21,39 @@ firstRegex.test(notFirst);
 // Returns false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use the caret character in a regex to find <code>"Cal"</code> only in the beginning of the string <code>rickyAndCal</code>.
-</section>
+Use the caret character in a regex to find `"Cal"` only in the beginning of the string `rickyAndCal`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your regex should search for <code>"Cal"</code> with a capital letter.
-    testString: assert(calRegex.source == "^Cal");
-  - text: Your regex should not use any flags.
-    testString: assert(calRegex.flags == "");
-  - text: Your regex should match <code>"Cal"</code> at the beginning of the string.
-    testString: assert(calRegex.test("Cal and Ricky both like racing."));
-  - text: Your regex should not match <code>"Cal"</code> in the middle of a string.
-    testString: assert(!calRegex.test("Ricky and Cal both like racing."));
+Your regex should search for `"Cal"` with a capital letter.
 
+```js
+assert(calRegex.source == '^Cal');
 ```
 
-</section>
+Your regex should not use any flags.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(calRegex.flags == '');
+```
 
-<div id='js-seed'>
+Your regex should match `"Cal"` at the beginning of the string.
+
+```js
+assert(calRegex.test('Cal and Ricky both like racing.'));
+```
+
+Your regex should not match `"Cal"` in the middle of a string.
+
+```js
+assert(!calRegex.test('Ricky and Cal both like racing.'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let rickyAndCal = "Cal and Ricky both like racing.";
@@ -56,19 +61,10 @@ let calRegex = /change/; // Change this line
 let result = calRegex.test(rickyAndCal);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let rickyAndCal = "Cal and Ricky both like racing.";
 let calRegex = /^Cal/; // Change this line
 let result = calRegex.test(rickyAndCal);
 ```
-
-</section>

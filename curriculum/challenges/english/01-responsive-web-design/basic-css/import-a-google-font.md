@@ -6,45 +6,70 @@ videoUrl: 'https://scrimba.com/c/cM9MRsJ'
 forumTopicId: 18200
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In addition to specifying common fonts that are found on most operating systems, we can also specify non-standard, custom web fonts for use on our website. There are many sources for web fonts on the Internet. For this example we will focus on the Google Fonts library.
-<a href='https://fonts.google.com/' target='_blank'>Google Fonts</a> is a free library of web fonts that you can use in your CSS by referencing the font's URL.
+
+[Google Fonts](https://fonts.google.com/) is a free library of web fonts that you can use in your CSS by referencing the font's URL.
+
 So, let's go ahead and import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).
-To import a Google Font, you can copy the font's URL from the Google Fonts library and then paste it in your HTML. For this challenge, we'll import the <code>Lobster</code> font. To do this, copy the following code snippet and paste it into the top of your code editor (before the opening <code>style</code> element):
-<code>&#60;link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"&#62;</code>
-Now you can use the <code>Lobster</code> font in your CSS by using <code>Lobster</code> as the FAMILY_NAME as in the following example:<br><code>font-family: FAMILY_NAME, GENERIC_NAME;</code>.
+
+To import a Google Font, you can copy the font's URL from the Google Fonts library and then paste it in your HTML. For this challenge, we'll import the `Lobster` font. To do this, copy the following code snippet and paste it into the top of your code editor (before the opening `style` element):
+
+`<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">`
+
+Now you can use the `Lobster` font in your CSS by using `Lobster` as the FAMILY_NAME as in the following example:  
+`font-family: FAMILY_NAME, GENERIC_NAME;`.
+
 The GENERIC_NAME is optional, and is a fallback font in case the other specified font is not available. This is covered in the next challenge.
-Family names are case-sensitive and need to be wrapped in quotes if there is a space in the name. For example, you need quotes to use the <code>"Open Sans"</code> font, but not to use the <code>Lobster</code> font.
-</section>
 
-## Instructions
-<section id='instructions'>
-Import the Lobster font to your web page. Then, use an element selector to set <code>Lobster</code> as the <code>font-family</code> for your <code>h2</code> element.
-</section>
+Family names are case-sensitive and need to be wrapped in quotes if there is a space in the name. For example, you need quotes to use the `"Open Sans"` font, but not to use the `Lobster` font.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: You should import the <code>Lobster</code> font.
-    testString: assert(new RegExp("googleapis", "gi").test(code));
-  - text: Your <code>h2</code> element should use the font <code>Lobster</code>.
-    testString: assert($("h2").css("font-family").match(/lobster/i));
-  - text: You should only use an <code>h2</code> element selector to change the font.
-    testString: assert(/\s*[^\.]h2\s*\{\s*font-family\:\s*(['"]?)Lobster\1\s*(;\s*\}|\})/gi.test(code));
-  - text: Your <code>p</code> element should still use the font <code>monospace</code>.
-    testString: assert($("p").css("font-family").match(/monospace/i));
+Import the Lobster font to your web page. Then, use an element selector to set `Lobster` as the `font-family` for your `h2` element.
 
+# --hints--
+
+You should import the `Lobster` font.
+
+```js
+assert(new RegExp('googleapis', 'gi').test(code));
 ```
 
-</section>
+Your `h2` element should use the font `Lobster`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('h2')
+    .css('font-family')
+    .match(/lobster/i)
+);
+```
 
-<div id='html-seed'>
+You should only use an `h2` element selector to change the font.
+
+```js
+assert(
+  /\s*[^\.]h2\s*\{\s*font-family\:\s*(['"]?)Lobster\1\s*(;\s*\}|\})/gi.test(
+    code
+  )
+);
+```
+
+Your `p` element should still use the font `monospace`.
+
+```js
+assert(
+  $('p')
+    .css('font-family')
+    .match(/monospace/i)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -91,14 +116,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -149,5 +167,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

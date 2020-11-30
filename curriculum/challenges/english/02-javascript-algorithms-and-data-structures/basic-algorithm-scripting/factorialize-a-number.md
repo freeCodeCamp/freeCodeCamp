@@ -5,44 +5,53 @@ challengeType: 5
 forumTopicId: 16013
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Return the factorial of the provided integer.
+
 If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
-Factorials are often represented with the shorthand notation <code>n!</code>
-For example: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>
+
+Factorials are often represented with the shorthand notation `n!`
+
+For example: `5! = 1 * 2 * 3 * 4 * 5 = 120`
+
 Only integers greater than or equal to zero will be supplied to the function.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`factorialize(5)` should return a number.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>factorialize(5)</code> should return a number.
-    testString: assert(typeof factorialize(5) === 'number');
-  - text: <code>factorialize(5)</code> should return 120.
-    testString: assert(factorialize(5) === 120);
-  - text: <code>factorialize(10)</code> should return 3628800.
-    testString: assert(factorialize(10) === 3628800);
-  - text: <code>factorialize(20)</code> should return 2432902008176640000.
-    testString: assert(factorialize(20) === 2432902008176640000);
-  - text: <code>factorialize(0)</code> should return 1.
-    testString: assert(factorialize(0) === 1);
-
+```js
+assert(typeof factorialize(5) === 'number');
 ```
 
-</section>
+`factorialize(5)` should return 120.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(factorialize(5) === 120);
+```
 
-<div id='js-seed'>
+`factorialize(10)` should return 3628800.
+
+```js
+assert(factorialize(10) === 3628800);
+```
+
+`factorialize(20)` should return 2432902008176640000.
+
+```js
+assert(factorialize(20) === 2432902008176640000);
+```
+
+`factorialize(0)` should return 1.
+
+```js
+assert(factorialize(0) === 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function factorialize(num) {
@@ -52,15 +61,7 @@ function factorialize(num) {
 factorialize(5);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function factorialize(num) {
@@ -68,7 +69,4 @@ function factorialize(num) {
 }
 
 factorialize(5);
-
 ```
-
-</section>

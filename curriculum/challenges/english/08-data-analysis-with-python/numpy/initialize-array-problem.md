@@ -5,59 +5,56 @@ challengeType: 11
 videoId: 0jGfH8BPfOk
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What is another way to produce the following array?
 
-<section id='tests'>
+```py
+[[0. 0. 0. 0. 0. 0. 0.]
+[0. 1. 1. 1. 1. 1. 0.]
+[0. 1. 1. 1. 1. 1. 0.]
+[0. 1. 1. 5. 1. 1. 0.]
+[0. 1. 1. 1. 1. 1. 0.]
+[0. 1. 1. 1. 1. 1. 0.]
+[0. 0. 0. 0. 0. 0. 0.]]
+```
 
-````yml
-question:
-  text: |
-    What is another way to produce the following array?
+## --answers--
 
-    ```py
-    [[0. 0. 0. 0. 0. 0. 0.]
-    [0. 1. 1. 1. 1. 1. 0.]
-    [0. 1. 1. 1. 1. 1. 0.]
-    [0. 1. 1. 5. 1. 1. 0.]
-    [0. 1. 1. 1. 1. 1. 0.]
-    [0. 1. 1. 1. 1. 1. 0.]
-    [0. 0. 0. 0. 0. 0. 0.]]
-    ```
+```py
+output = np.ones((7, 7))
 
-  answers:
-    - |
-      ```py
-      output = np.ones((7, 7))
+z = np.zeros((5, 5))
+z[2, 2] = 5
 
-      z = np.zeros((5, 5))
-      z[2, 2] = 5
+output[1:1, -1:-1] = z
+```
 
-      output[1:1, -1:-1] = z
-      ```
-    - |
-      ```py
-      output = np.zeros((7,7))
+---
 
-      z = np.ones((5, 5))
-      z[2, 2] = 5
+```py
+output = np.zeros((7,7))
 
-      output[1:-1, 1:-1] = z
-      ```
-    - |
-      ```py
-      output = np.ones((7, 7))
+z = np.ones((5, 5))
+z[2, 2] = 5
 
-      z = np.zeros((5, 5))
-      z[3, 3] = 5
+output[1:-1, 1:-1] = z
+```
 
-      output[1:-1, 1:-1] = z
-      ```
-  solution: 2
-````
+---
 
-</section>
+```py
+output = np.ones((7, 7))
+
+z = np.zeros((5, 5))
+z[3, 3] = 5
+
+output[1:-1, 1:-1] = z
+```
+
+## --video-solution--
+
+2
+

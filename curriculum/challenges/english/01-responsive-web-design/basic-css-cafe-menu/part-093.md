@@ -4,31 +4,23 @@ title: Part 93
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 It would be nice if the vertical space between the `h2` elements and their associated icons was smaller. The `h2` elements have default top and bottom margin space, so you could change the bottom margin of the `h2` elements to say `0` or another number.
 
 There is an easier way, simply add a negative top margin to the `img` elements to pull them up from their current positions. Negative values are created using a `-` in front of the value. To complete this project, go ahead and use a negative margin of `25px` in the `img` type selector.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -94,10 +86,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -199,10 +187,7 @@ a:active {
 }
 ```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -269,9 +254,7 @@ a:active {
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
+---
 
 ```css
 body {
@@ -371,5 +354,3 @@ a:active {
   color: brown;
 }
 ```
-
-</section>

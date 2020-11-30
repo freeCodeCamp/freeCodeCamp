@@ -4,55 +4,21 @@ title: Part 3
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now return the sum of `x` and `y` using the `return` keyword.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(add(1, 2) === 3 && add(100, 2000) === 2100);
-
+```js
+assert(add(1, 2) === 3 && add(100, 2000) === 2100);
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-function add(x, y) {
-
-}
-
-const infixToFunction = {};
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -80,25 +46,29 @@ const infixToFunction = {};
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+function add(x, y) {
+
+}
+
+const infixToFunction = {};
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -109,5 +79,3 @@ function add(x, y) {
 const infixToFunction = {};
 </script>
 ```
-
-</section>

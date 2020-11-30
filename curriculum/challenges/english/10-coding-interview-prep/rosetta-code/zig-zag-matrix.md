@@ -1,15 +1,16 @@
 ---
-title: Zig-zag matrix
 id: 594810f028c0303b75339ad8
+title: Zig-zag matrix
 challengeType: 5
 forumTopicId: 302348
 ---
 
-## Description
-<section id='description'>
-A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
+# --description--
 
-For example, for the input <code>5</code>, the following result should be produced:
+A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's [anti-diagonals](https://en.wiktionary.org/wiki/antidiagonal).
+
+For example, for the input `5`, the following result should be produced:
+
 <pre>
  0  1  5  6 14
  2  4  7 13 15
@@ -17,52 +18,52 @@ For example, for the input <code>5</code>, the following result should be produc
  9 11 17 20 22
 10 18 19 23 24
 </pre>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: ZigZagMatrix should be a function.
-    testString: assert.equal(typeof ZigZagMatrix, 'function');
-  - text: ZigZagMatrix should return array.
-    testString: assert.equal(typeof ZigZagMatrix(1), 'object');
-  - text: ZigZagMatrix should return an array of nested arrays.
-    testString: assert.equal(typeof ZigZagMatrix(1)[0], 'object');
-  - text: ZigZagMatrix(1) should return [[0]].
-    testString: assert.deepEqual(ZigZagMatrix(1), zm1);
-  - text: ZigZagMatrix(2) should return [[0, 1], [2, 3]].
-    testString: assert.deepEqual(ZigZagMatrix(2), zm2);
-  - text: ZigZagMatrix(5) should return specified matrix.
-    testString: assert.deepEqual(ZigZagMatrix(5), zm5);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+ZigZagMatrix should be a function.
 
 ```js
-function ZigZagMatrix(n) {
-
-  return [[], []];
-}
+assert.equal(typeof ZigZagMatrix, 'function');
 ```
 
-</div>
+ZigZagMatrix should return array.
 
+```js
+assert.equal(typeof ZigZagMatrix(1), 'object');
+```
 
-### After Test
-<div id='js-teardown'>
+ZigZagMatrix should return an array of nested arrays.
+
+```js
+assert.equal(typeof ZigZagMatrix(1)[0], 'object');
+```
+
+ZigZagMatrix(1) should return \[[0]].
+
+```js
+assert.deepEqual(ZigZagMatrix(1), zm1);
+```
+
+ZigZagMatrix(2) should return \[[0, 1], [2, 3]].
+
+```js
+assert.deepEqual(ZigZagMatrix(2), zm2);
+```
+
+ZigZagMatrix(5) should return specified matrix.
+
+```js
+assert.deepEqual(ZigZagMatrix(5), zm5);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const zm1 = [[0]];
@@ -76,13 +77,16 @@ const zm5 = [
 ];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function ZigZagMatrix(n) {
 
-## Solution
-<section id='solution'>
+  return [[], []];
+}
+```
 
+# --solutions--
 
 ```js
 function ZigZagMatrix(n) {
@@ -109,7 +113,4 @@ function ZigZagMatrix(n) {
   }
   return mtx;
 }
-
 ```
-
-</section>

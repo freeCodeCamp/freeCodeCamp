@@ -6,35 +6,38 @@ videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
 ---
 
-## Description
-<section id='description'>
-Your cat photo currently has sharp corners. We can round out those corners with a CSS property called <code>border-radius</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.
-<strong>Note:</strong> This challenge allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or the <code>.smaller-image</code> class.
-</section>
+Your cat photo currently has sharp corners. We can round out those corners with a CSS property called `border-radius`.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your image element should have the class "thick-green-border".
-    testString: assert($("img").hasClass("thick-green-border"));
-  - text: Your image should have a border radius of <code>10px</code>
-    testString: assert($("img").css("border-top-left-radius") === '10px' && $("img").css("border-top-right-radius") === '10px' && $("img").css("border-bottom-left-radius") === '10px' && $("img").css("border-bottom-right-radius") === '10px');
+You can specify a `border-radius` with pixels. Give your cat photo a `border-radius` of `10px`.
 
+**Note:** This challenge allows for multiple possible solutions. For example, you may add `border-radius` to either the `.thick-green-border` class or the `.smaller-image` class.
+
+# --hints--
+
+Your image element should have the class "thick-green-border".
+
+```js
+assert($('img').hasClass('thick-green-border'));
 ```
 
-</section>
+Your image should have a border radius of `10px`
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('img').css('border-top-left-radius') === '10px' &&
+    $('img').css('border-top-right-radius') === '10px' &&
+    $('img').css('border-bottom-left-radius') === '10px' &&
+    $('img').css('border-bottom-right-radius') === '10px'
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -96,14 +99,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -165,5 +161,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

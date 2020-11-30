@@ -4,51 +4,23 @@ title: Part 3
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Create a variable called `currentWeapon` and set it to 0. When a name has two words, the convention is to use so-called "lowerCamelCase". The first word is all lowercase, and then the first letter of every preceding word is uppercased.
 
 When a name has two words, the convention is to use so-called "lowerCamelCase". The variable name should look like this: currentWeapon.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(currentWeapon === 0);
-
+```js
+assert(currentWeapon === 0);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-var xp = 0;
-var health = 100;
-var gold = 50;
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -114,26 +86,25 @@ var gold = 50;
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
+```html
+<script>
+var xp = 0;
+var health = 100;
+var gold = 50;
 
-</section>
+</script>
+```
 
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <script>
@@ -143,5 +114,3 @@ var gold = 50;
 var currentWeapon = 0;
 </script>
 ```
-
-</section>

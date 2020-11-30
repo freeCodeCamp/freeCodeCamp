@@ -6,40 +6,54 @@ videoUrl: 'https://scrimba.com/c/cEDqwA6'
 forumTopicId: 301032
 ---
 
-## Description
-<section id='description'>
-Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a <code>background-color</code> to the element holding the text you want to emphasize. This challenge uses <code>rgba()</code> instead of <code>hex</code> codes or normal <code>rgb()</code>.
-<blockquote>rgba stands for:<br>&nbsp;&nbsp;r = red<br>&nbsp;&nbsp;g = green<br>&nbsp;&nbsp;b = blue<br>&nbsp;&nbsp;a = alpha/level of opacity</blockquote>
-The RGB values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. <code>rgba()</code> is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.
-You'll use <code>background-color: rgba(45, 45, 45, 0.1)</code> for this challenge. It produces a dark gray color that is nearly transparent given the low opacity value of 0.1.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-To make the text stand out more, adjust the <code>background-color</code> of the <code>h4</code> element to the given <code>rgba()</code> value.
-Also for the <code>h4</code>, remove the <code>height</code> property and add <code>padding</code> of 10px.
-</section>
+Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a `background-color` to the element holding the text you want to emphasize. This challenge uses `rgba()` instead of `hex` codes or normal `rgb()`.
 
-## Tests
-<section id='tests'>
+<blockquote>rgba stands for:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha/level of opacity</blockquote>
 
-```yml
-tests:
-  - text: Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.
-    testString: assert(/(background-color|background):rgba\(45,45,45,0?\.1\)(;?}|;)/gi.test(code.replace(/\s/g, '')));
-  - text: Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.
-    testString: assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px');
-  - text: The <code>height</code> property on the <code>h4</code> element should be removed.
-    testString: assert(!($('h4').css('height') == '25px'));
+The RGB values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. `rgba()` is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.
 
+You'll use `background-color: rgba(45, 45, 45, 0.1)` for this challenge. It produces a dark gray color that is nearly transparent given the low opacity value of 0.1.
+
+# --instructions--
+
+To make the text stand out more, adjust the `background-color` of the `h4` element to the given `rgba()` value.
+
+Also for the `h4`, remove the `height` property and add `padding` of 10px.
+
+# --hints--
+
+Your code should add a `background-color` property to the `h4` element set to `rgba(45, 45, 45, 0.1)`.
+
+```js
+assert(
+  /(background-color|background):rgba\(45,45,45,0?\.1\)(;?}|;)/gi.test(
+    code.replace(/\s/g, '')
+  )
+);
 ```
 
-</section>
+Your code should add a `padding` property to the `h4` element and set it to 10 pixels.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('h4').css('padding-top') == '10px' &&
+    $('h4').css('padding-right') == '10px' &&
+    $('h4').css('padding-bottom') == '10px' &&
+    $('h4').css('padding-left') == '10px'
+);
+```
 
-<div id='html-seed'>
+The `height` property on the `h4` element should be removed.
+
+```js
+assert(!($('h4').css('height') == '25px'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -85,14 +99,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -136,5 +143,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

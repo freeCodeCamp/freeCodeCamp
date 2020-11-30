@@ -4,29 +4,21 @@ title: Part 51
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 For the two `p` elements you just added, add `dessert` as the value of the first `p` element's `class` attribute and the value `price` as the second `p` elements `class` attribute.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -65,9 +57,9 @@ tests:
         <section>
           <h2>Desserts</h2>
           <article class="item">
-            --fcc-editable-region--
+--fcc-editable-region--
             <p>Donut</p><p>1.50</p>
-            --fcc-editable-region--         
+--fcc-editable-region--
           </article>
         </section>
       </main>
@@ -75,10 +67,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -111,6 +99,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

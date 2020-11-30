@@ -6,35 +6,33 @@ videoUrl: 'https://scrimba.com/c/cN6aQCL'
 forumTopicId: 301082
 ---
 
-## Description
-<section id='description'>
-To underline text, you can use the <code>u</code> tag. This is often used to signify that a section of text is important, or something to remember. With the <code>u</code> tag, the browser applies the CSS of <code>text-decoration: underline;</code> to the element.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Wrap the <code>u</code> tag only around the text "Ph.D. students".
-<strong>Note:</strong> Try to avoid using the <code>u</code> tag when it could be confused for a link. Anchor tags also have a default underlined formatting.
-</section>
+To underline text, you can use the `u` tag. This is often used to signify that a section of text is important, or something to remember. With the `u` tag, the browser applies the CSS of `text-decoration: underline;` to the element.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should add a <code>u</code> tag to the markup.
-    testString: assert($('u').length === 1);
-  - text: The <code>u</code> tag should wrap around the text <code>Ph.D. students</code>.
-    testString: assert($('u').text() === 'Ph.D. students');
+Wrap the `u` tag only around the text "Ph.D. students".
 
+**Note:** Try to avoid using the `u` tag when it could be confused for a link. Anchor tags also have a default underlined formatting.
+
+# --hints--
+
+Your code should add a `u` tag to the markup.
+
+```js
+assert($('u').length === 1);
 ```
 
-</section>
+The `u` tag should wrap around the text `Ph.D. students`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('u').text() === 'Ph.D. students');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -77,14 +75,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -126,5 +117,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

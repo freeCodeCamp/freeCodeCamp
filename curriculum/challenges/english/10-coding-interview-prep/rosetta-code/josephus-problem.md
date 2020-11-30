@@ -1,55 +1,79 @@
 ---
-title: Josephus problem
 id: 5a23c84252665b21eecc7ec5
+title: Josephus problem
 challengeType: 5
 forumTopicId: 302294
 ---
 
-## Description
-<section id='description'>
-<a href="https://en.wikipedia.org/wiki/Josephus problem" target="_blank">Josephus problem</a> is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
+# --description--
+
+[Josephus problem](<https://en.wikipedia.org/wiki/Josephus problem>) is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
+
 An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
+
 As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.
+
 For example, if there are $n=5$ prisoners and $k=2$, the order the prisoners are killed in (let's call it the "killing sequence") will be 1, 3, 0, and 4, and the survivor will be #2.
-Given any  <big>$n, k > 0$</big>,  find out which prisoner will be the final survivor.
-In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner was being killed  (<big>$k=3$</big>).
+
+Given any $n, k > 0$, find out which prisoner will be the final survivor.
+
+In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner was being killed ($k=3$).
+
 Among them was a clever chap name Josephus who worked out the problem, stood at the surviving position, and lived on to tell the tale.
+
 Which number was he?
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Write a function that takes the initial number of prisoners and 'k' as parameter and returns the number of the prisoner that survives.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>josephus</code> should be a function.
-    testString: assert(typeof josephus=='function');
-  - text: <code>josephus(30,3)</code> should return a number.
-    testString: assert(typeof josephus(30,3)=='number');
-  - text: <code>josephus(30,3)</code> should return <code>29</code>.
-    testString: assert.equal(josephus(30,3),29);
-  - text: <code>josephus(30,5)</code> should return <code>3</code>.
-    testString: assert.equal(josephus(30,5),3);
-  - text: <code>josephus(20,2)</code> should return <code>9</code>.
-    testString: assert.equal(josephus(20,2),9);
-  - text: <code>josephus(17,6)</code> should return <code>2</code>.
-    testString: assert.equal(josephus(17,6),2);
-  - text: <code>josephus(29,4)</code> should return <code>2</code>.
-    testString: assert.equal(josephus(29,4),2);
+`josephus` should be a function.
 
+```js
+assert(typeof josephus == 'function');
 ```
 
-</section>
+`josephus(30,3)` should return a number.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof josephus(30, 3) == 'number');
+```
 
-<div id='js-seed'>
+`josephus(30,3)` should return `29`.
+
+```js
+assert.equal(josephus(30, 3), 29);
+```
+
+`josephus(30,5)` should return `3`.
+
+```js
+assert.equal(josephus(30, 5), 3);
+```
+
+`josephus(20,2)` should return `9`.
+
+```js
+assert.equal(josephus(20, 2), 9);
+```
+
+`josephus(17,6)` should return `2`.
+
+```js
+assert.equal(josephus(17, 6), 2);
+```
+
+`josephus(29,4)` should return `2`.
+
+```js
+assert.equal(josephus(29, 4), 2);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function josephus(init, kill) {
@@ -57,15 +81,7 @@ function josephus(init, kill) {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function josephus(init, kill) {
@@ -101,8 +117,4 @@ function josephus(init, kill) {
 
   return Josephus.init(init).kill(kill)
 }
-
-
 ```
-
-</section>

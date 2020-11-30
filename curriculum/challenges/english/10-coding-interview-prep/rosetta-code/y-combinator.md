@@ -1,53 +1,69 @@
 ---
-title: Y combinator
 id: 594810f028c0303b75339ad5
+title: Y combinator
 challengeType: 5
 forumTopicId: 302345
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-In strict <a href="https://en.wikipedia.org/wiki/Functional programming" title="wp: functional programming" target="_blank">functional programming</a> and the <a href="https://en.wikipedia.org/wiki/lambda calculus" title="wp: lambda calculus" target="_blank">lambda calculus</a>, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
-The <a href="https://mvanier.livejournal.com/2897.html" target="_blank">Y combinator</a> is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called <a href="https://en.wikipedia.org/wiki/Fixed-point combinator" title="wp: fixed-point combinator" target="_blank">fixed-point combinators</a>.
-</section>
+In strict [functional programming](<https://en.wikipedia.org/wiki/Functional programming> "wp: functional programming") and the [lambda calculus](<https://en.wikipedia.org/wiki/lambda calculus> "wp: lambda calculus"), functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function. The [Y combinator](https://mvanier.livejournal.com/2897.html) is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called [fixed-point combinators](<https://en.wikipedia.org/wiki/Fixed-point combinator> "wp: fixed-point combinator").
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
-Define the stateless Y combinator function and use it to compute <a href="https://en.wikipedia.org/wiki/Factorial" title="wp: factorial" target="_blank">factorial</a>. The <code>factorial(N)</code> function is already given to you.
-<strong>See also:</strong>
+Define the stateless Y combinator function and use it to compute [factorial](https://en.wikipedia.org/wiki/Factorial "wp: factorial"). The `factorial(N)` function is already given to you. **See also:**
+
 <ul>
   <li><a href="https://vimeo.com/45140590" target="_blank">Jim Weirich: Adventures in Functional Programming</a>.</li>
 </ul>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Y should return a function.
-    testString: assert.equal(typeof Y(f => n => n), 'function');
-  - text: factorial(1) should return 1.
-    testString: assert.equal(factorial(1), 1);
-  - text: factorial(2) should return 2.
-    testString: assert.equal(factorial(2), 2);
-  - text: factorial(3) should return 6.
-    testString: assert.equal(factorial(3), 6);
-  - text: factorial(4) should return 24.
-    testString: assert.equal(factorial(4), 24);
-  - text: factorial(10) should return 3628800.
-    testString: assert.equal(factorial(10), 3628800);
+Y should return a function.
 
+```js
+assert.equal(typeof Y((f) => (n) => n), 'function');
 ```
 
-</section>
+factorial(1) should return 1.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.equal(factorial(1), 1);
+```
 
-<div id='js-seed'>
+factorial(2) should return 2.
+
+```js
+assert.equal(factorial(2), 2);
+```
+
+factorial(3) should return 6.
+
+```js
+assert.equal(factorial(3), 6);
+```
+
+factorial(4) should return 24.
+
+```js
+assert.equal(factorial(4), 24);
+```
+
+factorial(10) should return 3628800.
+
+```js
+assert.equal(factorial(10), 3628800);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+var factorial = Y(f => n => (n > 1 ? n * f(n - 1) : 1));
+```
+
+## --seed-contents--
 
 ```js
 function Y(f) {
@@ -63,27 +79,8 @@ var factorial = Y(function(f) {
 });
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-var factorial = Y(f => n => (n > 1 ? n * f(n - 1) : 1));
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var Y = f => (x => x(x))(y => f(x => y(y)(x)));
-
 ```
-
-</section>

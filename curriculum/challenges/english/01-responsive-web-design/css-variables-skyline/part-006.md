@@ -4,31 +4,21 @@ title: Part 6
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Also add a `box-sizing` of `border-box` to the everything. This will make it so the border you added doesn't add any size to your elements.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($("#display-body").css("box-sizing") === "border-box");
-
+```js
+assert($('#display-body').css('box-sizing') === 'border-box');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -47,12 +37,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -71,5 +56,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

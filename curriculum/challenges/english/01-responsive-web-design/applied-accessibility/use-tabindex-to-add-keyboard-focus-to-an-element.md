@@ -6,37 +6,37 @@ videoUrl: 'https://scrimba.com/c/cmzMDHW'
 forumTopicId: 301027
 ---
 
-## Description
-<section id='description'>
-The HTML <code>tabindex</code> attribute has three distinct functions relating to an element's keyboard focus. When it's on a tag, it indicates that element can be focused on. The value (an integer that's positive, negative, or zero) determines the behavior.
-Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as <code>div</code>, <code>span</code>, and <code>p</code>, by placing a <code>tabindex="0"</code> attribute on them. Here's an example:
-<code>&lt;div tabindex=&quot;0&quot;&gt;I need keyboard focus!&lt;/div&gt;</code>
-<strong>Note:</strong> A negative <code>tabindex</code> value (typically -1) indicates that an element is focusable, but is not reachable by the keyboard. This method is generally used to bring focus to content programmatically (like when a <code>div</code> used for a pop-up window is activated), and is beyond the scope of these challenges.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Camper Cat created a new survey to collect information about his users. He knows input fields automatically get keyboard focus, but he wants to make sure his keyboard users pause at the instructions while tabbing through the items. Add a <code>tabindex</code> attribute to the <code>p</code> tag and set its value to <code>"0"</code>. Bonus - using <code>tabindex</code> also enables the CSS pseudo-class <code>:focus</code> to work on the <code>p</code> tag.
-</section>
+The HTML `tabindex` attribute has three distinct functions relating to an element's keyboard focus. When it's on a tag, it indicates that element can be focused on. The value (an integer that's positive, negative, or zero) determines the behavior.
 
-## Tests
-<section id='tests'>
+Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as `div`, `span`, and `p`, by placing a `tabindex="0"` attribute on them. Here's an example:
 
-```yml
-tests:
-  - text: Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.
-    testString: assert($('p').attr('tabindex'));
-  - text: Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.
-    testString: assert($('p').attr('tabindex') == '0');
+`<div tabindex="0">I need keyboard focus!</div>`
 
+**Note:** A negative `tabindex` value (typically -1) indicates that an element is focusable, but is not reachable by the keyboard. This method is generally used to bring focus to content programmatically (like when a `div` used for a pop-up window is activated), and is beyond the scope of these challenges.
+
+# --instructions--
+
+Camper Cat created a new survey to collect information about his users. He knows input fields automatically get keyboard focus, but he wants to make sure his keyboard users pause at the instructions while tabbing through the items. Add a `tabindex` attribute to the `p` tag and set its value to `"0"`. Bonus - using `tabindex` also enables the CSS pseudo-class `:focus` to work on the `p` tag.
+
+# --hints--
+
+Your code should add a `tabindex` attribute to the `p` tag that holds the form instructions.
+
+```js
+assert($('p').attr('tabindex'));
 ```
 
-</section>
+Your code should set the `tabindex` attribute on the `p` tag to a value of 0.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('p').attr('tabindex') == '0');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <head>
@@ -88,14 +88,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <head>
@@ -146,5 +139,3 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
-
-</section>

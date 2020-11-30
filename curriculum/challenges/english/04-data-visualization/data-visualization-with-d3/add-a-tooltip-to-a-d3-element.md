@@ -5,51 +5,81 @@ challengeType: 6
 forumTopicId: 301470
 ---
 
-## Description
-<section id='description'>
-A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG <code>title</code> element.
-<code>title</code> pairs with the <code>text()</code> method to dynamically add data to the bars.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Append a <code>title</code> element under each <code>rect</code> node. Then call the <code>text()</code> method with a callback function so the text displays the data value.
-</section>
+A tooltip shows more information about an item on a page when the user hovers over that item. There are several ways to add a tooltip to a visualization, this challenge uses the SVG `title` element.
 
-## Tests
-<section id='tests'>
+`title` pairs with the `text()` method to dynamically add data to the bars.
 
-```yml
-tests:
-  - text: Your code should have 9 <code>title</code> elements.
-    testString: assert($('title').length == 9);
-  - text: The first <code>title</code> element should have tooltip text of 12.
-    testString: assert($('title').eq(0).text() == '12');
-  - text: The second <code>title</code> element should have tooltip text of 31.
-    testString: assert($('title').eq(1).text() == '31');
-  - text: The third <code>title</code> element should have tooltip text of 22.
-    testString: assert($('title').eq(2).text() == '22');
-  - text: The fourth <code>title</code> element should have tooltip text of 17.
-    testString: assert($('title').eq(3).text() == '17');
-  - text: The fifth <code>title</code> element should have tooltip text of 25.
-    testString: assert($('title').eq(4).text() == '25');
-  - text: The sixth <code>title</code> element should have tooltip text of 18.
-    testString: assert($('title').eq(5).text() == '18');
-  - text: The seventh <code>title</code> element should have tooltip text of 29.
-    testString: assert($('title').eq(6).text() == '29');
-  - text: The eighth <code>title</code> element should have tooltip text of 14.
-    testString: assert($('title').eq(7).text() == '14');
-  - text: The ninth <code>title</code> element should have tooltip text of 9.
-    testString: assert($('title').eq(8).text() == '9');
+# --instructions--
 
+Append a `title` element under each `rect` node. Then call the `text()` method with a callback function so the text displays the data value.
+
+# --hints--
+
+Your code should have 9 `title` elements.
+
+```js
+assert($('title').length == 9);
 ```
 
-</section>
+The first `title` element should have tooltip text of 12.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('title').eq(0).text() == '12');
+```
 
-<div id='html-seed'>
+The second `title` element should have tooltip text of 31.
+
+```js
+assert($('title').eq(1).text() == '31');
+```
+
+The third `title` element should have tooltip text of 22.
+
+```js
+assert($('title').eq(2).text() == '22');
+```
+
+The fourth `title` element should have tooltip text of 17.
+
+```js
+assert($('title').eq(3).text() == '17');
+```
+
+The fifth `title` element should have tooltip text of 25.
+
+```js
+assert($('title').eq(4).text() == '25');
+```
+
+The sixth `title` element should have tooltip text of 18.
+
+```js
+assert($('title').eq(5).text() == '18');
+```
+
+The seventh `title` element should have tooltip text of 29.
+
+```js
+assert($('title').eq(6).text() == '29');
+```
+
+The eighth `title` element should have tooltip text of 14.
+
+```js
+assert($('title').eq(7).text() == '14');
+```
+
+The ninth `title` element should have tooltip text of 9.
+
+```js
+assert($('title').eq(8).text() == '9');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -97,14 +127,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -148,7 +171,4 @@ tests:
 
   </script>
 </body>
-
 ```
-
-</section>

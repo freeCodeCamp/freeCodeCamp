@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301226
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Functional programming is all about creating and using non-mutating functions.
-The last challenge introduced the <code>concat</code> method as a way to combine arrays into a new one without mutating the original arrays. Compare <code>concat</code> to the <code>push</code> method. <code>Push</code> adds an item to the end of the same array it is called on, which mutates that array. Here's an example:
+
+The last challenge introduced the `concat` method as a way to combine arrays into a new one without mutating the original arrays. Compare `concat` to the `push` method. `Push` adds an item to the end of the same array it is called on, which mutates that array. Here's an example:
 
 ```js
 var arr = [1, 2, 3];
@@ -17,38 +18,50 @@ arr.push([4, 5, 6]);
 // Not the functional programming way
 ```
 
-<code>Concat</code> offers a way to add new items to the end of an array without any mutating side effects.
-</section>
+`Concat` offers a way to add new items to the end of an array without any mutating side effects.
 
-## Instructions
-<section id='instructions'>
-Change the <code>nonMutatingPush</code> function so it uses <code>concat</code> to add <code>newItem</code> to the end of <code>original</code> instead of <code>push</code>. The function should return an array.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Change the `nonMutatingPush` function so it uses `concat` to add `newItem` to the end of `original` instead of `push`. The function should return an array.
 
-```yml
-tests:
-  - text: Your code should use the <code>concat</code> method.
-    testString: assert(code.match(/\.concat/g));
-  - text: Your code should not use the <code>push</code> method.
-    testString: assert(!code.match(/\.?[\s\S]*?push/g));
-  - text: The <code>first</code> array should not change.
-    testString: assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
-  - text: The <code>second</code> array should not change.
-    testString: assert(JSON.stringify(second) === JSON.stringify([4, 5]));
-  - text: <code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.
-    testString: assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]));
+# --hints--
 
+Your code should use the `concat` method.
+
+```js
+assert(code.match(/\.concat/g));
 ```
 
-</section>
+Your code should not use the `push` method.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!code.match(/\.?[\s\S]*?push/g));
+```
 
-<div id='js-seed'>
+The `first` array should not change.
+
+```js
+assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
+```
+
+The `second` array should not change.
+
+```js
+assert(JSON.stringify(second) === JSON.stringify([4, 5]));
+```
+
+`nonMutatingPush([1, 2, 3], [4, 5])` should return `[1, 2, 3, 4, 5]`.
+
+```js
+assert(
+  JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) ===
+    JSON.stringify([1, 2, 3, 4, 5])
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function nonMutatingPush(original, newItem) {
@@ -62,14 +75,7 @@ var second = [4, 5];
 nonMutatingPush(first, second);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function nonMutatingPush(original, newItem) {
@@ -79,5 +85,3 @@ var first = [1, 2, 3];
 var second = [4, 5];
 nonMutatingPush(first, second);
 ```
-
-</section>

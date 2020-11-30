@@ -6,34 +6,31 @@ videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
 forumTopicId: 301116
 ---
 
-## Description
-<section id='description'>
-The <code>order</code> property is used to tell CSS the order of how flex items appear in the flex container. By default, items will appear in the same order they come in the source HTML. The property takes numbers as values, and negative numbers can be used.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Add the CSS property <code>order</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of <code>2</code> and give <code>#box-2</code> a value of <code>1</code>.
-</section>
+The `order` property is used to tell CSS the order of how flex items appear in the flex container. By default, items will appear in the same order they come in the source HTML. The property takes numbers as values, and negative numbers can be used.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>#box-1</code> element should have the <code>order</code> property set to a value of <code>2</code>.
-    testString: assert($('#box-1').css('order') == '2');
-  - text: The <code>#box-2</code> element should have the <code>order</code> property set to a value of <code>1</code>.
-    testString: assert($('#box-2').css('order') == '1');
+Add the CSS property `order` to both `#box-1` and `#box-2`. Give `#box-1` a value of `2` and give `#box-2` a value of `1`.
 
+# --hints--
+
+The `#box-1` element should have the `order` property set to a value of `2`.
+
+```js
+assert($('#box-1').css('order') == '2');
 ```
 
-</section>
+The `#box-2` element should have the `order` property set to a value of `1`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#box-2').css('order') == '1');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -62,14 +59,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -97,5 +87,3 @@ tests:
   <div id="box-2"></div>
 </div>
 ```
-
-</section>

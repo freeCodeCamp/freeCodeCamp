@@ -6,37 +6,39 @@ videoUrl: 'https://scrimba.com/c/cyLJ7c3'
 forumTopicId: 301060
 ---
 
-## Description
-<section id='description'>
-The next option for the CSS <code>position</code> property is <code>absolute</code>, which locks the element in place relative to its parent container. Unlike the <code>relative</code> position, this removes the element from the normal flow of the document, so surrounding items ignore it. The CSS offset properties (top or bottom and left or right) are used to adjust the position.
-One nuance with absolute positioning is that it will be locked relative to its closest <em>positioned</em> ancestor. If you forget to add a position rule to the parent item, (this is typically done using <code>position: relative;</code>), the browser will keep looking up the chain and ultimately default to the body tag.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Lock the <code>#searchbar</code> element to the top-right of its <code>section</code> parent by declaring its <code>position</code> as <code>absolute</code>. Give it <code>top</code> and <code>right</code> offsets of 50 pixels each.
-</section>
+The next option for the CSS `position` property is `absolute`, which locks the element in place relative to its parent container. Unlike the `relative` position, this removes the element from the normal flow of the document, so surrounding items ignore it. The CSS offset properties (top or bottom and left or right) are used to adjust the position.
 
-## Tests
-<section id='tests'>
+One nuance with absolute positioning is that it will be locked relative to its closest *positioned* ancestor. If you forget to add a position rule to the parent item, (this is typically done using `position: relative;`), the browser will keep looking up the chain and ultimately default to the body tag.
 
-```yml
-tests:
-  - text: The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.
-    testString: assert($('#searchbar').css('position') == 'absolute');
-  - text: Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.
-    testString: assert($('#searchbar').css('top') == '50px');
-  - text: Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.
-    testString: assert($('#searchbar').css('right') == '50px');
+# --instructions--
 
+Lock the `#searchbar` element to the top-right of its `section` parent by declaring its `position` as `absolute`. Give it `top` and `right` offsets of 50 pixels each.
+
+# --hints--
+
+The `#searchbar` element should have a `position` set to `absolute`.
+
+```js
+assert($('#searchbar').css('position') == 'absolute');
 ```
 
-</section>
+Your code should use the `top` CSS offset of 50 pixels on the `#searchbar` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('#searchbar').css('top') == '50px');
+```
 
-<div id='html-seed'>
+Your code should use the `right` CSS offset of 50 pixels on the `#searchbar` element.
+
+```js
+assert($('#searchbar').css('right') == '50px');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -61,14 +63,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -92,5 +87,3 @@ tests:
   </section>
 </body>
 ```
-
-</section>

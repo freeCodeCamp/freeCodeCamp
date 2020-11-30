@@ -5,29 +5,29 @@ challengeType: 11
 videoId: AqdfbrpkbHk
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What is the best practice for how many times a piece of string data should be stored in a database?
 
-```yml
-question:
-  text: |
-    What is the best practice for how many times a piece of string data should be stored in a database?
+## --answers--
 
-  answers:
-    - |
-        0
-    - |
-        1
-    - |
-        2
-    - |
-        3
-  solution: 2
-```
+0
 
-</section>
+---
+
+1
+
+---
+
+2
+
+---
+
+3
+
+## --video-solution--
+
+2
+

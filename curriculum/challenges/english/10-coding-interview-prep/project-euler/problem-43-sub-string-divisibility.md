@@ -1,12 +1,11 @@
 ---
 id: 5900f3971000cf542c50feaa
-challengeType: 5
 title: 'Problem 43: Sub-string divisibility'
+challengeType: 5
 forumTopicId: 302100
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
 
@@ -24,33 +23,42 @@ Let d<sub>1</sub> be the 1<sup>st</sup> digit, d<sub>2</sub> be the 2<sup>nd</su
 
 Find the numbers of all 0 to 9 pandigital numbers with this property.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`substringDivisibility()` should return an array.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>substringDivisibility()</code> should return an array.
-    testString: assert(Array.isArray(substringDivisibility()));
-  - text: <code>substringDivisibility()</code> should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].
-    testString: assert.sameMembers(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ]);
-  - text: You should not copy and return the array.
-    testString: assert(!__helpers.removeJSComments(code).match(/(1430952867)|(1460357289)|(1406357289)|(4130952867)|(4160357289)|(4106357289)/))
-
+```js
+assert(Array.isArray(substringDivisibility()));
 ```
 
-</section>
+`substringDivisibility()` should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.sameMembers(substringDivisibility(), [
+  1430952867,
+  1460357289,
+  1406357289,
+  4130952867,
+  4160357289,
+  4106357289
+]);
+```
 
-<div id='js-seed'>
+You should not copy and return the array.
+
+```js
+assert(
+  !__helpers
+    .removeJSComments(code)
+    .match(
+      /(1430952867)|(1460357289)|(1406357289)|(4130952867)|(4160357289)|(4106357289)/
+    )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function substringDivisibility() {
@@ -61,15 +69,8 @@ function substringDivisibility() {
 substringDivisibility();
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

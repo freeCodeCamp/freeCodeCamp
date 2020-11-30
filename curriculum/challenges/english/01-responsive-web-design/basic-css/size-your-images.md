@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cM9MmCP'
 forumTopicId: 18282
 ---
 
-## Description
-<section id='description'>
-CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.
-For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:
+# --description--
+
+CSS has a property called `width` that controls an element's width. Just like with fonts, we'll use `px` (pixels) to specify the image's width.
+
+For example, if we wanted to create a CSS class called `larger-image` that gave HTML elements a width of 500 pixels, we'd use:
 
 ```html
 <style>
@@ -19,31 +20,33 @@ For example, if we wanted to create a CSS class called <code>larger-image</code>
 </style>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.
-</section>
+Create a class called `smaller-image` and use it to resize the image so that it's only 100 pixels wide.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>img</code> element should have the class <code>smaller-image</code>.
-    testString: assert($("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') === "smaller-image");
-  - text: Your image should be 100 pixels wide.
-    testString: assert($("img").width() < 200 && code.match(/\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i));
+Your `img` element should have the class `smaller-image`.
 
+```js
+assert(
+  $("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') ===
+    'smaller-image'
+);
 ```
 
-</section>
+Your image should be 100 pixels wide.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('img').width() < 200 &&
+    code.match(/\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i)
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -95,14 +98,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -157,5 +153,3 @@ tests:
   </form>
 </main>
 ```
-
-</section>

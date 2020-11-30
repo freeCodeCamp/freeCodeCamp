@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cDqKdTv'
 forumTopicId: 17560
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 We can also delete properties from objects like this:
-<code>delete ourDog.bark;</code>
+
+`delete ourDog.bark;`
 
 Example:
 
@@ -25,7 +26,7 @@ var ourDog = {
 delete ourDog.bark;
 ```
 
-After the last line shown above, <code>ourDog</code> looks like:
+After the last line shown above, `ourDog` looks like:
 
 ```js
 {
@@ -36,31 +37,33 @@ After the last line shown above, <code>ourDog</code> looks like:
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Delete the <code>"tails"</code> property from <code>myDog</code>. You may use either dot or bracket notation.
-</section>
+Delete the `"tails"` property from `myDog`. You may use either dot or bracket notation.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should delete the property <code>"tails"</code> from <code>myDog</code>.
-    testString: assert(typeof myDog === "object" && myDog.tails === undefined);
-  - text: You should not modify the <code>myDog</code> setup.
-    testString: 'assert(code.match(/"tails": 1/g).length > 0);'
+You should delete the property `"tails"` from `myDog`.
 
+```js
+assert(typeof myDog === 'object' && myDog.tails === undefined);
 ```
 
-</section>
+You should not modify the `myDog` setup.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/"tails": 1/g).length > 0);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(z){return z;})(myDog);
+```
+
+## --seed-contents--
 
 ```js
 // Setup
@@ -73,27 +76,9 @@ var myDog = {
 };
 
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(z){return z;})(myDog);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myDog = {
@@ -105,5 +90,3 @@ var myDog = {
 };
 delete myDog.tails;
 ```
-
-</section>

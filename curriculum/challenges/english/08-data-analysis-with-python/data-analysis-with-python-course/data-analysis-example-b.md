@@ -5,35 +5,34 @@ challengeType: 11
 videoId: 0kJz0q0pvgQ
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+-   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/FreeCodeCamp-Pandas-Real-Life-Example)
+-   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-</section>
+# --question--
 
-## Tests
+## --text--
 
-<section id='tests'>
+What does the `loc` method allow you to do?
 
-```yml
-question:
-  text: |
-    What does the <code>loc</code> method allow you to do?
+## --answers--
 
-  answers:
-    - |
-      Retrieve a subset of rows and columns by supplying integer-location arguments.
-    - |
-      Access a group of rows and columns by supplying label(s) arguments.
-    - |
-      Returns the first <code>n</code> rows based on the integer argument supplied.
-  solution: 2
-```
+Retrieve a subset of rows and columns by supplying integer-location arguments.
 
-</section>
+---
+
+Access a group of rows and columns by supplying label(s) arguments.
+
+---
+
+Returns the first `n` rows based on the integer argument supplied.
+
+## --video-solution--
+
+2
+

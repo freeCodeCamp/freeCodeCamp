@@ -5,35 +5,34 @@ challengeType: 11
 videoId: kj7QqjXhH6A
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-<em>Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.</em>
+*Instead of using notebooks.ai like it shows in the video, you can use Google Colab instead.*
 
 More resources:
 
-- <a href="https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp" target="_blank" rel="noopener noreferrer">Notebooks on GitHub</a>
-- <a href="https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb" target="_blank" rel="noopener noreferrer">How to open Notebooks from GitHub using Google Colab.</a>
+-   [Notebooks on GitHub](https://github.com/ine-rmotr-curriculum/data-cleaning-rmotr-freecodecamp)
+-   [How to open Notebooks from GitHub using Google Colab.](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
 
-</section>
+# --question--
 
-## Tests
+## --text--
 
-<section id='tests'>
+The Python method `.duplicated()` returns a boolean Series for your DataFrame. `True` is the return value for rows that:
 
-```yml
-question:
-  text: |
-    The Python method `.duplicated()` returns a boolean Series for your DataFrame. `True` is the return value for rows that:
+## --answers--
 
-  answers:
-    - |
-      contain a duplicate, where the value for the row contains the first occurrence of that value.
-    - |
-      contain a duplicate, where the value for the row is at least the second occurrence of that value.
-    - |
-      contain a duplicate, where the value for the row contains either the first or second occurrence.
-  solution: 2
-```
+contain a duplicate, where the value for the row contains the first occurrence of that value.
 
-</section>
+---
+
+contain a duplicate, where the value for the row is at least the second occurrence of that value.
+
+---
+
+contain a duplicate, where the value for the row contains either the first or second occurrence.
+
+## --video-solution--
+
+2
+

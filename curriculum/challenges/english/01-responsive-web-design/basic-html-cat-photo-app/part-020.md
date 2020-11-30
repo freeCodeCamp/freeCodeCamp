@@ -4,8 +4,7 @@ title: Part 20
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Use list item (`li`) elements to create items in a list. Here is an example of list items in an unordered list:
 
@@ -16,30 +15,40 @@ Use list item (`li`) elements to create items in a list. Here is an example of l
 </ul>
 ```
 
-Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`. 
+Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You should have three `li` elements. Each `li` element should have its own opening and closing tag.
 
-```yml
-tests:
-  - text: You should have three `li` elements. Each `li` element should have its own opening and closing tag.
-    testString: assert( $('li').length === 3 &&  code.match(/<\/li\>/g).length === 3 );
-  - text: You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
-    testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["cat nip", "lasagna", "laser pointers"] );
-  - text: The three `li` elements should be located between the `ul` element's opening and closing tags.
-    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'UL').length === 3 );
-
+```js
+assert($('li').length === 3 && code.match(/<\/li\>/g).length === 3);
 ```
 
-</section>
+You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepStrictEqual(
+  [...document.querySelectorAll('li')]
+    .map((item) => item.innerText.toLowerCase())
+    .sort((a, b) => a.localeCompare(b)),
+  ['cat nip', 'lasagna', 'laser pointers']
+);
+```
 
-<div id='html-seed'>
+The three `li` elements should be located between the `ul` element's opening and closing tags.
+
+```js
+assert(
+  [...document.querySelectorAll('li')].filter(
+    (item) => item.parentNode.nodeName === 'UL'
+  ).length === 3
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -55,15 +64,13 @@ tests:
       <section>
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
-        --fcc-editable-region--
+--fcc-editable-region--
         <ul>
         </ul>
-        --fcc-editable-region--
+--fcc-editable-region--
       </section>
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

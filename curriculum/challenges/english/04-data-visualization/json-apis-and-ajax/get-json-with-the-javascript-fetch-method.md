@@ -5,10 +5,11 @@ challengeType: 6
 forumTopicId: 301501
 ---
 
-## Description
-<section id='description'>
-Another way to request external data is to use the JavaScript <code>fetch()</code>  method. It is equivalent to XMLHttpRequest, but the syntax is considered easier to understand.
-Here is the code for making a GET request to <code>/json/cats.json</code>
+# --description--
+
+Another way to request external data is to use the JavaScript `fetch()` method. It is equivalent to XMLHttpRequest, but the syntax is considered easier to understand.
+
+Here is the code for making a GET request to `/json/cats.json`
 
 ```js
 
@@ -20,44 +21,57 @@ fetch('/json/cats.json')
 
 ```
 
-Take a look at each piece of this code. 
+Take a look at each piece of this code.
 
-The first line is the one that makes the request. So, <code>fetch(URL)</code> makes a GET request to the URL specified. The method returns a Promise.
+The first line is the one that makes the request. So, `fetch(URL)` makes a GET request to the URL specified. The method returns a Promise.
 
-After a Promise is returned, if the request was successful, the <code>then</code> method is executed, which takes the response and converts it to JSON format.
+After a Promise is returned, if the request was successful, the `then` method is executed, which takes the response and converts it to JSON format.
 
-The <code>then</code> method also returns a Promise, which is handled by the next <code>then</code> method. The argument in the second <code>then</code> is the JSON object you are looking for! 
+The `then` method also returns a Promise, which is handled by the next `then` method. The argument in the second `then` is the JSON object you are looking for!
 
-Now, it selects the element that will receive the data by using <code>document.getElementById()</code>. Then it modifies the HTML code of the element by inserting a string created from the JSON object returned from the request.
-</section>
+Now, it selects the element that will receive the data by using `document.getElementById()`. Then it modifies the HTML code of the element by inserting a string created from the JSON object returned from the request.
 
-## Instructions
-<section id='instructions'>
-Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo API. But this time, using the <code>fetch</code> method instead of <code>XMLHttpRequest</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo API. But this time, using the `fetch` method instead of `XMLHttpRequest`.
 
-```yml
-tests:
-  - text: Your code should make a GET request with <code>fetch</code>.
-    testString: assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
-  - text: Your code should use <code>then</code> to convert the response to JSON.
-    testString: assert(code.match(/\.then\s*\(\s*(response|\(\s*response\s*\))\s*=>\s*response\s*\.json\s*\(\s*\)\s*\)/g))
-  - text: Your code should use <code>then</code> to handle the data converted to JSON by the other <code>then</code>.
-    testString: assert(code.match(/\.then\s*\(\s*(data|\(\s*data\s*\))\s*=>\s*{[^}]*}\s*\)/g))
-  - text: Your code should get the element with id <code>message</code> and change its inner HTML to the string of JSON data.
-    testString: assert(code.match(/document\s*\.getElementById\s*\(\s*('|")message\1\s*\)\s*\.innerHTML\s*=\s*JSON\s*\.\s*stringify\s*\(\s*data\s*\)/g));
+# --hints--
 
+Your code should make a GET request with `fetch`.
+
+```js
+assert(code.match(/fetch\s*\(\s*('|")\/json\/cats\.json\1\s*\)/g));
 ```
 
-</section>
+Your code should use `then` to convert the response to JSON.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(
+    /\.then\s*\(\s*(response|\(\s*response\s*\))\s*=>\s*response\s*\.json\s*\(\s*\)\s*\)/g
+  )
+);
+```
 
-<div id='html-seed'>
+Your code should use `then` to handle the data converted to JSON by the other `then`.
+
+```js
+assert(code.match(/\.then\s*\(\s*(data|\(\s*data\s*\))\s*=>\s*{[^}]*}\s*\)/g));
+```
+
+Your code should get the element with id `message` and change its inner HTML to the string of JSON data.
+
+```js
+assert(
+  code.match(
+    /document\s*\.getElementById\s*\(\s*('|")message\1\s*\)\s*\.innerHTML\s*=\s*JSON\s*\.\s*stringify\s*\(\s*data\s*\)/g
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -107,14 +121,7 @@ tests:
 </p>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -164,5 +171,3 @@ tests:
   </button>
 </p>
 ```
-
-</section>

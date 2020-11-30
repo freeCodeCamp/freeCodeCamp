@@ -6,16 +6,23 @@ videoUrl: 'https://scrimba.com/c/c9yNVCe'
 forumTopicId: 18219
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You can run the same code multiple times by using a loop.
-The most common type of JavaScript loop is called a <code>for</code> loop because it runs "for" a specific number of times.
+
+The most common type of JavaScript loop is called a `for` loop because it runs "for" a specific number of times.
+
 For loops are declared with three optional expressions separated by semicolons:
-<code>for ([initialization]; [condition]; [final-expression])</code>
-The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.
-The <code>condition</code> statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to <code>true</code>. When <code>condition</code> is <code>false</code> at the start of the iteration, the loop will stop executing. This means if <code>condition</code> starts as <code>false</code>, your loop will never execute.
-The <code>final-expression</code> is executed at the end of each loop iteration, prior to the next <code>condition</code> check and is usually used to increment or decrement your loop counter.
-In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i &#60; 5</code> is true. We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.
+
+`for ([initialization]; [condition]; [final-expression])`
+
+The `initialization` statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.
+
+The `condition` statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to `true`. When `condition` is `false` at the start of the iteration, the loop will stop executing. This means if `condition` starts as `false`, your loop will never execute.
+
+The `final-expression` is executed at the end of each loop iteration, prior to the next `condition` check and is usually used to increment or decrement your loop counter.
+
+In the following example we initialize with `i = 0` and iterate while our condition `i < 5` is true. We'll increment `i` by `1` in each loop iteration with `i++` as our `final-expression`.
 
 ```js
 var ourArray = [];
@@ -24,59 +31,44 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-<code>ourArray</code> will now contain <code>[0,1,2,3,4]</code>.
-</section>
+`ourArray` will now contain `[0,1,2,3,4]`.
 
-## Instructions
-<section id='instructions'>
-Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Use a `for` loop to work to push the values 1 through 5 onto `myArray`.
 
-```yml
-tests:
-  - text: You should be using a <code>for</code> loop for this.
-    testString: assert(/for\s*\([^)]+?\)/.test(code));
-  - text: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.
-    testString: assert.deepEqual(myArray, [1,2,3,4,5]);
+# --hints--
 
+You should be using a `for` loop for this.
+
+```js
+assert(/for\s*\([^)]+?\)/.test(code));
 ```
 
-</section>
+`myArray` should equal `[1,2,3,4,5]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(myArray, [1, 2, 3, 4, 5]);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+if (typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
 
 ```js
 // Setup
 var myArray = [];
 
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-if (typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myArray = [];
@@ -84,5 +76,3 @@ for (var i = 1; i < 6; i++) {
   myArray.push(i);
 }
 ```
-
-</section>

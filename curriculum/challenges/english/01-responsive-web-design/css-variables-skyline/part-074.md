@@ -4,31 +4,28 @@ title: Part 74
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give `fb1b` a `width` of `60%` and `height` of `10%`, and `fb1c` a `width` of `100%` and `height` of `80%`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb1b = code.match(/\.fb1b\s*{[\s\S]+?[^}]}/g)[0]; const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*60%\s*(;|})/g.test(fb1b) && /height\s*:\s*10%\s*(;|})/g.test(fb1b) && /width\s*:\s*100%\s*(;|})/g.test(fb1c) && /height\s*:\s*80%\s*(;|})/g.test(fb1c));
-
+```js
+const fb1b = code.match(/\.fb1b\s*{[\s\S]+?[^}]}/g)[0];
+const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*60%\s*(;|})/g.test(fb1b) &&
+    /height\s*:\s*10%\s*(;|})/g.test(fb1b) &&
+    /width\s*:\s*100%\s*(;|})/g.test(fb1c) &&
+    /height\s*:\s*80%\s*(;|})/g.test(fb1c)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -271,12 +268,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -528,5 +520,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

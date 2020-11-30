@@ -5,51 +5,77 @@ challengeType: 5
 forumTopicId: 16000
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Check if a value is classified as a boolean primitive. Return true or false.
+
 Boolean primitives are true and false.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`booWho(true)` should return true.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>booWho(true)</code> should return true.
-    testString: assert.strictEqual(booWho(true), true);
-  - text: <code>booWho(false)</code> should return true.
-    testString: assert.strictEqual(booWho(false), true);
-  - text: <code>booWho([1, 2, 3])</code> should return false.
-    testString: assert.strictEqual(booWho([1, 2, 3]), false);
-  - text: <code>booWho([].slice)</code> should return false.
-    testString: assert.strictEqual(booWho([].slice), false);
-  - text: '<code>booWho({ "a": 1 })</code> should return false.'
-    testString: 'assert.strictEqual(booWho({ "a": 1 }), false);'
-  - text: <code>booWho(1)</code> should return false.
-    testString: assert.strictEqual(booWho(1), false);
-  - text: <code>booWho(NaN)</code> should return false.
-    testString: assert.strictEqual(booWho(NaN), false);
-  - text: <code>booWho("a")</code> should return false.
-    testString: assert.strictEqual(booWho("a"), false);
-  - text: <code>booWho("true")</code> should return false.
-    testString: assert.strictEqual(booWho("true"), false);
-  - text: <code>booWho("false")</code> should return false.
-    testString: assert.strictEqual(booWho("false"), false);
-
+```js
+assert.strictEqual(booWho(true), true);
 ```
 
-</section>
+`booWho(false)` should return true.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(booWho(false), true);
+```
 
-<div id='js-seed'>
+`booWho([1, 2, 3])` should return false.
+
+```js
+assert.strictEqual(booWho([1, 2, 3]), false);
+```
+
+`booWho([].slice)` should return false.
+
+```js
+assert.strictEqual(booWho([].slice), false);
+```
+
+`booWho({ "a": 1 })` should return false.
+
+```js
+assert.strictEqual(booWho({ a: 1 }), false);
+```
+
+`booWho(1)` should return false.
+
+```js
+assert.strictEqual(booWho(1), false);
+```
+
+`booWho(NaN)` should return false.
+
+```js
+assert.strictEqual(booWho(NaN), false);
+```
+
+`booWho("a")` should return false.
+
+```js
+assert.strictEqual(booWho('a'), false);
+```
+
+`booWho("true")` should return false.
+
+```js
+assert.strictEqual(booWho('true'), false);
+```
+
+`booWho("false")` should return false.
+
+```js
+assert.strictEqual(booWho('false'), false);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function booWho(bool) {
@@ -59,15 +85,7 @@ function booWho(bool) {
 booWho(null);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function booWho(bool) {
@@ -76,5 +94,3 @@ function booWho(bool) {
 
 booWho(null);
 ```
-
-</section>

@@ -6,38 +6,48 @@ videoUrl: 'https://scrimba.com/c/cyWJJs3'
 forumTopicId: 18185
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Random numbers are useful for creating random behavior.
-JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>
-<strong>Note</strong><br>Like <a href='/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator' target='_blank'>Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can <code>return</code> the value of the <code>Math.random()</code> function.
-</section>
 
-## Instructions
-<section id='instructions'>
-Change <code>randomFraction</code> to return a random number instead of returning <code>0</code>.
-</section>
+JavaScript has a `Math.random()` function that generates a random decimal number between `0` (inclusive) and not quite up to `1` (exclusive). Thus `Math.random()` can return a `0` but never quite return a `1`
 
-## Tests
-<section id='tests'>
+**Note**  
+Like [Storing Values with the Equal Operator](/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator), all function calls will be resolved before the `return` executes, so we can `return` the value of the `Math.random()` function.
 
-```yml
-tests:
-  - text: <code>randomFraction</code> should return a random number.
-    testString: assert(typeof randomFraction() === "number");
-  - text: The number returned by <code>randomFraction</code> should be a decimal.
-    testString: assert((randomFraction()+''). match(/\./g));
-  - text: You should be using <code>Math.random</code> to generate the random decimal number.
-    testString: assert(code.match(/Math\.random/g).length >= 0);
+# --instructions--
 
+Change `randomFraction` to return a random number instead of returning `0`.
+
+# --hints--
+
+`randomFraction` should return a random number.
+
+```js
+assert(typeof randomFraction() === 'number');
 ```
 
-</section>
+The number returned by `randomFraction` should be a decimal.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert((randomFraction() + '').match(/\./g));
+```
 
-<div id='js-seed'>
+You should be using `Math.random` to generate the random decimal number.
+
+```js
+assert(code.match(/Math\.random/g).length >= 0);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(){return randomFraction();})();
+```
+
+## --seed-contents--
 
 ```js
 function randomFraction() {
@@ -50,28 +60,10 @@ function randomFraction() {
 }
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(){return randomFraction();})();
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function randomFraction() {
   return Math.random();
 }
 ```
-
-</section>

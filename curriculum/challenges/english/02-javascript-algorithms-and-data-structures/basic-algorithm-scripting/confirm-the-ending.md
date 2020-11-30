@@ -5,53 +5,93 @@ challengeType: 5
 forumTopicId: 16006
 ---
 
-## Description
-<section id='description'>
-Check if a string (first argument, <code>str</code>) ends with the given target string (second argument, <code>target</code>).
-This challenge <em>can</em> be solved with the <code>.endsWith()</code> method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Check if a string (first argument, `str`) ends with the given target string (second argument, `target`).
 
-</section>
+This challenge *can* be solved with the `.endsWith()` method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>confirmEnding("Bastian", "n")</code> should return true.
-    testString: assert(confirmEnding("Bastian", "n") === true);
-  - text: <code>confirmEnding("Congratulation", "on")</code> should return true.
-    testString: assert(confirmEnding("Congratulation", "on") === true);
-  - text: <code>confirmEnding("Connor", "n")</code> should return false.
-    testString: assert(confirmEnding("Connor", "n") === false);
-  - text: <code>confirmEnding("Walking on water and developing software from a specification are easy if both are frozen"&#44; "specification"&#41;</code> should return false.
-    testString: assert(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") === false);
-  - text: <code>confirmEnding("He has to give me a new name", "name")</code> should return true.
-    testString: assert(confirmEnding("He has to give me a new name", "name") === true);
-  - text: <code>confirmEnding("Open sesame", "same")</code> should return true.
-    testString: assert(confirmEnding("Open sesame", "same") === true);
-  - text: <code>confirmEnding("Open sesame", "sage")</code> should return false.
-    testString: assert(confirmEnding("Open sesame", "sage") === false);
-  - text: <code>confirmEnding("Open sesame", "game")</code> should return false.
-    testString: assert(confirmEnding("Open sesame", "game") === false);
-  - text: <code>confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")</code> should return false.
-    testString: assert(confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") === false);
-  - text: <code>confirmEnding("Abstraction", "action")</code> should return true.
-    testString: assert(confirmEnding("Abstraction", "action") === true);
-  - text: Your code should not use the built-in method <code>.endsWith()</code> to solve the challenge.
-    testString: assert(!(/\.endsWith\(.*?\)\s*?;?/.test(code)) && !(/\['endsWith'\]/.test(code)));
+`confirmEnding("Bastian", "n")` should return true.
 
+```js
+assert(confirmEnding('Bastian', 'n') === true);
 ```
 
-</section>
+`confirmEnding("Congratulation", "on")` should return true.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(confirmEnding('Congratulation', 'on') === true);
+```
 
-<div id='js-seed'>
+`confirmEnding("Connor", "n")` should return false.
+
+```js
+assert(confirmEnding('Connor', 'n') === false);
+```
+
+`confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")` should return false.
+
+```js
+assert(
+  confirmEnding(
+    'Walking on water and developing software from a specification are easy if both are frozen',
+    'specification'
+  ) === false
+);
+```
+
+`confirmEnding("He has to give me a new name", "name")` should return true.
+
+```js
+assert(confirmEnding('He has to give me a new name', 'name') === true);
+```
+
+`confirmEnding("Open sesame", "same")` should return true.
+
+```js
+assert(confirmEnding('Open sesame', 'same') === true);
+```
+
+`confirmEnding("Open sesame", "sage")` should return false.
+
+```js
+assert(confirmEnding('Open sesame', 'sage') === false);
+```
+
+`confirmEnding("Open sesame", "game")` should return false.
+
+```js
+assert(confirmEnding('Open sesame', 'game') === false);
+```
+
+`confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")` should return false.
+
+```js
+assert(
+  confirmEnding(
+    'If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing',
+    'mountain'
+  ) === false
+);
+```
+
+`confirmEnding("Abstraction", "action")` should return true.
+
+```js
+assert(confirmEnding('Abstraction', 'action') === true);
+```
+
+Your code should not use the built-in method `.endsWith()` to solve the challenge.
+
+```js
+assert(!/\.endsWith\(.*?\)\s*?;?/.test(code) && !/\['endsWith'\]/.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function confirmEnding(str, target) {
@@ -61,15 +101,7 @@ function confirmEnding(str, target) {
 confirmEnding("Bastian", "n");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function confirmEnding(str, target) {
@@ -77,7 +109,4 @@ function confirmEnding(str, target) {
 }
 
 confirmEnding("Bastian", "n");
-
 ```
-
-</section>

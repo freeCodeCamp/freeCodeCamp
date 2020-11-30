@@ -4,9 +4,7 @@ title: Part 7
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 If you inspect the inputs in the form, you will notice that they have the class name `cal-control`.
 
@@ -14,46 +12,21 @@ To access elements with a certain class name, we use the `getElementsByClassName
 
 Similar to how you referenced the calorie form above (`document.getElementById('calorie-form')`), create a reference to the elements with the class name `cal-control` below `e.preventDefault()`.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)/) );
+```js
+assert(
+  code
+    .replace(/\s/g, '')
+    .match(/document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)/)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -113,24 +86,26 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
+  }
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -142,5 +117,3 @@ tests:
   }
 </script>
 ```
-
-</section>

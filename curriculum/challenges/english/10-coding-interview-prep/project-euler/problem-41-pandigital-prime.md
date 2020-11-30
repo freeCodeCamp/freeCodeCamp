@@ -1,44 +1,39 @@
 ---
 id: 5900f3951000cf542c50fea8
-challengeType: 5
 title: 'Problem 41: Pandigital prime'
+challengeType: 5
 forumTopicId: 302078
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-We shall say that an <var>n</var>-digit number is pandigital if it makes use of all the digits 1 to <var>n</var> exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+We shall say that an `n`-digit number is pandigital if it makes use of all the digits 1 to `n` exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
 
 What is the largest `n`-length digit pandigital prime that exists?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`pandigitalPrime(4)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>pandigitalPrime(4)</code> should return a number.
-    testString: assert(typeof pandigitalPrime(4) === 'number');
-  - text: <code>pandigitalPrime(4)</code> should return 4231.
-    testString: assert(pandigitalPrime(4) == 4231);
-  - text: <code>pandigitalPrime(7)</code> should return 7652413.
-    testString: assert(pandigitalPrime(7) == 7652413);
-
+```js
+assert(typeof pandigitalPrime(4) === 'number');
 ```
 
-</section>
+`pandigitalPrime(4)` should return 4231.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(pandigitalPrime(4) == 4231);
+```
 
-<div id='js-seed'>
+`pandigitalPrime(7)` should return 7652413.
+
+```js
+assert(pandigitalPrime(7) == 7652413);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function pandigitalPrime(n) {
@@ -49,15 +44,7 @@ function pandigitalPrime(n) {
 pandigitalPrime(7);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function pandigitalPrime(n) {
@@ -127,5 +114,3 @@ function pandigitalPrime(n) {
   return max;
 }
 ```
-
-</section>

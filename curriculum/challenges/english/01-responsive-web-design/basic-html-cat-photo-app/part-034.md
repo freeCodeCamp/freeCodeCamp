@@ -4,42 +4,42 @@ title: Part 34
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now you will add a web form to collect information from users.
 
 After the `Cat Form` heading, add a `form` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your `form` element should have an opening tag and closing tag. You may be missing one or both of the required tags, or have them in the wrong order.
 
-```yml
-tests:
-  - text: Your `form` element should have an opening tag and closing tag. You may be missing one or both of the required tags, or have them in the wrong order.
-    testString: |
-      assert(
-        document.querySelector('form') &&
-        code.match(/<\/form>/g)
-      );
-  - text: Your `form` element tags are not in the correct order.
-    testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.indexOf('<form>') < noSpaces.indexOf('</form>') );
-  - text: The `form` element nested in the last `section` element should be below the `h2` element. You have the `h2` element and the `form` element in the wrong order.
-    testString: assert( document.querySelector('form').previousElementSibling.nodeName === 'H2');
-  - text: The `form` element should have no content. Remove any HTML elements or text between the `form` element's tags.
-    testString: assert( $('form')[0].innerHTML.trim().length === 0 );
-
+```js
+assert(document.querySelector('form') && code.match(/<\/form>/g));
 ```
 
-</section>
+Your `form` element tags are not in the correct order.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+const noSpaces = code.replace(/\s/g, '');
+assert(noSpaces.indexOf('<form>') < noSpaces.indexOf('</form>'));
+```
+
+The `form` element nested in the last `section` element should be below the `h2` element. You have the `h2` element and the `form` element in the wrong order.
+
+```js
+assert(document.querySelector('form').previousElementSibling.nodeName === 'H2');
+```
+
+The `form` element should have no content. Remove any HTML elements or text between the `form` element's tags.
+
+```js
+assert($('form')[0].innerHTML.trim().length === 0);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -76,14 +76,12 @@ tests:
         </figure>
       </section>
       <section>
-        --fcc-editable-region--
+--fcc-editable-region--
         <h2>Cat Form</h2>
-        --fcc-editable-region--
+--fcc-editable-region--
       </section>
     </main>
   </body>
 </html>
 ```
 
-</div>
-</section>

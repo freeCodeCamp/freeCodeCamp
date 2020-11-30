@@ -4,31 +4,24 @@ title: Part 9
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give your background buildings element a `width` and `height` of `100%` to make it the full width and height of its parent, the body.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb = code.match(/\.background-buildings\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*100%\s*(;|})/g.test(bb) && /height\s*:\s*100%\s*(;|})/g.test(bb))
-
+```js
+const bb = code.match(/\.background-buildings\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*100%\s*(;|})/g.test(bb) && /height\s*:\s*100%\s*(;|})/g.test(bb)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -55,12 +48,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -91,5 +79,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

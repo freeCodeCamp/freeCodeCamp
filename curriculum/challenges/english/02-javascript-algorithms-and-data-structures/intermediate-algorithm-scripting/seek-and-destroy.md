@@ -5,43 +5,81 @@ challengeType: 5
 forumTopicId: 16046
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
-<strong>Note</strong><br> You have to use the <code>arguments</code> object.
-</section>
 
-## Instructions
-<section id='instructions'>
+**Note**  
+You have to use the `arguments` object.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`destroyer([1, 2, 3, 1, 2, 3], 2, 3)` should return `[1, 1]`.
 
-```yml
-tests:
-  - text: <code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.
-    testString: assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1]);
-  - text: <code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.
-    testString: assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1]);
-  - text: <code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code> should return <code>[1]</code>.
-    testString: assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1]);
-  - text: <code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.
-    testString: assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), []);
-  - text: <code>destroyer(["tree", "hamburger", 53], "tree", 53)</code> should return <code>["hamburger"]</code>.
-    testString: assert.deepEqual(destroyer(["tree", "hamburger", 53], "tree", 53), ["hamburger"]);
-  - text: <code>destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")</code> should return <code>[12,92,65]</code>.
-    testString: assert.deepEqual(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan"), [12,92,65]);
-
+```js
+assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1]);
 ```
 
-</section>
+`destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)` should return `[1, 5, 1]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1]);
+```
 
-<div id='js-seed'>
+`destroyer([3, 5, 1, 2, 2], 2, 3, 5)` should return `[1]`.
+
+```js
+assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1]);
+```
+
+`destroyer([2, 3, 2, 3], 2, 3)` should return `[]`.
+
+```js
+assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), []);
+```
+
+`destroyer(["tree", "hamburger", 53], "tree", 53)` should return `["hamburger"]`.
+
+```js
+assert.deepEqual(destroyer(['tree', 'hamburger', 53], 'tree', 53), [
+  'hamburger'
+]);
+```
+
+`destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")` should return `[12,92,65]`.
+
+```js
+assert.deepEqual(
+  destroyer(
+    [
+      'possum',
+      'trollo',
+      12,
+      'safari',
+      'hotdog',
+      92,
+      65,
+      'grandma',
+      'bugati',
+      'trojan',
+      'yacht'
+    ],
+    'yacht',
+    'possum',
+    'trollo',
+    'safari',
+    'hotdog',
+    'grandma',
+    'bugati',
+    'trojan'
+  ),
+  [12, 92, 65]
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function destroyer(arr) {
@@ -51,15 +89,7 @@ function destroyer(arr) {
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function destroyer(arr) {
@@ -71,7 +101,4 @@ function destroyer(arr) {
 }
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
-
 ```
-
-</section>

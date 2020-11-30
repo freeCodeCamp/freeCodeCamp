@@ -4,57 +4,25 @@ title: Part 14
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Inside the function body, insert `return meal.value`, since it is the value of the individual `cal-control` inputs that we want.
 
 If you want, console log `total` to see what results you are getting.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/\(function\(meal\)\{returnmeal\.value\;?\}\)/) );
+```js
+assert(
+  code.replace(/\s/g, '').match(/\(function\(meal\)\{returnmeal\.value\;?\}\)/)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-    const total = Array.from(
-      document.getElementsByClassName('cal-control')
-    ).map(function(meal) {});
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -114,24 +82,29 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(
+      document.getElementsByClassName('cal-control')
+    ).map(function(meal) {});
+  }
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -147,5 +120,3 @@ tests:
   }
 </script>
 ```
-
-</section>

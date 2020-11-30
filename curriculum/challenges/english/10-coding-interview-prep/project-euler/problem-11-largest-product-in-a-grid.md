@@ -1,12 +1,11 @@
 ---
 id: 5900f3781000cf542c50fe8a
-challengeType: 5
 title: 'Problem 11: Largest product in a grid'
+challengeType: 5
 forumTopicId: 301734
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
 
@@ -37,33 +36,29 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in a given `arr` grid?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`largestGridProduct(testGrid)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>largestGridProduct(testGrid)</code> should return a number.
-    testString: assert(typeof largestGridProduct(testGrid) === 'number');
-  - text: <code>largestGridProduct(testGrid)</code> should return 14169081.
-    testString: assert.strictEqual(largestGridProduct(testGrid), 14169081);
-  - text: <code>largestGridProduct(grid)</code> should return 70600674.
-    testString: assert.strictEqual(largestGridProduct(grid), 70600674);
-
+```js
+assert(typeof largestGridProduct(testGrid) === 'number');
 ```
 
-</section>
+`largestGridProduct(testGrid)` should return 14169081.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(largestGridProduct(testGrid), 14169081);
+```
 
-<div id='js-seed'>
+`largestGridProduct(grid)` should return 70600674.
+
+```js
+assert.strictEqual(largestGridProduct(grid), 70600674);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function largestGridProduct(arr) {
@@ -106,15 +101,7 @@ const testGrid = [
 largestGridProduct(testGrid);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function largestGridProduct(arr) {
@@ -192,5 +179,3 @@ const testGrid = [
   [7, 97, 57, 32, 16]
 ];
 ```
-
-</section>

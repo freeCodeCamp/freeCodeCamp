@@ -4,31 +4,26 @@ title: Part 116
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In the `sky` class of the media query, change the two `#ffcf33` color values to `#ccc`, the `#ffff66` to `#445`, and the `#bbeeff` to `#223`. Then you can resize your window to see the background change colors.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1]; assert(/background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ccc\s*(0%\s*,|,)\s*#ccc\s*20%\s*,\s*#445\s*21%\s*,\s*#223\s*100%\s*\)\s*(;|})/g.test(sky));
-
+```js
+const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1];
+assert(
+  /background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ccc\s*(0%\s*,|,)\s*#ccc\s*20%\s*,\s*#445\s*21%\s*,\s*#223\s*100%\s*\)\s*(;|})/g.test(
+    sky
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -426,12 +421,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -828,5 +818,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

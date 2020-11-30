@@ -6,60 +6,41 @@ videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 It is common to <dfn>initialize</dfn> a variable to an initial value in the same line as it is declared.
-<code>var myVar = 0;</code>
-Creates a new variable called <code>myVar</code> and assigns it an initial value of <code>0</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
-Define a variable <code>a</code> with <code>var</code> and initialize it to a value of <code>9</code>.
-</section>
+`var myVar = 0;`
 
-## Tests
-<section id='tests'>
+Creates a new variable called `myVar` and assigns it an initial value of `0`.
 
-```yml
-tests:
-  - text: You should initialize <code>a</code> to a value of <code>9</code>.
-    testString: assert(/var\s+a\s*=\s*9\s*/.test(code));
+# --instructions--
 
-```
+Define a variable `a` with `var` and initialize it to a value of `9`.
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+You should initialize `a` to a value of `9`.
 
 ```js
-
-
+assert(/var\s+a\s*=\s*9\s*/.test(code));
 ```
 
-</div>
+# --seed--
 
-
-### After Test
-<div id='js-teardown'>
+## --after-user-code--
 
 ```js
 if(typeof a !== 'undefined') {(function(a){return "a = " + a;})(a);} else { (function() {return 'a is undefined';})(); }
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+```
 
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var a = 9;
 ```
-
-</section>

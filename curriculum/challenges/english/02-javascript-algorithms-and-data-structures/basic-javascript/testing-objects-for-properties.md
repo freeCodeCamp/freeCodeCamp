@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324
 ---
 
-## Description
-<section id='description'>
-Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.
-<strong>Example</strong>
+# --description--
+
+Sometimes it is useful to check if the property of a given object exists or not. We can use the `.hasOwnProperty(propname)` method of objects to determine if that object has the given property name. `.hasOwnProperty()` returns `true` or `false` if the property is found or not.
+
+**Example**
 
 ```js
 var myObj = {
@@ -20,38 +21,58 @@ myObj.hasOwnProperty("top");    // true
 myObj.hasOwnProperty("middle"); // false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Modify the function <code>checkObj</code> to test if an object passed to the function (<code>obj</code>) contains a specific property (<code>checkProp</code>). If the property is found, return that property's value. If not, return <code>"Not Found"</code>.
-</section>
+Modify the function `checkObj` to test if an object passed to the function (`obj`) contains a specific property (`checkProp`). If the property is found, return that property's value. If not, return `"Not Found"`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '<code>checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")</code> should return <code>"pony"</code>.'
-    testString: 'assert(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift") === "pony");'
-  - text: '<code>checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")</code> should return <code>"kitten"</code>.'
-    testString: 'assert(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet") === "kitten");'
-  - text: '<code>checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")</code> should return <code>"Not Found"</code>.'
-    testString: 'assert(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house") === "Not Found");'
-  - text: '<code>checkObj({city: "Seattle"}, "city")</code> should return <code>"Seattle"</code>.'
-    testString: 'assert(checkObj({city: "Seattle"}, "city") === "Seattle");'
-  - text: '<code>checkObj({city: "Seattle"}, "district")</code> should return <code>"Not Found"</code>.'
-    testString: 'assert(checkObj({city: "Seattle"}, "district") === "Not Found");'
-  - text: '<code>checkObj({pet: "kitten", bed: "sleigh"}, "gift")</code> should return <code>"Not Found"</code>.'
-    testString: 'assert(checkObj({pet: "kitten", bed: "sleigh"}, "gift") === "Not Found");'
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift")` should return `"pony"`.
+
+```js
+assert(
+  checkObj({ gift: 'pony', pet: 'kitten', bed: 'sleigh' }, 'gift') === 'pony'
+);
 ```
 
-</section>
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet")` should return `"kitten"`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  checkObj({ gift: 'pony', pet: 'kitten', bed: 'sleigh' }, 'pet') === 'kitten'
+);
+```
 
-<div id='js-seed'>
+`checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house")` should return `"Not Found"`.
+
+```js
+assert(
+  checkObj({ gift: 'pony', pet: 'kitten', bed: 'sleigh' }, 'house') ===
+    'Not Found'
+);
+```
+
+`checkObj({city: "Seattle"}, "city")` should return `"Seattle"`.
+
+```js
+assert(checkObj({ city: 'Seattle' }, 'city') === 'Seattle');
+```
+
+`checkObj({city: "Seattle"}, "district")` should return `"Not Found"`.
+
+```js
+assert(checkObj({ city: 'Seattle' }, 'district') === 'Not Found');
+```
+
+`checkObj({pet: "kitten", bed: "sleigh"}, "gift")` should return `"Not Found"`.
+
+```js
+assert(checkObj({ pet: 'kitten', bed: 'sleigh' }, 'gift') === 'Not Found');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function checkObj(obj, checkProp) {
@@ -59,15 +80,9 @@ function checkObj(obj, checkProp) {
   return "Change Me!";
   // Only change code above this line
 }
-
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 function checkObj(obj, checkProp) {
@@ -78,5 +93,3 @@ function checkObj(obj, checkProp) {
   }
 }
 ```
-
-</section>

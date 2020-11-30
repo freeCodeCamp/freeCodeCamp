@@ -5,49 +5,57 @@ challengeType: 5
 forumTopicId: 302332
 ---
 
-## Description
+# --description--
 
-<section id='description'>
+The objective is to write a function that finds the sum of all positive multiples of 3 or 5 below *n*.
 
-The objective is to write a function that finds the sum of all positive multiples of 3 or 5 below <i>n</i>.
+# --hints--
 
-</section>
+`sumMults` should be a function.
 
-## Instructions
-
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>sumMults</code> should be a function.
-    testString: assert(typeof sumMults == 'function');
-  - text: <code>sumMults(10)</code> should return a number.
-    testString: assert(typeof sumMults(10) == 'number');
-  - text: <code>sumMults(10)</code> should return <code>23</code>.
-    testString: assert.equal(sumMults(10), 23);
-  - text: <code>sumMults(100)</code> should return <code>2318</code>.
-    testString: assert.equal(sumMults(100), 2318);
-  - text: <code>sumMults(1000)</code> should return <code>233168</code>.
-    testString: assert.equal(sumMults(1000), 233168);
-  - text: <code>sumMults(10000)</code> should return <code>23331668</code>.
-    testString: assert.equal(sumMults(10000), 23331668);
-  - text: <code>sumMults(100000)</code> should return <code>2333316668</code>.
-    testString: assert.equal(sumMults(100000), 2333316668);
+```js
+assert(typeof sumMults == 'function');
 ```
 
-</section>
+`sumMults(10)` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof sumMults(10) == 'number');
+```
 
-<section id='challengeSeed'>
+`sumMults(10)` should return `23`.
 
-<div id='js-seed'>
+```js
+assert.equal(sumMults(10), 23);
+```
+
+`sumMults(100)` should return `2318`.
+
+```js
+assert.equal(sumMults(100), 2318);
+```
+
+`sumMults(1000)` should return `233168`.
+
+```js
+assert.equal(sumMults(1000), 233168);
+```
+
+`sumMults(10000)` should return `23331668`.
+
+```js
+assert.equal(sumMults(10000), 23331668);
+```
+
+`sumMults(100000)` should return `2333316668`.
+
+```js
+assert.equal(sumMults(100000), 2333316668);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function sumMults(n) {
@@ -55,12 +63,7 @@ function sumMults(n) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function sumMults(n) {
@@ -71,5 +74,3 @@ function sumMults(n) {
   return sum;
 }
 ```
-
-</section>

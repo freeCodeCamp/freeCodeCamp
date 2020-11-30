@@ -5,99 +5,166 @@ challengeType: 6
 forumTopicId: 301417
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-Conditional rendering is useful, but you may need your components to render an unknown number of elements. Often in reactive programming, a programmer has no way to know what the state of an application is until runtime, because so much depends on a user's interaction with that program. Programmers need to write their code to correctly handle that unknown state ahead of time. Using <code>Array.map()</code> in React illustrates this concept.
+Conditional rendering is useful, but you may need your components to render an unknown number of elements. Often in reactive programming, a programmer has no way to know what the state of an application is until runtime, because so much depends on a user's interaction with that program. Programmers need to write their code to correctly handle that unknown state ahead of time. Using `Array.map()` in React illustrates this concept.
+
 For example, you create a simple "To Do List" app. As the programmer, you have no way of knowing how many items a user might have on their list. You need to set up your component to dynamically render the correct number of list elements long before someone using the program decides that today is laundry day.
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
-The code editor has most of the <code>MyToDoList</code> component set up. Some of this code should look familiar if you completed the controlled form challenge. You'll notice a <code>textarea</code> and a <code>button</code>, along with a couple of methods that track their states, but nothing is rendered to the page yet.
-Inside the <code>constructor</code>, create a <code>this.state</code> object and define two states: <code>userInput</code> should be initialized as an empty string, and <code>toDoList</code> should be initialized as an empty array. Next, delete the comment in the <code>render()</code> method next to the <code>items</code> variable. In its place, map over the <code>toDoList</code> array stored in the component's internal state and dynamically render a <code>li</code> for each item. Try entering the string <code>eat, code, sleep, repeat</code> into the <code>textarea</code>, then click the button and see what happens.
-<strong>Note:</strong>&nbsp;You may know that all sibling child elements created by a mapping operation like this do need to be supplied with a unique <code>key</code> attribute. Don't worry, this is the topic of the next challenge.
-</section>
+The code editor has most of the `MyToDoList` component set up. Some of this code should look familiar if you completed the controlled form challenge. You'll notice a `textarea` and a `button`, along with a couple of methods that track their states, but nothing is rendered to the page yet.
 
-## Tests
+Inside the `constructor`, create a `this.state` object and define two states: `userInput` should be initialized as an empty string, and `toDoList` should be initialized as an empty array. Next, delete the comment in the `render()` method next to the `items` variable. In its place, map over the `toDoList` array stored in the component's internal state and dynamically render a `li` for each item. Try entering the string `eat, code, sleep, repeat` into the `textarea`, then click the button and see what happens.
 
-<section id='tests'>
+**Note:** You may know that all sibling child elements created by a mapping operation like this do need to be supplied with a unique `key` attribute. Don't worry, this is the topic of the next challenge.
 
-```yml
-tests:
-  - text: The MyToDoList component should exist and render to the page.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').length === 1; })());
-  - text: The first child of <code>MyToDoList</code> should be a <code>textarea</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(0).type() === 'textarea'; })());
-  - text: The second child of <code>MyToDoList</code> should be a <code>br</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(1).type() === 'br'; })());
-  - text: The third child of <code>MyToDoList</code> should be a <code>button</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(2).type() === 'button'; })());
-  - text: The state of <code>MyToDoList</code> should be initialized with <code>toDoList</code> as an empty array.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return Array.isArray(initialState.toDoList) === true && initialState.toDoList.length === 0; })());
-  - text: The state of <code>MyToDoList</code> should be initialized with <code>userInput</code> as an empty string.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return typeof initialState.userInput === 'string' && initialState.userInput.length === 0; })());
-  - text: When the <code>Create List</code> button is clicked, the <code>MyToDoList</code> component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the <code>textarea</code> element.
-    testString: "(() => {
-      const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
-      const simulateChange = (el, value) =>
-        el.simulate('change', { target: { value } });
-      const state_1 = () => {
-        return mockedComponent.find('ul').find('li');
-      };
-      const setInput = () => {
-        return simulateChange(
-          mockedComponent.find('textarea'),
-          'testA, testB, testC'
-        );
-      };
-      const click = () => {
-        return mockedComponent.find('button').simulate('click');
-      };
-      const state_2 = () => {
-        const nodes = mockedComponent.find('ul').find('li');
-        return { nodes, text: nodes.reduce((t, n) => t + n.text().trim(), '') };
-      };
-      const setInput_2 = () => {
-        return simulateChange(
-          mockedComponent.find('textarea'),
-          't1, t2, t3, t4, t5, t6'
-        );
-      };
-      const click_1 = () => {
-        return mockedComponent.find('button').simulate('click');
-      };
-      const state_3 = () => {
-        const nodes = mockedComponent.find('ul').find('li');
-        return { nodes, text: nodes.reduce((t, n) => t + n.text().trim(), '') };
-      };
-      const awaited_state_1 = state_1();
-      const awaited_setInput = setInput();
-      const awaited_click = click();
-      const awaited_state_2 = state_2();
-      const awaited_setInput_2 = setInput_2();
-      const awaited_click_1 = click_1();
-      const awaited_state_3 = state_3();
-      assert(
-        awaited_state_1.length === 0 &&
-          awaited_state_2.nodes.length === 3 &&
-          awaited_state_3.nodes.length === 6 &&
-          awaited_state_2.text === 'testAtestBtestC' &&
-          awaited_state_3.text === 't1t2t3t4t5t6'
-      );
-    })();
-    "
+# --hints--
 
+The MyToDoList component should exist and render to the page.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
+    return mockedComponent.find('MyToDoList').length === 1;
+  })()
+);
 ```
 
-</section>
+The first child of `MyToDoList` should be a `textarea` element.
 
-## Challenge Seed
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
+    return (
+      mockedComponent.find('MyToDoList').children().childAt(0).type() ===
+      'textarea'
+    );
+  })()
+);
+```
 
-<section id='challengeSeed'>
+The second child of `MyToDoList` should be a `br` element.
 
-<div id='jsx-seed'>
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
+    return (
+      mockedComponent.find('MyToDoList').children().childAt(1).type() === 'br'
+    );
+  })()
+);
+```
+
+The third child of `MyToDoList` should be a `button` element.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
+    return (
+      mockedComponent.find('MyToDoList').children().childAt(2).type() ===
+      'button'
+    );
+  })()
+);
+```
+
+The state of `MyToDoList` should be initialized with `toDoList` as an empty array.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
+    const initialState = mockedComponent.state();
+    return (
+      Array.isArray(initialState.toDoList) === true &&
+      initialState.toDoList.length === 0
+    );
+  })()
+);
+```
+
+The state of `MyToDoList` should be initialized with `userInput` as an empty string.
+
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
+    const initialState = mockedComponent.state();
+    return (
+      typeof initialState.userInput === 'string' &&
+      initialState.userInput.length === 0
+    );
+  })()
+);
+```
+
+When the `Create List` button is clicked, the `MyToDoList` component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the `textarea` element.
+
+```js
+(() => {
+  const mockedComponent = Enzyme.mount(React.createElement(MyToDoList));
+  const simulateChange = (el, value) =>
+    el.simulate('change', { target: { value } });
+  const state_1 = () => {
+    return mockedComponent.find('ul').find('li');
+  };
+  const setInput = () => {
+    return simulateChange(
+      mockedComponent.find('textarea'),
+      'testA, testB, testC'
+    );
+  };
+  const click = () => {
+    return mockedComponent.find('button').simulate('click');
+  };
+  const state_2 = () => {
+    const nodes = mockedComponent.find('ul').find('li');
+    return { nodes, text: nodes.reduce((t, n) => t + n.text().trim(), '') };
+  };
+  const setInput_2 = () => {
+    return simulateChange(
+      mockedComponent.find('textarea'),
+      't1, t2, t3, t4, t5, t6'
+    );
+  };
+  const click_1 = () => {
+    return mockedComponent.find('button').simulate('click');
+  };
+  const state_3 = () => {
+    const nodes = mockedComponent.find('ul').find('li');
+    return { nodes, text: nodes.reduce((t, n) => t + n.text().trim(), '') };
+  };
+  const awaited_state_1 = state_1();
+  const awaited_setInput = setInput();
+  const awaited_click = click();
+  const awaited_state_2 = state_2();
+  const awaited_setInput_2 = setInput_2();
+  const awaited_click_1 = click_1();
+  const awaited_state_3 = state_3();
+  assert(
+    awaited_state_1.length === 0 &&
+      awaited_state_2.nodes.length === 3 &&
+      awaited_state_3.nodes.length === 6 &&
+      awaited_state_2.text === 'testAtestBtestC' &&
+      awaited_state_3.text === 't1t2t3t4t5t6'
+  );
+})();
+```
+
+# --seed--
+
+## --after-user-code--
+
+```jsx
+ReactDOM.render(<MyToDoList />, document.getElementById('root'));
+```
+
+## --seed-contents--
 
 ```jsx
 const textAreaStyles = {
@@ -145,23 +212,7 @@ class MyToDoList extends React.Component {
 }
 ```
 
-</div>
-
-### After Test
-
-<div id='jsx-teardown'>
-
-```jsx
-ReactDOM.render(<MyToDoList />, document.getElementById('root'));
-```
-
-</div>
-
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```jsx
 const textAreaStyles = {
@@ -211,5 +262,3 @@ class MyToDoList extends React.Component {
   }
 }
 ```
-
-</section>

@@ -6,37 +6,46 @@ videoUrl: 'https://scrimba.com/c/c437DcV'
 forumTopicId: 301013
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Screen reader users have different options for what type of content their device reads. This includes skipping to (or over) landmark elements, jumping to the main content, or getting a page summary from the headings. Another option is to only hear the links available on a page.
-Screen readers do this by reading the link text, or what's between the anchor (<code>a</code>) tags. Having a list of "click here" or "read more" links isn't helpful. Instead, you should use brief but descriptive text within the <code>a</code> tags to provide more meaning for these users.
-</section>
 
-## Instructions
-<section id='instructions'>
-The link text that Camper Cat is using is not very descriptive without the surrounding context. Move the anchor (<code>a</code>) tags so they wrap around the text "information about batteries" instead of "Click here".
-</section>
+Screen readers do this by reading the link text, or what's between the anchor (`a`) tags. Having a list of "click here" or "read more" links isn't helpful. Instead, you should use brief but descriptive text within the `a` tags to provide more meaning for these users.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: Your code should move the anchor <code>a</code> tags from around the words "Click here" to wrap around the words "information about batteries".
-    testString: assert($('a').text().match(/^(information about batteries)$/g));
-  - text: The <code>a</code> element should have an <code>href</code> attribute with a value of an empty string <code>""</code>.
-    testString: assert($('a').attr('href') === '');
-  - text: The <code>a</code> element should have a closing tag.
-    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length);
+The link text that Camper Cat is using is not very descriptive without the surrounding context. Move the anchor (`a`) tags so they wrap around the text "information about batteries" instead of "Click here".
 
+# --hints--
+
+Your code should move the anchor `a` tags from around the words "Click here" to wrap around the words "information about batteries".
+
+```js
+assert(
+  $('a')
+    .text()
+    .match(/^(information about batteries)$/g)
+);
 ```
 
-</section>
+The `a` element should have an `href` attribute with a value of an empty string `""`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('a').attr('href') === '');
+```
 
-<div id='html-seed'>
+The `a` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/a>/g) &&
+    code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -50,14 +59,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -70,5 +72,3 @@ tests:
   </article>
 </body>
 ```
-
-</section>

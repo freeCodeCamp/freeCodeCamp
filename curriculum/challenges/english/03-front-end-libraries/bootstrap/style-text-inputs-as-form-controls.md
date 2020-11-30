@@ -1,47 +1,51 @@
 ---
 id: bad87fee1348bd9aed908845
 title: Style Text Inputs as Form Controls
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
-    raw: true
 challengeType: 0
 forumTopicId: 18312
+required:
+  - link: >-
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css
+    raw: true
 ---
 
-## Description
-<section id='description'>
-You can add the <code>fa-paper-plane</code> Font Awesome icon by adding <code>&#60;i class="fa fa-paper-plane"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.
-Give your form's text input field a class of <code>form-control</code>. Give your form's submit button the classes <code>btn btn-primary</code>. Also give this button the Font Awesome icon of <code>fa-paper-plane</code>.
-All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with the class <code>.form-control</code> have a width of 100%.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+You can add the `fa-paper-plane` Font Awesome icon by adding `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
 
-</section>
+Give your form's text input field a class of `form-control`. Give your form's submit button the classes `btn btn-primary`. Also give this button the Font Awesome icon of `fa-paper-plane`.
 
-## Tests
-<section id='tests'>
+All textual `<input>`, `<textarea>`, and `<select>` elements with the class `.form-control` have a width of 100%.
 
-```yml
-tests:
-  - text: The submit button in your form should have the classes <code>btn btn-primary</code>.
-    testString: assert($("button[type=\"submit\"]").hasClass("btn btn-primary"));
-  - text: You should add a <code>&#60;i class="fa fa-paper-plane"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.
-    testString: assert($("button[type=\"submit\"]:has(i.fa.fa-paper-plane)").length > 0);
-  - text: The text <code>input</code> in your form should have the class <code>form-control</code>.
-    testString: assert($("input[type=\"text\"]").hasClass("form-control"));
-  - text: Each of your <code>i</code> elements should have a closing tag.
-    testString: assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);
+# --hints--
 
+The submit button in your form should have the classes `btn btn-primary`.
+
+```js
+assert($('button[type="submit"]').hasClass('btn btn-primary'));
 ```
 
-</section>
+You should add a `<i class="fa fa-paper-plane"></i>` within your submit `button` element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('button[type="submit"]:has(i.fa.fa-paper-plane)').length > 0);
+```
 
-<div id='html-seed'>
+The text `input` in your form should have the class `form-control`.
+
+```js
+assert($('input[type="text"]').hasClass('form-control'));
+```
+
+Each of your `i` elements should have a closing tag.
+
+```js
+assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -118,14 +122,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -201,5 +198,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

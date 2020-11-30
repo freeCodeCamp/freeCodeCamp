@@ -5,11 +5,9 @@ challengeType: 5
 forumTopicId: 302242
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-A given rectangle is made from <i>m</i> × <i>n</i> squares. If <i>m</i> and <i>n</i> are not both odd, then it is possible to cut a path through the rectangle along the square edges such that the rectangle splits into two connected pieces with the same shape (after rotating one of the pieces by 180°). All such paths for 2 × 2 and 4 × 3 rectangles are shown below.
+A given rectangle is made from *m* × *n* squares. If *m* and *n* are not both odd, then it is possible to cut a path through the rectangle along the square edges such that the rectangle splits into two connected pieces with the same shape (after rotating one of the pieces by 180°). All such paths for 2 × 2 and 4 × 3 rectangles are shown below.
 
 <div style="width: 100%; text-align: center;">
   <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="520" height="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
@@ -59,43 +57,58 @@ A given rectangle is made from <i>m</i> × <i>n</i> squares. If <i>m</i> and <i>
     </g></g>
     </svg>
   </div>
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
-Write a function that calculates the number of different ways to cut an <i>m</i> × <i>n</i> rectangle.
-</section>
+Write a function that calculates the number of different ways to cut an *m* × *n* rectangle.
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`cutRectangle` should be a function.
 
-```yml
-tests:
-  - text: <code>cutRectangle</code> should be a function.
-    testString: assert(typeof cutRectangle == 'function');
-  - text: <code>cutRectangle(2, 2)</code> should return a number.
-    testString: assert(typeof cutRectangle(2, 2) == 'number');
-  - text: <code>cutRectangle(2, 2)</code> should return <code>2</code>.
-    testString: assert.equal(cutRectangle(2, 2), 2);
-  - text: <code>cutRectangle(4, 3)</code> should return <code>9</code>.
-    testString: assert.equal(cutRectangle(4, 3), 9);
-  - text: <code>cutRectangle(4, 4)</code> should return <code>22</code>.
-    testString: assert.equal(cutRectangle(4, 4), 22);
-  - text: <code>cutRectangle(8, 3)</code> should return <code>53</code>.
-    testString: assert.equal(cutRectangle(8, 3), 53);
-  - text: <code>cutRectangle(7, 4)</code> should return <code>151</code>.
-    testString: assert.equal(cutRectangle(7, 4), 151);
+```js
+assert(typeof cutRectangle == 'function');
 ```
 
-</section>
+`cutRectangle(2, 2)` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof cutRectangle(2, 2) == 'number');
+```
 
-<section id='challengeSeed'>
+`cutRectangle(2, 2)` should return `2`.
 
-<div id='js-seed'>
+```js
+assert.equal(cutRectangle(2, 2), 2);
+```
+
+`cutRectangle(4, 3)` should return `9`.
+
+```js
+assert.equal(cutRectangle(4, 3), 9);
+```
+
+`cutRectangle(4, 4)` should return `22`.
+
+```js
+assert.equal(cutRectangle(4, 4), 22);
+```
+
+`cutRectangle(8, 3)` should return `53`.
+
+```js
+assert.equal(cutRectangle(8, 3), 53);
+```
+
+`cutRectangle(7, 4)` should return `151`.
+
+```js
+assert.equal(cutRectangle(7, 4), 151);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function cutRectangle(w, h) {
@@ -103,12 +116,7 @@ function cutRectangle(w, h) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function cutRectangle(w, h) {
@@ -161,5 +169,3 @@ function cutRectangle(w, h) {
   return result;
 }
 ```
-
-</section>

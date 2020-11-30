@@ -5,42 +5,67 @@ challengeType: 5
 forumTopicId: 16089
 ---
 
-## Description
-<section id='description'>
-Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a <code>...</code> ending.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a `...` ending.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`truncateString("A-tisket a-tasket A green and yellow basket", 8)` should return "A-tisket...".
 
-```yml
-tests:
-  - text: <code>truncateString("A-tisket a-tasket A green and yellow basket", 8)</code> should return "A-tisket...".
-    testString: assert(truncateString("A-tisket a-tasket A green and yellow basket", 8) === "A-tisket...");
-  - text: <code>truncateString("Peter Piper picked a peck of pickled peppers", 11)</code> should return "Peter Piper...".
-    testString: assert(truncateString("Peter Piper picked a peck of pickled peppers", 11) === "Peter Piper...");
-  - text: <code>truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)</code> should return "A-tisket a-tasket A green and yellow basket".
-    testString: assert(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) === "A-tisket a-tasket A green and yellow basket");
-  - text: <code>truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)</code> should return "A-tisket a-tasket A green and yellow basket".
-    testString: assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket');
-  - text: <code>truncateString("A-", 1)</code> should return "A...".
-    testString: assert(truncateString("A-", 1) === "A...");
-  - text: <code>truncateString("Absolutely Longer", 2)</code> should return "Ab...".
-    testString: assert(truncateString("Absolutely Longer", 2) === "Ab...");
-
+```js
+assert(
+  truncateString('A-tisket a-tasket A green and yellow basket', 8) ===
+    'A-tisket...'
+);
 ```
 
-</section>
+`truncateString("Peter Piper picked a peck of pickled peppers", 11)` should return "Peter Piper...".
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  truncateString('Peter Piper picked a peck of pickled peppers', 11) ===
+    'Peter Piper...'
+);
+```
 
-<div id='js-seed'>
+`truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)` should return "A-tisket a-tasket A green and yellow basket".
+
+```js
+assert(
+  truncateString(
+    'A-tisket a-tasket A green and yellow basket',
+    'A-tisket a-tasket A green and yellow basket'.length
+  ) === 'A-tisket a-tasket A green and yellow basket'
+);
+```
+
+`truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)` should return "A-tisket a-tasket A green and yellow basket".
+
+```js
+assert(
+  truncateString(
+    'A-tisket a-tasket A green and yellow basket',
+    'A-tisket a-tasket A green and yellow basket'.length + 2
+  ) === 'A-tisket a-tasket A green and yellow basket'
+);
+```
+
+`truncateString("A-", 1)` should return "A...".
+
+```js
+assert(truncateString('A-', 1) === 'A...');
+```
+
+`truncateString("Absolutely Longer", 2)` should return "Ab...".
+
+```js
+assert(truncateString('Absolutely Longer', 2) === 'Ab...');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function truncateString(str, num) {
@@ -50,15 +75,7 @@ function truncateString(str, num) {
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function truncateString(str, num) {
@@ -70,7 +87,4 @@ function truncateString(str, num) {
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
-
 ```
-
-</section>

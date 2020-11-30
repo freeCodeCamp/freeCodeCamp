@@ -1,44 +1,39 @@
 ---
 id: 5900f3701000cf542c50fe83
-challengeType: 5
 title: 'Problem 4: Largest palindrome product'
+challengeType: 5
 forumTopicId: 302065
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
 Find the largest palindrome made from the product of two `n`-digit numbers.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`largestPalindromeProduct(2)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>largestPalindromeProduct(2)</code> should return a number.
-    testString: assert(typeof largestPalindromeProduct(2) === 'number');
-  - text: <code>largestPalindromeProduct(2)</code> should return 9009.
-    testString: assert.strictEqual(largestPalindromeProduct(2), 9009);
-  - text: <code>largestPalindromeProduct(3)</code> should return 906609.
-    testString: assert.strictEqual(largestPalindromeProduct(3), 906609);
-
+```js
+assert(typeof largestPalindromeProduct(2) === 'number');
 ```
 
-</section>
+`largestPalindromeProduct(2)` should return 9009.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(largestPalindromeProduct(2), 9009);
+```
 
-<div id='js-seed'>
+`largestPalindromeProduct(3)` should return 906609.
+
+```js
+assert.strictEqual(largestPalindromeProduct(3), 906609);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function largestPalindromeProduct(n) {
@@ -49,15 +44,7 @@ function largestPalindromeProduct(n) {
 largestPalindromeProduct(3);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const largestPalindromeProduct = (digit)=>{
@@ -74,5 +61,3 @@ const largestPalindromeProduct = (digit)=>{
  return Math.max(...palindrome);
 }
 ```
-
-</section>

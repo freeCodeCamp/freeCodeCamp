@@ -5,43 +5,67 @@ challengeType: 5
 forumTopicId: 16015
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Return the length of the longest word in the provided sentence.
+
 Your response should be a number.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`findLongestWordLength("The quick brown fox jumped over the lazy dog")` should return a number.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>findLongestWordLength("The quick brown fox jumped over the lazy dog")</code> should return a number.
-    testString: assert(typeof findLongestWordLength("The quick brown fox jumped over the lazy dog") === "number");
-  - text: <code>findLongestWordLength("The quick brown fox jumped over the lazy dog")</code> should return 6.
-    testString: assert(findLongestWordLength("The quick brown fox jumped over the lazy dog") === 6);
-  - text: <code>findLongestWordLength("May the force be with you")</code> should return 5.
-    testString: assert(findLongestWordLength("May the force be with you") === 5);
-  - text: <code>findLongestWordLength("Google do a barrel roll")</code> should return 6.
-    testString: assert(findLongestWordLength("Google do a barrel roll") === 6);
-  - text: <code>findLongestWordLength("What is the average airspeed velocity of an unladen swallow")</code> should return 8.
-    testString: assert(findLongestWordLength("What is the average airspeed velocity of an unladen swallow") === 8);
-  - text: <code>findLongestWordLength("What if we try a super-long word such as otorhinolaryngology")</code> should return 19.
-    testString: assert(findLongestWordLength("What if we try a super-long word such as otorhinolaryngology") === 19);
-
+```js
+assert(
+  typeof findLongestWordLength(
+    'The quick brown fox jumped over the lazy dog'
+  ) === 'number'
+);
 ```
 
-</section>
+`findLongestWordLength("The quick brown fox jumped over the lazy dog")` should return 6.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  findLongestWordLength('The quick brown fox jumped over the lazy dog') === 6
+);
+```
 
-<div id='js-seed'>
+`findLongestWordLength("May the force be with you")` should return 5.
+
+```js
+assert(findLongestWordLength('May the force be with you') === 5);
+```
+
+`findLongestWordLength("Google do a barrel roll")` should return 6.
+
+```js
+assert(findLongestWordLength('Google do a barrel roll') === 6);
+```
+
+`findLongestWordLength("What is the average airspeed velocity of an unladen swallow")` should return 8.
+
+```js
+assert(
+  findLongestWordLength(
+    'What is the average airspeed velocity of an unladen swallow'
+  ) === 8
+);
+```
+
+`findLongestWordLength("What if we try a super-long word such as otorhinolaryngology")` should return 19.
+
+```js
+assert(
+  findLongestWordLength(
+    'What if we try a super-long word such as otorhinolaryngology'
+  ) === 19
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function findLongestWordLength(str) {
@@ -51,15 +75,7 @@ function findLongestWordLength(str) {
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function findLongestWordLength(str) {
@@ -67,7 +83,4 @@ function findLongestWordLength(str) {
 }
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
-
 ```
-
-</section>

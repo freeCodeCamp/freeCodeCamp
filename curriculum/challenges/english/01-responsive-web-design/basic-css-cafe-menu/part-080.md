@@ -4,29 +4,21 @@ title: Part 80
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -90,10 +82,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -165,6 +153,3 @@ h1, h2 {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

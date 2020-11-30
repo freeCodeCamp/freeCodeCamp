@@ -1,60 +1,50 @@
 ---
-title: Date format
 id: 59669d08d75b60482359409f
+title: Date format
 challengeType: 5
 forumTopicId: 302243
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Return an array with the current date in the formats:
+
 <ul>
   <li>2007-11-23</li>
   <li>Friday, November 23, 2007</li>
 </ul>
-Example output: <code>['2007-11-23', 'Friday, November 23, 2007']</code>
-</section>
 
-## Instructions
-<section id='instructions'>
+Example output: `['2007-11-23', 'Friday, November 23, 2007']`
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>getDateFormats</code> should be a function.
-    testString: assert(typeof getDateFormats === 'function');
-  - text: <code>getDateFormats</code> should return an object.
-    testString: assert(typeof getDateFormats() === 'object');
-  - text: <code>getDateFormats</code> should return an array with 2 elements.
-    testString: assert(getDateFormats().length === 2);
-  - text: <code>getDateFormats</code> should return the correct date in the right format
-    testString: assert.deepEqual(getDateFormats(), dates, equalsMessage);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`getDateFormats` should be a function.
 
 ```js
-function getDateFormats() {
-
-  return true;
-}
+assert(typeof getDateFormats === 'function');
 ```
 
-</div>
+`getDateFormats` should return an object.
 
+```js
+assert(typeof getDateFormats() === 'object');
+```
 
-### After Test
-<div id='js-teardown'>
+`getDateFormats` should return an array with 2 elements.
+
+```js
+assert(getDateFormats().length === 2);
+```
+
+`getDateFormats` should return the correct date in the right format
+
+```js
+assert.deepEqual(getDateFormats(), dates, equalsMessage);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const getDateSolution = () => {
@@ -70,13 +60,16 @@ const dates = getDateSolution();
 const equalsMessage = `message: <code>getDataFormats()</code> should return <code>["${dates[0]}", "${dates[1]}"]</code>.`;
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function getDateFormats() {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 function getDateFormats() {
@@ -87,7 +80,4 @@ function getDateFormats() {
   const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
   return [fmt1, fmt2];
 }
-
 ```
-
-</section>

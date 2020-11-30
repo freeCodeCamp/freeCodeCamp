@@ -6,35 +6,33 @@ videoUrl: 'https://scrimba.com/c/c9bQEA4'
 forumTopicId: 301065
 ---
 
-## Description
-<section id='description'>
-The CSS offsets of <code>top</code> or <code>bottom</code>, and <code>left</code> or <code>right</code> tell the browser how far to offset an item relative to where it would sit in the normal flow of the document. You're offsetting an element away from a given spot, which moves the element away from the referenced side (effectively, the opposite direction). As you saw in the last challenge, using the top offset moved the <code>h2</code> downwards. Likewise, using a left offset moves an item to the right.
-<img src='https://cdn-media-1.freecodecamp.org/imgr/eWWi3gZ.gif' alt='' />
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Use CSS offsets to move the <code>h2</code> 15 pixels to the right and 10 pixels up.
-</section>
+The CSS offsets of `top` or `bottom`, and `left` or `right` tell the browser how far to offset an item relative to where it would sit in the normal flow of the document. You're offsetting an element away from a given spot, which moves the element away from the referenced side (effectively, the opposite direction). As you saw in the last challenge, using the top offset moved the `h2` downwards. Likewise, using a left offset moves an item to the right.
 
-## Tests
-<section id='tests'>
+<img src='https://cdn-media-1.freecodecamp.org/imgr/eWWi3gZ.gif' alt=''>
 
-```yml
-tests:
-  - text: Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.
-    testString: assert($('h2').css('bottom') == '10px');
-  - text: Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.
-    testString: assert($('h2').css('left') == '15px');
+# --instructions--
 
+Use CSS offsets to move the `h2` 15 pixels to the right and 10 pixels up.
+
+# --hints--
+
+Your code should use a CSS offset to relatively position the `h2` 10px upwards. In other words, move it 10px away from the `bottom` of where it normally sits.
+
+```js
+assert($('h2').css('bottom') == '10px');
 ```
 
-</section>
+Your code should use a CSS offset to relatively position the `h2` 15px towards the right. In other words, move it 15px away from the `left` of where it normally sits.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h2').css('left') == '15px');
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <head>
@@ -53,14 +51,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <head>
@@ -78,5 +69,3 @@ tests:
   <p>I still think the h2 is where it normally sits.</p>
 </body>
 ```
-
-</section>

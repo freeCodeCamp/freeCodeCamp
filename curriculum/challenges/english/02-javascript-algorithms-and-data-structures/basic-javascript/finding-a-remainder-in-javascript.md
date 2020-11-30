@@ -6,69 +6,64 @@ videoUrl: 'https://scrimba.com/c/cWP24Ub'
 forumTopicId: 18184
 ---
 
-## Description
-<section id='description'>
-The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.
-<strong>Example</strong>
+# --description--
+
+The <dfn>remainder</dfn> operator `%` gives the remainder of the division of two numbers.
+
+**Example**
+
 <blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>
-<strong>Usage</strong><br>In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by <code>2</code>.
+
+**Usage**  
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by `2`.
+
 <blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>
-<strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as  the "modulus" operator. It is very similar to modulus, but does not work properly with negative numbers.
-</section>
 
-## Instructions
-<section id='instructions'>
-Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator.
-</section>
+**Note**  
+The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as the "modulus" operator. It is very similar to modulus, but does not work properly with negative numbers.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The variable <code>remainder</code> should be initialized
-    testString: assert(/var\s+?remainder/.test(code));
-  - text: The value of <code>remainder</code> should be <code>2</code>
-    testString: assert(remainder === 2);
-  - text: You should use the <code>%</code> operator
-    testString: assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+Set `remainder` equal to the remainder of `11` divided by `3` using the <dfn>remainder</dfn> (`%`) operator.
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The variable `remainder` should be initialized
 
 ```js
-// Only change code below this line
-
-var remainder;
-
+assert(/var\s+?remainder/.test(code));
 ```
 
-</div>
+The value of `remainder` should be `2`
 
+```js
+assert(remainder === 2);
+```
 
-### After Test
-<div id='js-teardown'>
+You should use the `%` operator
+
+```js
+assert(/\s+?remainder\s*?=\s*?.*%.*;?/.test(code));
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 (function(y){return 'remainder = '+y;})(remainder);
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+// Only change code below this line
 
-## Solution
-<section id='solution'>
+var remainder;
+```
 
+# --solutions--
 
 ```js
 var remainder =  11 % 3;
 ```
-
-</section>

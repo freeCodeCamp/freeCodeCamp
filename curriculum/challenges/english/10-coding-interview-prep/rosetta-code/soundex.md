@@ -5,65 +5,96 @@ challengeType: 5
 forumTopicId: 302320
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-Soundex is an algorithm for creating indices for words based on their pronunciation.
-The goal is for homophones to be encoded to the same representation so that they can be matched despite minor differences in spelling (from <a href="https://en.wikipedia.org/wiki/soundex" target="_blank">the WP article</a>).
-There is a major issue in many of the implementations concerning the separation of two consonants that have the same soundex code! According to the <a href="https://www.archives.gov/research/census/soundex.html" target="_blank">official Rules</a>. So check for instance if <b>Ashcraft</b> is coded to <b>A-261</b>.
+Soundex is an algorithm for creating indices for words based on their pronunciation. The goal is for homophones to be encoded to the same representation so that they can be matched despite minor differences in spelling (from [the WP article](https://en.wikipedia.org/wiki/soundex)). There is a major issue in many of the implementations concerning the separation of two consonants that have the same soundex code! According to the [official Rules](https://www.archives.gov/research/census/soundex.html). So check for instance if **Ashcraft** is coded to **A-261**.
 
 <ul>
   <li>If a vowel (A, E, I, O, U) separates two consonants that have the same soundex code, the consonant to the right of the vowel is coded. Tymczak is coded as T-522 (T, 5 for the M, 2 for the C, Z ignored (see "Side-by-Side" rule above), 2 for the K). Since the vowel "A" separates the Z and K, the K is coded.</li>
   <li>If "H" or "W" separate two consonants that have the same soundex code, the consonant to the right of the vowel is not coded. Example: Ashcraft is coded A-261 (A, 2 for the S, C ignored, 6 for the R, 1 for the F). It is not coded A-226.</li>
 </ul>
-</section>
 
-## Instructions
+# --instructions--
 
-<section id='instructions'>
 Write a function that takes a string as a parameter and returns the encoded string.
-</section>
 
-## Tests
+# --hints--
 
-<section id='tests'>
+`soundex` should be a function.
 
-```yml
-tests:
-  - text: <code>soundex</code> should be a function.
-    testString: assert(typeof soundex == 'function');
-  - text: <code>soundex("Soundex")</code> should return a string.
-    testString: assert(typeof soundex("Soundex") == 'string');
-  - text: <code>soundex("Soundex")</code> should return <code>"S532"</code>.
-    testString: assert.equal(soundex("Soundex"), "S532");
-  - text: <code>soundex("Example")</code> should return <code>"E251"</code>.
-    testString: assert.equal(soundex("Example"), "E251");
-  - text: <code>soundex("Sownteks")</code> should return <code>"S532"</code>.
-    testString: assert.equal(soundex("Sownteks"), "S532");
-  - text: <code>soundex("Ekzampul")</code> should return <code>"E251"</code>.
-    testString: assert.equal(soundex("Ekzampul"), "E251");
-  - text: <code>soundex("Euler")</code> should return <code>"E460"</code>.
-    testString: assert.equal(soundex("Euler"), "E460");
-  - text: <code>soundex("Gauss")</code> should return <code>"G200"</code>.
-    testString: assert.equal(soundex("Gauss"), "G200");
-  - text: <code>soundex("Hilbert")</code> should return <code>"H416"</code>.
-    testString: assert.equal(soundex("Hilbert"), "H416");
-  - text: <code>soundex("Knuth")</code> should return <code>"K530"</code>.
-    testString: assert.equal(soundex("Knuth"), "K530");
-  - text: <code>soundex("Lloyd")</code> should return <code>"L300"</code>.
-    testString: assert.equal(soundex("Lloyd"), "L300");
-  - text: <code>soundex("Lukasiewicz")</code> should return <code>"L222"</code>.
-    testString: assert.equal(soundex("Lukasiewicz"), "L222");
+```js
+assert(typeof soundex == 'function');
 ```
 
-</section>
+`soundex("Soundex")` should return a string.
 
-## Challenge Seed
+```js
+assert(typeof soundex('Soundex') == 'string');
+```
 
-<section id='challengeSeed'>
+`soundex("Soundex")` should return `"S532"`.
 
-<div id='js-seed'>
+```js
+assert.equal(soundex('Soundex'), 'S532');
+```
+
+`soundex("Example")` should return `"E251"`.
+
+```js
+assert.equal(soundex('Example'), 'E251');
+```
+
+`soundex("Sownteks")` should return `"S532"`.
+
+```js
+assert.equal(soundex('Sownteks'), 'S532');
+```
+
+`soundex("Ekzampul")` should return `"E251"`.
+
+```js
+assert.equal(soundex('Ekzampul'), 'E251');
+```
+
+`soundex("Euler")` should return `"E460"`.
+
+```js
+assert.equal(soundex('Euler'), 'E460');
+```
+
+`soundex("Gauss")` should return `"G200"`.
+
+```js
+assert.equal(soundex('Gauss'), 'G200');
+```
+
+`soundex("Hilbert")` should return `"H416"`.
+
+```js
+assert.equal(soundex('Hilbert'), 'H416');
+```
+
+`soundex("Knuth")` should return `"K530"`.
+
+```js
+assert.equal(soundex('Knuth'), 'K530');
+```
+
+`soundex("Lloyd")` should return `"L300"`.
+
+```js
+assert.equal(soundex('Lloyd'), 'L300');
+```
+
+`soundex("Lukasiewicz")` should return `"L222"`.
+
+```js
+assert.equal(soundex('Lukasiewicz'), 'L222');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function soundex(s) {
@@ -71,12 +102,7 @@ function soundex(s) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function soundex(s) {
@@ -122,5 +148,3 @@ function soundex(s) {
   return (r + '000').slice(0, 4).toUpperCase();
 }
 ```
-
-</section>

@@ -5,27 +5,25 @@ challengeType: 11
 videoId: KwL1qTR5MT8
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+Which statement below is **false**?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    Which statement below is **false**?
-  answers:
-    - |
-      Neural networks are modeled after the way the human brain works.
-    - |
-      Computer programs that play tic-tac-toe or chess against human players are examples of simple artificial intelligence.
-    - |
-      Machine learning is a subset of artificial intelligence.
-  solution: 1
-```
+Neural networks are modeled after the way the human brain works.
 
-</section>
+---
+
+Computer programs that play tic-tac-toe or chess against human players are examples of simple artificial intelligence.
+
+---
+
+Machine learning is a subset of artificial intelligence.
+
+## --video-solution--
+
+1
+

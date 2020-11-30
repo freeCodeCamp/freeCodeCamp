@@ -5,9 +5,7 @@ challengeType: 2
 forumTopicId: 301550
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 <dfn>Emit</dfn> is the most common way of communicating you will use. When you emit something from the server to 'io', you send an event's name and data to all the connected sockets. A good example of this concept would be emitting the current count of connected users each time a new user connects!
 
@@ -23,13 +21,13 @@ Now, when someone connects, you should increment the count before emitting the c
 ++currentUsers;
 ```
 
-Finally, after incrementing the count, you should emit the event (still within the connection listener). The event should be named 'user count', and the data should just be the <code>currentUsers</code>.
+Finally, after incrementing the count, you should emit the event (still within the connection listener). The event should be named 'user count', and the data should just be the `currentUsers`.
 
 ```js
 io.emit('user count', currentUsers);
 ```
 
-Now, you can implement a way for your client to listen for this event! Similar to listening for a connection on the server, you will use the <code>on</code> keyword.
+Now, you can implement a way for your client to listen for this event! Similar to listening for a connection on the server, you will use the `on` keyword.
 
 ```js
 socket.on('user count', function(data) {
@@ -39,41 +37,67 @@ socket.on('user count', function(data) {
 
 Now, try loading up your app, authenticate, and you should see in your client console '1' representing the current user count! Try loading more clients up, and authenticating to see the number go up.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5' target='_blank'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point [here](https://gist.github.com/camperbot/28ef7f1078f56eb48c7b1aeea35ba1f5).
 
-</section>
+# --hints--
 
-## Instructions
+currentUsers should be defined.
 
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: currentUsers should be defined.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /currentUsers/gi, 'You should have variable currentUsers defined');}, xhr => { throw new Error(xhr.statusText); })
-  - text: Server should emit the current user count at each new connection.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /io.emit.*('|")user count('|").*currentUsers/gi, 'You should emit "user count" with data currentUsers'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Your client should be listening for 'user count' event.
-    testString: getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|")user count('|")/gi, 'Your client should be connection to server with the connection defined as socket'); }, xhr => { throw new Error(xhr.statusText); })
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/server.js').then(
+    (data) => {
+      assert.match(
+        data,
+        /currentUsers/gi,
+        'You should have variable currentUsers defined'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
 ```
 
-</section>
+Server should emit the current user count at each new connection.
 
-## Challenge Seed
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/server.js').then(
+    (data) => {
+      assert.match(
+        data,
+        /io.emit.*('|")user count('|").*currentUsers/gi,
+        'You should emit "user count" with data currentUsers'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
+```
 
-<section id='challengeSeed'>
+Your client should be listening for 'user count' event.
 
-</section>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/public/client.js').then(
+    (data) => {
+      assert.match(
+        data,
+        /socket.on.*('|")user count('|")/gi,
+        'Your client should be connection to server with the connection defined as socket'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.statusText);
+    }
+  );
+```
 
-## Solution
+# --seed--
 
-<section id='solution'>
+# --solutions--
 
 ```js
 /**
@@ -82,5 +106,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

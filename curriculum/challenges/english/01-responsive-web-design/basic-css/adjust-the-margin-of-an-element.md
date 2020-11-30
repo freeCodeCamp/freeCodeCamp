@@ -6,34 +6,29 @@ videoUrl: 'https://scrimba.com/c/cVJarHW'
 forumTopicId: 16654
 ---
 
-## Description
-<section id='description'>
-An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.
-Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has a bigger <code>margin</code> than the blue box, making it appear smaller.
-When you increase the blue box's <code>margin</code>, it will increase the distance between its border and surrounding elements.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Change the <code>margin</code> of the blue box to match that of the red box.
-</section>
+An element's `margin` controls the amount of space between an element's `border` and surrounding elements.
 
-## Tests
-<section id='tests'>
+Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has a bigger `margin` than the blue box, making it appear smaller.
 
-```yml
-tests:
-  - text: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-top") === "20px");
+When you increase the blue box's `margin`, it will increase the distance between its border and surrounding elements.
 
+# --instructions--
+
+Change the `margin` of the blue box to match that of the red box.
+
+# --hints--
+
+Your `blue-box` class should give elements `20px` of `margin`.
+
+```js
+assert($('.blue-box').css('margin-top') === '20px');
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -76,14 +71,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -125,5 +113,3 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
-
-</section>

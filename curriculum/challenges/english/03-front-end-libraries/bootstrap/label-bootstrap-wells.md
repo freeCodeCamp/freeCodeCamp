@@ -5,40 +5,49 @@ challengeType: 0
 forumTopicId: 18223
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 For the sake of clarity, let's label both of our wells with their ids.
-Above your left-well, inside its <code>col-xs-6</code> <code>div</code> element, add a <code>h4</code> element with the text <code>#left-well</code>.
-Above your right-well, inside its <code>col-xs-6</code> <code>div</code> element, add a <code>h4</code> element with the text <code>#right-well</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+Above your left-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#left-well`.
 
-</section>
+Above your right-well, inside its `col-xs-6` `div` element, add a `h4` element with the text `#right-well`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should add an <code>h4</code> element to each of your <code>&#60;div class="col-xs-6"&#62;</code> elements.
-    testString: assert($(".col-xs-6").children("h4") && $(".col-xs-6").children("h4").length > 1);
-  - text: One <code>h4</code> element should have the text <code>#left-well</code>.
-    testString: assert(new RegExp("#left-well","gi").test($("h4").text()));
-  - text: One <code>h4</code> element should have the text <code>#right-well</code>.
-    testString: assert(new RegExp("#right-well","gi").test($("h4").text()));
-  - text: All of your <code>h4</code> elements should have closing tags.
-    testString: assert(code.match(/<\/h4>/g) && code.match(/<h4/g) && code.match(/<\/h4>/g).length === code.match(/<h4/g).length);
+You should add an `h4` element to each of your `<div class="col-xs-6">` elements.
 
+```js
+assert(
+  $('.col-xs-6').children('h4') && $('.col-xs-6').children('h4').length > 1
+);
 ```
 
-</section>
+One `h4` element should have the text `#left-well`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(new RegExp('#left-well', 'gi').test($('h4').text()));
+```
 
-<div id='html-seed'>
+One `h4` element should have the text `#right-well`.
+
+```js
+assert(new RegExp('#right-well', 'gi').test($('h4').text()));
+```
+
+All of your `h4` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/h4>/g) &&
+    code.match(/<h4/g) &&
+    code.match(/<\/h4>/g).length === code.match(/<h4/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -64,14 +73,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -96,5 +98,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

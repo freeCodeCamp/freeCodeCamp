@@ -5,29 +5,29 @@ challengeType: 11
 videoId: FBL3alYrxRM
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What is inheritance in object-oriented programming?
 
-```yml
-question:
-  text: |
-    What is inheritance in object-oriented programming?
+## --answers--
 
-  answers:
-    - |
-        A new class created when a parent class is extended.
-    - |
-        A constructed instance of a class.
-    - |
-        The ability to create a new class by extending an existing class.
-    - |
-        A method that is called at the moment when a class is being used to construct an object.
-  solution: 3
-```
+A new class created when a parent class is extended.
 
-</section>
+---
+
+A constructed instance of a class.
+
+---
+
+The ability to create a new class by extending an existing class.
+
+---
+
+A method that is called at the moment when a class is being used to construct an object.
+
+## --video-solution--
+
+3
+

@@ -6,43 +6,65 @@ videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
 ---
 
-## Description
-<section id='description'>
-The <code>*=</code> operator multiplies a variable by a number.
-<code>myVar = myVar * 5;</code>
-will multiply <code>myVar</code> by <code>5</code>. This can be rewritten as:
-<code>myVar *= 5;</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>*=</code> operator.
-</section>
+The `*=` operator multiplies a variable by a number.
 
-## Tests
-<section id='tests'>
+`myVar = myVar * 5;`
 
-```yml
-tests:
-  - text: <code>a</code> should equal <code>25</code>.
-    testString: assert(a === 25);
-  - text: <code>b</code> should equal <code>36</code>.
-    testString: assert(b === 36);
-  - text: <code>c</code> should equal <code>46</code>.
-    testString: assert(c === 46);
-  - text: You should use the <code>*=</code> operator for each variable.
-    testString: assert(code.match(/\*=/g).length === 3);
-  - text: You should not modify the code above the specified comment.
-    testString: assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\.6;/.test(code));
+will multiply `myVar` by `5`. This can be rewritten as:
 
+`myVar *= 5;`
+
+# --instructions--
+
+Convert the assignments for `a`, `b`, and `c` to use the `*=` operator.
+
+# --hints--
+
+`a` should equal `25`.
+
+```js
+assert(a === 25);
 ```
 
-</section>
+`b` should equal `36`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(b === 36);
+```
 
-<div id='js-seed'>
+`c` should equal `46`.
+
+```js
+assert(c === 46);
+```
+
+You should use the `*=` operator for each variable.
+
+```js
+assert(code.match(/\*=/g).length === 3);
+```
+
+You should not modify the code above the specified comment.
+
+```js
+assert(
+  /var a = 5;/.test(code) &&
+    /var b = 12;/.test(code) &&
+    /var c = 4\.6;/.test(code)
+);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
+```
+
+## --seed-contents--
 
 ```js
 var a = 5;
@@ -55,23 +77,7 @@ b = 3 * b;
 c = c * 10;
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var a = 5;
@@ -82,5 +88,3 @@ a *= 5;
 b *= 3;
 c *= 10;
 ```
-
-</section>

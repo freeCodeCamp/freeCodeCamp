@@ -6,73 +6,79 @@ videoUrl: 'https://scrimba.com/c/czQM4A8'
 forumTopicId: 18241
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Unlike strings, the entries of arrays are <dfn>mutable</dfn> and can be changed freely.
-<strong>Example</strong>
+
+**Example**
 
 ```js
 var ourArray = [50,40,30];
 ourArray[0] = 15; // equals [15,40,30]
 ```
 
-<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
-</section>
+**Note**  
+There shouldn't be any spaces between the array name and the square brackets, like `array [0]`. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
 
-## Instructions
-<section id='instructions'>
-Modify the data stored at index <code>0</code> of <code>myArray</code> to a value of <code>45</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Modify the data stored at index `0` of `myArray` to a value of `45`.
 
-```yml
-tests:
-  - text: <code>myArray</code> should now be [45,64,99].
-    testString: assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 45 && myArray[1] == 64 && myArray[2] == 99){return true;}else{return false;}})());
-  - text: You should be using correct index to modify the value in <code>myArray</code>.
-    testString: assert((function(){if(code.match(/myArray\[0\]\s*=\s*/g)){return true;}else{return false;}})());
+# --hints--
 
+`myArray` should now be [45,64,99].
+
+```js
+assert(
+  (function () {
+    if (
+      typeof myArray != 'undefined' &&
+      myArray[0] == 45 &&
+      myArray[1] == 64 &&
+      myArray[2] == 99
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  })()
+);
 ```
 
-</section>
+You should be using correct index to modify the value in `myArray`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    if (code.match(/myArray\[0\]\s*=\s*/g)) {
+      return true;
+    } else {
+      return false;
+    }
+  })()
+);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --after-user-code--
+
+```js
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
+```
+
+## --seed-contents--
 
 ```js
 // Setup
 var myArray = [18,64,99];
 
 // Only change code below this line
-
-
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-if(typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 var myArray = [18,64,99];
 myArray[0] = 45;
 ```
-
-</section>

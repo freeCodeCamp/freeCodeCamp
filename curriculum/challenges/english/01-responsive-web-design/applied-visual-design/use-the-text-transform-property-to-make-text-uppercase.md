@@ -6,36 +6,35 @@ videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081
 ---
 
-## Description
-<section id='description'>
-The <code>text-transform</code> property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.
-The following table shows how the different <code>text-transform</code>values change the example text "Transform me".
-<table class="table table-striped"><thead><th>Value<th>Result<tbody><tr><td><code>lowercase</code><td>"transform me"<tr><td><code>uppercase</code><td>"TRANSFORM ME"<tr><td><code>capitalize</code><td>"Transform Me"<tr><td><code>initial</code><td>Use the default value<tr><td><code>inherit</code><td>Use the <code>text-transform</code> value from the parent element<tr><td><code>none</code><td><strong>Default:</strong> Use the original text</td></table>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Transform the text of the <code>h4</code> to be uppercase using the <code>text-transform</code> property.
-</section>
+The `text-transform` property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.
 
-## Tests
-<section id='tests'>
+The following table shows how the different `text-transform`values change the example text "Transform me".
 
-```yml
-tests:
-  - text: The <code>h4</code> text should be uppercase.
-    testString: assert($('h4').css('text-transform') === 'uppercase');
-  - text: The original text of the h4 should not be changed.
-    testString: assert(($('h4').text() !== $('h4').text().toUpperCase()));
+<table class='table table-striped'><thead><tr><th>Value</th><th>Result</th></tr></thead><tbody><tr><td><code>lowercase</code></td><td>"transform me"</td></tr><tr><td><code>uppercase</code></td><td>"TRANSFORM ME"</td></tr><tr><td><code>capitalize</code></td><td>"Transform Me"</td></tr><tr><td><code>initial</code></td><td>Use the default value</td></tr><tr><td><code>inherit</code></td><td>Use the <code>text-transform</code> value from the parent element</td></tr><tr><td><code>none</code></td><td><strong>Default:</strong> Use the original text</td></tr></tbody></table>
 
+# --instructions--
+
+Transform the text of the `h4` to be uppercase using the `text-transform` property.
+
+# --hints--
+
+The `h4` text should be uppercase.
+
+```js
+assert($('h4').css('text-transform') === 'uppercase');
 ```
 
-</section>
+The original text of the h4 should not be changed.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('h4').text() !== $('h4').text().toUpperCase());
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -86,14 +85,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style>
@@ -143,5 +135,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

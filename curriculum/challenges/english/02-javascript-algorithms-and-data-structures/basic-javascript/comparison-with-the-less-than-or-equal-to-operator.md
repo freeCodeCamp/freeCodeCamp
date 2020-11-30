@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/cNVR7Am'
 forumTopicId: 16788
 ---
 
-## Description
-<section id='description'>
-The less than or equal to operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.
-<strong>Examples</strong>
+# --description--
+
+The less than or equal to operator (`<=`) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns `true`. If the number on the left is greater than the number on the right, it returns `false`. Like the equality operator, `less than or equal to` converts data types.
+
+**Examples**
 
 ```js
 4   <= 5  // true
@@ -19,43 +20,63 @@ The less than or equal to operator (<code>&lt;=</code>) compares the values of t
 '8' <= 4  // false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 Add the less than or equal to operator to the indicated lines so that the return statements make sense.
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testLessOrEqual(0)</code> should return "Smaller Than or Equal to 12"
-    testString: assert(testLessOrEqual(0) === "Smaller Than or Equal to 12");
-  - text: <code>testLessOrEqual(11)</code> should return "Smaller Than or Equal to 12"
-    testString: assert(testLessOrEqual(11) === "Smaller Than or Equal to 12");
-  - text: <code>testLessOrEqual(12)</code> should return "Smaller Than or Equal to 12"
-    testString: assert(testLessOrEqual(12) === "Smaller Than or Equal to 12");
-  - text: <code>testLessOrEqual(23)</code> should return "Smaller Than or Equal to 24"
-    testString: assert(testLessOrEqual(23) === "Smaller Than or Equal to 24");
-  - text: <code>testLessOrEqual(24)</code> should return "Smaller Than or Equal to 24"
-    testString: assert(testLessOrEqual(24) === "Smaller Than or Equal to 24");
-  - text: <code>testLessOrEqual(25)</code> should return "More Than 24"
-    testString: assert(testLessOrEqual(25) === "More Than 24");
-  - text: <code>testLessOrEqual(55)</code> should return "More Than 24"
-    testString: assert(testLessOrEqual(55) === "More Than 24");
-  - text: You should use the <code>&lt;=</code> operator at least twice
-    testString: assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);
+`testLessOrEqual(0)` should return "Smaller Than or Equal to 12"
 
+```js
+assert(testLessOrEqual(0) === 'Smaller Than or Equal to 12');
 ```
 
-</section>
+`testLessOrEqual(11)` should return "Smaller Than or Equal to 12"
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(testLessOrEqual(11) === 'Smaller Than or Equal to 12');
+```
 
-<div id='js-seed'>
+`testLessOrEqual(12)` should return "Smaller Than or Equal to 12"
+
+```js
+assert(testLessOrEqual(12) === 'Smaller Than or Equal to 12');
+```
+
+`testLessOrEqual(23)` should return "Smaller Than or Equal to 24"
+
+```js
+assert(testLessOrEqual(23) === 'Smaller Than or Equal to 24');
+```
+
+`testLessOrEqual(24)` should return "Smaller Than or Equal to 24"
+
+```js
+assert(testLessOrEqual(24) === 'Smaller Than or Equal to 24');
+```
+
+`testLessOrEqual(25)` should return "More Than 24"
+
+```js
+assert(testLessOrEqual(25) === 'More Than 24');
+```
+
+`testLessOrEqual(55)` should return "More Than 24"
+
+```js
+assert(testLessOrEqual(55) === 'More Than 24');
+```
+
+You should use the `<=` operator at least twice
+
+```js
+assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function testLessOrEqual(val) {
@@ -71,18 +92,9 @@ function testLessOrEqual(val) {
 }
 
 testLessOrEqual(10);
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function testLessOrEqual(val) {
@@ -97,5 +109,3 @@ function testLessOrEqual(val) {
   return "More Than 24";
 }
 ```
-
-</section>

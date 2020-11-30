@@ -4,33 +4,29 @@ title: Part 118
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Lastly, in the `:root` selector of the media query, redefine all four of the `--window-color` variables to use `#777`. When you're done, resize the window and watch it go from day to night.
 
 Variables are primarily used with colors, and that's how you used them here. But they can be given any value and used on any property. Your project looks great!
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1]; assert(/--window-color1\s*:\s*#777\s*(;|})/g.test(root) && /--window-color2\s*:\s*#777\s*(;|})/g.test(root) && /--window-color3\s*:\s*#777\s*(;|})/g.test(root) && /--window-color4\s*:\s*#777\s*(;|})/g.test(root));
-
+```js
+const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1];
+assert(
+  /--window-color1\s*:\s*#777\s*(;|})/g.test(root) &&
+    /--window-color2\s*:\s*#777\s*(;|})/g.test(root) &&
+    /--window-color3\s*:\s*#777\s*(;|})/g.test(root) &&
+    /--window-color4\s*:\s*#777\s*(;|})/g.test(root)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -435,12 +431,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -848,5 +839,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

@@ -1,46 +1,51 @@
 ---
 id: bad87fee1348bd9bedc08826
 title: Target HTML Elements with Selectors Using jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
 forumTopicId: 18319
+required:
+  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 ---
 
-## Description
-<section id='description'>
-Now we have a <code>document ready function</code>.
-Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a dollar sign operator, or as bling.
+# --description--
+
+Now we have a `document ready function`.
+
+Now let's write our first jQuery statement. All jQuery functions start with a `$`, usually referred to as a dollar sign operator, or as bling.
+
 jQuery often selects an HTML element with a <dfn>selector</dfn>, then does something to that element.
-For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your document ready function:
-<code>$("button").addClass("animated bounce");</code>
-Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements.
-</section>
 
-## Instructions
-<section id='instructions'>
+For example, let's make all of your `button` elements bounce. Just add this code inside your document ready function:
 
-</section>
+`$("button").addClass("animated bounce");`
 
-## Tests
-<section id='tests'>
+Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css `bounce` class to your `button` elements.
 
-```yml
-tests:
-  - text: 'You should use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.'
-    testString: 'assert($("button").hasClass("animated") && $("button").hasClass("bounce"));'
-  - text: You should only use jQuery to add these classes to the element.
-    testString: 'assert(!code.match(/class.*animated/g));'
-  - text: Your jQuery code should be within the <code>$(document).ready();</code> function.
-    testString: 'assert(code.replace(/\s/g, '''').match(/\$\(document\)\.ready\(function\(\)\{\$/g));'
+# --hints--
+
+You should use the jQuery `addClass()` function to give the classes `animated` and `bounce` to your `button` elements.
+
+```js
+assert($('button').hasClass('animated') && $('button').hasClass('bounce'));
 ```
 
-</section>
+You should only use jQuery to add these classes to the element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(!code.match(/class.*animated/g));
+```
 
-<div id='html-seed'>
+Your jQuery code should be within the `$(document).ready();` function.
+
+```js
+assert(
+  code.replace(/\s/g, '').match(/\$\(document\)\.ready\(function\(\)\{\$/g)
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -74,14 +79,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -114,5 +112,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

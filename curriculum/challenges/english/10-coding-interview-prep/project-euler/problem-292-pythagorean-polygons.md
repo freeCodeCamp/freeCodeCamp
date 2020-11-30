@@ -1,43 +1,35 @@
 ---
 id: 5900f4911000cf542c50ffa3
-challengeType: 5
 title: 'Problem 292: Pythagorean Polygons'
+challengeType: 5
 forumTopicId: 301944
 ---
 
-## Description
-<section id='description'>
-We shall define a pythagorean polygon  to be a convex polygon with the following properties:there are at least three vertices,
+# --description--
+
+We shall define a pythagorean polygon to be a convex polygon with the following properties:there are at least three vertices,
+
 no three vertices are aligned,
+
 each vertex has integer coordinates,
-each edge has integer length.For a given integer n, define P(n) as the number of distinct pythagorean polygons for which the perimeter is ≤ n.
+
+each edge has integer length.For a given integer n, define P(n) as the number of distinct pythagorean polygons for which the perimeter is ≤ n.
+
 Pythagorean polygons should be considered distinct as long as none is a translation of another.
 
-You are given that P(4) = 1, P(30) = 3655 and P(60) = 891045.
-Find P(120).
-</section>
+You are given that P(4) = 1, P(30) = 3655 and P(60) = 891045. Find P(120).
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler292()` should return 3600060866.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler292()</code> should return 3600060866.
-    testString: assert.strictEqual(euler292(), 3600060866);
-
+```js
+assert.strictEqual(euler292(), 3600060866);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler292() {
@@ -48,17 +40,8 @@ function euler292() {
 euler292();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

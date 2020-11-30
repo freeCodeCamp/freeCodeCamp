@@ -5,9 +5,10 @@ challengeType: 1
 forumTopicId: 301211
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.
+
 To achieve this, we often use the following syntax:
 
 ```js
@@ -17,7 +18,7 @@ const myFunc = function() {
 }
 ```
 
-ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use <strong>arrow function syntax</strong>:
+ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use **arrow function syntax**:
 
 ```js
 const myFunc = () => {
@@ -26,44 +27,53 @@ const myFunc = () => {
 }
 ```
 
-When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword <code>return</code> as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:
+When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword `return` as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:
 
 ```js
 const myFunc = () => "value";
 ```
 
-This code will still return the string <code>value</code> by default.
-</section>
+This code will still return the string `value` by default.
 
-## Instructions
-<section id='instructions'>
-Rewrite the function assigned to the variable <code>magic</code> which returns a <code>new Date()</code> to use arrow function syntax. Also, make sure nothing is defined using the keyword <code>var</code>.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Rewrite the function assigned to the variable `magic` which returns a `new Date()` to use arrow function syntax. Also, make sure nothing is defined using the keyword `var`.
 
-```yml
-tests:
-  - text: User should replace <code>var</code> keyword.
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
-  - text: <code>magic</code> should be a constant variable (by using <code>const</code>).
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+magic/g));
-  - text: <code>magic</code> should be a <code>function</code>.
-    testString: assert(typeof magic === 'function');
-  - text: <code>magic()</code> should return correct date.
-    testString: assert(magic().setHours(0,0,0,0) === new Date().setHours(0,0,0,0));
-  - text: <code>function</code> keyword should not be used.
-    testString: getUserInput => assert(!getUserInput('index').match(/function/g));
+# --hints--
 
+User should replace `var` keyword.
+
+```js
+(getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-</section>
+`magic` should be a constant variable (by using `const`).
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) => assert(getUserInput('index').match(/const\s+magic/g));
+```
 
-<div id='js-seed'>
+`magic` should be a `function`.
+
+```js
+assert(typeof magic === 'function');
+```
+
+`magic()` should return correct date.
+
+```js
+assert(magic().setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0));
+```
+
+`function` keyword should not be used.
+
+```js
+(getUserInput) => assert(!getUserInput('index').match(/function/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 var magic = function() {
@@ -71,19 +81,10 @@ var magic = function() {
 };
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const magic = () => {
   return new Date();
 };
 ```
-
-</section>

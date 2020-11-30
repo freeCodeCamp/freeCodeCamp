@@ -1,52 +1,92 @@
 ---
-title: Extensible prime generator
 id: 598ee8b91b410510ae82efef
+title: Extensible prime generator
 challengeType: 5
 forumTopicId: 302262
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+
 The generator should be able to:
+
 <ul>
   <li>Show the first <code>n</code> prime numbers</li>
   <li>Show the prime numbers in a range</li>
   <li>Show the number of primes in a range</li>
   <li>Show the <code>n<sup>th</sup></code> prime number</li>
 </ul>
-The function should have two parameters. The first will receive <code>n</code> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
-</section>
 
-## Instructions
-<section id='instructions'>
+The function should have two parameters. The first will receive `n` or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+`primeGenerator` should be a function.
 
-```yml
-tests:
-  - text: <code>primeGenerator</code> should be a function.
-    testString: assert(typeof primeGenerator === 'function');
-  - text: <code>primeGenerator(20, true)</code> should return <code>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]</code>.
-    testString: assert.deepEqual(primeGenerator(20, true), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]);
-  - text: <code>primeGenerator([100, 150], true)</code> should return <code>[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]</code>.
-    testString: assert.deepEqual(primeGenerator([100, 150], true), [101, 103, 107, 109, 113, 127, 131, 137, 139, 149]);
-  - text: <code>primeGenerator([7700, 8000], false)</code> should return <code>30</code>.
-    testString: assert.equal(primeGenerator([7700, 8000], false), 30);
-  - text: <code>primeGenerator(10000, false)</code> should return <code>104729</code>.
-    testString: assert.equal(primeGenerator(10000, false), 104729);
-
+```js
+assert(typeof primeGenerator === 'function');
 ```
 
-</section>
+`primeGenerator(20, true)` should return `[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(primeGenerator(20, true), [
+  2,
+  3,
+  5,
+  7,
+  11,
+  13,
+  17,
+  19,
+  23,
+  29,
+  31,
+  37,
+  41,
+  43,
+  47,
+  53,
+  59,
+  61,
+  67,
+  71
+]);
+```
 
-<div id='js-seed'>
+`primeGenerator([100, 150], true)` should return `[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]`.
+
+```js
+assert.deepEqual(primeGenerator([100, 150], true), [
+  101,
+  103,
+  107,
+  109,
+  113,
+  127,
+  131,
+  137,
+  139,
+  149
+]);
+```
+
+`primeGenerator([7700, 8000], false)` should return `30`.
+
+```js
+assert.equal(primeGenerator([7700, 8000], false), 30);
+```
+
+`primeGenerator(10000, false)` should return `104729`.
+
+```js
+assert.equal(primeGenerator(10000, false), 104729);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function primeGenerator(num, showPrimes) {
@@ -54,15 +94,7 @@ function primeGenerator(num, showPrimes) {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function primeGenerator(num, showPrimes) {
@@ -103,7 +135,4 @@ function primeGenerator(num, showPrimes) {
     return arr.length;
   }
 }
-
 ```
-
-</section>

@@ -5,10 +5,11 @@ challengeType: 1
 forumTopicId: 301352
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In the last challenge, you learned to use the caret character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
-You can search the end of strings using the dollar sign character <code>$</code> at the end of the regex.
+
+You can search the end of strings using the dollar sign character `$` at the end of the regex.
 
 ```js
 let theEnding = "This is a never ending story";
@@ -21,33 +22,33 @@ storyRegex.test(noEnding);
 
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Use the anchor character (<code>$</code>) to match the string <code>"caboose"</code> at the end of the string <code>caboose</code>.
-</section>
+Use the anchor character (`$`) to match the string `"caboose"` at the end of the string `caboose`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should search for <code>"caboose"</code> with the dollar sign <code>$</code> anchor in your regex.
-    testString: assert(lastRegex.source == "caboose$");
-  - text: Your regex should not use any flags.
-    testString: assert(lastRegex.flags == "");
-  - text: You should match <code>"caboose"</code> at the end of the string <code>"The last car on a train is the caboose"</code>
-    testString: assert(lastRegex.test("The last car on a train is the caboose"));
+You should search for `"caboose"` with the dollar sign `$` anchor in your regex.
 
+```js
+assert(lastRegex.source == 'caboose$');
 ```
 
-</section>
+Your regex should not use any flags.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(lastRegex.flags == '');
+```
 
-<div id='js-seed'>
+You should match `"caboose"` at the end of the string `"The last car on a train is the caboose"`
+
+```js
+assert(lastRegex.test('The last car on a train is the caboose'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 let caboose = "The last car on a train is the caboose";
@@ -55,19 +56,10 @@ let lastRegex = /change/; // Change this line
 let result = lastRegex.test(caboose);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 let caboose = "The last car on a train is the caboose";
 let lastRegex = /caboose$/; // Change this line
 let result = lastRegex.test(caboose);
 ```
-
-</section>

@@ -6,9 +6,9 @@ videoUrl: 'https://scrimba.com/p/pByETK/cRrqmtV'
 forumTopicId: 301132
 ---
 
-## Description
-<section id='description'>
-After creating an area's template for your grid container, as shown in the previous challenge, you can place an item in your custom area by referencing the name you gave it. To do this, you use the <code>grid-area</code> property on an item like this:
+# --description--
+
+After creating an area's template for your grid container, as shown in the previous challenge, you can place an item in your custom area by referencing the name you gave it. To do this, you use the `grid-area` property on an item like this:
 
 ```css
 .item1 {
@@ -16,30 +16,27 @@ After creating an area's template for your grid container, as shown in the previ
 }
 ```
 
-This lets the grid know that you want the <code>item1</code> class to go in the area named <code>header</code>. In this case, the item will use the entire top row because that whole row is named as the header area.
-</section>
+This lets the grid know that you want the `item1` class to go in the area named `header`. In this case, the item will use the entire top row because that whole row is named as the header area.
 
-## Instructions
-<section id='instructions'>
-Place an element with the <code>item5</code> class in the <code>footer</code> area using the <code>grid-area</code> property.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Place an element with the `item5` class in the `footer` area using the `grid-area` property.
 
-```yml
-tests:
-  - text: <code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.
-    testString: assert(__helpers.removeCssComments(code).match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi));
+# --hints--
 
+`item5` class should have a `grid-area` property that has the value of `footer`.
+
+```js
+assert(
+  __helpers
+    .removeCssComments(code)
+    .match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -81,18 +78,8 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>.item5 {grid-area: footer;}</style>
 ```
-
-</section>

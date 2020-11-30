@@ -4,33 +4,60 @@ title: Part 136
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Finally! You have all the elements displayed and they look good. The last thing you will do is make it so you can see the data from whatever year you want.
 
 Wrap all the code in the script you've been working with in a function named `drawDashboard` and give it a parameter named `year`. Then, at the bottom of the script, call the function you created and pass it the number `2020`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(typeof(drawDashboard) === 'function' && /<\/script>\s*<script>\s*function\s*drawDashboard\s*\(\s*year\s*\)\s*\{/g.test(code) && /\}\s*drawDashboard\s*\(\s*2020\s*\)\s*;?\s*<\/script>\s*$/g.test(code));
-
+```js
+assert(
+  typeof drawDashboard === 'function' &&
+    /<\/script>\s*<script>\s*function\s*drawDashboard\s*\(\s*year\s*\)\s*\{/g.test(
+      code
+    ) &&
+    /\}\s*drawDashboard\s*\(\s*2020\s*\)\s*;?\s*<\/script>\s*$/g.test(code)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --before-user-code--
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <style>
+      body {
+        background-color: #ccc;
+        padding: 100px 10px;
+      }
+
+      .dashboard {
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        box-shadow: 5px 5px 5px 5px #888;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+## --seed-contents--
 
 ```html
 <script>
@@ -238,47 +265,7 @@ tests:
 </script>
 ```
 
-</div>
-
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>D3 Dashboard</title>
-    <style>
-      body {
-        background-color: #ccc;
-        padding: 100px 10px;
-      }
-
-      .dashboard {
-        width: 980px;
-        height: 500px;
-        background-color: white;
-        box-shadow: 5px 5px 5px 5px #888;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-  </body>
-</html>
-```
-
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -486,5 +473,3 @@ tests:
   drawDashboard(2020);
 </script>
 ```
-
-</section>

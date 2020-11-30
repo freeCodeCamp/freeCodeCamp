@@ -1,56 +1,59 @@
 ---
 id: 5900f3a11000cf542c50feb4
-challengeType: 5
 title: 'Problem 53: Combinatoric selections'
+challengeType: 5
 forumTopicId: 302164
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 There are exactly ten ways of selecting three from five, 12345:
 
 <div style='text-align: center;'>123, 124, 125, 134, 135, 145, 234, 235, 245, and 345</div>
 
-In combinatorics, we use the notation, $\displaystyle \binom 5 3 = 10$
+In combinatorics, we use the notation, $\\displaystyle \\binom 5 3 = 10$
 
-In general, $\displaystyle \binom n r = \dfrac{n!}{r!(n-r)!}$, where $r \le n$, $n! = n \times (n-1) \times ... \times 3 \times 2 \times 1$, and $0! = 1$.
+In general, $\\displaystyle \\binom n r = \\dfrac{n!}{r!(n-r)!}$, where $r \\le n$, $n! = n \\times (n-1) \\times ... \\times 3 \\times 2 \\times 1$, and $0! = 1$.
 
-It is not until $n = 23$, that a value exceeds one-million: $\displaystyle \binom {23} {10} = 1144066$.
+It is not until $n = 23$, that a value exceeds one-million: $\\displaystyle \\binom {23} {10} = 1144066$.
 
-How many, not necessarily distinct, values of  $\displaystyle \binom n r$ for $1 \le n \le 100$, are greater than one-million?
+How many, not necessarily distinct, values of $\\displaystyle \\binom n r$ for $1 \\le n \\le 100$, are greater than one-million?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`combinatoricSelections(1000)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>combinatoricSelections(1000)</code> should return a number.
-    testString: assert(typeof combinatoricSelections(1000) === 'number');
-  - text: <code>combinatoricSelections(1000)</code> should return 4626.
-    testString: assert.strictEqual(combinatoricSelections(1000), 4626);
-  - text: <code>combinatoricSelections(10000)</code> should return 4431.
-    testString: assert.strictEqual(combinatoricSelections(10000), 4431);
-  - text: <code>combinatoricSelections(100000)</code> should return 4255.
-    testString: assert.strictEqual(combinatoricSelections(100000), 4255);
-  - text: <code>combinatoricSelections(1000000)</code> should return 4075.
-    testString: assert.strictEqual(combinatoricSelections(1000000), 4075);
-
+```js
+assert(typeof combinatoricSelections(1000) === 'number');
 ```
 
-</section>
+`combinatoricSelections(1000)` should return 4626.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(combinatoricSelections(1000), 4626);
+```
 
-<div id='js-seed'>
+`combinatoricSelections(10000)` should return 4431.
+
+```js
+assert.strictEqual(combinatoricSelections(10000), 4431);
+```
+
+`combinatoricSelections(100000)` should return 4255.
+
+```js
+assert.strictEqual(combinatoricSelections(100000), 4255);
+```
+
+`combinatoricSelections(1000000)` should return 4075.
+
+```js
+assert.strictEqual(combinatoricSelections(1000000), 4075);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function combinatoricSelections(limit) {
@@ -61,15 +64,7 @@ function combinatoricSelections(limit) {
 combinatoricSelections(1000000);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function combinatoricSelections(limit) {
@@ -91,5 +86,3 @@ function combinatoricSelections(limit) {
     return result;
 }
 ```
-
-</section>

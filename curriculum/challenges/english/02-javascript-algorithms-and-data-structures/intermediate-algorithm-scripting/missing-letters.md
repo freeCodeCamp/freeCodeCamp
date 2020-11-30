@@ -5,41 +5,47 @@ challengeType: 5
 forumTopicId: 16023
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Find the missing letter in the passed letter range and return it.
+
 If all letters are present in the range, return undefined.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`fearNotLetter("abce")` should return "d".
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>fearNotLetter("abce")</code> should return "d".
-    testString: assert.deepEqual(fearNotLetter('abce'), 'd');
-  - text: <code>fearNotLetter("abcdefghjklmno")</code> should return "i".
-    testString: assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i');
-  - text: <code>fearNotLetter("stvwx")</code> should return "u".
-    testString: assert.deepEqual(fearNotLetter('stvwx'), 'u');
-  - text: <code>fearNotLetter("bcdf")</code> should return "e".
-    testString: assert.deepEqual(fearNotLetter('bcdf'), 'e');
-  - text: <code>fearNotLetter("abcdefghijklmnopqrstuvwxyz")</code> should return undefined.
-    testString: assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));
-
+```js
+assert.deepEqual(fearNotLetter('abce'), 'd');
 ```
 
-</section>
+`fearNotLetter("abcdefghjklmno")` should return "i".
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i');
+```
 
-<div id='js-seed'>
+`fearNotLetter("stvwx")` should return "u".
+
+```js
+assert.deepEqual(fearNotLetter('stvwx'), 'u');
+```
+
+`fearNotLetter("bcdf")` should return "e".
+
+```js
+assert.deepEqual(fearNotLetter('bcdf'), 'e');
+```
+
+`fearNotLetter("abcdefghijklmnopqrstuvwxyz")` should return undefined.
+
+```js
+assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function fearNotLetter(str) {
@@ -49,15 +55,7 @@ function fearNotLetter(str) {
 fearNotLetter("abce");
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function fearNotLetter (str) {
@@ -71,5 +69,3 @@ function fearNotLetter (str) {
   return undefined;
 }
 ```
-
-</section>

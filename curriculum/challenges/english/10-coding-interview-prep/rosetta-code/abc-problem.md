@@ -1,15 +1,15 @@
 ---
-title: ABC Problem
 id: 594810f028c0303b75339acc
+title: ABC Problem
 challengeType: 5
 forumTopicId: 302220
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:
-<pre>
-(B O)
+
+<pre>(B O)
 (X K)
 (D Q)
 (C P)
@@ -30,48 +30,77 @@ You are given a collection of ABC blocks (e.g., childhood alphabet blocks). Ther
 (P C)
 (Z M)
 </pre>
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
+
 Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+
 Some rules to keep in mind:
+
 <ul>
   <li>Once a letter on a block is used, that block cannot be used again.</li>
   <li>The function should be case-insensitive.</li>
 </ul>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>canMakeWord</code> should be a function.
-    testString: assert(typeof canMakeWord === 'function');
-  - text: <code>canMakeWord</code> should return a boolean.
-    testString: assert(typeof canMakeWord('hi') === 'boolean');
-  - text: <code>canMakeWord("bark")</code> should return true.
-    testString: assert(canMakeWord(words[0]));
-  - text: <code>canMakeWord("BooK")</code> should return false.
-    testString: assert(!canMakeWord(words[1]));
-  - text: <code>canMakeWord("TReAT")</code> should return true.
-    testString: assert(canMakeWord(words[2]));
-  - text: <code>canMakeWord("COMMON")</code> should return false.
-    testString: assert(!canMakeWord(words[3]));
-  - text: <code>canMakeWord("squAD")</code> should return true.
-    testString: assert(canMakeWord(words[4]));
-  - text: <code>canMakeWord("conFUSE")</code> should return true.
-    testString: assert(canMakeWord(words[5]));
+`canMakeWord` should be a function.
 
+```js
+assert(typeof canMakeWord === 'function');
 ```
 
-</section>
+`canMakeWord` should return a boolean.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(typeof canMakeWord('hi') === 'boolean');
+```
 
-<div id='js-seed'>
+`canMakeWord("bark")` should return true.
+
+```js
+assert(canMakeWord(words[0]));
+```
+
+`canMakeWord("BooK")` should return false.
+
+```js
+assert(!canMakeWord(words[1]));
+```
+
+`canMakeWord("TReAT")` should return true.
+
+```js
+assert(canMakeWord(words[2]));
+```
+
+`canMakeWord("COMMON")` should return false.
+
+```js
+assert(!canMakeWord(words[3]));
+```
+
+`canMakeWord("squAD")` should return true.
+
+```js
+assert(canMakeWord(words[4]));
+```
+
+`canMakeWord("conFUSE")` should return true.
+
+```js
+assert(canMakeWord(words[5]));
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];
+```
+
+## --seed-contents--
 
 ```js
 function canMakeWord(word) {
@@ -79,23 +108,7 @@ function canMakeWord(word) {
 }
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function canMakeWord(word) {
@@ -119,7 +132,4 @@ function canMakeWord(word) {
   });
   return !length;
 }
-
 ```
-
-</section>

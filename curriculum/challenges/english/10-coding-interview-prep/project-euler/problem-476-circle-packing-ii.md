@@ -1,39 +1,31 @@
 ---
 id: 5900f5481000cf542c51005b
-challengeType: 5
 title: 'Problem 476: Circle Packing II'
+challengeType: 5
 forumTopicId: 302153
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Let R(a, b, c) be the maximum area covered by three non-overlapping circles inside a triangle with edge lengths a, b and c.
-Let S(n) be the average value of R(a, b, c) over all integer triplets (a, b, c) such that 1 ≤ a ≤ b ≤ c < a + b ≤ n
+
+Let S(n) be the average value of R(a, b, c) over all integer triplets (a, b, c) such that 1 ≤ a ≤ b ≤ c &lt; a + b ≤ n
+
 You are given S(2) = R(1, 1, 1) ≈ 0.31998, S(5) ≈ 1.25899.
+
 Find S(1803) rounded to 5 decimal places behind the decimal point.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler476()` should return 110242.87794.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler476()</code> should return 110242.87794.
-    testString: assert.strictEqual(euler476(), 110242.87794);
-
+```js
+assert.strictEqual(euler476(), 110242.87794);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler476() {
@@ -44,17 +36,8 @@ function euler476() {
 euler476();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

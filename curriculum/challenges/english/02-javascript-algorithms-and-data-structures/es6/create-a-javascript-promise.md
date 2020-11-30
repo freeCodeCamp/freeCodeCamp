@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301197
 ---
 
-## Description
-<section id='description'>
-A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. <code>Promise</code> is a constructor function, so you need to use the <code>new</code> keyword to create one. It takes a function, as its argument, with two parameters - <code>resolve</code> and <code>reject</code>. These are methods used to determine the outcome of the promise. The syntax looks like this:
+# --description--
+
+A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. `Promise` is a constructor function, so you need to use the `new` keyword to create one. It takes a function, as its argument, with two parameters - `resolve` and `reject`. These are methods used to determine the outcome of the promise. The syntax looks like this:
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -15,44 +15,39 @@ const myPromise = new Promise((resolve, reject) => {
 });
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Create a new promise called <code>makeServerRequest</code>. Pass in a function with <code>resolve</code> and <code>reject</code> parameters to the constructor.
-</section>
+Create a new promise called `makeServerRequest`. Pass in a function with `resolve` and `reject` parameters to the constructor.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should assign a promise to a declared variable named <code>makeServerRequest</code>.
-    testString: assert(makeServerRequest instanceof Promise);
-  - text: Your promise should receive a function with <code>resolve</code> and <code>reject</code> as parameters.
-    testString: assert(code.match(/Promise\(\s*(function\s*\(\s*resolve\s*,\s*reject\s*\)\s*{|\(\s*resolve\s*,\s*reject\s*\)\s*=>\s*{)[^}]*}/g));
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+You should assign a promise to a declared variable named `makeServerRequest`.
 
 ```js
-
+assert(makeServerRequest instanceof Promise);
 ```
 
-</div>
-</section>
+Your promise should receive a function with `resolve` and `reject` as parameters.
 
-## Solution
-<section id='solution'>
+```js
+assert(
+  code.match(
+    /Promise\(\s*(function\s*\(\s*resolve\s*,\s*reject\s*\)\s*{|\(\s*resolve\s*,\s*reject\s*\)\s*=>\s*{)[^}]*}/g
+  )
+);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+```
+
+# --solutions--
 
 ```js
 const makeServerRequest = new Promise((resolve, reject) => {
 
 });
 ```
-
-</section>

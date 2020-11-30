@@ -1,50 +1,57 @@
 ---
 id: 5900f3731000cf542c50fe86
-challengeType: 5
 title: 'Problem 7: 10001st prime'
+challengeType: 5
 forumTopicId: 302182
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
 What is the `n`th prime number?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`nthPrime(6)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>nthPrime(6)</code> should return a number.
-    testString: assert(typeof nthPrime(6) === 'number');
-  - text: <code>nthPrime(6)</code> should return 13.
-    testString: assert.strictEqual(nthPrime(6), 13);
-  - text: <code>nthPrime(10)</code> should return 29.
-    testString: assert.strictEqual(nthPrime(10), 29);
-  - text: <code>nthPrime(100)</code> should return 541.
-    testString: assert.strictEqual(nthPrime(100), 541);
-  - text: <code>nthPrime(1000)</code> should return 7919.
-    testString: assert.strictEqual(nthPrime(1000), 7919);
-  - text: <code>nthPrime(10001)</code> should return 104743.
-    testString: assert.strictEqual(nthPrime(10001), 104743);
-
+```js
+assert(typeof nthPrime(6) === 'number');
 ```
 
-</section>
+`nthPrime(6)` should return 13.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(nthPrime(6), 13);
+```
 
-<div id='js-seed'>
+`nthPrime(10)` should return 29.
+
+```js
+assert.strictEqual(nthPrime(10), 29);
+```
+
+`nthPrime(100)` should return 541.
+
+```js
+assert.strictEqual(nthPrime(100), 541);
+```
+
+`nthPrime(1000)` should return 7919.
+
+```js
+assert.strictEqual(nthPrime(1000), 7919);
+```
+
+`nthPrime(10001)` should return 104743.
+
+```js
+assert.strictEqual(nthPrime(10001), 104743);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function nthPrime(n) {
@@ -55,15 +62,7 @@ function nthPrime(n) {
 nthPrime(10001);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const nthPrime = n => {
@@ -84,5 +83,3 @@ const nthPrime = n => {
   return pN - 1;
 }
 ```
-
-</section>

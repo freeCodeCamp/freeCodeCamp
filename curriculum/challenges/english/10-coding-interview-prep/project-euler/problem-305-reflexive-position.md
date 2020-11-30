@@ -1,47 +1,33 @@
 ---
 id: 5900f49d1000cf542c50ffb0
-challengeType: 5
 title: 'Problem 305: Reflexive Position'
+challengeType: 5
 forumTopicId: 301959
 ---
 
-## Description
-<section id='description'>
-Let's call S the (infinite) string that is made by concatenating the consecutive positive integers (starting from 1)  written down in base 10.
-Thus, S = 1234567891011121314151617181920212223242...
+# --description--
 
+Let's call S the (infinite) string that is made by concatenating the consecutive positive integers (starting from 1) written down in base 10.
+
+Thus, S = 1234567891011121314151617181920212223242...
 
 It's easy to see that any number will show up an infinite number of times in S.
 
-
-Let's call f(n) the starting position of the nth occurrence of n in S.
-For example, f(1)=1, f(5)=81, f(12)=271 and f(7780)=111111365.
-
+Let's call f(n) the starting position of the nth occurrence of n in S. For example, f(1)=1, f(5)=81, f(12)=271 and f(7780)=111111365.
 
 Find ∑f(3k) for 1≤k≤13.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler305()` should return 18174995535140.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler305()</code> should return 18174995535140.
-    testString: assert.strictEqual(euler305(), 18174995535140);
-
+```js
+assert.strictEqual(euler305(), 18174995535140);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler305() {
@@ -52,17 +38,8 @@ function euler305() {
 euler305();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

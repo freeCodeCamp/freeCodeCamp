@@ -5,10 +5,11 @@ challengeType: 0
 forumTopicId: 301456
 ---
 
-## Description
-<section id='description'>
-Sass has a feature called <code>extend</code> that makes it easy to borrow the CSS rules from one element and build upon them in another.
-For example, the below block of CSS rules style a <code>.panel</code> class. It has a <code>background-color</code>, <code>height</code> and <code>border</code>.
+# --description--
+
+Sass has a feature called `extend` that makes it easy to borrow the CSS rules from one element and build upon them in another.
+
+For example, the below block of CSS rules style a `.panel` class. It has a `background-color`, `height` and `border`.
 
 ```scss
 .panel{
@@ -18,9 +19,7 @@ For example, the below block of CSS rules style a <code>.panel</code> class. It 
 }
 ```
 
-Now you want another panel called <code>.big-panel</code>. It has the same base properties as <code>.panel</code>, but also needs a <code>width</code> and <code>font-size</code>.
-It's possible to copy and paste the initial CSS rules from <code>.panel</code>, but the code becomes repetitive as you add more types of panels.
-The <code>extend</code> directive is a simple way to reuse the rules written for one element, then add more for another:
+Now you want another panel called `.big-panel`. It has the same base properties as `.panel`, but also needs a `width` and `font-size`. It's possible to copy and paste the initial CSS rules from `.panel`, but the code becomes repetitive as you add more types of panels. The `extend` directive is a simple way to reuse the rules written for one element, then add more for another:
 
 ```scss
 .big-panel{
@@ -30,32 +29,35 @@ The <code>extend</code> directive is a simple way to reuse the rules written for
 }
 ```
 
-The <code>.big-panel</code> will have the same properties as <code>.panel</code> in addition to the new styles.
-</section>
+The `.big-panel` will have the same properties as `.panel` in addition to the new styles.
 
-## Instructions
-<section id='instructions'>
-Make a class <code>.info-important</code> that extends <code>.info</code> and also has a <code>background-color</code> set to magenta.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Make a class `.info-important` that extends `.info` and also has a `background-color` set to magenta.
 
-```yml
-tests:
-  - text: Your <code>info-important</code> class should have a <code>background-color</code> set to <code>magenta</code>.
-    testString: assert(code.match(/\.info-important\s*?{[\s\S]*background-color\s*?:\s*?magenta\s*?;[\s\S]*}/gi));
-  - text: Your <code>info-important</code> class should use <code>@extend</code> to inherit the styling from the <code>info</code> class.
-    testString: assert(code.match(/\.info-important\s*?{[\s\S]*@extend\s*?.info\s*?;[\s\S]*/gi));
+# --hints--
 
+Your `info-important` class should have a `background-color` set to `magenta`.
+
+```js
+assert(
+  code.match(
+    /\.info-important\s*?{[\s\S]*background-color\s*?:\s*?magenta\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+Your `info-important` class should use `@extend` to inherit the styling from the `info` class.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/\.info-important\s*?{[\s\S]*@extend\s*?.info\s*?;[\s\S]*/gi)
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style type='text/scss'>
@@ -82,14 +84,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style type='text/scss'>
@@ -117,7 +112,4 @@ tests:
 <div class="info">
   <p>This is a simple post. It has basic styling and can be extended for other uses.</p>
 </div>
-
 ```
-
-</section>

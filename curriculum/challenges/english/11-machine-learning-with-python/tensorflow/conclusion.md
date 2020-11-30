@@ -5,27 +5,25 @@ challengeType: 11
 videoId: LMNub5frQi4
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+Most people that are experts in AI or machine learning usually...:
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    Most people that are experts in AI or machine learning usually...:
-  answers:
-    - |
-      have one specialization.
-    - |
-      have many specializations.
-    - |
-      have a deep understanding of many different frameworks.
-  solution: 1
-```
+have one specialization.
 
-</section>
+---
+
+have many specializations.
+
+---
+
+have a deep understanding of many different frameworks.
+
+## --video-solution--
+
+1
+

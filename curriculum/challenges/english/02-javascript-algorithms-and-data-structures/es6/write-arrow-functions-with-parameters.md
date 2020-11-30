@@ -5,8 +5,8 @@ challengeType: 1
 forumTopicId: 301223
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Just like a regular function, you can pass arguments into an arrow function.
 
 ```js
@@ -30,37 +30,48 @@ const multiplier = (item, multi) => item * multi;
 multiplier(4, 2); // returns 8
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Rewrite the <code>myConcat</code> function which appends contents of <code>arr2</code> to <code>arr1</code> so that the function uses arrow function syntax.
-</section>
+Rewrite the `myConcat` function which appends contents of `arr2` to `arr1` so that the function uses arrow function syntax.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should replace the <code>var</code> keyword.
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
-  - text: <code>myConcat</code> should be a constant variable (by using <code>const</code>).
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+myConcat/g));
-  - text: <code>myConcat</code> should be an arrow function with two parameters
-    testString: assert(/myConcat=\(\w+,\w+\)=>/.test(code.replace(/\s/g, '')) && typeof myConcat === 'function');
-  - text: <code>myConcat()</code> should return <code>[1, 2, 3, 4, 5]</code>.
-    testString: assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
-  - text: <code>function</code> keyword should not be used.
-    testString: getUserInput => assert(!getUserInput('index').match(/function/g));
+You should replace the `var` keyword.
 
+```js
+(getUserInput) => assert(!getUserInput('index').match(/var/g));
 ```
 
-</section>
+`myConcat` should be a constant variable (by using `const`).
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+(getUserInput) => assert(getUserInput('index').match(/const\s+myConcat/g));
+```
 
-<div id='js-seed'>
+`myConcat` should be an arrow function with two parameters
+
+```js
+assert(
+  /myConcat=\(\w+,\w+\)=>/.test(code.replace(/\s/g, '')) &&
+    typeof myConcat === 'function'
+);
+```
+
+`myConcat()` should return `[1, 2, 3, 4, 5]`.
+
+```js
+assert.deepEqual(myConcat([1, 2], [3, 4, 5]), [1, 2, 3, 4, 5]);
+```
+
+`function` keyword should not be used.
+
+```js
+(getUserInput) => assert(!getUserInput('index').match(/function/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 var myConcat = function(arr1, arr2) {
@@ -70,14 +81,7 @@ var myConcat = function(arr1, arr2) {
 console.log(myConcat([1, 2], [3, 4, 5]));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 const myConcat = (arr1, arr2) =>  {
@@ -86,5 +90,3 @@ const myConcat = (arr1, arr2) =>  {
 
 console.log(myConcat([1, 2], [3, 4, 5]));
 ```
-
-</section>

@@ -5,35 +5,33 @@ challengeType: 0
 forumTopicId: 18306
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now that we have a Bootstrap Row, let's split it into two columns to house our elements.
-Create two <code>div</code> elements within your row, both with the class <code>col-xs-6</code>.
-</section>
 
-## Instructions
-<section id='instructions'>
+Create two `div` elements within your row, both with the class `col-xs-6`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Two `div class="col-xs-6"` elements should be nested within your `div class="row"` element.
 
-```yml
-tests:
-  - text: Two <code>div class="col-xs-6"</code> elements should be nested within your <code>div class="row"</code> element.
-    testString: assert($("div.row > div.col-xs-6").length > 1);
-  - text: All your <code>div</code> elements should have closing tags.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
-
+```js
+assert($('div.row > div.col-xs-6').length > 1);
 ```
 
-</section>
+All your `div` elements should have closing tags.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<div/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div/g).length
+);
+```
 
-<div id='html-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -45,14 +43,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -63,5 +54,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

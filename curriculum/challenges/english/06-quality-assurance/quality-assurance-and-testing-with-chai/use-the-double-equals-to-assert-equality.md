@@ -5,53 +5,103 @@ challengeType: 2
 forumTopicId: 301609
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on [Repl.it](https://repl.it/github/freeCodeCamp/boilerplate-mochachai), or cloned from [GitHub](https://github.com/freeCodeCamp/boilerplate-mochachai/).
 
 `equal()` compares objects using `==`.
 
-</section>
-
-## Instructions
-
-<section id='instructions'>
+# --instructions--
 
 Within `tests/1_unit-tests.js` under the test labelled `#5` in the `Equality` suite, change each `assert` to either `assert.equal` or `assert.notEqual` to make the test pass (should evaluate to `true`). Do not alter the arguments passed to the asserts.
 
-</section>
+# --hints--
 
-## Tests
+All tests should pass.
 
-<section id='tests'>
-
-```yml
-tests:
-  - text: All tests should pass.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the correct method for the first assertion - `equal` vs. `notEqual`.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[0].method, 'equal', 'Numbers are coerced into strings with == '); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the correct method for the second assertion - `equal` vs. `notEqual`.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[1].method, 'notEqual', ' == compares object references'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the correct method for the third assertion - `equal` vs. `notEqual`.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[2].method, 'equal', '6 * \'2\' is 12 ! It should be equal to \'12\''); }, xhr => { throw new Error(xhr.responseText); })
-  - text: You should choose the correct method for the fourth assertion - `equal` vs. `notEqual`.
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(data => {  assert.equal(data.assertions[3].method, 'notEqual', '6 + \'2\' is \'62\'...'); }, xhr => { throw new Error(xhr.responseText); })
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+You should choose the correct method for the first assertion - `equal` vs. `notEqual`.
 
-## Challenge Seed
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(
+    (data) => {
+      assert.equal(
+        data.assertions[0].method,
+        'equal',
+        'Numbers are coerced into strings with == '
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-<section id='challengeSeed'>
+You should choose the correct method for the second assertion - `equal` vs. `notEqual`.
 
-</section>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(
+    (data) => {
+      assert.equal(
+        data.assertions[1].method,
+        'notEqual',
+        ' == compares object references'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
 
-## Solution
+You should choose the correct method for the third assertion - `equal` vs. `notEqual`.
 
-<section id='solution'>
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(
+    (data) => {
+      assert.equal(
+        data.assertions[2].method,
+        'equal',
+        "6 * '2' is 12 ! It should be equal to '12'"
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+You should choose the correct method for the fourth assertion - `equal` vs. `notEqual`.
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=4').then(
+    (data) => {
+      assert.equal(data.assertions[3].method, 'notEqual', "6 + '2' is '62'...");
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --seed--
+
+# --solutions--
 
 ```js
 /**
@@ -60,5 +110,3 @@ tests:
   Please check our contributing guidelines to learn more.
 */
 ```
-
-</section>

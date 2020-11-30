@@ -5,12 +5,15 @@ challengeType: 1
 forumTopicId: 301321
 ---
 
-## Description
-<section id='description'>
-The last challenge introduced a method to the <code>duck</code> object. It used <code>duck.name</code> dot notation to access the value for the <code>name</code> property within the return statement:
-<code>sayName: function() {return "The name of this duck is " + duck.name + ".";}</code>
+# --description--
+
+The last challenge introduced a method to the `duck` object. It used `duck.name` dot notation to access the value for the `name` property within the return statement:
+
+`sayName: function() {return "The name of this duck is " + duck.name + ".";}`
+
 While this is a valid way to access the object's property, there is a pitfall here. If the variable name changes, any code referencing the original name would need to be updated as well. In a short object definition, it isn't a problem, but if an object has many references to its properties there is a greater chance for error.
-A way to avoid these issues is with the <code>this</code> keyword:
+
+A way to avoid these issues is with the `this` keyword:
 
 ```js
 let duck = {
@@ -20,33 +23,29 @@ let duck = {
 };
 ```
 
-<code>this</code> is a deep topic, and the above example is only one way to use it. In the current context, <code>this</code> refers to the object that the method is associated with: <code>duck</code>.
-If the object's name is changed to <code>mallard</code>, it is not necessary to find all the references to <code>duck</code> in the code. It makes the code reusable and easier to read.
-</section>
+`this` is a deep topic, and the above example is only one way to use it. In the current context, `this` refers to the object that the method is associated with: `duck`. If the object's name is changed to `mallard`, it is not necessary to find all the references to `duck` in the code. It makes the code reusable and easier to read.
 
-## Instructions
-<section id='instructions'>
-Modify the <code>dog.sayLegs</code> method to remove any references to <code>dog</code>. Use the <code>duck</code> example for guidance.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Modify the `dog.sayLegs` method to remove any references to `dog`. Use the `duck` example for guidance.
 
-```yml
-tests:
-  - text: <code>dog.sayLegs()</code> should return the given string.
-    testString: assert(dog.sayLegs() === 'This dog has 4 legs.');
-  - text: Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.
-    testString: assert(code.match(/this\.numLegs/g));
+# --hints--
 
+`dog.sayLegs()` should return the given string.
+
+```js
+assert(dog.sayLegs() === 'This dog has 4 legs.');
 ```
 
-</section>
+Your code should use the `this` keyword to access the `numLegs` property of `dog`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/this\.numLegs/g));
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 let dog = {
@@ -58,15 +57,7 @@ let dog = {
 dog.sayLegs();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 let dog = {
@@ -79,5 +70,3 @@ let dog = {
 
 dog.sayLegs();
 ```
-
-</section>

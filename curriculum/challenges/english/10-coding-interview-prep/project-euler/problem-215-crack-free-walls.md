@@ -1,45 +1,31 @@
 ---
 id: 5900f4431000cf542c50ff56
-challengeType: 5
 title: 'Problem 215: Crack-free Walls'
+challengeType: 5
 forumTopicId: 301857
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Consider the problem of building a wall out of 2×1 and 3×1 bricks (horizontal×vertical dimensions) such that, for extra strength, the gaps between horizontally-adjacent bricks never line up in consecutive layers, i.e. never form a "running crack".
 
 For example, the following 9×3 wall is not acceptable due to the running crack shown in red:
 
-
-
-
 There are eight ways of forming a crack-free 9×3 wall, written W(9,3) = 8.
 
 Calculate W(32,10).
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
+`euler215()` should return 806844323190414.
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler215()</code> should return 806844323190414.
-    testString: assert.strictEqual(euler215(), 806844323190414);
-
+```js
+assert.strictEqual(euler215(), 806844323190414);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+## --seed-contents--
 
 ```js
 function euler215() {
@@ -50,17 +36,8 @@ function euler215() {
 euler215();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

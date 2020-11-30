@@ -1,12 +1,11 @@
 ---
 id: 5900f3851000cf542c50fe98
-challengeType: 5
 title: 'Problem 25: 1000-digit Fibonacci number'
+challengeType: 5
 forumTopicId: 301897
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The Fibonacci sequence is defined by the recurrence relation:
 
@@ -20,37 +19,41 @@ The 12th term, F<sub>12</sub>, is the first term to contain three digits.
 
 What is the index of the first term in the Fibonacci sequence to contain `n` digits?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`digitFibonacci(5)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>digitFibonacci(5)</code> should return a number.
-    testString: assert(typeof digitFibonacci(5) === 'number');
-  - text: <code>digitFibonacci(5)</code> should return 21.
-    testString: assert.strictEqual(digitFibonacci(5), 21);
-  - text: <code>digitFibonacci(10)</code> should return 45.
-    testString: assert.strictEqual(digitFibonacci(10), 45);
-  - text: <code>digitFibonacci(15)</code> should return 69.
-    testString: assert.strictEqual(digitFibonacci(15), 69);
-  - text: <code>digitFibonacci(20)</code> should return 93.
-    testString: assert.strictEqual(digitFibonacci(20), 93);
-
+```js
+assert(typeof digitFibonacci(5) === 'number');
 ```
 
-</section>
+`digitFibonacci(5)` should return 21.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(digitFibonacci(5), 21);
+```
 
-<div id='js-seed'>
+`digitFibonacci(10)` should return 45.
+
+```js
+assert.strictEqual(digitFibonacci(10), 45);
+```
+
+`digitFibonacci(15)` should return 69.
+
+```js
+assert.strictEqual(digitFibonacci(15), 69);
+```
+
+`digitFibonacci(20)` should return 93.
+
+```js
+assert.strictEqual(digitFibonacci(20), 93);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function digitFibonacci(n) {
@@ -61,15 +64,7 @@ function digitFibonacci(n) {
 digitFibonacci(20);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 const digitFibonacci = (n) => {
@@ -87,5 +82,3 @@ const digitFibonacci = (n) => {
   }
 };
 ```
-
-</section>

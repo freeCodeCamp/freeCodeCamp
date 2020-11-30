@@ -1,48 +1,68 @@
 ---
-title: Vector dot product
 id: 594810f028c0303b75339ad3
+title: Vector dot product
 challengeType: 5
 forumTopicId: 302343
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
-</section>
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
-Write a function that takes any numbers of vectors (arrays) as input and computes their dot product. Your function should return <code>null</code> on invalid inputs such as vectors of different lengths.
-</section>
+Write a function that takes any numbers of vectors (arrays) as input and computes their dot product. Your function should return `null` on invalid inputs such as vectors of different lengths.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: dotProduct should be a function.
-    testString: assert.equal(typeof dotProduct, 'function');
-  - text: dotProduct() should return null.
-    testString: assert.equal(dotProduct(), null);
-  - text: dotProduct([[1], [1]]) should return 1.
-    testString: assert.equal(dotProduct([1], [1]), 1);
-  - text: dotProduct([[1], [1, 2]]) should return null.
-    testString: assert.equal(dotProduct([1], [1, 2]), null);
-  - text: dotProduct([1, 3, -5], [4, -2, -1]) should return 3.
-    testString: assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
-  - text: <code>dotProduct(...nVectors)</code> should return 156000.
-    testString: assert.equal(dotProduct([ 0, 1, 2, 3, 4 ], [ 0, 2, 4, 6, 8 ], [ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ], [ 0, 5, 10, 15, 20 ]), 156000);
+dotProduct should be a function.
 
+```js
+assert.equal(typeof dotProduct, 'function');
 ```
 
-</section>
+dotProduct() should return null.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.equal(dotProduct(), null);
+```
 
-<div id='js-seed'>
+dotProduct(\[[1], [1]]) should return 1.
+
+```js
+assert.equal(dotProduct([1], [1]), 1);
+```
+
+dotProduct(\[[1], [1, 2]]) should return null.
+
+```js
+assert.equal(dotProduct([1], [1, 2]), null);
+```
+
+dotProduct([1, 3, -5], [4, -2, -1]) should return 3.
+
+```js
+assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
+```
+
+`dotProduct(...nVectors)` should return 156000.
+
+```js
+assert.equal(
+  dotProduct(
+    [0, 1, 2, 3, 4],
+    [0, 2, 4, 6, 8],
+    [0, 3, 6, 9, 12],
+    [0, 4, 8, 12, 16],
+    [0, 5, 10, 15, 20]
+  ),
+  156000
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function dotProduct(...vectors) {
@@ -50,15 +70,7 @@ function dotProduct(...vectors) {
 }
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function dotProduct(...vectors) {
@@ -94,7 +106,4 @@ function dotProduct(...vectors) {
   }
   return sum;
 }
-
 ```
-
-</section>

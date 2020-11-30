@@ -1,45 +1,57 @@
 ---
 id: bad87fee1348bd9aedc08845
 title: Add Font Awesome Icons to all of our Buttons
+challengeType: 0
+forumTopicId: 16637
 required:
   - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
-challengeType: 0
-forumTopicId: 16637
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
-</section>
 
-## Instructions
-<section id='instructions'>
-Use Font Awesome to add an <code>info-circle</code> icon to your info button and a <code>trash</code> icon to your delete button.
+# --instructions--
 
-<strong>Note:</strong> The <code>span</code> element is an acceptable alternative to the <code>i</code> element for the directions below.
-</section>
+Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.
 
-## Tests
-<section id='tests'>
+**Note:** The `span` element is an acceptable alternative to the `i` element for the directions below.
 
-```yml
-tests:
-  - text: You should add a <code>&#60;i class="fas fa-info-circle"&#62;&#60;/i&#62;</code> within your info button element.
-    testString: assert($(".btn-info > i").is(".fas.fa-info-circle") || $(".btn-info > span").is(".fas.fa-info-circle"));
-  - text: You should add a <code>&#60;i class="fas fa-trash"&#62;&#60;/i&#62;</code> within your delete button element.
-    testString: assert($(".btn-danger > i").is(".fas.fa-trash") || $(".btn-danger > span").is(".fas.fa-trash"));
-  - text: Each of your <code>i</code> elements should have a closing tag and <code>&#60;i class="fas fa-thumbs-up"&#62;&#60;/i&#62;</code> is in your like button element.
-    testString: assert(code.match(/<\/i>|<\/span/g) && code.match(/<\/i|<\/span>/g).length > 2 && ($(".btn-primary > i").is(".fas.fa-thumbs-up") || $(".btn-primary > span").is(".fas.fa-thumbs-up")));
+# --hints--
 
+You should add a `<i class="fas fa-info-circle"></i>` within your info button element.
+
+```js
+assert(
+  $('.btn-info > i').is('.fas.fa-info-circle') ||
+    $('.btn-info > span').is('.fas.fa-info-circle')
+);
 ```
 
-</section>
+You should add a `<i class="fas fa-trash"></i>` within your delete button element.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  $('.btn-danger > i').is('.fas.fa-trash') ||
+    $('.btn-danger > span').is('.fas.fa-trash')
+);
+```
 
-<div id='html-seed'>
+Each of your `i` elements should have a closing tag and `<i class="fas fa-thumbs-up"></i>` is in your like button element.
+
+```js
+assert(
+  code.match(/<\/i>|<\/span/g) &&
+    code.match(/<\/i|<\/span>/g).length > 2 &&
+    ($('.btn-primary > i').is('.fas.fa-thumbs-up') ||
+      $('.btn-primary > span').is('.fas.fa-thumbs-up'))
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -101,14 +113,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -169,5 +174,3 @@ tests:
   </form>
 </div>
 ```
-
-</section>

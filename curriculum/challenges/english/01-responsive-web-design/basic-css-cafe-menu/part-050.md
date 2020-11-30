@@ -4,29 +4,21 @@ title: Part 50
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Nest two `p` elements inside your `article` element. The first one's text should be `Donut`, and the second's text `1.50`. Put both of them on the same line making sure there is no space between them.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -64,20 +56,16 @@ tests:
         </section>
         <section>
           <h2>Desserts</h2>
-          --fcc-editable-region--
+--fcc-editable-region--
           <article class="item">
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -110,6 +98,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

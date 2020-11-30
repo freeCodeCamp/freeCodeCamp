@@ -4,44 +4,22 @@ title: Part 6
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 You are now looking at the stylesheet that you linked to earlier. At the top of this file, target the `body` of the HTML document and give it a `background-color` of `#ccc`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*#ccc\s*(;|})/gi.test(body));
-
+```js
+const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0];
+assert(/background-color\s*:\s*#ccc\s*(;|})/gi.test(body));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
-
-```html
-<style>
-
-
-</style>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -56,12 +34,16 @@ tests:
 </html>
 ```
 
-</div>
-</section>
+## --seed-contents--
+
+```html
+<style>
 
 
-## Solution
-<section id='solution'>
+</style>
+```
+
+# --solutions--
 
 ```html
 <style>
@@ -70,5 +52,3 @@ body {
 }
 </style>
 ```
-
-</section>

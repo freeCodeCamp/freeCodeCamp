@@ -5,68 +5,211 @@ challengeType: 1
 forumTopicId: 301641
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 In the last challenge we described a scenario in which a tree could become unbalanced. To understand the concept of balance, let's take a look at another tree property: height. Height in a tree represents the distance from the root node to any given leaf node. Different paths in a highly branched tree structure may have different heights, but for a given tree there will be a minimum and maximum height. If the tree is balanced, these values will differ at most by one. This means that in a balanced tree, all the leaf nodes exist within the same level, or if they are not within the same level they are at most one level apart.
+
 The property of balance is important for trees because it is what determines the efficiency of tree operations. As we explained in the last challenge, we face worst case time complexity for heavily unbalanced trees. Self-balancing trees are commonly used to account for this issue in trees with dynamic data sets. Common examples of these include AVL trees, red-black trees, and B-trees. These trees all contain additional internal logic which re-balance the tree when insertions or deletions create a state of imbalance.
-<strong>Note:</strong> A similar property to height is depth, which refers to how far a given node is from the root node.
-</section>
 
-## Instructions
-<section id='instructions'>
-Write two methods for our binary tree: <code>findMinHeight</code> and <code>findMaxHeight</code>. These methods should return an integer value for the minimum and maximum height within a given binary tree, respectively. If the node is empty let's assign it a height of <code>-1</code> (that's the base case). Finally, add a third method <code>isBalanced</code> which returns <code>true</code> or <code>false</code> depending on whether the tree is balanced or not. You can use the first two methods you just wrote to determine this.
-</section>
+**Note:** A similar property to height is depth, which refers to how far a given node is from the root node.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: The <code>BinarySearchTree</code> data structure should exist.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
-  - text: The binary search tree should have a method called <code>findMinHeight</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMinHeight == 'function')})());
-  - text: The binary search tree should have a method called <code>findMaxHeight</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMaxHeight == 'function')})());
-  - text: The binary search tree should have a method called <code>isBalanced</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isBalanced == 'function')})());
-  - text: The <code>findMinHeight</code> method should return the minimum height of the tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMinHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMinHeight() == 1); })());
-  - text: The <code>findMaxHeight</code> method should return the maximum height of the tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMaxHeight() == 5); })());
-  - text: An empty tree should return a height of <code>-1</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; return (test.findMaxHeight() == -1); })());
-  - text: The <code>isBalanced</code> method should return <code>false</code> if the tree is an unbalanced binary search tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced() === false; })());
-  - text: The <code>isBalanced</code> method should return <code>true</code> if the tree is a balanced binary search tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(10); test.add(3); test.add(22); test.add(1); test.add(4); test.add(17); test.add(32); return test.isBalanced() === true; })());
-```
+Write two methods for our binary tree: `findMinHeight` and `findMaxHeight`. These methods should return an integer value for the minimum and maximum height within a given binary tree, respectively. If the node is empty let's assign it a height of `-1` (that's the base case). Finally, add a third method `isBalanced` which returns `true` or `false` depending on whether the tree is balanced or not. You can use the first two methods you just wrote to determine this.
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+The `BinarySearchTree` data structure should exist.
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-  this.root = null;
-  // Only change code below this line
-  
-  // Only change code above this line
-}
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    }
+    return typeof test == 'object';
+  })()
+);
 ```
 
-</div>
+The binary search tree should have a method called `findMinHeight`.
 
-### After Test
-<div id='js-teardown'>
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    return typeof test.findMinHeight == 'function';
+  })()
+);
+```
+
+The binary search tree should have a method called `findMaxHeight`.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    return typeof test.findMaxHeight == 'function';
+  })()
+);
+```
+
+The binary search tree should have a method called `isBalanced`.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    return typeof test.isBalanced == 'function';
+  })()
+);
+```
+
+The `findMinHeight` method should return the minimum height of the tree.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.findMinHeight !== 'function') {
+      return false;
+    }
+    test.add(4);
+    test.add(1);
+    test.add(7);
+    test.add(87);
+    test.add(34);
+    test.add(45);
+    test.add(73);
+    test.add(8);
+    return test.findMinHeight() == 1;
+  })()
+);
+```
+
+The `findMaxHeight` method should return the maximum height of the tree.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.findMaxHeight !== 'function') {
+      return false;
+    }
+    test.add(4);
+    test.add(1);
+    test.add(7);
+    test.add(87);
+    test.add(34);
+    test.add(45);
+    test.add(73);
+    test.add(8);
+    return test.findMaxHeight() == 5;
+  })()
+);
+```
+
+An empty tree should return a height of `-1`.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.findMaxHeight !== 'function') {
+      return false;
+    }
+    return test.findMaxHeight() == -1;
+  })()
+);
+```
+
+The `isBalanced` method should return `false` if the tree is an unbalanced binary search tree.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.isBalanced !== 'function') {
+      return false;
+    }
+    test.add(4);
+    test.add(1);
+    test.add(7);
+    test.add(87);
+    test.add(34);
+    test.add(45);
+    test.add(73);
+    test.add(8);
+    return test.isBalanced() === false;
+  })()
+);
+```
+
+The `isBalanced` method should return `true` if the tree is a balanced binary search tree.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.isBalanced !== 'function') {
+      return false;
+    }
+    test.add(10);
+    test.add(3);
+    test.add(22);
+    test.add(1);
+    test.add(4);
+    test.add(17);
+    test.add(32);
+    return test.isBalanced() === true;
+  })()
+);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 BinarySearchTree.prototype = Object.assign(
@@ -105,11 +248,24 @@ BinarySearchTree.prototype = Object.assign(
 );
 ```
 
-</div>
-</section>
+## --seed-contents--
 
-## Solution
-<section id='solution'>
+```js
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+}
+```
+
+# --solutions--
 
 ```js
 var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
@@ -187,5 +343,3 @@ function BinarySearchTree() {
   };
 }
 ```
-
-</section>

@@ -6,10 +6,11 @@ videoUrl: 'https://scrimba.com/c/c7amZfW'
 forumTopicId: 301051
 ---
 
-## Description
-<section id='description'>
-When elements have a specified <code>position</code>, such as <code>fixed</code> or <code>relative</code>, the CSS offset properties <code>right</code>, <code>left</code>, <code>top</code>, and <code>bottom</code> can be used in animation rules to create movement.
-As shown in the example below, you can push the item downwards then upwards by setting the <code>top</code> property of the <code>50%</code> keyframe to 50px, but having it set to 0px for the first (<code>0%</code>) and the last (<code>100%</code>) keyframe.
+# --description--
+
+When elements have a specified `position`, such as `fixed` or `relative`, the CSS offset properties `right`, `left`, `top`, and `bottom` can be used in animation rules to create movement.
+
+As shown in the example below, you can push the item downwards then upwards by setting the `top` property of the `50%` keyframe to 50px, but having it set to 0px for the first (`0%`) and the last (`100%`) keyframe.
 
 ```css
 @keyframes rainbow {
@@ -28,33 +29,33 @@ As shown in the example below, you can push the item downwards then upwards by s
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>. Don't replace the <code>top</code> property in the editor - the animation should have both vertical and horizontal motion.
-</section>
+Add a horizontal motion to the `div` animation. Using the `left` offset property, add to the `@keyframes` rule so rainbow starts at 0 pixels at `0%`, moves to 25 pixels at `50%`, and ends at -25 pixels at `100%`. Don't replace the `top` property in the editor - the animation should have both vertical and horizontal motion.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.
-    testString: assert(code.match(/[^50]0%\s*?{[\s\S]*?left:\s*?0px(;[\s\S]*?|\s*?)}/gi));
-  - text: The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.
-    testString: assert(code.match(/50%\s*?{[\s\S]*?left:\s*?25px(;[\s\S]*?|\s*?)}/gi));
-  - text: The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.
-    testString: assert(code.match(/100%\s*?{[\s\S]*?left:\s*?-25px(;[\s\S]*?|\s*?)}/gi));
+The `@keyframes` rule for `0%` should use the `left` offset of 0px.
 
+```js
+assert(code.match(/[^50]0%\s*?{[\s\S]*?left:\s*?0px(;[\s\S]*?|\s*?)}/gi));
 ```
 
-</section>
+The `@keyframes` rule for `50%` should use the `left` offset of 25px.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/50%\s*?{[\s\S]*?left:\s*?25px(;[\s\S]*?|\s*?)}/gi));
+```
 
-<div id='html-seed'>
+The `@keyframes` rule for `100%` should use the `left` offset of -25px.
+
+```js
+assert(code.match(/100%\s*?{[\s\S]*?left:\s*?-25px(;[\s\S]*?|\s*?)}/gi));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style>
@@ -94,15 +95,7 @@ tests:
 <div id="rect"></div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>
@@ -140,5 +133,3 @@ tests:
 </style>
 <div id="rect"></div>
 ```
-
-</section>

@@ -4,53 +4,21 @@ title: Part 10
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Create a variable named `meal` and set it equal to the first index of `total` (`total[0]`). This would be the input for Breakfast on the form.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(/const\s*meal\s*=\s*total\[0\]/.test(code));
+```js
+assert(/const\s*meal\s*=\s*total\[0\]/.test(code));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-    const total = Array.from(document.getElementsByClassName('cal-control'));
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -110,24 +78,27 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(document.getElementsByClassName('cal-control'));
+  }
+</script>
+```
 
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -140,5 +111,3 @@ tests:
   }
 </script>
 ```
-
-</section>

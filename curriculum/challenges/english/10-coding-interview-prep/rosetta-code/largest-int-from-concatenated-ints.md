@@ -5,49 +5,57 @@ challengeType: 5
 forumTopicId: 302298
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Given a set of positive integers, write a function to order the integers in such a way that the concatenation of the numbers forms the largest possible integer and return this integer.
 
-</section>
+# --hints--
 
-## Instructions
+`maxCombine` should be a function.
 
-<section id='instructions'>
-
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>maxCombine</code> should be a function.
-    testString: assert(typeof maxCombine == 'function');
-  - text: <code>maxCombine([1, 3, 3, 4, 55])</code> should return a number.
-    testString: assert(typeof maxCombine([1, 3, 3, 4, 55]) == 'number');
-  - text: <code>maxCombine([1, 3, 3, 4, 55])</code> should return <code>554331</code>.
-    testString: assert.equal(maxCombine([1, 3, 3, 4, 55]), 554331);
-  - text: <code>maxCombine([71, 45, 23, 4, 5])</code> should return <code>71545423</code>.
-    testString: assert.equal(maxCombine([71, 45, 23, 4, 5]), 71545423);
-  - text: <code>maxCombine([14, 43, 53, 114, 55])</code> should return <code>55534314114</code>.
-    testString: assert.equal(maxCombine([14, 43, 53, 114, 55]), 55534314114);
-  - text: <code>maxCombine([1, 34, 3, 98, 9, 76, 45, 4])</code> should return <code>998764543431</code>.
-    testString: assert.equal(maxCombine([1, 34, 3, 98, 9, 76, 45, 4]), 998764543431);
-  - text: <code>maxCombine([54, 546, 548, 60])</code> should return <code>6054854654</code>.
-    testString: assert.equal(maxCombine([54, 546, 548, 60]), 6054854654);
+```js
+assert(typeof maxCombine == 'function');
 ```
 
-</section>
+`maxCombine([1, 3, 3, 4, 55])` should return a number.
 
-## Challenge Seed
+```js
+assert(typeof maxCombine([1, 3, 3, 4, 55]) == 'number');
+```
 
-<section id='challengeSeed'>
+`maxCombine([1, 3, 3, 4, 55])` should return `554331`.
 
-<div id='js-seed'>
+```js
+assert.equal(maxCombine([1, 3, 3, 4, 55]), 554331);
+```
+
+`maxCombine([71, 45, 23, 4, 5])` should return `71545423`.
+
+```js
+assert.equal(maxCombine([71, 45, 23, 4, 5]), 71545423);
+```
+
+`maxCombine([14, 43, 53, 114, 55])` should return `55534314114`.
+
+```js
+assert.equal(maxCombine([14, 43, 53, 114, 55]), 55534314114);
+```
+
+`maxCombine([1, 34, 3, 98, 9, 76, 45, 4])` should return `998764543431`.
+
+```js
+assert.equal(maxCombine([1, 34, 3, 98, 9, 76, 45, 4]), 998764543431);
+```
+
+`maxCombine([54, 546, 548, 60])` should return `6054854654`.
+
+```js
+assert.equal(maxCombine([54, 546, 548, 60]), 6054854654);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function maxCombine(xs) {
@@ -55,12 +63,7 @@ function maxCombine(xs) {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-
-<section id='solution'>
+# --solutions--
 
 ```js
 function maxCombine(xs) {
@@ -79,5 +82,3 @@ function maxCombine(xs) {
   );
 }
 ```
-
-</section>

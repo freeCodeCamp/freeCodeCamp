@@ -1,12 +1,11 @@
 ---
 id: 5900f3cc1000cf542c50fede
-challengeType: 5
 title: 'Problem 95: Amicable chains'
+challengeType: 5
 forumTopicId: 302212
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The proper divisors of a number are all the divisors excluding the number itself. For example, the proper divisors of 28 are 1, 2, 4, 7, and 14. As the sum of these divisors is equal to 28, we call it a perfect number.
 
@@ -22,31 +21,23 @@ Since this chain returns to its starting point, it is called an amicable chain.
 
 Find the smallest member of the longest amicable chain with no element exceeding one million.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`amicableChains()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>amicableChains()</code> should return a number.
-    testString: assert(typeof amicableChains() === 'number');
-  - text: <code>amicableChains()</code> should return 14316.
-    testString: assert.strictEqual(amicableChains(), 14316);
-
+```js
+assert(typeof amicableChains() === 'number');
 ```
 
-</section>
+`amicableChains()` should return 14316.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(amicableChains(), 14316);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function amicableChains() {
@@ -57,17 +48,8 @@ function amicableChains() {
 amicableChains();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

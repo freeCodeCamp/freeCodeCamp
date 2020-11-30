@@ -6,39 +6,35 @@ videoUrl: 'https://scrimba.com/p/pByETK/cmzdycW'
 forumTopicId: 301126
 ---
 
-## Description
-<section id='description'>
-The repeat function comes with an option called <dfn>auto-fill</dfn>. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>, like this:
+# --description--
+
+The repeat function comes with an option called <dfn>auto-fill</dfn>. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining `auto-fill` with `minmax`, like this:
 
 ```css
 repeat(auto-fill, minmax(60px, 1fr));
 ```
 
-When the container changes size, this setup keeps inserting 60px columns and stretching them until it can insert another one.
-<strong>Note:</strong> If your container can't fit all your items on one row, it will move them down to a new one.
-</section>
+When the container changes size, this setup keeps inserting 60px columns and stretching them until it can insert another one. **Note:** If your container can't fit all your items on one row, it will move them down to a new one.
 
-## Instructions
-<section id='instructions'>
-In the first grid, use <code>auto-fill</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>. Then resize the preview to see auto-fill in action.
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+In the first grid, use `auto-fill` with `repeat` to fill the grid with columns that have a minimum width of `60px` and maximum of `1fr`. Then resize the preview to see auto-fill in action.
 
-```yml
-tests:
-  - text: <code>container</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fill</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fill\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));
+# --hints--
 
+`container` class should have a `grid-template-columns` property with `repeat` and `auto-fill` that will fill the grid with columns that have a minimum width of `60px` and maximum of `1fr`.
+
+```js
+assert(
+  code.match(
+    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fill\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <style>
@@ -90,15 +86,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```html
 <style>
@@ -149,5 +137,3 @@ tests:
   <div class="item5">5</div>
 </div>
 ```
-
-</section>

@@ -4,9 +4,7 @@ title: Part 22
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Now let's simplify the `reduce()` callback function by refactoring it.
 
@@ -16,56 +14,23 @@ So the function can be simplified to just `(accumulator, currentValue) => accumu
 
 Replace the current callback function argument in the `reduce()` function with the simplified callback function from above.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/reduce\(\(accumulator\,currentValue\)\=\>accumulator\+currentValue\,0\)/) );
+```js
+assert(
+  code
+    .replace(/\s/g, '')
+    .match(
+      /reduce\(\(accumulator\,currentValue\)\=\>accumulator\+currentValue\,0\)/
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => {
-        //console.log({ accumulator });
-        //console.log({ currentValue });
-        return accumulator + currentValue;
-      }, 0);
-
-    //console.log({ total });
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -125,24 +90,36 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => {
+        //console.log({ accumulator });
+        //console.log({ currentValue });
+        return accumulator + currentValue;
+      }, 0);
+
+    //console.log({ total });
+  }
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -157,5 +134,3 @@ tests:
   }
 </script>
 ```
-
-</section>

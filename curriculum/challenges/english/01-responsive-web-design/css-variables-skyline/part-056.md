@@ -4,31 +4,25 @@ title: Part 56
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Next, change the two `#999` of `bb2a` to `transparent`. This will make the left and right borders invisible.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-left\s*:\s*5vw\s+solid\s+transparent\s*(;|})/g.test(bb2a) && /border-right\s*:\s*5vw\s+solid\s+transparent\s*(;|})/g.test(bb2a));
-
+```js
+const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /border-left\s*:\s*5vw\s+solid\s+transparent\s*(;|})/g.test(bb2a) &&
+    /border-right\s*:\s*5vw\s+solid\s+transparent\s*(;|})/g.test(bb2a)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -221,12 +215,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -418,5 +407,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

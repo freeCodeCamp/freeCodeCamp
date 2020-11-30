@@ -1,50 +1,53 @@
 ---
 id: 5900f3931000cf542c50fea6
-challengeType: 5
 title: 'Problem 39: Integer right triangles'
+challengeType: 5
 forumTopicId: 302054
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-If <var>p</var> is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+If `p` is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
 
 {20,48,52}, {24,45,51}, {30,40,50}
 
-For which value of <var>p</var> ≤ `n`, is the number of solutions maximized?
+For which value of `p` ≤ `n`, is the number of solutions maximized?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`intRightTriangles(500)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>intRightTriangles(500)</code> should return a number.
-    testString: assert(typeof intRightTriangles(500) === 'number');
-  - text: <code>intRightTriangles(500)</code> should return 420.
-    testString: assert(intRightTriangles(500) == 420);
-  - text: <code>intRightTriangles(800)</code> should return 720.
-    testString: assert(intRightTriangles(800) == 720);
-  - text: <code>intRightTriangles(900)</code> should return 840.
-    testString: assert(intRightTriangles(900) == 840);
-  - text: <code>intRightTriangles(1000)</code> should return 840.
-    testString: assert(intRightTriangles(1000) == 840);
-
+```js
+assert(typeof intRightTriangles(500) === 'number');
 ```
 
-</section>
+`intRightTriangles(500)` should return 420.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(intRightTriangles(500) == 420);
+```
 
-<div id='js-seed'>
+`intRightTriangles(800)` should return 720.
+
+```js
+assert(intRightTriangles(800) == 720);
+```
+
+`intRightTriangles(900)` should return 840.
+
+```js
+assert(intRightTriangles(900) == 840);
+```
+
+`intRightTriangles(1000)` should return 840.
+
+```js
+assert(intRightTriangles(1000) == 840);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function intRightTriangles(n) {
@@ -55,17 +58,9 @@ function intRightTriangles(n) {
 intRightTriangles(500);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
-
 // Original idea for this solution came from
 // https://www.xarg.org/puzzle/project-euler/problem-39/
 
@@ -92,7 +87,4 @@ function intRightTriangles(n) {
   }
   return maxp;
 }
-
 ```
-
-</section>

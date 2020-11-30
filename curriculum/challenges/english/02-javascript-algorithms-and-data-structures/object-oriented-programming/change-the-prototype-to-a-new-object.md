@@ -5,9 +5,9 @@ challengeType: 1
 forumTopicId: 301316
 ---
 
-## Description
-<section id='description'>
-Up until now you have been adding properties to the <code>prototype</code> individually:
+# --description--
+
+Up until now you have been adding properties to the `prototype` individually:
 
 ```js
 Bird.prototype.numLegs = 2;
@@ -25,7 +25,7 @@ Bird.prototype.describe = function() {
 }
 ```
 
-A more efficient way is to set the <code>prototype</code> to a new object that already contains the properties. This way, the properties are added all at once:
+A more efficient way is to set the `prototype` to a new object that already contains the properties. This way, the properties are added all at once:
 
 ```js
 Bird.prototype = {
@@ -39,35 +39,39 @@ Bird.prototype = {
 };
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-Add the property <code>numLegs</code> and the two methods <code>eat()</code> and <code>describe()</code> to the <code>prototype</code> of <code>Dog</code> by setting the <code>prototype</code> to a new object.
-</section>
+Add the property `numLegs` and the two methods `eat()` and `describe()` to the `prototype` of `Dog` by setting the `prototype` to a new object.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>Dog.prototype</code> should be set to a new object.
-    testString: assert((/Dog\.prototype\s*?=\s*?{/).test(code));
-  - text: <code>Dog.prototype</code> should have the property <code>numLegs</code>.
-    testString: assert(Dog.prototype.numLegs !== undefined);
-  - text: <code>Dog.prototype</code> should have the method <code>eat()</code>.
-    testString: assert(typeof Dog.prototype.eat === 'function');
-  - text: <code>Dog.prototype</code> should have the method <code>describe()</code>.
-    testString: assert(typeof Dog.prototype.describe === 'function');
+`Dog.prototype` should be set to a new object.
 
+```js
+assert(/Dog\.prototype\s*?=\s*?{/.test(code));
 ```
 
-</section>
+`Dog.prototype` should have the property `numLegs`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(Dog.prototype.numLegs !== undefined);
+```
 
-<div id='js-seed'>
+`Dog.prototype` should have the method `eat()`.
+
+```js
+assert(typeof Dog.prototype.eat === 'function');
+```
+
+`Dog.prototype` should have the method `describe()`.
+
+```js
+assert(typeof Dog.prototype.describe === 'function');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function Dog(name) {
@@ -80,15 +84,7 @@ Dog.prototype = {
 };
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```js
 function Dog(name) {
@@ -104,5 +100,3 @@ numLegs: 4,
   }
 };
 ```
-
-</section>

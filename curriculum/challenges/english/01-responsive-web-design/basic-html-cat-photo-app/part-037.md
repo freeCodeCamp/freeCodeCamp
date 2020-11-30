@@ -4,38 +4,55 @@ title: Part 37
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 There are many kinds of inputs you can create using the `type` attribute. You can easily create a password field, reset button, or a control to let users select a file from their computer.
 
 Create a text field to get text input from a user by adding the `type` attribute with the value `text` to the `input` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted your `input` element or it has invalid syntax. If you have added an attributes, make sure their values are surrounded by quotation marks.
 
-```yml
-tests:
-  - text: You have either deleted your `input` element or it has invalid syntax. If you have added an attributes, make sure their values are surrounded by quotation marks.
-    testString: assert( $('input').length );
-  - text: Your `form` element should only contain the `input` element. Remove any extra HTML elements or text between the `form` element's tags.
-    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
-  - text: Your `input` element does not have a `type` attribute. with the value `text`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( $('input')[0].hasAttribute('type') );
-  - text: Your `input` element should have a `type` attribute with the value `text`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input')[0].getAttribute('type').replace(/\s+/g, ' ').match(/^text$/i) );
-  - text: Although you have set the `input` element's `type` attribute to the `text`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<input\s+type\s*=\s*text/.test(code) );
-
+```js
+assert($('input').length);
 ```
 
-</section>
+Your `form` element should only contain the `input` element. Remove any extra HTML elements or text between the `form` element's tags.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(
+  $('form')[0].children.length === 1 &&
+    $('form')[0].innerText.trim().length === 0
+);
+```
+
+Your `input` element does not have a `type` attribute. with the value `text`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+
+```js
+assert($('input')[0].hasAttribute('type'));
+```
+
+Your `input` element should have a `type` attribute with the value `text`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+
+```js
+assert(
+  $('input')[0]
+    .getAttribute('type')
+    .replace(/\s+/g, ' ')
+    .match(/^text$/i)
+);
+```
+
+Although you have set the `input` element's `type` attribute to the `text`, it is recommended to always surround the value of an attribute with quotation marks.
+
+```js
+assert(!/\<input\s+type\s*=\s*text/.test(code));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
@@ -74,9 +91,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
+--fcc-editable-region--
           <input>
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </section>
     </main>
@@ -84,5 +101,3 @@ tests:
 </html>
 ```
 
-</div>
-</section>

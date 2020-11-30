@@ -6,36 +6,33 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/c2EVnf6'
 forumTopicId: 16823
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now let's create a web form.
-<code>input</code> elements are a convenient way to get input from your user.
+
+`input` elements are a convenient way to get input from your user.
+
 You can create a text input like this:
-<code>&#60;input type="text"&#62;</code>
-Note that <code>input</code> elements are self-closing.
-</section>
 
-## Instructions
-<section id='instructions'>
-Create an <code>input</code> element of type <code>text</code> below your lists.
-</section>
+`<input type="text">`
 
-## Tests
-<section id='tests'>
+Note that `input` elements are self-closing.
 
-```yml
-tests:
-  - text: Your app should have an <code>input</code> element of type <code>text</code>.
-    testString: assert($("input[type=text]").length > 0);
+# --instructions--
 
+Create an `input` element of type `text` below your lists.
+
+# --hints--
+
+Your app should have an `input` element of type `text`.
+
+```js
+assert($('input[type=text]').length > 0);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -61,14 +58,7 @@ tests:
 </main>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <h2>CatPhotoApp</h2>
@@ -90,9 +80,7 @@ tests:
     <li>other cats</li>
   </ol>
   <form>
-	<input type="text">
+    <input type="text">
   </form>
 </main>
 ```
-
-</section>

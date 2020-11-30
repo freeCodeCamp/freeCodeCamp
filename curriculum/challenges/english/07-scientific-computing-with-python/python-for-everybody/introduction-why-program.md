@@ -5,29 +5,33 @@ challengeType: 11
 videoId: 3muQV-Im3Z0
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 More resources:
-- <a href="https://youtu.be/F7mtLrYzZP8" target='_blank'>Install Python on Windows</a>
-- <a href="https://youtu.be/wfLnZP-4sZw" target='_blank'>Install Python on MacOS</a>
-</section>
 
-## Tests
-<section id='tests'>
+\- [Install Python on Windows](https://youtu.be/F7mtLrYzZP8)
 
-```yml
-question:
-  text: |
-    Who should learn to program?
+\- [Install Python on MacOS](https://youtu.be/wfLnZP-4sZw)
 
-  answers:
-    - |
-        College students.
-    - |
-        People who want to become software developers.
-    - |
-        Everyone.
-  solution: 3
-```
+# --question--
 
-</section>
+## --text--
+
+Who should learn to program?
+
+## --answers--
+
+College students.
+
+---
+
+People who want to become software developers.
+
+---
+
+Everyone.
+
+## --video-solution--
+
+3
+

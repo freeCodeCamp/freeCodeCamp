@@ -5,28 +5,25 @@ challengeType: 11
 videoId: XeQ7ZKtb998
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What code editor and extension does the instructor recommend for developing penetration testing tools in Python?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What code editor and extension does the instructor recommend for developing penetration testing tools in Python?
+Atom and the atom-python-run extension.
 
-  answers:
-    - |
-      Atom and the atom-python-run extension.
-    - |
-      VSCode and Microsoft's Python extension.
-    - |
-      Sublime Text and the Anaconda package.
-  solution: 2
-```
+---
 
-</section>
+VSCode and Microsoft's Python extension.
+
+---
+
+Sublime Text and the Anaconda package.
+
+## --video-solution--
+
+2
+

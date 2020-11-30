@@ -5,12 +5,16 @@ challengeType: 6
 forumTopicId: 16807
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Now that you're getting data from a JSON API, you can display it in the HTML.
-You can use a <code>forEach</code> method to loop through the data since the cat photo objects are held in an array. As you get to each item, you can modify the HTML elements.
-First, declare an html variable with <code>let html = "";</code>.
-Then, loop through the JSON, adding HTML to the variable that wraps the key names in <code>strong</code> tags, followed by the value. When the loop is finished, you render it.
+
+You can use a `forEach` method to loop through the data since the cat photo objects are held in an array. As you get to each item, you can modify the HTML elements.
+
+First, declare an html variable with `let html = "";`.
+
+Then, loop through the JSON, adding HTML to the variable that wraps the key names in `strong` tags, followed by the value. When the loop is finished, you render it.
+
 Here's the code that does this:
 
 ```js
@@ -25,12 +29,12 @@ json.forEach(function(val) {
 });
 ```
 
-<strong>Note:</strong> For this challenge, you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead, you need to use `innerHTML`, which can make a site vulnerable to Cross-site scripting attacks.
-</section>
+**Note:** For this challenge, you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead, you need to use `innerHTML`, which can make a site vulnerable to Cross-site scripting attacks.
 
-## Instructions
-<section id='instructions'>
-Add a <code>forEach</code> method to loop over the JSON data and create the HTML elements to display it.
+# --instructions--
+
+Add a `forEach` method to loop over the JSON data and create the HTML elements to display it.
+
 Here is some example JSON
 
 ```json
@@ -45,28 +49,29 @@ Here is some example JSON
 ]
 ```
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Your code should store the data in the `html` variable
 
-```yml
-tests:
-  - text: Your code should store the data in the <code>html</code> variable
-    testString: assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
-  - text: Your code should use a <code>forEach</code> method to loop over the JSON data from the API.
-    testString: assert(code.match(/json\.forEach/g));
-  - text: Your code should wrap the key names in <code>strong</code> tags.
-    testString: assert(code.match(/<strong>.+<\/strong>/g));
-
+```js
+assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
 ```
 
-</section>
+Your code should use a `forEach` method to loop over the JSON data from the API.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/json\.forEach/g));
+```
 
-<div id='html-seed'>
+Your code should wrap the key names in `strong` tags.
+
+```js
+assert(code.match(/<strong>.+<\/strong>/g));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <script>
@@ -126,12 +131,7 @@ tests:
 </p>
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -196,5 +196,3 @@ tests:
   </button>
 </p>
 ```
-
-</section>

@@ -6,40 +6,50 @@ videoUrl: 'https://scrimba.com/c/cB76vtv'
 forumTopicId: 301023
 ---
 
-## Description
-<section id='description'>
-The next HTML5 element that adds semantic meaning and improves accessibility is the <code>header</code> tag. It's used to wrap introductory information or navigation links for its parent tag and works well around content that's repeated at the top on multiple pages.
-<code>header</code> shares the embedded landmark feature you saw with <code>main</code>, allowing assistive technologies to quickly navigate to that content.
-<strong>Note:</strong> The <code>header</code> is meant for use in the <code>body</code> tag of your HTML document. This is different than the <code>head</code> element, which contains the page's title, meta information, etc.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Camper Cat is writing some great articles about ninja training, and wants to add a page for them to his site. Change the top <code>div</code> that currently contains the <code>h1</code> to a <code>header</code> tag instead.
-</section>
+The next HTML5 element that adds semantic meaning and improves accessibility is the `header` tag. It's used to wrap introductory information or navigation links for its parent tag and works well around content that's repeated at the top on multiple pages.
 
-## Tests
-<section id='tests'>
+`header` shares the embedded landmark feature you saw with `main`, allowing assistive technologies to quickly navigate to that content.
 
-```yml
-tests:
-  - text: Your code should have one <code>header</code> tag.
-    testString: assert($('header').length == 1);
-  - text: Your <code>header</code> tags should wrap around the <code>h1</code>.
-    testString: assert($('header').children('h1').length == 1);
-  - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0);
-  - text: Your <code>header</code> element should have a closing tag.
-    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length);
+**Note:** The `header` is meant for use in the `body` tag of your HTML document. This is different than the `head` element, which contains the page's title, meta information, etc.
 
+# --instructions--
+
+Camper Cat is writing some great articles about ninja training, and wants to add a page for them to his site. Change the top `div` that currently contains the `h1` to a `header` tag instead.
+
+# --hints--
+
+Your code should have one `header` tag.
+
+```js
+assert($('header').length == 1);
 ```
 
-</section>
+Your `header` tags should wrap around the `h1`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('header').children('h1').length == 1);
+```
 
-<div id='html-seed'>
+Your code should not have any `div` tags.
+
+```js
+assert($('div').length == 0);
+```
+
+Your `header` element should have a closing tag.
+
+```js
+assert(
+  code.match(/<\/header>/g) &&
+    code.match(/<\/header>/g).length === code.match(/<header>/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <body>
@@ -69,14 +79,7 @@ tests:
 </body>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <body>
@@ -105,5 +108,3 @@ tests:
   </main>
 </body>
 ```
-
-</section>

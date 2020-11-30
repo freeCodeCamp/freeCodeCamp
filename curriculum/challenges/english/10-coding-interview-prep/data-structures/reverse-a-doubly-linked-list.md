@@ -5,61 +5,100 @@ challengeType: 1
 forumTopicId: 301714
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 Let's create one more method for our doubly linked list called reverse which reverses the list in place. Once the method is executed the head should point to the previous tail and the tail should point to the previous head. Now, if we traverse the list from head to tail we should meet the nodes in a reverse order compared to the original list. Trying to reverse an empty list should return null.
-</section>
 
-## Instructions
-<section id='instructions'>
+# --hints--
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: The DoublyLinkedList data structure should exist.
-    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})());
-  - text: The DoublyLinkedList should have a method called reverse.
-    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.reverse == undefined) { return false; }; return (typeof test.reverse == 'function')})());
-  - text: Reversing an empty list should return null.
-    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.reverse() == null); })());
-  - text: The reverse method should reverse the list.
-    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.add(95); test.add(41); test.reverse(); return (test.print().join('') == '4195326158'); })());
-  - text: The next and previous references should be correctly maintained when a list is reversed.
-    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.add(44); test.add(55); test.reverse(); return (test.printReverse().join('') == '1122334455'); })());
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+The DoublyLinkedList data structure should exist.
 
 ```js
-var Node = function(data, prev) {
-  this.data = data;
-  this.prev = prev;
-  this.next = null;
-};
-var DoublyLinkedList = function() {
-  this.head = null;
-  this.tail = null;
-  // Only change code below this line
-  
-  // Only change code above this line
-};
+assert(
+  (function () {
+    var test = false;
+    if (typeof DoublyLinkedList !== 'undefined') {
+      test = new DoublyLinkedList();
+    }
+    return typeof test == 'object';
+  })()
+);
 ```
 
-</div>
+The DoublyLinkedList should have a method called reverse.
 
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof DoublyLinkedList !== 'undefined') {
+      test = new DoublyLinkedList();
+    }
+    if (test.reverse == undefined) {
+      return false;
+    }
+    return typeof test.reverse == 'function';
+  })()
+);
+```
 
-### After Test
-<div id='js-teardown'>
+Reversing an empty list should return null.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof DoublyLinkedList !== 'undefined') {
+      test = new DoublyLinkedList();
+    }
+    return test.reverse() == null;
+  })()
+);
+```
+
+The reverse method should reverse the list.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof DoublyLinkedList !== 'undefined') {
+      test = new DoublyLinkedList();
+    }
+    test.add(58);
+    test.add(61);
+    test.add(32);
+    test.add(95);
+    test.add(41);
+    test.reverse();
+    return test.print().join('') == '4195326158';
+  })()
+);
+```
+
+The next and previous references should be correctly maintained when a list is reversed.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof DoublyLinkedList !== 'undefined') {
+      test = new DoublyLinkedList();
+    }
+    test.add(11);
+    test.add(22);
+    test.add(33);
+    test.add(44);
+    test.add(55);
+    test.reverse();
+    return test.printReverse().join('') == '1122334455';
+  })()
+);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 DoublyLinkedList.prototype = Object.assign(
@@ -113,12 +152,24 @@ DoublyLinkedList.prototype = Object.assign(
 );
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+var Node = function(data, prev) {
+  this.data = data;
+  this.prev = prev;
+  this.next = null;
+};
+var DoublyLinkedList = function() {
+  this.head = null;
+  this.tail = null;
+  // Only change code below this line
+  
+  // Only change code above this line
+};
+```
 
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
   var Node = function(data, prev) {
@@ -151,5 +202,3 @@ DoublyLinkedList.prototype = Object.assign(
     }
   };
 ```
-
-</section>

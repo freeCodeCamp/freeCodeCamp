@@ -4,8 +4,7 @@ title: Part 6
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Anonymous functions are often passed as arguments to other functions, but what if you want to call one later? You can assign anonymous functions to variables and call them with the variable's name:
 
@@ -17,52 +16,19 @@ const fn = function(x) {
 fn();
 ```
 
-Assign the anonymous function to the variable `addVar`. 
+Assign the anonymous function to the variable `addVar`.
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+See description above for instructions.
 
-
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constaddVar=function(x,y){returnx+y"));
-
+```js
+assert(code.replace(/\s/g, '').includes('constaddVar=function(x,y){returnx+y'));
 ```
 
+# --seed--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-
-function add(x, y) {
-  return x + y;
-}
-
-const infixToFunction = {};
-
-
-</script>
-```
-
-</div>
-
-
-### Before Test
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -90,25 +56,29 @@ const infixToFunction = {};
 </div>
 ```
 
-</div>
-
-
-### After Test
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
 </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
+
+```html
+<script>
+
+function add(x, y) {
+  return x + y;
+}
+
+const infixToFunction = {};
 
 
+</script>
+```
 
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <script>
@@ -119,5 +89,3 @@ const addVar = function(x, y) {
 const infixToFunction = {};
 </script>
 ```
-
-</section>

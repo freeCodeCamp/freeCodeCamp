@@ -5,53 +5,64 @@ challengeType: 6
 forumTopicId: 301424
 ---
 
-## Description
-<section id='description'>
-Now that you've learned the basics of JSX and React components, it's time to write a component on your own. React components are the core building blocks of React applications so it's important to become very familiar with writing them. Remember, a typical React component is an ES6 <code>class</code> which extends <code>React.Component</code>. It has a render method that returns HTML (from JSX) or <code>null</code>. This is the basic form of a React component. Once you understand this well, you will be prepared to start building more complex React projects.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-Define a class <code>MyComponent</code> that extends <code>React.Component</code>. Its render method should return a <code>div</code> that contains an <code>h1</code> tag with the text: <code>My First React Component!</code> in it. Use this text exactly, the case and punctuation matter. Make sure to call the constructor for your component, too.
-Render this component to the DOM using <code>ReactDOM.render()</code>. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use.
-</section>
+Now that you've learned the basics of JSX and React components, it's time to write a component on your own. React components are the core building blocks of React applications so it's important to become very familiar with writing them. Remember, a typical React component is an ES6 `class` which extends `React.Component`. It has a render method that returns HTML (from JSX) or `null`. This is the basic form of a React component. Once you understand this well, you will be prepared to start building more complex React projects.
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: There should be a React component called <code>MyComponent</code>.
-    testString: getUserInput => assert(__helpers.removeWhiteSpace(getUserInput('index')).includes('classMyComponentextendsReact.Component{'));
-  - text: <code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })());
-  - text: <code>MyComponent</code> should render to the DOM.
-    testString: assert(document.getElementById('challenge-node').childNodes.length === 1);
-  - text: <code>MyComponent</code> should have a constructor calling <code>super</code> with <code>props</code>.
-    testString: assert(MyComponent.toString().includes('MyComponent(props)') && MyComponent.toString().includes('_super.call(this, props)'));
+Define a class `MyComponent` that extends `React.Component`. Its render method should return a `div` that contains an `h1` tag with the text: `My First React Component!` in it. Use this text exactly, the case and punctuation matter. Make sure to call the constructor for your component, too.
+
+Render this component to the DOM using `ReactDOM.render()`. There is a `div` with `id='challenge-node'` available for you to use.
+
+# --hints--
+
+There should be a React component called `MyComponent`.
+
+```js
+(getUserInput) =>
+  assert(
+    __helpers
+      .removeWhiteSpace(getUserInput('index'))
+      .includes('classMyComponentextendsReact.Component{')
+  );
 ```
 
-</section>
+`MyComponent` should contain an `h1` tag with text `My First React Component!` Case and punctuation matter.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(
+  (function () {
+    const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
+    return mockedComponent.find('h1').text() === 'My First React Component!';
+  })()
+);
+```
 
-<div id='jsx-seed'>
+`MyComponent` should render to the DOM.
+
+```js
+assert(document.getElementById('challenge-node').childNodes.length === 1);
+```
+
+`MyComponent` should have a constructor calling `super` with `props`.
+
+```js
+assert(
+  MyComponent.toString().includes('MyComponent(props)') &&
+    MyComponent.toString().includes('_super.call(this, props)')
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```jsx
 // Change code below this line
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+# --solutions--
 
 ```jsx
 // Change code below this line
@@ -70,5 +81,3 @@ class MyComponent extends React.Component {
 
 ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
 ```
-
-</section>

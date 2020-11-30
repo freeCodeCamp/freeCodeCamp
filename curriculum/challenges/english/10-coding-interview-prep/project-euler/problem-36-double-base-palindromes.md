@@ -1,12 +1,11 @@
 ---
 id: 5900f3901000cf542c50fea3
-challengeType: 5
 title: 'Problem 36: Double-base palindromes'
+challengeType: 5
 forumTopicId: 302020
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The decimal number, 585 = 1001001001<sub>2</sub> (binary), is palindromic in both bases.
 
@@ -14,37 +13,41 @@ Find the sum of all numbers, less than `n`, whereas 1000 ≤ `n` ≤ 1000000, wh
 
 (Please note that the palindromic number, in either base, may not include leading zeros.)
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`doubleBasePalindromes(1000)` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>doubleBasePalindromes(1000)</code> should return a number.
-    testString: assert(typeof doubleBasePalindromes(1000) === 'number');
-  - text: <code>doubleBasePalindromes(1000)</code> should return 1772.
-    testString: assert(doubleBasePalindromes(1000) == 1772);
-  - text: <code>doubleBasePalindromes(50000)</code> should return 105795.
-    testString: assert(doubleBasePalindromes(50000) == 105795);
-  - text: <code>doubleBasePalindromes(500000)</code> should return 286602.
-    testString: assert(doubleBasePalindromes(500000) == 286602);
-  - text: <code>doubleBasePalindromes(1000000)</code> should return 872187.
-    testString: assert(doubleBasePalindromes(1000000) == 872187);
-
+```js
+assert(typeof doubleBasePalindromes(1000) === 'number');
 ```
 
-</section>
+`doubleBasePalindromes(1000)` should return 1772.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(doubleBasePalindromes(1000) == 1772);
+```
 
-<div id='js-seed'>
+`doubleBasePalindromes(50000)` should return 105795.
+
+```js
+assert(doubleBasePalindromes(50000) == 105795);
+```
+
+`doubleBasePalindromes(500000)` should return 286602.
+
+```js
+assert(doubleBasePalindromes(500000) == 286602);
+```
+
+`doubleBasePalindromes(1000000)` should return 872187.
+
+```js
+assert(doubleBasePalindromes(1000000) == 872187);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 function doubleBasePalindromes(n) {
@@ -55,17 +58,8 @@ function doubleBasePalindromes(n) {
 doubleBasePalindromes(1000000);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>

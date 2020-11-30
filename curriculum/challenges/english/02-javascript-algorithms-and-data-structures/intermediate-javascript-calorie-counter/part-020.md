@@ -4,9 +4,7 @@ title: Part 20
 challengeType: 0
 ---
 
-## Description
-
-<section id='description'>
+# --description--
 
 Let's says we have an array `[1, 3, 5]` named `arr` and we want to sum up all the numbers.
 
@@ -18,8 +16,7 @@ arr.reduce((accumulator, currentValue) => {
 }, 0);
 ```
 
-At `arr[0]`, the function is `(0, 1) => { return 0 + 1 }`,
-since `arr[0] = 1 = currentValue`.
+At `arr[0]`, the function is `(0, 1) => { return 0 + 1 }`, since `arr[0] = 1 = currentValue`.
 
 At `arr[1]`, the function is `(1, 3) => 1 + 3`,
 
@@ -27,52 +24,23 @@ Finally at `arr[2]`, the function is `(4, 5) => 4 + 5`. Now the accumulator is `
 
 In the body of the callback function, replace `/* code to run */` with `return accumulator + currentValue`.
 
-</section>
+# --hints--
 
-## Instructions
+See description above for instructions.
 
-<section id='instructions'>
-</section>
-
-## Tests
-
-<section id='tests'>
-
-```yml
-tests:
-  - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/reduce\(\(accumulator\,currentValue\)\=\>{returnaccumulator\+currentValue\;?},0\)/) );
+```js
+assert(
+  code
+    .replace(/\s/g, '')
+    .match(
+      /reduce\(\(accumulator\,currentValue\)\=\>{returnaccumulator\+currentValue\;?},0\)/
+    )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
-
-  function calculate(e) {
-    e.preventDefault();
-
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => {
-        /* code to run */
-      }, 0);
-  }
-</script>
-```
-
-</div>
-
-### Before Test
-
-<div id='html-setup'>
+## --before-user-code--
 
 ```html
 <!DOCTYPE html>
@@ -132,24 +100,32 @@ tests:
 </html>
 ```
 
-</div>
-
-### After Test
-
-<div id='html-teardown'>
+## --after-user-code--
 
 ```html
   </body>
 </html>
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
-## Solution
+  function calculate(e) {
+    e.preventDefault();
 
-<section id='solution'>
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => {
+        /* code to run */
+      }, 0);
+  }
+</script>
+```
+
+# --solutions--
 
 ```html
 <script>
@@ -166,5 +142,3 @@ tests:
   }
 </script>
 ```
-
-</section>

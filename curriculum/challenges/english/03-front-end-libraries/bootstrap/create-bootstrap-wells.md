@@ -5,37 +5,39 @@ challengeType: 0
 forumTopicId: 16825
 ---
 
-## Description
-<section id='description'>
-Bootstrap has a class called <code>well</code> that can create a visual sense of depth for your columns.
-Nest one <code>div</code> element with the class <code>well</code> within each of your <code>col-xs-6</code> <code>div</code> elements.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+Bootstrap has a class called `well` that can create a visual sense of depth for your columns.
 
-</section>
+Nest one `div` element with the class `well` within each of your `col-xs-6` `div` elements.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: You should add a <code>div</code> element with the class <code>well</code> inside each of your <code>div</code> elements with the class <code>"col-xs-6"</code>
-    testString: assert($("div.col-xs-6").not(":has(>div.well)").length < 1);
-  - text: Both of your <code>div</code> elements with the class <code>"col-xs-6"</code> should be nested within your <code>div</code> element with the class <code>"row"</code>.
-    testString: assert($("div.row > div.col-xs-6").length > 1);
-  - text: All your <code>div</code> elements should have closing tags.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
+You should add a `div` element with the class `well` inside each of your `div` elements with the class `"col-xs-6"`
 
+```js
+assert($('div.col-xs-6').not(':has(>div.well)').length < 1);
 ```
 
-</section>
+Both of your `div` elements with the class `"col-xs-6"` should be nested within your `div` element with the class `"row"`.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert($('div.row > div.col-xs-6').length > 1);
+```
 
-<div id='html-seed'>
+All your `div` elements should have closing tags.
+
+```js
+assert(
+  code.match(/<\/div>/g) &&
+    code.match(/<div/g) &&
+    code.match(/<\/div>/g).length === code.match(/<div/g).length
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <div class="container-fluid">
@@ -51,14 +53,7 @@ tests:
 </div>
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <div class="container-fluid">
@@ -73,5 +68,3 @@ tests:
   </div>
 </div>
 ```
-
-</section>

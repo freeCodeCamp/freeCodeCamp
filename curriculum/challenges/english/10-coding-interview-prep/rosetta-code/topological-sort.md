@@ -1,21 +1,18 @@
 ---
-title: Topological sort
 id: 594fa2746886f41f7d8bf225
+title: Topological sort
 challengeType: 5
 forumTopicId: 302340
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Given a mapping between items, and items they depend on, a <a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting" target="_blank">topological sort</a> orders items so that no item precedes an item it depends upon.
-The compiling of a library in the <a href="https://en.wikipedia.org/wiki/VHDL" title="wp: VHDL" target="_blank">VHDL</a> language has the constraint that a library must be compiled after any library it depends on.
-</section>
+Given a mapping between items, and items they depend on, a [topological sort](<https://en.wikipedia.org/wiki/Topological sorting> "wp: Topological sorting") orders items so that no item precedes an item it depends upon. The compiling of a library in the [VHDL](https://en.wikipedia.org/wiki/VHDL "wp: VHDL") language has the constraint that a library must be compiled after any library it depends on.
 
-## Instructions
-<section id='instructions'>
+# --instructions--
 
 Write a function that will return a valid compile order of VHDL libraries from their dependencies.
+
 <ul>
   <li>Assume library names are single words.</li>
   <li>Items mentioned as only dependents have no dependents of their own, but their order of compiling must be given.</li>
@@ -50,45 +47,42 @@ There are two popular algorithms for topological sorting:
   <li><a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting" target="_blank">Kahn's 1962 topological sort</a></li>
   <li><a href="https://www.embeddedrelated.com/showarticle/799.php" target="_blank">depth-first search</a></li>
 </ul>
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>topologicalSort</code> should be a function.
-    testString: assert(typeof topologicalSort === 'function');
-  - text: <code>topologicalSort</code> should return correct library order.
-    testString: assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
-  - text: <code>topologicalSort</code> should return correct library order.
-    testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL);
-  - text: <code>topologicalSort</code> should return correct library order.
-    testString: assert.deepEqual(topologicalSort(libsCustom), solutionCustom);
-  - text: <code>topologicalSort</code> should ignore unorderable dependencies.
-    testString: assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`topologicalSort` should be a function.
 
 ```js
-function topologicalSort(libs) {
-
-  return true;
-}
+assert(typeof topologicalSort === 'function');
 ```
 
-</div>
+`topologicalSort` should return correct library order.
 
+```js
+assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
+```
 
-### After Test
-<div id='js-teardown'>
+`topologicalSort` should return correct library order.
+
+```js
+assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL);
+```
+
+`topologicalSort` should return correct library order.
+
+```js
+assert.deepEqual(topologicalSort(libsCustom), solutionCustom);
+```
+
+`topologicalSort` should ignore unorderable dependencies.
+
+```js
+assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable);
+```
+
+# --seed--
+
+## --after-user-code--
 
 ```js
 const libsSimple =
@@ -132,13 +126,16 @@ const libsUnorderable =
 const solutionUnorderable = ['Base'];
 ```
 
-</div>
+## --seed-contents--
 
-</section>
+```js
+function topologicalSort(libs) {
 
-## Solution
-<section id='solution'>
+  return true;
+}
+```
 
+# --solutions--
 
 ```js
 function topologicalSort(libs) {
@@ -185,7 +182,4 @@ function topologicalSort(libs) {
 
   return S;
 }
-
 ```
-
-</section>

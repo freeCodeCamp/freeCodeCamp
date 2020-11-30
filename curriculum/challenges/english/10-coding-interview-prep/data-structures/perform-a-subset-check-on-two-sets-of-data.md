@@ -5,42 +5,113 @@ challengeType: 1
 forumTopicId: 301707
 ---
 
-## Description
-<section id='description'>
-In this exercise, we are going to perform a subset test on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>isSubsetOf</code>. This will compare the first set against the second, and if the first set is fully contained within the second, it will return <code>true</code>.
-For example, if <code>setA = ['a','b']</code> and <code>setB = ['a','b','c','d']</code>, then <code>setA</code> is a subset of <code>setB</code>, so <code>setA.isSubsetOf(setB)</code> should return <code>true</code>.
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+In this exercise, we are going to perform a subset test on 2 sets of data. We will create a method on our `Set` data structure called `isSubsetOf`. This will compare the first set against the second, and if the first set is fully contained within the second, it will return `true`.
 
-</section>
+For example, if `setA = ['a','b']` and `setB = ['a','b','c','d']`, then `setA` is a subset of `setB`, so `setA.isSubsetOf(setB)` should return `true`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Your <code>Set</code> class should have a <code>isSubsetOf</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.isSubsetOf === 'function')})());
-  - text: The first Set() should be contained in the second Set
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var aIsSubsetOfB = setA.isSubsetOf(setB);return (aIsSubsetOfB === true)})());
-  - text: <code>['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])</code> should return <code>true</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('a'); setB.add('b'); setB.add('c'); setB.add('d'); var aIsSubsetOfB = setA.isSubsetOf(setB); return (aIsSubsetOfB === true)})());
-  - text: <code>['a', 'b', 'c'].isSubsetOf(['a', 'b'])</code> should return <code>false</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('a'); setB.add('b'); var aIsSubsetOfB = setA.isSubsetOf(setB); return (aIsSubsetOfB === false)})());
-  - text: <code>[].isSubsetOf([])</code> should return <code>true</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); var aIsSubsetOfB = setA.isSubsetOf(setB); return (aIsSubsetOfB === true)})());
-  - text: <code>['a', 'b'].isSubsetOf(['c', 'd'])</code> should return <code>false</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var aIsSubsetOfB = setA.isSubsetOf(setB); return (aIsSubsetOfB === false)})());
+Your `Set` class should have a `isSubsetOf` method.
 
+```js
+assert(
+  (function () {
+    var test = new Set();
+    return typeof test.isSubsetOf === 'function';
+  })()
+);
 ```
 
-</section>
+The first Set() should be contained in the second Set
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+```js
+assert(
+  (function () {
+    var setA = new Set();
+    var setB = new Set();
+    setA.add('a');
+    setB.add('b');
+    setB.add('c');
+    setB.add('a');
+    setB.add('d');
+    var aIsSubsetOfB = setA.isSubsetOf(setB);
+    return aIsSubsetOfB === true;
+  })()
+);
+```
+
+`['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])` should return `true`
+
+```js
+assert(
+  (function () {
+    var setA = new Set();
+    var setB = new Set();
+    setA.add('a');
+    setA.add('b');
+    setB.add('a');
+    setB.add('b');
+    setB.add('c');
+    setB.add('d');
+    var aIsSubsetOfB = setA.isSubsetOf(setB);
+    return aIsSubsetOfB === true;
+  })()
+);
+```
+
+`['a', 'b', 'c'].isSubsetOf(['a', 'b'])` should return `false`
+
+```js
+assert(
+  (function () {
+    var setA = new Set();
+    var setB = new Set();
+    setA.add('a');
+    setA.add('b');
+    setA.add('c');
+    setB.add('a');
+    setB.add('b');
+    var aIsSubsetOfB = setA.isSubsetOf(setB);
+    return aIsSubsetOfB === false;
+  })()
+);
+```
+
+`[].isSubsetOf([])` should return `true`
+
+```js
+assert(
+  (function () {
+    var setA = new Set();
+    var setB = new Set();
+    var aIsSubsetOfB = setA.isSubsetOf(setB);
+    return aIsSubsetOfB === true;
+  })()
+);
+```
+
+`['a', 'b'].isSubsetOf(['c', 'd'])` should return `false`
+
+```js
+assert(
+  (function () {
+    var setA = new Set();
+    var setB = new Set();
+    setA.add('a');
+    setA.add('b');
+    setB.add('c');
+    setB.add('d');
+    var aIsSubsetOfB = setA.isSubsetOf(setB);
+    return aIsSubsetOfB === false;
+  })()
+);
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```js
 class Set {
@@ -133,11 +204,7 @@ class Set {
 }
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 class Set {
@@ -232,5 +299,3 @@ class Set {
   }
 }
 ```
-
-</section>

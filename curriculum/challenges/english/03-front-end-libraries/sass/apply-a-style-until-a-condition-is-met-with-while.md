@@ -5,10 +5,11 @@ challengeType: 0
 forumTopicId: 301454
 ---
 
-## Description
-<section id='description'>
-The <code>@while</code> directive is an option with similar functionality to the JavaScript <code>while</code> loop. It creates CSS rules until a condition is met.
-The <code>@for</code> challenge gave an example to create a simple grid system. This can also work with <code>@while</code>.
+# --description--
+
+The `@while` directive is an option with similar functionality to the JavaScript `while` loop. It creates CSS rules until a condition is met.
+
+The `@for` challenge gave an example to create a simple grid system. This can also work with `@while`.
 
 ```scss
 $x: 1;
@@ -18,46 +19,67 @@ $x: 1;
 }
 ```
 
-First, define a variable <code>$x</code> and set it to 1. Next, use the <code>@while</code> directive to create the grid system <i>while</i> <code>$x</code> is less than 13.
-After setting the CSS rule for <code>width</code>, <code>$x</code> is incremented by 1 to avoid an infinite loop.
-</section>
+First, define a variable `$x` and set it to 1. Next, use the `@while` directive to create the grid system *while* `$x` is less than 13. After setting the CSS rule for `width`, `$x` is incremented by 1 to avoid an infinite loop.
 
-## Instructions
-<section id='instructions'>
-Use <code>@while</code> to create a series of classes with different <code>font-sizes</code>.
-There should be 5 different classes from <code>text-1</code> to <code>text-5</code>. Then set <code>font-size</code> to <code>15px</code> multiplied by the current index number. Make sure to avoid an infinite loop!
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+Use `@while` to create a series of classes with different `font-sizes`.
 
-```yml
-tests:
-  - text: Your code should use the <code>@while</code> directive.
-    testString: assert(code.match(/@while /g));
-  - text: Your code should use an index variable which starts at an index of 1.
-    testString: assert(code.match(/\$.*:\s*?1;/gi));
-  - text: Your code should increment the counter variable.
-    testString: assert(code.match(/\$(.*)\s*?:\s*\$\1\s*\+\s*1\s*;/gi));
-  - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 15px.
-    testString: assert($('.text-1').css('font-size') == '15px');
-  - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 30px.
-    testString: assert($('.text-2').css('font-size') == '30px');
-  - text: Your <code>.text-3</code> class should have a <code>font-size</code> of 45px.
-    testString: assert($('.text-3').css('font-size') == '45px');
-  - text: Your <code>.text-4</code> class should have a <code>font-size</code> of 60px.
-    testString: assert($('.text-4').css('font-size') == '60px');
-  - text: Your <code>.text-5</code> class should have a <code>font-size</code> of 75px.
-    testString: assert($('.text-5').css('font-size') == '75px');
+There should be 5 different classes from `text-1` to `text-5`. Then set `font-size` to `15px` multiplied by the current index number. Make sure to avoid an infinite loop!
 
+# --hints--
+
+Your code should use the `@while` directive.
+
+```js
+assert(code.match(/@while /g));
 ```
 
-</section>
+Your code should use an index variable which starts at an index of 1.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(code.match(/\$.*:\s*?1;/gi));
+```
 
-<div id='html-seed'>
+Your code should increment the counter variable.
+
+```js
+assert(code.match(/\$(.*)\s*?:\s*\$\1\s*\+\s*1\s*;/gi));
+```
+
+Your `.text-1` class should have a `font-size` of 15px.
+
+```js
+assert($('.text-1').css('font-size') == '15px');
+```
+
+Your `.text-2` class should have a `font-size` of 30px.
+
+```js
+assert($('.text-2').css('font-size') == '30px');
+```
+
+Your `.text-3` class should have a `font-size` of 45px.
+
+```js
+assert($('.text-3').css('font-size') == '45px');
+```
+
+Your `.text-4` class should have a `font-size` of 60px.
+
+```js
+assert($('.text-4').css('font-size') == '60px');
+```
+
+Your `.text-5` class should have a `font-size` of 75px.
+
+```js
+assert($('.text-5').css('font-size') == '75px');
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <style type='text/scss'>
@@ -73,12 +95,7 @@ tests:
 <p class="text-5">Hello</p>
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <style type='text/scss'>
@@ -97,5 +114,3 @@ tests:
 <p class="text-4">Hello</p>
 <p class="text-5">Hello</p>
 ```
-
-</section>

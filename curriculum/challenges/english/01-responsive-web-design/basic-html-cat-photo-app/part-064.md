@@ -4,42 +4,46 @@ title: Part 64
 challengeType: 0
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Notice that everything you've added to the page so far is inside the `body` element. All page content elements that should be rendered to the page go inside the `body` element. However, other important information goes inside the `head` element.
 
 Add a `head` element just above the `body` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+You have either deleted the `body` element or it is missing an opening tag or closing tag.
 
-```yml
-tests:
-  - text: You have either deleted the `body` element or it is missing an opening tag or closing tag.
-    testString: assert( document.querySelector('body') && code.match(/<\/body>/) );
-  - text: "Your `head` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( code.match(/\<head\>/) );
-  - text: Your `head` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/\<\/head\>/) );
-  - text: Your `head` element should be above the opening `body` element tag. You have it put it somewhere else.
-    testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.match(/\<\/head\>\<body\>/) );
-
+```js
+assert(document.querySelector('body') && code.match(/<\/body>/));
 ```
 
-</section>
+Your `head` element should have an opening tag. Opening tags have the following syntax: `<elementName>`.
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+```js
+assert(code.match(/\<head\>/));
+```
+
+Your `head` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+assert(code.match(/\<\/head\>/));
+```
+
+Your `head` element should be above the opening `body` element tag. You have it put it somewhere else.
+
+```js
+const noSpaces = code.replace(/\s/g, '');
+assert(noSpaces.match(/\<\/head\>\<body\>/));
+```
+
+# --seed--
+
+## --seed-contents--
 
 ```html
 <html>
-  --fcc-editable-region--
+--fcc-editable-region--
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -97,9 +101,7 @@ tests:
       </p>
     </footer>
   </body>
-  --fcc-editable-region--
+--fcc-editable-region--
 </html>
 ```
 
-</div>
-</section>

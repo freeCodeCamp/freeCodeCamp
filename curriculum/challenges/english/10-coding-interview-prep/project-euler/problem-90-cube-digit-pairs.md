@@ -1,12 +1,11 @@
 ---
 id: 5900f3c61000cf542c50fed9
-challengeType: 5
 title: 'Problem 90: Cube digit pairs'
+challengeType: 5
 forumTopicId: 302207
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Each of the six faces on a cube has a different digit (0 to 9) written on it; the same is done to a second cube. By placing the two cubes side-by-side in different positions we can form a variety of 2-digit numbers.
 
@@ -31,31 +30,23 @@ But because we are allowing 6 and 9 to be reversed, the two distinct sets in the
 
 How many distinct arrangements of the two cubes allow for all of the square numbers to be displayed?
 
-</section>
+# --hints--
 
-## Instructions
-<section id='instructions'>
+`cubeDigitPairs()` should return a number.
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>cubeDigitPairs()</code> should return a number.
-    testString: assert(typeof cubeDigitPairs() === 'number');
-  - text: <code>cubeDigitPairs()</code> should return 1217.
-    testString: assert.strictEqual(cubeDigitPairs(), 1217);
-
+```js
+assert(typeof cubeDigitPairs() === 'number');
 ```
 
-</section>
+`cubeDigitPairs()` should return 1217.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert.strictEqual(cubeDigitPairs(), 1217);
+```
 
-<div id='js-seed'>
+# --seed--
+
+## --seed-contents--
 
 ```js
 function cubeDigitPairs() {
@@ -66,17 +57,8 @@ function cubeDigitPairs() {
 cubeDigitPairs();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-</section>
