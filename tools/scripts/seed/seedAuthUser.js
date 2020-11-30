@@ -1,21 +1,21 @@
-const fullyCertifiedUser = require("./certifiedUserData");
+const fullyCertifiedUser = require('./certifiedUserData');
 
-const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
-const MongoClient = require("mongodb").MongoClient;
-const ObjectId = require("mongodb").ObjectID;
-const debug = require("debug");
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
+const MongoClient = require('mongodb').MongoClient;
+const ObjectId = require('mongodb').ObjectID;
+const debug = require('debug');
 
 const envVariables = process.argv;
 
-const log = debug("fcc:tools:seedLocalAuthUser");
+const log = debug('fcc:tools:seedLocalAuthUser');
 const { MONGOHQ_URL } = process.env;
 
-const defaultUserImage = require("../../../config/misc").defaultUserImage;
+const defaultUserImage = require('../../../config/misc').defaultUserImage;
 
 function handleError(err, client) {
   if (err) {
-    console.error("Oh noes!! Error seeding local auth user.");
+    console.error('Oh noes!! Error seeding local auth user.');
     console.error(err);
     try {
       client.close();
@@ -30,20 +30,20 @@ function handleError(err, client) {
 
 /* eslint-disable max-len */
 const authUser = {
-  _id: ObjectId("5bd30e0f1caf6ac3ddddddb5"),
-  email: "foo@bar.com",
+  _id: ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+  email: 'foo@bar.com',
   emailVerified: true,
   progressTimestamps: [],
   isBanned: false,
   isCheater: false,
-  username: "developmentuser",
-  about: "",
-  name: "Development User",
-  location: "",
+  username: 'developmentuser',
+  about: '',
+  name: 'Development User',
+  location: '',
   picture: defaultUserImage,
   acceptedPrivacyTerms: true,
   sendQuincyEmail: false,
-  currentChallengeId: "",
+  currentChallengeId: '',
   isHonest: false,
   isFrontEndCert: false,
   isDataVisCert: false,
@@ -63,11 +63,11 @@ const authUser = {
   isMachineLearningPyCertV7: false,
   completedChallenges: [],
   portfolio: [],
-  yearsTopContributor: envVariables.includes("--top-contributor")
-    ? ["2017", "2018", "2019"]
+  yearsTopContributor: envVariables.includes('--top-contributor')
+    ? ['2017', '2018', '2019']
     : [],
   rand: 0.6126749173148205,
-  theme: "default",
+  theme: 'default',
   profileUI: {
     isLocked: true,
     showAbout: false,
@@ -78,30 +78,30 @@ const authUser = {
     showName: false,
     showPoints: false,
     showPortfolio: false,
-    showTimeLine: false,
+    showTimeLine: false
   },
   badges: {
-    coreTeam: [],
+    coreTeam: []
   },
-  isDonating: envVariables.includes("--donor"),
+  isDonating: envVariables.includes('--donor'),
   emailAuthLinkTTL: null,
-  emailVerifyTTL: null,
+  emailVerifyTTL: null
 };
 const blankUser = {
-  _id: ObjectId("5bd30e0f1caf6ac3ddddddb9"),
-  email: "bar@bar.com",
+  _id: ObjectId('5bd30e0f1caf6ac3ddddddb9'),
+  email: 'bar@bar.com',
   emailVerified: true,
   progressTimestamps: [],
   isBanned: false,
   isCheater: false,
-  username: "twaha",
-  about: "",
-  name: "Development User",
-  location: "",
+  username: 'twaha',
+  about: '',
+  name: 'Development User',
+  location: '',
   picture: defaultUserImage,
   acceptedPrivacyTerms: true,
   sendQuincyEmail: false,
-  currentChallengeId: "",
+  currentChallengeId: '',
   isHonest: false,
   isFrontEndCert: false,
   isDataVisCert: false,
@@ -123,7 +123,7 @@ const blankUser = {
   portfolio: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
-  theme: "default",
+  theme: 'default',
   profileUI: {
     isLocked: true,
     showAbout: false,
@@ -134,26 +134,26 @@ const blankUser = {
     showName: false,
     showPoints: false,
     showPortfolio: false,
-    showTimeLine: false,
+    showTimeLine: false
   },
   badges: {
-    coreTeam: [],
+    coreTeam: []
   },
   isDonating: false,
   emailAuthLinkTTL: null,
-  emailVerifyTTL: null,
+  emailVerifyTTL: null
 };
 
 MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
   handleError(err, client);
 
-  log("Connected successfully to mongo");
+  log('Connected successfully to mongo');
 
-  const db = client.db("freecodecamp");
-  const user = db.collection("user");
+  const db = client.db('freecodecamp');
+  const user = db.collection('user');
 
-  if (process.argv[2] === "certUser") {
-    user.deleteOne({ _id: ObjectId("5fa2db00a25c1c1fa49ce067") }, (err) => {
+  if (process.argv[2] === 'certUser') {
+    user.deleteOne({ _id: ObjectId('5fa2db00a25c1c1fa49ce067') }, err => {
       handleError(err, client);
 
       try {
@@ -161,7 +161,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
       } catch (e) {
         handleError(e, client);
       } finally {
-        log("local auth user seed complete");
+        log('local auth user seed complete');
         client.close();
       }
     });
@@ -170,12 +170,12 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
       {
         _id: {
           $in: [
-            ObjectId("5bd30e0f1caf6ac3ddddddb5"),
-            ObjectId("5bd30e0f1caf6ac3ddddddb9"),
-          ],
-        },
+            ObjectId('5bd30e0f1caf6ac3ddddddb5'),
+            ObjectId('5bd30e0f1caf6ac3ddddddb9')
+          ]
+        }
       },
-      (err) => {
+      err => {
         handleError(err, client);
 
         try {
@@ -184,7 +184,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, (err, client) => {
         } catch (e) {
           handleError(e, client);
         } finally {
-          log("local auth user seed complete");
+          log('local auth user seed complete');
           client.close();
         }
       }
