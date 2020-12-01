@@ -3,7 +3,7 @@
 describe('Top contributor in user profile', () => {
   before(() => {
     cy.clearCookies();
-    cy.exec('npm run seed:auth-user -- --top-contributor');
+    cy.exec('npm run seed -- --top-contributor');
   });
 
   after(() => {
