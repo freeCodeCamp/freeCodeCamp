@@ -1,26 +1,20 @@
 import i18next from 'i18next';
 
-const config = require('../config/env');
-const { availableLangs } = require('./allLangs');
-
-// maybe loop over the available languages here
-// for the resources object?
+const { environment, clientLocale } = require('../config/env');
 
 i18next.init({
-  fallbackLng: 'english',
-  lng: config.locale,
+  fallbackLng: clientLocale,
+  lng: clientLocale,
+  // we only load one language since each language will have it's own server
   resources: {
-    english: {
-      translations: require('./locales/english/translation.json')
-    },
-    espanol: {
-      translations: require('./locales/espanol/translation.json')
+    [clientLocale]: {
+      translations: require(`./locales/${clientLocale}/translation.json`)
     }
   },
   ns: ['translations'],
   defaultNS: 'translations',
   returnObjects: true,
-  debug: config.environment === 'development',
+  debug: environment === 'development',
   interpolation: {
     escapeValue: false
   },
@@ -29,7 +23,6 @@ i18next.init({
   }
 });
 
-// maybe change this to the available languages as well
-i18next.languages = availableLangs.client;
+i18next.languages = clientLocale;
 
 export default i18next;
