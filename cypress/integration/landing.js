@@ -23,7 +23,10 @@ const certifications = [
 describe('Landing page', () => {
   it('Should render', () => {
     cy.visit('/');
-    cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
+    cy.title().should(
+      'eq',
+      'Learn to Code for Free – Coding Courses for Busy People'
+    );
     cy.contains(selectors.callToAction, "Get started (it's free)");
     cy.get(selectors.callToAction).should('have.length', 2);
   });
