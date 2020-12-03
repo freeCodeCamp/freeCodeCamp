@@ -118,23 +118,20 @@ class ShowUser extends Component {
         <Spacer size={2} />
         <Row className='text-center'>
           <Col sm={8} smOffset={2} xs={12}>
-            <h2>
-              <Trans i18nKey='report.portfolio-2' username={username}>
-                {{ username }}
-              </Trans>
-            </h2>
+            <h2>{t('report.portfolio-2', { username: username })}</h2>
           </Col>
         </Row>
         <Row>
           <Col sm={6} smOffset={3} xs={12}>
             <p>
-              We will notify the community moderators' team, and a send copy of
-              this report to your email: <strong>{email}</strong>
+              <Trans email={email} i18nKey='report.notify-1'>
+                <strong>{{ email }}</strong>
+              </Trans>
             </p>
-            <p>We may get back to you for more information, if required.</p>
+            <p>{t('report.notify-2')}</p>
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId='report-user-textarea'>
-                <ControlLabel>What would you like to report?</ControlLabel>
+                <ControlLabel>{t('report.what')}</ControlLabel>
                 <FormControl
                   componentClass='textarea'
                   onChange={this.handleChange}
@@ -143,7 +140,7 @@ class ShowUser extends Component {
                 />
               </FormGroup>
               <Button block={true} bsStyle='primary' type='submit'>
-                Submit the report
+                {t('report.submit')}
               </Button>
               <Spacer />
             </form>

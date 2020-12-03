@@ -175,14 +175,14 @@ export class SearchBar extends Component {
   render() {
     const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
-    const placeholder = t('misc.search');
+    const placeholder = t('search.placeholder');
 
     return (
       <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
         <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
           <div className='fcc_search_wrapper'>
             <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
-              Search
+              {t('search.label')}
             </label>
             <ObserveKeys except={['Space']}>
               <SearchBox

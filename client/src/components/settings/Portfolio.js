@@ -132,21 +132,19 @@ class PortfolioSettings extends Component {
   };
 
   getDescriptionValidation(description) {
+    const { t } = this.props;
     const len = description.length;
     const charsLeft = 288 - len;
     if (charsLeft < 0) {
       return {
         state: 'error',
-        message: 'There is a maximum limit of 288 characters, you have 0 left'
+        message: t('flash.character-limit', { charsLeft: charsLeft })
       };
     }
     if (charsLeft < 41 && charsLeft > 0) {
       return {
         state: 'warning',
-        message:
-          'There is a maximum limit of 288 characters, you have ' +
-          charsLeft +
-          ' left'
+        message: t('flash.character-limit', { charsLeft: charsLeft })
       };
     }
     if (charsLeft === 288) {
@@ -156,23 +154,25 @@ class PortfolioSettings extends Component {
   }
 
   getTitleValidation(title) {
+    const { t } = this.props;
     if (!title) {
-      return { state: 'error', message: 'A title is required' };
+      return { state: 'error', message: t('flash.title.required') };
     }
     const len = title.length;
     if (len < 2) {
-      return { state: 'error', message: 'Title is too short' };
+      return { state: 'error', message: t('flash.title.short') };
     }
     if (len > 144) {
-      return { state: 'error', message: 'Title is too long' };
+      return { state: 'error', message: t('flash.title.long') };
     }
     return { state: 'success', message: '' };
   }
 
   getUrlValidation(maybeUrl, isImage) {
+    const { t } = this.props;
     const len = maybeUrl.length;
     if (len >= 4 && !hasProtocolRE.test(maybeUrl)) {
-      return { state: 'error', message: 'URL must start with http or https' };
+      return { state: 'error', message: t('flash.url.protocol') };
     }
     if (isImage && !maybeUrl) {
       return { state: null, message: '' };
@@ -180,12 +180,12 @@ class PortfolioSettings extends Component {
     if (isImage && !/\.(png|jpg|jpeg|gif)$/.test(maybeUrl)) {
       return {
         state: 'error',
-        message: 'URL must link directly to an image file'
+        message: t('flash.url.image')
       };
     }
     return isURL(maybeUrl)
       ? { state: 'success', message: '' }
-      : { state: 'warning', message: 'Please use a valid URL' };
+      : { state: 'warning', message: t('flash.url.invalid') };
   }
 
   renderPortfolio = (portfolio, index, arr) => {
@@ -312,7 +312,7 @@ class PortfolioSettings extends Component {
         <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
         <FullWidthRow>
           <div className='portfolio-settings-intro'>
-            <p className='p-intro'>{t('settings.text.share-projects')}</p>
+            <p className='p-intro'>{t('settings.share-projects')}</p>
           </div>
         </FullWidthRow>
         <FullWidthRow>

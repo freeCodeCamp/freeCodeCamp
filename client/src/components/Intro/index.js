@@ -5,7 +5,7 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { randomQuote } from '../../utils/get-words';
 import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 import IntroDescription from './components/IntroDescription';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import './intro.css';
 import Login from '../Header/components/Login';
@@ -46,7 +46,7 @@ function Intro({
             <Spacer />
             <h1 className='text-center '>
               {name
-                ? `${t('learn.welcome-1')} ${name}.`
+                ? `${t('learn.welcome-1', { name: name })}`
                 : `${t('learn.welcome-2')}`}
             </h1>
             <Spacer />
@@ -82,8 +82,9 @@ function Intro({
             <Col sm={10} smOffset={1} xs={12}>
               <Spacer />
               <h4>
-                {t('buttons.start-at-beginning-text')}
-                <Link to={slug}>{t('buttons.start-at-beginning-link')}</Link>.
+                <Trans i18nKey='learn.start-at-beginning'>
+                  <Link to={slug} />
+                </Trans>
               </h4>
             </Col>
           ) : (

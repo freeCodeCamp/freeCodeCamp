@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -160,21 +161,26 @@ class DonateForm extends Component {
     return `${numToCommas((amount / 100) * 50)} hours`;
   }
 
-  getFormatedAmountLabel(amount) {
-    return `$${numToCommas(amount / 100)}`;
+  getFormattedAmountLabel(amount) {
+    return `${numToCommas(amount / 100)}`;
   }
 
   getDonationButtonLabel() {
     const { donationAmount, donationDuration } = this.state;
-    let donationBtnLabel = `Confirm your donation`;
+    const { t } = this.props;
+    const usd = this.getFormattedAmountLabel(donationAmount);
+    let donationBtnLabel = t('donate.confirm');
     if (donationDuration === 'onetime') {
-      donationBtnLabel = `Confirm your one-time donation of ${this.getFormatedAmountLabel(
-        donationAmount
-      )}`;
+      donationBtnLabel = t('donate.confirm-2', {
+        usd: usd
+      });
     } else {
-      donationBtnLabel = `Confirm your donation of ${this.getFormatedAmountLabel(
-        donationAmount
-      )} ${donationDuration === 'month' ? ' / month' : ' / year'}`;
+      donationBtnLabel =
+        donationDuration === 'month'
+          ? t('donate.confirm-3', {
+              usd: usd
+            })
+          : t('donate.confirm-4', { usd: usd });
     }
     return donationBtnLabel;
   }
@@ -232,21 +238,24 @@ class DonateForm extends Component {
         key={`${this.durations[duration]}-donation-${amount}`}
         value={amount}
       >
-        {this.getFormatedAmountLabel(amount)}
+        {this.getFormattedAmountLabel(amount)}
       </ToggleButton>
     ));
   }
 
   renderDonationDescription() {
     const { donationAmount, donationDuration } = this.state;
+    const { t } = this.props;
+    const usd = this.getFormattedAmountLabel(donationAmount);
+    const hours = this.convertToTimeContributed(donationAmount);
+
     return (
       <p className='donation-description'>
-        {`Your `}
-        {this.getFormatedAmountLabel(donationAmount)}
-        {` donation will provide `}
-        {this.convertToTimeContributed(donationAmount)}
-        {` of learning to people around the world`}
-        {donationDuration === 'onetime' ? `.` : ` each ${donationDuration}.`}
+        {donationDuration === 'onetime'
+          ? t('donate.your-donation', { usd: usd, hours: hours })
+          : donationDuration === 'month'
+          ? t('donate.your-donation-2', { usd: usd, hours: hours })
+          : t('donate.your-donation-3', { usd: usd, hours: hours })}
       </p>
     );
   }
@@ -309,12 +318,11 @@ class DonateForm extends Component {
       <div>
         {isOneTime ? (
           <b>
-            {t('donate.confirm-1')} ${donationAmount / 100}:
+            {t('donate.confirm-1')} {donationAmount / 100}:
           </b>
         ) : (
           <b>
-            {t('donate.confirm-2')} ${donationAmount / 100} / {donationDuration}
-            :
+            {t('donate.confirm-2')} {donationAmount / 100} / {donationDuration}:
           </b>
         )}
         <Spacer />

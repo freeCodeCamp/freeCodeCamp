@@ -192,7 +192,7 @@ export function ShowSettings(props) {
           </FullWidthRow>
           <Spacer />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
-            {`${t('settings.text.settings-for')} ${username}`}
+            {t('settings.for', { username: username })}
           </h1>
           <About
             about={about}

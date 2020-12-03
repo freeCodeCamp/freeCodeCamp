@@ -66,12 +66,12 @@ function renderMessage(isSessionUser, username, t) {
     <Fragment>
       <FullWidthRow>
         <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
-          {username} {t('profile.username-not-public')}
+          {t('profile.username-not-public', { username: username })}
         </h2>
       </FullWidthRow>
       <FullWidthRow>
         <p className='alert alert-info'>
-          {username} {t('profile.username-change-privacy')}
+          {t('profile.username-change-privacy', { username: username })}
         </p>
       </FullWidthRow>
       <Spacer />

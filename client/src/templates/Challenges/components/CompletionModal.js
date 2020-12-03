@@ -231,8 +231,8 @@ export class CompletionModalInner extends Component {
             bsStyle='primary'
             onClick={this.handleSubmit}
           >
-            {isSignedIn ? 'Submit and g' : 'G'}o to next challenge{' '}
-            <span className='hidden-xs'>(Ctrl + Enter)</span>
+            {isSignedIn ? t('buttons.submit-and-go') : t('buttons.go-to-next')}
+            <span className='hidden-xs'> (Ctrl + Enter)</span>
           </Button>
           {this.state.downloadURL ? (
             <Button

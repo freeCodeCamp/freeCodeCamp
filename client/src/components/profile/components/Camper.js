@@ -10,11 +10,15 @@ import {
 import { useTranslation } from 'react-i18next';
 
 import { AvatarRenderer } from '../../helpers';
-
 import SocialIcons from './SocialIcons';
 import Link from '../../helpers/Link';
 
 import './camper.css';
+
+const { langCodes } = require('../../../../i18n/allLangs');
+const { clientLocale } = require('../../../../config/env');
+
+const localeCode = langCodes[clientLocale];
 
 const propTypes = {
   about: PropTypes.string,
@@ -36,13 +40,6 @@ const propTypes = {
   yearsTopContributor: PropTypes.array
 };
 
-// going to need to figure out how to pluralize i18n
-// I think rect-i18next can help with that - see docs
-function pluralise(word, condition) {
-  return condition ? word + 's' : word;
-}
-
-// similar to above - see interpolation in docs
 function joinArray(array) {
   return array.reduce((string, item, index, array) => {
     if (string.length > 0) {
@@ -57,11 +54,13 @@ function joinArray(array) {
   });
 }
 
-function parseDate(joinDate) {
+function parseDate(joinDate, t) {
   joinDate = new Date(joinDate);
-  const year = joinDate.getFullYear();
-  const month = joinDate.toLocaleString('en-US', { month: 'long' });
-  return `Joined ${month} ${year}`;
+  const year = joinDate.getFullYear().toLocaleString([localeCode, 'en-US']);
+  const month = joinDate.toLocaleString([localeCode, 'en-US'], {
+    month: 'long'
+  });
+  return t('profile.joined', { month: month, year: year });
 }
 
 function Camper({
@@ -84,6 +83,7 @@ function Camper({
   website
 }) {
   const { t } = useTranslation();
+
   return (
     <div>
       <Row>
@@ -119,7 +119,7 @@ function Camper({
       {about && <p className='bio text-center'>{about}</p>}
       {joinDate && (
         <p className='bio text-center'>
-          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate)}
+          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate, t)}
         </p>
       )}
       {yearsTopContributor.filter(Boolean).length > 0 && (
@@ -135,7 +135,7 @@ function Camper({
       <br />
       {typeof points === 'number' ? (
         <p className='text-center points'>
-          {`${points} ${pluralise('total point', points !== 1)}`}
+          {t('profile.points', { count: points })}
         </p>
       ) : null}
     </div>

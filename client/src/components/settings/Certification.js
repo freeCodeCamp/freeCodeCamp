@@ -138,11 +138,12 @@ const isCertMapSelector = createSelector(
   })
 );
 
-const honestyInfoMessage = {
-  type: 'info',
-  message:
-    'To claim a certification, you must first accept our academic ' +
-    'honesty policy'
+const honestyInfoMessage = () => {
+  const { t } = this.props;
+  return {
+    type: 'info',
+    message: t('flash.message')
+  };
 };
 
 const initialState = {
@@ -536,7 +537,9 @@ export class CertificationSettings extends Component {
         <h3 className='text-center'>Legacy Full Stack Certification</h3>
         <div>
           <p>
-            {t('settings.text.claim-legacy')} Legacy Full Stack Certification:
+            {t('settings.claim-legacy', {
+              cert: 'Legacy Full Stack Certification'
+            })}
           </p>
           <ul>
             <li>Responsive Web Design</li>
@@ -605,7 +608,9 @@ export class CertificationSettings extends Component {
           >
             <Modal.Header className='this-one?' closeButton={true}>
               <Modal.Title id='solution-viewer-modal-title'>
-                {t('settings.labels.solution-for')} {projectTitle}
+                {t('settings.labels.solution-for', {
+                  projectTitle: projectTitle
+                })}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>

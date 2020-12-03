@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Spacer } from '../../helpers';
 import { Col } from '@freecodecamp/react-bootstrap';
 import { forumLocation } from '../../../../config/env.json';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import '../intro.css';
 
@@ -29,19 +29,15 @@ function IntroDescription() {
       <p>{t('learn.read-this.p7')}</p>
       <p>{t('learn.read-this.p8')}</p>
       <p>
-        {t('learn.read-this.p9')}{' '}
-        <Link className='inline' to='https://youtube.com/freecodecamp'>
-          {t('learn.read-this.p9-link')}
-        </Link>
-        .
+        <Trans i18nKey='learn.read-this.p9'>
+          <Link className='inline' to='https://youtube.com/freecodecamp' />
+        </Trans>
       </p>
       <p>{t('learn.read-this.p10')}</p>
       <p>
-        {t('learn.read-this.p11')}{' '}
-        <Link className='inline' to={forumLocation}>
-          {t('learn.read-this.p11-link')}
-        </Link>
-        .
+        <Trans i18nKey='learn.read-this.p11'>
+          <Link className='inline' to={forumLocation} />
+        </Trans>
       </p>
       <p>{t('learn.read-this.p12')}</p>
     </Col>

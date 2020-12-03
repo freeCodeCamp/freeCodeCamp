@@ -1,13 +1,16 @@
 import i18next from 'i18next';
 
 const { environment, clientLocale } = require('../config/env');
+const { i18nextCodes } = require('./allLangs');
+
+const i18nextCode = i18nextCodes[clientLocale];
 
 i18next.init({
-  fallbackLng: clientLocale,
-  lng: clientLocale,
+  fallbackLng: i18nextCode,
+  lng: i18nextCode,
   // we only load one language since each language will have it's own server
   resources: {
-    [clientLocale]: {
+    [i18nextCode]: {
       translations: require(`./locales/${clientLocale}/translation.json`)
     }
   },

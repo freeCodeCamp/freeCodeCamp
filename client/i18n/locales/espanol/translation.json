@@ -15,7 +15,7 @@
     "show-code": "Mostrar código",
     "show-solution": "Mostrar solución",
     "frontend": "Interfaz",
-    "backend": "Spanish Back End",
+    "backend": "Backend",
     "view": "Ver",
     "show-cert": "Mostrar certificación",
     "claim-cert": "Certificación de reclamo",
@@ -30,6 +30,7 @@
     "off": "Apagada",
     "on": "En",
     "sign-in": "Registrarse",
+    "sign-out": "desconectar",
     "curriculum": "Plan de estudios",
     "forum": "Foro",
     "profile": "Perfil",
@@ -37,8 +38,6 @@
     "sign-me-out": "Cerrar sesión en freeCodeCamp",
     "flag-user": "Marcar la cuenta del usuario por abuso",
     "current-challenge": "Ir al desafío actual",
-    "start-at-beginning-text": "Si es nuevo en la codificación, le recomendamos que",
-    "start-at-beginning-link": "comience por el principio",
     "try-again": "Inténtalo de nuevo",
     "menu": "Menú",
     "settings": "Configuraciones",
@@ -57,7 +56,15 @@
     "get-help": "Consigue ayuda",
     "watch-video": "Ver un video",
     "resubscribe": "Puede hacer clic aquí para volver a suscribirse",
-    "click-here": "Clic aquí para ingresar"
+    "click-here": "Clic aquí para ingresar",
+    "save": "Salvar",
+    "no-thanks": "No, gracias",
+    "yes-please": "sí por favor",
+    "update-email": "Actualizar mi correo electrónico",
+    "verify-email": "Verificar correo electrónico",
+    "submit-and-go": "Enviar y pasar al siguiente desafío",
+    "go-to-next": "Ir al siguiente desafío",
+    "ask-later": "Pregúntame Luego"
   },
   "landing": {
     "big-heading-1": "Aprenda a codificar en casa.",
@@ -71,22 +78,35 @@
       "shawn": {
         "location": "<strong>Shawn Wang</strong> en Singapur",
         "occupation": "Ingeniero de software en <strong>Amazon</strong>",
-        "testimony": "Da miedo cambiar de carrera. Solo gané la confianza de que podía codificar trabajando con los cientos de horas de lecciones gratuitas en freeCodeCamp. En un año tenía un trabajo de seis cifras como ingeniero de software. <strong>freeCodeCamp cambió mi vida.</strong>"
+        "testimony": "\"Da miedo cambiar de carrera. Solo gané la confianza de que podía codificar trabajando con los cientos de horas de lecciones gratuitas en freeCodeCamp. En un año tenía un trabajo de seis cifras como ingeniero de software. <strong>freeCodeCamp cambió mi vida.</strong>\""
       },
       "sarah": {
         "location": "<strong>Sarah Chima</strong> en Nigeria",
         "occupation": "Ingeniera de software en <strong>ChatDesk</strong>",
-        "testimony": "<strong>freeCodeCamp fue la puerta de entrada a mi carrera</strong> como desarrollador de software. El plan de estudios bien estructurado llevó mi conocimiento de codificación de un nivel principiante total a un nivel muy seguro. Era todo lo que necesitaba para conseguir mi primer trabajo de desarrollador en una empresa increíble."
+        "testimony": "\"<strong>freeCodeCamp fue la puerta de entrada a mi carrera</strong> como desarrollador de software. El plan de estudios bien estructurado llevó mi conocimiento de codificación de un nivel principiante total a un nivel muy seguro. Era todo lo que necesitaba para conseguir mi primer trabajo de desarrollador en una empresa increíble.\""
       },
       "emma": {
         "location": "<strong>Emma Bostian</strong> en Suecia",
         "occupation": "Ingeniera de software en <strong>Spotify</strong>",
-        "testimony": "Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong>freeCodeCamp me dio las habilidades</strong> y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify."
+        "testimony": "\"Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong>freeCodeCamp me dio las habilidades</strong> y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify.\""
       }
     },
     "certification-heading": "Obtenga certificaciones verificadas gratuitas en:"
   },
   "settings": {
+    "share-projects": "Comparta sus proyectos, artículos o solicitudes de extracción aceptadas que no sean de freeCodeCamp.",
+    "privacy": "La configuración de esta sección le permite controlar lo que se muestra en su cartera pública de freeCodeCamp.",
+    "data": "Para ver qué datos tenemos en su cuenta, haga clic en el botón \"Descarga tus datos\" a continuación",
+    "disabled": "Sus certificaciones se deshabilitarán si se configuran como privadas.",
+    "claim-legacy": "Una vez que haya obtenido las siguientes certificaciones de FreeCodeCamp, podrá reclamar las {{cert}}:",
+    "for": "Configuración de cuenta para {{username}}",
+    "username": {
+      "error": "Nombre de usuario {{error}}",
+      "unavailable": "Nombre de usuario no disponible.",
+      "validating": "Validando nombre de usuario...",
+      "available": "Nombre de usuario disponible.",
+      "change": "Tenga en cuenta que cambiar su nombre de usuario también cambiará la URL de su perfil y sus certificaciones."
+    },
     "labels": {
       "username": "Nombre de usuario",
       "name": "Nombre",
@@ -100,7 +120,7 @@
       "description": "Descripción",
       "project-name": "Nombre del proyecto",
       "solution": "Solución",
-      "solution-for": "Solución para",
+      "solution-for": "Solución para {{projectTitle}}",
       "my-profile": "Mi perfil",
       "my-name": "Mi nombre",
       "my-location": "Mi ubicacion",
@@ -121,15 +141,6 @@
       "portfolio": "Configuración de la cartera",
       "privacy": "La configuración de privacidad"
     },
-    "text": {
-      "share-projects": "Comparta sus proyectos, artículos o solicitudes de extracción aceptadas que no sean de freeCodeCamp.",
-      "claim-legacy": "Una vez que haya obtenido las siguientes certificaciones de FreeCodeCamp, podrá reclamar las",
-      "privacy": "La configuración de esta sección le permite controlar lo que se muestra en su cartera pública de freeCodeCamp.",
-      "data": "Para ver qué datos tenemos en su cuenta, haga clic en el botón 'Descarga tus datos' a continuación",
-      "disabled": "Sus certificaciones se deshabilitarán si se configuran como privadas.",
-      "username-change": "Tenga en cuenta que cambiar su nombre de usuario también cambiará la URL de su perfil y sus certificaciones.",
-      "settings-for": "Configuración de cuenta para"
-    },
     "danger": {
       "heading": "Zona peligrosa",
       "be-careful": "Por favor tenga cuidado. Los cambios en esta sección son permanentes.",
@@ -138,7 +149,7 @@
       "delete-title": "Borrar mi cuenta",
       "delete-p1": "Esto realmente eliminará todos sus datos, incluido todo su progreso e información de cuenta.",
       "delete-p2": "No podremos recuperar nada más tarde, incluso si cambia de opinión.",
-      "delete-p3": "Si hay algo que podamos hacer mejor, envíanos un correo electrónico y haremos todo lo posible:",
+      "delete-p3": "Si hay algo que podamos hacer mejor, envíanos un correo electrónico y haremos todo lo posible: <0>{{email}}</0>",
       "nevermind": "No importa, no quiero borrar mi cuenta",
       "certain": "Estoy 100% seguro. Eliminar todo lo relacionado con esta cuenta",
       "reset-heading": "Restablecer mi progreso",
@@ -151,14 +162,20 @@
       "missing": "No tiene un correo electrónico asociado con esta cuenta.",
       "heading": "Ajustes del correo electrónico",
       "not-verified": "Tu email no se ha verificado.",
-      "check-text": "Please check your email, or",
-      "check-link": "request a new verification email here",
+      "check": "Por favor revise su correo electrónico o <0>solicite un nuevo correo electrónico de verificación aquí</0>.",
       "current": "Correo electrónico actual",
       "new": "Nuevo correo electrónico",
       "confirm": "confirme nuevo correo electrónico",
-      "weekly": "Envíame el correo electrónico semanal de Quincy",
-      "no": "No, gracias",
-      "yes": "sí por favor"
+      "weekly": "Envíame el correo electrónico semanal de Quincy"
+    },
+    "honesty": {
+      "p1": "Antes de poder reclamar una certificación verificada, debe aceptar nuestro Compromiso de honestidad académica, que dice:",
+      "p2": "\"Entiendo que el plagio significa copiar el trabajo de otra persona y presentar el trabajo como si fuera mío, sin atribuir claramente el autor original.\"",
+      "p3": "\"Entiendo que el plagio es un acto de deshonestidad intelectual, y que la gente suele ser expulsada de la universidad o despedida de sus trabajos si la descubren plagiando.\"",
+      "p4": "\"Además de usar bibliotecas de código abierto como jQuery y Bootstrap, y pequeños fragmentos de código que se atribuyen claramente a su autor original, el 100% del código de mis proyectos fue escrito por mí, o junto con otra persona que pasa por el plan de estudios freeCodeCamp con con quien estaba programando en pareja en tiempo real.\"",
+      "p5": "\"Prometo no plagiar ninguno de mis trabajos en freeCodeCamp.org. Entiendo que el equipo de freeCodeCamp.org auditará mis proyectos para confirmar esto.\"",
+      "p6": "En las situaciones en las que descubramos casos de plagio inequívoco, reemplazaremos la certificación de la persona en cuestión con un mensaje que diga: \"Tras la revisión, esta cuenta ha sido marcada por deshonestidad académica.\"",
+      "p7": "Como institución académica que otorga certificaciones basadas en logros, nos tomamos muy en serio la honestidad académica. Si tiene alguna pregunta sobre esta política o sospecha que alguien la ha violado, puede enviar un correo electrónico a <0> {{email}} </0> y lo investigaremos."
     }
   },
   "profile": {
@@ -177,7 +194,14 @@
     "none-completed": "Aún no se han completado desafíos.",
     "get-started": "Empiece aquí.",
     "challenge": "Desafío",
-    "completed": "Terminada"
+    "completed": "Terminada",
+    "add-linkedin": "Agregar esta certificación a mi perfil de LinkedIn",
+    "add-twitter": "Comparte esta certificación en Twitter",
+    "tweet": "¡Acabo de obtener la certificación {{certTitle}} @freeCodeCamp! Compruébalo aquí: {{certURL}}",
+    "avatar": "Avatar de {{username}}",
+    "joined": "Se unió en {{month}} de {{year}}",
+    "points": "{{count}} punto total",
+    "points_plural": "{{count}} puntos totales"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp es una organización sin fines de lucro 501 (c) (3) exenta de impuestos respaldada por donantes (Número de identificación fiscal federal de los Estados Unidos: 82-0779546)",
@@ -202,15 +226,11 @@
     },
     "language": "Idioma:"
   },
-  "four-oh-four": {
-    "page-not-found": "Página no encontrada",
-    "not-found": "No encontrada:",
-    "heres-a-quote": "No pudimos encontrar lo que buscaba, pero aquí hay una cita:"
-  },
   "learn": {
     "heading": "Bienvenido al plan de estudios de freeCodeCamp.",
-    "welcome-1": "Bienvenido de nuevo,",
+    "welcome-1": "Bienvenido de nuevo, {{name}}.",
     "welcome-2": "Bienvenido a freeCodeCamp.org",
+    "start-at-beginning": "Si es nuevo en la codificación, le recomendamos que <0>comience por el principio</0>.",
     "read-this": {
       "heading": "Por favor, reduzca la velocidad y lea esto.",
       "p1": "freeCodeCamp es un camino probado hacia su primer trabajo como desarrollador de software.",
@@ -221,12 +241,10 @@
       "p6": "Si se siente abrumado, es normal. La programación es difícil.",
       "p7": "La práctica es la clave. Práctica práctica práctica.",
       "p8": "Y este plan de estudios le brindará miles de horas de práctica de programación práctica.",
-      "p9": "Y si desea aprender más teoría de las matemáticas y la informática, también tenemos miles de horas de cursos de video en",
-      "p9-link": "Canal de YouTube de freeCodeCamp",
+      "p9": "Y si desea aprender más teoría de las matemáticas y la informática, también tenemos miles de horas de cursos en video en el canal de <0>YouTube de freeCodeCamp</0>.",
       "p10": "Si desea obtener un trabajo de desarrollador o clientes independientes, las habilidades de programación serán solo una parte del rompecabezas. También necesita construir su red personal y su reputación como desarrollador.",
-      "p11": "Puede hacer esto en Twitter y GitHub, y también en",
-      "p11-link": "el foro freeCodeCamp",
-      "p12": "Codificación feliz."
+      "p11": "Puede hacer esto en Twitter y GitHub, y también en <0>el foro freeCodeCamp</0>.",
+      "p12": "Codificación feliz!"
     },
     "upcoming-lessons": "Próximas lecciones",
     "learn": "Aprender",
@@ -240,24 +258,38 @@
     "test-output": "Su salida de prueba irá aquí",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
     "download-solution": "Descarga mi solución",
-    "percent-complete": "Completa",
-    "tried-1": "Si ya probaste el",
-    "tried-2(link)": "Leer-Buscar-Preguntar",
-    "tried-3": "método, entonces puede pedir ayuda en el foro freeCodeCamp.",
+    "percent-complete": "{{percent}}% Completa",
+    "tried-rsa": "Si ya probaste el <0>Leer-Buscar-Preguntar</0> método, entonces puede pedir ayuda en el foro freeCodeCamp.",
+    "rsa": "Leer, buscar, preguntar",
     "reset": "¿Restablecer esta lección?",
     "reset-warn": "¿Está seguro de que desea restablecer esta lección? Los editores y las pruebas se restablecerán.",
     "reset-warn-2": "Esto no se puede deshacer",
-    "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haga clic y arrastre para moverlo. Además, siéntase libre de detener y editar el código en el video en cualquier momento."
+    "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haga clic y arrastre para moverlo. Además, siéntase libre de detener y editar el código en el video en cualquier momento.",
+    "chal-preview": "Vista previa del desafío"
   },
   "donate": {
+    "title": "Apoya a nuestra organización sin fines de lucro",
     "processing": "Estamos procesando tu donación.",
     "thank-you": "Gracias por ser una partidaria.",
+    "thank-you-2": "Gracias por apoyar a freeCodeCamp. Actualmente tienes una donación recurrente.",
+    "additional": "Puede hacer una donación adicional por única vez de cualquier monto utilizando este enlace: <0>{{url}}</0>",
+    "help-more": "Ayúdanos a hacer más",
     "error": "Algo salió mal con tu donación.",
     "free-tech": "Sus donaciones apoyarán la educación tecnológica gratuita para personas de todo el mundo.",
     "gift-frequency": "Seleccione la frecuencia de los obsequios:",
     "gift-amount": "Seleccione el monto del regalo:",
-    "confirm-1": "Confirme su donación única de",
-    "confirm-2": "Confirma tu donación de",
+    "confirm": "Confirma tu donación",
+    "confirm-2": "Confirme su donación única de ${{usd}}",
+    "confirm-3": "Confirma tu donación de ${{usd}} / mes",
+    "confirm-4": "Confirma tu donación de ${{usd}} / año",
+    "your-donation": "Su donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo.",
+    "your-donation-2": "Su donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada mes.",
+    "your-donation-3": "Su donación de ${{usd}} proporcionará {{hours}} horas de aprendizaje a personas de todo el mundo cada año.",
+    "duration": "Conviértase en un colaborador único de nuestra organización sin fines de lucro.",
+    "duration-2": "Conviértase en un patrocinador mensual de nuestra organización sin fines de lucro.",
+    "duration-3": "Conviértase en un patrocinador anual de nuestra organización sin fines de lucro.",
+    "duration-4": "Conviértase en un partidario de nuestra organización sin fines de lucro.",
+    "nicely-done": "Bien hecho. Acaba de completar {{block}}.",
     "credit-card": "Tarjeta de crédito",
     "credit-card-2": "O dona con tarjeta de crédito:",
     "paypal": "con PayPal:",
@@ -275,18 +307,79 @@
     "failed-pay": "UH oh. Parece que su transacción no se realizó. ¿Podrías intentarlo de nuevo?",
     "try-again": "Inténtalo de nuevo.",
     "card-number": "Su número de tarjeta:",
-    "expiration": "Fecha de caducidad:"
+    "expiration": "Fecha de caducidad:",
+    "only-you": "Solo tú puedes ver este mensaje. Felicitaciones por obtener esta certificación. No es tarea fácil. Ejecutar freeCodeCamp tampoco es fácil. Tampoco es barato. Ayúdanos a ayudarte a ti y a muchas otras personas en todo el mundo. Realice una donación de apoyo deducible de impuestos a nuestra organización sin fines de lucro hoy."
   },
   "report": {
-    "sign-in": "You need to be signed in to report a user",
-    "details": "Please provide as much detail as possible about the account or behavior you are reporting.",
-    "portfolio": "Report a users portfolio",
-    "portfolio-2": "¿Quieres denunciar la cartera de {{username}} por abuso?"
+    "sign-in": "Necesitas iniciar sesión para informar a una usuario",
+    "details": "Proporcione tantos detalles como sea posible sobre la cuenta o el comportamiento que está denunciando.",
+    "portfolio": "Informar una cartera de usuarios",
+    "portfolio-2": "¿Quieres denunciar la cartera de {{username}} por abuso?",
+    "notify-1": "Notificaremos al equipo de moderadores de la comunidad y le enviaremos una copia de este informe a su correo electrónico: <0>{{email}}</0>",
+    "notify-2": "Es posible que nos comuniquemos con usted para obtener más información, si es necesario.",
+    "what": "que te gustaria informar?",
+    "submit": "Envíe el informe"
+  },
+  "404": {
+    "page-not-found": "Página no encontrada",
+    "not-found": "No encontrada:",
+    "heres-a-quote": "No pudimos encontrar lo que buscaba, pero aquí hay una cita:"
+  },
+  "search": {
+    "label": "Buscar",
+    "placeholder": "Buscar más de 6000 tutoriales",
+    "see-results": "Ver todos los resultados para {{searchQuery}}",
+    "no-tutorials": "No se encontraron tutoriales",
+    "try": "¿En busca de algo? Prueba la barra de búsqueda en esta página.",
+    "no-results": "No pudimos encontrar nada relacionado con <0>{{query}}</0>"
   },
   "misc": {
     "offline": "Parece que no estás conectado, es posible que tu progreso no se guarde",
-    "search": "Buscar más de 6000 tutoriales",
     "unsubscribed": "Se ha dado de baja con éxito",
-    "keep-coding": "Sea lo que sea que hagas, ¡sigue codificando!"
+    "keep-coding": "Sea lo que sea que hagas, ¡sigue codificando!",
+    "email-signup": "Regístrese por correo electrónico",
+    "quincy": "- Quincy Larson, el maestro que fundó freeCodeCamp.org",
+    "email-blast": "Por cierto, cada viernes envío un correo electrónico con 5 enlaces sobre programación e informática. Los envío a unos 4 millones de personas. ¿Quieres que te envíe esto también?",
+    "update-email-1": "Update your email address",
+    "update-email-2": "Update your email address here:",
+    "email": "Correo electrónico"
+  },
+  "icons": {
+    "gold-cup": "Copa de Oro",
+    "avatar": "Avatar predeterminado",
+    "avatar-2": "Un avatar codificando con una computadora portátil.",
+    "donate": "Donar con PayPal",
+    "fail": "Prueba fallida",
+    "not-passed": "No pasó",
+    "passed": "Aprobada",
+    "heart": "Corazón",
+    "initial": "Inicial",
+    "info": "Información de introducción",
+    "spacer": "Espaciador",
+    "toggle": "Alternar marca de verificación"
+  },
+  "aria": {
+    "fcc-logo": "freeCodeCamp Logotipo",
+    "answer": "Responder"
+  },
+  "flash": {
+    "honesty": "Para reclamar una certificación, primero debe aceptar nuestra política de honestidad académica",
+    "character-limit": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
+    "email": {
+      "same": "Este correo electrónico es el mismo que su correo electrónico actual",
+      "invalid": "No pudimos validar su correo electrónico correctamente, asegúrese de que sea correcto",
+      "mismatch": "Ambas nuevas direcciones de correo electrónico deben ser iguales"
+    },
+    "title": {
+      "required": "Se requiere un título",
+      "short": "El título es demasiado corto",
+      "long": "El título es demasiado largo"
+    },
+    "url": {
+      "invalidated": "No pudimos validar su URL correctamente, asegúrese de que sea correcta",
+      "protocol": "La URL debe comenzar con http o https",
+      "image": "La URL debe vincularse directamente a un archivo de imagen",
+      "invalid": "Utilice una URL válida"
+    }
   }
 }

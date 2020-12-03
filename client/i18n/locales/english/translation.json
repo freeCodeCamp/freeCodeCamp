@@ -30,6 +30,7 @@
     "off": "Off",
     "on": "On",
     "sign-in": "Sign in",
+    "sign-out": "Sign out",
     "curriculum": "Curriculum",
     "forum": "Forum",
     "profile": "Profile",
@@ -37,8 +38,6 @@
     "sign-me-out": "Sign me out of freeCodeCamp",
     "flag-user": "Flag The User's Account for Abuse",
     "current-challenge": "Go to current challenge",
-    "start-at-beginning-text": "If you are new to coding, we recommend you",
-    "start-at-beginning-link": "start at the beginning",
     "try-again": "Try again",
     "menu": "Menu",
     "settings": "Settings",
@@ -57,7 +56,15 @@
     "get-help": "Get Help",
     "watch-video": "Watch a Video",
     "resubscribe": "You can click here to resubscribe",
-    "click-here": "Click here to sign in"
+    "click-here": "Click here to sign in",
+    "save": "Save",
+    "no-thanks": "No thanks",
+    "yes-please": "Yes please",
+    "update-email": "Update my Email",
+    "verify-email": "Verify Email",
+    "submit-and-go": "Submit and go to next challenge",
+    "go-to-next": "Go to next challenge",
+    "ask-later": "Ask me later"
   },
   "landing": {
     "big-heading-1": "Learn to code at home.",
@@ -71,22 +78,35 @@
       "shawn": {
         "location": "<strong>Shawn Wang</strong> in Singapore",
         "occupation": "Software Engineer at <strong>Amazon</strong>",
-        "testimony": "It's scary to change careers. I only gained confidence that I could code by working through the hundreds of hours of free lessons on freeCodeCamp. Within a year I had a six-figure job as a Software Engineer. <strong>freeCodeCamp changed my life.</strong>"
+        "testimony": "\"It's scary to change careers. I only gained confidence that I could code by working through the hundreds of hours of free lessons on freeCodeCamp. Within a year I had a six-figure job as a Software Engineer. <strong>freeCodeCamp changed my life.</strong>\""
       },
       "sarah": {
         "location": "<strong>Sarah Chima</strong> in Nigeria",
         "occupation": "Software Engineer at <strong>ChatDesk</strong>",
-        "testimony": "<strong>freeCodeCamp was the gateway to my career</strong> as a software developer. The well-structured curriculum took my coding knowledge from a total beginner level to a very confident level. It was everything I needed to land my first dev job at an amazing company."
+        "testimony": "\"<strong>freeCodeCamp was the gateway to my career</strong> as a software developer. The well-structured curriculum took my coding knowledge from a total beginner level to a very confident level. It was everything I needed to land my first dev job at an amazing company.\""
       },
       "emma": {
         "location": "<strong>Emma Bostian</strong> in Sweden",
         "occupation": "Software Engineer at <strong>Spotify</strong>",
-        "testimony": "I've always struggled with learning JavaScript. I've taken many courses but freeCodeCamp's course was the one which stuck. Studying JavaScript as well as data structures and algorithms on <strong>freeCodeCamp gave me the skills</strong> and confidence I needed to land my dream job as a software engineer at Spotify."
+        "testimony": "\"I've always struggled with learning JavaScript. I've taken many courses but freeCodeCamp's course was the one which stuck. Studying JavaScript as well as data structures and algorithms on <strong>freeCodeCamp gave me the skills</strong> and confidence I needed to land my dream job as a software engineer at Spotify.\""
       }
     },
     "certification-heading": "Earn free verified certifications in:"
   },
   "settings": {
+    "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
+    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio.",
+    "data": "To see what data we hold on your account, click the \"Download your data\" button below",
+    "disabled": "Your certifications will be disabled, if set to private.",
+    "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
+    "for": "Account Settings for {{username}}",
+    "username": {
+      "error": "Username {{error}}",
+      "unavailable": "Username not available.",
+      "validating": "Validating username...",
+      "available": "Username is available.",
+      "change": "Please note, changing your username will also change the URL to your profile and your certifications."
+    },
     "labels": {
       "username": "Username",
       "name": "Name",
@@ -100,7 +120,7 @@
       "description": "Description",
       "project-name": "Project Name",
       "solution": "Solution",
-      "solution-for": "Solution for",
+      "solution-for": "Solution for {{projectTitle}}",
       "my-profile": "My profile",
       "my-name": "My name",
       "my-location": "My location",
@@ -121,15 +141,6 @@
       "portfolio": "Portfolio Settings",
       "privacy": "Privacy Settings"
     },
-    "text": {
-      "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
-      "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the",
-      "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio.",
-      "data": "To see what data we hold on your account, click the 'Download your data' button below",
-      "disabled": "Your certifications will be disabled, if set to private.",
-      "username-change": "Please note, changing your username will also change the URL to your profile and your certifications.",
-      "settings-for": "Account Settings for"
-    },
     "danger": {
       "heading": "Danger Zone",
       "be-careful": "Please be careful. Changes in this section are permanent.",
@@ -138,7 +149,7 @@
       "delete-title": "Delete My Account",
       "delete-p1": "This will really delete all your data, including all your progress and account information.",
       "delete-p2": "We won't be able to recover any of it for you later, even if you change your mind.",
-      "delete-p3": "If there's something we could do better, send us an email instead and we'll do our best:",
+      "delete-p3": "If there's something we could do better, send us an email instead and we'll do our best: <0>{{email}}</0>",
       "nevermind": "Nevermind, I don't want to delete my account",
       "certain": "I am 100% certain. Delete everything related to this account",
       "reset-heading": "Reset My Progress",
@@ -151,21 +162,27 @@
       "missing": "You do not have an email associated with this account.",
       "heading": "Email Settings",
       "not-verified": "Your email has not been verified.",
-      "check-text": "Please check your email, or",
-      "check-link": "request a new verification email here",
+      "check": "Please check your email, or <0>request a new verification email here</0>.",
       "current": "Current Email",
       "new": "New Email",
       "confirm": "Confirm New Email",
-      "weekly": "Send me Quincy's weekly email",
-      "no": "No thanks",
-      "yes": "Yes please"
+      "weekly": "Send me Quincy's weekly email"
+    },
+    "honesty": {
+      "p1": "Before you can claim a verified certification, you must accept our Academic Honesty Pledge, which reads:",
+      "p2": "\"I understand that plagiarism means copying someone else’s work and presenting the work as if it were my own, without clearly attributing the original author.\"",
+      "p3": "\"I understand that plagiarism is an act of intellectual dishonesty, and that people usually get kicked out of university or fired from their jobs if they get caught plagiarizing.\"",
+      "p4": "\"Aside from using open source libraries such as jQuery and Bootstrap, and short snippets of code which are clearly attributed to their original author, 100% of the code in my projects was written by me, or along with another person going through the freeCodeCamp curriculum with whom I was pair programming in real time.\"",
+      "p5": "\"I pledge that I did not plagiarize any of my freeCodeCamp.org work. I understand that freeCodeCamp.org’s team will audit my projects to confirm this.\"",
+      "p6": "In the situations where we discover instances of unambiguous plagiarism, we will replace the person in question’s certification with a message that \"Upon review, this account has been flagged for academic dishonesty.\"",
+      "p7": "As an academic institution that grants achievement-based certifications, we take academic honesty very seriously. If you have any questions about this policy, or suspect that someone has violated it, you can email <0>{{email}}</0> and we will investigate."
     }
   },
   "profile": {
     "you-not-public": "You have not made your portfolio public.",
-    "username-not-public": "has not made their portfolio public.",
+    "username-not-public": "{{username}} has not made their portfolio public.",
     "you-change-privacy": "You need to change your privacy setting in order for your portfolio to be seen by others. This is a preview of how your portfolio will look when made public.",
-    "username-change-privacy": "needs to change their privacy setting in order for you to view their portfolio.",
+    "username-change-privacy": "{{username}} needs to change their privacy setting in order for you to view their portfolio.",
     "supporter": "Supporter",
     "contributor": "Top Contributor",
     "no-certs": "No certifications have been earned under the current curriculum",
@@ -177,7 +194,14 @@
     "none-completed": "No challenges have been completed yet.",
     "get-started": "Get started here.",
     "challenge": "Challenge",
-    "completed": "Completed"
+    "completed": "Completed",
+    "add-linkedin": "Add this certification to my LinkedIn profile",
+    "add-twitter": "Share this certification on Twitter",
+    "tweet": "I just earned the {{certTitle}} certification @freeCodeCamp! Check it out here: {{certURL}}",
+    "avatar": "{{username}}'s avatar",
+    "joined": "Joined {{month}} {{year}}",
+    "points": "{{count}} total point",
+    "points_plural": "{{count}} total points"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)",
@@ -202,15 +226,11 @@
     },
     "language": "Language:"
   },
-  "four-oh-four": {
-    "page-not-found": "Page not found",
-    "not-found": "404 Not Found:",
-    "heres-a-quote": "We couldn't find what you were looking for, but here is a quote:"
-  },
   "learn": {
     "heading": "Welcome to freeCodeCamp's curriculum.",
-    "welcome-1": "Welcome back,",
+    "welcome-1": "Welcome back, {{name}}.",
     "welcome-2": "Welcome to freeCodeCamp.org",
+    "start-at-beginning": "If you are new to coding, we recommend you <0>start at the beginning</0>.",
     "read-this": {
       "heading": "Please slow down and read this.",
       "p1": "freeCodeCamp is a proven path to your first software developer job.",
@@ -221,12 +241,10 @@
       "p6": "If you feel overwhelmed, that is normal. Programming is hard.",
       "p7": "Practice is the key. Practice, practice, practice.",
       "p8": "And this curriculum will give you thousands of hours of hands-on programming practice.",
-      "p9": "And if you want to learn more math and computer science theory, we also have thousands of hours of video courses on",
-      "p9-link": "freeCodeCamp's YouTube channel",
+      "p9": "And if you want to learn more math and computer science theory, we also have thousands of hours of video courses on <0>freeCodeCamp's YouTube channel</0>.",
       "p10": "If you want to get a developer job or freelance clients, programming skills will be just part of the puzzle. You also need to build your personal network and your reputation as a developer.",
-      "p11": "You can do this on Twitter and GitHub, and also on",
-      "p11-link": "the freeCodeCamp forum",
-      "p12": "Happy coding."
+      "p11": "You can do this on Twitter and GitHub, and also on <0>the freeCodeCamp forum</0>.",
+      "p12": "Happy coding!"
     },
     "upcoming-lessons": "Upcoming Lessons",
     "learn": "Learn",
@@ -240,24 +258,38 @@
     "test-output": "Your test output will go here",
     "sign-in-save": "Sign in to save your progress",
     "download-solution": "Download my solution",
-    "percent-complete": "complete",
-    "tried-1": "If you've already tried the",
-    "tried-2(link)": "Read-Search-Ask",
-    "tried-3": "method, then you can ask for help on the freeCodeCamp forum.",
+    "percent-complete": "{{percent}}% complete",
+    "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
+    "rsa": "Read, search, ask",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone",
-    "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time."
+    "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
+    "chal-preview": "Challenge Preview"
   },
   "donate": {
+    "title": "Support our nonprofit",
     "processing": "We are processing your donation.",
     "thank-you": "Thank you for being a supporter.",
+    "thank-you-2": "Thank you for being a supporter of freeCodeCamp. You currently have a recurring donation.",
+    "additional": "You can make an additional one-time donation of any amount using this link: <0>{{url}}</0>",
+    "help-more": "Help us do more",
     "error": "Something went wrong with your donation.",
     "free-tech": "Your donations will support free technology education for people all over the world.",
     "gift-frequency": "Select gift frequency:",
     "gift-amount": "Select gift amount:",
-    "confirm-1": "Confirm your one-time donation of",
-    "confirm-2": "Confirm your donation of",
+    "confirm": "Confirm your donation",
+    "confirm-2": "Confirm your one-time donation of ${{usd}}",
+    "confirm-3": "Confirm your donation of ${{usd}} / month",
+    "confirm-4": "Confirm your donation of ${{usd}} / year",
+    "your-donation": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.",
+    "your-donation-2": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.",
+    "your-donation-3": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.",
+    "duration": "Become a one-time supporter of our nonprofit.",
+    "duration-2": "Become a monthly supporter of our nonprofit.",
+    "duration-3": "Become an annual supporter of our nonprofit",
+    "duration-4": "Become a supporter of our nonprofit",
+    "nicely-done": "Nicely done. You just completed {{block}}.",
     "credit-card": "Credit Card",
     "credit-card-2": "Or donate with a credit card:",
     "paypal": "with PayPal:",
@@ -275,18 +307,79 @@
     "failed-pay": "Uh - oh. It looks like your transaction didn't go through. Could you please try again?",
     "try-again": "Please try again.",
     "card-number": "Your Card Number:",
-    "expiration": "Expiration Date:"
+    "expiration": "Expiration Date:",
+    "only-you": "Only you can see this message. Congratulations on earning this certification. It’s no easy task. Running freeCodeCamp isn’t easy either. Nor is it cheap. Help us help you and many other people around the world. Make a tax-deductible supporting donation to our nonprofit today."
   },
   "report": {
     "sign-in": "You need to be signed in to report a user",
     "details": "Please provide as much detail as possible about the account or behavior you are reporting.",
     "portfolio": "Report a users portfolio",
-    "portfolio-2": "Do you want to report {{username}}'s portfolio for abuse?"
+    "portfolio-2": "Do you want to report {{username}}'s portfolio for abuse?",
+    "notify-1": "We will notify the community moderators' team, and a send copy of this report to your email: <strong>{{email}}</strong>",
+    "notify-2": "We may get back to you for more information, if required.",
+    "what": "What would you like to report?",
+    "submit": "Submit the report"
+  },
+  "404": {
+    "page-not-found": "Page not found",
+    "not-found": "404 Not Found:",
+    "heres-a-quote": "We couldn't find what you were looking for, but here is a quote:"
+  },
+  "search": {
+    "label": "Search",
+    "placeholder": "Search 6,000+ tutorial",
+    "see-results": "See all results for {{searchQuery}}",
+    "no-tutorials": "No tutorials found",
+    "try": "Looking for something? Try the search bar on this page.",
+    "no-results": "We could not find anything relating to <0>{{query}}</0>"
   },
   "misc": {
     "offline": "You appear to be offline, your progress may not be saved",
-    "search": "Search 6,000+ tutorial",
     "unsubscribed": "You have successfully been unsubscribed",
-    "keep-coding": "Whatever you go on to, keep coding!"
+    "keep-coding": "Whatever you go on to, keep coding!",
+    "email-signup": "Email Sign Up",
+    "quincy": "- Quincy Larson, the teacher who founded freeCodeCamp.org",
+    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 4 million people. Would you like me to send this to you, too?",
+    "update-email-1": "Update your email address",
+    "update-email-2": "Update your email address here:",
+    "email": "Email"
+  },
+  "icons": {
+    "gold-cup": "Gold Cup",
+    "avatar": "Default Avatar",
+    "avatar-2": "An avatar coding with a laptop",
+    "donate": "Donate with PayPal",
+    "fail": "Test Failed",
+    "not-passed": "Not Passed",
+    "passed": "Passed",
+    "heart": "Heart",
+    "initial": "Initial",
+    "info": "Intro Information",
+    "spacer": "Spacer",
+    "toggle": "Toggle Checkmark"
+  },
+  "aria": {
+    "fcc-logo": "freeCodeCamp Logo",
+    "answer": "Answer"
+  },
+  "flash": {
+    "honesty": "To claim a certification, you must first accept our academic honesty policy",
+    "character-limit": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
+    "email": {
+      "same": "This email is the same as your current email",
+      "invalid": "We could not validate your email correctly, please ensure it is correct",
+      "mismatch": "Both new email addresses must be the same"
+    },
+    "title": {
+      "required": "A title is required",
+      "short": "Title is too short",
+      "long": "Title is too long"
+    },
+    "url": {
+      "invalidated": "We could not validate your URL correctly, please ensure it is correct",
+      "protocol": "URL must start with http or https",
+      "image": "URL must link directly to an image file",
+      "invalid": "Please use a valid URL"
+    }
   }
 }

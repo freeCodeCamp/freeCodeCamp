@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
+import { Trans, withTranslation } from 'react-i18next';
 
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
@@ -16,7 +17,8 @@ import CampersImage from '../components/landing/components/CampersImage';
 const propTypes = {
   executeGA: PropTypes.func,
   isDonating: PropTypes.bool,
-  showLoading: PropTypes.bool.isRequired
+  showLoading: PropTypes.bool.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
@@ -69,7 +71,8 @@ export class DonatePage extends Component {
   }
 
   render() {
-    const { showLoading, isDonating } = this.props;
+    const { showLoading, isDonating, t } = this.props;
+    const url = 'https://www.paypal.me/freecodecamp';
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
@@ -77,7 +80,7 @@ export class DonatePage extends Component {
 
     return (
       <Fragment>
-        <Helmet title='Support our nonprofit | freeCodeCamp.org' />
+        <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
         <Grid className='donate-page-wrapper'>
           <Spacer />
           <Row>
@@ -86,26 +89,21 @@ export class DonatePage extends Component {
                 <Row className='donate-text'>
                   <Col className={'text-center'} xs={12}>
                     {isDonating ? (
-                      <h2>Thank you for your support</h2>
+                      <h2>{t('donate.thank-you')}</h2>
                     ) : (
-                      <h2>Help us do more</h2>
+                      <h2>{t('donate.help-more')}</h2>
                     )}
                     <Spacer />
                   </Col>
                 </Row>
                 {isDonating ? (
                   <Alert>
-                    <p>
-                      Thank you for being a supporter of freeCodeCamp. You
-                      currently have a recurring donation.
-                    </p>
+                    <p>{t('donate.thank-you-2')}</p>
                     <br />
                     <p>
-                      You can make an additional one-time donation of any amount
-                      using this link:{' '}
-                      <a href='https://www.paypal.me/freecodecamp'>
-                        https://www.paypal.me/freecodecamp
-                      </a>
+                      <Trans i18nKey='donate.additional' url={url}>
+                        <a href={url}>{{ url }}</a>
+                      </Trans>
                     </p>
                   </Alert>
                 ) : null}
@@ -131,7 +129,9 @@ export class DonatePage extends Component {
 DonatePage.displayName = 'DonatePage';
 DonatePage.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DonatePage);
+export default withTranslation()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(DonatePage)
+);

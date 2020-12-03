@@ -12,7 +12,7 @@ import {
   Button
 } from '@freecodecamp/react-bootstrap';
 import isEmail from 'validator/lib/isEmail';
-import { withTranslation } from 'react-i18next';
+import { Trans, withTranslation } from 'react-i18next';
 
 import { updateMyEmail } from '../../redux/settings';
 import { maybeEmailRE } from '../../utils';
@@ -36,7 +36,8 @@ const propTypes = {
   updateQuincyEmail: PropTypes.func.isRequired
 };
 
-export function UpdateEmailButton(t) {
+export function UpdateEmailButton() {
+  const { t } = this.props;
   return (
     <Link style={{ textDecoration: 'none' }} to='/update-email'>
       <Button block={true} bsSize='lg' bsStyle='primary'>
@@ -85,6 +86,7 @@ class EmailSettings extends Component {
     const {
       emailForm: { newEmail, currentEmail }
     } = this.state;
+    const { t } = this.props;
 
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -95,7 +97,7 @@ class EmailSettings extends Component {
     if (newEmail === currentEmail) {
       return {
         state: 'error',
-        message: 'This email is the same as your current email'
+        message: t('flash.email.same')
       };
     }
     if (isEmail(newEmail)) {
@@ -103,9 +105,7 @@ class EmailSettings extends Component {
     } else {
       return {
         state: 'error',
-        message:
-          'We could not validate your email correctly, ' +
-          'please ensure it is correct'
+        message: t('flash.email.invalid')
       };
     }
   };
@@ -114,6 +114,7 @@ class EmailSettings extends Component {
     const {
       emailForm: { confirmNewEmail, newEmail }
     } = this.state;
+    const { t } = this.props;
 
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -125,7 +126,7 @@ class EmailSettings extends Component {
     if (maybeEmailRE.test(confirmNewEmail)) {
       return {
         state: isMatch ? 'success' : 'error',
-        message: isMatch ? '' : 'Both new email addresses must be the same'
+        message: isMatch ? '' : t('flash.email.mismatch')
       };
     } else {
       return {
@@ -178,9 +179,9 @@ class EmailSettings extends Component {
               <Alert bsStyle='info' className='text-center'>
                 {t('settings.email.not-verified')}
                 <br />
-                {t('settings.email.check-text')}{' '}
-                <Link to='/update-email'>{t('settings.email.check-link')}</Link>
-                .
+                <Trans i18nKey='settings.email.check'>
+                  <Link to='/update-email' />
+                </Trans>
               </Alert>
             </HelpBlock>
           </FullWidthRow>
@@ -235,8 +236,8 @@ class EmailSettings extends Component {
               action={t('settings.email.weekly')}
               flag={sendQuincyEmail}
               flagName='sendQuincyEmail'
-              offLabel={t('settings.email.no')}
-              onLabel={t('settings.email.yes')}
+              offLabel={t('buttons.no-thanks')}
+              onLabel={t('buttons.yes-please')}
               toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
             />
           </form>

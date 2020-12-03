@@ -1,13 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './empty-search.css';
 
 function EmptySearch() {
-  return (
-    <div className='empty-search-wrapper'>
-      Looking for something? Try the search bar on this page.
-    </div>
-  );
+  const { t } = useTranslation();
+
+  return <div className='empty-search-wrapper'>{t('search.try')}</div>;
 }
 
 EmptySearch.displayName = 'EmptySearch';

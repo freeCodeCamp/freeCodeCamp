@@ -67,6 +67,7 @@ class InternetSettings extends Component {
   }
 
   getValidationStateFor(maybeURl = '') {
+    const { t } = this.props;
     if (!maybeURl || !maybeUrlRE.test(maybeURl)) {
       return {
         state: null,
@@ -81,9 +82,7 @@ class InternetSettings extends Component {
     }
     return {
       state: 'error',
-      message:
-        'We could not validate your URL correctly, ' +
-        'please ensure it is correct'
+      message: t('flash.url.invalidated')
     };
   }
 

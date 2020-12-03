@@ -122,35 +122,37 @@ class UsernameSettings extends Component {
     if (!validating && error) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger'>{'Username ' + error}</Alert>
+          <Alert bsStyle='danger'>
+            {t('settings.username.error', { error: error })}
+          </Alert>
         </FullWidthRow>
       );
     }
     if (!validating && !isValidUsername) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning'>Username not available.</Alert>
+          <Alert bsStyle='warning'>{t('settings.username.unavailable')}</Alert>
         </FullWidthRow>
       );
     }
     if (validating) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='info'>Validating username...</Alert>
+          <Alert bsStyle='info'>{t('settings.username.validating')}</Alert>
         </FullWidthRow>
       );
     }
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>Username is available.</Alert>
+          <Alert bsStyle='success'>{t('settings.username.available')}</Alert>
         </FullWidthRow>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>Username is available.</Alert>
-          <Alert bsStyle='info'>{t('settings.text.username-change')}</Alert>
+          <Alert bsStyle='success'>{t('settings.username.available')}</Alert>
+          <Alert bsStyle='info'>{t('settings.username.change')}</Alert>
         </FullWidthRow>
       );
     }

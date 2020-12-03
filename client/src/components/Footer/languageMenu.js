@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const { langDisplayNames, availableLangs } = require('../../../i18n/allLangs');
-const config = require('../../../config/env');
+const { homeLocation } = require('../../../config/env');
 
 const locales = availableLangs.client;
 
@@ -12,15 +12,14 @@ const LanguageMenu = () => {
   const currentLanguage = i18n.language;
 
   const changeLanguage = e => {
+    // see if we can get the path from gatsby or something?
     const path = window.location.pathname;
-    if (config.environment === 'development') {
-      // note that the language will change back to english on a hard refresh
-      // or page load - set the locale in .env to make it stick
-      i18n.changeLanguage(e.target.value);
-    } else if (e.target.value === `english`) {
-      window.location.replace(`https://freecodecamp.org${path}`);
+
+    if (e.target.value === `english`) {
+      // look into using another method here <Router>?
+      window.location.replace(`${homeLocation}${path}`);
     } else if (e.target.value === 'espanol') {
-      window.location.replace(`https://freecodecamp.org/espanol${path}`);
+      window.location.replace(`${homeLocation}/espanol${path}`);
     }
   };
 

@@ -76,14 +76,18 @@ export class CompletionModalBody extends PureComponent {
           <div className='completion-block-name'>{blockName}</div>
           <div className='progress-bar-wrap'>
             <div className='progress-bar-background'>
-              {this.state.shownPercent}% {t('learn.percent-complete')}
+              {t('learn.percent-complete', {
+                percent: this.state.shownPercent
+              })}
             </div>
             <div
               className='progress-bar-percent'
               style={{ width: this.state.shownPercent + '%' }}
             >
               <div className='progress-bar-foreground'>
-                {this.state.shownPercent}% {t('learn.percent-complete')}
+                {t('learn.percent-complete', {
+                  percent: this.state.shownPercent
+                })}
               </div>
             </div>
           </div>

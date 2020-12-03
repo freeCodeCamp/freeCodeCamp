@@ -14,13 +14,13 @@ const FourOhFour = () => {
   const quote = randomQuote();
   return (
     <div className='notfound-page-wrapper'>
-      <Helmet title={t('four-oh-four.page-not-found') + '| freeCodeCamp'} />
-      <img alt={t('four-oh-four.not-found')} src={notFoundLogo} />
+      <Helmet title={t('404.page-not-found') + '| freeCodeCamp'} />
+      <img alt={t('404.not-found')} src={notFoundLogo} />
       <Spacer />
-      <h1>{t('four-oh-four.page-not-found')}.</h1>
+      <h1>{t('404.page-not-found')}.</h1>
       <Spacer />
       <div>
-        <p>{t('four-oh-four.heres-a-quote')}</p>
+        <p>{t('404.heres-a-quote')}</p>
         <Spacer />
         <blockquote className='quote-wrapper'>
           <p className='quote'>

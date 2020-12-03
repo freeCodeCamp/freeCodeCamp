@@ -72,11 +72,11 @@ class PrivacySettings extends Component {
       <div className='privacy-settings'>
         <SectionHeader>{t('settings.headings.privacy')}</SectionHeader>
         <FullWidthRow>
-          <p>{t('settings.text.privacy')}</p>
+          <p>{t('settings.privacy')}</p>
           <Form inline={true} onSubmit={this.handleSubmit}>
             <ToggleSetting
               action={t('settings.labels.my-profile')}
-              explain={t('settings.text.disabled')}
+              explain={t('settings.disabled')}
               flag={isLocked}
               flagName='isLocked'
               offLabel={t('buttons.public')}
@@ -125,7 +125,7 @@ class PrivacySettings extends Component {
             />
             <ToggleSetting
               action={t('settings.labels.my-certs')}
-              explain={t('settings.text.disabled')}
+              explain={t('settings.disabled')}
               flag={!showCerts}
               flagName='showCerts'
               offLabel={t('buttons.public')}
@@ -142,7 +142,7 @@ class PrivacySettings extends Component {
             />
             <ToggleSetting
               action={t('settings.labels.my-timeline')}
-              explain={t('settings.text.disabled')}
+              explain={t('settings.disabled')}
               flag={!showTimeLine}
               flagName='showTimeLine'
               offLabel={t('buttons.public')}
@@ -161,7 +161,7 @@ class PrivacySettings extends Component {
         </FullWidthRow>
         <FullWidthRow>
           <Spacer />
-          <p>{t('settings.text.data')}</p>
+          <p>{t('settings.data')}</p>
           <Button
             block={true}
             bsSize='lg'

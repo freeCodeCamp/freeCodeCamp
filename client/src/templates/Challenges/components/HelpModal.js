@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
-import { withTranslation } from 'react-i18next';
+import { Trans, withTranslation } from 'react-i18next';
 
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
 import { executeGA } from '../../../redux';
@@ -46,16 +46,16 @@ export class HelpModal extends Component {
         </Modal.Header>
         <Modal.Body className='help-modal-body text-center'>
           <h3>
-            {t('learn.tried-1')}&nbsp;
-            <a
-              href={RSA}
-              rel='noopener noreferrer'
-              target='_blank'
-              title='Read, search, ask'
-            >
-              {t('learn.tried-2(link)')}
-            </a>
-            &nbsp; {t('learn.tried-3')}
+            <Trans i18nKey='learn.tried-rsa'>
+              <a
+                href={RSA}
+                rel='noopener noreferrer'
+                target='_blank'
+                title={t('learn.rsa')}
+              >
+                placeholder
+              </a>
+            </Trans>
           </h3>
           <Button
             block={true}

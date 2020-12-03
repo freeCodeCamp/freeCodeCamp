@@ -244,7 +244,7 @@ export class Project extends Component {
                       // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
-                          aria-label='Answer'
+                          aria-label={t('aria.answer')}
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
@@ -15,6 +15,7 @@ const propTypes = {
 
 function DeleteModal(props) {
   const { show, onHide } = props;
+  const email = 'team@freecodecamp.org';
   const { t } = useTranslation();
   return (
     <Modal
@@ -27,16 +28,19 @@ function DeleteModal(props) {
       show={show}
     >
       <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>Delete My Account</Modal.Title>
+        <Modal.Title id='modal-title'>
+          {t('settings.danger.delete')}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <p>{t('settings.danger.delete-p1')}</p>
         <p>{t('settings.danger.delete-p2')}</p>
         <p>
-          {t('settings.danger.delete-p3')} &thinsp;
-          <a href='mailto:team@freecodecamp.org' title='team@freecodecamp.org'>
-            team@freecodecamp.org
-          </a>
+          <Trans email={email} i18nKey='settings.danger.delete-p3'>
+            <a href={`mailto:${email}`} title={email}>
+              {{ email }}
+            </a>
+          </Trans>
         </p>
         <hr />
         <Button

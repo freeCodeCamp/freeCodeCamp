@@ -41,7 +41,7 @@ const Testimonials = () => {
             </div>
             <div className='testimony'>
               <p>
-                "<Trans>landing.testimonials.shawn.testimony</Trans>"
+                <Trans>landing.testimonials.shawn.testimony</Trans>
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@ const Testimonials = () => {
             </div>
             <div className='testimony'>
               <p>
-                "<Trans>landing.testimonials.sarah.testimony</Trans>
+                <Trans>landing.testimonials.sarah.testimony</Trans>
               </p>
             </div>
           </div>
@@ -95,7 +95,7 @@ const Testimonials = () => {
             </div>
             <div className='testimony'>
               <p>
-                "<Trans>landing.testimonials.emma.testimony</Trans>"
+                <Trans>landing.testimonials.emma.testimony</Trans>
               </p>
             </div>
           </div>
