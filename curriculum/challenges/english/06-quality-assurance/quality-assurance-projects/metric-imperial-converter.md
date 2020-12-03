@@ -51,7 +51,7 @@ Write the following tests in `tests/2_functional-tests.js`:
 
 # --hints--
 
-I can provide my own project, not the example URL.
+You can provide your own project, not the example URL.
 
 ```js
 getUserInput => {
@@ -63,12 +63,12 @@ getUserInput => {
 };
 ```
 
-I can GET /api/convert with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)
+You can `GET` /api/convert with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)
 
 ```js
 ```
 
-I can convert `'gal'` to `'L'` and vice versa. (1 gal to 3.78541 L)
+You can convert `'gal'` to `'L'` and vice versa. (1 gal to 3.78541 L)
 
 ```js
 async getUserInput => {
@@ -91,7 +91,7 @@ async getUserInput => {
 };
 ```
 
-I can convert `'lbs'` to `'kg'` and vice versa. (1 lbs to 0.453592 kg)
+You can convert `'lbs'` to `'kg'` and vice versa. (1 lbs to 0.453592 kg)
 
 ```js
 async getUserInput => {
@@ -114,7 +114,7 @@ async getUserInput => {
 };
 ```
 
-I can convert `'mi'` to `'km'` and vice versa. (1 mi to 1.60934 km)
+You can convert `'mi'` to `'km'` and vice versa. (1 mi to 1.60934 km)
 
 ```js
 async getUserInput => {
@@ -160,7 +160,7 @@ async getUserInput => {
 };
 ```
 
-If my unit of measurement is invalid, returned will be `'invalid unit'`.
+If your unit of measurement is invalid, returned will be `'invalid unit'`.
 
 ```js
 async getUserInput => {
@@ -173,7 +173,7 @@ async getUserInput => {
 };
 ```
 
-If my number is invalid, returned will be `'invalid number'`.
+If your number is invalid, returned will be `'invalid number'`.
 
 ```js
 async getUserInput => {
@@ -206,7 +206,7 @@ async getUserInput => {
 };
 ```
 
-I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
+You can use fractions, decimals or both in your parameter (ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
 
 ```js
 async getUserInput => {
@@ -237,7 +237,7 @@ async getUserInput => {
 };
 ```
 
-My return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {initial_Units} converts to {returnNum} {return_Units}'` with the result rounded to 5 decimals.
+Your return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {iniUnitString} converts to {returnNum} {returnUnitString}'` with the result rounded to 5 decimals.
 
 ```js
 async getUserInput => {
