@@ -1,5 +1,5 @@
 import debug from 'debug';
-import { check } from 'express-validator/check';
+import { check } from 'express-validator';
 
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 import { themes } from '../../common/utils/themes.js';
