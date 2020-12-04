@@ -45,7 +45,7 @@ assert(
 );
 ```
 
-Trying to remove an element that does not exist should return `null`.
+Trying to remove an element that does not exist in an empty tree should return `null`.
 
 ```js
 assert(
