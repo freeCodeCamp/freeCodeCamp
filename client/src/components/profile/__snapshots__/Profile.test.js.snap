@@ -24,7 +24,7 @@ exports[`<Profile/> renders correctly 1`] = `
             class="avatar-container default-border"
           >
             <img
-              alt="string's avatar"
+              alt="profile.avatar"
               class="avatar img-responsive"
               src="string"
             />
@@ -146,7 +146,7 @@ exports[`<Profile/> renders correctly 1`] = `
       <a
         href="/user/string/report-user"
       >
-        Flag This User's Account for Abuse
+        buttons.flag-user
       </a>
     </div>
     <div

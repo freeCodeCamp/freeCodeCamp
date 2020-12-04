@@ -68,9 +68,7 @@ const { t } = this.props
 export default withTranslation()(Component);
 
 // with redux:
-export default withTranslation()(
-  connect(...)(Component)
-);
+export default connect(...)(withTranslation()(Component));
 ```
 
 ### Translate using the "t" function:

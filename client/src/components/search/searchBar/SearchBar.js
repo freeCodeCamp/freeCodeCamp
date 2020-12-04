@@ -212,9 +212,7 @@ export class SearchBar extends Component {
 SearchBar.displayName = 'SearchBar';
 SearchBar.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(SearchBar)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(SearchBar));
