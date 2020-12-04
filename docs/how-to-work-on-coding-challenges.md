@@ -115,15 +115,19 @@ console.log('freeCodeCamp is awesome!');
 Solutions are used for the CI tests to ensure that changes to the hints will still pass as intended
 
 ```js
-// first solution
+// first solution - the language(s) should match the seed.
 ```
 
-```js
-// second solution
-```
+---
 
 ```js
-// third solution etc.
+// second solution - so if the seed is written in HTML...
+```
+
+---
+
+```js
+// third solution etc. - Your solutions should be in HTML.
 ```
 
 # --question--
