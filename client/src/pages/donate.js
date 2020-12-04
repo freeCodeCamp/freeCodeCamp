@@ -129,9 +129,7 @@ export class DonatePage extends Component {
 DonatePage.displayName = 'DonatePage';
 DonatePage.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(DonatePage)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(DonatePage));

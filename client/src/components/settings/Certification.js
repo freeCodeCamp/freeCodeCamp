@@ -631,9 +631,7 @@ export class CertificationSettings extends Component {
 CertificationSettings.displayName = 'CertificationSettings';
 CertificationSettings.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    null,
-    mapDispatchToProps
-  )(CertificationSettings)
-);
+export default connect(
+  null,
+  mapDispatchToProps
+)(withTranslation()(CertificationSettings));

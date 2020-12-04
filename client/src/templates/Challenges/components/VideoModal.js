@@ -61,9 +61,7 @@ export class VideoModal extends Component {
 VideoModal.displayName = 'VideoModal';
 VideoModal.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(VideoModal)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(VideoModal));

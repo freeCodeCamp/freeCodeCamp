@@ -286,9 +286,7 @@ const CompletionModal = props => {
 CompletionModal.displayName = 'CompletionModal';
 CompletionModal.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(CompletionModal)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(CompletionModal));

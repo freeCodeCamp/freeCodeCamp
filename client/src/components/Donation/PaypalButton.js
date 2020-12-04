@@ -136,4 +136,4 @@ const mapStateToProps = createSelector(
 PaypalButton.displayName = 'PaypalButton';
 PaypalButton.propTypes = propTypes;
 
-export default withTranslation()(connect(mapStateToProps)(PaypalButton));
+export default connect(mapStateToProps)(withTranslation()(PaypalButton));

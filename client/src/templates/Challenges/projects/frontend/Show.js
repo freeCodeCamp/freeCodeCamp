@@ -160,12 +160,10 @@ export class Project extends Component {
 Project.displayName = 'Project';
 Project.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Project)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(Project));
 
 export const query = graphql`
   query ProjectChallenge($slug: String!) {

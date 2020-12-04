@@ -57,9 +57,7 @@ export class ToolPanel extends Component {
 ToolPanel.displayName = 'ProjectToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(ToolPanel)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(ToolPanel));

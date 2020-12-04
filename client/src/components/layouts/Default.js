@@ -220,9 +220,7 @@ class DefaultLayout extends Component {
 DefaultLayout.displayName = 'DefaultLayout';
 DefaultLayout.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(DefaultLayout)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(DefaultLayout));

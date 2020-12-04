@@ -451,9 +451,7 @@ class DonateForm extends Component {
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(DonateForm)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(DonateForm));

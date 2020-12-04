@@ -63,9 +63,7 @@ class Preview extends Component {
 Preview.displayName = 'Preview';
 Preview.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    null,
-    mapDispatchToProps
-  )(Preview)
-);
+export default connect(
+  null,
+  mapDispatchToProps
+)(withTranslation()(Preview));

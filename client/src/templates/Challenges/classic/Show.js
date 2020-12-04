@@ -343,12 +343,10 @@ class ShowClassic extends Component {
 ShowClassic.displayName = 'ShowClassic';
 ShowClassic.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(ShowClassic)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(ShowClassic));
 
 // TODO: handle jsx (not sure why it doesn't get an editableRegion) EDIT:
 // probably because the dummy challenge didn't include it, so Gatsby couldn't

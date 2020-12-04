@@ -182,9 +182,7 @@ class PrivacySettings extends Component {
 PrivacySettings.displayName = 'PrivacySettings';
 PrivacySettings.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(PrivacySettings)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(PrivacySettings));

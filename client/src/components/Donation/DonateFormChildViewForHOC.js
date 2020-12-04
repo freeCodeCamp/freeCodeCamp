@@ -207,6 +207,6 @@ class DonateFormChildViewForHOC extends Component {
 DonateFormChildViewForHOC.displayName = 'DonateFormChildViewForHOC';
 DonateFormChildViewForHOC.propTypes = propTypes;
 
-export default withTranslation()(
-  injectStripe(connect(mapStateToProps)(DonateFormChildViewForHOC))
+export default injectStripe(
+  connect(mapStateToProps)(withTranslation()(DonateFormChildViewForHOC))
 );

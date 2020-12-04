@@ -82,9 +82,7 @@ export class HelpModal extends Component {
 HelpModal.displayName = 'HelpModal';
 HelpModal.propTypes = propTypes;
 
-export default withTranslation()(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(HelpModal)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(HelpModal));
