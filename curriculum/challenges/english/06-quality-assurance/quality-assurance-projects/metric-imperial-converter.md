@@ -160,7 +160,7 @@ async getUserInput => {
 };
 ```
 
-If your unit of measurement is invalid, returned will be `'invalid unit'`.
+If the unit of measurement is invalid, returned will be `'invalid unit'`.
 
 ```js
 async getUserInput => {
@@ -173,7 +173,7 @@ async getUserInput => {
 };
 ```
 
-If your number is invalid, returned will be `'invalid number'`.
+If the number is invalid, returned will be `'invalid number'`.
 
 ```js
 async getUserInput => {
@@ -206,7 +206,7 @@ async getUserInput => {
 };
 ```
 
-You can use fractions, decimals or both in your parameter (ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
+You can use fractions, decimals or both in the parameter (ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
 
 ```js
 async getUserInput => {
