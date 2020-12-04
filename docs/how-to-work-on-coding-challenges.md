@@ -85,7 +85,7 @@ Code evaluated after the user’s code, and just before the tests
 
 ## --seed-contents--
 
-Boilerplate code to render to the editor
+Boilerplate code to render to the editor. This section should only contain code inside backticks, like the following:
 
 ```html
 <body>
