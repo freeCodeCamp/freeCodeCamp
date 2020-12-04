@@ -64,6 +64,32 @@ assert(
 );
 ```
 
+
+Trying to remove an element that does not exist should return `null`.
+
+```js
+assert(
+  (function () {
+    var test = false;
+    if (typeof BinarySearchTree !== 'undefined') {
+      test = new BinarySearchTree();
+    } else {
+      return false;
+    }
+    if (typeof test.remove !== 'function') {
+      return false;
+    }
+    test.add(5);
+    test.add(3);
+    test.add(7);
+    test.add(6);
+    test.add(10);
+    test.add(12);
+    return test.remove(100) == null;
+  })()
+);
+```
+
 If the root node has no children, deleting it should set the root to `null`.
 
 ```js
