@@ -138,7 +138,7 @@ const ShowCertification = props => {
     props.executeGA({
       type: 'event',
       data: {
-        category: 'donation',
+        category: 'Donation',
         action: `certificate ${action}`,
         label: duration,
         value: amount

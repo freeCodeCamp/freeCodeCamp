@@ -68,7 +68,7 @@ function DonateModal({
     executeGA({
       type: 'event',
       data: {
-        category: 'donation',
+        category: 'Donation',
         action: `Modal ${action}`,
         label: duration,
         value: amount
