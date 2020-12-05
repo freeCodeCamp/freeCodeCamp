@@ -16,6 +16,7 @@ const HonestyPolicy = () => {
       <p key={7}>
         <Trans email={email} i18nKey='settings.honesty.p7'>
           <a href={`mailto:${email}`}>{{ email }}</a>
+          <h1>test</h1>
         </Trans>
       </p>
     </Fragment>

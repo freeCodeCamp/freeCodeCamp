@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/display-name */
 /* global jest */
 import React from 'react';
 
 const reactI18next = jest.genMockFromModule('react-i18next');
 
-// taken from https://github.com/i18next/react-i18next/blob/master/example/test-jest/src/__mocks__/react-i18next.js
+// modified from https://github.com/i18next/react-i18next/blob/master/example/test-jest/src/__mocks__/react-i18next.js
 const hasChildren = node =>
   node && (node.children || (node.props && node.props.children));
 
@@ -39,7 +40,7 @@ const renderNodes = reactNodes => {
 };
 
 const withTranslation = () => Component => {
-  Component.defaultProps = { ...Component.defaultProps, t: text => text };
+  Component.defaultProps = { ...Component.defaultProps, t: str => str };
   return Component;
 };
 
@@ -52,14 +53,15 @@ const useTranslation = () => {
   };
 };
 
-const Trans = ({ children }) => renderNodes(children);
+const Trans = ({ children }) =>
+  Array.isArray(children) ? renderNodes(children) : renderNodes([children]);
 
+// translate isn't being used anywhere, uncomment if needed
 /* const translate = () => Component => props => (
   <Component t={() => ''} {...props} />
-);
+); */
 
-reactI18next.translate = translate; */
-
+// reactI18next.translate = translate;
 reactI18next.withTranslation = withTranslation;
 reactI18next.useTranslation = useTranslation;
 reactI18next.Trans = Trans;
