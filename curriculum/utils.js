@@ -5,7 +5,7 @@ const {
   curriculum: curriculumLangs
 } = require('../client/i18n/allLangs').availableLangs;
 
-const supportedLangs = ['chinese', 'english'];
+// const supportedLangs = ['chinese', 'english'];
 
 exports.testedLang = function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {
@@ -20,4 +20,4 @@ exports.testedLang = function testedLang() {
   }
 };
 
-exports.supportedLangs = supportedLangs;
+// exports.supportedLangs = supportedLangs;
