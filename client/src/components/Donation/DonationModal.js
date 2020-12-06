@@ -83,7 +83,7 @@ function DonateModal({
       executeGA({
         type: 'event',
         data: {
-          category: 'Donation',
+          category: 'Donation View',
           action: `Displayed ${
             isBlockDonation ? 'block' : 'progress'
           } donation modal`,

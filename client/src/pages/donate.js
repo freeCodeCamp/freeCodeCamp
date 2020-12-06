@@ -49,7 +49,7 @@ export class DonatePage extends Component {
     this.props.executeGA({
       type: 'event',
       data: {
-        category: 'Donation',
+        category: 'Donation View',
         action: `Displayed donate page`,
         nonInteraction: true
       }
