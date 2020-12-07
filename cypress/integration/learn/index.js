@@ -95,7 +95,7 @@ describe('Superblocks and Blocks', () => {
     cy.contains(superBlockNames[0])
       .click()
       .should('have.attr', 'aria-expanded', 'false');
-    cy.contains('Basic HTML and HTML5').should('not.be.visible');
+    cy.contains('Basic HTML and HTML5').should('not.exist');
 
     cy.contains(superBlockNames[0])
       .click()
