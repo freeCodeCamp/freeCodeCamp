@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const { langDisplayNames, availableLangs } = require('../../../i18n/allLangs');
-const { homeLocation } = require('../../../config/env');
+const { homeLocation, showLocaleDropdownMenu } = require('../../../config/env');
 
 const locales = availableLangs.client;
 
@@ -23,7 +23,7 @@ const LanguageMenu = () => {
     }
   };
 
-  return (
+  return showLocaleDropdownMenu ? (
     <div className='language-menu'>
       <span>{t('footer.language')}</span>
       <select onChange={e => changeLanguage(e)} value={currentLanguage}>
@@ -36,7 +36,7 @@ const LanguageMenu = () => {
         })}
       </select>
     </div>
-  );
+  ) : null;
 };
 
 export default LanguageMenu;
