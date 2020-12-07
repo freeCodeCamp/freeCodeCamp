@@ -299,9 +299,9 @@ class ShowClassic extends Component {
       >
         <LearnLayout>
           <Helmet
-            title={`${this.getBlockNameTitle()} | ${t(
+            title={`${t(
               'learn.learn'
-            )} | freeCodeCamp.org`}
+            )} ${this.getBlockNameTitle()} | freeCodeCamp.org`}
           />
           <Media maxWidth={MAX_MOBILE_WIDTH}>
             <MobileLayout
