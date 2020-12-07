@@ -1,5 +1,5 @@
 import dedent from 'dedent';
-import { validationResult } from 'express-validator/check';
+import { validationResult } from 'express-validator';
 
 import { createValidatorErrorFormatter } from './create-handled-error.js';
 import { homeLocation } from '../../../config/env';

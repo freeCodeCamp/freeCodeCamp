@@ -41,9 +41,6 @@
     },
     "method-override": {}
   },
-  "parse:after": {
-    "./middlewares/validator": {}
-  },
   "routes:before": {
     "helmet#xssFilter": {},
     "helmet#noSniff": {},

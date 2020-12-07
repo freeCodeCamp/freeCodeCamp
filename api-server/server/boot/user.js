@@ -2,6 +2,7 @@ import dedent from 'dedent';
 import debugFactory from 'debug';
 import { pick } from 'lodash';
 import { Observable } from 'rx';
+import { body } from 'express-validator';
 
 import { homeLocation } from '../../../config/env';
 import {
@@ -12,6 +13,7 @@ import {
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { removeCookies } from '../utils/getSetAccessToken';
+import { trimTags } from '../utils/validators';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectTo(homeLocation);
@@ -29,7 +31,12 @@ function bootUser(app) {
 
   api.post('/account/delete', ifNoUser401, postDeleteAccount);
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
-  api.post('/user/report-user/', ifNoUser401, postReportUserProfile);
+  api.post(
+    '/user/report-user/',
+    ifNoUser401,
+    body('reportDescription').customSanitizer(trimTags),
+    postReportUserProfile
+  );
 
   app.use(api);
 }
@@ -201,8 +208,7 @@ function createPostReportUserProfile(app) {
   const { Email } = app.models;
   return function postReportUserProfile(req, res, next) {
     const { user } = req;
-    const { username } = req.body;
-    const report = req.sanitize('reportDescription').trimTags();
+    const { username, reportDescription: report } = req.body;
 
     log(username);
     log(report);
