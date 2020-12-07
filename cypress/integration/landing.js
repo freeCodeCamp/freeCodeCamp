@@ -60,7 +60,7 @@ describe('Landing page', () => {
 
     cy.viewport(1199, 660)
       .get(selectors.landingPageImage)
-      .should('not.be.visible');
+      .should('not.exist');
   });
 
   it('Has links to all the certifications', function() {
