@@ -191,9 +191,7 @@ describe('Username input field', () => {
       cy.get('button').click();
     });
 
-    cy.contains('We have updated your username to bjorno').should(
-      'not.be.visible'
-    );
+    cy.contains('We have updated your username to bjorno').should('not.exist');
 
     cy.resetUsername();
   });
