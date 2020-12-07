@@ -26,7 +26,10 @@ describe('Learn Landing page (not logged in)', () => {
   it('Should render', () => {
     cy.visit(locations.index);
 
-    cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
+    cy.title().should(
+      'eq',
+      'Learn to Code for Free – Coding Courses for Busy People'
+    );
   });
 
   it('Has the correct heading for an unauthenticated User', () => {
