@@ -79,7 +79,7 @@ export const LearnPage = ({
   const hashValue = hashValueSelector(state, hash);
   return (
     <LearnLayout>
-      <Helmet title='Learn to Code for Free – Coding Courses for Busy People' />
+      <Helmet title={t('meta.title')} />
       <Grid>
         <Intro
           complete={complete}

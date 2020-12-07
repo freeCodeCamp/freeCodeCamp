@@ -34,7 +34,7 @@ export const Landing = ({ page = 'landing' }) => {
   return (
     <Fragment>
       <Helmet>
-        <title>Learn to Code for Free – Coding Courses for Busy People</title>
+        <title>{t('meta.title')}</title>
       </Helmet>
       <main className='landing-page'>
         <Grid>
