@@ -36,7 +36,7 @@ const locations = {
 module.exports = Object.assign(locations, {
   clientLocale,
   curriculumLocale,
-  showLocaleDropdownMenu,
+  showLocaleDropdownMenu: showLocaleDropdownMenu === 'true',
   deploymentEnv,
   environment: process.env.FREECODECAMP_NODE_ENV || 'development',
   stripePublicKey:
