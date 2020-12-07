@@ -2,14 +2,22 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const { langDisplayNames, availableLangs } = require('../../../i18n/allLangs');
+const {
+  availableLangs,
+  i18nextCodes,
+  langDisplayNames
+} = require('../../../i18n/allLangs');
 const { homeLocation } = require('../../../config/env');
 
 const locales = availableLangs.client;
 
 const LanguageMenu = () => {
   const { i18n, t } = useTranslation();
-  const currentLanguage = i18n.language;
+  const i18nLanguage = i18n.language;
+
+  const currentLanguage = Object.keys(i18nextCodes).find(
+    key => i18nextCodes[key] === i18nLanguage
+  );
 
   const changeLanguage = e => {
     // see if we can get the path from gatsby or something?
