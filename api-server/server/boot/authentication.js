@@ -1,6 +1,6 @@
 import passport from 'passport';
 import dedent from 'dedent';
-import { check } from 'express-validator/check';
+import { check } from 'express-validator';
 import { isEmail } from 'validator';
 import jwt from 'jsonwebtoken';
 
