@@ -123,10 +123,7 @@ class DonateFormChildViewForHOC extends Component {
     // change the donation modal button label to close
     // or display the close button for the cert donation section
     if (this.props.handleProcessing) {
-      this.props.handleProcessing(
-        this.state.donationDuration,
-        Math.round(amount / 100)
-      );
+      this.props.handleProcessing(duration, amount);
     }
 
     return this.props.postChargeStripe({
