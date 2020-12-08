@@ -1,6 +1,6 @@
 const { addComment } = require('./add-comment');
 const { rateLimiter } = require('../utils');
-const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
+const { owner, freeCodeCampRepo, defaultBase, octokitConfig, octokitAuth } = require('../constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
 
@@ -11,19 +11,19 @@ const closeOpen = async number => {
   await octokit.pullRequests
     .update({
       owner,
-      repo,
+      repo: freeCodeCampRepo,
       number,
       state: 'closed',
-      base: 'master'
+      base: defaultBase
     })
     .then(async () => {
       await rateLimiter(5000);
       return octokit.pullRequests.update({
         owner,
-        repo,
+        repo: freeCodeCampRepo,
         number,
         state: 'open',
-        base: 'master'
+        base: defaultBase
       });
     })
     .then(async () => {

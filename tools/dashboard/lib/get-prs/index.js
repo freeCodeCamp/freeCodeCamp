@@ -1,30 +1,36 @@
 const _cliProgress = require('cli-progress');
 
-const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
+const { owner, octokitConfig, octokitAuth } = require('../constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
 const { getRange, getCount } = require('./pr-stats');
 
 octokit.authenticate(octokitAuth);
 
-const methodProps = {
-  owner,
-  repo,
-  state: 'open',
-  base: 'master',
-  sort: 'created',
-  direction: 'asc',
-  page: 1,
-  per_page: 100
-};
-
 const prsPaginate = async(
+  repo,
+  base,
   method,
   firstPR,
   lastPR,
   prPropsToGet,
   progressBar
 ) => {
+  
+  let methodProps = {
+    owner,
+    repo,
+    state: 'open',
+    sort: 'created',
+    direction: 'asc',
+    page: 1,
+    per_page: 100
+  };
+
+  if (base) {
+    methodProps = { ...methodProps, base };
+  }
+  
   const prFilter = (prs, first, last, prPropsToGet) => {
     const filtered = [];
     for (let pr of prs) {
@@ -57,15 +63,15 @@ const prsPaginate = async(
   return data;
 };
 
-const getUserInput = async(rangeType = '') => {
+const getUserInput = async(repo, base, rangeType = '') => {
   let data, firstPR, lastPR;
   if (rangeType === 'all') {
-    data = await getRange().then(data => data);
+    data = await getRange(repo, base).then(data => data);
     firstPR = data[0];
     lastPR = data[1];
   } else {
     let [type, start, end] = process.argv.slice(2);
-    data = await getRange().then(data => data);
+    data = await getRange(repo, base).then(data => data);
     firstPR = data[0];
     lastPR = data[1];
     if (type !== 'all' && type !== 'range') {
@@ -90,11 +96,15 @@ const getUserInput = async(rangeType = '') => {
       lastPR = end;
     }
   }
-  const totalPRs = await getCount().then(data => data);
+  // A null value for firstPR or lastPR indicates the repo had no open PRs
+  if (firstPR === null || lastPR === null) {
+    return { totalPRs: 0, firstPR, lastPR };
+  }
+  const totalPRs = await getCount(repo, base).then(data => data);
   return { totalPRs, firstPR, lastPR };
 };
 
-const getPRs = async (totalPRs, firstPR, lastPR, prPropsToGet) => {
+const getPRs = async (repo, base, totalPRs, firstPR, lastPR, prPropsToGet) => {
   let progressText = `Retrieve PRs (${firstPR}-${lastPR}) [{bar}] `;
   progressText += '{percentage}% | Elapsed Time: {duration_formatted} ';
   progressText += '| ETA: {eta_formatted}';
@@ -107,6 +117,8 @@ const getPRs = async (totalPRs, firstPR, lastPR, prPropsToGet) => {
   );
   getPRsBar.start(totalPRs, 0);
   let openPRs = await prsPaginate(
+    repo,
+    base,
     octokit.pullRequests.list,
     firstPR,
     lastPR,
@@ -120,7 +132,20 @@ const getPRs = async (totalPRs, firstPR, lastPR, prPropsToGet) => {
 };
 
 
-const filesPaginate = async number => {
+const filesPaginate = async (repo, number) => {
+  let methodProps = {
+    owner,
+    state: 'open',
+    sort: 'created',
+    direction: 'asc',
+    page: 1,
+    per_page: 100
+  };
+
+  if (repo) {
+    methodProps = { ...methodProps, repo };
+  }
+
   let response = await octokit.pullRequests.listFiles({
     number, ...methodProps
   });
@@ -134,10 +159,10 @@ const filesPaginate = async number => {
   return data;
 };
 
-const getFiles = async number => await filesPaginate(number);
+const getFiles = async (repo, number) => await filesPaginate(repo, number);
 
-const getFilenames = async number => (
-  await getFiles(number)
+const getFilenames = async (repo, number) => (
+  await getFiles(repo, number)
 ).map(({ filename }) => filename);
 
 module.exports = { getPRs, getUserInput, getFiles, getFilenames };

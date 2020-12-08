@@ -1,11 +1,11 @@
-const { owner, repo, octokitConfig, octokitAuth } = require('../constants');
+const { owner, freeCodeCampRepo, octokitConfig, octokitAuth } = require('../constants');
 const octokit = require('@octokit/rest')(octokitConfig);
 
 octokit.authenticate(octokitAuth);
 
 const addLabels = (number, labels, log) => {
   octokit.issues
-    .addLabels({ owner, repo, number, labels })
+    .addLabels({ owner, repo: freeCodeCampRepo, number, labels })
     .then(() => {
       console.log(`PR #${number} added ${JSON.stringify(labels)}\n`);
     })
