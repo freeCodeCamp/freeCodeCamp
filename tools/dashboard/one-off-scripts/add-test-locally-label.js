@@ -4,6 +4,7 @@ This is a one-off script to run on all open PRs to add the
 "scope: learn" label on it.
 */
 
+const { freeCodeCampRepo, defaultBase } = require('../lib/constants');
 const config = require('../config');
 
 const { getPRs, getUserInput } = require('../lib/get-prs');
@@ -13,9 +14,9 @@ const { rateLimiter, ProcessingLog } = require('../lib/utils');
 const log = new ProcessingLog('all-locally-tested-labels');
 
 (async () => {
-  const { totalPRs, firstPR, lastPR } = await getUserInput();
+  const { totalPRs, firstPR, lastPR } = await getUserInput(freeCodeCampRepo, defaultBase);
   const prPropsToGet = ['number', 'labels'];
-  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(freeCodeCampRepo, defaultBase, totalPRs, firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
     log.start();

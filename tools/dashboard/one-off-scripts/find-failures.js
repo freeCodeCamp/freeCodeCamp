@@ -5,7 +5,7 @@ console.error descriptions in the failuresToFind.json file.
 
 const fetch = require('node-fetch');
 
-const { owner, repo, octokitConfig, octokitAuth } = require('../lib/constants');
+const { owner, freeCodeCampRepo, defaultBase, octokitConfig, octokitAuth } = require('../lib/constants');
 
 const octokit = require('@octokit/rest')(octokitConfig);
 const { getPRs, getUserInput } = require('../lib/get-prs');
@@ -23,9 +23,9 @@ const errorsToFind = [
 ];
 
 (async () => {
-  const { totalPRs, firstPR, lastPR } = await getUserInput();
+  const { totalPRs, firstPR, lastPR } = await getUserInput(freeCodeCampRepo, defaultBase);
   const prPropsToGet = ['number', 'labels', 'head'];
-  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(freeCodeCampRepo, defaultBase, totalPRs, firstPR, lastPR, prPropsToGet);
 
   if (openPRs.length) {
     savePrData(openPRs, firstPR, lastPR);
@@ -46,7 +46,7 @@ const errorsToFind = [
       ) {
         const { data: statuses } = await octokit.repos.listStatusesForRef({
           owner,
-          repo,
+          repo: freeCodeCampRepo,
           ref
         });
         if (statuses.length) {

@@ -1,3 +1,4 @@
+const { freeCodeCampRepo, defaultBase } = require('../lib/constants');
 const config = require('../config');
 const { closeOpen } = require('../lib/pr-tasks');
 const { openJSONFile, ProcessingLog, rateLimiter } = require('../lib/utils');
@@ -21,7 +22,7 @@ const getUserInput = async () => {
 };
 
 (async () => {
-  const { prs } = await getUserInput();
+  const { prs } = await getUserInput(freeCodeCampRepo, defaultBase);
   return prs;
 })()
   .then(async prs => {

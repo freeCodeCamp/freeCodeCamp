@@ -3,7 +3,7 @@ This is a one-off script to run on all open PRs to add
 a comment and "status: needs update" label to any PR with guide articles which
 have frontmatter issues.
 */
-
+const { freeCodeCampRepo, defaultBase } = require('../lib/constants');
 const config = require('../config');
 
 const fetch = require('node-fetch');
@@ -95,9 +95,9 @@ const guideFolderChecks = async(number, prFiles, user) => {
 };
 
 (async() => {
-  const { totalPRs, firstPR, lastPR } = await getUserInput();
+  const { totalPRs, firstPR, lastPR } = await getUserInput(freeCodeCampRepo, defaultBase);
   const prPropsToGet = ['number', 'labels', 'user'];
-  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(freeCodeCampRepo, defaultBase, totalPRs, firstPR, lastPR, prPropsToGet);
 
   log.start();
   console.log('Starting frontmatter checks process...');
@@ -110,7 +110,7 @@ const guideFolderChecks = async(number, prFiles, user) => {
         user: { login: username }
       } = openPRs[count];
       
-      const prFiles = await getFiles(number);
+      const prFiles = await getFiles(freeCodeCampRepo, number);
       if (count > 4000) {
         await rateLimiter(2350);
       }

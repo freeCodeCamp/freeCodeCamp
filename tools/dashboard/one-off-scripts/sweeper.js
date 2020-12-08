@@ -10,6 +10,7 @@ To run the script for a specific range,
 run `node sweeper.js range startingPrNumber endingPrNumber`
 */
 
+const { freeCodeCampRepo, defaultBase } = require('../lib/constants');
 const { getPRs, getUserInput, getFiles } = require('../lib/get-prs');
 const { ProcessingLog, rateLimiter } = require('../lib/utils');
 const { labeler } = require('../lib/pr-tasks');
@@ -19,9 +20,9 @@ const log = new ProcessingLog('sweeper');
 log.start();
 console.log('Sweeper started...');
 (async () => {
-  const { totalPRs, firstPR, lastPR } = await getUserInput();
+  const { totalPRs, firstPR, lastPR } = await getUserInput(freeCodeCampRepo, defaultBase);
   const prPropsToGet = ['number', 'labels', 'user'];
-  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(freeCodeCampRepo, defaultBase, totalPRs, firstPR, lastPR, prPropsToGet);
   let count = 0;
   if (openPRs.length) {
     console.log('Processing PRs...');
@@ -30,7 +31,7 @@ console.log('Sweeper started...');
         number,
         labels: currentLabels,
       } = openPRs[i];
-      const prFiles = await getFiles(number);
+      const prFiles = await getFiles(freeCodeCampRepo, number);
       count++;
 
       const labelsAdded = await labeler(

@@ -9,7 +9,7 @@ Note: If any PR displayed in the console shows "unknown", you will need to rerun
 the script again.
 */
 
-const { owner, repo, octokitConfig, octokitAuth } = require('../lib/constants');
+const { owner, freeCodeCampRepo, defaultBase, octokitConfig, octokitAuth } = require('../lib/constants');
 const octokit = require('@octokit/rest')(octokitConfig);
 
 const { getPRs, getUserInput } = require('../lib/get-prs');
@@ -32,9 +32,9 @@ if (languageLabel) {
 const log = new ProcessingLog('unknown-repo-prs-with-merge-conflicts');
 log.start();
 (async () => {
-  const { totalPRs, firstPR, lastPR } = await getUserInput('all');
+  const { totalPRs, firstPR, lastPR } = await getUserInput(freeCodeCampRepo, defaultBase, 'all');
   const prPropsToGet = ['number', 'labels', 'user', 'head'];
-  const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(freeCodeCampRepo, defaultBase, totalPRs, firstPR, lastPR, prPropsToGet);
   if (openPRs.length) {
     let count = 0;
     let mergeConflictCount = 0;
@@ -47,11 +47,11 @@ log.start();
       );
 
       if (headRepo === null && (!languageLabel || hasLanguage )) {
-        let data = await octokit.pullRequests.get({ owner, repo, number });
+        let data = await octokit.pullRequests.get({ owner, repo: freeCodeCampRepo, number });
         let mergeableState = data.data.mergeable_state;
         if (mergeableState === 'unknown') {
           await rateLimiter(4000); // allow time to let GitHub determine status
-          data = await octokit.pullRequests.get({ owner, repo, number });
+          data = await octokit.pullRequests.get({ owner, repo: freeCodeCampRepo, number });
           mergeableState = data.data.mergeable_state;
         }
         count++;
