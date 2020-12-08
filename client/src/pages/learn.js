@@ -77,7 +77,7 @@ export const LearnPage = ({
   const hashValue = hashValueSelector(state, hash);
   return (
     <LearnLayout>
-      <Helmet title='Learn to code at home | freeCodeCamp.org' />
+      <Helmet title='Learn to Code for Free – Coding Courses for Busy People' />
       <Grid>
         <Intro
           complete={complete}
