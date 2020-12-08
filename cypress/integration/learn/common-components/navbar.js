@@ -42,7 +42,7 @@ describe('Navbar', () => {
       cy.get('input').clear();
     });
 
-    cy.get('div.ais-Hits').should('not.be.visible');
+    cy.get('div.ais-Hits').should('not.exist');
   });
 
   it('Should have a Sign In button', () => {

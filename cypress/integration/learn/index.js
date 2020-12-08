@@ -26,7 +26,10 @@ describe('Learn Landing page (not logged in)', () => {
   it('Should render', () => {
     cy.visit(locations.index);
 
-    cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
+    cy.title().should(
+      'eq',
+      'Learn to Code for Free – Coding Courses for Busy People'
+    );
   });
 
   it('Has the correct heading for an unauthenticated User', () => {
@@ -95,7 +98,7 @@ describe('Superblocks and Blocks', () => {
     cy.contains(superBlockNames[0])
       .click()
       .should('have.attr', 'aria-expanded', 'false');
-    cy.contains('Basic HTML and HTML5').should('not.be.visible');
+    cy.contains('Basic HTML and HTML5').should('not.exist');
 
     cy.contains(superBlockNames[0])
       .click()
@@ -107,9 +110,7 @@ describe('Superblocks and Blocks', () => {
     cy.contains('Basic HTML and HTML5')
       .click()
       .should('have.attr', 'aria-expanded', 'false');
-    cy.contains('Introduction to Basic HTML and HTML5').should(
-      'not.be.visible'
-    );
+    cy.contains('Introduction to Basic HTML and HTML5').should('not.exist');
 
     cy.contains('Basic HTML and HTML5')
       .click()

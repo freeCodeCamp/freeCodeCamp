@@ -248,10 +248,13 @@ ${getFullPath('english')}
     // while the auditing is ongoing, we default to English for un-audited certs
     // once that's complete, we can revert to using isEnglishChallenge(fullPath)
     const useEnglish = lang === 'english' || !isAuditedCert(lang, superBlock);
-    const isCert = path.extname(filePath) === 'markdown';
+    const isCert = path.extname(filePath) === '.markdown';
     let challenge;
 
     if (isCert) {
+      // TODO: this uses the old parser to handle certifcates, but Markdown is a
+      // clunky way to store data, consider converting to YAML and removing the
+      // old parser.
       challenge = await (useEnglish
         ? parseMarkdown(getFullPath('english'))
         : parseTranslation(

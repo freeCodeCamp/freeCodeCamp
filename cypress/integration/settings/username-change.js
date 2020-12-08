@@ -89,12 +89,12 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('twaha', { force: true });
 
-    cy.contains('Username is available.').should('not.be.visible');
-    cy.contains('Username not available.').should('not.be.visible');
+    cy.contains('Username is available.').should('not.exist');
+    cy.contains('Username not available.').should('not.exist');
     cy.contains(
       'Please note, changing your username will also change ' +
         'the URL to your profile and your certifications.'
-    ).should('not.be.visible');
+    ).should('not.exist');
 
     cy.get('@usernameForm')
       .contains('Save')
@@ -191,9 +191,7 @@ describe('Username input field', () => {
       cy.get('button').click();
     });
 
-    cy.contains('We have updated your username to bjorno').should(
-      'not.be.visible'
-    );
+    cy.contains('We have updated your username to bjorno').should('not.exist');
 
     cy.resetUsername();
   });
