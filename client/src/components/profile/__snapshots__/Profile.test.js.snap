@@ -38,7 +38,7 @@ exports[`<Profile/> renders correctly 1`] = `
           class="text-center social-media-icons col-sm-6 col-sm-offset-3"
         >
           <a
-            aria-label="Link to string's LinkedIn"
+            aria-label="aria.linkedin"
             href="string"
             rel="noopener noreferrer"
             target="_blank"
@@ -60,7 +60,7 @@ exports[`<Profile/> renders correctly 1`] = `
             </svg>
           </a>
           <a
-            aria-label="Link to string's Github"
+            aria-label="aria.github"
             href="string"
             rel="noopener noreferrer"
             target="_blank"
@@ -82,7 +82,7 @@ exports[`<Profile/> renders correctly 1`] = `
             </svg>
           </a>
           <a
-            aria-label="Link to string's website"
+            aria-label="aria.website"
             href="string"
             rel="noopener noreferrer"
             target="_blank"
@@ -104,7 +104,7 @@ exports[`<Profile/> renders correctly 1`] = `
             </svg>
           </a>
           <a
-            aria-label="Link to string's Twitter"
+            aria-label="aria.twitter"
             href="string"
             rel="noopener noreferrer"
             target="_blank"
