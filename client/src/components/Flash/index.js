@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Alert } from '@freecodecamp/react-bootstrap';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { useTranslation } from 'react-i18next';
 
 import './flash.css';
 
 function Flash({ flashMessage, onClose }) {
-  const { type, message, id } = flashMessage;
+  // flash messages coming from the server are already translated
+  // messages on the client get translated here
+  const { type, message, id, needsTranslating = false } = flashMessage;
+  const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(null);
-
+  console.log(flashMessage);
   useEffect(() => {
     setFlashMessageHeight(
       document.querySelector('.flash-message').offsetHeight
@@ -33,7 +37,7 @@ function Flash({ flashMessage, onClose }) {
             className='flash-message'
             onDismiss={handleClose}
           >
-            {message}
+            {needsTranslating ? t(`${message}`) : message}
           </Alert>
         </CSSTransition>
       </TransitionGroup>
@@ -53,7 +57,8 @@ Flash.propTypes = {
   flashMessage: PropTypes.shape({
     id: PropTypes.string,
     type: PropTypes.string,
-    message: PropTypes.string
+    message: PropTypes.string,
+    needsTranslating: PropTypes.bool
   }),
   onClose: PropTypes.func.isRequired
 };

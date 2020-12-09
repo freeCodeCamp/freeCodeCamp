@@ -7,6 +7,7 @@ import debug from 'debug';
 import { isEmail } from 'validator';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
+import { i18n } from '../i18n';
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
 import {
@@ -61,33 +62,12 @@ export function getFallbackFrontEndDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
-const noNameMessage = dedent`
-  We need your name so we can put it on your certification.
-  Add your name to your account settings and click the save button.
-  Then we can issue your certification.
-  `;
-
-const notCertifiedMessage = name => dedent`
-  It looks like you have not completed the necessary steps.
-  Please complete the required projects to claim the
-  ${name} Certification
-  `;
-
-const alreadyClaimedMessage = name => dedent`
-    It looks like you already have claimed the ${name} Certification
-    `;
-
-const successMessage = (username, name) => dedent`
-    @${username}, you have successfully claimed
-    the ${name} Certification!
-    Congratulations on behalf of the freeCodeCamp.org team!
-    `;
-
-const failureMessage = name => dedent`
-    Something went wrong with the verification of ${name}, please try again.
-    If you continue to receive this error, you can send a message to
-    support@freeCodeCamp.org to get help.
-    `;
+const noNameMessage = i18n.__('msg-17');
+const notCertifiedMessage = name => i18n.__('msg-18', { name: name });
+const alreadyClaimedMessage = name => i18n.__('msg-19', { name: name });
+const successMessage = (username, name) =>
+  i18n.__('msg-20', { username: username, name: name });
+const failureMessage = name => i18n.__('msg-21', { name: name });
 
 function ifNoSuperBlock404(req, res, next) {
   const { superBlock } = req.body;
@@ -316,7 +296,7 @@ function createVerifyCert(certTypeIds, app) {
         // certificate doesn't exist or
         // connection error
         if (!challenge) {
-          reportError(`Error claiming ${certName}`);
+          reportError(i18n.__('msg-22', { certName: certName }));
           return Observable.just(failureMessage(certName));
         }
 
@@ -430,8 +410,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message:
-                'We could not find a user with the username "' + username + '"'
+              message: i18n.__('msg-23', { username: username })
             }
           ]
         });
@@ -443,10 +422,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: dedent`
-              This user needs to add their name to their account
-              in order for others to be able to view their certification.
-            `
+              message: i18n.__('msg-24')
             }
           ]
         });
@@ -457,9 +433,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message:
-                'This user is not eligible for freeCodeCamp.org ' +
-                'certifications at this time'
+              message: i18n.__('msg-25')
             }
           ]
         });
@@ -470,11 +444,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: dedent`
-              ${username} has chosen to make their portfolio
-                private. They will need to make their portfolio public
-                in order for others to be able to view their certification.
-            `
+              message: i18n.__('msg-26', { username: username })
             }
           ]
         });
@@ -485,11 +455,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: dedent`
-              ${username} has chosen to make their certifications
-                private. They will need to make their certifications public
-                in order for others to be able to view them.
-            `
+              message: i18n.__('msg-27', { username: username })
             }
           ]
         });
@@ -500,9 +466,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: dedent`
-              ${username} has not yet agreed to our Academic Honesty Pledge.
-            `
+              message: i18n.__('msg-28')
             }
           ]
         });
@@ -549,9 +513,10 @@ function createShowCert(app) {
         messages: [
           {
             type: 'info',
-            message: `
-It looks like user ${username} is not ${certText[certType]} certified
-          `
+            message: i18n.__('msg-29', {
+              username: username,
+              cert: certText[certType]
+            })
           }
         ]
       });

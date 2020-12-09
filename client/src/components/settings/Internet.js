@@ -82,7 +82,7 @@ class InternetSettings extends Component {
     }
     return {
       state: 'error',
-      message: t('flash.url.invalidated')
+      message: t('validation.msg-8')
     };
   }
 

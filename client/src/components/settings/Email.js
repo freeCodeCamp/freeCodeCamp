@@ -97,7 +97,7 @@ class EmailSettings extends Component {
     if (newEmail === currentEmail) {
       return {
         state: 'error',
-        message: t('flash.email.same')
+        message: t('validation.msg-2')
       };
     }
     if (isEmail(newEmail)) {
@@ -105,7 +105,7 @@ class EmailSettings extends Component {
     } else {
       return {
         state: 'error',
-        message: t('flash.email.invalid')
+        message: t('validation.msg-3')
       };
     }
   };
@@ -126,7 +126,7 @@ class EmailSettings extends Component {
     if (maybeEmailRE.test(confirmNewEmail)) {
       return {
         state: isMatch ? 'success' : 'error',
-        message: isMatch ? '' : t('flash.email.mismatch')
+        message: isMatch ? '' : t('validation.msg-4')
       };
     } else {
       return {

@@ -19,6 +19,7 @@
     "view": "Ver",
     "show-cert": "Mostrar certificación",
     "claim-cert": "Certificación de reclamo",
+    "save-progress": "Guardar progreso",
     "accepted-honesty": "Ha aceptado nuestra Política de honestidad académica.",
     "agree": "De acuerdo",
     "save-portfolio": "Guardar este artículo de cartera",
@@ -101,10 +102,12 @@
     "claim-legacy": "Una vez que haya obtenido las siguientes certificaciones de FreeCodeCamp, podrá reclamar las {{cert}}:",
     "for": "Configuración de cuenta para {{username}}",
     "username": {
-      "error": "Nombre de usuario {{error}}",
-      "unavailable": "Nombre de usuario no disponible.",
+      "invalid": "Nombre de usuario contiene caracteres no válidos",
+      "too-short": "El nombre de usuario es demasiado corto",
+      "reserved": "El nombre de usuario contiene un código reservado",
+      "unavailable": "Nombre de usuario no disponible",
       "validating": "Validando nombre de usuario...",
-      "available": "Nombre de usuario disponible.",
+      "available": "Nombre de usuario disponible",
       "change": "Tenga en cuenta que cambiar su nombre de usuario también cambiará la URL de su perfil y sus certificaciones."
     },
     "labels": {
@@ -340,8 +343,8 @@
     "email-signup": "Regístrese por correo electrónico",
     "quincy": "- Quincy Larson, el maestro que fundó freeCodeCamp.org",
     "email-blast": "Por cierto, cada viernes envío un correo electrónico con 5 enlaces sobre programación e informática. Los envío a unos 4 millones de personas. ¿Quieres que te envíe esto también?",
-    "update-email-1": "Update your email address",
-    "update-email-2": "Update your email address here:",
+    "update-email-1": "Actualice su dirección de correo electrónico",
+    "update-email-2": "Actualice su dirección de correo electrónico aquí:",
     "email": "Correo electrónico"
   },
   "icons": {
@@ -363,23 +366,22 @@
     "answer": "Responder"
   },
   "flash": {
-    "honesty": "Para reclamar una certificación, primero debe aceptar nuestra política de honestidad académica",
-    "character-limit": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
-    "email": {
-      "same": "Este correo electrónico es el mismo que su correo electrónico actual",
-      "invalid": "No pudimos validar su correo electrónico correctamente, asegúrese de que sea correcto",
-      "mismatch": "Ambas nuevas direcciones de correo electrónico deben ser iguales"
-    },
-    "title": {
-      "required": "Se requiere un título",
-      "short": "El título es demasiado corto",
-      "long": "El título es demasiado largo"
-    },
-    "url": {
-      "invalidated": "No pudimos validar su URL correctamente, asegúrese de que sea correcta",
-      "protocol": "La URL debe comenzar con http o https",
-      "image": "La URL debe vincularse directamente a un archivo de imagen",
-      "invalid": "Utilice una URL válida"
-    }
+    "msg-1": "Para reclamar una certificación, primero debe aceptar nuestra política de honestidad académica",
+    "msg-2": "Algo realmente extraño sucedió. Si vuelve a ocurrir, considere plantear un problema en https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
+    "msg-3": "Algo no está bien. Se ha generado un informe y se ha notificado al equipo de freeCodeCamp.org",
+    "msg-4": "Algo salió mal, verifique e intente nuevamente"
+ },
+  "validation": {
+    "msg-1": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
+    "msg-2": "Este correo electrónico es el mismo que su correo electrónico actual",
+    "msg-3": "No pudimos validar su correo electrónico correctamente, asegúrese de que sea correcto",
+    "msg-4": "Ambas nuevas direcciones de correo electrónico deben ser iguales",
+    "msg-5": "Se requiere un título",
+    "msg-6": "El título es demasiado corto",
+    "msg-7": "El título es demasiado largo",
+    "msg-8": "No pudimos validar su URL correctamente, asegúrese de que sea correcta",
+    "msg-9": "La URL debe comenzar con http o https",
+    "msg-10": "La URL debe vincularse directamente a un archivo de imagen",
+    "msg-11": "Utilice una URL válida"
   }
 }

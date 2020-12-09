@@ -122,9 +122,7 @@ class UsernameSettings extends Component {
     if (!validating && error) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger'>
-            {t('settings.username.error', { error: error })}
-          </Alert>
+          <Alert bsStyle='danger'>{t(`${error}`)}</Alert>
         </FullWidthRow>
       );
     }

@@ -29,6 +29,7 @@ const translationSchema = strictObject({
     view: stringType,
     'show-cert': stringType,
     'claim-cert': stringType,
+    'save-progress': stringType,
     'accepted-honesty': stringType,
     agree: stringType,
     'save-portfolio': stringType,
@@ -111,7 +112,9 @@ const translationSchema = strictObject({
     'claim-legacy': stringType,
     for: stringType,
     username: strictObject({
-      error: stringType,
+      invalid: stringType,
+      'too-short': stringType,
+      reserved: stringType,
       unavailable: stringType,
       validating: stringType,
       available: stringType,
@@ -373,24 +376,23 @@ const translationSchema = strictObject({
     answer: stringType
   }),
   flash: strictObject({
-    honesty: stringType,
-    'character-limit': stringType,
-    email: strictObject({
-      same: stringType,
-      invalid: stringType,
-      mismatch: stringType
-    }),
-    title: strictObject({
-      required: stringType,
-      short: stringType,
-      long: stringType
-    }),
-    url: strictObject({
-      invalidated: stringType,
-      protocol: stringType,
-      image: stringType,
-      invalid: stringType
-    })
+    'msg-1': stringType,
+    'msg-2': stringType,
+    'msg-3': stringType,
+    'msg-4': stringType
+  }),
+  validation: strictObject({
+    'msg-1': stringType,
+    'msg-2': stringType,
+    'msg-3': stringType,
+    'msg-4': stringType,
+    'msg-5': stringType,
+    'msg-6': stringType,
+    'msg-7': stringType,
+    'msg-8': stringType,
+    'msg-9': stringType,
+    'msg-10': stringType,
+    'msg-11': stringType
   })
 });
 

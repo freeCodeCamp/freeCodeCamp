@@ -11,7 +11,7 @@ import dedent from 'dedent';
 import { ObjectID } from 'mongodb';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
-
+import { i18n } from '../i18n';
 import { homeLocation } from '../../../config/env';
 
 import { ifNoUserSend } from '../utils/middleware';
@@ -193,7 +193,7 @@ export function isValidChallengeCompletion(req, res, next) {
 
   const isValidChallengeCompletionErrorMsg = {
     type: 'error',
-    message: 'That does not appear to be a valid challenge submission.'
+    message: i18n.__('msg-30')
   };
 
   if (!ObjectID.isValid(id)) {
@@ -260,8 +260,7 @@ function projectCompleted(req, res, next) {
   if (!completedChallenge.solution) {
     return res.status(403).json({
       type: 'error',
-      message:
-        'You have not provided the valid links for us to inspect your work.'
+      message: i18n.__('msg-31')
     });
   }
 

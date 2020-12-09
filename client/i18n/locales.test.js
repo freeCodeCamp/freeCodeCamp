@@ -1,6 +1,7 @@
 /* global expect */
 import { motivationSchema } from './motivationSchema';
 import { translationSchema } from './translationSchema';
+import { serverSchema } from './serverSchema';
 import {
   availableLangs,
   i18nextCodes,
@@ -11,6 +12,7 @@ import {
 const fs = require('fs');
 const { expectToMatchSchema, setup } = require('jest-json-schema-extended');
 
+console.log(setup);
 setup();
 
 const filesThatShouldExist = [
@@ -21,6 +23,10 @@ const filesThatShouldExist = [
   {
     name: 'motivation.json',
     schema: motivationSchema
+  },
+  {
+    name: 'server.json',
+    schema: serverSchema
   }
 ];
 

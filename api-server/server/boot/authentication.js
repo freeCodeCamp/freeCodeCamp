@@ -1,9 +1,9 @@
 import passport from 'passport';
-import dedent from 'dedent';
 import { check } from 'express-validator';
 import { isEmail } from 'validator';
 import jwt from 'jsonwebtoken';
 
+import { i18n } from '../i18n';
 import { homeLocation } from '../../../config/env';
 import { jwtSecret } from '../../../config/secrets';
 
@@ -72,7 +72,7 @@ module.exports = function enableAuthentication(app) {
       if (err) {
         throw wrapHandledError(new Error('could not destroy session'), {
           type: 'info',
-          message: 'We could not log you out, please try again in a moment.',
+          message: i18n.__('msg-11'),
           redirectTo: homeLocation
         });
       }
@@ -91,11 +91,6 @@ module.exports = function enableAuthentication(app) {
   app.use(api);
 };
 
-const defaultErrorMsg = dedent`
-    Oops, something is not right,
-    please request a fresh link to sign in / sign up.
-  `;
-
 function createGetPasswordlessAuth(app) {
   const {
     models: { AuthToken, User }
@@ -110,7 +105,7 @@ function createGetPasswordlessAuth(app) {
       return next(
         wrapHandledError(new TypeError('decoded email is invalid'), {
           type: 'info',
-          message: 'The email encoded in the link is incorrectly formatted',
+          message: i18n.__('msg-12'),
           redirectTo: `${homeLocation}/signin`
         })
       );
@@ -124,7 +119,7 @@ function createGetPasswordlessAuth(app) {
               new Error(`no token found for id: ${authTokenId}`),
               {
                 type: 'info',
-                message: defaultErrorMsg,
+                message: i18n.__('msg-13'),
                 redirectTo: `${homeLocation}/signin`
               }
             );
@@ -138,7 +133,7 @@ function createGetPasswordlessAuth(app) {
                   new Error(`no user found for token: ${authTokenId}`),
                   {
                     type: 'info',
-                    message: defaultErrorMsg,
+                    message: i18n.__('msg-13'),
                     redirectTo: `${homeLocation}/signin`
                   }
                 );
@@ -149,7 +144,7 @@ function createGetPasswordlessAuth(app) {
                     new Error('user email does not match'),
                     {
                       type: 'info',
-                      message: defaultErrorMsg,
+                      message: i18n.__('msg-13'),
                       redirectTo: `${homeLocation}/signin`
                     }
                   );
@@ -161,10 +156,7 @@ function createGetPasswordlessAuth(app) {
                   if (!isValid) {
                     throw wrapHandledError(new Error('token is invalid'), {
                       type: 'info',
-                      message: `
-                        Looks like the link you clicked has expired,
-                        please request a fresh link, to sign in.
-                      `,
+                      message: i18n.__('msg-14'),
                       redirectTo: `${homeLocation}/signin`
                     });
                   }
@@ -178,10 +170,7 @@ function createGetPasswordlessAuth(app) {
         // update user and log them in
         .map(user => user.loginByRequest(req, res))
         .do(() => {
-          req.flash(
-            'success',
-            'Success! You have signed in to your account. Happy Coding!'
-          );
+          req.flash('success', i18n.__('msg-15'));
           return res.redirectWithFlash(`${homeLocation}/learn`);
         })
         .subscribe(() => {}, next)

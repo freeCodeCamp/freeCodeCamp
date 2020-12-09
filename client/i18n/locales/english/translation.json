@@ -19,6 +19,7 @@
     "view": "View",
     "show-cert": "Show Certification",
     "claim-cert": "Claim Certification",
+    "save-progress": "Save Progress",
     "accepted-honesty": "You have accepted our Academic Honesty Policy.",
     "agree": "Agree",
     "save-portfolio": "Save this portfolio item",
@@ -101,10 +102,12 @@
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
     "for": "Account Settings for {{username}}",
     "username": {
-      "error": "Username {{error}}",
-      "unavailable": "Username not available.",
+      "invalid": "Username contains invalid characters",
+      "too-short": "Username is too short",
+      "reserved": "Username contains a reserved code",
+      "unavailable": "Username not available",
       "validating": "Validating username...",
-      "available": "Username is available.",
+      "available": "Username is available",
       "change": "Please note, changing your username will also change the URL to your profile and your certifications."
     },
     "labels": {
@@ -363,23 +366,22 @@
     "answer": "Answer"
   },
   "flash": {
-    "honesty": "To claim a certification, you must first accept our academic honesty policy",
-    "character-limit": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
-    "email": {
-      "same": "This email is the same as your current email",
-      "invalid": "We could not validate your email correctly, please ensure it is correct",
-      "mismatch": "Both new email addresses must be the same"
-    },
-    "title": {
-      "required": "A title is required",
-      "short": "Title is too short",
-      "long": "Title is too long"
-    },
-    "url": {
-      "invalidated": "We could not validate your URL correctly, please ensure it is correct",
-      "protocol": "URL must start with http or https",
-      "image": "URL must link directly to an image file",
-      "invalid": "Please use a valid URL"
-    }
+    "msg-1": "To claim a certification, you must first accept our academic honesty policy",
+    "msg-2": "Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
+    "msg-3": "Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified",
+    "msg-4": "Something went wrong, please check and try again"
+  },
+  "validation": {
+    "msg-1": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
+    "msg-2": "This email is the same as your current email",
+    "msg-3": "We could not validate your email correctly, please ensure it is correct",
+    "msg-4": "Both new email addresses must be the same",
+    "msg-5": "A title is required",
+    "msg-6": "Title is too short",
+    "msg-7": "Title is too long",
+    "msg-8": "We could not validate your URL correctly, please ensure it is correct",
+    "msg-9": "URL must start with http or https",
+    "msg-10": "URL must link directly to an image file",
+    "msg-11": "Please use a valid URL"
   }
 }

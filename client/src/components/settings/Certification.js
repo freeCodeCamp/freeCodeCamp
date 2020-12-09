@@ -139,10 +139,10 @@ const isCertMapSelector = createSelector(
 );
 
 const honestyInfoMessage = () => {
-  const { t } = this.props;
   return {
     type: 'info',
-    message: t('flash.message')
+    message: 'flash.msg-1',
+    needsTranslating: true
   };
 };
 
@@ -296,6 +296,7 @@ export class CertificationSettings extends Component {
     const { superBlock } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${superBlock}`;
     const createClickHandler = superBlock => e => {
+      console.log(superBlock);
       e.preventDefault();
       if (isCert) {
         return navigate(certLocation);
@@ -456,7 +457,9 @@ export class CertificationSettings extends Component {
         <Spacer />
         <h3 className='text-center'>{certName}</h3>
         <Form
-          buttonText={fullForm ? 'Claim Certification' : 'Save Progress'}
+          buttonText={
+            fullForm ? t('buttons.claim-cert') : t('buttons.save-progress')
+          }
           enableSubmit={fullForm}
           formFields={formFields}
           hideButton={isCertClaimed}
