@@ -1,7 +1,7 @@
 /* global expect */
-import { clientSchema } from './clientSchema';
-import { motivationSchema } from './motivationSchema';
-import { serverSchema } from './serverSchema';
+import { clientSchema } from './client-schema';
+import { motivationSchema } from './motivation-schema';
+import { serverSchema } from './server-schema';
 import {
   availableLangs,
   i18nextCodes,
