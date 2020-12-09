@@ -12,11 +12,11 @@ i18n.use(initReactI18next).init({
   // we only load one language since each language will have it's own server
   resources: {
     [i18nextCode]: {
-      translation: require(`./locales/${clientLocale}/translation.json`)
+      client: require(`./locales/${clientLocale}/client.json`)
     }
   },
-  ns: ['translation'],
-  defaultNS: 'translation',
+  ns: ['client'],
+  defaultNS: 'client',
   returnObjects: true,
   debug: environment === 'development',
   interpolation: {

@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-/* This is used for testing. If a translation.json file doesn't match the
+/* This is used for testing. If a client.json file doesn't match the
  * structure here exactly, the tests will fail.
  */
 const {
@@ -8,7 +8,7 @@ const {
   stringType
 } = require('jest-json-schema-extended');
 
-const translationSchema = strictObject({
+const clientSchema = strictObject({
   meta: strictObject({
     title: stringType,
     description: stringType,
@@ -396,4 +396,4 @@ const translationSchema = strictObject({
   })
 });
 
-exports.translationSchema = translationSchema;
+exports.clientSchema = clientSchema;
