@@ -7,7 +7,7 @@ The client/react side of our website is translated into various world languages 
 
 The files for translating the website are located in the `client/i18n` folder. Each language has a folder within that containing JSON files with the translations. 
 
-The values in the `translation.json` file contain the majority of the text that appears on the website. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
+The values in the `client.json` file contain the majority of the text that appears on the website. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
 
 The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure.
 
@@ -220,10 +220,15 @@ i18n.__('key-2', { username: 'moT' })
 
 ## Changing Text
 
-To change text on the client side of things, go to the `translation.json` file, find the key that is being used in the react component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places. If the text you want to change is on the server, use the `server.json` file and do the same thing.
+To change text on the client side of things, go to the `client.json` file, find the key that is being used in the react component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places. If the text you want to change is on the server, use the `server.json` file and do the same thing.
 
 ## Adding Text
 
-If the text you want to add to the client exists in the `translation.json` file, use the existing key. No sense in creating another one.
+If the text you want to add to the client exists in the `client.json` file, use the existing key. No sense in creating another one.
 
-The `translationSchema.js` file is the "source of truth" for all of the `translation.json` files. If you need to add a new key, add it there. Then, add the key to **all** of the `translation.json` files with placeholder text in the langauges you don't know. The tests will fail if you don't. It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components. To add text on the server, do the same thing but with the `server.json` file.
+The `clientSchema.js` file is the "source of truth" for all of the `client.json` files. If you need to add a new key, add it there. Then, add the key to **all** of the `client.json` files with placeholder text in the langauges you don't know. The tests will fail if you don't. It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files. 
+
+> [!NOTE]
+> The underscore (`_`) is a reserved character for keys in the client side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
+
+To add text on the server, do the same thing but with the `server.json` file.

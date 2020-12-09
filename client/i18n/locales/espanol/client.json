@@ -189,7 +189,7 @@
     "supporter": "Seguidora",
     "contributor": "Colaboradora principal",
     "no-certs": "No se han obtenido certificaciones bajo el plan de estudios actual",
-    "fcc-certs": "freeCodeCamp Certifications",
+    "fcc-certs": "Certificaciones freeCodeCamp",
     "longest-streak": "Racha más larga:",
     "current-streak": "Racha actual:",
     "portfolio": "portafolio",
@@ -202,9 +202,13 @@
     "add-twitter": "Comparte esta certificación en Twitter",
     "tweet": "¡Acabo de obtener la certificación {{certTitle}} @freeCodeCamp! Compruébalo aquí: {{certURL}}",
     "avatar": "Avatar de {{username}}",
-    "joined": "Se unió en {{month}} de {{year}}",
-    "points": "{{count}} punto total",
-    "points_plural": "{{count}} puntos totales"
+    "joined": "Se unió en {{date}}",
+    "total-points": "{{count}} punto total",
+    "total-points_plural": "{{count}} puntos totales",
+    "points": "{{count}} punto el {{date}}",  
+    "points_plural": "{{count}} puntos el {{date}}",
+    "screen-shot": "Una captura de pantalla de {{title}}",
+    "page-number": "{{pageNumber}} of {{totalPages}}"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp es una organización sin fines de lucro 501 (c) (3) exenta de impuestos respaldada por donantes (Número de identificación fiscal federal de los Estados Unidos: 82-0779546)",
@@ -345,7 +349,8 @@
     "email-blast": "Por cierto, cada viernes envío un correo electrónico con 5 enlaces sobre programación e informática. Los envío a unos 4 millones de personas. ¿Quieres que te envíe esto también?",
     "update-email-1": "Actualice su dirección de correo electrónico",
     "update-email-2": "Actualice su dirección de correo electrónico aquí:",
-    "email": "Correo electrónico"
+    "email": "Correo electrónico",
+    "and": "y"
   },
   "icons": {
     "gold-cup": "Copa de Oro",
@@ -363,13 +368,23 @@
   },
   "aria": {
     "fcc-logo": "freeCodeCamp Logotipo",
-    "answer": "Responder"
+    "answer": "Responder",
+    "linkedin": "Enlace a LinkedIn de {{username}}",
+    "github": "Enlace a GitHub de {{username}}",
+    "website": "Enlace al sitio web de {{username}}",
+    "twitter": "Enlace a Twitter de {{username}}",
+    "first-page": "Ir a la primera pagina",
+    "previous-page": "Regresar a la pagina anterior",
+    "next-page": "Ir a la página siguiente",
+    "last-page": "Ir a la última página"
   },
   "flash": {
     "msg-1": "Para reclamar una certificación, primero debe aceptar nuestra política de honestidad académica",
     "msg-2": "Algo realmente extraño sucedió. Si vuelve a ocurrir, considere plantear un problema en https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "msg-3": "Algo no está bien. Se ha generado un informe y se ha notificado al equipo de freeCodeCamp.org",
-    "msg-4": "Algo salió mal, verifique e intente nuevamente"
+    "msg-4": "Algo salió mal, verifique e intente nuevamente",
+    "msg-5": "Su cuenta ha sido eliminada correctamente",
+    "msg-6": "Tu progreso se ha restablecido"
  },
   "validation": {
     "msg-1": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",

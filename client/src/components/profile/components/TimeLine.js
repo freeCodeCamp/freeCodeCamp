@@ -1,6 +1,5 @@
 import React, { Component, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import format from 'date-fns/format';
 import { reverse, sortBy } from 'lodash';
 import {
   Button,
@@ -24,6 +23,11 @@ import {
 
 import { maybeUrlRE } from '../../../utils';
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
+
+import { langCodes } from '../../../../i18n/allLangs';
+import { clientLocale } from '../../../../config/env';
+
+const localeCode = langCodes[clientLocale];
 
 // Items per page in timeline.
 const ITEMS_PER_PAGE = 15;
@@ -178,7 +182,11 @@ class TimelineInner extends Component {
         <td>{this.renderViewButton(id, files, githubLink, solution)}</td>
         <td className='text-center'>
           <time dateTime={completedDate.toISOString()}>
-            {format(completedDate, 'MMMM d, y')}
+            {completedDate.toLocaleString([localeCode, 'en-US'], {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })}
           </time>
         </td>
       </tr>

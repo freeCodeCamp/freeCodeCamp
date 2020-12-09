@@ -202,9 +202,13 @@
     "add-twitter": "Share this certification on Twitter",
     "tweet": "I just earned the {{certTitle}} certification @freeCodeCamp! Check it out here: {{certURL}}",
     "avatar": "{{username}}'s avatar",
-    "joined": "Joined {{month}} {{year}}",
-    "points": "{{count}} total point",
-    "points_plural": "{{count}} total points"
+    "joined": "Joined {{date}}",
+    "total-points": "{{count}} total point",
+    "total-points_plural": "{{count}} total points",
+    "points": "{{count}} point on {{date}}",  
+    "points_plural": "{{count}} points on {{date}}",
+    "screen-shot": "A screen shot of {{title}}",
+    "page-number": "{{pageNumber}} of {{totalPages}}"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)",
@@ -345,7 +349,8 @@
     "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 4 million people. Would you like me to send this to you, too?",
     "update-email-1": "Update your email address",
     "update-email-2": "Update your email address here:",
-    "email": "Email"
+    "email": "Email",
+    "and": "and"
   },
   "icons": {
     "gold-cup": "Gold Cup",
@@ -363,13 +368,23 @@
   },
   "aria": {
     "fcc-logo": "freeCodeCamp Logo",
-    "answer": "Answer"
+    "answer": "Answer",
+    "linkedin": "Link to {{username}}'s LinkedIn",
+    "github": "Link to {{username}}'s GitHub",
+    "website": "Link to {{username}}'s website",
+    "twitter": "Link to {{username}}'s Twitter",
+    "first-page": "Go to first page",
+    "previous-page": "Go to previous page",
+    "next-page": "Go to next page",
+    "last-page": "Go to last page"
   },
   "flash": {
     "msg-1": "To claim a certification, you must first accept our academic honesty policy",
     "msg-2": "Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "msg-3": "Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified",
-    "msg-4": "Something went wrong, please check and try again"
+    "msg-4": "Something went wrong, please check and try again",
+    "msg-5": "Your account has been successfully deleted",
+    "msg-6": "Your progress has been reset"
   },
   "validation": {
     "msg-1": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",

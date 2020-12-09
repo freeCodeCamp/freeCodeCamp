@@ -32,7 +32,7 @@ function Portfolio({ portfolio = [] }) {
           <Media.Left align='middle'>
             {image && (
               <img
-                alt={`A screen shot of ${title}`}
+                alt={t('profile.screen-shot', { title: title })}
                 className='portfolio-screen-shot'
                 src={image}
               />

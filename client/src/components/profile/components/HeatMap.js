@@ -15,6 +15,13 @@ import Spacer from '../../helpers/Spacer';
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
+import { langCodes } from '../../../../i18n/allLangs';
+import { clientLocale } from '../../../../config/env';
+
+const localeCode = langCodes[clientLocale];
+
+console.log(localeCode);
+
 const propTypes = {
   calendar: PropTypes.object
 };
@@ -61,10 +68,10 @@ class HeatMapInner extends Component {
   render() {
     const { calendarData, currentStreak, longestStreak, pages, t } = this.props;
     const { startOfCalendar, endOfCalendar } = pages[this.state.pageIndex];
-    const title = `${startOfCalendar.toLocaleDateString('en-US', {
+    const title = `${startOfCalendar.toLocaleDateString([localeCode, 'en-US'], {
       year: 'numeric',
       month: 'short'
-    })} - ${endOfCalendar.toLocaleDateString('en-US', {
+    })} - ${endOfCalendar.toLocaleDateString([localeCode, 'en-US'], {
       year: 'numeric',
       month: 'short'
     })}`;
@@ -110,24 +117,30 @@ class HeatMapInner extends Component {
           endDate={endOfCalendar}
           startDate={startOfCalendar}
           tooltipDataAttrs={value => {
-            let valueCount;
+            /* let valueCount;
             if (value && value.count === 1) {
               valueCount = '1 point';
             } else if (value && value.count > 1) {
               valueCount = `${value.count} points`;
             } else {
               valueCount = 'No points';
-            }
-            const dateFormatted = value.date
-              ? 'on ' +
-                value.date.toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric'
-                })
-              : '';
+            }*/
+            const dateFormatted =
+              value && value.date
+                ? value.date.toLocaleDateString([localeCode, 'en-US'], {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })
+                : '';
             return {
-              'data-tip': `<b>${valueCount}</b> ${dateFormatted}`
+              'data-tip':
+                value && value.count > -1
+                  ? t('profile.points', {
+                      count: value.count,
+                      date: dateFormatted
+                    })
+                  : ''
             };
           }}
           values={dataToDisplay}

@@ -213,8 +213,12 @@ const clientSchema = strictObject({
     tweet: stringType,
     avatar: stringType,
     joined: stringType,
+    'total-points': stringType,
+    'total-points_plural': stringType,
     points: stringType,
-    points_plural: stringType
+    points_plural: stringType,
+    'screen-shot': stringType,
+    'page-number': stringType
   }),
   footer: strictObject({
     'tax-exempt-status': stringType,
@@ -355,7 +359,8 @@ const clientSchema = strictObject({
     'email-blast': stringType,
     'update-email-1': stringType,
     'update-email-2': stringType,
-    email: stringType
+    email: stringType,
+    and: stringType
   }),
   icons: strictObject({
     'gold-cup': stringType,
@@ -373,13 +378,23 @@ const clientSchema = strictObject({
   }),
   aria: strictObject({
     'fcc-logo': stringType,
-    answer: stringType
+    answer: stringType,
+    linkedin: stringType,
+    github: stringType,
+    website: stringType,
+    twitter: stringType,
+    'first-page': stringType,
+    'previous-page': stringType,
+    'next-page': stringType,
+    'last-page': stringType
   }),
   flash: strictObject({
     'msg-1': stringType,
     'msg-2': stringType,
     'msg-3': stringType,
-    'msg-4': stringType
+    'msg-4': stringType,
+    'msg-5': stringType,
+    'msg-6': stringType
   }),
   validation: strictObject({
     'msg-1': stringType,
