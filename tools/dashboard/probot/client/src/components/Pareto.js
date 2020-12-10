@@ -26,13 +26,14 @@ class Pareto extends React.Component {
     all: [],
     selectedFileType: 'all',
     selectedLanguage: 'all',
-    options: {}
+    options: {},
+    rateLimitMessage: ''
   };
 
   componentDidMount() {
     fetch(ENDPOINT_PARETO)
       .then(response => response.json())
-      .then(({ ok, pareto }) => {
+      .then(({ ok, rateLimitMessage, pareto }) => {
         if (ok) {
           if (!pareto.length) {
             pareto.push({
@@ -41,11 +42,15 @@ class Pareto extends React.Component {
               prs: []
             });
           }
-          
+
           this.setState(prevState => ({
             data: pareto,
             all: [...pareto],
             options: this.createOptions(pareto)
+          }));
+        } else if (rateLimitMessage) {
+          this.setState(prevState => ({
+            rateLimitMessage
           }));
         }
       })
@@ -74,8 +79,8 @@ class Pareto extends React.Component {
   handleFileTypeOptionChange = changeEvent => {
     let { all, selectedLanguage, options } = this.state;
     const selectedFileType = changeEvent.target.value;
-    
-    let data = [ ...all ].filter(({ filename }) => {
+
+    let data = [...all].filter(({ filename }) => {
       const { articleType, language } = this.getFilenameOptions(filename);
       let condition;
       if (selectedFileType === 'all') {
@@ -86,7 +91,7 @@ class Pareto extends React.Component {
           condition = articleType === selectedFileType;
         } else if (!options[selectedFileType][selectedLanguage]) {
           condition = articleType === selectedFileType
-          selectedLanguage = 'all';    
+          selectedLanguage = 'all';
         } else {
           condition = articleType === selectedFileType && language === selectedLanguage
         }
@@ -95,11 +100,11 @@ class Pareto extends React.Component {
     });
     this.setState(prevState => ({ data, selectedFileType, selectedLanguage }));
   }
-  
+
   handleLanguageOptionChange = changeEvent => {
     const { all, selectedFileType } = this.state;
     const selectedLanguage = changeEvent.target.value;
-    let data = [ ...all ].filter(({ filename }) => {
+    let data = [...all].filter(({ filename }) => {
       const { articleType, language } = this.getFilenameOptions(filename);
       let condition;
       if (selectedLanguage === 'all') {
@@ -122,33 +127,34 @@ class Pareto extends React.Component {
     const [_, articleType, language] = filenameReplacement.match(regex) || [];
     return { articleType, language };
   }
-  
-  render() {
-    const { data, options, selectedFileType, selectedLanguage } = this.state;
 
-    const elements = data.map(entry => {
-      const { filename, count, prs } = entry;
-      const prsList = prs.map(({ number, username, title }) => {
-        return <ListItem key={number} number={number} username={username} prTitle={title} />;
-      });
-      const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
-      return (
-        <Result key={filename}>
-          <span style={filenameTitle}>{filename}</span>{' '}
-          <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">
-            (File on Master)
+  render() {
+    const { data, options, selectedFileType, selectedLanguage, rateLimitMessage } = this.state;
+    const elements = rateLimitMessage
+      ? rateLimitMessage
+      : data.map(entry => {
+        const { filename, count, prs } = entry;
+        const prsList = prs.map(({ number, username, title }) => {
+          return <ListItem key={number} number={number} username={username} prTitle={title} />;
+        });
+        const fileOnMaster = `https://github.com/freeCodeCamp/freeCodeCamp/blob/master/${filename}`;
+        return (
+          <Result key={filename}>
+            <span style={filenameTitle}>{filename}</span>{' '}
+            <a href={fileOnMaster} rel="noopener noreferrer" target="_blank">
+              (File on Master)
           </a>
-          <br />
-          <details style={detailsStyle}>
-            <summary># of PRs: {count}</summary>
-            <List>{prsList}</List>
-          </details>
-        </Result>
-      );
-    });
-    
+            <br />
+            <details style={detailsStyle}>
+              <summary># of PRs: {count}</summary>
+              <List>{prsList}</List>
+            </details>
+          </Result>
+        );
+      });
+
     let fileTypeOptions = Object.keys(options).map(articleType => articleType);
-    const typeOptions = [ 'all', ...fileTypeOptions].map((type) => (
+    const typeOptions = ['all', ...fileTypeOptions].map((type) => (
       <FilterOption
         key={type}
         name="filetype"
@@ -156,13 +162,13 @@ class Pareto extends React.Component {
         onOptionChange={this.handleFileTypeOptionChange}
         selectedOption={selectedFileType}
       >
-      {type.charAt().toUpperCase() + type.slice(1)}
+        {type.charAt().toUpperCase() + type.slice(1)}
       </FilterOption>
     ));
-    
+
     let languageOptions = null;
     if (selectedFileType !== 'all') {
-      let languages = Object.keys(options[selectedFileType]);    
+      let languages = Object.keys(options[selectedFileType]);
       languages = ['all', ...languages.sort()];
       languageOptions = languages.map(language => (
         <FilterOption
@@ -172,9 +178,9 @@ class Pareto extends React.Component {
           onOptionChange={this.handleLanguageOptionChange}
           selectedOption={selectedLanguage}
         >
-        {language.charAt().toUpperCase() + language.slice(1)}
+          {language.charAt().toUpperCase() + language.slice(1)}
         </FilterOption>
-      ));    
+      ));
     }
     return (
       <FullWidthDiv>
@@ -198,7 +204,11 @@ class Pareto extends React.Component {
             </fieldset>
           }
         </Options>
-        {data.length ? elements : 'Report Loading...'}
+        {rateLimitMessage
+          ? rateLimitMessage
+          : data.length
+            ? elements
+            : 'Report Loading...'}
       </FullWidthDiv>
     );
   }

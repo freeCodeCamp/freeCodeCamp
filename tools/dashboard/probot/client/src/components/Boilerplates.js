@@ -18,12 +18,13 @@ const filenameTitle = { fontWeight: '600' };
 class Boilerplates extends React.Component {
   state = {
     data: [],
+    rateLimitMessage: ''
   };
 
   componentDidMount() {
     fetch(ENDPOINT_BOILERPLATES)
       .then(response => response.json())
-      .then(({ ok, boilerplates }) => {
+      .then(({ ok, rateLimitMessage, boilerplates }) => {
         if (ok) {
           if (!boilerplates.length) {
             boilerplates.push({
@@ -31,9 +32,13 @@ class Boilerplates extends React.Component {
               prs: []
             });
           }
-          
+
           this.setState(prevState => ({
             data: boilerplates
+          }));
+        } else if (rateLimitMessage) {
+          this.setState(prevState => ({
+            rateLimitMessage
           }));
         }
       })
@@ -44,31 +49,37 @@ class Boilerplates extends React.Component {
         this.setState(prevState => ({ data: boilerplates }));
       });
   }
-  
-  render() {
-    const { data } = this.state;
 
-    const elements = data.map(entry => {
-      const { _id: repoName, prs } = entry;
-      const prsList = prs.map(({ _id: number, username, title, prLink }) => {
-        return <ListItem key={number} number={number} username={username} prTitle={title} prLink={prLink} />;
+  render() {
+    const { data, rateLimitMessage } = this.state;
+
+    const elements = rateLimitMessage
+      ? rateLimitMessage
+      : data.map(entry => {
+        const { _id: repoName, prs } = entry;
+        const prsList = prs.map(({ _id: number, username, title, prLink }) => {
+          return <ListItem key={number} number={number} username={username} prTitle={title} prLink={prLink} />;
+        });
+
+        return (
+          <Result key={repoName}>
+            <span style={filenameTitle}>{repoName}</span>
+            <br />
+            <details style={detailsStyle}>
+              <summary># of PRs: {prs.length}</summary>
+              <List>{prsList}</List>
+            </details>
+          </Result>
+        );
       });
 
-      return (
-        <Result key={repoName}>
-          <span style={filenameTitle}>{repoName}</span>
-          <br />
-          <details style={detailsStyle}>
-            <summary># of PRs: {prs.length}</summary>
-            <List>{prsList}</List>
-          </details>
-        </Result>
-      );
-    });
-    
     return (
       <FullWidthDiv>
-        {data.length ? elements : 'Report Loading...'}
+        {rateLimitMessage
+          ? rateLimitMessage
+          : data.length
+            ? elements
+            : 'Report Loading...'}
       </FullWidthDiv>
     );
   }

@@ -13,7 +13,7 @@ const List = styled.div`
 
 const filenameTitle = { fontWeight: '600' };
 
-const FilenameResults = ({ searchValue, results }) => {
+const FilenameResults = ({ searchValue, results, rateLimitMessage }) => {
   const elements = results.map(result => {
     const { filename, prs: prObjects } = result;
     const prs = prObjects.map(({ number, username, title }, index) => {
@@ -31,11 +31,17 @@ const FilenameResults = ({ searchValue, results }) => {
       </Result>
     );
   });
-
+  const showResults = () => {
+    if (!rateLimitMessage) {
+      return (results.length ? <h3>Results for: {searchValue}</h3> : null) && elements;
+    } else {
+      return rateLimitMessage;
+    }
+  };
+  
   return (
     <FullWidthDiv>
-      {results.length ? <h3>Results for: {searchValue}</h3> : null}
-      {elements}
+      {showResults()}
     </FullWidthDiv>
   );
 };

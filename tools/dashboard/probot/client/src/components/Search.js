@@ -11,7 +11,7 @@ class Search extends Component {
     searchValue: '',
     selectedOption: 'pr',
     results: [],
-    message: ''
+    message: '',
   };
 
   clearObj = { searchValue: '', results: [] };
@@ -64,9 +64,13 @@ class Search extends Component {
 
     fetch(fetchUrl)
       .then(response => response.json())
-      .then(({ ok, message, results }) => {
+      .then(({ ok, message, results, rateLimitMessage }) => {
         if (ok) {
           this.setState(prevState => ({ message, results }));
+        } else if (rateLimitMessage) {
+          this.setState(prevState => ({
+            rateLimitMessage
+          }));
         }
       })
       .catch(() => {
@@ -86,7 +90,7 @@ class Search extends Component {
       handleOptionChange,
       state
     } = this;
-    const { searchValue, message, results, selectedOption } = state;
+    const { searchValue, message, results, selectedOption, rateLimitMessage } = state;
 
     return (
       <>
@@ -114,10 +118,10 @@ class Search extends Component {
         <button onClick={handleButtonClick}>Search</button>
         {message}
         {selectedOption === 'pr' && (
-          <PrResults searchValue={searchValue} results={results} />
+          <PrResults searchValue={searchValue} results={results} rateLimitMessage={rateLimitMessage} />
         )}
         {selectedOption === 'filename' && (
-          <FilenameResults searchValue={searchValue} results={results} />
+          <FilenameResults searchValue={searchValue} results={results} rateLimitMessage={rateLimitMessage} />
         )}
       </>
     );

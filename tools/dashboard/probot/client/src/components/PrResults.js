@@ -9,7 +9,8 @@ const List = styled.ul`
   margin: 3px;
 `;
 
-const PrResults = ({ searchValue, results }) => {
+const PrResults = ({ searchValue, results, rateLimitMessage }) => {
+  console.log(rateLimitMessage)
   const elements = results.map((result, idx) => {
     const { number, filenames, username, title } = result;
     const files = filenames.map((filename, index) => {
@@ -32,10 +33,17 @@ const PrResults = ({ searchValue, results }) => {
     );
   });
 
+  const showResults = () => {
+    if (!rateLimitMessage) {
+      return (results.length ? <h3>Results for PR# {searchValue}</h3> : null) && elements;
+    } else {
+      return rateLimitMessage;
+    }
+  };
+
   return (
     <FullWidthDiv style={{ width: '100%' }}>
-      {results.length ? <h3>Results for PR# {searchValue}</h3> : null}
-      {elements}
+      {showResults()}
     </FullWidthDiv>
   );
 };
