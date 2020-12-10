@@ -4,6 +4,7 @@ const config = require('../config');
 // config should be imported before importing any other file
 const mongoose = require('mongoose');
 const path = require('path');
+const rateLimit = require("express-rate-limit");
 
 async function probotPlugin(robot) {
   const events = [
@@ -27,6 +28,9 @@ async function probotPlugin(robot) {
   const landingPage = robot.route('/home');
   landingPage.use(require('express').static('public'));
   const app = robot.route('/dashboard');
+  // May need to uncomment the following to get rateLimit to work properly since we are using reverse-proxy
+  // app.set('trust proxy', 1); 
+
   const { pareto, pr, search, info, boilerplates } = require('./server/routes');
 
   const staticPath = path.join(__dirname, '.', 'client', 'build');
@@ -48,11 +52,18 @@ async function probotPlugin(robot) {
   const htmlpath = path.join(__dirname, './client/build/index.html');
   app.get('/', (request, response) => response.sendFile(htmlpath));
 
-  app.use('/pr', pr);
-  app.use('/search', search);
-  app.use('/pareto', pareto);
-  app.use('/info', info);
-  app.use('/boilerplates', boilerplates);
+  const rateLimitOptions = {
+    windowMs: 5 * 60 * 60000, // 5 minutes
+    max: 100
+  };
+
+  const reqLimiter = rateLimit(rateLimitOptions);
+
+  app.use('/pr', reqLimiter, pr);
+  app.use('/search', reqLimiter, search);
+  app.use('/pareto', reqLimiter, pareto);
+  app.use('/info', reqLimiter, info);
+  app.use('/boilerplates', reqLimiter, boilerplates);
 
   app.use(function(err, req, res) {
     res.status(err.status || 500).send(err.message);
