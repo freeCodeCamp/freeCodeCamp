@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { BOILERPLATE } = require('../models');
+const { reqLimiter } = require('../req-limiter');
 
-router.get('/', async (reqeust, response) => {
+router.get('/', reqLimiter, async (request, response) => {
   let boilerplates = await BOILERPLATE.find({}).then(data => data);
   boilerplates.sort((a, b) => a._id - b._id);
   boilerplates = boilerplates.reduce((boilerplatesArr, boilerplate) => {

@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { INFO } = require('../models');
+const { reqLimiter } = require('../req-limiter');
 
-router.get('/', async (request, response) => {
+router.get('/', reqLimiter, async (request, response) => {
   const [{ lastUpdate, numPRs, prRange }] = await INFO.find({});
   response.json({ ok: true, lastUpdate, numPRs, prRange });
 });

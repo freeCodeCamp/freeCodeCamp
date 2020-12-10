@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { PR } = require('../models');
+const { reqLimiter } = require('../req-limiter');
 
-router.get('/', async (request, response) => {
+router.get('/', reqLimiter, async (request, response) => {
   const prs = await PR.find({}).then(data => data);
   prs.sort((a, b) => a._id - b._id);
   const indices = prs.reduce((obj, { _id }, index) => {
