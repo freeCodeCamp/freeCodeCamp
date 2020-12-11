@@ -1,7 +1,7 @@
 const readDirP = require('readdirp-walk');
 const { getText } = require('./transform-to-mdx');
 const { challengeToString } = require('./create-mdx');
-const { parseMarkdown } = require('../../index');
+const { parseMD } = require('../../../challenge-md-parser/mdx/index');
 const fs = require('fs');
 
 const challengeDir = '../../../../curriculum/challenges/chinese';
@@ -21,10 +21,8 @@ readDirP({ root: challengeDir, fileFilter: ['*.md'] }).on('data', file => {
 });
 
 function generateTranscribableChallenge(fullPath) {
-  return Promise.all([parseMarkdown(fullPath), getText(fullPath)]).then(
-    results => ({
-      ...results[0],
-      ...results[1]
-    })
-  );
+  return Promise.all([parseMD(fullPath), getText(fullPath)]).then(results => ({
+    ...results[0],
+    ...results[1]
+  }));
 }
