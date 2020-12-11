@@ -18,6 +18,7 @@
     "mdast-builder": "^1.1.1",
     "mdast-util-to-hast": "^10.0.0",
     "parse-entities": "^2.0.0",
+    "readdirp-walk": "^1.7.0",
     "remark-frontmatter": "^2.0.0",
     "remark-parse": "^8.0.3",
     "remark-stringify": "^8.1.1",

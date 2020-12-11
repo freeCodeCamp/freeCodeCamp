@@ -4,7 +4,7 @@ const { challengeToString } = require('./create-mdx');
 const { parseMarkdown } = require('../../index');
 const fs = require('fs');
 
-const challengeDir = '../../../../curriculum/challenges/english';
+const challengeDir = '../../../../curriculum/challenges/chinese';
 
 readDirP({ root: challengeDir, fileFilter: ['*.md'] }).on('data', file => {
   if (file.stat.isFile()) {
