@@ -1,4 +1,5 @@
 /* global cy */
+import { environment } from '../../client/config/env';
 
 describe('Top contributor in user profile', () => {
   before(() => {
@@ -14,8 +15,9 @@ describe('Top contributor in user profile', () => {
     cy.login();
     cy.contains('Profile').click({ force: true });
 
-    // The following line is only required if you want to test it in development
-    // cy.contains('Preview custom 404 page').click();
+    if (environment === 'development') {
+      cy.contains('Preview custom 404 page').click();
+    }
   });
 
   it('Should show `Top Contributor` text with badge', () => {
