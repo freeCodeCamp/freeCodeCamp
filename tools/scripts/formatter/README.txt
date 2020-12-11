@@ -16,3 +16,16 @@ rendered correctly. Unfortunately there are a lot of false positives, a human
 needs to see if the challenge author intended for the text to be parsed as
 markdown or not.  Also bare email addresses name@address.com should be
 highlighted by this tool and will need wrapping with backticks.
+
+*How to use*
+
+mmv is great, so I recommend installing that first.  Then:
+
+cd curriculum/challenges/chinese/12-certificates
+mmv ";*.md" "#1#2.markdown"
+cd ../../../../tools/scripts/formatter/fcc-md-to-gfm/
+node formatCurriculum.js
+cd ../md-to-mdx
+node md-to-mdx # this might have warnings and errors.  Errors need fixing, but warnings just need checking
+cd ../../../../curriculum/challenges/chinese/
+mmv -md ";*.mdx" "#1#2.md"
