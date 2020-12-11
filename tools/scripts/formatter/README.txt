@@ -1,3 +1,7 @@
+# How the formatter works
+
+## Validation
+
 There are two scripts that validate challenges: validate-text and
 validate-hints. validate-text ensures that any code inside <code> tags can
 be converted to backticks.  For example <code>var x = 'y';</code> is fine, but
@@ -17,7 +21,7 @@ needs to see if the challenge author intended for the text to be parsed as
 markdown or not.  Also bare email addresses name@address.com should be
 highlighted by this tool and will need wrapping with backticks.
 
-*How to use*
+## How to use
 
 mmv is great, so I recommend installing that first.  Then:
 

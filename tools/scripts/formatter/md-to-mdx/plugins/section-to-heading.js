@@ -19,15 +19,4 @@ function plugin() {
   }
 }
 
-function getNewHeading(heading) {
-  const transformations = new Map([
-    ['description', { text: '--description--', depth: 1 }],
-    ['instructions', { text: '--instructions--', depth: 1 }],
-    ['tests', { text: '--hints--', depth: 1 }],
-    ['challengeSeed', { text: '--seed--', depth: 1 }],
-    ['solutions', { text: '--solutions--', depth: 1 }]
-  ]);
-  if (!transformations.has(heading)) throw Error('Unknown heading! ' + heading);
-}
-
 module.exports = plugin;
