@@ -237,7 +237,7 @@ async getUserInput => {
 };
 ```
 
-Your return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {iniUnitString} converts to {returnNum} {returnUnitString}'` with the result rounded to 5 decimals.
+Your return will consist of the `initNum`, `initUnit`, `returnNum`, `returnUnit`, and `string` spelling out units in the format `'{initNum} {initUnitString} converts to {returnNum} {returnUnitString}'` with the result rounded to 5 decimals.
 
 ```js
 async getUserInput => {
