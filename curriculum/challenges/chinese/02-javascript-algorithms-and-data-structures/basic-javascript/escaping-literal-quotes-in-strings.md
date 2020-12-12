@@ -10,9 +10,9 @@ title: 转义字符串中的引号
 <section id='description'>
 定义一个字符串必须要用单引号或双引号来包裹它。那么当你的字符串里面包含：<code>"</code>或者<code>'</code>时该怎么办呢?
 在 JavaScript 中，你可以通过在引号前面使用<dfn>反斜杠</dfn>（<code>\</code>）来转义引号。
-<code>var sampleStr = "Alan said, \"Peter is learning JavaScript\".";</code>
+<code>var sampleStr = "Alan said, \"Peter is learning JavaScript.\"";</code>
 有了转义符号，JavaScript 就知道这个单引号或双引号并不是字符串的结尾，而是字符串内的字符。所以，上面的字符串打印到控制台的结果为：
-<code>Alan said, "Peter is learning JavaScript".</code>
+<code>Alan said, "Peter is learning JavaScript."</code>
 </section>
 
 ## Instructions
