@@ -52,13 +52,15 @@ const prsPaginate = async(
   // will be true when lastPR is seen in paginated results
   let done = false;
   let response = await method(methodProps);
+  console.log('x-ratelimit-remaining:', response.meta['x-ratelimit-remaining']);
   let { data } = response;
   data = prFilter(data, firstPR, lastPR, prPropsToGet);
   while (octokit.hasNextPage(response) && !done) {
     response = await octokit.getNextPage(response);
+    console.log('x-ratelimit-remaining:', response.meta['x-ratelimit-remaining']);
     let dataFiltered = prFilter(response.data, firstPR, lastPR, prPropsToGet);
     data = data.concat(dataFiltered);
-    progressBar.increment(dataFiltered.length);
+    // progressBar.increment(dataFiltered.length);
   }
   return data;
 };
@@ -115,7 +117,7 @@ const getPRs = async (repo, base, totalPRs, firstPR, lastPR, prPropsToGet) => {
     },
     _cliProgress.Presets.shades_classic
   );
-  getPRsBar.start(totalPRs, 0);
+  // getPRsBar.start(totalPRs, 0);
   let openPRs = await prsPaginate(
     repo,
     base,
@@ -125,8 +127,8 @@ const getPRs = async (repo, base, totalPRs, firstPR, lastPR, prPropsToGet) => {
     prPropsToGet,
     getPRsBar
   );
-  getPRsBar.update(totalPRs);
-  getPRsBar.stop();
+  // getPRsBar.update(totalPRs);
+  // getPRsBar.stop();
   console.log(`# of PRs retrieved: ${openPRs.length}`);
   return { firstPR, lastPR, openPRs };
 };

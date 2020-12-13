@@ -15,7 +15,7 @@ const log = new ProcessingLog('add-language-labels');
 log.start();
 console.log('Curriculum File language labeler started...');
 (async() => {
-  const { totalPRs, firstPR, lastPR } = await 'getUserInput(freeCodeCampRepo, defaultBase);
+  const { totalPRs, firstPR, lastPR } = await getUserInput(freeCodeCampRepo, defaultBase);
   const prPropsToGet = ['number', 'labels', 'user'];
   const { openPRs } = await getPRs(freeCodeCampRepo, defaultBase, totalPRs, firstPR, lastPR, prPropsToGet);
   let count = 0;

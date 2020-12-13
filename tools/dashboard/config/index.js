@@ -1,8 +1,6 @@
 const Joi = require('joi');
 const path = require('path');
-// require and configure dotenv, will load vars in .env in PROCESS.ENV
-const envPath = path.resolve(__dirname, '../probot/.env');
-require('dotenv').config({ path: envPath });
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 // define validation for all the env vars
 const envVarsSchema = Joi.object({
@@ -20,10 +18,7 @@ const envVarsSchema = Joi.object({
   REPOSITORY: Joi.string().required(),
   DEFAULT_BASE: Joi.string().required(),
   PRODUCTION_RUN: Joi.boolean()
-    .default(false),
-  WEBHOOK_PROXY_URL: Joi.string().required(),
-  APP_ID: Joi.number().required(),
-  WEBHOOK_SECRET: Joi.string().required()
+    .default(false)
 })
   .unknown()
   .required();
@@ -44,12 +39,7 @@ const config = {
     secret: envVars.GITHUB_ACCESS_TOKEN,
     owner: envVars.REPOSITORY_OWNER,
     freeCodeCampRepo: envVars.REPOSITORY,
-    defaultBase: envVars.DEFAULT_BASE,
-    probot: {
-      webhookUrl: envVars.WEBHOOK_PROXY_URL,
-      webhookSecret: envVars.WEBHOOK_SECRET,
-      appID: envVars.APP_ID
-    }
+    defaultBase: envVars.DEFAULT_BASE
   },
   oneoff: {
     productionRun: envVars.PRODUCTION_RUN

@@ -1,4 +1,4 @@
 {
-  "packages": ["probot", "probot/client", "lib", "one-off-scripts"],
+  "packages": ["app", "app/client", "lib", "one-off-scripts"],
   "version": "independent"
 }
