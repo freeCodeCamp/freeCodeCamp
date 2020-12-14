@@ -14,8 +14,11 @@ describe('Top contributor in user profile', () => {
     cy.login();
     cy.contains('Profile').click({ force: true });
 
-    // The following line is only required if you want to test it in development
-    // cy.contains('Preview custom 404 page').click();
+    // If you `npm run build` the site, then this will fail (unless you set the
+    // CI environment variable to true)
+    if (process.env.CI !== 'true') {
+      cy.contains('Preview custom 404 page').click();
+    }
   });
 
   it('Should show `Top Contributor` text with badge', () => {
