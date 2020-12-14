@@ -15,9 +15,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": ["../../../../.eslintrc-base.json", "prettier", "prettier/react"]
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
