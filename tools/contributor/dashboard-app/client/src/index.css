@@ -47,13 +47,13 @@ body {
 }
 
 .app-menu li a:hover {
-  color: #006400;
-  background: #eee;
+  color: #0a0a23;
+  background: white;
 }
 
 a {
   text-decoration: none;
-  color: #006400;
+  color: #0a0a23;
 }
 
 a:visited {

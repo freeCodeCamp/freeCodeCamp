@@ -20,8 +20,8 @@ const Tab = styled.div`
 
   &:hover {
     cursor: pointer;
-    background: #eeeeee;
-    color: ${({ theme }) => theme.primary};
+    background: ${({ theme }) => theme.primary};
+    color: white;
   }
 
   &:first-child {
