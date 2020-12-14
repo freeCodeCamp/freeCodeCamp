@@ -16,7 +16,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["../../../../.eslintrc-base.json", "prettier", "prettier/react"]
   },
   "browserslist": [
     ">0.2%",
