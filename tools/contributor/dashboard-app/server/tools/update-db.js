@@ -39,24 +39,22 @@ db.then(async () => {
       const prPropsToGet = ['number', 'user', 'title', 'html_url'];
       const { openPRs } = await getPRs(repoName, null, totalPRs, firstPR, lastPR, prPropsToGet);
       const prsToAdd = [];
-      for (let i = 0; i < openPRs.length; i++) {
+      for (let pr of openPRs) {
         const {
           number,
           title,
           user: { login: username },
           html_url: prLink
-        } = openPRs[i];
+        } = pr;
 
         prsToAdd.push({ _id: number, title, username, prLink });
         console.log('added PR# ' + number + '\n');
       }
-      reposToAdd.push({ repoName, prsToAdd });
+      reposToAdd.push({ _id: repoName, prs: prsToAdd });
     }
   }
   await ALL_REPOS.deleteMany();
-  for (repo of reposToAdd) {
-    await ALL_REPOS.create({ _id: repo.repoName, prs: repo.prsToAdd });
-  }
+  await ALL_REPOS.insertMany(reposToAdd);
 
   // update PRs for freeCodeCamp repo
   const oldPRs = await PR.find({}).then(data => data);

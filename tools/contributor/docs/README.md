@@ -52,7 +52,7 @@ This is usually the case with the use of access tokens for scripts.
 ### Setting up Cron jobs for Sweeper Scripts
 For updating dashboard data we use PM2 like so:
 ```bash
-pm2 start --no-autorestart app/server/tools/update-db.js --cron "*/10 * * * *"
+pm2 start --no-autorestart dashboard-app/server/tools/update-db.js --cron "*/10 * * * *"
 ```
 This will start the script in the "no restart" mode and re-run it every 10 minutes.
 A useful link to calculate a Cron expression: <https://crontab.guru/every-10-minutes>

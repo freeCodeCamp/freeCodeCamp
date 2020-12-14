@@ -1,4 +1,0 @@
-{
-  "packages": ["app", "app/client", "lib", "one-off-scripts"],
-  "version": "independent"
-}
