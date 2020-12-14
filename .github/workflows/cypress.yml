@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        browsers: [chrome]
+        browsers: [chrome, firefox]
     services:
       mongodb:
         image: mongo:3.6.19
