@@ -1,68 +1,25 @@
-const {
-  github: { freeCodeCampRepo, defaultBase },
-  mongo
-} = require('../../../lib/config');
-
-// config should be imported before importing any other file
 const mongoose = require('mongoose');
+const getRepos = require('./get-repos');
+const getPRs = require('./get-prs');
+const getFilenames = require('./getFilenames');
+const { PR, INFO, ALL_REPOS } = require('../models');
+
+const { mongo } = require('../../../lib/config');
 
 // added to prevent deprecation warning when findOneAndUpdate is used
 mongoose.set('useFindAndModify', false);
 
 // connect to mongo db
 const mongoUri = mongo.host;
-const db = mongoose.connect(mongoUri, { useNewUrlParser: true });
-
-const { PR, INFO, ALL_REPOS } = require('../models');
-const { getPRs, getUserInput, getFilenames } = require('../../../lib/get-prs');
-const { getRepos } = require('../../../lib/get-repos');
-const { rateLimiter } = require('../../../lib/utils');
+const db = mongoose.connect(mongoUri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const lastUpdate = new Date();
 
 db.then(async () => {
-  let count = 0;
-  const repos = await getRepos();
-
-  // update other-repos collection
-
-  const otherRepos = repos
-    .filter(repo => !repo.archived && repo.name !== 'freeCodeCamp')
-    .map(repo => repo.name);
-
-  const reposToAdd = [];
-  for (let repoName of otherRepos) {
-    console.log(repoName);
-    const { totalPRs, firstPR, lastPR } = await getUserInput(
-      repoName,
-      null,
-      'all'
-    );
-    if (totalPRs > 0) {
-      const prPropsToGet = ['number', 'user', 'title', 'html_url'];
-      const { openPRs } = await getPRs(
-        repoName,
-        null,
-        totalPRs,
-        firstPR,
-        lastPR,
-        prPropsToGet
-      );
-      const prsToAdd = [];
-      for (let pr of openPRs) {
-        const {
-          number,
-          title,
-          user: { login: username },
-          html_url: prLink
-        } = pr;
-
-        prsToAdd.push({ _id: number, title, username, prLink });
-        console.log('added PR# ' + number + '\n');
-      }
-      reposToAdd.push({ _id: repoName, prs: prsToAdd });
-    }
-  }
+  const reposToAdd = await getRepos();
   await ALL_REPOS.deleteMany();
   await ALL_REPOS.insertMany(reposToAdd);
 
@@ -73,20 +30,7 @@ db.then(async () => {
     return obj;
   }, {});
 
-  const { totalPRs, firstPR, lastPR } = await getUserInput(
-    freeCodeCampRepo,
-    defaultBase,
-    'all'
-  );
-  const prPropsToGet = ['number', 'user', 'title', 'updated_at'];
-  const { openPRs } = await getPRs(
-    freeCodeCampRepo,
-    defaultBase,
-    totalPRs,
-    firstPR,
-    lastPR,
-    prPropsToGet
-  );
+  const openPRs = await getPRs();
 
   const newIndices = {};
   for (let i = 0; i < openPRs.length; i++) {
@@ -102,26 +46,21 @@ db.then(async () => {
     const oldUpdatedAt = oldPrData ? oldPrData.updatedAt : null;
     if (!oldIndices.hasOwnProperty(number)) {
       // insert a new pr
-      const filenames = await getFilenames(freeCodeCampRepo, number);
-      count++;
+      const filenames = await getFilenames(number);
       await PR.create({ _id: number, updatedAt, title, username, filenames });
       console.log('added PR# ' + number);
     } else if (updatedAt > oldUpdatedAt) {
       // update an existing pr
-      const filenames = await getFilenames(freeCodeCampRepo, number);
-      count++;
+      const filenames = await getFilenames(number);
       await PR.findOneAndUpdate(
         { _id: number },
         { updatedAt, title, username, filenames }
       );
       console.log('updated PR #' + number);
     }
-    if (count > 4500) {
-      await rateLimiter(4500);
-    }
   }
-  for (let j = 0; j < oldPRs.length; j++) {
-    const { _id: number } = oldPRs[j];
+  for (let pr of oldPRs) {
+    const { _id: number } = pr;
     if (!newIndices.hasOwnProperty(number)) {
       // delete pr because it is no longer open
       await PR.deleteOne({ _id: number });

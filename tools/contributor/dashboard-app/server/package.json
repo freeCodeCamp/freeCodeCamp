@@ -18,6 +18,7 @@
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
+    "@octokit/rest": "^18.0.12",
     "body-parser": "^1.18.3",
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
