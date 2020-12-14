@@ -1,8 +1,12 @@
-const { owner, octokitConfig, octokitAuth } = require('./constants');
-const octokit = require('@octokit/rest')(octokitConfig);
+const { Octokit } = require('@octokit/rest');
 
-octokit.authenticate(octokitAuth);
+const {
+  github: { owner, secret }
+} = require('./config');
 
+const octokit = new Octokit({ auth: secret });
+
+/* eslint-disable camelcase */
 const methodProps = {
   org: owner,
   sort: 'full_name',

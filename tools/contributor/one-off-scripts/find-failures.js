@@ -3,15 +3,17 @@ This is a one-off script to find all open PRs which have one of the
 console.error descriptions in the failuresToFind.json file.
 */
 
+const { Octokit } = require('@octokit/rest');
 const fetch = require('node-fetch');
 
-const { owner, freeCodeCampRepo, defaultBase, octokitConfig, octokitAuth } = require('../lib/constants');
+const {
+  github: { owner, secret, freeCodeCampRepo, defaultBase }
+} = require('../lib/config');
 
-const octokit = require('@octokit/rest')(octokitConfig);
+const octokit = new Octokit({ auth: secret });
+
 const { getPRs, getUserInput } = require('../lib/get-prs');
 const { savePrData, ProcessingLog } = require('../lib/utils');
-
-octokit.authenticate(octokitAuth);
 
 const log = new ProcessingLog('find-failures-script');
 
@@ -23,9 +25,19 @@ const errorsToFind = [
 ];
 
 (async () => {
-  const { totalPRs, firstPR, lastPR } = await getUserInput(freeCodeCampRepo, defaultBase);
+  const { totalPRs, firstPR, lastPR } = await getUserInput(
+    freeCodeCampRepo,
+    defaultBase
+  );
   const prPropsToGet = ['number', 'labels', 'head'];
-  const { openPRs } = await getPRs(freeCodeCampRepo, defaultBase, totalPRs, firstPR, lastPR, prPropsToGet);
+  const { openPRs } = await getPRs(
+    freeCodeCampRepo,
+    defaultBase,
+    totalPRs,
+    firstPR,
+    lastPR,
+    prPropsToGet
+  );
 
   if (openPRs.length) {
     savePrData(openPRs, firstPR, lastPR);

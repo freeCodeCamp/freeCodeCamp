@@ -1,14 +1,16 @@
 const { addComment } = require('./add-comment');
 const { rateLimiter } = require('../utils');
-const { owner, freeCodeCampRepo, defaultBase, octokitConfig, octokitAuth } = require('../constants');
+const {
+  github: { owner, secret, freeCodeCampRepo, defaultBase }
+} = require('../config');
 
-const octokit = require('@octokit/rest')(octokitConfig);
+const { Octokit } = require('@octokit/rest');
 
-octokit.authenticate(octokitAuth);
+const octokit = new Octokit({ auth: secret });
 
 /* closes and reopens an open PR with applicable comment */
 const closeOpen = async number => {
-  await octokit.pullRequests
+  await octokit.pulls
     .update({
       owner,
       repo: freeCodeCampRepo,
@@ -18,7 +20,7 @@ const closeOpen = async number => {
     })
     .then(async () => {
       await rateLimiter(5000);
-      return octokit.pullRequests.update({
+      return octokit.pulls.update({
         owner,
         repo: freeCodeCampRepo,
         number,

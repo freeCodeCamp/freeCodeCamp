@@ -17,7 +17,6 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "eslint": "^5.9.0",
-    "eslint-config-freecodecamp": "^1.1.1",
     "joi": "^14.3.1",
     "lerna": "^3.5.1",
     "mocha": "^5.2.0",

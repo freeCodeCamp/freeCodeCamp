@@ -1,13 +1,9 @@
-const config = require('../../config');
+const config = require('../../lib/config');
 const { validLabels } = require('../validation');
 const { addLabels } = require('./add-labels');
 const { rateLimiter } = require('../utils');
 
-const labeler = async(
-  number,
-  prFiles,
-  currentLabels
-) => {
+const labeler = async (number, prFiles, currentLabels) => {
   // holds potential labels to add based on file path
   const labelsToAdd = {};
   const existingLabels = currentLabels.map(({ name }) => name);
@@ -20,7 +16,9 @@ const labeler = async(
     );
     const regex = /^(docs|curriculum)(?:\/)(english|arabic|chinese|portuguese|russian|spanish)?\/?/;
     // need an array to pass to labelsAdder
-    const [_, articleType, language] = filenameReplacement.match(regex) || [];
+    const match = filenameReplacement.match(regex) || [];
+    const articleType = match[1];
+    const language = match[2];
     if (articleType && validLabels[articleType]) {
       labelsToAdd[validLabels[articleType]] = 1;
     }

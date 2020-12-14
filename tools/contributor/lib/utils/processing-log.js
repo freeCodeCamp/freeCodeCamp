@@ -1,4 +1,4 @@
-const config = require('../../config');
+const config = require('../../lib/config');
 const formatDate = require('date-fns/format');
 const path = require('path');
 const fs = require('fs');

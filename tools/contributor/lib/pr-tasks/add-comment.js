@@ -1,8 +1,10 @@
-const { owner, freeCodeCampRepo, octokitConfig, octokitAuth } = require('../constants');
+const { Octokit } = require('@octokit/rest');
 
-const octokit = require('@octokit/rest')(octokitConfig);
+const {
+  github: { owner, secret, freeCodeCampRepo }
+} = require('../config');
 
-octokit.authenticate(octokitAuth);
+const octokit = new Octokit({ auth: secret });
 
 const addComment = async (number, comment) => {
   const result = await octokit.issues

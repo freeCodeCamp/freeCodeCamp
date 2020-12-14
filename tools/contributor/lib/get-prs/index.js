@@ -1,22 +1,23 @@
+const { Octokit } = require('@octokit/rest');
 const _cliProgress = require('cli-progress');
 
-const { owner, octokitConfig, octokitAuth } = require('../constants');
+const {
+  github: { owner, secret }
+} = require('../config');
 
-const octokit = require('@octokit/rest')(octokitConfig);
+const octokit = new Octokit({ auth: secret });
+
 const { getRange, getCount } = require('./pr-stats');
 
-octokit.authenticate(octokitAuth);
-
-const prsPaginate = async(
+/* eslint-disable camelcase */
+const prsPaginate = async (
   repo,
   base,
   method,
   firstPR,
   lastPR,
-  prPropsToGet,
-  progressBar
+  prPropsToGet
 ) => {
-  
   let methodProps = {
     owner,
     repo,
@@ -30,7 +31,7 @@ const prsPaginate = async(
   if (base) {
     methodProps = { ...methodProps, base };
   }
-  
+
   const prFilter = (prs, first, last, prPropsToGet) => {
     const filtered = [];
     for (let pr of prs) {
@@ -57,7 +58,10 @@ const prsPaginate = async(
   data = prFilter(data, firstPR, lastPR, prPropsToGet);
   while (octokit.hasNextPage(response) && !done) {
     response = await octokit.getNextPage(response);
-    console.log('x-ratelimit-remaining:', response.meta['x-ratelimit-remaining']);
+    console.log(
+      'x-ratelimit-remaining:',
+      response.meta['x-ratelimit-remaining']
+    );
     let dataFiltered = prFilter(response.data, firstPR, lastPR, prPropsToGet);
     data = data.concat(dataFiltered);
     // progressBar.increment(dataFiltered.length);
@@ -65,7 +69,7 @@ const prsPaginate = async(
   return data;
 };
 
-const getUserInput = async(repo, base, rangeType = '') => {
+const getUserInput = async (repo, base, rangeType = '') => {
   let data, firstPR, lastPR;
   if (rangeType === 'all') {
     data = await getRange(repo, base).then(data => data);
@@ -121,7 +125,7 @@ const getPRs = async (repo, base, totalPRs, firstPR, lastPR, prPropsToGet) => {
   let openPRs = await prsPaginate(
     repo,
     base,
-    octokit.pullRequests.list,
+    octokit.pulls.list,
     firstPR,
     lastPR,
     prPropsToGet,
@@ -132,7 +136,6 @@ const getPRs = async (repo, base, totalPRs, firstPR, lastPR, prPropsToGet) => {
   console.log(`# of PRs retrieved: ${openPRs.length}`);
   return { firstPR, lastPR, openPRs };
 };
-
 
 const filesPaginate = async (repo, number) => {
   let methodProps = {
@@ -148,8 +151,9 @@ const filesPaginate = async (repo, number) => {
     methodProps = { ...methodProps, repo };
   }
 
-  let response = await octokit.pullRequests.listFiles({
-    number, ...methodProps
+  let response = await octokit.pulls.listFiles({
+    number,
+    ...methodProps
   });
 
   let { data } = response;
@@ -163,8 +167,7 @@ const filesPaginate = async (repo, number) => {
 
 const getFiles = async (repo, number) => await filesPaginate(repo, number);
 
-const getFilenames = async (repo, number) => (
-  await getFiles(repo, number)
-).map(({ filename }) => filename);
+const getFilenames = async (repo, number) =>
+  (await getFiles(repo, number)).map(({ filename }) => filename);
 
 module.exports = { getPRs, getUserInput, getFiles, getFilenames };
