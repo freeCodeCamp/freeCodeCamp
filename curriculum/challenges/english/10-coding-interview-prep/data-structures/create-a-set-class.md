@@ -165,7 +165,7 @@ class Set {
 
   // This method will return all the values in the set
   values() {
-    return Object.keys(this.dictionary);
+    return Object.values(this.dictionary);
   }
 
   // Only change code below this line
@@ -188,7 +188,7 @@ class Set {
   }
 
   values() {
-    return Object.keys(this.dictionary);
+    return Object.values(this.dictionary);
   }
 
   add(element) {
