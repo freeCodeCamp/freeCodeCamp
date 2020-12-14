@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import FreeCodeCampLogo from './assets/freeCodeCampLogo';
 import Tabs from './components/Tabs';
 import Search from './components/Search';
 import Pareto from './components/Pareto';
@@ -49,7 +50,7 @@ const AppNavBar = styled.nav`
   }
 `;
 
-const imgStyle = { paddingLeft: '30px' };
+const logoStyle = { paddingLeft: '30px' };
 
 const titleStyle = { margin: '0', padding: '0' };
 
@@ -94,12 +95,8 @@ class App extends Component {
     return (
       <>
       <AppNavBar>
-        <a href="https://freecodecamp.org" target="_blank" rel="noopener noreferrer">
-          <img
-            style={imgStyle}
-            src="https://discourse-user-assets.s3.dualstack.us-east-1.amazonaws.com/original/3X/e/d/ed1c70bda321aaeee9e6c20ab650ce8bc34899fa.svg"
-            alt="Free Code Camp Logo"
-          />
+        <a href="https://freecodecamp.org" target="_blank" rel="noopener noreferrer" style={logoStyle}>
+          <FreeCodeCampLogo />
         </a>
         <h1 style={titleStyle}>Contributor Tools</h1>
         <ul className="app-menu">
