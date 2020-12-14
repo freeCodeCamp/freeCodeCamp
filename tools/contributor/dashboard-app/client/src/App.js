@@ -100,9 +100,6 @@ class App extends Component {
         </a>
         <h1 style={titleStyle}>Contributor Tools</h1>
         <ul className="app-menu">
-          <li>
-            <a href="/">Home</a>
-           </li>
            <li>
              <a href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener noreferrer">GitHub</a>
            </li>
