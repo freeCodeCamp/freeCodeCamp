@@ -1,7 +1,7 @@
 {
   "name": "freecodecampcontributelib",
   "dependencies": {
-    "@octokit/rest": "^15.18.0",
+    "@octokit/rest": "^18.0.12",
     "cli-progress": "^2.1.0",
     "date-fns": "^1.29.0",
     "dedent": "^0.7.0",

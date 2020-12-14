@@ -1,7 +1,7 @@
 {
   "name": "freecodecampcontributeoneoffscripts",
   "dependencies": {
-    "@octokit/rest": "^15.18.0",
+    "@octokit/rest": "^18.0.12",
     "cli-progress": "^2.1.0",
     "dedent": "^0.7.0",
     "path": "^0.12.7"
