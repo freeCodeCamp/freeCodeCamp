@@ -21,7 +21,7 @@ mongod —dbpath=./database_folder
 ### 4. Update the Database
 - Run the command below to populate your local database with PR’s from the freeCodeCamp repo. Note that you must have mongoDB running.
 ```bash
-node app/server/tools/update-db.js
+node dashboard-app/server/tools/update-db.js
 ```
 - This will take a while. If it stops running partway through, it's probably a timeout error. Run the command again and it should finish
 
@@ -62,4 +62,3 @@ A useful link to calculate a Cron expression: <https://crontab.guru/every-10-min
 pm2 start "npm start" --name "contribute-app"
 ```
 **Note:** Start only one instance of this app, you can't have multiple probot apps running. Starting multiple instances will crash the app.
-
