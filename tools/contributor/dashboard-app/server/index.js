@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const config = require('../../lib/config');
 const { pareto, pr, search, info, allRepos } = require('./routes');
+const { reqLimiter } = require('./req-limiter');
 
 // May need to uncomment the following to get rateLimit to work properly since we are using reverse-proxy
 // app.set('trust proxy', 1);
@@ -22,7 +23,7 @@ app.use((request, response, next) => {
 });
 
 const landingPage = path.join(__dirname, '../client/build/index.html');
-app.get('/', (req, res) => res.sendFile(landingPage));
+app.get('/', reqLimiter, (req, res) => res.sendFile(landingPage));
 
 app.use('/pr', pr);
 app.use('/search', search);
