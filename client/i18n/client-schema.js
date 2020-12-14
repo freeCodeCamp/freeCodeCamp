@@ -394,7 +394,9 @@ const clientSchema = strictObject({
     'msg-3': stringType,
     'msg-4': stringType,
     'msg-5': stringType,
-    'msg-6': stringType
+    'msg-6': stringType,
+    'msg-7': stringType,
+    'msg-8': stringType
   }),
   validation: strictObject({
     'msg-1': stringType,

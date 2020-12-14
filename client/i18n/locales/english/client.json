@@ -384,7 +384,9 @@
     "msg-3": "Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified",
     "msg-4": "Something went wrong, please check and try again",
     "msg-5": "Your account has been successfully deleted",
-    "msg-6": "Your progress has been reset"
+    "msg-6": "Your progress has been reset",
+    "msg-7": "You are not authorized to continue on this route",
+    "msg-8": "We couldn't find what you were looking for. Please check and try again"
   },
   "validation": {
     "msg-1": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",

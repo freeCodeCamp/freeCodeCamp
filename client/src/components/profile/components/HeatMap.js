@@ -20,8 +20,6 @@ import { clientLocale } from '../../../../config/env';
 
 const localeCode = langCodes[clientLocale];
 
-console.log(localeCode);
-
 const propTypes = {
   calendar: PropTypes.object
 };
@@ -117,14 +115,6 @@ class HeatMapInner extends Component {
           endDate={endOfCalendar}
           startDate={startOfCalendar}
           tooltipDataAttrs={value => {
-            /* let valueCount;
-            if (value && value.count === 1) {
-              valueCount = '1 point';
-            } else if (value && value.count > 1) {
-              valueCount = `${value.count} points`;
-            } else {
-              valueCount = 'No points';
-            }*/
             const dateFormatted =
               value && value.date
                 ? value.date.toLocaleDateString([localeCode, 'en-US'], {

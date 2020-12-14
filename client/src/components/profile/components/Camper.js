@@ -41,7 +41,6 @@ const propTypes = {
 };
 
 function joinArray(array, t) {
-  console.log(array);
   return array.reduce((string, item, index, array) => {
     if (string.length > 0) {
       if (index === array.length - 1) {

@@ -384,7 +384,9 @@
     "msg-3": "Algo no está bien. Se ha generado un informe y se ha notificado al equipo de freeCodeCamp.org",
     "msg-4": "Algo salió mal, verifique e intente nuevamente",
     "msg-5": "Su cuenta ha sido eliminada correctamente",
-    "msg-6": "Tu progreso se ha restablecido"
+    "msg-6": "Tu progreso se ha restablecido",
+    "msg-7": "No tienes autorización para continuar por esta ruta",
+    "msg-8": "No pudimos encontrar lo que buscaba. Por favor revisa e intenta de nuevo"
  },
   "validation": {
     "msg-1": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",

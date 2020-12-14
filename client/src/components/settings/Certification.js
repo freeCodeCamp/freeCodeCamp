@@ -296,7 +296,6 @@ export class CertificationSettings extends Component {
     const { superBlock } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${superBlock}`;
     const createClickHandler = superBlock => e => {
-      console.log(superBlock);
       e.preventDefault();
       if (isCert) {
         return navigate(certLocation);

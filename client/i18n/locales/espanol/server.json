@@ -30,6 +30,12 @@
   "msg-29": "Parece que el usuario {{username}} no está {{cert}} certificado por",
   "msg-30": "Eso no parece ser un envío de desafío válido",
   "msg-31": "No ha proporcionado los enlaces válidos para que inspeccionemos su trabajo.",
+  "msg-32": "No se encontró ninguna cuenta social",
+  "msg-33": "Cuenta social no válida",
+  "msg-34": "No hay cuenta de {{website}} asociada",
+  "msg-35": "Has desvinculado correctamente tu {{website}}",
+  "msg-36": "Compruebe si ha proporcionado un nombre de usuario y un informe",
+  "msg-37": "Se envió un informe al equipo con {{email}} en copia",
   "settings": {
     "username": {
       "invalid": "Nombre de usuario contiene caracteres no válidos",

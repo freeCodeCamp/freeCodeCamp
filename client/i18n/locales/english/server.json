@@ -30,6 +30,12 @@
   "msg-29": "It looks like user {{username}} is not {{cert}} certified",
   "msg-30": "That does not appear to be a valid challenge submission",
   "msg-31": "You have not provided the valid links for us to inspect your work.",
+  "msg-32": "No social account found",
+  "msg-33": "Invalid social account",
+  "msg-34": "No {{website}} account associated",
+  "msg-35": "You've successfully unlinked your {{website}}",
+  "msg-36": "Check if you have provided a username and a report",
+  "msg-37": "A report was sent to the team with {{email}} in copy",
   "settings": {
     "username": {
       "invalid": "Username contains invalid characters",

@@ -14,6 +14,7 @@ import { fixCompletedChallengeItem } from '../../common/utils';
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { trimTags } from '../utils/validators';
+import { i18n } from '../i18n';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectTo(homeLocation);
@@ -103,19 +104,19 @@ function getUnlinkSocial(req, res, next) {
 
   let social = req.params.social;
   if (!social) {
-    req.flash('danger', 'No social account found');
+    req.flash('danger', i18n.__('msg-32'));
     return res.redirect('/' + username);
   }
 
   social = social.toLowerCase();
   const validSocialAccounts = ['twitter', 'linkedin'];
   if (validSocialAccounts.indexOf(social) === -1) {
-    req.flash('danger', 'Invalid social account');
+    req.flash('danger', i18n.__('msg-33'));
     return res.redirect('/' + username);
   }
 
   if (!user[social]) {
-    req.flash('danger', `No ${social} account associated`);
+    req.flash('danger', i18n.__('msg-34', { website: social }));
     return res.redirect('/' + username);
   }
 
@@ -133,7 +134,7 @@ function getUnlinkSocial(req, res, next) {
     // assumed user identity is unique by provider
     let identity = identities.shift();
     if (!identity) {
-      req.flash('danger', 'No social account found');
+      req.flash('danger', i18n.__('msg-32'));
       return res.redirect('/' + username);
     }
 
@@ -150,7 +151,7 @@ function getUnlinkSocial(req, res, next) {
         }
         log(`${social} has been unlinked successfully`);
 
-        req.flash('info', `You've successfully unlinked your ${social}.`);
+        req.flash('info', i18n.__('msg-35', { website: social }));
         return res.redirectWithFlash(`${homeLocation}/${username}`);
       });
     });
@@ -216,7 +217,7 @@ function createPostReportUserProfile(app) {
     if (!username || !report || report === '') {
       return res.json({
         type: 'danger',
-        message: 'Check if you have provided a username and a report'
+        message: i18n.__('msg-36')
       });
     }
     return Email.send$(
@@ -247,7 +248,7 @@ function createPostReportUserProfile(app) {
 
         return res.json({
           typer: 'info',
-          message: `A report was sent to the team with ${user.email} in copy.`
+          message: i18n.__('msg-37', { email: user.email })
         });
       }
     );

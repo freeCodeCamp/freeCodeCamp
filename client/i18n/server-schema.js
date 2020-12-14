@@ -36,6 +36,12 @@ const serverSchema = strictObject({
   'msg-29': stringType,
   'msg-30': stringType,
   'msg-31': stringType,
+  'msg-32': stringType,
+  'msg-33': stringType,
+  'msg-34': stringType,
+  'msg-35': stringType,
+  'msg-36': stringType,
+  'msg-37': stringType,
   settings: strictObject({
     username: strictObject({
       invalid: stringType,

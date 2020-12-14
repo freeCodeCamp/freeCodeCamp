@@ -12,7 +12,6 @@ import {
 const fs = require('fs');
 const { expectToMatchSchema, setup } = require('jest-json-schema-extended');
 
-console.log(setup);
 setup();
 
 const filesThatShouldExist = [

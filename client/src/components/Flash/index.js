@@ -12,7 +12,7 @@ function Flash({ flashMessage, onClose }) {
   const { type, message, id, needsTranslating = false } = flashMessage;
   const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(null);
-  console.log(flashMessage);
+
   useEffect(() => {
     setFlashMessageHeight(
       document.querySelector('.flash-message').offsetHeight
