@@ -8,7 +8,8 @@ import './flash.css';
 
 function Flash({ flashMessage, onClose }) {
   // flash messages coming from the server are already translated
-  // messages on the client get translated here
+  // messages on the client get translated here and need a
+  // needsTranslating variable set to true with the object
   const { type, message, id, needsTranslating = false } = flashMessage;
   const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(null);

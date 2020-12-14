@@ -138,7 +138,7 @@ class PortfolioSettings extends Component {
     if (charsLeft < 0) {
       return {
         state: 'error',
-        message: t('validation.msg-1', { charsLeft: charsLeft })
+        message: t('validation.msg-1', { charsLeft: 0 })
       };
     }
     if (charsLeft < 41 && charsLeft > 0) {
