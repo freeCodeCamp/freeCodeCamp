@@ -19,7 +19,6 @@ When you are done, make sure a working demo of your project is hosted somewhere 
 
 - Complete the necessary conversion logic in `/controllers/convertHandler.js`
 - Complete the necessary routes in `/routes/api.js`
-- Create all of the functional tests in `tests/2_functional-tests.js`
 - Copy the `sample.env` file to `.env` and set the variables appropriately
 - To run the tests uncomment `NODE_ENV=test` in your `.env` file
 - To run the tests in the console, use the command `npm run test`. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
@@ -32,7 +31,9 @@ Write the following tests in `tests/1_unit-tests.js`:
 - `convertHandler` should correctly read a fractional input with a decimal.
 - `convertHandler` should correctly return an error on a double-fraction (i.e. `3/2/3`).
 - `convertHandler` should correctly return an error on no numerical input.
-- `convertHandler` should correctly return the converted unit for each valid input unit.
+- `convertHandler` should correctly read each valid input unit.
+- `convertHandler` should correctly return an error for an invalid input unit.
+- `convertHandler` should return the correct return unit for each valid input unit.
 - `convertHandler` should correctly return the spelled-out string unit for each valid input unit.
 - `convertHandler` should correctly convert `gal` to `L`.
 - `convertHandler` should correctly convert `L` to `gal`.
