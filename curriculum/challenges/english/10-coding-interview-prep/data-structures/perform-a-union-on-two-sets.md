@@ -66,7 +66,7 @@ class Set {
   }
   // This method will return all the values in the set
   values() {
-    return Object.keys(this.dictionary);
+    return Object.values(this.dictionary);
   }
   // This method will add an element to the set
   add(element) {
@@ -112,12 +112,12 @@ class Set {
   }
 
   values() {
-    return Object.keys(this.dictionary);
+    return Object.values(this.dictionary);
   }
 
   add(element) {
     if (!this.has(element)) {
-      this.dictionary[element] = true;
+      this.dictionary[element] = element;
       this.length++;
       return true;
     }
