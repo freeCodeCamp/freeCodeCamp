@@ -95,7 +95,7 @@ class App extends Component {
     return (
       <>
       <AppNavBar>
-        <a href="https://freecodecamp.org" target="_blank" rel="noopener noreferrer" style={logoStyle}>
+        <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer" style={logoStyle}>
           <FreeCodeCampLogo />
         </a>
         <h1 style={titleStyle}>Contributor Tools</h1>
