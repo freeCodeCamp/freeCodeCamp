@@ -1,40 +1,26 @@
 ---
-id: 5f3ef6e0835da6ccc3ee9958
+id: 5f47633757ae3469f2d33d2e
 title: Part 46
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Within each of the four `article` elements, add the following desserts and prices using an `article` element with two nested `p` elements inside each. Similar to what you did with the coffees, the first `p` element's text should contain the dessert name and the second `p` element's text should contain the price.
+If you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line. This is because the width of the `p` elements on the left side can only take up `50%` of the space.
 
-```bash
-Donut 1.50
-Cherry Pie 2.75
-Cheesecake 3.00
-Cinammon Roll
-```
+Since you know the prices on the right have significantly fewer characters, change the `flavor` class `width` value to be `75%` and then `dessert` class `width` value to be `25%`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -70,28 +56,11 @@ tests:
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
-        <section>
-          <h2>Desserts</h2>
-          --fcc-editable-region--
-          <article class="item">
-          </article>
-          <article class="item">
-          </article>
-          <article class="item">
-          </article>
-          <article class="item">
-          </article>
-          --fcc-editable-region--
-        </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -113,17 +82,16 @@ h1, h2, p {
   display: inline-block;
 }
 
+--fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 75%;
+  width: 50%;
 }
 
 .price {
   text-align: right;
-  width: 25%
+  width: 50%;
 }
+--fcc-editable-region--
 ```
 
-</div>
-
-</section>

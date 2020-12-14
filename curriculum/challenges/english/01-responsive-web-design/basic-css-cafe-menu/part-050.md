@@ -1,33 +1,24 @@
 ---
-id: 5f3ef6e04559b939080db057
+id: 5f716ad029ee4053c7027a7a
 title: Part 50
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Since all 4 sides of the menu have the same internal spacing, go ahread and delete the four properites and use a single `padding` property with the value `20px`.
+Nest two `p` elements inside your `article` element. The first one's text should be `Donut`, and the second's text `1.50`. Put both of them on the same line making sure there is no space between them.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -65,28 +56,16 @@ tests:
         </section>
         <section>
           <h2>Desserts</h2>
+--fcc-editable-region--
           <article class="item">
-            <p class="dessert">Donut</p><p class="price">1.50</p>
           </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
-          </article>
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -97,24 +76,18 @@ h1, h2, p {
   text-align: center;
 }
 
---fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
-.flavor, .dessert {
+.flavor {
   text-align: left;
   width: 75%;
 }
@@ -125,6 +98,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

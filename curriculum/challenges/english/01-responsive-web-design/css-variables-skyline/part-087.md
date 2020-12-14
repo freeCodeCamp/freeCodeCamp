@@ -2,34 +2,30 @@
 id: 5d822fd413a79914d39e9920
 title: Part 87
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 For `fb2a`, add a `border-bottom` of `10vh solid var(--building-color3)` and a `border-left` and `border-right` of `1vw solid transparent`. This time the border trick will create a trapezoid shape.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-bottom\s*:\s*10vh\s+solid\s+var\(\s*--building-color3\s*\)\s*(;|})/g.test(fb2a) && /border-left\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a) && /border-right\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a));
-
+```js
+const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /border-bottom\s*:\s*10vh\s+solid\s+var\(\s*--building-color3\s*\)\s*(;|})/g.test(
+    fb2a
+  ) &&
+    /border-left\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a) &&
+    /border-right\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -323,12 +319,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -624,5 +615,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

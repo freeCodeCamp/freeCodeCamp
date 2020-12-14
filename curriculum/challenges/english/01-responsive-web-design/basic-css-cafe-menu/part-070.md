@@ -1,35 +1,24 @@
 ---
-id: 5f46fc57528aa1c4b5ea7c2e
+id: 5f459225127805351a6ad057
 title: Part 70
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinaommon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
+Change the background color of the `hr` element to `brown` so it matches the color of the coffee beans.
 
-Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -82,7 +71,6 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -94,15 +82,10 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -130,14 +113,10 @@ h1, h2, p {
   max-width: 500px;
 }
 
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
-}
-
 --fcc-editable-region--
-
+hr {
+  height: 3px;
+}
 --fcc-editable-region--
 
 h1, h2 {
@@ -146,9 +125,6 @@ h1, h2 {
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -162,6 +138,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

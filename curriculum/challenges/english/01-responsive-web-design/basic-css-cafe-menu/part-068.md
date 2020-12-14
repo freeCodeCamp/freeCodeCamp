@@ -1,35 +1,26 @@
 ---
-id: 5f45a276c093334f0f6e9df4
+id: 5f3ef6e01f288a026d709587
 title: Part 68
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Focusing on the menu items and prices, there is a fairly large gap between each line.
+You can use an `hr` element to display a divider between sections of different content.
 
-Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
+First, add an `hr` element between the first `header` element and the `main` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -42,11 +33,11 @@ tests:
   </head>
   <body>
     <div class="menu">
+--fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -82,7 +73,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
+--fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -94,15 +85,10 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -130,13 +116,6 @@ h1, h2, p {
   max-width: 500px;
 }
 
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
-}
-
---fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
@@ -154,9 +133,5 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
---fcc-editable-region--
 ```
 
-</div>
-
-</section>

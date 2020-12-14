@@ -1,35 +1,24 @@
 ---
-id: 5f45b3c93c027860d9298dbd
+id: 5f45a5a7c49a8251f0bdb527
 title: Part 76
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue }`
+Using the same style selector in the previous step, make the font size of the items and prices larger by using a value of `18px`.
 
-Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -82,7 +71,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -93,10 +82,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -136,20 +121,17 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
+--fcc-editable-region--
 .item p {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;
 }
+--fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;
@@ -160,26 +142,5 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: grey;
-}
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
-</div>
-
-</section>

@@ -1,33 +1,26 @@
 ---
-id: 5f45a5a7c49a8251f0bdb527
+id: 5f3f26fa39591db45e5cd7a0
 title: Part 69
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Using the same style selector in the previous step, make the font size of the items and prices by using a value of `18px`.
+The default properties of an `hr` element will make it appear as a thin light grey line. You can change the height of the line by specifying a value for the `height` property.
 
-</section>
+Change the height the `hr` element to be `3px`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -80,7 +73,6 @@ tests:
           </article>
         </section>
       </main>
-      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -92,15 +84,10 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -128,23 +115,17 @@ h1, h2, p {
   max-width: 500px;
 }
 
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
 }
 
---fcc-editable-region--
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
---fcc-editable-region--
 
 .flavor, .dessert {
   text-align: left;
@@ -157,6 +138,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

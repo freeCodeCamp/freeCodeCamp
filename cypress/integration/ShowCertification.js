@@ -52,11 +52,13 @@ describe('A certification,', function() {
     });
 
     it('should render a LinkedIn button', function() {
-      cy.contains('Add this certification to my LinkedIn profile').should(
-        'have.attr',
-        'href',
-        'https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Legacy Front End&organizationId=4831032&issueYear=2020&issueMonth=8&certUrl=https://freecodecamp.org/certification/developmentuser/legacy-front-end'
-      );
+      cy.contains('Add this certification to my LinkedIn profile')
+        .should('have.attr', 'href')
+        .and(
+          'match',
+          // eslint-disable-next-line max-len
+          /https:\/\/www\.linkedin\.com\/profile\/add\?startTask=CERTIFICATION_NAME&name=Legacy Front End&organizationId=4831032&issueYear=\d\d\d\d&issueMonth=\d\d?&certUrl=https:\/\/freecodecamp\.org\/certification\/developmentuser\/legacy-front-end/
+        );
     });
 
     it('should render a Twitter button', function() {
@@ -65,6 +67,14 @@ describe('A certification,', function() {
         'href',
         'https://twitter.com/intent/tweet?text=I just earned the Legacy Front End certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/developmentuser/legacy-front-end'
       );
+    });
+
+    it("should be issued with today's date", () => {
+      const date = new Date();
+      const issued = `Issued\xa0${new Intl.DateTimeFormat('en-US', {
+        month: 'long'
+      }).format(date)} ${date.getDate()}, ${date.getFullYear()}`;
+      cy.get('[data-cy=issue-date]').should('have.text', issued);
     });
   });
 

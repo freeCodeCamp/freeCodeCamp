@@ -1,33 +1,26 @@
 ---
-id: 5f4701b942c824109626c3d8
+id: 5f459a7ceb8b5c446656d88b
 title: Part 71
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now add the `bottom-line` class to the second `hr` element so the styling is applied.
+Notice the grey color along the edges of the line. Those edges are known as <dfn>borders</dfn>. Each side of an element can have a different color or they can all be the same.
 
-</section>
+Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -80,9 +73,6 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
-      <hr>
-      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -94,15 +84,10 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -130,15 +115,12 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
+  height: 3px;
   background-color: brown;
-  border-color: brown;
 }
-
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -146,9 +128,6 @@ h1, h2 {
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -162,6 +141,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

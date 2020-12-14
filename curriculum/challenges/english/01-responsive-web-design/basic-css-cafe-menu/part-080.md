@@ -1,33 +1,24 @@
 ---
-id: 5f46e270702a8456a664f0df
+id: 5f45a66d4a2b0453301e5a26
 title: Part 80
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-To remove some of the vertical space between the `h1` element and the text `Est. 2020`, change the bottom margin of the `h1` to `15px`;
+Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -92,10 +83,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -103,12 +90,9 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
-  margin-top: 0;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -164,27 +148,8 @@ h1, h2 {
 
 /* FOOTER */
 
-footer {
-  font-size: 14px;
-}
+--fcc-editable-region--
 
-a {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  color: brown;
-}
-
-a:active {
-  color: brown;
-}
+--fcc-editable-region--
 ```
 
-</div>
-
-</section>

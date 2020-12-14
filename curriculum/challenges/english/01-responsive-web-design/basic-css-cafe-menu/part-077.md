@@ -1,36 +1,26 @@
 ---
-id: 5f45b45d099f3e621fbbb256
+id: 5f46fc57528aa1c4b5ea7c2e
 title: Part 77
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-You change properties of a link when the link is actually clicked by using a <dfn>pseudo-selector</dfn> that looks like `a:active { propertyName: propertyValue }`
+Changing the `bottom-margin` to `5px` looks great. However, now the space between the `Cinnamon Roll` menu item and the second `hr` element does not match the space between the top `hr` element and the `Coffees` heading.
 
-Change the color of the footer `Visit our website` link to be `white` when a clicks on it.
+Add some more space by creating a class named `bottom-line` using `25px` for the `margin-top` property.
 
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -83,7 +73,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -94,10 +84,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -137,9 +123,9 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -161,30 +147,5 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: grey;
-}
-
-a:hover {
-  color: brown;
-}
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
-</div>
-
-</section>

@@ -1,14 +1,17 @@
 const fs = require('fs');
 const path = require('path');
+const debug = require('debug');
 
 const env = require('../../../config/env');
+
+const log = debug('fcc:ensure-env');
 
 const clientPath = path.resolve(__dirname, '../../../client');
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
 const { FREECODECAMP_NODE_ENV } = process.env;
 
-if (FREECODECAMP_NODE_ENV === 'production') {
+if (FREECODECAMP_NODE_ENV !== 'development') {
   const locationKeys = [
     'homeLocation',
     'apiLocation',
@@ -51,6 +54,8 @@ if (FREECODECAMP_NODE_ENV === 'production') {
 
   if (env['showUpcomingChanges'])
     throw Error("SHOW_UPCOMING_CHANGES should never be 'true' in production");
+} else {
+  log('Skipping environment variable checks in development');
 }
 
 fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));

@@ -1,33 +1,26 @@
 ---
-id: 5f46e7a4750dd05b5a673920
+id: 5f45b25e7ec2405f166b9de1
 title: Part 82
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now apply the `address` class to the `p` element containing the address.
+You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue; }`.
 
-</section>
+Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -81,22 +74,16 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
-      --fcc-editable-region--
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -107,8 +94,6 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
 
 h2 {
@@ -169,27 +154,12 @@ footer {
   font-size: 14px;
 }
 
-.address {
-  margin-bottom: 5px;
-}
-
 a {
   color: black;
 }
 
-a:visited {
-  color: black;
-}
+--fcc-editable-region--
 
-a:hover {
-  color: brown;
-}
-
-a:active {
-  color: brown;
-}
+--fcc-editable-region--
 ```
 
-</div>
-
-</section>

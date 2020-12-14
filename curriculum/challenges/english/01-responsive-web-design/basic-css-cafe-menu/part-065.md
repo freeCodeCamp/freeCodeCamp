@@ -1,35 +1,24 @@
 ---
-id: 5f459cf202c2a3472fae6a9f
+id: 5f3ef6e07276f782bb46b93d
 title: Part 65
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Notice how the thickness of the line looks bigger?  The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
+Add a `footer` element below the `main` element, where you can some additional information.
 
-Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -46,7 +35,7 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
+--fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -82,20 +71,11 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
+--fcc-editable-region--
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -128,14 +108,6 @@ h1, h2, p {
   max-width: 500px;
 }
 
---fcc-editable-region--
-hr {
-  height: 3px;
-  background-color: brown;
-  border-color: brown;
-}
---fcc-editable-region--
-
 h1, h2 {
   font-family: Impact, serif;
 }
@@ -155,6 +127,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

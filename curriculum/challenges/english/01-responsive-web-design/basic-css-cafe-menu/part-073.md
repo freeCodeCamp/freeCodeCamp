@@ -1,33 +1,24 @@
 ---
-id: 5f45a66d4a2b0453301e5a26
+id: 5f459fd48bdc98491ca6d1a3
 title: Part 73
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Moving down to the `footer` element, make all the text have a value of `14px` for the font size.
+Go ahead and add another `hr` element between the `main` element and the `footer` element.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -45,6 +36,7 @@ tests:
         <p class="established">Est. 2020</p>
       </header>
       <hr>
+--fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,27 +72,22 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
         <p>123 Free Code Camp Drive</p>
       </footer>
+--fcc-editable-region--
     </div>
   </body>
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -134,19 +121,12 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -158,14 +138,5 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
-</div>
-
-</section>

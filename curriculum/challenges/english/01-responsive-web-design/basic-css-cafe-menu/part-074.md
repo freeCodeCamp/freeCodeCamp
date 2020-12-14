@@ -1,35 +1,24 @@
 ---
-id: 5f45b0731d39e15d54df4dfc
+id: 5f45a05977e2fa49d9119437
 title: Part 74
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The default color of link that has not yet been clicked on a page is typically blue.  The default color of a link that has already been visited from a page is typically purple.
+To create a little more room around the menu, add `20px` of space on the inside of the `body` element by using the `padding` property.
 
-To make the `footer` links the same color regardless if a link has been visited, use a type selector for the anchor element (`a`) and use the value `black` for the `color` property.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -82,7 +71,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -94,16 +83,13 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
+--fcc-editable-region--
 
 h1 {
   font-size: 40px;
@@ -136,19 +122,12 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -160,17 +139,5 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
-</div>
-
-</section>

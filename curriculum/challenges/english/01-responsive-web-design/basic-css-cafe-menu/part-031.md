@@ -2,34 +2,23 @@
 id: 5f3c866daec9a49519871816
 title: Part 31
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The `article` element you added is commonly found inside `section` elements when you plan on having other informational elements that are grouped.
+`article` elements commonly contain multiple elements that have related information. In this case, it will contain a coffee flavor and a price for that flavor. Nest two `p` elements inside your `article` element. The first one's text should be `French Vanilla`, and the second's text `3.00`.
 
-Go ahead nested two `p` elements inside your `article` element. The text for the first `p` element should be `French Vanilla` and the text for the second `p` element should be `3.00`.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -49,20 +38,16 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          --fcc-editable-region--
+--fcc-editable-region--
           <article>
           </article>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -81,6 +66,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

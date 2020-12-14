@@ -2,3 +2,5 @@
 **/public
 client/static
 fixtures
+curriculum/challenges/_meta/*/*
+curriculum/challenges/**/*

@@ -1,35 +1,24 @@
 ---
-id: 5f3ef6e03d719d5ac4738993
+id: 5f7b87422a560036fd03ccff
 title: Part 51
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
+For the two `p` elements you just added, add `dessert` as the value of the first `p` element's `class` attribute and the value `price` as the second `p` elements `class` attribute.
 
-Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -68,16 +57,9 @@ tests:
         <section>
           <h2>Desserts</h2>
           <article class="item">
-            <p class="dessert">Donut</p><p class="price">1.50</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-          </article>
-          <article class="item">
-            <p class="dessert">Cinammon Roll</p><p class="price">2.50</p>
+--fcc-editable-region--
+            <p>Donut</p><p>1.50</p>
+--fcc-editable-region--
           </article>
         </section>
       </main>
@@ -85,10 +67,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -99,21 +77,18 @@ h1, h2, p {
   text-align: center;
 }
 
---fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
 }
---fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
-.flavor, .dessert {
+.flavor {
   text-align: left;
   width: 75%;
 }
@@ -124,6 +99,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

@@ -2,41 +2,31 @@
 id: 5f344f9c805cd193c33d829c
 title: Part 12
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Without specifying any CSS (Cascasing Style Sheets) styling, an element's content is positioned to the left. To center content of block-level elements (i.e. `h1`, `section`, `p`, etc.) you would put the following between the `style` element's opening and closing tags, where `elementName` is an element name like  `h3`.
+You can add style to an element by specifying it in the `style` element and setting a property for it like this:
 
 ```css
-elementName {
- text-align: center;
+element {
+ property: value;
 }
+```
+
+Center your `h1` element by setting its `text-align` property to the value `center`.
+
+# --hints--
+
+Test 1
+
+```js
 
 ```
 
-Center the menu's `h1` element by using the syntax shown above.
+# --seed--
 
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -44,10 +34,10 @@ tests:
   <head>
     <meta charset="utf-8" />
     <title>Camper Cafe Menu</title>
-    --fcc-editable-region--
+--fcc-editable-region--
     <style>
     </style>
-    --fcc-editable-region--
+--fcc-editable-region--
   </head>
   <body>
     <header>
@@ -63,6 +53,3 @@ tests:
 <html>
 ```
 
-</div>
-
-</section>

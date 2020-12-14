@@ -2,34 +2,27 @@
 id: 5d822fd413a79914d39e992a
 title: Part 97
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give `fb4b` a `width` of `100%` and `height` of `89%`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const fb4b = code.match(/\.fb4b\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*100%\s*(;|})/g.test(fb4b) && /height\s*:\s*89%\s*(;|})/g.test(fb4b));
-
+```js
+const fb4b = code.match(/\.fb4b\s*{[\s\S]+?[^}]}/g)[0];
+assert(
+  /width\s*:\s*100%\s*(;|})/g.test(fb4b) &&
+    /height\s*:\s*89%\s*(;|})/g.test(fb4b)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -355,12 +348,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -690,5 +678,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

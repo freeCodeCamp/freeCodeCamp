@@ -1,13 +1,16 @@
 import passport from 'passport';
 import dedent from 'dedent';
-import { check } from 'express-validator/check';
+import { check } from 'express-validator';
 import { isEmail } from 'validator';
+import jwt from 'jsonwebtoken';
 
 import { homeLocation } from '../../../config/env';
+import { jwtSecret } from '../../../config/secrets';
+
 import {
   createPassportCallbackAuthenticator,
-  saveResponseAuthCookies,
-  loginRedirect
+  devSaveResponseAuthCookies,
+  devLoginRedirect
 } from '../component-passport';
 import { ifUserRedirectTo, ifNoUserRedirectTo } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
@@ -37,8 +40,8 @@ module.exports = function enableAuthentication(app) {
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
   const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
-  const saveAuthCookies = saveResponseAuthCookies();
-  const loginSuccessRedirect = loginRedirect();
+  const devSaveAuthCookies = devSaveResponseAuthCookies();
+  const devLoginSuccessRedirect = devLoginRedirect();
   const api = app.loopback.Router();
 
   // Use a local mock strategy for signing in if we are in dev mode.
@@ -48,26 +51,14 @@ module.exports = function enableAuthentication(app) {
     api.get(
       '/signin',
       passport.authenticate('devlogin'),
-      saveAuthCookies,
-      loginSuccessRedirect
+      devSaveAuthCookies,
+      devLoginSuccessRedirect
     );
   } else {
-    api.get(
-      '/signin',
-      (req, res, next) => {
-        if (req && req.query && req.query.returnTo) {
-          req.query.returnTo = `${homeLocation}/${req.query.returnTo}`;
-        }
-        return next();
-      },
-      ifUserRedirect,
-      (req, res, next) => {
-        const state = req.query.returnTo
-          ? Buffer.from(req.query.returnTo).toString('base64')
-          : null;
-        return passport.authenticate('auth0-login', { state })(req, res, next);
-      }
-    );
+    api.get('/signin', ifUserRedirect, (req, res, next) => {
+      const state = jwt.sign({ returnTo: req.query.returnTo }, jwtSecret);
+      return passport.authenticate('auth0-login', { state })(req, res, next);
+    });
 
     api.get(
       '/auth/auth0/callback',

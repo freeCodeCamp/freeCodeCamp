@@ -2,34 +2,23 @@
 id: 5d822fd413a79914d39e98ea
 title: Part 34
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Now that you did that, you can delete the old `foreground-buildings` class and all of its properties since they aren't needed anymore.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(code.match(/\.foreground-buildings/g).length === 1);
-
+```js
+assert(code.match(/\.foreground-buildings/g).length === 1);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -185,12 +174,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -337,5 +321,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

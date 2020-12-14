@@ -2,34 +2,25 @@
 id: 5d8a4cfbe6b6180ed9a1c9e0
 title: Part 3
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 In the head, add a `title` of `D3 Dashboard`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/<head\s*>\s*<title\s*>D3 Dashboard<\/title\s*>\s*<\/head\s*>/g.test(code));
-
+```js
+assert(
+  /<head\s*>\s*<title\s*>D3 Dashboard<\/title\s*>\s*<\/head\s*>/g.test(code)
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -44,12 +35,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -62,5 +48,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

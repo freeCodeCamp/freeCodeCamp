@@ -1,35 +1,26 @@
 ---
-id: 5f3ef6e0e9629bad967cd71e
+id: 5f3ef6e0086dc80481f8cb03
 title: Part 54
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma.  This second font would be used in case the browser does not have the font built-in to it.
+Something does not look right. You added the correct `class` attribute to the `p` elements with dessert names, but you have not defined a selector for it.
 
-Add the fallback font `serif` after the `Impact` font. 
+Since the `flavor` class selector already has the properties you want, just add the `dessert` class to it.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -86,14 +77,9 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
 
 h1, h2, p {
@@ -105,24 +91,18 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  max-width: 500px;
 }
-
---fcc-editable-region--
-h1, h2 {
-  font-family: Impact;
-}
---fcc-editable-region--
 
 .item p {
   display: inline-block;
 }
 
-.flavor, .dessert {
+--fcc-editable-region--
+.flavor {
   text-align: left;
   width: 75%;
 }
+--fcc-editable-region--
 
 .price {
   text-align: right;
@@ -130,6 +110,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

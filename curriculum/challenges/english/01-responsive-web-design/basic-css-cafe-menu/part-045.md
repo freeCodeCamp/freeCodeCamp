@@ -1,33 +1,24 @@
 ---
-id: 5f3ef6e0819d4f23ca7285e6
+id: 5f7692f7c5b3ce22a57788b6
 title: Part 45
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now you need to add four `article` elements below the `h2`. Each should have a `class` attribute with the value `item`. 
+To complete the styling, add the applicable class names `flavor` and `price` to all the remaining `p` elements.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -50,33 +41,26 @@ tests:
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
+--fcc-editable-region--
           <article class="item">
-            <p class="flavor">Carmel Macchiato</p><p class="price">3.75</p>
+            <p>Carmel Macchiato</p><p>3.75</p>
           </article>
           <article class="item">
-            <p class="flavor">Pumpkin Spice</p><p class="price">3.50</p>
+            <p>Pumpkin Spice</p><p>3.50</p>
           </article>
           <article class="item">
-            <p class="flavor">Hazelnut</p><p class="price">4.00</p>
+            <p>Hazelnut</p><p>4.00</p>
           </article>
           <article class="item">
-            <p class="flavor">Mocha</p><p class="price">4.50</p>
+            <p>Mocha</p><p>4.50</p>
           </article>
-        </section>
-        <section>
-          --fcc-editable-region--
-          <h2>Desserts</h2>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -100,15 +84,12 @@ h1, h2, p {
 
 .flavor {
   text-align: left;
-  width: 75%;
+  width: 50%;
 }
 
 .price {
   text-align: right;
-  width: 25%
+  width: 50%;
 }
 ```
 
-</div>
-
-</section>

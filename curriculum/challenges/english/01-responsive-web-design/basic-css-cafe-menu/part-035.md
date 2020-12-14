@@ -1,35 +1,24 @@
 ---
-id: 5f3c866de7a5b784048f94b1
+id: 5f76967fad478126d6552b0d
 title: Part 35
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-That is kind of what you want, but now it would be nice if the flavor and price were on the same line.  Remember that `p` elements are <dfn>block-level</dfn> elements, so they take up the entire width of the parent element.
+Next, you want to align the price to the right. Add a class named `price` to your `p` element that has `3.00` as its text.
 
-To get them on the same line, you need to apply some styling to the `p` elements, so they behave more like `inline` elements.  Start by adding a `class` attribute with the value `item` to each `article` element.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -49,10 +38,11 @@ tests:
       <main>
         <section>
           <h2>Coffees</h2>
-          --fcc-editable-region--
           <article>
             <p class="flavor">French Vanilla</p>
-            <p class="price">3.00</p>
+--fcc-editable-region--
+            <p>3.00</p>
+--fcc-editable-region--
           </article>
           <article>
             <p>Carmel Macchiato</p>
@@ -70,17 +60,12 @@ tests:
             <p>Mocha</p>
             <p>4.50</p>
           </article>
-          --fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -101,13 +86,5 @@ h1, h2, p {
 .flavor {
   text-align: left;
 }
-
-.price {
-  text-align: right;
-}
-
 ```
 
-</div>
-
-</section>

@@ -2,34 +2,23 @@
 id: 5d822fd413a79914d39e9927
 title: Part 94
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add your `window-wrap` class to the `fb3a` element to center and space the windows.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".fb3 div.fb3a:first-child").hasClass("window-wrap"));
-
+```js
+assert($('.fb3 div.fb3a:first-child').hasClass('window-wrap'));
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -352,12 +341,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -679,5 +663,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

@@ -1,34 +1,26 @@
 ---
-id: 5f3ef6e0a81099d9a697b550
+id: 5f3ef6e05473f91f948724ab
 title: Part 59
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
+You can change the `font-family` of text, to make it look different the the default font of your browser. Each browser has some common fonts available to it.
 
-</section>
+Change all the text in your `body`, by adding a `font-family` property with the value `sans-serif`. This is a fairly common font that is very readable.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -43,7 +35,7 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
       <main>
         <section>
@@ -80,36 +72,17 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
-      <footer>
-      </footer>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
+--fcc-editable-region--
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
-}
+--fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
@@ -122,10 +95,6 @@ h1, h2, p {
   margin-right: auto;
   padding: 20px;
   max-width: 500px;
-}
-
-h1, h2 {
-  font-family: Impact, serif;
 }
 
 .item p {
@@ -143,6 +112,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

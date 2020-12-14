@@ -129,15 +129,21 @@ class ShowClassic extends Component {
   componentDidUpdate(prevProps) {
     const {
       data: {
-        challengeNode: { title: prevTitle }
+        challengeNode: {
+          title: prevTitle,
+          fields: { tests: prevTests }
+        }
       }
     } = prevProps;
     const {
       data: {
-        challengeNode: { title: currentTitle }
+        challengeNode: {
+          title: currentTitle,
+          fields: { tests: currTests }
+        }
       }
     } = this.props;
-    if (prevTitle !== currentTitle) {
+    if (prevTitle !== currentTitle || prevTests !== currTests) {
       this.initializeComponent(currentTitle);
     }
   }
@@ -153,7 +159,8 @@ class ShowClassic extends Component {
         challengeNode: {
           files,
           fields: { tests },
-          challengeType
+          challengeType,
+          helpCategory
         }
       },
       pageContext: { challengeMeta }
@@ -161,7 +168,12 @@ class ShowClassic extends Component {
     initConsole('');
     createFiles(files);
     initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
   }
 
@@ -341,6 +353,7 @@ export const query = graphql`
       description
       instructions
       challengeType
+      helpCategory
       videoUrl
       forumTopicId
       fields {

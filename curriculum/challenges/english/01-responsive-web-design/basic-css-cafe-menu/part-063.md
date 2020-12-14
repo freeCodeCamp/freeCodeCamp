@@ -1,33 +1,24 @@
 ---
-id: 5f459225127805351a6ad057
+id: 5f3ef6e087d56ed3ffdc36be
 title: Part 63
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Change the background color of the `hr` elemnent to be `brown` to make it match the color of the coffee beans.
+Now apply the `established` class to the `Est. 2020` text.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -40,11 +31,12 @@ tests:
   </head>
   <body>
     <div class="menu">
+--fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
-      <hr>
+--fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,33 +72,15 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
     </div>
   </body>
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
 }
 
 .established {
@@ -125,12 +99,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-hr {
-  height: 3px;
-}
---fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -151,6 +119,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

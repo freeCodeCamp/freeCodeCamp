@@ -2,40 +2,31 @@
 id: 5f356ed6199b0cdef1d2be8f
 title: Part 27
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-So far you have been using type selectors to style elements.  A <dfn>class selector</dfn> is defined by a name with a dot directly in front it. For example, if you wanted to create a class selector named `container` that makes the width of a `div` element `700px`, you would write:
+So far you have been using type selectors to style elements. A <dfn>class selector</dfn> is defined by a name with a dot directly in front it, like this:
 
 ```css
-.container {
-  width: 700px;
+.class-name {
+  styles
 }
 ```
 
-Turn the existing `div` selector into a class selector by replacing `div` with a class named `menu`.
+Change the existing `div` selector into a class selector by replacing `div` with a class named `menu`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -62,10 +53,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   /*
@@ -87,6 +74,3 @@ div {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

@@ -1,8 +1,7 @@
 /* global jest, expect */
 import React from 'react';
-import 'jest-dom/extend-expect';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import { apiLocation } from '../../config/env.json';
+import { apiLocation, homeLocation } from '../../config/env.json';
 
 import { ShowSettings } from './ShowSettings';
 
@@ -24,7 +23,7 @@ describe('<ShowSettings />', () => {
     shallow.render(<ShowSettings {...loggedOutProps} />);
     expect(navigate).toHaveBeenCalledTimes(1);
     expect(navigate).toHaveBeenCalledWith(
-      `${apiLocation}/signin?returnTo=settings`
+      `${apiLocation}/signin?returnTo=${homeLocation}/settings`
     );
     const result = shallow.getRenderOutput();
     // Renders Loader rather than ShowSettings

@@ -2,34 +2,23 @@
 id: 5d822fd413a79914d39e992c
 title: Part 99
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Nest six `div` elements within `fb4b` and give them all a class of `fb4-window`.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".fb4b").children("div.fb4-window").length === 6);
-
+```js
+assert($('.fb4b').children('div.fb4-window').length === 6);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -360,12 +349,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -702,5 +686,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

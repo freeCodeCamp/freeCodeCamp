@@ -1,3 +1,4 @@
+const { isEmpty } = require('lodash');
 const clone = require('lodash/cloneDeep');
 
 exports.translateComments = (text, lang, dict, codeLang) => {
@@ -5,11 +6,10 @@ exports.translateComments = (text, lang, dict, codeLang) => {
   const config = { knownComments, dict, lang };
   switch (codeLang) {
     case 'js':
-      return transMultiline(transInline(text, config), config);
     case 'jsx':
-      return transJSX(text, config);
+      return transMultiline(transInline(text, config), config);
     case 'html':
-      return transHTML(transCSS(text, config), config);
+      return transScript(transHTML(transCSS(text, config), config), config);
     default:
       return text;
   }
@@ -17,18 +17,20 @@ exports.translateComments = (text, lang, dict, codeLang) => {
 
 exports.translateCommentsInChallenge = (challenge, lang, dict) => {
   const challClone = clone(challenge);
-
-  Object.keys(challClone.files).forEach(key => {
-    if (challClone.files[key].contents) {
-      challClone.files[key].contents = this.translateComments(
-        challenge.files[key].contents,
-        lang,
-        dict,
-        challClone.files[key].ext
-      );
-    }
-  });
-
+  if (!challClone.files) {
+    console.warn(`Challenge ${challClone.title} has no comments to translate`);
+  } else {
+    Object.keys(challClone.files).forEach(key => {
+      if (challClone.files[key].contents) {
+        challClone.files[key].contents = this.translateComments(
+          challenge.files[key].contents,
+          lang,
+          dict,
+          challClone.files[key].ext
+        );
+      }
+    });
+  }
   return challClone;
 };
 
@@ -40,14 +42,16 @@ exports.mergeChallenges = (engChal, transChal) => {
     ...engChal,
     description: transChal.description,
     instructions: transChal.instructions,
-    localeTitle: transChal.localeTitle,
+    originalTitle: engChal.title,
+    // TODO: throw in production?
+    title: isEmpty(transChal.title) ? engChal.title : transChal.title,
     forumTopicId: transChal.forumTopicId
   };
   if (!hasTests)
     throw Error(
       `Both challenges must have tests or questions.
       title: ${engChal.title}
-      localeTitle: ${transChal.localeTitle}`
+      translated title: ${transChal.title}`
     );
   // TODO: this should break the build when we go to production, but
   // not for testing.
@@ -55,7 +59,7 @@ exports.mergeChallenges = (engChal, transChal) => {
     console.error(
       `Challenges in both languages must have the same number of tests.
     title: ${engChal.title}
-    localeTitle: ${transChal.localeTitle}`
+    translated title: ${transChal.title}`
     );
     return challenge;
   }
@@ -63,7 +67,7 @@ exports.mergeChallenges = (engChal, transChal) => {
   // throw Error(
   //   `Challenges in both languages must have the same number of tests.
   // title: ${engChal.title}
-  // localeTitle: ${transChal.localeTitle}`
+  // translated title: ${transChal.title}`
   // );
 
   if (transChal.tests) {
@@ -90,12 +94,7 @@ exports.mergeChallenges = (engChal, transChal) => {
 // bare urls could be interpreted as comments, so we have to lookbehind for
 // http:// or https://
 function transInline(text, config) {
-  return translateGeneric(
-    text,
-    config,
-    '(^[^\'"`]*?(?<!https?:)//\\s*)',
-    '(\\s*$)'
-  );
+  return translateGeneric(text, config, '((?<!https?:)//\\s*)', '(\\s*$)');
 }
 
 function transMultiline(text, config) {
@@ -113,8 +112,17 @@ function transCSS(text, config) {
   return text;
 }
 
-function transJSX(text, config) {
-  return translateGeneric(text, config, '({[^}]*/\\*\\s*)', '(\\s*\\*/[^{]*})');
+function transScript(text, config) {
+  const regex = /<script>.*?<\/script>/gms;
+  const matches = text.matchAll(regex);
+
+  for (const [match] of matches) {
+    text = text.replace(
+      match,
+      transMultiline(transInline(match, config), config)
+    );
+  }
+  return text;
 }
 
 function transHTML(text, config) {

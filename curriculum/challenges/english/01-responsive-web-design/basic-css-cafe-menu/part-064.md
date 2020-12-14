@@ -1,35 +1,26 @@
 ---
-id: 5f459a7ceb8b5c446656d88b
+id: 5f3ef6e0f8c230bdd2349716
 title: Part 64
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Notice the grey color along the edges of the line.  Those edges are known as <dfn>borders</dfn>.  Each side of an element can have a different color or they can all be the same.
+The `h1` and `h2` elements' text are set by default values of the user's browser.
 
-Make all the edges of the `hr` element the same color as the background of it using the `border-color` property.
+Add two new type selectors (`h1` and `h2`). Use the `font-size` property for both, but use the value `40px` for the `h1` and `30px` for the `h2`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -46,7 +37,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
       <main>
         <section>
           <h2>Coffees</h2>
@@ -82,20 +72,10 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -103,13 +83,9 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 40px;
-}
+--fcc-editable-region--
 
-h2 {
-  font-size: 30px;
-}
+--fcc-editable-region--
 
 .established {
   font-style: italic;
@@ -127,13 +103,6 @@ h1, h2, p {
   padding: 20px;
   max-width: 500px;
 }
-
---fcc-editable-region--
-hr {
-  height: 3px;
-  background-color: brown;
-}
---fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -154,6 +123,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

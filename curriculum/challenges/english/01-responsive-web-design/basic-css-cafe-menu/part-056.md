@@ -1,33 +1,24 @@
 ---
-id: 5f3ef6e087d56ed3ffdc36be
+id: 5f3ef6e050279c7a4a7101d3
 title: Part 56
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now apply the `established` class to the `Est. 2020` text.
+That looks better. Now try to add the same `20px` padding to the top and bottom of the menu.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -40,12 +31,10 @@ tests:
   </head>
   <body>
     <div class="menu">
-      --fcc-editable-region--
       <header>
         <h1>CAMPER CAFE</h1>
         <p>Est. 2020</p>
       </header>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -86,36 +75,25 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
-}
-
-.established {
-  font-style: italic;
 }
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  max-width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
-h1, h2 {
-  font-family: Impact, serif;
-}
+--fcc-editable-region--
 
 .item p {
   display: inline-block;
@@ -132,6 +110,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

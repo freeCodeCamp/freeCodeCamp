@@ -1,33 +1,26 @@
 ---
-id: 5f3ef6e06d34faac0447fc44
+id: 5f3ef6e0eaa7da26e3d34d78
 title: Part 55
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Make the `Est. 2020` text italicized by creating an `established` class selector and giving it the `font-style` property with the value `italic`.
+You can give your menu some space between the content and the sides with various `padding` properties.
 
-</section>
+Give the `menu` class a `padding-left` and a `padding-right` with the same value `20px`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -84,36 +77,23 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  max-width: 500px;
 }
-
-h1, h2 {
-  font-family: Impact, serif;
-}
+--fcc-editable-region--
 
 .item p {
   display: inline-block;
@@ -130,6 +110,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

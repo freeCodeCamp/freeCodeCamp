@@ -14,11 +14,12 @@ const fileJoi = Joi.object().keys({
   tail: Joi.string().allow(''),
   seed: Joi.string().allow(''),
   contents: Joi.string().allow(''),
+  id: Joi.string().allow(''),
   history: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')]
 });
 
-function getSchemaForLang(lang) {
-  let schema = Joi.object().keys({
+const schema = Joi.object()
+  .keys({
     block: Joi.string(),
     blockId: Joi.objectId(),
     challengeOrder: Joi.number(),
@@ -41,6 +42,7 @@ function getSchemaForLang(lang) {
       indexjsx: fileJoi
     }),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
+    helpCategory: Joi.only(['JavaScript', 'HTML-CSS', 'Python']),
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
     helpRoom: Joi.string(),
@@ -86,6 +88,7 @@ function getSchemaForLang(lang) {
     tests: Joi.array().items(
       // public challenges
       Joi.object().keys({
+        id: Joi.string().allow(''),
         text: Joi.string().required(),
         testString: Joi.string()
           .allow('')
@@ -100,17 +103,9 @@ function getSchemaForLang(lang) {
     template: Joi.string().allow(''),
     time: Joi.string().allow(''),
     title: Joi.string().required()
-  });
+  })
+  .xor('helpCategory', 'isPrivate');
 
-  if (lang !== 'english') {
-    // TODO: make this required again once all current challenges have it.
-    schema = schema.append({
-      localeTitle: Joi.string().allow('')
-    });
-  }
-  return schema;
-}
-exports.challengeSchemaValidator = lang => {
-  const schema = getSchemaForLang(lang);
+exports.challengeSchemaValidator = () => {
   return challenge => Joi.validate(challenge, schema);
 };

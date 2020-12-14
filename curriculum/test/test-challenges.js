@@ -2,6 +2,7 @@
 const path = require('path');
 const liveServer = require('live-server');
 const stringSimilarity = require('string-similarity');
+const { isAuditedCert } = require('../../utils/is-audited');
 
 const spinner = require('ora')();
 
@@ -32,15 +33,16 @@ const vm = require('vm');
 
 const puppeteer = require('puppeteer');
 
-const { getChallengesForLang, getMetaForBlock } = require('../getChallenges');
+const {
+  getChallengesForLang,
+  getMetaForBlock,
+  getTranslatableComments
+} = require('../getChallenges');
 
 const MongoIds = require('./utils/mongoIds');
 const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const {
-  challengeTypes,
-  helpCategory
-} = require('../../client/utils/challengeTypes');
+const { challengeTypes } = require('../../client/utils/challengeTypes');
 
 const { dasherize } = require('../../utils/slugs');
 const { toSortedArray } = require('../../utils/sort-files');
@@ -54,7 +56,18 @@ const {
 
 const { sortChallenges } = require('./utils/sort-challenges');
 
+const TRANSLATABLE_COMMENTS = getTranslatableComments(
+  path.resolve(__dirname, '..', 'dictionaries')
+);
+
 const testEvaluator = require('../../client/config/test-evaluator').filename;
+
+const commentExtractors = {
+  html: require('./utils/extract-html-comments'),
+  js: require('./utils/extract-js-comments'),
+  jsx: require('./utils/extract-jsx-comments'),
+  css: require('./utils/extract-css-comments')
+};
 
 // rethrow unhandled rejections to make sure the tests exit with -1
 process.on('unhandledRejection', err => handleRejection(err));
@@ -233,19 +246,10 @@ async function getChallenges(lang) {
   return sortChallenges(challenges);
 }
 
-function validateBlock(challenge) {
-  const dashedBlock = dasherize(challenge.block);
-  if (!helpCategory.hasOwnProperty(dashedBlock)) {
-    return `'${dashedBlock}' block not found as a helpCategory in client/utils/challengeTypes.js file for the '${challenge.title}' challenge`;
-  } else {
-    return null;
-  }
-}
-
 function populateTestsForLang({ lang, challenges, meta }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
-  const validateChallenge = challengeSchemaValidator(lang);
+  const validateChallenge = challengeSchemaValidator();
 
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
@@ -253,18 +257,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
       const dashedBlockName = dasherize(challenge.block);
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
-          it('Matches a title in meta.json', function() {
-            const index = meta[dashedBlockName].findIndex(
-              arr => arr[1] === challenge.title
-            );
-
-            if (index < 0) {
-              throw new AssertionError(
-                `Cannot find title "${challenge.title}" in meta.json file`
-              );
-            }
-          });
-
+          // Note: the title in meta.json are purely for human readability and
+          // do not include translations, so we do not validate against them.
           it('Matches an ID in meta.json', function() {
             const index = meta[dashedBlockName].findIndex(
               arr => arr[0] === challenge.id
@@ -279,19 +273,87 @@ function populateTestsForLang({ lang, challenges, meta }) {
 
           it('Common checks', function() {
             const result = validateChallenge(challenge);
-            const invalidBlock = validateBlock(challenge);
 
             if (result.error) {
               throw new AssertionError(result.error);
-            }
-            if (challenge.challengeType !== 7 && invalidBlock) {
-              throw new Error(invalidBlock);
             }
             const { id, title, block, dashedName } = challenge;
             const dashedBlock = dasherize(block);
             const pathAndTitle = `${dashedBlock}/${dashedName}`;
             mongoIds.check(id, title);
             challengeTitles.check(title, pathAndTitle);
+          });
+
+          it('Has replaced all the English comments', () => {
+            // special cases are where this process breaks for some reason, but
+            // we have validated that the challenge gets parsed correctly.
+            const specialCases = [
+              '587d7b84367417b2b2512b36',
+              '587d7b84367417b2b2512b37',
+              '587d7db0367417b2b2512b82',
+              '587d7dbe367417b2b2512bb8',
+              '5a24c314108439a4d4036161',
+              '5a24c314108439a4d4036154',
+              '5a94fe0569fb03452672e45c',
+              '5a94fe7769fb03452672e463',
+              '5a24c314108439a4d4036148'
+            ];
+            if (specialCases.includes(challenge.id)) return;
+            if (
+              lang === 'english' ||
+              !isAuditedCert(lang, challenge.superBlock)
+            ) {
+              return;
+            }
+
+            // If no .files, then no seed:
+            if (!challenge.files) return;
+
+            // - None of the translatable comments should appear in the
+            //   translations. While this is a crude check, no challenges
+            //   currently have the text of a comment elsewhere. If that happens
+            //   we can handle that challenge separately.
+            TRANSLATABLE_COMMENTS.forEach(comment => {
+              Object.values(challenge.files).forEach(file => {
+                if (file.contents.includes(comment))
+                  throw Error(
+                    `English comment '${comment}' should be replaced with its translation`
+                  );
+              });
+            });
+
+            // - None of the translated comment texts should appear *outside* a
+            //   comment
+            Object.values(challenge.files).forEach(file => {
+              let comments = {};
+
+              // We get all the actual comments using the appropriate parsers
+              if (file.ext === 'html') {
+                const commentTypes = ['css', 'html'];
+                for (let type of commentTypes) {
+                  const newComments = commentExtractors[type](file.contents);
+                  for (const [key, value] of Object.entries(newComments)) {
+                    comments[key] = comments[key]
+                      ? comments[key] + value
+                      : value;
+                  }
+                }
+              } else {
+                comments = commentExtractors[file.ext](file.contents);
+              }
+
+              // Then we compare the number of times a given comment appears
+              // (count) with the number of times the text within it appears
+              // (commentTextCount)
+              for (const [comment, count] of Object.entries(comments)) {
+                const commentTextCount =
+                  file.contents.split(comment).length - 1;
+                if (commentTextCount !== count)
+                  throw Error(
+                    `Translated comment text, ${comment}, should only appear inside comments`
+                  );
+              }
+            });
           });
 
           const { challengeType } = challenge;

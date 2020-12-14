@@ -2,34 +2,23 @@
 id: 5f356ed6cf6eab5f15f5cfe6
 title: Part 21
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The menu takes up the full width of the page. You can use a `div` element to hold all the elements located in the `body` element and then apply some special styling to it. The `div` element is used mainly for design layout purposes unlike the other content elements you have used so far.
+The `div` element is used mainly for design layout purposes unlike the other content elements you have used so far. Add a `div` element inside the `body` element and then move all the other elements inside the new `div`.
 
-Start by adding a `div` element inside the `body` element and then move all the elements located in the `body` element inside it. 
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -40,7 +29,7 @@ tests:
     <title>Camper Cafe Menu</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
-  --fcc-editable-region--
+--fcc-editable-region--
   <body>
     <header>
       <h1>CAMPER CAFE</h1>
@@ -52,13 +41,9 @@ tests:
       </section>
     </main>
   </body>
-  --fcc-editable-region--
+--fcc-editable-region--
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -70,6 +55,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

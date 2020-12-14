@@ -1,35 +1,26 @@
 ---
-id: 5f46e8284aae155c83015dee
+id: 5f45b3c93c027860d9298dbd
 title: Part 83
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The menu looks good, but other than the coffee beans background image, it is mainly just text.
+You change properties of a link when the mouse hovers them by using a <dfn>pseudo-selector</dfn> that looks like `a:hover { propertyName: propertyValue; }`.
 
-Under the `Coffees` heading, add an image using the url `https://tinyurl.com/cafe-coffee-fcc`. Give the image an `alt` value of `coffee icon`.
+Change the color of the footer `Visit our website` link to be `brown` when a user hovers over it.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -49,9 +40,7 @@ tests:
       <hr>
       <main>
         <section>
-          --fcc-editable-region--
           <h2>Coffees</h2>
-          --fcc-editable-region--
           <article class="item">
             <p class="flavor">French Vanilla</p><p class="price">3.00</p>
           </article>
@@ -89,16 +78,12 @@ tests:
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
-        <p class="address">123 Free Code Camp Drive</p>
+        <p>123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -109,8 +94,6 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
 }
 
 h2 {
@@ -171,27 +154,16 @@ footer {
   font-size: 14px;
 }
 
-.address {
-  margin-bottom: 5px;
-}
-
 a {
   color: black;
 }
 
 a:visited {
-  color: black;
+  color: grey;
 }
 
-a:hover {
-  color: brown;
-}
+--fcc-editable-region--
 
-a:active {
-  color: brown;
-}
+--fcc-editable-region--
 ```
 
-</div>
-
-</section>

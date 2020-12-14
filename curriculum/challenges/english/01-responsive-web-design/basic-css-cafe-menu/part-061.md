@@ -1,35 +1,26 @@
 ---
-id: 5f3ef6e01f288a026d709587
+id: 5f3ef6e0e9629bad967cd71e
 title: Part 61
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-You can use an `hr` element to display a divider between sections of different content.
+You can add a <dfn>fallback</dfn> value for the font-family by adding another font name separated by a comma. This second font would be used in case the browser does not have the font built-in to it.
 
-First, add an `hr` element between the first `header` element and the `main` element.
+Add the fallback font `serif` after the `Impact` font.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -44,7 +35,7 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
       <main>
         <section>
@@ -81,37 +72,15 @@ tests:
           </article>
         </section>
       </main>
-      <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
-      </footer>
     </div>
   </body>
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
 }
 
 h1, h2, p {
@@ -127,9 +96,11 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 h1, h2 {
-  font-family: Impact, serif;
+  font-family: Impact;
 }
+--fcc-editable-region--
 
 .item p {
   display: inline-block;
@@ -146,6 +117,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

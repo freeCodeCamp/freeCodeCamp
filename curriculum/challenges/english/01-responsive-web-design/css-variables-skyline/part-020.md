@@ -2,34 +2,28 @@
 id: 5d822fd413a79914d39e98dc
 title: Part 20
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 The buildings are stacked on top of each other and running off the screen. Let's fix that. Add the properties `display: flex;`, `align-items: flex-end;`, and `justify-content: space-evenly;` to the `background-buildings` class. This will use Flexbox again to evenly space the buildings across the bottom of the element.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: const bb = $(".background-buildings"); assert(bb.css("display") === "flex" && bb.css("align-items") === "flex-end" && bb.css("justify-content") === "space-evenly");
-
+```js
+const bb = $('.background-buildings');
+assert(
+  bb.css('display') === 'flex' &&
+    bb.css('align-items') === 'flex-end' &&
+    bb.css('justify-content') === 'space-evenly'
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -119,12 +113,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -216,5 +205,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

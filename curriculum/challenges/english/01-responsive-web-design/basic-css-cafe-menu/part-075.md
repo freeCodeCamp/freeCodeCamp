@@ -1,35 +1,26 @@
 ---
-id: 5f45b25e7ec2405f166b9de1
+id: 5f45a276c093334f0f6e9df4
 title: Part 75
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-You change properties of a link when the link has actually been visited by using a <dfn>pseudo-selector</dfn> that looks like `a:visited { propertyName: propertyValue }`
+Focusing on the menu items and prices, there is a fairly large gap between each line.
 
-Change the color of the footer `Visit our website` link to be `grey` when a user has visited the link.
+Target all the `p` elements nested in elements with the `class` named `item` and set their top and bottom margin to be `5px`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -82,7 +73,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <hr>
       <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
@@ -93,10 +84,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -136,19 +123,13 @@ hr {
   border-color: brown;
 }
 
-.bottom-line {
-  margin-top: 25px;
-}
-
+--fcc-editable-region--
 h1, h2 {
   font-family: Impact, serif;
 }
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
 }
 
 .flavor, .dessert {
@@ -160,22 +141,6 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
-/* FOOTER */
-
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
---fcc-editable-region--
-
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

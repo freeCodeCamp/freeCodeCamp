@@ -1,35 +1,24 @@
 ---
-id: 5f45b715301bbf667badc04a
+id: 5f46ede1ff8fec5ba656b44c
 title: Part 79
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-The menu text `CAMPER CAFE` has a different space from the top than the address at the bottom of the menu.  This is due to the browser having some default top margin for the `h1` element.
+Next you are going to be styling the `footer` element. To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
 
-Change the top margin of the `h1` element to `0` to remove all the top margin.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -83,7 +72,6 @@ tests:
         </section>
       </main>
       <hr class="bottom-line">
-      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -94,10 +82,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
@@ -105,11 +89,9 @@ body {
   padding: 20px;
 }
 
---fcc-editable-region--
 h1 {
   font-size: 40px;
 }
---fcc-editable-region--
 
 h2 {
   font-size: 30px;
@@ -150,7 +132,7 @@ h1, h2 {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 18px;  
 }
 
 .flavor, .dessert {
@@ -163,29 +145,8 @@ h1, h2 {
   width: 25%
 }
 
-/* FOOTER */
+--fcc-editable-region--
 
-footer {
-  font-size: 14px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  color: brown;
-}
-
-a:active {
-  color: brown;
-}
+--fcc-editable-region--
 ```
 
-</div>
-
-</section>

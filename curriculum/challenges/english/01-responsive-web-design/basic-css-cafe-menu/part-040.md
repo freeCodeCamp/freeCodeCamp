@@ -1,33 +1,26 @@
 ---
-id: 5f3cade94c6576e7f7b7953f
+id: 5f3c866dd0d0275f01d4d847
 title: Part 40
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now go ahead and change both the `flavor` and `price` class' widths to be `50%` again.
+Well that did not work. Styling the `p` elements as `inline-block` and placing them on a separate lines in the code, creates an extra space to the right of the first `p` element, causing the second one to shift to the next line. One way to fix this is to make each `p`'s width a little less than `50%`.
 
-</section>
+Change the `width` value to `49%` for each class to see what happens.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -48,21 +41,22 @@ tests:
         <section>
           <h2>Coffees</h2>
           <article class="item">
-            <p class="flavor">French Vanilla</p><p class="price">3.00</p>
+            <p class="flavor">French Vanilla</p>
+            <p class="price">3.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Carmel Macchiato</p>
             <p>3.75</p>
           </article>
-          <article class="item">
+          <article>
             <p>Pumpkin Spice</p>
             <p>3.50</p>
           </article>
-          <article class="item">
+          <article>
             <p>Hazelnut</p>
             <p>4.00</p>
           </article>
-          <article class="item">
+          <article>
             <p>Mocha</p>
             <p>4.50</p>
           </article>
@@ -72,10 +66,6 @@ tests:
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -100,16 +90,13 @@ h1, h2, p {
 --fcc-editable-region--
 .flavor {
   text-align: left;
-  width: 49%;
+  width: 50%;
 }
 
 .price {
   text-align: right;
-  width: 49%;
+  width: 50%;
 }
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

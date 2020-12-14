@@ -2,34 +2,29 @@
 id: 5f356ed60a5decd94ab66986
 title: Part 23
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Currently the entire background color of the page is `burlywood`. So you can see the effect of only styling `div` element, you will need to first temporarily comment out the line that defines the `background-color` for the `body` element.
+Comments in CSS look like this:
 
-Add `/*` before the line and `*/` after the line to make the line a comment instead of CSS code which will make the background color of the page white again.
+```css
+/* comment here */
+```
 
-</section>
+In your style sheet, comment out the the line containing the `background-color` property and value, so you can see the effect of only styling `div` element. This will make the background white again.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -56,15 +51,11 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
-  --fcc-editable-region--
+--fcc-editable-region--
   background-color: burlywood;
-  --fcc-editable-region--
+--fcc-editable-region--
 }
 
 h1, h2, p {
@@ -76,6 +67,3 @@ div {
 }
 ```
 
-</div>
-
-</section>

@@ -2,34 +2,23 @@
 id: 5f356ed656a336993abd9f7c
 title: Part 26
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Next, you need to center the `div` element horizontally. This is accomplised by adding both a `margin-left` and `margin-right` property to the it and setting the value of both `auto`. You can think of a margin as invsible space around an element.
+Next, you want to center the `div` horizontally. You can do this by setting its `margin-left` and `margin-right` properties to `auto`. Think of the margin as invisible space around an element. Using these two margin properties, center the `div` element within the `body` element.
 
-Using these margin properties, center the `div` element within the `body` element.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -56,10 +45,6 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   /*
@@ -79,6 +64,3 @@ div {
 --fcc-editable-region--
 ```
 
-</div>
-
-</section>

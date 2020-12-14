@@ -8,7 +8,7 @@ import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
-import MinimalDonateForm from '../components/Donation/MinimalDonateForm';
+import DonateForm from '../components/Donation/DonateForm';
 
 import {
   showCertSelector,
@@ -143,7 +143,7 @@ const ShowCertification = props => {
       executeGA({
         type: 'event',
         data: {
-          category: 'Donation',
+          category: 'Donation View',
           action: 'Displayed Certificate Donation',
           nonInteraction: true
         }
@@ -153,7 +153,7 @@ const ShowCertification = props => {
 
   const hideDonationSection = () => {
     setIsDonationDisplayed(false);
-    setIsDonationClosed(false);
+    setIsDonationClosed(true);
   };
 
   const handleProcessing = (
@@ -164,7 +164,7 @@ const ShowCertification = props => {
     props.executeGA({
       type: 'event',
       data: {
-        category: 'donation',
+        category: 'Donation',
         action: `certificate ${action}`,
         label: duration,
         value: amount
@@ -245,9 +245,10 @@ const ShowCertification = props => {
           </Col>
         </Row>
       )}
-      <MinimalDonateForm
+      <DonateForm
         handleProcessing={handleProcessing}
         defaultTheme='light'
+        isMinimalForm={true}
       />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>

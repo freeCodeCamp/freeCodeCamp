@@ -2,34 +2,23 @@
 id: 5f35e5c4321f818cdc4bed30
 title: Part 30
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Now that you have your coffee background, it would be a good time to add some coffee flavors and prices under the `Coffees` heading. To do this, you are going to add an `article` element that will contain a flavor and price.
+It’s looking good. Time to start adding some menu items. Add an empty `article` element under the `Coffees` heading. It will contain a flavor and price of each coffee you currently offer.
 
-Add an `article` element under the `Coffees` heading.
+# --hints--
 
-</section>
+Test 1
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -48,19 +37,15 @@ tests:
       </header>
       <main>
         <section>
-          --fcc-editable-region--
+--fcc-editable-region--
           <h2>Coffees</h2>
-          --fcc-editable-region--
+--fcc-editable-region--
         </section>
       </main>
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -79,6 +64,3 @@ h1, h2, p {
 }
 ```
 
-</div>
-
-</section>

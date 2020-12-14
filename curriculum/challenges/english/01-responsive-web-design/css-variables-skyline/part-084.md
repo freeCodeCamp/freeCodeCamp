@@ -2,34 +2,23 @@
 id: 5d822fd413a79914d39e991d
 title: Part 84
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Add your `window-wrap` class to `fb2b` to position the new window elements.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert($(".fb2b.window-wrap").length === 1);
-
+```js
+assert($('.fb2b.window-wrap').length === 1);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -317,12 +306,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -609,5 +593,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

@@ -1,33 +1,24 @@
 ---
-id: 5f459fd48bdc98491ca6d1a3
+id: 5f3ef6e0a81099d9a697b550
 title: Part 66
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Go ahead and add another `hr` element between the `main` element and the `footer` element.
+Inside the `footer`, add a `p` element. Then, nest an anchor (`a`) element in the `p` that links to `https://www.freecodecamp.org` and has the text `Visit our website`.
 
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+Test 1
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -44,8 +35,6 @@ tests:
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
       </header>
-      <hr>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -81,21 +70,14 @@ tests:
           </article>
         </section>
       </main>
+--fcc-editable-region--
       <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
       </footer>
-      --fcc-editable-region--
+--fcc-editable-region--
     </div>
   </body>
 <html>
 ```
-
-</div>
-
-<div id='css-seed'>
 
 ```css
 body {
@@ -128,12 +110,6 @@ h1, h2, p {
   max-width: 500px;
 }
 
-hr {
-  height: 2px;
-  background-color: brown;
-  border-color: brown;
-}
-
 h1, h2 {
   font-family: Impact, serif;
 }
@@ -153,6 +129,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

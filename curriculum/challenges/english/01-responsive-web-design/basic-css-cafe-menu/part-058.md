@@ -1,33 +1,26 @@
 ---
-id: 5f3ef6e07276f782bb46b93d
+id: 5f3ef6e03d719d5ac4738993
 title: Part 58
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Add a `footer` element below the `main` element, where you can some additional information.
+The current width of the menu will always take of 80% of the `body` element's width. On a very wide screen, the coffee and dessert appear far apart from their prices.
 
-</section>
+Add a `max-width` property to the `menu` class with a value of `500px` to prevent it from growing too wide.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -42,9 +35,8 @@ tests:
     <div class="menu">
       <header>
         <h1>CAMPER CAFE</h1>
-        <p class="established">Est. 2020</p>
+        <p>Est. 2020</p>
       </header>
-      --fcc-editable-region--
       <main>
         <section>
           <h2>Coffees</h2>
@@ -80,50 +72,29 @@ tests:
           </article>
         </section>
       </main>
-      --fcc-editable-region--
     </div>
   </body>
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
-  font-family: sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.established {
-  font-style: italic;
 }
 
 h1, h2, p {
   text-align: center;
 }
 
+--fcc-editable-region--
 .menu {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
-  max-width: 500px;
 }
-
-h1, h2 {
-  font-family: Impact, serif;
-}
+--fcc-editable-region--
 
 .item p {
   display: inline-block;
@@ -140,6 +111,3 @@ h1, h2 {
 }
 ```
 
-</div>
-
-</section>

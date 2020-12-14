@@ -1,33 +1,26 @@
 ---
-id: 5f46ede1ff8fec5ba656b44c
+id: 5f459cf202c2a3472fae6a9f
 title: Part 72
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-Next you are going to be styling the `footer` element.  To keep the CSS organized, add a comment at the end `styles.css` with the text `FOOTER`.
+Notice how the thickness of the line looks bigger? The default value of a property named `border-width` is `1px` for all edges of `hr` elements. By changing the background to the same color as the background, the total height of the line is `5px` (`3px` plus the top and bottom border width of `1px`).
 
-</section>
+Change the `height` property of the `hr` to be `2px`, so the total height of it becomes `4px`.
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: Test 1
-    testString: ''
+Test 1
+
+```js
 
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -80,7 +73,7 @@ tests:
           </article>
         </section>
       </main>
-      <hr class="bottom-line">
+      <footer>
         <p>
           <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
         </p>
@@ -91,15 +84,10 @@ tests:
 <html>
 ```
 
-</div>
-
-<div id='css-seed'>
-
 ```css
 body {
   background-image: url(https://tinyurl.com/coffee-beans-fcc);
   font-family: sans-serif;
-  padding: 20px;
 }
 
 h1 {
@@ -127,15 +115,13 @@ h1, h2, p {
   max-width: 500px;
 }
 
+--fcc-editable-region--
 hr {
-  height: 2px;
+  height: 3px;
   background-color: brown;
   border-color: brown;
 }
-
-.bottom-line {
-  margin-top: 25px;
-}
+--fcc-editable-region--
 
 h1, h2 {
   font-family: Impact, serif;
@@ -143,9 +129,6 @@ h1, h2 {
 
 .item p {
   display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;  
 }
 
 .flavor, .dessert {
@@ -157,12 +140,5 @@ h1, h2 {
   text-align: right;
   width: 25%
 }
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
 
-</div>
-
-</section>

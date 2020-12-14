@@ -2,45 +2,57 @@ import React from 'react';
 import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
 import PropTypes from 'prop-types';
 import Login from '../components/Login';
+import { forumLocation } from '../../../../../config/env.json';
 
 const propTypes = {
   displayMenu: PropTypes.bool,
   fetchState: PropTypes.shape({ pending: PropTypes.bool }),
-  pathName: PropTypes.string.isRequired,
   user: PropTypes.object
 };
 
-export function AuthOrProfile({ user, pathName, pending }) {
+export function AuthOrProfile({ user, pending }) {
   const isUserDonating = user && user.isDonating;
   const isUserSignedIn = user && user.username;
   const isTopContributor =
     user && user.yearsTopContributor && user.yearsTopContributor.length > 0;
 
-  if (pending && pathName !== '/') {
+  const CurriculumAndForumLinks = (
+    <>
+      <li>
+        <Link
+          className='nav-link'
+          external={true}
+          sameTab={true}
+          to={forumLocation}
+        >
+          Forum
+        </Link>
+      </li>
+      <li>
+        <Link className='nav-link' to='/learn'>
+          Curriculum
+        </Link>
+      </li>
+    </>
+  );
+
+  if (pending) {
     return (
       <div className='nav-skeleton'>
         <SkeletonSprite />
       </div>
     );
-  } else if (pathName === '/' || !isUserSignedIn) {
+  } else if (!isUserSignedIn) {
     return (
       <>
-        <li>
-          <Link className='nav-link' to='/learn'>
-            Curriculum
-          </Link>
-        </li>
+        {CurriculumAndForumLinks}
         <Login data-test-label='landing-small-cta'>Sign In</Login>
       </>
     );
   } else {
     return (
       <>
-        <li>
-          <Link className='nav-link' to='/learn'>
-            Curriculum
-          </Link>
-        </li>
+        {CurriculumAndForumLinks}
         <li>
           <Link className='nav-link' to={`/${user.username}`}>
             Profile
@@ -57,12 +69,12 @@ export function AuthOrProfile({ user, pathName, pending }) {
   }
 }
 
-export function NavLinks({ displayMenu, pathName, user, fetchState }) {
+export function NavLinks({ displayMenu, user, fetchState }) {
   const { pending } = fetchState;
   return (
     <div className='main-nav-group'>
       <ul className={'nav-list' + (displayMenu ? ' display-flex' : '')}>
-        <AuthOrProfile pathName={pathName} pending={pending} user={user} />
+        <AuthOrProfile pending={pending} user={user} />
       </ul>
     </div>
   );

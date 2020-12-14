@@ -2,34 +2,27 @@
 id: 5d822fd413a79914d39e98f9
 title: Part 49
 challengeType: 0
-isHidden: true
 ---
 
-## Description
-<section id='description'>
+# --description--
 
 Give `bb2b` a `width` and `height` of `100%` to make it fill the building container. You will add something on the top a little later.
-</section>
 
-## Instructions
-<section id='instructions'>
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+test-text
 
-```yml
-tests:
-  - text: test-text
-    testString: assert(/\.bb2b\s*{\s*(width\s*:\s*100%\s*;\s*height\s*:\s*100%\s*(;|})|height\s*:\s*100%\s*;\s*width\s*:\s*100%\s*(;|}))/g.test(code));
-
+```js
+assert(
+  /\.bb2b\s*{\s*(width\s*:\s*100%\s*;\s*height\s*:\s*100%\s*(;|})|height\s*:\s*100%\s*;\s*width\s*:\s*100%\s*(;|}))/g.test(
+    code
+  )
+);
 ```
 
-</section>
+# --seed--
 
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='html-seed'>
+## --seed-contents--
 
 ```html
 <!DOCTYPE html>
@@ -203,12 +196,7 @@ tests:
 </html>
 ```
 
-</div>
-</section>
-
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```html
 <!DOCTYPE html>
@@ -386,5 +374,3 @@ tests:
   </body>
 </html>
 ```
-
-</section>

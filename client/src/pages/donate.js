@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
 
-import { stripePublicKey } from '../../config/env.json';
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
+import DonateSupportText from '../components/Donation/DonateSupportText';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
-import { stripeScriptLoader } from '../utils/scriptLoaders';
+import CampersImage from '../components/landing/components/CampersImage';
 
 const propTypes = {
   executeGA: PropTypes.func,
@@ -40,63 +40,35 @@ export class DonatePage extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
-      stripe: null,
       enableSettings: false
     };
     this.handleProcessing = this.handleProcessing.bind(this);
-    this.handleStripeLoad = this.handleStripeLoad.bind(this);
   }
 
   componentDidMount() {
     this.props.executeGA({
       type: 'event',
       data: {
-        category: 'Donation',
+        category: 'Donation View',
         action: `Displayed donate page`,
         nonInteraction: true
       }
     });
-    if (window.Stripe) {
-      this.handleStripeLoad();
-    } else if (document.querySelector('#stripe-js')) {
-      document
-        .querySelector('#stripe-js')
-        .addEventListener('load', this.handleStripeLoad);
-    } else {
-      stripeScriptLoader(this.handleStripeLoad);
-    }
   }
 
-  componentWillUnmount() {
-    const stripeMountPoint = document.querySelector('#stripe-js');
-    if (stripeMountPoint) {
-      stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
-    }
-  }
-
-  handleProcessing(duration, amount) {
+  handleProcessing(duration, amount, action = 'stripe button click') {
     this.props.executeGA({
       type: 'event',
       data: {
-        category: 'donation',
-        action: 'donate page stripe form submission',
+        category: 'Donation',
+        action: `donate page ${action}`,
         label: duration,
         value: amount
       }
     });
   }
 
-  handleStripeLoad() {
-    // Create Stripe instance once Stripe.js loads
-    console.info('stripe has loaded');
-    this.setState(state => ({
-      ...state,
-      stripe: window.Stripe(stripePublicKey)
-    }));
-  }
-
   render() {
-    const { stripe } = this.state;
     const { showLoading, isDonating } = this.props;
 
     if (showLoading) {
@@ -109,43 +81,43 @@ export class DonatePage extends Component {
         <Grid className='donate-page-wrapper'>
           <Spacer />
           <Row>
-            <Col sm={10} smOffset={1} xs={12}>
-              <h1 className='text-center'>
-                {isDonating
-                  ? 'Thank You for Your Support'
-                  : 'Become a Supporter'}
-              </h1>
-              <Spacer />
-            </Col>
-          </Row>
-          <Row>
             <Fragment>
-              <Col md={6}>
-                <Row>
-                  <Col sm={10} smOffset={1} xs={12}>
+              <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
+                <Row className='donate-text'>
+                  <Col className={'text-center'} xs={12}>
                     {isDonating ? (
-                      <Alert>
-                        <p>
-                          Thank you for being a supporter of freeCodeCamp. You
-                          currently have a recurring donation.
-                        </p>
-                        <br />
-                        <p>
-                          If you would like to make additional donations, those
-                          will help our nonprofit and our mission, too.
-                        </p>
-                      </Alert>
-                    ) : null}
+                      <h2>Thank you for your support</h2>
+                    ) : (
+                      <h2>Help us do more</h2>
+                    )}
+                    <Spacer />
                   </Col>
                 </Row>
+                {isDonating ? (
+                  <Alert>
+                    <p>
+                      Thank you for being a supporter of freeCodeCamp. You
+                      currently have a recurring donation.
+                    </p>
+                    <br />
+                    <p>
+                      You can make an additional one-time donation of any amount
+                      using this link:{' '}
+                      <a href='https://www.paypal.me/freecodecamp'>
+                        https://www.paypal.me/freecodecamp
+                      </a>
+                    </p>
+                  </Alert>
+                ) : null}
+                <DonateText isDonating={isDonating} />
                 <DonateForm
                   enableDonationSettingsPage={this.enableDonationSettingsPage}
                   handleProcessing={this.handleProcessing}
-                  stripe={stripe}
                 />
+                <DonateSupportText />
               </Col>
-              <Col md={6}>
-                <DonateText />
+              <Col lg={6}>
+                <CampersImage page='donate' />
               </Col>
             </Fragment>
           </Row>
