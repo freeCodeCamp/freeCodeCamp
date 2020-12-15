@@ -70,3 +70,4 @@ jobs:
           config: baseUrl=http://localhost:8000
           browser: ${{ matrix.browsers }}
           headless: true
+          env: CYPRESS_CI=true
