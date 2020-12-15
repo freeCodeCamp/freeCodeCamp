@@ -205,7 +205,7 @@
     "joined": "Se unió en {{date}}",
     "total-points": "{{count}} punto total",
     "total-points_plural": "{{count}} puntos totales",
-    "points": "{{count}} punto el {{date}}",  
+    "points": "{{count}} punto el {{date}}",
     "points_plural": "{{count}} puntos el {{date}}",
     "screen-shot": "Una captura de pantalla de {{title}}",
     "page-number": "{{pageNumber}} of {{totalPages}}"
@@ -263,6 +263,9 @@
     "submit-and-go": "Envía y pasa a mi próximo desafío",
     "i-completed": "He completado este desafío",
     "test-output": "Su salida de prueba irá aquí",
+    "running-tests": "// ejecutando pruebas",
+    "tests-completed": "// pruebas completadas",
+    "console-output": "// salida de consola",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
     "download-solution": "Descarga mi solución",
     "percent-complete": "{{percent}}% Completa",
