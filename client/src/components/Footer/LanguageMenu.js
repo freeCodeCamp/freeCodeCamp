@@ -20,14 +20,12 @@ const LanguageMenu = () => {
   );
 
   const changeLanguage = e => {
-    // see if we can get the path from gatsby or something?
     const path = window.location.pathname;
 
-    if (e.target.value === `english`) {
-      // look into using another method here <Router>?
-      window.location.replace(`${homeLocation}${path}`);
-    } else if (e.target.value === 'espanol') {
+    if (e.target.value === 'espanol') {
       window.location.replace(`${homeLocation}/espanol${path}`);
+    } else {
+      window.location.replace(`${homeLocation}${path}`);
     }
   };
 
