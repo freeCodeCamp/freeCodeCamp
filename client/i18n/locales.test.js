@@ -1,7 +1,6 @@
 /* global expect */
-import { clientSchema } from './client-schema';
+import { translationsSchema } from './translations-schema';
 import { motivationSchema } from './motivation-schema';
-import { serverSchema } from './server-schema';
 import {
   availableLangs,
   i18nextCodes,
@@ -16,16 +15,12 @@ setup();
 
 const filesThatShouldExist = [
   {
-    name: 'client.json',
-    schema: clientSchema
+    name: 'translations.json',
+    schema: translationsSchema
   },
   {
     name: 'motivation.json',
     schema: motivationSchema
-  },
-  {
-    name: 'server.json',
-    schema: serverSchema
   }
 ];
 

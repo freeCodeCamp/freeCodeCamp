@@ -7,14 +7,9 @@ The client/react side of our website is translated into various world languages 
 
 The files for translating the website are located in the `client/i18n` folder. Each language has a folder within that containing JSON files with the translations. 
 
-The values in the `client.json` file contain the majority of the text that appears on the website. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
+The values in the `translations.json` file contain the majority of the text that appears on the website. The keys are used in the codebase to get the correct text for whatever language is set. This file needs to have the exact same keys in all languages.
 
 The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure.
-
-The `server.json` file contains string that are translated on the server. 
-
-> [!NOTE]
-> The server translations aren't functional at the moment.
 
 ## Adding a Language
 
@@ -42,11 +37,9 @@ Set the `CLIENT_LOCALE` variable in your `.env` file to the locale you want to b
 > [!NOTE]
 > The value needs to be one of the client languages available in `client/i18n/allLangs.js`
 
-## Client
+## How to Structure Components
 
-### How to Structure Components
-
-#### Functional Component
+### Functional Component
 
 ```js
 import { useTranslation } from 'react-i18next';
@@ -58,7 +51,7 @@ const { t } = useTranslation();
 <p>{t('key')}</p> // more details below
 ```
 
-#### Class Component
+### Class Component
 ```js
 import { withTranslation } from 'react-i18next';
 
@@ -75,9 +68,9 @@ export default withTranslation()(Component);
 export default connect(...)(withTranslation()(Component));
 ```
 
-### Translate Using the "t" Function
+## Translate Using the "t" Function
 
-#### Basic Translation
+### Basic Translation
 
 ```js
 // in the component:
@@ -92,7 +85,7 @@ export default connect(...)(withTranslation()(Component));
 <p>My paragraph</p>
 ```
 
-#### With Dynamic Data
+### With Dynamic Data
 
 ```js
 // in the component:
@@ -111,11 +104,11 @@ const username = 'moT';
 
 The above example passes an object to the `t` function with a `username` variable. The variable will be used in the JSON value where `{{username}}` is.
 
-### Translate with the \<Trans\> Component
+## Translate with the \<Trans\> Component
 
 The general rule is to use the "t" function when you can. But there's a `Trans` component for when that isn't enough, usually when you have elements embedded in the text. You can use the `Trans` component with any type of react component.
 
-#### Basic Elements Nested
+### Basic Elements Nested
 
 ```js
 // in the component:
@@ -138,7 +131,7 @@ import { Trans } from 'react-i18next'
 
 You can place the key inside the component tags like the above example if the text contains "simple" tags with no attributes. `br`, `strong`, `i`, and `p` are the default, but that list can be expanded in the i18n config.
 
-#### Complex Elements Nested
+### Complex Elements Nested
 
 Other times, you will want to have certain text inside another element, an achor tag is a good example:
 
@@ -161,7 +154,7 @@ Other times, you will want to have certain text inside another element, an achor
 
 In the above example, the key is set in the attributes of the `Trans` component. The `<0>` and `</0>` in the JSON represent the first child of the component, in this case, the anchor element. If there were more children, they would just count up from there using the same syntax. You can find the children of a component in the react dev tools by inspecting it. `placeholder` is simply there because the linter was complaining at me about an empty `<a>` element.
 
-#### With a Variable
+### With a Variable
 
 ```js
 // in the component:
@@ -188,25 +181,20 @@ const email = 'team@freecodecamp.org';
 
 In the above example, the key and a variable are set in the attributes of the `Trans` component. `{{ email }}` needs to be somewhere in the `Trans` component as well, it doesn't matter where.
 
-#### Helpful Documentation
+## Helpful Documentation
 
 - [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook)
 - [i18next docs](https://www.i18next.com/translation-function/essentials)
 
 ## Changing Text
 
-To change text on the client side of things, go to the `client.json` file, find the key that is being used in the react component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places. If the text you want to change is on the server, use the `server.json` file and do the same thing.
-
-> [!NOTE]
-> The server translations aren't functional at the moment.
+To change text on the client side of things, go to the `translations.json` file, find the key that is being used in the react component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places.
 
 ## Adding Text
 
-If the text you want to add to the client exists in the `client.json` file, use the existing key. No sense in creating another one.
+If the text you want to add to the client exists in the `translations.json` file, use the existing key. No sense in creating another one.
 
-The `clientSchema.js` file is the "source of truth" for all of the `client.json` files. If you need to add a new key, add it there. Then, add the key to **all** of the `client.json` files with placeholder text in the langauges you don't know. The tests will fail if you don't. It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files. 
+The `translations-schema.js` file is the "source of truth" for all of the `translations.json` files. If you need to add a new key, add it there. Then, add the key to **all** of the `translations.json` files with placeholder text in the langauges you don't know. The tests will fail if you don't. It would be nice to keep the keys in the same order across all the files as well. Also, try to put all punctuation, spacing, quotes, etc in the JSON files and not in the components or server files. 
 
 > [!NOTE]
 > The underscore (`_`) is a reserved character for keys in the client side files. See [the documentation](https://www.i18next.com/translation-function/plurals) for how they are used.
-
-To add text on the server, do the same thing but with the `server.json` file.
