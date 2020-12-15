@@ -5,6 +5,7 @@ import {
   PassportConfigurator
 } from '@freecodecamp/loopback-component-passport';
 import url from 'url';
+import dedent from 'dedent';
 
 import { getUserById } from './utils/user-stats';
 import { homeLocation } from '../../config/env';
@@ -12,7 +13,6 @@ import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
 import { jwtSecret } from '../../config/secrets';
 import getReturnTo from './utils/get-return-to';
-import { i18n } from '../server/i18n';
 
 const passportOptions = {
   emailOptional: true,
@@ -126,9 +126,20 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       const { provider } = config;
       if (accessToken && accessToken.id) {
         if (provider === 'auth0') {
-          req.flash('success', i18n.__('msg-15'));
+          req.flash(
+            'success',
+            dedent`
+              Success! You have signed in to your account. Happy Coding!
+            `
+          );
         } else if (user.email) {
-          req.flash('info', i18n.__('msg-16', { email: user.email }));
+          req.flash(
+            'info',
+            dedent`
+We are moving away from social authentication for privacy reasons. Next time
+we recommend using your email address: ${user.email} to sign in instead.
+            `
+          );
         }
         setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);

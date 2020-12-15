@@ -8,9 +8,9 @@ const boot = require('loopback-boot');
 const createDebugger = require('debug');
 const morgan = require('morgan');
 const Sentry = require('@sentry/node');
+
 const { sentry } = require('../../config/secrets');
 const { setupPassport } = require('./component-passport');
-const { i18n } = require('./i18n');
 
 const log = createDebugger('fcc:server');
 const reqLogFormat = ':date[iso] :status :method :response-time ms - :url';
@@ -40,7 +40,6 @@ app.use(
   morgan(reqLogFormat, { stream: { write: msg => log(_.split(msg, '\n')[0]) } })
 );
 app.disable('x-powered-by');
-app.use(i18n.init);
 
 const createLogOnce = () => {
   let called = false;

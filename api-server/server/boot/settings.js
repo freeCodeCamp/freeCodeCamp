@@ -5,7 +5,6 @@ import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 import { themes } from '../../common/utils/themes.js';
 import { alertTypes } from '../../common/utils/flash.js';
 import { isValidUsername } from '../../../utils/validate';
-import { i18n } from '../i18n';
 
 const log = debug('fcc:boot:settings');
 
@@ -54,12 +53,13 @@ export default function settingsController(app) {
 
 const standardErrorMessage = {
   type: 'danger',
-  message: i18n.__('msg-1')
+  message:
+    'Something went wrong updating your account. Please check and try again'
 };
 
 const standardSuccessMessage = {
   type: 'success',
-  message: i18n.__('msg-2')
+  message: 'We have updated your preferences'
 };
 
 const createStandardHandler = (req, res, next) => err => {
@@ -80,7 +80,7 @@ function refetchCompletedChallenges(req, res, next) {
 const updateMyEmailValidators = [
   check('email')
     .isEmail()
-    .withMessage(i18n.__('msg-3'))
+    .withMessage('Email format is invalid.')
 ];
 
 function updateMyEmail(req, res, next) {
@@ -96,7 +96,7 @@ function updateMyEmail(req, res, next) {
 const updateMyCurrentChallengeValidators = [
   check('currentChallengeId')
     .isMongoId()
-    .withMessage(i18n.__('msg-4'))
+    .withMessage('currentChallengeId is not a valid challenge ID')
 ];
 
 function updateMyCurrentChallenge(req, res, next) {
@@ -120,7 +120,7 @@ function updateMyCurrentChallenge(req, res, next) {
 const updateMyThemeValidators = [
   check('theme')
     .isIn(Object.keys(themes))
-    .withMessage(i18n.__('msg-5'))
+    .withMessage('Theme is invalid.')
 ];
 
 function updateMyTheme(req, res, next) {
@@ -128,11 +128,14 @@ function updateMyTheme(req, res, next) {
     body: { theme }
   } = req;
   if (req.user.theme === theme) {
-    return res.sendFlash(alertTypes.info, i18n.__('msg-6'));
+    return res.sendFlash(alertTypes.info, 'Theme already set');
   }
   return req.user
     .updateTheme(theme)
-    .then(() => res.sendFlash(alertTypes.info, i18n.__('msg-7')), next);
+    .then(
+      () => res.sendFlash(alertTypes.info, 'Your theme has been updated!'),
+      next
+    );
 }
 
 function updateMyPortfolio(req, res, next) {
@@ -193,7 +196,7 @@ function createUpdateMyUsername(app) {
     if (username === user.username) {
       return res.json({
         type: 'info',
-        message: i18n.__('msg-8')
+        message: 'Username is already associated with this account'
       });
     }
     const validation = isValidUsername(username);
@@ -201,7 +204,7 @@ function createUpdateMyUsername(app) {
     if (!validation.valid) {
       return res.json({
         type: 'info',
-        message: i18n.__(`${validation.error}`)
+        message: `Username ${username} ${validation.error}`
       });
     }
 
@@ -210,7 +213,7 @@ function createUpdateMyUsername(app) {
     if (exists) {
       return res.json({
         type: 'info',
-        message: i18n.__('msg-9')
+        message: 'Username is already associated with a different account'
       });
     }
 
@@ -221,7 +224,7 @@ function createUpdateMyUsername(app) {
       }
       return res.status(200).json({
         type: 'success',
-        message: i18n.__('msg-10', { username: username })
+        message: `We have updated your username to ${username}`
       });
     });
   };
@@ -243,7 +246,7 @@ const updatePrivacyTerms = (req, res, next) => {
     }
     return res.status(200).json({
       type: 'success',
-      message: i18n.__('msg-2')
+      message: `We have updated your preferences.`
     });
   });
 };

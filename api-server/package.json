@@ -35,7 +35,6 @@
     "googleapis": "^42.0.0",
     "helmet": "^3.23.3",
     "helmet-csp": "^2.10.0",
-    "i18n": "^0.13.2",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "loopback": "^3.27.0",

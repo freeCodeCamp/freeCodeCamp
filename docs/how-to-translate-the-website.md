@@ -1,4 +1,4 @@
-The client/react side of our website is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/). Server translations use [i18n](https://github.com/mashpie/i18n-node).
+The client/react side of our website is translated into various world languages using [react-i18next](https://react.i18next.com/) and [i18next](https://www.i18next.com/).
 
 > [!NOTE]
 > This does not include the curriculum
@@ -11,7 +11,10 @@ The values in the `client.json` file contain the majority of the text that appea
 
 The `motivation.json` files are not required to have the same quotes, compliments, or array length. Just the same JSON structure.
 
-The `server.json` file contains string that are translated on the server before being sent to the client. 
+The `server.json` file contains string that are translated on the server. 
+
+> [!NOTE]
+> The server translations aren't functional at the moment.
 
 ## Adding a Language
 
@@ -190,37 +193,12 @@ In the above example, the key and a variable are set in the attributes of the `T
 - [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook)
 - [i18next docs](https://www.i18next.com/translation-function/essentials)
 
-## Server
-
-Text that needs to be translated on the server uses [i18n](https://github.com/mashpie/i18n-node).
-
-### Example
-
-```js
-// import the `i18n` instance from the `server` folder
-import { i18n } from '../i18n';
-
-// translate text from the server.json file
-i18n.__('key')
-```
-
-### With a Variable
-
-```js
-i18n.__('key-2', { username: 'moT' })
-
-// in the JSON
-{
-  "key-2": "Welcome {{username}}"
-}
-
-// output
-"Welcome moT"
-```
-
 ## Changing Text
 
 To change text on the client side of things, go to the `client.json` file, find the key that is being used in the react component, and change the value to the new text you want. You should search the codebase for that key to make sure it isn't being used elsewhere. Or, if it is, that the changes make sense in all places. If the text you want to change is on the server, use the `server.json` file and do the same thing.
+
+> [!NOTE]
+> The server translations aren't functional at the moment.
 
 ## Adding Text
 
