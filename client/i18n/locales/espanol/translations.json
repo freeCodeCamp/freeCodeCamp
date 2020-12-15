@@ -102,9 +102,9 @@
     "claim-legacy": "Una vez que haya obtenido las siguientes certificaciones de FreeCodeCamp, podrá reclamar las {{cert}}:",
     "for": "Configuración de cuenta para {{username}}",
     "username": {
-      "invalid": "Nombre de usuario contiene caracteres no válidos",
-      "too-short": "El nombre de usuario es demasiado corto",
-      "reserved": "El nombre de usuario contiene un código reservado",
+      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres no válidos",
+      "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
+      "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
       "unavailable": "Nombre de usuario no disponible",
       "validating": "Validando nombre de usuario...",
       "available": "Nombre de usuario disponible",

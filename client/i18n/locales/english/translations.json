@@ -102,9 +102,9 @@
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
     "for": "Account Settings for {{username}}",
     "username": {
-      "invalid": "Username contains invalid characters",
-      "too-short": "Username is too short",
-      "reserved": "Username contains a reserved code",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
+      "is too short": "Username \"{{username}}\" is too short",
+      "is a reserved error code": "Username \"{{username}}\" is a reserved error code",
       "unavailable": "Username not available",
       "validating": "Validating username...",
       "available": "Username is available",

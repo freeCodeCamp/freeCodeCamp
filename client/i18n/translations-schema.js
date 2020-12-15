@@ -112,9 +112,9 @@ const translationsSchema = strictObject({
     'claim-legacy': stringType,
     for: stringType,
     username: strictObject({
-      invalid: stringType,
-      'too-short': stringType,
-      reserved: stringType,
+      'contains invalid characters': stringType,
+      'is too short': stringType,
+      'is a reserved error code': stringType,
       unavailable: stringType,
       validating: stringType,
       available: stringType,

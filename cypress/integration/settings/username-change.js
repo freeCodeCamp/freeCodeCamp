@@ -127,7 +127,7 @@ describe('Username input field', () => {
       .clear({ force: true })
       .type('Quincy Larson', { force: true });
 
-    cy.contains('Username contains invalid characters')
+    cy.contains('Username "quincy larson" contains invalid characters')
       .should('be.visible')
       .should('have.attr', 'role', 'alert')
       // We are checking for classes here to check for proper styling

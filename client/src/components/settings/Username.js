@@ -119,10 +119,16 @@ class UsernameSettings extends Component {
 
   renderAlerts(validating, error, isValidUsername) {
     const { t } = this.props;
+
     if (!validating && error) {
+      console.log(error);
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger'>{t(`${error}`)}</Alert>
+          <Alert bsStyle='danger'>
+            {t(`settings.username.${error}`, {
+              username: this.state.formValue
+            })}
+          </Alert>
         </FullWidthRow>
       );
     }
