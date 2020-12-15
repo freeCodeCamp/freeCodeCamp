@@ -29,6 +29,7 @@ function landingTop({ page }) {
       <Row>
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <h1 className='big-heading '>Hello World!</h1>
           <h1 className='big-heading' data-test-label={`${page}-header`}>
             Learn to code at home.
           </h1>
