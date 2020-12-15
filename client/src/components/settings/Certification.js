@@ -138,12 +138,10 @@ const isCertMapSelector = createSelector(
   })
 );
 
-const honestyInfoMessage = () => {
-  return {
-    type: 'info',
-    message: 'flash.msg-1',
-    needsTranslating: true
-  };
+const honestyInfoMessage = {
+  type: 'info',
+  message: 'flash.msg-1',
+  needsTranslating: true
 };
 
 const initialState = {
