@@ -1,4 +1,4 @@
-/* global cy */
+/* global cy Cypress */
 
 describe('Top contributor in user profile', () => {
   before(() => {
@@ -16,7 +16,7 @@ describe('Top contributor in user profile', () => {
 
     // If you `npm run build` the site, then this will fail (unless you set the
     // CI environment variable to true)
-    if (process.env.CI !== 'true') {
+    if (Cypress.env('CI') !== 'true') {
       cy.contains('Preview custom 404 page').click();
     }
   });
