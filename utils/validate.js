@@ -1,12 +1,12 @@
 const invalidCharError = {
   valid: false,
-  error: 'contains invalid characters.'
+  error: 'contains invalid characters'
 };
 const validationSuccess = { valid: true, error: null };
-const usernameTooShort = { valid: false, error: 'is too short.' };
+const usernameTooShort = { valid: false, error: 'is too short' };
 const usernameIsHttpStatusCode = {
   valid: false,
-  error: 'is a reserved error code.'
+  error: 'is a reserved error code'
 };
 
 const isNumeric = num => !isNaN(num);

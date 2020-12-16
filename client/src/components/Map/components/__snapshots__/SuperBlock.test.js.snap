@@ -52,7 +52,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
               <span
                 class="sr-only"
               >
-                Not Passed
+                icons.not-passed
               </span>
               <svg
                 height="50"
@@ -63,7 +63,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
               >
                 <g>
                   <title>
-                    Not Passed
+                    icons.not-passed
                   </title>
                   <circle
                     cx="100"
@@ -113,7 +113,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
               <span
                 class="sr-only"
               >
-                Not Passed
+                icons.not-passed
               </span>
               <svg
                 height="50"
@@ -124,7 +124,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
               >
                 <g>
                   <title>
-                    Not Passed
+                    icons.not-passed
                   </title>
                   <circle
                     cx="100"
@@ -174,7 +174,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
               <span
                 class="sr-only"
               >
-                Not Passed
+                icons.not-passed
               </span>
               <svg
                 height="50"
@@ -185,7 +185,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
               >
                 <g>
                   <title>
-                    Not Passed
+                    icons.not-passed
                   </title>
                   <circle
                     cx="100"

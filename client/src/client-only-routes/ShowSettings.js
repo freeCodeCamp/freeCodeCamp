@@ -14,6 +14,7 @@ import {
 } from '../redux';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
+import { useTranslation } from 'react-i18next';
 
 import { FullWidthRow, Loader, Spacer } from '../components/helpers';
 import About from '../components/settings/About';
@@ -114,6 +115,7 @@ const mapDispatchToProps = {
 };
 
 export function ShowSettings(props) {
+  const { t } = useTranslation();
   const {
     createFlashMessage,
     isSignedIn,
@@ -173,7 +175,7 @@ export function ShowSettings(props) {
 
   return (
     <Fragment>
-      <Helmet title='Settings | freeCodeCamp.org' />
+      <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <Grid>
         <main>
           <Spacer size={2} />
@@ -185,12 +187,12 @@ export function ShowSettings(props) {
               className='btn-invert'
               href={`${apiLocation}/signout`}
             >
-              Sign me out of freeCodeCamp
+              {t('buttons.sign-me-out')}
             </Button>
           </FullWidthRow>
           <Spacer />
           <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
-            {`Account Settings for ${username}`}
+            {t('settings.for', { username: username })}
           </h1>
           <About
             about={about}
