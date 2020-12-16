@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from '@freecodecamp/react-bootstrap';
+import { withTranslation } from 'react-i18next';
 
 import { openModal } from '../redux';
 
@@ -20,12 +21,13 @@ const mapDispatchToProps = dispatch =>
 
 const propTypes = {
   guideUrl: PropTypes.string,
-  openHelpModal: PropTypes.func.isRequired
+  openHelpModal: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 export class ToolPanel extends Component {
   render() {
-    const { guideUrl, openHelpModal } = this.props;
+    const { guideUrl, openHelpModal, t } = this.props;
     return (
       <div className='tool-panel-group project-tool-panel'>
         {guideUrl && (
@@ -36,7 +38,7 @@ export class ToolPanel extends Component {
             href={guideUrl}
             target='_blank'
           >
-            Get a hint
+            {t('buttons.get-hint')}
           </Button>
         )}
         <Button
@@ -45,7 +47,7 @@ export class ToolPanel extends Component {
           className='btn-invert'
           onClick={openHelpModal}
         >
-          Ask for help
+          {t('buttons.ask-for-help')}
         </Button>
       </div>
     );
@@ -58,4 +60,4 @@ ToolPanel.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ToolPanel);
+)(withTranslation()(ToolPanel));

@@ -12,7 +12,7 @@ let curriculum;
 export async function getCurriculum() {
   curriculum = curriculum
     ? curriculum
-    : getChallengesForLang(process.env.LOCALE);
+    : getChallengesForLang(process.env.CURRICULUM_LOCALE);
   return curriculum;
 }
 

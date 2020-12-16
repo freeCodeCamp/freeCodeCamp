@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Initial(props) {
+  const { t } = useTranslation();
+
   return (
     <svg
       height='50'
@@ -10,7 +13,7 @@ function Initial(props) {
       {...props}
     >
       <g>
-        <title>Initial</title>
+        <title>{t('icons.initial')}</title>
         <circle
           cx='100'
           cy='99'

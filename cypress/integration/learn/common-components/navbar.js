@@ -45,8 +45,8 @@ describe('Navbar', () => {
     cy.get('div.ais-Hits').should('not.exist');
   });
 
-  it('Should have a Sign In button', () => {
-    cy.contains("[data-test-label='landing-small-cta']", 'Sign In');
+  it('Should have a "Sign in" button', () => {
+    cy.contains("[data-test-label='landing-small-cta']", 'Sign in');
   });
 
   // have the curriculum and CTA on landing and /learn pages.
@@ -65,14 +65,14 @@ describe('Navbar', () => {
   );
 
   it(
-    'Should have `Sign In` link on landing and learn pages' +
+    'Should have `Sign in` link on landing and learn pages' +
       'page when not signed in',
     () => {
-      cy.contains(selectors.smallCallToAction, 'Sign In');
+      cy.contains(selectors.smallCallToAction, 'Sign in');
       cy.get(selectors.navigationLinks)
         .contains('Curriculum')
         .click();
-      cy.contains(selectors.smallCallToAction, 'Sign In');
+      cy.contains(selectors.smallCallToAction, 'Sign in');
     }
   );
 

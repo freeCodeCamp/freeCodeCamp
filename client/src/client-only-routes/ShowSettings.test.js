@@ -14,7 +14,7 @@ describe('<ShowSettings />', () => {
     expect(result.type.toString()).toBe('Symbol(react.fragment)');
     // Renders Helmet component rather than Loader
     expect(result.props.children[0].props.title).toEqual(
-      'Settings | freeCodeCamp.org'
+      'buttons.settings | freeCodeCamp.org'
     );
   });
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withTranslation } from 'react-i18next';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import { deleteAccount, resetProgress } from '../../redux/settings';
@@ -13,7 +14,8 @@ import './danger-zone.css';
 
 const propTypes = {
   deleteAccount: PropTypes.func.isRequired,
-  resetProgress: PropTypes.func.isRequired
+  resetProgress: PropTypes.func.isRequired,
+  t: PropTypes.func.isRequired
 };
 
 const mapStateToProps = () => ({});
@@ -50,14 +52,14 @@ class DangerZone extends Component {
   };
 
   render() {
-    const { deleteAccount, resetProgress } = this.props;
+    const { deleteAccount, resetProgress, t } = this.props;
     return (
       <div className='danger-zone text-center'>
         <FullWidthRow>
           <Panel bsStyle='danger'>
-            <Panel.Heading>Danger Zone</Panel.Heading>
+            <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
             <Spacer />
-            <p>Please be careful. Changes in this section are permanent.</p>
+            <p>{t('settings.danger.be-careful')}</p>
             <FullWidthRow>
               <Button
                 block={true}
@@ -67,7 +69,7 @@ class DangerZone extends Component {
                 onClick={() => this.toggleResetModal()}
                 type='button'
               >
-                Reset all of my progress
+                {t('settings.danger.reset')}
               </Button>
               <ButtonSpacer />
               <Button
@@ -78,7 +80,7 @@ class DangerZone extends Component {
                 onClick={() => this.toggleDeleteModal()}
                 type='button'
               >
-                Delete my account
+                {t('settings.danger.delete')}
               </Button>
               <Spacer />
             </FullWidthRow>
@@ -106,4 +108,4 @@ DangerZone.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DangerZone);
+)(withTranslation()(DangerZone));
