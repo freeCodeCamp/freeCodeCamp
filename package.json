@@ -57,6 +57,7 @@
     "test:utils": "jest --rootDir ./utils"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^7.0.2",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
     "cypress": "^6.0.0",
