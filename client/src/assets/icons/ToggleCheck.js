@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function ToggleCheck(props) {
+  const { t } = useTranslation();
+
   return (
     <Fragment>
-      <span className='sr-only'>Passed</span>
+      <span className='sr-only'>{t('icons.toggle')}</span>
       <svg
         className='tick'
         height='50'
@@ -13,7 +16,7 @@ function ToggleCheck(props) {
         {...props}
       >
         <g>
-          <title>Passed</title>
+          <title>{t('icons.toggle')}</title>
           <rect
             fill='white'
             height='60'

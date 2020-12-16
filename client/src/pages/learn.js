@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import LearnLayout from '../components/layouts/Learn';
 import { dasherize } from '../../../utils/slugs';
@@ -74,10 +75,11 @@ export const LearnPage = ({
     allMarkdownRemark: { edges: mdEdges }
   }
 }) => {
+  const { t } = useTranslation();
   const hashValue = hashValueSelector(state, hash);
   return (
     <LearnLayout>
-      <Helmet title='Learn to Code — For Free — Coding Courses for Busy People' />
+      <Helmet title={t('meta.title')} />
       <Grid>
         <Intro
           complete={complete}

@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import { withTranslation } from 'react-i18next';
 
 import {
   executeChallenge,
@@ -50,6 +51,7 @@ const propTypes = {
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
+  t: PropTypes.func.isRequired,
   tests: PropTypes.array,
   title: PropTypes.string,
   updateChallengeMeta: PropTypes.func.isRequired,
@@ -162,6 +164,7 @@ export class BackEnd extends Component {
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
       },
+      t,
       tests,
       executeChallenge,
       updateSolutionFormValues
@@ -177,7 +180,9 @@ export class BackEnd extends Component {
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+          <Helmet
+            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          />
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -199,7 +204,7 @@ export class BackEnd extends Component {
                 <Output
                   defaultOutput={`/**
 *
-* Test output will go here
+* ${t('learn.test-output')}
 *
 *
 */`}
@@ -226,7 +231,7 @@ BackEnd.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToActions
-)(BackEnd);
+)(withTranslation()(BackEnd));
 
 export const query = graphql`
   query BackendChallenge($slug: String!) {
