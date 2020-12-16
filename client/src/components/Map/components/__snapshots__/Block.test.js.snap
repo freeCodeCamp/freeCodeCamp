@@ -29,7 +29,7 @@ exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
           <span
             class="sr-only"
           >
-            Not Passed
+            icons.not-passed
           </span>
           <svg
             height="50"
@@ -40,7 +40,7 @@ exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
           >
             <g>
               <title>
-                Not Passed
+                icons.not-passed
               </title>
               <circle
                 cx="100"
@@ -95,7 +95,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           <span
             class="sr-only"
           >
-            Not Passed
+            icons.not-passed
           </span>
           <svg
             height="50"
@@ -106,7 +106,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           >
             <g>
               <title>
-                Not Passed
+                icons.not-passed
               </title>
               <circle
                 cx="100"
@@ -138,7 +138,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           <span
             class="sr-only"
           >
-            IntroInformation
+            icons.info
           </span>
           <svg
             height="50"
@@ -149,7 +149,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           >
             <g>
               <title>
-                IntroInformation
+                icons.info
               </title>
               <circle
                 cx="100"
@@ -192,7 +192,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           <span
             class="sr-only"
           >
-            Passed
+            icons.passed
           </span>
           <svg
             height="50"
@@ -203,7 +203,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           >
             <g>
               <title>
-                Passed
+                icons.passed
               </title>
               <circle
                 cx="100"
@@ -258,7 +258,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           <span
             class="sr-only"
           >
-            Not Passed
+            icons.not-passed
           </span>
           <svg
             height="50"
@@ -269,7 +269,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           >
             <g>
               <title>
-                Not Passed
+                icons.not-passed
               </title>
               <circle
                 cx="100"
@@ -301,7 +301,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           <span
             class="sr-only"
           >
-            Not Passed
+            icons.not-passed
           </span>
           <svg
             height="50"
@@ -312,7 +312,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           >
             <g>
               <title>
-                Not Passed
+                icons.not-passed
               </title>
               <circle
                 cx="100"
@@ -344,7 +344,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           <span
             class="sr-only"
           >
-            Passed
+            icons.passed
           </span>
           <svg
             height="50"
@@ -355,7 +355,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           >
             <g>
               <title>
-                Passed
+                icons.passed
               </title>
               <circle
                 cx="100"
@@ -410,7 +410,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           <span
             class="sr-only"
           >
-            Not Passed
+            icons.not-passed
           </span>
           <svg
             height="50"
@@ -421,7 +421,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           >
             <g>
               <title>
-                Not Passed
+                icons.not-passed
               </title>
               <circle
                 cx="100"

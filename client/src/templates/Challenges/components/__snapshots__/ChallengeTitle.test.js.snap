@@ -8,7 +8,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
   <span
     className="sr-only"
   >
-    Passed
+    icons.passed
   </span>
   <svg
     height="50"
@@ -25,7 +25,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
   >
     <g>
       <title>
-        Passed
+        icons.passed
       </title>
       <circle
         cx="100"

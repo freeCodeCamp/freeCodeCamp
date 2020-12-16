@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
@@ -10,9 +11,11 @@ const propTypes = {
 };
 
 function ChallengeTitle({ children, isCompleted }) {
+  const { t } = useTranslation();
+
   return (
     <h2 className='text-center challenge-title'>
-      {children || 'Happy Coding!'}
+      {children || t('learn.read-this.p12')}
       {isCompleted ? (
         <GreenPass
           style={{ height: '15px', width: '15px', marginLeft: '5px' }}

@@ -1,19 +1,21 @@
 import React from 'react';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
-const DonateSupportText = () => (
-  <Row className='donate-text'>
-    <Col xs={12}>
-      <hr />
-      <h4>
-        <b>Need help with your current or past donations?</b>
-      </h4>
-      <p>
-        Forward a copy of your donation receipt to donors@freecodecamp.org and
-        tell us how we can help.
-      </p>
-    </Col>
-  </Row>
-);
+const DonateSupportText = () => {
+  const { t } = useTranslation();
+  return (
+    <Row className='donate-text'>
+      <Col xs={12}>
+        <hr />
+        <h4>
+          <b>{t('donate.need-help')}</b>
+        </h4>
+        <p>{t('donate.forward-receipt')}</p>
+      </Col>
+    </Row>
+  );
+};
+
 DonateSupportText.displayName = 'DonateText';
 export default DonateSupportText;

@@ -16,8 +16,11 @@ const { isAuditedCert } = require('../utils/is-audited');
 const { dasherize, nameify } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { blockNameify } = require('../utils/block-nameify');
-const { supportedLangs } = require('./utils');
+// const { supportedLangs } = require('./utils');
 const { helpCategoryMap } = require('../client/utils/challengeTypes');
+const {
+  curriculum: curriculumLangs
+} = require('../client/i18n/allLangs').availableLangs;
 
 const access = util.promisify(fs.access);
 
@@ -235,7 +238,7 @@ function createChallengeCreator(basePath, lang) {
       meta = require(metaPath);
     }
     const { name: superBlock } = superBlockInfoFromPath(filePath);
-    if (!supportedLangs.includes(lang))
+    if (!curriculumLangs.includes(lang))
       throw Error(`${lang} is not a accepted language.
   Trying to parse ${filePath}`);
     if (lang !== 'english' && !(await hasEnglishSource(filePath)))
