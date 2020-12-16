@@ -71,7 +71,7 @@ class Set {
   // This method will add an element to the set
   add(element) {
     if (!this.has(element)) {
-      this.dictionary[element] = true;
+      this.dictionary[element] = element;
       this.length++;
       return true;
     }
