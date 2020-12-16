@@ -53,7 +53,7 @@
     "lodash": "^4.17.20",
     "mocha": "8.2.1",
     "puppeteer": "^5.3.1",
-    "readdirp-walk": "^1.7.0",
+    "readdirp": "^3.5.0",
     "rehype": "^11.0.0",
     "rework-visit": "^1.0.0",
     "string-similarity": "^4.0.2",
