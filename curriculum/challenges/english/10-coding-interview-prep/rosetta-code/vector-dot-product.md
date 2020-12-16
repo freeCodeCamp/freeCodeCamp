@@ -7,57 +7,48 @@ forumTopicId: 302343
 
 # --description--
 
-A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
+A vector can have one or more values represented by an ordered collection. Examples could be (x), (x, y), or (x, y, z).
 
 # --instructions--
 
-Write a function that takes any numbers of vectors (arrays) as input and computes their dot product. Your function should return `null` on invalid inputs such as vectors of different lengths.
+Write a function that takes two vectors (represented as one-dimensional arrays) as input and computes their dot product. Your function should return `null` on invalid inputs such as vectors of different lengths or passing anything other than two vectors.
 
 # --hints--
 
-dotProduct should be a function.
+`dotProduct` should be a function.
 
 ```js
 assert.equal(typeof dotProduct, 'function');
 ```
 
-dotProduct() should return null.
+`dotProduct()` should return `null`.
 
 ```js
 assert.equal(dotProduct(), null);
 ```
 
-dotProduct(\[[1], [1]]) should return 1.
+`dotProduct(\[[1], [1]])` should return `1`.
 
 ```js
 assert.equal(dotProduct([1], [1]), 1);
 ```
 
-dotProduct(\[[1], [1, 2]]) should return null.
+`dotProduct(\[[1], [1, 2]])` should return `null`.
 
 ```js
 assert.equal(dotProduct([1], [1, 2]), null);
 ```
 
-dotProduct([1, 3, -5], [4, -2, -1]) should return 3.
+`dotProduct([1, 3, -5], [4, -2, -1])` should return `3`.
 
 ```js
 assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
 ```
 
-`dotProduct(...nVectors)` should return 156000.
+`dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ])` should return `384`.
 
 ```js
-assert.equal(
-  dotProduct(
-    [0, 1, 2, 3, 4],
-    [0, 2, 4, 6, 8],
-    [0, 3, 6, 9, 12],
-    [0, 4, 8, 12, 16],
-    [0, 5, 10, 15, 20]
-  ),
-  156000
-);
+assert.equal(dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ]), 384);
 ```
 
 # --seed--
