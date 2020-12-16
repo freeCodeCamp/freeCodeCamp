@@ -1,76 +1,83 @@
 ---
 id: 587d7db4367417b2b2512b91
+title: 匹配时忽略大小写
 challengeType: 1
 forumTopicId: 301344
-title: 匹配时忽略大小写
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 到目前为止，已经了解了如何用正则表达式来执行字符串的匹配。但有时候，并不关注匹配字母的大小写。
-大小写即大写字母和小写字母。大写字母如<code>"A"</code>、<code>"B"</code>和<code>"C"</code>。小写字母如<code>"a"</code>、<code>"b"</code>和<code>"c"</code>。
-可以使用标志（flag）来匹配这两种情况。标志有很多，不过这里我们只关注忽略大小写的标志——<code>i</code>。可以通过将它附加到正则表达式之后来使用它。这里给出使用该标志的一个实例<code>/ignorecase/i</code>。这个字符串可以匹配字符串<code>"ignorecase"</code>、<code>"igNoreCase"</code>和<code>"IgnoreCase"</code>。
-</section>
 
-## Instructions
-<section id='instructions'>
-编写正则表达式<code>fccRegex</code>以匹配<code>"freeCodeCamp"</code>，忽略大小写。正则表达式不应与任何缩写或带有空格的变体匹配。
-</section>
+大小写即大写字母和小写字母。大写字母如`"A"`、`"B"`和`"C"`。小写字母如`"a"`、`"b"`和`"c"`。
 
-## Tests
-<section id='tests'>
+可以使用标志（flag）来匹配这两种情况。标志有很多，不过这里我们只关注忽略大小写的标志——`i`。可以通过将它附加到正则表达式之后来使用它。这里给出使用该标志的一个实例`/ignorecase/i`。这个字符串可以匹配字符串`"ignorecase"`、`"igNoreCase"`和`"IgnoreCase"`。
 
-```yml
-tests:
-  - text: 你的正则表达式应该匹配<code>freeCodeCamp</code>。
-    testString: assert(fccRegex.test('freeCodeCamp'));
-  - text: 你的正则表达式应该匹配<code>FreeCodeCamp</code>。
-    testString: assert(fccRegex.test('FreeCodeCamp'));
-  - text: 你的正则表达式应该匹配<code>FreecodeCamp</code>。
-    testString: assert(fccRegex.test('FreecodeCamp'));
-  - text: 你的正则表达式应该匹配<code>FreeCodecamp</code>。
-    testString: assert(fccRegex.test('FreeCodecamp'));
-  - text: 你的正则表达式不应该匹配<code>Free Code Camp</code>。
-    testString: assert(!fccRegex.test('Free Code Camp'));
-  - text: Your regex should match<code>FreeCOdeCamp</code>。
-    testString: assert(fccRegex.test('FreeCOdeCamp'));
-  - text: 你的正则表达式不应该匹配<code>FCC</code>。
-    testString: assert(!fccRegex.test('FCC'));
-  - text: 你的正则表达式应该匹配<code>FrEeCoDeCamp</code>。
-    testString: assert(fccRegex.test('FrEeCoDeCamp'));
-  - text: 你的正则表达式应该匹配<code>FrEeCodECamp</code>。
-    testString: assert(fccRegex.test('FrEeCodECamp'));
-  - text: 你的正则表达式应该匹配<code>FReeCodeCAmp</code>。
-    testString: assert(fccRegex.test('FReeCodeCAmp'));
+# --instructions--
 
-```
+编写正则表达式`fccRegex`以匹配`"freeCodeCamp"`，忽略大小写。正则表达式不应与任何缩写或带有空格的变体匹配。
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+你的正则表达式应该匹配`freeCodeCamp`。
 
 ```js
-let myString = "freeCodeCamp";
-let fccRegex = /change/; // Change this line
-let result = fccRegex.test(myString);
+assert(fccRegex.test('freeCodeCamp'));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+你的正则表达式应该匹配`FreeCodeCamp`。
 
 ```js
-let myString = "freeCodeCamp";
-let fccRegex = /freecodecamp/i; // Change this line
-let result = fccRegex.test(myString);
+assert(fccRegex.test('FreeCodeCamp'));
 ```
 
-</section>
+你的正则表达式应该匹配`FreecodeCamp`。
+
+```js
+assert(fccRegex.test('FreecodeCamp'));
+```
+
+你的正则表达式应该匹配`FreeCodecamp`。
+
+```js
+assert(fccRegex.test('FreeCodecamp'));
+```
+
+你的正则表达式不应该匹配`Free Code Camp`。
+
+```js
+assert(!fccRegex.test('Free Code Camp'));
+```
+
+Your regex should match`FreeCOdeCamp`。
+
+```js
+assert(fccRegex.test('FreeCOdeCamp'));
+```
+
+你的正则表达式不应该匹配`FCC`。
+
+```js
+assert(!fccRegex.test('FCC'));
+```
+
+你的正则表达式应该匹配`FrEeCoDeCamp`。
+
+```js
+assert(fccRegex.test('FrEeCoDeCamp'));
+```
+
+你的正则表达式应该匹配`FrEeCodECamp`。
+
+```js
+assert(fccRegex.test('FrEeCodECamp'));
+```
+
+你的正则表达式应该匹配`FReeCodeCAmp`。
+
+```js
+assert(fccRegex.test('FReeCodeCAmp'));
+```
+
+# --solutions--
+

@@ -4,27 +4,30 @@ challengeType: 11
 videoId: u85IOSsJsPI
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What does the pandas `.head()` function do?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What does the pandas `.head()` function do?
-  answers:
-    - |
-      Returns the number of entries in a data frame.
-    - |
-      Returns the number of columns in a data frame.
-    - |
-      By default, shows the first five rows or entries in a data frame.
-  solution: 3
-```
+Returns the number of entries in a data frame.
 
-</section>
+---
+
+Returns the number of columns in a data frame.
+
+---
+
+By default, shows the first five rows or entries in a data frame.
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

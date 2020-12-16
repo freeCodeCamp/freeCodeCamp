@@ -1,55 +1,39 @@
 ---
 id: 5900f4b71000cf542c50ffc9
+title: 问题330：欧拉数
 challengeType: 5
 videoUrl: ''
-title: 问题330：欧拉数
 ---
 
-## Description
-<section id="description">为所有整数n定义了无限的实数序列a（n），如下所示： <p>例如，a（0）= 11！ + 12！ + 13！ + ... = e  -  1 a（1）= e  -  11！ + 12！ + 13！ + ... = 2e  -  3 a（2）= 2e  -  31！ + e  -  12！ + 13！ + ... = 72 e  -  6 </p><p> e = 2.7182818 ......是欧拉常数。 </p><p>可以证明a（n）是形式</p><pre> <code>A(n) e + B(n)n! for integers A(n) and B(n).</code> </pre><p>例如a（10）= </p><pre> <code>328161643 e − 65269448610! .</code> </pre><p>求A（109）+ B（109）并给出答案mod 77 777 777。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+为所有整数n定义了无限的实数序列a（n），如下所示：
 
-## Tests
-<section id='tests'>
+例如，a（0）= 11！ + 12！ + 13！ + ... = e - 1 a（1）= e - 11！ + 12！ + 13！ + ... = 2e - 3 a（2）= 2e - 31！ + e - 12！ + 13！ + ... = 72 e - 6
 
-```yml
-tests:
-  - text: <code>euler330()</code>应该返回15955822。
-    testString: assert.strictEqual(euler330(), 15955822);
+e = 2.7182818 ......是欧拉常数。
+
+可以证明a（n）是形式
 
 ```
+ A(n) e + B(n)n! for integers A(n) and B(n). 
+```
 
-</section>
+例如a（10）=
 
-## Challenge Seed
-<section id='challengeSeed'>
+```
+ 328161643 e − 65269448610! . 
+```
 
-<div id='js-seed'>
+求A（109）+ B（109）并给出答案mod 77 777 777。
+
+# --hints--
+
+`euler330()`应该返回15955822。
 
 ```js
-function euler330() {
-  // Good luck!
-  return true;
-}
-
-euler330();
-
+assert.strictEqual(euler330(), 15955822);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

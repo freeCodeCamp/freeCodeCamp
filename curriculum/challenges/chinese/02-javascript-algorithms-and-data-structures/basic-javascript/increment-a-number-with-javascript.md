@@ -1,78 +1,56 @@
 ---
 id: 56533eb9ac21ba0edf2244ac
+title: 数字递增
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
-title: 数字递增
 ---
 
-## Description
-<section id='description'>
-使用<code>++</code>，我们可以很容易地对变量进行自增或者<code>+1</code>运算。
-<code>i++;</code>
+# --description--
+
+使用`++`，我们可以很容易地对变量进行自增或者`+1`运算。
+
+`i++;`
+
 等效于
-<code>i = i + 1;</code>
-<strong>注意</strong><br><code>i++;</code>这种写法，省去了书写<code>=</code>符号的必要。
-</section>
 
-## Instructions
-<section id='instructions'>
-重写代码，使用<code>++</code>来对变量<code>myVar</code>进行自增操作。
-<strong>提示</strong><br>了解更多关于<code>++</code>运算符<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#%E9%80%92%E5%A2%9E_()" target="_blank">Arithmetic operators - Increment (++)</a>.
-</section>
+`i = i + 1;`
 
-## Tests
-<section id='tests'>
+**注意**  
+`i++;`这种写法，省去了书写`=`符号的必要。
 
-```yml
-tests:
-  - text: <code>myVar</code>应该等于<code>88</code>。
-    testString: assert(myVar === 88);
-  - text: <code>myVar = myVar + 1;</code>语句应该被修改。
-    testString: assert(/var\s*myVar\s*=\s*87;\s*\/*.*\s*myVar\+\+;/.test(code));
-  - text: 使用<code>++</code>运算符。
-    testString: assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
-  - text: 不要修改注释上方的代码。
-    testString: assert(/var myVar = 87;/.test(code));
+# --instructions--
 
-```
+重写代码，使用`++`来对变量`myVar`进行自增操作。
 
-</section>
+**提示**  
+了解更多关于`++`运算符[Arithmetic operators - Increment (++)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#%E9%80%92%E5%A2%9E_()).
 
-## Challenge Seed
-<section id='challengeSeed'>
+# --hints--
 
-<div id='js-seed'>
+`myVar`应该等于`88`。
 
 ```js
-var myVar = 87;
-
-// Only change code below this line
-myVar = myVar + 1;
-
+assert(myVar === 88);
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+`myVar = myVar + 1;`语句应该被修改。
 
 ```js
-(function(z){return 'myVar = ' + z;})(myVar);
+assert(/var\s*myVar\s*=\s*87;\s*\/*.*\s*myVar\+\+;/.test(code));
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+使用`++`运算符。
 
 ```js
-var myVar = 87;
-myVar++;
+assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
 ```
 
-</section>
+不要修改注释上方的代码。
+
+```js
+assert(/var myVar = 87;/.test(code));
+```
+
+# --solutions--
+

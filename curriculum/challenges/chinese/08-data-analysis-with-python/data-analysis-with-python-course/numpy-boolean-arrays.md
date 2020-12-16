@@ -4,45 +4,54 @@ challengeType: 11
 videoId: N1ttsMmcVMM
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74)
 
-<section id='tests'>
+# --question--
 
-````yml
-question:
-  text: |
-    What will the following code print out?
+## --text--
 
-    ```py
-    a = np.arange(5)
+What will the following code print out?
 
-    print(a <= 3)
-    ```
-  answers:
-    - |
-      ```python
-      [False, False, False, False, True]
-      ```
-    - |
-      ```python
-      [5]
-      ```
-    - |
-      ```python
-      [0, 1, 2, 3]
-      ```
-    - |
-      ```python
-      [True, True, True, True, False]
-      ```
-  solution: 4
-````
+```py
+a = np.arange(5)
 
-</section>
+print(a <= 3)
+```
+
+## --answers--
+
+```python
+[False, False, False, False, True]
+```
+
+---
+
+```python
+[5]
+```
+
+---
+
+```python
+[0, 1, 2, 3]
+```
+
+---
+
+```python
+[True, True, True, True, False]
+```
+
+## --video-solution--
+
+4
+
+# --hints--
+
+
+# --solutions--
+

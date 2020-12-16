@@ -1,75 +1,40 @@
 ---
 id: cf1111c1c11feddfaeb4bdef
+title: 减法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3yQtk'
 forumTopicId: 18314
-title: 减法运算
 ---
 
-## Description
-<section id='description'>
-我们也可以在 JavaScript 中进行减法运算。
-JavaScript 中使用<code>-</code>来做减法运算。
+# --description--
 
-<strong>示例</strong>
+我们也可以在 JavaScript 中进行减法运算。
+
+JavaScript 中使用`-`来做减法运算。
+
+**示例**
 
 ```js
 myVar = 12 - 6; // assigned 6
 ```
 
+# --instructions--
 
-</section>
+改变数字`0`让变量 difference 的值为`12`。
 
-## Instructions
-<section id='instructions'>
-改变数字<code>0</code>让变量 difference 的值为<code>12</code>。
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: 要使<code>difference</code>的值等于 12。
-    testString: assert(difference === 12);
-  - text: 只用 45 减去一个数。
-    testString: assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+要使`difference`的值等于 12。
 
 ```js
-var difference = 45 - 0;
-
-
+assert(difference === 12);
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+只用 45 减去一个数。
 
 ```js
-(function(z){return 'difference = '+z;})(difference);
+assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code));
 ```
 
-</div>
+# --solutions--
 
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-var difference = 45 - 33;
-```
-
-</section>

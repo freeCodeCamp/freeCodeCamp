@@ -1,55 +1,21 @@
 ---
 id: 5900f3fa1000cf542c50ff0d
+title: 问题142：完美的方形集合
 challengeType: 5
 videoUrl: ''
-title: 问题142：完美的方形集合
 ---
 
-## Description
-<section id="description">找到具有整数x&gt; y&gt; z&gt; 0的最小x + y + z，使得x + y，x-y，x + z，x-z，y + z，y-z都是完美正方形。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+找到具有整数x> y> z> 0的最小x + y + z，使得x + y，x-y，x + z，x-z，y + z，y-z都是完美正方形。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>euler142()</code>应返回1006193。
-    testString: assert.strictEqual(euler142(), 1006193);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler142()`应返回1006193。
 
 ```js
-function euler142() {
-  // Good luck!
-  return true;
-}
-
-euler142();
-
+assert.strictEqual(euler142(), 1006193);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

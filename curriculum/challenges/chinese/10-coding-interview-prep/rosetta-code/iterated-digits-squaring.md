@@ -1,67 +1,70 @@
 ---
 id: 5a23c84252665b21eecc7ec1
+title: 迭代的数字平方
 challengeType: 5
 videoUrl: ''
-title: 迭代的数字平方
 ---
 
-## Description
-<section id="description">如果添加自然数（大于零的整数）的数字的平方，则始终以1或89结尾： <pre> 15  - &gt; 26  - &gt; 40  - &gt; 16  - &gt; 37  - &gt; 58  - &gt; 89
-7  - &gt; 49  - &gt; 97  - &gt; 130  - &gt; 10  - &gt; 1 </pre>编写一个函数，该函数将数字作为参数，并在执行上述过程后返回1或89。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
-
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>iteratedSquare</code>应该是一个函数。
-    testString: assert(typeof iteratedSquare=='function');
-  - text: <code>iteratedSquare(4)</code>应该返回一个数字。
-    testString: assert(typeof iteratedSquare(4)=='number');
-  - text: <code>iteratedSquare(4)</code>应该返回<code>89</code> 。
-    testString: assert.equal(iteratedSquare(4),89);
-  - text: <code>iteratedSquare(7)</code>应该返回<code>1</code> 。
-    testString: assert.equal(iteratedSquare(7),1);
-  - text: <code>iteratedSquare(15)</code>应该返回<code>89</code> 。
-    testString: assert.equal(iteratedSquare(15),89);
-  - text: <code>iteratedSquare(20)</code>应该返回<code>89</code> 。
-    testString: assert.equal(iteratedSquare(20),89);
-  - text: <code>iteratedSquare(70)</code>应该返回<code>1</code> 。
-    testString: assert.equal(iteratedSquare(70),1);
-  - text: <code>iteratedSquare(100)</code>应该返回<code>1</code> 。
-    testString: assert.equal(iteratedSquare(100),1);
+如果添加自然数（大于零的整数）的数字的平方，则始终以1或89结尾：
 
 ```
+ 15  - > 26  - > 40  - > 16  - > 37  - > 58  - > 89
+7  - > 49  - > 97  - > 130  - > 10  - > 1 
+```
 
-</section>
+编写一个函数，该函数将数字作为参数，并在执行上述过程后返回1或89。
 
-## Challenge Seed
-<section id='challengeSeed'>
+# --hints--
 
-<div id='js-seed'>
+`iteratedSquare`应该是一个函数。
 
 ```js
-function iteratedSquare (n) {
-  // Good luck!
-}
-
+assert(typeof iteratedSquare == 'function');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+`iteratedSquare(4)`应该返回一个数字。
 
 ```js
-// solution required
+assert(typeof iteratedSquare(4) == 'number');
 ```
 
-/section>
+`iteratedSquare(4)`应该返回`89` 。
+
+```js
+assert.equal(iteratedSquare(4), 89);
+```
+
+`iteratedSquare(7)`应该返回`1` 。
+
+```js
+assert.equal(iteratedSquare(7), 1);
+```
+
+`iteratedSquare(15)`应该返回`89` 。
+
+```js
+assert.equal(iteratedSquare(15), 89);
+```
+
+`iteratedSquare(20)`应该返回`89` 。
+
+```js
+assert.equal(iteratedSquare(20), 89);
+```
+
+`iteratedSquare(70)`应该返回`1` 。
+
+```js
+assert.equal(iteratedSquare(70), 1);
+```
+
+`iteratedSquare(100)`应该返回`1` 。
+
+```js
+assert.equal(iteratedSquare(100), 1);
+```
+
+# --solutions--
+

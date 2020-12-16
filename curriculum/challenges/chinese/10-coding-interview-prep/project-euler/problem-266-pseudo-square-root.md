@@ -1,55 +1,23 @@
 ---
 id: 5900f4771000cf542c50ff89
+title: 问题266：伪平方根
 challengeType: 5
 videoUrl: ''
-title: 问题266：伪平方根
 ---
 
-## Description
-<section id="description"> 12的除数是：1,2,3,4,6和12. 12的最大除数不超过12的平方根是3.我们将称为整数n的最大除数，它不超过n的伪平方根（PSR）的平方根。可以看出PSR（3102）= 47。 <p>设p是190以下质数的乘积。求PSR（p）mod 1016。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+12的除数是：1,2,3,4,6和12. 12的最大除数不超过12的平方根是3.我们将称为整数n的最大除数，它不超过n的伪平方根（PSR）的平方根。可以看出PSR（3102）= 47。
 
-## Tests
-<section id='tests'>
+设p是190以下质数的乘积。求PSR（p）mod 1016。
 
-```yml
-tests:
-  - text: <code>euler266()</code>应该返回1096883702440585。
-    testString: assert.strictEqual(euler266(), 1096883702440585);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler266()`应该返回1096883702440585。
 
 ```js
-function euler266() {
-  // Good luck!
-  return true;
-}
-
-euler266();
-
+assert.strictEqual(euler266(), 1096883702440585);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

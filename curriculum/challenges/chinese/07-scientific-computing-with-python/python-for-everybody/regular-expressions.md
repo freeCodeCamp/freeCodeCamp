@@ -4,31 +4,38 @@ challengeType: 11
 videoId: Yud_COr6pZo
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+Which regex matches only a white space character?
 
-```yml
-question:
-  text: |
-    Which regex matches only a white space character?
+## --answers--
 
-  answers:
-    - |
-        \S
-    - |
-        \s
-    - |
-        .
-    - |
-        \_
-    - |
-        \\.
-  solution: 2
-```
+\\S
 
-</section>
+---
+
+\\s
+
+---
+
+.
+
+---
+
+\_
+
+---
+
+\\.
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

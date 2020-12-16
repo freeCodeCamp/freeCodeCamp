@@ -4,50 +4,56 @@ challengeType: 11
 videoId: VDYVFHBL1AM
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74)
 
-<section id='tests'>
+# --question--
 
-````yml
-question:
-  text: |
-    What will the following code print out?
+## --text--
 
-    ```py
-    A = np.array([
-        ['a', 'b', 'c'],
-        ['d', 'e', 'f'],
-        ['g', 'h', 'i']
-    ])
+What will the following code print out?
 
-    print(A[:, :2])
-    ```
+```py
+A = np.array([
+    ['a', 'b', 'c'],
+    ['d', 'e', 'f'],
+    ['g', 'h', 'i']
+])
 
-  answers:
-    - |
-      ```python
-      [['a' 'b']]
-      ```
-    - |
-      ```py
-      [['b' 'c']
-      ['e' 'f']
-      ['h' 'i']]
-      ```
-    - |
-      ```py
-      [['a' 'b']
-      ['d' 'e']
-      ['g' 'h']]
-      ```
-  solution: 3
-````
+print(A[:, :2])
+```
 
-</section>
+## --answers--
+
+```python
+[['a' 'b']]
+```
+
+---
+
+```py
+[['b' 'c']
+['e' 'f']
+['h' 'i']]
+```
+
+---
+
+```py
+[['a' 'b']
+['d' 'e']
+['g' 'h']]
+```
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

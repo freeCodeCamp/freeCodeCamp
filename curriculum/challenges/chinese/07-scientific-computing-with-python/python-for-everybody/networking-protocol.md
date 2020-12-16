@@ -4,29 +4,34 @@ challengeType: 11
 videoId: c6vZGescaSc
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What type of HTTP request is usually used to access a website?
 
-```yml
-question:
-  text: |
-    What type of HTTP request is usually used to access a website?
+## --answers--
 
-  answers:
-    - |
-        POST
-    - |
-        GET
-    - |
-        WEB
-    - |
-        ACCESS
-  solution: 2
-```
+POST
 
-</section>
+---
+
+GET
+
+---
+
+WEB
+
+---
+
+ACCESS
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

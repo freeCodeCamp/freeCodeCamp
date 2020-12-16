@@ -1,74 +1,35 @@
 ---
 id: bd7123c9c441eddfaeb5bdef
+title: 理解布尔值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176
-title: 理解布尔值
 ---
 
-## Description
-<section id='description'>
-另一种数据类型是<dfn>布尔</dfn>（Boolean）。<code>布尔</code>值要么是<code>true</code>要么是<code>false</code>。它非常像电路开关，<code>true</code>是 “开”，<code>false</code>是 “关”。这两种状态是互斥的。
-<strong>注意</strong><br><code>布尔值</code>是不带引号的，<code>"true"</code>和<code>"false"</code>是<code>字符串</code>而不是<code>布尔值</code>，在 JavaScript 中也没有特殊含义。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-修改<code>welcomeToBooleans</code>函数，让它返回<code>true</code>而不是<code>false</code>。
-</section>
+另一种数据类型是<dfn>布尔</dfn>（Boolean）。`布尔`值要么是`true`要么是`false`。它非常像电路开关，`true`是 “开”，`false`是 “关”。这两种状态是互斥的。
 
-## Tests
-<section id='tests'>
+**注意**  
+`布尔值`是不带引号的，`"true"`和`"false"`是`字符串`而不是`布尔值`，在 JavaScript 中也没有特殊含义。
 
-```yml
-tests:
-  - text: <code>welcomeToBooleans()</code>函数应该返回一个布尔值 &#40;true/false&#41;。
-    testString: assert(typeof welcomeToBooleans() === 'boolean');
-  - text: <code>welcomeToBooleans()</code>应该返回 true。
-    testString: assert(welcomeToBooleans() === true);
+# --instructions--
 
-```
+修改`welcomeToBooleans`函数，让它返回`true`而不是`false`。
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`welcomeToBooleans()`函数应该返回一个布尔值 (true/false)。
 
 ```js
-function welcomeToBooleans() {
-
-  // Only change code below this line.
-
-  return false; // Change this line
-
-  // Only change code above this line.
-}
+assert(typeof welcomeToBooleans() === 'boolean');
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+`welcomeToBooleans()`应该返回 true。
 
 ```js
-welcomeToBooleans();
+assert(welcomeToBooleans() === true);
 ```
 
-</div>
+# --solutions--
 
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-function welcomeToBooleans() {
-  return true; // Change this line
-}
-```
-
-</section>

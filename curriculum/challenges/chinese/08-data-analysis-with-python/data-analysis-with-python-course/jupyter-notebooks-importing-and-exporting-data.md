@@ -4,35 +4,46 @@ challengeType: 11
 videoId: k1msxD3JIxE
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f" target='_blank'>Notebook</a>
-- <a href="https://twitter.com/rmotr_com/status/1122176794696847361" target='_blank'>Twitter Cheat Sheet</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f)
 
-<section id='tests'>
+\- [Twitter Cheat Sheet](https://twitter.com/rmotr_com/status/1122176794696847361)
 
-```yml
-question:
-  text: |
-    What kind of data can you import and work with in a Jupyter Notebook?
+# --question--
 
-  answers:
-    - |
-      Excel files.
-    - |
-      CSV files.
-    - |
-      XML files.
-    - |
-      Data from an API.
-    - |
-      All of the above.
-  solution: 5
-```
+## --text--
 
-</section>
+What kind of data can you import and work with in a Jupyter Notebook?
+
+## --answers--
+
+Excel files.
+
+---
+
+CSV files.
+
+---
+
+XML files.
+
+---
+
+Data from an API.
+
+---
+
+All of the above.
+
+## --video-solution--
+
+5
+
+# --hints--
+
+
+# --solutions--
+

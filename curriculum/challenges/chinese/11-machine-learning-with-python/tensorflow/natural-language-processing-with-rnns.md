@@ -4,27 +4,30 @@ challengeType: 11
 videoId: ZyCaF5S-lKg
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+Natural Language Processing is a branch of artificial intelligence that...:
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    Natural Language Processing is a branch of artificial intelligence that...:
-  answers:
-    - |
-      deals with how computers understand and process natural/human languages.
-    - |
-      translates image data into natural/human languages.
-    - |
-      is focused on translating computer languages into natural/human languages.
-  solution: 1
-```
+deals with how computers understand and process natural/human languages.
 
-</section>
+---
+
+translates image data into natural/human languages.
+
+---
+
+is focused on translating computer languages into natural/human languages.
+
+## --video-solution--
+
+1
+
+# --hints--
+
+
+# --solutions--
+

@@ -1,12 +1,12 @@
 ---
 id: 587d7b7c367417b2b2512b19
+title: 修改嵌套在对象中的对象
 challengeType: 1
 forumTopicId: 301164
-title: 修改嵌套在对象中的对象
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 现在我们来看一个稍微复杂一点的对象。对象中也可以嵌套任意层的对象。对象的属性值可以是 JavaScript 支持的任意类型，包括数组和其他对象。请看以下例子：
 
 ```js
@@ -24,74 +24,39 @@ let nestedObject = {
 };
 ```
 
-<code>nestedObject</code>有 3 个唯一的键：值为一个数字的<code>id</code>、值为一个字符串的<code>date</code>和值为一个嵌套了其他对象的对象的<code>data</code>。虽然对象中的数据可能很复杂，我们仍能使用上一个挑战中讲的符号来访问我们需要的信息。
-</section>
+`nestedObject`有 3 个唯一的键：值为一个数字的`id`、值为一个字符串的`date`和值为一个嵌套了其他对象的对象的`data`。虽然对象中的数据可能很复杂，我们仍能使用上一个挑战中讲的符号来访问我们需要的信息。
 
-## Instructions
-<section id='instructions'>
-我们已经定义了一个<code>userActivity</code>对象，它包含了另一个对象。你可以用上一个挑战中那样的方式来修改被嵌套的对象的属性。请将<code>online</code>属性设为<code>45</code>。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+我们已经定义了一个`userActivity`对象，它包含了另一个对象。你可以用上一个挑战中那样的方式来修改被嵌套的对象的属性。请将`online`属性设为`45`。
 
-```yml
-tests:
-  - text: <code>userActivity</code>应该含有<code>id</code>、<code>date</code>和<code>data</code>属性。
-    testString: assert('id' in userActivity && 'date' in userActivity && 'data' in userActivity);
-  - text: <code>userActivity</code>应该有一个<code>data</code>属性，该属性要是一个含有<code>totalUsers</code>和<code>online</code>属性的对象。
-    testString: assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
-  - text: <code>userActivity</code>的<code>data</code>属性值中的<code>online</code>属性应该被设为<code>45</code>。
-    testString: assert(userActivity.data.online === 45);
-  - text: 你应该用点符号或者方括号符号来设置<code>online</code>属性。
-    testString: 'assert.strictEqual(code.search(/online: 45/), -1);'
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`userActivity`应该含有`id`、`date`和`data`属性。
 
 ```js
-let userActivity = {
-  id: 23894201352,
-  date: 'January 1, 2017',
-  data: {
-    totalUsers: 51,
-    online: 42
-  }
-};
-
-// change code below this line
-
-// change code above this line
-
-console.log(userActivity);
+assert(
+  'id' in userActivity && 'date' in userActivity && 'data' in userActivity
+);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+`userActivity`应该有一个`data`属性，该属性要是一个含有`totalUsers`和`online`属性的对象。
 
 ```js
-let userActivity = {
-  id: 23894201352,
-  date: 'January 1, 2017',
-  data: {
-    totalUsers: 51,
-    online: 42
-  }
-};
-
-userActivity.data.online = 45;
+assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
 ```
 
-</section>
+`userActivity`的`data`属性值中的`online`属性应该被设为`45`。
+
+```js
+assert(userActivity.data.online === 45);
+```
+
+你应该用点符号或者方括号符号来设置`online`属性。
+
+```js
+assert.strictEqual(code.search(/online: 45/), -1);
+```
+
+# --solutions--
+

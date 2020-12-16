@@ -1,16 +1,19 @@
 ---
 id: 5690307fddb111c6084545d7
+title: if else 语句中的逻辑顺序
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cwNvMUV'
 forumTopicId: 18228
-title: if else 语句中的逻辑顺序
 ---
 
-## Description
-<section id='description'>
-<code>if</code>、<code>else if</code>语句中代码的执行顺序是很重要的。
+# --description--
+
+`if`、`else if`语句中代码的执行顺序是很重要的。
+
 在条件判断语句中，代码的执行顺序是从上到下，所以你需要考虑清楚先执行哪一句，后执行哪一句。
+
 这有两个例子。
+
 第一个例子：
 
 ```js
@@ -46,69 +49,29 @@ foo(0) // "Less than one"
 bar(0) // "Less than two"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 更改函数的逻辑顺序以便通过所有的测试用例。
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>orderMyLogic(4)</code>应该返回 "Less than 5"。
-    testString: assert(orderMyLogic(4) === "Less than 5");
-  - text: <code>orderMyLogic(6)</code>应该返回 "Less than 10"。
-    testString: assert(orderMyLogic(6) === "Less than 10");
-  - text: <code>orderMyLogic(11)</code>应该返回 "Greater than or equal to 10"。
-    testString: assert(orderMyLogic(11) === "Greater than or equal to 10");
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`orderMyLogic(4)`应该返回 "Less than 5"。
 
 ```js
-function orderMyLogic(val) {
-  if (val < 10) {
-    return "Less than 10";
-  } else if (val < 5) {
-    return "Less than 5";
-  } else {
-    return "Greater than or equal to 10";
-  }
-}
-
-// Change this value to test
-orderMyLogic(7);
+assert(orderMyLogic(4) === 'Less than 5');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`orderMyLogic(6)`应该返回 "Less than 10"。
 
 ```js
-function orderMyLogic(val) {
-  if(val < 5) {
-    return "Less than 5";
-  } else if (val < 10) {
-    return "Less than 10";
-  } else {
-    return "Greater than or equal to 10";
-  }
-}
+assert(orderMyLogic(6) === 'Less than 10');
 ```
 
-</section>
+`orderMyLogic(11)`应该返回 "Greater than or equal to 10"。
+
+```js
+assert(orderMyLogic(11) === 'Greater than or equal to 10');
+```
+
+# --solutions--
+

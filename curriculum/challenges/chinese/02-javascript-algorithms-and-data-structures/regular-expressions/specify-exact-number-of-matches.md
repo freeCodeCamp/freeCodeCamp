@@ -1,15 +1,17 @@
 ---
 id: 587d7db9367417b2b2512ba7
+title: 指定匹配的确切数量
 challengeType: 1
 forumTopicId: 301365
-title: 指定匹配的确切数量
 ---
 
-## Description
-<section id='description'>
-可以使用带有花括号的<code>数量说明符</code>来指定匹配模式的上下限。但有时只需要特定数量的匹配。
+# --description--
+
+可以使用带有花括号的`数量说明符`来指定匹配模式的上下限。但有时只需要特定数量的匹配。
+
 要指定一定数量的匹配模式，只需在大括号之间放置一个数字。
-例如，要只匹配字母<code>a</code>出现<code>3</code>次的单词<code>"hah"</code>，正则表达式应为<code>/ha{3}h/</code>。
+
+例如，要只匹配字母`a`出现`3`次的单词`"hah"`，正则表达式应为`/ha{3}h/`。
 
 ```js
 let A4 = "haaaah";
@@ -21,59 +23,47 @@ multipleHA.test(A3); // Returns true
 multipleHA.test(A100); // Returns false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-修改正则表达式<code>timRegex</code>，以匹配仅有四个字母单词<code>m</code>的单词<code>"Timber"</code>。
-</section>
+修改正则表达式`timRegex`，以匹配仅有四个字母单词`m`的单词`"Timber"`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 你的正则表达式应该使用花括号。
-    testString: assert(timRegex.source.match(/{.*?}/).length > 0);
-  - text: "你的正则表达式不应该匹配<code>'Timber'</code>。"
-    testString: assert(!timRegex.test("Timber"));
-  - text: "你的正则表达式不应该匹配<code>'Timmber'</code>。"
-    testString: assert(!timRegex.test("Timmber"));
-  - text: "你的正则表达式不应该匹配<code>'Timmmber'</code>。"
-    testString: assert(!timRegex.test("Timmmber"));
-  - text: "你的正则表达式应该匹配<code>'Timmmmber'</code>。"
-    testString: assert(timRegex.test("Timmmmber"));
-  - text: "你的正则表达式不应该匹配包含 30 个字母<code>m</code>的<code>'Timber'</code>。"
-    testString: assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+你的正则表达式应该使用花括号。
 
 ```js
-let timStr = "Timmmmber";
-let timRegex = /change/; // Change this line
-let result = timRegex.test(timStr);
+assert(timRegex.source.match(/{.*?}/).length > 0);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+你的正则表达式不应该匹配`'Timber'`。
 
 ```js
-let timStr = "Timmmmber";
-let timRegex = /Tim{4}ber/; // Change this line
-let result = timRegex.test(timStr);
+assert(!timRegex.test('Timber'));
 ```
 
-</section>
+你的正则表达式不应该匹配`'Timmber'`。
+
+```js
+assert(!timRegex.test('Timmber'));
+```
+
+你的正则表达式不应该匹配`'Timmmber'`。
+
+```js
+assert(!timRegex.test('Timmmber'));
+```
+
+你的正则表达式应该匹配`'Timmmmber'`。
+
+```js
+assert(timRegex.test('Timmmmber'));
+```
+
+你的正则表达式不应该匹配包含 30 个字母`m`的`'Timber'`。
+
+```js
+assert(!timRegex.test('Ti' + 'm'.repeat(30) + 'ber'));
+```
+
+# --solutions--
+

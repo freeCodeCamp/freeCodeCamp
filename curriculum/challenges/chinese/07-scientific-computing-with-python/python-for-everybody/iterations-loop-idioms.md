@@ -4,40 +4,45 @@ challengeType: 11
 videoId: AelGAcoMXbI
 ---
 
-## Description
+# --question--
 
-<section id='description'>
+## --text--
 
-</section>
+Below is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?:
 
-## Tests
+```python
+smallest = None
+print("Before:", smallest)
+for itervar in [3, 41, 12, 9, 74, 15]:
+    if smallest is None or itervar < smallest:
+        smallest = itervar
+        break
+    print("Loop:", itervar, smallest)
+print("Smallest:", smallest)
+```
 
-<section id='tests'>
+## --answers--
 
-````yml
-question:
-  text: |
-    Below is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?:
-    ```python
-    smallest = None
-    print("Before:", smallest)
-    for itervar in [3, 41, 12, 9, 74, 15]:
-        if smallest is None or itervar < smallest:
-            smallest = itervar
-            break
-        print("Loop:", itervar, smallest)
-    print("Smallest:", smallest)
-    ```
-  answers:
-    - |
-      3
-    - |
-      4
-    - |
-      6
-    - |
-      7
-  solution: 3
-````
+3
 
-</section>
+---
+
+4
+
+---
+
+6
+
+---
+
+7
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

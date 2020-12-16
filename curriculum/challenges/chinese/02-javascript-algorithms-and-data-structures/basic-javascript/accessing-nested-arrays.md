@@ -1,14 +1,15 @@
 ---
 id: 56533eb9ac21ba0edf2244cd
+title: 访问嵌套数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160
-title: 访问嵌套数组
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 正如我们在前面的例子所见，对象可以嵌套对象和数组。与访问嵌套对象一样，用中括号操作符同样可以访问嵌套数组。
+
 下面是如何访问嵌套数组的例子：
 
 ```js
@@ -34,105 +35,23 @@ ourPets[0].names[1]; // "Fluffy"
 ourPets[1].names[0]; // "Spot"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-使用点操作符和中括号操作符来检索变量<code>myPlants</code>的第二棵树。
-</section>
+使用点操作符和中括号操作符来检索变量`myPlants`的第二棵树。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>secondTree</code>应该等于 "pine"。
-    testString: assert(secondTree === "pine");
-  - text: 使用点操作符和中括号操作符来检索变量<code>myPlants</code>。
-    testString: assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`secondTree`应该等于 "pine"。
 
 ```js
-// Setup
-var myPlants = [
-  {
-    type: "flowers",
-    list: [
-      "rose",
-      "tulip",
-      "dandelion"
-    ]
-  },
-  {
-    type: "trees",
-    list: [
-      "fir",
-      "pine",
-      "birch"
-    ]
-  }
-];
-
-// Only change code below this line
-
-var secondTree = ""; // Change this line
-
+assert(secondTree === 'pine');
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+使用点操作符和中括号操作符来检索变量`myPlants`。
 
 ```js
-(function(x) {
-  if(typeof x != 'undefined') {
-    return "secondTree = " + x;
-  }
-  return "secondTree is undefined";
-})(secondTree);
+assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 ```
 
-</div>
+# --solutions--
 
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-var myPlants = [
-  {
-    type: "flowers",
-    list: [
-      "rose",
-      "tulip",
-      "dandelion"
-    ]
-  },
-  {
-    type: "trees",
-    list: [
-      "fir",
-      "pine",
-      "birch"
-    ]
-  }
-];
-
-// Only change code below this line
-
-var secondTree = myPlants[1].list[1];
-```
-
-</section>

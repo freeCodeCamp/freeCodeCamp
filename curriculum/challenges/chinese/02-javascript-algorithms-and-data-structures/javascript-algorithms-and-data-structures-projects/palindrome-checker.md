@@ -1,96 +1,102 @@
 ---
 id: aaa48de84e1ecc7c742e1124
+title: 回文检查器
 challengeType: 5
 forumTopicId: 16004
-title: 回文检查器
 ---
 
-## Description
-<section id='description'>
-如果给定的一个字符串是回文，那么返回<code>true</code>，否则返回<code>false</code>。
+# --description--
+
+如果给定的一个字符串是回文，那么返回`true`，否则返回`false`。
+
 <dfn>palindrome（回文）</dfn>，指在忽略标点符号、大小写和空格的前提下，正着读和反着读一模一样。
-<strong>注意：</strong><br>检查回文时，你需要先除去<strong>所有非字母数字的字符</strong>（标点、空格和符号）并且将所有字符转换成字母大写或字母小写。
-我们将会传入不同格式的字符串，例如：<code>"racecar"</code>、<code>"RaceCar"</code>、<code>"race CAR"</code>等等。
-我们也会传入一些包含特殊符号的字符串，例如<code>"2A3*3a2"</code>，<code>"2A3  3a2"</code>和<code>"2_A3*3#A2"</code>。
-</section>
 
-## Instructions
-<section id='instructions'>
+**注意：**  
+检查回文时，你需要先除去**所有非字母数字的字符**（标点、空格和符号）并且将所有字符转换成字母大写或字母小写。
 
-</section>
+我们将会传入不同格式的字符串，例如：`"racecar"`、`"RaceCar"`、`"race CAR"`等等。
 
-## Tests
-<section id='tests'>
+我们也会传入一些包含特殊符号的字符串，例如`"2A3*3a2"`，`"2A3 3a2"`和`"2_A3*3#A2"`。
 
-```yml
-tests:
-  - text: "<code>palindrome('eye')</code>应该返回一个布尔值。"
-    testString: assert(typeof palindrome("eye") === "boolean");
-  - text: "<code>palindrome('eye')</code>应该返回 true。"
-    testString: assert(palindrome("eye") === true);
-  - text: "<code>palindrome('_eye')</code>应该返回 true。"
-    testString: assert(palindrome("_eye") === true);
-  - text: "<code>palindrome('race car')</code>应该返回 true。"
-    testString: assert(palindrome("race car") === true);
-  - text: "<code>palindrome('not a palindrome')</code>应该返回 false。"
-    testString: assert(palindrome("not a palindrome") === false);
-  - text: "<code>palindrome('A man, a plan, a canal. Panama')</code>应该返回 true。"
-    testString: assert(palindrome("A man, a plan, a canal. Panama") === true);
-  - text: "<code>palindrome('never odd or even')</code>应该返回 true。"
-    testString: assert(palindrome("never odd or even") === true);
-  - text: "<code>palindrome('nope')</code>应该返回 false。"
-    testString: assert(palindrome("nope") === false);
-  - text: "<code>palindrome('almostomla')</code>应该返回 false。"
-    testString: assert(palindrome("almostomla") === false);
-  - text: "<code>palindrome('My age is 0, 0 si ega ym.')</code>应该返回 true。"
-    testString: assert(palindrome("My age is 0, 0 si ega ym.") === true);
-  - text: "<code>palindrome('1 eye for of 1 eye.')</code>应该返回 false。"
-    testString: assert(palindrome("1 eye for of 1 eye.") === false);
-  - text: '<code>palindrome("0_0 (: /-\ :) 0-0")</code>应该返回 true。'
-    testString: 'assert(palindrome("0_0 (: /-\ :) 0-0") === true);'
-  - text: "<code>palindrome('five|\_/|four')</code>应该返回 false。"
-    testString: assert(palindrome("five|\_/|four") === false);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`palindrome('eye')`应该返回一个布尔值。
 
 ```js
-function palindrome(str) {
-  // Good luck!
-  return true;
-}
-
-
-
-palindrome("eye");
+assert(typeof palindrome('eye') === 'boolean');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`palindrome('eye')`应该返回 true。
 
 ```js
-function palindrome(str) {
-  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');
-  var aux = string.split('');
-  if (aux.join('') === aux.reverse().join('')){
-    return true;
-  }
-
-  return false;
-}
+assert(palindrome('eye') === true);
 ```
 
-</section>
+`palindrome('_eye')`应该返回 true。
+
+```js
+assert(palindrome('_eye') === true);
+```
+
+`palindrome('race car')`应该返回 true。
+
+```js
+assert(palindrome('race car') === true);
+```
+
+`palindrome('not a palindrome')`应该返回 false。
+
+```js
+assert(palindrome('not a palindrome') === false);
+```
+
+`palindrome('A man, a plan, a canal. Panama')`应该返回 true。
+
+```js
+assert(palindrome('A man, a plan, a canal. Panama') === true);
+```
+
+`palindrome('never odd or even')`应该返回 true。
+
+```js
+assert(palindrome('never odd or even') === true);
+```
+
+`palindrome('nope')`应该返回 false。
+
+```js
+assert(palindrome('nope') === false);
+```
+
+`palindrome('almostomla')`应该返回 false。
+
+```js
+assert(palindrome('almostomla') === false);
+```
+
+`palindrome('My age is 0, 0 si ega ym.')`应该返回 true。
+
+```js
+assert(palindrome('My age is 0, 0 si ega ym.') === true);
+```
+
+`palindrome('1 eye for of 1 eye.')`应该返回 false。
+
+```js
+assert(palindrome('1 eye for of 1 eye.') === false);
+```
+
+`palindrome("0_0 (: /-\ :) 0-0")`应该返回 true。
+
+```js
+assert(palindrome('0_0 (: /- :) 0-0') === true);
+```
+
+`palindrome('five| /|four')`应该返回 false。
+
+```js
+assert(palindrome('five|_/|four') === false);
+```
+
+# --solutions--
+

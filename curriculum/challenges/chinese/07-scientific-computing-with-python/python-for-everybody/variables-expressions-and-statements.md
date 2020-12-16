@@ -4,29 +4,34 @@ challengeType: 11
 videoId: nELR-uyyrok
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What is the symbol used in an assignment statement?
 
-```yml
-question:
-  text: |
-    What is the symbol used in an assignment statement?
+## --answers--
 
-  answers:
-    - |
-        ~
-    - |
-        &
-    - |
-        =
-    - |
-        |
-  solution: 3
-```
+~
 
-</section>
+---
+
+&
+
+---
+
+=
+
+---
+
+\|
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

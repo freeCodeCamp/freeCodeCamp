@@ -1,73 +1,61 @@
 ---
 id: 595671d4d2cdc305f0d5b36f
+title: 来自两个数组的哈希
 challengeType: 5
 videoUrl: ''
-title: 来自两个数组的哈希
 ---
 
-## Description
-<section id="description">任务： <p>使用两个相等长度的数组，创建一个Hash对象，其中一个数组中的元素（键）链接到另一个数组（值） </p>相关任务： <a href="http://rosettacode.org/wiki/Associative arrays/Creation" title="关联数组/创建">关联数组/创建</a> </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+任务：
 
-## Tests
-<section id='tests'>
+使用两个相等长度的数组，创建一个Hash对象，其中一个数组中的元素（键）链接到另一个数组（值）
 
-```yml
-tests:
-  - text: <code>arrToObj</code>是一个功能。
-    testString: assert(typeof arrToObj === 'function');
-  - text: '<code>arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d", "e"])</code>应返回<code>{ 1: "a", 2: "b", 3: "c", 4: "d", 5: "e" }</code>'
-    testString: assert.deepEqual(arrToObj(...testCases[0]), res[0]);
-  - text: '<code>arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d"])</code>应返回<code>{ 1: "a", 2: "b", 3: "c", 4: "d", 5: undefined }</code>'
-    testString: assert.deepEqual(arrToObj(...testCases[1]), res[1]);
-  - text: '<code>arrToObj([1, 2, 3], ["a", "b", "c", "d", "e"])</code>应返回<code>{ 1: "a", 2: "b", 3: "c" }</code>'
-    testString: assert.deepEqual(arrToObj(...testCases[2]), res[2]);
-  - text: '<code>arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4, 5])</code>应返回<code>{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": 5 }</code>'
-    testString: assert.deepEqual(arrToObj(...testCases[3]), res[3]);
-  - text: '<code>arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4])</code>应返回<code>{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": undefined }</code>'
-    testString: assert.deepEqual(arrToObj(...testCases[4]), res[4]);
-  - text: '<code>arrToObj(["a", "b", "c"], [1, 2, 3, 4, 5])</code>应返回<code>{ "a": 1, "b": 2, "c": 3 }</code>'
-    testString: assert.deepEqual(arrToObj(...testCases[5]), res[5]);
+相关任务： [关联数组/创建](<http://rosettacode.org/wiki/Associative arrays/Creation> "关联数组/创建")
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`arrToObj`是一个功能。
 
 ```js
-function arrToObj (keys, vals) {
-  // Good luck!
-  return true;
-}
-
+assert(typeof arrToObj === 'function');
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+`arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d", "e"])`应返回`{ 1: "a", 2: "b", 3: "c", 4: "d", 5: "e" }`
 
 ```js
-console.info('after the test');
+assert.deepEqual(arrToObj(...testCases[0]), res[0]);
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+`arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d"])`应返回`{ 1: "a", 2: "b", 3: "c", 4: "d", 5: undefined }`
 
 ```js
-// solution required
+assert.deepEqual(arrToObj(...testCases[1]), res[1]);
 ```
 
-/section>
+`arrToObj([1, 2, 3], ["a", "b", "c", "d", "e"])`应返回`{ 1: "a", 2: "b", 3: "c" }`
+
+```js
+assert.deepEqual(arrToObj(...testCases[2]), res[2]);
+```
+
+`arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4, 5])`应返回`{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": 5 }`
+
+```js
+assert.deepEqual(arrToObj(...testCases[3]), res[3]);
+```
+
+`arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4])`应返回`{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": undefined }`
+
+```js
+assert.deepEqual(arrToObj(...testCases[4]), res[4]);
+```
+
+`arrToObj(["a", "b", "c"], [1, 2, 3, 4, 5])`应返回`{ "a": 1, "b": 2, "c": 3 }`
+
+```js
+assert.deepEqual(arrToObj(...testCases[5]), res[5]);
+```
+
+# --solutions--
+

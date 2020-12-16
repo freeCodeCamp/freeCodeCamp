@@ -4,27 +4,30 @@ challengeType: 11
 videoId: 6-w_qIUwaxU
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+How does the PageRank algorithm work?
 
-```yml
-question:
-  text: |
-    How does the PageRank algorithm work?
+## --answers--
 
-  answers:
-    - |
-        It determines which pages are most highly connected.
-    - |
-        It ranks pages based on view counts.
-    - |
-        It figures out which pages contain the most important content.
-  solution: 1
-```
+It determines which pages are most highly connected.
 
-</section>
+---
+
+It ranks pages based on view counts.
+
+---
+
+It figures out which pages contain the most important content.
+
+## --video-solution--
+
+1
+
+# --hints--
+
+
+# --solutions--
+

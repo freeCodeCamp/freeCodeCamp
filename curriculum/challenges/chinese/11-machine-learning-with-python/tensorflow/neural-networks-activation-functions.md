@@ -4,27 +4,30 @@ challengeType: 11
 videoId: S45tqW6BqRs
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+Which activation function switches values between -1 and 1?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    Which activation function switches values between -1 and 1?
-  answers:
-    - |
-      ReLU (Rectified Linear Unit)
-    - |
-      Tanh (Hyperbolic Tangent)
-    - |
-      Sigmoid
-  solution: 2
-```
+ReLU (Rectified Linear Unit)
 
-</section>
+---
+
+Tanh (Hyperbolic Tangent)
+
+---
+
+Sigmoid
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

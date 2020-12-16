@@ -4,33 +4,40 @@ challengeType: 11
 videoId: mHjxzFS5_Z0
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/data-cleaning-rmotr-freecodecamp-fd76fa59" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/data-cleaning-rmotr-freecodecamp-fd76fa59)
 
-<section id='tests'>
+# --question--
 
-````yml
-question:
-  text: |
-    When using Matplotlib's global API, what does the order of numbers mean here?
-    ```py
-    plt.subplot(1, 2, 1)
-    ```
+## --text--
 
-  answers:
-    - |
-      My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.
-    - |
-      I am going to start drawing in the first (left) plot, my figure will have two rows, and my figure will have one column.
-    - |
-      My figure will have one row, two columns, and I am going to start drawing in the first (left) plot.
-  solution: 3
-````
+When using Matplotlib's global API, what does the order of numbers mean here?
 
-</section>
+```py
+plt.subplot(1, 2, 1)
+```
+
+## --answers--
+
+My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.
+
+---
+
+I am going to start drawing in the first (left) plot, my figure will have two rows, and my figure will have one column.
+
+---
+
+My figure will have one row, two columns, and I am going to start drawing in the first (left) plot.
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+
