@@ -27,7 +27,7 @@ assert.equal(typeof dotProduct, 'function');
 assert.equal(dotProduct(), null);
 ```
 
-`dotProduct(\[[1], [1]])` should return `1`.
+`dotProduct([1], [1])` should return `1`.
 
 ```js
 assert.equal(dotProduct([1], [1]), 1);
