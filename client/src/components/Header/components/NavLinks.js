@@ -3,6 +3,7 @@ import { Link, SkeletonSprite, AvatarRenderer } from '../../helpers';
 import PropTypes from 'prop-types';
 import Login from '../components/Login';
 import { forumLocation } from '../../../../../config/env.json';
+import { useTranslation } from 'react-i18next';
 
 const propTypes = {
   displayMenu: PropTypes.bool,
@@ -11,6 +12,7 @@ const propTypes = {
 };
 
 export function AuthOrProfile({ user, pending }) {
+  const { t } = useTranslation();
   const isUserDonating = user && user.isDonating;
   const isUserSignedIn = user && user.username;
   const isTopContributor =
@@ -25,12 +27,12 @@ export function AuthOrProfile({ user, pending }) {
           sameTab={true}
           to={forumLocation}
         >
-          Forum
+          {t('buttons.forum')}
         </Link>
       </li>
       <li>
         <Link className='nav-link' to='/learn'>
-          Curriculum
+          {t('buttons.curriculum')}
         </Link>
       </li>
     </>
@@ -46,7 +48,9 @@ export function AuthOrProfile({ user, pending }) {
     return (
       <>
         {CurriculumAndForumLinks}
-        <Login data-test-label='landing-small-cta'>Sign In</Login>
+        <Login data-test-label='landing-small-cta'>
+          {t('buttons.sign-in')}
+        </Login>
       </>
     );
   } else {
@@ -55,7 +59,7 @@ export function AuthOrProfile({ user, pending }) {
         {CurriculumAndForumLinks}
         <li>
           <Link className='nav-link' to={`/${user.username}`}>
-            Profile
+            {t('buttons.profile')}
             <AvatarRenderer
               isDonating={isUserDonating}
               isTopContributor={isTopContributor}

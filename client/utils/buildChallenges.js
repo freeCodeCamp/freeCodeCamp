@@ -6,11 +6,11 @@ const {
   challengesDir,
   getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
-const { locale } = require('../config/env.json');
+const { curriculumLocale } = require('../config/env.json');
 
-exports.localeChallengesRootDir = getChallengesDirForLang(locale);
+exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
 
-const createChallenge = createChallengeCreator(challengesDir, locale);
+const createChallenge = createChallengeCreator(challengesDir, curriculumLocale);
 
 exports.replaceChallengeNode = () => {
   return async function replaceChallengeNode(filePath) {
@@ -19,7 +19,7 @@ exports.replaceChallengeNode = () => {
 };
 
 exports.buildChallenges = async function buildChallenges() {
-  const curriculum = await getChallengesForLang(locale);
+  const curriculum = await getChallengesForLang(curriculumLocale);
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)

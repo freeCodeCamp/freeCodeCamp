@@ -13,24 +13,46 @@ exports[`<Footer /> matches snapshot 1`] = `
       <div
         className="footer-desc-col"
       >
+        <div
+          className="language-menu"
+        >
+          <span>
+            footer.language
+          </span>
+          <select
+            onChange={[Function]}
+          >
+            <option
+              value="english"
+            >
+              English
+            </option>
+            <option
+              value="espanol"
+            >
+              Español
+            </option>
+          </select>
+        </div>
         <p>
-          freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)
+          footer.tax-exempt-status
         </p>
         <p>
-          Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.
+          footer.mission-statement
         </p>
         <p>
-          Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.
+          footer.donation-initiatives
         </p>
         <p
           className="footer-donation"
         >
-          You can 
+          footer.donate-text
+           
           <a
             className="inline"
             href="/donate"
           >
-            make a tax-deductible donation here
+            footer.donate-link
           </a>
           .
         </p>
@@ -41,7 +63,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         <div
           className="col-header"
         >
-          Trending Guides
+          footer.trending-guides
         </div>
         <div
           className="trending-guides-row"
@@ -285,7 +307,7 @@ exports[`<Footer /> matches snapshot 1`] = `
       <div
         className="col-header"
       >
-        Our Nonprofit
+        footer.our-nonprofit
       </div>
       <div
         className="footer-divder"
@@ -298,77 +320,77 @@ exports[`<Footer /> matches snapshot 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          About
+          footer.links.about
         </a>
         <a
           href="https://www.linkedin.com/school/free-code-camp/people/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Alumni Network
+          footer.links.alumni
         </a>
         <a
           href="https://github.com/freeCodeCamp/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Open Source
+          footer.links.open-source
         </a>
         <a
           href="https://www.freecodecamp.org/shop/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Shop
+          footer.links.shop
         </a>
         <a
           href="https://www.freecodecamp.org/news/support/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Support
+          footer.links.support
         </a>
         <a
           href="https://www.freecodecamp.org/news/sponsors/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Sponsors
+          footer.links.sponsors
         </a>
         <a
           href="https://www.freecodecamp.org/news/academic-honesty-policy/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Academic Honesty
+          footer.links.honesty
         </a>
         <a
           href="https://www.freecodecamp.org/news/code-of-conduct/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Code of Conduct
+          footer.links.coc
         </a>
         <a
           href="https://www.freecodecamp.org/news/privacy-policy/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Privacy Policy
+          footer.links.privacy
         </a>
         <a
           href="https://www.freecodecamp.org/news/terms-of-service/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Terms of Service
+          footer.links.tos
         </a>
         <a
           href="https://www.freecodecamp.org/news/copyright-policy/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Copyright Policy
+          footer.links.copyright
         </a>
       </div>
     </div>
