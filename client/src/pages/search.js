@@ -4,13 +4,17 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { Index } from 'react-instantsearch-dom';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { withTranslation } from 'react-i18next';
 
 import { updateSearchQuery } from '../components/search/redux';
 import SearchPageHits from '../components/search/searchPage/SearchPageHits';
 
 import './search.css';
 
-const propTypes = { updateSearchQuery: PropTypes.func.isRequired };
+const propTypes = {
+  t: PropTypes.func.isRequired,
+  updateSearchQuery: PropTypes.func.isRequired
+};
 
 const mapDispatchToProps = { updateSearchQuery };
 
@@ -19,9 +23,10 @@ class SearchPage extends Component {
     this.props.updateSearchQuery('');
   }
   render() {
+    const { t } = this.props;
     return (
       <Fragment>
-        <Helmet title='Search | freeCodeCamp.org' />
+        <Helmet title={`${t('search.label')} | freeCodeCamp.org`} />
         <Index indexName='news' />
         <Grid>
           <Row>
@@ -43,4 +48,4 @@ SearchPage.propTypes = propTypes;
 export default connect(
   null,
   mapDispatchToProps
-)(SearchPage);
+)(withTranslation()(SearchPage));

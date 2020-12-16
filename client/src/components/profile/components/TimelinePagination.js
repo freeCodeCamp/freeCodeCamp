@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { useTranslation } from 'react-i18next';
+
 const TimelinePagination = props => {
   const { pageNo, totalPages, firstPage, prevPage, nextPage, lastPage } = props;
+  const { t } = useTranslation();
+
   return (
     <nav aria-label='Timeline Pagination' role='navigation'>
       <ul aria-hidden='true' className='timeline-pagination_list'>
@@ -14,7 +18,7 @@ const TimelinePagination = props => {
             }}
           >
             <button
-              aria-label='Go to First page'
+              aria-label={t('aria.first-page')}
               disabled={pageNo === 1}
               onClick={firstPage}
             >
@@ -29,7 +33,7 @@ const TimelinePagination = props => {
           }}
         >
           <button
-            aria-label='Go to Previous page'
+            aria-label={t('aria.previous-page')}
             disabled={pageNo === 1}
             onClick={prevPage}
           >
@@ -37,7 +41,10 @@ const TimelinePagination = props => {
           </button>
         </li>
         <li className='timeline-pagination_list_item'>
-          {pageNo} of {totalPages}
+          {t('profile.page-number', {
+            pageNumber: pageNo,
+            totalPages: totalPages
+          })}
         </li>
         <li
           className='timeline-pagination_list_item'
@@ -46,7 +53,7 @@ const TimelinePagination = props => {
           }}
         >
           <button
-            aria-label='Go to Next page'
+            aria-label={t('aria.next-page')}
             disabled={pageNo === totalPages}
             onClick={nextPage}
           >
@@ -61,7 +68,7 @@ const TimelinePagination = props => {
             }}
           >
             <button
-              aria-label='Go to Last page'
+              aria-label={t('aria.last-page')}
               disabled={pageNo === totalPages}
               onClick={lastPage}
             >
