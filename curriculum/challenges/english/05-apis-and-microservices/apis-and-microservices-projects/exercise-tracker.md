@@ -11,7 +11,7 @@ forumTopicId: 301505
 
 ::use{description="Desc"}
 
-[1]: <https://exercise-tracker.freecodecamp.rocks/>
+[1]: https://exercise-tracker.freecodecamp.rocks
 [2]: https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/
 [3]: https://repl.it/github/freeCodeCamp/boilerplate-project-exercisetracker
 

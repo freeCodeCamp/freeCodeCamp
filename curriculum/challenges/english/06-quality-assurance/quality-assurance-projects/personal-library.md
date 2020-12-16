@@ -9,13 +9,11 @@ forumTopicId: 301571
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://personal-library.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
-
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-library) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-library)) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
-
 ::use{description="Desc"}
+
+[1]: https://personal-library.freecodecamp.rocks
+[2]: https://github.com/freeCodeCamp/boilerplate-project-library/
+[3]: https://repl.it/github/freeCodeCamp/boilerplate-project-library
 
 # --instructions--
 

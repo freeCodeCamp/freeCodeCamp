@@ -8,13 +8,11 @@ challengeType: 4
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://american-british-translator.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
-
--   Clone [this GitHub repo](https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-american-british-english-translator) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
-
 ::use{description="Desc"}
+
+[1]: https://american-british-translator.freecodecamp.rocks
+[2]: https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/
+[3]: https://repl.it/github/freeCodeCamp/boilerplate-project-american-british-english-translator
 
 # --instructions--
 

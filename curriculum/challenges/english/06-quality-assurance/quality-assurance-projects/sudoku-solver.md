@@ -8,13 +8,11 @@ challengeType: 4
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <https://sudoku-solver.freecodecamp.rocks/>. Working on this project will involve you writing your code using one of the following methods:
-
--   Clone [this GitHub repo](https://github.com/freecodecamp/boilerplate-project-sudoku-solver) and complete your project locally.
--   Use [our repl.it starter project](https://repl.it/github/freeCodeCamp/boilerplate-project-sudoku-solver) to complete your project.
--   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
-
 ::use{description="Desc"}
+
+[1]: https://sudoku-solver.freecodecamp.rocks
+[2]: https://github.com/freecodecamp/boilerplate-project-sudoku-solver/
+[3]: https://repl.it/github/freeCodeCamp/boilerplate-project-sudoku-solver/
 
 # --instructions--
 
