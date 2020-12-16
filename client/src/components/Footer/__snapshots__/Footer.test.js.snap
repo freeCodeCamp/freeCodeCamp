@@ -32,6 +32,11 @@ exports[`<Footer /> matches snapshot 1`] = `
             >
               Español
             </option>
+            <option
+              value="chinese"
+            >
+              中文
+            </option>
           </select>
         </div>
         <p>

@@ -2,7 +2,7 @@
  * from the .env file aren't found in their respective arrays below
  */
 const availableLangs = {
-  client: ['english', 'espanol'],
+  client: ['english', 'espanol', 'chinese'],
   curriculum: ['english', 'chinese']
 };
 
@@ -14,13 +14,15 @@ const availableLangs = {
  */
 const i18nextCodes = {
   english: 'en',
-  espanol: 'es'
+  espanol: 'es',
+  chinese: 'zh'
 };
 
 // These are for the language selector dropdown menu in the footer
 const langDisplayNames = {
   english: 'English',
-  espanol: 'Español'
+  espanol: 'Español',
+  chinese: '中文'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -29,7 +31,8 @@ const langDisplayNames = {
  */
 const langCodes = {
   english: 'en-US',
-  espanol: 'es-419'
+  espanol: 'es-419',
+  chinese: 'zh'
 };
 
 exports.availableLangs = availableLangs;
