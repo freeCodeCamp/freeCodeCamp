@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { useTranslation } from 'react-i18next';
 import Link from '../helpers/Link';
-
+import LanguageMenu from './LanguageMenu';
 import './footer.css';
+
+const { showLocaleDropdownMenu = false } = require('../../../config/env');
 
 const propTypes = {
   children: PropTypes.any
@@ -17,36 +19,27 @@ const ColHeader = ({ children, ...other }) => (
 ColHeader.propTypes = propTypes;
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className='site-footer'>
       <div className='footer-container'>
         <div className='footer-top'>
           <div className='footer-desc-col'>
-            <p>
-              freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit
-              organization (United States Federal Tax Identification Number:
-              82-0779546)
-            </p>
-            <p>
-              Our mission: to help people learn to code for free. We accomplish
-              this by creating thousands of videos, articles, and interactive
-              coding lessons - all freely available to the public. We also have
-              thousands of freeCodeCamp study groups around the world.
-            </p>
-            <p>
-              Donations to freeCodeCamp go toward our education initiatives, and
-              help pay for servers, services, and staff.
-            </p>
+            {showLocaleDropdownMenu ? <LanguageMenu /> : null}
+            <p>{t('footer.tax-exempt-status')}</p>
+            <p>{t('footer.mission-statement')}</p>
+            <p>{t('footer.donation-initiatives')}</p>
             <p className='footer-donation'>
-              You can&nbsp;
+              {t('footer.donate-text')}{' '}
               <Link className='inline' to='/donate'>
-                make a tax-deductible donation here
+                {t('footer.donate-link')}
               </Link>
               .
             </p>
           </div>
           <div className='trending-guides'>
-            <div className='col-header'>Trending Guides</div>
+            <div className='col-header'>{t('footer.trending-guides')}</div>
             <div className='trending-guides-row'>
               <div className='footer-col footer-col-1'>
                 <Link
@@ -303,73 +296,73 @@ function Footer() {
           </div>
         </div>
         <div className='footer-buttom'>
-          <div className='col-header'>Our Nonprofit</div>
+          <div className='col-header'>{t('footer.our-nonprofit')}</div>
           <div className='footer-divder' />
           <div className='our-nonprofit'>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/about/'}
             >
-              About
+              {t('footer.links.about')}
             </Link>
             <Link
               external={false}
               sameTab={false}
               to={'https://www.linkedin.com/school/free-code-camp/people/'}
             >
-              Alumni Network
+              {t('footer.links.alumni')}
             </Link>
             <Link external={false} to={'https://github.com/freeCodeCamp/'}>
-              Open Source
+              {t('footer.links.open-source')}
             </Link>
             <Link
               external={false}
               sameTab={false}
               to={'https://www.freecodecamp.org/shop/'}
             >
-              Shop
+              {t('footer.links.shop')}
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/support/'}
             >
-              Support
+              {t('footer.links.support')}
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/sponsors/'}
             >
-              Sponsors
+              {t('footer.links.sponsors')}
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/academic-honesty-policy/'}
             >
-              Academic Honesty
+              {t('footer.links.honesty')}
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/code-of-conduct/'}
             >
-              Code of Conduct
+              {t('footer.links.coc')}
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/privacy-policy/'}
             >
-              Privacy Policy
+              {t('footer.links.privacy')}
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/terms-of-service/'}
             >
-              Terms of Service
+              {t('footer.links.tos')}
             </Link>
             <Link
               external={false}
               to={'https://www.freecodecamp.org/news/copyright-policy/'}
             >
-              Copyright Policy
+              {t('footer.links.copyright')}
             </Link>
           </div>
         </div>

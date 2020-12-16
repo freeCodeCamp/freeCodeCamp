@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import { withTranslation } from 'react-i18next';
 
 import { ChallengeNode } from '../../../../redux/propTypes';
 import {
@@ -46,6 +47,7 @@ const propTypes = {
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
+  t: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
@@ -110,6 +112,7 @@ export class Project extends Component {
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
       },
+      t,
       updateSolutionFormValues
     } = this.props;
 
@@ -123,7 +126,9 @@ export class Project extends Component {
         prevChallengePath={prevChallengePath}
       >
         <LearnLayout>
-          <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+          <Helmet
+            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          />
           <Grid>
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -158,7 +163,7 @@ Project.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Project);
+)(withTranslation()(Project));
 
 export const query = graphql`
   query ProjectChallenge($slug: String!) {

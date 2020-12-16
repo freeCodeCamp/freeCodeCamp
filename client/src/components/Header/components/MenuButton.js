@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
-const MenuButton = props => (
-  <button
-    aria-expanded={props.displayMenu}
-    className={
-      'toggle-button-nav' + (props.displayMenu ? ' reverse-toggle-color' : '')
-    }
-    onClick={props.onClick}
-    ref={props.innerRef}
-  >
-    Menu
-  </button>
-);
+const MenuButton = props => {
+  const { t } = useTranslation();
+
+  return (
+    <button
+      aria-expanded={props.displayMenu}
+      className={
+        'toggle-button-nav' + (props.displayMenu ? ' reverse-toggle-color' : '')
+      }
+      onClick={props.onClick}
+      ref={props.innerRef}
+    >
+      {t('buttons.menu')}
+    </button>
+  );
+};
 
 MenuButton.displayName = 'MenuButton';
 MenuButton.propTypes = {

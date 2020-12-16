@@ -1,10 +1,13 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-function freeCodeCampLogo() {
+function FreeCodeCampLogo() {
+  const { t } = useTranslation();
+
   return (
     <svg
-      aria-label='[freeCodeCamp Logo]'
+      aria-label={t('aria.fcc-logo')}
       height={24}
       role='math'
       version='1.1'
@@ -109,6 +112,6 @@ function freeCodeCampLogo() {
   );
 }
 
-freeCodeCampLogo.displayName = 'freeCodeCampLogo';
+FreeCodeCampLogo.displayName = 'FreeCodeCampLogo';
 
-export default freeCodeCampLogo;
+export default FreeCodeCampLogo;

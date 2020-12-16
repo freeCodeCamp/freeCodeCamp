@@ -16,6 +16,7 @@ import { injectStripe } from 'react-stripe-elements';
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
 import { userSelector } from '../../redux';
+import { withTranslation } from 'react-i18next';
 
 const propTypes = {
   defaultTheme: PropTypes.string,
@@ -31,6 +32,7 @@ const propTypes = {
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   }),
+  t: PropTypes.func.isRequired,
   theme: PropTypes.string
 };
 
@@ -94,20 +96,17 @@ class DonateFormChildViewForHOC extends Component {
       isSubmissionValid: null
     });
 
+    const { t } = this.props;
     const email = this.getUserEmail();
     if (!email || !isEmail(email)) {
       return this.props.onDonationStateChange({
-        error:
-          'We need a valid email address to which we can send your' +
-          ' donation tax receipt.'
+        error: t('donate.need-email')
       });
     }
     return this.props.stripe.createToken({ email }).then(({ error, token }) => {
       if (error) {
         return this.props.onDonationStateChange({
-          error:
-            'Something went wrong processing your donation. Your card' +
-            ' has not been charged.'
+          error: t('donate.went-wrong')
         });
       }
       return this.postDonation(token);
@@ -147,35 +146,25 @@ class DonateFormChildViewForHOC extends Component {
 
   renderErrorMessage() {
     const { isEmailValid, isFormValid } = this.state;
+    const { t } = this.props;
     let message = '';
     if (!isEmailValid && !isFormValid)
-      message = (
-        <p>
-          Please enter valid email address, credit card number, and expiration
-          date.
-        </p>
-      );
-    else if (!isEmailValid)
-      message = <p>Please enter a valid email address.</p>;
-    else
-      message = (
-        <p>Please enter valid credit card number and expiration date.</p>
-      );
+      message = <p>{t('donate.valid-info')}</p>;
+    else if (!isEmailValid) message = <p>{t('donate.valid-email')}</p>;
+    else message = <p>{t('donate.valid-card')}</p>;
 
     return <Alert bsStyle='danger'>{message}</Alert>;
   }
 
   renderDonateForm() {
     const { isEmailValid, isSubmissionValid, email } = this.state;
-    const { getDonationButtonLabel, theme, defaultTheme } = this.props;
+    const { getDonationButtonLabel, theme, defaultTheme, t } = this.props;
 
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
         <div>{isSubmissionValid !== null ? this.renderErrorMessage() : ''}</div>
         <FormGroup className='donation-email-container'>
-          <ControlLabel>
-            Email (we'll send you a tax-deductible donation receipt):
-          </ControlLabel>
+          <ControlLabel>{t('donate.email-receipt')}</ControlLabel>
           <FormControl
             className={!isEmailValid && email ? 'email--invalid' : ''}
             key='3'
@@ -219,5 +208,5 @@ DonateFormChildViewForHOC.displayName = 'DonateFormChildViewForHOC';
 DonateFormChildViewForHOC.propTypes = propTypes;
 
 export default injectStripe(
-  connect(mapStateToProps)(DonateFormChildViewForHOC)
+  connect(mapStateToProps)(withTranslation()(DonateFormChildViewForHOC))
 );

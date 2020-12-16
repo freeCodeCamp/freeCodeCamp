@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const propTypes = {};
 
 function GreenNotCompleted(props) {
+  const { t } = useTranslation();
+
   return (
     <Fragment>
-      <span className='sr-only'>Not Passed</span>
+      <span className='sr-only'>{t('icons.not-passed')}</span>
       <svg
         height='50'
         viewBox='0 0 200 200'
@@ -14,7 +17,7 @@ function GreenNotCompleted(props) {
         {...props}
       >
         <g>
-          <title>Not Passed</title>
+          <title>{t('icons.not-passed')}</title>
           <circle
             cx='100'
             cy='99'
