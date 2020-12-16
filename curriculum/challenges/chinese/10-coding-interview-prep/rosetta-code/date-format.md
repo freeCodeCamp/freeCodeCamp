@@ -1,67 +1,47 @@
 ---
 id: 59669d08d75b60482359409f
+title: 日期格式
 challengeType: 5
 videoUrl: ''
-title: 日期格式
 ---
 
-## Description
-<section id="description">任务： <p>返回包含以下格式的当前日期的数组： </p><p> -  2007-11-23和</p><p> -  2007年11月23日星期日</p><p>示例输出： <code>[&#39;2007-11-23&#39;, &#39;Sunday, November 23, 2007&#39;]</code> </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+任务：
 
-## Tests
-<section id='tests'>
+返回包含以下格式的当前日期的数组：
 
-```yml
-tests:
-  - text: <code>getDateFormats</code>是一个函数。
-    testString: assert(typeof getDateFormats === 'function');
-  - text: 应该返回一个对象。
-    testString: assert(typeof getDateFormats() === 'object');
-  - text: 应该返回一个包含2个元素的数组。
-    testString: assert(getDateFormats().length === 2);
-  - text: 应以正​​确的格式返回正确的日期
-    testString: assert.deepEqual(getDateFormats(), dates, equalsMessage);
+\- 2007-11-23和
 
-```
+\- 2007年11月23日星期日
 
-</section>
+示例输出： `['2007-11-23', 'Sunday, November 23, 2007']`
 
-## Challenge Seed
-<section id='challengeSeed'>
+# --hints--
 
-<div id='js-seed'>
+`getDateFormats`是一个函数。
 
 ```js
-function getDateFormats () {
-  // Good luck!
-  return true;
-}
-
+assert(typeof getDateFormats === 'function');
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+应该返回一个对象。
 
 ```js
-console.info('after the test');
+assert(typeof getDateFormats() === 'object');
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+应该返回一个包含2个元素的数组。
 
 ```js
-// solution required
+assert(getDateFormats().length === 2);
 ```
 
-/section>
+应以正​​确的格式返回正确的日期
+
+```js
+assert.deepEqual(getDateFormats(), dates, equalsMessage);
+```
+
+# --solutions--
+

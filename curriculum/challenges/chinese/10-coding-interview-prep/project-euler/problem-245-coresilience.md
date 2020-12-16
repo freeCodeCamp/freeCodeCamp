@@ -1,55 +1,23 @@
 ---
 id: 5900f4621000cf542c50ff74
+title: 问题245：Coresilience
 challengeType: 5
 videoUrl: ''
-title: 问题245：Coresilience
 ---
 
-## Description
-<section id="description">我们将称一个无法取消弹性部分的分数。此外，我们将分母R（d）的弹性定义为具有弹性的适当分数的比率;例如，R（12）= 4/11。 <p>数d&gt; 1的弹性则为φ（d）d-1，其中φ是欧拉的函数。我们进一步定义了n&gt; 1的核心，即C（n）= n  - φ（n）n  -  1.素数p的核心是C（p）= 1p  -  1.找出所有复合整数的总和1 &lt;n≤2×1011，其中C（n）是单位分数。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+我们将称一个无法取消弹性部分的分数。此外，我们将分母R（d）的弹性定义为具有弹性的适当分数的比率;例如，R（12）= 4/11。
 
-## Tests
-<section id='tests'>
+数d> 1的弹性则为φ（d）d-1，其中φ是欧拉的函数。我们进一步定义了n> 1的核心，即C（n）= n - φ（n）n - 1.素数p的核心是C（p）= 1p - 1.找出所有复合整数的总和1 &lt;n≤2×1011，其中C（n）是单位分数。
 
-```yml
-tests:
-  - text: <code>euler245()</code>应该返回288084712410001。
-    testString: assert.strictEqual(euler245(), 288084712410001);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler245()`应该返回288084712410001。
 
 ```js
-function euler245() {
-  // Good luck!
-  return true;
-}
-
-euler245();
-
+assert.strictEqual(euler245(), 288084712410001);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

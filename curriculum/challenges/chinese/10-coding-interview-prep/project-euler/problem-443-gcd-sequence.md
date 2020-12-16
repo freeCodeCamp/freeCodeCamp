@@ -1,55 +1,31 @@
 ---
 id: 5900f5271000cf542c51003a
+title: 问题443：GCD序列
 challengeType: 5
 videoUrl: ''
-title: 问题443：GCD序列
 ---
 
-## Description
-<section id="description">设g（n）为如下定义的序列：g（4）= 13，g（n）= g（n-1）+ gcd（n，g（n-1）），n&gt; 4。 <p>前几个值是： </p><pre> <code>n4567891011121314151617181920... g(n)1314161718272829303132333451545560...</code> </pre><p>给出g（1 000）= 2524和g（1 000 000）= 2624152。 </p><p>找到g（1015）。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+设g（n）为如下定义的序列：g（4）= 13，g（n）= g（n-1）+ gcd（n，g（n-1）），n> 4。
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler443()</code>应该返回2744233049300770。
-    testString: assert.strictEqual(euler443(), 2744233049300770);
+前几个值是：
 
 ```
+ n4567891011121314151617181920... g(n)1314161718272829303132333451545560... 
+```
 
-</section>
+给出g（1 000）= 2524和g（1 000 000）= 2624152。
 
-## Challenge Seed
-<section id='challengeSeed'>
+找到g（1015）。
 
-<div id='js-seed'>
+# --hints--
+
+`euler443()`应该返回2744233049300770。
 
 ```js
-function euler443() {
-  // Good luck!
-  return true;
-}
-
-euler443();
-
+assert.strictEqual(euler443(), 2744233049300770);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

@@ -1,55 +1,23 @@
 ---
 id: 5900f44b1000cf542c50ff5d
+title: 问题222：球体包装
 challengeType: 5
 videoUrl: ''
-title: 问题222：球体包装
 ---
 
-## Description
-<section id="description">什么是最短管道的长度，内径为50毫米，可以完全包含21个半径为30毫米，31毫米，......，50毫米的球？ <p>以微米（10-6米）四舍五入到最接近的整数给出答案。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+什么是最短管道的长度，内径为50毫米，可以完全包含21个半径为30毫米，31毫米，......，50毫米的球？
 
-## Tests
-<section id='tests'>
+以微米（10-6米）四舍五入到最接近的整数给出答案。
 
-```yml
-tests:
-  - text: <code>euler222()</code>应该返回1590933。
-    testString: assert.strictEqual(euler222(), 1590933);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler222()`应该返回1590933。
 
 ```js
-function euler222() {
-  // Good luck!
-  return true;
-}
-
-euler222();
-
+assert.strictEqual(euler222(), 1590933);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

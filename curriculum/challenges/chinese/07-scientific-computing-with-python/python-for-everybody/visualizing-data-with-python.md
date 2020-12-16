@@ -4,31 +4,38 @@ challengeType: 11
 videoId: e3lydkH0prw
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+Most data needs to be **\_\_** before using it.
 
-```yml
-question:
-  text: |
-    Most data needs to be ______ before using it.
+## --answers--
 
-  answers:
-    - |
-        converted to JSON format
-    - |
-        graphed
-    - |
-        cleaned
-    - |
-        memorized
-    - |
-        turned into song
-  solution: 3
-```
+converted to JSON format
 
-</section>
+---
+
+graphed
+
+---
+
+cleaned
+
+---
+
+memorized
+
+---
+
+turned into song
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

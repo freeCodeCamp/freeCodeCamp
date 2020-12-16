@@ -1,55 +1,31 @@
 ---
 id: 5900f4e61000cf542c50fff9
+title: 问题378：三角形三元组
 challengeType: 5
 videoUrl: ''
-title: 问题378：三角形三元组
 ---
 
-## Description
-<section id="description">设T（n）为第n个三角形数，因此T（n）= <p> n（n + 1）2 </p><p> 。 </p><p>设dT（n）为T（n）的除数。例如：T（7）= 28且dT（7）= 6。 </p><p>令Tr（n）为三元组数（i，j，k），使得1≤i&lt;j &lt;k≤n且dT（i）&gt; dT（j）&gt; dT（k）。 Tr（20）= 14，Tr（100）= 5772，Tr（1000）= 11174776。 </p><p>找Tr（60 000 000）。给出答案的最后18位数字。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+设T（n）为第n个三角形数，因此T（n）=
 
-## Tests
-<section id='tests'>
+n（n + 1）2
 
-```yml
-tests:
-  - text: <code>euler378()</code>应该返回147534623725724700。
-    testString: assert.strictEqual(euler378(), 147534623725724700);
+。
 
-```
+设dT（n）为T（n）的除数。例如：T（7）= 28且dT（7）= 6。
 
-</section>
+令Tr（n）为三元组数（i，j，k），使得1≤i&lt;j &lt;k≤n且dT（i）> dT（j）> dT（k）。 Tr（20）= 14，Tr（100）= 5772，Tr（1000）= 11174776。
 
-## Challenge Seed
-<section id='challengeSeed'>
+找Tr（60 000 000）。给出答案的最后18位数字。
 
-<div id='js-seed'>
+# --hints--
+
+`euler378()`应该返回147534623725724700。
 
 ```js
-function euler378() {
-  // Good luck!
-  return true;
-}
-
-euler378();
-
+assert.strictEqual(euler378(), 147534623725724700);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

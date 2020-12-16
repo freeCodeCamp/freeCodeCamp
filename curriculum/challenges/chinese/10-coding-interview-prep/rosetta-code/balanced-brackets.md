@@ -1,97 +1,129 @@
 ---
 id: 594dc6c729e5700999302b45
+title: 平衡括号
 challengeType: 5
 videoUrl: ''
-title: 平衡括号
 ---
 
-## Description
-<section id="description"><p>确定生成的括号字符串是否平衡;也就是说，它是否完全由成对的开/关括号（按此顺序）组成，其中没有一个错误嵌套。 </p>例子： <p class="rosetta__paragraph"> （空）是的</p><p class="rosetta__paragraph"> <code>[]</code>是的</p><p class="rosetta__paragraph"> <code>][</code>假</p><p class="rosetta__paragraph"> <code>[][]</code>是的</p><p class="rosetta__paragraph"> <code>][][</code>假</p><p class="rosetta__paragraph"> <code>[]][[]</code> false </p><p class="rosetta__paragraph"> <code>[[[[]]]]</code>是的</p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+<p>确定生成的括号字符串是否平衡;也就是说，它是否完全由成对的开/关括号（按此顺序）组成，其中没有一个错误嵌套。 </p>例子： <p class='rosetta__paragraph'> （空）是的</p><p class='rosetta__paragraph'> <code>[]</code>是的</p><p class='rosetta__paragraph'> <code>][</code>假</p><p class='rosetta__paragraph'> <code>[][]</code>是的</p><p class='rosetta__paragraph'> <code>][][</code>假</p><p class='rosetta__paragraph'> <code>[]][[]</code> false </p><p class='rosetta__paragraph'> <code>[[[[]]]]</code>是的</p>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>isBalanced</code>是一个函数。
-    testString: assert(typeof isBalanced === 'function');
-  - text: <code>isBalanced(&quot;[]&quot;)</code>应该返回true。
-    testString: assert(isBalanced(testCases[0]));
-  - text: <code>isBalanced(&quot;]][[[][][][]][&quot;)</code>应该返回false。
-    testString: assert(!isBalanced(testCases[1]));
-  - text: <code>isBalanced(&quot;[][[[[][][[[]]]]]]&quot;)</code>应该返回true。
-    testString: assert(isBalanced(testCases[2]));
-  - text: <code>isBalanced(&quot;][&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[3]));
-  - text: <code>isBalanced(&quot;[[[]]]][[]&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[4]));
-  - text: <code>isBalanced(&quot;][[]&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[5]));
-  - text: <code>isBalanced(&quot;][[][]][[[]]&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[6]));
-  - text: <code>isBalanced(&quot;[[][]]][&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[7]));
-  - text: <code>isBalanced(&quot;[[[]]][[]]]][][[&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[8]));
-  - text: <code>isBalanced(&quot;[]][[]]][[[[][]]&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[9]));
-  - text: <code>isBalanced(&quot;][]][[][&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[10]));
-  - text: <code>isBalanced(&quot;[[]][[][]]&quot;)</code>应该返回true。
-    testString: assert(isBalanced(testCases[11]));
-  - text: <code>isBalanced(&quot;[[]]&quot;)</code>应该返回true。
-    testString: assert(isBalanced(testCases[12]));
-  - text: <code>isBalanced(&quot;]][]][[]][[[&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[13]));
-  - text: <code>isBalanced(&quot;][]][][[&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[14]));
-  - text: <code>isBalanced(&quot;][][&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[15]));
-  - text: <code>isBalanced(&quot;[[]]][][][[]][&quot;)</code>应该返回true。
-    testString: assert(!isBalanced(testCases[16]));
-  - text: <code>isBalanced(&quot;&quot;)</code>应该返回true。
-    testString: assert(isBalanced(testCases[17]));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`isBalanced`是一个函数。
 
 ```js
-function isBalanced (str) {
-  // Good luck!
-  return true;
-}
-
+assert(typeof isBalanced === 'function');
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+`isBalanced("[]")`应该返回true。
 
 ```js
-console.info('after the test');
+assert(isBalanced(testCases[0]));
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+`isBalanced("]][[[][][][]][")`应该返回false。
 
 ```js
-// solution required
+assert(!isBalanced(testCases[1]));
 ```
 
-/section>
+`isBalanced("[][[[[][][[[]]]]]]")`应该返回true。
+
+```js
+assert(isBalanced(testCases[2]));
+```
+
+`isBalanced("][")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[3]));
+```
+
+`isBalanced("[[[]]]][[]")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[4]));
+```
+
+`isBalanced("][[]")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[5]));
+```
+
+`isBalanced("][[][]][[[]]")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[6]));
+```
+
+`isBalanced("[[][]]][")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[7]));
+```
+
+`isBalanced("[[[]]][[]]]][][[")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[8]));
+```
+
+`isBalanced("[]][[]]][[[[][]]")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[9]));
+```
+
+`isBalanced("][]][[][")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[10]));
+```
+
+`isBalanced("[[]][[][]]")`应该返回true。
+
+```js
+assert(isBalanced(testCases[11]));
+```
+
+`isBalanced("[[]]")`应该返回true。
+
+```js
+assert(isBalanced(testCases[12]));
+```
+
+`isBalanced("]][]][[]][[[")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[13]));
+```
+
+`isBalanced("][]][][[")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[14]));
+```
+
+`isBalanced("][][")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[15]));
+```
+
+`isBalanced("[[]]][][][[]][")`应该返回true。
+
+```js
+assert(!isBalanced(testCases[16]));
+```
+
+`isBalanced("")`应该返回true。
+
+```js
+assert(isBalanced(testCases[17]));
+```
+
+# --solutions--
+

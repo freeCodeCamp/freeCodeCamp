@@ -1,55 +1,27 @@
 ---
 id: 5900f5261000cf542c510038
+title: 问题441：互质夫妇的反向总和
 challengeType: 5
 videoUrl: ''
-title: 问题441：互质夫妇的反向总和
 ---
 
-## Description
-<section id="description">对于整数M，我们将R（M）定义为满足所有这些条件的所有整数对p和q的1 /（p·q）之和： <p> 1≤p&lt;q≤Mp +q≥Mp和q是互质的。 </p><p>我们还将S（N）定义为R（i）的总和为2≤i≤N。我们可以验证S（2）= R（2）= 1/2，S（10）≈6.9147和S（100） ）≈58.2962。 </p><p>找到S（107）。将您的答案四舍五入到小数点后四位。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+对于整数M，我们将R（M）定义为满足所有这些条件的所有整数对p和q的1 /（p·q）之和：
 
-## Tests
-<section id='tests'>
+1≤p&lt;q≤Mp +q≥Mp和q是互质的。
 
-```yml
-tests:
-  - text: <code>euler441()</code>应返回5000088.8395。
-    testString: assert.strictEqual(euler441(), 5000088.8395);
+我们还将S（N）定义为R（i）的总和为2≤i≤N。我们可以验证S（2）= R（2）= 1/2，S（10）≈6.9147和S（100） ）≈58.2962。
 
-```
+找到S（107）。将您的答案四舍五入到小数点后四位。
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler441()`应返回5000088.8395。
 
 ```js
-function euler441() {
-  // Good luck!
-  return true;
-}
-
-euler441();
-
+assert.strictEqual(euler441(), 5000088.8395);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

@@ -1,57 +1,27 @@
 ---
 id: 5900f3701000cf542c50fe83
+title: 问题4：最大的回文产品
 challengeType: 5
 videoUrl: ''
-title: 问题4：最大的回文产品
 ---
 
-## Description
-<section id="description">回文数字读取两种方式相同。由两个2位数字的乘积制成的最大回文是9009 = 91×99。找到由两个<code>n</code>数字的乘积制成的最大回文。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+回文数字读取两种方式相同。由两个2位数字的乘积制成的最大回文是9009 = 91×99。找到由两个`n`数字的乘积制成的最大回文。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>largestPalindromeProduct(2)</code>应返回9009。
-    testString: assert.strictEqual(largestPalindromeProduct(2), 9009);
-  - text: <code>largestPalindromeProduct(3)</code>应返回906609。
-    testString: assert.strictEqual(largestPalindromeProduct(3), 906609);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`largestPalindromeProduct(2)`应返回9009。
 
 ```js
-function largestPalindromeProduct(n) {
-  // Good luck!
-  return true;
-}
-
-largestPalindromeProduct(3);
-
+assert.strictEqual(largestPalindromeProduct(2), 9009);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+`largestPalindromeProduct(3)`应返回906609。
 
 ```js
-// solution required
+assert.strictEqual(largestPalindromeProduct(3), 906609);
 ```
 
-/section>
+# --solutions--
+

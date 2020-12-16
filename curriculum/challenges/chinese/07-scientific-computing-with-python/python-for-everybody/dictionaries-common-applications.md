@@ -4,34 +4,43 @@ challengeType: 11
 videoId: f17xPfIXct0
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What will the following code print?
 
-```yml
-question:
-  text: |
-    What will the following code print?
-    ```python
-    counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}
-    print(counts.get('kris', 0))
-    ```
-  answers:
-    - |
-        2
-    - |
-        quincy
-    - |
-        0
-    - |
-        10
-    - |
-        [will return error]
-  solution: 3
+```python
+counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}
+print(counts.get('kris', 0))
 ```
 
-</section>
+## --answers--
+
+2
+
+---
+
+quincy
+
+---
+
+0
+
+---
+
+10
+
+---
+
+[will return error]
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

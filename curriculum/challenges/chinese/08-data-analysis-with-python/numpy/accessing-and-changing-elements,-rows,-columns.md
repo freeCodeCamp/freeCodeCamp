@@ -4,45 +4,50 @@ challengeType: 11
 videoId: v-7Y7koJ_N0
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What code would change the values in the 3rd column of both of the following Numpy arrays to 20?
 
-<section id='tests'>
+```py
+a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
 
-````yml
-question:
-  text: |
-    What code would change the values in the 3rd column of both of the following Numpy arrays to 20?
+# Output:
+# [[ 1  2  20  4  5]
+# [ 6  7 20  9 10]]
+```
 
-    ```py
-    a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+## --answers--
 
-    # Output:
-    # [[ 1  2  20  4  5]
-    # [ 6  7 20  9 10]]
-    ```
-  answers:
-    - |
-      ```python
-      a[:, 3] = 20
-      ```
-    - |
-      ```python
-      a[2, :] = 20
-      ```
-    - |
-      ```python
-      a[:, 2] = 20
-      ```
-    - |
-      ```python
-      a[1, 2] = 20
-      ```
-  solution: 3
-````
+```python
+a[:, 3] = 20
+```
 
-</section>
+---
+
+```python
+a[2, :] = 20
+```
+
+---
+
+```python
+a[:, 2] = 20
+```
+
+---
+
+```python
+a[1, 2] = 20
+```
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

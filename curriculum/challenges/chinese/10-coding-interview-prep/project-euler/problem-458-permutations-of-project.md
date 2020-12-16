@@ -1,55 +1,25 @@
 ---
 id: 5900f5361000cf542c510049
+title: 问题458：项目的排列
 challengeType: 5
 videoUrl: ''
-title: 问题458：项目的排列
 ---
 
-## Description
-<section id="description">考虑由“项目”一词的字母组成的字母A：A = {c，e，j，o，p，r，t}。令T（n）为长度为n的字符串数，该字符串由来自A的字母组成，其中没有子字符串，该子字符串是“项目”的5040个排列之一。 <p> T（7）= 77-7！= 818503。 </p><p>找到T（1012）。给出答案的最后9位数字。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+考虑由“项目”一词的字母组成的字母A：A = {c，e，j，o，p，r，t}。令T（n）为长度为n的字符串数，该字符串由来自A的字母组成，其中没有子字符串，该子字符串是“项目”的5040个排列之一。
 
-## Tests
-<section id='tests'>
+T（7）= 77-7！= 818503。
 
-```yml
-tests:
-  - text: <code>euler458()</code>应该返回423341841。
-    testString: assert.strictEqual(euler458(), 423341841);
+找到T（1012）。给出答案的最后9位数字。
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler458()`应该返回423341841。
 
 ```js
-function euler458() {
-  // Good luck!
-  return true;
-}
-
-euler458();
-
+assert.strictEqual(euler458(), 423341841);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

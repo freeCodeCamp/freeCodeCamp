@@ -1,55 +1,51 @@
 ---
 id: 5900f3b61000cf542c50fec8
+title: 'Problem 73: Counting fractions in a range'
 challengeType: 5
-videoUrl: ''
-title: 问题73：计算范围内的分数
+forumTopicId: 302186
 ---
 
-## Description
-<section id="description">考虑分数，n / d，其中n和d是正整数。如果是<d 1="" 2="" 3="" 4="" 5="" 6="" 7="" 8="" and="" hcf(n,d)="1," it="" is="" called="" a="" reduced="" proper="" fraction.="" if="" we="" list="" the="" set="" of="" fractions="" for="" d="" ≤="" in="" ascending="" order="" size,="" get:="" 8,="" 7,="" 6,="" 5,="" 4,="" 3,="" 2,="" can="" be="" seen="" that="" there="" are="" between="" 2.="" how="" many="" lie="" sorted="" 12,000?="" &#x3C;="" section=""><h2>说明</h2><section id="instructions"></section><h2>测试</h2><section id="tests"><pre> <code class="language-yml">tests: - text: &lt;code&gt;euler73()&lt;/code&gt; should return 7295372. testString: &#39;assert.strictEqual(euler73(), 7295372, &quot;&lt;code&gt;euler73()&lt;/code&gt; should return 7295372.&quot;);&#39;</code> </pre></section><h2>挑战种子</h2><section id="challengeSeed"><div id="js-seed"><pre> <code class="language-js">function euler73() { // Good luck! return true; } euler73();</code> </pre></div></section><h2>解</h2><section id="solution"><pre> <code class="language-js">// solution required</code> </pre></section></d></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+Consider the fraction, `n`/`d`, where n and d are positive integers. If `n`&lt;`d` and HCF(`n`,`d`)=1, it is called a reduced proper fraction.
 
-## Tests
-<section id='tests'>
+If we list the set of reduced proper fractions for `d` ≤ 8 in ascending order of size, we get:
 
-```yml
-tests:
-  - text: <code>euler73()</code>应该返回7295372。
-    testString: 'assert.strictEqual(euler73(), 7295372, "<code>euler73()</code> should return 7295372.");'
+<div style='text-align: center;'>1/8, 1/7, 1/6, 1/5, 1/4, 2/7, 1/3, <strong>3/8</strong>, <strong>2/5</strong>, <strong>3/7</strong>, 1/2, 4/7, 3/5, 5/8, 2/3, 5/7, 3/4, 4/5, 5/6, 6/7, 7/8</div>
 
-```
+It can be seen that there are 3 fractions between 1/3 and 1/2.
 
-</section>
+How many fractions lie between 1/3 and 1/2 in the sorted set of reduced proper fractions for `d` ≤ 12,000?
 
-## Challenge Seed
-<section id='challengeSeed'>
+# --hints--
 
-<div id='js-seed'>
+`countingFractionsInARange()` should return a number.
 
 ```js
-function euler73() {
-  // Good luck!
+assert(typeof countingFractionsInARange() === 'number');
+```
+
+`countingFractionsInARange()` should return 7295372.
+
+```js
+assert.strictEqual(countingFractionsInARange(), 7295372);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function countingFractionsInARange() {
+
   return true;
 }
 
-euler73();
-
+countingFractionsInARange();
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+# --solutions--
 
 ```js
 // solution required
 ```
-
-/section>

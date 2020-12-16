@@ -4,29 +4,34 @@ challengeType: 11
 videoId: QlNod5-kFpA
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+Which is NOT a primary data structure in a database?
 
-```yml
-question:
-  text: |
-    Which is NOT a primary data structure in a database?
+## --answers--
 
-  answers:
-    - |
-        index
-    - |
-        table
-    - |
-        row
-    - |
-        column
-  solution: 1
-```
+index
 
-</section>
+---
+
+table
+
+---
+
+row
+
+---
+
+column
+
+## --video-solution--
+
+1
+
+# --hints--
+
+
+# --solutions--
+

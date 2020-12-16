@@ -1,14 +1,14 @@
 ---
 id: 56533eb9ac21ba0edf2244df
+title: 在 Switch 语句添加多个相同选项
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBKWCV'
 forumTopicId: 18242
-title: 在 Switch 语句添加多个相同选项
 ---
 
-## Description
-<section id='description'>
-如果你忘了给<code>switch</code>的每一条<code>case</code>添加<code>break</code>，那么直到遇见<code>break</code>为止，后续的<code>case</code>会一直执行。如果你想为多个不同的输入设置相同的结果，可以这样写：
+# --description--
+
+如果你忘了给`switch`的每一条`case`添加`break`，那么直到遇见`break`为止，后续的`case`会一直执行。如果你想为多个不同的输入设置相同的结果，可以这样写：
 
 ```js
 switch(val) {
@@ -23,100 +23,84 @@ switch(val) {
 ```
 
 这样，1、2、3 都会有相同的结果。
-</section>
 
-## Instructions
-<section id='instructions'>
-请写一个<code>switch</code>语句，根据输入的<code>val</code>的范围得出对应的<code>answer</code>：<br><code>1-3</code> - "Low"<br><code>4-6</code> - "Mid"<br><code>7-9</code> - "High"
-<strong>提示：</strong><br>你的<code>case</code>应基于范围中的每一个数字编写。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+请写一个`switch`语句，根据输入的`val`的范围得出对应的`answer`：  
+`1-3` - "Low"  
+`4-6` - "Mid"  
+`7-9` - "High"
 
-```yml
-tests:
-  - text: <code>sequentialSizes(1)</code>应该返回 "Low"。
-    testString: assert(sequentialSizes(1) === "Low");
-  - text: <code>sequentialSizes(2)</code>应该返回 "Low"。
-    testString: assert(sequentialSizes(2) === "Low");
-  - text: <code>sequentialSizes(3)</code>应该返回 "Low"。
-    testString: assert(sequentialSizes(3) === "Low");
-  - text: <code>sequentialSizes(4)</code>应该返回 "Mid"。
-    testString: assert(sequentialSizes(4) === "Mid");
-  - text: <code>sequentialSizes(5)</code>应该返回 "Mid"。
-    testString: assert(sequentialSizes(5) === "Mid");
-  - text: <code>sequentialSizes(6)</code>应该返回 "Mid"。
-    testString: assert(sequentialSizes(6) === "Mid");
-  - text: <code>sequentialSizes(7)</code>应该返回 "High"。
-    testString: assert(sequentialSizes(7) === "High");
-  - text: <code>sequentialSizes(8)</code>应该返回 "High"。
-    testString: assert(sequentialSizes(8) === "High");
-  - text: <code>sequentialSizes(9)</code>应该返回 "High"。
-    testString: assert(sequentialSizes(9) === "High");
-  - text: 你不应使用<code>if</code>或<code>else</code>语句。
-    testString: assert(!/else/g.test(code) || !/if/g.test(code));
-  - text: 你应该编写 9 个<code>case</code>语句。
-    testString: assert(code.match(/case/g).length === 9);
+**提示：**  
+你的`case`应基于范围中的每一个数字编写。
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`sequentialSizes(1)`应该返回 "Low"。
 
 ```js
-function sequentialSizes(val) {
-  var answer = "";
-  // Only change code below this line
-
-
-
-  // Only change code above this line
-  return answer;
-}
-
-// Change this value to test
-sequentialSizes(1);
-
+assert(sequentialSizes(1) === 'Low');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`sequentialSizes(2)`应该返回 "Low"。
 
 ```js
-function sequentialSizes(val) {
-  var answer = "";
-
-  switch(val) {
-    case 1:
-    case 2:
-    case 3:
-      answer = "Low";
-      break;
-    case 4:
-    case 5:
-    case 6:
-      answer = "Mid";
-      break;
-    case 7:
-    case 8:
-    case 9:
-      answer = "High";
-  }
-
-  return answer;
-}
+assert(sequentialSizes(2) === 'Low');
 ```
 
-</section>
+`sequentialSizes(3)`应该返回 "Low"。
+
+```js
+assert(sequentialSizes(3) === 'Low');
+```
+
+`sequentialSizes(4)`应该返回 "Mid"。
+
+```js
+assert(sequentialSizes(4) === 'Mid');
+```
+
+`sequentialSizes(5)`应该返回 "Mid"。
+
+```js
+assert(sequentialSizes(5) === 'Mid');
+```
+
+`sequentialSizes(6)`应该返回 "Mid"。
+
+```js
+assert(sequentialSizes(6) === 'Mid');
+```
+
+`sequentialSizes(7)`应该返回 "High"。
+
+```js
+assert(sequentialSizes(7) === 'High');
+```
+
+`sequentialSizes(8)`应该返回 "High"。
+
+```js
+assert(sequentialSizes(8) === 'High');
+```
+
+`sequentialSizes(9)`应该返回 "High"。
+
+```js
+assert(sequentialSizes(9) === 'High');
+```
+
+你不应使用`if`或`else`语句。
+
+```js
+assert(!/else/g.test(code) || !/if/g.test(code));
+```
+
+你应该编写 9 个`case`语句。
+
+```js
+assert(code.match(/case/g).length === 9);
+```
+
+# --solutions--
+

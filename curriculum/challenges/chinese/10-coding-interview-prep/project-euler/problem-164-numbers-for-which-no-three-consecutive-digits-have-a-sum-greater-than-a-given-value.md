@@ -1,55 +1,21 @@
 ---
 id: 5900f4111000cf542c50ff23
+title: 问题164：没有三个连续数字的总和大于给定值的数字
 challengeType: 5
 videoUrl: ''
-title: 问题164：没有三个连续数字的总和大于给定值的数字
 ---
 
-## Description
-<section id="description">存在多少20个数字n（没有任何前导零），使得n的三个连续数字的总和不大于9？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+存在多少20个数字n（没有任何前导零），使得n的三个连续数字的总和不大于9？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>euler164()</code>应该返回378158756814587。
-    testString: assert.strictEqual(euler164(), 378158756814587);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler164()`应该返回378158756814587。
 
 ```js
-function euler164() {
-  // Good luck!
-  return true;
-}
-
-euler164();
-
+assert.strictEqual(euler164(), 378158756814587);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

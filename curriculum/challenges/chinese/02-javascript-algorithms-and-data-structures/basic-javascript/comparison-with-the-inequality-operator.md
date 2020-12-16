@@ -1,15 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d2
+title: 不等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBm9Sr'
 forumTopicId: 16787
-title: 不等运算符
 ---
 
-## Description
-<section id='description'>
-不相等运算符（<code>!=</code>）与相等运算符是相反的。这意味着不相等运算符中，如果“不为真”并且返回<code>false</code>的地方，在相等运算符中会返回<code>true</code>，<em>反之亦然</em>。与相等运算符类似，不相等运算符在比较的时候也会转换值的数据类型。
-<strong>例如</strong>
+# --description--
+
+不相等运算符（`!=`）与相等运算符是相反的。这意味着不相等运算符中，如果“不为真”并且返回`false`的地方，在相等运算符中会返回`true`，*反之亦然*。与相等运算符类似，不相等运算符在比较的时候也会转换值的数据类型。
+
+**例如**
 
 ```js
 1 !=  2     // true
@@ -19,70 +20,47 @@ title: 不等运算符
 0 != false  // false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-在<code>if</code>语句中，添加不相等运算符<code>!=</code>，这样函数在当<code>val</code>不等于 <code>99</code>的时候，会返回 "Not Equal"。
-</section>
+在`if`语句中，添加不相等运算符`!=`，这样函数在当`val`不等于 `99`的时候，会返回 "Not Equal"。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testNotEqual(99)</code>应该返回 "Equal"。
-    testString: assert(testNotEqual(99) === "Equal");
-  - text: <code>testNotEqual("99")</code>应该返回 "Equal"。
-    testString: assert(testNotEqual("99") === "Equal");
-  - text: <code>testNotEqual(12)</code>应该返回 "Not Equal"。
-    testString: assert(testNotEqual(12) === "Not Equal");
-  - text: <code>testNotEqual("12")</code>应该返回 "Not Equal"。
-    testString: assert(testNotEqual("12") === "Not Equal");
-  - text: <code>testNotEqual("bob")</code>应该返回 "Not Equal"。
-    testString: assert(testNotEqual("bob") === "Not Equal");
-  - text: 你应该使用<code>!=</code>运算符。
-    testString: assert(code.match(/(?!!==)!=/));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`testNotEqual(99)`应该返回 "Equal"。
 
 ```js
-// Setup
-function testNotEqual(val) {
-  if (val) { // Change this line
-    return "Not Equal";
-  }
-  return "Equal";
-}
-
-// Change this value to test
-testNotEqual(10);
+assert(testNotEqual(99) === 'Equal');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`testNotEqual("99")`应该返回 "Equal"。
 
 ```js
-function testNotEqual(val) {
-  if (val != 99) {
-    return "Not Equal";
-  }
-  return "Equal";
-}
+assert(testNotEqual('99') === 'Equal');
 ```
 
-</section>
+`testNotEqual(12)`应该返回 "Not Equal"。
+
+```js
+assert(testNotEqual(12) === 'Not Equal');
+```
+
+`testNotEqual("12")`应该返回 "Not Equal"。
+
+```js
+assert(testNotEqual('12') === 'Not Equal');
+```
+
+`testNotEqual("bob")`应该返回 "Not Equal"。
+
+```js
+assert(testNotEqual('bob') === 'Not Equal');
+```
+
+你应该使用`!=`运算符。
+
+```js
+assert(code.match(/(?!!==)!=/));
+```
+
+# --solutions--
+
