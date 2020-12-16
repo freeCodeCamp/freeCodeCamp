@@ -5,7 +5,7 @@ challengeType: 4
 forumTopicId: 301568
 ---
 
-::import{description="Desc" from="../../../../dictionaries/english/markdown-exports.md"}
+::import{description="Desc" from="../../../imported-files/markdown-exports.md"}
 
 # --description--
 

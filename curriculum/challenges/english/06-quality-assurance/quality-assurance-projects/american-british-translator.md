@@ -4,7 +4,7 @@ title: American British Translator
 challengeType: 4
 ---
 
-::import{description="Desc" from="../../../../dictionaries/english/markdown-exports.md"}
+::import{description="Desc" from="../../../imported-files/markdown-exports.md"}
 
 # --description--
 
