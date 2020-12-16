@@ -1,6 +1,6 @@
 const path = require('path');
 const { findIndex, reduce, toString } = require('lodash');
-const readDirP = require('readdirp-walk');
+const readDirP = require('readdirp');
 const { parseMarkdown } = require('../tools/challenge-md-parser');
 const { parseMD } = require('../tools/challenge-md-parser/mdx');
 const fs = require('fs');
@@ -124,61 +124,78 @@ function getMetaForBlock(block) {
 exports.getChallengesDirForLang = getChallengesDirForLang;
 exports.getMetaForBlock = getMetaForBlock;
 
-exports.getChallengesForLang = function getChallengesForLang(lang) {
-  let curriculum = {};
+// This recursively walks the directories starting at root, and calls cb for
+// each file/directory and only resolves once all the callbacks do.
+const walk = (root, target, options, cb) => {
   return new Promise(resolve => {
     let running = 1;
     function done() {
       if (--running === 0) {
-        resolve(curriculum);
+        resolve(target);
       }
     }
-    readDirP({ root: getChallengesDirForLang(lang) })
+    readDirP(root, options)
       .on('data', file => {
         running++;
-        buildCurriculum(file, curriculum, lang).then(done);
+        cb(file, target).then(done);
       })
       .on('end', done);
   });
 };
 
-async function buildCurriculum(file, curriculum, lang) {
-  const { name, depth, path: filePath, stat } = file;
-  const createChallenge = createChallengeCreator(challengesDir, lang);
-  if (depth === 1 && stat.isDirectory()) {
-    // extract the superBlock info
-    const { order, name: superBlock } = superBlockInfo(name);
-    curriculum[superBlock] = { superBlock, order, blocks: {} };
-    return;
-  }
-  if (depth === 2 && stat.isDirectory()) {
-    const blockName = getBlockNameFromPath(filePath);
-    const metaPath = path.resolve(
-      __dirname,
-      `./challenges/_meta/${blockName}/meta.json`
+exports.getChallengesForLang = async function getChallengesForLang(lang) {
+  const root = getChallengesDirForLang(lang);
+  // scaffold the curriculum, first set up the superblocks, then recurse into
+  // the blocks
+  const curriculum = await walk(
+    root,
+    {},
+    { type: 'directories', depth: 1 },
+    buildSuperBlocks
+  );
+  const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
+  // fill the scaffold with the challenges
+  return walk(
+    root,
+    curriculum,
+    { type: 'files', fileFilter: ['*.md', '*.markdown'] },
+    cb
+  );
+};
+
+async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
+  const metaPath = path.resolve(
+    __dirname,
+    `./challenges/_meta/${blockName}/meta.json`
+  );
+  const blockMeta = require(metaPath);
+  const { isUpcomingChange } = blockMeta;
+  if (typeof isUpcomingChange !== 'boolean') {
+    throw Error(
+      `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
     );
-    const blockMeta = require(metaPath);
-    const { isUpcomingChange } = blockMeta;
-    if (typeof isUpcomingChange !== 'boolean') {
-      throw Error(
-        `meta file at ${metaPath} is missing 'isUpcomingChange', it must be 'true' or 'false'`
-      );
-    }
-
-    if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      // add the block to the superBlock
-      const { name: superBlock } = superBlockInfoFromPath(filePath);
-      const blockInfo = { meta: blockMeta, challenges: [] };
-      curriculum[superBlock].blocks[name] = blockInfo;
-    }
-    return;
-  }
-  if (name === 'meta.json' || name === '.DS_Store') {
-    return;
   }
 
-  const block = getBlockNameFromPath(filePath);
-  const { name: superBlock } = superBlockInfoFromPath(filePath);
+  if (!isUpcomingChange || process.env.SHOW_UPCOMING_CHANGES === 'true') {
+    // add the block to the superBlock
+    const blockInfo = { meta: blockMeta, challenges: [] };
+    curriculum[superBlock].blocks[blockName] = blockInfo;
+  }
+}
+
+async function buildSuperBlocks({ path, fullPath }, curriculum) {
+  const { order, name: superBlock } = superBlockInfo(path);
+  curriculum[superBlock] = { superBlock, order, blocks: {} };
+
+  const cb = (file, curriculum) => buildBlocks(file, curriculum, superBlock);
+  return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);
+}
+
+async function buildChallenges({ path, filePath }, curriculum, lang) {
+  // path is relative to getChallengesDirForLang(lang)
+  const createChallenge = createChallengeCreator(challengesDir, lang);
+  const block = getBlockNameFromPath(path);
+  const { name: superBlock } = superBlockInfoFromPath(path);
   let challengeBlock;
 
   // TODO: this try block and process exit can all go once errors terminate the
