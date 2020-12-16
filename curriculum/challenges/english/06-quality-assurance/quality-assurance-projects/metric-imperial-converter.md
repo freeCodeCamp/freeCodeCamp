@@ -263,7 +263,7 @@ async getUserInput => {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
     const unitTests = getTests.filter(test => {
-      return !!test.context.match(/Unit Tests ->/gi);
+      return !!test.context.match(/Unit Tests/gi);
     });
     assert.isAtLeast(unitTests.length, 16, 'At least 16 tests passed');
     unitTests.forEach(test => {
@@ -288,7 +288,7 @@ async getUserInput => {
     const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
     assert.isArray(getTests);
     const functTests = getTests.filter(test => {
-      return !!test.context.match(/Functional Tests ->/gi);
+      return !!test.context.match(/Functional Tests/gi);
     });
     assert.isAtLeast(functTests.length, 5, 'At least 5 tests passed');
     functTests.forEach(test => {
