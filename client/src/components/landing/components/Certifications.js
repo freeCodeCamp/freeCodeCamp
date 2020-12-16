@@ -5,6 +5,7 @@ import { uniq } from 'lodash';
 import { Spacer, Link } from '../../helpers';
 import LinkButton from '../../../assets/icons/LinkButton';
 import BigCallToAction from './BigCallToAction';
+import { useTranslation } from 'react-i18next';
 
 const propTypes = {
   nodes: PropTypes.array,
@@ -12,6 +13,7 @@ const propTypes = {
 };
 
 const Certifications = ({ nodes, page }) => {
+  const { t } = useTranslation();
   const superBlocks = uniq(nodes.map(node => node.superBlock)).filter(
     cert => cert !== 'Coding Interview Prep'
   );
@@ -19,7 +21,7 @@ const Certifications = ({ nodes, page }) => {
   return (
     <Row className='certification-section'>
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        <p className='big-heading'>Earn free verified certifications in:</p>
+        <p className='big-heading'>{t('landing.certification-heading')}</p>
         <ul data-test-label='certifications'>
           {superBlocks.map((superBlock, i) => (
             <li key={i}>

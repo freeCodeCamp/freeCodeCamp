@@ -33,16 +33,16 @@ export function handle400Error(e, options = { redirectTo: '/' }) {
       return {
         ...flash,
         type: 'warn',
-        message: 'You are not authorised to continue on this route'
+        message: 'flash.msg-7',
+        needsTranslating: true
       };
     }
     case 404: {
       return {
         ...flash,
         type: 'info',
-        message:
-          "We couldn't find what you were looking for. " +
-          'Please check and try again'
+        message: 'flash.msg-8',
+        needsTranslating: true
       };
     }
     default: {

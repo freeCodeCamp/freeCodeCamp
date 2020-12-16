@@ -21,7 +21,7 @@ describe('<certification />', () => {
 
     expect(
       container.querySelector('#button-legacy-data-visualization')
-    ).toHaveTextContent('Show Certification');
+    ).toHaveTextContent('buttons.show-cert');
   });
 
   it('Should link show cert button to the claimed legacy cert', () => {
@@ -95,7 +95,7 @@ describe('<certification />', () => {
       <CertificationSettings {...propsForOnlySolution} />
     );
 
-    const button = getByText('Show Code');
+    const button = getByText('buttons.show-code');
     expect(button).toBeInTheDocument();
   });
 });
