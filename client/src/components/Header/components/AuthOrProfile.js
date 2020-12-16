@@ -7,6 +7,7 @@ import {
   AvatarRenderer
 } from '../../helpers';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import Login from '../components/Login';
 
@@ -17,6 +18,7 @@ const propTypes = {
 };
 
 export function AuthOrProfile({ user, pathName, pending }) {
+  const { t } = useTranslation();
   const isUserDonating = user && user.isDonating;
   const isUserSignedIn = user && user.username;
   const isTopContributor =
@@ -31,18 +33,20 @@ export function AuthOrProfile({ user, pathName, pending }) {
       </div>
     );
   } else if (pathName === '/' || !isUserSignedIn) {
-    return <Login data-test-label='landing-small-cta'>Sign In</Login>;
+    return (
+      <Login data-test-label='landing-small-cta'>{t('buttons.sign-in')}</Login>
+    );
   } else {
     return (
       <>
         <li>
           <Link className='nav-link' to='/learn'>
-            Curriculum
+            {t('buttons.curriculum')}
           </Link>
         </li>
         <li>
           <Link className='nav-link' to={`/${user.username}`}>
-            Profile
+            {t('buttons.profile')}
           </Link>
           <Link
             className={`avatar-nav-link ${badgeColorClass}`}

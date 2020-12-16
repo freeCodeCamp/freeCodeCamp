@@ -2,10 +2,12 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import BezierEasing from 'bezier-easing';
 import GreenPass from '../../../assets/icons/GreenPass';
+import { withTranslation } from 'react-i18next';
 
 const propTypes = {
   blockName: PropTypes.string,
-  completedPercent: PropTypes.number
+  completedPercent: PropTypes.number,
+  t: PropTypes.func.isRequired
 };
 
 export class CompletionModalBody extends PureComponent {
@@ -56,7 +58,7 @@ export class CompletionModalBody extends PureComponent {
   }
 
   render() {
-    const { blockName, completedPercent } = this.props;
+    const { blockName, completedPercent, t } = this.props;
 
     return (
       <>
@@ -74,14 +76,18 @@ export class CompletionModalBody extends PureComponent {
           <div className='completion-block-name'>{blockName}</div>
           <div className='progress-bar-wrap'>
             <div className='progress-bar-background'>
-              {this.state.shownPercent}% complete
+              {t('learn.percent-complete', {
+                percent: this.state.shownPercent
+              })}
             </div>
             <div
               className='progress-bar-percent'
               style={{ width: this.state.shownPercent + '%' }}
             >
               <div className='progress-bar-foreground'>
-                {this.state.shownPercent}% complete
+                {t('learn.percent-complete', {
+                  percent: this.state.shownPercent
+                })}
               </div>
             </div>
           </div>
@@ -94,4 +100,4 @@ export class CompletionModalBody extends PureComponent {
 CompletionModalBody.displayName = 'CompletionModalBody';
 CompletionModalBody.propTypes = propTypes;
 
-export default CompletionModalBody;
+export default withTranslation()(CompletionModalBody);

@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
-import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
+import FreeCodeCampLogo from '../assets/icons/FreeCodeCampLogo';
 // eslint-disable-next-line max-len
 import DonateForm from '../components/Donation/DonateForm';
+import { useTranslation } from 'react-i18next';
 
 import {
   showCertSelector,
@@ -84,6 +85,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ createFlashMessage, showCert, executeGA }, dispatch);
 
 const ShowCertification = props => {
+  const { t } = useTranslation();
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
   const [isDonationClosed, setIsDonationClosed] = useState(false);
@@ -198,7 +200,7 @@ const ShowCertification = props => {
         bsStyle='primary'
         onClick={hideDonationSection}
       >
-        Close
+        {t('buttons.close')}
       </Button>
     </div>
   );
@@ -208,13 +210,7 @@ const ShowCertification = props => {
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <p>
-              Only you can see this message. Congratulations on earning this
-              certification. It’s no easy task. Running freeCodeCamp isn’t easy
-              either. Nor is it cheap. Help us help you and many other people
-              around the world. Make a tax-deductible supporting donation to our
-              nonprofit today.
-            </p>
+            <p>{t('donate.only-you')}</p>
           </Col>
         </Row>
       )}
@@ -241,7 +237,7 @@ const ShowCertification = props => {
         target='_blank'
         href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${certMonth}&certUrl=${certURL}`}
       >
-        Add this certification to my LinkedIn profile
+        {t('profile.add-linkedin')}
       </Button>
       <Spacer />
       <Button
@@ -249,9 +245,12 @@ const ShowCertification = props => {
         bsSize='lg'
         bsStyle='primary'
         target='_blank'
-        href={`https://twitter.com/intent/tweet?text=I just earned the ${certTitle} certification @freeCodeCamp! Check it out here: ${certURL}`}
+        href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
+          certTitle: certTitle,
+          certURL: certURL
+        })}`}
       >
-        Share this certification on Twitter
+        {t('profile.add-twitter')}
       </Button>
     </Row>
   );
