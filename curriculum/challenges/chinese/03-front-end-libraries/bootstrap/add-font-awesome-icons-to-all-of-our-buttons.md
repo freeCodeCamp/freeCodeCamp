@@ -15,7 +15,7 @@ Font Awesome 是一个非常便利的图标库。这些图标都是被保存在 
 
 使用 Font Awesome 分别为你的 info 按钮添加 `info-circle` 图标，为你的 delete 按钮添加 `trash` 图标。
 
-**记住：**下述要求中的 `i` 元素可以用 `span` 元素代替。
+**记住：** 下述要求中的 `i` 元素可以用 `span` 元素代替。
 
 # --hints--
 

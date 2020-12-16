@@ -15,7 +15,7 @@ React 提供了有用的类型检查特性，以验证组件是否接收了正�
 
 在上面的示例中，`PropTypes.func`部分检查`handleClick`是否为函数。添加`isRequired`是为了告诉 React`handleClick`是该组件的必需属性。如果未提供该 prop，你将看到警告信息。另请注意，`func`表示`function`。在 7 种 JavaScript 基本类型中，`function`和`boolean`（写为`bool`）是仅有的使用异常拼写的两种类型。除了基本类型，还有其他类型可用。例如，你可以检查 prop 是否为 React 组件，请参阅文档以获取所有选项。
 
-**注意：**在 React v15.5.0 版本中, `PropTypes`可以从 React 中单独引入，如下所示： `import React, { PropTypes } from 'react';`
+**注意：** 在 React v15.5.0 版本中, `PropTypes`可以从 React 中单独引入，如下所示： `import React, { PropTypes } from 'react';`
 
 # --instructions--
 

@@ -7,7 +7,7 @@ forumTopicId: 301390
 
 # --description--
 
-**简介：**React 是由 Facebook 创建和维护的开源视图库。它是渲染当代 Web 应用程序用户界面（UI）的绝佳工具。
+**简介：** React 是由 Facebook 创建和维护的开源视图库。它是渲染当代 Web 应用程序用户界面（UI）的绝佳工具。
 
 React 使用名为 JSX 的 JavaScript 语法扩展，允许你直接在 JavaScript 中编写 HTML。这有几个好处。它允许你在 HTML 中使用 JavaScript 的完整程序功能，并有助于保持代码的可读性。在大多数情况下，JSX 类似于你已经学过的 HTML，但是在这些挑战中将会涉及一些关键差异。
 
@@ -19,7 +19,7 @@ React 使用名为 JSX 的 JavaScript 语法扩展，允许你直接在 JavaScri
 
 # --instructions--
 
-**说明：**当前代码使用 JSX 将`div`元素赋值给常量`JSX`。将`div`替换为`h1`元素，并在其中添加文本`Hello JSX!`。
+**说明：** 当前代码使用 JSX 将`div`元素赋值给常量`JSX`。将`div`替换为`h1`元素，并在其中添加文本`Hello JSX!`。
 
 # --hints--
 

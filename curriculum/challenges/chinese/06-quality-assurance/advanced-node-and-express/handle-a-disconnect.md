@@ -19,7 +19,7 @@ socket.on('disconnect', () => {
 
 为确保客户端可以看到实时的用户数量，显然，我们应该在用户断开时让 currentUsers 减 1，然后发送 'user count' 事件，并使用修改后的用户数量。
 
-**注意：**和 `'disconnect'` 类似，所有 socket 可以发送到服务器的事件，我们都应该在有 'socket' 定义的连接监听器里处理。
+**注意：** 和 `'disconnect'` 类似，所有 socket 可以发送到服务器的事件，我们都应该在有 'socket' 定义的连接监听器里处理。
 
 完成上述要求后，你可以在下方提交你的页面链接。如果你遇到了问题，可以参考 [这里](https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa) 的答案。
 

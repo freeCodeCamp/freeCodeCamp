@@ -13,7 +13,7 @@ forumTopicId: 301542
 
 用 `personName` 作为 `Name` 的查找条件，并将查到的 person 年龄设为 20 岁。
 
-**提示：**你需要返回更新后的 document。你可以把 `findOneAndUpdate()` 的第三个参数设置为 `{new: true}`。默认情况下，这个方法会返回修改前的数据。
+**提示：** 你需要返回更新后的 document。你可以把 `findOneAndUpdate()` 的第三个参数设置为 `{new: true}`。默认情况下，这个方法会返回修改前的数据。
 
 # --hints--
 

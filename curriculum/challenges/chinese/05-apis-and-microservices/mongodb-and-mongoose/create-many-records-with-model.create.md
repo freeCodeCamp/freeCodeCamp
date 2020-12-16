@@ -13,7 +13,7 @@ forumTopicId: 301537
 
 修改 `createManyPeople` 方法，使用 `arrayOfPeople` 作为 `Model.create()` 的参数来创建多个 people 实例。
 
-**注意：**你可以使用在上一个挑战中创建的 model 来完成当前挑战。
+**注意：** 你可以使用在上一个挑战中创建的 model 来完成当前挑战。
 
 # --hints--
 

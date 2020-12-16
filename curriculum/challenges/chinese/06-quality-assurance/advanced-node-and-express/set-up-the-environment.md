@@ -39,7 +39,7 @@ let socket = io();
 
 现在你可以重启一下你的 app，尝试一下验证用户，然后你应该会看到服务器的 console 里输出了 'A user has connected'。
 
-**注意：**只有在连接到处于同一个 url/server 上的 socket 时，`io()`才可以正常执行。如果需要连接到外部的 socket，就需要这样调用：`io.connect('URL');`。
+**注意：** 只有在连接到处于同一个 url/server 上的 socket 时，`io()`才可以正常执行。如果需要连接到外部的 socket，就需要这样调用：`io.connect('URL');`。
 
 完成上述要求后，你可以在下方提交你的页面链接。如果你遇到了问题，可以参考 [这里](https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1) 的答案。
 

@@ -22,7 +22,7 @@ background: var(--penguin-skin, black);
 
 在`penguin-top`和`penguin-bottom`class 里面，`background`属性设置一个`black`的备用色。
 
-**注意：**因为 CSS 变量名拼写错了，所以备用值会被使用。
+**注意：** 因为 CSS 变量名拼写错了，所以备用值会被使用。
 
 # --hints--
 
