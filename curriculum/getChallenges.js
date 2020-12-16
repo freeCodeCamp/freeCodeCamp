@@ -291,10 +291,9 @@ ${getFullPath('english')}
       time
     } = meta;
     challenge.block = blockName;
-    challenge.dashedName =
-      lang === 'english'
-        ? dasherize(challenge.title)
-        : dasherize(challenge.originalTitle);
+    challenge.dashedName = useEnglish
+      ? dasherize(challenge.title)
+      : dasherize(challenge.originalTitle);
     delete challenge.originalTitle;
     challenge.order = order;
     challenge.superOrder = superOrder;
