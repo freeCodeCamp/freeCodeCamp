@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const propTypes = {};
 
 function IntroInformation(props) {
+  const { t } = useTranslation();
+
   return (
     <Fragment>
-      <span className='sr-only'>IntroInformation</span>
+      <span className='sr-only'>{t('icons.info')}</span>
       <svg
         height='50'
         viewBox='0 0 200 200'
@@ -14,7 +17,7 @@ function IntroInformation(props) {
         {...props}
       >
         <g>
-          <title>IntroInformation</title>
+          <title>{t('icons.info')}</title>
           <circle
             cx='100'
             cy='99'

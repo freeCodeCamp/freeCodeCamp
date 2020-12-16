@@ -15,7 +15,9 @@ const {
   API_LOCATION: api,
   FORUM_LOCATION: forum,
   NEWS_LOCATION: news,
-  LOCALE: locale,
+  CLIENT_LOCALE: clientLocale,
+  CURRICULUM_LOCALE: curriculumLocale,
+  SHOW_LOCALE_DROPDOWN_MENU: showLocaleDropdownMenu,
   STRIPE_PUBLIC_KEY: stripePublicKey,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey,
@@ -32,7 +34,9 @@ const locations = {
 };
 
 module.exports = Object.assign(locations, {
-  locale,
+  clientLocale,
+  curriculumLocale,
+  showLocaleDropdownMenu: showLocaleDropdownMenu === 'true',
   deploymentEnv,
   environment: process.env.FREECODECAMP_NODE_ENV || 'development',
   stripePublicKey:
