@@ -416,6 +416,13 @@ pre[class*='language-'] {
   border-radius: 0px;
 }
 
+code[class*='language-']::selection,
+code[class*='language-'] ::selection,
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection {
+  background-color: #9f9f9f40 !important;
+}
+
 pre {
   color: inherit;
   background-color: inherit;
