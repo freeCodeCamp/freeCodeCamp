@@ -22,7 +22,6 @@ i18n.use(initReactI18next).init({
   interpolation: {
     escapeValue: false
   },
-  preload: [i18nextCode],
   react: {
     wait: true
   }
