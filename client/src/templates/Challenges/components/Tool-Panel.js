@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import {
   Button,
@@ -43,6 +44,7 @@ function ToolPanel({
   guideUrl,
   videoUrl
 }) {
+  const { t } = useTranslation();
   return (
     <Fragment>
       <div
@@ -51,7 +53,7 @@ function ToolPanel({
         }`}
       >
         <Button block={true} bsStyle='primary' onClick={executeChallenge}>
-          {isMobile ? 'Run' : 'Run the Tests'}
+          {isMobile ? t('buttons.run') : t('buttons.run-test')}
         </Button>
         <Button
           block={true}
@@ -59,14 +61,14 @@ function ToolPanel({
           className='btn-invert'
           onClick={openResetModal}
         >
-          {isMobile ? 'Reset' : 'Reset All Code'}
+          {isMobile ? t('buttons.reset') : t('buttons.reset-code')}
         </Button>
         <DropdownButton
           block={true}
           bsStyle='primary'
           className='btn-invert'
           id='get-help-dropdown'
-          title={isMobile ? 'Help' : 'Get Help'}
+          title={isMobile ? t('buttons.help') : t('buttons.get-help')}
         >
           {guideUrl ? (
             <MenuItem
@@ -75,7 +77,7 @@ function ToolPanel({
               href={guideUrl}
               target='_blank'
             >
-              {'Get a Hint'}
+              {t('buttons.get-hint')}
             </MenuItem>
           ) : null}
           {videoUrl ? (
@@ -84,7 +86,7 @@ function ToolPanel({
               className='btn-invert'
               onClick={openVideoModal}
             >
-              {'Watch a video'}
+              {t('buttons.watch-video')}
             </MenuItem>
           ) : null}
           <MenuItem
@@ -92,7 +94,7 @@ function ToolPanel({
             className='btn-invert'
             onClick={openHelpModal}
           >
-            {'Ask for help'}
+            {t('buttons.ask-for-help')}
           </MenuItem>
         </DropdownButton>
       </div>

@@ -20,6 +20,19 @@
   overflow-x: hidden;
 }
 
+.footer-container .language-menu {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.footer-container .language-menu span {
+  margin-right: 14px;
+}
+
+.footer-container .language-menu select {
+  width: 40%;
+}
+
 .footer-container p {
   margin: 0 0 1.45rem;
   line-height: 30px;
