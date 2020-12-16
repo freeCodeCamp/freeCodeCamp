@@ -45,6 +45,12 @@ assert.equal(dotProduct([1], [1, 2]), null);
 assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
 ```
 
+`dotProduct([3, 2, 1], [2, 4, 2], [5, 3, 1])` should return `null`.
+
+```js
+assert.equal(dotProduct([3, 2, 1], [2, 4, 2], [5, 3, 1]), null);
+```
+
 `dotProduct([ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ])` should return `360`.
 
 ```js
