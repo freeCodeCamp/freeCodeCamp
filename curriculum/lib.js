@@ -1,14 +1,18 @@
 const invariant = require('invariant');
 
-const { supportedLangs } = require('./utils');
+const {
+  curriculum: curriculumLangs
+} = require('../client/i18n/allLangs').availableLangs;
+
+// const { supportedLangs } = require('./utils');
 
 function validateLang(lang) {
   invariant(lang, 'Please provide a language');
   invariant(
-    supportedLangs.includes(lang),
+    curriculumLangs.includes(lang),
     `${lang} is not supported
 
-  Supported languages: ${JSON.stringify(supportedLangs, null, 2)}
+  Supported languages: ${JSON.stringify(curriculumLangs, null, 2)}
 
   `
   );

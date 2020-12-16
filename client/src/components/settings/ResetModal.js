@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import { ButtonSpacer } from '../helpers';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
@@ -11,7 +12,9 @@ const propTypes = {
 };
 
 function ResetModal(props) {
+  const { t } = useTranslation();
   const { show, onHide } = props;
+
   return (
     <Modal
       aria-labelledby='modal-title'
@@ -23,18 +26,13 @@ function ResetModal(props) {
       show={show}
     >
       <Modal.Header closeButton={true}>
-        <Modal.Title id='modal-title'>Reset My Progress</Modal.Title>
+        <Modal.Title id='modal-title'>
+          {t('settings.danger.reset-heading')}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>
-          This will really delete all of your progress, points, completed
-          challenges, our records of your projects, any certifications you have,
-          everything.
-        </p>
-        <p>
-          We won't be able to recover any of it for you later, even if you
-          change your mind.
-        </p>
+        <p>{t('settings.danger.reset-p1')}</p>
+        <p>{t('settings.danger.reset-p2')}</p>
         <hr />
         <Button
           block={true}
@@ -44,7 +42,7 @@ function ResetModal(props) {
           onClick={props.onHide}
           type='button'
         >
-          Nevermind, I don't want to delete all of my progress
+          {t('settings.danger.nevermind-2')}
         </Button>
         <ButtonSpacer />
         <Button
@@ -55,11 +53,11 @@ function ResetModal(props) {
           onClick={props.reset}
           type='button'
         >
-          Reset everything. I want to start from the beginning
+          {t('settings.danger.reset-confirm')}
         </Button>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>{t('buttons.close')}</Button>
       </Modal.Footer>
     </Modal>
   );

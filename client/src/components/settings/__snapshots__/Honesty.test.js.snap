@@ -5,7 +5,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
   className="honesty-policy"
 >
   <SectionHeader>
-    Academic Honesty Policy
+    settings.headings.honesty
   </SectionHeader>
   <FullWidthRow>
     <Uncontrolled(Panel)
@@ -22,7 +22,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
       disabled={false}
       onClick={[Function]}
     >
-      Agree
+      buttons.agree
     </Button>
   </FullWidthRow>
 </section>
@@ -33,7 +33,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
   className="honesty-policy"
 >
   <SectionHeader>
-    Academic Honesty Policy
+    settings.headings.honesty
   </SectionHeader>
   <FullWidthRow>
     <Uncontrolled(Panel)
@@ -51,7 +51,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
       disabled={true}
     >
       <p>
-        You have accepted our Academic Honesty Policy.
+        buttons.accepted-honesty
       </p>
     </Button>
   </FullWidthRow>
