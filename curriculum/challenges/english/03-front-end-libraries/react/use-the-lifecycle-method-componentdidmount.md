@@ -91,7 +91,7 @@ class MyComponent extends React.Component {
       <div>
         {/* Change code below this line */}
         <h1>Active Users: </h1>
-        {/* Change code below this line */}
+        {/* Change code above this line */}
       </div>
     );
   }
