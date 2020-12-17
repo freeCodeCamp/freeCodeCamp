@@ -58,7 +58,7 @@ assert($('.follow-btn').css('display') == 'flex');
 Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
 
 ```js
-testString: assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
 ```
 
 Your `.stats` should have a `display` property set to `flex`.
