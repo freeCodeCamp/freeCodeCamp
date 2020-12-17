@@ -1,61 +1,25 @@
 ---
 id: 5900f4af1000cf542c50ffc1
+title: 问题322：二项式系数可被10整除
 challengeType: 5
 videoUrl: ''
-title: 问题322：二项式系数可被10整除
 ---
 
-## Description
-<section id="description">
-Let T(m, n) be the number of the binomial coefficients iCn that are divisible by 10 for n ≤ i < m(i, m and n are positive integers).
+# --description--
+
+Let T(m, n) be the number of the binomial coefficients iCn that are divisible by 10 for n ≤ i &lt; m(i, m and n are positive integers).
+
 You are given that T(109, 107-10) = 989697000.
 
-
 Find T(1018, 1012-10).
-</section>
 
-## Instructions
-<section id="instructions">
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
-
-```yml
-tests:
-  - text: <code>euler322()</code>应该返回999998760323314000。
-    testString: assert.strictEqual(euler322(), 999998760323314000);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler322()`应该返回999998760323314000。
 
 ```js
-function euler322() {
-  // Good luck!
-  return true;
-}
-
-euler322();
-
+assert.strictEqual(euler322(), 999998760323314000);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

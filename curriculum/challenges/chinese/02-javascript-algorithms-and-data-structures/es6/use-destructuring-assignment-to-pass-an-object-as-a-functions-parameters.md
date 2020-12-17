@@ -1,13 +1,14 @@
 ---
 id: 587d7b8a367417b2b2512b4d
+title: 使用解构赋值将对象作为函数的参数传递
 challengeType: 1
 forumTopicId: 301217
-title: 使用解构赋值将对象作为函数的参数传递
 ---
 
-## Description
-<section id='description'>
+# --description--
+
 在某些情况下，你可以在函数的参数里直接解构对象。
+
 请看以下代码：
 
 ```js
@@ -25,76 +26,37 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 }
 ```
 
-这样的操作去除了多余的代码，使代码更加整洁。
-这样做还有个额外的好处：函数不需要再去操作整个对象，而仅仅是操作复制到函数作用域内部的参数。
-</section>
+这样的操作去除了多余的代码，使代码更加整洁。 这样做还有个额外的好处：函数不需要再去操作整个对象，而仅仅是操作复制到函数作用域内部的参数。
 
-## Instructions
-<section id='instructions'>
-对<code>half</code>的参数进行解构赋值，使得仅仅将<code>max</code>与<code>min</code>的值传进函数。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+对`half`的参数进行解构赋值，使得仅仅将`max`与`min`的值传进函数。
 
-```yml
-tests:
-  - text: <code>stats</code>的类型应该是一个<code>object</code>。
-    testString: assert(typeof stats === 'object');
-  - text: <code>half(stats)</code>应该等于<code>28.015</code>
-    testString: assert(half(stats) === 28.015);
-  - text: 应该使用解构赋值。
-    testString: assert(code.replace(/\s/g, '').match(/half=\({\w+,\w+}\)/));
-  - text: 应该使用解构参数。
-    testString: assert(!code.match(/stats\.max|stats\.min/));
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`stats`的类型应该是一个`object`。
 
 ```js
-const stats = {
-  max: 56.78,
-  standard_deviation: 4.34,
-  median: 34.54,
-  mode: 23.87,
-  min: -0.75,
-  average: 35.85
-};
-
-// change code below this line
-const half = (stats) => (stats.max + stats.min) / 2.0; // use function argument destructuring
-// change code above this line
-
-console.log(stats); // should be object
-console.log(half(stats)); // should be 28.015
+assert(typeof stats === 'object');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+`half(stats)`应该等于`28.015`
 
 ```js
-const stats = {
-  max: 56.78,
-  standard_deviation: 4.34,
-  median: 34.54,
-  mode: 23.87,
-  min: -0.75,
-  average: 35.85
-};
-
-const half = ( {max, min} ) => (max + min) / 2.0;
+assert(half(stats) === 28.015);
 ```
 
-</section>
+应该使用解构赋值。
+
+```js
+assert(code.replace(/\s/g, '').match(/half=\({\w+,\w+}\)/));
+```
+
+应该使用解构参数。
+
+```js
+assert(!code.match(/stats\.max|stats\.min/));
+```
+
+# --solutions--
+

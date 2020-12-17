@@ -1,13 +1,13 @@
 ---
 id: 587d7b89367417b2b2512b4a
+title: 使用解构赋值从嵌套对象中分配变量
 challengeType: 1
 forumTopicId: 301214
-title: 使用解构赋值从嵌套对象中分配变量
 ---
 
-## Description
-<section id='description'>
-同样，我们可以将 <em>嵌套的对象</em>解构到变量中。
+# --description--
+
+同样，我们可以将 *嵌套的对象*解构到变量中。
 
 请看以下代码：
 
@@ -32,71 +32,40 @@ const { johnDoe: { age, email }} = user;
 const { johnDoe: { age: userAge, email: userEmail }} = user;
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-将两个赋值语句替换成等价的解构赋值。<code>lowToday</code> 和 <code>highToday</code> 应该为 <code>LOCAL_FORECAST</code> 中 <code>today.low</code> 和 <code>today.high</code> 的值。
-</section>
+将两个赋值语句替换成等价的解构赋值。`lowToday` 和 `highToday` 应该为 `LOCAL_FORECAST` 中 `today.low` 和 `today.high` 的值。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 不能使用 ES5 的赋值语句。
-    testString: assert(!code.match(/lowToday = LOCAL_FORECAST\.today\.low/g) && !code.match(/highToday = LOCAL_FORECAST\.today.high/g))
-  - text: 应该使用解构创建 <code>lowToday</code> 变量。
-    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
-  - text: 应该使用解构创建 <code>highToday</code> 变量。
-    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+不能使用 ES5 的赋值语句。
 
 ```js
-const LOCAL_FORECAST = {
-  yesterday: { low: 61, high: 75 },
-  today: { low: 64, high: 77 },
-  tomorrow: { low: 68, high: 80 }
-};
-
-// change code below this line
-  
-const lowToday = LOCAL_FORECAST.today.low;
-const highToday = LOCAL_FORECAST.today.high;
-
-// change code above this line
-
-console.log(lowToday); // should be 64
-console.log(highToday); // should be 77
+assert(
+  !code.match(/lowToday = LOCAL_FORECAST\.today\.low/g) &&
+    !code.match(/highToday = LOCAL_FORECAST\.today.high/g)
+);
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+应该使用解构创建 `lowToday` 变量。
 
 ```js
-const LOCAL_FORECAST = {
-  yesterday: { low: 61, high: 75 },
-  today: { low: 64, high: 77 },
-  tomorrow: { low: 68, high: 80 }
-};
-
-// change code below this line
-  
-const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
-
-// change code above this line
-
-console.log(highToday); // should be 77
-console.log(highTomorrow); // should be 80
+assert(
+  code.match(
+    /(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g
+  )
+);
 ```
 
-</section>
+应该使用解构创建 `highToday` 变量。
+
+```js
+assert(
+  code.match(
+    /(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g
+  )
+);
+```
+
+# --solutions--
+

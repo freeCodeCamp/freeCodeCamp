@@ -4,42 +4,44 @@ challengeType: 11
 videoId: iIoQ0_L0GvA
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What is the value of `a` after running the following code?
 
-<section id='tests'>
+```py
+import numpy as np
 
-````yml
-question:
-  text: |
-    What is the value of `a` after running the following code?
+a = np.array([1, 2, 3, 4, 5])
+b = a
+b[2] = 20
+```
 
-    ```py
-    import numpy as np
+## --answers--
 
-    a = np.array([1, 2, 3, 4, 5])
-    b = a
-    b[2] = 20
-    ```
+```python
+[1 2 3 4 5]
+```
 
-  answers:
-    - |
-      ```python
-      [1 2 3 4 5]
-      ```
-    - |
-      ```python
-      [1 2 20 4 5]
-      ```
-    - |
-      ```python
-      [1 20 3 4 5]
-      ```
-  solution: 2
-````
+---
 
-</section>
+```python
+[1 2 20 4 5]
+```
+
+---
+
+```python
+[1 20 3 4 5]
+```
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

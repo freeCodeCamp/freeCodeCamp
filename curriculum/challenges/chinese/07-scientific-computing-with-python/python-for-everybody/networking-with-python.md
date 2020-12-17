@@ -4,29 +4,34 @@ challengeType: 11
 videoId: _kJvneKVdNM
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What Python library gives access to TCP Sockets?
 
-```yml
-question:
-  text: |
-      What Python library gives access to TCP Sockets?
+## --answers--
 
-  answers:
-    - |
-        tcp
-    - |
-        socket
-    - |
-        http
-    - |
-        port
-  solution: 2
-```
+tcp
 
-</section>
+---
+
+socket
+
+---
+
+http
+
+---
+
+port
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

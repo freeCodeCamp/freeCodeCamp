@@ -4,42 +4,45 @@ challengeType: 11
 videoId: f9QrZrKQMLI
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What will the following code print?
 
-<section id='tests'>
+```python
+b = np.array([[1.0,2.0,3.0],[3.0,4.0,5.0]])
+print(b)
+```
 
-````yml
-question:
-  text: |
-    What will the following code print?
+## --answers--
 
-    ```python
-    b = np.array([[1.0,2.0,3.0],[3.0,4.0,5.0]])
-    print(b)
-    ```
-  answers:
-    - |
-      ```python
-      [[1.0 2.0 3.0]
-      [3.0 4.0 5.0]]
-      ```
-    - |
-      ```python
-      [[1. 2. 3.]
-      [3. 4. 5.]]
-      ```
-    - |
-      ```python
-      [[1. 3.]
-      [2. 4.]
-      [3. 5.]
-      ```
-  solution: 2
-````
+```python
+[[1.0 2.0 3.0]
+[3.0 4.0 5.0]]
+```
 
-</section>
+---
+
+```python
+[[1. 2. 3.]
+[3. 4. 5.]]
+```
+
+---
+
+```python
+[[1. 3.]
+[2. 4.]
+[3. 5.]
+```
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

@@ -1,14 +1,15 @@
 ---
 id: 587d7db2367417b2b2512b89
+title: 使用 Mixin 在不相关对象之间添加共同行为
 challengeType: 1
 forumTopicId: 301331
-title: 使用 Mixin 在不相关对象之间添加共同行为
 ---
 
-## Description
-<section id='description'>
-正如你所见，行为是可以通过继承来共享的。然而，在有些情况下，继承不是最好的解决方案。继承不适用于不相关的对象，比如<code>Bird</code>和<code>Airplane</code>。虽然它们都可以飞行，但是<code>Bird</code>并不是一种<code>Airplane</code>，反之亦然。
-对于不相关的对象，更好的方法是使用<code>mixins</code>。<code>mixin</code>允许其他对象使用函数集合。
+# --description--
+
+正如你所见，行为是可以通过继承来共享的。然而，在有些情况下，继承不是最好的解决方案。继承不适用于不相关的对象，比如`Bird`和`Airplane`。虽然它们都可以飞行，但是`Bird`并不是一种`Airplane`，反之亦然。
+
+对于不相关的对象，更好的方法是使用`mixins`。`mixin`允许其他对象使用函数集合。
 
 ```js
 let flyMixin = function(obj) {
@@ -18,7 +19,7 @@ let flyMixin = function(obj) {
 };
 ```
 
-<code>flyMixin</code>能接受任何对象，并为其提供<code>fly</code>方法。
+`flyMixin`能接受任何对象，并为其提供`fly`方法。
 
 ```js
 let bird = {
@@ -35,88 +36,38 @@ flyMixin(bird);
 flyMixin(plane);
 ```
 
-这里的<code>flyMixin</code>接收了<code>bird</code>和<code>plane</code>对象，然后将<code>fly</code>方法分配给了每一个对象。现在<code>bird</code>和<code>plane</code>都可以飞行了：
+这里的`flyMixin`接收了`bird`和`plane`对象，然后将`fly`方法分配给了每一个对象。现在`bird`和`plane`都可以飞行了：
 
 ```js
 bird.fly(); // prints "Flying, wooosh!"
 plane.fly(); // prints "Flying, wooosh!"
 ```
 
-注意观察<code>mixin</code>是如何允许相同的<code>fly</code>方法被不相关的对象<code>bird</code>和<code>plane</code>重用的。
-</section>
+注意观察`mixin`是如何允许相同的`fly`方法被不相关的对象`bird`和`plane`重用的。
 
-## Instructions
-<section id='instructions'>
-创建一个名为<code>glideMixin</code>的<code>mixin</code>，并定义一个<code>glide</code>方法。然后使用<code>glideMixin</code>来给<code>bird</code>和<code>boat</code>赋予滑行（glide）的能力。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+创建一个名为`glideMixin`的`mixin`，并定义一个`glide`方法。然后使用`glideMixin`来给`bird`和`boat`赋予滑行（glide）的能力。
 
-```yml
-tests:
-  - text: 你应该声明一个变量名为<code>glideMixin</code>的函数。
-    testString: assert(typeof glideMixin === "function");
-  - text: 你应该在<code>bird</code>上使用<code>glideMixin</code>，以提供<code>glide</code>方法。
-    testString: assert(typeof bird.glide === "function");
-  - text: 你应该在<code>boat</code>上使用<code>glideMixin</code>，以提供<code>glide</code>方法。
-    testString: assert(typeof boat.glide === "function");
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+你应该声明一个变量名为`glideMixin`的函数。
 
 ```js
-let bird = {
-  name: "Donald",
-  numLegs: 2
-};
-
-let boat = {
-  name: "Warrior",
-  type: "race-boat"
-};
-
-// Add your code below this line
-
-
-
-
-
-
+assert(typeof glideMixin === 'function');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+你应该在`bird`上使用`glideMixin`，以提供`glide`方法。
 
 ```js
-let bird = {
-  name: "Donald",
-  numLegs: 2
-};
-
-let boat = {
-  name: "Warrior",
-  type: "race-boat"
-};
-function glideMixin (obj) {
-  obj.glide = () => 'Gliding!';
-}
-
-glideMixin(bird);
-glideMixin(boat);
+assert(typeof bird.glide === 'function');
 ```
 
-</section>
+你应该在`boat`上使用`glideMixin`，以提供`glide`方法。
+
+```js
+assert(typeof boat.glide === 'function');
+```
+
+# --solutions--
+

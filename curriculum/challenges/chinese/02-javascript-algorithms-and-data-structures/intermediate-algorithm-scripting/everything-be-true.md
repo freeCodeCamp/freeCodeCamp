@@ -1,80 +1,137 @@
 ---
 id: a10d2431ad0c6a099a4b8b52
+title: 真假值判断
 challengeType: 5
 forumTopicId: 16011
-title: 真假值判断
 ---
 
-## Description
-<section id='description'>
-检查谓词（第二个参数）是否对集合的所有元素（第一个参数）都是<code>truthy</code>（真实的）。
-换句话说，你将获得一个对象的数组集合。谓词<code>pre</code>是一个对象的属性，如果它的值是<code>truthy</code>（真实的） ，则返回<code>true</code>，否则，返回<code>false</code> 。
-JavaScript 中，如果一个值在 Boolean 的上下文中（比如<code>if</code>语句）可以被执行为<code>true</code>，那么这个值就被认为是<code>truthy</code>的。
-注意，你可以选择使用<code>.</code>或<code>[]</code>来访问对象属性对应的值。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
+检查谓词（第二个参数）是否对集合的所有元素（第一个参数）都是`truthy`（真实的）。
 
-</section>
+换句话说，你将获得一个对象的数组集合。谓词`pre`是一个对象的属性，如果它的值是`truthy`（真实的） ，则返回`true`，否则，返回`false` 。
 
-## Tests
-<section id='tests'>
+JavaScript 中，如果一个值在 Boolean 的上下文中（比如`if`语句）可以被执行为`true`，那么这个值就被认为是`truthy`的。
 
-```yml
-tests:
-  - text: '<code>truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")</code>应该返回<code>true</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"), true);'
-  - text: '<code>truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")</code>应该返回<code>false</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"), false);'
-  - text: '<code>truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age")</code>应该返回<code>false</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 2}, {"user": "Dipsy", "sex": "male", "age": 0}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"), false);'
-  - text: '<code>truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastFoward", "onBoat": null}], "onBoat")</code>应该返回<code>false</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastFoward", "onBoat": null}], "onBoat"), false);'
-  - text: '<code>truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastFoward", "onBoat": true}], "onBoat")</code>应该返回<code>true</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastFoward", "onBoat": true}], "onBoat"), true);'
-  - text: '<code>truthCheck([{"single": "yes"}], "single")</code>应该返回<code>true</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"single": "yes"}], "single"), true);'
-  - text: '<code>truthCheck([{"single": ""}, {"single": "double"}], "single")</code>应该返回<code>false</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"single": ""}, {"single": "double"}], "single"), false);'
-  - text: '<code>truthCheck([{"single": "double"}, {"single": undefined}], "single")</code>应该返回<code>false</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"single": "double"}, {"single": undefined}], "single"), false);'
-  - text: '<code>truthCheck([{"single": "double"}, {"single": NaN}], "single")</code>应该返回<code>false</code>。'
-    testString: 'assert.strictEqual(truthCheck([{"single": "double"}, {"single": NaN}], "single"), false);'
+注意，你可以选择使用`.`或`[]`来访问对象属性对应的值。
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")`应该返回`true`。
 
 ```js
-function truthCheck(collection, pre) {
-  // Is everyone being true?
-  return pre;
-}
-
-truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+assert.strictEqual(
+  truthCheck(
+    [
+      { user: 'Tinky-Winky', sex: 'male' },
+      { user: 'Dipsy', sex: 'male' },
+      { user: 'Laa-Laa', sex: 'female' },
+      { user: 'Po', sex: 'female' }
+    ],
+    'sex'
+  ),
+  true
+);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")`应该返回`false`。
 
 ```js
-function truthCheck(collection, pre) {
-  // Does everyone have one of these?
-  return collection.every(function(e) { return e[pre]; });
-}
+assert.strictEqual(
+  truthCheck(
+    [
+      { user: 'Tinky-Winky', sex: 'male' },
+      { user: 'Dipsy' },
+      { user: 'Laa-Laa', sex: 'female' },
+      { user: 'Po', sex: 'female' }
+    ],
+    'sex'
+  ),
+  false
+);
 ```
 
-</section>
+`truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age")`应该返回`false`。
+
+```js
+assert.strictEqual(
+  truthCheck(
+    [
+      { user: 'Tinky-Winky', sex: 'male', age: 2 },
+      { user: 'Dipsy', sex: 'male', age: 0 },
+      { user: 'Laa-Laa', sex: 'female', age: 5 },
+      { user: 'Po', sex: 'female', age: 4 }
+    ],
+    'age'
+  ),
+  false
+);
+```
+
+`truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastFoward", "onBoat": null}], "onBoat")`应该返回`false`。
+
+```js
+assert.strictEqual(
+  truthCheck(
+    [
+      { name: 'Pete', onBoat: true },
+      { name: 'Repeat', onBoat: true },
+      { name: 'FastFoward', onBoat: null }
+    ],
+    'onBoat'
+  ),
+  false
+);
+```
+
+`truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastFoward", "onBoat": true}], "onBoat")`应该返回`true`。
+
+```js
+assert.strictEqual(
+  truthCheck(
+    [
+      { name: 'Pete', onBoat: true },
+      { name: 'Repeat', onBoat: true, alias: 'Repete' },
+      { name: 'FastFoward', onBoat: true }
+    ],
+    'onBoat'
+  ),
+  true
+);
+```
+
+`truthCheck([{"single": "yes"}], "single")`应该返回`true`。
+
+```js
+assert.strictEqual(truthCheck([{ single: 'yes' }], 'single'), true);
+```
+
+`truthCheck([{"single": ""}, {"single": "double"}], "single")`应该返回`false`。
+
+```js
+assert.strictEqual(
+  truthCheck([{ single: '' }, { single: 'double' }], 'single'),
+  false
+);
+```
+
+`truthCheck([{"single": "double"}, {"single": undefined}], "single")`应该返回`false`。
+
+```js
+assert.strictEqual(
+  truthCheck([{ single: 'double' }, { single: undefined }], 'single'),
+  false
+);
+```
+
+`truthCheck([{"single": "double"}, {"single": NaN}], "single")`应该返回`false`。
+
+```js
+assert.strictEqual(
+  truthCheck([{ single: 'double' }, { single: NaN }], 'single'),
+  false
+);
+```
+
+# --solutions--
+

@@ -4,53 +4,59 @@ challengeType: 11
 videoId: ovYNhnltVxY
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/data-cleaning-rmotr-freecodecamp-fd76fa59" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/data-cleaning-rmotr-freecodecamp-fd76fa59)
 
-<section id='tests'>
+# --question--
 
-````yml
-question:
-  text: |
-    What will the following code print out?
+## --text--
 
-    ```py
-    import pandas as pd
-    import numpy as np
+What will the following code print out?
 
-    s = pd.Series(['a', 3, np.nan, 1, np.nan])
+```py
+import pandas as pd
+import numpy as np
 
-    print(s.notnull().sum())
-    ```
+s = pd.Series(['a', 3, np.nan, 1, np.nan])
 
-  answers:
-    - |
-      3
-    - |
-      ```
-      0     True
-      1     True
-      2    False
-      3     True
-      4    False
-      dtype: bool
-      ```
-    - |
-      ```
-      0    False
-      1    False
-      2     True
-      3    False
-      4     True
-      dtype: bool
-      ```
-  solution: 1
-````
+print(s.notnull().sum())
+```
 
-</section>
+## --answers--
+
+3
+
+---
+
+```
+0     True
+1     True
+2    False
+3     True
+4    False
+dtype: bool
+```
+
+---
+
+```
+0    False
+1    False
+2     True
+3    False
+4     True
+dtype: bool
+```
+
+## --video-solution--
+
+1
+
+# --hints--
+
+
+# --solutions--
+

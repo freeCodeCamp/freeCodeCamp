@@ -1,54 +1,85 @@
 ---
 id: 587d824e367417b2b2512c55
+title: 测试对象是否具有某个属性
 challengeType: 2
 forumTopicId: 301604
-title: 测试对象是否具有某个属性
 ---
 
-## Description
-<section id='description'>
-请注意，本项目在 <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">这个 Repl.it 项目</a> 的基础上进行开发。你也可以从 <a href='https://repl.it/github/freeCodeCamp/boilerplate-mochachai'>GitHub</a> 上克隆。
-<code>property</code> 断言一个对象含有给定属性。
+# --description--
 
-</section>
+请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-## Instructions
-<section id='instructions'>
-使用 <code>assert.property()</code> 或者 <code>assert.notProperty()</code> 让所有测试通过。 
-</section>
+`property` 断言一个对象含有给定属性。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: 不应有未通过的测试
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 请选择正确的断言—property 或 notProperty
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[0].method, 'notProperty', 'A car has not wings'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 请选择正确的断言—property 或 notProperty
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[1].method, 'property', 'planes have engines'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 请选择正确的断言—property 或 notProperty
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[2].method, 'property', 'Cars have wheels'); }, xhr => { throw new Error(xhr.responseText); })
+使用 `assert.property()` 或者 `assert.notProperty()` 让所有测试通过。
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
+不应有未通过的测试
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+请选择正确的断言—property 或 notProperty
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(
+    (data) => {
+      assert.equal(
+        data.assertions[0].method,
+        'notProperty',
+        'A car has not wings'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+请选择正确的断言—property 或 notProperty
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(
+    (data) => {
+      assert.equal(
+        data.assertions[1].method,
+        'property',
+        'planes have engines'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+请选择正确的断言—property 或 notProperty
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(
+    (data) => {
+      assert.equal(data.assertions[2].method, 'property', 'Cars have wheels');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --solutions--
+

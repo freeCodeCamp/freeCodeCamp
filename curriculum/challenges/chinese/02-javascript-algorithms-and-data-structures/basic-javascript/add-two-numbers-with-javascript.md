@@ -1,73 +1,42 @@
 ---
 id: cf1111c1c11feddfaeb3bdef
+title: 加法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
-title: 加法运算
 ---
 
-## Description
-<section id='description'>
-<code>Number</code>是 JavaScript 中的一种数据类型，表示数值。
+# --description--
+
+`Number`是 JavaScript 中的一种数据类型，表示数值。
+
 现在让我们来尝试在 JavaScript 中做加法运算。
-JavaScript 中使用<code>+</code>号进行加法运算。
-<strong>示例</strong>
+
+JavaScript 中使用`+`号进行加法运算。
+
+**示例**
 
 ```js
 myVar = 5 + 10; // assigned 15
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-改变数字<code>0</code>让变量 sum 的值为<code>20</code>。
-</section>
+改变数字`0`让变量 sum 的值为`20`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>sum</code>应该等于<code>20</code>。
-    testString: assert(sum === 20);
-  - text: 要使用<code>+</code>运算符。
-    testString: assert(/\+/.test(code));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`sum`应该等于`20`。
 
 ```js
-var sum = 10 + 0;
-
+assert(sum === 20);
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+要使用`+`运算符。
 
 ```js
-(function(z){return 'sum = '+z;})(sum);
+assert(/\+/.test(code));
 ```
 
-</div>
+# --solutions--
 
-</section>
-
-## Solution
-<section id='solution'>
-
-
-```js
-var sum = 10 + 10;
-```
-
-</section>

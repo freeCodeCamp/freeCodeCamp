@@ -4,27 +4,30 @@ challengeType: 11
 videoId: F1QI9tNuDQg
 ---
 
-## Description
-<section id='description'>
-</section>
+# --question--
 
-## Tests
-<section id='tests'>
+## --text--
 
-```yml
-question:
-  text: |
-    Which of the following functions creates a socket object?
+Which of the following functions creates a socket object?
 
-  answers:
-    - |
-      `socket.bind((host, port))`
-    - |
-      `socket.gethostbyname()`
-    - |
-      `socket.socket(socket.AF_INET, socket.SOCK_STREAM)`
-  solution: 3
-```
+## --answers--
 
-</section>
+`socket.bind((host, port))`
+
+---
+
+`socket.gethostbyname()`
+
+---
+
+`socket.socket(socket.AF_INET, socket.SOCK_STREAM)`
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
 

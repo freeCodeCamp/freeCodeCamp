@@ -4,66 +4,75 @@ challengeType: 11
 videoId: cDnt02BcHng
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46" target='_blank'>Reading CSVs Notebook</a>
-- <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-data-from-relational-databases-2a3a889b" target='_blank'>Reading SQL</a>
-- <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-html-tables-eb9cca73" target='_blank'>Reading HTML</a>
-- <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-excel-files-a6b99973" target='_blank'>Reading Excel files</a>
-</section>
 
-## Tests
+\- [Reading CSVs Notebook](https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46)
 
-<section id='tests'>
+\- [Reading SQL](https://notebooks.ai/rmotr-curriculum/rdp-reading-data-from-relational-databases-2a3a889b)
 
-````yml
-question:
-  text: |
-    Given a file named `certificates.csv` with these contents:
+\- [Reading HTML](https://notebooks.ai/rmotr-curriculum/rdp-reading-html-tables-eb9cca73)
 
-    ```
-    Name$Certificates$Time (in months)
-    Tom$8$16
-    Kris$2$5
-    Ahmad$5$9
-    Beau$6$12
-    ```
+\- [Reading Excel files](https://notebooks.ai/rmotr-curriculum/rdp-reading-excel-files-a6b99973)
 
-    Fill in the blanks for the missing arguments below:
+# --question--
 
-    ```py
-    import csv
+## --text--
 
-    with open(__A__, 'r') as fp:
-        reader = csv.reader(fp, delimiter=__B__)
-        next(reader)
-        for index, values in enumerate(reader):
-            name, certs_num, months_num = values
-            print(f"{name} earned {__C__} certificates in {months_num} months")
-    ```
+Given a file named `certificates.csv` with these contents:
 
-  answers:
-    - |
-      A: `'certificates.csv'`
+```
+Name$Certificates$Time (in months)
+Tom$8$16
+Kris$2$5
+Ahmad$5$9
+Beau$6$12
+```
 
-      B: `'-'`
+Fill in the blanks for the missing arguments below:
 
-      C: `values`
-    - |
-      A: `'certificates.csv'`
+```py
+import csv
 
-      B: `'$'`
+with open(__A__, 'r') as fp:
+    reader = csv.reader(fp, delimiter=__B__)
+    next(reader)
+    for index, values in enumerate(reader):
+        name, certs_num, months_num = values
+        print(f"{name} earned {__C__} certificates in {months_num} months")
+```
 
-      C: `certs_num`
-    - |
-      A: `'certificates'`
+## --answers--
 
-      B: `'$'`
+A: `'certificates.csv'`
 
-      C: `certs_num`
-  solution: 2
-````
+B: `'-'`
 
-</section>
+C: `values`
+
+---
+
+A: `'certificates.csv'`
+
+B: `'$'`
+
+C: `certs_num`
+
+---
+
+A: `'certificates'`
+
+B: `'$'`
+
+C: `certs_num`
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

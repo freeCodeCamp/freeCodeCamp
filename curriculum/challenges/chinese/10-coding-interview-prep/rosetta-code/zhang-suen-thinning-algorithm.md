@@ -1,89 +1,184 @@
 ---
 id: 594810f028c0303b75339ad7
+title: Zhang-Suen thinning algorithm
 challengeType: 5
-videoUrl: ''
-title: 张素细化算法
+forumTopicId: 302347
 ---
 
-## Description
-<section id="description">这是用于稀释黑白的算法，即每像素一位图像。例如，输入图像为： <pre> ##############################
- ##################################
- #####################################
- ##################################
-   ###### ####### ####### ######
-   ###### ####### #######
-   ########################
-   #######################
-   ########################
-   ###### ####### #######
-   ###### ####### #######
-   ###### ####### ####### ######
- ##################################
- ######## #####################################
- ######## ###################################
- ######## ####### ###### ###################
-                                                           </pre>它产生稀疏的输出： <pre>
-<pre> <code># ########## ####### ## # #### # # # ## # # # # # # # # # ############ # # # # # # # # # # # # # # ## # ############ ### ### &lt;/pre&gt;</code> </pre>
-<h2>算法</h2>
-假设黑色像素是一个并且白色像素为零，并且输入图像是矩形N乘M的1和0阵列。
-该算法对可以具有八个邻居的所有黑色像素P1进行操作。邻居按顺序安排为：
-<table border="1">
-  <tbody><tr><td> P9 </td><td> P2 </td><td> P3 </td></tr>
-  <tr><td> P8 </td><td> <b>P1</b> </td><td> P4 </td></tr>
-  <tr><td> P7 </td><td> P6 </td><td> P5 </td></tr>
-</tbody></table>
-显然，图像的边界像素不能具有完整的八个邻居。
-<pre> <code>Define $A(P1)$ = the number of transitions from white to black, (0 -&gt; 1) in the sequence P2,P3,P4,P5,P6,P7,P8,P9,P2. (Note the extra P2 at the end - it is circular). Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )</code> </pre>
-<h3>步骤1： </h3>
-测试所有像素，并且在此阶段仅注意满足以下所有条件（同时）的像素。
-  （0）像素是黑色的，有八个邻居
-  （1）$ 2 &lt;= B（P1）&lt;= 6 $
-  （2）$ A（P1）= 1 $
-  （3）P2和P4和P6中的至少一个是白色
-  （4）P4和P6和P8中的至少一个是白色
-在迭代图像并收集满足所有步骤1条件的所有像​​素之后，将满足像素的所有这些条件设置为白色。
-<h3>第2步： </h3>
-再次测试所有像素，并且在此阶段仅注意满足以下所有条件的像素。
-  （0）像素是黑色的，有八个邻居
-  （1）$ 2 &lt;= B（P1）&lt;= 6 $
-  （2）$ A（P1）= 1 $
-  （3）P2和P4中的至少一个和“&#39;P8”&#39;是白色的
-  （4）“&#39;P2”&#39;和P6和P8中的至少一个是白色
-在迭代图像并收集满足所有步骤2条件的所有像​​素之后，将满足像素的所有这些条件再次设置为白色。
-迭代：
-如果在该轮步骤1或步骤2中设置了任何像素，则重复所有步骤直到没有图像像素如此改变。
-<p>
-任务：
-编写一个例程，在1和0的图像矩阵上执行Zhang-Suen细化。
-</p>
-</pre></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+This is an algorithm used to thin a black and white i.e. one bit per pixel images. For example, with an input image of:
 
-## Tests
-<section id='tests'>
+<!-- TODO write fully in markdown>
+<!-- markdownlint-disable -->
 
-```yml
-tests:
-  - text: <code>thinImage</code>必须是一个函数
-    testString: assert.equal(typeof thinImage, 'function');
-  - text: <code>thinImage</code>必须返回一个数组
-    testString: assert(Array.isArray(result));
-  - text: <code>thinImage</code>必须返回一个字符串数组
-    testString: assert.equal(typeof result[0], 'string');
-  - text: <code>thinImage</code>必须返回一个字符串数组
-    testString: assert.deepEqual(result, expected);
+<pre>
+ #################                   #############
+ ##################               ################
+ ###################            ##################
+ ########     #######          ###################
+   ######     #######         #######       ######
+   ######     #######        #######
+   #################         #######
+   ################          #######
+   #################         #######
+   ######     #######        #######
+   ######     #######        #######
+   ######     #######         #######       ######
+ ########     #######          ###################
+ ########     ####### ######    ################## ######
+ ########     ####### ######      ################ ######
+ ########     ####### ######         ############# ######
+</pre>
 
+It produces the thinned output:
+
+<pre>
+
+    # ##########                       #######
+     ##        #                   ####       #
+     #          #                 ##
+     #          #                #
+     #          #                #
+     #          #                #
+     ############               #
+     #          #               #
+     #          #                #
+     #          #                #
+     #          #                #
+     #                            ##
+     #                             ############
+                       ###                          ###
+
+</pre>
+
+<h2>Algorithm</h2>
+
+Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+
+<table border="3">
+  <tr><td style="text-align: center;">P9</td><td style="text-align: center;">P2</td><td style="text-align: center;">P3</td></tr>
+  <tr><td style="text-align: center;">P8</td><td style="text-align: center;"><strong>P1</strong></td><td style="text-align: center;">P4</td></tr>
+  <tr><td style="text-align: center;">P7</td><td style="text-align: center;">P6</td><td style="text-align: center;">P5</td></tr>
+</table>
+
+Obviously the boundary pixels of the image cannot have the full eight neighbours.
+
+<ul>
+  <li>Define $A(P1)$ = the number of transitions from white to black, (0 -> 1) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).</li>
+  <li>Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )</li>
+</ul>
+
+<h3>Step 1:</h3>
+
+All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+
+  <ol>
+    <li>The pixel is black and has eight neighbours</li>
+    <li>$2 <= B(P1) <= 6$</li>
+    <li>$A(P1) = 1$</li>
+    <li>At least one of <strong>P2, P4 and P6</strong> is white</li>
+    <li>At least one of <strong>P4, P6 and P8</strong> is white</li>
+  </ol>
+
+After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
+
+<h3>Step 2:</h3>
+
+All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+
+  <ol>
+    <li>The pixel is black and has eight neighbours</li>
+    <li>$2 <= B(P1) <= 6$</li>
+    <li>$A(P1) = 1$</li>
+    <li>At least one of <strong>P2, P4 and P8</strong> is white</li>
+    <li>At least one of <strong>P2, P6 and P8</strong> is white</li>
+  </ol>
+  
+After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+
+<h3>Iteration:</h3>
+
+If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+
+# --instructions--
+
+Write a routine to perform Zhang-Suen thinning on the provided image matrix.
+
+# --hints--
+
+`thinImage` should be a function.
+
+```js
+assert.equal(typeof thinImage, 'function');
 ```
 
-</section>
+`thinImage` should return an array.
 
-## Challenge Seed
-<section id='challengeSeed'>
+```js
+assert(Array.isArray(result));
+```
 
-<div id='js-seed'>
+`thinImage` should return an array of strings.
+
+```js
+assert.equal(typeof result[0], 'string');
+```
+
+`thinImage` should return an array of strings.
+
+```js
+assert.deepEqual(result, expected);
+```
+
+# --seed--
+
+## --after-user-code--
+
+```js
+const imageForTests = [
+  '                                                          ',
+  ' #################                   #############        ',
+  ' ##################               ################        ',
+  ' ###################            ##################        ',
+  ' ########     #######          ###################        ',
+  '   ######     #######         #######       ######        ',
+  '   ######     #######        #######                      ',
+  '   #################         #######                      ',
+  '   ################          #######                      ',
+  '   #################         #######                      ',
+  '   ######     #######        #######                      ',
+  '   ######     #######        #######                      ',
+  '   ######     #######         #######       ######        ',
+  ' ########     #######          ###################        ',
+  ' ########     ####### ######    ################## ###### ',
+  ' ########     ####### ######      ################ ###### ',
+  ' ########     ####### ######         ############# ###### ',
+  '                                                          '];
+const expected = [
+  '                                                          ',
+  '                                                          ',
+  '    # ##########                       #######            ',
+  '     ##        #                   ####       #           ',
+  '     #          #                 ##                      ',
+  '     #          #                #                        ',
+  '     #          #                #                        ',
+  '     #          #                #                        ',
+  '     ############               #                         ',
+  '     #          #               #                         ',
+  '     #          #                #                        ',
+  '     #          #                #                        ',
+  '     #          #                #                        ',
+  '     #                            ##                      ',
+  '     #                             ############           ',
+  '                       ###                          ###   ',
+  '                                                          ',
+  '                                                          '
+];
+const result = thinImage(imageForTests);
+```
+
+## --seed-contents--
 
 ```js
 const testImage = [
@@ -107,30 +202,119 @@ const testImage = [
   '                                                          '];
 
 function thinImage(image) {
-  // Good luck!
+
+}
+```
+
+# --solutions--
+
+```js
+function Point(x, y) {
+  this.x = x;
+  this.y = y;
 }
 
+const ZhangSuen = (function () {
+  function ZhangSuen() {
+  }
+
+  ZhangSuen.nbrs = [[0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1]];
+
+  ZhangSuen.nbrGroups = [[[0, 2, 4], [2, 4, 6]], [[0, 2, 6], [0, 4, 6]]];
+
+  ZhangSuen.toWhite = [];
+
+  ZhangSuen.main = function (image) {
+    ZhangSuen.grid = new Array(image);
+    for (let r = 0; r < image.length; r++) {
+      ZhangSuen.grid[r] = image[r].split('');
+    }
+    ZhangSuen.thinImage();
+    return ZhangSuen.getResult();
+  };
+
+  ZhangSuen.thinImage = function () {
+    let firstStep = false;
+    let hasChanged;
+    do {
+      hasChanged = false;
+      firstStep = !firstStep;
+      for (let r = 1; r < ZhangSuen.grid.length - 1; r++) {
+        for (let c = 1; c < ZhangSuen.grid[0].length - 1; c++) {
+          if (ZhangSuen.grid[r][c] !== '#') {
+            continue;
+          }
+          const nn = ZhangSuen.numNeighbors(r, c);
+          if (nn < 2 || nn > 6) {
+            continue;
+          }
+          if (ZhangSuen.numTransitions(r, c) !== 1) {
+            continue;
+          }
+          if (!ZhangSuen.atLeastOneIsWhite(r, c, firstStep ? 0 : 1)) {
+            continue;
+          }
+          ZhangSuen.toWhite.push(new Point(c, r));
+          hasChanged = true;
+        }
+      }
+      for (let i = 0; i < ZhangSuen.toWhite.length; i++) {
+        const p = ZhangSuen.toWhite[i];
+        ZhangSuen.grid[p.y][p.x] = ' ';
+      }
+      ZhangSuen.toWhite = [];
+    } while ((firstStep || hasChanged));
+  };
+
+  ZhangSuen.numNeighbors = function (r, c) {
+    let count = 0;
+    for (let i = 0; i < ZhangSuen.nbrs.length - 1; i++) {
+      if (ZhangSuen.grid[r + ZhangSuen.nbrs[i][1]][c + ZhangSuen.nbrs[i][0]] === '#') {
+        count++;
+      }
+    }
+    return count;
+  };
+
+  ZhangSuen.numTransitions = function (r, c) {
+    let count = 0;
+    for (let i = 0; i < ZhangSuen.nbrs.length - 1; i++) {
+      if (ZhangSuen.grid[r + ZhangSuen.nbrs[i][1]][c + ZhangSuen.nbrs[i][0]] === ' ') {
+        if (ZhangSuen.grid[r + ZhangSuen.nbrs[i + 1][1]][c + ZhangSuen.nbrs[i + 1][0]] === '#') {
+          count++;
+        }
+      }
+    }
+    return count;
+  };
+
+  ZhangSuen.atLeastOneIsWhite = function (r, c, step) {
+    let count = 0;
+    const group = ZhangSuen.nbrGroups[step];
+    for (let i = 0; i < 2; i++) {
+      for (let j = 0; j < group[i].length; j++) {
+        const nbr = ZhangSuen.nbrs[group[i][j]];
+        if (ZhangSuen.grid[r + nbr[1]][c + nbr[0]] === ' ') {
+          count++;
+          break;
+        }
+      }
+    }
+    return count > 1;
+  };
+
+  ZhangSuen.getResult = function () {
+    const result = [];
+    for (let i = 0; i < ZhangSuen.grid.length; i++) {
+      const row = ZhangSuen.grid[i].join('');
+      result.push(row);
+    }
+    return result;
+  };
+  return ZhangSuen;
+}());
+
+function thinImage(image) {
+  return ZhangSuen.main(image);
+}
 ```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
-```
-
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

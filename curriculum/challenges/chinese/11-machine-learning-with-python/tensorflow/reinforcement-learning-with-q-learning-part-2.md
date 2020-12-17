@@ -4,25 +4,26 @@ challengeType: 11
 videoId: DX7hJuaUZ7o
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What can happen if the agent does not have a good balance of taking random actions and using learned actions?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    What can happen if the agent does not have a good balance of taking random actions and using learned actions?
-  answers:
-    - |
-      The agent will always try to minimize its reward for the current state/action, leading to local minima.
-    - |
-      The agent will always try to maximize its reward for the current state/action, leading to local maxima.
-  solution: 2
-```
+The agent will always try to minimize its reward for the current state/action, leading to local minima.
 
-</section>
+---
+
+The agent will always try to maximize its reward for the current state/action, leading to local maxima.
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

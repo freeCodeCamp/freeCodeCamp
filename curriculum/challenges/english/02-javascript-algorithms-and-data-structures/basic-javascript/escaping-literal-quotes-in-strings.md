@@ -35,7 +35,7 @@ assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
 Variable myStr should contain the string: `I am a "double quoted" string inside "double quotes".`
 
 ```js
-assert(myStr === 'I am a "double quoted" string inside "double quotes".');
+assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(myStr));
 ```
 
 # --seed--

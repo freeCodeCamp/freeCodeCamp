@@ -1,77 +1,55 @@
 ---
 id: 56533eb9ac21ba0edf2244ad
+title: 数字递减
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
-title: 数字递减
 ---
 
-## Description
-<section id='description'>
-使用自减符号<code>--</code>，你可以很方便地对一个变量执行<dfn>自减</dfn>或者<code>-1</code>运算。
-<code>i--;</code>
+# --description--
+
+使用自减符号`--`，你可以很方便地对一个变量执行<dfn>自减</dfn>或者`-1`运算。
+
+`i--;`
+
 等效于
-<code>i = i - 1;</code>
-<strong>提示</strong><br><code>i--;</code>这种写法，省去了书写<code>=</code>符号的必要。
-</section>
 
-## Instructions
-<section id='instructions'>
-重写代码，使用<code>--</code>符号对<code>myVar</code>执行自减操作。
-</section>
+`i = i - 1;`
 
-## Tests
-<section id='tests'>
+**提示**  
+`i--;`这种写法，省去了书写`=`符号的必要。
 
-```yml
-tests:
-  - text: <code>myVar</code>应该等于<code>10</code>。
-    testString: assert(myVar === 10);
-  - text: <code>myVar = myVar - 1;</code>语句应该被修改。
-    testString: assert(/var\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code));
-  - text: 对<code>myVar</code>使用<code>--</code>运算符。
-    testString: assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
-  - text: 不要修改注释上面的代码。
-    testString: assert(/var myVar = 11;/.test(code));
+# --instructions--
 
-```
+重写代码，使用`--`符号对`myVar`执行自减操作。
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`myVar`应该等于`10`。
 
 ```js
-var myVar = 11;
-
-// Only change code below this line
-myVar = myVar - 1;
-
+assert(myVar === 10);
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+`myVar = myVar - 1;`语句应该被修改。
 
 ```js
-(function(z){return 'myVar = ' + z;})(myVar);
+assert(
+  /var\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code)
+);
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+对`myVar`使用`--`运算符。
 
 ```js
-var myVar = 11;
-myVar--;
+assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
 ```
 
-</section>
+不要修改注释上面的代码。
+
+```js
+assert(/var myVar = 11;/.test(code));
+```
+
+# --solutions--
+

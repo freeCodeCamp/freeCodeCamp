@@ -1,55 +1,31 @@
 ---
 id: 5900f53e1000cf542c510051
+title: 问题466：乘法表中的不同术语
 challengeType: 5
 videoUrl: ''
-title: 问题466：乘法表中的不同术语
 ---
 
-## Description
-<section id="description">令P（m，n）为m×n乘法表中的不同项的数量。 <p>例如，3×4乘法表如下所示： </p><p> ×12341 12342 24683 36912 </p><p>有8个不同的术语{1,2,3,4,6,8,9,12}，因此P（3,4）= 8。 </p><p>给出：P（64,64）= 1263，P（12,345）= 1998，P（32,1015）= 13826382602124302。 </p><p>求P（64,1016）。 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+令P（m，n）为m×n乘法表中的不同项的数量。
 
-## Tests
-<section id='tests'>
+例如，3×4乘法表如下所示：
 
-```yml
-tests:
-  - text: <code>euler466()</code>应该返回258381958195474750。
-    testString: assert.strictEqual(euler466(), 258381958195474750);
+×12341 12342 24683 36912
 
-```
+有8个不同的术语{1,2,3,4,6,8,9,12}，因此P（3,4）= 8。
 
-</section>
+给出：P（64,64）= 1263，P（12,345）= 1998，P（32,1015）= 13826382602124302。
 
-## Challenge Seed
-<section id='challengeSeed'>
+求P（64,1016）。
 
-<div id='js-seed'>
+# --hints--
+
+`euler466()`应该返回258381958195474750。
 
 ```js
-function euler466() {
-  // Good luck!
-  return true;
-}
-
-euler466();
-
+assert.strictEqual(euler466(), 258381958195474750);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

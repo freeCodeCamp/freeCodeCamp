@@ -1,57 +1,27 @@
 ---
 id: 5900f39e1000cf542c50feb1
+title: 问题50：连续的总和
 challengeType: 5
 videoUrl: ''
-title: 问题50：连续的总和
 ---
 
-## Description
-<section id="description">素数41可以写成六个连续素数的总和：41 = 2 + 3 + 5 + 7 + 11 + 13这是连续素数的最长和，它加到低于一百的素数。连续素数低于1000的连续素数加上一个素数，包含21个项，等于953.哪个素数低于一百万，可以写成最连续素数的总和？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+素数41可以写成六个连续素数的总和：41 = 2 + 3 + 5 + 7 + 11 + 13这是连续素数的最长和，它加到低于一百的素数。连续素数低于1000的连续素数加上一个素数，包含21个项，等于953.哪个素数低于一百万，可以写成最连续素数的总和？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>consecutivePrimeSum(1000)</code>应该返回953。
-    testString: assert.strictEqual(consecutivePrimeSum(1000), 953);
-  - text: <code>consecutivePrimeSum(1000000)</code>应该返回997651。
-    testString: assert.strictEqual(consecutivePrimeSum(1000000), 997651);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`consecutivePrimeSum(1000)`应该返回953。
 
 ```js
-function consecutivePrimeSum(limit) {
-  // Good luck!
-  return true;
-}
-
-consecutivePrimeSum(1000000);
-
+assert.strictEqual(consecutivePrimeSum(1000), 953);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+`consecutivePrimeSum(1000000)`应该返回997651。
 
 ```js
-// solution required
+assert.strictEqual(consecutivePrimeSum(1000000), 997651);
 ```
 
-/section>
+# --solutions--
+

@@ -1,15 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d3
+title: 严格不等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKekkUy'
 forumTopicId: 16791
-title: 严格不等运算符
 ---
 
-## Description
-<section id='description'>
-严格不相等运算符（<code>!==</code>）与全等运算符是相反的。这意味着严格不相等并返回<code>false</code>的地方，用严格相等运算符会返回<code>true</code>，<em>反之亦然</em>。严格不相等运算符不会转换值的数据类型。
-<strong>示例</strong>
+# --description--
+
+严格不相等运算符（`!==`）与全等运算符是相反的。这意味着严格不相等并返回`false`的地方，用严格相等运算符会返回`true`，*反之亦然*。严格不相等运算符不会转换值的数据类型。
+
+**示例**
 
 ```js
 3 !==  3   // false
@@ -17,68 +18,41 @@ title: 严格不等运算符
 4 !==  3   // true
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-在<code>if</code>语句中，添加严格不相等运算符<code>!==</code>，这样如果<code>val</code>与<code>17</code>严格不相等的时候，函数会返回 "Not Equal"。
-</section>
+在`if`语句中，添加严格不相等运算符`!==`，这样如果`val`与`17`严格不相等的时候，函数会返回 "Not Equal"。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>testStrictNotEqual(17)</code>应该返回 "Equal"。
-    testString: assert(testStrictNotEqual(17) === "Equal");
-  - text: <code>testStrictNotEqual("17")</code>应该返回 "Not Equal"。
-    testString: assert(testStrictNotEqual("17") === "Not Equal");
-  - text: <code>testStrictNotEqual(12)</code>应该返回 "Not Equal"。
-    testString: assert(testStrictNotEqual(12) === "Not Equal");
-  - text: <code>testStrictNotEqual("bob")</code>应该返回 "Not Equal"。
-    testString: assert(testStrictNotEqual("bob") === "Not Equal");
-  - text: 应该使用 <code>!==</code> 运算符。
-    testString: assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`testStrictNotEqual(17)`应该返回 "Equal"。
 
 ```js
-// Setup
-function testStrictNotEqual(val) {
-  if (val) { // Change this line
-    return "Not Equal";
-  }
-  return "Equal";
-}
-
-// Change this value to test
-testStrictNotEqual(10);
+assert(testStrictNotEqual(17) === 'Equal');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`testStrictNotEqual("17")`应该返回 "Not Equal"。
 
 ```js
-function testStrictNotEqual(val) {
-  if (val !== 17) {
-    return "Not Equal";
-  }
-  return "Equal";
-}
+assert(testStrictNotEqual('17') === 'Not Equal');
 ```
 
-</section>
+`testStrictNotEqual(12)`应该返回 "Not Equal"。
+
+```js
+assert(testStrictNotEqual(12) === 'Not Equal');
+```
+
+`testStrictNotEqual("bob")`应该返回 "Not Equal"。
+
+```js
+assert(testStrictNotEqual('bob') === 'Not Equal');
+```
+
+应该使用 `!==` 运算符。
+
+```js
+assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
+```
+
+# --solutions--
+

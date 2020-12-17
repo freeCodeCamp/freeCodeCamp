@@ -4,29 +4,36 @@ challengeType: 11
 videoId: NzpU17ZVlUw
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/python-under-10-minutes-15addcb2" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/python-under-10-minutes-15addcb2)
 
-<section id='tests'>
+# --question--
 
-```yml
-question:
-  text: |
-    What is the main difference between lists and tuples in Python?
-  answers:
-    - |
-      Tuples are immutable.
-    - |
-      Lists are ordered.
-    - |
-      Tuples are unordered.
-  solution: 1
-```
+## --text--
 
-</section>
+What is the main difference between lists and tuples in Python?
+
+## --answers--
+
+Tuples are immutable.
+
+---
+
+Lists are ordered.
+
+---
+
+Tuples are unordered.
+
+## --video-solution--
+
+1
+
+# --hints--
+
+
+# --solutions--
+

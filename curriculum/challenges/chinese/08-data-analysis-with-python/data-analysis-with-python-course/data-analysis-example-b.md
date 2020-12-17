@@ -4,30 +4,36 @@ challengeType: 11
 videoId: 0kJz0q0pvgQ
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-pandas-real-life-example-24fa5bf8" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/freecodecamp-pandas-real-life-example-24fa5bf8)
 
-<section id='tests'>
+# --question--
 
-```yml
-question:
-  text: |
-    What does the <code>loc</code> method allow you to do?
+## --text--
 
-  answers:
-    - |
-      Retrieve a subset of rows and columns by supplying interger-location arguments.
-    - |
-      Access a group of rows and columns by supplying label(s) arguments.
-    - |
-      Returns the first <code>n</code> rows based on the integer argument supplied.
-  solution: 2
-```
+What does the `loc` method allow you to do?
 
-</section>
+## --answers--
+
+Retrieve a subset of rows and columns by supplying interger-location arguments.
+
+---
+
+Access a group of rows and columns by supplying label(s) arguments.
+
+---
+
+Returns the first `n` rows based on the integer argument supplied.
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

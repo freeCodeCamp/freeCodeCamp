@@ -1,15 +1,17 @@
 ---
 id: 587d78aa367417b2b2512aec
+title: 定义 HTML 文档的 head 和 body
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra9bfP'
 forumTopicId: 301096
-title: 定义 HTML 文档的 head 和 body
 ---
 
-## Description
-<section id='description'>
-<code>html</code>的结构主要分为两大部分：<code>head</code>、<code>body</code>。关于网页的描述都应该放入<code>head</code>标签，网页的内容都应该放入<code>body</code>标签。
-比如<code>link</code>、<code>meta</code>、<code>title</code>和<code>style</code>都应该放入<code>head</code>标签。
+# --description--
+
+`html`的结构主要分为两大部分：`head`、`body`。关于网页的描述都应该放入`head`标签，网页的内容都应该放入`body`标签。
+
+比如`link`、`meta`、`title`和`style`都应该放入`head`标签。
+
 这是网页布局的一个例子：
 
 ```html
@@ -24,58 +26,51 @@ title: 定义 HTML 文档的 head 和 body
 </html>
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-给网页添加<code>head</code>和<code>body</code>，<code>head</code>元素应该包含<code>title</code>，<code>body</code>元素应该包含<code>h1</code>和<code>p</code>。
-</section>
+给网页添加`head`和`body`，`head`元素应该包含`title`，`body`元素应该包含`h1`和`p`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '网页应该只有一个<code>head</code>元素。'
-    testString: assert($('head').length == 1);
-  - text: '网页应该只有一个<code>body</code>元素。'
-    testString: assert($('body').length == 1);
-  - text: '<code>head</code>应该是<code>html</code>的子元素。'
-    testString: assert($('html').children('head').length == 1);
-  - text: '<code>body</code>应该是<code>html</code>的子元素。'
-    testString: assert($('html').children('body').length == 1);
-  - text: '<code>title</code>应该是<code>head</code>的子元素。'
-    testString: assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi));
-  - text: '<code>h1</code>和<code>p</code>都应该是<code>body</code>的子元素。'
-    testString: assert(code.match(/<body>\s*?(((<h1>\s*?.*?\s*?<\/h1>\s*?)(<p>(.*\s*)*?<\/p>\s*?))|((<p>\s*?.*?\s*?<\/p>\s*?)(<h1>(.*\s*)*?<\/h1>\s*?)))<\/body>/gi));		
+网页应该只有一个`head`元素。
 
+```js
+assert($('head').length == 1);
 ```
 
-</section>
+网页应该只有一个`body`元素。
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<!DOCTYPE html>
-<html>
-  <title>世上最萌的猫咪</title>
-  
-  <h1>世上最萌的猫咪</h1>
-  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。 在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
-  
-</html>  
+```js
+assert($('body').length == 1);
 ```
 
-</div>
+`head`应该是`html`的子元素。
 
+```js
+assert($('html').children('head').length == 1);
+```
 
+`body`应该是`html`的子元素。
 
-</section>
+```js
+assert($('html').children('body').length == 1);
+```
 
-## Solution
-<section id='solution'>
-</section>
-              
+`title`应该是`head`的子元素。
+
+```js
+assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi));
+```
+
+`h1`和`p`都应该是`body`的子元素。
+
+```js
+assert(
+  code.match(
+    /<body>\s*?(((<h1>\s*?.*?\s*?<\/h1>\s*?)(<p>(.*\s*)*?<\/p>\s*?))|((<p>\s*?.*?\s*?<\/p>\s*?)(<h1>(.*\s*)*?<\/h1>\s*?)))<\/body>/gi
+  )
+);
+```
+
+# --solutions--
+

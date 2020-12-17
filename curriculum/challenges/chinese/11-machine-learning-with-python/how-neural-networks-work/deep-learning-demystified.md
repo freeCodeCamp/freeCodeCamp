@@ -4,30 +4,34 @@ challengeType: 11
 videoId: bejQ-W9BGJg
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+How should you assign weights to input neurons before training your network for the first time?
 
-<section id='tests'>
+## --answers--
 
-```yml
-question:
-  text: |
-    How should you assign weights to input neurons before training your network for the first time?
+From smallest to largest.
 
-  answers:
-    - |
-      From smallest to largest.
-    - |
-      Completely randomly.
-    - |
-      Alphabetically.
-    - |
-      None of the above.
-  solution: 2
-```
+---
 
-</section>
+Completely randomly.
+
+---
+
+Alphabetically.
+
+---
+
+None of the above.
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

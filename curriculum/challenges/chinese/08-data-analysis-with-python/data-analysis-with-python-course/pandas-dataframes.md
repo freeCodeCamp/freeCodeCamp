@@ -4,57 +4,63 @@ challengeType: 11
 videoId: 7SgFBYXaiH0
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-pandas-902ae59b" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-pandas-902ae59b)
 
-<section id='tests'>
+# --question--
 
-````yml
-question:
-  text: |
-    What will the following code print out?
+## --text--
 
-    ```py
-    import pandas as pd
+What will the following code print out?
 
-    certificates_earned = pd.DataFrame({
-        'Certificates': [8, 2, 5, 6],
-        'Time (in months)': [16, 5, 9, 12]
-    })
+```py
+import pandas as pd
 
-    certificates_earned.index = ['Tom', 'Kris', 'Ahmad', 'Beau']
+certificates_earned = pd.DataFrame({
+    'Certificates': [8, 2, 5, 6],
+    'Time (in months)': [16, 5, 9, 12]
+})
 
-    print(certificates_earned.iloc[2])
-    ```
+certificates_earned.index = ['Tom', 'Kris', 'Ahmad', 'Beau']
 
-  answers:
-    - |
-      ```
-      Tom      16
-      Kris      5
-      Ahmad     9
-      Beau     12
-      Name: Time (in months), dtype: int64
-      ```
-    - |
-      ```
-      Certificates         6
-      Time (in months)    12
-      Name: Beau, dtype: int64
-      ```
-    - |
-      ```
-      Certificates        5
-      Time (in months)    9
-      Name: Ahmad, dtype: int64
-      ```
-  solution: 3
-````
+print(certificates_earned.iloc[2])
+```
 
-</section>
+## --answers--
+
+```
+Tom      16
+Kris      5
+Ahmad     9
+Beau     12
+Name: Time (in months), dtype: int64
+```
+
+---
+
+```
+Certificates         6
+Time (in months)    12
+Name: Beau, dtype: int64
+```
+
+---
+
+```
+Certificates        5
+Time (in months)    9
+Name: Ahmad, dtype: int64
+```
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

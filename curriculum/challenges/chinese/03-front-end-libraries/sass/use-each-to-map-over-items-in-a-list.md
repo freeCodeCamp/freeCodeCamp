@@ -1,15 +1,13 @@
 ---
 id: 587d7dbf367417b2b2512bba
+title: 使用 @each 遍历列表中的项目
 challengeType: 0
 forumTopicId: 301461
-title: 使用 @each 遍历列表中的项目
 ---
 
-## Description
-<section id='description'>
+# --description--
 
-最后一个挑战显示了<code>@for</code>指令如何使用起始值和结束值循环一定次数。Sass 还提供<code>@each</code>指令，该指令循环遍历列表或映射中的每个项目。
-在每次迭代时，变量将从列表映射赋值给当前值。
+最后一个挑战显示了`@for`指令如何使用起始值和结束值循环一定次数。Sass 还提供`@each`指令，该指令循环遍历列表或映射中的每个项目。 在每次迭代时，变量将从列表映射赋值给当前值。
 
 ```scss
 @each $color in blue, red, green {
@@ -27,8 +25,7 @@ $colors: (color1: blue, color2: red, color3: green);
 }
 ```
 
-请注意，需要<code>$key</code>变量来引用 map 中的键。否则，编译后的 CSS 将包含<code>color1</code>，<code>color2</code>......
-以上两个代码示例都转换为以下 CSS：
+请注意，需要`$key`变量来引用 map 中的键。否则，编译后的 CSS 将包含`color1`，`color2`...... 以上两个代码示例都转换为以下 CSS：
 
 ```scss
 .blue-text {
@@ -44,103 +41,35 @@ $colors: (color1: blue, color2: red, color3: green);
 }
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
+编写一个`@each`指令，通过一个列表：`blue,black,red`并将每个变量分配给`.color-bg`class, 其中每个项目的“颜色”部分都会发生变化。 每个 class 都应该将`background-color`设置为相应的颜色。
 
-编写一个<code>@each</code>指令，通过一个列表：<code>blue,black,red</code>并将每个变量分配给<code>.color-bg</code>class, 其中每个项目的“颜色”部分都会发生变化。
-每个 class 都应该将<code>background-color</code>设置为相应的颜色。
-</section>
+# --hints--
 
-## Tests
-<section id='tests'>
+你的代码应使用`@each`指令。
 
-```yml
-tests:
-  - text: 你的代码应使用<code>@each</code>指令。
-    testString: assert(code.match(/@each /g));
-  - text: <code>.blue-bg</code>class 背景色应为蓝色。
-    testString: assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)');
-  - text: <code>.black-bg</code>class 背景色应为黑色。
-    testString: assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)');
-  - text: <code>.red-bg</code>class 背景色应为红色。
-    testString: assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
-
+```js
+assert(code.match(/@each /g));
 ```
 
-</section>
+`.blue-bg`class 背景色应为蓝色。
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='html-seed'>
-
-```html
-<style type='text/sass'>
-
-
-
-  div {
-    height: 200px;
-    width: 200px;
-  }
-</style>
-
-<div class="blue-bg"></div>
-<div class="black-bg"></div>
-<div class="red-bg"></div>
+```js
+assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)');
 ```
 
-</div>
+`.black-bg`class 背景色应为黑色。
 
-</section>
-
-## Solution
-<section id='solution'>
-
-The solution requires using the $color variable twice: once for the class name and once for setting the background color. You can use either the list or map data type.
-
-### List Data type
-
-```html
-<style type='text/sass'>
-
-  @each $color in blue, black, red {
-    .#{$color}-bg {background-color: $color;}
-  }
-
-  div {
-    height: 200px;
-    width: 200px;
-  }
-</style>
-
-<div class="blue-bg"></div>
-<div class="black-bg"></div>
-<div class="red-bg"></div>
+```js
+assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)');
 ```
 
-### Map Data type
+`.red-bg`class 背景色应为红色。
 
-```html
-<style type='text/sass'>
-
-  $colors: (color1: blue, color2: black, color3: red);
-
-  @each $key, $color in $colors {
-    .#{$color}-bg {background-color: $color;}
-  }
-
-  div {
-    height: 200px;
-    width: 200px;
-  }
-</style>
-
-<div class="blue-bg"></div>
-<div class="black-bg"></div>
-<div class="red-bg"></div>
+```js
+assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
 ```
 
-</section>
+# --solutions--
+

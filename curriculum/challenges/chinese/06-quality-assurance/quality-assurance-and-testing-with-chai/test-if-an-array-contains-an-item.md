@@ -1,50 +1,69 @@
 ---
 id: 587d824d367417b2b2512c51
+title: 测试数组是否包含项目
 challengeType: 2
 forumTopicId: 301603
-title: 测试数组是否包含项目
 ---
 
-## Description
-<section id='description'>
-请注意，本项目在 <a href="https://repl.it/github/freeCodeCamp/boilerplate-mochachai">这个 Repl.it 项目</a> 的基础上进行开发。你也可以从 <a href='https://repl.it/github/freeCodeCamp/boilerplate-mochachai'>GitHub</a> 上克隆。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-使用 <code>assert.include()</code> 或 <code>assert.notInclude()</code> 让所有测试通过。
-</section>
+请注意，本项目在 [这个 Repl.it 项目](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 的基础上进行开发。你也可以从 [GitHub](https://repl.it/github/freeCodeCamp/boilerplate-mochachai) 上克隆。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: 不应有未通过的测试
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 请选择正确的断言—include 或 notInclude
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[0].method, 'notInclude', 'It\'s summer in july...'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 请选择正确的断言—include 或 notInclude
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[1].method, 'include', 'JavaScript is a backend language !!'); }, xhr => { throw new Error(xhr.responseText); })
+使用 `assert.include()` 或 `assert.notInclude()` 让所有测试通过。
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
+不应有未通过的测试
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(
+    (data) => {
+      assert.equal(data.state, 'passed');
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
 ```
 
-</section>
+请选择正确的断言—include 或 notInclude
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(
+    (data) => {
+      assert.equal(
+        data.assertions[0].method,
+        'notInclude',
+        "It's summer in july..."
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+请选择正确的断言—include 或 notInclude
+
+```js
+(getUserInput) =>
+  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(
+    (data) => {
+      assert.equal(
+        data.assertions[1].method,
+        'include',
+        'JavaScript is a backend language !!'
+      );
+    },
+    (xhr) => {
+      throw new Error(xhr.responseText);
+    }
+  );
+```
+
+# --solutions--
+
