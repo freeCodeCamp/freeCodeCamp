@@ -4,8 +4,6 @@ const {
   curriculum: curriculumLangs
 } = require('../client/i18n/allLangs').availableLangs;
 
-// const { supportedLangs } = require('./utils');
-
 function validateLang(lang) {
   invariant(lang, 'Please provide a language');
   invariant(
