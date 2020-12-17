@@ -6,7 +6,7 @@ import { Button } from '@freecodecamp/react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 import { isSignedInSelector } from '../../../redux';
-import { apiLocation } from '../../../../config/env.json';
+import { apiLocation, homeLocation } from '../../../../config/env.json';
 
 import { gtagReportConversion } from '../../../analytics/gtag';
 
@@ -27,7 +27,9 @@ function Login(props) {
     children,
     isSignedIn
   } = props;
-  const href = isSignedIn ? '/learn' : `${apiLocation}/signin`;
+  const href = isSignedIn
+    ? `${homeLocation}/learn`
+    : `${apiLocation}/signin?returnTo=${homeLocation}/learn`;
   return (
     <Button
       bsStyle='default'
