@@ -1,57 +1,30 @@
 ---
 id: 587d8255367417b2b2512c72
+title: 在ES6集上使用.has和.size
 challengeType: 1
 videoUrl: ''
-title: 在ES6集上使用.has和.size
 ---
 
-## Description
-<section id="description">让我们看一下ES6 Set对象上可用的.has和.size方法。首先，创建一个ES6 Set <code>var set = new Set([1,2,3]);</code> .has方法将检查该值是否包含在集合中。 <code>var hasTwo = set.has(2);</code> .size方法将返回一个表示Set <code>var howBig = set.size;</code>大小的整数<code>var howBig = set.size;</code> </section>
+# --description--
 
-## Instructions
-<section id="instructions">在本练习中，我们将数组和值传递给checkSet（）函数。您的函数应该从数组参数创建ES6集。查找该集是否包含value参数。找到集合的大小。并在数组中返回这两个值。 </section>
+让我们看一下ES6 Set对象上可用的.has和.size方法。首先，创建一个ES6 Set `var set = new Set([1,2,3]);` .has方法将检查该值是否包含在集合中。 `var hasTwo = set.has(2);` .size方法将返回一个表示Set `var howBig = set.size;`大小的整数`var howBig = set.size;`
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: '<code>checkSet([4, 5, 6], 3)</code>应该返回[false，3]'
-    testString: 'assert((function(){var test = checkSet([4,5,6], 3); return DeepEqual(test, [ false, 3 ]);})());'
+在本练习中，我们将数组和值传递给checkSet（）函数。您的函数应该从数组参数创建ES6集。查找该集是否包含value参数。找到集合的大小。并在数组中返回这两个值。
 
-```
+# --hints--
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`checkSet([4, 5, 6], 3)`应该返回[false，3]
 
 ```js
-function checkSet(arrToBeSet, checkValue){
-
-   // change code below this line
-
-   // change code above this line
-
-}
-
-checkSet([ 1, 2, 3], 2); // Should return [ true, 3 ]
-
+assert(
+  (function () {
+    var test = checkSet([4, 5, 6], 3);
+    return DeepEqual(test, [false, 3]);
+  })()
+);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

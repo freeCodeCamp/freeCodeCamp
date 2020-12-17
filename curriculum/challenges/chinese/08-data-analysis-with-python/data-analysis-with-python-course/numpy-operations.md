@@ -4,41 +4,47 @@ challengeType: 11
 videoId: eqSVcJbaPdk
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74)
 
-<section id='tests'>
+# --question--
 
-````yml
-question:
-  text: |
-    What is the value of `a` after you run the following code?
+## --text--
 
-    ```py
-    a = np.arange(5)
-    a + 20
-    ```
+What is the value of `a` after you run the following code?
 
-  answers:
-    - |
-      ```python
-      [20, 21, 22, 24, 24]
-      ```
-    - |
-      ```python
-      [0, 1, 2, 3, 4]
-      ```
-    - |
-      ```python
-      [25, 26, 27, 28, 29]
-      ```
-  solution: 2
-````
+```py
+a = np.arange(5)
+a + 20
+```
 
-</section>
+## --answers--
+
+```python
+[20, 21, 22, 24, 24]
+```
+
+---
+
+```python
+[0, 1, 2, 3, 4]
+```
+
+---
+
+```python
+[25, 26, 27, 28, 29]
+```
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

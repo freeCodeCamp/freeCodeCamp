@@ -1,68 +1,45 @@
 ---
 id: 597b2b2a2702b44414742771
+title: 阶乘
 challengeType: 5
 videoUrl: ''
-title: 阶乘
 ---
 
-## Description
-<section id="description"><p>编写一个函数来返回一个数字的阶乘。 </p><p>一个数字的因子由下式给出： </p> N！ = n *（n-1）*（n-2）* ..... * 1 <p>例如：3！ = 3 * 2 * 1 = 6 4！ = 4 * 3 * 2 * 1 = 24 </p><p>注意：0！ = 1 </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+<p>编写一个函数来返回一个数字的阶乘。 </p><p>一个数字的因子由下式给出： </p> N！ = n \*（n-1）\*（n-2）\* ..... \* 1 <p>例如：3！ = 3 * 2 * 1 = 6 4！ = 4 * 3 * 2 * 1 = 24 </p><p>注意：0！ = 1 </p>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>factorial</code>是一种功能。
-    testString: assert(typeof factorial === 'function');
-  - text: <code>factorial(2)</code>应该返回一个数字。
-    testString: assert(typeof factorial(2) === 'number');
-  - text: <code>factorial(3)</code>应该返回6.“）
-    testString: assert.equal(factorial(3), 6);
-  - text: <code>factorial(3)</code>应返回120.“）
-    testString: assert.equal(factorial(5), 120);
-  - text: '<code>factorial(3)</code>应返回3,628,800。“）'
-    testString: assert.equal(factorial(10), 3628800);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`factorial`是一种功能。
 
 ```js
-function factorial (n) {
-  // Good luck!
-}
-
+assert(typeof factorial === 'function');
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+`factorial(2)`应该返回一个数字。
 
 ```js
-console.info('after the test');
+assert(typeof factorial(2) === 'number');
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+`factorial(3)`应该返回6.“）
 
 ```js
-// solution required
+assert.equal(factorial(3), 6);
 ```
 
-/section>
+`factorial(3)`应返回120.“）
+
+```js
+assert.equal(factorial(5), 120);
+```
+
+`factorial(3)`应返回3,628,800。“）
+
+```js
+assert.equal(factorial(10), 3628800);
+```
+
+# --solutions--
+

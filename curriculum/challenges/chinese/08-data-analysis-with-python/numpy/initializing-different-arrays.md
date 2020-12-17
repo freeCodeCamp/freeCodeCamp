@@ -4,41 +4,44 @@ challengeType: 11
 videoId: CEykdsKT4U4
 ---
 
-## Description
+# --question--
 
-<section id='description'>
-</section>
+## --text--
 
-## Tests
+What will the following code print?
 
-<section id='tests'>
+```py
+a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
 
-````yml
-question:
-  text: |
-    What will the following code print?
+print(np.full_like(a, 100))
+```
 
-    ```py
-    a = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+## --answers--
 
-    print(np.full_like(a, 100))
-    ```
-  answers:
-    - |
-      ```py
-      [[100 100 100 100 100]]
-      ```
-    - |
-      ```py
-      [[100 100 100 100 100]
-      [100 100 100 100 100]]
-      ```
-    - |
-      ```py
-      [[ 1  2  3  4  5]
-      [ 6  7 20  9 10]]
-      ```
-  solution: 2
-````
+```py
+[[100 100 100 100 100]]
+```
 
-</section>
+---
+
+```py
+[[100 100 100 100 100]
+[100 100 100 100 100]]
+```
+
+---
+
+```py
+[[ 1  2  3  4  5]
+[ 6  7 20  9 10]]
+```
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

@@ -1,15 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244c2
+title: 函数可以返回某个值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87wue'
 forumTopicId: 18271
-title: 函数可以返回某个值
 ---
 
-## Description
-<section id='description'>
-我们可以通过函数的<dfn>参数</dfn>把值传入函数，也可以使用<code>return</code>语句把数据从一个函数中传出来。
-<strong>示例</strong>
+# --description--
+
+我们可以通过函数的<dfn>参数</dfn>把值传入函数，也可以使用`return`语句把数据从一个函数中传出来。
+
+**示例**
 
 ```js
 function plusThree(num) {
@@ -18,65 +19,37 @@ function plusThree(num) {
 var answer = plusThree(5); // 8
 ```
 
-<code>plusThree</code>带有一个<code>num</code>的<dfn>参数</dfn>并且返回（returns）一个等于<code>num + 3</code>的值。
-</section>
+`plusThree`带有一个`num`的<dfn>参数</dfn>并且返回（returns）一个等于`num + 3`的值。
 
-## Instructions
-<section id='instructions'>
-创建一个函数<code>timesFive</code>接收一个参数, 把它乘以<code>5</code>之后返回，关于如何测试timesFive 函数，可以参考编辑器中最后一行的示例。
-</section>
+# --instructions--
 
-## Tests
-<section id='tests'>
+创建一个函数`timesFive`接收一个参数, 把它乘以`5`之后返回，关于如何测试timesFive 函数，可以参考编辑器中最后一行的示例。
 
-```yml
-tests:
-  - text: <code>timesFive</code>应是一个函数。
-    testString: assert(typeof timesFive === 'function');
-  - text: <code>timesFive(5)</code>应该返回<code>25</code>。
-    testString: assert(timesFive(5) === 25);
-  - text: <code>timesFive(2)</code>应该返回<code>10</code>。
-    testString: assert(timesFive(2) === 10);
-  - text: <code>timesFive(0)</code>应该返回<code>0</code>。
-    testString: assert(timesFive(0) === 0);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`timesFive`应是一个函数。
 
 ```js
-// Example
-function minusSeven(num) {
-  return num - 7;
-}
-
-// Only change code below this line
-
-
-
-console.log(minusSeven(10));
+assert(typeof timesFive === 'function');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`timesFive(5)`应该返回`25`。
 
 ```js
-function timesFive(num) {
-  return num * 5;
-}
-timesFive(10);
+assert(timesFive(5) === 25);
 ```
 
-</section>
+`timesFive(2)`应该返回`10`。
+
+```js
+assert(timesFive(2) === 10);
+```
+
+`timesFive(0)`应该返回`0`。
+
+```js
+assert(timesFive(0) === 0);
+```
+
+# --solutions--
+

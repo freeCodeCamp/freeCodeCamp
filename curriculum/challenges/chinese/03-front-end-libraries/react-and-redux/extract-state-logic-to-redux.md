@@ -1,87 +1,82 @@
 ---
 id: 5a24c314108439a4d4036143
+title: 提取状态逻辑给 Redux
 challengeType: 6
 forumTopicId: 301429
-title: 提取状态逻辑给 Redux
 ---
 
-## Description
-<section id='description'>
-完成 React 组件后，我们需要把在本地<code>状态</code>执行的逻辑移到 Redux 中，这是为小规模 React 应用添加 Redux 的第一步。该应用的唯一功能是把用户的新消息添加到无序列表中。下面我们用简单的示例来演示 React 和 Redux 之间的配合。
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-首先，定义 action 的类型 'ADD'，将其设置为常量<code>ADD</code>。接着，定义创建 action 的函数<code>addMessage()</code>，用该函数创建添加消息的 action，把<code>message</code>传给创建 action 的函数并返回包含该消息的<code>action</code>
-接着，创建名为<code>messageReducer()</code>的 reducer 方法，为这些消息处理状态。初始状态应为空数组。reducer 向状态中的消息数组添加消息，或返回当前状态。最后，创建 Redux store 并传给 reducer。
-</section>
+完成 React 组件后，我们需要把在本地`状态`执行的逻辑移到 Redux 中，这是为小规模 React 应用添加 Redux 的第一步。该应用的唯一功能是把用户的新消息添加到无序列表中。下面我们用简单的示例来演示 React 和 Redux 之间的配合。
 
-## Tests
-<section id='tests'>
+# --instructions--
 
-```yml
-tests:
-  - text: 应存在一个值为字符串<code>ADD</code>的常量<code>ADD</code>。
-    testString: assert(ADD === 'ADD');
-  - text: 创建 action 的函数<code>addMessage</code>应返回<code>type</code>等于<code>ADD</code>的对象，其返回的消息即被传入的消息。
-    testString: assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })());
-  - text: <code>messageReducer</code>应是一个函数。
-    testString: assert(typeof messageReducer === 'function');
-  - text: 存在一个 store 且其初始状态为空数组。
-    testString: assert((function() { const initialState = store.getState(); return typeof store === 'object' && initialState.length === 0; })());
-  - text: 分发<code>addMessage</code>到 store 应添加新消息到状态中消息数组。
-    testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })());
-  - text: <code>messageReducer</code>被其它任何 actions 调用时应返回当前状态。
-    testString: 'assert((function() { const addState = store.getState(); store.dispatch({type: ''FAKE_ACTION''}); const testState = store.getState(); return (addState === testState); })());'
+首先，定义 action 的类型 'ADD'，将其设置为常量`ADD`。接着，定义创建 action 的函数`addMessage()`，用该函数创建添加消息的 action，把`message`传给创建 action 的函数并返回包含该消息的`action`
 
-```
+接着，创建名为`messageReducer()`的 reducer 方法，为这些消息处理状态。初始状态应为空数组。reducer 向状态中的消息数组添加消息，或返回当前状态。最后，创建 Redux store 并传给 reducer。
 
-</section>
+# --hints--
 
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='jsx-seed'>
-
-```jsx
-// 请在此处定义 ADD、addMessage()、messageReducer()、store：
-
-```
-
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+应存在一个值为字符串`ADD`的常量`ADD`。
 
 ```js
-const ADD = 'ADD';
-
-const addMessage = (message) => {
-  return {
-    type: ADD,
-    message
-  }
-};
-
-const messageReducer = (state = [], action) => {
-  switch (action.type) {
-    case ADD:
-      return [
-        ...state,
-        action.message
-      ];
-    default:
-      return state;
-  }
-};
-
-const store = Redux.createStore(messageReducer);
+assert(ADD === 'ADD');
 ```
 
-</section>
+创建 action 的函数`addMessage`应返回`type`等于`ADD`的对象，其返回的消息即被传入的消息。
+
+```js
+assert(
+  (function () {
+    const addAction = addMessage('__TEST__MESSAGE__');
+    return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__';
+  })()
+);
+```
+
+`messageReducer`应是一个函数。
+
+```js
+assert(typeof messageReducer === 'function');
+```
+
+存在一个 store 且其初始状态为空数组。
+
+```js
+assert(
+  (function () {
+    const initialState = store.getState();
+    return typeof store === 'object' && initialState.length === 0;
+  })()
+);
+```
+
+分发`addMessage`到 store 应添加新消息到状态中消息数组。
+
+```js
+assert(
+  (function () {
+    const initialState = store.getState();
+    const isFrozen = DeepFreeze(initialState);
+    store.dispatch(addMessage('__A__TEST__MESSAGE'));
+    const addState = store.getState();
+    return isFrozen && addState[0] === '__A__TEST__MESSAGE';
+  })()
+);
+```
+
+`messageReducer`被其它任何 actions 调用时应返回当前状态。
+
+```js
+assert(
+  (function () {
+    const addState = store.getState();
+    store.dispatch({ type: 'FAKE_ACTION' });
+    const testState = store.getState();
+    return addState === testState;
+  })()
+);
+```
+
+# --solutions--
 

@@ -4,32 +4,39 @@ challengeType: 11
 videoId: hiRTRAqNlpE
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+How many lines will the following code print?:
 
-```yml
-question:
-  text: |
-    How many lines will the following code print?:
-    ```python
-    for i in [2,1,5]:
-        print(i)
-    ```
-  answers:
-    - |
-        1
-    - |
-        2
-    - |
-        3
-    - |
-        5
-  solution: 3
+```python
+for i in [2,1,5]:
+    print(i)
 ```
 
-</section>
+## --answers--
+
+1
+
+---
+
+2
+
+---
+
+3
+
+---
+
+5
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

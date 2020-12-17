@@ -1,55 +1,23 @@
 ---
 id: 5900f3f71000cf542c50ff0a
+title: 问题139：毕达哥拉斯瓷砖
 challengeType: 5
 videoUrl: ''
-title: 问题139：毕达哥拉斯瓷砖
 ---
 
-## Description
-<section id="description">设（a，b，c）表示具有整数长边的直角三角形的三个边。可以将四个这样的三角形放在一起以形成长度为c的正方形。例如，（3,4,5）三角形可以放在一起形成一个5乘5的正方形，中间有一个1个洞，可以看到5乘5的正方形可以用二十五个平铺1个方格。 <p>但是，如果使用（5,12,13）三角形，则孔将按7乘7测量，并且这些不能用于平铺13乘13平方。鉴于直角三角形的周长小于一亿，有多少毕达哥拉斯三角形允许这样的平铺？ </p></section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+设（a，b，c）表示具有整数长边的直角三角形的三个边。可以将四个这样的三角形放在一起以形成长度为c的正方形。例如，（3,4,5）三角形可以放在一起形成一个5乘5的正方形，中间有一个1个洞，可以看到5乘5的正方形可以用二十五个平铺1个方格。
 
-## Tests
-<section id='tests'>
+但是，如果使用（5,12,13）三角形，则孔将按7乘7测量，并且这些不能用于平铺13乘13平方。鉴于直角三角形的周长小于一亿，有多少毕达哥拉斯三角形允许这样的平铺？
 
-```yml
-tests:
-  - text: <code>euler139()</code>应该返回10057761。
-    testString: assert.strictEqual(euler139(), 10057761);
+# --hints--
 
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`euler139()`应该返回10057761。
 
 ```js
-function euler139() {
-  // Good luck!
-  return true;
-}
-
-euler139();
-
+assert.strictEqual(euler139(), 10057761);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

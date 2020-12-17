@@ -4,29 +4,34 @@ challengeType: 11
 videoId: lCnHfTHkhbE
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+Which method is used to add an item at the end of a list?
 
-```yml
-question:
-  text: |
-    Which method is used to add an item at the end of a list?
+## --answers--
 
-  answers:
-    - |
-        insert
-    - |
-        push
-    - |
-        append
-    - |
-        new
-  solution: 3
-```
+insert
 
-</section>
+---
+
+push
+
+---
+
+append
+
+---
+
+new
+
+## --video-solution--
+
+3
+
+# --hints--
+
+
+# --solutions--
+

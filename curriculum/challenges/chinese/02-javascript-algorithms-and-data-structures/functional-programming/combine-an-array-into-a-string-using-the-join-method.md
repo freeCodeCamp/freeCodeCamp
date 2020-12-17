@@ -1,13 +1,14 @@
 ---
 id: 587d7daa367417b2b2512b6c
+title: 使用 join 方法将数组组合成字符串
 challengeType: 1
 forumTopicId: 18221
-title: 使用 join 方法将数组组合成字符串
 ---
 
-## Description
-<section id='description'>
-<code>join</code>方法用来把数组中的所有元素放入一个字符串，并通过指定的分隔符参数进行分隔。
+# --description--
+
+`join`方法用来把数组中的所有元素放入一个字符串，并通过指定的分隔符参数进行分隔。
+
 举个例子：
 
 ```js
@@ -16,65 +17,52 @@ var str = arr.join(" ");
 // Sets str to "Hello World"
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-在函数<code>sentensify</code>内用<code>join</code>方法（及其他方法）用字符串<code>str</code>中的单词造句，这个函数应返回一个字符串。举个例子，"I-like-Star-Wars" 会被转换成 "I like Star Wars"。在此挑战中请勿使用<code>replace</code>方法。
-</section>
+在函数`sentensify`内用`join`方法（及其他方法）用字符串`str`中的单词造句，这个函数应返回一个字符串。举个例子，"I-like-Star-Wars" 会被转换成 "I like Star Wars"。在此挑战中请勿使用`replace`方法。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 应使用<code>join</code>方法。
-    testString: assert(code.match(/\.join/g));
-  - text: 不能使用<code>replace</code>方法。
-    testString: assert(!code.match(/\.replace/g));
-  - text: "<code>sentensify('May-the-force-be-with-you')</code>应返回一个字符串"
-    testString: assert(typeof sentensify("May-the-force-be-with-you") === "string");
-  - text: "<code>sentensify('May-the-force-be-with-you')</code>应返回<code>'May the force be with you'</code>。"
-    testString: assert(sentensify("May-the-force-be-with-you") === "May the force be with you");
-  - text: "<code>sentensify('The.force.is.strong.with.this.one')</code>应返回<code>'The force is strong with this one'</code>。"
-    testString: assert(sentensify("The.force.is.strong.with.this.one") === "The force is strong with this one");
-  - text: "<code>sentensify('There,has,been,an,awakening')</code>应返回<code>'There has been an awakening'</code>。"
-    testString: assert(sentensify("There,has,been,an,awakening") === "There has been an awakening");
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+应使用`join`方法。
 
 ```js
-function sentensify(str) {
-  // Add your code below this line
-
-
-  // Add your code above this line
-}
-sentensify("May-the-force-be-with-you");
+assert(code.match(/\.join/g));
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+不能使用`replace`方法。
 
 ```js
-function sentensify(str) {
-  // Add your code below this line
-  return str.split(/\W/).join(' ');
-  // Add your code above this line
-}
+assert(!code.match(/\.replace/g));
 ```
 
-</section>
+`sentensify('May-the-force-be-with-you')`应返回一个字符串
+
+```js
+assert(typeof sentensify('May-the-force-be-with-you') === 'string');
+```
+
+`sentensify('May-the-force-be-with-you')`应返回`'May the force be with you'`。
+
+```js
+assert(sentensify('May-the-force-be-with-you') === 'May the force be with you');
+```
+
+`sentensify('The.force.is.strong.with.this.one')`应返回`'The force is strong with this one'`。
+
+```js
+assert(
+  sentensify('The.force.is.strong.with.this.one') ===
+    'The force is strong with this one'
+);
+```
+
+`sentensify('There,has,been,an,awakening')`应返回`'There has been an awakening'`。
+
+```js
+assert(
+  sentensify('There,has,been,an,awakening') === 'There has been an awakening'
+);
+```
+
+# --solutions--
+

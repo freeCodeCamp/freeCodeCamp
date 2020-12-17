@@ -1,55 +1,23 @@
 ---
 id: 5900f3d91000cf542c50feeb
+title: 问题108：丢番图互惠I
 challengeType: 5
 videoUrl: ''
-title: 问题108：丢番图互惠I
 ---
 
-## Description
-<section id="description">在下面的等式中，x，y和n是正整数。 1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n</var>对于<var>n</var> = 4，恰好有三种不同的解：1/5 + 1/20 = 1/4 <br> 1/6 + 1/12 = 1/4 <br> 1/8 + 1/8 = 1/4不同解的数量超过一千的<var>n的</var>最小值是多少？ </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+在下面的等式中，x，y和n是正整数。 1 / `x` + 1 / `y` = 1 / `n`对于`n` = 4，恰好有三种不同的解：1/5 + 1/20 = 1/4  
+1/6 + 1/12 = 1/4  
+1/8 + 1/8 = 1/4不同解的数量超过一千的`n的`最小值是多少？
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: diophantineOne <code>diophantineOne()</code>应返回180180。
-    testString: assert.strictEqual(diophantineOne(), 180180);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+diophantineOne `diophantineOne()`应返回180180。
 
 ```js
-function diophantineOne() {
-  // Good luck!
-  return true;
-}
-
-diophantineOne();
-
+assert.strictEqual(diophantineOne(), 180180);
 ```
 
-</div>
+# --solutions--
 
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-
-/section>

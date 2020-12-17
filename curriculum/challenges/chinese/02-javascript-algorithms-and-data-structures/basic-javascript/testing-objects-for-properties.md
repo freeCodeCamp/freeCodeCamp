@@ -1,15 +1,16 @@
 ---
 id: 567af2437cbaa8c51670a16c
+title: 测试对象的属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm8Q7Ua'
 forumTopicId: 18324
-title: 测试对象的属性
 ---
 
-## Description
-<section id='description'>
-有时检查一个对象属性是否存在是非常有用的，我们可以用<code>.hasOwnProperty(propname)</code>方法来检查对象是否有该属性。如果有返回<code>true</code>，反之返回<code>false</code>。
-<strong>示例</strong>
+# --description--
+
+有时检查一个对象属性是否存在是非常有用的，我们可以用`.hasOwnProperty(propname)`方法来检查对象是否有该属性。如果有返回`true`，反之返回`false`。
+
+**示例**
 
 ```js
 var myObj = {
@@ -20,75 +21,29 @@ myObj.hasOwnProperty("top");    // true
 myObj.hasOwnProperty("middle"); // false
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-修改函数<code>checkObj</code>检查<code>myObj</code>是否有<code>checkProp</code>属性，如果属性存在，返回属性对应的值，如果不存在，返回<code>"Not Found"</code>。
-</section>
+修改函数`checkObj`检查`myObj`是否有`checkProp`属性，如果属性存在，返回属性对应的值，如果不存在，返回`"Not Found"`。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>checkObj("gift")</code>应该返回<code>"pony"</code>。
-    testString: assert(checkObj("gift") === "pony");
-  - text: <code>checkObj("pet")</code>应该返回<code>"kitten"</code>。
-    testString: assert(checkObj("pet") === "kitten");
-  - text: <code>checkObj("house")</code>应该返回<code>"Not Found"</code>。
-    testString: assert(checkObj("house") === "Not Found");
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`checkObj("gift")`应该返回`"pony"`。
 
 ```js
-// Setup
-var myObj = {
-  gift: "pony",
-  pet: "kitten",
-  bed: "sleigh"
-};
-
-function checkObj(checkProp) {
-  // Your Code Here
-
-  return "Change Me!";
-}
-
-// Test your code by modifying these values
-checkObj("gift");
+assert(checkObj('gift') === 'pony');
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`checkObj("pet")`应该返回`"kitten"`。
 
 ```js
-var myObj = {
-  gift: "pony",
-  pet: "kitten",
-  bed: "sleigh"
-};
-function checkObj(checkProp) {
-  if(myObj.hasOwnProperty(checkProp)) {
-    return myObj[checkProp];
-  } else {
-    return "Not Found";
-  }
-}
+assert(checkObj('pet') === 'kitten');
 ```
 
-</section>
+`checkObj("house")`应该返回`"Not Found"`。
+
+```js
+assert(checkObj('house') === 'Not Found');
+```
+
+# --solutions--
+

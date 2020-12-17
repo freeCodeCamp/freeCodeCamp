@@ -1,13 +1,13 @@
 ---
 id: 587d7b8c367417b2b2512b56
+title: 用 export 来重用代码块
 challengeType: 1
 forumTopicId: 301219
-title: 用 export 来重用代码块
 ---
 
-## Description
-<section id='description'>
-假设有一个文件 <code>math_functions.js</code>，该文件包含了数学运算相关的一些函数。其中一个存储在变量 <code>add</code> 里，该函数接受两个数字做为参数返回它们的和。如果想在其它不同的 JavaScript 文件里使用这个函数，就需要 <code>export</code> 它。
+# --description--
+
+假设有一个文件 `math_functions.js`，该文件包含了数学运算相关的一些函数。其中一个存储在变量 `add` 里，该函数接受两个数字做为参数返回它们的和。如果想在其它不同的 JavaScript 文件里使用这个函数，就需要 `export` 它。
 
 ```js
 export const add = (x, y) => {
@@ -31,55 +31,31 @@ export { add };
 export { add, subtract };
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
 下面有两个变量需要在别的文件中可以使用。利用刚才展示的第一种方式，导出两个变量。
-</section>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 应该导出<code>uppercaseString</code>变量。
-    testString: assert(code.match(/(export\s+const\s+uppercaseString|export\s*{\s*(uppercaseString[^}]*|[^,]*,\s*uppercaseString\s*)})/g));
-  - text: 应该导出<code>lowercaseString</code>变量。
-    testString: assert(code.match(/(export\s+const\s+lowercaseString|export\s*{\s*(lowercaseString[^}]*|[^,]*,\s*lowercaseString\s*)})/g));
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-<div id='js-seed'>
+应该导出`uppercaseString`变量。
 
 ```js
-const uppercaseString = (string) => {
-  return string.toUpperCase();
-}
-
-const lowercaseString = (string) => {
-  return string.toLowerCase()
-}
+assert(
+  code.match(
+    /(export\s+const\s+uppercaseString|export\s*{\s*(uppercaseString[^}]*|[^,]*,\s*uppercaseString\s*)})/g
+  )
+);
 ```
 
-</div>
-</section>
-
-## Solution
-<section id='solution'>
+应该导出`lowercaseString`变量。
 
 ```js
-export const uppercaseString = (string) => {
-  return string.toUpperCase();
-}
-
-export const lowercaseString = (string) => {
-  return string.toLowerCase()
-}
+assert(
+  code.match(
+    /(export\s+const\s+lowercaseString|export\s*{\s*(lowercaseString[^}]*|[^,]*,\s*lowercaseString\s*)})/g
+  )
+);
 ```
 
-</section>
+# --solutions--
+

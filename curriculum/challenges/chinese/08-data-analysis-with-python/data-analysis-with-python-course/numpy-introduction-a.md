@@ -4,30 +4,36 @@ challengeType: 11
 videoId: P-JjV6GBCmk
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74" target='_blank'>Notebook</a>
-</section>
 
-## Tests
+\- [Notebook](https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74)
 
-<section id='tests'>
+# --question--
 
-```yml
-question:
-  text: |
-    Why is Numpy an important, but unpopular Python library?
+## --text--
 
-  answers:
-    - |
-      Often you won't work directly with Numpy.
-    - |
-      It's is extremely slow.
-    - |
-      Working with Numpy is difficult.
-  solution: 1
-```
+Why is Numpy an important, but unpopular Python library?
 
-</section>
+## --answers--
+
+Often you won't work directly with Numpy.
+
+---
+
+It's is extremely slow.
+
+---
+
+Working with Numpy is difficult.
+
+## --video-solution--
+
+1
+
+# --hints--
+
+
+# --solutions--
+

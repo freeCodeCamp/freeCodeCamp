@@ -4,27 +4,30 @@ challengeType: 11
 videoId: Pv_pJgVu8WI
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+Which type of encoding do most websites use?
 
-```yml
-question:
-  text: |
-    Which type of encoding do most websites use?
+## --answers--
 
-  answers:
-    - |
-        UTF-8
-    - |
-        UTF-16
-    - |
-        UTF-32
-  solution: 1
-```
+UTF-8
 
-</section>
+---
+
+UTF-16
+
+---
+
+UTF-32
+
+## --video-solution--
+
+1
+
+# --hints--
+
+
+# --solutions--
+

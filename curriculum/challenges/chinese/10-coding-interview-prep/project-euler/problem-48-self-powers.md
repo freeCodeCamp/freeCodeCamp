@@ -1,61 +1,39 @@
 ---
 id: 5900f39c1000cf542c50feaf
+title: 问题48：自我权力
 challengeType: 5
 videoUrl: ''
-title: 问题48：自我权力
 ---
 
-## Description
-<section id="description">系列，1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 10 <sup>10</sup> = 10405071317.查找该系列的最后十位数字，1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 1000 <sup>1000</sup> 。 </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+系列，1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 10 <sup>10</sup> = 10405071317.查找该系列的最后十位数字，1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 1000 <sup>1000</sup> 。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: '<code>selfPowers(10, 3)</code>应该返回317。'
-    testString: assert.strictEqual(selfPowers(10, 3), 317);
-  - text: '<code>selfPowers(150, 6)</code>应返回29045。'
-    testString: assert.strictEqual(selfPowers(150, 6), 29045);
-  - text: '<code>selfPowers(673, 7)</code>应该返回2473989。'
-    testString: assert.strictEqual(selfPowers(673, 7), 2473989);
-  - text: '<code>selfPowers(1000, 10)</code>应该返回9110846700。'
-    testString: assert.strictEqual(selfPowers(1000, 10), 9110846700);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`selfPowers(10, 3)`应该返回317。
 
 ```js
-function selfPowers(power, lastDigits) {
-  // Good luck!
-  return true;
-}
-
-selfPowers(1000, 10);
-
+assert.strictEqual(selfPowers(10, 3), 317);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+`selfPowers(150, 6)`应返回29045。
 
 ```js
-// solution required
+assert.strictEqual(selfPowers(150, 6), 29045);
 ```
 
-/section>
+`selfPowers(673, 7)`应该返回2473989。
+
+```js
+assert.strictEqual(selfPowers(673, 7), 2473989);
+```
+
+`selfPowers(1000, 10)`应该返回9110846700。
+
+```js
+assert.strictEqual(selfPowers(1000, 10), 9110846700);
+```
+
+# --solutions--
+

@@ -1,59 +1,33 @@
 ---
 id: 5900f3941000cf542c50fea7
+title: 问题40：Champernowne的常数
 challengeType: 5
 videoUrl: ''
-title: 问题40：Champernowne的常数
 ---
 
-## Description
-<section id="description">通过连接正整数创建无理小数： <span style="display: block; text-align: center;">0.12345678910 <b style="color: red;">1</b> 112131415161718192021 ...</span>可以看出小数部分的<sup>第</sup> 12位是1.如果<i>d <sub>n</sub></i>代表小数部分的<sup>第</sup> <i>n</i>位，找到值以下表达式。 <span style="display: block; text-align: center;">d <sub>1</sub> ×d <sub>10</sub> ×d <sub>100</sub> ×d <sub>1000</sub> ×d <sub>10000</sub> ×d <sub>100000</sub> ×d <sub>1000000</sub></span> </section>
+# --description--
 
-## Instructions
-<section id="instructions">
-</section>
+通过连接正整数创建无理小数： 0.12345678910 **1** 112131415161718192021 ...可以看出小数部分的<sup>第</sup> 12位是1.如果*d <sub>n</sub>*代表小数部分的<sup>第</sup> *n*位，找到值以下表达式。 d <sub>1</sub> ×d <sub>10</sub> ×d <sub>100</sub> ×d <sub>1000</sub> ×d <sub>10000</sub> ×d <sub>100000</sub> ×d <sub>1000000</sub>
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: <code>champernownesConstant(100)</code>应该返回5。
-    testString: assert.strictEqual(champernownesConstant(100), 5);
-  - text: <code>champernownesConstant(1000)</code>应该返回15。
-    testString: assert.strictEqual(champernownesConstant(1000), 15);
-  - text: <code>champernownesConstant(1000000)</code>应该返回210。
-    testString: assert.strictEqual(champernownesConstant(1000000), 210);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+`champernownesConstant(100)`应该返回5。
 
 ```js
-function champernownesConstant(n) {
-  // Good luck!
-  return true;
-}
-
-champernownesConstant(100);
-
+assert.strictEqual(champernownesConstant(100), 5);
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
+`champernownesConstant(1000)`应该返回15。
 
 ```js
-// solution required
+assert.strictEqual(champernownesConstant(1000), 15);
 ```
 
-/section>
+`champernownesConstant(1000000)`应该返回210。
+
+```js
+assert.strictEqual(champernownesConstant(1000000), 210);
+```
+
+# --solutions--
+

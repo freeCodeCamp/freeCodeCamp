@@ -4,52 +4,59 @@ challengeType: 11
 videoId: dLA-szNRnUY
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What will the following code print out?:
 
-```yml
-question:
-  text: |
-    What will the following code print out?:
-    ```python
-    n = 0
-    while True:
-        if n == 3:
-            break
-        print(n)
-        n = n + 1
-    ```
-  answers:
-    - |
-        0
-
-        1
-
-        2
-    - |
-        0
-
-        1
-
-        2
-
-        3
-    - |
-        1
-
-        2
-    - |
-        1
-
-        2
-
-        3
-  solution: 1
+```python
+n = 0
+while True:
+    if n == 3:
+        break
+    print(n)
+    n = n + 1
 ```
 
-</section>
+## --answers--
+
+0
+
+1
+
+2
+
+---
+
+0
+
+1
+
+2
+
+3
+
+---
+
+1
+
+2
+
+---
+
+1
+
+2
+
+3
+
+## --video-solution--
+
+1
+
+# --hints--
+
+
+# --solutions--
+

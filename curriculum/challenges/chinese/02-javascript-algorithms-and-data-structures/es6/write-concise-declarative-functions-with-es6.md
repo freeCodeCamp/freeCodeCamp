@@ -1,13 +1,13 @@
 ---
 id: 587d7b8b367417b2b2512b50
+title: 用 ES6 编写简洁的函数声明
 challengeType: 1
 forumTopicId: 301224
-title: 用 ES6 编写简洁的函数声明
 ---
 
-## Description
-<section id='description'>
-在 ES5 中，当我们需要在对象中定义一个函数的时候，我们必须如下面这般使用<code>function</code>关键字：
+# --description--
+
+在 ES5 中，当我们需要在对象中定义一个函数的时候，我们必须如下面这般使用`function`关键字：
 
 ```js
 const person = {
@@ -18,7 +18,7 @@ const person = {
 };
 ```
 
-在 ES6 语法的对象中定义函数的时候，你可以完全删除<code>function</code>关键字和冒号。请看以下例子：
+在 ES6 语法的对象中定义函数的时候，你可以完全删除`function`关键字和冒号。请看以下例子：
 
 ```js
 const person = {
@@ -29,71 +29,31 @@ const person = {
 };
 ```
 
-</section>
+# --instructions--
 
-## Instructions
-<section id='instructions'>
-使用以上这种简短的语法，重构在<code>bicycle</code>对象中的<code>setGear</code>函数。
-</section>
+使用以上这种简短的语法，重构在`bicycle`对象中的`setGear`函数。
 
-## Tests
-<section id='tests'>
+# --hints--
 
-```yml
-tests:
-  - text: 不应使用<code>function</code>关键字定义方法。
-    testString: getUserInput => assert(!removeJSComments(code).match(/function/));
-  - text: <code>setGear</code>应是一个函数。
-    testString: assert(typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/));
-  - text: 执行<code>bicycle.setGear(48)</code>应可以让<code>gear</code>的值变为 48。
-    testString: assert((new bicycle.setGear(48)).gear === 48);
-
-```
-
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-<div id='js-seed'>
+不应使用`function`关键字定义方法。
 
 ```js
-// change code below this line
-const bicycle = {
-  gear: 2,
-  setGear: function(newGear) {
-    this.gear = newGear;
-  }
-};
-// change code above this line
-bicycle.setGear(3);
-console.log(bicycle.gear);
+(getUserInput) => assert(!removeJSComments(code).match(/function/));
 ```
 
-</div>
-
-### After Test
-<div id='js-teardown'>
+`setGear`应是一个函数。
 
 ```js
-const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+assert(
+  typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/)
+);
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
+执行`bicycle.setGear(48)`应可以让`gear`的值变为 48。
 
 ```js
-const bicycle = {
-  gear: 2,
-  setGear(newGear) {
-    this.gear = newGear;
-  }
-};
-bicycle.setGear(3);
+assert(new bicycle.setGear(48).gear === 48);
 ```
 
-</section>
+# --solutions--
+

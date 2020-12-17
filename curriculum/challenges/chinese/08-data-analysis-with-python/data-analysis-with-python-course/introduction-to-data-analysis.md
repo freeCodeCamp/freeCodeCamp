@@ -4,32 +4,40 @@ challengeType: 11
 videoId: VJrP2FUzKP0
 ---
 
-## Description
+# --description--
 
-<section id='description'>
 More resources:
-- <a href="https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk" target='_blank'>Slides</a>
-</section>
 
-## Tests
+\- [Slides](https://docs.google.com/presentation/d/1fDpjlyMiOMJyuc7_jMekcYLPP2XlSl1eWw9F7yE7byk)
 
-<section id='tests'>
+# --question--
 
-```yml
-question:
-  text: |
-    Why should you choose R over Python for data analysis?
+## --text--
 
-  answers:
-    - |
-      It's simple to learn.
-    - |
-      It's better at dealing with advanced statistical methods.
-    - |
-      There are many powerful libraries that support R.
-    - |
-      It's free and open source.
-  solution: 2
-```
+Why should you choose R over Python for data analysis?
 
-</section>
+## --answers--
+
+It's simple to learn.
+
+---
+
+It's better at dealing with advanced statistical methods.
+
+---
+
+There are many powerful libraries that support R.
+
+---
+
+It's free and open source.
+
+## --video-solution--
+
+2
+
+# --hints--
+
+
+# --solutions--
+

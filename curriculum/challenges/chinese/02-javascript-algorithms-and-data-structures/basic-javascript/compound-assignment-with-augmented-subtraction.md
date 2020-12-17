@@ -1,91 +1,58 @@
 ---
 id: 56533eb9ac21ba0edf2244b0
+title: 复合赋值之 -=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2Qv7AV'
 forumTopicId: 16660
-title: 复合赋值之 -=
 ---
 
-## Description
-<section id='description'>
-与<code>+=</code>操作符类似，<code>-=</code>操作符用来对一个变量进行减法赋值操作。
-<code>myVar = myVar - 5;</code>
-变量<code>myVar</code>等于自身减去<code>5</code>的值。也可以写成这种形式：
-<code>myVar -= 5;</code>
-</section>
+# --description--
 
-## Instructions
-<section id='instructions'>
-使用<code>-=</code>操作符实现同样的效果。
-</section>
+与`+=`操作符类似，`-=`操作符用来对一个变量进行减法赋值操作。
 
-## Tests
-<section id='tests'>
+`myVar = myVar - 5;`
 
-```yml
-tests:
-  - text: <code>a</code>应该等于<code>5</code>。
-    testString: assert(a === 5);
-  - text: <code>b</code>应该等于<code>-6</code>。
-    testString: assert(b === -6);
-  - text: <code>c</code>应该等于<code>2</code>。
-    testString: assert(c === 2);
-  - text: 应该对每个变量使用<code>-=</code>操作符。
-    testString: assert(code.match(/-=/g).length === 3);
-  - text: 不要修改注释上面的代码。
-    testString: assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code));
+变量`myVar`等于自身减去`5`的值。也可以写成这种形式：
 
-```
+`myVar -= 5;`
 
-</section>
+# --instructions--
 
-## Challenge Seed
-<section id='challengeSeed'>
+使用`-=`操作符实现同样的效果。
 
-<div id='js-seed'>
+# --hints--
+
+`a`应该等于`5`。
 
 ```js
-var a = 11;
-var b = 9;
-var c = 3;
-
-// Only modify code below this line
-
-a = a - 6;
-b = b - 15;
-c = c - 1;
-
-
+assert(a === 5);
 ```
 
-</div>
-
-
-### After Test
-<div id='js-teardown'>
+`b`应该等于`-6`。
 
 ```js
-(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
+assert(b === -6);
 ```
 
-</div>
-
-</section>
-
-## Solution
-<section id='solution'>
-
+`c`应该等于`2`。
 
 ```js
-var a = 11;
-var b = 9;
-var c = 3;
-
-a -= 6;
-b -= 15;
-c -= 1;
-
-
+assert(c === 2);
 ```
 
-</section>
+应该对每个变量使用`-=`操作符。
+
+```js
+assert(code.match(/-=/g).length === 3);
+```
+
+不要修改注释上面的代码。
+
+```js
+assert(
+  /var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code)
+);
+```
+
+# --solutions--
+

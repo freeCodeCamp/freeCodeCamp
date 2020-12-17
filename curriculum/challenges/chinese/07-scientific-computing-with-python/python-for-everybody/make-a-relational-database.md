@@ -4,41 +4,48 @@ challengeType: 11
 videoId: MQ5z4bdF92U
 ---
 
-## Description
-<section id='description'>
+# --question--
 
-</section>
+## --text--
 
-## Tests
-<section id='tests'>
+What SQL command would you use to retrieve all users that have the email address [quincy@freecodecamp.org](mailto:quincy@freecodecamp.org)?`mailto:quincy@freecodecamp.org`e to retrieve all users that have the email address [quincy@freecodecamp.org](mailto:quincy@freecodecamp.org)?`mailto:quincy@freecodecamp.org`have the email address [quincy@freecodecamp.org](mailto:quincy@freecodecamp.org)?`mailto:quincy@freecodecamp.org`@freecodecamp.org?
 
-```yml
-question:
-  text: |
-    What SQL command would you use to retrieve all users that have the email address quincy@freecodecamp.org?
+## --answers--
 
-  answers:
-    - |
-        ```
-        SELECT Users WHERE email="quincy@freecodecamp.org"
-        ```
-    - |
-        ```
-        SELECT Users WHERE email IS "quincy@freecodecamp.org"
-        ```
-    - |
-        ```
-        SELECT ALL Users WHERE email="quincy@freecodecamp.org"
-        ```
-    - |
-        ```
-        SELECT * FROM Users WHERE email IS "quincy@freecodecamp.org"
-        ```
-    - |
-        ```
-        SELECT * FROM Users WHERE email="quincy@freecodecamp.org"
-        ```
-  solution: 5
+```
+SELECT Users WHERE email="quincy@freecodecamp.org"
 ```
 
-</section>
+---
+
+```
+SELECT Users WHERE email IS "quincy@freecodecamp.org"
+```
+
+---
+
+```
+SELECT ALL Users WHERE email="quincy@freecodecamp.org"
+```
+
+---
+
+```
+SELECT * FROM Users WHERE email IS "quincy@freecodecamp.org"
+```
+
+---
+
+```
+SELECT * FROM Users WHERE email="quincy@freecodecamp.org"
+```
+
+## --video-solution--
+
+5
+
+# --hints--
+
+
+# --solutions--
+
