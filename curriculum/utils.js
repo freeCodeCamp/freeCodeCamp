@@ -5,6 +5,8 @@ const {
   curriculum: curriculumLangs
 } = require('../client/i18n/allLangs').availableLangs;
 
+// const supportedLangs = ['chinese', 'english'];
+
 exports.testedLang = function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {
     if (curriculumLangs.includes(process.env.CURRICULUM_LOCALE)) {
@@ -17,3 +19,5 @@ exports.testedLang = function testedLang() {
     throw Error('LOCALE must be set for testing');
   }
 };
+
+// exports.supportedLangs = supportedLangs;
