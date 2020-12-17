@@ -29,6 +29,12 @@ The `footer` should have a `flex-direction` property set to row.
 assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));
 ```
 
+Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
+
+```js
+testString: assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+```
+
 # --seed--
 
 ## --seed-contents--
