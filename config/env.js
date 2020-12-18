@@ -11,7 +11,6 @@ if (process.env.PIPELINE_ENV !== 'true') {
 }
 
 const {
-  CHINESE_HOME_LOCATION: chineseHomeLocation,
   HOME_LOCATION: homeLocation,
   API_LOCATION: apiLocation,
   FORUM_LOCATION: forumLocation,
@@ -28,7 +27,6 @@ const {
 } = process.env;
 
 const locations = {
-  chineseHomeLocation,
   homeLocation,
   apiLocation,
   forumLocation,
