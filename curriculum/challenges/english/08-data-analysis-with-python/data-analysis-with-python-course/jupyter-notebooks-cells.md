@@ -27,7 +27,7 @@ Code, Markdown, and Python
 
 ---
 
-Code, MarkDown, and Raw
+Code, Markdown, and Raw
 
 ---
 
