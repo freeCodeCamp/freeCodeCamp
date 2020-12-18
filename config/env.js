@@ -11,11 +11,11 @@ if (process.env.PIPELINE_ENV !== 'true') {
 }
 
 const {
-  CHINESE_HOME_LOCATION: chineseHome,
-  HOME_LOCATION: home,
-  API_LOCATION: api,
-  FORUM_LOCATION: forum,
-  NEWS_LOCATION: news,
+  CHINESE_HOME_LOCATION: chineseHomeLocation,
+  HOME_LOCATION: homeLocation,
+  API_LOCATION: apiLocation,
+  FORUM_LOCATION: forumLocation,
+  NEWS_LOCATION: newsLocation,
   CLIENT_LOCALE: clientLocale,
   CURRICULUM_LOCALE: curriculumLocale,
   SHOW_LOCALE_DROPDOWN_MENU: showLocaleDropdownMenu,
@@ -28,11 +28,11 @@ const {
 } = process.env;
 
 const locations = {
-  chineseHomeLocation: chineseHome,
-  homeLocation: home,
-  apiLocation: api,
-  forumLocation: forum,
-  newsLocation: news
+  chineseHomeLocation,
+  homeLocation,
+  apiLocation,
+  forumLocation,
+  newsLocation
 };
 
 module.exports = Object.assign(locations, {
