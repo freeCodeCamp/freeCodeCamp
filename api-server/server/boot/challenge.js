@@ -327,6 +327,7 @@ function backendChallengeCompleted(req, res, next) {
     .subscribe(() => {}, next);
 }
 
+// TODO: can we use axios.get and headers instead of a query param?
 // TODO: extend tests to cover www.freecodecamp.org/language and
 // chinese.freecodecamp.org
 export function createRedirectToCurrentChallenge(

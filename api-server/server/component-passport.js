@@ -8,11 +8,10 @@ import url from 'url';
 import dedent from 'dedent';
 
 import { getUserById } from './utils/user-stats';
-import { homeLocation } from '../../config/env';
 import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
 import { jwtSecret } from '../../config/secrets';
-import getReturnTo from './utils/get-return-to';
+import { getReturnTo, getRedirectBase } from './utils/get-return-to';
 
 const passportOptions = {
   emailOptional: true,
@@ -83,10 +82,9 @@ export const devSaveResponseAuthCookies = () => {
 export const devLoginRedirect = () => {
   return (req, res) => {
     const successRedirect = req => {
-      if (req && req.query && req.query.returnTo) {
-        return req.query.returnTo;
-      }
-      return `${homeLocation}/learn`;
+      // this mirrors the production approach, but without any validation
+      // TODO: redirect / to /learn after login
+      return req.header('Referer');
     };
 
     let redirect = url.parse(successRedirect(req), true);
@@ -102,14 +100,6 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
   res,
   next
 ) => {
-  const state = req && req.query && req.query.state;
-  const { returnTo } = getReturnTo(state, jwtSecret);
-
-  // TODO: getReturnTo returns a {returnTo, success} object, so we can use
-  // 'success' to show a flash message, but currently it immediately gets
-  // overwritten by a second message. We should either change the message if
-  // !success or allow multiple messages to appear at once.
-
   return passport.authenticate(
     strategy,
     { session: false },
@@ -144,12 +134,22 @@ we recommend using your email address: ${user.email} to sign in instead.
         setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);
       }
-      // TODO: handle returning to /email-sign-up without relying on
-      // homeLocation
+
+      const state = req && req.query && req.query.state;
+      // returnTo, origin and pathPrefix are audited by getReturnTo
+      const { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
+      const redirectBase = getRedirectBase(origin, pathPrefix);
+
+      // TODO: getReturnTo could return a success flag to show a flash message,
+      // but currently it immediately gets overwritten by a second message. We
+      // should either change the message if the flag is present or allow
+      // multiple messages to appear at once.
+
+      // TODO: redirect / to /learn after login
       if (user.acceptedPrivacyTerms) {
         return res.redirectWithFlash(returnTo);
       } else {
-        return res.redirectWithFlash(`${homeLocation}/email-sign-up`);
+        return res.redirectWithFlash(`${redirectBase}/email-sign-up`);
       }
     }
   )(req, res, next);
