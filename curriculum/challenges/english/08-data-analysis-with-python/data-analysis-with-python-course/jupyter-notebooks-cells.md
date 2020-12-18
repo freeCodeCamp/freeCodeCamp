@@ -23,7 +23,7 @@ What are the three main types of Jupyter Notebook Cell?
 
 ## --answers--
 
-Code, MarkDown, and Python
+Code, Markdown, and Python
 
 ---
 
@@ -36,4 +36,3 @@ MarkDown, Python, and Raw
 ## --video-solution--
 
 2
-
