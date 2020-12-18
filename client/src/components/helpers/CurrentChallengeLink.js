@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { apiLocation, clientLocale } from '../../../config/env.json';
+import { apiLocation } from '../../../config/env.json';
 
 const currentChallengeApi = '/challenges/current-challenge';
 
@@ -18,10 +18,7 @@ function CurrentChallengeLink({ children, isLargeBtn }) {
     classNames = 'btn btn-primary btn-block';
   }
   return (
-    <a
-      className={classNames}
-      href={`${apiLocation}${currentChallengeApi}?clientLocale=${clientLocale}`}
-    >
+    <a className={classNames} href={`${apiLocation}${currentChallengeApi}`}>
       {children}
     </a>
   );
