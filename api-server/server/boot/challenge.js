@@ -12,13 +12,15 @@ import { ObjectID } from 'mongodb';
 import isNumeric from 'validator/lib/isNumeric';
 import isURL from 'validator/lib/isURL';
 
-import { chineseHomeLocation, homeLocation } from '../../../config/env';
-
 import { ifNoUserSend } from '../utils/middleware';
 import { dasherize } from '../../../utils/slugs';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
-import { availableLangs } from '../../../client/i18n/allLangs';
+import {
+  getParamsFromReq,
+  getRedirectBase,
+  normalizeParams
+} from '../utils/get-return-to';
 
 const log = debug('fcc:boot:challenges');
 
@@ -327,25 +329,14 @@ function backendChallengeCompleted(req, res, next) {
     .subscribe(() => {}, next);
 }
 
-// TODO: can we use axios.get and headers instead of a query param?
 // TODO: extend tests to cover www.freecodecamp.org/language and
 // chinese.freecodecamp.org
-export function createRedirectToCurrentChallenge(
-  challengeUrlResolver,
-  { _homeLocation = homeLocation } = {}
-) {
+export function createRedirectToCurrentChallenge(challengeUrlResolver) {
   return async function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
-    const { clientLocale } = req.query;
-    // to prevent weird redirects, only specific languages are allowed
-    const redirectPathSegment =
-      availableLangs.client.includes(clientLocale) && clientLocale !== 'english'
-        ? `/${clientLocale}`
-        : '';
-    const redirectBase =
-      redirectPathSegment === '/chinese'
-        ? chineseHomeLocation
-        : `${_homeLocation}${redirectPathSegment}`;
+    const { origin, pathPrefix } = normalizeParams(getParamsFromReq(req));
+
+    const redirectBase = getRedirectBase(origin, pathPrefix);
     if (!user) {
       return res.redirect(redirectBase + '/learn');
     }
