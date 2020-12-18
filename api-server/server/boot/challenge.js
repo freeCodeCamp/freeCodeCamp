@@ -32,7 +32,9 @@ export default async function bootChallenge(app, done) {
     await getChallenges()
   );
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
-    challengeUrlResolver
+    challengeUrlResolver,
+    normalizeParams,
+    getParamsFromReq
   );
 
   api.post(
@@ -331,7 +333,11 @@ function backendChallengeCompleted(req, res, next) {
 
 // TODO: extend tests to cover www.freecodecamp.org/language and
 // chinese.freecodecamp.org
-export function createRedirectToCurrentChallenge(challengeUrlResolver) {
+export function createRedirectToCurrentChallenge(
+  challengeUrlResolver,
+  normalizeParams,
+  getParamsFromReq
+) {
   return async function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
     const { origin, pathPrefix } = normalizeParams(getParamsFromReq(req));
