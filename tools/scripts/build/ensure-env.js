@@ -19,6 +19,7 @@ function checkClientLocale() {
 
 if (FREECODECAMP_NODE_ENV !== 'development') {
   const locationKeys = [
+    'chineseHomeLocation',
     'homeLocation',
     'apiLocation',
     'forumLocation',
