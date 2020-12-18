@@ -31,7 +31,7 @@ Code, Markdown, and Raw
 
 ---
 
-MarkDown, Python, and Raw
+Markdown, Python, and Raw
 
 ## --video-solution--
 
