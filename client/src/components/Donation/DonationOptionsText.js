@@ -19,7 +19,7 @@ const DonationOptionsText = ({ isAlert }) => {
             'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'
           }
         >
-          other ways we could support our none-profits mission
+          other ways we could support our non-profit's mission
         </a>
         .
       </p>
