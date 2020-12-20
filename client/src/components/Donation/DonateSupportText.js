@@ -1,10 +1,12 @@
 import React from 'react';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
+import DonationOptionsText from './DonationOptionsText';
 
 const DonateSupportText = () => (
   <Row className='donate-text'>
     <Col xs={12}>
       <hr />
+      <DonationOptionsText isAlert={false} />
       <h4>
         <b>Need help with your current or past donations?</b>
       </h4>

@@ -10,6 +10,7 @@ import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
 import DonateSupportText from '../components/Donation/DonateSupportText';
+import DonationOptionsText from '../components/Donation/DonationOptionsText';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import CampersImage from '../components/landing/components/CampersImage';
 
@@ -100,13 +101,7 @@ export class DonatePage extends Component {
                       currently have a recurring donation.
                     </p>
                     <br />
-                    <p>
-                      You can make an additional one-time donation of any amount
-                      using this link:{' '}
-                      <a href='https://www.paypal.me/freecodecamp'>
-                        https://www.paypal.me/freecodecamp
-                      </a>
-                    </p>
+                    <DonationOptionsText isAlert={true} />
                   </Alert>
                 ) : null}
                 <DonateText isDonating={isDonating} />
