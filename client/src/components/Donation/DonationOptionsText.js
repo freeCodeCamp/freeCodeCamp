@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const DonationOptionsText = ({ isAlert }) => {
   const Title =
-    'Want to make a bigger one time donation, mail us a check, or give in other ways?';
+    'Want to make a bigger one-time donation, mail us a check, or give in other ways?';
 
   return (
     <>
