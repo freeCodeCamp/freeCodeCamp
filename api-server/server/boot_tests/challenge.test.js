@@ -330,11 +330,18 @@ describe('boot/challenge', () => {
   describe('redirectToCurrentChallenge', () => {
     const mockHomeLocation = 'https://www.example.com';
     const mockLearnUrl = `${mockHomeLocation}/learn`;
+    const mockgetParamsFromReq = () => ({
+      returnTo: mockLearnUrl,
+      origin: mockHomeLocation,
+      pathPrefix: ''
+    });
+    const mockNormalizeParams = params => params;
 
     it('redirects to the learn base url for non-users', async done => {
       const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
         () => {},
-        { _homeLocation: mockHomeLocation, _learnUrl: mockLearnUrl }
+        mockNormalizeParams,
+        mockgetParamsFromReq
       );
       const req = mockReq();
       const res = mockRes();
@@ -356,7 +363,8 @@ describe('boot/challenge', () => {
       const expectedUrl = `${mockHomeLocation}${requestedChallengeUrl}`;
       const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
         challengeUrlResolver,
-        { _homeLocation: mockHomeLocation, _learnUrl: mockLearnUrl }
+        mockNormalizeParams,
+        mockgetParamsFromReq
       );
       const req = mockReq({
         user: mockUser
@@ -379,7 +387,8 @@ describe('boot/challenge', () => {
       );
       const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
         challengeUrlResolver,
-        { _homeLocation: mockHomeLocation, _learnUrl: mockLearnUrl }
+        mockNormalizeParams,
+        mockgetParamsFromReq
       );
       const req = mockReq({
         user: { ...mockUser, currentChallengeId: '' }
