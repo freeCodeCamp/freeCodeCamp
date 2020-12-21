@@ -27,9 +27,7 @@ function Login(props) {
     children,
     isSignedIn
   } = props;
-  const href = isSignedIn
-    ? `${homeLocation}/learn`
-    : `${apiLocation}/signin?returnTo=${homeLocation}/learn`;
+  const href = isSignedIn ? `${homeLocation}/learn` : `${apiLocation}/signin`;
   return (
     <Button
       bsStyle='default'
