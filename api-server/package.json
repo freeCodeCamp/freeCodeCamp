@@ -70,7 +70,7 @@
     "babel-plugin-transform-function-bind": "^6.22.0",
     "babel-plugin-transform-imports": "^1.5.1",
     "cross-env": "^6.0.3",
-    "jest": "^26.6.1",
+    "jest": "^26.6.3",
     "loopback-component-explorer": "^6.4.0",
     "nodemon": "^2.0.6",
     "passport-mock-strategy": "^2.0.0",
