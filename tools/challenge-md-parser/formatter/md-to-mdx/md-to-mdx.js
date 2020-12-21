@@ -1,4 +1,4 @@
-const readDirP = require('readdirp-walk');
+const readDirP = require('readdirp');
 const fs = require('fs');
 const path = require('path');
 const { getText } = require('./transform-to-mdx');
