@@ -3,13 +3,21 @@
 const { homeLocation } = require('../../../config/env.json');
 const jwt = require('jsonwebtoken');
 
-const getReturnTo = require('./get-return-to');
+const { getReturnTo } = require('./get-return-to');
 
 const validJWTSecret = 'this is a super secret string';
 const invalidJWTSecret = 'This is not correct secret';
 const validReturnTo = 'https://www.freecodecamp.org/settings';
 const invalidReturnTo = 'https://www.freecodecamp.org.fake/settings';
 const defaultReturnTo = `${homeLocation}/learn`;
+const defaultOrigin = homeLocation;
+const defaultPrefix = '';
+
+const defaultObject = {
+  returnTo: defaultReturnTo,
+  origin: defaultOrigin,
+  pathPrefix: defaultPrefix
+};
 
 describe('get-return-to', () => {
   describe('getReturnTo', () => {
@@ -21,8 +29,8 @@ describe('get-return-to', () => {
         validJWTSecret
       );
       expect(getReturnTo(encryptedReturnTo, validJWTSecret)).toStrictEqual({
-        returnTo: validReturnTo,
-        success: true
+        ...defaultObject,
+        returnTo: validReturnTo
       });
     });
 
@@ -33,10 +41,9 @@ describe('get-return-to', () => {
         { returnTo: validReturnTo },
         invalidJWTSecret
       );
-      expect(getReturnTo(encryptedReturnTo, validJWTSecret)).toStrictEqual({
-        returnTo: defaultReturnTo,
-        success: false
-      });
+      expect(getReturnTo(encryptedReturnTo, validJWTSecret)).toStrictEqual(
+        defaultObject
+      );
     });
 
     it('should return a default url for unknown origins', () => {
@@ -45,10 +52,9 @@ describe('get-return-to', () => {
         { returnTo: invalidReturnTo },
         validJWTSecret
       );
-      expect(getReturnTo(encryptedReturnTo, validJWTSecret)).toStrictEqual({
-        returnTo: defaultReturnTo,
-        success: false
-      });
+      expect(getReturnTo(encryptedReturnTo, validJWTSecret)).toStrictEqual(
+        defaultObject
+      );
     });
   });
 });
