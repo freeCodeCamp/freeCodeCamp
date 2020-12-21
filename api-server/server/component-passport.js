@@ -4,14 +4,18 @@ import {
   // prettier ignore
   PassportConfigurator
 } from '@freecodecamp/loopback-component-passport';
-import url from 'url';
 import dedent from 'dedent';
 
 import { getUserById } from './utils/user-stats';
 import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
 import { jwtSecret } from '../../config/secrets';
-import { getReturnTo, getRedirectBase } from './utils/get-return-to';
+import {
+  getReturnTo,
+  getRedirectBase,
+  getParamsFromReq,
+  isRootPath
+} from './utils/get-return-to';
 
 const passportOptions = {
   emailOptional: true,
@@ -81,17 +85,12 @@ export const devSaveResponseAuthCookies = () => {
 
 export const devLoginRedirect = () => {
   return (req, res) => {
-    const successRedirect = req => {
-      // this mirrors the production approach, but without any validation
-      // TODO: redirect / to /learn after login
-      return req.header('Referer');
-    };
-
-    let redirect = url.parse(successRedirect(req), true);
-    delete redirect.search;
-
-    redirect = url.format(redirect);
-    return res.redirect(redirect);
+    // this mirrors the production approach, but without any validation
+    let { returnTo, origin, pathPrefix } = getParamsFromReq(req);
+    returnTo += isRootPath(getRedirectBase(origin, pathPrefix), returnTo)
+      ? '/learn'
+      : '';
+    return res.redirect(returnTo);
   };
 };
 
@@ -137,7 +136,7 @@ we recommend using your email address: ${user.email} to sign in instead.
 
       const state = req && req.query && req.query.state;
       // returnTo, origin and pathPrefix are audited by getReturnTo
-      const { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
+      let { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
       const redirectBase = getRedirectBase(origin, pathPrefix);
 
       // TODO: getReturnTo could return a success flag to show a flash message,
@@ -145,8 +144,8 @@ we recommend using your email address: ${user.email} to sign in instead.
       // should either change the message if the flag is present or allow
       // multiple messages to appear at once.
 
-      // TODO: redirect / to /learn after login
       if (user.acceptedPrivacyTerms) {
+        returnTo += isRootPath(redirectBase, returnTo) ? '/learn' : '';
         return res.redirectWithFlash(returnTo);
       } else {
         return res.redirectWithFlash(`${redirectBase}/email-sign-up`);
