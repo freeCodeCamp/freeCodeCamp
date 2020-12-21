@@ -32,7 +32,7 @@
     "express-flash": "~0.0.2",
     "express-session": "^1.17.1",
     "express-validator": "^6.7.0",
-    "googleapis": "^42.0.0",
+    "googleapis": "^66.0.0",
     "helmet": "^3.23.3",
     "helmet-csp": "^2.10.0",
     "jsonwebtoken": "^8.5.1",
