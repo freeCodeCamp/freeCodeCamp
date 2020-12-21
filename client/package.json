@@ -75,7 +75,7 @@
     "sass.js": "^0.11.0",
     "store": "^2.0.12",
     "typescript": "^4.1.2",
-    "validator": "^13.1.17"
+    "validator": "^13.5.2"
   },
   "keywords": [
     "gatsby"
