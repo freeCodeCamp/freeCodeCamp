@@ -16,6 +16,7 @@ import { ifUserRedirectTo, ifNoUserRedirectTo } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { decodeEmail } from '../../common/utils';
+import { getParamsFromReq } from '../utils/get-return-to';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 if (isSignUpDisabled) {
@@ -56,7 +57,8 @@ module.exports = function enableAuthentication(app) {
     );
   } else {
     api.get('/signin', ifUserRedirect, (req, res, next) => {
-      const state = jwt.sign({ returnTo: req.query.returnTo }, jwtSecret);
+      const { returnTo, origin, pathPrefix } = getParamsFromReq(req);
+      const state = jwt.sign({ returnTo, origin, pathPrefix }, jwtSecret);
       return passport.authenticate('auth0-login', { state })(req, res, next);
     });
 
