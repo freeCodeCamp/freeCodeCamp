@@ -4,15 +4,18 @@ import {
   // prettier ignore
   PassportConfigurator
 } from '@freecodecamp/loopback-component-passport';
-import url from 'url';
 import dedent from 'dedent';
 
 import { getUserById } from './utils/user-stats';
-import { homeLocation } from '../../config/env';
 import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
 import { jwtSecret } from '../../config/secrets';
-import getReturnTo from './utils/get-return-to';
+import {
+  getReturnTo,
+  getRedirectBase,
+  getParamsFromReq,
+  isRootPath
+} from './utils/get-return-to';
 
 const passportOptions = {
   emailOptional: true,
@@ -82,18 +85,12 @@ export const devSaveResponseAuthCookies = () => {
 
 export const devLoginRedirect = () => {
   return (req, res) => {
-    const successRedirect = req => {
-      if (req && req.query && req.query.returnTo) {
-        return req.query.returnTo;
-      }
-      return `${homeLocation}/learn`;
-    };
-
-    let redirect = url.parse(successRedirect(req), true);
-    delete redirect.search;
-
-    redirect = url.format(redirect);
-    return res.redirect(redirect);
+    // this mirrors the production approach, but without any validation
+    let { returnTo, origin, pathPrefix } = getParamsFromReq(req);
+    returnTo += isRootPath(getRedirectBase(origin, pathPrefix), returnTo)
+      ? '/learn'
+      : '';
+    return res.redirect(returnTo);
   };
 };
 
@@ -102,14 +99,6 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
   res,
   next
 ) => {
-  const state = req && req.query && req.query.state;
-  const { returnTo } = getReturnTo(state, jwtSecret);
-
-  // TODO: getReturnTo returns a {returnTo, success} object, so we can use
-  // 'success' to show a flash message, but currently it immediately gets
-  // overwritten by a second message. We should either change the message if
-  // !success or allow multiple messages to appear at once.
-
   return passport.authenticate(
     strategy,
     { session: false },
@@ -144,12 +133,22 @@ we recommend using your email address: ${user.email} to sign in instead.
         setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);
       }
-      // TODO: handle returning to /email-sign-up without relying on
-      // homeLocation
+
+      const state = req && req.query && req.query.state;
+      // returnTo, origin and pathPrefix are audited by getReturnTo
+      let { returnTo, origin, pathPrefix } = getReturnTo(state, jwtSecret);
+      const redirectBase = getRedirectBase(origin, pathPrefix);
+
+      // TODO: getReturnTo could return a success flag to show a flash message,
+      // but currently it immediately gets overwritten by a second message. We
+      // should either change the message if the flag is present or allow
+      // multiple messages to appear at once.
+
       if (user.acceptedPrivacyTerms) {
+        returnTo += isRootPath(redirectBase, returnTo) ? '/learn' : '';
         return res.redirectWithFlash(returnTo);
       } else {
-        return res.redirectWithFlash(`${homeLocation}/email-sign-up`);
+        return res.redirectWithFlash(`${redirectBase}/email-sign-up`);
       }
     }
   )(req, res, next);
