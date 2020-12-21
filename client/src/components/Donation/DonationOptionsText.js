@@ -13,7 +13,7 @@ const DonationOptionsText = ({ isAlert }) => {
         </h4>
       )}
       <p className='donation-options'>
-        {Title} Here are many{' '}
+        {isAlert && Title} Here are many{' '}
         <a
           href={
             'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'
