@@ -68,6 +68,10 @@ p {
   overflow-wrap: break-word;
 }
 
+::selection {
+  background-color: rgba(var(--highlight-color), 0.3);
+}
+
 @media (max-width: 500px) {
   .big-heading {
     font-size: 1.5rem !important;
@@ -459,7 +463,7 @@ pre {
 .has-success.checkbox label,
 .has-success.radio-inline label,
 .has-success.checkbox-inline label {
-  color: var(--highlight-color);
+  color: rgb(var(--highlight-color));
 }
 
 .has-error .help-block,
