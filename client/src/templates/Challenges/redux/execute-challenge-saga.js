@@ -157,7 +157,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.err = message + '\n' + stack;
         newTest.stack = stack.replace(/ at eval.*/, '');
       }
-      yield put(updateConsole(`${newTest.message}\n${newTest.stack}`));
+      yield put(updateConsole(`${newTest.message}\n${newTest.stack || ''}`));
     } finally {
       testResults.push(newTest);
     }

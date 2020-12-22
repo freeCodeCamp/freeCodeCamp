@@ -133,7 +133,8 @@ If my unit of measurement is invalid, returned will be `'invalid unit'`.
 async (getUserInput) => {
   try {
     const data = await $.get(getUserInput('url') + '/api/convert?input=1min');
-    assert(data.error === 'invalid unit' || data === 'invalid unit');
+    const error = data.error ?? data;
+    assert.equal(error, 'invalid unit');
   } catch (xhr) {
     throw new Error(xhr.responseText || xhr.message);
   }
@@ -148,7 +149,8 @@ async (getUserInput) => {
     const data = await $.get(
       getUserInput('url') + '/api/convert?input=1//2gal'
     );
-    assert(data.error === 'invalid number' || data === 'invalid number');
+    const error = data.error ?? data;
+    assert.equal(error, 'invalid number');
   } catch (xhr) {
     throw new Error(xhr.responseText || xhr.message);
   }
@@ -163,10 +165,9 @@ async (getUserInput) => {
     const data = await $.get(
       getUserInput('url') + '/api/convert?input=1//2min'
     );
-    assert(
-      data.error === 'invalid number and unit' ||
-        data === 'invalid number and unit'
-    );
+    console.log(data);
+    const error = data.error ?? data;
+    assert.equal(error, 'invalid number and unit');
   } catch (xhr) {
     throw new Error(xhr.responseText || xhr.message);
   }
