@@ -1,12 +1,12 @@
 import accepts from 'accepts';
-import { getParamsFromReq } from '../utils/get-return-to';
+import { getRedirectParams } from '../utils/get-return-to';
 
 export default function fourOhFour(app) {
   app.all('*', function(req, res) {
     const accept = accepts(req);
     const type = accept.type('html', 'json', 'text');
     const { path } = req;
-    const { origin } = getParamsFromReq(req);
+    const { origin } = getRedirectParams(req);
 
     if (type === 'html') {
       req.flash('danger', `We couldn't find path ${path}`);

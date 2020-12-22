@@ -9,7 +9,7 @@ import {
 import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
-import { getParamsFromReq } from '../utils/get-return-to';
+import { getRedirectParams } from '../utils/get-return-to';
 
 const authRE = /^\/auth\//;
 const confirmEmailRE = /^\/confirm-email$/;
@@ -50,7 +50,7 @@ export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {
 
 export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
   function requestAuthorisation(req, res, next) {
-    const { origin } = getParamsFromReq(req);
+    const { origin } = getRedirectParams(req);
     const { path } = req;
     if (!isAllowedPath(path)) {
       const { accessToken, error, jwt } = getAccessTokenFromRequest(

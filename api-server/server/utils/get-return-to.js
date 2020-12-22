@@ -55,7 +55,7 @@ function getRedirectBase(origin, pathPrefix) {
 // TODO: this might be cleaner if we just use a URL for returnTo (call it
 // returnURL for clarity) rather than pulling out origin and returning it
 // separately
-function getParamsFromReq(req, _normalizeParams = normalizeParams) {
+function getRedirectParams(req, _normalizeParams = normalizeParams) {
   const url = req.header('Referer');
   // since we do not always redirect the user back to the page they were on
   // we need client locale and origin to construct the redirect url.
@@ -76,5 +76,5 @@ function isRootPath(redirectBase, returnUrl) {
 module.exports.getReturnTo = getReturnTo;
 module.exports.getRedirectBase = getRedirectBase;
 module.exports.normalizeParams = normalizeParams;
-module.exports.getParamsFromReq = getParamsFromReq;
+module.exports.getRedirectParams = getRedirectParams;
 module.exports.isRootPath = isRootPath;

@@ -6,7 +6,7 @@ import {
   getAccessTokenFromRequest,
   removeCookies
 } from './getSetAccessToken.js';
-import { getParamsFromReq } from './get-return-to.js';
+import { getRedirectParams } from './get-return-to.js';
 
 export function ifNoUserRedirectHome(message, type = 'errors') {
   return function(req, res, next) {
@@ -15,7 +15,7 @@ export function ifNoUserRedirectHome(message, type = 'errors') {
       return next();
     }
 
-    const { origin } = getParamsFromReq(req);
+    const { origin } = getRedirectParams(req);
     req.flash(type, message || `You must be signed in to access ${path}`);
 
     return res.redirect(origin);
@@ -60,7 +60,7 @@ export function ifUserRedirectTo(status) {
   status = status === 301 ? 301 : 302;
   return (req, res, next) => {
     const { accessToken } = getAccessTokenFromRequest(req);
-    const { origin } = getParamsFromReq(req);
+    const { origin } = getRedirectParams(req);
     if (req.user && accessToken) {
       if (req.query && req.query.returnTo) {
         return res.status(status).redirect(req.query.returnTo);
