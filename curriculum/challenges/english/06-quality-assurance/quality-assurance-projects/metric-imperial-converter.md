@@ -165,7 +165,6 @@ async (getUserInput) => {
     const data = await $.get(
       getUserInput('url') + '/api/convert?input=1//2min'
     );
-    console.log(data);
     const error = data.error ?? data;
     assert.equal(error, 'invalid number and unit');
   } catch (xhr) {
