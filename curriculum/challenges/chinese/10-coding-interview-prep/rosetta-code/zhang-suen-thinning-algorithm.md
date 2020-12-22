@@ -1,13 +1,13 @@
 ---
 id: 594810f028c0303b75339ad7
-title: Zhang-Suen thinning algorithm
+title: Zhang-Suen 细化算法
 challengeType: 5
 forumTopicId: 302347
 ---
 
 # --description--
 
-This is an algorithm used to thin a black and white i.e. one bit per pixel images. For example, with an input image of:
+This is an algorithm used to thin a black and white i.e. one bit per pixel images. 例如，输入图像如下：
 
 <!-- TODO write fully in markdown>
 <!-- markdownlint-disable -->
@@ -31,7 +31,7 @@ This is an algorithm used to thin a black and white i.e. one bit per pixel image
  ########     ####### ######         ############# ######
 </pre>
 
-It produces the thinned output:
+细化后的输出图像为：It produces the thinned output:
 
 <pre>
 
