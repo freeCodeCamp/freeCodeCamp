@@ -62,12 +62,8 @@ export function postChargeStripe(body) {
   return post('/donate/charge-stripe', body);
 }
 
-export function verifySubscriptionPaypal(body) {
+export function addDonation(body) {
   return post('/donate/add-donation', body);
-}
-
-export function postCreateHmacHash(body) {
-  return post(`/donate/create-hmac-hash`, body);
 }
 
 export function putUpdateLegacyCert(body) {

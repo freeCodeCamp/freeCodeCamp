@@ -12,6 +12,7 @@ const {
   ENGLISH_VIDEO_CHALLENGE,
   TRANSLATED_CERTIFICATE,
   TRANSLATED_CHALLENGE,
+  TRANSLATED_CHALLENGE_NO_TITLE,
   TRANSLATED_VIDEO_CHALLENGE
   // WRONG_NUM_TESTS_CHALLENGE
 } = require('./__fixtures__/challenge-objects');
@@ -20,6 +21,11 @@ const { SIMPLE_TRANSLATION } = require('./__mocks__/mock-comments');
 const COMBINED_CHALLENGE = mergeChallenges(
   ENGLISH_CHALLENGE,
   TRANSLATED_CHALLENGE
+);
+
+const COMBINED_CHALLENGE_NO_TITLE = mergeChallenges(
+  ENGLISH_CHALLENGE,
+  TRANSLATED_CHALLENGE_NO_TITLE
 );
 
 const COMBINED_CHALLENGE_TWO_SOLUTIONS = mergeChallenges(
@@ -100,10 +106,19 @@ describe('translation parser', () => {
         expect(actualStrings[i]).toBe(expectedStrings[i]);
       }
     });
-    it('takes the localTitle from the second challenge', () => {
-      expect(COMBINED_CHALLENGE.localeTitle).toBe(
-        TRANSLATED_CHALLENGE.localeTitle
-      );
+    it('takes the title from the second challenge', () => {
+      expect(COMBINED_CHALLENGE.title).toBe(TRANSLATED_CHALLENGE.title);
+    });
+
+    // TODO: throw in production?
+    it("takes the first challenge's title if the second is missing", () => {
+      expect(COMBINED_CHALLENGE_NO_TITLE.title).toBe(ENGLISH_CHALLENGE.title);
+    });
+
+    // 'originalTitle' is just used to create the dashedName (which must be
+    // the same in both challenges, but only gets added after parsing)
+    it('creates originalTitle from the first challenge', () => {
+      expect(COMBINED_CHALLENGE.originalTitle).toBe(ENGLISH_CHALLENGE.title);
     });
     // TODO: reinstate this after alpha testing.
     // it('throws an error if the numbers of tests do not match', () => {
@@ -190,15 +205,6 @@ describe('translation parser', () => {
       );
     });
 
-    // If a comment follows '"` it could be inside a string, so we should
-    // not try and translate it - erring on the side of caution.
-    it('should ignore comments if they follow an open quote', () => {
-      const seed = `var str = '// Add your code below this line'
-      var str2 = '// Add your code above this line`;
-      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
-        seed
-      );
-    });
     it('replaces multiple English comments with their translations', () => {
       const seed = `inline comment //  Add your code below this line
          // Add your code below this line `;
@@ -315,6 +321,32 @@ describe('translation parser', () => {
       ).toBe(transSeed);
     });
 
+    it('replaces English script comments with their translations', () => {
+      const seed = `<script>
+        // Add your code below this line
+      </script>`;
+      const transSeed = `<script>
+        // (Chinese) Add your code below this line (Chinese)
+      </script>`;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+      ).toBe(transSeed);
+    });
+
+    it('replaces multiple script comments with their translations', () => {
+      const seed = `<script>
+        /* Add your code below this line */
+        // Add your code below this line
+      </script>`;
+      const transSeed = `<script>
+        /* (Chinese) Add your code below this line (Chinese) */
+        // (Chinese) Add your code below this line (Chinese)
+      </script>`;
+      expect(
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'html')
+      ).toBe(transSeed);
+    });
+
     it('ignores html comments inside JavaScript', () => {
       const seed = `<div> <!--  Add your code below this line
          Add your code above this line --> <span>change code below this line</span>  `;
@@ -376,6 +408,7 @@ describe('translation parser', () => {
       /* this is not a comment */
     </style>`;
       const seedHTML = `<div> <!--  this is not a comment --> `;
+      const seedScript = `<script> // this is not a comment </script>`;
 
       translateComments(seedJSX, 'chinese', SIMPLE_TRANSLATION, 'jsx');
       expect(logSpy).toBeCalledTimes(1);
@@ -387,7 +420,8 @@ describe('translation parser', () => {
       expect(logSpy).toBeCalledTimes(4);
       translateComments(seedHTML, 'chinese', SIMPLE_TRANSLATION, 'html');
       expect(logSpy).toBeCalledTimes(5);
-      logSpy.mockRestore();
+      translateComments(seedScript, 'chinese', SIMPLE_TRANSLATION, 'html');
+      expect(logSpy).toBeCalledTimes(6);
     });
   });
 });

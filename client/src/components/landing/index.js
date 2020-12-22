@@ -19,7 +19,6 @@ export const Landing = ({ page = 'landing' }) => {
   const data = useStaticQuery(graphql`
     query certifications {
       challenges: allChallengeNode(
-        filter: { isHidden: { eq: false } }
         sort: { fields: [superOrder, order, challengeOrder] }
       ) {
         nodes {
@@ -32,7 +31,7 @@ export const Landing = ({ page = 'landing' }) => {
   return (
     <Fragment>
       <Helmet>
-        <title>Learn to code at home | freeCodeCamp.org</title>
+        <title>Learn to Code for Free – Coding Courses for Busy People</title>
       </Helmet>
       <main className='landing-page'>
         <Grid>

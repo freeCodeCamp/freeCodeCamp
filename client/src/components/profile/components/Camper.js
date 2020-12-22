@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Row, Image } from '@freecodecamp/react-bootstrap';
+import { Col, Row } from '@freecodecamp/react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAward,
   faHeart,
   faCalendar
 } from '@fortawesome/free-solid-svg-icons';
-import Identicon from 'react-identicons';
+
+import { AvatarRenderer } from '../../helpers';
 
 import SocialIcons from './SocialIcons';
+import Link from '../../helpers/Link';
 
 import './camper.css';
 
@@ -77,29 +79,16 @@ function Camper({
   twitter,
   website
 }) {
-  // A lot of the user-profiles are still using the defunct service.
-  const avatar = /example.com|identicon.org/.test(picture) ? (
-    <Identicon
-      bg={'#858591'}
-      count={5}
-      fg={'#0A0A23'}
-      padding={5}
-      size={256}
-      string={username}
-    />
-  ) : (
-    <Image
-      alt={username + "'s avatar"}
-      className='avatar'
-      responsive={true}
-      src={picture}
-    />
-  );
   return (
     <div>
       <Row>
         <Col className='avatar-container' xs={12}>
-          <div className={isDonating ? 'supporter-img' : ''}>{avatar}</div>
+          <AvatarRenderer
+            isDonating={isDonating}
+            isTopContributor={yearsTopContributor.length > 0}
+            picture={picture}
+            userName={username}
+          />
         </Col>
       </Row>
       <SocialIcons
@@ -132,7 +121,8 @@ function Camper({
         <div>
           <br />
           <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} /> Top Contributor
+            <FontAwesomeIcon icon={faAward} />{' '}
+            <Link to={'/top-contributors'}>Top Contributor</Link>
           </p>
           <p className='text-center'>{joinArray(yearsTopContributor)}</p>
         </div>

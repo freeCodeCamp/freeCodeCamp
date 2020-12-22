@@ -85,12 +85,17 @@ export class Project extends Component {
     const {
       challengeMounted,
       data: {
-        challengeNode: { title, challengeType }
+        challengeNode: { title, challengeType, helpCategory }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
     } = this.props;
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
     this._container.focus();
   }
@@ -104,7 +109,7 @@ export class Project extends Component {
     const {
       challengeMounted,
       data: {
-        challengeNode: { title: currentTitle, challengeType }
+        challengeNode: { title: currentTitle, challengeType, helpCategory }
       },
       pageContext: { challengeMeta },
       updateChallengeMeta
@@ -113,7 +118,8 @@ export class Project extends Component {
       updateChallengeMeta({
         ...challengeMeta,
         title: currentTitle,
-        challengeType
+        challengeType,
+        helpCategory
       });
       challengeMounted(challengeMeta.id);
     }
@@ -233,6 +239,7 @@ export class Project extends Component {
                       // index should be fine as a key:
                       <label className='video-quiz-option-label' key={index}>
                         <input
+                          aria-label='Answer'
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
@@ -242,7 +249,7 @@ export class Project extends Component {
                         />{' '}
                         <span className='video-quiz-input-visible'>
                           {this.state.selectedOption === index ? (
-                            <span className='video-quiz-selected-input'></span>
+                            <span className='video-quiz-selected-input' />
                           ) : null}
                         </span>
                         <PrismFormatted
@@ -304,6 +311,7 @@ export const query = graphql`
       title
       description
       challengeType
+      helpCategory
       fields {
         blockName
         slug

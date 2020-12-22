@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
-if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
+// PIPELINE_ENV  is 'true' in the build pipeline
+if (process.env.PIPELINE_ENV !== 'true') {
   const envPath = path.resolve(__dirname, '../.env');
   if (!fs.existsSync(envPath)) {
     throw Error('.env not found, please copy sample.env to .env.');
@@ -16,11 +17,11 @@ const {
   NEWS_LOCATION: news,
   LOCALE: locale,
   STRIPE_PUBLIC_KEY: stripePublicKey,
-  SERVICEBOT_ID: servicebotId,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey,
   PAYPAL_CLIENT_ID: paypalClientId,
-  DEPLOYMENT_ENV: deploymentEnv
+  DEPLOYMENT_ENV: deploymentEnv,
+  SHOW_UPCOMING_CHANGES: showUpcomingChanges
 } = process.env;
 
 const locations = {
@@ -38,20 +39,17 @@ module.exports = Object.assign(locations, {
     !stripePublicKey || stripePublicKey === 'pk_from_stripe_dashboard'
       ? null
       : stripePublicKey,
-  servicebotId:
-    !servicebotId || servicebotId === 'servicebot_id_from_servicebot_dashboard'
-      ? null
-      : servicebotId,
   algoliaAppId:
-    !algoliaAppId || algoliaAppId === 'Algolia app id from dashboard'
+    !algoliaAppId || algoliaAppId === 'app_id_from_algolia_dashboard'
       ? null
       : algoliaAppId,
   algoliaAPIKey:
-    !algoliaAPIKey || algoliaAPIKey === 'Algolia api key from dashboard'
+    !algoliaAPIKey || algoliaAPIKey === 'api_key_from_algolia_dashboard'
       ? null
       : algoliaAPIKey,
   paypalClientId:
     !paypalClientId || paypalClientId === 'id_from_paypal_dashboard'
       ? null
-      : paypalClientId
+      : paypalClientId,
+  showUpcomingChanges: showUpcomingChanges === 'true'
 });

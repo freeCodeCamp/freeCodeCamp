@@ -42,7 +42,7 @@ function Flash({ flashMessage, onClose }) {
           style={{
             height: flashMessageHeight + 'px'
           }}
-        ></div>
+        />
       )}
     </>
   );

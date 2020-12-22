@@ -59,10 +59,10 @@ Once you open the MongoDB Atlas page, you should sign up for a new account.
 - Click the **Add New Database User** button that is displayed in the next menu.
 - Enter a new username and password. You can set the privileges to **Read and write to any database** if they are not already. Then click **Add User** to finish creating the user.
 
-### Whitelist your IP address
+### Add your IP address
 
-- If you now click on the green **Get Started** button in the bottom left of your screen, you should see the next step to take highlighted, **Whitelist your IP address**, click on it.
-  - Follow the instructions by clicking on the `IP Whitelist` tab under the `Security` tab.
+- If you now click on the green **Get Started** button in the bottom left of your screen, you should see the next step to take highlighted, **Add your IP address**, click on it.
+  - Follow the instructions by clicking on the `IP Access List` tab under the `Security` tab.
   - Click on the green **ADD IP ADDRESS** button.
   - In the modal, click the **ALLOW ACCESS FROM ANYWHERE** button and you should see `0.0.0.0/0` pre-filled for the whitelist entry field, click the green **Confirm** button.
 

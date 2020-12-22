@@ -100,16 +100,22 @@ export class BackEnd extends Component {
   componentDidUpdate(prevProps) {
     const {
       data: {
-        challengeNode: { title: prevTitle }
+        challengeNode: {
+          title: prevTitle,
+          fields: { tests: prevTests }
+        }
       }
     } = prevProps;
     const {
       data: {
-        challengeNode: { title: currentTitle }
+        challengeNode: {
+          title: currentTitle,
+          fields: { tests: currTests }
+        }
       }
     } = this.props;
-    if (prevTitle !== currentTitle) {
-      this.initializeComponent();
+    if (prevTitle !== currentTitle || prevTests !== currTests) {
+      this.initializeComponent(currentTitle);
     }
   }
 
@@ -123,14 +129,20 @@ export class BackEnd extends Component {
         challengeNode: {
           fields: { tests },
           title,
-          challengeType
+          challengeType,
+          helpCategory
         }
       },
       pageContext: { challengeMeta }
     } = this.props;
     initConsole();
     initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
     challengeMounted(challengeMeta.id);
   }
 
@@ -224,6 +236,7 @@ export const query = graphql`
       description
       instructions
       challengeType
+      helpCategory
       fields {
         blockName
         slug

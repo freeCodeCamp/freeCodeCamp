@@ -1,13 +1,19 @@
 /* global expect */
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import TestRenderer from 'react-test-renderer';
-import { UniversalNav } from './components/UniversalNav';
-import NavLinks from './components/NavLinks';
+import renderer from 'react-test-renderer';
 
-import { forumLocation } from '../../../config/env.json';
+import { UniversalNav } from './components/UniversalNav';
+import { AuthOrProfile } from './components/NavLinks';
 
 describe('<UniversalNav />', () => {
+  const UniversalNavProps = {
+    displayMenu: false,
+    menuButtonRef: {},
+    searchBarRef: {},
+    toggleDisplayMenu: function() {},
+    pathName: '/'
+  };
   it('renders to the DOM', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<UniversalNav {...UniversalNavProps} />);
@@ -15,34 +21,112 @@ describe('<UniversalNav />', () => {
     expect(result).toBeTruthy();
   });
 });
+
 describe('<NavLinks />', () => {
-  const root = TestRenderer.create(<NavLinks />).root;
-  const aTags = root.findAllByType('a');
+  it('shows Curriculum and Sign In buttons when not signed in', () => {
+    const landingPageProps = {
+      pending: false
+    };
+    const shallow = new ShallowRenderer();
+    shallow.render(<AuthOrProfile {...landingPageProps} />);
+    const result = shallow.getRenderOutput();
 
-  // reduces the aTags to href links
-  const links = aTags.reduce((acc, item) => {
-    acc.push(item._fiber.pendingProps.href);
-    return acc;
-  }, []);
-
-  const expectedLinks = ['/learn', '/news', forumLocation];
-
-  it('renders to the DOM', () => {
-    expect(root).toBeTruthy();
-  });
-  it('has 3 links', () => {
-    expect(aTags.length === 3).toBeTruthy();
+    expect(
+      hasForumNavItem(result) &&
+        hasCurriculumNavItem(result) &&
+        hasSignInButton(result)
+    ).toBeTruthy();
   });
 
-  it('has links to news, forum, learn and portfolio', () => {
-    // checks if all links in expected links exist in links
-    expect(expectedLinks.every(elem => links.indexOf(elem) > -1)).toBeTruthy();
+  it('has avatar with default border for default users', () => {
+    const defaultUserProps = {
+      user: {
+        username: 'test-user',
+        picture: 'https://freecodecamp.org/image.png'
+      },
+      pending: false
+    };
+
+    const componentTree = renderer
+      .create(<AuthOrProfile {...defaultUserProps} />)
+      .toJSON();
+
+    expect(avatarHasClass(componentTree, 'default-border')).toBeTruthy();
+  });
+
+  it('has avatar with gold border for donating users', () => {
+    const donatingUserProps = {
+      user: {
+        username: 'test-user',
+        picture: 'https://freecodecamp.org/image.png',
+        isDonating: true
+      },
+      pending: false
+    };
+    const componentTree = renderer
+      .create(<AuthOrProfile {...donatingUserProps} />)
+      .toJSON();
+
+    expect(avatarHasClass(componentTree, 'gold-border')).toBeTruthy();
+  });
+
+  it('has avatar with blue border for top contributors', () => {
+    const topContributorUserProps = {
+      user: {
+        username: 'test-user',
+        picture: 'https://freecodecamp.org/image.png',
+        yearsTopContributor: [2020]
+      },
+      pending: false
+    };
+
+    const componentTree = renderer
+      .create(<AuthOrProfile {...topContributorUserProps} />)
+      .toJSON();
+
+    expect(avatarHasClass(componentTree, 'blue-border')).toBeTruthy();
+  });
+  it('has avatar with purple border for donating top contributors', () => {
+    const topDonatingContributorUserProps = {
+      user: {
+        username: 'test-user',
+        picture: 'https://freecodecamp.org/image.png',
+        isDonating: true,
+        yearsTopContributor: [2020]
+      },
+      pending: false
+    };
+    const componentTree = renderer
+      .create(<AuthOrProfile {...topDonatingContributorUserProps} />)
+      .toJSON();
+    expect(avatarHasClass(componentTree, 'purple-border')).toBeTruthy();
   });
 });
 
-const UniversalNavProps = {
-  displayMenu: false,
-  menuButtonRef: {},
-  searchBarRef: {},
-  toggleDisplayMenu: function() {}
+const navigationLinks = (component, navItem) => {
+  return component.props.children[0].props.children[navItem].props.children
+    .props;
+};
+
+const profileNavItem = component => component[2].children[0];
+
+const hasForumNavItem = component => {
+  const { children, to } = navigationLinks(component, 0);
+  return children === 'Forum' && to === 'https://forum.freecodecamp.org';
+};
+
+const hasCurriculumNavItem = component => {
+  const { children, to } = navigationLinks(component, 1);
+  return children === 'Curriculum' && to === '/learn';
+};
+
+const hasSignInButton = component =>
+  component.props.children[1].props.children === 'Sign In';
+
+const avatarHasClass = (componentTree, classes) => {
+  // componentTree[1].children[0].children[1].props.className
+  return (
+    profileNavItem(componentTree).children[1].props.className ===
+    'avatar-container ' + classes
+  );
 };

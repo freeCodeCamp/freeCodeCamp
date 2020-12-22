@@ -192,6 +192,9 @@ export class CompletionModalInner extends Component {
     if (isOpen) {
       executeGA({ type: 'modal', data: '/completion-modal' });
     }
+    // normally dashedName should be graphQL queried and then passed around,
+    // but it's only used to make a nice filename for downloading, so dasherize
+    // is fine here.
     const dashedName = dasherize(title);
     return (
       <Modal
@@ -217,14 +220,7 @@ export class CompletionModalInner extends Component {
         </Modal.Body>
         <Modal.Footer>
           {isSignedIn ? null : (
-            <Login
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-cta'
-            >
-              Sign in to save your progress
-            </Login>
+            <Login block={true}>Sign in to save your progress</Login>
           )}
           <Button
             block={true}

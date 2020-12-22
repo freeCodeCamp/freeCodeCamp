@@ -99,11 +99,7 @@ export class Block extends Component {
       return (
         <li
           className={'map-challenge-title' + completedClass}
-          id={
-            challenge.title
-              ? dasherize(challenge.title)
-              : dasherize(challenge.frontmatter.title)
-          }
+          id={challenge.dashedName || dasherize(challenge.frontmatter.title)}
           key={'map-challenge' + challenge.fields.slug}
         >
           <span className='badge map-badge'>

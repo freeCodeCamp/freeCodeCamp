@@ -1,0 +1,388 @@
+{
+  "name": "Basic CSS Cafe Menu",
+  "isUpcomingChange": true,
+  "dashedName": "basic-css-cafe-menu",
+  "order": 10,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "isBeta": true,
+  "challengeOrder": [
+    [
+      "5f33071498eb2472b87ddee4",
+      "Part 1"
+    ],
+    [
+      "5f3313e74582ad9d063e3a38",
+      "Part 2"
+    ],
+    [
+      "5f331e55dfab7a896e53c3a1",
+      "Part 3"
+    ],
+    [
+      "5f3326b143638ee1a09ff1e3",
+      "Part 4"
+    ],
+    [
+      "5f33294a6af5e9188dbdb8f3",
+      "Part 5"
+    ],
+    [
+      "5f332a88dc25a0fd25c7687a",
+      "Part 6"
+    ],
+    [
+      "5f332b23c2045fb843337579",
+      "Part 7"
+    ],
+    [
+      "5f33310c1851c6c4da013250",
+      "Part 8"
+    ],
+    [
+      "5f344fc1520b6719f2e35605",
+      "Part 9"
+    ],
+    [
+      "5f344fbc22624a2976425065",
+      "Part 10"
+    ],
+    [
+      "5f344fad8bf01691e71a30eb",
+      "Part 11"
+    ],
+    [
+      "5f344f9c805cd193c33d829c",
+      "Part 12"
+    ],
+    [
+      "5f3477ae9675db8bb7655b30",
+      "Part 13"
+    ],
+    [
+      "5f3477ae34c1239cafe128be",
+      "Part 14"
+    ],
+    [
+      "5f3477aefa51bfc29327200b",
+      "Part 15"
+    ],
+    [
+      "5f3477ae8466a9a3d2cc953c",
+      "Part 16"
+    ],
+    [
+      "5f3477cb2e27333b1ab2b955",
+      "Part 17"
+    ],
+    [
+      "5f3477cbcb6ba47918c1da92",
+      "Part 18"
+    ],
+    [
+      "5f3477cb303c5cb61b43aa9b",
+      "Part 19"
+    ],
+    [
+      "5f34a1fd611d003edeafd681",
+      "Part 20"
+    ],
+    [
+      "5f356ed6cf6eab5f15f5cfe6",
+      "Part 21"
+    ],
+    [
+      "5f356ed63c7807a4f1e6d054",
+      "Part 22"
+    ],
+    [
+      "5f356ed60a5decd94ab66986",
+      "Part 23"
+    ],
+    [
+      "5f356ed63e0fa262326eef05",
+      "Part 24"
+    ],
+    [
+      "5f356ed60785e1f3e9850b6e",
+      "Part 25"
+    ],
+    [
+      "5f356ed656a336993abd9f7c",
+      "Part 26"
+    ],
+    [
+      "5f356ed6199b0cdef1d2be8f",
+      "Part 27"
+    ],
+    [
+      "5f356ed69db0a491745e2bb6",
+      "Part 28"
+    ],
+    [
+      "5f35e5c44359872a137bd98f",
+      "Part 29"
+    ],
+    [
+      "5f35e5c4321f818cdc4bed30",
+      "Part 30"
+    ],
+    [
+      "5f3c866daec9a49519871816",
+      "Part 31"
+    ],
+    [
+      "5f3c866d5414453fc2d7b480",
+      "Part 32"
+    ],
+    [
+      "5f3c866d28d7ad0de6470505",
+      "Part 33"
+    ],
+    [
+      "5f769541be494f25449b292f",
+      "Part 34"
+    ],
+    [
+      "5f76967fad478126d6552b0d",
+      "Part 35"
+    ],
+    [
+      "5f769702e6e33127d14aa120",
+      "Part 36"
+    ],
+    [
+      "5f3c866de7a5b784048f94b1",
+      "Part 37"
+    ],
+    [
+      "5f3c866dbf362f99b9a0c6d0",
+      "Part 38"
+    ],
+    [
+      "5f3c866d0fc037f7311b4ac8",
+      "Part 39"
+    ],
+    [
+      "5f3c866dd0d0275f01d4d847",
+      "Part 40"
+    ],
+    [
+      "5f3cade9fa77275d9f4efe62",
+      "Part 41"
+    ],
+    [
+      "5f3cade94c6576e7f7b7953f",
+      "Part 42"
+    ],
+    [
+      "5f3cade9993019e26313fa8e",
+      "Part 43"
+    ],
+    [
+      "5f7691dafd882520797cd2f0",
+      "Part 44"
+    ],
+    [
+      "5f7692f7c5b3ce22a57788b6",
+      "Part 45"
+    ],
+    [
+      "5f47633757ae3469f2d33d2e",
+      "Part 46"
+    ],
+    [
+      "5f3cade99dda4e6071a85dfd",
+      "Part 47"
+    ],
+    [
+      "5f3ef6e0e0c3feaebcf647ad",
+      "Part 48"
+    ],
+    [
+      "5f3ef6e0819d4f23ca7285e6",
+      "Part 49"
+    ],
+    [
+      "5f716ad029ee4053c7027a7a",
+      "Part 50"
+    ],
+    [
+      "5f7b87422a560036fd03ccff",
+      "Part 51"
+    ],
+    [
+      "5f7b88d37b1f98386f04edc0",
+      "Part 52"
+    ],
+    [
+      "5f716bee5838c354c728a7c5",
+      "Part 53"
+    ],
+    [
+      "5f3ef6e0086dc80481f8cb03",
+      "Part 54"
+    ],
+    [
+      "5f3ef6e0eaa7da26e3d34d78",
+      "Part 55"
+    ],
+    [
+      "5f3ef6e050279c7a4a7101d3",
+      "Part 56"
+    ],
+    [
+      "5f3ef6e04559b939080db057",
+      "Part 57"
+    ],
+    [
+      "5f3ef6e03d719d5ac4738993",
+      "Part 58"
+    ],
+    [
+      "5f3ef6e05473f91f948724ab",
+      "Part 59"
+    ],
+    [
+      "5f3ef6e056bdde6ae6892ba2",
+      "Part 60"
+    ],
+    [
+      "5f3ef6e0e9629bad967cd71e",
+      "Part 61"
+    ],
+    [
+      "5f3ef6e06d34faac0447fc44",
+      "Part 62"
+    ],
+    [
+      "5f3ef6e087d56ed3ffdc36be",
+      "Part 63"
+    ],
+    [
+      "5f3ef6e0f8c230bdd2349716",
+      "Part 64"
+    ],
+    [
+      "5f3ef6e07276f782bb46b93d",
+      "Part 65"
+    ],
+    [
+      "5f3ef6e0a81099d9a697b550",
+      "Part 66"
+    ],
+    [
+      "5f3ef6e0b431cc215bb16f55",
+      "Part 67"
+    ],
+    [
+      "5f3ef6e01f288a026d709587",
+      "Part 68"
+    ],
+    [
+      "5f3f26fa39591db45e5cd7a0",
+      "Part 69"
+    ],
+    [
+      "5f459225127805351a6ad057",
+      "Part 70"
+    ],
+    [
+      "5f459a7ceb8b5c446656d88b",
+      "Part 71"
+    ],
+    [
+      "5f459cf202c2a3472fae6a9f",
+      "Part 72"
+    ],
+    [
+      "5f459fd48bdc98491ca6d1a3",
+      "Part 73"
+    ],
+    [
+      "5f45a05977e2fa49d9119437",
+      "Part 74"
+    ],
+    [
+      "5f45a276c093334f0f6e9df4",
+      "Part 75"
+    ],
+    [
+      "5f45a5a7c49a8251f0bdb527",
+      "Part 76"
+    ],
+    [
+      "5f46fc57528aa1c4b5ea7c2e",
+      "Part 77"
+    ],
+    [
+      "5f4701b942c824109626c3d8",
+      "Part 78"
+    ],
+    [
+      "5f46ede1ff8fec5ba656b44c",
+      "Part 79"
+    ],
+    [
+      "5f45a66d4a2b0453301e5a26",
+      "Part 80"
+    ],
+    [
+      "5f45b0731d39e15d54df4dfc",
+      "Part 81"
+    ],
+    [
+      "5f45b25e7ec2405f166b9de1",
+      "Part 82"
+    ],
+    [
+      "5f45b3c93c027860d9298dbd",
+      "Part 83"
+    ],
+    [
+      "5f45b45d099f3e621fbbb256",
+      "Part 84"
+    ],
+    [
+      "5f45b4c81cea7763550e40df",
+      "Part 85"
+    ],
+    [
+      "5f45b715301bbf667badc04a",
+      "Part 86"
+    ],
+    [
+      "5f46e270702a8456a664f0df",
+      "Part 87"
+    ],
+    [
+      "5f46e36e745ead58487aabf2",
+      "Part 88"
+    ],
+    [
+      "5f46e7a4750dd05b5a673920",
+      "Part 89"
+    ],
+    [
+      "5f46e8284aae155c83015dee",
+      "Part 90"
+    ],
+    [
+      "5f475bb508746c16c9431d42",
+      "Part 91"
+    ],
+    [
+      "5f475e1c7f71a61d913836c6",
+      "Part 92"
+    ],
+    [
+      "5f47fe7e31980053a8d4403b",
+      "Part 93"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "01-responsive-web-design/basic-css-cafe-menu.json"
+}

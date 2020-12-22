@@ -1,5 +1,7 @@
 /* global expect */
 
+// TODO: update these to use the new parser
+
 const path = require('path');
 
 const { parseMarkdown } = require('../tools/challenge-md-parser');
@@ -16,9 +18,11 @@ describe('translation parser', () => {
     return Promise.all([
       parseMarkdown(path.resolve(__dirname, '__fixtures__/combined.md')),
       parseTranslation(
-        path.resolve(__dirname, '__fixtures__/challenge.english.md'),
-        path.resolve(__dirname, '__fixtures__/challenge.chinese.md'),
-        SIMPLE_TRANSLATION
+        path.resolve(__dirname, '__fixtures__/english/challenge.md'),
+        path.resolve(__dirname, '__fixtures__/chinese/challenge.md'),
+        SIMPLE_TRANSLATION,
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });
@@ -30,10 +34,12 @@ describe('translation parser', () => {
       parseTranslation(
         path.resolve(
           __dirname,
-          '__fixtures__/challenge-html-comments.english.md'
+          '__fixtures__/english/challenge-html-comments.md'
         ),
-        path.resolve(__dirname, '__fixtures__/challenge.chinese.md'),
-        SIMPLE_TRANSLATION
+        path.resolve(__dirname, '__fixtures__/chinese/challenge.md'),
+        SIMPLE_TRANSLATION,
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });
@@ -45,10 +51,12 @@ describe('translation parser', () => {
       parseTranslation(
         path.resolve(
           __dirname,
-          '__fixtures__/challenge-jsx-comments.english.md'
+          '__fixtures__/english/challenge-jsx-comments.md'
         ),
-        path.resolve(__dirname, '__fixtures__/challenge.chinese.md'),
-        SIMPLE_TRANSLATION
+        path.resolve(__dirname, '__fixtures__/chinese/challenge.md'),
+        SIMPLE_TRANSLATION,
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });
@@ -60,10 +68,12 @@ describe('translation parser', () => {
       parseTranslation(
         path.resolve(
           __dirname,
-          '__fixtures__/challenge-js-comments.english.md'
+          '__fixtures__/english/challenge-js-comments.md'
         ),
-        path.resolve(__dirname, '__fixtures__/challenge.chinese.md'),
-        SIMPLE_TRANSLATION
+        path.resolve(__dirname, '__fixtures__/chinese/challenge.md'),
+        SIMPLE_TRANSLATION,
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });
@@ -71,9 +81,11 @@ describe('translation parser', () => {
     return Promise.all([
       parseMarkdown(path.resolve(__dirname, '__fixtures__/combined.md')),
       parseTranslation(
-        path.resolve(__dirname, '__fixtures__/challenge.english.md'),
-        path.resolve(__dirname, '__fixtures__/challenge-stripped.chinese.md'),
-        SIMPLE_TRANSLATION
+        path.resolve(__dirname, '__fixtures__/english/challenge.md'),
+        path.resolve(__dirname, '__fixtures__/chinese/challenge-stripped.md'),
+        SIMPLE_TRANSLATION,
+        'chinese',
+        parseMarkdown
       )
     ]).then(xs => expect(xs[1]).toEqual(xs[0]));
   });

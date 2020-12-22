@@ -12,7 +12,9 @@ export const UniversalNav = ({
   displayMenu,
   toggleDisplayMenu,
   menuButtonRef,
-  searchBarRef
+  searchBarRef,
+  user,
+  fetchState
 }) => (
   <nav
     className={'universal-nav nav-padding' + (displayMenu ? ' expand-nav' : '')}
@@ -30,7 +32,7 @@ export const UniversalNav = ({
       </Link>
     </div>
     <div className='universal-nav-right main-nav'>
-      <NavLinks displayMenu={displayMenu} />
+      <NavLinks displayMenu={displayMenu} fetchState={fetchState} user={user} />
     </div>
     <MenuButton
       displayMenu={displayMenu}
@@ -45,7 +47,9 @@ export default UniversalNav;
 
 UniversalNav.propTypes = {
   displayMenu: PropTypes.bool,
+  fetchState: PropTypes.shape({ pending: PropTypes.bool }),
   menuButtonRef: PropTypes.object,
   searchBarRef: PropTypes.object,
-  toggleDisplayMenu: PropTypes.func
+  toggleDisplayMenu: PropTypes.func,
+  user: PropTypes.object
 };

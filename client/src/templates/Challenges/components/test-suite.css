@@ -5,6 +5,11 @@
   margin: 15px 0;
 }
 
+.challenge-test-suite code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .test-result {
   display: flex;
   width: 100%;
@@ -17,6 +22,10 @@
 
 .test-output {
   padding: 5px 10px;
+}
+
+.test-output p {
+  margin: 0;
 }
 
 .test-status-icon {

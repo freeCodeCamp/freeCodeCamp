@@ -194,6 +194,7 @@ export class CertificationSettings extends Component {
           block={true}
           bsStyle='primary'
           className='btn-invert'
+          id={`btn-for-${projectId}`}
           onClick={onClickHandler}
         >
           Show Code
@@ -237,6 +238,7 @@ export class CertificationSettings extends Component {
           bsStyle='primary'
           className='btn-invert'
           href={solution}
+          id={`btn-for-${projectId}`}
           rel='noopener noreferrer'
           target='_blank'
         >
@@ -249,6 +251,7 @@ export class CertificationSettings extends Component {
         block={true}
         bsStyle='primary'
         className='btn-invert'
+        id={`btn-for-${projectId}`}
         onClick={onClickHandler}
       >
         Show Code
@@ -415,6 +418,11 @@ export class CertificationSettings extends Component {
       { types: {} }
     );
 
+    const formFields = challengeTitles.map(title => ({
+      name: title,
+      label: title
+    }));
+
     const fullForm = filledforms === challengeTitles.length;
 
     const createClickHandler = certLocation => e => {
@@ -436,7 +444,7 @@ export class CertificationSettings extends Component {
         <Form
           buttonText={fullForm ? 'Claim Certification' : 'Save Progress'}
           enableSubmit={fullForm}
-          formFields={challengeTitles}
+          formFields={formFields}
           hideButton={isCertClaimed}
           id={superBlock}
           initialValues={{
@@ -508,7 +516,6 @@ export class CertificationSettings extends Component {
         ? verifyCert(superBlock)
         : createFlashMessage(honestyInfoMessage);
     };
-
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
@@ -520,7 +527,7 @@ export class CertificationSettings extends Component {
           </p>
           <ul>
             <li>Responsive Web Design</li>
-            <li>Algorithms and Data Structures</li>
+            <li>JavaScript Algorithms and Data Structures</li>
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
             <li>APIs and Microservices</li>

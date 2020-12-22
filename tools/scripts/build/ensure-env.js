@@ -2,41 +2,61 @@ const fs = require('fs');
 const path = require('path');
 const debug = require('debug');
 
-const log = debug('fcc:tools:ensure-env');
-
 const env = require('../../../config/env');
-const { getChallengesForLang } = require('../../../curriculum/getChallenges');
-const { createPathMigrationMap } = require('../seed/createPathMigrationMap');
 
-const apiPath = path.resolve(__dirname, '../../../api-server');
+const log = debug('fcc:ensure-env');
+
 const clientPath = path.resolve(__dirname, '../../../client');
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
 const { FREECODECAMP_NODE_ENV } = process.env;
-const { locale } = env;
 
-const migrationMapPath = `${apiPath}/server/resources/pathMigration.json`;
-fs.access(migrationMapPath, err => {
-  if (err && FREECODECAMP_NODE_ENV !== 'production') {
-    log('creating pathMigration');
-    return fs.writeFileSync(migrationMapPath, '{}');
+if (FREECODECAMP_NODE_ENV !== 'development') {
+  const locationKeys = [
+    'homeLocation',
+    'apiLocation',
+    'forumLocation',
+    'newsLocation'
+  ];
+  const deploymentKeys = [
+    'locale',
+    'deploymentEnv',
+    'environment',
+    'showUpcomingChanges'
+  ];
+  const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
+  const donationKeys = ['stripePublicKey', 'paypalClientId'];
+
+  const expectedVariables = locationKeys.concat(
+    deploymentKeys,
+    searchKeys,
+    donationKeys
+  );
+  const variables = Object.keys(env);
+  expectedVariables.sort();
+  variables.sort();
+  if (expectedVariables.length !== variables.length) {
+    throw Error(`Env. variable validation failed. Expected
+    ${expectedVariables}
+    but recieved
+    ${variables}
+    `);
   }
-  if (FREECODECAMP_NODE_ENV === 'production') {
-    return getChallengesForLang(locale)
-      .then(createPathMigrationMap)
-      .then(map => {
-        fs.writeFileSync(migrationMapPath, JSON.stringify(map));
-        log('pathMigration has been written');
-      })
-      .catch(err => {
-        console.error(err);
-        // eslint-disable-next-line
-        process.exit(1);
-      });
+
+  for (const key of expectedVariables) {
+    if (typeof env[key] === 'undefined' || env[key] === null) {
+      throw Error(`Env. variable ${key} is missing, build cannot continue`);
+    }
   }
-  log('pathMigration present');
-  return null;
-});
+
+  if (env['environment'] !== 'production')
+    throw Error("Production environment should be 'production' ");
+
+  if (env['showUpcomingChanges'])
+    throw Error("SHOW_UPCOMING_CHANGES should never be 'true' in production");
+} else {
+  log('Skipping environment variable checks in development');
+}
 
 fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));
 fs.writeFileSync(`${globalConfigPath}/env.json`, JSON.stringify(env));

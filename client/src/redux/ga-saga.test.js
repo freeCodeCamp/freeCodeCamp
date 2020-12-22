@@ -9,7 +9,7 @@ describe('ga-saga', () => {
     const mockEventPayload = {
       type: 'event',
       data: {
-        category: 'donation',
+        category: 'Donation',
         action: 'year end gift paypal button click'
       }
     };

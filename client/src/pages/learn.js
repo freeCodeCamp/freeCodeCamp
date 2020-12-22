@@ -65,7 +65,7 @@ export const LearnPage = ({
   location: { hash = '', state = '' },
   isSignedIn,
   fetchState: { pending, complete },
-  user: { name = '', username = '', completedChallengeCount = 0 },
+  user: { name = '', completedChallengeCount = 0 },
   data: {
     challengeNode: {
       fields: { slug }
@@ -77,7 +77,7 @@ export const LearnPage = ({
   const hashValue = hashValueSelector(state, hash);
   return (
     <LearnLayout>
-      <Helmet title='Learn to code at home | freeCodeCamp.org' />
+      <Helmet title='Learn to Code for Free – Coding Courses for Busy People' />
       <Grid>
         <Intro
           complete={complete}
@@ -86,7 +86,6 @@ export const LearnPage = ({
           name={name}
           pending={pending}
           slug={slug}
-          username={username}
         />
         <Map
           hash={hashValue}
@@ -94,7 +93,7 @@ export const LearnPage = ({
           isSignedIn={isSignedIn}
           nodes={edges
             .map(({ node }) => node)
-            .filter(({ isPrivate, isHidden }) => !isPrivate && !isHidden)}
+            .filter(({ isPrivate }) => !isPrivate)}
         />
       </Grid>
     </LearnLayout>
@@ -123,10 +122,8 @@ export const query = graphql`
           id
           block
           title
-          isRequired
           superBlock
           dashedName
-          isHidden
         }
       }
     }

@@ -1,0 +1,53 @@
+---
+id: 587d78a7367417b2b2512ae0
+title: 使用CSS动画更改按钮的悬停状态
+challengeType: 0
+videoUrl: 'https://scrimba.com/c/cg4vZAa'
+forumTopicId: 301073
+---
+
+# --description--
+
+你可以在按钮悬停时使用 `@keyframes` 改变按钮的颜色。
+
+下面是在图片悬停时改变图片宽度的例子：
+
+```html
+<style>
+  img:hover {
+    animation-name: width;
+    animation-duration: 500ms;
+  }
+
+  @keyframes width {
+    100% {
+      width: 40px;
+    }
+  }
+</style>
+
+<img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" />
+```
+
+# --instructions--
+
+注意 `ms` 代表毫秒，1000ms 等于 1s。
+
+使用 `@keyframes` 来改变 `button` 元素的 `background-color`，使其当悬停时变成 `#4791d0`。`@keyframes` 规则应该只有一个 `100%` 条目。
+
+# --hints--
+
+`@keyframes` 规则的 `animation-name` 应该是 background-color。
+
+```js
+assert(code.match(/@keyframes\s+?background-color\s*?{/g));
+```
+
+在 `@keyframes` 的 `100%` 条目里应该把 `background-color` 改成 `#4791d0`。
+
+```js
+assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));
+```
+
+# --solutions--
+

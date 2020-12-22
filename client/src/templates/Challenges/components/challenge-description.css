@@ -7,3 +7,16 @@
   margin-bottom: 1.45rem;
   font-size: 0.9rem;
 }
+
+#description p,
+#instructions p,
+#description ul,
+#instructions ul,
+#description ol,
+#instructions ol {
+  font-family: 'Lato', sans-serif;
+}
+
+#description ::selection {
+  background-color: rgba(var(--highlight-color), 0.3);
+}

@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Media from 'react-responsive';
 import { Col, Row } from '@freecodecamp/react-bootstrap';
-import { Spacer, ImageLoader } from '../../helpers';
-import wideImg from '../../../assets/images/landing/wide-image.png';
+import { Spacer } from '../../helpers';
 import Login from '../../Header/components/Login';
 import {
   AmazonLogo,
@@ -12,29 +10,13 @@ import {
   SpotifyLogo,
   GoogleLogo
 } from '../../../assets/images/components';
+import CampersImage from './CampersImage';
 
 const propTypes = {
   page: PropTypes.string
 };
 
-const LARGE_SCREEN_SIZE = 1200;
-
 function landingTop({ page }) {
-  const landingImageSection = (
-    <Media minWidth={LARGE_SCREEN_SIZE}>
-      <Spacer size={2} />
-      <ImageLoader
-        alt='Freecodecamp students at a local study'
-        className='landing-page-image'
-        height={442}
-        src={wideImg}
-        width={750}
-      />
-      <p className='text-center caption'>
-        freeCodeCamp students at a local study group in South Korea.
-      </p>
-    </Media>
-  );
   const BigCallToAction = (
     <Login block={true} data-test-label={`${page}-big-cta`}>
       {page === 'landing'
@@ -65,7 +47,7 @@ function landingTop({ page }) {
           </div>
           <Spacer />
           {BigCallToAction}
-          {landingImageSection}
+          <CampersImage page={page} />
           <Spacer />
         </Col>
       </Row>

@@ -1,3 +1,0 @@
-files:
-  - source: /curriculum/challenges/english/**/*.md
-    translation: /curriculum/challenges/%language%/**/%original_file_name%

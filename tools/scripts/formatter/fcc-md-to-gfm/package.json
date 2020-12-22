@@ -1,0 +1,31 @@
+{
+  "name": "fcc-md-to-gfm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "formatCurriculum.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "hast-util-phrasing": "^1.0.5",
+    "hast-util-raw": "^6.0.1",
+    "hast-util-to-html": "^7.1.1",
+    "hast-util-to-mdast": "^6.0.0",
+    "hastscript": "^6.0.0",
+    "lodash": "^4.17.20",
+    "mdast-builder": "^1.1.1",
+    "mdast-util-to-hast": "^10.0.0",
+    "parse-entities": "^2.0.0",
+    "readdirp-walk": "^1.7.0",
+    "remark-frontmatter": "^2.0.0",
+    "remark-parse": "^8.0.3",
+    "remark-stringify": "^8.1.1",
+    "to-vfile": "^6.1.0",
+    "unified": "^9.2.0",
+    "unist-builder": "^2.0.3",
+    "unist-util-find": "^1.0.2",
+    "unist-util-visit": "^2.0.3"
+  }
+}

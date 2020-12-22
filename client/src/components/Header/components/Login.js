@@ -29,7 +29,7 @@ function Login(props) {
   return (
     <Button
       bsStyle='default'
-      className={(block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
+      className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
       href={href}
       onClick={() => gtagReportConversion()}

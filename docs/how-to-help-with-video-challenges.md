@@ -1,6 +1,6 @@
 # How to help with video challenges
 
-Video challenges are a new type of challenge in the freeCodeCamp curriculum. They are currently only in beta and not available yet on freeCodeCamp.org.
+Video challenges are a new type of challenge in the freeCodeCamp curriculum.
 
 A video challenge is a small section of a full-length video course on a particular topic. A video challenge page embeds a YouTube video. Each challenge page has a single multiple-choice question related to the video. A user must answer the question correctly before moving on the the next video challenge in the course.
 

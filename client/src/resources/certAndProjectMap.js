@@ -7,7 +7,7 @@ const feLibsBase = '/learn/front-end-libraries/front-end-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
 const apiMicroBase =
   '/learn/apis-and-microservices/apis-and-microservices-projects';
-const qaBase = 'learn/quality-assurance/quality-assurance-projects';
+const qaBase = '/learn/quality-assurance/quality-assurance-projects';
 const infoSecBase = '/learn/information-security/information-security-projects';
 const sciCompPyBase =
   '/learn/scientific-computing-with-python/' +
@@ -44,8 +44,8 @@ const certMap = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd0f',
-        title: 'Build a Pomodoro Clock',
-        link: `${legacyFrontEndBase}/build-a-pomodoro-clock`,
+        title: 'Build a 25 + 5 Clock',
+        link: `${legacyFrontEndBase}/build-a-25--5-clock`,
         superBlock: 'legacy-front-end'
       },
       {
@@ -384,8 +384,8 @@ const certMap = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd0f',
-        title: 'Build a Pomodoro Clock',
-        link: `${feLibsBase}/build-a-pomodoro-clock`,
+        title: 'Build a 25 + 5 Clock',
+        link: `${feLibsBase}/build-a-25--5-clock`,
         superBlock: 'front-end-libraries'
       }
     ]

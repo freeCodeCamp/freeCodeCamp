@@ -1,12 +1,27 @@
 import '@babel/polyfill';
 import jQuery from 'jquery';
+import curriculumHelpers from '../utils/curriculum-helpers';
 
 window.$ = jQuery;
 
 document.__initTestFrame = initTestFrame;
 
-async function initTestFrame(e = {}) {
-  const code = (e.code || '').slice(0);
+async function initTestFrame(e = { code: {} }) {
+  const code = (e.code.contents || '').slice();
+  const editableContents = (e.code.editableContents || '').slice();
+  // __testEditable allows test authors to run tests against a transitory dom
+  // element built using only the code in the editable region.
+  // eslint-disable-next-line no-unused-vars
+  const __testEditable = cb => {
+    const div = document.createElement('div');
+    div.id = 'editable-only';
+    div.innerHTML = editableContents;
+    document.body.appendChild(div);
+    const out = cb();
+    document.body.removeChild(div);
+    return out;
+  };
+
   if (!e.getUserInput) {
     e.getUserInput = () => code;
   }
@@ -34,6 +49,7 @@ async function initTestFrame(e = {}) {
   // eslint-disable-next-line no-inline-comments
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
+  const __helpers = curriculumHelpers;
   /* eslint-enable no-unused-vars */
 
   let Enzyme;
@@ -83,12 +99,8 @@ async function initTestFrame(e = {}) {
       if (!(err instanceof chai.AssertionError)) {
         console.error(err);
       }
-      return {
-        err: {
-          message: err.message,
-          stack: err.stack
-        }
-      };
+      // return the error so that the curriculum tests are more informative
+      return { err };
     }
   };
 }
