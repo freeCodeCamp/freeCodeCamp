@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { availableLangs } = require('../../../client/i18n/allLangs');
 const { allowedOrigins } = require('../../../config/cors-settings');
-// homeLocation is being used as a fallback, here. If the one provided by the
+// homeLocation is being used as a fallback here. If the one provided by the
 // client is invalid we default to this.
 const { homeLocation } = require('../../../config/env.json');
 
@@ -37,18 +37,14 @@ function normalizeParams({ returnTo, origin, pathPrefix }) {
   ) {
     returnTo = `${homeLocation}/learn`;
   }
-  // this can be strict equality.
   if (!origin || !allowedOrigins.includes(origin)) {
     origin = homeLocation;
   }
-  // default to '' if the locale isn't recognised
   pathPrefix = availableLangs.client.includes(pathPrefix) ? pathPrefix : '';
   return { returnTo, origin, pathPrefix };
 }
 
-// TODO: use this to redirect to current challenge
 // TODO: tests!
-
 // TODO: ensure origin and pathPrefix validation happens first
 // (it needs a dedicated function that can be called from here and getReturnTo)
 function getRedirectBase(origin, pathPrefix) {
