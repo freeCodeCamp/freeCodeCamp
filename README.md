@@ -153,7 +153,7 @@ Our community also has:
 - A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
 - A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about math and computer science.
-- A [Discord chat room](https://discord.gg/KVUmVXA) where you can hang out and talk with developers and people who are learning to code.
+- A [chat server](https://chat.freecodecamp.org/home) where you can hang out and talk with developers and people who are learning to code.
 
 > #### [Join the community here](https://www.freecodecamp.org/signin).
 
