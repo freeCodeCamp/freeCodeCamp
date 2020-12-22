@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   delay,
   put,
@@ -69,9 +70,9 @@ export function* executeChallengeSaga() {
     yield put(initLogs());
     yield put(initConsole('// running tests'));
     // reset tests to initial state
-    const tests = (yield select(challengeTestsSelector)).map(
-      ({ text, testString }) => ({ text, testString })
-    );
+    const tests = (yield select(
+      challengeTestsSelector
+    )).map(({ text, testString }) => ({ text, testString }));
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
@@ -155,7 +156,8 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
-        newTest.stack = stack?.replace(/ at eval.*/, '');
+        console.log(stack);
+        newTest.stack = stack?.replace(/ (at eval|\()[\s\S]*/, '');
       }
       yield put(updateConsole(`${newTest.message}\n${newTest.stack || ''}`));
     } finally {
