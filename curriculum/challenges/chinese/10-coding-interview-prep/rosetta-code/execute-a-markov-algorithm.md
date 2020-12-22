@@ -13,46 +13,46 @@ videoUrl: ''
 
 规则具有以下语法：
 
-:: =（（<!--undefined-->
-
-<!--undefined-->
-
-:: =- >\[。]
-
-:: =（|）\[]
+<pre>[ruleset] ::= (([comment] | [rule]) [newline]+)*
+[comment] ::= # {[any character]}
+[rule] ::= [pattern] [whitespace] -> [whitespace] [.] [replacement]
+[whitespace] ::= ([tab] | [space]) [[whitespace]]
+</pre>
 
 每行有一条规则。
 
-如果有的话**。** （期间）出席之前，那么这是一个终止规则，在这种情况下，解释器必须停止执行。
+如果在 [replacement] 之前有一个 **.** （句号），那么这是一个终止规则。在这种情况下，解释器必须停止执行。
 
-规则集由一系列规则和可选注释组成。
+规则集由一系列规则组成，可能包含一些注释。
 
 规则集
 
-对条目使用以下测试：
+对各条目执行以下测试规则：
 
-规则集1：
+规则集 1：
 
-<pre># This rules file is extracted from Wikipedia:
+<pre># 以下规则来自 Wikipedia：
 # <code>http://en.wikipedia.org/wiki/Markov_Algorithm</code>
 A -> apple
 B -> bag
 S -> shop
 T -> the
 the shop -> my brother
-a never used -> .terminating rule
+(终止规则) -> .
 </pre>
 
-<p>示例文本： </p><p> <code>I bought a B of As from T S.</code> </p>  <p>应该生成输出： </p><p> <code>I bought a bag of apples from my brother.</code> </p>规则集2： <p>终止规则的测试</p>
-<pre># Slightly modified from the rules on Wikipedia
+<p>示例文本： </p><p> <code>I bought a B of As from T S.</code> </p>  <p>应该输出： </p><p> <code>I bought a bag of apples from my brother.</code> </p>规则集 2： <p>终止规则的测试</p>
+<pre># 稍微修改了 Wikipedia 的规则
 A -> apple
 B -> bag
 S -> .shop
 T -> the
 the shop -> my brother
-a never used -> .terminating rule
+(终止规则) -> .
 </pre>
-<p>示例文本： </p><p> <code>I bought a B of As from T S.</code> </p>  <p>应该生成： </p><p> <code>I bought a bag of apples from T shop.</code> </p>规则集3： <p>如果没有转义特殊的正则表达式字符，这将测试正确的替换顺序并可能捕获简单的基于正则表达式的替换例程。 </p>
+
+<p>示例文本： </p><p> <code>I bought a B of As from T S.</code> </p>  <p>应该输出： </p><p> <code>I bought a bag of apples from T shop.</code> </p>规则集 3： <p>如果正则表达式字符没有转义，则应用正则表达式规则按顺序进行替换。</p>
+
 <pre># BNF Syntax testing rules
 A -> apple
 WWWW -> with
@@ -63,10 +63,12 @@ W -> WW
 S -> .shop
 T -> the
 the shop -> my brother
-a never used -> .terminating rule
+(终止规则) -> .
 </pre>
-<p>示例文本： </p><p> <code>I bought a B of As W my Bgage from T S.</code> </p>  <p>应该生成： </p><p> <code>I bought a bag of apples with my money from T shop.</code> </p>规则集4： <p>这将测试规则扫描的正确顺序，并可能捕获以错误顺序扫描的替换例程。它实现了一般的一元乘法引擎。 （请注意，在此实现中，输入表达式必须放在下划线中。） </p><pre> ##一元乘法引擎，用于测试马尔可夫算法实现
-## Donal Fellows。
+<p>示例文本： </p><p> <code>I bought a B of As W my Bgage from T S.</code> </p>  <p>应该生成： </p><p> <code>I bought a bag of apples with my money from T shop.</code> </p>规则集 4： <p>这将测试规则扫描的正确顺序，并可能捕获以错误顺序扫描的替换例程。它实现了一般的一元乘法引擎。 （请注意，在此实现中，输入表达式必须放在下划线中。） </p><pre> ##一元乘法引擎，用于测试马尔可夫算法实现
+This tests for correct order of scanning of rules, and may trap replacement routines that scan in the wrong order. It implements a general unary multiplication engine. (Note that the input expression must be placed within underscores in this implementation.)
+
+## by Donal Fellows
 一元加法引擎_ + 1  - > _1 +
 1 + 1  - > 11+
 通过将乘法的分裂转换为普通的
