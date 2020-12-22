@@ -156,7 +156,6 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
-        console.log(stack);
         newTest.stack = stack?.replace(/ (at eval|\()[\s\S]*/, '');
       }
       yield put(updateConsole(`${newTest.message}\n${newTest.stack || ''}`));
