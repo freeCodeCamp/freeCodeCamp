@@ -94,8 +94,6 @@ export function* executeChallengeSaga() {
     const testResults = yield executeTests(testRunner, tests);
 
     yield put(updateTests(testResults));
-    console.log(testResults, testRunner);
-    // yield put(updateConsole(formatTestRunnerErrors(testResults)));
     yield put(updateConsole('// tests completed'));
     yield put(logsToConsole('// console output'));
   } catch (e) {
@@ -229,9 +227,3 @@ export function createExecuteChallengeSaga(types) {
     )
   ];
 }
-
-// Keep for PR testing (comment to annoy Mrugesh ;)
-// function formatTestRunnerErrors(testResults) {
-//   const testsWithError = testResults.filter(result => result.err);
-//   return testsWithError.map(({err}) => )
-// }
