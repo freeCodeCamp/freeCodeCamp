@@ -34,26 +34,13 @@ function createFrontmatter(data) {
   // TODO: sort the keys?  It doesn't matter from a machine perspective, but
   // it does from human-readability one.  We could get lucky and have the order
   // be preserved accidentally.
-  const frontData = annotateFrontMatter(pick(data, frontmatterProperties));
+  const frontData = pick(data, frontmatterProperties);
   const frontYAML = yaml.dump(frontData);
 
   return `---
 ${frontYAML}---
 
 `;
-}
-
-function annotateFrontMatter(frontData) {
-  const translatable = ['title', 'forumTopicId'];
-  const newData = {};
-  Object.keys(frontData).forEach(key => {
-    if (translatable.includes(key)) {
-      newData[key] = frontData[key];
-    } else {
-      newData[key] = notranslateStart + frontData[key] + notranslateEnd;
-    }
-  });
-  return newData;
 }
 
 // TODO: handle certs elsewhere (ideally don't try to create mdx versions)
