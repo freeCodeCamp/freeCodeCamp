@@ -56,9 +56,6 @@ module.exports = function enableAuthentication(app) {
     );
   } else {
     api.get('/signin', ifUserRedirect, (req, res, next) => {
-      // TODO: is there any harm in normalising here?  Can we just normalise
-      // every time we get the params, rather than via two calls? It'll be safer
-      // as well as more concise.
       const { returnTo, origin, pathPrefix } = getParamsFromReq(req);
       const state = jwt.sign({ returnTo, origin, pathPrefix }, jwtSecret);
       return passport.authenticate('auth0-login', { state })(req, res, next);
