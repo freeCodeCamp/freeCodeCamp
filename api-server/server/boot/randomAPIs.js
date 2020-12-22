@@ -1,7 +1,7 @@
 import request from 'request';
 
 import constantStrings from '../utils/constantStrings.json';
-import { getParamsFromReq, normalizeParams } from '../utils/get-return-to';
+import { getParamsFromReq } from '../utils/get-return-to';
 
 const githubClient = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
@@ -50,12 +50,12 @@ module.exports = function(app) {
       'We are no longer able to process this unsubscription request. ' +
         'Please go to your settings to update your email preferences'
     );
-    const { origin } = normalizeParams(getParamsFromReq(req));
+    const { origin } = getParamsFromReq(req);
     res.redirectWithFlash(origin);
   }
 
   function unsubscribeById(req, res, next) {
-    const { origin } = normalizeParams(getParamsFromReq(req));
+    const { origin } = getParamsFromReq(req);
     const { unsubscribeId } = req.params;
     if (!unsubscribeId) {
       req.flash('info', 'We could not find an account to unsubscribe');
@@ -112,7 +112,7 @@ module.exports = function(app) {
 
   function resubscribe(req, res, next) {
     const { unsubscribeId } = req.params;
-    const { origin } = normalizeParams(getParamsFromReq(req));
+    const { origin } = getParamsFromReq(req);
     if (!unsubscribeId) {
       req.flash(
         'info',

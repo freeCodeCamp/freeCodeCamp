@@ -3,7 +3,7 @@
 import accepts from 'accepts';
 
 import { unwrapHandledError } from '../utils/create-handled-error.js';
-import { getParamsFromReq, normalizeParams } from '../utils/get-return-to';
+import { getParamsFromReq } from '../utils/get-return-to';
 
 const errTemplate = (error, req) => {
   const { message, stack } = error;
@@ -26,7 +26,7 @@ export default function prodErrorHandler() {
   // error handling in production.
   // eslint-disable-next-line no-unused-vars
   return function(err, req, res, next) {
-    const { origin } = normalizeParams(getParamsFromReq(req));
+    const { origin } = getParamsFromReq(req);
     const handled = unwrapHandledError(err);
     // respect handled error status
     let status = handled.status || err.status || res.statusCode;

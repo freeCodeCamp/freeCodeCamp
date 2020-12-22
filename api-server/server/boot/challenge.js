@@ -340,7 +340,7 @@ export function createRedirectToCurrentChallenge(
 ) {
   return async function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
-    const { origin, pathPrefix } = normalizeParams(getParamsFromReq(req));
+    const { origin, pathPrefix } = getParamsFromReq(req, normalizeParams);
 
     const redirectBase = getRedirectBase(origin, pathPrefix);
     if (!user) {

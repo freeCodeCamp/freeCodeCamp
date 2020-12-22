@@ -13,7 +13,7 @@ import { fixCompletedChallengeItem } from '../../common/utils';
 import { ifNoUser401, ifNoUserRedirectHome } from '../utils/middleware';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { trimTags } from '../utils/validators';
-import { getParamsFromReq, normalizeParams } from '../utils/get-return-to';
+import { getParamsFromReq } from '../utils/get-return-to';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();
@@ -100,7 +100,7 @@ function getAccount(req, res) {
 function getUnlinkSocial(req, res, next) {
   const { user } = req;
   const { username } = user;
-  const { origin } = normalizeParams(getParamsFromReq(req));
+  const { origin } = getParamsFromReq(req);
   let social = req.params.social;
   if (!social) {
     req.flash('danger', 'No social account found');
@@ -209,7 +209,7 @@ function createPostReportUserProfile(app) {
   return function postReportUserProfile(req, res, next) {
     const { user } = req;
     const { username, reportDescription: report } = req.body;
-    const { origin } = normalizeParams(getParamsFromReq(req));
+    const { origin } = getParamsFromReq(req);
     log(username);
     log(report);
 

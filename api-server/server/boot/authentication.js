@@ -15,7 +15,7 @@ import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { decodeEmail } from '../../common/utils';
-import { getParamsFromReq, normalizeParams } from '../utils/get-return-to';
+import { getParamsFromReq } from '../utils/get-return-to';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 if (isSignUpDisabled) {
@@ -71,7 +71,7 @@ module.exports = function enableAuthentication(app) {
   }
 
   api.get('/signout', (req, res) => {
-    const { origin } = normalizeParams(getParamsFromReq(req));
+    const { origin } = getParamsFromReq(req);
     req.logout();
     req.session.destroy(err => {
       if (err) {
@@ -109,7 +109,7 @@ function createGetPasswordlessAuth(app) {
     const {
       query: { email: encodedEmail, token: authTokenId, emailChange } = {}
     } = req;
-    const { origin } = normalizeParams(getParamsFromReq(req));
+    const { origin } = getParamsFromReq(req);
     const email = decodeEmail(encodedEmail);
     if (!isEmail(email)) {
       return next(

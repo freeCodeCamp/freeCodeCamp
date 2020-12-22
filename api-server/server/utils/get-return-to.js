@@ -55,7 +55,7 @@ function getRedirectBase(origin, pathPrefix) {
 // TODO: this might be cleaner if we just use a URL for returnTo (call it
 // returnURL for clarity) rather than pulling out origin and returning it
 // separately
-function getParamsFromReq(req) {
+function getParamsFromReq(req, _normalizeParams = normalizeParams) {
   const url = req.header('Referer');
   // since we do not always redirect the user back to the page they were on
   // we need client locale and origin to construct the redirect url.
@@ -64,7 +64,7 @@ function getParamsFromReq(req) {
   // if this is not one of the client languages, validation will convert
   // this to '' before it is used.
   const pathPrefix = returnUrl.pathname.split('/')[0];
-  return { returnTo: returnUrl.href, origin, pathPrefix };
+  return _normalizeParams({ returnTo: returnUrl.href, origin, pathPrefix });
 }
 
 function isRootPath(redirectBase, returnUrl) {
