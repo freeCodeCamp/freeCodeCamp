@@ -94,6 +94,8 @@ export function* executeChallengeSaga() {
     const testResults = yield executeTests(testRunner, tests);
 
     yield put(updateTests(testResults));
+    console.log(testResults, testRunner);
+    // yield put(updateConsole(formatTestRunnerErrors(testResults)));
     yield put(updateConsole('// tests completed'));
     yield put(logsToConsole('// console output'));
   } catch (e) {
@@ -155,9 +157,9 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
-        newTest.stack = stack;
+        newTest.stack = stack.replace(/ at eval.*/, '');
       }
-      yield put(updateConsole(newTest.message));
+      yield put(updateConsole(`${newTest.message}\n${newTest.stack}`));
     } finally {
       testResults.push(newTest);
     }
@@ -227,3 +229,9 @@ export function createExecuteChallengeSaga(types) {
     )
   ];
 }
+
+// Keep for PR testing (comment to annoy Mrugesh ;)
+// function formatTestRunnerErrors(testResults) {
+//   const testsWithError = testResults.filter(result => result.err);
+//   return testsWithError.map(({err}) => )
+// }

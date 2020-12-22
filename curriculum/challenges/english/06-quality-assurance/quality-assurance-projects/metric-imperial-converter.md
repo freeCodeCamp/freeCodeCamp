@@ -111,12 +111,12 @@ async (getUserInput) => {
   try {
     const data1 = await $.get(getUserInput('url') + '/api/convert?input=1gal');
     assert.equal(data1.initUnit, 'gal');
-    assert.equal(data1.returnUnit, 'L');
+    assert.equal(data1.returnUnit, 'L', 'expected some1 to be some2');
     const data2 = await $.get(getUserInput('url') + '/api/convert?input=10L');
-    assert.equal(data2.initUnit, 'L');
+    assert.equal(data2.initUnit, 'L', 'expected some2 to be some3');
     assert.equal(data2.returnUnit, 'gal');
     const data3 = await $.get(getUserInput('url') + '/api/convert?input=1l');
-    assert.equal(data3.initUnit, 'L');
+    assert.equal(data3.initUnit, 'L', 'expected some3 to be some4');
     assert.equal(data3.returnUnit, 'gal');
     const data4 = await $.get(getUserInput('url') + '/api/convert?input=10KM');
     assert.equal(data4.initUnit, 'km');
