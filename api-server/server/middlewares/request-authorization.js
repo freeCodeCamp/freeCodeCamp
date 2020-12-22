@@ -9,7 +9,7 @@ import {
 import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
-import { getRedirectParams } from '../utils/get-return-to';
+import { getRedirectParams } from '../utils/redirection';
 
 const authRE = /^\/auth\//;
 const confirmEmailRE = /^\/confirm-email$/;

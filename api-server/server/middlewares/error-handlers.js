@@ -3,7 +3,7 @@
 import accepts from 'accepts';
 
 import { unwrapHandledError } from '../utils/create-handled-error.js';
-import { getRedirectParams } from '../utils/get-return-to';
+import { getRedirectParams } from '../utils/redirection';
 
 const errTemplate = (error, req) => {
   const { message, stack } = error;

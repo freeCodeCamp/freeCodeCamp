@@ -1,7 +1,7 @@
 import request from 'request';
 
 import constantStrings from '../utils/constantStrings.json';
-import { getRedirectParams } from '../utils/get-return-to';
+import { getRedirectParams } from '../utils/redirection';
 
 const githubClient = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;

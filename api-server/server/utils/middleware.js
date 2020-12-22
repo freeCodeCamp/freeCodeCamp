@@ -6,7 +6,7 @@ import {
   getAccessTokenFromRequest,
   removeCookies
 } from './getSetAccessToken.js';
-import { getRedirectParams } from './get-return-to.js';
+import { getRedirectParams } from './redirection';
 
 export function ifNoUserRedirectHome(message, type = 'errors') {
   return function(req, res, next) {

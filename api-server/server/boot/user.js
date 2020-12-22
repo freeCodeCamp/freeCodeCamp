@@ -13,7 +13,7 @@ import { fixCompletedChallengeItem } from '../../common/utils';
 import { ifNoUser401, ifNoUserRedirectHome } from '../utils/middleware';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { trimTags } from '../utils/validators';
-import { getRedirectParams } from '../utils/get-return-to';
+import { getRedirectParams } from '../utils/redirection';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectHome();

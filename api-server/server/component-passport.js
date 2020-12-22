@@ -15,7 +15,7 @@ import {
   getRedirectBase,
   getRedirectParams,
   isRootPath
-} from './utils/get-return-to';
+} from './utils/redirection';
 
 const passportOptions = {
   emailOptional: true,

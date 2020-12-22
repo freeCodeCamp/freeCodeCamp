@@ -15,7 +15,7 @@ import { ifUserRedirectTo, ifNoUserRedirectHome } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
 import { removeCookies } from '../utils/getSetAccessToken';
 import { decodeEmail } from '../../common/utils';
-import { getRedirectParams } from '../utils/get-return-to';
+import { getRedirectParams } from '../utils/redirection';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 if (isSignUpDisabled) {

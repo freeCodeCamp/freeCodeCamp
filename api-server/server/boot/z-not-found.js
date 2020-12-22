@@ -1,5 +1,5 @@
 import accepts from 'accepts';
-import { getRedirectParams } from '../utils/get-return-to';
+import { getRedirectParams } from '../utils/redirection';
 
 export default function fourOhFour(app) {
   app.all('*', function(req, res) {

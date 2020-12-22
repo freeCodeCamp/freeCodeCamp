@@ -20,7 +20,7 @@ import {
   getRedirectParams,
   getRedirectBase,
   normalizeParams
-} from '../utils/get-return-to';
+} from '../utils/redirection';
 
 const log = debug('fcc:boot:challenges');
 

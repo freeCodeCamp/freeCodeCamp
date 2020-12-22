@@ -3,7 +3,7 @@
 const { homeLocation } = require('../../../config/env.json');
 const jwt = require('jsonwebtoken');
 
-const { getReturnTo } = require('./get-return-to');
+const { getReturnTo } = require('./redirection');
 
 const validJWTSecret = 'this is a super secret string';
 const invalidJWTSecret = 'This is not correct secret';
@@ -19,7 +19,7 @@ const defaultObject = {
   pathPrefix: defaultPrefix
 };
 
-describe('get-return-to', () => {
+describe('redirection', () => {
   describe('getReturnTo', () => {
     it('should extract returnTo from a jwt', () => {
       expect.assertions(1);
