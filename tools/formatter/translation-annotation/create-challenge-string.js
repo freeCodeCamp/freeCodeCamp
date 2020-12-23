@@ -63,7 +63,12 @@ ${notranslateEnd}
 function createQuestion({ question }) {
   if (!question) return '';
   const { text, answers, solution } = question;
-  const formattedAnswers = answers.join(`
+  const formattedAnswers = answers.map(
+    answer => `${notranslateStart}
+${answer.trimEnd()}
+${notranslateEnd}
+`
+  ).join(`
 ---
 
 `);
