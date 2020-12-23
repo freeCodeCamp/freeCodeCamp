@@ -8,7 +8,6 @@ module.exports.annotate = async function annotate(filePath) {
     .catch(err => {
       console.log('Error transforming');
       console.log(filePath);
-      console.log('mdx version not created.');
       console.log(err);
     });
 };

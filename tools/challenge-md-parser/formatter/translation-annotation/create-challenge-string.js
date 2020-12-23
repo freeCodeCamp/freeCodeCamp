@@ -43,7 +43,6 @@ ${frontYAML}---
 `;
 }
 
-// TODO: handle certs elsewhere (ideally don't try to create mdx versions)
 // NOTE: trimEnd is used since trailing whitespace is rarely used (it can create
 // a <br>, but that's uncommon and hard to read)
 function createHints({ tests }) {
