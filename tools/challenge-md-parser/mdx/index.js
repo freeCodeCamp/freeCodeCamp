@@ -37,14 +37,14 @@ const processor = unified()
   // the final five 'add' plugins insert content into file.data
   // TODO: rename test->hint everywhere? It should make things easier to reason
   // about.
-  .use(addTests)
-  .use(addVideoQuestion)
   .use(addSeed)
   .use(addSolution)
   // the directives will have been parsed and used by this point, any remaining
   // 'directives' will be from text like the css selector :root. These should be
   // converted back to text before they're added to the challenge object.
   .use(restoreDirectives)
+  .use(addVideoQuestion)
+  .use(addTests)
   .use(addText, ['description', 'instructions']);
 
 exports.parseMD = function parseMD(filename) {
