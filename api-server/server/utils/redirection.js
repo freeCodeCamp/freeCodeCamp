@@ -5,26 +5,29 @@ const { allowedOrigins } = require('../../../config/cors-settings');
 // client is invalid we default to this.
 const { homeLocation } = require('../../../config/env.json');
 
-function getReturnTo(encryptedReturnTo, secret) {
+function getReturnTo(encryptedParams, secret, _homeLocation = homeLocation) {
   let params;
   try {
-    params = jwt.verify(encryptedReturnTo, secret);
+    params = jwt.verify(encryptedParams, secret);
   } catch (e) {
     // TODO: report to Sentry? Probably not. Remove entirely?
     console.log(e);
     // something went wrong, use default params
     params = {
-      returnTo: `${homeLocation}/learn`,
-      origin: homeLocation,
+      returnTo: `${_homeLocation}/learn`,
+      origin: _homeLocation,
       pathPrefix: ''
     };
   }
 
-  return normalizeParams(params);
+  return normalizeParams(params, _homeLocation);
 }
 
 // TODO: tests!
-function normalizeParams({ returnTo, origin, pathPrefix }) {
+function normalizeParams(
+  { returnTo, origin, pathPrefix },
+  _homeLocation = homeLocation
+) {
   // coerce to strings, just in case something weird and nefarious is happening
   returnTo = '' + returnTo;
   origin = '' + origin;
@@ -35,10 +38,14 @@ function normalizeParams({ returnTo, origin, pathPrefix }) {
     !returnTo ||
     !allowedOrigins.some(allowed => returnTo.startsWith(allowed + '/'))
   ) {
-    returnTo = `${homeLocation}/learn`;
+    returnTo = `${_homeLocation}/learn`;
+    origin = _homeLocation;
+    pathPrefix = '';
   }
   if (!origin || !allowedOrigins.includes(origin)) {
-    origin = homeLocation;
+    returnTo = `${_homeLocation}/learn`;
+    origin = _homeLocation;
+    pathPrefix = '';
   }
   pathPrefix = availableLangs.client.includes(pathPrefix) ? pathPrefix : '';
   return { returnTo, origin, pathPrefix };
