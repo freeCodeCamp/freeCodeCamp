@@ -1,4 +1,4 @@
-const { isEmpty, pick } = require('lodash');
+const { pick } = require('lodash');
 const yaml = require('js-yaml');
 
 const frontmatterProperties = [
@@ -61,15 +61,6 @@ ${notranslateEnd}
   return createSection('hints', strTests);
 }
 
-function createSolutions({ solutions }) {
-  if (!solutions) return '';
-  const solutionsStr = solutions.map(soln => solutionToText(soln)).join(`
----
-
-`);
-  return createSection('solutions', solutionsStr, { translate: false });
-}
-
 function createQuestion({ question }) {
   if (!question) return '';
   const { text, answers, solution } = question;
@@ -82,79 +73,6 @@ function createQuestion({ question }) {
     createSection('answers', formattedAnswers, { depth: 2 }) +
     createSection('video-solution', solution, { depth: 2, translate: false });
   return createSection('question', formattedQuestion);
-}
-
-function createSeed({ files }) {
-  if (!files) return '';
-  const supportedLanguages = ['html', 'css', 'js', 'jsx'];
-  const supportedIndexes = supportedLanguages.map(lang => 'index' + lang);
-  Object.values(files).forEach(({ ext }) => {
-    if (!supportedLanguages.includes(ext)) throw `Unsupported language: ${ext}`;
-  });
-  Object.keys(files).forEach(index => {
-    if (!supportedIndexes.includes(index)) throw `Unsupported index: ${index}`;
-  });
-
-  const head = Object.values(files)
-    .filter(({ head }) => !isEmpty(head))
-    .map(({ ext, head }) => fenceCode(ext, head))
-    .join('\n');
-
-  const tail = Object.values(files)
-    .filter(({ tail }) => !isEmpty(tail))
-    .map(({ ext, tail }) => fenceCode(ext, tail))
-    .join('\n');
-
-  const contents = Object.values(files)
-    .map(({ ext, contents, editableRegionBoundaries }) =>
-      fenceCode(ext, insertMarkers(contents, editableRegionBoundaries))
-    )
-    .join('\n');
-
-  return createSection(
-    'seed',
-    createSection('before-user-code', head, { depth: 2, translate: false }) +
-      createSection('after-user-code', tail, { depth: 2, translate: false }) +
-      createSection('seed-contents', contents, { depth: 2, translate: false })
-  );
-}
-
-function insertMarkers(code, markers) {
-  const lines = code.split('\n');
-  return markers
-    .reduce((acc, idx) => {
-      return insert(acc, '--fcc-editable-region--', idx);
-    }, lines)
-    .join('\n');
-}
-
-function insert(xs, x, idx) {
-  return [...xs.slice(0, idx), x, ...xs.slice(idx)];
-}
-
-function solutionToText(solution) {
-  const supportedLanguages = ['html', 'css', 'js', 'jsx', 'py'];
-  const supportedIndexes = supportedLanguages.map(lang => 'index' + lang);
-  Object.values(solution).forEach(({ ext }) => {
-    if (!supportedLanguages.includes(ext)) throw `Unsupported language: ${ext}`;
-  });
-  Object.keys(solution).forEach(index => {
-    if (!supportedIndexes.includes(index)) throw `Unsupported index: ${index}`;
-  });
-
-  return Object.values(solution)
-    .map(({ ext, contents }) => fenceCode(ext, contents))
-    .join('\n');
-}
-
-// NOTE: trimEnd is used since trailing whitespace is rarely used (it can create
-// a <br>, but that's uncommon and hard to read)
-// Even if there is no code, we should fence it in case the extension is used
-function fenceCode(ext, code) {
-  return `${'```' + ext}
-${code.trimEnd()}
-${'```'}
-`;
 }
 
 function createInstructions({ instructions }) {
@@ -183,9 +101,7 @@ function challengeToString(data) {
     createDescription(data) +
     createInstructions(data) +
     createQuestion(data) +
-    createHints(data) +
-    createSeed(data) +
-    createSolutions(data);
+    createHints(data);
   // all sections have a trailing '\n', the last one of which needs removing
   return chalString.slice(0, -1);
 }
