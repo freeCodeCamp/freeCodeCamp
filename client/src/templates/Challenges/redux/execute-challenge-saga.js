@@ -153,7 +153,10 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
       } else {
-        const { message, stack } = err?.err ?? err;
+        let { message, stack } = err?.err ?? err;
+        if (message.startsWith('<!DOCTYPE')) {
+          message = '';
+        }
         newTest.err = message + '\n' + stack;
         newTest.stack = message;
       }
