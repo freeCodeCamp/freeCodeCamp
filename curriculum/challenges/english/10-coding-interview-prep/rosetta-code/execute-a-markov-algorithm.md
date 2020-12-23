@@ -107,7 +107,8 @@ _+1 -> _1+
 1! -> !1
 ,! -> !+
 _! -> _
-# Unary multiplication by duplicating left side, right side times1*1 -> x,@y
+# Unary multiplication by duplicating left side, right side times
+1*1 -> x,@y
 1x -> xX
 X, -> 1,1
 X1 -> 1X
@@ -115,11 +116,13 @@ _x -> _X
 ,x -> ,X
 y1 -> 1y
 y_ -> _
-# Next phase of applying1@1 -> x,@y
+# Next phase of applying
+1@1 -> x,@y
 1@_ -> @_
 ,@_ -> !_
 ++ -> +
-# Termination cleanup for addition_1 -> 1
+# Termination cleanup for addition
+_1 -> 1
 1+_ -> 1
 _+_ ->
 </pre>
