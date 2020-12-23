@@ -60,12 +60,9 @@ export function ifUserRedirectTo(status) {
   status = status === 301 ? 301 : 302;
   return (req, res, next) => {
     const { accessToken } = getAccessTokenFromRequest(req);
-    const { origin } = getRedirectParams(req);
+    const { returnTo } = getRedirectParams(req);
     if (req.user && accessToken) {
-      if (req.query && req.query.returnTo) {
-        return res.status(status).redirect(req.query.returnTo);
-      }
-      return res.status(status).redirect(origin + '/learn');
+      return res.status(status).redirect(returnTo);
     }
     if (req.user && !accessToken) {
       // This request has an active auth session
