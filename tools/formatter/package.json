@@ -1,8 +1,8 @@
 {
-  "name": "fcc-formatter",
+  "name": "fcc-translation-annotation",
   "version": "1.0.0",
   "description": "",
-  "main": "formatCurriculum.js",
+  "main": "translation-annotation/annotate.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
