@@ -23,6 +23,7 @@
     "remark-frontmatter": "^3.0.0",
     "remark-html": "^12.0.0",
     "remark-parse": "^9.0.0",
+    "remark-stringify": "^9.0.1",
     "to-vfile": "^5.0.1",
     "unified": "^7.0.0",
     "unist-util-find": "^1.0.1",

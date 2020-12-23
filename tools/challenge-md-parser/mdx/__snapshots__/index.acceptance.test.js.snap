@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`challenge parser it should not parse directives we do not use 1`] = `
+Object {
+  "description": "<section id=\\"description\\">
+<p>:root appears, :import appears</p>
+<p>the next paragraph should appear</p>
+<p>even though it's an import directive, but if we use the full syntax <code>::directive-name{attr=\\"name\\" attr2=\\"a/path\\"}</code></p>
+<p>it goes.</p>
+<p>::: name [inline-content] {key=val}
+a container directive
+:::</p>
+</section>",
+  "solutions": Array [
+    Object {},
+  ],
+  "tests": Array [],
+}
+`;
+
 exports[`challenge parser it should parse video questions 1`] = `
 Object {
   "description": "<section id=\\"description\\">
