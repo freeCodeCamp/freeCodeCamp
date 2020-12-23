@@ -5,15 +5,15 @@ challengeType: 4
 forumTopicId: 301506
 ---
 
-::import{description="Desc" from="../../../imported-files/markdown-exports.md"}
+::import{component="Description" from="../../../imported-files/markdown-exports.md"}
 
 # --description--
 
-::use{description="Desc"}
+::use{component="Description"}
 
-[1]: https://file-metadata-microservice.freecodecamp.rocks
+[1]: https://file-metadata-microservice.freecodecamp.rocks/
 [2]: https://github.com/freeCodeCamp/boilerplate-project-filemetadata/
-[3]: https://repl.it/github/freeCodeCamp/boilerplate-project-filemetadata
+[3]: https://repl.it/github/freeCodeCamp/boilerplate-project-filemetadata/
 
 # --instructions--
 

@@ -4,13 +4,13 @@ title: Secure Real Time Multiplayer Game
 challengeType: 4
 ---
 
-::import{description="Desc" from="../../../imported-files/markdown-exports.md"}
+::import{component="Description" from="../../../imported-files/markdown-exports.md"}
 
 # --description--
 
-::use{description="Desc"}
+::use{component="Description"}
 
-[1]: https://secure-real-time-multiplayer-game.freecodecamp.rocks
+[1]: https://secure-real-time-multiplayer-game.freecodecamp.rocks/
 [2]: https://github.com/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/
 [3]: https://repl.it/github/freeCodeCamp/boilerplate-project-secure-real-time-multiplayer-game/
 

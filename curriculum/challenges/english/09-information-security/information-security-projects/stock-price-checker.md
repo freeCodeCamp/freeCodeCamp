@@ -5,15 +5,15 @@ challengeType: 4
 forumTopicId: 301572
 ---
 
-::import{description="Desc" from="../../../imported-files/markdown-exports.md"}
+::import{component="Description" from="../../../imported-files/markdown-exports.md"}
 
 # --description--
 
-::use{description="Desc"}
+::use{component="Description"}
 
 Since all reliable stock price APIs require an API key, we've built a workaround. Use <https://stock-price-checker-proxy.freecodecamp.rocks> to get up-to-date stock price information without needing to sign up for your own key.
 
-[1]: https://stock-price-checker.freecodecamp.rocks
+[1]: https://stock-price-checker.freecodecamp.rocks/
 [2]: https://github.com/freeCodeCamp/boilerplate-project-stockchecker/
 [3]: https://repl.it/github/freeCodeCamp/boilerplate-project-stockchecker/
 
