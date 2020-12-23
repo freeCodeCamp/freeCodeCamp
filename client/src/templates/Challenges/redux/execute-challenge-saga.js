@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {
   delay,
   put,
@@ -156,7 +155,12 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;
-        newTest.stack = stack?.replace(/ (at eval|\()[\s\S]*/, '');
+
+        // Firefox handles errors differently, so if err.stack starts '@', it is Firefox,
+        // and err.message contains the assertion message
+        newTest.stack = /$@/.test(stack)
+          ? stack?.replace(/\s?(at eval|\()[\s\S]*/, '')
+          : `${err.message}\n`;
       }
       yield put(updateConsole(`${newTest.message}\n${newTest.stack || ''}`));
     } finally {
