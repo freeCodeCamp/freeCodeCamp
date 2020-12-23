@@ -31,6 +31,10 @@ function plugin() {
     }
     const importPromises = importedFiles.map(async ({ attributes }) => {
       const { from, component } = attributes;
+      // if these are missing, bail, since it's not an import.
+      if (!from || !component) {
+        return null;
+      }
       const location = path.resolve(file.dirname, from);
       return await read(location)
         .then(parse)
@@ -68,7 +72,11 @@ function plugin() {
         remove(tree, { type: 'leafDirective', name: 'import' });
         next();
       })
-      .catch(next);
+      .catch(err => {
+        console.log('error processing ::import');
+        console.log(err);
+        next(err);
+      });
   }
 }
 
