@@ -1,6 +1,6 @@
-const { getText } = require('./transform-to-mdx');
-const { challengeToString } = require('./create-mdx');
-const { parseMD } = require('./../../mdx');
+const { getText } = require('./get-challenge-text');
+const { challengeToString } = require('./create-challenge-string');
+const { parseMD } = require('../../mdx');
 
 module.exports.annotate = async function annotate(filePath) {
   return generateTranscribableChallenge(filePath)
