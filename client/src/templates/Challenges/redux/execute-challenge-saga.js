@@ -153,16 +153,11 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
       } else {
-        const { message, stack } = err;
+        const { message, stack } = err?.err ?? err;
         newTest.err = message + '\n' + stack;
-
-        // Firefox handles errors differently, so if err.stack starts '@', it is Firefox,
-        // and err.message contains the assertion message
-        newTest.stack = /$@/.test(stack)
-          ? stack?.replace(/\s?(at eval|\()[\s\S]*/, '')
-          : `${err.message}\n`;
+        newTest.stack = message;
       }
-      yield put(updateConsole(`${newTest.message}\n${newTest.stack || ''}`));
+      yield put(updateConsole(`${newTest.message}\n${newTest?.stack || ''}`));
     } finally {
       testResults.push(newTest);
     }
