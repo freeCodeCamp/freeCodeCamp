@@ -3,8 +3,6 @@ const { matches } = require('unist-util-select');
 const directive = require('mdast-util-directive');
 var toMarkdown = require('mdast-util-to-markdown');
 
-// TODO: needs tests (and confirmation it doesn't break imports), but I think
-// this approach is sound.
 function plugin() {
   return transformer;
 
