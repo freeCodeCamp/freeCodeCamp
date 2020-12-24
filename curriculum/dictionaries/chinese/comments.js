@@ -330,7 +330,7 @@ const TRANSLATIONS = [
   },
   {
     id: 'mnt4d3',
-    text: '应该显示 'carrot''
+    text: "应该显示 'carrot'"
   },
   {
     id: 'fhe9m4',
