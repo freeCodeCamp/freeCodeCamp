@@ -10,6 +10,7 @@
     "tools/scripts/build",
     "tools/scripts/formatter",
     "tools/scripts/formatter/fcc-md-to-gfm",
+    "tools/formatter",
     "tools/challenge-helper-scripts"
   ],
   "version": "independent"
