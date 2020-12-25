@@ -792,7 +792,7 @@ class Editor extends Component {
       const preventOverlap = id => {
         // Even though the decoration covers the whole line, it has a
         // startColumn that moves.  toStartOfLine ensures that the
-        // comparison detects if any change has occured on that line
+        // comparison detects if any change has occurred on that line
         // NOTE: any change in the decoration has already happened by this point
         // so this covers the *new* decoration range.
         const coveringRange = toStartOfLine(model.getDecorationRange(id));
