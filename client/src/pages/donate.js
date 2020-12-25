@@ -8,9 +8,12 @@ import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
 
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
-import DonateText from '../components/Donation/DonateText';
-import DonateSupportText from '../components/Donation/DonateSupportText';
-import DonationOptionsText from '../components/Donation/DonationOptionsText';
+import {
+  DonationText,
+  DonationSupportText,
+  DonationOptionsText,
+  DonationOptionsAlertText
+} from '../components/Donation/DonationTextComponents';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import CampersImage from '../components/landing/components/CampersImage';
 
@@ -84,7 +87,7 @@ export class DonatePage extends Component {
           <Row>
             <Fragment>
               <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-                <Row className='donate-text'>
+                <Row>
                   <Col className={'text-center'} xs={12}>
                     {isDonating ? (
                       <h2>Thank you for your support</h2>
@@ -101,15 +104,21 @@ export class DonatePage extends Component {
                       currently have a recurring donation.
                     </p>
                     <br />
-                    <DonationOptionsText isAlert={true} />
+                    <DonationOptionsAlertText />
                   </Alert>
                 ) : null}
-                <DonateText isDonating={isDonating} />
+                <DonationText />
                 <DonateForm
                   enableDonationSettingsPage={this.enableDonationSettingsPage}
                   handleProcessing={this.handleProcessing}
                 />
-                <DonateSupportText />
+                <Row>
+                  <Col xs={12}>
+                    <hr />
+                    <DonationOptionsText />
+                    <DonationSupportText />
+                  </Col>
+                </Row>
               </Col>
               <Col lg={6}>
                 <CampersImage page='donate' />
