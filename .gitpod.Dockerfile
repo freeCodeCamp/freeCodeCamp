@@ -1,6 +1,6 @@
 FROM gitpod/workspace-mongodb as base
 
-FROM gitpod/workspace-full as requirements
+FROM gitpod/workspace-full
 RUN sudo apt-get update
 # Install Cypress-base dependencies
 RUN sudo apt-get install -y \
@@ -54,5 +54,4 @@ RUN sudo apt-get update && \
         libxrender1 \
         lsb-release \
         wget \
-        xdg-utils && \
-    sudo rm -rf /var/lib/apt/lists/*
+        xdg-utils
