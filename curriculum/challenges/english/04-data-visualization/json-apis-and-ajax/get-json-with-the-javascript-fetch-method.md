@@ -48,7 +48,7 @@ Your code should use `then` to convert the response to JSON.
 ```js
 assert(
   code.match(
-    /\.then\s*\(\s*\(?(?<var>\w+))?\s*=>\s*\k<var>\s*\.json\s*\(\s*\)\s*\)/g
+    /\.then\s*\(\s*\(?(?<var>\w+)\)?\s*=>\s*\k<var>\s*\.json\s*\(\s*\)\s*\)/g
   )
 );
 ```
