@@ -11,7 +11,11 @@ You can build web forms that actually submit data to a server using nothing more
 
 For example:
 
-`<form action="/url-where-you-want-to-submit-form-data"><input></form>`
+```html
+<form action="/url-where-you-want-to-submit-form-data">
+  <input>
+</form>
+```
 
 # --instructions--
 
