@@ -44,7 +44,7 @@
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "monaco-editor": "^0.20.0",
-    "nanoid": "^3.1.18",
+    "nanoid": "^3.1.20",
     "prismjs": "^1.22.0",
     "query-string": "^6.13.7",
     "react": "^16.14.0",
