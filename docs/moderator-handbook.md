@@ -459,7 +459,7 @@ Thank you and happy coding.
 ```markdown
 Thank you for your pull request.
 
-We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
+We are closing this pull request. Please suggest links and other details to add the challenge's corresponding guide post through [a forum topic](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**) instead.
 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
