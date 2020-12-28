@@ -8,7 +8,7 @@ dashedName: build-an-image-search-abstraction-layer
 
 # --description--
 
-Build a full stack JavaScript app that allows you to search for images like this: <https://image-search-abstraction-layer.freecodecamp.rocks/api/imagesearch/lolcats%20funny?offset=10> and browse recent search queries like this: <https://image-search-abstraction-layer.freecodecamp.rocks/api/latest/imagesearch/>. Use a site builder of your choice to complete the project.
+Build a full stack JavaScript app that allows you to search for images like this: <https://image-search-abstraction-layer.freecodecamp.rocks/query/lolcats%20funny?offset=10> and browse recent search queries like this: <https://image-search-abstraction-layer.freecodecamp.rocks/recent/>. Use a site builder of your choice to complete the project.
 
 Here are the specific user stories you should implement for this project:
 
