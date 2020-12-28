@@ -5,7 +5,12 @@ import Link from '../helpers/Link';
 import LanguageMenu from './LanguageMenu';
 import './footer.css';
 
-const { showLocaleDropdownMenu = false } = require('../../../config/env');
+const {
+  showLocaleDropdownMenu = false,
+  clientLocale
+} = require('../../../config/env');
+
+const trendingLinks = require(`../../../i18n/locales/${clientLocale}/trending.json`);
 
 const propTypes = {
   children: PropTypes.any
@@ -42,253 +47,103 @@ function Footer() {
             <div className='col-header'>{t('footer.trending-guides')}</div>
             <div className='trending-guides-row'>
               <div className='footer-col footer-col-1'>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/git-clone-branch-how-to-clone-a-specific-branch/'
-                  }
-                >
-                  Git Clone
+                <Link external={false} to={trendingLinks.article1link}>
+                  {trendingLinks.article1title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/agile-methods-and-methodology-for-beginners/'
-                  }
-                >
-                  Agile Methods
+                <Link external={false} to={trendingLinks.article2link}>
+                  {trendingLinks.article2title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/if-name-main-python-example/'
-                  }
-                >
-                  Python Main
+                <Link external={false} to={trendingLinks.article3link}>
+                  {trendingLinks.article3title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/'
-                  }
-                >
-                  Callback
+                <Link external={false} to={trendingLinks.article4link}>
+                  {trendingLinks.article4title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/debounce-javascript-tutorial-how-to-make-your-js-wait-up/'
-                  }
-                >
-                  Debounce
+                <Link external={false} to={trendingLinks.article5link}>
+                  {trendingLinks.article5title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/javascript-url-encode-example-how-to-use-encodeuricomponent-and-encodeuri/'
-                  }
-                >
-                  URL Encode
+                <Link external={false} to={trendingLinks.article6link}>
+                  {trendingLinks.article6title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/make-it-blink-html-tutorial-how-to-use-the-blink-tag-with-code-examples/'
-                  }
-                >
-                  Blink HTML
+                <Link external={false} to={trendingLinks.article7link}>
+                  {trendingLinks.article7title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/python-returns-multiple-values-how-to-return-a-tuple-list-dictionary/'
-                  }
-                >
-                  Python Tuple
+                <Link external={false} to={trendingLinks.article8link}>
+                  {trendingLinks.article8title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/javascript-array-insert-how-to-add-to-an-array-with-the-push-unshift-and-concat-functions/'
-                  }
-                >
-                  JavaScript Push
+                <Link external={false} to={trendingLinks.article9link}>
+                  {trendingLinks.article9title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/java-list-tutorial-util-list-api-example/'
-                  }
-                >
-                  Java List
+                <Link external={false} to={trendingLinks.article10link}>
+                  {trendingLinks.article10title}
                 </Link>
               </div>
               <div className='footer-col footer-col-2'>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/learn-ux-design-self-taught-user-experience-designer/'
-                  }
-                >
-                  UX
+                <Link external={false} to={trendingLinks.article11link}>
+                  {trendingLinks.article11title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/what-is-design-thinking-an-introduction-to-the-design-process-for-entrepreneurs-and-developers/'
-                  }
-                >
-                  Design Thinking
+                <Link external={false} to={trendingLinks.article12link}>
+                  {trendingLinks.article12title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/prime-numbers-list-chart-of-primes/'
-                  }
-                >
-                  Prime Number List
+                <Link external={false} to={trendingLinks.article13link}>
+                  {trendingLinks.article13title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/product-design-explained-in-plain-english/'
-                  }
-                >
-                  Product Design
+                <Link external={false} to={trendingLinks.article14link}>
+                  {trendingLinks.article14title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/what-is-digital-design-and-why-does-it-matter/'
-                  }
-                >
-                  Digital Design
+                <Link external={false} to={trendingLinks.article15link}>
+                  {trendingLinks.article15title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/best-coding-games-online-adults-learn-to-code/'
-                  }
-                >
-                  Coding Games
+                <Link external={false} to={trendingLinks.article16link}>
+                  {trendingLinks.article16title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/svm-machine-learning-tutorial-what-is-the-support-vector-machine-algorithm-explained-with-code-examples/'
-                  }
-                >
-                  SVM
+                <Link external={false} to={trendingLinks.article17link}>
+                  {trendingLinks.article17title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/javascript-foreach-how-to-loop-through-an-array-in-js/'
-                  }
-                >
-                  JavaScript forEach
+                <Link external={false} to={trendingLinks.article18link}>
+                  {trendingLinks.article18title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/google-bert-nlp-machine-learning-tutorial/'
-                  }
-                >
-                  Google BERT
+                <Link external={false} to={trendingLinks.article19link}>
+                  {trendingLinks.article19title}
                 </Link>
-                <Link
-                  external={false}
-                  to={
-                    'https://www.freecodecamp.org/news/sql-create-table-statement-with-example-syntax/'
-                  }
-                >
-                  Create Table SQL
+                <Link external={false} to={trendingLinks.article20link}>
+                  {trendingLinks.article20title}
                 </Link>
               </div>
               <div className='footer-col footer-col-3'>
                 <div className='footer-left'>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/responsive-web-design-how-to-make-a-website-look-good-on-phones-and-tablets/'
-                    }
-                  >
-                    Responsive Web Design
+                  <Link external={false} to={trendingLinks.article21link}>
+                    {trendingLinks.article21title}
                   </Link>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/svg-basics-what-are-scalable-vector-graphics-and-how-do-you-use-them/'
-                    }
-                  >
-                    What Is an SVG File?
+                  <Link external={false} to={trendingLinks.article22link}>
+                    {trendingLinks.article22title}
                   </Link>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/pdf-password-remover-guide-how-to-remove-password-protection-from-a-pdf/'
-                    }
-                  >
-                    PDF Password Remover
+                  <Link external={false} to={trendingLinks.article23link}>
+                    {trendingLinks.article23title}
                   </Link>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/what-is-a-pdf-file-and-how-do-you-open-it-solved/'
-                    }
-                  >
-                    What Is a PDF?
+                  <Link external={false} to={trendingLinks.article24link}>
+                    {trendingLinks.article24title}
                   </Link>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/what-is-python-used-for-10-coding-uses-for-the-python-programming-language/'
-                    }
-                  >
-                    What Is Python?
+                  <Link external={false} to={trendingLinks.article25link}>
+                    {trendingLinks.article25title}
                   </Link>
                 </div>
 
                 <div className='footer-right'>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/what-is-tls-transport-layer-security-encryption-explained-in-plain-english/'
-                    }
-                  >
-                    What Is TLS?
+                  <Link external={false} to={trendingLinks.article26link}>
+                    {trendingLinks.article26title}
                   </Link>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/what-is-a-lan-local-area-network-explained-in-plain-english/'
-                    }
-                  >
-                    What Is a LAN?
+                  <Link external={false} to={trendingLinks.article27link}>
+                    {trendingLinks.article27title}
                   </Link>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/'
-                    }
-                  >
-                    What Is npm?
+                  <Link external={false} to={trendingLinks.article28link}>
+                    {trendingLinks.article28title}
                   </Link>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/rsync-examples-rsync-options-and-how-to-copy-files-over-ssh/'
-                    }
-                  >
-                    RSync Examples
+                  <Link external={false} to={trendingLinks.article29link}>
+                    {trendingLinks.article29title}
                   </Link>
-                  <Link
-                    external={false}
-                    to={
-                      'https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/'
-                    }
-                  >
-                    Random Forest
+                  <Link external={false} to={trendingLinks.article30link}>
+                    {trendingLinks.article30title}
                   </Link>
                 </div>
               </div>
