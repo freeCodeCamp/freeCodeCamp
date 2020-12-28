@@ -112,7 +112,7 @@ export class DonatePage extends Component {
                   enableDonationSettingsPage={this.enableDonationSettingsPage}
                   handleProcessing={this.handleProcessing}
                 />
-                <Row>
+                <Row className='donate-support'>
                   <Col xs={12}>
                     <hr />
                     <DonationOptionsText />
