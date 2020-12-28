@@ -13,6 +13,7 @@ const selectors = {
 describe('Donate page', () => {
   before(() => {
     cy.clearCookies();
+    cy.exec('npm run seed');
     cy.login();
     cy.visit('/donate');
   });
