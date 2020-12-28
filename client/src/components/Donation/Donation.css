@@ -195,8 +195,7 @@ li.disabled > a {
 .donate-page-wrapper,
 .donate-page-wrapper b,
 .donate-page-wrapper h3,
-.donate-text p,
-.donation-description,
+.donate-page-wrapper p,
 [name='payment-method'] {
   font-family: 'Lato', sans-serif;
 }
