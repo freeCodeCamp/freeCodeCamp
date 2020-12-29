@@ -1,138 +1,98 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import uniq from 'lodash/uniq';
-import { createSelector } from 'reselect';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import SuperBlock from './components/SuperBlock';
-import Spacer from '../helpers/Spacer';
-
-import './map.css';
-import { ChallengeNode } from '../../redux/propTypes';
-import { toggleSuperBlock, toggleBlock, resetExpansion } from './redux';
-import { currentChallengeIdSelector } from '../../redux';
+import { Link } from '../helpers';
+import LinkButton from '../../assets/icons/LinkButton';
 import { dasherize } from '../../../../utils/slugs';
+import './map.css';
 
 const propTypes = {
-  currentChallengeId: PropTypes.string,
-  hash: PropTypes.string,
-  introNodes: PropTypes.arrayOf(
-    PropTypes.shape({
-      fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        block: PropTypes.string.isRequired
-      })
-    })
-  ),
-  isSignedIn: PropTypes.bool,
-  nodes: PropTypes.arrayOf(ChallengeNode),
-  resetExpansion: PropTypes.func,
-  toggleBlock: PropTypes.func.isRequired,
-  toggleSuperBlock: PropTypes.func.isRequired
+  forLanding: PropTypes.bool
 };
 
-const mapStateToProps = state => {
-  return createSelector(
-    currentChallengeIdSelector,
-    currentChallengeId => ({
-      currentChallengeId
-    })
-  )(state);
-};
+const codingPrepRE = new RegExp('Interview Prep');
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      resetExpansion,
-      toggleSuperBlock,
-      toggleBlock
-    },
-    dispatch
+function createSuperBlockTitle(str) {
+  return codingPrepRE.test(str)
+    ? `${str} (Thousands of hours of challenges)`
+    : `${str} Certification (300\xa0hours)`;
+}
+
+function renderLandingMap(nodes) {
+  return (
+    <ul data-test-label='certifications'>
+      {nodes.map((node, i) => (
+        <li key={i}>
+          <Link
+            className='btn link-btn btn-lg'
+            to={`/learn/${dasherize(node.superBlock)}/`}
+          >
+            {node.superBlock}
+            <LinkButton />
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }
 
-export class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.initializeExpandedState();
-  }
+function renderLearnMap(nodes) {
+  return (
+    <Row>
+      <Col sm={10} smOffset={1} xs={12}>
+        <ul data-test-label='learn-curriculum-map'>
+          {nodes.map((node, i) => (
+            <li key={i}>
+              <Link
+                className='btn link-btn btn-lg'
+                to={`/learn/${dasherize(node.superBlock)}/`}
+              >
+                {createSuperBlockTitle(node.superBlock)}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Col>
+    </Row>
+  );
+}
 
-  // As this happens in the constructor, it's necessary to manipulate state
-  // directly.
-  initializeExpandedState() {
-    const {
-      currentChallengeId,
-      hash,
-      nodes,
-      resetExpansion,
-      toggleBlock,
-      toggleSuperBlock,
-      isSignedIn
-    } = this.props;
-    resetExpansion();
-
-    let node;
-
-    // find the challenge that has the same superblock with hash
-    if (hash) {
-      node = nodes.find(node => dasherize(node.superBlock) === hash);
-    }
-
-    // without hash only expand when signed in
-    if (isSignedIn) {
-      // if there is no hash or the hash did not match any challenge superblock
-      // and there was a currentChallengeId
-      if (!node && currentChallengeId) {
-        node = nodes.find(node => node.id === currentChallengeId);
+export function Map({ forLanding = false }) {
+  /*
+   * this query gets the first challenge from each block and the second block
+   * from each superblock, leaving you with one challenge from each
+   * superblock
+   */
+  const data = useStaticQuery(graphql`
+    query SuperBlockNodes {
+      allChallengeNode(
+        sort: { fields: [superOrder] }
+        filter: { order: { eq: 2 }, challengeOrder: { eq: 1 } }
+      ) {
+        nodes {
+          superBlock
+          dashedName
+        }
       }
-      if (!node) node = nodes[0];
     }
+  `);
 
-    if (!node) return;
+  let nodes = data.allChallengeNode.nodes;
 
-    toggleBlock(node.block);
-    toggleSuperBlock(node.superBlock);
+  if (forLanding) {
+    nodes = nodes.filter(node => node.superBlock !== 'Coding Interview Prep');
   }
 
-  renderSuperBlocks(superBlocks) {
-    const { nodes, introNodes } = this.props;
-    return superBlocks.map(superBlock => (
-      <SuperBlock
-        introNodes={introNodes}
-        key={superBlock}
-        nodes={nodes}
-        superBlock={superBlock}
-      />
-    ));
-  }
-
-  render() {
-    const { nodes } = this.props;
-    // if a given superBlock's nodes have been filtered that
-    // superBlock will not appear in superBlocks and will not be rendered.
-    const superBlocks = uniq(nodes.map(({ superBlock }) => superBlock));
-    return (
-      <Row>
-        <Col sm={10} smOffset={1} xs={12}>
-          <div className='map-ui' data-test-label='learn-curriculum-map'>
-            <ul>
-              {this.renderSuperBlocks(superBlocks)}
-              <Spacer />
-            </ul>
-          </div>
-        </Col>
-      </Row>
-    );
-  }
+  return (
+    <div className='map-ui' data-test-label='learn-curriculum-map'>
+      {forLanding ? renderLandingMap(nodes) : renderLearnMap(nodes)}
+    </div>
+  );
 }
 
 Map.displayName = 'Map';
 Map.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Map);
+export default Map;

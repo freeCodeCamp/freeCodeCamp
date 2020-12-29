@@ -116,12 +116,12 @@ class ShowUser extends Component {
           <title>{t('report.portfolio')} | freeCodeCamp.org</title>
         </Helmet>
         <Spacer size={2} />
-        <Row className='text-center'>
+        <Row className='text-center overflow-fix'>
           <Col sm={8} smOffset={2} xs={12}>
             <h2>{t('report.portfolio-2', { username: username })}</h2>
           </Col>
         </Row>
-        <Row>
+        <Row className='overflow-fix'>
           <Col sm={6} smOffset={3} xs={12}>
             <p>
               <Trans email={email} i18nKey='report.notify-1'>
