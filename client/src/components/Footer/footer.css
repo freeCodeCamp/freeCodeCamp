@@ -115,14 +115,14 @@ p.footer-donation a:hover {
   margin: 0 0 3rem;
 }
 
-.footer-buttom .our-nonprofit {
+.footer-bottom .our-nonprofit {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.footer-buttom .our-nonprofit a {
+.footer-bottom .our-nonprofit a {
   padding: 5px 10px;
 }
 
@@ -169,7 +169,7 @@ p.footer-donation a:hover {
   .footer-container .col-spacer {
     margin-top: 40px;
   }
-  .footer-buttom .our-nonprofit a {
+  .footer-bottom .our-nonprofit a {
     padding: 5px;
   }
 }
@@ -209,12 +209,12 @@ p.footer-donation a:hover {
     margin-top: 18px;
   }
 
-  .footer-buttom .our-nonprofit {
+  .footer-bottom .our-nonprofit {
     padding: 0 10px;
     justify-content: space-between;
   }
 
-  .footer-buttom .col-header {
+  .footer-bottom .col-header {
     display: none;
   }
   .our-nonprofit {
