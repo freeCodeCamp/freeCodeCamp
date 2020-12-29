@@ -28,6 +28,24 @@ button.map-title:hover {
   background-color: var(--tertiary-background);
 }
 
+div.map-title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 5px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+div.map-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
 .map-title > h4 {
   margin-bottom: 0;
 }
@@ -38,7 +56,7 @@ button.map-title:hover {
   padding-left: 20px;
 }
 
-.superblock .map-title svg {
+.map-title svg {
   width: 14px;
   margin-right: 5px;
   flex-shrink: 0;
@@ -86,7 +104,14 @@ li.open > .map-title svg:first-child {
   text-decoration: none;
 }
 
-/* 14px is the width of the expansion arrow */
-.superblock {
+.block {
   max-width: calc(100% - 14px);
+}
+
+.block svg {
+  width: 14px;
+  margin-right: 5px;
+  flex-shrink: 0;
+  fill: var(--color-quaternary) !important;
+  stroke: var(--color-quaternary);
 }
