@@ -1,0 +1,5 @@
+name: 'Curriculum File Annotater'
+description: 'Annotates curriculum files before they are uploaded to Crowdin'
+runs:
+  using: 'node12'
+  main: './index.js'
