@@ -3,92 +3,310 @@
 exports[`<Map /> snapshot: Map 1`] = `
 <div>
   <div
-    class="row"
+    class="map-ui"
+    data-test-label="learn-curriculum-map"
   >
-    <div
-      class="col-sm-10 col-sm-offset-1 col-xs-12"
+    <ul
+      data-test-label="certifications"
     >
-      <div
-        class="map-ui"
-        data-test-label="learn-curriculum-map"
-      >
-        <ul>
-          <li
-            class="superblock "
-            id="super-block-one"
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          Super Block One
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <button
-              aria-expanded="false"
-              class="map-title"
-            >
-              <svg
-                viewBox="0 0 100 100"
-                width="25px"
-              >
-                <polygon
-                  points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
-                  style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
-                  transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
-                />
-              </svg>
-              <h4>
-                Super Block One Certification (300 hours)
-              </h4>
-            </button>
-          </li>
-          <li
-            class="superblock "
-            id="super-block-two"
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          Super Block One
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <button
-              aria-expanded="false"
-              class="map-title"
-            >
-              <svg
-                viewBox="0 0 100 100"
-                width="25px"
-              >
-                <polygon
-                  points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
-                  style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
-                  transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
-                />
-              </svg>
-              <h4>
-                Super Block Two Certification (300 hours)
-              </h4>
-            </button>
-          </li>
-          <li
-            class="superblock "
-            id="super-block-three"
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          Super Block One
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <button
-              aria-expanded="false"
-              class="map-title"
-            >
-              <svg
-                viewBox="0 0 100 100"
-                width="25px"
-              >
-                <polygon
-                  points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
-                  style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
-                  transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
-                />
-              </svg>
-              <h4>
-                Super Block Three Certification (300 hours)
-              </h4>
-            </button>
-          </li>
-          <div
-            class="spacer"
-            style="padding: 15px 0px; height: 1px;"
-          />
-        </ul>
-      </div>
-    </div>
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          Super Block One
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-one/"
+        >
+          Super Block One
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-two/"
+        >
+          Super Block Two
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-two/"
+        >
+          Super Block Two
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-two/"
+        >
+          Super Block Two
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-two/"
+        >
+          Super Block Two
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-three/"
+        >
+          Super Block Three
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          class="btn link-btn btn-lg"
+          href="/learn/super-block-three/"
+        >
+          Super Block Three
+          <svg
+            aria-hidden="true"
+            fill="inherit"
+            height="20px"
+            version="1.1"
+            viewBox="0 0 16 20"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g>
+              <polygon
+                points="-2.68014473e-15 -1.06357708e-13 2.01917516 -1.06357708e-13 8.99824941 9.00746464 2.01917516 18.0149293 -2.66453526e-15 18.0149293 7.00955027 9"
+              />
+              <polygon
+                points="7.99971435 -1.06357708e-13 10.0188895 -1.06357708e-13 16.9979638 9.00746464 10.0188895 18.0149293 7.99971435 18.0149293 15.0092646 9"
+              />
+            </g>
+          </svg>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 `;
