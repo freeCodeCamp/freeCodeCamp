@@ -1,3 +1,20 @@
+.block-ui {
+  height: 100%;
+}
+
+.block-ui ul {
+  list-style: none;
+  color: var(--secondary-color);
+}
+
+.block-ui > ul {
+  padding: 0;
+}
+
+.block a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 767px) {
   .intro-layout-container {
     padding: 0 10px;
