@@ -19,29 +19,43 @@ id: Unique identifier (alphanumerical, MongoDB_id)
 title: Challenge Title
 challengeType: 11
 videoId: 'YouTube videoId for video challenge'
+forumTopicId: 12345
 ---
 
-## Description
+# --description--
 
-<section id='description'>
-An optional description with helpful information related to the video.
-</section>
+Challenge description text, in markdown
 
-## Tests
-
-<section id='tests'>
-
-```yml
-question:
-  text: 'Question'
-  answers:
-    - 'Answer One'
-    - 'Answer Two'
-    - 'Answer Three'
-  solution: 3
+```html
+<div>
+  example code
+</div>
 ```
 
-</section>
+# --question--
+
+These fields are currently used for the multiple choice Python challenges.
+
+## --text--
+
+The question text goes here.
+
+## --answers--
+
+Answer 1
+
+---
+
+Answer 2
+
+---
+
+More answers
+
+## --video-solution--
+
+The number for the correct answer goes here.
+
 ````
 
 ## Creating questions for video challenges
@@ -84,124 +98,99 @@ You can add the question locally or directly throught the GitHub interface. To a
 
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
-```yml
-question:
-  text: |
-    Question
-  answers:
-    - |
-      one
-    - |
-      two
-    - |
-      three
-  solution: 3
+```md
+# --question--
+
+## --text--
+
+Question text
+
+## --answers--
+
+Answer 1
+
+---
+
+Answer 2
+
+---
+
+More answers
+
+## --video-solution--
+
+1
 ```
 
-Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
-
-#### Use markdown to format your question
-
-The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
-
-```yml
-question:
-  text: |
-    Question
-```
-
-Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
-
-The same approach can be used for the answers, so the entire question becomes
-
-```yml
-question:
-  text: |
-    Question
-  answers:
-  - |
-    First answer
-  - |
-    Second
-  - |
-    Third
-  solution: 2
-```
-
-Make sure each answer is plausible but there is only one correct answer.
-
-#### Use of HTML
-
-Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+Update the  “Question Text” with your question. Update the `Answer 1`, `Answer 2`, and so on with the possible answers. Make sure to update the video-solution number with the correct answer number. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
 ### Question examples
 
-#### Examples without HTML
+````md
+# --question--
 
-````yml
-question:
-  text: |
-    What does this JavaScript code log to the console?
-    ```js
-    console.log('hello world');
-    ```
-
-    Select an answer!
-  answers:
-    - |
-      hello *world*
-    - |
-      **hello** world
-    - |
-      hello world
-  solution: 3
-````
-
-````yml
-question:
-  text: |
-    What will print out after running this code:
-    ```py
-    width = 15
-    height = 12.0
-    print(height/3)
-    ```
-  answers:
-    - |
-      39
-    - |
-      4
-    - |
-      4.0
-    - |
-      5.0
-    - |
-      5
-  solution: 3
-````
-
-#### Example with HTML
-
-```yml
-question:
-  text: |
-    What will print out after running this code:
-    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
-  answers:
-    - |
-      39
-    - |
-      4
-    - |
-      4.0
-    - |
-      5.0
-    - |
-      5
-  solution: 3
+## --text--
+What does this JavaScript code log to the console?
+```js
+console.log('hello world');
 ```
 
-The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
+## --answers--
+
+hello *world*
+
+---
+
+**hello** world
+
+---
+
+hello world
+
+---
+
+## --video-solution--
+3
+````
+
+````md
+
+# --question--
+
+## --text--
+
+What will print out after running this code:
+
+```py
+width = 15
+height = 12.0
+print(height/3)
+```
+
+## --answers--
+
+39
+
+---
+
+4
+
+---
+
+4.0
+
+---
+
+5.0
+
+---
+
+5
+
+## --video-solution--
+
+3
+````
 
 For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
