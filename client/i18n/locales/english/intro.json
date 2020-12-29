@@ -1,0 +1,14 @@
+{
+  "responsive-web-design": {
+    "superblock-intro": [
+      "Here's the intro for the Responsive Web Design Cert's superblock",
+      "And here's another sentence. Or maybe a paragraph?"
+    ]
+  },
+  "javascript-algorithms-and-data-structures": {
+    "superblock-intro": [
+      "Here's the intro for the JS Algos and Data Structures Cert's superblock",
+      "And here's another sentence. Or two. No, make it three."
+    ]
+  }
+}

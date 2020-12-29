@@ -6,7 +6,9 @@ import { uniq, find } from 'lodash';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
+import { withTranslation } from 'react-i18next';
 
+import { dasherize } from '../../../../utils/slugs';
 import Block from '../../components/Map/components/Block';
 import { FullWidthRow, Spacer } from '../../components/helpers';
 import { currentChallengeIdSelector, isSignedInSelector } from '../../redux';
@@ -29,6 +31,7 @@ const propTypes = {
   expandedState: PropTypes.object,
   isSignedIn: PropTypes.bool,
   resetExpansion: PropTypes.func,
+  t: PropTypes.func,
   toggleBlock: PropTypes.func
 };
 
@@ -123,7 +126,8 @@ export class SuperBlockIntroductionPage extends Component {
         },
         allChallengeNode: { edges },
         allMarkdownRemark: { edges: mdEdges }
-      }
+      },
+      t
     } = this.props;
 
     return (
@@ -138,6 +142,12 @@ export class SuperBlockIntroductionPage extends Component {
             {superBlock !== 'Coding Interview Prep' ? ' Certification' : ''}
           </h1>
           <Spacer />
+          {t(`intro:${dasherize(superBlock)}.superblock-intro`, {
+            returnObjects: true
+          }).map((str, i) => (
+            <p key={i}>{str}</p>
+          ))}
+          <Spacer />
           <div className='block-ui'>
             {renderBlock(
               edges.map(({ node }) => node),
@@ -151,13 +161,17 @@ export class SuperBlockIntroductionPage extends Component {
   }
 }
 
+const TranslatedSuperBlockIntroductionPage = withTranslation()(
+  SuperBlockIntroductionPage
+);
+
 SuperBlockIntroductionPage.displayName = 'SuperBlockIntroductionPage';
 SuperBlockIntroductionPage.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SuperBlockIntroductionPage);
+)(TranslatedSuperBlockIntroductionPage);
 
 export const query = graphql`
   query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {
