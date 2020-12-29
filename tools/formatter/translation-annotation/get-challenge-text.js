@@ -17,8 +17,11 @@ const textProcessor = unified()
 exports.getText = createProcessor(textProcessor);
 
 function createProcessor(processor) {
-  return async msg => {
-    const file = typeof msg === 'string' ? vfile.readSync(msg) : msg;
+  return async vFileOrPath => {
+    const file =
+      typeof vFileOrPath === 'string'
+        ? vfile.readSync(vFileOrPath)
+        : vFileOrPath;
     const tree = processor.parse(file);
     await processor.run(tree, file);
     return file.data;
