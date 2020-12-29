@@ -1,7 +1,7 @@
 const stringify = require('remark-stringify');
 const { root } = require('mdast-builder');
 const unified = require('unified');
-const { code, inlineCode } = require('mdast-util-to-markdown/lib/handle');
+const { inlineCode } = require('mdast-util-to-markdown/lib/handle');
 const remarkParse = require('remark-parse');
 const remarkStringify = require('remark-stringify');
 
@@ -11,17 +11,13 @@ const notranslateEnd = '</notranslate>';
 const wrapInlineCode = (...args) =>
   notranslateStart + inlineCode(...args) + notranslateEnd;
 
-const wrapCode = (...args) => `${notranslateStart}
-${code(...args)}
-${notranslateEnd}`;
-
 const annotateCode = md =>
   unified()
     .use(remarkParse)
     .use(remarkStringify, {
       fences: true,
       emphasis: '*',
-      handlers: { inlineCode: wrapInlineCode, code: wrapCode }
+      handlers: { inlineCode: wrapInlineCode }
     })
     .processSync(md).contents;
 
