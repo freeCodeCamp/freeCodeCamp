@@ -1,6 +1,8 @@
 const { pick } = require('lodash');
 const yaml = require('js-yaml');
 
+const { annotateCode, notranslateStart, notranslateEnd } = require('./utils');
+
 const frontmatterProperties = [
   'id',
   'title',
@@ -21,9 +23,6 @@ const otherProperties = [
   'files',
   'question'
 ];
-
-const notranslateStart = '<notranslate>';
-const notranslateEnd = '</notranslate>';
 
 function createFrontmatter(data) {
   Object.keys(data).forEach(key => {
@@ -49,7 +48,7 @@ function createHints({ tests }) {
   if (!tests) return '';
   const strTests = tests
     .map(
-      ({ text, testString }) => `${text.trimEnd()}
+      ({ text, testString }) => `${annotateCode(text).trimEnd()}
 
 ${notranslateStart}
 ${testString.trimEnd()}
@@ -73,18 +72,18 @@ ${notranslateEnd}
 
 `);
   const formattedQuestion =
-    createSection('text', text, { depth: 2 }) +
+    createSection('text', annotateCode(text), { depth: 2 }) +
     createSection('answers', formattedAnswers, { depth: 2 }) +
     createSection('video-solution', solution, { depth: 2, translate: false });
   return createSection('question', formattedQuestion);
 }
 
 function createInstructions({ instructions }) {
-  return createSection('instructions', instructions);
+  return createSection('instructions', annotateCode(instructions));
 }
 
 function createDescription({ description }) {
-  return createSection('description', description);
+  return createSection('description', annotateCode(description));
 }
 
 function createSection(heading, contents, options) {

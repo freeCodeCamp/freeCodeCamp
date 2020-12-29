@@ -4,7 +4,7 @@ const {
   splitOnThematicBreak
 } = require('../../../challenge-md-parser/mdx/plugins/utils/split-on-thematic-break');
 
-const { stringifyMd } = require('./text-to-data');
+const { stringifyMd } = require('../utils');
 
 function plugin() {
   return transformer;
