@@ -2,6 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const translationsObject = require('./locales/english/translations.json');
 
+/**
+ * Function to flatten a nested object. Written specifically for
+ * our translation flow, the `namespace` value is used to create the
+ * property chains that are used in the i18n replacement scripts.
+ * @param {Object} obj
+ * @param {string} namespace
+ */
 const flattenAnObject = (obj, namespace = '') => {
   const flattened = {};
   Object.keys(obj).forEach(key => {
@@ -21,6 +28,12 @@ const flattenedSchema = flattenAnObject(translationsObject);
 
 const keyStrings = Object.keys(flattenedSchema);
 
+/**
+ * Recursively read through the directory, grabbing .js files
+ * in each nested subdirectory and concatenating them all in
+ * to one string.
+ * @param {String} filePath
+ */
 const readComponentCode = filePath => {
   let code = '';
   const isItFolder = fs.lstatSync(filePath).isDirectory();
