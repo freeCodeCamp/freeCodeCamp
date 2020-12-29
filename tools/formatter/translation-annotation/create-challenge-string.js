@@ -63,9 +63,7 @@ function createQuestion({ question }) {
   if (!question) return '';
   const { text, answers, solution } = question;
   const formattedAnswers = answers.map(
-    answer => `${notranslateStart}
-${answer.trimEnd()}
-${notranslateEnd}
+    answer => `${annotateCode(answer).trimEnd()}
 `
   ).join(`
 ---
