@@ -17,6 +17,14 @@ function checkClientLocale() {
   }
 }
 
+function checkCurriculumLocale() {
+  if (!availableLangs.curriculum.includes(process.env.CURRICULUM_LOCALE)) {
+    throw Error(
+      `CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in client/i18n/allLangs.js`
+    );
+  }
+}
+
 if (FREECODECAMP_NODE_ENV !== 'development') {
   const locationKeys = [
     'homeLocation',
@@ -64,8 +72,10 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     throw Error("SHOW_UPCOMING_CHANGES should never be 'true' in production");
 
   checkClientLocale();
+  checkCurriculumLocale();
 } else {
   checkClientLocale();
+  checkCurriculumLocale();
 }
 
 fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));
