@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  client:
+    image: fcc_client
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+
+# TODO: use https://github.com/docker/docker-bench-security
+# TODO: version images? Ideally we want to keep older images around so that we
+# can swap back if something breaks.  How about https://docs.docker.com/engine/reference/commandline/system_prune/ ?
+# it allows you prune via label or timestamp.
