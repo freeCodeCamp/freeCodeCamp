@@ -1,20 +1,23 @@
 const { getText } = require('./get-challenge-text');
 const { challengeToString } = require('./create-challenge-string');
 const { parseMD } = require('../../challenge-md-parser/mdx');
+const { readSync } = require('to-vfile');
 
-module.exports.annotate = async function annotate(filePath) {
-  return generateTranscribableChallenge(filePath)
+// to create a vfile from a string simply use vfile({contents: 'your string'})
+module.exports.annotate = async function annotate(vFileOrPath) {
+  const file =
+    typeof vFileOrPath === 'string' ? readSync(vFileOrPath) : vFileOrPath;
+  return generateTranscribableChallenge(file)
     .then(challengeToString)
     .catch(err => {
       console.log('Error transforming');
-      console.log(filePath);
+      console.log(vFileOrPath);
       console.log(err);
     });
 };
 
-async function generateTranscribableChallenge(fullPath) {
-  return Promise.all([parseMD(fullPath), getText(fullPath)]).then(results => ({
-    ...results[0],
-    ...results[1]
-  }));
+async function generateTranscribableChallenge(file) {
+  // parseMD populates file.data, then getText overwrites file.data's
+  // description, instructions etc.
+  return parseMD(file).then(() => getText(file));
 }
