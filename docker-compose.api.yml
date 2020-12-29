@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  # TODO: remove db service after testing
+  db:
+    image: mongo:3
+  api:
+    # TODO: remove db service after testing
+    depends_on:
+      - db
+    env_file: .env
+    image: fcc_api
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+# TODO: use https://github.com/docker/docker-bench-security
+# TODO: version images? Ideally we want to keep older images around so that we
+# can swap back if something breaks.  How about https://docs.docker.com/engine/reference/commandline/system_prune/ ?
+# it allows you prune via label or timestamp.
+
+# TODO: find out what happens if you turn the vm off and on again.  Does the Docker daemon restart and get everything going again?
