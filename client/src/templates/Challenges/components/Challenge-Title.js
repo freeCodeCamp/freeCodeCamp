@@ -27,5 +27,5 @@ function ChallengeTitle({ children, isCompleted }) {
 
 ChallengeTitle.displayName = 'ChallengeTitle';
 ChallengeTitle.propTypes = propTypes;
-
+// test
 export default ChallengeTitle;
