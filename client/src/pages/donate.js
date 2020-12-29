@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
-import { Trans, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
@@ -76,7 +76,6 @@ export class DonatePage extends Component {
 
   render() {
     const { showLoading, isDonating, t } = this.props;
-    const url = 'https://www.paypal.me/freecodecamp';
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
