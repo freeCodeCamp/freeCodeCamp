@@ -1,29 +1,25 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-export const DonationSupportText = () => (
-  <>
-    <h4>
-      <b>Need help with your current or past donations?</b>
-    </h4>
-    <p>
-      Forward a copy of your donation receipt to donors@freecodecamp.org and
-      tell us how we can help.
-    </p>
-  </>
-);
-
-export const DonationText = () => {
+export const DonationSupportText = () => {
+  const { t } = useTranslation();
   return (
     <>
-      <p>freeCodeCamp is a highly efficient education nonprofit.</p>
-      <p>
-        When you donate to freeCodeCamp, you help people learn new skills and
-        provide for their families.
-      </p>
-      <p>
-        You also help us create new resources for you to use to expand your own
-        technology skills.
-      </p>
+      <h4>
+        <b>{t('donate.need-help')}</b>
+      </h4>
+      <p>{t('donate.forward-receipt')}</p>
+    </>
+  );
+};
+
+export const DonationText = () => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <p>{t('donate.efficiency')}</p>
+      <p>{t('donate.why-donate-1')}</p>
+      <p>{t('donate.why-donate-2')}</p>
     </>
   );
 };
