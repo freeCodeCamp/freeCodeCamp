@@ -42,16 +42,16 @@ const processor = unified()
   .use(addSeed)
   .use(addSolution);
 
-exports.parseMD = function parseMD(filename) {
+exports.parseMD = function parseMD(vFileOrPath) {
   return new Promise((resolve, reject) => {
-    const file = readSync(filename);
+    const file =
+      typeof vFileOrPath === 'string' ? readSync(vFileOrPath) : vFileOrPath;
     const tree = processor.parse(file);
     processor.run(tree, file, function(err, node, file) {
       if (err) {
-        err.message += ' in file ' + filename;
+        err.message += ' in file ' + vFileOrPath;
         reject(err);
       }
-      delete file.contents;
       return resolve(file.data);
     });
   });
