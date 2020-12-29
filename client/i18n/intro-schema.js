@@ -2,11 +2,18 @@
 /* This is used for testing to make sure the intro.json files
  * in each language have the correct structure
  */
-const { strictObject, stringType } = require('jest-json-schema-extended');
+const {
+  arrayOfItems,
+  strictObject,
+  stringType
+} = require('jest-json-schema-extended');
 
 const introSchema = strictObject({
   'responsive-web-design': strictObject({
-    superblock: stringType
+    'superblock-intro': arrayOfItems(stringType, { minItems: 1 })
+  }),
+  'javascript-algorithms-and-data-structures': strictObject({
+    'superblock-intro': arrayOfItems(stringType, { minItems: 1 })
   })
 });
 
