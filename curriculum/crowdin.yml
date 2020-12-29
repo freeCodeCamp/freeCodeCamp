@@ -1,4 +1,4 @@
-"project_id_env": "CROWDIN_PROJECT_ID_CURRICULUM"
+"project_id_env": "CROWDIN_PROJECT_ID"
 "api_token_env": "CROWDIN_PERSONAL_TOKEN"
 "base_path_env": "CROWDIN_BASE_PATH"
 "base_url_env": "CROWDIN_BASE_URL"
@@ -7,27 +7,12 @@
 
 files: [
  {
-  "source" : "/curriculum/challenges/english/**/*.md",
-  "translation" : "/curriculum/challenges/%language%/**/%original_file_name%",
-
-  # "languages_mapping" : {
-  #     "language" : {
-
-  #     }
-  #   },
-
+  "source" : "/curriculum/challenges/english/01-responsive-web-design/**/*.md",
+  "translation" : "/curriculum/challenges/%language%/01-responsive-web-design/**/%original_file_name%",
+  "ignore": [
+    "/**/part-[0-9][0-9][0-9].md",
+    "/curriculum/challenges/english/[0-9][0-9]-certificates/**/*.*"
+  ],
   "update_option": "update_as_unapproved"
- },
- {
-    "source": "/curriculum/dictionaries/english/**/*.js",
-    "translation": "/curriculum/dictionaries/%language%/**/%original_file_name%",
-
-  # "languages_mapping" : {
-  #     "language" : {
-
-  #     }
-  #   },
-
-  "update_option": "update_without_changes"
  }
 ]
