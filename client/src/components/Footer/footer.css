@@ -2,7 +2,7 @@
 /* ---------------------------------------------------------- */
 
 .site-footer {
-  position: relative;
+  flex-shrink: 0;
   color: var(--tertiary-color);
   background: var(--tertiary-background);
   line-height: 1.6;
