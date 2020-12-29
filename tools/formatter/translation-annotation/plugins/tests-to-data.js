@@ -1,6 +1,6 @@
 const chunk = require('lodash/chunk');
 const getAllBetween = require('../../../challenge-md-parser/mdx/plugins/utils/between-headings');
-const { stringifyMd } = require('./text-to-data');
+const { stringifyMd } = require('../utils');
 
 function plugin() {
   return transformer;
