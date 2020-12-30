@@ -321,7 +321,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         className="our-nonprofit"
       >
         <a
-          href="https://www.freecodecamp.org/news/about/"
+          href="footer.links.about-url"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -342,56 +342,56 @@ exports[`<Footer /> matches snapshot 1`] = `
           footer.links.open-source
         </a>
         <a
-          href="https://www.freecodecamp.org/shop/"
+          href="footer.links.shop-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.shop
         </a>
         <a
-          href="https://www.freecodecamp.org/news/support/"
+          href="footer.links.support-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.support
         </a>
         <a
-          href="https://www.freecodecamp.org/news/sponsors/"
+          href="footer.links.sponsors-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.sponsors
         </a>
         <a
-          href="https://www.freecodecamp.org/news/academic-honesty-policy/"
+          href="footer.links.honesty-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.honesty
         </a>
         <a
-          href="https://www.freecodecamp.org/news/code-of-conduct/"
+          href="footer.links.coc-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.coc
         </a>
         <a
-          href="https://www.freecodecamp.org/news/privacy-policy/"
+          href="footer.links.privacy-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.privacy
         </a>
         <a
-          href="https://www.freecodecamp.org/news/terms-of-service/"
+          href="footer.links.tos-url"
           rel="noopener noreferrer"
           target="_blank"
         >
           footer.links.tos
         </a>
         <a
-          href="https://www.freecodecamp.org/news/copyright-policy/"
+          href="footer.links.copyright-url"
           rel="noopener noreferrer"
           target="_blank"
         >
