@@ -149,10 +149,7 @@ function Footer() {
           <div className='col-header'>{t('footer.our-nonprofit')}</div>
           <div className='footer-divder' />
           <div className='our-nonprofit'>
-            <Link
-              external={false}
-              to={'https://www.freecodecamp.org/news/about/'}
-            >
+            <Link external={false} to={t('footer.links.about-url')}>
               {t('footer.links.about')}
             </Link>
             <Link
@@ -168,50 +165,29 @@ function Footer() {
             <Link
               external={false}
               sameTab={false}
-              to={'https://www.freecodecamp.org/shop/'}
+              to={t('footer.links.shop-url')}
             >
               {t('footer.links.shop')}
             </Link>
-            <Link
-              external={false}
-              to={'https://www.freecodecamp.org/news/support/'}
-            >
+            <Link external={false} to={t('footer.links.support-url')}>
               {t('footer.links.support')}
             </Link>
-            <Link
-              external={false}
-              to={'https://www.freecodecamp.org/news/sponsors/'}
-            >
+            <Link external={false} to={t('footer.links.sponsors-url')}>
               {t('footer.links.sponsors')}
             </Link>
-            <Link
-              external={false}
-              to={'https://www.freecodecamp.org/news/academic-honesty-policy/'}
-            >
+            <Link external={false} to={t('footer.links.honesty-url')}>
               {t('footer.links.honesty')}
             </Link>
-            <Link
-              external={false}
-              to={'https://www.freecodecamp.org/news/code-of-conduct/'}
-            >
+            <Link external={false} to={t('footer.links.coc-url')}>
               {t('footer.links.coc')}
             </Link>
-            <Link
-              external={false}
-              to={'https://www.freecodecamp.org/news/privacy-policy/'}
-            >
+            <Link external={false} to={t('footer.links.privacy-url')}>
               {t('footer.links.privacy')}
             </Link>
-            <Link
-              external={false}
-              to={'https://www.freecodecamp.org/news/terms-of-service/'}
-            >
+            <Link external={false} to={t('footer.links.tos-url')}>
               {t('footer.links.tos')}
             </Link>
-            <Link
-              external={false}
-              to={'https://www.freecodecamp.org/news/copyright-policy/'}
-            >
+            <Link external={false} to={t('footer.links.copyright-url')}>
               {t('footer.links.copyright')}
             </Link>
           </div>
