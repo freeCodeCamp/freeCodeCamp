@@ -24,30 +24,32 @@ export const DonationText = () => {
   );
 };
 
-export const DonationOptionsText = () => (
-  <>
-    <h4>
-      <b>
-        <Trans>donate.bigger-donation</Trans>
-      </b>
-    </h4>
+export const DonationOptionsText = () => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h4>
+        <b>
+          <Trans>donate.bigger-donation</Trans>
+        </b>
+      </h4>
+      <p>
+        <Trans i18nKey='donate.other-ways'>
+          <a href={t('donate.other-ways-url')}>placeholder</a>
+        </Trans>
+      </p>
+    </>
+  );
+};
+
+export const DonationOptionsAlertText = () => {
+  const { t } = useTranslation();
+  return (
     <p>
+      <Trans>donate.bigger-donation</Trans>{' '}
       <Trans i18nKey='donate.other-ways'>
-        <a href='https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'>
-          placeholder
-        </a>
+        <a href={t('donate.other-ways-url')}>placeholder</a>
       </Trans>
     </p>
-  </>
-);
-
-export const DonationOptionsAlertText = () => (
-  <p>
-    <Trans>donate.bigger-donation</Trans>{' '}
-    <Trans i18nKey='donate.other-ways'>
-      <a href='https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'>
-        placeholder
-      </a>
-    </Trans>
-  </p>
-);
+  );
+};
