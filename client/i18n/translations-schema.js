@@ -335,6 +335,7 @@ const translationsSchema = strictObject({
     'why-donate-2': stringType,
     'bigger-donation': stringType,
     'other-ways': stringType,
+    'other-ways-url': stringType,
     'failed-pay': stringType,
     'try-again': stringType,
     'card-number': stringType,
