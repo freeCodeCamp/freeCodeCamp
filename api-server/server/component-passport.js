@@ -86,7 +86,10 @@ export const devSaveResponseAuthCookies = () => {
 export const devLoginRedirect = () => {
   return (req, res) => {
     // this mirrors the production approach, but without any validation
-    let { returnTo, origin, pathPrefix } = getRedirectParams(req);
+    let { returnTo, origin, pathPrefix } = getRedirectParams(
+      req,
+      params => params
+    );
     returnTo += isRootPath(getRedirectBase(origin, pathPrefix), returnTo)
       ? '/learn'
       : '';
