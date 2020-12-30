@@ -14,6 +14,7 @@ import {
   consoleOutputSelector,
   initConsole,
   initTests,
+  isChallengeCompletedSelector,
   updateChallengeMeta,
   updateSolutionFormValues
 } from '../../redux';
@@ -46,6 +47,7 @@ const propTypes = {
   id: PropTypes.string,
   initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
+  isChallengeCompleted: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   output: PropTypes.arrayOf(PropTypes.string),
   pageContext: PropTypes.shape({
@@ -61,10 +63,12 @@ const propTypes = {
 const mapStateToProps = createSelector(
   consoleOutputSelector,
   challengeTestsSelector,
+  isChallengeCompletedSelector,
   isSignedInSelector,
-  (output, tests, isSignedIn) => ({
+  (output, tests, isChallengeCompleted, isSignedIn) => ({
     tests,
     output,
+    isChallengeCompleted,
     isSignedIn
   })
 );
@@ -157,9 +161,11 @@ export class BackEnd extends Component {
           forumTopicId,
           title,
           description,
-          instructions
+          instructions,
+          superBlock
         }
       },
+      isChallengeCompleted,
       output,
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
@@ -187,7 +193,13 @@ export class BackEnd extends Component {
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
-                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+                <ChallengeTitle
+                  block={blockName}
+                  isCompleted={isChallengeCompleted}
+                  superBlock={superBlock}
+                >
+                  {title}
+                </ChallengeTitle>
                 <ChallengeDescription
                   description={description}
                   instructions={instructions}
@@ -242,6 +254,7 @@ export const query = graphql`
       instructions
       challengeType
       helpCategory
+      superBlock
       fields {
         blockName
         slug

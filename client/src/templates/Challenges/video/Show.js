@@ -160,6 +160,7 @@ export class Project extends Component {
           fields: { blockName },
           title,
           description,
+          superBlock,
           videoId,
           question: { text, answers, solution }
         }
@@ -190,8 +191,12 @@ export class Project extends Component {
           <Grid>
             <Row>
               <Spacer />
-              <ChallengeTitle isCompleted={isChallengeCompleted}>
-                {blockNameTitle}
+              <ChallengeTitle
+                block={blockName}
+                isCompleted={isChallengeCompleted}
+                superBlock={superBlock}
+              >
+                {title}
               </ChallengeTitle>
 
               <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
@@ -315,6 +320,7 @@ export const query = graphql`
       description
       challengeType
       helpCategory
+      superBlock
       fields {
         blockName
         slug
