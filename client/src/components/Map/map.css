@@ -5,9 +5,6 @@
 .map-ui ul {
   list-style: none;
   color: var(--secondary-color);
-}
-
-.map-ui > ul {
   padding: 0;
 }
 

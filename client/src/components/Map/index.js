@@ -9,6 +9,7 @@ import { dasherize } from '../../../../utils/slugs';
 import './map.css';
 
 const propTypes = {
+  currentSuperBlock: PropTypes.string,
   forLanding: PropTypes.bool
 };
 
@@ -21,6 +22,7 @@ function createSuperBlockTitle(str) {
 }
 
 function renderLandingMap(nodes) {
+  nodes = nodes.filter(node => node.superBlock !== 'Coding Interview Prep');
   return (
     <ul data-test-label='certifications'>
       {nodes.map((node, i) => (
@@ -38,7 +40,8 @@ function renderLandingMap(nodes) {
   );
 }
 
-function renderLearnMap(nodes) {
+function renderLearnMap(nodes, currentSuperBlock = '') {
+  nodes = nodes.filter(node => node.superBlock !== currentSuperBlock);
   return (
     <Row>
       <Col sm={10} smOffset={1} xs={12}>
@@ -59,7 +62,7 @@ function renderLearnMap(nodes) {
   );
 }
 
-export function Map({ forLanding = false }) {
+export function Map({ forLanding = false, currentSuperBlock = '' }) {
   /*
    * this query gets the first challenge from each block and the second block
    * from each superblock, leaving you with one challenge from each
@@ -81,13 +84,11 @@ export function Map({ forLanding = false }) {
 
   let nodes = data.allChallengeNode.nodes;
 
-  if (forLanding) {
-    nodes = nodes.filter(node => node.superBlock !== 'Coding Interview Prep');
-  }
-
   return (
     <div className='map-ui' data-test-label='learn-curriculum-map'>
-      {forLanding ? renderLandingMap(nodes) : renderLearnMap(nodes)}
+      {forLanding
+        ? renderLandingMap(nodes)
+        : renderLearnMap(nodes, currentSuperBlock)}
     </div>
   );
 }

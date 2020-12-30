@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { withTranslation } from 'react-i18next';
+import Map from '../../components/Map';
 
 import { dasherize } from '../../../../utils/slugs';
 import Block from '../../components/Map/components/Block';
@@ -168,6 +169,10 @@ export class SuperBlockIntroductionPage extends Component {
             )}
           </div>
           <Spacer />
+          <h2 className='other-superblocks'>Try our other sections</h2>
+          <Spacer />
+          <Map currentSuperBlock={superBlock} />
+          <Spacer size={2} />
         </FullWidthRow>
       </Fragment>
     );
