@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 export const DonationSupportText = () => {
   const { t } = useTranslation();
@@ -28,33 +28,26 @@ export const DonationOptionsText = () => (
   <>
     <h4>
       <b>
-        Want to make a bigger one-time donation, mail us a check, or give in
-        other ways?
+        <Trans>donate.bigger-donation</Trans>
       </b>
     </h4>
     <p>
-      Here are many{' '}
-      <a
-        href={
-          'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'
-        }
-      >
-        other ways you can support our non-profit's mission
-      </a>
-      .
+      <Trans i18nKey='donate.other-ways'>
+        <a href='https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'>
+          placeholder
+        </a>
+      </Trans>
     </p>
   </>
 );
 
 export const DonationOptionsAlertText = () => (
   <p>
-    Want to make a bigger one-time donation, mail us a check, or give in other
-    ways? Here are many{' '}
-    <a
-      href={'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'}
-    >
-      other ways you can support our non-profit's mission
-    </a>
-    .
+    <Trans>donate.bigger-donation</Trans>{' '}
+    <Trans i18nKey='donate.other-ways'>
+      <a href='https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'>
+        placeholder
+      </a>
+    </Trans>
   </p>
 );
