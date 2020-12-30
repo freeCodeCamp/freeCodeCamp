@@ -13,9 +13,9 @@ import { jwtSecret } from '../../config/secrets';
 import {
   getReturnTo,
   getRedirectBase,
-  getParamsFromReq,
+  getRedirectParams,
   isRootPath
-} from './utils/get-return-to';
+} from './utils/redirection';
 
 const passportOptions = {
   emailOptional: true,
@@ -86,7 +86,7 @@ export const devSaveResponseAuthCookies = () => {
 export const devLoginRedirect = () => {
   return (req, res) => {
     // this mirrors the production approach, but without any validation
-    let { returnTo, origin, pathPrefix } = getParamsFromReq(req);
+    let { returnTo, origin, pathPrefix } = getRedirectParams(req);
     returnTo += isRootPath(getRedirectBase(origin, pathPrefix), returnTo)
       ? '/learn'
       : '';
