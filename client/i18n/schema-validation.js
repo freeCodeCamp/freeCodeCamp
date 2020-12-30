@@ -72,17 +72,25 @@ const findExtraneousKeys = (file, schema, path) => {
   }
 };
 
-const noEmptyObjectValues = obj => {
+/**
+ * Validates that all values in the object are non-empty. Includes
+ * validation of nested objects.
+ * @param {Object} obj The object to check the values of
+ * @param {String} namespace String for tracking nested properties
+ */
+const noEmptyObjectValues = (obj, namespace = '') => {
   const emptyKeys = [];
   for (const key of Object.keys(obj)) {
     if (Array.isArray(obj[key])) {
       if (!obj[key].length) {
-        emptyKeys.push(key);
+        emptyKeys.push(namespace ? `${namespace}.${key}` : key);
       }
     } else if (typeof obj[key] === 'object') {
-      emptyKeys.push(noEmptyObjectValues(obj[key]));
+      emptyKeys.push(
+        noEmptyObjectValues(obj[key], namespace ? `${namespace}.${key}` : key)
+      );
     } else if (!obj[key]) {
-      emptyKeys.push(key);
+      emptyKeys.push(namespace ? `${namespace}.${key}` : key);
     }
   }
   return emptyKeys.flat();
