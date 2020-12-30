@@ -66,7 +66,7 @@ function getRedirectParams(req, _normalizeParams = normalizeParams) {
   const url = req.header('Referer');
   // since we do not always redirect the user back to the page they were on
   // we need client locale and origin to construct the redirect url.
-  const returnUrl = new URL(url);
+  const returnUrl = new URL(url ? url : homeLocation);
   const origin = returnUrl.origin;
   // if this is not one of the client languages, validation will convert
   // this to '' before it is used.
