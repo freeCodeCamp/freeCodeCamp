@@ -12,7 +12,9 @@ const translationsObject = require('./locales/english/translations.json');
 const flattenAnObject = (obj, namespace = '') => {
   const flattened = {};
   Object.keys(obj).forEach(key => {
-    if (typeof obj[key] === 'object') {
+    if (Array.isArray(obj[key])) {
+      flattened[namespace ? `${namespace}.${key}` : key] = obj[key];
+    } else if (typeof obj[key] === 'object') {
       Object.assign(
         flattened,
         flattenAnObject(obj[key], namespace ? `${namespace}.${key}` : key)
