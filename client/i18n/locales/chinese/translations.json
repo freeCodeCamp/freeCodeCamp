@@ -2,7 +2,27 @@
   "meta": {
     "title": "免费学习编程 – 适合忙碌人士的编程课程",
     "description": "在家学习编程，构建项目，获得认证。自 2014 年以来，已有超过 40,000 名 freeCodeCamp 学员入职谷歌、苹果、亚马逊、微软等科技公司。",
-    "keywords": ["javascript", "js", "网站", "web", "开发", "free", "code", "camp", "课程", "html", "css", "react", "redux", "api", "前端", "后端", "学习", "教程", "编程"],
+    "keywords": [
+      "javascript",
+      "js",
+      "网站",
+      "web",
+      "开发",
+      "free",
+      "code",
+      "camp",
+      "课程",
+      "html",
+      "css",
+      "react",
+      "redux",
+      "api",
+      "前端",
+      "后端",
+      "学习",
+      "教程",
+      "编程"
+    ],
     "youre-unsubscribed": "你已取消订阅"
   },
   "buttons": {
@@ -72,7 +92,7 @@
     "big-heading-2": "构建项目",
     "big-heading-3": "获得认证",
     "h2-heading": "自 2014 年以来，已有超过 40,000 名 freeCodeCamp.org 学员入职科技公司，例如：",
-    "hero-img-description" : "韩国的 freeCodeCamp 学员在当地一个学习小组的交流活动上",
+    "hero-img-description": "韩国的 freeCodeCamp 学员在当地一个学习小组的交流活动上",
     "as-seen-in": "这些媒体曾对 freeCodeCamp 进行报道：",
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
@@ -220,16 +240,25 @@
     "our-nonprofit": "关于我们",
     "links": {
       "about": "简介",
+      "about-url": "https://www.freecodecamp.org/news/about/",
       "alumni": "校友网络",
       "open-source": "开源",
+      "shop-url": "https://www.freecodecamp.org/shop/",
       "shop": "商店",
       "support": "支持",
+      "support-url": "https://www.freecodecamp.org/news/support/",
       "sponsors": "赞助商",
+      "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
       "honesty": "学术诚信",
+      "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
       "coc": "行为规范",
+      "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
       "privacy": "隐私条例",
+      "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
       "tos": "服务条款",
-      "copyright": "版权条例"
+      "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+      "copyright": "版权条例",
+      "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
     },
     "language": "语言："
   },
