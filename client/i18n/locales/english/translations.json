@@ -2,7 +2,29 @@
   "meta": {
     "title": "Learn to Code for Free – Coding Courses for Busy People",
     "description": "Learn to code at home. Build projects. Earn certifications. Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.",
-    "keywords": ["javascript", "js", "website", "web", "development", "free", "code", "camp", "course", "courses", "html", "css", "react", "redux", "api", "front", "back", "end", "learn", "tutorial", "programming"],
+    "keywords": [
+      "javascript",
+      "js",
+      "website",
+      "web",
+      "development",
+      "free",
+      "code",
+      "camp",
+      "course",
+      "courses",
+      "html",
+      "css",
+      "react",
+      "redux",
+      "api",
+      "front",
+      "back",
+      "end",
+      "learn",
+      "tutorial",
+      "programming"
+    ],
     "youre-unsubscribed": "You have been unsubscribed"
   },
   "buttons": {
@@ -72,7 +94,7 @@
     "big-heading-2": "Build projects.",
     "big-heading-3": "Earn certifications.",
     "h2-heading": "Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
-    "hero-img-description" : "freeCodeCamp students at a local study group in South Korea.",
+    "hero-img-description": "freeCodeCamp students at a local study group in South Korea.",
     "as-seen-in": "As seen in:",
     "testimonials": {
       "heading": "Here is what our alumni say about freeCodeCamp:",
@@ -314,6 +336,8 @@
     "efficiency": "freeCodeCamp is a highly efficient education nonprofit.",
     "why-donate-1": "When you donate to freeCodeCamp, you help people learn new skills and provide for their families.",
     "why-donate-2": "You also help us create new resources for you to use to expand your own technology skills.",
+    "bigger-donation": "Want to make a bigger one-time donation, mail us a check, or give in other ways?",
+    "other-ways": "Here are many <0>other ways you can support our non-profit's mission</0>.",
     "failed-pay": "Uh - oh. It looks like your transaction didn't go through. Could you please try again?",
     "try-again": "Please try again.",
     "card-number": "Your Card Number:",
