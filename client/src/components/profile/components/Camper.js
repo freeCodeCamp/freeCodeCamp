@@ -135,7 +135,9 @@ function Camper({
       <br />
       {typeof points === 'number' ? (
         <p className='text-center points'>
-          {t('profile.total-points', { count: points })}
+          {points === 1
+            ? t('profile.total-points', { count: points })
+            : t('profile.total-points_plural', { count: points })}
         </p>
       ) : null}
     </div>

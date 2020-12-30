@@ -125,11 +125,17 @@ class HeatMapInner extends Component {
                 : '';
             return {
               'data-tip':
+                // eslint-disable-next-line no-nested-ternary
                 value && value.count > -1
-                  ? t('profile.points', {
-                      count: value.count,
-                      date: dateFormatted
-                    })
+                  ? value.count === 1
+                    ? t('profile.points', {
+                        count: value.count,
+                        date: dateFormatted
+                      })
+                    : t('profile.points_plural', {
+                        count: value.count,
+                        date: dateFormatted
+                      })
                   : ''
             };
           }}
