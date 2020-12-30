@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router } from '@reach/router';
+import { withPrefix } from 'gatsby';
 
 import RedirectHome from '../components/RedirectHome';
 import ShowUnsubscribed from '../client-only-routes/ShowUnsubscribed';
@@ -7,8 +8,8 @@ import ShowUnsubscribed from '../client-only-routes/ShowUnsubscribed';
 function Unsubscribed() {
   return (
     <Router>
-      <ShowUnsubscribed path='/unsubscribed/:unsubscribeId' />
-      <ShowUnsubscribed path='/unsubscribed' />
+      <ShowUnsubscribed path={withPrefix('/unsubscribed/:unsubscribeId')} />
+      <ShowUnsubscribed path={withPrefix('/unsubscribed')} />
       <RedirectHome default={true} />
     </Router>
   );
