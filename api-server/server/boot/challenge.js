@@ -17,10 +17,10 @@ import { dasherize } from '../../../utils/slugs';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import {
-  getParamsFromReq,
+  getRedirectParams,
   getRedirectBase,
   normalizeParams
-} from '../utils/get-return-to';
+} from '../utils/redirection';
 
 const log = debug('fcc:boot:challenges');
 
@@ -34,7 +34,7 @@ export default async function bootChallenge(app, done) {
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
     challengeUrlResolver,
     normalizeParams,
-    getParamsFromReq
+    getRedirectParams
   );
 
   api.post(
@@ -336,11 +336,11 @@ function backendChallengeCompleted(req, res, next) {
 export function createRedirectToCurrentChallenge(
   challengeUrlResolver,
   normalizeParams,
-  getParamsFromReq
+  getRedirectParams
 ) {
   return async function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
-    const { origin, pathPrefix } = normalizeParams(getParamsFromReq(req));
+    const { origin, pathPrefix } = getRedirectParams(req, normalizeParams);
 
     const redirectBase = getRedirectBase(origin, pathPrefix);
     if (!user) {
