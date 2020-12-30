@@ -230,16 +230,25 @@ const translationsSchema = strictObject({
     'our-nonprofit': stringType,
     links: strictObject({
       about: stringType,
+      'about-url': stringType,
       alumni: stringType,
       'open-source': stringType,
       shop: stringType,
+      'shop-url': stringType,
       support: stringType,
+      'support-url': stringType,
       sponsors: stringType,
+      'sponsors-url': stringType,
       honesty: stringType,
+      'honesty-url': stringType,
       coc: stringType,
+      'coc-url': stringType,
       privacy: stringType,
+      'privacy-url': stringType,
       tos: stringType,
-      copyright: stringType
+      'tos-url': stringType,
+      copyright: stringType,
+      'copyright-url': stringType
     }),
     language: stringType
   }),
