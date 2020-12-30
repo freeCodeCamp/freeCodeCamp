@@ -72,6 +72,22 @@ const findExtraneousKeys = (file, schema, path) => {
   }
 };
 
+const noEmptyObjectValues = obj => {
+  const emptyKeys = [];
+  for (const key of Object.keys(obj)) {
+    if (Array.isArray(obj[key])) {
+      if (!obj[key].length) {
+        emptyKeys.push(key);
+      }
+    } else if (typeof obj[key] === 'object') {
+      emptyKeys.push(noEmptyObjectValues(obj[key]));
+    } else if (!obj[key]) {
+      emptyKeys.push(key);
+    }
+  }
+  return emptyKeys.flat();
+};
+
 /**
  * Grab the schema keys once, to avoid overhead of
  * fetching within iterative function.
@@ -104,6 +120,14 @@ const translationSchemaValidation = languages => {
       translationSchemaKeys,
       `${language}/translations.json`
     );
+    const emptyKeys = noEmptyObjectValues(fileJson);
+    if (emptyKeys.length) {
+      throw new Error(
+        `${language}/translation.json has these empty keys: ${emptyKeys.join(
+          ', '
+        )}`
+      );
+    }
     console.info(`${language} translation.json is correct!`);
   });
 };
@@ -125,6 +149,14 @@ const trendingSchemaValidation = languages => {
       trendingSchemaKeys,
       `${language}/trending.json`
     );
+    const emptyKeys = noEmptyObjectValues(fileJson);
+    if (emptyKeys.length) {
+      throw new Error(
+        `${language}/trending.json has these empty keys: ${emptyKeys.join(
+          ', '
+        )}`
+      );
+    }
     console.info(`${language} trending.json is correct!`);
   });
 };
@@ -148,6 +180,14 @@ const motivationSchemaValidation = languages => {
       motivationSchemaKeys,
       `${language}/motivation.json`
     );
+    const emptyKeys = noEmptyObjectValues(fileJson);
+    if (emptyKeys.length) {
+      throw new Error(
+        `${language}/motivation.json has these empty keys: ${emptyKeys.join(
+          ', '
+        )}`
+      );
+    }
     // Special line to assert that objects in motivational quote are correct
     if (
       !fileJson.motivationalQuotes.every(
