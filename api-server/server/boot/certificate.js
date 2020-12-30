@@ -29,7 +29,6 @@ import {
 import { oldDataVizId } from '../../../config/misc';
 import certTypes from '../utils/certTypes.json';
 import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
-import { completeCommitment$ } from '../utils/commit';
 import { getChallenges } from '../utils/get-curriculum';
 
 const log = debug('fcc:certification');
@@ -354,9 +353,6 @@ function createVerifyCert(certTypeIds, app) {
         return Observable.combineLatest(
           // update user data
           Observable.fromPromise(updatePromise),
-          // If user has committed to nonprofit,
-          // this will complete their pledge
-          completeCommitment$(user),
           // sends notification email is user has all 6 certs
           // if not it noop
           sendCertifiedEmail(user, Email.send$),
