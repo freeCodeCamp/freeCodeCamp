@@ -1,8 +1,9 @@
 /* global describe it expect */
 import sinon from 'sinon';
-import { mockReq, mockRes } from 'sinon-express-mock';
+import { mockReq as mockRequest, mockRes } from 'sinon-express-mock';
 import jwt from 'jsonwebtoken';
 
+import { homeLocation } from '../../../config/env.json';
 import createRequestAuthorization, {
   isAllowedPath
 } from './request-authorization';
@@ -25,6 +26,12 @@ const users = {
 };
 const mockGetUserById = id =>
   id in users ? Promise.resolve(users[id]) : Promise.reject('No user found');
+
+const mockReq = args => {
+  const mock = mockRequest(args);
+  mock.header = () => homeLocation;
+  return mock;
+};
 
 describe('request-authorization', () => {
   describe('isAllowedPath', () => {
