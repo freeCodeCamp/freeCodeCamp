@@ -48,5 +48,10 @@ forumTopicId: 301464
 # --hints--
 
 
+# --seed--
+
 # --solutions--
 
+```js
+// 请给出解决方案
+```
