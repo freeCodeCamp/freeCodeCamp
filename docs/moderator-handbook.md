@@ -363,15 +363,13 @@ We are happy to accept these changes and look forward to future contributions. �
 ```markdown
 Hey @username
 
-We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
+We would love to be able to merge your changes but it looks like there is an error with the CI build. ⚠️
 
 Once you resolve these issues, We will be able to review your PR and merge it. 😊
 
 ---
 
-Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
-
-Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+Feel free to reference the [contributing guidelines](https://contribute.freecodecamp.org/#/how-to-work-on-coding-challenges?id=testing-challenges) for instructions on running the CI build locally. ✅
 ```
 
 ### Syncing Fork
@@ -381,15 +379,9 @@ Also, it's good practice on GitHub to write a brief description of your changes 
 ````markdown
 Hey @username
 
-We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
+We would love to be able to merge your changes but it looks like the branch is not up to date. ⚠️
 
-```bash
-Error: ENOTDIR: not a directory, open 'src/pages/java/data-abstraction/index.md'
-```
-
-This particular error was not caused by your file but was an old error caused by merging faulty code to the `master` branch. It has since been resolved.
-
-To pass the build, you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
+To resolve this error, you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
 
 Using the command line, you can do this in three easy steps:
 
@@ -403,13 +395,11 @@ git pull upstream master
 
 If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
 
-Once you sync your fork and pass the build, We will be able to review your PR and merge it. 😊
+Once you sync your fork and pass the build, we will be able to review your PR and merge it. 😊
 
 ---
 
 Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
-
-Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
 ````
 
 ### Merge Conflicts
@@ -439,9 +429,9 @@ Also, it's good practice on GitHub to write a brief description of your changes 
 ```markdown
 Hey @username
 
-It seems that similar changes have already been accepted earlier for this article you are editing, sorry about that. 😓
+This PR seems to make similar changes as the existing PR <#number>. As such, we are going to close this as duplicate.
 
-If you feel you have more to add, please feel free to open up a new PR.
+If you feel you have additional changes to expand upon this PR, please feel free to push your commits and request this PR be reopened.
 
 Thanks again! 😊
 
@@ -469,7 +459,7 @@ Thank you and happy coding.
 ```markdown
 Thank you for your pull request.
 
-We are closing this pull request. Please add links and other details to the challenge's corresponding guide article instead.
+We are closing this pull request. Please suggest links and other details to add the challenge's corresponding guide post through [a forum topic](https://forum.freecodecamp.org/new-topic?category=Contributors&title=&body=**What%20is%20your%20hint%20or%20solution%20suggestion%3F**%0A%0A%0A%0A%0A**Challenge%3A**%0A%0A%0A**Link%20to%20the%20challenge%3A**) instead.
 
 If you think we're wrong in closing this issue, please request for it to be reopened and add further clarification. Thank you, and happy coding.
 ```
@@ -481,7 +471,7 @@ If you think we're wrong in closing this issue, please request for it to be reop
 ```markdown
 Thank you for reporting this issue.
 
-This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Help"** button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
+This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the **"Get Help"** button on the challenge on freeCodeCamp and choose the **"Ask for help"** option, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
 
 If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened.
 
