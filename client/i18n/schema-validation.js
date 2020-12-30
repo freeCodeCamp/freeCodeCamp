@@ -80,7 +80,7 @@ const trendingSchemaKeys = Object.keys(flattenAnObject(trendingSchema));
 
 /**
  * Function that checks the translations.json file
- * for each avaailable client language.
+ * for each available client language.
  * @param {String[]} languages List of languages to test
  */
 const translationSchemaValidation = languages => {
@@ -108,7 +108,7 @@ const translationSchemaValidation = languages => {
 
 /**
  * Function that checks the trending.json file
- * for each avaailable client language.
+ * for each available client language.
  * @param {String[]} languages List of languages to test
  */
 const trendingSchemaValidation = languages => {
