@@ -129,6 +129,9 @@ export class SuperBlockIntroductionPage extends Component {
       },
       t
     } = this.props;
+    const introTextArr = t(
+      `intro:${dasherize(superBlock)}.superblock.intro-text`
+    );
 
     return (
       <Fragment>
@@ -142,9 +145,19 @@ export class SuperBlockIntroductionPage extends Component {
             {superBlock !== 'Coding Interview Prep' ? ' Certification' : ''}
           </h1>
           <Spacer />
-          {t(`intro:${dasherize(superBlock)}.superblock-intro`, {
-            returnObjects: true
-          }).map((str, i) => (
+          <div style={{ margin: 'auto', maxWidth: '500px' }}>
+            <img
+              alt='building a website'
+              src={t(`intro:${dasherize(superBlock)}.superblock.image`)}
+              style={{
+                backgroundColor: '#f5f6f7',
+                padding: '15px',
+                width: '100%'
+              }}
+            />
+          </div>
+          <Spacer />
+          {introTextArr.map((str, i) => (
             <p key={i}>{str}</p>
           ))}
           <Spacer />
