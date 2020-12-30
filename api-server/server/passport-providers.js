@@ -3,6 +3,7 @@ import { homeLocation, apiLocation } from '../../config/env';
 
 const { clientID, clientSecret, domain } = auth0;
 
+// These don't seem to be used, can they go?
 const successRedirect = `${homeLocation}/learn`;
 const failureRedirect = `${homeLocation}/signin`;
 
