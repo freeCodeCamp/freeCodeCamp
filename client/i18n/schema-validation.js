@@ -3,6 +3,7 @@ const fs = require('fs');
 const { translationsSchema } = require('./translations-schema');
 const { availableLangs } = require('./allLangs');
 const { trendingSchema } = require('./trending-schema');
+const { motivationSchema } = require('./motivation-schema');
 
 /**
  * Flattens a nested object structure into a single
@@ -77,6 +78,7 @@ const findExtraneousKeys = (file, schema, path) => {
  */
 const translationSchemaKeys = Object.keys(flattenAnObject(translationsSchema));
 const trendingSchemaKeys = Object.keys(flattenAnObject(trendingSchema));
+const motivationSchemaKeys = Object.keys(flattenAnObject(motivationSchema));
 
 /**
  * Function that checks the translations.json file
@@ -127,5 +129,40 @@ const trendingSchemaValidation = languages => {
   });
 };
 
+const motivationSchemaValidation = languages => {
+  languages.forEach(language => {
+    const filePath = path.join(
+      __dirname,
+      `/locales/${language}/motivation.json`
+    );
+    const fileData = fs.readFileSync(filePath);
+    const fileJson = JSON.parse(fileData);
+    const fileKeys = Object.keys(flattenAnObject(fileJson));
+    findMissingKeys(
+      fileKeys,
+      motivationSchemaKeys,
+      `${language}/motivation.json`
+    );
+    findExtraneousKeys(
+      fileKeys,
+      motivationSchemaKeys,
+      `${language}/motivation.json`
+    );
+    // Special line to assert that objects in motivational quote are correct
+    if (
+      !fileJson.motivationalQuotes.every(
+        object =>
+          object.hasOwnProperty('quote') && object.hasOwnProperty('author')
+      )
+    ) {
+      throw new Error(
+        `${language}/motivation.json has malformed quote objects.`
+      );
+    }
+    console.info(`${language} motivation.json is correct!`);
+  });
+};
+
 translationSchemaValidation(availableLangs.client);
 trendingSchemaValidation(availableLangs.client);
+motivationSchemaValidation(availableLangs.client);
