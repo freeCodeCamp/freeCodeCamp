@@ -15,10 +15,6 @@
   text-decoration: none;
 }
 
-.other-superblocks {
-  text-align: center;
-}
-
 @media screen and (max-width: 767px) {
   .intro-layout-container {
     padding: 0 10px;

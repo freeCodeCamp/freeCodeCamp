@@ -140,7 +140,34 @@ export class Block extends Component {
       return { ...challenge, isCompleted };
     });
 
-    return (
+    const isProjectBlock = challenges.find(challenge => {
+      const isJsProject =
+        challenge.order === 10 && challenge.challengeType === 5;
+
+      return (
+        challenge.challengeType === 3 ||
+        challenge.challengeType === 4 ||
+        challenge.challengeType === 10 ||
+        isJsProject
+      );
+    });
+
+    return isProjectBlock ? (
+      <li className='block'>
+        <div className='map-title'>
+          <h4>{blockNameify(blockDashedName)}</h4>
+          <div className='map-title-completed'>
+            <span>
+              {this.renderCheckMark(
+                completedCount === challengesWithCompleted.length
+              )}
+            </span>
+            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+          </div>
+        </div>
+        <ul>{this.renderChallenges(intro, challengesWithCompleted)}</ul>
+      </li>
+    ) : (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
         <button
           aria-expanded={isExpanded}

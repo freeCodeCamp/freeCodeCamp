@@ -53,10 +53,10 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-function renderBlock(blocksForSuperBlock, introNodes) {
+function renderBlock(nodesForSuperBlock, introNodes) {
   // since the nodes have been filtered based on isHidden, any blocks whose
   // nodes have been entirely removed will not appear in this array.
-  const blockDashedNames = uniq(blocksForSuperBlock.map(({ block }) => block));
+  const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
   // render all non-empty blocks
   return (
@@ -64,7 +64,7 @@ function renderBlock(blocksForSuperBlock, introNodes) {
       {blockDashedNames.map(blockDashedName => (
         <Block
           blockDashedName={blockDashedName}
-          challenges={blocksForSuperBlock.filter(
+          challenges={nodesForSuperBlock.filter(
             node => node.block === blockDashedName
           )}
           intro={find(
@@ -161,15 +161,16 @@ export class SuperBlockIntroductionPage extends Component {
           {introTextArr.map((str, i) => (
             <p key={i}>{str}</p>
           ))}
-          <Spacer />
+          <Spacer size={2} />
+          <h2 className='text-center'>Learning</h2>
           <div className='block-ui'>
             {renderBlock(
               edges.map(({ node }) => node),
               mdEdges.map(({ node }) => node)
             )}
           </div>
-          <Spacer />
-          <h2 className='other-superblocks'>Try our other sections</h2>
+          <Spacer size={2} />
+          <h2 className='text-center'>Try our other sections</h2>
           <Spacer />
           <Map currentSuperBlock={superBlock} />
           <Spacer size={2} />
@@ -210,6 +211,7 @@ export const query = graphql`
           }
           id
           block
+          challengeType
           title
           order
           superBlock

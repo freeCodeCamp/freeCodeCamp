@@ -28,10 +28,7 @@ button.map-title:hover {
 div.map-title {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 5px;
+  padding: 18px 8px;
   background: transparent;
   border: none;
   text-align: left;
