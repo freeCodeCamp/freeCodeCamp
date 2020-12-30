@@ -2,7 +2,29 @@
   "meta": {
     "title": "Learn to Code for Free – Coding Courses for Busy People",
     "description": "Learn to code at home. Build projects. Earn certifications. Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.",
-    "keywords": ["javascript", "js", "website", "web", "development", "free", "code", "camp", "course", "courses", "html", "css", "react", "redux", "api", "front", "back", "end", "learn", "tutorial", "programming"],
+    "keywords": [
+      "javascript",
+      "js",
+      "website",
+      "web",
+      "development",
+      "free",
+      "code",
+      "camp",
+      "course",
+      "courses",
+      "html",
+      "css",
+      "react",
+      "redux",
+      "api",
+      "front",
+      "back",
+      "end",
+      "learn",
+      "tutorial",
+      "programming"
+    ],
     "youre-unsubscribed": "You have been unsubscribed"
   },
   "buttons": {
@@ -72,7 +94,7 @@
     "big-heading-2": "Build projects.",
     "big-heading-3": "Earn certifications.",
     "h2-heading": "Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:",
-    "hero-img-description" : "freeCodeCamp students at a local study group in South Korea.",
+    "hero-img-description": "freeCodeCamp students at a local study group in South Korea.",
     "as-seen-in": "As seen in:",
     "testimonials": {
       "heading": "Here is what our alumni say about freeCodeCamp:",
@@ -220,16 +242,25 @@
     "our-nonprofit": "Our Nonprofit",
     "links": {
       "about": "About",
+      "about-url": "https://www.freecodecamp.org/news/about/",
       "alumni": "Alumni Network",
       "open-source": "Open Source",
       "shop": "Shop",
+      "shop-url": "https://www.freecodecamp.org/shop/",
       "support": "Support",
+      "support-url": "https://www.freecodecamp.org/news/support/",
       "sponsors": "Sponsors",
+      "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
       "honesty": "Academic Honesty",
+      "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
       "coc": "Code of Conduct",
+      "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
       "privacy": "Privacy Policy",
+      "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
       "tos": "Terms of Service",
-      "copyright": "Copyright Policy"
+      "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+      "copyright": "Copyright Policy",
+      "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
     },
     "language": "Language:"
   },
