@@ -230,6 +230,7 @@ const translationsSchema = strictObject({
     'our-nonprofit': stringType,
     links: strictObject({
       about: stringType,
+<<<<<<< HEAD
       alumni: stringType,
       'open-source': stringType,
       shop: stringType,
@@ -240,6 +241,27 @@ const translationsSchema = strictObject({
       privacy: stringType,
       tos: stringType,
       copyright: stringType
+=======
+      'about-url': stringType,
+      alumni: stringType,
+      'open-source': stringType,
+      shop: stringType,
+      'shop-url': stringType,
+      support: stringType,
+      'support-url': stringType,
+      sponsors: stringType,
+      'sponsors-url': stringType,
+      honesty: stringType,
+      'honesty-url': stringType,
+      coc: stringType,
+      'coc-url': stringType,
+      privacy: stringType,
+      'privacy-url': stringType,
+      tos: stringType,
+      'tos-url': stringType,
+      copyright: stringType,
+      'copyright-url': stringType
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
     }),
     language: stringType
   }),
@@ -324,6 +346,12 @@ const translationsSchema = strictObject({
     efficiency: stringType,
     'why-donate-1': stringType,
     'why-donate-2': stringType,
+<<<<<<< HEAD
+=======
+    'bigger-donation': stringType,
+    'other-ways': stringType,
+    'other-ways-url': stringType,
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
     'failed-pay': stringType,
     'try-again': stringType,
     'card-number': stringType,

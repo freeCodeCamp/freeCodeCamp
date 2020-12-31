@@ -220,6 +220,7 @@
     "our-nonprofit": "Our Nonprofit",
     "links": {
       "about": "About",
+<<<<<<< HEAD
       "alumni": "Alumni Network",
       "open-source": "Open Source",
       "shop": "Shop",
@@ -230,6 +231,27 @@
       "privacy": "Privacy Policy",
       "tos": "Terms of Service",
       "copyright": "Copyright Policy"
+=======
+      "about-url": "https://www.freecodecamp.org/news/about/",
+      "alumni": "Alumni Network",
+      "open-source": "Open Source",
+      "shop": "Shop",
+      "shop-url": "https://www.freecodecamp.org/shop/",
+      "support": "Support",
+      "support-url": "https://www.freecodecamp.org/news/support/",
+      "sponsors": "Sponsors",
+      "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+      "honesty": "Academic Honesty",
+      "honesty-url": "https://www.freecodecamp.org/news/academic-honesty-policy/",
+      "coc": "Code of Conduct",
+      "coc-url": "https://www.freecodecamp.org/news/code-of-conduct/",
+      "privacy": "Privacy Policy",
+      "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+      "tos": "Terms of Service",
+      "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+      "copyright": "Copyright Policy",
+      "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
     },
     "language": "Language:"
   },
@@ -314,6 +336,12 @@
     "efficiency": "freeCodeCamp is a highly efficient education nonprofit.",
     "why-donate-1": "When you donate to freeCodeCamp, you help people learn new skills and provide for their families.",
     "why-donate-2": "You also help us create new resources for you to use to expand your own technology skills.",
+<<<<<<< HEAD
+=======
+    "bigger-donation": "Want to make a bigger one-time donation, mail us a check, or give in other ways?",
+    "other-ways": "Here are many <0>other ways we could support our non-profit's mission</0>.",
+    "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
     "failed-pay": "Uh - oh. It looks like your transaction didn't go through. Could you please try again?",
     "try-again": "Please try again.",
     "card-number": "Your Card Number:",

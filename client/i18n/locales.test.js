@@ -7,6 +7,10 @@ import {
   langDisplayNames,
   langCodes
 } from './allLangs';
+<<<<<<< HEAD
+=======
+import { trendingSchema } from './trending-schema';
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
 
 const fs = require('fs');
 const { expectToMatchSchema, setup } = require('jest-json-schema-extended');
@@ -21,6 +25,13 @@ const filesThatShouldExist = [
   {
     name: 'motivation.json',
     schema: motivationSchema
+<<<<<<< HEAD
+=======
+  },
+  {
+    name: 'trending.json',
+    schema: trendingSchema
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
   }
 ];
 

@@ -1,0 +1,21 @@
+{
+  "name": "fcc-translation-annotation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "translation-annotation/annotate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "js-yaml": "^3.14.0",
+    "lodash": "^4.17.20",
+    "mdast-builder": "^1.1.1",
+    "remark-frontmatter": "^2.0.0",
+    "remark-parse": "^8.0.3",
+    "remark-stringify": "^8.1.1",
+    "to-vfile": "^6.1.0",
+    "unified": "^9.2.0"
+  }
+}

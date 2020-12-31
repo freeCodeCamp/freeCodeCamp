@@ -17,10 +17,17 @@ import { dasherize } from '../../../utils/slugs';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 import {
+<<<<<<< HEAD
   getParamsFromReq,
   getRedirectBase,
   normalizeParams
 } from '../utils/get-return-to';
+=======
+  getRedirectParams,
+  getRedirectBase,
+  normalizeParams
+} from '../utils/redirection';
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
 
 const log = debug('fcc:boot:challenges');
 
@@ -34,7 +41,11 @@ export default async function bootChallenge(app, done) {
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
     challengeUrlResolver,
     normalizeParams,
+<<<<<<< HEAD
     getParamsFromReq
+=======
+    getRedirectParams
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
   );
 
   api.post(
@@ -336,11 +347,19 @@ function backendChallengeCompleted(req, res, next) {
 export function createRedirectToCurrentChallenge(
   challengeUrlResolver,
   normalizeParams,
+<<<<<<< HEAD
   getParamsFromReq
 ) {
   return async function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
     const { origin, pathPrefix } = normalizeParams(getParamsFromReq(req));
+=======
+  getRedirectParams
+) {
+  return async function redirectToCurrentChallenge(req, res, next) {
+    const { user } = req;
+    const { origin, pathPrefix } = getRedirectParams(req, normalizeParams);
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
 
     const redirectBase = getRedirectBase(origin, pathPrefix);
     if (!user) {

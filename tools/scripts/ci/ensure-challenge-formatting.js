@@ -19,7 +19,7 @@ readdirp({ root: challengeRoot, directoryFilter: '!_meta' })
       })
     ]).catch(err => {
       console.info(`
-  the following error occured when testing
+  the following error occurred when testing
 
     ${file.fullPath}
 

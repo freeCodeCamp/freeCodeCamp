@@ -1,16 +1,16 @@
 import accepts from 'accepts';
-
-import { homeLocation } from '../../../config/env';
+import { getRedirectParams } from '../utils/redirection';
 
 export default function fourOhFour(app) {
   app.all('*', function(req, res) {
     const accept = accepts(req);
     const type = accept.type('html', 'json', 'text');
     const { path } = req;
+    const { origin } = getRedirectParams(req);
 
     if (type === 'html') {
       req.flash('danger', `We couldn't find path ${path}`);
-      return res.redirectWithFlash(`${homeLocation}/404`);
+      return res.redirectWithFlash(`${origin}/404`);
     }
 
     if (type === 'json') {

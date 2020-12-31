@@ -12,10 +12,18 @@ i18n.use(initReactI18next).init({
   // we only load one language since each language will have it's own server
   resources: {
     [i18nextCode]: {
+<<<<<<< HEAD
       translations: require(`./locales/${clientLocale}/translations.json`)
     }
   },
   ns: ['translations'],
+=======
+      translations: require(`./locales/${clientLocale}/translations.json`),
+      trending: require(`./locales/${clientLocale}/trending.json`)
+    }
+  },
+  ns: ['translations', 'trending'],
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
   defaultNS: 'translations',
   returnObjects: true,
   debug: environment === 'development',

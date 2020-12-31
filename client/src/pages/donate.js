@@ -5,12 +5,20 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
+<<<<<<< HEAD
 import { Trans, withTranslation } from 'react-i18next';
+=======
+import { withTranslation } from 'react-i18next';
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
 
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
-import DonateText from '../components/Donation/DonateText';
-import DonateSupportText from '../components/Donation/DonateSupportText';
+import {
+  DonationText,
+  DonationSupportText,
+  DonationOptionsText,
+  DonationOptionsAlertText
+} from '../components/Donation/DonationTextComponents';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import CampersImage from '../components/landing/components/CampersImage';
 
@@ -72,7 +80,10 @@ export class DonatePage extends Component {
 
   render() {
     const { showLoading, isDonating, t } = this.props;
+<<<<<<< HEAD
     const url = 'https://www.paypal.me/freecodecamp';
+=======
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
@@ -86,7 +97,7 @@ export class DonatePage extends Component {
           <Row>
             <Fragment>
               <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10} smOffset={1}>
-                <Row className='donate-text'>
+                <Row>
                   <Col className={'text-center'} xs={12}>
                     {isDonating ? (
                       <h2>{t('donate.thank-you')}</h2>
@@ -100,19 +111,29 @@ export class DonatePage extends Component {
                   <Alert>
                     <p>{t('donate.thank-you-2')}</p>
                     <br />
+<<<<<<< HEAD
                     <p>
                       <Trans i18nKey='donate.additional' url={url}>
                         <a href={url}>{{ url }}</a>
                       </Trans>
                     </p>
+=======
+                    <DonationOptionsAlertText />
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
                   </Alert>
                 ) : null}
-                <DonateText isDonating={isDonating} />
+                <DonationText />
                 <DonateForm
                   enableDonationSettingsPage={this.enableDonationSettingsPage}
                   handleProcessing={this.handleProcessing}
                 />
-                <DonateSupportText />
+                <Row className='donate-support'>
+                  <Col xs={12}>
+                    <hr />
+                    <DonationOptionsText />
+                    <DonationSupportText />
+                  </Col>
+                </Row>
               </Col>
               <Col lg={6}>
                 <CampersImage page='donate' />

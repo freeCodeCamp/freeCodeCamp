@@ -120,7 +120,11 @@ class UpdateEmail extends Component {
                   >
                     {isNewEmail
                       ? t('buttons.update-email')
+<<<<<<< HEAD
                       : t('misc.verify-email')}
+=======
+                      : t('buttons.verify-email')}
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
                   </Button>
                 </Form>
                 <p className='text-center'>

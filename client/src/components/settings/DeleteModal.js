@@ -29,7 +29,11 @@ function DeleteModal(props) {
     >
       <Modal.Header closeButton={true}>
         <Modal.Title id='modal-title'>
+<<<<<<< HEAD
           {t('settings.danger.delete')}
+=======
+          {t('settings.danger.delete-title')}
+>>>>>>> ee868f0a7ba6a3a6b49ec30f9a1214d97850383c
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
