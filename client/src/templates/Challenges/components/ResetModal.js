@@ -70,7 +70,7 @@ function ResetModal({ reset, close, isOpen }) {
           bsStyle='danger'
           onClick={withActions(reset, close)}
         >
-          {t('buttons.reset')}
+          {t('buttons.reset-lesson')}
         </Button>
       </Modal.Footer>
     </Modal>
