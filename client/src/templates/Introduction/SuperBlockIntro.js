@@ -1,23 +1,33 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import { uniq, find } from 'lodash';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
 import { withTranslation } from 'react-i18next';
-import Map from '../../components/Map';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
 
+import Login from '../../components/Header/components/Login';
+import Map from '../../components/Map';
+import CertficationIcon from '../../assets/icons/CertificationIcon';
+import GreenPass from '../../assets/icons/GreenPass';
+import GreenNotCompleted from '../../assets/icons/GreenNotCompleted';
 import { dasherize } from '../../../../utils/slugs';
 import Block from '../../components/Map/components/Block';
 import { FullWidthRow, Spacer } from '../../components/helpers';
-import { currentChallengeIdSelector, isSignedInSelector } from '../../redux';
+import {
+  currentChallengeIdSelector,
+  isSignedInSelector,
+  userSelector
+} from '../../redux';
 import { resetExpansion, toggleBlock } from '../../components/Map/redux';
 import {
   MarkdownRemark,
   AllChallengeNode,
-  AllMarkdownRemark
+  AllMarkdownRemark,
+  User
 } from '../../redux/propTypes';
 
 import './intro.css';
@@ -33,16 +43,19 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   resetExpansion: PropTypes.func,
   t: PropTypes.func,
-  toggleBlock: PropTypes.func
+  toggleBlock: PropTypes.func,
+  user: User
 };
 
 const mapStateToProps = state => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
-    (currentChallengeId, isSignedIn) => ({
+    userSelector,
+    (currentChallengeId, isSignedIn, user) => ({
       currentChallengeId,
-      isSignedIn
+      isSignedIn,
+      user
     })
   )(state);
 };
@@ -53,39 +66,110 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-function renderBlock(nodesForSuperBlock, introNodes) {
-  // since the nodes have been filtered based on isHidden, any blocks whose
-  // nodes have been entirely removed will not appear in this array.
-  const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
-
-  // render all non-empty blocks
-  return (
-    <ul className='block'>
-      {blockDashedNames.map(blockDashedName => (
-        <Block
-          blockDashedName={blockDashedName}
-          challenges={nodesForSuperBlock.filter(
-            node => node.block === blockDashedName
-          )}
-          intro={find(
-            introNodes,
-            ({ frontmatter: { block } }) =>
-              block
-                .toLowerCase()
-                .split(' ')
-                .join('-') === blockDashedName
-          )}
-          key={blockDashedName}
-        />
-      ))}
-    </ul>
-  );
-}
-
 export class SuperBlockIntroductionPage extends Component {
   constructor(props) {
     super(props);
     this.initializeExpandedState();
+  }
+
+  renderBlocks() {
+    // since the nodes have been filtered based on isHidden, any blocks whose
+    // nodes have been entirely removed will not appear in this array.
+    const {
+      data: {
+        markdownRemark: {
+          frontmatter: { superBlock }
+        },
+        allChallengeNode: { edges },
+        allMarkdownRemark: { edges: mdEdges }
+      },
+      user: {
+        is2018DataVisCert,
+        isApisMicroservicesCert,
+        isFrontEndLibsCert,
+        isQaCertV7,
+        isInfosecCertV7,
+        isJsAlgoDataStructCert,
+        isRespWebDesignCert,
+        isSciCompPyCertV7,
+        isDataAnalysisPyCertV7,
+        isMachineLearningPyCertV7,
+        username
+      }
+    } = this.props;
+
+    const isCertified = {
+      'Responsive Web Design': isRespWebDesignCert,
+      'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
+      'Front End Libraries': isFrontEndLibsCert,
+      'Data Visualization': is2018DataVisCert,
+      'APIs and Microservices': isApisMicroservicesCert,
+      'Quality Assurance': isQaCertV7,
+      'Information Security': isInfosecCertV7,
+      'Scientific Computing with Python': isSciCompPyCertV7,
+      'Data Analysis with Python': isDataAnalysisPyCertV7,
+      'Machine Learning with Python': isMachineLearningPyCertV7
+    };
+
+    const certLocation = `/certification/${username}/${dasherize(superBlock)}`;
+    const goToCert = () => {
+      return navigate(certLocation);
+    };
+
+    const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
+    const certIconStyle = { height: '40px', width: '40px' };
+    const nodesForSuperBlock = edges.map(({ node }) => node);
+    const introNodes = mdEdges.map(({ node }) => node);
+    const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
+
+    // render all non-empty blocks
+    return (
+      <ul className='block'>
+        {blockDashedNames.map(blockDashedName => (
+          <Block
+            blockDashedName={blockDashedName}
+            challenges={nodesForSuperBlock.filter(
+              node => node.block === blockDashedName
+            )}
+            intro={find(
+              introNodes,
+              ({ frontmatter: { block } }) =>
+                block
+                  .toLowerCase()
+                  .split(' ')
+                  .join('-') === blockDashedName
+            )}
+            key={blockDashedName}
+          />
+        ))}
+        {superBlock !== 'Coding Interview Prep' && (
+          <li className='block'>
+            {isCertified[superBlock] ? (
+              <button className='map-cert-title' onClick={() => goToCert()}>
+                <CertficationIcon />
+                <h3>{superBlock} Certification</h3>
+                <div className='map-title-completed-big'>
+                  <span>
+                    <GreenPass style={certIconStyle} />
+                  </span>
+                </div>
+              </button>
+            ) : (
+              <div className='map-cert-title'>
+                <CertficationIcon />
+                <h3>{superBlock} Certification</h3>
+                <div className='map-title-completed'>
+                  <span>
+                    <GreenNotCompleted style={mapIconStyle} />
+                  </span>
+                  <span>{`0/1`}</span>
+                </div>
+              </div>
+            )}
+          </li>
+        )}
+      </ul>
+    );
   }
 
   initializeExpandedState() {
@@ -124,10 +208,9 @@ export class SuperBlockIntroductionPage extends Component {
       data: {
         markdownRemark: {
           frontmatter: { superBlock }
-        },
-        allChallengeNode: { edges },
-        allMarkdownRemark: { edges: mdEdges }
+        }
       },
+      isSignedIn,
       t
     } = this.props;
     const introTextArr = t(
@@ -141,10 +224,7 @@ export class SuperBlockIntroductionPage extends Component {
         </Helmet>
         <FullWidthRow className='overflow-fix'>
           <Spacer size={2} />
-          <h1 className='text-center'>
-            {superBlock}
-            {superBlock !== 'Coding Interview Prep' ? ' Certification' : ''}
-          </h1>
+          <h1 className='text-center'>{superBlock}</h1>
           <Spacer />
           <div style={{ margin: 'auto', maxWidth: '500px' }}>
             <img
@@ -163,12 +243,15 @@ export class SuperBlockIntroductionPage extends Component {
           ))}
           <Spacer size={2} />
           <h2 className='text-center'>Learning</h2>
-          <div className='block-ui'>
-            {renderBlock(
-              edges.map(({ node }) => node),
-              mdEdges.map(({ node }) => node)
-            )}
-          </div>
+          <div className='block-ui'>{this.renderBlocks()}</div>
+          {!isSignedIn && (
+            <Row>
+              <Col sm={8} smOffset={2} xs={12}>
+                <Spacer size={2} />
+                <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+              </Col>
+            </Row>
+          )}
           <Spacer size={2} />
           <h2 className='text-center'>Try our other sections</h2>
           <Spacer />

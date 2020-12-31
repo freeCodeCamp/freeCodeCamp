@@ -40,6 +40,32 @@ div.map-title:hover {
   background-color: var(--tertiary-background);
 }
 
+.map-cert-title {
+  display: flex;
+  align-items: center;
+  padding: 18px 8px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.map-cert-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.map-cert-title > h3 {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.map-cert-title > svg {
+  display: inline-block;
+  height: 40px;
+  width: auto;
+}
+
 .map-title > h4 {
   margin-bottom: 0;
 }
@@ -48,6 +74,14 @@ div.map-title:hover {
   margin-left: auto;
   min-width: 100px;
   padding-left: 20px;
+}
+
+.map-title-completed-big {
+  margin-left: auto;
+  min-width: 90px;
+  padding-left: 20px;
+  position: relative;
+  top: 4px;
 }
 
 .map-title svg {
@@ -92,20 +126,4 @@ li.open > .map-title svg:first-child {
     flex-shrink: 0;
     padding-left: 15px;
   }
-}
-
-.block a {
-  text-decoration: none;
-}
-
-.block {
-  max-width: calc(100% - 14px);
-}
-
-.block svg {
-  width: 14px;
-  margin-right: 5px;
-  flex-shrink: 0;
-  fill: var(--color-quaternary) !important;
-  stroke: var(--color-quaternary);
 }

@@ -152,7 +152,7 @@ export class Block extends Component {
       );
     });
 
-    return isProjectBlock ? (
+    return isProjectBlock && blockDashedName !== 'take-home-projects' ? (
       <li className='block'>
         <div className='map-title'>
           <h4>{blockNameify(blockDashedName)}</h4>
