@@ -275,7 +275,7 @@ In all other situations - even situations where the code of conduct is violated 
 10. **Temporarily inactive**
     If you're not going to be active as a Moderator for a while due to vacation, illness or any other reason, make sure to let the others know in the #mod-chat channel. This is so we know if we can count on you to be regularly active in the server or not.
 
-## Moderating our Chat Server:
+## Moderating our Chat Server
 
 Moderating the chat server is very similar to moderating the Discord server, but there are a few key differences:
 
