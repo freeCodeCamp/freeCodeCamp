@@ -275,6 +275,17 @@ In all other situations - even situations where the code of conduct is violated 
 10. **Temporarily inactive**
     If you're not going to be active as a Moderator for a while due to vacation, illness or any other reason, make sure to let the others know in the #mod-chat channel. This is so we know if we can count on you to be regularly active in the server or not.
 
+## Moderating our Chat Server:
+
+Moderating the chat server is very similar to moderating the Discord server, but there are a few key differences:
+
+1. **No Ban functionality**
+    At this time, Rocket.Chat does not have a flow for banning users. Users can be muted (so they are prevented from chatting in a room) or kicked from a room.
+2. **Modified Bot Commands**
+    The moderation bot in the chat server was developed with a smoother UX in mind. Some of the commands have been modified. Use the `!fCC modHelp` command to view the available functionality. Bot commands in the chat server do NOT require a user mention as they do with Discord.
+3. **No Role Mentions**
+    Unlike Discord, Rocket.Chat does not allow you to mention all users by a specific role - this means you cannot ping all moderators at once.
+
 ## How to become a moderator
 
 If you are helping people in the community consistently over time, our Moderator Team will eventually take notice, and one of them will mention you as a possible moderator to [our staff](https://forum.freecodecamp.org/g/Team). There are no shortcuts to becoming a moderator.
