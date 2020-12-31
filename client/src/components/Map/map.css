@@ -40,6 +40,19 @@ div.map-title:hover {
   background-color: var(--tertiary-background);
 }
 
+.map-projects-title {
+  font-weight: 700;
+}
+
+.map-project-wrap > a {
+  display: flex;
+  justify-content: space-between;
+}
+
+.map-project-checkmark {
+  margin-right: 40px;
+}
+
 .map-cert-title {
   display: flex;
   align-items: center;

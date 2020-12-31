@@ -117,7 +117,6 @@ export class SuperBlockIntroductionPage extends Component {
       return navigate(certLocation);
     };
 
-    const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
     const certIconStyle = { height: '40px', width: '40px' };
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const introNodes = mdEdges.map(({ node }) => node);
@@ -160,11 +159,10 @@ export class SuperBlockIntroductionPage extends Component {
               <div className='map-cert-title'>
                 <CertficationIcon />
                 <h3>{superBlock} Certification</h3>
-                <div className='map-title-completed'>
+                <div className='map-title-completed-big'>
                   <span>
-                    <GreenNotCompleted style={mapIconStyle} />
+                    <GreenNotCompleted style={certIconStyle} />
                   </span>
-                  <span>{`0/1`}</span>
                 </div>
               </div>
             )}

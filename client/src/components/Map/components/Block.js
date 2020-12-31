@@ -92,7 +92,7 @@ export class Block extends Component {
     );
   }
 
-  renderChallenges(intro = {}, challenges = []) {
+  renderChallenges(intro = {}, challenges = [], isProjectBlock = false) {
     // TODO: Split this into a Challenge Component and add tests
     // TODO: The styles badge and map-badge on the completion span do not exist
     return [intro].concat(challenges).map((challenge, i) => {
@@ -101,23 +101,43 @@ export class Block extends Component {
         : '';
       return (
         <li
-          className={'map-challenge-title' + completedClass}
+          className={`map-challenge-title${completedClass} ${
+            isProjectBlock ? 'map-project-wrap' : ''
+          }`}
           id={challenge.dashedName || dasherize(challenge.frontmatter.title)}
           key={'map-challenge' + challenge.fields.slug}
         >
-          <span className='badge map-badge'>
-            {i === 0 ? (
-              <IntroInformation style={mapIconStyle} />
-            ) : (
-              this.renderCheckMark(challenge.isCompleted)
-            )}
-          </span>
-          <Link
-            onClick={this.handleChallengeClick(challenge.fields.slug)}
-            to={challenge.fields.slug}
-          >
-            {challenge.title || challenge.frontmatter.title}
-          </Link>
+          {!isProjectBlock ? (
+            <>
+              <span className='badge map-badge'>
+                {i === 0 ? (
+                  <IntroInformation style={mapIconStyle} />
+                ) : (
+                  this.renderCheckMark(challenge.isCompleted)
+                )}
+              </span>
+              <Link
+                onClick={this.handleChallengeClick(challenge.fields.slug)}
+                to={challenge.fields.slug}
+              >
+                {challenge.title || challenge.frontmatter.title}
+              </Link>
+            </>
+          ) : (
+            <Link
+              onClick={this.handleChallengeClick(challenge.fields.slug)}
+              to={challenge.fields.slug}
+            >
+              {challenge.title || challenge.frontmatter.title}
+              <span className='badge map-badge map-project-checkmark'>
+                {i === 0 ? (
+                  <IntroInformation style={mapIconStyle} />
+                ) : (
+                  this.renderCheckMark(challenge.isCompleted)
+                )}
+              </span>
+            </Link>
+          )}
         </li>
       );
     });
@@ -149,34 +169,39 @@ export class Block extends Component {
       const isJsProject =
         challenge.order === 10 && challenge.challengeType === 5;
 
-      return (
+      const isOtherProject =
         challenge.challengeType === 3 ||
         challenge.challengeType === 4 ||
-        challenge.challengeType === 10 ||
-        isJsProject
+        challenge.challengeType === 10;
+
+      const isTakeHomeProject =
+        challenge.blockDashedName === 'take-home-projects';
+
+      return (
+        (isJsProject && !isTakeHomeProject) ||
+        (isOtherProject && !isTakeHomeProject)
       );
     });
 
     const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
-    const blockIntroArr =
-      isProjectBlock && blockDashedName !== 'take-home-projects'
-        ? []
-        : superBlockIntroObj.blocks[blockDashedName];
+    const blockIntroArr = isProjectBlock
+      ? []
+      : superBlockIntroObj.blocks[blockDashedName];
 
-    return isProjectBlock && blockDashedName !== 'take-home-projects' ? (
+    return isProjectBlock ? (
       <li className='block'>
         <div className='map-title'>
-          <h4>{blockNameify(blockDashedName)}</h4>
-          <div className='map-title-completed'>
-            <span>
-              {this.renderCheckMark(
-                completedCount === challengesWithCompleted.length
-              )}
-            </span>
-            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
-          </div>
+          <h4 className='map-projects-title'>
+            {blockNameify(blockDashedName)}
+          </h4>
         </div>
-        <ul>{this.renderChallenges(intro, challengesWithCompleted)}</ul>
+        <ul>
+          {this.renderChallenges(
+            intro,
+            challengesWithCompleted,
+            isProjectBlock
+          )}
+        </ul>
       </li>
     ) : (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
