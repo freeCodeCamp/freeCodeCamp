@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Link } from 'gatsby';
+import { withTranslation } from 'react-i18next';
 
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { completedChallengesSelector, executeGA } from '../../../redux';
@@ -43,6 +44,8 @@ const propTypes = {
     })
   }),
   isExpanded: PropTypes.bool,
+  superBlockDashedName: PropTypes.string,
+  t: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired
 };
 
@@ -126,7 +129,9 @@ export class Block extends Component {
       completedChallenges,
       challenges,
       isExpanded,
-      intro
+      intro,
+      superBlockDashedName,
+      t
     } = this.props;
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
@@ -151,6 +156,12 @@ export class Block extends Component {
         isJsProject
       );
     });
+
+    const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
+    const blockIntroArr =
+      isProjectBlock && blockDashedName !== 'take-home-projects'
+        ? []
+        : superBlockIntroObj.blocks[blockDashedName];
 
     return isProjectBlock && blockDashedName !== 'take-home-projects' ? (
       <li className='block'>
@@ -187,6 +198,9 @@ export class Block extends Component {
         </button>
         <ul>
           {isExpanded
+            ? blockIntroArr.map((str, i) => <p key={i}>{str}</p>)
+            : null}
+          {isExpanded
             ? this.renderChallenges(intro, challengesWithCompleted)
             : null}
         </ul>
@@ -195,10 +209,12 @@ export class Block extends Component {
   }
 }
 
+const TranslatedBlock = withTranslation()(Block);
+
 Block.displayName = 'Block';
 Block.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Block);
+)(TranslatedBlock);

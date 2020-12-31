@@ -111,7 +111,8 @@ export class SuperBlockIntroductionPage extends Component {
       'Machine Learning with Python': isMachineLearningPyCertV7
     };
 
-    const certLocation = `/certification/${username}/${dasherize(superBlock)}`;
+    const superBlockDashedName = dasherize(superBlock);
+    const certLocation = `/certification/${username}/${superBlockDashedName}`;
     const goToCert = () => {
       return navigate(certLocation);
     };
@@ -140,6 +141,7 @@ export class SuperBlockIntroductionPage extends Component {
                   .join('-') === blockDashedName
             )}
             key={blockDashedName}
+            superBlockDashedName={superBlockDashedName}
           />
         ))}
         {superBlock !== 'Coding Interview Prep' && (
@@ -213,9 +215,11 @@ export class SuperBlockIntroductionPage extends Component {
       isSignedIn,
       t
     } = this.props;
-    const introTextArr = t(
-      `intro:${dasherize(superBlock)}.superblock.intro-text`
-    );
+    const superBlockIntroObj = t(`intro:${dasherize(superBlock)}`);
+    const {
+      image: superBlockImage,
+      intro: superBlockIntroText
+    } = superBlockIntroObj;
 
     return (
       <Fragment>
@@ -229,7 +233,7 @@ export class SuperBlockIntroductionPage extends Component {
           <div style={{ margin: 'auto', maxWidth: '500px' }}>
             <img
               alt='building a website'
-              src={t(`intro:${dasherize(superBlock)}.superblock.image`)}
+              src={superBlockImage}
               style={{
                 backgroundColor: '#f5f6f7',
                 padding: '15px',
@@ -238,7 +242,7 @@ export class SuperBlockIntroductionPage extends Component {
             />
           </div>
           <Spacer />
-          {introTextArr.map((str, i) => (
+          {superBlockIntroText.map((str, i) => (
             <p key={i}>{str}</p>
           ))}
           <Spacer size={2} />
