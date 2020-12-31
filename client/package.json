@@ -98,7 +98,8 @@
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
     "serve": "gatsby serve -p 8000",
-    "test": "jest"
+    "test": "jest",
+    "validate-keys": "node ./i18n/validate-keys.js"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
