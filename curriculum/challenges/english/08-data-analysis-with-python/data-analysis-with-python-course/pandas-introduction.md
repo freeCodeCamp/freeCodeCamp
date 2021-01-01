@@ -33,33 +33,33 @@ print(certificates_earned)
 
 ## --answers--
 
-```
+<pre>
 Tom      8
 Kris     2
 Ahmad    5
 Beau     6
 dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
 Kris     2
 Ahmad    5
 Beau     6
 Tom      8
 dtype: int64
-```
+</pre>
 
 ---
 
-```
+<pre>
 Tom      8
 Kris     2
 Ahmad    5
 Beau     6
 Name: certificates_earned dtype: int64
-```
+</pre>
 
 ## --video-solution--
 
