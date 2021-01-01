@@ -210,33 +210,28 @@ Here's how moderators deal with violations of our [Code of Conduct](https://code
 1. **Make sure it was intended to violate the Code of Conduct.**
    Not all violations of the CoC were intended as such. A new camper might post a large amount of code for help, unaware that this can be considered spamming. In these cases, you can just ask them to paste their code with services like Codepen or Pastebin.
 
-2. **If the camper clearly violates the Code of Conduct, the moderator will proceed as follows:**
+2. **If the camper clearly and intentionally violates the Code of Conduct, the moderator will proceed as follows:**
 
-- Suspend the offending camper, but don't warn or threaten them. Instead, use the CamperBot command `!fCC suspend @username reason`, where `username` is the @mention of the user to suspend and `reason` is a brief description of the reason for the suspension.
-
-- Report a short summary of the event and how they responded to it in the #activity-log channel. Here's an example of what such a summary might look like:
+- Ban the offending person from the Discord Server. In order to ban someone, right click on their username/profile picture and select "Ban username". You will be given the option to delete their previous messages - select "Don't delete any", as the messages should remain present as a historic record.
+- Report a short summary of the event in the #mod-log channel. Here's an example of what such a summary might look like:
 
 ```
-Suspended: _@username_
+Banned: _@username_
 Reason(s): _Spamming, trolling_
 Evidence: _One or more links to the offending message(s)_
-CoC: _Sent_
 ```
 
-- A report for removing a suspension should look like:
-
-```
-I’ve removed the suspension from ` @username `. I sent them the Code of Conduct. They just today realized they were suspended and apologized for what they did.
-```
-
-- Based on the offenders reply, the moderator will decide whether to remove the suspension from the offending camper. If they seem respectful and apologetic, the moderator can remove the suspension. As a matter of policy, moderators will be polite during this process, no matter how poorly the offending camper has behaved. If they aren't respectful or unwilling to accept the CoC, the suspension should be followed with a ban from the Discord server. Use the same summary as above, but replace "Suspended:" with "Banned:".
-
-3. **How to ban and/or unban**
-
-- In order to ban someone, right click on their username/profile picture and select "Ban <username>". You will be given the option to delete their previous messages - select "Don't delete any", as the messages should remain present as a historic record.
 - If you decide to ban someone, it means they're unwilling to abide to our Code of Conduct. Therefore unbanning a Camper should rarely occur. However, if the need arises, you can do so by clicking on the server name, choosing "Server Settings", choosing "Bans", selecting the user you wish to unban, and clicking "Revoke Ban".
 
 Discord Bans are global - you cannot ban a user from a specific channel, only from the entire server.
+
+3. **Creating a Private Discussion**
+
+There may be situations where you need to address a concern with a camper privately. This should not be done through DMs, as this can lead to situations where you claim one thing and the camper claims another. Instead, use the bot's functionality to create a private discussion:
+
+- Call the `!fCC moderate private @username` command, where `@username` is the *Discord mention* of the user. If you are calling this command from a private channel (such as #mod-chat), you will need to parse the mention manually: Ensure you have Developer Mode turned on in your Discord settings, then right click on the user's avatar and select `Copy ID`. Replace the `@username` parameter with `<@!ID>`, where `ID` is the value you copied earlier. The result should look like: `!fCC moderate private <@!465650873650118659>`.
+- The bot will create a new channel under the `private` category and add the `@username`-mentioned camper and all moderators with the `Your Friendly Moderator` role. While all moderators are added to the channel for transparency, the moderator who calls this command should be the only one to interact with the camper unless they request assistance.
+- When the conversation is complete, call the `!fCC moderate close` command *in the private channel* to have the bot close and delete that channel.
 
 4. **Deleting messages**
    Moderators have the ability to delete messages on Discord. They should only exercise this ability in four very specific situations:
@@ -252,7 +247,7 @@ In all other situations - even situations where the code of conduct is violated 
    Don’t use @everyone or @here under any circumstances! Every single person in that chat room will get a notification. In some cases, tens of thousands of people.
    Instead, if you want people to see an announcement, you can pin it to the channel to allow everyone to read it.
 
-6. **Don’t threaten to ban or suspend** If a camper is breaking the code of conduct, don’t threaten to ban or suspend them, and never warn them in public. Instead, talk to them privately, or use the bot to issue a suspension (per the above protocol). No one else in that channel needs to know that you banned / suspended the person - campers can view the summary in the #activity-log channel if they want to keep up on that information. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
+6. **Don’t threaten to ban** If a camper is breaking the code of conduct, don’t threaten to ban them, and never warn them in public. Instead, talk to them privately using the bot's `private` command. No one else in that channel needs to know that you banned / suspended the person - campers can view the summary in the #activity-log channel if they want to keep up on that information. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
 
 - Camper posts a wall of code to request help
 
@@ -279,6 +274,17 @@ In all other situations - even situations where the code of conduct is violated 
 
 10. **Temporarily inactive**
     If you're not going to be active as a Moderator for a while due to vacation, illness or any other reason, make sure to let the others know in the #mod-chat channel. This is so we know if we can count on you to be regularly active in the server or not.
+
+## Moderating our Chat Server
+
+Moderating the chat server is very similar to moderating the Discord server, but there are a few key differences:
+
+1. **No Ban functionality**
+    At this time, Rocket.Chat does not have a flow for banning users. Users can be muted (so they are prevented from chatting in a room) or kicked from a room.
+2. **Modified Bot Commands**
+    The moderation bot in the chat server was developed with a smoother UX in mind. Some of the commands have been modified. Use the `!fCC modHelp` command to view the available functionality. Bot commands in the chat server do NOT require a user mention as they do with Discord.
+3. **No Role Mentions**
+    Unlike Discord, Rocket.Chat does not allow you to mention all users by a specific role - this means you cannot ping all moderators at once.
 
 ## How to become a moderator
 
@@ -310,7 +316,7 @@ You may be approached by organizations who want to partner or co-brand with free
 
 You may come across situations where users are seeking medical advice or are dealing with mental health issues and are looking for support. As a matter of policy, you should avoid talking privately about these matters. Should the situation at some point reflect back to fCC, we want to have the conversation(s) on record. Make it clear that we are not medical professionals and that you encourage the user to find professional help. As difficult as it sometimes can be, avoid giving any tips or advice other than pointing the user in the direction of professional help!
 
-If this happens on Discord: Create a private channel for the user and the mod team. This should be done manually, as using the bot suspension flow carries negative connotation and may cause the user to feel they are being punished.
+If this happens on Discord: Create a private channel for the user and the mod team. This can be done with the bot's `private` command.
 
 - The user is guaranteed some privacy
 - Public chat is no longer disrupted
@@ -318,7 +324,7 @@ If this happens on Discord: Create a private channel for the user and the mod te
 
 If you believe the user is capable of rejoining the community, right click on the private channel and copy the ID. Put the following message in #mod-log:
 
-> Reference medical advice: <channel ID> <username>
+> Reference medical advice: `<channel ID> <username>`
 
 Helpful URLs:
 
