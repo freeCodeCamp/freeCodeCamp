@@ -11,7 +11,7 @@ videoId: 0jGfH8BPfOk
 
 What is another way to produce the following array?
 
-```py
+<pre>
 [[0. 0. 0. 0. 0. 0. 0.]
 [0. 1. 1. 1. 1. 1. 0.]
 [0. 1. 1. 1. 1. 1. 0.]
@@ -19,7 +19,7 @@ What is another way to produce the following array?
 [0. 1. 1. 1. 1. 1. 0.]
 [0. 1. 1. 1. 1. 1. 0.]
 [0. 0. 0. 0. 0. 0. 0.]]
-```
+</pre>
 
 ## --answers--
 
