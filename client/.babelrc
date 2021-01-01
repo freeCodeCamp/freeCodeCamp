@@ -62,7 +62,9 @@
           "mathml",
           "python",
           "svg",
-          "xml"
+          "xml",
+          "sql",
+          "typescript"
         ],
         "theme": "default",
         "css": true,
