@@ -13,19 +13,19 @@ What will search for a "$" in a regular expression?
 
 ## --answers--
 
-$
+<pre>$</pre>
 
 ---
 
-\\dollar\\
+<pre>\\dollar\\</pre>
 
 ---
 
-\\$
+<pre>\\$</pre>
 
 ---
 
-!$
+<pre>!$</pre>
 
 ## --video-solution--
 

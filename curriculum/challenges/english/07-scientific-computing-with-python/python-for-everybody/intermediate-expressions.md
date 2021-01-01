@@ -27,23 +27,23 @@ print(height/3)
 
 ## --answers--
 
-39
+<pre>39</pre>
 
 ---
 
-4
+<pre>4</pre>
 
 ---
 
-4.0
+<pre>4.0</pre>
 
 ---
 
-5.0
+<pre>5.0</pre>
 
 ---
 
-5
+<pre>5</pre>
 
 ## --video-solution--
 

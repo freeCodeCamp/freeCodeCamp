@@ -13,19 +13,19 @@ What is the symbol used in an assignment statement?
 
 ## --answers--
 
-~
+<pre>~</pre>
 
 ---
 
-&
+<pre>&</pre>
 
 ---
 
-=
+<pre>=</pre>
 
 ---
 
-\|
+<pre>\|</pre>
 
 ## --video-solution--
 

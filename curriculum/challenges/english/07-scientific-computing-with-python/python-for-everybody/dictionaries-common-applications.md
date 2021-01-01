@@ -18,23 +18,23 @@ print(counts.get('kris', 0))
 
 ## --answers--
 
-2
+<pre>2</pre>
 
 ---
 
-quincy
+<pre>quincy</pre>
 
 ---
 
-0
+<pre>0</pre>
 
 ---
 
-10
+<pre>10</pre>
 
 ---
 
-[will return error]
+<pre>[will return error]</pre>
 
 ## --video-solution--
 

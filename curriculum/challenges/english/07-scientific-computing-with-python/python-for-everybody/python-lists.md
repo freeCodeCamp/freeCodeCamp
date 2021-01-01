@@ -18,19 +18,19 @@ x = fruit[1]
 
 ## --answers--
 
-banana
+<pre>banana</pre>
 
 ---
 
-a
+<pre>a</pre>
 
 ---
 
-b
+<pre>b</pre>
 
 ---
 
-True
+<pre>True</pre>
 
 ## --video-solution--
 

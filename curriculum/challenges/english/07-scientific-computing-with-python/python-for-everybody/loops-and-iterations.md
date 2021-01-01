@@ -22,27 +22,35 @@ while True:
 
 ## --answers--
 
-<pre>0
-1
-2</pre>
-
----
-
-<pre>0
+<pre>
+0
 1
 2
-3</pre>
+</pre>
 
 ---
 
-<pre>1
-2</pre>
-
----
-
-<pre>1
+<pre>
+0
+1
 2
-3</pre>
+3
+</pre>
+
+---
+
+<pre>
+1
+2
+</pre>
+
+---
+
+<pre>
+1
+2
+3
+</pre>
 
 ## --video-solution--
 

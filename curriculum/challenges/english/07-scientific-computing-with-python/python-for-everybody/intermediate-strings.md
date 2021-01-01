@@ -24,23 +24,23 @@ i = word.find("na")
 
 ## --answers--
 
-nanana
+<pre>nanana</pre>
 
 ---
 
-2
+<pre>2</pre>
 
 ---
 
-3
+<pre>3</pre>
 
 ---
 
-True
+<pre>True</pre>
 
 ---
 
-na
+<pre>na</pre>
 
 ## --video-solution--
 

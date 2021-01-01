@@ -20,19 +20,19 @@ print(lst)
 
 ## --answers--
 
-['csev@umich.edu', 'cwen@iupui.edu']
+<pre>['csev@umich.edu', 'cwen@iupui.edu']</pre>
 
 ---
 
-['csev@umich.edu']
+<pre>['csev@umich.edu']</pre>
 
 ---
 
-['umich.edu', 'iupui.edu']
+<pre>['umich.edu', 'iupui.edu']</pre>
 
 ---
 
-['csev@', 'cwen@']
+<pre>['csev@', 'cwen@']</pre>
 
 ## --video-solution--
 
