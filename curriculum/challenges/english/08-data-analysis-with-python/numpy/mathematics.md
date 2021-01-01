@@ -20,27 +20,27 @@ b = np.max(a, axis=1).sum()
 
 ## --answers--
 
-```py
+<pre>
 10
-```
+</pre>
 
 ---
 
-```py
+<pre>
 7
-```
+</pre>
 
 ---
 
-```py
+<pre>
 5
-```
+</pre>
 
 ---
 
-```py
+<pre>
 15
-```
+</pre>
 
 ## --video-solution--
 

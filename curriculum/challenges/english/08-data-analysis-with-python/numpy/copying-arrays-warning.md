@@ -21,21 +21,21 @@ b[2] = 20
 
 ## --answers--
 
-```python
+<pre>
 [1 2 3 4 5]
-```
+</pre>
 
 ---
 
-```python
+<pre>
 [1 2 20 4 5]
-```
+</pre>
 
 ---
 
-```python
+<pre>
 [1 20 3 4 5]
-```
+</pre>
 
 ## --video-solution--
 
