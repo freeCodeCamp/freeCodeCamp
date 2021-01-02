@@ -8,35 +8,35 @@ forumTopicId: 16634
 
 # --description--
 
-有时候，你会想给一个元素每个方向的`padding`都设置成一个特定的值
+有时候，你会想给一个元素每个方向的 `padding` 都设置一个特定的值
 
-CSS 允许你使用`padding-top`，`padding-right`， `padding-bottom`和`padding-left`属性来设置四个不同方向的`padding`值。
+CSS 允许你使用 `padding-top`、`padding-right`、`padding-bottom`、`padding-left` 属性来设置四个不同方向的 `padding` 值。
 
 # --instructions--
 
-蓝色框的顶部和左侧的`padding`值设置为`40px`，底部和右侧设置为`20px`。
+请将蓝色框的顶部和左侧 `padding` 属性值设置为 `40px`；将底部和右侧的属性值设置为 `20px`。
 
 # --hints--
 
-`blue-box` class 的顶部`padding`（上内边距）值应为`40px`。
+class 为 `blue-box` 的元素的上内边距属性值应为 `40px`。
 
 ```js
 assert($('.blue-box').css('padding-top') === '40px');
 ```
 
-`blue-box` class 的右侧`padding`（右内边距）值应为`20px`。
+class 为 `blue-box` 的元素的右内边距属性值应为 `20px`。
 
 ```js
 assert($('.blue-box').css('padding-right') === '20px');
 ```
 
-`blue-box` class 的底部`padding`（下内边距）值应为`20px`。
+class 为 `blue-box` 的元素的下内边距属性值应为 `20px`。
 
 ```js
 assert($('.blue-box').css('padding-bottom') === '20px');
 ```
 
-`blue-box` class 的左侧`padding`（左内边距）值应为`40px`。
+class 为 `blue-box` 的元素的左内边距属性值应为 `40px`。
 
 ```js
 assert($('.blue-box').css('padding-left') === '40px');

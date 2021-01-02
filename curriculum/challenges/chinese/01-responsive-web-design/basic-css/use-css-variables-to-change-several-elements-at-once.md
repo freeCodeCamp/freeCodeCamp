@@ -8,17 +8,17 @@ forumTopicId: 301093
 
 # --description--
 
-<dfn>CSS 变量</dfn>是一种仅更改一个值，来一次性更改多个 CSS 样式属性的强大方法。
+<dfn>CSS 变量</dfn>可以实现仅需要更新一个值，就可以将更改应用到多个 CSS 样式属性的强大方法。
 
 按照下面指示的来做，我们只需要改变三个值，多个样式将会同时被修改。
 
 # --instructions--
 
-在`penguin`class 里，将`black`改为`gray`，`gray`改为`white`，`yellow`改为`orange`。
+在 `penguin` class 里，将 `black` 改为 `gray`；`gray` 改为 `white`；`yellow` 改为 `orange`。
 
 # --hints--
 
-`penguin` class 声明的`--penguin-skin`变量的值应为`gray`。
+`penguin` class 声明中的 `--penguin-skin` 变量值应为 `gray`。
 
 ```js
 assert(
@@ -26,7 +26,7 @@ assert(
 );
 ```
 
-`penguin` class 声明的`--penguin-belly`变量的值应为`white`。
+`penguin` class 声明中的 `--penguin-belly` 变量值应为 `white`。
 
 ```js
 assert(
@@ -34,7 +34,7 @@ assert(
 );
 ```
 
-`penguin` class 声明的`--penguin-beak`变量的值应为`orange`。
+`penguin` class 声明中的 `--penguin-beak` 变量值应为 `orange`。
 
 ```js
 assert(

@@ -8,9 +8,9 @@ forumTopicId: 301096
 
 # --description--
 
-`html`的结构主要分为两大部分：`head`、`body`。关于网页的描述都应该放入`head`标签，网页的内容都应该放入`body`标签。
+`html` 的结构主要分为两大部分：`head` 和 `body`。网页的描述应放入 `head` 标签，网页的内容则应放入 `body` 标签。
 
-比如`link`、`meta`、`title`和`style`都应该放入`head`标签。
+比如 `link`、`meta`、`title` 和 `style` 都应放入 `head` 标签。
 
 这是网页布局的一个例子：
 
@@ -28,41 +28,41 @@ forumTopicId: 301096
 
 # --instructions--
 
-给网页添加`head`和`body`，`head`元素应该包含`title`，`body`元素应该包含`h1`和`p`。
+请给网页添加 `head` 和 `body`，`head` 元素应包含 `title`；`body` 元素应该包含 `h1` 和 `p`。
 
 # --hints--
 
-网页应该只有一个`head`元素。
+网页应只有一个 `head` 元素。
 
 ```js
 assert($('head').length == 1);
 ```
 
-网页应该只有一个`body`元素。
+网页应只有一个 `body` 元素。
 
 ```js
 assert($('body').length == 1);
 ```
 
-`head`应该是`html`的子元素。
+`head` 应为 `html` 的子元素。
 
 ```js
 assert($('html').children('head').length == 1);
 ```
 
-`body`应该是`html`的子元素。
+`body` 应为 `html` 的子元素。
 
 ```js
 assert($('html').children('body').length == 1);
 ```
 
-`title`应该是`head`的子元素。
+`title` 应为 `head` 的子元素。
 
 ```js
 assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi));
 ```
 
-`h1`和`p`都应该是`body`的子元素。
+`h1` 和 `p` 都应为 `body` 的子元素。
 
 ```js
 assert(

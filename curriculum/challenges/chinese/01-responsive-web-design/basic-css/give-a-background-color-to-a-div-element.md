@@ -8,9 +8,9 @@ forumTopicId: 18190
 
 # --description--
 
-`background-color`属性可以设置元素的背景颜色。
+`background-color` 属性可以设置元素的背景颜色。
 
-例如，你想将一个元素的背景颜色改为`green`，可以在`style`里面这样写：
+如果想将一个元素的背景颜色改为 `green`，可以在 `style` 里面这样写：
 
 ```css
 .green-background {
@@ -20,23 +20,23 @@ forumTopicId: 18190
 
 # --instructions--
 
-创建一个`silver-background`class 并设置`background-color`为`silver`。 并用在`div`元素上。
+创建一个 `silver-background` class 并设置其 `background-color` 为 `silver`。之后，将这个 class 添加到 `div` 元素上。
 
 # --hints--
 
-`div`元素应有`silver-background` class。
+`div` 元素应有 `silver-background` class。
 
 ```js
 assert($('div').hasClass('silver-background'));
 ```
 
-`div`元素背景颜色应设置为`silver`。
+`div` 元素背景颜色应设置为 `silver`。
 
 ```js
 assert($('div').css('background-color') === 'rgb(192, 192, 192)');
 ```
 
-class 名 `silver-background` 应该定义在 `style` 元素内，`silver` 的值应该指定 `background-color` 属性
+class 名 `silver-background` 应该定义在 `style` 元素内；`background-color` 的属性值应为 `silver`。
 
 ```js
 assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/));

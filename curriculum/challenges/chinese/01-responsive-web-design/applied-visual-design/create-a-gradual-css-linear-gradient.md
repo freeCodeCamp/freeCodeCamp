@@ -8,26 +8,23 @@ forumTopicId: 301047
 
 # --description--
 
-HTML 元素的背景色并不局限于单色。CSS 还提供了颜色过渡，也就是渐变。可以通过 `background` 里面的 `linear-gradient()` 来实现线性渐变，下面是它的语法：
+HTML 元素的背景色并不局限于单色。CSS 还为我们提供了颜色渐变。可以通过 `background` 里的 `linear-gradient()` 来实现线性渐变，以下是它的语法：
 
 `background: linear-gradient(gradient_direction, 颜色 1, 颜色 2, 颜色 3, ...);`
 
-第一个参数指定了颜色过渡的方向 - 它的值是角度，90deg 代表垂直渐变，45deg 的渐变角度和反斜杠方向差不多。剩下的参数指定了渐变颜色的顺序：
+第一个参数用来表明颜色渐变的初始方向。它的值是一个角度，比如 `90deg` 代表水平渐变（从左到右），再比如 `45deg` 代表对角线方向的渐变（从左下到右上）。后续的参数指定了渐变颜色的顺序。
 
-例子：
+例如：
 
 `background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));`
 
 # --instructions--
 
-使用 `linear-gradient()` 给 `div` 添加 `background` 渐变色，渐变角度 35deg，从 `#CCFFFF` 过渡到 `#FFCCCC`。
-
-**注意**  
-有很多种方式指定颜色值，如 `rgb()` 或者 `hsl()`。在本关里请使用 hex 颜色码。
+使用 `linear-gradient()` 将 `div` 的 `background` 设置为渐变色，渐变的起始角度为 35 度，颜色从 `#CCFFFF` 过渡到 `#FFCCCC`。
 
 # --hints--
 
-`div` 元素应该有一个指定方向和颜色的 `linear-gradient` `background`渐变色。
+`div` 元素应有一个指定方向和颜色的 `linear-gradient` 来设置 `background`。
 
 ```js
 assert(

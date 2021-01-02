@@ -32,17 +32,17 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 # --instructions--
 
-现在该卡片添加了值为 `thumbnail` 的 id 属性。把上面的 `box-shadow` 值赋给卡片。
+我们把卡片的 `id` 设置成了 `thumbnail`，请把上面的 `box-shadow` 值赋给这个卡片。
 
 # --hints--
 
-你应该给 id 为 `thumbnail` 的元素添加 `box-shadow` 属性。
+应该给 id 为 `thumbnail` 的元素添加 `box-shadow` 属性。
 
 ```js
 assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g));
 ```
 
-`box-shadow` 值应该是指定的 CSS 值。
+`box-shadow` 属性值应该是题目说明中指定的 CSS 值。
 
 ```js
 assert(

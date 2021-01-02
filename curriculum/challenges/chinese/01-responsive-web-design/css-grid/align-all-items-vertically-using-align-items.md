@@ -8,15 +8,15 @@ forumTopicId: 301121
 
 # --description--
 
-对网格容器使用`align-items`属性可以给网格中所有的网格项设置沿列轴对齐的方式。
+对网格容器使用 `align-items` 属性可以让网格中所有的网格项沿竖直方向对齐。
 
 # --instructions--
 
-请使用`align-items`属性将所有网格项移动到单元格的末尾。
+请使用 `align-items` 属性将所有网格项移动到单元格的末尾。
 
 # --hints--
 
-`container`类应该有`align-items`属性且值为`end`。
+class 为 `container` 的元素应具有 `align-items` 属性且属性值应为 `end`。
 
 ```js
 assert(

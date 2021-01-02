@@ -8,29 +8,27 @@ forumTopicId: 1
 
 # --description--
 
-术语：Strong => s => 加粗。
-
-你可以使用 `strong` 标签来加粗文字。添加了 `strong` 标签后，浏览器会自动给元素应用 `font-weight:bold;`。
+你可以使用 `strong` 标签来加粗文字。粗体文字一般用来吸引读者注意或用来表示强调。添加了 `strong` 标签后，浏览器会自动给元素添加这段样式：`font-weight:bold;`。
 
 # --instructions--
 
-在 `p` 标签里的 “斯坦福大学” 外面添加 `strong` 标签。
+给 `p` 标签里的 "Stanford University" 内容文本添加 `strong` 标签。
 
 # --hints--
 
-你应该有一个 `strong` 标签。
+应添加一个 `strong` 标签。
 
 ```js
 assert($('strong').length == 1);
 ```
 
-`strong` 标签应该在 `p` 标签里。
+`strong` 标签应在 `p` 标签里。
 
 ```js
 assert($('p').children('strong').length == 1);
 ```
 
-`strong` 标签应该包围 “斯坦福大学”。
+`strong` 标签的内容文本应为 `Stanford University`。
 
 ```js
 assert(

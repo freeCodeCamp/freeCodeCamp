@@ -8,17 +8,17 @@ forumTopicId: 301054
 
 # --description--
 
-在本关里，你将要改变动画元素的 `opacity`，使其在到达屏幕右侧时渐隐。
+在本挑战中，我们需要改变动画元素的 `opacity` 属性值，使其在到达屏幕右侧时渐隐。
 
-在展示的动画里，具有渐变背景的圆形元素在 50% 标记的 `@keyframes` 规则处向右移动。
+在示例动画中，具有渐变背景的圆形元素在 `@keyframes` 为 50% 的节点向右移动。
 
 # --instructions--
 
-使用 id 选择器选择 id 为 `ball` 的元素，在 `50%` 里添加 `opacity` 属性并赋值 0.1，使其在向右移动时渐隐。
+使用 id 选择器选择 id 为 `ball` 的元素，在 `@keyframes` 为 `50%` 的节点里添加 `opacity` 属性并设置属性值为 0.1，使其在向右移动时渐隐。
 
 # --hints--
 
-50% 处 `keyframes` 规则应该设置 `opacity` 属性值为 0.1 以使其渐隐。
+`keyframes` 为 50% 的节点处应设置 `opacity` 属性值为 0.1，以使其渐隐。
 
 ```js
 assert(

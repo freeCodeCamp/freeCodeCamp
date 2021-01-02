@@ -20,17 +20,17 @@ forumTopicId: 1
 
 # --instructions--
 
-设置 `h2` 标签的 `width` 为视窗宽度的 80%，`p` 标签的 `width` 为视窗高度和宽度中较小值的 75%。
+请将 `h2` 标签的 `width` 设置为视窗宽度的 80%，`p` 标签的 `width` 为视窗高度和宽度中较小值的 75%。
 
 # --hints--
 
-`h2` 标签 `width` 应为 80vw。
+`h2` 元素的 `width` 应为 80vw。
 
 ```js
 assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g));
 ```
 
-`p` 标签 `width` 应为 75vmin。
+`p` 元素的 `width` 应为 75vmin。
 
 ```js
 assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g));

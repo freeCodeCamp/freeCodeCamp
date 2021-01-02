@@ -8,21 +8,23 @@ forumTopicId: 301090
 
 # --description--
 
-创建变量后，CSS 属性可以通过引用变量名来使用它的值。
+创建变量后，CSS 属性可以通过调用变量名来使用它对应的值。
 
 ```css
 background: var(--penguin-skin);
 ```
 
-因为引用了`--penguin-skin`变量的值，使用了这个样式的元素背景颜色会是灰色。 注意：如果变量名不匹配，样式不会生效。
+因为引用了 `--penguin-skin` 变量的值，使用了这个样式的元素背景颜色会是灰色。
+
+**注意：**如果变量名不匹配，则样式不会生效。
 
 # --instructions--
 
-`penguin-top`，`penguin-bottom`，`right-hand`和`left-hand`class 的`background`属性均使用`--penguin-skin`变量值。
+将 `--penguin-skin` 的值应用到 class 为 `penguin-top`、`penguin-bottom`、`right-hand`、`left-hand` 的 `background` 的属性值。
 
 # --hints--
 
-`penguin-top` class 的`background`属性应使用`--penguin-skin`变量值。
+class 为 `penguin-top` 的 `background` 属性值应使用变量 `--penguin-skin` 的值。
 
 ```js
 assert(
@@ -32,7 +34,7 @@ assert(
 );
 ```
 
-`penguin-bottom` class 的`background`属性应使用`--penguin-skin`变量值。
+class 为 `penguin-bottom` 的 `background` 属性值应使用变量 `--penguin-skin` 的值。
 
 ```js
 assert(
@@ -42,7 +44,7 @@ assert(
 );
 ```
 
-`right-hand` class 的`background`属性应使用`--penguin-skin`变量值。
+class 为 `right-hand` 的 `background` 属性值应使用变量 `--penguin-skin` 的值。
 
 ```js
 assert(
@@ -52,7 +54,7 @@ assert(
 );
 ```
 
-`left-hand` class 的`background`属性应使用`--penguin-skin`变量值。
+class 为 `left-hand` 的 `background` 属性值应使用变量 `--penguin-skin` 的值。
 
 ```js
 assert(

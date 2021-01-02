@@ -8,17 +8,17 @@ forumTopicId: 301085
 
 # --description--
 
-当你在`:root`里创建变量时，这些变量的作用域是整个页面。
+当你在 `:root` 里创建变量时，这些变量的作用域是整个页面。
 
-如果在元素里创建相同的变量，会重写`:root`变量设置的值。
+如果在元素里创建相同的变量，会重写 `:root` 变量设置的值。
 
 # --instructions--
 
-在`penguin`class 里，设置`--penguin-belly`的值为`white`。
+在 `penguin` class 里，请设置 `--penguin-belly` 的值为 `white`。
 
 # --hints--
 
-应该在`penguin`clas 里重定义`--penguin-belly`的变量值，且它的值为`white`。
+应在 `penguin` class 里重定义 `--penguin-belly` 的变量值，新的值应为 `white`。
 
 ```js
 assert(

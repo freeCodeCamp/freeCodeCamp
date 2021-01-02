@@ -8,15 +8,15 @@ forumTopicId: 301052
 
 # --description--
 
-添加一个精致的背景图，可以增加页面的质感，让页面更美观。关键是要找到一个平衡点，抢了内容的风头，喧宾夺主可就不妙了。`background` 属性支持使用 `url()` 函数通过链接的方式引入一个指定纹理或样式的图片。图片链接地址在括号内，一般会用引号包起来。
+为了增加背景图的质感，我们可以为它添加一个不那么明显的纹理图案，这样可以让页面更讨喜。但关键在于，我们需要找到一个平衡点，因为我们不希望背景图抢占了内容的风头，造成喧宾夺主的结果。`background` 属性支持使用 `url()` 函数作为属性值，这让我们可以通过链接的方式引入纹理或样式的图片。图片链接的地址应写在括号内，一般会用引号包起来。
 
 # --instructions--
 
-用 `body` 选择器设置整个页面的 `background` 为 url `https://i.imgur.com/MJAkxbh.png` 指定的图片。
+选取 `body` 元素，并设置整个页面的 `background` 为 url `https://i.imgur.com/MJAkxbh.png` 的图片。
 
 # --hints--
 
-`body` 元素选择器应包含 `background` 属性，且值为给定的 `url`。
+`body` 元素选择器应包含 `background` 属性，且属性值应为给定的 `url`。
 
 ```js
 assert(

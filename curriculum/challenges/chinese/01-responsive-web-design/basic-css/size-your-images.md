@@ -8,9 +8,9 @@ forumTopicId: 18282
 
 # --description--
 
-CSS 的`width`属性可以控制元素的宽度。图片的`width`宽度类似于字体的`px`（像素)值。
+CSS 的 `width` 属性可以控制元素的宽度。和设置文本字号一样，我们会以 `px`（像素）为单位来设置图片的宽度。
 
-假如，你想创建一个叫`larger-image`的 CSS class 来控制 HTML 元素的宽度为 500px，我们可以这样做：
+例如，如果你想创建一个叫 `larger-image` 的 CSS `class` 来控制 HTML 元素的宽度为 500px，就可以这样写：
 
 ```html
 <style>
@@ -22,14 +22,11 @@ CSS 的`width`属性可以控制元素的宽度。图片的`width`宽度类似�
 
 # --instructions--
 
-创建一个`smaller-image`的 CSS class，设置图片的宽度为 100px。
-
-**注意：**  
-由于不同浏览器的差异性，你可能需要将浏览器缩放到 100% 来通过该挑战。
+创建一个叫 `smaller-image` 的 CSS `class`，并用它来设置图片宽度为 100px。
 
 # --hints--
 
-`img`元素应该含有`smaller-image` class。
+`img` 元素的 `class` 应包含 `smaller-image`。
 
 ```js
 assert(
@@ -38,7 +35,7 @@ assert(
 );
 ```
 
-图片宽度应为 100px（像素），且浏览器缩放应为默认 100%。
+图片宽度应为 100px。
 
 ```js
 assert($('img').width() === 100);

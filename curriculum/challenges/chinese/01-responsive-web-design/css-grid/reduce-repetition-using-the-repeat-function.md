@@ -8,17 +8,17 @@ forumTopicId: 301133
 
 # --description--
 
-当使用`grid-template-columns`和`grid-template-rows`定义网格结构时，你需要为添加的每一行和每一列都输入一个值。
+使用 `grid-template-columns` 或 `grid-template-rows` 定义网格结构时，你需要为添加的每一行或每一列都输入一个值。
 
-如果一个网格共有 100 行，每行高度相同，就得输入 100 个值，这不太实际。幸运的是，有一种更好的方法——使用`repeat`方法指定行或列的重复次数，后面加上逗号以及需要重复的值。
+如果一个网格共有 100 行且每行高度相同，那我们就需要输入 100 个值，这显然不太实际。为此，更好的方式是使用 `repeat` 方法指定行或列的重复次数，后面加上逗号以及需要重复的值。
 
-这里有一个添加 100 行网格的例子，使每行高度均为 50px：
+以下为添加 100 行网格的例子，每行高度均为 50px：
 
 ```css
 grid-template-rows: repeat(100, 50px);
 ```
 
-你还可以用 repeat 方法重复多个值，并在定义网格结构时与其他值一起使用。举个例子：
+你还可以用 repeat 方法重复多个值，并在定义网格结构时与其他值一起使用。比如：
 
 ```css
 grid-template-columns: repeat(2, 1fr 50px) 20px;
@@ -30,16 +30,15 @@ grid-template-columns: repeat(2, 1fr 50px) 20px;
 grid-template-columns: 1fr 50px 1fr 50px 20px;
 ```
 
-**注意：**  
-`1fr 50px`重复了两次，后面跟着 20px。
+**注意：**`1fr 50px` 重复了两次，后面跟着 20px。
 
 # --instructions--
 
-用`repeat`代替`grid-template-columns`属性值中的重复代码。
+请用 `repeat` 代替 `grid-template-columns` 属性值中的重复代码。
 
 # --hints--
 
-`container`类应该带有`grid-template-columns`属性且设置为重复 3 列，宽为`1fr`。
+class 为 `container` 的元素应具有 `grid-template-columns` 属性，其属性值应设置为重复 3 列，且每列宽度为 `1fr`。
 
 ```js
 assert(

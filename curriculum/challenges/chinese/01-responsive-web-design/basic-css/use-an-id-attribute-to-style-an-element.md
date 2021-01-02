@@ -8,11 +8,11 @@ forumTopicId: 18339
 
 # --description--
 
-通过`id`属性，你可以做一些很酷的事情，例如，就像 class 一样，你可以使用 CSS 来设置他们的样式
+通过 `id` 属性，你可以做一些很酷的事情。比如像 class 一样，你可以使用 CSS 来设置他们的样式。
 
-可是，`id`不可以重用，只应用于一个元素上。同时，在 CSS 里，`id`的优先级要高于`class`，如果一个元素同时应用了`class`和`id`，并设置样式有冲突，会优先应用`id`的样式。
+不过，`id` 不可以重复，它只能作用于一个元素上。同时，在 CSS 里，`id` 的优先级高于 `class`。如果一个元素同时应用了 `class` 和 `id`，且两者设置的样式有冲突，会优先应用 `id` 中所设置的样式。
 
-选择`id`为`cat-photo-element`的元素，并设置它的背景样式为`green`，可以在`style`标签里这样写：
+选择 `id` 为 `cat-photo-element` 的元素，并设置它的背景样式为 `green`，可以在 `style` 标签里这样写：
 
 ```css
 #cat-photo-element {
@@ -20,27 +20,27 @@ forumTopicId: 18339
 }
 ```
 
-注意在`style`标签里，声明 class 的时候必须在名字前插入`.`符号。同样，在声明 id 的时候，也必须在名字前插入`#`符号。
+注意在 `style` 标签里，声明 class 的时候必须在名字前插入 `.` 符号。同样，在声明 id 的时候，也必须在名字前插入 `#` 符号。
 
 # --instructions--
 
-尝试给含有`cat-photo-form`id属性的`form`表单的背景颜色设置为`green`。
+请将 id 为 `cat-photo-form` 的 `form` 表单的背景颜色设置为 `green`。
 
 # --hints--
 
-设置`form`元素的 id 为`cat-photo-form`。
+`form` 元素的 id 应为 `cat-photo-form`。
 
 ```js
 assert($('form').attr('id') === 'cat-photo-form');
 ```
 
-`form`元素应该含有`background-color`css 属性并且值为 `green`。
+`form` 元素应含有 `background-color` CSS 属性且其属性值应为 `green`。
 
 ```js
 assert($('#cat-photo-form').css('background-color') === 'rgb(0, 128, 0)');
 ```
 
-确保`form`元素含有`id`属性。
+确保 `form` 元素的 `id` 设置正确。
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-不要在`form`元素上添加其他`class`属性或者`style`行内样式。
+不要在 `form` 元素上添加其他 `class` 属性或者 `style` 行内样式。
 
 ```js
 assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));

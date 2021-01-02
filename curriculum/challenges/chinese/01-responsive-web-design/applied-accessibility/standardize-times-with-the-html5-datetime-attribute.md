@@ -8,7 +8,7 @@ forumTopicId: 301025
 
 # --description--
 
-继续日期主题。HTML5 还引入了`time`标签与`datetime`属性来标准化时间。`time`是一个行内标签，用于在页面中呈现日期或时间，而`datetime`属性保存了日期的有效格式，辅助设备可以访问这个值。通过标准化时间格式，即使时间在文本中是以非正式的或口语化的形式编写，辅助设备依然可以获取准确的时间和日期。
+继续日期主题。HTML5 还引入了 `time` 标签与 `datetime` 属性来标准化时间。`time` 是一个行内标签，用于在页面中呈现日期或时间，而 `datetime` 属性用户设置日期的格式，辅助设备会获取这个值。通过标准化时间格式，即使时间在文本中是以非正式或口语化的形式编写，辅助设备依然可以获取准确的时间和日期。
 
 举个例子：
 
@@ -16,17 +16,17 @@ forumTopicId: 301025
 
 # --instructions--
 
-Camper Cat 的比武大会的时间确定了！请使用`time`标签包含文本 "Thursday, September 15&lt;sup>th&lt;/sup>"，并将`datetime`属性设置为 "2016-09-15"。
+Camper Cat 的比武大会的时间确定了！请使用 `time` 标签包裹文本 "Thursday, September 15&lt;sup>th&lt;/sup>"，并将 `datetime` 的属性值设置为 "2016-09-15"。
 
 # --hints--
 
-`time`标签应该包含文本"Thursday, September 15&lt;sup>th&lt;/sup>"。
+应存在一个内容文本为 `Thank you to everyone for responding to Master Camper Cat's survey.` 的 `p` 元素和一个 `time` 元素。
 
 ```js
 assert(timeElement.length);
 ```
 
-`time`标签应该有 1 个非空的`datetime`属性。
+`time` 元素的内容文本应为 `Thursday, September 15<sup>th</sup>`。
 
 ```js
 assert(
@@ -35,13 +35,13 @@ assert(
 );
 ```
 
-`datetime`属性的值应该为 2016-09-15。
+`time` 元素应包含非空的 `datetime` 属性。
 
 ```js
 assert(datetimeAttr && datetimeAttr.length);
 ```
 
-确保`time`标签是闭合的。
+`datetime` 的属性值应为 `2016-09-15`。
 
 ```js
 assert(datetimeAttr === '2016-09-15');

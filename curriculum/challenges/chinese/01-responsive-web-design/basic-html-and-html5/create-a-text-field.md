@@ -8,23 +8,23 @@ forumTopicId: 16823
 
 # --description--
 
-现在让我们来创建一个`form`表单。
+现在让我们来创建一个 `form` 表单。
 
-`input`输入框可以让你轻松获得用户的输入。
+`input` 输入框可以让你轻松获得用户的输入。
 
 你可以像这样创建一个文本输入框：
 
 `<input type="text">`
 
-注意：`input`输入框是没有结束标记的。
+**注意：**`input` 输入框是没有结束标签的。
 
 # --instructions--
 
-在列表下面创建一个`type`属性为`text`的`input`输入框。
+在列表下面创建一个 `type` 为 `text` 的 `input` 输入框。
 
 # --hints--
 
-网页中有一个`type`属性为`text`的`input`输入框。
+网页中应存在一个 `type` 为 `text` 的 `input` 输入框。
 
 ```js
 assert($('input[type=text]').length > 0);

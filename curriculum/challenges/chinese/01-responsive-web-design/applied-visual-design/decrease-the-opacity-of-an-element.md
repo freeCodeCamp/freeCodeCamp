@@ -10,17 +10,17 @@ forumTopicId: 301055
 
 CSS 里的 `opacity` 属性用来设置元素的透明度。
 
-<blockquote>值 1 代表完全不透明。<br>值 0.5 代表半透明。<br>值 0 代表完全透明。</blockquote>
+<blockquote>属性值为 1 代表完全不透明。<br>属性值为 0.5 代表半透明。<br>属性值为 0 代表完全透明。</blockquote>
 
 透明度会应用到元素内的所有内容，不论是图片，还是文本，或是背景色。
 
 # --instructions--
 
-使用 `links` class 选择所有的超链接并设置其 `opacity` 值为 0.7。
+将 class 为 `links` 的所有超链接的 `opacity` 属性值设置 0.7。
 
 # --hints--
 
-你应该使用 `links` class 选择所有的超链接并设置其 `opacity` 值为 0.7。
+应使用 `links` class 选择所有的超链接，并设置其 `opacity` 属性值为 0.7。
 
 ```js
 assert(

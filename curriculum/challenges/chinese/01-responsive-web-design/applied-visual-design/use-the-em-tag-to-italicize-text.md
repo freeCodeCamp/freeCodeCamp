@@ -18,13 +18,13 @@ forumTopicId: 301078
 
 # --hints--
 
-你应该添加一个 `em` 标签。
+应添加一个 `em` 标签。
 
 ```js
 assert($('em').length == 1);
 ```
 
-`em` 标签应该嵌套在 `p` 标签里面。
+`em` 标签应嵌套在 `p` 标签里面。
 
 ```js
 assert($('p').children().length == 1 && $('em').children().length == 2);
