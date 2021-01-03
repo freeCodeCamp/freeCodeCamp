@@ -75,7 +75,7 @@ function ToolPanel({
               href={guideUrl}
               target='_blank'
             >
-              {'Get a Hint'}
+              {'Get a hint'}
             </MenuItem>
           ) : null}
           {videoUrl ? (
