@@ -171,7 +171,7 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 ### Contributing
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome any contributions to the community and are excited to welcome you aboard.
+The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
