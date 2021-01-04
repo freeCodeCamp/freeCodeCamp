@@ -14,7 +14,7 @@
     "mdast-builder": "^1.1.1",
     "mdast-util-to-markdown": "^0.6.2",
     "remark-frontmatter": "^2.0.0",
-    "remark-parse": "^8.0.3",
+    "remark-parse": "^9.0.0",
     "remark-stringify": "^9.0.1",
     "to-vfile": "^6.1.0",
     "unified": "^9.2.0"
