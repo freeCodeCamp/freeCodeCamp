@@ -46,7 +46,7 @@
     "monaco-editor": "^0.20.0",
     "nanoid": "^3.1.20",
     "prismjs": "^1.22.0",
-    "query-string": "^6.13.7",
+    "query-string": "^6.13.8",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-final-form": "^6.5.2",
