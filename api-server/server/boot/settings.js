@@ -53,13 +53,14 @@ export default function settingsController(app) {
 
 const standardErrorMessage = {
   type: 'danger',
-  message:
-    'Something went wrong updating your account. Please check and try again'
+  message: 'flash.msg-9',
+  needsTranslating: true
 };
 
 const standardSuccessMessage = {
   type: 'success',
-  message: 'We have updated your preferences'
+  message: 'flash.msg-10',
+  needsTranslating: true
 };
 
 const createStandardHandler = (req, res, next) => err => {
@@ -196,7 +197,8 @@ function createUpdateMyUsername(app) {
     if (username === user.username) {
       return res.json({
         type: 'info',
-        message: 'Username is already associated with this account'
+        message: 'flash.msg-16',
+        needsTranslating: true
       });
     }
     const validation = isValidUsername(username);
@@ -213,7 +215,8 @@ function createUpdateMyUsername(app) {
     if (exists) {
       return res.json({
         type: 'info',
-        message: 'Username is already associated with a different account'
+        message: 'flash.msg-17',
+        needsTranslating: true
       });
     }
 
@@ -222,9 +225,12 @@ function createUpdateMyUsername(app) {
         res.status(500).json(standardErrorMessage);
         return next(err);
       }
+      console.log('username update');
       return res.status(200).json({
         type: 'success',
-        message: `We have updated your username to ${username}`
+        message: `flash.msg-18`,
+        variables: { username: username },
+        needsTranslating: true
       });
     });
   };
@@ -244,10 +250,7 @@ const updatePrivacyTerms = (req, res, next) => {
       res.status(500).json(standardErrorMessage);
       return next(err);
     }
-    return res.status(200).json({
-      type: 'success',
-      message: `We have updated your preferences.`
-    });
+    return res.status(200).json(standardSuccessMessage);
   });
 };
 
