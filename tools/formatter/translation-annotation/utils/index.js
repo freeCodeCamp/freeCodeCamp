@@ -14,21 +14,16 @@ const wrapInlineCode = (...args) =>
 const baseProcessor = () =>
   unified()
     .use(remarkParse)
-    .use(tableAndStrikethrough);
+    .use(remarkStringify)
+    .use(tableAndStrikethrough)
+    .data('settings', { fences: true, emphasis: '*' });
 
 const annotateCode = md =>
   baseProcessor()
-    .use(remarkStringify, {
-      fences: true,
-      emphasis: '*',
-      handlers: { inlineCode: wrapInlineCode }
-    })
+    .data('settings', { handlers: { inlineCode: wrapInlineCode } })
     .processSync(md).contents;
 
-const stringifyMd = nodes =>
-  baseProcessor()
-    .use(remarkStringify, { fences: true, emphasis: '*' })
-    .stringify(root(nodes));
+const stringifyMd = nodes => baseProcessor().stringify(root(nodes));
 
 module.exports.stringifyMd = stringifyMd;
 module.exports.annotateCode = annotateCode;
