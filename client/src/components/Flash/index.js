@@ -35,8 +35,6 @@ function Flash({ flashMessage, onClose }) {
     onClose();
   }
 
-  console.log(t(`${message}`, variables));
-
   return (
     <>
       <TransitionGroup>
