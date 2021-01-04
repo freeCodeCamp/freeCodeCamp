@@ -91,7 +91,7 @@ export const devLoginRedirect = () => {
       params => params
     );
     returnTo += isRootPath(getRedirectBase(origin, pathPrefix), returnTo)
-      ? '/learn'
+      ? 'learn/'
       : '';
     return res.redirect(returnTo);
   };
