@@ -11,10 +11,13 @@ const notranslateEnd = '</notranslate>';
 const wrapInlineCode = (...args) =>
   notranslateStart + inlineCode(...args) + notranslateEnd;
 
-const annotateCode = md =>
+const baseProcessor = () =>
   unified()
     .use(remarkParse)
-    .use(tableAndStrikethrough)
+    .use(tableAndStrikethrough);
+
+const annotateCode = md =>
+  baseProcessor()
     .use(remarkStringify, {
       fences: true,
       emphasis: '*',
@@ -23,12 +26,12 @@ const annotateCode = md =>
     .processSync(md).contents;
 
 const stringifyMd = nodes =>
-  unified()
+  baseProcessor()
     .use(remarkStringify, { fences: true, emphasis: '*' })
-    .use(tableAndStrikethrough)
     .stringify(root(nodes));
 
 module.exports.stringifyMd = stringifyMd;
 module.exports.annotateCode = annotateCode;
+module.exports.baseProcessor = baseProcessor;
 module.exports.notranslateStart = notranslateStart;
 module.exports.notranslateEnd = notranslateEnd;
