@@ -1,14 +1,16 @@
 const unified = require('unified');
 const vfile = require('to-vfile');
-const markdown = require('remark-parse');
+const remarkParse = require('remark-parse');
 const frontmatter = require('remark-frontmatter');
 
 const textToData = require('./plugins/text-to-data');
 const testsToData = require('./plugins/tests-to-data');
 const questionToData = require('./plugins/question-to-data');
+const tableAndStrikethrough = require('../../challenge-md-parser/mdx/plugins/table-and-strikethrough');
 
 const textProcessor = unified()
-  .use(markdown)
+  .use(remarkParse)
+  .use(tableAndStrikethrough)
   .use(textToData)
   .use(testsToData)
   .use(questionToData)
