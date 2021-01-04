@@ -3,6 +3,7 @@
 var strikethrough = require('micromark-extension-gfm-strikethrough');
 var table = require('micromark-extension-gfm-table');
 var fromMarkdown = require('mdast-util-gfm/from-markdown');
+var toMarkdown = require('mdast-util-gfm/to-markdown');
 
 module.exports = tableAndStrikethrough;
 
@@ -12,6 +13,7 @@ function tableAndStrikethrough() {
   add('micromarkExtensions', strikethrough());
   add('micromarkExtensions', table);
   add('fromMarkdownExtensions', fromMarkdown);
+  add('toMarkdownExtensions', toMarkdown());
 
   function add(field, value) {
     if (data[field]) data[field].push(value);
