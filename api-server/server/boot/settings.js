@@ -225,7 +225,7 @@ function createUpdateMyUsername(app) {
         res.status(500).json(standardErrorMessage);
         return next(err);
       }
-      console.log('username update');
+
       return res.status(200).json({
         type: 'success',
         message: `flash.msg-18`,
