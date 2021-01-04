@@ -60,34 +60,6 @@ export function getFallbackFrontEndDate(completedChallenges, completedDate) {
   return latestCertDate ? latestCertDate : completedDate;
 }
 
-/* const noNameMessage = dedent`
-  We need your name so we can put it on your certification.
-  Add your name to your account settings and click the save button.
-  Then we can issue your certification.
-  `;
-
-const notCertifiedMessage = name => dedent`
-  It looks like you have not completed the necessary steps.
-  Please complete the required projects to claim the
-  ${name} Certification
-  `;
-
-const alreadyClaimedMessage = name => dedent`
-    It looks like you already have claimed the ${name} Certification
-    `;
-
-const successMessage = (username, name) => dedent`
-    @${username}, you have successfully claimed
-    the ${name} Certification!
-    Congratulations on behalf of the freeCodeCamp.org team!
-    `;
-
-const failureMessage = name => dedent`
-    Something went wrong with the verification of ${name}, please try again.
-    If you continue to receive this error, you can send a message to
-    support@freeCodeCamp.org to get help.
-    `;*/
-
 function ifNoSuperBlock404(req, res, next) {
   const { superBlock } = req.body;
   if (superBlock && superBlocks.includes(superBlock)) {
