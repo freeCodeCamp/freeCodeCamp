@@ -216,7 +216,8 @@ function createPostReportUserProfile(app) {
     if (!username || !report || report === '') {
       return res.json({
         type: 'danger',
-        message: 'Check if you have provided a username and a report'
+        message: 'flash.msg-44',
+        needsTranslating: true
       });
     }
     return Email.send$(
@@ -246,8 +247,10 @@ function createPostReportUserProfile(app) {
         }
 
         return res.json({
-          typer: 'info',
-          message: `A report was sent to the team with ${user.email} in copy.`
+          type: 'info',
+          message: 'flash.msg-45',
+          variables: { email: user.email },
+          needsTranslating: true
         });
       }
     );
