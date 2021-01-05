@@ -304,7 +304,11 @@
     "reset-warn": "你确定要重置这一节课程吗？编辑器和测试将被重置。",
     "reset-warn-2": "这个操作不可撤销",
     "scrimba-tip": "Tip: 如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
-    "chal-preview": "挑战预览"
+    "chal-preview": "挑战预览",
+    "cert-map-estimates": {
+      "certs": "Certification (300\u00A0hours)",
+      "coding-prep": "(Thousands of hours of challenges)"
+    }
   },
   "donate": {
     "title": "支持我们的非营利组织",
