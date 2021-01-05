@@ -181,11 +181,11 @@ export class Block extends Component {
       );
     });
 
-    const blockIntroObj = t(
-      `intro:${superBlockDashedName}.blocks.${blockDashedName}`
-    );
-    const blockTitle = isProjectBlock ? '' : blockIntroObj.title;
-    const blockIntroArr = isProjectBlock ? [] : blockIntroObj.intro;
+    const blockIntroObj = isProjectBlock
+      ? null
+      : t(`intro:${superBlockDashedName}.blocks.${blockDashedName}`);
+    const blockTitle = blockIntroObj ? blockIntroObj.title : null;
+    const blockIntroArr = blockIntroObj ? blockIntroObj.intro : null;
 
     return isProjectBlock ? (
       <li className='block'>
