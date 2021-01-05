@@ -20,33 +20,33 @@ dict["Sun"] = 9
 
 ## --answers--
 
-<pre>
+```python
 {'Fri': 20, 'Thu': 6, 'Sat': 1}
-</pre>
+```
 
 ---
 
-<pre>
+```python
 {'Fri': 20, 'Thu': 6, 'Sat': 1, 'Thu': 13, 'Sat': 2, 'Sun': 9}
-</pre>
+```
 
 ---
 
-<pre>
+```python
 {'Sun': 9}
-</pre>
+```
 
 ---
 
-<pre>
+```python
 {'Thu': 13, 'Sat': 2, 'Sun': 9}
-</pre>
+```
 
 ---
 
-<pre>
+```python
 {'Fri': 20, 'Thu': 13, 'Sat': 2, 'Sun': 9}
-</pre>
+```
 
 ## --video-solution--
 

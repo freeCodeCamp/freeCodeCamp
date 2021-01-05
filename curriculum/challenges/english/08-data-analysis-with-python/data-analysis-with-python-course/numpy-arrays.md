@@ -32,25 +32,25 @@ print(A[:, :2])
 
 ## --answers--
 
-<pre>
+```py
 [['a' 'b']]
-</pre>
+```
 
 ---
 
-<pre>
+```py
 [['b' 'c']
 ['e' 'f']
 ['h' 'i']]
-</pre>
+```
 
 ---
 
-<pre>
+```py
 [['a' 'b']
 ['d' 'e']
 ['g' 'h']]
-</pre>
+```
 
 ## --video-solution--
 

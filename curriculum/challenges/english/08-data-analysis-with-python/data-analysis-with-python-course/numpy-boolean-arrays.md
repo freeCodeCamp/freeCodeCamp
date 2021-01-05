@@ -28,19 +28,27 @@ print(a <= 3)
 
 ## --answers--
 
-<pre>[False, False, False, False, True]</pre>
+```python
+[False, False, False, False, True]
+```
 
 ---
 
-<pre>[5]</pre>
+```python
+[5]
+```
 
 ---
 
-<pre>[0, 1, 2, 3]</pre>
+```python
+[0, 1, 2, 3]
+```
 
 ---
 
-<pre>[True, True, True, True, False]</pre>
+```python
+[True, True, True, True, False]
+```
 
 ## --video-solution--
 
