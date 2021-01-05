@@ -11,12 +11,12 @@ videoId: VNWAQbEM-C8
 
 What code would produce the following array?
 
-<pre>
+```py
 [[1. 1.]
 [1. 1.]
 [1. 1.]
 [1. 1.]]
-</pre>
+```
 
 ## --answers--
 

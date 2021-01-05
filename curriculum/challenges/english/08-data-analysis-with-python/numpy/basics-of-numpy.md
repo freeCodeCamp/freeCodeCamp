@@ -18,25 +18,25 @@ print(b)
 
 ## --answers--
 
-<pre>
+```python
 [[1.0 2.0 3.0]
 [3.0 4.0 5.0]]
-</pre>
+```
 
 ---
 
-<pre>
+```python
 [[1. 2. 3.]
 [3. 4. 5.]]
-</pre>
+```
 
 ---
 
-<pre>
+```python
 [[1. 3.]
 [2. 4.]
 [3. 5.]
-</pre>
+```
 
 ## --video-solution--
 
