@@ -73,8 +73,6 @@ export class SuperBlockIntroductionPage extends Component {
   }
 
   renderBlocks() {
-    // since the nodes have been filtered based on isHidden, any blocks whose
-    // nodes have been entirely removed will not appear in this array.
     const {
       data: {
         markdownRemark: {
@@ -113,9 +111,6 @@ export class SuperBlockIntroductionPage extends Component {
 
     const superBlockDashedName = dasherize(superBlock);
     const certLocation = `/certification/${username}/${superBlockDashedName}`;
-    const goToCert = () => {
-      return navigate(certLocation);
-    };
 
     const certIconStyle = { height: '40px', width: '40px' };
     const nodesForSuperBlock = edges.map(({ node }) => node);
@@ -145,27 +140,24 @@ export class SuperBlockIntroductionPage extends Component {
         ))}
         {superBlock !== 'Coding Interview Prep' && (
           <li className='block'>
-            {isCertified[superBlock] ? (
-              <button className='map-cert-title' onClick={() => goToCert()}>
-                <CertficationIcon />
-                <h3>{superBlock} Certification</h3>
-                <div className='map-title-completed-big'>
-                  <span>
+            <button
+              className='map-cert-title'
+              onClick={
+                isCertified[superBlock] ? () => navigate(certLocation) : null
+              }
+            >
+              <CertficationIcon />
+              <h3>{superBlock} Certification</h3>
+              <div className='map-title-completed-big'>
+                <span>
+                  {isCertified[superBlock] ? (
                     <GreenPass style={certIconStyle} />
-                  </span>
-                </div>
-              </button>
-            ) : (
-              <div className='map-cert-title'>
-                <CertficationIcon />
-                <h3>{superBlock} Certification</h3>
-                <div className='map-title-completed-big'>
-                  <span>
+                  ) : (
                     <GreenNotCompleted style={certIconStyle} />
-                  </span>
-                </div>
+                  )}
+                </span>
               </div>
-            )}
+            </button>
           </li>
         )}
       </ul>

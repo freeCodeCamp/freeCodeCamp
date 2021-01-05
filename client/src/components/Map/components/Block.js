@@ -174,8 +174,7 @@ export class Block extends Component {
         challenge.challengeType === 4 ||
         challenge.challengeType === 10;
 
-      const isTakeHomeProject =
-        challenge.blockDashedName === 'take-home-projects';
+      const isTakeHomeProject = blockDashedName === 'take-home-projects';
 
       return (
         (isJsProject && !isTakeHomeProject) ||
