@@ -25,9 +25,8 @@ What is the symbol used in an assignment statement?
 
 ---
 
-<pre>\|</pre>
+<pre>|</pre>
 
 ## --video-solution--
 
 3
-
