@@ -44,7 +44,7 @@ Sentence1. Sentence2 <code>var x = 'y'</code>.
 
 This file converts the instructions and descriptions.  After this there will be
 no need to handle the case where the first line is not empty and markdown syntax
-will alway work.  The linter can check that the first blank line exists.
+will always work.  The linter can check that the first blank line exists.
 */
 
 var parser = unified().use(remarkParse);
