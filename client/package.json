@@ -95,6 +95,7 @@
     "format:src": "prettier-eslint --write --trailing-comma none --single-quote './src/**/*.js'",
     "format:utils": "prettier-eslint --write --trailing-comma none --single-quote './utils/**/*.js'",
     "format": "npm run format:gatsby && npm run format:src && npm run format:utils",
+    "lint": "node ./i18n/schema-validation.js",
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
     "serve": "gatsby serve -p 8000",
