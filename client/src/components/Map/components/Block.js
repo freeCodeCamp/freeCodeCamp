@@ -9,7 +9,6 @@ import { withTranslation } from 'react-i18next';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { completedChallengesSelector, executeGA } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
-import { blockNameify } from '../../../../../utils/block-nameify';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import IntroInformation from '../../../assets/icons/IntroInformation';
@@ -182,17 +181,16 @@ export class Block extends Component {
       );
     });
 
-    const superBlockIntroObj = t(`intro:${superBlockDashedName}`);
-    const blockIntroArr = isProjectBlock
-      ? []
-      : superBlockIntroObj.blocks[blockDashedName];
+    const blockIntroObj = t(
+      `intro:${superBlockDashedName}.blocks.${blockDashedName}`
+    );
+    const blockTitle = isProjectBlock ? '' : blockIntroObj.title;
+    const blockIntroArr = isProjectBlock ? [] : blockIntroObj.intro;
 
     return isProjectBlock ? (
       <li className='block'>
         <div className='map-title'>
-          <h4 className='map-projects-title'>
-            {blockNameify(blockDashedName)}
-          </h4>
+          <h4 className='map-projects-title'>{blockTitle}</h4>
         </div>
         <ul>
           {this.renderChallenges(
@@ -210,7 +208,7 @@ export class Block extends Component {
           onClick={this.handleBlockClick}
         >
           <Caret />
-          <h4>{blockNameify(blockDashedName)}</h4>
+          <h4>{blockTitle}</h4>
           <div className='map-title-completed'>
             <span>
               {this.renderCheckMark(
