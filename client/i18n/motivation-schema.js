@@ -1,22 +1,10 @@
 /* eslint-disable camelcase */
-/* This is used for testing to make sure the motivation.json files
- * in each language have the correct structure
+/* This is used for testing. If a motivation.json file doesn't match the
+ * structure here exactly, the tests will fail.
  */
-const {
-  arrayOfItems,
-  strictObject,
-  stringType
-} = require('jest-json-schema-extended');
-
-const motivationSchema = strictObject({
-  compliments: arrayOfItems(stringType, { minItems: 1 }),
-  motivationalQuotes: arrayOfItems(
-    strictObject({
-      quote: stringType,
-      author: stringType
-    }),
-    { minItems: 1 }
-  )
-});
+const motivationSchema = {
+  compliments: ['yes'],
+  motivationalQuotes: ['woohoo']
+};
 
 exports.motivationSchema = motivationSchema;
