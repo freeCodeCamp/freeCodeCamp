@@ -41,6 +41,7 @@
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:js": "eslint .",
     "lint:css": "npm run prettier -- --check",
+    "lint:translations": "cd ./client && npm run lint",
     "prettier": "prettier \"**/*.css\"",
     "postinstall": "npm run bootstrap",
     "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
