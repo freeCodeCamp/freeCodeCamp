@@ -181,7 +181,7 @@ const TRANSLATIONS = [
   },
   {
     id: 'kjd1am',
-    text: "No mutes el estado aquí o la prueba fallará"
+    text: 'No mutes el estado aquí o la prueba fallará'
   },
   {
     id: '5tx4ow',
@@ -205,11 +205,13 @@ const TRANSLATIONS = [
   },
   {
     id: 'jshtzq',
-    text: 'Función que retorna una cadena de texto representando una taza de té negro'
+    text:
+      'Función que retorna una cadena de texto representando una taza de té negro'
   },
   {
     id: 'cw1ghf',
-    text: 'Función que retorna una cadena de texto representando una taza de té verde'
+    text:
+      'Función que retorna una cadena de texto representando una taza de té verde'
   },
   {
     id: 'iuccln',
@@ -225,7 +227,8 @@ const TRANSLATIONS = [
   },
   {
     id: 'bfd23c',
-    text: `Dada una función (representando el tipo de té) y el número de tazas necesarias, la siguiente función retorna un arreglo de cadenas de texto (cada una representando un tipo específico de té).`
+    text: `Dada una función (representando el tipo de té) y el número de tazas necesarias, la 
+    siguiente función retorna un arreglo de cadenas de texto (cada una representando un tipo específico de té).`
   },
   {
     id: 'ead98i',
@@ -237,11 +240,11 @@ const TRANSLATIONS = [
   },
   {
     id: '5j2l88',
-    text: "Vamos a crear tres ventanas del navegador"
+    text: 'Vamos a crear tres ventanas del navegador'
   },
   {
     id: 'e843r9',
-    text: "Abramos una nueva pestaña por ahora"
+    text: 'Abramos una nueva pestaña por ahora'
   },
   {
     id: '5fvehh',
@@ -254,7 +257,8 @@ const TRANSLATIONS = [
   },
   {
     id: 'j86mef',
-    text: 'Ahora completa la apertura de la pestaña, cierre, y otras operaciones'
+    text:
+      'Ahora completa la apertura de la pestaña, cierre, y otras operaciones'
   },
   {
     id: 'mk7rvy',
@@ -352,7 +356,8 @@ const TRANSLATIONS = [
   },
   {
     id: 'r44ovx',
-    text: 'tabs es un arreglo de títulos de cada sítio abierto dentro de la ventana'
+    text:
+      'tabs es un arreglo de títulos de cada sítio abierto dentro de la ventana'
   },
   {
     id: 'cl8peb',
@@ -401,7 +406,8 @@ const TRANSLATIONS = [
   },
   {
     id: 'x1djjr',
-    text: 'Usa console.clear() en la siguiente línea para limpiar la consola del navegador.'
+    text:
+      'Usa console.clear() en la siguiente línea para limpiar la consola del navegador.'
   },
   {
     id: '22ta95',
