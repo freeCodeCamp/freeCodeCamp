@@ -4,7 +4,7 @@ const { translationsSchema } = require('./translations-schema');
 const { availableLangs } = require('./allLangs');
 const { trendingSchema } = require('./trending-schema');
 const { motivationSchema } = require('./motivation-schema');
-// const { introSchema } = require('./intro-schema');
+const { introSchema } = require('./intro-schema');
 
 /**
  * Flattens a nested object structure into a single
@@ -104,7 +104,7 @@ const noEmptyObjectValues = (obj, namespace = '') => {
 const translationSchemaKeys = Object.keys(flattenAnObject(translationsSchema));
 const trendingSchemaKeys = Object.keys(flattenAnObject(trendingSchema));
 const motivationSchemaKeys = Object.keys(flattenAnObject(motivationSchema));
-// const introSchemaKeys = Object.keys(flattenAnObject(introSchema));
+const introSchemaKeys = Object.keys(flattenAnObject(introSchema));
 
 /**
  * Function that checks the translations.json file
@@ -218,7 +218,7 @@ const motivationSchemaValidation = languages => {
  * for each available client language.
  * @param {String[]} languages List of languages to test
  */
-/* const introSchemaValidation = languages => {
+const introSchemaValidation = languages => {
   languages.forEach(language => {
     const filePath = path.join(__dirname, `/locales/${language}/intro.json`);
     const fileData = fs.readFileSync(filePath);
@@ -234,9 +234,9 @@ const motivationSchemaValidation = languages => {
     }
     console.info(`${language} intro.json is correct!`);
   });
-};*/
+};
 
 translationSchemaValidation(availableLangs.client);
 trendingSchemaValidation(availableLangs.client);
 motivationSchemaValidation(availableLangs.client);
-// introSchemaValidation(availableLangs.client);
+introSchemaValidation(availableLangs.client);
