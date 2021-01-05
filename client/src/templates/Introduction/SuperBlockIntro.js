@@ -207,6 +207,7 @@ export class SuperBlockIntroductionPage extends Component {
     } = this.props;
     const superBlockIntroObj = t(`intro:${dasherize(superBlock)}`);
     const {
+      title: superBlockTitle,
       image: superBlockImage,
       intro: superBlockIntroText
     } = superBlockIntroObj;
@@ -214,11 +215,11 @@ export class SuperBlockIntroductionPage extends Component {
     return (
       <Fragment>
         <Helmet>
-          <title>{superBlock} | freeCodeCamp.org</title>
+          <title>{superBlockTitle} | freeCodeCamp.org</title>
         </Helmet>
         <FullWidthRow className='overflow-fix'>
           <Spacer size={2} />
-          <h1 className='text-center'>{superBlock}</h1>
+          <h1 className='text-center'>{superBlockTitle}</h1>
           <Spacer />
           <div style={{ margin: 'auto', maxWidth: '500px' }}>
             <img
@@ -236,7 +237,7 @@ export class SuperBlockIntroductionPage extends Component {
             <p key={i}>{str}</p>
           ))}
           <Spacer size={2} />
-          <h2 className='text-center'>Learning</h2>
+          <h2 className='text-center'>Tutorials</h2>
           <div className='block-ui'>{this.renderBlocks()}</div>
           {!isSignedIn && (
             <Row>
