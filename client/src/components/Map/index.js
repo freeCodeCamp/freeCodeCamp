@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
+import i18next from 'i18next';
 
 import { Link } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
@@ -16,9 +17,10 @@ const propTypes = {
 const codingPrepRE = new RegExp('Interview Prep');
 
 function createSuperBlockTitle(str) {
+  const superBlockTitle = i18next.t(`intro:${dasherize(str)}.title`);
   return codingPrepRE.test(str)
-    ? `${str} (Thousands of hours of challenges)`
-    : `${str} Certification (300\xa0hours)`;
+    ? `${superBlockTitle} ${i18next.t('learn.cert-map-estimates.coding-prep')}`
+    : `${superBlockTitle} ${i18next.t('learn.cert-map-estimates.certs')}`;
 }
 
 function renderLandingMap(nodes) {
@@ -31,7 +33,7 @@ function renderLandingMap(nodes) {
             className='btn link-btn btn-lg'
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
-            {node.superBlock}
+            {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
             <LinkButton />
           </Link>
         </li>
