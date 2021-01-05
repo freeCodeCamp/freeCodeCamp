@@ -145,7 +145,7 @@ const TRANSLATIONS = [
   {
     id: 'b5oihn',
     text:
-      'Define el contador reductor que aumentará o disminuirá el estado en función de la acción que reciba'
+      'Define el reductor counter que aumentará o disminuirá el estado en función de la acción que reciba'
   },
   {
     id: '91y4pd',
@@ -153,7 +153,7 @@ const TRANSLATIONS = [
   },
   {
     id: 'eie1vk',
-    text: 'Define el reductor raíz aquí'
+    text: 'Define el reductor root aquí'
   },
   {
     id: '5s7nnl',
@@ -232,7 +232,7 @@ const TRANSLATIONS = [
   },
   {
     id: 'ead98i',
-    text: 'Variable de conteo global:'
+    text: 'Variable global count:'
   },
   {
     id: '7zf0i2',
@@ -307,7 +307,7 @@ const TRANSLATIONS = [
   {
     id: 'kxio9j',
     text:
-      'responseFromServer es establecido a true para representar una respuesta no satisfactoria del servidor'
+      'responseFromServer es establecido a false para representar una respuesta no satisfactoria del servidor'
   },
   {
     id: 'alh6pw',
@@ -411,7 +411,7 @@ const TRANSLATIONS = [
   },
   {
     id: '22ta95',
-    text: 'Usa console.log() para imprimir la variable de salida.'
+    text: 'Usa console.log() para imprimir la variable output.'
   },
   {
     id: 'w43c7l',
