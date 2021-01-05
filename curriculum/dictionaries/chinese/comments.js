@@ -139,7 +139,7 @@ const TRANSLATIONS = [
   },
   {
     id: 'tegkqa',
-    text: '在这里定义容器组件：'
+    text: '在这里定义 Container 组件：'
   },
   {
     id: 'b5oihn',
@@ -228,7 +228,7 @@ const TRANSLATIONS = [
   },
   {
     id: 'ead98i',
-    text: '全局计数变量：'
+    text: '全局 count 变量：'
   },
   {
     id: '7zf0i2',

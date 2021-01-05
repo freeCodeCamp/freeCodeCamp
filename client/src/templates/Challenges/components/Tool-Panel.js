@@ -84,7 +84,7 @@ function ToolPanel({
               className='btn-invert'
               onClick={openVideoModal}
             >
-              {'Watch a video'}
+              {'Watch a Video'}
             </MenuItem>
           ) : null}
           <MenuItem
@@ -92,7 +92,7 @@ function ToolPanel({
             className='btn-invert'
             onClick={openHelpModal}
           >
-            {'Ask for help'}
+            {'Ask for Help'}
           </MenuItem>
         </DropdownButton>
       </div>
