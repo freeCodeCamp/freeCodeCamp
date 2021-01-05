@@ -2,467 +2,572 @@
 /* This is used for testing. If a translations.json file doesn't match the
  * structure here exactly, the tests will fail.
  */
-const {
-  arrayOfItems,
-  strictObject,
-  stringType
-} = require('jest-json-schema-extended');
-
-const translationsSchema = strictObject({
-  meta: strictObject({
-    title: stringType,
-    description: stringType,
-    keywords: arrayOfItems(stringType, { minItems: 1 }),
-    'youre-unsubscribed': stringType
-  }),
-  buttons: strictObject({
-    'logged-in-cta-btn': stringType,
-    'logged-out-cta-btn': stringType,
-    'view-curriculum': stringType,
-    'first-lesson': stringType,
-    close: stringType,
-    edit: stringType,
-    'show-code': stringType,
-    'show-solution': stringType,
-    frontend: stringType,
-    backend: stringType,
-    view: stringType,
-    'show-cert': stringType,
-    'claim-cert': stringType,
-    'save-progress': stringType,
-    'accepted-honesty': stringType,
-    agree: stringType,
-    'save-portfolio': stringType,
-    'remove-portfolio': stringType,
-    'add-portfolio': stringType,
-    'download-data': stringType,
-    public: stringType,
-    private: stringType,
-    off: stringType,
-    on: stringType,
-    'sign-in': stringType,
-    'sign-out': stringType,
-    curriculum: stringType,
-    forum: stringType,
-    profile: stringType,
-    'update-settings': stringType,
-    'sign-me-out': stringType,
-    'flag-user': stringType,
-    'current-challenge': stringType,
-    'try-again': stringType,
-    menu: stringType,
-    settings: stringType,
-    'take-me': stringType,
-    'check-answer': stringType,
-    'get-hint': stringType,
-    'ask-for-help': stringType,
-    'create-post': stringType,
-    cancel: stringType,
-    'reset-lesson': stringType,
-    run: stringType,
-    'run-test': stringType,
-    reset: stringType,
-    'reset-code': stringType,
-    help: stringType,
-    'get-help': stringType,
-    'watch-video': stringType,
-    resubscribe: stringType,
-    'click-here': stringType,
-    save: stringType,
-    'no-thanks': stringType,
-    'yes-please': stringType,
-    'update-email': stringType,
-    'verify-email': stringType,
-    'submit-and-go': stringType,
-    'go-to-next': stringType,
-    'ask-later': stringType
-  }),
-  landing: strictObject({
-    'big-heading-1': stringType,
-    'big-heading-2': stringType,
-    'big-heading-3': stringType,
-    'h2-heading': stringType,
-    'hero-img-description': stringType,
-    'as-seen-in': stringType,
-    testimonials: strictObject({
-      heading: stringType,
-      shawn: strictObject({
-        location: stringType,
-        occupation: stringType,
-        testimony: stringType
-      }),
-      sarah: strictObject({
-        location: stringType,
-        occupation: stringType,
-        testimony: stringType
-      }),
-      emma: strictObject({
-        location: stringType,
-        occupation: stringType,
-        testimony: stringType
-      })
-    }),
-    'certification-heading': stringType
-  }),
-  settings: strictObject({
-    'share-projects': stringType,
-    privacy: stringType,
-    data: stringType,
-    disabled: stringType,
-    'claim-legacy': stringType,
-    for: stringType,
-    username: strictObject({
-      'contains invalid characters': stringType,
-      'is too short': stringType,
-      'is a reserved error code': stringType,
-      unavailable: stringType,
-      validating: stringType,
-      available: stringType,
-      change: stringType
-    }),
-    labels: strictObject({
-      username: stringType,
-      name: stringType,
-      location: stringType,
-      picture: stringType,
-      about: stringType,
-      personal: stringType,
-      title: stringType,
-      url: stringType,
-      image: stringType,
-      description: stringType,
-      'project-name': stringType,
-      solution: stringType,
-      'solution-for': stringType,
-      'my-profile': stringType,
-      'my-name': stringType,
-      'my-location': stringType,
-      'my-about': stringType,
-      'my-points': stringType,
-      'my-heatmap': stringType,
-      'my-certs': stringType,
-      'my-portfolio': stringType,
-      'my-timeline': stringType,
-      'my-donations': stringType,
-      'night-mode': stringType
-    }),
-    headings: strictObject({
-      certs: stringType,
-      'legacy-certs': stringType,
-      honesty: stringType,
-      internet: stringType,
-      portfolio: stringType,
-      privacy: stringType
-    }),
-    danger: strictObject({
-      heading: stringType,
-      'be-careful': stringType,
-      reset: stringType,
-      delete: stringType,
-      'delete-title': stringType,
-      'delete-p1': stringType,
-      'delete-p2': stringType,
-      'delete-p3': stringType,
-      nevermind: stringType,
-      certain: stringType,
-      'reset-heading': stringType,
-      'reset-p1': stringType,
-      'reset-p2': stringType,
-      'nevermind-2': stringType,
-      'reset-confirm': stringType
-    }),
-    email: strictObject({
-      missing: stringType,
-      heading: stringType,
-      'not-verified': stringType,
-      check: stringType,
-      current: stringType,
-      new: stringType,
-      confirm: stringType,
-      weekly: stringType
-    }),
-    honesty: strictObject({
-      p1: stringType,
-      p2: stringType,
-      p3: stringType,
-      p4: stringType,
-      p5: stringType,
-      p6: stringType,
-      p7: stringType
-    })
-  }),
-  profile: strictObject({
-    'you-not-public': stringType,
-    'username-not-public': stringType,
-    'you-change-privacy': stringType,
-    'username-change-privacy': stringType,
-    supporter: stringType,
-    contributor: stringType,
-    'no-certs': stringType,
-    'fcc-certs': stringType,
-    'longest-streak': stringType,
-    'current-streak': stringType,
-    portfolio: stringType,
-    timeline: stringType,
-    'none-completed': stringType,
-    'get-started': stringType,
-    challenge: stringType,
-    completed: stringType,
-    'add-linkedin': stringType,
-    'add-twitter': stringType,
-    tweet: stringType,
-    avatar: stringType,
-    joined: stringType,
-    'total-points': stringType,
-    'total-points_plural': stringType,
-    points: stringType,
-    points_plural: stringType,
-    'screen-shot': stringType,
-    'page-number': stringType
-  }),
-  footer: strictObject({
-    'tax-exempt-status': stringType,
-    'mission-statement': stringType,
-    'donation-initiatives': stringType,
-    'donate-text': stringType,
-    'donate-link': stringType,
-    'trending-guides': stringType,
-    'our-nonprofit': stringType,
-    links: strictObject({
-      about: stringType,
-      'about-url': stringType,
-      alumni: stringType,
-      'open-source': stringType,
-      shop: stringType,
-      'shop-url': stringType,
-      support: stringType,
-      'support-url': stringType,
-      sponsors: stringType,
-      'sponsors-url': stringType,
-      honesty: stringType,
-      'honesty-url': stringType,
-      coc: stringType,
-      'coc-url': stringType,
-      privacy: stringType,
-      'privacy-url': stringType,
-      tos: stringType,
-      'tos-url': stringType,
-      copyright: stringType,
-      'copyright-url': stringType
-    }),
-    language: stringType
-  }),
-  learn: strictObject({
-    heading: stringType,
-    'welcome-1': stringType,
-    'welcome-2': stringType,
-    'start-at-beginning': stringType,
-    'read-this': strictObject({
-      heading: stringType,
-      p1: stringType,
-      p2: stringType,
-      p3: stringType,
-      p4: stringType,
-      p5: stringType,
-      p6: stringType,
-      p7: stringType,
-      p8: stringType,
-      p9: stringType,
-      p10: stringType,
-      p11: stringType,
-      p12: stringType
-    }),
-    'upcoming-lessons': stringType,
-    learn: stringType,
-    'add-subtitles': stringType,
-    'wrong-answer': stringType,
-    'check-answer': stringType,
-    'solution-link': stringType,
-    'github-link': stringType,
-    'submit-and-go': stringType,
-    'i-completed': stringType,
-    'test-output': stringType,
-    'running-tests': stringType,
-    'tests-completed': stringType,
-    'console-output': stringType,
-    'sign-in-save': stringType,
-    'download-solution': stringType,
-    'percent-complete': stringType,
-    'tried-rsa': stringType,
-    rsa: stringType,
-    reset: stringType,
-    'reset-warn': stringType,
-    'reset-warn-2': stringType,
-    'scrimba-tip': stringType,
-    'chal-preview': stringType
-  }),
-  donate: strictObject({
-    title: stringType,
-    processing: stringType,
-    'thank-you': stringType,
-    'thank-you-2': stringType,
-    additional: stringType,
-    'help-more': stringType,
-    error: stringType,
-    'free-tech': stringType,
-    'gift-frequency': stringType,
-    'gift-amount': stringType,
-    confirm: stringType,
-    'confirm-2': stringType,
-    'confirm-3': stringType,
-    'confirm-4': stringType,
-    'your-donation': stringType,
-    'your-donation-2': stringType,
-    'your-donation-3': stringType,
-    duration: stringType,
-    'duration-2': stringType,
-    'duration-3': stringType,
-    'duration-4': stringType,
-    'nicely-done': stringType,
-    'credit-card': stringType,
-    'credit-card-2': stringType,
-    paypal: stringType,
-    'need-email': stringType,
-    'went-wrong': stringType,
-    'valid-info': stringType,
-    'valid-email': stringType,
-    'valid-card': stringType,
-    'email-receipt': stringType,
-    'need-help': stringType,
-    'forward-receipt': stringType,
-    efficiency: stringType,
-    'why-donate-1': stringType,
-    'why-donate-2': stringType,
-    'bigger-donation': stringType,
-    'other-ways': stringType,
-    'other-ways-url': stringType,
-    'failed-pay': stringType,
-    'try-again': stringType,
-    'card-number': stringType,
-    expiration: stringType,
-    'only-you': stringType
-  }),
-  report: strictObject({
-    'sign-in': stringType,
-    details: stringType,
-    portfolio: stringType,
-    'portfolio-2': stringType,
-    'notify-1': stringType,
-    'notify-2': stringType,
-    what: stringType,
-    submit: stringType
-  }),
-  '404': strictObject({
-    'page-not-found': stringType,
-    'not-found': stringType,
-    'heres-a-quote': stringType
-  }),
-  search: strictObject({
-    label: stringType,
-    placeholder: stringType,
-    'see-results': stringType,
-    'no-tutorials': stringType,
-    try: stringType,
-    'no-results': stringType
-  }),
-  misc: strictObject({
-    offline: stringType,
-    unsubscribed: stringType,
-    'keep-coding': stringType,
-    'email-signup': stringType,
-    quincy: stringType,
-    'email-blast': stringType,
-    'update-email-1': stringType,
-    'update-email-2': stringType,
-    email: stringType,
-    and: stringType
-  }),
-  icons: strictObject({
-    'gold-cup': stringType,
-    avatar: stringType,
-    'avatar-2': stringType,
-    donate: stringType,
-    fail: stringType,
-    'not-passed': stringType,
-    passed: stringType,
-    heart: stringType,
-    initial: stringType,
-    info: stringType,
-    spacer: stringType,
-    toggle: stringType
-  }),
-  aria: strictObject({
-    'fcc-logo': stringType,
-    answer: stringType,
-    linkedin: stringType,
-    github: stringType,
-    website: stringType,
-    twitter: stringType,
-    'first-page': stringType,
-    'previous-page': stringType,
-    'next-page': stringType,
-    'last-page': stringType
-  }),
-  flash: strictObject({
-    'msg-1': stringType,
-    'msg-2': stringType,
-    'msg-3': stringType,
-    'msg-4': stringType,
-    'msg-5': stringType,
-    'msg-6': stringType,
-    'msg-7': stringType,
-    'msg-8': stringType,
-    'msg-9': stringType,
-    'msg-10': stringType,
-    'msg-11': stringType,
-    'msg-12': stringType,
-    'msg-13': stringType,
-    'msg-14': stringType,
-    'msg-15': stringType,
-    'msg-16': stringType,
-    'msg-17': stringType,
-    'msg-18': stringType,
-    'msg-19': stringType,
-    'msg-20': stringType,
-    'msg-21': stringType,
-    'msg-22': stringType,
-    'msg-23': stringType,
-    'msg-24': stringType,
-    'msg-25': stringType,
-    'msg-26': stringType,
-    'msg-27': stringType,
-    'msg-28': stringType,
-    'msg-29': stringType,
-    'msg-30': stringType,
-    'msg-31': stringType,
-    'msg-32': stringType,
-    'msg-33': stringType,
-    'msg-34': stringType,
-    'msg-35': stringType,
-    'msg-36': stringType,
-    'msg-37': stringType,
-    'msg-38': stringType,
-    'msg-39': stringType,
-    'msg-40': stringType,
-    'msg-41': stringType,
-    'msg-42': stringType,
-    'msg-43': stringType,
-    'msg-44': stringType,
-    'msg-45': stringType
-  }),
-  validation: strictObject({
-    'msg-1': stringType,
-    'msg-2': stringType,
-    'msg-3': stringType,
-    'msg-4': stringType,
-    'msg-5': stringType,
-    'msg-6': stringType,
-    'msg-7': stringType,
-    'msg-8': stringType,
-    'msg-9': stringType,
-    'msg-10': stringType,
-    'msg-11': stringType
-  })
-});
+const translationsSchema = {
+  meta: {
+    title: 'Learn to Code for Free – Coding Courses for Busy People',
+    description:
+      'Learn to code at home. Build projects. Earn certifications. Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.',
+    keywords: [
+      'javascript',
+      'js',
+      'website',
+      'web',
+      'development',
+      'free',
+      'code',
+      'camp',
+      'course',
+      'courses',
+      'html',
+      'css',
+      'react',
+      'redux',
+      'api',
+      'front',
+      'back',
+      'end',
+      'learn',
+      'tutorial',
+      'programming'
+    ],
+    'youre-unsubscribed': 'You have been unsubscribed'
+  },
+  buttons: {
+    'logged-in-cta-btn': "Get started (it's free)",
+    'logged-out-cta-btn': "Sign in to save your progress (it's free)",
+    'view-curriculum': 'View the Curriculum',
+    'first-lesson': 'Go to the first lesson',
+    close: 'Close',
+    edit: 'Edit',
+    'show-code': 'Show Code',
+    'show-solution': 'Show Solution',
+    frontend: 'Front End',
+    backend: 'Back End',
+    view: 'View',
+    'show-cert': 'Show Certification',
+    'claim-cert': 'Claim Certification',
+    'save-progress': 'Save Progress',
+    'accepted-honesty': 'You have accepted our Academic Honesty Policy.',
+    agree: 'Agree',
+    'save-portfolio': 'Save this portfolio item',
+    'remove-portfolio': 'Remove this portfolio item',
+    'add-portfolio': 'Add a new portfolio Item',
+    'download-data': 'Download your data',
+    public: 'Public',
+    private: 'Private',
+    off: 'Off',
+    on: 'On',
+    'sign-in': 'Sign in',
+    'sign-out': 'Sign out',
+    curriculum: 'Curriculum',
+    forum: 'Forum',
+    profile: 'Profile',
+    'update-settings': 'Update my account settings',
+    'sign-me-out': 'Sign me out of freeCodeCamp',
+    'flag-user': "Flag This User's Account for Abuse",
+    'current-challenge': 'Go to current challenge',
+    'try-again': 'Try again',
+    menu: 'Menu',
+    settings: 'Settings',
+    'take-me': 'Take me to the Challenges',
+    'check-answer': 'Check your answer',
+    'get-hint': 'Get a Hint',
+    'ask-for-help': 'Ask for Help',
+    'create-post': 'Create a help post on the forum',
+    cancel: 'Cancel',
+    'reset-lesson': 'Reset this lesson',
+    run: 'Run',
+    'run-test': 'Run the Tests',
+    reset: 'Reset',
+    'reset-code': 'Reset All Code',
+    help: 'Help',
+    'get-help': 'Get Help',
+    'watch-video': 'Watch a Video',
+    resubscribe: 'You can click here to resubscribe',
+    'click-here': 'Click here to sign in',
+    save: 'Save',
+    'no-thanks': 'No thanks',
+    'yes-please': 'Yes please',
+    'update-email': 'Update my Email',
+    'verify-email': 'Verify Email',
+    'submit-and-go': 'Submit and go to next challenge',
+    'go-to-next': 'Go to next challenge',
+    'ask-later': 'Ask me later'
+  },
+  landing: {
+    'big-heading-1': 'Learn to code at home.',
+    'big-heading-2': 'Build projects.',
+    'big-heading-3': 'Earn certifications.',
+    'h2-heading':
+      'Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including:',
+    'hero-img-description':
+      'freeCodeCamp students at a local study group in South Korea.',
+    'as-seen-in': 'As seen in:',
+    testimonials: {
+      heading: 'Here is what our alumni say about freeCodeCamp:',
+      shawn: {
+        location: '<strong>Shawn Wang</strong> in Singapore',
+        occupation: 'Software Engineer at <strong>Amazon</strong>',
+        testimony:
+          '"It\'s scary to change careers. I only gained confidence that I could code by working through the hundreds of hours of free lessons on freeCodeCamp. Within a year I had a six-figure job as a Software Engineer. <strong>freeCodeCamp changed my life.</strong>"'
+      },
+      sarah: {
+        location: '<strong>Sarah Chima</strong> in Nigeria',
+        occupation: 'Software Engineer at <strong>ChatDesk</strong>',
+        testimony:
+          '"<strong>freeCodeCamp was the gateway to my career</strong> as a software developer. The well-structured curriculum took my coding knowledge from a total beginner level to a very confident level. It was everything I needed to land my first dev job at an amazing company."'
+      },
+      emma: {
+        location: '<strong>Emma Bostian</strong> in Sweden',
+        occupation: 'Software Engineer at <strong>Spotify</strong>',
+        testimony:
+          "\"I've always struggled with learning JavaScript. I've taken many courses but freeCodeCamp's course was the one which stuck. Studying JavaScript as well as data structures and algorithms on <strong>freeCodeCamp gave me the skills</strong> and confidence I needed to land my dream job as a software engineer at Spotify.\""
+      }
+    },
+    'certification-heading': 'Earn free verified certifications in:'
+  },
+  settings: {
+    'share-projects':
+      'Share your non-freeCodeCamp projects, articles or accepted pull requests.',
+    privacy:
+      'The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio.',
+    data:
+      'To see what data we hold on your account, click the "Download your data" button below',
+    disabled: 'Your certifications will be disabled, if set to private.',
+    'claim-legacy':
+      "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
+    for: 'Account Settings for {{username}}',
+    username: {
+      'contains invalid characters':
+        'Username "{{username}}" contains invalid characters',
+      'is too short': 'Username "{{username}}" is too short',
+      'is a reserved error code':
+        'Username "{{username}}" is a reserved error code',
+      unavailable: 'Username not available',
+      validating: 'Validating username...',
+      available: 'Username is available',
+      change:
+        'Please note, changing your username will also change the URL to your profile and your certifications.'
+    },
+    labels: {
+      username: 'Username',
+      name: 'Name',
+      location: 'Location',
+      picture: 'Picture',
+      about: 'About',
+      personal: 'Personal Website',
+      title: 'Title',
+      url: 'URL',
+      image: 'Image',
+      description: 'Description',
+      'project-name': 'Project Name',
+      solution: 'Solution',
+      'solution-for': 'Solution for {{projectTitle}}',
+      'my-profile': 'My profile',
+      'my-name': 'My name',
+      'my-location': 'My location',
+      'my-about': 'My about',
+      'my-points': 'My points',
+      'my-heatmap': 'My heatmap',
+      'my-certs': 'My certifications',
+      'my-portfolio': 'My portfolio',
+      'my-timeline': 'My timeline',
+      'my-donations': 'My donations',
+      'night-mode': 'Night Mode'
+    },
+    headings: {
+      certs: 'Certifications',
+      'legacy-certs': 'Legacy Certifications',
+      honesty: 'Academic Honesty Policy',
+      internet: 'Your Internet Presence',
+      portfolio: 'Portfolio Settings',
+      privacy: 'Privacy Settings'
+    },
+    danger: {
+      heading: 'Danger Zone',
+      'be-careful': 'Please be careful. Changes in this section are permanent.',
+      reset: 'Reset all of my progress',
+      delete: 'Delete my account',
+      'delete-title': 'Delete My Account',
+      'delete-p1':
+        'This will really delete all your data, including all your progress and account information.',
+      'delete-p2':
+        "We won't be able to recover any of it for you later, even if you change your mind.",
+      'delete-p3':
+        "If there's something we could do better, send us an email instead and we'll do our best: <0>{{email}}</0>",
+      nevermind: "Nevermind, I don't want to delete my account",
+      certain: 'I am 100% certain. Delete everything related to this account',
+      'reset-heading': 'Reset My Progress',
+      'reset-p1':
+        'This will really delete all of your progress, points, completed challenges, our records of your projects, any certifications you have, everything.',
+      'reset-p2':
+        "We won't be able to recover any of it for you later, even if you change your mind.",
+      'nevermind-2': "Nevermind, I don't want to delete all of my progress",
+      'reset-confirm': 'Reset everything. I want to start from the beginning'
+    },
+    email: {
+      missing: 'You do not have an email associated with this account.',
+      heading: 'Email Settings',
+      'not-verified': 'Your email has not been verified.',
+      check:
+        'Please check your email, or <0>request a new verification email here</0>.',
+      current: 'Current Email',
+      new: 'New Email',
+      confirm: 'Confirm New Email',
+      weekly: "Send me Quincy's weekly email"
+    },
+    honesty: {
+      p1:
+        'Before you can claim a verified certification, you must accept our Academic Honesty Pledge, which reads:',
+      p2:
+        '"I understand that plagiarism means copying someone else’s work and presenting the work as if it were my own, without clearly attributing the original author."',
+      p3:
+        '"I understand that plagiarism is an act of intellectual dishonesty, and that people usually get kicked out of university or fired from their jobs if they get caught plagiarizing."',
+      p4:
+        '"Aside from using open source libraries such as jQuery and Bootstrap, and short snippets of code which are clearly attributed to their original author, 100% of the code in my projects was written by me, or along with another person going through the freeCodeCamp curriculum with whom I was pair programming in real time."',
+      p5:
+        '"I pledge that I did not plagiarize any of my freeCodeCamp.org work. I understand that freeCodeCamp.org’s team will audit my projects to confirm this."',
+      p6:
+        'In the situations where we discover instances of unambiguous plagiarism, we will replace the person in question’s certification with a message that "Upon review, this account has been flagged for academic dishonesty."',
+      p7:
+        'As an academic institution that grants achievement-based certifications, we take academic honesty very seriously. If you have any questions about this policy, or suspect that someone has violated it, you can email <0>{{email}}</0> and we will investigate.'
+    }
+  },
+  profile: {
+    'you-not-public': 'You have not made your portfolio public.',
+    'username-not-public': '{{username}} has not made their portfolio public.',
+    'you-change-privacy':
+      'You need to change your privacy setting in order for your portfolio to be seen by others. This is a preview of how your portfolio will look when made public.',
+    'username-change-privacy':
+      '{{username}} needs to change their privacy setting in order for you to view their portfolio.',
+    supporter: 'Supporter',
+    contributor: 'Top Contributor',
+    'no-certs':
+      'No certifications have been earned under the current curriculum',
+    'fcc-certs': 'freeCodeCamp Certifications',
+    'longest-streak': 'Longest Streak:',
+    'current-streak': 'Current Streak:',
+    portfolio: 'Portfolio',
+    timeline: 'Timeline',
+    'none-completed': 'No challenges have been completed yet.',
+    'get-started': 'Get started here.',
+    challenge: 'Challenge',
+    completed: 'Completed',
+    'add-linkedin': 'Add this certification to my LinkedIn profile',
+    'add-twitter': 'Share this certification on Twitter',
+    tweet:
+      'I just earned the {{certTitle}} certification @freeCodeCamp! Check it out here: {{certURL}}',
+    avatar: "{{username}}'s avatar",
+    joined: 'Joined {{date}}',
+    'total-points': '{{count}} total point',
+    'total-points_plural': '{{count}} total points',
+    points: '{{count}} point on {{date}}',
+    points_plural: '{{count}} points on {{date}}',
+    'screen-shot': 'A screen shot of {{title}}',
+    'page-number': '{{pageNumber}} of {{totalPages}}'
+  },
+  footer: {
+    'tax-exempt-status':
+      'freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)',
+    'mission-statement':
+      'Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.',
+    'donation-initiatives':
+      'Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.',
+    'donate-text': 'You can',
+    'donate-link': 'make a tax-deductible donation here',
+    'trending-guides': 'Trending Guides',
+    'our-nonprofit': 'Our Nonprofit',
+    links: {
+      about: 'About',
+      'about-url': 'https://www.freecodecamp.org/news/about/',
+      alumni: 'Alumni Network',
+      'open-source': 'Open Source',
+      shop: 'Shop',
+      'shop-url': 'https://www.freecodecamp.org/shop/',
+      support: 'Support',
+      'support-url': 'https://www.freecodecamp.org/news/support/',
+      sponsors: 'Sponsors',
+      'sponsors-url': 'https://www.freecodecamp.org/news/sponsors/',
+      honesty: 'Academic Honesty',
+      'honesty-url':
+        'https://www.freecodecamp.org/news/academic-honesty-policy/',
+      coc: 'Code of Conduct',
+      'coc-url': 'https://www.freecodecamp.org/news/code-of-conduct/',
+      privacy: 'Privacy Policy',
+      'privacy-url': 'https://www.freecodecamp.org/news/privacy-policy/',
+      tos: 'Terms of Service',
+      'tos-url': 'https://www.freecodecamp.org/news/terms-of-service/',
+      copyright: 'Copyright Policy',
+      'copyright-url': 'https://www.freecodecamp.org/news/copyright-policy/'
+    },
+    language: 'Language:'
+  },
+  learn: {
+    heading: "Welcome to freeCodeCamp's curriculum.",
+    'welcome-1': 'Welcome back, {{name}}.',
+    'welcome-2': 'Welcome to freeCodeCamp.org',
+    'start-at-beginning':
+      'If you are new to coding, we recommend you <0>start at the beginning</0>.',
+    'read-this': {
+      heading: 'Please slow down and read this.',
+      p1: 'freeCodeCamp is a proven path to your first software developer job.',
+      p2:
+        'More than 40,000 people have gotten developer jobs after completing this – including at big companies like Google and Microsoft.',
+      p3:
+        'If you are new to programming, we recommend you start at the beginning and earn these certifications in order.',
+      p4:
+        'To earn each certification, build its 5 required projects and get all their tests to pass.',
+      p5:
+        'You can add these certifications to your résumé or LinkedIn. But more important than the certifications is the practice you get along the way.',
+      p6: 'If you feel overwhelmed, that is normal. Programming is hard.',
+      p7: 'Practice is the key. Practice, practice, practice.',
+      p8:
+        'And this curriculum will give you thousands of hours of hands-on programming practice.',
+      p9:
+        "And if you want to learn more math and computer science theory, we also have thousands of hours of video courses on <0>freeCodeCamp's YouTube channel</0>.",
+      p10:
+        'If you want to get a developer job or freelance clients, programming skills will be just part of the puzzle. You also need to build your personal network and your reputation as a developer.',
+      p11:
+        'You can do this on Twitter and GitHub, and also on <0>the freeCodeCamp forum</0>.',
+      p12: 'Happy coding!'
+    },
+    'upcoming-lessons': 'Upcoming Lessons',
+    learn: 'Learn',
+    'add-subtitles': 'Help improve or add subtitles',
+    'wrong-answer': "Sorry, that's not the right answer. Give it another try?",
+    'check-answer': 'Click the button below to check your answer.',
+    'solution-link': 'Solution Link',
+    'github-link': 'GitHub Link',
+    'submit-and-go': 'Submit and go to my next challenge',
+    'i-completed': "I've completed this challenge",
+    'test-output': 'Your test output will go here',
+    'running-tests': '// running tests',
+    'tests-completed': '// tests completed',
+    'console-output': '// console output',
+    'sign-in-save': 'Sign in to save your progress',
+    'download-solution': 'Download my solution',
+    'percent-complete': '{{percent}}% complete',
+    'tried-rsa':
+      "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
+    rsa: 'Read, search, ask',
+    reset: 'Reset this lesson?',
+    'reset-warn':
+      'Are you sure you wish to reset this lesson? The editors and tests will be reset.',
+    'reset-warn-2': 'This cannot be undone',
+    'scrimba-tip':
+      'Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.',
+    'chal-preview': 'Challenge Preview'
+  },
+  donate: {
+    title: 'Support our nonprofit',
+    processing: 'We are processing your donation.',
+    'thank-you': 'Thank you for being a supporter.',
+    'thank-you-2':
+      'Thank you for being a supporter of freeCodeCamp. You currently have a recurring donation.',
+    additional:
+      'You can make an additional one-time donation of any amount using this link: <0>{{url}}</0>',
+    'help-more': 'Help us do more',
+    error: 'Something went wrong with your donation.',
+    'free-tech':
+      'Your donations will support free technology education for people all over the world.',
+    'gift-frequency': 'Select gift frequency:',
+    'gift-amount': 'Select gift amount:',
+    confirm: 'Confirm your donation',
+    'confirm-2': 'Confirm your one-time donation of ${{usd}}',
+    'confirm-3': 'Confirm your donation of ${{usd}} / month',
+    'confirm-4': 'Confirm your donation of ${{usd}} / year',
+    'your-donation':
+      'Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.',
+    'your-donation-2':
+      'Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.',
+    'your-donation-3':
+      'Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.',
+    duration: 'Become a one-time supporter of our nonprofit.',
+    'duration-2': 'Become a monthly supporter of our nonprofit.',
+    'duration-3': 'Become an annual supporter of our nonprofit',
+    'duration-4': 'Become a supporter of our nonprofit',
+    'nicely-done': 'Nicely done. You just completed {{block}}.',
+    'credit-card': 'Credit Card',
+    'credit-card-2': 'Or donate with a credit card:',
+    paypal: 'with PayPal:',
+    'need-email':
+      'We need a valid email address to which we can send your donation tax receipt.',
+    'went-wrong':
+      'Something went wrong processing your donation. Your card has not been charged.',
+    'valid-info':
+      'Please enter valid email address, credit card number, and expiration date.',
+    'valid-email': 'Please enter a valid email address.',
+    'valid-card': 'Please enter valid credit card number and expiration date.',
+    'email-receipt':
+      "Email (we'll send you a tax-deductible donation receipt):",
+    'need-help': 'Need help with your current or past donations?',
+    'forward-receipt':
+      'Forward a copy of your donation receipt to donors@freecodecamp.org and tell us how we can help.',
+    efficiency: 'freeCodeCamp is a highly efficient education nonprofit.',
+    'why-donate-1':
+      'When you donate to freeCodeCamp, you help people learn new skills and provide for their families.',
+    'why-donate-2':
+      'You also help us create new resources for you to use to expand your own technology skills.',
+    'bigger-donation':
+      'Want to make a bigger one-time donation, mail us a check, or give in other ways?',
+    'other-ways':
+      "Here are many <0>other ways we could support our non-profit's mission</0>.",
+    'other-ways-url':
+      'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp',
+    'failed-pay':
+      "Uh - oh. It looks like your transaction didn't go through. Could you please try again?",
+    'try-again': 'Please try again.',
+    'card-number': 'Your Card Number:',
+    expiration: 'Expiration Date:',
+    'only-you':
+      'Only you can see this message. Congratulations on earning this certification. It’s no easy task. Running freeCodeCamp isn’t easy either. Nor is it cheap. Help us help you and many other people around the world. Make a tax-deductible supporting donation to our nonprofit today.'
+  },
+  report: {
+    'sign-in': 'You need to be signed in to report a user',
+    details:
+      'Please provide as much detail as possible about the account or behavior you are reporting.',
+    portfolio: 'Report a users portfolio',
+    'portfolio-2': "Do you want to report {{username}}'s portfolio for abuse?",
+    'notify-1':
+      "We will notify the community moderators' team, and a send copy of this report to your email: <strong>{{email}}</strong>",
+    'notify-2': 'We may get back to you for more information, if required.',
+    what: 'What would you like to report?',
+    submit: 'Submit the report'
+  },
+  '404': {
+    'page-not-found': 'Page not found',
+    'not-found': '404 Not Found:',
+    'heres-a-quote':
+      "We couldn't find what you were looking for, but here is a quote:"
+  },
+  search: {
+    label: 'Search',
+    placeholder: 'Search 6,000+ tutorial',
+    'see-results': 'See all results for {{searchQuery}}',
+    'no-tutorials': 'No tutorials found',
+    try: 'Looking for something? Try the search bar on this page.',
+    'no-results': 'We could not find anything relating to <0>{{query}}</0>'
+  },
+  misc: {
+    offline: 'You appear to be offline, your progress may not be saved',
+    unsubscribed: 'You have successfully been unsubscribed',
+    'keep-coding': 'Whatever you go on to, keep coding!',
+    'email-signup': 'Email Sign Up',
+    quincy: '- Quincy Larson, the teacher who founded freeCodeCamp.org',
+    'email-blast':
+      'By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 4 million people. Would you like me to send this to you, too?',
+    'update-email-1': 'Update your email address',
+    'update-email-2': 'Update your email address here:',
+    email: 'Email',
+    and: 'and'
+  },
+  icons: {
+    'gold-cup': 'Gold Cup',
+    avatar: 'Default Avatar',
+    'avatar-2': 'An avatar coding with a laptop',
+    donate: 'Donate with PayPal',
+    fail: 'Test Failed',
+    'not-passed': 'Not Passed',
+    passed: 'Passed',
+    heart: 'Heart',
+    initial: 'Initial',
+    info: 'Intro Information',
+    spacer: 'Spacer',
+    toggle: 'Toggle Checkmark'
+  },
+  aria: {
+    'fcc-logo': 'freeCodeCamp Logo',
+    answer: 'Answer',
+    linkedin: "Link to {{username}}'s LinkedIn",
+    github: "Link to {{username}}'s GitHub",
+    website: "Link to {{username}}'s website",
+    twitter: "Link to {{username}}'s Twitter",
+    'first-page': 'Go to first page',
+    'previous-page': 'Go to previous page',
+    'next-page': 'Go to next page',
+    'last-page': 'Go to last page'
+  },
+  flash: {
+    'msg-1':
+      'To claim a certification, you must first accept our academic honesty policy',
+    'msg-2':
+      'Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new',
+    'msg-3':
+      'Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified',
+    'msg-4': 'Something went wrong, please check and try again',
+    'msg-5': 'Your account has been successfully deleted',
+    'msg-6': 'Your progress has been reset',
+    'msg-7': 'You are not authorized to continue on this route',
+    'msg-8':
+      "We couldn't find what you were looking for. Please check and try again",
+    'msg-9':
+      'Something went wrong updating your account. Please check and try again',
+    'msg-10': 'We have updated your preferences',
+    'msg-11': 'Email format is invalid',
+    'msg-12': 'currentChallengeId is not a valid challenge ID',
+    'msg-13': 'Theme is invalid',
+    'msg-14': 'Theme already set',
+    'msg-15': 'Your theme has been updated!',
+    'msg-16': 'Username is already associated with this account',
+    'msg-17': 'Username is already associated with a different account',
+    'msg-18': 'We have updated your username to {{username}}',
+    'msg-19': 'We could not log you out, please try again in a moment',
+    'msg-20': 'The email encoded in the link is incorrectly formatted',
+    'msg-21':
+      'Oops, something is not right, please request a fresh link to sign in / sign up',
+    'msg-22':
+      'Looks like the link you clicked has expired, please request a fresh link, to sign in',
+    'msg-23': 'Success! You have signed in to your account. Happy Coding!',
+    'msg-24':
+      'We are moving away from social authentication for privacy reasons. Next time we recommend using your email address: {{email}} to sign in instead.',
+    'msg-25':
+      'We need your name so we can put it on your certification. Add your name to your account settings and click the save button. Then we can issue your certification.',
+    'msg-26':
+      'It looks like you have not completed the necessary steps. Please complete the required projects to claim the {{name}} Certification.',
+    'msg-27':
+      'It looks like you already have claimed the {{name}} Certification',
+    'msg-28':
+      '@{{username}}, you have successfully claimed the {{name}} Certification! Congratulations on behalf of the freeCodeCamp.org team!',
+    'msg-29':
+      'Something went wrong with the verification of {{name}}, please try again. If you continue to receive this error, you can send a message to support@freeCodeCamp.org to get help.',
+    'msg-30': 'Error claiming {{certName}}',
+    'msg-31': 'We could not find a user with the username "{{username}}"',
+    'msg-32':
+      'This user needs to add their name to their account in order for others to be able to view their certification.',
+    'msg-33':
+      'This user is not eligible for freeCodeCamp.org certifications at this time.',
+    'msg-34':
+      '{{username}} has chosen to make their portfolio private. They will need to make their portfolio public in order for others to be able to view their certification.',
+    'msg-35':
+      '{{username}} has chosen to make their certifications private. They will need to make their certifications public in order for others to be able to view them.',
+    'msg-36': '{{username}} has not yet agrees to our Academic Honesty Pledge.',
+    'msg-37': 'It looks like user {{username}} is not {{cert}} certified',
+    'msg-38': 'That does not appear to be a valid challenge submission',
+    'msg-39':
+      'You have not provided the valid links for us to inspect your work.',
+    'msg-40': 'No social account found',
+    'msg-41': 'Invalid social account',
+    'msg-42': 'No {{website}} account associated',
+    'msg-43': "You've successfully unlinked your {{website}}",
+    'msg-44': 'Check if you have provided a username and a report',
+    'msg-45': 'A report was sent to the team with {{email}} in copy'
+  },
+  validation: {
+    'msg-1':
+      'There is a maximum limit of 288 characters, you have {{charsLeft}} left',
+    'msg-2': 'This email is the same as your current email',
+    'msg-3':
+      'We could not validate your email correctly, please ensure it is correct',
+    'msg-4': 'Both new email addresses must be the same',
+    'msg-5': 'A title is required',
+    'msg-6': 'Title is too short',
+    'msg-7': 'Title is too long',
+    'msg-8':
+      'We could not validate your URL correctly, please ensure it is correct',
+    'msg-9': 'URL must start with http or https',
+    'msg-10': 'URL must link directly to an image file',
+    'msg-11': 'Please use a valid URL'
+  }
+};
 
 exports.translationsSchema = translationsSchema;

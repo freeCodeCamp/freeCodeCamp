@@ -1,31 +1,25 @@
 /* global expect */
-import { translationsSchema } from './translations-schema';
-import { motivationSchema } from './motivation-schema';
 import {
   availableLangs,
   i18nextCodes,
   langDisplayNames,
   langCodes
 } from './allLangs';
-import { trendingSchema } from './trending-schema';
 
 const fs = require('fs');
-const { expectToMatchSchema, setup } = require('jest-json-schema-extended');
+const { setup } = require('jest-json-schema-extended');
 
 setup();
 
 const filesThatShouldExist = [
   {
-    name: 'translations.json',
-    schema: translationsSchema
+    name: 'translations.json'
   },
   {
-    name: 'motivation.json',
-    schema: motivationSchema
+    name: 'motivation.json'
   },
   {
-    name: 'trending.json',
-    schema: trendingSchema
+    name: 'trending.json'
   }
 ];
 
@@ -39,13 +33,6 @@ describe('Locale tests:', () => {
         test(`${file.name} file exists`, () => {
           const exists = fs.existsSync(`${path}/${lang}/${file.name}`);
           expect(exists).toBeTruthy();
-        });
-
-        // check that each of the json files match the schema
-        test(`${file.name} has correct schema`, async () => {
-          const jsonFile = fs.readFileSync(`${path}/${lang}/${file.name}`);
-          let json = await JSON.parse(jsonFile);
-          expectToMatchSchema(json, file.schema);
         });
       });
 
