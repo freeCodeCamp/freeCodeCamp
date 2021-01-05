@@ -15,14 +15,14 @@ import CertficationIcon from '../../assets/icons/CertificationIcon';
 import GreenPass from '../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../assets/icons/GreenNotCompleted';
 import { dasherize } from '../../../../utils/slugs';
-import Block from '../../components/Map/components/Block';
+import Block from './components/Block';
 import { FullWidthRow, Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   isSignedInSelector,
   userSelector
 } from '../../redux';
-import { resetExpansion, toggleBlock } from '../../components/Map/redux';
+import { resetExpansion, toggleBlock } from './redux';
 import {
   MarkdownRemark,
   AllChallengeNode,
