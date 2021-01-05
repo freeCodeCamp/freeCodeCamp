@@ -13,11 +13,11 @@ Which regex matches only a white space character?
 
 ## --answers--
 
-<pre>\\S</pre>
+<pre>\S</pre>
 
 ---
 
-<pre>\\s</pre>
+<pre>\s</pre>
 
 ---
 
@@ -25,13 +25,12 @@ Which regex matches only a white space character?
 
 ---
 
-<pre>\_</pre>
+<pre>_</pre>
 
 ---
 
-<pre>\\.</pre>
+<pre>\.</pre>
 
 ## --video-solution--
 
 2
-

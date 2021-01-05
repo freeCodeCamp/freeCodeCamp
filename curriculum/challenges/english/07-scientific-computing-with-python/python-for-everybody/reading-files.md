@@ -13,7 +13,7 @@ What is used to indicate a new line in a string?
 
 ## --answers--
 
-<pre>\\n</pre>
+<pre>\n</pre>
 
 ---
 
@@ -34,4 +34,3 @@ What is used to indicate a new line in a string?
 ## --video-solution--
 
 1
-
