@@ -355,6 +355,12 @@ const introSchema = {
         intro: ['Intro text 1', 'Intro text 2']
       }
     }
+  },
+  'misc-text': {
+    certification: 'Certification',
+    'browse-other':
+      'Browse our other free certifications\n(we recommend doing these in order)',
+    tutorials: 'Tutorials'
   }
 };
 exports.introSchema = introSchema;
