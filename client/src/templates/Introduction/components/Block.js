@@ -184,9 +184,6 @@ export class Block extends Component {
     const blockIntroObj = t(
       `intro:${superBlockDashedName}.blocks.${blockDashedName}`
     );
-
-    console.log(blockDashedName);
-    console.log(blockIntroObj);
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : null;
 
