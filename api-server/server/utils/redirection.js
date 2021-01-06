@@ -23,7 +23,6 @@ function getReturnTo(encryptedParams, secret, _homeLocation = homeLocation) {
   return normalizeParams(params, _homeLocation);
 }
 
-// TODO: tests!
 function normalizeParams(
   { returnTo, origin, pathPrefix },
   _homeLocation = homeLocation
@@ -59,9 +58,6 @@ function getRedirectBase(origin, pathPrefix) {
   return `${origin}${redirectPathSegment}`;
 }
 
-// TODO: this might be cleaner if we just use a URL for returnTo (call it
-// returnURL for clarity) rather than pulling out origin and returning it
-// separately
 function getRedirectParams(req, _normalizeParams = normalizeParams) {
   const url = req.header('Referer');
   // since we do not always redirect the user back to the page they were on
