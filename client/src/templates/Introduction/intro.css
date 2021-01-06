@@ -126,6 +126,14 @@ li.open > .map-title svg:first-child {
   width: 100%;
 }
 
+.block-description {
+  padding: 18px 6px;
+}
+
+.block-description p:last-child {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 767px) {
   .intro-layout-container {
     padding: 0 10px;

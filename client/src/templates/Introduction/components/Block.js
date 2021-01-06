@@ -125,6 +125,16 @@ export class Block extends Component {
     });
   }
 
+  renderBlockIntros(arr) {
+    return (
+      <div className='block-description'>
+        {arr.map((str, i) => (
+          <p key={i}>{str}</p>
+        ))}
+      </div>
+    );
+  }
+
   render() {
     const {
       blockDashedName,
@@ -171,6 +181,7 @@ export class Block extends Component {
 
     return isProjectBlock ? (
       <li className='block'>
+        {this.renderBlockIntros(blockIntroArr)}
         <div className='map-title'>
           <h4 className='map-projects-title'>{blockTitle}</h4>
         </div>
@@ -180,6 +191,7 @@ export class Block extends Component {
       </li>
     ) : (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
+        {this.renderBlockIntros(blockIntroArr)}
         <button
           aria-expanded={isExpanded}
           className='map-title'
@@ -197,9 +209,6 @@ export class Block extends Component {
           </div>
         </button>
         <ul>
-          {isExpanded
-            ? blockIntroArr.map((str, i) => <p key={i}>{str}</p>)
-            : null}
           {isExpanded ? this.renderChallenges(challengesWithCompleted) : null}
         </ul>
       </li>
