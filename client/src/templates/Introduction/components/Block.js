@@ -11,8 +11,6 @@ import { completedChallengesSelector, executeGA } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-import IntroInformation from '../../../assets/icons/IntroInformation';
-import { dasherize } from '../../../../../utils/slugs';
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -35,13 +33,6 @@ const propTypes = {
   challenges: PropTypes.array,
   completedChallenges: PropTypes.arrayOf(PropTypes.string),
   executeGA: PropTypes.func,
-  intro: PropTypes.shape({
-    fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
-    frontmatter: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      block: PropTypes.string.isRequired
-    })
-  }),
   isExpanded: PropTypes.bool,
   superBlockDashedName: PropTypes.string,
   t: PropTypes.func,
@@ -91,10 +82,10 @@ export class Block extends Component {
     );
   }
 
-  renderChallenges(intro = {}, challenges = [], isProjectBlock = false) {
+  renderChallenges(challenges = [], isProjectBlock = false) {
     // TODO: Split this into a Challenge Component and add tests
     // TODO: The styles badge and map-badge on the completion span do not exist
-    return [intro].concat(challenges).map((challenge, i) => {
+    return [...challenges].map(challenge => {
       const completedClass = challenge.isCompleted
         ? ' map-challenge-title-completed'
         : '';
@@ -103,23 +94,19 @@ export class Block extends Component {
           className={`map-challenge-title${completedClass} ${
             isProjectBlock ? 'map-project-wrap' : ''
           }`}
-          id={challenge.dashedName || dasherize(challenge.frontmatter.title)}
+          id={challenge.dashedName}
           key={'map-challenge' + challenge.fields.slug}
         >
           {!isProjectBlock ? (
             <>
               <span className='badge map-badge'>
-                {i === 0 ? (
-                  <IntroInformation style={mapIconStyle} />
-                ) : (
-                  this.renderCheckMark(challenge.isCompleted)
-                )}
+                {this.renderCheckMark(challenge.isCompleted)}
               </span>
               <Link
                 onClick={this.handleChallengeClick(challenge.fields.slug)}
                 to={challenge.fields.slug}
               >
-                {challenge.title || challenge.frontmatter.title}
+                {challenge.title}
               </Link>
             </>
           ) : (
@@ -127,13 +114,9 @@ export class Block extends Component {
               onClick={this.handleChallengeClick(challenge.fields.slug)}
               to={challenge.fields.slug}
             >
-              {challenge.title || challenge.frontmatter.title}
+              {challenge.title}
               <span className='badge map-badge map-project-checkmark'>
-                {i === 0 ? (
-                  <IntroInformation style={mapIconStyle} />
-                ) : (
-                  this.renderCheckMark(challenge.isCompleted)
-                )}
+                {this.renderCheckMark(challenge.isCompleted)}
               </span>
             </Link>
           )}
@@ -148,7 +131,6 @@ export class Block extends Component {
       completedChallenges,
       challenges,
       isExpanded,
-      intro,
       superBlockDashedName,
       t
     } = this.props;
@@ -193,11 +175,7 @@ export class Block extends Component {
           <h4 className='map-projects-title'>{blockTitle}</h4>
         </div>
         <ul>
-          {this.renderChallenges(
-            intro,
-            challengesWithCompleted,
-            isProjectBlock
-          )}
+          {this.renderChallenges(challengesWithCompleted, isProjectBlock)}
         </ul>
       </li>
     ) : (
@@ -222,9 +200,7 @@ export class Block extends Component {
           {isExpanded
             ? blockIntroArr.map((str, i) => <p key={i}>{str}</p>)
             : null}
-          {isExpanded
-            ? this.renderChallenges(intro, challengesWithCompleted)
-            : null}
+          {isExpanded ? this.renderChallenges(challengesWithCompleted) : null}
         </ul>
       </li>
     );

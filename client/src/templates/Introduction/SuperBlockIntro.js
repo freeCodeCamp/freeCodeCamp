@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql, navigate } from 'gatsby';
-import { uniq, find } from 'lodash';
+import { uniq } from 'lodash';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
@@ -23,12 +23,7 @@ import {
   userSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
-import {
-  MarkdownRemark,
-  AllChallengeNode,
-  AllMarkdownRemark,
-  User
-} from '../../redux/propTypes';
+import { MarkdownRemark, AllChallengeNode, User } from '../../redux/propTypes';
 
 import './intro.css';
 
@@ -36,8 +31,7 @@ const propTypes = {
   currentChallengeId: PropTypes.string,
   data: PropTypes.shape({
     markdownRemark: MarkdownRemark,
-    allChallengeNode: AllChallengeNode,
-    allMarkdownRemark: AllMarkdownRemark
+    allChallengeNode: AllChallengeNode
   }),
   expandedState: PropTypes.object,
   isSignedIn: PropTypes.bool,
@@ -78,8 +72,7 @@ export class SuperBlockIntroductionPage extends Component {
         markdownRemark: {
           frontmatter: { superBlock }
         },
-        allChallengeNode: { edges },
-        allMarkdownRemark: { edges: mdEdges }
+        allChallengeNode: { edges }
       },
       user: {
         is2018DataVisCert,
@@ -114,7 +107,6 @@ export class SuperBlockIntroductionPage extends Component {
 
     const certIconStyle = { height: '40px', width: '40px' };
     const nodesForSuperBlock = edges.map(({ node }) => node);
-    const introNodes = mdEdges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
     // render all non-empty blocks
@@ -125,14 +117,6 @@ export class SuperBlockIntroductionPage extends Component {
             blockDashedName={blockDashedName}
             challenges={nodesForSuperBlock.filter(
               node => node.block === blockDashedName
-            )}
-            intro={find(
-              introNodes,
-              ({ frontmatter: { block } }) =>
-                block
-                  .toLowerCase()
-                  .split(' ')
-                  .join('-') === blockDashedName
             )}
             key={blockDashedName}
             superBlockDashedName={superBlockDashedName}
@@ -297,23 +281,6 @@ export const query = graphql`
           order
           superBlock
           dashedName
-        }
-      }
-    }
-    allMarkdownRemark(
-      filter: {
-        frontmatter: { block: { ne: null }, superBlock: { eq: $superBlock } }
-      }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            block
-          }
-          fields {
-            slug
-          }
         }
       }
     }

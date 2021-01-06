@@ -5,7 +5,6 @@ import { render, fireEvent } from '@testing-library/react';
 
 import { Block } from './Block';
 import mockChallengeNodes from '../../../__mocks__/challenge-nodes';
-import mockIntroNodes from '../../../__mocks__/intro-nodes';
 import mockCompleted from '../../../__mocks__/completedChallengesMock';
 
 test('<Block /> not expanded snapshot', () => {
@@ -14,7 +13,6 @@ test('<Block /> not expanded snapshot', () => {
       blockDashedName='block-a'
       challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
       completedChallenges={mockCompleted}
-      intro={mockIntroNodes[0]}
       isExpanded={false}
       toggleBlock={() => {}}
       toggleMapModal={() => {}}
@@ -30,7 +28,6 @@ test('<Block expanded snapshot', () => {
       blockDashedName='block-a'
       challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
       completedChallenges={mockCompleted}
-      intro={mockIntroNodes[0]}
       isExpanded={true}
       toggleBlock={() => {}}
       toggleMapModal={() => {}}
@@ -49,7 +46,6 @@ test('<Block />  should handle toggle clicks correctly', async () => {
     blockDashedName: 'block-a',
     challenges: mockChallengeNodes.filter(node => node.block === 'block-a'),
     completedChallenges: mockCompleted,
-    intro: mockIntroNodes[0],
     isExpanded: false,
     executeGA: executeGA,
     toggleBlock: toggleSpy,
