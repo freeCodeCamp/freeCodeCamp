@@ -15,6 +15,117 @@
   text-decoration: none;
 }
 
+button.map-title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+button.map-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+div.map-title {
+  display: flex;
+  align-items: center;
+  padding: 18px 8px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+div.map-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.map-projects-title {
+  font-weight: 700;
+}
+
+.map-project-wrap > a {
+  display: flex;
+  justify-content: space-between;
+}
+
+.map-project-checkmark {
+  margin-right: 41px;
+}
+
+.map-cert-title {
+  display: flex;
+  align-items: center;
+  padding: 18px 8px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.map-cert-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+
+.map-cert-title > h3 {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.map-cert-title > svg {
+  display: inline-block;
+  height: 40px;
+  width: auto;
+  min-width: 25px;
+}
+
+.map-title > h4 {
+  margin-bottom: 0;
+}
+
+.map-title-completed {
+  margin-left: auto;
+  min-width: 100px;
+  padding-left: 20px;
+}
+
+.map-title-completed-big {
+  margin-left: auto;
+  min-width: 90px;
+  padding-left: 20px;
+  position: relative;
+  top: 4px;
+}
+
+.map-title svg {
+  width: 14px;
+  margin-right: 5px;
+  flex-shrink: 0;
+  fill: var(--color-quaternary) !important;
+  stroke: var(--color-quaternary);
+}
+
+li.open > .map-title svg:first-child {
+  transform: rotate(90deg);
+}
+
+.map-challenge-title {
+  display: flex;
+  margin-bottom: 0.25rem;
+}
+
+.map-challenge-title a {
+  width: 100%;
+}
+
 .block-description {
   padding: 18px 6px;
 }
