@@ -248,8 +248,9 @@ export class SuperBlockIntroductionPage extends Component {
             </Row>
           )}
           <Spacer size={2} />
-          <h2 className='text-center'>
-            Browse our other free courses! We recommend taking them in order
+          <h2 className='text-center' style={{ whiteSpace: 'pre-line' }}>
+            Browse our other free certifications{'\n'}
+            (we recommend doing these in order)
           </h2>
           <Spacer />
           <Map currentSuperBlock={superBlock} />
