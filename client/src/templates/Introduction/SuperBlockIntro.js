@@ -201,6 +201,11 @@ export class SuperBlockIntroductionPage extends Component {
       image: superBlockImage,
       intro: superBlockIntroText
     } = superBlockIntroObj;
+    const miscTextObj = t(`intro:misc-text`);
+    const {
+      'browse-other': browseOtherText,
+      tutorials: tutorialsText
+    } = miscTextObj;
 
     return (
       <Fragment>
@@ -227,7 +232,7 @@ export class SuperBlockIntroductionPage extends Component {
             <p key={i}>{str}</p>
           ))}
           <Spacer size={2} />
-          <h2 className='text-center'>Tutorials</h2>
+          <h2 className='text-center'>{tutorialsText}</h2>
           <div className='block-ui'>{this.renderBlocks()}</div>
           {!isSignedIn && (
             <Row>
@@ -239,8 +244,7 @@ export class SuperBlockIntroductionPage extends Component {
           )}
           <Spacer size={2} />
           <h2 className='text-center' style={{ whiteSpace: 'pre-line' }}>
-            Browse our other free certifications{'\n'}
-            (we recommend doing these in order)
+            {browseOtherText}
           </h2>
           <Spacer />
           <Map currentSuperBlock={superBlock} />
