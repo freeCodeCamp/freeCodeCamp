@@ -11,7 +11,7 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
-import CertficationIcon from '../../assets/icons/CertificationIcon';
+import CertificationIcon from '../../assets/icons/CertificationIcon';
 import GreenPass from '../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../assets/icons/GreenNotCompleted';
 import { dasherize } from '../../../../utils/slugs';
@@ -86,7 +86,8 @@ export class SuperBlockIntroductionPage extends Component {
         isDataAnalysisPyCertV7,
         isMachineLearningPyCertV7,
         username
-      }
+      },
+      t
     } = this.props;
 
     const isCertified = {
@@ -109,6 +110,9 @@ export class SuperBlockIntroductionPage extends Component {
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
+    const superBlockTitle = t(`intro:${dasherize(superBlock)}.title`);
+    const certificationText = t(`intro:misc-text.certification`);
+
     // render all non-empty blocks
     return (
       <ul className='block'>
@@ -130,8 +134,10 @@ export class SuperBlockIntroductionPage extends Component {
                 isCertified[superBlock] ? () => navigate(certLocation) : null
               }
             >
-              <CertficationIcon />
-              <h3>{superBlock} Certification</h3>
+              <CertificationIcon />
+              <h3>
+                {superBlockTitle} {certificationText}
+              </h3>
               <div className='map-title-completed-big'>
                 <span>
                   {isCertified[superBlock] ? (
