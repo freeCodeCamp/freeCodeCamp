@@ -248,7 +248,9 @@ export class SuperBlockIntroductionPage extends Component {
             </Row>
           )}
           <Spacer size={2} />
-          <h2 className='text-center'>Try our other sections</h2>
+          <h2 className='text-center'>
+            Browse our other free courses! We recommend taking them in order
+          </h2>
           <Spacer />
           <Map currentSuperBlock={superBlock} />
           <Spacer size={2} />
