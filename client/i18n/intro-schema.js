@@ -61,6 +61,10 @@ const introSchema = {
           'The CSS grid is a newer standard that makes it easy to build complex responsive layouts. It works by turning an HTML element into a grid, and lets you place child elements anywhere within.',
           "In this course, you'll learn the fundamentals of CSS grid by building different complex layouts, including a blog."
         ]
+      },
+      'responsive-web-design-projects': {
+        title: 'Responsive Web Design Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -94,6 +98,10 @@ const introSchema = {
         title: 'Basic Data Structures',
         intro: ['Intro text 1', 'Intro text 2']
       },
+      'basic-algorithm-scripting': {
+        title: 'Basic Algorithm Scripting',
+        intro: ['Intro text 1', 'Intro text 2']
+      },
       'object-oriented-programming': {
         title: 'Object Oriented Programming',
         intro: ['Intro text 1', 'Intro text 2']
@@ -105,11 +113,15 @@ const introSchema = {
       'intermediate-algorithm-scripting': {
         title: 'Intermediate Algorithm Scripting',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'javascript-algorithms-and-data-structures-projects': {
+        title: 'Javascript Algorithms and Data Structures Projects',
+        intro: ['Placeholder']
       }
     }
   },
   'front-end-libraries': {
-    title: 'Front End Libraries',
+    title: 'Front End Development Libraries',
     intro: [
       "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front end libraries in the industry.",
       "In the Front End Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how add logic to your CSS styles and extend them with Sass. Later, you'll build a shopping cart and other applications to learn how to create powerful Single Page Applications (SPAs) with React and Redux."
@@ -140,6 +152,10 @@ const introSchema = {
       'react-and-redux': {
         title: 'React and Redux',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'front-end-libraries-projects': {
+        title: 'Front End Development Libraries Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -160,6 +176,10 @@ const introSchema = {
       'json-apis-and-ajax': {
         title: 'JSON APIs and AJAX',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'data-visualization-projects': {
+        title: 'Data Visualization Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -184,6 +204,10 @@ const introSchema = {
       'mongodb-and-mongoose': {
         title: 'MongoDB and Mongoose',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'apis-and-microservices-projects': {
+        title: 'APIs and Microservices Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -204,6 +228,10 @@ const introSchema = {
       'advanced-node-and-express': {
         title: 'Advanced Node and Express',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'quality-assurance-projects': {
+        title: 'Quality Assurance Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -219,6 +247,10 @@ const introSchema = {
       'python-for-everybody': {
         title: 'Python for Everybody',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'scientific-computing-with-python-projects': {
+        title: 'Scientific Computing with Python Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -238,6 +270,10 @@ const introSchema = {
       numpy: {
         title: 'Numpy',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'data-analysis-with-python-projects': {
+        title: 'Data Analysis with Python Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -258,6 +294,10 @@ const introSchema = {
       'python-for-penetration-testing': {
         title: 'Python for Penetration Testing',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'information-security-projects': {
+        title: 'Information Security Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -278,6 +318,10 @@ const introSchema = {
       'how-neural-networks-work': {
         title: 'How Neural Networks Work',
         intro: ['Intro text 1', 'Intro text 2']
+      },
+      'machine-learning-with-python-projects': {
+        title: 'Machine Learning with Python Projects',
+        intro: ['Placeholder']
       }
     }
   },
@@ -313,5 +357,4 @@ const introSchema = {
     }
   }
 };
-
 exports.introSchema = introSchema;
