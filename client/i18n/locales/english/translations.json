@@ -451,7 +451,7 @@
     "msg-33": "This user is not eligible for freeCodeCamp.org certifications at this time.",
     "msg-34": "{{username}} has chosen to make their portfolio private. They will need to make their portfolio public in order for others to be able to view their certification.",
     "msg-35": "{{username}} has chosen to make their certifications private. They will need to make their certifications public in order for others to be able to view them.",
-    "msg-36": "{{username}} has not yet agrees to our Academic Honesty Pledge.",
+    "msg-36": "{{username}} has not yet agreed to our Academic Honesty Pledge.",
     "msg-37": "It looks like user {{username}} is not {{cert}} certified",
     "msg-38": "That does not appear to be a valid challenge submission",
     "msg-39": "You have not provided the valid links for us to inspect your work.",
