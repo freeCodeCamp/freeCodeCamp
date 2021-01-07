@@ -129,7 +129,7 @@ export class Block extends Component {
     return (
       <div className='block-description'>
         {arr.map((str, i) => (
-          <p key={i}>{str}</p>
+          <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
         ))}
       </div>
     );
