@@ -3,7 +3,8 @@ const path = require('path');
 const {
   clientLocale,
   curriculumLocale,
-  homeLocation
+  homeLocation,
+  assetsLocation
 } = require('../config/env');
 const {
   buildChallenges,
@@ -22,6 +23,7 @@ module.exports = {
     title: 'freeCodeCamp',
     siteUrl: homeLocation
   },
+  assetPrefix: assetsLocation,
   pathPrefix: pathPrefix,
   plugins: [
     'gatsby-plugin-react-helmet',
