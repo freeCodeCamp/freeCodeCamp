@@ -12,8 +12,7 @@ function* deleteAccountSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'flash.msg-5',
-        needsTranslating: true
+        message: 'flash.msg-5'
       })
     );
     // remove current user information from application state
@@ -30,8 +29,7 @@ function* resetProgressSaga() {
     yield put(
       createFlashMessage({
         type: 'info',
-        message: 'flash.msg-6',
-        needsTranslating: true
+        message: 'flash.msg-6'
       })
     );
     // refresh current user data in application state
