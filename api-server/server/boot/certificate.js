@@ -284,8 +284,7 @@ function createVerifyCert(certTypeIds, app) {
           return Observable.just({
             type: 'info',
             message: 'flash.msg-27',
-            variables: { name: certName },
-            needsTranslating: true
+            variables: { name: certName }
           });
         }
 
@@ -296,8 +295,7 @@ function createVerifyCert(certTypeIds, app) {
           return Observable.just({
             type: 'danger',
             message: 'flash.msg-29',
-            variables: { name: certName },
-            needsTranslating: true
+            variables: { name: certName }
           });
         }
 
@@ -306,8 +304,7 @@ function createVerifyCert(certTypeIds, app) {
           return Observable.just({
             type: 'info',
             message: 'flash.msg-26',
-            variables: { name: certName },
-            needsTranslating: true
+            variables: { name: certName }
           });
         }
 
@@ -326,8 +323,7 @@ function createVerifyCert(certTypeIds, app) {
         if (!user.name) {
           return Observable.just({
             type: 'info',
-            message: 'flash.msg-25',
-            needsTranslating: true
+            message: 'flash.msg-25'
           });
         }
         // set here so sendCertifiedEmail works properly
@@ -356,7 +352,6 @@ function createVerifyCert(certTypeIds, app) {
           return {
             type: 'success',
             message: 'flash.msg-28',
-            needsTranslating: true,
             variables: {
               username: user.username,
               name: certName
@@ -423,8 +418,7 @@ function createShowCert(app) {
             {
               type: 'info',
               message: 'flash.msg-31',
-              variables: { username: username },
-              needsTranslating: true
+              variables: { username: username }
             }
           ]
         });
@@ -436,8 +430,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.msg-32',
-              needsTranslating: true
+              message: 'flash.msg-32'
             }
           ]
         });
@@ -448,8 +441,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.msg-33',
-              needsTranslating: true
+              message: 'flash.msg-33'
             }
           ]
         });
@@ -461,8 +453,7 @@ function createShowCert(app) {
             {
               type: 'info',
               message: 'flash.msg-34',
-              variables: { username: username },
-              needsTranslating: true
+              variables: { username: username }
             }
           ]
         });
@@ -474,8 +465,7 @@ function createShowCert(app) {
             {
               type: 'info',
               message: 'flash.msg-35',
-              variables: { username: username },
-              needsTranslating: true
+              variables: { username: username }
             }
           ]
         });
@@ -487,8 +477,7 @@ function createShowCert(app) {
             {
               type: 'info',
               message: 'flash.msg-36',
-              variables: { username: username },
-              needsTranslating: true
+              variables: { username: username }
             }
           ]
         });
@@ -536,8 +525,7 @@ function createShowCert(app) {
           {
             type: 'info',
             message: 'flash.msg-37',
-            variables: { username: username, cert: certText[certType] },
-            needsTranslating: true
+            variables: { username: username, cert: certText[certType] }
           }
         ]
       });
