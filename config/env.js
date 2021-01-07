@@ -7,7 +7,8 @@ if (error) {
   if (process.env.FREECODECAMP_NODE_ENV === 'development') {
     console.warn('.env not found, please copy sample.env to .env');
   } else {
-    console.error(error);
+    console.warn(`.env not found. If env vars are not being set another way,
+this could be a problem.`);
   }
 }
 
