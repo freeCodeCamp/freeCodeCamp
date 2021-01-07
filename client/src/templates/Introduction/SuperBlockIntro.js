@@ -298,17 +298,13 @@ export class SuperBlockIntroductionPage extends Component {
   }
 }
 
-const TranslatedSuperBlockIntroductionPage = withTranslation()(
-  SuperBlockIntroductionPage
-);
-
 SuperBlockIntroductionPage.displayName = 'SuperBlockIntroductionPage';
 SuperBlockIntroductionPage.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TranslatedSuperBlockIntroductionPage);
+)(withTranslation()(SuperBlockIntroductionPage));
 
 export const query = graphql`
   query SuperBlockIntroPageBySlug($slug: String!, $superBlock: String!) {

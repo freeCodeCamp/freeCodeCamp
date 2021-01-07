@@ -216,12 +216,10 @@ export class Block extends Component {
   }
 }
 
-const TranslatedBlock = withTranslation()(Block);
-
 Block.displayName = 'Block';
 Block.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TranslatedBlock);
+)(withTranslation()(Block));
