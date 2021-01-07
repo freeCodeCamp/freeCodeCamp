@@ -18,7 +18,12 @@ function ChallengeTitle({ block, children, isCompleted, superBlock }) {
     <div className='challenge-title-wrap'>
       <Link to={`/learn/${dasherize(superBlock)}`}>{superBlock}</Link>
       {' >> '}
-      <Link to={`/learn/${dasherize(superBlock)}`}>{block}</Link>
+      <Link
+        state={{ breadcrumbBlockClick: block }}
+        to={`/learn/${dasherize(superBlock)}`}
+      >
+        {block}
+      </Link>
       {' >> '}
       <b>{children}</b>
       {isCompleted ? (

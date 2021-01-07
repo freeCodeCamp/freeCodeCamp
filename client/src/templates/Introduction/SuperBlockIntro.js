@@ -19,6 +19,7 @@ import Block from './components/Block';
 import { FullWidthRow, Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
+  userFetchStateSelector,
   isSignedInSelector,
   userSelector
 } from '../../redux';
@@ -34,7 +35,17 @@ const propTypes = {
     allChallengeNode: AllChallengeNode
   }),
   expandedState: PropTypes.object,
+  fetchState: PropTypes.shape({
+    pending: PropTypes.bool,
+    complete: PropTypes.bool,
+    errored: PropTypes.bool
+  }),
   isSignedIn: PropTypes.bool,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      breadcrumbBlockClick: PropTypes.string
+    })
+  }),
   resetExpansion: PropTypes.func,
   t: PropTypes.func,
   toggleBlock: PropTypes.func,
@@ -45,10 +56,12 @@ const mapStateToProps = state => {
   return createSelector(
     currentChallengeIdSelector,
     isSignedInSelector,
+    userFetchStateSelector,
     userSelector,
-    (currentChallengeId, isSignedIn, user) => ({
+    (currentChallengeId, isSignedIn, fetchState, user) => ({
       currentChallengeId,
       isSignedIn,
+      fetchState,
       user
     })
   )(state);
@@ -63,10 +76,67 @@ const mapDispatchToProps = dispatch =>
 export class SuperBlockIntroductionPage extends Component {
   constructor(props) {
     super(props);
-    this.initializeExpandedState();
+    this.elementRef = React.createRef();
   }
 
-  renderBlocks() {
+  componentDidMount() {
+    this.initializeExpandedState();
+    this.scrollToBlock();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBlock();
+  }
+
+  scrollToBlock() {
+    if (this.elementRef.current) {
+      setTimeout(() => {
+        const scrollTo = this.elementRef.current.offsetTop;
+
+        window.scrollTo({ top: scrollTo, left: 0, behavior: 'smooth' });
+      }, 300);
+    }
+  }
+
+  getChosenBlock(forScrolling) {
+    const {
+      data: {
+        allChallengeNode: { edges }
+      },
+      isSignedIn,
+      currentChallengeId,
+      location
+    } = this.props;
+
+    // if coming from breadcrumb click
+    if (location.state && location.state.breadcrumbBlockClick)
+      return dasherize(location.state.breadcrumbBlockClick);
+
+    let edge = edges[0];
+
+    if (isSignedIn) {
+      // see if currentChallenge is in this superBlock
+      const currentChallengeEdge = edges.find(
+        edge => edge.node.id === currentChallengeId
+      );
+
+      return currentChallengeEdge
+        ? currentChallengeEdge.node.block
+        : edge.node.block;
+    }
+
+    return forScrolling ? 'top' : edge.node.block;
+  }
+
+  initializeExpandedState() {
+    const { resetExpansion, toggleBlock } = this.props;
+
+    resetExpansion();
+
+    return toggleBlock(this.getChosenBlock());
+  }
+
+  render() {
     const {
       data: {
         markdownRemark: {
@@ -74,6 +144,8 @@ export class SuperBlockIntroductionPage extends Component {
         },
         allChallengeNode: { edges }
       },
+      fetchState: { pending, complete },
+      isSignedIn,
       user: {
         is2018DataVisCert,
         isApisMicroservicesCert,
@@ -110,91 +182,8 @@ export class SuperBlockIntroductionPage extends Component {
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
-    const superBlockTitle = t(`intro:${dasherize(superBlock)}.title`);
     const certificationText = t(`intro:misc-text.certification`);
 
-    // render all non-empty blocks
-    return (
-      <ul className='block'>
-        {blockDashedNames.map(blockDashedName => (
-          <Block
-            blockDashedName={blockDashedName}
-            challenges={nodesForSuperBlock.filter(
-              node => node.block === blockDashedName
-            )}
-            key={blockDashedName}
-            superBlockDashedName={superBlockDashedName}
-          />
-        ))}
-        {superBlock !== 'Coding Interview Prep' && (
-          <li className='block'>
-            <button
-              className='map-cert-title'
-              onClick={
-                isCertified[superBlock] ? () => navigate(certLocation) : null
-              }
-            >
-              <CertificationIcon />
-              <h3>
-                {superBlockTitle} {certificationText}
-              </h3>
-              <div className='map-title-completed-big'>
-                <span>
-                  {isCertified[superBlock] ? (
-                    <GreenPass style={certIconStyle} />
-                  ) : (
-                    <GreenNotCompleted style={certIconStyle} />
-                  )}
-                </span>
-              </div>
-            </button>
-          </li>
-        )}
-      </ul>
-    );
-  }
-
-  initializeExpandedState() {
-    const {
-      resetExpansion,
-      data: {
-        allChallengeNode: { edges }
-      },
-      isSignedIn,
-      currentChallengeId,
-      toggleBlock
-    } = this.props;
-
-    resetExpansion();
-
-    let edge;
-
-    if (isSignedIn) {
-      // see if currentChallenge is in this superBlock
-      edge = edges.find(edge => edge.node.id === currentChallengeId);
-    }
-
-    // else, find first block in superBlock
-    let i = 0;
-    while (!edge && i < 20) {
-      // eslint-disable-next-line no-loop-func
-      edge = edges.find(edge => edge.node.order === i);
-      i++;
-    }
-
-    if (edge) toggleBlock(edge.node.block);
-  }
-
-  render() {
-    const {
-      data: {
-        markdownRemark: {
-          frontmatter: { superBlock }
-        }
-      },
-      isSignedIn,
-      t
-    } = this.props;
     const superBlockIntroObj = t(`intro:${dasherize(superBlock)}`);
     const {
       title: superBlockTitle,
@@ -207,12 +196,21 @@ export class SuperBlockIntroductionPage extends Component {
       tutorials: tutorialsText
     } = miscTextObj;
 
+    let blockToScrollTo;
+    if (!pending && complete) {
+      blockToScrollTo = this.getChosenBlock(true);
+      this.initializeExpandedState();
+    }
+
     return (
       <Fragment>
         <Helmet>
           <title>{superBlockTitle} | freeCodeCamp.org</title>
         </Helmet>
-        <FullWidthRow className='overflow-fix'>
+        <FullWidthRow
+          className='overflow-fix'
+          ref={blockToScrollTo === 'top' ? this.elementRef : null}
+        >
           <Spacer size={2} />
           <h1 className='text-center'>{superBlockTitle}</h1>
           <Spacer />
@@ -233,7 +231,52 @@ export class SuperBlockIntroductionPage extends Component {
           ))}
           <Spacer size={2} />
           <h2 className='text-center'>{tutorialsText}</h2>
-          <div className='block-ui'>{this.renderBlocks()}</div>
+          <div className='block-ui'>
+            <ul className='block'>
+              {blockDashedNames.map(blockDashedName => (
+                <div
+                  key={blockDashedName}
+                  ref={
+                    blockDashedName === blockToScrollTo ? this.elementRef : null
+                  }
+                >
+                  <Block
+                    blockDashedName={blockDashedName}
+                    challenges={nodesForSuperBlock.filter(
+                      node => node.block === blockDashedName
+                    )}
+                    superBlockDashedName={superBlockDashedName}
+                  />
+                </div>
+              ))}
+              {superBlock !== 'Coding Interview Prep' && (
+                <li className='block'>
+                  <button
+                    className='map-cert-title'
+                    onClick={
+                      isCertified[superBlock]
+                        ? () => navigate(certLocation)
+                        : null
+                    }
+                  >
+                    <CertificationIcon />
+                    <h3>
+                      {superBlockTitle} {certificationText}
+                    </h3>
+                    <div className='map-title-completed-big'>
+                      <span>
+                        {isCertified[superBlock] ? (
+                          <GreenPass style={certIconStyle} />
+                        ) : (
+                          <GreenNotCompleted style={certIconStyle} />
+                        )}
+                      </span>
+                    </div>
+                  </button>
+                </li>
+              )}
+            </ul>
+          </div>
           {!isSignedIn && (
             <Row>
               <Col sm={8} smOffset={2} xs={12}>
