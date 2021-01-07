@@ -7,10 +7,7 @@ import { useTranslation } from 'react-i18next';
 import './flash.css';
 
 function Flash({ flashMessage, onClose }) {
-  // flash messages coming from the server are already translated
-  // messages on the client get translated here and need a
-  // needsTranslating variable set to true with the object
-  const { type, message, id, needsTranslating = false } = flashMessage;
+  const { type, message, id, variables = {} } = flashMessage;
   const { t } = useTranslation();
   const [flashMessageHeight, setFlashMessageHeight] = useState(null);
 
@@ -38,7 +35,7 @@ function Flash({ flashMessage, onClose }) {
             className='flash-message'
             onDismiss={handleClose}
           >
-            {needsTranslating ? t(`${message}`) : message}
+            {t(message, variables)}
           </Alert>
         </CSSTransition>
       </TransitionGroup>
@@ -59,7 +56,7 @@ Flash.propTypes = {
     id: PropTypes.string,
     type: PropTypes.string,
     message: PropTypes.string,
-    needsTranslating: PropTypes.bool
+    variables: PropTypes.object
   }),
   onClose: PropTypes.func.isRequired
 };
