@@ -33,16 +33,14 @@ export function handle400Error(e, options = { redirectTo: '/' }) {
       return {
         ...flash,
         type: 'warn',
-        message: 'flash.msg-7',
-        needsTranslating: true
+        message: 'flash.msg-7'
       };
     }
     case 404: {
       return {
         ...flash,
         type: 'info',
-        message: 'flash.msg-8',
-        needsTranslating: true
+        message: 'flash.msg-8'
       };
     }
     default: {
