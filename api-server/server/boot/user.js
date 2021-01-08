@@ -216,7 +216,7 @@ function createPostReportUserProfile(app) {
     if (!username || !report || report === '') {
       return res.json({
         type: 'danger',
-        message: 'flash.msg-44'
+        message: 'flash.provide-username'
       });
     }
     return Email.send$(
@@ -247,7 +247,7 @@ function createPostReportUserProfile(app) {
 
         return res.json({
           type: 'info',
-          message: 'flash.msg-45',
+          message: 'flash.report-sent',
           variables: { email: user.email }
         });
       }

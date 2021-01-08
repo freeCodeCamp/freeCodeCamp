@@ -118,12 +118,7 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       const { provider } = config;
       if (accessToken && accessToken.id) {
         if (provider === 'auth0') {
-          req.flash(
-            'success',
-            dedent`
-              Success! You have signed in to your account. Happy Coding!
-            `
-          );
+          req.flash('success', 'flash.signin-success');
         } else if (user.email) {
           req.flash(
             'info',

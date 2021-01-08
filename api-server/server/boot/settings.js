@@ -53,12 +53,12 @@ export default function settingsController(app) {
 
 const standardErrorMessage = {
   type: 'danger',
-  message: 'flash.msg-9'
+  message: 'flash.wrong-updating'
 };
 
 const standardSuccessMessage = {
   type: 'success',
-  message: 'flash.msg-10'
+  message: 'flash.updated-preferences'
 };
 
 const createStandardHandler = (req, res, next) => err => {
@@ -195,7 +195,7 @@ function createUpdateMyUsername(app) {
     if (username === user.username) {
       return res.json({
         type: 'info',
-        message: 'flash.msg-16'
+        message: 'flash.username-used'
       });
     }
     const validation = isValidUsername(username);
@@ -212,7 +212,7 @@ function createUpdateMyUsername(app) {
     if (exists) {
       return res.json({
         type: 'info',
-        message: 'flash.msg-17'
+        message: 'flash.username-taken'
       });
     }
 
@@ -224,7 +224,7 @@ function createUpdateMyUsername(app) {
 
       return res.status(200).json({
         type: 'success',
-        message: `flash.msg-18`,
+        message: `flash.username-updated`,
         variables: { username: username }
       });
     });

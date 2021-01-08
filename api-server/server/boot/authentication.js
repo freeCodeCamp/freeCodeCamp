@@ -180,10 +180,7 @@ function createGetPasswordlessAuth(app) {
         // update user and log them in
         .map(user => user.loginByRequest(req, res))
         .do(() => {
-          req.flash(
-            'success',
-            'Success! You have signed in to your account. Happy Coding!'
-          );
+          req.flash('success', 'flash.signin-success');
           return res.redirectWithFlash(`${origin}/learn`);
         })
         .subscribe(() => {}, next)
