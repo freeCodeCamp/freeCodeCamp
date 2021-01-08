@@ -440,36 +440,36 @@
       "algorithms": {
         "title": "Algorithms",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "These free programming exercises are meant to teach you about some common algorithms that you will likely encounter in real life. They are a great opportunity to improve your logic and programming skills.",
+          "These algorithm lessons are frequently asked about during job interviews. You will be provided clear and concise explanations of how different algorithms work, and expected to implement a solution for each one."
         ]
       },
       "data-structures": {
         "title": "Data Structures",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "These free programming tutorials are meant to help you deal with large and complex data structures that you may not be familiar with yet.",
+          "Working through the tutorials below, you will learn about each type of data structure and implement an algorithm to reinforce your understanding of them."
         ]
       },
       "take-home-projects": {
         "title": "Take Home Projects",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Programming interviews have always been stressful. Job applicants are sometimes given a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.",
+          "Build the bonus coding projects below for extra practice. Take your time, make them great, and put them on your resume or portfolio to show potential employers."
         ]
       },
       "rosetta-code": {
         "title": "Rosetta Code",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Level up your creative problem solving skills with these free programming tasks from the Rosetta Code library.",
+          "These challenges can prove to be difficult, but they will push your algorithm logic to new heights!"
         ]
       },
       "project-euler": {
         "title": "Project Euler",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Complete the programming challenges below, from the massive Project Euler archives, to harden your algorithm and mathematics knowledge.",
+          "The problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?"
         ]
       }
     }
