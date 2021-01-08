@@ -417,7 +417,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.uesrname-not-found',
+              message: 'flash.username-not-found',
               variables: { username: username }
             }
           ]
