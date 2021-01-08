@@ -53,7 +53,7 @@ export default function settingsController(app) {
 
 const standardErrorMessage = {
   type: 'danger',
-  message: 'flash.wront-updating'
+  message: 'flash.wrong-updating'
 };
 
 const standardSuccessMessage = {
