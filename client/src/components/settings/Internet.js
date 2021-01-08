@@ -82,7 +82,7 @@ class InternetSettings extends Component {
     }
     return {
       state: 'error',
-      message: t('validation.msg-8')
+      message: t('validation.invalid-url')
     };
   }
 

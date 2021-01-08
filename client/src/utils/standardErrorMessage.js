@@ -1,4 +1,4 @@
 export default {
   type: 'danger',
-  message: 'flash.msg-4'
+  message: 'flash.went-wrong'
 };

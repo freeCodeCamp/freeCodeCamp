@@ -283,7 +283,7 @@ function createVerifyCert(certTypeIds, app) {
         if (user[certType]) {
           return Observable.just({
             type: 'info',
-            message: 'flash.msg-27',
+            message: 'flash.already-claimed',
             variables: { name: certName }
           });
         }
@@ -294,7 +294,7 @@ function createVerifyCert(certTypeIds, app) {
           reportError(`Error claiming ${certName}`);
           return Observable.just({
             type: 'danger',
-            message: 'flash.msg-29',
+            message: 'flash.wrong-name',
             variables: { name: certName }
           });
         }
@@ -303,7 +303,7 @@ function createVerifyCert(certTypeIds, app) {
         if (!canClaim(tests, user.completedChallenges)) {
           return Observable.just({
             type: 'info',
-            message: 'flash.msg-26',
+            message: 'flash.incomplete-steps',
             variables: { name: certName }
           });
         }
@@ -323,7 +323,7 @@ function createVerifyCert(certTypeIds, app) {
         if (!user.name) {
           return Observable.just({
             type: 'info',
-            message: 'flash.msg-25'
+            message: 'flash.name-needed'
           });
         }
         // set here so sendCertifiedEmail works properly
@@ -351,7 +351,7 @@ function createVerifyCert(certTypeIds, app) {
           log('Certificates updated');
           return {
             type: 'success',
-            message: 'flash.msg-28',
+            message: 'flash.cert-claim-success',
             variables: {
               username: user.username,
               name: certName
@@ -417,7 +417,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.msg-31',
+              message: 'flash.username-not-found',
               variables: { username: username }
             }
           ]
@@ -430,7 +430,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.msg-32'
+              message: 'flash.add-name'
             }
           ]
         });
@@ -441,7 +441,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.msg-33'
+              message: 'flash.not-eligible'
             }
           ]
         });
@@ -452,7 +452,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.msg-34',
+              message: 'flash.profile-private',
               variables: { username: username }
             }
           ]
@@ -464,7 +464,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.msg-35',
+              message: 'flash.certs-private',
               variables: { username: username }
             }
           ]
@@ -476,7 +476,7 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: 'flash.msg-36',
+              message: 'flash.not-honest',
               variables: { username: username }
             }
           ]
@@ -524,7 +524,7 @@ function createShowCert(app) {
         messages: [
           {
             type: 'info',
-            message: 'flash.msg-37',
+            message: 'flash.user-not-certified',
             variables: { username: username, cert: certText[certType] }
           }
         ]
