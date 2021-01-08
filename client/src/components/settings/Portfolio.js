@@ -138,13 +138,13 @@ class PortfolioSettings extends Component {
     if (charsLeft < 0) {
       return {
         state: 'error',
-        message: t('validation.msg-1', { charsLeft: 0 })
+        message: t('validation.max-characters', { charsLeft: 0 })
       };
     }
     if (charsLeft < 41 && charsLeft > 0) {
       return {
         state: 'warning',
-        message: t('validation.msg-1', { charsLeft: charsLeft })
+        message: t('validation.max-characters', { charsLeft: charsLeft })
       };
     }
     if (charsLeft === 288) {
@@ -156,14 +156,14 @@ class PortfolioSettings extends Component {
   getTitleValidation(title) {
     const { t } = this.props;
     if (!title) {
-      return { state: 'error', message: t('validation.msg-5') };
+      return { state: 'error', message: t('validation.title-required') };
     }
     const len = title.length;
     if (len < 2) {
-      return { state: 'error', message: t('validation.msg-6') };
+      return { state: 'error', message: t('validation.title-short') };
     }
     if (len > 144) {
-      return { state: 'error', message: t('validation.msg-7') };
+      return { state: 'error', message: t('validation.title-long') };
     }
     return { state: 'success', message: '' };
   }
@@ -172,7 +172,7 @@ class PortfolioSettings extends Component {
     const { t } = this.props;
     const len = maybeUrl.length;
     if (len >= 4 && !hasProtocolRE.test(maybeUrl)) {
-      return { state: 'error', message: t('validation.msg-9') };
+      return { state: 'error', message: t('validation.invalid-protocol') };
     }
     if (isImage && !maybeUrl) {
       return { state: null, message: '' };
@@ -180,12 +180,12 @@ class PortfolioSettings extends Component {
     if (isImage && !/\.(png|jpg|jpeg|gif)$/.test(maybeUrl)) {
       return {
         state: 'error',
-        message: t('validation.msg-10')
+        message: t('validation.url-not-image')
       };
     }
     return isURL(maybeUrl)
       ? { state: 'success', message: '' }
-      : { state: 'warning', message: t('validation.msg-11') };
+      : { state: 'warning', message: t('validation.use-valid-url') };
   }
 
   renderPortfolio = (portfolio, index, arr) => {
