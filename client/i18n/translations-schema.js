@@ -488,85 +488,92 @@ const translationsSchema = {
     'last-page': 'Go to last page'
   },
   flash: {
-    'msg-1':
+    'honest-first':
       'To claim a certification, you must first accept our academic honesty policy',
-    'msg-2':
+    'really-weird':
       'Something really weird happened, if it happens again, please consider raising an issue on https://github.com/freeCodeCamp/freeCodeCamp/issues/new',
-    'msg-3':
+    'not-right':
       'Something is not quite right. A report has been generated and the freeCodeCamp.org team have been notified',
-    'msg-4': 'Something went wrong, please check and try again',
-    'msg-5': 'Your account has been successfully deleted',
-    'msg-6': 'Your progress has been reset',
-    'msg-7': 'You are not authorized to continue on this route',
-    'msg-8':
+    'went-wrong': 'Something went wrong, please check and try again',
+    'account-deleted': 'Your account has been successfully deleted',
+    'progress-reset': 'Your progress has been reset',
+    'not-authorized': 'You are not authorized to continue on this route',
+    'could-not-find':
       "We couldn't find what you were looking for. Please check and try again",
-    'msg-9':
+    'wrong-updating':
       'Something went wrong updating your account. Please check and try again',
-    'msg-10': 'We have updated your preferences',
-    'msg-11': 'Email format is invalid',
-    'msg-12': 'currentChallengeId is not a valid challenge ID',
-    'msg-13': 'Theme is invalid',
-    'msg-14': 'Theme already set',
-    'msg-15': 'Your theme has been updated!',
-    'msg-16': 'Username is already associated with this account',
-    'msg-17': 'Username is already associated with a different account',
-    'msg-18': 'We have updated your username to {{username}}',
-    'msg-19': 'We could not log you out, please try again in a moment',
-    'msg-20': 'The email encoded in the link is incorrectly formatted',
-    'msg-21':
+    'updated-preferences': 'We have updated your preferences',
+    'email-invalid': 'Email format is invalid',
+    'bad-challengeId': 'currentChallengeId is not a valid challenge ID',
+    'theme-invalid': 'Theme is invalid',
+    'theme-set': 'Theme already set',
+    'theme-updated': 'Your theme has been updated!',
+    'username-used': 'Username is already associated with this account',
+    'username-taken': 'Username is already associated with a different account',
+    'username-updated': 'We have updated your username to {{username}}',
+    'could-not-logout':
+      'We could not log you out, please try again in a moment',
+    'email-encoded-wrong':
+      'The email encoded in the link is incorrectly formatted',
+    'oops-not-right':
       'Oops, something is not right, please request a fresh link to sign in / sign up',
-    'msg-22':
+    'expired-link':
       'Looks like the link you clicked has expired, please request a fresh link, to sign in',
-    'msg-23': 'Success! You have signed in to your account. Happy Coding!',
-    'msg-24':
+    'signin-success':
+      'Success! You have signed in to your account. Happy Coding!',
+    'social-auth-gone':
       'We are moving away from social authentication for privacy reasons. Next time we recommend using your email address: {{email}} to sign in instead.',
-    'msg-25':
+    'name-needed':
       'We need your name so we can put it on your certification. Add your name to your account settings and click the save button. Then we can issue your certification.',
-    'msg-26':
+    'incomplete-steps':
       'It looks like you have not completed the necessary steps. Please complete the required projects to claim the {{name}} Certification.',
-    'msg-27':
+    'already-claimed':
       'It looks like you already have claimed the {{name}} Certification',
-    'msg-28':
+    'cert-claim-success':
       '@{{username}}, you have successfully claimed the {{name}} Certification! Congratulations on behalf of the freeCodeCamp.org team!',
-    'msg-29':
+    'wrong-name':
       'Something went wrong with the verification of {{name}}, please try again. If you continue to receive this error, you can send a message to support@freeCodeCamp.org to get help.',
-    'msg-30': 'Error claiming {{certName}}',
-    'msg-31': 'We could not find a user with the username "{{username}}"',
-    'msg-32':
+    'error-claiming': 'Error claiming {{certName}}',
+    'username-not-found':
+      'We could not find a user with the username "{{username}}"',
+    'add-name':
       'This user needs to add their name to their account in order for others to be able to view their certification.',
-    'msg-33':
+    'not-eligible':
       'This user is not eligible for freeCodeCamp.org certifications at this time.',
-    'msg-34':
+    'profile-private':
       '{{username}} has chosen to make their portfolio private. They will need to make their portfolio public in order for others to be able to view their certification.',
-    'msg-35':
+    'certs-private':
       '{{username}} has chosen to make their certifications private. They will need to make their certifications public in order for others to be able to view them.',
-    'msg-36': '{{username}} has not yet agrees to our Academic Honesty Pledge.',
-    'msg-37': 'It looks like user {{username}} is not {{cert}} certified',
-    'msg-38': 'That does not appear to be a valid challenge submission',
-    'msg-39':
+    'not-honest':
+      '{{username}} has not yet agreed to our Academic Honesty Pledge.',
+    'user-not-certified':
+      'It looks like user {{username}} is not {{cert}} certified',
+    'invalid-challenge':
+      'That does not appear to be a valid challenge submission',
+    'no-links-provided':
       'You have not provided the valid links for us to inspect your work.',
-    'msg-40': 'No social account found',
-    'msg-41': 'Invalid social account',
-    'msg-42': 'No {{website}} account associated',
-    'msg-43': "You've successfully unlinked your {{website}}",
-    'msg-44': 'Check if you have provided a username and a report',
-    'msg-45': 'A report was sent to the team with {{email}} in copy'
+    'no-social': 'No social account found',
+    'invalid-social': 'Invalid social account',
+    'no-account': 'No {{website}} account associated',
+    'unlink-success': "You've successfully unlinked your {{website}}",
+    'provide-username': 'Check if you have provided a username and a report',
+    'report-sent': 'A report was sent to the team with {{email}} in copy'
   },
   validation: {
-    'msg-1':
+    'max-characters':
       'There is a maximum limit of 288 characters, you have {{charsLeft}} left',
-    'msg-2': 'This email is the same as your current email',
-    'msg-3':
+    'same-email': 'This email is the same as your current email',
+    'invalid-email':
       'We could not validate your email correctly, please ensure it is correct',
-    'msg-4': 'Both new email addresses must be the same',
-    'msg-5': 'A title is required',
-    'msg-6': 'Title is too short',
-    'msg-7': 'Title is too long',
-    'msg-8':
+    'email-mismatch': 'Both new email addresses must be the same',
+    'title-required': 'A title is required',
+    'title-short': 'Title is too short',
+    'title-long': 'Title is too long',
+    'invalid-url':
       'We could not validate your URL correctly, please ensure it is correct',
-    'msg-9': 'URL must start with http or https',
-    'msg-10': 'URL must link directly to an image file',
-    'msg-11': 'Please use a valid URL'
+    'invalid-protocol': 'URL must start with http or https',
+    'url-not-image': 'URL must link directly to an image file',
+    'use-valid-url': 'Please use a valid URL'
   }
 };
 
