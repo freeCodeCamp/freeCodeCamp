@@ -33,14 +33,14 @@ export function handle400Error(e, options = { redirectTo: '/' }) {
       return {
         ...flash,
         type: 'warn',
-        message: 'flash.msg-7'
+        message: 'flash.not-authorized'
       };
     }
     case 404: {
       return {
         ...flash,
         type: 'info',
-        message: 'flash.msg-8'
+        message: 'flash.could-not-find'
       };
     }
     default: {
