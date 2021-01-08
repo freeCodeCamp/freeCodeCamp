@@ -1,13 +1,13 @@
 ---
 id: 594810f028c0303b75339ad7
-title: Zhang-Suen thinning algorithm
+title: Zhang-Suen 细化算法
 challengeType: 5
 forumTopicId: 302347
 ---
 
 # --description--
 
-This is an algorithm used to thin a black and white i.e. one bit per pixel images. For example, with an input image of:
+这是一个黑白图像（二值图像）的细化算法。 例如，输入图像如下：
 
 <!-- TODO write fully in markdown>
 <!-- markdownlint-disable -->
@@ -31,7 +31,7 @@ This is an algorithm used to thin a black and white i.e. one bit per pixel image
  ########     ####### ######         ############# ######
 </pre>
 
-It produces the thinned output:
+细化后的输出图像为：
 
 <pre>
 
@@ -52,9 +52,9 @@ It produces the thinned output:
 
 </pre>
 
-<h2>Algorithm</h2>
+<h2>算法</h2>
 
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+假设黑像素点为 1，白像素点为 0；则输入图像可以用一个 N * M 的矩阵（或数组）来表示，其中，矩阵中的元素只能为 0 或 1。这个算法对所有黑像素点 P1 进行操作。每个点 P1 都可以有 8 个相邻的点，分别是：
 
 <table border="3">
   <tr><td style="text-align: center;">P9</td><td style="text-align: center;">P2</td><td style="text-align: center;">P3</td></tr>
@@ -62,70 +62,70 @@ Assume black pixels are one and white pixels zero, and that the input image is a
   <tr><td style="text-align: center;">P7</td><td style="text-align: center;">P6</td><td style="text-align: center;">P5</td></tr>
 </table>
 
-Obviously the boundary pixels of the image cannot have the full eight neighbours.
+显然，对于图像边框上的像素点，与它们相邻的点的数量是小于 8 的。
 
 <ul>
-  <li>Define $A(P1)$ = the number of transitions from white to black, (0 -> 1) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).</li>
-  <li>Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )</li>
+  <li>令 $A(P1)$ 为需要变为黑点的白点数量，即在 P2, P3, P4, P5, P6, P7, P8, P9, P2 这一序列中，(0 -> 1) 的操作次数（注意：为了表示循环/闭环，我们在序列的结尾特地多加了一个 P2）</li>
+  <li>令 $B(P1)$ 为与 P1 相邻的点中，黑点的数量（即 sum(P2 .. P9)）</li>
 </ul>
 
-<h3>Step 1:</h3>
+<h3>步骤一：</h3>
 
-All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
+选出同时满足以下列出条件的所有像素点：
 
   <ol>
-    <li>The pixel is black and has eight neighbours</li>
+    <li>像素点为黑色，且有 8 个点与之相邻</li>
     <li>$2 <= B(P1) <= 6$</li>
     <li>$A(P1) = 1$</li>
-    <li>At least one of <strong>P2, P4 and P6</strong> is white</li>
-    <li>At least one of <strong>P4, P6 and P8</strong> is white</li>
+    <li><strong>P2, P4 and P6</strong> 中至少有一个是白点</li>
+    <li><strong>P4, P6 and P8</strong> 中至少有一个是白点</li>
   </ol>
 
-After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
+在对图像进行迭代并选出所有符合这一步所述条件的点后，把这些点都设置为白色。
 
-<h3>Step 2:</h3>
+<h3>步骤二：</h3>
 
-All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
+选出同时满足以下列出条件的所有像素点：
 
   <ol>
-    <li>The pixel is black and has eight neighbours</li>
+    <li>像素点为黑色，且有 8 个点与之相邻</li>
     <li>$2 <= B(P1) <= 6$</li>
     <li>$A(P1) = 1$</li>
-    <li>At least one of <strong>P2, P4 and P8</strong> is white</li>
-    <li>At least one of <strong>P2, P6 and P8</strong> is white</li>
+    <li><strong>P2, P4 and P6</strong> 中至少有一个是白点</li>
+    <li><strong>P2, P6 and P8</strong> 中至少有一个是白点</li>
   </ol>
   
-After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
+在对图像进行迭代并选出所有符合这一步所述条件的点后，把这些点都设置为白色。
 
-<h3>Iteration:</h3>
+<h3>迭代：</h3>
 
-If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.
+只要在步骤一或步骤二，有黑色点被选出并设置成了白色，则继续重复步骤一和步骤二，直到没有黑色点被选出并更改为止。
 
 # --instructions--
 
-Write a routine to perform Zhang-Suen thinning on the provided image matrix.
+基于输入图像（以矩阵的形式给出），实现 Zhang-suen 细化算法。
 
 # --hints--
 
-`thinImage` should be a function.
+`thinImage` 应为函数。
 
 ```js
 assert.equal(typeof thinImage, 'function');
 ```
 
-`thinImage` should return an array.
+`thinImage` 应返回数组。
 
 ```js
 assert(Array.isArray(result));
 ```
 
-`thinImage` should return an array of strings.
+`thinImage` 应返回字符串数组。
 
 ```js
 assert.equal(typeof result[0], 'string');
 ```
 
-`thinImage` should return an array of strings.
+`thinImage` 应返回预计的结果。
 
 ```js
 assert.deepEqual(result, expected);
