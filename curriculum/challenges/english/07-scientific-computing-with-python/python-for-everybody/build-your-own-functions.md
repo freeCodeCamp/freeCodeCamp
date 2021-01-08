@@ -30,45 +30,35 @@ jane()
 
 ## --answers--
 
-<pre>
-Zap
+<pre>Zap
 ABC
 jane
 fred
-jane
-</pre>
+jane</pre>
 
 ---
 
-<pre>
-Zap
+<pre>Zap
 ABC
-Zap
-</pre>
+Zap</pre>
 
 ---
 
-<pre>
-ABC
+<pre>ABC
 Zap
-jane
-</pre>
+jane</pre>
 
 ---
 
-<pre>
-ABC
+<pre>ABC
 Zap
-ABC
-</pre>
+ABC</pre>
 
 ---
 
-<pre>
+<pre>Zap
 Zap
-Zap
-Zap
-</pre>
+Zap</pre>
 
 ## --video-solution--
 

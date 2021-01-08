@@ -31,23 +31,23 @@ print(info[1]['name'])
 
 ## --answers--
 
-<pre>Quincy</pre>
+Quincy
 
 ---
 
-<pre>Mrugesh</pre>
+Mrugesh
 
 ---
 
-<pre>001</pre>
+001
 
 ---
 
-<pre>009</pre>
+009
 
 ---
 
-<pre>[Error]</pre>
+[Error]
 
 ## --video-solution--
 

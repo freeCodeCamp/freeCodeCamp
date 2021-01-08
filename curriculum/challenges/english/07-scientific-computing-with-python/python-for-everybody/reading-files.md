@@ -13,23 +13,23 @@ What is used to indicate a new line in a string?
 
 ## --answers--
 
-<pre>\\n</pre>
+\\n
 
 ---
 
-<pre>{new_line}</pre>
+{new_line}
 
 ---
 
-<pre>{n}</pre>
+{n}
 
 ---
 
-<pre>/n</pre>
+/n
 
 ---
 
-<pre>/new</pre>
+/new
 
 ## --video-solution--
 

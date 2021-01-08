@@ -19,15 +19,15 @@ print(x)
 
 ## --answers--
 
-<pre>x</pre>
+x
 
 ---
 
-<pre>x + 1</pre>
+x + 1
 
 ---
 
-<pre>44</pre>
+44
 
 ## --video-solution--
 

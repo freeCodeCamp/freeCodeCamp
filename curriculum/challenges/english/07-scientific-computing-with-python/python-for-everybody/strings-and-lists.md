@@ -26,19 +26,19 @@ n = parts[1]
 
 ## --answers--
 
-<pre>mail</pre>
+mail
 
 ---
 
-<pre>q</pre>
+q
 
 ---
 
-<pre>lar</pre>
+lar
 
 ---
 
-<pre>lar@freecodecamp.org</pre>
+`lar@freecodecamp.org`
 
 ## --video-solution--
 

@@ -18,19 +18,19 @@ print(x)
 
 ## --answers--
 
-<pre>x</pre>
+x
 
 ---
 
-<pre>6</pre>
+6
 
 ---
 
-<pre>x = 6</pre>
+x = 6
 
 ---
 
-<pre>(x)</pre>
+(x)
 
 ## --video-solution--
 
