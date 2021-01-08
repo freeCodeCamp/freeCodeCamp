@@ -140,7 +140,7 @@ const isCertMapSelector = createSelector(
 
 const honestyInfoMessage = {
   type: 'info',
-  message: 'flash.msg-1'
+  message: 'flash.honest-first'
 };
 
 const initialState = {
