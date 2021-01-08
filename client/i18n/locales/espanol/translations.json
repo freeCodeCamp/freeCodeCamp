@@ -443,7 +443,7 @@
     "name-needed": "Necesitamos tu nombre para poder incluirlo en tu certificación. Agregue tu nombre a la configuración de tu cuenta y haz clic en el botón Guardar. Entonces podemos emitir tu certificación.",
     "incomplete-steps": "Parece que no haz completado los pasos necesarios. Completa los proyectos requeridos para reclamar la Certificación {{name}}",
     "already-claimed": "Parece que ya reclamó la Certificación {{name}}",
-    "cert-claim-success": "@{{usernane}}, has reclamado con éxito el {{name}} Certificación! ¡Felicitaciones en nombre del equipo de freeCodeCamp.org!",
+    "cert-claim-success": "@{{username}}, has reclamado con éxito el {{name}} Certificación! ¡Felicitaciones en nombre del equipo de freeCodeCamp.org!",
     "wrong-name": "Se produjo un error con la verificación de {{name}}. Vuelve a intentarlo. Si continúas recibiendo este error, puedes enviar un mensaje a support@freeCodeCamp.org para obtener ayuda.",
     "error-claiming": "Error al reclamar {{certName}}",
     "username-not-found": "No pudimos encontrar un usuario con el nombre de usuario \"{{username}}\"",
