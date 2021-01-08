@@ -8,19 +8,19 @@ forumTopicId: 18230
 
 # --description--
 
-有时你想为网站添加一个 `a`，但如果你还不确定要将它链接到哪儿，这时可以使用链接占位符。
+有时你想为网站添加一个 `a` 元素，但还不确定要将它链接到哪里。这时，你可以使用链接占位符。
 
-在后面的课程中我们会学到：如何轻松通过`JavaScript`更改链接指向的地址。
+链接占位符还有一个应用场景，就是实现在点击 `a` 元素时执行 `JavaScript` 代码。我们会在后面的课程中学到。
 
 # --instructions--
 
-`href`属性的当前值是指向 "`https://freecatphotoapp.com`"，将`href`属性的值替换为`#`，就可以创建固定链接。
+目前，`href` 的属性值是 "`https://freecatphotoapp.com`"。请将 `href` 属性的值替换为`#`，以此来创建链接占位符。
 
 例如: `href="#"`
 
 # --hints--
 
-`a` 的`href`属性应为 "#"。
+`a` 的 `href` 属性值应为 "#"。
 
 ```js
 assert($('a').attr('href') === '#');

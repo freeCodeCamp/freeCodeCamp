@@ -8,7 +8,7 @@ forumTopicId: 16627
 
 # --description--
 
-让我们来给表单添加一个`submit`提交按钮，当点击提交按钮时，表单中的数据将会被发送到`action`属性指定的 URL 上。
+让我们来给表单添加一个 `submit`（提交）按钮。点击提交按钮时，表单中的数据将会被发送到 `action` 属性指定的 URL 上。
 
 例如：
 
@@ -16,23 +16,23 @@ forumTopicId: 16627
 
 # --instructions--
 
-在表单的底部创建一个`button`按钮，按钮的`type`属性值为`submit`，文本为`提交`。
+请在表单（`form` 元素）底部创建一个 `button` 元素，将按钮的 `type` 属性值设置为 `submit`，内容文本为 `提交`。
 
 # --hints--
 
-表单内部应该有一个按钮。
+表单内部应有一个 `button` 元素。
 
 ```js
 assert($('form').children('button').length > 0);
 ```
 
-按钮的`type`属性值应该为`submit`。
+按钮的 `type` 属性值应为 `submit`。
 
 ```js
 assert($('button').attr('type') === 'submit');
 ```
 
-提交按钮的文本应该为`提交`。
+提交按钮的文本应为 `Submit` 。
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-确保按钮有结束标记。
+`button` 元素应有结束标签。
 
 ```js
 assert(

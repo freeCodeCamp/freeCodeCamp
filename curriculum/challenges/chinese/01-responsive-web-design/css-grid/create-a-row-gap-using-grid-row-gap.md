@@ -8,15 +8,15 @@ forumTopicId: 301125
 
 # --description--
 
-和上个挑战在两列之间添加间距一样，你可以用`grid-row-gap`在两行之间设置间距。
+和上个挑战在两列之间添加间距一样，我们还可以用 `grid-row-gap` 设置行间距。
 
 # --instructions--
 
-为网格中的行添加高度为`5px`的间距。
+请为网格中的行添加高度为 `5px` 的间距。
 
 # --hints--
 
-`container`类应该有`grid-row-gap`属性且值为`5px`。
+class 为 `container` 的元素应具有 `grid-row-gap` 属性且属性值应为 `5px`。
 
 ```js
 assert(

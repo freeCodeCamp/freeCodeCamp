@@ -8,9 +8,9 @@ forumTopicId: 16630
 
 # --description--
 
-CSS 边框具有`style`，`color`和`width`属性。
+CSS 边框具有 `style`、`color`、`width` 属性。
 
-假如我们想要创建一个 5px 的红色实线边框包围一个 HTML 元素，我们可以这样做：
+假如我们要将一个 HTML 元素边框设置为 5px 的红色实线边框，我们可以这样做：
 
 ```html
 <style>
@@ -24,27 +24,27 @@ CSS 边框具有`style`，`color`和`width`属性。
 
 # --instructions--
 
-创建一个`thick-green-border` CSS class，该 class 应在 HTML 元素周围添加一个 10px 的绿色实线边框，将它应用在猫咪照片上。
+创建一个 `thick-green-border` 的 class，该 class 应在 HTML 元素周围添加一个 10px 的绿色实线边框，并将这个 class 应用在猫咪照片上。
 
-记得在一个元素上可以同时应用多个`class`，通过使用空格来分隔。例子如下：
+记得在一个元素上可以同时应用多个 `class`，使用空格来分隔不同 class 即可，例如：
 
 `<img class="class1 class2">`
 
 # --hints--
 
-`img`元素应该含有`smaller-image` class。
+`img` 元素应包含 `smaller-image` class。
 
 ```js
 assert($('img').hasClass('smaller-image'));
 ```
 
-`img`元素应该含有`thick-green-border` class。
+`img` 元素应包含 `thick-green-border` class。
 
 ```js
 assert($('img').hasClass('thick-green-border'));
 ```
 
-设置图片边框为`10px`。
+图片边框宽度应设置为 `10px`。
 
 ```js
 assert(
@@ -54,13 +54,13 @@ assert(
 );
 ```
 
-设置图片边框为`solid`实线。
+图片边框样式应为 `solid` 实线。
 
 ```js
 assert($('img').css('border-right-style') === 'solid');
 ```
 
-`img`元素的边框颜色应该为绿色。
+`img` 元素的边框颜色应为绿色。
 
 ```js
 assert($('img').css('border-left-color') === 'rgb(0, 128, 0)');

@@ -8,7 +8,7 @@ forumTopicId: 301053
 
 # --description--
 
-这部分课程主要关于应用视觉设计。开始的挑战展示了一些核心的原则，代码基于一个指定的卡片布局。
+这部分课程的主题是应用视觉设计。开始的挑战基于美化一个卡片组件的外观，借此展示了若干核心原则。
 
 web 内容大部分都是文本。CSS 里面的 `text-align` 属性可以控制文本的对齐方式。
 
@@ -22,17 +22,17 @@ web 内容大部分都是文本。CSS 里面的 `text-align` 属性可以控制�
 
 # --instructions--
 
-居中对齐 `h4` 标签文本，文本内容为 “Google”。两端对齐段落标签文本，文本介绍了 Google 的创立。
+请让内容文本为 `"Google"` 的 `h4` 标签居中对齐；让介绍了 Google 创立历程的段落文本两端对齐。
 
 # --hints--
 
-你应该在 `h4` 标签上使用 text-align 属性设置文本居中对齐。
+应在 `h4` 标签上使用 text-align 属性设置文本居中对齐。
 
 ```js
 assert($('h4').css('text-align') == 'center');
 ```
 
-你应该在 `p` 标签上使用 text-align 属性设置文本两端对齐。
+应在 `p` 标签上使用 text-align 属性设置文本两端对齐。
 
 ```js
 assert($('p').css('text-align') == 'justify');

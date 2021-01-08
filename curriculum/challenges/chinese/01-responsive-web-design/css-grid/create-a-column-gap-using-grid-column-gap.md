@@ -8,21 +8,21 @@ forumTopicId: 301124
 
 # --description--
 
-到目前为止，在你所建立的网格中列都相互紧挨着。如果需要在列与列之间添加一些间距，我们可以使用`grid-column-gap`：
+目前为止，在你所创建的网格中，每列都相互紧挨着。如果需要在列与列之间添加一些间距，我们可以使用 `grid-column-gap`：
 
 ```css
 grid-column-gap: 10px;
 ```
 
-这会在我们创建的所有列之间添加 10px 的空白间距。
+这会为我们创建的所有列之间都添加 10px 的空白间距。
 
 # --instructions--
 
-为网格中的列添加宽度为`20px`的间距。
+请为网格中的所有列添加宽度为 `20px` 的间距。
 
 # --hints--
 
-`container`类应该有`grid-column-gap`属性且值为`20px`。
+class 为 `container` 的元素应具有 `grid-column-gap` 属性且属性值应为 `20px`。
 
 ```js
 assert(

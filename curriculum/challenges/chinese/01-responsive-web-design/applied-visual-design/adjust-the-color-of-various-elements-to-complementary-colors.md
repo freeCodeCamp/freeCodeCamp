@@ -8,7 +8,7 @@ forumTopicId: 301033
 
 # --description--
 
-通过前面关卡的学习，我们知道了补色搭配能形成强列的对比效果，让内容更富生机。但是如果使用不当效果会适得其反，比如如果文字背景色和文字颜色互为补色，文字会很难看清。通常的做法是，一种颜色做为主要颜色，其补色用来装点页面。
+通过前面关卡的学习，我们知道了补色搭配能形成强列的对比效果，让内容更富生机。但是如果使用不当效果会适得其反：比如将文字背景色和文字颜色设置为互补色，这样文字会很难看清。通常的做法是，一种颜色做为主要颜色，然后使用其补色用来装点那些需要用户特别注意的部分。
 
 # --instructions--
 
@@ -16,25 +16,25 @@ forumTopicId: 301033
 
 # --hints--
 
-`header` 元素应该有一个值为 `#09A7A1` 的 `background-color` CSS 属性。
+`header` 元素的 `background-color` 属性值应为 `#09A7A1`。
 
 ```js
 assert($('header').css('background-color') == 'rgb(9, 167, 161)');
 ```
 
-`footer` 元素应该有一个值为 `#09A7A1` 的 `background-color`CSS 属性。
+`footer` 元素的 `background-color` 属性值应为 `#09A7A1`。
 
 ```js
 assert($('footer').css('background-color') == 'rgb(9, 167, 161)');
 ```
 
-`h2` 元素应该有一个值为 `#09A7A1` 的 `color` CSS 属性。
+`h2` 元素的 `color` 属性值应为 `#09A7A1`。
 
 ```js
 assert($('h2').css('color') == 'rgb(9, 167, 161)');
 ```
 
-`button` 元素应该有一个值为 `#FF790E` 的 `background-color` CSS 属性。
+`button` 元素的 `background-color` 属性值应为 `#FF790E`。
 
 ```js
 assert($('button').css('background-color') == 'rgb(255, 121, 14)');

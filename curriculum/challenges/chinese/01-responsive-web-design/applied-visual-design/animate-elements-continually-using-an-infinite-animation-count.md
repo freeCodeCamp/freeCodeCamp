@@ -16,7 +16,7 @@ forumTopicId: 301041
 
 # --instructions--
 
-把 `animation-iteration-count` 属性改成 infinite，以使右边的球持续跳跃。
+把 `animation-iteration-count` 属性值改成 infinite，以使右边的球持续跳跃。
 
 # --hints--
 

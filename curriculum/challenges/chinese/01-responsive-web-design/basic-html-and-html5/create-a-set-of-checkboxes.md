@@ -10,13 +10,13 @@ forumTopicId: 16821
 
 `checkboxes`（复选框）就好比多项选择题，正确答案有多个。
 
-复选框是`input`选择框的另一种类型。
+复选框是 `input` 选择框的一种类型。
 
-每一个复选框都应该嵌套在它自己的`label`（标签）元素中。
+每一个复选框都应该嵌套在它自己的 `label`（标签）元素中。这样，我们相当于给 `input` 元素和包裹它的 `label` 元素建立起了对应关系。
 
-所有关联的复选框应该拥有相同的`name`属性。
+所有关联的复选框应该拥有相同的 `name` 属性。
 
-最佳实践是在`label`元素上设置`for`属性，让其值与复选框的`id`属性值相等，这样就在`label`元素和它的子元素复选框之间创建了一种链接关系。例如：
+使得 `input` 与 `label` 关联的最佳实践是在 `label` 元素上设置 `for` 属性，让其值与复选框的 `id` 属性值相同。
 
 下面是一个复选框的例子：
 
@@ -24,23 +24,23 @@ forumTopicId: 16821
 
 # --instructions--
 
-给表单添加三个复选框，每个复选框都被嵌套进`label`元素中，并且它的`name`属性均为`personality`，它们的内容可以随意指定。
+请给表单添加三个复选框，每个复选框都被嵌套进 `label` 元素中，并且它的 `name` 属性均为 `personality`。你可以随意指定每个复选框的内容文本。
 
 # --hints--
 
-表单应该有三个复选框。
+表单中应存在三个复选框。
 
 ```js
 assert($('input[type="checkbox"]').length > 2);
 ```
 
-每个复选框都应该被嵌套进`label`元素中。
+每个复选框都应该被嵌套进 `label` 元素中。
 
 ```js
 assert($('label > input[type="checkbox"]:only-child').length > 2);
 ```
 
-确保`label`元素有结束标记。
+确保 `label` 元素有结束标签。
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-设置复选框的`name`属性均为`personality`。
+复选框的 `name` 属性值均应为 `personality`。
 
 ```js
 assert(

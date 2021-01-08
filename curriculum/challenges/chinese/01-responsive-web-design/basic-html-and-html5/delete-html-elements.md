@@ -8,29 +8,29 @@ forumTopicId: 17559
 
 # --description--
 
-手机的屏幕空间是有限的。
+手机屏幕的空间是有限的。
 
-让我们删除不必要的元素，开始设计我们的CatPhotoApp。
+让我们删除不必要的元素，开始设计我们的 CatPhotoApp。
 
 # --instructions--
 
-任务：删除`h1`元素以简化视图。
+任务：删除 `h1` 元素以简化视图。
 
 # --hints--
 
-删除`h1`元素。
+应删除 `h1` 元素。
 
 ```js
 assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi));
 ```
 
-保留`h2`元素。
+应保留 `h2` 元素。
 
 ```js
 assert(code.match(/<h2>[\w\W]*<\/h2>/gi));
 ```
 
-保留`p`元素。
+应保留 `p` 元素。
 
 ```js
 assert(code.match(/<p>[\w\W]*<\/p>/gi));

@@ -33,7 +33,7 @@ forumTopicId: 301073
 
 注意 `ms` 代表毫秒，1000ms 等于 1s。
 
-使用 `@keyframes` 来改变 `button` 元素的 `background-color`，使其当悬停时变成 `#4791d0`。`@keyframes` 规则应该只有一个 `100%` 条目。
+使用 `@keyframes` 来改变 `button` 元素的 `background-color`，使其在悬停时变成 `#4791d0`。`@keyframes` 规则应该只有一个 `100%` 条目。
 
 # --hints--
 
@@ -43,7 +43,7 @@ forumTopicId: 301073
 assert(code.match(/@keyframes\s+?background-color\s*?{/g));
 ```
 
-在 `@keyframes` 的 `100%` 条目里应该把 `background-color` 改成 `#4791d0`。
+在 `@keyframes` 为 `100%` 的位置，应将 `background-color` 改成 `#4791d0`。
 
 ```js
 assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));

@@ -8,48 +8,58 @@ forumTopicId: 301067
 
 # --description--
 
-`font-size` 属性用来指定元素内文字的大小。这个规则可以应用到多个元素上，合理的使用，能让页面的文字显示的错落有致。在本挑战里，你将要设置 `h1` 到 `h6` 的每个标题文字的大小。
+`font-size` 属性用来指定元素内文字的大小。我们可以为多个元素添加 `font-size` 规则，这样做可以让页面内不同元素的文字大小得以统一。在本挑战里，你需要设置从 `h1` 到 `h6` 的文字大小。
 
 # --instructions--
 
-<ul><li>设置 <code>h1</code> 标签的 <code>font-size</code> 为 68px。</li><li>设置 <code>h2</code> 标签的 <code>font-size</code> 为 52px。</li><li>设置 <code>h3</code> 标签的 <code>font-size</code> 为 40px。</li><li>设置 <code>h4</code> 标签的 <code>font-size</code> 为 32px。</li><li>设置 <code>h5</code> 标签的 <code>font-size</code> 为 21px。</li><li>设置 <code>h6</code> 标签的 <code>font-size</code> 为 14px。</li></ul>
+  <p>在 <code>style</code> 标签中, 对各元素的 <code>font-size</code> 进行如下设置：</p>
+
+  <ul>
+    <li>将 <code>h1</code> 标签的文字大小设为 68px。</li>
+    <li>将 <code>h2</code> 标签的文字大小设为 52px。</li>
+    <li>将 <code>h3</code> 标签的文字大小设为 40px</li>
+    <li>将 <code>h4</code> 标签的文字大小设为 32px</li>
+    <li>将 <code>h5</code> 标签的文字大小设为 21px</li>
+    <li>将 <code>h6</code> 标签的文字大小设为 14px</li>
+  </ul>
 
 # --hints--
 
-你应该设置 `h1` 标签的 `font-size` 为 `68px`。
+`h1` 标签的 `font-size` 属性值应为 `68px`。
 
 ```js
 assert($('h1').css('font-size') == '68px');
 ```
 
-你应该设置 `h2` 标签的 `font-size` 为 `52px`。
+`h2` 标签的 `font-size` 属性值应为 `52px`。
 
 ```js
 assert($('h2').css('font-size') == '52px');
 ```
 
-你应该设置 `h3` 标签的 `font-size` 为 `40px`。
+`h3` 标签的 `font-size` 属性值应为 `40px`。
 
 ```js
 assert($('h3').css('font-size') == '40px');
 ```
 
-你应该设置 `h4` 标签的 `font-size` 为 `32px`。
+`h4` 标签的 `font-size` 属性值应为 `32px`。
 
 ```js
 assert($('h4').css('font-size') == '32px');
 ```
 
-你应该设置 `h5` 标签的 `font-size` 为 `21px`。
+`h5` 标签的 `font-size` 属性值应为 `21px`。
 
 ```js
 assert($('h5').css('font-size') == '21px');
 ```
 
-你应该设置 `h6` 标签的 `font-size` 为 `14px`。
+`h6` 标签的 `font-size` 属性值应为 `14px`。
 
 ```js
-assert($('h6').css('font-size') == '14px');
+const regex = /h6\s*\{\s*font-size\s*:\s*14px\s*(;\s*\}|\})/i;
+assert.strictEqual(true, regex.test(code));
 ```
 
 # --solutions--
