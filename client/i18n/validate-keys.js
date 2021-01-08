@@ -54,9 +54,12 @@ const readComponentCode = filePath => {
 };
 
 const clientCodebase = readComponentCode(path.join(process.cwd() + '/src'));
+const serverCodebase = readComponentCode(
+  path.join(process.cwd() + '/../api-server/server')
+);
 
 for (const key of keyStrings) {
-  if (!clientCodebase.includes(key)) {
+  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
     console.warn(`The translation key '${key}' appears to be unused.`);
   }
 }
