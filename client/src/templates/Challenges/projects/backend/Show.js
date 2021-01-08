@@ -168,7 +168,7 @@ export class BackEnd extends Component {
       isChallengeCompleted,
       output,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
       t,
       tests,
@@ -181,7 +181,6 @@ export class BackEnd extends Component {
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >

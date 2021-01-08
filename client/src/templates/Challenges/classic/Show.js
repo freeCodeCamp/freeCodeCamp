@@ -78,7 +78,6 @@ const propTypes = {
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.shape({
       id: PropTypes.string,
-      introPath: PropTypes.string,
       nextChallengePath: PropTypes.string,
       prevChallengePath: PropTypes.string
     })
@@ -285,7 +284,7 @@ class ShowClassic extends Component {
     const {
       executeChallenge,
       pageContext: {
-        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+        challengeMeta: { nextChallengePath, prevChallengePath }
       },
       files,
       t
@@ -296,7 +295,6 @@ class ShowClassic extends Component {
         editorRef={this.editorRef}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
-        introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
       >
