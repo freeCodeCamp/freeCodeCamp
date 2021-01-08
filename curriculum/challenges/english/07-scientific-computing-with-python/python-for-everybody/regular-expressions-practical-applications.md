@@ -17,11 +17,11 @@ What will search for a "$" in a regular expression?
 
 ---
 
-<pre>\dollar\</pre>
+<pre>\\dollar\\</pre>
 
 ---
 
-<pre>\$</pre>
+<pre>\\$</pre>
 
 ---
 
@@ -30,3 +30,4 @@ What will search for a "$" in a regular expression?
 ## --video-solution--
 
 3
+
