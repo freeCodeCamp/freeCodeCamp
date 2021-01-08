@@ -286,7 +286,7 @@
     "title": "Quality Assurance",
     "intro": [
       "As your programs or web applications become more complex, you'll want to test them to make sure that new changes don't break their original functionality.",
-      "In the Quality Assurance Certification, you'll learn how to write to write tests with Chai and Mocha to ensure your applications work the way you expect them to.",
+      "In the Quality Assurance Certification, you'll learn how to write to write tests with Chai to ensure your applications work the way you expect them to.",
       "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, Socket.io for real-time communication between the server and connected clients."
     ],
     "image": "https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/usability_testing_2xs4.svg",
@@ -294,21 +294,22 @@
       "quality-assurance-and-testing-with-chai": {
         "title": "Quality Assurance and Testing with Chai",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Chai is a JavaScript testing library that helps you check that your program still behaves the way you expect it to after you make changes. Using Chai, you can write tests that describe your program's requirements and see if your program meets them.",
+          "In these tutorials, you'll learn about assertions, deep equality, truthiness, testing APIs, and other fundamentals for testing JavaScript applications."
         ]
       },
       "advanced-node-and-express": {
         "title": "Advanced Node and Express",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Now it's time to take a deep dive into Node and Express by building a chat application with a sign in system. To implement the sign in system safely, you'll need to learn about authentication, which is the act of verifying the identity of a person of process.",
+          "In these tutorials, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front end, and web sockets for real-time communication between the clients and server."
         ]
       },
       "quality-assurance-projects": {
         "title": "Quality Assurance Projects",
         "intro": [
-          "Placeholder"
+          "Now that you're well versed with both the front end and back end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "After completing these Quality Assurance projects, you'll have 5 more projects under your belt, and a new certificate to show off on your portfolio."
         ]
       }
     }
