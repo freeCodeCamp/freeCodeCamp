@@ -41,9 +41,8 @@ jan 100</pre>
 
 ---
 
-<pre>\[Error]</pre>
+<pre>[Error]</pre>
 
 ## --video-solution--
 
 1
-
