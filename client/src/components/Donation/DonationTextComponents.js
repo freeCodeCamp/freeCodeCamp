@@ -43,7 +43,7 @@ export const DonationOptionsText = () => (
           'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'
         }
       >
-        other ways we could support our non-profit's mission
+        other ways you can support our non-profit's mission
       </a>
       .
     </p>
@@ -57,7 +57,7 @@ export const DonationOptionsAlertText = () => (
     <a
       href={'https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp'}
     >
-      other ways we could support our non-profit's mission
+      other ways you can support our non-profit's mission
     </a>
     .
   </p>
