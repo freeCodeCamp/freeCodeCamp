@@ -205,7 +205,7 @@ export class Block extends Component {
                 completedCount === challengesWithCompleted.length
               )}
             </span>
-            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+            <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
           </div>
         </button>
         <ul>

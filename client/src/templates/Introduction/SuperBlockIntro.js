@@ -231,52 +231,50 @@ export class SuperBlockIntroductionPage extends Component {
           ))}
           <Spacer size={2} />
           <h2 className='text-center'>{tutorialsText}</h2>
-          <div className='block-ui'>
-            <ul className='block'>
-              {blockDashedNames.map(blockDashedName => (
-                <div
-                  key={blockDashedName}
-                  ref={
-                    blockDashedName === blockToScrollTo ? this.elementRef : null
+          <ul className='block-ui'>
+            {blockDashedNames.map(blockDashedName => (
+              <div
+                key={blockDashedName}
+                ref={
+                  blockDashedName === blockToScrollTo ? this.elementRef : null
+                }
+              >
+                <Block
+                  blockDashedName={blockDashedName}
+                  challenges={nodesForSuperBlock.filter(
+                    node => node.block === blockDashedName
+                  )}
+                  superBlockDashedName={superBlockDashedName}
+                />
+              </div>
+            ))}
+            {superBlock !== 'Coding Interview Prep' && (
+              <li className='block'>
+                <button
+                  className='map-cert-title'
+                  onClick={
+                    isCertified[superBlock]
+                      ? () => navigate(certLocation)
+                      : null
                   }
                 >
-                  <Block
-                    blockDashedName={blockDashedName}
-                    challenges={nodesForSuperBlock.filter(
-                      node => node.block === blockDashedName
-                    )}
-                    superBlockDashedName={superBlockDashedName}
-                  />
-                </div>
-              ))}
-              {superBlock !== 'Coding Interview Prep' && (
-                <li className='block'>
-                  <button
-                    className='map-cert-title'
-                    onClick={
-                      isCertified[superBlock]
-                        ? () => navigate(certLocation)
-                        : null
-                    }
-                  >
-                    <CertificationIcon />
-                    <h3>
-                      {superBlockTitle} {certificationText}
-                    </h3>
-                    <div className='map-title-completed-big'>
-                      <span>
-                        {isCertified[superBlock] ? (
-                          <GreenPass style={certIconStyle} />
-                        ) : (
-                          <GreenNotCompleted style={certIconStyle} />
-                        )}
-                      </span>
-                    </div>
-                  </button>
-                </li>
-              )}
-            </ul>
-          </div>
+                  <CertificationIcon />
+                  <h3>
+                    {superBlockTitle} {certificationText}
+                  </h3>
+                  <div className='map-title-completed-big'>
+                    <span>
+                      {isCertified[superBlock] ? (
+                        <GreenPass style={certIconStyle} />
+                      ) : (
+                        <GreenNotCompleted style={certIconStyle} />
+                      )}
+                    </span>
+                  </div>
+                </button>
+              </li>
+            )}
+          </ul>
           {!isSignedIn && (
             <Row>
               <Col sm={8} smOffset={2} xs={12}>
