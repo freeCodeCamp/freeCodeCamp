@@ -8,15 +8,15 @@ forumTopicId: 301134
 
 # --description--
 
-在 CSS 网格中，可以使用绝对定位和相对定位单位如`px`和`em`来确定行或列的大小。下面的单位也可以使用：
+在 CSS 网格中，可以使用绝对单位（如 `px`）或相对单位（如 `em`）来定义行或列的大小。下面的单位也可以使用：
 
-`fr`：设置列或行占剩余空间的一个比例，
+`fr`：设置列或行占剩余空间的比例，
 
 `auto`：设置列宽或行高自动等于它的内容的宽度或高度，
 
 `%`：将列或行调整为它的容器宽度或高度的百分比，
 
-最右侧的预览区中的效果通过下面的代码实现：
+以下代码为右侧预览区中的效果：
 
 ```css
 grid-template-columns: auto 50px 10% 2fr 1fr;
@@ -26,11 +26,11 @@ grid-template-columns: auto 50px 10% 2fr 1fr;
 
 # --instructions--
 
-生成一个包含三列的网格，每列宽度分别为：1fr，100px，和 2fr。
+生成一个包含三列的网格，每列宽度分别为：1fr、100px、2fr。
 
 # --hints--
 
-`container`类应该有`grid-template-columns`属性，且生成宽为`1fr, 100px`和`2fr`的三列。
+class 为 `container` 的元素应具有 `grid-template-columns` 属性且属性值应为 `1fr 100px 2fr`。
 
 ```js
 assert(

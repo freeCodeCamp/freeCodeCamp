@@ -8,9 +8,9 @@ forumTopicId: 1
 
 # --description--
 
-HTML 提供`accesskey`属性，用于指定激活标签或者使标签获得焦点的快捷键，这可以使键盘用户的导航更加便捷。
+HTML 提供 `accesskey` 属性，用于指定激活元素或者使元素获得焦点的快捷键。这可以让键盘用户的导航更加便捷。
 
-HTML5 允许在任何标签上使用这个属性。该属性 （如链接、按钮、表单控件等）十分有用。
+HTML5 允许在任何标签上使用这个属性。该属性尤其适用于链接、按钮、表单组件等元素。
 
 举个例子：
 
@@ -18,29 +18,29 @@ HTML5 允许在任何标签上使用这个属性。该属性 （如链接、按�
 
 # --instructions--
 
-Camper Cat 希望为他的两篇博客的标题的链接设置快捷键，以使用户可以快速导航到文章的全文。请为这两个链接添加`accesskey`属性，并将第一个设置为 "g"（表示 Garfield），第二个设置为 "c"（表示 Chuck Norris）。
+Camper Cat 希望为他两篇博客的标题链接设置快捷键，以使用户可以快速导航到文章的全文。请为这两个链接添加 `accesskey` 属性，并将第一个的属性值设置为 "g"（表示 Garfield），将第二个的属性值设置为 "c"（表示 Chuck Norris）。
 
 # --hints--
 
-你应该为`id`是 "first" 的`a`标签添加`accesskey`属性。
+`id` 为 "first" 的 `a` 标签应具有 `accesskey` 属性。
 
 ```js
 assert($('#first').attr('accesskey'));
 ```
 
-你应该为`id`是 "second" 的`a`标签添加`accesskey`属性。
+`id` 为 "second" 的 `a` 标签应具有 `accesskey` 属性。
 
 ```js
 assert($('#second').attr('accesskey'));
 ```
 
-你应该将`id`是 "first" 的`a`标签的`accesskey`属性值设置为小写 "g"。
+`id` 为 "first" 的 `a` 标签的 `accesskey` 属性值应为小写的 "g"。
 
 ```js
 assert($('#first').attr('accesskey') == 'g');
 ```
 
-你应该将`id`是 "second" 的`a`标签的`accesskey`属性值设置为小写 "c"。
+`id` 为 "second" 的 `a` 标签的 `accesskey` 属性值应为小写的 "c"。
 
 ```js
 assert($('#second').attr('accesskey') == 'c');

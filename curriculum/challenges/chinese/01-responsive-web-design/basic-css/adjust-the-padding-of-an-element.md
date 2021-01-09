@@ -8,25 +8,25 @@ forumTopicId: 301083
 
 # --description--
 
-我们先暂时把猫咪图片放在一边，让我们去学习更多 HTML 相关样式。
+我们暂时把要做的猫咪图片 App 放在一边，先来多了解一下如何给 HTML 添加样式。
 
-你可能已经注意到了，所有的 HTML 元素基本都是以矩形为基础。
+你可能已经注意到了，所有的 HTML 元素都是以矩形为基础。
 
-每个 HTML 元素周围的矩形空间由三个重要的属性来控制：`padding（内边距）`，`margin（外边距）`和`border（边框）`。
+每个 HTML 元素所占有的矩形空间由这三个重要的属性来控制：内边距 `padding`、外边距 `margin` 、边框 `border`。
 
-`padding`控制着元素内容与`border`之间的空隙大小。
+`padding` 用来控制着元素内容与 `border` 之间的空隙大小。
 
-在这里，我们可以看到蓝色框和红色框都在黄色框里面。可以发现，红色框比蓝色框有着更多的`padding`填充空间。
+在这个挑战中，我们可以看到蓝色框和红色框都在黄色框里面，同时，红色框比蓝色框的 `padding` 大。
 
-当你增加蓝色框的`padding`值，文本内容与边框的距离会逐渐拉大。
+如果你增加蓝色框的 `padding` 值，其中的文本内容与边框的距离就也会变大。
 
 # --instructions--
 
-蓝色的框`padding`的值要跟红色框的一样大小。
+将蓝色的框的 `padding` 值设置成与红色框 `padding` 值一样。
 
 # --hints--
 
-`blue-box` class 的`padding`值应为`20px`。
+`blue-box` 这一 class 应将元素的 `padding` 值设置为 `20px`。
 
 ```js
 assert($('.blue-box').css('padding-top') === '20px');

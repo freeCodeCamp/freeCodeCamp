@@ -8,51 +8,51 @@ forumTopicId: 16640
 
 # --description--
 
-用`img`元素来为你的网站添加图片，其中`src`属性指向一个图片的地址。
+你可以使用 `img` 元素来为你的网站添加图片，其中 `src` 属性指向图片的地址。
 
 例如：
 
 `<img src="https://www.freecatphotoapp.com/your-image.jpg">`
 
-注意：`img`元素是没有结束标记的。
+注意：`img` 元素是没有结束标签的。
 
-所有的`img`元素必须有`alt`属性，`alt`属性的文本是当图片无法加载时显示的替代文本，这对于通过屏幕阅读器来浏览网页的用户非常重要。
+所有的 `img` 元素**必须**有 `alt` 属性。`alt` 的属性值有两个作用，第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本。
 
-注意：如果图片是纯装饰性的，用一个空的`alt`是最佳实践。
+注意：如果图片是纯装饰性的，把 `alt` 的属性值设置为空是最佳实践。
 
-理想情况下，`alt`属性不应该包含特殊字符，除非必要。
+理想情况下，`alt` 属性不应该包含特殊字符，除非有特殊需要。
 
-让我们给上面例子的`img`添加`alt`属性。
+让我们给上面例子的 `img` 添加 `alt` 属性。
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="作者站在沙滩上竖起两个大拇指">`
+`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="一只打着领带的商务猫">`
 
 # --instructions--
 
 让我们给网站添加图片：
 
-在`main`元素里面，给`p`前面插入一个`img`元素
+在 `main` 元素里，给 `p` 元素前面插入一个 `img` 元素。
 
-现在设置`src`属性指向这个地址：
+然后将 `src` 的属性值设置为这个 URL：
 
 `https://bit.ly/fcc-relaxing-cat`
 
-最后不要忘记给图片添加一个`alt`文本。
+最后，不要忘记给图片加上 `alt` 属性。
 
 # --hints--
 
-网页应该有一张图片。
+你的网页上应该有一张图片。
 
 ```js
 assert($('img').length);
 ```
 
-`img` 应该有一个`src`属性，指向猫咪图片。
+`img` 应该有一个 `src` 属性，其值为猫咪图片的 URL。
 
 ```js
 assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($('img').attr('src')));
 ```
 
-`img` 元素的`alt`属性值不应为空。
+`img` 元素的 `alt` 属性值不应为空。
 
 ```js
 assert(

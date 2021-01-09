@@ -8,9 +8,9 @@ forumTopicId: 301069
 
 # --description--
 
-在上一个挑战里你已经设置了每个标题的 `font-size`，接下来你将设置 `font-weight`。
+在上一个挑战里我们已经为每个标题设置了 `font-size`，接下来我们将要设置 `font-weight`。
 
-`font-weight` 属性用于设置文本中所用的字体的粗细。
+`font-weight` 属性用于设置文本中字体的粗细。
 
 # --instructions--
 
@@ -18,37 +18,37 @@ forumTopicId: 301069
 
 # --hints--
 
-你应该设置 `h1` 标签的 `font-weight` 为 800。
+`h1` 标签的 `font-weight` 属性值应为 800。
 
 ```js
 assert($('h1').css('font-weight') == '800');
 ```
 
-你应该设置 `h2` 标签的 `font-weight` 为 600。
+`h2` 标签的 `font-weight` 属性值应为 600。
 
 ```js
 assert($('h2').css('font-weight') == '600');
 ```
 
-你应该设置 `h3` 标签的 `font-weight` 为 500。
+`h3` 标签的 `font-weight` 属性值应为 500。
 
 ```js
 assert($('h3').css('font-weight') == '500');
 ```
 
-你应该设置 `h4` 标签的 `font-weight` 为 400。
+`h4` 标签的 `font-weight` 属性值应为 400。
 
 ```js
 assert($('h4').css('font-weight') == '400');
 ```
 
-你应该设置 `h5` 标签的 `font-weight` 为 300。
+`h5` 标签的 `font-weight` 属性值应为 300。
 
 ```js
 assert($('h5').css('font-weight') == '300');
 ```
 
-你应该设置 `h6` 标签的 `font-weight` 为 200。
+`h6` 标签的 `font-weight` 属性值应为 200。
 
 ```js
 assert($('h6').css('font-weight') == '200');

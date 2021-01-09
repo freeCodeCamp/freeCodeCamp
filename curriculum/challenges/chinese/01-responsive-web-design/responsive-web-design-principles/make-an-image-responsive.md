@@ -1,6 +1,6 @@
 ---
 id: 587d78b1367417b2b2512b09
-title: 使图片根据设备尺寸自如响应
+title: 使图片自适应设备尺寸
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
@@ -17,21 +17,21 @@ img {
 }
 ```
 
-设置 `max-width` 值为 `100%` 可确保图片不超出父容器的范围。设置 `height`属性为 `auto` 保持图片的原始宽高比。
+设置 `max-width` 值为 `100%` 可确保图片不超出父容器的范围；设置 `height` 属性为 `auto` 可以保持图片的原始宽高比。
 
 # --instructions--
 
-给 `responsive-img` 添加样式规则，使其成为响应式。它不应该超出父容器（在本例中，即预览窗口）的范围，并保持宽高比不变。添加代码后，拖动浏览器窗口，看看图片发生什么变化。
+给 `responsive-img` 添加样式规则，使其成为响应式的图片。它不应该超出父容器（在本例中，即预览窗口）的范围，并保持宽高比不变。添加代码后，拖动浏览器窗口，看看图片发生什么变化。
 
 # --hints--
 
-`responsive-img` 类应设置 `max-width` 为 `100%`。
+`responsive-img` 类应将 `max-width` 设置为 `100%`。
 
 ```js
 assert(getComputedStyle($('.responsive-img')[0]).maxWidth === '100%');
 ```
 
-`responsive-img` 类应设置 `height` 为 `auto`。
+`responsive-img` 类应将 `height` 设置为 `auto`。
 
 ```js
 assert(code.match(/height:\s*?auto;/g));

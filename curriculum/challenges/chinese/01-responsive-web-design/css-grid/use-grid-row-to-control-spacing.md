@@ -8,15 +8,15 @@ forumTopicId: 301137
 
 # --description--
 
-当然，和设置一个网格项占用多列一样，你也可以设置它占用多行。你可以使用`grid-row`属性来定义一个网格项开始和结束的水平线。
+和设置一个网格项占用多列类似，你也可以设置它占用多行。你可以使用 `grid-row` 属性来定义一个网格项开始和结束的水平线。
 
 # --instructions--
 
-使类为`item5`的元素占用最后两行。
+请让 class 为 `item5` 的元素占用最后两行。
 
 # --hints--
 
-`item5`类应该有`grid-row`属性且值为`2 / 4`。
+class 为 `item5` 的元素应具有 `grid-row` 属性。
 
 ```js
 assert(
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`item5` class 应该有 `grid-row` 属性使其占用网格最后两行。
+class 为 `item5` 的元素应具有 `grid-row` 属性，其属性值应将元素设置为占用网格的最后两行。
 
 ```js
 const rowStart = getComputedStyle($('.item5')[0]).gridRowStart;

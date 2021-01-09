@@ -8,7 +8,7 @@ forumTopicId: 301057
 
 # --description--
 
-电脑显示器和手机屏幕是一种加色模型，将红（R）、绿（G）、蓝（B）三原色的色光以不同的比例相加，以产生多种多样的色光。两种原色相加产生二次色：蓝绿（G+B）、品红（R+B）和黄色（R+G）。你在上一个挑战里已经见过这些颜色了。这些二次色恰好是在合成它们时未使用的原色的补色，即在色环中位于两端。例如，品红色是红色和蓝色相加产生，它是绿色的补色。
+电脑显示器和各类屏幕都是基于颜色叠加的模型：将红（R）、绿（G）、蓝（B）三原色的色光以不同的比例相加，就可以产生各种色彩光，这种模式叫做三原色光模式（RGB Color Model）。如果把两种原色相加，就可以产生二次色：蓝绿（G+B）、品红（R+B）和黄色（R+G），我们在上一个挑战里已经见过这些颜色了。这些二次色恰好是在合成它们时未使用的原色的补色，即在色环中位于两端。例如，品红色是红色和蓝色相加产生，它是绿色的补色。
 
 三次色是由原色和二次色相加产生的颜色，例如红色（原色）和黄色（二次色）相加产生橙色。将这六种颜色中相邻的颜色相加，便产生了十二色色环。
 
@@ -20,29 +20,29 @@ forumTopicId: 301057
 
 # --instructions--
 
-把 class 为 `orange`、`cyan` 和 `rasberry` 的 `background-color` 改成其对应的颜色。由于 rasberry 不在浏览器 17 种标准色之内，不能直接用作颜色名，所以要使用 HEX 颜色码。
+把 class 为 `orange`、`cyan` 和 `raspberry` 的 `background-color` 改成其对应的颜色。在这个挑战中，请使用颜色的十六进制符号（即 hex code）来表示。
 
 # --hints--
 
-class 为 `orange` 的 `div` 应该有值为橙色的 `background-color` CSS 属性。
+class 为 `orange` 的 `div` 的 `background-color` 属性值应为橙色。
 
 ```js
 assert($('.orange').css('background-color') == 'rgb(255, 127, 0)');
 ```
 
-class 为 `cyan` 的 `div` 应该有值为蓝绿色的 `background-color` CSS 属性。
+class 为 `cyan` 的 `div` 的 `background-color` 属性值应为蓝绿色。
 
 ```js
 assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
 ```
 
-class 为 `raspberry` 的 `div` 应该有值为树莓红色的 `background-color` CSS 属性。
+class 为 `raspberry` 的 `div` 的 `background-color` 属性值应为树莓红色。
 
 ```js
 assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');
 ```
 
-corlor classes 里的所有的 `background-color` 应该是 HEX 颜色码而不是颜色名称。
+所有的 `background-color` 应使用十六进制颜色码，而不应使用颜色名称。
 
 ```js
 assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));

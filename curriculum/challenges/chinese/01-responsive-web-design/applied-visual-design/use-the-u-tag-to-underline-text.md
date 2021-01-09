@@ -8,28 +8,26 @@ forumTopicId: 301082
 
 # --description--
 
-术语：Underline => u => 下划线。
-
-你可以使用 `u` 标签来给文字添加下划线。添加了 `u` 标签后，浏览器会自动给元素应用 `text-decoration: underline;`。
+你可以使用 `u` 标签来给文字添加下划线。下划线通常用来表示重要内容或需要记忆的内容。添加了 `u` 标签后，浏览器会自动给元素添加这段样式：`text-decoration: underline;`。
 
 # --instructions--
 
-给 “理工博士” 添加 `u` 标签，不要给整个 class 为 `cardText` 的父 `div` 添加。
+给 "Ph.D. students" 添加 `u` 标签。
 
-**注意：** 锚点默认给文本添加下划线，如果 `u` 标签的下划线和页面的锚点混淆，请避免使用它。
+**注意：**HTML 的 `<a>` 标签默认也会给文本添加下划线。如果使用 `u` 标签添加下划线会造成与 `<a>` 标签混淆，则应避免使用 `u` 标签。
 
 # --hints--
 
-你应该有一个 `u` 标签。
+应添加一个 `u` 标签。
 
 ```js
 assert($('u').length === 1);
 ```
 
-`u` 标签应该包围 “理工博士”。
+`u` 标签的内容文本应为 `Ph.D. students`。
 
 ```js
-assert($('u').text() === '理工博士');
+assert($('u').text() === 'Ph.D. students');
 ```
 
 # --solutions--

@@ -8,7 +8,7 @@ forumTopicId: 16817
 
 # --description--
 
-如果想使用 HTML 向服务器提交数据，可以给`form`添加`action`属性。
+我们可以只通过 HTML 来实现发送数据给服务器的表单，只需要给 `form` 元素添加 `action` 属性即可。
 
 例如:
 
@@ -16,21 +16,21 @@ forumTopicId: 16817
 
 # --instructions--
 
-在`input`输入框外层创建一个`form`表单，然后设置表单的`action`属性为`"https://freecatphotoapp.com/submit-cat-photo"`。
+把现有的 `input` 输入框放到一个新建的 `form` 表单里，然后设置表单的 `action` 属性为 `"https://freecatphotoapp.com/submit-cat-photo"`。
 
 # --hints--
 
-在`input`输入框外层创建一个`form`表单。
+现有的 `input` 输入框应位于新创建的 `form` 表单里面。
 
 ```js
+const inputElem = document.querySelector('form input');
 assert(
-  $('form') &&
-    $('form').children('input') &&
-    $('form').children('input').length > 0
+  inputElem.getAttribute('type') === 'text' &&
+    inputElem.getAttribute('placeholder') === 'cat photo URL'
 );
 ```
 
-确保表单的`action`属性为`"https://freecatphotoapp.com/submit-cat-photo"`。
+表单的 `action` 属性值应设置为 `https://freecatphotoapp.com/submit-cat-photo`。
 
 ```js
 assert(
@@ -38,7 +38,7 @@ assert(
 );
 ```
 
-确保表单有开始标记和结束标记。
+`form` 元素应有开始标签和结束标签。
 
 ```js
 assert(

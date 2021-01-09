@@ -8,7 +8,7 @@ forumTopicId: 301135
 
 # --description--
 
-你在上一次挑战中学到的`grid-area`属性有另一种使用方式。如果网格中没有定义区域模板，你也可以像这样为它添加一个模板：
+我们在上一次挑战中学到的 `grid-area` 属性还有另一种使用方式。如果网格中没有定义区域模板，你也可以像这样为它添加一个模板：
 
 ```css
 item1 { grid-area: 1/1/2/4; }
@@ -17,18 +17,18 @@ item1 { grid-area: 1/1/2/4; }
 这里使用了你之前学习的网格线编号来定义网格项的区域。上例中数字代表这些值：
 
 ```css
-grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+grid-area: 起始的水平网格线 / 起始的垂直网格线 / 结束的水平网格线 / 结束的垂直网格线;
 ```
 
 因此，示例中的网格项将占用第 1 条水平网格线（起始）和第 2 条水平网格线（终止）之间的行，及第 1 条垂直网格线（起始）和第 4 条垂直网格线（终止）之间的列。
 
 # --instructions--
 
-请用`grid-area`属性将类为`item5`的元素放置在第 3 条和第 4 条水平网格线及第 1 条和第 4 条水平网格线之间的区域内。
+请用 `grid-area` 属性将 `class` 为 `item5` 的元素放置在第 3 条和第 4 条水平网格线，以及第 1 条和第 4 条垂直网格线之间的区域内。
 
 # --hints--
 
-`item5`类应该有`grid-area`属性且值为`3/1/4/4`。
+`class` 为 `item5` 的元素应具有 `grid-area` 属性且属性值应为 `3/1/4/4`。
 
 ```js
 assert(

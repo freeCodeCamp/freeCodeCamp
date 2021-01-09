@@ -16,21 +16,21 @@ forumTopicId: 18244
 </p>
 ```
 
-让我们来分解这个例子： 通常，文本是被包裹在`p`段落内：  
-`<p> Here's a ... for you to follow. </p>` 接下来是`anchor` `a` `<a>`（需要结束标记 `</a>`）:  
-`<a> ... </a>` `target`是 `a` 的一个属性，用来指定链接的打开方式。属性值 `"_blank"` 的意思是链接会在新标签页打开。 `href`是 `a` 的另一个属性：用来指定链接的 URL：  
-`<a href="https://freecodecamp.org"> ... </a>` `a` 元素内的文本：**"link to freecodecamp.org"**，会显示为一个可以点击的链接：  
-`<a href=" ... ">link to freecodecamp.org</a>` 例子的最后输出将会是这样：  
+让我们来拆解一下这个例子： 通常，文本是被包裹在 `p` 元素内：  
+`<p> Here's a ... for you to follow. </p>` 接下来是 `<a>` 元素（它需要结束标签 `</a>`）：
+`<a> ... </a>` `target` 是 `a` 元素的属性，它用来指定链接的打开方式。属性值 `"_blank"` 表示链接会在新标签页打开。`href` 是 `a` 的另一个属性，它用来指定链接的 URL：
+`<a href="https://freecodecamp.org"> ... </a>` `a` 元素内的内容文本 **"link to freecodecamp.org"**，会显示为一个可以点击的链接：
+`<a href=" ... ">link to freecodecamp.org</a>` 此示例的最终输出结果是这样：
 
 Here's a [link to freecodecamp.org](http://freecodecamp.one) for you to follow.
 
 # --instructions--
 
-用一个段落（`p`）标签来包裹`main`元素里的`a`节点。新段落的文本为：“View more cat photos”，其中 "cat photos" 是一个链接，其余是纯文本。
+创建一个新的段落（`p`）标签来包裹 `main` 元素里的 `a` 节点。新段落标签的内容为："View more cat photos"，其中 "cat photos" 是一个链接，其余是纯文本。
 
 # --hints--
 
-你需要一个指向 "`https://freecatphotoapp.com`" 的 `a` 。
+应包含一个链接到 "`https://freecatphotoapp.com`" 的 `a` 元素。
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-`a` 的文本应为：cat photos。
+`a` 元素的内容文本应为 "cat photos"。
 
 ```js
 assert(
@@ -49,13 +49,13 @@ assert(
 );
 ```
 
-在 `a` 的外部创建一个新段落，这样页面就有 3 个段落了。
+你应该在 `a` 标签的外部创建一个新的 `p` 标签。页面中应至少包含 3 个 `p` 标签。
 
 ```js
 assert($('p') && $('p').length > 2);
 ```
 
-`a` 应嵌套在新段落内。
+`a` 应嵌套在新创建的 `p` 元素内。
 
 ```js
 assert(
@@ -64,7 +64,7 @@ assert(
 );
 ```
 
-段落应该包含文本 View more（记得 more 后面有一个空格）。
+`p` 元素应该包含文本 "View more "（请注意，more 之后有一个空格）。
 
 ```js
 assert(
@@ -79,7 +79,7 @@ assert(
 );
 ```
 
-`a` 不应该包含文本 View more。
+`a` 元素中不应包含文本 "View more"。
 
 ```js
 assert(
@@ -89,7 +89,7 @@ assert(
 );
 ```
 
-确保每个段落有结束标记。
+确保每个 `p` 元素有结束标签。
 
 ```js
 assert(
@@ -99,7 +99,7 @@ assert(
 );
 ```
 
-确保每个段落有结束标记。
+确保每个 `a` 元素有结束标签。
 
 ```js
 assert(

@@ -8,7 +8,7 @@ forumTopicId: 18202
 
 # --description--
 
-`p`是`paragraph`的缩写，通常用来创建一个段落，就和你写作文一样。
+`p` 是 `paragraph` 的缩写，通常用来创建一个段落，就和你写作文一样。
 
 你可以像这样创建一个段落：
 
@@ -16,23 +16,23 @@ forumTopicId: 18202
 
 # --instructions--
 
-在`h2`元素下面新增一个`p`元素，元素内容是：`Hello Paragraph`。
+请在 `h2` 元素下方添加一个 `p` 元素，元素内容是 `Hello Paragraph`。
 
 # --hints--
 
-创建一个`p`元素。
+应包含一个 `p` 元素。
 
 ```js
 assert($('p').length > 0);
 ```
 
-`p`元素的内容应为：`Hello Paragraph`。
+`p` 元素的内容文本应为 `Hello Paragraph`。
 
 ```js
 assert.isTrue(/hello(\s)+paragraph/gi.test($('p').text()));
 ```
 
-`p`元素应该有结束标记。
+`p` 元素应有结束标签。
 
 ```js
 assert(

@@ -8,33 +8,33 @@ forumTopicId: 18258
 
 # --description--
 
-有时候， HTML 元素的样式会跟其他样式发生冲突。
+有时候，HTML 元素的样式会跟其他样式发生冲突。
 
-就像，`h1`元素也不能同时设置`green`和`pink`两种样式。
+就像 `h1` 元素也不能同时设置 `green` 和 `pink` 两种颜色。
 
-让我们尝试创建一个字体颜色为`pink`的 class，并应于用其中一个元素中。猜一猜，它会覆盖`body`元素设置的`color: green;`CSS 属性吗？
+让我们尝试创建一个字体颜色为 `pink` 的 class，并应于用其中一个元素中。猜一猜，它会覆盖 `body` 元素设置的 `color: green;` CSS 规则吗？
 
 # --instructions--
 
-创建一个能将元素的字体颜色改为`pink`的CSS class，并起名为`pink-text`。
+创建一个能将元素的字体颜色改为 `pink` 的 class，并命名为 `pink-text`。
 
-给`h1`元素添加`pink-text`class。
+给 `h1` 元素添加 `pink-text` class。
 
 # --hints--
 
-`h1`元素应该含有`pink-text` class。
+`h1` 元素应含有 `pink-text` class。
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-`<style>`标签应该含有一个可以改变字体颜色的`pink-text` class。
+`<style>` 标签应含有一个可以改变字体颜色的 `pink-text` class。
 
 ```js
 assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));
 ```
 
-`h1`元素的字体颜色应该为`pink（粉色）`。
+`h1` 元素的字体颜色应为粉色。
 
 ```js
 assert($('h1').css('color') === 'rgb(255, 192, 203)');

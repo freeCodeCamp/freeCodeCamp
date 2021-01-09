@@ -8,15 +8,15 @@ forumTopicId: 301119
 
 # --description--
 
-在上个挑战中，你创建的网格会自动设置行数。你可以像用`grid-template-columns`设置网格的列一样，用`grid-template-rows`设置网格的行。
+在上个挑战中，你创建的网格会自动设置行数。你可以用 `grid-template-rows` 设置网格的行，就像用 `grid-template-columns` 设置网格的列那样。
 
 # --instructions--
 
-给网格添加两行，使每行高度均为`50px`。
+请给网格添加两行，使每行高度均为 `50px`。
 
 # --hints--
 
-`container`类应该有`grid-template-rows`属性，且该属性的两个值均为`50px`
+类为 `container` 的元素应具有 `grid-template-rows` 属性，且该属性的两个属性值均为 `50px`。
 
 ```js
 assert(

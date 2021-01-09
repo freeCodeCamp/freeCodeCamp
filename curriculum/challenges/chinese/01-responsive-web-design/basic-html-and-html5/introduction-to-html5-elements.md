@@ -8,13 +8,13 @@ forumTopicId: 301097
 
 # --description--
 
-HTML5 引入了很多更具描述性的 HTML 元素，例如：`header`、`footer`、`nav`、`video`、`article`、`section`等等。
+HTML5 引入了很多更具描述性的 HTML 元素，例如：`header`、`footer`、`nav`、`video`、`article`、`section` 等等。
 
 这些元素让 HTML 更易读，同时有助于搜索引擎优化和无障碍访问。
 
-`main`元素让搜索引擎和开发者瞬间就能找到网页的主要内容。
+`main` 元素让搜索引擎和开发者能很快地找到网页的主要内容。
 
-举个栗子, 下面的 `main` 元素嵌套了两个子元素：
+举个例子，下面的 `main` 元素嵌套了两个子元素：
 
 ```html
 <main> 
@@ -23,23 +23,23 @@ HTML5 引入了很多更具描述性的 HTML 元素，例如：`header`、`foote
 </main>
 ```
 
-**提示：** 在后面的应用无障碍课程中我们会接触到更多新的 HTML5 元素，以及明白它们的用处。
+**提示：**在后面的应用无障碍课程中我们会接触到更多新的 HTML5 元素，以及明白它们的用处。
 
 # --instructions--
 
-在现有的段落下创建一个新的段落，段落内容为：`养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。`
+请在现有的段落之后创建一个新的段落，段落内容为：`Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
-在第一个段落前添加`<main>`，在第二个段落后添加`</main>`。
+然后，请添加一个 `main` 元素，作为现有的两个 `p` 元素的父级元素。
 
 # --hints--
 
-页面中应该有两个段落。
+页面中应该有两个 `p` 元素。
 
 ```js
 assert($('p').length > 1);
 ```
 
-确保每个段落都有结束标记。
+每个 `p` 元素都应有结束标签。
 
 ```js
 assert(
@@ -48,31 +48,31 @@ assert(
 );
 ```
 
-新建的段落应该包含关键词：猫咪。
+新建的段落应包含关键词 `Purr jump eat`。
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));
 ```
 
-代码中应该包含`main`元素。
+应该存在 `main` 元素。
 
 ```js
 assert($('main').length === 1);
 ```
 
-`main`元素应有两个 `p`元素作为它的子元素。
+`main` 元素应有两个 `p` 元素作为它的子元素。
 
 ```js
 assert($('main').children('p').length === 2);
 ```
 
-开始标记\`\`应位于第一个段落之前。
+`main` 的开始标签应位于第一个段落之前。
 
 ```js
 assert(code.match(/<main>\s*?<p>/g));
 ```
 
-结束标记\`\`应位于第二段落之后。
+`main` 的结束标签应位于第二个段落之后。
 
 ```js
 assert(code.match(/<\/p>\s*?<\/main>/g));

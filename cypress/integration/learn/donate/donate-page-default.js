@@ -39,7 +39,7 @@ describe('Donate page', () => {
     );
     cy.contains(
       selectors.donateSupport.firstText,
-      "Here are many other ways we could support our non-profit's mission."
+      "Here are many other ways you can support our non-profit's mission."
     );
     cy.contains(
       selectors.donateSupport.secondText,
