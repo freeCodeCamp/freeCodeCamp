@@ -21,7 +21,7 @@ app.use(helmet({
   contentSecurityPolicy: {    // enable and configure
     directives: {
       defaultSrc: ["self"],
-      styleSrc: ['style.com'],
+      styleSrc: ['style.com']
     }
   },
   dnsPrefetchControl: false     // disable
