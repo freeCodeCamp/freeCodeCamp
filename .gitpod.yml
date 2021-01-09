@@ -18,6 +18,7 @@ tasks:
       export COOKIE_DOMAIN=gitpod.io
       export HOME_LOCATION=$(gp url 8000)
       export API_LOCATION=$(gp url 3000)
+      export CYPRESS_BASE_URL=$(gp url 8000)
       ' >> ~/.bashrc;
       exit;
 
@@ -28,7 +29,7 @@ tasks:
       (mongod --dbpath /workspace/data &)
 
   - name: server
-    before: export COOKIE_DOMAIN=gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
+    before: export COOKIE_DOMAIN=gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000) && export CYPRESS_BASE_URL=$(gp url 8000)
     # init is not executed for prebuilt workspaces and restarts,
     # so we should put all the heavy initialization here
     init: >
@@ -44,7 +45,7 @@ tasks:
       npm run develop:server
 
   - name: client
-    before: export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
+    before: export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000) && export CYPRESS_BASE_URL=$(gp url 8000)
     init: >
       cd ./client &&
       gp sync-await npm-ci &&
