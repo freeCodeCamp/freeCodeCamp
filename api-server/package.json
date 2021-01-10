@@ -72,7 +72,7 @@
     "cross-env": "^7.0.3",
     "jest": "^26.6.3",
     "loopback-component-explorer": "^6.4.0",
-    "nodemon": "^2.0.6",
+    "nodemon": "^2.0.7",
     "passport-mock-strategy": "^2.0.0",
     "smee-client": "^1.2.2"
   },
