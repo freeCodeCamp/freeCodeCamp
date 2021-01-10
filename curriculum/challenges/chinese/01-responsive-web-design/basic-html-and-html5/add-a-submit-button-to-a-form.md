@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedd08830
-title: 给表单添加提交按钮
+title: Add a Submit Button to a Form
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
 forumTopicId: 16627
@@ -8,31 +8,31 @@ forumTopicId: 16627
 
 # --description--
 
-让我们来给表单添加一个 `submit`（提交）按钮。点击提交按钮时，表单中的数据将会被发送到 `action` 属性指定的 URL 上。
+Let's add a `submit` button to your form. Clicking this button will send the data from your form to the URL you specified with your form's `action` attribute.
 
-例如：
+Here's an example submit button:
 
 `<button type="submit">this button submits the form</button>`
 
 # --instructions--
 
-请在表单（`form` 元素）底部创建一个 `button` 元素，将按钮的 `type` 属性值设置为 `submit`，内容文本为 `提交`。
+Add a button as the last element of your `form` element with a type of `submit`, and "Submit" as its text.
 
 # --hints--
 
-表单内部应有一个 `button` 元素。
+Your form should have a button inside it.
 
 ```js
 assert($('form').children('button').length > 0);
 ```
 
-按钮的 `type` 属性值应为 `submit`。
+Your submit button should have the attribute `type` set to `submit`.
 
 ```js
 assert($('button').attr('type') === 'submit');
 ```
 
-提交按钮的文本应为 `Submit` 。
+Your submit button should only have the text `Submit`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-`button` 元素应有结束标签。
+Your `button` element should have a closing tag.
 
 ```js
 assert(
@@ -52,5 +52,59 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <input type="text" placeholder="cat photo URL">
+  </form>
+</main>
+```
+
 # --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <input type="text" placeholder="cat photo URL">
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

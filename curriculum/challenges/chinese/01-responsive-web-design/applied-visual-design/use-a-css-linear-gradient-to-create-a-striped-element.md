@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad7
-title: 使用 CSS 线性渐变创建条纹元素
+title: Use a CSS Linear Gradient to Create a Striped Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bmQh2'
 forumTopicId: 301072
@@ -8,59 +8,103 @@ forumTopicId: 301072
 
 # --description--
 
-`repeating-linear-gradient()` 函数和 `linear-gradient()` 很像，主要区别是 `repeating-linear-gradient()` 会重复指定的渐变。`repeating-linear-gradient()` 有很多参数，为了便于理解，本关只用到角度值和色标。
+The `repeating-linear-gradient()` function is very similar to `linear-gradient()` with the major difference that it repeats the specified gradient pattern. `repeating-linear-gradient()` accepts a variety of values, but for simplicity, you'll work with an angle value and color stop values in this challenge.
 
-角度就是渐变的方向。色标代表渐变颜色及发生渐变的位置，由颜色值和起始位置组成。起始位置用百分比或者像素值表示。
+The angle value is the direction of the gradient. Color stops are like width values that mark where a transition takes place, and are given with a percentage or a number of pixels.
 
-在代码编辑器的例子里，渐变开始于 0 像素位置的 `yellow`，然后过渡到距离开始位置 40 像素的 `blue`。由于下一个渐变颜色的起始位置也是 40 像素，所以颜色直接渐变成第三个颜色值 `green`，然后过渡到距离开始位置 80 像素的 `red`。
+In the example demonstrated in the code editor, the gradient starts with the color `yellow` at 0 pixels which blends into the second color `blue` at 40 pixels away from the start. Since the next color stop is also at 40 pixels, the gradient immediately changes to the third color `green`, which itself blends into the fourth color value `red` as that is 80 pixels away from the beginning of the gradient.
 
-下面的代码可以帮助理解成对的起止渐变颜色值是如何过渡的。
+For this example, it helps to think about the color stops as pairs where every two colors blend together.
 
-`0px [黄色 -- 过渡 -- 蓝色] 40px [绿色 -- 过渡 -- 红色] 80px`
+`0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px`
 
-如果有两个相邻色标的颜色值相同，那么过渡看起来就不会很明显。由于是在两个相同的颜色间过渡，那么中间的过渡色也会是相同颜色，接着就是这个颜色直接过渡到下一个颜色，最终产生的效果就是条纹。
+If every two color stop values are the same color, the blending isn't noticeable because it's between the same color, followed by a hard transition to the next color, so you end up with stripes.
 
 # --instructions--
 
-修改 `repeating-linear-gradient()` 函数使其为渐变角度为 `45deg` 的条纹，第一个渐变颜色为 `yellow`, 第二个渐变颜色为 `black`。
+Make stripes by changing the `repeating-linear-gradient()` to use a gradient angle of `45deg`, then set the first two color stops to `yellow`, and finally the second two color stops to `black`.
 
 # --hints--
 
-`repeating-linear-gradient()` 的渐变角度应该为 `45deg`。
+The angle of the `repeating-linear-gradient()` should be 45deg.
 
 ```js
 assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi));
 ```
 
-`repeating-linear-gradient()` 的渐变角度不应为 `90deg`。
+The angle of the `repeating-linear-gradient()` should no longer be 90deg
 
 ```js
 assert(!code.match(/90deg/gi));
 ```
 
-`0px` 处的渐变颜色应该为 `yellow`。
+The color stop at 0 pixels should be `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?0(px)?/gi));
 ```
 
-`40px` 处的第一个渐变颜色应该为 `yellow`。
+One color stop at 40 pixels should be `yellow`.
 
 ```js
 assert(code.match(/yellow\s+?40px/gi));
 ```
 
-`40px` 处的第二个渐变颜色应该为 `black`。
+The second color stop at 40 pixels should be `black`.
 
 ```js
 assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi));
 ```
 
-`80px` 处最后一个渐变颜色应该为 `black`。
+The last color stop at 80 pixels should be `black`.
 
 ```js
 assert(code.match(/black\s+?80px/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+  div{
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin:  50 auto;
+    background: repeating-linear-gradient(
+      90deg,
+      yellow 0px,
+      blue 40px,
+      green 40px,
+      red 80px
+    );
+  }
+
+</style>
+
+<div></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div{
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin:  50 auto;
+    background: repeating-linear-gradient(
+      45deg,
+      yellow 0px,
+      yellow 40px,
+      black 40px,
+      black 80px
+    );
+  }
+</style>
+<div></div>
+```

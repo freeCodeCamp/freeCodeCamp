@@ -1,6 +1,6 @@
 ---
 id: 587d781a367417b2b2512ab8
-title: 使用 u 标签给文本添加下划线
+title: Use the u Tag to Underline Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6aQCL'
 forumTopicId: 301082
@@ -8,27 +8,112 @@ forumTopicId: 301082
 
 # --description--
 
-你可以使用 `u` 标签来给文字添加下划线。下划线通常用来表示重要内容或需要记忆的内容。添加了 `u` 标签后，浏览器会自动给元素添加这段样式：`text-decoration: underline;`。
+To underline text, you can use the `u` tag. This is often used to signify that a section of text is important, or something to remember. With the `u` tag, the browser applies the CSS of `text-decoration: underline;` to the element.
 
 # --instructions--
 
-给 "Ph.D. students" 添加 `u` 标签。
+Wrap the `u` tag only around the text "Ph.D. students".
 
-**注意：**HTML 的 `<a>` 标签默认也会给文本添加下划线。如果使用 `u` 标签添加下划线会造成与 `<a>` 标签混淆，则应避免使用 `u` 标签。
+**Note:** Try to avoid using the `u` tag when it could be confused for a link. Anchor tags also have a default underlined formatting.
 
 # --hints--
 
-应添加一个 `u` 标签。
+Your code should add a `u` tag to the markup.
 
 ```js
 assert($('u').length === 1);
 ```
 
-`u` 标签的内容文本应为 `Ph.D. students`。
+The `u` tag should wrap around the text `Ph.D. students`.
 
 ```js
 assert($('u').text() === 'Ph.D. students');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  h4 {
+    text-align: center;
+    height: 25px;
+  }
+  p {
+    text-align: justify;
+  }
+  .links {
+    text-align: left;
+    color: black;
+  }
+  .fullCard {
+    width: 245px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 4px;
+  }
+  .cardContent {
+    padding: 10px;
+  }
+  .cardText {
+    margin-bottom: 30px;
+  }
+</style>
+<div class="fullCard">
+  <div class="cardContent">
+    <div class="cardText">
+      <h4>Google</h4>
+      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at <strong>Stanford University</strong>.</p>
+    </div>
+    <div class="cardLinks">
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+    </div>
+  </div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  h4 {
+    text-align: center;
+    height: 25px;
+  }
+  p {
+    text-align: justify;
+  }
+  .links {
+    text-align: left;
+    color: black;
+  }
+  .fullCard {
+    width: 245px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 4px;
+  }
+  .cardContent {
+    padding: 10px;
+  }
+  .cardText {
+    margin-bottom: 30px;
+  }
+</style>
+<div class="fullCard">
+  <div class="cardContent">
+    <div class="cardText">
+      <h4>Google</h4>
+      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p>
+    </div>
+    <div class="cardLinks">
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+    </div>
+  </div>
+</div>
+```

@@ -1,6 +1,6 @@
 ---
 id: 587d7790367417b2b2512ab0
-title: 使用 tabindex 将键盘焦点添加到元素中
+title: Use tabindex to Add Keyboard Focus to an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMDHW'
 forumTopicId: 301027
@@ -8,32 +8,134 @@ forumTopicId: 301027
 
 # --description--
 
-HTML 的 `tabindex` 属性是与标签焦点相关的属性，给标签加上 tabindex 表示该标签可以获得焦点。`tabindex` 的值可以是零、负整数或正整数，这些数值分别定义了三种行为。
+The HTML `tabindex` attribute has three distinct functions relating to an element's keyboard focus. When it's on a tag, it indicates that element can be focused on. The value (an integer that's positive, negative, or zero) determines the behavior.
 
-当用户在页面中使用 tab 键时，有些标签（如：链接、表单控件）可以自动获得焦点，它们获得焦点的顺序与它们出现在文档流中的顺序一致。我们可以通过将其他标签（如 `div`、`span`、`p` 等）的 `tabindex` 属性值设为 0 来让它们实现类似的效果。比如：
+Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as `div`, `span`, and `p`, by placing a `tabindex="0"` attribute on them. Here's an example:
 
 `<div tabindex="0">I need keyboard focus!</div>`
 
-**注意：**  
-`tabindex` 属性值为负整数（通常为 -1）的标签也是可以获得焦点的，只是不可以通过键盘操作（如 tab 键）来获得焦点。这种方法通常用于以编程的方式使内容获得焦点（如：将焦点设置到用 `div` 实现的弹出框上）的场景。只是这部分内容已经超出了当前挑战的范围。
+**Note:** A negative `tabindex` value (typically -1) indicates that an element is focusable, but is not reachable by the keyboard. This method is generally used to bring focus to content programmatically (like when a `div` used for a pop-up window is activated), and is beyond the scope of these challenges.
 
 # --instructions--
 
-Camper Cat 新建了一个用来收集他的用户信息的调查。他知道输入框可以自动获得键盘焦点，但他希望用户使用键盘切换标签时，焦点可以停留在指示文字（Instructions）上。请给 `p` 标签添加 `tabindex` 属性，并将它的属性值设为 0。注意：使用 `tabindex` 属性还可以让 CSS 伪类 `:focus` 在 `p` 标签上生效。
+Camper Cat created a new survey to collect information about his users. He knows input fields automatically get keyboard focus, but he wants to make sure his keyboard users pause at the instructions while tabbing through the items. Add a `tabindex` attribute to the `p` tag and set its value to `"0"`. Bonus - using `tabindex` also enables the CSS pseudo-class `:focus` to work on the `p` tag.
 
 # --hints--
 
-表单中，作为指示文字（Instructions）的 `p` 标签应具有 `tabindex` 属性。
+Your code should add a `tabindex` attribute to the `p` tag that holds the form instructions.
 
 ```js
 assert($('p').attr('tabindex'));
 ```
 
-`p` 标签的 `tabindex` 属性值应设置为 0。
+Your code should set the `tabindex` attribute on the `p` tag to a value of 0.
 
 ```js
 assert($('p').attr('tabindex') == '0');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<head>
+  <style>
+  p:focus {
+    background-color: yellow;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ninja Survey</h1>
+  </header>
+  <section>
+    <form>
+
+
+      <p>Instructions: Fill in ALL your information then click <b>Submit</b></p>
+
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br>
+      <fieldset>
+        <legend>What level ninja are you?</legend>
+        <input id="newbie" type="radio" name="levels" value="newbie">
+        <label for="newbie">Newbie Kitten</label><br>
+        <input id="intermediate" type="radio" name="levels" value="intermediate">
+        <label for="intermediate">Developing Student</label><br>
+        <input id="master" type="radio" name="levels" value="master">
+        <label for="master">9th Life Master</label>
+      </fieldset>
+      <br>
+      <fieldset>
+      <legend>Select your favorite weapons:</legend>
+      <input id="stars" type="checkbox" name="weapons" value="stars">
+      <label for="stars">Throwing Stars</label><br>
+      <input id="nunchucks" type="checkbox" name="weapons" value="nunchucks">
+      <label for="nunchucks">Nunchucks</label><br>
+      <input id="sai" type="checkbox" name="weapons" value="sai">
+      <label for="sai">Sai Set</label><br>
+      <input id="sword" type="checkbox" name="weapons" value="sword">
+      <label for="sword">Sword</label>
+      </fieldset>
+      <br>
+      <input type="submit" name="submit" value="Submit">
+    </form><br>
+  </section>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```
+
 # --solutions--
 
+```html
+<head>
+  <style>
+  p:focus {
+    background-color: yellow;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ninja Survey</h1>
+  </header>
+  <section>
+    <form>
+
+
+      <p tabindex="0">Instructions: Fill in ALL your information then click <b>Submit</b></p>
+
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br>
+      <fieldset>
+        <legend>What level ninja are you?</legend>
+        <input id="newbie" type="radio" name="levels" value="newbie">
+        <label for="newbie">Newbie Kitten</label><br>
+        <input id="intermediate" type="radio" name="levels" value="intermediate">
+        <label for="intermediate">Developing Student</label><br>
+        <input id="master" type="radio" name="levels" value="master">
+        <label for="master">9th Life Master</label>
+      </fieldset>
+      <br>
+      <fieldset>
+      <legend>Select your favorite weapons:</legend>
+      <input id="stars" type="checkbox" name="weapons" value="stars">
+      <label for="stars">Throwing Stars</label><br>
+      <input id="nunchucks" type="checkbox" name="weapons" value="nunchucks">
+      <label for="nunchucks">Nunchucks</label><br>
+      <input id="sai" type="checkbox" name="weapons" value="sai">
+      <label for="sai">Sai Set</label><br>
+      <input id="sword" type="checkbox" name="weapons" value="sword">
+      <label for="sword">Sword</label>
+      </fieldset>
+      <br>
+      <input type="submit" name="submit" value="Submit">
+    </form><br>
+  </section>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```

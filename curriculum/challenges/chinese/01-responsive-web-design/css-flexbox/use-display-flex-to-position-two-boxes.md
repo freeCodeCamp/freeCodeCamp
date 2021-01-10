@@ -1,6 +1,6 @@
 ---
 id: 587d78ab367417b2b2512af0
-title: '使用 display: flex 定位两个盒子'
+title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cgz3QS7'
 forumTopicId: 301105
@@ -8,21 +8,74 @@ forumTopicId: 301105
 
 # --description--
 
-这节我们会使用不同的挑战方式来学习如何使用 CSS 更灵活地布局元素。首先我们会通过一个挑战来解释原理，然后通过操作一个简单的推文组件来应用弹性盒子（flexbox）。
+This section uses alternating challenge styles to show how to use CSS to position elements in a flexible way. First, a challenge will explain theory, then a practical challenge using a simple tweet component will apply the flexbox concept.
 
-只要在一个元素的 CSS 中添加 `display: flex;`，就可以使用其它 flex 属性来构建响应式页面了。
+Placing the CSS property `display: flex;` on an element allows you to use other flex properties to build a responsive page.
 
 # --instructions--
 
-请为 `#box-container` 添加 `display` 属性，并设置其属性值为 `flex`。
+Add the CSS property `display` to `#box-container` and set its value to `flex`.
 
 # --hints--
 
-`#box-container` 应具有 `display`属性，其属性值应为 `flex`。
+`#box-container` should have the `display` property set to a value of `flex`.
 
 ```js
 assert($('#box-container').css('display') == 'flex');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  #box-container {
+    height: 500px;
+
+  }
+
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  #box-container {
+    height: 500px;
+    display: flex;
+  }
+
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```

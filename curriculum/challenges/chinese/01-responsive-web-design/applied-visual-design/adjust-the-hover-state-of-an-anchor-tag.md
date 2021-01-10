@@ -1,6 +1,6 @@
 ---
 id: 587d781d367417b2b2512ac8
-title: 调整锚点的悬停状态
+title: Adjust the Hover State of an Anchor Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
@@ -8,9 +8,9 @@ forumTopicId: 301035
 
 # --description--
 
-本挑战将要涉及到伪类。伪类是可以添加到选择器上的关键字，用来选择特定状态的元素。
+This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.
 
-比如，可以使用 `:hover` 伪类选择器来选取超链接的悬停状态。下面的代码可以改变超链接悬停时的颜色：
+For example, the styling of an anchor tag can be changed for its hover state using the `:hover` pseudo-class selector. Here's the CSS to change the `color` of the anchor tag to red during its hover state:
 
 ```css
 a:hover {
@@ -20,17 +20,17 @@ a:hover {
 
 # --instructions--
 
-代码编辑器里面已经有了一个 CSS 规则把所有的 `a` 标签定义成了黑色。请添加一个规则，使得用户悬停在 `a` 标签时，`a` 标签的 `color` 会变成蓝色。
+The code editor has a CSS rule to style all `a` tags black. Add a rule so that when the user hovers over the `a` tag, the `color` is blue.
 
 # --hints--
 
-超链接的 `color` 应该保持黑色，应只添加 `:hover` CSS 规则。
+The anchor tag `color` should remain black, only add CSS rules for the `:hover` state.
 
 ```js
 assert($('a').css('color') == 'rgb(0, 0, 0)');
 ```
 
-悬停超链接时超链接的 `color` 应该变成蓝色。
+The anchor tag should have a `color` of blue on hover.
 
 ```js
 assert(
@@ -40,5 +40,32 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  a {
+    color: #000;
+  }
+
+
+
+</style>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+```
+
 # --solutions--
 
+```html
+<style>
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: rgba(0,0,255,1);
+  }
+</style>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+```

@@ -1,6 +1,6 @@
 ---
 id: 5a9036ee38fddaf9a66b5d34
-title: 使用 CSS 网格单位来更改列和行的大小
+title: Use CSS Grid units to Change the Size of Columns and Rows
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
 forumTopicId: 301134
@@ -8,29 +8,29 @@ forumTopicId: 301134
 
 # --description--
 
-在 CSS 网格中，可以使用绝对单位（如 `px`）或相对单位（如 `em`）来定义行或列的大小。下面的单位也可以使用：
+You can use absolute and relative units like `px` and `em` in CSS Grid to define the size of rows and columns. You can use these as well:
 
-`fr`：设置列或行占剩余空间的比例，
+`fr`: sets the column or row to a fraction of the available space,
 
-`auto`：设置列宽或行高自动等于它的内容的宽度或高度，
+`auto`: sets the column or row to the width or height of its content automatically,
 
-`%`：将列或行调整为它的容器宽度或高度的百分比，
+`%`: adjusts the column or row to the percent width of its container.
 
-以下代码为右侧预览区中的效果：
+Here's the code that generates the output in the preview:
 
 ```css
 grid-template-columns: auto 50px 10% 2fr 1fr;
 ```
 
-这段代码添加了五个列。第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。
+This snippet creates five columns. The first column is as wide as its content, the second column is 50px, the third column is 10% of its container, and for the last two columns; the remaining space is divided into three sections, two are allocated for the fourth column, and one for the fifth.
 
 # --instructions--
 
-生成一个包含三列的网格，每列宽度分别为：1fr、100px、2fr。
+Make a grid with three columns whose widths are as follows: 1fr, 100px, and 2fr.
 
 # --hints--
 
-class 为 `container` 的元素应具有 `grid-template-columns` 属性且属性值应为 `1fr 100px 2fr`。
+`container` class should have a `grid-template-columns` property that has three columns with the following widths: `1fr, 100px, and 2fr`.
 
 ```js
 assert(
@@ -40,5 +40,43 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .d1{background:LightSkyBlue;}
+  .d2{background:LightSalmon;}
+  .d3{background:PaleTurquoise;}
+  .d4{background:LightPink;}
+  .d5{background:PaleGreen;}
+
+  .container {
+    font-size: 40px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* Only change code below this line */
+
+    grid-template-columns: auto 50px 10% 2fr 1fr;
+
+    /* Only change code above this line */
+    grid-template-rows: 50px 50px;
+  }
+</style>
+
+<div class="container">
+  <div class="d1">1</div>
+  <div class="d2">2</div>
+  <div class="d3">3</div>
+  <div class="d4">4</div>
+  <div class="d5">5</div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>.container {grid-template-columns: 1fr 100px 2fr;}</style>
+```

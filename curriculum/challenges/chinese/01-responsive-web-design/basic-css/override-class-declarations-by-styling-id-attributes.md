@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd8aedf06756
-title: ID 选择器优先级高于 Class 选择器
+title: Override Class Declarations by Styling ID Attributes
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
@@ -8,21 +8,21 @@ forumTopicId: 18251
 
 # --description--
 
-我们刚刚证明了浏览器读取 CSS 是由上到下的。这就意味着，如果发生冲突，浏览器将会应用最后声明的样式。
+We just proved that browsers read CSS from top to bottom in order of their declaration. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last. Notice that if we even had put `blue-text` before `pink-text` in our `h1` element's classes, it would still look at the declaration order and not the order of their use!
 
-不过我们还没结束，还有其他方法来覆盖 CSS 样式。你还记得 id 属性吗？
+But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?
 
-通过给 `h1` 元素添加 id 属性，我们便可以此来覆盖 class 属性中定义的同名样式。
+Let's override your `pink-text` and `blue-text` classes, and make your `h1` element orange, by giving the `h1` element an id and then styling that id.
 
 # --instructions--
 
-给 `h1` 元素添加 id 属性，属性值为 `orange-text`。设置方式如下：
+Give your `h1` element the `id` attribute of `orange-text`. Remember, id styles look like this:
 
 `<h1 id="orange-text">`
 
-`h1` 元素应继续保留 `blue-text` 和 `pink-text` 这两个 class。
+Leave the `blue-text` and `pink-text` classes on your `h1` element.
 
-在 `style` 元素中创建名为 `orange-text` 的 id 选择器。例子如下：
+Create a CSS declaration for your `orange-text` id in your `style` element. Here's an example of what this looks like:
 
 ```css
 #brown-text {
@@ -30,51 +30,91 @@ forumTopicId: 18251
 }
 ```
 
-**注意：**无论在 `pink-text` class 之前或者之后声明，id 选择器的优先级总是高于 class 选择器。
+**Note:** It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
 
 # --hints--
 
-`h1` 元素应包含 `pink-text` class。
+Your `h1` element should have the class `pink-text`.
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-`h1` 元素应包含 `blue-text` class。
+Your `h1` element should have the class `blue-text`.
 
 ```js
 assert($('h1').hasClass('blue-text'));
 ```
 
-`h1` 的 id 属性值应为 `orange-text`。
+Your `h1` element should have the id of `orange-text`.
 
 ```js
 assert($('h1').attr('id') === 'orange-text');
 ```
 
-应只有一个 `h1` 元素。
+There should be only one `h1` element.
 
 ```js
 assert($('h1').length === 1);
 ```
 
-应存在名为 `orange-text` 的 id 选择器。
+Your `orange-text` id should have a CSS declaration.
 
 ```js
 assert(code.match(/#orange-text\s*{/gi));
 ```
 
-不要在 `h1` 元素里面使用行内样式。
+Your `h1` should not have any `style` attributes.
 
 ```js
 assert(!code.match(/<h1.*style.*>/gi));
 ```
 
-`h1` 元素的字体颜色应为橘色。
+Your `h1` element should be orange.
 
 ```js
 assert($('h1').css('color') === 'rgb(255, 165, 0)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 class="pink-text blue-text">Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+  #orange-text {
+    color: orange;
+  }  
+</style>
+<h1 id="orange-text"  class="pink-text blue-text">Hello World!</h1>
+```

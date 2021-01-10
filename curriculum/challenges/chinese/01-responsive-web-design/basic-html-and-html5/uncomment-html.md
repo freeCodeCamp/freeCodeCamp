@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08802
-title: 去除 HTML 的注释
+title: Uncomment HTML
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBmG9T7'
 forumTopicId: 18329
@@ -8,41 +8,62 @@ forumTopicId: 18329
 
 # --description--
 
-注释的作用是给代码添加一些说明，方便团队合作或日后自己查看，但又不影响代码本身。
+Commenting is a way that you can leave comments for other developers within your code without affecting the resulting output that is displayed to the end user.
 
-注释的另一个用途就是在不删除代码的前提下，让代码不起作用。
+Commenting is also a convenient way to make code inactive without having to delete it entirely.
 
-在 HTML 中，注释的开始标签是 `<!--`，结束标签是 `-->`。
+Comments in HTML start with `<!--` and end with a `-->`
 
 # --instructions--
 
-现在我们反其道而行之，去掉 `h1` 元素、`h2` 元素、`p` 元素的注释。
+Uncomment your `h1`, `h2` and `p` elements.
 
 # --hints--
 
-页面上应存在 `h1` 元素。
+Your `h1` element should be visible on the page by uncommenting it.
 
 ```js
 assert($('h1').length > 0);
 ```
 
-页面上应存在 `h2` 元素。
+Your `h2` element should be visible on the page by uncommenting it.
 
 ```js
 assert($('h2').length > 0);
 ```
 
-页面上应存在 `p` 元素。
+Your `p` element should be visible on the page by uncommenting it.
 
 ```js
 assert($('p').length > 0);
 ```
 
-应删除注释的结束标签 `-->`。
+No trailing comment tags should be visible on the page (i.e. `-->`).
 
 ```js
 assert(!$('*:contains("-->")')[1]);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<!--
+<h1>Hello World</h1>
+
+<h2>CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+-->
+```
+
 # --solutions--
 
+```html
+<h1>Hello World</h1>
+
+<h2>CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+```

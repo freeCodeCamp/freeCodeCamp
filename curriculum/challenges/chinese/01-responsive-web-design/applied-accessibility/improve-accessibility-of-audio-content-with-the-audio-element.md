@@ -1,6 +1,6 @@
 ---
 id: 587d7789367417b2b2512aa4
-title: 使用 audio 元素提高音频内容的可访问性
+title: Improve Accessibility of Audio Content with the audio Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVkcZ'
 forumTopicId: 301014
@@ -8,11 +8,11 @@ forumTopicId: 301014
 
 # --description--
 
-HTML5 的 `audio` 标签用于呈现音频内容或音频流，它也具有语义化特性。可以在 `audio` 上下文中为音频内容添加描述文字或字幕链接，使听觉障碍用户也能获取音频中的信息。
+HTML5's `audio` element gives semantic meaning when it wraps sound or audio stream content in your markup. Audio content also needs a text alternative to be accessible to people who are deaf or hard of hearing. This can be done with nearby text on the page or a link to a transcript.
 
-`audio` 支持 `controls` 属性，可以使浏览器为音频提供具有开始、暂停等功能的播放控件，而且还支持键盘操作。`controls` 属性是一个布尔属性，即不需要提供属性值。只要这个属性出现在 `audio` 标签中，浏览器就会开启播放控件。
+The `audio` tag supports the `controls` attribute. This shows the browser default play, pause, and other controls, and supports keyboard functionality. This is a boolean attribute, meaning it doesn't need a value, its presence on the tag turns the setting on.
 
-举个例子：
+Here's an example:
 
 ```html
 <audio id="meowClip" controls>
@@ -21,23 +21,23 @@ HTML5 的 `audio` 标签用于呈现音频内容或音频流，它也具有语�
 </audio>
 ```
 
-**注意：**多媒体内容通常同时包含音频与视频部分，它需要同步的字幕与逐字稿，以使视觉或听觉障碍用户可以获取它的内容。一般情况下，网页开发者不负责创建字幕或逐字稿，但是需要将它们添加到多媒体中。
+**Note:** Multimedia content usually has both visual and auditory components. It needs synchronized captions and a transcript so users with visual and/or auditory impairments can access it. Generally, a web developer is not responsible for creating the captions or transcript, but needs to know to include them.
 
 # --instructions--
 
-是时候让 Camper Cat 休息一下，并与朋友 Zersiax (@zersiax) 会面。Zersiax 是一位屏幕阅读器用户，同时也是无障碍设计的高手。为了体验屏幕阅读器的朗读效果，请在 `p` 标签之后添加一个具有 `controls` 属性的 `audio` 标签。然后在 `audio` 标签内添加一个 `source` 标签并设置 `src` 属性值为 "`https://s3.amazonaws.com/freecodecamp/screen-reader.mp3`"。同时，请将 `source` 的 `type` 属性值设置为 "audio/mpeg"。
+Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), a champion of accessibility and a screen reader user. To hear a clip of his screen reader in action, add an `audio` element after the `p`. Include the `controls` attribute. Then place a `source` tag inside the `audio` tags with the `src` attribute set to "`https://s3.amazonaws.com/freecodecamp/screen-reader.mp3`" and `type` attribute set to "audio/mpeg".
 
-**注意：**音频片段的播放速度可能会快到另我们难以理解，但是对于屏幕阅读器用户来说这是正常速度。
+**Note:** The audio clip may sound fast and be difficult to understand, but that is a normal speed for screen reader users.
 
 # --hints--
 
-应该包含一个 `audio` 标签。
+Your code should have one `audio` tag.
 
 ```js
 assert($('audio').length === 1);
 ```
 
-确保 `audio` 元素有结束标签。
+Your `audio` element should have a closing tag.
 
 ```js
 assert(
@@ -46,25 +46,25 @@ assert(
 );
 ```
 
-`audio` 标签应存在 `controls` 属性。
+The `audio` tag should have the `controls` attribute.
 
 ```js
 assert($('audio').attr('controls'));
 ```
 
-代码中应存在 `source` 标签。
+Your code should have one `source` tag.
 
 ```js
 assert($('source').length === 1);
 ```
 
-`source` 标签应位于 `audio` 标签中。
+Your `source` tag should be inside the `audio` tags.
 
 ```js
 assert($('audio').children('source').length === 1);
 ```
 
-`source` 标签中 `src` 的属性值应该与教程中的链接一致。
+The value for the `src` attribute on the `source` tag should match the link in the instructions exactly.
 
 ```js
 assert(
@@ -73,11 +73,42 @@ assert(
 );
 ```
 
-`source` 标签中应具有 `type` 属性，其属性值应为 audio/mpeg。
+Your code should include a `type` attribute on the `source` tag with a value of audio/mpeg.
 
 ```js
 assert($('source').attr('type') === 'audio/mpeg');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <header>
+    <h1>Real Coding Ninjas</h1>
+  </header>
+  <main>
+    <p>A sound clip of Zersiax's screen reader in action.</p>
+
+
+
+  </main>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <header>
+    <h1>Real Coding Ninjas</h1>
+  </header>
+  <main>
+    <p>A sound clip of Zersiax's screen reader in action.</p>
+    <audio controls>
+      <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg"/>
+    </audio>
+  </main>
+</body>
+```

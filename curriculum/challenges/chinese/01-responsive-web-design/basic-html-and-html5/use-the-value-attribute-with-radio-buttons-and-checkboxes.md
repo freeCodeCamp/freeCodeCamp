@@ -1,36 +1,36 @@
 ---
 id: 5c6c06847491271903d37cfd
-title: 使用单选框和复选框的 value 属性
+title: Use the value attribute with Radio Buttons and Checkboxes
 challengeType: 0
 forumTopicId: 301099
 ---
 
 # --description--
 
-提交表单时，所选项的值会发送给服务端。`radio` 和 `checkbox` 的 `value` 属性值决定了发送到服务端的实际内容。
+When a form gets submitted, the data is sent to the server and includes entries for the options selected. Inputs of type `radio` and `checkbox` report their values from the `value` attribute.
 
-例如：
+For example:
 
 ```html
-<label for="indoor"> 
-  <input id="indoor" value="indoor" type="radio" name="indoor-outdoor">Indoor 
+<label for="indoor">
+  <input id="indoor" value="indoor" type="radio" name="indoor-outdoor">Indoor
 </label>
-<label for="outdoor"> 
-  <input id="outdoor" value="outdoor" type="radio" name="indoor-outdoor">Outdoor 
+<label for="outdoor">
+  <input id="outdoor" value="outdoor" type="radio" name="indoor-outdoor">Outdoor
 </label>
 ```
 
-这里有两个 `radio` 单选框。当用户提交表单时，如果 `indoor` 选项被选中，表单数据会包含：`indoor-outdoor=indoor`。也就是所选项的 `name` 和 `value` 属性值。
+Here, you have two `radio` inputs. When the user submits the form with the `indoor` option selected, the form data will include the line: `indoor-outdoor=indoor`. This is from the `name` and `value` attributes of the "indoor" input.
 
-如果没有指明 `value` 属性值，则会使用默认值做为表单数据提交，也就是 `on`。在这种情况下，如果用户选中 "indoor" 选项然后提交表单，表单数据则会包含 `indoor-outdoor=on`。这样的表单数据看起来不够直观，因此最好将 `value` 属性值设置为一些有意义的内容。
+If you omit the `value` attribute, the submitted form data uses the default value, which is `on`. In this scenario, if the user clicked the "indoor" option and submitted the form, the resulting form data would be `indoor-outdoor=on`, which is not useful. So the `value` attribute needs to be set to something to identify the option.
 
 # --instructions--
 
-给每一个 `radio` 和 `checkbox` 输入框添加 `value` 属性，属性值为 `input` 对应 `label` 中文本的小写形式。如 Outdoor 的 `value` 应设置为 `"outdoor"`，即 `value="outdoor"`。
+Give each of the `radio` and `checkbox` inputs the `value` attribute. Use the input label text, in lowercase, as the value for the attribute.
 
 # --hints--
 
-应有一个单选按钮的 `value` 属性值为 `indoor`。
+One of your radio buttons should have the `value` attribute of `indoor`.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-应有一个单选按钮的 `value` 属性值为 `outdoor`。
+One of your radio buttons should have the `value` attribute of `outdoor`.
 
 ```js
 assert(
@@ -49,7 +49,7 @@ assert(
 );
 ```
 
-应有一个复选框的 `value` 属性值为 `loving`。
+One of your checkboxes should have the `value` attribute of `loving`.
 
 ```js
 assert(
@@ -59,7 +59,7 @@ assert(
 );
 ```
 
-应有一个复选框的 `value` 属性值为 `lazy`。
+One of your checkboxes should have the `value` attribute of `lazy`.
 
 ```js
 assert(
@@ -68,7 +68,7 @@ assert(
 );
 ```
 
-应有一个复选框的 `value` 属性值为 `energetic`。
+One of your checkboxes should have the `value` attribute of `energetic`.
 
 ```js
 assert(
@@ -78,5 +78,70 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
+
 # --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving"> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

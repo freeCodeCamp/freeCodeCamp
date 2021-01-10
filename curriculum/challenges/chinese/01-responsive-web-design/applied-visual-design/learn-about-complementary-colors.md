@@ -1,6 +1,6 @@
 ---
 id: 587d78a3367417b2b2512ad1
-title: 了解互补色
+title: Learn about Complementary Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MD3Tr'
 forumTopicId: 301056
@@ -8,35 +8,82 @@ forumTopicId: 301056
 
 # --description--
 
-色彩理论以及设计色彩学很复杂，这里将只涉及基础部分。在网站设计里，颜色能让内容更醒目，能调动情绪，从而创造舒适的视觉体验。不同的颜色组合对网站的视觉效果影响很大，精妙的设计都需要适宜的颜色来美化页面内容。
+Color theory and its impact on design is a deep topic and only the basics are covered in the following challenges. On a website, color can draw attention to content, evoke emotions, or create visual harmony. Using different combinations of colors can really change the look of a website, and a lot of thought can go into picking a color palette that works with your content.
 
-一半是科学，一半是艺术，色环是我们认识颜色关系的好工具。它是一个近色相邻、异色相离的圆环。当两个颜色恰好在色环的两端时，这两个颜色就互为补色。在绘画中，两个互为补色的颜色会在混合后变成灰色。补色搭配能形成强烈的对比效果，传达出活力、能量、兴奋等意义。
+The color wheel is a useful tool to visualize how colors relate to each other - it's a circle where similar hues are neighbors and different hues are farther apart. When two colors are opposite each other on the wheel, they are called complementary colors. They have the characteristic that if they are combined, they "cancel" each other out and create a gray color. However, when placed side-by-side, these colors appear more vibrant and produce a strong visual contrast.
 
-下面是一些以 hex 形式表示的补色例子：
+Some examples of complementary colors with their hex codes are:
 
-<blockquote>红色（#FF0000）和蓝绿色 (#00FFFF)<br>绿色（#00FF00）和品红色（#FF00FF）<br>蓝色（#0000FF）和黄色（#FFFF00）</blockquote>
+<blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)</blockquote>
 
-现在，很多在线选色工具也为我们提供了寻找补色的功能。
+This is different than the outdated RYB color model that many of us were taught in school, which has different primary and complementary colors. Modern color theory uses the additive RGB model (like on a computer screen) and the subtractive CMY(K) model (like in printing). Read [here](https://en.wikipedia.org/wiki/Color_model) for more information on this complex subject.
 
-**注意：**对于颜色相关的挑战：颜色搭配是提起用户兴趣或吸引用户注意的重要方式之一。但我们不应让颜色作为传达重要信息的唯一方式，因为视觉障碍用户可能无法像其他人一样看出其中的含义。我们将会在应用无障碍章节进行详细介绍。
+There are many color picking tools available online that have an option to find the complement of a color.
+
+**Note:** For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.
 
 # --instructions--
 
-把 class 为 `blue` 和 `yellow` 的元素的 `background-color` 属性改成相应的颜色。注意观察这两个颜色的搭配效果，以及对比白色背景的视觉效果。
+Change the `background-color` property of the `blue` and `yellow` classes to their respective colors. Notice how the colors look different next to each other than they do compared against the white background.
 
 # --hints--
 
-class 为 `blue` 的 `div` 元素的 `background-color` 属性值应为 `blue`。
+The `div` element with class `blue` should have a `background-color` of blue.
 
 ```js
 assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
 ```
 
-class 为 `yellow` 的 `div` 元素的 `background-color` 属性值应为 `yellow`。
+The `div` element with class `yellow` should have a `background-color` of yellow.
 
 ```js
 assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  .blue {
+    background-color: #000000;
+  }
+  .yellow {
+    background-color: #000000;
+  }
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+<div class="blue"></div>
+<div class="yellow"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  .blue {
+    background-color: blue;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+<div class="blue"></div>
+<div class="yellow"></div>
+```

@@ -1,6 +1,6 @@
 ---
 id: 587d78a9367417b2b2512ae8
-title: 学习贝塞尔曲线的原理
+title: Learn How Bezier Curves Work
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bDrs8'
 forumTopicId: 301058
@@ -8,23 +8,23 @@ forumTopicId: 301058
 
 # --description--
 
-上一个挑战中，我们介绍了 `animation-timing-function` 以及它的一些预设值，这些值定义了不同时间内的动画速度。除了预定义值之外，CSS 还提供了贝塞尔曲线（Bezier curves）来更细致地控制动画的速度曲线。
+The last challenge introduced the `animation-timing-function` property and a few keywords that change the speed of an animation over its duration. CSS offers an option other than keywords that provides even finer control over how the animation plays out, through the use of Bezier curves.
 
-在 CSS 动画里，我们可以用 `cubic-bezier` 来定义贝塞尔曲线。曲线的形状代表了动画的速度。曲线在 `1 * 1` 的坐标系统内，其中 X 轴代表动画的时间间隔（类似于时间比例尺），Y 轴代表动画的改变。
+In CSS animations, Bezier curves are used with the `cubic-bezier` function. The shape of the curve represents how the animation plays out. The curve lives on a 1 by 1 coordinate system. The X-axis of this coordinate system is the duration of the animation (think of it as a time scale), and the Y-axis is the change in the animation.
 
-`cubic-bezier` 函数包含了 `1 * 1` 网格里的4个点：`p0`、`p1`、`p2`、`p3`。其中 `p0` 和 `p3` 是固定值，代表曲线的起始点和结束点，坐标值依次为 (0, 0) 和 (1, 1)。你只需设置另外两点的 x 值和 y 值，设置的这两点确定了曲线的形状从而确定了动画的速度曲线。在 CSS 里面通过 `(x1, y1, x2, y2)` 来确定 `p1` 和 `p2`。以下就是 CSS 贝塞尔曲线的例子：
+The `cubic-bezier` function consists of four main points that sit on this 1 by 1 grid: `p0`, `p1`, `p2`, and `p3`. `p0` and `p3` are set for you - they are the beginning and end points which are always located respectively at the origin (0, 0) and (1, 1). You set the x and y values for the other two points, and where you place them in the grid dictates the shape of the curve for the animation to follow. This is done in CSS by declaring the x and y values of the `p1` and `p2` "anchor" points in the form: `(x1, y1, x2, y2)`. Pulling it all together, here's an example of a Bezier curve in CSS code:
 
 `animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);`
 
-在上面的例子里，两个点的 x 和 y 值相等（x1 = 0.25 = y1 和 x2 = 0.75 = y2），如果你还记得初中几何，结果是从原点到点 (1, 1) 的一条直线。动画速度呈线性，效果和 `linear` 一致。换言之，元素会匀速运动。
+In the example above, the x and y values are equivalent for each point (x1 = 0.25 = y1 and x2 = 0.75 = y2), which if you remember from geometry class, results in a line that extends from the origin to point (1, 1). This animation is a linear change of an element during the length of an animation, and is the same as using the `linear` keyword. In other words, it changes at a constant speed.
 
 # --instructions--
 
-对于 id 为 `ball1` 的元素，请把 `animation-timing-function` 属性值从 `linear` 变成等价的 `cubic-bezier` 函数值。也就是使用上面例子给的值。
+For the element with the id of `ball1`, change the value of the `animation-timing-function` property from `linear` to its equivalent `cubic-bezier` function value. Use the point values given in the example above.
 
 # --hints--
 
-id 为 `ball1` 的元素的 `animation-timing-function` 属性值应该为和 linear 预定值等价的贝塞尔函数值。
+The value of the `animation-timing-function` property for the element with the id `ball1` should be the linear-equivalent cubic-bezier function.
 
 ```js
 assert(
@@ -33,16 +33,101 @@ assert(
 );
 ```
 
-id 为 `ball2` 的元素的 `animation-timing-function` 属性值应该保持不变。
+The value of the `animation-timing-function` property for the element with the id `ball2` should not change.
 
 ```js
-const ball2Animation = $('#ball2')
-  .css('animation-timing-function')
-  .replace(/\s/g, '');
+const ball2Animation = __helpers.removeWhiteSpace(
+  $('#ball2').css('animation-timing-function')
+);
 assert(
   ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)'
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+  .balls{
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #ball1 {
+    left: 27%;
+    animation-timing-function: linear;
+  }
+  #ball2 {
+    left: 56%;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
+  }
+
+</style>
+
+<div class="balls" id="ball1"></div>
+<div class="balls" id="ball2"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+
+  .balls{
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #ball1 {
+    left: 27%;
+    animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  }
+  #ball2 {
+    left: 56%;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
+  }
+</style>
+<div class="balls" id="ball1"></div>
+<div class="balls" id="ball2"></div>
+```

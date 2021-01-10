@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aede08718
-title: 使用 RGB 值为元素上色
+title: Use RGB values to Color Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkp2fr'
 forumTopicId: 18369
@@ -8,21 +8,21 @@ forumTopicId: 18369
 
 # --description--
 
-`RGB` 值是在 CSS 中表示颜色的另一种方法。
+Another way you can represent colors in CSS is by using `RGB` values.
 
-黑色的 RGB 值声明如下：
+The RGB value for black looks like this:
 
 `rgb(0, 0, 0)`
 
-白色的 RGB 值声明如下：
+The RGB value for white looks like this:
 
 `rgb(255, 255, 255)`
 
-RGB 值与我们之前学到的十六进制编码不同。RGB 值不需要用到 6 位十六进制数字，而只需要指定每种颜色的亮度大小，数值范围从 0 到 255。
+Instead of using six hexadecimal digits like you do with hex code, with `RGB` you specify the brightness of each color with a number between 0 and 255.
 
-如果我们稍微计算一下，就不难发现这两种表示方式本质上是等价的。在十六进制编码中，我们用两个十六进制数表示一个颜色；这样，每种颜色都有 16 * 16（即 256）种可能。而在 RGB 表示方式中，每个颜色的数值范围是 0 到 255，因此也有 256 种可能。
+If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So `RGB`, which starts counting from zero, has the exact same number of possible values as hex code.
 
-下面是通过使用 RGB 值设置背景颜色为橘色的例子：
+Here's an example of how you'd change the body background to orange using its RGB code.
 
 ```css
 body {
@@ -32,21 +32,40 @@ body {
 
 # --instructions--
 
-请用 RGB 值 `rgb(0, 0, 0)` 替换 `body` 元素背景颜色的十六进制编码。
+Let's replace the hex code in our `body` element's background color with the RGB value for black: `rgb(0, 0, 0)`
 
 # --hints--
 
-`body` 元素的背景颜色应该是黑色的。
+Your `body` element should have a black background.
 
 ```js
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-`body` 元素的背景颜色的属性值应使用 `RGB` 值。
+You should use `rgb` to give your `body` element a color of black.
 
 ```js
 assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: #F00;
+  }
+</style>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: rgb(0, 0, 0);
+  }
+</style>
+```

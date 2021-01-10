@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08812
-title: 给网站添加图片
+title: Add Images to Your Website
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
 forumTopicId: 16640
@@ -8,59 +8,83 @@ forumTopicId: 16640
 
 # --description--
 
-你可以使用 `img` 元素来为你的网站添加图片，其中 `src` 属性指向图片的地址。
+You can add images to your website by using the `img` element, and point to a specific image's URL using the `src` attribute.
 
-例如：
+An example of this would be:
 
 `<img src="https://www.freecatphotoapp.com/your-image.jpg">`
 
-注意：`img` 元素是没有结束标签的。
+Note that `img` elements are self-closing.
 
-所有的 `img` 元素**必须**有 `alt` 属性。`alt` 的属性值有两个作用，第一个作用是让屏幕阅读器可以知晓图片的内容，这会对网页的可访问性有很大提升；另一个作用是当图片无法加载时，页面需要显示的替代文本。
+All `img` elements **must** have an `alt` attribute. The text inside an `alt` attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
 
-注意：如果图片是纯装饰性的，把 `alt` 的属性值设置为空是最佳实践。
+**Note:** If the image is purely decorative, using an empty `alt` attribute is a best practice.
 
-理想情况下，`alt` 属性不应该包含特殊字符，除非有特殊需要。
+Ideally the `alt` attribute should not contain special characters unless needed.
 
-让我们给上面例子的 `img` 添加 `alt` 属性。
+Let's add an `alt` attribute to our `img` example above:
 
-`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="一只打着领带的商务猫">`
+`<img src="https://www.freecatphotoapp.com/your-image.jpg" alt="A business cat wearing a necktie.">`
 
 # --instructions--
 
-让我们给网站添加图片：
+Let's try to add an image to our website:
 
-在 `main` 元素里，给 `p` 元素前面插入一个 `img` 元素。
+Within the existing `main` element, insert an `img` element before the existing `p` elements.
 
-然后将 `src` 的属性值设置为这个 URL：
+Now set the `src` attribute so that it points to this url:
 
 `https://bit.ly/fcc-relaxing-cat`
 
-最后，不要忘记给图片加上 `alt` 属性。
+Finally, don't forget to give your `img` element an `alt` attribute with applicable text.
 
 # --hints--
 
-你的网页上应该有一张图片。
+Your page should have an image element.
 
 ```js
 assert($('img').length);
 ```
 
-`img` 应该有一个 `src` 属性，其值为猫咪图片的 URL。
+Your image should have a `src` attribute that points to the kitten image.
 
 ```js
 assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($('img').attr('src')));
 ```
 
-`img` 元素的 `alt` 属性值不应为空。
+Your image element's `alt` attribute should not be empty.
 
 ```js
 assert(
   $('img').attr('alt') &&
     $('img').attr('alt').length &&
-    /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(code.replace(/\s/g, ''))
+    /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(
+      __helpers.removeWhiteSpace(code)
+    )
 );
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
 ```
 
 # --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
+```

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08804
-title: 给 HTML 添加注释
+title: Comment out HTML
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cGyGbca'
 forumTopicId: 16782
@@ -8,41 +8,41 @@ forumTopicId: 16782
 
 # --description--
 
-记住：注释的开始标记是 `<!--`，结束标记是 `-->`。
+Remember that in order to start a comment, you need to use `<!--` and to end a comment, you need to use `-->`
 
-现在你需要在 `h2` 元素开始前终止注释。
+Here you'll need to end the comment before your `h2` element begins.
 
 # --instructions--
 
-任务：注释掉 `h1` 元素和 `p` 元素，保留 `h2` 元素。
+Comment out your `h1` element and your `p` element, but not your `h2` element.
 
 # --hints--
 
-应注释掉 `h1` 元素，这样它就从网页上消失了。
+Your `h1` element should be commented out so that it is not visible on the page.
 
 ```js
 assert($('h1').length === 0);
 ```
 
-`h2` 元素应保持原样，这样网页上还能看到它。
+Your `h2` element should not be commented out so that it is visible on the page.
 
 ```js
 assert($('h2').length > 0);
 ```
 
-应注释掉 `p` 元素，这样它就从网页上消失了。
+Your `p` element should be commented out so that it is not visible on the page.
 
 ```js
 assert($('p').length === 0);
 ```
 
-每一个注释都应以 `-->` 结尾。
+Each of your comments should be closed with `-->`.
 
 ```js
 assert(code.match(/[^fc]-->/g).length > 1);
 ```
 
-不要更改 `h1` 元素、`h2` 元素、`p` 元素的顺序。
+You should not change the order of the `h1` `h2` or `p` in the code.
 
 ```js
 assert(
@@ -52,5 +52,24 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<!--
+<h1>Hello World</h1>
+
+<h2>CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+-->
+```
+
 # --solutions--
 
+```html
+<!--<h1>Hello World</h1>-->
+<h2>CatPhotoApp</h2> 
+<!--<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p> -->
+```

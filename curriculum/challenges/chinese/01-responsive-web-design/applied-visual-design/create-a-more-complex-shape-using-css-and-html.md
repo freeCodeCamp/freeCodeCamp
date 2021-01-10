@@ -1,6 +1,6 @@
 ---
 id: 587d78a6367417b2b2512ade
-title: 使用 CSS 和 HTML 创建更复杂的形状
+title: Create a More Complex Shape Using CSS and HTML
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPpz4fr'
 forumTopicId: 301050
@@ -8,7 +8,7 @@ forumTopicId: 301050
 
 # --description--
 
-世界上最流行的形状非心形莫属了，在本挑战中我们将用纯 CSS 创建一个心形。但是首先你需要了解伪元素 `::before` 和 `::after`。伪元素可以在所选元素之前或之后添加一些内容。在下面的代码中，`::before` 伪元素用来给 class 为 `heart` 的元素添加一个正方形：
+One of the most popular shapes in the world is the heart shape, and in this challenge you'll create one using pure CSS. But first, you need to understand the `::before` and `::after` pseudo-elements. These pseudo-elements are used to add something before or after a selected element. In the following example, a `::before` pseudo-element is used to add a rectangle to an element with the class `heart`:
 
 ```css
 .heart::before {
@@ -23,19 +23,19 @@ forumTopicId: 301050
 }
 ```
 
-`::before` 和 `::after` 必须配合 `content` 来使用。这个属性通常用来给元素添加内容诸如图片或者文字。尽管有时 `::before` 和 `::after` 是用来实现形状而非文字，但 `content` 属性仍然是必需的，此时它的值可以是空字符串。在上面的例子里，我们用 `::before` 为 class 是 `heart` 的元素添加了一个黄色的矩形，矩形的 `height` 和 `width` 分别为 50px 和 70px。由于设置了其边框半径为 25%，所以它会呈现出圆角矩形的样子。同时其相对位置为向右偏移 5px、向上偏移 50px。
+For the `::before` and `::after` pseudo-elements to function properly, they must have a defined `content` property. This property is usually used to add things like a photo or text to the selected element. When the `::before` and `::after` pseudo-elements are used to make shapes, the `content` property is still required, but it's set to an empty string. In the above example, the element with the class of `heart` has a `::before` pseudo-element that produces a yellow rectangle with `height` and `width` of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the `left` and 50px above the `top` of the element.
 
 # --instructions--
 
-把屏幕里的元素变成心形。在 `heart::after` 选择器里面，把 `background-color` 改成粉色（pink），把 `border-radius` 的属性值改成 50%。
+Transform the element on the screen to a heart. In the `heart::after` selector, change the `background-color` to pink and the `border-radius` to 50%.
 
-接下来，用类选择器选取 class 为 `heart` 的元素，为它添加 `transform` 属性。使用 `rotate()` 函数并设置角度为 -45 度。
+Next, target the element with the class `heart` (just `heart`) and fill in the `transform` property. Use the `rotate()` function with -45 degrees.
 
-最后，在 `heart::before` 选择器里面，设置 `content` 属性值为空字符串。
+Finally, in the `heart::before` selector, set its `content` property to an empty string.
 
 # --hints--
 
-`heart::after` 伪元素的 `background-color` 属性值应为粉色。
+The `background-color` property of the `heart::after` selector should be pink.
 
 ```js
 assert(
@@ -43,23 +43,102 @@ assert(
 );
 ```
 
-`heart::after` 伪元素的 `border-radius` 属性值应为 50%。
+The `border-radius` of the `heart::after` selector should be 50%.
 
 ```js
 assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
 ```
 
-class 为 `heart` 的元素的 `transform` 属性应使用 `rotate()` 函数并传入参数 `-45deg`。
+The `transform` property for the `heart` class should use a `rotate()` function set to -45 degrees.
 
 ```js
 assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
 ```
 
-`heart::before` 伪元素的 `content` 应为空字符串。
+The `content` of the `heart::before` selector should be an empty string.
 
 ```js
 assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: ;
+  }
+  .heart::after {
+    background-color: blue;
+    content: "";
+    border-radius: 25%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart::before {
+    content: ;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+</style>
+<div class="heart"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+  }
+  .heart::after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart::before {
+    content: "";
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+</style>
+<div class="heart"></div>
+```

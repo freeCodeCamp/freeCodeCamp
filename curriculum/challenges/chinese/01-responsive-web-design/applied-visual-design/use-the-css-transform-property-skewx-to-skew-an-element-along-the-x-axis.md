@@ -1,6 +1,6 @@
 ---
 id: 587d78a6367417b2b2512adb
-title: 使用 CSS Transform skex 属性沿X轴倾斜元素
+title: Use the CSS Transform Property skewX to Skew an Element Along the X-Axis
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLP8Sr'
 forumTopicId: 301074
@@ -8,9 +8,9 @@ forumTopicId: 301074
 
 # --description--
 
-接下来要介绍的 `transform` 属性是 `skewX`：`skewX` 使选择的元素沿着 X 轴（横向）翻转指定的角度。
+The next function of the `transform` property is `skewX()`, which skews the selected element along its X (horizontal) axis by a given degree.
 
-下面的代码沿着 X 轴翻转 `p` 元素 -32 度。
+The following code skews the paragraph element by -32 degrees along the X-axis.
 
 ```css
 p {
@@ -20,15 +20,57 @@ p {
 
 # --instructions--
 
-使用 `transform` 属性沿 X 轴翻转 id 为 `bottom` 的元素 24 度。
+Skew the element with the id of `bottom` by 24 degrees along the X-axis by using the `transform` property.
 
 # --hints--
 
-id 为 `bottom` 的元素应该沿着 X 轴翻转 24 度。
+The element with id `bottom` should be skewed by 24 degrees along its X-axis.
 
 ```js
 assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+  }
+  #top {
+    background-color: red;
+  }
+  #bottom {
+    background-color: blue;
+
+  }
+</style>
+
+<div id="top"></div>
+<div id="bottom"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+  }
+  #top {
+    background-color: red;
+  }
+  #bottom {
+    background-color: blue;
+    transform: skewX(24deg);
+  }
+</style>
+<div id="top"></div>
+<div id="bottom"></div>
+```

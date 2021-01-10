@@ -1,6 +1,6 @@
 ---
 id: 5b7d72c338cd7e35b63f3e14
-title: 通过浏览器降级提高兼容性
+title: Improve Compatibility with Browser Fallbacks
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301087
@@ -8,19 +8,19 @@ forumTopicId: 301087
 
 # --description--
 
-使用 CSS 时可能会遇到浏览器兼容性问题。提供浏览器降级方案来避免潜在的问题会显得很重要。
+When working with CSS you will likely run into browser compatibility issues at some point. This is why it's important to provide browser fallbacks to avoid potential problems.
 
-当浏览器解析页面的 CSS 时，会自动忽视不能识别或者不支持的属性。举个例子，如果使用 CSS 变量来指定站点的背景色，IE 浏览器由于不支持 CSS 变量而会忽略背景色。此时，浏览器会尝试使用其它值。但如果没有找到其它值，则会使用默认值，也就是没有背景色。
+When your browser parses the CSS of a webpage, it ignores any properties that it doesn't recognize or support. For example, if you use a CSS variable to assign a background color on a site, Internet Explorer will ignore the background color because it does not support CSS variables. In that case, the browser will use whatever value it has for that property. If it can't find any other value set for that property, it will revert to the default value, which is typically not ideal.
 
-这意味着如果想提供浏览器降级方案，在声明之前提供另一个更宽泛的值即可。这样老旧的浏览器会降级使用这个方案，新的浏览器会在后面的声明里覆盖降级方案。
+This means that if you do want to provide a browser fallback, it's as easy as providing another more widely supported value immediately before your declaration. That way an older browser will have something to fall back on, while a newer browser will just interpret whatever declaration comes later in the cascade.
 
 # --instructions--
 
-我们使用了 CSS 变量来定义 `.red-box` 的背景色。现在，请在使用 CSS 变量前添加属性值为 red 的 `background` 声明来处理浏览器兼容性的问题。
+It looks like a variable is being used to set the background color of the `.red-box` class. Let's improve our browser compatibility by adding another `background` declaration right before the existing declaration and set its value to red.
 
 # --hints--
 
-`.red-box` 应存在属性值为 `red` 的 `background` 声明，作为使用 CSS 变量的降级解决方案。
+Your `.red-box` rule should include a fallback with the `background` set to red immediately before the existing `background` declaration.
 
 ```js
 assert(
@@ -32,5 +32,38 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  :root {
+    --red-color: red;
+  }
+  .red-box {
+
+    background: var(--red-color);
+    height: 200px;
+    width:200px;
+  }
+</style>
+<div class="red-box"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  :root {
+    --red-color: red;
+  }
+  .red-box {
+    background: red;
+    background: var(--red-color);
+    height: 200px;
+    width:200px;
+  }
+</style>
+<div class="red-box"></div>
+```

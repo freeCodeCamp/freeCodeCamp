@@ -1,6 +1,6 @@
 ---
 id: 587d78ae367417b2b2512afe
-title: 使用 flex 短方法属性
+title: Use the flex Shorthand Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cbpW2tE'
 forumTopicId: 301112
@@ -8,21 +8,21 @@ forumTopicId: 301112
 
 # --description--
 
-上面几个 flex 属性有一个简写方式。`flex-grow`、`flex-shrink` 和 `flex-basis` 属性可以在 `flex` 中一并设置。
+There is a shortcut available to set several flex properties at once. The `flex-grow`, `flex-shrink`, and `flex-basis` properties can all be set together by using the `flex` property.
 
-例如，`flex: 1 0 10px;` 会把项目属性设为 `flex-grow: 1;`、`flex-shrink: 0;` 以及 `flex-basis: 10px;`。
+For example, `flex: 1 0 10px;` will set the item to `flex-grow: 1;`, `flex-shrink: 0;`, and `flex-basis: 10px;`.
 
-属性的默认设置是 `flex: 0 1 auto;`。
+The default property settings are `flex: 0 1 auto;`.
 
 # --instructions--
 
-请给 `#box-1` 和 `#box-2` 添加 `flex` 属性。设置 `#box-1` 的 `flex-grow` 属性值为 `2`、`flex-shrink` 属性值为 `2`、`flex-basis` 属性值为 `150px`；设置 `#box-2` 的 `flex-grow` 属性值为 `1`、`flex-shrink` 属性值为 `1`、`flex-basis` 属性值为 `150px`。
+Add the CSS property `flex` to both `#box-1` and `#box-2`. Give `#box-1` the values so its `flex-grow` is `2`, its `flex-shrink` is `2`, and its `flex-basis` is `150px`. Give `#box-2` the values so its `flex-grow` is `1`, its `flex-shrink` is `1`, and its `flex-basis` is `150px`.
 
-通过上面的设置，在容器大于 300px 时，`#box-1` 扩大的空间会是 `#box-2` 扩大空间的两倍；在容器小于 300px 时，`#box-1` 缩小的空间会是 `#box-2` 缩小空间的两倍。300px 是两个盒子的 `flex-basis` 属性值之和。
+These values will cause `#box-1` to grow to fill the extra space at twice the rate of `#box-2` when the container is greater than 300px and shrink at twice the rate of `#box-2` when the container is less than 300px. 300px is the combined size of the `flex-basis` values of the two boxes.
 
 # --hints--
 
-`#box-1` 元素应具有 `flex` 属性，其属性值应为 `2 2 150px`。
+The `#box-1` element should have the `flex` property set to a value of `2 2 150px`.
 
 ```js
 assert(
@@ -32,7 +32,7 @@ assert(
 );
 ```
 
-`#box-2` 元素应具有 `flex` 属性，其属性值应为 `1 1 150px`。
+The `#box-2` element should have the `flex` property set to a value of `1 1 150px`.
 
 ```js
 assert(
@@ -42,11 +42,64 @@ assert(
 );
 ```
 
-应使用 `flex` 的简写属性为 `#box-1` 和 `#box-2` 添加规则。
+Your code should use the `flex` property for `#box-1` and `#box-2`.
 
 ```js
 assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+
+    height: 200px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+
+    height: 200px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    flex: 2 2 150px;
+    height: 200px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    flex: 1 1 150px;
+    height: 200px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+```

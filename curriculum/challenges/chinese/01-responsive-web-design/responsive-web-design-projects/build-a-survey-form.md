@@ -1,56 +1,61 @@
 ---
 id: 587d78af367417b2b2512b03
-title: 制作一个调查表格
+title: Build a Survey Form
 challengeType: 3
 forumTopicId: 301145
 ---
 
 # --description--
 
-**目标：**在 [CodePen.io](https://codepen.io) 上创建一个与这个功能类似的 app：<https://codepen.io/freeCodeCamp/full/VPaoNP>。
+**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/VPaoNP>.
 
-在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下，你可以根据自己的喜好来美化你的 app。
+Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
 
-你可以使用 HTML、JavaScript 以及 CSS 来完成项目。由于目前你只学到了 CSS 课程，所以我们建议你只使用 CSS 来完成这个项目，同时巩固一下你之前所学的内容。你也可以使用 Bootstrap 或者 SASS。我们不推荐你在这个项目中使用其他技术（比如 jQuery、React、Angular 或 Vue）。否则，如果在编码中出现问题，你需要自行解决。在后续的其他项目中，你将有机会使用像是 React 等其他技术栈。如果你在使用上述推荐的技术栈过程中遇到问题，请提交给我们来处理。祝你编码愉快！
+You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**需求 1：**此 app 中应存在一个 `id` 为 `"title"` 的 `h1` 元素作为标题。
+**User Story #1:** I can see a title with `id="title"` in H1 sized text.
 
-**需求 2：**此 app 中应存在一个 `id` 为 `"description"` 的 `p` 元素，其中应包含一段简短的介绍。
+**User Story #2:** I can see a short explanation with `id="description"` in P sized text.
 
-**需求 3：**此 app 中应存在一个 `id` 为 `"survey-form"` 的 `form` 元素。
+**User Story #3:** I can see a `form` with `id="survey-form"`.
 
-**需求 4：**在表单元素内，应存在 `id` 为 `"name"` 的输入框（必填项），以便用户输入姓名。
+**User Story #4:** Inside the form element, I am required to enter my name in a field with `id="name"`.
 
-**需求 5：**在表单元素内，应存在 `id` 为 `"email"` 的输入框（必填项），以便用户输入邮箱。
+**User Story #5:** Inside the form element, I am required to enter an email in a field with `id="email"`.
 
-**需求 6：**如果用户输入了格式不正确的邮箱，则应出现来自 HTML5 表单数据校验的错误信息。
+**User Story #6:** If I enter an email that is not formatted correctly, I will see an HTML5 validation error.
 
-**需求 7：**在表单内，用户应可以在 `id` 为 `"number"` 的输入框中输入数字。
+**User Story #7:** Inside the form, I can enter a number in a field with `id="number"`.
 
-**需求 8：**如果用户在数字输入框内输入非数字内容，则应出现来自 HTML5 表单数据校验的错误信息。
+**User Story #8:** If I enter non-numbers in the number input, I will see an HTML5 validation error.
 
-**需求 9：**如果用户输入的数字超出了使用 `min` 和 `max` 属性定义的范围，则应出现来自 HTML5 表单数据校验的错误信息。
+**User Story #9:** If I enter numbers outside the range of the number input, which are defined by the `min` and `max` attributes, I will see an HTML5 validation error.
 
-**需求 10：**表单中的姓名、邮箱和数字输入框需有对应的包含描述输入框用途的 `label`。这些 `label` 的 `id` 应分别为 `"name-label"`、`"email-label"`、`"number-label"`。
+**User Story #10:** For the name, email, and number input fields inside the form I can see corresponding labels that describe the purpose of each field with the following ids: `id="name-label"`, `id="email-label"`, and `id="number-label"`.
 
-**需求 11：**表单中的姓名、邮箱和数字输入框需有对应的描述文字作为占位符（`placeholder`）。
+**User Story #11:** For the name, email, and number input fields, I can see placeholder text that gives me a description or instructions for each field.
 
-**需求 12：**在表单元素内，应存在一个 `id` 为 `"dropdown"` 的下拉列表，用户可以从中选取一个选项。
+**User Story #12:** Inside the form element, I can select an option from a dropdown that has a corresponding `id="dropdown"`.
 
-**需求 13：**在表单元素内，应至少存在一组单选按钮，且应使用 `name` 属性进行分组。用户可以从中选取一个选项。
+**User Story #13:** Inside the form element, I can select a field from one or more groups of radio buttons. Each group should be grouped using the `name` attribute.
 
-**需求 14：**在表单元素内，应存在几个复选框，且每个复选框都应有 `value` 属性。用户可以选中这些复选框。
+**User Story #14:** Inside the form element, I can select several fields from a series of checkboxes, each of which must have a `value` attribute.
 
-**需求 15：**在表单元素的最后，应存在一个 `textarea` 元素，以便用户输入额外的批注。
+**User Story #15:** Inside the form element, I am presented with a `textarea` at the end for additional comments.
 
-**需求 16：**在表单元素内，应存在一个 `id` 为 `"submit"` 的按钮，以便用户提交表单。
+**User Story #16:** Inside the form element, I am presented with a button with `id="submit"` to submit all my inputs.
 
-你可以通过 fork [这个项目](http://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目，也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --hints--
 
 
+# --seed--
+
 # --solutions--
 
+```html
+// solution required
+```

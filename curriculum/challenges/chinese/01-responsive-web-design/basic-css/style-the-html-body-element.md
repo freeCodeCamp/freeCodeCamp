@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08736
-title: 给 HTML 的 body 元素添加样式
+title: Style the HTML Body Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB77PHW'
 forumTopicId: 18313
@@ -8,15 +8,15 @@ forumTopicId: 18313
 
 # --description--
 
-现在让我们来讨论一下 CSS 中的继承。
+Now let's start fresh and talk about CSS inheritance.
 
-每一个 HTML 页面都有一个 `body` 元素。
+Every HTML page has a `body` element.
 
 # --instructions--
 
-我们可以通过设置 `background-color` 的属性值为 `black`，来证明 `body` 元素的存在。
+We can prove that the `body` element exists here by giving it a `background-color` of black.
 
-请将以下代码添加到 `style` 标签里面：
+We can do this by adding the following to our `style` element:
 
 ```css
 body {
@@ -26,13 +26,13 @@ body {
 
 # --hints--
 
-`body` 元素的 `background-color` 应为黑色。
+Your `body` element should have the `background-color` of black.
 
 ```js
 assert($('body').css('background-color') === 'rgb(0, 0, 0)');
 ```
 
-确保 CSS 规则格式书写正确，左右大括号也应匹配。
+Your CSS rule should be properly formatted with both opening and closing curly brackets.
 
 ```js
 assert(
@@ -40,13 +40,30 @@ assert(
 );
 ```
 
-确保 CSS 规则以分号结尾。
+Your CSS rule should end with a semi-colon.
 
 ```js
 assert(
   code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i)
 );
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+</style>
 ```
 
 # --solutions--
 
+```html
+<style>
+body {
+  background-color: black;
+}
+</style>
+```

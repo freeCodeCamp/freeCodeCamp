@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf07756
-title: Important 的优先级最高
+title: Override All Other Styles by using Important
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24rcp'
 forumTopicId: 18249
@@ -8,45 +8,49 @@ forumTopicId: 18249
 
 # --description--
 
-耶！我们刚刚又证明了行内样式会覆盖 `style` 标签里面所有的 CSS 声明。
+Yay! We just proved that inline styles will override all the CSS declarations in your `style` element.
 
-不过，还有一种方式可以覆盖重新 CSS 样式。这是所有方法里面最强大的一个。在此之前，我们要考虑清楚，为什么我们要覆盖 CSS 样式。
+But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.
 
-很多时候，你使用的 CSS 库中的样式会意外覆盖你的 CSS 样式。如果想保证你的 CSS 样式不受影响，就可以使用 `!important`。
+In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use `!important`
 
-让我们回到 `pink-text` class 声明之中，它的颜色样式已被之后的 class 声明、id 声明以及行内样式所覆盖。
+Let's go all the way back to our `pink-text` class declaration. Remember that our `pink-text` class was overridden by subsequent class declarations, id declarations, and inline styles.
 
 # --instructions--
 
-在 `pink-text` class 的 `color` 声明里面使用 `!important` 关键字，以确保 `h1` 元素的字体颜色为粉色。类似这样：`color: red !important`
+Let's add the keyword `!important` to your pink-text element's color declaration to make 100% sure that your `h1` element will be pink.
+
+An example of how to do this is:
+
+`color: red !important;`
 
 # --hints--
 
-`h1` 元素应该包含 `pink-text` class。
+Your `h1` element should have the class `pink-text`.
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-`h1` 元素应该包含 `blue-text` class。
+Your `h1` element should have the class `blue-text`.
 
 ```js
 assert($('h1').hasClass('blue-text'));
 ```
 
-`h1` 元素的 `id` 应为 `orange-text`。
+Your `h1` element should have the id of `orange-text`.
 
 ```js
 assert($('h1').attr('id') === 'orange-text');
 ```
 
-`h1` 元素应该包含 `color: white` 的行内样式声明。
+Your `h1` element should have the inline style of `color: white`.
 
 ```js
 assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi));
 ```
 
-`pink-text` class 声明中应含有 `!important` 关键字。
+Your `pink-text` class declaration should have the `!important` keyword to override all other declarations.
 
 ```js
 assert(
@@ -54,11 +58,54 @@ assert(
 );
 ```
 
-`h1` 元素的字体颜色应为粉色。
+Your `h1` element should be pink.
 
 ```js
 assert($('h1').css('color') === 'rgb(255, 192, 203)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink !important;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
+```

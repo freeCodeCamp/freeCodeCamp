@@ -1,54 +1,59 @@
 ---
 id: 587d78af367417b2b2512b04
-title: 制作一个产品登录页
+title: Build a Product Landing Page
 challengeType: 3
 forumTopicId: 301144
 ---
 
 # --description--
 
-**目标：**在 [CodePen.io](https://codepen.io) 上创建一个与这个功能类似的 app：<https://codepen.io/freeCodeCamp/full/RKRbwL>。
+**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/RKRbwL>.
 
-在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下，你可以根据自己的喜好来美化你的 app。
+Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
 
-你可以使用 HTML、JavaScript 以及 CSS 来完成项目。由于目前你只学到了 CSS 课程，所以我们建议你只使用 CSS 来完成这个项目，同时巩固一下你之前所学的内容。你也可以使用 Bootstrap 或者 SASS。我们不推荐你在这个项目中使用其他技术（比如 jQuery、React、Angular 或 Vue）。否则，如果在编码中出现问题，你需要自行解决。在后续的其他项目中，你将有机会使用像是 React 等其他技术栈。如果你在使用上述推荐的技术栈过程中遇到问题，请提交给我们来处理。祝你编码愉快！
+You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**需求 1：**产品登陆页应存在 `id` 为 `"header"` 的 `header` 元素。
+**User Story #1:** My product landing page should have a `header` element with a corresponding `id="header"`.
 
-**需求 2：**在 `header` 元素内应存在 `id` 为 `"header-img"` 的图像，这里通常用来放置公司的 logo。
+**User Story #2:** I can see an image within the `header` element with a corresponding `id="header-img"`. A company logo would make a good image here.
 
-**需求 3：**在 `#header` 元素内，应存在一个 `id` 为 `"nav-bar"` 的 `nav` 元素。
+**User Story #3:** Within the `#header` element I can see a `nav` element with a corresponding `id="nav-bar"`.
 
-**需求 4：**`nav` 元素中应至少包含三个 `class` 为 `nav-link` 且可点击的元素。
+**User Story #4:** I can see at least three clickable elements inside the `nav` element, each with the class `nav-link`.
 
-**需求 5：**当点击 `nav` 内的 `.nav-link` 按钮时，应滚动到产品主页上相应的部分。
+**User Story #5:** When I click a `.nav-link` button in the `nav` element, I am taken to the corresponding section of the landing page.
 
-**需求 6：**页面上应存在 `id` 为 `"video"` 的嵌入式视频播放区域。
+**User Story #6:** I can watch an embedded product video with `id="video"`.
 
-**需求 7：**产品登陆页应存在一个 `id` 为 `"form"` 的 `form` 元素。
+**User Story #7:** My landing page has a `form` element with a corresponding `id="form"`.
 
-**需求 8：**在表单元素 `form` 中，应存在一个 `id` 为 `"email"` 的 `input` 输入框供用户填写邮箱。
+**User Story #8:** Within the form, there is an `input` field with `id="email"` where I can enter an email address.
 
-**需求 9：**`#email` 输入框内应存在描述该区域用途的占位符文字（`placeholder`）。
+**User Story #9:** The `#email` input field should have placeholder text to let the user know what the field is for.
 
-**需求 10：**`#email` 输入框应使用 HTML5 验证来确认输入的内容是否为邮箱。
+**User Story #10:** The `#email` input field uses HTML5 validation to confirm that the entered text is an email address.
 
-**需求 11：**在表单中，应存在一个 `id` 为 `"submit"` 的 `input` 提交按钮。
+**User Story #11:** Within the form, there is a submit `input` with a corresponding `id="submit"`.
 
-**需求 12：**当点击 `#submit` 元素时，应将邮箱信息提交到一个静态页面（请使用这个模拟的 URL：<https://www.freecodecamp.com/email-submit>）。
+**User Story #12:** When I click the `#submit` element, the email is submitted to a static page (use this mock URL: <https://www.freecodecamp.com/email-submit>).
 
-**需求 13：**navbar 应保持在视口（viewport）的顶部。
+**User Story #13:** The navbar should always be at the top of the viewport.
 
-**需求 14：**在此 app 中，应至少使用一次媒体查询。
+**User Story #14:** My product landing page should have at least one media query.
 
-**需求 15：**在此 app 中，应至少使用一次 CSS 的 flexbox 布局。
+**User Story #15:** My product landing page should utilize CSS flexbox at least once.
 
-你可以通过 fork [这个项目](http://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目，也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --hints--
 
 
+# --seed--
+
 # --solutions--
 
+```html
+// solution required
+```

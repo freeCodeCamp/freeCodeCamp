@@ -1,54 +1,59 @@
 ---
 id: 587d78b0367417b2b2512b05
-title: 制作一个技术文档页面
+title: Build a Technical Documentation Page
 challengeType: 3
 forumTopicId: 301146
 ---
 
 # --description--
 
-**目标：**在 [CodePen.io](https://codepen.io) 上创建一个与这个功能类似的 app：<https://codepen.io/freeCodeCamp/full/NdrKKL>。
+**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/NdrKKL>.
 
-在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下，你可以根据自己的喜好来美化你的 app。
+Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
 
-你可以使用 HTML、JavaScript 以及 CSS 来完成项目。由于目前你只学到了 CSS 课程，所以我们建议你只使用 CSS 来完成这个项目，同时巩固一下你之前所学的内容。你也可以使用 Bootstrap 或者 SASS。我们不推荐你在这个项目中使用其他技术（比如 jQuery、React、Angular 或 Vue）。否则，如果在编码中出现问题，你需要自行解决。在后续的其他项目中，你将有机会使用像是 React 等其他技术栈。如果你在使用上述推荐的技术栈过程中遇到问题，请提交给我们来处理。祝你编码愉快！
+You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**需求 1：**此 app 中应存在一个 `id` 为 `"main-doc"` 的 `main` 元素，它包含页面的主要内容（技术文档）。
+**User Story #1:** I can see a `main` element with a corresponding `id="main-doc"`, which contains the page's main content (technical documentation).
 
-**需求 2：**在 `#main-doc` 元素内，应存在至少 5 个 `section` 元素，每个元素的 class 都应为 `main-section`。
+**User Story #2:** Within the `#main-doc` element, I can see several `section` elements, each with a class of `main-section`. There should be a minimum of 5.
 
-**需求 3：**每个 `.main-section` 内的第一个元素应为 `header` 元素，其中包含描述该部分主题的内容文本。
+**User Story #3:** The first element within each `.main-section` should be a `header` element which contains text that describes the topic of that section.
 
-**需求 4：**类名为 `main-section` 的每个 `section` 元素都应有一个与包含在其中的每个`header`的文本相对应的 id，用下划线替换文本中的所有空格（例如，包含标题 "Javascript and Java" 的`section`应该有对应`id="Javascript_and_Java"`）。
+**User Story #4:** Each `section` element with the class of `main-section` should also have an id that corresponds with the text of each `header` contained within it. Any spaces should be replaced with underscores (e.g. The `section` that contains the header "JavaScript and Java" should have a corresponding `id="JavaScript_and_Java"`).
 
-**需求 5：**所有 `.main-section` 元素内总计应有至少 10 个 `p` 元素。
+**User Story #5:** The `.main-section` elements should contain at least 10 `p` elements total (not each).
 
-**需求 6：**所有 `.main-section` 元素内总计应有至少 5 个 `code` 元素。
+**User Story #6:** The `.main-section` elements should contain at least 5 `code` elements total (not each).
 
-**需求 7：**所有 `.main-section` 元素内总计应有至少 5 个 `li` 元素。
+**User Story #7:** The `.main-section` elements should contain at least 5 `li` items total (not each).
 
-**需求 8：**此 app 中应存在一个 `id` 为 `"navbar"` 的 `nav` 元素。
+**User Story #8:** I can see a `nav` element with a corresponding `id="navbar"`.
 
-**需求 9：**navbar 元素内应有一个 `header` 元素，其中包含描述技术文档主题的内容文本。
+**User Story #9:** The navbar element should contain one `header` element which contains text that describes the topic of the technical documentation.
 
-**需求 10：**此外，navbar 元素应包含 `class` 为 `nav-link` 的 `a` 元素，每个 class 为 `main-section` 的元素都需要有对应的 `a` 元素。
+**User Story #10:** Additionally, the navbar should contain link (`a`) elements with the class of `nav-link`. There should be one for every element with the class `main-section`.
 
-**需求 11：**navbar 中的 `header` 元素应置于 navbar 中所有 `a` 元素之前。
+**User Story #11:** The `header` element in the navbar must come before any link (`a`) elements in the navbar.
 
-**需求 12：**所有 class 为 `nav-link` 的 `a` 元素都需要包含与其 `header` 相应的内容文本。例如，对于一个文本为 "Hello world" 的 `section` 或 `header`，你的navbar 中也应存在一个内容文本为 "Hello world" 的 `a` 元素。
+**User Story #12:** Each element with the class of `nav-link` should contain text that corresponds to the `header` text within each `section` (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world").
 
-**需求 13：**当点击 navbar 中一个 `a` 元素时，页面应滚动到 `main-doc` 中的相应部分。例如，点击文本为 "Hello world" 的 `nav-link` 元素的时候，页面应滚动到包含相同内容的 header 和 id 所处的 `section` 元素。
+**User Story #13:** When I click on a navbar element, the page should navigate to the corresponding section of the `main-doc` element (e.g. If I click on a `nav-link` element that contains the text "Hello world", the page navigates to a `section` element that has that id and contains the corresponding `header`.
 
-**需求 14：**在常规尺寸的设备上（如笔记本电脑和台式机），`id` 为 `"navbar"` 的元素应显示在屏幕左侧，且始终对用户可见。
+**User Story #14:** On regular sized devices (laptops, desktops), the element with `id="navbar"` should be shown on the left side of the screen and should always be visible to the user.
 
-**需求 15：**在此 app 中，应至少使用一次媒体查询。
+**User Story #15:** My Technical Documentation page should use at least one media query.
 
-你可以通过 fork [这个项目](http://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目，也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --hints--
 
 
+# --seed--
+
 # --solutions--
 
+```html
+// solution required
+```

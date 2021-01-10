@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf0887a
-title: 用 h2 元素代表副标题
+title: Headline with the h2 Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
 forumTopicId: 18196
@@ -8,25 +8,25 @@ forumTopicId: 18196
 
 # --description--
 
-在接下来的几节课里，我们将会一步一步地制作一个展示猫咪图片的 HTML5 app。
+Over the next few lessons, we'll build an HTML5 cat photo web app piece-by-piece.
 
-这节课中，我们将会为页面引入作为第二级标题的 `h2` 元素。
+The `h2` element you will be adding in this step will add a level two heading to the web page.
 
-这些元素用来告诉浏览器网站的结构是什么样子。`h1` 元素通常被用作主标题，`h2` 元素通常被用作副标题，还有 `h3`、`h4`、`h5`、`h6` 元素，它们分别用作不同级别的标题。
+This element tells the browser about the structure of your website. `h1` elements are often used for main headings, while `h2` elements are generally used for subheadings. There are also `h3`, `h4`, `h5` and `h6` elements to indicate different levels of subheadings.
 
 # --instructions--
 
-在内容为 "Hello World" 的 `h1` 元素下面创建一个 `h2` 元素，`h2` 元素的内容为 `CatPhotoApp`。
+Add an `h2` tag that says "CatPhotoApp" to create a second HTML element below your "Hello World" `h1` element.
 
 # --hints--
 
-应创建一个 `h2` 元素。
+You should create an `h2` element.
 
 ```js
 assert($('h2').length > 0);
 ```
 
-`h2` 元素应该有结束标签。
+Your `h2` element should have a closing tag.
 
 ```js
 assert(
@@ -35,23 +35,35 @@ assert(
 );
 ```
 
-`h2` 元素的内容应为：`CatPhotoApp`。
+Your `h2` element should have the text `CatPhotoApp`.
 
 ```js
 assert.isTrue(/cat(\s)?photo(\s)?app/gi.test($('h2').text()));
 ```
 
-`h1` 元素的内容应为：`Hello World`。
+Your `h1` element should have the text `Hello World`.
 
 ```js
 assert.isTrue(/hello(\s)+world/gi.test($('h1').text()));
 ```
 
-`h1` 元素应出现在 `h2` 元素之前。
+Your `h1` element should be before your `h2` element.
 
 ```js
 assert(code.match(/<h1>\s*?.*?\s*?<\/h1>\s*<h2>\s*?.*?\s*?<\/h2>/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>Hello World</h1>
+```
+
 # --solutions--
 
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+```

@@ -1,24 +1,23 @@
 ---
 id: 5a94fe8569fb03452672e464
-title: 在网格中创建网格
+title: Create Grids within Grids
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
 forumTopicId: 301128
 ---
 
 # --description--
 
-将元素转换为网格只会影响其子元素（即直接后代元素，英文为 `direct descendants`。意思是一个元素的所有后代元素中，父级元素为该元素的所有元素）。因此，如果我们把某个子元素设置为网格，就会得到一个嵌套的网格。
+Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you have a grid within a grid.
 
-例如，如果我们设置 class 为 `item3` 的元素的 `display` 和 `grid-template-columns` 属性，就会得到一个嵌套的网格。
+For example, by setting the `display` and `grid-template-columns` properties of the element with the `item3` class, you create a grid within your grid.
 
 # --instructions--
 
-请设置 `display` 和 `grid-template-columns`，使类为 `item3` 元素转换为有两列且宽度为 `auto` 和 `1fr` 的网格。
+Turn the element with the `item3` class into a grid with two columns with a width of `auto` and `1fr` using `display` and `grid-template-columns`.
 
 # --hints--
 
-class 为 `item3` 的元素应具有 `grid-template-columns` 属性且属性值应为 `auto` 和 `1fr`。
+`item3` class should have a `grid-template-columns` property with `auto` and `1fr` as values.
 
 ```js
 assert(
@@ -28,11 +27,79 @@ assert(
 );
 ```
 
-class 为 `item3` 的元素应具有 `display` 属性且属性值应为 `grid`。
+`item3` class should have a `display` property with the value of `grid`.
 
 ```js
 assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .container {
+    font-size: 1.5em;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas:
+      "advert header"
+      "advert content"
+      "advert footer";
+  }
+  .item1 {
+    background: LightSkyBlue;
+    grid-area: header;
+  }
+
+  .item2 {
+    background: LightSalmon;
+    grid-area: advert;
+  }
+
+  .item3 {
+    background: PaleTurquoise;
+    grid-area: content;
+    /* Only change code below this line */
+
+
+    /* Only change code above this line */
+  }
+
+  .item4 {
+    background: lightpink;
+    grid-area: footer;
+  }
+
+  .itemOne {
+    background: PaleGreen;
+  }
+
+  .itemTwo {
+    background: BlanchedAlmond;
+  }
+
+</style>
+
+<div class="container">
+  <div class="item1">header</div>
+  <div class="item2">advert</div>
+  <div class="item3">
+    <div class="itemOne">paragraph1</div>
+    <div class="itemTwo">paragraph2</div>
+  </div>
+  <div class="item4">footer</div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>.item3 {grid-template-columns: auto 1fr; display: grid;}</style>
+```

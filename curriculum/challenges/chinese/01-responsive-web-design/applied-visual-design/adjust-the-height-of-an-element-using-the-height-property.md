@@ -1,6 +1,6 @@
 ---
 id: 587d7791367417b2b2512ab5
-title: 使用 height 属性调整元素的宽度
+title: Adjust the Height of an Element Using the height Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
@@ -8,7 +8,7 @@ forumTopicId: 301034
 
 # --description--
 
-和 `width` 属性类似，你可以使用 CSS 里面的 `height` 属性来指定元素的高度。下面这段代码可以把图片的高度设置为 20px：
+You can specify the height of an element using the `height` property in CSS, similar to the `width` property. Here's an example that changes the height of an image to 20px:
 
 ```css
 img {
@@ -18,13 +18,13 @@ img {
 
 # --instructions--
 
-给 `h4` 标签添加 `height` 属性并将属性值设置为 25px。
+Add a `height` property to the `h4` tag and set it to 25px.
 
-**注意：**可能需要将浏览器的缩放比调整为 100% 才能通过这一挑战。
+**Note:** You may need to be at 100% zoom to pass the test on this challenge.
 
 # --hints--
 
-`h4` 的 `height` 属性值应为 `25px`。
+Your code should change the `h4` `height` property to a value of 25 pixels.
 
 ```js
 assert(
@@ -34,5 +34,84 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  h4 {
+    text-align: center;
+
+  }
+  p {
+    text-align: justify;
+  }
+  .links {
+    margin-right: 20px;
+    text-align: left;
+  }
+  .fullCard {
+    width: 245px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 4px;
+  }
+  .cardContent {
+    padding: 10px;
+  }
+</style>
+<div class="fullCard">
+  <div class="cardContent">
+    <div class="cardText">
+      <h4>Google</h4>
+      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>
+    </div>
+    <div class="cardLinks">
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+    </div>
+  </div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  h4 {
+    text-align: center;
+    height: 25px;
+  }
+  p {
+    text-align: justify;
+  }
+  .links {
+    margin-right: 20px;
+    text-align: left;
+  }
+  .fullCard {
+    width: 245px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 4px;
+  }
+  .cardContent {
+    padding: 10px;
+  }
+</style>
+<div class="fullCard">
+  <div class="cardContent">
+    <div class="cardText">
+      <h4>Google</h4>
+      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.</p>
+    </div>
+    <div class="cardLinks">
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+    </div>
+  </div>
+</div>
+```

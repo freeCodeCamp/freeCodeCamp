@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08822
-title: 调整元素的外边距
+title: Adjust the Margin of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJarHW'
 forumTopicId: 16654
@@ -8,23 +8,108 @@ forumTopicId: 16654
 
 # --description--
 
-`margin（外边距）` 用来控制元素的边框与其他元素之间的距离。
+An element's `margin` controls the amount of space between an element's `border` and surrounding elements.
 
-在这里，我们可以看到蓝色框和红色框都在黄色框里。请注意，红色框的 `margin` 值要比蓝色框的大，因此红色框看起来比蓝色框要小。
+Here, we can see that the blue box and the red box are nested within the yellow box. Note that the red box has a bigger `margin` than the blue box, making it appear smaller.
 
-如果你增加蓝色的 `margin` 值，它也会增加元素边框到其他周围元素的距离。
+When you increase the blue box's `margin`, it will increase the distance between its border and surrounding elements.
 
 # --instructions--
 
-请将蓝色框的 `margin` 值设置成和红色框 `margin` 值一样的大小。
+Change the `margin` of the blue box to match that of the red box.
 
 # --hints--
 
-class 为 `blue-box` 的元素的 `margin` 值应为 `20px`。
+Your `blue-box` class should give elements `20px` of `margin`.
 
 ```js
 assert($('.blue-box').css('margin-top') === '20px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    margin: 10px;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
+```

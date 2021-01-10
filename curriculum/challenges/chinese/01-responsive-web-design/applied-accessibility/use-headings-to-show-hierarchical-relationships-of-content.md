@@ -1,6 +1,6 @@
 ---
 id: 587d774d367417b2b2512a9e
-title: 使用标题显示内容的层次关系
+title: Use Headings to Show Hierarchical Relationships of Content
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cqVEktm'
 forumTopicId: 301026
@@ -8,47 +8,84 @@ forumTopicId: 301026
 
 # --description--
 
-标题标签（包括 `h1` 到 `h6`）有很高的使用率，它们用于描述内容的主题。在屏幕阅读器中，用户为了快速了解页面纲要，可以设置让阅读器只朗读页面标题。这意味着我们不应仅仅为了设置不同字号而使用标题，而应让标签本身具有语义化和实质性的含义，同时不同标题之间也应关联（具有层级关系）。
+Headings (`h1` through `h6` elements) are workhorse tags that help provide structure and labeling to your content. Screen readers can be set to read only the headings on a page so the user gets a summary. This means it is important for the heading tags in your markup to have semantic meaning and relate to each other, not be picked merely for their size values.
 
-*语义化*的意思是，标签名能准确地表达它所含内容的信息类型。
+*Semantic meaning* means that the tag you use around content indicates the type of information it contains.
 
-假如你在写一篇含有引言、正文、结论的论文。此时，如果把结论作为正文的一部分显然没有任何意义，因为结论应该是独立的章节。类似地，页面中的标题标签也应该是有序的，并且能表明内容的层次关系。
+If you were writing a paper with an introduction, a body, and a conclusion, it wouldn't make much sense to put the conclusion as a subsection of the body in your outline. It should be its own section. Similarly, the heading tags in a webpage need to go in order and indicate the hierarchical relationships of your content.
 
-在使用中，相同级别（或者更高级别）的标题标签用于开启新的章节，低一级别的标题标签用于开启上一级标题标签的子小节。
+Headings with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.
 
-比如说，如果我们在一个 `h2` 标签后加上若干由 `h4` 标签引导的页面。此时发生了层级的错位，这会让使用屏幕阅读器的用户感到困惑。尽管在浏览器所显示的页面中，错误地使用这六个标题标签依然可以让它们在视觉效果上看起来很合理。但此时，我们应该按照层级正确地使用标签，然后用 CSS 来调整样式。
+As an example, a page with an `h2` element followed by several subsections labeled with `h4` tags would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.
 
-最后一点，每个页面应只有一个 `h1` 标签，用来概括说明页面的主题。另外，这六个标题标签可以让搜索引擎获取页面的大纲。
+One final point, each page should always have one (and only one) `h1` element, which is the main subject of your content. This and the other headings are used in part by search engines to understand the topic of the page.
 
 # --instructions--
 
-Camper Cat 希望他的网站有一个介绍如何成为忍者的页面。请帮助他修改标题标签，使它们语义化且顺序正确。你需要将所有的 `h5` 标题标签调整为恰当的级别（即 `h3` 标题标签），因为它们是 `h2` 标题标签的子级。
+Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the `h5` tags to the proper heading level to indicate they are subsections of the `h2` ones. Use `h3` tags for the purpose.
 
 # --hints--
 
-应存在 6 个 `h3` 标签。
+Your code should have 6 `h3` tags.
 
 ```js
 assert($('h3').length === 6);
 ```
 
-确保 `h3` 有结束标签
+Your code should have 6 `h3` closing tags.
 
 ```js
 assert((code.match(/\/h3/g) || []).length === 6);
 ```
 
-不应该存在 `h5` 标签.
+Your code should not have any `h5` tags.
 
 ```js
 assert($('h5').length === 0);
 ```
 
-不应该存在 `h5` 的结束标签。
+Your code should not have any `h5` closing tags.
 
 ```js
 assert(/\/h5/.test(code) === false);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>How to Become a Ninja</h1>
+<main>
+  <h2>Learn the Art of Moving Stealthily</h2>
+  <h5>How to Hide in Plain Sight</h5>
+  <h5>How to Climb a Wall</h5>
+
+  <h2>Learn the Art of Battle</h2>
+  <h5>How to Strengthen your Body</h5>
+  <h5>How to Fight like a Ninja</h5>
+
+  <h2>Learn the Art of Living with Honor</h2>
+  <h5>How to Breathe Properly</h5>
+  <h5>How to Simplify your Life</h5>
+</main>
+```
+
 # --solutions--
 
+```html
+<h1>How to Become a Ninja</h1>
+<main>
+  <h2>Learn the Art of Moving Stealthily</h2>
+  <h3>How to Hide in Plain Sight</h3>
+  <h3>How to Climb a Wall</h3>
+
+  <h2>Learn the Art of Battle</h2>
+  <h3>How to Strengthen your Body</h3>
+  <h3>How to Fight like a Ninja</h3>
+
+  <h2>Learn the Art of Living with Honor</h2>
+  <h3>How to Breathe Properly</h3>
+  <h3>How to Simplify your Life</h3>
+</main>
+```

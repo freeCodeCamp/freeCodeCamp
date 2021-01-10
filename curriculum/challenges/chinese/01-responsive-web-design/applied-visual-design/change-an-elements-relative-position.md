@@ -1,6 +1,6 @@
 ---
 id: 587d781e367417b2b2512ac9
-title: 更改元素的相对位置
+title: Change an Element's Relative Position
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVmMtZ'
 forumTopicId: 301044
@@ -8,9 +8,9 @@ forumTopicId: 301044
 
 # --description--
 
-在 CSS 里一切 HTML 元素皆为盒子，也就是通常所说的<dfn>盒模型</dfn>。块级元素自动从新的一行开始（比如标题、段落以及 div），行内元素排列在上一个元素后（比如图片以及 span）。元素默认按照这种方式布局称为文档的<dfn>普通流</dfn>，同时 CSS 提供了 position 属性来覆盖它。
+CSS treats each HTML element as its own box, which is usually referred to as the <dfn>CSS Box Model</dfn>. Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline items sit within surrounding content (like images or spans). The default layout of elements in this way is called the <dfn>normal flow</dfn> of a document, but CSS offers the position property to override it.
 
-当元素的 position 设置为 `relative` 时，它允许你通过 CSS 指定该元素在当前普通流页面下的相对偏移量。CSS 里控制各个方向偏移量的属性是 `left`、`right`、`top` 和 `bottom`。它们代表从原来位置向远离该方向偏移指定的像素、百分比或者 em。下面的例子展示了段落向上偏移 10 像素：
+When the position of an element is set to `relative`, it allows you to specify how CSS should move it *relative* to its current position in the normal flow of the page. It pairs with the CSS offset properties of `left` or `right`, and `top` or `bottom`. These say how many pixels, percentages, or ems to move the item *away* from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:
 
 ```css
 p {
@@ -19,25 +19,56 @@ p {
 }
 ```
 
-把元素的 position 设置成 relative 并不会改变该元素在普通流布局所占的位置，也不会对其它元素的位置产生影响。 **注意：**定位可以让你在页面布局上更灵活、高效。注意不管元素的定位是怎样，内部的 HTML 代码阅读起来应该是整洁、有意义的。这样也可以让视障人员（他们重度依赖辅助设备比如屏幕阅读软件）也能够无障碍地浏览你的网页。
+Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were in its default position. **Note:** Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.
 
 # --instructions--
 
-把 `h2` 的 `position` 属性值设置成 `relative`，使用相应的 CSS 属性调整 `h2` 的位置，使其相对原本的位置向下偏移 15 像素。注意不要对 h1 和 p 元素的位置产生影响。
+Change the `position` of the `h2` to `relative`, and use a CSS offset to move it 15 pixels away from the `top` of where it sits in the normal flow. Notice there is no impact on the positions of the surrounding h1 and p elements.
 
 # --hints--
 
-`h2` 元素应该添加 `position` 属性，其属性值应为 `relative`。
+The `h2` element should have a `position` property set to `relative`.
 
 ```js
 assert($('h2').css('position') == 'relative');
 ```
 
-你应该使用 CSS 属性调整 `h2` 的位置使其从原来的位置向下偏移 `15px`。
+Your code should use a CSS offset to relatively position the `h2` 15px away from the `top` of where it normally sits.
 
 ```js
 assert($('h2').css('top') == '15px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  h2 {
+
+
+  }
+</style>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>
+```
+
 # --solutions--
 
+```html
+<style>
+  h2 {
+    position: relative;
+    top: 15px;
+  }
+</style>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>
+```

@@ -1,6 +1,6 @@
 ---
 id: 587d778b367417b2b2512aa8
-title: 添加可访问的日期选择器
+title: Add an Accessible Date Picker
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 forumTopicId: 301008
@@ -8,13 +8,13 @@ forumTopicId: 301008
 
 # --description--
 
-表单中经常出现 `input` 标签，它可以用来创建多种表单控件。它的 `type` 属性指定了所要创建的 `input` 标签类型。
+Forms often include the `input` field, which can be used to create several different form controls. The `type` attribute on this element indicates what kind of input will be created.
 
-在以前的挑战中，我们已经见过 `text` 与 `submit` 类型的 `input` 标签。HTML5 规范添加了 `date` 类型来创建日期选择器。如果浏览器支持，在点击 `input` 标签时，日期选择器会显示出来，这让用户填写表单变得更加容易。
+You may have noticed the `text` and `submit` input types in prior challenges, and HTML5 introduced an option to specify a `date` field. Depending on browser support, a date picker shows up in the `input` field when it's in focus, which makes filling in a form easier for all users.
 
-对于旧版本的浏览器，由于不支持 `date`，此时 `type` 属性会被浏览器设置为 `text`。这种情况下，我们可以利用 `label` 标签或者占位符文本来提示用户需要输入的日期格式。
+For older browsers, the type will default to `text`, so it helps to show users the expected date format in the label or as placeholder text just in case.
 
-举个例子：
+Here's an example:
 
 ```html
 <label for="input1">Enter a date:</label>
@@ -23,33 +23,82 @@ forumTopicId: 301008
 
 # --instructions--
 
-Camper Cat 想举办一场比武大会，他想收集参赛者的最佳参赛时间。请为 Camper Cat 的页面添加一个 `input` 标签，其 `type` 属性值为 "date"，`id` 为 "pickdate"，`name` 属性值为 "date"。
+Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date works best. Add an `input` tag with a `type` attribute of "date", an `id` attribute of "pickdate", and a `name` attribute of "date".
 
 # --hints--
 
-应有 1 个 `input` 标签。
+Your code should add one `input` tag for the date selector field.
 
 ```js
 assert($('input').length == 2);
 ```
 
-`input` 标签的 `type` 属性值应该为 date。
+Your `input` tag should have a `type` attribute with a value of date.
 
 ```js
 assert($('input').attr('type') == 'date');
 ```
 
-`input` 标签的 `id` 应为 pickdate。
+Your `input` tag should have an `id` attribute with a value of pickdate.
 
 ```js
 assert($('input').attr('id') == 'pickdate');
 ```
 
-`input` 标签的 `name` 属性值应该为 date。
+Your `input` tag should have a `name` attribute with a value of date.
 
 ```js
 assert($('input').attr('name') == 'date');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Mortal Kombat Tournament Survey</h2>
+      <form>
+        <p>Tell us the best date for the competition</p>
+        <label for="pickdate">Preferred Date:</label>
+
+        <!-- Only change code below this line -->
+
+
+
+        <!-- Only change code above this line -->
+
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```
+
 # --solutions--
 
+```html
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Mortal Kombat Tournament Survey</h2>
+      <form>
+        <p>Tell us the best date for the competition</p>
+        <label for="pickdate">Preferred Date:</label>
+        <input type="date" id="pickdate" name="date">
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```

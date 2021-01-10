@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aecf08801
-title: HTML5 元素介绍
+title: Introduction to HTML5 Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBkZGpt7'
 forumTopicId: 301097
@@ -8,13 +8,11 @@ forumTopicId: 301097
 
 # --description--
 
-HTML5 引入了很多更具描述性的 HTML 元素，例如：`header`、`footer`、`nav`、`video`、`article`、`section` 等等。
+HTML5 introduces more descriptive HTML tags. These include `main`, `header`, `footer`, `nav`, `video`, `article`, `section` and others.
 
-这些元素让 HTML 更易读，同时有助于搜索引擎优化和无障碍访问。
+These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The `main` HTML5 tag helps search engines and other developers find the main content of your page.
 
-`main` 元素让搜索引擎和开发者能很快地找到网页的主要内容。
-
-举个例子，下面的 `main` 元素嵌套了两个子元素：
+Example usage, a `main` element with two child elements nested inside it:
 
 ```html
 <main> 
@@ -23,23 +21,23 @@ HTML5 引入了很多更具描述性的 HTML 元素，例如：`header`、`foote
 </main>
 ```
 
-**提示：**在后面的应用无障碍课程中我们会接触到更多新的 HTML5 元素，以及明白它们的用处。
+**Note:** Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.
 
 # --instructions--
 
-请在现有的段落之后创建一个新的段落，段落内容为：`Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
+Create a second `p` element after the existing `p` element with the following kitty ipsum text: `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`
 
-然后，请添加一个 `main` 元素，作为现有的两个 `p` 元素的父级元素。
+Then, create a `main` element and nest the two `p` elements inside the `main` element.
 
 # --hints--
 
-页面中应该有两个 `p` 元素。
+You should have 2 `p` elements with Kitty Ipsum text.
 
 ```js
 assert($('p').length > 1);
 ```
 
-每个 `p` 元素都应有结束标签。
+Each of your `p` elements should have a closing tag.
 
 ```js
 assert(
@@ -48,35 +46,52 @@ assert(
 );
 ```
 
-新建的段落应包含关键词 `Purr jump eat`。
+Your `p` element should contain the first few words of the provided additional `kitty ipsum text`.
 
 ```js
 assert.isTrue(/Purr\s+jump\s+eat/gi.test($('p').text()));
 ```
 
-应该存在 `main` 元素。
+Your code should have one `main` element.
 
 ```js
 assert($('main').length === 1);
 ```
 
-`main` 元素应有两个 `p` 元素作为它的子元素。
+The `main` element should have two paragraph elements as children.
 
 ```js
 assert($('main').children('p').length === 2);
 ```
 
-`main` 的开始标签应位于第一个段落之前。
+The opening `main` tag should come before the first paragraph tag.
 
 ```js
 assert(code.match(/<main>\s*?<p>/g));
 ```
 
-`main` 的结束标签应位于第二个段落之后。
+The closing `main` tag should come after the second closing paragraph tag.
 
 ```js
 assert(code.match(/<\/p>\s*?<\/main>/g));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h2>CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+```
+
 # --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
+```

@@ -1,6 +1,6 @@
 ---
 id: 587d78a7367417b2b2512ae2
-title: 通过从左到右淡化元素来创建视觉方向
+title: Create Visual Direction by Fading an Element from Left to Right
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJqqAE'
 forumTopicId: 301054
@@ -8,17 +8,17 @@ forumTopicId: 301054
 
 # --description--
 
-在本挑战中，我们需要改变动画元素的 `opacity` 属性值，使其在到达屏幕右侧时渐隐。
+For this challenge, you'll change the `opacity` of an animated element so it gradually fades as it reaches the right side of the screen.
 
-在示例动画中，具有渐变背景的圆形元素在 `@keyframes` 为 50% 的节点向右移动。
+In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the `@keyframes` rule.
 
 # --instructions--
 
-使用 id 选择器选择 id 为 `ball` 的元素，在 `@keyframes` 为 `50%` 的节点里添加 `opacity` 属性并设置属性值为 0.1，使其在向右移动时渐隐。
+Target the element with the id of `ball` and add the `opacity` property set to 0.1 at `50%`, so the element fades as it moves to the right.
 
 # --hints--
 
-`keyframes` 为 50% 的节点处应设置 `opacity` 属性值为 0.1，以使其渐隐。
+The `keyframes` rule for fade should set the `opacity` property to 0.1 at 50%.
 
 ```js
 assert(
@@ -28,5 +28,67 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+
+    }
+  }
+
+</style>
+
+<div id="ball"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity: 0.1;
+    }
+  }
+</style>
+<div id="ball"></div>
+```

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08808
-title: 字体如何优雅降级
+title: Specify How Fonts Should Degrade
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
@@ -8,11 +8,11 @@ forumTopicId: 18304
 
 # --description--
 
-所有浏览器都有几种默认字体，包括`monospace`、`serif` 和 `sans-serif`。
+There are several default fonts that are available in all browsers. These generic font families include `monospace`, `serif` and `sans-serif`
 
-在字体不可用的时候，你可以告诉浏览器通过“降级”去使用其他字体。
+When one font isn't available, you can tell the browser to "degrade" to another font.
 
-如果你想将一个元素的字体设置成 `Helvetica`，但当 `Helvetica` 不可用时，降级使用 `sans-serif` 字体，那么可以这样写：
+For example, if you wanted an element to use the `Helvetica` font, but degrade to the `sans-serif` font when `Helvetica` isn't available, you will specify it as follows:
 
 ```css
 p {
@@ -20,19 +20,19 @@ p {
 }
 ```
 
-通用字体名不区分大小写。同时，也不需要使用引号，因为它们是 CSS 中的关键字。
+Generic font family names are not case-sensitive. Also, they do not need quotes because they are CSS keywords.
 
 # --instructions--
 
-首先，添加 `monospace` 字体到 `h2` 元素里，它现在拥有 `Lobster` 和 `monospace` 两种字体。
+To begin, apply the `monospace` font to the `h2` element, so that it now has two fonts - `Lobster` and `monospace`.
 
-在上一个挑战里，你已经通过 `link` 标签从谷歌字体库引入了 `Lobster` 字体。现在让我们使用之前学习的 HTML 注释，将 `Lobster` 字体的引入注释掉，这样一来，引入的 `Lobster` 字体会失效。此时，你会发现 `h2` 元素降级到了 `monospace` 字体。
+In the last challenge, you imported the `Lobster` font using the `link` tag. Now comment out that import of the `Lobster` font (using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your `h2` element degrades to the `monospace` font.
 
-**注意：**如果你的电脑里已经安装了 `Lobster` 字体，你就看不到这个降级过程，因为浏览器还是会在你的电脑中找到该字体。
+**Note:** If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font.
 
 # --hints--
 
-`h2` 元素的字体应设置为 `Lobster`。
+Your h2 element should use the font `Lobster`.
 
 ```js
 assert(
@@ -42,7 +42,7 @@ assert(
 );
 ```
 
-当 `Lobster` 字体失效时，`h2` 元素应该降级使用 `monospace` 字体。
+Your h2 element should degrade to the font `monospace` when `Lobster` is not available.
 
 ```js
 assert(
@@ -52,17 +52,120 @@ assert(
 );
 ```
 
-通过添加`<!--`，注释掉 `Lobster` 字体的引入。
+You should comment out your call to Google for the `Lobster` font by putting `<!--` in front of it.
 
 ```js
 assert(new RegExp('<!--[^fc]', 'gi').test(code));
 ```
 
-确保注释要以 `-->` 结束。
+You should close your comment by adding `-->`.
 
 ```js
 assert(new RegExp('[^fc]-->', 'gi').test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  .red-text {
+    color: red;
+  }
+
+  h2 {
+    font-family: Lobster;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: monospace;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
+
 # --solutions--
 
+```html
+<!--<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">-->
+<style>
+  .red-text {
+    color: red;
+  }
+
+  h2 {
+    font-family: Lobster, monospace;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: monospace;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

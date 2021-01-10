@@ -1,6 +1,7 @@
 ---
 id: 587d778f367417b2b2512aad
-title: 考虑色盲用户的需求仔细选择传达信息的颜色
+title: >-
+  Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437as3'
 forumTopicId: 301011
@@ -8,23 +9,64 @@ forumTopicId: 301011
 
 # --description--
 
-色盲的形式有很多种，它的表现可以从对特定波长光波的感知度较低，到完全无法看到颜色。最常见的形式是对绿色的低感知度。
+There are various forms of colorblindness. These can range from a reduced sensitivity to a certain wavelength of light to the inability to see color at all. The most common form is a reduced sensitivity to detect greens.
 
-例如，如果内容的前景色与背景色是两种相近的绿色，那么色盲用户可能会无法区分它们。色轮上距离较近的颜色，特别是相邻的颜色，看起来都会很难区分。在表示重要信息的时候应避免使用这类相近颜色的组合。
+For example, if two similar green colors are the foreground and background color of your content, a colorblind user may not be able to distinguish them. Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.
 
-**注意：**一些在线颜色选择器有色盲模拟功能，可以模拟颜色在不同形式的色盲中所呈现的效果。它们和在线对比度检查器一样，都是很好的工具。
+**Note:** Some online color picking tools include visual simulations of how colors appear for different types of colorblindness. These are great resources in addition to online contrast checking calculators.
 
 # --instructions--
 
-Camper Cat 正在测试一个重要按钮的不同样式。在色轮上，用于背景色的黄色（`#FFFF33`）和文字颜色绿色（`#33FF33`）是相邻的色调，一些色盲用户几乎无法区分它们，而且这两个颜色的亮度相近，对比度太小。为了解决这两个问题，请将文本的 `color` 修改为深蓝色（`#003366`）。
+Camper Cat is testing different styles for an important button, but the yellow (`#FFFF33`) `background-color` and the green (`#33FF33`) text `color` are neighboring hues on the color wheel and virtually indistinguishable for some colorblind users. (Their similar lightness also fails the contrast ratio check). Change the text `color` to a dark blue (`#003366`) to solve both problems.
 
 # --hints--
 
-`button` 内容文本的 `color` 属性值应为深蓝色。
+Your code should change the text `color` for the `button` to the dark blue.
 
 ```js
 assert($('button').css('color') == 'rgb(0, 51, 102)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<head>
+  <style>
+  button {
+    color: #33FF33;
+    background-color: #FFFF33;
+    font-size: 14px;
+    padding: 10px;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Danger!</h1>
+  </header>
+  <button>Delete Internet</button>
+</body>
+```
+
 # --solutions--
 
+```html
+<head>
+  <style>
+    button {
+      color: #003366;
+      background-color: #FFFF33;
+      font-size: 14px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Danger!</h1>
+  </header>
+  <button>Delete Internet</button>
+</body>
+```

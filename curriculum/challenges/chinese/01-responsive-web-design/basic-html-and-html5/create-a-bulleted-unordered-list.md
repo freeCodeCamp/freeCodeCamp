@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08827
-title: 创建一个无序列表
+title: Create a Bulleted Unordered List
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cDKVPuv'
 forumTopicId: 16814
@@ -8,40 +8,40 @@ forumTopicId: 16814
 
 # --description--
 
-HTML 有一个特定的元素用于创建<dfn>无序列表</dfn>。
+HTML has a special element for creating <dfn>unordered lists</dfn>, or bullet point style lists.
 
-无序列表以 `<ul>` 开始，中间包含一个或多个 `<li>` 元素，最后以 `</ul>` 结束。
+Unordered lists start with an opening `<ul>` element, followed by any number of `<li>` elements. Finally, unordered lists close with a `</ul>`
 
-例如:
+For example:
 
 ```html
 <ul>
-  <li>牛奶</li>
-  <li>奶酪</li>
+  <li>milk</li>
+  <li>cheese</li>
 </ul>
 ```
 
-将会创建一个包含牛奶和奶酪的无序列表。
+would create a bullet point style list of "milk" and "cheese".
 
 # --instructions--
 
-请删除页面底部的两个 `p` 元素，然后在底部创建一个无序列表，其中包含你认为猫咪最喜欢的三件东西。
+Remove the last two `p` elements and create an unordered list of three things that cats love at the bottom of the page.
 
 # --hints--
 
-应存在一个 `ul` 无序列表。
+Create a `ul` element.
 
 ```js
 assert($('ul').length > 0);
 ```
 
-应在 `ul` 无序列表中添加三个 `li` 条目。
+You should have three `li` elements within your `ul` element.
 
 ```js
 assert($('ul li').length > 2);
 ```
 
-确保 `ul` 无序列表有结束标签。
+Your `ul` element should have a closing tag.
 
 ```js
 assert(
@@ -51,7 +51,7 @@ assert(
 );
 ```
 
-确保每个 `li` 条目都有结束标签。
+Your `li` elements should have closing tags.
 
 ```js
 assert(
@@ -61,11 +61,41 @@ assert(
 );
 ```
 
-每个 `li` 元素不应只包含空字符串或只包含空格。
+Your `li` elements should not contain an empty string or only white-space.
 
 ```js
 assert($('ul li').filter((_, item) => !$(item).text().trim()).length === 0);
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
+```
+
 # --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <ul>
+    <li>milk</li>
+    <li>mice</li>
+    <li>catnip</li>
+  </ul>
+</main>
+```

@@ -1,52 +1,113 @@
 ---
 id: 587d78a4367417b2b2512ad2
-title: 了解三原色
+title: Learn about Tertiary Colors
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/c3bRDAb'
 forumTopicId: 301057
 ---
 
 # --description--
 
-电脑显示器和各类屏幕都是基于颜色叠加的模型：将红（R）、绿（G）、蓝（B）三原色的色光以不同的比例相加，就可以产生各种色彩光，这种模式叫做三原色光模式（RGB Color Model）。如果把两种原色相加，就可以产生二次色：蓝绿（G+B）、品红（R+B）和黄色（R+G），我们在上一个挑战里已经见过这些颜色了。这些二次色恰好是在合成它们时未使用的原色的补色，即在色环中位于两端。例如，品红色是红色和蓝色相加产生，它是绿色的补色。
+Computer monitors and device screens create different colors by combining amounts of red, green, and blue light. This is known as the RGB additive color model in modern color theory. Red (R), green (G), and blue (B) are called primary colors. Mixing two primary colors creates the secondary colors cyan (G + B), magenta (R + B) and yellow (R + G). You saw these colors in the Complementary Colors challenge. These secondary colors happen to be the complement to the primary color not used in their creation, and are opposite to that primary color on the color wheel. For example, magenta is made with red and blue, and is the complement to green.
 
-三次色是由原色和二次色相加产生的颜色，例如红色（原色）和黄色（二次色）相加产生橙色。将这六种颜色中相邻的颜色相加，便产生了十二色色环。
+Tertiary colors are the result of combining a primary color with one of its secondary color neighbors. For example, within the RGB color model, red (primary) and yellow (secondary) make orange (tertiary). This adds six more colors to a simple color wheel for a total of twelve.
 
-设计里面有很多种颜色搭配方法。涉及到三次色的一种配色方法是分裂补色搭配法。选定主色之后，在色环上选择与它的补色相邻的两种颜色与之搭配。此种搭配既有对比，又不失和谐。
+There are various methods of selecting different colors that result in a harmonious combination in design. One example that can use tertiary colors is called the split-complementary color scheme. This scheme starts with a base color, then pairs it with the two colors that are adjacent to its complement. The three colors provide strong visual contrast in a design, but are more subtle than using two complementary colors.
 
-下面是使用分裂补色搭配法创建的三个颜色：
+Here are three colors created using the split-complement scheme:
 
-<table class='table table-striped'><thead><tr><th>颜色</th><th>HEX 颜色码</th></tr></thead><thead></thead><tbody><tr><td>橙色</td><td>#FF7D00</td></tr><tr><td>蓝绿色</td><td>#00FFFF</td></tr><tr><td>树莓红</td><td>#FF007D</td></tr></tbody></table>
+<table class='table table-striped'><thead><tr><th>Color</th><th>Hex Code</th></tr></thead><thead></thead><tbody><tr><td>orange</td><td>#FF7F00</td></tr><tr><td>cyan</td><td>#00FFFF</td></tr><tr><td>raspberry</td><td>#FF007F</td></tr></tbody></table>
 
 # --instructions--
 
-把 class 为 `orange`、`cyan` 和 `raspberry` 的 `background-color` 改成其对应的颜色。在这个挑战中，请使用颜色的十六进制符号（即 hex code）来表示。
+Change the `background-color` property of the `orange`, `cyan`, and `raspberry` classes to their respective colors. Make sure to use the hex codes and not the color names.
 
 # --hints--
 
-class 为 `orange` 的 `div` 的 `background-color` 属性值应为橙色。
+The `div` element with class `orange` should have a `background-color` of orange.
 
 ```js
 assert($('.orange').css('background-color') == 'rgb(255, 127, 0)');
 ```
 
-class 为 `cyan` 的 `div` 的 `background-color` 属性值应为蓝绿色。
+The `div` element with class `cyan` should have a `background-color` of cyan.
 
 ```js
 assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
 ```
 
-class 为 `raspberry` 的 `div` 的 `background-color` 属性值应为树莓红色。
+The `div` element with class `raspberry` should have a `background-color` of raspberry.
 
 ```js
 assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');
 ```
 
-所有的 `background-color` 应使用十六进制颜色码，而不应使用颜色名称。
+All `background-color` values for the color classes should be hex codes and not color names.
 
 ```js
 assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+
+  .orange {
+    background-color: #000000;
+  }
+
+  .cyan {
+    background-color: #000000;
+  }
+
+  .raspberry {
+    background-color: #000000;
+  }
+
+  div {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5px;
+  }
+</style>
+
+<div class="orange"></div>
+<div class="cyan"></div>
+<div class="raspberry"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+
+  .orange {
+    background-color: #FF7F00;
+  }
+
+  .cyan {
+    background-color: #00FFFF;
+  }
+
+  .raspberry {
+    background-color: #FF007F;
+  }
+
+  div {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5px;
+  }
+</style>
+<div class="orange"></div>
+<div class="cyan"></div>
+<div class="raspberry"></div>
+```

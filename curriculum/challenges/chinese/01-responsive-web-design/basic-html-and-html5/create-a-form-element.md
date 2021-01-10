@@ -1,26 +1,25 @@
 ---
 id: bad87fee1348bd9aede08830
-title: 创建一个表单
+title: Create a Form Element
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pVMPUv/cmQ3Kfa'
 forumTopicId: 16817
 ---
 
 # --description--
 
-我们可以只通过 HTML 来实现发送数据给服务器的表单，只需要给 `form` 元素添加 `action` 属性即可。
+You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your `form` element.
 
-例如:
+For example:
 
 `<form action="/url-where-you-want-to-submit-form-data"></form>`
 
 # --instructions--
 
-把现有的 `input` 输入框放到一个新建的 `form` 表单里，然后设置表单的 `action` 属性为 `"https://freecatphotoapp.com/submit-cat-photo"`。
+Nest the existing input element inside a `form` element and assign `"https://freecatphotoapp.com/submit-cat-photo"` to the `action` attribute of the `form` element.
 
 # --hints--
 
-现有的 `input` 输入框应位于新创建的 `form` 表单里面。
+The existing `input` element should be nested within a `form` element.
 
 ```js
 const inputElem = document.querySelector('form input');
@@ -30,7 +29,7 @@ assert(
 );
 ```
 
-表单的 `action` 属性值应设置为 `https://freecatphotoapp.com/submit-cat-photo`。
+Your `form` should have an `action` attribute which is set to `https://freecatphotoapp.com/submit-cat-photo`
 
 ```js
 assert(
@@ -38,7 +37,7 @@ assert(
 );
 ```
 
-`form` 元素应有开始标签和结束标签。
+Your `form` element should have well-formed open and close tags.
 
 ```js
 assert(
@@ -48,5 +47,56 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <input type="text" placeholder="cat photo URL">
+</main>
+```
+
 # --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <input type="text" placeholder="cat photo URL">
+  </form>
+</main>
+```

@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf04756
-title: Class 选择器的优先级高于继承样式
+title: Override Styles in Subsequent CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDQug'
 forumTopicId: 18253
@@ -8,49 +8,84 @@ forumTopicId: 18253
 
 # --description--
 
-"pink-text" class 覆盖了 `body` 元素的 CSS 声明。
+Our "pink-text" class overrode our `body` element's CSS declaration!
 
-我们刚刚证明了我们的 class 会覆盖 `body` 的 CSS 样式。那么下一个问题是，我们要怎么样才能覆盖我们的 `pink-text` class 中所定义的样式？
+We just proved that our classes will override the `body` element's CSS. So the next logical question is, what can we do to override our `pink-text` class?
 
 # --instructions--
 
-创建一个字体颜色为 `blue` 的 `blue-text` class，并确保它在 `pink-text` 下方声明。
+Create an additional CSS class called `blue-text` that gives an element the color blue. Make sure it's below your `pink-text` class declaration.
 
-在含有 `pink-text` class 的 `h1` 元素里面，添加上 `blue-text` class。我们来看看到底是谁获胜。
+Apply the `blue-text` class to your `h1` element in addition to your `pink-text` class, and let's see which one wins.
 
-HTML 同时应用多个 class 属性需以空格来间隔，例子如下:
+Applying multiple class attributes to a HTML element is done with a space between them like this:
 
 `class="class1 class2"`
 
-**注意：**HTML 元素里应用的 class 的先后顺序无关紧要。
+**Note:** It doesn't matter which order the classes are listed in the HTML element.
 
-但是，在 `<style>` 标签里面声明的 `class` 顺序十分重要，之后的声明会覆盖之前的声明。由于 `.blue-text` 在 `.pink-text` 的后面出现，所以 `.blue-text` 里的样式会覆盖 `.pink-text` 里的样式。
+However, the order of the `class` declarations in the `<style>` section is what is important. The second declaration will always take precedence over the first. Because `.blue-text` is declared second, it overrides the attributes of `.pink-text`
 
 # --hints--
 
-`h1` 元素应包含 `pink-text` class。
+Your `h1` element should have the class `pink-text`.
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-`h1` 元素应包含 `blue-text` class。
+Your `h1` element should have the class `blue-text`.
 
 ```js
 assert($('h1').hasClass('blue-text'));
 ```
 
-`blue-text` 和 `pink-text` 需同时应用于 `h1` 元素上。
+Both `blue-text` and `pink-text` should belong to the same `h1` element.
 
 ```js
 assert($('.pink-text').hasClass('blue-text'));
 ```
 
-`h1` 元素的颜色应为蓝色。
+Your `h1` element should be blue.
 
 ```js
 assert($('h1').css('color') === 'rgb(0, 0, 255)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+</style>
+<h1 class="pink-text">Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+
+  .blue-text {
+    color: blue;
+  }  
+</style>
+<h1 class="pink-text blue-text">Hello World!</h1>
+```

@@ -1,6 +1,6 @@
 ---
 id: 587d78a4367417b2b2512ad5
-title: 调整颜色的色调
+title: Adjust the Tone of a Color
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDJvT7'
 forumTopicId: 301038
@@ -8,15 +8,15 @@ forumTopicId: 301038
 
 # --description--
 
-`hsl()` 使 CSS 更改颜色色调更加方便。比如，给一个纯色添加白色可以调出更浅的色调；添加黑色可以创造更深的色调。另外，还可以通过给纯色添加灰色来同时改变颜色的深浅和明暗。回忆下 `hsl()` 里面的 ‘s’ 和 ‘l’ 分辨代表饱和度和亮度。饱和度代表灰色的占比，亮度代表白色和黑色的占比。`hsl()` 在你想获取一个基准色的变种的情景下会十分有用。
+The `hsl()` option in CSS also makes it easy to adjust the tone of a color. Mixing white with a pure hue creates a tint of that color, and adding black will make a shade. Alternatively, a tone is produced by adding gray or by both tinting and shading. Recall that the 's' and 'l' of `hsl()` stand for saturation and lightness, respectively. The saturation percent changes the amount of gray and the lightness percent determines how much white or black is in the color. This is useful when you have a base hue you like, but need different variations of it.
 
 # --instructions--
 
-所有元素的默认 `background-color` 都是透明色。当前页面的导航栏 `nav` 背景色之所以看起来是蓝绿色，是因为它背后的 `header` 的 `background-color` 属性值为 `cyan`。请将 `nav` 的 `background-color` 也设置为 `cyan`，但把它的饱和度调整为 80%，亮度调整为 25%。
+All elements have a default `background-color` of `transparent`. Our `nav` element currently appears to have a `cyan` background, because the element behind it has a `background-color` set to `cyan`. Add a `background-color` to the `nav` element so it uses the same `cyan` hue, but has `80% saturation` and `25% lightness` values to change its tone and shade.
 
 # --hints--
 
-`nav` 元素应该有一个使用 `hsl()` 属性调节蓝绿色调的 `background-color` 属性。
+The `nav` element should have a `background-color` of the adjusted cyan tone using the `hsl()` property.
 
 ```js
 assert(
@@ -24,5 +24,95 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  header {
+    background-color: hsl(180, 90%, 35%);
+    color: #FFFFFF;
+  }
+
+  nav {
+
+  }
+
+  h1 {
+    text-indent: 10px;
+    padding-top: 10px;
+  }
+
+  nav ul {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+  }
+
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+<header>
+  <h1>Cooking with FCC!</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Classes</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+```
+
 # --solutions--
 
+```html
+<style>
+  header {
+    background-color: hsl(180, 90%, 35%);
+    color: #FFFFFF;
+  }
+
+  nav {
+    background-color: hsl(180, 80%, 25%);
+  }
+
+  h1 {
+    text-indent: 10px;
+    padding-top: 10px;
+  }
+
+  nav ul {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+  }
+
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+<header>
+  <h1>Cooking with FCC!</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Classes</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+```

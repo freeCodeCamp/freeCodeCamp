@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08801
-title: 用 p 元素代表段落
+title: Inform with the Paragraph Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
 forumTopicId: 18202
@@ -8,31 +8,33 @@ forumTopicId: 18202
 
 # --description--
 
-`p` 是 `paragraph` 的缩写，通常用来创建一个段落，就和你写作文一样。
+`p` elements are the preferred element for paragraph text on websites. `p` is short for "paragraph".
 
-你可以像这样创建一个段落：
+You can create a paragraph element like this:
 
 `<p>I'm a p tag!</p>`
 
 # --instructions--
 
-请在 `h2` 元素下方添加一个 `p` 元素，元素内容是 `Hello Paragraph`。
+Create a `p` element below your `h2` element, and give it the text "Hello Paragraph".
+
+**Note:** As a convention, all HTML tags are written in lowercase, for example `<p></p>` and not `<P></P>`.
 
 # --hints--
 
-应包含一个 `p` 元素。
+Your code should have a valid `p` element.
 
 ```js
 assert($('p').length > 0);
 ```
 
-`p` 元素的内容文本应为 `Hello Paragraph`。
+Your `p` element should have the text `Hello Paragraph`.
 
 ```js
 assert.isTrue(/hello(\s)+paragraph/gi.test($('p').text()));
 ```
 
-`p` 元素应有结束标签。
+Your `p` element should have a closing tag.
 
 ```js
 assert(
@@ -41,5 +43,19 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+```
+
 # --solutions--
 
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+<p>Hello Paragraph</p>
+```

@@ -1,6 +1,6 @@
 ---
 id: 587d78aa367417b2b2512aed
-title: 声明 HTML 的文档类型
+title: Declare the Doctype of an HTML Document
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra98AJ'
 forumTopicId: 301095
@@ -8,17 +8,17 @@ forumTopicId: 301095
 
 # --description--
 
-到目前为止，我们已经学习了一些 HTML 标签。还有一些标签是用来组成网页整体结构的，每个 HTML 文档中都有这些标签的身影。
+The challenges so far have covered specific HTML elements and their uses. However, there are a few elements that give overall structure to your page, and should be included in every HTML document.
 
-在文档的顶部，我们需要告诉浏览器网页所使用的 HTML 的版本。HTML 是一个在不停发展的语言，大部分浏览器都支持 HTML 的最新标准，也就是 HTML5。但是一些陈旧的网页可能使用的是老版本的 HTML。
+At the top of your document, you need to tell the browser which version of HTML your page is using. HTML is an evolving language, and is updated regularly. Most major browsers support the latest specification, which is HTML5. However, older web pages may use previous versions of the language.
 
-你可以通过 `<!DOCTYPE ...>` 来告诉浏览器页面上使用的 HTML 版本，"`...`" 部分就是版本号。`<!DOCTYPE html>` 对应的就是 HTML5。
+You tell the browser this information by adding the `<!DOCTYPE ...>` tag on the first line, where the `...` part is the version of HTML. For HTML5, you use `<!DOCTYPE html>`.
 
-`!` 和大写的 `DOCTYPE` 是很重要的，尤其是对那些老的浏览器。但 `html` 无论大写小写都可以。
+The `!` and uppercase `DOCTYPE` is important, especially for older browsers. The `html` is not case sensitive.
 
-所有的 HTML 代码都必须位于 `html` 标签中。其中 `<html>` 位于 `<!DOCTYPE html>` 之后，`</html>` 位于网页的结尾。
+Next, the rest of your HTML code needs to be wrapped in `html` tags. The opening `<html>` goes directly below the `<!DOCTYPE html>` line, and the closing `</html>` goes at the end of the page.
 
-以下是网页结构的一个例子：
+Here's an example of the page structure:
 
 ```html
 <!DOCTYPE html>
@@ -29,27 +29,39 @@ forumTopicId: 301095
 
 # --instructions--
 
-请在代码编辑器的顶部添加一个 `DOCTYPE（文档类型）` 为 HTML5 的声明，然后添加一个 `html` 元素，再添加一个 `h1` 元素，你可以随意填写 `h1` 的内容文本。
+Add a `DOCTYPE` tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing `html` tags, which wrap around an `h1` element. The heading can include any text.
 
 # --hints--
 
-网页中应包含 `<!DOCTYPE html>` 标签。
+Your code should include a `<!DOCTYPE html>` tag.
 
 ```js
 assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi));
 ```
 
-网页中应只存在一个 `html` 元素。
+There should be one `html` element.
 
 ```js
 assert($('html').length == 1);
 ```
 
-`h1` 元素应该位于 `html` 元素内部。
+The `html` tags should wrap around one `h1` element.
 
 ```js
 assert(code.match(/<html>\s*?<h1>\s*?.*?\s*?<\/h1>\s*?<\/html>/gi));
 ```
 
+# --seed--
+
+## --seed-contents--
+```html
+```
+
 # --solutions--
 
+```html
+<!DOCTYPE html>
+<html>
+  <h1> Hello world </h1>
+</html>
+```

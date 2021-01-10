@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08820
-title: 给图片添加链接
+title: Turn an Image into a Link
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cRdBnUr'
 forumTopicId: 18327
@@ -8,35 +8,35 @@ forumTopicId: 18327
 
 # --description--
 
-你可以通过把元素嵌套进 `a` 里使其变成一个链接。
+You can make elements into links by nesting them within an `a` element.
 
-如果我们要把图片嵌套进 `a` 元素，可以这样写：
+Nest your image within an `a` element. Here's an example:
 
-`<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="三只萌萌的小猫"></a>`
+`<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>`
 
-如果把 `a` 的 `href` 属性值设置为 `#`，就可以创建固定链接。
+Remember to use `#` as your `a` element's `href` property in order to turn it into a dead link.
 
 # --instructions--
 
-请把现存的图片嵌套进 `a` 中。
+Place the existing image element within an `a` (*anchor*) element.
 
-如果鼠标悬停在图片上时，鼠标的光标如果从箭头指针变成手形指针，那么此时图片就是一个链接了。
+Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link.
 
 # --hints--
 
-应将图片嵌套进 `a` 元素中。
+The existing `img` element should be nested within an `a` element.
 
 ```js
 assert($('a').children('img').length > 0);
 ```
 
-`a` 的 `href` 属性值应为 `#`。
+Your `a` element should be a dead link with a `href` attribute set to `#`.
 
 ```js
 assert(new RegExp('#').test($('a').children('img').parent().attr('href')));
 ```
 
-每个 `a` 元素都应有结束标签。
+Each of your `a` elements should have a closing tag.
 
 ```js
 assert(
@@ -46,5 +46,32 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
+```
+
 # --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
+```

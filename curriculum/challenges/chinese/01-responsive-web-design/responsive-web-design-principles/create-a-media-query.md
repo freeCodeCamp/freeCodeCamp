@@ -1,34 +1,34 @@
 ---
 id: 587d78b0367417b2b2512b08
-title: 创建一个媒体查询
+title: Create a Media Query
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/cPp7VfD'
-forumTopicId: 1
+videoUrl: 'https://scrimba.com/p/pzrPu4/cqwKrtm'
+forumTopicId: 301139
 ---
 
 # --description--
 
-媒体查询是 CSS3 中引入的一项新技术，它可以根据不同的视口大小调整内容的布局。视口是指浏览器中，用户可见的网页内容。视口会随访问网站的设备不同而改变。
+Media Queries are a new technique introduced in CSS3 that change the presentation of content based on different viewport sizes. The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.
 
-媒体查询由媒体类型组成，如果媒体类型与展示网页的设备类型匹配，则应用对应的样式。你可以在媒体查询中使用各种选择器和样式。
+Media Queries consist of a media type, and if that media type matches the type of device the document is displayed on, the styles are applied. You can have as many selectors and styles inside your media query as you want.
 
-下面是一个媒体查询的例子，当设备宽度小于或等于 100px 时返回内容：
+Here's an example of a media query that returns the content when the device's width is less than or equal to 100px:
 
 `@media (max-width: 100px) { /* CSS Rules */ }`
 
-以下定义的媒体查询，是当设备高度大于或等于 350px 时返回内容：
+and the following media query returns the content when the device's height is more than or equal to 350px:
 
 `@media (min-height: 350px) { /* CSS Rules */ }`
 
-注意，只有当媒体类型与所使用的设备的类型匹配时，媒体查询中定义的 CSS 才生效。
+Remember, the CSS inside the media query is applied only if the media type matches that of the device being used.
 
 # --instructions--
 
-请添加一条媒体查询规则，当设备的高度小于等于 800px 时，`p` 标签的 `font-size` 为 `10px`。
+Add a media query, so that the `p` tag has a `font-size` of `10px` when the device's height is less than or equal to `800px`.
 
 # --hints--
 
-应使用 `@media` 声明媒体查询，其中应包含 `height` 小于等于 800px 的规则。
+You should declare a `@media` query for devices with a `height` less than or equal to 800px.
 
 ```js
 assert(
@@ -39,7 +39,7 @@ assert(
 );
 ```
 
-当设备 `height` 小于等于 800px 时，`p` 元素 `font-size` 应为 10px。
+Your `p` element should have a `font-size` of 10px when the device `height` is less than or equal to 800px.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-当设备的 `height` 大于 800px 时，`p` 元素的 `font-size` 应设置为其初始值 20px。
+Your `p` element should have an initial `font-size` of 20px when the device `height` is more than 800px.
 
 ```js
 assert(
@@ -62,5 +62,38 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  p {
+    font-size: 20px;
+  }
+
+  /* Only change code below this line */
+
+  /* Only change code above this line */
+</style>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+```
+
 # --solutions--
 
+```html
+<style>
+  p {
+    font-size: 20px;
+  }
+
+  @media (max-height: 800px) {
+    p {
+      font-size: 10px;
+    }
+  }
+</style>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+```

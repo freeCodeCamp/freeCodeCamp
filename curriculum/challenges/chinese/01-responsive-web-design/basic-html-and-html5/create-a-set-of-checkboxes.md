@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08835
-title: 创建一组复选框
+title: Create a Set of Checkboxes
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cqrkJsp'
 forumTopicId: 16821
@@ -8,39 +8,39 @@ forumTopicId: 16821
 
 # --description--
 
-`checkboxes`（复选框）就好比多项选择题，正确答案有多个。
+Forms commonly use <dfn>checkboxes</dfn> for questions that may have more than one answer.
 
-复选框是 `input` 选择框的一种类型。
+Checkboxes are a type of `input`.
 
-每一个复选框都应该嵌套在它自己的 `label`（标签）元素中。这样，我们相当于给 `input` 元素和包裹它的 `label` 元素建立起了对应关系。
+Each of your checkboxes can be nested within its own `label` element. By wrapping an `input` element inside of a `label` element it will automatically associate the checkbox input with the label element surrounding it.
 
-所有关联的复选框应该拥有相同的 `name` 属性。
+All related checkbox inputs should have the same `name` attribute.
 
-使得 `input` 与 `label` 关联的最佳实践是在 `label` 元素上设置 `for` 属性，让其值与复选框的 `id` 属性值相同。
+It is considered best practice to explicitly define the relationship between a checkbox `input` and its corresponding `label` by setting the `for` attribute on the `label` element to match the `id` attribute of the associated `input` element.
 
-下面是一个复选框的例子：
+Here's an example of a checkbox:
 
 `<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>`
 
 # --instructions--
 
-请给表单添加三个复选框，每个复选框都被嵌套进 `label` 元素中，并且它的 `name` 属性均为 `personality`。你可以随意指定每个复选框的内容文本。
+Add to your form a set of three checkboxes. Each checkbox should be nested within its own `label` element. All three should share the `name` attribute of `personality`.
 
 # --hints--
 
-表单中应存在三个复选框。
+Your page should have three checkbox elements.
 
 ```js
 assert($('input[type="checkbox"]').length > 2);
 ```
 
-每个复选框都应该被嵌套进 `label` 元素中。
+Each of your three checkbox elements should be nested in its own `label` element.
 
 ```js
 assert($('label > input[type="checkbox"]:only-child').length > 2);
 ```
 
-确保 `label` 元素有结束标签。
+Make sure each of your `label` elements has a closing tag.
 
 ```js
 assert(
@@ -50,7 +50,7 @@ assert(
 );
 ```
 
-复选框的 `name` 属性值均应为 `personality`。
+Your checkboxes should be given the `name` attribute of `personality`.
 
 ```js
 assert(
@@ -58,11 +58,75 @@ assert(
 );
 ```
 
-每个复选框都应该在 `form` 标签内。
+Each of your checkboxes should be added within the `form` tag.
 
 ```js
 assert($('label').parent().get(0).tagName.match('FORM'));
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
+
 # --solutions--
 
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label for="playful"><input id="playful" type="checkbox" name="personality">Playful</label>
+    <label for="lazy"><input id="lazy" type="checkbox" 
+name="personality">Lazy</label>
+    <label for="evil"><input id="evil" type="checkbox" 
+name="personality">Evil</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```

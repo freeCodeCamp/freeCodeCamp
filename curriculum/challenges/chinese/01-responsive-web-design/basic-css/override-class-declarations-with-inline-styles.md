@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf06756
-title: 内联样式的优先级高于 ID 选择器
+title: Override Class Declarations with Inline Styles
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDRha'
 forumTopicId: 18252
@@ -8,49 +8,92 @@ forumTopicId: 18252
 
 # --description--
 
-我们刚刚证明了，id 选择器无论在 `style` 标签的任何位置声明，都会覆盖 class 声明的样式。
+So we've proven that id declarations override class declarations, regardless of where they are declared in your `style` element CSS.
 
-其实还有其他方法可以覆盖 CSS 样式。你还记得行内样式吗？
+There are other ways that you can override CSS. Do you remember inline styles?
 
 # --instructions--
 
-使用行内样式尝试让 `h1` 的字体颜色变白。像这样使用：
+Use an inline style to try to make our `h1` element white. Remember, in line styles look like this:
 
-`<h1 style="color: green">`
+`<h1 style="color: green;">`
 
-`h1` 元素需继续保留 `blue-text` 和 `pink-text` 这两个 class。
+Leave the `blue-text` and `pink-text` classes on your `h1` element.
 
 # --hints--
 
-`h1` 元素应包含 `pink-text` class。
+Your `h1` element should have the class `pink-text`.
 
 ```js
 assert($('h1').hasClass('pink-text'));
 ```
 
-`h1` 元素应包含 `blue-text` class。
+Your `h1` element should have the class `blue-text`.
 
 ```js
 assert($('h1').hasClass('blue-text'));
 ```
 
-`h1` 元素的 `id` 应为 `orange-text`。
+Your `h1` element should have the id of `orange-text`.
 
 ```js
 assert($('h1').attr('id') === 'orange-text');
 ```
 
-`h1` 元素应含有行内样式。
+Your `h1` element should have an inline style.
 
 ```js
 assert(document.querySelector('h1[style]'));
 ```
 
-`h1` 元素的字体颜色应该为白色。
+Your `h1` element should be white.
 
 ```js
 assert($('h1').css('color') === 'rgb(255, 255, 255)');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text">Hello World!</h1>
+```
+
 # --solutions--
 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
+```

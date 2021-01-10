@@ -1,6 +1,6 @@
 ---
 id: bad87fee1348bd9aedf08823
-title: 给元素添加负外边距
+title: Add a Negative Margin to an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpyGs3'
 forumTopicId: 16166
@@ -8,23 +8,107 @@ forumTopicId: 16166
 
 # --description--
 
-元素的 `margin（外边距）` 用来控制元素 `border（边框）` 与其周围元素之间的距离大小。
+An element's `margin` controls the amount of space between an element's `border` and surrounding elements.
 
-如果你把元素的 `margin` 设置为负值，元素会变得占用更多空间。
+If you set an element's `margin` to a negative value, the element will grow larger.
 
 # --instructions--
 
-请将蓝色框的 `margin` 设为负值，跟红色框 `margin` 的属性值设置成一样的大小。
+Try to set the `margin` to a negative value like the one for the red box.
 
-将蓝色框的 `margin` 设置为 `-15px`，它会让蓝色框填满整个黄色框。
+Change the `margin` of the blue box to `-15px`, so it fills the entire horizontal width of the yellow box around it.
 
 # --hints--
 
-class 为 `blue-box` 的元素的 `margin` 应设置为 `-15px`。
+Your `blue-box` class should give elements `-15px` of `margin`.
 
 ```js
 assert($('.blue-box').css('margin-top') === '-15px');
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    margin: -15px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+  }
+</style>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+    margin: -15px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+    margin-top: -15px;
+  }
+</style>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
+```

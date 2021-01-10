@@ -1,6 +1,6 @@
 ---
 id: 587d78a5367417b2b2512ad9
-title: 使用 CSS Transform scale 属性可以更改元素的大小
+title: Use the CSS Transform scale Property to Change the Size of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZVSg'
 forumTopicId: 301076
@@ -8,7 +8,7 @@ forumTopicId: 301076
 
 # --description--
 
-CSS 属性 `transform` 里面的 `scale()` 函数可以用来改变元素的显示比例。下面的例子把页面的 `p` 元素放大到了原来的 2 倍：
+To change the scale of an element, CSS has the `transform` property, along with its `scale()` function. The following code example doubles the size of all the paragraph elements on the page:
 
 ```css
 p {
@@ -18,11 +18,11 @@ p {
 
 # --instructions--
 
-把 id 为 `ball2` 的元素放大到原始大小的 1.5 倍。
+Increase the size of the element with the id of `ball2` to 1.5 times its original size.
 
 # --hints--
 
-`#ball2` 的 `transform` 属性应该为原始大小的 1.5 倍。
+The `transform` property for `#ball2` should be set to scale it to 1.5 times its size.
 
 ```js
 assert(
@@ -32,5 +32,63 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .ball {
+    width: 40px;
+    height: 40px;
+    margin: 50 auto;
+    position: fixed;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    border-radius: 50%;
+  }
+  #ball1 {
+    left: 20%;
+  }
+  #ball2 {
+    left: 65%;
+
+  }
+
+
+</style>
+
+<div class="ball" id= "ball1"></div>
+<div class="ball" id= "ball2"></div>
+```
+
 # --solutions--
 
+```html
+<style>
+  .ball {
+    width: 40px;
+    height: 40px;
+    margin: 50 auto;
+    position: fixed;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    border-radius: 50%;
+  }
+  #ball1 {
+    left: 20%;
+  }
+  #ball2 {
+    left: 65%;
+    transform: scale(1.5);
+  }
+</style>
+<div class="ball" id= "ball1"></div>
+<div class="ball" id= "ball2"></div>
+```

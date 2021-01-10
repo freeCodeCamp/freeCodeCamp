@@ -1,6 +1,6 @@
 ---
 id: 5a9036ee38fddaf9a66b5d35
-title: 使用 grid-column-gap 创建多列之间的间距
+title: Create a Column Gap Using grid-column-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
@@ -8,21 +8,21 @@ forumTopicId: 301124
 
 # --description--
 
-目前为止，在你所创建的网格中，每列都相互紧挨着。如果需要在列与列之间添加一些间距，我们可以使用 `grid-column-gap`：
+So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the `grid-column-gap` property like this:
 
 ```css
 grid-column-gap: 10px;
 ```
 
-这会为我们创建的所有列之间都添加 10px 的空白间距。
+This creates 10px of empty space between all of our columns.
 
 # --instructions--
 
-请为网格中的所有列添加宽度为 `20px` 的间距。
+Give the columns in the grid a `20px` gap.
 
 # --hints--
 
-class 为 `container` 的元素应具有 `grid-column-gap` 属性且属性值应为 `20px`。
+`container` class should have a `grid-column-gap` property that has the value of `20px`.
 
 ```js
 assert(
@@ -32,5 +32,44 @@ assert(
 );
 ```
 
+# --seed--
+
+## --seed-contents--
+
+```html
+<style>
+  .d1{background:LightSkyBlue;}
+  .d2{background:LightSalmon;}
+  .d3{background:PaleTurquoise;}
+  .d4{background:LightPink;}
+  .d5{background:PaleGreen;}
+
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* Only change code below this line */
+
+
+    /* Only change code above this line */
+  }
+</style>
+
+<div class="container">
+  <div class="d1">1</div>
+  <div class="d2">2</div>
+  <div class="d3">3</div>
+  <div class="d4">4</div>
+  <div class="d5">5</div>
+</div>
+```
+
 # --solutions--
 
+```html
+<style>.container {grid-column-gap: 20px;}</style>
+```

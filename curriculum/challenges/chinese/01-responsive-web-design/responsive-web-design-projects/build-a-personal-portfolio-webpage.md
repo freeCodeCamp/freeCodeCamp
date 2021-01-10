@@ -1,46 +1,51 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
-title: 制作一个个人作品集展示页
+title: Build a Personal Portfolio Webpage
 challengeType: 3
 forumTopicId: 301143
 ---
 
 # --description--
 
-**目标：**在 [CodePen.io](https://codepen.io) 上创建一个与这个功能类似的 app：<https://codepen.io/freeCodeCamp/full/zNBOYG>。
+**Objective:** Build a [CodePen.io](https://codepen.io) app that is functionally similar to this: <https://codepen.io/freeCodeCamp/full/zNBOYG>.
 
-在满足以下[需求](https://en.wikipedia.org/wiki/User_story)并能通过所有测试的前提下，你可以根据自己的喜好来美化你的 app。
+Fulfill the below [user stories](https://en.wikipedia.org/wiki/User_story) and get all of the tests to pass. Give it your own personal style.
 
-你可以使用 HTML、JavaScript 以及 CSS 来完成项目。由于目前你只学到了 CSS 课程，所以我们建议你只使用 CSS 来完成这个项目，同时巩固一下你之前所学的内容。你也可以使用 Bootstrap 或者 SASS。我们不推荐你在这个项目中使用其他技术（比如 jQuery、React、Angular 或 Vue）。否则，如果在编码中出现问题，你需要自行解决。在后续的其他项目中，你将有机会使用像是 React 等其他技术栈。如果你在使用上述推荐的技术栈过程中遇到问题，请提交给我们来处理。祝你编码愉快！
+You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-**需求 1：**此 app 中应存在一个 `id` 为 `welcome-section` 的欢迎区。
+**User Story #1:** My portfolio should have a welcome section with an id of `welcome-section`.
 
-**需求 2：**欢迎区内应存在一个包含标题文本的 `h1` 元素。
+**User Story #2:** The welcome section should have an `h1` element that contains text.
 
-**需求 3：**此 app 中应存在一个 `id` 为 `projects` 的项目展示区。
+**User Story #3:** My portfolio should have a projects section with an id of `projects`.
 
-**需求 4：**项目展示区应至少包含一个 `class` 为 `project-tile` 的元素来展示项目。
+**User Story #4:** The projects section should contain at least one element with a class of `project-tile` to hold a project.
 
-**需求 5：**项目展示区应至少包含一个链接到项目的超链接元素。
+**User Story #5:** The projects section should contain at least one link to a project.
 
-**需求 6：**此 app 中应存在一个 `id` 为 `navbar` 的导航栏。
+**User Story #6:** My portfolio should have a navbar with an id of `navbar`.
 
-**需求 7：**导航栏中应包含一个可以滚动到本页面不同区域的链接。
+**User Story #7:** The navbar should contain at least one link that I can click on to navigate to different sections of the page.
 
-**需求 8：**此 app 中应包含一个 `id` 为 `profile-link` 的链接。点击这个链接时，它应在浏览器的新标签页内打开我的 GitHub 或者 FCC 作品集页面。
+**User Story #8:** My portfolio should have a link with an id of `profile-link`, which opens my GitHub or FCC profile in a new tab.
 
-**需求 9：**在此 app 中，应至少使用一次媒体查询。
+**User Story #9:** My portfolio should have at least one media query.
 
-**需求 10：**欢迎区的高度应该与视口的高度保持一致。
+**User Story #10:** The height of the welcome section should be equal to the height of the viewport.
 
-**需求 11：**导航栏应始终保持在视口顶部。
+**User Story #11:** The navbar should always be at the top of the viewport.
 
-你可以通过 fork [这个项目](http://codepen.io/freeCodeCamp/pen/MJjpwO)来构建你的项目，也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
+You can build your project by forking [this CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Or you can use this CDN link to run the tests in any environment you like: `https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`
 
-完成项目并通过所有测试后，请输入你的项目在 CodePen 上的链接并提交。
+Once you're done, submit the URL to your working project with all its tests passing.
 
 # --hints--
 
 
+# --seed--
+
 # --solutions--
 
+```html
+// solution required
+```
