@@ -19,7 +19,7 @@ forumTopicId: 301372
 
 **需求 3：** 当我在具有`#editor`属性的元素内输入文本时，具有`#preview`属性的元素应该同步更新展示我键入的内容。
 
-**需求 4：** 当我在具有`#editor`属性的元素内输入 Github 风格的 Markdown 内容时，文本应该以 HTML 的形式，把我所键入的内容渲染在具有`#preview`属性的元素中（提示：你不需要自己解析 Markdown——你可以引入一个叫做 Marked 的库来完成这项工作：<https://cdnjs.com/libraries/marked>）。
+**需求 4：** 当我在具有`#editor`属性的元素内输入 GitHub 风格的 markdown 内容时，文本应该以 HTML 的形式，把我所键入的内容渲染在具有`#preview`属性的元素中（提示：你不需要自己解析 Markdown——你可以引入一个叫做 Marked 的库来完成这项工作：<https://cdnjs.com/libraries/marked>）。
 
 **需求 5：** 当我的 Markdown 预览器首次加载时，具有`#editor`属性的元素内的默认内容应该包含以下每个种类的至少一段有效的 Markdown 代码：标题（H1 标签）、次级标题（H2 标签）、链接、行内代码、代码块、列表、引用块、图片、加粗文本。
 
@@ -27,12 +27,17 @@ forumTopicId: 301372
 
 **可选需求（你无需通过这项测试）：** 我的 Markdown 预览器能够解析回车符并且将他们以`br`（换行）元素的形式渲染出来。
 
-你可以 fork [这个 CodePen pen 项目](http://codepen.io/freeCodeCamp/pen/MJjpwO) 来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js`。
+你可以 fork [这个 CodePen pen 项目](http://codepen.io/freeCodeCamp/pen/MJjpwO) 来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
 一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
 # --hints--
 
 
+# --seed--
+
 # --solutions--
 
+```js
+// solution required
+```

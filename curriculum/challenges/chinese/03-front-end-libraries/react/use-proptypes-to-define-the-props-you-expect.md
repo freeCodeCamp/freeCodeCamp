@@ -51,7 +51,7 @@ assert(
 (getUserInput) =>
   assert(
     (function () {
-      const noWhiteSpace = getUserInput('index').replace(/ /g, '');
+      const noWhiteSpace = __helpers.removeWhiteSpace(getUserInput('index'));
       return (
         noWhiteSpace.includes('quantity:PropTypes.number.isRequired') &&
         noWhiteSpace.includes('Items.propTypes=')
