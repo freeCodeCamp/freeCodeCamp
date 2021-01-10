@@ -34,7 +34,7 @@
     "express-validator": "^6.9.2",
     "googleapis": "^42.0.0",
     "helmet": "^3.23.3",
-    "helmet-csp": "^2.10.0",
+    "helmet-csp": "^3.3.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "loopback": "^3.28.0",
