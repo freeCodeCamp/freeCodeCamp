@@ -60,7 +60,8 @@
       "responsive-web-design-projects": {
         "title": "Responsive Web Design Projects",
         "intro": [
-          "Placeholder"
+          "Time to put your newly learnt skills to work! By working on projects you would have the opportunity of applying all the skills, principles and concepts you have learnt so far; HTML, CSS, Visual Design, Accessibility, etc.",
+          "Complete the five web programming projects below to earn your Responsive Web Design certificate!"
         ]
       }
     }
@@ -201,7 +202,7 @@
         "title": "Front End Development Libraries Projects",
         "intro": [
           "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Front End Development Libraries certificate."
+          "Complete all 5 projects, and you'll earn the Front End Development Libraries certificate!"
         ]
       }
     }
@@ -235,7 +236,8 @@
         "title": "Data Visualization Projects",
         "intro": [
           "Now that you learned how to work with D3, APIs, and AJAX technologies, put your skills to the test with these 5 Data Visualization projects.",
-          "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations."
+          "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations.",
+          "Finish them all to earn your Data Vizualization certificate!"
         ]
       }
     }
@@ -325,14 +327,14 @@
       "python-for-everybody": {
         "title": "Python for Everybody",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Python for Everybody is a free programming video course that teaches the basics of using Python 3.",
+          "The course was created by Dr. Charles Severance (a.k.a. Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and Web development."
         ]
       },
       "scientific-computing-with-python-projects": {
         "title": "Scientific Computing with Python Projects",
         "intro": [
-          "Placeholder"
+          "Time to put your Python skills to the test! By completing these projects, you will demonstrate that you have a good foundational knowledge of Python and qualify for the Scientific Computing with Pythong certificate."
         ]
       }
     }
@@ -348,21 +350,22 @@
       "data-analysis-with-python-course": {
         "title": "Data Analysis with Python",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Learn Data Analysis with Python in this comprehensive tutorial. Python, SQL and other open libraries have made Data Analysis more accessible to everyone.",
+          "In these lectures, create by Santiago Basulto from RMOTR, you will learn the whole process of Data Analysis: reading data from multiple sources (CSVs, SQL, Excel, etc), processing them using NumPy and Pandas, visualize them using Matplotlib and Seaborn and clean and process it to create reports.",
+          "Additionally, we've included a thorough Jupyter Notebook tutorial, and a quick Python reference to refresh your programming skills."
         ]
       },
       "numpy": {
         "title": "Numpy",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Learn the basics of the NumPy library with the following lectures created by Keith Galli. They provide background information on how NumPy works and how it compares to Python's Built-in lists. They go through how to write code with NumPy, creating arrays, indexing, math, statistics, reshaping, and more!"
         ]
       },
       "data-analysis-with-python-projects": {
         "title": "Data Analysis with Python Projects",
         "intro": [
-          "Placeholder"
+          "There are many ways to analyze data with Python! By completing these projects, you will demonstrate that you have a good foundational knowledge of data analysis with Python.",
+          "Finish them all to claim your Data Analysis with Python certificate!"
         ]
       }
     }
@@ -379,21 +382,21 @@
       "information-security-with-helmetjs": {
         "title": "Information Security with HelmetJS",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "These programming tutorials focus on HelmetJS, a type of middleware for Express-based applications that automatically sets HTTP headers to prevent sensitive information from unintentionally being passed between the server and client.",
+          "Completing the lessons below will help you understand how to protect your website from malicious behavior."
         ]
       },
       "python-for-penetration-testing": {
         "title": "Python for Penetration Testing",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "These free programming courses teach you penetration testing with Python. Also known as a pen test, penetration testing is a simulated attack against a system to check for vulnerabilities."
         ]
       },
       "information-security-projects": {
         "title": "Information Security Projects",
         "intro": [
-          "Placeholder"
+          "Now it’s time to put your newly learned skills to work! By working on these projects, you will have the opportunity of applying all the skills, principles, and concepts from the Information Security sections.",
+          "When you are done, you will have plenty of Information Security projects under your belt along with a certification that you can show off to friends, family, and employers."
         ]
       }
     }
@@ -410,21 +413,21 @@
       "tensorflow": {
         "title": "Tensorflow",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "TensorFlow is an open source framework developed by the Google Brain team aimed to make the powers of machine learning and neural networking easier to use.",
+          "The following lectures were created by Tim Ruscica, otherwise known as “Tech With Tim” from his educational programming YouTube channel. They will help you to understand TensorFlow and some of its capabilities."
         ]
       },
       "how-neural-networks-work": {
         "title": "How Neural Networks Work",
         "intro": [
-          "Intro text 1",
-          "Intro text 2"
+          "Neural networks are at the core of what we are calling Artificial Intelligence today. They can seem impenetrable, and even mystical, if you are trying to understand them for the first time, but they don't have to.",
+          "Even if you are completely new to neural networks, these lectures by Brandon Rohrer will get you comfortable with the concepts and the math behind them."
         ]
       },
       "machine-learning-with-python-projects": {
         "title": "Machine Learning with Python Projects",
         "intro": [
-          "Placeholder"
+          "Machine learning has many practical applications. By completing these free and challenging coding projects, you will demonstrate that you have a good foundational knowledge of machine learning and qualify for your Machine Learning with Pythong certifiate."
         ]
       }
     }
