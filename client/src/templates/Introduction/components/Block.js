@@ -180,7 +180,7 @@ export class Block extends Component {
     const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
 
     return isProjectBlock ? (
-      <li className='block'>
+      <div className='block'>
         {this.renderBlockIntros(blockIntroArr)}
         <div className='map-title'>
           <h3 className='map-projects-title'>{blockTitle}</h3>
@@ -188,9 +188,9 @@ export class Block extends Component {
         <ul>
           {this.renderChallenges(challengesWithCompleted, isProjectBlock)}
         </ul>
-      </li>
+      </div>
     ) : (
-      <li className={`block ${isExpanded ? 'open' : ''}`}>
+      <div className={`block ${isExpanded ? 'open' : ''}`}>
         {this.renderBlockIntros(blockIntroArr)}
         <button
           aria-expanded={isExpanded}
@@ -211,7 +211,7 @@ export class Block extends Component {
         <ul>
           {isExpanded ? this.renderChallenges(challengesWithCompleted) : null}
         </ul>
-      </li>
+      </div>
     );
   }
 }

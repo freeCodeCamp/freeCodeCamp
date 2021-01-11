@@ -58,8 +58,7 @@ button.map-title {
 }
 
 .map-cert-title > h3 {
-  margin-left: 15px;
-  margin-top: 10px;
+  margin: 0 0 0 15px;
 }
 
 .map-cert-title > svg {
@@ -69,8 +68,8 @@ button.map-title {
   min-width: 25px;
 }
 
-.map-title > h4 {
-  margin-bottom: 0;
+.map-title > h3 {
+  margin: 0;
   font-weight: 700;
 }
 

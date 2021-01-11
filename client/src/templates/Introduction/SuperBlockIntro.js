@@ -231,7 +231,7 @@ export class SuperBlockIntroductionPage extends Component {
           ))}
           <Spacer size={2} />
           <h2 className='text-center'>{tutorialsText}</h2>
-          <ul className='block-ui'>
+          <div className='block-ui'>
             {blockDashedNames.map(blockDashedName => (
               <div
                 key={blockDashedName}
@@ -249,7 +249,7 @@ export class SuperBlockIntroductionPage extends Component {
               </div>
             ))}
             {superBlock !== 'Coding Interview Prep' && (
-              <li className='block'>
+              <div className='block'>
                 <button
                   className='map-cert-title'
                   onClick={
@@ -272,9 +272,9 @@ export class SuperBlockIntroductionPage extends Component {
                     </span>
                   </div>
                 </button>
-              </li>
+              </div>
             )}
-          </ul>
+          </div>
           {!isSignedIn && (
             <Row>
               <Col sm={8} smOffset={2} xs={12}>
