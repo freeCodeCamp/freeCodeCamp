@@ -26,7 +26,7 @@ Using the `.match()` method on a string will return an array with the string it 
 
 # --instructions--
 
-Use capture groups in `reRegex`  to match a string that consists of only the same number repeated exactly three times separated by single spaces.
+Use capture groups in `reRegex` to match a string that consists of only the same number repeated exactly three times separated by single spaces.
 
 # --hints--
 
