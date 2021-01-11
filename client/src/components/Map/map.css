@@ -14,10 +14,6 @@
     font-size: 0.9rem;
   }
 
-  .map-ui ul {
-    padding-inline-start: 15px;
-  }
-
   .map-ui > ul {
     padding-inline-start: 0;
   }
