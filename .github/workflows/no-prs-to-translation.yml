@@ -1,6 +1,6 @@
 name: "No changing translated files on GitHub"
 on:
-  pull_request:
+  pull_request_target:
     branches:
     - 'master'
     paths:
