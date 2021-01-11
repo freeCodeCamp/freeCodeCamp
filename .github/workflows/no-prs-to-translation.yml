@@ -14,5 +14,12 @@ jobs:
     - uses: actions/github-script@v3
       if: github.event.pull_request.user.login != "github-actions[bot]"
       with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
+          await github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'You appear to be translating files directly on GitHub. Please visit https://translate.freecodecamp.org instead.'
+          })
           throw "You appear to be translating files directly on GitHub. Please visit https://translate.freecodecamp.org instead."
