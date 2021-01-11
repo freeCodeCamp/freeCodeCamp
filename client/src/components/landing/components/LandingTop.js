@@ -30,14 +30,14 @@ function landingTop({ page }) {
         <Spacer />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <h1 className='big-heading' data-test-label={`${page}-header`}>
-            Learn to code at home.
+            Learn to code — for free.
           </h1>
-          <h1 className='big-heading '>Build projects.</h1>
-          <h1 className='big-heading'>Earn certifications.</h1>
-          <h2>
+          <p className='big-heading'>Build projects.</p>
+          <p className='big-heading'>Earn certifications.</p>
+          <p>
             Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten
             jobs at tech companies including:
-          </h2>
+          </p>
           <div className='logo-row'>
             <AppleLogo />
             <GoogleLogo />

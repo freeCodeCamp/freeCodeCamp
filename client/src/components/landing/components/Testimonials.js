@@ -13,9 +13,9 @@ const Testimonials = () => {
 
   return (
     <div className='testimonials'>
-      <h1 className='big-heading text-center'>
+      <h2 className='big-heading text-center'>
         Here is what our alumni say about freeCodeCamp:
-      </h1>
+      </h2>
       <div className='testimonials-row' data-test-label='testimonial-cards'>
         {campers.map((camper, i) => {
           let {
