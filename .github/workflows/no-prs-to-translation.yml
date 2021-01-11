@@ -15,4 +15,4 @@ jobs:
       if: github.event.pull_request.user.login != "github-actions[bot]"
       with:
         script: |
-          throw "You appear to be translating files directly on GitHub. Please use Crowdin instead."
+          throw "You appear to be translating files directly on GitHub. Please visit https://translate.freecodecamp.org instead."
