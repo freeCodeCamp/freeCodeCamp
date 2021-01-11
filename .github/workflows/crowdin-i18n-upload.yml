@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - crowdin-source
-      - feat/crowdin-integration-upload-and-download-using-github-actions
 
 jobs:
   
