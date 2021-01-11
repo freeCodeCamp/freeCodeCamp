@@ -177,7 +177,7 @@ export class Block extends Component {
       `intro:${superBlockDashedName}.blocks.${blockDashedName}`
     );
     const blockTitle = blockIntroObj ? blockIntroObj.title : null;
-    const blockIntroArr = blockIntroObj ? blockIntroObj.intro : null;
+    const blockIntroArr = blockIntroObj ? blockIntroObj.intro : [];
 
     return isProjectBlock ? (
       <li className='block'>
