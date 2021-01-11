@@ -12,6 +12,11 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/building_websites_i78t.svg',
+    'image-alt': 'Three people designing a responsive website layout together',
+    icon:
+      'https://cdn3.iconfinder.com/data/icons/seo-web-5-1/128/Vigor_responsive-web-design-adaptive-64.png',
+    'icon-alt':
+      'A computer monitor with the desktop view and a smartphone with the mobile view of the same website.',
     blocks: {
       'basic-html-and-html5': {
         title: 'Basic HTML and HTML5',
@@ -68,6 +73,18 @@ const introSchema = {
           'Time to put your newly learnt skills to work. By working on projects you would have the opportunity of applying all the skills, principles and concepts you have learnt so far; HTML, CSS, Visual Design, Accessibility, etc.',
           'Complete the five web programming projects below to earn your Responsive Web Design certificate.'
         ]
+      },
+      'basic-html-cat-photo-app': {
+        title: 'Basic HTML Cat Photo App',
+        intro: ['placeholder', 'placeholder']
+      },
+      'basic-css-cafe-menu': {
+        title: 'Basic CSS Cafe Menu',
+        intro: ['placeholder', 'placeholder']
+      },
+      'css-variables-skyline': {
+        title: 'CSS Variables Skyline',
+        intro: ['placeholder', 'placeholder']
       }
     }
   },
@@ -80,6 +97,10 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/dev_focus_b9xo.svg',
+    'image-alt': 'A person working on a laptop',
+    icon:
+      'https://i2.wp.com/info.widespace.com/wp-content/uploads/2016/03/javascript-shield-logo.png?ssl=1',
+    'icon-alt': 'JavaScript shield logo',
     blocks: {
       'basic-javascript': {
         title: 'Basic JavaScript',
@@ -150,6 +171,18 @@ const introSchema = {
           "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before, just much more difficult.",
           'Complete these 5 JavaScript projects to earn the JavaScript Algorithms and Data Structures certificate.'
         ]
+      },
+      'basic-javascript-rpg-game': {
+        title: 'Basic JavaScript RPG Game',
+        intro: ['placeholder', 'placeholder']
+      },
+      'intermediate-javascript-calorie-counter': {
+        title: 'Intermediate JavaScript Calorie Counter',
+        intro: ['placeholder', 'placeholder']
+      },
+      'functional-programming-spreadsheet': {
+        title: 'Functional Programming Spreadsheet',
+        intro: ['placeholder', 'placeholder']
       }
     }
   },
@@ -161,6 +194,10 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/react_y7wq.svg',
+    'image-alt': 'A person sitting atop the react logo',
+    icon:
+      'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-64.png',
+    'icon-alt': 'React logo',
     blocks: {
       bootstrap: {
         title: 'Bootstrap',
@@ -223,6 +260,11 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Data_re_80ws.svg',
+    'image-alt':
+      'Three people placing charts and graphs onto a browser interface',
+    icon:
+      'https://camo.githubusercontent.com/586ccf0aad9684edc821658cee04146cf36d1f1d5ec904bbefd72728909ccb2e/68747470733a2f2f64336a732e6f72672f6c6f676f2e737667',
+    'icon-alt': 'D3 logo',
     blocks: {
       'data-visualization-with-d3': {
         title: 'Data Visualization with D3',
@@ -246,6 +288,10 @@ const introSchema = {
           'Now that you learned how to work with D3, APIs, and AJAX technologies, put your skills to the test with these 5 Data Visualization projects.',
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certificate."
         ]
+      },
+      'd3-dashboard': {
+        title: 'D3 Dashboard',
+        intro: ['placeholder', 'placeholder']
       }
     }
   },
@@ -258,6 +304,10 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/server_status_5pbv.svg',
+    'image-alt': 'A person standing next to a database icon larger than her',
+    icon:
+      'https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_Cloud-Server-Database-Hosting-64.png',
+    'icon-alt': 'A server in front of a cloud.',
     blocks: {
       'managing-packages-with-npm': {
         title: 'Managing Packages with NPM',
@@ -301,6 +351,10 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/usability_testing_2xs4.svg',
+    'image-alt': 'Two people interacting with a website',
+    icon:
+      'https://cdn1.iconfinder.com/data/icons/smallicons-misc/32/clipboard-64.png',
+    'icon-alt': 'A clipboard with a bulleted list.',
     blocks: {
       'quality-assurance-and-testing-with-chai': {
         title: 'Quality Assurance and Testing with Chai',
@@ -333,6 +387,10 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/pair_programming_njlp.svg',
+    'image-alt': 'Two people sitting in front of a computer',
+    icon:
+      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/267_Python_logo-64.png',
+    'icon-alt': 'Python logo',
     blocks: {
       'python-for-everybody': {
         title: 'Python for Everybody',
@@ -357,6 +415,10 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/design_data_khdb.svg',
+    'image-alt': 'A person looking at various charts',
+    icon:
+      'https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_Analytics-Graph-Statistics-64.png',
+    'icon-alt': 'A line graph',
     blocks: {
       'data-analysis-with-python-course': {
         title: 'Data Analysis with Python',
@@ -389,6 +451,10 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/security_o890.svg',
+    'image-alt': 'A person standing in front of a browser with a padlock',
+    icon:
+      'https://cdn1.iconfinder.com/data/icons/unigrid-phantom-security-vol-1/60/013_005_shield_protect_protection_security_secure_guard_guardian_defense_firewall_5-64.png',
+    'icon-alt': 'Green shield logo',
     blocks: {
       'information-security-with-helmetjs': {
         title: 'Information Security with HelmetJS',
@@ -422,6 +488,9 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Artificial_intelligence_re_enpp.svg',
+    'image-alt': 'A person holding a cell phone standing next to a robot',
+    icon: 'https://www.kubeflow.org/docs/images/logos/TensorFlow.png',
+    'icon-alt': 'TensorFlow logo',
     blocks: {
       tensorflow: {
         title: 'Tensorflow',
@@ -453,6 +522,11 @@ const introSchema = {
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/software_engineer_lvl5.svg',
+    'image-alt':
+      'A person sitting at a computer with a data structure in the background',
+    icon:
+      'https://cdn1.iconfinder.com/data/icons/data-science-flat-1/64/neural-network-machine-learning-algorithm-64.png',
+    'icon-alt': 'Algorithm, creative shape icon',
     blocks: {
       algorithms: {
         title: 'Algorithms',
