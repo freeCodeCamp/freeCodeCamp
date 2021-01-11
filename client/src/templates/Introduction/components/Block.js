@@ -183,7 +183,7 @@ export class Block extends Component {
       <li className='block'>
         {this.renderBlockIntros(blockIntroArr)}
         <div className='map-title'>
-          <h4 className='map-projects-title'>{blockTitle}</h4>
+          <h3 className='map-projects-title'>{blockTitle}</h3>
         </div>
         <ul>
           {this.renderChallenges(challengesWithCompleted, isProjectBlock)}
@@ -198,7 +198,7 @@ export class Block extends Component {
           onClick={this.handleBlockClick}
         >
           <Caret />
-          <h4>{blockTitle}</h4>
+          <h3>{blockTitle}</h3>
           <div className='map-title-completed'>
             <span>
               {this.renderCheckMark(
