@@ -31,16 +31,18 @@ const LanguageMenu = () => {
 
   return (
     <div className='language-menu'>
-      <span>{t('footer.language')}</span>
-      <select onChange={e => changeLanguage(e)} value={currentLanguage}>
-        {locales.map((lang, i) => {
-          return (
-            <option key={i} value={lang}>
-              {langDisplayNames[lang]}
-            </option>
-          );
-        })}
-      </select>
+      <label>
+        {t('footer.language')}
+        <select onChange={e => changeLanguage(e)} value={currentLanguage}>
+          {locales.map((lang, i) => {
+            return (
+              <option key={i} value={lang}>
+                {langDisplayNames[lang]}
+              </option>
+            );
+          })}
+        </select>
+      </label>
     </div>
   );
 };
