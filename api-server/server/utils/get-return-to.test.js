@@ -1,6 +1,6 @@
 /* global describe expect it */
 
-const { homeLocation } = require('../../../config/env.json');
+const { homeLocation } = require('../../../config/env');
 const jwt = require('jsonwebtoken');
 
 const getReturnTo = require('./get-return-to');

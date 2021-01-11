@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { allowedOrigins } = require('../../../config/cors-settings');
-const { homeLocation } = require('../../../config/env.json');
+const { homeLocation } = require('../../../config/env');
 
 function getReturnTo(encryptedReturnTo, secret) {
   let returnTo;
