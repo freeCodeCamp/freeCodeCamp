@@ -3,8 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - crowdin-download
-    - feat/crowdin-integration-upload-and-download-using-github-actions
+    - test-crowdin-download
 
 jobs:
   

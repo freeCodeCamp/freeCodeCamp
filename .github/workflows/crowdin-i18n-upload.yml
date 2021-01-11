@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - crowdin-source
+      - test-crowdin-upload
 
 jobs:
   
