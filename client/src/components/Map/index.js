@@ -23,6 +23,18 @@ function createSuperBlockTitle(str) {
     : `${superBlockTitle} ${i18next.t('learn.cert-map-estimates.certs')}`;
 }
 
+const iconStyle = {
+  maxWidth: '55px',
+  maxHeight: '55px',
+  marginRight: '20px'
+};
+
+const linkSpacingStyle = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center'
+};
+
 function renderLandingMap(nodes) {
   nodes = nodes.filter(node => node.superBlock !== 'Coding Interview Prep');
   return (
@@ -33,7 +45,14 @@ function renderLandingMap(nodes) {
             className='btn link-btn btn-lg'
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
-            {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
+            <div style={linkSpacingStyle}>
+              <img
+                alt='building a website'
+                src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
+                style={iconStyle}
+              />
+              {i18next.t(`intro:${dasherize(node.superBlock)}.title`)}
+            </div>
             <LinkButton />
           </Link>
         </li>
@@ -54,7 +73,14 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
                 className='btn link-btn btn-lg'
                 to={`/learn/${dasherize(node.superBlock)}/`}
               >
-                {createSuperBlockTitle(node.superBlock)}
+                <div style={linkSpacingStyle}>
+                  <img
+                    alt='building a website'
+                    src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
+                    style={iconStyle}
+                  />
+                  {createSuperBlockTitle(node.superBlock)}
+                </div>
               </Link>
             </li>
           ))}
