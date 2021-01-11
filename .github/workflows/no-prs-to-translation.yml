@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/github-script@v3
-      if: startsWith(github.head_ref, 'i18n-sync-learn-') == false
+      if: github.event.pull_request.user.login != "github-actions[bot]"
       with:
         script: |
           throw "You appear to be translating files directly on GitHub. Please use Crowdin instead."
