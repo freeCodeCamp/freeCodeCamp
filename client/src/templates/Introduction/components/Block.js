@@ -99,13 +99,13 @@ export class Block extends Component {
         >
           {!isProjectBlock ? (
             <>
-              <span className='badge map-badge'>
-                {this.renderCheckMark(challenge.isCompleted)}
-              </span>
               <Link
                 onClick={this.handleChallengeClick(challenge.fields.slug)}
                 to={challenge.fields.slug}
               >
+                <span className='badge map-badge'>
+                  {this.renderCheckMark(challenge.isCompleted)}
+                </span>
                 {challenge.title}
               </Link>
             </>
@@ -185,7 +185,7 @@ export class Block extends Component {
         <div className='map-title'>
           <h3 className='map-projects-title'>{blockTitle}</h3>
         </div>
-        <ul>
+        <ul className='map-challenges-ul'>
           {this.renderChallenges(challengesWithCompleted, isProjectBlock)}
         </ul>
       </div>
@@ -208,7 +208,7 @@ export class Block extends Component {
             <span className='map-completed-count'>{`${completedCount}/${challengesWithCompleted.length}`}</span>
           </div>
         </button>
-        <ul>
+        <ul className='map-challenges-ul'>
           {isExpanded ? this.renderChallenges(challengesWithCompleted) : null}
         </ul>
       </div>

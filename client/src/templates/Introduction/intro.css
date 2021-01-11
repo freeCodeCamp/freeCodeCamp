@@ -39,7 +39,8 @@ button.map-title {
 }
 
 .map-project-checkmark {
-  margin-right: 41px;
+  margin-right: 7px;
+  padding-left: 15px;
 }
 
 .map-cert-title {
@@ -81,7 +82,7 @@ button.map-title {
 
 .map-title-completed-big {
   margin-left: auto;
-  min-width: 90px;
+  padding-right: 15px;
   padding-left: 20px;
   position: relative;
   top: 4px;
@@ -103,13 +104,19 @@ li.open > .map-title svg:first-child {
   transform: rotate(90deg);
 }
 
+.map-challenges-ul {
+  padding-inline-start: 0;
+}
+
 .map-challenge-title {
   display: flex;
-  margin-bottom: 0.25rem;
+  align-items: center;
+  width: 100%;
 }
 
 .map-challenge-title a {
   width: 100%;
+  padding: 10px 20px 10px 30px;
 }
 
 .block-description {
