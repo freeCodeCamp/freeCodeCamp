@@ -16,7 +16,7 @@ const introSchema = {
       'basic-html-and-html5': {
         title: 'Basic HTML and HTML5',
         intro: [
-          'HTML is a markup language that is used to describe the structure of a webpage.',
+          'HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser. HTML elements usually have opening and closing tags that surround and give meaning to content. For example, different elements can describe text as a heading, paragraph, or list item.',
           "In this course, you'll build a cat photo app to learn some of the most common HTML elements — the building blocks of any webpage."
         ]
       },
@@ -64,7 +64,10 @@ const introSchema = {
       },
       'responsive-web-design-projects': {
         title: 'Responsive Web Design Projects',
-        intro: ['Placeholder']
+        intro: [
+          'Time to put your newly learnt skills to work. By working on projects you would have the opportunity of applying all the skills, principles and concepts you have learnt so far; HTML, CSS, Visual Design, Accessibility, etc.',
+          'Complete the five web programming projects below to earn your Responsive Web Design certificate.'
+        ]
       }
     }
   },
@@ -80,43 +83,73 @@ const introSchema = {
     blocks: {
       'basic-javascript': {
         title: 'Basic JavaScript',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'JavaScript is a scripting language you can use to make web pages interactive. It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.',
+          "In these tutorials, you'll learn fundamental programming concepts in JavaScript. You'll start with basic data types like numbers and strings, then learn to work with arrays, objects, functions, loops, if/else statements, and more."
+        ]
       },
       es6: {
         title: 'ES6',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'ECMAScript, or ES, is a standardized version of JavaScript. Because all major browsers follow this specification, the terms ECMAScript and JavaScript are interchangeable.',
+          "Most of the JavaScript you've learned up to this point was in ES5 (ECMAScript 5), which was finalized in 2009. While you can still write programs in ES5, JavaScript is always evolving, and new features are released every year.",
+          "ES6, released in 2015, added many powerful new features to the language. In these tutorials, you'll learn these new features, including <code>let</code> and <code>const</code>, arrow functions, classes, promises, and modules."
+        ]
       },
       'regular-expressions': {
         title: 'Regular Expressions',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Regular expressions, often shortened to regex or regexp, are patterns that help programmers match, search, and replace text. Regular expressions are very powerful, but can be difficult to read because they can use special characters to make more complex, flexible matches.',
+          "In these tutorials, you'll learn how to use special characters, capture groups, positive and negative lookaheads, and other techniques to match any text you want."
+        ]
       },
       debugging: {
         title: 'Debugging',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          "Debugging is the process of going through your code, finding any issues, and fixing them. Issues in code generally come in three forms: syntax errors that prevent your program from running, runtime errors where your code has unexpected behavior, or logical errors where your code doesn't do what you intended.",
+          "In these tutorials, you'll learn how to use the JavaScript console to debug programs, how to prevent common issues before they happen."
+        ]
       },
       'basic-data-structures': {
         title: 'Basic Data Structures',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Data can be stored and accessed in many ways. You already know some common JavaScript data structures — arrays and objects.',
+          "In the Basic Data Structures tutorials, you'll learn more about the differences between arrays and objects, and which to use in different situations. You'll also learn how to use helpful JS methods like <code>splice()</code> and <code>Object.keys()</code> to access and manipulate data."
+        ]
       },
       'basic-algorithm-scripting': {
         title: 'Basic Algorithm Scripting',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'An algorithm is a series of step-by-step instructions that describe how to do something. To write an effective algorithm, it helps to break a problem down into smaller parts, and think carefully about how to solve each part with code.',
+          "In these tutorials, you'll learn the fundamentals of algorithmic thinking by writing algorithms that do everything from converting temperatures to handling complex 2D arrays."
+        ]
       },
       'object-oriented-programming': {
         title: 'Object Oriented Programming',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'OOP, or Object Oriented Programming, is one of the major approaches to the software development process. In OOP, objects and classes are used to organize code to describe things and what they can do.',
+          "In these tutorials, you'll learn the basic principles of OOP in JavaScript including the <code>this</code> keyword, prototype chains, constructors, and inheritance."
+        ]
       },
       'functional-programming': {
         title: 'Functional Programming',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Functional Programming is another popular approach to software development. In functional programming, code is organized into smaller, basic functions that can be combined to build complex programs.',
+          "In these tutorials, you'll the core concepts of functional programming including pure functions, how to avoid mutations, and how to use methods like <code>.map()</code> and <code>.filter()</code> to write cleaner code."
+        ]
       },
       'intermediate-algorithm-scripting': {
         title: 'Intermediate Algorithm Scripting',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Now that you know the basics of algorithmic thinking, along with OOP and functional programming, test your skills with the Intermediate Algorithm Scripting challenges.'
+        ]
       },
       'javascript-algorithms-and-data-structures-projects': {
-        title: 'Javascript Algorithms and Data Structures Projects',
-        intro: ['Placeholder']
+        title: 'JavaScript Algorithms and Data Structures Projects',
+        intro: [
+          "This is it — time to put your new JavaScript skills to work. These projects are similar to the algorithm scripting challenges you've done before, just much more difficult.",
+          'Complete these 5 JavaScript projects to earn the JavaScript Algorithms and Data Structures certificate.'
+        ]
       }
     }
   },
@@ -131,31 +164,53 @@ const introSchema = {
     blocks: {
       bootstrap: {
         title: 'Bootstrap',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Bootstrap is a front end framework used to design responsive web pages and applications. It takes a mobile-fist approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.',
+          "In these tutorials, you'll learn how to build responsive websites with Bootstrap, and use its included classes to style buttons, images, forms, navigation, and other common elements."
+        ]
       },
       jquery: {
         title: 'jQuery',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'jQuery is one of the most widely used JavaScript libraries in the world. In 2006 when it was released, all major browsers handled JavaScript slightly differently. jQuery simplified the process of writing client-side JavaScript, and also ensured that your code worked the same way in all browsers.',
+          "In the following tutorials, you'll learn how to use jQuery to select, remove, clone, and modify different elements on the page."
+        ]
       },
       sass: {
         title: 'SASS',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Sass, or "Syntactically Awesome StyleSheets", is a language extension of CSS. It adds features that aren\'t available in basic CSS, which make it easier for you to simplify and maintain the style sheets for your projects.',
+          "In the Sass tutorials, you'll learn how to store data in variables, nest CSS, create reusable styles with mixins, add logic and loops to your styles, and more."
+        ]
       },
       react: {
         title: 'React',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'React, released by Facebook in 2013, is a popular JavaScript library for building reusable, component-driven user interfaces for web pages or applications. It combines HTML with JavaScript functionality into its own markup language called JSX. React also makes it easy to manage the flow of data throughout the application.',
+          "In these tutorials, you'll learn how to create different React components, manage data in the form of state props, use different lifecycle methods like <code>componentDidMount</code>, and much more."
+        ]
       },
       redux: {
         title: 'Redux',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'As applications grow in size and scope, managing shared data becomes much more difficult. Redux is defined as a "predictable state container for JavaScript apps" that helps ensure your apps work predictably, and are easier to test.',
+          "While you can use Redux with any view library, it's introduced here before being combined with React in the next set of tutorials.",
+          "In the following tutorials, you'll learn the fundamentals of Redux stores, actions, reducers and middleware to manage data throughout your application."
+        ]
       },
       'react-and-redux': {
         title: 'React and Redux',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'React and Redux are often mentioned together, and with good reason. The creator of Redux is part of the React team, and knew how difficult it could be to manage shared data across different components.',
+          "Now that you know how to manage the flow of shared data with Redux, it's time to combine that knowledge with React. In the React and Redux tutorials, you'll build a React component and learn how to manage state locally at the component level, and throughout the entire application with Redux."
+        ]
       },
       'front-end-libraries-projects': {
         title: 'Front End Development Libraries Projects',
-        intro: ['Placeholder']
+        intro: [
+          "It's time to put your front end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
+          "Complete all 5 projects, and you'll earn the Front End Development Libraries certificate."
+        ]
       }
     }
   },
@@ -171,15 +226,26 @@ const introSchema = {
     blocks: {
       'data-visualization-with-d3': {
         title: 'Data Visualization with D3',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          "D3, or D3.js, stands for Data Driven Documents, and is a JavaScript library to create dynamic and interactive data visualizations in the browser. It's built to work with common web standards, namely HTML, CSS, and Scalable Vector Graphics (SVG).",
+          'D3 supports many different kinds of input data formats. Then, using its powerful built-in methods, you can transform that data into different charts, graphs, and maps.',
+          "In the Data Visualization with D3 tutorials, you'll learn how to work with data to create different charts, graphs, hover elements, and other things to create dynamic and attractive data visualizations."
+        ]
       },
       'json-apis-and-ajax': {
         title: 'JSON APIs and AJAX',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Similar to how UIs help people use programs, APIs (Application Programming Interfaces) help programs interact with other programs. APIs are tools that computers use to communicate with one another, in part to send and receive data.',
+          'Programmers often use AJAX (Asynchronous JavaScript and XML) when working with APIs. AJAX refers to a group of technologies that make asynchronous requests to a server to transfer data, then load any returned data into the page. And the data transferred between the browser and server is often in a format called JSON (JavaScript Object Notation).',
+          'These tutorials will teach you the basics about working with APIs and different AJAX technologies in the browser.'
+        ]
       },
       'data-visualization-projects': {
         title: 'Data Visualization Projects',
-        intro: ['Placeholder']
+        intro: [
+          'Now that you learned how to work with D3, APIs, and AJAX technologies, put your skills to the test with these 5 Data Visualization projects.',
+          "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certificate."
+        ]
       }
     }
   },
@@ -188,26 +254,41 @@ const introSchema = {
     intro: [
       "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
       'Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.',
-      "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and NPM (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "In the APIs and Microservices Certification, you'll learn how to write back end-ready with Node.js and npm (Node Package Manager). You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/server_status_5pbv.svg',
     blocks: {
       'managing-packages-with-npm': {
         title: 'Managing Packages with NPM',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
+          "In these tutorials, you'll learn the basics of using npm, including how to work with the <code>package.json</code> and how to manage your installed dependencies."
+        ]
       },
       'basic-node-and-express': {
         title: 'Basic Node and Express',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.',
+          'In the last set of tutorials you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.',
+          'Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing the routing for your application, which handles things like direct people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.',
+          "In these tutorials, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
+        ]
       },
       'mongodb-and-mongoose': {
         title: 'MongoDB and Mongoose',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'MongoDB is a database application that stores JSON documents (or records) that you can use in your application. Unlike SQL, another type of database, Mongo is a non-relational or "NoSQL" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database.',
+          "Mongoose is a popular npm package that is often installed alongside Mongo. With Mongoose, you can use plain JavaScript objects instead of JSON, which makes it easier to work with Mongo. Also, it allows you to create blueprints for your documents called schemas, so you don't accidentally save the wrong type of data and cause bugs later.",
+          "In the MongoDB and Mongoose tutorials, you'll learn the fundamentals of working with persistent data including how to set up a model, and save, delete, and find documents in the database."
+        ]
       },
       'apis-and-microservices-projects': {
         title: 'APIs and Microservices Projects',
-        intro: ['Placeholder']
+        intro: [
+          "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
+          "After creating these, you'll have 5 cool microservice APIs you can show of to friends, family, and potential employers. Oh, and you'll have a shiny new APIs and Microservices certificate, too."
+        ]
       }
     }
   },
@@ -215,7 +296,7 @@ const introSchema = {
     title: 'Quality Assurance',
     intro: [
       "As your programs or web applications become more complex, you'll want to test them to make sure that new changes don't break their original functionality.",
-      "In the Quality Assurance Certification, you'll learn how to write to write tests with Chai and Mocha to ensure your applications work the way you expect them to.",
+      "In the Quality Assurance Certification, you'll learn how to write to write tests with Chai to ensure your applications work the way you expect them to.",
       "Then you'll build a chat application to learn advanced Node and Express concepts. You'll also use Pug as a template engine, Passport for authentication, Socket.io for real-time communication between the server and connected clients."
     ],
     image:
@@ -223,15 +304,24 @@ const introSchema = {
     blocks: {
       'quality-assurance-and-testing-with-chai': {
         title: 'Quality Assurance and Testing with Chai',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          "Chai is a JavaScript testing library that helps you check that your program still behaves the way you expect it to after you make changes. Using Chai, you can write tests that describe your program's requirements and see if your program meets them.",
+          "In these tutorials, you'll learn about assertions, deep equality, truthiness, testing APIs, and other fundamentals for testing JavaScript applications."
+        ]
       },
       'advanced-node-and-express': {
         title: 'Advanced Node and Express',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          "Now it's time to take a deep dive into Node and Express by building a chat application with a sign in system. To implement the sign in system safely, you'll need to learn about authentication, which is the act of verifying the identity of a person of process.",
+          "In these tutorials, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front end, and web sockets for real-time communication between the clients and server."
+        ]
       },
       'quality-assurance-projects': {
         title: 'Quality Assurance Projects',
-        intro: ['Placeholder']
+        intro: [
+          "Now that you're well versed with both the front end and back end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "After completing these Quality Assurance projects, you'll have 5 more projects under your belt, and a new certificate to show off on your portfolio."
+        ]
       }
     }
   },
@@ -239,18 +329,23 @@ const introSchema = {
     title: 'Scientific Computing with Python',
     intro: [
       'Python is one of the most popular, flexible programming languages today, and is used for everything from basic scripting to machine learning.',
-      "In the Scientific Computing for Python Certification, you'll learn the fundamentals of Python including variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data vizualization."
+      "In the Scientific Computing for Python Certification, you'll learn the fundamentals of Python including variables, loops, conditionals, and functions. Then you'll quickly ramp up to complex data structures, networking, relational databases, and data visualization."
     ],
     image:
       'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/pair_programming_njlp.svg',
     blocks: {
       'python-for-everybody': {
         title: 'Python for Everybody',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Python for everybody is a free video tutorial series that teach the basics of using Python 3.',
+          'The tutorials were created by Dr. Charles Severance (a.k.a. Dr. Chuck). He is a Clinical Professor at the University of Michigan School of Information, where he teaches various technology-oriented courses including programming, database design, and web development.'
+        ]
       },
       'scientific-computing-with-python-projects': {
         title: 'Scientific Computing with Python Projects',
-        intro: ['Placeholder']
+        intro: [
+          'Time to put your Python skills to the test. By completing these projects, you will demonstrate that you have a good foundational knowledge of Python and qualify for the Scientific Computing with Python certificate.'
+        ]
       }
     }
   },
@@ -265,15 +360,23 @@ const introSchema = {
     blocks: {
       'data-analysis-with-python-course': {
         title: 'Data Analysis with Python',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'In these comprehensive video tutorials, created by Santiago Basulto from RMOTR, you will learn the whole process of data analysis: reading data from multiple sources (CSVs, SQL, Excel, etc), processing them using NumPy and Pandas, and visualizing them using Matplotlib and Seaborn and clean and process it to create reports.',
+          "Additionally, we've included a thorough Jupyter Notebook tutorial, and a quick Python reference to refresh your programming skills."
+        ]
       },
       numpy: {
         title: 'Numpy',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          "Learn the basics of the NumPy library in the following video tutorials created by keith Galli. In them, you'll learn how NumPy works and how it compares to Python's built-in lists. You'll also learn how to write code with NumPy, including how to create arrays, indexing, math, statistics, reshaping, and much more."
+        ]
       },
       'data-analysis-with-python-projects': {
         title: 'Data Analysis with Python Projects',
-        intro: ['Placeholder']
+        intro: [
+          'There are many ways to analyze data with Python. By completing these projects, you will demonstrate that you have a good foundational knowledge of data analysis with Python.',
+          'Finish them all to claim your Data Analysis with Python certificate.'
+        ]
       }
     }
   },
@@ -289,15 +392,24 @@ const introSchema = {
     blocks: {
       'information-security-with-helmetjs': {
         title: 'Information Security with HelmetJS',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'These programming tutorials focus on HelmetJS, a type of middleware for Express-based applications that automatically sets HTTP headers to prevent sensitive information from unintentionally being passed between the server and client.',
+          'Completing the tutorials below will help you understand how to protect your website from malicious behavior.'
+        ]
       },
       'python-for-penetration-testing': {
         title: 'Python for Penetration Testing',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'These video tutorials teach you penetration testing with Python. Also known as a pen test, penetration testing is a simulated attack against a system to check for vulnerabilities.',
+          "In these tutorials, you'll learn about sockets, create a TCP server and client, build an Nmap scanner, and other tools and techniques that pen testers use daily."
+        ]
       },
       'information-security-projects': {
         title: 'Information Security Projects',
-        intro: ['Placeholder']
+        intro: [
+          "Now it’s time to put your new information security skills to work. By developing on these projects, you will have the opportunity to apply all the infosec skills, principles, and concepts you've learned.",
+          'When you are done, you will have plenty of information security projects under your belt, along with a certification that you can show off to friends, family, and employers.'
+        ]
       }
     }
   },
@@ -313,15 +425,23 @@ const introSchema = {
     blocks: {
       tensorflow: {
         title: 'Tensorflow',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'TensorFlow is an open source framework developed by the Google Brain team aimed to make machine learning and neural networking easier to use.',
+          'The following video tutorials were created by Tim Ruscica, also known as “Tech With Tim”. They will help you to understand TensorFlow and some of its powerful capabilities.'
+        ]
       },
       'how-neural-networks-work': {
         title: 'How Neural Networks Work',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          "Neural networks are at the core of what we call artificial intelligence today. But historically they've been tough to understand, especially for beginners in the machine learning field.",
+          'Even if you are completely new to neural networks, these video tutorials by Brandon Rohrer will get you comfortable with the concepts and the math behind them.'
+        ]
       },
       'machine-learning-with-python-projects': {
         title: 'Machine Learning with Python Projects',
-        intro: ['Placeholder']
+        intro: [
+          'Machine learning has many practical applications. By completing these free and challenging coding projects, you will demonstrate that you have a good foundational knowledge of machine learning, and qualify for your Machine Learning with Python certificate.'
+        ]
       }
     }
   },
@@ -336,23 +456,38 @@ const introSchema = {
     blocks: {
       algorithms: {
         title: 'Algorithms',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'These free programming exercises are meant to teach you about some common algorithms that you will likely encounter in real life. They are a great opportunity to improve your logic and programming skills.',
+          "These algorithms are frequently used in job interviews to test a candidate's skills. You will be provided clear and concise explanations of how different algorithms work, and expected to implement a solution for each one."
+        ]
       },
       'data-structures': {
         title: 'Data Structures',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'These free programming tutorials are meant to help you deal with large and complex data structures that you may not be familiar with yet.',
+          'Working through the tutorials below, you will learn about each type of data structure and implement an algorithm to reinforce your understanding of them.'
+        ]
       },
       'take-home-projects': {
         title: 'Take Home Projects',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          "Programming interviews have always been stressful. Job applicants are sometimes given a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.",
+          'Build the bonus coding projects below for extra practice. Take your time, make them great, and put them on your resume or portfolio to show potential employers.'
+        ]
       },
       'rosetta-code': {
         title: 'Rosetta Code',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Level up your creative problem solving skills with these free programming tasks from the Rosetta Code library.',
+          'These challenges can prove to be difficult, but they will push your algorithm logic to new heights.'
+        ]
       },
       'project-euler': {
         title: 'Project Euler',
-        intro: ['Intro text 1', 'Intro text 2']
+        intro: [
+          'Complete the programming challenges below, from the massive Project Euler archives, to harden your algorithm and mathematics knowledge.',
+          'The problems range in difficulty and, for many, the experience is inductive chain learning. That is, by solving one problem it will expose you to a new concept that allows you to undertake a previously inaccessible problem. Can you finish them all?'
+        ]
       }
     }
   },
@@ -363,4 +498,5 @@ const introSchema = {
     tutorials: 'Tutorials'
   }
 };
+
 exports.introSchema = introSchema;
