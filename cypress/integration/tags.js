@@ -7,7 +7,7 @@ describe('The Document Metadata', () => {
 
   const social = {
     description:
-      'Learn to code. Build projects. Earn certifications.Since 2015, 40,000 graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.'
+      'Learn to code. Build projects. Earn certifications. Since 2015, 40,000 graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.'
   };
 
   const challengs = {
