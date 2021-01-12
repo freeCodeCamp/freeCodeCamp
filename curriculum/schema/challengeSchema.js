@@ -28,7 +28,8 @@ const schema = Joi.object()
       .max(11)
       .required(),
     checksum: Joi.number(),
-    dashedName: Joi.string().required(),
+    // TODO: require this only for normal challenges, not certs
+    dashedName: Joi.string(),
     description: Joi.when('challengeType', {
       is: Joi.only([challengeTypes.step, challengeTypes.video]),
       then: Joi.string().allow(''),
