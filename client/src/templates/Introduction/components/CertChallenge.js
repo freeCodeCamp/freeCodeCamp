@@ -72,7 +72,9 @@ export class CertChallenge extends Component {
     return (
       <div className='block'>
         <button
-          className={`map-cert-title ${isCertified ? '' : 'no-cursor'}`}
+          className={`map-cert-title ${
+            isCertified ? 'map-is-cert' : 'no-cursor'
+          }`}
           onClick={isCertified ? () => navigate(certLocation) : null}
         >
           <CertificationIcon />

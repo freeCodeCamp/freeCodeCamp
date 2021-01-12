@@ -126,9 +126,7 @@ export class Block extends Component {
 
     return isProjectBlock ? (
       <div className='block'>
-        <div className='map-title'>
-          <h3 className='map-projects-title'>{blockTitle}</h3>
-        </div>
+        <h3>{blockTitle}</h3>
         {this.renderBlockIntros(blockIntroArr)}
         <Challenges
           challengesWithCompleted={challengesWithCompleted}

@@ -29,10 +29,6 @@ button.map-title {
   background-color: var(--tertiary-background);
 }
 
-.map-projects-title {
-  font-weight: 700;
-}
-
 .map-project-wrap > a {
   display: flex;
   justify-content: space-between;
@@ -43,7 +39,7 @@ button.map-title {
   padding-left: 15px;
 }
 
-.map-cert-title {
+.block .map-cert-title {
   display: flex;
   align-items: center;
   padding: 18px 8px;
@@ -61,7 +57,7 @@ button.map-title {
   cursor: text;
 }
 
-.map-cert-title:hover {
+.block .map-is-cert:hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
 }
