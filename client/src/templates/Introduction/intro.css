@@ -53,6 +53,14 @@ button.map-title {
   width: 100%;
 }
 
+.block .no-cursor {
+  cursor: default;
+}
+
+.block .no-cursor h3 {
+  cursor: text;
+}
+
 .map-cert-title:hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
@@ -100,7 +108,7 @@ button.map-title {
   font-weight: 700;
 }
 
-li.open > .map-title svg:first-child {
+.open > .map-title svg:first-child {
   transform: rotate(90deg);
 }
 
