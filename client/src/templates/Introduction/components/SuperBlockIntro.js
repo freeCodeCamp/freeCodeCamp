@@ -28,12 +28,14 @@ function SuperBlockIntro(props) {
       <div style={{ margin: 'auto', maxWidth: '500px' }}>
         <img
           alt='building a website'
+          className='superBlock-image'
           src={superBlockImage}
           style={{
             backgroundColor: '#f5f6f7',
             marginBottom: '1rem',
             padding: '15px',
-            width: '100%'
+            width: '500px',
+            height: '367px'
           }}
         />
       </div>

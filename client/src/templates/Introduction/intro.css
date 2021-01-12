@@ -1,3 +1,8 @@
+.superBlock-image {
+  max-width: 100%;
+  height: auto !important;
+}
+
 .block-ui {
   height: 100%;
   list-style: none;

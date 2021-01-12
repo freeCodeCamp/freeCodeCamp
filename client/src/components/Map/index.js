@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import i18next from 'i18next';
 
-import { Link } from '../helpers';
+import { ImageLoader, Link } from '../helpers';
 import LinkButton from '../../assets/icons/LinkButton';
 import { dasherize } from '../../../../utils/slugs';
 import './map.css';
@@ -24,8 +24,8 @@ function createSuperBlockTitle(str) {
 }
 
 const iconStyle = {
-  maxWidth: '55px',
-  maxHeight: '55px',
+  width: '55px',
+  height: '55px',
   marginRight: '20px'
 };
 
@@ -46,8 +46,9 @@ function renderLandingMap(nodes) {
             to={`/learn/${dasherize(node.superBlock)}/`}
           >
             <div style={linkSpacingStyle}>
-              <img
+              <ImageLoader
                 alt='building a website'
+                offsetVertical={500}
                 src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
                 style={iconStyle}
               />
@@ -74,8 +75,9 @@ function renderLearnMap(nodes, currentSuperBlock = '') {
                 to={`/learn/${dasherize(node.superBlock)}/`}
               >
                 <div style={linkSpacingStyle}>
-                  <img
+                  <ImageLoader
                     alt='building a website'
+                    offsetVertical={500}
                     src={i18next.t(`intro:${dasherize(node.superBlock)}.icon`)}
                     style={iconStyle}
                   />

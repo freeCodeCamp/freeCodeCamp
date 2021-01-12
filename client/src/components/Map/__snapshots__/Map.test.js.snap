@@ -17,9 +17,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -51,9 +50,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -85,9 +83,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -119,9 +116,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -153,9 +149,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -187,9 +182,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -221,9 +215,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -255,9 +248,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -289,9 +281,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -323,9 +314,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
@@ -357,9 +347,8 @@ exports[`<Map /> snapshot: Map 1`] = `
           <div
             style="display: flex; justify-content: space-between; align-items: center;"
           >
-            <img
-              alt="building a website"
-              style="max-width: 55px; max-height: 55px; margin-right: 20px;"
+            <div
+              class="LazyLoad"
             />
           </div>
           <svg
