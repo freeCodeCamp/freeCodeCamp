@@ -11,7 +11,7 @@ forumTopicId: 301462
 
 `@for`以两种方式使用："开始 through 到" 或 "开始 to 结束"。主要区别在于“开始结束”*排除* 结束号码，而“开始结束”*包括* 结束号码。
 
-这是一个开始 **through** 结束示例：
+这是一个开始 **到** 结束示例：
 
 ```scss
 @for $i from 1 through 12 {
@@ -84,4 +84,3 @@ assert($('.text-5').css('font-size') == '75px');
 ```
 
 # --solutions--
-
