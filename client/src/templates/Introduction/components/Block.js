@@ -11,6 +11,7 @@ import Challenges from './Challenges';
 import Caret from '../../../assets/icons/Caret';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
+import { Spacer } from '../../../components/helpers';
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -125,10 +126,10 @@ export class Block extends Component {
 
     return isProjectBlock ? (
       <div className='block'>
-        {this.renderBlockIntros(blockIntroArr)}
         <div className='map-title'>
           <h3 className='map-projects-title'>{blockTitle}</h3>
         </div>
+        {this.renderBlockIntros(blockIntroArr)}
         <Challenges
           challengesWithCompleted={challengesWithCompleted}
           isProjectBlock={isProjectBlock}
@@ -136,6 +137,7 @@ export class Block extends Component {
       </div>
     ) : (
       <div className={`block ${isExpanded ? 'open' : ''}`}>
+        <h3>{blockTitle}</h3>
         {this.renderBlockIntros(blockIntroArr)}
         <button
           aria-expanded={isExpanded}
@@ -143,7 +145,9 @@ export class Block extends Component {
           onClick={this.handleBlockClick}
         >
           <Caret />
-          <h3>{blockTitle}</h3>
+          <h3>
+            {blockTitle} {t(`intro:misc-text.tutorials`)}
+          </h3>
           <div className='map-title-completed'>
             {this.renderCheckMark(
               completedCount === challengesWithCompleted.length
@@ -157,6 +161,7 @@ export class Block extends Component {
             isProjectBlock={isProjectBlock}
           />
         )}
+        <Spacer size={2} />
       </div>
     );
   }
