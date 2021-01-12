@@ -101,7 +101,7 @@ export class Block extends Component {
       return { ...challenge, isCompleted };
     });
 
-    const isProjectBlock = challenges.find(challenge => {
+    const isProjectBlock = challenges.some(challenge => {
       const isJsProject =
         challenge.order === 10 && challenge.challengeType === 5;
 
