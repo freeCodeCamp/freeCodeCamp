@@ -51,7 +51,6 @@ const schema = Joi.object()
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
-    name: Joi.string(),
     order: Joi.number(),
     // video challenges only:
     videoId: Joi.when('challengeType', {

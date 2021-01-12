@@ -12,7 +12,7 @@ const {
 /* eslint-enable max-len*/
 
 const { isAuditedCert } = require('../utils/is-audited');
-const { dasherize, nameify } = require('../utils/slugs');
+const { dasherize } = require('../utils/slugs');
 const { createPoly } = require('../utils/polyvinyl');
 const { blockNameify } = require('../utils/block-nameify');
 const { supportedLangs } = require('./utils');
@@ -306,7 +306,6 @@ function filesToObject(files) {
 
 // gets the challenge ready for sourcing into Gatsby
 function prepareChallenge(challenge) {
-  challenge.name = nameify(challenge.title);
   if (challenge.files) {
     challenge.files = filesToObject(challenge.files);
     challenge.files = Object.keys(challenge.files)
