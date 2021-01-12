@@ -15,7 +15,7 @@ forumTopicId: 301403
 
 # --instructions--
 
-`MyApp`组件是有状态的，它将`Navbar`组件渲染成它的为子组件。将`MyApp`组件`state`中的`name`属性向下传递给子组件，然后在`h1`标签中显示`name`，`name`是`Navbar`render 方法的一部分。
+`MyApp`组件是有状态的，它将`Navbar`组件渲染成它的为子组件。将`MyApp`组件`state`中的`name`属性向下传递给子组件，然后在`h1`标签中显示`name`，`name`是`Navbar`render 方法的一部分。`name` 应该显示在文字 `Hello, my name is:` 后面。
 
 # --hints--
 

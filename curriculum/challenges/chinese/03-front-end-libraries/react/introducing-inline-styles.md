@@ -7,7 +7,7 @@ forumTopicId: 301395
 
 # --description--
 
-还有其他复杂的概念可以为你的 React 代码增加强大的功能。但是，你可能会想知道更简单的问题，比如：如何对在 React 中创建的 JSX 元素进行风格化。你可能知道，由于[将 class 应用于 JSX 元素的方式](define-an-html-class-in-jsx)与 HTML 中的使用并不完全相同。
+还有其他复杂的概念可以为你的 React 代码增加强大的功能。但是，你可能会想知道更简单的问题，比如：如何对在 React 中创建的 JSX 元素进行风格化。你可能知道，由于[将 class 应用于 JSX 元素的方式](/learn/front-end-libraries/react/define-an-html-class-in-jsx)与 HTML 中的使用并不完全相同。
 
 如果从样式表导入样式，它就没有太大的不同。使用`className`属性将 class 应用于 JSX 元素，并将样式应用于样式表中的 class。另一种选择是使用***内联***样式，这在 ReactJS 开发中非常常见。
 

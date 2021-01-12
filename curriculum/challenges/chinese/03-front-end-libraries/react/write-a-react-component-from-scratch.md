@@ -45,5 +45,13 @@ assert(
 assert(document.getElementById('challenge-node').childNodes.length === 1);
 ```
 
+`MyComponent` 应该有一个构造器，里面调用了传参 `props` 的 `super` 函数。
+
+```js
+assert(
+  MyComponent.toString().includes('MyComponent(props)') &&
+    MyComponent.toString().includes('_super.call(this, props)')
+);
+```
 # --solutions--
 

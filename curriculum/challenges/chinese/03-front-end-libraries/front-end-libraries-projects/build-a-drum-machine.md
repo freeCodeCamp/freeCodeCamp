@@ -27,12 +27,16 @@ forumTopicId: 301370
 
 **需求 7：** 当触发一个具有`.drum-pad`属性的元素时，`#display`元素内应该展示这个触发元素关联音频片段的描述字符串（每一个字符串都应该是独一无二的）。
 
-你可以 fork [这个 CodePen pen 项目](http://codepen.io/freeCodeCamp/pen/MJjpwO) 来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js`。
+你可以 fork [这个 CodePen pen 项目](http://codepen.io/freeCodeCamp/pen/MJjpwO) 来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
 一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
 # --hints--
 
 
+# --seed--
 # --solutions--
 
+```js
+// solution required
+```

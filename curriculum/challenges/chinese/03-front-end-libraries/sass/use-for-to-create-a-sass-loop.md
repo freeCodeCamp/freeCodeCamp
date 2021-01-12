@@ -9,7 +9,7 @@ forumTopicId: 301462
 
 你可以在 Sass 中使用`@for`循环，它的表现类似与 JavaScript 中的`for`循环。
 
-`@for`以两种方式使用："start through end" 或 "start to end"。主要区别在于“开始结束”*排除* 结束号码，而“开始结束”*包括* 结束号码。
+`@for`以两种方式使用："开始 through 到" 或 "开始 to 结束"。主要区别在于“开始结束”*排除* 结束号码，而“开始结束”*包括* 结束号码。
 
 这是一个开始 **到** 结束示例：
 
@@ -84,4 +84,3 @@ assert($('.text-5').css('font-size') == '75px');
 ```
 
 # --solutions--
-
