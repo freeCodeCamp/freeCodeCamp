@@ -21,6 +21,18 @@ ColHeader.propTypes = propTypes;
 function Footer() {
   const { t } = useTranslation();
 
+  const trendingArticles = (() => {
+    const numbers = Array(30)
+      .fill(0)
+      .map((_, i) => i);
+    const list = numbers.map(number => (
+      <Link external={false} to={t(`trending:articles.${number}.link`)}>
+        {t(`trending:articles.${number}.title`)}
+      </Link>
+    ));
+    return list;
+  })();
+
   return (
     <footer className='site-footer'>
       <div className='footer-container'>
@@ -42,105 +54,17 @@ function Footer() {
             <div className='col-header'>{t('footer.trending-guides')}</div>
             <div className='trending-guides-row'>
               <div className='footer-col footer-col-1'>
-                <Link external={false} to={t('trending:article1link')}>
-                  {t('trending:article1title')}
-                </Link>
-                <Link external={false} to={t('trending:article2link')}>
-                  {t('trending:article2title')}
-                </Link>
-                <Link external={false} to={t('trending:article3link')}>
-                  {t('trending:article3title')}
-                </Link>
-                <Link external={false} to={t('trending:article4link')}>
-                  {t('trending:article4title')}
-                </Link>
-                <Link external={false} to={t('trending:article5link')}>
-                  {t('trending:article5title')}
-                </Link>
-                <Link external={false} to={t('trending:article6link')}>
-                  {t('trending:article6title')}
-                </Link>
-                <Link external={false} to={t('trending:article7link')}>
-                  {t('trending:article7title')}
-                </Link>
-                <Link external={false} to={t('trending:article8link')}>
-                  {t('trending:article8title')}
-                </Link>
-                <Link external={false} to={t('trending:article9link')}>
-                  {t('trending:article9title')}
-                </Link>
-                <Link external={false} to={t('trending:article10link')}>
-                  {t('trending:article10title')}
-                </Link>
+                {trendingArticles.slice(0, 10)}
               </div>
               <div className='footer-col footer-col-2'>
-                <Link external={false} to={t('trending:article11link')}>
-                  {t('trending:article11title')}
-                </Link>
-                <Link external={false} to={t('trending:article12link')}>
-                  {t('trending:article12title')}
-                </Link>
-                <Link external={false} to={t('trending:article13link')}>
-                  {t('trending:article13title')}
-                </Link>
-                <Link external={false} to={t('trending:article14link')}>
-                  {t('trending:article14title')}
-                </Link>
-                <Link external={false} to={t('trending:article15link')}>
-                  {t('trending:article15title')}
-                </Link>
-                <Link external={false} to={t('trending:article16link')}>
-                  {t('trending:article16title')}
-                </Link>
-                <Link external={false} to={t('trending:article17link')}>
-                  {t('trending:article17title')}
-                </Link>
-                <Link external={false} to={t('trending:article18link')}>
-                  {t('trending:article18title')}
-                </Link>
-                <Link external={false} to={t('trending:article19link')}>
-                  {t('trending:article19title')}
-                </Link>
-                <Link external={false} to={t('trending:article20link')}>
-                  {t('trending:article20title')}
-                </Link>
+                {trendingArticles.slice(10, 20)}
               </div>
               <div className='footer-col footer-col-3'>
                 <div className='footer-left'>
-                  <Link external={false} to={t('trending:article21link')}>
-                    {t('trending:article21title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article22link')}>
-                    {t('trending:article22title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article23link')}>
-                    {t('trending:article23title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article24link')}>
-                    {t('trending:article24title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article25link')}>
-                    {t('trending:article25title')}
-                  </Link>
+                  {trendingArticles.slice(20, 25)}
                 </div>
 
-                <div className='footer-right'>
-                  <Link external={false} to={t('trending:article26link')}>
-                    {t('trending:article26title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article27link')}>
-                    {t('trending:article27title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article28link')}>
-                    {t('trending:article28title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article29link')}>
-                    {t('trending:article29title')}
-                  </Link>
-                  <Link external={false} to={t('trending:article30link')}>
-                    {t('trending:article30title')}
-                  </Link>
-                </div>
+                <div className='footer-right'>{trendingArticles.slice(25)}</div>
               </div>
             </div>
           </div>
