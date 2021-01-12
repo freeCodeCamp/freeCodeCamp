@@ -40,8 +40,6 @@ package.json should have a valid "author" key
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

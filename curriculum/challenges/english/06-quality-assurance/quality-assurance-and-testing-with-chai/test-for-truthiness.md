@@ -89,8 +89,6 @@ You should choose the correct method for the third assertion - `isTrue` vs. `isN
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

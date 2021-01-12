@@ -45,8 +45,6 @@ Your app should serve the string 'Hello Express'
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

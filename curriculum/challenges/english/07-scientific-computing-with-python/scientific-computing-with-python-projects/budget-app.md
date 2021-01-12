@@ -31,8 +31,6 @@ It should create a Category class and pass all tests.
 
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

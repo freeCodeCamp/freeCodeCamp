@@ -81,8 +81,6 @@ You should choose the correct method for the third assertion - `isString` vs. `i
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

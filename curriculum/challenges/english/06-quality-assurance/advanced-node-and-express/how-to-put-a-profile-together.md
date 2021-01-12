@@ -45,8 +45,6 @@ You should correctly add a Pug render variable to /profile.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

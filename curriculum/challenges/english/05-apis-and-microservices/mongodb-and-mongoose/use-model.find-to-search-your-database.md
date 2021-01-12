@@ -41,8 +41,6 @@ Find all items corresponding to a criteria should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

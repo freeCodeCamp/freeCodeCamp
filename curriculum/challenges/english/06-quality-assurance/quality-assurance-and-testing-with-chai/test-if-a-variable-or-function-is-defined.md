@@ -83,8 +83,6 @@ You should choose the correct method for the third assertion - `isDefined` vs. `
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

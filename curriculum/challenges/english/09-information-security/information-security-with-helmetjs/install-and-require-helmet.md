@@ -34,8 +34,6 @@ Install Helmet version `3.21.3`, then require it.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

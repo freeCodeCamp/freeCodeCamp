@@ -102,8 +102,6 @@ GitHub strategy should be setup correctly thus far.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

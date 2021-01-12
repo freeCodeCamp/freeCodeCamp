@@ -24,8 +24,6 @@ It should pass all Python tests.
 
 ```
 
-# --seed--
-
 # --solutions--
 
 ```py

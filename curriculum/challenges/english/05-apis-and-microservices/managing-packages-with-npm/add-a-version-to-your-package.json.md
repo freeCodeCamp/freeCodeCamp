@@ -34,8 +34,6 @@ package.json should have a valid "version" key
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

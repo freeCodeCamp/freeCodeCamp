@@ -67,8 +67,6 @@ A POST request to /login should correctly redirect to /.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

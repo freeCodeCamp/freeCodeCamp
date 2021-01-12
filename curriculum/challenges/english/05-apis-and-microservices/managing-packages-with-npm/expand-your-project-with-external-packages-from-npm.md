@@ -65,8 +65,6 @@ Add version "2.14.0" of the "moment" package to the `dependencies` field of your
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

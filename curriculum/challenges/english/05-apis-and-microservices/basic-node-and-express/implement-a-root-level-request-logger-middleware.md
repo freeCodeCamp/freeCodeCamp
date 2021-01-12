@@ -45,8 +45,6 @@ Root level logger middleware should be active
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

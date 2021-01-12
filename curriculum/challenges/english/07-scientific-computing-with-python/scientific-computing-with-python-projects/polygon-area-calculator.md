@@ -31,8 +31,6 @@ It should create a Rectangle class and Square class and pass all tests.
 
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

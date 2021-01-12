@@ -40,8 +40,6 @@ Remove the moment package from your dependencies.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

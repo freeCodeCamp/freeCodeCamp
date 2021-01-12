@@ -59,8 +59,6 @@ Your csp config is not correct. defaultSrc should be ["'self'"] and scriptSrc sh
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

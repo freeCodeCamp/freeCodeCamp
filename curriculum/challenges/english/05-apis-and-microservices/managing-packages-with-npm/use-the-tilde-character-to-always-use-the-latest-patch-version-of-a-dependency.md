@@ -63,8 +63,6 @@ Use the tilde (`~`) character to prefix the version of moment in your dependenci
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -75,8 +75,6 @@ You should choose the correct range for the second assertion - `approximately(ac
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

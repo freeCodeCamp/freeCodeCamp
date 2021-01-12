@@ -45,8 +45,6 @@ Deleting many items at once should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

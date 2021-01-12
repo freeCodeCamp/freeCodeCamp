@@ -89,8 +89,6 @@ You should test for 'res.text' == 'hello Guest'
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

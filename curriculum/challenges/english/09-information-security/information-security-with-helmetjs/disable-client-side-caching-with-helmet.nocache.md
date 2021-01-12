@@ -35,8 +35,6 @@ helmet.noCache() middleware should be mounted correctly
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -29,8 +29,6 @@ It should correctly add times and pass all tests.
 
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

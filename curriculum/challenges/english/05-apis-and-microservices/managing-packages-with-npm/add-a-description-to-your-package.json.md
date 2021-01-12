@@ -40,8 +40,6 @@ package.json should have a valid "description" key
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

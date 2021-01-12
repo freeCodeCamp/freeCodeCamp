@@ -134,8 +134,6 @@ All 10 functional tests are complete and passing.
 
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

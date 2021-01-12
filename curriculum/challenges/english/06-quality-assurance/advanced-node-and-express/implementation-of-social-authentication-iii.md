@@ -68,8 +68,6 @@ GitHub strategy setup should be complete.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -65,8 +65,6 @@ A request to `/api/whoami` should return a JSON object with your software in the
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

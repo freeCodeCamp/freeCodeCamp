@@ -35,8 +35,6 @@ The endpoint `/json` should serve the json object `{"message": "Hello json"}`
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

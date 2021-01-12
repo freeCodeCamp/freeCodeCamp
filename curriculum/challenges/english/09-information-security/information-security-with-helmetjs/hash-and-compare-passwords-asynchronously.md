@@ -69,8 +69,6 @@ Async hash should be generated and correctly compared.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

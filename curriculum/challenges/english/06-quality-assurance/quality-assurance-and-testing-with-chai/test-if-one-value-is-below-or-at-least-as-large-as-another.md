@@ -97,8 +97,6 @@ You should choose the correct method for the fourth assertion - `isBelow` vs. `i
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

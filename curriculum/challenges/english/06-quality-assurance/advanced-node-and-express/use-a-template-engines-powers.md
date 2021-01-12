@@ -41,8 +41,6 @@ Pug should correctly render variables.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

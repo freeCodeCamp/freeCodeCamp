@@ -65,8 +65,6 @@ You should choose the correct method for the second assertion - `isArray` vs. `i
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

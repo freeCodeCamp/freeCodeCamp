@@ -41,8 +41,6 @@ Deleting an item should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

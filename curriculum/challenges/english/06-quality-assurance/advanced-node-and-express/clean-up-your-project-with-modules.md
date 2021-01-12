@@ -52,8 +52,6 @@ Modules should be present.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

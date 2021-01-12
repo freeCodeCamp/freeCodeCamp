@@ -48,8 +48,6 @@ The 'body-parser' middleware should be mounted
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

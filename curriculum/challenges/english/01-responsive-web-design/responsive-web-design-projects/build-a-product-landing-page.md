@@ -47,11 +47,6 @@ You can build your project by forking [this CodePen pen](https://codepen.io/free
 
 Once you're done, submit the URL to your working project with all its tests passing.
 
-# --hints--
-
-
-# --seed--
-
 # --solutions--
 
 ```html

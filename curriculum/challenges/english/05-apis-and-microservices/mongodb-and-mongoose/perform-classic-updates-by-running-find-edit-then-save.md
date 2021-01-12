@@ -42,8 +42,6 @@ Find-edit-update an item should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

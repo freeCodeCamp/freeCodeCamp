@@ -128,8 +128,6 @@ You should test for 'res.body.surname' to be 'Colombo'.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

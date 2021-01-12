@@ -51,8 +51,6 @@ maxAge should be equal to 7776000 s (90 days)
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

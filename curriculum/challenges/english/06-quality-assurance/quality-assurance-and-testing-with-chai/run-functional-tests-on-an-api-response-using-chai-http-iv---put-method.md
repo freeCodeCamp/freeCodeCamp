@@ -112,8 +112,6 @@ You should test for 'res.body.surname' to be 'da Verrazzano'
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

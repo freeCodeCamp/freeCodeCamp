@@ -79,8 +79,6 @@ Deserialization should now be correctly using the DB and `done(null, null)` shou
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

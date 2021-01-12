@@ -75,8 +75,6 @@ A Get request to /profile should correctly redirect to / since we are not authen
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

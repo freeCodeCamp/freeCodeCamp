@@ -120,8 +120,6 @@ Session and session secret should be correctly set up.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

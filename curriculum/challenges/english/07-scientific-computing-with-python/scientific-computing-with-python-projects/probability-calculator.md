@@ -29,8 +29,6 @@ It should correctly calculate probabilities and pass all tests.
 
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

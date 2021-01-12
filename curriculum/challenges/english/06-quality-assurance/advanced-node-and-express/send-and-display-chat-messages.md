@@ -67,8 +67,6 @@ Client should properly handle and display the new data from event `'chat message
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

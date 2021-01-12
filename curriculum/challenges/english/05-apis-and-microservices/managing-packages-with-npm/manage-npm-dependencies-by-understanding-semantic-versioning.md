@@ -61,8 +61,6 @@ In the dependencies section of your package.json file, change the `version` of m
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

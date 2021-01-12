@@ -67,8 +67,6 @@ You should choose the correct method for the second assertion - `match` vs. `not
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

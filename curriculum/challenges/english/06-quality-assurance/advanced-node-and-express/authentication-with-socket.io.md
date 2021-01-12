@@ -138,8 +138,6 @@ passportSocketIo should be properly setup.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -81,6 +81,7 @@ The task is to define three named functions/methods/procedures/subroutines:
 Use these functions to create a function that does Ethiopian multiplication.
 
 <!-- markdownlint-disable MD046-->
+
 # --hints--
 
 `eth_mult` should be a function.

@@ -72,8 +72,6 @@ package.json should have a valid "keywords" key
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

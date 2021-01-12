@@ -119,8 +119,6 @@ Mongodb should be properly required including the ObjectId.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -55,8 +55,6 @@ Test 2 : Your API endpoint should respond with the correct name
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

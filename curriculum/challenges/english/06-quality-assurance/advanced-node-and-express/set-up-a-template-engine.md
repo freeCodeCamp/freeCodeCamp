@@ -98,8 +98,6 @@ Pug should be working.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

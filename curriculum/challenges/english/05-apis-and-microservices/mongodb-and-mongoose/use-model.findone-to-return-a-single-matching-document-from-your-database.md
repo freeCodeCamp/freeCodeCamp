@@ -39,8 +39,6 @@ Find one item should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

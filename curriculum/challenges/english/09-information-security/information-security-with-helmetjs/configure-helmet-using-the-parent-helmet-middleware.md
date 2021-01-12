@@ -38,8 +38,6 @@ no tests - it's a descriptive challenge
 assert(true);
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

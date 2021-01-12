@@ -29,11 +29,6 @@ Once you've finished implementing these user stories, enter the URL to your live
 
 You can get feedback on your project by sharing it on the [freeCodeCamp forum](https://forum.freecodecamp.org/c/project-feedback/409).
 
-# --hints--
-
-
-# --seed--
-
 # --solutions--
 
 ```js

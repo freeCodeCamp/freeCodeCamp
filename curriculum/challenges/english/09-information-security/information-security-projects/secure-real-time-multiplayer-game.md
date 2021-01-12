@@ -136,8 +136,6 @@ The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as
 
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

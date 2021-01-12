@@ -36,8 +36,6 @@ package.json should have a valid "license" key
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

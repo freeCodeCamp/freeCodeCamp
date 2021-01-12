@@ -271,8 +271,6 @@ async (getUserInput) => {
 };
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

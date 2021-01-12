@@ -35,8 +35,6 @@ Your app should serve asset files from the `/public` directory
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

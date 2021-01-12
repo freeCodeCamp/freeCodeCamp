@@ -57,8 +57,6 @@ You should choose the correct method for the second assertion - `isNull` vs. `is
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -84,8 +84,6 @@ Passport-local should be correctly required and setup.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

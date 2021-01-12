@@ -64,8 +64,6 @@ All tests should pass.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

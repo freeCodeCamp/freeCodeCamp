@@ -103,8 +103,6 @@ You should choose the correct method for the fourth assertion - `instanceOf` vs.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

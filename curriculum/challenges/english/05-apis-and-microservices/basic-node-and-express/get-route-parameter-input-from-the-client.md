@@ -53,8 +53,6 @@ Test 2 : Your echo server should repeat words correctly
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

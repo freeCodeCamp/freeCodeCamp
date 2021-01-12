@@ -99,8 +99,6 @@ You should choose the correct method for the fourth assertion - `strictEqual` vs
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

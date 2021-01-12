@@ -31,8 +31,6 @@ It should correctly format an arithmetic problem and pass all tests.
 
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

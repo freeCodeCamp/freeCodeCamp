@@ -40,8 +40,6 @@ helmet.xssFilter() middleware should be mounted correctly
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

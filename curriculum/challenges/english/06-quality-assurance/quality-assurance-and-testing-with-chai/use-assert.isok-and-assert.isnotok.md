@@ -75,8 +75,6 @@ You should choose the correct method for the third assertion - `isOk` vs. `isNot
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

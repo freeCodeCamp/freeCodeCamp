@@ -76,8 +76,6 @@ Creating an instance from a mongoose schema should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

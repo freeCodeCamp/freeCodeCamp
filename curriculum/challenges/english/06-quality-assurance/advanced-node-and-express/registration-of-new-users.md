@@ -193,8 +193,6 @@ Profile should no longer work after logout.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

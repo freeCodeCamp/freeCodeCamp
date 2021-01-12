@@ -67,8 +67,6 @@ The /now endpoint should return a time that is +/- 20 secs from now
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

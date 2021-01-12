@@ -39,8 +39,6 @@ Your app should serve the file views/index.html
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -36,8 +36,6 @@ The response of the endpoint `/json` should change according to the environment 
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

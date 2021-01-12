@@ -74,8 +74,6 @@ BCrypt should be correctly required and implemented.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

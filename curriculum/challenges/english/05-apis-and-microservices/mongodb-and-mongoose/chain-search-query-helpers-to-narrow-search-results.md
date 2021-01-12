@@ -73,8 +73,6 @@ Chaining query helpers should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

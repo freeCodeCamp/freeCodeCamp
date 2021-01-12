@@ -52,8 +52,6 @@ helmet.frameguard() 'action' should be set to 'DENY'
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -36,8 +36,6 @@ Find an item by Id should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

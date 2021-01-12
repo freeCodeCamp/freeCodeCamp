@@ -99,8 +99,6 @@ You should choose the correct method for the fourth assertion - `equal` vs. `not
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

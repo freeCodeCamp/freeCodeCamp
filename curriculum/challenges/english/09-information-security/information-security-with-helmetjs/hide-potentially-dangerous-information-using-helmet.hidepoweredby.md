@@ -28,8 +28,6 @@ helmet.hidePoweredBy() middleware should be mounted correctly
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

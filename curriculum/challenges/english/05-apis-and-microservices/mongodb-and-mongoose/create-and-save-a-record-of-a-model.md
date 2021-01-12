@@ -44,8 +44,6 @@ Creating and saving a db item should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

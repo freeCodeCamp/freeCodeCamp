@@ -136,8 +136,6 @@ Your client should connect to your server.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

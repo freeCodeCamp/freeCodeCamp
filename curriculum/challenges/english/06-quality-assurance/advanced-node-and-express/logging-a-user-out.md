@@ -69,8 +69,6 @@ Logout should redirect to the home page.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

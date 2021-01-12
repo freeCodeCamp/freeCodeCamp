@@ -95,8 +95,6 @@ Your client should be listening for 'user count' event.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

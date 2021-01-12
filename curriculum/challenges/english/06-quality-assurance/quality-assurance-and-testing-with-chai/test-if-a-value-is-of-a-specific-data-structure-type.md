@@ -121,8 +121,6 @@ You should choose the correct method for the fifth assertion - `typeOf` vs. `not
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

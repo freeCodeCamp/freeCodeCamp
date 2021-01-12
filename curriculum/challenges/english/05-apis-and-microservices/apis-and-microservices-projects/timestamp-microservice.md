@@ -142,8 +142,6 @@ An empty date parameter should return the current time in a JSON object with a `
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

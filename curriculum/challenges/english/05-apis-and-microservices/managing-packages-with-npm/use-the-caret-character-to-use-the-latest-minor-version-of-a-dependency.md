@@ -63,8 +63,6 @@ Use the caret (`^`) to prefix the version of moment in your dependencies and all
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

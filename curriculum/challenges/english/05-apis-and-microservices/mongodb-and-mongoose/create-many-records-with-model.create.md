@@ -56,8 +56,6 @@ Creating many db items at once should succeed
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

@@ -70,8 +70,6 @@ Route /auth/github/callback should be correct.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

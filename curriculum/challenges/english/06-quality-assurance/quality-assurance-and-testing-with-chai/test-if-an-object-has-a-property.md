@@ -81,8 +81,6 @@ You should choose the correct method for the third assertion - `property` vs. `n
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js

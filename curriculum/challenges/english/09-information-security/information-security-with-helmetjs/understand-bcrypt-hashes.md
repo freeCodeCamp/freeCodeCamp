@@ -60,8 +60,6 @@ BCrypt should be properly required.
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js
