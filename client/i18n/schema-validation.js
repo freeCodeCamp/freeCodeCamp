@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const { translationsSchema } = require('./translations-schema');
 const { availableLangs } = require('./allLangs');
-const { trendingSchema } = require('./trending-schema');
 const { motivationSchema } = require('./motivation-schema');
 const { introSchema } = require('./intro-schema');
 
@@ -102,7 +101,6 @@ const noEmptyObjectValues = (obj, namespace = '') => {
  * fetching within iterative function.
  */
 const translationSchemaKeys = Object.keys(flattenAnObject(translationsSchema));
-const trendingSchemaKeys = Object.keys(flattenAnObject(trendingSchema));
 const motivationSchemaKeys = Object.keys(flattenAnObject(motivationSchema));
 const introSchemaKeys = Object.keys(flattenAnObject(introSchema));
 
@@ -152,21 +150,24 @@ const trendingSchemaValidation = languages => {
     const filePath = path.join(__dirname, `/locales/${language}/trending.json`);
     const fileData = fs.readFileSync(filePath);
     const fileJson = JSON.parse(fileData);
-    const fileKeys = Object.keys(flattenAnObject(fileJson));
-    findMissingKeys(fileKeys, trendingSchemaKeys, `${language}/trending.json`);
-    findExtraneousKeys(
-      fileKeys,
-      trendingSchemaKeys,
-      `${language}/trending.json`
-    );
-    const emptyKeys = noEmptyObjectValues(fileJson);
-    if (emptyKeys.length) {
+    const articleArray = fileJson.articles;
+    if (articleArray.length !== 30) {
       throw new Error(
-        `${language}/trending.json has these empty keys: ${emptyKeys.join(
-          ', '
-        )}`
+        `The ${language} trending.json does not have 30 articles, it has ${articleArray.length}`
       );
     }
+    articleArray.forEach(articleObject => {
+      if (!articleObject.link) {
+        throw new Error(
+          `The ${language} trending.json is missing an article link.`
+        );
+      }
+      if (!articleObject.title) {
+        throw new Error(
+          `The ${language} trending.json is missing an article title.`
+        );
+      }
+    });
     console.info(`${language} trending.json is correct!`);
   });
 };
