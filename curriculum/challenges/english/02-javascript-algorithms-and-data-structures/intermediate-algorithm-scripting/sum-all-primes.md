@@ -3,6 +3,7 @@ id: a3bfc1673c0526e06d3ac698
 title: Sum All Primes
 challengeType: 5
 forumTopicId: 16085
+dashedName: sum-all-primes
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8253367417b2b2512c6a
 title: Typed Arrays
 challengeType: 1
 forumTopicId: 301716
+dashedName: typed-arrays
 ---
 
 # --description--

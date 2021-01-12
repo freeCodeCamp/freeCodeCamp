@@ -3,6 +3,7 @@ id: 587d7db0367417b2b2512b82
 title: Understand the Prototype Chain
 challengeType: 1
 forumTopicId: 301329
+dashedName: understand-the-prototype-chain
 ---
 
 # --description--

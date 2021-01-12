@@ -2,6 +2,7 @@
 id: 5d7f405c7c4263f469c36b18
 title: Part 106
 challengeType: 0
+dashedName: part-106
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e84
 title: Greatest subsequential sum
 challengeType: 5
 forumTopicId: 302278
+dashedName: greatest-subsequential-sum
 ---
 
 # --description--

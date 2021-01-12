@@ -4,6 +4,7 @@ title: Create a More Complex Shape Using CSS and HTML
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPpz4fr'
 forumTopicId: 301050
+dashedName: create-a-more-complex-shape-using-css-and-html
 ---
 
 # --description--

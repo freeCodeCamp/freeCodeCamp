@@ -4,6 +4,7 @@ title: Divide One Decimal by Another with JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZe9AW'
 forumTopicId: 18255
+dashedName: divide-one-decimal-by-another-with-javascript
 ---
 
 # --description--

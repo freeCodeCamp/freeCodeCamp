@@ -3,6 +3,7 @@ id: 587d7fa7367417b2b2512bc8
 title: Add Classes with D3
 challengeType: 6
 forumTopicId: 301473
+dashedName: add-classes-with-d3
 ---
 
 # --description--

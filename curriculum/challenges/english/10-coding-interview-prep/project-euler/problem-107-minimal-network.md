@@ -3,6 +3,7 @@ id: 5900f3d91000cf542c50feea
 title: 'Problem 107: Minimal network'
 challengeType: 5
 forumTopicId: 301731
+dashedName: problem-107-minimal-network
 ---
 
 # --description--

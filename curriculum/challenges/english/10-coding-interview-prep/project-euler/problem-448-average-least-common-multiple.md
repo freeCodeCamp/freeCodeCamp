@@ -3,6 +3,7 @@ id: 5900f52c1000cf542c51003f
 title: 'Problem 448: Average least common multiple'
 challengeType: 5
 forumTopicId: 302120
+dashedName: problem-448-average-least-common-multiple
 ---
 
 # --description--

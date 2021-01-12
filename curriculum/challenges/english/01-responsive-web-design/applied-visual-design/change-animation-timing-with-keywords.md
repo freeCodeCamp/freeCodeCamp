@@ -4,6 +4,7 @@ title: Change Animation Timing with Keywords
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKvwCM'
 forumTopicId: 301045
+dashedName: change-animation-timing-with-keywords
 ---
 
 # --description--

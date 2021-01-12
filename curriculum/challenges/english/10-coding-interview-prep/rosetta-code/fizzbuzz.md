@@ -3,6 +3,7 @@ id: 5e9ddb06ec35240f39657419
 title: FizzBuzz
 challengeType: 5
 forumTopicId: 385370
+dashedName: fizzbuzz
 ---
 
 # --description--

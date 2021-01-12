@@ -4,6 +4,7 @@ title: Change the Color of Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkVmSm'
 forumTopicId: 16775
+dashedName: change-the-color-of-text
 ---
 
 # --description--

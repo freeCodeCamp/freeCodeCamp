@@ -3,6 +3,7 @@ id: 587d7fa7367417b2b2512bc7
 title: Change Styles Based on Data
 challengeType: 6
 forumTopicId: 301479
+dashedName: change-styles-based-on-data
 ---
 
 # --description--

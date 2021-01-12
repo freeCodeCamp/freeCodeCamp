@@ -4,6 +4,7 @@ title: Use the s Tag to Strikethrough Text
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301079
+dashedName: use-the-s-tag-to-strikethrough-text
 ---
 
 # --description--

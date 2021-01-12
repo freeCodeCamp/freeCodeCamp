@@ -4,6 +4,7 @@ title: Nest an Anchor Element within a Paragraph
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 forumTopicId: 18244
+dashedName: nest-an-anchor-element-within-a-paragraph
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5eb3e4af7d0e7b760b46cedc
 title: Set consolidation
 challengeType: 5
 forumTopicId: 385319
+dashedName: set-consolidation
 ---
 
 # --description--

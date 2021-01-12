@@ -3,6 +3,7 @@ id: bd7153d8c242eddfaeb5bd13
 title: Build a Roguelike Dungeon Crawler Game
 challengeType: 3
 forumTopicId: 302355
+dashedName: build-a-roguelike-dungeon-crawler-game
 ---
 
 # --description--

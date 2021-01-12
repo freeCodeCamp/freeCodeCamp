@@ -3,6 +3,7 @@ id: 5895f70cf9fc0f352b528e66
 title: Serialization of a User Object
 challengeType: 2
 forumTopicId: 301563
+dashedName: serialization-of-a-user-object
 ---
 
 # --description--

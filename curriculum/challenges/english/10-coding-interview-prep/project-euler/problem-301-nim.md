@@ -3,6 +3,7 @@ id: 5900f4991000cf542c50ffab
 title: 'Problem 301: Nim'
 challengeType: 5
 forumTopicId: 301955
+dashedName: problem-301-nim
 ---
 
 # --description--

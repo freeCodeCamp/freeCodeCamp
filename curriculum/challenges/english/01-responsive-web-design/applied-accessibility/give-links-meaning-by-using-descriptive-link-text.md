@@ -4,6 +4,7 @@ title: Give Links Meaning by Using Descriptive Link Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437DcV'
 forumTopicId: 301013
+dashedName: give-links-meaning-by-using-descriptive-link-text
 ---
 
 # --description--

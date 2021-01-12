@@ -3,6 +3,7 @@ id: 5900f3e51000cf542c50fef8
 title: 'Problem 121: Disc game prize fund'
 challengeType: 5
 forumTopicId: 301748
+dashedName: problem-121-disc-game-prize-fund
 ---
 
 # --description--

@@ -5,6 +5,8 @@ title: >-
   as a sum of powers of 2
 challengeType: 5
 forumTopicId: 301803
+dashedName: >-
+  problem-169-exploring-the-number-of-different-ways-a-number-can-be-expressed-as-a-sum-of-powers-of-2
 ---
 
 # --description--

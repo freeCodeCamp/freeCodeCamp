@@ -3,6 +3,7 @@ id: 5e9a093a74c4063ca6f7c166
 title: Python Functions and Collections
 challengeType: 11
 videoId: NzpU17ZVlUw
+dashedName: python-functions-and-collections
 ---
 
 # --description--

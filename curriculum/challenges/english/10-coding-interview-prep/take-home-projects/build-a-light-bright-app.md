@@ -3,6 +3,7 @@ id: 5a5d02bd919fcf9ca8cf46cb
 title: Build a Light-Bright App
 challengeType: 3
 forumTopicId: 302350
+dashedName: build-a-light-bright-app
 ---
 
 # --description--

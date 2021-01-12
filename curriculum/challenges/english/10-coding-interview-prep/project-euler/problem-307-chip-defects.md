@@ -3,6 +3,7 @@ id: 5900f4a01000cf542c50ffb2
 title: 'Problem 307: Chip Defects'
 challengeType: 5
 forumTopicId: 301961
+dashedName: problem-307-chip-defects
 ---
 
 # --description--

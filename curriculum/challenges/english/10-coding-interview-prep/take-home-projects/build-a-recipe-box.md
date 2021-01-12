@@ -3,6 +3,7 @@ id: bd7155d8c242eddfaeb5bd13
 title: Build a Recipe Box
 challengeType: 3
 forumTopicId: 302354
+dashedName: build-a-recipe-box
 ---
 
 # --description--

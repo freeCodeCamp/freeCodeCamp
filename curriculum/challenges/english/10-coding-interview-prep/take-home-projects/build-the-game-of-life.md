@@ -3,6 +3,7 @@ id: bd7154d8c242eddfaeb5bd13
 title: Build the Game of Life
 challengeType: 3
 forumTopicId: 302362
+dashedName: build-the-game-of-life
 ---
 
 # --description--

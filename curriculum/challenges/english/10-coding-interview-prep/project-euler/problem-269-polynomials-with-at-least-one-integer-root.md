@@ -3,6 +3,7 @@ id: 5900f4791000cf542c50ff8c
 title: 'Problem 269: Polynomials with at least one integer root'
 challengeType: 5
 forumTopicId: 301918
+dashedName: problem-269-polynomials-with-at-least-one-integer-root
 ---
 
 # --description--

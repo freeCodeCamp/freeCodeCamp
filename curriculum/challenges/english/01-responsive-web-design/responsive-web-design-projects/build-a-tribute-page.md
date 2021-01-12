@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd18
 title: Build a Tribute Page
 challengeType: 3
 forumTopicId: 301147
+dashedName: build-a-tribute-page
 ---
 
 # --description--

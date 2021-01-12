@@ -3,6 +3,7 @@ id: 587d7dbc367417b2b2512bae
 title: Build a Drum Machine
 challengeType: 3
 forumTopicId: 301370
+dashedName: build-a-drum-machine
 ---
 
 # --description--

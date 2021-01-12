@@ -4,6 +4,7 @@ title: Create Visual Balance Using the text-align Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
+dashedName: create-visual-balance-using-the-text-align-property
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ffe
 title: Sort an array of composite structures
 challengeType: 5
 forumTopicId: 302306
+dashedName: sort-an-array-of-composite-structures
 ---
 
 # --description--

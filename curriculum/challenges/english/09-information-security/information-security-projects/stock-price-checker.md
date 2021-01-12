@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c44
 title: Stock Price Checker
 challengeType: 4
 forumTopicId: 301572
+dashedName: stock-price-checker
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Create a custom CSS Variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQd27Hr'
 forumTopicId: 301086
+dashedName: create-a-custom-css-variable
 ---
 
 # --description--

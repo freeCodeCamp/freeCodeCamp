@@ -3,6 +3,7 @@ id: 5900f3fa1000cf542c50ff0c
 title: 'Problem 140: Modified Fibonacci golden nuggets'
 challengeType: 5
 forumTopicId: 301769
+dashedName: problem-140-modified-fibonacci-golden-nuggets
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3df1000cf542c50fef1
 title: 'Problem 115: Counting block combinations II'
 challengeType: 5
 forumTopicId: 301741
+dashedName: problem-115-counting-block-combinations-ii
 ---
 
 # --description--

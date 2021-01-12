@@ -5,6 +5,8 @@ title: >-
   Externally
 challengeType: 1
 forumTopicId: 18234
+dashedName: >-
+  use-closure-to-protect-properties-within-an-object-from-being-modified-externally
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd1f
 title: Use the Twitch JSON API
 challengeType: 3
 forumTopicId: 19541
+dashedName: use-the-twitch-json-api
 ---
 
 # --description--

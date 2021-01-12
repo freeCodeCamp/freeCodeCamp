@@ -3,6 +3,7 @@ id: 587d7b8f367417b2b2512b63
 title: Use the filter Method to Extract Data from an Array
 challengeType: 1
 forumTopicId: 18179
+dashedName: use-the-filter-method-to-extract-data-from-an-array
 ---
 
 # --description--

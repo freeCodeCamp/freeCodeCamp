@@ -4,6 +4,7 @@ title: Make Screen Reader Navigation Easier with the header Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
 forumTopicId: 301023
+dashedName: make-screen-reader-navigation-easier-with-the-header-landmark
 ---
 
 # --description--

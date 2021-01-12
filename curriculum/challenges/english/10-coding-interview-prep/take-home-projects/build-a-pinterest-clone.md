@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bdee
 title: Build a Pinterest Clone
 challengeType: 4
 forumTopicId: 302352
+dashedName: build-a-pinterest-clone
 ---
 
 # --description--

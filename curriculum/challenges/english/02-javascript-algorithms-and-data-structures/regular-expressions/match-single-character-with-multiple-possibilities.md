@@ -3,6 +3,7 @@ id: 587d7db5367417b2b2512b95
 title: Match Single Character with Multiple Possibilities
 challengeType: 1
 forumTopicId: 301357
+dashedName: match-single-character-with-multiple-possibilities
 ---
 
 # --description--

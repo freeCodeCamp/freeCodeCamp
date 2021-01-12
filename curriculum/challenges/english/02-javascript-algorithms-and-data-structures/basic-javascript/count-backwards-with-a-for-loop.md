@@ -4,6 +4,7 @@ title: Count Backwards With a For Loop
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
 forumTopicId: 16808
+dashedName: count-backwards-with-a-for-loop
 ---
 
 # --description--

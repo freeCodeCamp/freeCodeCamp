@@ -2,6 +2,7 @@
 id: 5ddb965c65d27e1512d44dda
 title: Part 67
 challengeType: 0
+dashedName: part-67
 ---
 
 # --description--

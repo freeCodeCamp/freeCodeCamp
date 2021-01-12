@@ -4,6 +4,7 @@ title: Create a Media Query
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pzrPu4/cqwKrtm'
 forumTopicId: 301139
+dashedName: create-a-media-query
 ---
 
 # --description--

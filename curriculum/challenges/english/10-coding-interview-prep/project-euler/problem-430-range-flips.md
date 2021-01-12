@@ -3,6 +3,7 @@ id: 5900f51a1000cf542c51002d
 title: 'Problem 430: Range flips'
 challengeType: 5
 forumTopicId: 302101
+dashedName: problem-430-range-flips
 ---
 
 # --description--

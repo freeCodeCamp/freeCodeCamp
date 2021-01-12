@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c4b
 title: Use the Triple Equals to Assert Strict Equality
 challengeType: 2
 forumTopicId: 301610
+dashedName: use-the-triple-equals-to-assert-strict-equality
 ---
 
 # --description--

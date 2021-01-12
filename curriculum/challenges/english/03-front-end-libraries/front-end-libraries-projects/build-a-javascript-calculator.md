@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd17
 title: Build a JavaScript Calculator
 challengeType: 3
 forumTopicId: 301371
+dashedName: build-a-javascript-calculator
 ---
 
 # --description--

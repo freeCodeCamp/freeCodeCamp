@@ -3,6 +3,7 @@ id: 5900f3ae1000cf542c50fec1
 title: 'Problem 66: Diophantine equation'
 challengeType: 5
 forumTopicId: 302178
+dashedName: problem-66-diophantine-equation
 ---
 
 # --description--

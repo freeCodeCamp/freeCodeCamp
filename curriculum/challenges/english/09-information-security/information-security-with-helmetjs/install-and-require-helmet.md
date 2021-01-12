@@ -3,6 +3,7 @@ id: 587d8247367417b2b2512c36
 title: Install and Require Helmet
 challengeType: 2
 forumTopicId: 301581
+dashedName: install-and-require-helmet
 ---
 
 # --description--

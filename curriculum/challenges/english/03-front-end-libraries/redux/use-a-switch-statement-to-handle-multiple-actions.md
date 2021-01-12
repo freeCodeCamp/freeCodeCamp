@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036151
 title: Use a Switch Statement to Handle Multiple Actions
 challengeType: 6
 forumTopicId: 301449
+dashedName: use-a-switch-statement-to-handle-multiple-actions
 ---
 
 # --description--

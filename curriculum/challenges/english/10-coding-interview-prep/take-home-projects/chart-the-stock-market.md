@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bd0e
 title: Chart the Stock Market
 challengeType: 4
 forumTopicId: 302363
+dashedName: chart-the-stock-market
 ---
 
 # --description--

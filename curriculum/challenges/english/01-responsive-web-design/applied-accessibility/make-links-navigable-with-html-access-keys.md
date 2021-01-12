@@ -4,6 +4,7 @@ title: Make Links Navigable with HTML Access Keys
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQvmaTp'
 forumTopicId: 301021
+dashedName: make-links-navigable-with-html-access-keys
 ---
 
 # --description--

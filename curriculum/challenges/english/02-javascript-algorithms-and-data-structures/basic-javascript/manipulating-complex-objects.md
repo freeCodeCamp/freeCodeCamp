@@ -4,6 +4,7 @@ title: Manipulating Complex Objects
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNMfR'
 forumTopicId: 18208
+dashedName: manipulating-complex-objects
 ---
 
 # --description--

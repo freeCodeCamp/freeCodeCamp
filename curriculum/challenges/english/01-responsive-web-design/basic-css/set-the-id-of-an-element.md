@@ -4,6 +4,7 @@ title: Set the id of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6MEc2'
 forumTopicId: 18279
+dashedName: set-the-id-of-an-element
 ---
 
 # --description--

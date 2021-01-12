@@ -4,6 +4,7 @@ title: Use the parseInt Function with a Radix
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6K4Kh3'
 forumTopicId: 301182
+dashedName: use-the-parseint-function-with-a-radix
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7b8b367417b2b2512b50
 title: Write Concise Declarative Functions with ES6
 challengeType: 1
 forumTopicId: 301224
+dashedName: write-concise-declarative-functions-with-es6
 ---
 
 # --description--

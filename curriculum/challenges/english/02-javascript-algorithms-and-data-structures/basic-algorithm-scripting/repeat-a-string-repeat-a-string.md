@@ -3,6 +3,7 @@ id: afcc8d540bea9ea2669306b6
 title: Repeat a String Repeat a String
 challengeType: 5
 forumTopicId: 16041
+dashedName: repeat-a-string-repeat-a-string
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8247367417b2b2512c38
 title: Mitigate the Risk of Clickjacking with helmet.frameguard()
 challengeType: 2
 forumTopicId: 301582
+dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 ---
 
 # --description--

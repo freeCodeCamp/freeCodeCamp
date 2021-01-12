@@ -3,6 +3,7 @@ id: 5900f4291000cf542c50ff3b
 title: 'Problem 188: The hyperexponentiation of a number'
 challengeType: 5
 forumTopicId: 301824
+dashedName: problem-188-the-hyperexponentiation-of-a-number
 ---
 
 # --description--

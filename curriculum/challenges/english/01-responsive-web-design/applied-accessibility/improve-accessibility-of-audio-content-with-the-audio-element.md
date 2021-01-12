@@ -4,6 +4,7 @@ title: Improve Accessibility of Audio Content with the audio Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVkcZ'
 forumTopicId: 301014
+dashedName: improve-accessibility-of-audio-content-with-the-audio-element
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f5471000cf542c510059
 title: 'Problem 474: Last digits of divisors'
 challengeType: 5
 forumTopicId: 302151
+dashedName: problem-474-last-digits-of-divisors
 ---
 
 # --description--

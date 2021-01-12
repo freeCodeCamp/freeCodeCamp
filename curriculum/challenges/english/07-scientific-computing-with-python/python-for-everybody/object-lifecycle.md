@@ -3,6 +3,7 @@ id: 5e7b9f170b6c005b0e76f087
 title: Object Lifecycle
 challengeType: 11
 videoId: p1r3h_AMMIM
+dashedName: object-lifecycle
 ---
 
 # --question--

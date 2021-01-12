@@ -3,6 +3,7 @@ id: 587d7db7367417b2b2512b9e
 title: Match Ending String Patterns
 challengeType: 1
 forumTopicId: 301352
+dashedName: match-ending-string-patterns
 ---
 
 # --description--

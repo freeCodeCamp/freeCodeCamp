@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bdee
 title: Build an Image Search Abstraction Layer
 challengeType: 4
 forumTopicId: 302361
+dashedName: build-an-image-search-abstraction-layer
 ---
 
 # --description--

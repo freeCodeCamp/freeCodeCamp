@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd10
 title: Show the Local Weather
 challengeType: 3
 forumTopicId: 302368
+dashedName: show-the-local-weather
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d824f367417b2b2512c5b
 title: Run Functional Tests on an API Response using Chai-HTTP IV - PUT method
 challengeType: 2
 forumTopicId: 301591
+dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-method
 ---
 
 # --description--

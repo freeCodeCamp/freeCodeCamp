@@ -5,6 +5,7 @@ title: >-
   helmet.xssFilter()
 challengeType: 2
 forumTopicId: 301583
+dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xssfilter
 ---
 
 # --description--

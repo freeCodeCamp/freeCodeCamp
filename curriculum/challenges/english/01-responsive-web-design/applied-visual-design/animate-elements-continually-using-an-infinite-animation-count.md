@@ -4,6 +4,7 @@ title: Animate Elements Continually Using an Infinite Animation Count
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJDVfq'
 forumTopicId: 301041
+dashedName: animate-elements-continually-using-an-infinite-animation-count
 ---
 
 # --description--

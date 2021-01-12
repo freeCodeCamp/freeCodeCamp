@@ -3,6 +3,7 @@ id: 5900f3bf1000cf542c50fed2
 title: 'Problem 83: Path sum: four ways'
 challengeType: 5
 forumTopicId: 302197
+dashedName: problem-83-path-sum-four-ways
 ---
 
 # --description--

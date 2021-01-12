@@ -3,6 +3,7 @@ id: 5900f5481000cf542c51005a
 title: 'Problem 475: Music festival'
 challengeType: 5
 forumTopicId: 302152
+dashedName: problem-475-music-festival
 ---
 
 # --description--

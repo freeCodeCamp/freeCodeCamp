@@ -3,6 +3,7 @@ id: 587d78af367417b2b2512b04
 title: Build a Product Landing Page
 challengeType: 3
 forumTopicId: 301144
+dashedName: build-a-product-landing-page
 ---
 
 # --description--

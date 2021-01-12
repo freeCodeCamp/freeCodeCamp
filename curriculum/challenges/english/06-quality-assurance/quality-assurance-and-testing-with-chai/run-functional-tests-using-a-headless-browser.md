@@ -3,6 +3,7 @@ id: 587d8250367417b2b2512c5d
 title: Run Functional Tests using a Headless Browser
 challengeType: 2
 forumTopicId: 301595
+dashedName: run-functional-tests-using-a-headless-browser
 ---
 
 # --description--

@@ -2,6 +2,7 @@
 id: 5d5a8f1c07f328a948d398cf
 title: Part 3
 challengeType: 0
+dashedName: part-3
 ---
 
 # --description--

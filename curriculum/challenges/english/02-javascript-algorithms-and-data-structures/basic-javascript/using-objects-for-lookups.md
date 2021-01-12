@@ -4,6 +4,7 @@ title: Using Objects for Lookups
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
+dashedName: using-objects-for-lookups
 ---
 
 # --description--

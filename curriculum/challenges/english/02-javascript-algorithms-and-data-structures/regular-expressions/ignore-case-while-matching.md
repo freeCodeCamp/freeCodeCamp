@@ -3,6 +3,7 @@ id: 587d7db4367417b2b2512b91
 title: Ignore Case While Matching
 challengeType: 1
 forumTopicId: 301344
+dashedName: ignore-case-while-matching
 ---
 
 # --description--

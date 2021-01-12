@@ -3,6 +3,7 @@ id: 5900f3c11000cf542c50fed4
 title: 'Problem 85: Counting rectangles'
 challengeType: 5
 forumTopicId: 302199
+dashedName: problem-85-counting-rectangles
 ---
 
 # --description--

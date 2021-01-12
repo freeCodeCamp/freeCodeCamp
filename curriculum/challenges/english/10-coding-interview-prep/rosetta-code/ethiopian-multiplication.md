@@ -3,6 +3,7 @@ id: 599d1566a02b571412643b84
 title: Ethiopian multiplication
 challengeType: 5
 forumTopicId: 302257
+dashedName: ethiopian-multiplication
 ---
 
 # --description--

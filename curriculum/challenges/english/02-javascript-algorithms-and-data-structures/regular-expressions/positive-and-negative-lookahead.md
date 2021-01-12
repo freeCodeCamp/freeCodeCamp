@@ -3,6 +3,7 @@ id: 587d7dba367417b2b2512ba9
 title: Positive and Negative Lookahead
 challengeType: 1
 forumTopicId: 301360
+dashedName: positive-and-negative-lookahead
 ---
 
 # --description--

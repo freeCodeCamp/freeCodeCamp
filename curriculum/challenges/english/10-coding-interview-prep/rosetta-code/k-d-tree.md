@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ecb
 title: K-d tree
 challengeType: 5
 forumTopicId: 302295
+dashedName: k-d-tree
 ---
 
 # --description--

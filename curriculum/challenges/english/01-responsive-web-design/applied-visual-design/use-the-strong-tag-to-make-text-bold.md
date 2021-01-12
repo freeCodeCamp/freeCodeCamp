@@ -4,6 +4,7 @@ title: Use the strong Tag to Make Text Bold
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/ceJNBSb'
 forumTopicId: 301080
+dashedName: use-the-strong-tag-to-make-text-bold
 ---
 
 # --description--

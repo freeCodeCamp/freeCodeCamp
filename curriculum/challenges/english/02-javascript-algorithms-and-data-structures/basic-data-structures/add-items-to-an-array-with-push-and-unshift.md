@@ -3,6 +3,7 @@ id: 587d78b2367417b2b2512b0e
 title: Add Items to an Array with push() and unshift()
 challengeType: 1
 forumTopicId: 301151
+dashedName: add-items-to-an-array-with-push-and-unshift
 ---
 
 # --description--

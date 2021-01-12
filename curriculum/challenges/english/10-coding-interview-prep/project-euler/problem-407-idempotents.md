@@ -3,6 +3,7 @@ id: 5900f5041000cf542c510016
 title: 'Problem 407: Idempotents'
 challengeType: 5
 forumTopicId: 302075
+dashedName: problem-407-idempotents
 ---
 
 # --description--

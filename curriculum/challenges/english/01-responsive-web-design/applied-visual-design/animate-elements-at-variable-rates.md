@@ -4,6 +4,7 @@ title: Animate Elements at Variable Rates
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ89WA4'
 forumTopicId: 301040
+dashedName: animate-elements-at-variable-rates
 ---
 
 # --description--

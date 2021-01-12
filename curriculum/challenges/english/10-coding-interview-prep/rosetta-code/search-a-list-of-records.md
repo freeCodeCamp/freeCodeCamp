@@ -3,6 +3,7 @@ id: 5eb3e497b8d6d7f63c5517ea
 title: Search a list of records
 challengeType: 5
 forumTopicId: 385315
+dashedName: search-a-list-of-records
 ---
 
 # --description--

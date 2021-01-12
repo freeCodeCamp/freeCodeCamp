@@ -3,6 +3,7 @@ id: 5900f3931000cf542c50fea6
 title: 'Problem 39: Integer right triangles'
 challengeType: 5
 forumTopicId: 302054
+dashedName: problem-39-integer-right-triangles
 ---
 
 # --description--

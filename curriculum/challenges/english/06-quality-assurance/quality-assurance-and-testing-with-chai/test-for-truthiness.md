@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c49
 title: Test for Truthiness
 challengeType: 2
 forumTopicId: 301596
+dashedName: test-for-truthiness
 ---
 
 # --description--

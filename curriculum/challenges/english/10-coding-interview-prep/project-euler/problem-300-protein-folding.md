@@ -3,6 +3,7 @@ id: 5900f49a1000cf542c50ffac
 title: 'Problem 300: Protein folding'
 challengeType: 5
 forumTopicId: 301954
+dashedName: problem-300-protein-folding
 ---
 
 # --description--

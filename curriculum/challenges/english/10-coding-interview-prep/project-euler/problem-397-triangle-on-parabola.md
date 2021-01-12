@@ -3,6 +3,7 @@ id: 5900f4f91000cf542c51000c
 title: 'Problem 397: Triangle on parabola'
 challengeType: 5
 forumTopicId: 302062
+dashedName: problem-397-triangle-on-parabola
 ---
 
 # --description--

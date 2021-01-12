@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c54
 title: Use Regular Expressions to Test a String
 challengeType: 2
 forumTopicId: 301608
+dashedName: use-regular-expressions-to-test-a-string
 ---
 
 # --description--

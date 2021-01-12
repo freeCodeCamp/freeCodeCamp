@@ -3,6 +3,7 @@ id: 5900f4fd1000cf542c51000f
 title: 'Problem 401: Sum of squares of divisors'
 challengeType: 5
 forumTopicId: 302069
+dashedName: problem-401-sum-of-squares-of-divisors
 ---
 
 # --description--
