@@ -164,7 +164,9 @@ export class SuperBlockIntroductionPage extends Component {
           className='overflow-fix'
           ref={blockToScrollTo === 'top' ? this.elementRef : null}
         >
+          <Spacer size={2} />
           <SuperBlockIntro superBlock={superBlock} />
+          <Spacer size={2} />
           <h2 className='text-center'>{t(`intro:misc-text.tutorials`)}</h2>
           <Spacer />
           <div className='block-ui'>
@@ -185,7 +187,10 @@ export class SuperBlockIntroductionPage extends Component {
               </div>
             ))}
             {superBlock !== 'Coding Interview Prep' && (
-              <CertChallenge superBlock={superBlock} />
+              <div>
+                <CertChallenge superBlock={superBlock} />
+                <Spacer size={2} />
+              </div>
             )}
           </div>
           {!isSignedIn && (
@@ -196,7 +201,6 @@ export class SuperBlockIntroductionPage extends Component {
               </Col>
             </Row>
           )}
-          <Spacer size={2} />
           <h2 className='text-center' style={{ whiteSpace: 'pre-line' }}>
             {t(`intro:misc-text.browse-other`)}
           </h2>

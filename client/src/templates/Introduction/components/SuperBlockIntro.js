@@ -23,7 +23,6 @@ function SuperBlockIntro(props) {
 
   return (
     <>
-      <Spacer size={2} />
       <h1 className='text-center'>{i18nSuperBlock}</h1>
       <Spacer />
       <div style={{ margin: 'auto', maxWidth: '500px' }}>
@@ -41,7 +40,6 @@ function SuperBlockIntro(props) {
       {superBlockIntroText.map((str, i) => (
         <p key={i}>{str}</p>
       ))}
-      <Spacer size={2} />
     </>
   );
 }
