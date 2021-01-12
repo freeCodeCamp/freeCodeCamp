@@ -195,7 +195,7 @@ export class SuperBlockIntroductionPage extends Component {
           </div>
           {!isSignedIn && (
             <Row>
-              <Col sm={8} smOffset={2} xs={12}>
+              <Col sm={10} smOffset={1} xs={12}>
                 <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
                 <Spacer />
               </Col>
