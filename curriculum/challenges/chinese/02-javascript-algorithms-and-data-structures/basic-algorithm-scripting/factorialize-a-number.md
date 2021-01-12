@@ -1,41 +1,49 @@
 ---
 id: a302f7aae1aa3152a5b413bc
-title: 对一个数字进行推理
+title: 计算整数的阶乘
 challengeType: 5
-videoUrl: ''
+forumTopicId: 16013
 ---
 
 # --description--
 
-返回提供的整数的阶乘。如果整数用字母n表示，则阶乘是所有小于或等于n的正整数的乘积。因子通常用简写符号`n!`表示`n!`例如： `5! = 1 * 2 * 3 * 4 * 5 = 120`只有大于或等于零的整数才会被提供给该函数。如果卡住，请记得使用[Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514) 。编写自己的代码。
+返回一个给定整数的阶乘计算结果。
+
+对于整数 n，n 的阶乘就是所有小于等于 n 的正整数的乘积。
+
+`n` 的阶乘通常用符号 `n!` 来表示。
+
+例如：`5! = 1 * 2 * 3 * 4 * 5 = 120`
+
+在这个挑战中，只有非负整数会作为参数传入函数。
 
 # --hints--
 
-`factorialize(5)`应该返回一个数字。
+`factorialize(5)` 应返回一个数字。
 
 ```js
 assert(typeof factorialize(5) === 'number');
 ```
 
-`factorialize(5)`应该返回120。
+`factorialize(5)` 应返回 120。
 
 ```js
 assert(factorialize(5) === 120);
 ```
 
-`factorialize(10)`应返回3628800。
+`factorialize(10)` 应返回 3628800。
 
 ```js
 assert(factorialize(10) === 3628800);
 ```
 
-`factorialize(20)`应该返回2432902008176640000。
+`factorialize(20)` 应返回 2432902008176640000。
 
 ```js
 assert(factorialize(20) === 2432902008176640000);
 ```
 
-`factorialize(0)`应该返回1。
+`factorialize(0)` 应返回 1。
 
 ```js
 assert(factorialize(0) === 1);

@@ -1,47 +1,49 @@
 ---
 id: 56533eb9ac21ba0edf2244b3
-title: 将摄氏温度转换为华氏温度
+title: 将摄氏度转换为华氏度
 challengeType: 1
-videoUrl: ''
+forumTopicId: 16806
 ---
 
 # --description--
 
-从摄氏温度转换为华氏温度的算法是以摄氏度乘以`9/5`，再加上`32` 。您将获得一个参数`celsius`代表着摄氏温度。使用已准备好代表华氏温度的变量`fahrenheit`，将`celsius`摄氏温度变量值兑换成华氏温度值，然后存储在`farenheit`变量里。使用以上提到的算法将摄氏温度转换为华氏温度。不需要过多担心函数和返回语句，因为它们将会在未来的挑战中加以解释。目前，只需使用您已经学过的运算符。
+将摄氏度转换为华氏度的计算方式为：摄氏度乘以 `9/5` 然后加上 `32`。
+
+输入参数 `celsius` 代表一个摄氏度的温度。请根据上述转换公式，将已定义好的 `fahrenheit` 变量赋值为相应的华氏度的温度值。
 
 # --hints--
 
-`convertToF(0)`应该返回一个数字
+`convertToF(0)` 应返回一个数字。
 
 ```js
 assert(typeof convertToF(0) === 'number');
 ```
 
-`convertToF(-30)`应该返回值`-22`
+`convertToF(-30)` 应返回 `-22`。
 
 ```js
 assert(convertToF(-30) === -22);
 ```
 
-`convertToF(-10)`应该返回值`14`
+`convertToF(-10)` 应返回 `14`。
 
 ```js
 assert(convertToF(-10) === 14);
 ```
 
-`convertToF(0)`应返回值`32`
+`convertToF(0)` 应返回 `32`。
 
 ```js
 assert(convertToF(0) === 32);
 ```
 
-`convertToF(20)`应返回值`68`
+`convertToF(20)` 应返回 `68`。
 
 ```js
 assert(convertToF(20) === 68);
 ```
 
-`convertToF(30)`应返回值`86`
+`convertToF(30)` 应返回 `86`。
 
 ```js
 assert(convertToF(30) === 86);

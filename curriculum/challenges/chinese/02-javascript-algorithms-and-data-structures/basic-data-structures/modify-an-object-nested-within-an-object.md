@@ -7,7 +7,7 @@ forumTopicId: 301164
 
 # --description--
 
-现在我们来看一个稍微复杂一点的对象。对象中也可以嵌套任意层的对象。对象的属性值可以是 JavaScript 支持的任意类型，包括数组和其他对象。请看以下例子：
+现在我们来看一个稍复杂的对象。在对象中，我们也可以嵌套任意层数的对象，对象的属性值可以是 JavaScript 支持的任意类型，包括数组和其他对象。请看以下例子：
 
 ```js
 let nestedObject = {
@@ -24,15 +24,19 @@ let nestedObject = {
 };
 ```
 
-`nestedObject`有 3 个唯一的键：值为一个数字的`id`、值为一个字符串的`date`和值为一个嵌套了其他对象的对象的`data`。虽然对象中的数据可能很复杂，我们仍能使用上一个挑战中讲的符号来访问我们需要的信息。
+`nestedObject` 有 3 个属性：`id`（属性值为数字）、`date`（属性值为字符串）、`data`（属性值为嵌套的对象）。虽然对象中的数据可能很复杂，我们仍能使用上一个挑战中讲到的写法来访问我们需要的信息。如果我们想把嵌套在 `onlineStatus` 中 `busy` 的属性值改为 `10`，可以用点号表示法来这样实现：
+
+```js
+nestedObject.data.onlineStatus.busy = 10;
+```
 
 # --instructions--
 
-我们已经定义了一个`userActivity`对象，它包含了另一个对象。你可以用上一个挑战中那样的方式来修改被嵌套的对象的属性。请将`online`属性设为`45`。
+我们已经定义了一个 `userActivity` 对象，它包含了另一个对象。请将 `online` 的属性值改为 `45`。
 
 # --hints--
 
-`userActivity`应该含有`id`、`date`和`data`属性。
+`userActivity` 应包含 `id`、`date` 和 `data` 属性。
 
 ```js
 assert(
@@ -40,19 +44,19 @@ assert(
 );
 ```
 
-`userActivity`应该有一个`data`属性，该属性要是一个含有`totalUsers`和`online`属性的对象。
+`userActivity` 应包含 `data` 属性，其属性值应为包含 `totalUsers` 和 `online` 属性的对象。
 
 ```js
 assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
 ```
 
-`userActivity`的`data`属性值中的`online`属性应该被设为`45`。
+`userActivity` 的 `data` 属性值中的 `online` 属性值应被改为 `45`。
 
 ```js
 assert(userActivity.data.online === 45);
 ```
 
-你应该用点符号或者方括号符号来设置`online`属性。
+应使用点号表示法或方括号表示法来修改 `online` 属性值。
 
 ```js
 assert.strictEqual(code.search(/online: 45/), -1);

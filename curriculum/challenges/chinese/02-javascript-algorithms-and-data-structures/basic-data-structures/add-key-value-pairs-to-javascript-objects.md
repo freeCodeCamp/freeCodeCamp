@@ -7,64 +7,80 @@ forumTopicId: 301153
 
 # --description--
 
-对象（object）本质上是<dfn>键值对（key-value pair）</dfn>的集合，或者说，一系列被映射到唯一标识符（叫做<dfn>属性（property）</dfn>或者<dfn>键（key）</dfn>）的数据。让我们来看一个很简单的例子：
+对象（object）本质上是<dfn>键值对（key-value pair）</dfn>的集合。或者说，一系列被映射到唯一标识符的数据就是对象；习惯上，唯一标识符叫做<dfn>属性（property）</dfn>或者<dfn>键（key）</dfn>）；数据叫做<dfn>值（value）</dfn>。让我们来看一个简单的例子：
 
 ```js
-let FCC_User = {
-  username: 'awesome_coder',
-  followers: 572,
-  points: 1741,
-  completedProjects: 15
+const tekkenCharacter = {
+  player: 'Hwoarang',
+  fightingStyle: 'Tae Kwon Doe',
+  human: true
 };
 ```
 
-上面的代码定义了一个叫做`FCC_User`的对象，它有 4 个<dfn>属性</dfn>，每个属性映射一个特定的值。如果我们想知道`FCC_User`有多少`followers`，我们可以这样访问其`followers`属性：
+上面的代码定义了一个叫做 `tekkenCharacter` 的“铁拳”游戏人物对象。它有三个属性，每个属性都对应一个特定的值。如果我们想为它再添加一个叫做 `origin` 的属性，可以这样写：
 
 ```js
-let userData = FCC_User.followers;
-// userData 等于 572
+tekkenCharacter.origin = 'South Korea';
 ```
 
-这叫做<dfn>点符号（dot notation）</dfn>。我们还可以用方括号符号来访问对象中的属性：
+上面的代码中，我们使用了<dfn>点号表示法（dot notation）</dfn>。如果我们现在输出这个对象，便可以看到它具有 `origin` 属性。接下来，因为这个人物在游戏中有着与众不同的橘色头发，我们可以通过方括号表示法来为它添加这个属性，像这样：
 
 ```js
-let userData = FCC_User['followers'];
-// userData 等于 572
+tekkenCharacter['hair color'] = 'dyed orange';
 ```
 
-注意，在用<dfn>方括号符号</dfn>时，我们在括号里写的是字符串`followers`（用引号括起）。方括号符号让我们能用一个变量作为属性名来访问对象的属性（请记住）。若我们在方括号中不写引号而直接写`followers`，JavaScript 引擎会将其看作一个变量，并抛出一个`ReferenceError: followers is not defined`的错误。
+如果要设置的属性中存在空格，或者要设置的属性是一个变量，那我们必须使用<dfn>方括号表示法（bracket notation）</dfn>来为对象添加属性。在上面的代码中，我们把属性 `hair color` 放到引号里，以此来表示整个字符串都是需要设置的属性。如果我们不加上引号，那么中括号里的内容会被当作一个变量来解析，这个变量对应的值就会作为要设置的属性，请看这段代码：
+
+```js
+const eyes = 'eye color';
+
+tekkenCharacter[eyes] = 'brown';
+```
+
+执行以上所有示例代码后，对象会变成这样：
+
+```js
+{
+  player: 'Hwoarang',
+  fightingStyle: 'Tae Kwon Doe',
+  human: true,
+  origin: 'South Korea',
+  'hair color': 'dyed orange',
+  'eye color': 'brown'
+};
+```
 
 # --instructions--
 
-用这样的语法，我们还可以向对象中***新增***键值对。我们已经创建了一个有 3 个属性的`foods`对象，请为其新增 3 项：值为`13`的`bananas`属性、值为`35`的`grapes`属性和值为`27`的`strawberries`属性。
+我们已经为你创建了 `foods` 对象。请使用上述任意语法，来为 `foods` 对象添加如下三个键值对：`bananas` 属性，值为 `13`；`grapes` 属性，值为 `35`；`strawberries` 属性，值为 `27`。
 
 # --hints--
 
-`foods`应该是一个对象。
+`foods` 应为一个对象。
 
 ```js
 assert(typeof foods === 'object');
 ```
 
-`foods`应该有一个值为`13`的`"bananas"`属性。
+`foods` 应有一个值为 `13` 的 `"bananas"` 属性。
 
 ```js
 assert(foods.bananas === 13);
 ```
 
-`foods`应该有一个值为`35`的`"grapes"`属性。
+`foods` 应有一个值为 `35` 的 `"grapes"` 属性。
 
 ```js
 assert(foods.grapes === 35);
 ```
 
-`foods`应该有一个值为`27`的`"strawberries"`属性。
+`foods` 应有一个值为 `27` 的 `"strawberries"` 属性。
 
 ```js
 assert(foods.strawberries === 27);
 ```
 
-你应该用点符号或者方括号符号来设置对象的属性。
+应使用点号表示法或方括号表示法来设置对象的属性。
 
 ```js
 assert(

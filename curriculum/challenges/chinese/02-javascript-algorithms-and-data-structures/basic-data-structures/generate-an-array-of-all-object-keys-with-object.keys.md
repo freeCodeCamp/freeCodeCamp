@@ -1,21 +1,21 @@
 ---
 id: 587d7b7d367417b2b2512b1e
-title: 使用 Object.Keys() 生成对象所有键组成的数组
+title: 使用 Object.keys() 生成由对象的所有属性组成的数组
 challengeType: 1
 forumTopicId: 301160
 ---
 
 # --description--
 
-我们还可以输入一个对象作为参数来调用`Object.keys()`方法，使其生成一个包含对象中所有键的数组。这会返回一个由对象中所有键的名称（字符串）组成的数组。再次说明，这个数组中的项的顺序是不确定的。
+我们可以给 `Object.keys()` 方法传入一个对象作为参数，这会返回一个由对象中所有属性（字符串）组成的数组。需要注意的是，数组中元素的顺序是不确定的。
 
 # --instructions--
 
-请你完成`getArrayOfUsers`函数，使其返回一个包含输入的对象的所有属性的数组。
+请完成 `getArrayOfUsers` 函数的实现，使其返回一个由输入对象中的所有属性所组成的数组。
 
 # --hints--
 
-`users`对象应该只包含`Alan`、`Jeff`、`Sarah`和`Ryan`这 4 个键
+`users` 对象应该只包含 `Alan`、`Jeff`、`Sarah`、`Ryan` 这 4 个属性。
 
 ```js
 assert(
@@ -27,7 +27,7 @@ assert(
 );
 ```
 
-`getArrayOfUsers`函数应该返回一个包含`users`对象中所有键的数组
+`getArrayOfUsers` 函数应返回一个包含 `users` 对象中所有属性的数组。
 
 ```js
 assert(
