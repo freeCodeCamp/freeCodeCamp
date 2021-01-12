@@ -1,5 +1,8 @@
 ---
+id: bd7123c8c441eddfaeb5bdef
 title: 向HTML Elements说你好
+challengeType: 0
+videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gpt2'
 forumTopicId: 18276
 ---
 
@@ -19,7 +22,32 @@ forumTopicId: 18276
 ```yml
 tests:
   - text: 你的<code>h1</code>元素应该有“Hello World”文本。
+    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
 
 ```
 
+</section>
+
+## Challenge Seed
+<section id='challengeSeed'>
+
+<div id='html-seed'>
+
+```js
+/* Add your code below this line */
+// Add your code above this line */
+```
+
+</div>
+
+
+
+</section>
+
+## Solution
+<section id='solution'>
+
+```html
+<h1>Hello World</h1>
+```
 </section>
