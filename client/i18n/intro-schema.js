@@ -569,7 +569,8 @@ const introSchema = {
     certification: '{{cert}} Certification',
     'browse-other':
       'Browse our other free certifications\n(we recommend doing these in order)',
-    tutorials: '{{section}} Tutorials'
+    tutorials: 'Tutorials',
+    'section-tutorials': '{{section}} Tutorials'
   }
 };
 

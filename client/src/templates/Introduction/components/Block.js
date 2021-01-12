@@ -143,7 +143,9 @@ export class Block extends Component {
           onClick={this.handleBlockClick}
         >
           <Caret />
-          <h4>{t(`intro:misc-text.tutorials`, { section: blockTitle })}</h4>
+          <h4>
+            {t(`intro:misc-text.section-tutorials`, { section: blockTitle })}
+          </h4>
           <div className='map-title-completed'>
             {this.renderCheckMark(
               completedCount === challengesWithCompleted.length
