@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { graphql, navigate } from 'gatsby';
+import { graphql } from 'gatsby';
 import { uniq } from 'lodash';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -11,20 +11,18 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 import Login from '../../components/Header/components/Login';
 import Map from '../../components/Map';
-import CertificationIcon from '../../assets/icons/CertificationIcon';
-import GreenPass from '../../assets/icons/GreenPass';
-import GreenNotCompleted from '../../assets/icons/GreenNotCompleted';
+import CertChallenge from './components/CertChallenge';
+import SuperBlockIntro from './components/SuperBlockIntro';
 import { dasherize } from '../../../../utils/slugs';
 import Block from './components/Block';
 import { FullWidthRow, Spacer } from '../../components/helpers';
 import {
   currentChallengeIdSelector,
   userFetchStateSelector,
-  isSignedInSelector,
-  userSelector
+  isSignedInSelector
 } from '../../redux';
 import { resetExpansion, toggleBlock } from './redux';
-import { MarkdownRemark, AllChallengeNode, User } from '../../redux/propTypes';
+import { MarkdownRemark, AllChallengeNode } from '../../redux/propTypes';
 
 import './intro.css';
 
@@ -48,8 +46,7 @@ const propTypes = {
   }),
   resetExpansion: PropTypes.func,
   t: PropTypes.func,
-  toggleBlock: PropTypes.func,
-  user: User
+  toggleBlock: PropTypes.func
 };
 
 const mapStateToProps = state => {
@@ -57,12 +54,10 @@ const mapStateToProps = state => {
     currentChallengeIdSelector,
     isSignedInSelector,
     userFetchStateSelector,
-    userSelector,
-    (currentChallengeId, isSignedIn, fetchState, user) => ({
+    (currentChallengeId, isSignedIn, fetchState) => ({
       currentChallengeId,
       isSignedIn,
-      fetchState,
-      user
+      fetchState
     })
   )(state);
 };
@@ -132,7 +127,6 @@ export class SuperBlockIntroductionPage extends Component {
     const { resetExpansion, toggleBlock } = this.props;
 
     resetExpansion();
-
     return toggleBlock(this.getChosenBlock());
   }
 
@@ -146,50 +140,16 @@ export class SuperBlockIntroductionPage extends Component {
       },
       fetchState: { pending, complete },
       isSignedIn,
-      user: {
-        is2018DataVisCert,
-        isApisMicroservicesCert,
-        isFrontEndLibsCert,
-        isQaCertV7,
-        isInfosecCertV7,
-        isJsAlgoDataStructCert,
-        isRespWebDesignCert,
-        isSciCompPyCertV7,
-        isDataAnalysisPyCertV7,
-        isMachineLearningPyCertV7,
-        username
-      },
       t
     } = this.props;
 
-    const isCertified = {
-      'Responsive Web Design': isRespWebDesignCert,
-      'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
-      'Front End Libraries': isFrontEndLibsCert,
-      'Data Visualization': is2018DataVisCert,
-      'APIs and Microservices': isApisMicroservicesCert,
-      'Quality Assurance': isQaCertV7,
-      'Information Security': isInfosecCertV7,
-      'Scientific Computing with Python': isSciCompPyCertV7,
-      'Data Analysis with Python': isDataAnalysisPyCertV7,
-      'Machine Learning with Python': isMachineLearningPyCertV7
-    };
-
     const superBlockDashedName = dasherize(superBlock);
-    const certLocation = `/certification/${username}/${superBlockDashedName}`;
 
-    const certIconStyle = { height: '40px', width: '40px' };
     const nodesForSuperBlock = edges.map(({ node }) => node);
     const blockDashedNames = uniq(nodesForSuperBlock.map(({ block }) => block));
 
-    const certificationText = t(`intro:misc-text.certification`);
+    const i18nSuperBlock = t(`intro:${superBlockDashedName}.title`);
 
-    const superBlockIntroObj = t(`intro:${dasherize(superBlock)}`);
-    const {
-      title: superBlockTitle,
-      image: superBlockImage,
-      intro: superBlockIntroText
-    } = superBlockIntroObj;
     const miscTextObj = t(`intro:misc-text`);
     const {
       'browse-other': browseOtherText,
@@ -203,33 +163,15 @@ export class SuperBlockIntroductionPage extends Component {
     }
 
     return (
-      <Fragment>
+      <>
         <Helmet>
-          <title>{superBlockTitle} | freeCodeCamp.org</title>
+          <title>{i18nSuperBlock} | freeCodeCamp.org</title>
         </Helmet>
         <FullWidthRow
           className='overflow-fix'
           ref={blockToScrollTo === 'top' ? this.elementRef : null}
         >
-          <Spacer size={2} />
-          <h1 className='text-center'>{superBlockTitle}</h1>
-          <Spacer />
-          <div style={{ margin: 'auto', maxWidth: '500px' }}>
-            <img
-              alt='building a website'
-              src={superBlockImage}
-              style={{
-                backgroundColor: '#f5f6f7',
-                padding: '15px',
-                width: '100%'
-              }}
-            />
-          </div>
-          <Spacer />
-          {superBlockIntroText.map((str, i) => (
-            <p key={i}>{str}</p>
-          ))}
-          <Spacer size={2} />
+          <SuperBlockIntro superBlock={superBlock} />
           <h2 className='text-center'>{tutorialsText}</h2>
           <div className='block-ui'>
             {blockDashedNames.map(blockDashedName => (
@@ -249,30 +191,7 @@ export class SuperBlockIntroductionPage extends Component {
               </div>
             ))}
             {superBlock !== 'Coding Interview Prep' && (
-              <div className='block'>
-                <button
-                  className='map-cert-title'
-                  onClick={
-                    isCertified[superBlock]
-                      ? () => navigate(certLocation)
-                      : null
-                  }
-                >
-                  <CertificationIcon />
-                  <h3>
-                    {superBlockTitle} {certificationText}
-                  </h3>
-                  <div className='map-title-completed-big'>
-                    <span>
-                      {isCertified[superBlock] ? (
-                        <GreenPass style={certIconStyle} />
-                      ) : (
-                        <GreenNotCompleted style={certIconStyle} />
-                      )}
-                    </span>
-                  </div>
-                </button>
-              </div>
+              <CertChallenge superBlock={superBlock} />
             )}
           </div>
           {!isSignedIn && (
@@ -291,7 +210,7 @@ export class SuperBlockIntroductionPage extends Component {
           <Map currentSuperBlock={superBlock} />
           <Spacer size={2} />
         </FullWidthRow>
-      </Fragment>
+      </>
     );
   }
 }
