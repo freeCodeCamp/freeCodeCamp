@@ -12,7 +12,7 @@
 .map-title {
   display: flex;
   align-items: center;
-  padding: 18px 8px;
+  padding: 18px 0;
   background: transparent;
   border: none;
   text-align: left;
@@ -21,7 +21,7 @@
 
 button.map-title {
   cursor: pointer;
-  padding-bottom: 18px;
+  padding: 18px 8px;
 }
 
 .map-title:hover {
@@ -98,7 +98,7 @@ button.map-title {
 
 .map-title svg {
   width: 14px;
-  margin-right: 5px;
+  margin-right: 10px;
   flex-shrink: 0;
   fill: var(--color-quaternary) !important;
   stroke: var(--color-quaternary);
@@ -128,7 +128,7 @@ button.map-title {
 }
 
 .block-description {
-  padding: 18px 6px;
+  padding: 18px 0;
 }
 
 .block-description > p:last-child {
