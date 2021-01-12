@@ -153,7 +153,6 @@ export class SuperBlockIntroductionPage extends Component {
     let blockToScrollTo;
     if (!pending && complete) {
       blockToScrollTo = this.getChosenBlock(true);
-      this.initializeExpandedState();
     }
 
     return (
