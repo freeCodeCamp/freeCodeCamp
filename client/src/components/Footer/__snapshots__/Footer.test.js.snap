@@ -77,148 +77,148 @@ exports[`<Footer /> matches snapshot 1`] = `
             className="footer-col footer-col-1"
           >
             <a
-              href="trending:article1link"
+              href="trending:articles.0.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article1title
+              trending:articles.0.title
             </a>
             <a
-              href="trending:article2link"
+              href="trending:articles.1.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article2title
+              trending:articles.1.title
             </a>
             <a
-              href="trending:article3link"
+              href="trending:articles.2.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article3title
+              trending:articles.2.title
             </a>
             <a
-              href="trending:article4link"
+              href="trending:articles.3.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article4title
+              trending:articles.3.title
             </a>
             <a
-              href="trending:article5link"
+              href="trending:articles.4.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article5title
+              trending:articles.4.title
             </a>
             <a
-              href="trending:article6link"
+              href="trending:articles.5.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article6title
+              trending:articles.5.title
             </a>
             <a
-              href="trending:article7link"
+              href="trending:articles.6.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article7title
+              trending:articles.6.title
             </a>
             <a
-              href="trending:article8link"
+              href="trending:articles.7.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article8title
+              trending:articles.7.title
             </a>
             <a
-              href="trending:article9link"
+              href="trending:articles.8.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article9title
+              trending:articles.8.title
             </a>
             <a
-              href="trending:article10link"
+              href="trending:articles.9.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article10title
+              trending:articles.9.title
             </a>
           </div>
           <div
             className="footer-col footer-col-2"
           >
             <a
-              href="trending:article11link"
+              href="trending:articles.10.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article11title
+              trending:articles.10.title
             </a>
             <a
-              href="trending:article12link"
+              href="trending:articles.11.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article12title
+              trending:articles.11.title
             </a>
             <a
-              href="trending:article13link"
+              href="trending:articles.12.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article13title
+              trending:articles.12.title
             </a>
             <a
-              href="trending:article14link"
+              href="trending:articles.13.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article14title
+              trending:articles.13.title
             </a>
             <a
-              href="trending:article15link"
+              href="trending:articles.14.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article15title
+              trending:articles.14.title
             </a>
             <a
-              href="trending:article16link"
+              href="trending:articles.15.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article16title
+              trending:articles.15.title
             </a>
             <a
-              href="trending:article17link"
+              href="trending:articles.16.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article17title
+              trending:articles.16.title
             </a>
             <a
-              href="trending:article18link"
+              href="trending:articles.17.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article18title
+              trending:articles.17.title
             </a>
             <a
-              href="trending:article19link"
+              href="trending:articles.18.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article19title
+              trending:articles.18.title
             </a>
             <a
-              href="trending:article20link"
+              href="trending:articles.19.link"
               rel="noopener noreferrer"
               target="_blank"
             >
-              trending:article20title
+              trending:articles.19.title
             </a>
           </div>
           <div
@@ -228,78 +228,78 @@ exports[`<Footer /> matches snapshot 1`] = `
               className="footer-left"
             >
               <a
-                href="trending:article21link"
+                href="trending:articles.20.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article21title
+                trending:articles.20.title
               </a>
               <a
-                href="trending:article22link"
+                href="trending:articles.21.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article22title
+                trending:articles.21.title
               </a>
               <a
-                href="trending:article23link"
+                href="trending:articles.22.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article23title
+                trending:articles.22.title
               </a>
               <a
-                href="trending:article24link"
+                href="trending:articles.23.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article24title
+                trending:articles.23.title
               </a>
               <a
-                href="trending:article25link"
+                href="trending:articles.24.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article25title
+                trending:articles.24.title
               </a>
             </div>
             <div
               className="footer-right"
             >
               <a
-                href="trending:article26link"
+                href="trending:articles.25.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article26title
+                trending:articles.25.title
               </a>
               <a
-                href="trending:article27link"
+                href="trending:articles.26.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article27title
+                trending:articles.26.title
               </a>
               <a
-                href="trending:article28link"
+                href="trending:articles.27.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article28title
+                trending:articles.27.title
               </a>
               <a
-                href="trending:article29link"
+                href="trending:articles.28.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article29title
+                trending:articles.28.title
               </a>
               <a
-                href="trending:article30link"
+                href="trending:articles.29.link"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                trending:article30title
+                trending:articles.29.title
               </a>
             </div>
           </div>
