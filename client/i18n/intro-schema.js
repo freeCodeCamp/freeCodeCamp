@@ -566,7 +566,7 @@ const introSchema = {
     }
   },
   'misc-text': {
-    certification: 'Certification',
+    certification: '{{cert}} Certification',
     'browse-other':
       'Browse our other free certifications\n(we recommend doing these in order)',
     tutorials: 'Tutorials'
