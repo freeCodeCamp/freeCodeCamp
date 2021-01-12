@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c65
 title: 按索引从链接列表中删除元素
 challengeType: 1
 videoUrl: ''
+dashedName: remove-elements-from-a-linked-list-by-index
 ---
 
 # --description--

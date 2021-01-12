@@ -4,6 +4,7 @@ title: 给元素的每一侧添加不同的内边距
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mwUw'
 forumTopicId: 16634
+dashedName: add-different-padding-to-each-side-of-an-element
 ---
 
 # --description--

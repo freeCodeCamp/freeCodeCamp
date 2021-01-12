@@ -3,6 +3,7 @@ id: 5900f3b81000cf542c50fecb
 title: 问题76：计算总结
 challengeType: 5
 videoUrl: ''
+dashedName: problem-76-counting-summations
 ---
 
 # --description--

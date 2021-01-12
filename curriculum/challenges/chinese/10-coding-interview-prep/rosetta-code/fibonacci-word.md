@@ -3,6 +3,7 @@ id: 5992e222d397f00d21122931
 title: 斐波那契字
 challengeType: 5
 videoUrl: ''
+dashedName: fibonacci-word
 ---
 
 # --description--

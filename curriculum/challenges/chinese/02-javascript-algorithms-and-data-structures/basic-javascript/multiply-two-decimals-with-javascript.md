@@ -4,6 +4,7 @@ title: 两个小数相乘
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2GeHq'
 forumTopicId: 301173
+dashedName: multiply-two-decimals-with-javascript
 ---
 
 # --description--

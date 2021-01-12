@@ -3,6 +3,7 @@ id: 5900f5411000cf542c510053
 title: 问题469：空椅子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-469-empty-chairs
 ---
 
 # --description--

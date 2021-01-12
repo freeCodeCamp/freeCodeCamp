@@ -3,6 +3,7 @@ id: 5900f45d1000cf542c50ff6f
 title: 问题240：顶部骰子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-240-top-dice
 ---
 
 # --description--

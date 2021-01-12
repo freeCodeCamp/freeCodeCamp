@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c62
 title: 创建链接列表类
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-linked-list-class
 ---
 
 # --description--

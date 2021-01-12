@@ -3,6 +3,7 @@ id: 5900f5141000cf542c510026
 title: 问题424：九郎
 challengeType: 5
 videoUrl: ''
+dashedName: problem-424-kakuro
 ---
 
 # --description--

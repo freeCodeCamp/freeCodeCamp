@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e84
 title: 最重要的后续总和
 challengeType: 5
 videoUrl: ''
+dashedName: greatest-subsequential-sum
 ---
 
 # --description--

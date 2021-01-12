@@ -3,6 +3,7 @@ id: 5951a53863c8a34f02bf1bdc
 title: 最近对的问题
 challengeType: 5
 videoUrl: ''
+dashedName: closest-pair-problem
 ---
 
 # --description--

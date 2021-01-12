@@ -3,6 +3,7 @@ id: 5900f3941000cf542c50fea7
 title: 问题40：Champernowne的常数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-40-champernownes-constant
 ---
 
 # --description--

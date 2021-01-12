@@ -3,6 +3,7 @@ id: 5900f54c1000cf542c51005e
 title: 问题478：混合物
 challengeType: 5
 videoUrl: ''
+dashedName: problem-478-mixtures
 ---
 
 # --description--

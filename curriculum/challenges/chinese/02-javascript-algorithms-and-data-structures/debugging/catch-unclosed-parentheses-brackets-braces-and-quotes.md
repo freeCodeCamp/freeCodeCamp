@@ -3,6 +3,7 @@ id: 587d7b84367417b2b2512b36
 title: 捕获未闭合的括号、方括号、大括号和引号
 challengeType: 1
 forumTopicId: 301190
+dashedName: catch-unclosed-parentheses-brackets-braces-and-quotes
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 给输入框添加占位符文本
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 forumTopicId: 16647
+dashedName: add-placeholder-text-to-a-text-field
 ---
 
 # --description--

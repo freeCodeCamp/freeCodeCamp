@@ -3,6 +3,7 @@ id: 587d7dbf367417b2b2512bbb
 title: 使用 @while 当条件满足时样式生效
 challengeType: 0
 forumTopicId: 301454
+dashedName: apply-a-style-until-a-condition-is-met-with-while
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 函数执行到 return 语句就结束
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
+dashedName: return-early-pattern-for-functions
 ---
 
 # --description--

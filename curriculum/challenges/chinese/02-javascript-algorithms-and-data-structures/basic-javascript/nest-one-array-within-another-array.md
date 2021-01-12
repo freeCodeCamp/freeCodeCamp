@@ -4,6 +4,7 @@ title: 将一个数组嵌套在另一个数组中
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/crZQZf8'
 forumTopicId: 18247
+dashedName: nest-one-array-within-another-array
 ---
 
 # --description--

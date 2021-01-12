@@ -3,6 +3,7 @@ id: 5895f70ef9fc0f352b528e6b
 title: 如何将 Profile 放在一起
 challengeType: 2
 forumTopicId: 301554
+dashedName: how-to-put-a-profile-together
 ---
 
 # --description--

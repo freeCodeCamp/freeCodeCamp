@@ -1,6 +1,7 @@
 ---
 id: 5e44412c903586ffb414c94c
 challengeType: 10
+dashedName: arithmetic-formatter
 ---
 
 # --description--

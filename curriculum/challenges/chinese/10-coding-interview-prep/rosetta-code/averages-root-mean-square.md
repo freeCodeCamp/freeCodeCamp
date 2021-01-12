@@ -3,6 +3,7 @@ id: 594da033de4190850b893874
 title: 平均值 - 均方根
 challengeType: 5
 videoUrl: ''
+dashedName: averagesroot-mean-square
 ---
 
 # --description--

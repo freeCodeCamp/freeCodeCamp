@@ -3,6 +3,7 @@ id: 5900f3e81000cf542c50fefb
 title: 问题124：有序的激进分子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-124-ordered-radicals
 ---
 
 # --description--

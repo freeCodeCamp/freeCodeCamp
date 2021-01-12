@@ -3,6 +3,7 @@ id: 5900f4461000cf542c50ff59
 title: 问题218：完美的直角三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-218-perfect-right-angled-triangles
 ---
 
 # --description--

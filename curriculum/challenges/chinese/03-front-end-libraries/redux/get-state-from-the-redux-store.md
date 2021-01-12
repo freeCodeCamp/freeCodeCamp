@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403614c
 title: 从 Redux Store 获取状态
 challengeType: 6
 forumTopicId: 301443
+dashedName: get-state-from-the-redux-store
 ---
 
 # --description--

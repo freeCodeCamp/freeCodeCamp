@@ -3,6 +3,7 @@ id: 587d8259367417b2b2512c85
 title: 实施选择排序
 challengeType: 1
 videoUrl: ''
+dashedName: implement-selection-sort
 ---
 
 # --description--

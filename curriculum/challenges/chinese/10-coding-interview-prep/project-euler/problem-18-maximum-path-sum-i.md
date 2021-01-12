@@ -3,6 +3,7 @@ id: 5900f37e1000cf542c50fe91
 title: 问题18：最大路径总和I.
 challengeType: 5
 videoUrl: ''
+dashedName: problem-18-maximum-path-sum-i
 ---
 
 # --description--

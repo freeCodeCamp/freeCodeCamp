@@ -4,6 +4,7 @@ title: 创建一个媒体查询
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
+dashedName: create-a-media-query
 ---
 
 # --description--

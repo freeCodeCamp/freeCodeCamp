@@ -3,6 +3,7 @@ id: 5900f4481000cf542c50ff5a
 title: 问题219：偏差成本编码
 challengeType: 5
 videoUrl: ''
+dashedName: problem-219-skew-cost-coding
 ---
 
 # --description--

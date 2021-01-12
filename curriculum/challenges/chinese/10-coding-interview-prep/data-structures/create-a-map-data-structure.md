@@ -3,6 +3,7 @@ id: 8d5823c8c441eddfaeb5bdef
 title: 创建地图数据结构
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-map-data-structure
 ---
 
 # --description--

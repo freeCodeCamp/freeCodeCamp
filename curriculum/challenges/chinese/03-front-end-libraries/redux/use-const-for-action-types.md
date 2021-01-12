@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036152
 title: 使用 const 声明 Action Types
 challengeType: 6
 forumTopicId: 301450
+dashedName: use-const-for-action-types
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f51e1000cf542c510030
 title: 问题432欧拉
 challengeType: 5
 videoUrl: ''
+dashedName: problem-432-totient-sum
 ---
 
 # --description--

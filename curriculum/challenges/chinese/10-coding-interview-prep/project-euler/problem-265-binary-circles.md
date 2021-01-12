@@ -3,6 +3,7 @@ id: 5900f4761000cf542c50ff88
 title: 问题265：二进制圆圈
 challengeType: 5
 videoUrl: ''
+dashedName: problem-265-binary-circles
 ---
 
 # --description--

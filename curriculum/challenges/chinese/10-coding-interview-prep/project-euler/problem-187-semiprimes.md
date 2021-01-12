@@ -3,6 +3,7 @@ id: 5900f4291000cf542c50ff3a
 title: 问题187：半致
 challengeType: 5
 videoUrl: ''
+dashedName: problem-187-semiprimes
 ---
 
 # --description--

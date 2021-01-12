@@ -4,6 +4,7 @@ title: 循环嵌套
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
+dashedName: nesting-for-loops
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: a26cbbe9ad8655a977e1ceb5
 title: 找出字符串中的最长单词
 challengeType: 5
 forumTopicId: 16015
+dashedName: find-the-longest-word-in-a-string
 ---
 
 # --description--

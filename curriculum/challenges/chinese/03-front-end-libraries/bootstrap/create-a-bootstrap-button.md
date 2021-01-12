@@ -3,6 +3,7 @@ id: bad87fee1348cd8acdf08812
 title: 创建一个 Bootstrap 按钮
 challengeType: 0
 forumTopicId: 16811
+dashedName: create-a-bootstrap-button
 ---
 
 # --description--

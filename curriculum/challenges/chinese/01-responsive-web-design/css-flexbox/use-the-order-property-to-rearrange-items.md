@@ -4,6 +4,7 @@ title: 使用 order 属性重新排列子元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
 forumTopicId: 301116
+dashedName: use-the-order-property-to-rearrange-items
 ---
 
 # --description--

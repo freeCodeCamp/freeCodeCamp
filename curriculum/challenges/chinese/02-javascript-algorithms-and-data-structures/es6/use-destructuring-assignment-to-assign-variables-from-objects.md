@@ -3,6 +3,7 @@ id: 587d7b89367417b2b2512b49
 title: 使用解构赋值从对象中分配变量
 challengeType: 1
 forumTopicId: 301215
+dashedName: use-destructuring-assignment-to-assign-variables-from-objects
 ---
 
 # --description--

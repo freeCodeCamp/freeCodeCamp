@@ -3,6 +3,7 @@ id: 5951ed8945deab770972ae56
 title: 河内的塔
 challengeType: 5
 videoUrl: ''
+dashedName: towers-of-hanoi
 ---
 
 # --description--

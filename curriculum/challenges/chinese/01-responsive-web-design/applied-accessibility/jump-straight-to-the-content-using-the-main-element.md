@@ -4,6 +4,7 @@ title: 使用 main 元素包裹主题内容
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7zuE'
 forumTopicId: 301018
+dashedName: jump-straight-to-the-content-using-the-main-element
 ---
 
 # --description--

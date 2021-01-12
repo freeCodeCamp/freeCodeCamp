@@ -3,6 +3,7 @@ id: ab306dbdcc907c7ddfc30830
 title: 数组扁平化
 challengeType: 5
 forumTopicId: 16079
+dashedName: steamroller
 ---
 
 # --description--
@@ -39,6 +40,18 @@ assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 
 ```js
 assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function steamrollArray(arr) {
+  return arr;
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
 ```
 
 # --solutions--

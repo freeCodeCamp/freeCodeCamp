@@ -3,6 +3,7 @@ id: 587d8247367417b2b2512c38
 title: 使用 helmet.frameguard() 降低点击劫持的风险
 challengeType: 2
 forumTopicId: 301582
+dashedName: mitigate-the-risk-of-clickjacking-with-helmet-frameguard
 ---
 
 # --description--

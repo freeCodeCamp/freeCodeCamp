@@ -3,6 +3,7 @@ id: 5900f3f21000cf542c50ff04
 title: 问题133：重新计算非因素
 challengeType: 5
 videoUrl: ''
+dashedName: problem-133-repunit-nonfactors
 ---
 
 # --description--

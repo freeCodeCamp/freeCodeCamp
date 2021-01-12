@@ -3,6 +3,7 @@ id: 5900f3e01000cf542c50fef3
 title: 问题116：红色，绿色或蓝色瓷砖
 challengeType: 5
 videoUrl: ''
+dashedName: problem-116-red-green-or-blue-tiles
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7c
 title: 检查二进制搜索树中是否存在元素
 challengeType: 1
 videoUrl: ''
+dashedName: check-if-an-element-is-present-in-a-binary-search-tree
 ---
 
 # --description--

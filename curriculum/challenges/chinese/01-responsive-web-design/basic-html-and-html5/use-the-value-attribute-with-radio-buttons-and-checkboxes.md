@@ -3,6 +3,7 @@ id: 5c6c06847491271903d37cfd
 title: 使用单选框和复选框的 value 属性
 challengeType: 0
 forumTopicId: 301099
+dashedName: use-the-value-attribute-with-radio-buttons-and-checkboxes
 ---
 
 # --description--

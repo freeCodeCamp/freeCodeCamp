@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036179
 title: 创建一个可以控制的表单
 challengeType: 6
 forumTopicId: 301384
+dashedName: create-a-controlled-form
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: bad87fee1348bd9aed708826
 title: 使用 jQuery 删除元素
 challengeType: 6
 forumTopicId: 18262
+dashedName: remove-an-element-using-jquery
 ---
 
 # --description--

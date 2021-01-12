@@ -3,6 +3,7 @@ id: 5900f3831000cf542c50fe96
 title: 问题23：非丰富的总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-23-non-abundant-sums
 ---
 
 # --description--

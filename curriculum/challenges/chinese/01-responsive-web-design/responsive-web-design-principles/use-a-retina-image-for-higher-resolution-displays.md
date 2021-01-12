@@ -4,6 +4,7 @@ title: 针对高分辨率屏幕应使用视网膜图片
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
+dashedName: use-a-retina-image-for-higher-resolution-displays
 ---
 
 # --description--

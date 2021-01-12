@@ -3,6 +3,7 @@ id: bad87fee1348bd9acdd08826
 title: 了解 script 和 document.ready 是如何工作的
 challengeType: 6
 forumTopicId: 18224
+dashedName: learn-how-script-tags-and-document-ready-work
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7b
 title: 将新元素添加到二叉搜索树
 challengeType: 1
 videoUrl: ''
+dashedName: add-a-new-element-to-a-binary-search-tree
 ---
 
 # --description--

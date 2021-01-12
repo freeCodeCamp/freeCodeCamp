@@ -4,6 +4,7 @@ title: 在推文中使用 justify-content 属性
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43GgTa'
 forumTopicId: 301115
+dashedName: use-the-justify-content-property-in-the-tweet-embed
 ---
 
 # --description--

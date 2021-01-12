@@ -3,6 +3,7 @@ id: 598ee8b91b410510ae82efef
 title: 可扩展的素发生器
 challengeType: 5
 videoUrl: ''
+dashedName: extensible-prime-generator
 ---
 
 # --description--

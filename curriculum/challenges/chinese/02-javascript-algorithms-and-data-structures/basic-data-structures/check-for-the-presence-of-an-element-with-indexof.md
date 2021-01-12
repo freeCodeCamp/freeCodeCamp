@@ -3,6 +3,7 @@ id: 587d7b7b367417b2b2512b14
 title: 使用 indexOf() 检查元素是否存在
 challengeType: 1
 forumTopicId: 301154
+dashedName: check-for-the-presence-of-an-element-with-indexof
 ---
 
 # --description--

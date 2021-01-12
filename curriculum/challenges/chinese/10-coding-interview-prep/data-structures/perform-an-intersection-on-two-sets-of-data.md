@@ -3,6 +3,7 @@ id: 587d8253367417b2b2512c6d
 title: 在两组数据上执行交集
 challengeType: 1
 videoUrl: ''
+dashedName: perform-an-intersection-on-two-sets-of-data
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8250367417b2b2512c5f
 title: 创建一个堆栈类
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-stack-class
 ---
 
 # --description--

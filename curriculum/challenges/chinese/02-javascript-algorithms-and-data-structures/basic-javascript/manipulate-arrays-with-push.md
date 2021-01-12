@@ -4,6 +4,7 @@ title: 使用 push() 操作数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 forumTopicId: 18237
+dashedName: manipulate-arrays-with-push
 ---
 
 # --description--

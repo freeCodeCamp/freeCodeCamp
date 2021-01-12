@@ -4,6 +4,7 @@ title: 使用 flex-wrap 属性包裹一行或一列
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cQv9ZtG'
 forumTopicId: 301114
+dashedName: use-the-flex-wrap-property-to-wrap-a-row-or-column
 ---
 
 # --description--

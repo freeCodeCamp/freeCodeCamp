@@ -4,6 +4,7 @@ title: 使用媒体查询更改变量
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
+dashedName: use-a-media-query-to-change-a-variable
 ---
 
 # --description--

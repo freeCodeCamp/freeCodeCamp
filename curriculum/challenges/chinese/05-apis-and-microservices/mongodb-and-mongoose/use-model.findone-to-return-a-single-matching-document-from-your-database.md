@@ -3,6 +3,7 @@ id: 587d7fb7367417b2b2512c0c
 title: 使用 model.findOne() 从数据库中返回一个单一匹配的 Document
 challengeType: 2
 forumTopicId: 301545
+dashedName: use-model-findone-to-return-a-single-matching-document-from-your-database
 ---
 
 # --description--
@@ -39,14 +40,12 @@ forumTopicId: 301545
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js
 /**
-  后端挑战不需要 solutions， 
-  因为他们需要使用一个完整的项目进行测试。 
-  请查询我们的贡献指南以了解更多信息。 
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
 */
 ```

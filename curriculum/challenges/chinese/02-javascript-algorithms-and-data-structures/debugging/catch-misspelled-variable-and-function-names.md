@@ -3,6 +3,7 @@ id: 587d7b84367417b2b2512b35
 title: 捕获拼错的变量名和函数名
 challengeType: 1
 forumTopicId: 301186
+dashedName: catch-misspelled-variable-and-function-names
 ---
 
 # --description--

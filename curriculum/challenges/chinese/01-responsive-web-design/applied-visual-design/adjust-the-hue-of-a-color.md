@@ -4,6 +4,7 @@ title: 调整颜色的色相
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp38TZ'
 forumTopicId: 301036
+dashedName: adjust-the-hue-of-a-color
 ---
 
 # --description--

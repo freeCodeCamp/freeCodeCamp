@@ -4,6 +4,7 @@ title: 使用 CSS Transform scale 属性可以更改元素的大小
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZVSg'
 forumTopicId: 301076
+dashedName: use-the-css-transform-scale-property-to-change-the-size-of-an-element
 ---
 
 # --description--

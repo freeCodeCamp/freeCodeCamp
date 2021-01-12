@@ -4,6 +4,7 @@ title: 了解字符串的不变性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWPVaUR'
 forumTopicId: 18331
+dashedName: understand-string-immutability
 ---
 
 # --description--

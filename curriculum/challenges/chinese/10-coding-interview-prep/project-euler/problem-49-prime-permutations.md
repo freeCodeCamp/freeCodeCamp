@@ -3,6 +3,7 @@ id: 5900f39d1000cf542c50feb0
 title: 问题49：主要排列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-49-prime-permutations
 ---
 
 # --description--

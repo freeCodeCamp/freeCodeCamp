@@ -4,6 +4,7 @@ title: 使用 audio 元素提高音频内容的可访问性
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVkcZ'
 forumTopicId: 301014
+dashedName: improve-accessibility-of-audio-content-with-the-audio-element
 ---
 
 # --description--

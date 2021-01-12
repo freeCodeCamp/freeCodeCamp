@@ -3,6 +3,7 @@ id: 595671d4d2cdc305f0d5b36f
 title: 来自两个数组的哈希
 challengeType: 5
 videoUrl: ''
+dashedName: hash-from-two-arrays
 ---
 
 # --description--

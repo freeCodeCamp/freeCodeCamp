@@ -3,6 +3,7 @@ id: a24c1a4622e3c05097f71d67
 title: 找出元素在排序后数组中的索引
 challengeType: 5
 forumTopicId: 16094
+dashedName: where-do-i-belong
 ---
 
 # --description--

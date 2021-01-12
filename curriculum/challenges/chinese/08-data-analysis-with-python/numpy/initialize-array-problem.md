@@ -2,6 +2,7 @@
 id: 5e9a0a8e09c5df3cc3600ed6
 challengeType: 11
 videoId: 0jGfH8BPfOk
+dashedName: initialize-array-problem
 ---
 
 # --question--

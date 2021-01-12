@@ -3,6 +3,7 @@ id: 5900f48d1000cf542c50ffa0
 title: 问题289：欧拉循环
 challengeType: 5
 videoUrl: ''
+dashedName: problem-289-eulerian-cycles
 ---
 
 # --description--

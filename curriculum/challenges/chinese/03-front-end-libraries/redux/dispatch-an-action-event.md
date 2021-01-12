@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403614f
 title: 分发 Action Event
 challengeType: 6
 forumTopicId: 301442
+dashedName: dispatch-an-action-event
 ---
 
 # --description--

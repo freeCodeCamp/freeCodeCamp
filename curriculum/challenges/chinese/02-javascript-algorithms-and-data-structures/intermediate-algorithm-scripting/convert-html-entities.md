@@ -3,6 +3,7 @@ id: a6b0bb188d873cb2c8729495
 title: 转换 HTML 实体字符
 challengeType: 5
 forumTopicId: 16007
+dashedName: convert-html-entities
 ---
 
 # --description--

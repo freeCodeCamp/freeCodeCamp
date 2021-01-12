@@ -3,6 +3,7 @@ id: 587d7db7367417b2b2512b9d
 title: 匹配字符串的开头
 challengeType: 1
 forumTopicId: 301349
+dashedName: match-beginning-string-patterns
 ---
 
 # --description--

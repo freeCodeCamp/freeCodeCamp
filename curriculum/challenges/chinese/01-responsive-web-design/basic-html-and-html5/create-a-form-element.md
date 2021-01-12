@@ -4,6 +4,7 @@ title: 创建一个表单
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cmQ3Kfa'
 forumTopicId: 16817
+dashedName: create-a-form-element
 ---
 
 # --description--

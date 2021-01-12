@@ -3,6 +3,7 @@ id: 5900f3cc1000cf542c50fede
 title: 问题95：友好的链条
 challengeType: 5
 videoUrl: ''
+dashedName: problem-95-amicable-chains
 ---
 
 # --description--

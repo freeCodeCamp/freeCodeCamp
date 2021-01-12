@@ -3,6 +3,7 @@ id: 5900f3a81000cf542c50febb
 title: 问题60：素数对设置
 challengeType: 5
 videoUrl: ''
+dashedName: problem-60-prime-pair-sets
 ---
 
 # --description--

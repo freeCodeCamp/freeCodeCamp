@@ -4,6 +4,7 @@ title: 函数中的全局作用域和局部作用域
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2QwKH2'
 forumTopicId: 18194
+dashedName: global-vs--local-scope-in-functions
 ---
 
 # --description--

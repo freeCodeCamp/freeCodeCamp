@@ -3,6 +3,7 @@ id: 5900f3891000cf542c50fe9c
 title: 问题29：不同的权力
 challengeType: 5
 videoUrl: ''
+dashedName: problem-29-distinct-powers
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 复合赋值之 -=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2Qv7AV'
 forumTopicId: 16660
+dashedName: compound-assignment-with-augmented-subtraction
 ---
 
 # --description--

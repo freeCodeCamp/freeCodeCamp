@@ -3,6 +3,7 @@ id: 587d825b367417b2b2512c8e
 title: 创建一个哈希表
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-hash-table
 ---
 
 # --description--

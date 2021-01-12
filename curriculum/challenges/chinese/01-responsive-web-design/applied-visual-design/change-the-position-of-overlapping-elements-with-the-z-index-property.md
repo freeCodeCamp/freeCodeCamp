@@ -4,6 +4,7 @@ title: 使用 z-index 属性更改重叠元素的位置
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM94aHk'
 forumTopicId: 301046
+dashedName: change-the-position-of-overlapping-elements-with-the-z-index-property
 ---
 
 # --description--

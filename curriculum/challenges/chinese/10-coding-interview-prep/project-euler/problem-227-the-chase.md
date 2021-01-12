@@ -3,6 +3,7 @@ id: 5900f44f1000cf542c50ff61
 title: 问题227：大通
 challengeType: 5
 videoUrl: ''
+dashedName: problem-227-the-chase
 ---
 
 # --description--

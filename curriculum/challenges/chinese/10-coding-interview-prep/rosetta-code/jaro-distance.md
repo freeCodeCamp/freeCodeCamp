@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ec2
 title: Jaro距离
 challengeType: 5
 videoUrl: ''
+dashedName: jaro-distance
 ---
 
 # --description--

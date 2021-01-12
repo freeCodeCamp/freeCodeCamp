@@ -3,6 +3,7 @@ id: 5900f52c1000cf542c51003f
 title: 问题448：平均最小公倍数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-448-average-least-common-multiple
 ---
 
 # --description--

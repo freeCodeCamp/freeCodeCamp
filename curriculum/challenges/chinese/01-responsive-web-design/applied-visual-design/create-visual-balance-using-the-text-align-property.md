@@ -4,6 +4,7 @@ title: 使用 text-align 属性创建视觉平衡
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
+dashedName: create-visual-balance-using-the-text-align-property
 ---
 
 # --description--

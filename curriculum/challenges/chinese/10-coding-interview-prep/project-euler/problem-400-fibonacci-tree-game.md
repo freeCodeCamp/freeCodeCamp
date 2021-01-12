@@ -3,6 +3,7 @@ id: 5900f4fe1000cf542c510010
 title: 问题400：斐波纳契树游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-400-fibonacci-tree-game
 ---
 
 # --description--

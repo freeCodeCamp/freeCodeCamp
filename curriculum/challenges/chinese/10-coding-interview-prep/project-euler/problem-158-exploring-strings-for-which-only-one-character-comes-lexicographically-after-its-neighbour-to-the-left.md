@@ -3,6 +3,8 @@ id: 5900f40a1000cf542c50ff1d
 title: 问题158：探索在其邻居之后只有一个字符按字典顺序出现的字符串
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-158-exploring-strings-for-which-only-one-character-comes-lexicographically-after-its-neighbour-to-the-left
 ---
 
 # --description--

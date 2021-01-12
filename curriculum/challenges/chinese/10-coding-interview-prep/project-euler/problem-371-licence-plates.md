@@ -3,6 +3,7 @@ id: 5900f4e01000cf542c50fff2
 title: 问题371：车牌
 challengeType: 5
 videoUrl: ''
+dashedName: problem-371-licence-plates
 ---
 
 # --description--

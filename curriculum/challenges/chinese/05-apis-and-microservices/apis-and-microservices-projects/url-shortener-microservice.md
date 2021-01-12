@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bd0e
 title: 短网址
 challengeType: 4
 forumTopicId: 301509
+dashedName: url-shortener-microservice
 ---
 
 # --description--

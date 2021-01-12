@@ -3,6 +3,7 @@ id: 5951815dd895584b06884620
 title: 给定半径的圆圈通过两个点
 challengeType: 5
 videoUrl: ''
+dashedName: circles-of-given-radius-through-two-points
 ---
 
 # --description--

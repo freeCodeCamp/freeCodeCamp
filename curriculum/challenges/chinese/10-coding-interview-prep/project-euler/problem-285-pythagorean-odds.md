@@ -3,6 +3,7 @@ id: 5900f48a1000cf542c50ff9c
 title: 问题285：毕达哥拉斯赔率
 challengeType: 5
 videoUrl: ''
+dashedName: problem-285-pythagorean-odds
 ---
 
 # --description--

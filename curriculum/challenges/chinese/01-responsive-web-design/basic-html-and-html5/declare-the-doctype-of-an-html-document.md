@@ -4,6 +4,7 @@ title: 声明 HTML 的文档类型
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra98AJ'
 forumTopicId: 301095
+dashedName: declare-the-doctype-of-an-html-document
 ---
 
 # --description--

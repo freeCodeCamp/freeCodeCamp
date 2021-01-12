@@ -3,6 +3,7 @@ id: 5900f49a1000cf542c50ffac
 title: 问题300：蛋白质折叠
 challengeType: 5
 videoUrl: ''
+dashedName: problem-300-protein-folding
 ---
 
 # --description--

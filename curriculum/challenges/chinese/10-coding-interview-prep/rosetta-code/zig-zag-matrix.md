@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad8
 title: 之字形矩阵
 challengeType: 5
 videoUrl: ''
+dashedName: zig-zag-matrix
 ---
 
 # --description--

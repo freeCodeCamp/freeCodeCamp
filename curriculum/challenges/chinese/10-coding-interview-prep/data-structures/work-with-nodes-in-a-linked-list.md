@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c61
 title: 使用链接列表中的节点
 challengeType: 1
 videoUrl: ''
+dashedName: work-with-nodes-in-a-linked-list
 ---
 
 # --description--

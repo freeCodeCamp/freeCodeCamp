@@ -4,6 +4,7 @@ title: 局部作用域和函数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cd62NhM'
 forumTopicId: 18227
+dashedName: local-scope-and-functions
 ---
 
 # --description--

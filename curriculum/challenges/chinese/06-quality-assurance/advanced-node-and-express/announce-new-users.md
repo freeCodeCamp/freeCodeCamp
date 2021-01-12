@@ -3,6 +3,7 @@ id: 589fc832f9fc0f352b528e78
 title: 宣布新用户
 challengeType: 2
 forumTopicId: 301546
+dashedName: announce-new-users
 ---
 
 # --description--

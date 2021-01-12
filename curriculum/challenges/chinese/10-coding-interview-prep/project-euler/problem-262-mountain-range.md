@@ -3,6 +3,7 @@ id: 5900f4731000cf542c50ff85
 title: 问题262：山脉
 challengeType: 5
 videoUrl: ''
+dashedName: problem-262-mountain-range
 ---
 
 # --description--

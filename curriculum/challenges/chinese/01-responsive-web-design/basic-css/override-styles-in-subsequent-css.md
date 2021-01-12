@@ -4,6 +4,7 @@ title: Class 选择器的优先级高于继承样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDQug'
 forumTopicId: 18253
+dashedName: override-styles-in-subsequent-css
 ---
 
 # --description--

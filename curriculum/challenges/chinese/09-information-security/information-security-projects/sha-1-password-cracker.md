@@ -1,6 +1,7 @@
 ---
 id: 5e46f983ac417301a38fb933
 challengeType: 10
+dashedName: sha-1-password-cracker
 ---
 
 # --description--

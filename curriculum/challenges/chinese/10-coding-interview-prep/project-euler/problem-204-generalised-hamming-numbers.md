@@ -3,6 +3,7 @@ id: 5900f4381000cf542c50ff4b
 title: 问题204：广义汉明数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-204-generalised-hamming-numbers
 ---
 
 # --description--

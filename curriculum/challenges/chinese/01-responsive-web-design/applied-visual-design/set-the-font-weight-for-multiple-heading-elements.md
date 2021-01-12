@@ -4,6 +4,7 @@ title: 设置多个标题元素的 font-weight
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVWRHq'
 forumTopicId: 301069
+dashedName: set-the-font-weight-for-multiple-heading-elements
 ---
 
 # --description--

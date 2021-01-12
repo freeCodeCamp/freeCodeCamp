@@ -3,6 +3,7 @@ id: 587d7fb5367417b2b2512c04
 title: 从依赖项中删除包
 challengeType: 2
 forumTopicId: 301530
+dashedName: remove-a-package-from-your-dependencies
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用赋值运算符存储值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cEanysE'
 forumTopicId: 18310
+dashedName: storing-values-with-the-assignment-operator
 ---
 
 # --description--

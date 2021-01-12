@@ -4,6 +4,7 @@ title: 不等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBm9Sr'
 forumTopicId: 16787
+dashedName: comparison-with-the-inequality-operator
 ---
 
 # --description--

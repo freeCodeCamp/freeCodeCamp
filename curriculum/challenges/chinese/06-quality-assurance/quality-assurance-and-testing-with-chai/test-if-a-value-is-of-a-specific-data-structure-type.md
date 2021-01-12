@@ -3,6 +3,7 @@ id: 587d824e367417b2b2512c56
 title: 测试值是否为特定数据结构类型
 challengeType: 2
 forumTopicId: 301601
+dashedName: test-if-a-value-is-of-a-specific-data-structure-type
 ---
 
 # --description--

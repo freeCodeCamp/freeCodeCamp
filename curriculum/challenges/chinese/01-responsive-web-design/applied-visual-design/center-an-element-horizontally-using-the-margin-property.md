@@ -4,6 +4,7 @@ title: 使用 margin 属性将元素水平居中
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJqU4'
 forumTopicId: 301043
+dashedName: center-an-element-horizontally-using-the-margin-property
 ---
 
 # --description--

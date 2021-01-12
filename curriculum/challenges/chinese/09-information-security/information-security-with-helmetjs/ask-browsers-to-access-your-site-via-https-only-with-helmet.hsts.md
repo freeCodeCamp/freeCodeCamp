@@ -3,6 +3,7 @@ id: 587d8248367417b2b2512c3c
 title: 要求浏览器通过HTTPS访问您的站点仅限于使用helmet.hsts（）
 challengeType: 2
 forumTopicId: 301573
+dashedName: ask-browsers-to-access-your-site-via-https-only-with-helmet-hsts
 ---
 
 # --description--

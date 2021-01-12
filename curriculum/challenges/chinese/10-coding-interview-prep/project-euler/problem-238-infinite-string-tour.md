@@ -3,6 +3,7 @@ id: 5900f45b1000cf542c50ff6d
 title: 问题238：无限的字符串游览
 challengeType: 5
 videoUrl: ''
+dashedName: problem-238-infinite-string-tour
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ec5
 title: 约瑟夫斯问题
 challengeType: 5
 videoUrl: ''
+dashedName: josephus-problem
 ---
 
 # --description--

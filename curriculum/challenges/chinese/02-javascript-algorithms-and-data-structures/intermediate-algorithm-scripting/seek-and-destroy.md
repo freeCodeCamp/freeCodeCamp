@@ -3,6 +3,7 @@ id: a39963a4c10bc8b4d4f06d7e
 title: 过滤数组元素
 challengeType: 5
 forumTopicId: 16046
+dashedName: seek-and-destroy
 ---
 
 # --description--

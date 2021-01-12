@@ -3,6 +3,7 @@ id: ac6993d51946422351508a41
 title: 截断字符串
 challengeType: 5
 forumTopicId: 16089
+dashedName: truncate-a-string
 ---
 
 # --description--

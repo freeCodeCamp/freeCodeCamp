@@ -3,6 +3,7 @@ id: 5a4b7fcdb66f799f199e11db
 title: 建立乒乓球比赛
 challengeType: 3
 videoUrl: ''
+dashedName: build-a-pong-game
 ---
 
 # --description--

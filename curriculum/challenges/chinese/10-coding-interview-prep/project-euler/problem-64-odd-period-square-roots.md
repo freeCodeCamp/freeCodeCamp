@@ -3,6 +3,7 @@ id: 5900f3ac1000cf542c50febf
 title: 问题64：奇数期平方根
 challengeType: 5
 videoUrl: ''
+dashedName: problem-64-odd-period-square-roots
 ---
 
 # --description--

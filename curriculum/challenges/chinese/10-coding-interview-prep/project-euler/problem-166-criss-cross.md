@@ -3,6 +3,7 @@ id: 5900f4131000cf542c50ff25
 title: 问题166：克里斯十字架
 challengeType: 5
 videoUrl: ''
+dashedName: problem-166-criss-cross
 ---
 
 # --description--

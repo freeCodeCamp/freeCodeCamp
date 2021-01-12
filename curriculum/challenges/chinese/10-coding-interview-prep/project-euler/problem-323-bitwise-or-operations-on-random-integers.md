@@ -3,6 +3,7 @@ id: 5900f4b01000cf542c50ffc2
 title: 问题323：对随机整数进行按位或运算
 challengeType: 5
 videoUrl: ''
+dashedName: problem-323-bitwise-or-operations-on-random-integers
 ---
 
 # --description--

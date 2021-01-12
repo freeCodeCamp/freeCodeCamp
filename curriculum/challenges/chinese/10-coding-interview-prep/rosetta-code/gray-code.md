@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e80
 title: 格雷码
 challengeType: 5
 videoUrl: ''
+dashedName: gray-code
 ---
 
 # --description--

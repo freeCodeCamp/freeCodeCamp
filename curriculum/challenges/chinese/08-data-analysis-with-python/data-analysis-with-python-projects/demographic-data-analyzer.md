@@ -1,6 +1,7 @@
 ---
 id: 5e46f7e5ac417301a38fb929
 challengeType: 10
+dashedName: demographic-data-analyzer
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c45
 title: 匿名留言板
 challengeType: 4
 videoUrl: ''
+dashedName: anonymous-message-board
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7dbb367417b2b2512bac
 title: 删除开头和结尾的空白
 challengeType: 1
 forumTopicId: 301362
+dashedName: remove-whitespace-from-start-and-end
 ---
 
 # --description--

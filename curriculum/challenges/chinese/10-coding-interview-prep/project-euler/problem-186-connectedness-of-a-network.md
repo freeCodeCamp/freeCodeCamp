@@ -3,6 +3,7 @@ id: 5900f4281000cf542c50ff39
 title: 问题186：网络的连通性
 challengeType: 5
 videoUrl: ''
+dashedName: problem-186-connectedness-of-a-network
 ---
 
 # --description--

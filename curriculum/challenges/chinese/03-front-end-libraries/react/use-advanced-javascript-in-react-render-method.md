@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036183
 title: 在 React Render 方法中使用 JavaScript
 challengeType: 6
 forumTopicId: 301415
+dashedName: use-advanced-javascript-in-react-render-method
 ---
 
 # --description--

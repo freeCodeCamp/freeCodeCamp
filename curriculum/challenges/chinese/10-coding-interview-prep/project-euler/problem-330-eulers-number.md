@@ -3,6 +3,7 @@ id: 5900f4b71000cf542c50ffc9
 title: 问题330：欧拉数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-330-eulers-number
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3711000cf542c50fe84
 title: 问题5：最小的倍数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-5-smallest-multiple
 ---
 
 # --description--

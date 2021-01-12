@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036174
 title: 将 this 绑定到 Class 方法
 challengeType: 6
 forumTopicId: 301379
+dashedName: bind-this-to-a-class-method
 ---
 
 # --description--

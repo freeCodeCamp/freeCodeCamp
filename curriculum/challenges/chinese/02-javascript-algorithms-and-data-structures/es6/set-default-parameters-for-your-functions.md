@@ -3,6 +3,7 @@ id: 587d7b88367417b2b2512b46
 title: 设置函数的默认参数
 challengeType: 1
 forumTopicId: 301209
+dashedName: set-default-parameters-for-your-functions
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3d51000cf542c50fee6
 title: 问题104：Pandigital Fibonacci结束
 challengeType: 5
 videoUrl: ''
+dashedName: problem-104-pandigital-fibonacci-ends
 ---
 
 # --description--

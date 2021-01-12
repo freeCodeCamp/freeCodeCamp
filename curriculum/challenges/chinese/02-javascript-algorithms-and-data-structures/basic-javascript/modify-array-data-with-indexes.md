@@ -4,6 +4,7 @@ title: 通过索引修改数组中的数据
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/czQM4A8'
 forumTopicId: 18241
+dashedName: modify-array-data-with-indexes
 ---
 
 # --description--

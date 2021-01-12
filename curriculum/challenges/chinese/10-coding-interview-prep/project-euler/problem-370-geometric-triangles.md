@@ -3,6 +3,7 @@ id: 5900f4de1000cf542c50fff1
 title: 问题370：几何三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-370-geometric-triangles
 ---
 
 # --description--

@@ -1,6 +1,7 @@
 ---
 id: 5e601c0d5ac9d0ecd8b94afe
 challengeType: 4
+dashedName: american-british-translator
 ---
 
 # --description--

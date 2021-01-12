@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c89
 title: 实施快速排序
 challengeType: 1
 videoUrl: ''
+dashedName: implement-quick-sort
 ---
 
 # --description--

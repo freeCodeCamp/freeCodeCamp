@@ -3,6 +3,7 @@ id: 5900f5151000cf542c510028
 title: 问题425：主要连接
 challengeType: 5
 videoUrl: ''
+dashedName: problem-425-prime-connection
 ---
 
 # --description--

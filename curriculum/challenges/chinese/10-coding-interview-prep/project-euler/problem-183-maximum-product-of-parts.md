@@ -3,6 +3,7 @@ id: 5900f4231000cf542c50ff36
 title: 问题183：零件的最大产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-183-maximum-product-of-parts
 ---
 
 # --description--

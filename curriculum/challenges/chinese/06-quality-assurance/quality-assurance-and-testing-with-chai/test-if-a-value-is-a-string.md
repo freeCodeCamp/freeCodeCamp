@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c52
 title: 测试某个值是否为字符串
 challengeType: 2
 forumTopicId: 301599
+dashedName: test-if-a-value-is-a-string
 ---
 
 # --description--

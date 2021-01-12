@@ -3,6 +3,7 @@ id: 5900f4841000cf542c50ff97
 title: 问题280：蚂蚁和种子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-280-ant-and-seeds
 ---
 
 # --description--

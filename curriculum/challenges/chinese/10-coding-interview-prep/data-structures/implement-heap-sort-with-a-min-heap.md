@@ -3,6 +3,7 @@ id: 587d825b367417b2b2512c8c
 title: 用最小堆实现堆排序
 challengeType: 1
 videoUrl: ''
+dashedName: implement-heap-sort-with-a-min-heap
 ---
 
 # --description--

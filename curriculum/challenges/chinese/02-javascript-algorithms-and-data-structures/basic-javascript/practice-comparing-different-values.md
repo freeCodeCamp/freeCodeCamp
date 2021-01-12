@@ -4,6 +4,7 @@ title: 比较不同值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm8PqCa'
 forumTopicId: 301174
+dashedName: practice-comparing-different-values
 ---
 
 # --description--

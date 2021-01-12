@@ -3,6 +3,7 @@ id: 59880443fb36441083c6c20e
 title: 欧拉方法
 challengeType: 5
 videoUrl: ''
+dashedName: euler-method
 ---
 
 # --description--

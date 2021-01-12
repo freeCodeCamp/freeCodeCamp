@@ -4,6 +4,7 @@ title: 使用赋值运算符初始化变量
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
+dashedName: initializing-variables-with-the-assignment-operator
 ---
 
 # --description--

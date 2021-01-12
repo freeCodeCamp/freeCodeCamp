@@ -4,6 +4,7 @@ title: 使用关键字更改动画定时器
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKvwCM'
 forumTopicId: 301045
+dashedName: change-animation-timing-with-keywords
 ---
 
 # --description--

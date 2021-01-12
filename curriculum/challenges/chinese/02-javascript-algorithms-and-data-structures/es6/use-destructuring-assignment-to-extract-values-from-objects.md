@@ -3,6 +3,7 @@ id: 5cfa550e84205a357704ccb6
 title: 使用解构赋值来获取对象的值
 challengeType: 1
 forumTopicId: 301216
+dashedName: use-destructuring-assignment-to-extract-values-from-objects
 ---
 
 # --description--

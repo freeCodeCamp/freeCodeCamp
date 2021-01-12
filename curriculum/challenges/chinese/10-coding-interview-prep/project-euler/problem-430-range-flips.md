@@ -3,6 +3,7 @@ id: 5900f51a1000cf542c51002d
 title: 问题430：范围翻转
 challengeType: 5
 videoUrl: ''
+dashedName: problem-430-range-flips
 ---
 
 # --description--

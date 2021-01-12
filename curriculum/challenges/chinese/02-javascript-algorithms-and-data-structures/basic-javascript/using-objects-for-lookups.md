@@ -4,6 +4,7 @@ title: 使用对象进行查找
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
 forumTopicId: 18373
+dashedName: using-objects-for-lookups
 ---
 
 # --description--

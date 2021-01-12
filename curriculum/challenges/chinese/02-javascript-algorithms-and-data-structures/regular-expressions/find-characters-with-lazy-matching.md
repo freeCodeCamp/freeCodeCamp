@@ -3,6 +3,7 @@ id: 587d7db6367417b2b2512b9b
 title: 用惰性匹配来查找字符
 challengeType: 1
 forumTopicId: 301341
+dashedName: find-characters-with-lazy-matching
 ---
 
 # --description--

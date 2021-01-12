@@ -2,6 +2,7 @@
 id: 5e7b9f180b6c005b0e76f08e
 challengeType: 11
 videoId: CSbqczsHVnc
+dashedName: relational-databases-relationship-building
 ---
 
 # --question--

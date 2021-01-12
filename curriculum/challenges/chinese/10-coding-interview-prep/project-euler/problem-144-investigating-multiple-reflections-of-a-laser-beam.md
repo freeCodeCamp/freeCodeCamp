@@ -3,6 +3,7 @@ id: 5900f3fc1000cf542c50ff0f
 title: 问题144：研究激光束的多次反射
 challengeType: 5
 videoUrl: ''
+dashedName: problem-144-investigating-multiple-reflections-of-a-laser-beam
 ---
 
 # --description--

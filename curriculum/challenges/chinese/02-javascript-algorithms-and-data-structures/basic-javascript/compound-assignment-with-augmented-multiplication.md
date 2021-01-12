@@ -4,6 +4,7 @@ title: 复合赋值之 *=
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c83vrfa'
 forumTopicId: 16662
+dashedName: compound-assignment-with-augmented-multiplication
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036142
 title: 首先在本地管理状态
 challengeType: 6
 forumTopicId: 301431
+dashedName: manage-state-locally-first
 ---
 
 # --description--

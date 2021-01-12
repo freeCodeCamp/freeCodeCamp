@@ -3,6 +3,7 @@ id: 58965611f9fc0f352b528e6c
 title: 用户退出登录
 challengeType: 2
 forumTopicId: 301560
+dashedName: logging-a-user-out
 ---
 
 # --description--

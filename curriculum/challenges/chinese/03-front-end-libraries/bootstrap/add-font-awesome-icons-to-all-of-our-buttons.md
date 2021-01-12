@@ -5,6 +5,7 @@ challengeType: 0
 required:
   - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
+dashedName: add-font-awesome-icons-to-all-of-our-buttons
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: bad87fee1348bd9aed308826
 title: 使用 jQuery 选择元素的父元素
 challengeType: 6
 forumTopicId: 18321
+dashedName: target-the-parent-of-an-element-using-jquery
 ---
 
 # --description--

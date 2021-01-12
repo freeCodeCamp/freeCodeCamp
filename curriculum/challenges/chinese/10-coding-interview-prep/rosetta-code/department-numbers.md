@@ -3,6 +3,7 @@ id: 59f40b17e79dbf1ab720ed7a
 title: 部门编号
 challengeType: 5
 videoUrl: ''
+dashedName: department-numbers
 ---
 
 # --description--

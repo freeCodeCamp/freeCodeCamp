@@ -3,6 +3,7 @@ id: 5900f5071000cf542c510018
 title: 问题410：圆和切线
 challengeType: 5
 videoUrl: ''
+dashedName: problem-410-circle-and-tangent-line
 ---
 
 # --description--

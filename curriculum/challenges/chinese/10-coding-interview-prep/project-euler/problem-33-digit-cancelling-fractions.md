@@ -3,6 +3,7 @@ id: 5900f38d1000cf542c50fea0
 title: 问题33：数字取消分数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-33-digit-cancelling-fractions
 ---
 
 # --description--

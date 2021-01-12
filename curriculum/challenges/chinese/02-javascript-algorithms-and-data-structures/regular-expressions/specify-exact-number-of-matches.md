@@ -3,6 +3,7 @@ id: 587d7db9367417b2b2512ba7
 title: 指定匹配的确切数量
 challengeType: 1
 forumTopicId: 301365
+dashedName: specify-exact-number-of-matches
 ---
 
 # --description--

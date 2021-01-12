@@ -4,6 +4,7 @@ title: 为链接添加描述性的文本
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437DcV'
 forumTopicId: 301013
+dashedName: give-links-meaning-by-using-descriptive-link-text
 ---
 
 # --description--
@@ -34,7 +35,7 @@ assert(
 assert($('a').attr('href') === '');
 ```
 
-`a` 元素应该有一个结束标签。 
+`a` 元素应该有一个结束标签。
 
 ```js
 assert(

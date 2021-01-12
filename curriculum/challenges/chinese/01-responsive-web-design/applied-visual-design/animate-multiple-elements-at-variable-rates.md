@@ -4,6 +4,7 @@ title: 以可变速率来给多个元素添加动画
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpWZc9'
 forumTopicId: 301042
+dashedName: animate-multiple-elements-at-variable-rates
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7fb4367417b2b2512bfe
 title: 给 package.json 添加许可证
 challengeType: 2
 forumTopicId: 301523
+dashedName: add-a-license-to-your-package-json
 ---
 
 # --description--

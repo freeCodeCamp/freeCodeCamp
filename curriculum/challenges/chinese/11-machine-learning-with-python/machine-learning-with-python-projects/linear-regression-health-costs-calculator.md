@@ -1,6 +1,7 @@
 ---
 id: 5e46f8edac417301a38fb930
 challengeType: 10
+dashedName: linear-regression-health-costs-calculator
 ---
 
 # --description--

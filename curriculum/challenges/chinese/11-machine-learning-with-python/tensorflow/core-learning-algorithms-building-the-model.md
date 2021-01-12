@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d8e
 challengeType: 11
 videoId: 5wHw8BTd2ZQ
+dashedName: core-learning-algorithms-building-the-model
 ---
 
 # --question--

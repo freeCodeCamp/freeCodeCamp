@@ -3,6 +3,7 @@ id: 5900f4c81000cf542c50ffda
 title: 问题345：矩阵求和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-345-matrix-sum
 ---
 
 # --description--

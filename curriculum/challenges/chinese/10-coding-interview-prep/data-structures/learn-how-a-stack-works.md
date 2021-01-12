@@ -3,6 +3,7 @@ id: 587d8250367417b2b2512c5e
 title: 了解堆栈的工作原理
 challengeType: 1
 videoUrl: ''
+dashedName: learn-how-a-stack-works
 ---
 
 # --description--

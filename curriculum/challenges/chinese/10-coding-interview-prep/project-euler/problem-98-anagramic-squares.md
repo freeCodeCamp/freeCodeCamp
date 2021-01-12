@@ -3,6 +3,7 @@ id: 5900f3cf1000cf542c50fee1
 title: 问题98：Anagramic正方形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-98-anagramic-squares
 ---
 
 # --description--

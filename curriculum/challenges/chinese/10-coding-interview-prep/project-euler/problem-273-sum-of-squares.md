@@ -3,6 +3,7 @@ id: 5900f47e1000cf542c50ff90
 title: 问题273：正方形的总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-273-sum-of-squares
 ---
 
 # --description--

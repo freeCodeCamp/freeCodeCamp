@@ -4,6 +4,7 @@ title: 理解未初始化的变量
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
+dashedName: understanding-uninitialized-variables
 ---
 
 # --description--

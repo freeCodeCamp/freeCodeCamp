@@ -4,6 +4,7 @@ title: 使用 hr 标签创建水平线
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bR8t7'
 forumTopicId: 301049
+dashedName: create-a-horizontal-line-using-the-hr-element
 ---
 
 # --description--

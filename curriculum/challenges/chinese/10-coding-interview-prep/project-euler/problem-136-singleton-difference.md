@@ -3,6 +3,7 @@ id: 5900f3f51000cf542c50ff07
 title: 问题136：单身人士差异
 challengeType: 5
 videoUrl: ''
+dashedName: problem-136-singleton-difference
 ---
 
 # --description--

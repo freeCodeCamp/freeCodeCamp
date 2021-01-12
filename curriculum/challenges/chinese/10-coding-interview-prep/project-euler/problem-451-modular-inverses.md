@@ -3,6 +3,7 @@ id: 5900f5311000cf542c510042
 title: 问题451：模逆
 challengeType: 5
 videoUrl: ''
+dashedName: problem-451-modular-inverses
 ---
 
 # --description--

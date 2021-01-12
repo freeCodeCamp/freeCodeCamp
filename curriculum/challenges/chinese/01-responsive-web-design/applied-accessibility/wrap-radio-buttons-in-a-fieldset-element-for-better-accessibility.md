@@ -4,6 +4,7 @@ title: 将单选按钮包裹在 fieldset 元素中以获得更好的可访问性
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030
+dashedName: wrap-radio-buttons-in-a-fieldset-element-for-better-accessibility
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8254367417b2b2512c70
 title: 在ES6中创建和添加集
 challengeType: 1
 videoUrl: ''
+dashedName: create-and-add-to-sets-in-es6
 ---
 
 # --description--

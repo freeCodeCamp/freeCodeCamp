@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7d
 title: 找到二叉搜索树的最小和最大高度
 challengeType: 1
 videoUrl: ''
+dashedName: find-the-minimum-and-maximum-height-of-a-binary-search-tree
 ---
 
 # --description--

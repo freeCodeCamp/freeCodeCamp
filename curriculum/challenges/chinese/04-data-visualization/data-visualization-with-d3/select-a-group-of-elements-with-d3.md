@@ -3,6 +3,7 @@ id: 587d7fa6367417b2b2512bc3
 title: 用 D3 选择一组元素
 challengeType: 6
 forumTopicId: 301490
+dashedName: select-a-group-of-elements-with-d3
 ---
 
 # --description--

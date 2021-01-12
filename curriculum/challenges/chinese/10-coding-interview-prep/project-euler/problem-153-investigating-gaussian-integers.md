@@ -3,6 +3,7 @@ id: 5900f4051000cf542c50ff18
 title: 问题153：调查高斯整数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-153-investigating-gaussian-integers
 ---
 
 # --description--

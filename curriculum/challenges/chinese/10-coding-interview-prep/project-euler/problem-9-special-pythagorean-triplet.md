@@ -3,6 +3,7 @@ id: 5900f3761000cf542c50fe88
 title: 问题9：特殊的毕达哥拉斯三重奏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-9-special-pythagorean-triplet
 ---
 
 # --description--

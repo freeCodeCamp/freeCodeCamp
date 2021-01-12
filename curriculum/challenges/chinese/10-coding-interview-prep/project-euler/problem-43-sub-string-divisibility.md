@@ -3,6 +3,7 @@ id: 5900f3971000cf542c50feaa
 title: 问题43：子串可分性
 challengeType: 5
 videoUrl: ''
+dashedName: problem-43-sub-string-divisibility
 ---
 
 # --description--

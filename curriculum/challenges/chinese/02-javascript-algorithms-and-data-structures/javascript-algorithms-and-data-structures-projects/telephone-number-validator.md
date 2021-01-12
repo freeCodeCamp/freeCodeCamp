@@ -3,6 +3,7 @@ id: aff0395860f5d3034dc0bfc9
 title: 电话号码检查器
 challengeType: 5
 forumTopicId: 16090
+dashedName: telephone-number-validator
 ---
 
 # --description--

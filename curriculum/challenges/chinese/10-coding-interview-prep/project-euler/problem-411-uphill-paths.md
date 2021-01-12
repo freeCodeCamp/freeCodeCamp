@@ -3,6 +3,7 @@ id: 5900f5081000cf542c510019
 title: 问题411：上坡路径
 challengeType: 5
 videoUrl: ''
+dashedName: problem-411-uphill-paths
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7fb5367417b2b2512c02
 title: 用波浪字符始终使用依赖项的最新补丁版本
 challengeType: 2
 forumTopicId: 301532
+dashedName: use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-dependency
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用 grid-row-gap 创建多行之间的间距
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cPbJ2Cv'
 forumTopicId: 301125
+dashedName: create-a-row-gap-using-grid-row-gap
 ---
 
 # --description--

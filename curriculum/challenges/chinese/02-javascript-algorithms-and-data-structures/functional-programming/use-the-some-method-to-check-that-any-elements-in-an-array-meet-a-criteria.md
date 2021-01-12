@@ -3,6 +3,7 @@ id: 587d7dab367417b2b2512b6f
 title: 使用 some 方法检查数组中是否有元素是否符合条件
 challengeType: 1
 forumTopicId: 301314
+dashedName: use-the-some-method-to-check-that-any-elements-in-an-array-meet-a-criteria
 ---
 
 # --description--

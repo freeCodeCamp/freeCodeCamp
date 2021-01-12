@@ -3,6 +3,7 @@ id: 587d78b2367417b2b2512b10
 title: 使用 splice() 删除元素
 challengeType: 1
 forumTopicId: 301166
+dashedName: remove-items-using-splice
 ---
 
 # --description--

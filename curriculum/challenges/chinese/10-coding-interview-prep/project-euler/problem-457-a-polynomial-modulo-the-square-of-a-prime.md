@@ -3,6 +3,7 @@ id: 5900f5361000cf542c510048
 title: 问题457：多项式以素数的平方为模
 challengeType: 5
 videoUrl: ''
+dashedName: problem-457-a-polynomial-modulo-the-square-of-a-prime
 ---
 
 # --description--

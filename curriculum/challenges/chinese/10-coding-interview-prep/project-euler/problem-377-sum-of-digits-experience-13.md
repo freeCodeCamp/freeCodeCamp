@@ -3,6 +3,7 @@ id: 5900f4e51000cf542c50fff8
 title: 问题377：数字之和，经验13
 challengeType: 5
 videoUrl: ''
+dashedName: problem-377-sum-of-digits-experience-13
 ---
 
 # --description--

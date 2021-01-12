@@ -4,6 +4,7 @@ title: 使用三元运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JRmSg'
 forumTopicId: 301181
+dashedName: use-the-conditional-ternary-operator
 ---
 
 # --description--

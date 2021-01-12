@@ -3,6 +3,7 @@ id: 5900f40e1000cf542c50ff21
 title: 问题162：十六进制数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-162-hexadecimal-numbers
 ---
 
 # --description--

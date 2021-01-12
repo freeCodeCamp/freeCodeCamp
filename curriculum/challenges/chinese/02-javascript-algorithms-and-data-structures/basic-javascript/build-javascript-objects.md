@@ -4,6 +4,7 @@ title: 新建 JavaScript 对象
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWGkbtd'
 forumTopicId: 16769
+dashedName: build-javascript-objects
 ---
 
 # --description--

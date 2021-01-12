@@ -3,6 +3,7 @@ id: 5900f4ba1000cf542c50ffcd
 title: 问题334：溢出豆子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-334-spilling-the-beans
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用 justify-content 属性对齐元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43gnHm'
 forumTopicId: 301102
+dashedName: align-elements-using-the-justify-content-property
 ---
 
 # --description--

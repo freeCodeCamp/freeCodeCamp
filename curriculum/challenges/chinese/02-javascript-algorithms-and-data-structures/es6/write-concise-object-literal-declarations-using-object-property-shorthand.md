@@ -3,6 +3,7 @@ id: 587d7b8a367417b2b2512b4f
 title: 使用简单字段编写简洁的对象字面量声明
 challengeType: 1
 forumTopicId: 301225
+dashedName: write-concise-object-literal-declarations-using-object-property-shorthand
 ---
 
 # --description--

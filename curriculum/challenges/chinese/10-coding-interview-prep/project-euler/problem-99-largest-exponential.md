@@ -3,6 +3,7 @@ id: 5900f3d01000cf542c50fee2
 title: 问题99：最大的指数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-99-largest-exponential
 ---
 
 # --description--

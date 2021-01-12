@@ -3,6 +3,7 @@ id: 5900f37a1000cf542c50fe8c
 title: 问题13：大笔金额
 challengeType: 5
 videoUrl: ''
+dashedName: problem-13-large-sum
 ---
 
 # --description--

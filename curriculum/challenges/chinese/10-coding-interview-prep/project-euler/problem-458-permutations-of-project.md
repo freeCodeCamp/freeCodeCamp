@@ -3,6 +3,7 @@ id: 5900f5361000cf542c510049
 title: 问题458：项目的排列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-458-permutations-of-project
 ---
 
 # --description--

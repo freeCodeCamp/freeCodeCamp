@@ -3,6 +3,7 @@ id: 5900f37b1000cf542c50fe8e
 title: 问题15：格子路径
 challengeType: 5
 videoUrl: ''
+dashedName: problem-15-lattice-paths
 ---
 
 # --description--

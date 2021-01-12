@@ -3,6 +3,7 @@ id: 5900f3c51000cf542c50fed7
 title: 问题89：罗马数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-89-roman-numerals
 ---
 
 # --description--

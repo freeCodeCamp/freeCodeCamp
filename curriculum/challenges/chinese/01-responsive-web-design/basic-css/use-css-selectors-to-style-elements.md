@@ -4,6 +4,7 @@ title: 使用元素选择器来设置元素的样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKMBT2'
 forumTopicId: 18349
+dashedName: use-css-selectors-to-style-elements
 ---
 
 # --description--

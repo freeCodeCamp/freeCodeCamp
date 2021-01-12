@@ -4,6 +4,7 @@ title: 元素嵌套
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNW4kC3'
 forumTopicId: 18246
+dashedName: nest-many-elements-within-a-single-div-element
 ---
 
 # --description--

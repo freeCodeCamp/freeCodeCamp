@@ -3,6 +3,7 @@ id: 587d7db2367417b2b2512b8b
 title: 了解立即调用函数表达（IIFE）
 challengeType: 1
 forumTopicId: 301328
+dashedName: understand-the-immediately-invoked-function-expression-iife
 ---
 
 # --description--

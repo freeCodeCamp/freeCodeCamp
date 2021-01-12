@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036187
 title: 使用三元表达式进行条件渲染
 challengeType: 6
 forumTopicId: 301414
+dashedName: use-a-ternary-expression-for-conditional-rendering
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24bbe0dba28a8d3cbd4c5f
 title: 渲染 HTML 元素为 DOM 树
 challengeType: 6
 forumTopicId: 301406
+dashedName: render-html-elements-to-the-dom
 ---
 
 # --description--

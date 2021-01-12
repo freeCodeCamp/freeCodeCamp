@@ -3,6 +3,7 @@ id: 5900f3cc1000cf542c50fedf
 title: 问题96：苏杜库
 challengeType: 5
 videoUrl: ''
+dashedName: problem-96-su-doku
 ---
 
 # --description--

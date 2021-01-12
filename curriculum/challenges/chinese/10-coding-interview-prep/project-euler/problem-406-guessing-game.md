@@ -3,6 +3,7 @@ id: 5900f5021000cf542c510015
 title: 问题406：猜猜游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-406-guessing-game
 ---
 
 # --description--

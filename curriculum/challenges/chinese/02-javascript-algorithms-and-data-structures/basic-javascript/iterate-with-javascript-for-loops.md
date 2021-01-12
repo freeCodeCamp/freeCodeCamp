@@ -4,6 +4,7 @@ title: for 循环
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNVCe'
 forumTopicId: 18219
+dashedName: iterate-with-javascript-for-loops
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用 class 选择器设置单个元素的样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvDtV'
 forumTopicId: 18337
+dashedName: use-a-css-class-to-style-an-element
 ---
 
 # --description--

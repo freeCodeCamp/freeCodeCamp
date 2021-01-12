@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b3f
 title: 探索 var 和 let 关键字之间的差异
 challengeType: 1
 forumTopicId: 301202
+dashedName: explore-differences-between-the-var-and-let-keywords
 ---
 
 # --description--

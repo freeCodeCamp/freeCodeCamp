@@ -3,6 +3,7 @@ id: 587d7db8367417b2b2512ba3
 title: 匹配空白字符
 challengeType: 1
 forumTopicId: 301359
+dashedName: match-whitespace
 ---
 
 # --description--

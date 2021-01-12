@@ -3,6 +3,7 @@ id: 587d7fab367417b2b2512bd9
 title: 向散点图的 Circles 添加标签
 challengeType: 6
 forumTopicId: 301477
+dashedName: add-labels-to-scatter-plot-circles
 ---
 
 # --description--

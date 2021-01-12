@@ -3,6 +3,7 @@ id: 5900f3951000cf542c50fea8
 title: 问题41：Pandigital prime
 challengeType: 5
 videoUrl: ''
+dashedName: problem-41-pandigital-prime
 ---
 
 # --description--

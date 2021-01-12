@@ -3,6 +3,7 @@ id: 587d7b7b367417b2b2512b17
 title: 使用展开运算符合并数组
 challengeType: 1
 forumTopicId: 301156
+dashedName: combine-arrays-with-the-spread-operator
 ---
 
 # --description--

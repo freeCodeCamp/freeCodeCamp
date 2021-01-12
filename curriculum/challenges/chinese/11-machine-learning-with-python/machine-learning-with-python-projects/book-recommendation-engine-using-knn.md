@@ -1,6 +1,7 @@
 ---
 id: 5e46f8e3ac417301a38fb92f
 challengeType: 10
+dashedName: book-recommendation-engine-using-knn
 ---
 
 # --description--

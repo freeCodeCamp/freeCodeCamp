@@ -3,6 +3,7 @@ id: 5900f3fa1000cf542c50ff0c
 title: 问题140：改进的斐波那契金块
 challengeType: 5
 videoUrl: ''
+dashedName: problem-140-modified-fibonacci-golden-nuggets
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3db1000cf542c50feed
 title: 问题110：丢番图互惠II
 challengeType: 5
 videoUrl: ''
+dashedName: problem-110-diophantine-reciprocals-ii
 ---
 
 # --description--

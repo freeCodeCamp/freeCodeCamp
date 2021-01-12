@@ -3,6 +3,7 @@ id: 5900f4d61000cf542c50ffe9
 title: 问题362：无广义因子
 challengeType: 5
 videoUrl: ''
+dashedName: problem-362-squarefree-factors
 ---
 
 # --description--

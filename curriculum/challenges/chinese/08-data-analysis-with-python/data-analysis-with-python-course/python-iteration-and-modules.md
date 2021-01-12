@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c167
 challengeType: 11
 videoId: XzosGWLafrY
+dashedName: python-iteration-and-modules
 ---
 
 # --description--

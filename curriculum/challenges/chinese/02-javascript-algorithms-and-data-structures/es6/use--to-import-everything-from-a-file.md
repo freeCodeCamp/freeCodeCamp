@@ -3,6 +3,7 @@ id: 587d7b8c367417b2b2512b57
 title: 用 * 从文件中导入所有内容
 challengeType: 1
 forumTopicId: 301210
+dashedName: use--to-import-everything-from-a-file
 ---
 
 # --description--

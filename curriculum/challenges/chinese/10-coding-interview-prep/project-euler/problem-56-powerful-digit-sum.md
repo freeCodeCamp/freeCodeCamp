@@ -3,6 +3,7 @@ id: 5900f3a41000cf542c50feb7
 title: 问题56：强大的数字总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-56-powerful-digit-sum
 ---
 
 # --description--

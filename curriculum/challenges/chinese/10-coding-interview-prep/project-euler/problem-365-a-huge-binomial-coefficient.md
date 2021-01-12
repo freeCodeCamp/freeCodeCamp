@@ -3,6 +3,7 @@ id: 5900f4da1000cf542c50ffec
 title: 问题365：巨大的二项式系数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-365-a-huge-binomial-coefficient
 ---
 
 # --description--

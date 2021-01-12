@@ -4,6 +4,7 @@ title: 使用 height 属性调整元素的宽度
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
+dashedName: adjust-the-height-of-an-element-using-the-height-property
 ---
 
 # --description--

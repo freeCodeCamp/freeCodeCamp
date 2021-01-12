@@ -3,6 +3,7 @@ id: acda2fb1324d9b0fa741e6b5
 title: 检查字符串结尾
 challengeType: 5
 forumTopicId: 16006
+dashedName: confirm-the-ending
 ---
 
 # --description--

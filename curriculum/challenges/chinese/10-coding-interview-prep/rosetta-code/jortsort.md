@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ec4
 title: JortSort
 challengeType: 5
 videoUrl: ''
+dashedName: jortsort
 ---
 
 # --description--

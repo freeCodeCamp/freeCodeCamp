@@ -3,6 +3,7 @@ id: 5900f49d1000cf542c50ffb0
 title: 问题305：反身姿势
 challengeType: 5
 videoUrl: ''
+dashedName: problem-305-reflexive-position
 ---
 
 # --description--

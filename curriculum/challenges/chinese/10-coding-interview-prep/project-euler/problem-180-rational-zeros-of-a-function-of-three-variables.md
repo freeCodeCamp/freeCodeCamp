@@ -3,6 +3,7 @@ id: 5900f4201000cf542c50ff33
 title: 问题180：三个变量函数的有理零点
 challengeType: 5
 videoUrl: ''
+dashedName: problem-180-rational-zeros-of-a-function-of-three-variables
 ---
 
 # --description--

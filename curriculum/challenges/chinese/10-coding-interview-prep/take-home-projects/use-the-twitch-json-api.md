@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd1f
 title: 使用Twitch JSON API
 challengeType: 3
 videoUrl: ''
+dashedName: use-the-twitch-json-api
 ---
 
 # --description--

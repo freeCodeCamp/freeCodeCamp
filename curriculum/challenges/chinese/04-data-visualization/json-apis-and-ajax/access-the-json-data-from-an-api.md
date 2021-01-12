@@ -3,6 +3,7 @@ id: 587d7fae367417b2b2512be4
 title: 访问来自 API 的 JSON 数据
 challengeType: 6
 forumTopicId: 301499
+dashedName: access-the-json-data-from-an-api
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f50b1000cf542c51001d
 title: 问题414：标题常量
 challengeType: 5
 videoUrl: ''
+dashedName: problem-414-kaprekar-constant
 ---
 
 # --description--

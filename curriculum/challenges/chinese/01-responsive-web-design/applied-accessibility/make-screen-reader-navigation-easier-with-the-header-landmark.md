@@ -4,6 +4,7 @@ title: 使用 header 元素来让屏幕阅读器更容易进行导航
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
 forumTopicId: 301023
+dashedName: make-screen-reader-navigation-easier-with-the-header-landmark
 ---
 
 # --description--

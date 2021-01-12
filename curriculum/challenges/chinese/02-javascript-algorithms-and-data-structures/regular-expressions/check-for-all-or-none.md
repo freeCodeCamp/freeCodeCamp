@@ -3,6 +3,7 @@ id: 587d7dba367417b2b2512ba8
 title: 检查全部或无
 challengeType: 1
 forumTopicId: 301338
+dashedName: check-for-all-or-none
 ---
 
 # --description--

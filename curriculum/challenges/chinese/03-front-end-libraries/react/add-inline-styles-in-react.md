@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036182
 title: 在 React 中添加内联样式
 challengeType: 6
 forumTopicId: 301378
+dashedName: add-inline-styles-in-react
 ---
 
 # --description--

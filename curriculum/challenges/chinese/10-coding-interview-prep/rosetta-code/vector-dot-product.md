@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad3
 title: 矢量点积
 challengeType: 5
 videoUrl: ''
+dashedName: vector-dot-product
 ---
 
 # --description--

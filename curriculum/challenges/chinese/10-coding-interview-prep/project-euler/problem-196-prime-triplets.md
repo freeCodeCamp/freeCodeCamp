@@ -3,6 +3,7 @@ id: 5900f4301000cf542c50ff42
 title: 问题196：Prime三胞胎
 challengeType: 5
 videoUrl: ''
+dashedName: problem-196-prime-triplets
 ---
 
 # --description--

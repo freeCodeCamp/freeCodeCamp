@@ -3,6 +3,7 @@ id: 587d7db8367417b2b2512ba1
 title: 匹配所有非数字
 challengeType: 1
 forumTopicId: 301347
+dashedName: match-all-non-numbers
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3dd1000cf542c50fef0
 title: 问题113：非弹性数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-113-non-bouncy-numbers
 ---
 
 # --description--

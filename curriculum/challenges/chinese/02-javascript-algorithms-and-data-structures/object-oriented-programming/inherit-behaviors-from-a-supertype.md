@@ -3,6 +3,7 @@ id: 587d7db0367417b2b2512b84
 title: 从超类继承行为
 challengeType: 1
 forumTopicId: 301319
+dashedName: inherit-behaviors-from-a-supertype
 ---
 
 # --description--

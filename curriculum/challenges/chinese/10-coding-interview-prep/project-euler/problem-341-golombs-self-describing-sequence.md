@@ -3,6 +3,7 @@ id: 5900f4c11000cf542c50ffd3
 title: 问题341：Golomb的自我描述序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-341-golombs-self-describing-sequence
 ---
 
 # --description--

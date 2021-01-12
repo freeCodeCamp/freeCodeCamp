@@ -3,6 +3,7 @@ id: 5900f4771000cf542c50ff89
 title: 问题266：伪平方根
 challengeType: 5
 videoUrl: ''
+dashedName: problem-266-pseudo-square-root
 ---
 
 # --description--

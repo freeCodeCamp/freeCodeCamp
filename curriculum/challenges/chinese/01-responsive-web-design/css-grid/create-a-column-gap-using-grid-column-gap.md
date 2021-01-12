@@ -4,6 +4,7 @@ title: 使用 grid-column-gap 创建多列之间的间距
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
+dashedName: create-a-column-gap-using-grid-column-gap
 ---
 
 # --description--

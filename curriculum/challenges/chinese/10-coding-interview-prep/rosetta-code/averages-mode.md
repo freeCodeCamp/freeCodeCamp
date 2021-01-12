@@ -3,6 +3,7 @@ id: 594d8d0ab97724821379b1e6
 title: 平均值模式
 challengeType: 5
 videoUrl: ''
+dashedName: averagesmode
 ---
 
 # --description--

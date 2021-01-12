@@ -3,6 +3,7 @@ id: 5900f3701000cf542c50fe83
 title: 问题4：最大的回文产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-4-largest-palindrome-product
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036181
 title: 介绍内联样式
 challengeType: 6
 forumTopicId: 301395
+dashedName: introducing-inline-styles
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f40d1000cf542c50ff20
 title: 问题161：Triominoes
 challengeType: 5
 videoUrl: ''
+dashedName: problem-161-triominoes
 ---
 
 # --description--

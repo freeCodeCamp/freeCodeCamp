@@ -3,6 +3,7 @@ id: 5900f52a1000cf542c51003c
 title: 问题445：撤回A.
 challengeType: 5
 videoUrl: ''
+dashedName: problem-445-retractions-a
 ---
 
 # --description--

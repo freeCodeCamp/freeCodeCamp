@@ -3,6 +3,7 @@ id: 8d5123c8c441eddfaeb5bdef
 title: 实施冒泡排序
 challengeType: 1
 videoUrl: ''
+dashedName: implement-bubble-sort
 ---
 
 # --description--

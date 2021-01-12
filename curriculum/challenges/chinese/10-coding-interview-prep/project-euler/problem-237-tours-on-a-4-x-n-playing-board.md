@@ -3,6 +3,7 @@ id: 5900f4591000cf542c50ff6c
 title: 问题237：在4 x n游戏板上游览
 challengeType: 5
 videoUrl: ''
+dashedName: problem-237-tours-on-a-4-x-n-playing-board
 ---
 
 # --description--

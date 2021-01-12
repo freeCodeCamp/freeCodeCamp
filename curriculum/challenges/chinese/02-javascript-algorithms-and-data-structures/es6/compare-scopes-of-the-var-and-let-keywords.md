@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b40
 title: 比较 var 和 let 关键字的作用域
 challengeType: 1
 forumTopicId: 301195
+dashedName: compare-scopes-of-the-var-and-let-keywords
 ---
 
 # --description--

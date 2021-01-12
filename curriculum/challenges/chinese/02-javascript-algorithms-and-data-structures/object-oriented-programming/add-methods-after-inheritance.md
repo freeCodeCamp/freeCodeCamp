@@ -3,6 +3,7 @@ id: 587d7db1367417b2b2512b87
 title: 继承后添加方法
 challengeType: 1
 forumTopicId: 301315
+dashedName: add-methods-after-inheritance
 ---
 
 # --description--

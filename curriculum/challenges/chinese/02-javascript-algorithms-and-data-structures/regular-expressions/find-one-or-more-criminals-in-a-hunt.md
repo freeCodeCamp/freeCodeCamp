@@ -3,6 +3,7 @@ id: 587d7db7367417b2b2512b9c
 title: 在狩猎中找到一个或多个罪犯
 challengeType: 1
 forumTopicId: 301343
+dashedName: find-one-or-more-criminals-in-a-hunt
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用 u 标签给文本添加下划线
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6aQCL'
 forumTopicId: 301082
+dashedName: use-the-u-tag-to-underline-text
 ---
 
 # --description--

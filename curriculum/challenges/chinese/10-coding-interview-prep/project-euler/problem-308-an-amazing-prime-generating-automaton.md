@@ -3,6 +3,7 @@ id: 5900f4a11000cf542c50ffb3
 title: 问题308：惊人的生成素数的自动机
 challengeType: 5
 videoUrl: ''
+dashedName: problem-308-an-amazing-prime-generating-automaton
 ---
 
 # --description--

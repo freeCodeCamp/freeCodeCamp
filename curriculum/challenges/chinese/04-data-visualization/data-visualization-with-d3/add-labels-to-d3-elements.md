@@ -3,6 +3,7 @@ id: 587d7faa367417b2b2512bd2
 title: 给 D3 元素添加标签
 challengeType: 6
 forumTopicId: 301476
+dashedName: add-labels-to-d3-elements
 ---
 
 # --description--

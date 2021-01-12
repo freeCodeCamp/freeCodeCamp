@@ -3,6 +3,7 @@ id: 587d8250367417b2b2512c60
 title: 创建队列类
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-queue-class
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4291000cf542c50ff3b
 title: 问题188：数字的过度扩展
 challengeType: 5
 videoUrl: ''
+dashedName: problem-188-the-hyperexponentiation-of-a-number
 ---
 
 # --description--

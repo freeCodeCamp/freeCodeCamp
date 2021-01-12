@@ -3,6 +3,7 @@ id: 5900f4971000cf542c50ffa9
 title: 问题298：选择性健忘症
 challengeType: 5
 videoUrl: ''
+dashedName: problem-298-selective-amnesia
 ---
 
 # --description--

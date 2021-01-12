@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617b
 title: 传递回调作为 Props
 challengeType: 6
 forumTopicId: 301400
+dashedName: pass-a-callback-as-props
 ---
 
 # --description--

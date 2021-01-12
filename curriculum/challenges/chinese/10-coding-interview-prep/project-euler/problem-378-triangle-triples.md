@@ -3,6 +3,7 @@ id: 5900f4e61000cf542c50fff9
 title: 问题378：三角形三元组
 challengeType: 5
 videoUrl: ''
+dashedName: problem-378-triangle-triples
 ---
 
 # --description--

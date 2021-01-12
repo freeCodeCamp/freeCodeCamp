@@ -3,6 +3,7 @@ id: 5900f4fa1000cf542c51000d
 title: 问题398：切割绳索
 challengeType: 5
 videoUrl: ''
+dashedName: problem-398-cutting-rope
 ---
 
 # --description--

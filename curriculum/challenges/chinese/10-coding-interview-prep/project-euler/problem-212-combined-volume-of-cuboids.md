@@ -3,6 +3,7 @@ id: 5900f4411000cf542c50ff53
 title: 问题212：长方体的组合体积
 challengeType: 5
 videoUrl: ''
+dashedName: problem-212-combined-volume-of-cuboids
 ---
 
 # --description--

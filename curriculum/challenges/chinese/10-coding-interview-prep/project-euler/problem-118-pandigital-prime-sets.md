@@ -3,6 +3,7 @@ id: 5900f3e21000cf542c50fef5
 title: 问题118：Pandigital prime set
 challengeType: 5
 videoUrl: ''
+dashedName: problem-118-pandigital-prime-sets
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036163
 title: 创建一个 React 组件
 challengeType: 6
 forumTopicId: 301386
+dashedName: create-a-react-component
 ---
 
 # --description--

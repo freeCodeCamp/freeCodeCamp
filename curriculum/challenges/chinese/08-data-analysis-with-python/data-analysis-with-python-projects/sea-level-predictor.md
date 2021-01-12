@@ -1,6 +1,7 @@
 ---
 id: 5e4f5c4b570f7e3a4949899f
 challengeType: 10
+dashedName: sea-level-predictor
 ---
 
 # --description--

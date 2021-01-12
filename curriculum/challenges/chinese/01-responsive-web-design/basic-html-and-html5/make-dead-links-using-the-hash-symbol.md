@@ -4,6 +4,7 @@ title: '用 # 号来创建链接占位符'
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMdkytL'
 forumTopicId: 18230
+dashedName: make-dead-links-using-the-hash-symbol
 ---
 
 # --description--

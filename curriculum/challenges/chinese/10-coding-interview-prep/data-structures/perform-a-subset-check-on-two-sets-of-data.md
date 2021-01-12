@@ -3,6 +3,7 @@ id: 587d8254367417b2b2512c6f
 title: 对两组数据执行子集检查
 challengeType: 1
 videoUrl: ''
+dashedName: perform-a-subset-check-on-two-sets-of-data
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4b21000cf542c50ffc5
 title: 问题326：模数汇总
 challengeType: 5
 videoUrl: ''
+dashedName: problem-326-modulo-summations
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036167
 title: 渲染 class 组件为 Dom 树
 challengeType: 6
 forumTopicId: 301404
+dashedName: render-a-class-component-to-the-dom
 ---
 
 # --description--

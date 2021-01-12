@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036170
 title: 创建一个有状态的组件
 challengeType: 6
 forumTopicId: 301391
+dashedName: create-a-stateful-component
 ---
 
 # --description--

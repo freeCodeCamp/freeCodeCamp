@@ -4,6 +4,7 @@ title: 给 CSS 变量附加回退值
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
+dashedName: attach-a-fallback-value-to-a-css-variable
 ---
 
 # --description--

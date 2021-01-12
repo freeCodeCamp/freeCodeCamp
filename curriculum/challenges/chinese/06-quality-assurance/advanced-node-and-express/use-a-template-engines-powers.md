@@ -3,6 +3,7 @@ id: 5895f70bf9fc0f352b528e64
 title: 使用模板引擎
 challengeType: 2
 forumTopicId: 301567
+dashedName: use-a-template-engines-powers
 ---
 
 # --description--

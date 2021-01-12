@@ -3,6 +3,7 @@ id: 587d7b8d367417b2b2512b59
 title: 导入一个默认的导出
 challengeType: 1
 forumTopicId: 301205
+dashedName: import-a-default-export
 ---
 
 # --description--

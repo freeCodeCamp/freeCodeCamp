@@ -3,6 +3,7 @@ id: 5900f44e1000cf542c50ff5f
 title: 问题224：几乎直角三角形II
 challengeType: 5
 videoUrl: ''
+dashedName: problem-224-almost-right-angled-triangles-ii
 ---
 
 # --description--

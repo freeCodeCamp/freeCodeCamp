@@ -4,6 +4,7 @@ title: 通过从左到右淡化元素来创建视觉方向
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJqqAE'
 forumTopicId: 301054
+dashedName: create-visual-direction-by-fading-an-element-from-left-to-right
 ---
 
 # --description--

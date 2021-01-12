@@ -3,6 +3,7 @@ id: 5900f49f1000cf542c50ffb1
 title: 问题306：纸条游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-306-paper-strip-game
 ---
 
 # --description--

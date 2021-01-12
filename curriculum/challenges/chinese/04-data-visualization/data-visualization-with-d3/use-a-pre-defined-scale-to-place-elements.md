@@ -3,6 +3,7 @@ id: 587d7fac367417b2b2512bde
 title: 使用预定义的比例放置元素
 challengeType: 6
 forumTopicId: 301494
+dashedName: use-a-pre-defined-scale-to-place-elements
 ---
 
 # --description--

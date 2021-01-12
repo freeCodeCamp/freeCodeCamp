@@ -4,6 +4,7 @@ title: 设置多个标题元素的 font-size
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPpQNT3'
 forumTopicId: 301067
+dashedName: set-the-font-size-for-multiple-heading-elements
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: bad88fee1348ce8acef08815
 title: 使用 Bootstrap 网格并排放置元素
 challengeType: 0
 forumTopicId: 18371
+dashedName: use-the-bootstrap-grid-to-put-elements-side-by-side
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用 id 属性来设定元素的样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
+dashedName: use-an-id-attribute-to-style-an-element
 ---
 
 # --description--

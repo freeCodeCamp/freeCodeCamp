@@ -3,6 +3,7 @@ id: 5900f38b1000cf542c50fe9e
 title: 问题31：硬币总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-31-coin-sums
 ---
 
 # --description--

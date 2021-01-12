@@ -3,6 +3,7 @@ id: 5900f3811000cf542c50fe94
 title: 问题21：友好的数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-21-amicable-numbers
 ---
 
 # --description--

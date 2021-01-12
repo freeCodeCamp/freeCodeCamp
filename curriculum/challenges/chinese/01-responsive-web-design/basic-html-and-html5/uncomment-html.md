@@ -4,6 +4,7 @@ title: 去除 HTML 的注释
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cBmG9T7'
 forumTopicId: 18329
+dashedName: uncomment-html
 ---
 
 # --description--

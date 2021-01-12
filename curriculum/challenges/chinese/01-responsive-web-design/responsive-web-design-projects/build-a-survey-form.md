@@ -3,6 +3,7 @@ id: 587d78af367417b2b2512b03
 title: 制作一个调查表格
 challengeType: 3
 forumTopicId: 301145
+dashedName: build-a-survey-form
 ---
 
 # --description--

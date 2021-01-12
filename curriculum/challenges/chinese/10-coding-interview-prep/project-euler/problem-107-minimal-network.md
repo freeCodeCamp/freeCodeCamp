@@ -3,6 +3,7 @@ id: 5900f3d91000cf542c50feea
 title: 问题107：最小网络
 challengeType: 5
 videoUrl: ''
+dashedName: problem-107-minimal-network
 ---
 
 # --description--

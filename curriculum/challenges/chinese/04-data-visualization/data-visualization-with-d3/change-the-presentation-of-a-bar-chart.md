@@ -3,6 +3,7 @@ id: 587d7fa8367417b2b2512bca
 title: 更改条形图的显示方式
 challengeType: 6
 forumTopicId: 301481
+dashedName: change-the-presentation-of-a-bar-chart
 ---
 
 # --description--

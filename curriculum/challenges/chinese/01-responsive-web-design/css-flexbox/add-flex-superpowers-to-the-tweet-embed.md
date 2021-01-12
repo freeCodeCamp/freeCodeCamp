@@ -4,6 +4,7 @@ title: 在推文中添加弹性盒子布局
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c9W7MhM'
 forumTopicId: 301100
+dashedName: add-flex-superpowers-to-the-tweet-embed
 ---
 
 # --description--

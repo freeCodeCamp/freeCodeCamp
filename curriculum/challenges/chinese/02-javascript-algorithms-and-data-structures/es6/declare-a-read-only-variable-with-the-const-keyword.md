@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b41
 title: 用 const 关键字声明只读变量
 challengeType: 1
 forumTopicId: 301201
+dashedName: declare-a-read-only-variable-with-the-const-keyword
 ---
 
 # --description--

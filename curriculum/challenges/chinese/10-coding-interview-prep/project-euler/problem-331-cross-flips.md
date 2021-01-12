@@ -3,6 +3,7 @@ id: 5900f4b71000cf542c50ffca
 title: 问题331：交叉翻转
 challengeType: 5
 videoUrl: ''
+dashedName: problem-331-cross-flips
 ---
 
 # --description--

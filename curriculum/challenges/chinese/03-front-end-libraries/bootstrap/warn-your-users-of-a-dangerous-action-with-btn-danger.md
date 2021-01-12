@@ -3,6 +3,7 @@ id: bad87fee1348ce8acef08814
 title: 使用 btn-danger 提示危险操作
 challengeType: 0
 forumTopicId: 18375
+dashedName: warn-your-users-of-a-dangerous-action-with-btn-danger
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 了解 CSS 的关键帧和动画是如何工作的
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakprhv'
 forumTopicId: 301059
+dashedName: learn-how-the-css-keyframes-and-animation-properties-work
 ---
 
 # --description--

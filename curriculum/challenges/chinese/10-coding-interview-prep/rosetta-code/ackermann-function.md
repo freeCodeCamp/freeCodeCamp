@@ -3,6 +3,7 @@ id: 594810f028c0303b75339acf
 title: 阿克曼功能
 challengeType: 5
 videoUrl: ''
+dashedName: ackermann-function
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f50e1000cf542c510020
 title: 问题416：青蛙的旅行
 challengeType: 5
 videoUrl: ''
+dashedName: problem-416-a-frogs-trip
 ---
 
 # --description--

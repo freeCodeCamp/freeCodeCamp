@@ -3,6 +3,8 @@ id: 5900f4351000cf542c50ff47
 title: 问题200：找到包含连续子串“200”的第200个防爆大概
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-200-find-the-200th-prime-proof-sqube-containing-the-contiguous-sub-string-200
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3c81000cf542c50fedb
 title: 问题92：方形数字链
 challengeType: 5
 videoUrl: ''
+dashedName: problem-92-square-digit-chains
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3991000cf542c50feac
 title: 问题45：三角形，五边形和六边形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-45-triangular-pentagonal-and-hexagonal
 ---
 
 # --description--

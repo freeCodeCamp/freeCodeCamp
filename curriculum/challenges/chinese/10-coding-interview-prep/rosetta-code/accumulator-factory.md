@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ace
 title: 蓄能器工厂
 challengeType: 5
 videoUrl: ''
+dashedName: accumulator-factory
 ---
 
 # --description--

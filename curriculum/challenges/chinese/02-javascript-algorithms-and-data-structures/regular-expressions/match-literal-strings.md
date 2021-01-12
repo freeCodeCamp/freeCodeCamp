@@ -3,6 +3,7 @@ id: 587d7db3367417b2b2512b8f
 title: 匹配文字字符串
 challengeType: 1
 forumTopicId: 301355
+dashedName: match-literal-strings
 ---
 
 # --description--

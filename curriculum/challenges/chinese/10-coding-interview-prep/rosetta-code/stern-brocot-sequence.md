@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc8028
 title: Stern-Brocot sequence
 challengeType: 5
 forumTopicId: 302324
+dashedName: stern-brocot-sequence
 ---
 
 # --description--

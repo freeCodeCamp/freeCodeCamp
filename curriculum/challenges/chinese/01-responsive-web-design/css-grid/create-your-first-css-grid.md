@@ -4,6 +4,7 @@ title: 创建你的第一个 CSS 网格
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cqwREC4'
 forumTopicId: 301129
+dashedName: create-your-first-css-grid
 ---
 
 # --description--

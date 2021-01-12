@@ -3,6 +3,7 @@ id: 5900f4861000cf542c50ff99
 title: 问题282：阿克曼函数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-282-the-ackermann-function
 ---
 
 # --description--

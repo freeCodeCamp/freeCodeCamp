@@ -3,6 +3,7 @@ id: 595011cba5a81735713873bd
 title: 每组排名最高
 challengeType: 5
 videoUrl: ''
+dashedName: top-rank-per-group
 ---
 
 # --description--

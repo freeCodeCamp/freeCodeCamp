@@ -3,6 +3,7 @@ id: bad87fee1348bd9aed608826
 title: 使用 jQuery 的 appendTo 方法移动元素
 challengeType: 6
 forumTopicId: 18340
+dashedName: use-appendto-to-move-elements-with-jquery
 ---
 
 # --description--

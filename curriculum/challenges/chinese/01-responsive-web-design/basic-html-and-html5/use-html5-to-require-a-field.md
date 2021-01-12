@@ -4,6 +4,7 @@ title: 给表单添加一个必填字段
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMd4EcQ'
 forumTopicId: 18360
+dashedName: use-html5-to-require-a-field
 ---
 
 # --description--

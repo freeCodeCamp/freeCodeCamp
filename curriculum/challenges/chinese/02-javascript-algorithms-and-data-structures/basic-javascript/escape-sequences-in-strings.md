@@ -4,6 +4,7 @@ title: 字符串中的转义序列
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqRh6'
 forumTopicId: 17567
+dashedName: escape-sequences-in-strings
 ---
 
 # --description--

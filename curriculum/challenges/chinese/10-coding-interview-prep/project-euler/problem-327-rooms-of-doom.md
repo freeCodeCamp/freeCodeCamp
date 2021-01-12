@@ -3,6 +3,7 @@ id: 5900f4b31000cf542c50ffc6
 title: 问题327：末日的房间
 challengeType: 5
 videoUrl: ''
+dashedName: problem-327-rooms-of-doom
 ---
 
 # --description--

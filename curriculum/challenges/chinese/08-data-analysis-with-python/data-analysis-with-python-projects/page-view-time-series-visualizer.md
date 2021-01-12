@@ -1,6 +1,7 @@
 ---
 id: 5e46f802ac417301a38fb92b
 challengeType: 10
+dashedName: page-view-time-series-visualizer
 ---
 
 # --description--

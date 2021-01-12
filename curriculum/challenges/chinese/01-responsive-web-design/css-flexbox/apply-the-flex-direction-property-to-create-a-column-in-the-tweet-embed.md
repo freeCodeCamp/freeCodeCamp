@@ -4,6 +4,7 @@ title: 使用 flex-direction 在嵌入推文中创建一列
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103
+dashedName: apply-the-flex-direction-property-to-create-a-column-in-the-tweet-embed
 ---
 
 # --description--

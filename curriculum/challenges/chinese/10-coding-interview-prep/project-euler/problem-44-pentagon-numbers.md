@@ -3,6 +3,7 @@ id: 5900f3981000cf542c50feab
 title: 问题44：五角大楼数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-44-pentagon-numbers
 ---
 
 # --description--

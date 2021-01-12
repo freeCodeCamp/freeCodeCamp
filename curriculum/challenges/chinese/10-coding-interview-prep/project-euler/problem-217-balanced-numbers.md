@@ -3,6 +3,7 @@ id: 5900f4461000cf542c50ff58
 title: 问题217：平衡数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-217-balanced-numbers
 ---
 
 # --description--

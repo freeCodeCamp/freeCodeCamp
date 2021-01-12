@@ -4,6 +4,7 @@ title: 记录集合
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c4mpysg'
 forumTopicId: 18261
+dashedName: record-collection
 ---
 
 # --description--

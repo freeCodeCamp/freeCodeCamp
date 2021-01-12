@@ -3,6 +3,7 @@ id: 5951e88f64ebf159166a1176
 title: 24场比赛
 challengeType: 5
 videoUrl: ''
+dashedName: 24-game
 ---
 
 # --description--

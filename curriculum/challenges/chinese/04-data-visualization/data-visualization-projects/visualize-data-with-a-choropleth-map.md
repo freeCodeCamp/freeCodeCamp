@@ -3,6 +3,7 @@ id: 587d7fa6367417b2b2512bbf
 title: 用等值区域图可视化数据
 challengeType: 3
 forumTopicId: 301465
+dashedName: visualize-data-with-a-choropleth-map
 ---
 
 # --description--

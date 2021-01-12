@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403618a
 title: 使用 Array.map() 动态渲染元素
 challengeType: 6
 forumTopicId: 301417
+dashedName: use-array-map-to-dynamically-render-elements
 ---
 
 # --description--

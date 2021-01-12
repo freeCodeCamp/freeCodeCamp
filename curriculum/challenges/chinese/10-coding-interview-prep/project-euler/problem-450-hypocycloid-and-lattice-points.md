@@ -3,6 +3,7 @@ id: 5900f52e1000cf542c510041
 title: 问题450：Hypocycloid和Lattice点
 challengeType: 5
 videoUrl: ''
+dashedName: problem-450-hypocycloid-and-lattice-points
 ---
 
 # --description--

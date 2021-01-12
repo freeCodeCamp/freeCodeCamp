@@ -3,6 +3,7 @@ id: 587d7dab367417b2b2512b6e
 title: 使用 every 方法检查数组中的每个元素是否符合条件
 challengeType: 1
 forumTopicId: 301312
+dashedName: use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria
 ---
 
 # --description--

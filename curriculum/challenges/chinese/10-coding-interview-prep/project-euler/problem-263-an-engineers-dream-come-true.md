@@ -3,6 +3,7 @@ id: 5900f4741000cf542c50ff86
 title: 问题263：工程师“梦想成真
 challengeType: 5
 videoUrl: ''
+dashedName: problem-263-an-engineers-dream-come-true
 ---
 
 # --description--

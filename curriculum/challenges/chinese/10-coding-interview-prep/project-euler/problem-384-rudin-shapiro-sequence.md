@@ -3,6 +3,7 @@ id: 5900f4ed1000cf542c50fffe
 title: 问题384：Rudin-Shapiro序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-384-rudin-shapiro-sequence
 ---
 
 # --description--

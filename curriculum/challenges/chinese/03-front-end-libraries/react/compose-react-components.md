@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036166
 title: 组合 React 组件
 challengeType: 6
 forumTopicId: 301381
+dashedName: compose-react-components
 ---
 
 # --description--

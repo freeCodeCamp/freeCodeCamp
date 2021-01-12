@@ -3,6 +3,7 @@ id: 5900f5461000cf542c510058
 title: 问题473：数字基数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-473-phigital-number-base
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7b86367417b2b2512b3c
 title: 重新初始化循环中的变量时要小心
 challengeType: 1
 forumTopicId: 301194
+dashedName: use-caution-when-reinitializing-variables-inside-a-loop
 ---
 
 # --description--

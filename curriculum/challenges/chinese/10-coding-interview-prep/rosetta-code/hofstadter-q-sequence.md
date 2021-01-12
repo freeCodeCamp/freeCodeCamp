@@ -3,6 +3,7 @@ id: 59637c4d89f6786115efd814
 title: Hofstadter Q序列
 challengeType: 5
 videoUrl: ''
+dashedName: hofstadter-q-sequence
 ---
 
 # --description--

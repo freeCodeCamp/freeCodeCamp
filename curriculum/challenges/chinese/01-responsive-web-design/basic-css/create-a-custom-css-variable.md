@@ -4,6 +4,7 @@ title: 创建一个自定义的 CSS 变量
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQd27Hr'
 forumTopicId: 301086
+dashedName: create-a-custom-css-variable
 ---
 
 # --description--

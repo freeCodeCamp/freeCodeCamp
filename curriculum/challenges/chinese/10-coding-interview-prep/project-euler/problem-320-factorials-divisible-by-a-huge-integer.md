@@ -3,6 +3,7 @@ id: 5900f4ae1000cf542c50ffbf
 title: 问题320：阶乘被整数整除
 challengeType: 5
 videoUrl: ''
+dashedName: problem-320-factorials-divisible-by-a-huge-integer
 ---
 
 # --description--

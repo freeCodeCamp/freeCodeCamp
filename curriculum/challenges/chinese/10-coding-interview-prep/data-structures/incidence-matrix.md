@@ -3,6 +3,7 @@ id: 587d8256367417b2b2512c79
 title: 发生率矩阵
 challengeType: 1
 videoUrl: ''
+dashedName: incidence-matrix
 ---
 
 # --description--

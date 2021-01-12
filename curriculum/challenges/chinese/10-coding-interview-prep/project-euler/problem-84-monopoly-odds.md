@@ -3,6 +3,7 @@ id: 5900f3c11000cf542c50fed3
 title: 问题84：垄断赔率
 challengeType: 5
 videoUrl: ''
+dashedName: problem-84-monopoly-odds
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7dbc367417b2b2512bae
 title: 构建一台鼓式机器
 challengeType: 3
 forumTopicId: 301370
+dashedName: build-a-drum-machine
 ---
 
 # --description--
@@ -31,10 +32,6 @@ forumTopicId: 301370
 
 一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
 
-# --hints--
-
-
-# --seed--
 # --solutions--
 
 ```js

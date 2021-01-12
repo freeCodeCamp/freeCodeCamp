@@ -3,6 +3,7 @@ id: bad87fee1348bd9aed508826
 title: 使用 jQuery 克隆元素
 challengeType: 6
 forumTopicId: 16780
+dashedName: clone-an-element-using-jquery
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d824b367417b2b2512c48
 title: 使用 Assert.isOk() 和 Assert.isNotOK()
 challengeType: 2
 forumTopicId: 301607
+dashedName: use-assert-isok-and-assert-isnotok
 ---
 
 # --description--

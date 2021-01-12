@@ -3,6 +3,7 @@ id: 5cdafbc32913098997531680
 title: 通过 resolve 和 reject 完成 Promise
 challengeType: 1
 forumTopicId: 301196
+dashedName: complete-a-promise-with-resolve-and-reject
 ---
 
 # --description--

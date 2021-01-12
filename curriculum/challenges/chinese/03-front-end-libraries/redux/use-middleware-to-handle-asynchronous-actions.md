@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036156
 title: 使用中间件处理异步操作
 challengeType: 6
 forumTopicId: 301451
+dashedName: use-middleware-to-handle-asynchronous-actions
 ---
 
 # --description--

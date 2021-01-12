@@ -3,6 +3,7 @@ id: 587d7b8f367417b2b2512b63
 title: 使用 filter 方法从数组中提取数据
 challengeType: 1
 forumTopicId: 18179
+dashedName: use-the-filter-method-to-extract-data-from-an-array
 ---
 
 # --description--

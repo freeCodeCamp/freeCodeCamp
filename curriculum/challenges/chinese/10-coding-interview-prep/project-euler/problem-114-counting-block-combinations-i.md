@@ -3,6 +3,7 @@ id: 5900f3e01000cf542c50fef2
 title: 问题114：计数块组合I
 challengeType: 5
 videoUrl: ''
+dashedName: problem-114-counting-block-combinations-i
 ---
 
 # --description--

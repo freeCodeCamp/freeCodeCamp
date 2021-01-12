@@ -4,6 +4,7 @@ title: 减法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3yQtk'
 forumTopicId: 18314
+dashedName: subtract-one-number-from-another-with-javascript
 ---
 
 # --description--

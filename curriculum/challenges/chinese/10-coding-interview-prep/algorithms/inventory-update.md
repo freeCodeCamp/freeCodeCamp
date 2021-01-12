@@ -3,6 +3,7 @@ id: a56138aff60341a09ed6c480
 title: 库存更新
 challengeType: 5
 videoUrl: ''
+dashedName: inventory-update
 ---
 
 # --description--

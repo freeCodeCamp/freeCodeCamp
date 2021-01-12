@@ -3,6 +3,7 @@ id: 587d8254367417b2b2512c71
 title: 从ES6中的集中删除项目
 challengeType: 1
 videoUrl: ''
+dashedName: remove-items-from-a-set-in-es6
 ---
 
 # --description--

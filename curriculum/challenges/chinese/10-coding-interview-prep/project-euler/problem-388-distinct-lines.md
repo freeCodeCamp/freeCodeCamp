@@ -3,6 +3,7 @@ id: 5900f4f11000cf542c510002
 title: 问题388：不同的线条
 challengeType: 5
 videoUrl: ''
+dashedName: problem-388-distinct-lines
 ---
 
 # --description--

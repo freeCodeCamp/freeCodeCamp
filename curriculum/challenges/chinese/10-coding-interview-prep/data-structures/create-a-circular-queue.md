@@ -3,6 +3,7 @@ id: 587d8255367417b2b2512c75
 title: 创建循环队列
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-circular-queue
 ---
 
 # --description--

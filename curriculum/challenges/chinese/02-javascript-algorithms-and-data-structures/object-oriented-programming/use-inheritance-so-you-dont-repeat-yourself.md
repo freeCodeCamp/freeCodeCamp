@@ -3,6 +3,7 @@ id: 587d7db0367417b2b2512b83
 title: 使用继承避免重复
 challengeType: 1
 forumTopicId: 301334
+dashedName: use-inheritance-so-you-dont-repeat-yourself
 ---
 
 # --description--

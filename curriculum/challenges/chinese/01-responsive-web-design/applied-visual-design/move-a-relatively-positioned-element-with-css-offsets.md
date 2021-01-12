@@ -4,6 +4,7 @@ title: 使用 CSS 偏移移动相对定位的元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bQEA4'
 forumTopicId: 301065
+dashedName: move-a-relatively-positioned-element-with-css-offsets
 ---
 
 # --description--

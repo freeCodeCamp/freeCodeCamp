@@ -3,6 +3,7 @@ id: 587d8259367417b2b2512c84
 title: 创建Trie搜索树
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-trie-search-tree
 ---
 
 # --description--

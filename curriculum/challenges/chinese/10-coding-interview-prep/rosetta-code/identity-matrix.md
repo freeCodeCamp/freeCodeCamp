@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7eb1
 title: 身份矩阵
 challengeType: 5
 videoUrl: ''
+dashedName: identity-matrix
 ---
 
 # --description--

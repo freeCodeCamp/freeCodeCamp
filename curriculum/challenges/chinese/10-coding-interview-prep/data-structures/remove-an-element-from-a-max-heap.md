@@ -3,6 +3,7 @@ id: 587d825b367417b2b2512c8b
 title: 从最大堆中删除元素
 challengeType: 1
 videoUrl: ''
+dashedName: remove-an-element-from-a-max-heap
 ---
 
 # --description--

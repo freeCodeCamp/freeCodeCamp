@@ -3,6 +3,7 @@ id: 587d7b8c367417b2b2512b54
 title: 使用 getter 和 setter 来控制对象的访问
 challengeType: 1
 forumTopicId: 301220
+dashedName: use-getters-and-setters-to-control-access-to-an-object
 ---
 
 # --description--

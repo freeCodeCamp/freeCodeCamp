@@ -1,6 +1,7 @@
 ---
 id: 5e46f979ac417301a38fb932
 challengeType: 10
+dashedName: port-scanner
 ---
 
 # --description--

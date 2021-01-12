@@ -3,6 +3,7 @@ id: 5900f4041000cf542c50ff17
 title: 问题152：将一半写为倒数平方和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-152-writing-one-half-as-a-sum-of-inverse-squares
 ---
 
 # --description--

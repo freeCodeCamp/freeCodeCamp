@@ -3,6 +3,7 @@ id: 587d7fa8367417b2b2512bc9
 title: 动态更新元素的高度
 challengeType: 6
 forumTopicId: 301493
+dashedName: update-the-height-of-an-element-dynamically
 ---
 
 # --description--

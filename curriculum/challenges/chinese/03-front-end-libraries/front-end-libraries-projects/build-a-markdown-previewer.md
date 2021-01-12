@@ -3,6 +3,7 @@ id: bd7157d8c242eddfaeb5bd13
 title: 构建一个 Markdown 文件预览器
 challengeType: 3
 forumTopicId: 301372
+dashedName: build-a-markdown-previewer
 ---
 
 # --description--
@@ -30,11 +31,6 @@ forumTopicId: 301372
 你可以 fork [这个 CodePen pen 项目](http://codepen.io/freeCodeCamp/pen/MJjpwO) 来构建你的项目。或者你可以在任何你喜欢的环境中使用以下 CDN 链接来运行测试：`https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js`。
 
 一旦你完成了本项目并且该项目所有测试运行通过，请提交项目的 URL。
-
-# --hints--
-
-
-# --seed--
 
 # --solutions--
 

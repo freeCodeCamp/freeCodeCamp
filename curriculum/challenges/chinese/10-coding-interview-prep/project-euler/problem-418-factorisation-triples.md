@@ -3,6 +3,7 @@ id: 5900f50f1000cf542c510021
 title: 问题418：三重分解
 challengeType: 5
 videoUrl: ''
+dashedName: problem-418-factorisation-triples
 ---
 
 # --description--

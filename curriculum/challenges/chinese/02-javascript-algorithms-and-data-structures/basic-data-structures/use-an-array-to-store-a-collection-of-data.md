@@ -3,6 +3,7 @@ id: 587d7b7e367417b2b2512b20
 title: 使用数组存储不同类型的数据
 challengeType: 1
 forumTopicId: 301167
+dashedName: use-an-array-to-store-a-collection-of-data
 ---
 
 # --description--

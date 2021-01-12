@@ -3,6 +3,7 @@ id: 5900f39a1000cf542c50fead
 title: 问题46：哥德巴赫的另一个猜想
 challengeType: 5
 videoUrl: ''
+dashedName: problem-46-goldbachs-other-conjecture
 ---
 
 # --description--

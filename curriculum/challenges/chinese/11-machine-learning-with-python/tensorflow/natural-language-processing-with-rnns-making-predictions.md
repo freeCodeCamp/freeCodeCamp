@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d9f
 challengeType: 11
 videoId: WO1hINnBj20
+dashedName: natural-language-processing-with-rnns-making-predictions
 ---
 
 # --question--

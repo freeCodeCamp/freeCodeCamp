@@ -3,6 +3,7 @@ id: 5900f4511000cf542c50ff62
 title: 问题226：Blancmange的一个独家新闻
 challengeType: 5
 videoUrl: ''
+dashedName: problem-226-a-scoop-of-blancmange
 ---
 
 # --description--

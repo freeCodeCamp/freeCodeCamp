@@ -4,6 +4,7 @@ title: 使用高对比度文本提高可读性
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cKb3nCq'
 forumTopicId: 301017
+dashedName: improve-readability-with-high-contrast-text
 ---
 
 # --description--

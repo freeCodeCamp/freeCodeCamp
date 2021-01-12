@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad4
 title: 自动换行
 challengeType: 5
 videoUrl: ''
+dashedName: word-wrap
 ---
 
 # --description--

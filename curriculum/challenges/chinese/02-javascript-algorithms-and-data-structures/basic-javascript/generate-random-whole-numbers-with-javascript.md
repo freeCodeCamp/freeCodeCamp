@@ -4,6 +4,7 @@ title: 使用 JavaScript 生成随机整数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRn6bfr'
 forumTopicId: 18186
+dashedName: generate-random-whole-numbers-with-javascript
 ---
 
 # --description--

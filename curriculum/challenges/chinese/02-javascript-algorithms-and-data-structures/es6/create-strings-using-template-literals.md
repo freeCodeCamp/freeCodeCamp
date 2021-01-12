@@ -3,6 +3,7 @@ id: 587d7b8a367417b2b2512b4e
 title: 使用模板字面量创建字符串
 challengeType: 1
 forumTopicId: 301200
+dashedName: create-strings-using-template-literals
 ---
 
 # --description--

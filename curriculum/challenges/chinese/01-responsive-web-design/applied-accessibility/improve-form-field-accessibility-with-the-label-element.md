@@ -4,6 +4,7 @@ title: 使用 label 元素提高表单的可访问性
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
 forumTopicId: 301016
+dashedName: improve-form-field-accessibility-with-the-label-element
 ---
 
 # --description--

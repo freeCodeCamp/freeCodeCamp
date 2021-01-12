@@ -3,6 +3,7 @@ id: 5900f4381000cf542c50ff4a
 title: 问题203：无平方二项系数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-203-squarefree-binomial-coefficients
 ---
 
 # --description--

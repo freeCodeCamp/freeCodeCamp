@@ -3,6 +3,7 @@ id: 5900f4da1000cf542c50ffed
 title: 问题366：石头游戏III
 challengeType: 5
 videoUrl: ''
+dashedName: problem-366-stone-game-iii
 ---
 
 # --description--

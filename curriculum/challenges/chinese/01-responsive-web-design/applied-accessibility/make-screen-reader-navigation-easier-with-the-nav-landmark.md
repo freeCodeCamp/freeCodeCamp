@@ -4,6 +4,7 @@ title: 使用 nav 元素使屏幕阅读器更容易导航
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVwWSv'
 forumTopicId: 301024
+dashedName: make-screen-reader-navigation-easier-with-the-nav-landmark
 ---
 
 # --description--

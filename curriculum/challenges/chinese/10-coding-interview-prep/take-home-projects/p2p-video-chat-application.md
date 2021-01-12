@@ -3,6 +3,7 @@ id: bd7150d8c442eddfafb5bd1c
 title: P2P视频聊天应用
 challengeType: 3
 videoUrl: ''
+dashedName: p2p-video-chat-application
 ---
 
 # --description--

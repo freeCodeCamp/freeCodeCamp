@@ -4,6 +4,7 @@ title: 使用 width 属性调整元素的宽度
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVLPtN'
 forumTopicId: 301039
+dashedName: adjust-the-width-of-an-element-using-the-width-property
 ---
 
 # --description--

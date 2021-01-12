@@ -3,6 +3,7 @@ id: 587d8256367417b2b2512c7a
 title: 在二叉搜索树中查找最小值和最大值
 challengeType: 1
 videoUrl: ''
+dashedName: find-the-minimum-and-maximum-value-in-a-binary-search-tree
 ---
 
 # --description--

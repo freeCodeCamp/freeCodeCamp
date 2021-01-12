@@ -3,6 +3,7 @@ id: 5900f3a21000cf542c50feb5
 title: 问题54：扑克手
 challengeType: 5
 videoUrl: ''
+dashedName: problem-54-poker-hands
 ---
 
 # --description--

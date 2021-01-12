@@ -3,6 +3,7 @@ id: a3f503de51cf954ede28891d
 title: 找到对称差异
 challengeType: 5
 videoUrl: ''
+dashedName: find-the-symmetric-difference
 ---
 
 # --description--

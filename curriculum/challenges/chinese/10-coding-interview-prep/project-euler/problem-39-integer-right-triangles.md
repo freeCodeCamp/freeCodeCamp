@@ -3,6 +3,7 @@ id: 5900f3931000cf542c50fea6
 title: 问题39：整数直角三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-39-integer-right-triangles
 ---
 
 # --description--

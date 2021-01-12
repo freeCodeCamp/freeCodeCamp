@@ -3,6 +3,7 @@ id: 5900f43f1000cf542c50ff51
 title: 问题208：机器人走路
 challengeType: 5
 videoUrl: ''
+dashedName: problem-208-robot-walks
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7fb6367417b2b2512c06
 title: 安装和设置 Mongoose
 challengeType: 2
 forumTopicId: 301540
+dashedName: install-and-set-up-mongoose
 ---
 
 # --description--

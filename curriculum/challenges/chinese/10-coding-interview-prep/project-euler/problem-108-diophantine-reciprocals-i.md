@@ -3,6 +3,7 @@ id: 5900f3d91000cf542c50feeb
 title: 问题108：丢番图互惠I
 challengeType: 5
 videoUrl: ''
+dashedName: problem-108-diophantine-reciprocals-i
 ---
 
 # --description--

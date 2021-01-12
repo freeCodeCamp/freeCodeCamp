@@ -4,6 +4,7 @@ title: 通过索引访问数组中的数据
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
 forumTopicId: 16158
+dashedName: access-array-data-with-indexes
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f5081000cf542c51001a
 title: 问题412：Gnomon编号
 challengeType: 5
 videoUrl: ''
+dashedName: problem-412-gnomon-numbering
 ---
 
 # --description--

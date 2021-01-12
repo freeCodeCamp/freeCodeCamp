@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036144
 title: 使用 Provider 连接 Redux 和 React
 challengeType: 6
 forumTopicId: 301435
+dashedName: use-provider-to-connect-redux-to-react
 ---
 
 # --description--

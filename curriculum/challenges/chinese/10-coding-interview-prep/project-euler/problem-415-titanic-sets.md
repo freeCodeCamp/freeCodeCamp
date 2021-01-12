@@ -3,6 +3,7 @@ id: 5900f50c1000cf542c51001e
 title: 问题415：泰坦尼克号集
 challengeType: 5
 videoUrl: ''
+dashedName: problem-415-titanic-sets
 ---
 
 # --description--

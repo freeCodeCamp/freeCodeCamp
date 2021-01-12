@@ -4,6 +4,7 @@ title: 使用自定义 CSS 让元素仅对屏幕阅读器可见
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
 forumTopicId: 301020
+dashedName: make-elements-only-visible-to-a-screen-reader-by-using-custom-css
 ---
 
 # --description--

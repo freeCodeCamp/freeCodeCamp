@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7ec1
 title: 迭代的数字平方
 challengeType: 5
 videoUrl: ''
+dashedName: iterated-digits-squaring
 ---
 
 # --description--

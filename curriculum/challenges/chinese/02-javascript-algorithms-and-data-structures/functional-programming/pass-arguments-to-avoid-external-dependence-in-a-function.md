@@ -3,6 +3,7 @@ id: 587d7b8e367417b2b2512b5f
 title: 传递参数以避免函数中的外部依赖
 challengeType: 1
 forumTopicId: 301234
+dashedName: pass-arguments-to-avoid-external-dependence-in-a-function
 ---
 
 # --description--

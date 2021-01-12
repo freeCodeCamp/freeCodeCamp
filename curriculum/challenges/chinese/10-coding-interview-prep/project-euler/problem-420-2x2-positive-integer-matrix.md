@@ -3,6 +3,7 @@ id: 5900f5111000cf542c510023
 title: 问题420：2x2正整数矩阵
 challengeType: 5
 videoUrl: ''
+dashedName: problem-420-2x2-positive-integer-matrix
 ---
 
 # --description--

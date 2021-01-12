@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bdee
 title: 建立一个Pinterest克隆
 challengeType: 4
 videoUrl: ''
+dashedName: build-a-pinterest-clone
 ---
 
 # --description--

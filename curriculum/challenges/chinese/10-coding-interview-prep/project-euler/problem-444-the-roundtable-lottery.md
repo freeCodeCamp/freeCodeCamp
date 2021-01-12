@@ -3,6 +3,7 @@ id: 5900f52a1000cf542c51003b
 title: 问题444：圆桌会议彩票
 challengeType: 5
 videoUrl: ''
+dashedName: problem-444-the-roundtable-lottery
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3901000cf542c50fea3
 title: 问题36：双基回文
 challengeType: 5
 videoUrl: ''
+dashedName: problem-36-double-base-palindromes
 ---
 
 # --description--

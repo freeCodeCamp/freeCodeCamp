@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bdee
 title: 构建图像搜索抽象层
 challengeType: 4
 videoUrl: ''
+dashedName: build-an-image-search-abstraction-layer
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: a10d2431ad0c6a099a4b8b52
 title: 检查对象属性
 challengeType: 5
 forumTopicId: 16011
+dashedName: everything-be-true
 ---
 
 # --description--

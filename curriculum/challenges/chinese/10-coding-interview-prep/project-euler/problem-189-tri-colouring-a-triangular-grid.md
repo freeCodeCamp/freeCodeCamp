@@ -3,6 +3,7 @@ id: 5900f4291000cf542c50ff3c
 title: 问题189：三角网格三色
 challengeType: 5
 videoUrl: ''
+dashedName: problem-189-tri-colouring-a-triangular-grid
 ---
 
 # --description--

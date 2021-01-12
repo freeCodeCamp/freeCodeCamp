@@ -4,6 +4,7 @@ title: 在 Switch 语句中添加默认选项
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JvVfg'
 forumTopicId: 16653
+dashedName: adding-a-default-option-in-switch-statements
 ---
 
 # --description--

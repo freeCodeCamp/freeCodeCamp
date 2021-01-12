@@ -3,6 +3,8 @@ id: 5900f4791000cf542c50ff8b
 title: 问题268：计算至少有四个不同素因子小于100的数字
 challengeType: 5
 videoUrl: ''
+dashedName: >-
+  problem-268-counting-numbers-with-at-least-four-distinct-prime-factors-less-than-100
 ---
 
 # --description--

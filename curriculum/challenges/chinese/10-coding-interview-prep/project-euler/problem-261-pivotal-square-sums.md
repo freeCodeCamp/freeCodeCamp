@@ -3,6 +3,7 @@ id: 5900f4711000cf542c50ff84
 title: 问题261：Pivotal Square Sums
 challengeType: 5
 videoUrl: ''
+dashedName: problem-261-pivotal-square-sums
 ---
 
 # --description--

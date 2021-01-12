@@ -4,6 +4,7 @@ title: 使用 CSS 变量一次更改多个元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDECm'
 forumTopicId: 301093
+dashedName: use-css-variables-to-change-several-elements-at-once
 ---
 
 # --description--

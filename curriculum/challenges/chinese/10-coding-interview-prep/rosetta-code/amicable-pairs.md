@@ -3,6 +3,7 @@ id: 5949b579404977fbaefcd737
 title: 友好的对
 challengeType: 5
 videoUrl: ''
+dashedName: amicable-pairs
 ---
 
 # --description--

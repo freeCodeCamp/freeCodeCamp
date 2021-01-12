@@ -3,6 +3,7 @@ id: 5900f4a71000cf542c50ffba
 title: 问题315：数字根时钟
 challengeType: 5
 videoUrl: ''
+dashedName: problem-315-digital-root-clocks
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3e91000cf542c50fefc
 title: 问题125：回文总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-125-palindromic-sums
 ---
 
 # --description--

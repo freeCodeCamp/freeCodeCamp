@@ -3,6 +3,7 @@ id: 587d8251367417b2b2512c64
 title: 在链接列表中搜索
 challengeType: 1
 videoUrl: ''
+dashedName: search-within-a-linked-list
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036159
 title: 在数组中使用扩展运算符
 challengeType: 6
 forumTopicId: 301452
+dashedName: use-the-spread-operator-on-arrays
 ---
 
 # --description--

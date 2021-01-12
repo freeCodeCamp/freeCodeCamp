@@ -3,6 +3,7 @@ id: 587d7dae367417b2b2512b79
 title: 扩展构造函数以接收参数
 challengeType: 1
 forumTopicId: 18235
+dashedName: extend-constructors-to-receive-arguments
 ---
 
 # --description--

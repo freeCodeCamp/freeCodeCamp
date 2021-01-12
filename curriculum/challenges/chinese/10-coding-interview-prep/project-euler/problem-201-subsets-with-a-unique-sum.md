@@ -3,6 +3,7 @@ id: 5900f4361000cf542c50ff48
 title: 问题201：具有唯一总和的子集
 challengeType: 5
 videoUrl: ''
+dashedName: problem-201-subsets-with-a-unique-sum
 ---
 
 # --description--

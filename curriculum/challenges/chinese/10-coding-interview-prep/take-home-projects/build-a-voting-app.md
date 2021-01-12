@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bdef
 title: 建立一个投票应用程序
 challengeType: 4
 videoUrl: ''
+dashedName: build-a-voting-app
 ---
 
 # --description--

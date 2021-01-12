@@ -3,6 +3,7 @@ id: 587d7fa6367417b2b2512bc0
 title: 用树形图可视化数据
 challengeType: 3
 forumTopicId: 301468
+dashedName: visualize-data-with-a-treemap-diagram
 ---
 
 # --description--

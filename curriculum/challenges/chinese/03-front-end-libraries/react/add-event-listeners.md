@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617e
 title: 添加事件侦听器
 challengeType: 6
 forumTopicId: 301377
+dashedName: add-event-listeners
 ---
 
 # --description--

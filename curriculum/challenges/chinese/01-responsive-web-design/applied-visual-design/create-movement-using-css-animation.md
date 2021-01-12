@@ -4,6 +4,7 @@ title: 使用 CSS 动画创建动画
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7amZfW'
 forumTopicId: 301051
+dashedName: create-movement-using-css-animation
 ---
 
 # --description--

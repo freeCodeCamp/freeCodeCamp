@@ -4,6 +4,7 @@ title: 创建一组单选按钮
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNWKvuR'
 forumTopicId: 16822
+dashedName: create-a-set-of-radio-buttons
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用 align-self 属性
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvzfv'
 forumTopicId: 301107
+dashedName: use-the-align-self-property
 ---
 
 # --description--

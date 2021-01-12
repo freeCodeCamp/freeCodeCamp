@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403618b
 title: 给同级元素一个唯一的键属性
 challengeType: 6
 forumTopicId: 301394
+dashedName: give-sibling-elements-a-unique-key-attribute
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 相等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
+dashedName: comparison-with-the-equality-operator
 ---
 
 # --description--

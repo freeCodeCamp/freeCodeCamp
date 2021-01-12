@@ -3,6 +3,7 @@ id: 587d7fb0367417b2b2512bf0
 title: 服务静态资源
 challengeType: 2
 forumTopicId: 301518
+dashedName: serve-static-assets
 ---
 
 # --description--

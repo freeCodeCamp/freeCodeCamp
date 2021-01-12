@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c88
 title: 反转双重链接列表
 challengeType: 1
 videoUrl: ''
+dashedName: reverse-a-doubly-linked-list
 ---
 
 # --description--

@@ -2,6 +2,7 @@
 id: 5e7b9f160b6c005b0e76f085
 challengeType: 11
 videoId: uJxGeTYy0us
+dashedName: python-objects
 ---
 
 # --question--

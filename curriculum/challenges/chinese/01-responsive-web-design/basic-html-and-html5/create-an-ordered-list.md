@@ -4,6 +4,7 @@ title: 创建一个有序列表
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cQ3B8TM'
 forumTopicId: 16824
+dashedName: create-an-ordered-list
 ---
 
 # --description--
@@ -84,7 +85,6 @@ assert(
 ```
 
 `li` 元素应有结束标签。
-
 
 ```js
 assert(

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403618c
 title: 使用 Array.Filter() 动态过滤数组
 challengeType: 6
 forumTopicId: 301416
+dashedName: use-array-filter-to-dynamically-filter-an-array
 ---
 
 # --description--

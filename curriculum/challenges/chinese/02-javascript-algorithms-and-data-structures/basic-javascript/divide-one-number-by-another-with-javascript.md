@@ -4,6 +4,7 @@ title: 除法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqkbdAr'
 forumTopicId: 17566
+dashedName: divide-one-number-by-another-with-javascript
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 58a25bcff9fc0f352b528e7e
 title: 哈希和同步比较密码
 challengeType: 2
 forumTopicId: 301579
+dashedName: hash-and-compare-passwords-synchronously
 ---
 
 # --description--

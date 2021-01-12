@@ -3,6 +3,7 @@ id: bad87fee1348bd9aed208826
 title: 使用 jQuery 选择元素的子元素
 challengeType: 6
 forumTopicId: 18320
+dashedName: target-the-children-of-an-element-using-jquery
 ---
 
 # --description--

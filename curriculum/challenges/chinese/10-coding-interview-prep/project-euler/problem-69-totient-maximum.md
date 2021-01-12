@@ -3,6 +3,7 @@ id: 5900f3b11000cf542c50fec4
 title: 问题69大欧拉
 challengeType: 5
 videoUrl: ''
+dashedName: problem-69-totient-maximum
 ---
 
 # --description--

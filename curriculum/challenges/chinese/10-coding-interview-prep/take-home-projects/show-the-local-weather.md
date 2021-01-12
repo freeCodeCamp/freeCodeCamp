@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd10
 title: 显示当地天气
 challengeType: 3
 videoUrl: ''
+dashedName: show-the-local-weather
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 594dc6c729e5700999302b45
 title: 平衡括号
 challengeType: 5
 videoUrl: ''
+dashedName: balanced-brackets
 ---
 
 # --description--

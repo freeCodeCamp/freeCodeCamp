@@ -4,6 +4,7 @@ title: 设置段落文本的 font-size
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJ36Cr'
 forumTopicId: 301068
+dashedName: set-the-font-size-of-paragraph-text
 ---
 
 # --description--

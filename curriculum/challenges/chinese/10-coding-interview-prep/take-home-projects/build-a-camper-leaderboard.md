@@ -3,6 +3,7 @@ id: bd7156d8c242eddfaeb5bd13
 title: 建立一个露营者排行榜
 challengeType: 3
 videoUrl: ''
+dashedName: build-a-freecodecamp-forum-homepage
 ---
 
 # --description--

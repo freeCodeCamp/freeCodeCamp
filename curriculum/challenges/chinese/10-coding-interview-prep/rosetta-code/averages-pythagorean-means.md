@@ -3,6 +3,7 @@ id: 594d966a1467eb84194f0086
 title: 平均值 - 毕达哥拉斯指的是
 challengeType: 5
 videoUrl: ''
+dashedName: averagespythagorean-means
 ---
 
 # --description--

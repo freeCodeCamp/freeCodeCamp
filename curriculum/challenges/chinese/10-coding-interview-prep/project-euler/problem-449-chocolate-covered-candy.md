@@ -3,6 +3,7 @@ id: 5900f52d1000cf542c510040
 title: 问题449：巧克力糖果
 challengeType: 5
 videoUrl: ''
+dashedName: problem-449-chocolate-covered-candy
 ---
 
 # --description--

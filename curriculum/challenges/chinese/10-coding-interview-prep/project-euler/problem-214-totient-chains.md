@@ -3,6 +3,7 @@ id: 5900f4421000cf542c50ff55
 title: 问题214个欧拉链
 challengeType: 5
 videoUrl: ''
+dashedName: problem-214-totient-chains
 ---
 
 # --description--

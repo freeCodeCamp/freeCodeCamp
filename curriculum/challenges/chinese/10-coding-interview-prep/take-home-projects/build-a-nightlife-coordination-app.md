@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bdff
 title: 建立夜生活协调应用程序
 challengeType: 4
 videoUrl: ''
+dashedName: build-a-nightlife-coordination-app
 ---
 
 # --description--

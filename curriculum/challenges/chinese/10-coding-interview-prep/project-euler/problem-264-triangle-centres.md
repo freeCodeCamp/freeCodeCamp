@@ -3,6 +3,7 @@ id: 5900f4751000cf542c50ff87
 title: 问题264：三角中心
 challengeType: 5
 videoUrl: ''
+dashedName: problem-264-triangle-centres
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5956795bc9e2c415eb244de1
 title: 哈希加入
 challengeType: 5
 videoUrl: ''
+dashedName: hash-join
 ---
 
 # --description--

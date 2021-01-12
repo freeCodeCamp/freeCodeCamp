@@ -3,6 +3,7 @@ id: 598f48a36c8c40764b4e52b3
 title: 防止对象改变
 challengeType: 1
 forumTopicId: 301207
+dashedName: prevent-object-mutation
 ---
 
 # --description--

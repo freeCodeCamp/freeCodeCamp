@@ -3,6 +3,7 @@ id: 5900f4f81000cf542c51000b
 title: 问题396：弱Goodstein序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-396-weak-goodstein-sequence
 ---
 
 # --description--

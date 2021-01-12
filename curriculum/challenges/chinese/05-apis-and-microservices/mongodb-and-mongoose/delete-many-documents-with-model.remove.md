@@ -3,6 +3,7 @@ id: 587d7fb8367417b2b2512c11
 title: 使用 model.remove() 删除多个 document
 challengeType: 2
 forumTopicId: 301538
+dashedName: delete-many-documents-with-model-remove
 ---
 
 # --description--

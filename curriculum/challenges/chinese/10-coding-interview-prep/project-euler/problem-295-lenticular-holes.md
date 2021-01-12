@@ -3,6 +3,7 @@ id: 5900f4931000cf542c50ffa6
 title: 问题295：透镜孔
 challengeType: 5
 videoUrl: ''
+dashedName: problem-295-lenticular-holes
 ---
 
 # --description--

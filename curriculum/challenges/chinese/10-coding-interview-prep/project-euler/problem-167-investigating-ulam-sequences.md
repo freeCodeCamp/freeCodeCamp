@@ -3,6 +3,7 @@ id: 5900f4141000cf542c50ff26
 title: 问题167：研究Ulam序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-167-investigating-ulam-sequences
 ---
 
 # --description--

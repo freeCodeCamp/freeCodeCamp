@@ -4,6 +4,7 @@ title: 调整元素的内边距
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cED8ZC2'
 forumTopicId: 301083
+dashedName: adjust-the-padding-of-an-element
 ---
 
 # --description--

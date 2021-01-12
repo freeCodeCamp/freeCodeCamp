@@ -3,6 +3,7 @@ id: 587d7fae367417b2b2512be3
 title: 使用 XMLHttpRequest 方法获取 JSON
 challengeType: 6
 forumTopicId: 301502
+dashedName: get-json-with-the-javascript-xmlhttprequest-method
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3a91000cf542c50febc
 title: 问题61：循环图号
 challengeType: 5
 videoUrl: ''
+dashedName: problem-61-cyclical-figurate-numbers
 ---
 
 # --description--

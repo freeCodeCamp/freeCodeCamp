@@ -3,6 +3,7 @@ id: 587d7b85367417b2b2512b3a
 title: 调用函数时，捕获以错误顺序传递的参数
 challengeType: 1
 forumTopicId: 301184
+dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 ---
 
 # --description--

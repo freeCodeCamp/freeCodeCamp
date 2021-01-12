@@ -3,6 +3,7 @@ id: 5900f3f91000cf542c50ff0b
 title: 问题141：调查渐进数n，它们也是正方形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-141-investigating-progressive-numbers-n-which-are-also-square
 ---
 
 # --description--

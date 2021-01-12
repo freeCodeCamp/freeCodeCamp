@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036180
 title: 使用 shouldComponentUpdate 优化重新渲染
 challengeType: 6
 forumTopicId: 301398
+dashedName: optimize-re-renders-with-shouldcomponentupdate
 ---
 
 # --description--

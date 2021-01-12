@@ -3,6 +3,7 @@ id: 5900f36e1000cf542c50fe80
 title: 问题1：3和5的倍数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-1-multiples-of-3-and-5
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f48d1000cf542c50ff9f
 title: 问题288：一个巨大的阶乘
 challengeType: 5
 videoUrl: ''
+dashedName: problem-288-an-enormous-factorial
 ---
 
 # --description--

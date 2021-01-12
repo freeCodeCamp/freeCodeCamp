@@ -3,6 +3,7 @@ id: 5900f54a1000cf542c51005c
 title: 问题477：数字序列游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-477-number-sequence-game
 ---
 
 # --description--

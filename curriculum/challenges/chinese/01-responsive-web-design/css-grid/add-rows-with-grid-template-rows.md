@@ -4,6 +4,7 @@ title: 使用 grid-template-rows 添加多行
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cbp9Pua'
 forumTopicId: 301119
+dashedName: add-rows-with-grid-template-rows
 ---
 
 # --description--

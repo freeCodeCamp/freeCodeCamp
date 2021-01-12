@@ -4,6 +4,7 @@ title: 使用 flex-grow 属性定义 flex 子元素的增长系数
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c2p78cg'
 forumTopicId: 1301111
+dashedName: use-the-flex-grow-property-to-expand-items
 ---
 
 # --description--

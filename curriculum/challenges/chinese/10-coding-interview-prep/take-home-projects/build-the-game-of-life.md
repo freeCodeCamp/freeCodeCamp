@@ -3,6 +3,7 @@ id: bd7154d8c242eddfaeb5bd13
 title: 打造生命游戏
 challengeType: 3
 videoUrl: ''
+dashedName: build-the-game-of-life
 ---
 
 # --description--

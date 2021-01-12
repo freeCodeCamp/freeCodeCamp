@@ -3,6 +3,7 @@ id: 5900f5311000cf542c510043
 title: 问题452：长期产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-452-long-products
 ---
 
 # --description--

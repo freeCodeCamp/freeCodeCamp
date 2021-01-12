@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd19
 title: 构建Wikipedia查看器
 challengeType: 3
 videoUrl: ''
+dashedName: build-a-wikipedia-viewer
 ---
 
 # --description--

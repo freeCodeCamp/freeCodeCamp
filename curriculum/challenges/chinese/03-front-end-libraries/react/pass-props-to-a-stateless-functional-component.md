@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036169
 title: 将 Props 传递给无状态函数组件
 challengeType: 6
 forumTopicId: 301402
+dashedName: pass-props-to-a-stateless-functional-component
 ---
 
 # --description--

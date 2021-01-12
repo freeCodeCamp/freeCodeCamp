@@ -3,6 +3,7 @@ id: 587d7b7a367417b2b2512b12
 title: 使用 slice() 复制数组元素
 challengeType: 1
 forumTopicId: 301158
+dashedName: copy-array-items-using-slice
 ---
 
 # --description--

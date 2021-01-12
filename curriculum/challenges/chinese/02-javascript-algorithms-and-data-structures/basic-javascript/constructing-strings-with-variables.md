@@ -4,6 +4,7 @@ title: 用变量构造字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cqk8rf4'
 forumTopicId: 16805
+dashedName: constructing-strings-with-variables
 ---
 
 # --description--

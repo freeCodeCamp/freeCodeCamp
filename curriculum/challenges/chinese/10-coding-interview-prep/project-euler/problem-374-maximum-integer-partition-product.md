@@ -3,6 +3,7 @@ id: 5900f4e51000cf542c50fff6
 title: 问题374：最大整数分区产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-374-maximum-integer-partition-product
 ---
 
 # --description--

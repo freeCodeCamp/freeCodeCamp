@@ -4,6 +4,7 @@ title: 了解 Alt 文本留空的情景
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9P4t2'
 forumTopicId: 301019
+dashedName: know-when-alt-text-should-be-left-blank
 ---
 
 # --description--

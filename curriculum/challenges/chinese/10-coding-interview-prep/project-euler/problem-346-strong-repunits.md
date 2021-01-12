@@ -3,6 +3,7 @@ id: 5900f4c71000cf542c50ffd8
 title: 问题346：强大的Repunits
 challengeType: 5
 videoUrl: ''
+dashedName: problem-346-strong-repunits
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bd0f
 title: 管理图书交易俱乐部
 challengeType: 4
 videoUrl: ''
+dashedName: manage-a-book-trading-club
 ---
 
 # --description--

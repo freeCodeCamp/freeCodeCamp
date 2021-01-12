@@ -3,6 +3,7 @@ id: 598eef80ba501f1268170e1e
 title: 斐波那契n步数序列
 challengeType: 5
 videoUrl: ''
+dashedName: fibonacci-n-step-number-sequences
 ---
 
 # --description--

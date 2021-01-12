@@ -4,6 +4,7 @@ title: 使用无限的动画计数制作 CSS 心跳
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cDZpDUr'
 forumTopicId: 301062
+dashedName: make-a-css-heartbeat-using-an-infinite-animation-count
 ---
 
 # --description--

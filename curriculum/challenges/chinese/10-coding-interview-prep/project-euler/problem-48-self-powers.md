@@ -3,6 +3,7 @@ id: 5900f39c1000cf542c50feaf
 title: 问题48：自我权力
 challengeType: 5
 videoUrl: ''
+dashedName: problem-48-self-powers
 ---
 
 # --description--

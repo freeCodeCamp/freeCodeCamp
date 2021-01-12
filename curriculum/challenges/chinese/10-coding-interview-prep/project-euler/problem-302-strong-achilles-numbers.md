@@ -3,6 +3,7 @@ id: 5900f49b1000cf542c50ffad
 title: 问题302：强阿喀琉斯数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-302-strong-achilles-numbers
 ---
 
 # --description--

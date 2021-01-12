@@ -3,6 +3,7 @@ id: 5900f4601000cf542c50ff72
 title: 问题244：滑块
 challengeType: 5
 videoUrl: ''
+dashedName: problem-244-sliders
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4ee1000cf542c510000
 title: 问题385：三角形内的椭圆
 challengeType: 5
 videoUrl: ''
+dashedName: problem-385-ellipses-inside-triangles
 ---
 
 # --description--

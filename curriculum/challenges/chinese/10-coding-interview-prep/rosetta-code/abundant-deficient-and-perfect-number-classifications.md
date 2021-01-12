@@ -3,6 +3,7 @@ id: 594810f028c0303b75339acd
 title: 丰富，不足和完善的数字分类
 challengeType: 5
 videoUrl: ''
+dashedName: abundant-deficient-and-perfect-number-classifications
 ---
 
 # --description--

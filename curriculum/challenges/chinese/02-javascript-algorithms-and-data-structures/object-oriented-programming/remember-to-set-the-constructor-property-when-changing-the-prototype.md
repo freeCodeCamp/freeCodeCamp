@@ -3,6 +3,7 @@ id: 587d7daf367417b2b2512b80
 title: 更改原型时，记得设置构造函数属性
 challengeType: 1
 forumTopicId: 301323
+dashedName: remember-to-set-the-constructor-property-when-changing-the-prototype
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8257367417b2b2512c7e
 title: 在二叉搜索树中使用深度优先搜索
 challengeType: 1
 videoUrl: ''
+dashedName: use-depth-first-search-in-a-binary-search-tree
 ---
 
 # --description--

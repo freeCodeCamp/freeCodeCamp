@@ -3,6 +3,7 @@ id: bd7158d8c442eedfaeb5bd1c
 title: 建立一个Tic Tac Toe游戏
 challengeType: 3
 videoUrl: ''
+dashedName: build-a-tic-tac-toe-game
 ---
 
 # --description--

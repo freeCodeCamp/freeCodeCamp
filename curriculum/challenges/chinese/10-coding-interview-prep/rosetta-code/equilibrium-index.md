@@ -3,6 +3,7 @@ id: 5987fd532b954e0f21b5d3f6
 title: 均衡指数
 challengeType: 5
 videoUrl: ''
+dashedName: equilibrium-index
 ---
 
 # --description--

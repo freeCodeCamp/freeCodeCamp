@@ -3,6 +3,7 @@ id: 5900f5351000cf542c510047
 title: 问题456：包含原点II的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-456-triangles-containing-the-origin-ii
 ---
 
 # --description--

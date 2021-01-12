@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e78
 title: 一般的FizzBu​​zz
 challengeType: 5
 videoUrl: ''
+dashedName: general-fizzbuzz
 ---
 
 # --description--

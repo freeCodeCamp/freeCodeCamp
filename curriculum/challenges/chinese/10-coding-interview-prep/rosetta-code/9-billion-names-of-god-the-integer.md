@@ -3,6 +3,7 @@ id: 5949b579404977fbaefcd736
 title: 90亿上帝的名字整数
 challengeType: 5
 videoUrl: ''
+dashedName: 9-billion-names-of-god-the-integer
 ---
 
 # --description--

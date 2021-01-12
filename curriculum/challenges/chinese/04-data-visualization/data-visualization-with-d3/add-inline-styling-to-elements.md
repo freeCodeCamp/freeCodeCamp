@@ -3,6 +3,7 @@ id: 587d7fa7367417b2b2512bc6
 title: 给元素添加内联样式
 challengeType: 6
 forumTopicId: 301475
+dashedName: add-inline-styling-to-elements
 ---
 
 # --description--

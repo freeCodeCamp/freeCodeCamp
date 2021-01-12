@@ -3,6 +3,7 @@ id: 5900f4ff1000cf542c510011
 title: 问题402：整数值多项式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-402-integer-valued-polynomials
 ---
 
 # --description--

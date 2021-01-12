@@ -3,6 +3,7 @@ id: 587d7fac367417b2b2512bdb
 title: 按比例设置域和范围
 challengeType: 6
 forumTopicId: 301491
+dashedName: set-a-domain-and-a-range-on-a-scale
 ---
 
 # --description--

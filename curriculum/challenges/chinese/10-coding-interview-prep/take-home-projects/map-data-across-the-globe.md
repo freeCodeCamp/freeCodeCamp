@@ -3,6 +3,7 @@ id: bd7108d8c242eddfaeb5bd13
 title: 全球地图数据
 challengeType: 3
 videoUrl: ''
+dashedName: map-data-across-the-globe
 ---
 
 # --description--

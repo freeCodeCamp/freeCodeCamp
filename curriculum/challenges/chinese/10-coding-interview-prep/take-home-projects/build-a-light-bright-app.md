@@ -3,6 +3,7 @@ id: 5a5d02bd919fcf9ca8cf46cb
 title: 构建一个明亮的应用程序
 challengeType: 3
 videoUrl: ''
+dashedName: build-a-light-bright-app
 ---
 
 # --description--

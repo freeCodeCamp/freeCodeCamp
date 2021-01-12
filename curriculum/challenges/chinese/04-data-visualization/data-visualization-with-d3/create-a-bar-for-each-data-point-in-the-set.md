@@ -3,6 +3,7 @@ id: 587d7fa8367417b2b2512bcd
 title: 为集合中的每个数据点创建一个数据条
 challengeType: 6
 forumTopicId: 301482
+dashedName: create-a-bar-for-each-data-point-in-the-set
 ---
 
 # --description--

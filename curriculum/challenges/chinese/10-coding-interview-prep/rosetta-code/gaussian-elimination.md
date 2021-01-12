@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e77
 title: 高斯消除
 challengeType: 5
 videoUrl: ''
+dashedName: gaussian-elimination
 ---
 
 # --description--

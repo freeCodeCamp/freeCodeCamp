@@ -3,6 +3,7 @@ id: 587d824c367417b2b2512c4d
 title: 比较两个元素的属性
 challengeType: 2
 forumTopicId: 301588
+dashedName: compare-the-properties-of-two-elements
 ---
 
 # --description--

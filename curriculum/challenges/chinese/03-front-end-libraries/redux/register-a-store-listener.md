@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036153
 title: 注册 Store 监听器
 challengeType: 6
 forumTopicId: 301446
+dashedName: register-a-store-listener
 ---
 
 # --description--

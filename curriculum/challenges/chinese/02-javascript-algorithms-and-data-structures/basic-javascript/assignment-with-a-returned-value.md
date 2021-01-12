@@ -4,6 +4,7 @@ title: 用返回值来赋值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
+dashedName: assignment-with-a-returned-value
 ---
 
 # --description--

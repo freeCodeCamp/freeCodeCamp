@@ -4,6 +4,7 @@ title: 严格不等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cKekkUy'
 forumTopicId: 16791
+dashedName: comparison-with-the-strict-inequality-operator
 ---
 
 # --description--

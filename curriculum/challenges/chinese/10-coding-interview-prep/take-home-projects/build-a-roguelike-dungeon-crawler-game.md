@@ -3,6 +3,7 @@ id: bd7153d8c242eddfaeb5bd13
 title: 建立一个Roguelike Dungeon Crawler游戏
 challengeType: 3
 videoUrl: ''
+dashedName: build-a-roguelike-dungeon-crawler-game
 ---
 
 # --description--

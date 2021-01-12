@@ -3,6 +3,7 @@ id: 5900f4531000cf542c50ff65
 title: 问题230：斐波纳契语
 challengeType: 5
 videoUrl: ''
+dashedName: problem-230-fibonacci-words
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f43a1000cf542c50ff4d
 title: 问题206：隐藏的广场
 challengeType: 5
 videoUrl: ''
+dashedName: problem-206-concealed-square
 ---
 
 # --description--

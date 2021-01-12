@@ -3,6 +3,7 @@ id: bad87fee1348bd8acde08812
 title: 用 Bootstrap 居中文本
 challengeType: 0
 forumTopicId: 16771
+dashedName: center-text-with-bootstrap
 ---
 
 # --description--

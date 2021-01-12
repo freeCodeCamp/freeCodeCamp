@@ -3,6 +3,7 @@ id: 5900f38f1000cf542c50fea2
 title: 问题35：循环素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-35-circular-primes
 ---
 
 # --description--

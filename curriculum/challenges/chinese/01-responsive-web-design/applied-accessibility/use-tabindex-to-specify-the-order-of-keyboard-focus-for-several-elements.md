@@ -4,6 +4,7 @@ title: 使用 tabindex 指定多个元素的键盘焦点顺序
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzRRcb'
 forumTopicId: 301028
+dashedName: use-tabindex-to-specify-the-order-of-keyboard-focus-for-several-elements
 ---
 
 # --description--

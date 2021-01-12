@@ -3,6 +3,7 @@ id: 598eea87e5cf4b116c3ff81a
 title: 梅森数的因素
 challengeType: 5
 videoUrl: ''
+dashedName: factors-of-a-mersenne-number
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用 CSS 线性渐变创建条纹元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bmQh2'
 forumTopicId: 301072
+dashedName: use-a-css-linear-gradient-to-create-a-striped-element
 ---
 
 # --description--

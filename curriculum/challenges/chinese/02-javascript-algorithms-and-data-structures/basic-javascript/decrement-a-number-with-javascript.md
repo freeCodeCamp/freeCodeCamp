@@ -4,6 +4,7 @@ title: 数字递减
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KeS2'
 forumTopicId: 17558
+dashedName: decrement-a-number-with-javascript
 ---
 
 # --description--

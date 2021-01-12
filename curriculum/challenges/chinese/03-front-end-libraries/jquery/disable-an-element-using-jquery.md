@@ -3,6 +3,7 @@ id: bad87fee1348bd9aed808826
 title: 使用 jQuery 禁用元素
 challengeType: 6
 forumTopicId: 17563
+dashedName: disable-an-element-using-jquery
 ---
 
 # --description--

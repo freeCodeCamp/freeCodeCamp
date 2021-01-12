@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad7
 title: Zhang-Suen 细化算法
 challengeType: 5
 forumTopicId: 302347
+dashedName: zhang-suen-thinning-algorithm
 ---
 
 # --description--
@@ -54,7 +55,7 @@ forumTopicId: 302347
 
 <h2>算法</h2>
 
-假设黑像素点为 1，白像素点为 0；则输入图像可以用一个 N * M 的矩阵（或数组）来表示，其中，矩阵中的元素只能为 0 或 1。这个算法对所有黑像素点 P1 进行操作。每个点 P1 都可以有 8 个相邻的点，分别是：
+假设黑像素点为 1，白像素点为 0；则输入图像可以用一个 N \* M 的矩阵（或数组）来表示，其中，矩阵中的元素只能为 0 或 1。这个算法对所有黑像素点 P1 进行操作。每个点 P1 都可以有 8 个相邻的点，分别是：
 
 <table border="3">
   <tr><td style="text-align: center;">P9</td><td style="text-align: center;">P2</td><td style="text-align: center;">P3</td></tr>

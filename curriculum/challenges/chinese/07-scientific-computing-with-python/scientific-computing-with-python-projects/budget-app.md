@@ -1,6 +1,7 @@
 ---
 id: 5e44413e903586ffb414c94e
 challengeType: 10
+dashedName: budget-app
 ---
 
 # --description--

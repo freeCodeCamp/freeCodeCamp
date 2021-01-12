@@ -3,6 +3,7 @@ id: 587d7fb8367417b2b2512c10
 title: 使用 model.findByIdAndRemove 删除一个 document
 challengeType: 2
 forumTopicId: 301539
+dashedName: delete-one-document-using-model-findbyidandremove
 ---
 
 # --description--

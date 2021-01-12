@@ -3,6 +3,7 @@ id: 5900f47f1000cf542c50ff91
 title: 问题274：可分性乘数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-274-divisibility-multipliers
 ---
 
 # --description--

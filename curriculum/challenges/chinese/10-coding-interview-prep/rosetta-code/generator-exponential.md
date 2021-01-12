@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e7b
 title: Generator/Exponential
 challengeType: 5
 forumTopicId: 302275
+dashedName: generatorexponential
 ---
 
 # --description--

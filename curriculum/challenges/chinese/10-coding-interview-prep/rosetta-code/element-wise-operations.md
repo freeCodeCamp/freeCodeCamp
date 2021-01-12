@@ -3,6 +3,7 @@ id: 599c333915e0ea32d04d4bec
 title: 元素操作
 challengeType: 5
 videoUrl: ''
+dashedName: element-wise-operations
 ---
 
 # --description--

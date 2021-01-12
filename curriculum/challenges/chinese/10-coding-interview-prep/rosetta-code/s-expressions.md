@@ -3,6 +3,7 @@ id: 59667989bf71cf555dd5d2ff
 title: S-表达式
 challengeType: 5
 videoUrl: ''
+dashedName: s-expressions
 ---
 
 # --description--

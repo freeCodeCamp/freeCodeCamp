@@ -3,6 +3,7 @@ id: 5900f3bb1000cf542c50fece
 title: 问题79：密码派生
 challengeType: 5
 videoUrl: ''
+dashedName: problem-79-passcode-derivation
 ---
 
 # --description--

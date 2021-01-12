@@ -3,6 +3,7 @@ id: 587d7db6367417b2b2512b9a
 title: 匹配出现零次或多次的字符
 challengeType: 1
 forumTopicId: 301351
+dashedName: match-characters-that-occur-zero-or-more-times
 ---
 
 # --description--

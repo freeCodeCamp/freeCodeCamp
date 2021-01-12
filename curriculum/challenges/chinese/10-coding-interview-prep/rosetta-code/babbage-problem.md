@@ -3,6 +3,7 @@ id: 594db4d0dedb4c06a2a4cefd
 title: 巴贝奇问题
 challengeType: 5
 videoUrl: ''
+dashedName: babbage-problem
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 内联样式的优先级高于 ID 选择器
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDRha'
 forumTopicId: 18252
+dashedName: override-class-declarations-with-inline-styles
 ---
 
 # --description--

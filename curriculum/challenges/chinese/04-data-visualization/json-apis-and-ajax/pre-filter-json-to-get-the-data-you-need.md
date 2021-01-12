@@ -3,6 +3,7 @@ id: 587d7fae367417b2b2512be7
 title: 预先过滤 JSON 以获得所需的数据
 challengeType: 6
 forumTopicId: 18257
+dashedName: pre-filter-json-to-get-the-data-you-need
 ---
 
 # --description--

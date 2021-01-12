@@ -3,6 +3,7 @@ id: 587d824d367417b2b2512c50
 title: 测试某个值是否为数组
 challengeType: 2
 forumTopicId: 301600
+dashedName: test-if-a-value-is-an-array
 ---
 
 # --description--

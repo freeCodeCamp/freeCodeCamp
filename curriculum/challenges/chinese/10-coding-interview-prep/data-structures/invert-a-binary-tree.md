@@ -3,6 +3,7 @@ id: 587d8259367417b2b2512c83
 title: 反转二叉树
 challengeType: 1
 videoUrl: ''
+dashedName: invert-a-binary-tree
 ---
 
 # --description--

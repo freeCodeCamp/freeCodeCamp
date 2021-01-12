@@ -3,6 +3,7 @@ id: 5900f36f1000cf542c50fe82
 title: 问题3：最大素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-3-largest-prime-factor
 ---
 
 # --description--

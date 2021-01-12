@@ -3,6 +3,7 @@ id: 5900f4691000cf542c50ff7c
 title: 问题253：整理
 challengeType: 5
 videoUrl: ''
+dashedName: problem-253-tidying-up
 ---
 
 # --description--

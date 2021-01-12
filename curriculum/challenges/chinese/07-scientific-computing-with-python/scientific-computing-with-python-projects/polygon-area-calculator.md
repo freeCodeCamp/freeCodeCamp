@@ -1,6 +1,7 @@
 ---
 id: 5e444147903586ffb414c94f
 challengeType: 10
+dashedName: polygon-area-calculator
 ---
 
 # --description--

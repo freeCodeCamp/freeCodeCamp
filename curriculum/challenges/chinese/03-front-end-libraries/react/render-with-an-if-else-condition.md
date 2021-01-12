@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036184
 title: 使用 If-Else 条件进行渲染
 challengeType: 6
 forumTopicId: 301410
+dashedName: render-with-an-if-else-condition
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617a
 title: 将 State 作为 Props 传递给子组件
 challengeType: 6
 forumTopicId: 301403
+dashedName: pass-state-as-props-to-child-components
 ---
 
 # --description--

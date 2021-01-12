@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036143
 title: 提取状态逻辑给 Redux
 challengeType: 6
 forumTopicId: 301429
+dashedName: extract-state-logic-to-redux
 ---
 
 # --description--

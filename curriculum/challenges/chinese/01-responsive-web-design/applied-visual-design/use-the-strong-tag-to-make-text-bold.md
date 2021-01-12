@@ -4,6 +4,7 @@ title: 使用 strong 标签加粗文本
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/ceJNBSb'
 forumTopicId: 1
+dashedName: use-the-strong-tag-to-make-text-bold
 ---
 
 # --description--

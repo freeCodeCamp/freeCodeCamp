@@ -3,6 +3,7 @@ id: 5900f50a1000cf542c51001c
 title: 问题413：独生子女号码
 challengeType: 5
 videoUrl: ''
+dashedName: problem-413-one-child-numbers
 ---
 
 # --description--

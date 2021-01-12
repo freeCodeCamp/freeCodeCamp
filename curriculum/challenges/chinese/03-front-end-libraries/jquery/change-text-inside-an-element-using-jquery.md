@@ -3,6 +3,7 @@ id: 564944c91be2204b269d51e3
 title: 使用 jQuery 更改元素内部的文本
 challengeType: 6
 forumTopicId: 16773
+dashedName: change-text-inside-an-element-using-jquery
 ---
 
 # --description--

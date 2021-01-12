@@ -3,6 +3,7 @@ id: bd7188d8c242eddfaeb5bd13
 title: 用热图可视化数据
 challengeType: 3
 forumTopicId: 301466
+dashedName: visualize-data-with-a-heat-map
 ---
 
 # --description--

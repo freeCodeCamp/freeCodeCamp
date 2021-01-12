@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd18
 title: 制作一个致敬页
 challengeType: 3
 forumTopicId: 301147
+dashedName: build-a-tribute-page
 ---
 
 # --description--

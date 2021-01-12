@@ -4,6 +4,7 @@ title: 使用 For 循环遍历数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeR3HB'
 forumTopicId: 18216
+dashedName: iterate-through-an-array-with-a-for-loop
 ---
 
 # --description--

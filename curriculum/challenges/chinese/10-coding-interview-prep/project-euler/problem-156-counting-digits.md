@@ -3,6 +3,7 @@ id: 5900f4091000cf542c50ff1b
 title: 问题156：计数数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-156-counting-digits
 ---
 
 # --description--

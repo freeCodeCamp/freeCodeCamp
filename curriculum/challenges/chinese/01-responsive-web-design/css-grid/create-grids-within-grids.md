@@ -4,6 +4,7 @@ title: 在网格中创建网格
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
 forumTopicId: 301128
+dashedName: create-grids-within-grids
 ---
 
 # --description--

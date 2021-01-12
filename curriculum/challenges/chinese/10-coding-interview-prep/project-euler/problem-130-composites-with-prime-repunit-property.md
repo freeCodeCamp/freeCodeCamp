@@ -3,6 +3,7 @@ id: 5900f3ee1000cf542c50ff00
 title: 问题130：具有主要repunit属性的复合材料
 challengeType: 5
 videoUrl: ''
+dashedName: problem-130-composites-with-prime-repunit-property
 ---
 
 # --description--

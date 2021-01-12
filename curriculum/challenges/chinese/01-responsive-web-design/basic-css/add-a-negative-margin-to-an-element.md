@@ -4,6 +4,7 @@ title: 给元素添加负外边距
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpyGs3'
 forumTopicId: 16166
+dashedName: add-a-negative-margin-to-an-element
 ---
 
 # --description--

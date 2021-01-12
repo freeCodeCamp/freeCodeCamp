@@ -3,6 +3,7 @@ id: 594810f028c0303b75339acc
 title: ABC问题
 challengeType: 5
 videoUrl: ''
+dashedName: abc-problem
 ---
 
 # --description--

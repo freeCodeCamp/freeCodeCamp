@@ -3,6 +3,7 @@ id: 587d8252367417b2b2512c67
 title: 在链接列表中的特定索引处添加元素
 challengeType: 1
 videoUrl: ''
+dashedName: add-elements-at-a-specific-index-in-a-linked-list
 ---
 
 # --description--

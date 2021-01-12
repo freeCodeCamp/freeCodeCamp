@@ -3,6 +3,7 @@ id: 5900f48f1000cf542c50ffa2
 title: 问题291：Panaitopol素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-291-panaitopol-primes
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 599d15309e88c813a40baf58
 title: 熵
 challengeType: 5
 videoUrl: ''
+dashedName: entropy
 ---
 
 # --description--

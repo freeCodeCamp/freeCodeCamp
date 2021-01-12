@@ -4,6 +4,7 @@ title: 用 a 实现网页间的跳转
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EkncB'
 forumTopicId: 18226
+dashedName: link-to-external-pages-with-anchor-elements
 ---
 
 # --description--

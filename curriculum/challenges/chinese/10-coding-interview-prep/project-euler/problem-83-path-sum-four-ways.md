@@ -3,6 +3,7 @@ id: 5900f3bf1000cf542c50fed2
 title: 问题83：路径总和：四种方式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-83-path-sum-four-ways
 ---
 
 # --description--

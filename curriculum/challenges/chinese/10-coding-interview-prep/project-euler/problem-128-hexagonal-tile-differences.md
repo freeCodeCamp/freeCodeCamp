@@ -3,6 +3,7 @@ id: 5900f3ec1000cf542c50feff
 title: 问题128：六边形瓷砖差异
 challengeType: 5
 videoUrl: ''
+dashedName: problem-128-hexagonal-tile-differences
 ---
 
 # --description--

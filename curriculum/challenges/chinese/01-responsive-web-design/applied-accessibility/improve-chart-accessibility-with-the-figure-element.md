@@ -4,6 +4,7 @@ title: 使用 figure 元素提高图表的可访问性
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMqtE'
 forumTopicId: 301015
+dashedName: improve-chart-accessibility-with-the-figure-element
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 通过给元素添加 accesskey 属性来让用户可以在链接之间�
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQvmaTp'
 forumTopicId: 1
+dashedName: make-links-navigable-with-html-access-keys
 ---
 
 # --description--

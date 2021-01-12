@@ -4,6 +4,7 @@ title: 使用 flex-shrink 属性定义 flex 子元素的收缩规则
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PBfr'
 forumTopicId: 301113
+dashedName: use-the-flex-shrink-property-to-shrink-items
 ---
 
 # --description--

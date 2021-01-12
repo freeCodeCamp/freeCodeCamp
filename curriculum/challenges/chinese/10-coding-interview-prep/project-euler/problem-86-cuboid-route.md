@@ -3,6 +3,7 @@ id: 5900f3c31000cf542c50fed5
 title: 问题86：长方体路线
 challengeType: 5
 videoUrl: ''
+dashedName: problem-86-cuboid-route
 ---
 
 # --description--

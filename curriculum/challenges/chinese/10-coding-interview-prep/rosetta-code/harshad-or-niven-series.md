@@ -3,6 +3,7 @@ id: 595668ca4cfe1af2fb9818d4
 title: Harshad或Niven系列
 challengeType: 5
 videoUrl: ''
+dashedName: harshad-or-niven-series
 ---
 
 # --description--

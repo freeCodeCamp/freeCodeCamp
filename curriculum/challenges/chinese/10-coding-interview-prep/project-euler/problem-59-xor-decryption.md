@@ -3,6 +3,7 @@ id: 5900f3a81000cf542c50feba
 title: 问题59：XOR解密
 challengeType: 5
 videoUrl: ''
+dashedName: problem-59-xor-decryption
 ---
 
 # --description--

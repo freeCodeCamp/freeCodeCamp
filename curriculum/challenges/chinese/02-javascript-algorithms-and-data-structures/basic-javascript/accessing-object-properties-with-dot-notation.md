@@ -4,6 +4,7 @@ title: 通过点符号访问对象属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cGryJs8'
 forumTopicId: 16164
+dashedName: accessing-object-properties-with-dot-notation
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4c51000cf542c50ffd7
 title: 问题344：银元游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-344-silver-dollar-game
 ---
 
 # --description--

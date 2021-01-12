@@ -3,6 +3,7 @@ id: 587d7da9367417b2b2512b66
 title: 使用 concat 方法组合两个数组
 challengeType: 1
 forumTopicId: 301229
+dashedName: combine-two-arrays-using-the-concat-method
 ---
 
 # --description--

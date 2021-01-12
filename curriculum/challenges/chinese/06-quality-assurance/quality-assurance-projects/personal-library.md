@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c43
 title: 个人图书馆
 challengeType: 4
 videoUrl: ''
+dashedName: personal-library
 ---
 
 # --description--

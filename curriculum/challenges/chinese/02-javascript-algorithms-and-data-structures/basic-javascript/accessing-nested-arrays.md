@@ -4,6 +4,7 @@ title: 访问嵌套数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cLeGDtZ'
 forumTopicId: 16160
+dashedName: accessing-nested-arrays
 ---
 
 # --description--

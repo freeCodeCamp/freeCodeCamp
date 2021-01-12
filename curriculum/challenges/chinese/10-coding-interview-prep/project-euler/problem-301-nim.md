@@ -3,6 +3,7 @@ id: 5900f4991000cf542c50ffab
 title: 问题301：尼姆
 challengeType: 5
 videoUrl: ''
+dashedName: problem-301-nim
 ---
 
 # --description--

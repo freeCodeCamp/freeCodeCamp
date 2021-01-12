@@ -3,6 +3,7 @@ id: 5900f4371000cf542c50ff49
 title: 问题202：Laserbeam
 challengeType: 5
 videoUrl: ''
+dashedName: problem-202-laserbeam
 ---
 
 # --description--

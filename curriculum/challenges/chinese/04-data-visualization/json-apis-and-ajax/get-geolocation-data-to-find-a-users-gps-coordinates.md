@@ -3,6 +3,7 @@ id: 587d7faf367417b2b2512be8
 title: 根据地理位置数据找到用户的 GPS 坐标
 challengeType: 6
 forumTopicId: 18188
+dashedName: get-geolocation-data-to-find-a-users-gps-coordinates
 ---
 
 # --description--

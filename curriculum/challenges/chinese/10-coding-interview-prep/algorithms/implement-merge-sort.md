@@ -3,6 +3,7 @@ id: 587d825c367417b2b2512c8f
 title: 实现合并排序
 challengeType: 1
 videoUrl: ''
+dashedName: implement-merge-sort
 ---
 
 # --description--

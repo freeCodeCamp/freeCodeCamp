@@ -3,6 +3,7 @@ id: 587d7b7d367417b2b2512b1d
 title: 使用 for...in 语句遍历对象
 challengeType: 1
 forumTopicId: 301162
+dashedName: iterate-through-the-keys-of-an-object-with-a-for---in-statement
 ---
 
 # --description--

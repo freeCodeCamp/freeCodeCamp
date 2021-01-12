@@ -3,6 +3,7 @@ id: 587d7b87367417b2b2512b43
 title: 使用箭头函数编写简洁的匿名函数
 challengeType: 1
 forumTopicId: 301211
+dashedName: use-arrow-functions-to-write-concise-anonymous-functions
 ---
 
 # --description--

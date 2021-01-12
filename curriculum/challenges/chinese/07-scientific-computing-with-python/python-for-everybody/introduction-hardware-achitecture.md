@@ -2,6 +2,7 @@
 id: 5e6a54af58d3af90110a60a1
 challengeType: 11
 videoId: H6qtjRTfSog
+dashedName: introduction-hardware-architecture
 ---
 
 # --question--

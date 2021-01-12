@@ -3,6 +3,7 @@ id: adf08ec01beb4f99fc7a68f2
 title: 过滤数组中的假值
 challengeType: 5
 forumTopicId: 16014
+dashedName: falsy-bouncer
 ---
 
 # --description--
@@ -12,7 +13,6 @@ forumTopicId: 16014
 JavaScript 中的假值有 `false`、`null`、`0`、`""`、`undefined`、`NaN`。
 
 提示：可以考虑将每个值都转换为布尔值（boolean）。
-
 
 # --hints--
 

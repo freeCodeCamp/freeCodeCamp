@@ -3,6 +3,7 @@ id: 5900f45c1000cf542c50ff6e
 title: 问题239：二十二个愚蠢的素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-239-twenty-two-foolish-primes
 ---
 
 # --description--

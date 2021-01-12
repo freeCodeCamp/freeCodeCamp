@@ -3,6 +3,7 @@ id: 598de241872ef8353c58a7a2
 title: 评估二项式系数
 challengeType: 5
 videoUrl: ''
+dashedName: evaluate-binomial-coefficients
 ---
 
 # --description--

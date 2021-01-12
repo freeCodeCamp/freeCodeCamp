@@ -3,6 +3,7 @@ id: 5900f51d1000cf542c51002f
 title: 问题433：欧几里得算法的步骤
 challengeType: 5
 videoUrl: ''
+dashedName: problem-433-steps-in-euclids-algorithm
 ---
 
 # --description--

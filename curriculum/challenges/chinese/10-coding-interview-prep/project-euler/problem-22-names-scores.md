@@ -3,6 +3,7 @@ id: 5a51eabcad78bf416f316e2a
 title: 问题22：命名分数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-22-names-scores
 ---
 
 # --description--

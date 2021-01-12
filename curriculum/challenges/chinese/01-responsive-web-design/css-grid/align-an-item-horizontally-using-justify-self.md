@@ -4,6 +4,7 @@ title: 使用 justify-self 水平对齐项目
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpKHq'
 forumTopicId: 301122
+dashedName: align-an-item-horizontally-using-justify-self
 ---
 
 # --description--

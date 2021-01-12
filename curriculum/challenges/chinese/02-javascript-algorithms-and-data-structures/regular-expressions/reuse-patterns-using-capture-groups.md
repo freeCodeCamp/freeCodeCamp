@@ -3,6 +3,7 @@ id: 587d7dbb367417b2b2512baa
 title: 使用捕获组重用模式
 challengeType: 1
 forumTopicId: 301364
+dashedName: reuse-patterns-using-capture-groups
 ---
 
 # --description--

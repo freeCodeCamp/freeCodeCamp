@@ -3,6 +3,7 @@ id: 587d8253367417b2b2512c6c
 title: 在两个集上执行联合
 challengeType: 1
 videoUrl: ''
+dashedName: perform-a-union-on-two-sets
 ---
 
 # --description--

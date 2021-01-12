@@ -2,6 +2,7 @@
 id: af7588ade1100bde429baf20
 title: 寻找缺失的字母
 challengeType: 5
+dashedName: missing-letters
 ---
 
 # --description--

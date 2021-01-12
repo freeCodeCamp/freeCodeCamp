@@ -3,6 +3,7 @@ id: 5900f4db1000cf542c50ffee
 title: 问题367：Bozo排序
 challengeType: 5
 videoUrl: ''
+dashedName: problem-367-bozo-sort
 ---
 
 # --description--

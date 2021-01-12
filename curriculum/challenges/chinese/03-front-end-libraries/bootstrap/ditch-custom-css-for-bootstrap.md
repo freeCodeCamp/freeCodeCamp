@@ -3,6 +3,7 @@ id: bad87fee1347bd9aedf08845
 title: 用 Bootstrap 来取代我们之前的自定义样式
 challengeType: 0
 forumTopicId: 17565
+dashedName: ditch-custom-css-for-bootstrap
 ---
 
 # --description--

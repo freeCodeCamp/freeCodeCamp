@@ -3,6 +3,7 @@ id: 5900f4e81000cf542c50fffb
 title: 问题380：惊人的迷宫！
 challengeType: 5
 videoUrl: ''
+dashedName: problem-380-amazing-mazes
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036158
 title: 永不改变状态
 challengeType: 6
 forumTopicId: 301445
+dashedName: never-mutate-state
 ---
 
 # --description--

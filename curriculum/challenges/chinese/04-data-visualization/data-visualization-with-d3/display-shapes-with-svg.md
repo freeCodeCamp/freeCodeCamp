@@ -3,6 +3,7 @@ id: 587d7fa8367417b2b2512bcc
 title: 用 SVG 显示形状
 challengeType: 6
 forumTopicId: 301485
+dashedName: display-shapes-with-svg
 ---
 
 # --description--

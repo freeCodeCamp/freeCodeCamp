@@ -3,6 +3,7 @@ id: 5900f4c81000cf542c50ffdb
 title: 问题348：正方形和立方体的总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-348-sum-of-a-square-and-a-cube
 ---
 
 # --description--

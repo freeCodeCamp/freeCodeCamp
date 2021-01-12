@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad6
 title: 勾选村号码表示
 challengeType: 5
 videoUrl: ''
+dashedName: zeckendorf-number-representation
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 字体如何优雅降级
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
+dashedName: specify-how-fonts-should-degrade
 ---
 
 # --description--

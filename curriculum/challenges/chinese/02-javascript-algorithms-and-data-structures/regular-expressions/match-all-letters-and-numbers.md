@@ -3,6 +3,7 @@ id: 587d7db7367417b2b2512b9f
 title: 匹配所有的字母和数字
 challengeType: 1
 forumTopicId: 301346
+dashedName: match-all-letters-and-numbers
 ---
 
 # --description--

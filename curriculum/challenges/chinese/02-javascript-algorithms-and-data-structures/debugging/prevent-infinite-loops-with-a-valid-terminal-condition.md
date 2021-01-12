@@ -3,6 +3,7 @@ id: 587d7b86367417b2b2512b3d
 title: 使用有效的终止条件防止无限循环
 challengeType: 1
 forumTopicId: 301192
+dashedName: prevent-infinite-loops-with-a-valid-terminal-condition
 ---
 
 # --description--

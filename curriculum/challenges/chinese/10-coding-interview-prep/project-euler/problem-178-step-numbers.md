@@ -3,6 +3,7 @@ id: 5900f41e1000cf542c50ff31
 title: 问题178：步骤编号
 challengeType: 5
 videoUrl: ''
+dashedName: problem-178-step-numbers
 ---
 
 # --description--

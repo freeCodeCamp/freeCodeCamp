@@ -4,6 +4,7 @@ title: 严格相等运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87atr'
 forumTopicId: 16790
+dashedName: comparison-with-the-strict-equality-operator
 ---
 
 # --description--

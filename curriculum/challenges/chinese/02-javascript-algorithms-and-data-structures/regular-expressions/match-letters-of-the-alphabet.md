@@ -3,6 +3,7 @@ id: 587d7db5367417b2b2512b96
 title: 匹配字母表中的字母
 challengeType: 1
 forumTopicId: 301354
+dashedName: match-letters-of-the-alphabet
 ---
 
 # --description--

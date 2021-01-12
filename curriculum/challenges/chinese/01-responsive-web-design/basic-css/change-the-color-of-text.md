@@ -4,6 +4,7 @@ title: 更改文本的颜色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
+dashedName: change-the-color-of-text
 ---
 
 # --description--

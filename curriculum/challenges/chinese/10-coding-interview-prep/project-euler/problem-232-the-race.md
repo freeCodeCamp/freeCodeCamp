@@ -3,6 +3,7 @@ id: 5900f4551000cf542c50ff67
 title: 问题232：比赛
 challengeType: 5
 videoUrl: ''
+dashedName: problem-232-the-race
 ---
 
 # --description--

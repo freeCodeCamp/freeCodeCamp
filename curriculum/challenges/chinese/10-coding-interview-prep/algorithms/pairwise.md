@@ -3,6 +3,7 @@ id: a3f503de51cfab748ff001aa
 title: 成对
 challengeType: 5
 videoUrl: ''
+dashedName: pairwise
 ---
 
 # --description--

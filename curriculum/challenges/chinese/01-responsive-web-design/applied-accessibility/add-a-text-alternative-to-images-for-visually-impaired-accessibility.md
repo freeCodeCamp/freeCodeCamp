@@ -4,6 +4,7 @@ title: 为视觉障碍用户添加替代图像的文本
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 16628
+dashedName: add-a-text-alternative-to-images-for-visually-impaired-accessibility
 ---
 
 # --description--

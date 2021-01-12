@@ -3,6 +3,7 @@ id: 5900f4941000cf542c50ffa7
 title: 问题296：角平分线和切线
 challengeType: 5
 videoUrl: ''
+dashedName: problem-296-angular-bisector-and-tangent
 ---
 
 # --description--

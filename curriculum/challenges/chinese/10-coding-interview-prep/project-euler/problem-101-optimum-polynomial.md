@@ -3,6 +3,7 @@ id: 5900f3d21000cf542c50fee4
 title: 问题101：最佳多项式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-101-optimum-polynomial
 ---
 
 # --description--

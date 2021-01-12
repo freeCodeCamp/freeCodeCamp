@@ -3,6 +3,7 @@ id: 587d7daa367417b2b2512b6c
 title: 使用 join 方法将数组组合成字符串
 challengeType: 1
 forumTopicId: 18221
+dashedName: combine-an-array-into-a-string-using-the-join-method
 ---
 
 # --description--

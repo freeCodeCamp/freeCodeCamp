@@ -3,6 +3,7 @@ id: 587d7fb8367417b2b2512c0e
 title: 通过执行查找、编辑、保存来执行更新
 challengeType: 2
 forumTopicId: 301541
+dashedName: perform-classic-updates-by-running-find-edit-then-save
 ---
 
 # --description--

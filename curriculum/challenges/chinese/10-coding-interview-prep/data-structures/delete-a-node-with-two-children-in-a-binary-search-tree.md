@@ -3,6 +3,7 @@ id: 587d8258367417b2b2512c82
 title: 在二叉搜索树中删除具有两个子节点的节点
 challengeType: 1
 videoUrl: ''
+dashedName: delete-a-node-with-two-children-in-a-binary-search-tree
 ---
 
 # --description--

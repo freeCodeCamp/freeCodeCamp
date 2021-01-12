@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036141
 title: React 和 Redux 入门
 challengeType: 6
 forumTopicId: 301430
+dashedName: getting-started-with-react-redux
 ---
 
 # --description--

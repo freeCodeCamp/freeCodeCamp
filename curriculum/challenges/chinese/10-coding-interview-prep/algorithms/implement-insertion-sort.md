@@ -3,6 +3,7 @@ id: 587d8259367417b2b2512c86
 title: 实现插入排序
 challengeType: 1
 videoUrl: ''
+dashedName: implement-insertion-sort
 ---
 
 # --description--

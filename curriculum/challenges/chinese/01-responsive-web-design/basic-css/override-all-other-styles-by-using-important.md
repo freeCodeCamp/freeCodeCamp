@@ -4,6 +4,7 @@ title: Important 的优先级最高
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24rcp'
 forumTopicId: 18249
+dashedName: override-all-other-styles-by-using-important
 ---
 
 # --description--

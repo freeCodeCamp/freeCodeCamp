@@ -4,6 +4,7 @@ title: 乘法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3y3Aq'
 forumTopicId: 18243
+dashedName: multiply-two-numbers-with-javascript
 ---
 
 # --description--

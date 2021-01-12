@@ -3,6 +3,7 @@ id: 597f24c1dda4e70f53c79c81
 title: 斐波那契序列
 challengeType: 5
 videoUrl: ''
+dashedName: fibonacci-sequence
 ---
 
 # --description--

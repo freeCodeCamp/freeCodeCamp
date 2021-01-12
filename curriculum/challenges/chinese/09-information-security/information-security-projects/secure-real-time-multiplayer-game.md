@@ -1,6 +1,7 @@
 ---
 id: 5e601c775ac9d0ecd8b94aff
 challengeType: 4
+dashedName: secure-real-time-multiplayer-game
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7b7d367417b2b2512b1f
 title: 修改存储在对象中的数组
 challengeType: 1
 forumTopicId: 301163
+dashedName: modify-an-array-stored-in-an-object
 ---
 
 # --description--

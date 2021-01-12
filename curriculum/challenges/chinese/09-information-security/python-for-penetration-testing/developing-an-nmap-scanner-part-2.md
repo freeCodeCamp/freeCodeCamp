@@ -2,6 +2,7 @@
 id: 5ea9997bbec2e9bc47e94db2
 challengeType: 11
 videoId: a98PscnUsTg
+dashedName: developing-an-nmap-scanner-part-2
 ---
 
 # --question--

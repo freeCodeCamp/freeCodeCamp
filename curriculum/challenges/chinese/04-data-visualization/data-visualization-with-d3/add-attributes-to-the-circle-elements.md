@@ -3,6 +3,7 @@ id: 587d7fab367417b2b2512bd8
 title: 给 Circle 元素添加属性
 challengeType: 6
 forumTopicId: 301471
+dashedName: add-attributes-to-the-circle-elements
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d8253367417b2b2512c6a
 title: 键入的数组
 challengeType: 1
 videoUrl: ''
+dashedName: typed-arrays
 ---
 
 # --description--

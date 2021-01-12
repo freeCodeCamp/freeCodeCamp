@@ -3,6 +3,7 @@ id: 5900f3911000cf542c50fea4
 title: 问题37：可截断的素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-37-truncatable-primes
 ---
 
 # --description--

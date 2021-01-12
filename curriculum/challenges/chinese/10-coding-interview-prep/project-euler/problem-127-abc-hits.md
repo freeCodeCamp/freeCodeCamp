@@ -3,6 +3,7 @@ id: 5900f3ec1000cf542c50fefe
 title: 问题127：abc-hits
 challengeType: 5
 videoUrl: ''
+dashedName: problem-127-abc-hits
 ---
 
 # --description--

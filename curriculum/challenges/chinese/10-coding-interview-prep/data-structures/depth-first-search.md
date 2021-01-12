@@ -3,6 +3,7 @@ id: 587d825d367417b2b2512c96
 title: 深度优先搜索
 challengeType: 1
 videoUrl: ''
+dashedName: depth-first-search
 ---
 
 # --description--

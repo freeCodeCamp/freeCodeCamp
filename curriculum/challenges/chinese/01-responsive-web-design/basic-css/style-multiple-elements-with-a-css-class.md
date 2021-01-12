@@ -4,6 +4,7 @@ title: 使用 class 选择器设置多个元素的样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkVbsQ'
 forumTopicId: 18311
+dashedName: style-multiple-elements-with-a-css-class
 ---
 
 # --description--

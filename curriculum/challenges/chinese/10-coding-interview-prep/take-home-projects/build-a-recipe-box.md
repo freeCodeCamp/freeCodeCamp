@@ -3,6 +3,7 @@ id: bd7155d8c242eddfaeb5bd13
 title: 建立配方盒
 challengeType: 3
 videoUrl: ''
+dashedName: build-a-recipe-box
 ---
 
 # --description--

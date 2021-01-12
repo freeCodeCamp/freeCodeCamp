@@ -3,6 +3,7 @@ id: 5900f4f11000cf542c510003
 title: 问题387：Harshad数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-387-harshad-numbers
 ---
 
 # --description--

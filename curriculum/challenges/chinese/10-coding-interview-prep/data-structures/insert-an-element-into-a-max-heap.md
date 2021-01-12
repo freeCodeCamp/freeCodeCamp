@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c8a
 title: 将元素插入最大堆
 challengeType: 1
 videoUrl: ''
+dashedName: insert-an-element-into-a-max-heap
 ---
 
 # --description--

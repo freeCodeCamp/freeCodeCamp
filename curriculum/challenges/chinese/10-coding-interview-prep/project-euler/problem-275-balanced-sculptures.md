@@ -3,6 +3,7 @@ id: 5900f4801000cf542c50ff92
 title: 问题275：平衡雕塑
 challengeType: 5
 videoUrl: ''
+dashedName: problem-275-balanced-sculptures
 ---
 
 # --description--

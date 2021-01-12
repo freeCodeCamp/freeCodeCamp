@@ -3,6 +3,7 @@ id: 5900f4521000cf542c50ff64
 title: 问题229：使用正方形的四个表示
 challengeType: 5
 videoUrl: ''
+dashedName: problem-229-four-representations-using-squares
 ---
 
 # --description--

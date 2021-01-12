@@ -3,6 +3,7 @@ id: 59713bd26bdeb8a594fb9413
 title: 计算硬币
 challengeType: 5
 videoUrl: ''
+dashedName: count-the-coins
 ---
 
 # --description--

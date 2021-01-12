@@ -3,6 +3,7 @@ id: 5900f4d91000cf542c50ffeb
 title: 问题363：Bézier曲线
 challengeType: 5
 videoUrl: ''
+dashedName: problem-363-bzier-curves
 ---
 
 # --description--

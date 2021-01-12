@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d90
 challengeType: 11
 videoId: IZg24y4wEPY
+dashedName: core-learning-algorithms-hidden-markov-models
 ---
 
 # --question--

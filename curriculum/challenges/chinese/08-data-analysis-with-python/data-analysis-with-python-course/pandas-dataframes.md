@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c15a
 challengeType: 11
 videoId: 7SgFBYXaiH0
+dashedName: pandas-dataframes
 ---
 
 # --description--

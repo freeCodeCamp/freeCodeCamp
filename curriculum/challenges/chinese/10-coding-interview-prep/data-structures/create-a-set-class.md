@@ -3,6 +3,7 @@ id: 8d1323c8c441eddfaeb5bdef
 title: 创建一个Set类
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-set-class
 ---
 
 # --description--

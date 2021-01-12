@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad1
 title: 快乐的数字
 challengeType: 5
 videoUrl: ''
+dashedName: happy-numbers
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d78b3367417b2b2512b11
 title: 使用 splice() 添加元素
 challengeType: 1
 forumTopicId: 301152
+dashedName: add-items-using-splice
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用贝塞尔曲线让运动更加自然
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7akWUv'
 forumTopicId: 301063
+dashedName: make-motion-more-natural-using-a-bezier-curve
 ---
 
 # --description--

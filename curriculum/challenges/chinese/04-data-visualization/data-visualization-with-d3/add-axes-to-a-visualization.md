@@ -3,6 +3,7 @@ id: 587d7fad367417b2b2512bdf
 title: 添加坐标轴到视图中
 challengeType: 6
 forumTopicId: 301472
+dashedName: add-axes-to-a-visualization
 ---
 
 # --description--

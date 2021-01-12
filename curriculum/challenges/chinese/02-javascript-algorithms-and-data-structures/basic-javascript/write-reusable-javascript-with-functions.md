@@ -4,6 +4,7 @@ title: 用函数编写可重用代码
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
+dashedName: write-reusable-javascript-with-functions
 ---
 
 # --description--

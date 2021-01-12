@@ -3,6 +3,7 @@ id: 589fc830f9fc0f352b528e74
 title: 设置环境
 challengeType: 2
 forumTopicId: 301566
+dashedName: set-up-the-environment
 ---
 
 # --description--

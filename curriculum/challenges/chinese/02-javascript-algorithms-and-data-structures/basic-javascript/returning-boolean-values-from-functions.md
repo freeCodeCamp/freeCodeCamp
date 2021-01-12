@@ -4,6 +4,7 @@ title: 从函数返回布尔值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
+dashedName: returning-boolean-values-from-functions
 ---
 
 # --description--

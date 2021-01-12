@@ -3,6 +3,7 @@ id: 5900f3871000cf542c50fe9a
 title: 问题27：二次素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-27-quadratic-primes
 ---
 
 # --description--

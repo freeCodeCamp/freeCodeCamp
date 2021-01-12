@@ -4,6 +4,7 @@ title: 使排版根据设备尺寸自如响应
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
+dashedName: make-typography-responsive
 ---
 
 # --description--

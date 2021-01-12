@@ -4,6 +4,7 @@ title: 理解布尔值
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
 forumTopicId: 301176
+dashedName: understanding-boolean-values
 ---
 
 # --description--

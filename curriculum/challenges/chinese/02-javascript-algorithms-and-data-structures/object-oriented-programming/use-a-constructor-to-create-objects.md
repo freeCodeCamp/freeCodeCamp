@@ -3,6 +3,7 @@ id: 587d7dad367417b2b2512b78
 title: 使用构造函数创建对象
 challengeType: 1
 forumTopicId: 18233
+dashedName: use-a-constructor-to-create-objects
 ---
 
 # --description--

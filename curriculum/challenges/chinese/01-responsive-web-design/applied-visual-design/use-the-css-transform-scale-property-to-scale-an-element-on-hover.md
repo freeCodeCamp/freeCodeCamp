@@ -4,6 +4,7 @@ title: 使用CSS Transform scale 属性在悬停时缩放元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLPJuM'
 forumTopicId: 301077
+dashedName: use-the-css-transform-scale-property-to-scale-an-element-on-hover
 ---
 
 # --description--

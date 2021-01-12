@@ -3,6 +3,7 @@ id: 587d7b86367417b2b2512b3b
 title: 捕获使用索引的时候出现的错误
 challengeType: 1
 forumTopicId: 301189
+dashedName: catch-off-by-one-errors-when-using-indexing
 ---
 
 # --description--

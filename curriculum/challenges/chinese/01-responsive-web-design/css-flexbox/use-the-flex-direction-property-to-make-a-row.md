@@ -4,6 +4,7 @@ title: 使用 flex-direction 属性创建一个行
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cBEkbfJ'
 forumTopicId: 301110
+dashedName: use-the-flex-direction-property-to-make-a-row
 ---
 
 # --description--

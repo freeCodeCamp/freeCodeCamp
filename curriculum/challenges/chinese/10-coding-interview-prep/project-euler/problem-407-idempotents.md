@@ -3,6 +3,7 @@ id: 5900f5041000cf542c510016
 title: 问题407：幂等元素
 challengeType: 5
 videoUrl: ''
+dashedName: problem-407-idempotents
 ---
 
 # --description--

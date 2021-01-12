@@ -4,6 +4,7 @@ title: 调整锚点的悬停状态
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
+dashedName: adjust-the-hover-state-of-an-anchor-tag
 ---
 
 # --description--

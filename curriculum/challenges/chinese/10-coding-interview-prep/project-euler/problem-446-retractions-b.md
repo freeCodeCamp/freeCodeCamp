@@ -3,6 +3,7 @@ id: 5900f52c1000cf542c51003d
 title: 问题446：撤回B.
 challengeType: 5
 videoUrl: ''
+dashedName: problem-446-retractions-b
 ---
 
 # --description--

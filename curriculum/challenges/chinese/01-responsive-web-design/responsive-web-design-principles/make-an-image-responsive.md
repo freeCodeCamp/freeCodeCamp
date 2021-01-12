@@ -4,6 +4,7 @@ title: 使图片自适应设备尺寸
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
+dashedName: make-an-image-responsive
 ---
 
 # --description--

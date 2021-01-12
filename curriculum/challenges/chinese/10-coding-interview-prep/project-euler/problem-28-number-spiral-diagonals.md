@@ -3,6 +3,7 @@ id: 5900f3881000cf542c50fe9b
 title: 问题28：对角螺旋数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-28-number-spiral-diagonals
 ---
 
 # --description--

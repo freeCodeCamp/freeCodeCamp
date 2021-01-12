@@ -4,6 +4,7 @@ title: 全局作用域和函数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQM7mCN'
 forumTopicId: 18193
+dashedName: global-scope-and-functions
 ---
 
 # --description--

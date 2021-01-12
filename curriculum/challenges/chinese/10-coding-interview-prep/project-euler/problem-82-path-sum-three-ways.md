@@ -3,6 +3,7 @@ id: 5900f3be1000cf542c50fed1
 title: 问题82：路径总和：三种方式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-82-path-sum-three-ways
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4a21000cf542c50ffb5
 title: 问题310：尼姆广场
 challengeType: 5
 videoUrl: ''
+dashedName: problem-310-nim-square
 ---
 
 # --description--

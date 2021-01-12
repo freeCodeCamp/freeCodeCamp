@@ -4,6 +4,7 @@ title: 使用 auto-fit 创建弹性布局
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 forumTopicId: 301127
+dashedName: create-flexible-layouts-using-auto-fit
 ---
 
 # --description--

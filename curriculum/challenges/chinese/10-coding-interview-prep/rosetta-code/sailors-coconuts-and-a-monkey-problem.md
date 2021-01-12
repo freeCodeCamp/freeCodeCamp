@@ -3,6 +3,7 @@ id: 59da22823d04c95919d46269
 title: 水手，椰子和猴子问题
 challengeType: 5
 videoUrl: ''
+dashedName: sailors-coconuts-and-a-monkey-problem
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4f71000cf542c510009
 title: 问题394：吃馅饼
 challengeType: 5
 videoUrl: ''
+dashedName: problem-394-eating-pie
 ---
 
 # --description--

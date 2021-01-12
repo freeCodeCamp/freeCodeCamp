@@ -3,6 +3,7 @@ id: 587d7dbf367417b2b2512bba
 title: 使用 @each 遍历列表中的项目
 challengeType: 0
 forumTopicId: 301461
+dashedName: use-each-to-map-over-items-in-a-list
 ---
 
 # --description--

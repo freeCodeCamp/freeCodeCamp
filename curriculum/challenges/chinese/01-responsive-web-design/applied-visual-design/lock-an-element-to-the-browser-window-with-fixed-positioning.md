@@ -4,6 +4,7 @@ title: 固定定位的参照物是浏览器的窗口
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDNUR'
 forumTopicId: 301061
+dashedName: lock-an-element-to-the-browser-window-with-fixed-positioning
 ---
 
 # --description--

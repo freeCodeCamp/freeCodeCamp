@@ -4,6 +4,7 @@ title: 理解绝对单位与相对单位
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
 forumTopicId: 301089
+dashedName: understand-absolute-versus-relative-units
 ---
 
 # --description--

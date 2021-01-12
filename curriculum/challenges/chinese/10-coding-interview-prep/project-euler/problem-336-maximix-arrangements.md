@@ -3,6 +3,7 @@ id: 5900f4bd1000cf542c50ffcf
 title: 问题336：Maximix安排
 challengeType: 5
 videoUrl: ''
+dashedName: problem-336-maximix-arrangements
 ---
 
 # --description--

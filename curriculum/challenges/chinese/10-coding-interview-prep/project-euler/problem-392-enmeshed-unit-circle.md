@@ -3,6 +3,7 @@ id: 5900f4f41000cf542c510007
 title: 问题392：陷入困境的单位圆
 challengeType: 5
 videoUrl: ''
+dashedName: problem-392-enmeshed-unit-circle
 ---
 
 # --description--

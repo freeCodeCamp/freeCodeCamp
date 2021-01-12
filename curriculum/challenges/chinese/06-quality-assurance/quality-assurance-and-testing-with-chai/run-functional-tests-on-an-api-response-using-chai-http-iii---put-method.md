@@ -3,6 +3,7 @@ id: 587d824f367417b2b2512c5a
 title: 使用 Chai-HTTP 测试 API 响应结果 (3)—PUT 方法
 challengeType: 2
 forumTopicId: 301590
+dashedName: run-functional-tests-on-an-api-response-using-chai-http-iii---put-method
 ---
 
 # --description--

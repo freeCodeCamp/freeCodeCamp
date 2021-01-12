@@ -3,6 +3,7 @@ id: 5900f3ce1000cf542c50fee0
 title: 问题97：大的非梅森素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-97-large-non-mersenne-prime
 ---
 
 # --description--

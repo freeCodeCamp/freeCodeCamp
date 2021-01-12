@@ -3,6 +3,7 @@ id: 5900f4491000cf542c50ff5c
 title: 问题221：亚历山大整数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-221-alexandrian-integers
 ---
 
 # --description--

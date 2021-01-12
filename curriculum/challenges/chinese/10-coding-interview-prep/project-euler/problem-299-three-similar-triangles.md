@@ -3,6 +3,7 @@ id: 5900f4971000cf542c50ffaa
 title: 问题299：三个相似的三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-299-three-similar-triangles
 ---
 
 # --description--

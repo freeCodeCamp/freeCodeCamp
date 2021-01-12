@@ -3,6 +3,7 @@ id: 587d7dab367417b2b2512b70
 title: 函数柯里化
 challengeType: 1
 forumTopicId: 301232
+dashedName: introduction-to-currying-and-partial-application
 ---
 
 # --description--

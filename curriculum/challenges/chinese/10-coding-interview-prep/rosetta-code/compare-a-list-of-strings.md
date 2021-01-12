@@ -3,6 +3,7 @@ id: 596e457071c35c882915b3e4
 title: 比较字符串列表
 challengeType: 5
 videoUrl: ''
+dashedName: compare-a-list-of-strings
 ---
 
 # --description--

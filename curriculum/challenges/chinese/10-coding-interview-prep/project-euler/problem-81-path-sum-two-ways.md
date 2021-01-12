@@ -3,6 +3,7 @@ id: 5900f3bd1000cf542c50fed0
 title: 问题81：路径总和：两种方式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-81-path-sum-two-ways
 ---
 
 # --description--

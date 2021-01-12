@@ -3,6 +3,7 @@ id: 5900f3741000cf542c50fe87
 title: 问题8：系列中最大的产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-8-largest-product-in-a-series
 ---
 
 # --description--

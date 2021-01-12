@@ -4,6 +4,7 @@ title: 调整颜色的色调
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDJvT7'
 forumTopicId: 301038
+dashedName: adjust-the-tone-of-a-color
 ---
 
 # --description--

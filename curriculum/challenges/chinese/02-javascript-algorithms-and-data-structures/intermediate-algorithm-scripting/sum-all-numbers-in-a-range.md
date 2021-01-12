@@ -3,6 +3,7 @@ id: a3566b1109230028080c9345
 title: 范围内的数字求和
 challengeType: 5
 forumTopicId: 16083
+dashedName: sum-all-numbers-in-a-range
 ---
 
 # --description--

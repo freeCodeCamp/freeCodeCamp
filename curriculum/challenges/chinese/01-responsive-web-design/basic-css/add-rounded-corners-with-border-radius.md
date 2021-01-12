@@ -4,6 +4,7 @@ title: 用 border-radius 添加圆角边框
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
+dashedName: add-rounded-corners-with-border-radius
 ---
 
 # --description--

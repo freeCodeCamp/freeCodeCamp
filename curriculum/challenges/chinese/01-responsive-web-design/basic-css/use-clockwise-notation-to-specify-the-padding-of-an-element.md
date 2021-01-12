@@ -4,6 +4,7 @@ title: 使用顺时针方向指定元素的内边距
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mBS9'
 forumTopicId: 18346
+dashedName: use-clockwise-notation-to-specify-the-padding-of-an-element
 ---
 
 # --description--

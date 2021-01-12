@@ -3,6 +3,7 @@ id: 5900f4fc1000cf542c51000e
 title: 问题399：无自由斐波纳契数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-399-squarefree-fibonacci-numbers
 ---
 
 # --description--

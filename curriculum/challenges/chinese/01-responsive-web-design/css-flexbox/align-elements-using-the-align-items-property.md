@@ -4,6 +4,7 @@ title: 使用 align-items 属性对齐元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c8aggtk'
 forumTopicId: 301101
+dashedName: align-elements-using-the-align-items-property
 ---
 
 # --description--

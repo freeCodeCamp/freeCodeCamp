@@ -3,6 +3,7 @@ id: 587d8255367417b2b2512c73
 title: 使用Spread和Notes进行ES5 Set（）集成
 challengeType: 1
 videoUrl: ''
+dashedName: use-spread-and-notes-for-es5-set-integration
 ---
 
 # --description--

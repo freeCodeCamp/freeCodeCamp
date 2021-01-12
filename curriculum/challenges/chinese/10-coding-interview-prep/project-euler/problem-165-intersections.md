@@ -3,6 +3,7 @@ id: 5900f4111000cf542c50ff24
 title: 问题165：交叉口
 challengeType: 5
 videoUrl: ''
+dashedName: problem-165-intersections
 ---
 
 # --description--

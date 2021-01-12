@@ -3,6 +3,7 @@ id: 594810f028c0303b75339ad0
 title: 对齐列
 challengeType: 5
 videoUrl: ''
+dashedName: align-columns
 ---
 
 # --description--

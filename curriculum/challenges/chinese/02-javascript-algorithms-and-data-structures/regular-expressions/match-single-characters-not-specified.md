@@ -3,6 +3,7 @@ id: 587d7db6367417b2b2512b98
 title: 匹配单个未指定的字符
 challengeType: 1
 forumTopicId: 301358
+dashedName: match-single-characters-not-specified
 ---
 
 # --description--

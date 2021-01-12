@@ -4,6 +4,7 @@ title: 调整元素的外边距
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJarHW'
 forumTopicId: 16654
+dashedName: adjust-the-margin-of-an-element
 ---
 
 # --description--

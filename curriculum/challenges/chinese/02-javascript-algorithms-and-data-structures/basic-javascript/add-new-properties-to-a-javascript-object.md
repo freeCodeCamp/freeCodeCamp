@@ -4,6 +4,7 @@ title: 给对象添加新属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
+dashedName: add-new-properties-to-a-javascript-object
 ---
 
 # --description--

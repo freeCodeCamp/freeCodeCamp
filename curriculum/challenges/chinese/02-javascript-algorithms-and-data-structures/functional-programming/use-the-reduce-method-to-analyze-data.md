@@ -3,6 +3,7 @@ id: 587d7da9367417b2b2512b68
 title: 使用 reduce 方法分析数据
 challengeType: 1
 forumTopicId: 301313
+dashedName: use-the-reduce-method-to-analyze-data
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3a31000cf542c50feb6
 title: 问题55：Lychrel数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-55-lychrel-numbers
 ---
 
 # --description--

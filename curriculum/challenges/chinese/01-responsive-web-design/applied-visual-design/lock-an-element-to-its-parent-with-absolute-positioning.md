@@ -4,6 +4,7 @@ title: 绝对定位的参照物是元素的父元素
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJ7c3'
 forumTopicId: 301060
+dashedName: lock-an-element-to-its-parent-with-absolute-positioning
 ---
 
 # --description--

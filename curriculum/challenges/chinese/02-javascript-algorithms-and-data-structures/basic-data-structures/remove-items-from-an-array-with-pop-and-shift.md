@@ -3,6 +3,7 @@ id: 587d78b2367417b2b2512b0f
 title: 使用 pop() 和 shift() 从数组中删除元素
 challengeType: 1
 forumTopicId: 301165
+dashedName: remove-items-from-an-array-with-pop-and-shift
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 通过浏览器降级提高兼容性
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301087
+dashedName: improve-compatibility-with-browser-fallbacks
 ---
 
 # --description--

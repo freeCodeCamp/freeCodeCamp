@@ -3,6 +3,7 @@ id: 5900f39c1000cf542c50feae
 title: 问题47：不同的素数因素
 challengeType: 5
 videoUrl: ''
+dashedName: problem-47-distinct-primes-factors
 ---
 
 # --description--

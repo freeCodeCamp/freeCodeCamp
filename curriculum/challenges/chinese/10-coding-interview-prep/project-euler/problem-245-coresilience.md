@@ -3,6 +3,7 @@ id: 5900f4621000cf542c50ff74
 title: 问题245：Coresilience
 challengeType: 5
 videoUrl: ''
+dashedName: problem-245-coresilience
 ---
 
 # --description--

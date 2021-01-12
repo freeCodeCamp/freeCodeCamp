@@ -3,6 +3,7 @@ id: 5900f4621000cf542c50ff75
 title: 问题246：切线到椭圆
 challengeType: 5
 videoUrl: ''
+dashedName: problem-246-tangents-to-an-ellipse
 ---
 
 # --description--

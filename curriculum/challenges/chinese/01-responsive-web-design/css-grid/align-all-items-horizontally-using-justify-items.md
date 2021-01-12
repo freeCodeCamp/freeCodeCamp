@@ -4,6 +4,7 @@ title: 使用 justify-items 水平对齐所有项目
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpECn'
 forumTopicId: 301120
+dashedName: align-all-items-horizontally-using-justify-items
 ---
 
 # --description--

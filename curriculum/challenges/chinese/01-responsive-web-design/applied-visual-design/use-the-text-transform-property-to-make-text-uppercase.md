@@ -4,6 +4,7 @@ title: 使用 text-transform 属性给文本添加大写效果
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081
+dashedName: use-the-text-transform-property-to-make-text-uppercase
 ---
 
 # --description--

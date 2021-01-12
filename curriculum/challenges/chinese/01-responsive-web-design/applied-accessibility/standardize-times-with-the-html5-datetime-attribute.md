@@ -4,6 +4,7 @@ title: 使用 HTML5 的 datatime 属性标准化时间
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMgtz'
 forumTopicId: 301025
+dashedName: standardize-times-with-the-html5-datetime-attribute
 ---
 
 # --description--

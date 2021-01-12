@@ -3,6 +3,7 @@ id: 5900f4071000cf542c50ff19
 title: 问题154：探索帕斯卡的金字塔
 challengeType: 5
 videoUrl: ''
+dashedName: problem-154-exploring-pascals-pyramid
 ---
 
 # --description--

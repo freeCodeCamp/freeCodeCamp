@@ -3,6 +3,7 @@ id: 5a23c84252665b21eecc7e76
 title: 伽玛功能
 challengeType: 5
 videoUrl: ''
+dashedName: gamma-function
 ---
 
 # --description--

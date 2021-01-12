@@ -4,6 +4,7 @@ title: 考虑色盲用户的需求设置合适的对比度
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMEUw'
 forumTopicId: 301012
+dashedName: avoid-colorblindness-issues-by-using-sufficient-contrast
 ---
 
 # --description--

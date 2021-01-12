@@ -3,6 +3,7 @@ id: 587d7fb1367417b2b2512bf3
 title: 实现一个根层的请求记录器中间件
 challengeType: 2
 forumTopicId: 301514
+dashedName: implement-a-root-level-request-logger-middleware
 ---
 
 # --description--

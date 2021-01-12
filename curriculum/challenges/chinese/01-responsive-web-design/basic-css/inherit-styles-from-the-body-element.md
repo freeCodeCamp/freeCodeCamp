@@ -4,6 +4,7 @@ title: 从 body 元素继承样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bmdtR'
 forumTopicId: 18204
+dashedName: inherit-styles-from-the-body-element
 ---
 
 # --description--

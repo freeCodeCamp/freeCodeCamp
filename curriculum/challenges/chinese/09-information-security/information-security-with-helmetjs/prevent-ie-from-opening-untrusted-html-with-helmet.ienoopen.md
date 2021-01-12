@@ -3,6 +3,7 @@ id: 587d8248367417b2b2512c3b
 title: 使用 helment.ieNoOpen() 防止 IE 打开不受信任的 HTML
 challengeType: 2
 forumTopicId: 301584
+dashedName: prevent-ie-from-opening-untrusted-html-with-helmet-ienoopen
 ---
 
 # --description--

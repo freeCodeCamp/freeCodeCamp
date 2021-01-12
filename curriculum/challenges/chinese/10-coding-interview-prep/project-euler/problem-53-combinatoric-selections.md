@@ -3,6 +3,7 @@ id: 5900f3a11000cf542c50feb4
 title: 问题53：组合选择
 challengeType: 5
 videoUrl: ''
+dashedName: problem-53-combinatoric-selections
 ---
 
 # --description--

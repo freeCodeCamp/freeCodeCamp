@@ -3,6 +3,7 @@ id: 587d7b85367417b2b2512b38
 title: 捕获使用赋值运算符而不是相等运算符
 challengeType: 1
 forumTopicId: 301191
+dashedName: catch-use-of-assignment-operator-instead-of-equality-operator
 ---
 
 # --description--

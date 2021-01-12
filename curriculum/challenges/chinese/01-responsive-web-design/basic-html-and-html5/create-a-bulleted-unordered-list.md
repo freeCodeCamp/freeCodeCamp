@@ -4,6 +4,7 @@ title: 创建一个无序列表
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cDKVPuv'
 forumTopicId: 16814
+dashedName: create-a-bulleted-unordered-list
 ---
 
 # --description--

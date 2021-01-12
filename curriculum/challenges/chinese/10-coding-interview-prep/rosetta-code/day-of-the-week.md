@@ -3,6 +3,7 @@ id: 5966f99c45e8976909a85575
 title: 一周中的天
 challengeType: 5
 videoUrl: ''
+dashedName: day-of-the-week
 ---
 
 # --description--

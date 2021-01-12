@@ -4,6 +4,7 @@ title: 小于或等于运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNVR7Am'
 forumTopicId: 16788
+dashedName: comparison-with-the-less-than-or-equal-to-operator
 ---
 
 # --description--

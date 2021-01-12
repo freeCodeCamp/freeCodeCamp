@@ -4,6 +4,7 @@ title: 给 HTML 添加注释
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cGyGbca'
 forumTopicId: 16782
+dashedName: comment-out-html
 ---
 
 # --description--

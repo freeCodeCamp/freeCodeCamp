@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036155
 title: 发送 Action Data 给 Store
 challengeType: 6
 forumTopicId: 301448
+dashedName: send-action-data-to-the-store
 ---
 
 # --description--

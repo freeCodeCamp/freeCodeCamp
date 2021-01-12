@@ -4,6 +4,8 @@ title: 考虑色盲用户的需求仔细选择传达信息的颜色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437as3'
 forumTopicId: 301011
+dashedName: >-
+  avoid-colorblindness-issues-by-carefully-choosing-colors-that-convey-information
 ---
 
 # --description--

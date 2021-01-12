@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036177
 title: 写一个简单的计数器
 challengeType: 6
 forumTopicId: 301425
+dashedName: write-a-simple-counter
 ---
 
 # --description--

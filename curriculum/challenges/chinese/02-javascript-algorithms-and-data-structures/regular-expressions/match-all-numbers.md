@@ -3,6 +3,7 @@ id: 5d712346c441eddfaeb5bdef
 title: 匹配所有数字
 challengeType: 1
 forumTopicId: 18181
+dashedName: match-all-numbers
 ---
 
 # --description--

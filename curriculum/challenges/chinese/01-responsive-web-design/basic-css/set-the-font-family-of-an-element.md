@@ -4,6 +4,7 @@ title: 设置元素的字体族名
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvpCg'
 forumTopicId: 18278
+dashedName: set-the-font-family-of-an-element
 ---
 
 # --description--

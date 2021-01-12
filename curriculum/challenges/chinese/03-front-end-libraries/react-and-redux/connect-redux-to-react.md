@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036147
 title: 连接 Redux 和 React
 challengeType: 6
 forumTopicId: 301426
+dashedName: connect-redux-to-react
 ---
 
 # --description--

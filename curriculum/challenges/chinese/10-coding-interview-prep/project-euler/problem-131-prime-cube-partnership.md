@@ -3,6 +3,7 @@ id: 5900f3ef1000cf542c50ff02
 title: 问题131：Prime立方体伙伴关系
 challengeType: 5
 videoUrl: ''
+dashedName: problem-131-prime-cube-partnership
 ---
 
 # --description--

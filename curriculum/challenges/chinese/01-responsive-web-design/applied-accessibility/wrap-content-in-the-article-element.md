@@ -4,6 +4,7 @@ title: 使用 article 元素包裹文章内容
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp79S3'
 forumTopicId: 301029
+dashedName: wrap-content-in-the-article-element
 ---
 
 # --description--

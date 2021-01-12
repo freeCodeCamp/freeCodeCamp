@@ -3,6 +3,7 @@ id: 595b98f8b5a2245e243aa831
 title: 苍鹭三角形
 challengeType: 5
 videoUrl: ''
+dashedName: heronian-triangles
 ---
 
 # --description--

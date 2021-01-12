@@ -3,6 +3,7 @@ id: 587d7fb7367417b2b2512c0a
 title: 使用model.create（）创建许多记录
 challengeType: 2
 forumTopicId: 301537
+dashedName: create-many-records-with-model-create
 ---
 
 # --description--
@@ -56,14 +57,12 @@ forumTopicId: 301537
   );
 ```
 
-# --seed--
-
 # --solutions--
 
 ```js
 /**
-  后端挑战不需要 solutions， 
-  因为他们需要使用一个完整的项目进行测试。 
-  请查询我们的贡献指南以了解更多信息。 
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
 */
 ```

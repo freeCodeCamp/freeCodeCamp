@@ -4,6 +4,7 @@ title: 访问嵌套对象
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
 forumTopicId: 16161
+dashedName: accessing-nested-objects
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f37d1000cf542c50fe90
 title: 问题17：数字字母计数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-17-number-letter-counts
 ---
 
 # --description--

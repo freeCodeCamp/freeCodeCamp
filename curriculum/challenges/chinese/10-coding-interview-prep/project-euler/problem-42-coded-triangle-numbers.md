@@ -3,6 +3,7 @@ id: 5900f3961000cf542c50fea9
 title: 问题42：编码的三角形数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-42-coded-triangle-numbers
 ---
 
 # --description--

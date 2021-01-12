@@ -4,6 +4,7 @@ title: 将变量附加到字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmZfa'
 forumTopicId: 16656
+dashedName: appending-variables-to-strings
 ---
 
 # --description--

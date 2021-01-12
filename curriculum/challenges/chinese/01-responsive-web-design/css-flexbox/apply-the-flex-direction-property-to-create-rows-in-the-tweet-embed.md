@@ -4,6 +4,7 @@ title: 使用 flex-direction 在嵌入推文中创建多行
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
 forumTopicId: 301104
+dashedName: apply-the-flex-direction-property-to-create-rows-in-the-tweet-embed
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4641000cf542c50ff76
 title: 问题247：双曲线下的正方形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-247-squares-under-a-hyperbola
 ---
 
 # --description--

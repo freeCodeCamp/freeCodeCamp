@@ -3,6 +3,7 @@ id: 5a8b073d06fa14fcfde687aa
 title: 运动跟踪器
 challengeType: 4
 forumTopicId: 301505
+dashedName: exercise-tracker
 ---
 
 # --description--

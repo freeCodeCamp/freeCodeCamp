@@ -4,6 +4,7 @@ title: 用单引号引用字符串
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
 forumTopicId: 18260
+dashedName: quoting-strings-with-single-quotes
 ---
 
 # --description--

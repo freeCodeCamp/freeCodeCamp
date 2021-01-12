@@ -3,6 +3,7 @@ id: 5900f42b1000cf542c50ff3e
 title: 问题191：奖品串
 challengeType: 5
 videoUrl: ''
+dashedName: problem-191-prize-strings
 ---
 
 # --description--

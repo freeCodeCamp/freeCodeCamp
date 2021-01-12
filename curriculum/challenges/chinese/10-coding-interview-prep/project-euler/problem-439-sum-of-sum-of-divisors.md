@@ -3,6 +3,7 @@ id: 5900f5231000cf542c510035
 title: 问题439：除数之和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-439-sum-of-sum-of-divisors
 ---
 
 # --description--

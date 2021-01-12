@@ -3,6 +3,7 @@ id: 9d7123c8c441eeafaeb5bdef
 title: 使用 slice 而不是 splice 从数组中移除元素
 challengeType: 1
 forumTopicId: 301236
+dashedName: remove-elements-from-an-array-using-slice-instead-of-splice
 ---
 
 # --description--

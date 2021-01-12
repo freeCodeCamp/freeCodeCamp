@@ -3,6 +3,7 @@ id: 5900f37d1000cf542c50fe8f
 title: 问题16：电源数字总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-16-power-digit-sum
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: ID 选择器优先级高于 Class 选择器
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
+dashedName: override-class-declarations-by-styling-id-attributes
 ---
 
 # --description--

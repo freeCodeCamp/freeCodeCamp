@@ -3,6 +3,7 @@ id: 587d7fb1367417b2b2512bf4
 title: 使用链中间件来创建时间服务器
 challengeType: 2
 forumTopicId: 301510
+dashedName: chain-middleware-to-create-a-time-server
 ---
 
 # --description--

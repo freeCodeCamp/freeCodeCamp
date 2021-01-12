@@ -3,6 +3,7 @@ id: 5900f39e1000cf542c50feb1
 title: 问题50：连续的总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-50-consecutive-prime-sum
 ---
 
 # --description--

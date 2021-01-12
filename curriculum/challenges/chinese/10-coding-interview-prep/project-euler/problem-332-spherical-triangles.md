@@ -3,6 +3,7 @@ id: 5900f4b91000cf542c50ffcb
 title: 问题332：球形三角形
 challengeType: 5
 videoUrl: ''
+dashedName: problem-332-spherical-triangles
 ---
 
 # --description--

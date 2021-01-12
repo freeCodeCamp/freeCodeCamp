@@ -3,6 +3,7 @@ id: bad87fee1348bd9aec908853
 title: 给 Bootstrap 元素添加id属性
 challengeType: 0
 forumTopicId: 16639
+dashedName: add-id-attributes-to-bootstrap-elements
 ---
 
 # --description--

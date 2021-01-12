@@ -3,6 +3,7 @@ id: 587d825a367417b2b2512c87
 title: 创建双向链接列表
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-doubly-linked-list
 ---
 
 # --description--

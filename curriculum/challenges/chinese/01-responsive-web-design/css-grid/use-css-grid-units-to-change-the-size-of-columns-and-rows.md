@@ -4,6 +4,7 @@ title: 使用 CSS 网格单位来更改列和行的大小
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
 forumTopicId: 301134
+dashedName: use-css-grid-units-to-change-the-size-of-columns-and-rows
 ---
 
 # --description--

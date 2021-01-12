@@ -3,6 +3,7 @@ id: 5900f5181000cf542c51002a
 title: 问题427：n序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-427-n-sequences
 ---
 
 # --description--

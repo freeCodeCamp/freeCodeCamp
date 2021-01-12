@@ -3,6 +3,7 @@ id: 589a8eb3f9fc0f352b528e72
 title: 实现社交账号登陆 (3)
 challengeType: 2
 forumTopicId: 301558
+dashedName: implementation-of-social-authentication-iii
 ---
 
 # --description--

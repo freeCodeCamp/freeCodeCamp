@@ -3,6 +3,7 @@ id: 5900f4571000cf542c50ff6a
 title: 问题235：算术几何序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-235-an-arithmetic-geometric-sequence
 ---
 
 # --description--

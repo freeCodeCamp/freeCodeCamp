@@ -3,6 +3,7 @@ id: 5900f4811000cf542c50ff94
 title: 问题277：修改的Collat​​z序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-277-a-modified-collatz-sequence
 ---
 
 # --description--

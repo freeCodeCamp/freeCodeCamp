@@ -4,6 +4,7 @@ title: 给图片添加链接
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cRdBnUr'
 forumTopicId: 18327
+dashedName: turn-an-image-into-a-link
 ---
 
 # --description--

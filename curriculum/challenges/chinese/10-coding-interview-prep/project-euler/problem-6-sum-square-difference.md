@@ -3,6 +3,7 @@ id: 5900f3721000cf542c50fe85
 title: 问题6：求和方差
 challengeType: 5
 videoUrl: ''
+dashedName: problem-6-sum-square-difference
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 587d7b7b367417b2b2512b13
 title: 使用展开运算符复制数组
 challengeType: 1
 forumTopicId: 301157
+dashedName: copy-an-array-with-the-spread-operator
 ---
 
 # --description--

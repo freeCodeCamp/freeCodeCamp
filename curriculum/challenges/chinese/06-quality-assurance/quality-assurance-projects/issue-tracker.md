@@ -3,6 +3,7 @@ id: 587d8249367417b2b2512c42
 title: 问题跟踪器
 challengeType: 4
 videoUrl: ''
+dashedName: issue-tracker
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 使用 s 标签给文本添加删除线
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301079
+dashedName: use-the-s-tag-to-strikethrough-text
 ---
 
 # --description--

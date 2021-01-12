@@ -3,6 +3,7 @@ id: 5900f4e11000cf542c50fff3
 title: 问题372：光线笔
 challengeType: 5
 videoUrl: ''
+dashedName: problem-372-pencils-of-rays
 ---
 
 # --description--

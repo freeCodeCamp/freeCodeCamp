@@ -3,6 +3,7 @@ id: 5900f4391000cf542c50ff4c
 title: 问题205：骰子游戏
 challengeType: 5
 videoUrl: ''
+dashedName: problem-205-dice-game
 ---
 
 # --description--

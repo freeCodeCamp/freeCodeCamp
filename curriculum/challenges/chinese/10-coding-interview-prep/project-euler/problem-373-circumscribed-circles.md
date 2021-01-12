@@ -3,6 +3,7 @@ id: 5900f4e11000cf542c50fff4
 title: 问题373：外接圆圈
 challengeType: 5
 videoUrl: ''
+dashedName: problem-373-circumscribed-circles
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 59713da0a428c1a62d7db430
 title: 克莱默的统治
 challengeType: 5
 videoUrl: ''
+dashedName: cramers-rule
 ---
 
 # --description--

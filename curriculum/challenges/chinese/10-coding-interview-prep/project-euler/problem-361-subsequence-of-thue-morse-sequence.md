@@ -3,6 +3,7 @@ id: 5900f4d51000cf542c50ffe8
 title: 问题361：Thue-Morse序列的子序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-361-subsequence-of-thue-morse-sequence
 ---
 
 # --description--

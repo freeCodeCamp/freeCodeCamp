@@ -4,6 +4,7 @@ title: 使用索引访问多维数组
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ckND4Cq'
 forumTopicId: 16159
+dashedName: access-multi-dimensional-arrays-with-indexes
 ---
 
 # --description--

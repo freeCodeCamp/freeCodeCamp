@@ -3,6 +3,7 @@ id: 58966a17f9fc0f352b528e6d
 title: 注册新用户
 challengeType: 2
 forumTopicId: 301561
+dashedName: registration-of-new-users
 ---
 
 # --description--

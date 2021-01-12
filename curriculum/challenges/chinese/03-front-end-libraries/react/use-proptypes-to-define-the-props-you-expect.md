@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616d
 title: 使用 PropTypes 来定义你期望的 Props
 challengeType: 6
 forumTopicId: 301419
+dashedName: use-proptypes-to-define-the-props-you-expect
 ---
 
 # --description--

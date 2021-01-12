@@ -4,6 +4,7 @@ title: while 循环
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c8QbnCM'
 forumTopicId: 18220
+dashedName: iterate-with-javascript-while-loops
 ---
 
 # --description--

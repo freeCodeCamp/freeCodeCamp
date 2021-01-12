@@ -4,6 +4,7 @@ title: 将网格划分为区域模板
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
+dashedName: divide-the-grid-into-an-area-template
 ---
 
 # --description--

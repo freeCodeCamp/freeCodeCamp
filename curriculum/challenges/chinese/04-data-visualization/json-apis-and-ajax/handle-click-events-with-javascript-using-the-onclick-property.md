@@ -3,6 +3,7 @@ id: 587d7fad367417b2b2512be1
 title: 使用 onclick 属性处理点击事件
 challengeType: 6
 forumTopicId: 301503
+dashedName: handle-click-events-with-javascript-using-the-onclick-property
 ---
 
 # --description--

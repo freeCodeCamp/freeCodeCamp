@@ -3,6 +3,7 @@ id: 5900f37a1000cf542c50fe8d
 title: 问题14：最长的Collat​​z序列
 challengeType: 5
 videoUrl: ''
+dashedName: problem-14-longest-collatz-sequence
 ---
 
 # --description--

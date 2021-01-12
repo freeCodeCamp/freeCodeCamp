@@ -3,6 +3,7 @@ id: 5900f52c1000cf542c51003e
 title: 问题447：撤回C.
 challengeType: 5
 videoUrl: ''
+dashedName: problem-447-retractions-c
 ---
 
 # --description--

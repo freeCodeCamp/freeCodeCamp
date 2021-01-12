@@ -4,6 +4,7 @@ title: 大于或等于运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c6KBqtV'
 forumTopicId: 16785
+dashedName: comparison-with-the-greater-than-or-equal-to-operator
 ---
 
 # --description--

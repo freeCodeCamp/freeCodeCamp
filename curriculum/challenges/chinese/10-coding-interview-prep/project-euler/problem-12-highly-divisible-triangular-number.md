@@ -3,6 +3,7 @@ id: 5900f3781000cf542c50fe8b
 title: 问题12：高度可分的三角数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-12-highly-divisible-triangular-number
 ---
 
 # --description--

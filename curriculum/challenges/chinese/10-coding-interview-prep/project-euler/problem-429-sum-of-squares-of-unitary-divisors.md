@@ -3,6 +3,7 @@ id: 5900f5191000cf542c51002c
 title: 问题429：单一除数的平方和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-429-sum-of-squares-of-unitary-divisors
 ---
 
 # --description--

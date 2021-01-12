@@ -4,6 +4,7 @@ title: 用 a 实现网页内部跳转
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 forumTopicId: 301098
+dashedName: link-to-internal-sections-of-a-page-with-anchor-elements
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3801000cf542c50fe93
 title: 问题20：因子数字和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-20-factorial-digit-sum
 ---
 
 # --description--

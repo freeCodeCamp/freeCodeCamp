@@ -4,6 +4,7 @@ title: 使用 flex-direction 属性创建一列
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
+dashedName: use-the-flex-direction-property-to-make-a-column
 ---
 
 # --description--

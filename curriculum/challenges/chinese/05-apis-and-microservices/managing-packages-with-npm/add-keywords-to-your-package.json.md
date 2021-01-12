@@ -3,6 +3,7 @@ id: 587d7fb4367417b2b2512bfd
 title: 给 package.json 添加关键词
 challengeType: 2
 forumTopicId: 301526
+dashedName: add-keywords-to-your-package-json
 ---
 
 # --description--

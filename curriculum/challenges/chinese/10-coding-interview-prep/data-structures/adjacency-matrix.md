@@ -3,6 +3,7 @@ id: 587d8256367417b2b2512c78
 title: 邻接矩阵
 challengeType: 1
 videoUrl: ''
+dashedName: adjacency-matrix
 ---
 
 # --description--

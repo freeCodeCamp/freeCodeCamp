@@ -3,6 +3,7 @@ id: 5900f3b01000cf542c50fec2
 title: 问题67：最大路径总和II
 challengeType: 5
 videoUrl: ''
+dashedName: problem-67-maximum-path-sum-ii
 ---
 
 # --description--

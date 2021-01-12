@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d96
 challengeType: 11
 videoId: _1kTP7uoU9E
+dashedName: convolutional-neural-networks
 ---
 
 # --question--

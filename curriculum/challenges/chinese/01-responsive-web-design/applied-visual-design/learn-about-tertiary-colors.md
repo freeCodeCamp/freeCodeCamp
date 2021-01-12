@@ -4,6 +4,7 @@ title: 了解三原色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRDAb'
 forumTopicId: 301057
+dashedName: learn-about-tertiary-colors
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 逻辑与运算符
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvbRVtr'
 forumTopicId: 16799
+dashedName: comparisons-with-the-logical-and-operator
 ---
 
 # --description--

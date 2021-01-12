@@ -3,6 +3,7 @@ id: 599d0ba974141b0f508b37d5
 title: Emirp奖金
 challengeType: 5
 videoUrl: ''
+dashedName: emirp-primes
 ---
 
 # --description--

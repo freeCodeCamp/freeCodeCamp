@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd1c
 title: 建立一个西蒙游戏
 challengeType: 3
 videoUrl: ''
+dashedName: build-a-simon-game
 ---
 
 # --description--

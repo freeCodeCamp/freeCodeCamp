@@ -3,6 +3,7 @@ id: 5900f3731000cf542c50fe86
 title: 问题7：10001个素数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-7-10001st-prime
 ---
 
 # --description--

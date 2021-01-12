@@ -3,6 +3,7 @@ id: 5900f3f71000cf542c50ff0a
 title: 问题139：毕达哥拉斯瓷砖
 challengeType: 5
 videoUrl: ''
+dashedName: problem-139-pythagorean-tiles
 ---
 
 # --description--

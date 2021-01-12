@@ -4,6 +4,7 @@ title: 样式中的优先级
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ8wnHv'
 forumTopicId: 18258
+dashedName: prioritize-one-style-over-another
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: bd7198d8c242eddfaeb5bd13
 title: 用力导向图显示全国连续性
 challengeType: 3
 videoUrl: ''
+dashedName: show-national-contiguity-with-a-force-directed-graph
 ---
 
 # --description--

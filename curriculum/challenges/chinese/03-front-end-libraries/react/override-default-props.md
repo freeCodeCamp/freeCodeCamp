@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616c
 title: 覆盖默认的 Props
 challengeType: 6
 forumTopicId: 301399
+dashedName: override-default-props
 ---
 
 # --description--

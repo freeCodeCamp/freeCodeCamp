@@ -3,6 +3,7 @@ id: 5900f42b1000cf542c50ff3d
 title: 问题190：最大化加权产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-190-maximising-a-weighted-product
 ---
 
 # --description--

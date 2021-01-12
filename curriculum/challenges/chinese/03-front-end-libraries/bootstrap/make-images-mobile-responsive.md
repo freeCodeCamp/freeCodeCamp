@@ -3,6 +3,7 @@ id: bad87fee1348bd9acde08812
 title: 使图片自适应移动端
 challengeType: 0
 forumTopicId: 18232
+dashedName: make-images-mobile-responsive
 ---
 
 # --description--

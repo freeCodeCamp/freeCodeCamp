@@ -4,6 +4,7 @@ title: 使用 flex 短方法属性
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cbpW2tE'
 forumTopicId: 301112
+dashedName: use-the-flex-shorthand-property
 ---
 
 # --description--

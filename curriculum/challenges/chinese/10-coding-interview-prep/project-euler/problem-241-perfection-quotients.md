@@ -3,6 +3,7 @@ id: 5900f45d1000cf542c50ff70
 title: 问题241：完美商数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-241-perfection-quotients
 ---
 
 # --description--

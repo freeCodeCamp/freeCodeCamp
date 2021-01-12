@@ -4,6 +4,7 @@ title: 用 h2 元素代表副标题
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
 forumTopicId: 18196
+dashedName: headline-with-the-h2-element
 ---
 
 # --description--
@@ -51,6 +52,14 @@ assert.isTrue(/hello(\s)+world/gi.test($('h1').text()));
 
 ```js
 assert(code.match(/<h1>\s*?.*?\s*?<\/h1>\s*<h2>\s*?.*?\s*?<\/h2>/gi));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<h1>Hello World</h1>
 ```
 
 # --solutions--

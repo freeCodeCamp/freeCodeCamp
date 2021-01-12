@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036149
 title: 将局部状态提取到 Redux 中
 challengeType: 6
 forumTopicId: 301428
+dashedName: extract-local-state-into-redux
 ---
 
 # --description--

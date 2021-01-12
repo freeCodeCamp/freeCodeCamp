@@ -1,8 +1,9 @@
 ---
 id: 5900f3b31000cf542c50fec6
-title: '关卡 71：有序分数'
+title: 关卡 71：有序分数
 challengeType: 5
 forumTopicId: 302184
+dashedName: problem-71-ordered-fractions
 ---
 
 # --description--

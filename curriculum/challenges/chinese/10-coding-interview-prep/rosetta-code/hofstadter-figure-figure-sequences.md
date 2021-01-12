@@ -3,6 +3,7 @@ id: 59622f89e4e137560018a40e
 title: Hofstadter图 - 图序列
 challengeType: 5
 videoUrl: ''
+dashedName: hofstadter-figure-figure-sequences
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 多个 if else 语句
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/caeJgsw'
 forumTopicId: 16772
+dashedName: chaining-if-else-statements
 ---
 
 # --description--

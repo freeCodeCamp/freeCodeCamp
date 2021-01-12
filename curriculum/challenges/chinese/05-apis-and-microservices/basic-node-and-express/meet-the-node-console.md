@@ -3,6 +3,7 @@ id: 587d7fb0367417b2b2512bed
 title: 认识 Node 的控制台
 challengeType: 2
 forumTopicId: 301515
+dashedName: meet-the-node-console
 ---
 
 # --description--

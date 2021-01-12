@@ -3,6 +3,7 @@ id: 587d7b7c367417b2b2512b1b
 title: 使用 delete 关键字删除对象属性
 challengeType: 1
 forumTopicId: 301168
+dashedName: use-the-delete-keyword-to-remove-object-properties
 ---
 
 # --description--

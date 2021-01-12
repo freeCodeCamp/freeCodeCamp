@@ -3,6 +3,7 @@ id: 5900f4331000cf542c50ff45
 title: 问题198：模糊数字
 challengeType: 5
 videoUrl: ''
+dashedName: problem-198-ambiguous-numbers
 ---
 
 # --description--

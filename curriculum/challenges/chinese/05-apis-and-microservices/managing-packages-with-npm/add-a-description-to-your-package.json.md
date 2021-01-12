@@ -3,6 +3,7 @@ id: 587d7fb3367417b2b2512bfc
 title: 给 package.json 添加一个描述
 challengeType: 2
 forumTopicId: 301522
+dashedName: add-a-description-to-your-package-json
 ---
 
 # --description--

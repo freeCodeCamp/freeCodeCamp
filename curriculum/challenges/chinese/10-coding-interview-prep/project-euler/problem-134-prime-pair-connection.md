@@ -3,6 +3,7 @@ id: 5900f3f21000cf542c50ff05
 title: 问题134：素对对连接
 challengeType: 5
 videoUrl: ''
+dashedName: problem-134-prime-pair-connection
 ---
 
 # --description--

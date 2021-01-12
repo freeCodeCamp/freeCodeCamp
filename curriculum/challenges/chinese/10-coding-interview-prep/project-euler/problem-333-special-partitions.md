@@ -3,6 +3,7 @@ id: 5900f4b91000cf542c50ffcc
 title: 问题333：特殊分区
 challengeType: 5
 videoUrl: ''
+dashedName: problem-333-special-partitions
 ---
 
 # --description--

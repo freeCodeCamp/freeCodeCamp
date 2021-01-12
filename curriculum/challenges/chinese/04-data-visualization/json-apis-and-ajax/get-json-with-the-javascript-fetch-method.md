@@ -3,6 +3,7 @@ id: 5ccfad82bb2dc6c965a848e5
 title: 使用 JavaScript 的 fetch 方法获取 JSON
 challengeType: 6
 forumTopicId: 301501
+dashedName: get-json-with-the-javascript-fetch-method
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 加法运算
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
 forumTopicId: 16650
+dashedName: add-two-numbers-with-javascript
 ---
 
 # --description--

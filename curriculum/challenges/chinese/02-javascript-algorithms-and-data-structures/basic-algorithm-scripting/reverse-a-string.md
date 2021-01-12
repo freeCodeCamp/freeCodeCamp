@@ -3,6 +3,7 @@ id: a202eed8fc186c8434cb6d61
 title: 反转字符串
 challengeType: 5
 forumTopicId: 16043
+dashedName: reverse-a-string
 ---
 
 # --description--

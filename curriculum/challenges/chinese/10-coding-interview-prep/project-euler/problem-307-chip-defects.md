@@ -3,6 +3,7 @@ id: 5900f4a01000cf542c50ffb2
 title: 问题307：芯片缺陷
 challengeType: 5
 videoUrl: ''
+dashedName: problem-307-chip-defects
 ---
 
 # --description--

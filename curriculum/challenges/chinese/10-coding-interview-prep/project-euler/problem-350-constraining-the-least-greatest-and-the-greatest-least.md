@@ -3,6 +3,7 @@ id: 5900f4cb1000cf542c50ffdd
 title: 问题350：约束最小和最小
 challengeType: 5
 videoUrl: ''
+dashedName: problem-350-constraining-the-least-greatest-and-the-greatest-least
 ---
 
 # --description--

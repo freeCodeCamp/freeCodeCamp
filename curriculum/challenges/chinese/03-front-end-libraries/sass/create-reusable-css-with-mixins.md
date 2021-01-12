@@ -3,6 +3,7 @@ id: 587d7dbd367417b2b2512bb6
 title: 用 Mixins 创建可重用 CSS
 challengeType: 0
 forumTopicId: 301455
+dashedName: create-reusable-css-with-mixins
 ---
 
 # --description--
@@ -86,26 +87,6 @@ assert(
 
 ```js
 assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\)\s*;/gi));
-```
-
-# --seed--
-
-## --seed-contents--
-
-```html
-<style type='text/scss'>
-
-
-
-  #awesome {
-    width: 150px;
-    height: 150px;
-    background-color: green;
-
-  }
-</style>
-
-<div id="awesome"></div>
 ```
 
 # --seed--

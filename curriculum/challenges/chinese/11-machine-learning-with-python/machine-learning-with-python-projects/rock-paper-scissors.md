@@ -1,6 +1,7 @@
 ---
 id: 5e46f8d6ac417301a38fb92d
 challengeType: 10
+dashedName: rock-paper-scissors
 ---
 
 # --description--

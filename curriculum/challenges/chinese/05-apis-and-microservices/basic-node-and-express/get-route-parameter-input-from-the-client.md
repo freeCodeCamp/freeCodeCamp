@@ -3,6 +3,7 @@ id: 587d7fb2367417b2b2512bf5
 title: 从客户端获取路由参数输入
 challengeType: 2
 forumTopicId: 301513
+dashedName: get-route-parameter-input-from-the-client
 ---
 
 # --description--

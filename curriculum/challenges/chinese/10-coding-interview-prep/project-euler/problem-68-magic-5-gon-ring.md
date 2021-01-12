@@ -3,6 +3,7 @@ id: 5900f3b01000cf542c50fec3
 title: 问题68：魔法5-gon戒指
 challengeType: 5
 videoUrl: ''
+dashedName: problem-68-magic-5-gon-ring
 ---
 
 # --description--

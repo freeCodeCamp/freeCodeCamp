@@ -4,6 +4,7 @@ title: 使用属性选择器来设置元素的样式
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpymfJ'
 forumTopicId: 301092
+dashedName: use-attribute-selectors-to-style-elements
 ---
 
 # --description--

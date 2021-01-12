@@ -3,6 +3,7 @@ id: 5900f4de1000cf542c50fff0
 title: 问题369：Badugi
 challengeType: 5
 videoUrl: ''
+dashedName: problem-369-badugi
 ---
 
 # --description--

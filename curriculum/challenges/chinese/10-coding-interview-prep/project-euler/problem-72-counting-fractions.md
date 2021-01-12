@@ -1,8 +1,9 @@
 ---
 id: 5900f3b41000cf542c50fec7
-title: '关卡 72：分数计数'
+title: 关卡 72：分数计数
 challengeType: 5
 forumTopicId: 302185
+dashedName: problem-72-counting-fractions
 ---
 
 # --description--

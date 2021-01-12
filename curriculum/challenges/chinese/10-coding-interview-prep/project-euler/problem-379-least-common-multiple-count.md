@@ -3,6 +3,7 @@ id: 5900f4e81000cf542c50fffa
 title: 问题379：最少共同的多重计数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-379-least-common-multiple-count
 ---
 
 # --description--

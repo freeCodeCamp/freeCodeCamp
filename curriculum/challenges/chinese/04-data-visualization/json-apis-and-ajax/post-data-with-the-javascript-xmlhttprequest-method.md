@@ -3,6 +3,7 @@ id: 587d7faf367417b2b2512be9
 title: 使用 XMLHttpRequest 方法发送数据
 challengeType: 6
 forumTopicId: 301504
+dashedName: post-data-with-the-javascript-xmlhttprequest-method
 ---
 
 # --description--

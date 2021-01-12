@@ -3,6 +3,7 @@ id: 5900f4791000cf542c50ff8c
 title: 问题269：具有至少一个整数根的多项式
 challengeType: 5
 videoUrl: ''
+dashedName: problem-269-polynomials-with-at-least-one-integer-root
 ---
 
 # --description--

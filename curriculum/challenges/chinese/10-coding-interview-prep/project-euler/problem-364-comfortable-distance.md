@@ -3,6 +3,7 @@ id: 5900f4d91000cf542c50ffea
 title: 问题364：舒适的距离
 challengeType: 5
 videoUrl: ''
+dashedName: problem-364-comfortable-distance
 ---
 
 # --description--

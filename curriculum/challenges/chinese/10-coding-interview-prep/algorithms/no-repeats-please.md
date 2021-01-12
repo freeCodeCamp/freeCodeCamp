@@ -3,6 +3,7 @@ id: a7bf700cd123b9a54eef01d5
 title: 请不要重复
 challengeType: 5
 videoUrl: ''
+dashedName: no-repeats-please
 ---
 
 # --description--

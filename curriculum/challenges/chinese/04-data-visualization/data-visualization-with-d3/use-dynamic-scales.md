@@ -3,6 +3,7 @@ id: 587d7fac367417b2b2512bdd
 title: 使用动态比例
 challengeType: 6
 forumTopicId: 301495
+dashedName: use-dynamic-scales
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4511000cf542c50ff63
 title: 问题228：Minkowski Sums
 challengeType: 5
 videoUrl: ''
+dashedName: problem-228-minkowski-sums
 ---
 
 # --description--

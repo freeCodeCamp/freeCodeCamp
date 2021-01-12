@@ -3,6 +3,7 @@ id: 5900f4a11000cf542c50ffb4
 title: 问题309：整数阶梯
 challengeType: 5
 videoUrl: ''
+dashedName: problem-309-integer-ladders
 ---
 
 # --description--

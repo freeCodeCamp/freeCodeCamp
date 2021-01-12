@@ -3,6 +3,7 @@ id: 5900f3931000cf542c50fea5
 title: 问题38：Pandigital倍数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-38-pandigital-multiples
 ---
 
 # --description--

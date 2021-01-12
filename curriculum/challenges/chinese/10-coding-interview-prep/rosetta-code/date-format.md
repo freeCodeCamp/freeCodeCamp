@@ -3,6 +3,7 @@ id: 59669d08d75b60482359409f
 title: 日期格式
 challengeType: 5
 videoUrl: ''
+dashedName: date-format
 ---
 
 # --description--

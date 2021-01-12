@@ -3,6 +3,7 @@ id: 5900f49b1000cf542c50ffae
 title: 问题303：小数的倍数
 challengeType: 5
 videoUrl: ''
+dashedName: problem-303-multiples-with-small-digits
 ---
 
 # --description--

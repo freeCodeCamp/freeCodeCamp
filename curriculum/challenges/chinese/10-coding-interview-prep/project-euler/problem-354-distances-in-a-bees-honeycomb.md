@@ -3,6 +3,7 @@ id: 5900f4cf1000cf542c50ffe1
 title: 问题354：蜜蜂蜂窝中的距离
 challengeType: 5
 videoUrl: ''
+dashedName: problem-354-distances-in-a-bees-honeycomb
 ---
 
 # --description--

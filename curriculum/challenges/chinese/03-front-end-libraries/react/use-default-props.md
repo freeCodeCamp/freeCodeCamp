@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616b
 title: 使用默认的 Props
 challengeType: 6
 forumTopicId: 301418
+dashedName: use-default-props
 ---
 
 # --description--

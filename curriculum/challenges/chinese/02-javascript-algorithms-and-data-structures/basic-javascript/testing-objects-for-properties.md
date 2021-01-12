@@ -4,6 +4,7 @@ title: 测试对象的属性
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm8Q7Ua'
 forumTopicId: 18324
+dashedName: testing-objects-for-properties
 ---
 
 # --description--

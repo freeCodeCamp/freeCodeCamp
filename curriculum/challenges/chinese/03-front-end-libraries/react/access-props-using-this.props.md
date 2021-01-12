@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403616e
 title: 使用 this.props 访问 Props
 challengeType: 6
 forumTopicId: 301375
+dashedName: access-props-using-this-props
 ---
 
 # --description--

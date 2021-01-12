@@ -3,6 +3,7 @@ id: 5900f3761000cf542c50fe89
 title: 问题10：素数的总和
 challengeType: 5
 videoUrl: ''
+dashedName: problem-10-summation-of-primes
 ---
 
 # --description--

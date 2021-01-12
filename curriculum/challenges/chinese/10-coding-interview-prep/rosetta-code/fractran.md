@@ -3,6 +3,7 @@ id: 5a7dad05be01840e1778a0d1
 title: Fractran
 challengeType: 3
 videoUrl: ''
+dashedName: fractran
 ---
 
 # --description--

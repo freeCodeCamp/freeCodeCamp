@@ -3,6 +3,7 @@ id: 59694356a6e7011f7f1c5f4e
 title: FreeCell的交易卡
 challengeType: 5
 videoUrl: ''
+dashedName: deal-cards-for-freecell
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036148
 title: 将 Redux 连接到 Messages App
 challengeType: 6
 forumTopicId: 301427
+dashedName: connect-redux-to-the-messages-app
 ---
 
 # --description--

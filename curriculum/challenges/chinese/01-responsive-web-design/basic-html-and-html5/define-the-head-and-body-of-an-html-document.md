@@ -4,6 +4,7 @@ title: 定义 HTML 文档的 head 和 body
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra9bfP'
 forumTopicId: 301096
+dashedName: define-the-head-and-body-of-an-html-document
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f3ba1000cf542c50fecd
 title: 问题78：硬币分区
 challengeType: 5
 videoUrl: ''
+dashedName: problem-78-coin-partitions
 ---
 
 # --description--

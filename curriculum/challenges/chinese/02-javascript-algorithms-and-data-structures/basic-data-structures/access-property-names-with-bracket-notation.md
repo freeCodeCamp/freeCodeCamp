@@ -3,6 +3,7 @@ id: 587d7b7c367417b2b2512b1a
 title: 使用方括号访问属性名称
 challengeType: 1
 forumTopicId: 301150
+dashedName: access-property-names-with-bracket-notation
 ---
 
 # --description--

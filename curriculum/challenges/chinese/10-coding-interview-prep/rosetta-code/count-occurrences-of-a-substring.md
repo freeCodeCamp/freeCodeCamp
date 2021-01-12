@@ -3,6 +3,7 @@ id: 596fda99c69f779975a1b67d
 title: 计算子字符串的出现次数
 challengeType: 5
 videoUrl: ''
+dashedName: count-occurrences-of-a-substring
 ---
 
 # --description--

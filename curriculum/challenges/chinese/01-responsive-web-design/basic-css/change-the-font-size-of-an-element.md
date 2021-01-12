@@ -4,6 +4,7 @@ title: 更改元素的字体大小
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
+dashedName: change-the-font-size-of-an-element
 ---
 
 # --description--

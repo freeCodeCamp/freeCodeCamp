@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036165
 title: 使用 React 渲染嵌套组件
 challengeType: 6
 forumTopicId: 301420
+dashedName: use-react-to-render-nested-components
 ---
 
 # --description--

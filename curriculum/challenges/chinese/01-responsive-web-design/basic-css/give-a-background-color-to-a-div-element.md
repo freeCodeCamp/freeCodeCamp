@@ -4,6 +4,7 @@ title: 给 div 元素添加背景色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRKMCk'
 forumTopicId: 18190
+dashedName: give-a-background-color-to-a-div-element
 ---
 
 # --description--

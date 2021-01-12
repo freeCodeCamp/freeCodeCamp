@@ -3,6 +3,8 @@ id: 587d7db2367417b2b2512b8a
 title: 使用闭包保护对象内的属性不被外部修改
 challengeType: 1
 forumTopicId: 18234
+dashedName: >-
+  use-closure-to-protect-properties-within-an-object-from-being-modified-externally
 ---
 
 # --description--

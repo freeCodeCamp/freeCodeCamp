@@ -3,6 +3,7 @@ id: bad87fee1348bd9aec908856
 title: 给 Bootstrap 按钮贴标签
 challengeType: 0
 forumTopicId: 18222
+dashedName: label-bootstrap-buttons
 ---
 
 # --description--

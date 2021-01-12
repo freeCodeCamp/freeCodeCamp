@@ -4,6 +4,7 @@ title: 创建一个 CSS 线性渐变
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4dpt9'
 forumTopicId: 301047
+dashedName: create-a-gradual-css-linear-gradient
 ---
 
 # --description--

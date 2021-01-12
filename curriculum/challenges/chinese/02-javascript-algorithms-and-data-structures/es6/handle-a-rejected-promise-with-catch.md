@@ -3,6 +3,7 @@ id: 5cdafbe72913098997531682
 title: 在 catch 中处理 Promise 失败的情况
 challengeType: 1
 forumTopicId: 301204
+dashedName: handle-a-rejected-promise-with-catch
 ---
 
 # --description--

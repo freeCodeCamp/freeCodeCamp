@@ -3,6 +3,7 @@ id: 5900f47c1000cf542c50ff8e
 title: 问题270：切割方块
 challengeType: 5
 videoUrl: ''
+dashedName: problem-270-cutting-squares
 ---
 
 # --description--

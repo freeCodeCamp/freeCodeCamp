@@ -4,6 +4,7 @@ title: 使用 parseInt 函数
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cm83LSW'
 forumTopicId: 301183
+dashedName: use-the-parseint-function
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5900f4481000cf542c50ff5b
 title: 问题220：高速公路龙
 challengeType: 5
 videoUrl: ''
+dashedName: problem-220-heighway-dragon
 ---
 
 # --description--

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403615b
 title: 使用 Object.assign 拷贝对象
 challengeType: 6
 forumTopicId: 301437
+dashedName: copy-an-object-with-object-assign
 ---
 
 # --description--

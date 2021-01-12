@@ -4,6 +4,7 @@ title: 调整文本的背景色
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDqwA6'
 forumTopicId: 301032
+dashedName: adjust-the-background-color-property-of-text
 ---
 
 # --description--

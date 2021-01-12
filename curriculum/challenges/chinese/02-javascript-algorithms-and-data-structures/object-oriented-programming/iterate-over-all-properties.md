@@ -3,6 +3,7 @@ id: 587d7daf367417b2b2512b7d
 title: 迭代所有属性
 challengeType: 1
 forumTopicId: 301320
+dashedName: iterate-over-all-properties
 ---
 
 # --description--

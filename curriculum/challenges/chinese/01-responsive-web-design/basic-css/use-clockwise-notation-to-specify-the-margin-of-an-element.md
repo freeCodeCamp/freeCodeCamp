@@ -4,6 +4,7 @@ title: 使用顺时针方向指定元素的外边距
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpybAd'
 forumTopicId: 18345
+dashedName: use-clockwise-notation-to-specify-the-margin-of-an-element
 ---
 
 # --description--

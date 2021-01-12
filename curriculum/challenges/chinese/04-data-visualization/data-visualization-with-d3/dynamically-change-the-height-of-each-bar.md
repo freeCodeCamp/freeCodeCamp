@@ -3,6 +3,7 @@ id: 587d7fa9367417b2b2512bcf
 title: 动态更改每个条的高度
 challengeType: 6
 forumTopicId: 301486
+dashedName: dynamically-change-the-height-of-each-bar
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: 给表单添加提交按钮
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
 forumTopicId: 16627
+dashedName: add-a-submit-button-to-a-form
 ---
 
 # --description--

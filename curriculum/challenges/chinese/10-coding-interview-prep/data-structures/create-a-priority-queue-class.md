@@ -3,6 +3,7 @@ id: 587d8255367417b2b2512c74
 title: 创建优先级队列类
 challengeType: 1
 videoUrl: ''
+dashedName: create-a-priority-queue-class
 ---
 
 # --description--

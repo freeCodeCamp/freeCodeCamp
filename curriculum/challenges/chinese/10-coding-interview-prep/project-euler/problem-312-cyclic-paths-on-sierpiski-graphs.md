@@ -3,6 +3,7 @@ id: 5900f4a51000cf542c50ffb7
 title: 问题312：Sierpiński图上的循环路径
 challengeType: 5
 videoUrl: ''
+dashedName: problem-312-cyclic-paths-on-sierpiski-graphs
 ---
 
 # --description--

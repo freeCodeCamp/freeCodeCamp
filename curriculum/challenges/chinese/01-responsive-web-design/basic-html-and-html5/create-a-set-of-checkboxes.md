@@ -4,6 +4,7 @@ title: 创建一组复选框
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cqrkJsp'
 forumTopicId: 16821
+dashedName: create-a-set-of-checkboxes
 ---
 
 # --description--

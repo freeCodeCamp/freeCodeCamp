@@ -3,6 +3,7 @@ id: 5900f38c1000cf542c50fe9f
 title: 问题32：Pandigital产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-32-pandigital-products
 ---
 
 # --description--

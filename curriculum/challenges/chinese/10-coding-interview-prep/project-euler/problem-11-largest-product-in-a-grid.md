@@ -3,6 +3,7 @@ id: 5900f3781000cf542c50fe8a
 title: 问题11：网格中最大的产品
 challengeType: 5
 videoUrl: ''
+dashedName: problem-11-largest-product-in-a-grid
 ---
 
 # --description--

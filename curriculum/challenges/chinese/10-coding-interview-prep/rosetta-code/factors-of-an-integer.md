@@ -3,6 +3,7 @@ id: 597f1e7fbc206f0e9ba95dc4
 title: 整数因子
 challengeType: 5
 videoUrl: ''
+dashedName: factors-of-an-integer
 ---
 
 # --description--

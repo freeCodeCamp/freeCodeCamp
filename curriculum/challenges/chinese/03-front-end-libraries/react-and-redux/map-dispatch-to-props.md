@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036146
 title: 映射 Dispatch 到 Props
 challengeType: 6
 forumTopicId: 301432
+dashedName: map-dispatch-to-props
 ---
 
 # --description--

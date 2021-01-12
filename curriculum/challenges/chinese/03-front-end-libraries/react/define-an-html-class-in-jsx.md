@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036160
 title: 在 JSX 中定义一个 HTML Class
 challengeType: 6
 forumTopicId: 301393
+dashedName: define-an-html-class-in-jsx
 ---
 
 # --description--

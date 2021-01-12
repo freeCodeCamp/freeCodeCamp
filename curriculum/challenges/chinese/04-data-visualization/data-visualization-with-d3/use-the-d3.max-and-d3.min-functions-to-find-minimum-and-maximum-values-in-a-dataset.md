@@ -3,6 +3,8 @@ id: 587d7fac367417b2b2512bdc
 title: 使用 d3.max 和 d3.min 函数在数据集中查找最小值和最大值
 challengeType: 6
 forumTopicId: 301496
+dashedName: >-
+  use-the-d3-max-and-d3-min-functions-to-find-minimum-and-maximum-values-in-a-dataset
 ---
 
 # --description--
